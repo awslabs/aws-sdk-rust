@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_pro
     }
 }
 
-pub use crate::operation::create_service_profile::_create_service_profile_output::CreateServiceProfileOutput;
-
 pub use crate::operation::create_service_profile::_create_service_profile_input::CreateServiceProfileInput;
+
+pub use crate::operation::create_service_profile::_create_service_profile_output::CreateServiceProfileOutput;
 
 mod _create_service_profile_input;
 

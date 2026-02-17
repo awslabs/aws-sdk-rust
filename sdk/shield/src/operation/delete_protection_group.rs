@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_protection_
     }
 }
 
-pub use crate::operation::delete_protection_group::_delete_protection_group_output::DeleteProtectionGroupOutput;
-
 pub use crate::operation::delete_protection_group::_delete_protection_group_input::DeleteProtectionGroupInput;
+
+pub use crate::operation::delete_protection_group::_delete_protection_group_output::DeleteProtectionGroupOutput;
 
 mod _delete_protection_group_input;
 

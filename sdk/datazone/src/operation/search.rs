@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search::SearchErro
     }
 }
 
-pub use crate::operation::search::_search_output::SearchOutput;
-
 pub use crate::operation::search::_search_input::SearchInput;
+
+pub use crate::operation::search::_search_output::SearchOutput;
 
 mod _search_input;
 

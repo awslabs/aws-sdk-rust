@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_public_key:
     }
 }
 
-pub use crate::operation::update_public_key::_update_public_key_output::UpdatePublicKeyOutput;
-
 pub use crate::operation::update_public_key::_update_public_key_input::UpdatePublicKeyInput;
+
+pub use crate::operation::update_public_key::_update_public_key_output::UpdatePublicKeyOutput;
 
 mod _update_public_key_input;
 

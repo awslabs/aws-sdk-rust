@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_chat_contro
     }
 }
 
-pub use crate::operation::update_chat_controls_configuration::_update_chat_controls_configuration_output::UpdateChatControlsConfigurationOutput;
-
 pub use crate::operation::update_chat_controls_configuration::_update_chat_controls_configuration_input::UpdateChatControlsConfigurationInput;
+
+pub use crate::operation::update_chat_controls_configuration::_update_chat_controls_configuration_output::UpdateChatControlsConfigurationOutput;
 
 mod _update_chat_controls_configuration_input;
 

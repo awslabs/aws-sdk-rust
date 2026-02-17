@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_environmen
     }
 }
 
-pub use crate::operation::list_kx_environments::_list_kx_environments_output::ListKxEnvironmentsOutput;
-
 pub use crate::operation::list_kx_environments::_list_kx_environments_input::ListKxEnvironmentsInput;
+
+pub use crate::operation::list_kx_environments::_list_kx_environments_output::ListKxEnvironmentsOutput;
 
 mod _list_kx_environments_input;
 

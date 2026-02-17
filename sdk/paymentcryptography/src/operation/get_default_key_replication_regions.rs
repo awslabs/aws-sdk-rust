@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_key_re
     }
 }
 
-pub use crate::operation::get_default_key_replication_regions::_get_default_key_replication_regions_output::GetDefaultKeyReplicationRegionsOutput;
-
 pub use crate::operation::get_default_key_replication_regions::_get_default_key_replication_regions_input::GetDefaultKeyReplicationRegionsInput;
+
+pub use crate::operation::get_default_key_replication_regions::_get_default_key_replication_regions_output::GetDefaultKeyReplicationRegionsOutput;
 
 mod _get_default_key_replication_regions_input;
 

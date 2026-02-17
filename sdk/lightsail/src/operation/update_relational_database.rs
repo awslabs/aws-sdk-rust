@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_relational_
     }
 }
 
-pub use crate::operation::update_relational_database::_update_relational_database_output::UpdateRelationalDatabaseOutput;
-
 pub use crate::operation::update_relational_database::_update_relational_database_input::UpdateRelationalDatabaseInput;
+
+pub use crate::operation::update_relational_database::_update_relational_database_output::UpdateRelationalDatabaseOutput;
 
 mod _update_relational_database_input;
 

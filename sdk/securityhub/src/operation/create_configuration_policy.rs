@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configurati
     }
 }
 
-pub use crate::operation::create_configuration_policy::_create_configuration_policy_output::CreateConfigurationPolicyOutput;
-
 pub use crate::operation::create_configuration_policy::_create_configuration_policy_input::CreateConfigurationPolicyInput;
+
+pub use crate::operation::create_configuration_policy::_create_configuration_policy_output::CreateConfigurationPolicyOutput;
 
 mod _create_configuration_policy_input;
 

@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_defini
     }
 }
 
-pub use crate::operation::list_device_definitions::_list_device_definitions_output::ListDeviceDefinitionsOutput;
-
 pub use crate::operation::list_device_definitions::_list_device_definitions_input::ListDeviceDefinitionsInput;
+
+pub use crate::operation::list_device_definitions::_list_device_definitions_output::ListDeviceDefinitionsOutput;
 
 mod _list_device_definitions_input;
 

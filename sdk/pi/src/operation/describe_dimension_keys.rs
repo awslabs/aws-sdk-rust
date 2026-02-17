@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dimension
     }
 }
 
-pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_output::DescribeDimensionKeysOutput;
-
 pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_input::DescribeDimensionKeysInput;
+
+pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_output::DescribeDimensionKeysOutput;
 
 mod _describe_dimension_keys_input;
 

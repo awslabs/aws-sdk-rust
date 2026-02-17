@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_calendar_state
     }
 }
 
-pub use crate::operation::get_calendar_state::_get_calendar_state_output::GetCalendarStateOutput;
-
 pub use crate::operation::get_calendar_state::_get_calendar_state_input::GetCalendarStateInput;
+
+pub use crate::operation::get_calendar_state::_get_calendar_state_output::GetCalendarStateOutput;
 
 mod _get_calendar_state_input;
 

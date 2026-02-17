@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_phi_detectio
     }
 }
 
-pub use crate::operation::start_phi_detection_job::_start_phi_detection_job_output::StartPhiDetectionJobOutput;
-
 pub use crate::operation::start_phi_detection_job::_start_phi_detection_job_input::StartPhiDetectionJobInput;
+
+pub use crate::operation::start_phi_detection_job::_start_phi_detection_job_output::StartPhiDetectionJobOutput;
 
 mod _start_phi_detection_job_input;
 

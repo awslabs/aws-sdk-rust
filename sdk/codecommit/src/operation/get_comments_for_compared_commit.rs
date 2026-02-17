@@ -489,9 +489,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_comments_for_c
     }
 }
 
-pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_compared_commit_output::GetCommentsForComparedCommitOutput;
-
 pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_compared_commit_input::GetCommentsForComparedCommitInput;
+
+pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_compared_commit_output::GetCommentsForComparedCommitOutput;
 
 mod _get_comments_for_compared_commit_input;
 

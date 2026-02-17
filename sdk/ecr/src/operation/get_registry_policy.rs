@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_registry_polic
     }
 }
 
-pub use crate::operation::get_registry_policy::_get_registry_policy_output::GetRegistryPolicyOutput;
-
 pub use crate::operation::get_registry_policy::_get_registry_policy_input::GetRegistryPolicyInput;
+
+pub use crate::operation::get_registry_policy::_get_registry_policy_output::GetRegistryPolicyOutput;
 
 mod _get_registry_policy_input;
 

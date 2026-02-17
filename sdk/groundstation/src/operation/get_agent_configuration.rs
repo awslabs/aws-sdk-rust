@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_configur
     }
 }
 
-pub use crate::operation::get_agent_configuration::_get_agent_configuration_output::GetAgentConfigurationOutput;
-
 pub use crate::operation::get_agent_configuration::_get_agent_configuration_input::GetAgentConfigurationInput;
+
+pub use crate::operation::get_agent_configuration::_get_agent_configuration_output::GetAgentConfigurationOutput;
 
 mod _get_agent_configuration_input;
 

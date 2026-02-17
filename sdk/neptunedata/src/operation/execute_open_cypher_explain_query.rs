@@ -572,9 +572,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_open_cyphe
     }
 }
 
-pub use crate::operation::execute_open_cypher_explain_query::_execute_open_cypher_explain_query_output::ExecuteOpenCypherExplainQueryOutput;
-
 pub use crate::operation::execute_open_cypher_explain_query::_execute_open_cypher_explain_query_input::ExecuteOpenCypherExplainQueryInput;
+
+pub use crate::operation::execute_open_cypher_explain_query::_execute_open_cypher_explain_query_output::ExecuteOpenCypherExplainQueryOutput;
 
 mod _execute_open_cypher_explain_query_input;
 

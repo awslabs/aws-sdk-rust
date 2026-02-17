@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_lambda_func
     }
 }
 
-pub use crate::operation::export_lambda_function_recommendations::_export_lambda_function_recommendations_output::ExportLambdaFunctionRecommendationsOutput;
-
 pub use crate::operation::export_lambda_function_recommendations::_export_lambda_function_recommendations_input::ExportLambdaFunctionRecommendationsInput;
+
+pub use crate::operation::export_lambda_function_recommendations::_export_lambda_function_recommendations_output::ExportLambdaFunctionRecommendationsOutput;
 
 mod _export_lambda_function_recommendations_input;
 

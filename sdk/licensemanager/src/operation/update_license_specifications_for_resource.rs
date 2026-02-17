@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_license_specifications_for_resource::_update_license_specifications_for_resource_output::UpdateLicenseSpecificationsForResourceOutput;
-
 pub use crate::operation::update_license_specifications_for_resource::_update_license_specifications_for_resource_input::UpdateLicenseSpecificationsForResourceInput;
+
+pub use crate::operation::update_license_specifications_for_resource::_update_license_specifications_for_resource_output::UpdateLicenseSpecificationsForResourceOutput;
 
 mod _update_license_specifications_for_resource_input;
 

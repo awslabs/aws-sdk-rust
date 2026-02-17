@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_cont
     }
 }
 
-pub use crate::operation::delete_access_control_rule::_delete_access_control_rule_output::DeleteAccessControlRuleOutput;
-
 pub use crate::operation::delete_access_control_rule::_delete_access_control_rule_input::DeleteAccessControlRuleInput;
+
+pub use crate::operation::delete_access_control_rule::_delete_access_control_rule_output::DeleteAccessControlRuleOutput;
 
 mod _delete_access_control_rule_input;
 

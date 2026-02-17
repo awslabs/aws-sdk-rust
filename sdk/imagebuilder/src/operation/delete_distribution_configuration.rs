@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_distributio
     }
 }
 
-pub use crate::operation::delete_distribution_configuration::_delete_distribution_configuration_output::DeleteDistributionConfigurationOutput;
-
 pub use crate::operation::delete_distribution_configuration::_delete_distribution_configuration_input::DeleteDistributionConfigurationInput;
+
+pub use crate::operation::delete_distribution_configuration::_delete_distribution_configuration_output::DeleteDistributionConfigurationOutput;
 
 mod _delete_distribution_configuration_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_durable_execu
     }
 }
 
-pub use crate::operation::stop_durable_execution::_stop_durable_execution_output::StopDurableExecutionOutput;
-
 pub use crate::operation::stop_durable_execution::_stop_durable_execution_input::StopDurableExecutionInput;
+
+pub use crate::operation::stop_durable_execution::_stop_durable_execution_output::StopDurableExecutionOutput;
 
 mod _stop_durable_execution_input;
 

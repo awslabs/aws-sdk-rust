@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_notification_
     }
 }
 
-pub use crate::operation::list_notification_hubs::_list_notification_hubs_output::ListNotificationHubsOutput;
-
 pub use crate::operation::list_notification_hubs::_list_notification_hubs_input::ListNotificationHubsInput;
+
+pub use crate::operation::list_notification_hubs::_list_notification_hubs_output::ListNotificationHubsOutput;
 
 mod _list_notification_hubs_input;
 

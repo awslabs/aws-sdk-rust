@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_performance_a
     }
 }
 
-pub use crate::operation::list_performance_analysis_reports::_list_performance_analysis_reports_output::ListPerformanceAnalysisReportsOutput;
-
 pub use crate::operation::list_performance_analysis_reports::_list_performance_analysis_reports_input::ListPerformanceAnalysisReportsInput;
+
+pub use crate::operation::list_performance_analysis_reports::_list_performance_analysis_reports_output::ListPerformanceAnalysisReportsOutput;
 
 mod _list_performance_analysis_reports_input;
 

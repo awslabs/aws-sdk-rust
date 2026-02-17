@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_farm::Updat
     }
 }
 
-pub use crate::operation::update_farm::_update_farm_output::UpdateFarmOutput;
-
 pub use crate::operation::update_farm::_update_farm_input::UpdateFarmInput;
+
+pub use crate::operation::update_farm::_update_farm_output::UpdateFarmOutput;
 
 mod _update_farm_input;
 

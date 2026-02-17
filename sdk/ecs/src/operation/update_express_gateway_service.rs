@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_express_gat
     }
 }
 
-pub use crate::operation::update_express_gateway_service::_update_express_gateway_service_output::UpdateExpressGatewayServiceOutput;
-
 pub use crate::operation::update_express_gateway_service::_update_express_gateway_service_input::UpdateExpressGatewayServiceInput;
+
+pub use crate::operation::update_express_gateway_service::_update_express_gateway_service_output::UpdateExpressGatewayServiceOutput;
 
 mod _update_express_gateway_service_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rule_groups_n
     }
 }
 
-pub use crate::operation::list_rule_groups_namespaces::_list_rule_groups_namespaces_output::ListRuleGroupsNamespacesOutput;
-
 pub use crate::operation::list_rule_groups_namespaces::_list_rule_groups_namespaces_input::ListRuleGroupsNamespacesInput;
+
+pub use crate::operation::list_rule_groups_namespaces::_list_rule_groups_namespaces_output::ListRuleGroupsNamespacesOutput;
 
 mod _list_rule_groups_namespaces_input;
 

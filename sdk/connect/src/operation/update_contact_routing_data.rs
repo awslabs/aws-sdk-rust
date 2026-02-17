@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact_rou
     }
 }
 
-pub use crate::operation::update_contact_routing_data::_update_contact_routing_data_output::UpdateContactRoutingDataOutput;
-
 pub use crate::operation::update_contact_routing_data::_update_contact_routing_data_input::UpdateContactRoutingDataInput;
+
+pub use crate::operation::update_contact_routing_data::_update_contact_routing_data_output::UpdateContactRoutingDataOutput;
 
 mod _update_contact_routing_data_input;
 

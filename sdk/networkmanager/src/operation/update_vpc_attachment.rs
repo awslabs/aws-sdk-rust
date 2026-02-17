@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vpc_attachm
     }
 }
 
-pub use crate::operation::update_vpc_attachment::_update_vpc_attachment_output::UpdateVpcAttachmentOutput;
-
 pub use crate::operation::update_vpc_attachment::_update_vpc_attachment_input::UpdateVpcAttachmentInput;
+
+pub use crate::operation::update_vpc_attachment::_update_vpc_attachment_output::UpdateVpcAttachmentOutput;
 
 mod _update_vpc_attachment_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hsm::Delete
     }
 }
 
-pub use crate::operation::delete_hsm::_delete_hsm_output::DeleteHsmOutput;
-
 pub use crate::operation::delete_hsm::_delete_hsm_input::DeleteHsmInput;
+
+pub use crate::operation::delete_hsm::_delete_hsm_output::DeleteHsmOutput;
 
 mod _delete_hsm_input;
 

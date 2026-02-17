@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_configuration_items_from_application::_disassociate_configuration_items_from_application_output::DisassociateConfigurationItemsFromApplicationOutput;
-
 pub use crate::operation::disassociate_configuration_items_from_application::_disassociate_configuration_items_from_application_input::DisassociateConfigurationItemsFromApplicationInput;
+
+pub use crate::operation::disassociate_configuration_items_from_application::_disassociate_configuration_items_from_application_output::DisassociateConfigurationItemsFromApplicationOutput;
 
 mod _disassociate_configuration_items_from_application_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_logging_option
     }
 }
 
-pub use crate::operation::put_logging_options::_put_logging_options_output::PutLoggingOptionsOutput;
-
 pub use crate::operation::put_logging_options::_put_logging_options_input::PutLoggingOptionsInput;
+
+pub use crate::operation::put_logging_options::_put_logging_options_output::PutLoggingOptionsOutput;
 
 mod _put_logging_options_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bridge::Del
     }
 }
 
-pub use crate::operation::delete_bridge::_delete_bridge_output::DeleteBridgeOutput;
-
 pub use crate::operation::delete_bridge::_delete_bridge_input::DeleteBridgeInput;
+
+pub use crate::operation::delete_bridge::_delete_bridge_output::DeleteBridgeOutput;
 
 mod _delete_bridge_input;
 

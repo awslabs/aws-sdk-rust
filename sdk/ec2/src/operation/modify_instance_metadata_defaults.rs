@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_me
     }
 }
 
-pub use crate::operation::modify_instance_metadata_defaults::_modify_instance_metadata_defaults_output::ModifyInstanceMetadataDefaultsOutput;
-
 pub use crate::operation::modify_instance_metadata_defaults::_modify_instance_metadata_defaults_input::ModifyInstanceMetadataDefaultsInput;
+
+pub use crate::operation::modify_instance_metadata_defaults::_modify_instance_metadata_defaults_output::ModifyInstanceMetadataDefaultsOutput;
 
 mod _modify_instance_metadata_defaults_input;
 

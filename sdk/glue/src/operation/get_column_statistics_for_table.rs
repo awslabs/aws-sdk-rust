@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_column_statist
     }
 }
 
-pub use crate::operation::get_column_statistics_for_table::_get_column_statistics_for_table_output::GetColumnStatisticsForTableOutput;
-
 pub use crate::operation::get_column_statistics_for_table::_get_column_statistics_for_table_input::GetColumnStatisticsForTableInput;
+
+pub use crate::operation::get_column_statistics_for_table::_get_column_statistics_for_table_output::GetColumnStatisticsForTableOutput;
 
 mod _get_column_statistics_for_table_input;
 

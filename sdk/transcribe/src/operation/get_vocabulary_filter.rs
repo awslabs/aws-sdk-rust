@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vocabulary_fil
     }
 }
 
-pub use crate::operation::get_vocabulary_filter::_get_vocabulary_filter_output::GetVocabularyFilterOutput;
-
 pub use crate::operation::get_vocabulary_filter::_get_vocabulary_filter_input::GetVocabularyFilterInput;
+
+pub use crate::operation::get_vocabulary_filter::_get_vocabulary_filter_output::GetVocabularyFilterOutput;
 
 mod _get_vocabulary_filter_input;
 

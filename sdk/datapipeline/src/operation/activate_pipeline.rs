@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_pipeline:
     }
 }
 
-pub use crate::operation::activate_pipeline::_activate_pipeline_output::ActivatePipelineOutput;
-
 pub use crate::operation::activate_pipeline::_activate_pipeline_input::ActivatePipelineInput;
+
+pub use crate::operation::activate_pipeline::_activate_pipeline_output::ActivatePipelineOutput;
 
 mod _activate_pipeline_input;
 

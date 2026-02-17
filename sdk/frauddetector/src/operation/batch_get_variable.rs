@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_variable
     }
 }
 
-pub use crate::operation::batch_get_variable::_batch_get_variable_output::BatchGetVariableOutput;
-
 pub use crate::operation::batch_get_variable::_batch_get_variable_input::BatchGetVariableInput;
+
+pub use crate::operation::batch_get_variable::_batch_get_variable_output::BatchGetVariableOutput;
 
 mod _batch_get_variable_input;
 

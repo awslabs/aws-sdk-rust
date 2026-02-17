@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_audience_ge
     }
 }
 
-pub use crate::operation::delete_audience_generation_job::_delete_audience_generation_job_output::DeleteAudienceGenerationJobOutput;
-
 pub use crate::operation::delete_audience_generation_job::_delete_audience_generation_job_input::DeleteAudienceGenerationJobInput;
+
+pub use crate::operation::delete_audience_generation_job::_delete_audience_generation_job_output::DeleteAudienceGenerationJobOutput;
 
 mod _delete_audience_generation_job_input;
 

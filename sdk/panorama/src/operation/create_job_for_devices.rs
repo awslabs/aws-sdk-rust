@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_job_for_dev
     }
 }
 
-pub use crate::operation::create_job_for_devices::_create_job_for_devices_output::CreateJobForDevicesOutput;
-
 pub use crate::operation::create_job_for_devices::_create_job_for_devices_input::CreateJobForDevicesInput;
+
+pub use crate::operation::create_job_for_devices::_create_job_for_devices_output::CreateJobForDevicesOutput;
 
 mod _create_job_for_devices_input;
 

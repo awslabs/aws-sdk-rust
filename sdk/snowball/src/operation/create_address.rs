@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_address::Cr
     }
 }
 
-pub use crate::operation::create_address::_create_address_output::CreateAddressOutput;
-
 pub use crate::operation::create_address::_create_address_input::CreateAddressInput;
+
+pub use crate::operation::create_address::_create_address_output::CreateAddressOutput;
 
 mod _create_address_input;
 

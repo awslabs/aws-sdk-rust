@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_acceler
     }
 }
 
-pub use crate::operation::put_bucket_accelerate_configuration::_put_bucket_accelerate_configuration_output::PutBucketAccelerateConfigurationOutput;
-
 pub use crate::operation::put_bucket_accelerate_configuration::_put_bucket_accelerate_configuration_input::PutBucketAccelerateConfigurationInput;
+
+pub use crate::operation::put_bucket_accelerate_configuration::_put_bucket_accelerate_configuration_output::PutBucketAccelerateConfigurationOutput;
 
 mod _put_bucket_accelerate_configuration_input;
 

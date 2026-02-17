@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_verified_ac
     }
 }
 
-pub use crate::operation::detach_verified_access_trust_provider::_detach_verified_access_trust_provider_output::DetachVerifiedAccessTrustProviderOutput;
-
 pub use crate::operation::detach_verified_access_trust_provider::_detach_verified_access_trust_provider_input::DetachVerifiedAccessTrustProviderInput;
+
+pub use crate::operation::detach_verified_access_trust_provider::_detach_verified_access_trust_provider_output::DetachVerifiedAccessTrustProviderOutput;
 
 mod _detach_verified_access_trust_provider_input;
 

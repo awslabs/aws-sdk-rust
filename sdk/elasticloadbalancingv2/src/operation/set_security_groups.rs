@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_security_group
     }
 }
 
-pub use crate::operation::set_security_groups::_set_security_groups_output::SetSecurityGroupsOutput;
-
 pub use crate::operation::set_security_groups::_set_security_groups_input::SetSecurityGroupsInput;
+
+pub use crate::operation::set_security_groups::_set_security_groups_output::SetSecurityGroupsOutput;
 
 mod _set_security_groups_input;
 

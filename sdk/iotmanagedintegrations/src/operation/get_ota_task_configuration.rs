@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ota_task_confi
     }
 }
 
-pub use crate::operation::get_ota_task_configuration::_get_ota_task_configuration_output::GetOtaTaskConfigurationOutput;
-
 pub use crate::operation::get_ota_task_configuration::_get_ota_task_configuration_input::GetOtaTaskConfigurationInput;
+
+pub use crate::operation::get_ota_task_configuration::_get_ota_task_configuration_output::GetOtaTaskConfigurationOutput;
 
 mod _get_ota_task_configuration_input;
 

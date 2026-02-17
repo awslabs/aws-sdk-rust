@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_input_secur
     }
 }
 
-pub use crate::operation::update_input_security_group::_update_input_security_group_output::UpdateInputSecurityGroupOutput;
-
 pub use crate::operation::update_input_security_group::_update_input_security_group_input::UpdateInputSecurityGroupInput;
+
+pub use crate::operation::update_input_security_group::_update_input_security_group_output::UpdateInputSecurityGroupOutput;
 
 mod _update_input_security_group_input;
 

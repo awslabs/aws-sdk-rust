@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_verif
     }
 }
 
-pub use crate::operation::get_identity_verification_attributes::_get_identity_verification_attributes_output::GetIdentityVerificationAttributesOutput;
-
 pub use crate::operation::get_identity_verification_attributes::_get_identity_verification_attributes_input::GetIdentityVerificationAttributesInput;
+
+pub use crate::operation::get_identity_verification_attributes::_get_identity_verification_attributes_output::GetIdentityVerificationAttributesOutput;
 
 mod _get_identity_verification_attributes_input;
 

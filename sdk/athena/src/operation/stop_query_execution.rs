@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_query_executi
     }
 }
 
-pub use crate::operation::stop_query_execution::_stop_query_execution_output::StopQueryExecutionOutput;
-
 pub use crate::operation::stop_query_execution::_stop_query_execution_input::StopQueryExecutionInput;
+
+pub use crate::operation::stop_query_execution::_stop_query_execution_output::StopQueryExecutionOutput;
 
 mod _stop_query_execution_input;
 

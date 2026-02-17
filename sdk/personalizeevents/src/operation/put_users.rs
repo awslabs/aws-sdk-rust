@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_users::PutUser
     }
 }
 
-pub use crate::operation::put_users::_put_users_output::PutUsersOutput;
-
 pub use crate::operation::put_users::_put_users_input::PutUsersInput;
+
+pub use crate::operation::put_users::_put_users_output::PutUsersOutput;
 
 mod _put_users_input;
 

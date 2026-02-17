@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_custom_labe
     }
 }
 
-pub use crate::operation::detect_custom_labels::_detect_custom_labels_output::DetectCustomLabelsOutput;
-
 pub use crate::operation::detect_custom_labels::_detect_custom_labels_input::DetectCustomLabelsInput;
+
+pub use crate::operation::detect_custom_labels::_detect_custom_labels_output::DetectCustomLabelsOutput;
 
 mod _detect_custom_labels_input;
 

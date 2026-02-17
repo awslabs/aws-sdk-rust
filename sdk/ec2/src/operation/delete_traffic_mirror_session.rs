@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_traffic_mir
     }
 }
 
-pub use crate::operation::delete_traffic_mirror_session::_delete_traffic_mirror_session_output::DeleteTrafficMirrorSessionOutput;
-
 pub use crate::operation::delete_traffic_mirror_session::_delete_traffic_mirror_session_input::DeleteTrafficMirrorSessionInput;
+
+pub use crate::operation::delete_traffic_mirror_session::_delete_traffic_mirror_session_output::DeleteTrafficMirrorSessionOutput;
 
 mod _delete_traffic_mirror_session_input;
 

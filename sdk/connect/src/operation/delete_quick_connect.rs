@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_quick_conne
     }
 }
 
-pub use crate::operation::delete_quick_connect::_delete_quick_connect_output::DeleteQuickConnectOutput;
-
 pub use crate::operation::delete_quick_connect::_delete_quick_connect_input::DeleteQuickConnectInput;
+
+pub use crate::operation::delete_quick_connect::_delete_quick_connect_output::DeleteQuickConnectOutput;
 
 mod _delete_quick_connect_input;
 

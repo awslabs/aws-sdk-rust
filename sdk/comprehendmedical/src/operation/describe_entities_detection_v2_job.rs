@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_entities_
     }
 }
 
-pub use crate::operation::describe_entities_detection_v2_job::_describe_entities_detection_v2_job_output::DescribeEntitiesDetectionV2JobOutput;
-
 pub use crate::operation::describe_entities_detection_v2_job::_describe_entities_detection_v2_job_input::DescribeEntitiesDetectionV2JobInput;
+
+pub use crate::operation::describe_entities_detection_v2_job::_describe_entities_detection_v2_job_output::DescribeEntitiesDetectionV2JobOutput;
 
 mod _describe_entities_detection_v2_job_input;
 

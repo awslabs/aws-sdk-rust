@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bot_replica
     }
 }
 
-pub use crate::operation::create_bot_replica::_create_bot_replica_output::CreateBotReplicaOutput;
-
 pub use crate::operation::create_bot_replica::_create_bot_replica_input::CreateBotReplicaInput;
+
+pub use crate::operation::create_bot_replica::_create_bot_replica_output::CreateBotReplicaOutput;
 
 mod _create_bot_replica_input;
 

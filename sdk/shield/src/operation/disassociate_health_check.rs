@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_healt
     }
 }
 
-pub use crate::operation::disassociate_health_check::_disassociate_health_check_output::DisassociateHealthCheckOutput;
-
 pub use crate::operation::disassociate_health_check::_disassociate_health_check_input::DisassociateHealthCheckInput;
+
+pub use crate::operation::disassociate_health_check::_disassociate_health_check_output::DisassociateHealthCheckOutput;
 
 mod _disassociate_health_check_input;
 

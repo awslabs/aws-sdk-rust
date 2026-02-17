@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_core_defini
     }
 }
 
-pub use crate::operation::create_core_definition_version::_create_core_definition_version_output::CreateCoreDefinitionVersionOutput;
-
 pub use crate::operation::create_core_definition_version::_create_core_definition_version_input::CreateCoreDefinitionVersionInput;
+
+pub use crate::operation::create_core_definition_version::_create_core_definition_version_output::CreateCoreDefinitionVersionOutput;
 
 mod _create_core_definition_version_input;
 

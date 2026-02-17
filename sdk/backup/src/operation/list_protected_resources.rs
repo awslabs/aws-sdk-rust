@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protected_res
     }
 }
 
-pub use crate::operation::list_protected_resources::_list_protected_resources_output::ListProtectedResourcesOutput;
-
 pub use crate::operation::list_protected_resources::_list_protected_resources_input::ListProtectedResourcesInput;
+
+pub use crate::operation::list_protected_resources::_list_protected_resources_output::ListProtectedResourcesOutput;
 
 mod _list_protected_resources_input;
 

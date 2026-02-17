@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stream_pr
     }
 }
 
-pub use crate::operation::describe_stream_processor::_describe_stream_processor_output::DescribeStreamProcessorOutput;
-
 pub use crate::operation::describe_stream_processor::_describe_stream_processor_input::DescribeStreamProcessorInput;
+
+pub use crate::operation::describe_stream_processor::_describe_stream_processor_output::DescribeStreamProcessorOutput;
 
 mod _describe_stream_processor_input;
 

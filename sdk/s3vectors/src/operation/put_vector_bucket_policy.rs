@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_vector_bucket_
     }
 }
 
-pub use crate::operation::put_vector_bucket_policy::_put_vector_bucket_policy_output::PutVectorBucketPolicyOutput;
-
 pub use crate::operation::put_vector_bucket_policy::_put_vector_bucket_policy_input::PutVectorBucketPolicyInput;
+
+pub use crate::operation::put_vector_bucket_policy::_put_vector_bucket_policy_output::PutVectorBucketPolicyOutput;
 
 mod _put_vector_bucket_policy_input;
 

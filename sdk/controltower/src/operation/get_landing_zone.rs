@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_landing_zone::
     }
 }
 
-pub use crate::operation::get_landing_zone::_get_landing_zone_output::GetLandingZoneOutput;
-
 pub use crate::operation::get_landing_zone::_get_landing_zone_input::GetLandingZoneInput;
+
+pub use crate::operation::get_landing_zone::_get_landing_zone_output::GetLandingZoneOutput;
 
 mod _get_landing_zone_input;
 

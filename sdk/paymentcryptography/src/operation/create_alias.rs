@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_alias::Crea
     }
 }
 
-pub use crate::operation::create_alias::_create_alias_output::CreateAliasOutput;
-
 pub use crate::operation::create_alias::_create_alias_input::CreateAliasInput;
+
+pub use crate::operation::create_alias::_create_alias_output::CreateAliasOutput;
 
 mod _create_alias_input;
 

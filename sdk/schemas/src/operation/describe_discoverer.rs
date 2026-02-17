@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_discovere
     }
 }
 
-pub use crate::operation::describe_discoverer::_describe_discoverer_output::DescribeDiscovererOutput;
-
 pub use crate::operation::describe_discoverer::_describe_discoverer_input::DescribeDiscovererInput;
+
+pub use crate::operation::describe_discoverer::_describe_discoverer_output::DescribeDiscovererOutput;
 
 mod _describe_discoverer_input;
 

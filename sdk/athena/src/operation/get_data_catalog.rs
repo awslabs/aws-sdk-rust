@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_catalog::
     }
 }
 
-pub use crate::operation::get_data_catalog::_get_data_catalog_output::GetDataCatalogOutput;
-
 pub use crate::operation::get_data_catalog::_get_data_catalog_input::GetDataCatalogInput;
+
+pub use crate::operation::get_data_catalog::_get_data_catalog_output::GetDataCatalogOutput;
 
 mod _get_data_catalog_input;
 

@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_vpc_endpoint_service_private_dns_verification::_start_vpc_endpoint_service_private_dns_verification_output::StartVpcEndpointServicePrivateDnsVerificationOutput;
-
 pub use crate::operation::start_vpc_endpoint_service_private_dns_verification::_start_vpc_endpoint_service_private_dns_verification_input::StartVpcEndpointServicePrivateDnsVerificationInput;
+
+pub use crate::operation::start_vpc_endpoint_service_private_dns_verification::_start_vpc_endpoint_service_private_dns_verification_output::StartVpcEndpointServicePrivateDnsVerificationOutput;
 
 mod _start_vpc_endpoint_service_private_dns_verification_input;
 

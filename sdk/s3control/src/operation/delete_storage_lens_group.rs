@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_storage_len
     }
 }
 
-pub use crate::operation::delete_storage_lens_group::_delete_storage_lens_group_output::DeleteStorageLensGroupOutput;
-
 pub use crate::operation::delete_storage_lens_group::_delete_storage_lens_group_input::DeleteStorageLensGroupInput;
+
+pub use crate::operation::delete_storage_lens_group::_delete_storage_lens_group_output::DeleteStorageLensGroupOutput;
 
 mod _delete_storage_lens_group_input;
 

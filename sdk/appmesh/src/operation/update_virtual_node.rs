@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_virtual_nod
     }
 }
 
-pub use crate::operation::update_virtual_node::_update_virtual_node_output::UpdateVirtualNodeOutput;
-
 pub use crate::operation::update_virtual_node::_update_virtual_node_input::UpdateVirtualNodeInput;
+
+pub use crate::operation::update_virtual_node::_update_virtual_node_output::UpdateVirtualNodeOutput;
 
 mod _update_virtual_node_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_tele
     }
 }
 
-pub use crate::operation::list_resource_telemetry_for_organization::_list_resource_telemetry_for_organization_output::ListResourceTelemetryForOrganizationOutput;
-
 pub use crate::operation::list_resource_telemetry_for_organization::_list_resource_telemetry_for_organization_input::ListResourceTelemetryForOrganizationInput;
+
+pub use crate::operation::list_resource_telemetry_for_organization::_list_resource_telemetry_for_organization_output::ListResourceTelemetryForOrganizationOutput;
 
 mod _list_resource_telemetry_for_organization_input;
 

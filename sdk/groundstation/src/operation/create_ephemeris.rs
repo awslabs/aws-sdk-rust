@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ephemeris::
     }
 }
 
-pub use crate::operation::create_ephemeris::_create_ephemeris_output::CreateEphemerisOutput;
-
 pub use crate::operation::create_ephemeris::_create_ephemeris_input::CreateEphemerisInput;
+
+pub use crate::operation::create_ephemeris::_create_ephemeris_output::CreateEphemerisOutput;
 
 mod _create_ephemeris_input;
 

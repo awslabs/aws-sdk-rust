@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group_profile:
     }
 }
 
-pub use crate::operation::get_group_profile::_get_group_profile_output::GetGroupProfileOutput;
-
 pub use crate::operation::get_group_profile::_get_group_profile_input::GetGroupProfileInput;
+
+pub use crate::operation::get_group_profile::_get_group_profile_output::GetGroupProfileOutput;
 
 mod _get_group_profile_input;
 

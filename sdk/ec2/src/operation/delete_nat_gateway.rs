@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_nat_gateway
     }
 }
 
-pub use crate::operation::delete_nat_gateway::_delete_nat_gateway_output::DeleteNatGatewayOutput;
-
 pub use crate::operation::delete_nat_gateway::_delete_nat_gateway_input::DeleteNatGatewayInput;
+
+pub use crate::operation::delete_nat_gateway::_delete_nat_gateway_output::DeleteNatGatewayOutput;
 
 mod _delete_nat_gateway_input;
 

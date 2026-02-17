@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metric_alarm::
     }
 }
 
-pub use crate::operation::put_metric_alarm::_put_metric_alarm_output::PutMetricAlarmOutput;
-
 pub use crate::operation::put_metric_alarm::_put_metric_alarm_input::PutMetricAlarmInput;
+
+pub use crate::operation::put_metric_alarm::_put_metric_alarm_output::PutMetricAlarmOutput;
 
 mod _put_metric_alarm_input;
 

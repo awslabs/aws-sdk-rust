@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_phone_numbe
     }
 }
 
-pub use crate::operation::update_phone_number_settings::_update_phone_number_settings_output::UpdatePhoneNumberSettingsOutput;
-
 pub use crate::operation::update_phone_number_settings::_update_phone_number_settings_input::UpdatePhoneNumberSettingsInput;
+
+pub use crate::operation::update_phone_number_settings::_update_phone_number_settings_output::UpdatePhoneNumberSettingsOutput;
 
 mod _update_phone_number_settings_input;
 

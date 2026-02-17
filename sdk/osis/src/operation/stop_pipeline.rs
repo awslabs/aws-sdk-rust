@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_pipeline::Sto
     }
 }
 
-pub use crate::operation::stop_pipeline::_stop_pipeline_output::StopPipelineOutput;
-
 pub use crate::operation::stop_pipeline::_stop_pipeline_input::StopPipelineInput;
+
+pub use crate::operation::stop_pipeline::_stop_pipeline_output::StopPipelineOutput;
 
 mod _stop_pipeline_input;
 

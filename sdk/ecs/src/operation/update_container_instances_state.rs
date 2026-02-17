@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_container_i
     }
 }
 
-pub use crate::operation::update_container_instances_state::_update_container_instances_state_output::UpdateContainerInstancesStateOutput;
-
 pub use crate::operation::update_container_instances_state::_update_container_instances_state_input::UpdateContainerInstancesStateInput;
+
+pub use crate::operation::update_container_instances_state::_update_container_instances_state_output::UpdateContainerInstancesStateOutput;
 
 mod _update_container_instances_state_input;
 

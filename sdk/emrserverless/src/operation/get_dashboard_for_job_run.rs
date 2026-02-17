@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dashboard_for_
     }
 }
 
-pub use crate::operation::get_dashboard_for_job_run::_get_dashboard_for_job_run_output::GetDashboardForJobRunOutput;
-
 pub use crate::operation::get_dashboard_for_job_run::_get_dashboard_for_job_run_input::GetDashboardForJobRunInput;
+
+pub use crate::operation::get_dashboard_for_job_run::_get_dashboard_for_job_run_output::GetDashboardForJobRunOutput;
 
 mod _get_dashboard_for_job_run_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_expressio
     }
 }
 
-pub use crate::operation::describe_expressions::_describe_expressions_output::DescribeExpressionsOutput;
-
 pub use crate::operation::describe_expressions::_describe_expressions_input::DescribeExpressionsInput;
+
+pub use crate::operation::describe_expressions::_describe_expressions_output::DescribeExpressionsOutput;
 
 mod _describe_expressions_input;
 

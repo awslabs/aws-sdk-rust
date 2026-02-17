@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_oauth2_creden
     }
 }
 
-pub use crate::operation::list_oauth2_credential_providers::_list_oauth2_credential_providers_output::ListOauth2CredentialProvidersOutput;
-
 pub use crate::operation::list_oauth2_credential_providers::_list_oauth2_credential_providers_input::ListOauth2CredentialProvidersInput;
+
+pub use crate::operation::list_oauth2_credential_providers::_list_oauth2_credential_providers_output::ListOauth2CredentialProvidersOutput;
 
 mod _list_oauth2_credential_providers_input;
 

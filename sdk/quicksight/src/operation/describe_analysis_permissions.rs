@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_analysis_
     }
 }
 
-pub use crate::operation::describe_analysis_permissions::_describe_analysis_permissions_output::DescribeAnalysisPermissionsOutput;
-
 pub use crate::operation::describe_analysis_permissions::_describe_analysis_permissions_input::DescribeAnalysisPermissionsInput;
+
+pub use crate::operation::describe_analysis_permissions::_describe_analysis_permissions_output::DescribeAnalysisPermissionsOutput;
 
 mod _describe_analysis_permissions_input;
 

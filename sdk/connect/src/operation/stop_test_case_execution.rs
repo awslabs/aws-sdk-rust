@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_test_case_exe
     }
 }
 
-pub use crate::operation::stop_test_case_execution::_stop_test_case_execution_output::StopTestCaseExecutionOutput;
-
 pub use crate::operation::stop_test_case_execution::_stop_test_case_execution_input::StopTestCaseExecutionInput;
+
+pub use crate::operation::stop_test_case_execution::_stop_test_case_execution_output::StopTestCaseExecutionOutput;
 
 mod _stop_test_case_execution_input;
 

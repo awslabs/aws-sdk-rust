@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_composition::G
     }
 }
 
-pub use crate::operation::get_composition::_get_composition_output::GetCompositionOutput;
-
 pub use crate::operation::get_composition::_get_composition_input::GetCompositionInput;
+
+pub use crate::operation::get_composition::_get_composition_output::GetCompositionOutput;
 
 mod _get_composition_input;
 

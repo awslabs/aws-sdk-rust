@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_audience_gener
     }
 }
 
-pub use crate::operation::get_audience_generation_job::_get_audience_generation_job_output::GetAudienceGenerationJobOutput;
-
 pub use crate::operation::get_audience_generation_job::_get_audience_generation_job_input::GetAudienceGenerationJobInput;
+
+pub use crate::operation::get_audience_generation_job::_get_audience_generation_job_output::GetAudienceGenerationJobOutput;
 
 mod _get_audience_generation_job_input;
 

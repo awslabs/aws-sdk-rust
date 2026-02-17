@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_orderable
     }
 }
 
-pub use crate::operation::describe_orderable_db_instance_options::_describe_orderable_db_instance_options_output::DescribeOrderableDbInstanceOptionsOutput;
-
 pub use crate::operation::describe_orderable_db_instance_options::_describe_orderable_db_instance_options_input::DescribeOrderableDbInstanceOptionsInput;
+
+pub use crate::operation::describe_orderable_db_instance_options::_describe_orderable_db_instance_options_output::DescribeOrderableDbInstanceOptionsOutput;
 
 mod _describe_orderable_db_instance_options_input;
 

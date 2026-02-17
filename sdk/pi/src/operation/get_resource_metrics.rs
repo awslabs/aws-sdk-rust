@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_metri
     }
 }
 
-pub use crate::operation::get_resource_metrics::_get_resource_metrics_output::GetResourceMetricsOutput;
-
 pub use crate::operation::get_resource_metrics::_get_resource_metrics_input::GetResourceMetricsInput;
+
+pub use crate::operation::get_resource_metrics::_get_resource_metrics_output::GetResourceMetricsOutput;
 
 mod _get_resource_metrics_input;
 

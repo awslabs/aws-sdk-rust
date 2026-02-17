@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_delegation_re
     }
 }
 
-pub use crate::operation::list_delegation_requests::_list_delegation_requests_output::ListDelegationRequestsOutput;
-
 pub use crate::operation::list_delegation_requests::_list_delegation_requests_input::ListDelegationRequestsInput;
+
+pub use crate::operation::list_delegation_requests::_list_delegation_requests_output::ListDelegationRequestsOutput;
 
 mod _list_delegation_requests_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_classification
     }
 }
 
-pub use crate::operation::put_classification_export_configuration::_put_classification_export_configuration_output::PutClassificationExportConfigurationOutput;
-
 pub use crate::operation::put_classification_export_configuration::_put_classification_export_configuration_input::PutClassificationExportConfigurationInput;
+
+pub use crate::operation::put_classification_export_configuration::_put_classification_export_configuration_output::PutClassificationExportConfigurationOutput;
 
 mod _put_classification_export_configuration_input;
 

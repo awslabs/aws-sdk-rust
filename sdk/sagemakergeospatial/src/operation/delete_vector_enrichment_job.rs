@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vector_enri
     }
 }
 
-pub use crate::operation::delete_vector_enrichment_job::_delete_vector_enrichment_job_output::DeleteVectorEnrichmentJobOutput;
-
 pub use crate::operation::delete_vector_enrichment_job::_delete_vector_enrichment_job_input::DeleteVectorEnrichmentJobInput;
+
+pub use crate::operation::delete_vector_enrichment_job::_delete_vector_enrichment_job_output::DeleteVectorEnrichmentJobOutput;
 
 mod _delete_vector_enrichment_job_input;
 

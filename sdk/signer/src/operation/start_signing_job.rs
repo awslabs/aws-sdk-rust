@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_signing_job:
     }
 }
 
-pub use crate::operation::start_signing_job::_start_signing_job_output::StartSigningJobOutput;
-
 pub use crate::operation::start_signing_job::_start_signing_job_input::StartSigningJobInput;
+
+pub use crate::operation::start_signing_job::_start_signing_job_output::StartSigningJobOutput;
 
 mod _start_signing_job_input;
 

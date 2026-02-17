@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_push_templa
     }
 }
 
-pub use crate::operation::create_push_template::_create_push_template_output::CreatePushTemplateOutput;
-
 pub use crate::operation::create_push_template::_create_push_template_input::CreatePushTemplateInput;
+
+pub use crate::operation::create_push_template::_create_push_template_output::CreatePushTemplateOutput;
 
 mod _create_push_template_input;
 

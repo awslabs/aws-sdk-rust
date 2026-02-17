@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_transit_gateway_route_table_propagation::_enable_transit_gateway_route_table_propagation_output::EnableTransitGatewayRouteTablePropagationOutput;
-
 pub use crate::operation::enable_transit_gateway_route_table_propagation::_enable_transit_gateway_route_table_propagation_input::EnableTransitGatewayRouteTablePropagationInput;
+
+pub use crate::operation::enable_transit_gateway_route_table_propagation::_enable_transit_gateway_route_table_propagation_output::EnableTransitGatewayRouteTablePropagationOutput;
 
 mod _enable_transit_gateway_route_table_propagation_input;
 

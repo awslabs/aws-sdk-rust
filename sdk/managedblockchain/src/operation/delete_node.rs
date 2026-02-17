@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_node::Delet
     }
 }
 
-pub use crate::operation::delete_node::_delete_node_output::DeleteNodeOutput;
-
 pub use crate::operation::delete_node::_delete_node_input::DeleteNodeInput;
+
+pub use crate::operation::delete_node::_delete_node_output::DeleteNodeOutput;
 
 mod _delete_node_input;
 

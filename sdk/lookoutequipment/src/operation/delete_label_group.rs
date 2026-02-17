@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_label_group
     }
 }
 
-pub use crate::operation::delete_label_group::_delete_label_group_output::DeleteLabelGroupOutput;
-
 pub use crate::operation::delete_label_group::_delete_label_group_input::DeleteLabelGroupInput;
+
+pub use crate::operation::delete_label_group::_delete_label_group_output::DeleteLabelGroupOutput;
 
 mod _delete_label_group_input;
 

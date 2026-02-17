@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_suite_defin
     }
 }
 
-pub use crate::operation::update_suite_definition::_update_suite_definition_output::UpdateSuiteDefinitionOutput;
-
 pub use crate::operation::update_suite_definition::_update_suite_definition_input::UpdateSuiteDefinitionInput;
+
+pub use crate::operation::update_suite_definition::_update_suite_definition_output::UpdateSuiteDefinitionOutput;
 
 mod _update_suite_definition_input;
 

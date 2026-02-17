@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_primary_ema
     }
 }
 
-pub use crate::operation::accept_primary_email_update::_accept_primary_email_update_output::AcceptPrimaryEmailUpdateOutput;
-
 pub use crate::operation::accept_primary_email_update::_accept_primary_email_update_input::AcceptPrimaryEmailUpdateInput;
+
+pub use crate::operation::accept_primary_email_update::_accept_primary_email_update_output::AcceptPrimaryEmailUpdateOutput;
 
 mod _accept_primary_email_update_input;
 

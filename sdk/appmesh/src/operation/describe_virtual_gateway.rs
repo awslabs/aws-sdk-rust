@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_virtual_g
     }
 }
 
-pub use crate::operation::describe_virtual_gateway::_describe_virtual_gateway_output::DescribeVirtualGatewayOutput;
-
 pub use crate::operation::describe_virtual_gateway::_describe_virtual_gateway_input::DescribeVirtualGatewayInput;
+
+pub use crate::operation::describe_virtual_gateway::_describe_virtual_gateway_output::DescribeVirtualGatewayOutput;
 
 mod _describe_virtual_gateway_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_user_status::P
     }
 }
 
-pub use crate::operation::put_user_status::_put_user_status_output::PutUserStatusOutput;
-
 pub use crate::operation::put_user_status::_put_user_status_input::PutUserStatusInput;
+
+pub use crate::operation::put_user_status::_put_user_status_output::PutUserStatusOutput;
 
 mod _put_user_status_input;
 

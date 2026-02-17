@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metrics_e
     }
 }
 
-pub use crate::operation::describe_metrics_export::_describe_metrics_export_output::DescribeMetricsExportOutput;
-
 pub use crate::operation::describe_metrics_export::_describe_metrics_export_input::DescribeMetricsExportInput;
+
+pub use crate::operation::describe_metrics_export::_describe_metrics_export_output::DescribeMetricsExportOutput;
 
 mod _describe_metrics_export_input;
 

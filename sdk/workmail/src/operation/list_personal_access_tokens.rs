@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_personal_acce
     }
 }
 
-pub use crate::operation::list_personal_access_tokens::_list_personal_access_tokens_output::ListPersonalAccessTokensOutput;
-
 pub use crate::operation::list_personal_access_tokens::_list_personal_access_tokens_input::ListPersonalAccessTokensInput;
+
+pub use crate::operation::list_personal_access_tokens::_list_personal_access_tokens_output::ListPersonalAccessTokensOutput;
 
 mod _list_personal_access_tokens_input;
 

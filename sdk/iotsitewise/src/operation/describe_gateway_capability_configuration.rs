@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_gateway_c
     }
 }
 
-pub use crate::operation::describe_gateway_capability_configuration::_describe_gateway_capability_configuration_output::DescribeGatewayCapabilityConfigurationOutput;
-
 pub use crate::operation::describe_gateway_capability_configuration::_describe_gateway_capability_configuration_input::DescribeGatewayCapabilityConfigurationInput;
+
+pub use crate::operation::describe_gateway_capability_configuration::_describe_gateway_capability_configuration_output::DescribeGatewayCapabilityConfigurationOutput;
 
 mod _describe_gateway_capability_configuration_input;
 

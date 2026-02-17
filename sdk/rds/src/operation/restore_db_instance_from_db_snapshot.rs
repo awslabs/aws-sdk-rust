@@ -612,9 +612,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_db_instanc
     }
 }
 
-pub use crate::operation::restore_db_instance_from_db_snapshot::_restore_db_instance_from_db_snapshot_output::RestoreDbInstanceFromDbSnapshotOutput;
-
 pub use crate::operation::restore_db_instance_from_db_snapshot::_restore_db_instance_from_db_snapshot_input::RestoreDbInstanceFromDbSnapshotInput;
+
+pub use crate::operation::restore_db_instance_from_db_snapshot::_restore_db_instance_from_db_snapshot_output::RestoreDbInstanceFromDbSnapshotOutput;
 
 mod _restore_db_instance_from_db_snapshot_input;
 

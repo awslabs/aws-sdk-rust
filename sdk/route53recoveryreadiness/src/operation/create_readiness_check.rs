@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_readiness_c
     }
 }
 
-pub use crate::operation::create_readiness_check::_create_readiness_check_output::CreateReadinessCheckOutput;
-
 pub use crate::operation::create_readiness_check::_create_readiness_check_input::CreateReadinessCheckInput;
+
+pub use crate::operation::create_readiness_check::_create_readiness_check_output::CreateReadinessCheckOutput;
 
 mod _create_readiness_check_input;
 

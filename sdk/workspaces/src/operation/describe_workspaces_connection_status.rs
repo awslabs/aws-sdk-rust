@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workspace
     }
 }
 
-pub use crate::operation::describe_workspaces_connection_status::_describe_workspaces_connection_status_output::DescribeWorkspacesConnectionStatusOutput;
-
 pub use crate::operation::describe_workspaces_connection_status::_describe_workspaces_connection_status_input::DescribeWorkspacesConnectionStatusInput;
+
+pub use crate::operation::describe_workspaces_connection_status::_describe_workspaces_connection_status_output::DescribeWorkspacesConnectionStatusOutput;
 
 mod _describe_workspaces_connection_status_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ai_prompt::Get
     }
 }
 
-pub use crate::operation::get_ai_prompt::_get_ai_prompt_output::GetAiPromptOutput;
-
 pub use crate::operation::get_ai_prompt::_get_ai_prompt_input::GetAiPromptInput;
+
+pub use crate::operation::get_ai_prompt::_get_ai_prompt_output::GetAiPromptOutput;
 
 mod _get_ai_prompt_input;
 

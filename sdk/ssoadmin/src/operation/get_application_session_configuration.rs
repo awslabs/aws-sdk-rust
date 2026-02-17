@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_se
     }
 }
 
-pub use crate::operation::get_application_session_configuration::_get_application_session_configuration_output::GetApplicationSessionConfigurationOutput;
-
 pub use crate::operation::get_application_session_configuration::_get_application_session_configuration_input::GetApplicationSessionConfigurationInput;
+
+pub use crate::operation::get_application_session_configuration::_get_application_session_configuration_output::GetApplicationSessionConfigurationOutput;
 
 mod _get_application_session_configuration_input;
 

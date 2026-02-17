@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_certi
     }
 }
 
-pub use crate::operation::disassociate_certificate::_disassociate_certificate_output::DisassociateCertificateOutput;
-
 pub use crate::operation::disassociate_certificate::_disassociate_certificate_input::DisassociateCertificateInput;
+
+pub use crate::operation::disassociate_certificate::_disassociate_certificate_output::DisassociateCertificateOutput;
 
 mod _disassociate_certificate_input;
 

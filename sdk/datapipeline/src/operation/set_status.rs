@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_status::SetSta
     }
 }
 
-pub use crate::operation::set_status::_set_status_output::SetStatusOutput;
-
 pub use crate::operation::set_status::_set_status_input::SetStatusInput;
+
+pub use crate::operation::set_status::_set_status_output::SetStatusOutput;
 
 mod _set_status_input;
 

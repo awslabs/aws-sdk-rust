@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_icd10_cm_inf
     }
 }
 
-pub use crate::operation::start_icd10_cm_inference_job::_start_icd10_cm_inference_job_output::StartIcd10CmInferenceJobOutput;
-
 pub use crate::operation::start_icd10_cm_inference_job::_start_icd10_cm_inference_job_input::StartIcd10CmInferenceJobInput;
+
+pub use crate::operation::start_icd10_cm_inference_job::_start_icd10_cm_inference_job_output::StartIcd10CmInferenceJobOutput;
 
 mod _start_icd10_cm_inference_job_input;
 

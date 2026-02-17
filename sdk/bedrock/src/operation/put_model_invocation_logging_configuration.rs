@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_model_invocation_logging_configuration::_put_model_invocation_logging_configuration_output::PutModelInvocationLoggingConfigurationOutput;
-
 pub use crate::operation::put_model_invocation_logging_configuration::_put_model_invocation_logging_configuration_input::PutModelInvocationLoggingConfigurationInput;
+
+pub use crate::operation::put_model_invocation_logging_configuration::_put_model_invocation_logging_configuration_output::PutModelInvocationLoggingConfigurationOutput;
 
 mod _put_model_invocation_logging_configuration_input;
 

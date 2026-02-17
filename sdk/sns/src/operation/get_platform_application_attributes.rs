@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_platform_appli
     }
 }
 
-pub use crate::operation::get_platform_application_attributes::_get_platform_application_attributes_output::GetPlatformApplicationAttributesOutput;
-
 pub use crate::operation::get_platform_application_attributes::_get_platform_application_attributes_input::GetPlatformApplicationAttributesInput;
+
+pub use crate::operation::get_platform_application_attributes::_get_platform_application_attributes_output::GetPlatformApplicationAttributesOutput;
 
 mod _get_platform_application_attributes_input;
 

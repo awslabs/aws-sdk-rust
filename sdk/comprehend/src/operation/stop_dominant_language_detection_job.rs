@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_dominant_lang
     }
 }
 
-pub use crate::operation::stop_dominant_language_detection_job::_stop_dominant_language_detection_job_output::StopDominantLanguageDetectionJobOutput;
-
 pub use crate::operation::stop_dominant_language_detection_job::_stop_dominant_language_detection_job_input::StopDominantLanguageDetectionJobInput;
+
+pub use crate::operation::stop_dominant_language_detection_job::_stop_dominant_language_detection_job_output::StopDominantLanguageDetectionJobOutput;
 
 mod _stop_dominant_language_detection_job_input;
 

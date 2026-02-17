@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_restore_tes
     }
 }
 
-pub use crate::operation::update_restore_testing_plan::_update_restore_testing_plan_output::UpdateRestoreTestingPlanOutput;
-
 pub use crate::operation::update_restore_testing_plan::_update_restore_testing_plan_input::UpdateRestoreTestingPlanInput;
+
+pub use crate::operation::update_restore_testing_plan::_update_restore_testing_plan_output::UpdateRestoreTestingPlanOutput;
 
 mod _update_restore_testing_plan_input;
 

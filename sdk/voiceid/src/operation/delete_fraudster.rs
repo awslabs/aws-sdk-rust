@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fraudster::
     }
 }
 
-pub use crate::operation::delete_fraudster::_delete_fraudster_output::DeleteFraudsterOutput;
-
 pub use crate::operation::delete_fraudster::_delete_fraudster_input::DeleteFraudsterInput;
+
+pub use crate::operation::delete_fraudster::_delete_fraudster_output::DeleteFraudsterOutput;
 
 mod _delete_fraudster_input;
 

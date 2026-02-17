@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_protectio
     }
 }
 
-pub use crate::operation::describe_protection_group::_describe_protection_group_output::DescribeProtectionGroupOutput;
-
 pub use crate::operation::describe_protection_group::_describe_protection_group_input::DescribeProtectionGroupInput;
+
+pub use crate::operation::describe_protection_group::_describe_protection_group_output::DescribeProtectionGroupOutput;
 
 mod _describe_protection_group_input;
 

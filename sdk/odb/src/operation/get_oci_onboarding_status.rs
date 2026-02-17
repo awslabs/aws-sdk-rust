@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_oci_onboarding
     }
 }
 
-pub use crate::operation::get_oci_onboarding_status::_get_oci_onboarding_status_output::GetOciOnboardingStatusOutput;
-
 pub use crate::operation::get_oci_onboarding_status::_get_oci_onboarding_status_input::GetOciOnboardingStatusInput;
+
+pub use crate::operation::get_oci_onboarding_status::_get_oci_onboarding_status_output::GetOciOnboardingStatusOutput;
 
 mod _get_oci_onboarding_status_input;
 

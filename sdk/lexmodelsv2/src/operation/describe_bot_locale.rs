@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bot_local
     }
 }
 
-pub use crate::operation::describe_bot_locale::_describe_bot_locale_output::DescribeBotLocaleOutput;
-
 pub use crate::operation::describe_bot_locale::_describe_bot_locale_input::DescribeBotLocaleInput;
+
+pub use crate::operation::describe_bot_locale::_describe_bot_locale_output::DescribeBotLocaleOutput;
 
 mod _describe_bot_locale_input;
 

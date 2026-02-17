@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_direct_query_
     }
 }
 
-pub use crate::operation::list_direct_query_data_sources::_list_direct_query_data_sources_output::ListDirectQueryDataSourcesOutput;
-
 pub use crate::operation::list_direct_query_data_sources::_list_direct_query_data_sources_input::ListDirectQueryDataSourcesInput;
+
+pub use crate::operation::list_direct_query_data_sources::_list_direct_query_data_sources_output::ListDirectQueryDataSourcesOutput;
 
 mod _list_direct_query_data_sources_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_action_targ
     }
 }
 
-pub use crate::operation::create_action_target::_create_action_target_output::CreateActionTargetOutput;
-
 pub use crate::operation::create_action_target::_create_action_target_input::CreateActionTargetInput;
+
+pub use crate::operation::create_action_target::_create_action_target_output::CreateActionTargetOutput;
 
 mod _create_action_target_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_challenge_pass
     }
 }
 
-pub use crate::operation::get_challenge_password::_get_challenge_password_output::GetChallengePasswordOutput;
-
 pub use crate::operation::get_challenge_password::_get_challenge_password_input::GetChallengePasswordInput;
+
+pub use crate::operation::get_challenge_password::_get_challenge_password_output::GetChallengePasswordOutput;
 
 mod _get_challenge_password_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_as_provisio
     }
 }
 
-pub use crate::operation::import_as_provisioned_product::_import_as_provisioned_product_output::ImportAsProvisionedProductOutput;
-
 pub use crate::operation::import_as_provisioned_product::_import_as_provisioned_product_input::ImportAsProvisionedProductInput;
+
+pub use crate::operation::import_as_provisioned_product::_import_as_provisioned_product_output::ImportAsProvisionedProductOutput;
 
 mod _import_as_provisioned_product_input;
 

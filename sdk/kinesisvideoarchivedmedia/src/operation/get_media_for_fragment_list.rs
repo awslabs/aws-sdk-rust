@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_media_for_frag
     }
 }
 
-pub use crate::operation::get_media_for_fragment_list::_get_media_for_fragment_list_output::GetMediaForFragmentListOutput;
-
 pub use crate::operation::get_media_for_fragment_list::_get_media_for_fragment_list_input::GetMediaForFragmentListInput;
+
+pub use crate::operation::get_media_for_fragment_list::_get_media_for_fragment_list_output::GetMediaForFragmentListOutput;
 
 mod _get_media_for_fragment_list_input;
 

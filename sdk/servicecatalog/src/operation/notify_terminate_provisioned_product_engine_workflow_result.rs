@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::notify_terminate_provisioned_product_engine_workflow_result::_notify_terminate_provisioned_product_engine_workflow_result_output::NotifyTerminateProvisionedProductEngineWorkflowResultOutput;
-
 pub use crate::operation::notify_terminate_provisioned_product_engine_workflow_result::_notify_terminate_provisioned_product_engine_workflow_result_input::NotifyTerminateProvisionedProductEngineWorkflowResultInput;
+
+pub use crate::operation::notify_terminate_provisioned_product_engine_workflow_result::_notify_terminate_provisioned_product_engine_workflow_result_output::NotifyTerminateProvisionedProductEngineWorkflowResultOutput;
 
 mod _notify_terminate_provisioned_product_engine_workflow_result_input;
 

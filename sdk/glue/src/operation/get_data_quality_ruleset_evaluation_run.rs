@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_quality_r
     }
 }
 
-pub use crate::operation::get_data_quality_ruleset_evaluation_run::_get_data_quality_ruleset_evaluation_run_output::GetDataQualityRulesetEvaluationRunOutput;
-
 pub use crate::operation::get_data_quality_ruleset_evaluation_run::_get_data_quality_ruleset_evaluation_run_input::GetDataQualityRulesetEvaluationRunInput;
+
+pub use crate::operation::get_data_quality_ruleset_evaluation_run::_get_data_quality_ruleset_evaluation_run_output::GetDataQualityRulesetEvaluationRunOutput;
 
 mod _get_data_quality_ruleset_evaluation_run_input;
 

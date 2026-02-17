@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::predict_q_app::Pre
     }
 }
 
-pub use crate::operation::predict_q_app::_predict_q_app_output::PredictQAppOutput;
-
 pub use crate::operation::predict_q_app::_predict_q_app_input::PredictQAppInput;
+
+pub use crate::operation::predict_q_app::_predict_q_app_output::PredictQAppOutput;
 
 mod _predict_q_app_input;
 

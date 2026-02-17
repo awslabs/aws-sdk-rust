@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resend_operation_a
     }
 }
 
-pub use crate::operation::resend_operation_authorization::_resend_operation_authorization_output::ResendOperationAuthorizationOutput;
-
 pub use crate::operation::resend_operation_authorization::_resend_operation_authorization_input::ResendOperationAuthorizationInput;
+
+pub use crate::operation::resend_operation_authorization::_resend_operation_authorization_output::ResendOperationAuthorizationOutput;
 
 mod _resend_operation_authorization_input;
 

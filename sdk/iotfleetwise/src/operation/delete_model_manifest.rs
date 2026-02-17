@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_model_manif
     }
 }
 
-pub use crate::operation::delete_model_manifest::_delete_model_manifest_output::DeleteModelManifestOutput;
-
 pub use crate::operation::delete_model_manifest::_delete_model_manifest_input::DeleteModelManifestInput;
+
+pub use crate::operation::delete_model_manifest::_delete_model_manifest_output::DeleteModelManifestOutput;
 
 mod _delete_model_manifest_input;
 

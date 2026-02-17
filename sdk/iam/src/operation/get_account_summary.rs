@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_summar
     }
 }
 
-pub use crate::operation::get_account_summary::_get_account_summary_output::GetAccountSummaryOutput;
-
 pub use crate::operation::get_account_summary::_get_account_summary_input::GetAccountSummaryInput;
+
+pub use crate::operation::get_account_summary::_get_account_summary_output::GetAccountSummaryOutput;
 
 mod _get_account_summary_input;
 

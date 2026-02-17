@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_distributions_by_origin_request_policy_id::_list_distributions_by_origin_request_policy_id_output::ListDistributionsByOriginRequestPolicyIdOutput;
-
 pub use crate::operation::list_distributions_by_origin_request_policy_id::_list_distributions_by_origin_request_policy_id_input::ListDistributionsByOriginRequestPolicyIdInput;
+
+pub use crate::operation::list_distributions_by_origin_request_policy_id::_list_distributions_by_origin_request_policy_id_output::ListDistributionsByOriginRequestPolicyIdOutput;
 
 mod _list_distributions_by_origin_request_policy_id_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_consumable_re
     }
 }
 
-pub use crate::operation::list_consumable_resources::_list_consumable_resources_output::ListConsumableResourcesOutput;
-
 pub use crate::operation::list_consumable_resources::_list_consumable_resources_input::ListConsumableResourcesInput;
+
+pub use crate::operation::list_consumable_resources::_list_consumable_resources_output::ListConsumableResourcesOutput;
 
 mod _list_consumable_resources_input;
 

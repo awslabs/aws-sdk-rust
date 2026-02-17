@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_record::
     }
 }
 
-pub use crate::operation::batch_get_record::_batch_get_record_output::BatchGetRecordOutput;
-
 pub use crate::operation::batch_get_record::_batch_get_record_input::BatchGetRecordInput;
+
+pub use crate::operation::batch_get_record::_batch_get_record_output::BatchGetRecordOutput;
 
 mod _batch_get_record_input;
 

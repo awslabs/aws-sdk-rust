@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_regional_buck
     }
 }
 
-pub use crate::operation::list_regional_buckets::_list_regional_buckets_output::ListRegionalBucketsOutput;
-
 pub use crate::operation::list_regional_buckets::_list_regional_buckets_input::ListRegionalBucketsInput;
+
+pub use crate::operation::list_regional_buckets::_list_regional_buckets_output::ListRegionalBucketsOutput;
 
 mod _list_regional_buckets_input;
 

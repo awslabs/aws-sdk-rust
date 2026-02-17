@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_domain_dkim
     }
 }
 
-pub use crate::operation::verify_domain_dkim::_verify_domain_dkim_output::VerifyDomainDkimOutput;
-
 pub use crate::operation::verify_domain_dkim::_verify_domain_dkim_input::VerifyDomainDkimInput;
+
+pub use crate::operation::verify_domain_dkim::_verify_domain_dkim_output::VerifyDomainDkimOutput;
 
 mod _verify_domain_dkim_input;
 

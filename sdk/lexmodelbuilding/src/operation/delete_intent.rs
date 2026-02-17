@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_intent::Del
     }
 }
 
-pub use crate::operation::delete_intent::_delete_intent_output::DeleteIntentOutput;
-
 pub use crate::operation::delete_intent::_delete_intent_input::DeleteIntentInput;
+
+pub use crate::operation::delete_intent::_delete_intent_output::DeleteIntentOutput;
 
 mod _delete_intent_input;
 

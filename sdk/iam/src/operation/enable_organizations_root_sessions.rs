@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_organizatio
     }
 }
 
-pub use crate::operation::enable_organizations_root_sessions::_enable_organizations_root_sessions_output::EnableOrganizationsRootSessionsOutput;
-
 pub use crate::operation::enable_organizations_root_sessions::_enable_organizations_root_sessions_input::EnableOrganizationsRootSessionsInput;
+
+pub use crate::operation::enable_organizations_root_sessions::_enable_organizations_root_sessions_output::EnableOrganizationsRootSessionsOutput;
 
 mod _enable_organizations_root_sessions_input;
 

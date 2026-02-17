@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_server_certi
     }
 }
 
-pub use crate::operation::untag_server_certificate::_untag_server_certificate_output::UntagServerCertificateOutput;
-
 pub use crate::operation::untag_server_certificate::_untag_server_certificate_input::UntagServerCertificateInput;
+
+pub use crate::operation::untag_server_certificate::_untag_server_certificate_output::UntagServerCertificateOutput;
 
 mod _untag_server_certificate_input;
 

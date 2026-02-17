@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_routes::ListR
     }
 }
 
-pub use crate::operation::list_routes::_list_routes_output::ListRoutesOutput;
-
 pub use crate::operation::list_routes::_list_routes_input::ListRoutesInput;
+
+pub use crate::operation::list_routes::_list_routes_output::ListRoutesOutput;
 
 mod _list_routes_input;
 

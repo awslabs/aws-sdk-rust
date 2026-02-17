@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_template_ac
     }
 }
 
-pub use crate::operation::update_template_active_version::_update_template_active_version_output::UpdateTemplateActiveVersionOutput;
-
 pub use crate::operation::update_template_active_version::_update_template_active_version_input::UpdateTemplateActiveVersionInput;
+
+pub use crate::operation::update_template_active_version::_update_template_active_version_output::UpdateTemplateActiveVersionOutput;
 
 mod _update_template_active_version_input;
 

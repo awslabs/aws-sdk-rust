@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_sentiment_de
     }
 }
 
-pub use crate::operation::start_sentiment_detection_job::_start_sentiment_detection_job_output::StartSentimentDetectionJobOutput;
-
 pub use crate::operation::start_sentiment_detection_job::_start_sentiment_detection_job_input::StartSentimentDetectionJobInput;
+
+pub use crate::operation::start_sentiment_detection_job::_start_sentiment_detection_job_output::StartSentimentDetectionJobOutput;
 
 mod _start_sentiment_detection_job_input;
 

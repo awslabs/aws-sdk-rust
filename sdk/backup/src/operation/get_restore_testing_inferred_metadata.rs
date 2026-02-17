@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_restore_testin
     }
 }
 
-pub use crate::operation::get_restore_testing_inferred_metadata::_get_restore_testing_inferred_metadata_output::GetRestoreTestingInferredMetadataOutput;
-
 pub use crate::operation::get_restore_testing_inferred_metadata::_get_restore_testing_inferred_metadata_input::GetRestoreTestingInferredMetadataInput;
+
+pub use crate::operation::get_restore_testing_inferred_metadata::_get_restore_testing_inferred_metadata_output::GetRestoreTestingInferredMetadataOutput;
 
 mod _get_restore_testing_inferred_metadata_input;
 

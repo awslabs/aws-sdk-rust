@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_fast_reset
     }
 }
 
-pub use crate::operation::execute_fast_reset::_execute_fast_reset_output::ExecuteFastResetOutput;
-
 pub use crate::operation::execute_fast_reset::_execute_fast_reset_input::ExecuteFastResetInput;
+
+pub use crate::operation::execute_fast_reset::_execute_fast_reset_output::ExecuteFastResetOutput;
 
 mod _execute_fast_reset_input;
 

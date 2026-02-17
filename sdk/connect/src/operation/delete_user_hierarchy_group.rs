@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_hierar
     }
 }
 
-pub use crate::operation::delete_user_hierarchy_group::_delete_user_hierarchy_group_output::DeleteUserHierarchyGroupOutput;
-
 pub use crate::operation::delete_user_hierarchy_group::_delete_user_hierarchy_group_input::DeleteUserHierarchyGroupInput;
+
+pub use crate::operation::delete_user_hierarchy_group::_delete_user_hierarchy_group_output::DeleteUserHierarchyGroupOutput;
 
 mod _delete_user_hierarchy_group_input;
 

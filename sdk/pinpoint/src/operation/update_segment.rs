@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_segment::Up
     }
 }
 
-pub use crate::operation::update_segment::_update_segment_output::UpdateSegmentOutput;
-
 pub use crate::operation::update_segment::_update_segment_input::UpdateSegmentInput;
+
+pub use crate::operation::update_segment::_update_segment_output::UpdateSegmentOutput;
 
 mod _update_segment_input;
 

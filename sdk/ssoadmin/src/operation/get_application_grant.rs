@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_gr
     }
 }
 
-pub use crate::operation::get_application_grant::_get_application_grant_output::GetApplicationGrantOutput;
-
 pub use crate::operation::get_application_grant::_get_application_grant_input::GetApplicationGrantInput;
+
+pub use crate::operation::get_application_grant::_get_application_grant_output::GetApplicationGrantOutput;
 
 mod _get_application_grant_input;
 

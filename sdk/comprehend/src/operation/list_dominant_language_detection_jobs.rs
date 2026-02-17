@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dominant_lang
     }
 }
 
-pub use crate::operation::list_dominant_language_detection_jobs::_list_dominant_language_detection_jobs_output::ListDominantLanguageDetectionJobsOutput;
-
 pub use crate::operation::list_dominant_language_detection_jobs::_list_dominant_language_detection_jobs_input::ListDominantLanguageDetectionJobsInput;
+
+pub use crate::operation::list_dominant_language_detection_jobs::_list_dominant_language_detection_jobs_output::ListDominantLanguageDetectionJobsOutput;
 
 mod _list_dominant_language_detection_jobs_input;
 

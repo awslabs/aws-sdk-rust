@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_render_templa
     }
 }
 
-pub use crate::operation::test_render_template::_test_render_template_output::TestRenderTemplateOutput;
-
 pub use crate::operation::test_render_template::_test_render_template_input::TestRenderTemplateInput;
+
+pub use crate::operation::test_render_template::_test_render_template_output::TestRenderTemplateOutput;
 
 mod _test_render_template_input;
 

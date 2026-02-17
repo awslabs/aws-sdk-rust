@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_channel_m
     }
 }
 
-pub use crate::operation::describe_channel_membership::_describe_channel_membership_output::DescribeChannelMembershipOutput;
-
 pub use crate::operation::describe_channel_membership::_describe_channel_membership_input::DescribeChannelMembershipInput;
+
+pub use crate::operation::describe_channel_membership::_describe_channel_membership_output::DescribeChannelMembershipOutput;
 
 mod _describe_channel_membership_input;
 

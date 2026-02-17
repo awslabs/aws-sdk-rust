@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_global_resou
     }
 }
 
-pub use crate::operation::untag_global_resource::_untag_global_resource_output::UntagGlobalResourceOutput;
-
 pub use crate::operation::untag_global_resource::_untag_global_resource_input::UntagGlobalResourceInput;
+
+pub use crate::operation::untag_global_resource::_untag_global_resource_output::UntagGlobalResourceOutput;
 
 mod _untag_global_resource_input;
 

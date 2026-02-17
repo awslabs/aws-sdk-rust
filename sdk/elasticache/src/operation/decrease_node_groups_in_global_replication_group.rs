@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::decrease_node_groups_in_global_replication_group::_decrease_node_groups_in_global_replication_group_output::DecreaseNodeGroupsInGlobalReplicationGroupOutput;
-
 pub use crate::operation::decrease_node_groups_in_global_replication_group::_decrease_node_groups_in_global_replication_group_input::DecreaseNodeGroupsInGlobalReplicationGroupInput;
+
+pub use crate::operation::decrease_node_groups_in_global_replication_group::_decrease_node_groups_in_global_replication_group_output::DecreaseNodeGroupsInGlobalReplicationGroupOutput;
 
 mod _decrease_node_groups_in_global_replication_group_input;
 

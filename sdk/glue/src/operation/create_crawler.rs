@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_crawler::Cr
     }
 }
 
-pub use crate::operation::create_crawler::_create_crawler_output::CreateCrawlerOutput;
-
 pub use crate::operation::create_crawler::_create_crawler_input::CreateCrawlerInput;
+
+pub use crate::operation::create_crawler::_create_crawler_output::CreateCrawlerOutput;
 
 mod _create_crawler_input;
 

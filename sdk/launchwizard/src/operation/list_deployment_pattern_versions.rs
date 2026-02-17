@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployment_pa
     }
 }
 
-pub use crate::operation::list_deployment_pattern_versions::_list_deployment_pattern_versions_output::ListDeploymentPatternVersionsOutput;
-
 pub use crate::operation::list_deployment_pattern_versions::_list_deployment_pattern_versions_input::ListDeploymentPatternVersionsInput;
+
+pub use crate::operation::list_deployment_pattern_versions::_list_deployment_pattern_versions_output::ListDeploymentPatternVersionsOutput;
 
 mod _list_deployment_pattern_versions_input;
 

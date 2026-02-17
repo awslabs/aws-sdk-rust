@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_forms::Expo
     }
 }
 
-pub use crate::operation::export_forms::_export_forms_output::ExportFormsOutput;
-
 pub use crate::operation::export_forms::_export_forms_input::ExportFormsInput;
+
+pub use crate::operation::export_forms::_export_forms_output::ExportFormsOutput;
 
 mod _export_forms_input;
 

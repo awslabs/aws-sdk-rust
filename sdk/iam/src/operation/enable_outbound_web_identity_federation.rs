@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_outbound_we
     }
 }
 
-pub use crate::operation::enable_outbound_web_identity_federation::_enable_outbound_web_identity_federation_output::EnableOutboundWebIdentityFederationOutput;
-
 pub use crate::operation::enable_outbound_web_identity_federation::_enable_outbound_web_identity_federation_input::EnableOutboundWebIdentityFederationInput;
+
+pub use crate::operation::enable_outbound_web_identity_federation::_enable_outbound_web_identity_federation_output::EnableOutboundWebIdentityFederationOutput;
 
 mod _enable_outbound_web_identity_federation_input;
 

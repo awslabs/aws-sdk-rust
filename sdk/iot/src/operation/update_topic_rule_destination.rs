@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_topic_rule_
     }
 }
 
-pub use crate::operation::update_topic_rule_destination::_update_topic_rule_destination_output::UpdateTopicRuleDestinationOutput;
-
 pub use crate::operation::update_topic_rule_destination::_update_topic_rule_destination_input::UpdateTopicRuleDestinationInput;
+
+pub use crate::operation::update_topic_rule_destination::_update_topic_rule_destination_output::UpdateTopicRuleDestinationOutput;
 
 mod _update_topic_rule_destination_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_memor
     }
 }
 
-pub use crate::operation::batch_create_memory_records::_batch_create_memory_records_output::BatchCreateMemoryRecordsOutput;
-
 pub use crate::operation::batch_create_memory_records::_batch_create_memory_records_input::BatchCreateMemoryRecordsInput;
+
+pub use crate::operation::batch_create_memory_records::_batch_create_memory_records_output::BatchCreateMemoryRecordsOutput;
 
 mod _batch_create_memory_records_input;
 

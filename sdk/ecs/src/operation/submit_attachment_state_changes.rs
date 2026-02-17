@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_attachment_
     }
 }
 
-pub use crate::operation::submit_attachment_state_changes::_submit_attachment_state_changes_output::SubmitAttachmentStateChangesOutput;
-
 pub use crate::operation::submit_attachment_state_changes::_submit_attachment_state_changes_input::SubmitAttachmentStateChangesInput;
+
+pub use crate::operation::submit_attachment_state_changes::_submit_attachment_state_changes_output::SubmitAttachmentStateChangesOutput;
 
 mod _submit_attachment_state_changes_input;
 

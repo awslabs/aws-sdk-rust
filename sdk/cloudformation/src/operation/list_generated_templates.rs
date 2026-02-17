@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_generated_tem
     }
 }
 
-pub use crate::operation::list_generated_templates::_list_generated_templates_output::ListGeneratedTemplatesOutput;
-
 pub use crate::operation::list_generated_templates::_list_generated_templates_input::ListGeneratedTemplatesInput;
+
+pub use crate::operation::list_generated_templates::_list_generated_templates_output::ListGeneratedTemplatesOutput;
 
 mod _list_generated_templates_input;
 

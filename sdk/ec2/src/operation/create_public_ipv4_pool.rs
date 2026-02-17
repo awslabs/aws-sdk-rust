@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_public_ipv4
     }
 }
 
-pub use crate::operation::create_public_ipv4_pool::_create_public_ipv4_pool_output::CreatePublicIpv4PoolOutput;
-
 pub use crate::operation::create_public_ipv4_pool::_create_public_ipv4_pool_input::CreatePublicIpv4PoolInput;
+
+pub use crate::operation::create_public_ipv4_pool::_create_public_ipv4_pool_output::CreatePublicIpv4PoolOutput;
 
 mod _create_public_ipv4_pool_input;
 

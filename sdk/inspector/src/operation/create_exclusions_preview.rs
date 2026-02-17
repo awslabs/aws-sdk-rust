@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_exclusions_
     }
 }
 
-pub use crate::operation::create_exclusions_preview::_create_exclusions_preview_output::CreateExclusionsPreviewOutput;
-
 pub use crate::operation::create_exclusions_preview::_create_exclusions_preview_input::CreateExclusionsPreviewInput;
+
+pub use crate::operation::create_exclusions_preview::_create_exclusions_preview_output::CreateExclusionsPreviewOutput;
 
 mod _create_exclusions_preview_input;
 

@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_spot_inst
     }
 }
 
-pub use crate::operation::describe_spot_instance_requests::_describe_spot_instance_requests_output::DescribeSpotInstanceRequestsOutput;
-
 pub use crate::operation::describe_spot_instance_requests::_describe_spot_instance_requests_input::DescribeSpotInstanceRequestsInput;
+
+pub use crate::operation::describe_spot_instance_requests::_describe_spot_instance_requests_output::DescribeSpotInstanceRequestsOutput;
 
 mod _describe_spot_instance_requests_input;
 

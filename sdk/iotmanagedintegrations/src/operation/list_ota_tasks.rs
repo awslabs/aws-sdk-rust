@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ota_tasks::Li
     }
 }
 
-pub use crate::operation::list_ota_tasks::_list_ota_tasks_output::ListOtaTasksOutput;
-
 pub use crate::operation::list_ota_tasks::_list_ota_tasks_input::ListOtaTasksInput;
+
+pub use crate::operation::list_ota_tasks::_list_ota_tasks_output::ListOtaTasksOutput;
 
 mod _list_ota_tasks_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_directories::
     }
 }
 
-pub use crate::operation::list_directories::_list_directories_output::ListDirectoriesOutput;
-
 pub use crate::operation::list_directories::_list_directories_input::ListDirectoriesInput;
+
+pub use crate::operation::list_directories::_list_directories_output::ListDirectoriesOutput;
 
 mod _list_directories_input;
 

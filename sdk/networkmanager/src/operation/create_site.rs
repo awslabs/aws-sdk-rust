@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_site::Creat
     }
 }
 
-pub use crate::operation::create_site::_create_site_output::CreateSiteOutput;
-
 pub use crate::operation::create_site::_create_site_input::CreateSiteInput;
+
+pub use crate::operation::create_site::_create_site_output::CreateSiteOutput;
 
 mod _create_site_input;
 

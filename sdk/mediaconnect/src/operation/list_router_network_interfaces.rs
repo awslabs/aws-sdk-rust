@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_router_networ
     }
 }
 
-pub use crate::operation::list_router_network_interfaces::_list_router_network_interfaces_output::ListRouterNetworkInterfacesOutput;
-
 pub use crate::operation::list_router_network_interfaces::_list_router_network_interfaces_input::ListRouterNetworkInterfacesInput;
+
+pub use crate::operation::list_router_network_interfaces::_list_router_network_interfaces_output::ListRouterNetworkInterfacesOutput;
 
 mod _list_router_network_interfaces_input;
 

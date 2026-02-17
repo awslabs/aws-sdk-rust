@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_key_
     }
 }
 
-pub use crate::operation::delete_custom_key_store::_delete_custom_key_store_output::DeleteCustomKeyStoreOutput;
-
 pub use crate::operation::delete_custom_key_store::_delete_custom_key_store_input::DeleteCustomKeyStoreInput;
+
+pub use crate::operation::delete_custom_key_store::_delete_custom_key_store_output::DeleteCustomKeyStoreOutput;
 
 mod _delete_custom_key_store_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_migration
     }
 }
 
-pub use crate::operation::complete_migration::_complete_migration_output::CompleteMigrationOutput;
-
 pub use crate::operation::complete_migration::_complete_migration_input::CompleteMigrationInput;
+
+pub use crate::operation::complete_migration::_complete_migration_output::CompleteMigrationOutput;
 
 mod _complete_migration_input;
 

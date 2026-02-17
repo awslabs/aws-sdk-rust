@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transformer_jo
     }
 }
 
-pub use crate::operation::get_transformer_job::_get_transformer_job_output::GetTransformerJobOutput;
-
 pub use crate::operation::get_transformer_job::_get_transformer_job_input::GetTransformerJobInput;
+
+pub use crate::operation::get_transformer_job::_get_transformer_job_output::GetTransformerJobOutput;
 
 mod _get_transformer_job_input;
 

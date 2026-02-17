@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_environme
     }
 }
 
-pub use crate::operation::describe_environment_managed_actions::_describe_environment_managed_actions_output::DescribeEnvironmentManagedActionsOutput;
-
 pub use crate::operation::describe_environment_managed_actions::_describe_environment_managed_actions_input::DescribeEnvironmentManagedActionsInput;
+
+pub use crate::operation::describe_environment_managed_actions::_describe_environment_managed_actions_output::DescribeEnvironmentManagedActionsOutput;
 
 mod _describe_environment_managed_actions_input;
 

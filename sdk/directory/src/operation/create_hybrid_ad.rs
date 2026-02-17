@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hybrid_ad::
     }
 }
 
-pub use crate::operation::create_hybrid_ad::_create_hybrid_ad_output::CreateHybridAdOutput;
-
 pub use crate::operation::create_hybrid_ad::_create_hybrid_ad_input::CreateHybridAdInput;
+
+pub use crate::operation::create_hybrid_ad::_create_hybrid_ad_output::CreateHybridAdOutput;
 
 mod _create_hybrid_ad_input;
 

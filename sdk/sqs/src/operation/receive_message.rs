@@ -490,9 +490,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::receive_message::R
     }
 }
 
-pub use crate::operation::receive_message::_receive_message_output::ReceiveMessageOutput;
-
 pub use crate::operation::receive_message::_receive_message_input::ReceiveMessageInput;
+
+pub use crate::operation::receive_message::_receive_message_output::ReceiveMessageOutput;
 
 mod _receive_message_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_str
     }
 }
 
-pub use crate::operation::get_deployment_strategy::_get_deployment_strategy_output::GetDeploymentStrategyOutput;
-
 pub use crate::operation::get_deployment_strategy::_get_deployment_strategy_input::GetDeploymentStrategyInput;
+
+pub use crate::operation::get_deployment_strategy::_get_deployment_strategy_output::GetDeploymentStrategyOutput;
 
 mod _get_deployment_strategy_input;
 

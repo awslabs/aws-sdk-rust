@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_index_field
     }
 }
 
-pub use crate::operation::delete_index_field::_delete_index_field_output::DeleteIndexFieldOutput;
-
 pub use crate::operation::delete_index_field::_delete_index_field_input::DeleteIndexFieldInput;
+
+pub use crate::operation::delete_index_field::_delete_index_field_output::DeleteIndexFieldOutput;
 
 mod _delete_index_field_input;
 

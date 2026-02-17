@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_caller_access
     }
 }
 
-pub use crate::operation::list_caller_access_grants::_list_caller_access_grants_output::ListCallerAccessGrantsOutput;
-
 pub use crate::operation::list_caller_access_grants::_list_caller_access_grants_input::ListCallerAccessGrantsInput;
+
+pub use crate::operation::list_caller_access_grants::_list_caller_access_grants_output::ListCallerAccessGrantsOutput;
 
 mod _list_caller_access_grants_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_policy_gener
     }
 }
 
-pub use crate::operation::start_policy_generation::_start_policy_generation_output::StartPolicyGenerationOutput;
-
 pub use crate::operation::start_policy_generation::_start_policy_generation_input::StartPolicyGenerationInput;
+
+pub use crate::operation::start_policy_generation::_start_policy_generation_output::StartPolicyGenerationOutput;
 
 mod _start_policy_generation_input;
 

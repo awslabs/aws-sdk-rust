@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tenants::List
     }
 }
 
-pub use crate::operation::list_tenants::_list_tenants_output::ListTenantsOutput;
-
 pub use crate::operation::list_tenants::_list_tenants_input::ListTenantsInput;
+
+pub use crate::operation::list_tenants::_list_tenants_output::ListTenantsOutput;
 
 mod _list_tenants_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_conflicting_a
     }
 }
 
-pub use crate::operation::list_conflicting_aliases::_list_conflicting_aliases_output::ListConflictingAliasesOutput;
-
 pub use crate::operation::list_conflicting_aliases::_list_conflicting_aliases_input::ListConflictingAliasesInput;
+
+pub use crate::operation::list_conflicting_aliases::_list_conflicting_aliases_output::ListConflictingAliasesOutput;
 
 mod _list_conflicting_aliases_input;
 

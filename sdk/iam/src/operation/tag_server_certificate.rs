@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_server_certifi
     }
 }
 
-pub use crate::operation::tag_server_certificate::_tag_server_certificate_output::TagServerCertificateOutput;
-
 pub use crate::operation::tag_server_certificate::_tag_server_certificate_input::TagServerCertificateInput;
+
+pub use crate::operation::tag_server_certificate::_tag_server_certificate_output::TagServerCertificateOutput;
 
 mod _tag_server_certificate_input;
 

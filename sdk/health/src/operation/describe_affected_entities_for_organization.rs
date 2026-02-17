@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_affected_entities_for_organization::_describe_affected_entities_for_organization_output::DescribeAffectedEntitiesForOrganizationOutput;
-
 pub use crate::operation::describe_affected_entities_for_organization::_describe_affected_entities_for_organization_input::DescribeAffectedEntitiesForOrganizationInput;
+
+pub use crate::operation::describe_affected_entities_for_organization::_describe_affected_entities_for_organization_output::DescribeAffectedEntitiesForOrganizationOutput;
 
 mod _describe_affected_entities_for_organization_input;
 

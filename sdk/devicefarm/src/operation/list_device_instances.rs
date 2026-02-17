@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_instan
     }
 }
 
-pub use crate::operation::list_device_instances::_list_device_instances_output::ListDeviceInstancesOutput;
-
 pub use crate::operation::list_device_instances::_list_device_instances_input::ListDeviceInstancesInput;
+
+pub use crate::operation::list_device_instances::_list_device_instances_output::ListDeviceInstancesOutput;
 
 mod _list_device_instances_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_sessions:
     }
 }
 
-pub use crate::operation::describe_sessions::_describe_sessions_output::DescribeSessionsOutput;
-
 pub use crate::operation::describe_sessions::_describe_sessions_input::DescribeSessionsInput;
+
+pub use crate::operation::describe_sessions::_describe_sessions_output::DescribeSessionsOutput;
 
 mod _describe_sessions_input;
 

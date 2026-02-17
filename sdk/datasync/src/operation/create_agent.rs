@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_agent::Crea
     }
 }
 
-pub use crate::operation::create_agent::_create_agent_output::CreateAgentOutput;
-
 pub use crate::operation::create_agent::_create_agent_input::CreateAgentInput;
+
+pub use crate::operation::create_agent::_create_agent_output::CreateAgentOutput;
 
 mod _create_agent_input;
 

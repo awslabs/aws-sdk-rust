@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_segment_defin
     }
 }
 
-pub use crate::operation::list_segment_definitions::_list_segment_definitions_output::ListSegmentDefinitionsOutput;
-
 pub use crate::operation::list_segment_definitions::_list_segment_definitions_input::ListSegmentDefinitionsInput;
+
+pub use crate::operation::list_segment_definitions::_list_segment_definitions_output::ListSegmentDefinitionsOutput;
 
 mod _list_segment_definitions_input;
 

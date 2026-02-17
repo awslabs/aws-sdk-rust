@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_created_
     }
 }
 
-pub use crate::operation::associate_created_artifact::_associate_created_artifact_output::AssociateCreatedArtifactOutput;
-
 pub use crate::operation::associate_created_artifact::_associate_created_artifact_input::AssociateCreatedArtifactInput;
+
+pub use crate::operation::associate_created_artifact::_associate_created_artifact_output::AssociateCreatedArtifactOutput;
 
 mod _associate_created_artifact_input;
 

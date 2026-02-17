@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entities::Lis
     }
 }
 
-pub use crate::operation::list_entities::_list_entities_output::ListEntitiesOutput;
-
 pub use crate::operation::list_entities::_list_entities_input::ListEntitiesInput;
+
+pub use crate::operation::list_entities::_list_entities_output::ListEntitiesOutput;
 
 mod _list_entities_input;
 

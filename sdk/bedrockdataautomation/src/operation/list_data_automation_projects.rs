@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_automati
     }
 }
 
-pub use crate::operation::list_data_automation_projects::_list_data_automation_projects_output::ListDataAutomationProjectsOutput;
-
 pub use crate::operation::list_data_automation_projects::_list_data_automation_projects_input::ListDataAutomationProjectsInput;
+
+pub use crate::operation::list_data_automation_projects::_list_data_automation_projects_output::ListDataAutomationProjectsOutput;
 
 mod _list_data_automation_projects_input;
 

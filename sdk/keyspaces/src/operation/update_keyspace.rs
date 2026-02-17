@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_keyspace::U
     }
 }
 
-pub use crate::operation::update_keyspace::_update_keyspace_output::UpdateKeyspaceOutput;
-
 pub use crate::operation::update_keyspace::_update_keyspace_input::UpdateKeyspaceInput;
+
+pub use crate::operation::update_keyspace::_update_keyspace_output::UpdateKeyspaceOutput;
 
 mod _update_keyspace_input;
 

@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_snapshot
     }
 }
 
-pub use crate::operation::delete_db_snapshot::_delete_db_snapshot_output::DeleteDbSnapshotOutput;
-
 pub use crate::operation::delete_db_snapshot::_delete_db_snapshot_input::DeleteDbSnapshotInput;
+
+pub use crate::operation::delete_db_snapshot::_delete_db_snapshot_output::DeleteDbSnapshotOutput;
 
 mod _delete_db_snapshot_input;
 

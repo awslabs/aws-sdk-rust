@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_streaming_dist
     }
 }
 
-pub use crate::operation::get_streaming_distribution_config::_get_streaming_distribution_config_output::GetStreamingDistributionConfigOutput;
-
 pub use crate::operation::get_streaming_distribution_config::_get_streaming_distribution_config_input::GetStreamingDistributionConfigInput;
+
+pub use crate::operation::get_streaming_distribution_config::_get_streaming_distribution_config_output::GetStreamingDistributionConfigOutput;
 
 mod _get_streaming_distribution_config_input;
 

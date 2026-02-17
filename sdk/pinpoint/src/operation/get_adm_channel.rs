@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_adm_channel::G
     }
 }
 
-pub use crate::operation::get_adm_channel::_get_adm_channel_output::GetAdmChannelOutput;
-
 pub use crate::operation::get_adm_channel::_get_adm_channel_input::GetAdmChannelInput;
+
+pub use crate::operation::get_adm_channel::_get_adm_channel_output::GetAdmChannelOutput;
 
 mod _get_adm_channel_input;
 

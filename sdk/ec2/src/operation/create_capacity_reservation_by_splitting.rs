@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_capacity_re
     }
 }
 
-pub use crate::operation::create_capacity_reservation_by_splitting::_create_capacity_reservation_by_splitting_output::CreateCapacityReservationBySplittingOutput;
-
 pub use crate::operation::create_capacity_reservation_by_splitting::_create_capacity_reservation_by_splitting_input::CreateCapacityReservationBySplittingInput;
+
+pub use crate::operation::create_capacity_reservation_by_splitting::_create_capacity_reservation_by_splitting_output::CreateCapacityReservationBySplittingOutput;
 
 mod _create_capacity_reservation_by_splitting_input;
 

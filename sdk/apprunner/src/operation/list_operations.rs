@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_operations::L
     }
 }
 
-pub use crate::operation::list_operations::_list_operations_output::ListOperationsOutput;
-
 pub use crate::operation::list_operations::_list_operations_input::ListOperationsInput;
+
+pub use crate::operation::list_operations::_list_operations_output::ListOperationsOutput;
 
 mod _list_operations_input;
 

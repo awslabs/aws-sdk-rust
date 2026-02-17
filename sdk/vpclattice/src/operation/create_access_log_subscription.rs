@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_log_
     }
 }
 
-pub use crate::operation::create_access_log_subscription::_create_access_log_subscription_output::CreateAccessLogSubscriptionOutput;
-
 pub use crate::operation::create_access_log_subscription::_create_access_log_subscription_input::CreateAccessLogSubscriptionInput;
+
+pub use crate::operation::create_access_log_subscription::_create_access_log_subscription_output::CreateAccessLogSubscriptionOutput;
 
 mod _create_access_log_subscription_input;
 

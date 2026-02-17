@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recipe_versio
     }
 }
 
-pub use crate::operation::list_recipe_versions::_list_recipe_versions_output::ListRecipeVersionsOutput;
-
 pub use crate::operation::list_recipe_versions::_list_recipe_versions_input::ListRecipeVersionsInput;
+
+pub use crate::operation::list_recipe_versions::_list_recipe_versions_output::ListRecipeVersionsOutput;
 
 mod _list_recipe_versions_input;
 

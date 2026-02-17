@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_serverless_
     }
 }
 
-pub use crate::operation::create_serverless_cache_snapshot::_create_serverless_cache_snapshot_output::CreateServerlessCacheSnapshotOutput;
-
 pub use crate::operation::create_serverless_cache_snapshot::_create_serverless_cache_snapshot_input::CreateServerlessCacheSnapshotInput;
+
+pub use crate::operation::create_serverless_cache_snapshot::_create_serverless_cache_snapshot_output::CreateServerlessCacheSnapshotOutput;
 
 mod _create_serverless_cache_snapshot_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_received_lice
     }
 }
 
-pub use crate::operation::list_received_licenses::_list_received_licenses_output::ListReceivedLicensesOutput;
-
 pub use crate::operation::list_received_licenses::_list_received_licenses_input::ListReceivedLicensesInput;
+
+pub use crate::operation::list_received_licenses::_list_received_licenses_output::ListReceivedLicensesOutput;
 
 mod _list_received_licenses_input;
 

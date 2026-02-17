@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_data_source
     }
 }
 
-pub use crate::operation::search_data_sources::_search_data_sources_output::SearchDataSourcesOutput;
-
 pub use crate::operation::search_data_sources::_search_data_sources_input::SearchDataSourcesInput;
+
+pub use crate::operation::search_data_sources::_search_data_sources_output::SearchDataSourcesOutput;
 
 mod _search_data_sources_input;
 

@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trusted_ent
     }
 }
 
-pub use crate::operation::delete_trusted_entity_set::_delete_trusted_entity_set_output::DeleteTrustedEntitySetOutput;
-
 pub use crate::operation::delete_trusted_entity_set::_delete_trusted_entity_set_input::DeleteTrustedEntitySetInput;
+
+pub use crate::operation::delete_trusted_entity_set::_delete_trusted_entity_set_output::DeleteTrustedEntitySetOutput;
 
 mod _delete_trusted_entity_set_input;
 

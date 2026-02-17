@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_change_set:
     }
 }
 
-pub use crate::operation::cancel_change_set::_cancel_change_set_output::CancelChangeSetOutput;
-
 pub use crate::operation::cancel_change_set::_cancel_change_set_input::CancelChangeSetInput;
+
+pub use crate::operation::cancel_change_set::_cancel_change_set_output::CancelChangeSetOutput;
 
 mod _cancel_change_set_input;
 

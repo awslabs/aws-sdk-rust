@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_describe_typ
     }
 }
 
-pub use crate::operation::batch_describe_type_configurations::_batch_describe_type_configurations_output::BatchDescribeTypeConfigurationsOutput;
-
 pub use crate::operation::batch_describe_type_configurations::_batch_describe_type_configurations_input::BatchDescribeTypeConfigurationsInput;
+
+pub use crate::operation::batch_describe_type_configurations::_batch_describe_type_configurations_output::BatchDescribeTypeConfigurationsOutput;
 
 mod _batch_describe_type_configurations_input;
 

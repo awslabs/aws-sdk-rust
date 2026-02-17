@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_hours_of
     }
 }
 
-pub use crate::operation::associate_hours_of_operations::_associate_hours_of_operations_output::AssociateHoursOfOperationsOutput;
-
 pub use crate::operation::associate_hours_of_operations::_associate_hours_of_operations_input::AssociateHoursOfOperationsInput;
+
+pub use crate::operation::associate_hours_of_operations::_associate_hours_of_operations_output::AssociateHoursOfOperationsOutput;
 
 mod _associate_hours_of_operations_input;
 

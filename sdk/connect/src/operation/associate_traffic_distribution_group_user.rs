@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_traffic_
     }
 }
 
-pub use crate::operation::associate_traffic_distribution_group_user::_associate_traffic_distribution_group_user_output::AssociateTrafficDistributionGroupUserOutput;
-
 pub use crate::operation::associate_traffic_distribution_group_user::_associate_traffic_distribution_group_user_input::AssociateTrafficDistributionGroupUserInput;
+
+pub use crate::operation::associate_traffic_distribution_group_user::_associate_traffic_distribution_group_user_output::AssociateTrafficDistributionGroupUserOutput;
 
 mod _associate_traffic_distribution_group_user_input;
 

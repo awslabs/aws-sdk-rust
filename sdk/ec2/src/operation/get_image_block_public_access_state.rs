@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_block_pu
     }
 }
 
-pub use crate::operation::get_image_block_public_access_state::_get_image_block_public_access_state_output::GetImageBlockPublicAccessStateOutput;
-
 pub use crate::operation::get_image_block_public_access_state::_get_image_block_public_access_state_input::GetImageBlockPublicAccessStateInput;
+
+pub use crate::operation::get_image_block_public_access_state::_get_image_block_public_access_state_output::GetImageBlockPublicAccessStateOutput;
 
 mod _get_image_block_public_access_state_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_stream_trans
     }
 }
 
-pub use crate::operation::start_stream_transcription::_start_stream_transcription_output::StartStreamTranscriptionOutput;
-
 pub use crate::operation::start_stream_transcription::_start_stream_transcription_input::StartStreamTranscriptionInput;
+
+pub use crate::operation::start_stream_transcription::_start_stream_transcription_output::StartStreamTranscriptionOutput;
 
 mod _start_stream_transcription_input;
 

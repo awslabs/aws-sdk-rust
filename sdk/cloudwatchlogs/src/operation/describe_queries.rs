@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_queries::
     }
 }
 
-pub use crate::operation::describe_queries::_describe_queries_output::DescribeQueriesOutput;
-
 pub use crate::operation::describe_queries::_describe_queries_input::DescribeQueriesInput;
+
+pub use crate::operation::describe_queries::_describe_queries_output::DescribeQueriesOutput;
 
 mod _describe_queries_input;
 

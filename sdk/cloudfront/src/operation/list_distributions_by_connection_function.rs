@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_connection_function::_list_distributions_by_connection_function_output::ListDistributionsByConnectionFunctionOutput;
-
 pub use crate::operation::list_distributions_by_connection_function::_list_distributions_by_connection_function_input::ListDistributionsByConnectionFunctionInput;
+
+pub use crate::operation::list_distributions_by_connection_function::_list_distributions_by_connection_function_output::ListDistributionsByConnectionFunctionOutput;
 
 mod _list_distributions_by_connection_function_input;
 

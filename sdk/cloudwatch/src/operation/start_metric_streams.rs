@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_metric_strea
     }
 }
 
-pub use crate::operation::start_metric_streams::_start_metric_streams_output::StartMetricStreamsOutput;
-
 pub use crate::operation::start_metric_streams::_start_metric_streams_input::StartMetricStreamsInput;
+
+pub use crate::operation::start_metric_streams::_start_metric_streams_output::StartMetricStreamsOutput;
 
 mod _start_metric_streams_input;
 

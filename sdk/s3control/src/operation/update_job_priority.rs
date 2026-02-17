@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_job_priorit
     }
 }
 
-pub use crate::operation::update_job_priority::_update_job_priority_output::UpdateJobPriorityOutput;
-
 pub use crate::operation::update_job_priority::_update_job_priority_input::UpdateJobPriorityInput;
+
+pub use crate::operation::update_job_priority::_update_job_priority_output::UpdateJobPriorityOutput;
 
 mod _update_job_priority_input;
 

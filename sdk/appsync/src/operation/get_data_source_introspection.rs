@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_source_in
     }
 }
 
-pub use crate::operation::get_data_source_introspection::_get_data_source_introspection_output::GetDataSourceIntrospectionOutput;
-
 pub use crate::operation::get_data_source_introspection::_get_data_source_introspection_input::GetDataSourceIntrospectionInput;
+
+pub use crate::operation::get_data_source_introspection::_get_data_source_introspection_output::GetDataSourceIntrospectionOutput;
 
 mod _get_data_source_introspection_input;
 

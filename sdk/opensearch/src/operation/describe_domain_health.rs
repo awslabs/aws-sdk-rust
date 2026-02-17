@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain_he
     }
 }
 
-pub use crate::operation::describe_domain_health::_describe_domain_health_output::DescribeDomainHealthOutput;
-
 pub use crate::operation::describe_domain_health::_describe_domain_health_input::DescribeDomainHealthInput;
+
+pub use crate::operation::describe_domain_health::_describe_domain_health_output::DescribeDomainHealthOutput;
 
 mod _describe_domain_health_input;
 

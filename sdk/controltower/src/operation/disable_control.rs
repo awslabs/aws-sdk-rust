@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_control::D
     }
 }
 
-pub use crate::operation::disable_control::_disable_control_output::DisableControlOutput;
-
 pub use crate::operation::disable_control::_disable_control_input::DisableControlInput;
+
+pub use crate::operation::disable_control::_disable_control_output::DisableControlOutput;
 
 mod _disable_control_input;
 

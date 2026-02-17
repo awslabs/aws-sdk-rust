@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_add_user_to_
     }
 }
 
-pub use crate::operation::admin_add_user_to_group::_admin_add_user_to_group_output::AdminAddUserToGroupOutput;
-
 pub use crate::operation::admin_add_user_to_group::_admin_add_user_to_group_input::AdminAddUserToGroupInput;
+
+pub use crate::operation::admin_add_user_to_group::_admin_add_user_to_group_output::AdminAddUserToGroupOutput;
 
 mod _admin_add_user_to_group_input;
 

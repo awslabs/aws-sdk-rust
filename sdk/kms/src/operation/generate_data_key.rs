@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_data_key:
     }
 }
 
-pub use crate::operation::generate_data_key::_generate_data_key_output::GenerateDataKeyOutput;
-
 pub use crate::operation::generate_data_key::_generate_data_key_input::GenerateDataKeyInput;
+
+pub use crate::operation::generate_data_key::_generate_data_key_output::GenerateDataKeyOutput;
 
 mod _generate_data_key_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_dedicated_ip_p
     }
 }
 
-pub use crate::operation::put_dedicated_ip_pool_scaling_attributes::_put_dedicated_ip_pool_scaling_attributes_output::PutDedicatedIpPoolScalingAttributesOutput;
-
 pub use crate::operation::put_dedicated_ip_pool_scaling_attributes::_put_dedicated_ip_pool_scaling_attributes_input::PutDedicatedIpPoolScalingAttributesInput;
+
+pub use crate::operation::put_dedicated_ip_pool_scaling_attributes::_put_dedicated_ip_pool_scaling_attributes_output::PutDedicatedIpPoolScalingAttributesOutput;
 
 mod _put_dedicated_ip_pool_scaling_attributes_input;
 

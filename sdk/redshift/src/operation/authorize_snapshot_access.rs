@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_snapshot
     }
 }
 
-pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_output::AuthorizeSnapshotAccessOutput;
-
 pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_input::AuthorizeSnapshotAccessInput;
+
+pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_output::AuthorizeSnapshotAccessOutput;
 
 mod _authorize_snapshot_access_input;
 

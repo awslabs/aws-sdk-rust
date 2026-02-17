@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_global_reso
     }
 }
 
-pub use crate::operation::delete_global_resolver::_delete_global_resolver_output::DeleteGlobalResolverOutput;
-
 pub use crate::operation::delete_global_resolver::_delete_global_resolver_input::DeleteGlobalResolverInput;
+
+pub use crate::operation::delete_global_resolver::_delete_global_resolver_output::DeleteGlobalResolverOutput;
 
 mod _delete_global_resolver_input;
 

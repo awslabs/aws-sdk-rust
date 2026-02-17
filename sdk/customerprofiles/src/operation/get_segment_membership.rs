@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_member
     }
 }
 
-pub use crate::operation::get_segment_membership::_get_segment_membership_output::GetSegmentMembershipOutput;
-
 pub use crate::operation::get_segment_membership::_get_segment_membership_input::GetSegmentMembershipInput;
+
+pub use crate::operation::get_segment_membership::_get_segment_membership_output::GetSegmentMembershipOutput;
 
 mod _get_segment_membership_input;
 

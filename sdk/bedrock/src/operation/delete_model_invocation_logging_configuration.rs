@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_model_invocation_logging_configuration::_delete_model_invocation_logging_configuration_output::DeleteModelInvocationLoggingConfigurationOutput;
-
 pub use crate::operation::delete_model_invocation_logging_configuration::_delete_model_invocation_logging_configuration_input::DeleteModelInvocationLoggingConfigurationInput;
+
+pub use crate::operation::delete_model_invocation_logging_configuration::_delete_model_invocation_logging_configuration_output::DeleteModelInvocationLoggingConfigurationOutput;
 
 mod _delete_model_invocation_logging_configuration_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inactive_ap
     }
 }
 
-pub use crate::operation::delete_inactive_approval_team_version::_delete_inactive_approval_team_version_output::DeleteInactiveApprovalTeamVersionOutput;
-
 pub use crate::operation::delete_inactive_approval_team_version::_delete_inactive_approval_team_version_input::DeleteInactiveApprovalTeamVersionInput;
+
+pub use crate::operation::delete_inactive_approval_team_version::_delete_inactive_approval_team_version_output::DeleteInactiveApprovalTeamVersionOutput;
 
 mod _delete_inactive_approval_team_version_input;
 

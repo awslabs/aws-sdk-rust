@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scopes::ListS
     }
 }
 
-pub use crate::operation::list_scopes::_list_scopes_output::ListScopesOutput;
-
 pub use crate::operation::list_scopes::_list_scopes_input::ListScopesInput;
+
+pub use crate::operation::list_scopes::_list_scopes_output::ListScopesOutput;
 
 mod _list_scopes_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_transit_
     }
 }
 
-pub use crate::operation::associate_transit_gateway_policy_table::_associate_transit_gateway_policy_table_output::AssociateTransitGatewayPolicyTableOutput;
-
 pub use crate::operation::associate_transit_gateway_policy_table::_associate_transit_gateway_policy_table_input::AssociateTransitGatewayPolicyTableInput;
+
+pub use crate::operation::associate_transit_gateway_policy_table::_associate_transit_gateway_policy_table_output::AssociateTransitGatewayPolicyTableOutput;
 
 mod _associate_transit_gateway_policy_table_input;
 

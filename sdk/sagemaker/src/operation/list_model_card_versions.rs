@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_card_ve
     }
 }
 
-pub use crate::operation::list_model_card_versions::_list_model_card_versions_output::ListModelCardVersionsOutput;
-
 pub use crate::operation::list_model_card_versions::_list_model_card_versions_input::ListModelCardVersionsInput;
+
+pub use crate::operation::list_model_card_versions::_list_model_card_versions_output::ListModelCardVersionsOutput;
 
 mod _list_model_card_versions_input;
 

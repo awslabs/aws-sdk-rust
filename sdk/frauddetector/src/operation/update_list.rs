@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_list::Updat
     }
 }
 
-pub use crate::operation::update_list::_update_list_output::UpdateListOutput;
-
 pub use crate::operation::update_list::_update_list_input::UpdateListInput;
+
+pub use crate::operation::update_list::_update_list_output::UpdateListOutput;
 
 mod _update_list_input;
 

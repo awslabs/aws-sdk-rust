@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_listeners
     }
 }
 
-pub use crate::operation::describe_listeners::_describe_listeners_output::DescribeListenersOutput;
-
 pub use crate::operation::describe_listeners::_describe_listeners_input::DescribeListenersInput;
+
+pub use crate::operation::describe_listeners::_describe_listeners_output::DescribeListenersOutput;
 
 mod _describe_listeners_input;
 

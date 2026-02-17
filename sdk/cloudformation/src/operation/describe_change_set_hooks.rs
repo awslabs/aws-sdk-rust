@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_change_se
     }
 }
 
-pub use crate::operation::describe_change_set_hooks::_describe_change_set_hooks_output::DescribeChangeSetHooksOutput;
-
 pub use crate::operation::describe_change_set_hooks::_describe_change_set_hooks_input::DescribeChangeSetHooksInput;
+
+pub use crate::operation::describe_change_set_hooks::_describe_change_set_hooks_output::DescribeChangeSetHooksOutput;
 
 mod _describe_change_set_hooks_input;
 

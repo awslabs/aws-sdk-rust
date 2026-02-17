@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_wo
     }
 }
 
-pub use crate::operation::describe_custom_workspace_image_import::_describe_custom_workspace_image_import_output::DescribeCustomWorkspaceImageImportOutput;
-
 pub use crate::operation::describe_custom_workspace_image_import::_describe_custom_workspace_image_import_input::DescribeCustomWorkspaceImageImportInput;
+
+pub use crate::operation::describe_custom_workspace_image_import::_describe_custom_workspace_image_import_output::DescribeCustomWorkspaceImageImportOutput;
 
 mod _describe_custom_workspace_image_import_input;
 

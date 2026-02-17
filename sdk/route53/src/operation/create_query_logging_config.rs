@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_query_loggi
     }
 }
 
-pub use crate::operation::create_query_logging_config::_create_query_logging_config_output::CreateQueryLoggingConfigOutput;
-
 pub use crate::operation::create_query_logging_config::_create_query_logging_config_input::CreateQueryLoggingConfigInput;
+
+pub use crate::operation::create_query_logging_config::_create_query_logging_config_output::CreateQueryLoggingConfigOutput;
 
 mod _create_query_logging_config_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configured_
     }
 }
 
-pub use crate::operation::delete_configured_table_association::_delete_configured_table_association_output::DeleteConfiguredTableAssociationOutput;
-
 pub use crate::operation::delete_configured_table_association::_delete_configured_table_association_input::DeleteConfiguredTableAssociationInput;
+
+pub use crate::operation::delete_configured_table_association::_delete_configured_table_association_output::DeleteConfiguredTableAssociationOutput;
 
 mod _delete_configured_table_association_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_graphql_api_en
     }
 }
 
-pub use crate::operation::put_graphql_api_environment_variables::_put_graphql_api_environment_variables_output::PutGraphqlApiEnvironmentVariablesOutput;
-
 pub use crate::operation::put_graphql_api_environment_variables::_put_graphql_api_environment_variables_input::PutGraphqlApiEnvironmentVariablesInput;
+
+pub use crate::operation::put_graphql_api_environment_variables::_put_graphql_api_environment_variables_output::PutGraphqlApiEnvironmentVariablesOutput;
 
 mod _put_graphql_api_environment_variables_input;
 

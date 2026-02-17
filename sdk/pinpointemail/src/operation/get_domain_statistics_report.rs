@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_statist
     }
 }
 
-pub use crate::operation::get_domain_statistics_report::_get_domain_statistics_report_output::GetDomainStatisticsReportOutput;
-
 pub use crate::operation::get_domain_statistics_report::_get_domain_statistics_report_input::GetDomainStatisticsReportInput;
+
+pub use crate::operation::get_domain_statistics_report::_get_domain_statistics_report_output::GetDomainStatisticsReportOutput;
 
 mod _get_domain_statistics_report_input;
 

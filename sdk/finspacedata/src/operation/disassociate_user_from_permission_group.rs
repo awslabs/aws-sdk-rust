@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_user_
     }
 }
 
-pub use crate::operation::disassociate_user_from_permission_group::_disassociate_user_from_permission_group_output::DisassociateUserFromPermissionGroupOutput;
-
 pub use crate::operation::disassociate_user_from_permission_group::_disassociate_user_from_permission_group_input::DisassociateUserFromPermissionGroupInput;
+
+pub use crate::operation::disassociate_user_from_permission_group::_disassociate_user_from_permission_group_output::DisassociateUserFromPermissionGroupOutput;
 
 mod _disassociate_user_from_permission_group_input;
 

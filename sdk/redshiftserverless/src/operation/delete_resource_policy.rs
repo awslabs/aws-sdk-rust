@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_po
     }
 }
 
-pub use crate::operation::delete_resource_policy::_delete_resource_policy_output::DeleteResourcePolicyOutput;
-
 pub use crate::operation::delete_resource_policy::_delete_resource_policy_input::DeleteResourcePolicyInput;
+
+pub use crate::operation::delete_resource_policy::_delete_resource_policy_output::DeleteResourcePolicyOutput;
 
 mod _delete_resource_policy_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_schedule:
     }
 }
 
-pub use crate::operation::describe_schedule::_describe_schedule_output::DescribeScheduleOutput;
-
 pub use crate::operation::describe_schedule::_describe_schedule_input::DescribeScheduleInput;
+
+pub use crate::operation::describe_schedule::_describe_schedule_output::DescribeScheduleOutput;
 
 mod _describe_schedule_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_part_copy::
     }
 }
 
-pub use crate::operation::upload_part_copy::_upload_part_copy_output::UploadPartCopyOutput;
-
 pub use crate::operation::upload_part_copy::_upload_part_copy_input::UploadPartCopyInput;
+
+pub use crate::operation::upload_part_copy::_upload_part_copy_output::UploadPartCopyOutput;
 
 mod _upload_part_copy_input;
 

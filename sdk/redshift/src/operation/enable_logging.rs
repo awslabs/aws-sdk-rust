@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_logging::En
     }
 }
 
-pub use crate::operation::enable_logging::_enable_logging_output::EnableLoggingOutput;
-
 pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingInput;
+
+pub use crate::operation::enable_logging::_enable_logging_output::EnableLoggingOutput;
 
 mod _enable_logging_input;
 

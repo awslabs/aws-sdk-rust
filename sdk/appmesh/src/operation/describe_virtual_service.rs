@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_virtual_s
     }
 }
 
-pub use crate::operation::describe_virtual_service::_describe_virtual_service_output::DescribeVirtualServiceOutput;
-
 pub use crate::operation::describe_virtual_service::_describe_virtual_service_input::DescribeVirtualServiceInput;
+
+pub use crate::operation::describe_virtual_service::_describe_virtual_service_output::DescribeVirtualServiceOutput;
 
 mod _describe_virtual_service_input;
 

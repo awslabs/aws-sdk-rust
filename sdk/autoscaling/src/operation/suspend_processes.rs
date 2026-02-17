@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::suspend_processes:
     }
 }
 
-pub use crate::operation::suspend_processes::_suspend_processes_output::SuspendProcessesOutput;
-
 pub use crate::operation::suspend_processes::_suspend_processes_input::SuspendProcessesInput;
+
+pub use crate::operation::suspend_processes::_suspend_processes_output::SuspendProcessesOutput;
 
 mod _suspend_processes_input;
 

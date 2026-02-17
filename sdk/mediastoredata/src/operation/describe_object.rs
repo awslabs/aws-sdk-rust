@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_object::D
     }
 }
 
-pub use crate::operation::describe_object::_describe_object_output::DescribeObjectOutput;
-
 pub use crate::operation::describe_object::_describe_object_input::DescribeObjectInput;
+
+pub use crate::operation::describe_object::_describe_object_output::DescribeObjectOutput;
 
 mod _describe_object_input;
 

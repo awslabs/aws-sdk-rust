@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_phone_
     }
 }
 
-pub use crate::operation::update_user_phone_config::_update_user_phone_config_output::UpdateUserPhoneConfigOutput;
-
 pub use crate::operation::update_user_phone_config::_update_user_phone_config_input::UpdateUserPhoneConfigInput;
+
+pub use crate::operation::update_user_phone_config::_update_user_phone_config_output::UpdateUserPhoneConfigOutput;
 
 mod _update_user_phone_config_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_field::B
     }
 }
 
-pub use crate::operation::batch_get_field::_batch_get_field_output::BatchGetFieldOutput;
-
 pub use crate::operation::batch_get_field::_batch_get_field_input::BatchGetFieldInput;
+
+pub use crate::operation::batch_get_field::_batch_get_field_output::BatchGetFieldOutput;
 
 mod _batch_get_field_input;
 

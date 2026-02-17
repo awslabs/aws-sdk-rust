@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_user_to_
     }
 }
 
-pub use crate::operation::associate_user_to_permission_group::_associate_user_to_permission_group_output::AssociateUserToPermissionGroupOutput;
-
 pub use crate::operation::associate_user_to_permission_group::_associate_user_to_permission_group_input::AssociateUserToPermissionGroupInput;
+
+pub use crate::operation::associate_user_to_permission_group::_associate_user_to_permission_group_output::AssociateUserToPermissionGroupOutput;
 
 mod _associate_user_to_permission_group_input;
 

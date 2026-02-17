@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_group::PutGrou
     }
 }
 
-pub use crate::operation::put_group::_put_group_output::PutGroupOutput;
-
 pub use crate::operation::put_group::_put_group_input::PutGroupInput;
+
+pub use crate::operation::put_group::_put_group_output::PutGroupOutput;
 
 mod _put_group_input;
 

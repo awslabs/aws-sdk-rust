@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_route_serve
     }
 }
 
-pub use crate::operation::enable_route_server_propagation::_enable_route_server_propagation_output::EnableRouteServerPropagationOutput;
-
 pub use crate::operation::enable_route_server_propagation::_enable_route_server_propagation_input::EnableRouteServerPropagationInput;
+
+pub use crate::operation::enable_route_server_propagation::_enable_route_server_propagation_output::EnableRouteServerPropagationOutput;
 
 mod _enable_route_server_propagation_input;
 

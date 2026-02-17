@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_matches::GetMa
     }
 }
 
-pub use crate::operation::get_matches::_get_matches_output::GetMatchesOutput;
-
 pub use crate::operation::get_matches::_get_matches_input::GetMatchesInput;
+
+pub use crate::operation::get_matches::_get_matches_output::GetMatchesOutput;
 
 mod _get_matches_input;
 

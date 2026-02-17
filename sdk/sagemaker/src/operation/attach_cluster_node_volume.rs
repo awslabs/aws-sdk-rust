@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_cluster_nod
     }
 }
 
-pub use crate::operation::attach_cluster_node_volume::_attach_cluster_node_volume_output::AttachClusterNodeVolumeOutput;
-
 pub use crate::operation::attach_cluster_node_volume::_attach_cluster_node_volume_input::AttachClusterNodeVolumeInput;
+
+pub use crate::operation::attach_cluster_node_volume::_attach_cluster_node_volume_output::AttachClusterNodeVolumeOutput;
 
 mod _attach_cluster_node_volume_input;
 

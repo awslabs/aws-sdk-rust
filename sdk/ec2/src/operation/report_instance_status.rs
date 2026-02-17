@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::report_instance_st
     }
 }
 
-pub use crate::operation::report_instance_status::_report_instance_status_output::ReportInstanceStatusOutput;
-
 pub use crate::operation::report_instance_status::_report_instance_status_input::ReportInstanceStatusInput;
+
+pub use crate::operation::report_instance_status::_report_instance_status_output::ReportInstanceStatusOutput;
 
 mod _report_instance_status_input;
 

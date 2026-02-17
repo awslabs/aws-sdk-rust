@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_alarm_state::S
     }
 }
 
-pub use crate::operation::set_alarm_state::_set_alarm_state_output::SetAlarmStateOutput;
-
 pub use crate::operation::set_alarm_state::_set_alarm_state_input::SetAlarmStateInput;
+
+pub use crate::operation::set_alarm_state::_set_alarm_state_output::SetAlarmStateOutput;
 
 mod _set_alarm_state_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bot::Update
     }
 }
 
-pub use crate::operation::update_bot::_update_bot_output::UpdateBotOutput;
-
 pub use crate::operation::update_bot::_update_bot_input::UpdateBotInput;
+
+pub use crate::operation::update_bot::_update_bot_output::UpdateBotOutput;
 
 mod _update_bot_input;
 

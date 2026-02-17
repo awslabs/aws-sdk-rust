@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_integration_re
     }
 }
 
-pub use crate::operation::put_integration_response::_put_integration_response_output::PutIntegrationResponseOutput;
-
 pub use crate::operation::put_integration_response::_put_integration_response_input::PutIntegrationResponseInput;
+
+pub use crate::operation::put_integration_response::_put_integration_response_output::PutIntegrationResponseOutput;
 
 mod _put_integration_response_input;
 

@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_protocols_list
     }
 }
 
-pub use crate::operation::get_protocols_list::_get_protocols_list_output::GetProtocolsListOutput;
-
 pub use crate::operation::get_protocols_list::_get_protocols_list_input::GetProtocolsListInput;
+
+pub use crate::operation::get_protocols_list::_get_protocols_list_output::GetProtocolsListOutput;
 
 mod _get_protocols_list_input;
 

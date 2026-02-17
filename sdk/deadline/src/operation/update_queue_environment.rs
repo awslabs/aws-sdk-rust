@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_envir
     }
 }
 
-pub use crate::operation::update_queue_environment::_update_queue_environment_output::UpdateQueueEnvironmentOutput;
-
 pub use crate::operation::update_queue_environment::_update_queue_environment_input::UpdateQueueEnvironmentInput;
+
+pub use crate::operation::update_queue_environment::_update_queue_environment_output::UpdateQueueEnvironmentOutput;
 
 mod _update_queue_environment_input;
 

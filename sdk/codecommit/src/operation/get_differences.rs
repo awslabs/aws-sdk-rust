@@ -511,9 +511,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_differences::G
     }
 }
 
-pub use crate::operation::get_differences::_get_differences_output::GetDifferencesOutput;
-
 pub use crate::operation::get_differences::_get_differences_input::GetDifferencesInput;
+
+pub use crate::operation::get_differences::_get_differences_output::GetDifferencesOutput;
 
 mod _get_differences_input;
 

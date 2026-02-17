@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_ma
     }
 }
 
-pub use crate::operation::modify_instance_maintenance_options::_modify_instance_maintenance_options_output::ModifyInstanceMaintenanceOptionsOutput;
-
 pub use crate::operation::modify_instance_maintenance_options::_modify_instance_maintenance_options_input::ModifyInstanceMaintenanceOptionsInput;
+
+pub use crate::operation::modify_instance_maintenance_options::_modify_instance_maintenance_options_output::ModifyInstanceMaintenanceOptionsOutput;
 
 mod _modify_instance_maintenance_options_input;
 

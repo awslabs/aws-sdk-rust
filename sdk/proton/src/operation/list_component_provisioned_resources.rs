@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_component_pro
     }
 }
 
-pub use crate::operation::list_component_provisioned_resources::_list_component_provisioned_resources_output::ListComponentProvisionedResourcesOutput;
-
 pub use crate::operation::list_component_provisioned_resources::_list_component_provisioned_resources_input::ListComponentProvisionedResourcesInput;
+
+pub use crate::operation::list_component_provisioned_resources::_list_component_provisioned_resources_output::ListComponentProvisionedResourcesOutput;
 
 mod _list_component_provisioned_resources_input;
 

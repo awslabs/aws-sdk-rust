@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_engine_versio
     }
 }
 
-pub use crate::operation::list_engine_versions::_list_engine_versions_output::ListEngineVersionsOutput;
-
 pub use crate::operation::list_engine_versions::_list_engine_versions_input::ListEngineVersionsInput;
+
+pub use crate::operation::list_engine_versions::_list_engine_versions_output::ListEngineVersionsOutput;
 
 mod _list_engine_versions_input;
 

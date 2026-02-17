@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_code_reviews:
     }
 }
 
-pub use crate::operation::list_code_reviews::_list_code_reviews_output::ListCodeReviewsOutput;
-
 pub use crate::operation::list_code_reviews::_list_code_reviews_input::ListCodeReviewsInput;
+
+pub use crate::operation::list_code_reviews::_list_code_reviews_output::ListCodeReviewsOutput;
 
 mod _list_code_reviews_input;
 

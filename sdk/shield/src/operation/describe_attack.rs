@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_attack::D
     }
 }
 
-pub use crate::operation::describe_attack::_describe_attack_output::DescribeAttackOutput;
-
 pub use crate::operation::describe_attack::_describe_attack_input::DescribeAttackInput;
+
+pub use crate::operation::describe_attack::_describe_attack_output::DescribeAttackOutput;
 
 mod _describe_attack_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_updated_wor
     }
 }
 
-pub use crate::operation::create_updated_workspace_image::_create_updated_workspace_image_output::CreateUpdatedWorkspaceImageOutput;
-
 pub use crate::operation::create_updated_workspace_image::_create_updated_workspace_image_input::CreateUpdatedWorkspaceImageInput;
+
+pub use crate::operation::create_updated_workspace_image::_create_updated_workspace_image_output::CreateUpdatedWorkspaceImageOutput;
 
 mod _create_updated_workspace_image_input;
 

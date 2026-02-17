@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_user:
     }
 }
 
-pub use crate::operation::disassociate_user::_disassociate_user_output::DisassociateUserOutput;
-
 pub use crate::operation::disassociate_user::_disassociate_user_input::DisassociateUserInput;
+
+pub use crate::operation::disassociate_user::_disassociate_user_output::DisassociateUserOutput;
 
 mod _disassociate_user_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ticket_v2::
     }
 }
 
-pub use crate::operation::create_ticket_v2::_create_ticket_v2_output::CreateTicketV2Output;
-
 pub use crate::operation::create_ticket_v2::_create_ticket_v2_input::CreateTicketV2Input;
+
+pub use crate::operation::create_ticket_v2::_create_ticket_v2_output::CreateTicketV2Output;
 
 mod _create_ticket_v2_input;
 

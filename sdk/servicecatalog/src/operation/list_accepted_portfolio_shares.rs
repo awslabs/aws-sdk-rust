@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_accepted_port
     }
 }
 
-pub use crate::operation::list_accepted_portfolio_shares::_list_accepted_portfolio_shares_output::ListAcceptedPortfolioSharesOutput;
-
 pub use crate::operation::list_accepted_portfolio_shares::_list_accepted_portfolio_shares_input::ListAcceptedPortfolioSharesInput;
+
+pub use crate::operation::list_accepted_portfolio_shares::_list_accepted_portfolio_shares_output::ListAcceptedPortfolioSharesOutput;
 
 mod _list_accepted_portfolio_shares_input;
 

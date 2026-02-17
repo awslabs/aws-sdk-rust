@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_source_t
     }
 }
 
-pub use crate::operation::associate_source_to_s3_table_integration::_associate_source_to_s3_table_integration_output::AssociateSourceToS3TableIntegrationOutput;
-
 pub use crate::operation::associate_source_to_s3_table_integration::_associate_source_to_s3_table_integration_input::AssociateSourceToS3TableIntegrationInput;
+
+pub use crate::operation::associate_source_to_s3_table_integration::_associate_source_to_s3_table_integration_output::AssociateSourceToS3TableIntegrationOutput;
 
 mod _associate_source_to_s3_table_integration_input;
 

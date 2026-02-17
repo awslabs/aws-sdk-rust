@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_multi_region_e
     }
 }
 
-pub use crate::operation::get_multi_region_endpoint::_get_multi_region_endpoint_output::GetMultiRegionEndpointOutput;
-
 pub use crate::operation::get_multi_region_endpoint::_get_multi_region_endpoint_input::GetMultiRegionEndpointInput;
+
+pub use crate::operation::get_multi_region_endpoint::_get_multi_region_endpoint_output::GetMultiRegionEndpointOutput;
 
 mod _get_multi_region_endpoint_input;
 

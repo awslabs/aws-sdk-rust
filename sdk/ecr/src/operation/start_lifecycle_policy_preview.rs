@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_lifecycle_po
     }
 }
 
-pub use crate::operation::start_lifecycle_policy_preview::_start_lifecycle_policy_preview_output::StartLifecyclePolicyPreviewOutput;
-
 pub use crate::operation::start_lifecycle_policy_preview::_start_lifecycle_policy_preview_input::StartLifecyclePolicyPreviewInput;
+
+pub use crate::operation::start_lifecycle_policy_preview::_start_lifecycle_policy_preview_output::StartLifecyclePolicyPreviewOutput;
 
 mod _start_lifecycle_policy_preview_input;
 

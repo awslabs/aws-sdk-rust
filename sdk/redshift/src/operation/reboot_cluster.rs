@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_cluster::Re
     }
 }
 
-pub use crate::operation::reboot_cluster::_reboot_cluster_output::RebootClusterOutput;
-
 pub use crate::operation::reboot_cluster::_reboot_cluster_input::RebootClusterInput;
+
+pub use crate::operation::reboot_cluster::_reboot_cluster_output::RebootClusterOutput;
 
 mod _reboot_cluster_input;
 

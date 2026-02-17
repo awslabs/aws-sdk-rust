@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_co
     }
 }
 
-pub use crate::operation::update_campaign_communication_time::_update_campaign_communication_time_output::UpdateCampaignCommunicationTimeOutput;
-
 pub use crate::operation::update_campaign_communication_time::_update_campaign_communication_time_input::UpdateCampaignCommunicationTimeInput;
+
+pub use crate::operation::update_campaign_communication_time::_update_campaign_communication_time_output::UpdateCampaignCommunicationTimeOutput;
 
 mod _update_campaign_communication_time_input;
 

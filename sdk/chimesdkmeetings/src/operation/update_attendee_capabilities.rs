@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_attendee_ca
     }
 }
 
-pub use crate::operation::update_attendee_capabilities::_update_attendee_capabilities_output::UpdateAttendeeCapabilitiesOutput;
-
 pub use crate::operation::update_attendee_capabilities::_update_attendee_capabilities_input::UpdateAttendeeCapabilitiesInput;
+
+pub use crate::operation::update_attendee_capabilities::_update_attendee_capabilities_output::UpdateAttendeeCapabilitiesOutput;
 
 mod _update_attendee_capabilities_input;
 

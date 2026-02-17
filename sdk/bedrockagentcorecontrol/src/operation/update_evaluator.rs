@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_evaluator::
     }
 }
 
-pub use crate::operation::update_evaluator::_update_evaluator_output::UpdateEvaluatorOutput;
-
 pub use crate::operation::update_evaluator::_update_evaluator_input::UpdateEvaluatorInput;
+
+pub use crate::operation::update_evaluator::_update_evaluator_output::UpdateEvaluatorOutput;
 
 mod _update_evaluator_input;
 

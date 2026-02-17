@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tape_with_b
     }
 }
 
-pub use crate::operation::create_tape_with_barcode::_create_tape_with_barcode_output::CreateTapeWithBarcodeOutput;
-
 pub use crate::operation::create_tape_with_barcode::_create_tape_with_barcode_input::CreateTapeWithBarcodeInput;
+
+pub use crate::operation::create_tape_with_barcode::_create_tape_with_barcode_output::CreateTapeWithBarcodeOutput;
 
 mod _create_tape_with_barcode_input;
 

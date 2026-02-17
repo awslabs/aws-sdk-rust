@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_environme
     }
 }
 
-pub use crate::operation::describe_environment_memberships::_describe_environment_memberships_output::DescribeEnvironmentMembershipsOutput;
-
 pub use crate::operation::describe_environment_memberships::_describe_environment_memberships_input::DescribeEnvironmentMembershipsInput;
+
+pub use crate::operation::describe_environment_memberships::_describe_environment_memberships_output::DescribeEnvironmentMembershipsOutput;
 
 mod _describe_environment_memberships_input;
 

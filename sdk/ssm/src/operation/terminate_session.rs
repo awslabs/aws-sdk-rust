@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_session:
     }
 }
 
-pub use crate::operation::terminate_session::_terminate_session_output::TerminateSessionOutput;
-
 pub use crate::operation::terminate_session::_terminate_session_input::TerminateSessionInput;
+
+pub use crate::operation::terminate_session::_terminate_session_output::TerminateSessionOutput;
 
 mod _terminate_session_input;
 

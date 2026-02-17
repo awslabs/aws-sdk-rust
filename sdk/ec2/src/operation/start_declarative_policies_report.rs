@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_declarative_
     }
 }
 
-pub use crate::operation::start_declarative_policies_report::_start_declarative_policies_report_output::StartDeclarativePoliciesReportOutput;
-
 pub use crate::operation::start_declarative_policies_report::_start_declarative_policies_report_input::StartDeclarativePoliciesReportInput;
+
+pub use crate::operation::start_declarative_policies_report::_start_declarative_policies_report_output::StartDeclarativePoliciesReportOutput;
 
 mod _start_declarative_policies_report_input;
 

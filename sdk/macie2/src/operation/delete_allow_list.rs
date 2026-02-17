@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_allow_list:
     }
 }
 
-pub use crate::operation::delete_allow_list::_delete_allow_list_output::DeleteAllowListOutput;
-
 pub use crate::operation::delete_allow_list::_delete_allow_list_input::DeleteAllowListInput;
+
+pub use crate::operation::delete_allow_list::_delete_allow_list_output::DeleteAllowListOutput;
 
 mod _delete_allow_list_input;
 

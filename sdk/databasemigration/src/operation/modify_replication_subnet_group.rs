@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_replication
     }
 }
 
-pub use crate::operation::modify_replication_subnet_group::_modify_replication_subnet_group_output::ModifyReplicationSubnetGroupOutput;
-
 pub use crate::operation::modify_replication_subnet_group::_modify_replication_subnet_group_input::ModifyReplicationSubnetGroupInput;
+
+pub use crate::operation::modify_replication_subnet_group::_modify_replication_subnet_group_output::ModifyReplicationSubnetGroupOutput;
 
 mod _modify_replication_subnet_group_input;
 

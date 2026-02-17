@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_data_lake_sett
     }
 }
 
-pub use crate::operation::put_data_lake_settings::_put_data_lake_settings_output::PutDataLakeSettingsOutput;
-
 pub use crate::operation::put_data_lake_settings::_put_data_lake_settings_input::PutDataLakeSettingsInput;
+
+pub use crate::operation::put_data_lake_settings::_put_data_lake_settings_output::PutDataLakeSettingsOutput;
 
 mod _put_data_lake_settings_input;
 

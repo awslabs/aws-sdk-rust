@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_parameter_
     }
 }
 
-pub use crate::operation::list_db_parameter_groups::_list_db_parameter_groups_output::ListDbParameterGroupsOutput;
-
 pub use crate::operation::list_db_parameter_groups::_list_db_parameter_groups_input::ListDbParameterGroupsInput;
+
+pub use crate::operation::list_db_parameter_groups::_list_db_parameter_groups_output::ListDbParameterGroupsOutput;
 
 mod _list_db_parameter_groups_input;
 

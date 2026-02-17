@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_version
     }
 }
 
-pub use crate::operation::get_bucket_versioning::_get_bucket_versioning_output::GetBucketVersioningOutput;
-
 pub use crate::operation::get_bucket_versioning::_get_bucket_versioning_input::GetBucketVersioningInput;
+
+pub use crate::operation::get_bucket_versioning::_get_bucket_versioning_output::GetBucketVersioningOutput;
 
 mod _get_bucket_versioning_input;
 

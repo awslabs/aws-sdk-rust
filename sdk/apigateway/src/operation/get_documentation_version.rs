@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_documentation_
     }
 }
 
-pub use crate::operation::get_documentation_version::_get_documentation_version_output::GetDocumentationVersionOutput;
-
 pub use crate::operation::get_documentation_version::_get_documentation_version_input::GetDocumentationVersionInput;
+
+pub use crate::operation::get_documentation_version::_get_documentation_version_output::GetDocumentationVersionOutput;
 
 mod _get_documentation_version_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_datasource_
     }
 }
 
-pub use crate::operation::update_datasource_packages::_update_datasource_packages_output::UpdateDatasourcePackagesOutput;
-
 pub use crate::operation::update_datasource_packages::_update_datasource_packages_input::UpdateDatasourcePackagesInput;
+
+pub use crate::operation::update_datasource_packages::_update_datasource_packages_output::UpdateDatasourcePackagesOutput;
 
 mod _update_datasource_packages_input;
 

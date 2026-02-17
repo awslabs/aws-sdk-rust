@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_prompt_rout
     }
 }
 
-pub use crate::operation::create_prompt_router::_create_prompt_router_output::CreatePromptRouterOutput;
-
 pub use crate::operation::create_prompt_router::_create_prompt_router_input::CreatePromptRouterInput;
+
+pub use crate::operation::create_prompt_router::_create_prompt_router_output::CreatePromptRouterOutput;
 
 mod _create_prompt_router_input;
 

@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_nod
     }
 }
 
-pub use crate::operation::delete_virtual_node::_delete_virtual_node_output::DeleteVirtualNodeOutput;
-
 pub use crate::operation::delete_virtual_node::_delete_virtual_node_input::DeleteVirtualNodeInput;
+
+pub use crate::operation::delete_virtual_node::_delete_virtual_node_output::DeleteVirtualNodeOutput;
 
 mod _delete_virtual_node_input;
 

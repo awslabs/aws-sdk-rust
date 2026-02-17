@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_cache_secur
     }
 }
 
-pub use crate::operation::revoke_cache_security_group_ingress::_revoke_cache_security_group_ingress_output::RevokeCacheSecurityGroupIngressOutput;
-
 pub use crate::operation::revoke_cache_security_group_ingress::_revoke_cache_security_group_ingress_input::RevokeCacheSecurityGroupIngressInput;
+
+pub use crate::operation::revoke_cache_security_group_ingress::_revoke_cache_security_group_ingress_output::RevokeCacheSecurityGroupIngressOutput;
 
 mod _revoke_cache_security_group_ingress_input;
 

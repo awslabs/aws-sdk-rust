@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_ip_group
     }
 }
 
-pub use crate::operation::associate_ip_groups::_associate_ip_groups_output::AssociateIpGroupsOutput;
-
 pub use crate::operation::associate_ip_groups::_associate_ip_groups_input::AssociateIpGroupsInput;
+
+pub use crate::operation::associate_ip_groups::_associate_ip_groups_output::AssociateIpGroupsOutput;
 
 mod _associate_ip_groups_input;
 

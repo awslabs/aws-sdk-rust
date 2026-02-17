@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_role::Updat
     }
 }
 
-pub use crate::operation::update_role::_update_role_output::UpdateRoleOutput;
-
 pub use crate::operation::update_role::_update_role_input::UpdateRoleInput;
+
+pub use crate::operation::update_role::_update_role_output::UpdateRoleOutput;
 
 mod _update_role_input;
 

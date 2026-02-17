@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_long_term_p
     }
 }
 
-pub use crate::operation::update_long_term_pricing::_update_long_term_pricing_output::UpdateLongTermPricingOutput;
-
 pub use crate::operation::update_long_term_pricing::_update_long_term_pricing_input::UpdateLongTermPricingInput;
+
+pub use crate::operation::update_long_term_pricing::_update_long_term_pricing_output::UpdateLongTermPricingOutput;
 
 mod _update_long_term_pricing_input;
 

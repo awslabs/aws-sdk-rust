@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_plan_execut
     }
 }
 
-pub use crate::operation::cancel_plan_execution::_cancel_plan_execution_output::CancelPlanExecutionOutput;
-
 pub use crate::operation::cancel_plan_execution::_cancel_plan_execution_input::CancelPlanExecutionInput;
+
+pub use crate::operation::cancel_plan_execution::_cancel_plan_execution_output::CancelPlanExecutionOutput;
 
 mod _cancel_plan_execution_input;
 

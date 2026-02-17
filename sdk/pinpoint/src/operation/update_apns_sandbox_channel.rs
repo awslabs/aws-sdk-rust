@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_apns_sandbo
     }
 }
 
-pub use crate::operation::update_apns_sandbox_channel::_update_apns_sandbox_channel_output::UpdateApnsSandboxChannelOutput;
-
 pub use crate::operation::update_apns_sandbox_channel::_update_apns_sandbox_channel_input::UpdateApnsSandboxChannelInput;
+
+pub use crate::operation::update_apns_sandbox_channel::_update_apns_sandbox_channel_output::UpdateApnsSandboxChannelOutput;
 
 mod _update_apns_sandbox_channel_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_environme
     }
 }
 
-pub use crate::operation::describe_environments::_describe_environments_output::DescribeEnvironmentsOutput;
-
 pub use crate::operation::describe_environments::_describe_environments_input::DescribeEnvironmentsInput;
+
+pub use crate::operation::describe_environments::_describe_environments_output::DescribeEnvironmentsOutput;
 
 mod _describe_environments_input;
 

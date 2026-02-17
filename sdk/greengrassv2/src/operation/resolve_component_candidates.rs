@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resolve_component_
     }
 }
 
-pub use crate::operation::resolve_component_candidates::_resolve_component_candidates_output::ResolveComponentCandidatesOutput;
-
 pub use crate::operation::resolve_component_candidates::_resolve_component_candidates_input::ResolveComponentCandidatesInput;
+
+pub use crate::operation::resolve_component_candidates::_resolve_component_candidates_output::ResolveComponentCandidatesOutput;
 
 mod _resolve_component_candidates_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trained_model:
     }
 }
 
-pub use crate::operation::get_trained_model::_get_trained_model_output::GetTrainedModelOutput;
-
 pub use crate::operation::get_trained_model::_get_trained_model_input::GetTrainedModelInput;
+
+pub use crate::operation::get_trained_model::_get_trained_model_output::GetTrainedModelOutput;
 
 mod _get_trained_model_input;
 

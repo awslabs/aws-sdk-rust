@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_local_gateway_route_table_vpc_association::_delete_local_gateway_route_table_vpc_association_output::DeleteLocalGatewayRouteTableVpcAssociationOutput;
-
 pub use crate::operation::delete_local_gateway_route_table_vpc_association::_delete_local_gateway_route_table_vpc_association_input::DeleteLocalGatewayRouteTableVpcAssociationInput;
+
+pub use crate::operation::delete_local_gateway_route_table_vpc_association::_delete_local_gateway_route_table_vpc_association_output::DeleteLocalGatewayRouteTableVpcAssociationOutput;
 
 mod _delete_local_gateway_route_table_vpc_association_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_directory:
     }
 }
 
-pub use crate::operation::disable_directory::_disable_directory_output::DisableDirectoryOutput;
-
 pub use crate::operation::disable_directory::_disable_directory_input::DisableDirectoryInput;
+
+pub use crate::operation::disable_directory::_disable_directory_output::DisableDirectoryOutput;
 
 mod _disable_directory_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_d
     }
 }
 
-pub use crate::operation::list_application_dpu_sizes::_list_application_dpu_sizes_output::ListApplicationDpuSizesOutput;
-
 pub use crate::operation::list_application_dpu_sizes::_list_application_dpu_sizes_input::ListApplicationDpuSizesInput;
+
+pub use crate::operation::list_application_dpu_sizes::_list_application_dpu_sizes_output::ListApplicationDpuSizesOutput;
 
 mod _list_application_dpu_sizes_input;
 

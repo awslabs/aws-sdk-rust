@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_s
     }
 }
 
-pub use crate::operation::list_application_snapshots::_list_application_snapshots_output::ListApplicationSnapshotsOutput;
-
 pub use crate::operation::list_application_snapshots::_list_application_snapshots_input::ListApplicationSnapshotsInput;
+
+pub use crate::operation::list_application_snapshots::_list_application_snapshots_output::ListApplicationSnapshotsOutput;
 
 mod _list_application_snapshots_input;
 

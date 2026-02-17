@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_fleets::
     }
 }
 
-pub use crate::operation::batch_get_fleets::_batch_get_fleets_output::BatchGetFleetsOutput;
-
 pub use crate::operation::batch_get_fleets::_batch_get_fleets_input::BatchGetFleetsInput;
+
+pub use crate::operation::batch_get_fleets::_batch_get_fleets_output::BatchGetFleetsOutput;
 
 mod _batch_get_fleets_input;
 

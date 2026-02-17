@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_instance_grou
     }
 }
 
-pub use crate::operation::list_instance_groups::_list_instance_groups_output::ListInstanceGroupsOutput;
-
 pub use crate::operation::list_instance_groups::_list_instance_groups_input::ListInstanceGroupsInput;
+
+pub use crate::operation::list_instance_groups::_list_instance_groups_output::ListInstanceGroupsOutput;
 
 mod _list_instance_groups_input;
 

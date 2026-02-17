@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_state_mac
     }
 }
 
-pub use crate::operation::describe_state_machine_for_execution::_describe_state_machine_for_execution_output::DescribeStateMachineForExecutionOutput;
-
 pub use crate::operation::describe_state_machine_for_execution::_describe_state_machine_for_execution_input::DescribeStateMachineForExecutionInput;
+
+pub use crate::operation::describe_state_machine_for_execution::_describe_state_machine_for_execution_output::DescribeStateMachineForExecutionOutput;
 
 mod _describe_state_machine_for_execution_input;
 

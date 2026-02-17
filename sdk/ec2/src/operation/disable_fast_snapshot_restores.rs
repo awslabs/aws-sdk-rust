@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_fast_snaps
     }
 }
 
-pub use crate::operation::disable_fast_snapshot_restores::_disable_fast_snapshot_restores_output::DisableFastSnapshotRestoresOutput;
-
 pub use crate::operation::disable_fast_snapshot_restores::_disable_fast_snapshot_restores_input::DisableFastSnapshotRestoresInput;
+
+pub use crate::operation::disable_fast_snapshot_restores::_disable_fast_snapshot_restores_output::DisableFastSnapshotRestoresOutput;
 
 mod _disable_fast_snapshot_restores_input;
 

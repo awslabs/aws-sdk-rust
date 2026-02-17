@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_instance_publi
     }
 }
 
-pub use crate::operation::put_instance_public_ports::_put_instance_public_ports_output::PutInstancePublicPortsOutput;
-
 pub use crate::operation::put_instance_public_ports::_put_instance_public_ports_input::PutInstancePublicPortsInput;
+
+pub use crate::operation::put_instance_public_ports::_put_instance_public_ports_output::PutInstancePublicPortsOutput;
 
 mod _put_instance_public_ports_input;
 

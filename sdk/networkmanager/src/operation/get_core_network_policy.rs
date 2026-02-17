@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_core_network_p
     }
 }
 
-pub use crate::operation::get_core_network_policy::_get_core_network_policy_output::GetCoreNetworkPolicyOutput;
-
 pub use crate::operation::get_core_network_policy::_get_core_network_policy_input::GetCoreNetworkPolicyInput;
+
+pub use crate::operation::get_core_network_policy::_get_core_network_policy_output::GetCoreNetworkPolicyOutput;
 
 mod _get_core_network_policy_input;
 

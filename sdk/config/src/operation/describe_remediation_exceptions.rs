@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_remediati
     }
 }
 
-pub use crate::operation::describe_remediation_exceptions::_describe_remediation_exceptions_output::DescribeRemediationExceptionsOutput;
-
 pub use crate::operation::describe_remediation_exceptions::_describe_remediation_exceptions_input::DescribeRemediationExceptionsInput;
+
+pub use crate::operation::describe_remediation_exceptions::_describe_remediation_exceptions_output::DescribeRemediationExceptionsOutput;
 
 mod _describe_remediation_exceptions_input;
 

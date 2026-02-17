@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_task_success:
     }
 }
 
-pub use crate::operation::send_task_success::_send_task_success_output::SendTaskSuccessOutput;
-
 pub use crate::operation::send_task_success::_send_task_success_input::SendTaskSuccessInput;
+
+pub use crate::operation::send_task_success::_send_task_success_output::SendTaskSuccessOutput;
 
 mod _send_task_success_input;
 

@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_grants_
     }
 }
 
-pub use crate::operation::get_access_grants_instance_resource_policy::_get_access_grants_instance_resource_policy_output::GetAccessGrantsInstanceResourcePolicyOutput;
-
 pub use crate::operation::get_access_grants_instance_resource_policy::_get_access_grants_instance_resource_policy_input::GetAccessGrantsInstanceResourcePolicyInput;
+
+pub use crate::operation::get_access_grants_instance_resource_policy::_get_access_grants_instance_resource_policy_output::GetAccessGrantsInstanceResourcePolicyOutput;
 
 mod _get_access_grants_instance_resource_policy_input;
 

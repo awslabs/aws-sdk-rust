@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_cluster::Ge
     }
 }
 
-pub use crate::operation::get_kx_cluster::_get_kx_cluster_output::GetKxClusterOutput;
-
 pub use crate::operation::get_kx_cluster::_get_kx_cluster_input::GetKxClusterInput;
+
+pub use crate::operation::get_kx_cluster::_get_kx_cluster_output::GetKxClusterOutput;
 
 mod _get_kx_cluster_input;
 

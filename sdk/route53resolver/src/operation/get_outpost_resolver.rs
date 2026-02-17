@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outpost_resolv
     }
 }
 
-pub use crate::operation::get_outpost_resolver::_get_outpost_resolver_output::GetOutpostResolverOutput;
-
 pub use crate::operation::get_outpost_resolver::_get_outpost_resolver_input::GetOutpostResolverInput;
+
+pub use crate::operation::get_outpost_resolver::_get_outpost_resolver_output::GetOutpostResolverOutput;
 
 mod _get_outpost_resolver_input;
 

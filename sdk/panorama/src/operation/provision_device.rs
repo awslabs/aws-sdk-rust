@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provision_device::
     }
 }
 
-pub use crate::operation::provision_device::_provision_device_output::ProvisionDeviceOutput;
-
 pub use crate::operation::provision_device::_provision_device_input::ProvisionDeviceInput;
+
+pub use crate::operation::provision_device::_provision_device_output::ProvisionDeviceOutput;
 
 mod _provision_device_input;
 

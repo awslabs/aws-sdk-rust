@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rule_set::D
     }
 }
 
-pub use crate::operation::delete_rule_set::_delete_rule_set_output::DeleteRuleSetOutput;
-
 pub use crate::operation::delete_rule_set::_delete_rule_set_input::DeleteRuleSetInput;
+
+pub use crate::operation::delete_rule_set::_delete_rule_set_output::DeleteRuleSetOutput;
 
 mod _delete_rule_set_input;
 

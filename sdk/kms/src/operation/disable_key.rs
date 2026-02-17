@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_key::Disab
     }
 }
 
-pub use crate::operation::disable_key::_disable_key_output::DisableKeyOutput;
-
 pub use crate::operation::disable_key::_disable_key_input::DisableKeyInput;
+
+pub use crate::operation::disable_key::_disable_key_output::DisableKeyOutput;
 
 mod _disable_key_input;
 

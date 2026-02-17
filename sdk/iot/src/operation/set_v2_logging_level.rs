@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_v2_logging_lev
     }
 }
 
-pub use crate::operation::set_v2_logging_level::_set_v2_logging_level_output::SetV2LoggingLevelOutput;
-
 pub use crate::operation::set_v2_logging_level::_set_v2_logging_level_input::SetV2LoggingLevelInput;
+
+pub use crate::operation::set_v2_logging_level::_set_v2_logging_level_output::SetV2LoggingLevelOutput;
 
 mod _set_v2_logging_level_input;
 

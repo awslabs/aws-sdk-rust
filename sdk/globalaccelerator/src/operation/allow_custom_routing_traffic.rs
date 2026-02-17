@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allow_custom_routi
     }
 }
 
-pub use crate::operation::allow_custom_routing_traffic::_allow_custom_routing_traffic_output::AllowCustomRoutingTrafficOutput;
-
 pub use crate::operation::allow_custom_routing_traffic::_allow_custom_routing_traffic_input::AllowCustomRoutingTrafficInput;
+
+pub use crate::operation::allow_custom_routing_traffic::_allow_custom_routing_traffic_output::AllowCustomRoutingTrafficOutput;
 
 mod _allow_custom_routing_traffic_input;
 

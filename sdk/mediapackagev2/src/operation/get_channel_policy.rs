@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel_policy
     }
 }
 
-pub use crate::operation::get_channel_policy::_get_channel_policy_output::GetChannelPolicyOutput;
-
 pub use crate::operation::get_channel_policy::_get_channel_policy_input::GetChannelPolicyInput;
+
+pub use crate::operation::get_channel_policy::_get_channel_policy_output::GetChannelPolicyOutput;
 
 mod _get_channel_policy_input;
 

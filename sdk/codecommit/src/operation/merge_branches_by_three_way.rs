@@ -751,9 +751,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_branches_by_
     }
 }
 
-pub use crate::operation::merge_branches_by_three_way::_merge_branches_by_three_way_output::MergeBranchesByThreeWayOutput;
-
 pub use crate::operation::merge_branches_by_three_way::_merge_branches_by_three_way_input::MergeBranchesByThreeWayInput;
+
+pub use crate::operation::merge_branches_by_three_way::_merge_branches_by_three_way_output::MergeBranchesByThreeWayOutput;
 
 mod _merge_branches_by_three_way_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_realtime_lo
     }
 }
 
-pub use crate::operation::delete_realtime_log_config::_delete_realtime_log_config_output::DeleteRealtimeLogConfigOutput;
-
 pub use crate::operation::delete_realtime_log_config::_delete_realtime_log_config_input::DeleteRealtimeLogConfigInput;
+
+pub use crate::operation::delete_realtime_log_config::_delete_realtime_log_config_output::DeleteRealtimeLogConfigOutput;
 
 mod _delete_realtime_log_config_input;
 

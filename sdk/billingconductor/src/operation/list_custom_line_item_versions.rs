@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_line_i
     }
 }
 
-pub use crate::operation::list_custom_line_item_versions::_list_custom_line_item_versions_output::ListCustomLineItemVersionsOutput;
-
 pub use crate::operation::list_custom_line_item_versions::_list_custom_line_item_versions_input::ListCustomLineItemVersionsInput;
+
+pub use crate::operation::list_custom_line_item_versions::_list_custom_line_item_versions_output::ListCustomLineItemVersionsOutput;
 
 mod _list_custom_line_item_versions_input;
 

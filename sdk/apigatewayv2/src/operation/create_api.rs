@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_api::Create
     }
 }
 
-pub use crate::operation::create_api::_create_api_output::CreateApiOutput;
-
 pub use crate::operation::create_api::_create_api_input::CreateApiInput;
+
+pub use crate::operation::create_api::_create_api_output::CreateApiOutput;
 
 mod _create_api_input;
 

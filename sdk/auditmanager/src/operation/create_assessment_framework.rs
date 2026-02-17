@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_assessment_
     }
 }
 
-pub use crate::operation::create_assessment_framework::_create_assessment_framework_output::CreateAssessmentFrameworkOutput;
-
 pub use crate::operation::create_assessment_framework::_create_assessment_framework_input::CreateAssessmentFrameworkInput;
+
+pub use crate::operation::create_assessment_framework::_create_assessment_framework_output::CreateAssessmentFrameworkOutput;
 
 mod _create_assessment_framework_input;
 

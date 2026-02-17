@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_protect_
     }
 }
 
-pub use crate::operation::associate_protect_configuration::_associate_protect_configuration_output::AssociateProtectConfigurationOutput;
-
 pub use crate::operation::associate_protect_configuration::_associate_protect_configuration_input::AssociateProtectConfigurationInput;
+
+pub use crate::operation::associate_protect_configuration::_associate_protect_configuration_output::AssociateProtectConfigurationOutput;
 
 mod _associate_protect_configuration_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_permi
     }
 }
 
-pub use crate::operation::list_account_permissions::_list_account_permissions_output::ListAccountPermissionsOutput;
-
 pub use crate::operation::list_account_permissions::_list_account_permissions_input::ListAccountPermissionsInput;
+
+pub use crate::operation::list_account_permissions::_list_account_permissions_output::ListAccountPermissionsOutput;
 
 mod _list_account_permissions_input;
 

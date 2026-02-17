@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_playback_key_
     }
 }
 
-pub use crate::operation::list_playback_key_pairs::_list_playback_key_pairs_output::ListPlaybackKeyPairsOutput;
-
 pub use crate::operation::list_playback_key_pairs::_list_playback_key_pairs_input::ListPlaybackKeyPairsInput;
+
+pub use crate::operation::list_playback_key_pairs::_list_playback_key_pairs_output::ListPlaybackKeyPairsOutput;
 
 mod _list_playback_key_pairs_input;
 

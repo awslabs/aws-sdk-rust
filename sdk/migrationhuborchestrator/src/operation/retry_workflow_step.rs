@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retry_workflow_ste
     }
 }
 
-pub use crate::operation::retry_workflow_step::_retry_workflow_step_output::RetryWorkflowStepOutput;
-
 pub use crate::operation::retry_workflow_step::_retry_workflow_step_input::RetryWorkflowStepInput;
+
+pub use crate::operation::retry_workflow_step::_retry_workflow_step_output::RetryWorkflowStepOutput;
 
 mod _retry_workflow_step_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_action::
     }
 }
 
-pub use crate::operation::get_event_action::_get_event_action_output::GetEventActionOutput;
-
 pub use crate::operation::get_event_action::_get_event_action_input::GetEventActionInput;
+
+pub use crate::operation::get_event_action::_get_event_action_output::GetEventActionOutput;
 
 mod _get_event_action_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_disk_snapsh
     }
 }
 
-pub use crate::operation::create_disk_snapshot::_create_disk_snapshot_output::CreateDiskSnapshotOutput;
-
 pub use crate::operation::create_disk_snapshot::_create_disk_snapshot_input::CreateDiskSnapshotInput;
+
+pub use crate::operation::create_disk_snapshot::_create_disk_snapshot_output::CreateDiskSnapshotOutput;
 
 mod _create_disk_snapshot_input;
 

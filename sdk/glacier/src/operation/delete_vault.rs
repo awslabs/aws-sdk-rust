@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vault::Dele
     }
 }
 
-pub use crate::operation::delete_vault::_delete_vault_output::DeleteVaultOutput;
-
 pub use crate::operation::delete_vault::_delete_vault_input::DeleteVaultInput;
+
+pub use crate::operation::delete_vault::_delete_vault_output::DeleteVaultOutput;
 
 mod _delete_vault_input;
 

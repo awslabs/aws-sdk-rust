@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_destination
     }
 }
 
-pub use crate::operation::delete_destination::_delete_destination_output::DeleteDestinationOutput;
-
 pub use crate::operation::delete_destination::_delete_destination_input::DeleteDestinationInput;
+
+pub use crate::operation::delete_destination::_delete_destination_output::DeleteDestinationOutput;
 
 mod _delete_destination_input;
 

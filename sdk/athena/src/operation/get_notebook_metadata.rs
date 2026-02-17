@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_notebook_metad
     }
 }
 
-pub use crate::operation::get_notebook_metadata::_get_notebook_metadata_output::GetNotebookMetadataOutput;
-
 pub use crate::operation::get_notebook_metadata::_get_notebook_metadata_input::GetNotebookMetadataInput;
+
+pub use crate::operation::get_notebook_metadata::_get_notebook_metadata_output::GetNotebookMetadataOutput;
 
 mod _get_notebook_metadata_input;
 

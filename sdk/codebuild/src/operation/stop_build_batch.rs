@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_build_batch::
     }
 }
 
-pub use crate::operation::stop_build_batch::_stop_build_batch_output::StopBuildBatchOutput;
-
 pub use crate::operation::stop_build_batch::_stop_build_batch_input::StopBuildBatchInput;
+
+pub use crate::operation::stop_build_batch::_stop_build_batch_output::StopBuildBatchOutput;
 
 mod _stop_build_batch_input;
 

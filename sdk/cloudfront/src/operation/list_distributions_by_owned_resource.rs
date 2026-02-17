@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_owned_resource::_list_distributions_by_owned_resource_output::ListDistributionsByOwnedResourceOutput;
-
 pub use crate::operation::list_distributions_by_owned_resource::_list_distributions_by_owned_resource_input::ListDistributionsByOwnedResourceInput;
+
+pub use crate::operation::list_distributions_by_owned_resource::_list_distributions_by_owned_resource_output::ListDistributionsByOwnedResourceOutput;
 
 mod _list_distributions_by_owned_resource_input;
 

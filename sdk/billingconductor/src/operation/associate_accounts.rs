@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_accounts
     }
 }
 
-pub use crate::operation::associate_accounts::_associate_accounts_output::AssociateAccountsOutput;
-
 pub use crate::operation::associate_accounts::_associate_accounts_input::AssociateAccountsInput;
+
+pub use crate::operation::associate_accounts::_associate_accounts_output::AssociateAccountsOutput;
 
 mod _associate_accounts_input;
 

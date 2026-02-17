@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_fleet_metri
     }
 }
 
-pub use crate::operation::update_fleet_metric::_update_fleet_metric_output::UpdateFleetMetricOutput;
-
 pub use crate::operation::update_fleet_metric::_update_fleet_metric_input::UpdateFleetMetricInput;
+
+pub use crate::operation::update_fleet_metric::_update_fleet_metric_output::UpdateFleetMetricOutput;
 
 mod _update_fleet_metric_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resolve_alias::Res
     }
 }
 
-pub use crate::operation::resolve_alias::_resolve_alias_output::ResolveAliasOutput;
-
 pub use crate::operation::resolve_alias::_resolve_alias_input::ResolveAliasInput;
+
+pub use crate::operation::resolve_alias::_resolve_alias_output::ResolveAliasOutput;
 
 mod _resolve_alias_input;
 

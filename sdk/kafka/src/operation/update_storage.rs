@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_storage::Up
     }
 }
 
-pub use crate::operation::update_storage::_update_storage_output::UpdateStorageOutput;
-
 pub use crate::operation::update_storage::_update_storage_input::UpdateStorageInput;
+
+pub use crate::operation::update_storage::_update_storage_output::UpdateStorageOutput;
 
 mod _update_storage_input;
 

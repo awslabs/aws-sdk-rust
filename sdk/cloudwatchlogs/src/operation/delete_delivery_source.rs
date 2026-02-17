@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_delivery_so
     }
 }
 
-pub use crate::operation::delete_delivery_source::_delete_delivery_source_output::DeleteDeliverySourceOutput;
-
 pub use crate::operation::delete_delivery_source::_delete_delivery_source_input::DeleteDeliverySourceInput;
+
+pub use crate::operation::delete_delivery_source::_delete_delivery_source_output::DeleteDeliverySourceOutput;
 
 mod _delete_delivery_source_input;
 

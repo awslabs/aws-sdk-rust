@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workflow_de
     }
 }
 
-pub use crate::operation::create_workflow_definition::_create_workflow_definition_output::CreateWorkflowDefinitionOutput;
-
 pub use crate::operation::create_workflow_definition::_create_workflow_definition_input::CreateWorkflowDefinitionInput;
+
+pub use crate::operation::create_workflow_definition::_create_workflow_definition_output::CreateWorkflowDefinitionOutput;
 
 mod _create_workflow_definition_input;
 

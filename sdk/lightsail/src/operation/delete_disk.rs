@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_disk::Delet
     }
 }
 
-pub use crate::operation::delete_disk::_delete_disk_output::DeleteDiskOutput;
-
 pub use crate::operation::delete_disk::_delete_disk_input::DeleteDiskInput;
+
+pub use crate::operation::delete_disk::_delete_disk_output::DeleteDiskOutput;
 
 mod _delete_disk_input;
 

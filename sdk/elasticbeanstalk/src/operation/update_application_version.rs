@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_application
     }
 }
 
-pub use crate::operation::update_application_version::_update_application_version_output::UpdateApplicationVersionOutput;
-
 pub use crate::operation::update_application_version::_update_application_version_input::UpdateApplicationVersionInput;
+
+pub use crate::operation::update_application_version::_update_application_version_output::UpdateApplicationVersionOutput;
 
 mod _update_application_version_input;
 

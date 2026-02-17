@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_imported_ke
     }
 }
 
-pub use crate::operation::delete_imported_key_material::_delete_imported_key_material_output::DeleteImportedKeyMaterialOutput;
-
 pub use crate::operation::delete_imported_key_material::_delete_imported_key_material_input::DeleteImportedKeyMaterialInput;
+
+pub use crate::operation::delete_imported_key_material::_delete_imported_key_material_output::DeleteImportedKeyMaterialOutput;
 
 mod _delete_imported_key_material_input;
 

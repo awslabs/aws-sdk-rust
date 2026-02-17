@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_use_case::D
     }
 }
 
-pub use crate::operation::delete_use_case::_delete_use_case_output::DeleteUseCaseOutput;
-
 pub use crate::operation::delete_use_case::_delete_use_case_input::DeleteUseCaseInput;
+
+pub use crate::operation::delete_use_case::_delete_use_case_output::DeleteUseCaseOutput;
 
 mod _delete_use_case_input;
 

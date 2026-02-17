@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::promote_read_repli
     }
 }
 
-pub use crate::operation::promote_read_replica::_promote_read_replica_output::PromoteReadReplicaOutput;
-
 pub use crate::operation::promote_read_replica::_promote_read_replica_input::PromoteReadReplicaInput;
+
+pub use crate::operation::promote_read_replica::_promote_read_replica_output::PromoteReadReplicaOutput;
 
 mod _promote_read_replica_input;
 

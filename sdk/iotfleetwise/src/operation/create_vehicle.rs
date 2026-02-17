@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vehicle::Cr
     }
 }
 
-pub use crate::operation::create_vehicle::_create_vehicle_output::CreateVehicleOutput;
-
 pub use crate::operation::create_vehicle::_create_vehicle_input::CreateVehicleInput;
+
+pub use crate::operation::create_vehicle::_create_vehicle_output::CreateVehicleOutput;
 
 mod _create_vehicle_input;
 

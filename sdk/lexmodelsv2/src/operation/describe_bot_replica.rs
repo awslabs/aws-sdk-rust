@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bot_repli
     }
 }
 
-pub use crate::operation::describe_bot_replica::_describe_bot_replica_output::DescribeBotReplicaOutput;
-
 pub use crate::operation::describe_bot_replica::_describe_bot_replica_input::DescribeBotReplicaInput;
+
+pub use crate::operation::describe_bot_replica::_describe_bot_replica_output::DescribeBotReplicaOutput;
 
 mod _describe_bot_replica_input;
 

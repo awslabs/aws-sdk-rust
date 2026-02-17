@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_monitored_res
     }
 }
 
-pub use crate::operation::list_monitored_resources::_list_monitored_resources_output::ListMonitoredResourcesOutput;
-
 pub use crate::operation::list_monitored_resources::_list_monitored_resources_input::ListMonitoredResourcesInput;
+
+pub use crate::operation::list_monitored_resources::_list_monitored_resources_output::ListMonitoredResourcesOutput;
 
 mod _list_monitored_resources_input;
 

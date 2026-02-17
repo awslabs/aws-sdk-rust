@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_voice_connector_emergency_calling_configuration::_get_voice_connector_emergency_calling_configuration_output::GetVoiceConnectorEmergencyCallingConfigurationOutput;
-
 pub use crate::operation::get_voice_connector_emergency_calling_configuration::_get_voice_connector_emergency_calling_configuration_input::GetVoiceConnectorEmergencyCallingConfigurationInput;
+
+pub use crate::operation::get_voice_connector_emergency_calling_configuration::_get_voice_connector_emergency_calling_configuration_output::GetVoiceConnectorEmergencyCallingConfigurationOutput;
 
 mod _get_voice_connector_emergency_calling_configuration_input;
 

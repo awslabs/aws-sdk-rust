@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rotation::D
     }
 }
 
-pub use crate::operation::delete_rotation::_delete_rotation_output::DeleteRotationOutput;
-
 pub use crate::operation::delete_rotation::_delete_rotation_input::DeleteRotationInput;
+
+pub use crate::operation::delete_rotation::_delete_rotation_output::DeleteRotationOutput;
 
 mod _delete_rotation_input;
 

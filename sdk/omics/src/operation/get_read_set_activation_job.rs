@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_read_set_activ
     }
 }
 
-pub use crate::operation::get_read_set_activation_job::_get_read_set_activation_job_output::GetReadSetActivationJobOutput;
-
 pub use crate::operation::get_read_set_activation_job::_get_read_set_activation_job_input::GetReadSetActivationJobInput;
+
+pub use crate::operation::get_read_set_activation_job::_get_read_set_activation_job_output::GetReadSetActivationJobOutput;
 
 mod _get_read_set_activation_job_input;
 

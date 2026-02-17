@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_test_set_
     }
 }
 
-pub use crate::operation::describe_test_set_discrepancy_report::_describe_test_set_discrepancy_report_output::DescribeTestSetDiscrepancyReportOutput;
-
 pub use crate::operation::describe_test_set_discrepancy_report::_describe_test_set_discrepancy_report_input::DescribeTestSetDiscrepancyReportInput;
+
+pub use crate::operation::describe_test_set_discrepancy_report::_describe_test_set_discrepancy_report_output::DescribeTestSetDiscrepancyReportOutput;
 
 mod _describe_test_set_discrepancy_report_input;
 

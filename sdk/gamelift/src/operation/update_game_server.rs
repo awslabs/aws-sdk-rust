@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_game_server
     }
 }
 
-pub use crate::operation::update_game_server::_update_game_server_output::UpdateGameServerOutput;
-
 pub use crate::operation::update_game_server::_update_game_server_input::UpdateGameServerInput;
+
+pub use crate::operation::update_game_server::_update_game_server_output::UpdateGameServerOutput;
 
 mod _update_game_server_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_affected_accounts_for_organization::_describe_affected_accounts_for_organization_output::DescribeAffectedAccountsForOrganizationOutput;
-
 pub use crate::operation::describe_affected_accounts_for_organization::_describe_affected_accounts_for_organization_input::DescribeAffectedAccountsForOrganizationInput;
+
+pub use crate::operation::describe_affected_accounts_for_organization::_describe_affected_accounts_for_organization_output::DescribeAffectedAccountsForOrganizationOutput;
 
 mod _describe_affected_accounts_for_organization_input;
 

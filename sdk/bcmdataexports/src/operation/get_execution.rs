@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_execution::Get
     }
 }
 
-pub use crate::operation::get_execution::_get_execution_output::GetExecutionOutput;
-
 pub use crate::operation::get_execution::_get_execution_input::GetExecutionInput;
+
+pub use crate::operation::get_execution::_get_execution_output::GetExecutionOutput;
 
 mod _get_execution_input;
 

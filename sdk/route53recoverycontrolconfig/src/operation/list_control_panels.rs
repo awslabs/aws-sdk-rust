@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_control_panel
     }
 }
 
-pub use crate::operation::list_control_panels::_list_control_panels_output::ListControlPanelsOutput;
-
 pub use crate::operation::list_control_panels::_list_control_panels_input::ListControlPanelsInput;
+
+pub use crate::operation::list_control_panels::_list_control_panels_output::ListControlPanelsOutput;
 
 mod _list_control_panels_input;
 

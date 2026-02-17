@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_third
     }
 }
 
-pub use crate::operation::disassociate_third_party_firewall::_disassociate_third_party_firewall_output::DisassociateThirdPartyFirewallOutput;
-
 pub use crate::operation::disassociate_third_party_firewall::_disassociate_third_party_firewall_input::DisassociateThirdPartyFirewallInput;
+
+pub use crate::operation::disassociate_third_party_firewall::_disassociate_third_party_firewall_output::DisassociateThirdPartyFirewallOutput;
 
 mod _disassociate_third_party_firewall_input;
 

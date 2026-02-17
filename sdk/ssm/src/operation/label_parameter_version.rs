@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::label_parameter_ve
     }
 }
 
-pub use crate::operation::label_parameter_version::_label_parameter_version_output::LabelParameterVersionOutput;
-
 pub use crate::operation::label_parameter_version::_label_parameter_version_input::LabelParameterVersionInput;
+
+pub use crate::operation::label_parameter_version::_label_parameter_version_output::LabelParameterVersionOutput;
 
 mod _label_parameter_version_input;
 

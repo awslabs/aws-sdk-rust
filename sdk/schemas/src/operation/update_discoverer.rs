@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_discoverer:
     }
 }
 
-pub use crate::operation::update_discoverer::_update_discoverer_output::UpdateDiscovererOutput;
-
 pub use crate::operation::update_discoverer::_update_discoverer_input::UpdateDiscovererInput;
+
+pub use crate::operation::update_discoverer::_update_discoverer_output::UpdateDiscovererOutput;
 
 mod _update_discoverer_input;
 

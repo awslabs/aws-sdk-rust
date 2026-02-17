@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_model_invocat
     }
 }
 
-pub use crate::operation::stop_model_invocation_job::_stop_model_invocation_job_output::StopModelInvocationJobOutput;
-
 pub use crate::operation::stop_model_invocation_job::_stop_model_invocation_job_input::StopModelInvocationJobInput;
+
+pub use crate::operation::stop_model_invocation_job::_stop_model_invocation_job_output::StopModelInvocationJobOutput;
 
 mod _stop_model_invocation_job_input;
 

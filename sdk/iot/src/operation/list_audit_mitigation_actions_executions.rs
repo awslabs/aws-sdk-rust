@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audit_mitigat
     }
 }
 
-pub use crate::operation::list_audit_mitigation_actions_executions::_list_audit_mitigation_actions_executions_output::ListAuditMitigationActionsExecutionsOutput;
-
 pub use crate::operation::list_audit_mitigation_actions_executions::_list_audit_mitigation_actions_executions_input::ListAuditMitigationActionsExecutionsInput;
+
+pub use crate::operation::list_audit_mitigation_actions_executions::_list_audit_mitigation_actions_executions_output::ListAuditMitigationActionsExecutionsOutput;
 
 mod _list_audit_mitigation_actions_executions_input;
 

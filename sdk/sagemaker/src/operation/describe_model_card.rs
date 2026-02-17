@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_model_car
     }
 }
 
-pub use crate::operation::describe_model_card::_describe_model_card_output::DescribeModelCardOutput;
-
 pub use crate::operation::describe_model_card::_describe_model_card_input::DescribeModelCardInput;
+
+pub use crate::operation::describe_model_card::_describe_model_card_output::DescribeModelCardOutput;
 
 mod _describe_model_card_input;
 

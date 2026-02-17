@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::index_documents::I
     }
 }
 
-pub use crate::operation::index_documents::_index_documents_output::IndexDocumentsOutput;
-
 pub use crate::operation::index_documents::_index_documents_input::IndexDocumentsInput;
+
+pub use crate::operation::index_documents::_index_documents_output::IndexDocumentsOutput;
 
 mod _index_documents_input;
 

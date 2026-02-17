@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_email_chann
     }
 }
 
-pub use crate::operation::update_email_channel::_update_email_channel_output::UpdateEmailChannelOutput;
-
 pub use crate::operation::update_email_channel::_update_email_channel_input::UpdateEmailChannelInput;
+
+pub use crate::operation::update_email_channel::_update_email_channel_output::UpdateEmailChannelOutput;
 
 mod _update_email_channel_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analysis_repo
     }
 }
 
-pub use crate::operation::list_analysis_reports::_list_analysis_reports_output::ListAnalysisReportsOutput;
-
 pub use crate::operation::list_analysis_reports::_list_analysis_reports_input::ListAnalysisReportsInput;
+
+pub use crate::operation::list_analysis_reports::_list_analysis_reports_output::ListAnalysisReportsOutput;
 
 mod _list_analysis_reports_input;
 

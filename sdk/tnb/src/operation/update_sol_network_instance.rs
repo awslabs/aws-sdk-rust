@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sol_network
     }
 }
 
-pub use crate::operation::update_sol_network_instance::_update_sol_network_instance_output::UpdateSolNetworkInstanceOutput;
-
 pub use crate::operation::update_sol_network_instance::_update_sol_network_instance_input::UpdateSolNetworkInstanceInput;
+
+pub use crate::operation::update_sol_network_instance::_update_sol_network_instance_output::UpdateSolNetworkInstanceOutput;
 
 mod _update_sol_network_instance_input;
 

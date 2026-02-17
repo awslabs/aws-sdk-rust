@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_aws_default_s
     }
 }
 
-pub use crate::operation::list_aws_default_service_quotas::_list_aws_default_service_quotas_output::ListAwsDefaultServiceQuotasOutput;
-
 pub use crate::operation::list_aws_default_service_quotas::_list_aws_default_service_quotas_input::ListAwsDefaultServiceQuotasInput;
+
+pub use crate::operation::list_aws_default_service_quotas::_list_aws_default_service_quotas_output::ListAwsDefaultServiceQuotasOutput;
 
 mod _list_aws_default_service_quotas_input;
 

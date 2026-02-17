@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_db_cluster::Ge
     }
 }
 
-pub use crate::operation::get_db_cluster::_get_db_cluster_output::GetDbClusterOutput;
-
 pub use crate::operation::get_db_cluster::_get_db_cluster_input::GetDbClusterInput;
+
+pub use crate::operation::get_db_cluster::_get_db_cluster_output::GetDbClusterOutput;
 
 mod _get_db_cluster_input;
 

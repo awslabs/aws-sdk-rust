@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_organization_conformance_pack_statuses::_describe_organization_conformance_pack_statuses_output::DescribeOrganizationConformancePackStatusesOutput;
-
 pub use crate::operation::describe_organization_conformance_pack_statuses::_describe_organization_conformance_pack_statuses_input::DescribeOrganizationConformancePackStatusesInput;
+
+pub use crate::operation::describe_organization_conformance_pack_statuses::_describe_organization_conformance_pack_statuses_output::DescribeOrganizationConformancePackStatusesOutput;
 
 mod _describe_organization_conformance_pack_statuses_input;
 

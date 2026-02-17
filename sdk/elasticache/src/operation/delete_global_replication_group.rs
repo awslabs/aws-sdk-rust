@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_global_repl
     }
 }
 
-pub use crate::operation::delete_global_replication_group::_delete_global_replication_group_output::DeleteGlobalReplicationGroupOutput;
-
 pub use crate::operation::delete_global_replication_group::_delete_global_replication_group_input::DeleteGlobalReplicationGroupInput;
+
+pub use crate::operation::delete_global_replication_group::_delete_global_replication_group_output::DeleteGlobalReplicationGroupOutput;
 
 mod _delete_global_replication_group_input;
 

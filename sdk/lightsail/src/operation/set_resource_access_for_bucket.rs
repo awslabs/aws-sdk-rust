@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_resource_acces
     }
 }
 
-pub use crate::operation::set_resource_access_for_bucket::_set_resource_access_for_bucket_output::SetResourceAccessForBucketOutput;
-
 pub use crate::operation::set_resource_access_for_bucket::_set_resource_access_for_bucket_input::SetResourceAccessForBucketInput;
+
+pub use crate::operation::set_resource_access_for_bucket::_set_resource_access_for_bucket_output::SetResourceAccessForBucketOutput;
 
 mod _set_resource_access_for_bucket_input;
 

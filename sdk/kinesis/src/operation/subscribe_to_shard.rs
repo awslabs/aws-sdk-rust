@@ -489,9 +489,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::subscribe_to_shard
     }
 }
 
-pub use crate::operation::subscribe_to_shard::_subscribe_to_shard_output::SubscribeToShardOutput;
-
 pub use crate::operation::subscribe_to_shard::_subscribe_to_shard_input::SubscribeToShardInput;
+
+pub use crate::operation::subscribe_to_shard::_subscribe_to_shard_output::SubscribeToShardOutput;
 
 mod _subscribe_to_shard_input;
 

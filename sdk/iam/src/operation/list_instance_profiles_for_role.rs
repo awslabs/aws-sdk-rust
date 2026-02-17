@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_instance_prof
     }
 }
 
-pub use crate::operation::list_instance_profiles_for_role::_list_instance_profiles_for_role_output::ListInstanceProfilesForRoleOutput;
-
 pub use crate::operation::list_instance_profiles_for_role::_list_instance_profiles_for_role_input::ListInstanceProfilesForRoleInput;
+
+pub use crate::operation::list_instance_profiles_for_role::_list_instance_profiles_for_role_output::ListInstanceProfilesForRoleOutput;
 
 mod _list_instance_profiles_for_role_input;
 

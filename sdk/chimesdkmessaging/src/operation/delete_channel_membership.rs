@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_channel_mem
     }
 }
 
-pub use crate::operation::delete_channel_membership::_delete_channel_membership_output::DeleteChannelMembershipOutput;
-
 pub use crate::operation::delete_channel_membership::_delete_channel_membership_input::DeleteChannelMembershipInput;
+
+pub use crate::operation::delete_channel_membership::_delete_channel_membership_output::DeleteChannelMembershipOutput;
 
 mod _delete_channel_membership_input;
 

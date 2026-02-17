@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_table_bucke
     }
 }
 
-pub use crate::operation::delete_table_bucket_encryption::_delete_table_bucket_encryption_output::DeleteTableBucketEncryptionOutput;
-
 pub use crate::operation::delete_table_bucket_encryption::_delete_table_bucket_encryption_input::DeleteTableBucketEncryptionInput;
+
+pub use crate::operation::delete_table_bucket_encryption::_delete_table_bucket_encryption_output::DeleteTableBucketEncryptionOutput;
 
 mod _delete_table_bucket_encryption_input;
 

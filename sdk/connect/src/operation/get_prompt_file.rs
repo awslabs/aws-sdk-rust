@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_prompt_file::G
     }
 }
 
-pub use crate::operation::get_prompt_file::_get_prompt_file_output::GetPromptFileOutput;
-
 pub use crate::operation::get_prompt_file::_get_prompt_file_input::GetPromptFileInput;
+
+pub use crate::operation::get_prompt_file::_get_prompt_file_output::GetPromptFileOutput;
 
 mod _get_prompt_file_input;
 

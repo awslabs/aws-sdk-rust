@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_assessment_
     }
 }
 
-pub use crate::operation::update_assessment_framework::_update_assessment_framework_output::UpdateAssessmentFrameworkOutput;
-
 pub use crate::operation::update_assessment_framework::_update_assessment_framework_input::UpdateAssessmentFrameworkInput;
+
+pub use crate::operation::update_assessment_framework::_update_assessment_framework_output::UpdateAssessmentFrameworkOutput;
 
 mod _update_assessment_framework_input;
 

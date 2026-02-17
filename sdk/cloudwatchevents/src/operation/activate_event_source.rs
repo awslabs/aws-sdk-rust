@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_event_sou
     }
 }
 
-pub use crate::operation::activate_event_source::_activate_event_source_output::ActivateEventSourceOutput;
-
 pub use crate::operation::activate_event_source::_activate_event_source_input::ActivateEventSourceInput;
+
+pub use crate::operation::activate_event_source::_activate_event_source_output::ActivateEventSourceOutput;
 
 mod _activate_event_source_input;
 

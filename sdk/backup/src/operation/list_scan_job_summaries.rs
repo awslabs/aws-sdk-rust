@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scan_job_summ
     }
 }
 
-pub use crate::operation::list_scan_job_summaries::_list_scan_job_summaries_output::ListScanJobSummariesOutput;
-
 pub use crate::operation::list_scan_job_summaries::_list_scan_job_summaries_input::ListScanJobSummariesInput;
+
+pub use crate::operation::list_scan_job_summaries::_list_scan_job_summaries_output::ListScanJobSummariesOutput;
 
 mod _list_scan_job_summaries_input;
 

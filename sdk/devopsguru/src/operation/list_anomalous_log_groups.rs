@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_anomalous_log
     }
 }
 
-pub use crate::operation::list_anomalous_log_groups::_list_anomalous_log_groups_output::ListAnomalousLogGroupsOutput;
-
 pub use crate::operation::list_anomalous_log_groups::_list_anomalous_log_groups_input::ListAnomalousLogGroupsInput;
+
+pub use crate::operation::list_anomalous_log_groups::_list_anomalous_log_groups_output::ListAnomalousLogGroupsOutput;
 
 mod _list_anomalous_log_groups_input;
 

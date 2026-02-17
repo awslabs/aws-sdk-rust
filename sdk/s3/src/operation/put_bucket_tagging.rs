@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_tagging
     }
 }
 
-pub use crate::operation::put_bucket_tagging::_put_bucket_tagging_output::PutBucketTaggingOutput;
-
 pub use crate::operation::put_bucket_tagging::_put_bucket_tagging_input::PutBucketTaggingInput;
+
+pub use crate::operation::put_bucket_tagging::_put_bucket_tagging_output::PutBucketTaggingOutput;
 
 mod _put_bucket_tagging_input;
 

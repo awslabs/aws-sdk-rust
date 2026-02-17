@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_state_templ
     }
 }
 
-pub use crate::operation::delete_state_template::_delete_state_template_output::DeleteStateTemplateOutput;
-
 pub use crate::operation::delete_state_template::_delete_state_template_input::DeleteStateTemplateInput;
+
+pub use crate::operation::delete_state_template::_delete_state_template_output::DeleteStateTemplateOutput;
 
 mod _delete_state_template_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_assignment::Ge
     }
 }
 
-pub use crate::operation::get_assignment::_get_assignment_output::GetAssignmentOutput;
-
 pub use crate::operation::get_assignment::_get_assignment_input::GetAssignmentInput;
+
+pub use crate::operation::get_assignment::_get_assignment_output::GetAssignmentOutput;
 
 mod _get_assignment_input;
 

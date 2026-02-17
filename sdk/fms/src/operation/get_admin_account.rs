@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_admin_account:
     }
 }
 
-pub use crate::operation::get_admin_account::_get_admin_account_output::GetAdminAccountOutput;
-
 pub use crate::operation::get_admin_account::_get_admin_account_input::GetAdminAccountInput;
+
+pub use crate::operation::get_admin_account::_get_admin_account_output::GetAdminAccountOutput;
 
 mod _get_admin_account_input;
 

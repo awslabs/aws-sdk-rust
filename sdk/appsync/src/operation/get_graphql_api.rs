@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_graphql_api::G
     }
 }
 
-pub use crate::operation::get_graphql_api::_get_graphql_api_output::GetGraphqlApiOutput;
-
 pub use crate::operation::get_graphql_api::_get_graphql_api_input::GetGraphqlApiInput;
+
+pub use crate::operation::get_graphql_api::_get_graphql_api_output::GetGraphqlApiOutput;
 
 mod _get_graphql_api_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upgrade_domain::Up
     }
 }
 
-pub use crate::operation::upgrade_domain::_upgrade_domain_output::UpgradeDomainOutput;
-
 pub use crate::operation::upgrade_domain::_upgrade_domain_input::UpgradeDomainInput;
+
+pub use crate::operation::upgrade_domain::_upgrade_domain_output::UpgradeDomainOutput;
 
 mod _upgrade_domain_input;
 

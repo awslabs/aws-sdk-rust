@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_target_groups
     }
 }
 
-pub use crate::operation::list_target_groups::_list_target_groups_output::ListTargetGroupsOutput;
-
 pub use crate::operation::list_target_groups::_list_target_groups_input::ListTargetGroupsInput;
+
+pub use crate::operation::list_target_groups::_list_target_groups_output::ListTargetGroupsOutput;
 
 mod _list_target_groups_input;
 

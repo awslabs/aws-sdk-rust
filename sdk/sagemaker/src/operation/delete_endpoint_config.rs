@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_endpoint_co
     }
 }
 
-pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_output::DeleteEndpointConfigOutput;
-
 pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_input::DeleteEndpointConfigInput;
+
+pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_output::DeleteEndpointConfigOutput;
 
 mod _delete_endpoint_config_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_inter
     }
 }
 
-pub use crate::operation::list_virtual_interface_test_history::_list_virtual_interface_test_history_output::ListVirtualInterfaceTestHistoryOutput;
-
 pub use crate::operation::list_virtual_interface_test_history::_list_virtual_interface_test_history_input::ListVirtualInterfaceTestHistoryInput;
+
+pub use crate::operation::list_virtual_interface_test_history::_list_virtual_interface_test_history_output::ListVirtualInterfaceTestHistoryOutput;
 
 mod _list_virtual_interface_test_history_input;
 

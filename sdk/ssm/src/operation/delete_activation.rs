@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_activation:
     }
 }
 
-pub use crate::operation::delete_activation::_delete_activation_output::DeleteActivationOutput;
-
 pub use crate::operation::delete_activation::_delete_activation_input::DeleteActivationInput;
+
+pub use crate::operation::delete_activation::_delete_activation_output::DeleteActivationOutput;
 
 mod _delete_activation_input;
 

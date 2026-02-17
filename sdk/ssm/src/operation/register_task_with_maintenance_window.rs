@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_task_with
     }
 }
 
-pub use crate::operation::register_task_with_maintenance_window::_register_task_with_maintenance_window_output::RegisterTaskWithMaintenanceWindowOutput;
-
 pub use crate::operation::register_task_with_maintenance_window::_register_task_with_maintenance_window_input::RegisterTaskWithMaintenanceWindowInput;
+
+pub use crate::operation::register_task_with_maintenance_window::_register_task_with_maintenance_window_output::RegisterTaskWithMaintenanceWindowOutput;
 
 mod _register_task_with_maintenance_window_input;
 

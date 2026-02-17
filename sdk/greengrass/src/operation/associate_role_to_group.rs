@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_role_to_
     }
 }
 
-pub use crate::operation::associate_role_to_group::_associate_role_to_group_output::AssociateRoleToGroupOutput;
-
 pub use crate::operation::associate_role_to_group::_associate_role_to_group_input::AssociateRoleToGroupInput;
+
+pub use crate::operation::associate_role_to_group::_associate_role_to_group_output::AssociateRoleToGroupOutput;
 
 mod _associate_role_to_group_input;
 

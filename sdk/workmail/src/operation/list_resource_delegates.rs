@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_dele
     }
 }
 
-pub use crate::operation::list_resource_delegates::_list_resource_delegates_output::ListResourceDelegatesOutput;
-
 pub use crate::operation::list_resource_delegates::_list_resource_delegates_input::ListResourceDelegatesInput;
+
+pub use crate::operation::list_resource_delegates::_list_resource_delegates_output::ListResourceDelegatesOutput;
 
 mod _list_resource_delegates_input;
 

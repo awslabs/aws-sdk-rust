@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_serv
     }
 }
 
-pub use crate::operation::get_container_service_deployments::_get_container_service_deployments_output::GetContainerServiceDeploymentsOutput;
-
 pub use crate::operation::get_container_service_deployments::_get_container_service_deployments_input::GetContainerServiceDeploymentsInput;
+
+pub use crate::operation::get_container_service_deployments::_get_container_service_deployments_output::GetContainerServiceDeploymentsOutput;
 
 mod _get_container_service_deployments_input;
 

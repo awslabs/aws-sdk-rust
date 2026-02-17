@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_access
     }
 }
 
-pub use crate::operation::delete_data_accessor::_delete_data_accessor_output::DeleteDataAccessorOutput;
-
 pub use crate::operation::delete_data_accessor::_delete_data_accessor_input::DeleteDataAccessorInput;
+
+pub use crate::operation::delete_data_accessor::_delete_data_accessor_output::DeleteDataAccessorOutput;
 
 mod _delete_data_accessor_input;
 

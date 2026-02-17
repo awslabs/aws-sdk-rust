@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_method
     }
 }
 
-pub use crate::operation::get_contact_methods::_get_contact_methods_output::GetContactMethodsOutput;
-
 pub use crate::operation::get_contact_methods::_get_contact_methods_input::GetContactMethodsInput;
+
+pub use crate::operation::get_contact_methods::_get_contact_methods_output::GetContactMethodsOutput;
 
 mod _get_contact_methods_input;
 

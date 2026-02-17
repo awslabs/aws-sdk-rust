@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_retrieval
     }
 }
 
-pub use crate::operation::get_data_retrieval_policy::_get_data_retrieval_policy_output::GetDataRetrievalPolicyOutput;
-
 pub use crate::operation::get_data_retrieval_policy::_get_data_retrieval_policy_input::GetDataRetrievalPolicyInput;
+
+pub use crate::operation::get_data_retrieval_policy::_get_data_retrieval_policy_output::GetDataRetrievalPolicyOutput;
 
 mod _get_data_retrieval_policy_input;
 

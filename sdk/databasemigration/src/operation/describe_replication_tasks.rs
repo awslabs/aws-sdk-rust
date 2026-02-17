@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replicati
     }
 }
 
-pub use crate::operation::describe_replication_tasks::_describe_replication_tasks_output::DescribeReplicationTasksOutput;
-
 pub use crate::operation::describe_replication_tasks::_describe_replication_tasks_input::DescribeReplicationTasksInput;
+
+pub use crate::operation::describe_replication_tasks::_describe_replication_tasks_output::DescribeReplicationTasksOutput;
 
 mod _describe_replication_tasks_input;
 

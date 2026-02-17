@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_monitor_evalu
     }
 }
 
-pub use crate::operation::list_monitor_evaluations::_list_monitor_evaluations_output::ListMonitorEvaluationsOutput;
-
 pub use crate::operation::list_monitor_evaluations::_list_monitor_evaluations_input::ListMonitorEvaluationsInput;
+
+pub use crate::operation::list_monitor_evaluations::_list_monitor_evaluations_output::ListMonitorEvaluationsOutput;
 
 mod _list_monitor_evaluations_input;
 

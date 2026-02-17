@@ -516,9 +516,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_create_user:
     }
 }
 
-pub use crate::operation::admin_create_user::_admin_create_user_output::AdminCreateUserOutput;
-
 pub use crate::operation::admin_create_user::_admin_create_user_input::AdminCreateUserInput;
+
+pub use crate::operation::admin_create_user::_admin_create_user_output::AdminCreateUserOutput;
 
 mod _admin_create_user_input;
 

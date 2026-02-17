@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_default_sender
     }
 }
 
-pub use crate::operation::set_default_sender_id::_set_default_sender_id_output::SetDefaultSenderIdOutput;
-
 pub use crate::operation::set_default_sender_id::_set_default_sender_id_input::SetDefaultSenderIdInput;
+
+pub use crate::operation::set_default_sender_id::_set_default_sender_id_output::SetDefaultSenderIdOutput;
 
 mod _set_default_sender_id_input;
 

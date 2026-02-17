@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_distributio
     }
 }
 
-pub use crate::operation::create_distribution_configuration::_create_distribution_configuration_output::CreateDistributionConfigurationOutput;
-
 pub use crate::operation::create_distribution_configuration::_create_distribution_configuration_input::CreateDistributionConfigurationInput;
+
+pub use crate::operation::create_distribution_configuration::_create_distribution_configuration_output::CreateDistributionConfigurationOutput;
 
 mod _create_distribution_configuration_input;
 

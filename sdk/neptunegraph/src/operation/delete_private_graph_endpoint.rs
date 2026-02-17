@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_private_gra
     }
 }
 
-pub use crate::operation::delete_private_graph_endpoint::_delete_private_graph_endpoint_output::DeletePrivateGraphEndpointOutput;
-
 pub use crate::operation::delete_private_graph_endpoint::_delete_private_graph_endpoint_input::DeletePrivateGraphEndpointInput;
+
+pub use crate::operation::delete_private_graph_endpoint::_delete_private_graph_endpoint_output::DeletePrivateGraphEndpointOutput;
 
 mod _delete_private_graph_endpoint_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collaboration
     }
 }
 
-pub use crate::operation::list_collaboration_analysis_templates::_list_collaboration_analysis_templates_output::ListCollaborationAnalysisTemplatesOutput;
-
 pub use crate::operation::list_collaboration_analysis_templates::_list_collaboration_analysis_templates_input::ListCollaborationAnalysisTemplatesInput;
+
+pub use crate::operation::list_collaboration_analysis_templates::_list_collaboration_analysis_templates_output::ListCollaborationAnalysisTemplatesOutput;
 
 mod _list_collaboration_analysis_templates_input;
 

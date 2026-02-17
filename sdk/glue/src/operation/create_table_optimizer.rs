@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_table_optim
     }
 }
 
-pub use crate::operation::create_table_optimizer::_create_table_optimizer_output::CreateTableOptimizerOutput;
-
 pub use crate::operation::create_table_optimizer::_create_table_optimizer_input::CreateTableOptimizerInput;
+
+pub use crate::operation::create_table_optimizer::_create_table_optimizer_output::CreateTableOptimizerOutput;
 
 mod _create_table_optimizer_input;
 

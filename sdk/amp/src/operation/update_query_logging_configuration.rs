@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_query_loggi
     }
 }
 
-pub use crate::operation::update_query_logging_configuration::_update_query_logging_configuration_output::UpdateQueryLoggingConfigurationOutput;
-
 pub use crate::operation::update_query_logging_configuration::_update_query_logging_configuration_input::UpdateQueryLoggingConfigurationInput;
+
+pub use crate::operation::update_query_logging_configuration::_update_query_logging_configuration_output::UpdateQueryLoggingConfigurationOutput;
 
 mod _update_query_logging_configuration_input;
 

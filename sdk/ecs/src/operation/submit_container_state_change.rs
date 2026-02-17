@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_container_s
     }
 }
 
-pub use crate::operation::submit_container_state_change::_submit_container_state_change_output::SubmitContainerStateChangeOutput;
-
 pub use crate::operation::submit_container_state_change::_submit_container_state_change_input::SubmitContainerStateChangeInput;
+
+pub use crate::operation::submit_container_state_change::_submit_container_state_change_output::SubmitContainerStateChangeOutput;
 
 mod _submit_container_state_change_input;
 

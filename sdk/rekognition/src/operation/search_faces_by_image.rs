@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_faces_by_im
     }
 }
 
-pub use crate::operation::search_faces_by_image::_search_faces_by_image_output::SearchFacesByImageOutput;
-
 pub use crate::operation::search_faces_by_image::_search_faces_by_image_input::SearchFacesByImageInput;
+
+pub use crate::operation::search_faces_by_image::_search_faces_by_image_output::SearchFacesByImageOutput;
 
 mod _search_faces_by_image_input;
 

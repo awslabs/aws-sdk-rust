@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_topic
     }
 }
 
-pub use crate::operation::batch_create_topic_reviewed_answer::_batch_create_topic_reviewed_answer_output::BatchCreateTopicReviewedAnswerOutput;
-
 pub use crate::operation::batch_create_topic_reviewed_answer::_batch_create_topic_reviewed_answer_input::BatchCreateTopicReviewedAnswerInput;
+
+pub use crate::operation::batch_create_topic_reviewed_answer::_batch_create_topic_reviewed_answer_output::BatchCreateTopicReviewedAnswerOutput;
 
 mod _batch_create_topic_reviewed_answer_input;
 

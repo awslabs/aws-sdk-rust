@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_zonal_autos
     }
 }
 
-pub use crate::operation::update_zonal_autoshift_configuration::_update_zonal_autoshift_configuration_output::UpdateZonalAutoshiftConfigurationOutput;
-
 pub use crate::operation::update_zonal_autoshift_configuration::_update_zonal_autoshift_configuration_input::UpdateZonalAutoshiftConfigurationInput;
+
+pub use crate::operation::update_zonal_autoshift_configuration::_update_zonal_autoshift_configuration_output::UpdateZonalAutoshiftConfigurationOutput;
 
 mod _update_zonal_autoshift_configuration_input;
 

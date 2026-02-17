@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_datastores::L
     }
 }
 
-pub use crate::operation::list_datastores::_list_datastores_output::ListDatastoresOutput;
-
 pub use crate::operation::list_datastores::_list_datastores_input::ListDatastoresInput;
+
+pub use crate::operation::list_datastores::_list_datastores_output::ListDatastoresOutput;
 
 mod _list_datastores_input;
 

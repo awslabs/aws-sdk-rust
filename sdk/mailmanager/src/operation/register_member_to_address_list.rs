@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_member_to
     }
 }
 
-pub use crate::operation::register_member_to_address_list::_register_member_to_address_list_output::RegisterMemberToAddressListOutput;
-
 pub use crate::operation::register_member_to_address_list::_register_member_to_address_list_input::RegisterMemberToAddressListInput;
+
+pub use crate::operation::register_member_to_address_list::_register_member_to_address_list_output::RegisterMemberToAddressListOutput;
 
 mod _register_member_to_address_list_input;
 

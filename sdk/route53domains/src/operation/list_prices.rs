@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_prices::ListP
     }
 }
 
-pub use crate::operation::list_prices::_list_prices_output::ListPricesOutput;
-
 pub use crate::operation::list_prices::_list_prices_input::ListPricesInput;
+
+pub use crate::operation::list_prices::_list_prices_output::ListPricesOutput;
 
 mod _list_prices_input;
 

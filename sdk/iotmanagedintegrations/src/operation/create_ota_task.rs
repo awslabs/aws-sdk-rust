@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ota_task::C
     }
 }
 
-pub use crate::operation::create_ota_task::_create_ota_task_output::CreateOtaTaskOutput;
-
 pub use crate::operation::create_ota_task::_create_ota_task_input::CreateOtaTaskInput;
+
+pub use crate::operation::create_ota_task::_create_ota_task_output::CreateOtaTaskOutput;
 
 mod _create_ota_task_input;
 

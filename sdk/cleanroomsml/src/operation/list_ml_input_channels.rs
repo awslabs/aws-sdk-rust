@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ml_input_chan
     }
 }
 
-pub use crate::operation::list_ml_input_channels::_list_ml_input_channels_output::ListMlInputChannelsOutput;
-
 pub use crate::operation::list_ml_input_channels::_list_ml_input_channels_input::ListMlInputChannelsInput;
+
+pub use crate::operation::list_ml_input_channels::_list_ml_input_channels_output::ListMlInputChannelsOutput;
 
 mod _list_ml_input_channels_input;
 

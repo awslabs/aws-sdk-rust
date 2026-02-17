@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workload_es
     }
 }
 
-pub use crate::operation::create_workload_estimate::_create_workload_estimate_output::CreateWorkloadEstimateOutput;
-
 pub use crate::operation::create_workload_estimate::_create_workload_estimate_input::CreateWorkloadEstimateInput;
+
+pub use crate::operation::create_workload_estimate::_create_workload_estimate_output::CreateWorkloadEstimateOutput;
 
 mod _create_workload_estimate_input;
 

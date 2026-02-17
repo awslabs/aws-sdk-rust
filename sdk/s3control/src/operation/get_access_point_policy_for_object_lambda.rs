@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_point_p
     }
 }
 
-pub use crate::operation::get_access_point_policy_for_object_lambda::_get_access_point_policy_for_object_lambda_output::GetAccessPointPolicyForObjectLambdaOutput;
-
 pub use crate::operation::get_access_point_policy_for_object_lambda::_get_access_point_policy_for_object_lambda_input::GetAccessPointPolicyForObjectLambdaInput;
+
+pub use crate::operation::get_access_point_policy_for_object_lambda::_get_access_point_policy_for_object_lambda_output::GetAccessPointPolicyForObjectLambdaOutput;
 
 mod _get_access_point_policy_for_object_lambda_input;
 

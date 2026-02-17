@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bots::GetBotsE
     }
 }
 
-pub use crate::operation::get_bots::_get_bots_output::GetBotsOutput;
-
 pub use crate::operation::get_bots::_get_bots_input::GetBotsInput;
+
+pub use crate::operation::get_bots::_get_bots_output::GetBotsOutput;
 
 mod _get_bots_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_conne
     }
 }
 
-pub use crate::operation::describe_vpc_connection::_describe_vpc_connection_output::DescribeVpcConnectionOutput;
-
 pub use crate::operation::describe_vpc_connection::_describe_vpc_connection_input::DescribeVpcConnectionInput;
+
+pub use crate::operation::describe_vpc_connection::_describe_vpc_connection_output::DescribeVpcConnectionOutput;
 
 mod _describe_vpc_connection_input;
 

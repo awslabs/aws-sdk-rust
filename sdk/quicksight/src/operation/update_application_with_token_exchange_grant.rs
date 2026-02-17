@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_application_with_token_exchange_grant::_update_application_with_token_exchange_grant_output::UpdateApplicationWithTokenExchangeGrantOutput;
-
 pub use crate::operation::update_application_with_token_exchange_grant::_update_application_with_token_exchange_grant_input::UpdateApplicationWithTokenExchangeGrantInput;
+
+pub use crate::operation::update_application_with_token_exchange_grant::_update_application_with_token_exchange_grant_output::UpdateApplicationWithTokenExchangeGrantOutput;
 
 mod _update_application_with_token_exchange_grant_input;
 

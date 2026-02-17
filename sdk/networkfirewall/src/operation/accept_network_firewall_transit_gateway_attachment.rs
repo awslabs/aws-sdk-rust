@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::accept_network_firewall_transit_gateway_attachment::_accept_network_firewall_transit_gateway_attachment_output::AcceptNetworkFirewallTransitGatewayAttachmentOutput;
-
 pub use crate::operation::accept_network_firewall_transit_gateway_attachment::_accept_network_firewall_transit_gateway_attachment_input::AcceptNetworkFirewallTransitGatewayAttachmentInput;
+
+pub use crate::operation::accept_network_firewall_transit_gateway_attachment::_accept_network_firewall_transit_gateway_attachment_output::AcceptNetworkFirewallTransitGatewayAttachmentOutput;
 
 mod _accept_network_firewall_transit_gateway_attachment_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stream_proc
     }
 }
 
-pub use crate::operation::delete_stream_processor::_delete_stream_processor_output::DeleteStreamProcessorOutput;
-
 pub use crate::operation::delete_stream_processor::_delete_stream_processor_input::DeleteStreamProcessorInput;
+
+pub use crate::operation::delete_stream_processor::_delete_stream_processor_output::DeleteStreamProcessorOutput;
 
 mod _delete_stream_processor_input;
 

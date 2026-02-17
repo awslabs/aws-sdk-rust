@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_plan::Delet
     }
 }
 
-pub use crate::operation::delete_plan::_delete_plan_output::DeletePlanOutput;
-
 pub use crate::operation::delete_plan::_delete_plan_input::DeletePlanInput;
+
+pub use crate::operation::delete_plan::_delete_plan_output::DeletePlanOutput;
 
 mod _delete_plan_input;
 

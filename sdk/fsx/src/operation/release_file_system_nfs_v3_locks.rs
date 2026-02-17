@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_file_syste
     }
 }
 
-pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system_nfs_v3_locks_output::ReleaseFileSystemNfsV3LocksOutput;
-
 pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system_nfs_v3_locks_input::ReleaseFileSystemNfsV3LocksInput;
+
+pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system_nfs_v3_locks_output::ReleaseFileSystemNfsV3LocksOutput;
 
 mod _release_file_system_nfs_v3_locks_input;
 

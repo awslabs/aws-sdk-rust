@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_prof
     }
 }
 
-pub use crate::operation::list_resource_profile_artifacts::_list_resource_profile_artifacts_output::ListResourceProfileArtifactsOutput;
-
 pub use crate::operation::list_resource_profile_artifacts::_list_resource_profile_artifacts_input::ListResourceProfileArtifactsInput;
+
+pub use crate::operation::list_resource_profile_artifacts::_list_resource_profile_artifacts_output::ListResourceProfileArtifactsOutput;
 
 mod _list_resource_profile_artifacts_input;
 

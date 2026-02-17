@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_third_party_jo
     }
 }
 
-pub use crate::operation::get_third_party_job_details::_get_third_party_job_details_output::GetThirdPartyJobDetailsOutput;
-
 pub use crate::operation::get_third_party_job_details::_get_third_party_job_details_input::GetThirdPartyJobDetailsInput;
+
+pub use crate::operation::get_third_party_job_details::_get_third_party_job_details_output::GetThirdPartyJobDetailsOutput;
 
 mod _get_third_party_job_details_input;
 

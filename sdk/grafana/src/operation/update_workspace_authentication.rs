@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_a
     }
 }
 
-pub use crate::operation::update_workspace_authentication::_update_workspace_authentication_output::UpdateWorkspaceAuthenticationOutput;
-
 pub use crate::operation::update_workspace_authentication::_update_workspace_authentication_input::UpdateWorkspaceAuthenticationInput;
+
+pub use crate::operation::update_workspace_authentication::_update_workspace_authentication_output::UpdateWorkspaceAuthenticationOutput;
 
 mod _update_workspace_authentication_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_changeset::
     }
 }
 
-pub use crate::operation::get_kx_changeset::_get_kx_changeset_output::GetKxChangesetOutput;
-
 pub use crate::operation::get_kx_changeset::_get_kx_changeset_input::GetKxChangesetInput;
+
+pub use crate::operation::get_kx_changeset::_get_kx_changeset_output::GetKxChangesetOutput;
 
 mod _get_kx_changeset_input;
 

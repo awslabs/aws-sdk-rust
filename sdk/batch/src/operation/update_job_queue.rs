@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_job_queue::
     }
 }
 
-pub use crate::operation::update_job_queue::_update_job_queue_output::UpdateJobQueueOutput;
-
 pub use crate::operation::update_job_queue::_update_job_queue_input::UpdateJobQueueInput;
+
+pub use crate::operation::update_job_queue::_update_job_queue_output::UpdateJobQueueOutput;
 
 mod _update_job_queue_input;
 

@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_role_membersh
     }
 }
 
-pub use crate::operation::list_role_memberships::_list_role_memberships_output::ListRoleMembershipsOutput;
-
 pub use crate::operation::list_role_memberships::_list_role_memberships_input::ListRoleMembershipsInput;
+
+pub use crate::operation::list_role_memberships::_list_role_memberships_output::ListRoleMembershipsOutput;
 
 mod _list_role_memberships_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_email_templ
     }
 }
 
-pub use crate::operation::update_email_template::_update_email_template_output::UpdateEmailTemplateOutput;
-
 pub use crate::operation::update_email_template::_update_email_template_input::UpdateEmailTemplateInput;
+
+pub use crate::operation::update_email_template::_update_email_template_output::UpdateEmailTemplateOutput;
 
 mod _update_email_template_input;
 

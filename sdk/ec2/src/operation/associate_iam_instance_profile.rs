@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_iam_inst
     }
 }
 
-pub use crate::operation::associate_iam_instance_profile::_associate_iam_instance_profile_output::AssociateIamInstanceProfileOutput;
-
 pub use crate::operation::associate_iam_instance_profile::_associate_iam_instance_profile_input::AssociateIamInstanceProfileInput;
+
+pub use crate::operation::associate_iam_instance_profile::_associate_iam_instance_profile_output::AssociateIamInstanceProfileOutput;
 
 mod _associate_iam_instance_profile_input;
 

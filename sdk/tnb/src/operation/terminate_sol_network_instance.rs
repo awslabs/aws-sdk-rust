@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_sol_netw
     }
 }
 
-pub use crate::operation::terminate_sol_network_instance::_terminate_sol_network_instance_output::TerminateSolNetworkInstanceOutput;
-
 pub use crate::operation::terminate_sol_network_instance::_terminate_sol_network_instance_input::TerminateSolNetworkInstanceInput;
+
+pub use crate::operation::terminate_sol_network_instance::_terminate_sol_network_instance_output::TerminateSolNetworkInstanceOutput;
 
 mod _terminate_sol_network_instance_input;
 

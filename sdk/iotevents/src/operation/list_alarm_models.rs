@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_alarm_models:
     }
 }
 
-pub use crate::operation::list_alarm_models::_list_alarm_models_output::ListAlarmModelsOutput;
-
 pub use crate::operation::list_alarm_models::_list_alarm_models_input::ListAlarmModelsInput;
+
+pub use crate::operation::list_alarm_models::_list_alarm_models_output::ListAlarmModelsOutput;
 
 mod _list_alarm_models_input;
 

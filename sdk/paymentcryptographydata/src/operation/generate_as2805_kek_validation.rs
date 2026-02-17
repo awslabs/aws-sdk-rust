@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_as2805_ke
     }
 }
 
-pub use crate::operation::generate_as2805_kek_validation::_generate_as2805_kek_validation_output::GenerateAs2805KekValidationOutput;
-
 pub use crate::operation::generate_as2805_kek_validation::_generate_as2805_kek_validation_input::GenerateAs2805KekValidationInput;
+
+pub use crate::operation::generate_as2805_kek_validation::_generate_as2805_kek_validation_output::GenerateAs2805KekValidationOutput;
 
 mod _generate_as2805_kek_validation_input;
 

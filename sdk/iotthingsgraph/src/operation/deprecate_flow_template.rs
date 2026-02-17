@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprecate_flow_tem
     }
 }
 
-pub use crate::operation::deprecate_flow_template::_deprecate_flow_template_output::DeprecateFlowTemplateOutput;
-
 pub use crate::operation::deprecate_flow_template::_deprecate_flow_template_input::DeprecateFlowTemplateInput;
+
+pub use crate::operation::deprecate_flow_template::_deprecate_flow_template_output::DeprecateFlowTemplateOutput;
 
 mod _deprecate_flow_template_input;
 

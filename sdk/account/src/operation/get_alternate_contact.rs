@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_alternate_cont
     }
 }
 
-pub use crate::operation::get_alternate_contact::_get_alternate_contact_output::GetAlternateContactOutput;
-
 pub use crate::operation::get_alternate_contact::_get_alternate_contact_input::GetAlternateContactInput;
+
+pub use crate::operation::get_alternate_contact::_get_alternate_contact_output::GetAlternateContactOutput;
 
 mod _get_alternate_contact_input;
 

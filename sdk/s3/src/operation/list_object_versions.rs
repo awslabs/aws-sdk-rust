@@ -569,9 +569,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_object_versio
     }
 }
 
-pub use crate::operation::list_object_versions::_list_object_versions_output::ListObjectVersionsOutput;
-
 pub use crate::operation::list_object_versions::_list_object_versions_input::ListObjectVersionsInput;
+
+pub use crate::operation::list_object_versions::_list_object_versions_output::ListObjectVersionsOutput;
 
 mod _list_object_versions_input;
 

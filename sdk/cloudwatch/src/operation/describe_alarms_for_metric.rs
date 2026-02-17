@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_alarms_fo
     }
 }
 
-pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metric_output::DescribeAlarmsForMetricOutput;
-
 pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metric_input::DescribeAlarmsForMetricInput;
+
+pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metric_output::DescribeAlarmsForMetricOutput;
 
 mod _describe_alarms_for_metric_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_authorization
     }
 }
 
-pub use crate::operation::test_authorization::_test_authorization_output::TestAuthorizationOutput;
-
 pub use crate::operation::test_authorization::_test_authorization_input::TestAuthorizationInput;
+
+pub use crate::operation::test_authorization::_test_authorization_output::TestAuthorizationOutput;
 
 mod _test_authorization_input;
 

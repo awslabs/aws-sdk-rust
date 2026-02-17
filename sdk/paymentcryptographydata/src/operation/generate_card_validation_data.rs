@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_card_vali
     }
 }
 
-pub use crate::operation::generate_card_validation_data::_generate_card_validation_data_output::GenerateCardValidationDataOutput;
-
 pub use crate::operation::generate_card_validation_data::_generate_card_validation_data_input::GenerateCardValidationDataInput;
+
+pub use crate::operation::generate_card_validation_data::_generate_card_validation_data_output::GenerateCardValidationDataOutput;
 
 mod _generate_card_validation_data_input;
 

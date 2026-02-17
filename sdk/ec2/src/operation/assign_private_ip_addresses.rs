@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assign_private_ip_
     }
 }
 
-pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addresses_output::AssignPrivateIpAddressesOutput;
-
 pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addresses_input::AssignPrivateIpAddressesInput;
+
+pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addresses_output::AssignPrivateIpAddressesOutput;
 
 mod _assign_private_ip_addresses_input;
 

@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_roles::ListRo
     }
 }
 
-pub use crate::operation::list_roles::_list_roles_output::ListRolesOutput;
-
 pub use crate::operation::list_roles::_list_roles_input::ListRolesInput;
+
+pub use crate::operation::list_roles::_list_roles_output::ListRolesOutput;
 
 mod _list_roles_input;
 

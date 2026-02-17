@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_request_valida
     }
 }
 
-pub use crate::operation::get_request_validators::_get_request_validators_output::GetRequestValidatorsOutput;
-
 pub use crate::operation::get_request_validators::_get_request_validators_input::GetRequestValidatorsInput;
+
+pub use crate::operation::get_request_validators::_get_request_validators_output::GetRequestValidatorsOutput;
 
 mod _get_request_validators_input;
 

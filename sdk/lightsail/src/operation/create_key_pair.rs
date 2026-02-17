@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_key_pair::C
     }
 }
 
-pub use crate::operation::create_key_pair::_create_key_pair_output::CreateKeyPairOutput;
-
 pub use crate::operation::create_key_pair::_create_key_pair_input::CreateKeyPairInput;
+
+pub use crate::operation::create_key_pair::_create_key_pair_output::CreateKeyPairOutput;
 
 mod _create_key_pair_input;
 

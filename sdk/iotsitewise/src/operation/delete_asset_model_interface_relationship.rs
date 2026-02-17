@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_asset_model
     }
 }
 
-pub use crate::operation::delete_asset_model_interface_relationship::_delete_asset_model_interface_relationship_output::DeleteAssetModelInterfaceRelationshipOutput;
-
 pub use crate::operation::delete_asset_model_interface_relationship::_delete_asset_model_interface_relationship_input::DeleteAssetModelInterfaceRelationshipInput;
+
+pub use crate::operation::delete_asset_model_interface_relationship::_delete_asset_model_interface_relationship_output::DeleteAssetModelInterfaceRelationshipOutput;
 
 mod _delete_asset_model_interface_relationship_input;
 

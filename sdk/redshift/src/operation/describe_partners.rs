@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_partners:
     }
 }
 
-pub use crate::operation::describe_partners::_describe_partners_output::DescribePartnersOutput;
-
 pub use crate::operation::describe_partners::_describe_partners_input::DescribePartnersInput;
+
+pub use crate::operation::describe_partners::_describe_partners_output::DescribePartnersOutput;
 
 mod _describe_partners_input;
 

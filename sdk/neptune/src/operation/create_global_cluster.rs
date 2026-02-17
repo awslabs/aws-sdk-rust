@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_global_clus
     }
 }
 
-pub use crate::operation::create_global_cluster::_create_global_cluster_output::CreateGlobalClusterOutput;
-
 pub use crate::operation::create_global_cluster::_create_global_cluster_input::CreateGlobalClusterInput;
+
+pub use crate::operation::create_global_cluster::_create_global_cluster_output::CreateGlobalClusterOutput;
 
 mod _create_global_cluster_input;
 

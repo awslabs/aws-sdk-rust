@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_flo
     }
 }
 
-pub use crate::operation::create_channel_flow::_create_channel_flow_output::CreateChannelFlowOutput;
-
 pub use crate::operation::create_channel_flow::_create_channel_flow_input::CreateChannelFlowInput;
+
+pub use crate::operation::create_channel_flow::_create_channel_flow_output::CreateChannelFlowOutput;
 
 mod _create_channel_flow_input;
 

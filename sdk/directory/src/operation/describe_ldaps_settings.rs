@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ldaps_set
     }
 }
 
-pub use crate::operation::describe_ldaps_settings::_describe_ldaps_settings_output::DescribeLdapsSettingsOutput;
-
 pub use crate::operation::describe_ldaps_settings::_describe_ldaps_settings_input::DescribeLdapsSettingsInput;
+
+pub use crate::operation::describe_ldaps_settings::_describe_ldaps_settings_output::DescribeLdapsSettingsOutput;
 
 mod _describe_ldaps_settings_input;
 

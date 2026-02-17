@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_adapter_ver
     }
 }
 
-pub use crate::operation::create_adapter_version::_create_adapter_version_output::CreateAdapterVersionOutput;
-
 pub use crate::operation::create_adapter_version::_create_adapter_version_input::CreateAdapterVersionInput;
+
+pub use crate::operation::create_adapter_version::_create_adapter_version_output::CreateAdapterVersionOutput;
 
 mod _create_adapter_version_input;
 

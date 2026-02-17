@@ -490,9 +490,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_ml_model_tr
     }
 }
 
-pub use crate::operation::cancel_ml_model_training_job::_cancel_ml_model_training_job_output::CancelMlModelTrainingJobOutput;
-
 pub use crate::operation::cancel_ml_model_training_job::_cancel_ml_model_training_job_input::CancelMlModelTrainingJobInput;
+
+pub use crate::operation::cancel_ml_model_training_job::_cancel_ml_model_training_job_output::CancelMlModelTrainingJobOutput;
 
 mod _cancel_ml_model_training_job_input;
 

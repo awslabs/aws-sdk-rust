@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_commitment_p
     }
 }
 
-pub use crate::operation::start_commitment_purchase_analysis::_start_commitment_purchase_analysis_output::StartCommitmentPurchaseAnalysisOutput;
-
 pub use crate::operation::start_commitment_purchase_analysis::_start_commitment_purchase_analysis_input::StartCommitmentPurchaseAnalysisInput;
+
+pub use crate::operation::start_commitment_purchase_analysis::_start_commitment_purchase_analysis_output::StartCommitmentPurchaseAnalysisOutput;
 
 mod _start_commitment_purchase_analysis_input;
 

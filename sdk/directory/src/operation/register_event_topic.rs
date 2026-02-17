@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_event_top
     }
 }
 
-pub use crate::operation::register_event_topic::_register_event_topic_output::RegisterEventTopicOutput;
-
 pub use crate::operation::register_event_topic::_register_event_topic_input::RegisterEventTopicInput;
+
+pub use crate::operation::register_event_topic::_register_event_topic_output::RegisterEventTopicOutput;
 
 mod _register_event_topic_input;
 

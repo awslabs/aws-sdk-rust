@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_batch_predi
     }
 }
 
-pub use crate::operation::cancel_batch_prediction_job::_cancel_batch_prediction_job_output::CancelBatchPredictionJobOutput;
-
 pub use crate::operation::cancel_batch_prediction_job::_cancel_batch_prediction_job_input::CancelBatchPredictionJobInput;
+
+pub use crate::operation::cancel_batch_prediction_job::_cancel_batch_prediction_job_output::CancelBatchPredictionJobOutput;
 
 mod _cancel_batch_prediction_job_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_environment
     }
 }
 
-pub use crate::operation::delete_environment_profile::_delete_environment_profile_output::DeleteEnvironmentProfileOutput;
-
 pub use crate::operation::delete_environment_profile::_delete_environment_profile_input::DeleteEnvironmentProfileInput;
+
+pub use crate::operation::delete_environment_profile::_delete_environment_profile_output::DeleteEnvironmentProfileOutput;
 
 mod _delete_environment_profile_input;
 

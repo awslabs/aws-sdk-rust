@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_stack_policy::
     }
 }
 
-pub use crate::operation::set_stack_policy::_set_stack_policy_output::SetStackPolicyOutput;
-
 pub use crate::operation::set_stack_policy::_set_stack_policy_input::SetStackPolicyInput;
+
+pub use crate::operation::set_stack_policy::_set_stack_policy_output::SetStackPolicyOutput;
 
 mod _set_stack_policy_input;
 

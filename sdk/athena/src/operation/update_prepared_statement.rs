@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_prepared_st
     }
 }
 
-pub use crate::operation::update_prepared_statement::_update_prepared_statement_output::UpdatePreparedStatementOutput;
-
 pub use crate::operation::update_prepared_statement::_update_prepared_statement_input::UpdatePreparedStatementInput;
+
+pub use crate::operation::update_prepared_statement::_update_prepared_statement_output::UpdatePreparedStatementOutput;
 
 mod _update_prepared_statement_input;
 

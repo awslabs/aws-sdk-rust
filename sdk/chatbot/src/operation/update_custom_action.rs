@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_acti
     }
 }
 
-pub use crate::operation::update_custom_action::_update_custom_action_output::UpdateCustomActionOutput;
-
 pub use crate::operation::update_custom_action::_update_custom_action_input::UpdateCustomActionInput;
+
+pub use crate::operation::update_custom_action::_update_custom_action_output::UpdateCustomActionOutput;
 
 mod _update_custom_action_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_kinesis_s
     }
 }
 
-pub use crate::operation::describe_kinesis_streaming_destination::_describe_kinesis_streaming_destination_output::DescribeKinesisStreamingDestinationOutput;
-
 pub use crate::operation::describe_kinesis_streaming_destination::_describe_kinesis_streaming_destination_input::DescribeKinesisStreamingDestinationInput;
+
+pub use crate::operation::describe_kinesis_streaming_destination::_describe_kinesis_streaming_destination_output::DescribeKinesisStreamingDestinationOutput;
 
 mod _describe_kinesis_streaming_destination_input;
 

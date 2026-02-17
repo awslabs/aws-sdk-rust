@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_sandbox::Stop
     }
 }
 
-pub use crate::operation::stop_sandbox::_stop_sandbox_output::StopSandboxOutput;
-
 pub use crate::operation::stop_sandbox::_stop_sandbox_input::StopSandboxInput;
+
+pub use crate::operation::stop_sandbox::_stop_sandbox_output::StopSandboxOutput;
 
 mod _stop_sandbox_input;
 

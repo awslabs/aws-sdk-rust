@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_content_assoc
     }
 }
 
-pub use crate::operation::list_content_associations::_list_content_associations_output::ListContentAssociationsOutput;
-
 pub use crate::operation::list_content_associations::_list_content_associations_input::ListContentAssociationsInput;
+
+pub use crate::operation::list_content_associations::_list_content_associations_output::ListContentAssociationsOutput;
 
 mod _list_content_associations_input;
 

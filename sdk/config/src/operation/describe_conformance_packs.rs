@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_conforman
     }
 }
 
-pub use crate::operation::describe_conformance_packs::_describe_conformance_packs_output::DescribeConformancePacksOutput;
-
 pub use crate::operation::describe_conformance_packs::_describe_conformance_packs_input::DescribeConformancePacksInput;
+
+pub use crate::operation::describe_conformance_packs::_describe_conformance_packs_output::DescribeConformancePacksOutput;
 
 mod _describe_conformance_packs_input;
 

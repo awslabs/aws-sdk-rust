@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_platform_ve
     }
 }
 
-pub use crate::operation::delete_platform_version::_delete_platform_version_output::DeletePlatformVersionOutput;
-
 pub use crate::operation::delete_platform_version::_delete_platform_version_input::DeletePlatformVersionInput;
+
+pub use crate::operation::delete_platform_version::_delete_platform_version_output::DeletePlatformVersionOutput;
 
 mod _delete_platform_version_input;
 

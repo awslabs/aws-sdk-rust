@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_import::D
     }
 }
 
-pub use crate::operation::describe_import::_describe_import_output::DescribeImportOutput;
-
 pub use crate::operation::describe_import::_describe_import_input::DescribeImportInput;
+
+pub use crate::operation::describe_import::_describe_import_output::DescribeImportOutput;
 
 mod _describe_import_input;
 

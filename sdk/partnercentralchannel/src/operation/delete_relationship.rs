@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_relationshi
     }
 }
 
-pub use crate::operation::delete_relationship::_delete_relationship_output::DeleteRelationshipOutput;
-
 pub use crate::operation::delete_relationship::_delete_relationship_input::DeleteRelationshipInput;
+
+pub use crate::operation::delete_relationship::_delete_relationship_output::DeleteRelationshipOutput;
 
 mod _delete_relationship_input;
 

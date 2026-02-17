@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_security_contr
     }
 }
 
-pub use crate::operation::get_security_control_definition::_get_security_control_definition_output::GetSecurityControlDefinitionOutput;
-
 pub use crate::operation::get_security_control_definition::_get_security_control_definition_input::GetSecurityControlDefinitionInput;
+
+pub use crate::operation::get_security_control_definition::_get_security_control_definition_output::GetSecurityControlDefinitionOutput;
 
 mod _get_security_control_definition_input;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_bucket_metadata_inventory_table_configuration::_update_bucket_metadata_inventory_table_configuration_output::UpdateBucketMetadataInventoryTableConfigurationOutput;
-
 pub use crate::operation::update_bucket_metadata_inventory_table_configuration::_update_bucket_metadata_inventory_table_configuration_input::UpdateBucketMetadataInventoryTableConfigurationInput;
+
+pub use crate::operation::update_bucket_metadata_inventory_table_configuration::_update_bucket_metadata_inventory_table_configuration_output::UpdateBucketMetadataInventoryTableConfigurationOutput;
 
 mod _update_bucket_metadata_inventory_table_configuration_input;
 

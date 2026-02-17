@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_dedicated_ip_w
     }
 }
 
-pub use crate::operation::put_dedicated_ip_warmup_attributes::_put_dedicated_ip_warmup_attributes_output::PutDedicatedIpWarmupAttributesOutput;
-
 pub use crate::operation::put_dedicated_ip_warmup_attributes::_put_dedicated_ip_warmup_attributes_input::PutDedicatedIpWarmupAttributesInput;
+
+pub use crate::operation::put_dedicated_ip_warmup_attributes::_put_dedicated_ip_warmup_attributes_output::PutDedicatedIpWarmupAttributesOutput;
 
 mod _put_dedicated_ip_warmup_attributes_input;
 

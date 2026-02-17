@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stacks::D
     }
 }
 
-pub use crate::operation::describe_stacks::_describe_stacks_output::DescribeStacksOutput;
-
 pub use crate::operation::describe_stacks::_describe_stacks_input::DescribeStacksInput;
+
+pub use crate::operation::describe_stacks::_describe_stacks_output::DescribeStacksOutput;
 
 mod _describe_stacks_input;
 

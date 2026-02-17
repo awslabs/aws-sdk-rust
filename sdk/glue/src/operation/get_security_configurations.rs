@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_security_confi
     }
 }
 
-pub use crate::operation::get_security_configurations::_get_security_configurations_output::GetSecurityConfigurationsOutput;
-
 pub use crate::operation::get_security_configurations::_get_security_configurations_input::GetSecurityConfigurationsInput;
+
+pub use crate::operation::get_security_configurations::_get_security_configurations_output::GetSecurityConfigurationsOutput;
 
 mod _get_security_configurations_input;
 

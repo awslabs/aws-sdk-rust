@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_thing_to_thing
     }
 }
 
-pub use crate::operation::add_thing_to_thing_group::_add_thing_to_thing_group_output::AddThingToThingGroupOutput;
-
 pub use crate::operation::add_thing_to_thing_group::_add_thing_to_thing_group_input::AddThingToThingGroupInput;
+
+pub use crate::operation::add_thing_to_thing_group::_add_thing_to_thing_group_output::AddThingToThingGroupOutput;
 
 mod _add_thing_to_thing_group_input;
 

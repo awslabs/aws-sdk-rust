@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_workspaces:
     }
 }
 
-pub use crate::operation::search_workspaces::_search_workspaces_output::SearchWorkspacesOutput;
-
 pub use crate::operation::search_workspaces::_search_workspaces_input::SearchWorkspacesInput;
+
+pub use crate::operation::search_workspaces::_search_workspaces_output::SearchWorkspacesOutput;
 
 mod _search_workspaces_input;
 

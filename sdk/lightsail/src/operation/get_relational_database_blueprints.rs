@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relational_dat
     }
 }
 
-pub use crate::operation::get_relational_database_blueprints::_get_relational_database_blueprints_output::GetRelationalDatabaseBlueprintsOutput;
-
 pub use crate::operation::get_relational_database_blueprints::_get_relational_database_blueprints_input::GetRelationalDatabaseBlueprintsInput;
+
+pub use crate::operation::get_relational_database_blueprints::_get_relational_database_blueprints_output::GetRelationalDatabaseBlueprintsOutput;
 
 mod _get_relational_database_blueprints_input;
 

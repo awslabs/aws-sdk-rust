@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_traffic_dis
     }
 }
 
-pub use crate::operation::delete_traffic_distribution_group::_delete_traffic_distribution_group_output::DeleteTrafficDistributionGroupOutput;
-
 pub use crate::operation::delete_traffic_distribution_group::_delete_traffic_distribution_group_input::DeleteTrafficDistributionGroupInput;
+
+pub use crate::operation::delete_traffic_distribution_group::_delete_traffic_distribution_group_output::DeleteTrafficDistributionGroupOutput;
 
 mod _delete_traffic_distribution_group_input;
 

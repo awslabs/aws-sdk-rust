@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_role_member
     }
 }
 
-pub use crate::operation::delete_role_membership::_delete_role_membership_output::DeleteRoleMembershipOutput;
-
 pub use crate::operation::delete_role_membership::_delete_role_membership_input::DeleteRoleMembershipInput;
+
+pub use crate::operation::delete_role_membership::_delete_role_membership_output::DeleteRoleMembershipOutput;
 
 mod _delete_role_membership_input;
 

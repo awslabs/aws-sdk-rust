@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_delegation_to
     }
 }
 
-pub use crate::operation::send_delegation_token::_send_delegation_token_output::SendDelegationTokenOutput;
-
 pub use crate::operation::send_delegation_token::_send_delegation_token_input::SendDelegationTokenInput;
+
+pub use crate::operation::send_delegation_token::_send_delegation_token_output::SendDelegationTokenOutput;
 
 mod _send_delegation_token_input;
 

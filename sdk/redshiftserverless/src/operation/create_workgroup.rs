@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workgroup::
     }
 }
 
-pub use crate::operation::create_workgroup::_create_workgroup_output::CreateWorkgroupOutput;
-
 pub use crate::operation::create_workgroup::_create_workgroup_input::CreateWorkgroupInput;
+
+pub use crate::operation::create_workgroup::_create_workgroup_output::CreateWorkgroupOutput;
 
 mod _create_workgroup_input;
 

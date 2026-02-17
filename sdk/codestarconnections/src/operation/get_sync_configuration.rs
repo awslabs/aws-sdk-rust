@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sync_configura
     }
 }
 
-pub use crate::operation::get_sync_configuration::_get_sync_configuration_output::GetSyncConfigurationOutput;
-
 pub use crate::operation::get_sync_configuration::_get_sync_configuration_input::GetSyncConfigurationInput;
+
+pub use crate::operation::get_sync_configuration::_get_sync_configuration_output::GetSyncConfigurationOutput;
 
 mod _get_sync_configuration_input;
 

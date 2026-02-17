@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_cache_repor
     }
 }
 
-pub use crate::operation::cancel_cache_report::_cancel_cache_report_output::CancelCacheReportOutput;
-
 pub use crate::operation::cancel_cache_report::_cancel_cache_report_input::CancelCacheReportInput;
+
+pub use crate::operation::cancel_cache_report::_cancel_cache_report_output::CancelCacheReportOutput;
 
 mod _cancel_cache_report_input;
 

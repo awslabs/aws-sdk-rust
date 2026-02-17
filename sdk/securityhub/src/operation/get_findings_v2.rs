@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_findings_v2::G
     }
 }
 
-pub use crate::operation::get_findings_v2::_get_findings_v2_output::GetFindingsV2Output;
-
 pub use crate::operation::get_findings_v2::_get_findings_v2_input::GetFindingsV2Input;
+
+pub use crate::operation::get_findings_v2::_get_findings_v2_output::GetFindingsV2Output;
 
 mod _get_findings_v2_input;
 

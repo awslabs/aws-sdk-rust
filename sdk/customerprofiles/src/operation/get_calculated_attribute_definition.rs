@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_calculated_att
     }
 }
 
-pub use crate::operation::get_calculated_attribute_definition::_get_calculated_attribute_definition_output::GetCalculatedAttributeDefinitionOutput;
-
 pub use crate::operation::get_calculated_attribute_definition::_get_calculated_attribute_definition_input::GetCalculatedAttributeDefinitionInput;
+
+pub use crate::operation::get_calculated_attribute_definition::_get_calculated_attribute_definition_output::GetCalculatedAttributeDefinitionOutput;
 
 mod _get_calculated_attribute_definition_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_remediation_ex
     }
 }
 
-pub use crate::operation::put_remediation_exceptions::_put_remediation_exceptions_output::PutRemediationExceptionsOutput;
-
 pub use crate::operation::put_remediation_exceptions::_put_remediation_exceptions_input::PutRemediationExceptionsInput;
+
+pub use crate::operation::put_remediation_exceptions::_put_remediation_exceptions_output::PutRemediationExceptionsOutput;
 
 mod _put_remediation_exceptions_input;
 

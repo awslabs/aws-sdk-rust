@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_queue_limit
     }
 }
 
-pub use crate::operation::create_queue_limit_association::_create_queue_limit_association_output::CreateQueueLimitAssociationOutput;
-
 pub use crate::operation::create_queue_limit_association::_create_queue_limit_association_input::CreateQueueLimitAssociationInput;
+
+pub use crate::operation::create_queue_limit_association::_create_queue_limit_association_output::CreateQueueLimitAssociationOutput;
 
 mod _create_queue_limit_association_input;
 

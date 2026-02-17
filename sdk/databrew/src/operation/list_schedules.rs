@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_schedules::Li
     }
 }
 
-pub use crate::operation::list_schedules::_list_schedules_output::ListSchedulesOutput;
-
 pub use crate::operation::list_schedules::_list_schedules_input::ListSchedulesInput;
+
+pub use crate::operation::list_schedules::_list_schedules_output::ListSchedulesOutput;
 
 mod _list_schedules_input;
 

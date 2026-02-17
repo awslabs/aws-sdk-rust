@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_entitlement
     }
 }
 
-pub use crate::operation::update_entitlement::_update_entitlement_output::UpdateEntitlementOutput;
-
 pub use crate::operation::update_entitlement::_update_entitlement_input::UpdateEntitlementInput;
+
+pub use crate::operation::update_entitlement::_update_entitlement_output::UpdateEntitlementOutput;
 
 mod _update_entitlement_input;
 

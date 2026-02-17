@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_storage_vir
     }
 }
 
-pub use crate::operation::create_storage_virtual_machine::_create_storage_virtual_machine_output::CreateStorageVirtualMachineOutput;
-
 pub use crate::operation::create_storage_virtual_machine::_create_storage_virtual_machine_input::CreateStorageVirtualMachineInput;
+
+pub use crate::operation::create_storage_virtual_machine::_create_storage_virtual_machine_output::CreateStorageVirtualMachineOutput;
 
 mod _create_storage_virtual_machine_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dev_environmen
     }
 }
 
-pub use crate::operation::get_dev_environment::_get_dev_environment_output::GetDevEnvironmentOutput;
-
 pub use crate::operation::get_dev_environment::_get_dev_environment_input::GetDevEnvironmentInput;
+
+pub use crate::operation::get_dev_environment::_get_dev_environment_output::GetDevEnvironmentOutput;
 
 mod _get_dev_environment_input;
 

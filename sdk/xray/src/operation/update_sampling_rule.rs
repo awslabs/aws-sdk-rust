@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sampling_ru
     }
 }
 
-pub use crate::operation::update_sampling_rule::_update_sampling_rule_output::UpdateSamplingRuleOutput;
-
 pub use crate::operation::update_sampling_rule::_update_sampling_rule_input::UpdateSamplingRuleInput;
+
+pub use crate::operation::update_sampling_rule::_update_sampling_rule_output::UpdateSamplingRuleOutput;
 
 mod _update_sampling_rule_input;
 

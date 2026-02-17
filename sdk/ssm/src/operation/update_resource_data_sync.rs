@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_da
     }
 }
 
-pub use crate::operation::update_resource_data_sync::_update_resource_data_sync_output::UpdateResourceDataSyncOutput;
-
 pub use crate::operation::update_resource_data_sync::_update_resource_data_sync_input::UpdateResourceDataSyncInput;
+
+pub use crate::operation::update_resource_data_sync::_update_resource_data_sync_output::UpdateResourceDataSyncOutput;
 
 mod _update_resource_data_sync_input;
 

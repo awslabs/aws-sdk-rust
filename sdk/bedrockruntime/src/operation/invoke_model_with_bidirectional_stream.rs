@@ -499,9 +499,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_model_with_
     }
 }
 
-pub use crate::operation::invoke_model_with_bidirectional_stream::_invoke_model_with_bidirectional_stream_output::InvokeModelWithBidirectionalStreamOutput;
-
 pub use crate::operation::invoke_model_with_bidirectional_stream::_invoke_model_with_bidirectional_stream_input::InvokeModelWithBidirectionalStreamInput;
+
+pub use crate::operation::invoke_model_with_bidirectional_stream::_invoke_model_with_bidirectional_stream_output::InvokeModelWithBidirectionalStreamOutput;
 
 mod _invoke_model_with_bidirectional_stream_input;
 

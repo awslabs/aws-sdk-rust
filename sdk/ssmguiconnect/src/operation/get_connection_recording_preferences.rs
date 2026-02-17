@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_rec
     }
 }
 
-pub use crate::operation::get_connection_recording_preferences::_get_connection_recording_preferences_output::GetConnectionRecordingPreferencesOutput;
-
 pub use crate::operation::get_connection_recording_preferences::_get_connection_recording_preferences_input::GetConnectionRecordingPreferencesInput;
+
+pub use crate::operation::get_connection_recording_preferences::_get_connection_recording_preferences_output::GetConnectionRecordingPreferencesOutput;
 
 mod _get_connection_recording_preferences_input;
 

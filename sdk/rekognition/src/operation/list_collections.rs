@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collections::
     }
 }
 
-pub use crate::operation::list_collections::_list_collections_output::ListCollectionsOutput;
-
 pub use crate::operation::list_collections::_list_collections_input::ListCollectionsInput;
+
+pub use crate::operation::list_collections::_list_collections_output::ListCollectionsOutput;
 
 mod _list_collections_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel_rea
     }
 }
 
-pub use crate::operation::update_channel_read_marker::_update_channel_read_marker_output::UpdateChannelReadMarkerOutput;
-
 pub use crate::operation::update_channel_read_marker::_update_channel_read_marker_input::UpdateChannelReadMarkerInput;
+
+pub use crate::operation::update_channel_read_marker::_update_channel_read_marker_output::UpdateChannelReadMarkerOutput;
 
 mod _update_channel_read_marker_input;
 

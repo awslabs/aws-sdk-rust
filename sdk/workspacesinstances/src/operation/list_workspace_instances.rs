@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workspace_ins
     }
 }
 
-pub use crate::operation::list_workspace_instances::_list_workspace_instances_output::ListWorkspaceInstancesOutput;
-
 pub use crate::operation::list_workspace_instances::_list_workspace_instances_input::ListWorkspaceInstancesInput;
+
+pub use crate::operation::list_workspace_instances::_list_workspace_instances_output::ListWorkspaceInstancesOutput;
 
 mod _list_workspace_instances_input;
 

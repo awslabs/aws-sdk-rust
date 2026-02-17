@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_poin
     }
 }
 
-pub use crate::operation::create_access_point_for_object_lambda::_create_access_point_for_object_lambda_output::CreateAccessPointForObjectLambdaOutput;
-
 pub use crate::operation::create_access_point_for_object_lambda::_create_access_point_for_object_lambda_input::CreateAccessPointForObjectLambdaInput;
+
+pub use crate::operation::create_access_point_for_object_lambda::_create_access_point_for_object_lambda_output::CreateAccessPointForObjectLambdaOutput;
 
 mod _create_access_point_for_object_lambda_input;
 

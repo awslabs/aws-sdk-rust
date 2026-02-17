@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_data_source::A
     }
 }
 
-pub use crate::operation::add_data_source::_add_data_source_output::AddDataSourceOutput;
-
 pub use crate::operation::add_data_source::_add_data_source_input::AddDataSourceInput;
+
+pub use crate::operation::add_data_source::_add_data_source_output::AddDataSourceOutput;
 
 mod _add_data_source_input;
 

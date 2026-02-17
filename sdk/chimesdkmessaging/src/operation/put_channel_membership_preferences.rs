@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_channel_member
     }
 }
 
-pub use crate::operation::put_channel_membership_preferences::_put_channel_membership_preferences_output::PutChannelMembershipPreferencesOutput;
-
 pub use crate::operation::put_channel_membership_preferences::_put_channel_membership_preferences_input::PutChannelMembershipPreferencesInput;
+
+pub use crate::operation::put_channel_membership_preferences::_put_channel_membership_preferences_output::PutChannelMembershipPreferencesOutput;
 
 mod _put_channel_membership_preferences_input;
 

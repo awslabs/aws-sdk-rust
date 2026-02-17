@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_prepared_stat
     }
 }
 
-pub use crate::operation::list_prepared_statements::_list_prepared_statements_output::ListPreparedStatementsOutput;
-
 pub use crate::operation::list_prepared_statements::_list_prepared_statements_input::ListPreparedStatementsInput;
+
+pub use crate::operation::list_prepared_statements::_list_prepared_statements_output::ListPreparedStatementsOutput;
 
 mod _list_prepared_statements_input;
 

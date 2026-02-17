@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_server_conf
     }
 }
 
-pub use crate::operation::update_server_config::_update_server_config_output::UpdateServerConfigOutput;
-
 pub use crate::operation::update_server_config::_update_server_config_input::UpdateServerConfigInput;
+
+pub use crate::operation::update_server_config::_update_server_config_output::UpdateServerConfigOutput;
 
 mod _update_server_config_input;
 

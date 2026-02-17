@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_secret::D
     }
 }
 
-pub use crate::operation::describe_secret::_describe_secret_output::DescribeSecretOutput;
-
 pub use crate::operation::describe_secret::_describe_secret_input::DescribeSecretInput;
+
+pub use crate::operation::describe_secret::_describe_secret_output::DescribeSecretOutput;
 
 mod _describe_secret_input;
 

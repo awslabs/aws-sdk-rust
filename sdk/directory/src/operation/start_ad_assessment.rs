@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ad_assessmen
     }
 }
 
-pub use crate::operation::start_ad_assessment::_start_ad_assessment_output::StartAdAssessmentOutput;
-
 pub use crate::operation::start_ad_assessment::_start_ad_assessment_input::StartAdAssessmentInput;
+
+pub use crate::operation::start_ad_assessment::_start_ad_assessment_output::StartAdAssessmentOutput;
 
 mod _start_ad_assessment_input;
 

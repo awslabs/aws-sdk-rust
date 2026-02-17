@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_private_graph
     }
 }
 
-pub use crate::operation::list_private_graph_endpoints::_list_private_graph_endpoints_output::ListPrivateGraphEndpointsOutput;
-
 pub use crate::operation::list_private_graph_endpoints::_list_private_graph_endpoints_input::ListPrivateGraphEndpointsInput;
+
+pub use crate::operation::list_private_graph_endpoints::_list_private_graph_endpoints_output::ListPrivateGraphEndpointsOutput;
 
 mod _list_private_graph_endpoints_input;
 

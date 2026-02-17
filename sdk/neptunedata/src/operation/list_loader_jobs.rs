@@ -484,9 +484,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_loader_jobs::
     }
 }
 
-pub use crate::operation::list_loader_jobs::_list_loader_jobs_output::ListLoaderJobsOutput;
-
 pub use crate::operation::list_loader_jobs::_list_loader_jobs_input::ListLoaderJobsInput;
+
+pub use crate::operation::list_loader_jobs::_list_loader_jobs_output::ListLoaderJobsOutput;
 
 mod _list_loader_jobs_input;
 

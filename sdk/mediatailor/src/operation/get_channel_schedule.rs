@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel_schedu
     }
 }
 
-pub use crate::operation::get_channel_schedule::_get_channel_schedule_output::GetChannelScheduleOutput;
-
 pub use crate::operation::get_channel_schedule::_get_channel_schedule_input::GetChannelScheduleInput;
+
+pub use crate::operation::get_channel_schedule::_get_channel_schedule_output::GetChannelScheduleOutput;
 
 mod _get_channel_schedule_input;
 

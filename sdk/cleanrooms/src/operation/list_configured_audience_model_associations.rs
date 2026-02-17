@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_configured_audience_model_associations::_list_configured_audience_model_associations_output::ListConfiguredAudienceModelAssociationsOutput;
-
 pub use crate::operation::list_configured_audience_model_associations::_list_configured_audience_model_associations_input::ListConfiguredAudienceModelAssociationsInput;
+
+pub use crate::operation::list_configured_audience_model_associations::_list_configured_audience_model_associations_output::ListConfiguredAudienceModelAssociationsOutput;
 
 mod _list_configured_audience_model_associations_input;
 

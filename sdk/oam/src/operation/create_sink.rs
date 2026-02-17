@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sink::Creat
     }
 }
 
-pub use crate::operation::create_sink::_create_sink_output::CreateSinkOutput;
-
 pub use crate::operation::create_sink::_create_sink_input::CreateSinkInput;
+
+pub use crate::operation::create_sink::_create_sink_output::CreateSinkOutput;
 
 mod _create_sink_input;
 

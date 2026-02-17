@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_role_to_db_clu
     }
 }
 
-pub use crate::operation::add_role_to_db_cluster::_add_role_to_db_cluster_output::AddRoleToDbClusterOutput;
-
 pub use crate::operation::add_role_to_db_cluster::_add_role_to_db_cluster_input::AddRoleToDbClusterInput;
+
+pub use crate::operation::add_role_to_db_cluster::_add_role_to_db_cluster_output::AddRoleToDbClusterOutput;
 
 mod _add_role_to_db_cluster_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fuota_task:
     }
 }
 
-pub use crate::operation::create_fuota_task::_create_fuota_task_output::CreateFuotaTaskOutput;
-
 pub use crate::operation::create_fuota_task::_create_fuota_task_input::CreateFuotaTaskInput;
+
+pub use crate::operation::create_fuota_task::_create_fuota_task_output::CreateFuotaTaskOutput;
 
 mod _create_fuota_task_input;
 

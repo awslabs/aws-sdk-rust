@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_thesaurus::
     }
 }
 
-pub use crate::operation::delete_thesaurus::_delete_thesaurus_output::DeleteThesaurusOutput;
-
 pub use crate::operation::delete_thesaurus::_delete_thesaurus_input::DeleteThesaurusInput;
+
+pub use crate::operation::delete_thesaurus::_delete_thesaurus_output::DeleteThesaurusOutput;
 
 mod _delete_thesaurus_input;
 

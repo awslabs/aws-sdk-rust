@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_trust_store_re
     }
 }
 
-pub use crate::operation::add_trust_store_revocations::_add_trust_store_revocations_output::AddTrustStoreRevocationsOutput;
-
 pub use crate::operation::add_trust_store_revocations::_add_trust_store_revocations_input::AddTrustStoreRevocationsInput;
+
+pub use crate::operation::add_trust_store_revocations::_add_trust_store_revocations_output::AddTrustStoreRevocationsOutput;
 
 mod _add_trust_store_revocations_input;
 

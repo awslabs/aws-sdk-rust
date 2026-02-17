@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_persisten
     }
 }
 
-pub use crate::operation::describe_persistent_app_ui::_describe_persistent_app_ui_output::DescribePersistentAppUiOutput;
-
 pub use crate::operation::describe_persistent_app_ui::_describe_persistent_app_ui_input::DescribePersistentAppUiInput;
+
+pub use crate::operation::describe_persistent_app_ui::_describe_persistent_app_ui_output::DescribePersistentAppUiOutput;
 
 mod _describe_persistent_app_ui_input;
 

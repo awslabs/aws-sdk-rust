@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_profile:
     }
 }
 
-pub use crate::operation::associate_profile::_associate_profile_output::AssociateProfileOutput;
-
 pub use crate::operation::associate_profile::_associate_profile_input::AssociateProfileInput;
+
+pub use crate::operation::associate_profile::_associate_profile_output::AssociateProfileOutput;
 
 mod _associate_profile_input;
 

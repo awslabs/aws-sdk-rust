@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_facet_names::
     }
 }
 
-pub use crate::operation::list_facet_names::_list_facet_names_output::ListFacetNamesOutput;
-
 pub use crate::operation::list_facet_names::_list_facet_names_input::ListFacetNamesInput;
+
+pub use crate::operation::list_facet_names::_list_facet_names_output::ListFacetNamesOutput;
 
 mod _list_facet_names_input;
 

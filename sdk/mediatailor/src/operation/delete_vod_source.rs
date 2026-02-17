@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vod_source:
     }
 }
 
-pub use crate::operation::delete_vod_source::_delete_vod_source_output::DeleteVodSourceOutput;
-
 pub use crate::operation::delete_vod_source::_delete_vod_source_input::DeleteVodSourceInput;
+
+pub use crate::operation::delete_vod_source::_delete_vod_source_output::DeleteVodSourceOutput;
 
 mod _delete_vod_source_input;
 

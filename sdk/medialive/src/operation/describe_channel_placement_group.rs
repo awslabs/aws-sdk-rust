@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_channel_p
     }
 }
 
-pub use crate::operation::describe_channel_placement_group::_describe_channel_placement_group_output::DescribeChannelPlacementGroupOutput;
-
 pub use crate::operation::describe_channel_placement_group::_describe_channel_placement_group_input::DescribeChannelPlacementGroupInput;
+
+pub use crate::operation::describe_channel_placement_group::_describe_channel_placement_group_output::DescribeChannelPlacementGroupOutput;
 
 mod _describe_channel_placement_group_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_zonal_shift
     }
 }
 
-pub use crate::operation::cancel_zonal_shift::_cancel_zonal_shift_output::CancelZonalShiftOutput;
-
 pub use crate::operation::cancel_zonal_shift::_cancel_zonal_shift_input::CancelZonalShiftInput;
+
+pub use crate::operation::cancel_zonal_shift::_cancel_zonal_shift_output::CancelZonalShiftOutput;
 
 mod _cancel_zonal_shift_input;
 

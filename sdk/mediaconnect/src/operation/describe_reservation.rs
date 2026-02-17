@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reservati
     }
 }
 
-pub use crate::operation::describe_reservation::_describe_reservation_output::DescribeReservationOutput;
-
 pub use crate::operation::describe_reservation::_describe_reservation_input::DescribeReservationInput;
+
+pub use crate::operation::describe_reservation::_describe_reservation_output::DescribeReservationOutput;
 
 mod _describe_reservation_input;
 

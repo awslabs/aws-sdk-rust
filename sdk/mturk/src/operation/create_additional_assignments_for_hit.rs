@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_additional_
     }
 }
 
-pub use crate::operation::create_additional_assignments_for_hit::_create_additional_assignments_for_hit_output::CreateAdditionalAssignmentsForHitOutput;
-
 pub use crate::operation::create_additional_assignments_for_hit::_create_additional_assignments_for_hit_input::CreateAdditionalAssignmentsForHitInput;
+
+pub use crate::operation::create_additional_assignments_for_hit::_create_additional_assignments_for_hit_output::CreateAdditionalAssignmentsForHitOutput;
 
 mod _create_additional_assignments_for_hit_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_prompt::Del
     }
 }
 
-pub use crate::operation::delete_prompt::_delete_prompt_output::DeletePromptOutput;
-
 pub use crate::operation::delete_prompt::_delete_prompt_input::DeletePromptInput;
+
+pub use crate::operation::delete_prompt::_delete_prompt_output::DeletePromptOutput;
 
 mod _delete_prompt_input;
 

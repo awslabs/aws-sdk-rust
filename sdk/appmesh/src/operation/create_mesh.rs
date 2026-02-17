@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_mesh::Creat
     }
 }
 
-pub use crate::operation::create_mesh::_create_mesh_output::CreateMeshOutput;
-
 pub use crate::operation::create_mesh::_create_mesh_input::CreateMeshInput;
+
+pub use crate::operation::create_mesh::_create_mesh_output::CreateMeshOutput;
 
 mod _create_mesh_input;
 

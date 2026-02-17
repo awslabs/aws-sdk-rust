@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_logger_definit
     }
 }
 
-pub use crate::operation::get_logger_definition_version::_get_logger_definition_version_output::GetLoggerDefinitionVersionOutput;
-
 pub use crate::operation::get_logger_definition_version::_get_logger_definition_version_input::GetLoggerDefinitionVersionInput;
+
+pub use crate::operation::get_logger_definition_version::_get_logger_definition_version_output::GetLoggerDefinitionVersionOutput;
 
 mod _get_logger_definition_version_input;
 

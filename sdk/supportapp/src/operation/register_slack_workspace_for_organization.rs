@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_slack_wor
     }
 }
 
-pub use crate::operation::register_slack_workspace_for_organization::_register_slack_workspace_for_organization_output::RegisterSlackWorkspaceForOrganizationOutput;
-
 pub use crate::operation::register_slack_workspace_for_organization::_register_slack_workspace_for_organization_input::RegisterSlackWorkspaceForOrganizationInput;
+
+pub use crate::operation::register_slack_workspace_for_organization::_register_slack_workspace_for_organization_output::RegisterSlackWorkspaceForOrganizationOutput;
 
 mod _register_slack_workspace_for_organization_input;
 

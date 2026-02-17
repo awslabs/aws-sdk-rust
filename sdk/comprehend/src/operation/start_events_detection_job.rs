@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_events_detec
     }
 }
 
-pub use crate::operation::start_events_detection_job::_start_events_detection_job_output::StartEventsDetectionJobOutput;
-
 pub use crate::operation::start_events_detection_job::_start_events_detection_job_input::StartEventsDetectionJobInput;
+
+pub use crate::operation::start_events_detection_job::_start_events_detection_job_output::StartEventsDetectionJobOutput;
 
 mod _start_events_detection_job_input;
 

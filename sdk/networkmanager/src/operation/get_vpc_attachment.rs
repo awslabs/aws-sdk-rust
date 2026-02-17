@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpc_attachment
     }
 }
 
-pub use crate::operation::get_vpc_attachment::_get_vpc_attachment_output::GetVpcAttachmentOutput;
-
 pub use crate::operation::get_vpc_attachment::_get_vpc_attachment_input::GetVpcAttachmentInput;
+
+pub use crate::operation::get_vpc_attachment::_get_vpc_attachment_output::GetVpcAttachmentOutput;
 
 mod _get_vpc_attachment_input;
 

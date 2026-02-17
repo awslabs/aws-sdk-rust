@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_attrib
     }
 }
 
-pub use crate::operation::get_contact_attributes::_get_contact_attributes_output::GetContactAttributesOutput;
-
 pub use crate::operation::get_contact_attributes::_get_contact_attributes_input::GetContactAttributesInput;
+
+pub use crate::operation::get_contact_attributes::_get_contact_attributes_output::GetContactAttributesOutput;
 
 mod _get_contact_attributes_input;
 

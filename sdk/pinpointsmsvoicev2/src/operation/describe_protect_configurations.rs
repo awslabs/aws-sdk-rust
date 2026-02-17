@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_protect_c
     }
 }
 
-pub use crate::operation::describe_protect_configurations::_describe_protect_configurations_output::DescribeProtectConfigurationsOutput;
-
 pub use crate::operation::describe_protect_configurations::_describe_protect_configurations_input::DescribeProtectConfigurationsInput;
+
+pub use crate::operation::describe_protect_configurations::_describe_protect_configurations_output::DescribeProtectConfigurationsOutput;
 
 mod _describe_protect_configurations_input;
 

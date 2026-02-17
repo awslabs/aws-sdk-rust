@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_virtual_ser
     }
 }
 
-pub use crate::operation::update_virtual_service::_update_virtual_service_output::UpdateVirtualServiceOutput;
-
 pub use crate::operation::update_virtual_service::_update_virtual_service_input::UpdateVirtualServiceInput;
+
+pub use crate::operation::update_virtual_service::_update_virtual_service_output::UpdateVirtualServiceOutput;
 
 mod _update_virtual_service_input;
 

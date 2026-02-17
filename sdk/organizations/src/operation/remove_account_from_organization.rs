@@ -627,9 +627,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_account_fro
     }
 }
 
-pub use crate::operation::remove_account_from_organization::_remove_account_from_organization_output::RemoveAccountFromOrganizationOutput;
-
 pub use crate::operation::remove_account_from_organization::_remove_account_from_organization_input::RemoveAccountFromOrganizationInput;
+
+pub use crate::operation::remove_account_from_organization::_remove_account_from_organization_output::RemoveAccountFromOrganizationOutput;
 
 mod _remove_account_from_organization_input;
 

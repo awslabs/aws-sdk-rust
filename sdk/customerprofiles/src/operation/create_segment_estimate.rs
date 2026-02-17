@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_segment_est
     }
 }
 
-pub use crate::operation::create_segment_estimate::_create_segment_estimate_output::CreateSegmentEstimateOutput;
-
 pub use crate::operation::create_segment_estimate::_create_segment_estimate_input::CreateSegmentEstimateInput;
+
+pub use crate::operation::create_segment_estimate::_create_segment_estimate_output::CreateSegmentEstimateOutput;
 
 mod _create_segment_estimate_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_configur
     }
 }
 
-pub use crate::operation::get_event_configuration_by_resource_types::_get_event_configuration_by_resource_types_output::GetEventConfigurationByResourceTypesOutput;
-
 pub use crate::operation::get_event_configuration_by_resource_types::_get_event_configuration_by_resource_types_input::GetEventConfigurationByResourceTypesInput;
+
+pub use crate::operation::get_event_configuration_by_resource_types::_get_event_configuration_by_resource_types_output::GetEventConfigurationByResourceTypesOutput;
 
 mod _get_event_configuration_by_resource_types_input;
 

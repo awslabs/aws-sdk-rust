@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_system_temp
     }
 }
 
-pub use crate::operation::create_system_template::_create_system_template_output::CreateSystemTemplateOutput;
-
 pub use crate::operation::create_system_template::_create_system_template_input::CreateSystemTemplateInput;
+
+pub use crate::operation::create_system_template::_create_system_template_output::CreateSystemTemplateOutput;
 
 mod _create_system_template_input;
 

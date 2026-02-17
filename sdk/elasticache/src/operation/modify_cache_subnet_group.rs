@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cache_subne
     }
 }
 
-pub use crate::operation::modify_cache_subnet_group::_modify_cache_subnet_group_output::ModifyCacheSubnetGroupOutput;
-
 pub use crate::operation::modify_cache_subnet_group::_modify_cache_subnet_group_input::ModifyCacheSubnetGroupInput;
+
+pub use crate::operation::modify_cache_subnet_group::_modify_cache_subnet_group_output::ModifyCacheSubnetGroupOutput;
 
 mod _modify_cache_subnet_group_input;
 

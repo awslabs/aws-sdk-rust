@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_share::Dele
     }
 }
 
-pub use crate::operation::delete_share::_delete_share_output::DeleteShareOutput;
-
 pub use crate::operation::delete_share::_delete_share_input::DeleteShareInput;
+
+pub use crate::operation::delete_share::_delete_share_output::DeleteShareOutput;
 
 mod _delete_share_input;
 

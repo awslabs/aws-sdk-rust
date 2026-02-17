@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_events_de
     }
 }
 
-pub use crate::operation::describe_events_detection_job::_describe_events_detection_job_output::DescribeEventsDetectionJobOutput;
-
 pub use crate::operation::describe_events_detection_job::_describe_events_detection_job_input::DescribeEventsDetectionJobInput;
+
+pub use crate::operation::describe_events_detection_job::_describe_events_detection_job_output::DescribeEventsDetectionJobOutput;
 
 mod _describe_events_detection_job_input;
 

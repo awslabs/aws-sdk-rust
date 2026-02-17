@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_component_c
     }
 }
 
-pub use crate::operation::update_component_configuration::_update_component_configuration_output::UpdateComponentConfigurationOutput;
-
 pub use crate::operation::update_component_configuration::_update_component_configuration_input::UpdateComponentConfigurationInput;
+
+pub use crate::operation::update_component_configuration::_update_component_configuration_output::UpdateComponentConfigurationOutput;
 
 mod _update_component_configuration_input;
 

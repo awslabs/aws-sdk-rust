@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpc_endpoints
     }
 }
 
-pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_output::ListVpcEndpointsOutput;
-
 pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_input::ListVpcEndpointsInput;
+
+pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_output::ListVpcEndpointsOutput;
 
 mod _list_vpc_endpoints_input;
 

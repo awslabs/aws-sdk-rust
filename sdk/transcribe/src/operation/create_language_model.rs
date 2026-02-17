@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_language_mo
     }
 }
 
-pub use crate::operation::create_language_model::_create_language_model_output::CreateLanguageModelOutput;
-
 pub use crate::operation::create_language_model::_create_language_model_input::CreateLanguageModelInput;
+
+pub use crate::operation::create_language_model::_create_language_model_output::CreateLanguageModelOutput;
 
 mod _create_language_model_input;
 

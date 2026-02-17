@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_email_identit
     }
 }
 
-pub use crate::operation::list_email_identities::_list_email_identities_output::ListEmailIdentitiesOutput;
-
 pub use crate::operation::list_email_identities::_list_email_identities_input::ListEmailIdentitiesInput;
+
+pub use crate::operation::list_email_identities::_list_email_identities_output::ListEmailIdentitiesOutput;
 
 mod _list_email_identities_input;
 

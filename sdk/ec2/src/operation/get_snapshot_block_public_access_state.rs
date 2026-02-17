@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_snapshot_block
     }
 }
 
-pub use crate::operation::get_snapshot_block_public_access_state::_get_snapshot_block_public_access_state_output::GetSnapshotBlockPublicAccessStateOutput;
-
 pub use crate::operation::get_snapshot_block_public_access_state::_get_snapshot_block_public_access_state_input::GetSnapshotBlockPublicAccessStateInput;
+
+pub use crate::operation::get_snapshot_block_public_access_state::_get_snapshot_block_public_access_state_output::GetSnapshotBlockPublicAccessStateOutput;
 
 mod _get_snapshot_block_public_access_state_input;
 

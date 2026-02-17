@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_identity:
     }
 }
 
-pub use crate::operation::describe_identity::_describe_identity_output::DescribeIdentityOutput;
-
 pub use crate::operation::describe_identity::_describe_identity_input::DescribeIdentityInput;
+
+pub use crate::operation::describe_identity::_describe_identity_output::DescribeIdentityOutput;
 
 mod _describe_identity_input;
 

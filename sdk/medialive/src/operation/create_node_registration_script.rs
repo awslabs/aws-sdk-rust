@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_node_regist
     }
 }
 
-pub use crate::operation::create_node_registration_script::_create_node_registration_script_output::CreateNodeRegistrationScriptOutput;
-
 pub use crate::operation::create_node_registration_script::_create_node_registration_script_input::CreateNodeRegistrationScriptInput;
+
+pub use crate::operation::create_node_registration_script::_create_node_registration_script_output::CreateNodeRegistrationScriptOutput;
 
 mod _create_node_registration_script_input;
 

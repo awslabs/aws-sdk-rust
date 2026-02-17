@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_byte_match_
     }
 }
 
-pub use crate::operation::create_byte_match_set::_create_byte_match_set_output::CreateByteMatchSetOutput;
-
 pub use crate::operation::create_byte_match_set::_create_byte_match_set_input::CreateByteMatchSetInput;
+
+pub use crate::operation::create_byte_match_set::_create_byte_match_set_output::CreateByteMatchSetOutput;
 
 mod _create_byte_match_set_input;
 

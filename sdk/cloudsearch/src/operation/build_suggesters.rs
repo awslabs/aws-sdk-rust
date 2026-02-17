@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::build_suggesters::
     }
 }
 
-pub use crate::operation::build_suggesters::_build_suggesters_output::BuildSuggestersOutput;
-
 pub use crate::operation::build_suggesters::_build_suggesters_input::BuildSuggestersInput;
+
+pub use crate::operation::build_suggesters::_build_suggesters_output::BuildSuggestersOutput;
 
 mod _build_suggesters_input;
 

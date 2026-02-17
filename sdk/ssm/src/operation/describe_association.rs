@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_associati
     }
 }
 
-pub use crate::operation::describe_association::_describe_association_output::DescribeAssociationOutput;
-
 pub use crate::operation::describe_association::_describe_association_input::DescribeAssociationInput;
+
+pub use crate::operation::describe_association::_describe_association_output::DescribeAssociationOutput;
 
 mod _describe_association_input;
 

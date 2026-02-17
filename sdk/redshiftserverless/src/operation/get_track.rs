@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_track::GetTrac
     }
 }
 
-pub use crate::operation::get_track::_get_track_output::GetTrackOutput;
-
 pub use crate::operation::get_track::_get_track_input::GetTrackInput;
+
+pub use crate::operation::get_track::_get_track_output::GetTrackOutput;
 
 mod _get_track_input;
 

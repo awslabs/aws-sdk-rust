@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multiplex_ale
     }
 }
 
-pub use crate::operation::list_multiplex_alerts::_list_multiplex_alerts_output::ListMultiplexAlertsOutput;
-
 pub use crate::operation::list_multiplex_alerts::_list_multiplex_alerts_input::ListMultiplexAlertsInput;
+
+pub use crate::operation::list_multiplex_alerts::_list_multiplex_alerts_output::ListMultiplexAlertsOutput;
 
 mod _list_multiplex_alerts_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provision_ipam_byo
     }
 }
 
-pub use crate::operation::provision_ipam_byoasn::_provision_ipam_byoasn_output::ProvisionIpamByoasnOutput;
-
 pub use crate::operation::provision_ipam_byoasn::_provision_ipam_byoasn_input::ProvisionIpamByoasnInput;
+
+pub use crate::operation::provision_ipam_byoasn::_provision_ipam_byoasn_output::ProvisionIpamByoasnOutput;
 
 mod _provision_ipam_byoasn_input;
 

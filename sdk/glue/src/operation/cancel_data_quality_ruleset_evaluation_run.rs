@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_data_qualit
     }
 }
 
-pub use crate::operation::cancel_data_quality_ruleset_evaluation_run::_cancel_data_quality_ruleset_evaluation_run_output::CancelDataQualityRulesetEvaluationRunOutput;
-
 pub use crate::operation::cancel_data_quality_ruleset_evaluation_run::_cancel_data_quality_ruleset_evaluation_run_input::CancelDataQualityRulesetEvaluationRunInput;
+
+pub use crate::operation::cancel_data_quality_ruleset_evaluation_run::_cancel_data_quality_ruleset_evaluation_run_output::CancelDataQualityRulesetEvaluationRunOutput;
 
 mod _cancel_data_quality_ruleset_evaluation_run_input;
 

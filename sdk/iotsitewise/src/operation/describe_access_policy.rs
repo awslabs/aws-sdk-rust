@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_access_po
     }
 }
 
-pub use crate::operation::describe_access_policy::_describe_access_policy_output::DescribeAccessPolicyOutput;
-
 pub use crate::operation::describe_access_policy::_describe_access_policy_input::DescribeAccessPolicyInput;
+
+pub use crate::operation::describe_access_policy::_describe_access_policy_output::DescribeAccessPolicyOutput;
 
 mod _describe_access_policy_input;
 

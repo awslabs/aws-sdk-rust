@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_foundation_
     }
 }
 
-pub use crate::operation::delete_foundation_model_agreement::_delete_foundation_model_agreement_output::DeleteFoundationModelAgreementOutput;
-
 pub use crate::operation::delete_foundation_model_agreement::_delete_foundation_model_agreement_input::DeleteFoundationModelAgreementInput;
+
+pub use crate::operation::delete_foundation_model_agreement::_delete_foundation_model_agreement_output::DeleteFoundationModelAgreementOutput;
 
 mod _delete_foundation_model_agreement_input;
 

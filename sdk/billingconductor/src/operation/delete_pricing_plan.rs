@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pricing_pla
     }
 }
 
-pub use crate::operation::delete_pricing_plan::_delete_pricing_plan_output::DeletePricingPlanOutput;
-
 pub use crate::operation::delete_pricing_plan::_delete_pricing_plan_input::DeletePricingPlanInput;
+
+pub use crate::operation::delete_pricing_plan::_delete_pricing_plan_output::DeletePricingPlanOutput;
 
 mod _delete_pricing_plan_input;
 

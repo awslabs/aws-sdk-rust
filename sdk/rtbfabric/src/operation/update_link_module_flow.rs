@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_link_module
     }
 }
 
-pub use crate::operation::update_link_module_flow::_update_link_module_flow_output::UpdateLinkModuleFlowOutput;
-
 pub use crate::operation::update_link_module_flow::_update_link_module_flow_input::UpdateLinkModuleFlowInput;
+
+pub use crate::operation::update_link_module_flow::_update_link_module_flow_output::UpdateLinkModuleFlowOutput;
 
 mod _update_link_module_flow_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_incident_re
     }
 }
 
-pub use crate::operation::update_incident_record::_update_incident_record_output::UpdateIncidentRecordOutput;
-
 pub use crate::operation::update_incident_record::_update_incident_record_input::UpdateIncidentRecordInput;
+
+pub use crate::operation::update_incident_record::_update_incident_record_output::UpdateIncidentRecordOutput;
 
 mod _update_incident_record_input;
 

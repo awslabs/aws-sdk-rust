@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_key_phrases_d
     }
 }
 
-pub use crate::operation::stop_key_phrases_detection_job::_stop_key_phrases_detection_job_output::StopKeyPhrasesDetectionJobOutput;
-
 pub use crate::operation::stop_key_phrases_detection_job::_stop_key_phrases_detection_job_input::StopKeyPhrasesDetectionJobInput;
+
+pub use crate::operation::stop_key_phrases_detection_job::_stop_key_phrases_detection_job_output::StopKeyPhrasesDetectionJobOutput;
 
 mod _stop_key_phrases_detection_job_input;
 

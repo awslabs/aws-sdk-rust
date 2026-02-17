@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_event_data
     }
 }
 
-pub use crate::operation::restore_event_data_store::_restore_event_data_store_output::RestoreEventDataStoreOutput;
-
 pub use crate::operation::restore_event_data_store::_restore_event_data_store_input::RestoreEventDataStoreInput;
+
+pub use crate::operation::restore_event_data_store::_restore_event_data_store_output::RestoreEventDataStoreOutput;
 
 mod _restore_event_data_store_input;
 

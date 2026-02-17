@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mailbox_expor
     }
 }
 
-pub use crate::operation::list_mailbox_export_jobs::_list_mailbox_export_jobs_output::ListMailboxExportJobsOutput;
-
 pub use crate::operation::list_mailbox_export_jobs::_list_mailbox_export_jobs_input::ListMailboxExportJobsInput;
+
+pub use crate::operation::list_mailbox_export_jobs::_list_mailbox_export_jobs_output::ListMailboxExportJobsOutput;
 
 mod _list_mailbox_export_jobs_input;
 

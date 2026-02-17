@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_policy::Det
     }
 }
 
-pub use crate::operation::detach_policy::_detach_policy_output::DetachPolicyOutput;
-
 pub use crate::operation::detach_policy::_detach_policy_input::DetachPolicyInput;
+
+pub use crate::operation::detach_policy::_detach_policy_output::DetachPolicyOutput;
 
 mod _detach_policy_input;
 

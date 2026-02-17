@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_snapshot_att
     }
 }
 
-pub use crate::operation::reset_snapshot_attribute::_reset_snapshot_attribute_output::ResetSnapshotAttributeOutput;
-
 pub use crate::operation::reset_snapshot_attribute::_reset_snapshot_attribute_input::ResetSnapshotAttributeInput;
+
+pub use crate::operation::reset_snapshot_attribute::_reset_snapshot_attribute_output::ResetSnapshotAttributeOutput;
 
 mod _reset_snapshot_attribute_input;
 

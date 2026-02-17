@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_workflow_step
     }
 }
 
-pub use crate::operation::send_workflow_step_action::_send_workflow_step_action_output::SendWorkflowStepActionOutput;
-
 pub use crate::operation::send_workflow_step_action::_send_workflow_step_action_input::SendWorkflowStepActionInput;
+
+pub use crate::operation::send_workflow_step_action::_send_workflow_step_action_output::SendWorkflowStepActionOutput;
 
 mod _send_workflow_step_action_input;
 

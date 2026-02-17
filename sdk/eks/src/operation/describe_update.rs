@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_update::D
     }
 }
 
-pub use crate::operation::describe_update::_describe_update_output::DescribeUpdateOutput;
-
 pub use crate::operation::describe_update::_describe_update_input::DescribeUpdateInput;
+
+pub use crate::operation::describe_update::_describe_update_output::DescribeUpdateOutput;
 
 mod _describe_update_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_resource_confi
     }
 }
 
-pub use crate::operation::put_resource_config::_put_resource_config_output::PutResourceConfigOutput;
-
 pub use crate::operation::put_resource_config::_put_resource_config_input::PutResourceConfigInput;
+
+pub use crate::operation::put_resource_config::_put_resource_config_output::PutResourceConfigOutput;
 
 mod _put_resource_config_input;
 

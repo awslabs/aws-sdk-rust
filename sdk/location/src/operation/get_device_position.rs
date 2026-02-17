@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_positio
     }
 }
 
-pub use crate::operation::get_device_position::_get_device_position_output::GetDevicePositionOutput;
-
 pub use crate::operation::get_device_position::_get_device_position_input::GetDevicePositionInput;
+
+pub use crate::operation::get_device_position::_get_device_position_output::GetDevicePositionOutput;
 
 mod _get_device_position_input;
 

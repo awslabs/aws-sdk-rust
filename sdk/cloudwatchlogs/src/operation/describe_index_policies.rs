@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_index_pol
     }
 }
 
-pub use crate::operation::describe_index_policies::_describe_index_policies_output::DescribeIndexPoliciesOutput;
-
 pub use crate::operation::describe_index_policies::_describe_index_policies_input::DescribeIndexPoliciesInput;
+
+pub use crate::operation::describe_index_policies::_describe_index_policies_output::DescribeIndexPoliciesOutput;
 
 mod _describe_index_policies_input;
 

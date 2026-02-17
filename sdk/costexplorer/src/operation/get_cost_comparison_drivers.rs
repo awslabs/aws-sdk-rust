@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cost_compariso
     }
 }
 
-pub use crate::operation::get_cost_comparison_drivers::_get_cost_comparison_drivers_output::GetCostComparisonDriversOutput;
-
 pub use crate::operation::get_cost_comparison_drivers::_get_cost_comparison_drivers_input::GetCostComparisonDriversInput;
+
+pub use crate::operation::get_cost_comparison_drivers::_get_cost_comparison_drivers_output::GetCostComparisonDriversOutput;
 
 mod _get_cost_comparison_drivers_input;
 

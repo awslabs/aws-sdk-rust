@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_product_res
     }
 }
 
-pub use crate::operation::update_product_rest_endpoint_page::_update_product_rest_endpoint_page_output::UpdateProductRestEndpointPageOutput;
-
 pub use crate::operation::update_product_rest_endpoint_page::_update_product_rest_endpoint_page_input::UpdateProductRestEndpointPageInput;
+
+pub use crate::operation::update_product_rest_endpoint_page::_update_product_rest_endpoint_page_output::UpdateProductRestEndpointPageOutput;
 
 mod _update_product_rest_endpoint_page_input;
 

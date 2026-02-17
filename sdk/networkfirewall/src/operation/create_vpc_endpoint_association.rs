@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_endpoin
     }
 }
 
-pub use crate::operation::create_vpc_endpoint_association::_create_vpc_endpoint_association_output::CreateVpcEndpointAssociationOutput;
-
 pub use crate::operation::create_vpc_endpoint_association::_create_vpc_endpoint_association_input::CreateVpcEndpointAssociationInput;
+
+pub use crate::operation::create_vpc_endpoint_association::_create_vpc_endpoint_association_output::CreateVpcEndpointAssociationOutput;
 
 mod _create_vpc_endpoint_association_input;
 

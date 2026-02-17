@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_p
     }
 }
 
-pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_parameter_groups_output::DescribeClusterParameterGroupsOutput;
-
 pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_parameter_groups_input::DescribeClusterParameterGroupsInput;
+
+pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_parameter_groups_output::DescribeClusterParameterGroupsOutput;
 
 mod _describe_cluster_parameter_groups_input;
 

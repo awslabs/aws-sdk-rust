@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decrypt::DecryptEr
     }
 }
 
-pub use crate::operation::decrypt::_decrypt_output::DecryptOutput;
-
 pub use crate::operation::decrypt::_decrypt_input::DecryptInput;
+
+pub use crate::operation::decrypt::_decrypt_output::DecryptOutput;
 
 mod _decrypt_input;
 

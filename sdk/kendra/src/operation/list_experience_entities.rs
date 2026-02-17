@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_experience_en
     }
 }
 
-pub use crate::operation::list_experience_entities::_list_experience_entities_output::ListExperienceEntitiesOutput;
-
 pub use crate::operation::list_experience_entities::_list_experience_entities_input::ListExperienceEntitiesInput;
+
+pub use crate::operation::list_experience_entities::_list_experience_entities_output::ListExperienceEntitiesOutput;
 
 mod _list_experience_entities_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_marketplace
     }
 }
 
-pub use crate::operation::accept_marketplace_registration::_accept_marketplace_registration_output::AcceptMarketplaceRegistrationOutput;
-
 pub use crate::operation::accept_marketplace_registration::_accept_marketplace_registration_input::AcceptMarketplaceRegistrationInput;
+
+pub use crate::operation::accept_marketplace_registration::_accept_marketplace_registration_output::AcceptMarketplaceRegistrationOutput;
 
 mod _accept_marketplace_registration_input;
 

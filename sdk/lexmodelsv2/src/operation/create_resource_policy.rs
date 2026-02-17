@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_po
     }
 }
 
-pub use crate::operation::create_resource_policy::_create_resource_policy_output::CreateResourcePolicyOutput;
-
 pub use crate::operation::create_resource_policy::_create_resource_policy_input::CreateResourcePolicyInput;
+
+pub use crate::operation::create_resource_policy::_create_resource_policy_output::CreateResourcePolicyOutput;
 
 mod _create_resource_policy_input;
 

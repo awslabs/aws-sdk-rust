@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_profile:
     }
 }
 
-pub use crate::operation::batch_get_profile::_batch_get_profile_output::BatchGetProfileOutput;
-
 pub use crate::operation::batch_get_profile::_batch_get_profile_input::BatchGetProfileInput;
+
+pub use crate::operation::batch_get_profile::_batch_get_profile_output::BatchGetProfileOutput;
 
 mod _batch_get_profile_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_asso
     }
 }
 
-pub use crate::operation::update_domain_association::_update_domain_association_output::UpdateDomainAssociationOutput;
-
 pub use crate::operation::update_domain_association::_update_domain_association_input::UpdateDomainAssociationInput;
+
+pub use crate::operation::update_domain_association::_update_domain_association_output::UpdateDomainAssociationOutput;
 
 mod _update_domain_association_input;
 

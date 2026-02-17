@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rescore_exe
     }
 }
 
-pub use crate::operation::delete_rescore_execution_plan::_delete_rescore_execution_plan_output::DeleteRescoreExecutionPlanOutput;
-
 pub use crate::operation::delete_rescore_execution_plan::_delete_rescore_execution_plan_input::DeleteRescoreExecutionPlanInput;
+
+pub use crate::operation::delete_rescore_execution_plan::_delete_rescore_execution_plan_output::DeleteRescoreExecutionPlanOutput;
 
 mod _delete_rescore_execution_plan_input;
 

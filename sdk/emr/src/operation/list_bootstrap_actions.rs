@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bootstrap_act
     }
 }
 
-pub use crate::operation::list_bootstrap_actions::_list_bootstrap_actions_output::ListBootstrapActionsOutput;
-
 pub use crate::operation::list_bootstrap_actions::_list_bootstrap_actions_input::ListBootstrapActionsInput;
+
+pub use crate::operation::list_bootstrap_actions::_list_bootstrap_actions_output::ListBootstrapActionsOutput;
 
 mod _list_bootstrap_actions_input;
 

@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_acl::Ge
     }
 }
 
-pub use crate::operation::get_bucket_acl::_get_bucket_acl_output::GetBucketAclOutput;
-
 pub use crate::operation::get_bucket_acl::_get_bucket_acl_input::GetBucketAclInput;
+
+pub use crate::operation::get_bucket_acl::_get_bucket_acl_output::GetBucketAclOutput;
 
 mod _get_bucket_acl_input;
 

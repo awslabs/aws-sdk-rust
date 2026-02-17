@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_auto_scalin
     }
 }
 
-pub use crate::operation::delete_auto_scaling_group::_delete_auto_scaling_group_output::DeleteAutoScalingGroupOutput;
-
 pub use crate::operation::delete_auto_scaling_group::_delete_auto_scaling_group_input::DeleteAutoScalingGroupInput;
+
+pub use crate::operation::delete_auto_scaling_group::_delete_auto_scaling_group_output::DeleteAutoScalingGroupOutput;
 
 mod _delete_auto_scaling_group_input;
 

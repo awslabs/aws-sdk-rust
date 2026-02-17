@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_launch_te
     }
 }
 
-pub use crate::operation::describe_launch_template_versions::_describe_launch_template_versions_output::DescribeLaunchTemplateVersionsOutput;
-
 pub use crate::operation::describe_launch_template_versions::_describe_launch_template_versions_input::DescribeLaunchTemplateVersionsInput;
+
+pub use crate::operation::describe_launch_template_versions::_describe_launch_template_versions_output::DescribeLaunchTemplateVersionsOutput;
 
 mod _describe_launch_template_versions_input;
 

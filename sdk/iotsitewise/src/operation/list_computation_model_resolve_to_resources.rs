@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_computation_model_resolve_to_resources::_list_computation_model_resolve_to_resources_output::ListComputationModelResolveToResourcesOutput;
-
 pub use crate::operation::list_computation_model_resolve_to_resources::_list_computation_model_resolve_to_resources_input::ListComputationModelResolveToResourcesInput;
+
+pub use crate::operation::list_computation_model_resolve_to_resources::_list_computation_model_resolve_to_resources_output::ListComputationModelResolveToResourcesOutput;
 
 mod _list_computation_model_resolve_to_resources_input;
 

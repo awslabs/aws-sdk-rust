@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_compute::
     }
 }
 
-pub use crate::operation::register_compute::_register_compute_output::RegisterComputeOutput;
-
 pub use crate::operation::register_compute::_register_compute_input::RegisterComputeInput;
+
+pub use crate::operation::register_compute::_register_compute_output::RegisterComputeOutput;
 
 mod _register_compute_input;
 

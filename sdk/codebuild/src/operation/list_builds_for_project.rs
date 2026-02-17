@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_builds_for_pr
     }
 }
 
-pub use crate::operation::list_builds_for_project::_list_builds_for_project_output::ListBuildsForProjectOutput;
-
 pub use crate::operation::list_builds_for_project::_list_builds_for_project_input::ListBuildsForProjectInput;
+
+pub use crate::operation::list_builds_for_project::_list_builds_for_project_output::ListBuildsForProjectOutput;
 
 mod _list_builds_for_project_input;
 

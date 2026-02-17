@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_integration_ta
     }
 }
 
-pub use crate::operation::get_integration_table_properties::_get_integration_table_properties_output::GetIntegrationTablePropertiesOutput;
-
 pub use crate::operation::get_integration_table_properties::_get_integration_table_properties_input::GetIntegrationTablePropertiesInput;
+
+pub use crate::operation::get_integration_table_properties::_get_integration_table_properties_output::GetIntegrationTablePropertiesOutput;
 
 mod _get_integration_table_properties_input;
 

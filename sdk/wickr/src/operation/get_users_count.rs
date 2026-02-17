@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_users_count::G
     }
 }
 
-pub use crate::operation::get_users_count::_get_users_count_output::GetUsersCountOutput;
-
 pub use crate::operation::get_users_count::_get_users_count_input::GetUsersCountInput;
+
+pub use crate::operation::get_users_count::_get_users_count_output::GetUsersCountOutput;
 
 mod _get_users_count_input;
 

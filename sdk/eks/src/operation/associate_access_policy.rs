@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_access_p
     }
 }
 
-pub use crate::operation::associate_access_policy::_associate_access_policy_output::AssociateAccessPolicyOutput;
-
 pub use crate::operation::associate_access_policy::_associate_access_policy_input::AssociateAccessPolicyInput;
+
+pub use crate::operation::associate_access_policy::_associate_access_policy_output::AssociateAccessPolicyOutput;
 
 mod _associate_access_policy_input;
 

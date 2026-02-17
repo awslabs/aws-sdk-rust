@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_consumable_
     }
 }
 
-pub use crate::operation::create_consumable_resource::_create_consumable_resource_output::CreateConsumableResourceOutput;
-
 pub use crate::operation::create_consumable_resource::_create_consumable_resource_input::CreateConsumableResourceInput;
+
+pub use crate::operation::create_consumable_resource::_create_consumable_resource_output::CreateConsumableResourceOutput;
 
 mod _create_consumable_resource_input;
 

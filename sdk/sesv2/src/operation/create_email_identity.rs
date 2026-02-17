@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_email_ident
     }
 }
 
-pub use crate::operation::create_email_identity::_create_email_identity_output::CreateEmailIdentityOutput;
-
 pub use crate::operation::create_email_identity::_create_email_identity_input::CreateEmailIdentityInput;
+
+pub use crate::operation::create_email_identity::_create_email_identity_output::CreateEmailIdentityOutput;
 
 mod _create_email_identity_input;
 

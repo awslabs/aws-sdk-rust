@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_verified_de
     }
 }
 
-pub use crate::operation::create_verified_destination_number::_create_verified_destination_number_output::CreateVerifiedDestinationNumberOutput;
-
 pub use crate::operation::create_verified_destination_number::_create_verified_destination_number_input::CreateVerifiedDestinationNumberInput;
+
+pub use crate::operation::create_verified_destination_number::_create_verified_destination_number_output::CreateVerifiedDestinationNumberOutput;
 
 mod _create_verified_destination_number_input;
 

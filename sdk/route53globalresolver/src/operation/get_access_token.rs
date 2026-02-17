@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_token::
     }
 }
 
-pub use crate::operation::get_access_token::_get_access_token_output::GetAccessTokenOutput;
-
 pub use crate::operation::get_access_token::_get_access_token_input::GetAccessTokenInput;
+
+pub use crate::operation::get_access_token::_get_access_token_output::GetAccessTokenOutput;
 
 mod _get_access_token_input;
 

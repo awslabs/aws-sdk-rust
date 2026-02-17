@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_email_templ
     }
 }
 
-pub use crate::operation::create_email_template::_create_email_template_output::CreateEmailTemplateOutput;
-
 pub use crate::operation::create_email_template::_create_email_template_input::CreateEmailTemplateInput;
+
+pub use crate::operation::create_email_template::_create_email_template_output::CreateEmailTemplateOutput;
 
 mod _create_email_template_input;
 

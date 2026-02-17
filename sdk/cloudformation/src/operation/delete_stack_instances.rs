@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stack_insta
     }
 }
 
-pub use crate::operation::delete_stack_instances::_delete_stack_instances_output::DeleteStackInstancesOutput;
-
 pub use crate::operation::delete_stack_instances::_delete_stack_instances_input::DeleteStackInstancesInput;
+
+pub use crate::operation::delete_stack_instances::_delete_stack_instances_output::DeleteStackInstancesOutput;
 
 mod _delete_stack_instances_input;
 

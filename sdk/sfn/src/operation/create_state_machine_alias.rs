@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_state_machi
     }
 }
 
-pub use crate::operation::create_state_machine_alias::_create_state_machine_alias_output::CreateStateMachineAliasOutput;
-
 pub use crate::operation::create_state_machine_alias::_create_state_machine_alias_input::CreateStateMachineAliasInput;
+
+pub use crate::operation::create_state_machine_alias::_create_state_machine_alias_output::CreateStateMachineAliasOutput;
 
 mod _create_state_machine_alias_input;
 

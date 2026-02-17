@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_ou
     }
 }
 
-pub use crate::operation::update_campaign_outbound_call_config::_update_campaign_outbound_call_config_output::UpdateCampaignOutboundCallConfigOutput;
-
 pub use crate::operation::update_campaign_outbound_call_config::_update_campaign_outbound_call_config_input::UpdateCampaignOutboundCallConfigInput;
+
+pub use crate::operation::update_campaign_outbound_call_config::_update_campaign_outbound_call_config_output::UpdateCampaignOutboundCallConfigOutput;
 
 mod _update_campaign_outbound_call_config_input;
 

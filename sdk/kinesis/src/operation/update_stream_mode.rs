@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stream_mode
     }
 }
 
-pub use crate::operation::update_stream_mode::_update_stream_mode_output::UpdateStreamModeOutput;
-
 pub use crate::operation::update_stream_mode::_update_stream_mode_input::UpdateStreamModeInput;
+
+pub use crate::operation::update_stream_mode::_update_stream_mode_output::UpdateStreamModeOutput;
 
 mod _update_stream_mode_input;
 

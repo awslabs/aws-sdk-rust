@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_encoder_con
     }
 }
 
-pub use crate::operation::create_encoder_configuration::_create_encoder_configuration_output::CreateEncoderConfigurationOutput;
-
 pub use crate::operation::create_encoder_configuration::_create_encoder_configuration_input::CreateEncoderConfigurationInput;
+
+pub use crate::operation::create_encoder_configuration::_create_encoder_configuration_output::CreateEncoderConfigurationOutput;
 
 mod _create_encoder_configuration_input;
 

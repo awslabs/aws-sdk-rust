@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_lake_exc
     }
 }
 
-pub use crate::operation::list_data_lake_exceptions::_list_data_lake_exceptions_output::ListDataLakeExceptionsOutput;
-
 pub use crate::operation::list_data_lake_exceptions::_list_data_lake_exceptions_input::ListDataLakeExceptionsInput;
+
+pub use crate::operation::list_data_lake_exceptions::_list_data_lake_exceptions_output::ListDataLakeExceptionsOutput;
 
 mod _list_data_lake_exceptions_input;
 

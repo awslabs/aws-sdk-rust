@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_message_move_
     }
 }
 
-pub use crate::operation::list_message_move_tasks::_list_message_move_tasks_output::ListMessageMoveTasksOutput;
-
 pub use crate::operation::list_message_move_tasks::_list_message_move_tasks_input::ListMessageMoveTasksInput;
+
+pub use crate::operation::list_message_move_tasks::_list_message_move_tasks_output::ListMessageMoveTasksOutput;
 
 mod _list_message_move_tasks_input;
 

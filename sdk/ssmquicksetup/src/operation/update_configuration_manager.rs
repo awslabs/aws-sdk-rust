@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configurati
     }
 }
 
-pub use crate::operation::update_configuration_manager::_update_configuration_manager_output::UpdateConfigurationManagerOutput;
-
 pub use crate::operation::update_configuration_manager::_update_configuration_manager_input::UpdateConfigurationManagerInput;
+
+pub use crate::operation::update_configuration_manager::_update_configuration_manager_output::UpdateConfigurationManagerOutput;
 
 mod _update_configuration_manager_input;
 

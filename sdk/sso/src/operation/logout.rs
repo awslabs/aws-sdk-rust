@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::logout::LogoutErro
     }
 }
 
-pub use crate::operation::logout::_logout_output::LogoutOutput;
-
 pub use crate::operation::logout::_logout_input::LogoutInput;
+
+pub use crate::operation::logout::_logout_output::LogoutOutput;
 
 mod _logout_input;
 

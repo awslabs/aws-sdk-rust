@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_automation_exe
     }
 }
 
-pub use crate::operation::get_automation_execution::_get_automation_execution_output::GetAutomationExecutionOutput;
-
 pub use crate::operation::get_automation_execution::_get_automation_execution_input::GetAutomationExecutionInput;
+
+pub use crate::operation::get_automation_execution::_get_automation_execution_output::GetAutomationExecutionOutput;
 
 mod _get_automation_execution_input;
 

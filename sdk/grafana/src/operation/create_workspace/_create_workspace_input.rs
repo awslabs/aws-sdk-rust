@@ -48,6 +48,8 @@ pub struct CreateWorkspaceInput {
     /// <p>Specifies the version of Grafana to support in the new workspace. If not specified, defaults to the latest version (for example, 10.4).</p>
     /// <p>To get a list of supported versions, use the <code>ListVersions</code> operation.</p>
     pub grafana_version: ::std::option::Option<::std::string::String>,
+    /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -137,6 +139,10 @@ impl CreateWorkspaceInput {
     pub fn grafana_version(&self) -> ::std::option::Option<&str> {
         self.grafana_version.as_deref()
     }
+    /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateWorkspaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -158,6 +164,7 @@ impl ::std::fmt::Debug for CreateWorkspaceInput {
         formatter.field("configuration", &self.configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_version", &self.grafana_version);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }
@@ -189,6 +196,7 @@ pub struct CreateWorkspaceInputBuilder {
     pub(crate) configuration: ::std::option::Option<::std::string::String>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     pub(crate) grafana_version: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateWorkspaceInputBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
@@ -497,6 +505,20 @@ impl CreateWorkspaceInputBuilder {
     pub fn get_grafana_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_version
     }
+    /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The ID or ARN of the Key Management Service key to use for encrypting workspace data.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
     pub fn build(
         self,
@@ -519,6 +541,7 @@ impl CreateWorkspaceInputBuilder {
             configuration: self.configuration,
             network_access_control: self.network_access_control,
             grafana_version: self.grafana_version,
+            kms_key_id: self.kms_key_id,
         })
     }
 }
@@ -542,6 +565,7 @@ impl ::std::fmt::Debug for CreateWorkspaceInputBuilder {
         formatter.field("configuration", &self.configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_version", &self.grafana_version);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_faces::Dele
     }
 }
 
-pub use crate::operation::delete_faces::_delete_faces_output::DeleteFacesOutput;
-
 pub use crate::operation::delete_faces::_delete_faces_input::DeleteFacesInput;
+
+pub use crate::operation::delete_faces::_delete_faces_output::DeleteFacesOutput;
 
 mod _delete_faces_input;
 

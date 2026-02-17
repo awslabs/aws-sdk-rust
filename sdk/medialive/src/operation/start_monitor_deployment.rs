@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_monitor_depl
     }
 }
 
-pub use crate::operation::start_monitor_deployment::_start_monitor_deployment_output::StartMonitorDeploymentOutput;
-
 pub use crate::operation::start_monitor_deployment::_start_monitor_deployment_input::StartMonitorDeploymentInput;
+
+pub use crate::operation::start_monitor_deployment::_start_monitor_deployment_output::StartMonitorDeploymentOutput;
 
 mod _start_monitor_deployment_input;
 

@@ -569,9 +569,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_describe_mer
     }
 }
 
-pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_conflicts_output::BatchDescribeMergeConflictsOutput;
-
 pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_conflicts_input::BatchDescribeMergeConflictsInput;
+
+pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_conflicts_output::BatchDescribeMergeConflictsOutput;
 
 mod _batch_describe_merge_conflicts_input;
 

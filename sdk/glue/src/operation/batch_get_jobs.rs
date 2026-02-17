@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_jobs::Ba
     }
 }
 
-pub use crate::operation::batch_get_jobs::_batch_get_jobs_output::BatchGetJobsOutput;
-
 pub use crate::operation::batch_get_jobs::_batch_get_jobs_input::BatchGetJobsInput;
+
+pub use crate::operation::batch_get_jobs::_batch_get_jobs_output::BatchGetJobsOutput;
 
 mod _batch_get_jobs_input;
 

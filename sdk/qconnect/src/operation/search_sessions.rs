@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_sessions::S
     }
 }
 
-pub use crate::operation::search_sessions::_search_sessions_output::SearchSessionsOutput;
-
 pub use crate::operation::search_sessions::_search_sessions_input::SearchSessionsInput;
+
+pub use crate::operation::search_sessions::_search_sessions_output::SearchSessionsOutput;
 
 mod _search_sessions_input;
 

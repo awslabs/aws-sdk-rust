@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_limit
     }
 }
 
-pub use crate::operation::update_queue_limit_association::_update_queue_limit_association_output::UpdateQueueLimitAssociationOutput;
-
 pub use crate::operation::update_queue_limit_association::_update_queue_limit_association_input::UpdateQueueLimitAssociationInput;
+
+pub use crate::operation::update_queue_limit_association::_update_queue_limit_association_output::UpdateQueueLimitAssociationOutput;
 
 mod _update_queue_limit_association_input;
 

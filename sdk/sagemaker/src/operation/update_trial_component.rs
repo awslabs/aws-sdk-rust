@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trial_compo
     }
 }
 
-pub use crate::operation::update_trial_component::_update_trial_component_output::UpdateTrialComponentOutput;
-
 pub use crate::operation::update_trial_component::_update_trial_component_input::UpdateTrialComponentInput;
+
+pub use crate::operation::update_trial_component::_update_trial_component_output::UpdateTrialComponentOutput;
 
 mod _update_trial_component_input;
 

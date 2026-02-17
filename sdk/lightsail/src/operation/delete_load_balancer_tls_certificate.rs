@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_load_balanc
     }
 }
 
-pub use crate::operation::delete_load_balancer_tls_certificate::_delete_load_balancer_tls_certificate_output::DeleteLoadBalancerTlsCertificateOutput;
-
 pub use crate::operation::delete_load_balancer_tls_certificate::_delete_load_balancer_tls_certificate_input::DeleteLoadBalancerTlsCertificateInput;
+
+pub use crate::operation::delete_load_balancer_tls_certificate::_delete_load_balancer_tls_certificate_output::DeleteLoadBalancerTlsCertificateOutput;
 
 mod _delete_load_balancer_tls_certificate_input;
 

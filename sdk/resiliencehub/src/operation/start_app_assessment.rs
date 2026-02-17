@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_app_assessme
     }
 }
 
-pub use crate::operation::start_app_assessment::_start_app_assessment_output::StartAppAssessmentOutput;
-
 pub use crate::operation::start_app_assessment::_start_app_assessment_input::StartAppAssessmentInput;
+
+pub use crate::operation::start_app_assessment::_start_app_assessment_output::StartAppAssessmentOutput;
 
 mod _start_app_assessment_input;
 

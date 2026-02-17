@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_organizat
     }
 }
 
-pub use crate::operation::describe_organization_health::_describe_organization_health_output::DescribeOrganizationHealthOutput;
-
 pub use crate::operation::describe_organization_health::_describe_organization_health_input::DescribeOrganizationHealthInput;
+
+pub use crate::operation::describe_organization_health::_describe_organization_health_output::DescribeOrganizationHealthOutput;
 
 mod _describe_organization_health_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_campaign_state
     }
 }
 
-pub use crate::operation::get_campaign_state_batch::_get_campaign_state_batch_output::GetCampaignStateBatchOutput;
-
 pub use crate::operation::get_campaign_state_batch::_get_campaign_state_batch_input::GetCampaignStateBatchInput;
+
+pub use crate::operation::get_campaign_state_batch::_get_campaign_state_batch_output::GetCampaignStateBatchOutput;
 
 mod _get_campaign_state_batch_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_key_inf
     }
 }
 
-pub use crate::operation::get_access_key_info::_get_access_key_info_output::GetAccessKeyInfoOutput;
-
 pub use crate::operation::get_access_key_info::_get_access_key_info_input::GetAccessKeyInfoInput;
+
+pub use crate::operation::get_access_key_info::_get_access_key_info_output::GetAccessKeyInfoOutput;
 
 mod _get_access_key_info_input;
 

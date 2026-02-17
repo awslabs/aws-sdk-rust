@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backup_job_su
     }
 }
 
-pub use crate::operation::list_backup_job_summaries::_list_backup_job_summaries_output::ListBackupJobSummariesOutput;
-
 pub use crate::operation::list_backup_job_summaries::_list_backup_job_summaries_input::ListBackupJobSummariesInput;
+
+pub use crate::operation::list_backup_job_summaries::_list_backup_job_summaries_output::ListBackupJobSummariesOutput;
 
 mod _list_backup_job_summaries_input;
 

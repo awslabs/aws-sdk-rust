@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_state_machine
     }
 }
 
-pub use crate::operation::list_state_machine_aliases::_list_state_machine_aliases_output::ListStateMachineAliasesOutput;
-
 pub use crate::operation::list_state_machine_aliases::_list_state_machine_aliases_input::ListStateMachineAliasesInput;
+
+pub use crate::operation::list_state_machine_aliases::_list_state_machine_aliases_output::ListStateMachineAliasesOutput;
 
 mod _list_state_machine_aliases_input;
 

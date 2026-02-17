@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_game_sessio
     }
 }
 
-pub use crate::operation::create_game_session_queue::_create_game_session_queue_output::CreateGameSessionQueueOutput;
-
 pub use crate::operation::create_game_session_queue::_create_game_session_queue_input::CreateGameSessionQueueInput;
+
+pub use crate::operation::create_game_session_queue::_create_game_session_queue_output::CreateGameSessionQueueOutput;
 
 mod _create_game_session_queue_input;
 

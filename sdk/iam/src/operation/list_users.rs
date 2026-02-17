@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_users::ListUs
     }
 }
 
-pub use crate::operation::list_users::_list_users_output::ListUsersOutput;
-
 pub use crate::operation::list_users::_list_users_input::ListUsersInput;
+
+pub use crate::operation::list_users::_list_users_output::ListUsersOutput;
 
 mod _list_users_input;
 

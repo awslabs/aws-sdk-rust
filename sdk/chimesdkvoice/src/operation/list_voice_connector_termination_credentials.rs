@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_voice_connector_termination_credentials::_list_voice_connector_termination_credentials_output::ListVoiceConnectorTerminationCredentialsOutput;
-
 pub use crate::operation::list_voice_connector_termination_credentials::_list_voice_connector_termination_credentials_input::ListVoiceConnectorTerminationCredentialsInput;
+
+pub use crate::operation::list_voice_connector_termination_credentials::_list_voice_connector_termination_credentials_output::ListVoiceConnectorTerminationCredentialsOutput;
 
 mod _list_voice_connector_termination_credentials_input;
 

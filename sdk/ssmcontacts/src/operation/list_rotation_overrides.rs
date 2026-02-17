@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rotation_over
     }
 }
 
-pub use crate::operation::list_rotation_overrides::_list_rotation_overrides_output::ListRotationOverridesOutput;
-
 pub use crate::operation::list_rotation_overrides::_list_rotation_overrides_input::ListRotationOverridesInput;
+
+pub use crate::operation::list_rotation_overrides::_list_rotation_overrides_output::ListRotationOverridesOutput;
 
 mod _list_rotation_overrides_input;
 

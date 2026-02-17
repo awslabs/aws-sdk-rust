@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_budget_ac
     }
 }
 
-pub use crate::operation::describe_budget_actions_for_account::_describe_budget_actions_for_account_output::DescribeBudgetActionsForAccountOutput;
-
 pub use crate::operation::describe_budget_actions_for_account::_describe_budget_actions_for_account_input::DescribeBudgetActionsForAccountInput;
+
+pub use crate::operation::describe_budget_actions_for_account::_describe_budget_actions_for_account_output::DescribeBudgetActionsForAccountOutput;
 
 mod _describe_budget_actions_for_account_input;
 

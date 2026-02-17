@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_scrape
     }
 }
 
-pub use crate::operation::get_default_scraper_configuration::_get_default_scraper_configuration_output::GetDefaultScraperConfigurationOutput;
-
 pub use crate::operation::get_default_scraper_configuration::_get_default_scraper_configuration_input::GetDefaultScraperConfigurationInput;
+
+pub use crate::operation::get_default_scraper_configuration::_get_default_scraper_configuration_output::GetDefaultScraperConfigurationOutput;
 
 mod _get_default_scraper_configuration_input;
 

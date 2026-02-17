@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_source_serv
     }
 }
 
-pub use crate::operation::update_source_server_replication_type::_update_source_server_replication_type_output::UpdateSourceServerReplicationTypeOutput;
-
 pub use crate::operation::update_source_server_replication_type::_update_source_server_replication_type_input::UpdateSourceServerReplicationTypeInput;
+
+pub use crate::operation::update_source_server_replication_type::_update_source_server_replication_type_output::UpdateSourceServerReplicationTypeOutput;
 
 mod _update_source_server_replication_type_input;
 

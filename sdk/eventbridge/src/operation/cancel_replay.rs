@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_replay::Can
     }
 }
 
-pub use crate::operation::cancel_replay::_cancel_replay_output::CancelReplayOutput;
-
 pub use crate::operation::cancel_replay::_cancel_replay_input::CancelReplayInput;
+
+pub use crate::operation::cancel_replay::_cancel_replay_output::CancelReplayOutput;
 
 mod _cancel_replay_input;
 

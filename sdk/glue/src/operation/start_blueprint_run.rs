@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_blueprint_ru
     }
 }
 
-pub use crate::operation::start_blueprint_run::_start_blueprint_run_output::StartBlueprintRunOutput;
-
 pub use crate::operation::start_blueprint_run::_start_blueprint_run_input::StartBlueprintRunInput;
+
+pub use crate::operation::start_blueprint_run::_start_blueprint_run_output::StartBlueprintRunOutput;
 
 mod _start_blueprint_run_input;
 

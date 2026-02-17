@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_signaling_c
     }
 }
 
-pub use crate::operation::update_signaling_channel::_update_signaling_channel_output::UpdateSignalingChannelOutput;
-
 pub use crate::operation::update_signaling_channel::_update_signaling_channel_input::UpdateSignalingChannelInput;
+
+pub use crate::operation::update_signaling_channel::_update_signaling_channel_output::UpdateSignalingChannelOutput;
 
 mod _update_signaling_channel_input;
 

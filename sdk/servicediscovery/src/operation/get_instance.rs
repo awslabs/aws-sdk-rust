@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance::GetI
     }
 }
 
-pub use crate::operation::get_instance::_get_instance_output::GetInstanceOutput;
-
 pub use crate::operation::get_instance::_get_instance_input::GetInstanceInput;
+
+pub use crate::operation::get_instance::_get_instance_output::GetInstanceOutput;
 
 mod _get_instance_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_multi_region_access_point_operation::_describe_multi_region_access_point_operation_output::DescribeMultiRegionAccessPointOperationOutput;
-
 pub use crate::operation::describe_multi_region_access_point_operation::_describe_multi_region_access_point_operation_input::DescribeMultiRegionAccessPointOperationInput;
+
+pub use crate::operation::describe_multi_region_access_point_operation::_describe_multi_region_access_point_operation_output::DescribeMultiRegionAccessPointOperationOutput;
 
 mod _describe_multi_region_access_point_operation_input;
 

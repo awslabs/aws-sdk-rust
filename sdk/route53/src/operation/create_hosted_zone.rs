@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hosted_zone
     }
 }
 
-pub use crate::operation::create_hosted_zone::_create_hosted_zone_output::CreateHostedZoneOutput;
-
 pub use crate::operation::create_hosted_zone::_create_hosted_zone_input::CreateHostedZoneInput;
+
+pub use crate::operation::create_hosted_zone::_create_hosted_zone_output::CreateHostedZoneOutput;
 
 mod _create_hosted_zone_input;
 

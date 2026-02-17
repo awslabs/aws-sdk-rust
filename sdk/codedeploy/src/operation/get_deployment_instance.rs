@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_ins
     }
 }
 
-pub use crate::operation::get_deployment_instance::_get_deployment_instance_output::GetDeploymentInstanceOutput;
-
 pub use crate::operation::get_deployment_instance::_get_deployment_instance_input::GetDeploymentInstanceInput;
+
+pub use crate::operation::get_deployment_instance::_get_deployment_instance_output::GetDeploymentInstanceOutput;
 
 mod _get_deployment_instance_input;
 

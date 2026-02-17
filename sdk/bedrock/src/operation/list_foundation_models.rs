@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_foundation_mo
     }
 }
 
-pub use crate::operation::list_foundation_models::_list_foundation_models_output::ListFoundationModelsOutput;
-
 pub use crate::operation::list_foundation_models::_list_foundation_models_input::ListFoundationModelsInput;
+
+pub use crate::operation::list_foundation_models::_list_foundation_models_output::ListFoundationModelsOutput;
 
 mod _list_foundation_models_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_do
     }
 }
 
-pub use crate::operation::describe_custom_domain_associations::_describe_custom_domain_associations_output::DescribeCustomDomainAssociationsOutput;
-
 pub use crate::operation::describe_custom_domain_associations::_describe_custom_domain_associations_input::DescribeCustomDomainAssociationsInput;
+
+pub use crate::operation::describe_custom_domain_associations::_describe_custom_domain_associations_output::DescribeCustomDomainAssociationsOutput;
 
 mod _describe_custom_domain_associations_input;
 

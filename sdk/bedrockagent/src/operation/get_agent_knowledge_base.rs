@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_knowledg
     }
 }
 
-pub use crate::operation::get_agent_knowledge_base::_get_agent_knowledge_base_output::GetAgentKnowledgeBaseOutput;
-
 pub use crate::operation::get_agent_knowledge_base::_get_agent_knowledge_base_input::GetAgentKnowledgeBaseInput;
+
+pub use crate::operation::get_agent_knowledge_base::_get_agent_knowledge_base_output::GetAgentKnowledgeBaseOutput;
 
 mod _get_agent_knowledge_base_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_retention_poli
     }
 }
 
-pub use crate::operation::put_retention_policy::_put_retention_policy_output::PutRetentionPolicyOutput;
-
 pub use crate::operation::put_retention_policy::_put_retention_policy_input::PutRetentionPolicyInput;
+
+pub use crate::operation::put_retention_policy::_put_retention_policy_output::PutRetentionPolicyOutput;
 
 mod _put_retention_policy_input;
 

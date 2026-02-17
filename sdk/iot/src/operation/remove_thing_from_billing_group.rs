@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_thing_from_
     }
 }
 
-pub use crate::operation::remove_thing_from_billing_group::_remove_thing_from_billing_group_output::RemoveThingFromBillingGroupOutput;
-
 pub use crate::operation::remove_thing_from_billing_group::_remove_thing_from_billing_group_input::RemoveThingFromBillingGroupInput;
+
+pub use crate::operation::remove_thing_from_billing_group::_remove_thing_from_billing_group_output::RemoveThingFromBillingGroupOutput;
 
 mod _remove_thing_from_billing_group_input;
 

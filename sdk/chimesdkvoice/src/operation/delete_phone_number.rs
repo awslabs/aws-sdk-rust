@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_phone_numbe
     }
 }
 
-pub use crate::operation::delete_phone_number::_delete_phone_number_output::DeletePhoneNumberOutput;
-
 pub use crate::operation::delete_phone_number::_delete_phone_number_input::DeletePhoneNumberInput;
+
+pub use crate::operation::delete_phone_number::_delete_phone_number_output::DeletePhoneNumberOutput;
 
 mod _delete_phone_number_input;
 

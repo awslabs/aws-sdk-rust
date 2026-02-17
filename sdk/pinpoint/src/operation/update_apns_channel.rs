@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_apns_channe
     }
 }
 
-pub use crate::operation::update_apns_channel::_update_apns_channel_output::UpdateApnsChannelOutput;
-
 pub use crate::operation::update_apns_channel::_update_apns_channel_input::UpdateApnsChannelInput;
+
+pub use crate::operation::update_apns_channel::_update_apns_channel_output::UpdateApnsChannelOutput;
 
 mod _update_apns_channel_input;
 

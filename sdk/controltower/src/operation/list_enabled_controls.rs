@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_enabled_contr
     }
 }
 
-pub use crate::operation::list_enabled_controls::_list_enabled_controls_output::ListEnabledControlsOutput;
-
 pub use crate::operation::list_enabled_controls::_list_enabled_controls_input::ListEnabledControlsInput;
+
+pub use crate::operation::list_enabled_controls::_list_enabled_controls_output::ListEnabledControlsOutput;
 
 mod _list_enabled_controls_input;
 

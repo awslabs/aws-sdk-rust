@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_experience:
     }
 }
 
-pub use crate::operation::create_experience::_create_experience_output::CreateExperienceOutput;
-
 pub use crate::operation::create_experience::_create_experience_input::CreateExperienceInput;
+
+pub use crate::operation::create_experience::_create_experience_output::CreateExperienceOutput;
 
 mod _create_experience_input;
 

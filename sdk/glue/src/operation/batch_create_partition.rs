@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_parti
     }
 }
 
-pub use crate::operation::batch_create_partition::_batch_create_partition_output::BatchCreatePartitionOutput;
-
 pub use crate::operation::batch_create_partition::_batch_create_partition_input::BatchCreatePartitionInput;
+
+pub use crate::operation::batch_create_partition::_batch_create_partition_output::BatchCreatePartitionOutput;
 
 mod _batch_create_partition_input;
 

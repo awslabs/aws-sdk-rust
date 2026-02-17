@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_training_enti
     }
 }
 
-pub use crate::operation::stop_training_entity_recognizer::_stop_training_entity_recognizer_output::StopTrainingEntityRecognizerOutput;
-
 pub use crate::operation::stop_training_entity_recognizer::_stop_training_entity_recognizer_input::StopTrainingEntityRecognizerInput;
+
+pub use crate::operation::stop_training_entity_recognizer::_stop_training_entity_recognizer_output::StopTrainingEntityRecognizerOutput;
 
 mod _stop_training_entity_recognizer_input;
 

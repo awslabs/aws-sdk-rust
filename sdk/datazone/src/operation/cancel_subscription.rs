@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_subscriptio
     }
 }
 
-pub use crate::operation::cancel_subscription::_cancel_subscription_output::CancelSubscriptionOutput;
-
 pub use crate::operation::cancel_subscription::_cancel_subscription_input::CancelSubscriptionInput;
+
+pub use crate::operation::cancel_subscription::_cancel_subscription_output::CancelSubscriptionOutput;
 
 mod _cancel_subscription_input;
 

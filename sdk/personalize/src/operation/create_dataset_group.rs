@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dataset_gro
     }
 }
 
-pub use crate::operation::create_dataset_group::_create_dataset_group_output::CreateDatasetGroupOutput;
-
 pub use crate::operation::create_dataset_group::_create_dataset_group_input::CreateDatasetGroupInput;
+
+pub use crate::operation::create_dataset_group::_create_dataset_group_output::CreateDatasetGroupOutput;
 
 mod _create_dataset_group_input;
 

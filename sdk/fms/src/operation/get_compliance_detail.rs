@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compliance_det
     }
 }
 
-pub use crate::operation::get_compliance_detail::_get_compliance_detail_output::GetComplianceDetailOutput;
-
 pub use crate::operation::get_compliance_detail::_get_compliance_detail_input::GetComplianceDetailInput;
+
+pub use crate::operation::get_compliance_detail::_get_compliance_detail_output::GetComplianceDetailOutput;
 
 mod _get_compliance_detail_input;
 

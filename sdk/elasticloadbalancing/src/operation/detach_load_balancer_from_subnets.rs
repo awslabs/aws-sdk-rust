@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_load_balanc
     }
 }
 
-pub use crate::operation::detach_load_balancer_from_subnets::_detach_load_balancer_from_subnets_output::DetachLoadBalancerFromSubnetsOutput;
-
 pub use crate::operation::detach_load_balancer_from_subnets::_detach_load_balancer_from_subnets_input::DetachLoadBalancerFromSubnetsInput;
+
+pub use crate::operation::detach_load_balancer_from_subnets::_detach_load_balancer_from_subnets_output::DetachLoadBalancerFromSubnetsOutput;
 
 mod _detach_load_balancer_from_subnets_input;
 

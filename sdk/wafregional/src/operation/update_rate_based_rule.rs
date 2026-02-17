@@ -489,9 +489,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rate_based_
     }
 }
 
-pub use crate::operation::update_rate_based_rule::_update_rate_based_rule_output::UpdateRateBasedRuleOutput;
-
 pub use crate::operation::update_rate_based_rule::_update_rate_based_rule_input::UpdateRateBasedRuleInput;
+
+pub use crate::operation::update_rate_based_rule::_update_rate_based_rule_output::UpdateRateBasedRuleOutput;
 
 mod _update_rate_based_rule_input;
 

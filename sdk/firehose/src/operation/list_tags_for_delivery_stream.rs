@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_deli
     }
 }
 
-pub use crate::operation::list_tags_for_delivery_stream::_list_tags_for_delivery_stream_output::ListTagsForDeliveryStreamOutput;
-
 pub use crate::operation::list_tags_for_delivery_stream::_list_tags_for_delivery_stream_input::ListTagsForDeliveryStreamInput;
+
+pub use crate::operation::list_tags_for_delivery_stream::_list_tags_for_delivery_stream_output::ListTagsForDeliveryStreamOutput;
 
 mod _list_tags_for_delivery_stream_input;
 

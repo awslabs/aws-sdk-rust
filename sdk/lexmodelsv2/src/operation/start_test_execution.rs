@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_test_executi
     }
 }
 
-pub use crate::operation::start_test_execution::_start_test_execution_output::StartTestExecutionOutput;
-
 pub use crate::operation::start_test_execution::_start_test_execution_input::StartTestExecutionInput;
+
+pub use crate::operation::start_test_execution::_start_test_execution_output::StartTestExecutionOutput;
 
 mod _start_test_execution_input;
 

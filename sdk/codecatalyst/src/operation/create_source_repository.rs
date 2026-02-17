@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_source_repo
     }
 }
 
-pub use crate::operation::create_source_repository::_create_source_repository_output::CreateSourceRepositoryOutput;
-
 pub use crate::operation::create_source_repository::_create_source_repository_input::CreateSourceRepositoryInput;
+
+pub use crate::operation::create_source_repository::_create_source_repository_output::CreateSourceRepositoryOutput;
 
 mod _create_source_repository_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_databases_b
     }
 }
 
-pub use crate::operation::search_databases_by_lf_tags::_search_databases_by_lf_tags_output::SearchDatabasesByLfTagsOutput;
-
 pub use crate::operation::search_databases_by_lf_tags::_search_databases_by_lf_tags_input::SearchDatabasesByLfTagsInput;
+
+pub use crate::operation::search_databases_by_lf_tags::_search_databases_by_lf_tags_output::SearchDatabasesByLfTagsOutput;
 
 mod _search_databases_by_lf_tags_input;
 

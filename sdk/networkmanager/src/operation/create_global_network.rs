@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_global_netw
     }
 }
 
-pub use crate::operation::create_global_network::_create_global_network_output::CreateGlobalNetworkOutput;
-
 pub use crate::operation::create_global_network::_create_global_network_input::CreateGlobalNetworkInput;
+
+pub use crate::operation::create_global_network::_create_global_network_output::CreateGlobalNetworkOutput;
 
 mod _create_global_network_input;
 

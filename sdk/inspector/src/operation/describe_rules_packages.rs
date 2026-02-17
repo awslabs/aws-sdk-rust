@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_rules_pac
     }
 }
 
-pub use crate::operation::describe_rules_packages::_describe_rules_packages_output::DescribeRulesPackagesOutput;
-
 pub use crate::operation::describe_rules_packages::_describe_rules_packages_input::DescribeRulesPackagesInput;
+
+pub use crate::operation::describe_rules_packages::_describe_rules_packages_output::DescribeRulesPackagesOutput;
 
 mod _describe_rules_packages_input;
 

@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_message_tem
     }
 }
 
-pub use crate::operation::create_message_template_version::_create_message_template_version_output::CreateMessageTemplateVersionOutput;
-
 pub use crate::operation::create_message_template_version::_create_message_template_version_input::CreateMessageTemplateVersionInput;
+
+pub use crate::operation::create_message_template_version::_create_message_template_version_output::CreateMessageTemplateVersionOutput;
 
 mod _create_message_template_version_input;
 

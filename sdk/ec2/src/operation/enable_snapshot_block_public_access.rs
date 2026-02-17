@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_snapshot_bl
     }
 }
 
-pub use crate::operation::enable_snapshot_block_public_access::_enable_snapshot_block_public_access_output::EnableSnapshotBlockPublicAccessOutput;
-
 pub use crate::operation::enable_snapshot_block_public_access::_enable_snapshot_block_public_access_input::EnableSnapshotBlockPublicAccessInput;
+
+pub use crate::operation::enable_snapshot_block_public_access::_enable_snapshot_block_public_access_output::EnableSnapshotBlockPublicAccessOutput;
 
 mod _enable_snapshot_block_public_access_input;
 

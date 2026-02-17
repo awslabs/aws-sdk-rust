@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_snapshot_sc
     }
 }
 
-pub use crate::operation::delete_snapshot_schedule::_delete_snapshot_schedule_output::DeleteSnapshotScheduleOutput;
-
 pub use crate::operation::delete_snapshot_schedule::_delete_snapshot_schedule_input::DeleteSnapshotScheduleInput;
+
+pub use crate::operation::delete_snapshot_schedule::_delete_snapshot_schedule_output::DeleteSnapshotScheduleOutput;
 
 mod _delete_snapshot_schedule_input;
 

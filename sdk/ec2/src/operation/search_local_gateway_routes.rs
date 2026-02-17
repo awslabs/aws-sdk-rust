@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_local_gatew
     }
 }
 
-pub use crate::operation::search_local_gateway_routes::_search_local_gateway_routes_output::SearchLocalGatewayRoutesOutput;
-
 pub use crate::operation::search_local_gateway_routes::_search_local_gateway_routes_input::SearchLocalGatewayRoutesInput;
+
+pub use crate::operation::search_local_gateway_routes::_search_local_gateway_routes_output::SearchLocalGatewayRoutesOutput;
 
 mod _search_local_gateway_routes_input;
 

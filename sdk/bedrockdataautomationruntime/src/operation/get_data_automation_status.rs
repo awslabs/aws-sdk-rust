@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_automatio
     }
 }
 
-pub use crate::operation::get_data_automation_status::_get_data_automation_status_output::GetDataAutomationStatusOutput;
-
 pub use crate::operation::get_data_automation_status::_get_data_automation_status_input::GetDataAutomationStatusInput;
+
+pub use crate::operation::get_data_automation_status::_get_data_automation_status_output::GetDataAutomationStatusOutput;
 
 mod _get_data_automation_status_input;
 

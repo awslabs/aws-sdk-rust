@@ -517,9 +517,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_cluster:
     }
 }
 
-pub use crate::operation::create_db_cluster::_create_db_cluster_output::CreateDbClusterOutput;
-
 pub use crate::operation::create_db_cluster::_create_db_cluster_input::CreateDbClusterInput;
+
+pub use crate::operation::create_db_cluster::_create_db_cluster_output::CreateDbClusterOutput;
 
 mod _create_db_cluster_input;
 

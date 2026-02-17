@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_uti
     }
 }
 
-pub use crate::operation::describe_fleet_utilization::_describe_fleet_utilization_output::DescribeFleetUtilizationOutput;
-
 pub use crate::operation::describe_fleet_utilization::_describe_fleet_utilization_input::DescribeFleetUtilizationInput;
+
+pub use crate::operation::describe_fleet_utilization::_describe_fleet_utilization_output::DescribeFleetUtilizationOutput;
 
 mod _describe_fleet_utilization_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bot_resou
     }
 }
 
-pub use crate::operation::describe_bot_resource_generation::_describe_bot_resource_generation_output::DescribeBotResourceGenerationOutput;
-
 pub use crate::operation::describe_bot_resource_generation::_describe_bot_resource_generation_input::DescribeBotResourceGenerationInput;
+
+pub use crate::operation::describe_bot_resource_generation::_describe_bot_resource_generation_output::DescribeBotResourceGenerationOutput;
 
 mod _describe_bot_resource_generation_input;
 

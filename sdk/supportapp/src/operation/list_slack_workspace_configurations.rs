@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_slack_workspa
     }
 }
 
-pub use crate::operation::list_slack_workspace_configurations::_list_slack_workspace_configurations_output::ListSlackWorkspaceConfigurationsOutput;
-
 pub use crate::operation::list_slack_workspace_configurations::_list_slack_workspace_configurations_input::ListSlackWorkspaceConfigurationsInput;
+
+pub use crate::operation::list_slack_workspace_configurations::_list_slack_workspace_configurations_output::ListSlackWorkspaceConfigurationsOutput;
 
 mod _list_slack_workspace_configurations_input;
 

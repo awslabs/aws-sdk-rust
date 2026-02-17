@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rotate_channel_cre
     }
 }
 
-pub use crate::operation::rotate_channel_credentials::_rotate_channel_credentials_output::RotateChannelCredentialsOutput;
-
 pub use crate::operation::rotate_channel_credentials::_rotate_channel_credentials_input::RotateChannelCredentialsInput;
+
+pub use crate::operation::rotate_channel_credentials::_rotate_channel_credentials_output::RotateChannelCredentialsOutput;
 
 mod _rotate_channel_credentials_input;
 

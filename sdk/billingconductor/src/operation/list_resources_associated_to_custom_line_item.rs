@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_resources_associated_to_custom_line_item::_list_resources_associated_to_custom_line_item_output::ListResourcesAssociatedToCustomLineItemOutput;
-
 pub use crate::operation::list_resources_associated_to_custom_line_item::_list_resources_associated_to_custom_line_item_input::ListResourcesAssociatedToCustomLineItemInput;
+
+pub use crate::operation::list_resources_associated_to_custom_line_item::_list_resources_associated_to_custom_line_item_output::ListResourcesAssociatedToCustomLineItemOutput;
 
 mod _list_resources_associated_to_custom_line_item_input;
 

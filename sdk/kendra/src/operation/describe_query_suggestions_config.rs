@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_query_sug
     }
 }
 
-pub use crate::operation::describe_query_suggestions_config::_describe_query_suggestions_config_output::DescribeQuerySuggestionsConfigOutput;
-
 pub use crate::operation::describe_query_suggestions_config::_describe_query_suggestions_config_input::DescribeQuerySuggestionsConfigInput;
+
+pub use crate::operation::describe_query_suggestions_config::_describe_query_suggestions_config_output::DescribeQuerySuggestionsConfigOutput;
 
 mod _describe_query_suggestions_config_input;
 

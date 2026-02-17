@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tenant_da
     }
 }
 
-pub use crate::operation::describe_tenant_databases::_describe_tenant_databases_output::DescribeTenantDatabasesOutput;
-
 pub use crate::operation::describe_tenant_databases::_describe_tenant_databases_input::DescribeTenantDatabasesInput;
+
+pub use crate::operation::describe_tenant_databases::_describe_tenant_databases_output::DescribeTenantDatabasesOutput;
 
 mod _describe_tenant_databases_input;
 

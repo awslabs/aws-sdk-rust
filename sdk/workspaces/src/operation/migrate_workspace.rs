@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::migrate_workspace:
     }
 }
 
-pub use crate::operation::migrate_workspace::_migrate_workspace_output::MigrateWorkspaceOutput;
-
 pub use crate::operation::migrate_workspace::_migrate_workspace_input::MigrateWorkspaceInput;
+
+pub use crate::operation::migrate_workspace::_migrate_workspace_output::MigrateWorkspaceOutput;
 
 mod _migrate_workspace_input;
 

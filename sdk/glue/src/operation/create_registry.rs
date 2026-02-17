@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_registry::C
     }
 }
 
-pub use crate::operation::create_registry::_create_registry_output::CreateRegistryOutput;
-
 pub use crate::operation::create_registry::_create_registry_input::CreateRegistryInput;
+
+pub use crate::operation::create_registry::_create_registry_output::CreateRegistryOutput;
 
 mod _create_registry_input;
 

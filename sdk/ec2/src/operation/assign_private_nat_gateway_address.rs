@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assign_private_nat
     }
 }
 
-pub use crate::operation::assign_private_nat_gateway_address::_assign_private_nat_gateway_address_output::AssignPrivateNatGatewayAddressOutput;
-
 pub use crate::operation::assign_private_nat_gateway_address::_assign_private_nat_gateway_address_input::AssignPrivateNatGatewayAddressInput;
+
+pub use crate::operation::assign_private_nat_gateway_address::_assign_private_nat_gateway_address_output::AssignPrivateNatGatewayAddressOutput;
 
 mod _assign_private_nat_gateway_address_input;
 

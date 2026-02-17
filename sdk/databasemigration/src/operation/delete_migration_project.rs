@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_migration_p
     }
 }
 
-pub use crate::operation::delete_migration_project::_delete_migration_project_output::DeleteMigrationProjectOutput;
-
 pub use crate::operation::delete_migration_project::_delete_migration_project_input::DeleteMigrationProjectInput;
+
+pub use crate::operation::delete_migration_project::_delete_migration_project_output::DeleteMigrationProjectOutput;
 
 mod _delete_migration_project_input;
 

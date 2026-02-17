@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dashboard
     }
 }
 
-pub use crate::operation::describe_dashboard::_describe_dashboard_output::DescribeDashboardOutput;
-
 pub use crate::operation::describe_dashboard::_describe_dashboard_input::DescribeDashboardInput;
+
+pub use crate::operation::describe_dashboard::_describe_dashboard_output::DescribeDashboardOutput;
 
 mod _describe_dashboard_input;
 

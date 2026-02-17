@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_view::Delet
     }
 }
 
-pub use crate::operation::delete_view::_delete_view_output::DeleteViewOutput;
-
 pub use crate::operation::delete_view::_delete_view_input::DeleteViewInput;
+
+pub use crate::operation::delete_view::_delete_view_output::DeleteViewOutput;
 
 mod _delete_view_input;
 

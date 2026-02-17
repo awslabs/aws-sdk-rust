@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_folder_member
     }
 }
 
-pub use crate::operation::list_folder_members::_list_folder_members_output::ListFolderMembersOutput;
-
 pub use crate::operation::list_folder_members::_list_folder_members_input::ListFolderMembersInput;
+
+pub use crate::operation::list_folder_members::_list_folder_members_output::ListFolderMembersOutput;
 
 mod _list_folder_members_input;
 

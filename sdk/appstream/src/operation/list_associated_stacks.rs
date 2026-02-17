@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_st
     }
 }
 
-pub use crate::operation::list_associated_stacks::_list_associated_stacks_output::ListAssociatedStacksOutput;
-
 pub use crate::operation::list_associated_stacks::_list_associated_stacks_input::ListAssociatedStacksInput;
+
+pub use crate::operation::list_associated_stacks::_list_associated_stacks_output::ListAssociatedStacksOutput;
 
 mod _list_associated_stacks_input;
 

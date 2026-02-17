@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_replication
     }
 }
 
-pub use crate::operation::delete_replication_configuration_template::_delete_replication_configuration_template_output::DeleteReplicationConfigurationTemplateOutput;
-
 pub use crate::operation::delete_replication_configuration_template::_delete_replication_configuration_template_input::DeleteReplicationConfigurationTemplateInput;
+
+pub use crate::operation::delete_replication_configuration_template::_delete_replication_configuration_template_output::DeleteReplicationConfigurationTemplateOutput;
 
 mod _delete_replication_configuration_template_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scenes::ListS
     }
 }
 
-pub use crate::operation::list_scenes::_list_scenes_output::ListScenesOutput;
-
 pub use crate::operation::list_scenes::_list_scenes_input::ListScenesInput;
+
+pub use crate::operation::list_scenes::_list_scenes_output::ListScenesOutput;
 
 mod _list_scenes_input;
 

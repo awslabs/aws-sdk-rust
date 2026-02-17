@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_config_ru
     }
 }
 
-pub use crate::operation::describe_config_rule_evaluation_status::_describe_config_rule_evaluation_status_output::DescribeConfigRuleEvaluationStatusOutput;
-
 pub use crate::operation::describe_config_rule_evaluation_status::_describe_config_rule_evaluation_status_input::DescribeConfigRuleEvaluationStatusInput;
+
+pub use crate::operation::describe_config_rule_evaluation_status::_describe_config_rule_evaluation_status_output::DescribeConfigRuleEvaluationStatusOutput;
 
 mod _describe_config_rule_evaluation_status_input;
 

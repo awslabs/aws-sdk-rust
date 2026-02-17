@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_voice_profi
     }
 }
 
-pub use crate::operation::update_voice_profile::_update_voice_profile_output::UpdateVoiceProfileOutput;
-
 pub use crate::operation::update_voice_profile::_update_voice_profile_input::UpdateVoiceProfileInput;
+
+pub use crate::operation::update_voice_profile::_update_voice_profile_output::UpdateVoiceProfileOutput;
 
 mod _update_voice_profile_input;
 

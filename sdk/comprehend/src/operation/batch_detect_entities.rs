@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_detect_entit
     }
 }
 
-pub use crate::operation::batch_detect_entities::_batch_detect_entities_output::BatchDetectEntitiesOutput;
-
 pub use crate::operation::batch_detect_entities::_batch_detect_entities_input::BatchDetectEntitiesInput;
+
+pub use crate::operation::batch_detect_entities::_batch_detect_entities_output::BatchDetectEntitiesOutput;
 
 mod _batch_detect_entities_input;
 

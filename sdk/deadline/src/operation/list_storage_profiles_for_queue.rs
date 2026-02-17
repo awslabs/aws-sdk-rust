@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_storage_profi
     }
 }
 
-pub use crate::operation::list_storage_profiles_for_queue::_list_storage_profiles_for_queue_output::ListStorageProfilesForQueueOutput;
-
 pub use crate::operation::list_storage_profiles_for_queue::_list_storage_profiles_for_queue_input::ListStorageProfilesForQueueInput;
+
+pub use crate::operation::list_storage_profiles_for_queue::_list_storage_profiles_for_queue_output::ListStorageProfilesForQueueOutput;
 
 mod _list_storage_profiles_for_queue_input;
 

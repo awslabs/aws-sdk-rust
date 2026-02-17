@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_email_templat
     }
 }
 
-pub use crate::operation::list_email_templates::_list_email_templates_output::ListEmailTemplatesOutput;
-
 pub use crate::operation::list_email_templates::_list_email_templates_input::ListEmailTemplatesInput;
+
+pub use crate::operation::list_email_templates::_list_email_templates_output::ListEmailTemplatesOutput;
 
 mod _list_email_templates_input;
 

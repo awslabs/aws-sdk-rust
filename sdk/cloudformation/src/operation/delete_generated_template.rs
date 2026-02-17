@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_generated_t
     }
 }
 
-pub use crate::operation::delete_generated_template::_delete_generated_template_output::DeleteGeneratedTemplateOutput;
-
 pub use crate::operation::delete_generated_template::_delete_generated_template_input::DeleteGeneratedTemplateInput;
+
+pub use crate::operation::delete_generated_template::_delete_generated_template_output::DeleteGeneratedTemplateOutput;
 
 mod _delete_generated_template_input;
 

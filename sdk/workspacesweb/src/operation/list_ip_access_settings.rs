@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ip_access_set
     }
 }
 
-pub use crate::operation::list_ip_access_settings::_list_ip_access_settings_output::ListIpAccessSettingsOutput;
-
 pub use crate::operation::list_ip_access_settings::_list_ip_access_settings_input::ListIpAccessSettingsInput;
+
+pub use crate::operation::list_ip_access_settings::_list_ip_access_settings_output::ListIpAccessSettingsOutput;
 
 mod _list_ip_access_settings_input;
 

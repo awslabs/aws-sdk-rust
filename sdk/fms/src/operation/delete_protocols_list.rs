@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_protocols_l
     }
 }
 
-pub use crate::operation::delete_protocols_list::_delete_protocols_list_output::DeleteProtocolsListOutput;
-
 pub use crate::operation::delete_protocols_list::_delete_protocols_list_input::DeleteProtocolsListInput;
+
+pub use crate::operation::delete_protocols_list::_delete_protocols_list_output::DeleteProtocolsListOutput;
 
 mod _delete_protocols_list_input;
 

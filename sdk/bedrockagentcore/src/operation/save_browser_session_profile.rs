@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::save_browser_sessi
     }
 }
 
-pub use crate::operation::save_browser_session_profile::_save_browser_session_profile_output::SaveBrowserSessionProfileOutput;
-
 pub use crate::operation::save_browser_session_profile::_save_browser_session_profile_input::SaveBrowserSessionProfileInput;
+
+pub use crate::operation::save_browser_session_profile::_save_browser_session_profile_output::SaveBrowserSessionProfileOutput;
 
 mod _save_browser_session_profile_input;
 

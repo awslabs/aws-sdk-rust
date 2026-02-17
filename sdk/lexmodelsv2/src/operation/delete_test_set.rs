@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_test_set::D
     }
 }
 
-pub use crate::operation::delete_test_set::_delete_test_set_output::DeleteTestSetOutput;
-
 pub use crate::operation::delete_test_set::_delete_test_set_input::DeleteTestSetInput;
+
+pub use crate::operation::delete_test_set::_delete_test_set_output::DeleteTestSetOutput;
 
 mod _delete_test_set_input;
 

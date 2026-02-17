@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_qualit
     }
 }
 
-pub use crate::operation::update_data_quality_ruleset::_update_data_quality_ruleset_output::UpdateDataQualityRulesetOutput;
-
 pub use crate::operation::update_data_quality_ruleset::_update_data_quality_ruleset_input::UpdateDataQualityRulesetInput;
+
+pub use crate::operation::update_data_quality_ruleset::_update_data_quality_ruleset_output::UpdateDataQualityRulesetOutput;
 
 mod _update_data_quality_ruleset_input;
 

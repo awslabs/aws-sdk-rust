@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_schema::Cre
     }
 }
 
-pub use crate::operation::create_schema::_create_schema_output::CreateSchemaOutput;
-
 pub use crate::operation::create_schema::_create_schema_input::CreateSchemaInput;
+
+pub use crate::operation::create_schema::_create_schema_output::CreateSchemaOutput;
 
 mod _create_schema_input;
 

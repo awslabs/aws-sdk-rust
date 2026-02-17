@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_portfolio_s
     }
 }
 
-pub use crate::operation::accept_portfolio_share::_accept_portfolio_share_output::AcceptPortfolioShareOutput;
-
 pub use crate::operation::accept_portfolio_share::_accept_portfolio_share_input::AcceptPortfolioShareInput;
+
+pub use crate::operation::accept_portfolio_share::_accept_portfolio_share_output::AcceptPortfolioShareOutput;
 
 mod _accept_portfolio_share_input;
 

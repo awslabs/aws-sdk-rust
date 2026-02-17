@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_image_c
     }
 }
 
-pub use crate::operation::create_app_image_config::_create_app_image_config_output::CreateAppImageConfigOutput;
-
 pub use crate::operation::create_app_image_config::_create_app_image_config_input::CreateAppImageConfigInput;
+
+pub use crate::operation::create_app_image_config::_create_app_image_config_output::CreateAppImageConfigOutput;
 
 mod _create_app_image_config_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_label::Crea
     }
 }
 
-pub use crate::operation::create_label::_create_label_output::CreateLabelOutput;
-
 pub use crate::operation::create_label::_create_label_input::CreateLabelInput;
+
+pub use crate::operation::create_label::_create_label_output::CreateLabelOutput;
 
 mod _create_label_input;
 

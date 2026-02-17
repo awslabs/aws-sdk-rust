@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_sender_id:
     }
 }
 
-pub use crate::operation::release_sender_id::_release_sender_id_output::ReleaseSenderIdOutput;
-
 pub use crate::operation::release_sender_id::_release_sender_id_input::ReleaseSenderIdInput;
+
+pub use crate::operation::release_sender_id::_release_sender_id_output::ReleaseSenderIdOutput;
 
 mod _release_sender_id_input;
 

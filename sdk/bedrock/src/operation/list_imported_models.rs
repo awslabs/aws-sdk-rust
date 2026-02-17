@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_imported_mode
     }
 }
 
-pub use crate::operation::list_imported_models::_list_imported_models_output::ListImportedModelsOutput;
-
 pub use crate::operation::list_imported_models::_list_imported_models_input::ListImportedModelsInput;
+
+pub use crate::operation::list_imported_models::_list_imported_models_output::ListImportedModelsOutput;
 
 mod _list_imported_models_input;
 

@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_multipart_r
     }
 }
 
-pub use crate::operation::create_multipart_read_set_upload::_create_multipart_read_set_upload_output::CreateMultipartReadSetUploadOutput;
-
 pub use crate::operation::create_multipart_read_set_upload::_create_multipart_read_set_upload_input::CreateMultipartReadSetUploadInput;
+
+pub use crate::operation::create_multipart_read_set_upload::_create_multipart_read_set_upload_output::CreateMultipartReadSetUploadOutput;
 
 mod _create_multipart_read_set_upload_input;
 

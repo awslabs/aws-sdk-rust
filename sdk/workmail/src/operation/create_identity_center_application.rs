@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_identity_ce
     }
 }
 
-pub use crate::operation::create_identity_center_application::_create_identity_center_application_output::CreateIdentityCenterApplicationOutput;
-
 pub use crate::operation::create_identity_center_application::_create_identity_center_application_input::CreateIdentityCenterApplicationInput;
+
+pub use crate::operation::create_identity_center_application::_create_identity_center_application_output::CreateIdentityCenterApplicationOutput;
 
 mod _create_identity_center_application_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_api_desti
     }
 }
 
-pub use crate::operation::describe_api_destination::_describe_api_destination_output::DescribeApiDestinationOutput;
-
 pub use crate::operation::describe_api_destination::_describe_api_destination_input::DescribeApiDestinationInput;
+
+pub use crate::operation::describe_api_destination::_describe_api_destination_output::DescribeApiDestinationOutput;
 
 mod _describe_api_destination_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_calculation_ex
     }
 }
 
-pub use crate::operation::get_calculation_execution_code::_get_calculation_execution_code_output::GetCalculationExecutionCodeOutput;
-
 pub use crate::operation::get_calculation_execution_code::_get_calculation_execution_code_input::GetCalculationExecutionCodeInput;
+
+pub use crate::operation::get_calculation_execution_code::_get_calculation_execution_code_output::GetCalculationExecutionCodeOutput;
 
 mod _get_calculation_execution_code_input;
 

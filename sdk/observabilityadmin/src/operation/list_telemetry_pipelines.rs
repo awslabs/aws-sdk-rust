@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_telemetry_pip
     }
 }
 
-pub use crate::operation::list_telemetry_pipelines::_list_telemetry_pipelines_output::ListTelemetryPipelinesOutput;
-
 pub use crate::operation::list_telemetry_pipelines::_list_telemetry_pipelines_input::ListTelemetryPipelinesInput;
+
+pub use crate::operation::list_telemetry_pipelines::_list_telemetry_pipelines_output::ListTelemetryPipelinesOutput;
 
 mod _list_telemetry_pipelines_input;
 

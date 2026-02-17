@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_registrat
     }
 }
 
-pub use crate::operation::describe_registration_field_values::_describe_registration_field_values_output::DescribeRegistrationFieldValuesOutput;
-
 pub use crate::operation::describe_registration_field_values::_describe_registration_field_values_input::DescribeRegistrationFieldValuesInput;
+
+pub use crate::operation::describe_registration_field_values::_describe_registration_field_values_output::DescribeRegistrationFieldValuesOutput;
 
 mod _describe_registration_field_values_input;
 

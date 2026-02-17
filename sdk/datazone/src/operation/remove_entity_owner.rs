@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_entity_owne
     }
 }
 
-pub use crate::operation::remove_entity_owner::_remove_entity_owner_output::RemoveEntityOwnerOutput;
-
 pub use crate::operation::remove_entity_owner::_remove_entity_owner_input::RemoveEntityOwnerInput;
+
+pub use crate::operation::remove_entity_owner::_remove_entity_owner_output::RemoveEntityOwnerOutput;
 
 mod _remove_entity_owner_input;
 

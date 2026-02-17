@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_conditional
     }
 }
 
-pub use crate::operation::update_conditional_forwarder::_update_conditional_forwarder_output::UpdateConditionalForwarderOutput;
-
 pub use crate::operation::update_conditional_forwarder::_update_conditional_forwarder_input::UpdateConditionalForwarderInput;
+
+pub use crate::operation::update_conditional_forwarder::_update_conditional_forwarder_output::UpdateConditionalForwarderOutput;
 
 mod _update_conditional_forwarder_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_routing_pro
     }
 }
 
-pub use crate::operation::update_routing_profile_queues::_update_routing_profile_queues_output::UpdateRoutingProfileQueuesOutput;
-
 pub use crate::operation::update_routing_profile_queues::_update_routing_profile_queues_input::UpdateRoutingProfileQueuesInput;
+
+pub use crate::operation::update_routing_profile_queues::_update_routing_profile_queues_output::UpdateRoutingProfileQueuesOutput;
 
 mod _update_routing_profile_queues_input;
 

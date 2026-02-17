@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_git_hub_acc
     }
 }
 
-pub use crate::operation::delete_git_hub_account_token::_delete_git_hub_account_token_output::DeleteGitHubAccountTokenOutput;
-
 pub use crate::operation::delete_git_hub_account_token::_delete_git_hub_account_token_input::DeleteGitHubAccountTokenInput;
+
+pub use crate::operation::delete_git_hub_account_token::_delete_git_hub_account_token_output::DeleteGitHubAccountTokenOutput;
 
 mod _delete_git_hub_account_token_input;
 

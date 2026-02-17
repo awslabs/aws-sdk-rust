@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_public_key_cer
     }
 }
 
-pub use crate::operation::get_public_key_certificate::_get_public_key_certificate_output::GetPublicKeyCertificateOutput;
-
 pub use crate::operation::get_public_key_certificate::_get_public_key_certificate_input::GetPublicKeyCertificateInput;
+
+pub use crate::operation::get_public_key_certificate::_get_public_key_certificate_output::GetPublicKeyCertificateOutput;
 
 mod _get_public_key_certificate_input;
 

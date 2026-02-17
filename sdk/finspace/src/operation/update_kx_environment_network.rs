@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_kx_environm
     }
 }
 
-pub use crate::operation::update_kx_environment_network::_update_kx_environment_network_output::UpdateKxEnvironmentNetworkOutput;
-
 pub use crate::operation::update_kx_environment_network::_update_kx_environment_network_input::UpdateKxEnvironmentNetworkInput;
+
+pub use crate::operation::update_kx_environment_network::_update_kx_environment_network_output::UpdateKxEnvironmentNetworkOutput;
 
 mod _update_kx_environment_network_input;
 

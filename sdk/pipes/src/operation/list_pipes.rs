@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipes::ListPi
     }
 }
 
-pub use crate::operation::list_pipes::_list_pipes_output::ListPipesOutput;
-
 pub use crate::operation::list_pipes::_list_pipes_input::ListPipesInput;
+
+pub use crate::operation::list_pipes::_list_pipes_output::ListPipesOutput;
 
 mod _list_pipes_input;
 

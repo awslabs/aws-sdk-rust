@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cognito_events
     }
 }
 
-pub use crate::operation::get_cognito_events::_get_cognito_events_output::GetCognitoEventsOutput;
-
 pub use crate::operation::get_cognito_events::_get_cognito_events_input::GetCognitoEventsInput;
+
+pub use crate::operation::get_cognito_events::_get_cognito_events_output::GetCognitoEventsOutput;
 
 mod _get_cognito_events_input;
 

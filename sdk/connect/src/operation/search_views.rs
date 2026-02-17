@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_views::Sear
     }
 }
 
-pub use crate::operation::search_views::_search_views_output::SearchViewsOutput;
-
 pub use crate::operation::search_views::_search_views_input::SearchViewsInput;
+
+pub use crate::operation::search_views::_search_views_output::SearchViewsOutput;
 
 mod _search_views_input;
 

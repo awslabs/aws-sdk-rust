@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_webhook::De
     }
 }
 
-pub use crate::operation::delete_webhook::_delete_webhook_output::DeleteWebhookOutput;
-
 pub use crate::operation::delete_webhook::_delete_webhook_input::DeleteWebhookInput;
+
+pub use crate::operation::delete_webhook::_delete_webhook_output::DeleteWebhookOutput;
 
 mod _delete_webhook_input;
 

@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_linux_subscri
     }
 }
 
-pub use crate::operation::list_linux_subscription_instances::_list_linux_subscription_instances_output::ListLinuxSubscriptionInstancesOutput;
-
 pub use crate::operation::list_linux_subscription_instances::_list_linux_subscription_instances_input::ListLinuxSubscriptionInstancesInput;
+
+pub use crate::operation::list_linux_subscription_instances::_list_linux_subscription_instances_output::ListLinuxSubscriptionInstancesOutput;
 
 mod _list_linux_subscription_instances_input;
 

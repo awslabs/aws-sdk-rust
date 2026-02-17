@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_log_group
     }
 }
 
-pub use crate::operation::describe_log_groups::_describe_log_groups_output::DescribeLogGroupsOutput;
-
 pub use crate::operation::describe_log_groups::_describe_log_groups_input::DescribeLogGroupsInput;
+
+pub use crate::operation::describe_log_groups::_describe_log_groups_output::DescribeLogGroupsOutput;
 
 mod _describe_log_groups_input;
 

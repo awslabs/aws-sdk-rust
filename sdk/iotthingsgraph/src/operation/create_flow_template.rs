@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flow_templa
     }
 }
 
-pub use crate::operation::create_flow_template::_create_flow_template_output::CreateFlowTemplateOutput;
-
 pub use crate::operation::create_flow_template::_create_flow_template_input::CreateFlowTemplateInput;
+
+pub use crate::operation::create_flow_template::_create_flow_template_output::CreateFlowTemplateOutput;
 
 mod _create_flow_template_input;
 

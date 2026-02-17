@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_instance_fleet
     }
 }
 
-pub use crate::operation::add_instance_fleet::_add_instance_fleet_output::AddInstanceFleetOutput;
-
 pub use crate::operation::add_instance_fleet::_add_instance_fleet_input::AddInstanceFleetInput;
+
+pub use crate::operation::add_instance_fleet::_add_instance_fleet_output::AddInstanceFleetOutput;
 
 mod _add_instance_fleet_input;
 

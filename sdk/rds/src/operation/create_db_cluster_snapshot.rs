@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_cluster_
     }
 }
 
-pub use crate::operation::create_db_cluster_snapshot::_create_db_cluster_snapshot_output::CreateDbClusterSnapshotOutput;
-
 pub use crate::operation::create_db_cluster_snapshot::_create_db_cluster_snapshot_input::CreateDbClusterSnapshotInput;
+
+pub use crate::operation::create_db_cluster_snapshot::_create_db_cluster_snapshot_output::CreateDbClusterSnapshotOutput;
 
 mod _create_db_cluster_snapshot_input;
 

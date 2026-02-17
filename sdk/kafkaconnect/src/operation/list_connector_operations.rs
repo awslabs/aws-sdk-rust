@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connector_ope
     }
 }
 
-pub use crate::operation::list_connector_operations::_list_connector_operations_output::ListConnectorOperationsOutput;
-
 pub use crate::operation::list_connector_operations::_list_connector_operations_input::ListConnectorOperationsInput;
+
+pub use crate::operation::list_connector_operations::_list_connector_operations_output::ListConnectorOperationsOutput;
 
 mod _list_connector_operations_input;
 

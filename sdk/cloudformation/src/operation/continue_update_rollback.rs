@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::continue_update_ro
     }
 }
 
-pub use crate::operation::continue_update_rollback::_continue_update_rollback_output::ContinueUpdateRollbackOutput;
-
 pub use crate::operation::continue_update_rollback::_continue_update_rollback_input::ContinueUpdateRollbackInput;
+
+pub use crate::operation::continue_update_rollback::_continue_update_rollback_output::ContinueUpdateRollbackOutput;
 
 mod _continue_update_rollback_input;
 

@@ -340,9 +340,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_apps::ListApp
     }
 }
 
-pub use crate::operation::list_apps::_list_apps_output::ListAppsOutput;
-
 pub use crate::operation::list_apps::_list_apps_input::ListAppsInput;
+
+pub use crate::operation::list_apps::_list_apps_output::ListAppsOutput;
 
 mod _list_apps_input;
 

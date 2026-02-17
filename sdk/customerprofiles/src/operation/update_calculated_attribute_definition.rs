@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_calculated_
     }
 }
 
-pub use crate::operation::update_calculated_attribute_definition::_update_calculated_attribute_definition_output::UpdateCalculatedAttributeDefinitionOutput;
-
 pub use crate::operation::update_calculated_attribute_definition::_update_calculated_attribute_definition_input::UpdateCalculatedAttributeDefinitionInput;
+
+pub use crate::operation::update_calculated_attribute_definition::_update_calculated_attribute_definition_output::UpdateCalculatedAttributeDefinitionOutput;
 
 mod _update_calculated_attribute_definition_input;
 

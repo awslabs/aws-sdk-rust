@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_cap
     }
 }
 
-pub use crate::operation::describe_fleet_capacity::_describe_fleet_capacity_output::DescribeFleetCapacityOutput;
-
 pub use crate::operation::describe_fleet_capacity::_describe_fleet_capacity_input::DescribeFleetCapacityInput;
+
+pub use crate::operation::describe_fleet_capacity::_describe_fleet_capacity_output::DescribeFleetCapacityOutput;
 
 mod _describe_fleet_capacity_input;
 

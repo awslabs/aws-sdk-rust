@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dataset_i
     }
 }
 
-pub use crate::operation::describe_dataset_import_job::_describe_dataset_import_job_output::DescribeDatasetImportJobOutput;
-
 pub use crate::operation::describe_dataset_import_job::_describe_dataset_import_job_input::DescribeDatasetImportJobInput;
+
+pub use crate::operation::describe_dataset_import_job::_describe_dataset_import_job_output::DescribeDatasetImportJobOutput;
 
 mod _describe_dataset_import_job_input;
 

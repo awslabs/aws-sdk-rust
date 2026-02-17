@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_db_server::Get
     }
 }
 
-pub use crate::operation::get_db_server::_get_db_server_output::GetDbServerOutput;
-
 pub use crate::operation::get_db_server::_get_db_server_input::GetDbServerInput;
+
+pub use crate::operation::get_db_server::_get_db_server_output::GetDbServerOutput;
 
 mod _get_db_server_input;
 

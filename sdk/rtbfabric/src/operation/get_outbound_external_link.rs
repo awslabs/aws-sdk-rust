@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outbound_exter
     }
 }
 
-pub use crate::operation::get_outbound_external_link::_get_outbound_external_link_output::GetOutboundExternalLinkOutput;
-
 pub use crate::operation::get_outbound_external_link::_get_outbound_external_link_input::GetOutboundExternalLinkInput;
+
+pub use crate::operation::get_outbound_external_link::_get_outbound_external_link_output::GetOutboundExternalLinkOutput;
 
 mod _get_outbound_external_link_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_adapter_ver
     }
 }
 
-pub use crate::operation::delete_adapter_version::_delete_adapter_version_output::DeleteAdapterVersionOutput;
-
 pub use crate::operation::delete_adapter_version::_delete_adapter_version_input::DeleteAdapterVersionInput;
+
+pub use crate::operation::delete_adapter_version::_delete_adapter_version_output::DeleteAdapterVersionOutput;
 
 mod _delete_adapter_version_input;
 

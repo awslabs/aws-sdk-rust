@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_env
     }
 }
 
-pub use crate::operation::create_service_environment::_create_service_environment_output::CreateServiceEnvironmentOutput;
-
 pub use crate::operation::create_service_environment::_create_service_environment_input::CreateServiceEnvironmentInput;
+
+pub use crate::operation::create_service_environment::_create_service_environment_output::CreateServiceEnvironmentOutput;
 
 mod _create_service_environment_input;
 

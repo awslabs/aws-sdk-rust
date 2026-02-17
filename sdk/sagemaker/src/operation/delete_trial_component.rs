@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trial_compo
     }
 }
 
-pub use crate::operation::delete_trial_component::_delete_trial_component_output::DeleteTrialComponentOutput;
-
 pub use crate::operation::delete_trial_component::_delete_trial_component_input::DeleteTrialComponentInput;
+
+pub use crate::operation::delete_trial_component::_delete_trial_component_output::DeleteTrialComponentOutput;
 
 mod _delete_trial_component_input;
 

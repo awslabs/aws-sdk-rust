@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_mlflow_trac
     }
 }
 
-pub use crate::operation::update_mlflow_tracking_server::_update_mlflow_tracking_server_output::UpdateMlflowTrackingServerOutput;
-
 pub use crate::operation::update_mlflow_tracking_server::_update_mlflow_tracking_server_input::UpdateMlflowTrackingServerInput;
+
+pub use crate::operation::update_mlflow_tracking_server::_update_mlflow_tracking_server_output::UpdateMlflowTrackingServerOutput;
 
 mod _update_mlflow_tracking_server_input;
 

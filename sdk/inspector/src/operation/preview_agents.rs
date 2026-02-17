@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::preview_agents::Pr
     }
 }
 
-pub use crate::operation::preview_agents::_preview_agents_output::PreviewAgentsOutput;
-
 pub use crate::operation::preview_agents::_preview_agents_input::PreviewAgentsInput;
+
+pub use crate::operation::preview_agents::_preview_agents_output::PreviewAgentsOutput;
 
 mod _preview_agents_input;
 

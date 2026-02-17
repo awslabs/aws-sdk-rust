@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_request
     }
 }
 
-pub use crate::operation::get_bucket_request_payment::_get_bucket_request_payment_output::GetBucketRequestPaymentOutput;
-
 pub use crate::operation::get_bucket_request_payment::_get_bucket_request_payment_input::GetBucketRequestPaymentInput;
+
+pub use crate::operation::get_bucket_request_payment::_get_bucket_request_payment_output::GetBucketRequestPaymentOutput;
 
 mod _get_bucket_request_payment_input;
 

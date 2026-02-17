@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_analysis_repor
     }
 }
 
-pub use crate::operation::get_analysis_report_results::_get_analysis_report_results_output::GetAnalysisReportResultsOutput;
-
 pub use crate::operation::get_analysis_report_results::_get_analysis_report_results_input::GetAnalysisReportResultsInput;
+
+pub use crate::operation::get_analysis_report_results::_get_analysis_report_results_output::GetAnalysisReportResultsOutput;
 
 mod _get_analysis_report_results_input;
 

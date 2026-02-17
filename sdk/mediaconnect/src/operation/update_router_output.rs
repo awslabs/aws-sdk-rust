@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_router_outp
     }
 }
 
-pub use crate::operation::update_router_output::_update_router_output_output::UpdateRouterOutputOutput;
-
 pub use crate::operation::update_router_output::_update_router_output_input::UpdateRouterOutputInput;
+
+pub use crate::operation::update_router_output::_update_router_output_output::UpdateRouterOutputOutput;
 
 mod _update_router_output_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_build::Start
     }
 }
 
-pub use crate::operation::start_build::_start_build_output::StartBuildOutput;
-
 pub use crate::operation::start_build::_start_build_input::StartBuildInput;
+
+pub use crate::operation::start_build::_start_build_output::StartBuildOutput;
 
 mod _start_build_input;
 

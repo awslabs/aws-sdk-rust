@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_access_poli
     }
 }
 
-pub use crate::operation::update_access_policy::_update_access_policy_output::UpdateAccessPolicyOutput;
-
 pub use crate::operation::update_access_policy::_update_access_policy_input::UpdateAccessPolicyInput;
+
+pub use crate::operation::update_access_policy::_update_access_policy_output::UpdateAccessPolicyOutput;
 
 mod _update_access_policy_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_related_ite
     }
 }
 
-pub use crate::operation::create_related_item::_create_related_item_output::CreateRelatedItemOutput;
-
 pub use crate::operation::create_related_item::_create_related_item_input::CreateRelatedItemInput;
+
+pub use crate::operation::create_related_item::_create_related_item_output::CreateRelatedItemOutput;
 
 mod _create_related_item_input;
 

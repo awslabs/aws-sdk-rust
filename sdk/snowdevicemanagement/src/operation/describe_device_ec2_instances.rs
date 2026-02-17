@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_device_ec
     }
 }
 
-pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_instances_output::DescribeDeviceEc2InstancesOutput;
-
 pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_instances_input::DescribeDeviceEc2InstancesInput;
+
+pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_instances_output::DescribeDeviceEc2InstancesOutput;
 
 mod _describe_device_ec2_instances_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_evaluation_
     }
 }
 
-pub use crate::operation::create_evaluation_form::_create_evaluation_form_output::CreateEvaluationFormOutput;
-
 pub use crate::operation::create_evaluation_form::_create_evaluation_form_input::CreateEvaluationFormInput;
+
+pub use crate::operation::create_evaluation_form::_create_evaluation_form_output::CreateEvaluationFormOutput;
 
 mod _create_evaluation_form_input;
 

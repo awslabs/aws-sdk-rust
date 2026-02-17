@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_deletion
     }
 }
 
-pub use crate::operation::list_data_deletion_jobs::_list_data_deletion_jobs_output::ListDataDeletionJobsOutput;
-
 pub use crate::operation::list_data_deletion_jobs::_list_data_deletion_jobs_input::ListDataDeletionJobsInput;
+
+pub use crate::operation::list_data_deletion_jobs::_list_data_deletion_jobs_output::ListDataDeletionJobsOutput;
 
 mod _list_data_deletion_jobs_input;
 

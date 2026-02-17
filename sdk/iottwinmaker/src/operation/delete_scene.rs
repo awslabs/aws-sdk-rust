@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scene::Dele
     }
 }
 
-pub use crate::operation::delete_scene::_delete_scene_output::DeleteSceneOutput;
-
 pub use crate::operation::delete_scene::_delete_scene_input::DeleteSceneInput;
+
+pub use crate::operation::delete_scene::_delete_scene_output::DeleteSceneOutput;
 
 mod _delete_scene_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_optimizatio
     }
 }
 
-pub use crate::operation::delete_optimization_job::_delete_optimization_job_output::DeleteOptimizationJobOutput;
-
 pub use crate::operation::delete_optimization_job::_delete_optimization_job_input::DeleteOptimizationJobInput;
+
+pub use crate::operation::delete_optimization_job::_delete_optimization_job_output::DeleteOptimizationJobOutput;
 
 mod _delete_optimization_job_input;
 

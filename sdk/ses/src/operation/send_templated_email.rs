@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_templated_ema
     }
 }
 
-pub use crate::operation::send_templated_email::_send_templated_email_output::SendTemplatedEmailOutput;
-
 pub use crate::operation::send_templated_email::_send_templated_email_input::SendTemplatedEmailInput;
+
+pub use crate::operation::send_templated_email::_send_templated_email_output::SendTemplatedEmailOutput;
 
 mod _send_templated_email_input;
 

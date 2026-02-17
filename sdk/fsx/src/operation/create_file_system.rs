@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_file_system
     }
 }
 
-pub use crate::operation::create_file_system::_create_file_system_output::CreateFileSystemOutput;
-
 pub use crate::operation::create_file_system::_create_file_system_input::CreateFileSystemInput;
+
+pub use crate::operation::create_file_system::_create_file_system_output::CreateFileSystemOutput;
 
 mod _create_file_system_input;
 

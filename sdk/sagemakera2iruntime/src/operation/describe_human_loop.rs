@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_human_loo
     }
 }
 
-pub use crate::operation::describe_human_loop::_describe_human_loop_output::DescribeHumanLoopOutput;
-
 pub use crate::operation::describe_human_loop::_describe_human_loop_input::DescribeHumanLoopInput;
+
+pub use crate::operation::describe_human_loop::_describe_human_loop_output::DescribeHumanLoopOutput;
 
 mod _describe_human_loop_input;
 

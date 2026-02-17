@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queues::ListQ
     }
 }
 
-pub use crate::operation::list_queues::_list_queues_output::ListQueuesOutput;
-
 pub use crate::operation::list_queues::_list_queues_input::ListQueuesInput;
+
+pub use crate::operation::list_queues::_list_queues_output::ListQueuesOutput;
 
 mod _list_queues_input;
 

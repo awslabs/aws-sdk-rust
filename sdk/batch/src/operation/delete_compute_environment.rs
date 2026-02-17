@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_compute_env
     }
 }
 
-pub use crate::operation::delete_compute_environment::_delete_compute_environment_output::DeleteComputeEnvironmentOutput;
-
 pub use crate::operation::delete_compute_environment::_delete_compute_environment_input::DeleteComputeEnvironmentInput;
+
+pub use crate::operation::delete_compute_environment::_delete_compute_environment_output::DeleteComputeEnvironmentOutput;
 
 mod _delete_compute_environment_input;
 

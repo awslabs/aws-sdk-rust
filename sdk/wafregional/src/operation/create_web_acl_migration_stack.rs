@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_web_acl_mig
     }
 }
 
-pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migration_stack_output::CreateWebAclMigrationStackOutput;
-
 pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migration_stack_input::CreateWebAclMigrationStackInput;
+
+pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migration_stack_output::CreateWebAclMigrationStackOutput;
 
 mod _create_web_acl_migration_stack_input;
 

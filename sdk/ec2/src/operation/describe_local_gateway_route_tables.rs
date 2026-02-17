@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_local_gat
     }
 }
 
-pub use crate::operation::describe_local_gateway_route_tables::_describe_local_gateway_route_tables_output::DescribeLocalGatewayRouteTablesOutput;
-
 pub use crate::operation::describe_local_gateway_route_tables::_describe_local_gateway_route_tables_input::DescribeLocalGatewayRouteTablesInput;
+
+pub use crate::operation::describe_local_gateway_route_tables::_describe_local_gateway_route_tables_output::DescribeLocalGatewayRouteTablesOutput;
 
 mod _describe_local_gateway_route_tables_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attached_user
     }
 }
 
-pub use crate::operation::list_attached_user_policies::_list_attached_user_policies_output::ListAttachedUserPoliciesOutput;
-
 pub use crate::operation::list_attached_user_policies::_list_attached_user_policies_input::ListAttachedUserPoliciesInput;
+
+pub use crate::operation::list_attached_user_policies::_list_attached_user_policies_output::ListAttachedUserPoliciesOutput;
 
 mod _list_attached_user_policies_input;
 

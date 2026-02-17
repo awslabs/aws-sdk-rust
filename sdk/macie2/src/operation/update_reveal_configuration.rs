@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_reveal_conf
     }
 }
 
-pub use crate::operation::update_reveal_configuration::_update_reveal_configuration_output::UpdateRevealConfigurationOutput;
-
 pub use crate::operation::update_reveal_configuration::_update_reveal_configuration_input::UpdateRevealConfigurationInput;
+
+pub use crate::operation::update_reveal_configuration::_update_reveal_configuration_output::UpdateRevealConfigurationOutput;
 
 mod _update_reveal_configuration_input;
 

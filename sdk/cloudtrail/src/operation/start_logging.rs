@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_logging::Sta
     }
 }
 
-pub use crate::operation::start_logging::_start_logging_output::StartLoggingOutput;
-
 pub use crate::operation::start_logging::_start_logging_input::StartLoggingInput;
+
+pub use crate::operation::start_logging::_start_logging_output::StartLoggingOutput;
 
 mod _start_logging_input;
 

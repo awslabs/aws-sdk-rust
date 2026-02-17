@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_image_scan::
     }
 }
 
-pub use crate::operation::start_image_scan::_start_image_scan_output::StartImageScanOutput;
-
 pub use crate::operation::start_image_scan::_start_image_scan_input::StartImageScanInput;
+
+pub use crate::operation::start_image_scan::_start_image_scan_output::StartImageScanOutput;
 
 mod _start_image_scan_input;
 

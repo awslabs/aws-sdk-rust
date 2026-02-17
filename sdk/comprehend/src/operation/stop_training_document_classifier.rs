@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_training_docu
     }
 }
 
-pub use crate::operation::stop_training_document_classifier::_stop_training_document_classifier_output::StopTrainingDocumentClassifierOutput;
-
 pub use crate::operation::stop_training_document_classifier::_stop_training_document_classifier_input::StopTrainingDocumentClassifierInput;
+
+pub use crate::operation::stop_training_document_classifier::_stop_training_document_classifier_output::StopTrainingDocumentClassifierOutput;
 
 mod _stop_training_document_classifier_input;
 

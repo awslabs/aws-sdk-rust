@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_connection_
     }
 }
 
-pub use crate::operation::get_kx_connection_string::_get_kx_connection_string_output::GetKxConnectionStringOutput;
-
 pub use crate::operation::get_kx_connection_string::_get_kx_connection_string_input::GetKxConnectionStringInput;
+
+pub use crate::operation::get_kx_connection_string::_get_kx_connection_string_output::GetKxConnectionStringOutput;
 
 mod _get_kx_connection_string_input;
 

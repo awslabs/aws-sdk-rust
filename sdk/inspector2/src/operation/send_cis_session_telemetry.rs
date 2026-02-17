@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_cis_session_t
     }
 }
 
-pub use crate::operation::send_cis_session_telemetry::_send_cis_session_telemetry_output::SendCisSessionTelemetryOutput;
-
 pub use crate::operation::send_cis_session_telemetry::_send_cis_session_telemetry_input::SendCisSessionTelemetryInput;
+
+pub use crate::operation::send_cis_session_telemetry::_send_cis_session_telemetry_output::SendCisSessionTelemetryOutput;
 
 mod _send_cis_session_telemetry_input;
 

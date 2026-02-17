@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dataset_g
     }
 }
 
-pub use crate::operation::describe_dataset_group::_describe_dataset_group_output::DescribeDatasetGroupOutput;
-
 pub use crate::operation::describe_dataset_group::_describe_dataset_group_input::DescribeDatasetGroupInput;
+
+pub use crate::operation::describe_dataset_group::_describe_dataset_group_output::DescribeDatasetGroupOutput;
 
 mod _describe_dataset_group_input;
 

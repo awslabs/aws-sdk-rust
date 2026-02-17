@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_package_v
     }
 }
 
-pub use crate::operation::describe_package_version::_describe_package_version_output::DescribePackageVersionOutput;
-
 pub use crate::operation::describe_package_version::_describe_package_version_input::DescribePackageVersionInput;
+
+pub use crate::operation::describe_package_version::_describe_package_version_output::DescribePackageVersionOutput;
 
 mod _describe_package_version_input;
 

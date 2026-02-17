@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_experiment_te
     }
 }
 
-pub use crate::operation::list_experiment_templates::_list_experiment_templates_output::ListExperimentTemplatesOutput;
-
 pub use crate::operation::list_experiment_templates::_list_experiment_templates_input::ListExperimentTemplatesInput;
+
+pub use crate::operation::list_experiment_templates::_list_experiment_templates_output::ListExperimentTemplatesOutput;
 
 mod _list_experiment_templates_input;
 

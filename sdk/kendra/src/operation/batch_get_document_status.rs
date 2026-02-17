@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_document
     }
 }
 
-pub use crate::operation::batch_get_document_status::_batch_get_document_status_output::BatchGetDocumentStatusOutput;
-
 pub use crate::operation::batch_get_document_status::_batch_get_document_status_input::BatchGetDocumentStatusInput;
+
+pub use crate::operation::batch_get_document_status::_batch_get_document_status_output::BatchGetDocumentStatusOutput;
 
 mod _batch_get_document_status_input;
 

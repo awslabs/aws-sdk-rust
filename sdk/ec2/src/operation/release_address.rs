@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_address::R
     }
 }
 
-pub use crate::operation::release_address::_release_address_output::ReleaseAddressOutput;
-
 pub use crate::operation::release_address::_release_address_input::ReleaseAddressInput;
+
+pub use crate::operation::release_address::_release_address_output::ReleaseAddressOutput;
 
 mod _release_address_input;
 

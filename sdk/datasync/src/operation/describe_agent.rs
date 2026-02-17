@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_agent::De
     }
 }
 
-pub use crate::operation::describe_agent::_describe_agent_output::DescribeAgentOutput;
-
 pub use crate::operation::describe_agent::_describe_agent_input::DescribeAgentInput;
+
+pub use crate::operation::describe_agent::_describe_agent_output::DescribeAgentOutput;
 
 mod _describe_agent_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_query_definiti
     }
 }
 
-pub use crate::operation::put_query_definition::_put_query_definition_output::PutQueryDefinitionOutput;
-
 pub use crate::operation::put_query_definition::_put_query_definition_input::PutQueryDefinitionInput;
+
+pub use crate::operation::put_query_definition::_put_query_definition_output::PutQueryDefinitionOutput;
 
 mod _put_query_definition_input;
 

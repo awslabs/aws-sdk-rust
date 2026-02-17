@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_classifiers::G
     }
 }
 
-pub use crate::operation::get_classifiers::_get_classifiers_output::GetClassifiersOutput;
-
 pub use crate::operation::get_classifiers::_get_classifiers_input::GetClassifiersInput;
+
+pub use crate::operation::get_classifiers::_get_classifiers_output::GetClassifiersOutput;
 
 mod _get_classifiers_input;
 

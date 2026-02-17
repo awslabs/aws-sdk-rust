@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_option_gr
     }
 }
 
-pub use crate::operation::describe_option_group_options::_describe_option_group_options_output::DescribeOptionGroupOptionsOutput;
-
 pub use crate::operation::describe_option_group_options::_describe_option_group_options_input::DescribeOptionGroupOptionsInput;
+
+pub use crate::operation::describe_option_group_options::_describe_option_group_options_output::DescribeOptionGroupOptionsOutput;
 
 mod _describe_option_group_options_input;
 

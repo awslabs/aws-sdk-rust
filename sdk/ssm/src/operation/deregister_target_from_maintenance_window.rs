@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_target_
     }
 }
 
-pub use crate::operation::deregister_target_from_maintenance_window::_deregister_target_from_maintenance_window_output::DeregisterTargetFromMaintenanceWindowOutput;
-
 pub use crate::operation::deregister_target_from_maintenance_window::_deregister_target_from_maintenance_window_input::DeregisterTargetFromMaintenanceWindowInput;
+
+pub use crate::operation::deregister_target_from_maintenance_window::_deregister_target_from_maintenance_window_output::DeregisterTargetFromMaintenanceWindowOutput;
 
 mod _deregister_target_from_maintenance_window_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_instance
     }
 }
 
-pub use crate::operation::associate_instance_event_window::_associate_instance_event_window_output::AssociateInstanceEventWindowOutput;
-
 pub use crate::operation::associate_instance_event_window::_associate_instance_event_window_input::AssociateInstanceEventWindowInput;
+
+pub use crate::operation::associate_instance_event_window::_associate_instance_event_window_output::AssociateInstanceEventWindowOutput;
 
 mod _associate_instance_event_window_input;
 

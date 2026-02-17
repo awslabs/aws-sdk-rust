@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_storage_v
     }
 }
 
-pub use crate::operation::describe_storage_virtual_machines::_describe_storage_virtual_machines_output::DescribeStorageVirtualMachinesOutput;
-
 pub use crate::operation::describe_storage_virtual_machines::_describe_storage_virtual_machines_input::DescribeStorageVirtualMachinesInput;
+
+pub use crate::operation::describe_storage_virtual_machines::_describe_storage_virtual_machines_output::DescribeStorageVirtualMachinesOutput;
 
 mod _describe_storage_virtual_machines_input;
 

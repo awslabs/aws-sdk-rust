@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_access::G
     }
 }
 
-pub use crate::operation::get_data_access::_get_data_access_output::GetDataAccessOutput;
-
 pub use crate::operation::get_data_access::_get_data_access_input::GetDataAccessInput;
+
+pub use crate::operation::get_data_access::_get_data_access_output::GetDataAccessOutput;
 
 mod _get_data_access_input;
 

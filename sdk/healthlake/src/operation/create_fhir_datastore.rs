@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fhir_datast
     }
 }
 
-pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_output::CreateFhirDatastoreOutput;
-
 pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_input::CreateFhirDatastoreInput;
+
+pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_output::CreateFhirDatastoreOutput;
 
 mod _create_fhir_datastore_input;
 

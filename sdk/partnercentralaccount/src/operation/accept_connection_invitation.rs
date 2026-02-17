@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_connection_
     }
 }
 
-pub use crate::operation::accept_connection_invitation::_accept_connection_invitation_output::AcceptConnectionInvitationOutput;
-
 pub use crate::operation::accept_connection_invitation::_accept_connection_invitation_input::AcceptConnectionInvitationInput;
+
+pub use crate::operation::accept_connection_invitation::_accept_connection_invitation_output::AcceptConnectionInvitationOutput;
 
 mod _accept_connection_invitation_input;
 

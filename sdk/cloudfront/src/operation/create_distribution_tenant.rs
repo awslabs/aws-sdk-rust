@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_distributio
     }
 }
 
-pub use crate::operation::create_distribution_tenant::_create_distribution_tenant_output::CreateDistributionTenantOutput;
-
 pub use crate::operation::create_distribution_tenant::_create_distribution_tenant_input::CreateDistributionTenantInput;
+
+pub use crate::operation::create_distribution_tenant::_create_distribution_tenant_output::CreateDistributionTenantOutput;
 
 mod _create_distribution_tenant_input;
 

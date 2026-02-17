@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_ip_address_typ
     }
 }
 
-pub use crate::operation::set_ip_address_type::_set_ip_address_type_output::SetIpAddressTypeOutput;
-
 pub use crate::operation::set_ip_address_type::_set_ip_address_type_input::SetIpAddressTypeInput;
+
+pub use crate::operation::set_ip_address_type::_set_ip_address_type_output::SetIpAddressTypeOutput;
 
 mod _set_ip_address_type_input;
 

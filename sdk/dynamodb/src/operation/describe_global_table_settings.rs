@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_global_ta
     }
 }
 
-pub use crate::operation::describe_global_table_settings::_describe_global_table_settings_output::DescribeGlobalTableSettingsOutput;
-
 pub use crate::operation::describe_global_table_settings::_describe_global_table_settings_input::DescribeGlobalTableSettingsInput;
+
+pub use crate::operation::describe_global_table_settings::_describe_global_table_settings_output::DescribeGlobalTableSettingsOutput;
 
 mod _describe_global_table_settings_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_memory_record
     }
 }
 
-pub use crate::operation::list_memory_records::_list_memory_records_output::ListMemoryRecordsOutput;
-
 pub use crate::operation::list_memory_records::_list_memory_records_input::ListMemoryRecordsInput;
+
+pub use crate::operation::list_memory_records::_list_memory_records_output::ListMemoryRecordsOutput;
 
 mod _list_memory_records_input;
 

@@ -505,9 +505,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_create_ac
     }
 }
 
-pub use crate::operation::describe_create_account_status::_describe_create_account_status_output::DescribeCreateAccountStatusOutput;
-
 pub use crate::operation::describe_create_account_status::_describe_create_account_status_input::DescribeCreateAccountStatusInput;
+
+pub use crate::operation::describe_create_account_status::_describe_create_account_status_output::DescribeCreateAccountStatusOutput;
 
 mod _describe_create_account_status_input;
 

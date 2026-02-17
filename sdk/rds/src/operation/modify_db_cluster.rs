@@ -555,9 +555,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_cluster:
     }
 }
 
-pub use crate::operation::modify_db_cluster::_modify_db_cluster_output::ModifyDbClusterOutput;
-
 pub use crate::operation::modify_db_cluster::_modify_db_cluster_input::ModifyDbClusterInput;
+
+pub use crate::operation::modify_db_cluster::_modify_db_cluster_output::ModifyDbClusterOutput;
 
 mod _modify_db_cluster_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_organization
     }
 }
 
-pub use crate::operation::start_organization_service_access_update::_start_organization_service_access_update_output::StartOrganizationServiceAccessUpdateOutput;
-
 pub use crate::operation::start_organization_service_access_update::_start_organization_service_access_update_input::StartOrganizationServiceAccessUpdateInput;
+
+pub use crate::operation::start_organization_service_access_update::_start_organization_service_access_update_output::StartOrganizationServiceAccessUpdateOutput;
 
 mod _start_organization_service_access_update_input;
 

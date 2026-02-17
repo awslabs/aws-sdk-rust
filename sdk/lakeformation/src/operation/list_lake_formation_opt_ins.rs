@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lake_formatio
     }
 }
 
-pub use crate::operation::list_lake_formation_opt_ins::_list_lake_formation_opt_ins_output::ListLakeFormationOptInsOutput;
-
 pub use crate::operation::list_lake_formation_opt_ins::_list_lake_formation_opt_ins_input::ListLakeFormationOptInsInput;
+
+pub use crate::operation::list_lake_formation_opt_ins::_list_lake_formation_opt_ins_output::ListLakeFormationOptInsOutput;
 
 mod _list_lake_formation_opt_ins_input;
 

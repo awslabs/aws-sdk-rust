@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_ingress
     }
 }
 
-pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_connection_output::CreateVpcIngressConnectionOutput;
-
 pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_connection_input::CreateVpcIngressConnectionInput;
+
+pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_connection_output::CreateVpcIngressConnectionOutput;
 
 mod _create_vpc_ingress_connection_input;
 

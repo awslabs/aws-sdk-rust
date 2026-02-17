@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_groups_older_
     }
 }
 
-pub use crate::operation::list_groups_older_than_ordering_id::_list_groups_older_than_ordering_id_output::ListGroupsOlderThanOrderingIdOutput;
-
 pub use crate::operation::list_groups_older_than_ordering_id::_list_groups_older_than_ordering_id_input::ListGroupsOlderThanOrderingIdInput;
+
+pub use crate::operation::list_groups_older_than_ordering_id::_list_groups_older_than_ordering_id_output::ListGroupsOlderThanOrderingIdOutput;
 
 mod _list_groups_older_than_ordering_id_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_key_pair::D
     }
 }
 
-pub use crate::operation::delete_key_pair::_delete_key_pair_output::DeleteKeyPairOutput;
-
 pub use crate::operation::delete_key_pair::_delete_key_pair_input::DeleteKeyPairInput;
+
+pub use crate::operation::delete_key_pair::_delete_key_pair_output::DeleteKeyPairOutput;
 
 mod _delete_key_pair_input;
 

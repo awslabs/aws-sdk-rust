@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_data_pro
     }
 }
 
-pub use crate::operation::associate_data_protection_settings::_associate_data_protection_settings_output::AssociateDataProtectionSettingsOutput;
-
 pub use crate::operation::associate_data_protection_settings::_associate_data_protection_settings_input::AssociateDataProtectionSettingsInput;
+
+pub use crate::operation::associate_data_protection_settings::_associate_data_protection_settings_output::AssociateDataProtectionSettingsOutput;
 
 mod _associate_data_protection_settings_input;
 

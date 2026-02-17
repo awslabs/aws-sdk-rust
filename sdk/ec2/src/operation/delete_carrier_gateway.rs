@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_carrier_gat
     }
 }
 
-pub use crate::operation::delete_carrier_gateway::_delete_carrier_gateway_output::DeleteCarrierGatewayOutput;
-
 pub use crate::operation::delete_carrier_gateway::_delete_carrier_gateway_input::DeleteCarrierGatewayInput;
+
+pub use crate::operation::delete_carrier_gateway::_delete_carrier_gateway_output::DeleteCarrierGatewayOutput;
 
 mod _delete_carrier_gateway_input;
 

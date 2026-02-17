@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolver_rule
     }
 }
 
-pub use crate::operation::list_resolver_rules::_list_resolver_rules_output::ListResolverRulesOutput;
-
 pub use crate::operation::list_resolver_rules::_list_resolver_rules_input::ListResolverRulesInput;
+
+pub use crate::operation::list_resolver_rules::_list_resolver_rules_output::ListResolverRulesOutput;
 
 mod _list_resolver_rules_input;
 

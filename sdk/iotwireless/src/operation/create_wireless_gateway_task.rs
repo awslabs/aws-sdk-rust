@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_wireless_ga
     }
 }
 
-pub use crate::operation::create_wireless_gateway_task::_create_wireless_gateway_task_output::CreateWirelessGatewayTaskOutput;
-
 pub use crate::operation::create_wireless_gateway_task::_create_wireless_gateway_task_input::CreateWirelessGatewayTaskInput;
+
+pub use crate::operation::create_wireless_gateway_task::_create_wireless_gateway_task_output::CreateWirelessGatewayTaskOutput;
 
 mod _create_wireless_gateway_task_input;
 

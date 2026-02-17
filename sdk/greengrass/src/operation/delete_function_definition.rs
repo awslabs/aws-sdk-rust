@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_function_de
     }
 }
 
-pub use crate::operation::delete_function_definition::_delete_function_definition_output::DeleteFunctionDefinitionOutput;
-
 pub use crate::operation::delete_function_definition::_delete_function_definition_input::DeleteFunctionDefinitionInput;
+
+pub use crate::operation::delete_function_definition::_delete_function_definition_output::DeleteFunctionDefinitionOutput;
 
 mod _delete_function_definition_input;
 

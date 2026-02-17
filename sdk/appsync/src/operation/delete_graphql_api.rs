@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_graphql_api
     }
 }
 
-pub use crate::operation::delete_graphql_api::_delete_graphql_api_output::DeleteGraphqlApiOutput;
-
 pub use crate::operation::delete_graphql_api::_delete_graphql_api_input::DeleteGraphqlApiInput;
+
+pub use crate::operation::delete_graphql_api::_delete_graphql_api_output::DeleteGraphqlApiOutput;
 
 mod _delete_graphql_api_input;
 

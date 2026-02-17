@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_user_acc
     }
 }
 
-pub use crate::operation::associate_user_access_logging_settings::_associate_user_access_logging_settings_output::AssociateUserAccessLoggingSettingsOutput;
-
 pub use crate::operation::associate_user_access_logging_settings::_associate_user_access_logging_settings_input::AssociateUserAccessLoggingSettingsInput;
+
+pub use crate::operation::associate_user_access_logging_settings::_associate_user_access_logging_settings_output::AssociateUserAccessLoggingSettingsOutput;
 
 mod _associate_user_access_logging_settings_input;
 

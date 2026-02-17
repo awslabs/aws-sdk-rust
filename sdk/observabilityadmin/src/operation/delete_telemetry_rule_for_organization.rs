@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_telemetry_r
     }
 }
 
-pub use crate::operation::delete_telemetry_rule_for_organization::_delete_telemetry_rule_for_organization_output::DeleteTelemetryRuleForOrganizationOutput;
-
 pub use crate::operation::delete_telemetry_rule_for_organization::_delete_telemetry_rule_for_organization_input::DeleteTelemetryRuleForOrganizationInput;
+
+pub use crate::operation::delete_telemetry_rule_for_organization::_delete_telemetry_rule_for_organization_output::DeleteTelemetryRuleForOrganizationOutput;
 
 mod _delete_telemetry_rule_for_organization_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_share
     }
 }
 
-pub use crate::operation::list_profile_shares::_list_profile_shares_output::ListProfileSharesOutput;
-
 pub use crate::operation::list_profile_shares::_list_profile_shares_input::ListProfileSharesInput;
+
+pub use crate::operation::list_profile_shares::_list_profile_shares_output::ListProfileSharesOutput;
 
 mod _list_profile_shares_input;
 

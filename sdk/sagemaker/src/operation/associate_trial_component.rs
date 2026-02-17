@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_trial_co
     }
 }
 
-pub use crate::operation::associate_trial_component::_associate_trial_component_output::AssociateTrialComponentOutput;
-
 pub use crate::operation::associate_trial_component::_associate_trial_component_input::AssociateTrialComponentInput;
+
+pub use crate::operation::associate_trial_component::_associate_trial_component_output::AssociateTrialComponentOutput;
 
 mod _associate_trial_component_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rest_api::D
     }
 }
 
-pub use crate::operation::delete_rest_api::_delete_rest_api_output::DeleteRestApiOutput;
-
 pub use crate::operation::delete_rest_api::_delete_rest_api_input::DeleteRestApiInput;
+
+pub use crate::operation::delete_rest_api::_delete_rest_api_output::DeleteRestApiOutput;
 
 mod _delete_rest_api_input;
 

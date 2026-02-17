@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_proactive_
     }
 }
 
-pub use crate::operation::disable_proactive_engagement::_disable_proactive_engagement_output::DisableProactiveEngagementOutput;
-
 pub use crate::operation::disable_proactive_engagement::_disable_proactive_engagement_input::DisableProactiveEngagementInput;
+
+pub use crate::operation::disable_proactive_engagement::_disable_proactive_engagement_output::DisableProactiveEngagementOutput;
 
 mod _disable_proactive_engagement_input;
 

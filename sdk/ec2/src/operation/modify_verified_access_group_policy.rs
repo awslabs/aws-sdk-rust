@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_verified_ac
     }
 }
 
-pub use crate::operation::modify_verified_access_group_policy::_modify_verified_access_group_policy_output::ModifyVerifiedAccessGroupPolicyOutput;
-
 pub use crate::operation::modify_verified_access_group_policy::_modify_verified_access_group_policy_input::ModifyVerifiedAccessGroupPolicyInput;
+
+pub use crate::operation::modify_verified_access_group_policy::_modify_verified_access_group_policy_output::ModifyVerifiedAccessGroupPolicyOutput;
 
 mod _modify_verified_access_group_policy_input;
 

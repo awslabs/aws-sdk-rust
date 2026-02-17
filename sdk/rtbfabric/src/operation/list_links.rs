@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_links::ListLi
     }
 }
 
-pub use crate::operation::list_links::_list_links_output::ListLinksOutput;
-
 pub use crate::operation::list_links::_list_links_input::ListLinksInput;
+
+pub use crate::operation::list_links::_list_links_output::ListLinksOutput;
 
 mod _list_links_input;
 

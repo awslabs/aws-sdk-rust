@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backup_select
     }
 }
 
-pub use crate::operation::list_backup_selections::_list_backup_selections_output::ListBackupSelectionsOutput;
-
 pub use crate::operation::list_backup_selections::_list_backup_selections_input::ListBackupSelectionsInput;
+
+pub use crate::operation::list_backup_selections::_list_backup_selections_output::ListBackupSelectionsOutput;
 
 mod _list_backup_selections_input;
 

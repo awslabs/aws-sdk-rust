@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_materialized_
     }
 }
 
-pub use crate::operation::stop_materialized_view_refresh_task_run::_stop_materialized_view_refresh_task_run_output::StopMaterializedViewRefreshTaskRunOutput;
-
 pub use crate::operation::stop_materialized_view_refresh_task_run::_stop_materialized_view_refresh_task_run_input::StopMaterializedViewRefreshTaskRunInput;
+
+pub use crate::operation::stop_materialized_view_refresh_task_run::_stop_materialized_view_refresh_task_run_output::StopMaterializedViewRefreshTaskRunOutput;
 
 mod _stop_materialized_view_refresh_task_run_input;
 

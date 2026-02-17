@@ -341,9 +341,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_caller_identit
     }
 }
 
-pub use crate::operation::get_caller_identity::_get_caller_identity_output::GetCallerIdentityOutput;
-
 pub use crate::operation::get_caller_identity::_get_caller_identity_input::GetCallerIdentityInput;
+
+pub use crate::operation::get_caller_identity::_get_caller_identity_output::GetCallerIdentityOutput;
 
 mod _get_caller_identity_input;
 

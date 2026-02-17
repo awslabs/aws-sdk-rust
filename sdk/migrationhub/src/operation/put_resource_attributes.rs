@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_resource_attri
     }
 }
 
-pub use crate::operation::put_resource_attributes::_put_resource_attributes_output::PutResourceAttributesOutput;
-
 pub use crate::operation::put_resource_attributes::_put_resource_attributes_input::PutResourceAttributesInput;
+
+pub use crate::operation::put_resource_attributes::_put_resource_attributes_output::PutResourceAttributesOutput;
 
 mod _put_resource_attributes_input;
 

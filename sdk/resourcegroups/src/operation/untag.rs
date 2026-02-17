@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag::UntagError 
     }
 }
 
-pub use crate::operation::untag::_untag_output::UntagOutput;
-
 pub use crate::operation::untag::_untag_input::UntagInput;
+
+pub use crate::operation::untag::_untag_output::UntagOutput;
 
 mod _untag_input;
 

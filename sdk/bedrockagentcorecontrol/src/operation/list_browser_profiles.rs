@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_browser_profi
     }
 }
 
-pub use crate::operation::list_browser_profiles::_list_browser_profiles_output::ListBrowserProfilesOutput;
-
 pub use crate::operation::list_browser_profiles::_list_browser_profiles_input::ListBrowserProfilesInput;
+
+pub use crate::operation::list_browser_profiles::_list_browser_profiles_output::ListBrowserProfilesOutput;
 
 mod _list_browser_profiles_input;
 

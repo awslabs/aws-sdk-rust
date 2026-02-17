@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sync_job::GetS
     }
 }
 
-pub use crate::operation::get_sync_job::_get_sync_job_output::GetSyncJobOutput;
-
 pub use crate::operation::get_sync_job::_get_sync_job_input::GetSyncJobInput;
+
+pub use crate::operation::get_sync_job::_get_sync_job_output::GetSyncJobOutput;
 
 mod _get_sync_job_input;
 

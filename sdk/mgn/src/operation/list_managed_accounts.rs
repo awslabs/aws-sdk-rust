@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_accou
     }
 }
 
-pub use crate::operation::list_managed_accounts::_list_managed_accounts_output::ListManagedAccountsOutput;
-
 pub use crate::operation::list_managed_accounts::_list_managed_accounts_input::ListManagedAccountsInput;
+
+pub use crate::operation::list_managed_accounts::_list_managed_accounts_output::ListManagedAccountsOutput;
 
 mod _list_managed_accounts_input;
 

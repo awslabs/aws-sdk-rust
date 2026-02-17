@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inbound_con
     }
 }
 
-pub use crate::operation::delete_inbound_connection::_delete_inbound_connection_output::DeleteInboundConnectionOutput;
-
 pub use crate::operation::delete_inbound_connection::_delete_inbound_connection_input::DeleteInboundConnectionInput;
+
+pub use crate::operation::delete_inbound_connection::_delete_inbound_connection_output::DeleteInboundConnectionOutput;
 
 mod _delete_inbound_connection_input;
 

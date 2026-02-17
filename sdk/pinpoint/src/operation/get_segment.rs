@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment::GetSe
     }
 }
 
-pub use crate::operation::get_segment::_get_segment_output::GetSegmentOutput;
-
 pub use crate::operation::get_segment::_get_segment_input::GetSegmentInput;
+
+pub use crate::operation::get_segment::_get_segment_output::GetSegmentOutput;
 
 mod _get_segment_input;
 

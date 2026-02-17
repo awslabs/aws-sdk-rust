@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_site::GetSiteE
     }
 }
 
-pub use crate::operation::get_site::_get_site_output::GetSiteOutput;
-
 pub use crate::operation::get_site::_get_site_input::GetSiteInput;
+
+pub use crate::operation::get_site::_get_site_output::GetSiteOutput;
 
 mod _get_site_input;
 

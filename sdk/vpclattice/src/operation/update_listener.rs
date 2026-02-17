@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_listener::U
     }
 }
 
-pub use crate::operation::update_listener::_update_listener_output::UpdateListenerOutput;
-
 pub use crate::operation::update_listener::_update_listener_input::UpdateListenerInput;
+
+pub use crate::operation::update_listener::_update_listener_output::UpdateListenerOutput;
 
 mod _update_listener_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_devices::
     }
 }
 
-pub use crate::operation::register_devices::_register_devices_output::RegisterDevicesOutput;
-
 pub use crate::operation::register_devices::_register_devices_input::RegisterDevicesInput;
+
+pub use crate::operation::register_devices::_register_devices_output::RegisterDevicesOutput;
 
 mod _register_devices_input;
 

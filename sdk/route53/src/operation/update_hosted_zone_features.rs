@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hosted_zone
     }
 }
 
-pub use crate::operation::update_hosted_zone_features::_update_hosted_zone_features_output::UpdateHostedZoneFeaturesOutput;
-
 pub use crate::operation::update_hosted_zone_features::_update_hosted_zone_features_input::UpdateHostedZoneFeaturesInput;
+
+pub use crate::operation::update_hosted_zone_features::_update_hosted_zone_features_output::UpdateHostedZoneFeaturesOutput;
 
 mod _update_hosted_zone_features_input;
 

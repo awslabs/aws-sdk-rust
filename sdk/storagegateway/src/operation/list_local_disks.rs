@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_local_disks::
     }
 }
 
-pub use crate::operation::list_local_disks::_list_local_disks_output::ListLocalDisksOutput;
-
 pub use crate::operation::list_local_disks::_list_local_disks_input::ListLocalDisksInput;
+
+pub use crate::operation::list_local_disks::_list_local_disks_output::ListLocalDisksOutput;
 
 mod _list_local_disks_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_thing
     }
 }
 
-pub use crate::operation::list_managed_thing_account_associations::_list_managed_thing_account_associations_output::ListManagedThingAccountAssociationsOutput;
-
 pub use crate::operation::list_managed_thing_account_associations::_list_managed_thing_account_associations_input::ListManagedThingAccountAssociationsInput;
+
+pub use crate::operation::list_managed_thing_account_associations::_list_managed_thing_account_associations_output::ListManagedThingAccountAssociationsOutput;
 
 mod _list_managed_thing_account_associations_input;
 

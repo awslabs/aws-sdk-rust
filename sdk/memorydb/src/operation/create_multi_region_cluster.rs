@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_multi_regio
     }
 }
 
-pub use crate::operation::create_multi_region_cluster::_create_multi_region_cluster_output::CreateMultiRegionClusterOutput;
-
 pub use crate::operation::create_multi_region_cluster::_create_multi_region_cluster_input::CreateMultiRegionClusterInput;
+
+pub use crate::operation::create_multi_region_cluster::_create_multi_region_cluster_output::CreateMultiRegionClusterOutput;
 
 mod _create_multi_region_cluster_input;
 

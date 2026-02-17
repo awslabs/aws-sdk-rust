@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_graph::Start
     }
 }
 
-pub use crate::operation::start_graph::_start_graph_output::StartGraphOutput;
-
 pub use crate::operation::start_graph::_start_graph_input::StartGraphInput;
+
+pub use crate::operation::start_graph::_start_graph_output::StartGraphOutput;
 
 mod _start_graph_input;
 

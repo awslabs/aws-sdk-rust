@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relationship::
     }
 }
 
-pub use crate::operation::get_relationship::_get_relationship_output::GetRelationshipOutput;
-
 pub use crate::operation::get_relationship::_get_relationship_input::GetRelationshipInput;
+
+pub use crate::operation::get_relationship::_get_relationship_output::GetRelationshipOutput;
 
 mod _get_relationship_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_changeset::
     }
 }
 
-pub use crate::operation::update_changeset::_update_changeset_output::UpdateChangesetOutput;
-
 pub use crate::operation::update_changeset::_update_changeset_input::UpdateChangesetInput;
+
+pub use crate::operation::update_changeset::_update_changeset_output::UpdateChangesetOutput;
 
 mod _update_changeset_input;
 

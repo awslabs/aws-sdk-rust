@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bot_version
     }
 }
 
-pub use crate::operation::delete_bot_version::_delete_bot_version_output::DeleteBotVersionOutput;
-
 pub use crate::operation::delete_bot_version::_delete_bot_version_input::DeleteBotVersionInput;
+
+pub use crate::operation::delete_bot_version::_delete_bot_version_output::DeleteBotVersionOutput;
 
 mod _delete_bot_version_input;
 

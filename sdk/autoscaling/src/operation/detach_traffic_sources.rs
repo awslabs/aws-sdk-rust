@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_traffic_sou
     }
 }
 
-pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_output::DetachTrafficSourcesOutput;
-
 pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_input::DetachTrafficSourcesInput;
+
+pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_output::DetachTrafficSourcesOutput;
 
 mod _detach_traffic_sources_input;
 

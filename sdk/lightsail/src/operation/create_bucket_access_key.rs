@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bucket_acce
     }
 }
 
-pub use crate::operation::create_bucket_access_key::_create_bucket_access_key_output::CreateBucketAccessKeyOutput;
-
 pub use crate::operation::create_bucket_access_key::_create_bucket_access_key_input::CreateBucketAccessKeyInput;
+
+pub use crate::operation::create_bucket_access_key::_create_bucket_access_key_output::CreateBucketAccessKeyOutput;
 
 mod _create_bucket_access_key_input;
 

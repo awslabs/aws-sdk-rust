@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_batch_job_exec
     }
 }
 
-pub use crate::operation::get_batch_job_execution::_get_batch_job_execution_output::GetBatchJobExecutionOutput;
-
 pub use crate::operation::get_batch_job_execution::_get_batch_job_execution_input::GetBatchJobExecutionInput;
+
+pub use crate::operation::get_batch_job_execution::_get_batch_job_execution_output::GetBatchJobExecutionOutput;
 
 mod _get_batch_job_execution_input;
 

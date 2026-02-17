@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_association_v
     }
 }
 
-pub use crate::operation::list_association_versions::_list_association_versions_output::ListAssociationVersionsOutput;
-
 pub use crate::operation::list_association_versions::_list_association_versions_input::ListAssociationVersionsInput;
+
+pub use crate::operation::list_association_versions::_list_association_versions_output::ListAssociationVersionsOutput;
 
 mod _list_association_versions_input;
 

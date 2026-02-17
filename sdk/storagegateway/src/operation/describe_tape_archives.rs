@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tape_arch
     }
 }
 
-pub use crate::operation::describe_tape_archives::_describe_tape_archives_output::DescribeTapeArchivesOutput;
-
 pub use crate::operation::describe_tape_archives::_describe_tape_archives_input::DescribeTapeArchivesInput;
+
+pub use crate::operation::describe_tape_archives::_describe_tape_archives_output::DescribeTapeArchivesOutput;
 
 mod _describe_tape_archives_input;
 

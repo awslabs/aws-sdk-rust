@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel_mes
     }
 }
 
-pub use crate::operation::update_channel_message::_update_channel_message_output::UpdateChannelMessageOutput;
-
 pub use crate::operation::update_channel_message::_update_channel_message_input::UpdateChannelMessageInput;
+
+pub use crate::operation::update_channel_message::_update_channel_message_output::UpdateChannelMessageOutput;
 
 mod _update_channel_message_input;
 

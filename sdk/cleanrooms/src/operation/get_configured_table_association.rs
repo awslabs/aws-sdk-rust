@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configured_tab
     }
 }
 
-pub use crate::operation::get_configured_table_association::_get_configured_table_association_output::GetConfiguredTableAssociationOutput;
-
 pub use crate::operation::get_configured_table_association::_get_configured_table_association_input::GetConfiguredTableAssociationInput;
+
+pub use crate::operation::get_configured_table_association::_get_configured_table_association_output::GetConfiguredTableAssociationOutput;
 
 mod _get_configured_table_association_input;
 

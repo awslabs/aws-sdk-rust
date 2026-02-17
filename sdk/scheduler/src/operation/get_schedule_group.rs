@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schedule_group
     }
 }
 
-pub use crate::operation::get_schedule_group::_get_schedule_group_output::GetScheduleGroupOutput;
-
 pub use crate::operation::get_schedule_group::_get_schedule_group_input::GetScheduleGroupInput;
+
+pub use crate::operation::get_schedule_group::_get_schedule_group_output::GetScheduleGroupOutput;
 
 mod _get_schedule_group_input;
 

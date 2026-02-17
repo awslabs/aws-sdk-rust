@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_se
     }
 }
 
-pub use crate::operation::get_application_settings::_get_application_settings_output::GetApplicationSettingsOutput;
-
 pub use crate::operation::get_application_settings::_get_application_settings_input::GetApplicationSettingsInput;
+
+pub use crate::operation::get_application_settings::_get_application_settings_output::GetApplicationSettingsOutput;
 
 mod _get_application_settings_input;
 

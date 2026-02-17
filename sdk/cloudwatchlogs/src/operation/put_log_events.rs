@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_log_events::Pu
     }
 }
 
-pub use crate::operation::put_log_events::_put_log_events_output::PutLogEventsOutput;
-
 pub use crate::operation::put_log_events::_put_log_events_input::PutLogEventsInput;
+
+pub use crate::operation::put_log_events::_put_log_events_output::PutLogEventsOutput;
 
 mod _put_log_events_input;
 

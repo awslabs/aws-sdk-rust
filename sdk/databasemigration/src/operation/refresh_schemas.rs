@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::refresh_schemas::R
     }
 }
 
-pub use crate::operation::refresh_schemas::_refresh_schemas_output::RefreshSchemasOutput;
-
 pub use crate::operation::refresh_schemas::_refresh_schemas_input::RefreshSchemasInput;
+
+pub use crate::operation::refresh_schemas::_refresh_schemas_output::RefreshSchemasOutput;
 
 mod _refresh_schemas_input;
 

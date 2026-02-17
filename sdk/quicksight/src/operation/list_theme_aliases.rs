@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_theme_aliases
     }
 }
 
-pub use crate::operation::list_theme_aliases::_list_theme_aliases_output::ListThemeAliasesOutput;
-
 pub use crate::operation::list_theme_aliases::_list_theme_aliases_input::ListThemeAliasesInput;
+
+pub use crate::operation::list_theme_aliases::_list_theme_aliases_output::ListThemeAliasesOutput;
 
 mod _list_theme_aliases_input;
 

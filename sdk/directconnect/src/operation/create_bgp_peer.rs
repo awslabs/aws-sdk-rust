@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bgp_peer::C
     }
 }
 
-pub use crate::operation::create_bgp_peer::_create_bgp_peer_output::CreateBgpPeerOutput;
-
 pub use crate::operation::create_bgp_peer::_create_bgp_peer_input::CreateBgpPeerInput;
+
+pub use crate::operation::create_bgp_peer::_create_bgp_peer_output::CreateBgpPeerOutput;
 
 mod _create_bgp_peer_input;
 

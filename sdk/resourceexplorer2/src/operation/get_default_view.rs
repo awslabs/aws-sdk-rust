@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_view::
     }
 }
 
-pub use crate::operation::get_default_view::_get_default_view_output::GetDefaultViewOutput;
-
 pub use crate::operation::get_default_view::_get_default_view_input::GetDefaultViewInput;
+
+pub use crate::operation::get_default_view::_get_default_view_output::GetDefaultViewOutput;
 
 mod _get_default_view_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_formatio
     }
 }
 
-pub use crate::operation::get_cloud_formation_stack_records::_get_cloud_formation_stack_records_output::GetCloudFormationStackRecordsOutput;
-
 pub use crate::operation::get_cloud_formation_stack_records::_get_cloud_formation_stack_records_input::GetCloudFormationStackRecordsInput;
+
+pub use crate::operation::get_cloud_formation_stack_records::_get_cloud_formation_stack_records_output::GetCloudFormationStackRecordsOutput;
 
 mod _get_cloud_formation_stack_records_input;
 

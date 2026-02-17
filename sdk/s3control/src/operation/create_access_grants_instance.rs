@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_gran
     }
 }
 
-pub use crate::operation::create_access_grants_instance::_create_access_grants_instance_output::CreateAccessGrantsInstanceOutput;
-
 pub use crate::operation::create_access_grants_instance::_create_access_grants_instance_input::CreateAccessGrantsInstanceInput;
+
+pub use crate::operation::create_access_grants_instance::_create_access_grants_instance_output::CreateAccessGrantsInstanceOutput;
 
 mod _create_access_grants_instance_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attached_role
     }
 }
 
-pub use crate::operation::list_attached_role_policies::_list_attached_role_policies_output::ListAttachedRolePoliciesOutput;
-
 pub use crate::operation::list_attached_role_policies::_list_attached_role_policies_input::ListAttachedRolePoliciesInput;
+
+pub use crate::operation::list_attached_role_policies::_list_attached_role_policies_output::ListAttachedRolePoliciesOutput;
 
 mod _list_attached_role_policies_input;
 

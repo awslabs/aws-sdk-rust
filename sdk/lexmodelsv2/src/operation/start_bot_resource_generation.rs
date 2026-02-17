@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_bot_resource
     }
 }
 
-pub use crate::operation::start_bot_resource_generation::_start_bot_resource_generation_output::StartBotResourceGenerationOutput;
-
 pub use crate::operation::start_bot_resource_generation::_start_bot_resource_generation_input::StartBotResourceGenerationInput;
+
+pub use crate::operation::start_bot_resource_generation::_start_bot_resource_generation_output::StartBotResourceGenerationOutput;
 
 mod _start_bot_resource_generation_input;
 

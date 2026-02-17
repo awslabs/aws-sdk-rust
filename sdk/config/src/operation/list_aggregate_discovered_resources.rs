@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_aggregate_dis
     }
 }
 
-pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_discovered_resources_output::ListAggregateDiscoveredResourcesOutput;
-
 pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_discovered_resources_input::ListAggregateDiscoveredResourcesInput;
+
+pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_discovered_resources_output::ListAggregateDiscoveredResourcesOutput;
 
 mod _list_aggregate_discovered_resources_input;
 

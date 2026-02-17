@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_inventory::Put
     }
 }
 
-pub use crate::operation::put_inventory::_put_inventory_output::PutInventoryOutput;
-
 pub use crate::operation::put_inventory::_put_inventory_input::PutInventoryInput;
+
+pub use crate::operation::put_inventory::_put_inventory_output::PutInventoryOutput;
 
 mod _put_inventory_input;
 

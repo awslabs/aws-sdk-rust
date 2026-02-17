@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_agent_memor
     }
 }
 
-pub use crate::operation::delete_agent_memory::_delete_agent_memory_output::DeleteAgentMemoryOutput;
-
 pub use crate::operation::delete_agent_memory::_delete_agent_memory_input::DeleteAgentMemoryInput;
+
+pub use crate::operation::delete_agent_memory::_delete_agent_memory_output::DeleteAgentMemoryOutput;
 
 mod _delete_agent_memory_input;
 

@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_s3_buckets::L
     }
 }
 
-pub use crate::operation::list_s3_buckets::_list_s3_buckets_output::ListS3BucketsOutput;
-
 pub use crate::operation::list_s3_buckets::_list_s3_buckets_input::ListS3BucketsInput;
+
+pub use crate::operation::list_s3_buckets::_list_s3_buckets_output::ListS3BucketsOutput;
 
 mod _list_s3_buckets_input;
 

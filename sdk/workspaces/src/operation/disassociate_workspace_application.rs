@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_works
     }
 }
 
-pub use crate::operation::disassociate_workspace_application::_disassociate_workspace_application_output::DisassociateWorkspaceApplicationOutput;
-
 pub use crate::operation::disassociate_workspace_application::_disassociate_workspace_application_input::DisassociateWorkspaceApplicationInput;
+
+pub use crate::operation::disassociate_workspace_application::_disassociate_workspace_application_output::DisassociateWorkspaceApplicationOutput;
 
 mod _disassociate_workspace_application_input;
 

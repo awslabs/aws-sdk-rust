@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_verification::
     }
 }
 
-pub use crate::operation::get_verification::_get_verification_output::GetVerificationOutput;
-
 pub use crate::operation::get_verification::_get_verification_input::GetVerificationInput;
+
+pub use crate::operation::get_verification::_get_verification_output::GetVerificationOutput;
 
 mod _get_verification_input;
 

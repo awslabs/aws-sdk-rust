@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_classifier:
     }
 }
 
-pub use crate::operation::delete_classifier::_delete_classifier_output::DeleteClassifierOutput;
-
 pub use crate::operation::delete_classifier::_delete_classifier_input::DeleteClassifierInput;
+
+pub use crate::operation::delete_classifier::_delete_classifier_output::DeleteClassifierOutput;
 
 mod _delete_classifier_input;
 

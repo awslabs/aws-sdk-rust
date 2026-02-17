@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recording_c
     }
 }
 
-pub use crate::operation::delete_recording_configuration::_delete_recording_configuration_output::DeleteRecordingConfigurationOutput;
-
 pub use crate::operation::delete_recording_configuration::_delete_recording_configuration_input::DeleteRecordingConfigurationInput;
+
+pub use crate::operation::delete_recording_configuration::_delete_recording_configuration_output::DeleteRecordingConfigurationOutput;
 
 mod _delete_recording_configuration_input;
 

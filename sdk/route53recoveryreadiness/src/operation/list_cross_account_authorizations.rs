@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cross_account
     }
 }
 
-pub use crate::operation::list_cross_account_authorizations::_list_cross_account_authorizations_output::ListCrossAccountAuthorizationsOutput;
-
 pub use crate::operation::list_cross_account_authorizations::_list_cross_account_authorizations_input::ListCrossAccountAuthorizationsInput;
+
+pub use crate::operation::list_cross_account_authorizations::_list_cross_account_authorizations_output::ListCrossAccountAuthorizationsOutput;
 
 mod _list_cross_account_authorizations_input;
 

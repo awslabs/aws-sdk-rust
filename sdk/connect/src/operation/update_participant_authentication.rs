@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_participant
     }
 }
 
-pub use crate::operation::update_participant_authentication::_update_participant_authentication_output::UpdateParticipantAuthenticationOutput;
-
 pub use crate::operation::update_participant_authentication::_update_participant_authentication_input::UpdateParticipantAuthenticationInput;
+
+pub use crate::operation::update_participant_authentication::_update_participant_authentication_output::UpdateParticipantAuthenticationOutput;
 
 mod _update_participant_authentication_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_az
     }
 }
 
-pub use crate::operation::update_location_azure_blob::_update_location_azure_blob_output::UpdateLocationAzureBlobOutput;
-
 pub use crate::operation::update_location_azure_blob::_update_location_azure_blob_input::UpdateLocationAzureBlobInput;
+
+pub use crate::operation::update_location_azure_blob::_update_location_azure_blob_output::UpdateLocationAzureBlobOutput;
 
 mod _update_location_azure_blob_input;
 

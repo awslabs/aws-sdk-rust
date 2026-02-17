@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_schema_versio
     }
 }
 
-pub use crate::operation::list_schema_versions::_list_schema_versions_output::ListSchemaVersionsOutput;
-
 pub use crate::operation::list_schema_versions::_list_schema_versions_input::ListSchemaVersionsInput;
+
+pub use crate::operation::list_schema_versions::_list_schema_versions_output::ListSchemaVersionsOutput;
 
 mod _list_schema_versions_input;
 

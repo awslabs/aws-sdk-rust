@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpc_connectio
     }
 }
 
-pub use crate::operation::list_vpc_connections::_list_vpc_connections_output::ListVpcConnectionsOutput;
-
 pub use crate::operation::list_vpc_connections::_list_vpc_connections_input::ListVpcConnectionsInput;
+
+pub use crate::operation::list_vpc_connections::_list_vpc_connections_output::ListVpcConnectionsOutput;
 
 mod _list_vpc_connections_input;
 

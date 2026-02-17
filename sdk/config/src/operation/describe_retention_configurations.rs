@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_retention
     }
 }
 
-pub use crate::operation::describe_retention_configurations::_describe_retention_configurations_output::DescribeRetentionConfigurationsOutput;
-
 pub use crate::operation::describe_retention_configurations::_describe_retention_configurations_input::DescribeRetentionConfigurationsInput;
+
+pub use crate::operation::describe_retention_configurations::_describe_retention_configurations_output::DescribeRetentionConfigurationsOutput;
 
 mod _describe_retention_configurations_input;
 

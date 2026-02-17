@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_response_plan:
     }
 }
 
-pub use crate::operation::get_response_plan::_get_response_plan_output::GetResponsePlanOutput;
-
 pub use crate::operation::get_response_plan::_get_response_plan_input::GetResponsePlanInput;
+
+pub use crate::operation::get_response_plan::_get_response_plan_output::GetResponsePlanOutput;
 
 mod _get_response_plan_input;
 

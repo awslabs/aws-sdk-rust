@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_earth_obser
     }
 }
 
-pub use crate::operation::delete_earth_observation_job::_delete_earth_observation_job_output::DeleteEarthObservationJobOutput;
-
 pub use crate::operation::delete_earth_observation_job::_delete_earth_observation_job_input::DeleteEarthObservationJobInput;
+
+pub use crate::operation::delete_earth_observation_job::_delete_earth_observation_job_output::DeleteEarthObservationJobOutput;
 
 mod _delete_earth_observation_job_input;
 

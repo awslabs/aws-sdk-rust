@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_p
     }
 }
 
-pub use crate::operation::describe_account_policies::_describe_account_policies_output::DescribeAccountPoliciesOutput;
-
 pub use crate::operation::describe_account_policies::_describe_account_policies_input::DescribeAccountPoliciesInput;
+
+pub use crate::operation::describe_account_policies::_describe_account_policies_output::DescribeAccountPoliciesOutput;
 
 mod _describe_account_policies_input;
 

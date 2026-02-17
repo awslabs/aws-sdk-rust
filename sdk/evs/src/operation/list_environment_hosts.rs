@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_h
     }
 }
 
-pub use crate::operation::list_environment_hosts::_list_environment_hosts_output::ListEnvironmentHostsOutput;
-
 pub use crate::operation::list_environment_hosts::_list_environment_hosts_input::ListEnvironmentHostsInput;
+
+pub use crate::operation::list_environment_hosts::_list_environment_hosts_output::ListEnvironmentHostsOutput;
 
 mod _list_environment_hosts_input;
 

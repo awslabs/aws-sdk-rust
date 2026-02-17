@@ -535,9 +535,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_open_cypher_qu
     }
 }
 
-pub use crate::operation::get_open_cypher_query_status::_get_open_cypher_query_status_output::GetOpenCypherQueryStatusOutput;
-
 pub use crate::operation::get_open_cypher_query_status::_get_open_cypher_query_status_input::GetOpenCypherQueryStatusInput;
+
+pub use crate::operation::get_open_cypher_query_status::_get_open_cypher_query_status_output::GetOpenCypherQueryStatusOutput;
 
 mod _get_open_cypher_query_status_input;
 

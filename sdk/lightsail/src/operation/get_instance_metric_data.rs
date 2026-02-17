@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_metri
     }
 }
 
-pub use crate::operation::get_instance_metric_data::_get_instance_metric_data_output::GetInstanceMetricDataOutput;
-
 pub use crate::operation::get_instance_metric_data::_get_instance_metric_data_input::GetInstanceMetricDataInput;
+
+pub use crate::operation::get_instance_metric_data::_get_instance_metric_data_output::GetInstanceMetricDataOutput;
 
 mod _get_instance_metric_data_input;
 

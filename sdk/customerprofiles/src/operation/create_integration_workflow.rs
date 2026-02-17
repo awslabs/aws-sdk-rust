@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_integration
     }
 }
 
-pub use crate::operation::create_integration_workflow::_create_integration_workflow_output::CreateIntegrationWorkflowOutput;
-
 pub use crate::operation::create_integration_workflow::_create_integration_workflow_input::CreateIntegrationWorkflowInput;
+
+pub use crate::operation::create_integration_workflow::_create_integration_workflow_output::CreateIntegrationWorkflowOutput;
 
 mod _create_integration_workflow_input;
 

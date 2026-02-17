@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_client_v
     }
 }
 
-pub use crate::operation::associate_client_vpn_target_network::_associate_client_vpn_target_network_output::AssociateClientVpnTargetNetworkOutput;
-
 pub use crate::operation::associate_client_vpn_target_network::_associate_client_vpn_target_network_input::AssociateClientVpnTargetNetworkInput;
+
+pub use crate::operation::associate_client_vpn_target_network::_associate_client_vpn_target_network_output::AssociateClientVpnTargetNetworkOutput;
 
 mod _associate_client_vpn_target_network_input;
 

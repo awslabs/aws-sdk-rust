@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_volume::Att
     }
 }
 
-pub use crate::operation::attach_volume::_attach_volume_output::AttachVolumeOutput;
-
 pub use crate::operation::attach_volume::_attach_volume_input::AttachVolumeInput;
+
+pub use crate::operation::attach_volume::_attach_volume_output::AttachVolumeOutput;
 
 mod _attach_volume_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_source_from_s3_table_integration::_disassociate_source_from_s3_table_integration_output::DisassociateSourceFromS3TableIntegrationOutput;
-
 pub use crate::operation::disassociate_source_from_s3_table_integration::_disassociate_source_from_s3_table_integration_input::DisassociateSourceFromS3TableIntegrationInput;
+
+pub use crate::operation::disassociate_source_from_s3_table_integration::_disassociate_source_from_s3_table_integration_output::DisassociateSourceFromS3TableIntegrationOutput;
 
 mod _disassociate_source_from_s3_table_integration_input;
 

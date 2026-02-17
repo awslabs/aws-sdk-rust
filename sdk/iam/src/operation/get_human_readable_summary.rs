@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_human_readable
     }
 }
 
-pub use crate::operation::get_human_readable_summary::_get_human_readable_summary_output::GetHumanReadableSummaryOutput;
-
 pub use crate::operation::get_human_readable_summary::_get_human_readable_summary_input::GetHumanReadableSummaryInput;
+
+pub use crate::operation::get_human_readable_summary::_get_human_readable_summary_output::GetHumanReadableSummaryOutput;
 
 mod _get_human_readable_summary_input;
 

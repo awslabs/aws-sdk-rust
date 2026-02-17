@@ -503,9 +503,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_package_versio
     }
 }
 
-pub use crate::operation::get_package_version_asset::_get_package_version_asset_output::GetPackageVersionAssetOutput;
-
 pub use crate::operation::get_package_version_asset::_get_package_version_asset_input::GetPackageVersionAssetInput;
+
+pub use crate::operation::get_package_version_asset::_get_package_version_asset_output::GetPackageVersionAssetOutput;
 
 mod _get_package_version_asset_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flow::Delet
     }
 }
 
-pub use crate::operation::delete_flow::_delete_flow_output::DeleteFlowOutput;
-
 pub use crate::operation::delete_flow::_delete_flow_input::DeleteFlowInput;
+
+pub use crate::operation::delete_flow::_delete_flow_output::DeleteFlowOutput;
 
 mod _delete_flow_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_compute::
     }
 }
 
-pub use crate::operation::describe_compute::_describe_compute_output::DescribeComputeOutput;
-
 pub use crate::operation::describe_compute::_describe_compute_input::DescribeComputeInput;
+
+pub use crate::operation::describe_compute::_describe_compute_output::DescribeComputeOutput;
 
 mod _describe_compute_input;
 

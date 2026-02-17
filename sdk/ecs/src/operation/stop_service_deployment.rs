@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_service_deplo
     }
 }
 
-pub use crate::operation::stop_service_deployment::_stop_service_deployment_output::StopServiceDeploymentOutput;
-
 pub use crate::operation::stop_service_deployment::_stop_service_deployment_input::StopServiceDeploymentInput;
+
+pub use crate::operation::stop_service_deployment::_stop_service_deployment_output::StopServiceDeploymentOutput;
 
 mod _stop_service_deployment_input;
 

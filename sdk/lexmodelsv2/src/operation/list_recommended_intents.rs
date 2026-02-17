@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recommended_i
     }
 }
 
-pub use crate::operation::list_recommended_intents::_list_recommended_intents_output::ListRecommendedIntentsOutput;
-
 pub use crate::operation::list_recommended_intents::_list_recommended_intents_input::ListRecommendedIntentsInput;
+
+pub use crate::operation::list_recommended_intents::_list_recommended_intents_output::ListRecommendedIntentsOutput;
 
 mod _list_recommended_intents_input;
 

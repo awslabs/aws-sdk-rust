@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_gateway_tar
     }
 }
 
-pub use crate::operation::update_gateway_target::_update_gateway_target_output::UpdateGatewayTargetOutput;
-
 pub use crate::operation::update_gateway_target::_update_gateway_target_input::UpdateGatewayTargetInput;
+
+pub use crate::operation::update_gateway_target::_update_gateway_target_output::UpdateGatewayTargetOutput;
 
 mod _update_gateway_target_input;
 

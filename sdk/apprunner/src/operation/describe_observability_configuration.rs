@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_observabi
     }
 }
 
-pub use crate::operation::describe_observability_configuration::_describe_observability_configuration_output::DescribeObservabilityConfigurationOutput;
-
 pub use crate::operation::describe_observability_configuration::_describe_observability_configuration_input::DescribeObservabilityConfigurationInput;
+
+pub use crate::operation::describe_observability_configuration::_describe_observability_configuration_output::DescribeObservabilityConfigurationOutput;
 
 mod _describe_observability_configuration_input;
 

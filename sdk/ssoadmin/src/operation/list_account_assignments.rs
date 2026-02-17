@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_assig
     }
 }
 
-pub use crate::operation::list_account_assignments::_list_account_assignments_output::ListAccountAssignmentsOutput;
-
 pub use crate::operation::list_account_assignments::_list_account_assignments_input::ListAccountAssignmentsInput;
+
+pub use crate::operation::list_account_assignments::_list_account_assignments_output::ListAccountAssignmentsOutput;
 
 mod _list_account_assignments_input;
 

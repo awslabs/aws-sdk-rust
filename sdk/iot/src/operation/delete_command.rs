@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_command::De
     }
 }
 
-pub use crate::operation::delete_command::_delete_command_output::DeleteCommandOutput;
-
 pub use crate::operation::delete_command::_delete_command_input::DeleteCommandInput;
+
+pub use crate::operation::delete_command::_delete_command_output::DeleteCommandOutput;
 
 mod _delete_command_input;
 

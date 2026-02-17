@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_collaboration_privacy_budget_templates::_list_collaboration_privacy_budget_templates_output::ListCollaborationPrivacyBudgetTemplatesOutput;
-
 pub use crate::operation::list_collaboration_privacy_budget_templates::_list_collaboration_privacy_budget_templates_input::ListCollaborationPrivacyBudgetTemplatesInput;
+
+pub use crate::operation::list_collaboration_privacy_budget_templates::_list_collaboration_privacy_budget_templates_output::ListCollaborationPrivacyBudgetTemplatesOutput;
 
 mod _list_collaboration_privacy_budget_templates_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_zonal_shift:
     }
 }
 
-pub use crate::operation::start_zonal_shift::_start_zonal_shift_output::StartZonalShiftOutput;
-
 pub use crate::operation::start_zonal_shift::_start_zonal_shift_input::StartZonalShiftInput;
+
+pub use crate::operation::start_zonal_shift::_start_zonal_shift_output::StartZonalShiftOutput;
 
 mod _start_zonal_shift_input;
 

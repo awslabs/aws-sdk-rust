@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rule_groups
     }
 }
 
-pub use crate::operation::delete_rule_groups_namespace::_delete_rule_groups_namespace_output::DeleteRuleGroupsNamespaceOutput;
-
 pub use crate::operation::delete_rule_groups_namespace::_delete_rule_groups_namespace_input::DeleteRuleGroupsNamespaceInput;
+
+pub use crate::operation::delete_rule_groups_namespace::_delete_rule_groups_namespace_output::DeleteRuleGroupsNamespaceOutput;
 
 mod _delete_rule_groups_namespace_input;
 

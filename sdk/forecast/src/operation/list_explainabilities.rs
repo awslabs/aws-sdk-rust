@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_explainabilit
     }
 }
 
-pub use crate::operation::list_explainabilities::_list_explainabilities_output::ListExplainabilitiesOutput;
-
 pub use crate::operation::list_explainabilities::_list_explainabilities_input::ListExplainabilitiesInput;
+
+pub use crate::operation::list_explainabilities::_list_explainabilities_output::ListExplainabilitiesOutput;
 
 mod _list_explainabilities_input;
 

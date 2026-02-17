@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hsms::ListHsm
     }
 }
 
-pub use crate::operation::list_hsms::_list_hsms_output::ListHsmsOutput;
-
 pub use crate::operation::list_hsms::_list_hsms_input::ListHsmsInput;
+
+pub use crate::operation::list_hsms::_list_hsms_output::ListHsmsOutput;
 
 mod _list_hsms_input;
 

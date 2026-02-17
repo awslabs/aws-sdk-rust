@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metadata_flag:
     }
 }
 
-pub use crate::operation::put_metadata_flag::_put_metadata_flag_output::PutMetadataFlagOutput;
-
 pub use crate::operation::put_metadata_flag::_put_metadata_flag_input::PutMetadataFlagInput;
+
+pub use crate::operation::put_metadata_flag::_put_metadata_flag_output::PutMetadataFlagOutput;
 
 mod _put_metadata_flag_input;
 

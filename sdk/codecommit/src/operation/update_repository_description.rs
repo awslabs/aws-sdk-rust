@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_repository_
     }
 }
 
-pub use crate::operation::update_repository_description::_update_repository_description_output::UpdateRepositoryDescriptionOutput;
-
 pub use crate::operation::update_repository_description::_update_repository_description_input::UpdateRepositoryDescriptionInput;
+
+pub use crate::operation::update_repository_description::_update_repository_description_output::UpdateRepositoryDescriptionOutput;
 
 mod _update_repository_description_input;
 

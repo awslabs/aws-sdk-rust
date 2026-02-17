@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_domain_tra
     }
 }
 
-pub use crate::operation::disable_domain_transfer_lock::_disable_domain_transfer_lock_output::DisableDomainTransferLockOutput;
-
 pub use crate::operation::disable_domain_transfer_lock::_disable_domain_transfer_lock_input::DisableDomainTransferLockInput;
+
+pub use crate::operation::disable_domain_transfer_lock::_disable_domain_transfer_lock_output::DisableDomainTransferLockOutput;
 
 mod _disable_domain_transfer_lock_input;
 

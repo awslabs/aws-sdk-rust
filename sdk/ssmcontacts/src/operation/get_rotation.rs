@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rotation::GetR
     }
 }
 
-pub use crate::operation::get_rotation::_get_rotation_output::GetRotationOutput;
-
 pub use crate::operation::get_rotation::_get_rotation_input::GetRotationInput;
+
+pub use crate::operation::get_rotation::_get_rotation_output::GetRotationOutput;
 
 mod _get_rotation_input;
 

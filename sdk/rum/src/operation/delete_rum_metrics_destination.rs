@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rum_metrics
     }
 }
 
-pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_destination_output::DeleteRumMetricsDestinationOutput;
-
 pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_destination_input::DeleteRumMetricsDestinationInput;
+
+pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_destination_output::DeleteRumMetricsDestinationOutput;
 
 mod _delete_rum_metrics_destination_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_import_tasks:
     }
 }
 
-pub use crate::operation::list_import_tasks::_list_import_tasks_output::ListImportTasksOutput;
-
 pub use crate::operation::list_import_tasks::_list_import_tasks_input::ListImportTasksInput;
+
+pub use crate::operation::list_import_tasks::_list_import_tasks_output::ListImportTasksOutput;
 
 mod _list_import_tasks_input;
 

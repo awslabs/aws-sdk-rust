@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_model_packa
     }
 }
 
-pub use crate::operation::delete_model_package::_delete_model_package_output::DeleteModelPackageOutput;
-
 pub use crate::operation::delete_model_package::_delete_model_package_input::DeleteModelPackageInput;
+
+pub use crate::operation::delete_model_package::_delete_model_package_output::DeleteModelPackageOutput;
 
 mod _delete_model_package_input;
 

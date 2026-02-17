@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_disk::Attac
     }
 }
 
-pub use crate::operation::attach_disk::_attach_disk_output::AttachDiskOutput;
-
 pub use crate::operation::attach_disk::_attach_disk_input::AttachDiskInput;
+
+pub use crate::operation::attach_disk::_attach_disk_output::AttachDiskOutput;
 
 mod _attach_disk_input;
 

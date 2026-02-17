@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_access_loggi
     }
 }
 
-pub use crate::operation::start_access_logging::_start_access_logging_output::StartAccessLoggingOutput;
-
 pub use crate::operation::start_access_logging::_start_access_logging_input::StartAccessLoggingInput;
+
+pub use crate::operation::start_access_logging::_start_access_logging_output::StartAccessLoggingOutput;
 
 mod _start_access_logging_input;
 

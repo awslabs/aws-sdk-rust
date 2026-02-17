@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_transform_job
     }
 }
 
-pub use crate::operation::stop_transform_job::_stop_transform_job_output::StopTransformJobOutput;
-
 pub use crate::operation::stop_transform_job::_stop_transform_job_input::StopTransformJobInput;
+
+pub use crate::operation::stop_transform_job::_stop_transform_job_output::StopTransformJobOutput;
 
 mod _stop_transform_job_input;
 

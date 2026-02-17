@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_readiness_chec
     }
 }
 
-pub use crate::operation::get_readiness_check_resource_status::_get_readiness_check_resource_status_output::GetReadinessCheckResourceStatusOutput;
-
 pub use crate::operation::get_readiness_check_resource_status::_get_readiness_check_resource_status_input::GetReadinessCheckResourceStatusInput;
+
+pub use crate::operation::get_readiness_check_resource_status::_get_readiness_check_resource_status_output::GetReadinessCheckResourceStatusOutput;
 
 mod _get_readiness_check_resource_status_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_enhanced_m
     }
 }
 
-pub use crate::operation::disable_enhanced_monitoring::_disable_enhanced_monitoring_output::DisableEnhancedMonitoringOutput;
-
 pub use crate::operation::disable_enhanced_monitoring::_disable_enhanced_monitoring_input::DisableEnhancedMonitoringInput;
+
+pub use crate::operation::disable_enhanced_monitoring::_disable_enhanced_monitoring_output::DisableEnhancedMonitoringOutput;
 
 mod _disable_enhanced_monitoring_input;
 

@@ -492,9 +492,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_model_with_
     }
 }
 
-pub use crate::operation::invoke_model_with_response_stream::_invoke_model_with_response_stream_output::InvokeModelWithResponseStreamOutput;
-
 pub use crate::operation::invoke_model_with_response_stream::_invoke_model_with_response_stream_input::InvokeModelWithResponseStreamInput;
+
+pub use crate::operation::invoke_model_with_response_stream::_invoke_model_with_response_stream_output::InvokeModelWithResponseStreamOutput;
 
 mod _invoke_model_with_response_stream_input;
 

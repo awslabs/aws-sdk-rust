@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_content_summar
     }
 }
 
-pub use crate::operation::get_content_summary::_get_content_summary_output::GetContentSummaryOutput;
-
 pub use crate::operation::get_content_summary::_get_content_summary_input::GetContentSummaryInput;
+
+pub use crate::operation::get_content_summary::_get_content_summary_output::GetContentSummaryOutput;
 
 mod _get_content_summary_input;
 

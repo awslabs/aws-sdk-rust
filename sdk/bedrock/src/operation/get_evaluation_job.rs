@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evaluation_job
     }
 }
 
-pub use crate::operation::get_evaluation_job::_get_evaluation_job_output::GetEvaluationJobOutput;
-
 pub use crate::operation::get_evaluation_job::_get_evaluation_job_input::GetEvaluationJobInput;
+
+pub use crate::operation::get_evaluation_job::_get_evaluation_job_output::GetEvaluationJobOutput;
 
 mod _get_evaluation_job_input;
 

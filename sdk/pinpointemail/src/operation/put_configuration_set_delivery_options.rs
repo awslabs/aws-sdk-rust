@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configuration_
     }
 }
 
-pub use crate::operation::put_configuration_set_delivery_options::_put_configuration_set_delivery_options_output::PutConfigurationSetDeliveryOptionsOutput;
-
 pub use crate::operation::put_configuration_set_delivery_options::_put_configuration_set_delivery_options_input::PutConfigurationSetDeliveryOptionsInput;
+
+pub use crate::operation::put_configuration_set_delivery_options::_put_configuration_set_delivery_options_output::PutConfigurationSetDeliveryOptionsOutput;
 
 mod _put_configuration_set_delivery_options_input;
 

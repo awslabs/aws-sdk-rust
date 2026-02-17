@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_q_app_session:
     }
 }
 
-pub use crate::operation::get_q_app_session::_get_q_app_session_output::GetQAppSessionOutput;
-
 pub use crate::operation::get_q_app_session::_get_q_app_session_input::GetQAppSessionInput;
+
+pub use crate::operation::get_q_app_session::_get_q_app_session_output::GetQAppSessionOutput;
 
 mod _get_q_app_session_input;
 

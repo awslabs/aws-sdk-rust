@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_domain_conf
     }
 }
 
-pub use crate::operation::cancel_domain_config_change::_cancel_domain_config_change_output::CancelDomainConfigChangeOutput;
-
 pub use crate::operation::cancel_domain_config_change::_cancel_domain_config_change_input::CancelDomainConfigChangeInput;
+
+pub use crate::operation::cancel_domain_config_change::_cancel_domain_config_change_output::CancelDomainConfigChangeOutput;
 
 mod _cancel_domain_config_change_input;
 

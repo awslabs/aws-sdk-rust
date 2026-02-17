@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pipeline_
     }
 }
 
-pub use crate::operation::describe_pipeline_execution::_describe_pipeline_execution_output::DescribePipelineExecutionOutput;
-
 pub use crate::operation::describe_pipeline_execution::_describe_pipeline_execution_input::DescribePipelineExecutionInput;
+
+pub use crate::operation::describe_pipeline_execution::_describe_pipeline_execution_output::DescribePipelineExecutionOutput;
 
 mod _describe_pipeline_execution_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_code_security_
     }
 }
 
-pub use crate::operation::get_code_security_integration::_get_code_security_integration_output::GetCodeSecurityIntegrationOutput;
-
 pub use crate::operation::get_code_security_integration::_get_code_security_integration_input::GetCodeSecurityIntegrationInput;
+
+pub use crate::operation::get_code_security_integration::_get_code_security_integration_output::GetCodeSecurityIntegrationOutput;
 
 mod _get_code_security_integration_input;
 

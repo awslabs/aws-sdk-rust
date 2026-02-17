@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_source_loca
     }
 }
 
-pub use crate::operation::update_source_location::_update_source_location_output::UpdateSourceLocationOutput;
-
 pub use crate::operation::update_source_location::_update_source_location_input::UpdateSourceLocationInput;
+
+pub use crate::operation::update_source_location::_update_source_location_output::UpdateSourceLocationOutput;
 
 mod _update_source_location_input;
 

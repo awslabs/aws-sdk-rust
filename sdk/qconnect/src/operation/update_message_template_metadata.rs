@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_message_tem
     }
 }
 
-pub use crate::operation::update_message_template_metadata::_update_message_template_metadata_output::UpdateMessageTemplateMetadataOutput;
-
 pub use crate::operation::update_message_template_metadata::_update_message_template_metadata_input::UpdateMessageTemplateMetadataInput;
+
+pub use crate::operation::update_message_template_metadata::_update_message_template_metadata_output::UpdateMessageTemplateMetadataOutput;
 
 mod _update_message_template_metadata_input;
 

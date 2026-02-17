@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_live_sources:
     }
 }
 
-pub use crate::operation::list_live_sources::_list_live_sources_output::ListLiveSourcesOutput;
-
 pub use crate::operation::list_live_sources::_list_live_sources_input::ListLiveSourcesInput;
+
+pub use crate::operation::list_live_sources::_list_live_sources_output::ListLiveSourcesOutput;
 
 mod _list_live_sources_input;
 

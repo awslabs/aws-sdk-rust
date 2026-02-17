@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_kx_user::Up
     }
 }
 
-pub use crate::operation::update_kx_user::_update_kx_user_output::UpdateKxUserOutput;
-
 pub use crate::operation::update_kx_user::_update_kx_user_input::UpdateKxUserInput;
+
+pub use crate::operation::update_kx_user::_update_kx_user_output::UpdateKxUserOutput;
 
 mod _update_kx_user_input;
 

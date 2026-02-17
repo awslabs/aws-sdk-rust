@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_p
     }
 }
 
-pub use crate::operation::update_workspace_page::_update_workspace_page_output::UpdateWorkspacePageOutput;
-
 pub use crate::operation::update_workspace_page::_update_workspace_page_input::UpdateWorkspacePageInput;
+
+pub use crate::operation::update_workspace_page::_update_workspace_page_output::UpdateWorkspacePageOutput;
 
 mod _update_workspace_page_input;
 

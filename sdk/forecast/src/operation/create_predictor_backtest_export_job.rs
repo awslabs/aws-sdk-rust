@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_predictor_b
     }
 }
 
-pub use crate::operation::create_predictor_backtest_export_job::_create_predictor_backtest_export_job_output::CreatePredictorBacktestExportJobOutput;
-
 pub use crate::operation::create_predictor_backtest_export_job::_create_predictor_backtest_export_job_input::CreatePredictorBacktestExportJobInput;
+
+pub use crate::operation::create_predictor_backtest_export_job::_create_predictor_backtest_export_job_output::CreatePredictorBacktestExportJobOutput;
 
 mod _create_predictor_backtest_export_job_input;
 

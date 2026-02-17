@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_gateway_tar
     }
 }
 
-pub use crate::operation::create_gateway_target::_create_gateway_target_output::CreateGatewayTargetOutput;
-
 pub use crate::operation::create_gateway_target::_create_gateway_target_input::CreateGatewayTargetInput;
+
+pub use crate::operation::create_gateway_target::_create_gateway_target_output::CreateGatewayTargetOutput;
 
 mod _create_gateway_target_input;
 

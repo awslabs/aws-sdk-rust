@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_game_serv
     }
 }
 
-pub use crate::operation::register_game_server::_register_game_server_output::RegisterGameServerOutput;
-
 pub use crate::operation::register_game_server::_register_game_server_input::RegisterGameServerInput;
+
+pub use crate::operation::register_game_server::_register_game_server_output::RegisterGameServerOutput;
 
 mod _register_game_server_input;
 

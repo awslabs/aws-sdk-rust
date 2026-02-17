@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_destinations:
     }
 }
 
-pub use crate::operation::list_destinations::_list_destinations_output::ListDestinationsOutput;
-
 pub use crate::operation::list_destinations::_list_destinations_input::ListDestinationsInput;
+
+pub use crate::operation::list_destinations::_list_destinations_output::ListDestinationsOutput;
 
 mod _list_destinations_input;
 

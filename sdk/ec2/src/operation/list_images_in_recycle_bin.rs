@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_images_in_rec
     }
 }
 
-pub use crate::operation::list_images_in_recycle_bin::_list_images_in_recycle_bin_output::ListImagesInRecycleBinOutput;
-
 pub use crate::operation::list_images_in_recycle_bin::_list_images_in_recycle_bin_input::ListImagesInRecycleBinInput;
+
+pub use crate::operation::list_images_in_recycle_bin::_list_images_in_recycle_bin_output::ListImagesInRecycleBinOutput;
 
 mod _list_images_in_recycle_bin_input;
 

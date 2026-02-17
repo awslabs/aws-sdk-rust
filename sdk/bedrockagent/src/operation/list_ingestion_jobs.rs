@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ingestion_job
     }
 }
 
-pub use crate::operation::list_ingestion_jobs::_list_ingestion_jobs_output::ListIngestionJobsOutput;
-
 pub use crate::operation::list_ingestion_jobs::_list_ingestion_jobs_input::ListIngestionJobsInput;
+
+pub use crate::operation::list_ingestion_jobs::_list_ingestion_jobs_output::ListIngestionJobsOutput;
 
 mod _list_ingestion_jobs_input;
 

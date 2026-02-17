@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_state_machi
     }
 }
 
-pub use crate::operation::delete_state_machine_alias::_delete_state_machine_alias_output::DeleteStateMachineAliasOutput;
-
 pub use crate::operation::delete_state_machine_alias::_delete_state_machine_alias_input::DeleteStateMachineAliasInput;
+
+pub use crate::operation::delete_state_machine_alias::_delete_state_machine_alias_output::DeleteStateMachineAliasOutput;
 
 mod _delete_state_machine_alias_input;
 

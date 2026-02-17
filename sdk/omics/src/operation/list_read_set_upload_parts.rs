@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_read_set_uplo
     }
 }
 
-pub use crate::operation::list_read_set_upload_parts::_list_read_set_upload_parts_output::ListReadSetUploadPartsOutput;
-
 pub use crate::operation::list_read_set_upload_parts::_list_read_set_upload_parts_input::ListReadSetUploadPartsInput;
+
+pub use crate::operation::list_read_set_upload_parts::_list_read_set_upload_parts_output::ListReadSetUploadPartsOutput;
 
 mod _list_read_set_upload_parts_input;
 

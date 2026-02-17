@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_contact_eva
     }
 }
 
-pub use crate::operation::delete_contact_evaluation::_delete_contact_evaluation_output::DeleteContactEvaluationOutput;
-
 pub use crate::operation::delete_contact_evaluation::_delete_contact_evaluation_input::DeleteContactEvaluationInput;
+
+pub use crate::operation::delete_contact_evaluation::_delete_contact_evaluation_output::DeleteContactEvaluationOutput;
 
 mod _delete_contact_evaluation_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_instance_event_notification_attributes::_describe_instance_event_notification_attributes_output::DescribeInstanceEventNotificationAttributesOutput;
-
 pub use crate::operation::describe_instance_event_notification_attributes::_describe_instance_event_notification_attributes_input::DescribeInstanceEventNotificationAttributesInput;
+
+pub use crate::operation::describe_instance_event_notification_attributes::_describe_instance_event_notification_attributes_output::DescribeInstanceEventNotificationAttributesOutput;
 
 mod _describe_instance_event_notification_attributes_input;
 

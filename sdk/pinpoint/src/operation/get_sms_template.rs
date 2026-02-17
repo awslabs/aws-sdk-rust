@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sms_template::
     }
 }
 
-pub use crate::operation::get_sms_template::_get_sms_template_output::GetSmsTemplateOutput;
-
 pub use crate::operation::get_sms_template::_get_sms_template_input::GetSmsTemplateInput;
+
+pub use crate::operation::get_sms_template::_get_sms_template_output::GetSmsTemplateOutput;
 
 mod _get_sms_template_input;
 

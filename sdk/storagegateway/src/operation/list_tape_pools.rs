@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tape_pools::L
     }
 }
 
-pub use crate::operation::list_tape_pools::_list_tape_pools_output::ListTapePoolsOutput;
-
 pub use crate::operation::list_tape_pools::_list_tape_pools_input::ListTapePoolsInput;
+
+pub use crate::operation::list_tape_pools::_list_tape_pools_output::ListTapePoolsOutput;
 
 mod _list_tape_pools_input;
 

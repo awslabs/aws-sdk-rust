@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resolve_app_versio
     }
 }
 
-pub use crate::operation::resolve_app_version_resources::_resolve_app_version_resources_output::ResolveAppVersionResourcesOutput;
-
 pub use crate::operation::resolve_app_version_resources::_resolve_app_version_resources_input::ResolveAppVersionResourcesInput;
+
+pub use crate::operation::resolve_app_version_resources::_resolve_app_version_resources_output::ResolveAppVersionResourcesOutput;
 
 mod _resolve_app_version_resources_input;
 

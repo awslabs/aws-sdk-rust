@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_journey::Up
     }
 }
 
-pub use crate::operation::update_journey::_update_journey_output::UpdateJourneyOutput;
-
 pub use crate::operation::update_journey::_update_journey_input::UpdateJourneyInput;
+
+pub use crate::operation::update_journey::_update_journey_output::UpdateJourneyOutput;
 
 mod _update_journey_input;
 

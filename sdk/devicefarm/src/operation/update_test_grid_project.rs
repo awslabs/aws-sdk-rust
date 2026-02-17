@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_test_grid_p
     }
 }
 
-pub use crate::operation::update_test_grid_project::_update_test_grid_project_output::UpdateTestGridProjectOutput;
-
 pub use crate::operation::update_test_grid_project::_update_test_grid_project_input::UpdateTestGridProjectInput;
+
+pub use crate::operation::update_test_grid_project::_update_test_grid_project_output::UpdateTestGridProjectOutput;
 
 mod _update_test_grid_project_input;
 

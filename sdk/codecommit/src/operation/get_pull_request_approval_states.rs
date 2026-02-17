@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pull_request_a
     }
 }
 
-pub use crate::operation::get_pull_request_approval_states::_get_pull_request_approval_states_output::GetPullRequestApprovalStatesOutput;
-
 pub use crate::operation::get_pull_request_approval_states::_get_pull_request_approval_states_input::GetPullRequestApprovalStatesInput;
+
+pub use crate::operation::get_pull_request_approval_states::_get_pull_request_approval_states_output::GetPullRequestApprovalStatesOutput;
 
 mod _get_pull_request_approval_states_input;
 

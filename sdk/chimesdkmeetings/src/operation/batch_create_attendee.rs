@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_atten
     }
 }
 
-pub use crate::operation::batch_create_attendee::_batch_create_attendee_output::BatchCreateAttendeeOutput;
-
 pub use crate::operation::batch_create_attendee::_batch_create_attendee_input::BatchCreateAttendeeInput;
+
+pub use crate::operation::batch_create_attendee::_batch_create_attendee_output::BatchCreateAttendeeOutput;
 
 mod _batch_create_attendee_input;
 

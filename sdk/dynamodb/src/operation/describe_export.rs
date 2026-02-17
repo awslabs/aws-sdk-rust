@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_export::D
     }
 }
 
-pub use crate::operation::describe_export::_describe_export_output::DescribeExportOutput;
-
 pub use crate::operation::describe_export::_describe_export_input::DescribeExportInput;
+
+pub use crate::operation::describe_export::_describe_export_output::DescribeExportOutput;
 
 mod _describe_export_input;
 

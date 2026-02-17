@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_column_stat
     }
 }
 
-pub use crate::operation::delete_column_statistics_task_settings::_delete_column_statistics_task_settings_output::DeleteColumnStatisticsTaskSettingsOutput;
-
 pub use crate::operation::delete_column_statistics_task_settings::_delete_column_statistics_task_settings_input::DeleteColumnStatisticsTaskSettingsInput;
+
+pub use crate::operation::delete_column_statistics_task_settings::_delete_column_statistics_task_settings_output::DeleteColumnStatisticsTaskSettingsOutput;
 
 mod _delete_column_statistics_task_settings_input;
 

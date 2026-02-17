@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_worker::GetWor
     }
 }
 
-pub use crate::operation::get_worker::_get_worker_output::GetWorkerOutput;
-
 pub use crate::operation::get_worker::_get_worker_input::GetWorkerInput;
+
+pub use crate::operation::get_worker::_get_worker_output::GetWorkerOutput;
 
 mod _get_worker_input;
 

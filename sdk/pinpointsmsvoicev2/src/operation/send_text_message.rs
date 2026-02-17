@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_text_message:
     }
 }
 
-pub use crate::operation::send_text_message::_send_text_message_output::SendTextMessageOutput;
-
 pub use crate::operation::send_text_message::_send_text_message_input::SendTextMessageInput;
+
+pub use crate::operation::send_text_message::_send_text_message_output::SendTextMessageOutput;
 
 mod _send_text_message_input;
 

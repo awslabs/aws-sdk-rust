@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_permission_as
     }
 }
 
-pub use crate::operation::list_permission_associations::_list_permission_associations_output::ListPermissionAssociationsOutput;
-
 pub use crate::operation::list_permission_associations::_list_permission_associations_input::ListPermissionAssociationsInput;
+
+pub use crate::operation::list_permission_associations::_list_permission_associations_output::ListPermissionAssociationsOutput;
 
 mod _list_permission_associations_input;
 

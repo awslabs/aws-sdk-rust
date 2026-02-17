@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_settin
     }
 }
 
-pub use crate::operation::create_user_settings::_create_user_settings_output::CreateUserSettingsOutput;
-
 pub use crate::operation::create_user_settings::_create_user_settings_input::CreateUserSettingsInput;
+
+pub use crate::operation::create_user_settings::_create_user_settings_output::CreateUserSettingsOutput;
 
 mod _create_user_settings_input;
 

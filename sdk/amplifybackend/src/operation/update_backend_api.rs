@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_backend_api
     }
 }
 
-pub use crate::operation::update_backend_api::_update_backend_api_output::UpdateBackendApiOutput;
-
 pub use crate::operation::update_backend_api::_update_backend_api_input::UpdateBackendApiInput;
+
+pub use crate::operation::update_backend_api::_update_backend_api_output::UpdateBackendApiOutput;
 
 mod _update_backend_api_input;
 

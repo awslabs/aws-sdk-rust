@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_supplementa
     }
 }
 
-pub use crate::operation::delete_supplemental_tax_registration::_delete_supplemental_tax_registration_output::DeleteSupplementalTaxRegistrationOutput;
-
 pub use crate::operation::delete_supplemental_tax_registration::_delete_supplemental_tax_registration_input::DeleteSupplementalTaxRegistrationInput;
+
+pub use crate::operation::delete_supplemental_tax_registration::_delete_supplemental_tax_registration_output::DeleteSupplementalTaxRegistrationOutput;
 
 mod _delete_supplemental_tax_registration_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_predefined_
     }
 }
 
-pub use crate::operation::delete_predefined_attribute::_delete_predefined_attribute_output::DeletePredefinedAttributeOutput;
-
 pub use crate::operation::delete_predefined_attribute::_delete_predefined_attribute_input::DeletePredefinedAttributeInput;
+
+pub use crate::operation::delete_predefined_attribute::_delete_predefined_attribute_output::DeletePredefinedAttributeOutput;
 
 mod _delete_predefined_attribute_input;
 

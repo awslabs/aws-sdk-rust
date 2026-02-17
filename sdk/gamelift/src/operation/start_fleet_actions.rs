@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_fleet_action
     }
 }
 
-pub use crate::operation::start_fleet_actions::_start_fleet_actions_output::StartFleetActionsOutput;
-
 pub use crate::operation::start_fleet_actions::_start_fleet_actions_input::StartFleetActionsInput;
+
+pub use crate::operation::start_fleet_actions::_start_fleet_actions_output::StartFleetActionsOutput;
 
 mod _start_fleet_actions_input;
 

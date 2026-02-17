@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_autonomous_vi
     }
 }
 
-pub use crate::operation::list_autonomous_virtual_machines::_list_autonomous_virtual_machines_output::ListAutonomousVirtualMachinesOutput;
-
 pub use crate::operation::list_autonomous_virtual_machines::_list_autonomous_virtual_machines_input::ListAutonomousVirtualMachinesInput;
+
+pub use crate::operation::list_autonomous_virtual_machines::_list_autonomous_virtual_machines_output::ListAutonomousVirtualMachinesOutput;
 
 mod _list_autonomous_virtual_machines_input;
 

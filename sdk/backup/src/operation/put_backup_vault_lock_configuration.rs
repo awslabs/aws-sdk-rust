@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_backup_vault_l
     }
 }
 
-pub use crate::operation::put_backup_vault_lock_configuration::_put_backup_vault_lock_configuration_output::PutBackupVaultLockConfigurationOutput;
-
 pub use crate::operation::put_backup_vault_lock_configuration::_put_backup_vault_lock_configuration_input::PutBackupVaultLockConfigurationInput;
+
+pub use crate::operation::put_backup_vault_lock_configuration::_put_backup_vault_lock_configuration_output::PutBackupVaultLockConfigurationOutput;
 
 mod _put_backup_vault_lock_configuration_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rerank::RerankErro
     }
 }
 
-pub use crate::operation::rerank::_rerank_output::RerankOutput;
-
 pub use crate::operation::rerank::_rerank_input::RerankInput;
+
+pub use crate::operation::rerank::_rerank_output::RerankOutput;
 
 mod _rerank_input;
 

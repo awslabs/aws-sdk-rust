@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mesh::Des
     }
 }
 
-pub use crate::operation::describe_mesh::_describe_mesh_output::DescribeMeshOutput;
-
 pub use crate::operation::describe_mesh::_describe_mesh_input::DescribeMeshInput;
+
+pub use crate::operation::describe_mesh::_describe_mesh_output::DescribeMeshOutput;
 
 mod _describe_mesh_input;
 

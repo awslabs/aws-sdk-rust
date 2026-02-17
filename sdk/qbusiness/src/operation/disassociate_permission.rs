@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_permi
     }
 }
 
-pub use crate::operation::disassociate_permission::_disassociate_permission_output::DisassociatePermissionOutput;
-
 pub use crate::operation::disassociate_permission::_disassociate_permission_input::DisassociatePermissionInput;
+
+pub use crate::operation::disassociate_permission::_disassociate_permission_output::DisassociatePermissionOutput;
 
 mod _disassociate_permission_input;
 

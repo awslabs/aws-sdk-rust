@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_buses::
     }
 }
 
-pub use crate::operation::list_event_buses::_list_event_buses_output::ListEventBusesOutput;
-
 pub use crate::operation::list_event_buses::_list_event_buses_input::ListEventBusesInput;
+
+pub use crate::operation::list_event_buses::_list_event_buses_output::ListEventBusesOutput;
 
 mod _list_event_buses_input;
 

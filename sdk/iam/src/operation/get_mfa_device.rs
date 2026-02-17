@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mfa_device::Ge
     }
 }
 
-pub use crate::operation::get_mfa_device::_get_mfa_device_output::GetMfaDeviceOutput;
-
 pub use crate::operation::get_mfa_device::_get_mfa_device_input::GetMfaDeviceInput;
+
+pub use crate::operation::get_mfa_device::_get_mfa_device_output::GetMfaDeviceOutput;
 
 mod _get_mfa_device_input;
 

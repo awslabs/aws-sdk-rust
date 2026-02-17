@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_virtual_nod
     }
 }
 
-pub use crate::operation::create_virtual_node::_create_virtual_node_output::CreateVirtualNodeOutput;
-
 pub use crate::operation::create_virtual_node::_create_virtual_node_input::CreateVirtualNodeInput;
+
+pub use crate::operation::create_virtual_node::_create_virtual_node_output::CreateVirtualNodeOutput;
 
 mod _create_virtual_node_input;
 

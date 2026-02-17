@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_ipam_policy
     }
 }
 
-pub use crate::operation::enable_ipam_policy::_enable_ipam_policy_output::EnableIpamPolicyOutput;
-
 pub use crate::operation::enable_ipam_policy::_enable_ipam_policy_input::EnableIpamPolicyInput;
+
+pub use crate::operation::enable_ipam_policy::_enable_ipam_policy_output::EnableIpamPolicyOutput;
 
 mod _enable_ipam_policy_input;
 

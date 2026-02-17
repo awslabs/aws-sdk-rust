@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprecate_workflow
     }
 }
 
-pub use crate::operation::deprecate_workflow_type::_deprecate_workflow_type_output::DeprecateWorkflowTypeOutput;
-
 pub use crate::operation::deprecate_workflow_type::_deprecate_workflow_type_input::DeprecateWorkflowTypeInput;
+
+pub use crate::operation::deprecate_workflow_type::_deprecate_workflow_type_output::DeprecateWorkflowTypeOutput;
 
 mod _deprecate_workflow_type_input;
 

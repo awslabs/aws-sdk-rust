@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_route::Rep
     }
 }
 
-pub use crate::operation::replace_route::_replace_route_output::ReplaceRouteOutput;
-
 pub use crate::operation::replace_route::_replace_route_input::ReplaceRouteInput;
+
+pub use crate::operation::replace_route::_replace_route_output::ReplaceRouteOutput;
 
 mod _replace_route_input;
 

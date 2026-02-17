@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_runtime_
     }
 }
 
-pub use crate::operation::get_agent_runtime_endpoint::_get_agent_runtime_endpoint_output::GetAgentRuntimeEndpointOutput;
-
 pub use crate::operation::get_agent_runtime_endpoint::_get_agent_runtime_endpoint_input::GetAgentRuntimeEndpointInput;
+
+pub use crate::operation::get_agent_runtime_endpoint::_get_agent_runtime_endpoint_output::GetAgentRuntimeEndpointOutput;
 
 mod _get_agent_runtime_endpoint_input;
 

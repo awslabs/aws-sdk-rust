@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_ipam_organi
     }
 }
 
-pub use crate::operation::enable_ipam_organization_admin_account::_enable_ipam_organization_admin_account_output::EnableIpamOrganizationAdminAccountOutput;
-
 pub use crate::operation::enable_ipam_organization_admin_account::_enable_ipam_organization_admin_account_input::EnableIpamOrganizationAdminAccountInput;
+
+pub use crate::operation::enable_ipam_organization_admin_account::_enable_ipam_organization_admin_account_output::EnableIpamOrganizationAdminAccountOutput;
 
 mod _enable_ipam_organization_admin_account_input;
 

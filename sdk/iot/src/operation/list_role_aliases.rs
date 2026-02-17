@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_role_aliases:
     }
 }
 
-pub use crate::operation::list_role_aliases::_list_role_aliases_output::ListRoleAliasesOutput;
-
 pub use crate::operation::list_role_aliases::_list_role_aliases_input::ListRoleAliasesInput;
+
+pub use crate::operation::list_role_aliases::_list_role_aliases_output::ListRoleAliasesOutput;
 
 mod _list_role_aliases_input;
 

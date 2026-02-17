@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_domain_auto
     }
 }
 
-pub use crate::operation::enable_domain_auto_renew::_enable_domain_auto_renew_output::EnableDomainAutoRenewOutput;
-
 pub use crate::operation::enable_domain_auto_renew::_enable_domain_auto_renew_input::EnableDomainAutoRenewInput;
+
+pub use crate::operation::enable_domain_auto_renew::_enable_domain_auto_renew_output::EnableDomainAutoRenewOutput;
 
 mod _enable_domain_auto_renew_input;
 

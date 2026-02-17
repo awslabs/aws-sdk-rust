@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_budgets::List
     }
 }
 
-pub use crate::operation::list_budgets::_list_budgets_output::ListBudgetsOutput;
-
 pub use crate::operation::list_budgets::_list_budgets_input::ListBudgetsInput;
+
+pub use crate::operation::list_budgets::_list_budgets_output::ListBudgetsOutput;
 
 mod _list_budgets_input;
 

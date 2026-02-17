@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_external_mo
     }
 }
 
-pub use crate::operation::delete_external_model::_delete_external_model_output::DeleteExternalModelOutput;
-
 pub use crate::operation::delete_external_model::_delete_external_model_input::DeleteExternalModelInput;
+
+pub use crate::operation::delete_external_model::_delete_external_model_output::DeleteExternalModelOutput;
 
 mod _delete_external_model_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workload::C
     }
 }
 
-pub use crate::operation::create_workload::_create_workload_output::CreateWorkloadOutput;
-
 pub use crate::operation::create_workload::_create_workload_input::CreateWorkloadInput;
+
+pub use crate::operation::create_workload::_create_workload_output::CreateWorkloadOutput;
 
 mod _create_workload_input;
 

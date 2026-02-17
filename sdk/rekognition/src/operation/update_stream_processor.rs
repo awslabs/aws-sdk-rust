@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stream_proc
     }
 }
 
-pub use crate::operation::update_stream_processor::_update_stream_processor_output::UpdateStreamProcessorOutput;
-
 pub use crate::operation::update_stream_processor::_update_stream_processor_input::UpdateStreamProcessorInput;
+
+pub use crate::operation::update_stream_processor::_update_stream_processor_output::UpdateStreamProcessorOutput;
 
 mod _update_stream_processor_input;
 

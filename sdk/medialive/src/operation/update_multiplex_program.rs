@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_multiplex_p
     }
 }
 
-pub use crate::operation::update_multiplex_program::_update_multiplex_program_output::UpdateMultiplexProgramOutput;
-
 pub use crate::operation::update_multiplex_program::_update_multiplex_program_input::UpdateMultiplexProgramInput;
+
+pub use crate::operation::update_multiplex_program::_update_multiplex_program_output::UpdateMultiplexProgramOutput;
 
 mod _update_multiplex_program_input;
 

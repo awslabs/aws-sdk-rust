@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_analyzer::GetA
     }
 }
 
-pub use crate::operation::get_analyzer::_get_analyzer_output::GetAnalyzerOutput;
-
 pub use crate::operation::get_analyzer::_get_analyzer_input::GetAnalyzerInput;
+
+pub use crate::operation::get_analyzer::_get_analyzer_output::GetAnalyzerOutput;
 
 mod _get_analyzer_input;
 

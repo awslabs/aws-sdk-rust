@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_chat_respon
     }
 }
 
-pub use crate::operation::create_chat_response_configuration::_create_chat_response_configuration_output::CreateChatResponseConfigurationOutput;
-
 pub use crate::operation::create_chat_response_configuration::_create_chat_response_configuration_input::CreateChatResponseConfigurationInput;
+
+pub use crate::operation::create_chat_response_configuration::_create_chat_response_configuration_output::CreateChatResponseConfigurationOutput;
 
 mod _create_chat_response_configuration_input;
 

@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_point::
     }
 }
 
-pub use crate::operation::get_access_point::_get_access_point_output::GetAccessPointOutput;
-
 pub use crate::operation::get_access_point::_get_access_point_input::GetAccessPointInput;
+
+pub use crate::operation::get_access_point::_get_access_point_output::GetAccessPointOutput;
 
 mod _get_access_point_input;
 

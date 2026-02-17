@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_attachment_routing_policy_associations::_list_attachment_routing_policy_associations_output::ListAttachmentRoutingPolicyAssociationsOutput;
-
 pub use crate::operation::list_attachment_routing_policy_associations::_list_attachment_routing_policy_associations_input::ListAttachmentRoutingPolicyAssociationsInput;
+
+pub use crate::operation::list_attachment_routing_policy_associations::_list_attachment_routing_policy_associations_output::ListAttachmentRoutingPolicyAssociationsOutput;
 
 mod _list_attachment_routing_policy_associations_input;
 

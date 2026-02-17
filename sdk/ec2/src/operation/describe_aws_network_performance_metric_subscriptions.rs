@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_aws_network_performance_metric_subscriptions::_describe_aws_network_performance_metric_subscriptions_output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput;
-
 pub use crate::operation::describe_aws_network_performance_metric_subscriptions::_describe_aws_network_performance_metric_subscriptions_input::DescribeAwsNetworkPerformanceMetricSubscriptionsInput;
+
+pub use crate::operation::describe_aws_network_performance_metric_subscriptions::_describe_aws_network_performance_metric_subscriptions_output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput;
 
 mod _describe_aws_network_performance_metric_subscriptions_input;
 

@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_plan::Updat
     }
 }
 
-pub use crate::operation::update_plan::_update_plan_output::UpdatePlanOutput;
-
 pub use crate::operation::update_plan::_update_plan_input::UpdatePlanInput;
+
+pub use crate::operation::update_plan::_update_plan_output::UpdatePlanOutput;
 
 mod _update_plan_input;
 

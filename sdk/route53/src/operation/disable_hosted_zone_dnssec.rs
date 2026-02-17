@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_hosted_zon
     }
 }
 
-pub use crate::operation::disable_hosted_zone_dnssec::_disable_hosted_zone_dnssec_output::DisableHostedZoneDnssecOutput;
-
 pub use crate::operation::disable_hosted_zone_dnssec::_disable_hosted_zone_dnssec_input::DisableHostedZoneDnssecInput;
+
+pub use crate::operation::disable_hosted_zone_dnssec::_disable_hosted_zone_dnssec_output::DisableHostedZoneDnssecOutput;
 
 mod _disable_hosted_zone_dnssec_input;
 

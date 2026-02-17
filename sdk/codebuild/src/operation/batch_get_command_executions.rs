@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_command_
     }
 }
 
-pub use crate::operation::batch_get_command_executions::_batch_get_command_executions_output::BatchGetCommandExecutionsOutput;
-
 pub use crate::operation::batch_get_command_executions::_batch_get_command_executions_input::BatchGetCommandExecutionsInput;
+
+pub use crate::operation::batch_get_command_executions::_batch_get_command_executions_output::BatchGetCommandExecutionsOutput;
 
 mod _batch_get_command_executions_input;
 

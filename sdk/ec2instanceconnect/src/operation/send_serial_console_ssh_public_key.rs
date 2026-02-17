@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_serial_consol
     }
 }
 
-pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_console_ssh_public_key_output::SendSerialConsoleSshPublicKeyOutput;
-
 pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_console_ssh_public_key_input::SendSerialConsoleSshPublicKeyInput;
+
+pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_console_ssh_public_key_output::SendSerialConsoleSshPublicKeyOutput;
 
 mod _send_serial_console_ssh_public_key_input;
 

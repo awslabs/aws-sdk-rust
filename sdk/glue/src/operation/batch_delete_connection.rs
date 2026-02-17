@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_conne
     }
 }
 
-pub use crate::operation::batch_delete_connection::_batch_delete_connection_output::BatchDeleteConnectionOutput;
-
 pub use crate::operation::batch_delete_connection::_batch_delete_connection_input::BatchDeleteConnectionInput;
+
+pub use crate::operation::batch_delete_connection::_batch_delete_connection_output::BatchDeleteConnectionOutput;
 
 mod _batch_delete_connection_input;
 

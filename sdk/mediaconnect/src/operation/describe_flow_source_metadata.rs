@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flow_sour
     }
 }
 
-pub use crate::operation::describe_flow_source_metadata::_describe_flow_source_metadata_output::DescribeFlowSourceMetadataOutput;
-
 pub use crate::operation::describe_flow_source_metadata::_describe_flow_source_metadata_input::DescribeFlowSourceMetadataInput;
+
+pub use crate::operation::describe_flow_source_metadata::_describe_flow_source_metadata_output::DescribeFlowSourceMetadataOutput;
 
 mod _describe_flow_source_metadata_input;
 

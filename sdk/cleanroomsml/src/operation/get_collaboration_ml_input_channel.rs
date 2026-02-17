@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_collaboration_
     }
 }
 
-pub use crate::operation::get_collaboration_ml_input_channel::_get_collaboration_ml_input_channel_output::GetCollaborationMlInputChannelOutput;
-
 pub use crate::operation::get_collaboration_ml_input_channel::_get_collaboration_ml_input_channel_input::GetCollaborationMlInputChannelInput;
+
+pub use crate::operation::get_collaboration_ml_input_channel::_get_collaboration_ml_input_channel_output::GetCollaborationMlInputChannelOutput;
 
 mod _get_collaboration_ml_input_channel_input;
 

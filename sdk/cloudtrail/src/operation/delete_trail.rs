@@ -474,9 +474,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trail::Dele
     }
 }
 
-pub use crate::operation::delete_trail::_delete_trail_output::DeleteTrailOutput;
-
 pub use crate::operation::delete_trail::_delete_trail_input::DeleteTrailInput;
+
+pub use crate::operation::delete_trail::_delete_trail_output::DeleteTrailOutput;
 
 mod _delete_trail_input;
 

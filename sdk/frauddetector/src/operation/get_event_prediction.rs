@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_predicti
     }
 }
 
-pub use crate::operation::get_event_prediction::_get_event_prediction_output::GetEventPredictionOutput;
-
 pub use crate::operation::get_event_prediction::_get_event_prediction_input::GetEventPredictionInput;
+
+pub use crate::operation::get_event_prediction::_get_event_prediction_output::GetEventPredictionOutput;
 
 mod _get_event_prediction_input;
 

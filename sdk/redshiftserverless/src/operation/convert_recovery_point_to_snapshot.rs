@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::convert_recovery_p
     }
 }
 
-pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_point_to_snapshot_output::ConvertRecoveryPointToSnapshotOutput;
-
 pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_point_to_snapshot_input::ConvertRecoveryPointToSnapshotInput;
+
+pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_point_to_snapshot_output::ConvertRecoveryPointToSnapshotOutput;
 
 mod _convert_recovery_point_to_snapshot_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_runtime_log_co
     }
 }
 
-pub use crate::operation::get_runtime_log_configuration::_get_runtime_log_configuration_output::GetRuntimeLogConfigurationOutput;
-
 pub use crate::operation::get_runtime_log_configuration::_get_runtime_log_configuration_input::GetRuntimeLogConfigurationInput;
+
+pub use crate::operation::get_runtime_log_configuration::_get_runtime_log_configuration_output::GetRuntimeLogConfigurationOutput;
 
 mod _get_runtime_log_configuration_input;
 

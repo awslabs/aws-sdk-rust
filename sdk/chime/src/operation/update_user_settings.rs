@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_settin
     }
 }
 
-pub use crate::operation::update_user_settings::_update_user_settings_output::UpdateUserSettingsOutput;
-
 pub use crate::operation::update_user_settings::_update_user_settings_input::UpdateUserSettingsInput;
+
+pub use crate::operation::update_user_settings::_update_user_settings_output::UpdateUserSettingsOutput;
 
 mod _update_user_settings_input;
 

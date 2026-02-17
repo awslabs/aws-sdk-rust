@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_plugin::Del
     }
 }
 
-pub use crate::operation::delete_plugin::_delete_plugin_output::DeletePluginOutput;
-
 pub use crate::operation::delete_plugin::_delete_plugin_input::DeletePluginInput;
+
+pub use crate::operation::delete_plugin::_delete_plugin_output::DeletePluginOutput;
 
 mod _delete_plugin_input;
 

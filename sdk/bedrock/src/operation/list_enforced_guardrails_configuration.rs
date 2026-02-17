@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_enforced_guar
     }
 }
 
-pub use crate::operation::list_enforced_guardrails_configuration::_list_enforced_guardrails_configuration_output::ListEnforcedGuardrailsConfigurationOutput;
-
 pub use crate::operation::list_enforced_guardrails_configuration::_list_enforced_guardrails_configuration_input::ListEnforcedGuardrailsConfigurationInput;
+
+pub use crate::operation::list_enforced_guardrails_configuration::_list_enforced_guardrails_configuration_output::ListEnforcedGuardrailsConfigurationOutput;
 
 mod _list_enforced_guardrails_configuration_input;
 

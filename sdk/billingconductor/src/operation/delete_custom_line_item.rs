@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_line
     }
 }
 
-pub use crate::operation::delete_custom_line_item::_delete_custom_line_item_output::DeleteCustomLineItemOutput;
-
 pub use crate::operation::delete_custom_line_item::_delete_custom_line_item_input::DeleteCustomLineItemInput;
+
+pub use crate::operation::delete_custom_line_item::_delete_custom_line_item_output::DeleteCustomLineItemOutput;
 
 mod _delete_custom_line_item_input;
 

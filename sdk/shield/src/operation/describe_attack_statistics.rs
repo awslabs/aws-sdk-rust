@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_attack_st
     }
 }
 
-pub use crate::operation::describe_attack_statistics::_describe_attack_statistics_output::DescribeAttackStatisticsOutput;
-
 pub use crate::operation::describe_attack_statistics::_describe_attack_statistics_input::DescribeAttackStatisticsInput;
+
+pub use crate::operation::describe_attack_statistics::_describe_attack_statistics_output::DescribeAttackStatisticsOutput;
 
 mod _describe_attack_statistics_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_savings_plans_
     }
 }
 
-pub use crate::operation::get_savings_plans_purchase_recommendation::_get_savings_plans_purchase_recommendation_output::GetSavingsPlansPurchaseRecommendationOutput;
-
 pub use crate::operation::get_savings_plans_purchase_recommendation::_get_savings_plans_purchase_recommendation_input::GetSavingsPlansPurchaseRecommendationInput;
+
+pub use crate::operation::get_savings_plans_purchase_recommendation::_get_savings_plans_purchase_recommendation_output::GetSavingsPlansPurchaseRecommendationOutput;
 
 mod _get_savings_plans_purchase_recommendation_input;
 

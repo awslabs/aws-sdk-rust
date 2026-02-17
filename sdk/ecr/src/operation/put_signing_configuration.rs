@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_signing_config
     }
 }
 
-pub use crate::operation::put_signing_configuration::_put_signing_configuration_output::PutSigningConfigurationOutput;
-
 pub use crate::operation::put_signing_configuration::_put_signing_configuration_input::PutSigningConfigurationInput;
+
+pub use crate::operation::put_signing_configuration::_put_signing_configuration_output::PutSigningConfigurationOutput;
 
 mod _put_signing_configuration_input;
 

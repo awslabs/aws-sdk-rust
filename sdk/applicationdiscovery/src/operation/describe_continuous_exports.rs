@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_continuou
     }
 }
 
-pub use crate::operation::describe_continuous_exports::_describe_continuous_exports_output::DescribeContinuousExportsOutput;
-
 pub use crate::operation::describe_continuous_exports::_describe_continuous_exports_input::DescribeContinuousExportsInput;
+
+pub use crate::operation::describe_continuous_exports::_describe_continuous_exports_output::DescribeContinuousExportsOutput;
 
 mod _describe_continuous_exports_input;
 

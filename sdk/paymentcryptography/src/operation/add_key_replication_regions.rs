@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_key_replicatio
     }
 }
 
-pub use crate::operation::add_key_replication_regions::_add_key_replication_regions_output::AddKeyReplicationRegionsOutput;
-
 pub use crate::operation::add_key_replication_regions::_add_key_replication_regions_input::AddKeyReplicationRegionsInput;
+
+pub use crate::operation::add_key_replication_regions::_add_key_replication_regions_output::AddKeyReplicationRegionsOutput;
 
 mod _add_key_replication_regions_input;
 

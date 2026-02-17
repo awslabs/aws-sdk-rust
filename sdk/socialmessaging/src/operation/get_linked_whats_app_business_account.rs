@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_linked_whats_a
     }
 }
 
-pub use crate::operation::get_linked_whats_app_business_account::_get_linked_whats_app_business_account_output::GetLinkedWhatsAppBusinessAccountOutput;
-
 pub use crate::operation::get_linked_whats_app_business_account::_get_linked_whats_app_business_account_input::GetLinkedWhatsAppBusinessAccountInput;
+
+pub use crate::operation::get_linked_whats_app_business_account::_get_linked_whats_app_business_account_output::GetLinkedWhatsAppBusinessAccountOutput;
 
 mod _get_linked_whats_app_business_account_input;
 

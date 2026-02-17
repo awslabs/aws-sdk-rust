@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_custom_data_i
     }
 }
 
-pub use crate::operation::test_custom_data_identifier::_test_custom_data_identifier_output::TestCustomDataIdentifierOutput;
-
 pub use crate::operation::test_custom_data_identifier::_test_custom_data_identifier_input::TestCustomDataIdentifierInput;
+
+pub use crate::operation::test_custom_data_identifier::_test_custom_data_identifier_output::TestCustomDataIdentifierOutput;
 
 mod _test_custom_data_identifier_input;
 

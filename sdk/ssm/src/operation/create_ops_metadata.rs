@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ops_metadat
     }
 }
 
-pub use crate::operation::create_ops_metadata::_create_ops_metadata_output::CreateOpsMetadataOutput;
-
 pub use crate::operation::create_ops_metadata::_create_ops_metadata_input::CreateOpsMetadataInput;
+
+pub use crate::operation::create_ops_metadata::_create_ops_metadata_output::CreateOpsMetadataOutput;
 
 mod _create_ops_metadata_input;
 

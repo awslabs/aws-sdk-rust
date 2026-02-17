@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_applicati
     }
 }
 
-pub use crate::operation::describe_application_versions::_describe_application_versions_output::DescribeApplicationVersionsOutput;
-
 pub use crate::operation::describe_application_versions::_describe_application_versions_input::DescribeApplicationVersionsInput;
+
+pub use crate::operation::describe_application_versions::_describe_application_versions_output::DescribeApplicationVersionsOutput;
 
 mod _describe_application_versions_input;
 

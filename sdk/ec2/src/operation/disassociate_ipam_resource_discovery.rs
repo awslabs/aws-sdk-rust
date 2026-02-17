@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_ipam_
     }
 }
 
-pub use crate::operation::disassociate_ipam_resource_discovery::_disassociate_ipam_resource_discovery_output::DisassociateIpamResourceDiscoveryOutput;
-
 pub use crate::operation::disassociate_ipam_resource_discovery::_disassociate_ipam_resource_discovery_input::DisassociateIpamResourceDiscoveryInput;
+
+pub use crate::operation::disassociate_ipam_resource_discovery::_disassociate_ipam_resource_discovery_output::DisassociateIpamResourceDiscoveryOutput;
 
 mod _disassociate_ipam_resource_discovery_input;
 

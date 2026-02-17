@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_inference_sc
     }
 }
 
-pub use crate::operation::start_inference_scheduler::_start_inference_scheduler_output::StartInferenceSchedulerOutput;
-
 pub use crate::operation::start_inference_scheduler::_start_inference_scheduler_input::StartInferenceSchedulerInput;
+
+pub use crate::operation::start_inference_scheduler::_start_inference_scheduler_output::StartInferenceSchedulerOutput;
 
 mod _start_inference_scheduler_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_chat_token:
     }
 }
 
-pub use crate::operation::create_chat_token::_create_chat_token_output::CreateChatTokenOutput;
-
 pub use crate::operation::create_chat_token::_create_chat_token_input::CreateChatTokenInput;
+
+pub use crate::operation::create_chat_token::_create_chat_token_output::CreateChatTokenOutput;
 
 mod _create_chat_token_input;
 

@@ -336,9 +336,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_local_gat
                                 }
                             }
 
-pub use crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::_describe_local_gateway_route_table_virtual_interface_group_associations_output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput;
-
 pub use crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::_describe_local_gateway_route_table_virtual_interface_group_associations_input::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInput;
+
+pub use crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::_describe_local_gateway_route_table_virtual_interface_group_associations_output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput;
 
 mod _describe_local_gateway_route_table_virtual_interface_group_associations_input;
 

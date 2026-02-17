@@ -493,9 +493,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_file_commit_h
     }
 }
 
-pub use crate::operation::list_file_commit_history::_list_file_commit_history_output::ListFileCommitHistoryOutput;
-
 pub use crate::operation::list_file_commit_history::_list_file_commit_history_input::ListFileCommitHistoryInput;
+
+pub use crate::operation::list_file_commit_history::_list_file_commit_history_output::ListFileCommitHistoryOutput;
 
 mod _list_file_commit_history_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_lense
     }
 }
 
-pub use crate::operation::disassociate_lenses::_disassociate_lenses_output::DisassociateLensesOutput;
-
 pub use crate::operation::disassociate_lenses::_disassociate_lenses_input::DisassociateLensesInput;
+
+pub use crate::operation::disassociate_lenses::_disassociate_lenses_output::DisassociateLensesOutput;
 
 mod _disassociate_lenses_input;
 

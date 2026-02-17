@@ -684,9 +684,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke::InvokeErro
     }
 }
 
-pub use crate::operation::invoke::_invoke_output::InvokeOutput;
-
 pub use crate::operation::invoke::_invoke_input::InvokeInput;
+
+pub use crate::operation::invoke::_invoke_output::InvokeOutput;
 
 mod _invoke_input;
 

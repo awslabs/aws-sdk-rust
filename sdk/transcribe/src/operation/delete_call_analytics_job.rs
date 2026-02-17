@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_call_analyt
     }
 }
 
-pub use crate::operation::delete_call_analytics_job::_delete_call_analytics_job_output::DeleteCallAnalyticsJobOutput;
-
 pub use crate::operation::delete_call_analytics_job::_delete_call_analytics_job_input::DeleteCallAnalyticsJobInput;
+
+pub use crate::operation::delete_call_analytics_job::_delete_call_analytics_job_output::DeleteCallAnalyticsJobOutput;
 
 mod _delete_call_analytics_job_input;
 

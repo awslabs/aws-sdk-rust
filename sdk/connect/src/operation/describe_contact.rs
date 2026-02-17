@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_contact::
     }
 }
 
-pub use crate::operation::describe_contact::_describe_contact_output::DescribeContactOutput;
-
 pub use crate::operation::describe_contact::_describe_contact_input::DescribeContactInput;
+
+pub use crate::operation::describe_contact::_describe_contact_output::DescribeContactOutput;
 
 mod _describe_contact_input;
 

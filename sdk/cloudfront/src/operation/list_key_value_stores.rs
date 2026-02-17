@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_key_value_sto
     }
 }
 
-pub use crate::operation::list_key_value_stores::_list_key_value_stores_output::ListKeyValueStoresOutput;
-
 pub use crate::operation::list_key_value_stores::_list_key_value_stores_input::ListKeyValueStoresInput;
+
+pub use crate::operation::list_key_value_stores::_list_key_value_stores_output::ListKeyValueStoresOutput;
 
 mod _list_key_value_stores_input;
 

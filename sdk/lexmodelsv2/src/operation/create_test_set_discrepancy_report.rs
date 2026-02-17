@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_test_set_di
     }
 }
 
-pub use crate::operation::create_test_set_discrepancy_report::_create_test_set_discrepancy_report_output::CreateTestSetDiscrepancyReportOutput;
-
 pub use crate::operation::create_test_set_discrepancy_report::_create_test_set_discrepancy_report_input::CreateTestSetDiscrepancyReportInput;
+
+pub use crate::operation::create_test_set_discrepancy_report::_create_test_set_discrepancy_report_output::CreateTestSetDiscrepancyReportOutput;
 
 mod _create_test_set_discrepancy_report_input;
 

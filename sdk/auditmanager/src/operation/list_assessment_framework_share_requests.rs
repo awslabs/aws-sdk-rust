@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assessment_fr
     }
 }
 
-pub use crate::operation::list_assessment_framework_share_requests::_list_assessment_framework_share_requests_output::ListAssessmentFrameworkShareRequestsOutput;
-
 pub use crate::operation::list_assessment_framework_share_requests::_list_assessment_framework_share_requests_input::ListAssessmentFrameworkShareRequestsInput;
+
+pub use crate::operation::list_assessment_framework_share_requests::_list_assessment_framework_share_requests_output::ListAssessmentFrameworkShareRequestsOutput;
 
 mod _list_assessment_framework_share_requests_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_speaker_enro
     }
 }
 
-pub use crate::operation::start_speaker_enrollment_job::_start_speaker_enrollment_job_output::StartSpeakerEnrollmentJobOutput;
-
 pub use crate::operation::start_speaker_enrollment_job::_start_speaker_enrollment_job_input::StartSpeakerEnrollmentJobInput;
+
+pub use crate::operation::start_speaker_enrollment_job::_start_speaker_enrollment_job_output::StartSpeakerEnrollmentJobOutput;
 
 mod _start_speaker_enrollment_job_input;
 

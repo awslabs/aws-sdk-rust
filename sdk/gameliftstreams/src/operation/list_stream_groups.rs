@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stream_groups
     }
 }
 
-pub use crate::operation::list_stream_groups::_list_stream_groups_output::ListStreamGroupsOutput;
-
 pub use crate::operation::list_stream_groups::_list_stream_groups_input::ListStreamGroupsInput;
+
+pub use crate::operation::list_stream_groups::_list_stream_groups_output::ListStreamGroupsOutput;
 
 mod _list_stream_groups_input;
 

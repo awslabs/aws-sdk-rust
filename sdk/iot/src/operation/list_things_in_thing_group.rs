@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_things_in_thi
     }
 }
 
-pub use crate::operation::list_things_in_thing_group::_list_things_in_thing_group_output::ListThingsInThingGroupOutput;
-
 pub use crate::operation::list_things_in_thing_group::_list_things_in_thing_group_input::ListThingsInThingGroupInput;
+
+pub use crate::operation::list_things_in_thing_group::_list_things_in_thing_group_output::ListThingsInThingGroupOutput;
 
 mod _list_things_in_thing_group_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_storage_con
     }
 }
 
-pub use crate::operation::create_storage_configuration::_create_storage_configuration_output::CreateStorageConfigurationOutput;
-
 pub use crate::operation::create_storage_configuration::_create_storage_configuration_input::CreateStorageConfigurationInput;
+
+pub use crate::operation::create_storage_configuration::_create_storage_configuration_output::CreateStorageConfigurationOutput;
 
 mod _create_storage_configuration_input;
 

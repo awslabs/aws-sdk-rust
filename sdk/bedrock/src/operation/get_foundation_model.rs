@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_foundation_mod
     }
 }
 
-pub use crate::operation::get_foundation_model::_get_foundation_model_output::GetFoundationModelOutput;
-
 pub use crate::operation::get_foundation_model::_get_foundation_model_input::GetFoundationModelInput;
+
+pub use crate::operation::get_foundation_model::_get_foundation_model_output::GetFoundationModelOutput;
 
 mod _get_foundation_model_input;
 

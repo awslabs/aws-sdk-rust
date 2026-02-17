@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_project_polic
     }
 }
 
-pub use crate::operation::list_project_policies::_list_project_policies_output::ListProjectPoliciesOutput;
-
 pub use crate::operation::list_project_policies::_list_project_policies_input::ListProjectPoliciesInput;
+
+pub use crate::operation::list_project_policies::_list_project_policies_output::ListProjectPoliciesOutput;
 
 mod _list_project_policies_input;
 

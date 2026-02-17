@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_phone_numb
     }
 }
 
-pub use crate::operation::restore_phone_number::_restore_phone_number_output::RestorePhoneNumberOutput;
-
 pub use crate::operation::restore_phone_number::_restore_phone_number_input::RestorePhoneNumberInput;
+
+pub use crate::operation::restore_phone_number::_restore_phone_number_output::RestorePhoneNumberOutput;
 
 mod _restore_phone_number_input;
 

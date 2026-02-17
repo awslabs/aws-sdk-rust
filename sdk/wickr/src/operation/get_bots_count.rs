@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bots_count::Ge
     }
 }
 
-pub use crate::operation::get_bots_count::_get_bots_count_output::GetBotsCountOutput;
-
 pub use crate::operation::get_bots_count::_get_bots_count_input::GetBotsCountInput;
+
+pub use crate::operation::get_bots_count::_get_bots_count_output::GetBotsCountOutput;
 
 mod _get_bots_count_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_key_rotati
     }
 }
 
-pub use crate::operation::disable_key_rotation::_disable_key_rotation_output::DisableKeyRotationOutput;
-
 pub use crate::operation::disable_key_rotation::_disable_key_rotation_input::DisableKeyRotationInput;
+
+pub use crate::operation::disable_key_rotation::_disable_key_rotation_output::DisableKeyRotationOutput;
 
 mod _disable_key_rotation_input;
 

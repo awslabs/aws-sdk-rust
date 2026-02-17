@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_task_heartbea
     }
 }
 
-pub use crate::operation::send_task_heartbeat::_send_task_heartbeat_output::SendTaskHeartbeatOutput;
-
 pub use crate::operation::send_task_heartbeat::_send_task_heartbeat_input::SendTaskHeartbeatInput;
+
+pub use crate::operation::send_task_heartbeat::_send_task_heartbeat_output::SendTaskHeartbeatOutput;
 
 mod _send_task_heartbeat_input;
 

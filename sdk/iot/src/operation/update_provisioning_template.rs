@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_provisionin
     }
 }
 
-pub use crate::operation::update_provisioning_template::_update_provisioning_template_output::UpdateProvisioningTemplateOutput;
-
 pub use crate::operation::update_provisioning_template::_update_provisioning_template_input::UpdateProvisioningTemplateInput;
+
+pub use crate::operation::update_provisioning_template::_update_provisioning_template_output::UpdateProvisioningTemplateOutput;
 
 mod _update_provisioning_template_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_endpoint::U
     }
 }
 
-pub use crate::operation::update_endpoint::_update_endpoint_output::UpdateEndpointOutput;
-
 pub use crate::operation::update_endpoint::_update_endpoint_input::UpdateEndpointInput;
+
+pub use crate::operation::update_endpoint::_update_endpoint_output::UpdateEndpointOutput;
 
 mod _update_endpoint_input;
 

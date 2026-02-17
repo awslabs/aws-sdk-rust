@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_subnets::SetSu
     }
 }
 
-pub use crate::operation::set_subnets::_set_subnets_output::SetSubnetsOutput;
-
 pub use crate::operation::set_subnets::_set_subnets_input::SetSubnetsInput;
+
+pub use crate::operation::set_subnets::_set_subnets_output::SetSubnetsOutput;
 
 mod _set_subnets_input;
 

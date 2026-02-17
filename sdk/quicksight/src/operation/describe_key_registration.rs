@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_key_regis
     }
 }
 
-pub use crate::operation::describe_key_registration::_describe_key_registration_output::DescribeKeyRegistrationOutput;
-
 pub use crate::operation::describe_key_registration::_describe_key_registration_input::DescribeKeyRegistrationInput;
+
+pub use crate::operation::describe_key_registration::_describe_key_registration_output::DescribeKeyRegistrationOutput;
 
 mod _describe_key_registration_input;
 

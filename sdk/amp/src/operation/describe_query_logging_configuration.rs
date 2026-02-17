@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_query_log
     }
 }
 
-pub use crate::operation::describe_query_logging_configuration::_describe_query_logging_configuration_output::DescribeQueryLoggingConfigurationOutput;
-
 pub use crate::operation::describe_query_logging_configuration::_describe_query_logging_configuration_input::DescribeQueryLoggingConfigurationInput;
+
+pub use crate::operation::describe_query_logging_configuration::_describe_query_logging_configuration_output::DescribeQueryLoggingConfigurationOutput;
 
 mod _describe_query_logging_configuration_input;
 

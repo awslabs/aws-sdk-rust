@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_instance_prof
     }
 }
 
-pub use crate::operation::list_instance_profile_tags::_list_instance_profile_tags_output::ListInstanceProfileTagsOutput;
-
 pub use crate::operation::list_instance_profile_tags::_list_instance_profile_tags_input::ListInstanceProfileTagsInput;
+
+pub use crate::operation::list_instance_profile_tags::_list_instance_profile_tags_output::ListInstanceProfileTagsOutput;
 
 mod _list_instance_profile_tags_input;
 

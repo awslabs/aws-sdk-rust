@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_pii_entities_
     }
 }
 
-pub use crate::operation::stop_pii_entities_detection_job::_stop_pii_entities_detection_job_output::StopPiiEntitiesDetectionJobOutput;
-
 pub use crate::operation::stop_pii_entities_detection_job::_stop_pii_entities_detection_job_input::StopPiiEntitiesDetectionJobInput;
+
+pub use crate::operation::stop_pii_entities_detection_job::_stop_pii_entities_detection_job_output::StopPiiEntitiesDetectionJobOutput;
 
 mod _stop_pii_entities_detection_job_input;
 

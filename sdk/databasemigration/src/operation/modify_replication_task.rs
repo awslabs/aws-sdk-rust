@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_replication
     }
 }
 
-pub use crate::operation::modify_replication_task::_modify_replication_task_output::ModifyReplicationTaskOutput;
-
 pub use crate::operation::modify_replication_task::_modify_replication_task_input::ModifyReplicationTaskInput;
+
+pub use crate::operation::modify_replication_task::_modify_replication_task_output::ModifyReplicationTaskOutput;
 
 mod _modify_replication_task_input;
 

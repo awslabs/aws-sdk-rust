@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_target_resour
     }
 }
 
-pub use crate::operation::list_target_resource_types::_list_target_resource_types_output::ListTargetResourceTypesOutput;
-
 pub use crate::operation::list_target_resource_types::_list_target_resource_types_input::ListTargetResourceTypesInput;
+
+pub use crate::operation::list_target_resource_types::_list_target_resource_types_output::ListTargetResourceTypesOutput;
 
 mod _list_target_resource_types_input;
 

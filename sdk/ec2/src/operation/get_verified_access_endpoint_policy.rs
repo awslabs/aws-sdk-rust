@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_verified_acces
     }
 }
 
-pub use crate::operation::get_verified_access_endpoint_policy::_get_verified_access_endpoint_policy_output::GetVerifiedAccessEndpointPolicyOutput;
-
 pub use crate::operation::get_verified_access_endpoint_policy::_get_verified_access_endpoint_policy_input::GetVerifiedAccessEndpointPolicyInput;
+
+pub use crate::operation::get_verified_access_endpoint_policy::_get_verified_access_endpoint_policy_output::GetVerifiedAccessEndpointPolicyOutput;
 
 mod _get_verified_access_endpoint_policy_input;
 

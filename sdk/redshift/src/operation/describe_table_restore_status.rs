@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_table_res
     }
 }
 
-pub use crate::operation::describe_table_restore_status::_describe_table_restore_status_output::DescribeTableRestoreStatusOutput;
-
 pub use crate::operation::describe_table_restore_status::_describe_table_restore_status_input::DescribeTableRestoreStatusInput;
+
+pub use crate::operation::describe_table_restore_status::_describe_table_restore_status_output::DescribeTableRestoreStatusOutput;
 
 mod _describe_table_restore_status_input;
 

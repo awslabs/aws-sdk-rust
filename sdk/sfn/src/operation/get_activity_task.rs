@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_activity_task:
     }
 }
 
-pub use crate::operation::get_activity_task::_get_activity_task_output::GetActivityTaskOutput;
-
 pub use crate::operation::get_activity_task::_get_activity_task_input::GetActivityTaskInput;
+
+pub use crate::operation::get_activity_task::_get_activity_task_output::GetActivityTaskOutput;
 
 mod _get_activity_task_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_migration_tas
     }
 }
 
-pub use crate::operation::list_migration_task_updates::_list_migration_task_updates_output::ListMigrationTaskUpdatesOutput;
-
 pub use crate::operation::list_migration_task_updates::_list_migration_task_updates_input::ListMigrationTaskUpdatesInput;
+
+pub use crate::operation::list_migration_task_updates::_list_migration_task_updates_output::ListMigrationTaskUpdatesOutput;
 
 mod _list_migration_task_updates_input;
 

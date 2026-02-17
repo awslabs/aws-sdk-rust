@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_wireless_de
     }
 }
 
-pub use crate::operation::delete_wireless_device_import_task::_delete_wireless_device_import_task_output::DeleteWirelessDeviceImportTaskOutput;
-
 pub use crate::operation::delete_wireless_device_import_task::_delete_wireless_device_import_task_input::DeleteWirelessDeviceImportTaskInput;
+
+pub use crate::operation::delete_wireless_device_import_task::_delete_wireless_device_import_task_output::DeleteWirelessDeviceImportTaskOutput;
 
 mod _delete_wireless_device_import_task_input;
 

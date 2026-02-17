@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_alias::A
     }
 }
 
-pub use crate::operation::associate_alias::_associate_alias_output::AssociateAliasOutput;
-
 pub use crate::operation::associate_alias::_associate_alias_input::AssociateAliasInput;
+
+pub use crate::operation::associate_alias::_associate_alias_output::AssociateAliasOutput;
 
 mod _associate_alias_input;
 

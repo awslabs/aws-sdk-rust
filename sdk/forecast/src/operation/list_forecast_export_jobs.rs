@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_forecast_expo
     }
 }
 
-pub use crate::operation::list_forecast_export_jobs::_list_forecast_export_jobs_output::ListForecastExportJobsOutput;
-
 pub use crate::operation::list_forecast_export_jobs::_list_forecast_export_jobs_input::ListForecastExportJobsInput;
+
+pub use crate::operation::list_forecast_export_jobs::_list_forecast_export_jobs_output::ListForecastExportJobsOutput;
 
 mod _list_forecast_export_jobs_input;
 

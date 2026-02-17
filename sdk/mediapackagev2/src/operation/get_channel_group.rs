@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel_group:
     }
 }
 
-pub use crate::operation::get_channel_group::_get_channel_group_output::GetChannelGroupOutput;
-
 pub use crate::operation::get_channel_group::_get_channel_group_input::GetChannelGroupInput;
+
+pub use crate::operation::get_channel_group::_get_channel_group_output::GetChannelGroupOutput;
 
 mod _get_channel_group_input;
 

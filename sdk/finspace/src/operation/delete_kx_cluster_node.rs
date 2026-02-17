@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_cluster_
     }
 }
 
-pub use crate::operation::delete_kx_cluster_node::_delete_kx_cluster_node_output::DeleteKxClusterNodeOutput;
-
 pub use crate::operation::delete_kx_cluster_node::_delete_kx_cluster_node_input::DeleteKxClusterNodeInput;
+
+pub use crate::operation::delete_kx_cluster_node::_delete_kx_cluster_node_output::DeleteKxClusterNodeOutput;
 
 mod _delete_kx_cluster_node_input;
 

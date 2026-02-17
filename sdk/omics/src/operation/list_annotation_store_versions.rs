@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_annotation_st
     }
 }
 
-pub use crate::operation::list_annotation_store_versions::_list_annotation_store_versions_output::ListAnnotationStoreVersionsOutput;
-
 pub use crate::operation::list_annotation_store_versions::_list_annotation_store_versions_input::ListAnnotationStoreVersionsInput;
+
+pub use crate::operation::list_annotation_store_versions::_list_annotation_store_versions_output::ListAnnotationStoreVersionsOutput;
 
 mod _list_annotation_store_versions_input;
 

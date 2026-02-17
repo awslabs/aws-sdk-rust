@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::count_closed_workf
     }
 }
 
-pub use crate::operation::count_closed_workflow_executions::_count_closed_workflow_executions_output::CountClosedWorkflowExecutionsOutput;
-
 pub use crate::operation::count_closed_workflow_executions::_count_closed_workflow_executions_input::CountClosedWorkflowExecutionsInput;
+
+pub use crate::operation::count_closed_workflow_executions::_count_closed_workflow_executions_output::CountClosedWorkflowExecutionsOutput;
 
 mod _count_closed_workflow_executions_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_directory_regi
     }
 }
 
-pub use crate::operation::get_directory_registration::_get_directory_registration_output::GetDirectoryRegistrationOutput;
-
 pub use crate::operation::get_directory_registration::_get_directory_registration_input::GetDirectoryRegistrationInput;
+
+pub use crate::operation::get_directory_registration::_get_directory_registration_output::GetDirectoryRegistrationOutput;
 
 mod _get_directory_registration_input;
 

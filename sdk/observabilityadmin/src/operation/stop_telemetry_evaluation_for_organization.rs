@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::stop_telemetry_evaluation_for_organization::_stop_telemetry_evaluation_for_organization_output::StopTelemetryEvaluationForOrganizationOutput;
-
 pub use crate::operation::stop_telemetry_evaluation_for_organization::_stop_telemetry_evaluation_for_organization_input::StopTelemetryEvaluationForOrganizationInput;
+
+pub use crate::operation::stop_telemetry_evaluation_for_organization::_stop_telemetry_evaluation_for_organization_output::StopTelemetryEvaluationForOrganizationOutput;
 
 mod _stop_telemetry_evaluation_for_organization_input;
 

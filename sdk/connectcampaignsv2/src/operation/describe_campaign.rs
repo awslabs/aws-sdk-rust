@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_campaign:
     }
 }
 
-pub use crate::operation::describe_campaign::_describe_campaign_output::DescribeCampaignOutput;
-
 pub use crate::operation::describe_campaign::_describe_campaign_input::DescribeCampaignInput;
+
+pub use crate::operation::describe_campaign::_describe_campaign_output::DescribeCampaignOutput;
 
 mod _describe_campaign_input;
 

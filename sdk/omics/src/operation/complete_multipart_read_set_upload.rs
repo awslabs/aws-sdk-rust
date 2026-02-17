@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_multipart
     }
 }
 
-pub use crate::operation::complete_multipart_read_set_upload::_complete_multipart_read_set_upload_output::CompleteMultipartReadSetUploadOutput;
-
 pub use crate::operation::complete_multipart_read_set_upload::_complete_multipart_read_set_upload_input::CompleteMultipartReadSetUploadInput;
+
+pub use crate::operation::complete_multipart_read_set_upload::_complete_multipart_read_set_upload_output::CompleteMultipartReadSetUploadOutput;
 
 mod _complete_multipart_read_set_upload_input;
 

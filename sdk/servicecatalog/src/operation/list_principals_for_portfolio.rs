@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_principals_fo
     }
 }
 
-pub use crate::operation::list_principals_for_portfolio::_list_principals_for_portfolio_output::ListPrincipalsForPortfolioOutput;
-
 pub use crate::operation::list_principals_for_portfolio::_list_principals_for_portfolio_input::ListPrincipalsForPortfolioInput;
+
+pub use crate::operation::list_principals_for_portfolio::_list_principals_for_portfolio_output::ListPrincipalsForPortfolioOutput;
 
 mod _list_principals_for_portfolio_input;
 

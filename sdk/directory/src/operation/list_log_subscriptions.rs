@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_log_subscript
     }
 }
 
-pub use crate::operation::list_log_subscriptions::_list_log_subscriptions_output::ListLogSubscriptionsOutput;
-
 pub use crate::operation::list_log_subscriptions::_list_log_subscriptions_input::ListLogSubscriptionsInput;
+
+pub use crate::operation::list_log_subscriptions::_list_log_subscriptions_output::ListLogSubscriptionsOutput;
 
 mod _list_log_subscriptions_input;
 

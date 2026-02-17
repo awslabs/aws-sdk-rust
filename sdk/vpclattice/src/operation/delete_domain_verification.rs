@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_domain_veri
     }
 }
 
-pub use crate::operation::delete_domain_verification::_delete_domain_verification_output::DeleteDomainVerificationOutput;
-
 pub use crate::operation::delete_domain_verification::_delete_domain_verification_input::DeleteDomainVerificationInput;
+
+pub use crate::operation::delete_domain_verification::_delete_domain_verification_output::DeleteDomainVerificationOutput;
 
 mod _delete_domain_verification_input;
 

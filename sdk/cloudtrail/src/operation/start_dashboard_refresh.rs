@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_dashboard_re
     }
 }
 
-pub use crate::operation::start_dashboard_refresh::_start_dashboard_refresh_output::StartDashboardRefreshOutput;
-
 pub use crate::operation::start_dashboard_refresh::_start_dashboard_refresh_input::StartDashboardRefreshInput;
+
+pub use crate::operation::start_dashboard_refresh::_start_dashboard_refresh_output::StartDashboardRefreshOutput;
 
 mod _start_dashboard_refresh_input;
 

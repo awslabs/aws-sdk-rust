@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_project_pol
     }
 }
 
-pub use crate::operation::delete_project_policy::_delete_project_policy_output::DeleteProjectPolicyOutput;
-
 pub use crate::operation::delete_project_policy::_delete_project_policy_input::DeleteProjectPolicyInput;
+
+pub use crate::operation::delete_project_policy::_delete_project_policy_output::DeleteProjectPolicyOutput;
 
 mod _delete_project_policy_input;
 

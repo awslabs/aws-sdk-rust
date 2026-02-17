@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_slack_user_
     }
 }
 
-pub use crate::operation::delete_slack_user_identity::_delete_slack_user_identity_output::DeleteSlackUserIdentityOutput;
-
 pub use crate::operation::delete_slack_user_identity::_delete_slack_user_identity_input::DeleteSlackUserIdentityInput;
+
+pub use crate::operation::delete_slack_user_identity::_delete_slack_user_identity_output::DeleteSlackUserIdentityOutput;
 
 mod _delete_slack_user_identity_input;
 

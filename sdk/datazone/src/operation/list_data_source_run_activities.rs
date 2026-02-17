@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_source_r
     }
 }
 
-pub use crate::operation::list_data_source_run_activities::_list_data_source_run_activities_output::ListDataSourceRunActivitiesOutput;
-
 pub use crate::operation::list_data_source_run_activities::_list_data_source_run_activities_input::ListDataSourceRunActivitiesInput;
+
+pub use crate::operation::list_data_source_run_activities::_list_data_source_run_activities_output::ListDataSourceRunActivitiesOutput;
 
 mod _list_data_source_run_activities_input;
 

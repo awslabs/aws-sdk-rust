@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_core_network_prefix_list_association::_delete_core_network_prefix_list_association_output::DeleteCoreNetworkPrefixListAssociationOutput;
-
 pub use crate::operation::delete_core_network_prefix_list_association::_delete_core_network_prefix_list_association_input::DeleteCoreNetworkPrefixListAssociationInput;
+
+pub use crate::operation::delete_core_network_prefix_list_association::_delete_core_network_prefix_list_association_output::DeleteCoreNetworkPrefixListAssociationOutput;
 
 mod _delete_core_network_prefix_list_association_input;
 

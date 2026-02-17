@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::cancel_elasticsearch_service_software_update::_cancel_elasticsearch_service_software_update_output::CancelElasticsearchServiceSoftwareUpdateOutput;
-
 pub use crate::operation::cancel_elasticsearch_service_software_update::_cancel_elasticsearch_service_software_update_input::CancelElasticsearchServiceSoftwareUpdateInput;
+
+pub use crate::operation::cancel_elasticsearch_service_software_update::_cancel_elasticsearch_service_software_update_output::CancelElasticsearchServiceSoftwareUpdateOutput;
 
 mod _cancel_elasticsearch_service_software_update_input;
 

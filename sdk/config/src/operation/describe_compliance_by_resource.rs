@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_complianc
     }
 }
 
-pub use crate::operation::describe_compliance_by_resource::_describe_compliance_by_resource_output::DescribeComplianceByResourceOutput;
-
 pub use crate::operation::describe_compliance_by_resource::_describe_compliance_by_resource_input::DescribeComplianceByResourceInput;
+
+pub use crate::operation::describe_compliance_by_resource::_describe_compliance_by_resource_output::DescribeComplianceByResourceOutput;
 
 mod _describe_compliance_by_resource_input;
 

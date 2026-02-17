@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workteam::D
     }
 }
 
-pub use crate::operation::delete_workteam::_delete_workteam_output::DeleteWorkteamOutput;
-
 pub use crate::operation::delete_workteam::_delete_workteam_input::DeleteWorkteamInput;
+
+pub use crate::operation::delete_workteam::_delete_workteam_output::DeleteWorkteamOutput;
 
 mod _delete_workteam_input;
 

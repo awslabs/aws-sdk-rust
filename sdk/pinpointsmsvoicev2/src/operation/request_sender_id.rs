@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::request_sender_id:
     }
 }
 
-pub use crate::operation::request_sender_id::_request_sender_id_output::RequestSenderIdOutput;
-
 pub use crate::operation::request_sender_id::_request_sender_id_input::RequestSenderIdInput;
+
+pub use crate::operation::request_sender_id::_request_sender_id_output::RequestSenderIdOutput;
 
 mod _request_sender_id_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_cache_report
     }
 }
 
-pub use crate::operation::start_cache_report::_start_cache_report_output::StartCacheReportOutput;
-
 pub use crate::operation::start_cache_report::_start_cache_report_input::StartCacheReportInput;
+
+pub use crate::operation::start_cache_report::_start_cache_report_output::StartCacheReportOutput;
 
 mod _start_cache_report_input;
 

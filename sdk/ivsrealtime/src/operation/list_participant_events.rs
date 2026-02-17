@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_participant_e
     }
 }
 
-pub use crate::operation::list_participant_events::_list_participant_events_output::ListParticipantEventsOutput;
-
 pub use crate::operation::list_participant_events::_list_participant_events_input::ListParticipantEventsInput;
+
+pub use crate::operation::list_participant_events::_list_participant_events_output::ListParticipantEventsOutput;
 
 mod _list_participant_events_input;
 

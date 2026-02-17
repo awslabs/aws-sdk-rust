@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_foundation_mo
     }
 }
 
-pub use crate::operation::list_foundation_model_agreement_offers::_list_foundation_model_agreement_offers_output::ListFoundationModelAgreementOffersOutput;
-
 pub use crate::operation::list_foundation_model_agreement_offers::_list_foundation_model_agreement_offers_input::ListFoundationModelAgreementOffersInput;
+
+pub use crate::operation::list_foundation_model_agreement_offers::_list_foundation_model_agreement_offers_output::ListFoundationModelAgreementOffersOutput;
 
 mod _list_foundation_model_agreement_offers_input;
 

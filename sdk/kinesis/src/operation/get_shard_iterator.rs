@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_shard_iterator
     }
 }
 
-pub use crate::operation::get_shard_iterator::_get_shard_iterator_output::GetShardIteratorOutput;
-
 pub use crate::operation::get_shard_iterator::_get_shard_iterator_input::GetShardIteratorInput;
+
+pub use crate::operation::get_shard_iterator::_get_shard_iterator_output::GetShardIteratorOutput;
 
 mod _get_shard_iterator_input;
 

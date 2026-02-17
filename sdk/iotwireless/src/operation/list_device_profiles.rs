@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_profil
     }
 }
 
-pub use crate::operation::list_device_profiles::_list_device_profiles_output::ListDeviceProfilesOutput;
-
 pub use crate::operation::list_device_profiles::_list_device_profiles_input::ListDeviceProfilesInput;
+
+pub use crate::operation::list_device_profiles::_list_device_profiles_output::ListDeviceProfilesOutput;
 
 mod _list_device_profiles_input;
 

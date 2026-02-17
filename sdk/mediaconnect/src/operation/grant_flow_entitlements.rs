@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::grant_flow_entitle
     }
 }
 
-pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_output::GrantFlowEntitlementsOutput;
-
 pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_input::GrantFlowEntitlementsInput;
+
+pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_output::GrantFlowEntitlementsOutput;
 
 mod _grant_flow_entitlements_input;
 

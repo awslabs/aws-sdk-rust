@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_contact_strea
     }
 }
 
-pub use crate::operation::stop_contact_streaming::_stop_contact_streaming_output::StopContactStreamingOutput;
-
 pub use crate::operation::stop_contact_streaming::_stop_contact_streaming_input::StopContactStreamingInput;
+
+pub use crate::operation::stop_contact_streaming::_stop_contact_streaming_output::StopContactStreamingOutput;
 
 mod _stop_contact_streaming_input;
 

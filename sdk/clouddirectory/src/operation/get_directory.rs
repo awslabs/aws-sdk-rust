@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_directory::Get
     }
 }
 
-pub use crate::operation::get_directory::_get_directory_output::GetDirectoryOutput;
-
 pub use crate::operation::get_directory::_get_directory_input::GetDirectoryInput;
+
+pub use crate::operation::get_directory::_get_directory_output::GetDirectoryOutput;
 
 mod _get_directory_input;
 

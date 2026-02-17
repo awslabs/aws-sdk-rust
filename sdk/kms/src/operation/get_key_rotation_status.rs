@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_key_rotation_s
     }
 }
 
-pub use crate::operation::get_key_rotation_status::_get_key_rotation_status_output::GetKeyRotationStatusOutput;
-
 pub use crate::operation::get_key_rotation_status::_get_key_rotation_status_input::GetKeyRotationStatusInput;
+
+pub use crate::operation::get_key_rotation_status::_get_key_rotation_status_output::GetKeyRotationStatusOutput;
 
 mod _get_key_rotation_status_input;
 

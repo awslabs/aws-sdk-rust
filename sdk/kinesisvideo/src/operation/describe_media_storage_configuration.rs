@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_media_sto
     }
 }
 
-pub use crate::operation::describe_media_storage_configuration::_describe_media_storage_configuration_output::DescribeMediaStorageConfigurationOutput;
-
 pub use crate::operation::describe_media_storage_configuration::_describe_media_storage_configuration_input::DescribeMediaStorageConfigurationInput;
+
+pub use crate::operation::describe_media_storage_configuration::_describe_media_storage_configuration_output::DescribeMediaStorageConfigurationOutput;
 
 mod _describe_media_storage_configuration_input;
 

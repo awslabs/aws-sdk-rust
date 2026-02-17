@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_co
     }
 }
 
-pub use crate::operation::get_application_component_strategies::_get_application_component_strategies_output::GetApplicationComponentStrategiesOutput;
-
 pub use crate::operation::get_application_component_strategies::_get_application_component_strategies_input::GetApplicationComponentStrategiesInput;
+
+pub use crate::operation::get_application_component_strategies::_get_application_component_strategies_output::GetApplicationComponentStrategiesOutput;
 
 mod _get_application_component_strategies_input;
 

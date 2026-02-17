@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_resol
     }
 }
 
-pub use crate::operation::disassociate_resolver_rule::_disassociate_resolver_rule_output::DisassociateResolverRuleOutput;
-
 pub use crate::operation::disassociate_resolver_rule::_disassociate_resolver_rule_input::DisassociateResolverRuleInput;
+
+pub use crate::operation::disassociate_resolver_rule::_disassociate_resolver_rule_output::DisassociateResolverRuleOutput;
 
 mod _disassociate_resolver_rule_input;
 

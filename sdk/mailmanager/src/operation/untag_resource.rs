@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_resource::Un
     }
 }
 
-pub use crate::operation::untag_resource::_untag_resource_output::UntagResourceOutput;
-
 pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceInput;
+
+pub use crate::operation::untag_resource::_untag_resource_output::UntagResourceOutput;
 
 mod _untag_resource_input;
 

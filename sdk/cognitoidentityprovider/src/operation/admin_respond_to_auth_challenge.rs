@@ -578,9 +578,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_respond_to_a
     }
 }
 
-pub use crate::operation::admin_respond_to_auth_challenge::_admin_respond_to_auth_challenge_output::AdminRespondToAuthChallengeOutput;
-
 pub use crate::operation::admin_respond_to_auth_challenge::_admin_respond_to_auth_challenge_input::AdminRespondToAuthChallengeInput;
+
+pub use crate::operation::admin_respond_to_auth_challenge::_admin_respond_to_auth_challenge_output::AdminRespondToAuthChallengeOutput;
 
 mod _admin_respond_to_auth_challenge_input;
 

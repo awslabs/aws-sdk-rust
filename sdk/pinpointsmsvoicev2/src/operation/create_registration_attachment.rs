@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_registratio
     }
 }
 
-pub use crate::operation::create_registration_attachment::_create_registration_attachment_output::CreateRegistrationAttachmentOutput;
-
 pub use crate::operation::create_registration_attachment::_create_registration_attachment_input::CreateRegistrationAttachmentInput;
+
+pub use crate::operation::create_registration_attachment::_create_registration_attachment_output::CreateRegistrationAttachmentOutput;
 
 mod _create_registration_attachment_input;
 

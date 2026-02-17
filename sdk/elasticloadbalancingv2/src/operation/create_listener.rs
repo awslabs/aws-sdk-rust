@@ -555,9 +555,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_listener::C
     }
 }
 
-pub use crate::operation::create_listener::_create_listener_output::CreateListenerOutput;
-
 pub use crate::operation::create_listener::_create_listener_input::CreateListenerInput;
+
+pub use crate::operation::create_listener::_create_listener_output::CreateListenerOutput;
 
 mod _create_listener_input;
 

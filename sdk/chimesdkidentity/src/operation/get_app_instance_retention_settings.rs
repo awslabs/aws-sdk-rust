@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_app_instance_r
     }
 }
 
-pub use crate::operation::get_app_instance_retention_settings::_get_app_instance_retention_settings_output::GetAppInstanceRetentionSettingsOutput;
-
 pub use crate::operation::get_app_instance_retention_settings::_get_app_instance_retention_settings_input::GetAppInstanceRetentionSettingsInput;
+
+pub use crate::operation::get_app_instance_retention_settings::_get_app_instance_retention_settings_output::GetAppInstanceRetentionSettingsOutput;
 
 mod _get_app_instance_retention_settings_input;
 

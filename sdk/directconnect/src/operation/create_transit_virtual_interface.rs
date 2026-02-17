@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_transit_vir
     }
 }
 
-pub use crate::operation::create_transit_virtual_interface::_create_transit_virtual_interface_output::CreateTransitVirtualInterfaceOutput;
-
 pub use crate::operation::create_transit_virtual_interface::_create_transit_virtual_interface_input::CreateTransitVirtualInterfaceInput;
+
+pub use crate::operation::create_transit_virtual_interface::_create_transit_virtual_interface_output::CreateTransitVirtualInterfaceOutput;
 
 mod _create_transit_virtual_interface_input;
 

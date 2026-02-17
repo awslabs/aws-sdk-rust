@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scans::ListSc
     }
 }
 
-pub use crate::operation::list_scans::_list_scans_output::ListScansOutput;
-
 pub use crate::operation::list_scans::_list_scans_input::ListScansInput;
+
+pub use crate::operation::list_scans::_list_scans_output::ListScansOutput;
 
 mod _list_scans_input;
 

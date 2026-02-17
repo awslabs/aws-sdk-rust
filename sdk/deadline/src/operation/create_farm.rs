@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_farm::Creat
     }
 }
 
-pub use crate::operation::create_farm::_create_farm_output::CreateFarmOutput;
-
 pub use crate::operation::create_farm::_create_farm_input::CreateFarmInput;
+
+pub use crate::operation::create_farm::_create_farm_output::CreateFarmOutput;
 
 mod _create_farm_input;
 

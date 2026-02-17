@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_usage_profi
     }
 }
 
-pub use crate::operation::create_usage_profile::_create_usage_profile_output::CreateUsageProfileOutput;
-
 pub use crate::operation::create_usage_profile::_create_usage_profile_input::CreateUsageProfileInput;
+
+pub use crate::operation::create_usage_profile::_create_usage_profile_output::CreateUsageProfileOutput;
 
 mod _create_usage_profile_input;
 

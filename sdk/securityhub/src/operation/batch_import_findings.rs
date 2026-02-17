@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_import_findi
     }
 }
 
-pub use crate::operation::batch_import_findings::_batch_import_findings_output::BatchImportFindingsOutput;
-
 pub use crate::operation::batch_import_findings::_batch_import_findings_input::BatchImportFindingsInput;
+
+pub use crate::operation::batch_import_findings::_batch_import_findings_output::BatchImportFindingsOutput;
 
 mod _batch_import_findings_input;
 

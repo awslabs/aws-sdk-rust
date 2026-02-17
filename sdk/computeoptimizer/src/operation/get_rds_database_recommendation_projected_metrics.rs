@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_rds_database_recommendation_projected_metrics::_get_rds_database_recommendation_projected_metrics_output::GetRdsDatabaseRecommendationProjectedMetricsOutput;
-
 pub use crate::operation::get_rds_database_recommendation_projected_metrics::_get_rds_database_recommendation_projected_metrics_input::GetRdsDatabaseRecommendationProjectedMetricsInput;
+
+pub use crate::operation::get_rds_database_recommendation_projected_metrics::_get_rds_database_recommendation_projected_metrics_output::GetRdsDatabaseRecommendationProjectedMetricsOutput;
 
 mod _get_rds_database_recommendation_projected_metrics_input;
 

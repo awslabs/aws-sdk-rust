@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_conne
     }
 }
 
-pub use crate::operation::disassociate_connection_alias::_disassociate_connection_alias_output::DisassociateConnectionAliasOutput;
-
 pub use crate::operation::disassociate_connection_alias::_disassociate_connection_alias_input::DisassociateConnectionAliasInput;
+
+pub use crate::operation::disassociate_connection_alias::_disassociate_connection_alias_output::DisassociateConnectionAliasOutput;
 
 mod _disassociate_connection_alias_input;
 

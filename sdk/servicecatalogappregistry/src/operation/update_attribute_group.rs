@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_attribute_g
     }
 }
 
-pub use crate::operation::update_attribute_group::_update_attribute_group_output::UpdateAttributeGroupOutput;
-
 pub use crate::operation::update_attribute_group::_update_attribute_group_input::UpdateAttributeGroupInput;
+
+pub use crate::operation::update_attribute_group::_update_attribute_group_output::UpdateAttributeGroupOutput;
 
 mod _update_attribute_group_input;
 

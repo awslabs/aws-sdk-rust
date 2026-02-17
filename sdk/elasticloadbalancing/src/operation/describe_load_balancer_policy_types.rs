@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_load_bala
     }
 }
 
-pub use crate::operation::describe_load_balancer_policy_types::_describe_load_balancer_policy_types_output::DescribeLoadBalancerPolicyTypesOutput;
-
 pub use crate::operation::describe_load_balancer_policy_types::_describe_load_balancer_policy_types_input::DescribeLoadBalancerPolicyTypesInput;
+
+pub use crate::operation::describe_load_balancer_policy_types::_describe_load_balancer_policy_types_output::DescribeLoadBalancerPolicyTypesOutput;
 
 mod _describe_load_balancer_policy_types_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_product_pages
     }
 }
 
-pub use crate::operation::list_product_pages::_list_product_pages_output::ListProductPagesOutput;
-
 pub use crate::operation::list_product_pages::_list_product_pages_input::ListProductPagesInput;
+
+pub use crate::operation::list_product_pages::_list_product_pages_output::ListProductPagesOutput;
 
 mod _list_product_pages_input;
 

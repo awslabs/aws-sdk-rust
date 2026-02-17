@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_game_ses
     }
 }
 
-pub use crate::operation::terminate_game_session::_terminate_game_session_output::TerminateGameSessionOutput;
-
 pub use crate::operation::terminate_game_session::_terminate_game_session_input::TerminateGameSessionInput;
+
+pub use crate::operation::terminate_game_session::_terminate_game_session_output::TerminateGameSessionOutput;
 
 mod _terminate_game_session_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_progress_upda
     }
 }
 
-pub use crate::operation::list_progress_update_streams::_list_progress_update_streams_output::ListProgressUpdateStreamsOutput;
-
 pub use crate::operation::list_progress_update_streams::_list_progress_update_streams_input::ListProgressUpdateStreamsInput;
+
+pub use crate::operation::list_progress_update_streams::_list_progress_update_streams_output::ListProgressUpdateStreamsOutput;
 
 mod _list_progress_update_streams_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_inference_sch
     }
 }
 
-pub use crate::operation::stop_inference_scheduler::_stop_inference_scheduler_output::StopInferenceSchedulerOutput;
-
 pub use crate::operation::stop_inference_scheduler::_stop_inference_scheduler_input::StopInferenceSchedulerInput;
+
+pub use crate::operation::stop_inference_scheduler::_stop_inference_scheduler_output::StopInferenceSchedulerOutput;
 
 mod _stop_inference_scheduler_input;
 

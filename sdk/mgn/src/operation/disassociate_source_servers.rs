@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_sourc
     }
 }
 
-pub use crate::operation::disassociate_source_servers::_disassociate_source_servers_output::DisassociateSourceServersOutput;
-
 pub use crate::operation::disassociate_source_servers::_disassociate_source_servers_input::DisassociateSourceServersInput;
+
+pub use crate::operation::disassociate_source_servers::_disassociate_source_servers_output::DisassociateSourceServersOutput;
 
 mod _disassociate_source_servers_input;
 

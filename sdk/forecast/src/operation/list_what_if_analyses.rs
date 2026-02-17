@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_what_if_analy
     }
 }
 
-pub use crate::operation::list_what_if_analyses::_list_what_if_analyses_output::ListWhatIfAnalysesOutput;
-
 pub use crate::operation::list_what_if_analyses::_list_what_if_analyses_input::ListWhatIfAnalysesInput;
+
+pub use crate::operation::list_what_if_analyses::_list_what_if_analyses_output::ListWhatIfAnalysesOutput;
 
 mod _list_what_if_analyses_input;
 

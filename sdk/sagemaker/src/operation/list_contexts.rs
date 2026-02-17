@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contexts::Lis
     }
 }
 
-pub use crate::operation::list_contexts::_list_contexts_output::ListContextsOutput;
-
 pub use crate::operation::list_contexts::_list_contexts_input::ListContextsInput;
+
+pub use crate::operation::list_contexts::_list_contexts_output::ListContextsOutput;
 
 mod _list_contexts_input;
 

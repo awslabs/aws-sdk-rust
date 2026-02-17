@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_retriever::
     }
 }
 
-pub use crate::operation::create_retriever::_create_retriever_output::CreateRetrieverOutput;
-
 pub use crate::operation::create_retriever::_create_retriever_input::CreateRetrieverInput;
+
+pub use crate::operation::create_retriever::_create_retriever_output::CreateRetrieverOutput;
 
 mod _create_retriever_input;
 

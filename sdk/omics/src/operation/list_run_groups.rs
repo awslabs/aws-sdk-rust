@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_run_groups::L
     }
 }
 
-pub use crate::operation::list_run_groups::_list_run_groups_output::ListRunGroupsOutput;
-
 pub use crate::operation::list_run_groups::_list_run_groups_input::ListRunGroupsInput;
+
+pub use crate::operation::list_run_groups::_list_run_groups_output::ListRunGroupsOutput;
 
 mod _list_run_groups_input;
 

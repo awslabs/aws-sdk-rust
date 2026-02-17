@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_or_update_t
     }
 }
 
-pub use crate::operation::create_or_update_tags::_create_or_update_tags_output::CreateOrUpdateTagsOutput;
-
 pub use crate::operation::create_or_update_tags::_create_or_update_tags_input::CreateOrUpdateTagsInput;
+
+pub use crate::operation::create_or_update_tags::_create_or_update_tags_output::CreateOrUpdateTagsOutput;
 
 mod _create_or_update_tags_input;
 

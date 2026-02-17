@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_registry_catal
     }
 }
 
-pub use crate::operation::get_registry_catalog_data::_get_registry_catalog_data_output::GetRegistryCatalogDataOutput;
-
 pub use crate::operation::get_registry_catalog_data::_get_registry_catalog_data_input::GetRegistryCatalogDataInput;
+
+pub use crate::operation::get_registry_catalog_data::_get_registry_catalog_data_output::GetRegistryCatalogDataOutput;
 
 mod _get_registry_catalog_data_input;
 

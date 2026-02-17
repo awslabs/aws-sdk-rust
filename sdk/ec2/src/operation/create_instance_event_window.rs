@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_instance_ev
     }
 }
 
-pub use crate::operation::create_instance_event_window::_create_instance_event_window_output::CreateInstanceEventWindowOutput;
-
 pub use crate::operation::create_instance_event_window::_create_instance_event_window_input::CreateInstanceEventWindowInput;
+
+pub use crate::operation::create_instance_event_window::_create_instance_event_window_output::CreateInstanceEventWindowOutput;
 
 mod _create_instance_event_window_input;
 

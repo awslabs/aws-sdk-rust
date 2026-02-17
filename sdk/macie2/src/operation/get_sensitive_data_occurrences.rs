@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sensitive_data
     }
 }
 
-pub use crate::operation::get_sensitive_data_occurrences::_get_sensitive_data_occurrences_output::GetSensitiveDataOccurrencesOutput;
-
 pub use crate::operation::get_sensitive_data_occurrences::_get_sensitive_data_occurrences_input::GetSensitiveDataOccurrencesInput;
+
+pub use crate::operation::get_sensitive_data_occurrences::_get_sensitive_data_occurrences_output::GetSensitiveDataOccurrencesOutput;
 
 mod _get_sensitive_data_occurrences_input;
 

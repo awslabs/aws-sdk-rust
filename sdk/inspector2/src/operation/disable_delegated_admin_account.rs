@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_delegated_
     }
 }
 
-pub use crate::operation::disable_delegated_admin_account::_disable_delegated_admin_account_output::DisableDelegatedAdminAccountOutput;
-
 pub use crate::operation::disable_delegated_admin_account::_disable_delegated_admin_account_input::DisableDelegatedAdminAccountInput;
+
+pub use crate::operation::disable_delegated_admin_account::_disable_delegated_admin_account_output::DisableDelegatedAdminAccountOutput;
 
 mod _disable_delegated_admin_account_input;
 

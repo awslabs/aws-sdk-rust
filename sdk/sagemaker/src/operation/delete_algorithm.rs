@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_algorithm::
     }
 }
 
-pub use crate::operation::delete_algorithm::_delete_algorithm_output::DeleteAlgorithmOutput;
-
 pub use crate::operation::delete_algorithm::_delete_algorithm_input::DeleteAlgorithmInput;
+
+pub use crate::operation::delete_algorithm::_delete_algorithm_output::DeleteAlgorithmOutput;
 
 mod _delete_algorithm_input;
 

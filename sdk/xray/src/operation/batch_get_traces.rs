@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_traces::
     }
 }
 
-pub use crate::operation::batch_get_traces::_batch_get_traces_output::BatchGetTracesOutput;
-
 pub use crate::operation::batch_get_traces::_batch_get_traces_input::BatchGetTracesInput;
+
+pub use crate::operation::batch_get_traces::_batch_get_traces_output::BatchGetTracesOutput;
 
 mod _batch_get_traces_input;
 

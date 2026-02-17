@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contact_flow_
     }
 }
 
-pub use crate::operation::list_contact_flow_modules::_list_contact_flow_modules_output::ListContactFlowModulesOutput;
-
 pub use crate::operation::list_contact_flow_modules::_list_contact_flow_modules_input::ListContactFlowModulesInput;
+
+pub use crate::operation::list_contact_flow_modules::_list_contact_flow_modules_output::ListContactFlowModulesOutput;
 
 mod _list_contact_flow_modules_input;
 

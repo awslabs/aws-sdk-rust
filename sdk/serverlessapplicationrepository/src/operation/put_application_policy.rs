@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_application_po
     }
 }
 
-pub use crate::operation::put_application_policy::_put_application_policy_output::PutApplicationPolicyOutput;
-
 pub use crate::operation::put_application_policy::_put_application_policy_input::PutApplicationPolicyInput;
+
+pub use crate::operation::put_application_policy::_put_application_policy_output::PutApplicationPolicyOutput;
 
 mod _put_application_policy_input;
 

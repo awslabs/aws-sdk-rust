@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backup_selecti
     }
 }
 
-pub use crate::operation::get_backup_selection::_get_backup_selection_output::GetBackupSelectionOutput;
-
 pub use crate::operation::get_backup_selection::_get_backup_selection_input::GetBackupSelectionInput;
+
+pub use crate::operation::get_backup_selection::_get_backup_selection_output::GetBackupSelectionOutput;
 
 mod _get_backup_selection_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::converse::Converse
     }
 }
 
-pub use crate::operation::converse::_converse_output::ConverseOutput;
-
 pub use crate::operation::converse::_converse_input::ConverseInput;
+
+pub use crate::operation::converse::_converse_output::ConverseOutput;
 
 mod _converse_input;
 

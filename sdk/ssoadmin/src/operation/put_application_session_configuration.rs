@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_application_se
     }
 }
 
-pub use crate::operation::put_application_session_configuration::_put_application_session_configuration_output::PutApplicationSessionConfigurationOutput;
-
 pub use crate::operation::put_application_session_configuration::_put_application_session_configuration_input::PutApplicationSessionConfigurationInput;
+
+pub use crate::operation::put_application_session_configuration::_put_application_session_configuration_output::PutApplicationSessionConfigurationOutput;
 
 mod _put_application_session_configuration_input;
 

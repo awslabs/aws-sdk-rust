@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_timeline_ev
     }
 }
 
-pub use crate::operation::create_timeline_event::_create_timeline_event_output::CreateTimelineEventOutput;
-
 pub use crate::operation::create_timeline_event::_create_timeline_event_input::CreateTimelineEventInput;
+
+pub use crate::operation::create_timeline_event::_create_timeline_event_output::CreateTimelineEventOutput;
 
 mod _create_timeline_event_input;
 

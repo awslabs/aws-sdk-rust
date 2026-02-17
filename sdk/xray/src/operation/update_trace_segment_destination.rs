@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trace_segme
     }
 }
 
-pub use crate::operation::update_trace_segment_destination::_update_trace_segment_destination_output::UpdateTraceSegmentDestinationOutput;
-
 pub use crate::operation::update_trace_segment_destination::_update_trace_segment_destination_input::UpdateTraceSegmentDestinationInput;
+
+pub use crate::operation::update_trace_segment_destination::_update_trace_segment_destination_output::UpdateTraceSegmentDestinationOutput;
 
 mod _update_trace_segment_destination_input;
 

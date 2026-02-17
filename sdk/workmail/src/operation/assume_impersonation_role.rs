@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_impersonati
     }
 }
 
-pub use crate::operation::assume_impersonation_role::_assume_impersonation_role_output::AssumeImpersonationRoleOutput;
-
 pub use crate::operation::assume_impersonation_role::_assume_impersonation_role_input::AssumeImpersonationRoleInput;
+
+pub use crate::operation::assume_impersonation_role::_assume_impersonation_role_output::AssumeImpersonationRoleOutput;
 
 mod _assume_impersonation_role_input;
 

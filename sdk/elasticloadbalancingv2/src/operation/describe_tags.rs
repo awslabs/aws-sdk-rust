@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tags::Des
     }
 }
 
-pub use crate::operation::describe_tags::_describe_tags_output::DescribeTagsOutput;
-
 pub use crate::operation::describe_tags::_describe_tags_input::DescribeTagsInput;
+
+pub use crate::operation::describe_tags::_describe_tags_output::DescribeTagsOutput;
 
 mod _describe_tags_input;
 

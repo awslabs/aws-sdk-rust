@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_raster_data_c
     }
 }
 
-pub use crate::operation::list_raster_data_collections::_list_raster_data_collections_output::ListRasterDataCollectionsOutput;
-
 pub use crate::operation::list_raster_data_collections::_list_raster_data_collections_input::ListRasterDataCollectionsInput;
+
+pub use crate::operation::list_raster_data_collections::_list_raster_data_collections_output::ListRasterDataCollectionsOutput;
 
 mod _list_raster_data_collections_input;
 

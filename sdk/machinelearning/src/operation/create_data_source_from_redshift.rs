@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_source
     }
 }
 
-pub use crate::operation::create_data_source_from_redshift::_create_data_source_from_redshift_output::CreateDataSourceFromRedshiftOutput;
-
 pub use crate::operation::create_data_source_from_redshift::_create_data_source_from_redshift_input::CreateDataSourceFromRedshiftInput;
+
+pub use crate::operation::create_data_source_from_redshift::_create_data_source_from_redshift_output::CreateDataSourceFromRedshiftOutput;
 
 mod _create_data_source_from_redshift_input;
 

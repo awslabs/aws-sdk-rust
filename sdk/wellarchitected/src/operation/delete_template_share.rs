@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_template_sh
     }
 }
 
-pub use crate::operation::delete_template_share::_delete_template_share_output::DeleteTemplateShareOutput;
-
 pub use crate::operation::delete_template_share::_delete_template_share_input::DeleteTemplateShareInput;
+
+pub use crate::operation::delete_template_share::_delete_template_share_output::DeleteTemplateShareOutput;
 
 mod _delete_template_share_input;
 

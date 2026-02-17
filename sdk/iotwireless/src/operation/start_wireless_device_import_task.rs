@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_wireless_dev
     }
 }
 
-pub use crate::operation::start_wireless_device_import_task::_start_wireless_device_import_task_output::StartWirelessDeviceImportTaskOutput;
-
 pub use crate::operation::start_wireless_device_import_task::_start_wireless_device_import_task_input::StartWirelessDeviceImportTaskInput;
+
+pub use crate::operation::start_wireless_device_import_task::_start_wireless_device_import_task_output::StartWirelessDeviceImportTaskOutput;
 
 mod _start_wireless_device_import_task_input;
 

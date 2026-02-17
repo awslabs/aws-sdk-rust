@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tag_sync_task:
     }
 }
 
-pub use crate::operation::get_tag_sync_task::_get_tag_sync_task_output::GetTagSyncTaskOutput;
-
 pub use crate::operation::get_tag_sync_task::_get_tag_sync_task_input::GetTagSyncTaskInput;
+
+pub use crate::operation::get_tag_sync_task::_get_tag_sync_task_output::GetTagSyncTaskOutput;
 
 mod _get_tag_sync_task_input;
 

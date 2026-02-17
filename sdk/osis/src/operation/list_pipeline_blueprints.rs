@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipeline_blue
     }
 }
 
-pub use crate::operation::list_pipeline_blueprints::_list_pipeline_blueprints_output::ListPipelineBlueprintsOutput;
-
 pub use crate::operation::list_pipeline_blueprints::_list_pipeline_blueprints_input::ListPipelineBlueprintsInput;
+
+pub use crate::operation::list_pipeline_blueprints::_list_pipeline_blueprints_output::ListPipelineBlueprintsOutput;
 
 mod _list_pipeline_blueprints_input;
 

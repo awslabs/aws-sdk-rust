@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_identity_pr
     }
 }
 
-pub use crate::operation::delete_identity_provider::_delete_identity_provider_output::DeleteIdentityProviderOutput;
-
 pub use crate::operation::delete_identity_provider::_delete_identity_provider_input::DeleteIdentityProviderInput;
+
+pub use crate::operation::delete_identity_provider::_delete_identity_provider_output::DeleteIdentityProviderOutput;
 
 mod _delete_identity_provider_input;
 

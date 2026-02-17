@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_cluster::Re
     }
 }
 
-pub use crate::operation::resume_cluster::_resume_cluster_output::ResumeClusterOutput;
-
 pub use crate::operation::resume_cluster::_resume_cluster_input::ResumeClusterInput;
+
+pub use crate::operation::resume_cluster::_resume_cluster_output::ResumeClusterOutput;
 
 mod _resume_cluster_input;
 

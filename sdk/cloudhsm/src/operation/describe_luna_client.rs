@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_luna_clie
     }
 }
 
-pub use crate::operation::describe_luna_client::_describe_luna_client_output::DescribeLunaClientOutput;
-
 pub use crate::operation::describe_luna_client::_describe_luna_client_input::DescribeLunaClientInput;
+
+pub use crate::operation::describe_luna_client::_describe_luna_client_output::DescribeLunaClientOutput;
 
 mod _describe_luna_client_input;
 

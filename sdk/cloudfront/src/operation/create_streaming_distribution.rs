@@ -484,9 +484,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_streaming_d
     }
 }
 
-pub use crate::operation::create_streaming_distribution::_create_streaming_distribution_output::CreateStreamingDistributionOutput;
-
 pub use crate::operation::create_streaming_distribution::_create_streaming_distribution_input::CreateStreamingDistributionInput;
+
+pub use crate::operation::create_streaming_distribution::_create_streaming_distribution_output::CreateStreamingDistributionOutput;
 
 mod _create_streaming_distribution_input;
 

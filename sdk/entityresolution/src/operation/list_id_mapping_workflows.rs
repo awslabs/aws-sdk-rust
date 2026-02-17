@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_id_mapping_wo
     }
 }
 
-pub use crate::operation::list_id_mapping_workflows::_list_id_mapping_workflows_output::ListIdMappingWorkflowsOutput;
-
 pub use crate::operation::list_id_mapping_workflows::_list_id_mapping_workflows_input::ListIdMappingWorkflowsInput;
+
+pub use crate::operation::list_id_mapping_workflows::_list_id_mapping_workflows_output::ListIdMappingWorkflowsOutput;
 
 mod _list_id_mapping_workflows_input;
 

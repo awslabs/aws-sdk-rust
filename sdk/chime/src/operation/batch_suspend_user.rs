@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_suspend_user
     }
 }
 
-pub use crate::operation::batch_suspend_user::_batch_suspend_user_output::BatchSuspendUserOutput;
-
 pub use crate::operation::batch_suspend_user::_batch_suspend_user_input::BatchSuspendUserInput;
+
+pub use crate::operation::batch_suspend_user::_batch_suspend_user_output::BatchSuspendUserOutput;
 
 mod _batch_suspend_user_input;
 

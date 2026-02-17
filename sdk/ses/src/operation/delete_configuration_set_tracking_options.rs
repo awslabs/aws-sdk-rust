@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configurati
     }
 }
 
-pub use crate::operation::delete_configuration_set_tracking_options::_delete_configuration_set_tracking_options_output::DeleteConfigurationSetTrackingOptionsOutput;
-
 pub use crate::operation::delete_configuration_set_tracking_options::_delete_configuration_set_tracking_options_input::DeleteConfigurationSetTrackingOptionsInput;
+
+pub use crate::operation::delete_configuration_set_tracking_options::_delete_configuration_set_tracking_options_output::DeleteConfigurationSetTrackingOptionsOutput;
 
 mod _delete_configuration_set_tracking_options_input;
 

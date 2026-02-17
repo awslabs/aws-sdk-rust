@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_endpo
     }
 }
 
-pub use crate::operation::describe_vpc_endpoint_service_permissions::_describe_vpc_endpoint_service_permissions_output::DescribeVpcEndpointServicePermissionsOutput;
-
 pub use crate::operation::describe_vpc_endpoint_service_permissions::_describe_vpc_endpoint_service_permissions_input::DescribeVpcEndpointServicePermissionsInput;
+
+pub use crate::operation::describe_vpc_endpoint_service_permissions::_describe_vpc_endpoint_service_permissions_output::DescribeVpcEndpointServicePermissionsOutput;
 
 mod _describe_vpc_endpoint_service_permissions_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_shard_count
     }
 }
 
-pub use crate::operation::update_shard_count::_update_shard_count_output::UpdateShardCountOutput;
-
 pub use crate::operation::update_shard_count::_update_shard_count_input::UpdateShardCountInput;
+
+pub use crate::operation::update_shard_count::_update_shard_count_output::UpdateShardCountOutput;
 
 mod _update_shard_count_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::join_storage_sessi
     }
 }
 
-pub use crate::operation::join_storage_session_as_viewer::_join_storage_session_as_viewer_output::JoinStorageSessionAsViewerOutput;
-
 pub use crate::operation::join_storage_session_as_viewer::_join_storage_session_as_viewer_input::JoinStorageSessionAsViewerInput;
+
+pub use crate::operation::join_storage_session_as_viewer::_join_storage_session_as_viewer_output::JoinStorageSessionAsViewerOutput;
 
 mod _join_storage_session_as_viewer_input;
 

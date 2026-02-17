@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_unsuspend_us
     }
 }
 
-pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_output::BatchUnsuspendUserOutput;
-
 pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_input::BatchUnsuspendUserInput;
+
+pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_output::BatchUnsuspendUserOutput;
 
 mod _batch_unsuspend_user_input;
 

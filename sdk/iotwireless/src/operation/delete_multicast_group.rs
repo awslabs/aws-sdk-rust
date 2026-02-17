@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_multicast_g
     }
 }
 
-pub use crate::operation::delete_multicast_group::_delete_multicast_group_output::DeleteMulticastGroupOutput;
-
 pub use crate::operation::delete_multicast_group::_delete_multicast_group_input::DeleteMulticastGroupInput;
+
+pub use crate::operation::delete_multicast_group::_delete_multicast_group_output::DeleteMulticastGroupOutput;
 
 mod _delete_multicast_group_input;
 

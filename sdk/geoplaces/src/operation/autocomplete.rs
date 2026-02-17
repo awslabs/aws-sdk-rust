@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::autocomplete::Auto
     }
 }
 
-pub use crate::operation::autocomplete::_autocomplete_output::AutocompleteOutput;
-
 pub use crate::operation::autocomplete::_autocomplete_input::AutocompleteInput;
+
+pub use crate::operation::autocomplete::_autocomplete_output::AutocompleteOutput;
 
 mod _autocomplete_input;
 

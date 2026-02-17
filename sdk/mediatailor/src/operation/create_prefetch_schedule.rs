@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_prefetch_sc
     }
 }
 
-pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_output::CreatePrefetchScheduleOutput;
-
 pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_input::CreatePrefetchScheduleInput;
+
+pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_output::CreatePrefetchScheduleOutput;
 
 mod _create_prefetch_schedule_input;
 

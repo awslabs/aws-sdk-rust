@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_signaling
     }
 }
 
-pub use crate::operation::describe_signaling_channel::_describe_signaling_channel_output::DescribeSignalingChannelOutput;
-
 pub use crate::operation::describe_signaling_channel::_describe_signaling_channel_input::DescribeSignalingChannelInput;
+
+pub use crate::operation::describe_signaling_channel::_describe_signaling_channel_output::DescribeSignalingChannelOutput;
 
 mod _describe_signaling_channel_input;
 

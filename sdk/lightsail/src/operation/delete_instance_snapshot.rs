@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_instance_sn
     }
 }
 
-pub use crate::operation::delete_instance_snapshot::_delete_instance_snapshot_output::DeleteInstanceSnapshotOutput;
-
 pub use crate::operation::delete_instance_snapshot::_delete_instance_snapshot_input::DeleteInstanceSnapshotInput;
+
+pub use crate::operation::delete_instance_snapshot::_delete_instance_snapshot_output::DeleteInstanceSnapshotOutput;
 
 mod _delete_instance_snapshot_input;
 

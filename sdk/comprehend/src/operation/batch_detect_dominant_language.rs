@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_detect_domin
     }
 }
 
-pub use crate::operation::batch_detect_dominant_language::_batch_detect_dominant_language_output::BatchDetectDominantLanguageOutput;
-
 pub use crate::operation::batch_detect_dominant_language::_batch_detect_dominant_language_input::BatchDetectDominantLanguageInput;
+
+pub use crate::operation::batch_detect_dominant_language::_batch_detect_dominant_language_output::BatchDetectDominantLanguageOutput;
 
 mod _batch_detect_dominant_language_input;
 

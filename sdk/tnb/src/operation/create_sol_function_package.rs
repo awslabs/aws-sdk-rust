@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sol_functio
     }
 }
 
-pub use crate::operation::create_sol_function_package::_create_sol_function_package_output::CreateSolFunctionPackageOutput;
-
 pub use crate::operation::create_sol_function_package::_create_sol_function_package_input::CreateSolFunctionPackageInput;
+
+pub use crate::operation::create_sol_function_package::_create_sol_function_package_output::CreateSolFunctionPackageOutput;
 
 mod _create_sol_function_package_input;
 

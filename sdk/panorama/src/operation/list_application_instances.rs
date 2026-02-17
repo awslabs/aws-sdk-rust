@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_i
     }
 }
 
-pub use crate::operation::list_application_instances::_list_application_instances_output::ListApplicationInstancesOutput;
-
 pub use crate::operation::list_application_instances::_list_application_instances_input::ListApplicationInstancesInput;
+
+pub use crate::operation::list_application_instances::_list_application_instances_output::ListApplicationInstancesOutput;
 
 mod _list_application_instances_input;
 

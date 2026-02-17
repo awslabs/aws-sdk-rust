@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ingress_poi
     }
 }
 
-pub use crate::operation::update_ingress_point::_update_ingress_point_output::UpdateIngressPointOutput;
-
 pub use crate::operation::update_ingress_point::_update_ingress_point_input::UpdateIngressPointInput;
+
+pub use crate::operation::update_ingress_point::_update_ingress_point_output::UpdateIngressPointOutput;
 
 mod _update_ingress_point_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_evaluation_fo
     }
 }
 
-pub use crate::operation::list_evaluation_form_versions::_list_evaluation_form_versions_output::ListEvaluationFormVersionsOutput;
-
 pub use crate::operation::list_evaluation_form_versions::_list_evaluation_form_versions_input::ListEvaluationFormVersionsInput;
+
+pub use crate::operation::list_evaluation_form_versions::_list_evaluation_form_versions_output::ListEvaluationFormVersionsOutput;
 
 mod _list_evaluation_form_versions_input;
 

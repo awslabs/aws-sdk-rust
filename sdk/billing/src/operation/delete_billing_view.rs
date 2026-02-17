@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_billing_vie
     }
 }
 
-pub use crate::operation::delete_billing_view::_delete_billing_view_output::DeleteBillingViewOutput;
-
 pub use crate::operation::delete_billing_view::_delete_billing_view_input::DeleteBillingViewInput;
+
+pub use crate::operation::delete_billing_view::_delete_billing_view_output::DeleteBillingViewOutput;
 
 mod _delete_billing_view_input;
 

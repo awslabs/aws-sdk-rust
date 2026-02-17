@@ -517,9 +517,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_db_cluster
     }
 }
 
-pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_cluster_to_point_in_time_output::RestoreDbClusterToPointInTimeOutput;
-
 pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_cluster_to_point_in_time_input::RestoreDbClusterToPointInTimeInput;
+
+pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_cluster_to_point_in_time_output::RestoreDbClusterToPointInTimeOutput;
 
 mod _restore_db_cluster_to_point_in_time_input;
 

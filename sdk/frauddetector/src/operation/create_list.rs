@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_list::Creat
     }
 }
 
-pub use crate::operation::create_list::_create_list_output::CreateListOutput;
-
 pub use crate::operation::create_list::_create_list_input::CreateListInput;
+
+pub use crate::operation::create_list::_create_list_output::CreateListOutput;
 
 mod _create_list_input;
 

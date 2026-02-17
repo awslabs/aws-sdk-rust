@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_core_definitio
     }
 }
 
-pub use crate::operation::get_core_definition_version::_get_core_definition_version_output::GetCoreDefinitionVersionOutput;
-
 pub use crate::operation::get_core_definition_version::_get_core_definition_version_input::GetCoreDefinitionVersionInput;
+
+pub use crate::operation::get_core_definition_version::_get_core_definition_version_output::GetCoreDefinitionVersionOutput;
 
 mod _get_core_definition_version_input;
 

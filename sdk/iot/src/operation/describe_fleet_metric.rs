@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_met
     }
 }
 
-pub use crate::operation::describe_fleet_metric::_describe_fleet_metric_output::DescribeFleetMetricOutput;
-
 pub use crate::operation::describe_fleet_metric::_describe_fleet_metric_input::DescribeFleetMetricInput;
+
+pub use crate::operation::describe_fleet_metric::_describe_fleet_metric_output::DescribeFleetMetricOutput;
 
 mod _describe_fleet_metric_input;
 

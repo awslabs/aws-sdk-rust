@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket::GetBuc
     }
 }
 
-pub use crate::operation::get_bucket::_get_bucket_output::GetBucketOutput;
-
 pub use crate::operation::get_bucket::_get_bucket_input::GetBucketInput;
+
+pub use crate::operation::get_bucket::_get_bucket_output::GetBucketOutput;
 
 mod _get_bucket_input;
 

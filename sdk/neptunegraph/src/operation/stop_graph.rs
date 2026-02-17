@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_graph::StopGr
     }
 }
 
-pub use crate::operation::stop_graph::_stop_graph_output::StopGraphOutput;
-
 pub use crate::operation::stop_graph::_stop_graph_input::StopGraphInput;
+
+pub use crate::operation::stop_graph::_stop_graph_output::StopGraphOutput;
 
 mod _stop_graph_input;
 

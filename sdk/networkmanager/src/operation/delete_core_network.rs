@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_core_networ
     }
 }
 
-pub use crate::operation::delete_core_network::_delete_core_network_output::DeleteCoreNetworkOutput;
-
 pub use crate::operation::delete_core_network::_delete_core_network_input::DeleteCoreNetworkInput;
+
+pub use crate::operation::delete_core_network::_delete_core_network_output::DeleteCoreNetworkOutput;
 
 mod _delete_core_network_input;
 

@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mfa_devices::
     }
 }
 
-pub use crate::operation::list_mfa_devices::_list_mfa_devices_output::ListMfaDevicesOutput;
-
 pub use crate::operation::list_mfa_devices::_list_mfa_devices_input::ListMfaDevicesInput;
+
+pub use crate::operation::list_mfa_devices::_list_mfa_devices_output::ListMfaDevicesOutput;
 
 mod _list_mfa_devices_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_firew
     }
 }
 
-pub use crate::operation::list_managed_firewall_domain_lists::_list_managed_firewall_domain_lists_output::ListManagedFirewallDomainListsOutput;
-
 pub use crate::operation::list_managed_firewall_domain_lists::_list_managed_firewall_domain_lists_input::ListManagedFirewallDomainListsInput;
+
+pub use crate::operation::list_managed_firewall_domain_lists::_list_managed_firewall_domain_lists_output::ListManagedFirewallDomainListsOutput;
 
 mod _list_managed_firewall_domain_lists_input;
 

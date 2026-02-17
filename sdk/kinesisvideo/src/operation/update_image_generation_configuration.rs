@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image_gener
     }
 }
 
-pub use crate::operation::update_image_generation_configuration::_update_image_generation_configuration_output::UpdateImageGenerationConfigurationOutput;
-
 pub use crate::operation::update_image_generation_configuration::_update_image_generation_configuration_input::UpdateImageGenerationConfigurationInput;
+
+pub use crate::operation::update_image_generation_configuration::_update_image_generation_configuration_output::UpdateImageGenerationConfigurationOutput;
 
 mod _update_image_generation_configuration_input;
 

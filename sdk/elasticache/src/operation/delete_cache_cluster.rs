@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cache_clust
     }
 }
 
-pub use crate::operation::delete_cache_cluster::_delete_cache_cluster_output::DeleteCacheClusterOutput;
-
 pub use crate::operation::delete_cache_cluster::_delete_cache_cluster_input::DeleteCacheClusterInput;
+
+pub use crate::operation::delete_cache_cluster::_delete_cache_cluster_output::DeleteCacheClusterOutput;
 
 mod _delete_cache_cluster_input;
 

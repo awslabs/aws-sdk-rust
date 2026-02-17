@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_envir
     }
 }
 
-pub use crate::operation::disassociate_environment_role::_disassociate_environment_role_output::DisassociateEnvironmentRoleOutput;
-
 pub use crate::operation::disassociate_environment_role::_disassociate_environment_role_input::DisassociateEnvironmentRoleInput;
+
+pub use crate::operation::disassociate_environment_role::_disassociate_environment_role_output::DisassociateEnvironmentRoleOutput;
 
 mod _disassociate_environment_role_input;
 

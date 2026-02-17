@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_aggregate_config_rule_compliance_summary::_get_aggregate_config_rule_compliance_summary_output::GetAggregateConfigRuleComplianceSummaryOutput;
-
 pub use crate::operation::get_aggregate_config_rule_compliance_summary::_get_aggregate_config_rule_compliance_summary_input::GetAggregateConfigRuleComplianceSummaryInput;
+
+pub use crate::operation::get_aggregate_config_rule_compliance_summary::_get_aggregate_config_rule_compliance_summary_output::GetAggregateConfigRuleComplianceSummaryOutput;
 
 mod _get_aggregate_config_rule_compliance_summary_input;
 

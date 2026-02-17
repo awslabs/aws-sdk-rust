@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_application_layer_automatic_response::_update_application_layer_automatic_response_output::UpdateApplicationLayerAutomaticResponseOutput;
-
 pub use crate::operation::update_application_layer_automatic_response::_update_application_layer_automatic_response_input::UpdateApplicationLayerAutomaticResponseInput;
+
+pub use crate::operation::update_application_layer_automatic_response::_update_application_layer_automatic_response_output::UpdateApplicationLayerAutomaticResponseOutput;
 
 mod _update_application_layer_automatic_response_input;
 

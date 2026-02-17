@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_delegation_
     }
 }
 
-pub use crate::operation::create_delegation_request::_create_delegation_request_output::CreateDelegationRequestOutput;
-
 pub use crate::operation::create_delegation_request::_create_delegation_request_input::CreateDelegationRequestInput;
+
+pub use crate::operation::create_delegation_request::_create_delegation_request_output::CreateDelegationRequestOutput;
 
 mod _create_delegation_request_input;
 

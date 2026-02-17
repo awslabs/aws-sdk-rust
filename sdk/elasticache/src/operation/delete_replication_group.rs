@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_replication
     }
 }
 
-pub use crate::operation::delete_replication_group::_delete_replication_group_output::DeleteReplicationGroupOutput;
-
 pub use crate::operation::delete_replication_group::_delete_replication_group_input::DeleteReplicationGroupInput;
+
+pub use crate::operation::delete_replication_group::_delete_replication_group_output::DeleteReplicationGroupOutput;
 
 mod _delete_replication_group_input;
 

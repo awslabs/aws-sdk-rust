@@ -507,9 +507,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_streaming_d
     }
 }
 
-pub use crate::operation::create_streaming_distribution_with_tags::_create_streaming_distribution_with_tags_output::CreateStreamingDistributionWithTagsOutput;
-
 pub use crate::operation::create_streaming_distribution_with_tags::_create_streaming_distribution_with_tags_input::CreateStreamingDistributionWithTagsInput;
+
+pub use crate::operation::create_streaming_distribution_with_tags::_create_streaming_distribution_with_tags_output::CreateStreamingDistributionWithTagsOutput;
 
 mod _create_streaming_distribution_with_tags_input;
 

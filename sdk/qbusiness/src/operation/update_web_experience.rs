@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_web_experie
     }
 }
 
-pub use crate::operation::update_web_experience::_update_web_experience_output::UpdateWebExperienceOutput;
-
 pub use crate::operation::update_web_experience::_update_web_experience_input::UpdateWebExperienceInput;
+
+pub use crate::operation::update_web_experience::_update_web_experience_output::UpdateWebExperienceOutput;
 
 mod _update_web_experience_input;
 

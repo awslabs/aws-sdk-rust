@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_predictive_sca
     }
 }
 
-pub use crate::operation::get_predictive_scaling_forecast::_get_predictive_scaling_forecast_output::GetPredictiveScalingForecastOutput;
-
 pub use crate::operation::get_predictive_scaling_forecast::_get_predictive_scaling_forecast_input::GetPredictiveScalingForecastInput;
+
+pub use crate::operation::get_predictive_scaling_forecast::_get_predictive_scaling_forecast_output::GetPredictiveScalingForecastOutput;
 
 mod _get_predictive_scaling_forecast_input;
 

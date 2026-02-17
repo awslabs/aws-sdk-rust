@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_registratio
     }
 }
 
-pub use crate::operation::delete_registration_code::_delete_registration_code_output::DeleteRegistrationCodeOutput;
-
 pub use crate::operation::delete_registration_code::_delete_registration_code_input::DeleteRegistrationCodeInput;
+
+pub use crate::operation::delete_registration_code::_delete_registration_code_output::DeleteRegistrationCodeOutput;
 
 mod _delete_registration_code_input;
 

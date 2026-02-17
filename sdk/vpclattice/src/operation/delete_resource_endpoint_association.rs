@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_en
     }
 }
 
-pub use crate::operation::delete_resource_endpoint_association::_delete_resource_endpoint_association_output::DeleteResourceEndpointAssociationOutput;
-
 pub use crate::operation::delete_resource_endpoint_association::_delete_resource_endpoint_association_input::DeleteResourceEndpointAssociationInput;
+
+pub use crate::operation::delete_resource_endpoint_association::_delete_resource_endpoint_association_output::DeleteResourceEndpointAssociationOutput;
 
 mod _delete_resource_endpoint_association_input;
 

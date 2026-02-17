@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restart_app_server
     }
 }
 
-pub use crate::operation::restart_app_server::_restart_app_server_output::RestartAppServerOutput;
-
 pub use crate::operation::restart_app_server::_restart_app_server_input::RestartAppServerInput;
+
+pub use crate::operation::restart_app_server::_restart_app_server_output::RestartAppServerOutput;
 
 mod _restart_app_server_input;
 

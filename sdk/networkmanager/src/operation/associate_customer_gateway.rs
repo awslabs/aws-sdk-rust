@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_customer
     }
 }
 
-pub use crate::operation::associate_customer_gateway::_associate_customer_gateway_output::AssociateCustomerGatewayOutput;
-
 pub use crate::operation::associate_customer_gateway::_associate_customer_gateway_input::AssociateCustomerGatewayInput;
+
+pub use crate::operation::associate_customer_gateway::_associate_customer_gateway_output::AssociateCustomerGatewayOutput;
 
 mod _associate_customer_gateway_input;
 

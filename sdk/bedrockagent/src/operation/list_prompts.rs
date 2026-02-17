@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_prompts::List
     }
 }
 
-pub use crate::operation::list_prompts::_list_prompts_output::ListPromptsOutput;
-
 pub use crate::operation::list_prompts::_list_prompts_input::ListPromptsInput;
+
+pub use crate::operation::list_prompts::_list_prompts_output::ListPromptsOutput;
 
 mod _list_prompts_input;
 

@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_table_to_p
     }
 }
 
-pub use crate::operation::restore_table_to_point_in_time::_restore_table_to_point_in_time_output::RestoreTableToPointInTimeOutput;
-
 pub use crate::operation::restore_table_to_point_in_time::_restore_table_to_point_in_time_input::RestoreTableToPointInTimeInput;
+
+pub use crate::operation::restore_table_to_point_in_time::_restore_table_to_point_in_time_output::RestoreTableToPointInTimeOutput;
 
 mod _restore_table_to_point_in_time_input;
 

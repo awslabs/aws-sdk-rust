@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_lens::Expor
     }
 }
 
-pub use crate::operation::export_lens::_export_lens_output::ExportLensOutput;
-
 pub use crate::operation::export_lens::_export_lens_input::ExportLensInput;
+
+pub use crate::operation::export_lens::_export_lens_output::ExportLensOutput;
 
 mod _export_lens_input;
 

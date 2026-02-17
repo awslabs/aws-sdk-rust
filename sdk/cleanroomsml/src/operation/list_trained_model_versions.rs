@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trained_model
     }
 }
 
-pub use crate::operation::list_trained_model_versions::_list_trained_model_versions_output::ListTrainedModelVersionsOutput;
-
 pub use crate::operation::list_trained_model_versions::_list_trained_model_versions_input::ListTrainedModelVersionsInput;
+
+pub use crate::operation::list_trained_model_versions::_list_trained_model_versions_output::ListTrainedModelVersionsOutput;
 
 mod _list_trained_model_versions_input;
 

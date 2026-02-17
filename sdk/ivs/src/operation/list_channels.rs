@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channels::Lis
     }
 }
 
-pub use crate::operation::list_channels::_list_channels_output::ListChannelsOutput;
-
 pub use crate::operation::list_channels::_list_channels_input::ListChannelsInput;
+
+pub use crate::operation::list_channels::_list_channels_output::ListChannelsOutput;
 
 mod _list_channels_input;
 

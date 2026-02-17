@@ -526,9 +526,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::move_account::Move
     }
 }
 
-pub use crate::operation::move_account::_move_account_output::MoveAccountOutput;
-
 pub use crate::operation::move_account::_move_account_input::MoveAccountInput;
+
+pub use crate::operation::move_account::_move_account_output::MoveAccountOutput;
 
 mod _move_account_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::simulate_principal
     }
 }
 
-pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_output::SimulatePrincipalPolicyOutput;
-
 pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_input::SimulatePrincipalPolicyInput;
+
+pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_output::SimulatePrincipalPolicyOutput;
 
 mod _simulate_principal_policy_input;
 

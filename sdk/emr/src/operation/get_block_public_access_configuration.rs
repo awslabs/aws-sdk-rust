@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_block_public_a
     }
 }
 
-pub use crate::operation::get_block_public_access_configuration::_get_block_public_access_configuration_output::GetBlockPublicAccessConfigurationOutput;
-
 pub use crate::operation::get_block_public_access_configuration::_get_block_public_access_configuration_input::GetBlockPublicAccessConfigurationInput;
+
+pub use crate::operation::get_block_public_access_configuration::_get_block_public_access_configuration_output::GetBlockPublicAccessConfigurationOutput;
 
 mod _get_block_public_access_configuration_input;
 

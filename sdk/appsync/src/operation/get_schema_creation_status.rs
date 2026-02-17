@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_creatio
     }
 }
 
-pub use crate::operation::get_schema_creation_status::_get_schema_creation_status_output::GetSchemaCreationStatusOutput;
-
 pub use crate::operation::get_schema_creation_status::_get_schema_creation_status_input::GetSchemaCreationStatusInput;
+
+pub use crate::operation::get_schema_creation_status::_get_schema_creation_status_output::GetSchemaCreationStatusOutput;
 
 mod _get_schema_creation_status_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_table_versi
     }
 }
 
-pub use crate::operation::delete_table_version::_delete_table_version_output::DeleteTableVersionOutput;
-
 pub use crate::operation::delete_table_version::_delete_table_version_input::DeleteTableVersionInput;
+
+pub use crate::operation::delete_table_version::_delete_table_version_output::DeleteTableVersionOutput;
 
 mod _delete_table_version_input;
 

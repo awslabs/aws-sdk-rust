@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_at
     }
 }
 
-pub use crate::operation::list_associated_attribute_groups::_list_associated_attribute_groups_output::ListAssociatedAttributeGroupsOutput;
-
 pub use crate::operation::list_associated_attribute_groups::_list_associated_attribute_groups_input::ListAssociatedAttributeGroupsInput;
+
+pub use crate::operation::list_associated_attribute_groups::_list_associated_attribute_groups_output::ListAssociatedAttributeGroupsOutput;
 
 mod _list_associated_attribute_groups_input;
 

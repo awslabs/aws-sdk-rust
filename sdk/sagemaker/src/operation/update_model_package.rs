@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_model_packa
     }
 }
 
-pub use crate::operation::update_model_package::_update_model_package_output::UpdateModelPackageOutput;
-
 pub use crate::operation::update_model_package::_update_model_package_input::UpdateModelPackageInput;
+
+pub use crate::operation::update_model_package::_update_model_package_output::UpdateModelPackageOutput;
 
 mod _update_model_package_input;
 

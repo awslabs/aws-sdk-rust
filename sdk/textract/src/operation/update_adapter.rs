@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_adapter::Up
     }
 }
 
-pub use crate::operation::update_adapter::_update_adapter_output::UpdateAdapterOutput;
-
 pub use crate::operation::update_adapter::_update_adapter_input::UpdateAdapterInput;
+
+pub use crate::operation::update_adapter::_update_adapter_output::UpdateAdapterOutput;
 
 mod _update_adapter_input;
 

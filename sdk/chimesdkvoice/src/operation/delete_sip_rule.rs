@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sip_rule::D
     }
 }
 
-pub use crate::operation::delete_sip_rule::_delete_sip_rule_output::DeleteSipRuleOutput;
-
 pub use crate::operation::delete_sip_rule::_delete_sip_rule_input::DeleteSipRuleInput;
+
+pub use crate::operation::delete_sip_rule::_delete_sip_rule_output::DeleteSipRuleOutput;
 
 mod _delete_sip_rule_input;
 

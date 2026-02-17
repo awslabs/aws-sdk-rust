@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_offering:
     }
 }
 
-pub use crate::operation::purchase_offering::_purchase_offering_output::PurchaseOfferingOutput;
-
 pub use crate::operation::purchase_offering::_purchase_offering_input::PurchaseOfferingInput;
+
+pub use crate::operation::purchase_offering::_purchase_offering_output::PurchaseOfferingOutput;
 
 mod _purchase_offering_input;
 

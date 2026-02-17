@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_backend_job
     }
 }
 
-pub use crate::operation::update_backend_job::_update_backend_job_output::UpdateBackendJobOutput;
-
 pub use crate::operation::update_backend_job::_update_backend_job_input::UpdateBackendJobInput;
+
+pub use crate::operation::update_backend_job::_update_backend_job_output::UpdateBackendJobOutput;
 
 mod _update_backend_job_input;
 

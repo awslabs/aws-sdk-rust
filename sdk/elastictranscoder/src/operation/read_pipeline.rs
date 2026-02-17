@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::read_pipeline::Rea
     }
 }
 
-pub use crate::operation::read_pipeline::_read_pipeline_output::ReadPipelineOutput;
-
 pub use crate::operation::read_pipeline::_read_pipeline_input::ReadPipelineInput;
+
+pub use crate::operation::read_pipeline::_read_pipeline_output::ReadPipelineOutput;
 
 mod _read_pipeline_input;
 

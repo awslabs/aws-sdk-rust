@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_app_b
     }
 }
 
-pub use crate::operation::disassociate_app_block_builder_app_block::_disassociate_app_block_builder_app_block_output::DisassociateAppBlockBuilderAppBlockOutput;
-
 pub use crate::operation::disassociate_app_block_builder_app_block::_disassociate_app_block_builder_app_block_input::DisassociateAppBlockBuilderAppBlockInput;
+
+pub use crate::operation::disassociate_app_block_builder_app_block::_disassociate_app_block_builder_app_block_output::DisassociateAppBlockBuilderAppBlockOutput;
 
 mod _disassociate_app_block_builder_app_block_input;
 

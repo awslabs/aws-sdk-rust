@@ -544,9 +544,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_batch::Pub
     }
 }
 
-pub use crate::operation::publish_batch::_publish_batch_output::PublishBatchOutput;
-
 pub use crate::operation::publish_batch::_publish_batch_input::PublishBatchInput;
+
+pub use crate::operation::publish_batch::_publish_batch_output::PublishBatchOutput;
 
 mod _publish_batch_input;
 

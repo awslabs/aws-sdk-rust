@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_vpc_endpoin
     }
 }
 
-pub use crate::operation::reject_vpc_endpoint_connections::_reject_vpc_endpoint_connections_output::RejectVpcEndpointConnectionsOutput;
-
 pub use crate::operation::reject_vpc_endpoint_connections::_reject_vpc_endpoint_connections_input::RejectVpcEndpointConnectionsInput;
+
+pub use crate::operation::reject_vpc_endpoint_connections::_reject_vpc_endpoint_connections_output::RejectVpcEndpointConnectionsOutput;
 
 mod _reject_vpc_endpoint_connections_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_gatew
     }
 }
 
-pub use crate::operation::get_resource_gateway::_get_resource_gateway_output::GetResourceGatewayOutput;
-
 pub use crate::operation::get_resource_gateway::_get_resource_gateway_input::GetResourceGatewayInput;
+
+pub use crate::operation::get_resource_gateway::_get_resource_gateway_output::GetResourceGatewayOutput;
 
 mod _get_resource_gateway_input;
 

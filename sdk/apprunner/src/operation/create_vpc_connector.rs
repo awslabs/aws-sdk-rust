@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_connect
     }
 }
 
-pub use crate::operation::create_vpc_connector::_create_vpc_connector_output::CreateVpcConnectorOutput;
-
 pub use crate::operation::create_vpc_connector::_create_vpc_connector_input::CreateVpcConnectorInput;
+
+pub use crate::operation::create_vpc_connector::_create_vpc_connector_output::CreateVpcConnectorOutput;
 
 mod _create_vpc_connector_input;
 

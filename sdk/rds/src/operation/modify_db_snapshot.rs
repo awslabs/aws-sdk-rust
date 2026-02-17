@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_snapshot
     }
 }
 
-pub use crate::operation::modify_db_snapshot::_modify_db_snapshot_output::ModifyDbSnapshotOutput;
-
 pub use crate::operation::modify_db_snapshot::_modify_db_snapshot_input::ModifyDbSnapshotInput;
+
+pub use crate::operation::modify_db_snapshot::_modify_db_snapshot_output::ModifyDbSnapshotOutput;
 
 mod _modify_db_snapshot_input;
 

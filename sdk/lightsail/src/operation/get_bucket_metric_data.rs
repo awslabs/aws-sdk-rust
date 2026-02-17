@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_metric_
     }
 }
 
-pub use crate::operation::get_bucket_metric_data::_get_bucket_metric_data_output::GetBucketMetricDataOutput;
-
 pub use crate::operation::get_bucket_metric_data::_get_bucket_metric_data_input::GetBucketMetricDataInput;
+
+pub use crate::operation::get_bucket_metric_data::_get_bucket_metric_data_output::GetBucketMetricDataOutput;
 
 mod _get_bucket_metric_data_input;
 

@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_automated_reasoning_policy_test_results::_list_automated_reasoning_policy_test_results_output::ListAutomatedReasoningPolicyTestResultsOutput;
-
 pub use crate::operation::list_automated_reasoning_policy_test_results::_list_automated_reasoning_policy_test_results_input::ListAutomatedReasoningPolicyTestResultsInput;
+
+pub use crate::operation::list_automated_reasoning_policy_test_results::_list_automated_reasoning_policy_test_results_output::ListAutomatedReasoningPolicyTestResultsOutput;
 
 mod _list_automated_reasoning_policy_test_results_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_role_permissio
     }
 }
 
-pub use crate::operation::put_role_permissions_boundary::_put_role_permissions_boundary_output::PutRolePermissionsBoundaryOutput;
-
 pub use crate::operation::put_role_permissions_boundary::_put_role_permissions_boundary_input::PutRolePermissionsBoundaryInput;
+
+pub use crate::operation::put_role_permissions_boundary::_put_role_permissions_boundary_output::PutRolePermissionsBoundaryOutput;
 
 mod _put_role_permissions_boundary_input;
 

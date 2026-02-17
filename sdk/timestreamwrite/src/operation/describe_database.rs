@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_database:
     }
 }
 
-pub use crate::operation::describe_database::_describe_database_output::DescribeDatabaseOutput;
-
 pub use crate::operation::describe_database::_describe_database_input::DescribeDatabaseInput;
+
+pub use crate::operation::describe_database::_describe_database_output::DescribeDatabaseOutput;
 
 mod _describe_database_input;
 

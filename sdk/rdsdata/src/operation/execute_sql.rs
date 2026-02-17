@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_sql::Execu
     }
 }
 
-pub use crate::operation::execute_sql::_execute_sql_output::ExecuteSqlOutput;
-
 pub use crate::operation::execute_sql::_execute_sql_input::ExecuteSqlInput;
+
+pub use crate::operation::execute_sql::_execute_sql_output::ExecuteSqlOutput;
 
 mod _execute_sql_input;
 

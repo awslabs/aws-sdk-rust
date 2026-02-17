@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backup_plan
     }
 }
 
-pub use crate::operation::delete_backup_plan::_delete_backup_plan_output::DeleteBackupPlanOutput;
-
 pub use crate::operation::delete_backup_plan::_delete_backup_plan_input::DeleteBackupPlanInput;
+
+pub use crate::operation::delete_backup_plan::_delete_backup_plan_output::DeleteBackupPlanOutput;
 
 mod _delete_backup_plan_input;
 

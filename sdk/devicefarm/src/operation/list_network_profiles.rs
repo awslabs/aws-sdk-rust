@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_network_profi
     }
 }
 
-pub use crate::operation::list_network_profiles::_list_network_profiles_output::ListNetworkProfilesOutput;
-
 pub use crate::operation::list_network_profiles::_list_network_profiles_input::ListNetworkProfilesInput;
+
+pub use crate::operation::list_network_profiles::_list_network_profiles_output::ListNetworkProfilesOutput;
 
 mod _list_network_profiles_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::move_replication_t
     }
 }
 
-pub use crate::operation::move_replication_task::_move_replication_task_output::MoveReplicationTaskOutput;
-
 pub use crate::operation::move_replication_task::_move_replication_task_input::MoveReplicationTaskInput;
+
+pub use crate::operation::move_replication_task::_move_replication_task_output::MoveReplicationTaskOutput;
 
 mod _move_replication_task_input;
 

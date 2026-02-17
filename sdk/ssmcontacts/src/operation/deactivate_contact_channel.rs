@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_contact
     }
 }
 
-pub use crate::operation::deactivate_contact_channel::_deactivate_contact_channel_output::DeactivateContactChannelOutput;
-
 pub use crate::operation::deactivate_contact_channel::_deactivate_contact_channel_input::DeactivateContactChannelInput;
+
+pub use crate::operation::deactivate_contact_channel::_deactivate_contact_channel_output::DeactivateContactChannelOutput;
 
 mod _deactivate_contact_channel_input;
 

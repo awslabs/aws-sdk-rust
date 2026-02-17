@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_prev
     }
 }
 
-pub use crate::operation::create_access_preview::_create_access_preview_output::CreateAccessPreviewOutput;
-
 pub use crate::operation::create_access_preview::_create_access_preview_input::CreateAccessPreviewInput;
+
+pub use crate::operation::create_access_preview::_create_access_preview_output::CreateAccessPreviewOutput;
 
 mod _create_access_preview_input;
 

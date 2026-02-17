@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_input_device
     }
 }
 
-pub use crate::operation::start_input_device_maintenance_window::_start_input_device_maintenance_window_output::StartInputDeviceMaintenanceWindowOutput;
-
 pub use crate::operation::start_input_device_maintenance_window::_start_input_device_maintenance_window_input::StartInputDeviceMaintenanceWindowInput;
+
+pub use crate::operation::start_input_device_maintenance_window::_start_input_device_maintenance_window_output::StartInputDeviceMaintenanceWindowOutput;
 
 mod _start_input_device_maintenance_window_input;
 

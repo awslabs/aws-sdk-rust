@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_proxy_rule_
     }
 }
 
-pub use crate::operation::update_proxy_rule_group_priorities::_update_proxy_rule_group_priorities_output::UpdateProxyRuleGroupPrioritiesOutput;
-
 pub use crate::operation::update_proxy_rule_group_priorities::_update_proxy_rule_group_priorities_input::UpdateProxyRuleGroupPrioritiesInput;
+
+pub use crate::operation::update_proxy_rule_group_priorities::_update_proxy_rule_group_priorities_output::UpdateProxyRuleGroupPrioritiesOutput;
 
 mod _update_proxy_rule_group_priorities_input;
 

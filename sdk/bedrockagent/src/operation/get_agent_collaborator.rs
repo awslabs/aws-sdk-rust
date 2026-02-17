@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_collabor
     }
 }
 
-pub use crate::operation::get_agent_collaborator::_get_agent_collaborator_output::GetAgentCollaboratorOutput;
-
 pub use crate::operation::get_agent_collaborator::_get_agent_collaborator_input::GetAgentCollaboratorInput;
+
+pub use crate::operation::get_agent_collaborator::_get_agent_collaborator_output::GetAgentCollaboratorOutput;
 
 mod _get_agent_collaborator_input;
 

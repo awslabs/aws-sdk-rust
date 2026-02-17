@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_pii_entitie
     }
 }
 
-pub use crate::operation::detect_pii_entities::_detect_pii_entities_output::DetectPiiEntitiesOutput;
-
 pub use crate::operation::detect_pii_entities::_detect_pii_entities_input::DetectPiiEntitiesInput;
+
+pub use crate::operation::detect_pii_entities::_detect_pii_entities_output::DetectPiiEntitiesOutput;
 
 mod _detect_pii_entities_input;
 

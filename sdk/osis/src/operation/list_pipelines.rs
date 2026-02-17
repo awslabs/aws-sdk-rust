@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipelines::Li
     }
 }
 
-pub use crate::operation::list_pipelines::_list_pipelines_output::ListPipelinesOutput;
-
 pub use crate::operation::list_pipelines::_list_pipelines_input::ListPipelinesInput;
+
+pub use crate::operation::list_pipelines::_list_pipelines_output::ListPipelinesOutput;
 
 mod _list_pipelines_input;
 

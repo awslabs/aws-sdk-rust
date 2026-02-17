@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_phone_num
     }
 }
 
-pub use crate::operation::describe_phone_number::_describe_phone_number_output::DescribePhoneNumberOutput;
-
 pub use crate::operation::describe_phone_number::_describe_phone_number_input::DescribePhoneNumberInput;
+
+pub use crate::operation::describe_phone_number::_describe_phone_number_output::DescribePhoneNumberOutput;
 
 mod _describe_phone_number_input;
 

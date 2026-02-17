@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_outbound_w
     }
 }
 
-pub use crate::operation::disable_outbound_web_identity_federation::_disable_outbound_web_identity_federation_output::DisableOutboundWebIdentityFederationOutput;
-
 pub use crate::operation::disable_outbound_web_identity_federation::_disable_outbound_web_identity_federation_input::DisableOutboundWebIdentityFederationInput;
+
+pub use crate::operation::disable_outbound_web_identity_federation::_disable_outbound_web_identity_federation_output::DisableOutboundWebIdentityFederationOutput;
 
 mod _disable_outbound_web_identity_federation_input;
 

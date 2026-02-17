@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protocols_lis
     }
 }
 
-pub use crate::operation::list_protocols_lists::_list_protocols_lists_output::ListProtocolsListsOutput;
-
 pub use crate::operation::list_protocols_lists::_list_protocols_lists_input::ListProtocolsListsInput;
+
+pub use crate::operation::list_protocols_lists::_list_protocols_lists_output::ListProtocolsListsOutput;
 
 mod _list_protocols_lists_input;
 

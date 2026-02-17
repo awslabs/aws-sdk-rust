@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_partition::
     }
 }
 
-pub use crate::operation::create_partition::_create_partition_output::CreatePartitionOutput;
-
 pub use crate::operation::create_partition::_create_partition_input::CreatePartitionInput;
+
+pub use crate::operation::create_partition::_create_partition_output::CreatePartitionOutput;
 
 mod _create_partition_input;
 

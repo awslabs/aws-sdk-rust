@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_organizatio
     }
 }
 
-pub use crate::operation::delete_organization_config_rule::_delete_organization_config_rule_output::DeleteOrganizationConfigRuleOutput;
-
 pub use crate::operation::delete_organization_config_rule::_delete_organization_config_rule_input::DeleteOrganizationConfigRuleInput;
+
+pub use crate::operation::delete_organization_config_rule::_delete_organization_config_rule_output::DeleteOrganizationConfigRuleOutput;
 
 mod _delete_organization_config_rule_input;
 

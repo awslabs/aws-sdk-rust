@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_microsoft_team
     }
 }
 
-pub use crate::operation::get_microsoft_teams_channel_configuration::_get_microsoft_teams_channel_configuration_output::GetMicrosoftTeamsChannelConfigurationOutput;
-
 pub use crate::operation::get_microsoft_teams_channel_configuration::_get_microsoft_teams_channel_configuration_input::GetMicrosoftTeamsChannelConfigurationInput;
+
+pub use crate::operation::get_microsoft_teams_channel_configuration::_get_microsoft_teams_channel_configuration_output::GetMicrosoftTeamsChannelConfigurationOutput;
 
 mod _get_microsoft_teams_channel_configuration_input;
 

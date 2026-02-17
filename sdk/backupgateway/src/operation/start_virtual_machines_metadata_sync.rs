@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_virtual_mach
     }
 }
 
-pub use crate::operation::start_virtual_machines_metadata_sync::_start_virtual_machines_metadata_sync_output::StartVirtualMachinesMetadataSyncOutput;
-
 pub use crate::operation::start_virtual_machines_metadata_sync::_start_virtual_machines_metadata_sync_input::StartVirtualMachinesMetadataSyncInput;
+
+pub use crate::operation::start_virtual_machines_metadata_sync::_start_virtual_machines_metadata_sync_output::StartVirtualMachinesMetadataSyncOutput;
 
 mod _start_virtual_machines_metadata_sync_input;
 

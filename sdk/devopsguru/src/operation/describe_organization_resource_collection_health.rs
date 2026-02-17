@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_organization_resource_collection_health::_describe_organization_resource_collection_health_output::DescribeOrganizationResourceCollectionHealthOutput;
-
 pub use crate::operation::describe_organization_resource_collection_health::_describe_organization_resource_collection_health_input::DescribeOrganizationResourceCollectionHealthInput;
+
+pub use crate::operation::describe_organization_resource_collection_health::_describe_organization_resource_collection_health_output::DescribeOrganizationResourceCollectionHealthOutput;
 
 mod _describe_organization_resource_collection_health_input;
 

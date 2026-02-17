@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_test_case::
     }
 }
 
-pub use crate::operation::update_test_case::_update_test_case_output::UpdateTestCaseOutput;
-
 pub use crate::operation::update_test_case::_update_test_case_input::UpdateTestCaseInput;
+
+pub use crate::operation::update_test_case::_update_test_case_output::UpdateTestCaseOutput;
 
 mod _update_test_case_input;
 

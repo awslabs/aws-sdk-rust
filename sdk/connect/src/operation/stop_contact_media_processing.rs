@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_contact_media
     }
 }
 
-pub use crate::operation::stop_contact_media_processing::_stop_contact_media_processing_output::StopContactMediaProcessingOutput;
-
 pub use crate::operation::stop_contact_media_processing::_stop_contact_media_processing_input::StopContactMediaProcessingInput;
+
+pub use crate::operation::stop_contact_media_processing::_stop_contact_media_processing_output::StopContactMediaProcessingOutput;
 
 mod _stop_contact_media_processing_input;
 

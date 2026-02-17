@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_job::Create
     }
 }
 
-pub use crate::operation::create_job::_create_job_output::CreateJobOutput;
-
 pub use crate::operation::create_job::_create_job_input::CreateJobInput;
+
+pub use crate::operation::create_job::_create_job_output::CreateJobOutput;
 
 mod _create_job_input;
 

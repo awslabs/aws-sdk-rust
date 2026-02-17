@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_insight_events
     }
 }
 
-pub use crate::operation::get_insight_events::_get_insight_events_output::GetInsightEventsOutput;
-
 pub use crate::operation::get_insight_events::_get_insight_events_input::GetInsightEventsInput;
+
+pub use crate::operation::get_insight_events::_get_insight_events_output::GetInsightEventsOutput;
 
 mod _get_insight_events_input;
 

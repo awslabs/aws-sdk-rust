@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_glossary::GetG
     }
 }
 
-pub use crate::operation::get_glossary::_get_glossary_output::GetGlossaryOutput;
-
 pub use crate::operation::get_glossary::_get_glossary_input::GetGlossaryInput;
+
+pub use crate::operation::get_glossary::_get_glossary_output::GetGlossaryOutput;
 
 mod _get_glossary_input;
 

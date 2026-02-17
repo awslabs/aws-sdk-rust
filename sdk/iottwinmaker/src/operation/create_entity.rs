@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_entity::Cre
     }
 }
 
-pub use crate::operation::create_entity::_create_entity_output::CreateEntityOutput;
-
 pub use crate::operation::create_entity::_create_entity_input::CreateEntityInput;
+
+pub use crate::operation::create_entity::_create_entity_output::CreateEntityOutput;
 
 mod _create_entity_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lenses::ListL
     }
 }
 
-pub use crate::operation::list_lenses::_list_lenses_output::ListLensesOutput;
-
 pub use crate::operation::list_lenses::_list_lenses_input::ListLensesInput;
+
+pub use crate::operation::list_lenses::_list_lenses_output::ListLensesOutput;
 
 mod _list_lenses_input;
 

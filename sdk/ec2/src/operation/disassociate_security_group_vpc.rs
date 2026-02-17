@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_secur
     }
 }
 
-pub use crate::operation::disassociate_security_group_vpc::_disassociate_security_group_vpc_output::DisassociateSecurityGroupVpcOutput;
-
 pub use crate::operation::disassociate_security_group_vpc::_disassociate_security_group_vpc_input::DisassociateSecurityGroupVpcInput;
+
+pub use crate::operation::disassociate_security_group_vpc::_disassociate_security_group_vpc_output::DisassociateSecurityGroupVpcOutput;
 
 mod _disassociate_security_group_vpc_input;
 

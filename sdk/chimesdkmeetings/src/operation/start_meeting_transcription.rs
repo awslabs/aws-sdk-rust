@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_meeting_tran
     }
 }
 
-pub use crate::operation::start_meeting_transcription::_start_meeting_transcription_output::StartMeetingTranscriptionOutput;
-
 pub use crate::operation::start_meeting_transcription::_start_meeting_transcription_input::StartMeetingTranscriptionInput;
+
+pub use crate::operation::start_meeting_transcription::_start_meeting_transcription_output::StartMeetingTranscriptionOutput;
 
 mod _start_meeting_transcription_input;
 

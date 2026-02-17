@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_domain_asso
     }
 }
 
-pub use crate::operation::create_domain_association::_create_domain_association_output::CreateDomainAssociationOutput;
-
 pub use crate::operation::create_domain_association::_create_domain_association_input::CreateDomainAssociationInput;
+
+pub use crate::operation::create_domain_association::_create_domain_association_output::CreateDomainAssociationOutput;
 
 mod _create_domain_association_input;
 

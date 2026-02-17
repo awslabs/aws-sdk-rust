@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_topic_rule::Ge
     }
 }
 
-pub use crate::operation::get_topic_rule::_get_topic_rule_output::GetTopicRuleOutput;
-
 pub use crate::operation::get_topic_rule::_get_topic_rule_input::GetTopicRuleInput;
+
+pub use crate::operation::get_topic_rule::_get_topic_rule_output::GetTopicRuleOutput;
 
 mod _get_topic_rule_input;
 

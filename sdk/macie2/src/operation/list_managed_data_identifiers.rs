@@ -346,9 +346,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_data_
     }
 }
 
-pub use crate::operation::list_managed_data_identifiers::_list_managed_data_identifiers_output::ListManagedDataIdentifiersOutput;
-
 pub use crate::operation::list_managed_data_identifiers::_list_managed_data_identifiers_input::ListManagedDataIdentifiersInput;
+
+pub use crate::operation::list_managed_data_identifiers::_list_managed_data_identifiers_output::ListManagedDataIdentifiersOutput;
 
 mod _list_managed_data_identifiers_input;
 

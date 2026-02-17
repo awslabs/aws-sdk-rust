@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_comments:
     }
 }
 
-pub use crate::operation::describe_comments::_describe_comments_output::DescribeCommentsOutput;
-
 pub use crate::operation::describe_comments::_describe_comments_input::DescribeCommentsInput;
+
+pub use crate::operation::describe_comments::_describe_comments_output::DescribeCommentsOutput;
 
 mod _describe_comments_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_proxy_rules
     }
 }
 
-pub use crate::operation::delete_proxy_rules::_delete_proxy_rules_output::DeleteProxyRulesOutput;
-
 pub use crate::operation::delete_proxy_rules::_delete_proxy_rules_input::DeleteProxyRulesInput;
+
+pub use crate::operation::delete_proxy_rules::_delete_proxy_rules_output::DeleteProxyRulesOutput;
 
 mod _delete_proxy_rules_input;
 

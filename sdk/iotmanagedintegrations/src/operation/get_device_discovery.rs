@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_discove
     }
 }
 
-pub use crate::operation::get_device_discovery::_get_device_discovery_output::GetDeviceDiscoveryOutput;
-
 pub use crate::operation::get_device_discovery::_get_device_discovery_input::GetDeviceDiscoveryInput;
+
+pub use crate::operation::get_device_discovery::_get_device_discovery_output::GetDeviceDiscoveryOutput;
 
 mod _get_device_discovery_input;
 

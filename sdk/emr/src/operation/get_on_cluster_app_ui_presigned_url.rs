@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_on_cluster_app
     }
 }
 
-pub use crate::operation::get_on_cluster_app_ui_presigned_url::_get_on_cluster_app_ui_presigned_url_output::GetOnClusterAppUiPresignedUrlOutput;
-
 pub use crate::operation::get_on_cluster_app_ui_presigned_url::_get_on_cluster_app_ui_presigned_url_input::GetOnClusterAppUiPresignedUrlInput;
+
+pub use crate::operation::get_on_cluster_app_ui_presigned_url::_get_on_cluster_app_ui_presigned_url_output::GetOnClusterAppUiPresignedUrlOutput;
 
 mod _get_on_cluster_app_ui_presigned_url_input;
 

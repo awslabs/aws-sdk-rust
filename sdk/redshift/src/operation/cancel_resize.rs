@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_resize::Can
     }
 }
 
-pub use crate::operation::cancel_resize::_cancel_resize_output::CancelResizeOutput;
-
 pub use crate::operation::cancel_resize::_cancel_resize_input::CancelResizeInput;
+
+pub use crate::operation::cancel_resize::_cancel_resize_output::CancelResizeOutput;
 
 mod _cancel_resize_input;
 

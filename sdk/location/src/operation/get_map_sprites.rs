@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_map_sprites::G
     }
 }
 
-pub use crate::operation::get_map_sprites::_get_map_sprites_output::GetMapSpritesOutput;
-
 pub use crate::operation::get_map_sprites::_get_map_sprites_input::GetMapSpritesInput;
+
+pub use crate::operation::get_map_sprites::_get_map_sprites_output::GetMapSpritesOutput;
 
 mod _get_map_sprites_input;
 

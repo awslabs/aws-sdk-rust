@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_sdi_sourc
     }
 }
 
-pub use crate::operation::describe_sdi_source::_describe_sdi_source_output::DescribeSdiSourceOutput;
-
 pub use crate::operation::describe_sdi_source::_describe_sdi_source_input::DescribeSdiSourceInput;
+
+pub use crate::operation::describe_sdi_source::_describe_sdi_source_output::DescribeSdiSourceOutput;
 
 mod _describe_sdi_source_input;
 

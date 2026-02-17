@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resiliency_
     }
 }
 
-pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_output::UpdateResiliencyPolicyOutput;
-
 pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_input::UpdateResiliencyPolicyInput;
+
+pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_output::UpdateResiliencyPolicyOutput;
 
 mod _update_resiliency_policy_input;
 

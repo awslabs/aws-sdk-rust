@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_contact_rec
     }
 }
 
-pub use crate::operation::resume_contact_recording::_resume_contact_recording_output::ResumeContactRecordingOutput;
-
 pub use crate::operation::resume_contact_recording::_resume_contact_recording_input::ResumeContactRecordingInput;
+
+pub use crate::operation::resume_contact_recording::_resume_contact_recording_output::ResumeContactRecordingOutput;
 
 mod _resume_contact_recording_input;
 

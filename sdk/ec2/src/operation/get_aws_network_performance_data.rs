@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aws_network_pe
     }
 }
 
-pub use crate::operation::get_aws_network_performance_data::_get_aws_network_performance_data_output::GetAwsNetworkPerformanceDataOutput;
-
 pub use crate::operation::get_aws_network_performance_data::_get_aws_network_performance_data_input::GetAwsNetworkPerformanceDataInput;
+
+pub use crate::operation::get_aws_network_performance_data::_get_aws_network_performance_data_output::GetAwsNetworkPerformanceDataOutput;
 
 mod _get_aws_network_performance_data_input;
 

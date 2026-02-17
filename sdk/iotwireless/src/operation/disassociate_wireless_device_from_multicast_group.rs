@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_wireless_device_from_multicast_group::_disassociate_wireless_device_from_multicast_group_output::DisassociateWirelessDeviceFromMulticastGroupOutput;
-
 pub use crate::operation::disassociate_wireless_device_from_multicast_group::_disassociate_wireless_device_from_multicast_group_input::DisassociateWirelessDeviceFromMulticastGroupInput;
+
+pub use crate::operation::disassociate_wireless_device_from_multicast_group::_disassociate_wireless_device_from_multicast_group_output::DisassociateWirelessDeviceFromMulticastGroupOutput;
 
 mod _disassociate_wireless_device_from_multicast_group_input;
 

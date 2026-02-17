@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_client_devices_associated_with_core_device::_list_client_devices_associated_with_core_device_output::ListClientDevicesAssociatedWithCoreDeviceOutput;
-
 pub use crate::operation::list_client_devices_associated_with_core_device::_list_client_devices_associated_with_core_device_input::ListClientDevicesAssociatedWithCoreDeviceInput;
+
+pub use crate::operation::list_client_devices_associated_with_core_device::_list_client_devices_associated_with_core_device_output::ListClientDevicesAssociatedWithCoreDeviceOutput;
 
 mod _list_client_devices_associated_with_core_device_input;
 

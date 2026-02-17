@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deliverability
     }
 }
 
-pub use crate::operation::get_deliverability_dashboard_options::_get_deliverability_dashboard_options_output::GetDeliverabilityDashboardOptionsOutput;
-
 pub use crate::operation::get_deliverability_dashboard_options::_get_deliverability_dashboard_options_input::GetDeliverabilityDashboardOptionsInput;
+
+pub use crate::operation::get_deliverability_dashboard_options::_get_deliverability_dashboard_options_output::GetDeliverabilityDashboardOptionsOutput;
 
 mod _get_deliverability_dashboard_options_input;
 

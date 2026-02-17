@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_source_api_
     }
 }
 
-pub use crate::operation::update_source_api_association::_update_source_api_association_output::UpdateSourceApiAssociationOutput;
-
 pub use crate::operation::update_source_api_association::_update_source_api_association_input::UpdateSourceApiAssociationInput;
+
+pub use crate::operation::update_source_api_association::_update_source_api_association_output::UpdateSourceApiAssociationOutput;
 
 mod _update_source_api_association_input;
 

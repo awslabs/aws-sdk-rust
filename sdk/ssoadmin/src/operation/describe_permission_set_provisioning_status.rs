@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_permission_set_provisioning_status::_describe_permission_set_provisioning_status_output::DescribePermissionSetProvisioningStatusOutput;
-
 pub use crate::operation::describe_permission_set_provisioning_status::_describe_permission_set_provisioning_status_input::DescribePermissionSetProvisioningStatusInput;
+
+pub use crate::operation::describe_permission_set_provisioning_status::_describe_permission_set_provisioning_status_output::DescribePermissionSetProvisioningStatusOutput;
 
 mod _describe_permission_set_provisioning_status_input;
 

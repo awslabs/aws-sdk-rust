@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_node::Des
     }
 }
 
-pub use crate::operation::describe_node::_describe_node_output::DescribeNodeOutput;
-
 pub use crate::operation::describe_node::_describe_node_input::DescribeNodeInput;
+
+pub use crate::operation::describe_node::_describe_node_output::DescribeNodeOutput;
 
 mod _describe_node_input;
 

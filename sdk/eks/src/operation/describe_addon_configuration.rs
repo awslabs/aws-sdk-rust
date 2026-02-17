@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_addon_con
     }
 }
 
-pub use crate::operation::describe_addon_configuration::_describe_addon_configuration_output::DescribeAddonConfigurationOutput;
-
 pub use crate::operation::describe_addon_configuration::_describe_addon_configuration_input::DescribeAddonConfigurationInput;
+
+pub use crate::operation::describe_addon_configuration::_describe_addon_configuration_output::DescribeAddonConfigurationOutput;
 
 mod _describe_addon_configuration_input;
 

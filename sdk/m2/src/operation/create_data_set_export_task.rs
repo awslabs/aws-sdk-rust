@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_set_ex
     }
 }
 
-pub use crate::operation::create_data_set_export_task::_create_data_set_export_task_output::CreateDataSetExportTaskOutput;
-
 pub use crate::operation::create_data_set_export_task::_create_data_set_export_task_input::CreateDataSetExportTaskInput;
+
+pub use crate::operation::create_data_set_export_task::_create_data_set_export_task_output::CreateDataSetExportTaskOutput;
 
 mod _create_data_set_export_task_input;
 

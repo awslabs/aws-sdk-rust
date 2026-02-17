@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_lifecycle
     }
 }
 
-pub use crate::operation::describe_lifecycle_hooks::_describe_lifecycle_hooks_output::DescribeLifecycleHooksOutput;
-
 pub use crate::operation::describe_lifecycle_hooks::_describe_lifecycle_hooks_input::DescribeLifecycleHooksInput;
+
+pub use crate::operation::describe_lifecycle_hooks::_describe_lifecycle_hooks_output::DescribeLifecycleHooksOutput;
 
 mod _describe_lifecycle_hooks_input;
 

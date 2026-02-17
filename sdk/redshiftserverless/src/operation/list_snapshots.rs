@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_snapshots::Li
     }
 }
 
-pub use crate::operation::list_snapshots::_list_snapshots_output::ListSnapshotsOutput;
-
 pub use crate::operation::list_snapshots::_list_snapshots_input::ListSnapshotsInput;
+
+pub use crate::operation::list_snapshots::_list_snapshots_output::ListSnapshotsOutput;
 
 mod _list_snapshots_input;
 

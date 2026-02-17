@@ -34,6 +34,16 @@ pub struct DbClusterAutomatedBackup {
     pub cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The version of the database engine for the automated backup.</p>
@@ -127,6 +137,18 @@ impl DbClusterAutomatedBackup {
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
+    }
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
         self.allocated_storage
@@ -219,6 +241,7 @@ pub struct DbClusterAutomatedBackupBuilder {
     pub(crate) iam_database_authentication_enabled: ::std::option::Option<bool>,
     pub(crate) cluster_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
@@ -428,6 +451,44 @@ impl DbClusterAutomatedBackupBuilder {
     /// <p>Indicates whether the source DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
+    }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
     }
     /// <p>For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
@@ -674,6 +735,7 @@ impl DbClusterAutomatedBackupBuilder {
             iam_database_authentication_enabled: self.iam_database_authentication_enabled,
             cluster_create_time: self.cluster_create_time,
             storage_encrypted: self.storage_encrypted,
+            storage_encryption_type: self.storage_encryption_type,
             allocated_storage: self.allocated_storage,
             engine_version: self.engine_version,
             db_cluster_arn: self.db_cluster_arn,

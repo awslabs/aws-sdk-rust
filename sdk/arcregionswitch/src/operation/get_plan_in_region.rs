@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_plan_in_region
     }
 }
 
-pub use crate::operation::get_plan_in_region::_get_plan_in_region_output::GetPlanInRegionOutput;
-
 pub use crate::operation::get_plan_in_region::_get_plan_in_region_input::GetPlanInRegionInput;
+
+pub use crate::operation::get_plan_in_region::_get_plan_in_region_output::GetPlanInRegionOutput;
 
 mod _get_plan_in_region_input;
 

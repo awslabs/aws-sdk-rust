@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_sql_ha_states::_describe_instance_sql_ha_states_output::DescribeInstanceSqlHaStatesOutput;
-
 pub use crate::operation::describe_instance_sql_ha_states::_describe_instance_sql_ha_states_input::DescribeInstanceSqlHaStatesInput;
+
+pub use crate::operation::describe_instance_sql_ha_states::_describe_instance_sql_ha_states_output::DescribeInstanceSqlHaStatesOutput;
 
 mod _describe_instance_sql_ha_states_input;
 

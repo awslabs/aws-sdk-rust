@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_config_rule::P
     }
 }
 
-pub use crate::operation::put_config_rule::_put_config_rule_output::PutConfigRuleOutput;
-
 pub use crate::operation::put_config_rule::_put_config_rule_input::PutConfigRuleInput;
+
+pub use crate::operation::put_config_rule::_put_config_rule_output::PutConfigRuleOutput;
 
 mod _put_config_rule_input;
 

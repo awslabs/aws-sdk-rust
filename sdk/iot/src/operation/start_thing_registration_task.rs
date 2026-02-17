@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_thing_regist
     }
 }
 
-pub use crate::operation::start_thing_registration_task::_start_thing_registration_task_output::StartThingRegistrationTaskOutput;
-
 pub use crate::operation::start_thing_registration_task::_start_thing_registration_task_input::StartThingRegistrationTaskInput;
+
+pub use crate::operation::start_thing_registration_task::_start_thing_registration_task_output::StartThingRegistrationTaskOutput;
 
 mod _start_thing_registration_task_input;
 

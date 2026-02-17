@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_auto_merging_p
     }
 }
 
-pub use crate::operation::get_auto_merging_preview::_get_auto_merging_preview_output::GetAutoMergingPreviewOutput;
-
 pub use crate::operation::get_auto_merging_preview::_get_auto_merging_preview_input::GetAutoMergingPreviewInput;
+
+pub use crate::operation::get_auto_merging_preview::_get_auto_merging_preview_output::GetAutoMergingPreviewOutput;
 
 mod _get_auto_merging_preview_input;
 

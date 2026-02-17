@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_remove_role:
     }
 }
 
-pub use crate::operation::batch_remove_role::_batch_remove_role_output::BatchRemoveRoleOutput;
-
 pub use crate::operation::batch_remove_role::_batch_remove_role_input::BatchRemoveRoleInput;
+
+pub use crate::operation::batch_remove_role::_batch_remove_role_output::BatchRemoveRoleOutput;
 
 mod _batch_remove_role_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_phi::Detect
     }
 }
 
-pub use crate::operation::detect_phi::_detect_phi_output::DetectPhiOutput;
-
 pub use crate::operation::detect_phi::_detect_phi_input::DetectPhiInput;
+
+pub use crate::operation::detect_phi::_detect_phi_output::DetectPhiOutput;
 
 mod _detect_phi_input;
 

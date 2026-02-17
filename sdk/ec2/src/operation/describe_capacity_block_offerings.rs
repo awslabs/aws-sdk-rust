@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_capacity_
     }
 }
 
-pub use crate::operation::describe_capacity_block_offerings::_describe_capacity_block_offerings_output::DescribeCapacityBlockOfferingsOutput;
-
 pub use crate::operation::describe_capacity_block_offerings::_describe_capacity_block_offerings_input::DescribeCapacityBlockOfferingsInput;
+
+pub use crate::operation::describe_capacity_block_offerings::_describe_capacity_block_offerings_output::DescribeCapacityBlockOfferingsOutput;
 
 mod _describe_capacity_block_offerings_input;
 

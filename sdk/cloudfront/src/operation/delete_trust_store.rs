@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trust_store
     }
 }
 
-pub use crate::operation::delete_trust_store::_delete_trust_store_output::DeleteTrustStoreOutput;
-
 pub use crate::operation::delete_trust_store::_delete_trust_store_input::DeleteTrustStoreInput;
+
+pub use crate::operation::delete_trust_store::_delete_trust_store_output::DeleteTrustStoreOutput;
 
 mod _delete_trust_store_input;
 

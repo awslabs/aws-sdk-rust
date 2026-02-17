@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_grouping_stat
     }
 }
 
-pub use crate::operation::list_grouping_statuses::_list_grouping_statuses_output::ListGroupingStatusesOutput;
-
 pub use crate::operation::list_grouping_statuses::_list_grouping_statuses_input::ListGroupingStatusesInput;
+
+pub use crate::operation::list_grouping_statuses::_list_grouping_statuses_output::ListGroupingStatusesOutput;
 
 mod _list_grouping_statuses_input;
 

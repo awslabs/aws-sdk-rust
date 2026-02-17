@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::increase_node_groups_in_global_replication_group::_increase_node_groups_in_global_replication_group_output::IncreaseNodeGroupsInGlobalReplicationGroupOutput;
-
 pub use crate::operation::increase_node_groups_in_global_replication_group::_increase_node_groups_in_global_replication_group_input::IncreaseNodeGroupsInGlobalReplicationGroupInput;
+
+pub use crate::operation::increase_node_groups_in_global_replication_group::_increase_node_groups_in_global_replication_group_output::IncreaseNodeGroupsInGlobalReplicationGroupOutput;
 
 mod _increase_node_groups_in_global_replication_group_input;
 

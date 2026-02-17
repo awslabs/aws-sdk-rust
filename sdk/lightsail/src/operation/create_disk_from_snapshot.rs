@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_disk_from_s
     }
 }
 
-pub use crate::operation::create_disk_from_snapshot::_create_disk_from_snapshot_output::CreateDiskFromSnapshotOutput;
-
 pub use crate::operation::create_disk_from_snapshot::_create_disk_from_snapshot_input::CreateDiskFromSnapshotInput;
+
+pub use crate::operation::create_disk_from_snapshot::_create_disk_from_snapshot_output::CreateDiskFromSnapshotOutput;
 
 mod _create_disk_from_snapshot_input;
 

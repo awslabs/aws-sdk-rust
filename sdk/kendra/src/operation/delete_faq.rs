@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_faq::Delete
     }
 }
 
-pub use crate::operation::delete_faq::_delete_faq_output::DeleteFaqOutput;
-
 pub use crate::operation::delete_faq::_delete_faq_input::DeleteFaqInput;
+
+pub use crate::operation::delete_faq::_delete_faq_output::DeleteFaqOutput;
 
 mod _delete_faq_input;
 

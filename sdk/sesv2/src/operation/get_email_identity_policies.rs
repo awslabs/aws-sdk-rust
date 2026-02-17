@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_email_identity
     }
 }
 
-pub use crate::operation::get_email_identity_policies::_get_email_identity_policies_output::GetEmailIdentityPoliciesOutput;
-
 pub use crate::operation::get_email_identity_policies::_get_email_identity_policies_input::GetEmailIdentityPoliciesInput;
+
+pub use crate::operation::get_email_identity_policies::_get_email_identity_policies_output::GetEmailIdentityPoliciesOutput;
 
 mod _get_email_identity_policies_input;
 

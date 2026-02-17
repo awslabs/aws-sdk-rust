@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_import_ta
     }
 }
 
-pub use crate::operation::describe_import_task_batches::_describe_import_task_batches_output::DescribeImportTaskBatchesOutput;
-
 pub use crate::operation::describe_import_task_batches::_describe_import_task_batches_input::DescribeImportTaskBatchesInput;
+
+pub use crate::operation::describe_import_task_batches::_describe_import_task_batches_output::DescribeImportTaskBatchesOutput;
 
 mod _describe_import_task_batches_input;
 

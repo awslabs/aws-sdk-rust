@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_price_list_fil
     }
 }
 
-pub use crate::operation::get_price_list_file_url::_get_price_list_file_url_output::GetPriceListFileUrlOutput;
-
 pub use crate::operation::get_price_list_file_url::_get_price_list_file_url_input::GetPriceListFileUrlInput;
+
+pub use crate::operation::get_price_list_file_url::_get_price_list_file_url_output::GetPriceListFileUrlOutput;
 
 mod _get_price_list_file_url_input;
 

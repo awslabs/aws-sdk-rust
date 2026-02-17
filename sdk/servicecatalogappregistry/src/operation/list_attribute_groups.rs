@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attribute_gro
     }
 }
 
-pub use crate::operation::list_attribute_groups::_list_attribute_groups_output::ListAttributeGroupsOutput;
-
 pub use crate::operation::list_attribute_groups::_list_attribute_groups_input::ListAttributeGroupsInput;
+
+pub use crate::operation::list_attribute_groups::_list_attribute_groups_output::ListAttributeGroupsOutput;
 
 mod _list_attribute_groups_input;
 

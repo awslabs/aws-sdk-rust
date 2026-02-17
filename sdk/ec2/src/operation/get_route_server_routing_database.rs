@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_route_server_r
     }
 }
 
-pub use crate::operation::get_route_server_routing_database::_get_route_server_routing_database_output::GetRouteServerRoutingDatabaseOutput;
-
 pub use crate::operation::get_route_server_routing_database::_get_route_server_routing_database_input::GetRouteServerRoutingDatabaseInput;
+
+pub use crate::operation::get_route_server_routing_database::_get_route_server_routing_database_output::GetRouteServerRoutingDatabaseOutput;
 
 mod _get_route_server_routing_database_input;
 

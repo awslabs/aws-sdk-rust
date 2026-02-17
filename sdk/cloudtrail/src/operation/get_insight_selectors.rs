@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_insight_select
     }
 }
 
-pub use crate::operation::get_insight_selectors::_get_insight_selectors_output::GetInsightSelectorsOutput;
-
 pub use crate::operation::get_insight_selectors::_get_insight_selectors_input::GetInsightSelectorsInput;
+
+pub use crate::operation::get_insight_selectors::_get_insight_selectors_output::GetInsightSelectorsOutput;
 
 mod _get_insight_selectors_input;
 

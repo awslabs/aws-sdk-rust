@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_quick_con
     }
 }
 
-pub use crate::operation::describe_quick_connect::_describe_quick_connect_output::DescribeQuickConnectOutput;
-
 pub use crate::operation::describe_quick_connect::_describe_quick_connect_input::DescribeQuickConnectInput;
+
+pub use crate::operation::describe_quick_connect::_describe_quick_connect_output::DescribeQuickConnectOutput;
 
 mod _describe_quick_connect_input;
 

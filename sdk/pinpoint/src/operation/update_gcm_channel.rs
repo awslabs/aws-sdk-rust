@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_gcm_channel
     }
 }
 
-pub use crate::operation::update_gcm_channel::_update_gcm_channel_output::UpdateGcmChannelOutput;
-
 pub use crate::operation::update_gcm_channel::_update_gcm_channel_input::UpdateGcmChannelInput;
+
+pub use crate::operation::update_gcm_channel::_update_gcm_channel_output::UpdateGcmChannelOutput;
 
 mod _update_gcm_channel_input;
 

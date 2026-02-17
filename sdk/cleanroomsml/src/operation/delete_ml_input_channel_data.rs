@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ml_input_ch
     }
 }
 
-pub use crate::operation::delete_ml_input_channel_data::_delete_ml_input_channel_data_output::DeleteMlInputChannelDataOutput;
-
 pub use crate::operation::delete_ml_input_channel_data::_delete_ml_input_channel_data_input::DeleteMlInputChannelDataInput;
+
+pub use crate::operation::delete_ml_input_channel_data::_delete_ml_input_channel_data_output::DeleteMlInputChannelDataOutput;
 
 mod _delete_ml_input_channel_data_input;
 

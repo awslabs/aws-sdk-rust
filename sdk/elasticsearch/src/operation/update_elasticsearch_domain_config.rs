@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_elasticsear
     }
 }
 
-pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsearch_domain_config_output::UpdateElasticsearchDomainConfigOutput;
-
 pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsearch_domain_config_input::UpdateElasticsearchDomainConfigInput;
+
+pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsearch_domain_config_output::UpdateElasticsearchDomainConfigOutput;
 
 mod _update_elasticsearch_domain_config_input;
 

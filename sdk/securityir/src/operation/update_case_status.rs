@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_case_status
     }
 }
 
-pub use crate::operation::update_case_status::_update_case_status_output::UpdateCaseStatusOutput;
-
 pub use crate::operation::update_case_status::_update_case_status_input::UpdateCaseStatusInput;
+
+pub use crate::operation::update_case_status::_update_case_status_output::UpdateCaseStatusOutput;
 
 mod _update_case_status_input;
 

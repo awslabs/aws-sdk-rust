@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_task_defini
     }
 }
 
-pub use crate::operation::delete_task_definitions::_delete_task_definitions_output::DeleteTaskDefinitionsOutput;
-
 pub use crate::operation::delete_task_definitions::_delete_task_definitions_input::DeleteTaskDefinitionsInput;
+
+pub use crate::operation::delete_task_definitions::_delete_task_definitions_output::DeleteTaskDefinitionsOutput;
 
 mod _delete_task_definitions_input;
 

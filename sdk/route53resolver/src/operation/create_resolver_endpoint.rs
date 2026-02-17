@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resolver_en
     }
 }
 
-pub use crate::operation::create_resolver_endpoint::_create_resolver_endpoint_output::CreateResolverEndpointOutput;
-
 pub use crate::operation::create_resolver_endpoint::_create_resolver_endpoint_input::CreateResolverEndpointInput;
+
+pub use crate::operation::create_resolver_endpoint::_create_resolver_endpoint_output::CreateResolverEndpointOutput;
 
 mod _create_resolver_endpoint_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_internet_ga
     }
 }
 
-pub use crate::operation::attach_internet_gateway::_attach_internet_gateway_output::AttachInternetGatewayOutput;
-
 pub use crate::operation::attach_internet_gateway::_attach_internet_gateway_input::AttachInternetGatewayInput;
+
+pub use crate::operation::attach_internet_gateway::_attach_internet_gateway_output::AttachInternetGatewayOutput;
 
 mod _attach_internet_gateway_input;
 

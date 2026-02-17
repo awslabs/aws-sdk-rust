@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compatible_kaf
     }
 }
 
-pub use crate::operation::get_compatible_kafka_versions::_get_compatible_kafka_versions_output::GetCompatibleKafkaVersionsOutput;
-
 pub use crate::operation::get_compatible_kafka_versions::_get_compatible_kafka_versions_input::GetCompatibleKafkaVersionsInput;
+
+pub use crate::operation::get_compatible_kafka_versions::_get_compatible_kafka_versions_output::GetCompatibleKafkaVersionsOutput;
 
 mod _get_compatible_kafka_versions_input;
 

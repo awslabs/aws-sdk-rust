@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_revision::GetR
     }
 }
 
-pub use crate::operation::get_revision::_get_revision_output::GetRevisionOutput;
-
 pub use crate::operation::get_revision::_get_revision_input::GetRevisionInput;
+
+pub use crate::operation::get_revision::_get_revision_output::GetRevisionOutput;
 
 mod _get_revision_input;
 

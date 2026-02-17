@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_approval_rule_template_with_repository::_associate_approval_rule_template_with_repository_output::AssociateApprovalRuleTemplateWithRepositoryOutput;
-
 pub use crate::operation::associate_approval_rule_template_with_repository::_associate_approval_rule_template_with_repository_input::AssociateApprovalRuleTemplateWithRepositoryInput;
+
+pub use crate::operation::associate_approval_rule_template_with_repository::_associate_approval_rule_template_with_repository_output::AssociateApprovalRuleTemplateWithRepositoryOutput;
 
 mod _associate_approval_rule_template_with_repository_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_classificat
     }
 }
 
-pub use crate::operation::create_classification_job::_create_classification_job_output::CreateClassificationJobOutput;
-
 pub use crate::operation::create_classification_job::_create_classification_job_input::CreateClassificationJobInput;
+
+pub use crate::operation::create_classification_job::_create_classification_job_output::CreateClassificationJobOutput;
 
 mod _create_classification_job_input;
 

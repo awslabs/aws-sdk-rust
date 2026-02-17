@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tiering_con
     }
 }
 
-pub use crate::operation::create_tiering_configuration::_create_tiering_configuration_output::CreateTieringConfigurationOutput;
-
 pub use crate::operation::create_tiering_configuration::_create_tiering_configuration_input::CreateTieringConfigurationInput;
+
+pub use crate::operation::create_tiering_configuration::_create_tiering_configuration_output::CreateTieringConfigurationOutput;
 
 mod _create_tiering_configuration_input;
 

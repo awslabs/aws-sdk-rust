@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stored_quer
     }
 }
 
-pub use crate::operation::delete_stored_query::_delete_stored_query_output::DeleteStoredQueryOutput;
-
 pub use crate::operation::delete_stored_query::_delete_stored_query_input::DeleteStoredQueryInput;
+
+pub use crate::operation::delete_stored_query::_delete_stored_query_output::DeleteStoredQueryOutput;
 
 mod _delete_stored_query_input;
 

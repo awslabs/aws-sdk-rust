@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_folders_for_r
     }
 }
 
-pub use crate::operation::list_folders_for_resource::_list_folders_for_resource_output::ListFoldersForResourceOutput;
-
 pub use crate::operation::list_folders_for_resource::_list_folders_for_resource_input::ListFoldersForResourceInput;
+
+pub use crate::operation::list_folders_for_resource::_list_folders_for_resource_output::ListFoldersForResourceOutput;
 
 mod _list_folders_for_resource_input;
 

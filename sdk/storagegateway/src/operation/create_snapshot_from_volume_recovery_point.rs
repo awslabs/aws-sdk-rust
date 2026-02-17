@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_snapshot_fr
     }
 }
 
-pub use crate::operation::create_snapshot_from_volume_recovery_point::_create_snapshot_from_volume_recovery_point_output::CreateSnapshotFromVolumeRecoveryPointOutput;
-
 pub use crate::operation::create_snapshot_from_volume_recovery_point::_create_snapshot_from_volume_recovery_point_input::CreateSnapshotFromVolumeRecoveryPointInput;
+
+pub use crate::operation::create_snapshot_from_volume_recovery_point::_create_snapshot_from_volume_recovery_point_output::CreateSnapshotFromVolumeRecoveryPointOutput;
 
 mod _create_snapshot_from_volume_recovery_point_input;
 

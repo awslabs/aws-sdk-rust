@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_co
     }
 }
 
-pub use crate::operation::list_associated_contacts::_list_associated_contacts_output::ListAssociatedContactsOutput;
-
 pub use crate::operation::list_associated_contacts::_list_associated_contacts_input::ListAssociatedContactsInput;
+
+pub use crate::operation::list_associated_contacts::_list_associated_contacts_output::ListAssociatedContactsOutput;
 
 mod _list_associated_contacts_input;
 

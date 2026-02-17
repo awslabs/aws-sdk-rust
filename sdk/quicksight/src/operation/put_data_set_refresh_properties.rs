@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_data_set_refre
     }
 }
 
-pub use crate::operation::put_data_set_refresh_properties::_put_data_set_refresh_properties_output::PutDataSetRefreshPropertiesOutput;
-
 pub use crate::operation::put_data_set_refresh_properties::_put_data_set_refresh_properties_input::PutDataSetRefreshPropertiesInput;
+
+pub use crate::operation::put_data_set_refresh_properties::_put_data_set_refresh_properties_output::PutDataSetRefreshPropertiesOutput;
 
 mod _put_data_set_refresh_properties_input;
 

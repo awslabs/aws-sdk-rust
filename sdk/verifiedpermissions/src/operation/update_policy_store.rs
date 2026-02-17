@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_policy_stor
     }
 }
 
-pub use crate::operation::update_policy_store::_update_policy_store_output::UpdatePolicyStoreOutput;
-
 pub use crate::operation::update_policy_store::_update_policy_store_input::UpdatePolicyStoreInput;
+
+pub use crate::operation::update_policy_store::_update_policy_store_output::UpdatePolicyStoreOutput;
 
 mod _update_policy_store_input;
 

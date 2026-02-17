@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_snapshots_in_
     }
 }
 
-pub use crate::operation::list_snapshots_in_recycle_bin::_list_snapshots_in_recycle_bin_output::ListSnapshotsInRecycleBinOutput;
-
 pub use crate::operation::list_snapshots_in_recycle_bin::_list_snapshots_in_recycle_bin_input::ListSnapshotsInRecycleBinInput;
+
+pub use crate::operation::list_snapshots_in_recycle_bin::_list_snapshots_in_recycle_bin_output::ListSnapshotsInRecycleBinOutput;
 
 mod _list_snapshots_in_recycle_bin_input;
 

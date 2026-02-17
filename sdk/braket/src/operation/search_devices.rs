@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_devices::Se
     }
 }
 
-pub use crate::operation::search_devices::_search_devices_output::SearchDevicesOutput;
-
 pub use crate::operation::search_devices::_search_devices_input::SearchDevicesInput;
+
+pub use crate::operation::search_devices::_search_devices_output::SearchDevicesOutput;
 
 mod _search_devices_input;
 

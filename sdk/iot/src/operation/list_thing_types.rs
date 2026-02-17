@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_thing_types::
     }
 }
 
-pub use crate::operation::list_thing_types::_list_thing_types_output::ListThingTypesOutput;
-
 pub use crate::operation::list_thing_types::_list_thing_types_input::ListThingTypesInput;
+
+pub use crate::operation::list_thing_types::_list_thing_types_output::ListThingTypesOutput;
 
 mod _list_thing_types_input;
 

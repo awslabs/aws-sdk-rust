@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sub_package_g
     }
 }
 
-pub use crate::operation::list_sub_package_groups::_list_sub_package_groups_output::ListSubPackageGroupsOutput;
-
 pub use crate::operation::list_sub_package_groups::_list_sub_package_groups_input::ListSubPackageGroupsInput;
+
+pub use crate::operation::list_sub_package_groups::_list_sub_package_groups_output::ListSubPackageGroupsOutput;
 
 mod _list_sub_package_groups_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_custom_db_e
     }
 }
 
-pub use crate::operation::modify_custom_db_engine_version::_modify_custom_db_engine_version_output::ModifyCustomDbEngineVersionOutput;
-
 pub use crate::operation::modify_custom_db_engine_version::_modify_custom_db_engine_version_input::ModifyCustomDbEngineVersionInput;
+
+pub use crate::operation::modify_custom_db_engine_version::_modify_custom_db_engine_version_output::ModifyCustomDbEngineVersionOutput;
 
 mod _modify_custom_db_engine_version_input;
 

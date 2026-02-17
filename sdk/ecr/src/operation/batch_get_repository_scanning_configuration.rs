@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_get_repository_scanning_configuration::_batch_get_repository_scanning_configuration_output::BatchGetRepositoryScanningConfigurationOutput;
-
 pub use crate::operation::batch_get_repository_scanning_configuration::_batch_get_repository_scanning_configuration_input::BatchGetRepositoryScanningConfigurationInput;
+
+pub use crate::operation::batch_get_repository_scanning_configuration::_batch_get_repository_scanning_configuration_output::BatchGetRepositoryScanningConfigurationOutput;
 
 mod _batch_get_repository_scanning_configuration_input;
 

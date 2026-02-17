@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_pool_co
     }
 }
 
-pub use crate::operation::get_device_pool_compatibility::_get_device_pool_compatibility_output::GetDevicePoolCompatibilityOutput;
-
 pub use crate::operation::get_device_pool_compatibility::_get_device_pool_compatibility_input::GetDevicePoolCompatibilityInput;
+
+pub use crate::operation::get_device_pool_compatibility::_get_device_pool_compatibility_output::GetDevicePoolCompatibilityOutput;
 
 mod _get_device_pool_compatibility_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_webhook_w
     }
 }
 
-pub use crate::operation::register_webhook_with_third_party::_register_webhook_with_third_party_output::RegisterWebhookWithThirdPartyOutput;
-
 pub use crate::operation::register_webhook_with_third_party::_register_webhook_with_third_party_input::RegisterWebhookWithThirdPartyInput;
+
+pub use crate::operation::register_webhook_with_third_party::_register_webhook_with_third_party_output::RegisterWebhookWithThirdPartyOutput;
 
 mod _register_webhook_with_third_party_input;
 

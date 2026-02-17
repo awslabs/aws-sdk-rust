@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_set_user_pas
     }
 }
 
-pub use crate::operation::admin_set_user_password::_admin_set_user_password_output::AdminSetUserPasswordOutput;
-
 pub use crate::operation::admin_set_user_password::_admin_set_user_password_input::AdminSetUserPasswordInput;
+
+pub use crate::operation::admin_set_user_password::_admin_set_user_password_output::AdminSetUserPasswordOutput;
 
 mod _admin_set_user_password_input;
 

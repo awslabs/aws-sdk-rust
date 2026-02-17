@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_protect_configuration_country_rule_set::_update_protect_configuration_country_rule_set_output::UpdateProtectConfigurationCountryRuleSetOutput;
-
 pub use crate::operation::update_protect_configuration_country_rule_set::_update_protect_configuration_country_rule_set_input::UpdateProtectConfigurationCountryRuleSetInput;
+
+pub use crate::operation::update_protect_configuration_country_rule_set::_update_protect_configuration_country_rule_set_output::UpdateProtectConfigurationCountryRuleSetOutput;
 
 mod _update_protect_configuration_country_rule_set_input;
 

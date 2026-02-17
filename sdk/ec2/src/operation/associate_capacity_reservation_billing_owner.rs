@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_capacity_reservation_billing_owner::_associate_capacity_reservation_billing_owner_output::AssociateCapacityReservationBillingOwnerOutput;
-
 pub use crate::operation::associate_capacity_reservation_billing_owner::_associate_capacity_reservation_billing_owner_input::AssociateCapacityReservationBillingOwnerInput;
+
+pub use crate::operation::associate_capacity_reservation_billing_owner::_associate_capacity_reservation_billing_owner_output::AssociateCapacityReservationBillingOwnerOutput;
 
 mod _associate_capacity_reservation_billing_owner_input;
 

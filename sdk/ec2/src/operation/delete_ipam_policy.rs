@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ipam_policy
     }
 }
 
-pub use crate::operation::delete_ipam_policy::_delete_ipam_policy_output::DeleteIpamPolicyOutput;
-
 pub use crate::operation::delete_ipam_policy::_delete_ipam_policy_input::DeleteIpamPolicyInput;
+
+pub use crate::operation::delete_ipam_policy::_delete_ipam_policy_output::DeleteIpamPolicyOutput;
 
 mod _delete_ipam_policy_input;
 

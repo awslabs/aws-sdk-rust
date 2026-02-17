@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_bucket_intelligent_tiering_configuration::_delete_bucket_intelligent_tiering_configuration_output::DeleteBucketIntelligentTieringConfigurationOutput;
-
 pub use crate::operation::delete_bucket_intelligent_tiering_configuration::_delete_bucket_intelligent_tiering_configuration_input::DeleteBucketIntelligentTieringConfigurationInput;
+
+pub use crate::operation::delete_bucket_intelligent_tiering_configuration::_delete_bucket_intelligent_tiering_configuration_output::DeleteBucketIntelligentTieringConfigurationOutput;
 
 mod _delete_bucket_intelligent_tiering_configuration_input;
 

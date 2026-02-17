@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sol_network_o
     }
 }
 
-pub use crate::operation::list_sol_network_operations::_list_sol_network_operations_output::ListSolNetworkOperationsOutput;
-
 pub use crate::operation::list_sol_network_operations::_list_sol_network_operations_input::ListSolNetworkOperationsInput;
+
+pub use crate::operation::list_sol_network_operations::_list_sol_network_operations_output::ListSolNetworkOperationsOutput;
 
 mod _list_sol_network_operations_input;
 

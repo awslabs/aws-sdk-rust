@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flows::ListFl
     }
 }
 
-pub use crate::operation::list_flows::_list_flows_output::ListFlowsOutput;
-
 pub use crate::operation::list_flows::_list_flows_input::ListFlowsInput;
+
+pub use crate::operation::list_flows::_list_flows_output::ListFlowsOutput;
 
 mod _list_flows_input;
 

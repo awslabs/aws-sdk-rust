@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_functions_by_
     }
 }
 
-pub use crate::operation::list_functions_by_code_signing_config::_list_functions_by_code_signing_config_output::ListFunctionsByCodeSigningConfigOutput;
-
 pub use crate::operation::list_functions_by_code_signing_config::_list_functions_by_code_signing_config_input::ListFunctionsByCodeSigningConfigInput;
+
+pub use crate::operation::list_functions_by_code_signing_config::_list_functions_by_code_signing_config_output::ListFunctionsByCodeSigningConfigOutput;
 
 mod _list_functions_by_code_signing_config_input;
 

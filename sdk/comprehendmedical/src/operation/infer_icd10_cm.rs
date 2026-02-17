@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::infer_icd10_cm::In
     }
 }
 
-pub use crate::operation::infer_icd10_cm::_infer_icd10_cm_output::InferIcd10CmOutput;
-
 pub use crate::operation::infer_icd10_cm::_infer_icd10_cm_input::InferIcd10CmInput;
+
+pub use crate::operation::infer_icd10_cm::_infer_icd10_cm_output::InferIcd10CmOutput;
 
 mod _infer_icd10_cm_input;
 

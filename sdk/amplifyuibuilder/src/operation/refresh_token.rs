@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::refresh_token::Ref
     }
 }
 
-pub use crate::operation::refresh_token::_refresh_token_output::RefreshTokenOutput;
-
 pub use crate::operation::refresh_token::_refresh_token_input::RefreshTokenInput;
+
+pub use crate::operation::refresh_token::_refresh_token_output::RefreshTokenOutput;
 
 mod _refresh_token_input;
 

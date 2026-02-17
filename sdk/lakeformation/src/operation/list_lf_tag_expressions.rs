@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lf_tag_expres
     }
 }
 
-pub use crate::operation::list_lf_tag_expressions::_list_lf_tag_expressions_output::ListLfTagExpressionsOutput;
-
 pub use crate::operation::list_lf_tag_expressions::_list_lf_tag_expressions_input::ListLfTagExpressionsInput;
+
+pub use crate::operation::list_lf_tag_expressions::_list_lf_tag_expressions_output::ListLfTagExpressionsOutput;
 
 mod _list_lf_tag_expressions_input;
 

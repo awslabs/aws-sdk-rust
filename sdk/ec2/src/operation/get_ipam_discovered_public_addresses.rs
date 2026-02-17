@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_discovere
     }
 }
 
-pub use crate::operation::get_ipam_discovered_public_addresses::_get_ipam_discovered_public_addresses_output::GetIpamDiscoveredPublicAddressesOutput;
-
 pub use crate::operation::get_ipam_discovered_public_addresses::_get_ipam_discovered_public_addresses_input::GetIpamDiscoveredPublicAddressesInput;
+
+pub use crate::operation::get_ipam_discovered_public_addresses::_get_ipam_discovered_public_addresses_output::GetIpamDiscoveredPublicAddressesOutput;
 
 mod _get_ipam_discovered_public_addresses_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scan_jobs::Li
     }
 }
 
-pub use crate::operation::list_scan_jobs::_list_scan_jobs_output::ListScanJobsOutput;
-
 pub use crate::operation::list_scan_jobs::_list_scan_jobs_input::ListScanJobsInput;
+
+pub use crate::operation::list_scan_jobs::_list_scan_jobs_output::ListScanJobsOutput;
 
 mod _list_scan_jobs_input;
 

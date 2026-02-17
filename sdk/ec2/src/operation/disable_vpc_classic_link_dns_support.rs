@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_vpc_classi
     }
 }
 
-pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_classic_link_dns_support_output::DisableVpcClassicLinkDnsSupportOutput;
-
 pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_classic_link_dns_support_input::DisableVpcClassicLinkDnsSupportInput;
+
+pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_classic_link_dns_support_output::DisableVpcClassicLinkDnsSupportOutput;
 
 mod _disable_vpc_classic_link_dns_support_input;
 

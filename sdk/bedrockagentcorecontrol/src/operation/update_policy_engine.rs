@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_policy_engi
     }
 }
 
-pub use crate::operation::update_policy_engine::_update_policy_engine_output::UpdatePolicyEngineOutput;
-
 pub use crate::operation::update_policy_engine::_update_policy_engine_input::UpdatePolicyEngineInput;
+
+pub use crate::operation::update_policy_engine::_update_policy_engine_output::UpdatePolicyEngineOutput;
 
 mod _update_policy_engine_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_endpoint_ac
     }
 }
 
-pub use crate::operation::revoke_endpoint_access::_revoke_endpoint_access_output::RevokeEndpointAccessOutput;
-
 pub use crate::operation::revoke_endpoint_access::_revoke_endpoint_access_input::RevokeEndpointAccessInput;
+
+pub use crate::operation::revoke_endpoint_access::_revoke_endpoint_access_output::RevokeEndpointAccessOutput;
 
 mod _revoke_endpoint_access_input;
 

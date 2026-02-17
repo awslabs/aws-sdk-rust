@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_distributio
     }
 }
 
-pub use crate::operation::update_distribution_configuration::_update_distribution_configuration_output::UpdateDistributionConfigurationOutput;
-
 pub use crate::operation::update_distribution_configuration::_update_distribution_configuration_input::UpdateDistributionConfigurationInput;
+
+pub use crate::operation::update_distribution_configuration::_update_distribution_configuration_output::UpdateDistributionConfigurationOutput;
 
 mod _update_distribution_configuration_input;
 

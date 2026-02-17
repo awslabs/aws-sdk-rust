@@ -490,9 +490,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_ml_model_tr
     }
 }
 
-pub use crate::operation::cancel_ml_model_transform_job::_cancel_ml_model_transform_job_output::CancelMlModelTransformJobOutput;
-
 pub use crate::operation::cancel_ml_model_transform_job::_cancel_ml_model_transform_job_input::CancelMlModelTransformJobInput;
+
+pub use crate::operation::cancel_ml_model_transform_job::_cancel_ml_model_transform_job_output::CancelMlModelTransformJobOutput;
 
 mod _cancel_ml_model_transform_job_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_place_ind
     }
 }
 
-pub use crate::operation::describe_place_index::_describe_place_index_output::DescribePlaceIndexOutput;
-
 pub use crate::operation::describe_place_index::_describe_place_index_input::DescribePlaceIndexInput;
+
+pub use crate::operation::describe_place_index::_describe_place_index_output::DescribePlaceIndexOutput;
 
 mod _describe_place_index_input;
 

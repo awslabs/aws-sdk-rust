@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_website
     }
 }
 
-pub use crate::operation::put_bucket_website::_put_bucket_website_output::PutBucketWebsiteOutput;
-
 pub use crate::operation::put_bucket_website::_put_bucket_website_input::PutBucketWebsiteInput;
+
+pub use crate::operation::put_bucket_website::_put_bucket_website_output::PutBucketWebsiteOutput;
 
 mod _put_bucket_website_input;
 

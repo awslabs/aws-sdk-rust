@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_registr
     }
 }
 
-pub use crate::operation::get_device_registration::_get_device_registration_output::GetDeviceRegistrationOutput;
-
 pub use crate::operation::get_device_registration::_get_device_registration_input::GetDeviceRegistrationInput;
+
+pub use crate::operation::get_device_registration::_get_device_registration_output::GetDeviceRegistrationOutput;
 
 mod _get_device_registration_input;
 

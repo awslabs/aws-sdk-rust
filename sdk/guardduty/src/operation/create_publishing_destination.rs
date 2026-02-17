@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_publishing_
     }
 }
 
-pub use crate::operation::create_publishing_destination::_create_publishing_destination_output::CreatePublishingDestinationOutput;
-
 pub use crate::operation::create_publishing_destination::_create_publishing_destination_input::CreatePublishingDestinationInput;
+
+pub use crate::operation::create_publishing_destination::_create_publishing_destination_output::CreatePublishingDestinationOutput;
 
 mod _create_publishing_destination_input;
 

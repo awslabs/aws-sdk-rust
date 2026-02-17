@@ -346,9 +346,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_snowball_usage
     }
 }
 
-pub use crate::operation::get_snowball_usage::_get_snowball_usage_output::GetSnowballUsageOutput;
-
 pub use crate::operation::get_snowball_usage::_get_snowball_usage_input::GetSnowballUsageInput;
+
+pub use crate::operation::get_snowball_usage::_get_snowball_usage_output::GetSnowballUsageOutput;
 
 mod _get_snowball_usage_input;
 

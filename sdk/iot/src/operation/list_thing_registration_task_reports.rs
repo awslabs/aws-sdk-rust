@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_thing_registr
     }
 }
 
-pub use crate::operation::list_thing_registration_task_reports::_list_thing_registration_task_reports_output::ListThingRegistrationTaskReportsOutput;
-
 pub use crate::operation::list_thing_registration_task_reports::_list_thing_registration_task_reports_input::ListThingRegistrationTaskReportsInput;
+
+pub use crate::operation::list_thing_registration_task_reports::_list_thing_registration_task_reports_output::ListThingRegistrationTaskReportsOutput;
 
 mod _list_thing_registration_task_reports_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_collection:
     }
 }
 
-pub use crate::operation::create_collection::_create_collection_output::CreateCollectionOutput;
-
 pub use crate::operation::create_collection::_create_collection_input::CreateCollectionInput;
+
+pub use crate::operation::create_collection::_create_collection_output::CreateCollectionOutput;
 
 mod _create_collection_input;
 

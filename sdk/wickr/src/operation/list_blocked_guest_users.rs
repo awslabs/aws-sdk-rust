@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_blocked_guest
     }
 }
 
-pub use crate::operation::list_blocked_guest_users::_list_blocked_guest_users_output::ListBlockedGuestUsersOutput;
-
 pub use crate::operation::list_blocked_guest_users::_list_blocked_guest_users_input::ListBlockedGuestUsersInput;
+
+pub use crate::operation::list_blocked_guest_users::_list_blocked_guest_users_output::ListBlockedGuestUsersOutput;
 
 mod _list_blocked_guest_users_input;
 

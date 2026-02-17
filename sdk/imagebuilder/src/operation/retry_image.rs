@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retry_image::Retry
     }
 }
 
-pub use crate::operation::retry_image::_retry_image_output::RetryImageOutput;
-
 pub use crate::operation::retry_image::_retry_image_input::RetryImageInput;
+
+pub use crate::operation::retry_image::_retry_image_output::RetryImageOutput;
 
 mod _retry_image_input;
 

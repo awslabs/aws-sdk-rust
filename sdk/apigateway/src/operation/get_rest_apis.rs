@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rest_apis::Get
     }
 }
 
-pub use crate::operation::get_rest_apis::_get_rest_apis_output::GetRestApisOutput;
-
 pub use crate::operation::get_rest_apis::_get_rest_apis_input::GetRestApisInput;
+
+pub use crate::operation::get_rest_apis::_get_rest_apis_output::GetRestApisOutput;
 
 mod _get_rest_apis_input;
 

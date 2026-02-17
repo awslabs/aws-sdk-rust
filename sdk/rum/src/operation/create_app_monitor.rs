@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_monitor
     }
 }
 
-pub use crate::operation::create_app_monitor::_create_app_monitor_output::CreateAppMonitorOutput;
-
 pub use crate::operation::create_app_monitor::_create_app_monitor_input::CreateAppMonitorInput;
+
+pub use crate::operation::create_app_monitor::_create_app_monitor_output::CreateAppMonitorOutput;
 
 mod _create_app_monitor_input;
 

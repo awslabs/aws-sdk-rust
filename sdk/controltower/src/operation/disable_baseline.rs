@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_baseline::
     }
 }
 
-pub use crate::operation::disable_baseline::_disable_baseline_output::DisableBaselineOutput;
-
 pub use crate::operation::disable_baseline::_disable_baseline_input::DisableBaselineInput;
+
+pub use crate::operation::disable_baseline::_disable_baseline_output::DisableBaselineOutput;
 
 mod _disable_baseline_input;
 

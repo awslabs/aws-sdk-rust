@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolver_quer
     }
 }
 
-pub use crate::operation::list_resolver_query_log_configs::_list_resolver_query_log_configs_output::ListResolverQueryLogConfigsOutput;
-
 pub use crate::operation::list_resolver_query_log_configs::_list_resolver_query_log_configs_input::ListResolverQueryLogConfigsInput;
+
+pub use crate::operation::list_resolver_query_log_configs::_list_resolver_query_log_configs_output::ListResolverQueryLogConfigsOutput;
 
 mod _list_resolver_query_log_configs_input;
 

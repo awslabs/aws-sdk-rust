@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_knowledge_b
     }
 }
 
-pub use crate::operation::create_knowledge_base::_create_knowledge_base_output::CreateKnowledgeBaseOutput;
-
 pub use crate::operation::create_knowledge_base::_create_knowledge_base_input::CreateKnowledgeBaseInput;
+
+pub use crate::operation::create_knowledge_base::_create_knowledge_base_output::CreateKnowledgeBaseOutput;
 
 mod _create_knowledge_base_input;
 

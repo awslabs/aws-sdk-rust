@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_poli
     }
 }
 
-pub use crate::operation::list_security_policies::_list_security_policies_output::ListSecurityPoliciesOutput;
-
 pub use crate::operation::list_security_policies::_list_security_policies_input::ListSecurityPoliciesInput;
+
+pub use crate::operation::list_security_policies::_list_security_policies_output::ListSecurityPoliciesOutput;
 
 mod _list_security_policies_input;
 

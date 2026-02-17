@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_gro
     }
 }
 
-pub use crate::operation::create_channel_group::_create_channel_group_output::CreateChannelGroupOutput;
-
 pub use crate::operation::create_channel_group::_create_channel_group_input::CreateChannelGroupInput;
+
+pub use crate::operation::create_channel_group::_create_channel_group_output::CreateChannelGroupOutput;
 
 mod _create_channel_group_input;
 

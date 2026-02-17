@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_icd10_cm_infe
     }
 }
 
-pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference_jobs_output::ListIcd10CmInferenceJobsOutput;
-
 pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference_jobs_input::ListIcd10CmInferenceJobsInput;
+
+pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference_jobs_output::ListIcd10CmInferenceJobsOutput;
 
 mod _list_icd10_cm_inference_jobs_input;
 

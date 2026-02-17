@@ -54,6 +54,16 @@ pub struct DbInstanceAutomatedBackup {
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the automated backup is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The storage type associated with the automated backup.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services KMS key ID for an automated backup.</p>
@@ -177,6 +187,18 @@ impl DbInstanceAutomatedBackup {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
+    }
     /// <p>The storage type associated with the automated backup.</p>
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
@@ -274,6 +296,7 @@ pub struct DbInstanceAutomatedBackupBuilder {
     pub(crate) option_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) tde_credential_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) timezone: ::std::option::Option<::std::string::String>,
@@ -601,6 +624,44 @@ impl DbInstanceAutomatedBackupBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the automated backup. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The automated backup is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The automated backup is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The automated backup is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
+    }
     /// <p>The storage type associated with the automated backup.</p>
     pub fn storage_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.storage_type = ::std::option::Option::Some(input.into());
@@ -852,6 +913,7 @@ impl DbInstanceAutomatedBackupBuilder {
             option_group_name: self.option_group_name,
             tde_credential_arn: self.tde_credential_arn,
             encrypted: self.encrypted,
+            storage_encryption_type: self.storage_encryption_type,
             storage_type: self.storage_type,
             kms_key_id: self.kms_key_id,
             timezone: self.timezone,

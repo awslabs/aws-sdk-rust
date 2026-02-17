@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_requester_gate
     }
 }
 
-pub use crate::operation::get_requester_gateway::_get_requester_gateway_output::GetRequesterGatewayOutput;
-
 pub use crate::operation::get_requester_gateway::_get_requester_gateway_input::GetRequesterGatewayInput;
+
+pub use crate::operation::get_requester_gateway::_get_requester_gateway_output::GetRequesterGatewayOutput;
 
 mod _get_requester_gateway_input;
 

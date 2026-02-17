@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ai_guardrai
     }
 }
 
-pub use crate::operation::create_ai_guardrail::_create_ai_guardrail_output::CreateAiGuardrailOutput;
-
 pub use crate::operation::create_ai_guardrail::_create_ai_guardrail_input::CreateAiGuardrailInput;
+
+pub use crate::operation::create_ai_guardrail::_create_ai_guardrail_output::CreateAiGuardrailOutput;
 
 mod _create_ai_guardrail_input;
 

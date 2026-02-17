@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_uploads::List
     }
 }
 
-pub use crate::operation::list_uploads::_list_uploads_output::ListUploadsOutput;
-
 pub use crate::operation::list_uploads::_list_uploads_input::ListUploadsInput;
+
+pub use crate::operation::list_uploads::_list_uploads_output::ListUploadsOutput;
 
 mod _list_uploads_input;
 

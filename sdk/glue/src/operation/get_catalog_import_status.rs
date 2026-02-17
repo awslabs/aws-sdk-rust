@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_catalog_import
     }
 }
 
-pub use crate::operation::get_catalog_import_status::_get_catalog_import_status_output::GetCatalogImportStatusOutput;
-
 pub use crate::operation::get_catalog_import_status::_get_catalog_import_status_input::GetCatalogImportStatusInput;
+
+pub use crate::operation::get_catalog_import_status::_get_catalog_import_status_output::GetCatalogImportStatusOutput;
 
 mod _get_catalog_import_status_input;
 

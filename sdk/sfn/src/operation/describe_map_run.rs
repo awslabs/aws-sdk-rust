@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_map_run::
     }
 }
 
-pub use crate::operation::describe_map_run::_describe_map_run_output::DescribeMapRunOutput;
-
 pub use crate::operation::describe_map_run::_describe_map_run_input::DescribeMapRunInput;
+
+pub use crate::operation::describe_map_run::_describe_map_run_output::DescribeMapRunOutput;
 
 mod _describe_map_run_input;
 

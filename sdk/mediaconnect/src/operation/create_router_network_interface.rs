@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_router_netw
     }
 }
 
-pub use crate::operation::create_router_network_interface::_create_router_network_interface_output::CreateRouterNetworkInterfaceOutput;
-
 pub use crate::operation::create_router_network_interface::_create_router_network_interface_input::CreateRouterNetworkInterfaceInput;
+
+pub use crate::operation::create_router_network_interface::_create_router_network_interface_output::CreateRouterNetworkInterfaceOutput;
 
 mod _create_router_network_interface_input;
 

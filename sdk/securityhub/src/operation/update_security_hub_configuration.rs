@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_security_hu
     }
 }
 
-pub use crate::operation::update_security_hub_configuration::_update_security_hub_configuration_output::UpdateSecurityHubConfigurationOutput;
-
 pub use crate::operation::update_security_hub_configuration::_update_security_hub_configuration_input::UpdateSecurityHubConfigurationInput;
+
+pub use crate::operation::update_security_hub_configuration::_update_security_hub_configuration_output::UpdateSecurityHubConfigurationOutput;
 
 mod _update_security_hub_configuration_input;
 

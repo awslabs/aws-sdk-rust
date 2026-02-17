@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_ingestion::
     }
 }
 
-pub use crate::operation::cancel_ingestion::_cancel_ingestion_output::CancelIngestionOutput;
-
 pub use crate::operation::cancel_ingestion::_cancel_ingestion_input::CancelIngestionInput;
+
+pub use crate::operation::cancel_ingestion::_cancel_ingestion_output::CancelIngestionOutput;
 
 mod _cancel_ingestion_input;
 

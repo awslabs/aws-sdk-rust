@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_secur
     }
 }
 
-pub use crate::operation::disassociate_security_profiles::_disassociate_security_profiles_output::DisassociateSecurityProfilesOutput;
-
 pub use crate::operation::disassociate_security_profiles::_disassociate_security_profiles_input::DisassociateSecurityProfilesInput;
+
+pub use crate::operation::disassociate_security_profiles::_disassociate_security_profiles_output::DisassociateSecurityProfilesOutput;
 
 mod _disassociate_security_profiles_input;
 

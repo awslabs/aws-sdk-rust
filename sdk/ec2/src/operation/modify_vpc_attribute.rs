@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_vpc_attribu
     }
 }
 
-pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_output::ModifyVpcAttributeOutput;
-
 pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_input::ModifyVpcAttributeInput;
+
+pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_output::ModifyVpcAttributeOutput;
 
 mod _modify_vpc_attribute_input;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_faces::A
     }
 }
 
-pub use crate::operation::associate_faces::_associate_faces_output::AssociateFacesOutput;
-
 pub use crate::operation::associate_faces::_associate_faces_input::AssociateFacesInput;
+
+pub use crate::operation::associate_faces::_associate_faces_output::AssociateFacesOutput;
 
 mod _associate_faces_input;
 

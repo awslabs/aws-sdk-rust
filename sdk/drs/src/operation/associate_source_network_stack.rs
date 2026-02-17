@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_source_n
     }
 }
 
-pub use crate::operation::associate_source_network_stack::_associate_source_network_stack_output::AssociateSourceNetworkStackOutput;
-
 pub use crate::operation::associate_source_network_stack::_associate_source_network_stack_input::AssociateSourceNetworkStackInput;
+
+pub use crate::operation::associate_source_network_stack::_associate_source_network_stack_output::AssociateSourceNetworkStackOutput;
 
 mod _associate_source_network_stack_input;
 

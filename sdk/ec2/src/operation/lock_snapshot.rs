@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::lock_snapshot::Loc
     }
 }
 
-pub use crate::operation::lock_snapshot::_lock_snapshot_output::LockSnapshotOutput;
-
 pub use crate::operation::lock_snapshot::_lock_snapshot_input::LockSnapshotInput;
+
+pub use crate::operation::lock_snapshot::_lock_snapshot_output::LockSnapshotOutput;
 
 mod _lock_snapshot_input;
 

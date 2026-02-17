@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_fast_launc
     }
 }
 
-pub use crate::operation::disable_fast_launch::_disable_fast_launch_output::DisableFastLaunchOutput;
-
 pub use crate::operation::disable_fast_launch::_disable_fast_launch_input::DisableFastLaunchInput;
+
+pub use crate::operation::disable_fast_launch::_disable_fast_launch_output::DisableFastLaunchOutput;
 
 mod _disable_fast_launch_input;
 

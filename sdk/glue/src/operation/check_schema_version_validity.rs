@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_schema_versi
     }
 }
 
-pub use crate::operation::check_schema_version_validity::_check_schema_version_validity_output::CheckSchemaVersionValidityOutput;
-
 pub use crate::operation::check_schema_version_validity::_check_schema_version_validity_input::CheckSchemaVersionValidityInput;
+
+pub use crate::operation::check_schema_version_validity::_check_schema_version_validity_output::CheckSchemaVersionValidityOutput;
 
 mod _check_schema_version_validity_input;
 

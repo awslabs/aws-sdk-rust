@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_integration
     }
 }
 
-pub use crate::operation::delete_integration_table_properties::_delete_integration_table_properties_output::DeleteIntegrationTablePropertiesOutput;
-
 pub use crate::operation::delete_integration_table_properties::_delete_integration_table_properties_input::DeleteIntegrationTablePropertiesInput;
+
+pub use crate::operation::delete_integration_table_properties::_delete_integration_table_properties_output::DeleteIntegrationTablePropertiesOutput;
 
 mod _delete_integration_table_properties_input;
 

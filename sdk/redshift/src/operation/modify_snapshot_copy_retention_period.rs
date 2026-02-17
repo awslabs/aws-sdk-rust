@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_snapshot_co
     }
 }
 
-pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapshot_copy_retention_period_output::ModifySnapshotCopyRetentionPeriodOutput;
-
 pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapshot_copy_retention_period_input::ModifySnapshotCopyRetentionPeriodInput;
+
+pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapshot_copy_retention_period_output::ModifySnapshotCopyRetentionPeriodOutput;
 
 mod _modify_snapshot_copy_retention_period_input;
 

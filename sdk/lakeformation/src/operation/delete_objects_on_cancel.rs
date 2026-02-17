@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_objects_on_
     }
 }
 
-pub use crate::operation::delete_objects_on_cancel::_delete_objects_on_cancel_output::DeleteObjectsOnCancelOutput;
-
 pub use crate::operation::delete_objects_on_cancel::_delete_objects_on_cancel_input::DeleteObjectsOnCancelInput;
+
+pub use crate::operation::delete_objects_on_cancel::_delete_objects_on_cancel_output::DeleteObjectsOnCancelOutput;
 
 mod _delete_objects_on_cancel_input;
 

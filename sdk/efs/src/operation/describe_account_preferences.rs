@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_p
     }
 }
 
-pub use crate::operation::describe_account_preferences::_describe_account_preferences_output::DescribeAccountPreferencesOutput;
-
 pub use crate::operation::describe_account_preferences::_describe_account_preferences_input::DescribeAccountPreferencesInput;
+
+pub use crate::operation::describe_account_preferences::_describe_account_preferences_output::DescribeAccountPreferencesOutput;
 
 mod _describe_account_preferences_input;
 

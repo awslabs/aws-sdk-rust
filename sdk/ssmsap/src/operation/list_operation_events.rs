@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_operation_eve
     }
 }
 
-pub use crate::operation::list_operation_events::_list_operation_events_output::ListOperationEventsOutput;
-
 pub use crate::operation::list_operation_events::_list_operation_events_input::ListOperationEventsInput;
+
+pub use crate::operation::list_operation_events::_list_operation_events_output::ListOperationEventsOutput;
 
 mod _list_operation_events_input;
 

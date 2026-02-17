@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dashboards_
     }
 }
 
-pub use crate::operation::update_dashboards_qa_configuration::_update_dashboards_qa_configuration_output::UpdateDashboardsQaConfigurationOutput;
-
 pub use crate::operation::update_dashboards_qa_configuration::_update_dashboards_qa_configuration_input::UpdateDashboardsQaConfigurationInput;
+
+pub use crate::operation::update_dashboards_qa_configuration::_update_dashboards_qa_configuration_output::UpdateDashboardsQaConfigurationOutput;
 
 mod _update_dashboards_qa_configuration_input;
 

@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query_lineage::Que
     }
 }
 
-pub use crate::operation::query_lineage::_query_lineage_output::QueryLineageOutput;
-
 pub use crate::operation::query_lineage::_query_lineage_input::QueryLineageInput;
+
+pub use crate::operation::query_lineage::_query_lineage_output::QueryLineageOutput;
 
 mod _query_lineage_input;
 

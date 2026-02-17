@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_macie_session:
     }
 }
 
-pub use crate::operation::get_macie_session::_get_macie_session_output::GetMacieSessionOutput;
-
 pub use crate::operation::get_macie_session::_get_macie_session_input::GetMacieSessionInput;
+
+pub use crate::operation::get_macie_session::_get_macie_session_output::GetMacieSessionOutput;
 
 mod _get_macie_session_input;
 

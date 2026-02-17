@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_task_set::U
     }
 }
 
-pub use crate::operation::update_task_set::_update_task_set_output::UpdateTaskSetOutput;
-
 pub use crate::operation::update_task_set::_update_task_set_input::UpdateTaskSetInput;
+
+pub use crate::operation::update_task_set::_update_task_set_output::UpdateTaskSetOutput;
 
 mod _update_task_set_input;
 

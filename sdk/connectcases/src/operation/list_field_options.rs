@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_field_options
     }
 }
 
-pub use crate::operation::list_field_options::_list_field_options_output::ListFieldOptionsOutput;
-
 pub use crate::operation::list_field_options::_list_field_options_input::ListFieldOptionsInput;
+
+pub use crate::operation::list_field_options::_list_field_options_output::ListFieldOptionsOutput;
 
 mod _list_field_options_input;
 

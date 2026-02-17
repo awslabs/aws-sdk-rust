@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_accounts_for_
     }
 }
 
-pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_output::ListAccountsForParentOutput;
-
 pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_input::ListAccountsForParentInput;
+
+pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_output::ListAccountsForParentOutput;
 
 mod _list_accounts_for_parent_input;
 

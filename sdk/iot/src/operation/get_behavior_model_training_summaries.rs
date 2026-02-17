@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_behavior_model
     }
 }
 
-pub use crate::operation::get_behavior_model_training_summaries::_get_behavior_model_training_summaries_output::GetBehaviorModelTrainingSummariesOutput;
-
 pub use crate::operation::get_behavior_model_training_summaries::_get_behavior_model_training_summaries_input::GetBehaviorModelTrainingSummariesInput;
+
+pub use crate::operation::get_behavior_model_training_summaries::_get_behavior_model_training_summaries_output::GetBehaviorModelTrainingSummariesOutput;
 
 mod _get_behavior_model_training_summaries_input;
 

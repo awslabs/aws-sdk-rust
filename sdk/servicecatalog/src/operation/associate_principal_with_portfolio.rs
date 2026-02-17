@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_principa
     }
 }
 
-pub use crate::operation::associate_principal_with_portfolio::_associate_principal_with_portfolio_output::AssociatePrincipalWithPortfolioOutput;
-
 pub use crate::operation::associate_principal_with_portfolio::_associate_principal_with_portfolio_input::AssociatePrincipalWithPortfolioInput;
+
+pub use crate::operation::associate_principal_with_portfolio::_associate_principal_with_portfolio_output::AssociatePrincipalWithPortfolioOutput;
 
 mod _associate_principal_with_portfolio_input;
 

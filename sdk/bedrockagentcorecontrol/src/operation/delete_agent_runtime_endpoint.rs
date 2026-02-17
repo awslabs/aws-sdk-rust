@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_agent_runti
     }
 }
 
-pub use crate::operation::delete_agent_runtime_endpoint::_delete_agent_runtime_endpoint_output::DeleteAgentRuntimeEndpointOutput;
-
 pub use crate::operation::delete_agent_runtime_endpoint::_delete_agent_runtime_endpoint_input::DeleteAgentRuntimeEndpointInput;
+
+pub use crate::operation::delete_agent_runtime_endpoint::_delete_agent_runtime_endpoint_output::DeleteAgentRuntimeEndpointOutput;
 
 mod _delete_agent_runtime_endpoint_input;
 

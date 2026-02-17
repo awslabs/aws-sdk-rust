@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable::EnableErro
     }
 }
 
-pub use crate::operation::enable::_enable_output::EnableOutput;
-
 pub use crate::operation::enable::_enable_input::EnableInput;
+
+pub use crate::operation::enable::_enable_output::EnableOutput;
 
 mod _enable_input;
 

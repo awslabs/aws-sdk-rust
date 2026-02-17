@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_identity_dkim_
     }
 }
 
-pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_output::SetIdentityDkimEnabledOutput;
-
 pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_input::SetIdentityDkimEnabledInput;
+
+pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_output::SetIdentityDkimEnabledOutput;
 
 mod _set_identity_dkim_enabled_input;
 

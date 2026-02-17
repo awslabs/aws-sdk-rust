@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_client_prop
     }
 }
 
-pub use crate::operation::modify_client_properties::_modify_client_properties_output::ModifyClientPropertiesOutput;
-
 pub use crate::operation::modify_client_properties::_modify_client_properties_input::ModifyClientPropertiesInput;
+
+pub use crate::operation::modify_client_properties::_modify_client_properties_output::ModifyClientPropertiesOutput;
 
 mod _modify_client_properties_input;
 

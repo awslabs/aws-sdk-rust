@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_instanc
     }
 }
 
-pub use crate::operation::create_app_instance::_create_app_instance_output::CreateAppInstanceOutput;
-
 pub use crate::operation::create_app_instance::_create_app_instance_input::CreateAppInstanceInput;
+
+pub use crate::operation::create_app_instance::_create_app_instance_output::CreateAppInstanceOutput;
 
 mod _create_app_instance_input;
 

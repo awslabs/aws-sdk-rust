@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lifecycle_exec
     }
 }
 
-pub use crate::operation::get_lifecycle_execution::_get_lifecycle_execution_output::GetLifecycleExecutionOutput;
-
 pub use crate::operation::get_lifecycle_execution::_get_lifecycle_execution_input::GetLifecycleExecutionInput;
+
+pub use crate::operation::get_lifecycle_execution::_get_lifecycle_execution_output::GetLifecycleExecutionOutput;
 
 mod _get_lifecycle_execution_input;
 

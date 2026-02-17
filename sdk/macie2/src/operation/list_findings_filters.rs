@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_findings_filt
     }
 }
 
-pub use crate::operation::list_findings_filters::_list_findings_filters_output::ListFindingsFiltersOutput;
-
 pub use crate::operation::list_findings_filters::_list_findings_filters_input::ListFindingsFiltersInput;
+
+pub use crate::operation::list_findings_filters::_list_findings_filters_output::ListFindingsFiltersOutput;
 
 mod _list_findings_filters_input;
 

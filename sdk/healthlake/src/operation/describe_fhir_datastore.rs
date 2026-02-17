@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fhir_data
     }
 }
 
-pub use crate::operation::describe_fhir_datastore::_describe_fhir_datastore_output::DescribeFhirDatastoreOutput;
-
 pub use crate::operation::describe_fhir_datastore::_describe_fhir_datastore_input::DescribeFhirDatastoreInput;
+
+pub use crate::operation::describe_fhir_datastore::_describe_fhir_datastore_output::DescribeFhirDatastoreOutput;
 
 mod _describe_fhir_datastore_input;
 

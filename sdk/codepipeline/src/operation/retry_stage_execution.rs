@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retry_stage_execut
     }
 }
 
-pub use crate::operation::retry_stage_execution::_retry_stage_execution_output::RetryStageExecutionOutput;
-
 pub use crate::operation::retry_stage_execution::_retry_stage_execution_input::RetryStageExecutionInput;
+
+pub use crate::operation::retry_stage_execution::_retry_stage_execution_output::RetryStageExecutionOutput;
 
 mod _retry_stage_execution_input;
 

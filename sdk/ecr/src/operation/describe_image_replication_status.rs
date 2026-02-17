@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_rep
     }
 }
 
-pub use crate::operation::describe_image_replication_status::_describe_image_replication_status_output::DescribeImageReplicationStatusOutput;
-
 pub use crate::operation::describe_image_replication_status::_describe_image_replication_status_input::DescribeImageReplicationStatusInput;
+
+pub use crate::operation::describe_image_replication_status::_describe_image_replication_status_output::DescribeImageReplicationStatusOutput;
 
 mod _describe_image_replication_status_input;
 

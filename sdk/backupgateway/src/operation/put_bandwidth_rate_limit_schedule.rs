@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bandwidth_rate
     }
 }
 
-pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate_limit_schedule_output::PutBandwidthRateLimitScheduleOutput;
-
 pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate_limit_schedule_input::PutBandwidthRateLimitScheduleInput;
+
+pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate_limit_schedule_output::PutBandwidthRateLimitScheduleOutput;
 
 mod _put_bandwidth_rate_limit_schedule_input;
 

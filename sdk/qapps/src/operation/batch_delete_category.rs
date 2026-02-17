@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_categ
     }
 }
 
-pub use crate::operation::batch_delete_category::_batch_delete_category_output::BatchDeleteCategoryOutput;
-
 pub use crate::operation::batch_delete_category::_batch_delete_category_input::BatchDeleteCategoryInput;
+
+pub use crate::operation::batch_delete_category::_batch_delete_category_output::BatchDeleteCategoryOutput;
 
 mod _batch_delete_category_input;
 

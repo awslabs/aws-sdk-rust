@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_customer_ga
     }
 }
 
-pub use crate::operation::delete_customer_gateway::_delete_customer_gateway_output::DeleteCustomerGatewayOutput;
-
 pub use crate::operation::delete_customer_gateway::_delete_customer_gateway_input::DeleteCustomerGatewayInput;
+
+pub use crate::operation::delete_customer_gateway::_delete_customer_gateway_output::DeleteCustomerGatewayOutput;
 
 mod _delete_customer_gateway_input;
 

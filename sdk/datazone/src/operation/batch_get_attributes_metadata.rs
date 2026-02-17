@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_attribut
     }
 }
 
-pub use crate::operation::batch_get_attributes_metadata::_batch_get_attributes_metadata_output::BatchGetAttributesMetadataOutput;
-
 pub use crate::operation::batch_get_attributes_metadata::_batch_get_attributes_metadata_input::BatchGetAttributesMetadataInput;
+
+pub use crate::operation::batch_get_attributes_metadata::_batch_get_attributes_metadata_output::BatchGetAttributesMetadataOutput;
 
 mod _batch_get_attributes_metadata_input;
 

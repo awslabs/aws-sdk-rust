@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_role_alias:
     }
 }
 
-pub use crate::operation::create_role_alias::_create_role_alias_output::CreateRoleAliasOutput;
-
 pub use crate::operation::create_role_alias::_create_role_alias_input::CreateRoleAliasInput;
+
+pub use crate::operation::create_role_alias::_create_role_alias_output::CreateRoleAliasOutput;
 
 mod _create_role_alias_input;
 

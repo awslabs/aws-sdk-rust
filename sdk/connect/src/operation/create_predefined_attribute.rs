@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_predefined_
     }
 }
 
-pub use crate::operation::create_predefined_attribute::_create_predefined_attribute_output::CreatePredefinedAttributeOutput;
-
 pub use crate::operation::create_predefined_attribute::_create_predefined_attribute_input::CreatePredefinedAttributeInput;
+
+pub use crate::operation::create_predefined_attribute::_create_predefined_attribute_output::CreatePredefinedAttributeOutput;
 
 mod _create_predefined_attribute_input;
 

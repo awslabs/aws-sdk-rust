@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_se
     }
 }
 
-pub use crate::operation::update_resource_server::_update_resource_server_output::UpdateResourceServerOutput;
-
 pub use crate::operation::update_resource_server::_update_resource_server_input::UpdateResourceServerInput;
+
+pub use crate::operation::update_resource_server::_update_resource_server_output::UpdateResourceServerOutput;
 
 mod _update_resource_server_input;
 

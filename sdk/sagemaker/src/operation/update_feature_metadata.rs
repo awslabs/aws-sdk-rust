@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_feature_met
     }
 }
 
-pub use crate::operation::update_feature_metadata::_update_feature_metadata_output::UpdateFeatureMetadataOutput;
-
 pub use crate::operation::update_feature_metadata::_update_feature_metadata_input::UpdateFeatureMetadataInput;
+
+pub use crate::operation::update_feature_metadata::_update_feature_metadata_output::UpdateFeatureMetadataOutput;
 
 mod _update_feature_metadata_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pending_invit
     }
 }
 
-pub use crate::operation::list_pending_invitation_resources::_list_pending_invitation_resources_output::ListPendingInvitationResourcesOutput;
-
 pub use crate::operation::list_pending_invitation_resources::_list_pending_invitation_resources_input::ListPendingInvitationResourcesInput;
+
+pub use crate::operation::list_pending_invitation_resources::_list_pending_invitation_resources_output::ListPendingInvitationResourcesOutput;
 
 mod _list_pending_invitation_resources_input;
 

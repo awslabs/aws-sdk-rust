@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pod_identit
     }
 }
 
-pub use crate::operation::delete_pod_identity_association::_delete_pod_identity_association_output::DeletePodIdentityAssociationOutput;
-
 pub use crate::operation::delete_pod_identity_association::_delete_pod_identity_association_input::DeletePodIdentityAssociationInput;
+
+pub use crate::operation::delete_pod_identity_association::_delete_pod_identity_association_output::DeletePodIdentityAssociationOutput;
 
 mod _delete_pod_identity_association_input;
 

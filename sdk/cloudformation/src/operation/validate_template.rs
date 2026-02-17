@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_template:
     }
 }
 
-pub use crate::operation::validate_template::_validate_template_output::ValidateTemplateOutput;
-
 pub use crate::operation::validate_template::_validate_template_input::ValidateTemplateInput;
+
+pub use crate::operation::validate_template::_validate_template_output::ValidateTemplateOutput;
 
 mod _validate_template_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_schedule
     }
 }
 
-pub use crate::operation::batch_put_scheduled_update_group_action::_batch_put_scheduled_update_group_action_output::BatchPutScheduledUpdateGroupActionOutput;
-
 pub use crate::operation::batch_put_scheduled_update_group_action::_batch_put_scheduled_update_group_action_input::BatchPutScheduledUpdateGroupActionInput;
+
+pub use crate::operation::batch_put_scheduled_update_group_action::_batch_put_scheduled_update_group_action_output::BatchPutScheduledUpdateGroupActionOutput;
 
 mod _batch_put_scheduled_update_group_action_input;
 

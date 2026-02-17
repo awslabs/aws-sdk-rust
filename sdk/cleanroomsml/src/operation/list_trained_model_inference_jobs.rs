@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trained_model
     }
 }
 
-pub use crate::operation::list_trained_model_inference_jobs::_list_trained_model_inference_jobs_output::ListTrainedModelInferenceJobsOutput;
-
 pub use crate::operation::list_trained_model_inference_jobs::_list_trained_model_inference_jobs_input::ListTrainedModelInferenceJobsInput;
+
+pub use crate::operation::list_trained_model_inference_jobs::_list_trained_model_inference_jobs_output::ListTrainedModelInferenceJobsOutput;
 
 mod _list_trained_model_inference_jobs_input;
 

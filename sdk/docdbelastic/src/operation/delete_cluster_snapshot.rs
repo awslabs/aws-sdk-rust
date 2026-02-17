@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cluster_sna
     }
 }
 
-pub use crate::operation::delete_cluster_snapshot::_delete_cluster_snapshot_output::DeleteClusterSnapshotOutput;
-
 pub use crate::operation::delete_cluster_snapshot::_delete_cluster_snapshot_input::DeleteClusterSnapshotInput;
+
+pub use crate::operation::delete_cluster_snapshot::_delete_cluster_snapshot_output::DeleteClusterSnapshotOutput;
 
 mod _delete_cluster_snapshot_input;
 

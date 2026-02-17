@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_spot_datafe
     }
 }
 
-pub use crate::operation::delete_spot_datafeed_subscription::_delete_spot_datafeed_subscription_output::DeleteSpotDatafeedSubscriptionOutput;
-
 pub use crate::operation::delete_spot_datafeed_subscription::_delete_spot_datafeed_subscription_input::DeleteSpotDatafeedSubscriptionInput;
+
+pub use crate::operation::delete_spot_datafeed_subscription::_delete_spot_datafeed_subscription_output::DeleteSpotDatafeedSubscriptionOutput;
 
 mod _delete_spot_datafeed_subscription_input;
 

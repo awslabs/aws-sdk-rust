@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_documentati
     }
 }
 
-pub use crate::operation::create_documentation_version::_create_documentation_version_output::CreateDocumentationVersionOutput;
-
 pub use crate::operation::create_documentation_version::_create_documentation_version_input::CreateDocumentationVersionInput;
+
+pub use crate::operation::create_documentation_version::_create_documentation_version_output::CreateDocumentationVersionOutput;
 
 mod _create_documentation_version_input;
 

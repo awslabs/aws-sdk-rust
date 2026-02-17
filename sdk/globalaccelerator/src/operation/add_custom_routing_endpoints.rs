@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_custom_routing
     }
 }
 
-pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endpoints_output::AddCustomRoutingEndpointsOutput;
-
 pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endpoints_input::AddCustomRoutingEndpointsInput;
+
+pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endpoints_output::AddCustomRoutingEndpointsOutput;
 
 mod _add_custom_routing_endpoints_input;
 

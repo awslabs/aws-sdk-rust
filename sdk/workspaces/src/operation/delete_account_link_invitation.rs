@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_lin
     }
 }
 
-pub use crate::operation::delete_account_link_invitation::_delete_account_link_invitation_output::DeleteAccountLinkInvitationOutput;
-
 pub use crate::operation::delete_account_link_invitation::_delete_account_link_invitation_input::DeleteAccountLinkInvitationInput;
+
+pub use crate::operation::delete_account_link_invitation::_delete_account_link_invitation_output::DeleteAccountLinkInvitationOutput;
 
 mod _delete_account_link_invitation_input;
 

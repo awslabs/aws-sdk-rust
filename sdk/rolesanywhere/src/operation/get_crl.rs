@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_crl::GetCrlErr
     }
 }
 
-pub use crate::operation::get_crl::_get_crl_output::GetCrlOutput;
-
 pub use crate::operation::get_crl::_get_crl_input::GetCrlInput;
+
+pub use crate::operation::get_crl::_get_crl_output::GetCrlOutput;
 
 mod _get_crl_input;
 

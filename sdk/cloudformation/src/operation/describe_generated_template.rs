@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_generated
     }
 }
 
-pub use crate::operation::describe_generated_template::_describe_generated_template_output::DescribeGeneratedTemplateOutput;
-
 pub use crate::operation::describe_generated_template::_describe_generated_template_input::DescribeGeneratedTemplateInput;
+
+pub use crate::operation::describe_generated_template::_describe_generated_template_output::DescribeGeneratedTemplateOutput;
 
 mod _describe_generated_template_input;
 

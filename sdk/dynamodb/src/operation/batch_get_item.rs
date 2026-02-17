@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_item::Ba
     }
 }
 
-pub use crate::operation::batch_get_item::_batch_get_item_output::BatchGetItemOutput;
-
 pub use crate::operation::batch_get_item::_batch_get_item_input::BatchGetItemInput;
+
+pub use crate::operation::batch_get_item::_batch_get_item_output::BatchGetItemOutput;
 
 mod _batch_get_item_input;
 

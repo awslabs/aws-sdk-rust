@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_classifier:
     }
 }
 
-pub use crate::operation::update_classifier::_update_classifier_output::UpdateClassifierOutput;
-
 pub use crate::operation::update_classifier::_update_classifier_input::UpdateClassifierInput;
+
+pub use crate::operation::update_classifier::_update_classifier_output::UpdateClassifierOutput;
 
 mod _update_classifier_input;
 

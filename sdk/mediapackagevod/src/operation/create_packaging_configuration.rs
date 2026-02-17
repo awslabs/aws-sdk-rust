@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_packaging_c
     }
 }
 
-pub use crate::operation::create_packaging_configuration::_create_packaging_configuration_output::CreatePackagingConfigurationOutput;
-
 pub use crate::operation::create_packaging_configuration::_create_packaging_configuration_input::CreatePackagingConfigurationInput;
+
+pub use crate::operation::create_packaging_configuration::_create_packaging_configuration_output::CreatePackagingConfigurationOutput;
 
 mod _create_packaging_configuration_input;
 

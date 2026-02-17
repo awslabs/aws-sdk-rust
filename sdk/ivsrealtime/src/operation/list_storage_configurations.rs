@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_storage_confi
     }
 }
 
-pub use crate::operation::list_storage_configurations::_list_storage_configurations_output::ListStorageConfigurationsOutput;
-
 pub use crate::operation::list_storage_configurations::_list_storage_configurations_input::ListStorageConfigurationsInput;
+
+pub use crate::operation::list_storage_configurations::_list_storage_configurations_output::ListStorageConfigurationsOutput;
 
 mod _list_storage_configurations_input;
 

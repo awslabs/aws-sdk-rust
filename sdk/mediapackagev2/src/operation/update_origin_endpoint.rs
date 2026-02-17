@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_origin_endp
     }
 }
 
-pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_output::UpdateOriginEndpointOutput;
-
 pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_input::UpdateOriginEndpointInput;
+
+pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_output::UpdateOriginEndpointOutput;
 
 mod _update_origin_endpoint_input;
 

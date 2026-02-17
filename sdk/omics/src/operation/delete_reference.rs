@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_reference::
     }
 }
 
-pub use crate::operation::delete_reference::_delete_reference_output::DeleteReferenceOutput;
-
 pub use crate::operation::delete_reference::_delete_reference_input::DeleteReferenceInput;
+
+pub use crate::operation::delete_reference::_delete_reference_output::DeleteReferenceOutput;
 
 mod _delete_reference_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_content_modera
     }
 }
 
-pub use crate::operation::get_content_moderation::_get_content_moderation_output::GetContentModerationOutput;
-
 pub use crate::operation::get_content_moderation::_get_content_moderation_input::GetContentModerationInput;
+
+pub use crate::operation::get_content_moderation::_get_content_moderation_output::GetContentModerationOutput;
 
 mod _get_content_moderation_input;
 

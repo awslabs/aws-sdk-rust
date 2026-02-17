@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_elasticsear
     }
 }
 
-pub use crate::operation::create_elasticsearch_domain::_create_elasticsearch_domain_output::CreateElasticsearchDomainOutput;
-
 pub use crate::operation::create_elasticsearch_domain::_create_elasticsearch_domain_input::CreateElasticsearchDomainInput;
+
+pub use crate::operation::create_elasticsearch_domain::_create_elasticsearch_domain_output::CreateElasticsearchDomainOutput;
 
 mod _create_elasticsearch_domain_input;
 

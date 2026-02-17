@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_networks::Lis
     }
 }
 
-pub use crate::operation::list_networks::_list_networks_output::ListNetworksOutput;
-
 pub use crate::operation::list_networks::_list_networks_input::ListNetworksInput;
+
+pub use crate::operation::list_networks::_list_networks_output::ListNetworksOutput;
 
 mod _list_networks_input;
 

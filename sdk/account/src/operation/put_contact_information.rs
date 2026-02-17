@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_contact_inform
     }
 }
 
-pub use crate::operation::put_contact_information::_put_contact_information_output::PutContactInformationOutput;
-
 pub use crate::operation::put_contact_information::_put_contact_information_input::PutContactInformationInput;
+
+pub use crate::operation::put_contact_information::_put_contact_information_output::PutContactInformationOutput;
 
 mod _put_contact_information_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_delegated_a
     }
 }
 
-pub use crate::operation::enable_delegated_admin_account::_enable_delegated_admin_account_output::EnableDelegatedAdminAccountOutput;
-
 pub use crate::operation::enable_delegated_admin_account::_enable_delegated_admin_account_input::EnableDelegatedAdminAccountInput;
+
+pub use crate::operation::enable_delegated_admin_account::_enable_delegated_admin_account_output::EnableDelegatedAdminAccountOutput;
 
 mod _enable_delegated_admin_account_input;
 

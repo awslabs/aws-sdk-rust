@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backend_api::G
     }
 }
 
-pub use crate::operation::get_backend_api::_get_backend_api_output::GetBackendApiOutput;
-
 pub use crate::operation::get_backend_api::_get_backend_api_input::GetBackendApiInput;
+
+pub use crate::operation::get_backend_api::_get_backend_api_output::GetBackendApiOutput;
 
 mod _get_backend_api_input;
 

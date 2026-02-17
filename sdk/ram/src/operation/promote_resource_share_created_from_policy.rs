@@ -469,9 +469,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::promote_resource_s
     }
 }
 
-pub use crate::operation::promote_resource_share_created_from_policy::_promote_resource_share_created_from_policy_output::PromoteResourceShareCreatedFromPolicyOutput;
-
 pub use crate::operation::promote_resource_share_created_from_policy::_promote_resource_share_created_from_policy_input::PromoteResourceShareCreatedFromPolicyInput;
+
+pub use crate::operation::promote_resource_share_created_from_policy::_promote_resource_share_created_from_policy_output::PromoteResourceShareCreatedFromPolicyOutput;
 
 mod _promote_resource_share_created_from_policy_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_backup_po
     }
 }
 
-pub use crate::operation::describe_backup_policy::_describe_backup_policy_output::DescribeBackupPolicyOutput;
-
 pub use crate::operation::describe_backup_policy::_describe_backup_policy_input::DescribeBackupPolicyInput;
+
+pub use crate::operation::describe_backup_policy::_describe_backup_policy_output::DescribeBackupPolicyOutput;
 
 mod _describe_backup_policy_input;
 

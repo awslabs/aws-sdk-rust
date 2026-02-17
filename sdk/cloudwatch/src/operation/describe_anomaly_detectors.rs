@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_anomaly_d
     }
 }
 
-pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detectors_output::DescribeAnomalyDetectorsOutput;
-
 pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detectors_input::DescribeAnomalyDetectorsInput;
+
+pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detectors_output::DescribeAnomalyDetectorsOutput;
 
 mod _describe_anomaly_detectors_input;
 

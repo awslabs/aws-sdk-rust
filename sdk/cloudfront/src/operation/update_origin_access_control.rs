@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_origin_acce
     }
 }
 
-pub use crate::operation::update_origin_access_control::_update_origin_access_control_output::UpdateOriginAccessControlOutput;
-
 pub use crate::operation::update_origin_access_control::_update_origin_access_control_input::UpdateOriginAccessControlInput;
+
+pub use crate::operation::update_origin_access_control::_update_origin_access_control_output::UpdateOriginAccessControlOutput;
 
 mod _update_origin_access_control_input;
 

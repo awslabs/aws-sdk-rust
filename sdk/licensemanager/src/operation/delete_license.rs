@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_license::De
     }
 }
 
-pub use crate::operation::delete_license::_delete_license_output::DeleteLicenseOutput;
-
 pub use crate::operation::delete_license::_delete_license_input::DeleteLicenseInput;
+
+pub use crate::operation::delete_license::_delete_license_output::DeleteLicenseOutput;
 
 mod _delete_license_input;
 

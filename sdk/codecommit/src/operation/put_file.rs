@@ -642,9 +642,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_file::PutFileE
     }
 }
 
-pub use crate::operation::put_file::_put_file_output::PutFileOutput;
-
 pub use crate::operation::put_file::_put_file_input::PutFileInput;
+
+pub use crate::operation::put_file::_put_file_output::PutFileOutput;
 
 mod _put_file_input;
 

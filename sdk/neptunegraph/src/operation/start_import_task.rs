@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_import_task:
     }
 }
 
-pub use crate::operation::start_import_task::_start_import_task_output::StartImportTaskOutput;
-
 pub use crate::operation::start_import_task::_start_import_task_input::StartImportTaskInput;
+
+pub use crate::operation::start_import_task::_start_import_task_output::StartImportTaskOutput;
 
 mod _start_import_task_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_faqs::ListFaq
     }
 }
 
-pub use crate::operation::list_faqs::_list_faqs_output::ListFaqsOutput;
-
 pub use crate::operation::list_faqs::_list_faqs_input::ListFaqsInput;
+
+pub use crate::operation::list_faqs::_list_faqs_output::ListFaqsOutput;
 
 mod _list_faqs_input;
 

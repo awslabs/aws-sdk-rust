@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_deployme
     }
 }
 
-pub use crate::operation::batch_get_deployments::_batch_get_deployments_output::BatchGetDeploymentsOutput;
-
 pub use crate::operation::batch_get_deployments::_batch_get_deployments_input::BatchGetDeploymentsInput;
+
+pub use crate::operation::batch_get_deployments::_batch_get_deployments_output::BatchGetDeploymentsOutput;
 
 mod _batch_get_deployments_input;
 

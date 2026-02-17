@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_channels::S
     }
 }
 
-pub use crate::operation::search_channels::_search_channels_output::SearchChannelsOutput;
-
 pub use crate::operation::search_channels::_search_channels_input::SearchChannelsInput;
+
+pub use crate::operation::search_channels::_search_channels_output::SearchChannelsOutput;
 
 mod _search_channels_input;
 

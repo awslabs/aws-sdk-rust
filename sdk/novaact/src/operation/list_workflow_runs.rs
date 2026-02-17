@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_runs
     }
 }
 
-pub use crate::operation::list_workflow_runs::_list_workflow_runs_output::ListWorkflowRunsOutput;
-
 pub use crate::operation::list_workflow_runs::_list_workflow_runs_input::ListWorkflowRunsInput;
+
+pub use crate::operation::list_workflow_runs::_list_workflow_runs_output::ListWorkflowRunsOutput;
 
 mod _list_workflow_runs_input;
 

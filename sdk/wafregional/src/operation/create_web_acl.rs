@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_web_acl::Cr
     }
 }
 
-pub use crate::operation::create_web_acl::_create_web_acl_output::CreateWebAclOutput;
-
 pub use crate::operation::create_web_acl::_create_web_acl_input::CreateWebAclInput;
+
+pub use crate::operation::create_web_acl::_create_web_acl_output::CreateWebAclOutput;
 
 mod _create_web_acl_input;
 

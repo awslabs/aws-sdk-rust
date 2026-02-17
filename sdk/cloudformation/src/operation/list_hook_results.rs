@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hook_results:
     }
 }
 
-pub use crate::operation::list_hook_results::_list_hook_results_output::ListHookResultsOutput;
-
 pub use crate::operation::list_hook_results::_list_hook_results_input::ListHookResultsInput;
+
+pub use crate::operation::list_hook_results::_list_hook_results_output::ListHookResultsOutput;
 
 mod _list_hook_results_input;
 

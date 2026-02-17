@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_job_tagging
     }
 }
 
-pub use crate::operation::delete_job_tagging::_delete_job_tagging_output::DeleteJobTaggingOutput;
-
 pub use crate::operation::delete_job_tagging::_delete_job_tagging_input::DeleteJobTaggingInput;
+
+pub use crate::operation::delete_job_tagging::_delete_job_tagging_output::DeleteJobTaggingOutput;
 
 mod _delete_job_tagging_input;
 

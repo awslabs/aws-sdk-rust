@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_datastore::
     }
 }
 
-pub use crate::operation::create_datastore::_create_datastore_output::CreateDatastoreOutput;
-
 pub use crate::operation::create_datastore::_create_datastore_input::CreateDatastoreInput;
+
+pub use crate::operation::create_datastore::_create_datastore_output::CreateDatastoreOutput;
 
 mod _create_datastore_input;
 

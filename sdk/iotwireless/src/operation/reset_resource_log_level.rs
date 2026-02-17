@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_resource_log
     }
 }
 
-pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_output::ResetResourceLogLevelOutput;
-
 pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_input::ResetResourceLogLevelInput;
+
+pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_output::ResetResourceLogLevelOutput;
 
 mod _reset_resource_log_level_input;
 

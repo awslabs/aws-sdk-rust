@@ -1031,9 +1031,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_distributio
     }
 }
 
-pub use crate::operation::create_distribution::_create_distribution_output::CreateDistributionOutput;
-
 pub use crate::operation::create_distribution::_create_distribution_input::CreateDistributionInput;
+
+pub use crate::operation::create_distribution::_create_distribution_output::CreateDistributionOutput;
 
 mod _create_distribution_input;
 

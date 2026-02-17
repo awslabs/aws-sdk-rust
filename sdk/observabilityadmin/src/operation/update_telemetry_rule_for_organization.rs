@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_telemetry_r
     }
 }
 
-pub use crate::operation::update_telemetry_rule_for_organization::_update_telemetry_rule_for_organization_output::UpdateTelemetryRuleForOrganizationOutput;
-
 pub use crate::operation::update_telemetry_rule_for_organization::_update_telemetry_rule_for_organization_input::UpdateTelemetryRuleForOrganizationInput;
+
+pub use crate::operation::update_telemetry_rule_for_organization::_update_telemetry_rule_for_organization_output::UpdateTelemetryRuleForOrganizationOutput;
 
 mod _update_telemetry_rule_for_organization_input;
 

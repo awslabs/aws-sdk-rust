@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_identity_pr
     }
 }
 
-pub use crate::operation::delete_identity_propagation_config::_delete_identity_propagation_config_output::DeleteIdentityPropagationConfigOutput;
-
 pub use crate::operation::delete_identity_propagation_config::_delete_identity_propagation_config_input::DeleteIdentityPropagationConfigInput;
+
+pub use crate::operation::delete_identity_propagation_config::_delete_identity_propagation_config_output::DeleteIdentityPropagationConfigOutput;
 
 mod _delete_identity_propagation_config_input;
 

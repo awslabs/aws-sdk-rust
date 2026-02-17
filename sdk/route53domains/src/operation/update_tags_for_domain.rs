@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_tags_for_do
     }
 }
 
-pub use crate::operation::update_tags_for_domain::_update_tags_for_domain_output::UpdateTagsForDomainOutput;
-
 pub use crate::operation::update_tags_for_domain::_update_tags_for_domain_input::UpdateTagsForDomainInput;
+
+pub use crate::operation::update_tags_for_domain::_update_tags_for_domain_output::UpdateTagsForDomainOutput;
 
 mod _update_tags_for_domain_input;
 

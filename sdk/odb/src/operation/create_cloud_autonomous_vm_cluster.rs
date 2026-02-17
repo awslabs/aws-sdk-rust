@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_auton
     }
 }
 
-pub use crate::operation::create_cloud_autonomous_vm_cluster::_create_cloud_autonomous_vm_cluster_output::CreateCloudAutonomousVmClusterOutput;
-
 pub use crate::operation::create_cloud_autonomous_vm_cluster::_create_cloud_autonomous_vm_cluster_input::CreateCloudAutonomousVmClusterInput;
+
+pub use crate::operation::create_cloud_autonomous_vm_cluster::_create_cloud_autonomous_vm_cluster_output::CreateCloudAutonomousVmClusterOutput;
 
 mod _create_cloud_autonomous_vm_cluster_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_managed_pol
     }
 }
 
-pub use crate::operation::detach_managed_policy_from_permission_set::_detach_managed_policy_from_permission_set_output::DetachManagedPolicyFromPermissionSetOutput;
-
 pub use crate::operation::detach_managed_policy_from_permission_set::_detach_managed_policy_from_permission_set_input::DetachManagedPolicyFromPermissionSetInput;
+
+pub use crate::operation::detach_managed_policy_from_permission_set::_detach_managed_policy_from_permission_set_output::DetachManagedPolicyFromPermissionSetOutput;
 
 mod _detach_managed_policy_from_permission_set_input;
 

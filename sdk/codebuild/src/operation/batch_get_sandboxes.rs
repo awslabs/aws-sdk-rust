@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_sandboxe
     }
 }
 
-pub use crate::operation::batch_get_sandboxes::_batch_get_sandboxes_output::BatchGetSandboxesOutput;
-
 pub use crate::operation::batch_get_sandboxes::_batch_get_sandboxes_input::BatchGetSandboxesInput;
+
+pub use crate::operation::batch_get_sandboxes::_batch_get_sandboxes_output::BatchGetSandboxesOutput;
 
 mod _batch_get_sandboxes_input;
 

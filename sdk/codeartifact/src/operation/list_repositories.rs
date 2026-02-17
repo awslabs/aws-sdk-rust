@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_repositories:
     }
 }
 
-pub use crate::operation::list_repositories::_list_repositories_output::ListRepositoriesOutput;
-
 pub use crate::operation::list_repositories::_list_repositories_input::ListRepositoriesInput;
+
+pub use crate::operation::list_repositories::_list_repositories_output::ListRepositoriesOutput;
 
 mod _list_repositories_input;
 

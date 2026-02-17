@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_service_d
     }
 }
 
-pub use crate::operation::describe_service_deployments::_describe_service_deployments_output::DescribeServiceDeploymentsOutput;
-
 pub use crate::operation::describe_service_deployments::_describe_service_deployments_input::DescribeServiceDeploymentsInput;
+
+pub use crate::operation::describe_service_deployments::_describe_service_deployments_output::DescribeServiceDeploymentsOutput;
 
 mod _describe_service_deployments_input;
 

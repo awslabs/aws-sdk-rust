@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retry_pipeline_exe
     }
 }
 
-pub use crate::operation::retry_pipeline_execution::_retry_pipeline_execution_output::RetryPipelineExecutionOutput;
-
 pub use crate::operation::retry_pipeline_execution::_retry_pipeline_execution_input::RetryPipelineExecutionInput;
+
+pub use crate::operation::retry_pipeline_execution::_retry_pipeline_execution_output::RetryPipelineExecutionOutput;
 
 mod _retry_pipeline_execution_input;
 

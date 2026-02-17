@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_outpost::De
     }
 }
 
-pub use crate::operation::delete_outpost::_delete_outpost_output::DeleteOutpostOutput;
-
 pub use crate::operation::delete_outpost::_delete_outpost_input::DeleteOutpostInput;
+
+pub use crate::operation::delete_outpost::_delete_outpost_output::DeleteOutpostOutput;
 
 mod _delete_outpost_input;
 

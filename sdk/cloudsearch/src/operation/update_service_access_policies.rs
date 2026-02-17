@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_acc
     }
 }
 
-pub use crate::operation::update_service_access_policies::_update_service_access_policies_output::UpdateServiceAccessPoliciesOutput;
-
 pub use crate::operation::update_service_access_policies::_update_service_access_policies_input::UpdateServiceAccessPoliciesInput;
+
+pub use crate::operation::update_service_access_policies::_update_service_access_policies_output::UpdateServiceAccessPoliciesOutput;
 
 mod _update_service_access_policies_input;
 

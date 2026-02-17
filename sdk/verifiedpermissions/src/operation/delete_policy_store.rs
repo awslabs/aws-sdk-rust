@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_policy_stor
     }
 }
 
-pub use crate::operation::delete_policy_store::_delete_policy_store_output::DeletePolicyStoreOutput;
-
 pub use crate::operation::delete_policy_store::_delete_policy_store_input::DeletePolicyStoreInput;
+
+pub use crate::operation::delete_policy_store::_delete_policy_store_output::DeletePolicyStoreOutput;
 
 mod _delete_policy_store_input;
 

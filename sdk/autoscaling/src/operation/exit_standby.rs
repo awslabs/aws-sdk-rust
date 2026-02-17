@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::exit_standby::Exit
     }
 }
 
-pub use crate::operation::exit_standby::_exit_standby_output::ExitStandbyOutput;
-
 pub use crate::operation::exit_standby::_exit_standby_input::ExitStandbyInput;
+
+pub use crate::operation::exit_standby::_exit_standby_output::ExitStandbyOutput;
 
 mod _exit_standby_input;
 

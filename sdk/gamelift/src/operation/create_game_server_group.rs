@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_game_server
     }
 }
 
-pub use crate::operation::create_game_server_group::_create_game_server_group_output::CreateGameServerGroupOutput;
-
 pub use crate::operation::create_game_server_group::_create_game_server_group_input::CreateGameServerGroupInput;
+
+pub use crate::operation::create_game_server_group::_create_game_server_group_output::CreateGameServerGroupOutput;
 
 mod _create_game_server_group_input;
 

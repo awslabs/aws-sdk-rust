@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recording_con
     }
 }
 
-pub use crate::operation::list_recording_configurations::_list_recording_configurations_output::ListRecordingConfigurationsOutput;
-
 pub use crate::operation::list_recording_configurations::_list_recording_configurations_input::ListRecordingConfigurationsInput;
+
+pub use crate::operation::list_recording_configurations::_list_recording_configurations_output::ListRecordingConfigurationsOutput;
 
 mod _list_recording_configurations_input;
 

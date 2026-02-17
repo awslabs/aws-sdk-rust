@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_email::SendEm
     }
 }
 
-pub use crate::operation::send_email::_send_email_output::SendEmailOutput;
-
 pub use crate::operation::send_email::_send_email_input::SendEmailInput;
+
+pub use crate::operation::send_email::_send_email_output::SendEmailOutput;
 
 mod _send_email_input;
 

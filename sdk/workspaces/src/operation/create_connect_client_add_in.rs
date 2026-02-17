@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connect_cli
     }
 }
 
-pub use crate::operation::create_connect_client_add_in::_create_connect_client_add_in_output::CreateConnectClientAddInOutput;
-
 pub use crate::operation::create_connect_client_add_in::_create_connect_client_add_in_input::CreateConnectClientAddInInput;
+
+pub use crate::operation::create_connect_client_add_in::_create_connect_client_add_in_output::CreateConnectClientAddInOutput;
 
 mod _create_connect_client_add_in_input;
 

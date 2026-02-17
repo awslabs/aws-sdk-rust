@@ -340,9 +340,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hubs::ListHub
     }
 }
 
-pub use crate::operation::list_hubs::_list_hubs_output::ListHubsOutput;
-
 pub use crate::operation::list_hubs::_list_hubs_input::ListHubsInput;
+
+pub use crate::operation::list_hubs::_list_hubs_output::ListHubsOutput;
 
 mod _list_hubs_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_agreement::
     }
 }
 
-pub use crate::operation::update_agreement::_update_agreement_output::UpdateAgreementOutput;
-
 pub use crate::operation::update_agreement::_update_agreement_input::UpdateAgreementInput;
+
+pub use crate::operation::update_agreement::_update_agreement_output::UpdateAgreementOutput;
 
 mod _update_agreement_input;
 

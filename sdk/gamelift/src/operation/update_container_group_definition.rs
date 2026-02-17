@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_container_g
     }
 }
 
-pub use crate::operation::update_container_group_definition::_update_container_group_definition_output::UpdateContainerGroupDefinitionOutput;
-
 pub use crate::operation::update_container_group_definition::_update_container_group_definition_input::UpdateContainerGroupDefinitionInput;
+
+pub use crate::operation::update_container_group_definition::_update_container_group_definition_output::UpdateContainerGroupDefinitionOutput;
 
 mod _update_container_group_definition_input;
 

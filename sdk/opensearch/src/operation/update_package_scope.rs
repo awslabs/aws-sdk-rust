@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_package_sco
     }
 }
 
-pub use crate::operation::update_package_scope::_update_package_scope_output::UpdatePackageScopeOutput;
-
 pub use crate::operation::update_package_scope::_update_package_scope_input::UpdatePackageScopeInput;
+
+pub use crate::operation::update_package_scope::_update_package_scope_output::UpdatePackageScopeOutput;
 
 mod _update_package_scope_input;
 

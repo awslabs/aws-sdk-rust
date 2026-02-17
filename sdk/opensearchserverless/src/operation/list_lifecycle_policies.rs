@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lifecycle_pol
     }
 }
 
-pub use crate::operation::list_lifecycle_policies::_list_lifecycle_policies_output::ListLifecyclePoliciesOutput;
-
 pub use crate::operation::list_lifecycle_policies::_list_lifecycle_policies_input::ListLifecyclePoliciesInput;
+
+pub use crate::operation::list_lifecycle_policies::_list_lifecycle_policies_output::ListLifecyclePoliciesOutput;
 
 mod _list_lifecycle_policies_input;
 

@@ -551,9 +551,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_snapshot_block
     }
 }
 
-pub use crate::operation::put_snapshot_block::_put_snapshot_block_output::PutSnapshotBlockOutput;
-
 pub use crate::operation::put_snapshot_block::_put_snapshot_block_input::PutSnapshotBlockInput;
+
+pub use crate::operation::put_snapshot_block::_put_snapshot_block_output::PutSnapshotBlockOutput;
 
 mod _put_snapshot_block_input;
 

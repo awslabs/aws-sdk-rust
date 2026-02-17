@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_input_dev
     }
 }
 
-pub use crate::operation::describe_input_device_thumbnail::_describe_input_device_thumbnail_output::DescribeInputDeviceThumbnailOutput;
-
 pub use crate::operation::describe_input_device_thumbnail::_describe_input_device_thumbnail_input::DescribeInputDeviceThumbnailInput;
+
+pub use crate::operation::describe_input_device_thumbnail::_describe_input_device_thumbnail_output::DescribeInputDeviceThumbnailOutput;
 
 mod _describe_input_device_thumbnail_input;
 

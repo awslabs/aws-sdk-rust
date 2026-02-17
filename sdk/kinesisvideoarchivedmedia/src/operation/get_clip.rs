@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_clip::GetClipE
     }
 }
 
-pub use crate::operation::get_clip::_get_clip_output::GetClipOutput;
-
 pub use crate::operation::get_clip::_get_clip_input::GetClipInput;
+
+pub use crate::operation::get_clip::_get_clip_output::GetClipOutput;
 
 mod _get_clip_input;
 

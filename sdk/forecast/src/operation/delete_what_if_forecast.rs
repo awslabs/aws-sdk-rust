@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_what_if_for
     }
 }
 
-pub use crate::operation::delete_what_if_forecast::_delete_what_if_forecast_output::DeleteWhatIfForecastOutput;
-
 pub use crate::operation::delete_what_if_forecast::_delete_what_if_forecast_input::DeleteWhatIfForecastInput;
+
+pub use crate::operation::delete_what_if_forecast::_delete_what_if_forecast_output::DeleteWhatIfForecastOutput;
 
 mod _delete_what_if_forecast_input;
 

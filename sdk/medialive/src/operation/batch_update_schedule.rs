@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_sched
     }
 }
 
-pub use crate::operation::batch_update_schedule::_batch_update_schedule_output::BatchUpdateScheduleOutput;
-
 pub use crate::operation::batch_update_schedule::_batch_update_schedule_input::BatchUpdateScheduleInput;
+
+pub use crate::operation::batch_update_schedule::_batch_update_schedule_output::BatchUpdateScheduleOutput;
 
 mod _batch_update_schedule_input;
 

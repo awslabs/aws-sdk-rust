@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cost_cate
     }
 }
 
-pub use crate::operation::describe_cost_category_definition::_describe_cost_category_definition_output::DescribeCostCategoryDefinitionOutput;
-
 pub use crate::operation::describe_cost_category_definition::_describe_cost_category_definition_input::DescribeCostCategoryDefinitionInput;
+
+pub use crate::operation::describe_cost_category_definition::_describe_cost_category_definition_output::DescribeCostCategoryDefinitionOutput;
 
 mod _describe_cost_category_definition_input;
 

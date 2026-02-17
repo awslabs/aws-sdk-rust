@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_column_stat
     }
 }
 
-pub use crate::operation::update_column_statistics_task_settings::_update_column_statistics_task_settings_output::UpdateColumnStatisticsTaskSettingsOutput;
-
 pub use crate::operation::update_column_statistics_task_settings::_update_column_statistics_task_settings_input::UpdateColumnStatisticsTaskSettingsInput;
+
+pub use crate::operation::update_column_statistics_task_settings::_update_column_statistics_task_settings_output::UpdateColumnStatisticsTaskSettingsOutput;
 
 mod _update_column_statistics_task_settings_input;
 

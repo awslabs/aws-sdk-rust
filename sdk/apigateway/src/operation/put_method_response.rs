@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_method_respons
     }
 }
 
-pub use crate::operation::put_method_response::_put_method_response_output::PutMethodResponseOutput;
-
 pub use crate::operation::put_method_response::_put_method_response_input::PutMethodResponseInput;
+
+pub use crate::operation::put_method_response::_put_method_response_output::PutMethodResponseOutput;
 
 mod _put_method_response_input;
 

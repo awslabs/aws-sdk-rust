@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dataset_label
     }
 }
 
-pub use crate::operation::list_dataset_labels::_list_dataset_labels_output::ListDatasetLabelsOutput;
-
 pub use crate::operation::list_dataset_labels::_list_dataset_labels_input::ListDatasetLabelsInput;
+
+pub use crate::operation::list_dataset_labels::_list_dataset_labels_output::ListDatasetLabelsOutput;
 
 mod _list_dataset_labels_input;
 

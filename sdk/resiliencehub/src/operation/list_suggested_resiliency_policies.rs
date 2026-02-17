@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_suggested_res
     }
 }
 
-pub use crate::operation::list_suggested_resiliency_policies::_list_suggested_resiliency_policies_output::ListSuggestedResiliencyPoliciesOutput;
-
 pub use crate::operation::list_suggested_resiliency_policies::_list_suggested_resiliency_policies_input::ListSuggestedResiliencyPoliciesInput;
+
+pub use crate::operation::list_suggested_resiliency_policies::_list_suggested_resiliency_policies_output::ListSuggestedResiliencyPoliciesOutput;
 
 mod _list_suggested_resiliency_policies_input;
 

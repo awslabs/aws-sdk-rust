@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_recipe_job:
     }
 }
 
-pub use crate::operation::create_recipe_job::_create_recipe_job_output::CreateRecipeJobOutput;
-
 pub use crate::operation::create_recipe_job::_create_recipe_job_input::CreateRecipeJobInput;
+
+pub use crate::operation::create_recipe_job::_create_recipe_job_output::CreateRecipeJobOutput;
 
 mod _create_recipe_job_input;
 

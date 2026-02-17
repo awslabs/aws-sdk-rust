@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_restore_job:
     }
 }
 
-pub use crate::operation::start_restore_job::_start_restore_job_output::StartRestoreJobOutput;
-
 pub use crate::operation::start_restore_job::_start_restore_job_input::StartRestoreJobInput;
+
+pub use crate::operation::start_restore_job::_start_restore_job_output::StartRestoreJobOutput;
 
 mod _start_restore_job_input;
 

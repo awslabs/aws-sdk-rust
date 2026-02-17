@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_odb_network::G
     }
 }
 
-pub use crate::operation::get_odb_network::_get_odb_network_output::GetOdbNetworkOutput;
-
 pub use crate::operation::get_odb_network::_get_odb_network_input::GetOdbNetworkInput;
+
+pub use crate::operation::get_odb_network::_get_odb_network_output::GetOdbNetworkOutput;
 
 mod _get_odb_network_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provision_ipam_poo
     }
 }
 
-pub use crate::operation::provision_ipam_pool_cidr::_provision_ipam_pool_cidr_output::ProvisionIpamPoolCidrOutput;
-
 pub use crate::operation::provision_ipam_pool_cidr::_provision_ipam_pool_cidr_input::ProvisionIpamPoolCidrInput;
+
+pub use crate::operation::provision_ipam_pool_cidr::_provision_ipam_pool_cidr_output::ProvisionIpamPoolCidrOutput;
 
 mod _provision_ipam_pool_cidr_input;
 

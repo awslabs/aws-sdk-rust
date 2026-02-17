@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_write::Batch
     }
 }
 
-pub use crate::operation::batch_write::_batch_write_output::BatchWriteOutput;
-
 pub use crate::operation::batch_write::_batch_write_input::BatchWriteInput;
+
+pub use crate::operation::batch_write::_batch_write_output::BatchWriteOutput;
 
 mod _batch_write_input;
 

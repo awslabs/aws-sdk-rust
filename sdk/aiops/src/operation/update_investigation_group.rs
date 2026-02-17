@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_investigati
     }
 }
 
-pub use crate::operation::update_investigation_group::_update_investigation_group_output::UpdateInvestigationGroupOutput;
-
 pub use crate::operation::update_investigation_group::_update_investigation_group_input::UpdateInvestigationGroupInput;
+
+pub use crate::operation::update_investigation_group::_update_investigation_group_output::UpdateInvestigationGroupOutput;
 
 mod _update_investigation_group_input;
 

@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_authentication
     }
 }
 
-pub use crate::operation::get_authentication_url::_get_authentication_url_output::GetAuthenticationUrlOutput;
-
 pub use crate::operation::get_authentication_url::_get_authentication_url_input::GetAuthenticationUrlInput;
+
+pub use crate::operation::get_authentication_url::_get_authentication_url_output::GetAuthenticationUrlOutput;
 
 mod _get_authentication_url_input;
 

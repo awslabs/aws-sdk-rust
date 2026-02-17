@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backup_vaul
     }
 }
 
-pub use crate::operation::delete_backup_vault_access_policy::_delete_backup_vault_access_policy_output::DeleteBackupVaultAccessPolicyOutput;
-
 pub use crate::operation::delete_backup_vault_access_policy::_delete_backup_vault_access_policy_input::DeleteBackupVaultAccessPolicyInput;
+
+pub use crate::operation::delete_backup_vault_access_policy::_delete_backup_vault_access_policy_output::DeleteBackupVaultAccessPolicyOutput;
 
 mod _delete_backup_vault_access_policy_input;
 

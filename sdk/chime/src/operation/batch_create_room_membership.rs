@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_room_
     }
 }
 
-pub use crate::operation::batch_create_room_membership::_batch_create_room_membership_output::BatchCreateRoomMembershipOutput;
-
 pub use crate::operation::batch_create_room_membership::_batch_create_room_membership_input::BatchCreateRoomMembershipInput;
+
+pub use crate::operation::batch_create_room_membership::_batch_create_room_membership_output::BatchCreateRoomMembershipOutput;
 
 mod _batch_create_room_membership_input;
 

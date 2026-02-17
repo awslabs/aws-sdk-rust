@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_servers::List
     }
 }
 
-pub use crate::operation::list_servers::_list_servers_output::ListServersOutput;
-
 pub use crate::operation::list_servers::_list_servers_input::ListServersInput;
+
+pub use crate::operation::list_servers::_list_servers_output::ListServersOutput;
 
 mod _list_servers_input;
 

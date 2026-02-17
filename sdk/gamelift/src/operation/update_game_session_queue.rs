@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_game_sessio
     }
 }
 
-pub use crate::operation::update_game_session_queue::_update_game_session_queue_output::UpdateGameSessionQueueOutput;
-
 pub use crate::operation::update_game_session_queue::_update_game_session_queue_input::UpdateGameSessionQueueInput;
+
+pub use crate::operation::update_game_session_queue::_update_game_session_queue_output::UpdateGameSessionQueueOutput;
 
 mod _update_game_session_queue_input;
 

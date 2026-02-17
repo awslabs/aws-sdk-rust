@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_major_
     }
 }
 
-pub use crate::operation::describe_db_major_engine_versions::_describe_db_major_engine_versions_output::DescribeDbMajorEngineVersionsOutput;
-
 pub use crate::operation::describe_db_major_engine_versions::_describe_db_major_engine_versions_input::DescribeDbMajorEngineVersionsInput;
+
+pub use crate::operation::describe_db_major_engine_versions::_describe_db_major_engine_versions_output::DescribeDbMajorEngineVersionsOutput;
 
 mod _describe_db_major_engine_versions_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_findi
     }
 }
 
-pub use crate::operation::batch_update_findings_v2::_batch_update_findings_v2_output::BatchUpdateFindingsV2Output;
-
 pub use crate::operation::batch_update_findings_v2::_batch_update_findings_v2_input::BatchUpdateFindingsV2Input;
+
+pub use crate::operation::batch_update_findings_v2::_batch_update_findings_v2_output::BatchUpdateFindingsV2Output;
 
 mod _batch_update_findings_v2_input;
 

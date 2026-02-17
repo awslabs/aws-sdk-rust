@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_group::Dele
     }
 }
 
-pub use crate::operation::delete_group::_delete_group_output::DeleteGroupOutput;
-
 pub use crate::operation::delete_group::_delete_group_input::DeleteGroupInput;
+
+pub use crate::operation::delete_group::_delete_group_output::DeleteGroupOutput;
 
 mod _delete_group_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_shard_gr
     }
 }
 
-pub use crate::operation::modify_db_shard_group::_modify_db_shard_group_output::ModifyDbShardGroupOutput;
-
 pub use crate::operation::modify_db_shard_group::_modify_db_shard_group_input::ModifyDbShardGroupInput;
+
+pub use crate::operation::modify_db_shard_group::_modify_db_shard_group_output::ModifyDbShardGroupOutput;
 
 mod _modify_db_shard_group_input;
 

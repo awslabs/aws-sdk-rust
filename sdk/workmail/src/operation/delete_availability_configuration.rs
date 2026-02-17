@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_availabilit
     }
 }
 
-pub use crate::operation::delete_availability_configuration::_delete_availability_configuration_output::DeleteAvailabilityConfigurationOutput;
-
 pub use crate::operation::delete_availability_configuration::_delete_availability_configuration_input::DeleteAvailabilityConfigurationInput;
+
+pub use crate::operation::delete_availability_configuration::_delete_availability_configuration_output::DeleteAvailabilityConfigurationOutput;
 
 mod _delete_availability_configuration_input;
 

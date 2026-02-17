@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configuration_
     }
 }
 
-pub use crate::operation::get_configuration_manager::_get_configuration_manager_output::GetConfigurationManagerOutput;
-
 pub use crate::operation::get_configuration_manager::_get_configuration_manager_input::GetConfigurationManagerInput;
+
+pub use crate::operation::get_configuration_manager::_get_configuration_manager_output::GetConfigurationManagerOutput;
 
 mod _get_configuration_manager_input;
 

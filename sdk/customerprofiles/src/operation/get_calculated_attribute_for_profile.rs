@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_calculated_att
     }
 }
 
-pub use crate::operation::get_calculated_attribute_for_profile::_get_calculated_attribute_for_profile_output::GetCalculatedAttributeForProfileOutput;
-
 pub use crate::operation::get_calculated_attribute_for_profile::_get_calculated_attribute_for_profile_input::GetCalculatedAttributeForProfileInput;
+
+pub use crate::operation::get_calculated_attribute_for_profile::_get_calculated_attribute_for_profile_output::GetCalculatedAttributeForProfileOutput;
 
 mod _get_calculated_attribute_for_profile_input;
 

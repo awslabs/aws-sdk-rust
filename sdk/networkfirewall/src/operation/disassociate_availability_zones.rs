@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_avail
     }
 }
 
-pub use crate::operation::disassociate_availability_zones::_disassociate_availability_zones_output::DisassociateAvailabilityZonesOutput;
-
 pub use crate::operation::disassociate_availability_zones::_disassociate_availability_zones_input::DisassociateAvailabilityZonesInput;
+
+pub use crate::operation::disassociate_availability_zones::_disassociate_availability_zones_output::DisassociateAvailabilityZonesOutput;
 
 mod _disassociate_availability_zones_input;
 

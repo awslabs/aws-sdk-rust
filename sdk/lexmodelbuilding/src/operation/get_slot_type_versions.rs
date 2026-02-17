@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_slot_type_vers
     }
 }
 
-pub use crate::operation::get_slot_type_versions::_get_slot_type_versions_output::GetSlotTypeVersionsOutput;
-
 pub use crate::operation::get_slot_type_versions::_get_slot_type_versions_input::GetSlotTypeVersionsInput;
+
+pub use crate::operation::get_slot_type_versions::_get_slot_type_versions_output::GetSlotTypeVersionsOutput;
 
 mod _get_slot_type_versions_input;
 

@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tax_inheritanc
     }
 }
 
-pub use crate::operation::get_tax_inheritance::_get_tax_inheritance_output::GetTaxInheritanceOutput;
-
 pub use crate::operation::get_tax_inheritance::_get_tax_inheritance_input::GetTaxInheritanceInput;
+
+pub use crate::operation::get_tax_inheritance::_get_tax_inheritance_output::GetTaxInheritanceOutput;
 
 mod _get_tax_inheritance_input;
 

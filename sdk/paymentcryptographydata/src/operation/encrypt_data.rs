@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::encrypt_data::Encr
     }
 }
 
-pub use crate::operation::encrypt_data::_encrypt_data_output::EncryptDataOutput;
-
 pub use crate::operation::encrypt_data::_encrypt_data_input::EncryptDataInput;
+
+pub use crate::operation::encrypt_data::_encrypt_data_output::EncryptDataOutput;
 
 mod _encrypt_data_input;
 

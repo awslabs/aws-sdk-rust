@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_chap_cred
     }
 }
 
-pub use crate::operation::describe_chap_credentials::_describe_chap_credentials_output::DescribeChapCredentialsOutput;
-
 pub use crate::operation::describe_chap_credentials::_describe_chap_credentials_input::DescribeChapCredentialsInput;
+
+pub use crate::operation::describe_chap_credentials::_describe_chap_credentials_output::DescribeChapCredentialsOutput;
 
 mod _describe_chap_credentials_input;
 

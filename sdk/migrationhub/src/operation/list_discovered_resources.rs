@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_discovered_re
     }
 }
 
-pub use crate::operation::list_discovered_resources::_list_discovered_resources_output::ListDiscoveredResourcesOutput;
-
 pub use crate::operation::list_discovered_resources::_list_discovered_resources_input::ListDiscoveredResourcesInput;
+
+pub use crate::operation::list_discovered_resources::_list_discovered_resources_output::ListDiscoveredResourcesOutput;
 
 mod _list_discovered_resources_input;
 

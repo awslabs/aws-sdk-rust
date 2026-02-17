@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_saml_provid
     }
 }
 
-pub use crate::operation::delete_saml_provider::_delete_saml_provider_output::DeleteSamlProviderOutput;
-
 pub use crate::operation::delete_saml_provider::_delete_saml_provider_input::DeleteSamlProviderInput;
+
+pub use crate::operation::delete_saml_provider::_delete_saml_provider_output::DeleteSamlProviderOutput;
 
 mod _delete_saml_provider_input;
 

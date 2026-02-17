@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_profi
     }
 }
 
-pub use crate::operation::delete_voice_profile::_delete_voice_profile_output::DeleteVoiceProfileOutput;
-
 pub use crate::operation::delete_voice_profile::_delete_voice_profile_input::DeleteVoiceProfileInput;
+
+pub use crate::operation::delete_voice_profile::_delete_voice_profile_output::DeleteVoiceProfileOutput;
 
 mod _delete_voice_profile_input;
 

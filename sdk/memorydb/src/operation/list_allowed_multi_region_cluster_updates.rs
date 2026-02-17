@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_allowed_multi
     }
 }
 
-pub use crate::operation::list_allowed_multi_region_cluster_updates::_list_allowed_multi_region_cluster_updates_output::ListAllowedMultiRegionClusterUpdatesOutput;
-
 pub use crate::operation::list_allowed_multi_region_cluster_updates::_list_allowed_multi_region_cluster_updates_input::ListAllowedMultiRegionClusterUpdatesInput;
+
+pub use crate::operation::list_allowed_multi_region_cluster_updates::_list_allowed_multi_region_cluster_updates_output::ListAllowedMultiRegionClusterUpdatesOutput;
 
 mod _list_allowed_multi_region_cluster_updates_input;
 

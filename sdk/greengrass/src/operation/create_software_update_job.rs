@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_software_up
     }
 }
 
-pub use crate::operation::create_software_update_job::_create_software_update_job_output::CreateSoftwareUpdateJobOutput;
-
 pub use crate::operation::create_software_update_job::_create_software_update_job_input::CreateSoftwareUpdateJobInput;
+
+pub use crate::operation::create_software_update_job::_create_software_update_job_output::CreateSoftwareUpdateJobOutput;
 
 mod _create_software_update_job_input;
 

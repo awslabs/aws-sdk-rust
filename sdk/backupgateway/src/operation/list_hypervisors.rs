@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hypervisors::
     }
 }
 
-pub use crate::operation::list_hypervisors::_list_hypervisors_output::ListHypervisorsOutput;
-
 pub use crate::operation::list_hypervisors::_list_hypervisors_input::ListHypervisorsInput;
+
+pub use crate::operation::list_hypervisors::_list_hypervisors_output::ListHypervisorsOutput;
 
 mod _list_hypervisors_input;
 

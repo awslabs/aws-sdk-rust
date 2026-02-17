@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_saml_provid
     }
 }
 
-pub use crate::operation::update_saml_provider::_update_saml_provider_output::UpdateSamlProviderOutput;
-
 pub use crate::operation::update_saml_provider::_update_saml_provider_input::UpdateSamlProviderInput;
+
+pub use crate::operation::update_saml_provider::_update_saml_provider_output::UpdateSamlProviderOutput;
 
 mod _update_saml_provider_input;
 

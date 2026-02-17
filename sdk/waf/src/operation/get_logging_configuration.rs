@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_logging_config
     }
 }
 
-pub use crate::operation::get_logging_configuration::_get_logging_configuration_output::GetLoggingConfigurationOutput;
-
 pub use crate::operation::get_logging_configuration::_get_logging_configuration_input::GetLoggingConfigurationInput;
+
+pub use crate::operation::get_logging_configuration::_get_logging_configuration_output::GetLoggingConfigurationOutput;
 
 mod _get_logging_configuration_input;
 

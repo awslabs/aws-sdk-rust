@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_project_ver
     }
 }
 
-pub use crate::operation::delete_project_version::_delete_project_version_output::DeleteProjectVersionOutput;
-
 pub use crate::operation::delete_project_version::_delete_project_version_input::DeleteProjectVersionInput;
+
+pub use crate::operation::delete_project_version::_delete_project_version_output::DeleteProjectVersionOutput;
 
 mod _delete_project_version_input;
 

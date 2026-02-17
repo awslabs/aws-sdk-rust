@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_participant_
     }
 }
 
-pub use crate::operation::start_participant_replication::_start_participant_replication_output::StartParticipantReplicationOutput;
-
 pub use crate::operation::start_participant_replication::_start_participant_replication_input::StartParticipantReplicationInput;
+
+pub use crate::operation::start_participant_replication::_start_participant_replication_output::StartParticipantReplicationOutput;
 
 mod _start_participant_replication_input;
 

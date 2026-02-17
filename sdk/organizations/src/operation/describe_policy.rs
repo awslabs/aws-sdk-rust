@@ -496,9 +496,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_policy::D
     }
 }
 
-pub use crate::operation::describe_policy::_describe_policy_output::DescribePolicyOutput;
-
 pub use crate::operation::describe_policy::_describe_policy_input::DescribePolicyInput;
+
+pub use crate::operation::describe_policy::_describe_policy_output::DescribePolicyOutput;
 
 mod _describe_policy_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_custom_data_id
     }
 }
 
-pub use crate::operation::get_custom_data_identifier::_get_custom_data_identifier_output::GetCustomDataIdentifierOutput;
-
 pub use crate::operation::get_custom_data_identifier::_get_custom_data_identifier_input::GetCustomDataIdentifierInput;
+
+pub use crate::operation::get_custom_data_identifier::_get_custom_data_identifier_output::GetCustomDataIdentifierOutput;
 
 mod _get_custom_data_identifier_input;
 

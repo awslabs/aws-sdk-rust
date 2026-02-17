@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ops_metadata:
     }
 }
 
-pub use crate::operation::list_ops_metadata::_list_ops_metadata_output::ListOpsMetadataOutput;
-
 pub use crate::operation::list_ops_metadata::_list_ops_metadata_input::ListOpsMetadataInput;
+
+pub use crate::operation::list_ops_metadata::_list_ops_metadata_output::ListOpsMetadataOutput;
 
 mod _list_ops_metadata_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_media_conca
     }
 }
 
-pub use crate::operation::create_media_concatenation_pipeline::_create_media_concatenation_pipeline_output::CreateMediaConcatenationPipelineOutput;
-
 pub use crate::operation::create_media_concatenation_pipeline::_create_media_concatenation_pipeline_input::CreateMediaConcatenationPipelineInput;
+
+pub use crate::operation::create_media_concatenation_pipeline::_create_media_concatenation_pipeline_output::CreateMediaConcatenationPipelineOutput;
 
 mod _create_media_concatenation_pipeline_input;
 

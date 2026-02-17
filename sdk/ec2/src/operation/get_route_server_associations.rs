@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_route_server_a
     }
 }
 
-pub use crate::operation::get_route_server_associations::_get_route_server_associations_output::GetRouteServerAssociationsOutput;
-
 pub use crate::operation::get_route_server_associations::_get_route_server_associations_input::GetRouteServerAssociationsInput;
+
+pub use crate::operation::get_route_server_associations::_get_route_server_associations_output::GetRouteServerAssociationsOutput;
 
 mod _get_route_server_associations_input;
 

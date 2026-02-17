@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::count_pending_deci
     }
 }
 
-pub use crate::operation::count_pending_decision_tasks::_count_pending_decision_tasks_output::CountPendingDecisionTasksOutput;
-
 pub use crate::operation::count_pending_decision_tasks::_count_pending_decision_tasks_input::CountPendingDecisionTasksInput;
+
+pub use crate::operation::count_pending_decision_tasks::_count_pending_decision_tasks_output::CountPendingDecisionTasksOutput;
 
 mod _count_pending_decision_tasks_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_enhanced_mo
     }
 }
 
-pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitoring_output::EnableEnhancedMonitoringOutput;
-
 pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitoring_input::EnableEnhancedMonitoringInput;
+
+pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitoring_output::EnableEnhancedMonitoringOutput;
 
 mod _enable_enhanced_monitoring_input;
 

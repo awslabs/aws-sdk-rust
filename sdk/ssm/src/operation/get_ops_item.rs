@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ops_item::GetO
     }
 }
 
-pub use crate::operation::get_ops_item::_get_ops_item_output::GetOpsItemOutput;
-
 pub use crate::operation::get_ops_item::_get_ops_item_input::GetOpsItemInput;
+
+pub use crate::operation::get_ops_item::_get_ops_item_output::GetOpsItemOutput;
 
 mod _get_ops_item_input;
 

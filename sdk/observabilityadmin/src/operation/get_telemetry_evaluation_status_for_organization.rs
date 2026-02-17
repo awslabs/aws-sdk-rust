@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_telemetry_evaluation_status_for_organization::_get_telemetry_evaluation_status_for_organization_output::GetTelemetryEvaluationStatusForOrganizationOutput;
-
 pub use crate::operation::get_telemetry_evaluation_status_for_organization::_get_telemetry_evaluation_status_for_organization_input::GetTelemetryEvaluationStatusForOrganizationInput;
+
+pub use crate::operation::get_telemetry_evaluation_status_for_organization::_get_telemetry_evaluation_status_for_organization_output::GetTelemetryEvaluationStatusForOrganizationOutput;
 
 mod _get_telemetry_evaluation_status_for_organization_input;
 

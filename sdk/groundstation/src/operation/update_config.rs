@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_config::Upd
     }
 }
 
-pub use crate::operation::update_config::_update_config_output::UpdateConfigOutput;
-
 pub use crate::operation::update_config::_update_config_input::UpdateConfigInput;
+
+pub use crate::operation::update_config::_update_config_output::UpdateConfigOutput;
 
 mod _update_config_input;
 

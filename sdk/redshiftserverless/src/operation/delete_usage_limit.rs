@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_usage_limit
     }
 }
 
-pub use crate::operation::delete_usage_limit::_delete_usage_limit_output::DeleteUsageLimitOutput;
-
 pub use crate::operation::delete_usage_limit::_delete_usage_limit_input::DeleteUsageLimitInput;
+
+pub use crate::operation::delete_usage_limit::_delete_usage_limit_output::DeleteUsageLimitOutput;
 
 mod _delete_usage_limit_input;
 

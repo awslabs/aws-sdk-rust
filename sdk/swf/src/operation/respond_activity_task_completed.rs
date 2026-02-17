@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::respond_activity_t
     }
 }
 
-pub use crate::operation::respond_activity_task_completed::_respond_activity_task_completed_output::RespondActivityTaskCompletedOutput;
-
 pub use crate::operation::respond_activity_task_completed::_respond_activity_task_completed_input::RespondActivityTaskCompletedInput;
+
+pub use crate::operation::respond_activity_task_completed::_respond_activity_task_completed_output::RespondActivityTaskCompletedOutput;
 
 mod _respond_activity_task_completed_input;
 

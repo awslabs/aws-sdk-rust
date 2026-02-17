@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_channel_stat
     }
 }
 
-pub use crate::operation::reset_channel_state::_reset_channel_state_output::ResetChannelStateOutput;
-
 pub use crate::operation::reset_channel_state::_reset_channel_state_input::ResetChannelStateInput;
+
+pub use crate::operation::reset_channel_state::_reset_channel_state_output::ResetChannelStateOutput;
 
 mod _reset_channel_state_input;
 

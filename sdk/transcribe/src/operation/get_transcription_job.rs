@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transcription_
     }
 }
 
-pub use crate::operation::get_transcription_job::_get_transcription_job_output::GetTranscriptionJobOutput;
-
 pub use crate::operation::get_transcription_job::_get_transcription_job_input::GetTranscriptionJobInput;
+
+pub use crate::operation::get_transcription_job::_get_transcription_job_output::GetTranscriptionJobOutput;
 
 mod _get_transcription_job_input;
 

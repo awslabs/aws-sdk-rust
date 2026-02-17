@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rotate_key_on_dema
     }
 }
 
-pub use crate::operation::rotate_key_on_demand::_rotate_key_on_demand_output::RotateKeyOnDemandOutput;
-
 pub use crate::operation::rotate_key_on_demand::_rotate_key_on_demand_input::RotateKeyOnDemandInput;
+
+pub use crate::operation::rotate_key_on_demand::_rotate_key_on_demand_output::RotateKeyOnDemandOutput;
 
 mod _rotate_key_on_demand_input;
 

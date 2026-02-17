@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_instance::U
     }
 }
 
-pub use crate::operation::update_instance::_update_instance_output::UpdateInstanceOutput;
-
 pub use crate::operation::update_instance::_update_instance_input::UpdateInstanceInput;
+
+pub use crate::operation::update_instance::_update_instance_output::UpdateInstanceOutput;
 
 mod _update_instance_input;
 

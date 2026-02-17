@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_reserved_node_exchange_configuration_options::_get_reserved_node_exchange_configuration_options_output::GetReservedNodeExchangeConfigurationOptionsOutput;
-
 pub use crate::operation::get_reserved_node_exchange_configuration_options::_get_reserved_node_exchange_configuration_options_input::GetReservedNodeExchangeConfigurationOptionsInput;
+
+pub use crate::operation::get_reserved_node_exchange_configuration_options::_get_reserved_node_exchange_configuration_options_output::GetReservedNodeExchangeConfigurationOptionsOutput;
 
 mod _get_reserved_node_exchange_configuration_options_input;
 

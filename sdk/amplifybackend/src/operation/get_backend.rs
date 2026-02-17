@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backend::GetBa
     }
 }
 
-pub use crate::operation::get_backend::_get_backend_output::GetBackendOutput;
-
 pub use crate::operation::get_backend::_get_backend_input::GetBackendInput;
+
+pub use crate::operation::get_backend::_get_backend_output::GetBackendOutput;
 
 mod _get_backend_input;
 

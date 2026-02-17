@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_command_exe
     }
 }
 
-pub use crate::operation::delete_command_execution::_delete_command_execution_output::DeleteCommandExecutionOutput;
-
 pub use crate::operation::delete_command_execution::_delete_command_execution_input::DeleteCommandExecutionInput;
+
+pub use crate::operation::delete_command_execution::_delete_command_execution_output::DeleteCommandExecutionOutput;
 
 mod _delete_command_execution_input;
 

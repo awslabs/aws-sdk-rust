@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scheduled_q
     }
 }
 
-pub use crate::operation::update_scheduled_query::_update_scheduled_query_output::UpdateScheduledQueryOutput;
-
 pub use crate::operation::update_scheduled_query::_update_scheduled_query_input::UpdateScheduledQueryInput;
+
+pub use crate::operation::update_scheduled_query::_update_scheduled_query_output::UpdateScheduledQueryOutput;
 
 mod _update_scheduled_query_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_routing_p
     }
 }
 
-pub use crate::operation::describe_routing_profile::_describe_routing_profile_output::DescribeRoutingProfileOutput;
-
 pub use crate::operation::describe_routing_profile::_describe_routing_profile_input::DescribeRoutingProfileInput;
+
+pub use crate::operation::describe_routing_profile::_describe_routing_profile_output::DescribeRoutingProfileOutput;
 
 mod _describe_routing_profile_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_domain_aut
     }
 }
 
-pub use crate::operation::disable_domain_auto_renew::_disable_domain_auto_renew_output::DisableDomainAutoRenewOutput;
-
 pub use crate::operation::disable_domain_auto_renew::_disable_domain_auto_renew_input::DisableDomainAutoRenewInput;
+
+pub use crate::operation::disable_domain_auto_renew::_disable_domain_auto_renew_output::DisableDomainAutoRenewOutput;
 
 mod _disable_domain_auto_renew_input;
 

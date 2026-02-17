@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_memory::Del
     }
 }
 
-pub use crate::operation::delete_memory::_delete_memory_output::DeleteMemoryOutput;
-
 pub use crate::operation::delete_memory::_delete_memory_input::DeleteMemoryInput;
+
+pub use crate::operation::delete_memory::_delete_memory_output::DeleteMemoryOutput;
 
 mod _delete_memory_input;
 

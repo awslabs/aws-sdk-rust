@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_public_ip
     }
 }
 
-pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pools_output::DescribePublicIpv4PoolsOutput;
-
 pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pools_input::DescribePublicIpv4PoolsInput;
+
+pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pools_output::DescribePublicIpv4PoolsOutput;
 
 mod _describe_public_ipv4_pools_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_transit_
     }
 }
 
-pub use crate::operation::associate_transit_gateway_connect_peer::_associate_transit_gateway_connect_peer_output::AssociateTransitGatewayConnectPeerOutput;
-
 pub use crate::operation::associate_transit_gateway_connect_peer::_associate_transit_gateway_connect_peer_input::AssociateTransitGatewayConnectPeerInput;
+
+pub use crate::operation::associate_transit_gateway_connect_peer::_associate_transit_gateway_connect_peer_output::AssociateTransitGatewayConnectPeerOutput;
 
 mod _associate_transit_gateway_connect_peer_input;
 

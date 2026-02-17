@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_connect_c
     }
 }
 
-pub use crate::operation::describe_connect_client_add_ins::_describe_connect_client_add_ins_output::DescribeConnectClientAddInsOutput;
-
 pub use crate::operation::describe_connect_client_add_ins::_describe_connect_client_add_ins_input::DescribeConnectClientAddInsInput;
+
+pub use crate::operation::describe_connect_client_add_ins::_describe_connect_client_add_ins_output::DescribeConnectClientAddInsOutput;
 
 mod _describe_connect_client_add_ins_input;
 

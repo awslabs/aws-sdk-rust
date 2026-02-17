@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewalls::Li
     }
 }
 
-pub use crate::operation::list_firewalls::_list_firewalls_output::ListFirewallsOutput;
-
 pub use crate::operation::list_firewalls::_list_firewalls_input::ListFirewallsInput;
+
+pub use crate::operation::list_firewalls::_list_firewalls_output::ListFirewallsOutput;
 
 mod _list_firewalls_input;
 

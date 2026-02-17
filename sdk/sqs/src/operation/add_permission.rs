@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_permission::Ad
     }
 }
 
-pub use crate::operation::add_permission::_add_permission_output::AddPermissionOutput;
-
 pub use crate::operation::add_permission::_add_permission_input::AddPermissionInput;
+
+pub use crate::operation::add_permission::_add_permission_output::AddPermissionOutput;
 
 mod _add_permission_input;
 

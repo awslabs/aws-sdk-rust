@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_apns_voip_s
     }
 }
 
-pub use crate::operation::update_apns_voip_sandbox_channel::_update_apns_voip_sandbox_channel_output::UpdateApnsVoipSandboxChannelOutput;
-
 pub use crate::operation::update_apns_voip_sandbox_channel::_update_apns_voip_sandbox_channel_input::UpdateApnsVoipSandboxChannelInput;
+
+pub use crate::operation::update_apns_voip_sandbox_channel::_update_apns_voip_sandbox_channel_output::UpdateApnsVoipSandboxChannelOutput;
 
 mod _update_apns_voip_sandbox_channel_input;
 

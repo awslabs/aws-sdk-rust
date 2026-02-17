@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_internet_ga
     }
 }
 
-pub use crate::operation::create_internet_gateway::_create_internet_gateway_output::CreateInternetGatewayOutput;
-
 pub use crate::operation::create_internet_gateway::_create_internet_gateway_input::CreateInternetGatewayInput;
+
+pub use crate::operation::create_internet_gateway::_create_internet_gateway_output::CreateInternetGatewayOutput;
 
 mod _create_internet_gateway_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_user_to_group:
     }
 }
 
-pub use crate::operation::add_user_to_group::_add_user_to_group_output::AddUserToGroupOutput;
-
 pub use crate::operation::add_user_to_group::_add_user_to_group_input::AddUserToGroupInput;
+
+pub use crate::operation::add_user_to_group::_add_user_to_group_output::AddUserToGroupOutput;
 
 mod _add_user_to_group_input;
 

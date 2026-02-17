@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_endpoint_wi
     }
 }
 
-pub use crate::operation::invoke_endpoint_with_response_stream::_invoke_endpoint_with_response_stream_output::InvokeEndpointWithResponseStreamOutput;
-
 pub use crate::operation::invoke_endpoint_with_response_stream::_invoke_endpoint_with_response_stream_input::InvokeEndpointWithResponseStreamInput;
+
+pub use crate::operation::invoke_endpoint_with_response_stream::_invoke_endpoint_with_response_stream_output::InvokeEndpointWithResponseStreamOutput;
 
 mod _invoke_endpoint_with_response_stream_input;
 

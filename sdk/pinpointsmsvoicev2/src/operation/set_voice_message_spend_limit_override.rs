@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_voice_message_
     }
 }
 
-pub use crate::operation::set_voice_message_spend_limit_override::_set_voice_message_spend_limit_override_output::SetVoiceMessageSpendLimitOverrideOutput;
-
 pub use crate::operation::set_voice_message_spend_limit_override::_set_voice_message_spend_limit_override_input::SetVoiceMessageSpendLimitOverrideInput;
+
+pub use crate::operation::set_voice_message_spend_limit_override::_set_voice_message_spend_limit_override_output::SetVoiceMessageSpendLimitOverrideOutput;
 
 mod _set_voice_message_spend_limit_override_input;
 

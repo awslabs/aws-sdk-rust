@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_if_phone_num
     }
 }
 
-pub use crate::operation::check_if_phone_number_is_opted_out::_check_if_phone_number_is_opted_out_output::CheckIfPhoneNumberIsOptedOutOutput;
-
 pub use crate::operation::check_if_phone_number_is_opted_out::_check_if_phone_number_is_opted_out_input::CheckIfPhoneNumberIsOptedOutInput;
+
+pub use crate::operation::check_if_phone_number_is_opted_out::_check_if_phone_number_is_opted_out_output::CheckIfPhoneNumberIsOptedOutOutput;
 
 mod _check_if_phone_number_is_opted_out_input;
 

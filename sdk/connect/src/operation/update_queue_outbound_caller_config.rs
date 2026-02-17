@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_outbo
     }
 }
 
-pub use crate::operation::update_queue_outbound_caller_config::_update_queue_outbound_caller_config_output::UpdateQueueOutboundCallerConfigOutput;
-
 pub use crate::operation::update_queue_outbound_caller_config::_update_queue_outbound_caller_config_input::UpdateQueueOutboundCallerConfigInput;
+
+pub use crate::operation::update_queue_outbound_caller_config::_update_queue_outbound_caller_config_output::UpdateQueueOutboundCallerConfigOutput;
 
 mod _update_queue_outbound_caller_config_input;
 

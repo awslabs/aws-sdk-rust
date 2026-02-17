@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_provi
     }
 }
 
-pub use crate::operation::get_identity_provider_by_identifier::_get_identity_provider_by_identifier_output::GetIdentityProviderByIdentifierOutput;
-
 pub use crate::operation::get_identity_provider_by_identifier::_get_identity_provider_by_identifier_input::GetIdentityProviderByIdentifierInput;
+
+pub use crate::operation::get_identity_provider_by_identifier::_get_identity_provider_by_identifier_output::GetIdentityProviderByIdentifierOutput;
 
 mod _get_identity_provider_by_identifier_input;
 

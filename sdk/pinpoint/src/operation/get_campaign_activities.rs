@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_campaign_activ
     }
 }
 
-pub use crate::operation::get_campaign_activities::_get_campaign_activities_output::GetCampaignActivitiesOutput;
-
 pub use crate::operation::get_campaign_activities::_get_campaign_activities_input::GetCampaignActivitiesInput;
+
+pub use crate::operation::get_campaign_activities::_get_campaign_activities_output::GetCampaignActivitiesOutput;
 
 mod _get_campaign_activities_input;
 

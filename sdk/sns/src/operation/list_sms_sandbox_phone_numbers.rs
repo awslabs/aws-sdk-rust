@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sms_sandbox_p
     }
 }
 
-pub use crate::operation::list_sms_sandbox_phone_numbers::_list_sms_sandbox_phone_numbers_output::ListSmsSandboxPhoneNumbersOutput;
-
 pub use crate::operation::list_sms_sandbox_phone_numbers::_list_sms_sandbox_phone_numbers_input::ListSmsSandboxPhoneNumbersInput;
+
+pub use crate::operation::list_sms_sandbox_phone_numbers::_list_sms_sandbox_phone_numbers_output::ListSmsSandboxPhoneNumbersOutput;
 
 mod _list_sms_sandbox_phone_numbers_input;
 

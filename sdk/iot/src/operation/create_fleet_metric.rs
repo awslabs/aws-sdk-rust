@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fleet_metri
     }
 }
 
-pub use crate::operation::create_fleet_metric::_create_fleet_metric_output::CreateFleetMetricOutput;
-
 pub use crate::operation::create_fleet_metric::_create_fleet_metric_input::CreateFleetMetricInput;
+
+pub use crate::operation::create_fleet_metric::_create_fleet_metric_output::CreateFleetMetricOutput;
 
 mod _create_fleet_metric_input;
 

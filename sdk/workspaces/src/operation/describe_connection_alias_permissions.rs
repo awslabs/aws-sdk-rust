@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_connectio
     }
 }
 
-pub use crate::operation::describe_connection_alias_permissions::_describe_connection_alias_permissions_output::DescribeConnectionAliasPermissionsOutput;
-
 pub use crate::operation::describe_connection_alias_permissions::_describe_connection_alias_permissions_input::DescribeConnectionAliasPermissionsInput;
+
+pub use crate::operation::describe_connection_alias_permissions::_describe_connection_alias_permissions_output::DescribeConnectionAliasPermissionsOutput;
 
 mod _describe_connection_alias_permissions_input;
 

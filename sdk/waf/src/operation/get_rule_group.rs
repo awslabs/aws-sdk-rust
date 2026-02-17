@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rule_group::Ge
     }
 }
 
-pub use crate::operation::get_rule_group::_get_rule_group_output::GetRuleGroupOutput;
-
 pub use crate::operation::get_rule_group::_get_rule_group_input::GetRuleGroupInput;
+
+pub use crate::operation::get_rule_group::_get_rule_group_output::GetRuleGroupOutput;
 
 mod _get_rule_group_input;
 

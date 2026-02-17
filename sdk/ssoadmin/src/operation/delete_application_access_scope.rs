@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_access_scope::_delete_application_access_scope_output::DeleteApplicationAccessScopeOutput;
-
 pub use crate::operation::delete_application_access_scope::_delete_application_access_scope_input::DeleteApplicationAccessScopeInput;
+
+pub use crate::operation::delete_application_access_scope::_delete_application_access_scope_output::DeleteApplicationAccessScopeOutput;
 
 mod _delete_application_access_scope_input;
 

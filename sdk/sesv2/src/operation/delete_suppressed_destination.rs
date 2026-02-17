@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_suppressed_
     }
 }
 
-pub use crate::operation::delete_suppressed_destination::_delete_suppressed_destination_output::DeleteSuppressedDestinationOutput;
-
 pub use crate::operation::delete_suppressed_destination::_delete_suppressed_destination_input::DeleteSuppressedDestinationInput;
+
+pub use crate::operation::delete_suppressed_destination::_delete_suppressed_destination_output::DeleteSuppressedDestinationOutput;
 
 mod _delete_suppressed_destination_input;
 

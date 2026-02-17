@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_scali
     }
 }
 
-pub use crate::operation::get_function_scaling_config::_get_function_scaling_config_output::GetFunctionScalingConfigOutput;
-
 pub use crate::operation::get_function_scaling_config::_get_function_scaling_config_input::GetFunctionScalingConfigInput;
+
+pub use crate::operation::get_function_scaling_config::_get_function_scaling_config_output::GetFunctionScalingConfigOutput;
 
 mod _get_function_scaling_config_input;
 

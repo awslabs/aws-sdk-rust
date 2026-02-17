@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tags::GetTagsE
     }
 }
 
-pub use crate::operation::get_tags::_get_tags_output::GetTagsOutput;
-
 pub use crate::operation::get_tags::_get_tags_input::GetTagsInput;
+
+pub use crate::operation::get_tags::_get_tags_output::GetTagsOutput;
 
 mod _get_tags_input;
 

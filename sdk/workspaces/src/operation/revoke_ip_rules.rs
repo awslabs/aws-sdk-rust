@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_ip_rules::R
     }
 }
 
-pub use crate::operation::revoke_ip_rules::_revoke_ip_rules_output::RevokeIpRulesOutput;
-
 pub use crate::operation::revoke_ip_rules::_revoke_ip_rules_input::RevokeIpRulesInput;
+
+pub use crate::operation::revoke_ip_rules::_revoke_ip_rules_output::RevokeIpRulesOutput;
 
 mod _revoke_ip_rules_input;
 

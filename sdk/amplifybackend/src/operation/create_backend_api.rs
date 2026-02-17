@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backend_api
     }
 }
 
-pub use crate::operation::create_backend_api::_create_backend_api_output::CreateBackendApiOutput;
-
 pub use crate::operation::create_backend_api::_create_backend_api_input::CreateBackendApiInput;
+
+pub use crate::operation::create_backend_api::_create_backend_api_output::CreateBackendApiOutput;
 
 mod _create_backend_api_input;
 

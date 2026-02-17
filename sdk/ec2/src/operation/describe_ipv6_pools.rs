@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipv6_pool
     }
 }
 
-pub use crate::operation::describe_ipv6_pools::_describe_ipv6_pools_output::DescribeIpv6PoolsOutput;
-
 pub use crate::operation::describe_ipv6_pools::_describe_ipv6_pools_input::DescribeIpv6PoolsInput;
+
+pub use crate::operation::describe_ipv6_pools::_describe_ipv6_pools_output::DescribeIpv6PoolsOutput;
 
 mod _describe_ipv6_pools_input;
 

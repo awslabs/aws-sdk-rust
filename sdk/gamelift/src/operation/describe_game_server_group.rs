@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_game_serv
     }
 }
 
-pub use crate::operation::describe_game_server_group::_describe_game_server_group_output::DescribeGameServerGroupOutput;
-
 pub use crate::operation::describe_game_server_group::_describe_game_server_group_input::DescribeGameServerGroupInput;
+
+pub use crate::operation::describe_game_server_group::_describe_game_server_group_output::DescribeGameServerGroupOutput;
 
 mod _describe_game_server_group_input;
 

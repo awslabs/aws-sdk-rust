@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_project_pro
     }
 }
 
-pub use crate::operation::create_project_profile::_create_project_profile_output::CreateProjectProfileOutput;
-
 pub use crate::operation::create_project_profile::_create_project_profile_input::CreateProjectProfileInput;
+
+pub use crate::operation::create_project_profile::_create_project_profile_output::CreateProjectProfileOutput;
 
 mod _create_project_profile_input;
 

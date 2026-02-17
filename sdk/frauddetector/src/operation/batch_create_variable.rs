@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_varia
     }
 }
 
-pub use crate::operation::batch_create_variable::_batch_create_variable_output::BatchCreateVariableOutput;
-
 pub use crate::operation::batch_create_variable::_batch_create_variable_input::BatchCreateVariableInput;
+
+pub use crate::operation::batch_create_variable::_batch_create_variable_output::BatchCreateVariableOutput;
 
 mod _batch_create_variable_input;
 

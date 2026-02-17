@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stack::Upda
     }
 }
 
-pub use crate::operation::update_stack::_update_stack_output::UpdateStackOutput;
-
 pub use crate::operation::update_stack::_update_stack_input::UpdateStackInput;
+
+pub use crate::operation::update_stack::_update_stack_output::UpdateStackOutput;
 
 mod _update_stack_input;
 

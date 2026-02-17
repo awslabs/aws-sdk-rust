@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_local_gateway_route_table_vpc_associations::_describe_local_gateway_route_table_vpc_associations_output::DescribeLocalGatewayRouteTableVpcAssociationsOutput;
-
 pub use crate::operation::describe_local_gateway_route_table_vpc_associations::_describe_local_gateway_route_table_vpc_associations_input::DescribeLocalGatewayRouteTableVpcAssociationsInput;
+
+pub use crate::operation::describe_local_gateway_route_table_vpc_associations::_describe_local_gateway_route_table_vpc_associations_output::DescribeLocalGatewayRouteTableVpcAssociationsOutput;
 
 mod _describe_local_gateway_route_table_vpc_associations_input;
 

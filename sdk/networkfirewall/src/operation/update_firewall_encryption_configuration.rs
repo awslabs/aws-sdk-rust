@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_firewall_en
     }
 }
 
-pub use crate::operation::update_firewall_encryption_configuration::_update_firewall_encryption_configuration_output::UpdateFirewallEncryptionConfigurationOutput;
-
 pub use crate::operation::update_firewall_encryption_configuration::_update_firewall_encryption_configuration_input::UpdateFirewallEncryptionConfigurationInput;
+
+pub use crate::operation::update_firewall_encryption_configuration::_update_firewall_encryption_configuration_output::UpdateFirewallEncryptionConfigurationOutput;
 
 mod _update_firewall_encryption_configuration_input;
 

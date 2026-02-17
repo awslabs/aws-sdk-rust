@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_upgrade_status
     }
 }
 
-pub use crate::operation::get_upgrade_status::_get_upgrade_status_output::GetUpgradeStatusOutput;
-
 pub use crate::operation::get_upgrade_status::_get_upgrade_status_input::GetUpgradeStatusInput;
+
+pub use crate::operation::get_upgrade_status::_get_upgrade_status_output::GetUpgradeStatusOutput;
 
 mod _get_upgrade_status_input;
 

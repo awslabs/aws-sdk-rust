@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_coip_cidr::
     }
 }
 
-pub use crate::operation::delete_coip_cidr::_delete_coip_cidr_output::DeleteCoipCidrOutput;
-
 pub use crate::operation::delete_coip_cidr::_delete_coip_cidr_input::DeleteCoipCidrInput;
+
+pub use crate::operation::delete_coip_cidr::_delete_coip_cidr_output::DeleteCoipCidrOutput;
 
 mod _delete_coip_cidr_input;
 

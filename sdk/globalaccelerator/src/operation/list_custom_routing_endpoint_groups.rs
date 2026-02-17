@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_routin
     }
 }
 
-pub use crate::operation::list_custom_routing_endpoint_groups::_list_custom_routing_endpoint_groups_output::ListCustomRoutingEndpointGroupsOutput;
-
 pub use crate::operation::list_custom_routing_endpoint_groups::_list_custom_routing_endpoint_groups_input::ListCustomRoutingEndpointGroupsInput;
+
+pub use crate::operation::list_custom_routing_endpoint_groups::_list_custom_routing_endpoint_groups_output::ListCustomRoutingEndpointGroupsOutput;
 
 mod _list_custom_routing_endpoint_groups_input;
 

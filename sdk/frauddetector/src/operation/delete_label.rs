@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_label::Dele
     }
 }
 
-pub use crate::operation::delete_label::_delete_label_output::DeleteLabelOutput;
-
 pub use crate::operation::delete_label::_delete_label_input::DeleteLabelInput;
+
+pub use crate::operation::delete_label::_delete_label_output::DeleteLabelOutput;
 
 mod _delete_label_input;
 

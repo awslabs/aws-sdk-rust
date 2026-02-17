@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_on_premises_in
     }
 }
 
-pub use crate::operation::get_on_premises_instance::_get_on_premises_instance_output::GetOnPremisesInstanceOutput;
-
 pub use crate::operation::get_on_premises_instance::_get_on_premises_instance_input::GetOnPremisesInstanceInput;
+
+pub use crate::operation::get_on_premises_instance::_get_on_premises_instance_output::GetOnPremisesInstanceOutput;
 
 mod _get_on_premises_instance_input;
 

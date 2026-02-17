@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_whats_ap
     }
 }
 
-pub use crate::operation::associate_whats_app_business_account::_associate_whats_app_business_account_output::AssociateWhatsAppBusinessAccountOutput;
-
 pub use crate::operation::associate_whats_app_business_account::_associate_whats_app_business_account_input::AssociateWhatsAppBusinessAccountInput;
+
+pub use crate::operation::associate_whats_app_business_account::_associate_whats_app_business_account_output::AssociateWhatsAppBusinessAccountOutput;
 
 mod _associate_whats_app_business_account_input;
 

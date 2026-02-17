@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_data_set_noti
     }
 }
 
-pub use crate::operation::send_data_set_notification::_send_data_set_notification_output::SendDataSetNotificationOutput;
-
 pub use crate::operation::send_data_set_notification::_send_data_set_notification_input::SendDataSetNotificationInput;
+
+pub use crate::operation::send_data_set_notification::_send_data_set_notification_output::SendDataSetNotificationOutput;
 
 mod _send_data_set_notification_input;
 

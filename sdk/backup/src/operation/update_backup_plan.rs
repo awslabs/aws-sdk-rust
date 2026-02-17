@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_backup_plan
     }
 }
 
-pub use crate::operation::update_backup_plan::_update_backup_plan_output::UpdateBackupPlanOutput;
-
 pub use crate::operation::update_backup_plan::_update_backup_plan_input::UpdateBackupPlanInput;
+
+pub use crate::operation::update_backup_plan::_update_backup_plan_output::UpdateBackupPlanOutput;
 
 mod _update_backup_plan_input;
 

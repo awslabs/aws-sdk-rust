@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_documentation_
     }
 }
 
-pub use crate::operation::get_documentation_parts::_get_documentation_parts_output::GetDocumentationPartsOutput;
-
 pub use crate::operation::get_documentation_parts::_get_documentation_parts_input::GetDocumentationPartsInput;
+
+pub use crate::operation::get_documentation_parts::_get_documentation_parts_output::GetDocumentationPartsOutput;
 
 mod _get_documentation_parts_input;
 

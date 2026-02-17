@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_object_attrib
     }
 }
 
-pub use crate::operation::list_object_attributes::_list_object_attributes_output::ListObjectAttributesOutput;
-
 pub use crate::operation::list_object_attributes::_list_object_attributes_input::ListObjectAttributesInput;
+
+pub use crate::operation::list_object_attributes::_list_object_attributes_output::ListObjectAttributesOutput;
 
 mod _list_object_attributes_input;
 

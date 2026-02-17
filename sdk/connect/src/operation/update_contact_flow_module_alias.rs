@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact_flo
     }
 }
 
-pub use crate::operation::update_contact_flow_module_alias::_update_contact_flow_module_alias_output::UpdateContactFlowModuleAliasOutput;
-
 pub use crate::operation::update_contact_flow_module_alias::_update_contact_flow_module_alias_input::UpdateContactFlowModuleAliasInput;
+
+pub use crate::operation::update_contact_flow_module_alias::_update_contact_flow_module_alias_output::UpdateContactFlowModuleAliasOutput;
 
 mod _update_contact_flow_module_alias_input;
 

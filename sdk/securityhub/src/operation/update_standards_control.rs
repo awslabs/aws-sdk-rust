@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_standards_c
     }
 }
 
-pub use crate::operation::update_standards_control::_update_standards_control_output::UpdateStandardsControlOutput;
-
 pub use crate::operation::update_standards_control::_update_standards_control_input::UpdateStandardsControlInput;
+
+pub use crate::operation::update_standards_control::_update_standards_control_output::UpdateStandardsControlOutput;
 
 mod _update_standards_control_input;
 

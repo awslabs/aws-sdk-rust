@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_ancestry
     }
 }
 
-pub use crate::operation::get_image_ancestry::_get_image_ancestry_output::GetImageAncestryOutput;
-
 pub use crate::operation::get_image_ancestry::_get_image_ancestry_input::GetImageAncestryInput;
+
+pub use crate::operation::get_image_ancestry::_get_image_ancestry_output::GetImageAncestryOutput;
 
 mod _get_image_ancestry_input;
 

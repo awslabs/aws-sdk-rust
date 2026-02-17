@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_table_optim
     }
 }
 
-pub use crate::operation::update_table_optimizer::_update_table_optimizer_output::UpdateTableOptimizerOutput;
-
 pub use crate::operation::update_table_optimizer::_update_table_optimizer_input::UpdateTableOptimizerInput;
+
+pub use crate::operation::update_table_optimizer::_update_table_optimizer_output::UpdateTableOptimizerOutput;
 
 mod _update_table_optimizer_input;
 

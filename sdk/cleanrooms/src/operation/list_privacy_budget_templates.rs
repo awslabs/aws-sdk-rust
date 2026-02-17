@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_privacy_budge
     }
 }
 
-pub use crate::operation::list_privacy_budget_templates::_list_privacy_budget_templates_output::ListPrivacyBudgetTemplatesOutput;
-
 pub use crate::operation::list_privacy_budget_templates::_list_privacy_budget_templates_input::ListPrivacyBudgetTemplatesInput;
+
+pub use crate::operation::list_privacy_budget_templates::_list_privacy_budget_templates_output::ListPrivacyBudgetTemplatesOutput;
 
 mod _list_privacy_budget_templates_input;
 

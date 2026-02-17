@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_signaling_cha
     }
 }
 
-pub use crate::operation::list_signaling_channels::_list_signaling_channels_output::ListSignalingChannelsOutput;
-
 pub use crate::operation::list_signaling_channels::_list_signaling_channels_input::ListSignalingChannelsInput;
+
+pub use crate::operation::list_signaling_channels::_list_signaling_channels_output::ListSignalingChannelsOutput;
 
 mod _list_signaling_channels_input;
 

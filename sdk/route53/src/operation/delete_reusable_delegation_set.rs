@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_reusable_de
     }
 }
 
-pub use crate::operation::delete_reusable_delegation_set::_delete_reusable_delegation_set_output::DeleteReusableDelegationSetOutput;
-
 pub use crate::operation::delete_reusable_delegation_set::_delete_reusable_delegation_set_input::DeleteReusableDelegationSetInput;
+
+pub use crate::operation::delete_reusable_delegation_set::_delete_reusable_delegation_set_output::DeleteReusableDelegationSetOutput;
 
 mod _delete_reusable_delegation_set_input;
 

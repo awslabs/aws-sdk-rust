@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_clu
     }
 }
 
-pub use crate::operation::delete_virtual_cluster::_delete_virtual_cluster_output::DeleteVirtualClusterOutput;
-
 pub use crate::operation::delete_virtual_cluster::_delete_virtual_cluster_input::DeleteVirtualClusterInput;
+
+pub use crate::operation::delete_virtual_cluster::_delete_virtual_cluster_output::DeleteVirtualClusterOutput;
 
 mod _delete_virtual_cluster_input;
 

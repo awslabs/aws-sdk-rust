@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_labels::ListL
     }
 }
 
-pub use crate::operation::list_labels::_list_labels_output::ListLabelsOutput;
-
 pub use crate::operation::list_labels::_list_labels_input::ListLabelsInput;
+
+pub use crate::operation::list_labels::_list_labels_output::ListLabelsOutput;
 
 mod _list_labels_input;
 

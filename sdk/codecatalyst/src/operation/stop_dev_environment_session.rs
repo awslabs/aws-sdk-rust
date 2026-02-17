@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_dev_environme
     }
 }
 
-pub use crate::operation::stop_dev_environment_session::_stop_dev_environment_session_output::StopDevEnvironmentSessionOutput;
-
 pub use crate::operation::stop_dev_environment_session::_stop_dev_environment_session_input::StopDevEnvironmentSessionInput;
+
+pub use crate::operation::stop_dev_environment_session::_stop_dev_environment_session_output::StopDevEnvironmentSessionOutput;
 
 mod _stop_dev_environment_session_input;
 

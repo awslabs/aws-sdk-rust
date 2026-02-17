@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_reachability_analyzer_organization_sharing::_enable_reachability_analyzer_organization_sharing_output::EnableReachabilityAnalyzerOrganizationSharingOutput;
-
 pub use crate::operation::enable_reachability_analyzer_organization_sharing::_enable_reachability_analyzer_organization_sharing_input::EnableReachabilityAnalyzerOrganizationSharingInput;
+
+pub use crate::operation::enable_reachability_analyzer_organization_sharing::_enable_reachability_analyzer_organization_sharing_output::EnableReachabilityAnalyzerOrganizationSharingOutput;
 
 mod _enable_reachability_analyzer_organization_sharing_input;
 

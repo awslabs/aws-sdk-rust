@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_cluster_
     }
 }
 
-pub use crate::operation::create_db_cluster_parameter_group::_create_db_cluster_parameter_group_output::CreateDbClusterParameterGroupOutput;
-
 pub use crate::operation::create_db_cluster_parameter_group::_create_db_cluster_parameter_group_input::CreateDbClusterParameterGroupInput;
+
+pub use crate::operation::create_db_cluster_parameter_group::_create_db_cluster_parameter_group_output::CreateDbClusterParameterGroupOutput;
 
 mod _create_db_cluster_parameter_group_input;
 

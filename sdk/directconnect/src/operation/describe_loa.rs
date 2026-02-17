@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_loa::Desc
     }
 }
 
-pub use crate::operation::describe_loa::_describe_loa_output::DescribeLoaOutput;
-
 pub use crate::operation::describe_loa::_describe_loa_input::DescribeLoaInput;
+
+pub use crate::operation::describe_loa::_describe_loa_output::DescribeLoaOutput;
 
 mod _describe_loa_input;
 

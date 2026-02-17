@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vod_sourc
     }
 }
 
-pub use crate::operation::describe_vod_source::_describe_vod_source_output::DescribeVodSourceOutput;
-
 pub use crate::operation::describe_vod_source::_describe_vod_source_input::DescribeVodSourceInput;
+
+pub use crate::operation::describe_vod_source::_describe_vod_source_output::DescribeVodSourceOutput;
 
 mod _describe_vod_source_input;
 

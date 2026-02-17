@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hsm_clien
     }
 }
 
-pub use crate::operation::describe_hsm_client_certificates::_describe_hsm_client_certificates_output::DescribeHsmClientCertificatesOutput;
-
 pub use crate::operation::describe_hsm_client_certificates::_describe_hsm_client_certificates_input::DescribeHsmClientCertificatesInput;
+
+pub use crate::operation::describe_hsm_client_certificates::_describe_hsm_client_certificates_output::DescribeHsmClientCertificatesOutput;
 
 mod _describe_hsm_client_certificates_input;
 

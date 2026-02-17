@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_card_ex
     }
 }
 
-pub use crate::operation::list_model_card_export_jobs::_list_model_card_export_jobs_output::ListModelCardExportJobsOutput;
-
 pub use crate::operation::list_model_card_export_jobs::_list_model_card_export_jobs_input::ListModelCardExportJobsInput;
+
+pub use crate::operation::list_model_card_export_jobs::_list_model_card_export_jobs_output::ListModelCardExportJobsOutput;
 
 mod _list_model_card_export_jobs_input;
 

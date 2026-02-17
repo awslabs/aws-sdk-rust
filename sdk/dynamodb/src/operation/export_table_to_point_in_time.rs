@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_table_to_po
     }
 }
 
-pub use crate::operation::export_table_to_point_in_time::_export_table_to_point_in_time_output::ExportTableToPointInTimeOutput;
-
 pub use crate::operation::export_table_to_point_in_time::_export_table_to_point_in_time_input::ExportTableToPointInTimeInput;
+
+pub use crate::operation::export_table_to_point_in_time::_export_table_to_point_in_time_output::ExportTableToPointInTimeOutput;
 
 mod _export_table_to_point_in_time_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_endp
     }
 }
 
-pub use crate::operation::list_resource_endpoint_associations::_list_resource_endpoint_associations_output::ListResourceEndpointAssociationsOutput;
-
 pub use crate::operation::list_resource_endpoint_associations::_list_resource_endpoint_associations_input::ListResourceEndpointAssociationsInput;
+
+pub use crate::operation::list_resource_endpoint_associations::_list_resource_endpoint_associations_output::ListResourceEndpointAssociationsOutput;
 
 mod _list_resource_endpoint_associations_input;
 

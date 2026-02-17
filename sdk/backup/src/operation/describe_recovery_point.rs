@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recovery_
     }
 }
 
-pub use crate::operation::describe_recovery_point::_describe_recovery_point_output::DescribeRecoveryPointOutput;
-
 pub use crate::operation::describe_recovery_point::_describe_recovery_point_input::DescribeRecoveryPointInput;
+
+pub use crate::operation::describe_recovery_point::_describe_recovery_point_output::DescribeRecoveryPointOutput;
 
 mod _describe_recovery_point_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::join_domain::JoinD
     }
 }
 
-pub use crate::operation::join_domain::_join_domain_output::JoinDomainOutput;
-
 pub use crate::operation::join_domain::_join_domain_input::JoinDomainInput;
+
+pub use crate::operation::join_domain::_join_domain_output::JoinDomainOutput;
 
 mod _join_domain_input;
 

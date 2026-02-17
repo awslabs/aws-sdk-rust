@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queue_tags::L
     }
 }
 
-pub use crate::operation::list_queue_tags::_list_queue_tags_output::ListQueueTagsOutput;
-
 pub use crate::operation::list_queue_tags::_list_queue_tags_input::ListQueueTagsInput;
+
+pub use crate::operation::list_queue_tags::_list_queue_tags_output::ListQueueTagsOutput;
 
 mod _list_queue_tags_input;
 

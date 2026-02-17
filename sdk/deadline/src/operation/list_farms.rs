@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_farms::ListFa
     }
 }
 
-pub use crate::operation::list_farms::_list_farms_output::ListFarmsOutput;
-
 pub use crate::operation::list_farms::_list_farms_input::ListFarmsInput;
+
+pub use crate::operation::list_farms::_list_farms_output::ListFarmsOutput;
 
 mod _list_farms_input;
 

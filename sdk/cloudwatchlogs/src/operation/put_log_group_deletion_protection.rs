@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_log_group_dele
     }
 }
 
-pub use crate::operation::put_log_group_deletion_protection::_put_log_group_deletion_protection_output::PutLogGroupDeletionProtectionOutput;
-
 pub use crate::operation::put_log_group_deletion_protection::_put_log_group_deletion_protection_input::PutLogGroupDeletionProtectionInput;
+
+pub use crate::operation::put_log_group_deletion_protection::_put_log_group_deletion_protection_output::PutLogGroupDeletionProtectionOutput;
 
 mod _put_log_group_deletion_protection_input;
 

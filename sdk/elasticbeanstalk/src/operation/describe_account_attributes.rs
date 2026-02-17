@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_a
     }
 }
 
-pub use crate::operation::describe_account_attributes::_describe_account_attributes_output::DescribeAccountAttributesOutput;
-
 pub use crate::operation::describe_account_attributes::_describe_account_attributes_input::DescribeAccountAttributesInput;
+
+pub use crate::operation::describe_account_attributes::_describe_account_attributes_output::DescribeAccountAttributesOutput;
 
 mod _describe_account_attributes_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_available_p
     }
 }
 
-pub use crate::operation::search_available_phone_numbers::_search_available_phone_numbers_output::SearchAvailablePhoneNumbersOutput;
-
 pub use crate::operation::search_available_phone_numbers::_search_available_phone_numbers_input::SearchAvailablePhoneNumbersInput;
+
+pub use crate::operation::search_available_phone_numbers::_search_available_phone_numbers_output::SearchAvailablePhoneNumbersOutput;
 
 mod _search_available_phone_numbers_input;
 

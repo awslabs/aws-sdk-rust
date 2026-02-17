@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::acknowledge_third_
     }
 }
 
-pub use crate::operation::acknowledge_third_party_job::_acknowledge_third_party_job_output::AcknowledgeThirdPartyJobOutput;
-
 pub use crate::operation::acknowledge_third_party_job::_acknowledge_third_party_job_input::AcknowledgeThirdPartyJobInput;
+
+pub use crate::operation::acknowledge_third_party_job::_acknowledge_third_party_job_output::AcknowledgeThirdPartyJobOutput;
 
 mod _acknowledge_third_party_job_input;
 

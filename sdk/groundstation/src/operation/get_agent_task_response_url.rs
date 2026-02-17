@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_task_res
     }
 }
 
-pub use crate::operation::get_agent_task_response_url::_get_agent_task_response_url_output::GetAgentTaskResponseUrlOutput;
-
 pub use crate::operation::get_agent_task_response_url::_get_agent_task_response_url_input::GetAgentTaskResponseUrlInput;
+
+pub use crate::operation::get_agent_task_response_url::_get_agent_task_response_url_output::GetAgentTaskResponseUrlOutput;
 
 mod _get_agent_task_response_url_input;
 

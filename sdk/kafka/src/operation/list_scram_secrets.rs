@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scram_secrets
     }
 }
 
-pub use crate::operation::list_scram_secrets::_list_scram_secrets_output::ListScramSecretsOutput;
-
 pub use crate::operation::list_scram_secrets::_list_scram_secrets_input::ListScramSecretsInput;
+
+pub use crate::operation::list_scram_secrets::_list_scram_secrets_output::ListScramSecretsOutput;
 
 mod _list_scram_secrets_input;
 

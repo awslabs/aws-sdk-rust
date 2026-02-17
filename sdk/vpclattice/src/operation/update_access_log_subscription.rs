@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_access_log_
     }
 }
 
-pub use crate::operation::update_access_log_subscription::_update_access_log_subscription_output::UpdateAccessLogSubscriptionOutput;
-
 pub use crate::operation::update_access_log_subscription::_update_access_log_subscription_input::UpdateAccessLogSubscriptionInput;
+
+pub use crate::operation::update_access_log_subscription::_update_access_log_subscription_output::UpdateAccessLogSubscriptionOutput;
 
 mod _update_access_log_subscription_input;
 

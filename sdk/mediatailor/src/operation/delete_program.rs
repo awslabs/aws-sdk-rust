@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_program::De
     }
 }
 
-pub use crate::operation::delete_program::_delete_program_output::DeleteProgramOutput;
-
 pub use crate::operation::delete_program::_delete_program_input::DeleteProgramInput;
+
+pub use crate::operation::delete_program::_delete_program_output::DeleteProgramOutput;
 
 mod _delete_program_input;
 

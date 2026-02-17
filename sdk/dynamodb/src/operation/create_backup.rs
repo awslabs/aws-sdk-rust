@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backup::Cre
     }
 }
 
-pub use crate::operation::create_backup::_create_backup_output::CreateBackupOutput;
-
 pub use crate::operation::create_backup::_create_backup_input::CreateBackupInput;
+
+pub use crate::operation::create_backup::_create_backup_output::CreateBackupOutput;
 
 mod _create_backup_input;
 

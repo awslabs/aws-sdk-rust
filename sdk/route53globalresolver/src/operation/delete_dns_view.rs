@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dns_view::D
     }
 }
 
-pub use crate::operation::delete_dns_view::_delete_dns_view_output::DeleteDnsViewOutput;
-
 pub use crate::operation::delete_dns_view::_delete_dns_view_input::DeleteDnsViewInput;
+
+pub use crate::operation::delete_dns_view::_delete_dns_view_output::DeleteDnsViewOutput;
 
 mod _delete_dns_view_input;
 

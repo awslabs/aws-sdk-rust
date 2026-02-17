@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_managed_log
     }
 }
 
-pub use crate::operation::delete_managed_login_branding::_delete_managed_login_branding_output::DeleteManagedLoginBrandingOutput;
-
 pub use crate::operation::delete_managed_login_branding::_delete_managed_login_branding_input::DeleteManagedLoginBrandingInput;
+
+pub use crate::operation::delete_managed_login_branding::_delete_managed_login_branding_output::DeleteManagedLoginBrandingOutput;
 
 mod _delete_managed_login_branding_input;
 

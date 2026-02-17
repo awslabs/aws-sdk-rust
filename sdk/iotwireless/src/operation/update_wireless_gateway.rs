@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_wireless_ga
     }
 }
 
-pub use crate::operation::update_wireless_gateway::_update_wireless_gateway_output::UpdateWirelessGatewayOutput;
-
 pub use crate::operation::update_wireless_gateway::_update_wireless_gateway_input::UpdateWirelessGatewayInput;
+
+pub use crate::operation::update_wireless_gateway::_update_wireless_gateway_output::UpdateWirelessGatewayOutput;
 
 mod _update_wireless_gateway_input;
 

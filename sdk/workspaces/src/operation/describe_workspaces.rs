@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workspace
     }
 }
 
-pub use crate::operation::describe_workspaces::_describe_workspaces_output::DescribeWorkspacesOutput;
-
 pub use crate::operation::describe_workspaces::_describe_workspaces_input::DescribeWorkspacesInput;
+
+pub use crate::operation::describe_workspaces::_describe_workspaces_output::DescribeWorkspacesOutput;
 
 mod _describe_workspaces_input;
 

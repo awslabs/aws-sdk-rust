@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_fleet::Start
     }
 }
 
-pub use crate::operation::start_fleet::_start_fleet_output::StartFleetOutput;
-
 pub use crate::operation::start_fleet::_start_fleet_input::StartFleetInput;
+
+pub use crate::operation::start_fleet::_start_fleet_output::StartFleetOutput;
 
 mod _start_fleet_input;
 

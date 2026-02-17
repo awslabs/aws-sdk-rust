@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpce_configur
     }
 }
 
-pub use crate::operation::list_vpce_configurations::_list_vpce_configurations_output::ListVpceConfigurationsOutput;
-
 pub use crate::operation::list_vpce_configurations::_list_vpce_configurations_input::ListVpceConfigurationsInput;
+
+pub use crate::operation::list_vpce_configurations::_list_vpce_configurations_output::ListVpceConfigurationsOutput;
 
 mod _list_vpce_configurations_input;
 

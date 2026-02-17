@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_disable_user
     }
 }
 
-pub use crate::operation::admin_disable_user::_admin_disable_user_output::AdminDisableUserOutput;
-
 pub use crate::operation::admin_disable_user::_admin_disable_user_input::AdminDisableUserInput;
+
+pub use crate::operation::admin_disable_user::_admin_disable_user_output::AdminDisableUserOutput;
 
 mod _admin_disable_user_input;
 

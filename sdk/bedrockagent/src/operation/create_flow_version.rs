@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flow_versio
     }
 }
 
-pub use crate::operation::create_flow_version::_create_flow_version_output::CreateFlowVersionOutput;
-
 pub use crate::operation::create_flow_version::_create_flow_version_input::CreateFlowVersionInput;
+
+pub use crate::operation::create_flow_version::_create_flow_version_output::CreateFlowVersionOutput;
 
 mod _create_flow_version_input;
 

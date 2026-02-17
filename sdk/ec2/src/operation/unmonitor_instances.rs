@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unmonitor_instance
     }
 }
 
-pub use crate::operation::unmonitor_instances::_unmonitor_instances_output::UnmonitorInstancesOutput;
-
 pub use crate::operation::unmonitor_instances::_unmonitor_instances_input::UnmonitorInstancesInput;
+
+pub use crate::operation::unmonitor_instances::_unmonitor_instances_output::UnmonitorInstancesOutput;
 
 mod _unmonitor_instances_input;
 

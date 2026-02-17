@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_set::C
     }
 }
 
-pub use crate::operation::create_data_set::_create_data_set_output::CreateDataSetOutput;
-
 pub use crate::operation::create_data_set::_create_data_set_input::CreateDataSetInput;
+
+pub use crate::operation::create_data_set::_create_data_set_output::CreateDataSetOutput;
 
 mod _create_data_set_input;
 

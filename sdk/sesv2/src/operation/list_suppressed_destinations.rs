@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_suppressed_de
     }
 }
 
-pub use crate::operation::list_suppressed_destinations::_list_suppressed_destinations_output::ListSuppressedDestinationsOutput;
-
 pub use crate::operation::list_suppressed_destinations::_list_suppressed_destinations_input::ListSuppressedDestinationsInput;
+
+pub use crate::operation::list_suppressed_destinations::_list_suppressed_destinations_output::ListSuppressedDestinationsOutput;
 
 mod _list_suppressed_destinations_input;
 

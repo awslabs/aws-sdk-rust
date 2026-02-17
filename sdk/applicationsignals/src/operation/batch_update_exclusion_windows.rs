@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_exclu
     }
 }
 
-pub use crate::operation::batch_update_exclusion_windows::_batch_update_exclusion_windows_output::BatchUpdateExclusionWindowsOutput;
-
 pub use crate::operation::batch_update_exclusion_windows::_batch_update_exclusion_windows_input::BatchUpdateExclusionWindowsInput;
+
+pub use crate::operation::batch_update_exclusion_windows::_batch_update_exclusion_windows_output::BatchUpdateExclusionWindowsOutput;
 
 mod _batch_update_exclusion_windows_input;
 

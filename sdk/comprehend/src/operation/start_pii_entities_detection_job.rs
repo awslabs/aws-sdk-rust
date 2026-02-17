@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_pii_entities
     }
 }
 
-pub use crate::operation::start_pii_entities_detection_job::_start_pii_entities_detection_job_output::StartPiiEntitiesDetectionJobOutput;
-
 pub use crate::operation::start_pii_entities_detection_job::_start_pii_entities_detection_job_input::StartPiiEntitiesDetectionJobInput;
+
+pub use crate::operation::start_pii_entities_detection_job::_start_pii_entities_detection_job_output::StartPiiEntitiesDetectionJobOutput;
 
 mod _start_pii_entities_detection_job_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_operation_deta
     }
 }
 
-pub use crate::operation::get_operation_detail::_get_operation_detail_output::GetOperationDetailOutput;
-
 pub use crate::operation::get_operation_detail::_get_operation_detail_input::GetOperationDetailInput;
+
+pub use crate::operation::get_operation_detail::_get_operation_detail_output::GetOperationDetailOutput;
 
 mod _get_operation_detail_input;
 

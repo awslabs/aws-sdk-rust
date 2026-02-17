@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_chime_webho
     }
 }
 
-pub use crate::operation::delete_chime_webhook_configuration::_delete_chime_webhook_configuration_output::DeleteChimeWebhookConfigurationOutput;
-
 pub use crate::operation::delete_chime_webhook_configuration::_delete_chime_webhook_configuration_input::DeleteChimeWebhookConfigurationInput;
+
+pub use crate::operation::delete_chime_webhook_configuration::_delete_chime_webhook_configuration_output::DeleteChimeWebhookConfigurationOutput;
 
 mod _delete_chime_webhook_configuration_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ingestion_job:
     }
 }
 
-pub use crate::operation::get_ingestion_job::_get_ingestion_job_output::GetIngestionJobOutput;
-
 pub use crate::operation::get_ingestion_job::_get_ingestion_job_input::GetIngestionJobInput;
+
+pub use crate::operation::get_ingestion_job::_get_ingestion_job_output::GetIngestionJobOutput;
 
 mod _get_ingestion_job_input;
 

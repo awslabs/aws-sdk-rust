@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_metadata
     }
 }
 
-pub use crate::operation::get_table_metadata::_get_table_metadata_output::GetTableMetadataOutput;
-
 pub use crate::operation::get_table_metadata::_get_table_metadata_input::GetTableMetadataInput;
+
+pub use crate::operation::get_table_metadata::_get_table_metadata_output::GetTableMetadataOutput;
 
 mod _get_table_metadata_input;
 

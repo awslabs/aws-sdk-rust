@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bgp_peer::D
     }
 }
 
-pub use crate::operation::delete_bgp_peer::_delete_bgp_peer_output::DeleteBgpPeerOutput;
-
 pub use crate::operation::delete_bgp_peer::_delete_bgp_peer_input::DeleteBgpPeerInput;
+
+pub use crate::operation::delete_bgp_peer::_delete_bgp_peer_output::DeleteBgpPeerOutput;
 
 mod _delete_bgp_peer_input;
 

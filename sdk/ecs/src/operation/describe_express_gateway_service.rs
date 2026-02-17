@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_express_g
     }
 }
 
-pub use crate::operation::describe_express_gateway_service::_describe_express_gateway_service_output::DescribeExpressGatewayServiceOutput;
-
 pub use crate::operation::describe_express_gateway_service::_describe_express_gateway_service_input::DescribeExpressGatewayServiceInput;
+
+pub use crate::operation::describe_express_gateway_service::_describe_express_gateway_service_output::DescribeExpressGatewayServiceOutput;
 
 mod _describe_express_gateway_service_input;
 

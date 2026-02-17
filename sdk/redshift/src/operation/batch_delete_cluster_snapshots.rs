@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_clust
     }
 }
 
-pub use crate::operation::batch_delete_cluster_snapshots::_batch_delete_cluster_snapshots_output::BatchDeleteClusterSnapshotsOutput;
-
 pub use crate::operation::batch_delete_cluster_snapshots::_batch_delete_cluster_snapshots_input::BatchDeleteClusterSnapshotsInput;
+
+pub use crate::operation::batch_delete_cluster_snapshots::_batch_delete_cluster_snapshots_output::BatchDeleteClusterSnapshotsOutput;
 
 mod _batch_delete_cluster_snapshots_input;
 

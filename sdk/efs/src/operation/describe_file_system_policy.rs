@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_file_syst
     }
 }
 
-pub use crate::operation::describe_file_system_policy::_describe_file_system_policy_output::DescribeFileSystemPolicyOutput;
-
 pub use crate::operation::describe_file_system_policy::_describe_file_system_policy_input::DescribeFileSystemPolicyInput;
+
+pub use crate::operation::describe_file_system_policy::_describe_file_system_policy_output::DescribeFileSystemPolicyOutput;
 
 mod _describe_file_system_policy_input;
 

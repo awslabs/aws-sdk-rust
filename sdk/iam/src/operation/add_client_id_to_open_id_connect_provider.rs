@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_client_id_to_o
     }
 }
 
-pub use crate::operation::add_client_id_to_open_id_connect_provider::_add_client_id_to_open_id_connect_provider_output::AddClientIdToOpenIdConnectProviderOutput;
-
 pub use crate::operation::add_client_id_to_open_id_connect_provider::_add_client_id_to_open_id_connect_provider_input::AddClientIdToOpenIdConnectProviderInput;
+
+pub use crate::operation::add_client_id_to_open_id_connect_provider::_add_client_id_to_open_id_connect_provider_output::AddClientIdToOpenIdConnectProviderOutput;
 
 mod _add_client_id_to_open_id_connect_provider_input;
 

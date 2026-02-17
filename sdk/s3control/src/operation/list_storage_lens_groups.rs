@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_storage_lens_
     }
 }
 
-pub use crate::operation::list_storage_lens_groups::_list_storage_lens_groups_output::ListStorageLensGroupsOutput;
-
 pub use crate::operation::list_storage_lens_groups::_list_storage_lens_groups_input::ListStorageLensGroupsInput;
+
+pub use crate::operation::list_storage_lens_groups::_list_storage_lens_groups_output::ListStorageLensGroupsOutput;
 
 mod _list_storage_lens_groups_input;
 

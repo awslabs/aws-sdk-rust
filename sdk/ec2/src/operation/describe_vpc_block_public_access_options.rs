@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_block
     }
 }
 
-pub use crate::operation::describe_vpc_block_public_access_options::_describe_vpc_block_public_access_options_output::DescribeVpcBlockPublicAccessOptionsOutput;
-
 pub use crate::operation::describe_vpc_block_public_access_options::_describe_vpc_block_public_access_options_input::DescribeVpcBlockPublicAccessOptionsInput;
+
+pub use crate::operation::describe_vpc_block_public_access_options::_describe_vpc_block_public_access_options_output::DescribeVpcBlockPublicAccessOptionsOutput;
 
 mod _describe_vpc_block_public_access_options_input;
 

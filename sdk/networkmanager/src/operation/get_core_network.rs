@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_core_network::
     }
 }
 
-pub use crate::operation::get_core_network::_get_core_network_output::GetCoreNetworkOutput;
-
 pub use crate::operation::get_core_network::_get_core_network_input::GetCoreNetworkInput;
+
+pub use crate::operation::get_core_network::_get_core_network_output::GetCoreNetworkOutput;
 
 mod _get_core_network_input;
 

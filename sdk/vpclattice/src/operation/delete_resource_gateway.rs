@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_ga
     }
 }
 
-pub use crate::operation::delete_resource_gateway::_delete_resource_gateway_output::DeleteResourceGatewayOutput;
-
 pub use crate::operation::delete_resource_gateway::_delete_resource_gateway_input::DeleteResourceGatewayInput;
+
+pub use crate::operation::delete_resource_gateway::_delete_resource_gateway_output::DeleteResourceGatewayOutput;
 
 mod _delete_resource_gateway_input;
 

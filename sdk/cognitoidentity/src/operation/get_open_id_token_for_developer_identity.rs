@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_open_id_token_
     }
 }
 
-pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id_token_for_developer_identity_output::GetOpenIdTokenForDeveloperIdentityOutput;
-
 pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id_token_for_developer_identity_input::GetOpenIdTokenForDeveloperIdentityInput;
+
+pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id_token_for_developer_identity_output::GetOpenIdTokenForDeveloperIdentityOutput;
 
 mod _get_open_id_token_for_developer_identity_input;
 

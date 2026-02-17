@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_page_resoluti
     }
 }
 
-pub use crate::operation::list_page_resolutions::_list_page_resolutions_output::ListPageResolutionsOutput;
-
 pub use crate::operation::list_page_resolutions::_list_page_resolutions_input::ListPageResolutionsInput;
+
+pub use crate::operation::list_page_resolutions::_list_page_resolutions_output::ListPageResolutionsOutput;
 
 mod _list_page_resolutions_input;
 

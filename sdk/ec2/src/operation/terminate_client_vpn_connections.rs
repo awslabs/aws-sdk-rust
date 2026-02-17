@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_client_v
     }
 }
 
-pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vpn_connections_output::TerminateClientVpnConnectionsOutput;
-
 pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vpn_connections_input::TerminateClientVpnConnectionsInput;
+
+pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vpn_connections_output::TerminateClientVpnConnectionsOutput;
 
 mod _terminate_client_vpn_connections_input;
 

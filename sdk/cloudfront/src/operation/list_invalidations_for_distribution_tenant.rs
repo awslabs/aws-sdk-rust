@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_invalidations_for_distribution_tenant::_list_invalidations_for_distribution_tenant_output::ListInvalidationsForDistributionTenantOutput;
-
 pub use crate::operation::list_invalidations_for_distribution_tenant::_list_invalidations_for_distribution_tenant_input::ListInvalidationsForDistributionTenantInput;
+
+pub use crate::operation::list_invalidations_for_distribution_tenant::_list_invalidations_for_distribution_tenant_output::ListInvalidationsForDistributionTenantOutput;
 
 mod _list_invalidations_for_distribution_tenant_input;
 

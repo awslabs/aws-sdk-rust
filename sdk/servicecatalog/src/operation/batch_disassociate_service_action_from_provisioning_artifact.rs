@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_disassociate_service_action_from_provisioning_artifact::_batch_disassociate_service_action_from_provisioning_artifact_output::BatchDisassociateServiceActionFromProvisioningArtifactOutput;
-
 pub use crate::operation::batch_disassociate_service_action_from_provisioning_artifact::_batch_disassociate_service_action_from_provisioning_artifact_input::BatchDisassociateServiceActionFromProvisioningArtifactInput;
+
+pub use crate::operation::batch_disassociate_service_action_from_provisioning_artifact::_batch_disassociate_service_action_from_provisioning_artifact_output::BatchDisassociateServiceActionFromProvisioningArtifactOutput;
 
 mod _batch_disassociate_service_action_from_provisioning_artifact_input;
 

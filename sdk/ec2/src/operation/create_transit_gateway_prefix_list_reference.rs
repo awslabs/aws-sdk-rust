@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_transit_gateway_prefix_list_reference::_create_transit_gateway_prefix_list_reference_output::CreateTransitGatewayPrefixListReferenceOutput;
-
 pub use crate::operation::create_transit_gateway_prefix_list_reference::_create_transit_gateway_prefix_list_reference_input::CreateTransitGatewayPrefixListReferenceInput;
+
+pub use crate::operation::create_transit_gateway_prefix_list_reference::_create_transit_gateway_prefix_list_reference_output::CreateTransitGatewayPrefixListReferenceOutput;
 
 mod _create_transit_gateway_prefix_list_reference_input;
 

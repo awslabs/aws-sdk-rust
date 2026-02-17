@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_engine_de
     }
 }
 
-pub use crate::operation::describe_engine_default_parameters::_describe_engine_default_parameters_output::DescribeEngineDefaultParametersOutput;
-
 pub use crate::operation::describe_engine_default_parameters::_describe_engine_default_parameters_input::DescribeEngineDefaultParametersInput;
+
+pub use crate::operation::describe_engine_default_parameters::_describe_engine_default_parameters_output::DescribeEngineDefaultParametersOutput;
 
 mod _describe_engine_default_parameters_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_storage_loc
     }
 }
 
-pub use crate::operation::create_storage_location::_create_storage_location_output::CreateStorageLocationOutput;
-
 pub use crate::operation::create_storage_location::_create_storage_location_input::CreateStorageLocationInput;
+
+pub use crate::operation::create_storage_location::_create_storage_location_output::CreateStorageLocationOutput;
 
 mod _create_storage_location_input;
 

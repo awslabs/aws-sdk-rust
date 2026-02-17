@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_custom_model::
     }
 }
 
-pub use crate::operation::get_custom_model::_get_custom_model_output::GetCustomModelOutput;
-
 pub use crate::operation::get_custom_model::_get_custom_model_input::GetCustomModelInput;
+
+pub use crate::operation::get_custom_model::_get_custom_model_output::GetCustomModelOutput;
 
 mod _get_custom_model_input;
 

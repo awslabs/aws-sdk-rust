@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_link::Delet
     }
 }
 
-pub use crate::operation::delete_link::_delete_link_output::DeleteLinkOutput;
-
 pub use crate::operation::delete_link::_delete_link_input::DeleteLinkInput;
+
+pub use crate::operation::delete_link::_delete_link_output::DeleteLinkOutput;
 
 mod _delete_link_input;
 

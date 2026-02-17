@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agents::ListA
     }
 }
 
-pub use crate::operation::list_agents::_list_agents_output::ListAgentsOutput;
-
 pub use crate::operation::list_agents::_list_agents_input::ListAgentsInput;
+
+pub use crate::operation::list_agents::_list_agents_output::ListAgentsOutput;
 
 mod _list_agents_input;
 

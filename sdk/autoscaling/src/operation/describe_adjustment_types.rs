@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_adjustmen
     }
 }
 
-pub use crate::operation::describe_adjustment_types::_describe_adjustment_types_output::DescribeAdjustmentTypesOutput;
-
 pub use crate::operation::describe_adjustment_types::_describe_adjustment_types_input::DescribeAdjustmentTypesInput;
+
+pub use crate::operation::describe_adjustment_types::_describe_adjustment_types_output::DescribeAdjustmentTypesOutput;
 
 mod _describe_adjustment_types_input;
 

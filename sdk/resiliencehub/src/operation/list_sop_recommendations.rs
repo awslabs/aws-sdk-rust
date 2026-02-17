@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sop_recommend
     }
 }
 
-pub use crate::operation::list_sop_recommendations::_list_sop_recommendations_output::ListSopRecommendationsOutput;
-
 pub use crate::operation::list_sop_recommendations::_list_sop_recommendations_input::ListSopRecommendationsInput;
+
+pub use crate::operation::list_sop_recommendations::_list_sop_recommendations_output::ListSopRecommendationsOutput;
 
 mod _list_sop_recommendations_input;
 

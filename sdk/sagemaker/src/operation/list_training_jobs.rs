@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_training_jobs
     }
 }
 
-pub use crate::operation::list_training_jobs::_list_training_jobs_output::ListTrainingJobsOutput;
-
 pub use crate::operation::list_training_jobs::_list_training_jobs_input::ListTrainingJobsInput;
+
+pub use crate::operation::list_training_jobs::_list_training_jobs_output::ListTrainingJobsOutput;
 
 mod _list_training_jobs_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dashboard::Get
     }
 }
 
-pub use crate::operation::get_dashboard::_get_dashboard_output::GetDashboardOutput;
-
 pub use crate::operation::get_dashboard::_get_dashboard_input::GetDashboardInput;
+
+pub use crate::operation::get_dashboard::_get_dashboard_output::GetDashboardOutput;
 
 mod _get_dashboard_input;
 

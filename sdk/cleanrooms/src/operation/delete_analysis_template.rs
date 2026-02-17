@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_analysis_te
     }
 }
 
-pub use crate::operation::delete_analysis_template::_delete_analysis_template_output::DeleteAnalysisTemplateOutput;
-
 pub use crate::operation::delete_analysis_template::_delete_analysis_template_input::DeleteAnalysisTemplateInput;
+
+pub use crate::operation::delete_analysis_template::_delete_analysis_template_output::DeleteAnalysisTemplateOutput;
 
 mod _delete_analysis_template_input;
 

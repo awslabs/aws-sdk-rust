@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::close_case::CloseC
     }
 }
 
-pub use crate::operation::close_case::_close_case_output::CloseCaseOutput;
-
 pub use crate::operation::close_case::_close_case_input::CloseCaseInput;
+
+pub use crate::operation::close_case::_close_case_output::CloseCaseOutput;
 
 mod _close_case_input;
 

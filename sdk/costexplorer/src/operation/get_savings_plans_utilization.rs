@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_savings_plans_
     }
 }
 
-pub use crate::operation::get_savings_plans_utilization::_get_savings_plans_utilization_output::GetSavingsPlansUtilizationOutput;
-
 pub use crate::operation::get_savings_plans_utilization::_get_savings_plans_utilization_input::GetSavingsPlansUtilizationInput;
+
+pub use crate::operation::get_savings_plans_utilization::_get_savings_plans_utilization_output::GetSavingsPlansUtilizationOutput;
 
 mod _get_savings_plans_utilization_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rescore_exe
     }
 }
 
-pub use crate::operation::update_rescore_execution_plan::_update_rescore_execution_plan_output::UpdateRescoreExecutionPlanOutput;
-
 pub use crate::operation::update_rescore_execution_plan::_update_rescore_execution_plan_input::UpdateRescoreExecutionPlanInput;
+
+pub use crate::operation::update_rescore_execution_plan::_update_rescore_execution_plan_output::UpdateRescoreExecutionPlanOutput;
 
 mod _update_rescore_execution_plan_input;
 

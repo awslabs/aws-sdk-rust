@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_accelerator
     }
 }
 
-pub use crate::operation::create_accelerator::_create_accelerator_output::CreateAcceleratorOutput;
-
 pub use crate::operation::create_accelerator::_create_accelerator_input::CreateAcceleratorInput;
+
+pub use crate::operation::create_accelerator::_create_accelerator_output::CreateAcceleratorOutput;
 
 mod _create_accelerator_input;
 

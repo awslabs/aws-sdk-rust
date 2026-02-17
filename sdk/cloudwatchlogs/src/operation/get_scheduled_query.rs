@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scheduled_quer
     }
 }
 
-pub use crate::operation::get_scheduled_query::_get_scheduled_query_output::GetScheduledQueryOutput;
-
 pub use crate::operation::get_scheduled_query::_get_scheduled_query_input::GetScheduledQueryInput;
+
+pub use crate::operation::get_scheduled_query::_get_scheduled_query_output::GetScheduledQueryOutput;
 
 mod _get_scheduled_query_input;
 

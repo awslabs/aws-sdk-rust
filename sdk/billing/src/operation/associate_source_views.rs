@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_source_v
     }
 }
 
-pub use crate::operation::associate_source_views::_associate_source_views_output::AssociateSourceViewsOutput;
-
 pub use crate::operation::associate_source_views::_associate_source_views_input::AssociateSourceViewsInput;
+
+pub use crate::operation::associate_source_views::_associate_source_views_output::AssociateSourceViewsOutput;
 
 mod _associate_source_views_input;
 

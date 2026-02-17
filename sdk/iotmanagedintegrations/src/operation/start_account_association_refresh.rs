@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_account_asso
     }
 }
 
-pub use crate::operation::start_account_association_refresh::_start_account_association_refresh_output::StartAccountAssociationRefreshOutput;
-
 pub use crate::operation::start_account_association_refresh::_start_account_association_refresh_input::StartAccountAssociationRefreshInput;
+
+pub use crate::operation::start_account_association_refresh::_start_account_association_refresh_output::StartAccountAssociationRefreshOutput;
 
 mod _start_account_association_refresh_input;
 

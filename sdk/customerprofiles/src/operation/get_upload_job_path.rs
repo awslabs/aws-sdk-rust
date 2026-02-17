@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_upload_job_pat
     }
 }
 
-pub use crate::operation::get_upload_job_path::_get_upload_job_path_output::GetUploadJobPathOutput;
-
 pub use crate::operation::get_upload_job_path::_get_upload_job_path_input::GetUploadJobPathInput;
+
+pub use crate::operation::get_upload_job_path::_get_upload_job_path_output::GetUploadJobPathOutput;
 
 mod _get_upload_job_path_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_checks::ListC
     }
 }
 
-pub use crate::operation::list_checks::_list_checks_output::ListChecksOutput;
-
 pub use crate::operation::list_checks::_list_checks_input::ListChecksInput;
+
+pub use crate::operation::list_checks::_list_checks_output::ListChecksOutput;
 
 mod _list_checks_input;
 

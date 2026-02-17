@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workload_sh
     }
 }
 
-pub use crate::operation::create_workload_share::_create_workload_share_output::CreateWorkloadShareOutput;
-
 pub use crate::operation::create_workload_share::_create_workload_share_input::CreateWorkloadShareInput;
+
+pub use crate::operation::create_workload_share::_create_workload_share_output::CreateWorkloadShareOutput;
 
 mod _create_workload_share_input;
 

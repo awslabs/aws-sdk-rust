@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_proficie
     }
 }
 
-pub use crate::operation::list_user_proficiencies::_list_user_proficiencies_output::ListUserProficienciesOutput;
-
 pub use crate::operation::list_user_proficiencies::_list_user_proficiencies_input::ListUserProficienciesInput;
+
+pub use crate::operation::list_user_proficiencies::_list_user_proficiencies_output::ListUserProficienciesOutput;
 
 mod _list_user_proficiencies_input;
 

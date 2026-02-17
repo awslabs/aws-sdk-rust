@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_campaign_state
     }
 }
 
-pub use crate::operation::get_campaign_state::_get_campaign_state_output::GetCampaignStateOutput;
-
 pub use crate::operation::get_campaign_state::_get_campaign_state_input::GetCampaignStateInput;
+
+pub use crate::operation::get_campaign_state::_get_campaign_state_output::GetCampaignStateOutput;
 
 mod _get_campaign_state_input;
 

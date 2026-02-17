@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::suspend_game_serve
     }
 }
 
-pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_output::SuspendGameServerGroupOutput;
-
 pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_input::SuspendGameServerGroupInput;
+
+pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_output::SuspendGameServerGroupOutput;
 
 mod _suspend_game_server_group_input;
 

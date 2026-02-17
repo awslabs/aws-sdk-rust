@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_network_ins
     }
 }
 
-pub use crate::operation::delete_network_insights_path::_delete_network_insights_path_output::DeleteNetworkInsightsPathOutput;
-
 pub use crate::operation::delete_network_insights_path::_delete_network_insights_path_input::DeleteNetworkInsightsPathInput;
+
+pub use crate::operation::delete_network_insights_path::_delete_network_insights_path_output::DeleteNetworkInsightsPathOutput;
 
 mod _delete_network_insights_path_input;
 

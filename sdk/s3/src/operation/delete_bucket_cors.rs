@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_cors
     }
 }
 
-pub use crate::operation::delete_bucket_cors::_delete_bucket_cors_output::DeleteBucketCorsOutput;
-
 pub use crate::operation::delete_bucket_cors::_delete_bucket_cors_input::DeleteBucketCorsInput;
+
+pub use crate::operation::delete_bucket_cors::_delete_bucket_cors_output::DeleteBucketCorsOutput;
 
 mod _delete_bucket_cors_input;
 

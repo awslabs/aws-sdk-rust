@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_misconfigure
     }
 }
 
-pub use crate::operation::start_misconfigured_state_recovery::_start_misconfigured_state_recovery_output::StartMisconfiguredStateRecoveryOutput;
-
 pub use crate::operation::start_misconfigured_state_recovery::_start_misconfigured_state_recovery_input::StartMisconfiguredStateRecoveryInput;
+
+pub use crate::operation::start_misconfigured_state_recovery::_start_misconfigured_state_recovery_output::StartMisconfiguredStateRecoveryOutput;
 
 mod _start_misconfigured_state_recovery_input;
 

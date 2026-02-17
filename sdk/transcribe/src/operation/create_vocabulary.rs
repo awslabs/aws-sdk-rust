@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vocabulary:
     }
 }
 
-pub use crate::operation::create_vocabulary::_create_vocabulary_output::CreateVocabularyOutput;
-
 pub use crate::operation::create_vocabulary::_create_vocabulary_input::CreateVocabularyInput;
+
+pub use crate::operation::create_vocabulary::_create_vocabulary_output::CreateVocabularyOutput;
 
 mod _create_vocabulary_input;
 

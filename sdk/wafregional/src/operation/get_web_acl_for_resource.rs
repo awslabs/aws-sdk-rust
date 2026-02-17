@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_web_acl_for_re
     }
 }
 
-pub use crate::operation::get_web_acl_for_resource::_get_web_acl_for_resource_output::GetWebAclForResourceOutput;
-
 pub use crate::operation::get_web_acl_for_resource::_get_web_acl_for_resource_input::GetWebAclForResourceInput;
+
+pub use crate::operation::get_web_acl_for_resource::_get_web_acl_for_resource_output::GetWebAclForResourceOutput;
 
 mod _get_web_acl_for_resource_input;
 

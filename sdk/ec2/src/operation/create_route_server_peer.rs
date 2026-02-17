@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_route_serve
     }
 }
 
-pub use crate::operation::create_route_server_peer::_create_route_server_peer_output::CreateRouteServerPeerOutput;
-
 pub use crate::operation::create_route_server_peer::_create_route_server_peer_input::CreateRouteServerPeerInput;
+
+pub use crate::operation::create_route_server_peer::_create_route_server_peer_output::CreateRouteServerPeerOutput;
 
 mod _create_route_server_peer_input;
 

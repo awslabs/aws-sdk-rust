@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::recall_benefit_app
     }
 }
 
-pub use crate::operation::recall_benefit_application::_recall_benefit_application_output::RecallBenefitApplicationOutput;
-
 pub use crate::operation::recall_benefit_application::_recall_benefit_application_input::RecallBenefitApplicationInput;
+
+pub use crate::operation::recall_benefit_application::_recall_benefit_application_output::RecallBenefitApplicationOutput;
 
 mod _recall_benefit_application_input;
 

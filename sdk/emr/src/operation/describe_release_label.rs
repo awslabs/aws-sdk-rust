@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_release_l
     }
 }
 
-pub use crate::operation::describe_release_label::_describe_release_label_output::DescribeReleaseLabelOutput;
-
 pub use crate::operation::describe_release_label::_describe_release_label_input::DescribeReleaseLabelInput;
+
+pub use crate::operation::describe_release_label::_describe_release_label_output::DescribeReleaseLabelOutput;
 
 mod _describe_release_label_input;
 

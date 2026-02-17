@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_microsoft_tea
     }
 }
 
-pub use crate::operation::list_microsoft_teams_user_identities::_list_microsoft_teams_user_identities_output::ListMicrosoftTeamsUserIdentitiesOutput;
-
 pub use crate::operation::list_microsoft_teams_user_identities::_list_microsoft_teams_user_identities_input::ListMicrosoftTeamsUserIdentitiesInput;
+
+pub use crate::operation::list_microsoft_teams_user_identities::_list_microsoft_teams_user_identities_output::ListMicrosoftTeamsUserIdentitiesOutput;
 
 mod _list_microsoft_teams_user_identities_input;
 

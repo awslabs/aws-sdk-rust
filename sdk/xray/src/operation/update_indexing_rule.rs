@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_indexing_ru
     }
 }
 
-pub use crate::operation::update_indexing_rule::_update_indexing_rule_output::UpdateIndexingRuleOutput;
-
 pub use crate::operation::update_indexing_rule::_update_indexing_rule_input::UpdateIndexingRuleInput;
+
+pub use crate::operation::update_indexing_rule::_update_indexing_rule_output::UpdateIndexingRuleOutput;
 
 mod _update_indexing_rule_input;
 

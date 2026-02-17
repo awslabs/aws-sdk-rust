@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_provisioned
     }
 }
 
-pub use crate::operation::create_provisioned_product_plan::_create_provisioned_product_plan_output::CreateProvisionedProductPlanOutput;
-
 pub use crate::operation::create_provisioned_product_plan::_create_provisioned_product_plan_input::CreateProvisionedProductPlanInput;
+
+pub use crate::operation::create_provisioned_product_plan::_create_provisioned_product_plan_output::CreateProvisionedProductPlanOutput;
 
 mod _create_provisioned_product_plan_input;
 

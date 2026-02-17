@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_mode
     }
 }
 
-pub use crate::operation::create_custom_model::_create_custom_model_output::CreateCustomModelOutput;
-
 pub use crate::operation::create_custom_model::_create_custom_model_input::CreateCustomModelInput;
+
+pub use crate::operation::create_custom_model::_create_custom_model_output::CreateCustomModelOutput;
 
 mod _create_custom_model_input;
 

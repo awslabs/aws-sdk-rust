@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_role_from_i
     }
 }
 
-pub use crate::operation::remove_role_from_instance_profile::_remove_role_from_instance_profile_output::RemoveRoleFromInstanceProfileOutput;
-
 pub use crate::operation::remove_role_from_instance_profile::_remove_role_from_instance_profile_input::RemoveRoleFromInstanceProfileInput;
+
+pub use crate::operation::remove_role_from_instance_profile::_remove_role_from_instance_profile_output::RemoveRoleFromInstanceProfileOutput;
 
 mod _remove_role_from_instance_profile_input;
 

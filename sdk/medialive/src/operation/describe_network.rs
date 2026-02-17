@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_network::
     }
 }
 
-pub use crate::operation::describe_network::_describe_network_output::DescribeNetworkOutput;
-
 pub use crate::operation::describe_network::_describe_network_input::DescribeNetworkInput;
+
+pub use crate::operation::describe_network::_describe_network_output::DescribeNetworkOutput;
 
 mod _describe_network_input;
 

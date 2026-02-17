@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_file_system
     }
 }
 
-pub use crate::operation::update_file_system_protection::_update_file_system_protection_output::UpdateFileSystemProtectionOutput;
-
 pub use crate::operation::update_file_system_protection::_update_file_system_protection_input::UpdateFileSystemProtectionInput;
+
+pub use crate::operation::update_file_system_protection::_update_file_system_protection_output::UpdateFileSystemProtectionOutput;
 
 mod _update_file_system_protection_input;
 

@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_dns_availabi
     }
 }
 
-pub use crate::operation::check_dns_availability::_check_dns_availability_output::CheckDnsAvailabilityOutput;
-
 pub use crate::operation::check_dns_availability::_check_dns_availability_input::CheckDnsAvailabilityInput;
+
+pub use crate::operation::check_dns_availability::_check_dns_availability_output::CheckDnsAvailabilityOutput;
 
 mod _check_dns_availability_input;
 

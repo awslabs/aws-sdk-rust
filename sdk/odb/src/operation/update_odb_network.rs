@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_odb_network
     }
 }
 
-pub use crate::operation::update_odb_network::_update_odb_network_output::UpdateOdbNetworkOutput;
-
 pub use crate::operation::update_odb_network::_update_odb_network_input::UpdateOdbNetworkInput;
+
+pub use crate::operation::update_odb_network::_update_odb_network_output::UpdateOdbNetworkOutput;
 
 mod _update_odb_network_input;
 

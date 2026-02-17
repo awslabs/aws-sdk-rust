@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_de
     }
 }
 
-pub use crate::operation::create_resource_definition::_create_resource_definition_output::CreateResourceDefinitionOutput;
-
 pub use crate::operation::create_resource_definition::_create_resource_definition_input::CreateResourceDefinitionInput;
+
+pub use crate::operation::create_resource_definition::_create_resource_definition_output::CreateResourceDefinitionOutput;
 
 mod _create_resource_definition_input;
 

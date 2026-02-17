@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_cont
     }
 }
 
-pub use crate::operation::list_security_control_definitions::_list_security_control_definitions_output::ListSecurityControlDefinitionsOutput;
-
 pub use crate::operation::list_security_control_definitions::_list_security_control_definitions_input::ListSecurityControlDefinitionsInput;
+
+pub use crate::operation::list_security_control_definitions::_list_security_control_definitions_output::ListSecurityControlDefinitionsOutput;
 
 mod _list_security_control_definitions_input;
 

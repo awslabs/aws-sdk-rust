@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_principal_tag_
     }
 }
 
-pub use crate::operation::get_principal_tag_attribute_map::_get_principal_tag_attribute_map_output::GetPrincipalTagAttributeMapOutput;
-
 pub use crate::operation::get_principal_tag_attribute_map::_get_principal_tag_attribute_map_input::GetPrincipalTagAttributeMapInput;
+
+pub use crate::operation::get_principal_tag_attribute_map::_get_principal_tag_attribute_map_output::GetPrincipalTagAttributeMapOutput;
 
 mod _get_principal_tag_attribute_map_input;
 

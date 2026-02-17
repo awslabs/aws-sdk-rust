@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_routes
     }
 }
 
-pub use crate::operation::get_network_routes::_get_network_routes_output::GetNetworkRoutesOutput;
-
 pub use crate::operation::get_network_routes::_get_network_routes_input::GetNetworkRoutesInput;
+
+pub use crate::operation::get_network_routes::_get_network_routes_output::GetNetworkRoutesOutput;
 
 mod _get_network_routes_input;
 

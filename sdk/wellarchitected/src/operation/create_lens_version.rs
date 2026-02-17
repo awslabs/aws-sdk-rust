@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lens_versio
     }
 }
 
-pub use crate::operation::create_lens_version::_create_lens_version_output::CreateLensVersionOutput;
-
 pub use crate::operation::create_lens_version::_create_lens_version_input::CreateLensVersionInput;
+
+pub use crate::operation::create_lens_version::_create_lens_version_output::CreateLensVersionOutput;
 
 mod _create_lens_version_input;
 

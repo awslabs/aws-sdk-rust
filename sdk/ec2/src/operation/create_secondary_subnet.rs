@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_secondary_s
     }
 }
 
-pub use crate::operation::create_secondary_subnet::_create_secondary_subnet_output::CreateSecondarySubnetOutput;
-
 pub use crate::operation::create_secondary_subnet::_create_secondary_subnet_input::CreateSecondarySubnetInput;
+
+pub use crate::operation::create_secondary_subnet::_create_secondary_subnet_output::CreateSecondarySubnetOutput;
 
 mod _create_secondary_subnet_input;
 

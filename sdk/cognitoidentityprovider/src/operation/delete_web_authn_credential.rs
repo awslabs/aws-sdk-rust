@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_web_authn_c
     }
 }
 
-pub use crate::operation::delete_web_authn_credential::_delete_web_authn_credential_output::DeleteWebAuthnCredentialOutput;
-
 pub use crate::operation::delete_web_authn_credential::_delete_web_authn_credential_input::DeleteWebAuthnCredentialInput;
+
+pub use crate::operation::delete_web_authn_credential::_delete_web_authn_credential_output::DeleteWebAuthnCredentialOutput;
 
 mod _delete_web_authn_credential_input;
 

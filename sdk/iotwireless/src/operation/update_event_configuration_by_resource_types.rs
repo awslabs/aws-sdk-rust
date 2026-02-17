@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_event_configuration_by_resource_types::_update_event_configuration_by_resource_types_output::UpdateEventConfigurationByResourceTypesOutput;
-
 pub use crate::operation::update_event_configuration_by_resource_types::_update_event_configuration_by_resource_types_input::UpdateEventConfigurationByResourceTypesInput;
+
+pub use crate::operation::update_event_configuration_by_resource_types::_update_event_configuration_by_resource_types_output::UpdateEventConfigurationByResourceTypesOutput;
 
 mod _update_event_configuration_by_resource_types_input;
 

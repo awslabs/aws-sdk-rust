@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_endpoints_b
     }
 }
 
-pub use crate::operation::update_endpoints_batch::_update_endpoints_batch_output::UpdateEndpointsBatchOutput;
-
 pub use crate::operation::update_endpoints_batch::_update_endpoints_batch_input::UpdateEndpointsBatchInput;
+
+pub use crate::operation::update_endpoints_batch::_update_endpoints_batch_output::UpdateEndpointsBatchOutput;
 
 mod _update_endpoints_batch_input;
 

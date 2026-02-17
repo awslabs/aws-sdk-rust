@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_sourc
     }
 }
 
-pub use crate::operation::delete_event_source_mapping::_delete_event_source_mapping_output::DeleteEventSourceMappingOutput;
-
 pub use crate::operation::delete_event_source_mapping::_delete_event_source_mapping_input::DeleteEventSourceMappingInput;
+
+pub use crate::operation::delete_event_source_mapping::_delete_event_source_mapping_output::DeleteEventSourceMappingOutput;
 
 mod _delete_event_source_mapping_input;
 

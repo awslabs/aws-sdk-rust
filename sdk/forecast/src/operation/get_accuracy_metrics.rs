@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_accuracy_metri
     }
 }
 
-pub use crate::operation::get_accuracy_metrics::_get_accuracy_metrics_output::GetAccuracyMetricsOutput;
-
 pub use crate::operation::get_accuracy_metrics::_get_accuracy_metrics_input::GetAccuracyMetricsInput;
+
+pub use crate::operation::get_accuracy_metrics::_get_accuracy_metrics_output::GetAccuracyMetricsOutput;
 
 mod _get_accuracy_metrics_input;
 

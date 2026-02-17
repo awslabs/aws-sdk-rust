@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_phone_numbers_from_voice_connector::_disassociate_phone_numbers_from_voice_connector_output::DisassociatePhoneNumbersFromVoiceConnectorOutput;
-
 pub use crate::operation::disassociate_phone_numbers_from_voice_connector::_disassociate_phone_numbers_from_voice_connector_input::DisassociatePhoneNumbersFromVoiceConnectorInput;
+
+pub use crate::operation::disassociate_phone_numbers_from_voice_connector::_disassociate_phone_numbers_from_voice_connector_output::DisassociatePhoneNumbersFromVoiceConnectorOutput;
 
 mod _disassociate_phone_numbers_from_voice_connector_input;
 

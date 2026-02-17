@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_set_expor
     }
 }
 
-pub use crate::operation::get_data_set_export_task::_get_data_set_export_task_output::GetDataSetExportTaskOutput;
-
 pub use crate::operation::get_data_set_export_task::_get_data_set_export_task_input::GetDataSetExportTaskInput;
+
+pub use crate::operation::get_data_set_export_task::_get_data_set_export_task_output::GetDataSetExportTaskOutput;
 
 mod _get_data_set_export_task_input;
 

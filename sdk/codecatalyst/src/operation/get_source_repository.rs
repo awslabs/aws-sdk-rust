@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_source_reposit
     }
 }
 
-pub use crate::operation::get_source_repository::_get_source_repository_output::GetSourceRepositoryOutput;
-
 pub use crate::operation::get_source_repository::_get_source_repository_input::GetSourceRepositoryInput;
+
+pub use crate::operation::get_source_repository::_get_source_repository_output::GetSourceRepositoryOutput;
 
 mod _get_source_repository_input;
 

@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_perm
     }
 }
 
-pub use crate::operation::create_custom_permissions::_create_custom_permissions_output::CreateCustomPermissionsOutput;
-
 pub use crate::operation::create_custom_permissions::_create_custom_permissions_input::CreateCustomPermissionsInput;
+
+pub use crate::operation::create_custom_permissions::_create_custom_permissions_output::CreateCustomPermissionsOutput;
 
 mod _create_custom_permissions_input;
 

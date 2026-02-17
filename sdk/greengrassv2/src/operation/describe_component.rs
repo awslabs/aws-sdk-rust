@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_component
     }
 }
 
-pub use crate::operation::describe_component::_describe_component_output::DescribeComponentOutput;
-
 pub use crate::operation::describe_component::_describe_component_input::DescribeComponentInput;
+
+pub use crate::operation::describe_component::_describe_component_output::DescribeComponentOutput;
 
 mod _describe_component_input;
 

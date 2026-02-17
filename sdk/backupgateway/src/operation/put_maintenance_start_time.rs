@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_maintenance_st
     }
 }
 
-pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_time_output::PutMaintenanceStartTimeOutput;
-
 pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_time_input::PutMaintenanceStartTimeInput;
+
+pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_time_output::PutMaintenanceStartTimeOutput;
 
 mod _put_maintenance_start_time_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ai_guardrail_
     }
 }
 
-pub use crate::operation::list_ai_guardrail_versions::_list_ai_guardrail_versions_output::ListAiGuardrailVersionsOutput;
-
 pub use crate::operation::list_ai_guardrail_versions::_list_ai_guardrail_versions_input::ListAiGuardrailVersionsInput;
+
+pub use crate::operation::list_ai_guardrail_versions::_list_ai_guardrail_versions_output::ListAiGuardrailVersionsOutput;
 
 mod _list_ai_guardrail_versions_input;
 

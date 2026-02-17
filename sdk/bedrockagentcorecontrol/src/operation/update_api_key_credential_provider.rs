@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_api_key_cre
     }
 }
 
-pub use crate::operation::update_api_key_credential_provider::_update_api_key_credential_provider_output::UpdateApiKeyCredentialProviderOutput;
-
 pub use crate::operation::update_api_key_credential_provider::_update_api_key_credential_provider_input::UpdateApiKeyCredentialProviderInput;
+
+pub use crate::operation::update_api_key_credential_provider::_update_api_key_credential_provider_output::UpdateApiKeyCredentialProviderOutput;
 
 mod _update_api_key_credential_provider_input;
 

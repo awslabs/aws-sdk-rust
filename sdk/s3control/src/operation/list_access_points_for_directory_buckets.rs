@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_points
     }
 }
 
-pub use crate::operation::list_access_points_for_directory_buckets::_list_access_points_for_directory_buckets_output::ListAccessPointsForDirectoryBucketsOutput;
-
 pub use crate::operation::list_access_points_for_directory_buckets::_list_access_points_for_directory_buckets_input::ListAccessPointsForDirectoryBucketsInput;
+
+pub use crate::operation::list_access_points_for_directory_buckets::_list_access_points_for_directory_buckets_output::ListAccessPointsForDirectoryBucketsOutput;
 
 mod _list_access_points_for_directory_buckets_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_tags_from_c
     }
 }
 
-pub use crate::operation::remove_tags_from_certificate::_remove_tags_from_certificate_output::RemoveTagsFromCertificateOutput;
-
 pub use crate::operation::remove_tags_from_certificate::_remove_tags_from_certificate_input::RemoveTagsFromCertificateInput;
+
+pub use crate::operation::remove_tags_from_certificate::_remove_tags_from_certificate_output::RemoveTagsFromCertificateOutput;
 
 mod _remove_tags_from_certificate_input;
 

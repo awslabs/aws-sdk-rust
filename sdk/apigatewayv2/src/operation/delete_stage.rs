@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stage::Dele
     }
 }
 
-pub use crate::operation::delete_stage::_delete_stage_output::DeleteStageOutput;
-
 pub use crate::operation::delete_stage::_delete_stage_input::DeleteStageInput;
+
+pub use crate::operation::delete_stage::_delete_stage_output::DeleteStageOutput;
 
 mod _delete_stage_input;
 

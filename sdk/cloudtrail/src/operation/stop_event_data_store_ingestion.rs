@@ -469,9 +469,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_event_data_st
     }
 }
 
-pub use crate::operation::stop_event_data_store_ingestion::_stop_event_data_store_ingestion_output::StopEventDataStoreIngestionOutput;
-
 pub use crate::operation::stop_event_data_store_ingestion::_stop_event_data_store_ingestion_input::StopEventDataStoreIngestionInput;
+
+pub use crate::operation::stop_event_data_store_ingestion::_stop_event_data_store_ingestion_output::StopEventDataStoreIngestionOutput;
 
 mod _stop_event_data_store_ingestion_input;
 

@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_folder_co
     }
 }
 
-pub use crate::operation::describe_folder_contents::_describe_folder_contents_output::DescribeFolderContentsOutput;
-
 pub use crate::operation::describe_folder_contents::_describe_folder_contents_input::DescribeFolderContentsInput;
+
+pub use crate::operation::describe_folder_contents::_describe_folder_contents_output::DescribeFolderContentsOutput;
 
 mod _describe_folder_contents_input;
 

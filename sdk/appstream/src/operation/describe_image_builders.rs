@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_bui
     }
 }
 
-pub use crate::operation::describe_image_builders::_describe_image_builders_output::DescribeImageBuildersOutput;
-
 pub use crate::operation::describe_image_builders::_describe_image_builders_input::DescribeImageBuildersInput;
+
+pub use crate::operation::describe_image_builders::_describe_image_builders_output::DescribeImageBuildersOutput;
 
 mod _describe_image_builders_input;
 

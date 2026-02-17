@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_apns_voip_s
     }
 }
 
-pub use crate::operation::delete_apns_voip_sandbox_channel::_delete_apns_voip_sandbox_channel_output::DeleteApnsVoipSandboxChannelOutput;
-
 pub use crate::operation::delete_apns_voip_sandbox_channel::_delete_apns_voip_sandbox_channel_input::DeleteApnsVoipSandboxChannelInput;
+
+pub use crate::operation::delete_apns_voip_sandbox_channel::_delete_apns_voip_sandbox_channel_output::DeleteApnsVoipSandboxChannelOutput;
 
 mod _delete_apns_voip_sandbox_channel_input;
 

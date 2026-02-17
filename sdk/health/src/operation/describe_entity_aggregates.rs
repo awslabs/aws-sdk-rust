@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_entity_ag
     }
 }
 
-pub use crate::operation::describe_entity_aggregates::_describe_entity_aggregates_output::DescribeEntityAggregatesOutput;
-
 pub use crate::operation::describe_entity_aggregates::_describe_entity_aggregates_input::DescribeEntityAggregatesInput;
+
+pub use crate::operation::describe_entity_aggregates::_describe_entity_aggregates_output::DescribeEntityAggregatesOutput;
 
 mod _describe_entity_aggregates_input;
 

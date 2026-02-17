@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_integ
     }
 }
 
-pub use crate::operation::list_account_integrations::_list_account_integrations_output::ListAccountIntegrationsOutput;
-
 pub use crate::operation::list_account_integrations::_list_account_integrations_input::ListAccountIntegrationsInput;
+
+pub use crate::operation::list_account_integrations::_list_account_integrations_output::ListAccountIntegrationsOutput;
 
 mod _list_account_integrations_input;
 

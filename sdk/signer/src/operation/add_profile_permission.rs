@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_profile_permis
     }
 }
 
-pub use crate::operation::add_profile_permission::_add_profile_permission_output::AddProfilePermissionOutput;
-
 pub use crate::operation::add_profile_permission::_add_profile_permission_input::AddProfilePermissionInput;
+
+pub use crate::operation::add_profile_permission::_add_profile_permission_output::AddProfilePermissionOutput;
 
 mod _add_profile_permission_input;
 

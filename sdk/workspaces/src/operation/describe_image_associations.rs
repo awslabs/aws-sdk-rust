@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_ass
     }
 }
 
-pub use crate::operation::describe_image_associations::_describe_image_associations_output::DescribeImageAssociationsOutput;
-
 pub use crate::operation::describe_image_associations::_describe_image_associations_input::DescribeImageAssociationsInput;
+
+pub use crate::operation::describe_image_associations::_describe_image_associations_output::DescribeImageAssociationsOutput;
 
 mod _describe_image_associations_input;
 

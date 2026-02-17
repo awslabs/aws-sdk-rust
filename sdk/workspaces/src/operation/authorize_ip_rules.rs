@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_ip_rules
     }
 }
 
-pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_output::AuthorizeIpRulesOutput;
-
 pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_input::AuthorizeIpRulesInput;
+
+pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_output::AuthorizeIpRulesOutput;
 
 mod _authorize_ip_rules_input;
 

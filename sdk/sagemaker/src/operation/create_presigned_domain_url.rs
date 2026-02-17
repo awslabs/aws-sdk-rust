@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_presigned_d
     }
 }
 
-pub use crate::operation::create_presigned_domain_url::_create_presigned_domain_url_output::CreatePresignedDomainUrlOutput;
-
 pub use crate::operation::create_presigned_domain_url::_create_presigned_domain_url_input::CreatePresignedDomainUrlInput;
+
+pub use crate::operation::create_presigned_domain_url::_create_presigned_domain_url_output::CreatePresignedDomainUrlOutput;
 
 mod _create_presigned_domain_url_input;
 

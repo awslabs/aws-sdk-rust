@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_messaging_stre
     }
 }
 
-pub use crate::operation::get_messaging_streaming_configurations::_get_messaging_streaming_configurations_output::GetMessagingStreamingConfigurationsOutput;
-
 pub use crate::operation::get_messaging_streaming_configurations::_get_messaging_streaming_configurations_input::GetMessagingStreamingConfigurationsInput;
+
+pub use crate::operation::get_messaging_streaming_configurations::_get_messaging_streaming_configurations_output::GetMessagingStreamingConfigurationsOutput;
 
 mod _get_messaging_streaming_configurations_input;
 

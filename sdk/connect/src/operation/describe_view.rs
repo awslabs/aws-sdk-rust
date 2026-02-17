@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_view::Des
     }
 }
 
-pub use crate::operation::describe_view::_describe_view_output::DescribeViewOutput;
-
 pub use crate::operation::describe_view::_describe_view_input::DescribeViewInput;
+
+pub use crate::operation::describe_view::_describe_view_output::DescribeViewOutput;
 
 mod _describe_view_input;
 

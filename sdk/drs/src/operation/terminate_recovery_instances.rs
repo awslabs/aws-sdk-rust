@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_recovery
     }
 }
 
-pub use crate::operation::terminate_recovery_instances::_terminate_recovery_instances_output::TerminateRecoveryInstancesOutput;
-
 pub use crate::operation::terminate_recovery_instances::_terminate_recovery_instances_input::TerminateRecoveryInstancesInput;
+
+pub use crate::operation::terminate_recovery_instances::_terminate_recovery_instances_output::TerminateRecoveryInstancesOutput;
 
 mod _terminate_recovery_instances_input;
 

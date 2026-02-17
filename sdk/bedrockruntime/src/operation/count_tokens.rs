@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::count_tokens::Coun
     }
 }
 
-pub use crate::operation::count_tokens::_count_tokens_output::CountTokensOutput;
-
 pub use crate::operation::count_tokens::_count_tokens_input::CountTokensInput;
+
+pub use crate::operation::count_tokens::_count_tokens_output::CountTokensOutput;
 
 mod _count_tokens_input;
 

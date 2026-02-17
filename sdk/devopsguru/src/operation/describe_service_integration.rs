@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_service_i
     }
 }
 
-pub use crate::operation::describe_service_integration::_describe_service_integration_output::DescribeServiceIntegrationOutput;
-
 pub use crate::operation::describe_service_integration::_describe_service_integration_input::DescribeServiceIntegrationInput;
+
+pub use crate::operation::describe_service_integration::_describe_service_integration_output::DescribeServiceIntegrationOutput;
 
 mod _describe_service_integration_input;
 

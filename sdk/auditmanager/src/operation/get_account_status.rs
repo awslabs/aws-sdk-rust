@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_status
     }
 }
 
-pub use crate::operation::get_account_status::_get_account_status_output::GetAccountStatusOutput;
-
 pub use crate::operation::get_account_status::_get_account_status_input::GetAccountStatusInput;
+
+pub use crate::operation::get_account_status::_get_account_status_output::GetAccountStatusOutput;
 
 mod _get_account_status_input;
 

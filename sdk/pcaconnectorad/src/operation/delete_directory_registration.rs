@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_directory_r
     }
 }
 
-pub use crate::operation::delete_directory_registration::_delete_directory_registration_output::DeleteDirectoryRegistrationOutput;
-
 pub use crate::operation::delete_directory_registration::_delete_directory_registration_input::DeleteDirectoryRegistrationInput;
+
+pub use crate::operation::delete_directory_registration::_delete_directory_registration_output::DeleteDirectoryRegistrationOutput;
 
 mod _delete_directory_registration_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_resourc
     }
 }
 
-pub use crate::operation::list_stack_resources::_list_stack_resources_output::ListStackResourcesOutput;
-
 pub use crate::operation::list_stack_resources::_list_stack_resources_input::ListStackResourcesInput;
+
+pub use crate::operation::list_stack_resources::_list_stack_resources_output::ListStackResourcesOutput;
 
 mod _list_stack_resources_input;
 

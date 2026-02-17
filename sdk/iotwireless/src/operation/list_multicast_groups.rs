@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multicast_gro
     }
 }
 
-pub use crate::operation::list_multicast_groups::_list_multicast_groups_output::ListMulticastGroupsOutput;
-
 pub use crate::operation::list_multicast_groups::_list_multicast_groups_input::ListMulticastGroupsInput;
+
+pub use crate::operation::list_multicast_groups::_list_multicast_groups_output::ListMulticastGroupsOutput;
 
 mod _list_multicast_groups_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_voice_template
     }
 }
 
-pub use crate::operation::get_voice_template::_get_voice_template_output::GetVoiceTemplateOutput;
-
 pub use crate::operation::get_voice_template::_get_voice_template_input::GetVoiceTemplateInput;
+
+pub use crate::operation::get_voice_template::_get_voice_template_output::GetVoiceTemplateOutput;
 
 mod _get_voice_template_input;
 

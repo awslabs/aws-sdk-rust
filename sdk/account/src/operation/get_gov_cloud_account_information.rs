@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_gov_cloud_acco
     }
 }
 
-pub use crate::operation::get_gov_cloud_account_information::_get_gov_cloud_account_information_output::GetGovCloudAccountInformationOutput;
-
 pub use crate::operation::get_gov_cloud_account_information::_get_gov_cloud_account_information_input::GetGovCloudAccountInformationInput;
+
+pub use crate::operation::get_gov_cloud_account_information::_get_gov_cloud_account_information_output::GetGovCloudAccountInformationOutput;
 
 mod _get_gov_cloud_account_information_input;
 

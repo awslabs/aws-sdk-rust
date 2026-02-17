@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pipeline::C
     }
 }
 
-pub use crate::operation::create_pipeline::_create_pipeline_output::CreatePipelineOutput;
-
 pub use crate::operation::create_pipeline::_create_pipeline_input::CreatePipelineInput;
+
+pub use crate::operation::create_pipeline::_create_pipeline_output::CreatePipelineOutput;
 
 mod _create_pipeline_input;
 

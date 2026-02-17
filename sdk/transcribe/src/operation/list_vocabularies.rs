@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vocabularies:
     }
 }
 
-pub use crate::operation::list_vocabularies::_list_vocabularies_output::ListVocabulariesOutput;
-
 pub use crate::operation::list_vocabularies::_list_vocabularies_input::ListVocabulariesInput;
+
+pub use crate::operation::list_vocabularies::_list_vocabularies_output::ListVocabulariesOutput;
 
 mod _list_vocabularies_input;
 

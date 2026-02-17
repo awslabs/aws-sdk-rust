@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unsubscribe::Unsub
     }
 }
 
-pub use crate::operation::unsubscribe::_unsubscribe_output::UnsubscribeOutput;
-
 pub use crate::operation::unsubscribe::_unsubscribe_input::UnsubscribeInput;
+
+pub use crate::operation::unsubscribe::_unsubscribe_output::UnsubscribeOutput;
 
 mod _unsubscribe_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_launch_temp
     }
 }
 
-pub use crate::operation::modify_launch_template::_modify_launch_template_output::ModifyLaunchTemplateOutput;
-
 pub use crate::operation::modify_launch_template::_modify_launch_template_input::ModifyLaunchTemplateInput;
+
+pub use crate::operation::modify_launch_template::_modify_launch_template_output::ModifyLaunchTemplateOutput;
 
 mod _modify_launch_template_input;
 

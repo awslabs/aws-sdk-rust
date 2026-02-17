@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trust_ancho
     }
 }
 
-pub use crate::operation::update_trust_anchor::_update_trust_anchor_output::UpdateTrustAnchorOutput;
-
 pub use crate::operation::update_trust_anchor::_update_trust_anchor_input::UpdateTrustAnchorInput;
+
+pub use crate::operation::update_trust_anchor::_update_trust_anchor_output::UpdateTrustAnchorOutput;
 
 mod _update_trust_anchor_input;
 

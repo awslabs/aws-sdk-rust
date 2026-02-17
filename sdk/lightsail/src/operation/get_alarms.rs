@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_alarms::GetAla
     }
 }
 
-pub use crate::operation::get_alarms::_get_alarms_output::GetAlarmsOutput;
-
 pub use crate::operation::get_alarms::_get_alarms_input::GetAlarmsInput;
+
+pub use crate::operation::get_alarms::_get_alarms_output::GetAlarmsOutput;
 
 mod _get_alarms_input;
 

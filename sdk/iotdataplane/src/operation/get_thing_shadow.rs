@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_thing_shadow::
     }
 }
 
-pub use crate::operation::get_thing_shadow::_get_thing_shadow_output::GetThingShadowOutput;
-
 pub use crate::operation::get_thing_shadow::_get_thing_shadow_input::GetThingShadowInput;
+
+pub use crate::operation::get_thing_shadow::_get_thing_shadow_output::GetThingShadowOutput;
 
 mod _get_thing_shadow_input;
 

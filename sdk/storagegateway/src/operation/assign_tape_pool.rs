@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assign_tape_pool::
     }
 }
 
-pub use crate::operation::assign_tape_pool::_assign_tape_pool_output::AssignTapePoolOutput;
-
 pub use crate::operation::assign_tape_pool::_assign_tape_pool_input::AssignTapePoolInput;
+
+pub use crate::operation::assign_tape_pool::_assign_tape_pool_output::AssignTapePoolOutput;
 
 mod _assign_tape_pool_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_file_system
     }
 }
 
-pub use crate::operation::delete_file_system_policy::_delete_file_system_policy_output::DeleteFileSystemPolicyOutput;
-
 pub use crate::operation::delete_file_system_policy::_delete_file_system_policy_input::DeleteFileSystemPolicyInput;
+
+pub use crate::operation::delete_file_system_policy::_delete_file_system_policy_output::DeleteFileSystemPolicyOutput;
 
 mod _delete_file_system_policy_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_apns_sandbo
     }
 }
 
-pub use crate::operation::delete_apns_sandbox_channel::_delete_apns_sandbox_channel_output::DeleteApnsSandboxChannelOutput;
-
 pub use crate::operation::delete_apns_sandbox_channel::_delete_apns_sandbox_channel_input::DeleteApnsSandboxChannelInput;
+
+pub use crate::operation::delete_apns_sandbox_channel::_delete_apns_sandbox_channel_output::DeleteApnsSandboxChannelOutput;
 
 mod _delete_apns_sandbox_channel_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_email_addre
     }
 }
 
-pub use crate::operation::update_email_address_metadata::_update_email_address_metadata_output::UpdateEmailAddressMetadataOutput;
-
 pub use crate::operation::update_email_address_metadata::_update_email_address_metadata_input::UpdateEmailAddressMetadataInput;
+
+pub use crate::operation::update_email_address_metadata::_update_email_address_metadata_output::UpdateEmailAddressMetadataOutput;
 
 mod _update_email_address_metadata_input;
 

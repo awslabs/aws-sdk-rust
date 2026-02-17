@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trained_mod
     }
 }
 
-pub use crate::operation::delete_trained_model_output::_delete_trained_model_output_output::DeleteTrainedModelOutputOutput;
-
 pub use crate::operation::delete_trained_model_output::_delete_trained_model_output_input::DeleteTrainedModelOutputInput;
+
+pub use crate::operation::delete_trained_model_output::_delete_trained_model_output_output::DeleteTrainedModelOutputOutput;
 
 mod _delete_trained_model_output_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::abort_document_ver
     }
 }
 
-pub use crate::operation::abort_document_version_upload::_abort_document_version_upload_output::AbortDocumentVersionUploadOutput;
-
 pub use crate::operation::abort_document_version_upload::_abort_document_version_upload_input::AbortDocumentVersionUploadInput;
+
+pub use crate::operation::abort_document_version_upload::_abort_document_version_upload_output::AbortDocumentVersionUploadOutput;
 
 mod _abort_document_version_upload_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ingestion::Get
     }
 }
 
-pub use crate::operation::get_ingestion::_get_ingestion_output::GetIngestionOutput;
-
 pub use crate::operation::get_ingestion::_get_ingestion_input::GetIngestionInput;
+
+pub use crate::operation::get_ingestion::_get_ingestion_output::GetIngestionOutput;
 
 mod _get_ingestion_input;
 

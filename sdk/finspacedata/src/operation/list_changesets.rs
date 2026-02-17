@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_changesets::L
     }
 }
 
-pub use crate::operation::list_changesets::_list_changesets_output::ListChangesetsOutput;
-
 pub use crate::operation::list_changesets::_list_changesets_input::ListChangesetsInput;
+
+pub use crate::operation::list_changesets::_list_changesets_output::ListChangesetsOutput;
 
 mod _list_changesets_input;
 

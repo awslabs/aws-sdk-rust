@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_bill_estimate_input_usage_modifications::_list_bill_estimate_input_usage_modifications_output::ListBillEstimateInputUsageModificationsOutput;
-
 pub use crate::operation::list_bill_estimate_input_usage_modifications::_list_bill_estimate_input_usage_modifications_input::ListBillEstimateInputUsageModificationsInput;
+
+pub use crate::operation::list_bill_estimate_input_usage_modifications::_list_bill_estimate_input_usage_modifications_output::ListBillEstimateInputUsageModificationsOutput;
 
 mod _list_bill_estimate_input_usage_modifications_input;
 

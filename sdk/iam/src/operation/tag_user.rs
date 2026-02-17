@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_user::TagUserE
     }
 }
 
-pub use crate::operation::tag_user::_tag_user_output::TagUserOutput;
-
 pub use crate::operation::tag_user::_tag_user_input::TagUserInput;
+
+pub use crate::operation::tag_user::_tag_user_output::TagUserOutput;
 
 mod _tag_user_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_qualificati
     }
 }
 
-pub use crate::operation::update_qualification_type::_update_qualification_type_output::UpdateQualificationTypeOutput;
-
 pub use crate::operation::update_qualification_type::_update_qualification_type_input::UpdateQualificationTypeInput;
+
+pub use crate::operation::update_qualification_type::_update_qualification_type_output::UpdateQualificationTypeOutput;
 
 mod _update_qualification_type_input;
 

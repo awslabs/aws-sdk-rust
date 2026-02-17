@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_ecs_service_recommendation_projected_metrics::_get_ecs_service_recommendation_projected_metrics_output::GetEcsServiceRecommendationProjectedMetricsOutput;
-
 pub use crate::operation::get_ecs_service_recommendation_projected_metrics::_get_ecs_service_recommendation_projected_metrics_input::GetEcsServiceRecommendationProjectedMetricsInput;
+
+pub use crate::operation::get_ecs_service_recommendation_projected_metrics::_get_ecs_service_recommendation_projected_metrics_output::GetEcsServiceRecommendationProjectedMetricsOutput;
 
 mod _get_ecs_service_recommendation_projected_metrics_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_predictor::
     }
 }
 
-pub use crate::operation::delete_predictor::_delete_predictor_output::DeletePredictorOutput;
-
 pub use crate::operation::delete_predictor::_delete_predictor_input::DeletePredictorInput;
+
+pub use crate::operation::delete_predictor::_delete_predictor_output::DeletePredictorOutput;
 
 mod _delete_predictor_input;
 

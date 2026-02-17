@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_id_mapping_wor
     }
 }
 
-pub use crate::operation::get_id_mapping_workflow::_get_id_mapping_workflow_output::GetIdMappingWorkflowOutput;
-
 pub use crate::operation::get_id_mapping_workflow::_get_id_mapping_workflow_input::GetIdMappingWorkflowInput;
+
+pub use crate::operation::get_id_mapping_workflow::_get_id_mapping_workflow_output::GetIdMappingWorkflowOutput;
 
 mod _get_id_mapping_workflow_input;
 

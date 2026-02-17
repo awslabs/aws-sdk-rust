@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_subnet_g
     }
 }
 
-pub use crate::operation::create_db_subnet_group::_create_db_subnet_group_output::CreateDbSubnetGroupOutput;
-
 pub use crate::operation::create_db_subnet_group::_create_db_subnet_group_input::CreateDbSubnetGroupInput;
+
+pub use crate::operation::create_db_subnet_group::_create_db_subnet_group_output::CreateDbSubnetGroupOutput;
 
 mod _create_db_subnet_group_input;
 

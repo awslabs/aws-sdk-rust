@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_schemas::List
     }
 }
 
-pub use crate::operation::list_schemas::_list_schemas_output::ListSchemasOutput;
-
 pub use crate::operation::list_schemas::_list_schemas_input::ListSchemasInput;
+
+pub use crate::operation::list_schemas::_list_schemas_output::ListSchemasOutput;
 
 mod _list_schemas_input;
 

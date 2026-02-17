@@ -521,9 +521,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_attribute
     }
 }
 
-pub use crate::operation::get_user_attribute_verification_code::_get_user_attribute_verification_code_output::GetUserAttributeVerificationCodeOutput;
-
 pub use crate::operation::get_user_attribute_verification_code::_get_user_attribute_verification_code_input::GetUserAttributeVerificationCodeInput;
+
+pub use crate::operation::get_user_attribute_verification_code::_get_user_attribute_verification_code_output::GetUserAttributeVerificationCodeOutput;
 
 mod _get_user_attribute_verification_code_input;
 

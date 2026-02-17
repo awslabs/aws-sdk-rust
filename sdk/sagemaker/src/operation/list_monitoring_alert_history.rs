@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_monitoring_al
     }
 }
 
-pub use crate::operation::list_monitoring_alert_history::_list_monitoring_alert_history_output::ListMonitoringAlertHistoryOutput;
-
 pub use crate::operation::list_monitoring_alert_history::_list_monitoring_alert_history_input::ListMonitoringAlertHistoryInput;
+
+pub use crate::operation::list_monitoring_alert_history::_list_monitoring_alert_history_output::ListMonitoringAlertHistoryOutput;
 
 mod _list_monitoring_alert_history_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_objectives::L
     }
 }
 
-pub use crate::operation::list_objectives::_list_objectives_output::ListObjectivesOutput;
-
 pub use crate::operation::list_objectives::_list_objectives_input::ListObjectivesInput;
+
+pub use crate::operation::list_objectives::_list_objectives_output::ListObjectivesOutput;
 
 mod _list_objectives_input;
 

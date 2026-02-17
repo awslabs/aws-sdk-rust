@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::claim_phone_number
     }
 }
 
-pub use crate::operation::claim_phone_number::_claim_phone_number_output::ClaimPhoneNumberOutput;
-
 pub use crate::operation::claim_phone_number::_claim_phone_number_input::ClaimPhoneNumberInput;
+
+pub use crate::operation::claim_phone_number::_claim_phone_number_output::ClaimPhoneNumberOutput;
 
 mod _claim_phone_number_input;
 

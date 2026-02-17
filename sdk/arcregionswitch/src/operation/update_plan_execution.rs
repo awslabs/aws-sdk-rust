@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_plan_execut
     }
 }
 
-pub use crate::operation::update_plan_execution::_update_plan_execution_output::UpdatePlanExecutionOutput;
-
 pub use crate::operation::update_plan_execution::_update_plan_execution_input::UpdatePlanExecutionInput;
+
+pub use crate::operation::update_plan_execution::_update_plan_execution_output::UpdatePlanExecutionOutput;
 
 mod _update_plan_execution_input;
 

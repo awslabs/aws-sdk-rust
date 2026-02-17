@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_object_storage::_describe_location_object_storage_output::DescribeLocationObjectStorageOutput;
-
 pub use crate::operation::describe_location_object_storage::_describe_location_object_storage_input::DescribeLocationObjectStorageInput;
+
+pub use crate::operation::describe_location_object_storage::_describe_location_object_storage_output::DescribeLocationObjectStorageOutput;
 
 mod _describe_location_object_storage_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_relays::ListR
     }
 }
 
-pub use crate::operation::list_relays::_list_relays_output::ListRelaysOutput;
-
 pub use crate::operation::list_relays::_list_relays_input::ListRelaysInput;
+
+pub use crate::operation::list_relays::_list_relays_output::ListRelaysOutput;
 
 mod _list_relays_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_collaborati
     }
 }
 
-pub use crate::operation::update_collaboration_change_request::_update_collaboration_change_request_output::UpdateCollaborationChangeRequestOutput;
-
 pub use crate::operation::update_collaboration_change_request::_update_collaboration_change_request_input::UpdateCollaborationChangeRequestInput;
+
+pub use crate::operation::update_collaboration_change_request::_update_collaboration_change_request_output::UpdateCollaborationChangeRequestOutput;
 
 mod _update_collaboration_change_request_input;
 

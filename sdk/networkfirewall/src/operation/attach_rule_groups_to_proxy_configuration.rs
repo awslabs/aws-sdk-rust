@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_rule_groups
     }
 }
 
-pub use crate::operation::attach_rule_groups_to_proxy_configuration::_attach_rule_groups_to_proxy_configuration_output::AttachRuleGroupsToProxyConfigurationOutput;
-
 pub use crate::operation::attach_rule_groups_to_proxy_configuration::_attach_rule_groups_to_proxy_configuration_input::AttachRuleGroupsToProxyConfigurationInput;
+
+pub use crate::operation::attach_rule_groups_to_proxy_configuration::_attach_rule_groups_to_proxy_configuration_output::AttachRuleGroupsToProxyConfigurationOutput;
 
 mod _attach_rule_groups_to_proxy_configuration_input;
 

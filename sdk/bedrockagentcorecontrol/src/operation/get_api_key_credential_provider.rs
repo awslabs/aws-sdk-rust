@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_api_key_creden
     }
 }
 
-pub use crate::operation::get_api_key_credential_provider::_get_api_key_credential_provider_output::GetApiKeyCredentialProviderOutput;
-
 pub use crate::operation::get_api_key_credential_provider::_get_api_key_credential_provider_input::GetApiKeyCredentialProviderInput;
+
+pub use crate::operation::get_api_key_credential_provider::_get_api_key_credential_provider_output::GetApiKeyCredentialProviderOutput;
 
 mod _get_api_key_credential_provider_input;
 

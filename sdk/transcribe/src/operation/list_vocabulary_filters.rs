@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vocabulary_fi
     }
 }
 
-pub use crate::operation::list_vocabulary_filters::_list_vocabulary_filters_output::ListVocabularyFiltersOutput;
-
 pub use crate::operation::list_vocabulary_filters::_list_vocabulary_filters_input::ListVocabularyFiltersInput;
+
+pub use crate::operation::list_vocabulary_filters::_list_vocabulary_filters_output::ListVocabularyFiltersOutput;
 
 mod _list_vocabulary_filters_input;
 

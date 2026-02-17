@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_share
     }
 }
 
-pub use crate::operation::get_resource_shares::_get_resource_shares_output::GetResourceSharesOutput;
-
 pub use crate::operation::get_resource_shares::_get_resource_shares_input::GetResourceSharesInput;
+
+pub use crate::operation::get_resource_shares::_get_resource_shares_output::GetResourceSharesOutput;
 
 mod _get_resource_shares_input;
 

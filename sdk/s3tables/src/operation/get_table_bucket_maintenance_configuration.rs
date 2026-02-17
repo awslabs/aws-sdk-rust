@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_table_bucket_maintenance_configuration::_get_table_bucket_maintenance_configuration_output::GetTableBucketMaintenanceConfigurationOutput;
-
 pub use crate::operation::get_table_bucket_maintenance_configuration::_get_table_bucket_maintenance_configuration_input::GetTableBucketMaintenanceConfigurationInput;
+
+pub use crate::operation::get_table_bucket_maintenance_configuration::_get_table_bucket_maintenance_configuration_output::GetTableBucketMaintenanceConfigurationOutput;
 
 mod _get_table_bucket_maintenance_configuration_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_adv
     }
 }
 
-pub use crate::operation::describe_fleet_advisor_collectors::_describe_fleet_advisor_collectors_output::DescribeFleetAdvisorCollectorsOutput;
-
 pub use crate::operation::describe_fleet_advisor_collectors::_describe_fleet_advisor_collectors_input::DescribeFleetAdvisorCollectorsInput;
+
+pub use crate::operation::describe_fleet_advisor_collectors::_describe_fleet_advisor_collectors_output::DescribeFleetAdvisorCollectorsOutput;
 
 mod _describe_fleet_advisor_collectors_input;
 

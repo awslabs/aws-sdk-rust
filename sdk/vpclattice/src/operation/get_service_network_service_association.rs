@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_networ
     }
 }
 
-pub use crate::operation::get_service_network_service_association::_get_service_network_service_association_output::GetServiceNetworkServiceAssociationOutput;
-
 pub use crate::operation::get_service_network_service_association::_get_service_network_service_association_input::GetServiceNetworkServiceAssociationInput;
+
+pub use crate::operation::get_service_network_service_association::_get_service_network_service_association_output::GetServiceNetworkServiceAssociationOutput;
 
 mod _get_service_network_service_association_input;
 

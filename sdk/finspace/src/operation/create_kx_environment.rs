@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_environm
     }
 }
 
-pub use crate::operation::create_kx_environment::_create_kx_environment_output::CreateKxEnvironmentOutput;
-
 pub use crate::operation::create_kx_environment::_create_kx_environment_input::CreateKxEnvironmentInput;
+
+pub use crate::operation::create_kx_environment::_create_kx_environment_output::CreateKxEnvironmentOutput;
 
 mod _create_kx_environment_input;
 

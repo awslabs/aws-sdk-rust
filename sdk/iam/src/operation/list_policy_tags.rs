@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_tags::
     }
 }
 
-pub use crate::operation::list_policy_tags::_list_policy_tags_output::ListPolicyTagsOutput;
-
 pub use crate::operation::list_policy_tags::_list_policy_tags_input::ListPolicyTagsInput;
+
+pub use crate::operation::list_policy_tags::_list_policy_tags_output::ListPolicyTagsOutput;
 
 mod _list_policy_tags_input;
 

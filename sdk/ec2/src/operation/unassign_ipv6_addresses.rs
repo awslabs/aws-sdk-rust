@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unassign_ipv6_addr
     }
 }
 
-pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_output::UnassignIpv6AddressesOutput;
-
 pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_input::UnassignIpv6AddressesInput;
+
+pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_output::UnassignIpv6AddressesOutput;
 
 mod _unassign_ipv6_addresses_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::notify_update_provisioned_product_engine_workflow_result::_notify_update_provisioned_product_engine_workflow_result_output::NotifyUpdateProvisionedProductEngineWorkflowResultOutput;
-
 pub use crate::operation::notify_update_provisioned_product_engine_workflow_result::_notify_update_provisioned_product_engine_workflow_result_input::NotifyUpdateProvisionedProductEngineWorkflowResultInput;
+
+pub use crate::operation::notify_update_provisioned_product_engine_workflow_result::_notify_update_provisioned_product_engine_workflow_result_output::NotifyUpdateProvisionedProductEngineWorkflowResultOutput;
 
 mod _notify_update_provisioned_product_engine_workflow_result_input;
 

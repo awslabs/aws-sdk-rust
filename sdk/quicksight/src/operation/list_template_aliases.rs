@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_template_alia
     }
 }
 
-pub use crate::operation::list_template_aliases::_list_template_aliases_output::ListTemplateAliasesOutput;
-
 pub use crate::operation::list_template_aliases::_list_template_aliases_input::ListTemplateAliasesInput;
+
+pub use crate::operation::list_template_aliases::_list_template_aliases_output::ListTemplateAliasesOutput;
 
 mod _list_template_aliases_input;
 

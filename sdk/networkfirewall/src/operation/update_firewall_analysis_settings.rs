@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_firewall_an
     }
 }
 
-pub use crate::operation::update_firewall_analysis_settings::_update_firewall_analysis_settings_output::UpdateFirewallAnalysisSettingsOutput;
-
 pub use crate::operation::update_firewall_analysis_settings::_update_firewall_analysis_settings_input::UpdateFirewallAnalysisSettingsInput;
+
+pub use crate::operation::update_firewall_analysis_settings::_update_firewall_analysis_settings_output::UpdateFirewallAnalysisSettingsOutput;
 
 mod _update_firewall_analysis_settings_input;
 

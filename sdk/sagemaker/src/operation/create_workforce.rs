@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workforce::
     }
 }
 
-pub use crate::operation::create_workforce::_create_workforce_output::CreateWorkforceOutput;
-
 pub use crate::operation::create_workforce::_create_workforce_input::CreateWorkforceInput;
+
+pub use crate::operation::create_workforce::_create_workforce_output::CreateWorkforceOutput;
 
 mod _create_workforce_input;
 

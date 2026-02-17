@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_trust_st
     }
 }
 
-pub use crate::operation::associate_trust_store::_associate_trust_store_output::AssociateTrustStoreOutput;
-
 pub use crate::operation::associate_trust_store::_associate_trust_store_input::AssociateTrustStoreInput;
+
+pub use crate::operation::associate_trust_store::_associate_trust_store_output::AssociateTrustStoreOutput;
 
 mod _associate_trust_store_input;
 

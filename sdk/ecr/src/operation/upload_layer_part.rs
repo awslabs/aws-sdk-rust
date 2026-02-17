@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_layer_part:
     }
 }
 
-pub use crate::operation::upload_layer_part::_upload_layer_part_output::UploadLayerPartOutput;
-
 pub use crate::operation::upload_layer_part::_upload_layer_part_input::UploadLayerPartInput;
+
+pub use crate::operation::upload_layer_part::_upload_layer_part_output::UploadLayerPartOutput;
 
 mod _upload_layer_part_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_predefined_
     }
 }
 
-pub use crate::operation::update_predefined_attribute::_update_predefined_attribute_output::UpdatePredefinedAttributeOutput;
-
 pub use crate::operation::update_predefined_attribute::_update_predefined_attribute_input::UpdatePredefinedAttributeInput;
+
+pub use crate::operation::update_predefined_attribute::_update_predefined_attribute_output::UpdatePredefinedAttributeOutput;
 
 mod _update_predefined_attribute_input;
 

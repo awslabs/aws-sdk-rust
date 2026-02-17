@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_schema_mappin
     }
 }
 
-pub use crate::operation::list_schema_mappings::_list_schema_mappings_output::ListSchemaMappingsOutput;
-
 pub use crate::operation::list_schema_mappings::_list_schema_mappings_input::ListSchemaMappingsInput;
+
+pub use crate::operation::list_schema_mappings::_list_schema_mappings_output::ListSchemaMappingsOutput;
 
 mod _list_schema_mappings_input;
 

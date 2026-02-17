@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_registration_c
     }
 }
 
-pub use crate::operation::get_registration_code::_get_registration_code_output::GetRegistrationCodeOutput;
-
 pub use crate::operation::get_registration_code::_get_registration_code_input::GetRegistrationCodeInput;
+
+pub use crate::operation::get_registration_code::_get_registration_code_output::GetRegistrationCodeOutput;
 
 mod _get_registration_code_input;
 

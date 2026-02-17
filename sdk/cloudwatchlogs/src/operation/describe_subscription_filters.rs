@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_subscript
     }
 }
 
-pub use crate::operation::describe_subscription_filters::_describe_subscription_filters_output::DescribeSubscriptionFiltersOutput;
-
 pub use crate::operation::describe_subscription_filters::_describe_subscription_filters_input::DescribeSubscriptionFiltersInput;
+
+pub use crate::operation::describe_subscription_filters::_describe_subscription_filters_output::DescribeSubscriptionFiltersOutput;
 
 mod _describe_subscription_filters_input;
 

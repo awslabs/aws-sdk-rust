@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_set_revi
     }
 }
 
-pub use crate::operation::list_data_set_revisions::_list_data_set_revisions_output::ListDataSetRevisionsOutput;
-
 pub use crate::operation::list_data_set_revisions::_list_data_set_revisions_input::ListDataSetRevisionsInput;
+
+pub use crate::operation::list_data_set_revisions::_list_data_set_revisions_output::ListDataSetRevisionsOutput;
 
 mod _list_data_set_revisions_input;
 

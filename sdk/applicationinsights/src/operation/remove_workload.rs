@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_workload::R
     }
 }
 
-pub use crate::operation::remove_workload::_remove_workload_output::RemoveWorkloadOutput;
-
 pub use crate::operation::remove_workload::_remove_workload_input::RemoveWorkloadInput;
+
+pub use crate::operation::remove_workload::_remove_workload_output::RemoveWorkloadOutput;
 
 mod _remove_workload_input;
 

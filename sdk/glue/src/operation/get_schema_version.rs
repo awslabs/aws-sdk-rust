@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_version
     }
 }
 
-pub use crate::operation::get_schema_version::_get_schema_version_output::GetSchemaVersionOutput;
-
 pub use crate::operation::get_schema_version::_get_schema_version_input::GetSchemaVersionInput;
+
+pub use crate::operation::get_schema_version::_get_schema_version_output::GetSchemaVersionOutput;
 
 mod _get_schema_version_input;
 

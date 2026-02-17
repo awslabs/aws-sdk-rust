@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_raster_data_co
     }
 }
 
-pub use crate::operation::get_raster_data_collection::_get_raster_data_collection_output::GetRasterDataCollectionOutput;
-
 pub use crate::operation::get_raster_data_collection::_get_raster_data_collection_input::GetRasterDataCollectionInput;
+
+pub use crate::operation::get_raster_data_collection::_get_raster_data_collection_output::GetRasterDataCollectionOutput;
 
 mod _get_raster_data_collection_input;
 

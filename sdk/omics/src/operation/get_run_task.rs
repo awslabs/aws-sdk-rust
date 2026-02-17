@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_run_task::GetR
     }
 }
 
-pub use crate::operation::get_run_task::_get_run_task_output::GetRunTaskOutput;
-
 pub use crate::operation::get_run_task::_get_run_task_input::GetRunTaskInput;
+
+pub use crate::operation::get_run_task::_get_run_task_output::GetRunTaskOutput;
 
 mod _get_run_task_input;
 

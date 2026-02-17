@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_budget_pe
     }
 }
 
-pub use crate::operation::describe_budget_performance_history::_describe_budget_performance_history_output::DescribeBudgetPerformanceHistoryOutput;
-
 pub use crate::operation::describe_budget_performance_history::_describe_budget_performance_history_input::DescribeBudgetPerformanceHistoryInput;
+
+pub use crate::operation::describe_budget_performance_history::_describe_budget_performance_history_output::DescribeBudgetPerformanceHistoryOutput;
 
 mod _describe_budget_performance_history_input;
 

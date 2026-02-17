@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_virtual_gat
     }
 }
 
-pub use crate::operation::update_virtual_gateway::_update_virtual_gateway_output::UpdateVirtualGatewayOutput;
-
 pub use crate::operation::update_virtual_gateway::_update_virtual_gateway_input::UpdateVirtualGatewayInput;
+
+pub use crate::operation::update_virtual_gateway::_update_virtual_gateway_output::UpdateVirtualGatewayOutput;
 
 mod _update_virtual_gateway_input;
 

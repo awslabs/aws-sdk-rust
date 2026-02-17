@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_domain_trans
     }
 }
 
-pub use crate::operation::check_domain_transferability::_check_domain_transferability_output::CheckDomainTransferabilityOutput;
-
 pub use crate::operation::check_domain_transferability::_check_domain_transferability_input::CheckDomainTransferabilityInput;
+
+pub use crate::operation::check_domain_transferability::_check_domain_transferability_output::CheckDomainTransferabilityOutput;
 
 mod _check_domain_transferability_input;
 

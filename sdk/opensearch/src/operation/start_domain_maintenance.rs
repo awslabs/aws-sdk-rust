@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_domain_maint
     }
 }
 
-pub use crate::operation::start_domain_maintenance::_start_domain_maintenance_output::StartDomainMaintenanceOutput;
-
 pub use crate::operation::start_domain_maintenance::_start_domain_maintenance_input::StartDomainMaintenanceInput;
+
+pub use crate::operation::start_domain_maintenance::_start_domain_maintenance_output::StartDomainMaintenanceOutput;
 
 mod _start_domain_maintenance_input;
 

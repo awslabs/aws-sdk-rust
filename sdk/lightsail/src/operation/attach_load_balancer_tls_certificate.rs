@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_load_balanc
     }
 }
 
-pub use crate::operation::attach_load_balancer_tls_certificate::_attach_load_balancer_tls_certificate_output::AttachLoadBalancerTlsCertificateOutput;
-
 pub use crate::operation::attach_load_balancer_tls_certificate::_attach_load_balancer_tls_certificate_input::AttachLoadBalancerTlsCertificateInput;
+
+pub use crate::operation::attach_load_balancer_tls_certificate::_attach_load_balancer_tls_certificate_output::AttachLoadBalancerTlsCertificateOutput;
 
 mod _attach_load_balancer_tls_certificate_input;
 

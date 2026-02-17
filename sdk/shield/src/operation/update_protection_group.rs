@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_protection_
     }
 }
 
-pub use crate::operation::update_protection_group::_update_protection_group_output::UpdateProtectionGroupOutput;
-
 pub use crate::operation::update_protection_group::_update_protection_group_input::UpdateProtectionGroupInput;
+
+pub use crate::operation::update_protection_group::_update_protection_group_output::UpdateProtectionGroupOutput;
 
 mod _update_protection_group_input;
 

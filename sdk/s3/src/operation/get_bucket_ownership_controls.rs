@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_ownersh
     }
 }
 
-pub use crate::operation::get_bucket_ownership_controls::_get_bucket_ownership_controls_output::GetBucketOwnershipControlsOutput;
-
 pub use crate::operation::get_bucket_ownership_controls::_get_bucket_ownership_controls_input::GetBucketOwnershipControlsInput;
+
+pub use crate::operation::get_bucket_ownership_controls::_get_bucket_ownership_controls_output::GetBucketOwnershipControlsOutput;
 
 mod _get_bucket_ownership_controls_input;
 

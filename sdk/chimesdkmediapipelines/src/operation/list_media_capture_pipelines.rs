@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_media_capture
     }
 }
 
-pub use crate::operation::list_media_capture_pipelines::_list_media_capture_pipelines_output::ListMediaCapturePipelinesOutput;
-
 pub use crate::operation::list_media_capture_pipelines::_list_media_capture_pipelines_input::ListMediaCapturePipelinesInput;
+
+pub use crate::operation::list_media_capture_pipelines::_list_media_capture_pipelines_output::ListMediaCapturePipelinesOutput;
 
 mod _list_media_capture_pipelines_input;
 

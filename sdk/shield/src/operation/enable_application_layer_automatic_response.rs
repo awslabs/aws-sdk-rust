@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_application_layer_automatic_response::_enable_application_layer_automatic_response_output::EnableApplicationLayerAutomaticResponseOutput;
-
 pub use crate::operation::enable_application_layer_automatic_response::_enable_application_layer_automatic_response_input::EnableApplicationLayerAutomaticResponseInput;
+
+pub use crate::operation::enable_application_layer_automatic_response::_enable_application_layer_automatic_response_output::EnableApplicationLayerAutomaticResponseOutput;
 
 mod _enable_application_layer_automatic_response_input;
 

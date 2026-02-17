@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pipeline_ve
     }
 }
 
-pub use crate::operation::update_pipeline_version::_update_pipeline_version_output::UpdatePipelineVersionOutput;
-
 pub use crate::operation::update_pipeline_version::_update_pipeline_version_input::UpdatePipelineVersionInput;
+
+pub use crate::operation::update_pipeline_version::_update_pipeline_version_output::UpdatePipelineVersionOutput;
 
 mod _update_pipeline_version_input;
 

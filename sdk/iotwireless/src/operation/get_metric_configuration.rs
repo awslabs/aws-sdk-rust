@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metric_configu
     }
 }
 
-pub use crate::operation::get_metric_configuration::_get_metric_configuration_output::GetMetricConfigurationOutput;
-
 pub use crate::operation::get_metric_configuration::_get_metric_configuration_input::GetMetricConfigurationInput;
+
+pub use crate::operation::get_metric_configuration::_get_metric_configuration_output::GetMetricConfigurationOutput;
 
 mod _get_metric_configuration_input;
 

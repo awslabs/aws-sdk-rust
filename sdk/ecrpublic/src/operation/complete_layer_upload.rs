@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_layer_upl
     }
 }
 
-pub use crate::operation::complete_layer_upload::_complete_layer_upload_output::CompleteLayerUploadOutput;
-
 pub use crate::operation::complete_layer_upload::_complete_layer_upload_input::CompleteLayerUploadInput;
+
+pub use crate::operation::complete_layer_upload::_complete_layer_upload_output::CompleteLayerUploadOutput;
 
 mod _complete_layer_upload_input;
 

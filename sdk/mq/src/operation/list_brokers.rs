@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_brokers::List
     }
 }
 
-pub use crate::operation::list_brokers::_list_brokers_output::ListBrokersOutput;
-
 pub use crate::operation::list_brokers::_list_brokers_input::ListBrokersInput;
+
+pub use crate::operation::list_brokers::_list_brokers_output::ListBrokersOutput;
 
 mod _list_brokers_input;
 

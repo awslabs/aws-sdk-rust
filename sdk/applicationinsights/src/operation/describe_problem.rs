@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_problem::
     }
 }
 
-pub use crate::operation::describe_problem::_describe_problem_output::DescribeProblemOutput;
-
 pub use crate::operation::describe_problem::_describe_problem_input::DescribeProblemInput;
+
+pub use crate::operation::describe_problem::_describe_problem_output::DescribeProblemOutput;
 
 mod _describe_problem_input;
 

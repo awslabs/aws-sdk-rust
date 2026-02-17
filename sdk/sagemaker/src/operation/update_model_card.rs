@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_model_card:
     }
 }
 
-pub use crate::operation::update_model_card::_update_model_card_output::UpdateModelCardOutput;
-
 pub use crate::operation::update_model_card::_update_model_card_input::UpdateModelCardInput;
+
+pub use crate::operation::update_model_card::_update_model_card_output::UpdateModelCardOutput;
 
 mod _update_model_card_input;
 

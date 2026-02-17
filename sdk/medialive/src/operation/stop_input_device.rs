@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_input_device:
     }
 }
 
-pub use crate::operation::stop_input_device::_stop_input_device_output::StopInputDeviceOutput;
-
 pub use crate::operation::stop_input_device::_stop_input_device_input::StopInputDeviceInput;
+
+pub use crate::operation::stop_input_device::_stop_input_device_output::StopInputDeviceOutput;
 
 mod _stop_input_device_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_resolver
     }
 }
 
-pub use crate::operation::associate_resolver_rule::_associate_resolver_rule_output::AssociateResolverRuleOutput;
-
 pub use crate::operation::associate_resolver_rule::_associate_resolver_rule_input::AssociateResolverRuleInput;
+
+pub use crate::operation::associate_resolver_rule::_associate_resolver_rule_output::AssociateResolverRuleOutput;
 
 mod _associate_resolver_rule_input;
 

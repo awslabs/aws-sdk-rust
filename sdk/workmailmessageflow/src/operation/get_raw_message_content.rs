@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_raw_message_co
     }
 }
 
-pub use crate::operation::get_raw_message_content::_get_raw_message_content_output::GetRawMessageContentOutput;
-
 pub use crate::operation::get_raw_message_content::_get_raw_message_content_input::GetRawMessageContentInput;
+
+pub use crate::operation::get_raw_message_content::_get_raw_message_content_output::GetRawMessageContentOutput;
 
 mod _get_raw_message_content_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_organization_a
     }
 }
 
-pub use crate::operation::get_organization_admin_account::_get_organization_admin_account_output::GetOrganizationAdminAccountOutput;
-
 pub use crate::operation::get_organization_admin_account::_get_organization_admin_account_input::GetOrganizationAdminAccountInput;
+
+pub use crate::operation::get_organization_admin_account::_get_organization_admin_account_output::GetOrganizationAdminAccountOutput;
 
 mod _get_organization_admin_account_input;
 

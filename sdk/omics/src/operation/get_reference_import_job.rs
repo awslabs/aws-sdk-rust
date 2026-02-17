@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reference_impo
     }
 }
 
-pub use crate::operation::get_reference_import_job::_get_reference_import_job_output::GetReferenceImportJobOutput;
-
 pub use crate::operation::get_reference_import_job::_get_reference_import_job_input::GetReferenceImportJobInput;
+
+pub use crate::operation::get_reference_import_job::_get_reference_import_job_output::GetReferenceImportJobOutput;
 
 mod _get_reference_import_job_input;
 

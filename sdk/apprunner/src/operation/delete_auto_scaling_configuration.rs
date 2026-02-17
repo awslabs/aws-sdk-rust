@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_auto_scalin
     }
 }
 
-pub use crate::operation::delete_auto_scaling_configuration::_delete_auto_scaling_configuration_output::DeleteAutoScalingConfigurationOutput;
-
 pub use crate::operation::delete_auto_scaling_configuration::_delete_auto_scaling_configuration_input::DeleteAutoScalingConfigurationInput;
+
+pub use crate::operation::delete_auto_scaling_configuration::_delete_auto_scaling_configuration_output::DeleteAutoScalingConfigurationOutput;
 
 mod _delete_auto_scaling_configuration_input;
 

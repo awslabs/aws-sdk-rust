@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::change_cidr_collec
     }
 }
 
-pub use crate::operation::change_cidr_collection::_change_cidr_collection_output::ChangeCidrCollectionOutput;
-
 pub use crate::operation::change_cidr_collection::_change_cidr_collection_input::ChangeCidrCollectionInput;
+
+pub use crate::operation::change_cidr_collection::_change_cidr_collection_output::ChangeCidrCollectionOutput;
 
 mod _change_cidr_collection_input;
 

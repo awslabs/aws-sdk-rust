@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_load_balancer_policies_for_backend_server_output::SetLoadBalancerPoliciesForBackendServerOutput;
-
 pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_load_balancer_policies_for_backend_server_input::SetLoadBalancerPoliciesForBackendServerInput;
+
+pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_load_balancer_policies_for_backend_server_output::SetLoadBalancerPoliciesForBackendServerOutput;
 
 mod _set_load_balancer_policies_for_backend_server_input;
 

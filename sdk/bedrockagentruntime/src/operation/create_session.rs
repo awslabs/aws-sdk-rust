@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_session::Cr
     }
 }
 
-pub use crate::operation::create_session::_create_session_output::CreateSessionOutput;
-
 pub use crate::operation::create_session::_create_session_input::CreateSessionInput;
+
+pub use crate::operation::create_session::_create_session_output::CreateSessionOutput;
 
 mod _create_session_input;
 

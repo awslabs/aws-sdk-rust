@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_placement_g
     }
 }
 
-pub use crate::operation::create_placement_group::_create_placement_group_output::CreatePlacementGroupOutput;
-
 pub use crate::operation::create_placement_group::_create_placement_group_input::CreatePlacementGroupInput;
+
+pub use crate::operation::create_placement_group::_create_placement_group_output::CreatePlacementGroupOutput;
 
 mod _create_placement_group_input;
 

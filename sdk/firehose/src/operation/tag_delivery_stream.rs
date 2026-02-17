@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_delivery_strea
     }
 }
 
-pub use crate::operation::tag_delivery_stream::_tag_delivery_stream_output::TagDeliveryStreamOutput;
-
 pub use crate::operation::tag_delivery_stream::_tag_delivery_stream_input::TagDeliveryStreamInput;
+
+pub use crate::operation::tag_delivery_stream::_tag_delivery_stream_output::TagDeliveryStreamOutput;
 
 mod _tag_delivery_stream_input;
 

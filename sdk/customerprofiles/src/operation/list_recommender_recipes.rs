@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recommender_r
     }
 }
 
-pub use crate::operation::list_recommender_recipes::_list_recommender_recipes_output::ListRecommenderRecipesOutput;
-
 pub use crate::operation::list_recommender_recipes::_list_recommender_recipes_input::ListRecommenderRecipesInput;
+
+pub use crate::operation::list_recommender_recipes::_list_recommender_recipes_output::ListRecommenderRecipesOutput;
 
 mod _list_recommender_recipes_input;
 

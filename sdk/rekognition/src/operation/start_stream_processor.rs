@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_stream_proce
     }
 }
 
-pub use crate::operation::start_stream_processor::_start_stream_processor_output::StartStreamProcessorOutput;
-
 pub use crate::operation::start_stream_processor::_start_stream_processor_input::StartStreamProcessorInput;
+
+pub use crate::operation::start_stream_processor::_start_stream_processor_output::StartStreamProcessorOutput;
 
 mod _start_stream_processor_input;
 

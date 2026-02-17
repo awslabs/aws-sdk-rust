@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_phone_numb
     }
 }
 
-pub use crate::operation::release_phone_number::_release_phone_number_output::ReleasePhoneNumberOutput;
-
 pub use crate::operation::release_phone_number::_release_phone_number_input::ReleasePhoneNumberInput;
+
+pub use crate::operation::release_phone_number::_release_phone_number_output::ReleasePhoneNumberOutput;
 
 mod _release_phone_number_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_action_type::G
     }
 }
 
-pub use crate::operation::get_action_type::_get_action_type_output::GetActionTypeOutput;
-
 pub use crate::operation::get_action_type::_get_action_type_input::GetActionTypeInput;
+
+pub use crate::operation::get_action_type::_get_action_type_output::GetActionTypeOutput;
 
 mod _get_action_type_input;
 

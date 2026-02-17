@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deny_custom_routin
     }
 }
 
-pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traffic_output::DenyCustomRoutingTrafficOutput;
-
 pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traffic_input::DenyCustomRoutingTrafficInput;
+
+pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traffic_output::DenyCustomRoutingTrafficOutput;
 
 mod _deny_custom_routing_traffic_input;
 

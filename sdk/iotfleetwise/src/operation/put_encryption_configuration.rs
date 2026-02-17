@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_encryption_con
     }
 }
 
-pub use crate::operation::put_encryption_configuration::_put_encryption_configuration_output::PutEncryptionConfigurationOutput;
-
 pub use crate::operation::put_encryption_configuration::_put_encryption_configuration_input::PutEncryptionConfigurationInput;
+
+pub use crate::operation::put_encryption_configuration::_put_encryption_configuration_output::PutEncryptionConfigurationOutput;
 
 mod _put_encryption_configuration_input;
 

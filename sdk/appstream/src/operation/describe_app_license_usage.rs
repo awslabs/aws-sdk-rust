@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_licen
     }
 }
 
-pub use crate::operation::describe_app_license_usage::_describe_app_license_usage_output::DescribeAppLicenseUsageOutput;
-
 pub use crate::operation::describe_app_license_usage::_describe_app_license_usage_input::DescribeAppLicenseUsageInput;
+
+pub use crate::operation::describe_app_license_usage::_describe_app_license_usage_output::DescribeAppLicenseUsageOutput;
 
 mod _describe_app_license_usage_input;
 

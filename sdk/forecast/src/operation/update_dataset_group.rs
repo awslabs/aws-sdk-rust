@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dataset_gro
     }
 }
 
-pub use crate::operation::update_dataset_group::_update_dataset_group_output::UpdateDatasetGroupOutput;
-
 pub use crate::operation::update_dataset_group::_update_dataset_group_input::UpdateDatasetGroupInput;
+
+pub use crate::operation::update_dataset_group::_update_dataset_group_output::UpdateDatasetGroupOutput;
 
 mod _update_dataset_group_input;
 

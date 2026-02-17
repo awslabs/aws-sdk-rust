@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ingress_point
     }
 }
 
-pub use crate::operation::list_ingress_points::_list_ingress_points_output::ListIngressPointsOutput;
-
 pub use crate::operation::list_ingress_points::_list_ingress_points_input::ListIngressPointsInput;
+
+pub use crate::operation::list_ingress_points::_list_ingress_points_output::ListIngressPointsOutput;
 
 mod _list_ingress_points_input;
 

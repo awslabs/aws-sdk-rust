@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_directory_
     }
 }
 
-pub use crate::operation::disable_directory_data_access::_disable_directory_data_access_output::DisableDirectoryDataAccessOutput;
-
 pub use crate::operation::disable_directory_data_access::_disable_directory_data_access_input::DisableDirectoryDataAccessInput;
+
+pub use crate::operation::disable_directory_data_access::_disable_directory_data_access_output::DisableDirectoryDataAccessOutput;
 
 mod _disable_directory_data_access_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_created_artif
     }
 }
 
-pub use crate::operation::list_created_artifacts::_list_created_artifacts_output::ListCreatedArtifactsOutput;
-
 pub use crate::operation::list_created_artifacts::_list_created_artifacts_input::ListCreatedArtifactsInput;
+
+pub use crate::operation::list_created_artifacts::_list_created_artifacts_output::ListCreatedArtifactsOutput;
 
 mod _list_created_artifacts_input;
 

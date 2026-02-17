@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_signing_cer
     }
 }
 
-pub use crate::operation::update_signing_certificate::_update_signing_certificate_output::UpdateSigningCertificateOutput;
-
 pub use crate::operation::update_signing_certificate::_update_signing_certificate_input::UpdateSigningCertificateInput;
+
+pub use crate::operation::update_signing_certificate::_update_signing_certificate_output::UpdateSigningCertificateOutput;
 
 mod _update_signing_certificate_input;
 

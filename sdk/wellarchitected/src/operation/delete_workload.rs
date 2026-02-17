@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workload::D
     }
 }
 
-pub use crate::operation::delete_workload::_delete_workload_output::DeleteWorkloadOutput;
-
 pub use crate::operation::delete_workload::_delete_workload_input::DeleteWorkloadInput;
+
+pub use crate::operation::delete_workload::_delete_workload_output::DeleteWorkloadOutput;
 
 mod _delete_workload_input;
 

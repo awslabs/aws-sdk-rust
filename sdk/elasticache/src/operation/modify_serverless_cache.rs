@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_serverless_
     }
 }
 
-pub use crate::operation::modify_serverless_cache::_modify_serverless_cache_output::ModifyServerlessCacheOutput;
-
 pub use crate::operation::modify_serverless_cache::_modify_serverless_cache_input::ModifyServerlessCacheInput;
+
+pub use crate::operation::modify_serverless_cache::_modify_serverless_cache_output::ModifyServerlessCacheOutput;
 
 mod _modify_serverless_cache_input;
 

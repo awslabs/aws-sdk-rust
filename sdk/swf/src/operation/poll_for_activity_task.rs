@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::poll_for_activity_
     }
 }
 
-pub use crate::operation::poll_for_activity_task::_poll_for_activity_task_output::PollForActivityTaskOutput;
-
 pub use crate::operation::poll_for_activity_task::_poll_for_activity_task_input::PollForActivityTaskInput;
+
+pub use crate::operation::poll_for_activity_task::_poll_for_activity_task_output::PollForActivityTaskOutput;
 
 mod _poll_for_activity_task_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connector_defi
     }
 }
 
-pub use crate::operation::get_connector_definition_version::_get_connector_definition_version_output::GetConnectorDefinitionVersionOutput;
-
 pub use crate::operation::get_connector_definition_version::_get_connector_definition_version_input::GetConnectorDefinitionVersionInput;
+
+pub use crate::operation::get_connector_definition_version::_get_connector_definition_version_output::GetConnectorDefinitionVersionOutput;
 
 mod _get_connector_definition_version_input;
 

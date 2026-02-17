@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_compute_n
     }
 }
 
-pub use crate::operation::register_compute_node_group_instance::_register_compute_node_group_instance_output::RegisterComputeNodeGroupInstanceOutput;
-
 pub use crate::operation::register_compute_node_group_instance::_register_compute_node_group_instance_input::RegisterComputeNodeGroupInstanceInput;
+
+pub use crate::operation::register_compute_node_group_instance::_register_compute_node_group_instance_output::RegisterComputeNodeGroupInstanceOutput;
 
 mod _register_compute_node_group_instance_input;
 

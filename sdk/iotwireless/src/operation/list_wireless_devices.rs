@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_wireless_devi
     }
 }
 
-pub use crate::operation::list_wireless_devices::_list_wireless_devices_output::ListWirelessDevicesOutput;
-
 pub use crate::operation::list_wireless_devices::_list_wireless_devices_input::ListWirelessDevicesInput;
+
+pub use crate::operation::list_wireless_devices::_list_wireless_devices_output::ListWirelessDevicesOutput;
 
 mod _list_wireless_devices_input;
 

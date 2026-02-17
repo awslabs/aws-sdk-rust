@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_declarative
     }
 }
 
-pub use crate::operation::cancel_declarative_policies_report::_cancel_declarative_policies_report_output::CancelDeclarativePoliciesReportOutput;
-
 pub use crate::operation::cancel_declarative_policies_report::_cancel_declarative_policies_report_input::CancelDeclarativePoliciesReportInput;
+
+pub use crate::operation::cancel_declarative_policies_report::_cancel_declarative_policies_report_output::CancelDeclarativePoliciesReportOutput;
 
 mod _cancel_declarative_policies_report_input;
 

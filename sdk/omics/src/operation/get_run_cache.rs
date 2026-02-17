@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_run_cache::Get
     }
 }
 
-pub use crate::operation::get_run_cache::_get_run_cache_output::GetRunCacheOutput;
-
 pub use crate::operation::get_run_cache::_get_run_cache_input::GetRunCacheInput;
+
+pub use crate::operation::get_run_cache::_get_run_cache_output::GetRunCacheOutput;
 
 mod _get_run_cache_input;
 

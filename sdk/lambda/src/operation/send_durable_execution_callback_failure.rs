@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_durable_execu
     }
 }
 
-pub use crate::operation::send_durable_execution_callback_failure::_send_durable_execution_callback_failure_output::SendDurableExecutionCallbackFailureOutput;
-
 pub use crate::operation::send_durable_execution_callback_failure::_send_durable_execution_callback_failure_input::SendDurableExecutionCallbackFailureInput;
+
+pub use crate::operation::send_durable_execution_callback_failure::_send_durable_execution_callback_failure_output::SendDurableExecutionCallbackFailureOutput;
 
 mod _send_durable_execution_callback_failure_input;
 

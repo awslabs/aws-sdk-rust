@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trusts::D
     }
 }
 
-pub use crate::operation::describe_trusts::_describe_trusts_output::DescribeTrustsOutput;
-
 pub use crate::operation::describe_trusts::_describe_trusts_input::DescribeTrustsInput;
+
+pub use crate::operation::describe_trusts::_describe_trusts_output::DescribeTrustsOutput;
 
 mod _describe_trusts_input;
 

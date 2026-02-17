@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_transit_gat
     }
 }
 
-pub use crate::operation::modify_transit_gateway_metering_policy::_modify_transit_gateway_metering_policy_output::ModifyTransitGatewayMeteringPolicyOutput;
-
 pub use crate::operation::modify_transit_gateway_metering_policy::_modify_transit_gateway_metering_policy_input::ModifyTransitGatewayMeteringPolicyInput;
+
+pub use crate::operation::modify_transit_gateway_metering_policy::_modify_transit_gateway_metering_policy_output::ModifyTransitGatewayMeteringPolicyOutput;
 
 mod _modify_transit_gateway_metering_policy_input;
 

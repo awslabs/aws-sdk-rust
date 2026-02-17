@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_internet_ga
     }
 }
 
-pub use crate::operation::detach_internet_gateway::_detach_internet_gateway_output::DetachInternetGatewayOutput;
-
 pub use crate::operation::detach_internet_gateway::_detach_internet_gateway_input::DetachInternetGatewayInput;
+
+pub use crate::operation::detach_internet_gateway::_detach_internet_gateway_output::DetachInternetGatewayOutput;
 
 mod _detach_internet_gateway_input;
 

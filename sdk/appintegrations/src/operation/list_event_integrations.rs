@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_integra
     }
 }
 
-pub use crate::operation::list_event_integrations::_list_event_integrations_output::ListEventIntegrationsOutput;
-
 pub use crate::operation::list_event_integrations::_list_event_integrations_input::ListEventIntegrationsInput;
+
+pub use crate::operation::list_event_integrations::_list_event_integrations_output::ListEventIntegrationsOutput;
 
 mod _list_event_integrations_input;
 

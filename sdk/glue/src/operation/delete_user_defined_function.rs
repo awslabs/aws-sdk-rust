@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_define
     }
 }
 
-pub use crate::operation::delete_user_defined_function::_delete_user_defined_function_output::DeleteUserDefinedFunctionOutput;
-
 pub use crate::operation::delete_user_defined_function::_delete_user_defined_function_input::DeleteUserDefinedFunctionInput;
+
+pub use crate::operation::delete_user_defined_function::_delete_user_defined_function_output::DeleteUserDefinedFunctionOutput;
 
 mod _delete_user_defined_function_input;
 

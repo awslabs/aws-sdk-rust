@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backup_sele
     }
 }
 
-pub use crate::operation::create_backup_selection::_create_backup_selection_output::CreateBackupSelectionOutput;
-
 pub use crate::operation::create_backup_selection::_create_backup_selection_input::CreateBackupSelectionInput;
+
+pub use crate::operation::create_backup_selection::_create_backup_selection_output::CreateBackupSelectionOutput;
 
 mod _create_backup_selection_input;
 

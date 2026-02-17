@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unlock_rule::Unloc
     }
 }
 
-pub use crate::operation::unlock_rule::_unlock_rule_output::UnlockRuleOutput;
-
 pub use crate::operation::unlock_rule::_unlock_rule_input::UnlockRuleInput;
+
+pub use crate::operation::unlock_rule::_unlock_rule_output::UnlockRuleOutput;
 
 mod _unlock_rule_input;
 

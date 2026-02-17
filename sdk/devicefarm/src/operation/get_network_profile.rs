@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_profil
     }
 }
 
-pub use crate::operation::get_network_profile::_get_network_profile_output::GetNetworkProfileOutput;
-
 pub use crate::operation::get_network_profile::_get_network_profile_input::GetNetworkProfileInput;
+
+pub use crate::operation::get_network_profile::_get_network_profile_output::GetNetworkProfileOutput;
 
 mod _get_network_profile_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scheduled_q
     }
 }
 
-pub use crate::operation::delete_scheduled_query::_delete_scheduled_query_output::DeleteScheduledQueryOutput;
-
 pub use crate::operation::delete_scheduled_query::_delete_scheduled_query_input::DeleteScheduledQueryInput;
+
+pub use crate::operation::delete_scheduled_query::_delete_scheduled_query_output::DeleteScheduledQueryOutput;
 
 mod _delete_scheduled_query_input;
 

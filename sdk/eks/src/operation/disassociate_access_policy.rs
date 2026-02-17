@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_acces
     }
 }
 
-pub use crate::operation::disassociate_access_policy::_disassociate_access_policy_output::DisassociateAccessPolicyOutput;
-
 pub use crate::operation::disassociate_access_policy::_disassociate_access_policy_input::DisassociateAccessPolicyInput;
+
+pub use crate::operation::disassociate_access_policy::_disassociate_access_policy_output::DisassociateAccessPolicyOutput;
 
 mod _disassociate_access_policy_input;
 

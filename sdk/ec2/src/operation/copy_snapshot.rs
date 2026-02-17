@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_snapshot::Cop
     }
 }
 
-pub use crate::operation::copy_snapshot::_copy_snapshot_output::CopySnapshotOutput;
-
 pub use crate::operation::copy_snapshot::_copy_snapshot_input::CopySnapshotInput;
+
+pub use crate::operation::copy_snapshot::_copy_snapshot_output::CopySnapshotOutput;
 
 mod _copy_snapshot_input;
 

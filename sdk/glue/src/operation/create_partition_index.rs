@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_partition_i
     }
 }
 
-pub use crate::operation::create_partition_index::_create_partition_index_output::CreatePartitionIndexOutput;
-
 pub use crate::operation::create_partition_index::_create_partition_index_input::CreatePartitionIndexInput;
+
+pub use crate::operation::create_partition_index::_create_partition_index_output::CreatePartitionIndexOutput;
 
 mod _create_partition_index_input;
 

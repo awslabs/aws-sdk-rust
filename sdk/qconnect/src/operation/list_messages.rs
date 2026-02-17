@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_messages::Lis
     }
 }
 
-pub use crate::operation::list_messages::_list_messages_output::ListMessagesOutput;
-
 pub use crate::operation::list_messages::_list_messages_input::ListMessagesInput;
+
+pub use crate::operation::list_messages::_list_messages_output::ListMessagesOutput;
 
 mod _list_messages_input;
 

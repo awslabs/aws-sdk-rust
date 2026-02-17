@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_read_set_metad
     }
 }
 
-pub use crate::operation::get_read_set_metadata::_get_read_set_metadata_output::GetReadSetMetadataOutput;
-
 pub use crate::operation::get_read_set_metadata::_get_read_set_metadata_input::GetReadSetMetadataInput;
+
+pub use crate::operation::get_read_set_metadata::_get_read_set_metadata_output::GetReadSetMetadataOutput;
 
 mod _get_read_set_metadata_input;
 

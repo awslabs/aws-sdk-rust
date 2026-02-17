@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metric_statist
     }
 }
 
-pub use crate::operation::get_metric_statistics::_get_metric_statistics_output::GetMetricStatisticsOutput;
-
 pub use crate::operation::get_metric_statistics::_get_metric_statistics_input::GetMetricStatisticsInput;
+
+pub use crate::operation::get_metric_statistics::_get_metric_statistics_output::GetMetricStatisticsOutput;
 
 mod _get_metric_statistics_input;
 

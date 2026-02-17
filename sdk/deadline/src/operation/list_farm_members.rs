@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_farm_members:
     }
 }
 
-pub use crate::operation::list_farm_members::_list_farm_members_output::ListFarmMembersOutput;
-
 pub use crate::operation::list_farm_members::_list_farm_members_input::ListFarmMembersInput;
+
+pub use crate::operation::list_farm_members::_list_farm_members_output::ListFarmMembersOutput;
 
 mod _list_farm_members_input;
 

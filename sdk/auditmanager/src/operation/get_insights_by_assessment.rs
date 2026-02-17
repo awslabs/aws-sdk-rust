@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_insights_by_as
     }
 }
 
-pub use crate::operation::get_insights_by_assessment::_get_insights_by_assessment_output::GetInsightsByAssessmentOutput;
-
 pub use crate::operation::get_insights_by_assessment::_get_insights_by_assessment_input::GetInsightsByAssessmentInput;
+
+pub use crate::operation::get_insights_by_assessment::_get_insights_by_assessment_output::GetInsightsByAssessmentOutput;
 
 mod _get_insights_by_assessment_input;
 

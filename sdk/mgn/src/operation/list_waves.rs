@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_waves::ListWa
     }
 }
 
-pub use crate::operation::list_waves::_list_waves_output::ListWavesOutput;
-
 pub use crate::operation::list_waves::_list_waves_input::ListWavesInput;
+
+pub use crate::operation::list_waves::_list_waves_output::ListWavesOutput;
 
 mod _list_waves_input;
 

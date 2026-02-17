@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_event_s
     }
 }
 
-pub use crate::operation::deactivate_event_source::_deactivate_event_source_output::DeactivateEventSourceOutput;
-
 pub use crate::operation::deactivate_event_source::_deactivate_event_source_input::DeactivateEventSourceInput;
+
+pub use crate::operation::deactivate_event_source::_deactivate_event_source_output::DeactivateEventSourceOutput;
 
 mod _deactivate_event_source_input;
 

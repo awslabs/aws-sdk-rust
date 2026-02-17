@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_objects:
     }
 }
 
-pub use crate::operation::get_table_objects::_get_table_objects_output::GetTableObjectsOutput;
-
 pub use crate::operation::get_table_objects::_get_table_objects_input::GetTableObjectsInput;
+
+pub use crate::operation::get_table_objects::_get_table_objects_output::GetTableObjectsOutput;
 
 mod _get_table_objects_input;
 

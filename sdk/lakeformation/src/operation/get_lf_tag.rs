@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lf_tag::GetLFT
     }
 }
 
-pub use crate::operation::get_lf_tag::_get_lf_tag_output::GetLfTagOutput;
-
 pub use crate::operation::get_lf_tag::_get_lf_tag_input::GetLfTagInput;
+
+pub use crate::operation::get_lf_tag::_get_lf_tag_output::GetLfTagOutput;
 
 mod _get_lf_tag_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_routing_profile_agent_availability_timer::_update_routing_profile_agent_availability_timer_output::UpdateRoutingProfileAgentAvailabilityTimerOutput;
-
 pub use crate::operation::update_routing_profile_agent_availability_timer::_update_routing_profile_agent_availability_timer_input::UpdateRoutingProfileAgentAvailabilityTimerInput;
+
+pub use crate::operation::update_routing_profile_agent_availability_timer::_update_routing_profile_agent_availability_timer_output::UpdateRoutingProfileAgentAvailabilityTimerOutput;
 
 mod _update_routing_profile_agent_availability_timer_input;
 

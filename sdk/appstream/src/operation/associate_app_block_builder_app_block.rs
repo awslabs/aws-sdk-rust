@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_app_bloc
     }
 }
 
-pub use crate::operation::associate_app_block_builder_app_block::_associate_app_block_builder_app_block_output::AssociateAppBlockBuilderAppBlockOutput;
-
 pub use crate::operation::associate_app_block_builder_app_block::_associate_app_block_builder_app_block_input::AssociateAppBlockBuilderAppBlockInput;
+
+pub use crate::operation::associate_app_block_builder_app_block::_associate_app_block_builder_app_block_output::AssociateAppBlockBuilderAppBlockOutput;
 
 mod _associate_app_block_builder_app_block_input;
 

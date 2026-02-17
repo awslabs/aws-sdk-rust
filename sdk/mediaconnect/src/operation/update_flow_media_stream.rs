@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_flow_media_
     }
 }
 
-pub use crate::operation::update_flow_media_stream::_update_flow_media_stream_output::UpdateFlowMediaStreamOutput;
-
 pub use crate::operation::update_flow_media_stream::_update_flow_media_stream_input::UpdateFlowMediaStreamInput;
+
+pub use crate::operation::update_flow_media_stream::_update_flow_media_stream_output::UpdateFlowMediaStreamOutput;
 
 mod _update_flow_media_stream_input;
 

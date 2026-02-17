@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_verified_ac
     }
 }
 
-pub use crate::operation::delete_verified_access_instance::_delete_verified_access_instance_output::DeleteVerifiedAccessInstanceOutput;
-
 pub use crate::operation::delete_verified_access_instance::_delete_verified_access_instance_input::DeleteVerifiedAccessInstanceInput;
+
+pub use crate::operation::delete_verified_access_instance::_delete_verified_access_instance_output::DeleteVerifiedAccessInstanceOutput;
 
 mod _delete_verified_access_instance_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_describe_dat
     }
 }
 
-pub use crate::operation::batch_describe_data_table_value::_batch_describe_data_table_value_output::BatchDescribeDataTableValueOutput;
-
 pub use crate::operation::batch_describe_data_table_value::_batch_describe_data_table_value_input::BatchDescribeDataTableValueInput;
+
+pub use crate::operation::batch_describe_data_table_value::_batch_describe_data_table_value_output::BatchDescribeDataTableValueOutput;
 
 mod _batch_describe_data_table_value_input;
 

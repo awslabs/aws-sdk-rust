@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_anycast_ip_
     }
 }
 
-pub use crate::operation::update_anycast_ip_list::_update_anycast_ip_list_output::UpdateAnycastIpListOutput;
-
 pub use crate::operation::update_anycast_ip_list::_update_anycast_ip_list_input::UpdateAnycastIpListInput;
+
+pub use crate::operation::update_anycast_ip_list::_update_anycast_ip_list_output::UpdateAnycastIpListOutput;
 
 mod _update_anycast_ip_list_input;
 

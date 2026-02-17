@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_policy::Unta
     }
 }
 
-pub use crate::operation::untag_policy::_untag_policy_output::UntagPolicyOutput;
-
 pub use crate::operation::untag_policy::_untag_policy_input::UntagPolicyInput;
+
+pub use crate::operation::untag_policy::_untag_policy_output::UntagPolicyOutput;
 
 mod _untag_policy_input;
 

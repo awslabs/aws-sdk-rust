@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_asset_model_in
     }
 }
 
-pub use crate::operation::put_asset_model_interface_relationship::_put_asset_model_interface_relationship_output::PutAssetModelInterfaceRelationshipOutput;
-
 pub use crate::operation::put_asset_model_interface_relationship::_put_asset_model_interface_relationship_input::PutAssetModelInterfaceRelationshipInput;
+
+pub use crate::operation::put_asset_model_interface_relationship::_put_asset_model_interface_relationship_output::PutAssetModelInterfaceRelationshipOutput;
 
 mod _put_asset_model_interface_relationship_input;
 

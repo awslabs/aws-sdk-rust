@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_geofence::GetG
     }
 }
 
-pub use crate::operation::get_geofence::_get_geofence_output::GetGeofenceOutput;
-
 pub use crate::operation::get_geofence::_get_geofence_input::GetGeofenceInput;
+
+pub use crate::operation::get_geofence::_get_geofence_output::GetGeofenceOutput;
 
 mod _get_geofence_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_retriever::
     }
 }
 
-pub use crate::operation::delete_retriever::_delete_retriever_output::DeleteRetrieverOutput;
-
 pub use crate::operation::delete_retriever::_delete_retriever_input::DeleteRetrieverInput;
+
+pub use crate::operation::delete_retriever::_delete_retriever_output::DeleteRetrieverOutput;
 
 mod _delete_retriever_input;
 

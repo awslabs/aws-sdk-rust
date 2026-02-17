@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_requested_service_quota_change_history::_list_requested_service_quota_change_history_output::ListRequestedServiceQuotaChangeHistoryOutput;
-
 pub use crate::operation::list_requested_service_quota_change_history::_list_requested_service_quota_change_history_input::ListRequestedServiceQuotaChangeHistoryInput;
+
+pub use crate::operation::list_requested_service_quota_change_history::_list_requested_service_quota_change_history_output::ListRequestedServiceQuotaChangeHistoryOutput;
 
 mod _list_requested_service_quota_change_history_input;
 

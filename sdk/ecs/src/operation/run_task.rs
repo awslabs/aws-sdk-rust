@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::run_task::RunTaskE
     }
 }
 
-pub use crate::operation::run_task::_run_task_output::RunTaskOutput;
-
 pub use crate::operation::run_task::_run_task_input::RunTaskInput;
+
+pub use crate::operation::run_task::_run_task_output::RunTaskOutput;
 
 mod _run_task_input;
 

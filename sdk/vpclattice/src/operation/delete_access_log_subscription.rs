@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_log_
     }
 }
 
-pub use crate::operation::delete_access_log_subscription::_delete_access_log_subscription_output::DeleteAccessLogSubscriptionOutput;
-
 pub use crate::operation::delete_access_log_subscription::_delete_access_log_subscription_input::DeleteAccessLogSubscriptionInput;
+
+pub use crate::operation::delete_access_log_subscription::_delete_access_log_subscription_output::DeleteAccessLogSubscriptionOutput;
 
 mod _delete_access_log_subscription_input;
 

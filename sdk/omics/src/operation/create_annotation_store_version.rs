@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_annotation_
     }
 }
 
-pub use crate::operation::create_annotation_store_version::_create_annotation_store_version_output::CreateAnnotationStoreVersionOutput;
-
 pub use crate::operation::create_annotation_store_version::_create_annotation_store_version_input::CreateAnnotationStoreVersionInput;
+
+pub use crate::operation::create_annotation_store_version::_create_annotation_store_version_output::CreateAnnotationStoreVersionOutput;
 
 mod _create_annotation_store_version_input;
 

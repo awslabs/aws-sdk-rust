@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_suite_defin
     }
 }
 
-pub use crate::operation::create_suite_definition::_create_suite_definition_output::CreateSuiteDefinitionOutput;
-
 pub use crate::operation::create_suite_definition::_create_suite_definition_input::CreateSuiteDefinitionInput;
+
+pub use crate::operation::create_suite_definition::_create_suite_definition_output::CreateSuiteDefinitionOutput;
 
 mod _create_suite_definition_input;
 

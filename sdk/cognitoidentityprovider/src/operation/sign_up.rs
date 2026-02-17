@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::sign_up::SignUpErr
     }
 }
 
-pub use crate::operation::sign_up::_sign_up_output::SignUpOutput;
-
 pub use crate::operation::sign_up::_sign_up_input::SignUpInput;
+
+pub use crate::operation::sign_up::_sign_up_output::SignUpOutput;
 
 mod _sign_up_input;
 

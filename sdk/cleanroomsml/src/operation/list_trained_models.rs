@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trained_model
     }
 }
 
-pub use crate::operation::list_trained_models::_list_trained_models_output::ListTrainedModelsOutput;
-
 pub use crate::operation::list_trained_models::_list_trained_models_input::ListTrainedModelsInput;
+
+pub use crate::operation::list_trained_models::_list_trained_models_output::ListTrainedModelsOutput;
 
 mod _list_trained_models_input;
 

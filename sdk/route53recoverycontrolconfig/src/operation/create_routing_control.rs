@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_routing_con
     }
 }
 
-pub use crate::operation::create_routing_control::_create_routing_control_output::CreateRoutingControlOutput;
-
 pub use crate::operation::create_routing_control::_create_routing_control_input::CreateRoutingControlInput;
+
+pub use crate::operation::create_routing_control::_create_routing_control_output::CreateRoutingControlOutput;
 
 mod _create_routing_control_input;
 

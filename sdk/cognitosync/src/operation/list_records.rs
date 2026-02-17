@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_records::List
     }
 }
 
-pub use crate::operation::list_records::_list_records_output::ListRecordsOutput;
-
 pub use crate::operation::list_records::_list_records_input::ListRecordsInput;
+
+pub use crate::operation::list_records::_list_records_output::ListRecordsOutput;
 
 mod _list_records_input;
 

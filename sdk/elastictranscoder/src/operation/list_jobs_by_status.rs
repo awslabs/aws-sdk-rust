@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_jobs_by_statu
     }
 }
 
-pub use crate::operation::list_jobs_by_status::_list_jobs_by_status_output::ListJobsByStatusOutput;
-
 pub use crate::operation::list_jobs_by_status::_list_jobs_by_status_input::ListJobsByStatusInput;
+
+pub use crate::operation::list_jobs_by_status::_list_jobs_by_status_output::ListJobsByStatusOutput;
 
 mod _list_jobs_by_status_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_opportunity::G
     }
 }
 
-pub use crate::operation::get_opportunity::_get_opportunity_output::GetOpportunityOutput;
-
 pub use crate::operation::get_opportunity::_get_opportunity_input::GetOpportunityInput;
+
+pub use crate::operation::get_opportunity::_get_opportunity_output::GetOpportunityOutput;
 
 mod _get_opportunity_input;
 

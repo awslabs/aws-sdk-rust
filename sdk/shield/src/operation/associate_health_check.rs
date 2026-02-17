@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_health_c
     }
 }
 
-pub use crate::operation::associate_health_check::_associate_health_check_output::AssociateHealthCheckOutput;
-
 pub use crate::operation::associate_health_check::_associate_health_check_input::AssociateHealthCheckInput;
+
+pub use crate::operation::associate_health_check::_associate_health_check_output::AssociateHealthCheckOutput;
 
 mod _associate_health_check_input;
 

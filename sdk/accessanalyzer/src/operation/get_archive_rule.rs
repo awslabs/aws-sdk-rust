@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_archive_rule::
     }
 }
 
-pub use crate::operation::get_archive_rule::_get_archive_rule_output::GetArchiveRuleOutput;
-
 pub use crate::operation::get_archive_rule::_get_archive_rule_input::GetArchiveRuleInput;
+
+pub use crate::operation::get_archive_rule::_get_archive_rule_output::GetArchiveRuleOutput;
 
 mod _get_archive_rule_input;
 

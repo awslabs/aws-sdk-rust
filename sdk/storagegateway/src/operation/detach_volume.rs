@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_volume::Det
     }
 }
 
-pub use crate::operation::detach_volume::_detach_volume_output::DetachVolumeOutput;
-
 pub use crate::operation::detach_volume::_detach_volume_input::DetachVolumeInput;
+
+pub use crate::operation::detach_volume::_detach_volume_output::DetachVolumeOutput;
 
 mod _detach_volume_input;
 

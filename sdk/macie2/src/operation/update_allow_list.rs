@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_allow_list:
     }
 }
 
-pub use crate::operation::update_allow_list::_update_allow_list_output::UpdateAllowListOutput;
-
 pub use crate::operation::update_allow_list::_update_allow_list_input::UpdateAllowListInput;
+
+pub use crate::operation::update_allow_list::_update_allow_list_output::UpdateAllowListOutput;
 
 mod _update_allow_list_input;
 

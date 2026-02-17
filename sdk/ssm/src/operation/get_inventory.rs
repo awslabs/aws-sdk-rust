@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_inventory::Get
     }
 }
 
-pub use crate::operation::get_inventory::_get_inventory_output::GetInventoryOutput;
-
 pub use crate::operation::get_inventory::_get_inventory_input::GetInventoryInput;
+
+pub use crate::operation::get_inventory::_get_inventory_output::GetInventoryOutput;
 
 mod _get_inventory_input;
 

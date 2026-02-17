@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_broker::Upd
     }
 }
 
-pub use crate::operation::update_broker::_update_broker_output::UpdateBrokerOutput;
-
 pub use crate::operation::update_broker::_update_broker_input::UpdateBrokerInput;
+
+pub use crate::operation::update_broker::_update_broker_output::UpdateBrokerOutput;
 
 mod _update_broker_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_usa
     }
 }
 
-pub use crate::operation::describe_image_usage_reports::_describe_image_usage_reports_output::DescribeImageUsageReportsOutput;
-
 pub use crate::operation::describe_image_usage_reports::_describe_image_usage_reports_input::DescribeImageUsageReportsInput;
+
+pub use crate::operation::describe_image_usage_reports::_describe_image_usage_reports_output::DescribeImageUsageReportsOutput;
 
 mod _describe_image_usage_reports_input;
 

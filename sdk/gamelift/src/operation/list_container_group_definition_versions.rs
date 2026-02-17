@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_container_gro
     }
 }
 
-pub use crate::operation::list_container_group_definition_versions::_list_container_group_definition_versions_output::ListContainerGroupDefinitionVersionsOutput;
-
 pub use crate::operation::list_container_group_definition_versions::_list_container_group_definition_versions_input::ListContainerGroupDefinitionVersionsInput;
+
+pub use crate::operation::list_container_group_definition_versions::_list_container_group_definition_versions_output::ListContainerGroupDefinitionVersionsOutput;
 
 mod _list_container_group_definition_versions_input;
 

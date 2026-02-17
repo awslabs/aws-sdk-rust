@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::translate_pin_data
     }
 }
 
-pub use crate::operation::translate_pin_data::_translate_pin_data_output::TranslatePinDataOutput;
-
 pub use crate::operation::translate_pin_data::_translate_pin_data_input::TranslatePinDataInput;
+
+pub use crate::operation::translate_pin_data::_translate_pin_data_output::TranslatePinDataOutput;
 
 mod _translate_pin_data_input;
 

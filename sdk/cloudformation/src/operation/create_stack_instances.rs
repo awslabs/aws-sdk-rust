@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stack_insta
     }
 }
 
-pub use crate::operation::create_stack_instances::_create_stack_instances_output::CreateStackInstancesOutput;
-
 pub use crate::operation::create_stack_instances::_create_stack_instances_input::CreateStackInstancesInput;
+
+pub use crate::operation::create_stack_instances::_create_stack_instances_output::CreateStackInstancesOutput;
 
 mod _create_stack_instances_input;
 

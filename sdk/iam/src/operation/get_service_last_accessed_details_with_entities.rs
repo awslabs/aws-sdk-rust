@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_service_last_accessed_details_with_entities::_get_service_last_accessed_details_with_entities_output::GetServiceLastAccessedDetailsWithEntitiesOutput;
-
 pub use crate::operation::get_service_last_accessed_details_with_entities::_get_service_last_accessed_details_with_entities_input::GetServiceLastAccessedDetailsWithEntitiesInput;
+
+pub use crate::operation::get_service_last_accessed_details_with_entities::_get_service_last_accessed_details_with_entities_output::GetServiceLastAccessedDetailsWithEntitiesOutput;
 
 mod _get_service_last_accessed_details_with_entities_input;
 

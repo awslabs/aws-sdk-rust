@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_cert
     }
 }
 
-pub use crate::operation::list_tags_for_certificate::_list_tags_for_certificate_output::ListTagsForCertificateOutput;
-
 pub use crate::operation::list_tags_for_certificate::_list_tags_for_certificate_input::ListTagsForCertificateInput;
+
+pub use crate::operation::list_tags_for_certificate::_list_tags_for_certificate_output::ListTagsForCertificateOutput;
 
 mod _list_tags_for_certificate_input;
 

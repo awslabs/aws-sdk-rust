@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outbound_web_i
     }
 }
 
-pub use crate::operation::get_outbound_web_identity_federation_info::_get_outbound_web_identity_federation_info_output::GetOutboundWebIdentityFederationInfoOutput;
-
 pub use crate::operation::get_outbound_web_identity_federation_info::_get_outbound_web_identity_federation_info_input::GetOutboundWebIdentityFederationInfoInput;
+
+pub use crate::operation::get_outbound_web_identity_federation_info::_get_outbound_web_identity_federation_info_output::GetOutboundWebIdentityFederationInfoOutput;
 
 mod _get_outbound_web_identity_federation_info_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_stream_encryp
     }
 }
 
-pub use crate::operation::stop_stream_encryption::_stop_stream_encryption_output::StopStreamEncryptionOutput;
-
 pub use crate::operation::stop_stream_encryption::_stop_stream_encryption_input::StopStreamEncryptionInput;
+
+pub use crate::operation::stop_stream_encryption::_stop_stream_encryption_output::StopStreamEncryptionOutput;
 
 mod _stop_stream_encryption_input;
 

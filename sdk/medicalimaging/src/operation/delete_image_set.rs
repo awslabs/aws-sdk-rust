@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_image_set::
     }
 }
 
-pub use crate::operation::delete_image_set::_delete_image_set_output::DeleteImageSetOutput;
-
 pub use crate::operation::delete_image_set::_delete_image_set_input::DeleteImageSetInput;
+
+pub use crate::operation::delete_image_set::_delete_image_set_output::DeleteImageSetOutput;
 
 mod _delete_image_set_input;
 

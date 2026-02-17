@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_instance_access_control_attribute_configuration::_update_instance_access_control_attribute_configuration_output::UpdateInstanceAccessControlAttributeConfigurationOutput;
-
 pub use crate::operation::update_instance_access_control_attribute_configuration::_update_instance_access_control_attribute_configuration_input::UpdateInstanceAccessControlAttributeConfigurationInput;
+
+pub use crate::operation::update_instance_access_control_attribute_configuration::_update_instance_access_control_attribute_configuration_output::UpdateInstanceAccessControlAttributeConfigurationOutput;
 
 mod _update_instance_access_control_attribute_configuration_input;
 

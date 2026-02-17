@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_registered_su
     }
 }
 
-pub use crate::operation::list_registered_subscription_providers::_list_registered_subscription_providers_output::ListRegisteredSubscriptionProvidersOutput;
-
 pub use crate::operation::list_registered_subscription_providers::_list_registered_subscription_providers_input::ListRegisteredSubscriptionProvidersInput;
+
+pub use crate::operation::list_registered_subscription_providers::_list_registered_subscription_providers_output::ListRegisteredSubscriptionProvidersOutput;
 
 mod _list_registered_subscription_providers_input;
 

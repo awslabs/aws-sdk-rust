@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_journeys::Lis
     }
 }
 
-pub use crate::operation::list_journeys::_list_journeys_output::ListJourneysOutput;
-
 pub use crate::operation::list_journeys::_list_journeys_input::ListJourneysInput;
+
+pub use crate::operation::list_journeys::_list_journeys_output::ListJourneysOutput;
 
 mod _list_journeys_input;
 

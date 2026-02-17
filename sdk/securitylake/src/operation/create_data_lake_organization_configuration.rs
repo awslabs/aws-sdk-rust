@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_data_lake_organization_configuration::_create_data_lake_organization_configuration_output::CreateDataLakeOrganizationConfigurationOutput;
-
 pub use crate::operation::create_data_lake_organization_configuration::_create_data_lake_organization_configuration_input::CreateDataLakeOrganizationConfigurationInput;
+
+pub use crate::operation::create_data_lake_organization_configuration::_create_data_lake_organization_configuration_output::CreateDataLakeOrganizationConfigurationOutput;
 
 mod _create_data_lake_organization_configuration_input;
 

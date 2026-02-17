@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fraudster
     }
 }
 
-pub use crate::operation::describe_fraudster_registration_job::_describe_fraudster_registration_job_output::DescribeFraudsterRegistrationJobOutput;
-
 pub use crate::operation::describe_fraudster_registration_job::_describe_fraudster_registration_job_input::DescribeFraudsterRegistrationJobInput;
+
+pub use crate::operation::describe_fraudster_registration_job::_describe_fraudster_registration_job_output::DescribeFraudsterRegistrationJobOutput;
 
 mod _describe_fraudster_registration_job_input;
 

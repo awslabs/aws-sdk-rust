@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compute_auth_t
     }
 }
 
-pub use crate::operation::get_compute_auth_token::_get_compute_auth_token_output::GetComputeAuthTokenOutput;
-
 pub use crate::operation::get_compute_auth_token::_get_compute_auth_token_input::GetComputeAuthTokenInput;
+
+pub use crate::operation::get_compute_auth_token::_get_compute_auth_token_output::GetComputeAuthTokenOutput;
 
 mod _get_compute_auth_token_input;
 

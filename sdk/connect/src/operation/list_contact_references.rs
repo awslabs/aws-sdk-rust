@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contact_refer
     }
 }
 
-pub use crate::operation::list_contact_references::_list_contact_references_output::ListContactReferencesOutput;
-
 pub use crate::operation::list_contact_references::_list_contact_references_input::ListContactReferencesInput;
+
+pub use crate::operation::list_contact_references::_list_contact_references_output::ListContactReferencesOutput;
 
 mod _list_contact_references_input;
 

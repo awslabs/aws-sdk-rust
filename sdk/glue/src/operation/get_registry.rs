@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_registry::GetR
     }
 }
 
-pub use crate::operation::get_registry::_get_registry_output::GetRegistryOutput;
-
 pub use crate::operation::get_registry::_get_registry_input::GetRegistryInput;
+
+pub use crate::operation::get_registry::_get_registry_output::GetRegistryOutput;
 
 mod _get_registry_input;
 

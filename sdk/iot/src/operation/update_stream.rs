@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stream::Upd
     }
 }
 
-pub use crate::operation::update_stream::_update_stream_output::UpdateStreamOutput;
-
 pub use crate::operation::update_stream::_update_stream_input::UpdateStreamInput;
+
+pub use crate::operation::update_stream::_update_stream_output::UpdateStreamOutput;
 
 mod _update_stream_input;
 

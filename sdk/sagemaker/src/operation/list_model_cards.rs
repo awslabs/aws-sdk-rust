@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_cards::
     }
 }
 
-pub use crate::operation::list_model_cards::_list_model_cards_output::ListModelCardsOutput;
-
 pub use crate::operation::list_model_cards::_list_model_cards_input::ListModelCardsInput;
+
+pub use crate::operation::list_model_cards::_list_model_cards_output::ListModelCardsOutput;
 
 mod _list_model_cards_input;
 

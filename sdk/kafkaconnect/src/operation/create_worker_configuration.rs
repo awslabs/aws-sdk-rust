@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_worker_conf
     }
 }
 
-pub use crate::operation::create_worker_configuration::_create_worker_configuration_output::CreateWorkerConfigurationOutput;
-
 pub use crate::operation::create_worker_configuration::_create_worker_configuration_input::CreateWorkerConfigurationInput;
+
+pub use crate::operation::create_worker_configuration::_create_worker_configuration_output::CreateWorkerConfigurationOutput;
 
 mod _create_worker_configuration_input;
 

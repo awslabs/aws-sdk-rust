@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_shared_trus
     }
 }
 
-pub use crate::operation::delete_shared_trust_store_association::_delete_shared_trust_store_association_output::DeleteSharedTrustStoreAssociationOutput;
-
 pub use crate::operation::delete_shared_trust_store_association::_delete_shared_trust_store_association_input::DeleteSharedTrustStoreAssociationInput;
+
+pub use crate::operation::delete_shared_trust_store_association::_delete_shared_trust_store_association_output::DeleteSharedTrustStoreAssociationOutput;
 
 mod _delete_shared_trust_store_association_input;
 

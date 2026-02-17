@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_workspac
     }
 }
 
-pub use crate::operation::terminate_workspaces::_terminate_workspaces_output::TerminateWorkspacesOutput;
-
 pub use crate::operation::terminate_workspaces::_terminate_workspaces_input::TerminateWorkspacesInput;
+
+pub use crate::operation::terminate_workspaces::_terminate_workspaces_output::TerminateWorkspacesOutput;
 
 mod _terminate_workspaces_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sandboxes_for
     }
 }
 
-pub use crate::operation::list_sandboxes_for_project::_list_sandboxes_for_project_output::ListSandboxesForProjectOutput;
-
 pub use crate::operation::list_sandboxes_for_project::_list_sandboxes_for_project_input::ListSandboxesForProjectInput;
+
+pub use crate::operation::list_sandboxes_for_project::_list_sandboxes_for_project_output::ListSandboxesForProjectOutput;
 
 mod _list_sandboxes_for_project_input;
 

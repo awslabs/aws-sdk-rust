@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_job_status:
     }
 }
 
-pub use crate::operation::update_job_status::_update_job_status_output::UpdateJobStatusOutput;
-
 pub use crate::operation::update_job_status::_update_job_status_input::UpdateJobStatusInput;
+
+pub use crate::operation::update_job_status::_update_job_status_output::UpdateJobStatusOutput;
 
 mod _update_job_status_input;
 

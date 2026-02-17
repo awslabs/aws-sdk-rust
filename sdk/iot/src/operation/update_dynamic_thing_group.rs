@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dynamic_thi
     }
 }
 
-pub use crate::operation::update_dynamic_thing_group::_update_dynamic_thing_group_output::UpdateDynamicThingGroupOutput;
-
 pub use crate::operation::update_dynamic_thing_group::_update_dynamic_thing_group_input::UpdateDynamicThingGroupInput;
+
+pub use crate::operation::update_dynamic_thing_group::_update_dynamic_thing_group_output::UpdateDynamicThingGroupOutput;
 
 mod _update_dynamic_thing_group_input;
 

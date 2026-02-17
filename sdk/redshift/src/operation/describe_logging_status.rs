@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_logging_s
     }
 }
 
-pub use crate::operation::describe_logging_status::_describe_logging_status_output::DescribeLoggingStatusOutput;
-
 pub use crate::operation::describe_logging_status::_describe_logging_status_input::DescribeLoggingStatusInput;
+
+pub use crate::operation::describe_logging_status::_describe_logging_status_output::DescribeLoggingStatusOutput;
 
 mod _describe_logging_status_input;
 

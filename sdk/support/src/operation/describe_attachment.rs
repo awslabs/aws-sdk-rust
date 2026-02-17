@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_attachmen
     }
 }
 
-pub use crate::operation::describe_attachment::_describe_attachment_output::DescribeAttachmentOutput;
-
 pub use crate::operation::describe_attachment::_describe_attachment_input::DescribeAttachmentInput;
+
+pub use crate::operation::describe_attachment::_describe_attachment_output::DescribeAttachmentOutput;
 
 mod _describe_attachment_input;
 

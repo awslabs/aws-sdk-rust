@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::clone_receipt_rule
     }
 }
 
-pub use crate::operation::clone_receipt_rule_set::_clone_receipt_rule_set_output::CloneReceiptRuleSetOutput;
-
 pub use crate::operation::clone_receipt_rule_set::_clone_receipt_rule_set_input::CloneReceiptRuleSetInput;
+
+pub use crate::operation::clone_receipt_rule_set::_clone_receipt_rule_set_output::CloneReceiptRuleSetOutput;
 
 mod _clone_receipt_rule_set_input;
 

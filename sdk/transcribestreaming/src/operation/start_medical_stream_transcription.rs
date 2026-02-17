@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_medical_stre
     }
 }
 
-pub use crate::operation::start_medical_stream_transcription::_start_medical_stream_transcription_output::StartMedicalStreamTranscriptionOutput;
-
 pub use crate::operation::start_medical_stream_transcription::_start_medical_stream_transcription_input::StartMedicalStreamTranscriptionInput;
+
+pub use crate::operation::start_medical_stream_transcription::_start_medical_stream_transcription_output::StartMedicalStreamTranscriptionOutput;
 
 mod _start_medical_stream_transcription_input;
 

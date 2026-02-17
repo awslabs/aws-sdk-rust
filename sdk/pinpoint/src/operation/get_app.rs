@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_app::GetAppErr
     }
 }
 
-pub use crate::operation::get_app::_get_app_output::GetAppOutput;
-
 pub use crate::operation::get_app::_get_app_input::GetAppInput;
+
+pub use crate::operation::get_app::_get_app_output::GetAppOutput;
 
 mod _get_app_input;
 

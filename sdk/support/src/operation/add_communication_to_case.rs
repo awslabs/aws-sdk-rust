@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_communication_
     }
 }
 
-pub use crate::operation::add_communication_to_case::_add_communication_to_case_output::AddCommunicationToCaseOutput;
-
 pub use crate::operation::add_communication_to_case::_add_communication_to_case_input::AddCommunicationToCaseInput;
+
+pub use crate::operation::add_communication_to_case::_add_communication_to_case_output::AddCommunicationToCaseOutput;
 
 mod _add_communication_to_case_input;
 

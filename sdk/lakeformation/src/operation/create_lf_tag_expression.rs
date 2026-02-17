@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lf_tag_expr
     }
 }
 
-pub use crate::operation::create_lf_tag_expression::_create_lf_tag_expression_output::CreateLfTagExpressionOutput;
-
 pub use crate::operation::create_lf_tag_expression::_create_lf_tag_expression_input::CreateLfTagExpressionInput;
+
+pub use crate::operation::create_lf_tag_expression::_create_lf_tag_expression_output::CreateLfTagExpressionOutput;
 
 mod _create_lf_tag_expression_input;
 

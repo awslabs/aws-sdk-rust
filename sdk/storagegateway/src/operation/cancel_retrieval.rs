@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_retrieval::
     }
 }
 
-pub use crate::operation::cancel_retrieval::_cancel_retrieval_output::CancelRetrievalOutput;
-
 pub use crate::operation::cancel_retrieval::_cancel_retrieval_input::CancelRetrievalInput;
+
+pub use crate::operation::cancel_retrieval::_cancel_retrieval_output::CancelRetrievalOutput;
 
 mod _cancel_retrieval_input;
 

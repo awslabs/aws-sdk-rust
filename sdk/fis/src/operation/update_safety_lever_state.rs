@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_safety_leve
     }
 }
 
-pub use crate::operation::update_safety_lever_state::_update_safety_lever_state_output::UpdateSafetyLeverStateOutput;
-
 pub use crate::operation::update_safety_lever_state::_update_safety_lever_state_input::UpdateSafetyLeverStateInput;
+
+pub use crate::operation::update_safety_lever_state::_update_safety_lever_state_output::UpdateSafetyLeverStateOutput;
 
 mod _update_safety_lever_state_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_alarm_model_v
     }
 }
 
-pub use crate::operation::list_alarm_model_versions::_list_alarm_model_versions_output::ListAlarmModelVersionsOutput;
-
 pub use crate::operation::list_alarm_model_versions::_list_alarm_model_versions_input::ListAlarmModelVersionsInput;
+
+pub use crate::operation::list_alarm_model_versions::_list_alarm_model_versions_output::ListAlarmModelVersionsOutput;
 
 mod _list_alarm_model_versions_input;
 

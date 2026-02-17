@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_link::As
     }
 }
 
-pub use crate::operation::associate_link::_associate_link_output::AssociateLinkOutput;
-
 pub use crate::operation::associate_link::_associate_link_input::AssociateLinkInput;
+
+pub use crate::operation::associate_link::_associate_link_output::AssociateLinkOutput;
 
 mod _associate_link_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_server_certif
     }
 }
 
-pub use crate::operation::list_server_certificates::_list_server_certificates_output::ListServerCertificatesOutput;
-
 pub use crate::operation::list_server_certificates::_list_server_certificates_input::ListServerCertificatesInput;
+
+pub use crate::operation::list_server_certificates::_list_server_certificates_output::ListServerCertificatesOutput;
 
 mod _list_server_certificates_input;
 

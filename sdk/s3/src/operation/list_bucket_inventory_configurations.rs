@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bucket_invent
     }
 }
 
-pub use crate::operation::list_bucket_inventory_configurations::_list_bucket_inventory_configurations_output::ListBucketInventoryConfigurationsOutput;
-
 pub use crate::operation::list_bucket_inventory_configurations::_list_bucket_inventory_configurations_input::ListBucketInventoryConfigurationsInput;
+
+pub use crate::operation::list_bucket_inventory_configurations::_list_bucket_inventory_configurations_output::ListBucketInventoryConfigurationsOutput;
 
 mod _list_bucket_inventory_configurations_input;
 

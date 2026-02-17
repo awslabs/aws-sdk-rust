@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_set_ver
     }
 }
 
-pub use crate::operation::list_image_set_versions::_list_image_set_versions_output::ListImageSetVersionsOutput;
-
 pub use crate::operation::list_image_set_versions::_list_image_set_versions_input::ListImageSetVersionsInput;
+
+pub use crate::operation::list_image_set_versions::_list_image_set_versions_output::ListImageSetVersionsOutput;
 
 mod _list_image_set_versions_input;
 

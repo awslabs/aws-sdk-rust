@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_on_prem
     }
 }
 
-pub use crate::operation::deregister_on_premises_instance::_deregister_on_premises_instance_output::DeregisterOnPremisesInstanceOutput;
-
 pub use crate::operation::deregister_on_premises_instance::_deregister_on_premises_instance_input::DeregisterOnPremisesInstanceInput;
+
+pub use crate::operation::deregister_on_premises_instance::_deregister_on_premises_instance_output::DeregisterOnPremisesInstanceOutput;
 
 mod _deregister_on_premises_instance_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_type_default_v
     }
 }
 
-pub use crate::operation::set_type_default_version::_set_type_default_version_output::SetTypeDefaultVersionOutput;
-
 pub use crate::operation::set_type_default_version::_set_type_default_version_input::SetTypeDefaultVersionInput;
+
+pub use crate::operation::set_type_default_version::_set_type_default_version_output::SetTypeDefaultVersionOutput;
 
 mod _set_type_default_version_input;
 

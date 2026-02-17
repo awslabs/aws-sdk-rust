@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_template_
     }
 }
 
-pub use crate::operation::get_flow_template_revisions::_get_flow_template_revisions_output::GetFlowTemplateRevisionsOutput;
-
 pub use crate::operation::get_flow_template_revisions::_get_flow_template_revisions_input::GetFlowTemplateRevisionsInput;
+
+pub use crate::operation::get_flow_template_revisions::_get_flow_template_revisions_output::GetFlowTemplateRevisionsOutput;
 
 mod _get_flow_template_revisions_input;
 

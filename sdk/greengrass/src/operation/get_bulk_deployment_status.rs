@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bulk_deploymen
     }
 }
 
-pub use crate::operation::get_bulk_deployment_status::_get_bulk_deployment_status_output::GetBulkDeploymentStatusOutput;
-
 pub use crate::operation::get_bulk_deployment_status::_get_bulk_deployment_status_input::GetBulkDeploymentStatusInput;
+
+pub use crate::operation::get_bulk_deployment_status::_get_bulk_deployment_status_output::GetBulkDeploymentStatusOutput;
 
 mod _get_bulk_deployment_status_input;
 

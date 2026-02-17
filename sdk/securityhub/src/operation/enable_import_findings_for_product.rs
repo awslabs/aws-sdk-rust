@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_import_find
     }
 }
 
-pub use crate::operation::enable_import_findings_for_product::_enable_import_findings_for_product_output::EnableImportFindingsForProductOutput;
-
 pub use crate::operation::enable_import_findings_for_product::_enable_import_findings_for_product_input::EnableImportFindingsForProductInput;
+
+pub use crate::operation::enable_import_findings_for_product::_enable_import_findings_for_product_output::EnableImportFindingsForProductOutput;
 
 mod _enable_import_findings_for_product_input;
 

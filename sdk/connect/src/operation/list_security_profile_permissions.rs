@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_prof
     }
 }
 
-pub use crate::operation::list_security_profile_permissions::_list_security_profile_permissions_output::ListSecurityProfilePermissionsOutput;
-
 pub use crate::operation::list_security_profile_permissions::_list_security_profile_permissions_input::ListSecurityProfilePermissionsInput;
+
+pub use crate::operation::list_security_profile_permissions::_list_security_profile_permissions_output::ListSecurityProfilePermissionsOutput;
 
 mod _list_security_profile_permissions_input;
 

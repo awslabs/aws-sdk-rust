@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_eks_anywher
     }
 }
 
-pub use crate::operation::delete_eks_anywhere_subscription::_delete_eks_anywhere_subscription_output::DeleteEksAnywhereSubscriptionOutput;
-
 pub use crate::operation::delete_eks_anywhere_subscription::_delete_eks_anywhere_subscription_input::DeleteEksAnywhereSubscriptionInput;
+
+pub use crate::operation::delete_eks_anywhere_subscription::_delete_eks_anywhere_subscription_output::DeleteEksAnywhereSubscriptionOutput;
 
 mod _delete_eks_anywhere_subscription_input;
 

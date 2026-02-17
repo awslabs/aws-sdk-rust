@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_instance_sn
     }
 }
 
-pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_output::CreateInstanceSnapshotOutput;
-
 pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_input::CreateInstanceSnapshotInput;
+
+pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_output::CreateInstanceSnapshotOutput;
 
 mod _create_instance_snapshot_input;
 

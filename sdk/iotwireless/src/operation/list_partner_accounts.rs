@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_partner_accou
     }
 }
 
-pub use crate::operation::list_partner_accounts::_list_partner_accounts_output::ListPartnerAccountsOutput;
-
 pub use crate::operation::list_partner_accounts::_list_partner_accounts_input::ListPartnerAccountsInput;
+
+pub use crate::operation::list_partner_accounts::_list_partner_accounts_output::ListPartnerAccountsOutput;
 
 mod _list_partner_accounts_input;
 

@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_metr
     }
 }
 
-pub use crate::operation::update_custom_metric::_update_custom_metric_output::UpdateCustomMetricOutput;
-
 pub use crate::operation::update_custom_metric::_update_custom_metric_input::UpdateCustomMetricInput;
+
+pub use crate::operation::update_custom_metric::_update_custom_metric_output::UpdateCustomMetricOutput;
 
 mod _update_custom_metric_input;
 

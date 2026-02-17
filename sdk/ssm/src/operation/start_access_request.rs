@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_access_reque
     }
 }
 
-pub use crate::operation::start_access_request::_start_access_request_output::StartAccessRequestOutput;
-
 pub use crate::operation::start_access_request::_start_access_request_input::StartAccessRequestInput;
+
+pub use crate::operation::start_access_request::_start_access_request_output::StartAccessRequestOutput;
 
 mod _start_access_request_input;
 

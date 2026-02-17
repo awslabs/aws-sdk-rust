@@ -529,9 +529,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_snapshot:
     }
 }
 
-pub use crate::operation::complete_snapshot::_complete_snapshot_output::CompleteSnapshotOutput;
-
 pub use crate::operation::complete_snapshot::_complete_snapshot_input::CompleteSnapshotInput;
+
+pub use crate::operation::complete_snapshot::_complete_snapshot_output::CompleteSnapshotOutput;
 
 mod _complete_snapshot_input;
 

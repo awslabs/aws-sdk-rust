@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_subscription_
     }
 }
 
-pub use crate::operation::list_subscription_requests::_list_subscription_requests_output::ListSubscriptionRequestsOutput;
-
 pub use crate::operation::list_subscription_requests::_list_subscription_requests_input::ListSubscriptionRequestsInput;
+
+pub use crate::operation::list_subscription_requests::_list_subscription_requests_output::ListSubscriptionRequestsOutput;
 
 mod _list_subscription_requests_input;
 

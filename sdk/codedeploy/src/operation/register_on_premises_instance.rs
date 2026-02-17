@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_on_premis
     }
 }
 
-pub use crate::operation::register_on_premises_instance::_register_on_premises_instance_output::RegisterOnPremisesInstanceOutput;
-
 pub use crate::operation::register_on_premises_instance::_register_on_premises_instance_input::RegisterOnPremisesInstanceInput;
+
+pub use crate::operation::register_on_premises_instance::_register_on_premises_instance_output::RegisterOnPremisesInstanceOutput;
 
 mod _register_on_premises_instance_input;
 

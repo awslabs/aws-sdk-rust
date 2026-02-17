@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scrapers::Lis
     }
 }
 
-pub use crate::operation::list_scrapers::_list_scrapers_output::ListScrapersOutput;
-
 pub use crate::operation::list_scrapers::_list_scrapers_input::ListScrapersInput;
+
+pub use crate::operation::list_scrapers::_list_scrapers_output::ListScrapersOutput;
 
 mod _list_scrapers_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_retirable_gra
     }
 }
 
-pub use crate::operation::list_retirable_grants::_list_retirable_grants_output::ListRetirableGrantsOutput;
-
 pub use crate::operation::list_retirable_grants::_list_retirable_grants_input::ListRetirableGrantsInput;
+
+pub use crate::operation::list_retirable_grants::_list_retirable_grants_output::ListRetirableGrantsOutput;
 
 mod _list_retirable_grants_input;
 

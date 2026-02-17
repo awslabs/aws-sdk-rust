@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tapes::ListTa
     }
 }
 
-pub use crate::operation::list_tapes::_list_tapes_output::ListTapesOutput;
-
 pub use crate::operation::list_tapes::_list_tapes_input::ListTapesInput;
+
+pub use crate::operation::list_tapes::_list_tapes_output::ListTapesOutput;
 
 mod _list_tapes_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cache_secur
     }
 }
 
-pub use crate::operation::create_cache_security_group::_create_cache_security_group_output::CreateCacheSecurityGroupOutput;
-
 pub use crate::operation::create_cache_security_group::_create_cache_security_group_input::CreateCacheSecurityGroupInput;
+
+pub use crate::operation::create_cache_security_group::_create_cache_security_group_output::CreateCacheSecurityGroupOutput;
 
 mod _create_cache_security_group_input;
 

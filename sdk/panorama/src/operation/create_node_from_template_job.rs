@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_node_from_t
     }
 }
 
-pub use crate::operation::create_node_from_template_job::_create_node_from_template_job_output::CreateNodeFromTemplateJobOutput;
-
 pub use crate::operation::create_node_from_template_job::_create_node_from_template_job_input::CreateNodeFromTemplateJobInput;
+
+pub use crate::operation::create_node_from_template_job::_create_node_from_template_job_output::CreateNodeFromTemplateJobOutput;
 
 mod _create_node_from_template_job_input;
 

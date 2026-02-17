@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_block_b
     }
 }
 
-pub use crate::operation::create_app_block_builder_streaming_url::_create_app_block_builder_streaming_url_output::CreateAppBlockBuilderStreamingUrlOutput;
-
 pub use crate::operation::create_app_block_builder_streaming_url::_create_app_block_builder_streaming_url_input::CreateAppBlockBuilderStreamingUrlInput;
+
+pub use crate::operation::create_app_block_builder_streaming_url::_create_app_block_builder_streaming_url_output::CreateAppBlockBuilderStreamingUrlOutput;
 
 mod _create_app_block_builder_streaming_url_input;
 

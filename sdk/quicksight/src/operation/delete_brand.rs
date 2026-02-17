@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_brand::Dele
     }
 }
 
-pub use crate::operation::delete_brand::_delete_brand_output::DeleteBrandOutput;
-
 pub use crate::operation::delete_brand::_delete_brand_input::DeleteBrandInput;
+
+pub use crate::operation::delete_brand::_delete_brand_output::DeleteBrandOutput;
 
 mod _delete_brand_input;
 

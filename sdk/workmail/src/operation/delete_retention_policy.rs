@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_retention_p
     }
 }
 
-pub use crate::operation::delete_retention_policy::_delete_retention_policy_output::DeleteRetentionPolicyOutput;
-
 pub use crate::operation::delete_retention_policy::_delete_retention_policy_input::DeleteRetentionPolicyInput;
+
+pub use crate::operation::delete_retention_policy::_delete_retention_policy_output::DeleteRetentionPolicyOutput;
 
 mod _delete_retention_policy_input;
 

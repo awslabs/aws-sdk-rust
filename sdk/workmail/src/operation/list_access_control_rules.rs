@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_contro
     }
 }
 
-pub use crate::operation::list_access_control_rules::_list_access_control_rules_output::ListAccessControlRulesOutput;
-
 pub use crate::operation::list_access_control_rules::_list_access_control_rules_input::ListAccessControlRulesInput;
+
+pub use crate::operation::list_access_control_rules::_list_access_control_rules_output::ListAccessControlRulesOutput;
 
 mod _list_access_control_rules_input;
 

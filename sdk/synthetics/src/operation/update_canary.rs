@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_canary::Upd
     }
 }
 
-pub use crate::operation::update_canary::_update_canary_output::UpdateCanaryOutput;
-
 pub use crate::operation::update_canary::_update_canary_input::UpdateCanaryInput;
+
+pub use crate::operation::update_canary::_update_canary_output::UpdateCanaryOutput;
 
 mod _update_canary_input;
 

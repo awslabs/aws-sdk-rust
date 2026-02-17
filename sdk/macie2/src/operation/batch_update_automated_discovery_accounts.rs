@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_autom
     }
 }
 
-pub use crate::operation::batch_update_automated_discovery_accounts::_batch_update_automated_discovery_accounts_output::BatchUpdateAutomatedDiscoveryAccountsOutput;
-
 pub use crate::operation::batch_update_automated_discovery_accounts::_batch_update_automated_discovery_accounts_input::BatchUpdateAutomatedDiscoveryAccountsInput;
+
+pub use crate::operation::batch_update_automated_discovery_accounts::_batch_update_automated_discovery_accounts_output::BatchUpdateAutomatedDiscoveryAccountsOutput;
 
 mod _batch_update_automated_discovery_accounts_input;
 

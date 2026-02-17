@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pricing_rul
     }
 }
 
-pub use crate::operation::delete_pricing_rule::_delete_pricing_rule_output::DeletePricingRuleOutput;
-
 pub use crate::operation::delete_pricing_rule::_delete_pricing_rule_input::DeletePricingRuleInput;
+
+pub use crate::operation::delete_pricing_rule::_delete_pricing_rule_output::DeletePricingRuleOutput;
 
 mod _delete_pricing_rule_input;
 

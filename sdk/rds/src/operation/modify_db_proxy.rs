@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_proxy::M
     }
 }
 
-pub use crate::operation::modify_db_proxy::_modify_db_proxy_output::ModifyDbProxyOutput;
-
 pub use crate::operation::modify_db_proxy::_modify_db_proxy_input::ModifyDbProxyInput;
+
+pub use crate::operation::modify_db_proxy::_modify_db_proxy_output::ModifyDbProxyOutput;
 
 mod _modify_db_proxy_input;
 

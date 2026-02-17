@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_apns_channe
     }
 }
 
-pub use crate::operation::delete_apns_channel::_delete_apns_channel_output::DeleteApnsChannelOutput;
-
 pub use crate::operation::delete_apns_channel::_delete_apns_channel_input::DeleteApnsChannelInput;
+
+pub use crate::operation::delete_apns_channel::_delete_apns_channel_output::DeleteApnsChannelOutput;
 
 mod _delete_apns_channel_input;
 

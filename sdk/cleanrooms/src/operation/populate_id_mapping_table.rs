@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::populate_id_mappin
     }
 }
 
-pub use crate::operation::populate_id_mapping_table::_populate_id_mapping_table_output::PopulateIdMappingTableOutput;
-
 pub use crate::operation::populate_id_mapping_table::_populate_id_mapping_table_input::PopulateIdMappingTableInput;
+
+pub use crate::operation::populate_id_mapping_table::_populate_id_mapping_table_output::PopulateIdMappingTableOutput;
 
 mod _populate_id_mapping_table_input;
 

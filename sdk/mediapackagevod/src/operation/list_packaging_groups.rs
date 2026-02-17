@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_packaging_gro
     }
 }
 
-pub use crate::operation::list_packaging_groups::_list_packaging_groups_output::ListPackagingGroupsOutput;
-
 pub use crate::operation::list_packaging_groups::_list_packaging_groups_input::ListPackagingGroupsInput;
+
+pub use crate::operation::list_packaging_groups::_list_packaging_groups_output::ListPackagingGroupsOutput;
 
 mod _list_packaging_groups_input;
 

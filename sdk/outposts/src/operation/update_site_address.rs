@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_site_addres
     }
 }
 
-pub use crate::operation::update_site_address::_update_site_address_output::UpdateSiteAddressOutput;
-
 pub use crate::operation::update_site_address::_update_site_address_input::UpdateSiteAddressInput;
+
+pub use crate::operation::update_site_address::_update_site_address_output::UpdateSiteAddressOutput;
 
 mod _update_site_address_input;
 

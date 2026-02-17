@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_sample_quer
     }
 }
 
-pub use crate::operation::search_sample_queries::_search_sample_queries_output::SearchSampleQueriesOutput;
-
 pub use crate::operation::search_sample_queries::_search_sample_queries_input::SearchSampleQueriesInput;
+
+pub use crate::operation::search_sample_queries::_search_sample_queries_output::SearchSampleQueriesOutput;
 
 mod _search_sample_queries_input;
 

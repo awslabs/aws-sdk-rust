@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_authorizers_
     }
 }
 
-pub use crate::operation::reset_authorizers_cache::_reset_authorizers_cache_output::ResetAuthorizersCacheOutput;
-
 pub use crate::operation::reset_authorizers_cache::_reset_authorizers_cache_input::ResetAuthorizersCacheInput;
+
+pub use crate::operation::reset_authorizers_cache::_reset_authorizers_cache_output::ResetAuthorizersCacheOutput;
 
 mod _reset_authorizers_cache_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_notifications_access_for_organization::_disable_notifications_access_for_organization_output::DisableNotificationsAccessForOrganizationOutput;
-
 pub use crate::operation::disable_notifications_access_for_organization::_disable_notifications_access_for_organization_input::DisableNotificationsAccessForOrganizationInput;
+
+pub use crate::operation::disable_notifications_access_for_organization::_disable_notifications_access_for_organization_output::DisableNotificationsAccessForOrganizationOutput;
 
 mod _disable_notifications_access_for_organization_input;
 

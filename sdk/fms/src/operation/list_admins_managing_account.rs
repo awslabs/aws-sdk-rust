@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_admins_managi
     }
 }
 
-pub use crate::operation::list_admins_managing_account::_list_admins_managing_account_output::ListAdminsManagingAccountOutput;
-
 pub use crate::operation::list_admins_managing_account::_list_admins_managing_account_input::ListAdminsManagingAccountInput;
+
+pub use crate::operation::list_admins_managing_account::_list_admins_managing_account_output::ListAdminsManagingAccountOutput;
 
 mod _list_admins_managing_account_input;
 

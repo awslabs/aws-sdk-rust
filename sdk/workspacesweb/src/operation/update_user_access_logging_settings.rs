@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_access
     }
 }
 
-pub use crate::operation::update_user_access_logging_settings::_update_user_access_logging_settings_output::UpdateUserAccessLoggingSettingsOutput;
-
 pub use crate::operation::update_user_access_logging_settings::_update_user_access_logging_settings_input::UpdateUserAccessLoggingSettingsInput;
+
+pub use crate::operation::update_user_access_logging_settings::_update_user_access_logging_settings_output::UpdateUserAccessLoggingSettingsOutput;
 
 mod _update_user_access_logging_settings_input;
 

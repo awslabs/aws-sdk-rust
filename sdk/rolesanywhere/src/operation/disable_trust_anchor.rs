@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_trust_anch
     }
 }
 
-pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_output::DisableTrustAnchorOutput;
-
 pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_input::DisableTrustAnchorInput;
+
+pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_output::DisableTrustAnchorOutput;
 
 mod _disable_trust_anchor_input;
 

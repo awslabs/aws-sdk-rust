@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_library_
     }
 }
 
-pub use crate::operation::associate_library_item_review::_associate_library_item_review_output::AssociateLibraryItemReviewOutput;
-
 pub use crate::operation::associate_library_item_review::_associate_library_item_review_input::AssociateLibraryItemReviewInput;
+
+pub use crate::operation::associate_library_item_review::_associate_library_item_review_output::AssociateLibraryItemReviewOutput;
 
 mod _associate_library_item_review_input;
 

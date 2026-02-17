@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_lookup_user_
     }
 }
 
-pub use crate::operation::batch_lookup_user_uname::_batch_lookup_user_uname_output::BatchLookupUserUnameOutput;
-
 pub use crate::operation::batch_lookup_user_uname::_batch_lookup_user_uname_input::BatchLookupUserUnameInput;
+
+pub use crate::operation::batch_lookup_user_uname::_batch_lookup_user_uname_output::BatchLookupUserUnameOutput;
 
 mod _batch_lookup_user_uname_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::notify_recommendat
     }
 }
 
-pub use crate::operation::notify_recommendations_received::_notify_recommendations_received_output::NotifyRecommendationsReceivedOutput;
-
 pub use crate::operation::notify_recommendations_received::_notify_recommendations_received_input::NotifyRecommendationsReceivedInput;
+
+pub use crate::operation::notify_recommendations_received::_notify_recommendations_received_output::NotifyRecommendationsReceivedOutput;
 
 mod _notify_recommendations_received_input;
 

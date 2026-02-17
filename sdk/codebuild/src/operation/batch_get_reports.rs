@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_reports:
     }
 }
 
-pub use crate::operation::batch_get_reports::_batch_get_reports_output::BatchGetReportsOutput;
-
 pub use crate::operation::batch_get_reports::_batch_get_reports_input::BatchGetReportsInput;
+
+pub use crate::operation::batch_get_reports::_batch_get_reports_output::BatchGetReportsOutput;
 
 mod _batch_get_reports_input;
 

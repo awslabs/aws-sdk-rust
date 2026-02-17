@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job::GetJobErr
     }
 }
 
-pub use crate::operation::get_job::_get_job_output::GetJobOutput;
-
 pub use crate::operation::get_job::_get_job_input::GetJobInput;
+
+pub use crate::operation::get_job::_get_job_output::GetJobOutput;
 
 mod _get_job_input;
 

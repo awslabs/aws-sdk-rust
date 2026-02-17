@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_health_service_access_for_organization::_enable_health_service_access_for_organization_output::EnableHealthServiceAccessForOrganizationOutput;
-
 pub use crate::operation::enable_health_service_access_for_organization::_enable_health_service_access_for_organization_input::EnableHealthServiceAccessForOrganizationInput;
+
+pub use crate::operation::enable_health_service_access_for_organization::_enable_health_service_access_for_organization_output::EnableHealthServiceAccessForOrganizationOutput;
 
 mod _enable_health_service_access_for_organization_input;
 

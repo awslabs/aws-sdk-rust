@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_glyphs::GetGly
     }
 }
 
-pub use crate::operation::get_glyphs::_get_glyphs_output::GetGlyphsOutput;
-
 pub use crate::operation::get_glyphs::_get_glyphs_input::GetGlyphsInput;
+
+pub use crate::operation::get_glyphs::_get_glyphs_output::GetGlyphsOutput;
 
 mod _get_glyphs_input;
 

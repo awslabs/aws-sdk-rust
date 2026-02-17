@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_mlflow_track
     }
 }
 
-pub use crate::operation::start_mlflow_tracking_server::_start_mlflow_tracking_server_output::StartMlflowTrackingServerOutput;
-
 pub use crate::operation::start_mlflow_tracking_server::_start_mlflow_tracking_server_input::StartMlflowTrackingServerInput;
+
+pub use crate::operation::start_mlflow_tracking_server::_start_mlflow_tracking_server_output::StartMlflowTrackingServerOutput;
 
 mod _start_mlflow_tracking_server_input;
 

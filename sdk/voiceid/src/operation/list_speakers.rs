@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_speakers::Lis
     }
 }
 
-pub use crate::operation::list_speakers::_list_speakers_output::ListSpeakersOutput;
-
 pub use crate::operation::list_speakers::_list_speakers_input::ListSpeakersInput;
+
+pub use crate::operation::list_speakers::_list_speakers_output::ListSpeakersOutput;
 
 mod _list_speakers_input;
 

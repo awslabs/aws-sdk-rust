@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpc_origin::Ge
     }
 }
 
-pub use crate::operation::get_vpc_origin::_get_vpc_origin_output::GetVpcOriginOutput;
-
 pub use crate::operation::get_vpc_origin::_get_vpc_origin_input::GetVpcOriginInput;
+
+pub use crate::operation::get_vpc_origin::_get_vpc_origin_output::GetVpcOriginOutput;
 
 mod _get_vpc_origin_input;
 

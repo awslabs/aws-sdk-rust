@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_elasticsear
     }
 }
 
-pub use crate::operation::delete_elasticsearch_domain::_delete_elasticsearch_domain_output::DeleteElasticsearchDomainOutput;
-
 pub use crate::operation::delete_elasticsearch_domain::_delete_elasticsearch_domain_input::DeleteElasticsearchDomainInput;
+
+pub use crate::operation::delete_elasticsearch_domain::_delete_elasticsearch_domain_output::DeleteElasticsearchDomainOutput;
 
 mod _delete_elasticsearch_domain_input;
 

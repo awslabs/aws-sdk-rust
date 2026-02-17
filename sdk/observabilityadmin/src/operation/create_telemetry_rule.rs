@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_telemetry_r
     }
 }
 
-pub use crate::operation::create_telemetry_rule::_create_telemetry_rule_output::CreateTelemetryRuleOutput;
-
 pub use crate::operation::create_telemetry_rule::_create_telemetry_rule_input::CreateTelemetryRuleInput;
+
+pub use crate::operation::create_telemetry_rule::_create_telemetry_rule_output::CreateTelemetryRuleOutput;
 
 mod _create_telemetry_rule_input;
 

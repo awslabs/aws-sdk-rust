@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tax_registrati
     }
 }
 
-pub use crate::operation::get_tax_registration::_get_tax_registration_output::GetTaxRegistrationOutput;
-
 pub use crate::operation::get_tax_registration::_get_tax_registration_input::GetTaxRegistrationInput;
+
+pub use crate::operation::get_tax_registration::_get_tax_registration_output::GetTaxRegistrationOutput;
 
 mod _get_tax_registration_input;
 

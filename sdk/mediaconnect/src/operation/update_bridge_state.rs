@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bridge_stat
     }
 }
 
-pub use crate::operation::update_bridge_state::_update_bridge_state_output::UpdateBridgeStateOutput;
-
 pub use crate::operation::update_bridge_state::_update_bridge_state_input::UpdateBridgeStateInput;
+
+pub use crate::operation::update_bridge_state::_update_bridge_state_output::UpdateBridgeStateOutput;
 
 mod _update_bridge_state_input;
 

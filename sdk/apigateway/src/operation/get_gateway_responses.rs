@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_gateway_respon
     }
 }
 
-pub use crate::operation::get_gateway_responses::_get_gateway_responses_output::GetGatewayResponsesOutput;
-
 pub use crate::operation::get_gateway_responses::_get_gateway_responses_input::GetGatewayResponsesInput;
+
+pub use crate::operation::get_gateway_responses::_get_gateway_responses_output::GetGatewayResponsesOutput;
 
 mod _get_gateway_responses_input;
 

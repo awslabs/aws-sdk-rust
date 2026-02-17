@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_managed_notification_additional_channel::_associate_managed_notification_additional_channel_output::AssociateManagedNotificationAdditionalChannelOutput;
-
 pub use crate::operation::associate_managed_notification_additional_channel::_associate_managed_notification_additional_channel_input::AssociateManagedNotificationAdditionalChannelInput;
+
+pub use crate::operation::associate_managed_notification_additional_channel::_associate_managed_notification_additional_channel_output::AssociateManagedNotificationAdditionalChannelOutput;
 
 mod _associate_managed_notification_additional_channel_input;
 

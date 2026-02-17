@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_runtime
     }
 }
 
-pub use crate::operation::list_agent_runtimes::_list_agent_runtimes_output::ListAgentRuntimesOutput;
-
 pub use crate::operation::list_agent_runtimes::_list_agent_runtimes_input::ListAgentRuntimesInput;
+
+pub use crate::operation::list_agent_runtimes::_list_agent_runtimes_output::ListAgentRuntimesOutput;
 
 mod _list_agent_runtimes_input;
 

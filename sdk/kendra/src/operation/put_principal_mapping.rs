@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_principal_mapp
     }
 }
 
-pub use crate::operation::put_principal_mapping::_put_principal_mapping_output::PutPrincipalMappingOutput;
-
 pub use crate::operation::put_principal_mapping::_put_principal_mapping_input::PutPrincipalMappingInput;
+
+pub use crate::operation::put_principal_mapping::_put_principal_mapping_output::PutPrincipalMappingOutput;
 
 mod _put_principal_mapping_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_aqua_config
     }
 }
 
-pub use crate::operation::modify_aqua_configuration::_modify_aqua_configuration_output::ModifyAquaConfigurationOutput;
-
 pub use crate::operation::modify_aqua_configuration::_modify_aqua_configuration_input::ModifyAquaConfigurationInput;
+
+pub use crate::operation::modify_aqua_configuration::_modify_aqua_configuration_output::ModifyAquaConfigurationOutput;
 
 mod _modify_aqua_configuration_input;
 

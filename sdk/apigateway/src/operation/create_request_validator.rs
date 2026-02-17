@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_request_val
     }
 }
 
-pub use crate::operation::create_request_validator::_create_request_validator_output::CreateRequestValidatorOutput;
-
 pub use crate::operation::create_request_validator::_create_request_validator_input::CreateRequestValidatorInput;
+
+pub use crate::operation::create_request_validator::_create_request_validator_output::CreateRequestValidatorOutput;
 
 mod _create_request_validator_input;
 

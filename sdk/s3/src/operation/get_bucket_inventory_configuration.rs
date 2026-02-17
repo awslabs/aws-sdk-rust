@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_invento
     }
 }
 
-pub use crate::operation::get_bucket_inventory_configuration::_get_bucket_inventory_configuration_output::GetBucketInventoryConfigurationOutput;
-
 pub use crate::operation::get_bucket_inventory_configuration::_get_bucket_inventory_configuration_input::GetBucketInventoryConfigurationInput;
+
+pub use crate::operation::get_bucket_inventory_configuration::_get_bucket_inventory_configuration_output::GetBucketInventoryConfigurationOutput;
 
 mod _get_bucket_inventory_configuration_input;
 

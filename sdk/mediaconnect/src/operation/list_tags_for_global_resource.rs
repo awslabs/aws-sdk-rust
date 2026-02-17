@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_glob
     }
 }
 
-pub use crate::operation::list_tags_for_global_resource::_list_tags_for_global_resource_output::ListTagsForGlobalResourceOutput;
-
 pub use crate::operation::list_tags_for_global_resource::_list_tags_for_global_resource_input::ListTagsForGlobalResourceInput;
+
+pub use crate::operation::list_tags_for_global_resource::_list_tags_for_global_resource_output::ListTagsForGlobalResourceOutput;
 
 mod _list_tags_for_global_resource_input;
 

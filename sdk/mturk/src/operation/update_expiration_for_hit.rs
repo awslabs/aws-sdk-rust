@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_expiration_
     }
 }
 
-pub use crate::operation::update_expiration_for_hit::_update_expiration_for_hit_output::UpdateExpirationForHitOutput;
-
 pub use crate::operation::update_expiration_for_hit::_update_expiration_for_hit_input::UpdateExpirationForHitInput;
+
+pub use crate::operation::update_expiration_for_hit::_update_expiration_for_hit_output::UpdateExpirationForHitOutput;
 
 mod _update_expiration_for_hit_input;
 

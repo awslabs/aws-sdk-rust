@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel::Up
     }
 }
 
-pub use crate::operation::update_channel::_update_channel_output::UpdateChannelOutput;
-
 pub use crate::operation::update_channel::_update_channel_input::UpdateChannelInput;
+
+pub use crate::operation::update_channel::_update_channel_output::UpdateChannelOutput;
 
 mod _update_channel_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agreement_term
     }
 }
 
-pub use crate::operation::get_agreement_terms::_get_agreement_terms_output::GetAgreementTermsOutput;
-
 pub use crate::operation::get_agreement_terms::_get_agreement_terms_input::GetAgreementTermsInput;
+
+pub use crate::operation::get_agreement_terms::_get_agreement_terms_output::GetAgreementTermsOutput;
 
 mod _get_agreement_terms_input;
 

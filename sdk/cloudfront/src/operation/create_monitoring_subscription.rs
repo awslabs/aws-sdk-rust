@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_monitoring_
     }
 }
 
-pub use crate::operation::create_monitoring_subscription::_create_monitoring_subscription_output::CreateMonitoringSubscriptionOutput;
-
 pub use crate::operation::create_monitoring_subscription::_create_monitoring_subscription_input::CreateMonitoringSubscriptionInput;
+
+pub use crate::operation::create_monitoring_subscription::_create_monitoring_subscription_output::CreateMonitoringSubscriptionOutput;
 
 mod _create_monitoring_subscription_input;
 

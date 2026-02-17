@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_active_vpn_tun
     }
 }
 
-pub use crate::operation::get_active_vpn_tunnel_status::_get_active_vpn_tunnel_status_output::GetActiveVpnTunnelStatusOutput;
-
 pub use crate::operation::get_active_vpn_tunnel_status::_get_active_vpn_tunnel_status_input::GetActiveVpnTunnelStatusInput;
+
+pub use crate::operation::get_active_vpn_tunnel_status::_get_active_vpn_tunnel_status_output::GetActiveVpnTunnelStatusOutput;
 
 mod _get_active_vpn_tunnel_status_input;
 

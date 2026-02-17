@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_base_path_m
     }
 }
 
-pub use crate::operation::create_base_path_mapping::_create_base_path_mapping_output::CreateBasePathMappingOutput;
-
 pub use crate::operation::create_base_path_mapping::_create_base_path_mapping_input::CreateBasePathMappingInput;
+
+pub use crate::operation::create_base_path_mapping::_create_base_path_mapping_output::CreateBasePathMappingOutput;
 
 mod _create_base_path_mapping_input;
 

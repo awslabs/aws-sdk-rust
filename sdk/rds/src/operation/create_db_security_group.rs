@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_security
     }
 }
 
-pub use crate::operation::create_db_security_group::_create_db_security_group_output::CreateDbSecurityGroupOutput;
-
 pub use crate::operation::create_db_security_group::_create_db_security_group_input::CreateDbSecurityGroupInput;
+
+pub use crate::operation::create_db_security_group::_create_db_security_group_output::CreateDbSecurityGroupOutput;
 
 mod _create_db_security_group_input;
 

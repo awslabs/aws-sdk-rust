@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_build_v
     }
 }
 
-pub use crate::operation::list_image_build_versions::_list_image_build_versions_output::ListImageBuildVersionsOutput;
-
 pub use crate::operation::list_image_build_versions::_list_image_build_versions_input::ListImageBuildVersionsInput;
+
+pub use crate::operation::list_image_build_versions::_list_image_build_versions_output::ListImageBuildVersionsOutput;
 
 mod _list_image_build_versions_input;
 

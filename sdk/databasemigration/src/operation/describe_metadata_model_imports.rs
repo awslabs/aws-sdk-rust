@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metadata_
     }
 }
 
-pub use crate::operation::describe_metadata_model_imports::_describe_metadata_model_imports_output::DescribeMetadataModelImportsOutput;
-
 pub use crate::operation::describe_metadata_model_imports::_describe_metadata_model_imports_input::DescribeMetadataModelImportsInput;
+
+pub use crate::operation::describe_metadata_model_imports::_describe_metadata_model_imports_output::DescribeMetadataModelImportsOutput;
 
 mod _describe_metadata_model_imports_input;
 

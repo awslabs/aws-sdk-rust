@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_state_mac
     }
 }
 
-pub use crate::operation::describe_state_machine::_describe_state_machine_output::DescribeStateMachineOutput;
-
 pub use crate::operation::describe_state_machine::_describe_state_machine_input::DescribeStateMachineInput;
+
+pub use crate::operation::describe_state_machine::_describe_state_machine_output::DescribeStateMachineOutput;
 
 mod _describe_state_machine_input;
 

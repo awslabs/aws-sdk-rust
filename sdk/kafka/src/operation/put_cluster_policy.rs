@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_cluster_policy
     }
 }
 
-pub use crate::operation::put_cluster_policy::_put_cluster_policy_output::PutClusterPolicyOutput;
-
 pub use crate::operation::put_cluster_policy::_put_cluster_policy_input::PutClusterPolicyInput;
+
+pub use crate::operation::put_cluster_policy::_put_cluster_policy_output::PutClusterPolicyOutput;
 
 mod _put_cluster_policy_input;
 

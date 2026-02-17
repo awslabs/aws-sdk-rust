@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fpga_image:
     }
 }
 
-pub use crate::operation::delete_fpga_image::_delete_fpga_image_output::DeleteFpgaImageOutput;
-
 pub use crate::operation::delete_fpga_image::_delete_fpga_image_input::DeleteFpgaImageInput;
+
+pub use crate::operation::delete_fpga_image::_delete_fpga_image_output::DeleteFpgaImageOutput;
 
 mod _delete_fpga_image_input;
 

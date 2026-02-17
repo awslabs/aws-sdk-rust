@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_voice_templ
     }
 }
 
-pub use crate::operation::create_voice_template::_create_voice_template_output::CreateVoiceTemplateOutput;
-
 pub use crate::operation::create_voice_template::_create_voice_template_input::CreateVoiceTemplateInput;
+
+pub use crate::operation::create_voice_template::_create_voice_template_output::CreateVoiceTemplateOutput;
 
 mod _create_voice_template_input;
 

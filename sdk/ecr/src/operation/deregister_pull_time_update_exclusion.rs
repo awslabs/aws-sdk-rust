@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_pull_ti
     }
 }
 
-pub use crate::operation::deregister_pull_time_update_exclusion::_deregister_pull_time_update_exclusion_output::DeregisterPullTimeUpdateExclusionOutput;
-
 pub use crate::operation::deregister_pull_time_update_exclusion::_deregister_pull_time_update_exclusion_input::DeregisterPullTimeUpdateExclusionInput;
+
+pub use crate::operation::deregister_pull_time_update_exclusion::_deregister_pull_time_update_exclusion_output::DeregisterPullTimeUpdateExclusionOutput;
 
 mod _deregister_pull_time_update_exclusion_input;
 

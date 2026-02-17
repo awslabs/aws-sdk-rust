@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_signal_cata
     }
 }
 
-pub use crate::operation::delete_signal_catalog::_delete_signal_catalog_output::DeleteSignalCatalogOutput;
-
 pub use crate::operation::delete_signal_catalog::_delete_signal_catalog_input::DeleteSignalCatalogInput;
+
+pub use crate::operation::delete_signal_catalog::_delete_signal_catalog_output::DeleteSignalCatalogOutput;
 
 mod _delete_signal_catalog_input;
 

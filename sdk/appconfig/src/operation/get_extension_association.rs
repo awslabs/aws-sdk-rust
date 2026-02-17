@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_extension_asso
     }
 }
 
-pub use crate::operation::get_extension_association::_get_extension_association_output::GetExtensionAssociationOutput;
-
 pub use crate::operation::get_extension_association::_get_extension_association_input::GetExtensionAssociationInput;
+
+pub use crate::operation::get_extension_association::_get_extension_association_output::GetExtensionAssociationOutput;
 
 mod _get_extension_association_input;
 

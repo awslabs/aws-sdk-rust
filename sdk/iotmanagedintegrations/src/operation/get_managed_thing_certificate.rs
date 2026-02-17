@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_thing_
     }
 }
 
-pub use crate::operation::get_managed_thing_certificate::_get_managed_thing_certificate_output::GetManagedThingCertificateOutput;
-
 pub use crate::operation::get_managed_thing_certificate::_get_managed_thing_certificate_input::GetManagedThingCertificateInput;
+
+pub use crate::operation::get_managed_thing_certificate::_get_managed_thing_certificate_output::GetManagedThingCertificateOutput;
 
 mod _get_managed_thing_certificate_input;
 

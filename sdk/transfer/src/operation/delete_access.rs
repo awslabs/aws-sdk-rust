@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access::Del
     }
 }
 
-pub use crate::operation::delete_access::_delete_access_output::DeleteAccessOutput;
-
 pub use crate::operation::delete_access::_delete_access_input::DeleteAccessInput;
+
+pub use crate::operation::delete_access::_delete_access_output::DeleteAccessOutput;
 
 mod _delete_access_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_schema::D
     }
 }
 
-pub use crate::operation::describe_schema::_describe_schema_output::DescribeSchemaOutput;
-
 pub use crate::operation::describe_schema::_describe_schema_input::DescribeSchemaInput;
+
+pub use crate::operation::describe_schema::_describe_schema_output::DescribeSchemaOutput;
 
 mod _describe_schema_input;
 

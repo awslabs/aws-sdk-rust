@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_signaling_c
     }
 }
 
-pub use crate::operation::create_signaling_channel::_create_signaling_channel_output::CreateSignalingChannelOutput;
-
 pub use crate::operation::create_signaling_channel::_create_signaling_channel_input::CreateSignalingChannelInput;
+
+pub use crate::operation::create_signaling_channel::_create_signaling_channel_output::CreateSignalingChannelOutput;
 
 mod _create_signaling_channel_input;
 

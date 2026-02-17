@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_watch_al
     }
 }
 
-pub use crate::operation::get_cloud_watch_alarm_template::_get_cloud_watch_alarm_template_output::GetCloudWatchAlarmTemplateOutput;
-
 pub use crate::operation::get_cloud_watch_alarm_template::_get_cloud_watch_alarm_template_input::GetCloudWatchAlarmTemplateInput;
+
+pub use crate::operation::get_cloud_watch_alarm_template::_get_cloud_watch_alarm_template_output::GetCloudWatchAlarmTemplateOutput;
 
 mod _get_cloud_watch_alarm_template_input;
 

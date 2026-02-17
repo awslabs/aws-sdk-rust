@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_snomedct_inf
     }
 }
 
-pub use crate::operation::start_snomedct_inference_job::_start_snomedct_inference_job_output::StartSnomedctInferenceJobOutput;
-
 pub use crate::operation::start_snomedct_inference_job::_start_snomedct_inference_job_input::StartSnomedctInferenceJobInput;
+
+pub use crate::operation::start_snomedct_inference_job::_start_snomedct_inference_job_output::StartSnomedctInferenceJobOutput;
 
 mod _start_snomedct_inference_job_input;
 

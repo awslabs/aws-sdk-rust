@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_rou
     }
 }
 
-pub use crate::operation::delete_virtual_router::_delete_virtual_router_output::DeleteVirtualRouterOutput;
-
 pub use crate::operation::delete_virtual_router::_delete_virtual_router_input::DeleteVirtualRouterInput;
+
+pub use crate::operation::delete_virtual_router::_delete_virtual_router_output::DeleteVirtualRouterOutput;
 
 mod _delete_virtual_router_input;
 

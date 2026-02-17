@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query::GetQuer
     }
 }
 
-pub use crate::operation::get_query::_get_query_output::GetQueryOutput;
-
 pub use crate::operation::get_query::_get_query_input::GetQueryInput;
+
+pub use crate::operation::get_query::_get_query_output::GetQueryOutput;
 
 mod _get_query_input;
 

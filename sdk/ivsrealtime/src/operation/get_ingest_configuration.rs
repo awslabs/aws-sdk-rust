@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ingest_configu
     }
 }
 
-pub use crate::operation::get_ingest_configuration::_get_ingest_configuration_output::GetIngestConfigurationOutput;
-
 pub use crate::operation::get_ingest_configuration::_get_ingest_configuration_input::GetIngestConfigurationInput;
+
+pub use crate::operation::get_ingest_configuration::_get_ingest_configuration_output::GetIngestConfigurationOutput;
 
 mod _get_ingest_configuration_input;
 

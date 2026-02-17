@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_baidu_channel:
     }
 }
 
-pub use crate::operation::get_baidu_channel::_get_baidu_channel_output::GetBaiduChannelOutput;
-
 pub use crate::operation::get_baidu_channel::_get_baidu_channel_input::GetBaiduChannelInput;
+
+pub use crate::operation::get_baidu_channel::_get_baidu_channel_output::GetBaiduChannelOutput;
 
 mod _get_baidu_channel_input;
 

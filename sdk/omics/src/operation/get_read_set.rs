@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_read_set::GetR
     }
 }
 
-pub use crate::operation::get_read_set::_get_read_set_output::GetReadSetOutput;
-
 pub use crate::operation::get_read_set::_get_read_set_input::GetReadSetInput;
+
+pub use crate::operation::get_read_set::_get_read_set_output::GetReadSetOutput;
 
 mod _get_read_set_input;
 

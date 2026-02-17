@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_tags
     }
 }
 
-pub use crate::operation::list_resource_tags::_list_resource_tags_output::ListResourceTagsOutput;
-
 pub use crate::operation::list_resource_tags::_list_resource_tags_input::ListResourceTagsInput;
+
+pub use crate::operation::list_resource_tags::_list_resource_tags_output::ListResourceTagsOutput;
 
 mod _list_resource_tags_input;
 

@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_image::Impo
     }
 }
 
-pub use crate::operation::import_image::_import_image_output::ImportImageOutput;
-
 pub use crate::operation::import_image::_import_image_input::ImportImageInput;
+
+pub use crate::operation::import_image::_import_image_output::ImportImageOutput;
 
 mod _import_image_input;
 

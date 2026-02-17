@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_collecti
     }
 }
 
-pub use crate::operation::batch_get_collection::_batch_get_collection_output::BatchGetCollectionOutput;
-
 pub use crate::operation::batch_get_collection::_batch_get_collection_input::BatchGetCollectionInput;
+
+pub use crate::operation::batch_get_collection::_batch_get_collection_output::BatchGetCollectionOutput;
 
 mod _batch_get_collection_input;
 

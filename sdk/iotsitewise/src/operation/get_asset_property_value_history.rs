@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_asset_property
     }
 }
 
-pub use crate::operation::get_asset_property_value_history::_get_asset_property_value_history_output::GetAssetPropertyValueHistoryOutput;
-
 pub use crate::operation::get_asset_property_value_history::_get_asset_property_value_history_input::GetAssetPropertyValueHistoryInput;
+
+pub use crate::operation::get_asset_property_value_history::_get_asset_property_value_history_output::GetAssetPropertyValueHistoryOutput;
 
 mod _get_asset_property_value_history_input;
 

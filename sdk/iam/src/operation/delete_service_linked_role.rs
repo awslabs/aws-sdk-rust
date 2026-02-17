@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_lin
     }
 }
 
-pub use crate::operation::delete_service_linked_role::_delete_service_linked_role_output::DeleteServiceLinkedRoleOutput;
-
 pub use crate::operation::delete_service_linked_role::_delete_service_linked_role_input::DeleteServiceLinkedRoleInput;
+
+pub use crate::operation::delete_service_linked_role::_delete_service_linked_role_output::DeleteServiceLinkedRoleOutput;
 
 mod _delete_service_linked_role_input;
 

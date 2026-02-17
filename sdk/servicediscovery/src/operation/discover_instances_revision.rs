@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::discover_instances
     }
 }
 
-pub use crate::operation::discover_instances_revision::_discover_instances_revision_output::DiscoverInstancesRevisionOutput;
-
 pub use crate::operation::discover_instances_revision::_discover_instances_revision_input::DiscoverInstancesRevisionInput;
+
+pub use crate::operation::discover_instances_revision::_discover_instances_revision_output::DiscoverInstancesRevisionOutput;
 
 mod _discover_instances_revision_input;
 

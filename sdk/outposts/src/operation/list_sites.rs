@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sites::ListSi
     }
 }
 
-pub use crate::operation::list_sites::_list_sites_output::ListSitesOutput;
-
 pub use crate::operation::list_sites::_list_sites_input::ListSitesInput;
+
+pub use crate::operation::list_sites::_list_sites_output::ListSitesOutput;
 
 mod _list_sites_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_link::C
     }
 }
 
-pub use crate::operation::create_vpc_link::_create_vpc_link_output::CreateVpcLinkOutput;
-
 pub use crate::operation::create_vpc_link::_create_vpc_link_input::CreateVpcLinkInput;
+
+pub use crate::operation::create_vpc_link::_create_vpc_link_output::CreateVpcLinkOutput;
 
 mod _create_vpc_link_input;
 

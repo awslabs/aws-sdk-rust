@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_log_patte
     }
 }
 
-pub use crate::operation::describe_log_pattern::_describe_log_pattern_output::DescribeLogPatternOutput;
-
 pub use crate::operation::describe_log_pattern::_describe_log_pattern_input::DescribeLogPatternInput;
+
+pub use crate::operation::describe_log_pattern::_describe_log_pattern_output::DescribeLogPatternOutput;
 
 mod _describe_log_pattern_input;
 

@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pull_requ
     }
 }
 
-pub use crate::operation::describe_pull_request_events::_describe_pull_request_events_output::DescribePullRequestEventsOutput;
-
 pub use crate::operation::describe_pull_request_events::_describe_pull_request_events_input::DescribePullRequestEventsInput;
+
+pub use crate::operation::describe_pull_request_events::_describe_pull_request_events_output::DescribePullRequestEventsOutput;
 
 mod _describe_pull_request_events_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_encryption_con
     }
 }
 
-pub use crate::operation::get_encryption_configuration::_get_encryption_configuration_output::GetEncryptionConfigurationOutput;
-
 pub use crate::operation::get_encryption_configuration::_get_encryption_configuration_input::GetEncryptionConfigurationInput;
+
+pub use crate::operation::get_encryption_configuration::_get_encryption_configuration_output::GetEncryptionConfigurationOutput;
 
 mod _get_encryption_configuration_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ingress_poi
     }
 }
 
-pub use crate::operation::delete_ingress_point::_delete_ingress_point_output::DeleteIngressPointOutput;
-
 pub use crate::operation::delete_ingress_point::_delete_ingress_point_input::DeleteIngressPointInput;
+
+pub use crate::operation::delete_ingress_point::_delete_ingress_point_output::DeleteIngressPointOutput;
 
 mod _delete_ingress_point_input;
 

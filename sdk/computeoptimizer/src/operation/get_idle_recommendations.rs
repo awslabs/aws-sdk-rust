@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_idle_recommend
     }
 }
 
-pub use crate::operation::get_idle_recommendations::_get_idle_recommendations_output::GetIdleRecommendationsOutput;
-
 pub use crate::operation::get_idle_recommendations::_get_idle_recommendations_input::GetIdleRecommendationsInput;
+
+pub use crate::operation::get_idle_recommendations::_get_idle_recommendations_output::GetIdleRecommendationsOutput;
 
 mod _get_idle_recommendations_input;
 

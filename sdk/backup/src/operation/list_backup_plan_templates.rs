@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backup_plan_t
     }
 }
 
-pub use crate::operation::list_backup_plan_templates::_list_backup_plan_templates_output::ListBackupPlanTemplatesOutput;
-
 pub use crate::operation::list_backup_plan_templates::_list_backup_plan_templates_input::ListBackupPlanTemplatesInput;
+
+pub use crate::operation::list_backup_plan_templates::_list_backup_plan_templates_output::ListBackupPlanTemplatesOutput;
 
 mod _list_backup_plan_templates_input;
 

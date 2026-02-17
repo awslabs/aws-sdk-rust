@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_software_
     }
 }
 
-pub use crate::operation::describe_software_associations::_describe_software_associations_output::DescribeSoftwareAssociationsOutput;
-
 pub use crate::operation::describe_software_associations::_describe_software_associations_input::DescribeSoftwareAssociationsInput;
+
+pub use crate::operation::describe_software_associations::_describe_software_associations_output::DescribeSoftwareAssociationsOutput;
 
 mod _describe_software_associations_input;
 

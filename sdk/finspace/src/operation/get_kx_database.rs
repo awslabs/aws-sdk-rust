@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_database::G
     }
 }
 
-pub use crate::operation::get_kx_database::_get_kx_database_output::GetKxDatabaseOutput;
-
 pub use crate::operation::get_kx_database::_get_kx_database_input::GetKxDatabaseInput;
+
+pub use crate::operation::get_kx_database::_get_kx_database_output::GetKxDatabaseOutput;
 
 mod _get_kx_database_input;
 

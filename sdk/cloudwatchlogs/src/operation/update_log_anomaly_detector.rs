@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_log_anomaly
     }
 }
 
-pub use crate::operation::update_log_anomaly_detector::_update_log_anomaly_detector_output::UpdateLogAnomalyDetectorOutput;
-
 pub use crate::operation::update_log_anomaly_detector::_update_log_anomaly_detector_input::UpdateLogAnomalyDetectorInput;
+
+pub use crate::operation::update_log_anomaly_detector::_update_log_anomaly_detector_output::UpdateLogAnomalyDetectorOutput;
 
 mod _update_log_anomaly_detector_input;
 

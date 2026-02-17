@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_storedi_s
     }
 }
 
-pub use crate::operation::describe_storedi_scsi_volumes::_describe_storedi_scsi_volumes_output::DescribeStorediScsiVolumesOutput;
-
 pub use crate::operation::describe_storedi_scsi_volumes::_describe_storedi_scsi_volumes_input::DescribeStorediScsiVolumesInput;
+
+pub use crate::operation::describe_storedi_scsi_volumes::_describe_storedi_scsi_volumes_output::DescribeStorediScsiVolumesOutput;
 
 mod _describe_storedi_scsi_volumes_input;
 

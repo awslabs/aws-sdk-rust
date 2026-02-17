@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ip_access_s
     }
 }
 
-pub use crate::operation::delete_ip_access_settings::_delete_ip_access_settings_output::DeleteIpAccessSettingsOutput;
-
 pub use crate::operation::delete_ip_access_settings::_delete_ip_access_settings_input::DeleteIpAccessSettingsInput;
+
+pub use crate::operation::delete_ip_access_settings::_delete_ip_access_settings_output::DeleteIpAccessSettingsOutput;
 
 mod _delete_ip_access_settings_input;
 

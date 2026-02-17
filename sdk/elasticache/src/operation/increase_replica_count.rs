@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::increase_replica_c
     }
 }
 
-pub use crate::operation::increase_replica_count::_increase_replica_count_output::IncreaseReplicaCountOutput;
-
 pub use crate::operation::increase_replica_count::_increase_replica_count_input::IncreaseReplicaCountInput;
+
+pub use crate::operation::increase_replica_count::_increase_replica_count_output::IncreaseReplicaCountOutput;
 
 mod _increase_replica_count_input;
 

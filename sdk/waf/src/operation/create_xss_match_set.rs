@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_xss_match_s
     }
 }
 
-pub use crate::operation::create_xss_match_set::_create_xss_match_set_output::CreateXssMatchSetOutput;
-
 pub use crate::operation::create_xss_match_set::_create_xss_match_set_input::CreateXssMatchSetInput;
+
+pub use crate::operation::create_xss_match_set::_create_xss_match_set_output::CreateXssMatchSetOutput;
 
 mod _create_xss_match_set_input;
 

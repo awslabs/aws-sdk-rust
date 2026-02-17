@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initiate_document_
     }
 }
 
-pub use crate::operation::initiate_document_version_upload::_initiate_document_version_upload_output::InitiateDocumentVersionUploadOutput;
-
 pub use crate::operation::initiate_document_version_upload::_initiate_document_version_upload_input::InitiateDocumentVersionUploadInput;
+
+pub use crate::operation::initiate_document_version_upload::_initiate_document_version_upload_output::InitiateDocumentVersionUploadOutput;
 
 mod _initiate_document_version_upload_input;
 

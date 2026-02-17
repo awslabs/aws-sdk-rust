@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact_sch
     }
 }
 
-pub use crate::operation::update_contact_schedule::_update_contact_schedule_output::UpdateContactScheduleOutput;
-
 pub use crate::operation::update_contact_schedule::_update_contact_schedule_input::UpdateContactScheduleInput;
+
+pub use crate::operation::update_contact_schedule::_update_contact_schedule_output::UpdateContactScheduleOutput;
 
 mod _update_contact_schedule_input;
 

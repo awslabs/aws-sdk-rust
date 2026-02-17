@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compliance_sum
     }
 }
 
-pub use crate::operation::get_compliance_summary::_get_compliance_summary_output::GetComplianceSummaryOutput;
-
 pub use crate::operation::get_compliance_summary::_get_compliance_summary_input::GetComplianceSummaryInput;
+
+pub use crate::operation::get_compliance_summary::_get_compliance_summary_output::GetComplianceSummaryOutput;
 
 mod _get_compliance_summary_input;
 

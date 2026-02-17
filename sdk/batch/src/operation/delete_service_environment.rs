@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_env
     }
 }
 
-pub use crate::operation::delete_service_environment::_delete_service_environment_output::DeleteServiceEnvironmentOutput;
-
 pub use crate::operation::delete_service_environment::_delete_service_environment_input::DeleteServiceEnvironmentInput;
+
+pub use crate::operation::delete_service_environment::_delete_service_environment_output::DeleteServiceEnvironmentOutput;
 
 mod _delete_service_environment_input;
 

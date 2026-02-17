@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster_sof
     }
 }
 
-pub use crate::operation::update_cluster_software::_update_cluster_software_output::UpdateClusterSoftwareOutput;
-
 pub use crate::operation::update_cluster_software::_update_cluster_software_input::UpdateClusterSoftwareInput;
+
+pub use crate::operation::update_cluster_software::_update_cluster_software_output::UpdateClusterSoftwareOutput;
 
 mod _update_cluster_software_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_training_jo
     }
 }
 
-pub use crate::operation::create_training_job::_create_training_job_output::CreateTrainingJobOutput;
-
 pub use crate::operation::create_training_job::_create_training_job_input::CreateTrainingJobInput;
+
+pub use crate::operation::create_training_job::_create_training_job_output::CreateTrainingJobOutput;
 
 mod _create_training_job_input;
 

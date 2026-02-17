@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_enabled_produ
     }
 }
 
-pub use crate::operation::list_enabled_products_for_import::_list_enabled_products_for_import_output::ListEnabledProductsForImportOutput;
-
 pub use crate::operation::list_enabled_products_for_import::_list_enabled_products_for_import_input::ListEnabledProductsForImportInput;
+
+pub use crate::operation::list_enabled_products_for_import::_list_enabled_products_for_import_output::ListEnabledProductsForImportOutput;
 
 mod _list_enabled_products_for_import_input;
 

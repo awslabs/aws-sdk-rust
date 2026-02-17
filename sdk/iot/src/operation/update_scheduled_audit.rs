@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scheduled_a
     }
 }
 
-pub use crate::operation::update_scheduled_audit::_update_scheduled_audit_output::UpdateScheduledAuditOutput;
-
 pub use crate::operation::update_scheduled_audit::_update_scheduled_audit_input::UpdateScheduledAuditInput;
+
+pub use crate::operation::update_scheduled_audit::_update_scheduled_audit_output::UpdateScheduledAuditOutput;
 
 mod _update_scheduled_audit_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_fraudste
     }
 }
 
-pub use crate::operation::associate_fraudster::_associate_fraudster_output::AssociateFraudsterOutput;
-
 pub use crate::operation::associate_fraudster::_associate_fraudster_input::AssociateFraudsterInput;
+
+pub use crate::operation::associate_fraudster::_associate_fraudster_output::AssociateFraudsterOutput;
 
 mod _associate_fraudster_input;
 

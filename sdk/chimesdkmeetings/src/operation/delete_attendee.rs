@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_attendee::D
     }
 }
 
-pub use crate::operation::delete_attendee::_delete_attendee_output::DeleteAttendeeOutput;
-
 pub use crate::operation::delete_attendee::_delete_attendee_input::DeleteAttendeeInput;
+
+pub use crate::operation::delete_attendee::_delete_attendee_output::DeleteAttendeeOutput;
 
 mod _delete_attendee_input;
 

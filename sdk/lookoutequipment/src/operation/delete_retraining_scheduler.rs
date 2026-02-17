@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_retraining_
     }
 }
 
-pub use crate::operation::delete_retraining_scheduler::_delete_retraining_scheduler_output::DeleteRetrainingSchedulerOutput;
-
 pub use crate::operation::delete_retraining_scheduler::_delete_retraining_scheduler_input::DeleteRetrainingSchedulerInput;
+
+pub use crate::operation::delete_retraining_scheduler::_delete_retraining_scheduler_output::DeleteRetrainingSchedulerOutput;
 
 mod _delete_retraining_scheduler_input;
 

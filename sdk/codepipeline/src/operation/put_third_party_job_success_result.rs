@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_third_party_jo
     }
 }
 
-pub use crate::operation::put_third_party_job_success_result::_put_third_party_job_success_result_output::PutThirdPartyJobSuccessResultOutput;
-
 pub use crate::operation::put_third_party_job_success_result::_put_third_party_job_success_result_input::PutThirdPartyJobSuccessResultInput;
+
+pub use crate::operation::put_third_party_job_success_result::_put_third_party_job_success_result_output::PutThirdPartyJobSuccessResultOutput;
 
 mod _put_third_party_job_success_result_input;
 

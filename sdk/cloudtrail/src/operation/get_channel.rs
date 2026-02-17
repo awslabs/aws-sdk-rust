@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel::GetCh
     }
 }
 
-pub use crate::operation::get_channel::_get_channel_output::GetChannelOutput;
-
 pub use crate::operation::get_channel::_get_channel_input::GetChannelInput;
+
+pub use crate::operation::get_channel::_get_channel_output::GetChannelOutput;
 
 mod _get_channel_input;
 

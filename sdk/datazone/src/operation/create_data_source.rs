@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_source
     }
 }
 
-pub use crate::operation::create_data_source::_create_data_source_output::CreateDataSourceOutput;
-
 pub use crate::operation::create_data_source::_create_data_source_input::CreateDataSourceInput;
+
+pub use crate::operation::create_data_source::_create_data_source_output::CreateDataSourceOutput;
 
 mod _create_data_source_input;
 

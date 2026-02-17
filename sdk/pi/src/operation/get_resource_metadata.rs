@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_metad
     }
 }
 
-pub use crate::operation::get_resource_metadata::_get_resource_metadata_output::GetResourceMetadataOutput;
-
 pub use crate::operation::get_resource_metadata::_get_resource_metadata_input::GetResourceMetadataInput;
+
+pub use crate::operation::get_resource_metadata::_get_resource_metadata_output::GetResourceMetadataOutput;
 
 mod _get_resource_metadata_input;
 

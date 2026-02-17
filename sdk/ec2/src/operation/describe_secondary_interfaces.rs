@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_secondary
     }
 }
 
-pub use crate::operation::describe_secondary_interfaces::_describe_secondary_interfaces_output::DescribeSecondaryInterfacesOutput;
-
 pub use crate::operation::describe_secondary_interfaces::_describe_secondary_interfaces_input::DescribeSecondaryInterfacesInput;
+
+pub use crate::operation::describe_secondary_interfaces::_describe_secondary_interfaces_output::DescribeSecondaryInterfacesOutput;
 
 mod _describe_secondary_interfaces_input;
 

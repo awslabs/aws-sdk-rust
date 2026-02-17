@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trust_sto
     }
 }
 
-pub use crate::operation::describe_trust_stores::_describe_trust_stores_output::DescribeTrustStoresOutput;
-
 pub use crate::operation::describe_trust_stores::_describe_trust_stores_input::DescribeTrustStoresInput;
+
+pub use crate::operation::describe_trust_stores::_describe_trust_stores_output::DescribeTrustStoresOutput;
 
 mod _describe_trust_stores_input;
 

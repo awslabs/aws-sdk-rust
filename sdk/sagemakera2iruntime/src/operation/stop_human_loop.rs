@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_human_loop::S
     }
 }
 
-pub use crate::operation::stop_human_loop::_stop_human_loop_output::StopHumanLoopOutput;
-
 pub use crate::operation::stop_human_loop::_stop_human_loop_input::StopHumanLoopInput;
+
+pub use crate::operation::stop_human_loop::_stop_human_loop_output::StopHumanLoopOutput;
 
 mod _stop_human_loop_input;
 

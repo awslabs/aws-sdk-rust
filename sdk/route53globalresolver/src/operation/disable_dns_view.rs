@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_dns_view::
     }
 }
 
-pub use crate::operation::disable_dns_view::_disable_dns_view_output::DisableDnsViewOutput;
-
 pub use crate::operation::disable_dns_view::_disable_dns_view_input::DisableDnsViewInput;
+
+pub use crate::operation::disable_dns_view::_disable_dns_view_output::DisableDnsViewOutput;
 
 mod _disable_dns_view_input;
 

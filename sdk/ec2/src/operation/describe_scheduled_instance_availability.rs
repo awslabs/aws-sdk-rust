@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scheduled
     }
 }
 
-pub use crate::operation::describe_scheduled_instance_availability::_describe_scheduled_instance_availability_output::DescribeScheduledInstanceAvailabilityOutput;
-
 pub use crate::operation::describe_scheduled_instance_availability::_describe_scheduled_instance_availability_input::DescribeScheduledInstanceAvailabilityInput;
+
+pub use crate::operation::describe_scheduled_instance_availability::_describe_scheduled_instance_availability_output::DescribeScheduledInstanceAvailabilityOutput;
 
 mod _describe_scheduled_instance_availability_input;
 

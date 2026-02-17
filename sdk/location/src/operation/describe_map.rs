@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_map::Desc
     }
 }
 
-pub use crate::operation::describe_map::_describe_map_output::DescribeMapOutput;
-
 pub use crate::operation::describe_map::_describe_map_input::DescribeMapInput;
+
+pub use crate::operation::describe_map::_describe_map_output::DescribeMapOutput;
 
 mod _describe_map_input;
 

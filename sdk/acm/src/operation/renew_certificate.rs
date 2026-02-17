@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::renew_certificate:
     }
 }
 
-pub use crate::operation::renew_certificate::_renew_certificate_output::RenewCertificateOutput;
-
 pub use crate::operation::renew_certificate::_renew_certificate_input::RenewCertificateInput;
+
+pub use crate::operation::renew_certificate::_renew_certificate_output::RenewCertificateOutput;
 
 mod _renew_certificate_input;
 

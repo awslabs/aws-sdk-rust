@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_platform_bran
     }
 }
 
-pub use crate::operation::list_platform_branches::_list_platform_branches_output::ListPlatformBranchesOutput;
-
 pub use crate::operation::list_platform_branches::_list_platform_branches_input::ListPlatformBranchesInput;
+
+pub use crate::operation::list_platform_branches::_list_platform_branches_output::ListPlatformBranchesOutput;
 
 mod _list_platform_branches_input;
 

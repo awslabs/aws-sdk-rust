@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_named_query
     }
 }
 
-pub use crate::operation::create_named_query::_create_named_query_output::CreateNamedQueryOutput;
-
 pub use crate::operation::create_named_query::_create_named_query_input::CreateNamedQueryInput;
+
+pub use crate::operation::create_named_query::_create_named_query_output::CreateNamedQueryOutput;
 
 mod _create_named_query_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_comments::Lis
     }
 }
 
-pub use crate::operation::list_comments::_list_comments_output::ListCommentsOutput;
-
 pub use crate::operation::list_comments::_list_comments_input::ListCommentsInput;
+
+pub use crate::operation::list_comments::_list_comments_output::ListCommentsOutput;
 
 mod _list_comments_input;
 

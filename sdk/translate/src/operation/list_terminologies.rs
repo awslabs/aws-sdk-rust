@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_terminologies
     }
 }
 
-pub use crate::operation::list_terminologies::_list_terminologies_output::ListTerminologiesOutput;
-
 pub use crate::operation::list_terminologies::_list_terminologies_input::ListTerminologiesInput;
+
+pub use crate::operation::list_terminologies::_list_terminologies_output::ListTerminologiesOutput;
 
 mod _list_terminologies_input;
 

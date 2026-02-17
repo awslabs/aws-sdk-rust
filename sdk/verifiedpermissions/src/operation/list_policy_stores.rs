@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_stores
     }
 }
 
-pub use crate::operation::list_policy_stores::_list_policy_stores_output::ListPolicyStoresOutput;
-
 pub use crate::operation::list_policy_stores::_list_policy_stores_input::ListPolicyStoresInput;
+
+pub use crate::operation::list_policy_stores::_list_policy_stores_output::ListPolicyStoresOutput;
 
 mod _list_policy_stores_input;
 

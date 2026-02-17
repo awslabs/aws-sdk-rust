@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::group_resources::G
     }
 }
 
-pub use crate::operation::group_resources::_group_resources_output::GroupResourcesOutput;
-
 pub use crate::operation::group_resources::_group_resources_input::GroupResourcesInput;
+
+pub use crate::operation::group_resources::_group_resources_output::GroupResourcesOutput;
 
 mod _group_resources_input;
 

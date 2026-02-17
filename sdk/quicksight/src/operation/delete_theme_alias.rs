@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_theme_alias
     }
 }
 
-pub use crate::operation::delete_theme_alias::_delete_theme_alias_output::DeleteThemeAliasOutput;
-
 pub use crate::operation::delete_theme_alias::_delete_theme_alias_input::DeleteThemeAliasInput;
+
+pub use crate::operation::delete_theme_alias::_delete_theme_alias_output::DeleteThemeAliasOutput;
 
 mod _delete_theme_alias_input;
 

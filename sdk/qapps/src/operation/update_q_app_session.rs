@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_q_app_sessi
     }
 }
 
-pub use crate::operation::update_q_app_session::_update_q_app_session_output::UpdateQAppSessionOutput;
-
 pub use crate::operation::update_q_app_session::_update_q_app_session_input::UpdateQAppSessionInput;
+
+pub use crate::operation::update_q_app_session::_update_q_app_session_output::UpdateQAppSessionOutput;
 
 mod _update_q_app_session_input;
 

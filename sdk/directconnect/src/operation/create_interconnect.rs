@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_interconnec
     }
 }
 
-pub use crate::operation::create_interconnect::_create_interconnect_output::CreateInterconnectOutput;
-
 pub use crate::operation::create_interconnect::_create_interconnect_input::CreateInterconnectInput;
+
+pub use crate::operation::create_interconnect::_create_interconnect_output::CreateInterconnectOutput;
 
 mod _create_interconnect_input;
 

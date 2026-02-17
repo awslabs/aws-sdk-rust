@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workspace::
     }
 }
 
-pub use crate::operation::create_workspace::_create_workspace_output::CreateWorkspaceOutput;
-
 pub use crate::operation::create_workspace::_create_workspace_input::CreateWorkspaceInput;
+
+pub use crate::operation::create_workspace::_create_workspace_output::CreateWorkspaceOutput;
 
 mod _create_workspace_input;
 

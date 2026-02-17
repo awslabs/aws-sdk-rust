@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connector_ent
     }
 }
 
-pub use crate::operation::list_connector_entities::_list_connector_entities_output::ListConnectorEntitiesOutput;
-
 pub use crate::operation::list_connector_entities::_list_connector_entities_input::ListConnectorEntitiesInput;
+
+pub use crate::operation::list_connector_entities::_list_connector_entities_output::ListConnectorEntitiesOutput;
 
 mod _list_connector_entities_input;
 

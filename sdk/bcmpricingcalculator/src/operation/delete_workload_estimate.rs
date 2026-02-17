@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workload_es
     }
 }
 
-pub use crate::operation::delete_workload_estimate::_delete_workload_estimate_output::DeleteWorkloadEstimateOutput;
-
 pub use crate::operation::delete_workload_estimate::_delete_workload_estimate_input::DeleteWorkloadEstimateInput;
+
+pub use crate::operation::delete_workload_estimate::_delete_workload_estimate_output::DeleteWorkloadEstimateOutput;
 
 mod _delete_workload_estimate_input;
 

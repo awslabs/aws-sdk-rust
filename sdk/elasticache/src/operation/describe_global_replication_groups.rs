@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_global_re
     }
 }
 
-pub use crate::operation::describe_global_replication_groups::_describe_global_replication_groups_output::DescribeGlobalReplicationGroupsOutput;
-
 pub use crate::operation::describe_global_replication_groups::_describe_global_replication_groups_input::DescribeGlobalReplicationGroupsInput;
+
+pub use crate::operation::describe_global_replication_groups::_describe_global_replication_groups_output::DescribeGlobalReplicationGroupsOutput;
 
 mod _describe_global_replication_groups_input;
 

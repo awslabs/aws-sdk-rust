@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metric_data::P
     }
 }
 
-pub use crate::operation::put_metric_data::_put_metric_data_output::PutMetricDataOutput;
-
 pub use crate::operation::put_metric_data::_put_metric_data_input::PutMetricDataInput;
+
+pub use crate::operation::put_metric_data::_put_metric_data_output::PutMetricDataOutput;
 
 mod _put_metric_data_input;
 

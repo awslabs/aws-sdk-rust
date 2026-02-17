@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_insight::Up
     }
 }
 
-pub use crate::operation::update_insight::_update_insight_output::UpdateInsightOutput;
-
 pub use crate::operation::update_insight::_update_insight_input::UpdateInsightInput;
+
+pub use crate::operation::update_insight::_update_insight_output::UpdateInsightOutput;
 
 mod _update_insight_input;
 

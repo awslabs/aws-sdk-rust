@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_jobs_by_pipel
     }
 }
 
-pub use crate::operation::list_jobs_by_pipeline::_list_jobs_by_pipeline_output::ListJobsByPipelineOutput;
-
 pub use crate::operation::list_jobs_by_pipeline::_list_jobs_by_pipeline_input::ListJobsByPipelineInput;
+
+pub use crate::operation::list_jobs_by_pipeline::_list_jobs_by_pipeline_output::ListJobsByPipelineOutput;
 
 mod _list_jobs_by_pipeline_input;
 

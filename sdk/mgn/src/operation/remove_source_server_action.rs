@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_source_serv
     }
 }
 
-pub use crate::operation::remove_source_server_action::_remove_source_server_action_output::RemoveSourceServerActionOutput;
-
 pub use crate::operation::remove_source_server_action::_remove_source_server_action_input::RemoveSourceServerActionInput;
+
+pub use crate::operation::remove_source_server_action::_remove_source_server_action_output::RemoveSourceServerActionOutput;
 
 mod _remove_source_server_action_input;
 

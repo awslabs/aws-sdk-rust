@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_access_point_s
     }
 }
 
-pub use crate::operation::put_access_point_scope::_put_access_point_scope_output::PutAccessPointScopeOutput;
-
 pub use crate::operation::put_access_point_scope::_put_access_point_scope_input::PutAccessPointScopeInput;
+
+pub use crate::operation::put_access_point_scope::_put_access_point_scope_output::PutAccessPointScopeOutput;
 
 mod _put_access_point_scope_input;
 

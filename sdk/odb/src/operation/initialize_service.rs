@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initialize_service
     }
 }
 
-pub use crate::operation::initialize_service::_initialize_service_output::InitializeServiceOutput;
-
 pub use crate::operation::initialize_service::_initialize_service_input::InitializeServiceInput;
+
+pub use crate::operation::initialize_service::_initialize_service_output::InitializeServiceOutput;
 
 mod _initialize_service_input;
 

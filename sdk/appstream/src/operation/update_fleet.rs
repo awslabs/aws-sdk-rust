@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_fleet::Upda
     }
 }
 
-pub use crate::operation::update_fleet::_update_fleet_output::UpdateFleetOutput;
-
 pub use crate::operation::update_fleet::_update_fleet_input::UpdateFleetInput;
+
+pub use crate::operation::update_fleet::_update_fleet_output::UpdateFleetOutput;
 
 mod _update_fleet_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_document::C
     }
 }
 
-pub use crate::operation::create_document::_create_document_output::CreateDocumentOutput;
-
 pub use crate::operation::create_document::_create_document_input::CreateDocumentInput;
+
+pub use crate::operation::create_document::_create_document_output::CreateDocumentOutput;
 
 mod _create_document_input;
 

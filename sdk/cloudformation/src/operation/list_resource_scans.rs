@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_scan
     }
 }
 
-pub use crate::operation::list_resource_scans::_list_resource_scans_output::ListResourceScansOutput;
-
 pub use crate::operation::list_resource_scans::_list_resource_scans_input::ListResourceScansInput;
+
+pub use crate::operation::list_resource_scans::_list_resource_scans_output::ListResourceScansOutput;
 
 mod _list_resource_scans_input;
 

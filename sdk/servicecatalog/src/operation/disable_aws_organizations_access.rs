@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_aws_organi
     }
 }
 
-pub use crate::operation::disable_aws_organizations_access::_disable_aws_organizations_access_output::DisableAwsOrganizationsAccessOutput;
-
 pub use crate::operation::disable_aws_organizations_access::_disable_aws_organizations_access_input::DisableAwsOrganizationsAccessInput;
+
+pub use crate::operation::disable_aws_organizations_access::_disable_aws_organizations_access_output::DisableAwsOrganizationsAccessOutput;
 
 mod _disable_aws_organizations_access_input;
 

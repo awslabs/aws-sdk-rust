@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lb_cookie_s
     }
 }
 
-pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_stickiness_policy_output::CreateLbCookieStickinessPolicyOutput;
-
 pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_stickiness_policy_input::CreateLbCookieStickinessPolicyInput;
+
+pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_stickiness_policy_output::CreateLbCookieStickinessPolicyOutput;
 
 mod _create_lb_cookie_stickiness_policy_input;
 

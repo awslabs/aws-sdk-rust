@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_active_violat
     }
 }
 
-pub use crate::operation::list_active_violations::_list_active_violations_output::ListActiveViolationsOutput;
-
 pub use crate::operation::list_active_violations::_list_active_violations_input::ListActiveViolationsInput;
+
+pub use crate::operation::list_active_violations::_list_active_violations_output::ListActiveViolationsOutput;
 
 mod _list_active_violations_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service::GetSe
     }
 }
 
-pub use crate::operation::get_service::_get_service_output::GetServiceOutput;
-
 pub use crate::operation::get_service::_get_service_input::GetServiceInput;
+
+pub use crate::operation::get_service::_get_service_output::GetServiceOutput;
 
 mod _get_service_input;
 

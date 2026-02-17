@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_report_definit
     }
 }
 
-pub use crate::operation::get_report_definition::_get_report_definition_output::GetReportDefinitionOutput;
-
 pub use crate::operation::get_report_definition::_get_report_definition_input::GetReportDefinitionInput;
+
+pub use crate::operation::get_report_definition::_get_report_definition_output::GetReportDefinitionOutput;
 
 mod _get_report_definition_input;
 

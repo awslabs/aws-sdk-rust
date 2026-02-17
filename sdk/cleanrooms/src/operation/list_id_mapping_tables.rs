@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_id_mapping_ta
     }
 }
 
-pub use crate::operation::list_id_mapping_tables::_list_id_mapping_tables_output::ListIdMappingTablesOutput;
-
 pub use crate::operation::list_id_mapping_tables::_list_id_mapping_tables_input::ListIdMappingTablesInput;
+
+pub use crate::operation::list_id_mapping_tables::_list_id_mapping_tables_output::ListIdMappingTablesOutput;
 
 mod _list_id_mapping_tables_input;
 

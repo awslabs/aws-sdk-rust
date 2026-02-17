@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_keyword::De
     }
 }
 
-pub use crate::operation::delete_keyword::_delete_keyword_output::DeleteKeywordOutput;
-
 pub use crate::operation::delete_keyword::_delete_keyword_input::DeleteKeywordInput;
+
+pub use crate::operation::delete_keyword::_delete_keyword_output::DeleteKeywordOutput;
 
 mod _delete_keyword_input;
 

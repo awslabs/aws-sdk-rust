@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_view_conten
     }
 }
 
-pub use crate::operation::update_view_content::_update_view_content_output::UpdateViewContentOutput;
-
 pub use crate::operation::update_view_content::_update_view_content_input::UpdateViewContentInput;
+
+pub use crate::operation::update_view_content::_update_view_content_output::UpdateViewContentOutput;
 
 mod _update_view_content_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_id_mapping_tab
     }
 }
 
-pub use crate::operation::get_id_mapping_table::_get_id_mapping_table_output::GetIdMappingTableOutput;
-
 pub use crate::operation::get_id_mapping_table::_get_id_mapping_table_input::GetIdMappingTableInput;
+
+pub use crate::operation::get_id_mapping_table::_get_id_mapping_table_output::GetIdMappingTableOutput;
 
 mod _get_id_mapping_table_input;
 

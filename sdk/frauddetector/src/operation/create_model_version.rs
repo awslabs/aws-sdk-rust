@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_versi
     }
 }
 
-pub use crate::operation::create_model_version::_create_model_version_output::CreateModelVersionOutput;
-
 pub use crate::operation::create_model_version::_create_model_version_input::CreateModelVersionInput;
+
+pub use crate::operation::create_model_version::_create_model_version_output::CreateModelVersionOutput;
 
 mod _create_model_version_input;
 

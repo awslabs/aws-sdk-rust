@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_in_app_temp
     }
 }
 
-pub use crate::operation::update_in_app_template::_update_in_app_template_output::UpdateInAppTemplateOutput;
-
 pub use crate::operation::update_in_app_template::_update_in_app_template_input::UpdateInAppTemplateInput;
+
+pub use crate::operation::update_in_app_template::_update_in_app_template_output::UpdateInAppTemplateOutput;
 
 mod _update_in_app_template_input;
 

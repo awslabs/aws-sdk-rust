@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_connection_
     }
 }
 
-pub use crate::operation::delete_connection_recording_preferences::_delete_connection_recording_preferences_output::DeleteConnectionRecordingPreferencesOutput;
-
 pub use crate::operation::delete_connection_recording_preferences::_delete_connection_recording_preferences_input::DeleteConnectionRecordingPreferencesInput;
+
+pub use crate::operation::delete_connection_recording_preferences::_delete_connection_recording_preferences_output::DeleteConnectionRecordingPreferencesOutput;
 
 mod _delete_connection_recording_preferences_input;
 

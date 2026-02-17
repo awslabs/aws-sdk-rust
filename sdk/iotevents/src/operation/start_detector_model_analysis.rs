@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_detector_mod
     }
 }
 
-pub use crate::operation::start_detector_model_analysis::_start_detector_model_analysis_output::StartDetectorModelAnalysisOutput;
-
 pub use crate::operation::start_detector_model_analysis::_start_detector_model_analysis_input::StartDetectorModelAnalysisInput;
+
+pub use crate::operation::start_detector_model_analysis::_start_detector_model_analysis_output::StartDetectorModelAnalysisOutput;
 
 mod _start_detector_model_analysis_input;
 

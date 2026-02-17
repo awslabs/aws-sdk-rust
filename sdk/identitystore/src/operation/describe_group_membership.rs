@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_group_mem
     }
 }
 
-pub use crate::operation::describe_group_membership::_describe_group_membership_output::DescribeGroupMembershipOutput;
-
 pub use crate::operation::describe_group_membership::_describe_group_membership_input::DescribeGroupMembershipInput;
+
+pub use crate::operation::describe_group_membership::_describe_group_membership_output::DescribeGroupMembershipOutput;
 
 mod _describe_group_membership_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mfa_device_ta
     }
 }
 
-pub use crate::operation::list_mfa_device_tags::_list_mfa_device_tags_output::ListMfaDeviceTagsOutput;
-
 pub use crate::operation::list_mfa_device_tags::_list_mfa_device_tags_input::ListMfaDeviceTagsInput;
+
+pub use crate::operation::list_mfa_device_tags::_list_mfa_device_tags_output::ListMfaDeviceTagsOutput;
 
 mod _list_mfa_device_tags_input;
 

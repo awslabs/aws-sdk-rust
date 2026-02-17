@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_link_attrib
     }
 }
 
-pub use crate::operation::update_link_attributes::_update_link_attributes_output::UpdateLinkAttributesOutput;
-
 pub use crate::operation::update_link_attributes::_update_link_attributes_input::UpdateLinkAttributesInput;
+
+pub use crate::operation::update_link_attributes::_update_link_attributes_output::UpdateLinkAttributesOutput;
 
 mod _update_link_attributes_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_asset::GetAsse
     }
 }
 
-pub use crate::operation::get_asset::_get_asset_output::GetAssetOutput;
-
 pub use crate::operation::get_asset::_get_asset_input::GetAssetInput;
+
+pub use crate::operation::get_asset::_get_asset_output::GetAssetOutput;
 
 mod _get_asset_input;
 

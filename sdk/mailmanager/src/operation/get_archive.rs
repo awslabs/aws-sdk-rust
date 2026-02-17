@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_archive::GetAr
     }
 }
 
-pub use crate::operation::get_archive::_get_archive_output::GetArchiveOutput;
-
 pub use crate::operation::get_archive::_get_archive_input::GetArchiveInput;
+
+pub use crate::operation::get_archive::_get_archive_output::GetArchiveOutput;
 
 mod _get_archive_input;
 

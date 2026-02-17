@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stream::Cre
     }
 }
 
-pub use crate::operation::create_stream::_create_stream_output::CreateStreamOutput;
-
 pub use crate::operation::create_stream::_create_stream_input::CreateStreamInput;
+
+pub use crate::operation::create_stream::_create_stream_output::CreateStreamOutput;
 
 mod _create_stream_input;
 

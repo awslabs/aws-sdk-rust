@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_flows
     }
 }
 
-pub use crate::operation::list_channel_flows::_list_channel_flows_output::ListChannelFlowsOutput;
-
 pub use crate::operation::list_channel_flows::_list_channel_flows_input::ListChannelFlowsInput;
+
+pub use crate::operation::list_channel_flows::_list_channel_flows_output::ListChannelFlowsOutput;
 
 mod _list_channel_flows_input;
 

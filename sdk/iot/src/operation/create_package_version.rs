@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_package_ver
     }
 }
 
-pub use crate::operation::create_package_version::_create_package_version_output::CreatePackageVersionOutput;
-
 pub use crate::operation::create_package_version::_create_package_version_input::CreatePackageVersionInput;
+
+pub use crate::operation::create_package_version::_create_package_version_output::CreatePackageVersionOutput;
 
 mod _create_package_version_input;
 

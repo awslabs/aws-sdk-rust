@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tags::Creat
     }
 }
 
-pub use crate::operation::create_tags::_create_tags_output::CreateTagsOutput;
-
 pub use crate::operation::create_tags::_create_tags_input::CreateTagsInput;
+
+pub use crate::operation::create_tags::_create_tags_output::CreateTagsOutput;
 
 mod _create_tags_input;
 

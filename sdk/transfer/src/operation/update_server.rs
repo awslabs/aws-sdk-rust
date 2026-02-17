@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_server::Upd
     }
 }
 
-pub use crate::operation::update_server::_update_server_output::UpdateServerOutput;
-
 pub use crate::operation::update_server::_update_server_input::UpdateServerInput;
+
+pub use crate::operation::update_server::_update_server_output::UpdateServerOutput;
 
 mod _update_server_input;
 

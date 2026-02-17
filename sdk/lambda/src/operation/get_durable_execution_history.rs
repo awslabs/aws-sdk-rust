@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_durable_execut
     }
 }
 
-pub use crate::operation::get_durable_execution_history::_get_durable_execution_history_output::GetDurableExecutionHistoryOutput;
-
 pub use crate::operation::get_durable_execution_history::_get_durable_execution_history_input::GetDurableExecutionHistoryInput;
+
+pub use crate::operation::get_durable_execution_history::_get_durable_execution_history_output::GetDurableExecutionHistoryOutput;
 
 mod _get_durable_execution_history_input;
 

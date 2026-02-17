@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recipe_job:
     }
 }
 
-pub use crate::operation::update_recipe_job::_update_recipe_job_output::UpdateRecipeJobOutput;
-
 pub use crate::operation::update_recipe_job::_update_recipe_job_input::UpdateRecipeJobInput;
+
+pub use crate::operation::update_recipe_job::_update_recipe_job_output::UpdateRecipeJobOutput;
 
 mod _update_recipe_job_input;
 

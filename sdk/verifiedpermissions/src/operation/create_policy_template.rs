@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_policy_temp
     }
 }
 
-pub use crate::operation::create_policy_template::_create_policy_template_output::CreatePolicyTemplateOutput;
-
 pub use crate::operation::create_policy_template::_create_policy_template_input::CreatePolicyTemplateInput;
+
+pub use crate::operation::create_policy_template::_create_policy_template_output::CreatePolicyTemplateOutput;
 
 mod _create_policy_template_input;
 

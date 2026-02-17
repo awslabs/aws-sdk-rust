@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_grant::Crea
     }
 }
 
-pub use crate::operation::create_grant::_create_grant_output::CreateGrantOutput;
-
 pub use crate::operation::create_grant::_create_grant_input::CreateGrantInput;
+
+pub use crate::operation::create_grant::_create_grant_output::CreateGrantOutput;
 
 mod _create_grant_input;
 

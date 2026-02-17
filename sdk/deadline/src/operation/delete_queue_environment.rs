@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queue_envir
     }
 }
 
-pub use crate::operation::delete_queue_environment::_delete_queue_environment_output::DeleteQueueEnvironmentOutput;
-
 pub use crate::operation::delete_queue_environment::_delete_queue_environment_input::DeleteQueueEnvironmentInput;
+
+pub use crate::operation::delete_queue_environment::_delete_queue_environment_output::DeleteQueueEnvironmentOutput;
 
 mod _delete_queue_environment_input;
 

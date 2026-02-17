@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transit_gat
     }
 }
 
-pub use crate::operation::delete_transit_gateway_metering_policy::_delete_transit_gateway_metering_policy_output::DeleteTransitGatewayMeteringPolicyOutput;
-
 pub use crate::operation::delete_transit_gateway_metering_policy::_delete_transit_gateway_metering_policy_input::DeleteTransitGatewayMeteringPolicyInput;
+
+pub use crate::operation::delete_transit_gateway_metering_policy::_delete_transit_gateway_metering_policy_output::DeleteTransitGatewayMeteringPolicyOutput;
 
 mod _delete_transit_gateway_metering_policy_input;
 

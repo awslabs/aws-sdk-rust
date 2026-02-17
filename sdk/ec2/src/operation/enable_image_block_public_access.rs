@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_image_block
     }
 }
 
-pub use crate::operation::enable_image_block_public_access::_enable_image_block_public_access_output::EnableImageBlockPublicAccessOutput;
-
 pub use crate::operation::enable_image_block_public_access::_enable_image_block_public_access_input::EnableImageBlockPublicAccessInput;
+
+pub use crate::operation::enable_image_block_public_access::_enable_image_block_public_access_output::EnableImageBlockPublicAccessOutput;
 
 mod _enable_image_block_public_access_input;
 

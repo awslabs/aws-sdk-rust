@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_instance_stor
     }
 }
 
-pub use crate::operation::list_instance_storage_configs::_list_instance_storage_configs_output::ListInstanceStorageConfigsOutput;
-
 pub use crate::operation::list_instance_storage_configs::_list_instance_storage_configs_input::ListInstanceStorageConfigsInput;
+
+pub use crate::operation::list_instance_storage_configs::_list_instance_storage_configs_output::ListInstanceStorageConfigsOutput;
 
 mod _list_instance_storage_configs_input;
 

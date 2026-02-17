@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::opt_in_phone_numbe
     }
 }
 
-pub use crate::operation::opt_in_phone_number::_opt_in_phone_number_output::OptInPhoneNumberOutput;
-
 pub use crate::operation::opt_in_phone_number::_opt_in_phone_number_input::OptInPhoneNumberInput;
+
+pub use crate::operation::opt_in_phone_number::_opt_in_phone_number_output::OptInPhoneNumberOutput;
 
 mod _opt_in_phone_number_input;
 

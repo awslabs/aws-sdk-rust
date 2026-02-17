@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_environment
     }
 }
 
-pub use crate::operation::cancel_environment_deployment::_cancel_environment_deployment_output::CancelEnvironmentDeploymentOutput;
-
 pub use crate::operation::cancel_environment_deployment::_cancel_environment_deployment_input::CancelEnvironmentDeploymentInput;
+
+pub use crate::operation::cancel_environment_deployment::_cancel_environment_deployment_output::CancelEnvironmentDeploymentOutput;
 
 mod _cancel_environment_deployment_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_comp
     }
 }
 
-pub use crate::operation::list_resource_compliance_summaries::_list_resource_compliance_summaries_output::ListResourceComplianceSummariesOutput;
-
 pub use crate::operation::list_resource_compliance_summaries::_list_resource_compliance_summaries_input::ListResourceComplianceSummariesInput;
+
+pub use crate::operation::list_resource_compliance_summaries::_list_resource_compliance_summaries_output::ListResourceComplianceSummariesOutput;
 
 mod _list_resource_compliance_summaries_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_studio_sess
     }
 }
 
-pub use crate::operation::update_studio_session_mapping::_update_studio_session_mapping_output::UpdateStudioSessionMappingOutput;
-
 pub use crate::operation::update_studio_session_mapping::_update_studio_session_mapping_input::UpdateStudioSessionMappingInput;
+
+pub use crate::operation::update_studio_session_mapping::_update_studio_session_mapping_output::UpdateStudioSessionMappingOutput;
 
 mod _update_studio_session_mapping_input;
 

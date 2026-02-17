@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_usage_rep
     }
 }
 
-pub use crate::operation::describe_usage_report_subscriptions::_describe_usage_report_subscriptions_output::DescribeUsageReportSubscriptionsOutput;
-
 pub use crate::operation::describe_usage_report_subscriptions::_describe_usage_report_subscriptions_input::DescribeUsageReportSubscriptionsInput;
+
+pub use crate::operation::describe_usage_report_subscriptions::_describe_usage_report_subscriptions_output::DescribeUsageReportSubscriptionsOutput;
 
 mod _describe_usage_report_subscriptions_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_what_if_ana
     }
 }
 
-pub use crate::operation::delete_what_if_analysis::_delete_what_if_analysis_output::DeleteWhatIfAnalysisOutput;
-
 pub use crate::operation::delete_what_if_analysis::_delete_what_if_analysis_input::DeleteWhatIfAnalysisInput;
+
+pub use crate::operation::delete_what_if_analysis::_delete_what_if_analysis_output::DeleteWhatIfAnalysisOutput;
 
 mod _delete_what_if_analysis_input;
 

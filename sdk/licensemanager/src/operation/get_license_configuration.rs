@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_license_config
     }
 }
 
-pub use crate::operation::get_license_configuration::_get_license_configuration_output::GetLicenseConfigurationOutput;
-
 pub use crate::operation::get_license_configuration::_get_license_configuration_input::GetLicenseConfigurationInput;
+
+pub use crate::operation::get_license_configuration::_get_license_configuration_output::GetLicenseConfigurationOutput;
 
 mod _get_license_configuration_input;
 

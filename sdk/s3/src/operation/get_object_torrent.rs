@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_torrent
     }
 }
 
-pub use crate::operation::get_object_torrent::_get_object_torrent_output::GetObjectTorrentOutput;
-
 pub use crate::operation::get_object_torrent::_get_object_torrent_input::GetObjectTorrentInput;
+
+pub use crate::operation::get_object_torrent::_get_object_torrent_output::GetObjectTorrentOutput;
 
 mod _get_object_torrent_input;
 

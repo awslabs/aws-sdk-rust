@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::configure_agent::C
     }
 }
 
-pub use crate::operation::configure_agent::_configure_agent_output::ConfigureAgentOutput;
-
 pub use crate::operation::configure_agent::_configure_agent_input::ConfigureAgentInput;
+
+pub use crate::operation::configure_agent::_configure_agent_output::ConfigureAgentOutput;
 
 mod _configure_agent_input;
 

@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_automated_r
     }
 }
 
-pub use crate::operation::create_automated_reasoning_policy_version::_create_automated_reasoning_policy_version_output::CreateAutomatedReasoningPolicyVersionOutput;
-
 pub use crate::operation::create_automated_reasoning_policy_version::_create_automated_reasoning_policy_version_input::CreateAutomatedReasoningPolicyVersionInput;
+
+pub use crate::operation::create_automated_reasoning_policy_version::_create_automated_reasoning_policy_version_output::CreateAutomatedReasoningPolicyVersionOutput;
 
 mod _create_automated_reasoning_policy_version_input;
 

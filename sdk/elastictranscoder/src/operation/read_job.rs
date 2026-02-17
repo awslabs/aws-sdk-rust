@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::read_job::ReadJobE
     }
 }
 
-pub use crate::operation::read_job::_read_job_output::ReadJobOutput;
-
 pub use crate::operation::read_job::_read_job_input::ReadJobInput;
+
+pub use crate::operation::read_job::_read_job_output::ReadJobOutput;
 
 mod _read_job_input;
 

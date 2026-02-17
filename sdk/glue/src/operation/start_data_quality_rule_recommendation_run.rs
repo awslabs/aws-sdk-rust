@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_quality
     }
 }
 
-pub use crate::operation::start_data_quality_rule_recommendation_run::_start_data_quality_rule_recommendation_run_output::StartDataQualityRuleRecommendationRunOutput;
-
 pub use crate::operation::start_data_quality_rule_recommendation_run::_start_data_quality_rule_recommendation_run_input::StartDataQualityRuleRecommendationRunInput;
+
+pub use crate::operation::start_data_quality_rule_recommendation_run::_start_data_quality_rule_recommendation_run_output::StartDataQualityRuleRecommendationRunOutput;
 
 mod _start_data_quality_rule_recommendation_run_input;
 

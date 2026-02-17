@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_multicast_group_from_fuota_task::_disassociate_multicast_group_from_fuota_task_output::DisassociateMulticastGroupFromFuotaTaskOutput;
-
 pub use crate::operation::disassociate_multicast_group_from_fuota_task::_disassociate_multicast_group_from_fuota_task_input::DisassociateMulticastGroupFromFuotaTaskInput;
+
+pub use crate::operation::disassociate_multicast_group_from_fuota_task::_disassociate_multicast_group_from_fuota_task_output::DisassociateMulticastGroupFromFuotaTaskOutput;
 
 mod _disassociate_multicast_group_from_fuota_task_input;
 

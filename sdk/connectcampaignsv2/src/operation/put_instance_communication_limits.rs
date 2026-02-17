@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_instance_commu
     }
 }
 
-pub use crate::operation::put_instance_communication_limits::_put_instance_communication_limits_output::PutInstanceCommunicationLimitsOutput;
-
 pub use crate::operation::put_instance_communication_limits::_put_instance_communication_limits_input::PutInstanceCommunicationLimitsInput;
+
+pub use crate::operation::put_instance_communication_limits::_put_instance_communication_limits_output::PutInstanceCommunicationLimitsOutput;
 
 mod _put_instance_communication_limits_input;
 

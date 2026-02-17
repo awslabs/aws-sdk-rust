@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_coip_pool::
     }
 }
 
-pub use crate::operation::delete_coip_pool::_delete_coip_pool_output::DeleteCoipPoolOutput;
-
 pub use crate::operation::delete_coip_pool::_delete_coip_pool_input::DeleteCoipPoolInput;
+
+pub use crate::operation::delete_coip_pool::_delete_coip_pool_output::DeleteCoipPoolOutput;
 
 mod _delete_coip_pool_input;
 

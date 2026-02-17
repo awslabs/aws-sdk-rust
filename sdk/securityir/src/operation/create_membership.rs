@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_membership:
     }
 }
 
-pub use crate::operation::create_membership::_create_membership_output::CreateMembershipOutput;
-
 pub use crate::operation::create_membership::_create_membership_input::CreateMembershipInput;
+
+pub use crate::operation::create_membership::_create_membership_output::CreateMembershipOutput;
 
 mod _create_membership_input;
 

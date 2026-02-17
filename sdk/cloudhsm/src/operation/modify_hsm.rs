@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_hsm::Modify
     }
 }
 
-pub use crate::operation::modify_hsm::_modify_hsm_output::ModifyHsmOutput;
-
 pub use crate::operation::modify_hsm::_modify_hsm_input::ModifyHsmInput;
+
+pub use crate::operation::modify_hsm::_modify_hsm_output::ModifyHsmOutput;
 
 mod _modify_hsm_input;
 

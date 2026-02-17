@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_alias:
     }
 }
 
-pub use crate::operation::get_account_alias::_get_account_alias_output::GetAccountAliasOutput;
-
 pub use crate::operation::get_account_alias::_get_account_alias_input::GetAccountAliasInput;
+
+pub use crate::operation::get_account_alias::_get_account_alias_output::GetAccountAliasOutput;
 
 mod _get_account_alias_input;
 

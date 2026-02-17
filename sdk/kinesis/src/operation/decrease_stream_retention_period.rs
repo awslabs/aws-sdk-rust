@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decrease_stream_re
     }
 }
 
-pub use crate::operation::decrease_stream_retention_period::_decrease_stream_retention_period_output::DecreaseStreamRetentionPeriodOutput;
-
 pub use crate::operation::decrease_stream_retention_period::_decrease_stream_retention_period_input::DecreaseStreamRetentionPeriodInput;
+
+pub use crate::operation::decrease_stream_retention_period::_decrease_stream_retention_period_output::DecreaseStreamRetentionPeriodOutput;
 
 mod _decrease_stream_retention_period_input;
 

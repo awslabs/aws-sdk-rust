@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_api_
     }
 }
 
-pub use crate::operation::get_container_api_metadata::_get_container_api_metadata_output::GetContainerApiMetadataOutput;
-
 pub use crate::operation::get_container_api_metadata::_get_container_api_metadata_input::GetContainerApiMetadataInput;
+
+pub use crate::operation::get_container_api_metadata::_get_container_api_metadata_output::GetContainerApiMetadataOutput;
 
 mod _get_container_api_metadata_input;
 

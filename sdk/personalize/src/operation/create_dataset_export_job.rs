@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dataset_exp
     }
 }
 
-pub use crate::operation::create_dataset_export_job::_create_dataset_export_job_output::CreateDatasetExportJobOutput;
-
 pub use crate::operation::create_dataset_export_job::_create_dataset_export_job_input::CreateDatasetExportJobInput;
+
+pub use crate::operation::create_dataset_export_job::_create_dataset_export_job_output::CreateDatasetExportJobOutput;
 
 mod _create_dataset_export_job_input;
 

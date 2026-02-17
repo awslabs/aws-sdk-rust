@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::dismiss_user_conta
     }
 }
 
-pub use crate::operation::dismiss_user_contact::_dismiss_user_contact_output::DismissUserContactOutput;
-
 pub use crate::operation::dismiss_user_contact::_dismiss_user_contact_input::DismissUserContactInput;
+
+pub use crate::operation::dismiss_user_contact::_dismiss_user_contact_output::DismissUserContactOutput;
 
 mod _dismiss_user_contact_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_assessment::Ge
     }
 }
 
-pub use crate::operation::get_assessment::_get_assessment_output::GetAssessmentOutput;
-
 pub use crate::operation::get_assessment::_get_assessment_input::GetAssessmentInput;
+
+pub use crate::operation::get_assessment::_get_assessment_output::GetAssessmentOutput;
 
 mod _get_assessment_input;
 

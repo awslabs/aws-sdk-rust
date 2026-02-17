@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_deliverability
     }
 }
 
-pub use crate::operation::put_deliverability_dashboard_option::_put_deliverability_dashboard_option_output::PutDeliverabilityDashboardOptionOutput;
-
 pub use crate::operation::put_deliverability_dashboard_option::_put_deliverability_dashboard_option_input::PutDeliverabilityDashboardOptionInput;
+
+pub use crate::operation::put_deliverability_dashboard_option::_put_deliverability_dashboard_option_output::PutDeliverabilityDashboardOptionOutput;
 
 mod _put_deliverability_dashboard_option_input;
 

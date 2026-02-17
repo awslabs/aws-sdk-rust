@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver_rule_
     }
 }
 
-pub use crate::operation::get_resolver_rule_association::_get_resolver_rule_association_output::GetResolverRuleAssociationOutput;
-
 pub use crate::operation::get_resolver_rule_association::_get_resolver_rule_association_input::GetResolverRuleAssociationInput;
+
+pub use crate::operation::get_resolver_rule_association::_get_resolver_rule_association_output::GetResolverRuleAssociationOutput;
 
 mod _get_resolver_rule_association_input;
 

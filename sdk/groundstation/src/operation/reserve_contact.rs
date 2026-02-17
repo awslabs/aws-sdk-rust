@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reserve_contact::R
     }
 }
 
-pub use crate::operation::reserve_contact::_reserve_contact_output::ReserveContactOutput;
-
 pub use crate::operation::reserve_contact::_reserve_contact_input::ReserveContactInput;
+
+pub use crate::operation::reserve_contact::_reserve_contact_output::ReserveContactOutput;
 
 mod _reserve_contact_input;
 

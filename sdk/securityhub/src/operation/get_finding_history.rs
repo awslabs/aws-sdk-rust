@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_finding_histor
     }
 }
 
-pub use crate::operation::get_finding_history::_get_finding_history_output::GetFindingHistoryOutput;
-
 pub use crate::operation::get_finding_history::_get_finding_history_input::GetFindingHistoryInput;
+
+pub use crate::operation::get_finding_history::_get_finding_history_output::GetFindingHistoryOutput;
 
 mod _get_finding_history_input;
 

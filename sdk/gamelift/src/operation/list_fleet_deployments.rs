@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fleet_deploym
     }
 }
 
-pub use crate::operation::list_fleet_deployments::_list_fleet_deployments_output::ListFleetDeploymentsOutput;
-
 pub use crate::operation::list_fleet_deployments::_list_fleet_deployments_input::ListFleetDeploymentsInput;
+
+pub use crate::operation::list_fleet_deployments::_list_fleet_deployments_output::ListFleetDeploymentsOutput;
 
 mod _list_fleet_deployments_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_typed_link:
     }
 }
 
-pub use crate::operation::attach_typed_link::_attach_typed_link_output::AttachTypedLinkOutput;
-
 pub use crate::operation::attach_typed_link::_attach_typed_link_input::AttachTypedLinkInput;
+
+pub use crate::operation::attach_typed_link::_attach_typed_link_output::AttachTypedLinkOutput;
 
 mod _attach_typed_link_input;
 

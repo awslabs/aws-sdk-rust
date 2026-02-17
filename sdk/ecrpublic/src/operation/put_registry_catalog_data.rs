@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_registry_catal
     }
 }
 
-pub use crate::operation::put_registry_catalog_data::_put_registry_catalog_data_output::PutRegistryCatalogDataOutput;
-
 pub use crate::operation::put_registry_catalog_data::_put_registry_catalog_data_input::PutRegistryCatalogDataInput;
+
+pub use crate::operation::put_registry_catalog_data::_put_registry_catalog_data_output::PutRegistryCatalogDataOutput;
 
 mod _put_registry_catalog_data_input;
 

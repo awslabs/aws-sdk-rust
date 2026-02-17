@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_qualit
     }
 }
 
-pub use crate::operation::delete_data_quality_job_definition::_delete_data_quality_job_definition_output::DeleteDataQualityJobDefinitionOutput;
-
 pub use crate::operation::delete_data_quality_job_definition::_delete_data_quality_job_definition_input::DeleteDataQualityJobDefinitionInput;
+
+pub use crate::operation::delete_data_quality_job_definition::_delete_data_quality_job_definition_output::DeleteDataQualityJobDefinitionOutput;
 
 mod _delete_data_quality_job_definition_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rule_group:
     }
 }
 
-pub use crate::operation::update_rule_group::_update_rule_group_output::UpdateRuleGroupOutput;
-
 pub use crate::operation::update_rule_group::_update_rule_group_input::UpdateRuleGroupInput;
+
+pub use crate::operation::update_rule_group::_update_rule_group_output::UpdateRuleGroupOutput;
 
 mod _update_rule_group_input;
 

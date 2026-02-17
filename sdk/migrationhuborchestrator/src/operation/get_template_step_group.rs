@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_template_step_
     }
 }
 
-pub use crate::operation::get_template_step_group::_get_template_step_group_output::GetTemplateStepGroupOutput;
-
 pub use crate::operation::get_template_step_group::_get_template_step_group_input::GetTemplateStepGroupInput;
+
+pub use crate::operation::get_template_step_group::_get_template_step_group_output::GetTemplateStepGroupOutput;
 
 mod _get_template_step_group_input;
 

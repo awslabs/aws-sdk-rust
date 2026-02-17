@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_active_appro
     }
 }
 
-pub use crate::operation::start_active_approval_team_deletion::_start_active_approval_team_deletion_output::StartActiveApprovalTeamDeletionOutput;
-
 pub use crate::operation::start_active_approval_team_deletion::_start_active_approval_team_deletion_input::StartActiveApprovalTeamDeletionInput;
+
+pub use crate::operation::start_active_approval_team_deletion::_start_active_approval_team_deletion_output::StartActiveApprovalTeamDeletionOutput;
 
 mod _start_active_approval_team_deletion_input;
 

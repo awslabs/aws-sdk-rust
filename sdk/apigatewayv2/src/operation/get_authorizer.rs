@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_authorizer::Ge
     }
 }
 
-pub use crate::operation::get_authorizer::_get_authorizer_output::GetAuthorizerOutput;
-
 pub use crate::operation::get_authorizer::_get_authorizer_input::GetAuthorizerInput;
+
+pub use crate::operation::get_authorizer::_get_authorizer_output::GetAuthorizerOutput;
 
 mod _get_authorizer_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_schedule::D
     }
 }
 
-pub use crate::operation::delete_schedule::_delete_schedule_output::DeleteScheduleOutput;
-
 pub use crate::operation::delete_schedule::_delete_schedule_input::DeleteScheduleInput;
+
+pub use crate::operation::delete_schedule::_delete_schedule_output::DeleteScheduleOutput;
 
 mod _delete_schedule_input;
 

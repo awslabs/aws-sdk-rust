@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_email_identity
     }
 }
 
-pub use crate::operation::put_email_identity_dkim_signing_attributes::_put_email_identity_dkim_signing_attributes_output::PutEmailIdentityDkimSigningAttributesOutput;
-
 pub use crate::operation::put_email_identity_dkim_signing_attributes::_put_email_identity_dkim_signing_attributes_input::PutEmailIdentityDkimSigningAttributesInput;
+
+pub use crate::operation::put_email_identity_dkim_signing_attributes::_put_email_identity_dkim_signing_attributes_output::PutEmailIdentityDkimSigningAttributesOutput;
 
 mod _put_email_identity_dkim_signing_attributes_input;
 

@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_role::UntagR
     }
 }
 
-pub use crate::operation::untag_role::_untag_role_output::UntagRoleOutput;
-
 pub use crate::operation::untag_role::_untag_role_input::UntagRoleInput;
+
+pub use crate::operation::untag_role::_untag_role_output::UntagRoleOutput;
 
 mod _untag_role_input;
 

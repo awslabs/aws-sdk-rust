@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_credit
     }
 }
 
-pub use crate::operation::get_default_credit_specification::_get_default_credit_specification_output::GetDefaultCreditSpecificationOutput;
-
 pub use crate::operation::get_default_credit_specification::_get_default_credit_specification_input::GetDefaultCreditSpecificationInput;
+
+pub use crate::operation::get_default_credit_specification::_get_default_credit_specification_output::GetDefaultCreditSpecificationOutput;
 
 mod _get_default_credit_specification_input;
 

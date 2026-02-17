@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_home_region
     }
 }
 
-pub use crate::operation::create_home_region_control::_create_home_region_control_output::CreateHomeRegionControlOutput;
-
 pub use crate::operation::create_home_region_control::_create_home_region_control_input::CreateHomeRegionControlInput;
+
+pub use crate::operation::create_home_region_control::_create_home_region_control_output::CreateHomeRegionControlOutput;
 
 mod _create_home_region_control_input;
 

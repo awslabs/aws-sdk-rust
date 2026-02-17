@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_transaction:
     }
 }
 
-pub use crate::operation::start_transaction::_start_transaction_output::StartTransactionOutput;
-
 pub use crate::operation::start_transaction::_start_transaction_input::StartTransactionInput;
+
+pub use crate::operation::start_transaction::_start_transaction_output::StartTransactionOutput;
 
 mod _start_transaction_input;
 

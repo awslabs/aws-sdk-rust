@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_transcriptio
     }
 }
 
-pub use crate::operation::start_transcription_job::_start_transcription_job_output::StartTranscriptionJobOutput;
-
 pub use crate::operation::start_transcription_job::_start_transcription_job_input::StartTranscriptionJobInput;
+
+pub use crate::operation::start_transcription_job::_start_transcription_job_output::StartTranscriptionJobOutput;
 
 mod _start_transcription_job_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_protection_
     }
 }
 
-pub use crate::operation::create_protection_group::_create_protection_group_output::CreateProtectionGroupOutput;
-
 pub use crate::operation::create_protection_group::_create_protection_group_input::CreateProtectionGroupInput;
+
+pub use crate::operation::create_protection_group::_create_protection_group_output::CreateProtectionGroupOutput;
 
 mod _create_protection_group_input;
 

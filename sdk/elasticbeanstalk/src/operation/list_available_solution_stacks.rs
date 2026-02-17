@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_sol
     }
 }
 
-pub use crate::operation::list_available_solution_stacks::_list_available_solution_stacks_output::ListAvailableSolutionStacksOutput;
-
 pub use crate::operation::list_available_solution_stacks::_list_available_solution_stacks_input::ListAvailableSolutionStacksInput;
+
+pub use crate::operation::list_available_solution_stacks::_list_available_solution_stacks_output::ListAvailableSolutionStacksOutput;
 
 mod _list_available_solution_stacks_input;
 

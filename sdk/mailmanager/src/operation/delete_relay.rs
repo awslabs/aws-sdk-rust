@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_relay::Dele
     }
 }
 
-pub use crate::operation::delete_relay::_delete_relay_output::DeleteRelayOutput;
-
 pub use crate::operation::delete_relay::_delete_relay_input::DeleteRelayInput;
+
+pub use crate::operation::delete_relay::_delete_relay_output::DeleteRelayOutput;
 
 mod _delete_relay_input;
 

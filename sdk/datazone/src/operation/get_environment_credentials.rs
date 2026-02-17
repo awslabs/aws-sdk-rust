@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_environment_cr
     }
 }
 
-pub use crate::operation::get_environment_credentials::_get_environment_credentials_output::GetEnvironmentCredentialsOutput;
-
 pub use crate::operation::get_environment_credentials::_get_environment_credentials_input::GetEnvironmentCredentialsInput;
+
+pub use crate::operation::get_environment_credentials::_get_environment_credentials_output::GetEnvironmentCredentialsOutput;
 
 mod _get_environment_credentials_input;
 

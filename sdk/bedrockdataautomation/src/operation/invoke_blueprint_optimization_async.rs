@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_blueprint_o
     }
 }
 
-pub use crate::operation::invoke_blueprint_optimization_async::_invoke_blueprint_optimization_async_output::InvokeBlueprintOptimizationAsyncOutput;
-
 pub use crate::operation::invoke_blueprint_optimization_async::_invoke_blueprint_optimization_async_input::InvokeBlueprintOptimizationAsyncInput;
+
+pub use crate::operation::invoke_blueprint_optimization_async::_invoke_blueprint_optimization_async_output::InvokeBlueprintOptimizationAsyncOutput;
 
 mod _invoke_blueprint_optimization_async_input;
 

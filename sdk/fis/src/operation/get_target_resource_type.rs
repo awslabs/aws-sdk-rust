@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_target_resourc
     }
 }
 
-pub use crate::operation::get_target_resource_type::_get_target_resource_type_output::GetTargetResourceTypeOutput;
-
 pub use crate::operation::get_target_resource_type::_get_target_resource_type_input::GetTargetResourceTypeInput;
+
+pub use crate::operation::get_target_resource_type::_get_target_resource_type_output::GetTargetResourceTypeOutput;
 
 mod _get_target_resource_type_input;
 

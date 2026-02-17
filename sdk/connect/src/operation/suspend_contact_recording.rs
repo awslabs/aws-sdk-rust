@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::suspend_contact_re
     }
 }
 
-pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_output::SuspendContactRecordingOutput;
-
 pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_input::SuspendContactRecordingInput;
+
+pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_output::SuspendContactRecordingOutput;
 
 mod _suspend_contact_recording_input;
 

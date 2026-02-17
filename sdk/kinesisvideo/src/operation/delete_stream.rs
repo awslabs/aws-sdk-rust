@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stream::Del
     }
 }
 
-pub use crate::operation::delete_stream::_delete_stream_output::DeleteStreamOutput;
-
 pub use crate::operation::delete_stream::_delete_stream_input::DeleteStreamInput;
+
+pub use crate::operation::delete_stream::_delete_stream_output::DeleteStreamOutput;
 
 mod _delete_stream_input;
 

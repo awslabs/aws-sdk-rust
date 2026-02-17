@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_web_a
     }
 }
 
-pub use crate::operation::disassociate_web_acl::_disassociate_web_acl_output::DisassociateWebAclOutput;
-
 pub use crate::operation::disassociate_web_acl::_disassociate_web_acl_input::DisassociateWebAclInput;
+
+pub use crate::operation::disassociate_web_acl::_disassociate_web_acl_output::DisassociateWebAclOutput;
 
 mod _disassociate_web_acl_input;
 

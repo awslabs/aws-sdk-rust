@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_grants::
     }
 }
 
-pub use crate::operation::list_data_grants::_list_data_grants_output::ListDataGrantsOutput;
-
 pub use crate::operation::list_data_grants::_list_data_grants_input::ListDataGrantsInput;
+
+pub use crate::operation::list_data_grants::_list_data_grants_output::ListDataGrantsOutput;
 
 mod _list_data_grants_input;
 

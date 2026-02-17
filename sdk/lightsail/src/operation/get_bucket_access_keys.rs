@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_access_
     }
 }
 
-pub use crate::operation::get_bucket_access_keys::_get_bucket_access_keys_output::GetBucketAccessKeysOutput;
-
 pub use crate::operation::get_bucket_access_keys::_get_bucket_access_keys_input::GetBucketAccessKeysInput;
+
+pub use crate::operation::get_bucket_access_keys::_get_bucket_access_keys_output::GetBucketAccessKeysOutput;
 
 mod _get_bucket_access_keys_input;
 

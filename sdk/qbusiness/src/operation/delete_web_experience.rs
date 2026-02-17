@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_web_experie
     }
 }
 
-pub use crate::operation::delete_web_experience::_delete_web_experience_output::DeleteWebExperienceOutput;
-
 pub use crate::operation::delete_web_experience::_delete_web_experience_input::DeleteWebExperienceInput;
+
+pub use crate::operation::delete_web_experience::_delete_web_experience_output::DeleteWebExperienceOutput;
 
 mod _delete_web_experience_input;
 

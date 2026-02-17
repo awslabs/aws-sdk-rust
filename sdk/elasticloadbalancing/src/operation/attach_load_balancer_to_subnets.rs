@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_load_balanc
     }
 }
 
-pub use crate::operation::attach_load_balancer_to_subnets::_attach_load_balancer_to_subnets_output::AttachLoadBalancerToSubnetsOutput;
-
 pub use crate::operation::attach_load_balancer_to_subnets::_attach_load_balancer_to_subnets_input::AttachLoadBalancerToSubnetsInput;
+
+pub use crate::operation::attach_load_balancer_to_subnets::_attach_load_balancer_to_subnets_output::AttachLoadBalancerToSubnetsOutput;
 
 mod _attach_load_balancer_to_subnets_input;
 

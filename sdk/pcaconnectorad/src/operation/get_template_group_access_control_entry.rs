@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_template_group
     }
 }
 
-pub use crate::operation::get_template_group_access_control_entry::_get_template_group_access_control_entry_output::GetTemplateGroupAccessControlEntryOutput;
-
 pub use crate::operation::get_template_group_access_control_entry::_get_template_group_access_control_entry_input::GetTemplateGroupAccessControlEntryInput;
+
+pub use crate::operation::get_template_group_access_control_entry::_get_template_group_access_control_entry_output::GetTemplateGroupAccessControlEntryOutput;
 
 mod _get_template_group_access_control_entry_input;
 

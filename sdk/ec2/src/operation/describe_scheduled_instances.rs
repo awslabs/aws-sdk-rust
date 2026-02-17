@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scheduled
     }
 }
 
-pub use crate::operation::describe_scheduled_instances::_describe_scheduled_instances_output::DescribeScheduledInstancesOutput;
-
 pub use crate::operation::describe_scheduled_instances::_describe_scheduled_instances_input::DescribeScheduledInstancesInput;
+
+pub use crate::operation::describe_scheduled_instances::_describe_scheduled_instances_output::DescribeScheduledInstancesOutput;
 
 mod _describe_scheduled_instances_input;
 

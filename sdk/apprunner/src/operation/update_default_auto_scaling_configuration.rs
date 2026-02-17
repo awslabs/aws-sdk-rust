@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_default_aut
     }
 }
 
-pub use crate::operation::update_default_auto_scaling_configuration::_update_default_auto_scaling_configuration_output::UpdateDefaultAutoScalingConfigurationOutput;
-
 pub use crate::operation::update_default_auto_scaling_configuration::_update_default_auto_scaling_configuration_input::UpdateDefaultAutoScalingConfigurationInput;
+
+pub use crate::operation::update_default_auto_scaling_configuration::_update_default_auto_scaling_configuration_output::UpdateDefaultAutoScalingConfigurationOutput;
 
 mod _update_default_auto_scaling_configuration_input;
 

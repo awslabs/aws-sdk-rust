@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_forecast:
     }
 }
 
-pub use crate::operation::describe_forecast::_describe_forecast_output::DescribeForecastOutput;
-
 pub use crate::operation::describe_forecast::_describe_forecast_input::DescribeForecastInput;
+
+pub use crate::operation::describe_forecast::_describe_forecast_output::DescribeForecastOutput;
 
 mod _describe_forecast_input;
 

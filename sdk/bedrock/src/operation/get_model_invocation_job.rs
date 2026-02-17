@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_model_invocati
     }
 }
 
-pub use crate::operation::get_model_invocation_job::_get_model_invocation_job_output::GetModelInvocationJobOutput;
-
 pub use crate::operation::get_model_invocation_job::_get_model_invocation_job_input::GetModelInvocationJobInput;
+
+pub use crate::operation::get_model_invocation_job::_get_model_invocation_job_output::GetModelInvocationJobOutput;
 
 mod _get_model_invocation_job_input;
 

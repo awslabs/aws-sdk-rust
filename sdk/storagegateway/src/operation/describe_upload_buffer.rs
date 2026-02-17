@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_upload_bu
     }
 }
 
-pub use crate::operation::describe_upload_buffer::_describe_upload_buffer_output::DescribeUploadBufferOutput;
-
 pub use crate::operation::describe_upload_buffer::_describe_upload_buffer_input::DescribeUploadBufferInput;
+
+pub use crate::operation::describe_upload_buffer::_describe_upload_buffer_output::DescribeUploadBufferOutput;
 
 mod _describe_upload_buffer_input;
 

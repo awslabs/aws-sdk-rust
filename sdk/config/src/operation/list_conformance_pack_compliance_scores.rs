@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_conformance_p
     }
 }
 
-pub use crate::operation::list_conformance_pack_compliance_scores::_list_conformance_pack_compliance_scores_output::ListConformancePackComplianceScoresOutput;
-
 pub use crate::operation::list_conformance_pack_compliance_scores::_list_conformance_pack_compliance_scores_input::ListConformancePackComplianceScoresInput;
+
+pub use crate::operation::list_conformance_pack_compliance_scores::_list_conformance_pack_compliance_scores_output::ListConformancePackComplianceScoresOutput;
 
 mod _list_conformance_pack_compliance_scores_input;
 

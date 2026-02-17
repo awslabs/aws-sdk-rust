@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_data_share:
     }
 }
 
-pub use crate::operation::reject_data_share::_reject_data_share_output::RejectDataShareOutput;
-
 pub use crate::operation::reject_data_share::_reject_data_share_input::RejectDataShareInput;
+
+pub use crate::operation::reject_data_share::_reject_data_share_output::RejectDataShareOutput;
 
 mod _reject_data_share_input;
 

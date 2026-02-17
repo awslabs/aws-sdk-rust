@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_instance_patch_states_for_patch_group::_describe_instance_patch_states_for_patch_group_output::DescribeInstancePatchStatesForPatchGroupOutput;
-
 pub use crate::operation::describe_instance_patch_states_for_patch_group::_describe_instance_patch_states_for_patch_group_input::DescribeInstancePatchStatesForPatchGroupInput;
+
+pub use crate::operation::describe_instance_patch_states_for_patch_group::_describe_instance_patch_states_for_patch_group_output::DescribeInstancePatchStatesForPatchGroupOutput;
 
 mod _describe_instance_patch_states_for_patch_group_input;
 

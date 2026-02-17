@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_control::Cr
     }
 }
 
-pub use crate::operation::create_control::_create_control_output::CreateControlOutput;
-
 pub use crate::operation::create_control::_create_control_input::CreateControlInput;
+
+pub use crate::operation::create_control::_create_control_output::CreateControlOutput;
 
 mod _create_control_input;
 

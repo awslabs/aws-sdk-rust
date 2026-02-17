@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_asset_filter::
     }
 }
 
-pub use crate::operation::get_asset_filter::_get_asset_filter_output::GetAssetFilterOutput;
-
 pub use crate::operation::get_asset_filter::_get_asset_filter_input::GetAssetFilterInput;
+
+pub use crate::operation::get_asset_filter::_get_asset_filter_output::GetAssetFilterOutput;
 
 mod _get_asset_filter_input;
 

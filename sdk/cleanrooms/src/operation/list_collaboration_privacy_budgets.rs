@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collaboration
     }
 }
 
-pub use crate::operation::list_collaboration_privacy_budgets::_list_collaboration_privacy_budgets_output::ListCollaborationPrivacyBudgetsOutput;
-
 pub use crate::operation::list_collaboration_privacy_budgets::_list_collaboration_privacy_budgets_input::ListCollaborationPrivacyBudgetsInput;
+
+pub use crate::operation::list_collaboration_privacy_budgets::_list_collaboration_privacy_budgets_output::ListCollaborationPrivacyBudgetsOutput;
 
 mod _list_collaboration_privacy_budgets_input;
 

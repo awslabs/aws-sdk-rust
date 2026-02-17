@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user_pool
     }
 }
 
-pub use crate::operation::describe_user_pool_domain::_describe_user_pool_domain_output::DescribeUserPoolDomainOutput;
-
 pub use crate::operation::describe_user_pool_domain::_describe_user_pool_domain_input::DescribeUserPoolDomainInput;
+
+pub use crate::operation::describe_user_pool_domain::_describe_user_pool_domain_output::DescribeUserPoolDomainOutput;
 
 mod _describe_user_pool_domain_input;
 

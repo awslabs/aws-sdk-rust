@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_certificate_
     }
 }
 
-pub use crate::operation::untag_certificate_authority::_untag_certificate_authority_output::UntagCertificateAuthorityOutput;
-
 pub use crate::operation::untag_certificate_authority::_untag_certificate_authority_input::UntagCertificateAuthorityInput;
+
+pub use crate::operation::untag_certificate_authority::_untag_certificate_authority_output::UntagCertificateAuthorityOutput;
 
 mod _untag_certificate_authority_input;
 

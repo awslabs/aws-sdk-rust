@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_outbound_co
     }
 }
 
-pub use crate::operation::create_outbound_connection::_create_outbound_connection_output::CreateOutboundConnectionOutput;
-
 pub use crate::operation::create_outbound_connection::_create_outbound_connection_input::CreateOutboundConnectionInput;
+
+pub use crate::operation::create_outbound_connection::_create_outbound_connection_output::CreateOutboundConnectionOutput;
 
 mod _create_outbound_connection_input;
 

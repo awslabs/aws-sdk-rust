@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_decoder_man
     }
 }
 
-pub use crate::operation::import_decoder_manifest::_import_decoder_manifest_output::ImportDecoderManifestOutput;
-
 pub use crate::operation::import_decoder_manifest::_import_decoder_manifest_input::ImportDecoderManifestInput;
+
+pub use crate::operation::import_decoder_manifest::_import_decoder_manifest_output::ImportDecoderManifestOutput;
 
 mod _import_decoder_manifest_input;
 

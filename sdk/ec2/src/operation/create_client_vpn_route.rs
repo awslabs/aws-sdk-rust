@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_client_vpn_
     }
 }
 
-pub use crate::operation::create_client_vpn_route::_create_client_vpn_route_output::CreateClientVpnRouteOutput;
-
 pub use crate::operation::create_client_vpn_route::_create_client_vpn_route_input::CreateClientVpnRouteInput;
+
+pub use crate::operation::create_client_vpn_route::_create_client_vpn_route_output::CreateClientVpnRouteOutput;
 
 mod _create_client_vpn_route_input;
 

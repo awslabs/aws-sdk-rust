@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_product_res
     }
 }
 
-pub use crate::operation::delete_product_rest_endpoint_page::_delete_product_rest_endpoint_page_output::DeleteProductRestEndpointPageOutput;
-
 pub use crate::operation::delete_product_rest_endpoint_page::_delete_product_rest_endpoint_page_input::DeleteProductRestEndpointPageInput;
+
+pub use crate::operation::delete_product_rest_endpoint_page::_delete_product_rest_endpoint_page_output::DeleteProductRestEndpointPageOutput;
 
 mod _delete_product_rest_endpoint_page_input;
 

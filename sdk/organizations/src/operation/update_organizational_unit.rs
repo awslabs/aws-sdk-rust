@@ -514,9 +514,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_organizatio
     }
 }
 
-pub use crate::operation::update_organizational_unit::_update_organizational_unit_output::UpdateOrganizationalUnitOutput;
-
 pub use crate::operation::update_organizational_unit::_update_organizational_unit_input::UpdateOrganizationalUnitInput;
+
+pub use crate::operation::update_organizational_unit::_update_organizational_unit_output::UpdateOrganizationalUnitOutput;
 
 mod _update_organizational_unit_input;
 

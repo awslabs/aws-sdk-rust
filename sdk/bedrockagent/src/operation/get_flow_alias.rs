@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_alias::Ge
     }
 }
 
-pub use crate::operation::get_flow_alias::_get_flow_alias_output::GetFlowAliasOutput;
-
 pub use crate::operation::get_flow_alias::_get_flow_alias_input::GetFlowAliasInput;
+
+pub use crate::operation::get_flow_alias::_get_flow_alias_output::GetFlowAliasOutput;
 
 mod _get_flow_alias_input;
 

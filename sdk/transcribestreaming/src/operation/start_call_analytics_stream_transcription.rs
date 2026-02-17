@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_call_analyti
     }
 }
 
-pub use crate::operation::start_call_analytics_stream_transcription::_start_call_analytics_stream_transcription_output::StartCallAnalyticsStreamTranscriptionOutput;
-
 pub use crate::operation::start_call_analytics_stream_transcription::_start_call_analytics_stream_transcription_input::StartCallAnalyticsStreamTranscriptionInput;
+
+pub use crate::operation::start_call_analytics_stream_transcription::_start_call_analytics_stream_transcription_output::StartCallAnalyticsStreamTranscriptionOutput;
 
 mod _start_call_analytics_stream_transcription_input;
 

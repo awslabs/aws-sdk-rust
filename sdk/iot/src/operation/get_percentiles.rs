@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_percentiles::G
     }
 }
 
-pub use crate::operation::get_percentiles::_get_percentiles_output::GetPercentilesOutput;
-
 pub use crate::operation::get_percentiles::_get_percentiles_input::GetPercentilesInput;
+
+pub use crate::operation::get_percentiles::_get_percentiles_output::GetPercentilesOutput;
 
 mod _get_percentiles_input;
 

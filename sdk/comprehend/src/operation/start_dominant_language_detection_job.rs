@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_dominant_lan
     }
 }
 
-pub use crate::operation::start_dominant_language_detection_job::_start_dominant_language_detection_job_output::StartDominantLanguageDetectionJobOutput;
-
 pub use crate::operation::start_dominant_language_detection_job::_start_dominant_language_detection_job_input::StartDominantLanguageDetectionJobInput;
+
+pub use crate::operation::start_dominant_language_detection_job::_start_dominant_language_detection_job_output::StartDominantLanguageDetectionJobOutput;
 
 mod _start_dominant_language_detection_job_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_code_review
     }
 }
 
-pub use crate::operation::create_code_review::_create_code_review_output::CreateCodeReviewOutput;
-
 pub use crate::operation::create_code_review::_create_code_review_input::CreateCodeReviewInput;
+
+pub use crate::operation::create_code_review::_create_code_review_output::CreateCodeReviewOutput;
 
 mod _create_code_review_input;
 

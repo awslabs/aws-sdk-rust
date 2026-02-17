@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_gateway_insta
     }
 }
 
-pub use crate::operation::list_gateway_instances::_list_gateway_instances_output::ListGatewayInstancesOutput;
-
 pub use crate::operation::list_gateway_instances::_list_gateway_instances_input::ListGatewayInstancesInput;
+
+pub use crate::operation::list_gateway_instances::_list_gateway_instances_output::ListGatewayInstancesOutput;
 
 mod _list_gateway_instances_input;
 

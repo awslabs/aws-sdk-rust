@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_third_pa
     }
 }
 
-pub use crate::operation::associate_third_party_firewall::_associate_third_party_firewall_output::AssociateThirdPartyFirewallOutput;
-
 pub use crate::operation::associate_third_party_firewall::_associate_third_party_firewall_input::AssociateThirdPartyFirewallInput;
+
+pub use crate::operation::associate_third_party_firewall::_associate_third_party_firewall_output::AssociateThirdPartyFirewallOutput;
 
 mod _associate_third_party_firewall_input;
 

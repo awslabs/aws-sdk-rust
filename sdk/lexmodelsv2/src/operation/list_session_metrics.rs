@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_session_metri
     }
 }
 
-pub use crate::operation::list_session_metrics::_list_session_metrics_output::ListSessionMetricsOutput;
-
 pub use crate::operation::list_session_metrics::_list_session_metrics_input::ListSessionMetricsInput;
+
+pub use crate::operation::list_session_metrics::_list_session_metrics_output::ListSessionMetricsOutput;
 
 mod _list_session_metrics_input;
 

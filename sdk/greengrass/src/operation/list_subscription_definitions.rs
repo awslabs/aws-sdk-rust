@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_subscription_
     }
 }
 
-pub use crate::operation::list_subscription_definitions::_list_subscription_definitions_output::ListSubscriptionDefinitionsOutput;
-
 pub use crate::operation::list_subscription_definitions::_list_subscription_definitions_input::ListSubscriptionDefinitionsInput;
+
+pub use crate::operation::list_subscription_definitions::_list_subscription_definitions_output::ListSubscriptionDefinitionsOutput;
 
 mod _list_subscription_definitions_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sync_config
     }
 }
 
-pub use crate::operation::create_sync_configuration::_create_sync_configuration_output::CreateSyncConfigurationOutput;
-
 pub use crate::operation::create_sync_configuration::_create_sync_configuration_input::CreateSyncConfigurationInput;
+
+pub use crate::operation::create_sync_configuration::_create_sync_configuration_output::CreateSyncConfigurationOutput;
 
 mod _create_sync_configuration_input;
 

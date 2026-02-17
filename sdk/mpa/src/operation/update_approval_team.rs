@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_approval_te
     }
 }
 
-pub use crate::operation::update_approval_team::_update_approval_team_output::UpdateApprovalTeamOutput;
-
 pub use crate::operation::update_approval_team::_update_approval_team_input::UpdateApprovalTeamInput;
+
+pub use crate::operation::update_approval_team::_update_approval_team_output::UpdateApprovalTeamOutput;
 
 mod _update_approval_team_input;
 

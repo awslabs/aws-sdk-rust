@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_media_pipeline
     }
 }
 
-pub use crate::operation::get_media_pipeline::_get_media_pipeline_output::GetMediaPipelineOutput;
-
 pub use crate::operation::get_media_pipeline::_get_media_pipeline_input::GetMediaPipelineInput;
+
+pub use crate::operation::get_media_pipeline::_get_media_pipeline_output::GetMediaPipelineOutput;
 
 mod _get_media_pipeline_input;
 

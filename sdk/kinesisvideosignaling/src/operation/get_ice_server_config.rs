@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ice_server_con
     }
 }
 
-pub use crate::operation::get_ice_server_config::_get_ice_server_config_output::GetIceServerConfigOutput;
-
 pub use crate::operation::get_ice_server_config::_get_ice_server_config_input::GetIceServerConfigInput;
+
+pub use crate::operation::get_ice_server_config::_get_ice_server_config_output::GetIceServerConfigOutput;
 
 mod _get_ice_server_config_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_workflow_ru
     }
 }
 
-pub use crate::operation::resume_workflow_run::_resume_workflow_run_output::ResumeWorkflowRunOutput;
-
 pub use crate::operation::resume_workflow_run::_resume_workflow_run_input::ResumeWorkflowRunInput;
+
+pub use crate::operation::resume_workflow_run::_resume_workflow_run_output::ResumeWorkflowRunOutput;
 
 mod _resume_workflow_run_input;
 

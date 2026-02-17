@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_job_run::Stop
     }
 }
 
-pub use crate::operation::stop_job_run::_stop_job_run_output::StopJobRunOutput;
-
 pub use crate::operation::stop_job_run::_stop_job_run_input::StopJobRunInput;
+
+pub use crate::operation::stop_job_run::_stop_job_run_output::StopJobRunOutput;
 
 mod _stop_job_run_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_decoder_man
     }
 }
 
-pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_output::CreateDecoderManifestOutput;
-
 pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_input::CreateDecoderManifestInput;
+
+pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_output::CreateDecoderManifestOutput;
 
 mod _create_decoder_manifest_input;
 

@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_query_logging
     }
 }
 
-pub use crate::operation::list_query_logging_configs::_list_query_logging_configs_output::ListQueryLoggingConfigsOutput;
-
 pub use crate::operation::list_query_logging_configs::_list_query_logging_configs_input::ListQueryLoggingConfigsInput;
+
+pub use crate::operation::list_query_logging_configs::_list_query_logging_configs_output::ListQueryLoggingConfigsOutput;
 
 mod _list_query_logging_configs_input;
 

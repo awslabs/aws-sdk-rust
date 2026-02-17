@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_tags_to_stream
     }
 }
 
-pub use crate::operation::add_tags_to_stream::_add_tags_to_stream_output::AddTagsToStreamOutput;
-
 pub use crate::operation::add_tags_to_stream::_add_tags_to_stream_input::AddTagsToStreamInput;
+
+pub use crate::operation::add_tags_to_stream::_add_tags_to_stream_output::AddTagsToStreamOutput;
 
 mod _add_tags_to_stream_input;
 

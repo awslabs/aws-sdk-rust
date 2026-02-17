@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_default_policy
     }
 }
 
-pub use crate::operation::set_default_policy_version::_set_default_policy_version_output::SetDefaultPolicyVersionOutput;
-
 pub use crate::operation::set_default_policy_version::_set_default_policy_version_input::SetDefaultPolicyVersionInput;
+
+pub use crate::operation::set_default_policy_version::_set_default_policy_version_output::SetDefaultPolicyVersionOutput;
 
 mod _set_default_policy_version_input;
 

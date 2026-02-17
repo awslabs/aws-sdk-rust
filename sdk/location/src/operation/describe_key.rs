@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_key::Desc
     }
 }
 
-pub use crate::operation::describe_key::_describe_key_output::DescribeKeyOutput;
-
 pub use crate::operation::describe_key::_describe_key_input::DescribeKeyInput;
+
+pub use crate::operation::describe_key::_describe_key_output::DescribeKeyOutput;
 
 mod _describe_key_input;
 

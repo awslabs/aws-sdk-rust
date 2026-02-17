@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_git_hub_accou
     }
 }
 
-pub use crate::operation::list_git_hub_account_token_names::_list_git_hub_account_token_names_output::ListGitHubAccountTokenNamesOutput;
-
 pub use crate::operation::list_git_hub_account_token_names::_list_git_hub_account_token_names_input::ListGitHubAccountTokenNamesInput;
+
+pub use crate::operation::list_git_hub_account_token_names::_list_git_hub_account_token_names_output::ListGitHubAccountTokenNamesOutput;
 
 mod _list_git_hub_account_token_names_input;
 

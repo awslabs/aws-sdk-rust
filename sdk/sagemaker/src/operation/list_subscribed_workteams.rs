@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_subscribed_wo
     }
 }
 
-pub use crate::operation::list_subscribed_workteams::_list_subscribed_workteams_output::ListSubscribedWorkteamsOutput;
-
 pub use crate::operation::list_subscribed_workteams::_list_subscribed_workteams_input::ListSubscribedWorkteamsInput;
+
+pub use crate::operation::list_subscribed_workteams::_list_subscribed_workteams_output::ListSubscribedWorkteamsOutput;
 
 mod _list_subscribed_workteams_input;
 

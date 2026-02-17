@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_sms_attributes
     }
 }
 
-pub use crate::operation::set_sms_attributes::_set_sms_attributes_output::SetSmsAttributesOutput;
-
 pub use crate::operation::set_sms_attributes::_set_sms_attributes_input::SetSmsAttributesInput;
+
+pub use crate::operation::set_sms_attributes::_set_sms_attributes_output::SetSmsAttributesOutput;
 
 mod _set_sms_attributes_input;
 

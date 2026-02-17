@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_clien
     }
 }
 
-pub use crate::operation::disassociate_client_vpn_target_network::_disassociate_client_vpn_target_network_output::DisassociateClientVpnTargetNetworkOutput;
-
 pub use crate::operation::disassociate_client_vpn_target_network::_disassociate_client_vpn_target_network_input::DisassociateClientVpnTargetNetworkInput;
+
+pub use crate::operation::disassociate_client_vpn_target_network::_disassociate_client_vpn_target_network_output::DisassociateClientVpnTargetNetworkOutput;
 
 mod _disassociate_client_vpn_target_network_input;
 

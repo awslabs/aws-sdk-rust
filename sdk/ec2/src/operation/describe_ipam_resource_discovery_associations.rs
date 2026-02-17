@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_ipam_resource_discovery_associations::_describe_ipam_resource_discovery_associations_output::DescribeIpamResourceDiscoveryAssociationsOutput;
-
 pub use crate::operation::describe_ipam_resource_discovery_associations::_describe_ipam_resource_discovery_associations_input::DescribeIpamResourceDiscoveryAssociationsInput;
+
+pub use crate::operation::describe_ipam_resource_discovery_associations::_describe_ipam_resource_discovery_associations_output::DescribeIpamResourceDiscoveryAssociationsOutput;
 
 mod _describe_ipam_resource_discovery_associations_input;
 

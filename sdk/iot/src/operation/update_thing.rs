@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_thing::Upda
     }
 }
 
-pub use crate::operation::update_thing::_update_thing_output::UpdateThingOutput;
-
 pub use crate::operation::update_thing::_update_thing_input::UpdateThingInput;
+
+pub use crate::operation::update_thing::_update_thing_output::UpdateThingOutput;
 
 mod _update_thing_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_variant_store
     }
 }
 
-pub use crate::operation::list_variant_stores::_list_variant_stores_output::ListVariantStoresOutput;
-
 pub use crate::operation::list_variant_stores::_list_variant_stores_input::ListVariantStoresInput;
+
+pub use crate::operation::list_variant_stores::_list_variant_stores_output::ListVariantStoresOutput;
 
 mod _list_variant_stores_input;
 

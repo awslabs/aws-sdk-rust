@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bucket::Upd
     }
 }
 
-pub use crate::operation::update_bucket::_update_bucket_output::UpdateBucketOutput;
-
 pub use crate::operation::update_bucket::_update_bucket_input::UpdateBucketInput;
+
+pub use crate::operation::update_bucket::_update_bucket_output::UpdateBucketOutput;
 
 mod _update_bucket_input;
 

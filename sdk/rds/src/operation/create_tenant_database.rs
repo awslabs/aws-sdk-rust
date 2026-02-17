@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tenant_data
     }
 }
 
-pub use crate::operation::create_tenant_database::_create_tenant_database_output::CreateTenantDatabaseOutput;
-
 pub use crate::operation::create_tenant_database::_create_tenant_database_input::CreateTenantDatabaseInput;
+
+pub use crate::operation::create_tenant_database::_create_tenant_database_output::CreateTenantDatabaseOutput;
 
 mod _create_tenant_database_input;
 

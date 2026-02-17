@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_geofence_coll
     }
 }
 
-pub use crate::operation::list_geofence_collections::_list_geofence_collections_output::ListGeofenceCollectionsOutput;
-
 pub use crate::operation::list_geofence_collections::_list_geofence_collections_input::ListGeofenceCollectionsInput;
+
+pub use crate::operation::list_geofence_collections::_list_geofence_collections_output::ListGeofenceCollectionsOutput;
 
 mod _list_geofence_collections_input;
 

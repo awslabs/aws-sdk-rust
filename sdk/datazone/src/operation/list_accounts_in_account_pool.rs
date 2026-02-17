@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_accounts_in_a
     }
 }
 
-pub use crate::operation::list_accounts_in_account_pool::_list_accounts_in_account_pool_output::ListAccountsInAccountPoolOutput;
-
 pub use crate::operation::list_accounts_in_account_pool::_list_accounts_in_account_pool_input::ListAccountsInAccountPoolInput;
+
+pub use crate::operation::list_accounts_in_account_pool::_list_accounts_in_account_pool_output::ListAccountsInAccountPoolOutput;
 
 mod _list_accounts_in_account_pool_input;
 

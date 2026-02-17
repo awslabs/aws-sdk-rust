@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replay::D
     }
 }
 
-pub use crate::operation::describe_replay::_describe_replay_output::DescribeReplayOutput;
-
 pub use crate::operation::describe_replay::_describe_replay_input::DescribeReplayInput;
+
+pub use crate::operation::describe_replay::_describe_replay_output::DescribeReplayOutput;
 
 mod _describe_replay_input;
 

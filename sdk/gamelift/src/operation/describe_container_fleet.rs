@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_container
     }
 }
 
-pub use crate::operation::describe_container_fleet::_describe_container_fleet_output::DescribeContainerFleetOutput;
-
 pub use crate::operation::describe_container_fleet::_describe_container_fleet_input::DescribeContainerFleetInput;
+
+pub use crate::operation::describe_container_fleet::_describe_container_fleet_output::DescribeContainerFleetOutput;
 
 mod _describe_container_fleet_input;
 

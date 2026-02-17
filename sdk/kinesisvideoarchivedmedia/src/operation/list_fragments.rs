@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fragments::Li
     }
 }
 
-pub use crate::operation::list_fragments::_list_fragments_output::ListFragmentsOutput;
-
 pub use crate::operation::list_fragments::_list_fragments_input::ListFragmentsInput;
+
+pub use crate::operation::list_fragments::_list_fragments_output::ListFragmentsOutput;
 
 mod _list_fragments_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_token::Revo
     }
 }
 
-pub use crate::operation::revoke_token::_revoke_token_output::RevokeTokenOutput;
-
 pub use crate::operation::revoke_token::_revoke_token_input::RevokeTokenInput;
+
+pub use crate::operation::revoke_token::_revoke_token_output::RevokeTokenOutput;
 
 mod _revoke_token_input;
 

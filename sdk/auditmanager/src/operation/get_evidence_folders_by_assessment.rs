@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evidence_folde
     }
 }
 
-pub use crate::operation::get_evidence_folders_by_assessment::_get_evidence_folders_by_assessment_output::GetEvidenceFoldersByAssessmentOutput;
-
 pub use crate::operation::get_evidence_folders_by_assessment::_get_evidence_folders_by_assessment_input::GetEvidenceFoldersByAssessmentInput;
+
+pub use crate::operation::get_evidence_folders_by_assessment::_get_evidence_folders_by_assessment_output::GetEvidenceFoldersByAssessmentOutput;
 
 mod _get_evidence_folders_by_assessment_input;
 

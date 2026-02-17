@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_sentiment::
     }
 }
 
-pub use crate::operation::detect_sentiment::_detect_sentiment_output::DetectSentimentOutput;
-
 pub use crate::operation::detect_sentiment::_detect_sentiment_input::DetectSentimentInput;
+
+pub use crate::operation::detect_sentiment::_detect_sentiment_output::DetectSentimentOutput;
 
 mod _detect_sentiment_input;
 

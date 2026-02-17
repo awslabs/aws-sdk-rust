@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pricing_plan::
     }
 }
 
-pub use crate::operation::get_pricing_plan::_get_pricing_plan_output::GetPricingPlanOutput;
-
 pub use crate::operation::get_pricing_plan::_get_pricing_plan_input::GetPricingPlanInput;
+
+pub use crate::operation::get_pricing_plan::_get_pricing_plan_output::GetPricingPlanOutput;
 
 mod _get_pricing_plan_input;
 

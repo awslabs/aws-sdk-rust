@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_bookmark::
     }
 }
 
-pub use crate::operation::get_job_bookmark::_get_job_bookmark_output::GetJobBookmarkOutput;
-
 pub use crate::operation::get_job_bookmark::_get_job_bookmark_input::GetJobBookmarkInput;
+
+pub use crate::operation::get_job_bookmark::_get_job_bookmark_output::GetJobBookmarkOutput;
 
 mod _get_job_bookmark_input;
 

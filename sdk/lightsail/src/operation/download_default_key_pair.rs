@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::download_default_k
     }
 }
 
-pub use crate::operation::download_default_key_pair::_download_default_key_pair_output::DownloadDefaultKeyPairOutput;
-
 pub use crate::operation::download_default_key_pair::_download_default_key_pair_input::DownloadDefaultKeyPairInput;
+
+pub use crate::operation::download_default_key_pair::_download_default_key_pair_output::DownloadDefaultKeyPairOutput;
 
 mod _download_default_key_pair_input;
 

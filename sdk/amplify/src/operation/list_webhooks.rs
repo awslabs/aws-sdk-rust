@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_webhooks::Lis
     }
 }
 
-pub use crate::operation::list_webhooks::_list_webhooks_output::ListWebhooksOutput;
-
 pub use crate::operation::list_webhooks::_list_webhooks_input::ListWebhooksInput;
+
+pub use crate::operation::list_webhooks::_list_webhooks_output::ListWebhooksOutput;
 
 mod _list_webhooks_input;
 

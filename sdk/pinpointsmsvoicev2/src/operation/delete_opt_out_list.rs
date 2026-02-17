@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_opt_out_lis
     }
 }
 
-pub use crate::operation::delete_opt_out_list::_delete_opt_out_list_output::DeleteOptOutListOutput;
-
 pub use crate::operation::delete_opt_out_list::_delete_opt_out_list_input::DeleteOptOutListInput;
+
+pub use crate::operation::delete_opt_out_list::_delete_opt_out_list_output::DeleteOptOutListOutput;
 
 mod _delete_opt_out_list_input;
 

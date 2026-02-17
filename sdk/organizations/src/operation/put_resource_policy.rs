@@ -609,9 +609,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_resource_polic
     }
 }
 
-pub use crate::operation::put_resource_policy::_put_resource_policy_output::PutResourcePolicyOutput;
-
 pub use crate::operation::put_resource_policy::_put_resource_policy_input::PutResourcePolicyInput;
+
+pub use crate::operation::put_resource_policy::_put_resource_policy_output::PutResourcePolicyOutput;
 
 mod _put_resource_policy_input;
 

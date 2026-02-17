@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connector_dest
     }
 }
 
-pub use crate::operation::get_connector_destination::_get_connector_destination_output::GetConnectorDestinationOutput;
-
 pub use crate::operation::get_connector_destination::_get_connector_destination_input::GetConnectorDestinationInput;
+
+pub use crate::operation::get_connector_destination::_get_connector_destination_output::GetConnectorDestinationOutput;
 
 mod _get_connector_destination_input;
 

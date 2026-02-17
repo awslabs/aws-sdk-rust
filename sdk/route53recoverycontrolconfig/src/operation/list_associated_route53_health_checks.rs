@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_ro
     }
 }
 
-pub use crate::operation::list_associated_route53_health_checks::_list_associated_route53_health_checks_output::ListAssociatedRoute53HealthChecksOutput;
-
 pub use crate::operation::list_associated_route53_health_checks::_list_associated_route53_health_checks_input::ListAssociatedRoute53HealthChecksInput;
+
+pub use crate::operation::list_associated_route53_health_checks::_list_associated_route53_health_checks_output::ListAssociatedRoute53HealthChecksOutput;
 
 mod _list_associated_route53_health_checks_input;
 

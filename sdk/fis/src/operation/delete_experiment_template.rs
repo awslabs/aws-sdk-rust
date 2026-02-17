@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_experiment_
     }
 }
 
-pub use crate::operation::delete_experiment_template::_delete_experiment_template_output::DeleteExperimentTemplateOutput;
-
 pub use crate::operation::delete_experiment_template::_delete_experiment_template_input::DeleteExperimentTemplateInput;
+
+pub use crate::operation::delete_experiment_template::_delete_experiment_template_output::DeleteExperimentTemplateOutput;
 
 mod _delete_experiment_template_input;
 

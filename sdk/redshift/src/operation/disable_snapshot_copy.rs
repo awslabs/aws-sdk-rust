@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_snapshot_c
     }
 }
 
-pub use crate::operation::disable_snapshot_copy::_disable_snapshot_copy_output::DisableSnapshotCopyOutput;
-
 pub use crate::operation::disable_snapshot_copy::_disable_snapshot_copy_input::DisableSnapshotCopyInput;
+
+pub use crate::operation::disable_snapshot_copy::_disable_snapshot_copy_output::DisableSnapshotCopyOutput;
 
 mod _disable_snapshot_copy_input;
 

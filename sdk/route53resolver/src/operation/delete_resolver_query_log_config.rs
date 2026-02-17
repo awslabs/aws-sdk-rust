@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resolver_qu
     }
 }
 
-pub use crate::operation::delete_resolver_query_log_config::_delete_resolver_query_log_config_output::DeleteResolverQueryLogConfigOutput;
-
 pub use crate::operation::delete_resolver_query_log_config::_delete_resolver_query_log_config_input::DeleteResolverQueryLogConfigInput;
+
+pub use crate::operation::delete_resolver_query_log_config::_delete_resolver_query_log_config_output::DeleteResolverQueryLogConfigOutput;
 
 mod _delete_resolver_query_log_config_input;
 

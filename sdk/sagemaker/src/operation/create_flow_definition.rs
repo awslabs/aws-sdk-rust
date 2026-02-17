@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flow_defini
     }
 }
 
-pub use crate::operation::create_flow_definition::_create_flow_definition_output::CreateFlowDefinitionOutput;
-
 pub use crate::operation::create_flow_definition::_create_flow_definition_input::CreateFlowDefinitionInput;
+
+pub use crate::operation::create_flow_definition::_create_flow_definition_output::CreateFlowDefinitionOutput;
 
 mod _create_flow_definition_input;
 

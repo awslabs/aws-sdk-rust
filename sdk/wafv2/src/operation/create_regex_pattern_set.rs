@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_regex_patte
     }
 }
 
-pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_output::CreateRegexPatternSetOutput;
-
 pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_input::CreateRegexPatternSetInput;
+
+pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_output::CreateRegexPatternSetOutput;
 
 mod _create_regex_pattern_set_input;
 

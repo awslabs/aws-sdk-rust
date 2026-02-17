@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_capacity_task
     }
 }
 
-pub use crate::operation::list_capacity_tasks::_list_capacity_tasks_output::ListCapacityTasksOutput;
-
 pub use crate::operation::list_capacity_tasks::_list_capacity_tasks_input::ListCapacityTasksInput;
+
+pub use crate::operation::list_capacity_tasks::_list_capacity_tasks_output::ListCapacityTasksOutput;
 
 mod _list_capacity_tasks_input;
 

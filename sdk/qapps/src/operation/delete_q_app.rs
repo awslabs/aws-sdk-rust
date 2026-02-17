@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_q_app::Dele
     }
 }
 
-pub use crate::operation::delete_q_app::_delete_q_app_output::DeleteQAppOutput;
-
 pub use crate::operation::delete_q_app::_delete_q_app_input::DeleteQAppInput;
+
+pub use crate::operation::delete_q_app::_delete_q_app_output::DeleteQAppOutput;
 
 mod _delete_q_app_input;
 

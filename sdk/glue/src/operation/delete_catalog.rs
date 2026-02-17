@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_catalog::De
     }
 }
 
-pub use crate::operation::delete_catalog::_delete_catalog_output::DeleteCatalogOutput;
-
 pub use crate::operation::delete_catalog::_delete_catalog_input::DeleteCatalogInput;
+
+pub use crate::operation::delete_catalog::_delete_catalog_output::DeleteCatalogOutput;
 
 mod _delete_catalog_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_security_group
     }
 }
 
-pub use crate::operation::get_security_group::_get_security_group_output::GetSecurityGroupOutput;
-
 pub use crate::operation::get_security_group::_get_security_group_input::GetSecurityGroupInput;
+
+pub use crate::operation::get_security_group::_get_security_group_output::GetSecurityGroupOutput;
 
 mod _get_security_group_input;
 

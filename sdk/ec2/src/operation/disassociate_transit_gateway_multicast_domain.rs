@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_transit_gateway_multicast_domain::_disassociate_transit_gateway_multicast_domain_output::DisassociateTransitGatewayMulticastDomainOutput;
-
 pub use crate::operation::disassociate_transit_gateway_multicast_domain::_disassociate_transit_gateway_multicast_domain_input::DisassociateTransitGatewayMulticastDomainInput;
+
+pub use crate::operation::disassociate_transit_gateway_multicast_domain::_disassociate_transit_gateway_multicast_domain_output::DisassociateTransitGatewayMulticastDomainOutput;
 
 mod _disassociate_transit_gateway_multicast_domain_input;
 

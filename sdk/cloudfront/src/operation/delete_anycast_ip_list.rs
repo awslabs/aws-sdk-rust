@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_anycast_ip_
     }
 }
 
-pub use crate::operation::delete_anycast_ip_list::_delete_anycast_ip_list_output::DeleteAnycastIpListOutput;
-
 pub use crate::operation::delete_anycast_ip_list::_delete_anycast_ip_list_input::DeleteAnycastIpListInput;
+
+pub use crate::operation::delete_anycast_ip_list::_delete_anycast_ip_list_output::DeleteAnycastIpListOutput;
 
 mod _delete_anycast_ip_list_input;
 

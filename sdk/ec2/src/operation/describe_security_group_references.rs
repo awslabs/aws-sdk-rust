@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_security_
     }
 }
 
-pub use crate::operation::describe_security_group_references::_describe_security_group_references_output::DescribeSecurityGroupReferencesOutput;
-
 pub use crate::operation::describe_security_group_references::_describe_security_group_references_input::DescribeSecurityGroupReferencesInput;
+
+pub use crate::operation::describe_security_group_references::_describe_security_group_references_output::DescribeSecurityGroupReferencesOutput;
 
 mod _describe_security_group_references_input;
 

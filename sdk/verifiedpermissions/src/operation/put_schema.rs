@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_schema::PutSch
     }
 }
 
-pub use crate::operation::put_schema::_put_schema_output::PutSchemaOutput;
-
 pub use crate::operation::put_schema::_put_schema_input::PutSchemaInput;
+
+pub use crate::operation::put_schema::_put_schema_output::PutSchemaOutput;
 
 mod _put_schema_input;
 

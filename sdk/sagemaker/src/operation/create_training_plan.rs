@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_training_pl
     }
 }
 
-pub use crate::operation::create_training_plan::_create_training_plan_output::CreateTrainingPlanOutput;
-
 pub use crate::operation::create_training_plan::_create_training_plan_input::CreateTrainingPlanInput;
+
+pub use crate::operation::create_training_plan::_create_training_plan_output::CreateTrainingPlanOutput;
 
 mod _create_training_plan_input;
 

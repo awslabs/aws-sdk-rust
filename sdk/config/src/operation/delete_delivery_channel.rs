@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_delivery_ch
     }
 }
 
-pub use crate::operation::delete_delivery_channel::_delete_delivery_channel_output::DeleteDeliveryChannelOutput;
-
 pub use crate::operation::delete_delivery_channel::_delete_delivery_channel_input::DeleteDeliveryChannelInput;
+
+pub use crate::operation::delete_delivery_channel::_delete_delivery_channel_output::DeleteDeliveryChannelOutput;
 
 mod _delete_delivery_channel_input;
 

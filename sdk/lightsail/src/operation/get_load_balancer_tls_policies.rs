@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_load_balancer_
     }
 }
 
-pub use crate::operation::get_load_balancer_tls_policies::_get_load_balancer_tls_policies_output::GetLoadBalancerTlsPoliciesOutput;
-
 pub use crate::operation::get_load_balancer_tls_policies::_get_load_balancer_tls_policies_input::GetLoadBalancerTlsPoliciesInput;
+
+pub use crate::operation::get_load_balancer_tls_policies::_get_load_balancer_tls_policies_output::GetLoadBalancerTlsPoliciesOutput;
 
 mod _get_load_balancer_tls_policies_input;
 

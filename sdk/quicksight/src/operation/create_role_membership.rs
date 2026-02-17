@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_role_member
     }
 }
 
-pub use crate::operation::create_role_membership::_create_role_membership_output::CreateRoleMembershipOutput;
-
 pub use crate::operation::create_role_membership::_create_role_membership_input::CreateRoleMembershipInput;
+
+pub use crate::operation::create_role_membership::_create_role_membership_output::CreateRoleMembershipOutput;
 
 mod _create_role_membership_input;
 

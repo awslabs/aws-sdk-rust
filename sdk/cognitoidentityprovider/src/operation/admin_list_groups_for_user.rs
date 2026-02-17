@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_list_groups_
     }
 }
 
-pub use crate::operation::admin_list_groups_for_user::_admin_list_groups_for_user_output::AdminListGroupsForUserOutput;
-
 pub use crate::operation::admin_list_groups_for_user::_admin_list_groups_for_user_input::AdminListGroupsForUserInput;
+
+pub use crate::operation::admin_list_groups_for_user::_admin_list_groups_for_user_output::AdminListGroupsForUserOutput;
 
 mod _admin_list_groups_for_user_input;
 

@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_agent_runti
     }
 }
 
-pub use crate::operation::invoke_agent_runtime::_invoke_agent_runtime_output::InvokeAgentRuntimeOutput;
-
 pub use crate::operation::invoke_agent_runtime::_invoke_agent_runtime_input::InvokeAgentRuntimeInput;
+
+pub use crate::operation::invoke_agent_runtime::_invoke_agent_runtime_output::InvokeAgentRuntimeOutput;
 
 mod _invoke_agent_runtime_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_forecast::C
     }
 }
 
-pub use crate::operation::create_forecast::_create_forecast_output::CreateForecastOutput;
-
 pub use crate::operation::create_forecast::_create_forecast_input::CreateForecastInput;
+
+pub use crate::operation::create_forecast::_create_forecast_output::CreateForecastOutput;
 
 mod _create_forecast_input;
 

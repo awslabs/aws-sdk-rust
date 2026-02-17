@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact_eva
     }
 }
 
-pub use crate::operation::update_contact_evaluation::_update_contact_evaluation_output::UpdateContactEvaluationOutput;
-
 pub use crate::operation::update_contact_evaluation::_update_contact_evaluation_input::UpdateContactEvaluationInput;
+
+pub use crate::operation::update_contact_evaluation::_update_contact_evaluation_output::UpdateContactEvaluationOutput;
 
 mod _update_contact_evaluation_input;
 

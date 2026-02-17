@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_check_summari
     }
 }
 
-pub use crate::operation::list_check_summaries::_list_check_summaries_output::ListCheckSummariesOutput;
-
 pub use crate::operation::list_check_summaries::_list_check_summaries_input::ListCheckSummariesInput;
+
+pub use crate::operation::list_check_summaries::_list_check_summaries_output::ListCheckSummariesOutput;
 
 mod _list_check_summaries_input;
 

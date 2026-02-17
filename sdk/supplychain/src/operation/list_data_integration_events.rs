@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_integrat
     }
 }
 
-pub use crate::operation::list_data_integration_events::_list_data_integration_events_output::ListDataIntegrationEventsOutput;
-
 pub use crate::operation::list_data_integration_events::_list_data_integration_events_input::ListDataIntegrationEventsInput;
+
+pub use crate::operation::list_data_integration_events::_list_data_integration_events_output::ListDataIntegrationEventsOutput;
 
 mod _list_data_integration_events_input;
 

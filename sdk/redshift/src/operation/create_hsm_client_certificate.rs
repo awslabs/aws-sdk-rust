@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hsm_client_
     }
 }
 
-pub use crate::operation::create_hsm_client_certificate::_create_hsm_client_certificate_output::CreateHsmClientCertificateOutput;
-
 pub use crate::operation::create_hsm_client_certificate::_create_hsm_client_certificate_input::CreateHsmClientCertificateInput;
+
+pub use crate::operation::create_hsm_client_certificate::_create_hsm_client_certificate_output::CreateHsmClientCertificateOutput;
 
 mod _create_hsm_client_certificate_input;
 

@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sip_media_a
     }
 }
 
-pub use crate::operation::update_sip_media_application_call::_update_sip_media_application_call_output::UpdateSipMediaApplicationCallOutput;
-
 pub use crate::operation::update_sip_media_application_call::_update_sip_media_application_call_input::UpdateSipMediaApplicationCallInput;
+
+pub use crate::operation::update_sip_media_application_call::_update_sip_media_application_call_output::UpdateSipMediaApplicationCallOutput;
 
 mod _update_sip_media_application_call_input;
 

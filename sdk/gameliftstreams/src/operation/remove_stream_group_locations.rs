@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_stream_grou
     }
 }
 
-pub use crate::operation::remove_stream_group_locations::_remove_stream_group_locations_output::RemoveStreamGroupLocationsOutput;
-
 pub use crate::operation::remove_stream_group_locations::_remove_stream_group_locations_input::RemoveStreamGroupLocationsInput;
+
+pub use crate::operation::remove_stream_group_locations::_remove_stream_group_locations_output::RemoveStreamGroupLocationsOutput;
 
 mod _remove_stream_group_locations_input;
 

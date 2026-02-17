@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_runtime_log_
     }
 }
 
-pub use crate::operation::reset_runtime_log_configuration::_reset_runtime_log_configuration_output::ResetRuntimeLogConfigurationOutput;
-
 pub use crate::operation::reset_runtime_log_configuration::_reset_runtime_log_configuration_input::ResetRuntimeLogConfigurationInput;
+
+pub use crate::operation::reset_runtime_log_configuration::_reset_runtime_log_configuration_output::ResetRuntimeLogConfigurationOutput;
 
 mod _reset_runtime_log_configuration_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_schema_exte
     }
 }
 
-pub use crate::operation::cancel_schema_extension::_cancel_schema_extension_output::CancelSchemaExtensionOutput;
-
 pub use crate::operation::cancel_schema_extension::_cancel_schema_extension_input::CancelSchemaExtensionInput;
+
+pub use crate::operation::cancel_schema_extension::_cancel_schema_extension_output::CancelSchemaExtensionOutput;
 
 mod _cancel_schema_extension_input;
 

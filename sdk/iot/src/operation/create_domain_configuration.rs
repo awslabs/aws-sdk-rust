@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_domain_conf
     }
 }
 
-pub use crate::operation::create_domain_configuration::_create_domain_configuration_output::CreateDomainConfigurationOutput;
-
 pub use crate::operation::create_domain_configuration::_create_domain_configuration_input::CreateDomainConfigurationInput;
+
+pub use crate::operation::create_domain_configuration::_create_domain_configuration_output::CreateDomainConfigurationOutput;
 
 mod _create_domain_configuration_input;
 

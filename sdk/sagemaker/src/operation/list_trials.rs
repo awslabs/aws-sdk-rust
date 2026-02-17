@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trials::ListT
     }
 }
 
-pub use crate::operation::list_trials::_list_trials_output::ListTrialsOutput;
-
 pub use crate::operation::list_trials::_list_trials_input::ListTrialsInput;
+
+pub use crate::operation::list_trials::_list_trials_output::ListTrialsOutput;
 
 mod _list_trials_input;
 

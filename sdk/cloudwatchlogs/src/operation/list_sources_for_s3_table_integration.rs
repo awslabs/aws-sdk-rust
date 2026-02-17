@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sources_for_s
     }
 }
 
-pub use crate::operation::list_sources_for_s3_table_integration::_list_sources_for_s3_table_integration_output::ListSourcesForS3TableIntegrationOutput;
-
 pub use crate::operation::list_sources_for_s3_table_integration::_list_sources_for_s3_table_integration_input::ListSourcesForS3TableIntegrationInput;
+
+pub use crate::operation::list_sources_for_s3_table_integration::_list_sources_for_s3_table_integration_output::ListSourcesForS3TableIntegrationOutput;
 
 mod _list_sources_for_s3_table_integration_input;
 

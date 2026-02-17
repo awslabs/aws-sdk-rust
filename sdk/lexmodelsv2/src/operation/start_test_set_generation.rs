@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_test_set_gen
     }
 }
 
-pub use crate::operation::start_test_set_generation::_start_test_set_generation_output::StartTestSetGenerationOutput;
-
 pub use crate::operation::start_test_set_generation::_start_test_set_generation_input::StartTestSetGenerationInput;
+
+pub use crate::operation::start_test_set_generation::_start_test_set_generation_output::StartTestSetGenerationOutput;
 
 mod _start_test_set_generation_input;
 

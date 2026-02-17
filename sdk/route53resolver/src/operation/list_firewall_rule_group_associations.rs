@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewall_rule
     }
 }
 
-pub use crate::operation::list_firewall_rule_group_associations::_list_firewall_rule_group_associations_output::ListFirewallRuleGroupAssociationsOutput;
-
 pub use crate::operation::list_firewall_rule_group_associations::_list_firewall_rule_group_associations_input::ListFirewallRuleGroupAssociationsInput;
+
+pub use crate::operation::list_firewall_rule_group_associations::_list_firewall_rule_group_associations_output::ListFirewallRuleGroupAssociationsOutput;
 
 mod _list_firewall_rule_group_associations_input;
 

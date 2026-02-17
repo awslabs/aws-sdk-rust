@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_cus
     }
 }
 
-pub use crate::operation::delete_account_customization::_delete_account_customization_output::DeleteAccountCustomizationOutput;
-
 pub use crate::operation::delete_account_customization::_delete_account_customization_input::DeleteAccountCustomizationInput;
+
+pub use crate::operation::delete_account_customization::_delete_account_customization_output::DeleteAccountCustomizationOutput;
 
 mod _delete_account_customization_input;
 

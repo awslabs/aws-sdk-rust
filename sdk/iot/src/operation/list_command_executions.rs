@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_command_execu
     }
 }
 
-pub use crate::operation::list_command_executions::_list_command_executions_output::ListCommandExecutionsOutput;
-
 pub use crate::operation::list_command_executions::_list_command_executions_input::ListCommandExecutionsInput;
+
+pub use crate::operation::list_command_executions::_list_command_executions_output::ListCommandExecutionsOutput;
 
 mod _list_command_executions_input;
 

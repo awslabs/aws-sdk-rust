@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_marketp
     }
 }
 
-pub use crate::operation::deregister_marketplace_model_endpoint::_deregister_marketplace_model_endpoint_output::DeregisterMarketplaceModelEndpointOutput;
-
 pub use crate::operation::deregister_marketplace_model_endpoint::_deregister_marketplace_model_endpoint_input::DeregisterMarketplaceModelEndpointInput;
+
+pub use crate::operation::deregister_marketplace_model_endpoint::_deregister_marketplace_model_endpoint_output::DeregisterMarketplaceModelEndpointOutput;
 
 mod _deregister_marketplace_model_endpoint_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_rule:
     }
 }
 
-pub use crate::operation::create_event_rule::_create_event_rule_output::CreateEventRuleOutput;
-
 pub use crate::operation::create_event_rule::_create_event_rule_input::CreateEventRuleInput;
+
+pub use crate::operation::create_event_rule::_create_event_rule_output::CreateEventRuleOutput;
 
 mod _create_event_rule_input;
 

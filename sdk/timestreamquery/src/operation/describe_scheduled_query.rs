@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scheduled
     }
 }
 
-pub use crate::operation::describe_scheduled_query::_describe_scheduled_query_output::DescribeScheduledQueryOutput;
-
 pub use crate::operation::describe_scheduled_query::_describe_scheduled_query_input::DescribeScheduledQueryInput;
+
+pub use crate::operation::describe_scheduled_query::_describe_scheduled_query_output::DescribeScheduledQueryOutput;
 
 mod _describe_scheduled_query_input;
 

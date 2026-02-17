@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_tenant_data
     }
 }
 
-pub use crate::operation::modify_tenant_database::_modify_tenant_database_output::ModifyTenantDatabaseOutput;
-
 pub use crate::operation::modify_tenant_database::_modify_tenant_database_input::ModifyTenantDatabaseInput;
+
+pub use crate::operation::modify_tenant_database::_modify_tenant_database_output::ModifyTenantDatabaseOutput;
 
 mod _modify_tenant_database_input;
 

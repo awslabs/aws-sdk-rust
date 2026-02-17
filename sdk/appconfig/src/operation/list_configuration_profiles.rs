@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_profiles::_list_configuration_profiles_output::ListConfigurationProfilesOutput;
-
 pub use crate::operation::list_configuration_profiles::_list_configuration_profiles_input::ListConfigurationProfilesInput;
+
+pub use crate::operation::list_configuration_profiles::_list_configuration_profiles_output::ListConfigurationProfilesOutput;
 
 mod _list_configuration_profiles_input;
 

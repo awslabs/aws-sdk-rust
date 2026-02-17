@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster::
     }
 }
 
-pub use crate::operation::describe_cluster::_describe_cluster_output::DescribeClusterOutput;
-
 pub use crate::operation::describe_cluster::_describe_cluster_input::DescribeClusterInput;
+
+pub use crate::operation::describe_cluster::_describe_cluster_output::DescribeClusterOutput;
 
 mod _describe_cluster_input;
 

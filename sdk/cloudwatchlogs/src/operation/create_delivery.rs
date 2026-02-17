@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_delivery::C
     }
 }
 
-pub use crate::operation::create_delivery::_create_delivery_output::CreateDeliveryOutput;
-
 pub use crate::operation::create_delivery::_create_delivery_input::CreateDeliveryInput;
+
+pub use crate::operation::create_delivery::_create_delivery_output::CreateDeliveryOutput;
 
 mod _create_delivery_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve::Retrieve
     }
 }
 
-pub use crate::operation::retrieve::_retrieve_output::RetrieveOutput;
-
 pub use crate::operation::retrieve::_retrieve_input::RetrieveInput;
+
+pub use crate::operation::retrieve::_retrieve_output::RetrieveOutput;
 
 mod _retrieve_input;
 

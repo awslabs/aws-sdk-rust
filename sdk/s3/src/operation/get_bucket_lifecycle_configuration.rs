@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_lifecyc
     }
 }
 
-pub use crate::operation::get_bucket_lifecycle_configuration::_get_bucket_lifecycle_configuration_output::GetBucketLifecycleConfigurationOutput;
-
 pub use crate::operation::get_bucket_lifecycle_configuration::_get_bucket_lifecycle_configuration_input::GetBucketLifecycleConfigurationInput;
+
+pub use crate::operation::get_bucket_lifecycle_configuration::_get_bucket_lifecycle_configuration_output::GetBucketLifecycleConfigurationOutput;
 
 mod _get_bucket_lifecycle_configuration_input;
 

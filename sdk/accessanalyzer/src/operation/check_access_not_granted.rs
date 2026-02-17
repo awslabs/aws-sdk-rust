@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_access_not_g
     }
 }
 
-pub use crate::operation::check_access_not_granted::_check_access_not_granted_output::CheckAccessNotGrantedOutput;
-
 pub use crate::operation::check_access_not_granted::_check_access_not_granted_input::CheckAccessNotGrantedInput;
+
+pub use crate::operation::check_access_not_granted::_check_access_not_granted_output::CheckAccessNotGrantedOutput;
 
 mod _check_access_not_granted_input;
 

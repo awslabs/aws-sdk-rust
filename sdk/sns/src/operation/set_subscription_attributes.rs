@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_subscription_a
     }
 }
 
-pub use crate::operation::set_subscription_attributes::_set_subscription_attributes_output::SetSubscriptionAttributesOutput;
-
 pub use crate::operation::set_subscription_attributes::_set_subscription_attributes_input::SetSubscriptionAttributesInput;
+
+pub use crate::operation::set_subscription_attributes::_set_subscription_attributes_output::SetSubscriptionAttributesOutput;
 
 mod _set_subscription_attributes_input;
 

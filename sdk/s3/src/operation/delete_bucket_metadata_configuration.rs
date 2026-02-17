@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_meta
     }
 }
 
-pub use crate::operation::delete_bucket_metadata_configuration::_delete_bucket_metadata_configuration_output::DeleteBucketMetadataConfigurationOutput;
-
 pub use crate::operation::delete_bucket_metadata_configuration::_delete_bucket_metadata_configuration_input::DeleteBucketMetadataConfigurationInput;
+
+pub use crate::operation::delete_bucket_metadata_configuration::_delete_bucket_metadata_configuration_output::DeleteBucketMetadataConfigurationOutput;
 
 mod _delete_bucket_metadata_configuration_input;
 

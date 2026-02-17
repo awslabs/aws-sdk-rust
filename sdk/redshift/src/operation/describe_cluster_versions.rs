@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_v
     }
 }
 
-pub use crate::operation::describe_cluster_versions::_describe_cluster_versions_output::DescribeClusterVersionsOutput;
-
 pub use crate::operation::describe_cluster_versions::_describe_cluster_versions_input::DescribeClusterVersionsInput;
+
+pub use crate::operation::describe_cluster_versions::_describe_cluster_versions_output::DescribeClusterVersionsOutput;
 
 mod _describe_cluster_versions_input;
 

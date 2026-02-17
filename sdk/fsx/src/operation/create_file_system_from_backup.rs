@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_file_system
     }
 }
 
-pub use crate::operation::create_file_system_from_backup::_create_file_system_from_backup_output::CreateFileSystemFromBackupOutput;
-
 pub use crate::operation::create_file_system_from_backup::_create_file_system_from_backup_input::CreateFileSystemFromBackupInput;
+
+pub use crate::operation::create_file_system_from_backup::_create_file_system_from_backup_output::CreateFileSystemFromBackupOutput;
 
 mod _create_file_system_from_backup_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_transit_gateway_metering_policy_entries::_get_transit_gateway_metering_policy_entries_output::GetTransitGatewayMeteringPolicyEntriesOutput;
-
 pub use crate::operation::get_transit_gateway_metering_policy_entries::_get_transit_gateway_metering_policy_entries_input::GetTransitGatewayMeteringPolicyEntriesInput;
+
+pub use crate::operation::get_transit_gateway_metering_policy_entries::_get_transit_gateway_metering_policy_entries_output::GetTransitGatewayMeteringPolicyEntriesOutput;
 
 mod _get_transit_gateway_metering_policy_entries_input;
 

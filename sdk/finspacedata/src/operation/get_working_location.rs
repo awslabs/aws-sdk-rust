@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_working_locati
     }
 }
 
-pub use crate::operation::get_working_location::_get_working_location_output::GetWorkingLocationOutput;
-
 pub use crate::operation::get_working_location::_get_working_location_input::GetWorkingLocationInput;
+
+pub use crate::operation::get_working_location::_get_working_location_output::GetWorkingLocationOutput;
 
 mod _get_working_location_input;
 

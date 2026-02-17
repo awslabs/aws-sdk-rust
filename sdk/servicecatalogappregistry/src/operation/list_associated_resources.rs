@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_re
     }
 }
 
-pub use crate::operation::list_associated_resources::_list_associated_resources_output::ListAssociatedResourcesOutput;
-
 pub use crate::operation::list_associated_resources::_list_associated_resources_input::ListAssociatedResourcesInput;
+
+pub use crate::operation::list_associated_resources::_list_associated_resources_output::ListAssociatedResourcesOutput;
 
 mod _list_associated_resources_input;
 

@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_source_ru
     }
 }
 
-pub use crate::operation::get_data_source_run::_get_data_source_run_output::GetDataSourceRunOutput;
-
 pub use crate::operation::get_data_source_run::_get_data_source_run_input::GetDataSourceRunInput;
+
+pub use crate::operation::get_data_source_run::_get_data_source_run_output::GetDataSourceRunOutput;
 
 mod _get_data_source_run_input;
 

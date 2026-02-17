@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ml_endpoints:
     }
 }
 
-pub use crate::operation::list_ml_endpoints::_list_ml_endpoints_output::ListMlEndpointsOutput;
-
 pub use crate::operation::list_ml_endpoints::_list_ml_endpoints_input::ListMlEndpointsInput;
+
+pub use crate::operation::list_ml_endpoints::_list_ml_endpoints_output::ListMlEndpointsOutput;
 
 mod _list_ml_endpoints_input;
 

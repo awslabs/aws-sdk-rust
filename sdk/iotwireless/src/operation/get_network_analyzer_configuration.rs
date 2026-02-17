@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_analyz
     }
 }
 
-pub use crate::operation::get_network_analyzer_configuration::_get_network_analyzer_configuration_output::GetNetworkAnalyzerConfigurationOutput;
-
 pub use crate::operation::get_network_analyzer_configuration::_get_network_analyzer_configuration_input::GetNetworkAnalyzerConfigurationInput;
+
+pub use crate::operation::get_network_analyzer_configuration::_get_network_analyzer_configuration_output::GetNetworkAnalyzerConfigurationOutput;
 
 mod _get_network_analyzer_configuration_input;
 

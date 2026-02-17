@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_statistics::Ge
     }
 }
 
-pub use crate::operation::get_statistics::_get_statistics_output::GetStatisticsOutput;
-
 pub use crate::operation::get_statistics::_get_statistics_input::GetStatisticsInput;
+
+pub use crate::operation::get_statistics::_get_statistics_output::GetStatisticsOutput;
 
 mod _get_statistics_input;
 

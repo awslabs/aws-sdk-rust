@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_product_
     }
 }
 
-pub use crate::operation::associate_product_with_portfolio::_associate_product_with_portfolio_output::AssociateProductWithPortfolioOutput;
-
 pub use crate::operation::associate_product_with_portfolio::_associate_product_with_portfolio_input::AssociateProductWithPortfolioInput;
+
+pub use crate::operation::associate_product_with_portfolio::_associate_product_with_portfolio_output::AssociateProductWithPortfolioOutput;
 
 mod _associate_product_with_portfolio_input;
 

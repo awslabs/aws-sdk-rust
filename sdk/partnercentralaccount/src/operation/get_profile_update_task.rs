@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_update
     }
 }
 
-pub use crate::operation::get_profile_update_task::_get_profile_update_task_output::GetProfileUpdateTaskOutput;
-
 pub use crate::operation::get_profile_update_task::_get_profile_update_task_input::GetProfileUpdateTaskInput;
+
+pub use crate::operation::get_profile_update_task::_get_profile_update_task_output::GetProfileUpdateTaskOutput;
 
 mod _get_profile_update_task_input;
 

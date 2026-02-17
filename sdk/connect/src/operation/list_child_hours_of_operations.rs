@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_child_hours_o
     }
 }
 
-pub use crate::operation::list_child_hours_of_operations::_list_child_hours_of_operations_output::ListChildHoursOfOperationsOutput;
-
 pub use crate::operation::list_child_hours_of_operations::_list_child_hours_of_operations_input::ListChildHoursOfOperationsInput;
+
+pub use crate::operation::list_child_hours_of_operations::_list_child_hours_of_operations_output::ListChildHoursOfOperationsOutput;
 
 mod _list_child_hours_of_operations_input;
 

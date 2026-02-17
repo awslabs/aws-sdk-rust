@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_auth_policy::P
     }
 }
 
-pub use crate::operation::put_auth_policy::_put_auth_policy_output::PutAuthPolicyOutput;
-
 pub use crate::operation::put_auth_policy::_put_auth_policy_input::PutAuthPolicyInput;
+
+pub use crate::operation::put_auth_policy::_put_auth_policy_output::PutAuthPolicyOutput;
 
 mod _put_auth_policy_input;
 

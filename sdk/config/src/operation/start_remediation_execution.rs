@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_remediation_
     }
 }
 
-pub use crate::operation::start_remediation_execution::_start_remediation_execution_output::StartRemediationExecutionOutput;
-
 pub use crate::operation::start_remediation_execution::_start_remediation_execution_input::StartRemediationExecutionInput;
+
+pub use crate::operation::start_remediation_execution::_start_remediation_execution_output::StartRemediationExecutionOutput;
 
 mod _start_remediation_execution_input;
 

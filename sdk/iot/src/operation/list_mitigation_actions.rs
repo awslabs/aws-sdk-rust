@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mitigation_ac
     }
 }
 
-pub use crate::operation::list_mitigation_actions::_list_mitigation_actions_output::ListMitigationActionsOutput;
-
 pub use crate::operation::list_mitigation_actions::_list_mitigation_actions_input::ListMitigationActionsInput;
+
+pub use crate::operation::list_mitigation_actions::_list_mitigation_actions_output::ListMitigationActionsOutput;
 
 mod _list_mitigation_actions_input;
 

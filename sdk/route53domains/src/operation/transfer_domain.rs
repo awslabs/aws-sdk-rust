@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::transfer_domain::T
     }
 }
 
-pub use crate::operation::transfer_domain::_transfer_domain_output::TransferDomainOutput;
-
 pub use crate::operation::transfer_domain::_transfer_domain_input::TransferDomainInput;
+
+pub use crate::operation::transfer_domain::_transfer_domain_output::TransferDomainOutput;
 
 mod _transfer_domain_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ssh_public_ke
     }
 }
 
-pub use crate::operation::list_ssh_public_keys::_list_ssh_public_keys_output::ListSshPublicKeysOutput;
-
 pub use crate::operation::list_ssh_public_keys::_list_ssh_public_keys_input::ListSshPublicKeysInput;
+
+pub use crate::operation::list_ssh_public_keys::_list_ssh_public_keys_output::ListSshPublicKeysOutput;
 
 mod _list_ssh_public_keys_input;
 

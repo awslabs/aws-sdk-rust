@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_explain
     }
 }
 
-pub use crate::operation::list_model_explainability_job_definitions::_list_model_explainability_job_definitions_output::ListModelExplainabilityJobDefinitionsOutput;
-
 pub use crate::operation::list_model_explainability_job_definitions::_list_model_explainability_job_definitions_input::ListModelExplainabilityJobDefinitionsInput;
+
+pub use crate::operation::list_model_explainability_job_definitions::_list_model_explainability_job_definitions_output::ListModelExplainabilityJobDefinitionsOutput;
 
 mod _list_model_explainability_job_definitions_input;
 

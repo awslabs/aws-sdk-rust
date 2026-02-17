@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_answers::List
     }
 }
 
-pub use crate::operation::list_answers::_list_answers_output::ListAnswersOutput;
-
 pub use crate::operation::list_answers::_list_answers_input::ListAnswersInput;
+
+pub use crate::operation::list_answers::_list_answers_output::ListAnswersOutput;
 
 mod _list_answers_input;
 

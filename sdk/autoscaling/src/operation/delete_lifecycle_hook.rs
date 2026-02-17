@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lifecycle_h
     }
 }
 
-pub use crate::operation::delete_lifecycle_hook::_delete_lifecycle_hook_output::DeleteLifecycleHookOutput;
-
 pub use crate::operation::delete_lifecycle_hook::_delete_lifecycle_hook_input::DeleteLifecycleHookInput;
+
+pub use crate::operation::delete_lifecycle_hook::_delete_lifecycle_hook_output::DeleteLifecycleHookOutput;
 
 mod _delete_lifecycle_hook_input;
 

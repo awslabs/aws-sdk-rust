@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_template_grou
     }
 }
 
-pub use crate::operation::list_template_group_access_control_entries::_list_template_group_access_control_entries_output::ListTemplateGroupAccessControlEntriesOutput;
-
 pub use crate::operation::list_template_group_access_control_entries::_list_template_group_access_control_entries_input::ListTemplateGroupAccessControlEntriesInput;
+
+pub use crate::operation::list_template_group_access_control_entries::_list_template_group_access_control_entries_output::ListTemplateGroupAccessControlEntriesOutput;
 
 mod _list_template_group_access_control_entries_input;
 

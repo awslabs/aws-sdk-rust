@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_private_gra
     }
 }
 
-pub use crate::operation::create_private_graph_endpoint::_create_private_graph_endpoint_output::CreatePrivateGraphEndpointOutput;
-
 pub use crate::operation::create_private_graph_endpoint::_create_private_graph_endpoint_input::CreatePrivateGraphEndpointInput;
+
+pub use crate::operation::create_private_graph_endpoint::_create_private_graph_endpoint_output::CreatePrivateGraphEndpointOutput;
 
 mod _create_private_graph_endpoint_input;
 

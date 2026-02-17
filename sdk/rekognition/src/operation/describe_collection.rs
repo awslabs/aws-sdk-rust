@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_collectio
     }
 }
 
-pub use crate::operation::describe_collection::_describe_collection_output::DescribeCollectionOutput;
-
 pub use crate::operation::describe_collection::_describe_collection_input::DescribeCollectionInput;
+
+pub use crate::operation::describe_collection::_describe_collection_output::DescribeCollectionOutput;
 
 mod _describe_collection_input;
 

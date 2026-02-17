@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_outbound_ex
     }
 }
 
-pub use crate::operation::create_outbound_external_link::_create_outbound_external_link_output::CreateOutboundExternalLinkOutput;
-
 pub use crate::operation::create_outbound_external_link::_create_outbound_external_link_input::CreateOutboundExternalLinkInput;
+
+pub use crate::operation::create_outbound_external_link::_create_outbound_external_link_output::CreateOutboundExternalLinkOutput;
 
 mod _create_outbound_external_link_input;
 

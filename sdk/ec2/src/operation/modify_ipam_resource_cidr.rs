@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_ipam_resour
     }
 }
 
-pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_output::ModifyIpamResourceCidrOutput;
-
 pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_input::ModifyIpamResourceCidrInput;
+
+pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_output::ModifyIpamResourceCidrOutput;
 
 mod _modify_ipam_resource_cidr_input;
 

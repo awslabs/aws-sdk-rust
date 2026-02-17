@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_permissions_boundary_for_permission_set::_get_permissions_boundary_for_permission_set_output::GetPermissionsBoundaryForPermissionSetOutput;
-
 pub use crate::operation::get_permissions_boundary_for_permission_set::_get_permissions_boundary_for_permission_set_input::GetPermissionsBoundaryForPermissionSetInput;
+
+pub use crate::operation::get_permissions_boundary_for_permission_set::_get_permissions_boundary_for_permission_set_output::GetPermissionsBoundaryForPermissionSetOutput;
 
 mod _get_permissions_boundary_for_permission_set_input;
 

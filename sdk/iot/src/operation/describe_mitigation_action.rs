@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mitigatio
     }
 }
 
-pub use crate::operation::describe_mitigation_action::_describe_mitigation_action_output::DescribeMitigationActionOutput;
-
 pub use crate::operation::describe_mitigation_action::_describe_mitigation_action_input::DescribeMitigationActionInput;
+
+pub use crate::operation::describe_mitigation_action::_describe_mitigation_action_output::DescribeMitigationActionOutput;
 
 mod _describe_mitigation_action_input;
 

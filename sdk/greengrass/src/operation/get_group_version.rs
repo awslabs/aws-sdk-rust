@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group_version:
     }
 }
 
-pub use crate::operation::get_group_version::_get_group_version_output::GetGroupVersionOutput;
-
 pub use crate::operation::get_group_version::_get_group_version_input::GetGroupVersionInput;
+
+pub use crate::operation::get_group_version::_get_group_version_output::GetGroupVersionOutput;
 
 mod _get_group_version_input;
 

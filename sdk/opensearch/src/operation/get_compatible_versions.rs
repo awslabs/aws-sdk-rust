@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compatible_ver
     }
 }
 
-pub use crate::operation::get_compatible_versions::_get_compatible_versions_output::GetCompatibleVersionsOutput;
-
 pub use crate::operation::get_compatible_versions::_get_compatible_versions_input::GetCompatibleVersionsInput;
+
+pub use crate::operation::get_compatible_versions::_get_compatible_versions_output::GetCompatibleVersionsOutput;
 
 mod _get_compatible_versions_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_email_ident
     }
 }
 
-pub use crate::operation::update_email_identity_policy::_update_email_identity_policy_output::UpdateEmailIdentityPolicyOutput;
-
 pub use crate::operation::update_email_identity_policy::_update_email_identity_policy_input::UpdateEmailIdentityPolicyInput;
+
+pub use crate::operation::update_email_identity_policy::_update_email_identity_policy_output::UpdateEmailIdentityPolicyOutput;
 
 mod _update_email_identity_policy_input;
 

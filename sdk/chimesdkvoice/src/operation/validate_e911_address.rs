@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_e911_addr
     }
 }
 
-pub use crate::operation::validate_e911_address::_validate_e911_address_output::ValidateE911AddressOutput;
-
 pub use crate::operation::validate_e911_address::_validate_e911_address_input::ValidateE911AddressInput;
+
+pub use crate::operation::validate_e911_address::_validate_e911_address_output::ValidateE911AddressOutput;
 
 mod _validate_e911_address_input;
 

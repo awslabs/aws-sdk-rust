@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_studio_life
     }
 }
 
-pub use crate::operation::create_studio_lifecycle_config::_create_studio_lifecycle_config_output::CreateStudioLifecycleConfigOutput;
-
 pub use crate::operation::create_studio_lifecycle_config::_create_studio_lifecycle_config_input::CreateStudioLifecycleConfigInput;
+
+pub use crate::operation::create_studio_lifecycle_config::_create_studio_lifecycle_config_output::CreateStudioLifecycleConfigOutput;
 
 mod _create_studio_lifecycle_config_input;
 

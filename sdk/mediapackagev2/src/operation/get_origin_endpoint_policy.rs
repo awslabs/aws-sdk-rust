@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_origin_endpoin
     }
 }
 
-pub use crate::operation::get_origin_endpoint_policy::_get_origin_endpoint_policy_output::GetOriginEndpointPolicyOutput;
-
 pub use crate::operation::get_origin_endpoint_policy::_get_origin_endpoint_policy_input::GetOriginEndpointPolicyInput;
+
+pub use crate::operation::get_origin_endpoint_policy::_get_origin_endpoint_policy_output::GetOriginEndpointPolicyOutput;
 
 mod _get_origin_endpoint_policy_input;
 

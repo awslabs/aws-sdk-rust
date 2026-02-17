@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_resource_sna
     }
 }
 
-pub use crate::operation::start_resource_snapshot_job::_start_resource_snapshot_job_output::StartResourceSnapshotJobOutput;
-
 pub use crate::operation::start_resource_snapshot_job::_start_resource_snapshot_job_input::StartResourceSnapshotJobInput;
+
+pub use crate::operation::start_resource_snapshot_job::_start_resource_snapshot_job_output::StartResourceSnapshotJobOutput;
 
 mod _start_resource_snapshot_job_input;
 

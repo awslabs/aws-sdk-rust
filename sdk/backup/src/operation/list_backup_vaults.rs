@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backup_vaults
     }
 }
 
-pub use crate::operation::list_backup_vaults::_list_backup_vaults_output::ListBackupVaultsOutput;
-
 pub use crate::operation::list_backup_vaults::_list_backup_vaults_input::ListBackupVaultsInput;
+
+pub use crate::operation::list_backup_vaults::_list_backup_vaults_output::ListBackupVaultsOutput;
 
 mod _list_backup_vaults_input;
 

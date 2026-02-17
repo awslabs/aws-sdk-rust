@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_efficiency_me
     }
 }
 
-pub use crate::operation::list_efficiency_metrics::_list_efficiency_metrics_output::ListEfficiencyMetricsOutput;
-
 pub use crate::operation::list_efficiency_metrics::_list_efficiency_metrics_input::ListEfficiencyMetricsInput;
+
+pub use crate::operation::list_efficiency_metrics::_list_efficiency_metrics_output::ListEfficiencyMetricsOutput;
 
 mod _list_efficiency_metrics_input;
 

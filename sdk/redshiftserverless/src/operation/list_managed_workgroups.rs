@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_workg
     }
 }
 
-pub use crate::operation::list_managed_workgroups::_list_managed_workgroups_output::ListManagedWorkgroupsOutput;
-
 pub use crate::operation::list_managed_workgroups::_list_managed_workgroups_input::ListManagedWorkgroupsInput;
+
+pub use crate::operation::list_managed_workgroups::_list_managed_workgroups_output::ListManagedWorkgroupsOutput;
 
 mod _list_managed_workgroups_input;
 

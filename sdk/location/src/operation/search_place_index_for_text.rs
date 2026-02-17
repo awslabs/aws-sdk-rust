@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_place_index
     }
 }
 
-pub use crate::operation::search_place_index_for_text::_search_place_index_for_text_output::SearchPlaceIndexForTextOutput;
-
 pub use crate::operation::search_place_index_for_text::_search_place_index_for_text_input::SearchPlaceIndexForTextInput;
+
+pub use crate::operation::search_place_index_for_text::_search_place_index_for_text_output::SearchPlaceIndexForTextOutput;
 
 mod _search_place_index_for_text_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_membership:
     }
 }
 
-pub use crate::operation::delete_membership::_delete_membership_output::DeleteMembershipOutput;
-
 pub use crate::operation::delete_membership::_delete_membership_input::DeleteMembershipInput;
+
+pub use crate::operation::delete_membership::_delete_membership_output::DeleteMembershipOutput;
 
 mod _delete_membership_input;
 

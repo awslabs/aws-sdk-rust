@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_partner_app
     }
 }
 
-pub use crate::operation::create_partner_app_presigned_url::_create_partner_app_presigned_url_output::CreatePartnerAppPresignedUrlOutput;
-
 pub use crate::operation::create_partner_app_presigned_url::_create_partner_app_presigned_url_input::CreatePartnerAppPresignedUrlInput;
+
+pub use crate::operation::create_partner_app_presigned_url::_create_partner_app_presigned_url_output::CreatePartnerAppPresignedUrlOutput;
 
 mod _create_partner_app_presigned_url_input;
 

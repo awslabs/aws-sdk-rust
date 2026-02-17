@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_contact_f
     }
 }
 
-pub use crate::operation::describe_contact_flow_module_alias::_describe_contact_flow_module_alias_output::DescribeContactFlowModuleAliasOutput;
-
 pub use crate::operation::describe_contact_flow_module_alias::_describe_contact_flow_module_alias_input::DescribeContactFlowModuleAliasInput;
+
+pub use crate::operation::describe_contact_flow_module_alias::_describe_contact_flow_module_alias_output::DescribeContactFlowModuleAliasOutput;
 
 mod _describe_contact_flow_module_alias_input;
 

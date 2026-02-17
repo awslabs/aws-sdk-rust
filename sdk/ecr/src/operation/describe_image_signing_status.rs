@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_sig
     }
 }
 
-pub use crate::operation::describe_image_signing_status::_describe_image_signing_status_output::DescribeImageSigningStatusOutput;
-
 pub use crate::operation::describe_image_signing_status::_describe_image_signing_status_input::DescribeImageSigningStatusInput;
+
+pub use crate::operation::describe_image_signing_status::_describe_image_signing_status_output::DescribeImageSigningStatusOutput;
 
 mod _describe_image_signing_status_input;
 

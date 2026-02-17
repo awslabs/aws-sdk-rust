@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_routing_profile_default_outbound_queue::_update_routing_profile_default_outbound_queue_output::UpdateRoutingProfileDefaultOutboundQueueOutput;
-
 pub use crate::operation::update_routing_profile_default_outbound_queue::_update_routing_profile_default_outbound_queue_input::UpdateRoutingProfileDefaultOutboundQueueInput;
+
+pub use crate::operation::update_routing_profile_default_outbound_queue::_update_routing_profile_default_outbound_queue_output::UpdateRoutingProfileDefaultOutboundQueueOutput;
 
 mod _update_routing_profile_default_outbound_queue_input;
 

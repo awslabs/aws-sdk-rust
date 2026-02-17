@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_nodes::_describe_reserved_nodes_output::DescribeReservedNodesOutput;
-
 pub use crate::operation::describe_reserved_nodes::_describe_reserved_nodes_input::DescribeReservedNodesInput;
+
+pub use crate::operation::describe_reserved_nodes::_describe_reserved_nodes_output::DescribeReservedNodesOutput;
 
 mod _describe_reserved_nodes_input;
 

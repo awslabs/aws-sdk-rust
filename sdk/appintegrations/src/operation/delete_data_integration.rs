@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_integr
     }
 }
 
-pub use crate::operation::delete_data_integration::_delete_data_integration_output::DeleteDataIntegrationOutput;
-
 pub use crate::operation::delete_data_integration::_delete_data_integration_input::DeleteDataIntegrationInput;
+
+pub use crate::operation::delete_data_integration::_delete_data_integration_output::DeleteDataIntegrationOutput;
 
 mod _delete_data_integration_input;
 

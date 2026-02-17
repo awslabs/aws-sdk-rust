@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bill_estimate
     }
 }
 
-pub use crate::operation::list_bill_estimates::_list_bill_estimates_output::ListBillEstimatesOutput;
-
 pub use crate::operation::list_bill_estimates::_list_bill_estimates_input::ListBillEstimatesInput;
+
+pub use crate::operation::list_bill_estimates::_list_bill_estimates_output::ListBillEstimatesOutput;
 
 mod _list_bill_estimates_input;
 

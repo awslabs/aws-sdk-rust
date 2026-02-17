@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resend_contact_rea
     }
 }
 
-pub use crate::operation::resend_contact_reachability_email::_resend_contact_reachability_email_output::ResendContactReachabilityEmailOutput;
-
 pub use crate::operation::resend_contact_reachability_email::_resend_contact_reachability_email_input::ResendContactReachabilityEmailInput;
+
+pub use crate::operation::resend_contact_reachability_email::_resend_contact_reachability_email_output::ResendContactReachabilityEmailOutput;
 
 mod _resend_contact_reachability_email_input;
 

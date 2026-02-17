@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workspace_s
     }
 }
 
-pub use crate::operation::create_workspace_service_account::_create_workspace_service_account_output::CreateWorkspaceServiceAccountOutput;
-
 pub use crate::operation::create_workspace_service_account::_create_workspace_service_account_input::CreateWorkspaceServiceAccountInput;
+
+pub use crate::operation::create_workspace_service_account::_create_workspace_service_account_output::CreateWorkspaceServiceAccountOutput;
 
 mod _create_workspace_service_account_input;
 

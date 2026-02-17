@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ruleset::De
     }
 }
 
-pub use crate::operation::delete_ruleset::_delete_ruleset_output::DeleteRulesetOutput;
-
 pub use crate::operation::delete_ruleset::_delete_ruleset_input::DeleteRulesetInput;
+
+pub use crate::operation::delete_ruleset::_delete_ruleset_output::DeleteRulesetOutput;
 
 mod _delete_ruleset_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tax_exemption
     }
 }
 
-pub use crate::operation::list_tax_exemptions::_list_tax_exemptions_output::ListTaxExemptionsOutput;
-
 pub use crate::operation::list_tax_exemptions::_list_tax_exemptions_input::ListTaxExemptionsInput;
+
+pub use crate::operation::list_tax_exemptions::_list_tax_exemptions_output::ListTaxExemptionsOutput;
 
 mod _list_tax_exemptions_input;
 

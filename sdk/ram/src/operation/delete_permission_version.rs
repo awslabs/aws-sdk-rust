@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_permission_
     }
 }
 
-pub use crate::operation::delete_permission_version::_delete_permission_version_output::DeletePermissionVersionOutput;
-
 pub use crate::operation::delete_permission_version::_delete_permission_version_input::DeletePermissionVersionInput;
+
+pub use crate::operation::delete_permission_version::_delete_permission_version_output::DeletePermissionVersionOutput;
 
 mod _delete_permission_version_input;
 

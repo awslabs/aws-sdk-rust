@@ -513,9 +513,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_replication
     }
 }
 
-pub use crate::operation::modify_replication_group::_modify_replication_group_output::ModifyReplicationGroupOutput;
-
 pub use crate::operation::modify_replication_group::_modify_replication_group_input::ModifyReplicationGroupInput;
+
+pub use crate::operation::modify_replication_group::_modify_replication_group_output::ModifyReplicationGroupOutput;
 
 mod _modify_replication_group_input;
 

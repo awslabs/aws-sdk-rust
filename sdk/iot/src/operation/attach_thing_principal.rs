@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_thing_princ
     }
 }
 
-pub use crate::operation::attach_thing_principal::_attach_thing_principal_output::AttachThingPrincipalOutput;
-
 pub use crate::operation::attach_thing_principal::_attach_thing_principal_input::AttachThingPrincipalInput;
+
+pub use crate::operation::attach_thing_principal::_attach_thing_principal_output::AttachThingPrincipalOutput;
 
 mod _attach_thing_principal_input;
 

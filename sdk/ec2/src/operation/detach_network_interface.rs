@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_network_int
     }
 }
 
-pub use crate::operation::detach_network_interface::_detach_network_interface_output::DetachNetworkInterfaceOutput;
-
 pub use crate::operation::detach_network_interface::_detach_network_interface_input::DetachNetworkInterfaceInput;
+
+pub use crate::operation::detach_network_interface::_detach_network_interface_output::DetachNetworkInterfaceOutput;
 
 mod _detach_network_interface_input;
 

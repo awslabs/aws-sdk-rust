@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ecs_service_re
     }
 }
 
-pub use crate::operation::get_ecs_service_recommendations::_get_ecs_service_recommendations_output::GetEcsServiceRecommendationsOutput;
-
 pub use crate::operation::get_ecs_service_recommendations::_get_ecs_service_recommendations_input::GetEcsServiceRecommendationsInput;
+
+pub use crate::operation::get_ecs_service_recommendations::_get_ecs_service_recommendations_output::GetEcsServiceRecommendationsOutput;
 
 mod _get_ecs_service_recommendations_input;
 

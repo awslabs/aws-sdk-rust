@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_facet::Dele
     }
 }
 
-pub use crate::operation::delete_facet::_delete_facet_output::DeleteFacetOutput;
-
 pub use crate::operation::delete_facet::_delete_facet_input::DeleteFacetInput;
+
+pub use crate::operation::delete_facet::_delete_facet_output::DeleteFacetOutput;
 
 mod _delete_facet_input;
 

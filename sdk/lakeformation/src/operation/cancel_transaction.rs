@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_transaction
     }
 }
 
-pub use crate::operation::cancel_transaction::_cancel_transaction_output::CancelTransactionOutput;
-
 pub use crate::operation::cancel_transaction::_cancel_transaction_input::CancelTransactionInput;
+
+pub use crate::operation::cancel_transaction::_cancel_transaction_output::CancelTransactionOutput;
 
 mod _cancel_transaction_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_status::_describe_instance_status_output::DescribeInstanceStatusOutput;
-
 pub use crate::operation::describe_instance_status::_describe_instance_status_input::DescribeInstanceStatusInput;
+
+pub use crate::operation::describe_instance_status::_describe_instance_status_output::DescribeInstanceStatusOutput;
 
 mod _describe_instance_status_input;
 

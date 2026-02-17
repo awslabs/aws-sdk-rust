@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_impersonati
     }
 }
 
-pub use crate::operation::update_impersonation_role::_update_impersonation_role_output::UpdateImpersonationRoleOutput;
-
 pub use crate::operation::update_impersonation_role::_update_impersonation_role_input::UpdateImpersonationRoleInput;
+
+pub use crate::operation::update_impersonation_role::_update_impersonation_role_output::UpdateImpersonationRoleOutput;
 
 mod _update_impersonation_role_input;
 

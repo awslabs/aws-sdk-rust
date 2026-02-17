@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_playback_ke
     }
 }
 
-pub use crate::operation::import_playback_key_pair::_import_playback_key_pair_output::ImportPlaybackKeyPairOutput;
-
 pub use crate::operation::import_playback_key_pair::_import_playback_key_pair_input::ImportPlaybackKeyPairInput;
+
+pub use crate::operation::import_playback_key_pair::_import_playback_key_pair_output::ImportPlaybackKeyPairOutput;
 
 mod _import_playback_key_pair_input;
 

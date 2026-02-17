@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_route::Upda
     }
 }
 
-pub use crate::operation::update_route::_update_route_output::UpdateRouteOutput;
-
 pub use crate::operation::update_route::_update_route_input::UpdateRouteInput;
+
+pub use crate::operation::update_route::_update_route_output::UpdateRouteOutput;
 
 mod _update_route_input;
 

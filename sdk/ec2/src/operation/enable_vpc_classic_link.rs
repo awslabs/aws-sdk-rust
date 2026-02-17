@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_vpc_classic
     }
 }
 
-pub use crate::operation::enable_vpc_classic_link::_enable_vpc_classic_link_output::EnableVpcClassicLinkOutput;
-
 pub use crate::operation::enable_vpc_classic_link::_enable_vpc_classic_link_input::EnableVpcClassicLinkInput;
+
+pub use crate::operation::enable_vpc_classic_link::_enable_vpc_classic_link_output::EnableVpcClassicLinkOutput;
 
 mod _enable_vpc_classic_link_input;
 

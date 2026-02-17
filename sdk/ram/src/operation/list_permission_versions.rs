@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_permission_ve
     }
 }
 
-pub use crate::operation::list_permission_versions::_list_permission_versions_output::ListPermissionVersionsOutput;
-
 pub use crate::operation::list_permission_versions::_list_permission_versions_input::ListPermissionVersionsInput;
+
+pub use crate::operation::list_permission_versions::_list_permission_versions_output::ListPermissionVersionsOutput;
 
 mod _list_permission_versions_input;
 

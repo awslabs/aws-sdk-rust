@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stack_ref
     }
 }
 
-pub use crate::operation::describe_stack_refactor::_describe_stack_refactor_output::DescribeStackRefactorOutput;
-
 pub use crate::operation::describe_stack_refactor::_describe_stack_refactor_input::DescribeStackRefactorInput;
+
+pub use crate::operation::describe_stack_refactor::_describe_stack_refactor_output::DescribeStackRefactorOutput;
 
 mod _describe_stack_refactor_input;
 

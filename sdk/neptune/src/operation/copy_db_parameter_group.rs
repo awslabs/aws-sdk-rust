@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_db_parameter_
     }
 }
 
-pub use crate::operation::copy_db_parameter_group::_copy_db_parameter_group_output::CopyDbParameterGroupOutput;
-
 pub use crate::operation::copy_db_parameter_group::_copy_db_parameter_group_input::CopyDbParameterGroupInput;
+
+pub use crate::operation::copy_db_parameter_group::_copy_db_parameter_group_output::CopyDbParameterGroupOutput;
 
 mod _copy_db_parameter_group_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_model_card:
     }
 }
 
-pub use crate::operation::delete_model_card::_delete_model_card_output::DeleteModelCardOutput;
-
 pub use crate::operation::delete_model_card::_delete_model_card_input::DeleteModelCardInput;
+
+pub use crate::operation::delete_model_card::_delete_model_card_output::DeleteModelCardOutput;
 
 mod _delete_model_card_input;
 

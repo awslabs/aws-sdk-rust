@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_progress_up
     }
 }
 
-pub use crate::operation::create_progress_update_stream::_create_progress_update_stream_output::CreateProgressUpdateStreamOutput;
-
 pub use crate::operation::create_progress_update_stream::_create_progress_update_stream_input::CreateProgressUpdateStreamInput;
+
+pub use crate::operation::create_progress_update_stream::_create_progress_update_stream_output::CreateProgressUpdateStreamOutput;
 
 mod _create_progress_update_stream_input;
 

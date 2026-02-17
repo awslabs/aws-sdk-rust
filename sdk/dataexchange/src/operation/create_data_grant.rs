@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_grant:
     }
 }
 
-pub use crate::operation::create_data_grant::_create_data_grant_output::CreateDataGrantOutput;
-
 pub use crate::operation::create_data_grant::_create_data_grant_input::CreateDataGrantInput;
+
+pub use crate::operation::create_data_grant::_create_data_grant_output::CreateDataGrantOutput;
 
 mod _create_data_grant_input;
 

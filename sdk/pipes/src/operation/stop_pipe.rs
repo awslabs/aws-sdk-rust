@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_pipe::StopPip
     }
 }
 
-pub use crate::operation::stop_pipe::_stop_pipe_output::StopPipeOutput;
-
 pub use crate::operation::stop_pipe::_stop_pipe_input::StopPipeInput;
+
+pub use crate::operation::stop_pipe::_stop_pipe_output::StopPipeOutput;
 
 mod _stop_pipe_input;
 

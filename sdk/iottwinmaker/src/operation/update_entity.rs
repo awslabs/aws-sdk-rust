@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_entity::Upd
     }
 }
 
-pub use crate::operation::update_entity::_update_entity_output::UpdateEntityOutput;
-
 pub use crate::operation::update_entity::_update_entity_input::UpdateEntityInput;
+
+pub use crate::operation::update_entity::_update_entity_output::UpdateEntityOutput;
 
 mod _update_entity_input;
 

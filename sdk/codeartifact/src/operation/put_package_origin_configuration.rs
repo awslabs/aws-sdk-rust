@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_package_origin
     }
 }
 
-pub use crate::operation::put_package_origin_configuration::_put_package_origin_configuration_output::PutPackageOriginConfigurationOutput;
-
 pub use crate::operation::put_package_origin_configuration::_put_package_origin_configuration_input::PutPackageOriginConfigurationInput;
+
+pub use crate::operation::put_package_origin_configuration::_put_package_origin_configuration_output::PutPackageOriginConfigurationOutput;
 
 mod _put_package_origin_configuration_input;
 

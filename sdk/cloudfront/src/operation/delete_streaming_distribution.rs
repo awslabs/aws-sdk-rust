@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_streaming_d
     }
 }
 
-pub use crate::operation::delete_streaming_distribution::_delete_streaming_distribution_output::DeleteStreamingDistributionOutput;
-
 pub use crate::operation::delete_streaming_distribution::_delete_streaming_distribution_input::DeleteStreamingDistributionInput;
+
+pub use crate::operation::delete_streaming_distribution::_delete_streaming_distribution_output::DeleteStreamingDistributionOutput;
 
 mod _delete_streaming_distribution_input;
 

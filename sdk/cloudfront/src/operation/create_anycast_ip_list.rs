@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_anycast_ip_
     }
 }
 
-pub use crate::operation::create_anycast_ip_list::_create_anycast_ip_list_output::CreateAnycastIpListOutput;
-
 pub use crate::operation::create_anycast_ip_list::_create_anycast_ip_list_input::CreateAnycastIpListInput;
+
+pub use crate::operation::create_anycast_ip_list::_create_anycast_ip_list_output::CreateAnycastIpListOutput;
 
 mod _create_anycast_ip_list_input;
 

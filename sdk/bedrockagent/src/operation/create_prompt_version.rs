@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_prompt_vers
     }
 }
 
-pub use crate::operation::create_prompt_version::_create_prompt_version_output::CreatePromptVersionOutput;
-
 pub use crate::operation::create_prompt_version::_create_prompt_version_input::CreatePromptVersionInput;
+
+pub use crate::operation::create_prompt_version::_create_prompt_version_output::CreatePromptVersionOutput;
 
 mod _create_prompt_version_input;
 

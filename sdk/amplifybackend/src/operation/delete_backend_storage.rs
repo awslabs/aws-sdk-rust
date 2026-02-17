@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backend_sto
     }
 }
 
-pub use crate::operation::delete_backend_storage::_delete_backend_storage_output::DeleteBackendStorageOutput;
-
 pub use crate::operation::delete_backend_storage::_delete_backend_storage_input::DeleteBackendStorageInput;
+
+pub use crate::operation::delete_backend_storage::_delete_backend_storage_output::DeleteBackendStorageOutput;
 
 mod _delete_backend_storage_input;
 

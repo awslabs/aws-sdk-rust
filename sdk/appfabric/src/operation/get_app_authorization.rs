@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_app_authorizat
     }
 }
 
-pub use crate::operation::get_app_authorization::_get_app_authorization_output::GetAppAuthorizationOutput;
-
 pub use crate::operation::get_app_authorization::_get_app_authorization_input::GetAppAuthorizationInput;
+
+pub use crate::operation::get_app_authorization::_get_app_authorization_output::GetAppAuthorizationOutput;
 
 mod _get_app_authorization_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_endpoi
     }
 }
 
-pub use crate::operation::get_managed_endpoint_session_credentials::_get_managed_endpoint_session_credentials_output::GetManagedEndpointSessionCredentialsOutput;
-
 pub use crate::operation::get_managed_endpoint_session_credentials::_get_managed_endpoint_session_credentials_input::GetManagedEndpointSessionCredentialsInput;
+
+pub use crate::operation::get_managed_endpoint_session_credentials::_get_managed_endpoint_session_credentials_output::GetManagedEndpointSessionCredentialsOutput;
 
 mod _get_managed_endpoint_session_credentials_input;
 

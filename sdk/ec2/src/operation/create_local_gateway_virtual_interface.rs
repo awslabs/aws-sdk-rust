@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_local_gatew
     }
 }
 
-pub use crate::operation::create_local_gateway_virtual_interface::_create_local_gateway_virtual_interface_output::CreateLocalGatewayVirtualInterfaceOutput;
-
 pub use crate::operation::create_local_gateway_virtual_interface::_create_local_gateway_virtual_interface_input::CreateLocalGatewayVirtualInterfaceInput;
+
+pub use crate::operation::create_local_gateway_virtual_interface::_create_local_gateway_virtual_interface_output::CreateLocalGatewayVirtualInterfaceOutput;
 
 mod _create_local_gateway_virtual_interface_input;
 

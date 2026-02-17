@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_schema_extens
     }
 }
 
-pub use crate::operation::list_schema_extensions::_list_schema_extensions_output::ListSchemaExtensionsOutput;
-
 pub use crate::operation::list_schema_extensions::_list_schema_extensions_input::ListSchemaExtensionsInput;
+
+pub use crate::operation::list_schema_extensions::_list_schema_extensions_output::ListSchemaExtensionsOutput;
 
 mod _list_schema_extensions_input;
 

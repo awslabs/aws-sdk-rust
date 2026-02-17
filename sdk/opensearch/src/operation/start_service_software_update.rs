@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_service_soft
     }
 }
 
-pub use crate::operation::start_service_software_update::_start_service_software_update_output::StartServiceSoftwareUpdateOutput;
-
 pub use crate::operation::start_service_software_update::_start_service_software_update_input::StartServiceSoftwareUpdateInput;
+
+pub use crate::operation::start_service_software_update::_start_service_software_update_output::StartServiceSoftwareUpdateOutput;
 
 mod _start_service_software_update_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_mail_do
     }
 }
 
-pub use crate::operation::deregister_mail_domain::_deregister_mail_domain_output::DeregisterMailDomainOutput;
-
 pub use crate::operation::deregister_mail_domain::_deregister_mail_domain_input::DeregisterMailDomainInput;
+
+pub use crate::operation::deregister_mail_domain::_deregister_mail_domain_output::DeregisterMailDomainOutput;
 
 mod _deregister_mail_domain_input;
 

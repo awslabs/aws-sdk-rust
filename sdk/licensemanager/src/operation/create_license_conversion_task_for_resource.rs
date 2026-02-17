@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_license_conversion_task_for_resource::_create_license_conversion_task_for_resource_output::CreateLicenseConversionTaskForResourceOutput;
-
 pub use crate::operation::create_license_conversion_task_for_resource::_create_license_conversion_task_for_resource_input::CreateLicenseConversionTaskForResourceInput;
+
+pub use crate::operation::create_license_conversion_task_for_resource::_create_license_conversion_task_for_resource_output::CreateLicenseConversionTaskForResourceOutput;
 
 mod _create_license_conversion_task_for_resource_input;
 

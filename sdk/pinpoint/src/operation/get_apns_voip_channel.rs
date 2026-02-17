@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_apns_voip_chan
     }
 }
 
-pub use crate::operation::get_apns_voip_channel::_get_apns_voip_channel_output::GetApnsVoipChannelOutput;
-
 pub use crate::operation::get_apns_voip_channel::_get_apns_voip_channel_input::GetApnsVoipChannelInput;
+
+pub use crate::operation::get_apns_voip_channel::_get_apns_voip_channel_output::GetApnsVoipChannelOutput;
 
 mod _get_apns_voip_channel_input;
 

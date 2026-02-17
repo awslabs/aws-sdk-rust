@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_custo
     }
 }
 
-pub use crate::operation::batch_delete_custom_vocabulary_item::_batch_delete_custom_vocabulary_item_output::BatchDeleteCustomVocabularyItemOutput;
-
 pub use crate::operation::batch_delete_custom_vocabulary_item::_batch_delete_custom_vocabulary_item_input::BatchDeleteCustomVocabularyItemInput;
+
+pub use crate::operation::batch_delete_custom_vocabulary_item::_batch_delete_custom_vocabulary_item_output::BatchDeleteCustomVocabularyItemOutput;
 
 mod _batch_delete_custom_vocabulary_item_input;
 

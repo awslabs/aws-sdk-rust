@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sensitivity_in
     }
 }
 
-pub use crate::operation::get_sensitivity_inspection_template::_get_sensitivity_inspection_template_output::GetSensitivityInspectionTemplateOutput;
-
 pub use crate::operation::get_sensitivity_inspection_template::_get_sensitivity_inspection_template_input::GetSensitivityInspectionTemplateInput;
+
+pub use crate::operation::get_sensitivity_inspection_template::_get_sensitivity_inspection_template_output::GetSensitivityInspectionTemplateOutput;
 
 mod _get_sensitivity_inspection_template_input;
 

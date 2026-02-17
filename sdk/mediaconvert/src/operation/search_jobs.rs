@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_jobs::Searc
     }
 }
 
-pub use crate::operation::search_jobs::_search_jobs_output::SearchJobsOutput;
-
 pub use crate::operation::search_jobs::_search_jobs_input::SearchJobsInput;
+
+pub use crate::operation::search_jobs::_search_jobs_output::SearchJobsOutput;
 
 mod _search_jobs_input;
 

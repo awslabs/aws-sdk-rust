@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ip_restrict
     }
 }
 
-pub use crate::operation::update_ip_restriction::_update_ip_restriction_output::UpdateIpRestrictionOutput;
-
 pub use crate::operation::update_ip_restriction::_update_ip_restriction_input::UpdateIpRestrictionInput;
+
+pub use crate::operation::update_ip_restriction::_update_ip_restriction_output::UpdateIpRestrictionOutput;
 
 mod _update_ip_restriction_input;
 

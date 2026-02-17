@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_t
     }
 }
 
-pub use crate::operation::update_workspace_theme::_update_workspace_theme_output::UpdateWorkspaceThemeOutput;
-
 pub use crate::operation::update_workspace_theme::_update_workspace_theme_input::UpdateWorkspaceThemeInput;
+
+pub use crate::operation::update_workspace_theme::_update_workspace_theme_output::UpdateWorkspaceThemeOutput;
 
 mod _update_workspace_theme_input;
 

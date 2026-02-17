@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_app_block_bui
     }
 }
 
-pub use crate::operation::stop_app_block_builder::_stop_app_block_builder_output::StopAppBlockBuilderOutput;
-
 pub use crate::operation::stop_app_block_builder::_stop_app_block_builder_input::StopAppBlockBuilderInput;
+
+pub use crate::operation::stop_app_block_builder::_stop_app_block_builder_output::StopAppBlockBuilderOutput;
 
 mod _stop_app_block_builder_input;
 

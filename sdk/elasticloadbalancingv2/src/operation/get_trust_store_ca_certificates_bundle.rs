@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trust_store_ca
     }
 }
 
-pub use crate::operation::get_trust_store_ca_certificates_bundle::_get_trust_store_ca_certificates_bundle_output::GetTrustStoreCaCertificatesBundleOutput;
-
 pub use crate::operation::get_trust_store_ca_certificates_bundle::_get_trust_store_ca_certificates_bundle_input::GetTrustStoreCaCertificatesBundleInput;
+
+pub use crate::operation::get_trust_store_ca_certificates_bundle::_get_trust_store_ca_certificates_bundle_output::GetTrustStoreCaCertificatesBundleOutput;
 
 mod _get_trust_store_ca_certificates_bundle_input;
 

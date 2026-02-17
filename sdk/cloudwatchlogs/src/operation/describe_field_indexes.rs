@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_field_ind
     }
 }
 
-pub use crate::operation::describe_field_indexes::_describe_field_indexes_output::DescribeFieldIndexesOutput;
-
 pub use crate::operation::describe_field_indexes::_describe_field_indexes_input::DescribeFieldIndexesInput;
+
+pub use crate::operation::describe_field_indexes::_describe_field_indexes_output::DescribeFieldIndexesOutput;
 
 mod _describe_field_indexes_input;
 

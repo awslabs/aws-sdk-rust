@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_snapshot_
     }
 }
 
-pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier_status_output::DescribeSnapshotTierStatusOutput;
-
 pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier_status_input::DescribeSnapshotTierStatusInput;
+
+pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier_status_output::DescribeSnapshotTierStatusOutput;
 
 mod _describe_snapshot_tier_status_input;
 

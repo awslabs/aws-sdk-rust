@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_session_token:
     }
 }
 
-pub use crate::operation::get_session_token::_get_session_token_output::GetSessionTokenOutput;
-
 pub use crate::operation::get_session_token::_get_session_token_input::GetSessionTokenInput;
+
+pub use crate::operation::get_session_token::_get_session_token_output::GetSessionTokenOutput;
 
 mod _get_session_token_input;
 

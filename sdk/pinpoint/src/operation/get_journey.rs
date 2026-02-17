@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_journey::GetJo
     }
 }
 
-pub use crate::operation::get_journey::_get_journey_output::GetJourneyOutput;
-
 pub use crate::operation::get_journey::_get_journey_input::GetJourneyInput;
+
+pub use crate::operation::get_journey::_get_journey_output::GetJourneyOutput;
 
 mod _get_journey_input;
 

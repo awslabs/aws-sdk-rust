@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_meter_usage:
     }
 }
 
-pub use crate::operation::batch_meter_usage::_batch_meter_usage_output::BatchMeterUsageOutput;
-
 pub use crate::operation::batch_meter_usage::_batch_meter_usage_input::BatchMeterUsageInput;
+
+pub use crate::operation::batch_meter_usage::_batch_meter_usage_output::BatchMeterUsageOutput;
 
 mod _batch_meter_usage_input;
 

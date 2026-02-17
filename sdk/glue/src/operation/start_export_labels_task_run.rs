@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_export_label
     }
 }
 
-pub use crate::operation::start_export_labels_task_run::_start_export_labels_task_run_output::StartExportLabelsTaskRunOutput;
-
 pub use crate::operation::start_export_labels_task_run::_start_export_labels_task_run_input::StartExportLabelsTaskRunInput;
+
+pub use crate::operation::start_export_labels_task_run::_start_export_labels_task_run_output::StartExportLabelsTaskRunOutput;
 
 mod _start_export_labels_task_run_input;
 

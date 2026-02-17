@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_instance_prof
     }
 }
 
-pub use crate::operation::list_instance_profiles::_list_instance_profiles_output::ListInstanceProfilesOutput;
-
 pub use crate::operation::list_instance_profiles::_list_instance_profiles_input::ListInstanceProfilesInput;
+
+pub use crate::operation::list_instance_profiles::_list_instance_profiles_output::ListInstanceProfilesOutput;
 
 mod _list_instance_profiles_input;
 

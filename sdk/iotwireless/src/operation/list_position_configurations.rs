@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_position_conf
     }
 }
 
-pub use crate::operation::list_position_configurations::_list_position_configurations_output::ListPositionConfigurationsOutput;
-
 pub use crate::operation::list_position_configurations::_list_position_configurations_input::ListPositionConfigurationsInput;
+
+pub use crate::operation::list_position_configurations::_list_position_configurations_output::ListPositionConfigurationsOutput;
 
 mod _list_position_configurations_input;
 

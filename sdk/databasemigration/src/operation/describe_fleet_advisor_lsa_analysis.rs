@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_adv
     }
 }
 
-pub use crate::operation::describe_fleet_advisor_lsa_analysis::_describe_fleet_advisor_lsa_analysis_output::DescribeFleetAdvisorLsaAnalysisOutput;
-
 pub use crate::operation::describe_fleet_advisor_lsa_analysis::_describe_fleet_advisor_lsa_analysis_input::DescribeFleetAdvisorLsaAnalysisInput;
+
+pub use crate::operation::describe_fleet_advisor_lsa_analysis::_describe_fleet_advisor_lsa_analysis_output::DescribeFleetAdvisorLsaAnalysisOutput;
 
 mod _describe_fleet_advisor_lsa_analysis_input;
 

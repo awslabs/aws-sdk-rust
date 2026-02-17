@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_data_
     }
 }
 
-pub use crate::operation::disassociate_data_protection_settings::_disassociate_data_protection_settings_output::DisassociateDataProtectionSettingsOutput;
-
 pub use crate::operation::disassociate_data_protection_settings::_disassociate_data_protection_settings_input::DisassociateDataProtectionSettingsInput;
+
+pub use crate::operation::disassociate_data_protection_settings::_disassociate_data_protection_settings_output::DisassociateDataProtectionSettingsOutput;
 
 mod _disassociate_data_protection_settings_input;
 

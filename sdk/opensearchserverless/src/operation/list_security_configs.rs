@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_conf
     }
 }
 
-pub use crate::operation::list_security_configs::_list_security_configs_output::ListSecurityConfigsOutput;
-
 pub use crate::operation::list_security_configs::_list_security_configs_input::ListSecurityConfigsInput;
+
+pub use crate::operation::list_security_configs::_list_security_configs_output::ListSecurityConfigsOutput;
 
 mod _list_security_configs_input;
 

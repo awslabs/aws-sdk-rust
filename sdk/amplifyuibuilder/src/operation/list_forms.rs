@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_forms::ListFo
     }
 }
 
-pub use crate::operation::list_forms::_list_forms_output::ListFormsOutput;
-
 pub use crate::operation::list_forms::_list_forms_input::ListFormsInput;
+
+pub use crate::operation::list_forms::_list_forms_output::ListFormsOutput;
 
 mod _list_forms_input;
 

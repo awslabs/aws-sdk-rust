@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_batch_segme
     }
 }
 
-pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_output::CreateBatchSegmentJobOutput;
-
 pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_input::CreateBatchSegmentJobInput;
+
+pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_output::CreateBatchSegmentJobOutput;
 
 mod _create_batch_segment_job_input;
 

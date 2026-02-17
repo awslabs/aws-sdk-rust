@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_multiplex
     }
 }
 
-pub use crate::operation::describe_multiplex_program::_describe_multiplex_program_output::DescribeMultiplexProgramOutput;
-
 pub use crate::operation::describe_multiplex_program::_describe_multiplex_program_input::DescribeMultiplexProgramInput;
+
+pub use crate::operation::describe_multiplex_program::_describe_multiplex_program_output::DescribeMultiplexProgramOutput;
 
 mod _describe_multiplex_program_input;
 

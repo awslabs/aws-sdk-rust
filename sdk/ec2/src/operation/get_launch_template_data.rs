@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_launch_templat
     }
 }
 
-pub use crate::operation::get_launch_template_data::_get_launch_template_data_output::GetLaunchTemplateDataOutput;
-
 pub use crate::operation::get_launch_template_data::_get_launch_template_data_input::GetLaunchTemplateDataInput;
+
+pub use crate::operation::get_launch_template_data::_get_launch_template_data_output::GetLaunchTemplateDataOutput;
 
 mod _get_launch_template_data_input;
 

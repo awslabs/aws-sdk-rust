@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_upload_job::
     }
 }
 
-pub use crate::operation::start_upload_job::_start_upload_job_output::StartUploadJobOutput;
-
 pub use crate::operation::start_upload_job::_start_upload_job_input::StartUploadJobInput;
+
+pub use crate::operation::start_upload_job::_start_upload_job_output::StartUploadJobOutput;
 
 mod _start_upload_job_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_link_provide
     }
 }
 
-pub use crate::operation::admin_link_provider_for_user::_admin_link_provider_for_user_output::AdminLinkProviderForUserOutput;
-
 pub use crate::operation::admin_link_provider_for_user::_admin_link_provider_for_user_input::AdminLinkProviderForUserInput;
+
+pub use crate::operation::admin_link_provider_for_user::_admin_link_provider_for_user_output::AdminLinkProviderForUserOutput;
 
 mod _admin_link_provider_for_user_input;
 

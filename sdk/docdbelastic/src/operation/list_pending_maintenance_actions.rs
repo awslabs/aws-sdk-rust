@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pending_maint
     }
 }
 
-pub use crate::operation::list_pending_maintenance_actions::_list_pending_maintenance_actions_output::ListPendingMaintenanceActionsOutput;
-
 pub use crate::operation::list_pending_maintenance_actions::_list_pending_maintenance_actions_input::ListPendingMaintenanceActionsInput;
+
+pub use crate::operation::list_pending_maintenance_actions::_list_pending_maintenance_actions_output::ListPendingMaintenanceActionsOutput;
 
 mod _list_pending_maintenance_actions_input;
 

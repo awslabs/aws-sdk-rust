@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_relationshi
     }
 }
 
-pub use crate::operation::create_relationship::_create_relationship_output::CreateRelationshipOutput;
-
 pub use crate::operation::create_relationship::_create_relationship_input::CreateRelationshipInput;
+
+pub use crate::operation::create_relationship::_create_relationship_output::CreateRelationshipOutput;
 
 mod _create_relationship_input;
 

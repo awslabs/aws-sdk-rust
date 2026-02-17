@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_shared_vp
     }
 }
 
-pub use crate::operation::describe_shared_vpc_configuration::_describe_shared_vpc_configuration_output::DescribeSharedVpcConfigurationOutput;
-
 pub use crate::operation::describe_shared_vpc_configuration::_describe_shared_vpc_configuration_input::DescribeSharedVpcConfigurationInput;
+
+pub use crate::operation::describe_shared_vpc_configuration::_describe_shared_vpc_configuration_output::DescribeSharedVpcConfigurationOutput;
 
 mod _describe_shared_vpc_configuration_input;
 

@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_expense_anal
     }
 }
 
-pub use crate::operation::start_expense_analysis::_start_expense_analysis_output::StartExpenseAnalysisOutput;
-
 pub use crate::operation::start_expense_analysis::_start_expense_analysis_input::StartExpenseAnalysisInput;
+
+pub use crate::operation::start_expense_analysis::_start_expense_analysis_output::StartExpenseAnalysisOutput;
 
 mod _start_expense_analysis_input;
 

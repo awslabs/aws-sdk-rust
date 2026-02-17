@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_asset_type:
     }
 }
 
-pub use crate::operation::create_asset_type::_create_asset_type_output::CreateAssetTypeOutput;
-
 pub use crate::operation::create_asset_type::_create_asset_type_input::CreateAssetTypeInput;
+
+pub use crate::operation::create_asset_type::_create_asset_type_output::CreateAssetTypeOutput;
 
 mod _create_asset_type_input;
 

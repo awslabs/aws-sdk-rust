@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_trial
     }
 }
 
-pub use crate::operation::disassociate_trial_component::_disassociate_trial_component_output::DisassociateTrialComponentOutput;
-
 pub use crate::operation::disassociate_trial_component::_disassociate_trial_component_input::DisassociateTrialComponentInput;
+
+pub use crate::operation::disassociate_trial_component::_disassociate_trial_component_output::DisassociateTrialComponentOutput;
 
 mod _disassociate_trial_component_input;
 

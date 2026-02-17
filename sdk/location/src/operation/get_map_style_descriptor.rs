@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_map_style_desc
     }
 }
 
-pub use crate::operation::get_map_style_descriptor::_get_map_style_descriptor_output::GetMapStyleDescriptorOutput;
-
 pub use crate::operation::get_map_style_descriptor::_get_map_style_descriptor_input::GetMapStyleDescriptorInput;
+
+pub use crate::operation::get_map_style_descriptor::_get_map_style_descriptor_output::GetMapStyleDescriptorOutput;
 
 mod _get_map_style_descriptor_input;
 

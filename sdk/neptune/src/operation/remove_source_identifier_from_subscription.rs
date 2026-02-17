@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::remove_source_identifier_from_subscription::_remove_source_identifier_from_subscription_output::RemoveSourceIdentifierFromSubscriptionOutput;
-
 pub use crate::operation::remove_source_identifier_from_subscription::_remove_source_identifier_from_subscription_input::RemoveSourceIdentifierFromSubscriptionInput;
+
+pub use crate::operation::remove_source_identifier_from_subscription::_remove_source_identifier_from_subscription_output::RemoveSourceIdentifierFromSubscriptionOutput;
 
 mod _remove_source_identifier_from_subscription_input;
 

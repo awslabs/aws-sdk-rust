@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distribution_
     }
 }
 
-pub use crate::operation::list_distribution_tenants::_list_distribution_tenants_output::ListDistributionTenantsOutput;
-
 pub use crate::operation::list_distribution_tenants::_list_distribution_tenants_input::ListDistributionTenantsInput;
+
+pub use crate::operation::list_distribution_tenants::_list_distribution_tenants_output::ListDistributionTenantsOutput;
 
 mod _list_distribution_tenants_input;
 

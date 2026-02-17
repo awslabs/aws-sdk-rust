@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_enabled_base
     }
 }
 
-pub use crate::operation::reset_enabled_baseline::_reset_enabled_baseline_output::ResetEnabledBaselineOutput;
-
 pub use crate::operation::reset_enabled_baseline::_reset_enabled_baseline_input::ResetEnabledBaselineInput;
+
+pub use crate::operation::reset_enabled_baseline::_reset_enabled_baseline_output::ResetEnabledBaselineOutput;
 
 mod _reset_enabled_baseline_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_launch_action
     }
 }
 
-pub use crate::operation::list_launch_actions::_list_launch_actions_output::ListLaunchActionsOutput;
-
 pub use crate::operation::list_launch_actions::_list_launch_actions_input::ListLaunchActionsInput;
+
+pub use crate::operation::list_launch_actions::_list_launch_actions_output::ListLaunchActionsOutput;
 
 mod _list_launch_actions_input;
 

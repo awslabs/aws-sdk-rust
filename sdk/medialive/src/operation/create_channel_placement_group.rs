@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_pla
     }
 }
 
-pub use crate::operation::create_channel_placement_group::_create_channel_placement_group_output::CreateChannelPlacementGroupOutput;
-
 pub use crate::operation::create_channel_placement_group::_create_channel_placement_group_input::CreateChannelPlacementGroupInput;
+
+pub use crate::operation::create_channel_placement_group::_create_channel_placement_group_output::CreateChannelPlacementGroupOutput;
 
 mod _create_channel_placement_group_input;
 

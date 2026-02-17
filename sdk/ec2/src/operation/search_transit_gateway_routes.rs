@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_transit_gat
     }
 }
 
-pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway_routes_output::SearchTransitGatewayRoutesOutput;
-
 pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway_routes_input::SearchTransitGatewayRoutesInput;
+
+pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway_routes_output::SearchTransitGatewayRoutesOutput;
 
 mod _search_transit_gateway_routes_input;
 

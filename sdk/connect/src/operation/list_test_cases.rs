@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_cases::L
     }
 }
 
-pub use crate::operation::list_test_cases::_list_test_cases_output::ListTestCasesOutput;
-
 pub use crate::operation::list_test_cases::_list_test_cases_input::ListTestCasesInput;
+
+pub use crate::operation::list_test_cases::_list_test_cases_output::ListTestCasesOutput;
 
 mod _list_test_cases_input;
 

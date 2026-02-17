@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_resou
     }
 }
 
-pub use crate::operation::list_profile_resource_associations::_list_profile_resource_associations_output::ListProfileResourceAssociationsOutput;
-
 pub use crate::operation::list_profile_resource_associations::_list_profile_resource_associations_input::ListProfileResourceAssociationsInput;
+
+pub use crate::operation::list_profile_resource_associations::_list_profile_resource_associations_output::ListProfileResourceAssociationsOutput;
 
 mod _list_profile_resource_associations_input;
 

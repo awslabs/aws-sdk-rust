@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_fhir_import_
     }
 }
 
-pub use crate::operation::start_fhir_import_job::_start_fhir_import_job_output::StartFhirImportJobOutput;
-
 pub use crate::operation::start_fhir_import_job::_start_fhir_import_job_input::StartFhirImportJobInput;
+
+pub use crate::operation::start_fhir_import_job::_start_fhir_import_job_output::StartFhirImportJobOutput;
 
 mod _start_fhir_import_job_input;
 

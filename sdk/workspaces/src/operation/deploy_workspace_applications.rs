@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deploy_workspace_a
     }
 }
 
-pub use crate::operation::deploy_workspace_applications::_deploy_workspace_applications_output::DeployWorkspaceApplicationsOutput;
-
 pub use crate::operation::deploy_workspace_applications::_deploy_workspace_applications_input::DeployWorkspaceApplicationsInput;
+
+pub use crate::operation::deploy_workspace_applications::_deploy_workspace_applications_output::DeployWorkspaceApplicationsOutput;
 
 mod _deploy_workspace_applications_input;
 

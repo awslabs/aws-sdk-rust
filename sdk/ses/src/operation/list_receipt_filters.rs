@@ -341,9 +341,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_receipt_filte
     }
 }
 
-pub use crate::operation::list_receipt_filters::_list_receipt_filters_output::ListReceiptFiltersOutput;
-
 pub use crate::operation::list_receipt_filters::_list_receipt_filters_input::ListReceiptFiltersInput;
+
+pub use crate::operation::list_receipt_filters::_list_receipt_filters_output::ListReceiptFiltersOutput;
 
 mod _list_receipt_filters_input;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_media_insig
     }
 }
 
-pub use crate::operation::update_media_insights_pipeline_status::_update_media_insights_pipeline_status_output::UpdateMediaInsightsPipelineStatusOutput;
-
 pub use crate::operation::update_media_insights_pipeline_status::_update_media_insights_pipeline_status_input::UpdateMediaInsightsPipelineStatusInput;
+
+pub use crate::operation::update_media_insights_pipeline_status::_update_media_insights_pipeline_status_output::UpdateMediaInsightsPipelineStatusOutput;
 
 mod _update_media_insights_pipeline_status_input;
 

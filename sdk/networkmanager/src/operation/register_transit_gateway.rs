@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_transit_g
     }
 }
 
-pub use crate::operation::register_transit_gateway::_register_transit_gateway_output::RegisterTransitGatewayOutput;
-
 pub use crate::operation::register_transit_gateway::_register_transit_gateway_input::RegisterTransitGatewayInput;
+
+pub use crate::operation::register_transit_gateway::_register_transit_gateway_output::RegisterTransitGatewayOutput;
 
 mod _register_transit_gateway_input;
 

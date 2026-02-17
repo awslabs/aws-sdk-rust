@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_tax_regi
     }
 }
 
-pub use crate::operation::batch_put_tax_registration::_batch_put_tax_registration_output::BatchPutTaxRegistrationOutput;
-
 pub use crate::operation::batch_put_tax_registration::_batch_put_tax_registration_input::BatchPutTaxRegistrationInput;
+
+pub use crate::operation::batch_put_tax_registration::_batch_put_tax_registration_output::BatchPutTaxRegistrationOutput;
 
 mod _batch_put_tax_registration_input;
 

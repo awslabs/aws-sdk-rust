@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_console_output
     }
 }
 
-pub use crate::operation::get_console_output::_get_console_output_output::GetConsoleOutputOutput;
-
 pub use crate::operation::get_console_output::_get_console_output_input::GetConsoleOutputInput;
+
+pub use crate::operation::get_console_output::_get_console_output_output::GetConsoleOutputOutput;
 
 mod _get_console_output_input;
 

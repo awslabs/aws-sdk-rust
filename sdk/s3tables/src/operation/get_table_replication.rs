@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_replicat
     }
 }
 
-pub use crate::operation::get_table_replication::_get_table_replication_output::GetTableReplicationOutput;
-
 pub use crate::operation::get_table_replication::_get_table_replication_input::GetTableReplicationInput;
+
+pub use crate::operation::get_table_replication::_get_table_replication_output::GetTableReplicationOutput;
 
 mod _get_table_replication_input;
 

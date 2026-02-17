@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_client_aut
     }
 }
 
-pub use crate::operation::disable_client_authentication::_disable_client_authentication_output::DisableClientAuthenticationOutput;
-
 pub use crate::operation::disable_client_authentication::_disable_client_authentication_input::DisableClientAuthenticationInput;
+
+pub use crate::operation::disable_client_authentication::_disable_client_authentication_output::DisableClientAuthenticationOutput;
 
 mod _disable_client_authentication_input;
 

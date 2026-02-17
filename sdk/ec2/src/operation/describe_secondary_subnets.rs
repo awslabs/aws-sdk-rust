@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_secondary
     }
 }
 
-pub use crate::operation::describe_secondary_subnets::_describe_secondary_subnets_output::DescribeSecondarySubnetsOutput;
-
 pub use crate::operation::describe_secondary_subnets::_describe_secondary_subnets_input::DescribeSecondarySubnetsInput;
+
+pub use crate::operation::describe_secondary_subnets::_describe_secondary_subnets_output::DescribeSecondarySubnetsOutput;
 
 mod _describe_secondary_subnets_input;
 

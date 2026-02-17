@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_whats_app_m
     }
 }
 
-pub use crate::operation::create_whats_app_message_template_media::_create_whats_app_message_template_media_output::CreateWhatsAppMessageTemplateMediaOutput;
-
 pub use crate::operation::create_whats_app_message_template_media::_create_whats_app_message_template_media_input::CreateWhatsAppMessageTemplateMediaInput;
+
+pub use crate::operation::create_whats_app_message_template_media::_create_whats_app_message_template_media_output::CreateWhatsAppMessageTemplateMediaOutput;
 
 mod _create_whats_app_message_template_media_input;
 

@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_document::U
     }
 }
 
-pub use crate::operation::update_document::_update_document_output::UpdateDocumentOutput;
-
 pub use crate::operation::update_document::_update_document_input::UpdateDocumentInput;
+
+pub use crate::operation::update_document::_update_document_output::UpdateDocumentOutput;
 
 mod _update_document_input;
 

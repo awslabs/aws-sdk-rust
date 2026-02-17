@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve_and_gener
     }
 }
 
-pub use crate::operation::retrieve_and_generate_stream::_retrieve_and_generate_stream_output::RetrieveAndGenerateStreamOutput;
-
 pub use crate::operation::retrieve_and_generate_stream::_retrieve_and_generate_stream_input::RetrieveAndGenerateStreamInput;
+
+pub use crate::operation::retrieve_and_generate_stream::_retrieve_and_generate_stream_output::RetrieveAndGenerateStreamOutput;
 
 mod _retrieve_and_generate_stream_input;
 

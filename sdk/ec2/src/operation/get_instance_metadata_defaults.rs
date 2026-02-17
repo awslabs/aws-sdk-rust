@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_metad
     }
 }
 
-pub use crate::operation::get_instance_metadata_defaults::_get_instance_metadata_defaults_output::GetInstanceMetadataDefaultsOutput;
-
 pub use crate::operation::get_instance_metadata_defaults::_get_instance_metadata_defaults_input::GetInstanceMetadataDefaultsInput;
+
+pub use crate::operation::get_instance_metadata_defaults::_get_instance_metadata_defaults_output::GetInstanceMetadataDefaultsOutput;
 
 mod _get_instance_metadata_defaults_input;
 

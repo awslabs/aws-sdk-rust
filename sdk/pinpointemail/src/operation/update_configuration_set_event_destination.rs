@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_configuration_set_event_destination::_update_configuration_set_event_destination_output::UpdateConfigurationSetEventDestinationOutput;
-
 pub use crate::operation::update_configuration_set_event_destination::_update_configuration_set_event_destination_input::UpdateConfigurationSetEventDestinationInput;
+
+pub use crate::operation::update_configuration_set_event_destination::_update_configuration_set_event_destination_output::UpdateConfigurationSetEventDestinationOutput;
 
 mod _update_configuration_set_event_destination_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_pipeline
     }
 }
 
-pub use crate::operation::get_image_pipeline::_get_image_pipeline_output::GetImagePipelineOutput;
-
 pub use crate::operation::get_image_pipeline::_get_image_pipeline_input::GetImagePipelineInput;
+
+pub use crate::operation::get_image_pipeline::_get_image_pipeline_output::GetImagePipelineOutput;
 
 mod _get_image_pipeline_input;
 

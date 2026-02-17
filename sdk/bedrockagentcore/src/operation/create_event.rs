@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event::Crea
     }
 }
 
-pub use crate::operation::create_event::_create_event_output::CreateEventOutput;
-
 pub use crate::operation::create_event::_create_event_input::CreateEventInput;
+
+pub use crate::operation::create_event::_create_event_output::CreateEventOutput;
 
 mod _create_event_input;
 

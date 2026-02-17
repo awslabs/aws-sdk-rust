@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_gro
     }
 }
 
-pub use crate::operation::get_connection_group_by_routing_endpoint::_get_connection_group_by_routing_endpoint_output::GetConnectionGroupByRoutingEndpointOutput;
-
 pub use crate::operation::get_connection_group_by_routing_endpoint::_get_connection_group_by_routing_endpoint_input::GetConnectionGroupByRoutingEndpointInput;
+
+pub use crate::operation::get_connection_group_by_routing_endpoint::_get_connection_group_by_routing_endpoint_output::GetConnectionGroupByRoutingEndpointOutput;
 
 mod _get_connection_group_by_routing_endpoint_input;
 

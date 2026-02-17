@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_odb_networks:
     }
 }
 
-pub use crate::operation::list_odb_networks::_list_odb_networks_output::ListOdbNetworksOutput;
-
 pub use crate::operation::list_odb_networks::_list_odb_networks_input::ListOdbNetworksInput;
+
+pub use crate::operation::list_odb_networks::_list_odb_networks_output::ListOdbNetworksOutput;
 
 mod _list_odb_networks_input;
 

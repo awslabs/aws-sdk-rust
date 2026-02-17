@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_migrations::Ge
     }
 }
 
-pub use crate::operation::get_migrations::_get_migrations_output::GetMigrationsOutput;
-
 pub use crate::operation::get_migrations::_get_migrations_input::GetMigrationsInput;
+
+pub use crate::operation::get_migrations::_get_migrations_output::GetMigrationsOutput;
 
 mod _get_migrations_input;
 

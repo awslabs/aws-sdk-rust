@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_branches::Lis
     }
 }
 
-pub use crate::operation::list_branches::_list_branches_output::ListBranchesOutput;
-
 pub use crate::operation::list_branches::_list_branches_input::ListBranchesInput;
+
+pub use crate::operation::list_branches::_list_branches_output::ListBranchesOutput;
 
 mod _list_branches_input;
 

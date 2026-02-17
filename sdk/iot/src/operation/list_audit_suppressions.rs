@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audit_suppres
     }
 }
 
-pub use crate::operation::list_audit_suppressions::_list_audit_suppressions_output::ListAuditSuppressionsOutput;
-
 pub use crate::operation::list_audit_suppressions::_list_audit_suppressions_input::ListAuditSuppressionsInput;
+
+pub use crate::operation::list_audit_suppressions::_list_audit_suppressions_output::ListAuditSuppressionsOutput;
 
 mod _list_audit_suppressions_input;
 

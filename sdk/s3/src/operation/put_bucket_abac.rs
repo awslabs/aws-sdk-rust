@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_abac::P
     }
 }
 
-pub use crate::operation::put_bucket_abac::_put_bucket_abac_output::PutBucketAbacOutput;
-
 pub use crate::operation::put_bucket_abac::_put_bucket_abac_input::PutBucketAbacInput;
+
+pub use crate::operation::put_bucket_abac::_put_bucket_abac_output::PutBucketAbacOutput;
 
 mod _put_bucket_abac_input;
 

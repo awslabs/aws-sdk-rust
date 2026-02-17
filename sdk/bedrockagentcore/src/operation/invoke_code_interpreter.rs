@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_code_interp
     }
 }
 
-pub use crate::operation::invoke_code_interpreter::_invoke_code_interpreter_output::InvokeCodeInterpreterOutput;
-
 pub use crate::operation::invoke_code_interpreter::_invoke_code_interpreter_input::InvokeCodeInterpreterInput;
+
+pub use crate::operation::invoke_code_interpreter::_invoke_code_interpreter_output::InvokeCodeInterpreterOutput;
 
 mod _invoke_code_interpreter_input;
 

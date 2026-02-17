@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vehicle_status
     }
 }
 
-pub use crate::operation::get_vehicle_status::_get_vehicle_status_output::GetVehicleStatusOutput;
-
 pub use crate::operation::get_vehicle_status::_get_vehicle_status_input::GetVehicleStatusInput;
+
+pub use crate::operation::get_vehicle_status::_get_vehicle_status_output::GetVehicleStatusOutput;
 
 mod _get_vehicle_status_input;
 

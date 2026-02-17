@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connection_
     }
 }
 
-pub use crate::operation::create_connection_function::_create_connection_function_output::CreateConnectionFunctionOutput;
-
 pub use crate::operation::create_connection_function::_create_connection_function_input::CreateConnectionFunctionInput;
+
+pub use crate::operation::create_connection_function::_create_connection_function_output::CreateConnectionFunctionOutput;
 
 mod _create_connection_function_input;
 

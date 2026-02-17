@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_capabilities:
     }
 }
 
-pub use crate::operation::list_capabilities::_list_capabilities_output::ListCapabilitiesOutput;
-
 pub use crate::operation::list_capabilities::_list_capabilities_input::ListCapabilitiesInput;
+
+pub use crate::operation::list_capabilities::_list_capabilities_output::ListCapabilitiesOutput;
 
 mod _list_capabilities_input;
 

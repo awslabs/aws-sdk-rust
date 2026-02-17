@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_set_impor
     }
 }
 
-pub use crate::operation::get_data_set_import_task::_get_data_set_import_task_output::GetDataSetImportTaskOutput;
-
 pub use crate::operation::get_data_set_import_task::_get_data_set_import_task_input::GetDataSetImportTaskInput;
+
+pub use crate::operation::get_data_set_import_task::_get_data_set_import_task_output::GetDataSetImportTaskOutput;
 
 mod _get_data_set_import_task_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_backup_plan
     }
 }
 
-pub use crate::operation::export_backup_plan_template::_export_backup_plan_template_output::ExportBackupPlanTemplateOutput;
-
 pub use crate::operation::export_backup_plan_template::_export_backup_plan_template_input::ExportBackupPlanTemplateInput;
+
+pub use crate::operation::export_backup_plan_template::_export_backup_plan_template_output::ExportBackupPlanTemplateOutput;
 
 mod _export_backup_plan_template_input;
 

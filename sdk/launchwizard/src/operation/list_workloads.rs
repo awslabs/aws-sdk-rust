@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workloads::Li
     }
 }
 
-pub use crate::operation::list_workloads::_list_workloads_output::ListWorkloadsOutput;
-
 pub use crate::operation::list_workloads::_list_workloads_input::ListWorkloadsInput;
+
+pub use crate::operation::list_workloads::_list_workloads_output::ListWorkloadsOutput;
 
 mod _list_workloads_input;
 

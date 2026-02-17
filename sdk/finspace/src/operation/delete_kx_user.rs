@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_user::De
     }
 }
 
-pub use crate::operation::delete_kx_user::_delete_kx_user_output::DeleteKxUserOutput;
-
 pub use crate::operation::delete_kx_user::_delete_kx_user_input::DeleteKxUserInput;
+
+pub use crate::operation::delete_kx_user::_delete_kx_user_output::DeleteKxUserOutput;
 
 mod _delete_kx_user_input;
 

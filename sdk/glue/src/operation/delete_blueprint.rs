@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_blueprint::
     }
 }
 
-pub use crate::operation::delete_blueprint::_delete_blueprint_output::DeleteBlueprintOutput;
-
 pub use crate::operation::delete_blueprint::_delete_blueprint_input::DeleteBlueprintInput;
+
+pub use crate::operation::delete_blueprint::_delete_blueprint_output::DeleteBlueprintOutput;
 
 mod _delete_blueprint_input;
 

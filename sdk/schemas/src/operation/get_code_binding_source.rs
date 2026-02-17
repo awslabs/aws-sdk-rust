@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_code_binding_s
     }
 }
 
-pub use crate::operation::get_code_binding_source::_get_code_binding_source_output::GetCodeBindingSourceOutput;
-
 pub use crate::operation::get_code_binding_source::_get_code_binding_source_input::GetCodeBindingSourceInput;
+
+pub use crate::operation::get_code_binding_source::_get_code_binding_source_output::GetCodeBindingSourceOutput;
 
 mod _get_code_binding_source_input;
 

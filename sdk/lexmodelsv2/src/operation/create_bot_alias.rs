@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bot_alias::
     }
 }
 
-pub use crate::operation::create_bot_alias::_create_bot_alias_output::CreateBotAliasOutput;
-
 pub use crate::operation::create_bot_alias::_create_bot_alias_input::CreateBotAliasInput;
+
+pub use crate::operation::create_bot_alias::_create_bot_alias_output::CreateBotAliasOutput;
 
 mod _create_bot_alias_input;
 

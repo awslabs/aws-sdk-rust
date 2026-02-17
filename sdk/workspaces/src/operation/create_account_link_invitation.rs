@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account_lin
     }
 }
 
-pub use crate::operation::create_account_link_invitation::_create_account_link_invitation_output::CreateAccountLinkInvitationOutput;
-
 pub use crate::operation::create_account_link_invitation::_create_account_link_invitation_input::CreateAccountLinkInvitationInput;
+
+pub use crate::operation::create_account_link_invitation::_create_account_link_invitation_output::CreateAccountLinkInvitationOutput;
 
 mod _create_account_link_invitation_input;
 

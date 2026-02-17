@@ -126,8 +126,22 @@ pub fn de_global_cluster(
                 builder = builder.set_storage_encrypted(var_9);
             }
             ,
-            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#GlobalCluster$DeletionProtection */ =>  {
+            s if s.matches("StorageEncryptionType") /* StorageEncryptionType com.amazonaws.rds#GlobalCluster$StorageEncryptionType */ =>  {
                 let var_10 =
+                    Some(
+                        Result::<crate::types::StorageEncryptionType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StorageEncryptionType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_encryption_type(var_10);
+            }
+            ,
+            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.rds#GlobalCluster$DeletionProtection */ =>  {
+                let var_11 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -138,21 +152,21 @@ pub fn de_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_deletion_protection(var_10);
+                builder = builder.set_deletion_protection(var_11);
             }
             ,
             s if s.matches("GlobalClusterMembers") /* GlobalClusterMembers com.amazonaws.rds#GlobalCluster$GlobalClusterMembers */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_global_cluster_member_list::de_global_cluster_member_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_members(var_11);
+                builder = builder.set_global_cluster_members(var_12);
             }
             ,
             s if s.matches("Endpoint") /* Endpoint com.amazonaws.rds#GlobalCluster$Endpoint */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -161,27 +175,27 @@ pub fn de_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_endpoint(var_12);
+                builder = builder.set_endpoint(var_13);
             }
             ,
             s if s.matches("FailoverState") /* FailoverState com.amazonaws.rds#GlobalCluster$FailoverState */ =>  {
-                let var_13 =
+                let var_14 =
                     Some(
                         crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_state(var_13);
+                builder = builder.set_failover_state(var_14);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#GlobalCluster$TagList */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_14);
+                builder = builder.set_tag_list(var_15);
             }
             ,
             _ => {}

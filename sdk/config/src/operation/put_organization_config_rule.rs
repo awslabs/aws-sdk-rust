@@ -509,9 +509,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_organization_c
     }
 }
 
-pub use crate::operation::put_organization_config_rule::_put_organization_config_rule_output::PutOrganizationConfigRuleOutput;
-
 pub use crate::operation::put_organization_config_rule::_put_organization_config_rule_input::PutOrganizationConfigRuleInput;
+
+pub use crate::operation::put_organization_config_rule::_put_organization_config_rule_output::PutOrganizationConfigRuleOutput;
 
 mod _put_organization_config_rule_input;
 

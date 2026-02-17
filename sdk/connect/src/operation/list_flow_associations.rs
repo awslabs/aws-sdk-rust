@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flow_associat
     }
 }
 
-pub use crate::operation::list_flow_associations::_list_flow_associations_output::ListFlowAssociationsOutput;
-
 pub use crate::operation::list_flow_associations::_list_flow_associations_input::ListFlowAssociationsInput;
+
+pub use crate::operation::list_flow_associations::_list_flow_associations_output::ListFlowAssociationsOutput;
 
 mod _list_flow_associations_input;
 

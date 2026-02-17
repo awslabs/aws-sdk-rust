@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_key_group::
     }
 }
 
-pub use crate::operation::delete_key_group::_delete_key_group_output::DeleteKeyGroupOutput;
-
 pub use crate::operation::delete_key_group::_delete_key_group_input::DeleteKeyGroupInput;
+
+pub use crate::operation::delete_key_group::_delete_key_group_output::DeleteKeyGroupOutput;
 
 mod _delete_key_group_input;
 

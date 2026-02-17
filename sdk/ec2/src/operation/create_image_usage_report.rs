@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_image_usage
     }
 }
 
-pub use crate::operation::create_image_usage_report::_create_image_usage_report_output::CreateImageUsageReportOutput;
-
 pub use crate::operation::create_image_usage_report::_create_image_usage_report_input::CreateImageUsageReportInput;
+
+pub use crate::operation::create_image_usage_report::_create_image_usage_report_output::CreateImageUsageReportOutput;
 
 mod _create_image_usage_report_input;
 

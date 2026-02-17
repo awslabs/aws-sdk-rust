@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backup_vaul
     }
 }
 
-pub use crate::operation::delete_backup_vault_lock_configuration::_delete_backup_vault_lock_configuration_output::DeleteBackupVaultLockConfigurationOutput;
-
 pub use crate::operation::delete_backup_vault_lock_configuration::_delete_backup_vault_lock_configuration_input::DeleteBackupVaultLockConfigurationInput;
+
+pub use crate::operation::delete_backup_vault_lock_configuration::_delete_backup_vault_lock_configuration_output::DeleteBackupVaultLockConfigurationOutput;
 
 mod _delete_backup_vault_lock_configuration_input;
 

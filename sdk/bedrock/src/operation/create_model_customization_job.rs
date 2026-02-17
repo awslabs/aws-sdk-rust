@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_custo
     }
 }
 
-pub use crate::operation::create_model_customization_job::_create_model_customization_job_output::CreateModelCustomizationJobOutput;
-
 pub use crate::operation::create_model_customization_job::_create_model_customization_job_input::CreateModelCustomizationJobInput;
+
+pub use crate::operation::create_model_customization_job::_create_model_customization_job_output::CreateModelCustomizationJobOutput;
 
 mod _create_model_customization_job_input;
 

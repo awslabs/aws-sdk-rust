@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_generated_temp
     }
 }
 
-pub use crate::operation::get_generated_template::_get_generated_template_output::GetGeneratedTemplateOutput;
-
 pub use crate::operation::get_generated_template::_get_generated_template_input::GetGeneratedTemplateInput;
+
+pub use crate::operation::get_generated_template::_get_generated_template_output::GetGeneratedTemplateOutput;
 
 mod _get_generated_template_input;
 

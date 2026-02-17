@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_routin
     }
 }
 
-pub use crate::operation::list_custom_routing_port_mappings::_list_custom_routing_port_mappings_output::ListCustomRoutingPortMappingsOutput;
-
 pub use crate::operation::list_custom_routing_port_mappings::_list_custom_routing_port_mappings_input::ListCustomRoutingPortMappingsInput;
+
+pub use crate::operation::list_custom_routing_port_mappings::_list_custom_routing_port_mappings_output::ListCustomRoutingPortMappingsOutput;
 
 mod _list_custom_routing_port_mappings_input;
 

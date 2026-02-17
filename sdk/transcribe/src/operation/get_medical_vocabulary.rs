@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_medical_vocabu
     }
 }
 
-pub use crate::operation::get_medical_vocabulary::_get_medical_vocabulary_output::GetMedicalVocabularyOutput;
-
 pub use crate::operation::get_medical_vocabulary::_get_medical_vocabulary_input::GetMedicalVocabularyInput;
+
+pub use crate::operation::get_medical_vocabulary::_get_medical_vocabulary_output::GetMedicalVocabularyOutput;
 
 mod _get_medical_vocabulary_input;
 

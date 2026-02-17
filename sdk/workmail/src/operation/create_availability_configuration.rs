@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_availabilit
     }
 }
 
-pub use crate::operation::create_availability_configuration::_create_availability_configuration_output::CreateAvailabilityConfigurationOutput;
-
 pub use crate::operation::create_availability_configuration::_create_availability_configuration_input::CreateAvailabilityConfigurationInput;
+
+pub use crate::operation::create_availability_configuration::_create_availability_configuration_output::CreateAvailabilityConfigurationOutput;
 
 mod _create_availability_configuration_input;
 

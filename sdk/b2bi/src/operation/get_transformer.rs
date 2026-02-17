@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transformer::G
     }
 }
 
-pub use crate::operation::get_transformer::_get_transformer_output::GetTransformerOutput;
-
 pub use crate::operation::get_transformer::_get_transformer_input::GetTransformerInput;
+
+pub use crate::operation::get_transformer::_get_transformer_output::GetTransformerOutput;
 
 mod _get_transformer_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_addre
     }
 }
 
-pub use crate::operation::disassociate_address::_disassociate_address_output::DisassociateAddressOutput;
-
 pub use crate::operation::disassociate_address::_disassociate_address_input::DisassociateAddressInput;
+
+pub use crate::operation::disassociate_address::_disassociate_address_output::DisassociateAddressOutput;
 
 mod _disassociate_address_input;
 

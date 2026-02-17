@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_lake_nam
     }
 }
 
-pub use crate::operation::list_data_lake_namespaces::_list_data_lake_namespaces_output::ListDataLakeNamespacesOutput;
-
 pub use crate::operation::list_data_lake_namespaces::_list_data_lake_namespaces_input::ListDataLakeNamespacesInput;
+
+pub use crate::operation::list_data_lake_namespaces::_list_data_lake_namespaces_output::ListDataLakeNamespacesOutput;
 
 mod _list_data_lake_namespaces_input;
 

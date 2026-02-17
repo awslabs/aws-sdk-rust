@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_quality_
     }
 }
 
-pub use crate::operation::list_data_quality_rule_recommendation_runs::_list_data_quality_rule_recommendation_runs_output::ListDataQualityRuleRecommendationRunsOutput;
-
 pub use crate::operation::list_data_quality_rule_recommendation_runs::_list_data_quality_rule_recommendation_runs_input::ListDataQualityRuleRecommendationRunsInput;
+
+pub use crate::operation::list_data_quality_rule_recommendation_runs::_list_data_quality_rule_recommendation_runs_output::ListDataQualityRuleRecommendationRunsOutput;
 
 mod _list_data_quality_rule_recommendation_runs_input;
 

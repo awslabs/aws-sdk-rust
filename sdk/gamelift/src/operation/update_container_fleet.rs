@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_container_f
     }
 }
 
-pub use crate::operation::update_container_fleet::_update_container_fleet_output::UpdateContainerFleetOutput;
-
 pub use crate::operation::update_container_fleet::_update_container_fleet_input::UpdateContainerFleetInput;
+
+pub use crate::operation::update_container_fleet::_update_container_fleet_output::UpdateContainerFleetOutput;
 
 mod _update_container_fleet_input;
 

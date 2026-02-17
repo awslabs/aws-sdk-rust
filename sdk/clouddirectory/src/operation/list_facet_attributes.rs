@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_facet_attribu
     }
 }
 
-pub use crate::operation::list_facet_attributes::_list_facet_attributes_output::ListFacetAttributesOutput;
-
 pub use crate::operation::list_facet_attributes::_list_facet_attributes_input::ListFacetAttributesInput;
+
+pub use crate::operation::list_facet_attributes::_list_facet_attributes_output::ListFacetAttributesOutput;
 
 mod _list_facet_attributes_input;
 

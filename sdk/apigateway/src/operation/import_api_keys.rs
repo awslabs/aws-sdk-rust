@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_api_keys::I
     }
 }
 
-pub use crate::operation::import_api_keys::_import_api_keys_output::ImportApiKeysOutput;
-
 pub use crate::operation::import_api_keys::_import_api_keys_input::ImportApiKeysInput;
+
+pub use crate::operation::import_api_keys::_import_api_keys_output::ImportApiKeysOutput;
 
 mod _import_api_keys_input;
 

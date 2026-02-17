@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_attri
     }
 }
 
-pub use crate::operation::list_profile_attribute_values::_list_profile_attribute_values_output::ListProfileAttributeValuesOutput;
-
 pub use crate::operation::list_profile_attribute_values::_list_profile_attribute_values_input::ListProfileAttributeValuesInput;
+
+pub use crate::operation::list_profile_attribute_values::_list_profile_attribute_values_output::ListProfileAttributeValuesOutput;
 
 mod _list_profile_attribute_values_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_scaling_policy
     }
 }
 
-pub use crate::operation::put_scaling_policy::_put_scaling_policy_output::PutScalingPolicyOutput;
-
 pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScalingPolicyInput;
+
+pub use crate::operation::put_scaling_policy::_put_scaling_policy_output::PutScalingPolicyOutput;
 
 mod _put_scaling_policy_input;
 

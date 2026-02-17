@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dash_streaming
     }
 }
 
-pub use crate::operation::get_dash_streaming_session_url::_get_dash_streaming_session_url_output::GetDashStreamingSessionUrlOutput;
-
 pub use crate::operation::get_dash_streaming_session_url::_get_dash_streaming_session_url_input::GetDashStreamingSessionUrlInput;
+
+pub use crate::operation::get_dash_streaming_session_url::_get_dash_streaming_session_url_output::GetDashStreamingSessionUrlOutput;
 
 mod _get_dash_streaming_session_url_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_layout
     }
 }
 
-pub use crate::operation::list_domain_layouts::_list_domain_layouts_output::ListDomainLayoutsOutput;
-
 pub use crate::operation::list_domain_layouts::_list_domain_layouts_input::ListDomainLayoutsInput;
+
+pub use crate::operation::list_domain_layouts::_list_domain_layouts_output::ListDomainLayoutsOutput;
 
 mod _list_domain_layouts_input;
 

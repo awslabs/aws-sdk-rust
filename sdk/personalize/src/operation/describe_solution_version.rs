@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_solution_
     }
 }
 
-pub use crate::operation::describe_solution_version::_describe_solution_version_output::DescribeSolutionVersionOutput;
-
 pub use crate::operation::describe_solution_version::_describe_solution_version_input::DescribeSolutionVersionInput;
+
+pub use crate::operation::describe_solution_version::_describe_solution_version_output::DescribeSolutionVersionOutput;
 
 mod _describe_solution_version_input;
 

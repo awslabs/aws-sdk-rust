@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policies_gran
     }
 }
 
-pub use crate::operation::list_policies_granting_service_access::_list_policies_granting_service_access_output::ListPoliciesGrantingServiceAccessOutput;
-
 pub use crate::operation::list_policies_granting_service_access::_list_policies_granting_service_access_input::ListPoliciesGrantingServiceAccessInput;
+
+pub use crate::operation::list_policies_granting_service_access::_list_policies_granting_service_access_output::ListPoliciesGrantingServiceAccessOutput;
 
 mod _list_policies_granting_service_access_input;
 

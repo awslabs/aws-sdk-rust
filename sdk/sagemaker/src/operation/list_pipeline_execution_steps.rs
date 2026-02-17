@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipeline_exec
     }
 }
 
-pub use crate::operation::list_pipeline_execution_steps::_list_pipeline_execution_steps_output::ListPipelineExecutionStepsOutput;
-
 pub use crate::operation::list_pipeline_execution_steps::_list_pipeline_execution_steps_input::ListPipelineExecutionStepsInput;
+
+pub use crate::operation::list_pipeline_execution_steps::_list_pipeline_execution_steps_output::ListPipelineExecutionStepsOutput;
 
 mod _list_pipeline_execution_steps_input;
 

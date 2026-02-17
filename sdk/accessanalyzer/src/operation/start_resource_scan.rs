@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_resource_sca
     }
 }
 
-pub use crate::operation::start_resource_scan::_start_resource_scan_output::StartResourceScanOutput;
-
 pub use crate::operation::start_resource_scan::_start_resource_scan_input::StartResourceScanInput;
+
+pub use crate::operation::start_resource_scan::_start_resource_scan_output::StartResourceScanOutput;
 
 mod _start_resource_scan_input;
 

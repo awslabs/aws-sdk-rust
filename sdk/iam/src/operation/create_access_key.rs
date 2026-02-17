@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_key:
     }
 }
 
-pub use crate::operation::create_access_key::_create_access_key_output::CreateAccessKeyOutput;
-
 pub use crate::operation::create_access_key::_create_access_key_input::CreateAccessKeyInput;
+
+pub use crate::operation::create_access_key::_create_access_key_output::CreateAccessKeyOutput;
 
 mod _create_access_key_input;
 

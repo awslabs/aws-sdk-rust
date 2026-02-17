@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_provision
     }
 }
 
-pub use crate::operation::purchase_provisioned_capacity::_purchase_provisioned_capacity_output::PurchaseProvisionedCapacityOutput;
-
 pub use crate::operation::purchase_provisioned_capacity::_purchase_provisioned_capacity_input::PurchaseProvisionedCapacityInput;
+
+pub use crate::operation::purchase_provisioned_capacity::_purchase_provisioned_capacity_output::PurchaseProvisionedCapacityOutput;
 
 mod _purchase_provisioned_capacity_input;
 

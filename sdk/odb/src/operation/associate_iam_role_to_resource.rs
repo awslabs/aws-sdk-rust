@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_iam_role
     }
 }
 
-pub use crate::operation::associate_iam_role_to_resource::_associate_iam_role_to_resource_output::AssociateIamRoleToResourceOutput;
-
 pub use crate::operation::associate_iam_role_to_resource::_associate_iam_role_to_resource_input::AssociateIamRoleToResourceInput;
+
+pub use crate::operation::associate_iam_role_to_resource::_associate_iam_role_to_resource_output::AssociateIamRoleToResourceOutput;
 
 mod _associate_iam_role_to_resource_input;
 

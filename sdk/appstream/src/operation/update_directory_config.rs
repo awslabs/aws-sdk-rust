@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_directory_c
     }
 }
 
-pub use crate::operation::update_directory_config::_update_directory_config_output::UpdateDirectoryConfigOutput;
-
 pub use crate::operation::update_directory_config::_update_directory_config_input::UpdateDirectoryConfigInput;
+
+pub use crate::operation::update_directory_config::_update_directory_config_output::UpdateDirectoryConfigOutput;
 
 mod _update_directory_config_input;
 

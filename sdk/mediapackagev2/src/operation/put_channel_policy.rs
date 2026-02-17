@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_channel_policy
     }
 }
 
-pub use crate::operation::put_channel_policy::_put_channel_policy_output::PutChannelPolicyOutput;
-
 pub use crate::operation::put_channel_policy::_put_channel_policy_input::PutChannelPolicyInput;
+
+pub use crate::operation::put_channel_policy::_put_channel_policy_output::PutChannelPolicyOutput;
 
 mod _put_channel_policy_input;
 

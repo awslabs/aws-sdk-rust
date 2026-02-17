@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_security_
     }
 }
 
-pub use crate::operation::describe_security_hub_v2::_describe_security_hub_v2_output::DescribeSecurityHubV2Output;
-
 pub use crate::operation::describe_security_hub_v2::_describe_security_hub_v2_input::DescribeSecurityHubV2Input;
+
+pub use crate::operation::describe_security_hub_v2::_describe_security_hub_v2_output::DescribeSecurityHubV2Output;
 
 mod _describe_security_hub_v2_input;
 

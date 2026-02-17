@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_domain_conf
     }
 }
 
-pub use crate::operation::delete_domain_configuration::_delete_domain_configuration_output::DeleteDomainConfigurationOutput;
-
 pub use crate::operation::delete_domain_configuration::_delete_domain_configuration_input::DeleteDomainConfigurationInput;
+
+pub use crate::operation::delete_domain_configuration::_delete_domain_configuration_output::DeleteDomainConfigurationOutput;
 
 mod _delete_domain_configuration_input;
 

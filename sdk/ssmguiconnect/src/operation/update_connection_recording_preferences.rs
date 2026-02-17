@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connection_
     }
 }
 
-pub use crate::operation::update_connection_recording_preferences::_update_connection_recording_preferences_output::UpdateConnectionRecordingPreferencesOutput;
-
 pub use crate::operation::update_connection_recording_preferences::_update_connection_recording_preferences_input::UpdateConnectionRecordingPreferencesInput;
+
+pub use crate::operation::update_connection_recording_preferences::_update_connection_recording_preferences_output::UpdateConnectionRecordingPreferencesOutput;
 
 mod _update_connection_recording_preferences_input;
 

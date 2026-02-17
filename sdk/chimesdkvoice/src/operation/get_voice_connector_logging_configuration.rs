@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_voice_connecto
     }
 }
 
-pub use crate::operation::get_voice_connector_logging_configuration::_get_voice_connector_logging_configuration_output::GetVoiceConnectorLoggingConfigurationOutput;
-
 pub use crate::operation::get_voice_connector_logging_configuration::_get_voice_connector_logging_configuration_input::GetVoiceConnectorLoggingConfigurationInput;
+
+pub use crate::operation::get_voice_connector_logging_configuration::_get_voice_connector_logging_configuration_output::GetVoiceConnectorLoggingConfigurationOutput;
 
 mod _get_voice_connector_logging_configuration_input;
 

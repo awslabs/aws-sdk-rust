@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attribute_gro
     }
 }
 
-pub use crate::operation::list_attribute_groups_for_application::_list_attribute_groups_for_application_output::ListAttributeGroupsForApplicationOutput;
-
 pub use crate::operation::list_attribute_groups_for_application::_list_attribute_groups_for_application_input::ListAttributeGroupsForApplicationInput;
+
+pub use crate::operation::list_attribute_groups_for_application::_list_attribute_groups_for_application_output::ListAttributeGroupsForApplicationOutput;
 
 mod _list_attribute_groups_for_application_input;
 

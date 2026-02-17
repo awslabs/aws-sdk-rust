@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_optimization_
     }
 }
 
-pub use crate::operation::stop_optimization_job::_stop_optimization_job_output::StopOptimizationJobOutput;
-
 pub use crate::operation::stop_optimization_job::_stop_optimization_job_input::StopOptimizationJobInput;
+
+pub use crate::operation::stop_optimization_job::_stop_optimization_job_output::StopOptimizationJobOutput;
 
 mod _stop_optimization_job_input;
 

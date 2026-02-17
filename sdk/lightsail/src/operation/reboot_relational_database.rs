@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_relational_
     }
 }
 
-pub use crate::operation::reboot_relational_database::_reboot_relational_database_output::RebootRelationalDatabaseOutput;
-
 pub use crate::operation::reboot_relational_database::_reboot_relational_database_input::RebootRelationalDatabaseInput;
+
+pub use crate::operation::reboot_relational_database::_reboot_relational_database_output::RebootRelationalDatabaseOutput;
 
 mod _reboot_relational_database_input;
 

@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_map_tile::GetM
     }
 }
 
-pub use crate::operation::get_map_tile::_get_map_tile_output::GetMapTileOutput;
-
 pub use crate::operation::get_map_tile::_get_map_tile_input::GetMapTileInput;
+
+pub use crate::operation::get_map_tile::_get_map_tile_output::GetMapTileOutput;
 
 mod _get_map_tile_input;
 

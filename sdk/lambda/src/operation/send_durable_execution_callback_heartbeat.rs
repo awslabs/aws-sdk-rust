@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_durable_execu
     }
 }
 
-pub use crate::operation::send_durable_execution_callback_heartbeat::_send_durable_execution_callback_heartbeat_output::SendDurableExecutionCallbackHeartbeatOutput;
-
 pub use crate::operation::send_durable_execution_callback_heartbeat::_send_durable_execution_callback_heartbeat_input::SendDurableExecutionCallbackHeartbeatInput;
+
+pub use crate::operation::send_durable_execution_callback_heartbeat::_send_durable_execution_callback_heartbeat_output::SendDurableExecutionCallbackHeartbeatOutput;
 
 mod _send_durable_execution_callback_heartbeat_input;
 

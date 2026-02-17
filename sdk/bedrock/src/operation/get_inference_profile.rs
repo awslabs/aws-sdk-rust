@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_inference_prof
     }
 }
 
-pub use crate::operation::get_inference_profile::_get_inference_profile_output::GetInferenceProfileOutput;
-
 pub use crate::operation::get_inference_profile::_get_inference_profile_input::GetInferenceProfileInput;
+
+pub use crate::operation::get_inference_profile::_get_inference_profile_output::GetInferenceProfileOutput;
 
 mod _get_inference_profile_input;
 

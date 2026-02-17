@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_experiment::Ge
     }
 }
 
-pub use crate::operation::get_experiment::_get_experiment_output::GetExperimentOutput;
-
 pub use crate::operation::get_experiment::_get_experiment_input::GetExperimentInput;
+
+pub use crate::operation::get_experiment::_get_experiment_output::GetExperimentOutput;
 
 mod _get_experiment_input;
 

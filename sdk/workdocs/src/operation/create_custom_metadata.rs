@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_meta
     }
 }
 
-pub use crate::operation::create_custom_metadata::_create_custom_metadata_output::CreateCustomMetadataOutput;
-
 pub use crate::operation::create_custom_metadata::_create_custom_metadata_input::CreateCustomMetadataInput;
+
+pub use crate::operation::create_custom_metadata::_create_custom_metadata_output::CreateCustomMetadataOutput;
 
 mod _create_custom_metadata_input;
 

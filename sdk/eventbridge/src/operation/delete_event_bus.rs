@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_bus::
     }
 }
 
-pub use crate::operation::delete_event_bus::_delete_event_bus_output::DeleteEventBusOutput;
-
 pub use crate::operation::delete_event_bus::_delete_event_bus_input::DeleteEventBusInput;
+
+pub use crate::operation::delete_event_bus::_delete_event_bus_output::DeleteEventBusOutput;
 
 mod _delete_event_bus_input;
 

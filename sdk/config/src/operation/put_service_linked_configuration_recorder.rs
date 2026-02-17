@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_service_linked
     }
 }
 
-pub use crate::operation::put_service_linked_configuration_recorder::_put_service_linked_configuration_recorder_output::PutServiceLinkedConfigurationRecorderOutput;
-
 pub use crate::operation::put_service_linked_configuration_recorder::_put_service_linked_configuration_recorder_input::PutServiceLinkedConfigurationRecorderInput;
+
+pub use crate::operation::put_service_linked_configuration_recorder::_put_service_linked_configuration_recorder_output::PutServiceLinkedConfigurationRecorderOutput;
 
 mod _put_service_linked_configuration_recorder_input;
 

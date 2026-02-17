@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_artifact::U
     }
 }
 
-pub use crate::operation::update_artifact::_update_artifact_output::UpdateArtifactOutput;
-
 pub use crate::operation::update_artifact::_update_artifact_input::UpdateArtifactInput;
+
+pub use crate::operation::update_artifact::_update_artifact_output::UpdateArtifactOutput;
 
 mod _update_artifact_input;
 

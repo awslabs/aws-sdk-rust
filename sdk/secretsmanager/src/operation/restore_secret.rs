@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_secret::Re
     }
 }
 
-pub use crate::operation::restore_secret::_restore_secret_output::RestoreSecretOutput;
-
 pub use crate::operation::restore_secret::_restore_secret_input::RestoreSecretInput;
+
+pub use crate::operation::restore_secret::_restore_secret_output::RestoreSecretOutput;
 
 mod _restore_secret_input;
 

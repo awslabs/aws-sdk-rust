@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_platform_ap
     }
 }
 
-pub use crate::operation::create_platform_application::_create_platform_application_output::CreatePlatformApplicationOutput;
-
 pub use crate::operation::create_platform_application::_create_platform_application_input::CreatePlatformApplicationInput;
+
+pub use crate::operation::create_platform_application::_create_platform_application_output::CreatePlatformApplicationOutput;
 
 mod _create_platform_application_input;
 

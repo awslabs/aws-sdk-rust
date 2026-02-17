@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate_session::
     }
 }
 
-pub use crate::operation::evaluate_session::_evaluate_session_output::EvaluateSessionOutput;
-
 pub use crate::operation::evaluate_session::_evaluate_session_input::EvaluateSessionInput;
+
+pub use crate::operation::evaluate_session::_evaluate_session_output::EvaluateSessionOutput;
 
 mod _evaluate_session_input;
 

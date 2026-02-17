@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_room_membersh
     }
 }
 
-pub use crate::operation::list_room_memberships::_list_room_memberships_output::ListRoomMembershipsOutput;
-
 pub use crate::operation::list_room_memberships::_list_room_memberships_input::ListRoomMembershipsInput;
+
+pub use crate::operation::list_room_memberships::_list_room_memberships_output::ListRoomMembershipsOutput;
 
 mod _list_room_memberships_input;
 

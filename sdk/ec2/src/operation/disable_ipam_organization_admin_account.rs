@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_ipam_organ
     }
 }
 
-pub use crate::operation::disable_ipam_organization_admin_account::_disable_ipam_organization_admin_account_output::DisableIpamOrganizationAdminAccountOutput;
-
 pub use crate::operation::disable_ipam_organization_admin_account::_disable_ipam_organization_admin_account_input::DisableIpamOrganizationAdminAccountInput;
+
+pub use crate::operation::disable_ipam_organization_admin_account::_disable_ipam_organization_admin_account_output::DisableIpamOrganizationAdminAccountOutput;
 
 mod _disable_ipam_organization_admin_account_input;
 

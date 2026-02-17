@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_pool::
     }
 }
 
-pub use crate::operation::get_account_pool::_get_account_pool_output::GetAccountPoolOutput;
-
 pub use crate::operation::get_account_pool::_get_account_pool_input::GetAccountPoolInput;
+
+pub use crate::operation::get_account_pool::_get_account_pool_output::GetAccountPoolOutput;
 
 mod _get_account_pool_input;
 

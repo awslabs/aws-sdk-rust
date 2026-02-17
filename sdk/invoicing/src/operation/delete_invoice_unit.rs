@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_invoice_uni
     }
 }
 
-pub use crate::operation::delete_invoice_unit::_delete_invoice_unit_output::DeleteInvoiceUnitOutput;
-
 pub use crate::operation::delete_invoice_unit::_delete_invoice_unit_input::DeleteInvoiceUnitInput;
+
+pub use crate::operation::delete_invoice_unit::_delete_invoice_unit_output::DeleteInvoiceUnitOutput;
 
 mod _delete_invoice_unit_input;
 

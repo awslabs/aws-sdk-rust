@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sms_sandbox
     }
 }
 
-pub use crate::operation::delete_sms_sandbox_phone_number::_delete_sms_sandbox_phone_number_output::DeleteSmsSandboxPhoneNumberOutput;
-
 pub use crate::operation::delete_sms_sandbox_phone_number::_delete_sms_sandbox_phone_number_input::DeleteSmsSandboxPhoneNumberInput;
+
+pub use crate::operation::delete_sms_sandbox_phone_number::_delete_sms_sandbox_phone_number_output::DeleteSmsSandboxPhoneNumberOutput;
 
 mod _delete_sms_sandbox_phone_number_input;
 

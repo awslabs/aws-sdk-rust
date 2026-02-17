@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hours_of_
     }
 }
 
-pub use crate::operation::describe_hours_of_operation::_describe_hours_of_operation_output::DescribeHoursOfOperationOutput;
-
 pub use crate::operation::describe_hours_of_operation::_describe_hours_of_operation_input::DescribeHoursOfOperationInput;
+
+pub use crate::operation::describe_hours_of_operation::_describe_hours_of_operation_output::DescribeHoursOfOperationOutput;
 
 mod _describe_hours_of_operation_input;
 

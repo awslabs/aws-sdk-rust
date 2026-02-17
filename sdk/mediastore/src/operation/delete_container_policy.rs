@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_container_p
     }
 }
 
-pub use crate::operation::delete_container_policy::_delete_container_policy_output::DeleteContainerPolicyOutput;
-
 pub use crate::operation::delete_container_policy::_delete_container_policy_input::DeleteContainerPolicyInput;
+
+pub use crate::operation::delete_container_policy::_delete_container_policy_output::DeleteContainerPolicyOutput;
 
 mod _delete_container_policy_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backend_api
     }
 }
 
-pub use crate::operation::delete_backend_api::_delete_backend_api_output::DeleteBackendApiOutput;
-
 pub use crate::operation::delete_backend_api::_delete_backend_api_input::DeleteBackendApiInput;
+
+pub use crate::operation::delete_backend_api::_delete_backend_api_output::DeleteBackendApiOutput;
 
 mod _delete_backend_api_input;
 

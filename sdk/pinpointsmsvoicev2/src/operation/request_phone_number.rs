@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::request_phone_numb
     }
 }
 
-pub use crate::operation::request_phone_number::_request_phone_number_output::RequestPhoneNumberOutput;
-
 pub use crate::operation::request_phone_number::_request_phone_number_input::RequestPhoneNumberInput;
+
+pub use crate::operation::request_phone_number::_request_phone_number_output::RequestPhoneNumberOutput;
 
 mod _request_phone_number_input;
 

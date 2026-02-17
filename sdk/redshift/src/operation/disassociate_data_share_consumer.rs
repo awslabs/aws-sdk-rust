@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_data_
     }
 }
 
-pub use crate::operation::disassociate_data_share_consumer::_disassociate_data_share_consumer_output::DisassociateDataShareConsumerOutput;
-
 pub use crate::operation::disassociate_data_share_consumer::_disassociate_data_share_consumer_input::DisassociateDataShareConsumerInput;
+
+pub use crate::operation::disassociate_data_share_consumer::_disassociate_data_share_consumer_output::DisassociateDataShareConsumerOutput;
 
 mod _disassociate_data_share_consumer_input;
 

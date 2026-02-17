@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_tags_to_on_pre
     }
 }
 
-pub use crate::operation::add_tags_to_on_premises_instances::_add_tags_to_on_premises_instances_output::AddTagsToOnPremisesInstancesOutput;
-
 pub use crate::operation::add_tags_to_on_premises_instances::_add_tags_to_on_premises_instances_input::AddTagsToOnPremisesInstancesInput;
+
+pub use crate::operation::add_tags_to_on_premises_instances::_add_tags_to_on_premises_instances_output::AddTagsToOnPremisesInstancesOutput;
 
 mod _add_tags_to_on_premises_instances_input;
 

@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_option_group:
     }
 }
 
-pub use crate::operation::copy_option_group::_copy_option_group_output::CopyOptionGroupOutput;
-
 pub use crate::operation::copy_option_group::_copy_option_group_input::CopyOptionGroupInput;
+
+pub use crate::operation::copy_option_group::_copy_option_group_output::CopyOptionGroupOutput;
 
 mod _copy_option_group_input;
 

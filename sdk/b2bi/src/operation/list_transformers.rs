@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_transformers:
     }
 }
 
-pub use crate::operation::list_transformers::_list_transformers_output::ListTransformersOutput;
-
 pub use crate::operation::list_transformers::_list_transformers_input::ListTransformersInput;
+
+pub use crate::operation::list_transformers::_list_transformers_output::ListTransformersOutput;
 
 mod _list_transformers_input;
 

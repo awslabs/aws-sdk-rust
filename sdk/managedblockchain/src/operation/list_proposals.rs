@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_proposals::Li
     }
 }
 
-pub use crate::operation::list_proposals::_list_proposals_output::ListProposalsOutput;
-
 pub use crate::operation::list_proposals::_list_proposals_input::ListProposalsInput;
+
+pub use crate::operation::list_proposals::_list_proposals_output::ListProposalsOutput;
 
 mod _list_proposals_input;
 

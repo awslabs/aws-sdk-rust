@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_luna_client
     }
 }
 
-pub use crate::operation::delete_luna_client::_delete_luna_client_output::DeleteLunaClientOutput;
-
 pub use crate::operation::delete_luna_client::_delete_luna_client_input::DeleteLunaClientInput;
+
+pub use crate::operation::delete_luna_client::_delete_luna_client_output::DeleteLunaClientOutput;
 
 mod _delete_luna_client_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_assessment_
     }
 }
 
-pub use crate::operation::update_assessment_control_set_status::_update_assessment_control_set_status_output::UpdateAssessmentControlSetStatusOutput;
-
 pub use crate::operation::update_assessment_control_set_status::_update_assessment_control_set_status_input::UpdateAssessmentControlSetStatusInput;
+
+pub use crate::operation::update_assessment_control_set_status::_update_assessment_control_set_status_output::UpdateAssessmentControlSetStatusOutput;
 
 mod _update_assessment_control_set_status_input;
 

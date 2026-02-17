@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_game_server
     }
 }
 
-pub use crate::operation::delete_game_server_group::_delete_game_server_group_output::DeleteGameServerGroupOutput;
-
 pub use crate::operation::delete_game_server_group::_delete_game_server_group_input::DeleteGameServerGroupInput;
+
+pub use crate::operation::delete_game_server_group::_delete_game_server_group_output::DeleteGameServerGroupOutput;
 
 mod _delete_game_server_group_input;
 

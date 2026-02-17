@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dataset_imp
     }
 }
 
-pub use crate::operation::delete_dataset_import_job::_delete_dataset_import_job_output::DeleteDatasetImportJobOutput;
-
 pub use crate::operation::delete_dataset_import_job::_delete_dataset_import_job_input::DeleteDatasetImportJobInput;
+
+pub use crate::operation::delete_dataset_import_job::_delete_dataset_import_job_output::DeleteDatasetImportJobOutput;
 
 mod _delete_dataset_import_job_input;
 

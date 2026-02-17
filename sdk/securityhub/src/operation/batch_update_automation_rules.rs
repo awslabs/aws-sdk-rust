@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_autom
     }
 }
 
-pub use crate::operation::batch_update_automation_rules::_batch_update_automation_rules_output::BatchUpdateAutomationRulesOutput;
-
 pub use crate::operation::batch_update_automation_rules::_batch_update_automation_rules_input::BatchUpdateAutomationRulesInput;
+
+pub use crate::operation::batch_update_automation_rules::_batch_update_automation_rules_output::BatchUpdateAutomationRulesOutput;
 
 mod _batch_update_automation_rules_input;
 

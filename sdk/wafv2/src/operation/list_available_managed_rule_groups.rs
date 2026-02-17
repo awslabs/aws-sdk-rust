@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_man
     }
 }
 
-pub use crate::operation::list_available_managed_rule_groups::_list_available_managed_rule_groups_output::ListAvailableManagedRuleGroupsOutput;
-
 pub use crate::operation::list_available_managed_rule_groups::_list_available_managed_rule_groups_input::ListAvailableManagedRuleGroupsInput;
+
+pub use crate::operation::list_available_managed_rule_groups::_list_available_managed_rule_groups_output::ListAvailableManagedRuleGroupsOutput;
 
 mod _list_available_managed_rule_groups_input;
 

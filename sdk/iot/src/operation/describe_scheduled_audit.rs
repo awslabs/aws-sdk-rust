@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scheduled
     }
 }
 
-pub use crate::operation::describe_scheduled_audit::_describe_scheduled_audit_output::DescribeScheduledAuditOutput;
-
 pub use crate::operation::describe_scheduled_audit::_describe_scheduled_audit_input::DescribeScheduledAuditInput;
+
+pub use crate::operation::describe_scheduled_audit::_describe_scheduled_audit_output::DescribeScheduledAuditOutput;
 
 mod _describe_scheduled_audit_input;
 

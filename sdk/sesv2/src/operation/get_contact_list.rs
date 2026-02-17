@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_list::
     }
 }
 
-pub use crate::operation::get_contact_list::_get_contact_list_output::GetContactListOutput;
-
 pub use crate::operation::get_contact_list::_get_contact_list_input::GetContactListInput;
+
+pub use crate::operation::get_contact_list::_get_contact_list_output::GetContactListOutput;
 
 mod _get_contact_list_input;
 

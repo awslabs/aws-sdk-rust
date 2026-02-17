@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_parallel_da
     }
 }
 
-pub use crate::operation::delete_parallel_data::_delete_parallel_data_output::DeleteParallelDataOutput;
-
 pub use crate::operation::delete_parallel_data::_delete_parallel_data_input::DeleteParallelDataInput;
+
+pub use crate::operation::delete_parallel_data::_delete_parallel_data_output::DeleteParallelDataOutput;
 
 mod _delete_parallel_data_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_container_poli
     }
 }
 
-pub use crate::operation::put_container_policy::_put_container_policy_output::PutContainerPolicyOutput;
-
 pub use crate::operation::put_container_policy::_put_container_policy_input::PutContainerPolicyInput;
+
+pub use crate::operation::put_container_policy::_put_container_policy_output::PutContainerPolicyOutput;
 
 mod _put_container_policy_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_product_pag
     }
 }
 
-pub use crate::operation::delete_product_page::_delete_product_page_output::DeleteProductPageOutput;
-
 pub use crate::operation::delete_product_page::_delete_product_page_input::DeleteProductPageInput;
+
+pub use crate::operation::delete_product_page::_delete_product_page_output::DeleteProductPageOutput;
 
 mod _delete_product_page_input;
 

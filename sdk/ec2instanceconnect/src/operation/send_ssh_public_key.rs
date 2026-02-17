@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_ssh_public_ke
     }
 }
 
-pub use crate::operation::send_ssh_public_key::_send_ssh_public_key_output::SendSshPublicKeyOutput;
-
 pub use crate::operation::send_ssh_public_key::_send_ssh_public_key_input::SendSshPublicKeyInput;
+
+pub use crate::operation::send_ssh_public_key::_send_ssh_public_key_output::SendSshPublicKeyOutput;
 
 mod _send_ssh_public_key_input;
 

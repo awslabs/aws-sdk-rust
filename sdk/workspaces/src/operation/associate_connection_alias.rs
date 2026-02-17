@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_connecti
     }
 }
 
-pub use crate::operation::associate_connection_alias::_associate_connection_alias_output::AssociateConnectionAliasOutput;
-
 pub use crate::operation::associate_connection_alias::_associate_connection_alias_input::AssociateConnectionAliasInput;
+
+pub use crate::operation::associate_connection_alias::_associate_connection_alias_output::AssociateConnectionAliasOutput;
 
 mod _associate_connection_alias_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_firewall_do
     }
 }
 
-pub use crate::operation::import_firewall_domains::_import_firewall_domains_output::ImportFirewallDomainsOutput;
-
 pub use crate::operation::import_firewall_domains::_import_firewall_domains_input::ImportFirewallDomainsInput;
+
+pub use crate::operation::import_firewall_domains::_import_firewall_domains_output::ImportFirewallDomainsOutput;
 
 mod _import_firewall_domains_input;
 

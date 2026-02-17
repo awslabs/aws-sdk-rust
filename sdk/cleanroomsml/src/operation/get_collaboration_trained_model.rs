@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_collaboration_
     }
 }
 
-pub use crate::operation::get_collaboration_trained_model::_get_collaboration_trained_model_output::GetCollaborationTrainedModelOutput;
-
 pub use crate::operation::get_collaboration_trained_model::_get_collaboration_trained_model_input::GetCollaborationTrainedModelInput;
+
+pub use crate::operation::get_collaboration_trained_model::_get_collaboration_trained_model_output::GetCollaborationTrainedModelOutput;
 
 mod _get_collaboration_trained_model_input;
 

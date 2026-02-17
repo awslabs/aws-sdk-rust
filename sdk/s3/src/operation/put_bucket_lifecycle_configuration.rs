@@ -517,9 +517,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_lifecyc
     }
 }
 
-pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecycle_configuration_output::PutBucketLifecycleConfigurationOutput;
-
 pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecycle_configuration_input::PutBucketLifecycleConfigurationInput;
+
+pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecycle_configuration_output::PutBucketLifecycleConfigurationOutput;
 
 mod _put_bucket_lifecycle_configuration_input;
 

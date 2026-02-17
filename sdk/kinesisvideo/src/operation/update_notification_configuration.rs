@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_notificatio
     }
 }
 
-pub use crate::operation::update_notification_configuration::_update_notification_configuration_output::UpdateNotificationConfigurationOutput;
-
 pub use crate::operation::update_notification_configuration::_update_notification_configuration_input::UpdateNotificationConfigurationInput;
+
+pub use crate::operation::update_notification_configuration::_update_notification_configuration_output::UpdateNotificationConfigurationOutput;
 
 mod _update_notification_configuration_input;
 

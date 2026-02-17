@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_incident::St
     }
 }
 
-pub use crate::operation::start_incident::_start_incident_output::StartIncidentOutput;
-
 pub use crate::operation::start_incident::_start_incident_input::StartIncidentInput;
+
+pub use crate::operation::start_incident::_start_incident_output::StartIncidentOutput;
 
 mod _start_incident_input;
 

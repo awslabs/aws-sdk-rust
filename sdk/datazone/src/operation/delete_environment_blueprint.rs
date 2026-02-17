@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_environment
     }
 }
 
-pub use crate::operation::delete_environment_blueprint::_delete_environment_blueprint_output::DeleteEnvironmentBlueprintOutput;
-
 pub use crate::operation::delete_environment_blueprint::_delete_environment_blueprint_input::DeleteEnvironmentBlueprintInput;
+
+pub use crate::operation::delete_environment_blueprint::_delete_environment_blueprint_output::DeleteEnvironmentBlueprintOutput;
 
 mod _delete_environment_blueprint_input;
 

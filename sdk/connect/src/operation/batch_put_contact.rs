@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_contact:
     }
 }
 
-pub use crate::operation::batch_put_contact::_batch_put_contact_output::BatchPutContactOutput;
-
 pub use crate::operation::batch_put_contact::_batch_put_contact_input::BatchPutContactInput;
+
+pub use crate::operation::batch_put_contact::_batch_put_contact_output::BatchPutContactOutput;
 
 mod _batch_put_contact_input;
 

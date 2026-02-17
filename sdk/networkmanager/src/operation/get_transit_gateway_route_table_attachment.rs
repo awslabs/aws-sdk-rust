@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transit_gatewa
     }
 }
 
-pub use crate::operation::get_transit_gateway_route_table_attachment::_get_transit_gateway_route_table_attachment_output::GetTransitGatewayRouteTableAttachmentOutput;
-
 pub use crate::operation::get_transit_gateway_route_table_attachment::_get_transit_gateway_route_table_attachment_input::GetTransitGatewayRouteTableAttachmentInput;
+
+pub use crate::operation::get_transit_gateway_route_table_attachment::_get_transit_gateway_route_table_attachment_output::GetTransitGatewayRouteTableAttachmentOutput;
 
 mod _get_transit_gateway_route_table_attachment_input;
 

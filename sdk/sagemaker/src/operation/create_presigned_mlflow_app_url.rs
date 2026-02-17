@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_presigned_m
     }
 }
 
-pub use crate::operation::create_presigned_mlflow_app_url::_create_presigned_mlflow_app_url_output::CreatePresignedMlflowAppUrlOutput;
-
 pub use crate::operation::create_presigned_mlflow_app_url::_create_presigned_mlflow_app_url_input::CreatePresignedMlflowAppUrlInput;
+
+pub use crate::operation::create_presigned_mlflow_app_url::_create_presigned_mlflow_app_url_output::CreatePresignedMlflowAppUrlOutput;
 
 mod _create_presigned_mlflow_app_url_input;
 

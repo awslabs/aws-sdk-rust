@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resolver_co
     }
 }
 
-pub use crate::operation::update_resolver_config::_update_resolver_config_output::UpdateResolverConfigOutput;
-
 pub use crate::operation::update_resolver_config::_update_resolver_config_input::UpdateResolverConfigInput;
+
+pub use crate::operation::update_resolver_config::_update_resolver_config_output::UpdateResolverConfigOutput;
 
 mod _update_resolver_config_input;
 

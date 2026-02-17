@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sink_policy::G
     }
 }
 
-pub use crate::operation::get_sink_policy::_get_sink_policy_output::GetSinkPolicyOutput;
-
 pub use crate::operation::get_sink_policy::_get_sink_policy_input::GetSinkPolicyInput;
+
+pub use crate::operation::get_sink_policy::_get_sink_policy_output::GetSinkPolicyOutput;
 
 mod _get_sink_policy_input;
 

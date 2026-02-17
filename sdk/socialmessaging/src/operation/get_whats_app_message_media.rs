@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_whats_app_mess
     }
 }
 
-pub use crate::operation::get_whats_app_message_media::_get_whats_app_message_media_output::GetWhatsAppMessageMediaOutput;
-
 pub use crate::operation::get_whats_app_message_media::_get_whats_app_message_media_input::GetWhatsAppMessageMediaInput;
+
+pub use crate::operation::get_whats_app_message_media::_get_whats_app_message_media_output::GetWhatsAppMessageMediaOutput;
 
 mod _get_whats_app_message_media_input;
 

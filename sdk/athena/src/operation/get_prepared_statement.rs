@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_prepared_state
     }
 }
 
-pub use crate::operation::get_prepared_statement::_get_prepared_statement_output::GetPreparedStatementOutput;
-
 pub use crate::operation::get_prepared_statement::_get_prepared_statement_input::GetPreparedStatementInput;
+
+pub use crate::operation::get_prepared_statement::_get_prepared_statement_output::GetPreparedStatementOutput;
 
 mod _get_prepared_statement_input;
 

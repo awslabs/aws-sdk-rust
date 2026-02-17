@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_media_pipel
     }
 }
 
-pub use crate::operation::delete_media_pipeline::_delete_media_pipeline_output::DeleteMediaPipelineOutput;
-
 pub use crate::operation::delete_media_pipeline::_delete_media_pipeline_input::DeleteMediaPipelineInput;
+
+pub use crate::operation::delete_media_pipeline::_delete_media_pipeline_output::DeleteMediaPipelineOutput;
 
 mod _delete_media_pipeline_input;
 

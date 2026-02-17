@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configurati
     }
 }
 
-pub use crate::operation::update_configuration_set_tracking_options::_update_configuration_set_tracking_options_output::UpdateConfigurationSetTrackingOptionsOutput;
-
 pub use crate::operation::update_configuration_set_tracking_options::_update_configuration_set_tracking_options_input::UpdateConfigurationSetTrackingOptionsInput;
+
+pub use crate::operation::update_configuration_set_tracking_options::_update_configuration_set_tracking_options_output::UpdateConfigurationSetTrackingOptionsOutput;
 
 mod _update_configuration_set_tracking_options_input;
 

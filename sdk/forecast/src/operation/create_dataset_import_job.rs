@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dataset_imp
     }
 }
 
-pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_output::CreateDatasetImportJobOutput;
-
 pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_input::CreateDatasetImportJobInput;
+
+pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_output::CreateDatasetImportJobOutput;
 
 mod _create_dataset_import_job_input;
 

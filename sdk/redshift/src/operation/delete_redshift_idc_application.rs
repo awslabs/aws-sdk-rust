@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_redshift_id
     }
 }
 
-pub use crate::operation::delete_redshift_idc_application::_delete_redshift_idc_application_output::DeleteRedshiftIdcApplicationOutput;
-
 pub use crate::operation::delete_redshift_idc_application::_delete_redshift_idc_application_input::DeleteRedshiftIdcApplicationInput;
+
+pub use crate::operation::delete_redshift_idc_application::_delete_redshift_idc_application_output::DeleteRedshiftIdcApplicationOutput;
 
 mod _delete_redshift_idc_application_input;
 

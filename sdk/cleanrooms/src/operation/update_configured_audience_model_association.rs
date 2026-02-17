@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_configured_audience_model_association::_update_configured_audience_model_association_output::UpdateConfiguredAudienceModelAssociationOutput;
-
 pub use crate::operation::update_configured_audience_model_association::_update_configured_audience_model_association_input::UpdateConfiguredAudienceModelAssociationInput;
+
+pub use crate::operation::update_configured_audience_model_association::_update_configured_audience_model_association_output::UpdateConfiguredAudienceModelAssociationOutput;
 
 mod _update_configured_audience_model_association_input;
 

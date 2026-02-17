@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_status_m
     }
 }
 
-pub use crate::operation::get_query_status_monitor_top_contributors::_get_query_status_monitor_top_contributors_output::GetQueryStatusMonitorTopContributorsOutput;
-
 pub use crate::operation::get_query_status_monitor_top_contributors::_get_query_status_monitor_top_contributors_input::GetQueryStatusMonitorTopContributorsInput;
+
+pub use crate::operation::get_query_status_monitor_top_contributors::_get_query_status_monitor_top_contributors_output::GetQueryStatusMonitorTopContributorsOutput;
 
 mod _get_query_status_monitor_top_contributors_input;
 

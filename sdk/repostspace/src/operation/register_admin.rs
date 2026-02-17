@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_admin::Re
     }
 }
 
-pub use crate::operation::register_admin::_register_admin_output::RegisterAdminOutput;
-
 pub use crate::operation::register_admin::_register_admin_input::RegisterAdminInput;
+
+pub use crate::operation::register_admin::_register_admin_output::RegisterAdminOutput;
 
 mod _register_admin_input;
 

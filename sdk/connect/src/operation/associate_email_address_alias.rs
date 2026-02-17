@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_email_ad
     }
 }
 
-pub use crate::operation::associate_email_address_alias::_associate_email_address_alias_output::AssociateEmailAddressAliasOutput;
-
 pub use crate::operation::associate_email_address_alias::_associate_email_address_alias_input::AssociateEmailAddressAliasInput;
+
+pub use crate::operation::associate_email_address_alias::_associate_email_address_alias_output::AssociateEmailAddressAliasOutput;
 
 mod _associate_email_address_alias_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_raster_data
     }
 }
 
-pub use crate::operation::search_raster_data_collection::_search_raster_data_collection_output::SearchRasterDataCollectionOutput;
-
 pub use crate::operation::search_raster_data_collection::_search_raster_data_collection_input::SearchRasterDataCollectionInput;
+
+pub use crate::operation::search_raster_data_collection::_search_raster_data_collection_output::SearchRasterDataCollectionOutput;
 
 mod _search_raster_data_collection_input;
 

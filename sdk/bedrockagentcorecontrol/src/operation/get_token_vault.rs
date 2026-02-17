@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_token_vault::G
     }
 }
 
-pub use crate::operation::get_token_vault::_get_token_vault_output::GetTokenVaultOutput;
-
 pub use crate::operation::get_token_vault::_get_token_vault_input::GetTokenVaultInput;
+
+pub use crate::operation::get_token_vault::_get_token_vault_output::GetTokenVaultOutput;
 
 mod _get_token_vault_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_metadata_mod
     }
 }
 
-pub use crate::operation::start_metadata_model_export_to_target::_start_metadata_model_export_to_target_output::StartMetadataModelExportToTargetOutput;
-
 pub use crate::operation::start_metadata_model_export_to_target::_start_metadata_model_export_to_target_input::StartMetadataModelExportToTargetInput;
+
+pub use crate::operation::start_metadata_model_export_to_target::_start_metadata_model_export_to_target_output::StartMetadataModelExportToTargetOutput;
 
 mod _start_metadata_model_export_to_target_input;
 

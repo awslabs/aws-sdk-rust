@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_bridge_sources
     }
 }
 
-pub use crate::operation::add_bridge_sources::_add_bridge_sources_output::AddBridgeSourcesOutput;
-
 pub use crate::operation::add_bridge_sources::_add_bridge_sources_input::AddBridgeSourcesInput;
+
+pub use crate::operation::add_bridge_sources::_add_bridge_sources_output::AddBridgeSourcesOutput;
 
 mod _add_bridge_sources_input;
 

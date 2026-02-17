@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_workflow
     }
 }
 
-pub use crate::operation::terminate_workflow_execution::_terminate_workflow_execution_output::TerminateWorkflowExecutionOutput;
-
 pub use crate::operation::terminate_workflow_execution::_terminate_workflow_execution_input::TerminateWorkflowExecutionInput;
+
+pub use crate::operation::terminate_workflow_execution::_terminate_workflow_execution_output::TerminateWorkflowExecutionOutput;
 
 mod _terminate_workflow_execution_input;
 

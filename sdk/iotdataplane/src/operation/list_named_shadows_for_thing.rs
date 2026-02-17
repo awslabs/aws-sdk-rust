@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_named_shadows
     }
 }
 
-pub use crate::operation::list_named_shadows_for_thing::_list_named_shadows_for_thing_output::ListNamedShadowsForThingOutput;
-
 pub use crate::operation::list_named_shadows_for_thing::_list_named_shadows_for_thing_input::ListNamedShadowsForThingInput;
+
+pub use crate::operation::list_named_shadows_for_thing::_list_named_shadows_for_thing_output::ListNamedShadowsForThingOutput;
 
 mod _list_named_shadows_for_thing_input;
 

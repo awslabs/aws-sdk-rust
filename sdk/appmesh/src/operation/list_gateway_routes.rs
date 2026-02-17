@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_gateway_route
     }
 }
 
-pub use crate::operation::list_gateway_routes::_list_gateway_routes_output::ListGatewayRoutesOutput;
-
 pub use crate::operation::list_gateway_routes::_list_gateway_routes_input::ListGatewayRoutesInput;
+
+pub use crate::operation::list_gateway_routes::_list_gateway_routes_output::ListGatewayRoutesOutput;
 
 mod _list_gateway_routes_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_collaboration_trained_model_inference_jobs::_list_collaboration_trained_model_inference_jobs_output::ListCollaborationTrainedModelInferenceJobsOutput;
-
 pub use crate::operation::list_collaboration_trained_model_inference_jobs::_list_collaboration_trained_model_inference_jobs_input::ListCollaborationTrainedModelInferenceJobsInput;
+
+pub use crate::operation::list_collaboration_trained_model_inference_jobs::_list_collaboration_trained_model_inference_jobs_output::ListCollaborationTrainedModelInferenceJobsOutput;
 
 mod _list_collaboration_trained_model_inference_jobs_input;
 

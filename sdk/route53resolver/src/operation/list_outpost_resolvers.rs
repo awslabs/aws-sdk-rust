@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_outpost_resol
     }
 }
 
-pub use crate::operation::list_outpost_resolvers::_list_outpost_resolvers_output::ListOutpostResolversOutput;
-
 pub use crate::operation::list_outpost_resolvers::_list_outpost_resolvers_input::ListOutpostResolversInput;
+
+pub use crate::operation::list_outpost_resolvers::_list_outpost_resolvers_output::ListOutpostResolversOutput;
 
 mod _list_outpost_resolvers_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_princ
     }
 }
 
-pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_principal_from_portfolio_output::DisassociatePrincipalFromPortfolioOutput;
-
 pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_principal_from_portfolio_input::DisassociatePrincipalFromPortfolioInput;
+
+pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_principal_from_portfolio_output::DisassociatePrincipalFromPortfolioOutput;
 
 mod _disassociate_principal_from_portfolio_input;
 

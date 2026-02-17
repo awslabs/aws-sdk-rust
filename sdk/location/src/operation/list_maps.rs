@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_maps::ListMap
     }
 }
 
-pub use crate::operation::list_maps::_list_maps_output::ListMapsOutput;
-
 pub use crate::operation::list_maps::_list_maps_input::ListMapsInput;
+
+pub use crate::operation::list_maps::_list_maps_output::ListMapsOutput;
 
 mod _list_maps_input;
 

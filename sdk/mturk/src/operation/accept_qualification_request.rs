@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_qualificati
     }
 }
 
-pub use crate::operation::accept_qualification_request::_accept_qualification_request_output::AcceptQualificationRequestOutput;
-
 pub use crate::operation::accept_qualification_request::_accept_qualification_request_input::AcceptQualificationRequestInput;
+
+pub use crate::operation::accept_qualification_request::_accept_qualification_request_output::AcceptQualificationRequestOutput;
 
 mod _accept_qualification_request_input;
 

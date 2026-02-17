@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_shared_di
     }
 }
 
-pub use crate::operation::describe_shared_directories::_describe_shared_directories_output::DescribeSharedDirectoriesOutput;
-
 pub use crate::operation::describe_shared_directories::_describe_shared_directories_input::DescribeSharedDirectoriesInput;
+
+pub use crate::operation::describe_shared_directories::_describe_shared_directories_output::DescribeSharedDirectoriesOutput;
 
 mod _describe_shared_directories_input;
 

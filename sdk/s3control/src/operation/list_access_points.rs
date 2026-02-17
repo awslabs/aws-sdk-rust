@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_points
     }
 }
 
-pub use crate::operation::list_access_points::_list_access_points_output::ListAccessPointsOutput;
-
 pub use crate::operation::list_access_points::_list_access_points_input::ListAccessPointsInput;
+
+pub use crate::operation::list_access_points::_list_access_points_output::ListAccessPointsOutput;
 
 mod _list_access_points_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bundle_as
     }
 }
 
-pub use crate::operation::describe_bundle_associations::_describe_bundle_associations_output::DescribeBundleAssociationsOutput;
-
 pub use crate::operation::describe_bundle_associations::_describe_bundle_associations_input::DescribeBundleAssociationsInput;
+
+pub use crate::operation::describe_bundle_associations::_describe_bundle_associations_output::DescribeBundleAssociationsOutput;
 
 mod _describe_bundle_associations_input;
 

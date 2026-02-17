@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_unhealthy_node
     }
 }
 
-pub use crate::operation::set_unhealthy_node_replacement::_set_unhealthy_node_replacement_output::SetUnhealthyNodeReplacementOutput;
-
 pub use crate::operation::set_unhealthy_node_replacement::_set_unhealthy_node_replacement_input::SetUnhealthyNodeReplacementInput;
+
+pub use crate::operation::set_unhealthy_node_replacement::_set_unhealthy_node_replacement_output::SetUnhealthyNodeReplacementOutput;
 
 mod _set_unhealthy_node_replacement_input;
 

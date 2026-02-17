@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scheduled_a
     }
 }
 
-pub use crate::operation::delete_scheduled_audit::_delete_scheduled_audit_output::DeleteScheduledAuditOutput;
-
 pub use crate::operation::delete_scheduled_audit::_delete_scheduled_audit_input::DeleteScheduledAuditInput;
+
+pub use crate::operation::delete_scheduled_audit::_delete_scheduled_audit_output::DeleteScheduledAuditOutput;
 
 mod _delete_scheduled_audit_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_dev_environm
     }
 }
 
-pub use crate::operation::start_dev_environment::_start_dev_environment_output::StartDevEnvironmentOutput;
-
 pub use crate::operation::start_dev_environment::_start_dev_environment_input::StartDevEnvironmentInput;
+
+pub use crate::operation::start_dev_environment::_start_dev_environment_output::StartDevEnvironmentOutput;
 
 mod _start_dev_environment_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_quick_respons
     }
 }
 
-pub use crate::operation::list_quick_responses::_list_quick_responses_output::ListQuickResponsesOutput;
-
 pub use crate::operation::list_quick_responses::_list_quick_responses_input::ListQuickResponsesInput;
+
+pub use crate::operation::list_quick_responses::_list_quick_responses_output::ListQuickResponsesOutput;
 
 mod _list_quick_responses_input;
 

@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_session_embed_
     }
 }
 
-pub use crate::operation::get_session_embed_url::_get_session_embed_url_output::GetSessionEmbedUrlOutput;
-
 pub use crate::operation::get_session_embed_url::_get_session_embed_url_input::GetSessionEmbedUrlInput;
+
+pub use crate::operation::get_session_embed_url::_get_session_embed_url_output::GetSessionEmbedUrlOutput;
 
 mod _get_session_embed_url_input;
 

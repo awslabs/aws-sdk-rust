@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_place
     }
 }
 
-pub use crate::operation::list_channel_placement_groups::_list_channel_placement_groups_output::ListChannelPlacementGroupsOutput;
-
 pub use crate::operation::list_channel_placement_groups::_list_channel_placement_groups_input::ListChannelPlacementGroupsInput;
+
+pub use crate::operation::list_channel_placement_groups::_list_channel_placement_groups_output::ListChannelPlacementGroupsOutput;
 
 mod _list_channel_placement_groups_input;
 

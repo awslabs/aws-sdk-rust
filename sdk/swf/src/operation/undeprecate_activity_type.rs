@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::undeprecate_activi
     }
 }
 
-pub use crate::operation::undeprecate_activity_type::_undeprecate_activity_type_output::UndeprecateActivityTypeOutput;
-
 pub use crate::operation::undeprecate_activity_type::_undeprecate_activity_type_input::UndeprecateActivityTypeInput;
+
+pub use crate::operation::undeprecate_activity_type::_undeprecate_activity_type_output::UndeprecateActivityTypeOutput;
 
 mod _undeprecate_activity_type_input;
 

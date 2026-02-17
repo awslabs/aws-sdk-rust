@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_knowledge_bas
     }
 }
 
-pub use crate::operation::list_knowledge_bases::_list_knowledge_bases_output::ListKnowledgeBasesOutput;
-
 pub use crate::operation::list_knowledge_bases::_list_knowledge_bases_input::ListKnowledgeBasesInput;
+
+pub use crate::operation::list_knowledge_bases::_list_knowledge_bases_output::ListKnowledgeBasesOutput;
 
 mod _list_knowledge_bases_input;
 

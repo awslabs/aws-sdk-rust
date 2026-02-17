@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_global_tabl
     }
 }
 
-pub use crate::operation::create_global_table::_create_global_table_output::CreateGlobalTableOutput;
-
 pub use crate::operation::create_global_table::_create_global_table_input::CreateGlobalTableInput;
+
+pub use crate::operation::create_global_table::_create_global_table_output::CreateGlobalTableOutput;
 
 mod _create_global_table_input;
 

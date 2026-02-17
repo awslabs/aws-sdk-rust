@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_versions::GetV
     }
 }
 
-pub use crate::operation::get_versions::_get_versions_output::GetVersionsOutput;
-
 pub use crate::operation::get_versions::_get_versions_input::GetVersionsInput;
+
+pub use crate::operation::get_versions::_get_versions_output::GetVersionsOutput;
 
 mod _get_versions_input;
 

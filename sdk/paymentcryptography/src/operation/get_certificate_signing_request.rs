@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_certificate_si
     }
 }
 
-pub use crate::operation::get_certificate_signing_request::_get_certificate_signing_request_output::GetCertificateSigningRequestOutput;
-
 pub use crate::operation::get_certificate_signing_request::_get_certificate_signing_request_input::GetCertificateSigningRequestInput;
+
+pub use crate::operation::get_certificate_signing_request::_get_certificate_signing_request_output::GetCertificateSigningRequestOutput;
 
 mod _get_certificate_signing_request_input;
 

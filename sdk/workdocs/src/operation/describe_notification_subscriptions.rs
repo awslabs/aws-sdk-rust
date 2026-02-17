@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_notificat
     }
 }
 
-pub use crate::operation::describe_notification_subscriptions::_describe_notification_subscriptions_output::DescribeNotificationSubscriptionsOutput;
-
 pub use crate::operation::describe_notification_subscriptions::_describe_notification_subscriptions_input::DescribeNotificationSubscriptionsInput;
+
+pub use crate::operation::describe_notification_subscriptions::_describe_notification_subscriptions_output::DescribeNotificationSubscriptionsOutput;
 
 mod _describe_notification_subscriptions_input;
 

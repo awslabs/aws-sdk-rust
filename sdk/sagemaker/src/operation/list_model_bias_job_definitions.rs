@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_bias_jo
     }
 }
 
-pub use crate::operation::list_model_bias_job_definitions::_list_model_bias_job_definitions_output::ListModelBiasJobDefinitionsOutput;
-
 pub use crate::operation::list_model_bias_job_definitions::_list_model_bias_job_definitions_input::ListModelBiasJobDefinitionsInput;
+
+pub use crate::operation::list_model_bias_job_definitions::_list_model_bias_job_definitions_output::ListModelBiasJobDefinitionsOutput;
 
 mod _list_model_bias_job_definitions_input;
 

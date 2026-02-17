@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_change_token_s
     }
 }
 
-pub use crate::operation::get_change_token_status::_get_change_token_status_output::GetChangeTokenStatusOutput;
-
 pub use crate::operation::get_change_token_status::_get_change_token_status_input::GetChangeTokenStatusInput;
+
+pub use crate::operation::get_change_token_status::_get_change_token_status_output::GetChangeTokenStatusOutput;
 
 mod _get_change_token_status_input;
 

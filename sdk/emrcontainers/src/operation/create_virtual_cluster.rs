@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_virtual_clu
     }
 }
 
-pub use crate::operation::create_virtual_cluster::_create_virtual_cluster_output::CreateVirtualClusterOutput;
-
 pub use crate::operation::create_virtual_cluster::_create_virtual_cluster_input::CreateVirtualClusterInput;
+
+pub use crate::operation::create_virtual_cluster::_create_virtual_cluster_output::CreateVirtualClusterOutput;
 
 mod _create_virtual_cluster_input;
 

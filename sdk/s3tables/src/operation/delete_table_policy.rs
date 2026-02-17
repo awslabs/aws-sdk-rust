@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_table_polic
     }
 }
 
-pub use crate::operation::delete_table_policy::_delete_table_policy_output::DeleteTablePolicyOutput;
-
 pub use crate::operation::delete_table_policy::_delete_table_policy_input::DeleteTablePolicyInput;
+
+pub use crate::operation::delete_table_policy::_delete_table_policy_output::DeleteTablePolicyOutput;
 
 mod _delete_table_policy_input;
 

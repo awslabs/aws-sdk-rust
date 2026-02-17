@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aggregate_reso
     }
 }
 
-pub use crate::operation::get_aggregate_resource_config::_get_aggregate_resource_config_output::GetAggregateResourceConfigOutput;
-
 pub use crate::operation::get_aggregate_resource_config::_get_aggregate_resource_config_input::GetAggregateResourceConfigInput;
+
+pub use crate::operation::get_aggregate_resource_config::_get_aggregate_resource_config_output::GetAggregateResourceConfigOutput;
 
 mod _get_aggregate_resource_config_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_last_a
     }
 }
 
-pub use crate::operation::get_service_last_accessed_details::_get_service_last_accessed_details_output::GetServiceLastAccessedDetailsOutput;
-
 pub use crate::operation::get_service_last_accessed_details::_get_service_last_accessed_details_input::GetServiceLastAccessedDetailsInput;
+
+pub use crate::operation::get_service_last_accessed_details::_get_service_last_accessed_details_output::GetServiceLastAccessedDetailsOutput;
 
 mod _get_service_last_accessed_details_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_configuratio
     }
 }
 
-pub use crate::operation::start_configuration_checks::_start_configuration_checks_output::StartConfigurationChecksOutput;
-
 pub use crate::operation::start_configuration_checks::_start_configuration_checks_input::StartConfigurationChecksInput;
+
+pub use crate::operation::start_configuration_checks::_start_configuration_checks_output::StartConfigurationChecksOutput;
 
 mod _start_configuration_checks_input;
 

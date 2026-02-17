@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_requester_g
     }
 }
 
-pub use crate::operation::create_requester_gateway::_create_requester_gateway_output::CreateRequesterGatewayOutput;
-
 pub use crate::operation::create_requester_gateway::_create_requester_gateway_input::CreateRequesterGatewayInput;
+
+pub use crate::operation::create_requester_gateway::_create_requester_gateway_output::CreateRequesterGatewayOutput;
 
 mod _create_requester_gateway_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_computation_model_execution_summary::_describe_computation_model_execution_summary_output::DescribeComputationModelExecutionSummaryOutput;
-
 pub use crate::operation::describe_computation_model_execution_summary::_describe_computation_model_execution_summary_input::DescribeComputationModelExecutionSummaryInput;
+
+pub use crate::operation::describe_computation_model_execution_summary::_describe_computation_model_execution_summary_output::DescribeComputationModelExecutionSummaryOutput;
 
 mod _describe_computation_model_execution_summary_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_open_id_connec
     }
 }
 
-pub use crate::operation::get_open_id_connect_provider::_get_open_id_connect_provider_output::GetOpenIdConnectProviderOutput;
-
 pub use crate::operation::get_open_id_connect_provider::_get_open_id_connect_provider_input::GetOpenIdConnectProviderInput;
+
+pub use crate::operation::get_open_id_connect_provider::_get_open_id_connect_provider_output::GetOpenIdConnectProviderOutput;
 
 mod _get_open_id_connect_provider_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_security_co
     }
 }
 
-pub use crate::operation::delete_security_configuration::_delete_security_configuration_output::DeleteSecurityConfigurationOutput;
-
 pub use crate::operation::delete_security_configuration::_delete_security_configuration_input::DeleteSecurityConfigurationInput;
+
+pub use crate::operation::delete_security_configuration::_delete_security_configuration_output::DeleteSecurityConfigurationOutput;
 
 mod _delete_security_configuration_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_task_contact
     }
 }
 
-pub use crate::operation::start_task_contact::_start_task_contact_output::StartTaskContactOutput;
-
 pub use crate::operation::start_task_contact::_start_task_contact_input::StartTaskContactInput;
+
+pub use crate::operation::start_task_contact::_start_task_contact_output::StartTaskContactOutput;
 
 mod _start_task_contact_input;
 

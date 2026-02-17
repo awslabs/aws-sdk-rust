@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_message_move
     }
 }
 
-pub use crate::operation::start_message_move_task::_start_message_move_task_output::StartMessageMoveTaskOutput;
-
 pub use crate::operation::start_message_move_task::_start_message_move_task_input::StartMessageMoveTaskInput;
+
+pub use crate::operation::start_message_move_task::_start_message_move_task_output::StartMessageMoveTaskOutput;
 
 mod _start_message_move_task_input;
 

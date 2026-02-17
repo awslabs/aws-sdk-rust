@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purge_queue::Purge
     }
 }
 
-pub use crate::operation::purge_queue::_purge_queue_output::PurgeQueueOutput;
-
 pub use crate::operation::purge_queue::_purge_queue_input::PurgeQueueInput;
+
+pub use crate::operation::purge_queue::_purge_queue_output::PurgeQueueOutput;
 
 mod _purge_queue_input;
 

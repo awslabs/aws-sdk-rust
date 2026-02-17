@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_aggregate_log
     }
 }
 
-pub use crate::operation::list_aggregate_log_group_summaries::_list_aggregate_log_group_summaries_output::ListAggregateLogGroupSummariesOutput;
-
 pub use crate::operation::list_aggregate_log_group_summaries::_list_aggregate_log_group_summaries_input::ListAggregateLogGroupSummariesInput;
+
+pub use crate::operation::list_aggregate_log_group_summaries::_list_aggregate_log_group_summaries_output::ListAggregateLogGroupSummariesOutput;
 
 mod _list_aggregate_log_group_summaries_input;
 

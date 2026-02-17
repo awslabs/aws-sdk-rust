@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_view::Creat
     }
 }
 
-pub use crate::operation::create_view::_create_view_output::CreateViewOutput;
-
 pub use crate::operation::create_view::_create_view_input::CreateViewInput;
+
+pub use crate::operation::create_view::_create_view_output::CreateViewOutput;
 
 mod _create_view_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lambda_functio
     }
 }
 
-pub use crate::operation::get_lambda_function_recommendations::_get_lambda_function_recommendations_output::GetLambdaFunctionRecommendationsOutput;
-
 pub use crate::operation::get_lambda_function_recommendations::_get_lambda_function_recommendations_input::GetLambdaFunctionRecommendationsInput;
+
+pub use crate::operation::get_lambda_function_recommendations::_get_lambda_function_recommendations_output::GetLambdaFunctionRecommendationsOutput;
 
 mod _get_lambda_function_recommendations_input;
 

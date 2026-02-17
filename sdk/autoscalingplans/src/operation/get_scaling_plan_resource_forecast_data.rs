@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scaling_plan_r
     }
 }
 
-pub use crate::operation::get_scaling_plan_resource_forecast_data::_get_scaling_plan_resource_forecast_data_output::GetScalingPlanResourceForecastDataOutput;
-
 pub use crate::operation::get_scaling_plan_resource_forecast_data::_get_scaling_plan_resource_forecast_data_input::GetScalingPlanResourceForecastDataInput;
+
+pub use crate::operation::get_scaling_plan_resource_forecast_data::_get_scaling_plan_resource_forecast_data_output::GetScalingPlanResourceForecastDataOutput;
 
 mod _get_scaling_plan_resource_forecast_data_input;
 

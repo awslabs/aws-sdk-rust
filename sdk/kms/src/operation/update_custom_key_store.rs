@@ -552,9 +552,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_key_
     }
 }
 
-pub use crate::operation::update_custom_key_store::_update_custom_key_store_output::UpdateCustomKeyStoreOutput;
-
 pub use crate::operation::update_custom_key_store::_update_custom_key_store_input::UpdateCustomKeyStoreInput;
+
+pub use crate::operation::update_custom_key_store::_update_custom_key_store_output::UpdateCustomKeyStoreOutput;
 
 mod _update_custom_key_store_input;
 

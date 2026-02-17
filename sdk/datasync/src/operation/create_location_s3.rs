@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_s3
     }
 }
 
-pub use crate::operation::create_location_s3::_create_location_s3_output::CreateLocationS3Output;
-
 pub use crate::operation::create_location_s3::_create_location_s3_input::CreateLocationS3Input;
+
+pub use crate::operation::create_location_s3::_create_location_s3_output::CreateLocationS3Output;
 
 mod _create_location_s3_input;
 

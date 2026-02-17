@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_discovere
     }
 }
 
-pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discovered_resource_cidrs_output::GetIpamDiscoveredResourceCidrsOutput;
-
 pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discovered_resource_cidrs_input::GetIpamDiscoveredResourceCidrsInput;
+
+pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discovered_resource_cidrs_output::GetIpamDiscoveredResourceCidrsOutput;
 
 mod _get_ipam_discovered_resource_cidrs_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_centralization_rules_for_organization::_list_centralization_rules_for_organization_output::ListCentralizationRulesForOrganizationOutput;
-
 pub use crate::operation::list_centralization_rules_for_organization::_list_centralization_rules_for_organization_input::ListCentralizationRulesForOrganizationInput;
+
+pub use crate::operation::list_centralization_rules_for_organization::_list_centralization_rules_for_organization_output::ListCentralizationRulesForOrganizationOutput;
 
 mod _list_centralization_rules_for_organization_input;
 

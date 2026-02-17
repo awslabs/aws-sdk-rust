@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_core_defini
     }
 }
 
-pub use crate::operation::create_core_definition::_create_core_definition_output::CreateCoreDefinitionOutput;
-
 pub use crate::operation::create_core_definition::_create_core_definition_input::CreateCoreDefinitionInput;
+
+pub use crate::operation::create_core_definition::_create_core_definition_output::CreateCoreDefinitionOutput;
 
 mod _create_core_definition_input;
 

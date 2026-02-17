@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pricing_pla
     }
 }
 
-pub use crate::operation::create_pricing_plan::_create_pricing_plan_output::CreatePricingPlanOutput;
-
 pub use crate::operation::create_pricing_plan::_create_pricing_plan_input::CreatePricingPlanInput;
+
+pub use crate::operation::create_pricing_plan::_create_pricing_plan_output::CreatePricingPlanOutput;
 
 mod _create_pricing_plan_input;
 

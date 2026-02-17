@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configurati
     }
 }
 
-pub use crate::operation::delete_configuration_aggregator::_delete_configuration_aggregator_output::DeleteConfigurationAggregatorOutput;
-
 pub use crate::operation::delete_configuration_aggregator::_delete_configuration_aggregator_input::DeleteConfigurationAggregatorInput;
+
+pub use crate::operation::delete_configuration_aggregator::_delete_configuration_aggregator_output::DeleteConfigurationAggregatorOutput;
 
 mod _delete_configuration_aggregator_input;
 

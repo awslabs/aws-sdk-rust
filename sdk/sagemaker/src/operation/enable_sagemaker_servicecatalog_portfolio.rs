@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_sagemaker_s
     }
 }
 
-pub use crate::operation::enable_sagemaker_servicecatalog_portfolio::_enable_sagemaker_servicecatalog_portfolio_output::EnableSagemakerServicecatalogPortfolioOutput;
-
 pub use crate::operation::enable_sagemaker_servicecatalog_portfolio::_enable_sagemaker_servicecatalog_portfolio_input::EnableSagemakerServicecatalogPortfolioInput;
+
+pub use crate::operation::enable_sagemaker_servicecatalog_portfolio::_enable_sagemaker_servicecatalog_portfolio_output::EnableSagemakerServicecatalogPortfolioOutput;
 
 mod _enable_sagemaker_servicecatalog_portfolio_input;
 

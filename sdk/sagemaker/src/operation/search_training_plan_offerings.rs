@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_training_pl
     }
 }
 
-pub use crate::operation::search_training_plan_offerings::_search_training_plan_offerings_output::SearchTrainingPlanOfferingsOutput;
-
 pub use crate::operation::search_training_plan_offerings::_search_training_plan_offerings_input::SearchTrainingPlanOfferingsInput;
+
+pub use crate::operation::search_training_plan_offerings::_search_training_plan_offerings_output::SearchTrainingPlanOfferingsOutput;
 
 mod _search_training_plan_offerings_input;
 

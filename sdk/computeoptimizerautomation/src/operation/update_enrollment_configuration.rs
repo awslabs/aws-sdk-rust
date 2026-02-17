@@ -475,9 +475,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_enrollment_
     }
 }
 
-pub use crate::operation::update_enrollment_configuration::_update_enrollment_configuration_output::UpdateEnrollmentConfigurationOutput;
-
 pub use crate::operation::update_enrollment_configuration::_update_enrollment_configuration_input::UpdateEnrollmentConfigurationInput;
+
+pub use crate::operation::update_enrollment_configuration::_update_enrollment_configuration_output::UpdateEnrollmentConfigurationOutput;
 
 mod _update_enrollment_configuration_input;
 

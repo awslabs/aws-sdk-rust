@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_feature_t
     }
 }
 
-pub use crate::operation::describe_feature_transformation::_describe_feature_transformation_output::DescribeFeatureTransformationOutput;
-
 pub use crate::operation::describe_feature_transformation::_describe_feature_transformation_input::DescribeFeatureTransformationInput;
+
+pub use crate::operation::describe_feature_transformation::_describe_feature_transformation_output::DescribeFeatureTransformationOutput;
 
 mod _describe_feature_transformation_input;
 

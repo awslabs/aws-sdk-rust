@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_wave::Creat
     }
 }
 
-pub use crate::operation::create_wave::_create_wave_output::CreateWaveOutput;
-
 pub use crate::operation::create_wave::_create_wave_input::CreateWaveInput;
+
+pub use crate::operation::create_wave::_create_wave_output::CreateWaveOutput;
 
 mod _create_wave_input;
 

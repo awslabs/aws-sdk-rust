@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ca_certific
     }
 }
 
-pub use crate::operation::update_ca_certificate::_update_ca_certificate_output::UpdateCaCertificateOutput;
-
 pub use crate::operation::update_ca_certificate::_update_ca_certificate_input::UpdateCaCertificateInput;
+
+pub use crate::operation::update_ca_certificate::_update_ca_certificate_output::UpdateCaCertificateOutput;
 
 mod _update_ca_certificate_input;
 

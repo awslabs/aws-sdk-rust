@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_enti
     }
 }
 
-pub use crate::operation::delete_custom_entity_type::_delete_custom_entity_type_output::DeleteCustomEntityTypeOutput;
-
 pub use crate::operation::delete_custom_entity_type::_delete_custom_entity_type_input::DeleteCustomEntityTypeInput;
+
+pub use crate::operation::delete_custom_entity_type::_delete_custom_entity_type_output::DeleteCustomEntityTypeOutput;
 
 mod _delete_custom_entity_type_input;
 

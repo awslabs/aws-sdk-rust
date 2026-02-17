@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_test_set::U
     }
 }
 
-pub use crate::operation::update_test_set::_update_test_set_output::UpdateTestSetOutput;
-
 pub use crate::operation::update_test_set::_update_test_set_input::UpdateTestSetInput;
+
+pub use crate::operation::update_test_set::_update_test_set_output::UpdateTestSetOutput;
 
 mod _update_test_set_input;
 

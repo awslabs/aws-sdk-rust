@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_lakes::L
     }
 }
 
-pub use crate::operation::list_data_lakes::_list_data_lakes_output::ListDataLakesOutput;
-
 pub use crate::operation::list_data_lakes::_list_data_lakes_input::ListDataLakesInput;
+
+pub use crate::operation::list_data_lakes::_list_data_lakes_output::ListDataLakesOutput;
 
 mod _list_data_lakes_input;
 

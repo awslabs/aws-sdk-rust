@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::chat::ChatError {
     }
 }
 
-pub use crate::operation::chat::_chat_output::ChatOutput;
-
 pub use crate::operation::chat::_chat_input::ChatInput;
+
+pub use crate::operation::chat::_chat_output::ChatOutput;
 
 mod _chat_input;
 

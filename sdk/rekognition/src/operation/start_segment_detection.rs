@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_segment_dete
     }
 }
 
-pub use crate::operation::start_segment_detection::_start_segment_detection_output::StartSegmentDetectionOutput;
-
 pub use crate::operation::start_segment_detection::_start_segment_detection_input::StartSegmentDetectionInput;
+
+pub use crate::operation::start_segment_detection::_start_segment_detection_output::StartSegmentDetectionOutput;
 
 mod _start_segment_detection_input;
 

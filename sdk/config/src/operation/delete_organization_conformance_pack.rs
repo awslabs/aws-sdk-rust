@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_organizatio
     }
 }
 
-pub use crate::operation::delete_organization_conformance_pack::_delete_organization_conformance_pack_output::DeleteOrganizationConformancePackOutput;
-
 pub use crate::operation::delete_organization_conformance_pack::_delete_organization_conformance_pack_input::DeleteOrganizationConformancePackInput;
+
+pub use crate::operation::delete_organization_conformance_pack::_delete_organization_conformance_pack_output::DeleteOrganizationConformancePackOutput;
 
 mod _delete_organization_conformance_pack_input;
 

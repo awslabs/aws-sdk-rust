@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_ass
     }
 }
 
-pub use crate::operation::delete_account_assignment::_delete_account_assignment_output::DeleteAccountAssignmentOutput;
-
 pub use crate::operation::delete_account_assignment::_delete_account_assignment_input::DeleteAccountAssignmentInput;
+
+pub use crate::operation::delete_account_assignment::_delete_account_assignment_output::DeleteAccountAssignmentOutput;
 
 mod _delete_account_assignment_input;
 

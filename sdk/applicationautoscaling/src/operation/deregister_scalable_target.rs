@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_scalabl
     }
 }
 
-pub use crate::operation::deregister_scalable_target::_deregister_scalable_target_output::DeregisterScalableTargetOutput;
-
 pub use crate::operation::deregister_scalable_target::_deregister_scalable_target_input::DeregisterScalableTargetInput;
+
+pub use crate::operation::deregister_scalable_target::_deregister_scalable_target_output::DeregisterScalableTargetOutput;
 
 mod _deregister_scalable_target_input;
 

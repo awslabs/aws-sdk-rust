@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_product_
     }
 }
 
-pub use crate::operation::list_data_product_revisions::_list_data_product_revisions_output::ListDataProductRevisionsOutput;
-
 pub use crate::operation::list_data_product_revisions::_list_data_product_revisions_input::ListDataProductRevisionsInput;
+
+pub use crate::operation::list_data_product_revisions::_list_data_product_revisions_output::ListDataProductRevisionsOutput;
 
 mod _list_data_product_revisions_input;
 

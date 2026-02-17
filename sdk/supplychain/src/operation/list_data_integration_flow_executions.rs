@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_integrat
     }
 }
 
-pub use crate::operation::list_data_integration_flow_executions::_list_data_integration_flow_executions_output::ListDataIntegrationFlowExecutionsOutput;
-
 pub use crate::operation::list_data_integration_flow_executions::_list_data_integration_flow_executions_input::ListDataIntegrationFlowExecutionsInput;
+
+pub use crate::operation::list_data_integration_flow_executions::_list_data_integration_flow_executions_output::ListDataIntegrationFlowExecutionsOutput;
 
 mod _list_data_integration_flow_executions_input;
 

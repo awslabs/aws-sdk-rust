@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_service_job
     }
 }
 
-pub use crate::operation::submit_service_job::_submit_service_job_output::SubmitServiceJobOutput;
-
 pub use crate::operation::submit_service_job::_submit_service_job_input::SubmitServiceJobInput;
+
+pub use crate::operation::submit_service_job::_submit_service_job_output::SubmitServiceJobOutput;
 
 mod _submit_service_job_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_applied_schema
     }
 }
 
-pub use crate::operation::get_applied_schema_version::_get_applied_schema_version_output::GetAppliedSchemaVersionOutput;
-
 pub use crate::operation::get_applied_schema_version::_get_applied_schema_version_input::GetAppliedSchemaVersionInput;
+
+pub use crate::operation::get_applied_schema_version::_get_applied_schema_version_output::GetAppliedSchemaVersionOutput;
 
 mod _get_applied_schema_version_input;
 

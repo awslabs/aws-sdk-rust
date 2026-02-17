@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hosts::ListHo
     }
 }
 
-pub use crate::operation::list_hosts::_list_hosts_output::ListHostsOutput;
-
 pub use crate::operation::list_hosts::_list_hosts_input::ListHostsInput;
+
+pub use crate::operation::list_hosts::_list_hosts_output::ListHostsOutput;
 
 mod _list_hosts_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_entities_v2
     }
 }
 
-pub use crate::operation::detect_entities_v2::_detect_entities_v2_output::DetectEntitiesV2Output;
-
 pub use crate::operation::detect_entities_v2::_detect_entities_v2_input::DetectEntitiesV2Input;
+
+pub use crate::operation::detect_entities_v2::_detect_entities_v2_output::DetectEntitiesV2Output;
 
 mod _detect_entities_v2_input;
 

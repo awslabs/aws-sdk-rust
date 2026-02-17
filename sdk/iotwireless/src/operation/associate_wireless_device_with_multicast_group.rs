@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_wireless_device_with_multicast_group::_associate_wireless_device_with_multicast_group_output::AssociateWirelessDeviceWithMulticastGroupOutput;
-
 pub use crate::operation::associate_wireless_device_with_multicast_group::_associate_wireless_device_with_multicast_group_input::AssociateWirelessDeviceWithMulticastGroupInput;
+
+pub use crate::operation::associate_wireless_device_with_multicast_group::_associate_wireless_device_with_multicast_group_output::AssociateWirelessDeviceWithMulticastGroupOutput;
 
 mod _associate_wireless_device_with_multicast_group_input;
 

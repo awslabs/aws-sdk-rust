@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_serial_cons
     }
 }
 
-pub use crate::operation::enable_serial_console_access::_enable_serial_console_access_output::EnableSerialConsoleAccessOutput;
-
 pub use crate::operation::enable_serial_console_access::_enable_serial_console_access_input::EnableSerialConsoleAccessInput;
+
+pub use crate::operation::enable_serial_console_access::_enable_serial_console_access_output::EnableSerialConsoleAccessOutput;
 
 mod _enable_serial_console_access_input;
 

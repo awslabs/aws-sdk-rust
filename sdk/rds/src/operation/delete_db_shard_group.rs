@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_shard_gr
     }
 }
 
-pub use crate::operation::delete_db_shard_group::_delete_db_shard_group_output::DeleteDbShardGroupOutput;
-
 pub use crate::operation::delete_db_shard_group::_delete_db_shard_group_input::DeleteDbShardGroupInput;
+
+pub use crate::operation::delete_db_shard_group::_delete_db_shard_group_output::DeleteDbShardGroupOutput;
 
 mod _delete_db_shard_group_input;
 

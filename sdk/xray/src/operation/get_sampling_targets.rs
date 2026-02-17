@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sampling_targe
     }
 }
 
-pub use crate::operation::get_sampling_targets::_get_sampling_targets_output::GetSamplingTargetsOutput;
-
 pub use crate::operation::get_sampling_targets::_get_sampling_targets_input::GetSamplingTargetsInput;
+
+pub use crate::operation::get_sampling_targets::_get_sampling_targets_output::GetSamplingTargetsOutput;
 
 mod _get_sampling_targets_input;
 

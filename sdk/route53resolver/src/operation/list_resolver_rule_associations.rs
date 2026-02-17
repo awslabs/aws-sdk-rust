@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolver_rule
     }
 }
 
-pub use crate::operation::list_resolver_rule_associations::_list_resolver_rule_associations_output::ListResolverRuleAssociationsOutput;
-
 pub use crate::operation::list_resolver_rule_associations::_list_resolver_rule_associations_input::ListResolverRuleAssociationsInput;
+
+pub use crate::operation::list_resolver_rule_associations::_list_resolver_rule_associations_output::ListResolverRuleAssociationsOutput;
 
 mod _list_resolver_rule_associations_input;
 

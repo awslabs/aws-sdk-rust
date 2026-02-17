@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_notebook::I
     }
 }
 
-pub use crate::operation::import_notebook::_import_notebook_output::ImportNotebookOutput;
-
 pub use crate::operation::import_notebook::_import_notebook_input::ImportNotebookInput;
+
+pub use crate::operation::import_notebook::_import_notebook_output::ImportNotebookOutput;
 
 mod _import_notebook_input;
 

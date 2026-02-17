@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_suggester
     }
 }
 
-pub use crate::operation::describe_suggesters::_describe_suggesters_output::DescribeSuggestersOutput;
-
 pub use crate::operation::describe_suggesters::_describe_suggesters_input::DescribeSuggestersInput;
+
+pub use crate::operation::describe_suggesters::_describe_suggesters_output::DescribeSuggestersOutput;
 
 mod _describe_suggesters_input;
 

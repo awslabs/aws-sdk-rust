@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_deployment:
     }
 }
 
-pub use crate::operation::delete_deployment::_delete_deployment_output::DeleteDeploymentOutput;
-
 pub use crate::operation::delete_deployment::_delete_deployment_input::DeleteDeploymentInput;
+
+pub use crate::operation::delete_deployment::_delete_deployment_output::DeleteDeploymentOutput;
 
 mod _delete_deployment_input;
 

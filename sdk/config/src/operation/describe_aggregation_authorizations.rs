@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_aggregati
     }
 }
 
-pub use crate::operation::describe_aggregation_authorizations::_describe_aggregation_authorizations_output::DescribeAggregationAuthorizationsOutput;
-
 pub use crate::operation::describe_aggregation_authorizations::_describe_aggregation_authorizations_input::DescribeAggregationAuthorizationsInput;
+
+pub use crate::operation::describe_aggregation_authorizations::_describe_aggregation_authorizations_output::DescribeAggregationAuthorizationsOutput;
 
 mod _describe_aggregation_authorizations_input;
 

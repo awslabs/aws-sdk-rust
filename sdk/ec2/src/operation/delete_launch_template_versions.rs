@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_launch_temp
     }
 }
 
-pub use crate::operation::delete_launch_template_versions::_delete_launch_template_versions_output::DeleteLaunchTemplateVersionsOutput;
-
 pub use crate::operation::delete_launch_template_versions::_delete_launch_template_versions_input::DeleteLaunchTemplateVersionsInput;
+
+pub use crate::operation::delete_launch_template_versions::_delete_launch_template_versions_output::DeleteLaunchTemplateVersionsOutput;
 
 mod _delete_launch_template_versions_input;
 

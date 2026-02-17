@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dev_endpoint::
     }
 }
 
-pub use crate::operation::get_dev_endpoint::_get_dev_endpoint_output::GetDevEndpointOutput;
-
 pub use crate::operation::get_dev_endpoint::_get_dev_endpoint_input::GetDevEndpointInput;
+
+pub use crate::operation::get_dev_endpoint::_get_dev_endpoint_output::GetDevEndpointOutput;
 
 mod _get_dev_endpoint_input;
 

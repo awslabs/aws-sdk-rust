@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_state::G
     }
 }
 
-pub use crate::operation::get_query_state::_get_query_state_output::GetQueryStateOutput;
-
 pub use crate::operation::get_query_state::_get_query_state_input::GetQueryStateInput;
+
+pub use crate::operation::get_query_state::_get_query_state_output::GetQueryStateOutput;
 
 mod _get_query_state_input;
 

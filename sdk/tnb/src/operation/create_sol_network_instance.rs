@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sol_network
     }
 }
 
-pub use crate::operation::create_sol_network_instance::_create_sol_network_instance_output::CreateSolNetworkInstanceOutput;
-
 pub use crate::operation::create_sol_network_instance::_create_sol_network_instance_input::CreateSolNetworkInstanceInput;
+
+pub use crate::operation::create_sol_network_instance::_create_sol_network_instance_output::CreateSolNetworkInstanceOutput;
 
 mod _create_sol_network_instance_input;
 

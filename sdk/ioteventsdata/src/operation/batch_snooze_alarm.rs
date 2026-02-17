@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_snooze_alarm
     }
 }
 
-pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_output::BatchSnoozeAlarmOutput;
-
 pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_input::BatchSnoozeAlarmInput;
+
+pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_output::BatchSnoozeAlarmOutput;
 
 mod _batch_snooze_alarm_input;
 

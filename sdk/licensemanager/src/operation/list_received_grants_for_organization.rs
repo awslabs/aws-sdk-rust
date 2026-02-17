@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_received_gran
     }
 }
 
-pub use crate::operation::list_received_grants_for_organization::_list_received_grants_for_organization_output::ListReceivedGrantsForOrganizationOutput;
-
 pub use crate::operation::list_received_grants_for_organization::_list_received_grants_for_organization_input::ListReceivedGrantsForOrganizationInput;
+
+pub use crate::operation::list_received_grants_for_organization::_list_received_grants_for_organization_output::ListReceivedGrantsForOrganizationOutput;
 
 mod _list_received_grants_for_organization_input;
 

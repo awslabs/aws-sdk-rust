@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_license_usage:
     }
 }
 
-pub use crate::operation::get_license_usage::_get_license_usage_output::GetLicenseUsageOutput;
-
 pub use crate::operation::get_license_usage::_get_license_usage_input::GetLicenseUsageInput;
+
+pub use crate::operation::get_license_usage::_get_license_usage_output::GetLicenseUsageOutput;
 
 mod _get_license_usage_input;
 

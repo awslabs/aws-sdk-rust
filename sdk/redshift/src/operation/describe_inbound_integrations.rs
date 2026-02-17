@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_inbound_i
     }
 }
 
-pub use crate::operation::describe_inbound_integrations::_describe_inbound_integrations_output::DescribeInboundIntegrationsOutput;
-
 pub use crate::operation::describe_inbound_integrations::_describe_inbound_integrations_input::DescribeInboundIntegrationsInput;
+
+pub use crate::operation::describe_inbound_integrations::_describe_inbound_integrations_output::DescribeInboundIntegrationsOutput;
 
 mod _describe_inbound_integrations_input;
 

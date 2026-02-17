@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_start_viewer
     }
 }
 
-pub use crate::operation::batch_start_viewer_session_revocation::_batch_start_viewer_session_revocation_output::BatchStartViewerSessionRevocationOutput;
-
 pub use crate::operation::batch_start_viewer_session_revocation::_batch_start_viewer_session_revocation_input::BatchStartViewerSessionRevocationInput;
+
+pub use crate::operation::batch_start_viewer_session_revocation::_batch_start_viewer_session_revocation_output::BatchStartViewerSessionRevocationOutput;
 
 mod _batch_start_viewer_session_revocation_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resolver_ty
     }
 }
 
-pub use crate::operation::update_resolver_type::_update_resolver_type_output::UpdateResolverTypeOutput;
-
 pub use crate::operation::update_resolver_type::_update_resolver_type_input::UpdateResolverTypeInput;
+
+pub use crate::operation::update_resolver_type::_update_resolver_type_output::UpdateResolverTypeOutput;
 
 mod _update_resolver_type_input;
 

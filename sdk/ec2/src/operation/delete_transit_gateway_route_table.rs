@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transit_gat
     }
 }
 
-pub use crate::operation::delete_transit_gateway_route_table::_delete_transit_gateway_route_table_output::DeleteTransitGatewayRouteTableOutput;
-
 pub use crate::operation::delete_transit_gateway_route_table::_delete_transit_gateway_route_table_input::DeleteTransitGatewayRouteTableInput;
+
+pub use crate::operation::delete_transit_gateway_route_table::_delete_transit_gateway_route_table_output::DeleteTransitGatewayRouteTableOutput;
 
 mod _delete_transit_gateway_route_table_input;
 

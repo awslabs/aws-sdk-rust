@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_platform_vers
     }
 }
 
-pub use crate::operation::list_platform_versions::_list_platform_versions_output::ListPlatformVersionsOutput;
-
 pub use crate::operation::list_platform_versions::_list_platform_versions_input::ListPlatformVersionsInput;
+
+pub use crate::operation::list_platform_versions::_list_platform_versions_output::ListPlatformVersionsOutput;
 
 mod _list_platform_versions_input;
 

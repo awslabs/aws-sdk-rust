@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_iam_instan
     }
 }
 
-pub use crate::operation::replace_iam_instance_profile_association::_replace_iam_instance_profile_association_output::ReplaceIamInstanceProfileAssociationOutput;
-
 pub use crate::operation::replace_iam_instance_profile_association::_replace_iam_instance_profile_association_input::ReplaceIamInstanceProfileAssociationInput;
+
+pub use crate::operation::replace_iam_instance_profile_association::_replace_iam_instance_profile_association_output::ReplaceIamInstanceProfileAssociationOutput;
 
 mod _replace_iam_instance_profile_association_input;
 

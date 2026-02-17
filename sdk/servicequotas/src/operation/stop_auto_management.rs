@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_auto_manageme
     }
 }
 
-pub use crate::operation::stop_auto_management::_stop_auto_management_output::StopAutoManagementOutput;
-
 pub use crate::operation::stop_auto_management::_stop_auto_management_input::StopAutoManagementInput;
+
+pub use crate::operation::stop_auto_management::_stop_auto_management_output::StopAutoManagementOutput;
 
 mod _stop_auto_management_input;
 

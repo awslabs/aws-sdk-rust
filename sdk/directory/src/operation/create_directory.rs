@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_directory::
     }
 }
 
-pub use crate::operation::create_directory::_create_directory_output::CreateDirectoryOutput;
-
 pub use crate::operation::create_directory::_create_directory_input::CreateDirectoryInput;
+
+pub use crate::operation::create_directory::_create_directory_output::CreateDirectoryOutput;
 
 mod _create_directory_input;
 

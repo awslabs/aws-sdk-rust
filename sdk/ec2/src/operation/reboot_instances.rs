@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_instances::
     }
 }
 
-pub use crate::operation::reboot_instances::_reboot_instances_output::RebootInstancesOutput;
-
 pub use crate::operation::reboot_instances::_reboot_instances_input::RebootInstancesInput;
+
+pub use crate::operation::reboot_instances::_reboot_instances_output::RebootInstancesOutput;
 
 mod _reboot_instances_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::override_stage_con
     }
 }
 
-pub use crate::operation::override_stage_condition::_override_stage_condition_output::OverrideStageConditionOutput;
-
 pub use crate::operation::override_stage_condition::_override_stage_condition_input::OverrideStageConditionInput;
+
+pub use crate::operation::override_stage_condition::_override_stage_condition_output::OverrideStageConditionOutput;
 
 mod _override_stage_condition_input;
 

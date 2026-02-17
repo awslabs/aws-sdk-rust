@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_partner_app
     }
 }
 
-pub use crate::operation::update_partner_app::_update_partner_app_output::UpdatePartnerAppOutput;
-
 pub use crate::operation::update_partner_app::_update_partner_app_input::UpdatePartnerAppInput;
+
+pub use crate::operation::update_partner_app::_update_partner_app_output::UpdatePartnerAppOutput;
 
 mod _update_partner_app_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configured_
     }
 }
 
-pub use crate::operation::update_configured_table::_update_configured_table_output::UpdateConfiguredTableOutput;
-
 pub use crate::operation::update_configured_table::_update_configured_table_input::UpdateConfiguredTableInput;
+
+pub use crate::operation::update_configured_table::_update_configured_table_output::UpdateConfiguredTableOutput;
 
 mod _update_configured_table_input;
 

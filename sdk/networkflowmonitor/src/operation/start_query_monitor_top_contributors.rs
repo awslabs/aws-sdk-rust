@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_query_monito
     }
 }
 
-pub use crate::operation::start_query_monitor_top_contributors::_start_query_monitor_top_contributors_output::StartQueryMonitorTopContributorsOutput;
-
 pub use crate::operation::start_query_monitor_top_contributors::_start_query_monitor_top_contributors_input::StartQueryMonitorTopContributorsInput;
+
+pub use crate::operation::start_query_monitor_top_contributors::_start_query_monitor_top_contributors_output::StartQueryMonitorTopContributorsOutput;
 
 mod _start_query_monitor_top_contributors_input;
 

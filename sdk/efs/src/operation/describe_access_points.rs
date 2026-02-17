@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_access_po
     }
 }
 
-pub use crate::operation::describe_access_points::_describe_access_points_output::DescribeAccessPointsOutput;
-
 pub use crate::operation::describe_access_points::_describe_access_points_input::DescribeAccessPointsInput;
+
+pub use crate::operation::describe_access_points::_describe_access_points_output::DescribeAccessPointsOutput;
 
 mod _describe_access_points_input;
 

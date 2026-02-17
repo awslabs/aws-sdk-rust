@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_lifecycle_poli
     }
 }
 
-pub use crate::operation::put_lifecycle_policy::_put_lifecycle_policy_output::PutLifecyclePolicyOutput;
-
 pub use crate::operation::put_lifecycle_policy::_put_lifecycle_policy_input::PutLifecyclePolicyInput;
+
+pub use crate::operation::put_lifecycle_policy::_put_lifecycle_policy_output::PutLifecyclePolicyOutput;
 
 mod _put_lifecycle_policy_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_net
     }
 }
 
-pub use crate::operation::delete_service_network::_delete_service_network_output::DeleteServiceNetworkOutput;
-
 pub use crate::operation::delete_service_network::_delete_service_network_input::DeleteServiceNetworkInput;
+
+pub use crate::operation::delete_service_network::_delete_service_network_output::DeleteServiceNetworkOutput;
 
 mod _delete_service_network_input;
 

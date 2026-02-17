@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attached_link
     }
 }
 
-pub use crate::operation::list_attached_links::_list_attached_links_output::ListAttachedLinksOutput;
-
 pub use crate::operation::list_attached_links::_list_attached_links_input::ListAttachedLinksInput;
+
+pub use crate::operation::list_attached_links::_list_attached_links_output::ListAttachedLinksOutput;
 
 mod _list_attached_links_input;
 

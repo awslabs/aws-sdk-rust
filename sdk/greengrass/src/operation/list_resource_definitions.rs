@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_defi
     }
 }
 
-pub use crate::operation::list_resource_definitions::_list_resource_definitions_output::ListResourceDefinitionsOutput;
-
 pub use crate::operation::list_resource_definitions::_list_resource_definitions_input::ListResourceDefinitionsInput;
+
+pub use crate::operation::list_resource_definitions::_list_resource_definitions_output::ListResourceDefinitionsOutput;
 
 mod _list_resource_definitions_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::sign::SignError {
     }
 }
 
-pub use crate::operation::sign::_sign_output::SignOutput;
-
 pub use crate::operation::sign::_sign_input::SignInput;
+
+pub use crate::operation::sign::_sign_output::SignOutput;
 
 mod _sign_input;
 

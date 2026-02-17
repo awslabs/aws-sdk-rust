@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_associated_res
     }
 }
 
-pub use crate::operation::get_associated_resource::_get_associated_resource_output::GetAssociatedResourceOutput;
-
 pub use crate::operation::get_associated_resource::_get_associated_resource_input::GetAssociatedResourceInput;
+
+pub use crate::operation::get_associated_resource::_get_associated_resource_output::GetAssociatedResourceOutput;
 
 mod _get_associated_resource_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_nat_gatew
     }
 }
 
-pub use crate::operation::describe_nat_gateways::_describe_nat_gateways_output::DescribeNatGatewaysOutput;
-
 pub use crate::operation::describe_nat_gateways::_describe_nat_gateways_input::DescribeNatGatewaysInput;
+
+pub use crate::operation::describe_nat_gateways::_describe_nat_gateways_output::DescribeNatGatewaysOutput;
 
 mod _describe_nat_gateways_input;
 

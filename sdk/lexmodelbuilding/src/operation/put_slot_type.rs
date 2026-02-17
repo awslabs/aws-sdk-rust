@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_slot_type::Put
     }
 }
 
-pub use crate::operation::put_slot_type::_put_slot_type_output::PutSlotTypeOutput;
-
 pub use crate::operation::put_slot_type::_put_slot_type_input::PutSlotTypeInput;
+
+pub use crate::operation::put_slot_type::_put_slot_type_output::PutSlotTypeOutput;
 
 mod _put_slot_type_input;
 

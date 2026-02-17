@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_eip_to_v
     }
 }
 
-pub use crate::operation::associate_eip_to_vlan::_associate_eip_to_vlan_output::AssociateEipToVlanOutput;
-
 pub use crate::operation::associate_eip_to_vlan::_associate_eip_to_vlan_input::AssociateEipToVlanInput;
+
+pub use crate::operation::associate_eip_to_vlan::_associate_eip_to_vlan_output::AssociateEipToVlanOutput;
 
 mod _associate_eip_to_vlan_input;
 

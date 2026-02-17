@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_home_region
     }
 }
 
-pub use crate::operation::delete_home_region_control::_delete_home_region_control_output::DeleteHomeRegionControlOutput;
-
 pub use crate::operation::delete_home_region_control::_delete_home_region_control_input::DeleteHomeRegionControlInput;
+
+pub use crate::operation::delete_home_region_control::_delete_home_region_control_output::DeleteHomeRegionControlOutput;
 
 mod _delete_home_region_control_input;
 

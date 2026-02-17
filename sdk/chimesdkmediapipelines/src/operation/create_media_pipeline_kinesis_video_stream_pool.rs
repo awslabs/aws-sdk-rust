@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_media_pipeline_kinesis_video_stream_pool::_create_media_pipeline_kinesis_video_stream_pool_output::CreateMediaPipelineKinesisVideoStreamPoolOutput;
-
 pub use crate::operation::create_media_pipeline_kinesis_video_stream_pool::_create_media_pipeline_kinesis_video_stream_pool_input::CreateMediaPipelineKinesisVideoStreamPoolInput;
+
+pub use crate::operation::create_media_pipeline_kinesis_video_stream_pool::_create_media_pipeline_kinesis_video_stream_pool_output::CreateMediaPipelineKinesisVideoStreamPoolOutput;
 
 mod _create_media_pipeline_kinesis_video_stream_pool_input;
 

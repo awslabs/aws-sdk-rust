@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rollback_instance_
     }
 }
 
-pub use crate::operation::rollback_instance_refresh::_rollback_instance_refresh_output::RollbackInstanceRefreshOutput;
-
 pub use crate::operation::rollback_instance_refresh::_rollback_instance_refresh_input::RollbackInstanceRefreshInput;
+
+pub use crate::operation::rollback_instance_refresh::_rollback_instance_refresh_output::RollbackInstanceRefreshOutput;
 
 mod _rollback_instance_refresh_input;
 

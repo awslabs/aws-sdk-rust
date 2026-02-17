@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_policy_or
     }
 }
 
-pub use crate::operation::get_ipam_policy_organization_targets::_get_ipam_policy_organization_targets_output::GetIpamPolicyOrganizationTargetsOutput;
-
 pub use crate::operation::get_ipam_policy_organization_targets::_get_ipam_policy_organization_targets_input::GetIpamPolicyOrganizationTargetsInput;
+
+pub use crate::operation::get_ipam_policy_organization_targets::_get_ipam_policy_organization_targets_output::GetIpamPolicyOrganizationTargetsOutput;
 
 mod _get_ipam_policy_organization_targets_input;
 

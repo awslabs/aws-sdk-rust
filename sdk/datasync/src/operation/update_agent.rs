@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_agent::Upda
     }
 }
 
-pub use crate::operation::update_agent::_update_agent_output::UpdateAgentOutput;
-
 pub use crate::operation::update_agent::_update_agent_input::UpdateAgentInput;
+
+pub use crate::operation::update_agent::_update_agent_output::UpdateAgentOutput;
 
 mod _update_agent_input;
 

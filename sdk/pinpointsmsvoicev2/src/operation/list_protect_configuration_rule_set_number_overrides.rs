@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_protect_configuration_rule_set_number_overrides::_list_protect_configuration_rule_set_number_overrides_output::ListProtectConfigurationRuleSetNumberOverridesOutput;
-
 pub use crate::operation::list_protect_configuration_rule_set_number_overrides::_list_protect_configuration_rule_set_number_overrides_input::ListProtectConfigurationRuleSetNumberOverridesInput;
+
+pub use crate::operation::list_protect_configuration_rule_set_number_overrides::_list_protect_configuration_rule_set_number_overrides_output::ListProtectConfigurationRuleSetNumberOverridesOutput;
 
 mod _list_protect_configuration_rule_set_number_overrides_input;
 

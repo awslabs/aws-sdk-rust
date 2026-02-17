@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_acl::Pu
     }
 }
 
-pub use crate::operation::put_bucket_acl::_put_bucket_acl_output::PutBucketAclOutput;
-
 pub use crate::operation::put_bucket_acl::_put_bucket_acl_input::PutBucketAclInput;
+
+pub use crate::operation::put_bucket_acl::_put_bucket_acl_output::PutBucketAclOutput;
 
 mod _put_bucket_acl_input;
 

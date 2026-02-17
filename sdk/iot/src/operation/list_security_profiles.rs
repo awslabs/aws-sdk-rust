@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_prof
     }
 }
 
-pub use crate::operation::list_security_profiles::_list_security_profiles_output::ListSecurityProfilesOutput;
-
 pub use crate::operation::list_security_profiles::_list_security_profiles_input::ListSecurityProfilesInput;
+
+pub use crate::operation::list_security_profiles::_list_security_profiles_output::ListSecurityProfilesOutput;
 
 mod _list_security_profiles_input;
 

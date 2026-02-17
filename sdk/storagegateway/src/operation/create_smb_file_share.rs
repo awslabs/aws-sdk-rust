@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_smb_file_sh
     }
 }
 
-pub use crate::operation::create_smb_file_share::_create_smb_file_share_output::CreateSmbFileShareOutput;
-
 pub use crate::operation::create_smb_file_share::_create_smb_file_share_input::CreateSmbFileShareInput;
+
+pub use crate::operation::create_smb_file_share::_create_smb_file_share_output::CreateSmbFileShareOutput;
 
 mod _create_smb_file_share_input;
 

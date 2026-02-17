@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_access_control
     }
 }
 
-pub use crate::operation::put_access_control_rule::_put_access_control_rule_output::PutAccessControlRuleOutput;
-
 pub use crate::operation::put_access_control_rule::_put_access_control_rule_input::PutAccessControlRuleInput;
+
+pub use crate::operation::put_access_control_rule::_put_access_control_rule_output::PutAccessControlRuleOutput;
 
 mod _put_access_control_rule_input;
 

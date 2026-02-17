@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_vpn_gateway
     }
 }
 
-pub use crate::operation::attach_vpn_gateway::_attach_vpn_gateway_output::AttachVpnGatewayOutput;
-
 pub use crate::operation::attach_vpn_gateway::_attach_vpn_gateway_input::AttachVpnGatewayInput;
+
+pub use crate::operation::attach_vpn_gateway::_attach_vpn_gateway_output::AttachVpnGatewayOutput;
 
 mod _attach_vpn_gateway_input;
 

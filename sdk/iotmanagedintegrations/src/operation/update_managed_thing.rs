@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_managed_thi
     }
 }
 
-pub use crate::operation::update_managed_thing::_update_managed_thing_output::UpdateManagedThingOutput;
-
 pub use crate::operation::update_managed_thing::_update_managed_thing_input::UpdateManagedThingInput;
+
+pub use crate::operation::update_managed_thing::_update_managed_thing_output::UpdateManagedThingOutput;
 
 mod _update_managed_thing_input;
 

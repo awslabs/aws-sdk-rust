@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_route_calcu
     }
 }
 
-pub use crate::operation::create_route_calculator::_create_route_calculator_output::CreateRouteCalculatorOutput;
-
 pub use crate::operation::create_route_calculator::_create_route_calculator_input::CreateRouteCalculatorInput;
+
+pub use crate::operation::create_route_calculator::_create_route_calculator_output::CreateRouteCalculatorOutput;
 
 mod _create_route_calculator_input;
 

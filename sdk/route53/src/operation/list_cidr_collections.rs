@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cidr_collecti
     }
 }
 
-pub use crate::operation::list_cidr_collections::_list_cidr_collections_output::ListCidrCollectionsOutput;
-
 pub use crate::operation::list_cidr_collections::_list_cidr_collections_input::ListCidrCollectionsInput;
+
+pub use crate::operation::list_cidr_collections::_list_cidr_collections_output::ListCidrCollectionsOutput;
 
 mod _list_cidr_collections_input;
 

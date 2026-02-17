@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_multi_regio
     }
 }
 
-pub use crate::operation::delete_multi_region_endpoint::_delete_multi_region_endpoint_output::DeleteMultiRegionEndpointOutput;
-
 pub use crate::operation::delete_multi_region_endpoint::_delete_multi_region_endpoint_input::DeleteMultiRegionEndpointInput;
+
+pub use crate::operation::delete_multi_region_endpoint::_delete_multi_region_endpoint_output::DeleteMultiRegionEndpointOutput;
 
 mod _delete_multi_region_endpoint_input;
 

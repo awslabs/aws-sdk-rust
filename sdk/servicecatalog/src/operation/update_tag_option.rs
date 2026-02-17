@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_tag_option:
     }
 }
 
-pub use crate::operation::update_tag_option::_update_tag_option_output::UpdateTagOptionOutput;
-
 pub use crate::operation::update_tag_option::_update_tag_option_input::UpdateTagOptionInput;
+
+pub use crate::operation::update_tag_option::_update_tag_option_output::UpdateTagOptionOutput;
 
 mod _update_tag_option_input;
 

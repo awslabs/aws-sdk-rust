@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_session::Stop
     }
 }
 
-pub use crate::operation::stop_session::_stop_session_output::StopSessionOutput;
-
 pub use crate::operation::stop_session::_stop_session_input::StopSessionInput;
+
+pub use crate::operation::stop_session::_stop_session_output::StopSessionOutput;
 
 mod _stop_session_input;
 

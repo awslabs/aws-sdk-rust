@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_random::G
     }
 }
 
-pub use crate::operation::generate_random::_generate_random_output::GenerateRandomOutput;
-
 pub use crate::operation::generate_random::_generate_random_input::GenerateRandomInput;
+
+pub use crate::operation::generate_random::_generate_random_output::GenerateRandomOutput;
 
 mod _generate_random_input;
 

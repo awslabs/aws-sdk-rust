@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::notify_workers::No
     }
 }
 
-pub use crate::operation::notify_workers::_notify_workers_output::NotifyWorkersOutput;
-
 pub use crate::operation::notify_workers::_notify_workers_input::NotifyWorkersInput;
+
+pub use crate::operation::notify_workers::_notify_workers_output::NotifyWorkersOutput;
 
 mod _notify_workers_input;
 

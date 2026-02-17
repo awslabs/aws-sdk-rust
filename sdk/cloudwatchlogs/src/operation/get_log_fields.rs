@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_log_fields::Ge
     }
 }
 
-pub use crate::operation::get_log_fields::_get_log_fields_output::GetLogFieldsOutput;
-
 pub use crate::operation::get_log_fields::_get_log_fields_input::GetLogFieldsInput;
+
+pub use crate::operation::get_log_fields::_get_log_fields_output::GetLogFieldsOutput;
 
 mod _get_log_fields_input;
 

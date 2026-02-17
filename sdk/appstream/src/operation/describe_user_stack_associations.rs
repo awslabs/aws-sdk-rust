@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user_stac
     }
 }
 
-pub use crate::operation::describe_user_stack_associations::_describe_user_stack_associations_output::DescribeUserStackAssociationsOutput;
-
 pub use crate::operation::describe_user_stack_associations::_describe_user_stack_associations_input::DescribeUserStackAssociationsInput;
+
+pub use crate::operation::describe_user_stack_associations::_describe_user_stack_associations_output::DescribeUserStackAssociationsOutput;
 
 mod _describe_user_stack_associations_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bandwidth_r
     }
 }
 
-pub use crate::operation::delete_bandwidth_rate_limit::_delete_bandwidth_rate_limit_output::DeleteBandwidthRateLimitOutput;
-
 pub use crate::operation::delete_bandwidth_rate_limit::_delete_bandwidth_rate_limit_input::DeleteBandwidthRateLimitInput;
+
+pub use crate::operation::delete_bandwidth_rate_limit::_delete_bandwidth_rate_limit_output::DeleteBandwidthRateLimitOutput;
 
 mod _delete_bandwidth_rate_limit_input;
 

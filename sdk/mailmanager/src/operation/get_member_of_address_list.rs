@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_member_of_addr
     }
 }
 
-pub use crate::operation::get_member_of_address_list::_get_member_of_address_list_output::GetMemberOfAddressListOutput;
-
 pub use crate::operation::get_member_of_address_list::_get_member_of_address_list_input::GetMemberOfAddressListInput;
+
+pub use crate::operation::get_member_of_address_list::_get_member_of_address_list_output::GetMemberOfAddressListOutput;
 
 mod _get_member_of_address_list_input;
 

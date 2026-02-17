@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_preferences::G
     }
 }
 
-pub use crate::operation::get_preferences::_get_preferences_output::GetPreferencesOutput;
-
 pub use crate::operation::get_preferences::_get_preferences_input::GetPreferencesInput;
+
+pub use crate::operation::get_preferences::_get_preferences_output::GetPreferencesOutput;
 
 mod _get_preferences_input;
 

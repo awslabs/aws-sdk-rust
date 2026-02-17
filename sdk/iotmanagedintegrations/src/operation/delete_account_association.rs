@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_ass
     }
 }
 
-pub use crate::operation::delete_account_association::_delete_account_association_output::DeleteAccountAssociationOutput;
-
 pub use crate::operation::delete_account_association::_delete_account_association_input::DeleteAccountAssociationInput;
+
+pub use crate::operation::delete_account_association::_delete_account_association_output::DeleteAccountAssociationOutput;
 
 mod _delete_account_association_input;
 

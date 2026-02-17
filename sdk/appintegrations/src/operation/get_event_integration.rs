@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_integrat
     }
 }
 
-pub use crate::operation::get_event_integration::_get_event_integration_output::GetEventIntegrationOutput;
-
 pub use crate::operation::get_event_integration::_get_event_integration_input::GetEventIntegrationInput;
+
+pub use crate::operation::get_event_integration::_get_event_integration_output::GetEventIntegrationOutput;
 
 mod _get_event_integration_input;
 

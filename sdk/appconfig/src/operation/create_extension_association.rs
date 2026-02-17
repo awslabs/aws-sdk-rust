@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_extension_a
     }
 }
 
-pub use crate::operation::create_extension_association::_create_extension_association_output::CreateExtensionAssociationOutput;
-
 pub use crate::operation::create_extension_association::_create_extension_association_input::CreateExtensionAssociationInput;
+
+pub use crate::operation::create_extension_association::_create_extension_association_output::CreateExtensionAssociationOutput;
 
 mod _create_extension_association_input;
 

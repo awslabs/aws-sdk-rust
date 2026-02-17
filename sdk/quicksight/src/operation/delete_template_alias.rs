@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_template_al
     }
 }
 
-pub use crate::operation::delete_template_alias::_delete_template_alias_output::DeleteTemplateAliasOutput;
-
 pub use crate::operation::delete_template_alias::_delete_template_alias_input::DeleteTemplateAliasInput;
+
+pub use crate::operation::delete_template_alias::_delete_template_alias_output::DeleteTemplateAliasOutput;
 
 mod _delete_template_alias_input;
 

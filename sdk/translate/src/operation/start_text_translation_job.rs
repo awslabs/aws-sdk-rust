@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_text_transla
     }
 }
 
-pub use crate::operation::start_text_translation_job::_start_text_translation_job_output::StartTextTranslationJobOutput;
-
 pub use crate::operation::start_text_translation_job::_start_text_translation_job_input::StartTextTranslationJobInput;
+
+pub use crate::operation::start_text_translation_job::_start_text_translation_job_output::StartTextTranslationJobOutput;
 
 mod _start_text_translation_job_input;
 

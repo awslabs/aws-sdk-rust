@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_grants_
     }
 }
 
-pub use crate::operation::get_access_grants_instance::_get_access_grants_instance_output::GetAccessGrantsInstanceOutput;
-
 pub use crate::operation::get_access_grants_instance::_get_access_grants_instance_input::GetAccessGrantsInstanceInput;
+
+pub use crate::operation::get_access_grants_instance::_get_access_grants_instance_output::GetAccessGrantsInstanceOutput;
 
 mod _get_access_grants_instance_input;
 

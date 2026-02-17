@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_contain
     }
 }
 
-pub use crate::operation::deregister_container_instance::_deregister_container_instance_output::DeregisterContainerInstanceOutput;
-
 pub use crate::operation::deregister_container_instance::_deregister_container_instance_input::DeregisterContainerInstanceInput;
+
+pub use crate::operation::deregister_container_instance::_deregister_container_instance_output::DeregisterContainerInstanceOutput;
 
 mod _deregister_container_instance_input;
 

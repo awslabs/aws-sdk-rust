@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_xss_match_set:
     }
 }
 
-pub use crate::operation::get_xss_match_set::_get_xss_match_set_output::GetXssMatchSetOutput;
-
 pub use crate::operation::get_xss_match_set::_get_xss_match_set_input::GetXssMatchSetInput;
+
+pub use crate::operation::get_xss_match_set::_get_xss_match_set_output::GetXssMatchSetOutput;
 
 mod _get_xss_match_set_input;
 

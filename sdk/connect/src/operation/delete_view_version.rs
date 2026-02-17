@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_view_versio
     }
 }
 
-pub use crate::operation::delete_view_version::_delete_view_version_output::DeleteViewVersionOutput;
-
 pub use crate::operation::delete_view_version::_delete_view_version_input::DeleteViewVersionInput;
+
+pub use crate::operation::delete_view_version::_delete_view_version_output::DeleteViewVersionOutput;
 
 mod _delete_view_version_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_rout
     }
 }
 
-pub use crate::operation::update_custom_routing_listener::_update_custom_routing_listener_output::UpdateCustomRoutingListenerOutput;
-
 pub use crate::operation::update_custom_routing_listener::_update_custom_routing_listener_input::UpdateCustomRoutingListenerInput;
+
+pub use crate::operation::update_custom_routing_listener::_update_custom_routing_listener_output::UpdateCustomRoutingListenerOutput;
 
 mod _update_custom_routing_listener_input;
 

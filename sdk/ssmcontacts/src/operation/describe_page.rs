@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_page::Des
     }
 }
 
-pub use crate::operation::describe_page::_describe_page_output::DescribePageOutput;
-
 pub use crate::operation::describe_page::_describe_page_input::DescribePageInput;
+
+pub use crate::operation::describe_page::_describe_page_output::DescribePageOutput;
 
 mod _describe_page_input;
 

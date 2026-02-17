@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_objec
     }
 }
 
-pub use crate::operation::list_profile_objects::_list_profile_objects_output::ListProfileObjectsOutput;
-
 pub use crate::operation::list_profile_objects::_list_profile_objects_input::ListProfileObjectsInput;
+
+pub use crate::operation::list_profile_objects::_list_profile_objects_output::ListProfileObjectsOutput;
 
 mod _list_profile_objects_input;
 

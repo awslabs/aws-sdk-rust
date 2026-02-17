@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::notify_when_upload
     }
 }
 
-pub use crate::operation::notify_when_uploaded::_notify_when_uploaded_output::NotifyWhenUploadedOutput;
-
 pub use crate::operation::notify_when_uploaded::_notify_when_uploaded_input::NotifyWhenUploadedInput;
+
+pub use crate::operation::notify_when_uploaded::_notify_when_uploaded_output::NotifyWhenUploadedOutput;
 
 mod _notify_when_uploaded_input;
 

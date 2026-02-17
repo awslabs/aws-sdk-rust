@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_agent_statu
     }
 }
 
-pub use crate::operation::search_agent_statuses::_search_agent_statuses_output::SearchAgentStatusesOutput;
-
 pub use crate::operation::search_agent_statuses::_search_agent_statuses_input::SearchAgentStatusesInput;
+
+pub use crate::operation::search_agent_statuses::_search_agent_statuses_output::SearchAgentStatusesOutput;
 
 mod _search_agent_statuses_input;
 

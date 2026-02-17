@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_home_regi
     }
 }
 
-pub use crate::operation::describe_home_region_controls::_describe_home_region_controls_output::DescribeHomeRegionControlsOutput;
-
 pub use crate::operation::describe_home_region_controls::_describe_home_region_controls_input::DescribeHomeRegionControlsInput;
+
+pub use crate::operation::describe_home_region_controls::_describe_home_region_controls_output::DescribeHomeRegionControlsOutput;
 
 mod _describe_home_region_controls_input;
 

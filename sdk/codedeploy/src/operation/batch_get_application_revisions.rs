@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_applicat
     }
 }
 
-pub use crate::operation::batch_get_application_revisions::_batch_get_application_revisions_output::BatchGetApplicationRevisionsOutput;
-
 pub use crate::operation::batch_get_application_revisions::_batch_get_application_revisions_input::BatchGetApplicationRevisionsInput;
+
+pub use crate::operation::batch_get_application_revisions::_batch_get_application_revisions_output::BatchGetApplicationRevisionsOutput;
 
 mod _batch_get_application_revisions_input;
 

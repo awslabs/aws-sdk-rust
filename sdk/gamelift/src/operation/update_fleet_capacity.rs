@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_fleet_capac
     }
 }
 
-pub use crate::operation::update_fleet_capacity::_update_fleet_capacity_output::UpdateFleetCapacityOutput;
-
 pub use crate::operation::update_fleet_capacity::_update_fleet_capacity_input::UpdateFleetCapacityInput;
+
+pub use crate::operation::update_fleet_capacity::_update_fleet_capacity_output::UpdateFleetCapacityOutput;
 
 mod _update_fleet_capacity_input;
 

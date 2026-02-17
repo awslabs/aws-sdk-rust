@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_file_syst
     }
 }
 
-pub use crate::operation::describe_file_system_aliases::_describe_file_system_aliases_output::DescribeFileSystemAliasesOutput;
-
 pub use crate::operation::describe_file_system_aliases::_describe_file_system_aliases_input::DescribeFileSystemAliasesInput;
+
+pub use crate::operation::describe_file_system_aliases::_describe_file_system_aliases_output::DescribeFileSystemAliasesOutput;
 
 mod _describe_file_system_aliases_input;
 

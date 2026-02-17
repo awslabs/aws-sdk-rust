@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_deleg
     }
 }
 
-pub use crate::operation::batch_delete_delegation_by_assessment::_batch_delete_delegation_by_assessment_output::BatchDeleteDelegationByAssessmentOutput;
-
 pub use crate::operation::batch_delete_delegation_by_assessment::_batch_delete_delegation_by_assessment_input::BatchDeleteDelegationByAssessmentInput;
+
+pub use crate::operation::batch_delete_delegation_by_assessment::_batch_delete_delegation_by_assessment_output::BatchDeleteDelegationByAssessmentOutput;
 
 mod _batch_delete_delegation_by_assessment_input;
 

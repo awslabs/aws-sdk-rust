@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_con
     }
 }
 
-pub use crate::operation::describe_event_configurations::_describe_event_configurations_output::DescribeEventConfigurationsOutput;
-
 pub use crate::operation::describe_event_configurations::_describe_event_configurations_input::DescribeEventConfigurationsInput;
+
+pub use crate::operation::describe_event_configurations::_describe_event_configurations_output::DescribeEventConfigurationsOutput;
 
 mod _describe_event_configurations_input;
 

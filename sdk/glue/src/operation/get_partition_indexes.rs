@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_partition_inde
     }
 }
 
-pub use crate::operation::get_partition_indexes::_get_partition_indexes_output::GetPartitionIndexesOutput;
-
 pub use crate::operation::get_partition_indexes::_get_partition_indexes_input::GetPartitionIndexesInput;
+
+pub use crate::operation::get_partition_indexes::_get_partition_indexes_output::GetPartitionIndexesOutput;
 
 mod _get_partition_indexes_input;
 

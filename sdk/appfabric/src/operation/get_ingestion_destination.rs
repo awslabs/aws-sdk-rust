@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ingestion_dest
     }
 }
 
-pub use crate::operation::get_ingestion_destination::_get_ingestion_destination_output::GetIngestionDestinationOutput;
-
 pub use crate::operation::get_ingestion_destination::_get_ingestion_destination_input::GetIngestionDestinationInput;
+
+pub use crate::operation::get_ingestion_destination::_get_ingestion_destination_output::GetIngestionDestinationOutput;
 
 mod _get_ingestion_destination_input;
 

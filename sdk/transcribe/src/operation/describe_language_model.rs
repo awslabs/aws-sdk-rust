@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_language_
     }
 }
 
-pub use crate::operation::describe_language_model::_describe_language_model_output::DescribeLanguageModelOutput;
-
 pub use crate::operation::describe_language_model::_describe_language_model_input::DescribeLanguageModelInput;
+
+pub use crate::operation::describe_language_model::_describe_language_model_output::DescribeLanguageModelOutput;
 
 mod _describe_language_model_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_terminology
     }
 }
 
-pub use crate::operation::import_terminology::_import_terminology_output::ImportTerminologyOutput;
-
 pub use crate::operation::import_terminology::_import_terminology_input::ImportTerminologyInput;
+
+pub use crate::operation::import_terminology::_import_terminology_output::ImportTerminologyOutput;
 
 mod _import_terminology_input;
 

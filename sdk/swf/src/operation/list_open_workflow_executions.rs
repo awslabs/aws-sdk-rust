@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_open_workflow
     }
 }
 
-pub use crate::operation::list_open_workflow_executions::_list_open_workflow_executions_output::ListOpenWorkflowExecutionsOutput;
-
 pub use crate::operation::list_open_workflow_executions::_list_open_workflow_executions_input::ListOpenWorkflowExecutionsInput;
+
+pub use crate::operation::list_open_workflow_executions::_list_open_workflow_executions_output::ListOpenWorkflowExecutionsOutput;
 
 mod _list_open_workflow_executions_input;
 

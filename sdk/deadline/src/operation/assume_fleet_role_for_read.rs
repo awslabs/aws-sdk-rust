@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_fleet_role_
     }
 }
 
-pub use crate::operation::assume_fleet_role_for_read::_assume_fleet_role_for_read_output::AssumeFleetRoleForReadOutput;
-
 pub use crate::operation::assume_fleet_role_for_read::_assume_fleet_role_for_read_input::AssumeFleetRoleForReadInput;
+
+pub use crate::operation::assume_fleet_role_for_read::_assume_fleet_role_for_read_output::AssumeFleetRoleForReadOutput;
 
 mod _assume_fleet_role_for_read_input;
 

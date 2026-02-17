@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_patch_bas
     }
 }
 
-pub use crate::operation::register_patch_baseline_for_patch_group::_register_patch_baseline_for_patch_group_output::RegisterPatchBaselineForPatchGroupOutput;
-
 pub use crate::operation::register_patch_baseline_for_patch_group::_register_patch_baseline_for_patch_group_input::RegisterPatchBaselineForPatchGroupInput;
+
+pub use crate::operation::register_patch_baseline_for_patch_group::_register_patch_baseline_for_patch_group_output::RegisterPatchBaselineForPatchGroupOutput;
 
 mod _register_patch_baseline_for_patch_group_input;
 

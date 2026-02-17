@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_routing_rule::
     }
 }
 
-pub use crate::operation::put_routing_rule::_put_routing_rule_output::PutRoutingRuleOutput;
-
 pub use crate::operation::put_routing_rule::_put_routing_rule_input::PutRoutingRuleInput;
+
+pub use crate::operation::put_routing_rule::_put_routing_rule_output::PutRoutingRuleOutput;
 
 mod _put_routing_rule_input;
 

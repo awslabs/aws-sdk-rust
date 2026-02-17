@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_partner_app
     }
 }
 
-pub use crate::operation::create_partner_app::_create_partner_app_output::CreatePartnerAppOutput;
-
 pub use crate::operation::create_partner_app::_create_partner_app_input::CreatePartnerAppInput;
+
+pub use crate::operation::create_partner_app::_create_partner_app_output::CreatePartnerAppOutput;
 
 mod _create_partner_app_input;
 

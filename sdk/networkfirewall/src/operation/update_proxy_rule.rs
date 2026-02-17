@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_proxy_rule:
     }
 }
 
-pub use crate::operation::update_proxy_rule::_update_proxy_rule_output::UpdateProxyRuleOutput;
-
 pub use crate::operation::update_proxy_rule::_update_proxy_rule_input::UpdateProxyRuleInput;
+
+pub use crate::operation::update_proxy_rule::_update_proxy_rule_output::UpdateProxyRuleOutput;
 
 mod _update_proxy_rule_input;
 

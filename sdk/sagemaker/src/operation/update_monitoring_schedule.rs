@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_monitoring_
     }
 }
 
-pub use crate::operation::update_monitoring_schedule::_update_monitoring_schedule_output::UpdateMonitoringScheduleOutput;
-
 pub use crate::operation::update_monitoring_schedule::_update_monitoring_schedule_input::UpdateMonitoringScheduleInput;
+
+pub use crate::operation::update_monitoring_schedule::_update_monitoring_schedule_output::UpdateMonitoringScheduleOutput;
 
 mod _update_monitoring_schedule_input;
 

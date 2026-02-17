@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_case_rules::L
     }
 }
 
-pub use crate::operation::list_case_rules::_list_case_rules_output::ListCaseRulesOutput;
-
 pub use crate::operation::list_case_rules::_list_case_rules_input::ListCaseRulesInput;
+
+pub use crate::operation::list_case_rules::_list_case_rules_output::ListCaseRulesOutput;
 
 mod _list_case_rules_input;
 

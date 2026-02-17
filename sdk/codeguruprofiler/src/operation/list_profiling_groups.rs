@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profiling_gro
     }
 }
 
-pub use crate::operation::list_profiling_groups::_list_profiling_groups_output::ListProfilingGroupsOutput;
-
 pub use crate::operation::list_profiling_groups::_list_profiling_groups_input::ListProfilingGroupsInput;
+
+pub use crate::operation::list_profiling_groups::_list_profiling_groups_output::ListProfilingGroupsOutput;
 
 mod _list_profiling_groups_input;
 

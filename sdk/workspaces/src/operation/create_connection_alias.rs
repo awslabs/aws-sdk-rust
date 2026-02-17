@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connection_
     }
 }
 
-pub use crate::operation::create_connection_alias::_create_connection_alias_output::CreateConnectionAliasOutput;
-
 pub use crate::operation::create_connection_alias::_create_connection_alias_input::CreateConnectionAliasInput;
+
+pub use crate::operation::create_connection_alias::_create_connection_alias_output::CreateConnectionAliasOutput;
 
 mod _create_connection_alias_input;
 

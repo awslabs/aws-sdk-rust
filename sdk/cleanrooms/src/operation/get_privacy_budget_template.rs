@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_privacy_budget
     }
 }
 
-pub use crate::operation::get_privacy_budget_template::_get_privacy_budget_template_output::GetPrivacyBudgetTemplateOutput;
-
 pub use crate::operation::get_privacy_budget_template::_get_privacy_budget_template_input::GetPrivacyBudgetTemplateInput;
+
+pub use crate::operation::get_privacy_budget_template::_get_privacy_budget_template_output::GetPrivacyBudgetTemplateOutput;
 
 mod _get_privacy_budget_template_input;
 

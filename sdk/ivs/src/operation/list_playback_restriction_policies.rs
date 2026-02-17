@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_playback_rest
     }
 }
 
-pub use crate::operation::list_playback_restriction_policies::_list_playback_restriction_policies_output::ListPlaybackRestrictionPoliciesOutput;
-
 pub use crate::operation::list_playback_restriction_policies::_list_playback_restriction_policies_input::ListPlaybackRestrictionPoliciesInput;
+
+pub use crate::operation::list_playback_restriction_policies::_list_playback_restriction_policies_output::ListPlaybackRestrictionPoliciesOutput;
 
 mod _list_playback_restriction_policies_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_capacity_
     }
 }
 
-pub use crate::operation::describe_capacity_manager_data_exports::_describe_capacity_manager_data_exports_output::DescribeCapacityManagerDataExportsOutput;
-
 pub use crate::operation::describe_capacity_manager_data_exports::_describe_capacity_manager_data_exports_input::DescribeCapacityManagerDataExportsInput;
+
+pub use crate::operation::describe_capacity_manager_data_exports::_describe_capacity_manager_data_exports_output::DescribeCapacityManagerDataExportsOutput;
 
 mod _describe_capacity_manager_data_exports_input;
 

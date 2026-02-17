@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cost_catego
     }
 }
 
-pub use crate::operation::update_cost_category_definition::_update_cost_category_definition_output::UpdateCostCategoryDefinitionOutput;
-
 pub use crate::operation::update_cost_category_definition::_update_cost_category_definition_input::UpdateCostCategoryDefinitionInput;
+
+pub use crate::operation::update_cost_category_definition::_update_cost_category_definition_output::UpdateCostCategoryDefinitionOutput;
 
 mod _update_cost_category_definition_input;
 

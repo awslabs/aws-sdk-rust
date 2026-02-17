@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_index_polic
     }
 }
 
-pub use crate::operation::delete_index_policy::_delete_index_policy_output::DeleteIndexPolicyOutput;
-
 pub use crate::operation::delete_index_policy::_delete_index_policy_input::DeleteIndexPolicyInput;
+
+pub use crate::operation::delete_index_policy::_delete_index_policy_output::DeleteIndexPolicyOutput;
 
 mod _delete_index_policy_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::define_index_field
     }
 }
 
-pub use crate::operation::define_index_field::_define_index_field_output::DefineIndexFieldOutput;
-
 pub use crate::operation::define_index_field::_define_index_field_input::DefineIndexFieldInput;
+
+pub use crate::operation::define_index_field::_define_index_field_output::DefineIndexFieldOutput;
 
 mod _define_index_field_input;
 

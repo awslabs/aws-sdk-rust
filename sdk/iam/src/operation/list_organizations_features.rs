@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_organizations
     }
 }
 
-pub use crate::operation::list_organizations_features::_list_organizations_features_output::ListOrganizationsFeaturesOutput;
-
 pub use crate::operation::list_organizations_features::_list_organizations_features_input::ListOrganizationsFeaturesInput;
+
+pub use crate::operation::list_organizations_features::_list_organizations_features_output::ListOrganizationsFeaturesOutput;
 
 mod _list_organizations_features_input;
 

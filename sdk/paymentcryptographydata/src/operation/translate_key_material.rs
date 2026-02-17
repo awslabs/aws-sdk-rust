@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::translate_key_mate
     }
 }
 
-pub use crate::operation::translate_key_material::_translate_key_material_output::TranslateKeyMaterialOutput;
-
 pub use crate::operation::translate_key_material::_translate_key_material_input::TranslateKeyMaterialInput;
+
+pub use crate::operation::translate_key_material::_translate_key_material_output::TranslateKeyMaterialOutput;
 
 mod _translate_key_material_input;
 

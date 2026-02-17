@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account_aud
     }
 }
 
-pub use crate::operation::update_account_audit_configuration::_update_account_audit_configuration_output::UpdateAccountAuditConfigurationOutput;
-
 pub use crate::operation::update_account_audit_configuration::_update_account_audit_configuration_input::UpdateAccountAuditConfigurationInput;
+
+pub use crate::operation::update_account_audit_configuration::_update_account_audit_configuration_output::UpdateAccountAuditConfigurationOutput;
 
 mod _update_account_audit_configuration_input;
 

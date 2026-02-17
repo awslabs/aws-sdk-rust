@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_fl
     }
 }
 
-pub use crate::operation::update_campaign_flow_association::_update_campaign_flow_association_output::UpdateCampaignFlowAssociationOutput;
-
 pub use crate::operation::update_campaign_flow_association::_update_campaign_flow_association_input::UpdateCampaignFlowAssociationInput;
+
+pub use crate::operation::update_campaign_flow_association::_update_campaign_flow_association_output::UpdateCampaignFlowAssociationOutput;
 
 mod _update_campaign_flow_association_input;
 

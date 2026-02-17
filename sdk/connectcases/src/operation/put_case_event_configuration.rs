@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_case_event_con
     }
 }
 
-pub use crate::operation::put_case_event_configuration::_put_case_event_configuration_output::PutCaseEventConfigurationOutput;
-
 pub use crate::operation::put_case_event_configuration::_put_case_event_configuration_input::PutCaseEventConfigurationInput;
+
+pub use crate::operation::put_case_event_configuration::_put_case_event_configuration_output::PutCaseEventConfigurationOutput;
 
 mod _put_case_event_configuration_input;
 

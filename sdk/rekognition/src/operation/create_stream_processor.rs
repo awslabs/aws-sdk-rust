@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stream_proc
     }
 }
 
-pub use crate::operation::create_stream_processor::_create_stream_processor_output::CreateStreamProcessorOutput;
-
 pub use crate::operation::create_stream_processor::_create_stream_processor_input::CreateStreamProcessorInput;
+
+pub use crate::operation::create_stream_processor::_create_stream_processor_output::CreateStreamProcessorOutput;
 
 mod _create_stream_processor_input;
 

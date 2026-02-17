@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_rule::Des
     }
 }
 
-pub use crate::operation::describe_rule::_describe_rule_output::DescribeRuleOutput;
-
 pub use crate::operation::describe_rule::_describe_rule_input::DescribeRuleInput;
+
+pub use crate::operation::describe_rule::_describe_rule_output::DescribeRuleOutput;
 
 mod _describe_rule_input;
 

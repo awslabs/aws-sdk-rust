@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_connectio
     }
 }
 
-pub use crate::operation::allocate_connection_on_interconnect::_allocate_connection_on_interconnect_output::AllocateConnectionOnInterconnectOutput;
-
 pub use crate::operation::allocate_connection_on_interconnect::_allocate_connection_on_interconnect_input::AllocateConnectionOnInterconnectInput;
+
+pub use crate::operation::allocate_connection_on_interconnect::_allocate_connection_on_interconnect_output::AllocateConnectionOnInterconnectOutput;
 
 mod _allocate_connection_on_interconnect_input;
 

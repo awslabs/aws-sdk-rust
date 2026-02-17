@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_bridge_sour
     }
 }
 
-pub use crate::operation::remove_bridge_source::_remove_bridge_source_output::RemoveBridgeSourceOutput;
-
 pub use crate::operation::remove_bridge_source::_remove_bridge_source_input::RemoveBridgeSourceInput;
+
+pub use crate::operation::remove_bridge_source::_remove_bridge_source_output::RemoveBridgeSourceOutput;
 
 mod _remove_bridge_source_input;
 

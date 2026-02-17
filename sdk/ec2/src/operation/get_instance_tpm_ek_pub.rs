@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_tpm_e
     }
 }
 
-pub use crate::operation::get_instance_tpm_ek_pub::_get_instance_tpm_ek_pub_output::GetInstanceTpmEkPubOutput;
-
 pub use crate::operation::get_instance_tpm_ek_pub::_get_instance_tpm_ek_pub_input::GetInstanceTpmEkPubInput;
+
+pub use crate::operation::get_instance_tpm_ek_pub::_get_instance_tpm_ek_pub_output::GetInstanceTpmEkPubOutput;
 
 mod _get_instance_tpm_ek_pub_input;
 

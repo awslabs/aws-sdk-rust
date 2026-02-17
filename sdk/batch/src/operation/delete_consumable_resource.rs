@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_consumable_
     }
 }
 
-pub use crate::operation::delete_consumable_resource::_delete_consumable_resource_output::DeleteConsumableResourceOutput;
-
 pub use crate::operation::delete_consumable_resource::_delete_consumable_resource_input::DeleteConsumableResourceInput;
+
+pub use crate::operation::delete_consumable_resource::_delete_consumable_resource_output::DeleteConsumableResourceOutput;
 
 mod _delete_consumable_resource_input;
 

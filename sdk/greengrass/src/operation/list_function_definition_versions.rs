@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_function_defi
     }
 }
 
-pub use crate::operation::list_function_definition_versions::_list_function_definition_versions_output::ListFunctionDefinitionVersionsOutput;
-
 pub use crate::operation::list_function_definition_versions::_list_function_definition_versions_input::ListFunctionDefinitionVersionsInput;
+
+pub use crate::operation::list_function_definition_versions::_list_function_definition_versions_output::ListFunctionDefinitionVersionsOutput;
 
 mod _list_function_definition_versions_input;
 

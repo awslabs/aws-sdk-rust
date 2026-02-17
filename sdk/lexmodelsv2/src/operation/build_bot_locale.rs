@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::build_bot_locale::
     }
 }
 
-pub use crate::operation::build_bot_locale::_build_bot_locale_output::BuildBotLocaleOutput;
-
 pub use crate::operation::build_bot_locale::_build_bot_locale_input::BuildBotLocaleInput;
+
+pub use crate::operation::build_bot_locale::_build_bot_locale_output::BuildBotLocaleOutput;
 
 mod _build_bot_locale_input;
 

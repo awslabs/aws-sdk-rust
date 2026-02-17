@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve_memory_re
     }
 }
 
-pub use crate::operation::retrieve_memory_records::_retrieve_memory_records_output::RetrieveMemoryRecordsOutput;
-
 pub use crate::operation::retrieve_memory_records::_retrieve_memory_records_input::RetrieveMemoryRecordsInput;
+
+pub use crate::operation::retrieve_memory_records::_retrieve_memory_records_output::RetrieveMemoryRecordsOutput;
 
 mod _retrieve_memory_records_input;
 

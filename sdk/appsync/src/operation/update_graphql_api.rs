@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_graphql_api
     }
 }
 
-pub use crate::operation::update_graphql_api::_update_graphql_api_output::UpdateGraphqlApiOutput;
-
 pub use crate::operation::update_graphql_api::_update_graphql_api_input::UpdateGraphqlApiInput;
+
+pub use crate::operation::update_graphql_api::_update_graphql_api_output::UpdateGraphqlApiOutput;
 
 mod _update_graphql_api_input;
 

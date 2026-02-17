@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_origin_endpoi
     }
 }
 
-pub use crate::operation::list_origin_endpoints::_list_origin_endpoints_output::ListOriginEndpointsOutput;
-
 pub use crate::operation::list_origin_endpoints::_list_origin_endpoints_input::ListOriginEndpointsInput;
+
+pub use crate::operation::list_origin_endpoints::_list_origin_endpoints_output::ListOriginEndpointsOutput;
 
 mod _list_origin_endpoints_input;
 

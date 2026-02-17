@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_agent_statu
     }
 }
 
-pub use crate::operation::create_agent_status::_create_agent_status_output::CreateAgentStatusOutput;
-
 pub use crate::operation::create_agent_status::_create_agent_status_input::CreateAgentStatusInput;
+
+pub use crate::operation::create_agent_status::_create_agent_status_output::CreateAgentStatusOutput;
 
 mod _create_agent_status_input;
 

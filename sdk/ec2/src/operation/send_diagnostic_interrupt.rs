@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_diagnostic_in
     }
 }
 
-pub use crate::operation::send_diagnostic_interrupt::_send_diagnostic_interrupt_output::SendDiagnosticInterruptOutput;
-
 pub use crate::operation::send_diagnostic_interrupt::_send_diagnostic_interrupt_input::SendDiagnosticInterruptInput;
+
+pub use crate::operation::send_diagnostic_interrupt::_send_diagnostic_interrupt_output::SendDiagnosticInterruptOutput;
 
 mod _send_diagnostic_interrupt_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpn_connect
     }
 }
 
-pub use crate::operation::delete_vpn_connection_route::_delete_vpn_connection_route_output::DeleteVpnConnectionRouteOutput;
-
 pub use crate::operation::delete_vpn_connection_route::_delete_vpn_connection_route_input::DeleteVpnConnectionRouteInput;
+
+pub use crate::operation::delete_vpn_connection_route::_delete_vpn_connection_route_output::DeleteVpnConnectionRouteOutput;
 
 mod _delete_vpn_connection_route_input;
 

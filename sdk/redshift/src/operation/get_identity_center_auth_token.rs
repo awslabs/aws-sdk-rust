@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_cente
     }
 }
 
-pub use crate::operation::get_identity_center_auth_token::_get_identity_center_auth_token_output::GetIdentityCenterAuthTokenOutput;
-
 pub use crate::operation::get_identity_center_auth_token::_get_identity_center_auth_token_input::GetIdentityCenterAuthTokenInput;
+
+pub use crate::operation::get_identity_center_auth_token::_get_identity_center_auth_token_output::GetIdentityCenterAuthTokenOutput;
 
 mod _get_identity_center_auth_token_input;
 

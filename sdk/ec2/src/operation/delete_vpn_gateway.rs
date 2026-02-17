@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpn_gateway
     }
 }
 
-pub use crate::operation::delete_vpn_gateway::_delete_vpn_gateway_output::DeleteVpnGatewayOutput;
-
 pub use crate::operation::delete_vpn_gateway::_delete_vpn_gateway_input::DeleteVpnGatewayInput;
+
+pub use crate::operation::delete_vpn_gateway::_delete_vpn_gateway_output::DeleteVpnGatewayOutput;
 
 mod _delete_vpn_gateway_input;
 

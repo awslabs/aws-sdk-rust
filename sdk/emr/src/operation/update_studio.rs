@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_studio::Upd
     }
 }
 
-pub use crate::operation::update_studio::_update_studio_output::UpdateStudioOutput;
-
 pub use crate::operation::update_studio::_update_studio_input::UpdateStudioInput;
+
+pub use crate::operation::update_studio::_update_studio_output::UpdateStudioOutput;
 
 mod _update_studio_input;
 

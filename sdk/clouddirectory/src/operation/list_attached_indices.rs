@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attached_indi
     }
 }
 
-pub use crate::operation::list_attached_indices::_list_attached_indices_output::ListAttachedIndicesOutput;
-
 pub use crate::operation::list_attached_indices::_list_attached_indices_input::ListAttachedIndicesInput;
+
+pub use crate::operation::list_attached_indices::_list_attached_indices_output::ListAttachedIndicesOutput;
 
 mod _list_attached_indices_input;
 

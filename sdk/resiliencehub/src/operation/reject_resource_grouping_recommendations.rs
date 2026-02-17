@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_resource_gr
     }
 }
 
-pub use crate::operation::reject_resource_grouping_recommendations::_reject_resource_grouping_recommendations_output::RejectResourceGroupingRecommendationsOutput;
-
 pub use crate::operation::reject_resource_grouping_recommendations::_reject_resource_grouping_recommendations_input::RejectResourceGroupingRecommendationsInput;
+
+pub use crate::operation::reject_resource_grouping_recommendations::_reject_resource_grouping_recommendations_output::RejectResourceGroupingRecommendationsOutput;
 
 mod _reject_resource_grouping_recommendations_input;
 

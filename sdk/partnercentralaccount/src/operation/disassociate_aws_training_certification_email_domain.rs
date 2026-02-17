@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_aws_training_certification_email_domain::_disassociate_aws_training_certification_email_domain_output::DisassociateAwsTrainingCertificationEmailDomainOutput;
-
 pub use crate::operation::disassociate_aws_training_certification_email_domain::_disassociate_aws_training_certification_email_domain_input::DisassociateAwsTrainingCertificationEmailDomainInput;
+
+pub use crate::operation::disassociate_aws_training_certification_email_domain::_disassociate_aws_training_certification_email_domain_output::DisassociateAwsTrainingCertificationEmailDomainOutput;
 
 mod _disassociate_aws_training_certification_email_domain_input;
 

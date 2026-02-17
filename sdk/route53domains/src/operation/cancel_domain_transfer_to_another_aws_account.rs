@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::cancel_domain_transfer_to_another_aws_account::_cancel_domain_transfer_to_another_aws_account_output::CancelDomainTransferToAnotherAwsAccountOutput;
-
 pub use crate::operation::cancel_domain_transfer_to_another_aws_account::_cancel_domain_transfer_to_another_aws_account_input::CancelDomainTransferToAnotherAwsAccountInput;
+
+pub use crate::operation::cancel_domain_transfer_to_another_aws_account::_cancel_domain_transfer_to_another_aws_account_output::CancelDomainTransferToAnotherAwsAccountOutput;
 
 mod _cancel_domain_transfer_to_another_aws_account_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_vpc_cidr
     }
 }
 
-pub use crate::operation::associate_vpc_cidr_block::_associate_vpc_cidr_block_output::AssociateVpcCidrBlockOutput;
-
 pub use crate::operation::associate_vpc_cidr_block::_associate_vpc_cidr_block_input::AssociateVpcCidrBlockInput;
+
+pub use crate::operation::associate_vpc_cidr_block::_associate_vpc_cidr_block_output::AssociateVpcCidrBlockOutput;
 
 mod _associate_vpc_cidr_block_input;
 

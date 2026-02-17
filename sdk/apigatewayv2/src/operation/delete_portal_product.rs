@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_portal_prod
     }
 }
 
-pub use crate::operation::delete_portal_product::_delete_portal_product_output::DeletePortalProductOutput;
-
 pub use crate::operation::delete_portal_product::_delete_portal_product_input::DeletePortalProductInput;
+
+pub use crate::operation::delete_portal_product::_delete_portal_product_output::DeletePortalProductOutput;
 
 mod _delete_portal_product_input;
 

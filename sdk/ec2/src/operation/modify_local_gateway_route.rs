@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_local_gatew
     }
 }
 
-pub use crate::operation::modify_local_gateway_route::_modify_local_gateway_route_output::ModifyLocalGatewayRouteOutput;
-
 pub use crate::operation::modify_local_gateway_route::_modify_local_gateway_route_input::ModifyLocalGatewayRouteInput;
+
+pub use crate::operation::modify_local_gateway_route::_modify_local_gateway_route_output::ModifyLocalGatewayRouteOutput;
 
 mod _modify_local_gateway_route_input;
 

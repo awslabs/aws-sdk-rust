@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_api_mapping
     }
 }
 
-pub use crate::operation::create_api_mapping::_create_api_mapping_output::CreateApiMappingOutput;
-
 pub use crate::operation::create_api_mapping::_create_api_mapping_input::CreateApiMappingInput;
+
+pub use crate::operation::create_api_mapping::_create_api_mapping_output::CreateApiMappingOutput;
 
 mod _create_api_mapping_input;
 

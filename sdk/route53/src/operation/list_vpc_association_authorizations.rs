@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpc_associati
     }
 }
 
-pub use crate::operation::list_vpc_association_authorizations::_list_vpc_association_authorizations_output::ListVpcAssociationAuthorizationsOutput;
-
 pub use crate::operation::list_vpc_association_authorizations::_list_vpc_association_authorizations_input::ListVpcAssociationAuthorizationsInput;
+
+pub use crate::operation::list_vpc_association_authorizations::_list_vpc_association_authorizations_output::ListVpcAssociationAuthorizationsOutput;
 
 mod _list_vpc_association_authorizations_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bill_of_materi
     }
 }
 
-pub use crate::operation::get_bill_of_materials_import_job::_get_bill_of_materials_import_job_output::GetBillOfMaterialsImportJobOutput;
-
 pub use crate::operation::get_bill_of_materials_import_job::_get_bill_of_materials_import_job_input::GetBillOfMaterialsImportJobInput;
+
+pub use crate::operation::get_bill_of_materials_import_job::_get_bill_of_materials_import_job_output::GetBillOfMaterialsImportJobOutput;
 
 mod _get_bill_of_materials_import_job_input;
 

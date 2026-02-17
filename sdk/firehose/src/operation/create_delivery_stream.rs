@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_delivery_st
     }
 }
 
-pub use crate::operation::create_delivery_stream::_create_delivery_stream_output::CreateDeliveryStreamOutput;
-
 pub use crate::operation::create_delivery_stream::_create_delivery_stream_input::CreateDeliveryStreamInput;
+
+pub use crate::operation::create_delivery_stream::_create_delivery_stream_output::CreateDeliveryStreamOutput;
 
 mod _create_delivery_stream_input;
 

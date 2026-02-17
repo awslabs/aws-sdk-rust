@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connect_peer::
     }
 }
 
-pub use crate::operation::get_connect_peer::_get_connect_peer_output::GetConnectPeerOutput;
-
 pub use crate::operation::get_connect_peer::_get_connect_peer_input::GetConnectPeerInput;
+
+pub use crate::operation::get_connect_peer::_get_connect_peer_output::GetConnectPeerOutput;
 
 mod _get_connect_peer_input;
 

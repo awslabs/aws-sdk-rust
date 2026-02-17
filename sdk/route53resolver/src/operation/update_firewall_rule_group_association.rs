@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_firewall_ru
     }
 }
 
-pub use crate::operation::update_firewall_rule_group_association::_update_firewall_rule_group_association_output::UpdateFirewallRuleGroupAssociationOutput;
-
 pub use crate::operation::update_firewall_rule_group_association::_update_firewall_rule_group_association_input::UpdateFirewallRuleGroupAssociationInput;
+
+pub use crate::operation::update_firewall_rule_group_association::_update_firewall_rule_group_association_output::UpdateFirewallRuleGroupAssociationOutput;
 
 mod _update_firewall_rule_group_association_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_assignment::_delete_application_assignment_output::DeleteApplicationAssignmentOutput;
-
 pub use crate::operation::delete_application_assignment::_delete_application_assignment_input::DeleteApplicationAssignmentInput;
+
+pub use crate::operation::delete_application_assignment::_delete_application_assignment_output::DeleteApplicationAssignmentOutput;
 
 mod _delete_application_assignment_input;
 

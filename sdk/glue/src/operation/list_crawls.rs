@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_crawls::ListC
     }
 }
 
-pub use crate::operation::list_crawls::_list_crawls_output::ListCrawlsOutput;
-
 pub use crate::operation::list_crawls::_list_crawls_input::ListCrawlsInput;
+
+pub use crate::operation::list_crawls::_list_crawls_output::ListCrawlsOutput;
 
 mod _list_crawls_input;
 

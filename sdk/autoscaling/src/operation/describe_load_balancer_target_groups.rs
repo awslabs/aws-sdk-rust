@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_load_bala
     }
 }
 
-pub use crate::operation::describe_load_balancer_target_groups::_describe_load_balancer_target_groups_output::DescribeLoadBalancerTargetGroupsOutput;
-
 pub use crate::operation::describe_load_balancer_target_groups::_describe_load_balancer_target_groups_input::DescribeLoadBalancerTargetGroupsInput;
+
+pub use crate::operation::describe_load_balancer_target_groups::_describe_load_balancer_target_groups_output::DescribeLoadBalancerTargetGroupsOutput;
 
 mod _describe_load_balancer_target_groups_input;
 

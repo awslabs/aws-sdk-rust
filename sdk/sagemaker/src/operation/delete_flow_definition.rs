@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flow_defini
     }
 }
 
-pub use crate::operation::delete_flow_definition::_delete_flow_definition_output::DeleteFlowDefinitionOutput;
-
 pub use crate::operation::delete_flow_definition::_delete_flow_definition_input::DeleteFlowDefinitionInput;
+
+pub use crate::operation::delete_flow_definition::_delete_flow_definition_output::DeleteFlowDefinitionOutput;
 
 mod _delete_flow_definition_input;
 

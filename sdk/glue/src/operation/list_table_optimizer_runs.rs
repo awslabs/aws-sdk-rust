@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_table_optimiz
     }
 }
 
-pub use crate::operation::list_table_optimizer_runs::_list_table_optimizer_runs_output::ListTableOptimizerRunsOutput;
-
 pub use crate::operation::list_table_optimizer_runs::_list_table_optimizer_runs_input::ListTableOptimizerRunsInput;
+
+pub use crate::operation::list_table_optimizer_runs::_list_table_optimizer_runs_output::ListTableOptimizerRunsOutput;
 
 mod _list_table_optimizer_runs_input;
 

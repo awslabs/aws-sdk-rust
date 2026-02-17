@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environments:
     }
 }
 
-pub use crate::operation::list_environments::_list_environments_output::ListEnvironmentsOutput;
-
 pub use crate::operation::list_environments::_list_environments_input::ListEnvironmentsInput;
+
+pub use crate::operation::list_environments::_list_environments_output::ListEnvironmentsOutput;
 
 mod _list_environments_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_chat_integrat
     }
 }
 
-pub use crate::operation::send_chat_integration_event::_send_chat_integration_event_output::SendChatIntegrationEventOutput;
-
 pub use crate::operation::send_chat_integration_event::_send_chat_integration_event_input::SendChatIntegrationEventInput;
+
+pub use crate::operation::send_chat_integration_event::_send_chat_integration_event_output::SendChatIntegrationEventOutput;
 
 mod _send_chat_integration_event_input;
 

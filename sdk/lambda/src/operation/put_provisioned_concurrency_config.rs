@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_provisioned_co
     }
 }
 
-pub use crate::operation::put_provisioned_concurrency_config::_put_provisioned_concurrency_config_output::PutProvisionedConcurrencyConfigOutput;
-
 pub use crate::operation::put_provisioned_concurrency_config::_put_provisioned_concurrency_config_input::PutProvisionedConcurrencyConfigInput;
+
+pub use crate::operation::put_provisioned_concurrency_config::_put_provisioned_concurrency_config_output::PutProvisionedConcurrencyConfigOutput;
 
 mod _put_provisioned_concurrency_config_input;
 

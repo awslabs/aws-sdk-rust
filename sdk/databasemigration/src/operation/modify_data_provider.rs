@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_data_provid
     }
 }
 
-pub use crate::operation::modify_data_provider::_modify_data_provider_output::ModifyDataProviderOutput;
-
 pub use crate::operation::modify_data_provider::_modify_data_provider_input::ModifyDataProviderInput;
+
+pub use crate::operation::modify_data_provider::_modify_data_provider_output::ModifyDataProviderOutput;
 
 mod _modify_data_provider_input;
 

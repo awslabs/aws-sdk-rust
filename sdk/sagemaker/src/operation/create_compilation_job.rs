@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_compilation
     }
 }
 
-pub use crate::operation::create_compilation_job::_create_compilation_job_output::CreateCompilationJobOutput;
-
 pub use crate::operation::create_compilation_job::_create_compilation_job_input::CreateCompilationJobInput;
+
+pub use crate::operation::create_compilation_job::_create_compilation_job_output::CreateCompilationJobOutput;
 
 mod _create_compilation_job_input;
 

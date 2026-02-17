@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_pri
     }
 }
 
-pub use crate::operation::create_service_principal_name::_create_service_principal_name_output::CreateServicePrincipalNameOutput;
-
 pub use crate::operation::create_service_principal_name::_create_service_principal_name_input::CreateServicePrincipalNameInput;
+
+pub use crate::operation::create_service_principal_name::_create_service_principal_name_output::CreateServicePrincipalNameOutput;
 
 mod _create_service_principal_name_input;
 

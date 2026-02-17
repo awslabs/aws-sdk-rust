@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_feature_g
     }
 }
 
-pub use crate::operation::describe_feature_group::_describe_feature_group_output::DescribeFeatureGroupOutput;
-
 pub use crate::operation::describe_feature_group::_describe_feature_group_input::DescribeFeatureGroupInput;
+
+pub use crate::operation::describe_feature_group::_describe_feature_group_output::DescribeFeatureGroupOutput;
 
 mod _describe_feature_group_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_secur
     }
 }
 
-pub use crate::operation::disassociate_security_key::_disassociate_security_key_output::DisassociateSecurityKeyOutput;
-
 pub use crate::operation::disassociate_security_key::_disassociate_security_key_input::DisassociateSecurityKeyInput;
+
+pub use crate::operation::disassociate_security_key::_disassociate_security_key_output::DisassociateSecurityKeyOutput;
 
 mod _disassociate_security_key_input;
 

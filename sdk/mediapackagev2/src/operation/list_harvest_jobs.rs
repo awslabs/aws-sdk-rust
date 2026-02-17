@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_harvest_jobs:
     }
 }
 
-pub use crate::operation::list_harvest_jobs::_list_harvest_jobs_output::ListHarvestJobsOutput;
-
 pub use crate::operation::list_harvest_jobs::_list_harvest_jobs_input::ListHarvestJobsInput;
+
+pub use crate::operation::list_harvest_jobs::_list_harvest_jobs_output::ListHarvestJobsOutput;
 
 mod _list_harvest_jobs_input;
 

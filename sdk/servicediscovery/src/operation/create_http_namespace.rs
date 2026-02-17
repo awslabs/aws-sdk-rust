@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_http_namesp
     }
 }
 
-pub use crate::operation::create_http_namespace::_create_http_namespace_output::CreateHttpNamespaceOutput;
-
 pub use crate::operation::create_http_namespace::_create_http_namespace_input::CreateHttpNamespaceInput;
+
+pub use crate::operation::create_http_namespace::_create_http_namespace_output::CreateHttpNamespaceOutput;
 
 mod _create_http_namespace_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_collaboration_configured_audience_model_association::_get_collaboration_configured_audience_model_association_output::GetCollaborationConfiguredAudienceModelAssociationOutput;
-
 pub use crate::operation::get_collaboration_configured_audience_model_association::_get_collaboration_configured_audience_model_association_input::GetCollaborationConfiguredAudienceModelAssociationInput;
+
+pub use crate::operation::get_collaboration_configured_audience_model_association::_get_collaboration_configured_audience_model_association_output::GetCollaborationConfiguredAudienceModelAssociationOutput;
 
 mod _get_collaboration_configured_audience_model_association_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_referre
     }
 }
 
-pub use crate::operation::list_image_referrers::_list_image_referrers_output::ListImageReferrersOutput;
-
 pub use crate::operation::list_image_referrers::_list_image_referrers_input::ListImageReferrersInput;
+
+pub use crate::operation::list_image_referrers::_list_image_referrers_output::ListImageReferrersOutput;
 
 mod _list_image_referrers_input;
 

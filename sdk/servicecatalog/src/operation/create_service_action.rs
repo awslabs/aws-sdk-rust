@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_act
     }
 }
 
-pub use crate::operation::create_service_action::_create_service_action_output::CreateServiceActionOutput;
-
 pub use crate::operation::create_service_action::_create_service_action_input::CreateServiceActionInput;
+
+pub use crate::operation::create_service_action::_create_service_action_output::CreateServiceActionOutput;
 
 mod _create_service_action_input;
 

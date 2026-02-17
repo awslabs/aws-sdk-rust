@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_elasticsearch_instances::_describe_reserved_elasticsearch_instances_output::DescribeReservedElasticsearchInstancesOutput;
-
 pub use crate::operation::describe_reserved_elasticsearch_instances::_describe_reserved_elasticsearch_instances_input::DescribeReservedElasticsearchInstancesInput;
+
+pub use crate::operation::describe_reserved_elasticsearch_instances::_describe_reserved_elasticsearch_instances_output::DescribeReservedElasticsearchInstancesOutput;
 
 mod _describe_reserved_elasticsearch_instances_input;
 

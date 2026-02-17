@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_event
     }
 }
 
-pub use crate::operation::get_resource_event_configuration::_get_resource_event_configuration_output::GetResourceEventConfigurationOutput;
-
 pub use crate::operation::get_resource_event_configuration::_get_resource_event_configuration_input::GetResourceEventConfigurationInput;
+
+pub use crate::operation::get_resource_event_configuration::_get_resource_event_configuration_output::GetResourceEventConfigurationOutput;
 
 mod _get_resource_event_configuration_input;
 

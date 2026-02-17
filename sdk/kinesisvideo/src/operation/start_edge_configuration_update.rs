@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_edge_configu
     }
 }
 
-pub use crate::operation::start_edge_configuration_update::_start_edge_configuration_update_output::StartEdgeConfigurationUpdateOutput;
-
 pub use crate::operation::start_edge_configuration_update::_start_edge_configuration_update_input::StartEdgeConfigurationUpdateInput;
+
+pub use crate::operation::start_edge_configuration_update::_start_edge_configuration_update_output::StartEdgeConfigurationUpdateOutput;
 
 mod _start_edge_configuration_update_input;
 

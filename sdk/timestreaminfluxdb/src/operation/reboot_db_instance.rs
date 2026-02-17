@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_db_instance
     }
 }
 
-pub use crate::operation::reboot_db_instance::_reboot_db_instance_output::RebootDbInstanceOutput;
-
 pub use crate::operation::reboot_db_instance::_reboot_db_instance_input::RebootDbInstanceInput;
+
+pub use crate::operation::reboot_db_instance::_reboot_db_instance_output::RebootDbInstanceOutput;
 
 mod _reboot_db_instance_input;
 

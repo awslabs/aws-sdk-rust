@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_response_pl
     }
 }
 
-pub use crate::operation::delete_response_plan::_delete_response_plan_output::DeleteResponsePlanOutput;
-
 pub use crate::operation::delete_response_plan::_delete_response_plan_input::DeleteResponsePlanInput;
+
+pub use crate::operation::delete_response_plan::_delete_response_plan_output::DeleteResponsePlanOutput;
 
 mod _delete_response_plan_input;
 

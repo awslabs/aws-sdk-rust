@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_revision::C
     }
 }
 
-pub use crate::operation::create_revision::_create_revision_output::CreateRevisionOutput;
-
 pub use crate::operation::create_revision::_create_revision_input::CreateRevisionInput;
+
+pub use crate::operation::create_revision::_create_revision_output::CreateRevisionOutput;
 
 mod _create_revision_input;
 

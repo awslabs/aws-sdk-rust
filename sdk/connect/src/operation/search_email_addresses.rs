@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_email_addre
     }
 }
 
-pub use crate::operation::search_email_addresses::_search_email_addresses_output::SearchEmailAddressesOutput;
-
 pub use crate::operation::search_email_addresses::_search_email_addresses_input::SearchEmailAddressesInput;
+
+pub use crate::operation::search_email_addresses::_search_email_addresses_output::SearchEmailAddressesOutput;
 
 mod _search_email_addresses_input;
 

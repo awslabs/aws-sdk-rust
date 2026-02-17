@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flow_defi
     }
 }
 
-pub use crate::operation::describe_flow_definition::_describe_flow_definition_output::DescribeFlowDefinitionOutput;
-
 pub use crate::operation::describe_flow_definition::_describe_flow_definition_input::DescribeFlowDefinitionInput;
+
+pub use crate::operation::describe_flow_definition::_describe_flow_definition_output::DescribeFlowDefinitionOutput;
 
 mod _describe_flow_definition_input;
 

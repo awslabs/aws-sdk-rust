@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_credentia
     }
 }
 
-pub use crate::operation::generate_credential_report::_generate_credential_report_output::GenerateCredentialReportOutput;
-
 pub use crate::operation::generate_credential_report::_generate_credential_report_input::GenerateCredentialReportInput;
+
+pub use crate::operation::generate_credential_report::_generate_credential_report_output::GenerateCredentialReportOutput;
 
 mod _generate_credential_report_input;
 

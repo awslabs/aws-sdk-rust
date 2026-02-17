@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_privacy_bud
     }
 }
 
-pub use crate::operation::delete_privacy_budget_template::_delete_privacy_budget_template_output::DeletePrivacyBudgetTemplateOutput;
-
 pub use crate::operation::delete_privacy_budget_template::_delete_privacy_budget_template_input::DeletePrivacyBudgetTemplateInput;
+
+pub use crate::operation::delete_privacy_budget_template::_delete_privacy_budget_template_output::DeletePrivacyBudgetTemplateOutput;
 
 mod _delete_privacy_budget_template_input;
 

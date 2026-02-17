@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_backend_aut
     }
 }
 
-pub use crate::operation::import_backend_auth::_import_backend_auth_output::ImportBackendAuthOutput;
-
 pub use crate::operation::import_backend_auth::_import_backend_auth_input::ImportBackendAuthInput;
+
+pub use crate::operation::import_backend_auth::_import_backend_auth_output::ImportBackendAuthOutput;
 
 mod _import_backend_auth_input;
 

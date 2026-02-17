@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_receipt_fil
     }
 }
 
-pub use crate::operation::create_receipt_filter::_create_receipt_filter_output::CreateReceiptFilterOutput;
-
 pub use crate::operation::create_receipt_filter::_create_receipt_filter_input::CreateReceiptFilterInput;
+
+pub use crate::operation::create_receipt_filter::_create_receipt_filter_output::CreateReceiptFilterOutput;
 
 mod _create_receipt_filter_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_backup_to_reg
     }
 }
 
-pub use crate::operation::copy_backup_to_region::_copy_backup_to_region_output::CopyBackupToRegionOutput;
-
 pub use crate::operation::copy_backup_to_region::_copy_backup_to_region_input::CopyBackupToRegionInput;
+
+pub use crate::operation::copy_backup_to_region::_copy_backup_to_region_output::CopyBackupToRegionOutput;
 
 mod _copy_backup_to_region_input;
 

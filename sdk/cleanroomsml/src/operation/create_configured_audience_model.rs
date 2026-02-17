@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configured_
     }
 }
 
-pub use crate::operation::create_configured_audience_model::_create_configured_audience_model_output::CreateConfiguredAudienceModelOutput;
-
 pub use crate::operation::create_configured_audience_model::_create_configured_audience_model_input::CreateConfiguredAudienceModelInput;
+
+pub use crate::operation::create_configured_audience_model::_create_configured_audience_model_output::CreateConfiguredAudienceModelOutput;
 
 mod _create_configured_audience_model_input;
 

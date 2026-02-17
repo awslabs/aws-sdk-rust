@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vod_sources::
     }
 }
 
-pub use crate::operation::list_vod_sources::_list_vod_sources_output::ListVodSourcesOutput;
-
 pub use crate::operation::list_vod_sources::_list_vod_sources_input::ListVodSourcesInput;
+
+pub use crate::operation::list_vod_sources::_list_vod_sources_output::ListVodSourcesOutput;
 
 mod _list_vod_sources_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_remediation
     }
 }
 
-pub use crate::operation::delete_remediation_exceptions::_delete_remediation_exceptions_output::DeleteRemediationExceptionsOutput;
-
 pub use crate::operation::delete_remediation_exceptions::_delete_remediation_exceptions_input::DeleteRemediationExceptionsInput;
+
+pub use crate::operation::delete_remediation_exceptions::_delete_remediation_exceptions_output::DeleteRemediationExceptionsOutput;
 
 mod _delete_remediation_exceptions_input;
 

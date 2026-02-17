@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rx_norm_infer
     }
 }
 
-pub use crate::operation::list_rx_norm_inference_jobs::_list_rx_norm_inference_jobs_output::ListRxNormInferenceJobsOutput;
-
 pub use crate::operation::list_rx_norm_inference_jobs::_list_rx_norm_inference_jobs_input::ListRxNormInferenceJobsInput;
+
+pub use crate::operation::list_rx_norm_inference_jobs::_list_rx_norm_inference_jobs_output::ListRxNormInferenceJobsOutput;
 
 mod _list_rx_norm_inference_jobs_input;
 

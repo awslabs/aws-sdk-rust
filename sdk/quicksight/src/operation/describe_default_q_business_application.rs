@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_default_q
     }
 }
 
-pub use crate::operation::describe_default_q_business_application::_describe_default_q_business_application_output::DescribeDefaultQBusinessApplicationOutput;
-
 pub use crate::operation::describe_default_q_business_application::_describe_default_q_business_application_input::DescribeDefaultQBusinessApplicationInput;
+
+pub use crate::operation::describe_default_q_business_application::_describe_default_q_business_application_output::DescribeDefaultQBusinessApplicationOutput;
 
 mod _describe_default_q_business_application_input;
 

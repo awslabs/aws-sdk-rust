@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_sub
     }
 }
 
-pub use crate::operation::describe_event_subscriptions::_describe_event_subscriptions_output::DescribeEventSubscriptionsOutput;
-
 pub use crate::operation::describe_event_subscriptions::_describe_event_subscriptions_input::DescribeEventSubscriptionsInput;
+
+pub use crate::operation::describe_event_subscriptions::_describe_event_subscriptions_output::DescribeEventSubscriptionsOutput;
 
 mod _describe_event_subscriptions_input;
 

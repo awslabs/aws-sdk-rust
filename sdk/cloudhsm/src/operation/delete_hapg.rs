@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hapg::Delet
     }
 }
 
-pub use crate::operation::delete_hapg::_delete_hapg_output::DeleteHapgOutput;
-
 pub use crate::operation::delete_hapg::_delete_hapg_input::DeleteHapgInput;
+
+pub use crate::operation::delete_hapg::_delete_hapg_output::DeleteHapgOutput;
 
 mod _delete_hapg_input;
 

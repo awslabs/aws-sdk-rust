@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rotate_encryption_
     }
 }
 
-pub use crate::operation::rotate_encryption_key::_rotate_encryption_key_output::RotateEncryptionKeyOutput;
-
 pub use crate::operation::rotate_encryption_key::_rotate_encryption_key_input::RotateEncryptionKeyInput;
+
+pub use crate::operation::rotate_encryption_key::_rotate_encryption_key_output::RotateEncryptionKeyOutput;
 
 mod _rotate_encryption_key_input;
 

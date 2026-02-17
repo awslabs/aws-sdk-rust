@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_pool_cli
     }
 }
 
-pub use crate::operation::list_user_pool_clients::_list_user_pool_clients_output::ListUserPoolClientsOutput;
-
 pub use crate::operation::list_user_pool_clients::_list_user_pool_clients_input::ListUserPoolClientsInput;
+
+pub use crate::operation::list_user_pool_clients::_list_user_pool_clients_output::ListUserPoolClientsOutput;
 
 mod _list_user_pool_clients_input;
 

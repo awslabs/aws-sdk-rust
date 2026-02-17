@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_anomaly_sub
     }
 }
 
-pub use crate::operation::delete_anomaly_subscription::_delete_anomaly_subscription_output::DeleteAnomalySubscriptionOutput;
-
 pub use crate::operation::delete_anomaly_subscription::_delete_anomaly_subscription_input::DeleteAnomalySubscriptionInput;
+
+pub use crate::operation::delete_anomaly_subscription::_delete_anomaly_subscription_output::DeleteAnomalySubscriptionOutput;
 
 mod _delete_anomaly_subscription_input;
 

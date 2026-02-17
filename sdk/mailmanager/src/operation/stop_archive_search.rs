@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_archive_searc
     }
 }
 
-pub use crate::operation::stop_archive_search::_stop_archive_search_output::StopArchiveSearchOutput;
-
 pub use crate::operation::stop_archive_search::_stop_archive_search_input::StopArchiveSearchInput;
+
+pub use crate::operation::stop_archive_search::_stop_archive_search_output::StopArchiveSearchOutput;
 
 mod _stop_archive_search_input;
 

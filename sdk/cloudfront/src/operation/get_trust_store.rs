@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trust_store::G
     }
 }
 
-pub use crate::operation::get_trust_store::_get_trust_store_output::GetTrustStoreOutput;
-
 pub use crate::operation::get_trust_store::_get_trust_store_input::GetTrustStoreInput;
+
+pub use crate::operation::get_trust_store::_get_trust_store_output::GetTrustStoreOutput;
 
 mod _get_trust_store_input;
 

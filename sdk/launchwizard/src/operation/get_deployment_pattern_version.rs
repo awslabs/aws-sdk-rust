@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_pat
     }
 }
 
-pub use crate::operation::get_deployment_pattern_version::_get_deployment_pattern_version_output::GetDeploymentPatternVersionOutput;
-
 pub use crate::operation::get_deployment_pattern_version::_get_deployment_pattern_version_input::GetDeploymentPatternVersionInput;
+
+pub use crate::operation::get_deployment_pattern_version::_get_deployment_pattern_version_output::GetDeploymentPatternVersionOutput;
 
 mod _get_deployment_pattern_version_input;
 

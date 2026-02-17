@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_codegen_jobs:
     }
 }
 
-pub use crate::operation::list_codegen_jobs::_list_codegen_jobs_output::ListCodegenJobsOutput;
-
 pub use crate::operation::list_codegen_jobs::_list_codegen_jobs_input::ListCodegenJobsInput;
+
+pub use crate::operation::list_codegen_jobs::_list_codegen_jobs_output::ListCodegenJobsOutput;
 
 mod _list_codegen_jobs_input;
 

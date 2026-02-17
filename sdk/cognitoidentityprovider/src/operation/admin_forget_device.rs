@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_forget_devic
     }
 }
 
-pub use crate::operation::admin_forget_device::_admin_forget_device_output::AdminForgetDeviceOutput;
-
 pub use crate::operation::admin_forget_device::_admin_forget_device_input::AdminForgetDeviceInput;
+
+pub use crate::operation::admin_forget_device::_admin_forget_device_output::AdminForgetDeviceOutput;
 
 mod _admin_forget_device_input;
 

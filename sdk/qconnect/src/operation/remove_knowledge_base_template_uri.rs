@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_knowledge_b
     }
 }
 
-pub use crate::operation::remove_knowledge_base_template_uri::_remove_knowledge_base_template_uri_output::RemoveKnowledgeBaseTemplateUriOutput;
-
 pub use crate::operation::remove_knowledge_base_template_uri::_remove_knowledge_base_template_uri_input::RemoveKnowledgeBaseTemplateUriInput;
+
+pub use crate::operation::remove_knowledge_base_template_uri::_remove_knowledge_base_template_uri_output::RemoveKnowledgeBaseTemplateUriOutput;
 
 mod _remove_knowledge_base_template_uri_input;
 

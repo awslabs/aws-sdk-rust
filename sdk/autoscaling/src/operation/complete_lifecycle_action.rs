@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_lifecycle
     }
 }
 
-pub use crate::operation::complete_lifecycle_action::_complete_lifecycle_action_output::CompleteLifecycleActionOutput;
-
 pub use crate::operation::complete_lifecycle_action::_complete_lifecycle_action_input::CompleteLifecycleActionInput;
+
+pub use crate::operation::complete_lifecycle_action::_complete_lifecycle_action_output::CompleteLifecycleActionOutput;
 
 mod _complete_lifecycle_action_input;
 

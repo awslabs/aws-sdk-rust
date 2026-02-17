@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_selector
     }
 }
 
-pub use crate::operation::get_event_selectors::_get_event_selectors_output::GetEventSelectorsOutput;
-
 pub use crate::operation::get_event_selectors::_get_event_selectors_input::GetEventSelectorsInput;
+
+pub use crate::operation::get_event_selectors::_get_event_selectors_output::GetEventSelectorsOutput;
 
 mod _get_event_selectors_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dev_environ
     }
 }
 
-pub use crate::operation::delete_dev_environment::_delete_dev_environment_output::DeleteDevEnvironmentOutput;
-
 pub use crate::operation::delete_dev_environment::_delete_dev_environment_input::DeleteDevEnvironmentInput;
+
+pub use crate::operation::delete_dev_environment::_delete_dev_environment_output::DeleteDevEnvironmentOutput;
 
 mod _delete_dev_environment_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mobile_devi
     }
 }
 
-pub use crate::operation::delete_mobile_device_access_rule::_delete_mobile_device_access_rule_output::DeleteMobileDeviceAccessRuleOutput;
-
 pub use crate::operation::delete_mobile_device_access_rule::_delete_mobile_device_access_rule_input::DeleteMobileDeviceAccessRuleInput;
+
+pub use crate::operation::delete_mobile_device_access_rule::_delete_mobile_device_access_rule_output::DeleteMobileDeviceAccessRuleOutput;
 
 mod _delete_mobile_device_access_rule_input;
 

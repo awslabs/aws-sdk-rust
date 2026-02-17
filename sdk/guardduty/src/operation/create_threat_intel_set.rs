@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_threat_inte
     }
 }
 
-pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_output::CreateThreatIntelSetOutput;
-
 pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_input::CreateThreatIntelSetInput;
+
+pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_output::CreateThreatIntelSetOutput;
 
 mod _create_threat_intel_set_input;
 

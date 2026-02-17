@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_server::StopS
     }
 }
 
-pub use crate::operation::stop_server::_stop_server_output::StopServerOutput;
-
 pub use crate::operation::stop_server::_stop_server_input::StopServerInput;
+
+pub use crate::operation::stop_server::_stop_server_output::StopServerOutput;
 
 mod _stop_server_input;
 

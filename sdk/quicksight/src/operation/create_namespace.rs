@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_namespace::
     }
 }
 
-pub use crate::operation::create_namespace::_create_namespace_output::CreateNamespaceOutput;
-
 pub use crate::operation::create_namespace::_create_namespace_input::CreateNamespaceInput;
+
+pub use crate::operation::create_namespace::_create_namespace_output::CreateNamespaceOutput;
 
 mod _create_namespace_input;
 

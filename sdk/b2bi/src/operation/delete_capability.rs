@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_capability:
     }
 }
 
-pub use crate::operation::delete_capability::_delete_capability_output::DeleteCapabilityOutput;
-
 pub use crate::operation::delete_capability::_delete_capability_input::DeleteCapabilityInput;
+
+pub use crate::operation::delete_capability::_delete_capability_output::DeleteCapabilityOutput;
 
 mod _delete_capability_input;
 

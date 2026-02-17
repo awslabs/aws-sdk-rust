@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_call_analyt
     }
 }
 
-pub use crate::operation::update_call_analytics_category::_update_call_analytics_category_output::UpdateCallAnalyticsCategoryOutput;
-
 pub use crate::operation::update_call_analytics_category::_update_call_analytics_category_input::UpdateCallAnalyticsCategoryInput;
+
+pub use crate::operation::update_call_analytics_category::_update_call_analytics_category_output::UpdateCallAnalyticsCategoryOutput;
 
 mod _update_call_analytics_category_input;
 

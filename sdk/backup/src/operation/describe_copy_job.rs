@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_copy_job:
     }
 }
 
-pub use crate::operation::describe_copy_job::_describe_copy_job_output::DescribeCopyJobOutput;
-
 pub use crate::operation::describe_copy_job::_describe_copy_job_input::DescribeCopyJobInput;
+
+pub use crate::operation::describe_copy_job::_describe_copy_job_output::DescribeCopyJobOutput;
 
 mod _describe_copy_job_input;
 

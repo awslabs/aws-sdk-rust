@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sms_templat
     }
 }
 
-pub use crate::operation::create_sms_template::_create_sms_template_output::CreateSmsTemplateOutput;
-
 pub use crate::operation::create_sms_template::_create_sms_template_input::CreateSmsTemplateInput;
+
+pub use crate::operation::create_sms_template::_create_sms_template_output::CreateSmsTemplateOutput;
 
 mod _create_sms_template_input;
 

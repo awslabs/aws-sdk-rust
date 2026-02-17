@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_unique_proble
     }
 }
 
-pub use crate::operation::list_unique_problems::_list_unique_problems_output::ListUniqueProblemsOutput;
-
 pub use crate::operation::list_unique_problems::_list_unique_problems_input::ListUniqueProblemsInput;
+
+pub use crate::operation::list_unique_problems::_list_unique_problems_output::ListUniqueProblemsOutput;
 
 mod _list_unique_problems_input;
 

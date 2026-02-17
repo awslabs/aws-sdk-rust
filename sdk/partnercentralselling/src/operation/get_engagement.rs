@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_engagement::Ge
     }
 }
 
-pub use crate::operation::get_engagement::_get_engagement_output::GetEngagementOutput;
-
 pub use crate::operation::get_engagement::_get_engagement_input::GetEngagementInput;
+
+pub use crate::operation::get_engagement::_get_engagement_output::GetEngagementOutput;
 
 mod _get_engagement_input;
 

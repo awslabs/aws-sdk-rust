@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_quality_
     }
 }
 
-pub use crate::operation::list_data_quality_statistic_annotations::_list_data_quality_statistic_annotations_output::ListDataQualityStatisticAnnotationsOutput;
-
 pub use crate::operation::list_data_quality_statistic_annotations::_list_data_quality_statistic_annotations_input::ListDataQualityStatisticAnnotationsInput;
+
+pub use crate::operation::list_data_quality_statistic_annotations::_list_data_quality_statistic_annotations_output::ListDataQualityStatisticAnnotationsOutput;
 
 mod _list_data_quality_statistic_annotations_input;
 

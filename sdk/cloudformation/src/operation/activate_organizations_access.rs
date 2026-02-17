@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_organizat
     }
 }
 
-pub use crate::operation::activate_organizations_access::_activate_organizations_access_output::ActivateOrganizationsAccessOutput;
-
 pub use crate::operation::activate_organizations_access::_activate_organizations_access_input::ActivateOrganizationsAccessInput;
+
+pub use crate::operation::activate_organizations_access::_activate_organizations_access_output::ActivateOrganizationsAccessOutput;
 
 mod _activate_organizations_access_input;
 

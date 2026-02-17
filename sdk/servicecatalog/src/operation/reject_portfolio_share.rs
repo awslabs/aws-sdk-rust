@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_portfolio_s
     }
 }
 
-pub use crate::operation::reject_portfolio_share::_reject_portfolio_share_output::RejectPortfolioShareOutput;
-
 pub use crate::operation::reject_portfolio_share::_reject_portfolio_share_input::RejectPortfolioShareInput;
+
+pub use crate::operation::reject_portfolio_share::_reject_portfolio_share_output::RejectPortfolioShareOutput;
 
 mod _reject_portfolio_share_input;
 

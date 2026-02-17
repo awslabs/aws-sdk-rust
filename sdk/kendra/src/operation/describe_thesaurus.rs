@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_thesaurus
     }
 }
 
-pub use crate::operation::describe_thesaurus::_describe_thesaurus_output::DescribeThesaurusOutput;
-
 pub use crate::operation::describe_thesaurus::_describe_thesaurus_input::DescribeThesaurusInput;
+
+pub use crate::operation::describe_thesaurus::_describe_thesaurus_output::DescribeThesaurusOutput;
 
 mod _describe_thesaurus_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_product_subsc
     }
 }
 
-pub use crate::operation::list_product_subscriptions::_list_product_subscriptions_output::ListProductSubscriptionsOutput;
-
 pub use crate::operation::list_product_subscriptions::_list_product_subscriptions_input::ListProductSubscriptionsInput;
+
+pub use crate::operation::list_product_subscriptions::_list_product_subscriptions_output::ListProductSubscriptionsOutput;
 
 mod _list_product_subscriptions_input;
 

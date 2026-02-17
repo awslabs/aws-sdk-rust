@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_fhir_export_
     }
 }
 
-pub use crate::operation::start_fhir_export_job::_start_fhir_export_job_output::StartFhirExportJobOutput;
-
 pub use crate::operation::start_fhir_export_job::_start_fhir_export_job_input::StartFhirExportJobInput;
+
+pub use crate::operation::start_fhir_export_job::_start_fhir_export_job_output::StartFhirExportJobOutput;
 
 mod _start_fhir_export_job_input;
 

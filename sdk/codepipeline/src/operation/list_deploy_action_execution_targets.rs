@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deploy_action
     }
 }
 
-pub use crate::operation::list_deploy_action_execution_targets::_list_deploy_action_execution_targets_output::ListDeployActionExecutionTargetsOutput;
-
 pub use crate::operation::list_deploy_action_execution_targets::_list_deploy_action_execution_targets_input::ListDeployActionExecutionTargetsInput;
+
+pub use crate::operation::list_deploy_action_execution_targets::_list_deploy_action_execution_targets_output::ListDeployActionExecutionTargetsOutput;
 
 mod _list_deploy_action_execution_targets_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_keyspace::D
     }
 }
 
-pub use crate::operation::delete_keyspace::_delete_keyspace_output::DeleteKeyspaceOutput;
-
 pub use crate::operation::delete_keyspace::_delete_keyspace_input::DeleteKeyspaceInput;
+
+pub use crate::operation::delete_keyspace::_delete_keyspace_output::DeleteKeyspaceOutput;
 
 mod _delete_keyspace_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_sch
     }
 }
 
-pub use crate::operation::list_inference_schedulers::_list_inference_schedulers_output::ListInferenceSchedulersOutput;
-
 pub use crate::operation::list_inference_schedulers::_list_inference_schedulers_input::ListInferenceSchedulersInput;
+
+pub use crate::operation::list_inference_schedulers::_list_inference_schedulers_output::ListInferenceSchedulersOutput;
 
 mod _list_inference_schedulers_input;
 

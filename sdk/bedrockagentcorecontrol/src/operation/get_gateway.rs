@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_gateway::GetGa
     }
 }
 
-pub use crate::operation::get_gateway::_get_gateway_output::GetGatewayOutput;
-
 pub use crate::operation::get_gateway::_get_gateway_input::GetGatewayInput;
+
+pub use crate::operation::get_gateway::_get_gateway_output::GetGatewayOutput;
 
 mod _get_gateway_input;
 

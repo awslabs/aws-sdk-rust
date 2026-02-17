@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_intent_vers
     }
 }
 
-pub use crate::operation::create_intent_version::_create_intent_version_output::CreateIntentVersionOutput;
-
 pub use crate::operation::create_intent_version::_create_intent_version_input::CreateIntentVersionInput;
+
+pub use crate::operation::create_intent_version::_create_intent_version_output::CreateIntentVersionOutput;
 
 mod _create_intent_version_input;
 

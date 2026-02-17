@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_rule:
     }
 }
 
-pub use crate::operation::update_event_rule::_update_event_rule_output::UpdateEventRuleOutput;
-
 pub use crate::operation::update_event_rule::_update_event_rule_input::UpdateEventRuleInput;
+
+pub use crate::operation::update_event_rule::_update_event_rule_output::UpdateEventRuleOutput;
 
 mod _update_event_rule_input;
 

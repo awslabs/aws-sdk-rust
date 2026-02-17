@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_storage_pro
     }
 }
 
-pub use crate::operation::create_storage_profile::_create_storage_profile_output::CreateStorageProfileOutput;
-
 pub use crate::operation::create_storage_profile::_create_storage_profile_input::CreateStorageProfileInput;
+
+pub use crate::operation::create_storage_profile::_create_storage_profile_output::CreateStorageProfileOutput;
 
 mod _create_storage_profile_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_points
     }
 }
 
-pub use crate::operation::list_access_points_for_object_lambda::_list_access_points_for_object_lambda_output::ListAccessPointsForObjectLambdaOutput;
-
 pub use crate::operation::list_access_points_for_object_lambda::_list_access_points_for_object_lambda_input::ListAccessPointsForObjectLambdaInput;
+
+pub use crate::operation::list_access_points_for_object_lambda::_list_access_points_for_object_lambda_output::ListAccessPointsForObjectLambdaOutput;
 
 mod _list_access_points_for_object_lambda_input;
 

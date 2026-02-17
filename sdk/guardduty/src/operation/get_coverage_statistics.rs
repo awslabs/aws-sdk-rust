@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_coverage_stati
     }
 }
 
-pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_output::GetCoverageStatisticsOutput;
-
 pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_input::GetCoverageStatisticsInput;
+
+pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_output::GetCoverageStatisticsOutput;
 
 mod _get_coverage_statistics_input;
 

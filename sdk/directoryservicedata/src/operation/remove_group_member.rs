@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_group_membe
     }
 }
 
-pub use crate::operation::remove_group_member::_remove_group_member_output::RemoveGroupMemberOutput;
-
 pub use crate::operation::remove_group_member::_remove_group_member_input::RemoveGroupMemberInput;
+
+pub use crate::operation::remove_group_member::_remove_group_member_output::RemoveGroupMemberOutput;
 
 mod _remove_group_member_input;
 

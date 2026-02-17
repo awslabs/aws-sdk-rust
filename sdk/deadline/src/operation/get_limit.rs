@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_limit::GetLimi
     }
 }
 
-pub use crate::operation::get_limit::_get_limit_output::GetLimitOutput;
-
 pub use crate::operation::get_limit::_get_limit_input::GetLimitInput;
+
+pub use crate::operation::get_limit::_get_limit_output::GetLimitOutput;
 
 mod _get_limit_input;
 

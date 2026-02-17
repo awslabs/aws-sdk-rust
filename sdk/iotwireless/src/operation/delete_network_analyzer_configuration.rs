@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_network_ana
     }
 }
 
-pub use crate::operation::delete_network_analyzer_configuration::_delete_network_analyzer_configuration_output::DeleteNetworkAnalyzerConfigurationOutput;
-
 pub use crate::operation::delete_network_analyzer_configuration::_delete_network_analyzer_configuration_input::DeleteNetworkAnalyzerConfigurationInput;
+
+pub use crate::operation::delete_network_analyzer_configuration::_delete_network_analyzer_configuration_output::DeleteNetworkAnalyzerConfigurationOutput;
 
 mod _delete_network_analyzer_configuration_input;
 

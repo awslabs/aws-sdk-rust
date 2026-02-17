@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolver_endp
     }
 }
 
-pub use crate::operation::list_resolver_endpoints::_list_resolver_endpoints_output::ListResolverEndpointsOutput;
-
 pub use crate::operation::list_resolver_endpoints::_list_resolver_endpoints_input::ListResolverEndpointsInput;
+
+pub use crate::operation::list_resolver_endpoints::_list_resolver_endpoints_output::ListResolverEndpointsOutput;
 
 mod _list_resolver_endpoints_input;
 

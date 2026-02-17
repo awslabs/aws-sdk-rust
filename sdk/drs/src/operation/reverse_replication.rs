@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reverse_replicatio
     }
 }
 
-pub use crate::operation::reverse_replication::_reverse_replication_output::ReverseReplicationOutput;
-
 pub use crate::operation::reverse_replication::_reverse_replication_input::ReverseReplicationInput;
+
+pub use crate::operation::reverse_replication::_reverse_replication_output::ReverseReplicationOutput;
 
 mod _reverse_replication_input;
 

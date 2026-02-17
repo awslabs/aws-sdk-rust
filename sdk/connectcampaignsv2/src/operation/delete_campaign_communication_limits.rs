@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_campaign_co
     }
 }
 
-pub use crate::operation::delete_campaign_communication_limits::_delete_campaign_communication_limits_output::DeleteCampaignCommunicationLimitsOutput;
-
 pub use crate::operation::delete_campaign_communication_limits::_delete_campaign_communication_limits_input::DeleteCampaignCommunicationLimitsInput;
+
+pub use crate::operation::delete_campaign_communication_limits::_delete_campaign_communication_limits_output::DeleteCampaignCommunicationLimitsOutput;
 
 mod _delete_campaign_communication_limits_input;
 

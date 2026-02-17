@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_medical_voc
     }
 }
 
-pub use crate::operation::create_medical_vocabulary::_create_medical_vocabulary_output::CreateMedicalVocabularyOutput;
-
 pub use crate::operation::create_medical_vocabulary::_create_medical_vocabulary_input::CreateMedicalVocabularyInput;
+
+pub use crate::operation::create_medical_vocabulary::_create_medical_vocabulary_output::CreateMedicalVocabularyOutput;
 
 mod _create_medical_vocabulary_input;
 

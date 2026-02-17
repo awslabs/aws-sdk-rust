@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_resource_sta
     }
 }
 
-pub use crate::operation::start_resource_state_update::_start_resource_state_update_output::StartResourceStateUpdateOutput;
-
 pub use crate::operation::start_resource_state_update::_start_resource_state_update_input::StartResourceStateUpdateInput;
+
+pub use crate::operation::start_resource_state_update::_start_resource_state_update_output::StartResourceStateUpdateOutput;
 
 mod _start_resource_state_update_input;
 

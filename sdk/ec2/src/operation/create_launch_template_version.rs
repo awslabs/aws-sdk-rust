@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_launch_temp
     }
 }
 
-pub use crate::operation::create_launch_template_version::_create_launch_template_version_output::CreateLaunchTemplateVersionOutput;
-
 pub use crate::operation::create_launch_template_version::_create_launch_template_version_input::CreateLaunchTemplateVersionInput;
+
+pub use crate::operation::create_launch_template_version::_create_launch_template_version_output::CreateLaunchTemplateVersionOutput;
 
 mod _create_launch_template_version_input;
 

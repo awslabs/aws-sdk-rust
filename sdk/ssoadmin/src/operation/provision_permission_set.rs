@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provision_permissi
     }
 }
 
-pub use crate::operation::provision_permission_set::_provision_permission_set_output::ProvisionPermissionSetOutput;
-
 pub use crate::operation::provision_permission_set::_provision_permission_set_input::ProvisionPermissionSetInput;
+
+pub use crate::operation::provision_permission_set::_provision_permission_set_output::ProvisionPermissionSetOutput;
 
 mod _provision_permission_set_input;
 

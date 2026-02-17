@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pipe::Des
     }
 }
 
-pub use crate::operation::describe_pipe::_describe_pipe_output::DescribePipeOutput;
-
 pub use crate::operation::describe_pipe::_describe_pipe_input::DescribePipeInput;
+
+pub use crate::operation::describe_pipe::_describe_pipe_output::DescribePipeOutput;
 
 mod _describe_pipe_input;
 

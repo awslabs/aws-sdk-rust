@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_asset_bundle
     }
 }
 
-pub use crate::operation::start_asset_bundle_export_job::_start_asset_bundle_export_job_output::StartAssetBundleExportJobOutput;
-
 pub use crate::operation::start_asset_bundle_export_job::_start_asset_bundle_export_job_input::StartAssetBundleExportJobInput;
+
+pub use crate::operation::start_asset_bundle_export_job::_start_asset_bundle_export_job_output::StartAssetBundleExportJobOutput;
 
 mod _start_asset_bundle_export_job_input;
 

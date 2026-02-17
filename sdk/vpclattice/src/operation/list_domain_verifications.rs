@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_verifi
     }
 }
 
-pub use crate::operation::list_domain_verifications::_list_domain_verifications_output::ListDomainVerificationsOutput;
-
 pub use crate::operation::list_domain_verifications::_list_domain_verifications_input::ListDomainVerificationsInput;
+
+pub use crate::operation::list_domain_verifications::_list_domain_verifications_output::ListDomainVerificationsOutput;
 
 mod _list_domain_verifications_input;
 

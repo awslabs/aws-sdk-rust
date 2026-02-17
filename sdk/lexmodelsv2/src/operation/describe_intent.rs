@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_intent::D
     }
 }
 
-pub use crate::operation::describe_intent::_describe_intent_output::DescribeIntentOutput;
-
 pub use crate::operation::describe_intent::_describe_intent_input::DescribeIntentInput;
+
+pub use crate::operation::describe_intent::_describe_intent_output::DescribeIntentOutput;
 
 mod _describe_intent_input;
 

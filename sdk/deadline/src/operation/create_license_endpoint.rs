@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_license_end
     }
 }
 
-pub use crate::operation::create_license_endpoint::_create_license_endpoint_output::CreateLicenseEndpointOutput;
-
 pub use crate::operation::create_license_endpoint::_create_license_endpoint_input::CreateLicenseEndpointInput;
+
+pub use crate::operation::create_license_endpoint::_create_license_endpoint_output::CreateLicenseEndpointOutput;
 
 mod _create_license_endpoint_input;
 

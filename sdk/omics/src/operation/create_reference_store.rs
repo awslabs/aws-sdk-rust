@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_reference_s
     }
 }
 
-pub use crate::operation::create_reference_store::_create_reference_store_output::CreateReferenceStoreOutput;
-
 pub use crate::operation::create_reference_store::_create_reference_store_input::CreateReferenceStoreInput;
+
+pub use crate::operation::create_reference_store::_create_reference_store_output::CreateReferenceStoreOutput;
 
 mod _create_reference_store_input;
 

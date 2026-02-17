@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_sso::Disab
     }
 }
 
-pub use crate::operation::disable_sso::_disable_sso_output::DisableSsoOutput;
-
 pub use crate::operation::disable_sso::_disable_sso_input::DisableSsoInput;
+
+pub use crate::operation::disable_sso::_disable_sso_output::DisableSsoOutput;
 
 mod _disable_sso_input;
 

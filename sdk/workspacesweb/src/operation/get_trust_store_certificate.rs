@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trust_store_ce
     }
 }
 
-pub use crate::operation::get_trust_store_certificate::_get_trust_store_certificate_output::GetTrustStoreCertificateOutput;
-
 pub use crate::operation::get_trust_store_certificate::_get_trust_store_certificate_input::GetTrustStoreCertificateInput;
+
+pub use crate::operation::get_trust_store_certificate::_get_trust_store_certificate_output::GetTrustStoreCertificateOutput;
 
 mod _get_trust_store_certificate_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_data_i
     }
 }
 
-pub use crate::operation::list_custom_data_identifiers::_list_custom_data_identifiers_output::ListCustomDataIdentifiersOutput;
-
 pub use crate::operation::list_custom_data_identifiers::_list_custom_data_identifiers_input::ListCustomDataIdentifiersInput;
+
+pub use crate::operation::list_custom_data_identifiers::_list_custom_data_identifiers_output::ListCustomDataIdentifiersOutput;
 
 mod _list_custom_data_identifiers_input;
 

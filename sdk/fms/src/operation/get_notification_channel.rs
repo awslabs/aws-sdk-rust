@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_notification_c
     }
 }
 
-pub use crate::operation::get_notification_channel::_get_notification_channel_output::GetNotificationChannelOutput;
-
 pub use crate::operation::get_notification_channel::_get_notification_channel_input::GetNotificationChannelInput;
+
+pub use crate::operation::get_notification_channel::_get_notification_channel_output::GetNotificationChannelOutput;
 
 mod _get_notification_channel_input;
 

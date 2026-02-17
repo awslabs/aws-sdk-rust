@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_certificate
     }
 }
 
-pub use crate::operation::create_certificate_from_csr::_create_certificate_from_csr_output::CreateCertificateFromCsrOutput;
-
 pub use crate::operation::create_certificate_from_csr::_create_certificate_from_csr_input::CreateCertificateFromCsrInput;
+
+pub use crate::operation::create_certificate_from_csr::_create_certificate_from_csr_output::CreateCertificateFromCsrOutput;
 
 mod _create_certificate_from_csr_input;
 

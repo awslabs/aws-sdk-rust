@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_settin
     }
 }
 
-pub use crate::operation::get_service_setting::_get_service_setting_output::GetServiceSettingOutput;
-
 pub use crate::operation::get_service_setting::_get_service_setting_input::GetServiceSettingInput;
+
+pub use crate::operation::get_service_setting::_get_service_setting_output::GetServiceSettingOutput;
 
 mod _get_service_setting_input;
 

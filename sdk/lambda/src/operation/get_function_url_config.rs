@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_url_c
     }
 }
 
-pub use crate::operation::get_function_url_config::_get_function_url_config_output::GetFunctionUrlConfigOutput;
-
 pub use crate::operation::get_function_url_config::_get_function_url_config_input::GetFunctionUrlConfigInput;
+
+pub use crate::operation::get_function_url_config::_get_function_url_config_output::GetFunctionUrlConfigOutput;
 
 mod _get_function_url_config_input;
 

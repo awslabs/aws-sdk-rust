@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_field::Crea
     }
 }
 
-pub use crate::operation::create_field::_create_field_output::CreateFieldOutput;
-
 pub use crate::operation::create_field::_create_field_input::CreateFieldInput;
+
+pub use crate::operation::create_field::_create_field_output::CreateFieldOutput;
 
 mod _create_field_input;
 

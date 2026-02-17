@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_customer_agre
     }
 }
 
-pub use crate::operation::list_customer_agreements::_list_customer_agreements_output::ListCustomerAgreementsOutput;
-
 pub use crate::operation::list_customer_agreements::_list_customer_agreements_input::ListCustomerAgreementsInput;
+
+pub use crate::operation::list_customer_agreements::_list_customer_agreements_output::ListCustomerAgreementsOutput;
 
 mod _list_customer_agreements_input;
 

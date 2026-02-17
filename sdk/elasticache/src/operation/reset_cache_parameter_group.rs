@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_cache_parame
     }
 }
 
-pub use crate::operation::reset_cache_parameter_group::_reset_cache_parameter_group_output::ResetCacheParameterGroupOutput;
-
 pub use crate::operation::reset_cache_parameter_group::_reset_cache_parameter_group_input::ResetCacheParameterGroupInput;
+
+pub use crate::operation::reset_cache_parameter_group::_reset_cache_parameter_group_output::ResetCacheParameterGroupOutput;
 
 mod _reset_cache_parameter_group_input;
 

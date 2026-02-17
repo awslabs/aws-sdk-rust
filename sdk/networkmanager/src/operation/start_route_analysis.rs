@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_route_analys
     }
 }
 
-pub use crate::operation::start_route_analysis::_start_route_analysis_output::StartRouteAnalysisOutput;
-
 pub use crate::operation::start_route_analysis::_start_route_analysis_input::StartRouteAnalysisInput;
+
+pub use crate::operation::start_route_analysis::_start_route_analysis_output::StartRouteAnalysisOutput;
 
 mod _start_route_analysis_input;
 

@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ssl_polic
     }
 }
 
-pub use crate::operation::describe_ssl_policies::_describe_ssl_policies_output::DescribeSslPoliciesOutput;
-
 pub use crate::operation::describe_ssl_policies::_describe_ssl_policies_input::DescribeSslPoliciesInput;
+
+pub use crate::operation::describe_ssl_policies::_describe_ssl_policies_output::DescribeSslPoliciesOutput;
 
 mod _describe_ssl_policies_input;
 

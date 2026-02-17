@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_endp
     }
 }
 
-pub use crate::operation::update_domain_endpoint_options::_update_domain_endpoint_options_output::UpdateDomainEndpointOptionsOutput;
-
 pub use crate::operation::update_domain_endpoint_options::_update_domain_endpoint_options_input::UpdateDomainEndpointOptionsInput;
+
+pub use crate::operation::update_domain_endpoint_options::_update_domain_endpoint_options_output::UpdateDomainEndpointOptionsOutput;
 
 mod _update_domain_endpoint_options_input;
 

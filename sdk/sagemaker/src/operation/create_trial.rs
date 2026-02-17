@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trial::Crea
     }
 }
 
-pub use crate::operation::create_trial::_create_trial_output::CreateTrialOutput;
-
 pub use crate::operation::create_trial::_create_trial_input::CreateTrialInput;
+
+pub use crate::operation::create_trial::_create_trial_output::CreateTrialOutput;
 
 mod _create_trial_input;
 

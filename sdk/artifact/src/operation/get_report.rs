@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_report::GetRep
     }
 }
 
-pub use crate::operation::get_report::_get_report_output::GetReportOutput;
-
 pub use crate::operation::get_report::_get_report_input::GetReportInput;
+
+pub use crate::operation::get_report::_get_report_output::GetReportOutput;
 
 mod _get_report_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::set_identity_headers_in_notifications_enabled::_set_identity_headers_in_notifications_enabled_output::SetIdentityHeadersInNotificationsEnabledOutput;
-
 pub use crate::operation::set_identity_headers_in_notifications_enabled::_set_identity_headers_in_notifications_enabled_input::SetIdentityHeadersInNotificationsEnabledInput;
+
+pub use crate::operation::set_identity_headers_in_notifications_enabled::_set_identity_headers_in_notifications_enabled_output::SetIdentityHeadersInNotificationsEnabledOutput;
 
 mod _set_identity_headers_in_notifications_enabled_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_report_defi
     }
 }
 
-pub use crate::operation::update_report_definition::_update_report_definition_output::UpdateReportDefinitionOutput;
-
 pub use crate::operation::update_report_definition::_update_report_definition_input::UpdateReportDefinitionInput;
+
+pub use crate::operation::update_report_definition::_update_report_definition_output::UpdateReportDefinitionOutput;
 
 mod _update_report_definition_input;
 

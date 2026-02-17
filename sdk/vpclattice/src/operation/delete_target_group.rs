@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_target_grou
     }
 }
 
-pub use crate::operation::delete_target_group::_delete_target_group_output::DeleteTargetGroupOutput;
-
 pub use crate::operation::delete_target_group::_delete_target_group_input::DeleteTargetGroupInput;
+
+pub use crate::operation::delete_target_group::_delete_target_group_output::DeleteTargetGroupOutput;
 
 mod _delete_target_group_input;
 

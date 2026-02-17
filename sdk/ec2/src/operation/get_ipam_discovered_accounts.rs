@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_discovere
     }
 }
 
-pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_accounts_output::GetIpamDiscoveredAccountsOutput;
-
 pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_accounts_input::GetIpamDiscoveredAccountsInput;
+
+pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_accounts_output::GetIpamDiscoveredAccountsOutput;
 
 mod _get_ipam_discovered_accounts_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_sol_function_p
     }
 }
 
-pub use crate::operation::put_sol_function_package_content::_put_sol_function_package_content_output::PutSolFunctionPackageContentOutput;
-
 pub use crate::operation::put_sol_function_package_content::_put_sol_function_package_content_input::PutSolFunctionPackageContentInput;
+
+pub use crate::operation::put_sol_function_package_content::_put_sol_function_package_content_output::PutSolFunctionPackageContentOutput;
 
 mod _put_sol_function_package_content_input;
 

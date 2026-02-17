@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution_l
     }
 }
 
-pub use crate::operation::get_distribution_latest_cache_reset::_get_distribution_latest_cache_reset_output::GetDistributionLatestCacheResetOutput;
-
 pub use crate::operation::get_distribution_latest_cache_reset::_get_distribution_latest_cache_reset_input::GetDistributionLatestCacheResetInput;
+
+pub use crate::operation::get_distribution_latest_cache_reset::_get_distribution_latest_cache_reset_output::GetDistributionLatestCacheResetOutput;
 
 mod _get_distribution_latest_cache_reset_input;
 

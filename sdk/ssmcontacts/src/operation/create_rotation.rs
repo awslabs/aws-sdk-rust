@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rotation::C
     }
 }
 
-pub use crate::operation::create_rotation::_create_rotation_output::CreateRotationOutput;
-
 pub use crate::operation::create_rotation::_create_rotation_input::CreateRotationInput;
+
+pub use crate::operation::create_rotation::_create_rotation_output::CreateRotationOutput;
 
 mod _create_rotation_input;
 

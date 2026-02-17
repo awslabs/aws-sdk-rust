@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_tracker
     }
 }
 
-pub use crate::operation::list_event_trackers::_list_event_trackers_output::ListEventTrackersOutput;
-
 pub use crate::operation::list_event_trackers::_list_event_trackers_input::ListEventTrackersInput;
+
+pub use crate::operation::list_event_trackers::_list_event_trackers_output::ListEventTrackersOutput;
 
 mod _list_event_trackers_input;
 

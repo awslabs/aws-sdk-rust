@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_tags_from_v
     }
 }
 
-pub use crate::operation::remove_tags_from_vault::_remove_tags_from_vault_output::RemoveTagsFromVaultOutput;
-
 pub use crate::operation::remove_tags_from_vault::_remove_tags_from_vault_input::RemoveTagsFromVaultInput;
+
+pub use crate::operation::remove_tags_from_vault::_remove_tags_from_vault_output::RemoveTagsFromVaultOutput;
 
 mod _remove_tags_from_vault_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sol_functio
     }
 }
 
-pub use crate::operation::delete_sol_function_package::_delete_sol_function_package_output::DeleteSolFunctionPackageOutput;
-
 pub use crate::operation::delete_sol_function_package::_delete_sol_function_package_input::DeleteSolFunctionPackageInput;
+
+pub use crate::operation::delete_sol_function_package::_delete_sol_function_package_output::DeleteSolFunctionPackageOutput;
 
 mod _delete_sol_function_package_input;
 

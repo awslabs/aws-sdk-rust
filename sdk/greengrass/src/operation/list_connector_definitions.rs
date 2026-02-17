@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connector_def
     }
 }
 
-pub use crate::operation::list_connector_definitions::_list_connector_definitions_output::ListConnectorDefinitionsOutput;
-
 pub use crate::operation::list_connector_definitions::_list_connector_definitions_input::ListConnectorDefinitionsInput;
+
+pub use crate::operation::list_connector_definitions::_list_connector_definitions_output::ListConnectorDefinitionsOutput;
 
 mod _list_connector_definitions_input;
 

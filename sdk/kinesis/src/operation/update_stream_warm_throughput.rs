@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stream_warm
     }
 }
 
-pub use crate::operation::update_stream_warm_throughput::_update_stream_warm_throughput_output::UpdateStreamWarmThroughputOutput;
-
 pub use crate::operation::update_stream_warm_throughput::_update_stream_warm_throughput_input::UpdateStreamWarmThroughputInput;
+
+pub use crate::operation::update_stream_warm_throughput::_update_stream_warm_throughput_output::UpdateStreamWarmThroughputOutput;
 
 mod _update_stream_warm_throughput_input;
 

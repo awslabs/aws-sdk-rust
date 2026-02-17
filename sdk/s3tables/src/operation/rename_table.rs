@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rename_table::Rena
     }
 }
 
-pub use crate::operation::rename_table::_rename_table_output::RenameTableOutput;
-
 pub use crate::operation::rename_table::_rename_table_input::RenameTableInput;
+
+pub use crate::operation::rename_table::_rename_table_output::RenameTableOutput;
 
 mod _rename_table_input;
 

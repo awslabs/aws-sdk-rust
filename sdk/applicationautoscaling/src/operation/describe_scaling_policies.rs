@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scaling_p
     }
 }
 
-pub use crate::operation::describe_scaling_policies::_describe_scaling_policies_output::DescribeScalingPoliciesOutput;
-
 pub use crate::operation::describe_scaling_policies::_describe_scaling_policies_input::DescribeScalingPoliciesInput;
+
+pub use crate::operation::describe_scaling_policies::_describe_scaling_policies_output::DescribeScalingPoliciesOutput;
 
 mod _describe_scaling_policies_input;
 

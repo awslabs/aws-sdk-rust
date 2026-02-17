@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_participant::G
     }
 }
 
-pub use crate::operation::get_participant::_get_participant_output::GetParticipantOutput;
-
 pub use crate::operation::get_participant::_get_participant_input::GetParticipantInput;
+
+pub use crate::operation::get_participant::_get_participant_output::GetParticipantOutput;
 
 mod _get_participant_input;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_document_conte
     }
 }
 
-pub use crate::operation::get_document_content::_get_document_content_output::GetDocumentContentOutput;
-
 pub use crate::operation::get_document_content::_get_document_content_input::GetDocumentContentInput;
+
+pub use crate::operation::get_document_content::_get_document_content_output::GetDocumentContentOutput;
 
 mod _get_document_content_input;
 

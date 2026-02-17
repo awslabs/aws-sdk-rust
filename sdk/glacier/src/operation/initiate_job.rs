@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initiate_job::Init
     }
 }
 
-pub use crate::operation::initiate_job::_initiate_job_output::InitiateJobOutput;
-
 pub use crate::operation::initiate_job::_initiate_job_input::InitiateJobInput;
+
+pub use crate::operation::initiate_job::_initiate_job_output::InitiateJobOutput;
 
 mod _initiate_job_input;
 

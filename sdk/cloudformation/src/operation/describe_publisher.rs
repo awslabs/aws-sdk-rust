@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_publisher
     }
 }
 
-pub use crate::operation::describe_publisher::_describe_publisher_output::DescribePublisherOutput;
-
 pub use crate::operation::describe_publisher::_describe_publisher_input::DescribePublisherInput;
+
+pub use crate::operation::describe_publisher::_describe_publisher_output::DescribePublisherOutput;
 
 mod _describe_publisher_input;
 

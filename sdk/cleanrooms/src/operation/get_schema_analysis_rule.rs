@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_analysi
     }
 }
 
-pub use crate::operation::get_schema_analysis_rule::_get_schema_analysis_rule_output::GetSchemaAnalysisRuleOutput;
-
 pub use crate::operation::get_schema_analysis_rule::_get_schema_analysis_rule_input::GetSchemaAnalysisRuleInput;
+
+pub use crate::operation::get_schema_analysis_rule::_get_schema_analysis_rule_output::GetSchemaAnalysisRuleOutput;
 
 mod _get_schema_analysis_rule_input;
 

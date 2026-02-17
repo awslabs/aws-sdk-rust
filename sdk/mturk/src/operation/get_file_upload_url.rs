@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_file_upload_ur
     }
 }
 
-pub use crate::operation::get_file_upload_url::_get_file_upload_url_output::GetFileUploadUrlOutput;
-
 pub use crate::operation::get_file_upload_url::_get_file_upload_url_input::GetFileUploadUrlInput;
+
+pub use crate::operation::get_file_upload_url::_get_file_upload_url_output::GetFileUploadUrlOutput;
 
 mod _get_file_upload_url_input;
 

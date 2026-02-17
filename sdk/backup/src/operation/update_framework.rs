@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_framework::
     }
 }
 
-pub use crate::operation::update_framework::_update_framework_output::UpdateFrameworkOutput;
-
 pub use crate::operation::update_framework::_update_framework_input::UpdateFrameworkInput;
+
+pub use crate::operation::update_framework::_update_framework_output::UpdateFrameworkOutput;
 
 mod _update_framework_input;
 

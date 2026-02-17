@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_associa
     }
 }
 
-pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_association_authorization_output::DeleteVpcAssociationAuthorizationOutput;
-
 pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_association_authorization_input::DeleteVpcAssociationAuthorizationInput;
+
+pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_association_authorization_output::DeleteVpcAssociationAuthorizationOutput;
 
 mod _delete_vpc_association_authorization_input;
 

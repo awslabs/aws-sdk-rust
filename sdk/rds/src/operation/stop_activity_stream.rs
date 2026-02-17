@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_activity_stre
     }
 }
 
-pub use crate::operation::stop_activity_stream::_stop_activity_stream_output::StopActivityStreamOutput;
-
 pub use crate::operation::stop_activity_stream::_stop_activity_stream_input::StopActivityStreamInput;
+
+pub use crate::operation::stop_activity_stream::_stop_activity_stream_output::StopActivityStreamOutput;
 
 mod _stop_activity_stream_input;
 

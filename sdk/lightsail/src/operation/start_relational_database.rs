@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_relational_d
     }
 }
 
-pub use crate::operation::start_relational_database::_start_relational_database_output::StartRelationalDatabaseOutput;
-
 pub use crate::operation::start_relational_database::_start_relational_database_input::StartRelationalDatabaseInput;
+
+pub use crate::operation::start_relational_database::_start_relational_database_output::StartRelationalDatabaseOutput;
 
 mod _start_relational_database_input;
 

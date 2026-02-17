@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_product::Copy
     }
 }
 
-pub use crate::operation::copy_product::_copy_product_output::CopyProductOutput;
-
 pub use crate::operation::copy_product::_copy_product_input::CopyProductInput;
+
+pub use crate::operation::copy_product::_copy_product_output::CopyProductOutput;
 
 mod _copy_product_input;
 

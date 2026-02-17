@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_watch_al
     }
 }
 
-pub use crate::operation::get_cloud_watch_alarm_template_group::_get_cloud_watch_alarm_template_group_output::GetCloudWatchAlarmTemplateGroupOutput;
-
 pub use crate::operation::get_cloud_watch_alarm_template_group::_get_cloud_watch_alarm_template_group_input::GetCloudWatchAlarmTemplateGroupInput;
+
+pub use crate::operation::get_cloud_watch_alarm_template_group::_get_cloud_watch_alarm_template_group_output::GetCloudWatchAlarmTemplateGroupOutput;
 
 mod _get_cloud_watch_alarm_template_group_input;
 

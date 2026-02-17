@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_version
     }
 }
 
-pub use crate::operation::delete_app_version_app_component::_delete_app_version_app_component_output::DeleteAppVersionAppComponentOutput;
-
 pub use crate::operation::delete_app_version_app_component::_delete_app_version_app_component_input::DeleteAppVersionAppComponentInput;
+
+pub use crate::operation::delete_app_version_app_component::_delete_app_version_app_component_output::DeleteAppVersionAppComponentOutput;
 
 mod _delete_app_version_app_component_input;
 

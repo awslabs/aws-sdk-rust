@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_routing_rul
     }
 }
 
-pub use crate::operation::create_routing_rule::_create_routing_rule_output::CreateRoutingRuleOutput;
-
 pub use crate::operation::create_routing_rule::_create_routing_rule_input::CreateRoutingRuleInput;
+
+pub use crate::operation::create_routing_rule::_create_routing_rule_output::CreateRoutingRuleOutput;
 
 mod _create_routing_rule_input;
 

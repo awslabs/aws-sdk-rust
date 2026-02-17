@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_analyzer::U
     }
 }
 
-pub use crate::operation::update_analyzer::_update_analyzer_output::UpdateAnalyzerOutput;
-
 pub use crate::operation::update_analyzer::_update_analyzer_input::UpdateAnalyzerInput;
+
+pub use crate::operation::update_analyzer::_update_analyzer_output::UpdateAnalyzerOutput;
 
 mod _update_analyzer_input;
 

@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_export::GetExp
     }
 }
 
-pub use crate::operation::get_export::_get_export_output::GetExportOutput;
-
 pub use crate::operation::get_export::_get_export_input::GetExportInput;
+
+pub use crate::operation::get_export::_get_export_output::GetExportOutput;
 
 mod _get_export_input;
 

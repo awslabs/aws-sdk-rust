@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_associate_assessment_report_evidence::_batch_associate_assessment_report_evidence_output::BatchAssociateAssessmentReportEvidenceOutput;
-
 pub use crate::operation::batch_associate_assessment_report_evidence::_batch_associate_assessment_report_evidence_input::BatchAssociateAssessmentReportEvidenceInput;
+
+pub use crate::operation::batch_associate_assessment_report_evidence::_batch_associate_assessment_report_evidence_output::BatchAssociateAssessmentReportEvidenceOutput;
 
 mod _batch_associate_assessment_report_evidence_input;
 

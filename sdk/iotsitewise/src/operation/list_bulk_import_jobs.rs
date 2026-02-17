@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bulk_import_j
     }
 }
 
-pub use crate::operation::list_bulk_import_jobs::_list_bulk_import_jobs_output::ListBulkImportJobsOutput;
-
 pub use crate::operation::list_bulk_import_jobs::_list_bulk_import_jobs_input::ListBulkImportJobsInput;
+
+pub use crate::operation::list_bulk_import_jobs::_list_bulk_import_jobs_output::ListBulkImportJobsOutput;
 
 mod _list_bulk_import_jobs_input;
 

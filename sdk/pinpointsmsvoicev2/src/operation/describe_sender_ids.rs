@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_sender_id
     }
 }
 
-pub use crate::operation::describe_sender_ids::_describe_sender_ids_output::DescribeSenderIdsOutput;
-
 pub use crate::operation::describe_sender_ids::_describe_sender_ids_input::DescribeSenderIdsInput;
+
+pub use crate::operation::describe_sender_ids::_describe_sender_ids_output::DescribeSenderIdsOutput;
 
 mod _describe_sender_ids_input;
 

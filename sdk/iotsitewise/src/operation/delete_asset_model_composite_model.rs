@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_asset_model
     }
 }
 
-pub use crate::operation::delete_asset_model_composite_model::_delete_asset_model_composite_model_output::DeleteAssetModelCompositeModelOutput;
-
 pub use crate::operation::delete_asset_model_composite_model::_delete_asset_model_composite_model_input::DeleteAssetModelCompositeModelInput;
+
+pub use crate::operation::delete_asset_model_composite_model::_delete_asset_model_composite_model_output::DeleteAssetModelCompositeModelOutput;
 
 mod _delete_asset_model_composite_model_input;
 

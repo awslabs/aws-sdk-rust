@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_versi
     }
 }
 
-pub use crate::operation::describe_app_version_resource::_describe_app_version_resource_output::DescribeAppVersionResourceOutput;
-
 pub use crate::operation::describe_app_version_resource::_describe_app_version_resource_input::DescribeAppVersionResourceInput;
+
+pub use crate::operation::describe_app_version_resource::_describe_app_version_resource_output::DescribeAppVersionResourceOutput;
 
 mod _describe_app_version_resource_input;
 

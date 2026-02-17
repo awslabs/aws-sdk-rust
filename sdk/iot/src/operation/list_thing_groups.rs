@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_thing_groups:
     }
 }
 
-pub use crate::operation::list_thing_groups::_list_thing_groups_output::ListThingGroupsOutput;
-
 pub use crate::operation::list_thing_groups::_list_thing_groups_input::ListThingGroupsInput;
+
+pub use crate::operation::list_thing_groups::_list_thing_groups_output::ListThingGroupsOutput;
 
 mod _list_thing_groups_input;
 

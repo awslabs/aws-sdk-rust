@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_function_co
     }
 }
 
-pub use crate::operation::delete_function_concurrency::_delete_function_concurrency_output::DeleteFunctionConcurrencyOutput;
-
 pub use crate::operation::delete_function_concurrency::_delete_function_concurrency_input::DeleteFunctionConcurrencyInput;
+
+pub use crate::operation::delete_function_concurrency::_delete_function_concurrency_output::DeleteFunctionConcurrencyOutput;
 
 mod _delete_function_concurrency_input;
 

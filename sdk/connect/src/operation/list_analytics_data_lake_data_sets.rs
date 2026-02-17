@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analytics_dat
     }
 }
 
-pub use crate::operation::list_analytics_data_lake_data_sets::_list_analytics_data_lake_data_sets_output::ListAnalyticsDataLakeDataSetsOutput;
-
 pub use crate::operation::list_analytics_data_lake_data_sets::_list_analytics_data_lake_data_sets_input::ListAnalyticsDataLakeDataSetsInput;
+
+pub use crate::operation::list_analytics_data_lake_data_sets::_list_analytics_data_lake_data_sets_output::ListAnalyticsDataLakeDataSetsOutput;
 
 mod _list_analytics_data_lake_data_sets_input;
 

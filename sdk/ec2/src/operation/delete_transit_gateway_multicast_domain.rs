@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transit_gat
     }
 }
 
-pub use crate::operation::delete_transit_gateway_multicast_domain::_delete_transit_gateway_multicast_domain_output::DeleteTransitGatewayMulticastDomainOutput;
-
 pub use crate::operation::delete_transit_gateway_multicast_domain::_delete_transit_gateway_multicast_domain_input::DeleteTransitGatewayMulticastDomainInput;
+
+pub use crate::operation::delete_transit_gateway_multicast_domain::_delete_transit_gateway_multicast_domain_output::DeleteTransitGatewayMulticastDomainOutput;
 
 mod _delete_transit_gateway_multicast_domain_input;
 

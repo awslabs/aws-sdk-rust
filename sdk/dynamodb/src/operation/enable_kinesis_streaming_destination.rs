@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_kinesis_str
     }
 }
 
-pub use crate::operation::enable_kinesis_streaming_destination::_enable_kinesis_streaming_destination_output::EnableKinesisStreamingDestinationOutput;
-
 pub use crate::operation::enable_kinesis_streaming_destination::_enable_kinesis_streaming_destination_input::EnableKinesisStreamingDestinationInput;
+
+pub use crate::operation::enable_kinesis_streaming_destination::_enable_kinesis_streaming_destination_output::EnableKinesisStreamingDestinationOutput;
 
 mod _enable_kinesis_streaming_destination_input;
 

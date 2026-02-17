@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_document_
     }
 }
 
-pub use crate::operation::describe_document_versions::_describe_document_versions_output::DescribeDocumentVersionsOutput;
-
 pub use crate::operation::describe_document_versions::_describe_document_versions_input::DescribeDocumentVersionsInput;
+
+pub use crate::operation::describe_document_versions::_describe_document_versions_output::DescribeDocumentVersionsOutput;
 
 mod _describe_document_versions_input;
 

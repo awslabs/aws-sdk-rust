@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_primary_reg
     }
 }
 
-pub use crate::operation::update_primary_region::_update_primary_region_output::UpdatePrimaryRegionOutput;
-
 pub use crate::operation::update_primary_region::_update_primary_region_input::UpdatePrimaryRegionInput;
+
+pub use crate::operation::update_primary_region::_update_primary_region_output::UpdatePrimaryRegionOutput;
 
 mod _update_primary_region_input;
 

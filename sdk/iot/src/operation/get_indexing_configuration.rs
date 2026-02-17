@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_indexing_confi
     }
 }
 
-pub use crate::operation::get_indexing_configuration::_get_indexing_configuration_output::GetIndexingConfigurationOutput;
-
 pub use crate::operation::get_indexing_configuration::_get_indexing_configuration_input::GetIndexingConfigurationInput;
+
+pub use crate::operation::get_indexing_configuration::_get_indexing_configuration_output::GetIndexingConfigurationOutput;
 
 mod _get_indexing_configuration_input;
 

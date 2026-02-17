@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_deployment:
     }
 }
 
-pub use crate::operation::cancel_deployment::_cancel_deployment_output::CancelDeploymentOutput;
-
 pub use crate::operation::cancel_deployment::_cancel_deployment_input::CancelDeploymentInput;
+
+pub use crate::operation::cancel_deployment::_cancel_deployment_output::CancelDeploymentOutput;
 
 mod _cancel_deployment_input;
 

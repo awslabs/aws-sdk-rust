@@ -618,9 +618,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_responsibil
     }
 }
 
-pub use crate::operation::update_responsibility_transfer::_update_responsibility_transfer_output::UpdateResponsibilityTransferOutput;
-
 pub use crate::operation::update_responsibility_transfer::_update_responsibility_transfer_input::UpdateResponsibilityTransferInput;
+
+pub use crate::operation::update_responsibility_transfer::_update_responsibility_transfer_output::UpdateResponsibilityTransferOutput;
 
 mod _update_responsibility_transfer_input;
 

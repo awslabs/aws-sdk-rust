@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_receipt_rule_
     }
 }
 
-pub use crate::operation::list_receipt_rule_sets::_list_receipt_rule_sets_output::ListReceiptRuleSetsOutput;
-
 pub use crate::operation::list_receipt_rule_sets::_list_receipt_rule_sets_input::ListReceiptRuleSetsInput;
+
+pub use crate::operation::list_receipt_rule_sets::_list_receipt_rule_sets_output::ListReceiptRuleSetsOutput;
 
 mod _list_receipt_rule_sets_input;
 

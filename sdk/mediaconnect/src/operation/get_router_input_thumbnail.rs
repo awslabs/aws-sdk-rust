@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_router_input_t
     }
 }
 
-pub use crate::operation::get_router_input_thumbnail::_get_router_input_thumbnail_output::GetRouterInputThumbnailOutput;
-
 pub use crate::operation::get_router_input_thumbnail::_get_router_input_thumbnail_input::GetRouterInputThumbnailInput;
+
+pub use crate::operation::get_router_input_thumbnail::_get_router_input_thumbnail_output::GetRouterInputThumbnailOutput;
 
 mod _get_router_input_thumbnail_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_share::Acce
     }
 }
 
-pub use crate::operation::accept_share::_accept_share_output::AcceptShareOutput;
-
 pub use crate::operation::accept_share::_accept_share_input::AcceptShareInput;
+
+pub use crate::operation::accept_share::_accept_share_output::AcceptShareOutput;
 
 mod _accept_share_input;
 

@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_parameter
     }
 }
 
-pub use crate::operation::list_job_parameter_definitions::_list_job_parameter_definitions_output::ListJobParameterDefinitionsOutput;
-
 pub use crate::operation::list_job_parameter_definitions::_list_job_parameter_definitions_input::ListJobParameterDefinitionsInput;
+
+pub use crate::operation::list_job_parameter_definitions::_list_job_parameter_definitions_output::ListJobParameterDefinitionsOutput;
 
 mod _list_job_parameter_definitions_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_signing_jobs:
     }
 }
 
-pub use crate::operation::list_signing_jobs::_list_signing_jobs_output::ListSigningJobsOutput;
-
 pub use crate::operation::list_signing_jobs::_list_signing_jobs_input::ListSigningJobsInput;
+
+pub use crate::operation::list_signing_jobs::_list_signing_jobs_output::ListSigningJobsOutput;
 
 mod _list_signing_jobs_input;
 

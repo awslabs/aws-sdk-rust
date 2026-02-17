@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::pause_contact::Pau
     }
 }
 
-pub use crate::operation::pause_contact::_pause_contact_output::PauseContactOutput;
-
 pub use crate::operation::pause_contact::_pause_contact_input::PauseContactInput;
+
+pub use crate::operation::pause_contact::_pause_contact_output::PauseContactOutput;
 
 mod _pause_contact_input;
 

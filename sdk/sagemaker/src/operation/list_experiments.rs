@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_experiments::
     }
 }
 
-pub use crate::operation::list_experiments::_list_experiments_output::ListExperimentsOutput;
-
 pub use crate::operation::list_experiments::_list_experiments_input::ListExperimentsInput;
+
+pub use crate::operation::list_experiments::_list_experiments_output::ListExperimentsOutput;
 
 mod _list_experiments_input;
 

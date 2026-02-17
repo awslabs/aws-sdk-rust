@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_savings_plans_
     }
 }
 
-pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverage_output::GetSavingsPlansCoverageOutput;
-
 pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverage_input::GetSavingsPlansCoverageInput;
+
+pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverage_output::GetSavingsPlansCoverageOutput;
 
 mod _get_savings_plans_coverage_input;
 

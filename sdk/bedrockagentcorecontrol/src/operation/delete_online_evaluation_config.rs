@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_online_eval
     }
 }
 
-pub use crate::operation::delete_online_evaluation_config::_delete_online_evaluation_config_output::DeleteOnlineEvaluationConfigOutput;
-
 pub use crate::operation::delete_online_evaluation_config::_delete_online_evaluation_config_input::DeleteOnlineEvaluationConfigInput;
+
+pub use crate::operation::delete_online_evaluation_config::_delete_online_evaluation_config_output::DeleteOnlineEvaluationConfigOutput;
 
 mod _delete_online_evaluation_config_input;
 

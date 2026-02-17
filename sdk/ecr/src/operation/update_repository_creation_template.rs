@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_repository_
     }
 }
 
-pub use crate::operation::update_repository_creation_template::_update_repository_creation_template_output::UpdateRepositoryCreationTemplateOutput;
-
 pub use crate::operation::update_repository_creation_template::_update_repository_creation_template_input::UpdateRepositoryCreationTemplateInput;
+
+pub use crate::operation::update_repository_creation_template::_update_repository_creation_template_output::UpdateRepositoryCreationTemplateOutput;
 
 mod _update_repository_creation_template_input;
 

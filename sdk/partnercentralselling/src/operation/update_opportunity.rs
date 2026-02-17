@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_opportunity
     }
 }
 
-pub use crate::operation::update_opportunity::_update_opportunity_output::UpdateOpportunityOutput;
-
 pub use crate::operation::update_opportunity::_update_opportunity_input::UpdateOpportunityInput;
+
+pub use crate::operation::update_opportunity::_update_opportunity_output::UpdateOpportunityOutput;
 
 mod _update_opportunity_input;
 

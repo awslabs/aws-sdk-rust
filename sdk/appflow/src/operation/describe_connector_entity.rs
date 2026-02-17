@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_connector
     }
 }
 
-pub use crate::operation::describe_connector_entity::_describe_connector_entity_output::DescribeConnectorEntityOutput;
-
 pub use crate::operation::describe_connector_entity::_describe_connector_entity_input::DescribeConnectorEntityInput;
+
+pub use crate::operation::describe_connector_entity::_describe_connector_entity_output::DescribeConnectorEntityOutput;
 
 mod _describe_connector_entity_input;
 

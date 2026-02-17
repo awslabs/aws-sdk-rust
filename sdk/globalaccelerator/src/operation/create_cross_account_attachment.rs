@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cross_accou
     }
 }
 
-pub use crate::operation::create_cross_account_attachment::_create_cross_account_attachment_output::CreateCrossAccountAttachmentOutput;
-
 pub use crate::operation::create_cross_account_attachment::_create_cross_account_attachment_input::CreateCrossAccountAttachmentInput;
+
+pub use crate::operation::create_cross_account_attachment::_create_cross_account_attachment_output::CreateCrossAccountAttachmentOutput;
 
 mod _create_cross_account_attachment_input;
 

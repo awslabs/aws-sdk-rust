@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_da
     }
 }
 
-pub use crate::operation::create_resource_data_sync::_create_resource_data_sync_output::CreateResourceDataSyncOutput;
-
 pub use crate::operation::create_resource_data_sync::_create_resource_data_sync_input::CreateResourceDataSyncInput;
+
+pub use crate::operation::create_resource_data_sync::_create_resource_data_sync_output::CreateResourceDataSyncOutput;
 
 mod _create_resource_data_sync_input;
 

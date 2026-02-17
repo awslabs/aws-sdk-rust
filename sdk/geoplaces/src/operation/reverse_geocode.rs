@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reverse_geocode::R
     }
 }
 
-pub use crate::operation::reverse_geocode::_reverse_geocode_output::ReverseGeocodeOutput;
-
 pub use crate::operation::reverse_geocode::_reverse_geocode_input::ReverseGeocodeInput;
+
+pub use crate::operation::reverse_geocode::_reverse_geocode_output::ReverseGeocodeOutput;
 
 mod _reverse_geocode_input;
 

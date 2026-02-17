@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_routing_pro
     }
 }
 
-pub use crate::operation::update_routing_profile_concurrency::_update_routing_profile_concurrency_output::UpdateRoutingProfileConcurrencyOutput;
-
 pub use crate::operation::update_routing_profile_concurrency::_update_routing_profile_concurrency_input::UpdateRoutingProfileConcurrencyInput;
+
+pub use crate::operation::update_routing_profile_concurrency::_update_routing_profile_concurrency_output::UpdateRoutingProfileConcurrencyOutput;
 
 mod _update_routing_profile_concurrency_input;
 

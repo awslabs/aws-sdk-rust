@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_applic
     }
 }
 
-pub use crate::operation::get_default_application_setting::_get_default_application_setting_output::GetDefaultApplicationSettingOutput;
-
 pub use crate::operation::get_default_application_setting::_get_default_application_setting_input::GetDefaultApplicationSettingInput;
+
+pub use crate::operation::get_default_application_setting::_get_default_application_setting_output::GetDefaultApplicationSettingOutput;
 
 mod _get_default_application_setting_input;
 

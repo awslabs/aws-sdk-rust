@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_evalu
     }
 }
 
-pub use crate::operation::get_resource_evaluation_summary::_get_resource_evaluation_summary_output::GetResourceEvaluationSummaryOutput;
-
 pub use crate::operation::get_resource_evaluation_summary::_get_resource_evaluation_summary_input::GetResourceEvaluationSummaryInput;
+
+pub use crate::operation::get_resource_evaluation_summary::_get_resource_evaluation_summary_output::GetResourceEvaluationSummaryOutput;
 
 mod _get_resource_evaluation_summary_input;
 

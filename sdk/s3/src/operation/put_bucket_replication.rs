@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_replica
     }
 }
 
-pub use crate::operation::put_bucket_replication::_put_bucket_replication_output::PutBucketReplicationOutput;
-
 pub use crate::operation::put_bucket_replication::_put_bucket_replication_input::PutBucketReplicationInput;
+
+pub use crate::operation::put_bucket_replication::_put_bucket_replication_output::PutBucketReplicationOutput;
 
 mod _put_bucket_replication_input;
 

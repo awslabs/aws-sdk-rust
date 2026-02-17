@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cloud_vm_clus
     }
 }
 
-pub use crate::operation::list_cloud_vm_clusters::_list_cloud_vm_clusters_output::ListCloudVmClustersOutput;
-
 pub use crate::operation::list_cloud_vm_clusters::_list_cloud_vm_clusters_input::ListCloudVmClustersInput;
+
+pub use crate::operation::list_cloud_vm_clusters::_list_cloud_vm_clusters_output::ListCloudVmClustersOutput;
 
 mod _list_cloud_vm_clusters_input;
 

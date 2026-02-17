@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_route_se
     }
 }
 
-pub use crate::operation::associate_route_server::_associate_route_server_output::AssociateRouteServerOutput;
-
 pub use crate::operation::associate_route_server::_associate_route_server_input::AssociateRouteServerInput;
+
+pub use crate::operation::associate_route_server::_associate_route_server_output::AssociateRouteServerOutput;
 
 mod _associate_route_server_input;
 

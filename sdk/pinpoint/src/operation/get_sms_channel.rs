@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sms_channel::G
     }
 }
 
-pub use crate::operation::get_sms_channel::_get_sms_channel_output::GetSmsChannelOutput;
-
 pub use crate::operation::get_sms_channel::_get_sms_channel_input::GetSmsChannelInput;
+
+pub use crate::operation::get_sms_channel::_get_sms_channel_output::GetSmsChannelOutput;
 
 mod _get_sms_channel_input;
 

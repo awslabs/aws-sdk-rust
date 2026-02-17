@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ai_agents::Li
     }
 }
 
-pub use crate::operation::list_ai_agents::_list_ai_agents_output::ListAiAgentsOutput;
-
 pub use crate::operation::list_ai_agents::_list_ai_agents_input::ListAiAgentsInput;
+
+pub use crate::operation::list_ai_agents::_list_ai_agents_output::ListAiAgentsOutput;
 
 mod _list_ai_agents_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_asset_pr
     }
 }
 
-pub use crate::operation::batch_get_asset_property_value_history::_batch_get_asset_property_value_history_output::BatchGetAssetPropertyValueHistoryOutput;
-
 pub use crate::operation::batch_get_asset_property_value_history::_batch_get_asset_property_value_history_input::BatchGetAssetPropertyValueHistoryInput;
+
+pub use crate::operation::batch_get_asset_property_value_history::_batch_get_asset_property_value_history_output::BatchGetAssetPropertyValueHistoryOutput;
 
 mod _batch_get_asset_property_value_history_input;
 

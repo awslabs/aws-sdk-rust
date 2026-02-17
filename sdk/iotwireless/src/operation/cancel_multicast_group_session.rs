@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_multicast_g
     }
 }
 
-pub use crate::operation::cancel_multicast_group_session::_cancel_multicast_group_session_output::CancelMulticastGroupSessionOutput;
-
 pub use crate::operation::cancel_multicast_group_session::_cancel_multicast_group_session_input::CancelMulticastGroupSessionInput;
+
+pub use crate::operation::cancel_multicast_group_session::_cancel_multicast_group_session_output::CancelMulticastGroupSessionOutput;
 
 mod _cancel_multicast_group_session_input;
 

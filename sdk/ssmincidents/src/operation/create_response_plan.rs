@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_response_pl
     }
 }
 
-pub use crate::operation::create_response_plan::_create_response_plan_output::CreateResponsePlanOutput;
-
 pub use crate::operation::create_response_plan::_create_response_plan_input::CreateResponsePlanInput;
+
+pub use crate::operation::create_response_plan::_create_response_plan_output::CreateResponsePlanOutput;
 
 mod _create_response_plan_input;
 

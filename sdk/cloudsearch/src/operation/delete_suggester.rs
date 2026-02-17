@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_suggester::
     }
 }
 
-pub use crate::operation::delete_suggester::_delete_suggester_output::DeleteSuggesterOutput;
-
 pub use crate::operation::delete_suggester::_delete_suggester_input::DeleteSuggesterInput;
+
+pub use crate::operation::delete_suggester::_delete_suggester_output::DeleteSuggesterOutput;
 
 mod _delete_suggester_input;
 

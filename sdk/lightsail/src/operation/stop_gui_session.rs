@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_gui_session::
     }
 }
 
-pub use crate::operation::stop_gui_session::_stop_gui_session_output::StopGuiSessionOutput;
-
 pub use crate::operation::stop_gui_session::_stop_gui_session_input::StopGuiSessionInput;
+
+pub use crate::operation::stop_gui_session::_stop_gui_session_output::StopGuiSessionOutput;
 
 mod _stop_gui_session_input;
 

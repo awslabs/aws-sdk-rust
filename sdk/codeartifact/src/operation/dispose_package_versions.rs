@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::dispose_package_ve
     }
 }
 
-pub use crate::operation::dispose_package_versions::_dispose_package_versions_output::DisposePackageVersionsOutput;
-
 pub use crate::operation::dispose_package_versions::_dispose_package_versions_input::DisposePackageVersionsInput;
+
+pub use crate::operation::dispose_package_versions::_dispose_package_versions_output::DisposePackageVersionsOutput;
 
 mod _dispose_package_versions_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_reference_sto
     }
 }
 
-pub use crate::operation::list_reference_stores::_list_reference_stores_output::ListReferenceStoresOutput;
-
 pub use crate::operation::list_reference_stores::_list_reference_stores_input::ListReferenceStoresInput;
+
+pub use crate::operation::list_reference_stores::_list_reference_stores_output::ListReferenceStoresOutput;
 
 mod _list_reference_stores_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_metadata_tr
     }
 }
 
-pub use crate::operation::cancel_metadata_transfer_job::_cancel_metadata_transfer_job_output::CancelMetadataTransferJobOutput;
-
 pub use crate::operation::cancel_metadata_transfer_job::_cancel_metadata_transfer_job_input::CancelMetadataTransferJobInput;
+
+pub use crate::operation::cancel_metadata_transfer_job::_cancel_metadata_transfer_job_output::CancelMetadataTransferJobOutput;
 
 mod _cancel_metadata_transfer_job_input;
 

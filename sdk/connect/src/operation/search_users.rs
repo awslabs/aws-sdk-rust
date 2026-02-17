@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_users::Sear
     }
 }
 
-pub use crate::operation::search_users::_search_users_output::SearchUsersOutput;
-
 pub use crate::operation::search_users::_search_users_input::SearchUsersInput;
+
+pub use crate::operation::search_users::_search_users_output::SearchUsersOutput;
 
 mod _search_users_input;
 

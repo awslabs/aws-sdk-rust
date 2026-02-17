@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_instanc
     }
 }
 
-pub use crate::operation::delete_app_instance_bot::_delete_app_instance_bot_output::DeleteAppInstanceBotOutput;
-
 pub use crate::operation::delete_app_instance_bot::_delete_app_instance_bot_input::DeleteAppInstanceBotInput;
+
+pub use crate::operation::delete_app_instance_bot::_delete_app_instance_bot_output::DeleteAppInstanceBotOutput;
 
 mod _delete_app_instance_bot_input;
 

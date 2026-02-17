@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_access_lo
     }
 }
 
-pub use crate::operation::get_user_access_logging_settings::_get_user_access_logging_settings_output::GetUserAccessLoggingSettingsOutput;
-
 pub use crate::operation::get_user_access_logging_settings::_get_user_access_logging_settings_input::GetUserAccessLoggingSettingsInput;
+
+pub use crate::operation::get_user_access_logging_settings::_get_user_access_logging_settings_output::GetUserAccessLoggingSettingsOutput;
 
 mod _get_user_access_logging_settings_input;
 

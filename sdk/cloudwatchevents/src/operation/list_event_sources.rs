@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_sources
     }
 }
 
-pub use crate::operation::list_event_sources::_list_event_sources_output::ListEventSourcesOutput;
-
 pub use crate::operation::list_event_sources::_list_event_sources_input::ListEventSourcesInput;
+
+pub use crate::operation::list_event_sources::_list_event_sources_output::ListEventSourcesOutput;
 
 mod _list_event_sources_input;
 

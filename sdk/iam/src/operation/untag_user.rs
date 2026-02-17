@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_user::UntagU
     }
 }
 
-pub use crate::operation::untag_user::_untag_user_output::UntagUserOutput;
-
 pub use crate::operation::untag_user::_untag_user_input::UntagUserInput;
+
+pub use crate::operation::untag_user::_untag_user_output::UntagUserOutput;
 
 mod _untag_user_input;
 

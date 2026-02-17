@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_environment
     }
 }
 
-pub use crate::operation::update_environment_account_connection::_update_environment_account_connection_output::UpdateEnvironmentAccountConnectionOutput;
-
 pub use crate::operation::update_environment_account_connection::_update_environment_account_connection_input::UpdateEnvironmentAccountConnectionInput;
+
+pub use crate::operation::update_environment_account_connection::_update_environment_account_connection_output::UpdateEnvironmentAccountConnectionOutput;
 
 mod _update_environment_account_connection_input;
 

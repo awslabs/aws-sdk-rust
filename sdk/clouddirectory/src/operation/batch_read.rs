@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_read::BatchR
     }
 }
 
-pub use crate::operation::batch_read::_batch_read_output::BatchReadOutput;
-
 pub use crate::operation::batch_read::_batch_read_input::BatchReadInput;
+
+pub use crate::operation::batch_read::_batch_read_output::BatchReadOutput;
 
 mod _batch_read_input;
 

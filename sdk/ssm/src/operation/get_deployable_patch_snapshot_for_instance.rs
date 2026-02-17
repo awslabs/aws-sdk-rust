@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployable_pat
     }
 }
 
-pub use crate::operation::get_deployable_patch_snapshot_for_instance::_get_deployable_patch_snapshot_for_instance_output::GetDeployablePatchSnapshotForInstanceOutput;
-
 pub use crate::operation::get_deployable_patch_snapshot_for_instance::_get_deployable_patch_snapshot_for_instance_input::GetDeployablePatchSnapshotForInstanceInput;
+
+pub use crate::operation::get_deployable_patch_snapshot_for_instance::_get_deployable_patch_snapshot_for_instance_output::GetDeployablePatchSnapshotForInstanceOutput;
 
 mod _get_deployable_patch_snapshot_for_instance_input;
 

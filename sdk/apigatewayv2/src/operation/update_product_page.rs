@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_product_pag
     }
 }
 
-pub use crate::operation::update_product_page::_update_product_page_output::UpdateProductPageOutput;
-
 pub use crate::operation::update_product_page::_update_product_page_input::UpdateProductPageInput;
+
+pub use crate::operation::update_product_page::_update_product_page_output::UpdateProductPageOutput;
 
 mod _update_product_page_input;
 

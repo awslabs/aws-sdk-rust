@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_resource::TagR
     }
 }
 
-pub use crate::operation::tag_resource::_tag_resource_output::TagResourceOutput;
-
 pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInput;
+
+pub use crate::operation::tag_resource::_tag_resource_output::TagResourceOutput;
 
 mod _tag_resource_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_recur
     }
 }
 
-pub use crate::operation::get_function_recursion_config::_get_function_recursion_config_output::GetFunctionRecursionConfigOutput;
-
 pub use crate::operation::get_function_recursion_config::_get_function_recursion_config_input::GetFunctionRecursionConfigInput;
+
+pub use crate::operation::get_function_recursion_config::_get_function_recursion_config_output::GetFunctionRecursionConfigOutput;
 
 mod _get_function_recursion_config_input;
 

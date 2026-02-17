@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_storage_config
     }
 }
 
-pub use crate::operation::get_storage_configuration::_get_storage_configuration_output::GetStorageConfigurationOutput;
-
 pub use crate::operation::get_storage_configuration::_get_storage_configuration_input::GetStorageConfigurationInput;
+
+pub use crate::operation::get_storage_configuration::_get_storage_configuration_output::GetStorageConfigurationOutput;
 
 mod _get_storage_configuration_input;
 

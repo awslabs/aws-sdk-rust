@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resources::Get
     }
 }
 
-pub use crate::operation::get_resources::_get_resources_output::GetResourcesOutput;
-
 pub use crate::operation::get_resources::_get_resources_input::GetResourcesInput;
+
+pub use crate::operation::get_resources::_get_resources_output::GetResourcesOutput;
 
 mod _get_resources_input;
 

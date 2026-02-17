@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_bridg
     }
 }
 
-pub use crate::operation::update_event_bridge_rule_template::_update_event_bridge_rule_template_output::UpdateEventBridgeRuleTemplateOutput;
-
 pub use crate::operation::update_event_bridge_rule_template::_update_event_bridge_rule_template_input::UpdateEventBridgeRuleTemplateInput;
+
+pub use crate::operation::update_event_bridge_rule_template::_update_event_bridge_rule_template_output::UpdateEventBridgeRuleTemplateOutput;
 
 mod _update_event_bridge_rule_template_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_project_sessi
     }
 }
 
-pub use crate::operation::send_project_session_action::_send_project_session_action_output::SendProjectSessionActionOutput;
-
 pub use crate::operation::send_project_session_action::_send_project_session_action_input::SendProjectSessionActionInput;
+
+pub use crate::operation::send_project_session_action::_send_project_session_action_output::SendProjectSessionActionOutput;
 
 mod _send_project_session_action_input;
 

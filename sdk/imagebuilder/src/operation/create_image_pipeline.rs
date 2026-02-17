@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_image_pipel
     }
 }
 
-pub use crate::operation::create_image_pipeline::_create_image_pipeline_output::CreateImagePipelineOutput;
-
 pub use crate::operation::create_image_pipeline::_create_image_pipeline_input::CreateImagePipelineInput;
+
+pub use crate::operation::create_image_pipeline::_create_image_pipeline_output::CreateImagePipelineOutput;
 
 mod _create_image_pipeline_input;
 

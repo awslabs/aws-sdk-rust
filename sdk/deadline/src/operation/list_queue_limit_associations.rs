@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queue_limit_a
     }
 }
 
-pub use crate::operation::list_queue_limit_associations::_list_queue_limit_associations_output::ListQueueLimitAssociationsOutput;
-
 pub use crate::operation::list_queue_limit_associations::_list_queue_limit_associations_input::ListQueueLimitAssociationsInput;
+
+pub use crate::operation::list_queue_limit_associations::_list_queue_limit_associations_output::ListQueueLimitAssociationsOutput;
 
 mod _list_queue_limit_associations_input;
 

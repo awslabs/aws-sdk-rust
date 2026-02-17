@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_chann
     }
 }
 
-pub use crate::operation::batch_create_channel_membership::_batch_create_channel_membership_output::BatchCreateChannelMembershipOutput;
-
 pub use crate::operation::batch_create_channel_membership::_batch_create_channel_membership_input::BatchCreateChannelMembershipInput;
+
+pub use crate::operation::batch_create_channel_membership::_batch_create_channel_membership_output::BatchCreateChannelMembershipOutput;
 
 mod _batch_create_channel_membership_input;
 

@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_to_index::A
     }
 }
 
-pub use crate::operation::attach_to_index::_attach_to_index_output::AttachToIndexOutput;
-
 pub use crate::operation::attach_to_index::_attach_to_index_input::AttachToIndexInput;
+
+pub use crate::operation::attach_to_index::_attach_to_index_output::AttachToIndexOutput;
 
 mod _attach_to_index_input;
 

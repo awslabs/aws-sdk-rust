@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_topic_permi
     }
 }
 
-pub use crate::operation::update_topic_permissions::_update_topic_permissions_output::UpdateTopicPermissionsOutput;
-
 pub use crate::operation::update_topic_permissions::_update_topic_permissions_input::UpdateTopicPermissionsInput;
+
+pub use crate::operation::update_topic_permissions::_update_topic_permissions_output::UpdateTopicPermissionsOutput;
 
 mod _update_topic_permissions_input;
 

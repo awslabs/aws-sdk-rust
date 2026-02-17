@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_resource:
     }
 }
 
-pub use crate::operation::register_resource::_register_resource_output::RegisterResourceOutput;
-
 pub use crate::operation::register_resource::_register_resource_input::RegisterResourceInput;
+
+pub use crate::operation::register_resource::_register_resource_output::RegisterResourceOutput;
 
 mod _register_resource_input;
 

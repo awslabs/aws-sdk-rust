@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_disassociate_client_device_from_core_device::_batch_disassociate_client_device_from_core_device_output::BatchDisassociateClientDeviceFromCoreDeviceOutput;
-
 pub use crate::operation::batch_disassociate_client_device_from_core_device::_batch_disassociate_client_device_from_core_device_input::BatchDisassociateClientDeviceFromCoreDeviceInput;
+
+pub use crate::operation::batch_disassociate_client_device_from_core_device::_batch_disassociate_client_device_from_core_device_output::BatchDisassociateClientDeviceFromCoreDeviceOutput;
 
 mod _batch_disassociate_client_device_from_core_device_input;
 

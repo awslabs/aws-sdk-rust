@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_import::Star
     }
 }
 
-pub use crate::operation::start_import::_start_import_output::StartImportOutput;
-
 pub use crate::operation::start_import::_start_import_input::StartImportInput;
+
+pub use crate::operation::start_import::_start_import_output::StartImportOutput;
 
 mod _start_import_input;
 

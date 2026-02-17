@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_trunk
     }
 }
 
-pub use crate::operation::disassociate_trunk_interface::_disassociate_trunk_interface_output::DisassociateTrunkInterfaceOutput;
-
 pub use crate::operation::disassociate_trunk_interface::_disassociate_trunk_interface_input::DisassociateTrunkInterfaceInput;
+
+pub use crate::operation::disassociate_trunk_interface::_disassociate_trunk_interface_output::DisassociateTrunkInterfaceOutput;
 
 mod _disassociate_trunk_interface_input;
 

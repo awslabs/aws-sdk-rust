@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_fsx_ontap::_describe_location_fsx_ontap_output::DescribeLocationFsxOntapOutput;
-
 pub use crate::operation::describe_location_fsx_ontap::_describe_location_fsx_ontap_input::DescribeLocationFsxOntapInput;
+
+pub use crate::operation::describe_location_fsx_ontap::_describe_location_fsx_ontap_output::DescribeLocationFsxOntapOutput;
 
 mod _describe_location_fsx_ontap_input;
 

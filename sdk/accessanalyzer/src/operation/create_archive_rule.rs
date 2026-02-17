@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_archive_rul
     }
 }
 
-pub use crate::operation::create_archive_rule::_create_archive_rule_output::CreateArchiveRuleOutput;
-
 pub use crate::operation::create_archive_rule::_create_archive_rule_input::CreateArchiveRuleInput;
+
+pub use crate::operation::create_archive_rule::_create_archive_rule_output::CreateArchiveRuleOutput;
 
 mod _create_archive_rule_input;
 

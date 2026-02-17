@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_flow_vpc_in
     }
 }
 
-pub use crate::operation::remove_flow_vpc_interface::_remove_flow_vpc_interface_output::RemoveFlowVpcInterfaceOutput;
-
 pub use crate::operation::remove_flow_vpc_interface::_remove_flow_vpc_interface_input::RemoveFlowVpcInterfaceInput;
+
+pub use crate::operation::remove_flow_vpc_interface::_remove_flow_vpc_interface_output::RemoveFlowVpcInterfaceOutput;
 
 mod _remove_flow_vpc_interface_input;
 

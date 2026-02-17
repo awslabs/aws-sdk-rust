@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_flow_media_str
     }
 }
 
-pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_output::AddFlowMediaStreamsOutput;
-
 pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_input::AddFlowMediaStreamsInput;
+
+pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_output::AddFlowMediaStreamsOutput;
 
 mod _add_flow_media_streams_input;
 

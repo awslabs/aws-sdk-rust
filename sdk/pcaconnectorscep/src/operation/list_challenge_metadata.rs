@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_challenge_met
     }
 }
 
-pub use crate::operation::list_challenge_metadata::_list_challenge_metadata_output::ListChallengeMetadataOutput;
-
 pub use crate::operation::list_challenge_metadata::_list_challenge_metadata_input::ListChallengeMetadataInput;
+
+pub use crate::operation::list_challenge_metadata::_list_challenge_metadata_output::ListChallengeMetadataOutput;
 
 mod _list_challenge_metadata_input;
 

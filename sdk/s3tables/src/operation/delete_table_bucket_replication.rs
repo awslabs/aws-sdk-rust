@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_table_bucke
     }
 }
 
-pub use crate::operation::delete_table_bucket_replication::_delete_table_bucket_replication_output::DeleteTableBucketReplicationOutput;
-
 pub use crate::operation::delete_table_bucket_replication::_delete_table_bucket_replication_input::DeleteTableBucketReplicationInput;
+
+pub use crate::operation::delete_table_bucket_replication::_delete_table_bucket_replication_output::DeleteTableBucketReplicationOutput;
 
 mod _delete_table_bucket_replication_input;
 

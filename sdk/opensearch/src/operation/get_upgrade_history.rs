@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_upgrade_histor
     }
 }
 
-pub use crate::operation::get_upgrade_history::_get_upgrade_history_output::GetUpgradeHistoryOutput;
-
 pub use crate::operation::get_upgrade_history::_get_upgrade_history_input::GetUpgradeHistoryInput;
+
+pub use crate::operation::get_upgrade_history::_get_upgrade_history_output::GetUpgradeHistoryOutput;
 
 mod _get_upgrade_history_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_managed_end
     }
 }
 
-pub use crate::operation::create_managed_endpoint::_create_managed_endpoint_output::CreateManagedEndpointOutput;
-
 pub use crate::operation::create_managed_endpoint::_create_managed_endpoint_input::CreateManagedEndpointInput;
+
+pub use crate::operation::create_managed_endpoint::_create_managed_endpoint_output::CreateManagedEndpointOutput;
 
 mod _create_managed_endpoint_input;
 

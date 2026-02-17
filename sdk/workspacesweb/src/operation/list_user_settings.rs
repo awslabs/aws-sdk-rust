@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_settings
     }
 }
 
-pub use crate::operation::list_user_settings::_list_user_settings_output::ListUserSettingsOutput;
-
 pub use crate::operation::list_user_settings::_list_user_settings_input::ListUserSettingsInput;
+
+pub use crate::operation::list_user_settings::_list_user_settings_output::ListUserSettingsOutput;
 
 mod _list_user_settings_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_lf_tag_expr
     }
 }
 
-pub use crate::operation::update_lf_tag_expression::_update_lf_tag_expression_output::UpdateLfTagExpressionOutput;
-
 pub use crate::operation::update_lf_tag_expression::_update_lf_tag_expression_input::UpdateLfTagExpressionInput;
+
+pub use crate::operation::update_lf_tag_expression::_update_lf_tag_expression_output::UpdateLfTagExpressionOutput;
 
 mod _update_lf_tag_expression_input;
 

@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_replace_roo
     }
 }
 
-pub use crate::operation::create_replace_root_volume_task::_create_replace_root_volume_task_output::CreateReplaceRootVolumeTaskOutput;
-
 pub use crate::operation::create_replace_root_volume_task::_create_replace_root_volume_task_input::CreateReplaceRootVolumeTaskInput;
+
+pub use crate::operation::create_replace_root_volume_task::_create_replace_root_volume_task_output::CreateReplaceRootVolumeTaskOutput;
 
 mod _create_replace_root_volume_task_input;
 

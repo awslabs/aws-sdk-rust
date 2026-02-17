@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::distribute_dataset
     }
 }
 
-pub use crate::operation::distribute_dataset_entries::_distribute_dataset_entries_output::DistributeDatasetEntriesOutput;
-
 pub use crate::operation::distribute_dataset_entries::_distribute_dataset_entries_input::DistributeDatasetEntriesInput;
+
+pub use crate::operation::distribute_dataset_entries::_distribute_dataset_entries_output::DistributeDatasetEntriesOutput;
 
 mod _distribute_dataset_entries_input;
 

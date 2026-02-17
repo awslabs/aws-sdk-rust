@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::export_client_vpn_client_certificate_revocation_list::_export_client_vpn_client_certificate_revocation_list_output::ExportClientVpnClientCertificateRevocationListOutput;
-
 pub use crate::operation::export_client_vpn_client_certificate_revocation_list::_export_client_vpn_client_certificate_revocation_list_input::ExportClientVpnClientCertificateRevocationListInput;
+
+pub use crate::operation::export_client_vpn_client_certificate_revocation_list::_export_client_vpn_client_certificate_revocation_list_output::ExportClientVpnClientCertificateRevocationListOutput;
 
 mod _export_client_vpn_client_certificate_revocation_list_input;
 

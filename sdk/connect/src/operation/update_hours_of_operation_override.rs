@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hours_of_op
     }
 }
 
-pub use crate::operation::update_hours_of_operation_override::_update_hours_of_operation_override_output::UpdateHoursOfOperationOverrideOutput;
-
 pub use crate::operation::update_hours_of_operation_override::_update_hours_of_operation_override_input::UpdateHoursOfOperationOverrideInput;
+
+pub use crate::operation::update_hours_of_operation_override::_update_hours_of_operation_override_output::UpdateHoursOfOperationOverrideOutput;
 
 mod _update_hours_of_operation_override_input;
 

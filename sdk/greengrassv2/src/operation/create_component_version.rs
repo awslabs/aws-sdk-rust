@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_component_v
     }
 }
 
-pub use crate::operation::create_component_version::_create_component_version_output::CreateComponentVersionOutput;
-
 pub use crate::operation::create_component_version::_create_component_version_input::CreateComponentVersionInput;
+
+pub use crate::operation::create_component_version::_create_component_version_output::CreateComponentVersionOutput;
 
 mod _create_component_version_input;
 

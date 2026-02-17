@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_on_premi
     }
 }
 
-pub use crate::operation::batch_get_on_premises_instances::_batch_get_on_premises_instances_output::BatchGetOnPremisesInstancesOutput;
-
 pub use crate::operation::batch_get_on_premises_instances::_batch_get_on_premises_instances_input::BatchGetOnPremisesInstancesInput;
+
+pub use crate::operation::batch_get_on_premises_instances::_batch_get_on_premises_instances_output::BatchGetOnPremisesInstancesOutput;
 
 mod _batch_get_on_premises_instances_input;
 

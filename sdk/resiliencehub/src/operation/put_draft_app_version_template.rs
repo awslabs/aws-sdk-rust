@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_draft_app_vers
     }
 }
 
-pub use crate::operation::put_draft_app_version_template::_put_draft_app_version_template_output::PutDraftAppVersionTemplateOutput;
-
 pub use crate::operation::put_draft_app_version_template::_put_draft_app_version_template_input::PutDraftAppVersionTemplateInput;
+
+pub use crate::operation::put_draft_app_version_template::_put_draft_app_version_template_output::PutDraftAppVersionTemplateOutput;
 
 mod _put_draft_app_version_template_input;
 

@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_lake_d
     }
 }
 
-pub use crate::operation::create_data_lake_dataset::_create_data_lake_dataset_output::CreateDataLakeDatasetOutput;
-
 pub use crate::operation::create_data_lake_dataset::_create_data_lake_dataset_input::CreateDataLakeDatasetInput;
+
+pub use crate::operation::create_data_lake_dataset::_create_data_lake_dataset_output::CreateDataLakeDatasetOutput;
 
 mod _create_data_lake_dataset_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_policy_stateme
     }
 }
 
-pub use crate::operation::add_policy_statement::_add_policy_statement_output::AddPolicyStatementOutput;
-
 pub use crate::operation::add_policy_statement::_add_policy_statement_input::AddPolicyStatementInput;
+
+pub use crate::operation::add_policy_statement::_add_policy_statement_output::AddPolicyStatementOutput;
 
 mod _add_policy_statement_input;
 

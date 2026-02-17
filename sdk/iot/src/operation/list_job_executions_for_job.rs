@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_execution
     }
 }
 
-pub use crate::operation::list_job_executions_for_job::_list_job_executions_for_job_output::ListJobExecutionsForJobOutput;
-
 pub use crate::operation::list_job_executions_for_job::_list_job_executions_for_job_input::ListJobExecutionsForJobInput;
+
+pub use crate::operation::list_job_executions_for_job::_list_job_executions_for_job_output::ListJobExecutionsForJobOutput;
 
 mod _list_job_executions_for_job_input;
 

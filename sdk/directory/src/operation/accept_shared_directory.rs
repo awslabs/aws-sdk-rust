@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_shared_dire
     }
 }
 
-pub use crate::operation::accept_shared_directory::_accept_shared_directory_output::AcceptSharedDirectoryOutput;
-
 pub use crate::operation::accept_shared_directory::_accept_shared_directory_input::AcceptSharedDirectoryInput;
+
+pub use crate::operation::accept_shared_directory::_accept_shared_directory_output::AcceptSharedDirectoryOutput;
 
 mod _accept_shared_directory_input;
 

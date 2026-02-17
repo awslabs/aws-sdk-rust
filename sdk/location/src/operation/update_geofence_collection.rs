@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_geofence_co
     }
 }
 
-pub use crate::operation::update_geofence_collection::_update_geofence_collection_output::UpdateGeofenceCollectionOutput;
-
 pub use crate::operation::update_geofence_collection::_update_geofence_collection_input::UpdateGeofenceCollectionInput;
+
+pub use crate::operation::update_geofence_collection::_update_geofence_collection_output::UpdateGeofenceCollectionOutput;
 
 mod _update_geofence_collection_input;
 

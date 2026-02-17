@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_indexes_for_m
     }
 }
 
-pub use crate::operation::list_indexes_for_members::_list_indexes_for_members_output::ListIndexesForMembersOutput;
-
 pub use crate::operation::list_indexes_for_members::_list_indexes_for_members_input::ListIndexesForMembersInput;
+
+pub use crate::operation::list_indexes_for_members::_list_indexes_for_members_output::ListIndexesForMembersOutput;
 
 mod _list_indexes_for_members_input;
 

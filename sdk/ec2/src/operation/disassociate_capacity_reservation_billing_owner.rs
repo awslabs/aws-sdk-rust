@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_capacity_reservation_billing_owner::_disassociate_capacity_reservation_billing_owner_output::DisassociateCapacityReservationBillingOwnerOutput;
-
 pub use crate::operation::disassociate_capacity_reservation_billing_owner::_disassociate_capacity_reservation_billing_owner_input::DisassociateCapacityReservationBillingOwnerInput;
+
+pub use crate::operation::disassociate_capacity_reservation_billing_owner::_disassociate_capacity_reservation_billing_owner_output::DisassociateCapacityReservationBillingOwnerOutput;
 
 mod _disassociate_capacity_reservation_billing_owner_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fargate_p
     }
 }
 
-pub use crate::operation::describe_fargate_profile::_describe_fargate_profile_output::DescribeFargateProfileOutput;
-
 pub use crate::operation::describe_fargate_profile::_describe_fargate_profile_input::DescribeFargateProfileInput;
+
+pub use crate::operation::describe_fargate_profile::_describe_fargate_profile_output::DescribeFargateProfileOutput;
 
 mod _describe_fargate_profile_input;
 

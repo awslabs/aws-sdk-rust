@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_set::U
     }
 }
 
-pub use crate::operation::update_data_set::_update_data_set_output::UpdateDataSetOutput;
-
 pub use crate::operation::update_data_set::_update_data_set_input::UpdateDataSetInput;
+
+pub use crate::operation::update_data_set::_update_data_set_output::UpdateDataSetOutput;
 
 mod _update_data_set_input;
 

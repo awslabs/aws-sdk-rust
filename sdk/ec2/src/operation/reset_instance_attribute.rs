@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_instance_att
     }
 }
 
-pub use crate::operation::reset_instance_attribute::_reset_instance_attribute_output::ResetInstanceAttributeOutput;
-
 pub use crate::operation::reset_instance_attribute::_reset_instance_attribute_input::ResetInstanceAttributeInput;
+
+pub use crate::operation::reset_instance_attribute::_reset_instance_attribute_output::ResetInstanceAttributeOutput;
 
 mod _reset_instance_attribute_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_applicati
     }
 }
 
-pub use crate::operation::describe_application_operation::_describe_application_operation_output::DescribeApplicationOperationOutput;
-
 pub use crate::operation::describe_application_operation::_describe_application_operation_input::DescribeApplicationOperationInput;
+
+pub use crate::operation::describe_application_operation::_describe_application_operation_output::DescribeApplicationOperationOutput;
 
 mod _describe_application_operation_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_health_service_access_for_organization::_disable_health_service_access_for_organization_output::DisableHealthServiceAccessForOrganizationOutput;
-
 pub use crate::operation::disable_health_service_access_for_organization::_disable_health_service_access_for_organization_input::DisableHealthServiceAccessForOrganizationInput;
+
+pub use crate::operation::disable_health_service_access_for_organization::_disable_health_service_access_for_organization_output::DisableHealthServiceAccessForOrganizationOutput;
 
 mod _disable_health_service_access_for_organization_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inventory_ent
     }
 }
 
-pub use crate::operation::list_inventory_entries::_list_inventory_entries_output::ListInventoryEntriesOutput;
-
 pub use crate::operation::list_inventory_entries::_list_inventory_entries_input::ListInventoryEntriesInput;
+
+pub use crate::operation::list_inventory_entries::_list_inventory_entries_output::ListInventoryEntriesOutput;
 
 mod _list_inventory_entries_input;
 

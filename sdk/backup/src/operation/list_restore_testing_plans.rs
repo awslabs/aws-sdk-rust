@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_restore_testi
     }
 }
 
-pub use crate::operation::list_restore_testing_plans::_list_restore_testing_plans_output::ListRestoreTestingPlansOutput;
-
 pub use crate::operation::list_restore_testing_plans::_list_restore_testing_plans_input::ListRestoreTestingPlansInput;
+
+pub use crate::operation::list_restore_testing_plans::_list_restore_testing_plans_output::ListRestoreTestingPlansOutput;
 
 mod _list_restore_testing_plans_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_usage_limit::G
     }
 }
 
-pub use crate::operation::get_usage_limit::_get_usage_limit_output::GetUsageLimitOutput;
-
 pub use crate::operation::get_usage_limit::_get_usage_limit_input::GetUsageLimitInput;
+
+pub use crate::operation::get_usage_limit::_get_usage_limit_output::GetUsageLimitOutput;
 
 mod _get_usage_limit_input;
 

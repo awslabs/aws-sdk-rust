@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_plug
     }
 }
 
-pub use crate::operation::create_custom_plugin::_create_custom_plugin_output::CreateCustomPluginOutput;
-
 pub use crate::operation::create_custom_plugin::_create_custom_plugin_input::CreateCustomPluginInput;
+
+pub use crate::operation::create_custom_plugin::_create_custom_plugin_output::CreateCustomPluginOutput;
 
 mod _create_custom_plugin_input;
 

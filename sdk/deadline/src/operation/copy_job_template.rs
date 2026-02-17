@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_job_template:
     }
 }
 
-pub use crate::operation::copy_job_template::_copy_job_template_output::CopyJobTemplateOutput;
-
 pub use crate::operation::copy_job_template::_copy_job_template_input::CopyJobTemplateInput;
+
+pub use crate::operation::copy_job_template::_copy_job_template_output::CopyJobTemplateOutput;
 
 mod _copy_job_template_input;
 

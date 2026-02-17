@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployment_st
     }
 }
 
-pub use crate::operation::list_deployment_strategies::_list_deployment_strategies_output::ListDeploymentStrategiesOutput;
-
 pub use crate::operation::list_deployment_strategies::_list_deployment_strategies_input::ListDeploymentStrategiesInput;
+
+pub use crate::operation::list_deployment_strategies::_list_deployment_strategies_output::ListDeploymentStrategiesOutput;
 
 mod _list_deployment_strategies_input;
 

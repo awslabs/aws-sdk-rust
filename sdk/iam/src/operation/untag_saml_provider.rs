@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_saml_provide
     }
 }
 
-pub use crate::operation::untag_saml_provider::_untag_saml_provider_output::UntagSamlProviderOutput;
-
 pub use crate::operation::untag_saml_provider::_untag_saml_provider_input::UntagSamlProviderInput;
+
+pub use crate::operation::untag_saml_provider::_untag_saml_provider_output::UntagSamlProviderOutput;
 
 mod _untag_saml_provider_input;
 

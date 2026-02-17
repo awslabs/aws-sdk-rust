@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_gui_session
     }
 }
 
-pub use crate::operation::create_gui_session_access_details::_create_gui_session_access_details_output::CreateGuiSessionAccessDetailsOutput;
-
 pub use crate::operation::create_gui_session_access_details::_create_gui_session_access_details_input::CreateGuiSessionAccessDetailsInput;
+
+pub use crate::operation::create_gui_session_access_details::_create_gui_session_access_details_output::CreateGuiSessionAccessDetailsOutput;
 
 mod _create_gui_session_access_details_input;
 

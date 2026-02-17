@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_case_commen
     }
 }
 
-pub use crate::operation::create_case_comment::_create_case_comment_output::CreateCaseCommentOutput;
-
 pub use crate::operation::create_case_comment::_create_case_comment_input::CreateCaseCommentInput;
+
+pub use crate::operation::create_case_comment::_create_case_comment_output::CreateCaseCommentOutput;
 
 mod _create_case_comment_input;
 

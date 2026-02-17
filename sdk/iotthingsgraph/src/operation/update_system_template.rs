@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_system_temp
     }
 }
 
-pub use crate::operation::update_system_template::_update_system_template_output::UpdateSystemTemplateOutput;
-
 pub use crate::operation::update_system_template::_update_system_template_input::UpdateSystemTemplateInput;
+
+pub use crate::operation::update_system_template::_update_system_template_output::UpdateSystemTemplateOutput;
 
 mod _update_system_template_input;
 

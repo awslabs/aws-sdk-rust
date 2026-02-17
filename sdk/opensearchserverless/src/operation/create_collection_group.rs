@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_collection_
     }
 }
 
-pub use crate::operation::create_collection_group::_create_collection_group_output::CreateCollectionGroupOutput;
-
 pub use crate::operation::create_collection_group::_create_collection_group_input::CreateCollectionGroupInput;
+
+pub use crate::operation::create_collection_group::_create_collection_group_output::CreateCollectionGroupOutput;
 
 mod _create_collection_group_input;
 

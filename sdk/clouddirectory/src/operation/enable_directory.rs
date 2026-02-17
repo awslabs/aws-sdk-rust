@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_directory::
     }
 }
 
-pub use crate::operation::enable_directory::_enable_directory_output::EnableDirectoryOutput;
-
 pub use crate::operation::enable_directory::_enable_directory_input::EnableDirectoryInput;
+
+pub use crate::operation::enable_directory::_enable_directory_output::EnableDirectoryOutput;
 
 mod _enable_directory_input;
 

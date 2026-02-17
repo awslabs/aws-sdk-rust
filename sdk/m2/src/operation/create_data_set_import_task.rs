@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_set_im
     }
 }
 
-pub use crate::operation::create_data_set_import_task::_create_data_set_import_task_output::CreateDataSetImportTaskOutput;
-
 pub use crate::operation::create_data_set_import_task::_create_data_set_import_task_input::CreateDataSetImportTaskInput;
+
+pub use crate::operation::create_data_set_import_task::_create_data_set_import_task_output::CreateDataSetImportTaskOutput;
 
 mod _create_data_set_import_task_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resource_
     }
 }
 
-pub use crate::operation::describe_resource_permissions::_describe_resource_permissions_output::DescribeResourcePermissionsOutput;
-
 pub use crate::operation::describe_resource_permissions::_describe_resource_permissions_input::DescribeResourcePermissionsInput;
+
+pub use crate::operation::describe_resource_permissions::_describe_resource_permissions_output::DescribeResourcePermissionsOutput;
 
 mod _describe_resource_permissions_input;
 

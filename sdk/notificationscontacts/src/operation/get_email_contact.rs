@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_email_contact:
     }
 }
 
-pub use crate::operation::get_email_contact::_get_email_contact_output::GetEmailContactOutput;
-
 pub use crate::operation::get_email_contact::_get_email_contact_input::GetEmailContactInput;
+
+pub use crate::operation::get_email_contact::_get_email_contact_output::GetEmailContactOutput;
 
 mod _get_email_contact_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_connectio
     }
 }
 
-pub use crate::operation::describe_connection_loa::_describe_connection_loa_output::DescribeConnectionLoaOutput;
-
 pub use crate::operation::describe_connection_loa::_describe_connection_loa_input::DescribeConnectionLoaInput;
+
+pub use crate::operation::describe_connection_loa::_describe_connection_loa_output::DescribeConnectionLoaOutput;
 
 mod _describe_connection_loa_input;
 

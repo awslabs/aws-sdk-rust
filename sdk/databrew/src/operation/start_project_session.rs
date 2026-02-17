@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_project_sess
     }
 }
 
-pub use crate::operation::start_project_session::_start_project_session_output::StartProjectSessionOutput;
-
 pub use crate::operation::start_project_session::_start_project_session_input::StartProjectSessionInput;
+
+pub use crate::operation::start_project_session::_start_project_session_output::StartProjectSessionOutput;
 
 mod _start_project_session_input;
 

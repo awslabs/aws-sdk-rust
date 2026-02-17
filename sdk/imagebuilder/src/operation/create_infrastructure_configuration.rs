@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_infrastruct
     }
 }
 
-pub use crate::operation::create_infrastructure_configuration::_create_infrastructure_configuration_output::CreateInfrastructureConfigurationOutput;
-
 pub use crate::operation::create_infrastructure_configuration::_create_infrastructure_configuration_input::CreateInfrastructureConfigurationInput;
+
+pub use crate::operation::create_infrastructure_configuration::_create_infrastructure_configuration_output::CreateInfrastructureConfigurationOutput;
 
 mod _create_infrastructure_configuration_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_direct_quer
     }
 }
 
-pub use crate::operation::update_direct_query_data_source::_update_direct_query_data_source_output::UpdateDirectQueryDataSourceOutput;
-
 pub use crate::operation::update_direct_query_data_source::_update_direct_query_data_source_input::UpdateDirectQueryDataSourceInput;
+
+pub use crate::operation::update_direct_query_data_source::_update_direct_query_data_source_output::UpdateDirectQueryDataSourceOutput;
 
 mod _update_direct_query_data_source_input;
 

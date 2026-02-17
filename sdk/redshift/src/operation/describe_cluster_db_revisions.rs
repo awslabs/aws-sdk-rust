@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_d
     }
 }
 
-pub use crate::operation::describe_cluster_db_revisions::_describe_cluster_db_revisions_output::DescribeClusterDbRevisionsOutput;
-
 pub use crate::operation::describe_cluster_db_revisions::_describe_cluster_db_revisions_input::DescribeClusterDbRevisionsInput;
+
+pub use crate::operation::describe_cluster_db_revisions::_describe_cluster_db_revisions_output::DescribeClusterDbRevisionsOutput;
 
 mod _describe_cluster_db_revisions_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_job_run::Sta
     }
 }
 
-pub use crate::operation::start_job_run::_start_job_run_output::StartJobRunOutput;
-
 pub use crate::operation::start_job_run::_start_job_run_input::StartJobRunInput;
+
+pub use crate::operation::start_job_run::_start_job_run_output::StartJobRunOutput;
 
 mod _start_job_run_input;
 

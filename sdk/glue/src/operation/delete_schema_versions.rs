@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_schema_vers
     }
 }
 
-pub use crate::operation::delete_schema_versions::_delete_schema_versions_output::DeleteSchemaVersionsOutput;
-
 pub use crate::operation::delete_schema_versions::_delete_schema_versions_input::DeleteSchemaVersionsInput;
+
+pub use crate::operation::delete_schema_versions::_delete_schema_versions_output::DeleteSchemaVersionsOutput;
 
 mod _delete_schema_versions_input;
 

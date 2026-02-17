@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_aud
     }
 }
 
-pub use crate::operation::delete_account_audit_configuration::_delete_account_audit_configuration_output::DeleteAccountAuditConfigurationOutput;
-
 pub use crate::operation::delete_account_audit_configuration::_delete_account_audit_configuration_input::DeleteAccountAuditConfigurationInput;
+
+pub use crate::operation::delete_account_audit_configuration::_delete_account_audit_configuration_output::DeleteAccountAuditConfigurationOutput;
 
 mod _delete_account_audit_configuration_input;
 

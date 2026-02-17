@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_incident_recor
     }
 }
 
-pub use crate::operation::get_incident_record::_get_incident_record_output::GetIncidentRecordOutput;
-
 pub use crate::operation::get_incident_record::_get_incident_record_input::GetIncidentRecordInput;
+
+pub use crate::operation::get_incident_record::_get_incident_record_output::GetIncidentRecordOutput;
 
 mod _get_incident_record_input;
 

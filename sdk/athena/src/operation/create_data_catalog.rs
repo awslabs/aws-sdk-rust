@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_catalo
     }
 }
 
-pub use crate::operation::create_data_catalog::_create_data_catalog_output::CreateDataCatalogOutput;
-
 pub use crate::operation::create_data_catalog::_create_data_catalog_input::CreateDataCatalogInput;
+
+pub use crate::operation::create_data_catalog::_create_data_catalog_output::CreateDataCatalogOutput;
 
 mod _create_data_catalog_input;
 

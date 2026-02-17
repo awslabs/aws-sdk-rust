@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_compute_env
     }
 }
 
-pub use crate::operation::update_compute_environment::_update_compute_environment_output::UpdateComputeEnvironmentOutput;
-
 pub use crate::operation::update_compute_environment::_update_compute_environment_input::UpdateComputeEnvironmentInput;
+
+pub use crate::operation::update_compute_environment::_update_compute_environment_output::UpdateComputeEnvironmentOutput;
 
 mod _update_compute_environment_input;
 

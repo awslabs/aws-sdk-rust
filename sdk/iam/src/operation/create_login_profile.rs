@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_login_profi
     }
 }
 
-pub use crate::operation::create_login_profile::_create_login_profile_output::CreateLoginProfileOutput;
-
 pub use crate::operation::create_login_profile::_create_login_profile_input::CreateLoginProfileInput;
+
+pub use crate::operation::create_login_profile::_create_login_profile_output::CreateLoginProfileOutput;
 
 mod _create_login_profile_input;
 

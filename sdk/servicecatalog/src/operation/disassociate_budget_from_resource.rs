@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_budge
     }
 }
 
-pub use crate::operation::disassociate_budget_from_resource::_disassociate_budget_from_resource_output::DisassociateBudgetFromResourceOutput;
-
 pub use crate::operation::disassociate_budget_from_resource::_disassociate_budget_from_resource_input::DisassociateBudgetFromResourceInput;
+
+pub use crate::operation::disassociate_budget_from_resource::_disassociate_budget_from_resource_output::DisassociateBudgetFromResourceOutput;
 
 mod _disassociate_budget_from_resource_input;
 

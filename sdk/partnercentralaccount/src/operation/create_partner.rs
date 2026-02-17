@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_partner::Cr
     }
 }
 
-pub use crate::operation::create_partner::_create_partner_output::CreatePartnerOutput;
-
 pub use crate::operation::create_partner::_create_partner_input::CreatePartnerInput;
+
+pub use crate::operation::create_partner::_create_partner_output::CreatePartnerOutput;
 
 mod _create_partner_input;
 

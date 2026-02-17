@@ -490,9 +490,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_ml_data_pro
     }
 }
 
-pub use crate::operation::cancel_ml_data_processing_job::_cancel_ml_data_processing_job_output::CancelMlDataProcessingJobOutput;
-
 pub use crate::operation::cancel_ml_data_processing_job::_cancel_ml_data_processing_job_input::CancelMlDataProcessingJobInput;
+
+pub use crate::operation::cancel_ml_data_processing_job::_cancel_ml_data_processing_job_output::CancelMlDataProcessingJobOutput;
 
 mod _cancel_ml_data_processing_job_input;
 

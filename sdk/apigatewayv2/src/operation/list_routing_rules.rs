@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_routing_rules
     }
 }
 
-pub use crate::operation::list_routing_rules::_list_routing_rules_output::ListRoutingRulesOutput;
-
 pub use crate::operation::list_routing_rules::_list_routing_rules_input::ListRoutingRulesInput;
+
+pub use crate::operation::list_routing_rules::_list_routing_rules_output::ListRoutingRulesOutput;
 
 mod _list_routing_rules_input;
 

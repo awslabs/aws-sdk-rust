@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_outcome::PutOu
     }
 }
 
-pub use crate::operation::put_outcome::_put_outcome_output::PutOutcomeOutput;
-
 pub use crate::operation::put_outcome::_put_outcome_input::PutOutcomeInput;
+
+pub use crate::operation::put_outcome::_put_outcome_output::PutOutcomeOutput;
 
 mod _put_outcome_input;
 

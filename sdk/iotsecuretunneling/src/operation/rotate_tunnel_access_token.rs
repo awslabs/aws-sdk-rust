@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rotate_tunnel_acce
     }
 }
 
-pub use crate::operation::rotate_tunnel_access_token::_rotate_tunnel_access_token_output::RotateTunnelAccessTokenOutput;
-
 pub use crate::operation::rotate_tunnel_access_token::_rotate_tunnel_access_token_input::RotateTunnelAccessTokenInput;
+
+pub use crate::operation::rotate_tunnel_access_token::_rotate_tunnel_access_token_output::RotateTunnelAccessTokenOutput;
 
 mod _rotate_tunnel_access_token_input;
 

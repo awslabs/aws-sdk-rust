@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_partner_apps:
     }
 }
 
-pub use crate::operation::list_partner_apps::_list_partner_apps_output::ListPartnerAppsOutput;
-
 pub use crate::operation::list_partner_apps::_list_partner_apps_input::ListPartnerAppsInput;
+
+pub use crate::operation::list_partner_apps::_list_partner_apps_output::ListPartnerAppsOutput;
 
 mod _list_partner_apps_input;
 

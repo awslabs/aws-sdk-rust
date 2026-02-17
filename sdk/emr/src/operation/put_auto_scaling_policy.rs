@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_auto_scaling_p
     }
 }
 
-pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_output::PutAutoScalingPolicyOutput;
-
 pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_input::PutAutoScalingPolicyInput;
+
+pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_output::PutAutoScalingPolicyOutput;
 
 mod _put_auto_scaling_policy_input;
 

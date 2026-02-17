@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_user::GetKx
     }
 }
 
-pub use crate::operation::get_kx_user::_get_kx_user_output::GetKxUserOutput;
-
 pub use crate::operation::get_kx_user::_get_kx_user_input::GetKxUserInput;
+
+pub use crate::operation::get_kx_user::_get_kx_user_output::GetKxUserOutput;
 
 mod _get_kx_user_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_annotation_sto
     }
 }
 
-pub use crate::operation::get_annotation_store_version::_get_annotation_store_version_output::GetAnnotationStoreVersionOutput;
-
 pub use crate::operation::get_annotation_store_version::_get_annotation_store_version_input::GetAnnotationStoreVersionInput;
+
+pub use crate::operation::get_annotation_store_version::_get_annotation_store_version_output::GetAnnotationStoreVersionOutput;
 
 mod _get_annotation_store_version_input;
 

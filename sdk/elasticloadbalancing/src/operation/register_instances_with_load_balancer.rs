@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_instances
     }
 }
 
-pub use crate::operation::register_instances_with_load_balancer::_register_instances_with_load_balancer_output::RegisterInstancesWithLoadBalancerOutput;
-
 pub use crate::operation::register_instances_with_load_balancer::_register_instances_with_load_balancer_input::RegisterInstancesWithLoadBalancerInput;
+
+pub use crate::operation::register_instances_with_load_balancer::_register_instances_with_load_balancer_output::RegisterInstancesWithLoadBalancerOutput;
 
 mod _register_instances_with_load_balancer_input;
 

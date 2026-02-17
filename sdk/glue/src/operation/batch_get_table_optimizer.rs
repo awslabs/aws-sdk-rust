@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_table_op
     }
 }
 
-pub use crate::operation::batch_get_table_optimizer::_batch_get_table_optimizer_output::BatchGetTableOptimizerOutput;
-
 pub use crate::operation::batch_get_table_optimizer::_batch_get_table_optimizer_input::BatchGetTableOptimizerInput;
+
+pub use crate::operation::batch_get_table_optimizer::_batch_get_table_optimizer_output::BatchGetTableOptimizerOutput;
 
 mod _batch_get_table_optimizer_input;
 

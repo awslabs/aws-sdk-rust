@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_accessor::D
     }
 }
 
-pub use crate::operation::delete_accessor::_delete_accessor_output::DeleteAccessorOutput;
-
 pub use crate::operation::delete_accessor::_delete_accessor_input::DeleteAccessorInput;
+
+pub use crate::operation::delete_accessor::_delete_accessor_output::DeleteAccessorOutput;
 
 mod _delete_accessor_input;
 

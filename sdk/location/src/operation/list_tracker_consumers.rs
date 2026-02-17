@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tracker_consu
     }
 }
 
-pub use crate::operation::list_tracker_consumers::_list_tracker_consumers_output::ListTrackerConsumersOutput;
-
 pub use crate::operation::list_tracker_consumers::_list_tracker_consumers_input::ListTrackerConsumersInput;
+
+pub use crate::operation::list_tracker_consumers::_list_tracker_consumers_output::ListTrackerConsumersOutput;
 
 mod _list_tracker_consumers_input;
 

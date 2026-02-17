@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_input_chann
     }
 }
 
-pub use crate::operation::get_ml_input_channel::_get_ml_input_channel_output::GetMlInputChannelOutput;
-
 pub use crate::operation::get_ml_input_channel::_get_ml_input_channel_input::GetMlInputChannelInput;
+
+pub use crate::operation::get_ml_input_channel::_get_ml_input_channel_output::GetMlInputChannelOutput;
 
 mod _get_ml_input_channel_input;
 

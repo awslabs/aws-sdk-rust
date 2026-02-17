@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_detec
     }
 }
 
-pub use crate::operation::batch_delete_detector::_batch_delete_detector_output::BatchDeleteDetectorOutput;
-
 pub use crate::operation::batch_delete_detector::_batch_delete_detector_input::BatchDeleteDetectorInput;
+
+pub use crate::operation::batch_delete_detector::_batch_delete_detector_output::BatchDeleteDetectorOutput;
 
 mod _batch_delete_detector_input;
 

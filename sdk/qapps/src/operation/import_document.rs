@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_document::I
     }
 }
 
-pub use crate::operation::import_document::_import_document_output::ImportDocumentOutput;
-
 pub use crate::operation::import_document::_import_document_input::ImportDocumentInput;
+
+pub use crate::operation::import_document::_import_document_output::ImportDocumentOutput;
 
 mod _import_document_input;
 

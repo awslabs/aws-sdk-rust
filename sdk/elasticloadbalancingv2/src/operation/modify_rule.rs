@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_rule::Modif
     }
 }
 
-pub use crate::operation::modify_rule::_modify_rule_output::ModifyRuleOutput;
-
 pub use crate::operation::modify_rule::_modify_rule_input::ModifyRuleInput;
+
+pub use crate::operation::modify_rule::_modify_rule_output::ModifyRuleOutput;
 
 mod _modify_rule_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_v
     }
 }
 
-pub use crate::operation::list_application_versions::_list_application_versions_output::ListApplicationVersionsOutput;
-
 pub use crate::operation::list_application_versions::_list_application_versions_input::ListApplicationVersionsInput;
+
+pub use crate::operation::list_application_versions::_list_application_versions_output::ListApplicationVersionsOutput;
 
 mod _list_application_versions_input;
 

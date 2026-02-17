@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_sn
     }
 }
 
-pub use crate::operation::create_resource_snapshot_job::_create_resource_snapshot_job_output::CreateResourceSnapshotJobOutput;
-
 pub use crate::operation::create_resource_snapshot_job::_create_resource_snapshot_job_input::CreateResourceSnapshotJobInput;
+
+pub use crate::operation::create_resource_snapshot_job::_create_resource_snapshot_job_output::CreateResourceSnapshotJobOutput;
 
 mod _create_resource_snapshot_job_input;
 

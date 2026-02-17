@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_grant::_delete_application_grant_output::DeleteApplicationGrantOutput;
-
 pub use crate::operation::delete_application_grant::_delete_application_grant_input::DeleteApplicationGrantInput;
+
+pub use crate::operation::delete_application_grant::_delete_application_grant_output::DeleteApplicationGrantOutput;
 
 mod _delete_application_grant_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_vocabularie
     }
 }
 
-pub use crate::operation::search_vocabularies::_search_vocabularies_output::SearchVocabulariesOutput;
-
 pub use crate::operation::search_vocabularies::_search_vocabularies_input::SearchVocabulariesInput;
+
+pub use crate::operation::search_vocabularies::_search_vocabularies_output::SearchVocabulariesOutput;
 
 mod _search_vocabularies_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_certificate
     }
 }
 
-pub use crate::operation::attach_certificate_to_distribution::_attach_certificate_to_distribution_output::AttachCertificateToDistributionOutput;
-
 pub use crate::operation::attach_certificate_to_distribution::_attach_certificate_to_distribution_input::AttachCertificateToDistributionInput;
+
+pub use crate::operation::attach_certificate_to_distribution::_attach_certificate_to_distribution_output::AttachCertificateToDistributionOutput;
 
 mod _attach_certificate_to_distribution_input;
 

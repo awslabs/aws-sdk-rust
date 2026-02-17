@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_queue_environm
     }
 }
 
-pub use crate::operation::get_queue_environment::_get_queue_environment_output::GetQueueEnvironmentOutput;
-
 pub use crate::operation::get_queue_environment::_get_queue_environment_input::GetQueueEnvironmentInput;
+
+pub use crate::operation::get_queue_environment::_get_queue_environment_output::GetQueueEnvironmentOutput;
 
 mod _get_queue_environment_input;
 

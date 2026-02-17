@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_software_updat
     }
 }
 
-pub use crate::operation::get_software_updates::_get_software_updates_output::GetSoftwareUpdatesOutput;
-
 pub use crate::operation::get_software_updates::_get_software_updates_input::GetSoftwareUpdatesInput;
+
+pub use crate::operation::get_software_updates::_get_software_updates_output::GetSoftwareUpdatesOutput;
 
 mod _get_software_updates_input;
 

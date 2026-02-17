@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_manifest::
     }
 }
 
-pub use crate::operation::get_job_manifest::_get_job_manifest_output::GetJobManifestOutput;
-
 pub use crate::operation::get_job_manifest::_get_job_manifest_input::GetJobManifestInput;
+
+pub use crate::operation::get_job_manifest::_get_job_manifest_output::GetJobManifestOutput;
 
 mod _get_job_manifest_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_contact_eval
     }
 }
 
-pub use crate::operation::start_contact_evaluation::_start_contact_evaluation_output::StartContactEvaluationOutput;
-
 pub use crate::operation::start_contact_evaluation::_start_contact_evaluation_input::StartContactEvaluationInput;
+
+pub use crate::operation::start_contact_evaluation::_start_contact_evaluation_output::StartContactEvaluationOutput;
 
 mod _start_contact_evaluation_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_processing_
     }
 }
 
-pub use crate::operation::delete_processing_job::_delete_processing_job_output::DeleteProcessingJobOutput;
-
 pub use crate::operation::delete_processing_job::_delete_processing_job_input::DeleteProcessingJobInput;
+
+pub use crate::operation::delete_processing_job::_delete_processing_job_output::DeleteProcessingJobOutput;
 
 mod _delete_processing_job_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_meeting_dia
     }
 }
 
-pub use crate::operation::create_meeting_dial_out::_create_meeting_dial_out_output::CreateMeetingDialOutOutput;
-
 pub use crate::operation::create_meeting_dial_out::_create_meeting_dial_out_input::CreateMeetingDialOutInput;
+
+pub use crate::operation::create_meeting_dial_out::_create_meeting_dial_out_output::CreateMeetingDialOutOutput;
 
 mod _create_meeting_dial_out_input;
 

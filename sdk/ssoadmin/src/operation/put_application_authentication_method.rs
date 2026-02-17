@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_application_au
     }
 }
 
-pub use crate::operation::put_application_authentication_method::_put_application_authentication_method_output::PutApplicationAuthenticationMethodOutput;
-
 pub use crate::operation::put_application_authentication_method::_put_application_authentication_method_input::PutApplicationAuthenticationMethodInput;
+
+pub use crate::operation::put_application_authentication_method::_put_application_authentication_method_output::PutApplicationAuthenticationMethodOutput;
 
 mod _put_application_authentication_method_input;
 

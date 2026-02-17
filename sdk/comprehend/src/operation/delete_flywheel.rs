@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flywheel::D
     }
 }
 
-pub use crate::operation::delete_flywheel::_delete_flywheel_output::DeleteFlywheelOutput;
-
 pub use crate::operation::delete_flywheel::_delete_flywheel_input::DeleteFlywheelInput;
+
+pub use crate::operation::delete_flywheel::_delete_flywheel_output::DeleteFlywheelOutput;
 
 mod _delete_flywheel_input;
 

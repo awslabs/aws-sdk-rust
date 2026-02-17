@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_netwo
     }
 }
 
-pub use crate::operation::disassociate_network_settings::_disassociate_network_settings_output::DisassociateNetworkSettingsOutput;
-
 pub use crate::operation::disassociate_network_settings::_disassociate_network_settings_input::DisassociateNetworkSettingsInput;
+
+pub use crate::operation::disassociate_network_settings::_disassociate_network_settings_output::DisassociateNetworkSettingsOutput;
 
 mod _disassociate_network_settings_input;
 

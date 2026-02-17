@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_input_sec
     }
 }
 
-pub use crate::operation::describe_input_security_group::_describe_input_security_group_output::DescribeInputSecurityGroupOutput;
-
 pub use crate::operation::describe_input_security_group::_describe_input_security_group_input::DescribeInputSecurityGroupInput;
+
+pub use crate::operation::describe_input_security_group::_describe_input_security_group_output::DescribeInputSecurityGroupOutput;
 
 mod _describe_input_security_group_input;
 

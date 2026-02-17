@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_simulation::
     }
 }
 
-pub use crate::operation::start_simulation::_start_simulation_output::StartSimulationOutput;
-
 pub use crate::operation::start_simulation::_start_simulation_input::StartSimulationInput;
+
+pub use crate::operation::start_simulation::_start_simulation_output::StartSimulationOutput;
 
 mod _start_simulation_input;
 

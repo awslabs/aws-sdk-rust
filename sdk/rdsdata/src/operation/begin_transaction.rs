@@ -502,9 +502,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::begin_transaction:
     }
 }
 
-pub use crate::operation::begin_transaction::_begin_transaction_output::BeginTransactionOutput;
-
 pub use crate::operation::begin_transaction::_begin_transaction_input::BeginTransactionInput;
+
+pub use crate::operation::begin_transaction::_begin_transaction_output::BeginTransactionOutput;
 
 mod _begin_transaction_input;
 

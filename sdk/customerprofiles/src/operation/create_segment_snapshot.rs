@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_segment_sna
     }
 }
 
-pub use crate::operation::create_segment_snapshot::_create_segment_snapshot_output::CreateSegmentSnapshotOutput;
-
 pub use crate::operation::create_segment_snapshot::_create_segment_snapshot_input::CreateSegmentSnapshotInput;
+
+pub use crate::operation::create_segment_snapshot::_create_segment_snapshot_output::CreateSegmentSnapshotOutput;
 
 mod _create_segment_snapshot_input;
 

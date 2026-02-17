@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_shard_gr
     }
 }
 
-pub use crate::operation::create_db_shard_group::_create_db_shard_group_output::CreateDbShardGroupOutput;
-
 pub use crate::operation::create_db_shard_group::_create_db_shard_group_input::CreateDbShardGroupInput;
+
+pub use crate::operation::create_db_shard_group::_create_db_shard_group_output::CreateDbShardGroupOutput;
 
 mod _create_db_shard_group_input;
 

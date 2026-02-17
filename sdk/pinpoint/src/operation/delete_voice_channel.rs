@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_chann
     }
 }
 
-pub use crate::operation::delete_voice_channel::_delete_voice_channel_output::DeleteVoiceChannelOutput;
-
 pub use crate::operation::delete_voice_channel::_delete_voice_channel_input::DeleteVoiceChannelInput;
+
+pub use crate::operation::delete_voice_channel::_delete_voice_channel_output::DeleteVoiceChannelOutput;
 
 mod _delete_voice_channel_input;
 

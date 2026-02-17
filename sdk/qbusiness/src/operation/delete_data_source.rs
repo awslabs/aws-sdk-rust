@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_source
     }
 }
 
-pub use crate::operation::delete_data_source::_delete_data_source_output::DeleteDataSourceOutput;
-
 pub use crate::operation::delete_data_source::_delete_data_source_input::DeleteDataSourceInput;
+
+pub use crate::operation::delete_data_source::_delete_data_source_output::DeleteDataSourceOutput;
 
 mod _delete_data_source_input;
 

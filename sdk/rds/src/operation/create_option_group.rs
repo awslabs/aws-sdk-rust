@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_option_grou
     }
 }
 
-pub use crate::operation::create_option_group::_create_option_group_output::CreateOptionGroupOutput;
-
 pub use crate::operation::create_option_group::_create_option_group_input::CreateOptionGroupInput;
+
+pub use crate::operation::create_option_group::_create_option_group_output::CreateOptionGroupOutput;
 
 mod _create_option_group_input;
 

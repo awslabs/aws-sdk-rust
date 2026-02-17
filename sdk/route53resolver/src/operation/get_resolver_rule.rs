@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver_rule:
     }
 }
 
-pub use crate::operation::get_resolver_rule::_get_resolver_rule_output::GetResolverRuleOutput;
-
 pub use crate::operation::get_resolver_rule::_get_resolver_rule_input::GetResolverRuleInput;
+
+pub use crate::operation::get_resolver_rule::_get_resolver_rule_output::GetResolverRuleOutput;
 
 mod _get_resolver_rule_input;
 

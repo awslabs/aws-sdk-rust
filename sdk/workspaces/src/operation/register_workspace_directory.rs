@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_workspace
     }
 }
 
-pub use crate::operation::register_workspace_directory::_register_workspace_directory_output::RegisterWorkspaceDirectoryOutput;
-
 pub use crate::operation::register_workspace_directory::_register_workspace_directory_input::RegisterWorkspaceDirectoryInput;
+
+pub use crate::operation::register_workspace_directory::_register_workspace_directory_output::RegisterWorkspaceDirectoryOutput;
 
 mod _register_workspace_directory_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_provisionin
     }
 }
 
-pub use crate::operation::create_provisioning_artifact::_create_provisioning_artifact_output::CreateProvisioningArtifactOutput;
-
 pub use crate::operation::create_provisioning_artifact::_create_provisioning_artifact_input::CreateProvisioningArtifactInput;
+
+pub use crate::operation::create_provisioning_artifact::_create_provisioning_artifact_output::CreateProvisioningArtifactOutput;
 
 mod _create_provisioning_artifact_input;
 

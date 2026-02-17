@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_media_captu
     }
 }
 
-pub use crate::operation::create_media_capture_pipeline::_create_media_capture_pipeline_output::CreateMediaCapturePipelineOutput;
-
 pub use crate::operation::create_media_capture_pipeline::_create_media_capture_pipeline_input::CreateMediaCapturePipelineInput;
+
+pub use crate::operation::create_media_capture_pipeline::_create_media_capture_pipeline_output::CreateMediaCapturePipelineOutput;
 
 mod _create_media_capture_pipeline_input;
 

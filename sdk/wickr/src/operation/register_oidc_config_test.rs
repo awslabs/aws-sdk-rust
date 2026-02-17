@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_oidc_conf
     }
 }
 
-pub use crate::operation::register_oidc_config_test::_register_oidc_config_test_output::RegisterOidcConfigTestOutput;
-
 pub use crate::operation::register_oidc_config_test::_register_oidc_config_test_input::RegisterOidcConfigTestInput;
+
+pub use crate::operation::register_oidc_config_test::_register_oidc_config_test_output::RegisterOidcConfigTestOutput;
 
 mod _register_oidc_config_test_input;
 

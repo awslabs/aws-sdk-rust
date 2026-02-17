@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pricing_rul
     }
 }
 
-pub use crate::operation::update_pricing_rule::_update_pricing_rule_output::UpdatePricingRuleOutput;
-
 pub use crate::operation::update_pricing_rule::_update_pricing_rule_input::UpdatePricingRuleInput;
+
+pub use crate::operation::update_pricing_rule::_update_pricing_rule_output::UpdatePricingRuleOutput;
 
 mod _update_pricing_rule_input;
 

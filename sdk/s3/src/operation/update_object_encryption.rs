@@ -492,9 +492,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_object_encr
     }
 }
 
-pub use crate::operation::update_object_encryption::_update_object_encryption_output::UpdateObjectEncryptionOutput;
-
 pub use crate::operation::update_object_encryption::_update_object_encryption_input::UpdateObjectEncryptionInput;
+
+pub use crate::operation::update_object_encryption::_update_object_encryption_output::UpdateObjectEncryptionOutput;
 
 mod _update_object_encryption_input;
 

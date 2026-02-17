@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_statisti
     }
 }
 
-pub use crate::operation::get_query_statistics::_get_query_statistics_output::GetQueryStatisticsOutput;
-
 pub use crate::operation::get_query_statistics::_get_query_statistics_input::GetQueryStatisticsInput;
+
+pub use crate::operation::get_query_statistics::_get_query_statistics_output::GetQueryStatisticsOutput;
 
 mod _get_query_statistics_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_automated_rea
     }
 }
 
-pub use crate::operation::list_automated_reasoning_policies::_list_automated_reasoning_policies_output::ListAutomatedReasoningPoliciesOutput;
-
 pub use crate::operation::list_automated_reasoning_policies::_list_automated_reasoning_policies_input::ListAutomatedReasoningPoliciesInput;
+
+pub use crate::operation::list_automated_reasoning_policies::_list_automated_reasoning_policies_output::ListAutomatedReasoningPoliciesOutput;
 
 mod _list_automated_reasoning_policies_input;
 

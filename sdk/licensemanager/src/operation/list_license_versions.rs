@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_license_versi
     }
 }
 
-pub use crate::operation::list_license_versions::_list_license_versions_output::ListLicenseVersionsOutput;
-
 pub use crate::operation::list_license_versions::_list_license_versions_input::ListLicenseVersionsInput;
+
+pub use crate::operation::list_license_versions::_list_license_versions_output::ListLicenseVersionsOutput;
 
 mod _list_license_versions_input;
 

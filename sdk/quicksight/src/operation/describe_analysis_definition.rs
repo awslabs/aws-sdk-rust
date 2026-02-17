@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_analysis_
     }
 }
 
-pub use crate::operation::describe_analysis_definition::_describe_analysis_definition_output::DescribeAnalysisDefinitionOutput;
-
 pub use crate::operation::describe_analysis_definition::_describe_analysis_definition_input::DescribeAnalysisDefinitionInput;
+
+pub use crate::operation::describe_analysis_definition::_describe_analysis_definition_output::DescribeAnalysisDefinitionOutput;
 
 mod _describe_analysis_definition_input;
 

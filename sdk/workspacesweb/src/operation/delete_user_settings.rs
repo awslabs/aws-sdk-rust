@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_settin
     }
 }
 
-pub use crate::operation::delete_user_settings::_delete_user_settings_output::DeleteUserSettingsOutput;
-
 pub use crate::operation::delete_user_settings::_delete_user_settings_input::DeleteUserSettingsInput;
+
+pub use crate::operation::delete_user_settings::_delete_user_settings_output::DeleteUserSettingsOutput;
 
 mod _delete_user_settings_input;
 

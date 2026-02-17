@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_statements::L
     }
 }
 
-pub use crate::operation::list_statements::_list_statements_output::ListStatementsOutput;
-
 pub use crate::operation::list_statements::_list_statements_input::ListStatementsInput;
+
+pub use crate::operation::list_statements::_list_statements_output::ListStatementsOutput;
 
 mod _list_statements_input;
 

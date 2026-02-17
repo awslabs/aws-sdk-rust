@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_associate_pr
     }
 }
 
-pub use crate::operation::batch_associate_project_assets::_batch_associate_project_assets_output::BatchAssociateProjectAssetsOutput;
-
 pub use crate::operation::batch_associate_project_assets::_batch_associate_project_assets_input::BatchAssociateProjectAssetsInput;
+
+pub use crate::operation::batch_associate_project_assets::_batch_associate_project_assets_output::BatchAssociateProjectAssetsOutput;
 
 mod _batch_associate_project_assets_input;
 

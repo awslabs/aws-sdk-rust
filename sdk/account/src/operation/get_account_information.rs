@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_inform
     }
 }
 
-pub use crate::operation::get_account_information::_get_account_information_output::GetAccountInformationOutput;
-
 pub use crate::operation::get_account_information::_get_account_information_input::GetAccountInformationInput;
+
+pub use crate::operation::get_account_information::_get_account_information_output::GetAccountInformationOutput;
 
 mod _get_account_information_input;
 

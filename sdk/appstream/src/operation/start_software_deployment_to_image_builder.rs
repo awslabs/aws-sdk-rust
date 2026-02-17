@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_software_dep
     }
 }
 
-pub use crate::operation::start_software_deployment_to_image_builder::_start_software_deployment_to_image_builder_output::StartSoftwareDeploymentToImageBuilderOutput;
-
 pub use crate::operation::start_software_deployment_to_image_builder::_start_software_deployment_to_image_builder_input::StartSoftwareDeploymentToImageBuilderInput;
+
+pub use crate::operation::start_software_deployment_to_image_builder::_start_software_deployment_to_image_builder_output::StartSoftwareDeploymentToImageBuilderOutput;
 
 mod _start_software_deployment_to_image_builder_input;
 

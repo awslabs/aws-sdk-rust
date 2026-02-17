@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_meta
     }
 }
 
-pub use crate::operation::delete_custom_metadata::_delete_custom_metadata_output::DeleteCustomMetadataOutput;
-
 pub use crate::operation::delete_custom_metadata::_delete_custom_metadata_input::DeleteCustomMetadataInput;
+
+pub use crate::operation::delete_custom_metadata::_delete_custom_metadata_output::DeleteCustomMetadataOutput;
 
 mod _delete_custom_metadata_input;
 

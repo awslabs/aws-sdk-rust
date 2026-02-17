@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_proxy_configu
     }
 }
 
-pub use crate::operation::list_proxy_configurations::_list_proxy_configurations_output::ListProxyConfigurationsOutput;
-
 pub use crate::operation::list_proxy_configurations::_list_proxy_configurations_input::ListProxyConfigurationsInput;
+
+pub use crate::operation::list_proxy_configurations::_list_proxy_configurations_output::ListProxyConfigurationsOutput;
 
 mod _list_proxy_configurations_input;
 

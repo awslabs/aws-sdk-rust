@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_label_detectio
     }
 }
 
-pub use crate::operation::get_label_detection::_get_label_detection_output::GetLabelDetectionOutput;
-
 pub use crate::operation::get_label_detection::_get_label_detection_input::GetLabelDetectionInput;
+
+pub use crate::operation::get_label_detection::_get_label_detection_output::GetLabelDetectionOutput;
 
 mod _get_label_detection_input;
 

@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::estimate_template_
     }
 }
 
-pub use crate::operation::estimate_template_cost::_estimate_template_cost_output::EstimateTemplateCostOutput;
-
 pub use crate::operation::estimate_template_cost::_estimate_template_cost_input::EstimateTemplateCostInput;
+
+pub use crate::operation::estimate_template_cost::_estimate_template_cost_output::EstimateTemplateCostOutput;
 
 mod _estimate_template_cost_input;
 

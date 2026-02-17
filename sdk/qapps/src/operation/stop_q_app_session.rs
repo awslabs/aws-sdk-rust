@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_q_app_session
     }
 }
 
-pub use crate::operation::stop_q_app_session::_stop_q_app_session_output::StopQAppSessionOutput;
-
 pub use crate::operation::stop_q_app_session::_stop_q_app_session_input::StopQAppSessionInput;
+
+pub use crate::operation::stop_q_app_session::_stop_q_app_session_output::StopQAppSessionOutput;
 
 mod _stop_q_app_session_input;
 

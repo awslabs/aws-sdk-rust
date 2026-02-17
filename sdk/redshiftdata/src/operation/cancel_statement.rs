@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_statement::
     }
 }
 
-pub use crate::operation::cancel_statement::_cancel_statement_output::CancelStatementOutput;
-
 pub use crate::operation::cancel_statement::_cancel_statement_input::CancelStatementInput;
+
+pub use crate::operation::cancel_statement::_cancel_statement_output::CancelStatementOutput;
 
 mod _cancel_statement_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_gateway::Cr
     }
 }
 
-pub use crate::operation::create_gateway::_create_gateway_output::CreateGatewayOutput;
-
 pub use crate::operation::create_gateway::_create_gateway_input::CreateGatewayInput;
+
+pub use crate::operation::create_gateway::_create_gateway_output::CreateGatewayOutput;
 
 mod _create_gateway_input;
 

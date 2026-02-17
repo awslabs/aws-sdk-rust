@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_role_alia
     }
 }
 
-pub use crate::operation::describe_role_alias::_describe_role_alias_output::DescribeRoleAliasOutput;
-
 pub use crate::operation::describe_role_alias::_describe_role_alias_input::DescribeRoleAliasInput;
+
+pub use crate::operation::describe_role_alias::_describe_role_alias_output::DescribeRoleAliasOutput;
 
 mod _describe_role_alias_input;
 

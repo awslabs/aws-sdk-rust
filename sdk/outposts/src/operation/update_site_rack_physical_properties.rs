@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_site_rack_p
     }
 }
 
-pub use crate::operation::update_site_rack_physical_properties::_update_site_rack_physical_properties_output::UpdateSiteRackPhysicalPropertiesOutput;
-
 pub use crate::operation::update_site_rack_physical_properties::_update_site_rack_physical_properties_input::UpdateSiteRackPhysicalPropertiesInput;
+
+pub use crate::operation::update_site_rack_physical_properties::_update_site_rack_physical_properties_output::UpdateSiteRackPhysicalPropertiesOutput;
 
 mod _update_site_rack_physical_properties_input;
 

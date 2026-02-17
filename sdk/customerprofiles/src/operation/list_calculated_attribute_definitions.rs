@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_calculated_at
     }
 }
 
-pub use crate::operation::list_calculated_attribute_definitions::_list_calculated_attribute_definitions_output::ListCalculatedAttributeDefinitionsOutput;
-
 pub use crate::operation::list_calculated_attribute_definitions::_list_calculated_attribute_definitions_input::ListCalculatedAttributeDefinitionsInput;
+
+pub use crate::operation::list_calculated_attribute_definitions::_list_calculated_attribute_definitions_output::ListCalculatedAttributeDefinitionsOutput;
 
 mod _list_calculated_attribute_definitions_input;
 

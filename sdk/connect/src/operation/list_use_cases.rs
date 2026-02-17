@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_use_cases::Li
     }
 }
 
-pub use crate::operation::list_use_cases::_list_use_cases_output::ListUseCasesOutput;
-
 pub use crate::operation::list_use_cases::_list_use_cases_input::ListUseCasesInput;
+
+pub use crate::operation::list_use_cases::_list_use_cases_output::ListUseCasesOutput;
 
 mod _list_use_cases_input;
 

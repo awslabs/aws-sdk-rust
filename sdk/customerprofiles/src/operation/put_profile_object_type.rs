@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_profile_object
     }
 }
 
-pub use crate::operation::put_profile_object_type::_put_profile_object_type_output::PutProfileObjectTypeOutput;
-
 pub use crate::operation::put_profile_object_type::_put_profile_object_type_input::PutProfileObjectTypeInput;
+
+pub use crate::operation::put_profile_object_type::_put_profile_object_type_output::PutProfileObjectTypeOutput;
 
 mod _put_profile_object_type_input;
 

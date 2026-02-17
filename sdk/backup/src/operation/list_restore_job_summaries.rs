@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_restore_job_s
     }
 }
 
-pub use crate::operation::list_restore_job_summaries::_list_restore_job_summaries_output::ListRestoreJobSummariesOutput;
-
 pub use crate::operation::list_restore_job_summaries::_list_restore_job_summaries_input::ListRestoreJobSummariesInput;
+
+pub use crate::operation::list_restore_job_summaries::_list_restore_job_summaries_output::ListRestoreJobSummariesOutput;
 
 mod _list_restore_job_summaries_input;
 

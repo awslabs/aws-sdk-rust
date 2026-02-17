@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_flow_media_
     }
 }
 
-pub use crate::operation::remove_flow_media_stream::_remove_flow_media_stream_output::RemoveFlowMediaStreamOutput;
-
 pub use crate::operation::remove_flow_media_stream::_remove_flow_media_stream_input::RemoveFlowMediaStreamInput;
+
+pub use crate::operation::remove_flow_media_stream::_remove_flow_media_stream_output::RemoveFlowMediaStreamOutput;
 
 mod _remove_flow_media_stream_input;
 

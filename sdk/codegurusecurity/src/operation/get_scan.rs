@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scan::GetScanE
     }
 }
 
-pub use crate::operation::get_scan::_get_scan_output::GetScanOutput;
-
 pub use crate::operation::get_scan::_get_scan_input::GetScanInput;
+
+pub use crate::operation::get_scan::_get_scan_output::GetScanOutput;
 
 mod _get_scan_input;
 

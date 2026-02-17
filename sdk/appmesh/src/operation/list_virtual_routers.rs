@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_route
     }
 }
 
-pub use crate::operation::list_virtual_routers::_list_virtual_routers_output::ListVirtualRoutersOutput;
-
 pub use crate::operation::list_virtual_routers::_list_virtual_routers_input::ListVirtualRoutersInput;
+
+pub use crate::operation::list_virtual_routers::_list_virtual_routers_output::ListVirtualRoutersOutput;
 
 mod _list_virtual_routers_input;
 

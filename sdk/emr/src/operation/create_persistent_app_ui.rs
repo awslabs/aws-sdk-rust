@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_persistent_
     }
 }
 
-pub use crate::operation::create_persistent_app_ui::_create_persistent_app_ui_output::CreatePersistentAppUiOutput;
-
 pub use crate::operation::create_persistent_app_ui::_create_persistent_app_ui_input::CreatePersistentAppUiInput;
+
+pub use crate::operation::create_persistent_app_ui::_create_persistent_app_ui_output::CreatePersistentAppUiOutput;
 
 mod _create_persistent_app_ui_input;
 

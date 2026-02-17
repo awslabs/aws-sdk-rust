@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_patch_bas
     }
 }
 
-pub use crate::operation::describe_patch_baselines::_describe_patch_baselines_output::DescribePatchBaselinesOutput;
-
 pub use crate::operation::describe_patch_baselines::_describe_patch_baselines_input::DescribePatchBaselinesInput;
+
+pub use crate::operation::describe_patch_baselines::_describe_patch_baselines_output::DescribePatchBaselinesOutput;
 
 mod _describe_patch_baselines_input;
 

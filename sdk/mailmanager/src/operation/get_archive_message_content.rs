@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_archive_messag
     }
 }
 
-pub use crate::operation::get_archive_message_content::_get_archive_message_content_output::GetArchiveMessageContentOutput;
-
 pub use crate::operation::get_archive_message_content::_get_archive_message_content_input::GetArchiveMessageContentInput;
+
+pub use crate::operation::get_archive_message_content::_get_archive_message_content_output::GetArchiveMessageContentOutput;
 
 mod _get_archive_message_content_input;
 

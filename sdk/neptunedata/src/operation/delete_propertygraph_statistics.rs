@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_propertygra
     }
 }
 
-pub use crate::operation::delete_propertygraph_statistics::_delete_propertygraph_statistics_output::DeletePropertygraphStatisticsOutput;
-
 pub use crate::operation::delete_propertygraph_statistics::_delete_propertygraph_statistics_input::DeletePropertygraphStatisticsInput;
+
+pub use crate::operation::delete_propertygraph_statistics::_delete_propertygraph_statistics_output::DeletePropertygraphStatisticsOutput;
 
 mod _delete_propertygraph_statistics_input;
 

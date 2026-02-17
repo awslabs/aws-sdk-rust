@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_asset_type::Ge
     }
 }
 
-pub use crate::operation::get_asset_type::_get_asset_type_output::GetAssetTypeOutput;
-
 pub use crate::operation::get_asset_type::_get_asset_type_input::GetAssetTypeInput;
+
+pub use crate::operation::get_asset_type::_get_asset_type_output::GetAssetTypeOutput;
 
 mod _get_asset_type_input;
 

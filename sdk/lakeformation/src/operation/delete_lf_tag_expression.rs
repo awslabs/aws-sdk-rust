@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lf_tag_expr
     }
 }
 
-pub use crate::operation::delete_lf_tag_expression::_delete_lf_tag_expression_output::DeleteLfTagExpressionOutput;
-
 pub use crate::operation::delete_lf_tag_expression::_delete_lf_tag_expression_input::DeleteLfTagExpressionInput;
+
+pub use crate::operation::delete_lf_tag_expression::_delete_lf_tag_expression_output::DeleteLfTagExpressionOutput;
 
 mod _delete_lf_tag_expression_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_calculat
     }
 }
 
-pub use crate::operation::batch_get_calculated_attribute_for_profile::_batch_get_calculated_attribute_for_profile_output::BatchGetCalculatedAttributeForProfileOutput;
-
 pub use crate::operation::batch_get_calculated_attribute_for_profile::_batch_get_calculated_attribute_for_profile_input::BatchGetCalculatedAttributeForProfileInput;
+
+pub use crate::operation::batch_get_calculated_attribute_for_profile::_batch_get_calculated_attribute_for_profile_output::BatchGetCalculatedAttributeForProfileOutput;
 
 mod _batch_get_calculated_attribute_for_profile_input;
 

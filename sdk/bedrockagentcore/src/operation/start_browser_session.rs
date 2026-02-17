@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_browser_sess
     }
 }
 
-pub use crate::operation::start_browser_session::_start_browser_session_output::StartBrowserSessionOutput;
-
 pub use crate::operation::start_browser_session::_start_browser_session_input::StartBrowserSessionInput;
+
+pub use crate::operation::start_browser_session::_start_browser_session_output::StartBrowserSessionOutput;
 
 mod _start_browser_session_input;
 

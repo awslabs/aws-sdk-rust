@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_legal_holds::
     }
 }
 
-pub use crate::operation::list_legal_holds::_list_legal_holds_output::ListLegalHoldsOutput;
-
 pub use crate::operation::list_legal_holds::_list_legal_holds_input::ListLegalHoldsInput;
+
+pub use crate::operation::list_legal_holds::_list_legal_holds_output::ListLegalHoldsOutput;
 
 mod _list_legal_holds_input;
 

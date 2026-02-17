@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_tax_inheritanc
     }
 }
 
-pub use crate::operation::put_tax_inheritance::_put_tax_inheritance_output::PutTaxInheritanceOutput;
-
 pub use crate::operation::put_tax_inheritance::_put_tax_inheritance_input::PutTaxInheritanceInput;
+
+pub use crate::operation::put_tax_inheritance::_put_tax_inheritance_output::PutTaxInheritanceOutput;
 
 mod _put_tax_inheritance_input;
 

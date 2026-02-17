@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_search_job::Ge
     }
 }
 
-pub use crate::operation::get_search_job::_get_search_job_output::GetSearchJobOutput;
-
 pub use crate::operation::get_search_job::_get_search_job_input::GetSearchJobInput;
+
+pub use crate::operation::get_search_job::_get_search_job_output::GetSearchJobOutput;
 
 mod _get_search_job_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_security_pr
     }
 }
 
-pub use crate::operation::delete_security_profile::_delete_security_profile_output::DeleteSecurityProfileOutput;
-
 pub use crate::operation::delete_security_profile::_delete_security_profile_input::DeleteSecurityProfileInput;
+
+pub use crate::operation::delete_security_profile::_delete_security_profile_output::DeleteSecurityProfileOutput;
 
 mod _delete_security_profile_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_conversion_
     }
 }
 
-pub use crate::operation::cancel_conversion_task::_cancel_conversion_task_output::CancelConversionTaskOutput;
-
 pub use crate::operation::cancel_conversion_task::_cancel_conversion_task_input::CancelConversionTaskInput;
+
+pub use crate::operation::cancel_conversion_task::_cancel_conversion_task_output::CancelConversionTaskOutput;
 
 mod _cancel_conversion_task_input;
 

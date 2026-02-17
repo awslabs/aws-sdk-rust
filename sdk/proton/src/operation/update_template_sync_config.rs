@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_template_sy
     }
 }
 
-pub use crate::operation::update_template_sync_config::_update_template_sync_config_output::UpdateTemplateSyncConfigOutput;
-
 pub use crate::operation::update_template_sync_config::_update_template_sync_config_input::UpdateTemplateSyncConfigInput;
+
+pub use crate::operation::update_template_sync_config::_update_template_sync_config_output::UpdateTemplateSyncConfigOutput;
 
 mod _update_template_sync_config_input;
 

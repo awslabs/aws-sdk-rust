@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hub::Create
     }
 }
 
-pub use crate::operation::create_hub::_create_hub_output::CreateHubOutput;
-
 pub use crate::operation::create_hub::_create_hub_input::CreateHubInput;
+
+pub use crate::operation::create_hub::_create_hub_output::CreateHubOutput;
 
 mod _create_hub_input;
 

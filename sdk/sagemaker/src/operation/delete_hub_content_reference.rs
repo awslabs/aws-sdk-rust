@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hub_content
     }
 }
 
-pub use crate::operation::delete_hub_content_reference::_delete_hub_content_reference_output::DeleteHubContentReferenceOutput;
-
 pub use crate::operation::delete_hub_content_reference::_delete_hub_content_reference_input::DeleteHubContentReferenceInput;
+
+pub use crate::operation::delete_hub_content_reference::_delete_hub_content_reference_output::DeleteHubContentReferenceOutput;
 
 mod _delete_hub_content_reference_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compositions:
     }
 }
 
-pub use crate::operation::list_compositions::_list_compositions_output::ListCompositionsOutput;
-
 pub use crate::operation::list_compositions::_list_compositions_input::ListCompositionsInput;
+
+pub use crate::operation::list_compositions::_list_compositions_output::ListCompositionsOutput;
 
 mod _list_compositions_input;
 

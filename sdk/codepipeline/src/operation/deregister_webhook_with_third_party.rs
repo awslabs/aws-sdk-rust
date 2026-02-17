@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_webhook
     }
 }
 
-pub use crate::operation::deregister_webhook_with_third_party::_deregister_webhook_with_third_party_output::DeregisterWebhookWithThirdPartyOutput;
-
 pub use crate::operation::deregister_webhook_with_third_party::_deregister_webhook_with_third_party_input::DeregisterWebhookWithThirdPartyInput;
+
+pub use crate::operation::deregister_webhook_with_third_party::_deregister_webhook_with_third_party_output::DeregisterWebhookWithThirdPartyOutput;
 
 mod _deregister_webhook_with_third_party_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_cache_nodes_offerings::_describe_reserved_cache_nodes_offerings_output::DescribeReservedCacheNodesOfferingsOutput;
-
 pub use crate::operation::describe_reserved_cache_nodes_offerings::_describe_reserved_cache_nodes_offerings_input::DescribeReservedCacheNodesOfferingsInput;
+
+pub use crate::operation::describe_reserved_cache_nodes_offerings::_describe_reserved_cache_nodes_offerings_output::DescribeReservedCacheNodesOfferingsOutput;
 
 mod _describe_reserved_cache_nodes_offerings_input;
 

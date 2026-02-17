@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_container_g
     }
 }
 
-pub use crate::operation::create_container_group_definition::_create_container_group_definition_output::CreateContainerGroupDefinitionOutput;
-
 pub use crate::operation::create_container_group_definition::_create_container_group_definition_input::CreateContainerGroupDefinitionInput;
+
+pub use crate::operation::create_container_group_definition::_create_container_group_definition_output::CreateContainerGroupDefinitionOutput;
 
 mod _create_container_group_definition_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flow_logs::
     }
 }
 
-pub use crate::operation::create_flow_logs::_create_flow_logs_output::CreateFlowLogsOutput;
-
 pub use crate::operation::create_flow_logs::_create_flow_logs_input::CreateFlowLogsInput;
+
+pub use crate::operation::create_flow_logs::_create_flow_logs_output::CreateFlowLogsOutput;
 
 mod _create_flow_logs_input;
 

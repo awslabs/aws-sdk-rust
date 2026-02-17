@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rulesets::Lis
     }
 }
 
-pub use crate::operation::list_rulesets::_list_rulesets_output::ListRulesetsOutput;
-
 pub use crate::operation::list_rulesets::_list_rulesets_input::ListRulesetsInput;
+
+pub use crate::operation::list_rulesets::_list_rulesets_output::ListRulesetsOutput;
 
 mod _list_rulesets_input;
 

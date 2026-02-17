@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_software
     }
 }
 
-pub use crate::operation::associate_software_to_image_builder::_associate_software_to_image_builder_output::AssociateSoftwareToImageBuilderOutput;
-
 pub use crate::operation::associate_software_to_image_builder::_associate_software_to_image_builder_input::AssociateSoftwareToImageBuilderInput;
+
+pub use crate::operation::associate_software_to_image_builder::_associate_software_to_image_builder_output::AssociateSoftwareToImageBuilderOutput;
 
 mod _associate_software_to_image_builder_input;
 

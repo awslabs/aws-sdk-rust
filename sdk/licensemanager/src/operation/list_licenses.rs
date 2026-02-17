@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_licenses::Lis
     }
 }
 
-pub use crate::operation::list_licenses::_list_licenses_output::ListLicensesOutput;
-
 pub use crate::operation::list_licenses::_list_licenses_input::ListLicensesInput;
+
+pub use crate::operation::list_licenses::_list_licenses_output::ListLicensesOutput;
 
 mod _list_licenses_input;
 

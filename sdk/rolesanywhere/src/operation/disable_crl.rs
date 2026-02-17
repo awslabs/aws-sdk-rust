@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_crl::Disab
     }
 }
 
-pub use crate::operation::disable_crl::_disable_crl_output::DisableCrlOutput;
-
 pub use crate::operation::disable_crl::_disable_crl_input::DisableCrlInput;
+
+pub use crate::operation::disable_crl::_disable_crl_output::DisableCrlOutput;
 
 mod _disable_crl_input;
 

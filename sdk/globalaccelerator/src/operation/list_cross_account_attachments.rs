@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cross_account
     }
 }
 
-pub use crate::operation::list_cross_account_attachments::_list_cross_account_attachments_output::ListCrossAccountAttachmentsOutput;
-
 pub use crate::operation::list_cross_account_attachments::_list_cross_account_attachments_input::ListCrossAccountAttachmentsInput;
+
+pub use crate::operation::list_cross_account_attachments::_list_cross_account_attachments_output::ListCrossAccountAttachmentsOutput;
 
 mod _list_cross_account_attachments_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_detect_senti
     }
 }
 
-pub use crate::operation::batch_detect_sentiment::_batch_detect_sentiment_output::BatchDetectSentimentOutput;
-
 pub use crate::operation::batch_detect_sentiment::_batch_detect_sentiment_input::BatchDetectSentimentInput;
+
+pub use crate::operation::batch_detect_sentiment::_batch_detect_sentiment_output::BatchDetectSentimentOutput;
 
 mod _batch_detect_sentiment_input;
 

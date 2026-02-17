@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_room::Creat
     }
 }
 
-pub use crate::operation::create_room::_create_room_output::CreateRoomOutput;
-
 pub use crate::operation::create_room::_create_room_input::CreateRoomInput;
+
+pub use crate::operation::create_room::_create_room_output::CreateRoomOutput;
 
 mod _create_room_input;
 

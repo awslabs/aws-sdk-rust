@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workflow_
     }
 }
 
-pub use crate::operation::describe_workflow_type::_describe_workflow_type_output::DescribeWorkflowTypeOutput;
-
 pub use crate::operation::describe_workflow_type::_describe_workflow_type_input::DescribeWorkflowTypeInput;
+
+pub use crate::operation::describe_workflow_type::_describe_workflow_type_output::DescribeWorkflowTypeOutput;
 
 mod _describe_workflow_type_input;
 

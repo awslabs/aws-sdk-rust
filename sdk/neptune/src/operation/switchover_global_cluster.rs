@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::switchover_global_
     }
 }
 
-pub use crate::operation::switchover_global_cluster::_switchover_global_cluster_output::SwitchoverGlobalClusterOutput;
-
 pub use crate::operation::switchover_global_cluster::_switchover_global_cluster_input::SwitchoverGlobalClusterInput;
+
+pub use crate::operation::switchover_global_cluster::_switchover_global_cluster_output::SwitchoverGlobalClusterOutput;
 
 mod _switchover_global_cluster_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_bans:
     }
 }
 
-pub use crate::operation::list_channel_bans::_list_channel_bans_output::ListChannelBansOutput;
-
 pub use crate::operation::list_channel_bans::_list_channel_bans_input::ListChannelBansInput;
+
+pub use crate::operation::list_channel_bans::_list_channel_bans_output::ListChannelBansOutput;
 
 mod _list_channel_bans_input;
 

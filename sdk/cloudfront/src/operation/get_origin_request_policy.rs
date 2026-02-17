@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_origin_request
     }
 }
 
-pub use crate::operation::get_origin_request_policy::_get_origin_request_policy_output::GetOriginRequestPolicyOutput;
-
 pub use crate::operation::get_origin_request_policy::_get_origin_request_policy_input::GetOriginRequestPolicyInput;
+
+pub use crate::operation::get_origin_request_policy::_get_origin_request_policy_output::GetOriginRequestPolicyOutput;
 
 mod _get_origin_request_policy_input;
 

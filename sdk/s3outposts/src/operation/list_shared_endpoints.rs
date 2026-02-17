@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_shared_endpoi
     }
 }
 
-pub use crate::operation::list_shared_endpoints::_list_shared_endpoints_output::ListSharedEndpointsOutput;
-
 pub use crate::operation::list_shared_endpoints::_list_shared_endpoints_input::ListSharedEndpointsInput;
+
+pub use crate::operation::list_shared_endpoints::_list_shared_endpoints_output::ListSharedEndpointsOutput;
 
 mod _list_shared_endpoints_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_sol_funct
     }
 }
 
-pub use crate::operation::validate_sol_function_package_content::_validate_sol_function_package_content_output::ValidateSolFunctionPackageContentOutput;
-
 pub use crate::operation::validate_sol_function_package_content::_validate_sol_function_package_content_input::ValidateSolFunctionPackageContentInput;
+
+pub use crate::operation::validate_sol_function_package_content::_validate_sol_function_package_content_output::ValidateSolFunctionPackageContentOutput;
 
 mod _validate_sol_function_package_content_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_invalidation::
     }
 }
 
-pub use crate::operation::get_invalidation::_get_invalidation_output::GetInvalidationOutput;
-
 pub use crate::operation::get_invalidation::_get_invalidation_input::GetInvalidationInput;
+
+pub use crate::operation::get_invalidation::_get_invalidation_output::GetInvalidationOutput;
 
 mod _get_invalidation_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_attachments_to
     }
 }
 
-pub use crate::operation::add_attachments_to_set::_add_attachments_to_set_output::AddAttachmentsToSetOutput;
-
 pub use crate::operation::add_attachments_to_set::_add_attachments_to_set_input::AddAttachmentsToSetInput;
+
+pub use crate::operation::add_attachments_to_set::_add_attachments_to_set_output::AddAttachmentsToSetOutput;
 
 mod _add_attachments_to_set_input;
 

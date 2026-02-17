@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_execution_pr
     }
 }
 
-pub use crate::operation::start_execution_preview::_start_execution_preview_output::StartExecutionPreviewOutput;
-
 pub use crate::operation::start_execution_preview::_start_execution_preview_input::StartExecutionPreviewInput;
+
+pub use crate::operation::start_execution_preview::_start_execution_preview_output::StartExecutionPreviewOutput;
 
 mod _start_execution_preview_input;
 

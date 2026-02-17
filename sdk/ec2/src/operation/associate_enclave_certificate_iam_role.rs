@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_enclave_
     }
 }
 
-pub use crate::operation::associate_enclave_certificate_iam_role::_associate_enclave_certificate_iam_role_output::AssociateEnclaveCertificateIamRoleOutput;
-
 pub use crate::operation::associate_enclave_certificate_iam_role::_associate_enclave_certificate_iam_role_input::AssociateEnclaveCertificateIamRoleInput;
+
+pub use crate::operation::associate_enclave_certificate_iam_role::_associate_enclave_certificate_iam_role_output::AssociateEnclaveCertificateIamRoleOutput;
 
 mod _associate_enclave_certificate_iam_role_input;
 

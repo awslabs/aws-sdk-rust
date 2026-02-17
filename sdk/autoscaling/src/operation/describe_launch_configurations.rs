@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_launch_co
     }
 }
 
-pub use crate::operation::describe_launch_configurations::_describe_launch_configurations_output::DescribeLaunchConfigurationsOutput;
-
 pub use crate::operation::describe_launch_configurations::_describe_launch_configurations_input::DescribeLaunchConfigurationsInput;
+
+pub use crate::operation::describe_launch_configurations::_describe_launch_configurations_output::DescribeLaunchConfigurationsOutput;
 
 mod _describe_launch_configurations_input;
 

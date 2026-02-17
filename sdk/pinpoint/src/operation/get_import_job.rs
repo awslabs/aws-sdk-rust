@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_import_job::Ge
     }
 }
 
-pub use crate::operation::get_import_job::_get_import_job_output::GetImportJobOutput;
-
 pub use crate::operation::get_import_job::_get_import_job_input::GetImportJobInput;
+
+pub use crate::operation::get_import_job::_get_import_job_output::GetImportJobOutput;
 
 mod _get_import_job_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_all_backend
     }
 }
 
-pub use crate::operation::remove_all_backends::_remove_all_backends_output::RemoveAllBackendsOutput;
-
 pub use crate::operation::remove_all_backends::_remove_all_backends_input::RemoveAllBackendsInput;
+
+pub use crate::operation::remove_all_backends::_remove_all_backends_output::RemoveAllBackendsOutput;
 
 mod _remove_all_backends_input;
 

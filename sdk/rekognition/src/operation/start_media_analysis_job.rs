@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_media_analys
     }
 }
 
-pub use crate::operation::start_media_analysis_job::_start_media_analysis_job_output::StartMediaAnalysisJobOutput;
-
 pub use crate::operation::start_media_analysis_job::_start_media_analysis_job_input::StartMediaAnalysisJobInput;
+
+pub use crate::operation::start_media_analysis_job::_start_media_analysis_job_output::StartMediaAnalysisJobOutput;
 
 mod _start_media_analysis_job_input;
 

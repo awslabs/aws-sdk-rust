@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_auto_scaling_g
     }
 }
 
-pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scaling_group_recommendations_output::GetAutoScalingGroupRecommendationsOutput;
-
 pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scaling_group_recommendations_input::GetAutoScalingGroupRecommendationsInput;
+
+pub use crate::operation::get_auto_scaling_group_recommendations::_get_auto_scaling_group_recommendations_output::GetAutoScalingGroupRecommendationsOutput;
 
 mod _get_auto_scaling_group_recommendations_input;
 

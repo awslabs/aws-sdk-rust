@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_comment::Up
     }
 }
 
-pub use crate::operation::update_comment::_update_comment_output::UpdateCommentOutput;
-
 pub use crate::operation::update_comment::_update_comment_input::UpdateCommentInput;
+
+pub use crate::operation::update_comment::_update_comment_output::UpdateCommentOutput;
 
 mod _update_comment_input;
 

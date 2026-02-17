@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster_sch
     }
 }
 
-pub use crate::operation::update_cluster_scheduler_config::_update_cluster_scheduler_config_output::UpdateClusterSchedulerConfigOutput;
-
 pub use crate::operation::update_cluster_scheduler_config::_update_cluster_scheduler_config_input::UpdateClusterSchedulerConfigInput;
+
+pub use crate::operation::update_cluster_scheduler_config::_update_cluster_scheduler_config_output::UpdateClusterSchedulerConfigOutput;
 
 mod _update_cluster_scheduler_config_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_connection_
     }
 }
 
-pub use crate::operation::cancel_connection_invitation::_cancel_connection_invitation_output::CancelConnectionInvitationOutput;
-
 pub use crate::operation::cancel_connection_invitation::_cancel_connection_invitation_input::CancelConnectionInvitationInput;
+
+pub use crate::operation::cancel_connection_invitation::_cancel_connection_invitation_output::CancelConnectionInvitationOutput;
 
 mod _cancel_connection_invitation_input;
 

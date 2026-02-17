@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_rep
     }
 }
 
-pub use crate::operation::describe_cache_report::_describe_cache_report_output::DescribeCacheReportOutput;
-
 pub use crate::operation::describe_cache_report::_describe_cache_report_input::DescribeCacheReportInput;
+
+pub use crate::operation::describe_cache_report::_describe_cache_report_output::DescribeCacheReportOutput;
 
 mod _describe_cache_report_input;
 

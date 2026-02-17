@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_case_rule::
     }
 }
 
-pub use crate::operation::create_case_rule::_create_case_rule_output::CreateCaseRuleOutput;
-
 pub use crate::operation::create_case_rule::_create_case_rule_input::CreateCaseRuleInput;
+
+pub use crate::operation::create_case_rule::_create_case_rule_output::CreateCaseRuleOutput;
 
 mod _create_case_rule_input;
 

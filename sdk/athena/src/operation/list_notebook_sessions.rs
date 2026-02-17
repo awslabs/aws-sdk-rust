@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_notebook_sess
     }
 }
 
-pub use crate::operation::list_notebook_sessions::_list_notebook_sessions_output::ListNotebookSessionsOutput;
-
 pub use crate::operation::list_notebook_sessions::_list_notebook_sessions_input::ListNotebookSessionsInput;
+
+pub use crate::operation::list_notebook_sessions::_list_notebook_sessions_output::ListNotebookSessionsOutput;
 
 mod _list_notebook_sessions_input;
 

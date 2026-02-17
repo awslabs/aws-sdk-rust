@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_external_data_
     }
 }
 
-pub use crate::operation::get_external_data_view_access_details::_get_external_data_view_access_details_output::GetExternalDataViewAccessDetailsOutput;
-
 pub use crate::operation::get_external_data_view_access_details::_get_external_data_view_access_details_input::GetExternalDataViewAccessDetailsInput;
+
+pub use crate::operation::get_external_data_view_access_details::_get_external_data_view_access_details_output::GetExternalDataViewAccessDetailsOutput;
 
 mod _get_external_data_view_access_details_input;
 

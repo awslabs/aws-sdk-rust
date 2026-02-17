@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_direct_query_d
     }
 }
 
-pub use crate::operation::add_direct_query_data_source::_add_direct_query_data_source_output::AddDirectQueryDataSourceOutput;
-
 pub use crate::operation::add_direct_query_data_source::_add_direct_query_data_source_input::AddDirectQueryDataSourceInput;
+
+pub use crate::operation::add_direct_query_data_source::_add_direct_query_data_source_output::AddDirectQueryDataSourceOutput;
 
 mod _add_direct_query_data_source_input;
 

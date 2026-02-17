@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_sandbox::Sta
     }
 }
 
-pub use crate::operation::start_sandbox::_start_sandbox_output::StartSandboxOutput;
-
 pub use crate::operation::start_sandbox::_start_sandbox_input::StartSandboxInput;
+
+pub use crate::operation::start_sandbox::_start_sandbox_output::StartSandboxOutput;
 
 mod _start_sandbox_input;
 

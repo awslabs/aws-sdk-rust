@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_container_reci
     }
 }
 
-pub use crate::operation::put_container_recipe_policy::_put_container_recipe_policy_output::PutContainerRecipePolicyOutput;
-
 pub use crate::operation::put_container_recipe_policy::_put_container_recipe_policy_input::PutContainerRecipePolicyInput;
+
+pub use crate::operation::put_container_recipe_policy::_put_container_recipe_policy_output::PutContainerRecipePolicyOutput;
 
 mod _put_container_recipe_policy_input;
 

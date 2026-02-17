@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image_versi
     }
 }
 
-pub use crate::operation::update_image_version::_update_image_version_output::UpdateImageVersionOutput;
-
 pub use crate::operation::update_image_version::_update_image_version_input::UpdateImageVersionInput;
+
+pub use crate::operation::update_image_version::_update_image_version_output::UpdateImageVersionOutput;
 
 mod _update_image_version_input;
 

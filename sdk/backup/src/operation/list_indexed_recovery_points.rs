@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_indexed_recov
     }
 }
 
-pub use crate::operation::list_indexed_recovery_points::_list_indexed_recovery_points_output::ListIndexedRecoveryPointsOutput;
-
 pub use crate::operation::list_indexed_recovery_points::_list_indexed_recovery_points_input::ListIndexedRecoveryPointsInput;
+
+pub use crate::operation::list_indexed_recovery_points::_list_indexed_recovery_points_output::ListIndexedRecoveryPointsOutput;
 
 mod _list_indexed_recovery_points_input;
 

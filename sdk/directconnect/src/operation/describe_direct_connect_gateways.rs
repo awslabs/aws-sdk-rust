@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_direct_co
     }
 }
 
-pub use crate::operation::describe_direct_connect_gateways::_describe_direct_connect_gateways_output::DescribeDirectConnectGatewaysOutput;
-
 pub use crate::operation::describe_direct_connect_gateways::_describe_direct_connect_gateways_input::DescribeDirectConnectGatewaysInput;
+
+pub use crate::operation::describe_direct_connect_gateways::_describe_direct_connect_gateways_output::DescribeDirectConnectGatewaysOutput;
 
 mod _describe_direct_connect_gateways_input;
 

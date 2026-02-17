@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image::De
     }
 }
 
-pub use crate::operation::describe_image::_describe_image_output::DescribeImageOutput;
-
 pub use crate::operation::describe_image::_describe_image_input::DescribeImageInput;
+
+pub use crate::operation::describe_image::_describe_image_output::DescribeImageOutput;
 
 mod _describe_image_input;
 

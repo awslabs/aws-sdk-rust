@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_metric_stre
     }
 }
 
-pub use crate::operation::delete_metric_stream::_delete_metric_stream_output::DeleteMetricStreamOutput;
-
 pub use crate::operation::delete_metric_stream::_delete_metric_stream_input::DeleteMetricStreamInput;
+
+pub use crate::operation::delete_metric_stream::_delete_metric_stream_output::DeleteMetricStreamOutput;
 
 mod _delete_metric_stream_input;
 

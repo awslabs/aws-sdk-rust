@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::flush_stage_cache:
     }
 }
 
-pub use crate::operation::flush_stage_cache::_flush_stage_cache_output::FlushStageCacheOutput;
-
 pub use crate::operation::flush_stage_cache::_flush_stage_cache_input::FlushStageCacheInput;
+
+pub use crate::operation::flush_stage_cache::_flush_stage_cache_output::FlushStageCacheOutput;
 
 mod _flush_stage_cache_input;
 

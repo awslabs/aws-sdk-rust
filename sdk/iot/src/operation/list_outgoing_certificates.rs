@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_outgoing_cert
     }
 }
 
-pub use crate::operation::list_outgoing_certificates::_list_outgoing_certificates_output::ListOutgoingCertificatesOutput;
-
 pub use crate::operation::list_outgoing_certificates::_list_outgoing_certificates_input::ListOutgoingCertificatesInput;
+
+pub use crate::operation::list_outgoing_certificates::_list_outgoing_certificates_output::ListOutgoingCertificatesOutput;
 
 mod _list_outgoing_certificates_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_effective_patches_for_patch_baseline::_describe_effective_patches_for_patch_baseline_output::DescribeEffectivePatchesForPatchBaselineOutput;
-
 pub use crate::operation::describe_effective_patches_for_patch_baseline::_describe_effective_patches_for_patch_baseline_input::DescribeEffectivePatchesForPatchBaselineInput;
+
+pub use crate::operation::describe_effective_patches_for_patch_baseline::_describe_effective_patches_for_patch_baseline_output::DescribeEffectivePatchesForPatchBaselineOutput;
 
 mod _describe_effective_patches_for_patch_baseline_input;
 

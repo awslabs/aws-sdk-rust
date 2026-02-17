@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_instances_t
     }
 }
 
-pub use crate::operation::attach_instances_to_load_balancer::_attach_instances_to_load_balancer_output::AttachInstancesToLoadBalancerOutput;
-
 pub use crate::operation::attach_instances_to_load_balancer::_attach_instances_to_load_balancer_input::AttachInstancesToLoadBalancerInput;
+
+pub use crate::operation::attach_instances_to_load_balancer::_attach_instances_to_load_balancer_output::AttachInstancesToLoadBalancerOutput;
 
 mod _attach_instances_to_load_balancer_input;
 

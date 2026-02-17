@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_group_query
     }
 }
 
-pub use crate::operation::update_group_query::_update_group_query_output::UpdateGroupQueryOutput;
-
 pub use crate::operation::update_group_query::_update_group_query_input::UpdateGroupQueryInput;
+
+pub use crate::operation::update_group_query::_update_group_query_output::UpdateGroupQueryOutput;
 
 mod _update_group_query_input;
 

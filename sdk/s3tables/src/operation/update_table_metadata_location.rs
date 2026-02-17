@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_table_metad
     }
 }
 
-pub use crate::operation::update_table_metadata_location::_update_table_metadata_location_output::UpdateTableMetadataLocationOutput;
-
 pub use crate::operation::update_table_metadata_location::_update_table_metadata_location_input::UpdateTableMetadataLocationInput;
+
+pub use crate::operation::update_table_metadata_location::_update_table_metadata_location_output::UpdateTableMetadataLocationOutput;
 
 mod _update_table_metadata_location_input;
 

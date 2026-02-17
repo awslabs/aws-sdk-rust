@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restart_channel_pi
     }
 }
 
-pub use crate::operation::restart_channel_pipelines::_restart_channel_pipelines_output::RestartChannelPipelinesOutput;
-
 pub use crate::operation::restart_channel_pipelines::_restart_channel_pipelines_input::RestartChannelPipelinesInput;
+
+pub use crate::operation::restart_channel_pipelines::_restart_channel_pipelines_output::RestartChannelPipelinesOutput;
 
 mod _restart_channel_pipelines_input;
 

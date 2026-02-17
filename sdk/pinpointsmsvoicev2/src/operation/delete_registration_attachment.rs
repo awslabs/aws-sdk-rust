@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_registratio
     }
 }
 
-pub use crate::operation::delete_registration_attachment::_delete_registration_attachment_output::DeleteRegistrationAttachmentOutput;
-
 pub use crate::operation::delete_registration_attachment::_delete_registration_attachment_input::DeleteRegistrationAttachmentInput;
+
+pub use crate::operation::delete_registration_attachment::_delete_registration_attachment_output::DeleteRegistrationAttachmentOutput;
 
 mod _delete_registration_attachment_input;
 

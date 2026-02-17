@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_api_key::Cr
     }
 }
 
-pub use crate::operation::create_api_key::_create_api_key_output::CreateApiKeyOutput;
-
 pub use crate::operation::create_api_key::_create_api_key_input::CreateApiKeyInput;
+
+pub use crate::operation::create_api_key::_create_api_key_output::CreateApiKeyOutput;
 
 mod _create_api_key_input;
 

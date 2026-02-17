@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instances::Get
     }
 }
 
-pub use crate::operation::get_instances::_get_instances_output::GetInstancesOutput;
-
 pub use crate::operation::get_instances::_get_instances_input::GetInstancesInput;
+
+pub use crate::operation::get_instances::_get_instances_output::GetInstancesOutput;
 
 mod _get_instances_input;
 

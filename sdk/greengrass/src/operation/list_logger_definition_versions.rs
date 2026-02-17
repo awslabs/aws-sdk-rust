@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_logger_defini
     }
 }
 
-pub use crate::operation::list_logger_definition_versions::_list_logger_definition_versions_output::ListLoggerDefinitionVersionsOutput;
-
 pub use crate::operation::list_logger_definition_versions::_list_logger_definition_versions_input::ListLoggerDefinitionVersionsInput;
+
+pub use crate::operation::list_logger_definition_versions::_list_logger_definition_versions_output::ListLoggerDefinitionVersionsOutput;
 
 mod _list_logger_definition_versions_input;
 

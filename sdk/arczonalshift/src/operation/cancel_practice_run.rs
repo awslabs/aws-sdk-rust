@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_practice_ru
     }
 }
 
-pub use crate::operation::cancel_practice_run::_cancel_practice_run_output::CancelPracticeRunOutput;
-
 pub use crate::operation::cancel_practice_run::_cancel_practice_run_input::CancelPracticeRunInput;
+
+pub use crate::operation::cancel_practice_run::_cancel_practice_run_output::CancelPracticeRunOutput;
 
 mod _cancel_practice_run_input;
 

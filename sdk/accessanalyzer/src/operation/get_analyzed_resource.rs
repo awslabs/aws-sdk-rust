@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_analyzed_resou
     }
 }
 
-pub use crate::operation::get_analyzed_resource::_get_analyzed_resource_output::GetAnalyzedResourceOutput;
-
 pub use crate::operation::get_analyzed_resource::_get_analyzed_resource_input::GetAnalyzedResourceInput;
+
+pub use crate::operation::get_analyzed_resource::_get_analyzed_resource_output::GetAnalyzedResourceOutput;
 
 mod _get_analyzed_resource_input;
 

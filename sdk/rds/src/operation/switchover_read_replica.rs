@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::switchover_read_re
     }
 }
 
-pub use crate::operation::switchover_read_replica::_switchover_read_replica_output::SwitchoverReadReplicaOutput;
-
 pub use crate::operation::switchover_read_replica::_switchover_read_replica_input::SwitchoverReadReplicaInput;
+
+pub use crate::operation::switchover_read_replica::_switchover_read_replica_output::SwitchoverReadReplicaOutput;
 
 mod _switchover_read_replica_input;
 

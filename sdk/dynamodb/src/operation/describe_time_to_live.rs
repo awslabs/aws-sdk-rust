@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_time_to_l
     }
 }
 
-pub use crate::operation::describe_time_to_live::_describe_time_to_live_output::DescribeTimeToLiveOutput;
-
 pub use crate::operation::describe_time_to_live::_describe_time_to_live_input::DescribeTimeToLiveInput;
+
+pub use crate::operation::describe_time_to_live::_describe_time_to_live_output::DescribeTimeToLiveOutput;
 
 mod _describe_time_to_live_input;
 

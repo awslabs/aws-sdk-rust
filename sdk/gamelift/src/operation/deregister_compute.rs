@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_compute
     }
 }
 
-pub use crate::operation::deregister_compute::_deregister_compute_output::DeregisterComputeOutput;
-
 pub use crate::operation::deregister_compute::_deregister_compute_input::DeregisterComputeInput;
+
+pub use crate::operation::deregister_compute::_deregister_compute_output::DeregisterComputeOutput;
 
 mod _deregister_compute_input;
 

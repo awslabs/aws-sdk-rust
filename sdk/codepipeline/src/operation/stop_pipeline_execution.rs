@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_pipeline_exec
     }
 }
 
-pub use crate::operation::stop_pipeline_execution::_stop_pipeline_execution_output::StopPipelineExecutionOutput;
-
 pub use crate::operation::stop_pipeline_execution::_stop_pipeline_execution_input::StopPipelineExecutionInput;
+
+pub use crate::operation::stop_pipeline_execution::_stop_pipeline_execution_output::StopPipelineExecutionOutput;
 
 mod _stop_pipeline_execution_input;
 

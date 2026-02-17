@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_service_level_objective_exclusion_windows::_list_service_level_objective_exclusion_windows_output::ListServiceLevelObjectiveExclusionWindowsOutput;
-
 pub use crate::operation::list_service_level_objective_exclusion_windows::_list_service_level_objective_exclusion_windows_input::ListServiceLevelObjectiveExclusionWindowsInput;
+
+pub use crate::operation::list_service_level_objective_exclusion_windows::_list_service_level_objective_exclusion_windows_output::ListServiceLevelObjectiveExclusionWindowsOutput;
 
 mod _list_service_level_objective_exclusion_windows_input;
 

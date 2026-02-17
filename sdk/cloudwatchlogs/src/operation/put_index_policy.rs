@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_index_policy::
     }
 }
 
-pub use crate::operation::put_index_policy::_put_index_policy_output::PutIndexPolicyOutput;
-
 pub use crate::operation::put_index_policy::_put_index_policy_input::PutIndexPolicyInput;
+
+pub use crate::operation::put_index_policy::_put_index_policy_output::PutIndexPolicyOutput;
 
 mod _put_index_policy_input;
 

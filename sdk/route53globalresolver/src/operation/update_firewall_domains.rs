@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_firewall_do
     }
 }
 
-pub use crate::operation::update_firewall_domains::_update_firewall_domains_output::UpdateFirewallDomainsOutput;
-
 pub use crate::operation::update_firewall_domains::_update_firewall_domains_input::UpdateFirewallDomainsInput;
+
+pub use crate::operation::update_firewall_domains::_update_firewall_domains_output::UpdateFirewallDomainsOutput;
 
 mod _update_firewall_domains_input;
 

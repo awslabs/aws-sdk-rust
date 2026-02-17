@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_campaign::St
     }
 }
 
-pub use crate::operation::start_campaign::_start_campaign_output::StartCampaignOutput;
-
 pub use crate::operation::start_campaign::_start_campaign_input::StartCampaignInput;
+
+pub use crate::operation::start_campaign::_start_campaign_output::StartCampaignOutput;
 
 mod _start_campaign_input;
 

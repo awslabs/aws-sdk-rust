@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_source_lo
     }
 }
 
-pub use crate::operation::describe_source_location::_describe_source_location_output::DescribeSourceLocationOutput;
-
 pub use crate::operation::describe_source_location::_describe_source_location_input::DescribeSourceLocationInput;
+
+pub use crate::operation::describe_source_location::_describe_source_location_output::DescribeSourceLocationOutput;
 
 mod _describe_source_location_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tags_for_do
     }
 }
 
-pub use crate::operation::delete_tags_for_domain::_delete_tags_for_domain_output::DeleteTagsForDomainOutput;
-
 pub use crate::operation::delete_tags_for_domain::_delete_tags_for_domain_input::DeleteTagsForDomainInput;
+
+pub use crate::operation::delete_tags_for_domain::_delete_tags_for_domain_output::DeleteTagsForDomainOutput;
 
 mod _delete_tags_for_domain_input;
 

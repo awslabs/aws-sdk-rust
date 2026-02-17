@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hub_contents:
     }
 }
 
-pub use crate::operation::list_hub_contents::_list_hub_contents_output::ListHubContentsOutput;
-
 pub use crate::operation::list_hub_contents::_list_hub_contents_input::ListHubContentsInput;
+
+pub use crate::operation::list_hub_contents::_list_hub_contents_output::ListHubContentsOutput;
 
 mod _list_hub_contents_input;
 

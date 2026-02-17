@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_constraint:
     }
 }
 
-pub use crate::operation::create_constraint::_create_constraint_output::CreateConstraintOutput;
-
 pub use crate::operation::create_constraint::_create_constraint_input::CreateConstraintInput;
+
+pub use crate::operation::create_constraint::_create_constraint_output::CreateConstraintOutput;
 
 mod _create_constraint_input;
 

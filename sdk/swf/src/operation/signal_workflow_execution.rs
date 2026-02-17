@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::signal_workflow_ex
     }
 }
 
-pub use crate::operation::signal_workflow_execution::_signal_workflow_execution_output::SignalWorkflowExecutionOutput;
-
 pub use crate::operation::signal_workflow_execution::_signal_workflow_execution_input::SignalWorkflowExecutionInput;
+
+pub use crate::operation::signal_workflow_execution::_signal_workflow_execution_output::SignalWorkflowExecutionOutput;
 
 mod _signal_workflow_execution_input;
 

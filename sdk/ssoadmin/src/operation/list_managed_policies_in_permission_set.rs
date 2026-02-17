@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_polic
     }
 }
 
-pub use crate::operation::list_managed_policies_in_permission_set::_list_managed_policies_in_permission_set_output::ListManagedPoliciesInPermissionSetOutput;
-
 pub use crate::operation::list_managed_policies_in_permission_set::_list_managed_policies_in_permission_set_input::ListManagedPoliciesInPermissionSetInput;
+
+pub use crate::operation::list_managed_policies_in_permission_set::_list_managed_policies_in_permission_set_output::ListManagedPoliciesInPermissionSetOutput;
 
 mod _list_managed_policies_in_permission_set_input;
 

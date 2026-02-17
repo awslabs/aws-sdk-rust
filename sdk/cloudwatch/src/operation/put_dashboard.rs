@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_dashboard::Put
     }
 }
 
-pub use crate::operation::put_dashboard::_put_dashboard_output::PutDashboardOutput;
-
 pub use crate::operation::put_dashboard::_put_dashboard_input::PutDashboardInput;
+
+pub use crate::operation::put_dashboard::_put_dashboard_output::PutDashboardOutput;
 
 mod _put_dashboard_input;
 

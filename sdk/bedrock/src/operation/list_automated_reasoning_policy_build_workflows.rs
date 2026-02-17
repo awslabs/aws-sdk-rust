@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_automated_reasoning_policy_build_workflows::_list_automated_reasoning_policy_build_workflows_output::ListAutomatedReasoningPolicyBuildWorkflowsOutput;
-
 pub use crate::operation::list_automated_reasoning_policy_build_workflows::_list_automated_reasoning_policy_build_workflows_input::ListAutomatedReasoningPolicyBuildWorkflowsInput;
+
+pub use crate::operation::list_automated_reasoning_policy_build_workflows::_list_automated_reasoning_policy_build_workflows_output::ListAutomatedReasoningPolicyBuildWorkflowsOutput;
 
 mod _list_automated_reasoning_policy_build_workflows_input;
 

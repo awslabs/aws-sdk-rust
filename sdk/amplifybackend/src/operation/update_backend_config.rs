@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_backend_con
     }
 }
 
-pub use crate::operation::update_backend_config::_update_backend_config_output::UpdateBackendConfigOutput;
-
 pub use crate::operation::update_backend_config::_update_backend_config_input::UpdateBackendConfigInput;
+
+pub use crate::operation::update_backend_config::_update_backend_config_output::UpdateBackendConfigOutput;
 
 mod _update_backend_config_input;
 

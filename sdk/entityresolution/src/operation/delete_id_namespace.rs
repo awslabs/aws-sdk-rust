@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_id_namespac
     }
 }
 
-pub use crate::operation::delete_id_namespace::_delete_id_namespace_output::DeleteIdNamespaceOutput;
-
 pub use crate::operation::delete_id_namespace::_delete_id_namespace_input::DeleteIdNamespaceInput;
+
+pub use crate::operation::delete_id_namespace::_delete_id_namespace_output::DeleteIdNamespaceOutput;
 
 mod _delete_id_namespace_input;
 

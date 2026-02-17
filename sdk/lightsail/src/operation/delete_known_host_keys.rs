@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_known_host_
     }
 }
 
-pub use crate::operation::delete_known_host_keys::_delete_known_host_keys_output::DeleteKnownHostKeysOutput;
-
 pub use crate::operation::delete_known_host_keys::_delete_known_host_keys_input::DeleteKnownHostKeysInput;
+
+pub use crate::operation::delete_known_host_keys::_delete_known_host_keys_output::DeleteKnownHostKeysOutput;
 
 mod _delete_known_host_keys_input;
 

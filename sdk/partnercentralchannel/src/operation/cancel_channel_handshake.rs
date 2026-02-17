@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_channel_han
     }
 }
 
-pub use crate::operation::cancel_channel_handshake::_cancel_channel_handshake_output::CancelChannelHandshakeOutput;
-
 pub use crate::operation::cancel_channel_handshake::_cancel_channel_handshake_input::CancelChannelHandshakeInput;
+
+pub use crate::operation::cancel_channel_handshake::_cancel_channel_handshake_output::CancelChannelHandshakeOutput;
 
 mod _cancel_channel_handshake_input;
 

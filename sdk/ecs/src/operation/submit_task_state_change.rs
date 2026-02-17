@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_task_state_
     }
 }
 
-pub use crate::operation::submit_task_state_change::_submit_task_state_change_output::SubmitTaskStateChangeOutput;
-
 pub use crate::operation::submit_task_state_change::_submit_task_state_change_input::SubmitTaskStateChangeInput;
+
+pub use crate::operation::submit_task_state_change::_submit_task_state_change_output::SubmitTaskStateChangeOutput;
 
 mod _submit_task_state_change_input;
 

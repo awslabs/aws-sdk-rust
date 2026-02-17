@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_instan
     }
 }
 
-pub use crate::operation::get_service_instance_sync_status::_get_service_instance_sync_status_output::GetServiceInstanceSyncStatusOutput;
-
 pub use crate::operation::get_service_instance_sync_status::_get_service_instance_sync_status_input::GetServiceInstanceSyncStatusInput;
+
+pub use crate::operation::get_service_instance_sync_status::_get_service_instance_sync_status_output::GetServiceInstanceSyncStatusOutput;
 
 mod _get_service_instance_sync_status_input;
 

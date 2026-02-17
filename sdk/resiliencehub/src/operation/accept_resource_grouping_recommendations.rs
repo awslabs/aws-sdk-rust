@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_resource_gr
     }
 }
 
-pub use crate::operation::accept_resource_grouping_recommendations::_accept_resource_grouping_recommendations_output::AcceptResourceGroupingRecommendationsOutput;
-
 pub use crate::operation::accept_resource_grouping_recommendations::_accept_resource_grouping_recommendations_input::AcceptResourceGroupingRecommendationsInput;
+
+pub use crate::operation::accept_resource_grouping_recommendations::_accept_resource_grouping_recommendations_output::AcceptResourceGroupingRecommendationsOutput;
 
 mod _accept_resource_grouping_recommendations_input;
 

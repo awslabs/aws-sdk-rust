@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rule_executio
     }
 }
 
-pub use crate::operation::list_rule_executions::_list_rule_executions_output::ListRuleExecutionsOutput;
-
 pub use crate::operation::list_rule_executions::_list_rule_executions_input::ListRuleExecutionsInput;
+
+pub use crate::operation::list_rule_executions::_list_rule_executions_output::ListRuleExecutionsOutput;
 
 mod _list_rule_executions_input;
 

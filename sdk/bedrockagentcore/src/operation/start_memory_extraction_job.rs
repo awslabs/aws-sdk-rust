@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_memory_extra
     }
 }
 
-pub use crate::operation::start_memory_extraction_job::_start_memory_extraction_job_output::StartMemoryExtractionJobOutput;
-
 pub use crate::operation::start_memory_extraction_job::_start_memory_extraction_job_input::StartMemoryExtractionJobInput;
+
+pub use crate::operation::start_memory_extraction_job::_start_memory_extraction_job_output::StartMemoryExtractionJobOutput;
 
 mod _start_memory_extraction_job_input;
 

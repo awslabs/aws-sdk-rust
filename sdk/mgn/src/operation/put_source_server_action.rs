@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_source_server_
     }
 }
 
-pub use crate::operation::put_source_server_action::_put_source_server_action_output::PutSourceServerActionOutput;
-
 pub use crate::operation::put_source_server_action::_put_source_server_action_input::PutSourceServerActionInput;
+
+pub use crate::operation::put_source_server_action::_put_source_server_action_output::PutSourceServerActionOutput;
 
 mod _put_source_server_action_input;
 

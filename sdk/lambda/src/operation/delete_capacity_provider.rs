@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_capacity_pr
     }
 }
 
-pub use crate::operation::delete_capacity_provider::_delete_capacity_provider_output::DeleteCapacityProviderOutput;
-
 pub use crate::operation::delete_capacity_provider::_delete_capacity_provider_input::DeleteCapacityProviderInput;
+
+pub use crate::operation::delete_capacity_provider::_delete_capacity_provider_output::DeleteCapacityProviderOutput;
 
 mod _delete_capacity_provider_input;
 

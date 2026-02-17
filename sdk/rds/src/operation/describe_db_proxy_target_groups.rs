@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_proxy_
     }
 }
 
-pub use crate::operation::describe_db_proxy_target_groups::_describe_db_proxy_target_groups_output::DescribeDbProxyTargetGroupsOutput;
-
 pub use crate::operation::describe_db_proxy_target_groups::_describe_db_proxy_target_groups_input::DescribeDbProxyTargetGroupsInput;
+
+pub use crate::operation::describe_db_proxy_target_groups::_describe_db_proxy_target_groups_output::DescribeDbProxyTargetGroupsOutput;
 
 mod _describe_db_proxy_target_groups_input;
 

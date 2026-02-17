@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_voice_connector_streaming_configuration::_delete_voice_connector_streaming_configuration_output::DeleteVoiceConnectorStreamingConfigurationOutput;
-
 pub use crate::operation::delete_voice_connector_streaming_configuration::_delete_voice_connector_streaming_configuration_input::DeleteVoiceConnectorStreamingConfigurationInput;
+
+pub use crate::operation::delete_voice_connector_streaming_configuration::_delete_voice_connector_streaming_configuration_output::DeleteVoiceConnectorStreamingConfigurationOutput;
 
 mod _delete_voice_connector_streaming_configuration_input;
 

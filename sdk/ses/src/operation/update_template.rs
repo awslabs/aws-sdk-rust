@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_template::U
     }
 }
 
-pub use crate::operation::update_template::_update_template_output::UpdateTemplateOutput;
-
 pub use crate::operation::update_template::_update_template_input::UpdateTemplateInput;
+
+pub use crate::operation::update_template::_update_template_output::UpdateTemplateOutput;
 
 mod _update_template_input;
 

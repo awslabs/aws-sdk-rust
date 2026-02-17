@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_client_vpc_co
     }
 }
 
-pub use crate::operation::list_client_vpc_connections::_list_client_vpc_connections_output::ListClientVpcConnectionsOutput;
-
 pub use crate::operation::list_client_vpc_connections::_list_client_vpc_connections_input::ListClientVpcConnectionsInput;
+
+pub use crate::operation::list_client_vpc_connections::_list_client_vpc_connections_output::ListClientVpcConnectionsOutput;
 
 mod _list_client_vpc_connections_input;
 

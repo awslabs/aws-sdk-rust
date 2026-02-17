@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_defined_f
     }
 }
 
-pub use crate::operation::get_user_defined_functions::_get_user_defined_functions_output::GetUserDefinedFunctionsOutput;
-
 pub use crate::operation::get_user_defined_functions::_get_user_defined_functions_input::GetUserDefinedFunctionsInput;
+
+pub use crate::operation::get_user_defined_functions::_get_user_defined_functions_output::GetUserDefinedFunctionsOutput;
 
 mod _get_user_defined_functions_input;
 

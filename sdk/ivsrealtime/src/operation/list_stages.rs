@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stages::ListS
     }
 }
 
-pub use crate::operation::list_stages::_list_stages_output::ListStagesOutput;
-
 pub use crate::operation::list_stages::_list_stages_input::ListStagesInput;
+
+pub use crate::operation::list_stages::_list_stages_output::ListStagesOutput;
 
 mod _list_stages_input;
 

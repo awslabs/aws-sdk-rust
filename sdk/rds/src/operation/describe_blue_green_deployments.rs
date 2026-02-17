@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_blue_gree
     }
 }
 
-pub use crate::operation::describe_blue_green_deployments::_describe_blue_green_deployments_output::DescribeBlueGreenDeploymentsOutput;
-
 pub use crate::operation::describe_blue_green_deployments::_describe_blue_green_deployments_input::DescribeBlueGreenDeploymentsInput;
+
+pub use crate::operation::describe_blue_green_deployments::_describe_blue_green_deployments_output::DescribeBlueGreenDeploymentsOutput;
 
 mod _describe_blue_green_deployments_input;
 

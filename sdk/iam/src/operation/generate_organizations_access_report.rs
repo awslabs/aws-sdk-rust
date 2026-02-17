@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_organizat
     }
 }
 
-pub use crate::operation::generate_organizations_access_report::_generate_organizations_access_report_output::GenerateOrganizationsAccessReportOutput;
-
 pub use crate::operation::generate_organizations_access_report::_generate_organizations_access_report_input::GenerateOrganizationsAccessReportInput;
+
+pub use crate::operation::generate_organizations_access_report::_generate_organizations_access_report_output::GenerateOrganizationsAccessReportOutput;
 
 mod _generate_organizations_access_report_input;
 

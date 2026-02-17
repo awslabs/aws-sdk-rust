@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_direct_connect_gateway_associations::_describe_direct_connect_gateway_associations_output::DescribeDirectConnectGatewayAssociationsOutput;
-
 pub use crate::operation::describe_direct_connect_gateway_associations::_describe_direct_connect_gateway_associations_input::DescribeDirectConnectGatewayAssociationsInput;
+
+pub use crate::operation::describe_direct_connect_gateway_associations::_describe_direct_connect_gateway_associations_output::DescribeDirectConnectGatewayAssociationsOutput;
 
 mod _describe_direct_connect_gateway_associations_input;
 

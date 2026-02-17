@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trial_com
     }
 }
 
-pub use crate::operation::describe_trial_component::_describe_trial_component_output::DescribeTrialComponentOutput;
-
 pub use crate::operation::describe_trial_component::_describe_trial_component_input::DescribeTrialComponentInput;
+
+pub use crate::operation::describe_trial_component::_describe_trial_component_output::DescribeTrialComponentOutput;
 
 mod _describe_trial_component_input;
 

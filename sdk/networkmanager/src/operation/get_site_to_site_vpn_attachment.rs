@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_site_to_site_v
     }
 }
 
-pub use crate::operation::get_site_to_site_vpn_attachment::_get_site_to_site_vpn_attachment_output::GetSiteToSiteVpnAttachmentOutput;
-
 pub use crate::operation::get_site_to_site_vpn_attachment::_get_site_to_site_vpn_attachment_input::GetSiteToSiteVpnAttachmentInput;
+
+pub use crate::operation::get_site_to_site_vpn_attachment::_get_site_to_site_vpn_attachment_output::GetSiteToSiteVpnAttachmentOutput;
 
 mod _get_site_to_site_vpn_attachment_input;
 

@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_verified_ac
     }
 }
 
-pub use crate::operation::modify_verified_access_trust_provider::_modify_verified_access_trust_provider_output::ModifyVerifiedAccessTrustProviderOutput;
-
 pub use crate::operation::modify_verified_access_trust_provider::_modify_verified_access_trust_provider_input::ModifyVerifiedAccessTrustProviderInput;
+
+pub use crate::operation::modify_verified_access_trust_provider::_modify_verified_access_trust_provider_output::ModifyVerifiedAccessTrustProviderOutput;
 
 mod _modify_verified_access_trust_provider_input;
 

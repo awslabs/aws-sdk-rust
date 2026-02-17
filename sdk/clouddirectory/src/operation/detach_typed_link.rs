@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_typed_link:
     }
 }
 
-pub use crate::operation::detach_typed_link::_detach_typed_link_output::DetachTypedLinkOutput;
-
 pub use crate::operation::detach_typed_link::_detach_typed_link_input::DetachTypedLinkInput;
+
+pub use crate::operation::detach_typed_link::_detach_typed_link_output::DetachTypedLinkOutput;
 
 mod _detach_typed_link_input;
 

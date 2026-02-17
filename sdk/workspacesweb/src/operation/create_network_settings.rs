@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network_set
     }
 }
 
-pub use crate::operation::create_network_settings::_create_network_settings_output::CreateNetworkSettingsOutput;
-
 pub use crate::operation::create_network_settings::_create_network_settings_input::CreateNetworkSettingsInput;
+
+pub use crate::operation::create_network_settings::_create_network_settings_output::CreateNetworkSettingsOutput;
 
 mod _create_network_settings_input;
 

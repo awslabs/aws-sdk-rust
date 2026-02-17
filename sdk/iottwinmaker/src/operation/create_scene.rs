@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scene::Crea
     }
 }
 
-pub use crate::operation::create_scene::_create_scene_output::CreateSceneOutput;
-
 pub use crate::operation::create_scene::_create_scene_input::CreateSceneInput;
+
+pub use crate::operation::create_scene::_create_scene_output::CreateSceneOutput;
 
 mod _create_scene_input;
 

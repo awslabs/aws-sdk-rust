@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_hub_configurat
     }
 }
 
-pub use crate::operation::put_hub_configuration::_put_hub_configuration_output::PutHubConfigurationOutput;
-
 pub use crate::operation::put_hub_configuration::_put_hub_configuration_input::PutHubConfigurationInput;
+
+pub use crate::operation::put_hub_configuration::_put_hub_configuration_output::PutHubConfigurationOutput;
 
 mod _put_hub_configuration_input;
 

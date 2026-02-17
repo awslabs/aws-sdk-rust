@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_speaker::
     }
 }
 
-pub use crate::operation::describe_speaker::_describe_speaker_output::DescribeSpeakerOutput;
-
 pub use crate::operation::describe_speaker::_describe_speaker_input::DescribeSpeakerInput;
+
+pub use crate::operation::describe_speaker::_describe_speaker_output::DescribeSpeakerOutput;
 
 mod _describe_speaker_input;
 

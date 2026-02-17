@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_network_int
     }
 }
 
-pub use crate::operation::modify_network_interface_attribute::_modify_network_interface_attribute_output::ModifyNetworkInterfaceAttributeOutput;
-
 pub use crate::operation::modify_network_interface_attribute::_modify_network_interface_attribute_input::ModifyNetworkInterfaceAttributeInput;
+
+pub use crate::operation::modify_network_interface_attribute::_modify_network_interface_attribute_output::ModifyNetworkInterfaceAttributeOutput;
 
 mod _modify_network_interface_attribute_input;
 

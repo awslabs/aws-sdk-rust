@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_environment_pr
     }
 }
 
-pub use crate::operation::get_environment_profile::_get_environment_profile_output::GetEnvironmentProfileOutput;
-
 pub use crate::operation::get_environment_profile::_get_environment_profile_input::GetEnvironmentProfileInput;
+
+pub use crate::operation::get_environment_profile::_get_environment_profile_output::GetEnvironmentProfileOutput;
 
 mod _get_environment_profile_input;
 

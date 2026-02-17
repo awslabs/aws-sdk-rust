@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_session_log
     }
 }
 
-pub use crate::operation::create_session_logger::_create_session_logger_output::CreateSessionLoggerOutput;
-
 pub use crate::operation::create_session_logger::_create_session_logger_input::CreateSessionLoggerInput;
+
+pub use crate::operation::create_session_logger::_create_session_logger_output::CreateSessionLoggerOutput;
 
 mod _create_session_logger_input;
 

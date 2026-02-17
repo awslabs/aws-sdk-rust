@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_usage_repor
     }
 }
 
-pub use crate::operation::create_usage_report_subscription::_create_usage_report_subscription_output::CreateUsageReportSubscriptionOutput;
-
 pub use crate::operation::create_usage_report_subscription::_create_usage_report_subscription_input::CreateUsageReportSubscriptionInput;
+
+pub use crate::operation::create_usage_report_subscription::_create_usage_report_subscription_output::CreateUsageReportSubscriptionOutput;
 
 mod _create_usage_report_subscription_input;
 

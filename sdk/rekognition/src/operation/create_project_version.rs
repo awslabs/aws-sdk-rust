@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_project_ver
     }
 }
 
-pub use crate::operation::create_project_version::_create_project_version_output::CreateProjectVersionOutput;
-
 pub use crate::operation::create_project_version::_create_project_version_input::CreateProjectVersionInput;
+
+pub use crate::operation::create_project_version::_create_project_version_output::CreateProjectVersionOutput;
 
 mod _create_project_version_input;
 

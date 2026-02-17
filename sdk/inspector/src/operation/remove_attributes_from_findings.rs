@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_attributes_
     }
 }
 
-pub use crate::operation::remove_attributes_from_findings::_remove_attributes_from_findings_output::RemoveAttributesFromFindingsOutput;
-
 pub use crate::operation::remove_attributes_from_findings::_remove_attributes_from_findings_input::RemoveAttributesFromFindingsInput;
+
+pub use crate::operation::remove_attributes_from_findings::_remove_attributes_from_findings_output::RemoveAttributesFromFindingsOutput;
 
 mod _remove_attributes_from_findings_input;
 

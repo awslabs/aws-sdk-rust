@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transcript::Ge
     }
 }
 
-pub use crate::operation::get_transcript::_get_transcript_output::GetTranscriptOutput;
-
 pub use crate::operation::get_transcript::_get_transcript_input::GetTranscriptInput;
+
+pub use crate::operation::get_transcript::_get_transcript_output::GetTranscriptOutput;
 
 mod _get_transcript_input;
 

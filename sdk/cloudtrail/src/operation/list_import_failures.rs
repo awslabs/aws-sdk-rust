@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_import_failur
     }
 }
 
-pub use crate::operation::list_import_failures::_list_import_failures_output::ListImportFailuresOutput;
-
 pub use crate::operation::list_import_failures::_list_import_failures_input::ListImportFailuresInput;
+
+pub use crate::operation::list_import_failures::_list_import_failures_output::ListImportFailuresOutput;
 
 mod _list_import_failures_input;
 

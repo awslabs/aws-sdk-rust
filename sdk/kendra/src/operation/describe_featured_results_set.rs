@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_featured_
     }
 }
 
-pub use crate::operation::describe_featured_results_set::_describe_featured_results_set_output::DescribeFeaturedResultsSetOutput;
-
 pub use crate::operation::describe_featured_results_set::_describe_featured_results_set_input::DescribeFeaturedResultsSetInput;
+
+pub use crate::operation::describe_featured_results_set::_describe_featured_results_set_output::DescribeFeaturedResultsSetOutput;
 
 mod _describe_featured_results_set_input;
 

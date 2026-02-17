@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_restore_j
     }
 }
 
-pub use crate::operation::describe_restore_job::_describe_restore_job_output::DescribeRestoreJobOutput;
-
 pub use crate::operation::describe_restore_job::_describe_restore_job_input::DescribeRestoreJobInput;
+
+pub use crate::operation::describe_restore_job::_describe_restore_job_output::DescribeRestoreJobOutput;
 
 mod _describe_restore_job_input;
 

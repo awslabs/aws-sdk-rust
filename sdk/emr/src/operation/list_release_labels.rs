@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_release_label
     }
 }
 
-pub use crate::operation::list_release_labels::_list_release_labels_output::ListReleaseLabelsOutput;
-
 pub use crate::operation::list_release_labels::_list_release_labels_input::ListReleaseLabelsInput;
+
+pub use crate::operation::list_release_labels::_list_release_labels_output::ListReleaseLabelsOutput;
 
 mod _list_release_labels_input;
 

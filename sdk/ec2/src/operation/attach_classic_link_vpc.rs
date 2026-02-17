@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_classic_lin
     }
 }
 
-pub use crate::operation::attach_classic_link_vpc::_attach_classic_link_vpc_output::AttachClassicLinkVpcOutput;
-
 pub use crate::operation::attach_classic_link_vpc::_attach_classic_link_vpc_input::AttachClassicLinkVpcInput;
+
+pub use crate::operation::attach_classic_link_vpc::_attach_classic_link_vpc_output::AttachClassicLinkVpcOutput;
 
 mod _attach_classic_link_vpc_input;
 

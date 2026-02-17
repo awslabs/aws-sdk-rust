@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_voice_message
     }
 }
 
-pub use crate::operation::send_voice_message::_send_voice_message_output::SendVoiceMessageOutput;
-
 pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoiceMessageInput;
+
+pub use crate::operation::send_voice_message::_send_voice_message_output::SendVoiceMessageOutput;
 
 mod _send_voice_message_input;
 

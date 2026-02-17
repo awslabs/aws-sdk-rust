@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_ser
     }
 }
 
-pub use crate::operation::delete_virtual_service::_delete_virtual_service_output::DeleteVirtualServiceOutput;
-
 pub use crate::operation::delete_virtual_service::_delete_virtual_service_input::DeleteVirtualServiceInput;
+
+pub use crate::operation::delete_virtual_service::_delete_virtual_service_output::DeleteVirtualServiceOutput;
 
 mod _delete_virtual_service_input;
 

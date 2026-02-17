@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_sendin
     }
 }
 
-pub use crate::operation::get_account_sending_enabled::_get_account_sending_enabled_output::GetAccountSendingEnabledOutput;
-
 pub use crate::operation::get_account_sending_enabled::_get_account_sending_enabled_input::GetAccountSendingEnabledInput;
+
+pub use crate::operation::get_account_sending_enabled::_get_account_sending_enabled_output::GetAccountSendingEnabledOutput;
 
 mod _get_account_sending_enabled_input;
 

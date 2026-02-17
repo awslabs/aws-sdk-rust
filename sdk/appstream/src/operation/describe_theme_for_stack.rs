@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_theme_for
     }
 }
 
-pub use crate::operation::describe_theme_for_stack::_describe_theme_for_stack_output::DescribeThemeForStackOutput;
-
 pub use crate::operation::describe_theme_for_stack::_describe_theme_for_stack_input::DescribeThemeForStackInput;
+
+pub use crate::operation::describe_theme_for_stack::_describe_theme_for_stack_output::DescribeThemeForStackOutput;
 
 mod _describe_theme_for_stack_input;
 

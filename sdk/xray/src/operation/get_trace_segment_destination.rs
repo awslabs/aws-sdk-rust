@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trace_segment_
     }
 }
 
-pub use crate::operation::get_trace_segment_destination::_get_trace_segment_destination_output::GetTraceSegmentDestinationOutput;
-
 pub use crate::operation::get_trace_segment_destination::_get_trace_segment_destination_input::GetTraceSegmentDestinationInput;
+
+pub use crate::operation::get_trace_segment_destination::_get_trace_segment_destination_output::GetTraceSegmentDestinationOutput;
 
 mod _get_trace_segment_destination_input;
 

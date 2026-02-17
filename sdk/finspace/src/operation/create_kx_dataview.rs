@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_dataview
     }
 }
 
-pub use crate::operation::create_kx_dataview::_create_kx_dataview_output::CreateKxDataviewOutput;
-
 pub use crate::operation::create_kx_dataview::_create_kx_dataview_input::CreateKxDataviewInput;
+
+pub use crate::operation::create_kx_dataview::_create_kx_dataview_output::CreateKxDataviewOutput;
 
 mod _create_kx_dataview_input;
 

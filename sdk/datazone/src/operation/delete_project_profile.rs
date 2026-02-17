@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_project_pro
     }
 }
 
-pub use crate::operation::delete_project_profile::_delete_project_profile_output::DeleteProjectProfileOutput;
-
 pub use crate::operation::delete_project_profile::_delete_project_profile_input::DeleteProjectProfileInput;
+
+pub use crate::operation::delete_project_profile::_delete_project_profile_output::DeleteProjectProfileOutput;
 
 mod _delete_project_profile_input;
 

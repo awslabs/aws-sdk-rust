@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_aggregate_compliance_by_conformance_packs::_describe_aggregate_compliance_by_conformance_packs_output::DescribeAggregateComplianceByConformancePacksOutput;
-
 pub use crate::operation::describe_aggregate_compliance_by_conformance_packs::_describe_aggregate_compliance_by_conformance_packs_input::DescribeAggregateComplianceByConformancePacksInput;
+
+pub use crate::operation::describe_aggregate_compliance_by_conformance_packs::_describe_aggregate_compliance_by_conformance_packs_output::DescribeAggregateComplianceByConformancePacksOutput;
 
 mod _describe_aggregate_compliance_by_conformance_packs_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_q_app_sessio
     }
 }
 
-pub use crate::operation::start_q_app_session::_start_q_app_session_output::StartQAppSessionOutput;
-
 pub use crate::operation::start_q_app_session::_start_q_app_session_input::StartQAppSessionInput;
+
+pub use crate::operation::start_q_app_session::_start_q_app_session_output::StartQAppSessionOutput;
 
 mod _start_q_app_session_input;
 

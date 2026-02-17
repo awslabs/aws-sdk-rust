@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audit_finding
     }
 }
 
-pub use crate::operation::list_audit_findings::_list_audit_findings_output::ListAuditFindingsOutput;
-
 pub use crate::operation::list_audit_findings::_list_audit_findings_input::ListAuditFindingsInput;
+
+pub use crate::operation::list_audit_findings::_list_audit_findings_output::ListAuditFindingsOutput;
 
 mod _list_audit_findings_input;
 

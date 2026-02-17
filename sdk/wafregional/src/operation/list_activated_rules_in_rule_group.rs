@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_activated_rul
     }
 }
 
-pub use crate::operation::list_activated_rules_in_rule_group::_list_activated_rules_in_rule_group_output::ListActivatedRulesInRuleGroupOutput;
-
 pub use crate::operation::list_activated_rules_in_rule_group::_list_activated_rules_in_rule_group_input::ListActivatedRulesInRuleGroupInput;
+
+pub use crate::operation::list_activated_rules_in_rule_group::_list_activated_rules_in_rule_group_output::ListActivatedRulesInRuleGroupOutput;
 
 mod _list_activated_rules_in_rule_group_input;
 

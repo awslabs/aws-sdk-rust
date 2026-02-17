@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_flows::Sear
     }
 }
 
-pub use crate::operation::search_flows::_search_flows_output::SearchFlowsOutput;
-
 pub use crate::operation::search_flows::_search_flows_input::SearchFlowsInput;
+
+pub use crate::operation::search_flows::_search_flows_output::SearchFlowsOutput;
 
 mod _search_flows_input;
 

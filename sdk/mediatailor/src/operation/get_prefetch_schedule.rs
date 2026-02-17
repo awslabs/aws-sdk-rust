@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_prefetch_sched
     }
 }
 
-pub use crate::operation::get_prefetch_schedule::_get_prefetch_schedule_output::GetPrefetchScheduleOutput;
-
 pub use crate::operation::get_prefetch_schedule::_get_prefetch_schedule_input::GetPrefetchScheduleInput;
+
+pub use crate::operation::get_prefetch_schedule::_get_prefetch_schedule_output::GetPrefetchScheduleOutput;
 
 mod _get_prefetch_schedule_input;
 

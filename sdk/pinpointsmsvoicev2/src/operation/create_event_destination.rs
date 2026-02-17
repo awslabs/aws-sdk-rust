@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_desti
     }
 }
 
-pub use crate::operation::create_event_destination::_create_event_destination_output::CreateEventDestinationOutput;
-
 pub use crate::operation::create_event_destination::_create_event_destination_input::CreateEventDestinationInput;
+
+pub use crate::operation::create_event_destination::_create_event_destination_output::CreateEventDestinationOutput;
 
 mod _create_event_destination_input;
 

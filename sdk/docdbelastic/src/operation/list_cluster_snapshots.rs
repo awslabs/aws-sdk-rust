@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cluster_snaps
     }
 }
 
-pub use crate::operation::list_cluster_snapshots::_list_cluster_snapshots_output::ListClusterSnapshotsOutput;
-
 pub use crate::operation::list_cluster_snapshots::_list_cluster_snapshots_input::ListClusterSnapshotsInput;
+
+pub use crate::operation::list_cluster_snapshots::_list_cluster_snapshots_output::ListClusterSnapshotsOutput;
 
 mod _list_cluster_snapshots_input;
 

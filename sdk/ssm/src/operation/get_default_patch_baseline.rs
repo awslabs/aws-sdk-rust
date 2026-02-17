@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_patch_
     }
 }
 
-pub use crate::operation::get_default_patch_baseline::_get_default_patch_baseline_output::GetDefaultPatchBaselineOutput;
-
 pub use crate::operation::get_default_patch_baseline::_get_default_patch_baseline_input::GetDefaultPatchBaselineInput;
+
+pub use crate::operation::get_default_patch_baseline::_get_default_patch_baseline_output::GetDefaultPatchBaselineOutput;
 
 mod _get_default_patch_baseline_input;
 

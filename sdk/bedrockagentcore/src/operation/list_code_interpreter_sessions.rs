@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_code_interpre
     }
 }
 
-pub use crate::operation::list_code_interpreter_sessions::_list_code_interpreter_sessions_output::ListCodeInterpreterSessionsOutput;
-
 pub use crate::operation::list_code_interpreter_sessions::_list_code_interpreter_sessions_input::ListCodeInterpreterSessionsInput;
+
+pub use crate::operation::list_code_interpreter_sessions::_list_code_interpreter_sessions_output::ListCodeInterpreterSessionsOutput;
 
 mod _list_code_interpreter_sessions_input;
 

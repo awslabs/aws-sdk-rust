@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_archive_sear
     }
 }
 
-pub use crate::operation::start_archive_search::_start_archive_search_output::StartArchiveSearchOutput;
-
 pub use crate::operation::start_archive_search::_start_archive_search_input::StartArchiveSearchInput;
+
+pub use crate::operation::start_archive_search::_start_archive_search_output::StartArchiveSearchOutput;
 
 mod _start_archive_search_input;
 

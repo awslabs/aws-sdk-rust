@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_alternate_cont
     }
 }
 
-pub use crate::operation::put_alternate_contact::_put_alternate_contact_output::PutAlternateContactOutput;
-
 pub use crate::operation::put_alternate_contact::_put_alternate_contact_input::PutAlternateContactInput;
+
+pub use crate::operation::put_alternate_contact::_put_alternate_contact_output::PutAlternateContactOutput;
 
 mod _put_alternate_contact_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_document_meta
     }
 }
 
-pub use crate::operation::list_document_metadata_history::_list_document_metadata_history_output::ListDocumentMetadataHistoryOutput;
-
 pub use crate::operation::list_document_metadata_history::_list_document_metadata_history_input::ListDocumentMetadataHistoryInput;
+
+pub use crate::operation::list_document_metadata_history::_list_document_metadata_history_output::ListDocumentMetadataHistoryOutput;
 
 mod _list_document_metadata_history_input;
 

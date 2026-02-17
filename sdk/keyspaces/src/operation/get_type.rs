@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_type::GetTypeE
     }
 }
 
-pub use crate::operation::get_type::_get_type_output::GetTypeOutput;
-
 pub use crate::operation::get_type::_get_type_input::GetTypeInput;
+
+pub use crate::operation::get_type::_get_type_output::GetTypeOutput;
 
 mod _get_type_input;
 

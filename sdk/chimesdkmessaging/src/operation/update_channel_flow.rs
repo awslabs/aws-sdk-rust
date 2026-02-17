@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel_flo
     }
 }
 
-pub use crate::operation::update_channel_flow::_update_channel_flow_output::UpdateChannelFlowOutput;
-
 pub use crate::operation::update_channel_flow::_update_channel_flow_input::UpdateChannelFlowInput;
+
+pub use crate::operation::update_channel_flow::_update_channel_flow_output::UpdateChannelFlowOutput;
 
 mod _update_channel_flow_input;
 

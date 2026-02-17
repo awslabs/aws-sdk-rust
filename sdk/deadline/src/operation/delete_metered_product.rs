@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_metered_pro
     }
 }
 
-pub use crate::operation::delete_metered_product::_delete_metered_product_output::DeleteMeteredProductOutput;
-
 pub use crate::operation::delete_metered_product::_delete_metered_product_input::DeleteMeteredProductInput;
+
+pub use crate::operation::delete_metered_product::_delete_metered_product_output::DeleteMeteredProductOutput;
 
 mod _delete_metered_product_input;
 

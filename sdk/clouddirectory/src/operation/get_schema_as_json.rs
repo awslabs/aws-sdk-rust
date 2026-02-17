@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_as_json
     }
 }
 
-pub use crate::operation::get_schema_as_json::_get_schema_as_json_output::GetSchemaAsJsonOutput;
-
 pub use crate::operation::get_schema_as_json::_get_schema_as_json_input::GetSchemaAsJsonInput;
+
+pub use crate::operation::get_schema_as_json::_get_schema_as_json_output::GetSchemaAsJsonOutput;
 
 mod _get_schema_as_json_input;
 

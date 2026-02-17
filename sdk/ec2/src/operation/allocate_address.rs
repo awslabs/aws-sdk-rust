@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_address::
     }
 }
 
-pub use crate::operation::allocate_address::_allocate_address_output::AllocateAddressOutput;
-
 pub use crate::operation::allocate_address::_allocate_address_input::AllocateAddressInput;
+
+pub use crate::operation::allocate_address::_allocate_address_output::AllocateAddressOutput;
 
 mod _allocate_address_input;
 

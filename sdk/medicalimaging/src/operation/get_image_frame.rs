@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_frame::G
     }
 }
 
-pub use crate::operation::get_image_frame::_get_image_frame_output::GetImageFrameOutput;
-
 pub use crate::operation::get_image_frame::_get_image_frame_input::GetImageFrameInput;
+
+pub use crate::operation::get_image_frame::_get_image_frame_output::GetImageFrameOutput;
 
 mod _get_image_frame_input;
 

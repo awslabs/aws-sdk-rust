@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recipe::Upd
     }
 }
 
-pub use crate::operation::update_recipe::_update_recipe_output::UpdateRecipeOutput;
-
 pub use crate::operation::update_recipe::_update_recipe_input::UpdateRecipeInput;
+
+pub use crate::operation::update_recipe::_update_recipe_output::UpdateRecipeOutput;
 
 mod _update_recipe_input;
 

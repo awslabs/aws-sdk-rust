@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_flow_vpc_inter
     }
 }
 
-pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_output::AddFlowVpcInterfacesOutput;
-
 pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_input::AddFlowVpcInterfacesInput;
+
+pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_output::AddFlowVpcInterfacesOutput;
 
 mod _add_flow_vpc_interfaces_input;
 

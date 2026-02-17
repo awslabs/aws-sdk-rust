@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_tracker_
     }
 }
 
-pub use crate::operation::associate_tracker_consumer::_associate_tracker_consumer_output::AssociateTrackerConsumerOutput;
-
 pub use crate::operation::associate_tracker_consumer::_associate_tracker_consumer_input::AssociateTrackerConsumerInput;
+
+pub use crate::operation::associate_tracker_consumer::_associate_tracker_consumer_output::AssociateTrackerConsumerOutput;
 
 mod _associate_tracker_consumer_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::subscribe_to_event
     }
 }
 
-pub use crate::operation::subscribe_to_event::_subscribe_to_event_output::SubscribeToEventOutput;
-
 pub use crate::operation::subscribe_to_event::_subscribe_to_event_input::SubscribeToEventInput;
+
+pub use crate::operation::subscribe_to_event::_subscribe_to_event_output::SubscribeToEventOutput;
 
 mod _subscribe_to_event_input;
 

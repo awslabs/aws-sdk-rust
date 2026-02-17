@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_detector_versi
     }
 }
 
-pub use crate::operation::get_detector_version::_get_detector_version_output::GetDetectorVersionOutput;
-
 pub use crate::operation::get_detector_version::_get_detector_version_input::GetDetectorVersionInput;
+
+pub use crate::operation::get_detector_version::_get_detector_version_output::GetDetectorVersionOutput;
 
 mod _get_detector_version_input;
 

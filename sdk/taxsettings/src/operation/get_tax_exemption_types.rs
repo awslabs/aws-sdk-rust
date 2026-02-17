@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tax_exemption_
     }
 }
 
-pub use crate::operation::get_tax_exemption_types::_get_tax_exemption_types_output::GetTaxExemptionTypesOutput;
-
 pub use crate::operation::get_tax_exemption_types::_get_tax_exemption_types_input::GetTaxExemptionTypesInput;
+
+pub use crate::operation::get_tax_exemption_types::_get_tax_exemption_types_output::GetTaxExemptionTypesOutput;
 
 mod _get_tax_exemption_types_input;
 

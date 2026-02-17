@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_mac_emv_p
     }
 }
 
-pub use crate::operation::generate_mac_emv_pin_change::_generate_mac_emv_pin_change_output::GenerateMacEmvPinChangeOutput;
-
 pub use crate::operation::generate_mac_emv_pin_change::_generate_mac_emv_pin_change_input::GenerateMacEmvPinChangeInput;
+
+pub use crate::operation::generate_mac_emv_pin_change::_generate_mac_emv_pin_change_output::GenerateMacEmvPinChangeOutput;
 
 mod _generate_mac_emv_pin_change_input;
 

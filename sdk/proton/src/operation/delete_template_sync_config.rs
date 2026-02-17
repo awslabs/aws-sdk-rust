@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_template_sy
     }
 }
 
-pub use crate::operation::delete_template_sync_config::_delete_template_sync_config_output::DeleteTemplateSyncConfigOutput;
-
 pub use crate::operation::delete_template_sync_config::_delete_template_sync_config_input::DeleteTemplateSyncConfigInput;
+
+pub use crate::operation::delete_template_sync_config::_delete_template_sync_config_output::DeleteTemplateSyncConfigOutput;
 
 mod _delete_template_sync_config_input;
 

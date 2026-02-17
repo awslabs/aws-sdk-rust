@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_layo
     }
 }
 
-pub use crate::operation::update_domain_layout::_update_domain_layout_output::UpdateDomainLayoutOutput;
-
 pub use crate::operation::update_domain_layout::_update_domain_layout_input::UpdateDomainLayoutInput;
+
+pub use crate::operation::update_domain_layout::_update_domain_layout_output::UpdateDomainLayoutOutput;
 
 mod _update_domain_layout_input;
 

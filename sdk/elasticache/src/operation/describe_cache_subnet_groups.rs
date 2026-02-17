@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_sub
     }
 }
 
-pub use crate::operation::describe_cache_subnet_groups::_describe_cache_subnet_groups_output::DescribeCacheSubnetGroupsOutput;
-
 pub use crate::operation::describe_cache_subnet_groups::_describe_cache_subnet_groups_input::DescribeCacheSubnetGroupsInput;
+
+pub use crate::operation::describe_cache_subnet_groups::_describe_cache_subnet_groups_output::DescribeCacheSubnetGroupsOutput;
 
 mod _describe_cache_subnet_groups_input;
 

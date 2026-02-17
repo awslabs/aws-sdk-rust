@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_net
     }
 }
 
-pub use crate::operation::create_service_network_vpc_association::_create_service_network_vpc_association_output::CreateServiceNetworkVpcAssociationOutput;
-
 pub use crate::operation::create_service_network_vpc_association::_create_service_network_vpc_association_input::CreateServiceNetworkVpcAssociationInput;
+
+pub use crate::operation::create_service_network_vpc_association::_create_service_network_vpc_association_output::CreateServiceNetworkVpcAssociationOutput;
 
 mod _create_service_network_vpc_association_input;
 

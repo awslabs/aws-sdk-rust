@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rule_versio
     }
 }
 
-pub use crate::operation::update_rule_version::_update_rule_version_output::UpdateRuleVersionOutput;
-
 pub use crate::operation::update_rule_version::_update_rule_version_input::UpdateRuleVersionInput;
+
+pub use crate::operation::update_rule_version::_update_rule_version_output::UpdateRuleVersionOutput;
 
 mod _update_rule_version_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_check_layer_
     }
 }
 
-pub use crate::operation::batch_check_layer_availability::_batch_check_layer_availability_output::BatchCheckLayerAvailabilityOutput;
-
 pub use crate::operation::batch_check_layer_availability::_batch_check_layer_availability_input::BatchCheckLayerAvailabilityInput;
+
+pub use crate::operation::batch_check_layer_availability::_batch_check_layer_availability_output::BatchCheckLayerAvailabilityOutput;
 
 mod _batch_check_layer_availability_input;
 

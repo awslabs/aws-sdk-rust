@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_speech_synth
     }
 }
 
-pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_task_output::StartSpeechSynthesisTaskOutput;
-
 pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_task_input::StartSpeechSynthesisTaskInput;
+
+pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_task_output::StartSpeechSynthesisTaskOutput;
 
 mod _start_speech_synthesis_task_input;
 

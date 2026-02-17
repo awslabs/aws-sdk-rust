@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_requester_g
     }
 }
 
-pub use crate::operation::delete_requester_gateway::_delete_requester_gateway_output::DeleteRequesterGatewayOutput;
-
 pub use crate::operation::delete_requester_gateway::_delete_requester_gateway_input::DeleteRequesterGatewayInput;
+
+pub use crate::operation::delete_requester_gateway::_delete_requester_gateway_output::DeleteRequesterGatewayOutput;
 
 mod _delete_requester_gateway_input;
 

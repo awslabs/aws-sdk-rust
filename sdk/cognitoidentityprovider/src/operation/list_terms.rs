@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_terms::ListTe
     }
 }
 
-pub use crate::operation::list_terms::_list_terms_output::ListTermsOutput;
-
 pub use crate::operation::list_terms::_list_terms_input::ListTermsInput;
+
+pub use crate::operation::list_terms::_list_terms_output::ListTermsOutput;
 
 mod _list_terms_input;
 

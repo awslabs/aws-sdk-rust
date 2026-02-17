@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unlabel_parameter_
     }
 }
 
-pub use crate::operation::unlabel_parameter_version::_unlabel_parameter_version_output::UnlabelParameterVersionOutput;
-
 pub use crate::operation::unlabel_parameter_version::_unlabel_parameter_version_input::UnlabelParameterVersionInput;
+
+pub use crate::operation::unlabel_parameter_version::_unlabel_parameter_version_output::UnlabelParameterVersionOutput;
 
 mod _unlabel_parameter_version_input;
 

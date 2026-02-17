@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_job_queue::
     }
 }
 
-pub use crate::operation::create_job_queue::_create_job_queue_output::CreateJobQueueOutput;
-
 pub use crate::operation::create_job_queue::_create_job_queue_input::CreateJobQueueInput;
+
+pub use crate::operation::create_job_queue::_create_job_queue_output::CreateJobQueueOutput;
 
 mod _create_job_queue_input;
 

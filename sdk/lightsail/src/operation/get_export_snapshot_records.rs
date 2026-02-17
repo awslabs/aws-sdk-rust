@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_export_snapsho
     }
 }
 
-pub use crate::operation::get_export_snapshot_records::_get_export_snapshot_records_output::GetExportSnapshotRecordsOutput;
-
 pub use crate::operation::get_export_snapshot_records::_get_export_snapshot_records_input::GetExportSnapshotRecordsInput;
+
+pub use crate::operation::get_export_snapshot_records::_get_export_snapshot_records_output::GetExportSnapshotRecordsOutput;
 
 mod _get_export_snapshot_records_input;
 

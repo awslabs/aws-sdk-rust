@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_id_mapping_jo
     }
 }
 
-pub use crate::operation::list_id_mapping_jobs::_list_id_mapping_jobs_output::ListIdMappingJobsOutput;
-
 pub use crate::operation::list_id_mapping_jobs::_list_id_mapping_jobs_input::ListIdMappingJobsInput;
+
+pub use crate::operation::list_id_mapping_jobs::_list_id_mapping_jobs_output::ListIdMappingJobsOutput;
 
 mod _list_id_mapping_jobs_input;
 

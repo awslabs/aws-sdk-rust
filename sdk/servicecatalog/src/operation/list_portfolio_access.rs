@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_portfolio_acc
     }
 }
 
-pub use crate::operation::list_portfolio_access::_list_portfolio_access_output::ListPortfolioAccessOutput;
-
 pub use crate::operation::list_portfolio_access::_list_portfolio_access_input::ListPortfolioAccessInput;
+
+pub use crate::operation::list_portfolio_access::_list_portfolio_access_output::ListPortfolioAccessOutput;
 
 mod _list_portfolio_access_input;
 

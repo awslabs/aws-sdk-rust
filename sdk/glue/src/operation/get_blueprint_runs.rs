@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_blueprint_runs
     }
 }
 
-pub use crate::operation::get_blueprint_runs::_get_blueprint_runs_output::GetBlueprintRunsOutput;
-
 pub use crate::operation::get_blueprint_runs::_get_blueprint_runs_input::GetBlueprintRunsInput;
+
+pub use crate::operation::get_blueprint_runs::_get_blueprint_runs_output::GetBlueprintRunsOutput;
 
 mod _get_blueprint_runs_input;
 

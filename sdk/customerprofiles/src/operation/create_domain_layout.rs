@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_domain_layo
     }
 }
 
-pub use crate::operation::create_domain_layout::_create_domain_layout_output::CreateDomainLayoutOutput;
-
 pub use crate::operation::create_domain_layout::_create_domain_layout_input::CreateDomainLayoutInput;
+
+pub use crate::operation::create_domain_layout::_create_domain_layout_output::CreateDomainLayoutOutput;
 
 mod _create_domain_layout_input;
 

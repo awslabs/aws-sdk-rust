@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_ec2_instanc
     }
 }
 
-pub use crate::operation::export_ec2_instance_recommendations::_export_ec2_instance_recommendations_output::ExportEc2InstanceRecommendationsOutput;
-
 pub use crate::operation::export_ec2_instance_recommendations::_export_ec2_instance_recommendations_input::ExportEc2InstanceRecommendationsInput;
+
+pub use crate::operation::export_ec2_instance_recommendations::_export_ec2_instance_recommendations_output::ExportEc2InstanceRecommendationsOutput;
 
 mod _export_ec2_instance_recommendations_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_pipeline_defin
     }
 }
 
-pub use crate::operation::put_pipeline_definition::_put_pipeline_definition_output::PutPipelineDefinitionOutput;
-
 pub use crate::operation::put_pipeline_definition::_put_pipeline_definition_input::PutPipelineDefinitionInput;
+
+pub use crate::operation::put_pipeline_definition::_put_pipeline_definition_output::PutPipelineDefinitionOutput;
 
 mod _put_pipeline_definition_input;
 

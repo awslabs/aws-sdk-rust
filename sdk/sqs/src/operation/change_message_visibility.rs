@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::change_message_vis
     }
 }
 
-pub use crate::operation::change_message_visibility::_change_message_visibility_output::ChangeMessageVisibilityOutput;
-
 pub use crate::operation::change_message_visibility::_change_message_visibility_input::ChangeMessageVisibilityInput;
+
+pub use crate::operation::change_message_visibility::_change_message_visibility_output::ChangeMessageVisibilityOutput;
 
 mod _change_message_visibility_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_co
     }
 }
 
-pub use crate::operation::update_resource_collection::_update_resource_collection_output::UpdateResourceCollectionOutput;
-
 pub use crate::operation::update_resource_collection::_update_resource_collection_input::UpdateResourceCollectionInput;
+
+pub use crate::operation::update_resource_collection::_update_resource_collection_output::UpdateResourceCollectionOutput;
 
 mod _update_resource_collection_input;
 

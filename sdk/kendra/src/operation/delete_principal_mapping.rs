@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_principal_m
     }
 }
 
-pub use crate::operation::delete_principal_mapping::_delete_principal_mapping_output::DeletePrincipalMappingOutput;
-
 pub use crate::operation::delete_principal_mapping::_delete_principal_mapping_input::DeletePrincipalMappingInput;
+
+pub use crate::operation::delete_principal_mapping::_delete_principal_mapping_output::DeletePrincipalMappingOutput;
 
 mod _delete_principal_mapping_input;
 

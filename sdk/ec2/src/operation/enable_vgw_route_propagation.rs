@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_vgw_route_p
     }
 }
 
-pub use crate::operation::enable_vgw_route_propagation::_enable_vgw_route_propagation_output::EnableVgwRoutePropagationOutput;
-
 pub use crate::operation::enable_vgw_route_propagation::_enable_vgw_route_propagation_input::EnableVgwRoutePropagationInput;
+
+pub use crate::operation::enable_vgw_route_propagation::_enable_vgw_route_propagation_output::EnableVgwRoutePropagationOutput;
 
 mod _enable_vgw_route_propagation_input;
 

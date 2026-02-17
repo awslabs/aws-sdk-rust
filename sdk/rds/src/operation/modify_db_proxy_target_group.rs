@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_proxy_ta
     }
 }
 
-pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_group_output::ModifyDbProxyTargetGroupOutput;
-
 pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_group_input::ModifyDbProxyTargetGroupInput;
+
+pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_group_output::ModifyDbProxyTargetGroupOutput;
 
 mod _modify_db_proxy_target_group_input;
 

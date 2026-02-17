@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_data
     }
 }
 
-pub use crate::operation::delete_custom_data_identifier::_delete_custom_data_identifier_output::DeleteCustomDataIdentifierOutput;
-
 pub use crate::operation::delete_custom_data_identifier::_delete_custom_data_identifier_input::DeleteCustomDataIdentifierInput;
+
+pub use crate::operation::delete_custom_data_identifier::_delete_custom_data_identifier_output::DeleteCustomDataIdentifierOutput;
 
 mod _delete_custom_data_identifier_input;
 

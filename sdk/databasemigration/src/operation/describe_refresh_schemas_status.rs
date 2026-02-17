@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_refresh_s
     }
 }
 
-pub use crate::operation::describe_refresh_schemas_status::_describe_refresh_schemas_status_output::DescribeRefreshSchemasStatusOutput;
-
 pub use crate::operation::describe_refresh_schemas_status::_describe_refresh_schemas_status_input::DescribeRefreshSchemasStatusInput;
+
+pub use crate::operation::describe_refresh_schemas_status::_describe_refresh_schemas_status_output::DescribeRefreshSchemasStatusOutput;
 
 mod _describe_refresh_schemas_status_input;
 

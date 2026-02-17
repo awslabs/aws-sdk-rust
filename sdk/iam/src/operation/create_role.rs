@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_role::Creat
     }
 }
 
-pub use crate::operation::create_role::_create_role_output::CreateRoleOutput;
-
 pub use crate::operation::create_role::_create_role_input::CreateRoleInput;
+
+pub use crate::operation::create_role::_create_role_output::CreateRoleOutput;
 
 mod _create_role_input;
 

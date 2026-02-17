@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_image_attri
     }
 }
 
-pub use crate::operation::modify_image_attribute::_modify_image_attribute_output::ModifyImageAttributeOutput;
-
 pub use crate::operation::modify_image_attribute::_modify_image_attribute_input::ModifyImageAttributeInput;
+
+pub use crate::operation::modify_image_attribute::_modify_image_attribute_output::ModifyImageAttributeOutput;
 
 mod _modify_image_attribute_input;
 

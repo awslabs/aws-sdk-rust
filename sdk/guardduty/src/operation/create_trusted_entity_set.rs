@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trusted_ent
     }
 }
 
-pub use crate::operation::create_trusted_entity_set::_create_trusted_entity_set_output::CreateTrustedEntitySetOutput;
-
 pub use crate::operation::create_trusted_entity_set::_create_trusted_entity_set_input::CreateTrustedEntitySetInput;
+
+pub use crate::operation::create_trusted_entity_set::_create_trusted_entity_set_output::CreateTrustedEntitySetOutput;
 
 mod _create_trusted_entity_set_input;
 

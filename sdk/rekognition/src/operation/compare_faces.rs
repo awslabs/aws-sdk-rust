@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::compare_faces::Com
     }
 }
 
-pub use crate::operation::compare_faces::_compare_faces_output::CompareFacesOutput;
-
 pub use crate::operation::compare_faces::_compare_faces_input::CompareFacesInput;
+
+pub use crate::operation::compare_faces::_compare_faces_output::CompareFacesOutput;
 
 mod _compare_faces_input;
 

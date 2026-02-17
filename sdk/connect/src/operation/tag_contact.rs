@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_contact::TagCo
     }
 }
 
-pub use crate::operation::tag_contact::_tag_contact_output::TagContactOutput;
-
 pub use crate::operation::tag_contact::_tag_contact_input::TagContactInput;
+
+pub use crate::operation::tag_contact::_tag_contact_output::TagContactOutput;
 
 mod _tag_contact_input;
 

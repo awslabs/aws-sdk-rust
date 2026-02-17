@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_asset_model_c
     }
 }
 
-pub use crate::operation::list_asset_model_composite_models::_list_asset_model_composite_models_output::ListAssetModelCompositeModelsOutput;
-
 pub use crate::operation::list_asset_model_composite_models::_list_asset_model_composite_models_input::ListAssetModelCompositeModelsInput;
+
+pub use crate::operation::list_asset_model_composite_models::_list_asset_model_composite_models_output::ListAssetModelCompositeModelsOutput;
 
 mod _list_asset_model_composite_models_input;
 

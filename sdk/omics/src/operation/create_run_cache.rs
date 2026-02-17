@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_run_cache::
     }
 }
 
-pub use crate::operation::create_run_cache::_create_run_cache_output::CreateRunCacheOutput;
-
 pub use crate::operation::create_run_cache::_create_run_cache_input::CreateRunCacheInput;
+
+pub use crate::operation::create_run_cache::_create_run_cache_output::CreateRunCacheOutput;
 
 mod _create_run_cache_input;
 

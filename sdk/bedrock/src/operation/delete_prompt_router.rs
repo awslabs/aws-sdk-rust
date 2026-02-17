@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_prompt_rout
     }
 }
 
-pub use crate::operation::delete_prompt_router::_delete_prompt_router_output::DeletePromptRouterOutput;
-
 pub use crate::operation::delete_prompt_router::_delete_prompt_router_input::DeletePromptRouterInput;
+
+pub use crate::operation::delete_prompt_router::_delete_prompt_router_output::DeletePromptRouterOutput;
 
 mod _delete_prompt_router_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_analysis_sc
     }
 }
 
-pub use crate::operation::delete_analysis_scheme::_delete_analysis_scheme_output::DeleteAnalysisSchemeOutput;
-
 pub use crate::operation::delete_analysis_scheme::_delete_analysis_scheme_input::DeleteAnalysisSchemeInput;
+
+pub use crate::operation::delete_analysis_scheme::_delete_analysis_scheme_output::DeleteAnalysisSchemeOutput;
 
 mod _delete_analysis_scheme_input;
 

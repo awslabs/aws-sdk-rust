@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_selling_system
     }
 }
 
-pub use crate::operation::put_selling_system_settings::_put_selling_system_settings_output::PutSellingSystemSettingsOutput;
-
 pub use crate::operation::put_selling_system_settings::_put_selling_system_settings_input::PutSellingSystemSettingsInput;
+
+pub use crate::operation::put_selling_system_settings::_put_selling_system_settings_output::PutSellingSystemSettingsOutput;
 
 mod _put_selling_system_settings_input;
 

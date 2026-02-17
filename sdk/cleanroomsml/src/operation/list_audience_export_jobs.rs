@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audience_expo
     }
 }
 
-pub use crate::operation::list_audience_export_jobs::_list_audience_export_jobs_output::ListAudienceExportJobsOutput;
-
 pub use crate::operation::list_audience_export_jobs::_list_audience_export_jobs_input::ListAudienceExportJobsInput;
+
+pub use crate::operation::list_audience_export_jobs::_list_audience_export_jobs_output::ListAudienceExportJobsOutput;
 
 mod _list_audience_export_jobs_input;
 

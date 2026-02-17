@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_audience_exp
     }
 }
 
-pub use crate::operation::start_audience_export_job::_start_audience_export_job_output::StartAudienceExportJobOutput;
-
 pub use crate::operation::start_audience_export_job::_start_audience_export_job_input::StartAudienceExportJobInput;
+
+pub use crate::operation::start_audience_export_job::_start_audience_export_job_output::StartAudienceExportJobOutput;
 
 mod _start_audience_export_job_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_size_constrain
     }
 }
 
-pub use crate::operation::get_size_constraint_set::_get_size_constraint_set_output::GetSizeConstraintSetOutput;
-
 pub use crate::operation::get_size_constraint_set::_get_size_constraint_set_input::GetSizeConstraintSetInput;
+
+pub use crate::operation::get_size_constraint_set::_get_size_constraint_set_output::GetSizeConstraintSetOutput;
 
 mod _get_size_constraint_set_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_variant_sto
     }
 }
 
-pub use crate::operation::update_variant_store::_update_variant_store_output::UpdateVariantStoreOutput;
-
 pub use crate::operation::update_variant_store::_update_variant_store_input::UpdateVariantStoreInput;
+
+pub use crate::operation::update_variant_store::_update_variant_store_output::UpdateVariantStoreOutput;
 
 mod _update_variant_store_input;
 

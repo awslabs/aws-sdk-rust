@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_next_message::
     }
 }
 
-pub use crate::operation::get_next_message::_get_next_message_output::GetNextMessageOutput;
-
 pub use crate::operation::get_next_message::_get_next_message_input::GetNextMessageInput;
+
+pub use crate::operation::get_next_message::_get_next_message_output::GetNextMessageOutput;
 
 mod _get_next_message_input;
 

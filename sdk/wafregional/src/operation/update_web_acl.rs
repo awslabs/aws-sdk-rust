@@ -497,9 +497,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_web_acl::Up
     }
 }
 
-pub use crate::operation::update_web_acl::_update_web_acl_output::UpdateWebAclOutput;
-
 pub use crate::operation::update_web_acl::_update_web_acl_input::UpdateWebAclInput;
+
+pub use crate::operation::update_web_acl::_update_web_acl_output::UpdateWebAclOutput;
 
 mod _update_web_acl_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_finding_agg
     }
 }
 
-pub use crate::operation::update_finding_aggregator::_update_finding_aggregator_output::UpdateFindingAggregatorOutput;
-
 pub use crate::operation::update_finding_aggregator::_update_finding_aggregator_input::UpdateFindingAggregatorInput;
+
+pub use crate::operation::update_finding_aggregator::_update_finding_aggregator_output::UpdateFindingAggregatorOutput;
 
 mod _update_finding_aggregator_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_organizations_
     }
 }
 
-pub use crate::operation::get_organizations_access_report::_get_organizations_access_report_output::GetOrganizationsAccessReportOutput;
-
 pub use crate::operation::get_organizations_access_report::_get_organizations_access_report_input::GetOrganizationsAccessReportInput;
+
+pub use crate::operation::get_organizations_access_report::_get_organizations_access_report_output::GetOrganizationsAccessReportOutput;
 
 mod _get_organizations_access_report_input;
 

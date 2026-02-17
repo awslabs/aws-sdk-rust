@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connect_peers
     }
 }
 
-pub use crate::operation::list_connect_peers::_list_connect_peers_output::ListConnectPeersOutput;
-
 pub use crate::operation::list_connect_peers::_list_connect_peers_input::ListConnectPeersInput;
+
+pub use crate::operation::list_connect_peers::_list_connect_peers_output::ListConnectPeersOutput;
 
 mod _list_connect_peers_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_core_networ
     }
 }
 
-pub use crate::operation::delete_core_network_policy_version::_delete_core_network_policy_version_output::DeleteCoreNetworkPolicyVersionOutput;
-
 pub use crate::operation::delete_core_network_policy_version::_delete_core_network_policy_version_input::DeleteCoreNetworkPolicyVersionInput;
+
+pub use crate::operation::delete_core_network_policy_version::_delete_core_network_policy_version_output::DeleteCoreNetworkPolicyVersionOutput;
 
 mod _delete_core_network_policy_version_input;
 

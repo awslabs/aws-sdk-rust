@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_vpc_configuration::_delete_application_vpc_configuration_output::DeleteApplicationVpcConfigurationOutput;
-
 pub use crate::operation::delete_application_vpc_configuration::_delete_application_vpc_configuration_input::DeleteApplicationVpcConfigurationInput;
+
+pub use crate::operation::delete_application_vpc_configuration::_delete_application_vpc_configuration_output::DeleteApplicationVpcConfigurationOutput;
 
 mod _delete_application_vpc_configuration_input;
 

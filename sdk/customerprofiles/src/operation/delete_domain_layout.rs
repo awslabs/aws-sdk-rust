@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_domain_layo
     }
 }
 
-pub use crate::operation::delete_domain_layout::_delete_domain_layout_output::DeleteDomainLayoutOutput;
-
 pub use crate::operation::delete_domain_layout::_delete_domain_layout_input::DeleteDomainLayoutInput;
+
+pub use crate::operation::delete_domain_layout::_delete_domain_layout_output::DeleteDomainLayoutOutput;
 
 mod _delete_domain_layout_input;
 

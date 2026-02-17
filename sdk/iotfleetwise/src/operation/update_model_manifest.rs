@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_model_manif
     }
 }
 
-pub use crate::operation::update_model_manifest::_update_model_manifest_output::UpdateModelManifestOutput;
-
 pub use crate::operation::update_model_manifest::_update_model_manifest_input::UpdateModelManifestInput;
+
+pub use crate::operation::update_model_manifest::_update_model_manifest_output::UpdateModelManifestOutput;
 
 mod _update_model_manifest_input;
 

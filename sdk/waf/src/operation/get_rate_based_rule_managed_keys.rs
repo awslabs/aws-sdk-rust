@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rate_based_rul
     }
 }
 
-pub use crate::operation::get_rate_based_rule_managed_keys::_get_rate_based_rule_managed_keys_output::GetRateBasedRuleManagedKeysOutput;
-
 pub use crate::operation::get_rate_based_rule_managed_keys::_get_rate_based_rule_managed_keys_input::GetRateBasedRuleManagedKeysInput;
+
+pub use crate::operation::get_rate_based_rule_managed_keys::_get_rate_based_rule_managed_keys_output::GetRateBasedRuleManagedKeysOutput;
 
 mod _get_rate_based_rule_managed_keys_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_conversio
     }
 }
 
-pub use crate::operation::describe_conversion_configuration::_describe_conversion_configuration_output::DescribeConversionConfigurationOutput;
-
 pub use crate::operation::describe_conversion_configuration::_describe_conversion_configuration_input::DescribeConversionConfigurationInput;
+
+pub use crate::operation::describe_conversion_configuration::_describe_conversion_configuration_output::DescribeConversionConfigurationOutput;
 
 mod _describe_conversion_configuration_input;
 

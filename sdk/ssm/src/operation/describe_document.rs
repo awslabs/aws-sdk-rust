@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_document:
     }
 }
 
-pub use crate::operation::describe_document::_describe_document_output::DescribeDocumentOutput;
-
 pub use crate::operation::describe_document::_describe_document_input::DescribeDocumentInput;
+
+pub use crate::operation::describe_document::_describe_document_output::DescribeDocumentOutput;
 
 mod _describe_document_input;
 

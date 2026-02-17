@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_project_vers
     }
 }
 
-pub use crate::operation::start_project_version::_start_project_version_output::StartProjectVersionOutput;
-
 pub use crate::operation::start_project_version::_start_project_version_input::StartProjectVersionInput;
+
+pub use crate::operation::start_project_version::_start_project_version_output::StartProjectVersionOutput;
 
 mod _start_project_version_input;
 

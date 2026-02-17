@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_api::GetApiErr
     }
 }
 
-pub use crate::operation::get_api::_get_api_output::GetApiOutput;
-
 pub use crate::operation::get_api::_get_api_input::GetApiInput;
+
+pub use crate::operation::get_api::_get_api_output::GetApiOutput;
 
 mod _get_api_input;
 

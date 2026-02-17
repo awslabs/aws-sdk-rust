@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_exclusion
     }
 }
 
-pub use crate::operation::describe_exclusions::_describe_exclusions_output::DescribeExclusionsOutput;
-
 pub use crate::operation::describe_exclusions::_describe_exclusions_input::DescribeExclusionsInput;
+
+pub use crate::operation::describe_exclusions::_describe_exclusions_output::DescribeExclusionsOutput;
 
 mod _describe_exclusions_input;
 

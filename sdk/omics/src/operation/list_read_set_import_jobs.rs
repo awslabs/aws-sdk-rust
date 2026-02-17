@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_read_set_impo
     }
 }
 
-pub use crate::operation::list_read_set_import_jobs::_list_read_set_import_jobs_output::ListReadSetImportJobsOutput;
-
 pub use crate::operation::list_read_set_import_jobs::_list_read_set_import_jobs_input::ListReadSetImportJobsInput;
+
+pub use crate::operation::list_read_set_import_jobs::_list_read_set_import_jobs_output::ListReadSetImportJobsOutput;
 
 mod _list_read_set_import_jobs_input;
 

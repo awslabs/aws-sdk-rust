@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_signal_cata
     }
 }
 
-pub use crate::operation::update_signal_catalog::_update_signal_catalog_output::UpdateSignalCatalogOutput;
-
 pub use crate::operation::update_signal_catalog::_update_signal_catalog_input::UpdateSignalCatalogInput;
+
+pub use crate::operation::update_signal_catalog::_update_signal_catalog_output::UpdateSignalCatalogOutput;
 
 mod _update_signal_catalog_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_data_source_s
     }
 }
 
-pub use crate::operation::stop_data_source_sync_job::_stop_data_source_sync_job_output::StopDataSourceSyncJobOutput;
-
 pub use crate::operation::stop_data_source_sync_job::_stop_data_source_sync_job_input::StopDataSourceSyncJobInput;
+
+pub use crate::operation::stop_data_source_sync_job::_stop_data_source_sync_job_output::StopDataSourceSyncJobOutput;
 
 mod _stop_data_source_sync_job_input;
 

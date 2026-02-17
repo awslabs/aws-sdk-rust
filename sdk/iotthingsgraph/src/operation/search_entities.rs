@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_entities::S
     }
 }
 
-pub use crate::operation::search_entities::_search_entities_output::SearchEntitiesOutput;
-
 pub use crate::operation::search_entities::_search_entities_input::SearchEntitiesInput;
+
+pub use crate::operation::search_entities::_search_entities_output::SearchEntitiesOutput;
 
 mod _search_entities_input;
 

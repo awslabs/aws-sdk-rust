@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_attributes:
     }
 }
 
-pub use crate::operation::remove_attributes::_remove_attributes_output::RemoveAttributesOutput;
-
 pub use crate::operation::remove_attributes::_remove_attributes_input::RemoveAttributesInput;
+
+pub use crate::operation::remove_attributes::_remove_attributes_output::RemoveAttributesOutput;
 
 mod _remove_attributes_input;
 

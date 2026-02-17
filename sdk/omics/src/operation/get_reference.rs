@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reference::Get
     }
 }
 
-pub use crate::operation::get_reference::_get_reference_output::GetReferenceOutput;
-
 pub use crate::operation::get_reference::_get_reference_input::GetReferenceInput;
+
+pub use crate::operation::get_reference::_get_reference_output::GetReferenceOutput;
 
 mod _get_reference_input;
 

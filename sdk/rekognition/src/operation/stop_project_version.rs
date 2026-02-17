@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_project_versi
     }
 }
 
-pub use crate::operation::stop_project_version::_stop_project_version_output::StopProjectVersionOutput;
-
 pub use crate::operation::stop_project_version::_stop_project_version_input::StopProjectVersionInput;
+
+pub use crate::operation::stop_project_version::_stop_project_version_output::StopProjectVersionOutput;
 
 mod _stop_project_version_input;
 

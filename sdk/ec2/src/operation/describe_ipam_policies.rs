@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipam_poli
     }
 }
 
-pub use crate::operation::describe_ipam_policies::_describe_ipam_policies_output::DescribeIpamPoliciesOutput;
-
 pub use crate::operation::describe_ipam_policies::_describe_ipam_policies_input::DescribeIpamPoliciesInput;
+
+pub use crate::operation::describe_ipam_policies::_describe_ipam_policies_output::DescribeIpamPoliciesOutput;
 
 mod _describe_ipam_policies_input;
 

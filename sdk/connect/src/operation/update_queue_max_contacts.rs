@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_max_c
     }
 }
 
-pub use crate::operation::update_queue_max_contacts::_update_queue_max_contacts_output::UpdateQueueMaxContactsOutput;
-
 pub use crate::operation::update_queue_max_contacts::_update_queue_max_contacts_input::UpdateQueueMaxContactsInput;
+
+pub use crate::operation::update_queue_max_contacts::_update_queue_max_contacts_output::UpdateQueueMaxContactsOutput;
 
 mod _update_queue_max_contacts_input;
 

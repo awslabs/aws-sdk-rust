@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_flywheel_ite
     }
 }
 
-pub use crate::operation::start_flywheel_iteration::_start_flywheel_iteration_output::StartFlywheelIterationOutput;
-
 pub use crate::operation::start_flywheel_iteration::_start_flywheel_iteration_input::StartFlywheelIterationInput;
+
+pub use crate::operation::start_flywheel_iteration::_start_flywheel_iteration_output::StartFlywheelIterationOutput;
 
 mod _start_flywheel_iteration_input;
 

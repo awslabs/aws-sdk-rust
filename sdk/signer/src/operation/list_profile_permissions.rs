@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_permi
     }
 }
 
-pub use crate::operation::list_profile_permissions::_list_profile_permissions_output::ListProfilePermissionsOutput;
-
 pub use crate::operation::list_profile_permissions::_list_profile_permissions_input::ListProfilePermissionsInput;
+
+pub use crate::operation::list_profile_permissions::_list_profile_permissions_output::ListProfilePermissionsOutput;
 
 mod _list_profile_permissions_input;
 

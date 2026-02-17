@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cost_allocati
     }
 }
 
-pub use crate::operation::list_cost_allocation_tag_backfill_history::_list_cost_allocation_tag_backfill_history_output::ListCostAllocationTagBackfillHistoryOutput;
-
 pub use crate::operation::list_cost_allocation_tag_backfill_history::_list_cost_allocation_tag_backfill_history_input::ListCostAllocationTagBackfillHistoryInput;
+
+pub use crate::operation::list_cost_allocation_tag_backfill_history::_list_cost_allocation_tag_backfill_history_output::ListCostAllocationTagBackfillHistoryOutput;
 
 mod _list_cost_allocation_tag_backfill_history_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_reposi
     }
 }
 
-pub use crate::operation::create_data_repository_association::_create_data_repository_association_output::CreateDataRepositoryAssociationOutput;
-
 pub use crate::operation::create_data_repository_association::_create_data_repository_association_input::CreateDataRepositoryAssociationInput;
+
+pub use crate::operation::create_data_repository_association::_create_data_repository_association_output::CreateDataRepositoryAssociationOutput;
 
 mod _create_data_repository_association_input;
 

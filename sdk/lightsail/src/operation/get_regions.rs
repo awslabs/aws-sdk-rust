@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_regions::GetRe
     }
 }
 
-pub use crate::operation::get_regions::_get_regions_output::GetRegionsOutput;
-
 pub use crate::operation::get_regions::_get_regions_input::GetRegionsInput;
+
+pub use crate::operation::get_regions::_get_regions_output::GetRegionsOutput;
 
 mod _get_regions_input;
 

@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_enable_alarm
     }
 }
 
-pub use crate::operation::batch_enable_alarm::_batch_enable_alarm_output::BatchEnableAlarmOutput;
-
 pub use crate::operation::batch_enable_alarm::_batch_enable_alarm_input::BatchEnableAlarmInput;
+
+pub use crate::operation::batch_enable_alarm::_batch_enable_alarm_output::BatchEnableAlarmOutput;
 
 mod _batch_enable_alarm_input;
 

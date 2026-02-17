@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_instances::
     }
 }
 
-pub use crate::operation::attach_instances::_attach_instances_output::AttachInstancesOutput;
-
 pub use crate::operation::attach_instances::_attach_instances_input::AttachInstancesInput;
+
+pub use crate::operation::attach_instances::_attach_instances_output::AttachInstancesOutput;
 
 mod _attach_instances_input;
 

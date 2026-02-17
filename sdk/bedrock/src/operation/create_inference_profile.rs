@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_inference_p
     }
 }
 
-pub use crate::operation::create_inference_profile::_create_inference_profile_output::CreateInferenceProfileOutput;
-
 pub use crate::operation::create_inference_profile::_create_inference_profile_input::CreateInferenceProfileInput;
+
+pub use crate::operation::create_inference_profile::_create_inference_profile_output::CreateInferenceProfileOutput;
 
 mod _create_inference_profile_input;
 

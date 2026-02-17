@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_engagement_
     }
 }
 
-pub use crate::operation::create_engagement_context::_create_engagement_context_output::CreateEngagementContextOutput;
-
 pub use crate::operation::create_engagement_context::_create_engagement_context_input::CreateEngagementContextInput;
+
+pub use crate::operation::create_engagement_context::_create_engagement_context_output::CreateEngagementContextOutput;
 
 mod _create_engagement_context_input;
 

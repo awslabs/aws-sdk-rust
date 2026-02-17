@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_backend_a
     }
 }
 
-pub use crate::operation::generate_backend_api_models::_generate_backend_api_models_output::GenerateBackendApiModelsOutput;
-
 pub use crate::operation::generate_backend_api_models::_generate_backend_api_models_input::GenerateBackendApiModelsInput;
+
+pub use crate::operation::generate_backend_api_models::_generate_backend_api_models_output::GenerateBackendApiModelsOutput;
 
 mod _generate_backend_api_models_input;
 

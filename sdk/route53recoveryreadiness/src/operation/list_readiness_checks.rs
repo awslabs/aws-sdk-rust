@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_readiness_che
     }
 }
 
-pub use crate::operation::list_readiness_checks::_list_readiness_checks_output::ListReadinessChecksOutput;
-
 pub use crate::operation::list_readiness_checks::_list_readiness_checks_input::ListReadinessChecksInput;
+
+pub use crate::operation::list_readiness_checks::_list_readiness_checks_output::ListReadinessChecksOutput;
 
 mod _list_readiness_checks_input;
 

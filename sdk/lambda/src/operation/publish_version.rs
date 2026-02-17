@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_version::P
     }
 }
 
-pub use crate::operation::publish_version::_publish_version_output::PublishVersionOutput;
-
 pub use crate::operation::publish_version::_publish_version_input::PublishVersionInput;
+
+pub use crate::operation::publish_version::_publish_version_output::PublishVersionOutput;
 
 mod _publish_version_input;
 

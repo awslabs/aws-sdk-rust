@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_local_console_
     }
 }
 
-pub use crate::operation::set_local_console_password::_set_local_console_password_output::SetLocalConsolePasswordOutput;
-
 pub use crate::operation::set_local_console_password::_set_local_console_password_input::SetLocalConsolePasswordInput;
+
+pub use crate::operation::set_local_console_password::_set_local_console_password_output::SetLocalConsolePasswordOutput;
 
 mod _set_local_console_password_input;
 

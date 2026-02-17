@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_template_
     }
 }
 
-pub use crate::operation::describe_template_alias::_describe_template_alias_output::DescribeTemplateAliasOutput;
-
 pub use crate::operation::describe_template_alias::_describe_template_alias_input::DescribeTemplateAliasInput;
+
+pub use crate::operation::describe_template_alias::_describe_template_alias_output::DescribeTemplateAliasOutput;
 
 mod _describe_template_alias_input;
 

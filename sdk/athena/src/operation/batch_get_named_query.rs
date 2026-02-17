@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_named_qu
     }
 }
 
-pub use crate::operation::batch_get_named_query::_batch_get_named_query_output::BatchGetNamedQueryOutput;
-
 pub use crate::operation::batch_get_named_query::_batch_get_named_query_input::BatchGetNamedQueryInput;
+
+pub use crate::operation::batch_get_named_query::_batch_get_named_query_output::BatchGetNamedQueryOutput;
 
 mod _batch_get_named_query_input;
 

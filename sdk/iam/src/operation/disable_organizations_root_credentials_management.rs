@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_organizations_root_credentials_management::_disable_organizations_root_credentials_management_output::DisableOrganizationsRootCredentialsManagementOutput;
-
 pub use crate::operation::disable_organizations_root_credentials_management::_disable_organizations_root_credentials_management_input::DisableOrganizationsRootCredentialsManagementInput;
+
+pub use crate::operation::disable_organizations_root_credentials_management::_disable_organizations_root_credentials_management_output::DisableOrganizationsRootCredentialsManagementOutput;
 
 mod _disable_organizations_root_credentials_management_input;
 

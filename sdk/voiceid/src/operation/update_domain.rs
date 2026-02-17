@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain::Upd
     }
 }
 
-pub use crate::operation::update_domain::_update_domain_output::UpdateDomainOutput;
-
 pub use crate::operation::update_domain::_update_domain_input::UpdateDomainInput;
+
+pub use crate::operation::update_domain::_update_domain_output::UpdateDomainOutput;
 
 mod _update_domain_input;
 

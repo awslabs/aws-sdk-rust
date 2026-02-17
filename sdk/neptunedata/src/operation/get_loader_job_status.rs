@@ -515,9 +515,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_loader_job_sta
     }
 }
 
-pub use crate::operation::get_loader_job_status::_get_loader_job_status_output::GetLoaderJobStatusOutput;
-
 pub use crate::operation::get_loader_job_status::_get_loader_job_status_input::GetLoaderJobStatusInput;
+
+pub use crate::operation::get_loader_job_status::_get_loader_job_status_output::GetLoaderJobStatusOutput;
 
 mod _get_loader_job_status_input;
 

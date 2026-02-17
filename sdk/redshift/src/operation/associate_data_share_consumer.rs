@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_data_sha
     }
 }
 
-pub use crate::operation::associate_data_share_consumer::_associate_data_share_consumer_output::AssociateDataShareConsumerOutput;
-
 pub use crate::operation::associate_data_share_consumer::_associate_data_share_consumer_input::AssociateDataShareConsumerInput;
+
+pub use crate::operation::associate_data_share_consumer::_associate_data_share_consumer_output::AssociateDataShareConsumerOutput;
 
 mod _associate_data_share_consumer_input;
 

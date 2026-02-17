@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_route_server_p
     }
 }
 
-pub use crate::operation::get_route_server_propagations::_get_route_server_propagations_output::GetRouteServerPropagationsOutput;
-
 pub use crate::operation::get_route_server_propagations::_get_route_server_propagations_input::GetRouteServerPropagationsInput;
+
+pub use crate::operation::get_route_server_propagations::_get_route_server_propagations_output::GetRouteServerPropagationsOutput;
 
 mod _get_route_server_propagations_input;
 

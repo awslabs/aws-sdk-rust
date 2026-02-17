@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_volume::
     }
 }
 
-pub use crate::operation::associate_volume::_associate_volume_output::AssociateVolumeOutput;
-
 pub use crate::operation::associate_volume::_associate_volume_input::AssociateVolumeInput;
+
+pub use crate::operation::associate_volume::_associate_volume_output::AssociateVolumeOutput;
 
 mod _associate_volume_input;
 

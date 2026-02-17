@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_contact_cha
     }
 }
 
-pub use crate::operation::create_contact_channel::_create_contact_channel_output::CreateContactChannelOutput;
-
 pub use crate::operation::create_contact_channel::_create_contact_channel_input::CreateContactChannelInput;
+
+pub use crate::operation::create_contact_channel::_create_contact_channel_output::CreateContactChannelOutput;
 
 mod _create_contact_channel_input;
 

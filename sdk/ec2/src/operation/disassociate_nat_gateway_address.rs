@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_nat_g
     }
 }
 
-pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_gateway_address_output::DisassociateNatGatewayAddressOutput;
-
 pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_gateway_address_input::DisassociateNatGatewayAddressInput;
+
+pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_gateway_address_output::DisassociateNatGatewayAddressOutput;
 
 mod _disassociate_nat_gateway_address_input;
 

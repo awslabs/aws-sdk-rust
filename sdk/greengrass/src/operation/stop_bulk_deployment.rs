@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_bulk_deployme
     }
 }
 
-pub use crate::operation::stop_bulk_deployment::_stop_bulk_deployment_output::StopBulkDeploymentOutput;
-
 pub use crate::operation::stop_bulk_deployment::_stop_bulk_deployment_input::StopBulkDeploymentInput;
+
+pub use crate::operation::stop_bulk_deployment::_stop_bulk_deployment_output::StopBulkDeploymentOutput;
 
 mod _stop_bulk_deployment_input;
 

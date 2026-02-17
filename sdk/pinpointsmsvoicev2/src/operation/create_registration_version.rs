@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_registratio
     }
 }
 
-pub use crate::operation::create_registration_version::_create_registration_version_output::CreateRegistrationVersionOutput;
-
 pub use crate::operation::create_registration_version::_create_registration_version_input::CreateRegistrationVersionInput;
+
+pub use crate::operation::create_registration_version::_create_registration_version_output::CreateRegistrationVersionOutput;
 
 mod _create_registration_version_input;
 

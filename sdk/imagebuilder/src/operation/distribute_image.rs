@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::distribute_image::
     }
 }
 
-pub use crate::operation::distribute_image::_distribute_image_output::DistributeImageOutput;
-
 pub use crate::operation::distribute_image::_distribute_image_input::DistributeImageInput;
+
+pub use crate::operation::distribute_image::_distribute_image_output::DistributeImageOutput;
 
 mod _distribute_image_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_application
     }
 }
 
-pub use crate::operation::create_application_presigned_url::_create_application_presigned_url_output::CreateApplicationPresignedUrlOutput;
-
 pub use crate::operation::create_application_presigned_url::_create_application_presigned_url_input::CreateApplicationPresignedUrlInput;
+
+pub use crate::operation::create_application_presigned_url::_create_application_presigned_url_output::CreateApplicationPresignedUrlOutput;
 
 mod _create_application_presigned_url_input;
 

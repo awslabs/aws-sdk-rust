@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_batch_inf
     }
 }
 
-pub use crate::operation::describe_batch_inference_job::_describe_batch_inference_job_output::DescribeBatchInferenceJobOutput;
-
 pub use crate::operation::describe_batch_inference_job::_describe_batch_inference_job_input::DescribeBatchInferenceJobInput;
+
+pub use crate::operation::describe_batch_inference_job::_describe_batch_inference_job_output::DescribeBatchInferenceJobOutput;
 
 mod _describe_batch_inference_job_input;
 

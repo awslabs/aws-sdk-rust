@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cis_scan_resu
     }
 }
 
-pub use crate::operation::list_cis_scan_results_aggregated_by_checks::_list_cis_scan_results_aggregated_by_checks_output::ListCisScanResultsAggregatedByChecksOutput;
-
 pub use crate::operation::list_cis_scan_results_aggregated_by_checks::_list_cis_scan_results_aggregated_by_checks_input::ListCisScanResultsAggregatedByChecksInput;
+
+pub use crate::operation::list_cis_scan_results_aggregated_by_checks::_list_cis_scan_results_aggregated_by_checks_output::ListCisScanResultsAggregatedByChecksOutput;
 
 mod _list_cis_scan_results_aggregated_by_checks_input;
 

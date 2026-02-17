@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sync_config
     }
 }
 
-pub use crate::operation::delete_sync_configuration::_delete_sync_configuration_output::DeleteSyncConfigurationOutput;
-
 pub use crate::operation::delete_sync_configuration::_delete_sync_configuration_input::DeleteSyncConfigurationInput;
+
+pub use crate::operation::delete_sync_configuration::_delete_sync_configuration_output::DeleteSyncConfigurationOutput;
 
 mod _delete_sync_configuration_input;
 

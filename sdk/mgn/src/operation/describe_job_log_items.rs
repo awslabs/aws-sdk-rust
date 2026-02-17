@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_job_log_i
     }
 }
 
-pub use crate::operation::describe_job_log_items::_describe_job_log_items_output::DescribeJobLogItemsOutput;
-
 pub use crate::operation::describe_job_log_items::_describe_job_log_items_input::DescribeJobLogItemsInput;
+
+pub use crate::operation::describe_job_log_items::_describe_job_log_items_output::DescribeJobLogItemsOutput;
 
 mod _describe_job_log_items_input;
 

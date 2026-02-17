@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connection:
     }
 }
 
-pub use crate::operation::update_connection::_update_connection_output::UpdateConnectionOutput;
-
 pub use crate::operation::update_connection::_update_connection_input::UpdateConnectionInput;
+
+pub use crate::operation::update_connection::_update_connection_output::UpdateConnectionOutput;
 
 mod _update_connection_input;
 

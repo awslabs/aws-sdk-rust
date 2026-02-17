@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_recom
     }
 }
 
-pub use crate::operation::batch_update_recommendation_status::_batch_update_recommendation_status_output::BatchUpdateRecommendationStatusOutput;
-
 pub use crate::operation::batch_update_recommendation_status::_batch_update_recommendation_status_input::BatchUpdateRecommendationStatusInput;
+
+pub use crate::operation::batch_update_recommendation_status::_batch_update_recommendation_status_output::BatchUpdateRecommendationStatusOutput;
 
 mod _batch_update_recommendation_status_input;
 

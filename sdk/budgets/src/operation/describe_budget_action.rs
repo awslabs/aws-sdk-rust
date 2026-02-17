@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_budget_ac
     }
 }
 
-pub use crate::operation::describe_budget_action::_describe_budget_action_output::DescribeBudgetActionOutput;
-
 pub use crate::operation::describe_budget_action::_describe_budget_action_input::DescribeBudgetActionInput;
+
+pub use crate::operation::describe_budget_action::_describe_budget_action_output::DescribeBudgetActionOutput;
 
 mod _describe_budget_action_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mlflow_trac
     }
 }
 
-pub use crate::operation::delete_mlflow_tracking_server::_delete_mlflow_tracking_server_output::DeleteMlflowTrackingServerOutput;
-
 pub use crate::operation::delete_mlflow_tracking_server::_delete_mlflow_tracking_server_input::DeleteMlflowTrackingServerInput;
+
+pub use crate::operation::delete_mlflow_tracking_server::_delete_mlflow_tracking_server_output::DeleteMlflowTrackingServerOutput;
 
 mod _delete_mlflow_tracking_server_input;
 

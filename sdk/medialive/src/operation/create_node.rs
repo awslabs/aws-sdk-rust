@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_node::Creat
     }
 }
 
-pub use crate::operation::create_node::_create_node_output::CreateNodeOutput;
-
 pub use crate::operation::create_node::_create_node_input::CreateNodeInput;
+
+pub use crate::operation::create_node::_create_node_output::CreateNodeOutput;
 
 mod _create_node_input;
 

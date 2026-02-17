@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_environment
     }
 }
 
-pub use crate::operation::delete_environment_membership::_delete_environment_membership_output::DeleteEnvironmentMembershipOutput;
-
 pub use crate::operation::delete_environment_membership::_delete_environment_membership_input::DeleteEnvironmentMembershipInput;
+
+pub use crate::operation::delete_environment_membership::_delete_environment_membership_output::DeleteEnvironmentMembershipOutput;
 
 mod _delete_environment_membership_input;
 

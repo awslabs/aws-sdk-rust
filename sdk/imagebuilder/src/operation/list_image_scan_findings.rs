@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_scan_fi
     }
 }
 
-pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_output::ListImageScanFindingsOutput;
-
 pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_input::ListImageScanFindingsInput;
+
+pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_output::ListImageScanFindingsOutput;
 
 mod _list_image_scan_findings_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_internet_event
     }
 }
 
-pub use crate::operation::get_internet_event::_get_internet_event_output::GetInternetEventOutput;
-
 pub use crate::operation::get_internet_event::_get_internet_event_input::GetInternetEventInput;
+
+pub use crate::operation::get_internet_event::_get_internet_event_output::GetInternetEventOutput;
 
 mod _get_internet_event_input;
 

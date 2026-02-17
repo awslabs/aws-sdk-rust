@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_voice_chann
     }
 }
 
-pub use crate::operation::update_voice_channel::_update_voice_channel_output::UpdateVoiceChannelOutput;
-
 pub use crate::operation::update_voice_channel::_update_voice_channel_input::UpdateVoiceChannelInput;
+
+pub use crate::operation::update_voice_channel::_update_voice_channel_output::UpdateVoiceChannelOutput;
 
 mod _update_voice_channel_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ui_customizati
     }
 }
 
-pub use crate::operation::get_ui_customization::_get_ui_customization_output::GetUiCustomizationOutput;
-
 pub use crate::operation::get_ui_customization::_get_ui_customization_input::GetUiCustomizationInput;
+
+pub use crate::operation::get_ui_customization::_get_ui_customization_output::GetUiCustomizationOutput;
 
 mod _get_ui_customization_input;
 

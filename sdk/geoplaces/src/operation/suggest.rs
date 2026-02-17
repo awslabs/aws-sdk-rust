@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::suggest::SuggestEr
     }
 }
 
-pub use crate::operation::suggest::_suggest_output::SuggestOutput;
-
 pub use crate::operation::suggest::_suggest_input::SuggestInput;
+
+pub use crate::operation::suggest::_suggest_output::SuggestOutput;
 
 mod _suggest_input;
 

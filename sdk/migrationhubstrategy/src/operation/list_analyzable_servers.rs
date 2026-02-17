@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analyzable_se
     }
 }
 
-pub use crate::operation::list_analyzable_servers::_list_analyzable_servers_output::ListAnalyzableServersOutput;
-
 pub use crate::operation::list_analyzable_servers::_list_analyzable_servers_input::ListAnalyzableServersInput;
+
+pub use crate::operation::list_analyzable_servers::_list_analyzable_servers_output::ListAnalyzableServersOutput;
 
 mod _list_analyzable_servers_input;
 

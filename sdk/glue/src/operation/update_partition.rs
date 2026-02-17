@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_partition::
     }
 }
 
-pub use crate::operation::update_partition::_update_partition_output::UpdatePartitionOutput;
-
 pub use crate::operation::update_partition::_update_partition_input::UpdatePartitionInput;
+
+pub use crate::operation::update_partition::_update_partition_output::UpdatePartitionOutput;
 
 mod _update_partition_input;
 

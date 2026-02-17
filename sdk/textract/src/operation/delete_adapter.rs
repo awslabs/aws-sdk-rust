@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_adapter::De
     }
 }
 
-pub use crate::operation::delete_adapter::_delete_adapter_output::DeleteAdapterOutput;
-
 pub use crate::operation::delete_adapter::_delete_adapter_input::DeleteAdapterInput;
+
+pub use crate::operation::delete_adapter::_delete_adapter_output::DeleteAdapterOutput;
 
 mod _delete_adapter_input;
 

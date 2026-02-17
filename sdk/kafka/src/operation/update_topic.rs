@@ -509,9 +509,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_topic::Upda
     }
 }
 
-pub use crate::operation::update_topic::_update_topic_output::UpdateTopicOutput;
-
 pub use crate::operation::update_topic::_update_topic_input::UpdateTopicInput;
+
+pub use crate::operation::update_topic::_update_topic_output::UpdateTopicOutput;
 
 mod _update_topic_input;
 

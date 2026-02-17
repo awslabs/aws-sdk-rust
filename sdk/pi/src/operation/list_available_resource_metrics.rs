@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_res
     }
 }
 
-pub use crate::operation::list_available_resource_metrics::_list_available_resource_metrics_output::ListAvailableResourceMetricsOutput;
-
 pub use crate::operation::list_available_resource_metrics::_list_available_resource_metrics_input::ListAvailableResourceMetricsInput;
+
+pub use crate::operation::list_available_resource_metrics::_list_available_resource_metrics_output::ListAvailableResourceMetricsOutput;
 
 mod _list_available_resource_metrics_input;
 

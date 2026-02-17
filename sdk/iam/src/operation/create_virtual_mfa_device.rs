@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_virtual_mfa
     }
 }
 
-pub use crate::operation::create_virtual_mfa_device::_create_virtual_mfa_device_output::CreateVirtualMfaDeviceOutput;
-
 pub use crate::operation::create_virtual_mfa_device::_create_virtual_mfa_device_input::CreateVirtualMfaDeviceInput;
+
+pub use crate::operation::create_virtual_mfa_device::_create_virtual_mfa_device_output::CreateVirtualMfaDeviceOutput;
 
 mod _create_virtual_mfa_device_input;
 

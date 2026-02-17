@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_user::D
     }
 }
 
-pub use crate::operation::deactivate_user::_deactivate_user_output::DeactivateUserOutput;
-
 pub use crate::operation::deactivate_user::_deactivate_user_input::DeactivateUserInput;
+
+pub use crate::operation::deactivate_user::_deactivate_user_output::DeactivateUserOutput;
 
 mod _deactivate_user_input;
 

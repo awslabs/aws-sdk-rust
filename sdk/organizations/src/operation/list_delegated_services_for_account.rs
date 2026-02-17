@@ -629,9 +629,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_delegated_ser
     }
 }
 
-pub use crate::operation::list_delegated_services_for_account::_list_delegated_services_for_account_output::ListDelegatedServicesForAccountOutput;
-
 pub use crate::operation::list_delegated_services_for_account::_list_delegated_services_for_account_input::ListDelegatedServicesForAccountInput;
+
+pub use crate::operation::list_delegated_services_for_account::_list_delegated_services_for_account_output::ListDelegatedServicesForAccountOutput;
 
 mod _list_delegated_services_for_account_input;
 

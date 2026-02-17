@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_intent_version
     }
 }
 
-pub use crate::operation::get_intent_versions::_get_intent_versions_output::GetIntentVersionsOutput;
-
 pub use crate::operation::get_intent_versions::_get_intent_versions_input::GetIntentVersionsInput;
+
+pub use crate::operation::get_intent_versions::_get_intent_versions_output::GetIntentVersionsOutput;
 
 mod _get_intent_versions_input;
 

@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_media_insights_pipeline_configuration::_delete_media_insights_pipeline_configuration_output::DeleteMediaInsightsPipelineConfigurationOutput;
-
 pub use crate::operation::delete_media_insights_pipeline_configuration::_delete_media_insights_pipeline_configuration_input::DeleteMediaInsightsPipelineConfigurationInput;
+
+pub use crate::operation::delete_media_insights_pipeline_configuration::_delete_media_insights_pipeline_configuration_output::DeleteMediaInsightsPipelineConfigurationOutput;
 
 mod _delete_media_insights_pipeline_configuration_input;
 

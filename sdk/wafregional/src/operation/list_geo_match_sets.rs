@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_geo_match_set
     }
 }
 
-pub use crate::operation::list_geo_match_sets::_list_geo_match_sets_output::ListGeoMatchSetsOutput;
-
 pub use crate::operation::list_geo_match_sets::_list_geo_match_sets_input::ListGeoMatchSetsInput;
+
+pub use crate::operation::list_geo_match_sets::_list_geo_match_sets_output::ListGeoMatchSetsOutput;
 
 mod _list_geo_match_sets_input;
 

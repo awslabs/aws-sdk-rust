@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_key_group::_list_distributions_by_key_group_output::ListDistributionsByKeyGroupOutput;
-
 pub use crate::operation::list_distributions_by_key_group::_list_distributions_by_key_group_input::ListDistributionsByKeyGroupInput;
+
+pub use crate::operation::list_distributions_by_key_group::_list_distributions_by_key_group_output::ListDistributionsByKeyGroupOutput;
 
 mod _list_distributions_by_key_group_input;
 

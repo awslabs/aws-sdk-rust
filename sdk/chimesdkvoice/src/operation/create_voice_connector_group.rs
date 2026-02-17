@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_voice_conne
     }
 }
 
-pub use crate::operation::create_voice_connector_group::_create_voice_connector_group_output::CreateVoiceConnectorGroupOutput;
-
 pub use crate::operation::create_voice_connector_group::_create_voice_connector_group_input::CreateVoiceConnectorGroupInput;
+
+pub use crate::operation::create_voice_connector_group::_create_voice_connector_group_output::CreateVoiceConnectorGroupOutput;
 
 mod _create_voice_connector_group_input;
 

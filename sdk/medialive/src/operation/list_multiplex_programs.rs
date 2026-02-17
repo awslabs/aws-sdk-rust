@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multiplex_pro
     }
 }
 
-pub use crate::operation::list_multiplex_programs::_list_multiplex_programs_output::ListMultiplexProgramsOutput;
-
 pub use crate::operation::list_multiplex_programs::_list_multiplex_programs_input::ListMultiplexProgramsInput;
+
+pub use crate::operation::list_multiplex_programs::_list_multiplex_programs_output::ListMultiplexProgramsOutput;
 
 mod _list_multiplex_programs_input;
 

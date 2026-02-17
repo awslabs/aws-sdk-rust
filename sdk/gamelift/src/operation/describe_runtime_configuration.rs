@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_runtime_c
     }
 }
 
-pub use crate::operation::describe_runtime_configuration::_describe_runtime_configuration_output::DescribeRuntimeConfigurationOutput;
-
 pub use crate::operation::describe_runtime_configuration::_describe_runtime_configuration_input::DescribeRuntimeConfigurationInput;
+
+pub use crate::operation::describe_runtime_configuration::_describe_runtime_configuration_output::DescribeRuntimeConfigurationOutput;
 
 mod _describe_runtime_configuration_input;
 

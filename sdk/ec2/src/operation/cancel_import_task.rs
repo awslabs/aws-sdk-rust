@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_import_task
     }
 }
 
-pub use crate::operation::cancel_import_task::_cancel_import_task_output::CancelImportTaskOutput;
-
 pub use crate::operation::cancel_import_task::_cancel_import_task_input::CancelImportTaskInput;
+
+pub use crate::operation::cancel_import_task::_cancel_import_task_output::CancelImportTaskOutput;
 
 mod _cancel_import_task_input;
 

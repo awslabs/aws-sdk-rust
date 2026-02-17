@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_invoice_
     }
 }
 
-pub use crate::operation::batch_get_invoice_profile::_batch_get_invoice_profile_output::BatchGetInvoiceProfileOutput;
-
 pub use crate::operation::batch_get_invoice_profile::_batch_get_invoice_profile_input::BatchGetInvoiceProfileInput;
+
+pub use crate::operation::batch_get_invoice_profile::_batch_get_invoice_profile_output::BatchGetInvoiceProfileOutput;
 
 mod _batch_get_invoice_profile_input;
 

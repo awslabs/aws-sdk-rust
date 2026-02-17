@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_protected_q
     }
 }
 
-pub use crate::operation::update_protected_query::_update_protected_query_output::UpdateProtectedQueryOutput;
-
 pub use crate::operation::update_protected_query::_update_protected_query_input::UpdateProtectedQueryInput;
+
+pub use crate::operation::update_protected_query::_update_protected_query_output::UpdateProtectedQueryOutput;
 
 mod _update_protected_query_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_workspa
     }
 }
 
-pub use crate::operation::deregister_workspace_directory::_deregister_workspace_directory_output::DeregisterWorkspaceDirectoryOutput;
-
 pub use crate::operation::deregister_workspace_directory::_deregister_workspace_directory_input::DeregisterWorkspaceDirectoryInput;
+
+pub use crate::operation::deregister_workspace_directory::_deregister_workspace_directory_output::DeregisterWorkspaceDirectoryOutput;
 
 mod _deregister_workspace_directory_input;
 

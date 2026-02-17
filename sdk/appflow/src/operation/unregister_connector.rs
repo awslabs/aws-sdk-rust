@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unregister_connect
     }
 }
 
-pub use crate::operation::unregister_connector::_unregister_connector_output::UnregisterConnectorOutput;
-
 pub use crate::operation::unregister_connector::_unregister_connector_input::UnregisterConnectorInput;
+
+pub use crate::operation::unregister_connector::_unregister_connector_output::UnregisterConnectorOutput;
 
 mod _unregister_connector_input;
 

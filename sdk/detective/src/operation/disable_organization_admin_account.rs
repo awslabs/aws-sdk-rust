@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_organizati
     }
 }
 
-pub use crate::operation::disable_organization_admin_account::_disable_organization_admin_account_output::DisableOrganizationAdminAccountOutput;
-
 pub use crate::operation::disable_organization_admin_account::_disable_organization_admin_account_input::DisableOrganizationAdminAccountInput;
+
+pub use crate::operation::disable_organization_admin_account::_disable_organization_admin_account_output::DisableOrganizationAdminAccountOutput;
 
 mod _disable_organization_admin_account_input;
 

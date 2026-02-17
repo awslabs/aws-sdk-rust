@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployment_gr
     }
 }
 
-pub use crate::operation::list_deployment_groups::_list_deployment_groups_output::ListDeploymentGroupsOutput;
-
 pub use crate::operation::list_deployment_groups::_list_deployment_groups_input::ListDeploymentGroupsInput;
+
+pub use crate::operation::list_deployment_groups::_list_deployment_groups_output::ListDeploymentGroupsOutput;
 
 mod _list_deployment_groups_input;
 

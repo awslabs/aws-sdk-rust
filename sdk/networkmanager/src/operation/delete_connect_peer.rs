@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_connect_pee
     }
 }
 
-pub use crate::operation::delete_connect_peer::_delete_connect_peer_output::DeleteConnectPeerOutput;
-
 pub use crate::operation::delete_connect_peer::_delete_connect_peer_input::DeleteConnectPeerInput;
+
+pub use crate::operation::delete_connect_peer::_delete_connect_peer_output::DeleteConnectPeerOutput;
 
 mod _delete_connect_peer_input;
 

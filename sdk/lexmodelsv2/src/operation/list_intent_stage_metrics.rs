@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_intent_stage_
     }
 }
 
-pub use crate::operation::list_intent_stage_metrics::_list_intent_stage_metrics_output::ListIntentStageMetricsOutput;
-
 pub use crate::operation::list_intent_stage_metrics::_list_intent_stage_metrics_input::ListIntentStageMetricsInput;
+
+pub use crate::operation::list_intent_stage_metrics::_list_intent_stage_metrics_output::ListIntentStageMetricsOutput;
 
 mod _list_intent_stage_metrics_input;
 

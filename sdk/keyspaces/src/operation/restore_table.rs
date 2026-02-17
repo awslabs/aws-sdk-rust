@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_table::Res
     }
 }
 
-pub use crate::operation::restore_table::_restore_table_output::RestoreTableOutput;
-
 pub use crate::operation::restore_table::_restore_table_input::RestoreTableInput;
+
+pub use crate::operation::restore_table::_restore_table_output::RestoreTableOutput;
 
 mod _restore_table_input;
 

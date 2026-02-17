@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_glue_identi
     }
 }
 
-pub use crate::operation::delete_glue_identity_center_configuration::_delete_glue_identity_center_configuration_output::DeleteGlueIdentityCenterConfigurationOutput;
-
 pub use crate::operation::delete_glue_identity_center_configuration::_delete_glue_identity_center_configuration_input::DeleteGlueIdentityCenterConfigurationInput;
+
+pub use crate::operation::delete_glue_identity_center_configuration::_delete_glue_identity_center_configuration_output::DeleteGlueIdentityCenterConfigurationOutput;
 
 mod _delete_glue_identity_center_configuration_input;
 

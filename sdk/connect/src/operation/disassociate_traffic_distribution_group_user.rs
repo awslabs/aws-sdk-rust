@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_traffic_distribution_group_user::_disassociate_traffic_distribution_group_user_output::DisassociateTrafficDistributionGroupUserOutput;
-
 pub use crate::operation::disassociate_traffic_distribution_group_user::_disassociate_traffic_distribution_group_user_input::DisassociateTrafficDistributionGroupUserInput;
+
+pub use crate::operation::disassociate_traffic_distribution_group_user::_disassociate_traffic_distribution_group_user_output::DisassociateTrafficDistributionGroupUserOutput;
 
 mod _disassociate_traffic_distribution_group_user_input;
 

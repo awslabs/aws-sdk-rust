@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_node_from_tem
     }
 }
 
-pub use crate::operation::list_node_from_template_jobs::_list_node_from_template_jobs_output::ListNodeFromTemplateJobsOutput;
-
 pub use crate::operation::list_node_from_template_jobs::_list_node_from_template_jobs_input::ListNodeFromTemplateJobsInput;
+
+pub use crate::operation::list_node_from_template_jobs::_list_node_from_template_jobs_output::ListNodeFromTemplateJobsOutput;
 
 mod _list_node_from_template_jobs_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trust::Crea
     }
 }
 
-pub use crate::operation::create_trust::_create_trust_output::CreateTrustOutput;
-
 pub use crate::operation::create_trust::_create_trust_input::CreateTrustInput;
+
+pub use crate::operation::create_trust::_create_trust_output::CreateTrustOutput;
 
 mod _create_trust_input;
 

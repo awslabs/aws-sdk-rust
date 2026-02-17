@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_endpoint_
     }
 }
 
-pub use crate::operation::describe_endpoint_types::_describe_endpoint_types_output::DescribeEndpointTypesOutput;
-
 pub use crate::operation::describe_endpoint_types::_describe_endpoint_types_input::DescribeEndpointTypesInput;
+
+pub use crate::operation::describe_endpoint_types::_describe_endpoint_types_output::DescribeEndpointTypesOutput;
 
 mod _describe_endpoint_types_input;
 

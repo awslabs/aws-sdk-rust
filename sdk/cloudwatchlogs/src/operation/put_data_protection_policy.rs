@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_data_protectio
     }
 }
 
-pub use crate::operation::put_data_protection_policy::_put_data_protection_policy_output::PutDataProtectionPolicyOutput;
-
 pub use crate::operation::put_data_protection_policy::_put_data_protection_policy_input::PutDataProtectionPolicyInput;
+
+pub use crate::operation::put_data_protection_policy::_put_data_protection_policy_output::PutDataProtectionPolicyOutput;
 
 mod _put_data_protection_policy_input;
 

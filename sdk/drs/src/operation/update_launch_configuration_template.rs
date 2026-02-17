@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_launch_conf
     }
 }
 
-pub use crate::operation::update_launch_configuration_template::_update_launch_configuration_template_output::UpdateLaunchConfigurationTemplateOutput;
-
 pub use crate::operation::update_launch_configuration_template::_update_launch_configuration_template_input::UpdateLaunchConfigurationTemplateInput;
+
+pub use crate::operation::update_launch_configuration_template::_update_launch_configuration_template_output::UpdateLaunchConfigurationTemplateOutput;
 
 mod _update_launch_configuration_template_input;
 

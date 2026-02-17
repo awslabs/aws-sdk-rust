@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_zonal_shift
     }
 }
 
-pub use crate::operation::update_zonal_shift::_update_zonal_shift_output::UpdateZonalShiftOutput;
-
 pub use crate::operation::update_zonal_shift::_update_zonal_shift_input::UpdateZonalShiftInput;
+
+pub use crate::operation::update_zonal_shift::_update_zonal_shift_output::UpdateZonalShiftOutput;
 
 mod _update_zonal_shift_input;
 

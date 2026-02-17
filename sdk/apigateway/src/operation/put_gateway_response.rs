@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_gateway_respon
     }
 }
 
-pub use crate::operation::put_gateway_response::_put_gateway_response_output::PutGatewayResponseOutput;
-
 pub use crate::operation::put_gateway_response::_put_gateway_response_input::PutGatewayResponseInput;
+
+pub use crate::operation::put_gateway_response::_put_gateway_response_output::PutGatewayResponseOutput;
 
 mod _put_gateway_response_input;
 

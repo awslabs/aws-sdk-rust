@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_configuratio
     }
 }
 
-pub use crate::operation::start_configuration_policy_disassociation::_start_configuration_policy_disassociation_output::StartConfigurationPolicyDisassociationOutput;
-
 pub use crate::operation::start_configuration_policy_disassociation::_start_configuration_policy_disassociation_input::StartConfigurationPolicyDisassociationInput;
+
+pub use crate::operation::start_configuration_policy_disassociation::_start_configuration_policy_disassociation_output::StartConfigurationPolicyDisassociationOutput;
 
 mod _start_configuration_policy_disassociation_input;
 

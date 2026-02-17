@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_template_gr
     }
 }
 
-pub use crate::operation::delete_template_group_access_control_entry::_delete_template_group_access_control_entry_output::DeleteTemplateGroupAccessControlEntryOutput;
-
 pub use crate::operation::delete_template_group_access_control_entry::_delete_template_group_access_control_entry_input::DeleteTemplateGroupAccessControlEntryInput;
+
+pub use crate::operation::delete_template_group_access_control_entry::_delete_template_group_access_control_entry_output::DeleteTemplateGroupAccessControlEntryOutput;
 
 mod _delete_template_group_access_control_entry_input;
 

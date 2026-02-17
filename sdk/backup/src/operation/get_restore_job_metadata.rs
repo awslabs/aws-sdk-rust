@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_restore_job_me
     }
 }
 
-pub use crate::operation::get_restore_job_metadata::_get_restore_job_metadata_output::GetRestoreJobMetadataOutput;
-
 pub use crate::operation::get_restore_job_metadata::_get_restore_job_metadata_input::GetRestoreJobMetadataInput;
+
+pub use crate::operation::get_restore_job_metadata::_get_restore_job_metadata_output::GetRestoreJobMetadataOutput;
 
 mod _get_restore_job_metadata_input;
 

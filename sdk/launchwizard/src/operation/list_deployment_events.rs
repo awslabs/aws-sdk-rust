@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployment_ev
     }
 }
 
-pub use crate::operation::list_deployment_events::_list_deployment_events_output::ListDeploymentEventsOutput;
-
 pub use crate::operation::list_deployment_events::_list_deployment_events_input::ListDeploymentEventsInput;
+
+pub use crate::operation::list_deployment_events::_list_deployment_events_output::ListDeploymentEventsOutput;
 
 mod _list_deployment_events_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_snapshot_copy
     }
 }
 
-pub use crate::operation::list_snapshot_copy_configurations::_list_snapshot_copy_configurations_output::ListSnapshotCopyConfigurationsOutput;
-
 pub use crate::operation::list_snapshot_copy_configurations::_list_snapshot_copy_configurations_input::ListSnapshotCopyConfigurationsInput;
+
+pub use crate::operation::list_snapshot_copy_configurations::_list_snapshot_copy_configurations_output::ListSnapshotCopyConfigurationsOutput;
 
 mod _list_snapshot_copy_configurations_input;
 

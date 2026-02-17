@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_migration::S
     }
 }
 
-pub use crate::operation::start_migration::_start_migration_output::StartMigrationOutput;
-
 pub use crate::operation::start_migration::_start_migration_input::StartMigrationInput;
+
+pub use crate::operation::start_migration::_start_migration_output::StartMigrationOutput;
 
 mod _start_migration_input;
 

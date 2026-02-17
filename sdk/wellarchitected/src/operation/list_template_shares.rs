@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_template_shar
     }
 }
 
-pub use crate::operation::list_template_shares::_list_template_shares_output::ListTemplateSharesOutput;
-
 pub use crate::operation::list_template_shares::_list_template_shares_input::ListTemplateSharesInput;
+
+pub use crate::operation::list_template_shares::_list_template_shares_output::ListTemplateSharesOutput;
 
 mod _list_template_shares_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_migration_p
     }
 }
 
-pub use crate::operation::create_migration_project::_create_migration_project_output::CreateMigrationProjectOutput;
-
 pub use crate::operation::create_migration_project::_create_migration_project_input::CreateMigrationProjectInput;
+
+pub use crate::operation::create_migration_project::_create_migration_project_output::CreateMigrationProjectOutput;
 
 mod _create_migration_project_input;
 

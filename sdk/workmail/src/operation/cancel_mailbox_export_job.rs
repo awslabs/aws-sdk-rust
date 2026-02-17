@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_mailbox_exp
     }
 }
 
-pub use crate::operation::cancel_mailbox_export_job::_cancel_mailbox_export_job_output::CancelMailboxExportJobOutput;
-
 pub use crate::operation::cancel_mailbox_export_job::_cancel_mailbox_export_job_input::CancelMailboxExportJobInput;
+
+pub use crate::operation::cancel_mailbox_export_job::_cancel_mailbox_export_job_output::CancelMailboxExportJobOutput;
 
 mod _cancel_mailbox_export_job_input;
 

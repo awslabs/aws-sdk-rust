@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cost_category
     }
 }
 
-pub use crate::operation::list_cost_category_resource_associations::_list_cost_category_resource_associations_output::ListCostCategoryResourceAssociationsOutput;
-
 pub use crate::operation::list_cost_category_resource_associations::_list_cost_category_resource_associations_input::ListCostCategoryResourceAssociationsInput;
+
+pub use crate::operation::list_cost_category_resource_associations::_list_cost_category_resource_associations_output::ListCostCategoryResourceAssociationsOutput;
 
 mod _list_cost_category_resource_associations_input;
 

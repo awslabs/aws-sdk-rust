@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_matching_wo
     }
 }
 
-pub use crate::operation::delete_matching_workflow::_delete_matching_workflow_output::DeleteMatchingWorkflowOutput;
-
 pub use crate::operation::delete_matching_workflow::_delete_matching_workflow_input::DeleteMatchingWorkflowInput;
+
+pub use crate::operation::delete_matching_workflow::_delete_matching_workflow_output::DeleteMatchingWorkflowOutput;
 
 mod _delete_matching_workflow_input;
 

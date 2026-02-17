@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_style_descript
     }
 }
 
-pub use crate::operation::get_style_descriptor::_get_style_descriptor_output::GetStyleDescriptorOutput;
-
 pub use crate::operation::get_style_descriptor::_get_style_descriptor_input::GetStyleDescriptorInput;
+
+pub use crate::operation::get_style_descriptor::_get_style_descriptor_output::GetStyleDescriptorOutput;
 
 mod _get_style_descriptor_input;
 

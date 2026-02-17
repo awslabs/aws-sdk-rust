@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_iam_policy_
     }
 }
 
-pub use crate::operation::update_iam_policy_assignment::_update_iam_policy_assignment_output::UpdateIamPolicyAssignmentOutput;
-
 pub use crate::operation::update_iam_policy_assignment::_update_iam_policy_assignment_input::UpdateIamPolicyAssignmentInput;
+
+pub use crate::operation::update_iam_policy_assignment::_update_iam_policy_assignment_output::UpdateIamPolicyAssignmentOutput;
 
 mod _update_iam_policy_assignment_input;
 

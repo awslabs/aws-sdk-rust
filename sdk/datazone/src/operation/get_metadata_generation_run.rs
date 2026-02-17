@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metadata_gener
     }
 }
 
-pub use crate::operation::get_metadata_generation_run::_get_metadata_generation_run_output::GetMetadataGenerationRunOutput;
-
 pub use crate::operation::get_metadata_generation_run::_get_metadata_generation_run_input::GetMetadataGenerationRunInput;
+
+pub use crate::operation::get_metadata_generation_run::_get_metadata_generation_run_output::GetMetadataGenerationRunOutput;
 
 mod _get_metadata_generation_run_input;
 

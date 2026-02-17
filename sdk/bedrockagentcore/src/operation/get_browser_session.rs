@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_browser_sessio
     }
 }
 
-pub use crate::operation::get_browser_session::_get_browser_session_output::GetBrowserSessionOutput;
-
 pub use crate::operation::get_browser_session::_get_browser_session_input::GetBrowserSessionInput;
+
+pub use crate::operation::get_browser_session::_get_browser_session_output::GetBrowserSessionOutput;
 
 mod _get_browser_session_input;
 

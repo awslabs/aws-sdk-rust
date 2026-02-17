@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_global_se
     }
 }
 
-pub use crate::operation::describe_global_settings::_describe_global_settings_output::DescribeGlobalSettingsOutput;
-
 pub use crate::operation::describe_global_settings::_describe_global_settings_input::DescribeGlobalSettingsInput;
+
+pub use crate::operation::describe_global_settings::_describe_global_settings_output::DescribeGlobalSettingsOutput;
 
 mod _describe_global_settings_input;
 

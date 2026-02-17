@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_pr
     }
 }
 
-pub use crate::operation::update_resource_profile_detections::_update_resource_profile_detections_output::UpdateResourceProfileDetectionsOutput;
-
 pub use crate::operation::update_resource_profile_detections::_update_resource_profile_detections_input::UpdateResourceProfileDetectionsInput;
+
+pub use crate::operation::update_resource_profile_detections::_update_resource_profile_detections_output::UpdateResourceProfileDetectionsOutput;
 
 mod _update_resource_profile_detections_input;
 

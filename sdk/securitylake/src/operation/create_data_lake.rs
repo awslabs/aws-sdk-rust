@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_lake::
     }
 }
 
-pub use crate::operation::create_data_lake::_create_data_lake_output::CreateDataLakeOutput;
-
 pub use crate::operation::create_data_lake::_create_data_lake_input::CreateDataLakeInput;
+
+pub use crate::operation::create_data_lake::_create_data_lake_output::CreateDataLakeOutput;
 
 mod _create_data_lake_input;
 

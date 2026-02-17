@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_service_pip
     }
 }
 
-pub use crate::operation::cancel_service_pipeline_deployment::_cancel_service_pipeline_deployment_output::CancelServicePipelineDeploymentOutput;
-
 pub use crate::operation::cancel_service_pipeline_deployment::_cancel_service_pipeline_deployment_input::CancelServicePipelineDeploymentInput;
+
+pub use crate::operation::cancel_service_pipeline_deployment::_cancel_service_pipeline_deployment_output::CancelServicePipelineDeploymentOutput;
 
 mod _cancel_service_pipeline_deployment_input;
 

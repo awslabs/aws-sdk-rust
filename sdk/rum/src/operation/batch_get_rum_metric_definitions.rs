@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_rum_metr
     }
 }
 
-pub use crate::operation::batch_get_rum_metric_definitions::_batch_get_rum_metric_definitions_output::BatchGetRumMetricDefinitionsOutput;
-
 pub use crate::operation::batch_get_rum_metric_definitions::_batch_get_rum_metric_definitions_input::BatchGetRumMetricDefinitionsInput;
+
+pub use crate::operation::batch_get_rum_metric_definitions::_batch_get_rum_metric_definitions_output::BatchGetRumMetricDefinitionsOutput;
 
 mod _batch_get_rum_metric_definitions_input;
 

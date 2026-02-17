@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_faq::Desc
     }
 }
 
-pub use crate::operation::describe_faq::_describe_faq_output::DescribeFaqOutput;
-
 pub use crate::operation::describe_faq::_describe_faq_input::DescribeFaqInput;
+
+pub use crate::operation::describe_faq::_describe_faq_output::DescribeFaqOutput;
 
 mod _describe_faq_input;
 

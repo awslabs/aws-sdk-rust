@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_connect
     }
 }
 
-pub use crate::operation::delete_vpc_connection::_delete_vpc_connection_output::DeleteVpcConnectionOutput;
-
 pub use crate::operation::delete_vpc_connection::_delete_vpc_connection_input::DeleteVpcConnectionInput;
+
+pub use crate::operation::delete_vpc_connection::_delete_vpc_connection_output::DeleteVpcConnectionOutput;
 
 mod _delete_vpc_connection_input;
 

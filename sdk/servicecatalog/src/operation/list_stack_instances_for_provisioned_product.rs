@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_stack_instances_for_provisioned_product::_list_stack_instances_for_provisioned_product_output::ListStackInstancesForProvisionedProductOutput;
-
 pub use crate::operation::list_stack_instances_for_provisioned_product::_list_stack_instances_for_provisioned_product_input::ListStackInstancesForProvisionedProductInput;
+
+pub use crate::operation::list_stack_instances_for_provisioned_product::_list_stack_instances_for_provisioned_product_output::ListStackInstancesForProvisionedProductOutput;
 
 mod _list_stack_instances_for_provisioned_product_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_telemetry_p
     }
 }
 
-pub use crate::operation::create_telemetry_pipeline::_create_telemetry_pipeline_output::CreateTelemetryPipelineOutput;
-
 pub use crate::operation::create_telemetry_pipeline::_create_telemetry_pipeline_input::CreateTelemetryPipelineInput;
+
+pub use crate::operation::create_telemetry_pipeline::_create_telemetry_pipeline_output::CreateTelemetryPipelineOutput;
 
 mod _create_telemetry_pipeline_input;
 

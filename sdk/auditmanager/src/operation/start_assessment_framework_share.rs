@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_assessment_f
     }
 }
 
-pub use crate::operation::start_assessment_framework_share::_start_assessment_framework_share_output::StartAssessmentFrameworkShareOutput;
-
 pub use crate::operation::start_assessment_framework_share::_start_assessment_framework_share_input::StartAssessmentFrameworkShareInput;
+
+pub use crate::operation::start_assessment_framework_share::_start_assessment_framework_share_output::StartAssessmentFrameworkShareOutput;
 
 mod _start_assessment_framework_share_input;
 

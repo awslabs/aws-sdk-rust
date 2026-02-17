@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_portal_service
     }
 }
 
-pub use crate::operation::get_portal_service_provider_metadata::_get_portal_service_provider_metadata_output::GetPortalServiceProviderMetadataOutput;
-
 pub use crate::operation::get_portal_service_provider_metadata::_get_portal_service_provider_metadata_input::GetPortalServiceProviderMetadataInput;
+
+pub use crate::operation::get_portal_service_provider_metadata::_get_portal_service_provider_metadata_output::GetPortalServiceProviderMetadataOutput;
 
 mod _get_portal_service_provider_metadata_input;
 

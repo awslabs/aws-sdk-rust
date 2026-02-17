@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_wave::Updat
     }
 }
 
-pub use crate::operation::update_wave::_update_wave_output::UpdateWaveOutput;
-
 pub use crate::operation::update_wave::_update_wave_input::UpdateWaveInput;
+
+pub use crate::operation::update_wave::_update_wave_output::UpdateWaveOutput;
 
 mod _update_wave_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_integ
     }
 }
 
-pub use crate::operation::update_event_integration::_update_event_integration_output::UpdateEventIntegrationOutput;
-
 pub use crate::operation::update_event_integration::_update_event_integration_input::UpdateEventIntegrationInput;
+
+pub use crate::operation::update_event_integration::_update_event_integration_output::UpdateEventIntegrationOutput;
 
 mod _update_event_integration_input;
 

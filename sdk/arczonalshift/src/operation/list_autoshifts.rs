@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_autoshifts::L
     }
 }
 
-pub use crate::operation::list_autoshifts::_list_autoshifts_output::ListAutoshiftsOutput;
-
 pub use crate::operation::list_autoshifts::_list_autoshifts_input::ListAutoshiftsInput;
+
+pub use crate::operation::list_autoshifts::_list_autoshifts_output::ListAutoshiftsOutput;
 
 mod _list_autoshifts_input;
 

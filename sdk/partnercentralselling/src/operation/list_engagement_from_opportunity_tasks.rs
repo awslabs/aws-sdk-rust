@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_engagement_fr
     }
 }
 
-pub use crate::operation::list_engagement_from_opportunity_tasks::_list_engagement_from_opportunity_tasks_output::ListEngagementFromOpportunityTasksOutput;
-
 pub use crate::operation::list_engagement_from_opportunity_tasks::_list_engagement_from_opportunity_tasks_input::ListEngagementFromOpportunityTasksInput;
+
+pub use crate::operation::list_engagement_from_opportunity_tasks::_list_engagement_from_opportunity_tasks_output::ListEngagementFromOpportunityTasksOutput;
 
 mod _list_engagement_from_opportunity_tasks_input;
 

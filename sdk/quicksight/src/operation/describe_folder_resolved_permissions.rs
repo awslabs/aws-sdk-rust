@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_folder_re
     }
 }
 
-pub use crate::operation::describe_folder_resolved_permissions::_describe_folder_resolved_permissions_output::DescribeFolderResolvedPermissionsOutput;
-
 pub use crate::operation::describe_folder_resolved_permissions::_describe_folder_resolved_permissions_input::DescribeFolderResolvedPermissionsInput;
+
+pub use crate::operation::describe_folder_resolved_permissions::_describe_folder_resolved_permissions_output::DescribeFolderResolvedPermissionsOutput;
 
 mod _describe_folder_resolved_permissions_input;
 

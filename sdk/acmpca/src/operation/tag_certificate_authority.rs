@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_certificate_au
     }
 }
 
-pub use crate::operation::tag_certificate_authority::_tag_certificate_authority_output::TagCertificateAuthorityOutput;
-
 pub use crate::operation::tag_certificate_authority::_tag_certificate_authority_input::TagCertificateAuthorityInput;
+
+pub use crate::operation::tag_certificate_authority::_tag_certificate_authority_output::TagCertificateAuthorityOutput;
 
 mod _tag_certificate_authority_input;
 

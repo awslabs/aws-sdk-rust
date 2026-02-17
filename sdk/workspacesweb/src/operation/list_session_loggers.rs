@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_session_logge
     }
 }
 
-pub use crate::operation::list_session_loggers::_list_session_loggers_output::ListSessionLoggersOutput;
-
 pub use crate::operation::list_session_loggers::_list_session_loggers_input::ListSessionLoggersInput;
+
+pub use crate::operation::list_session_loggers::_list_session_loggers_output::ListSessionLoggersOutput;
 
 mod _list_session_loggers_input;
 

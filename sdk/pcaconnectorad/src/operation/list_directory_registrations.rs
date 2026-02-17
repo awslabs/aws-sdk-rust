@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_directory_reg
     }
 }
 
-pub use crate::operation::list_directory_registrations::_list_directory_registrations_output::ListDirectoryRegistrationsOutput;
-
 pub use crate::operation::list_directory_registrations::_list_directory_registrations_input::ListDirectoryRegistrationsInput;
+
+pub use crate::operation::list_directory_registrations::_list_directory_registrations_output::ListDirectoryRegistrationsOutput;
 
 mod _list_directory_registrations_input;
 

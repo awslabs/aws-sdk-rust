@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_stream_s
     }
 }
 
-pub use crate::operation::terminate_stream_session::_terminate_stream_session_output::TerminateStreamSessionOutput;
-
 pub use crate::operation::terminate_stream_session::_terminate_stream_session_input::TerminateStreamSessionInput;
+
+pub use crate::operation::terminate_stream_session::_terminate_stream_session_output::TerminateStreamSessionOutput;
 
 mod _terminate_stream_session_input;
 

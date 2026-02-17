@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_comment_reacti
     }
 }
 
-pub use crate::operation::get_comment_reactions::_get_comment_reactions_output::GetCommentReactionsOutput;
-
 pub use crate::operation::get_comment_reactions::_get_comment_reactions_input::GetCommentReactionsInput;
+
+pub use crate::operation::get_comment_reactions::_get_comment_reactions_output::GetCommentReactionsOutput;
 
 mod _get_comment_reactions_input;
 

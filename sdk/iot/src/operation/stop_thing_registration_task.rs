@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_thing_registr
     }
 }
 
-pub use crate::operation::stop_thing_registration_task::_stop_thing_registration_task_output::StopThingRegistrationTaskOutput;
-
 pub use crate::operation::stop_thing_registration_task::_stop_thing_registration_task_input::StopThingRegistrationTaskInput;
+
+pub use crate::operation::stop_thing_registration_task::_stop_thing_registration_task_output::StopThingRegistrationTaskOutput;
 
 mod _stop_thing_registration_task_input;
 

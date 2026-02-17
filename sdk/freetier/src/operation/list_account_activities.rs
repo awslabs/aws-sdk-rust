@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_activ
     }
 }
 
-pub use crate::operation::list_account_activities::_list_account_activities_output::ListAccountActivitiesOutput;
-
 pub use crate::operation::list_account_activities::_list_account_activities_input::ListAccountActivitiesInput;
+
+pub use crate::operation::list_account_activities::_list_account_activities_output::ListAccountActivitiesOutput;
 
 mod _list_account_activities_input;
 

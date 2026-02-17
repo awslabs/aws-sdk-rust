@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_browser::Cr
     }
 }
 
-pub use crate::operation::create_browser::_create_browser_output::CreateBrowserOutput;
-
 pub use crate::operation::create_browser::_create_browser_input::CreateBrowserInput;
+
+pub use crate::operation::create_browser::_create_browser_output::CreateBrowserOutput;
 
 mod _create_browser_input;
 

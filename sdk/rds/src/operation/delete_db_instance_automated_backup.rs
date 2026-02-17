@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_instance
     }
 }
 
-pub use crate::operation::delete_db_instance_automated_backup::_delete_db_instance_automated_backup_output::DeleteDbInstanceAutomatedBackupOutput;
-
 pub use crate::operation::delete_db_instance_automated_backup::_delete_db_instance_automated_backup_input::DeleteDbInstanceAutomatedBackupInput;
+
+pub use crate::operation::delete_db_instance_automated_backup::_delete_db_instance_automated_backup_output::DeleteDbInstanceAutomatedBackupOutput;
 
 mod _delete_db_instance_automated_backup_input;
 

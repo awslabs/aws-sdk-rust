@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pending_agg
     }
 }
 
-pub use crate::operation::delete_pending_aggregation_request::_delete_pending_aggregation_request_output::DeletePendingAggregationRequestOutput;
-
 pub use crate::operation::delete_pending_aggregation_request::_delete_pending_aggregation_request_input::DeletePendingAggregationRequestInput;
+
+pub use crate::operation::delete_pending_aggregation_request::_delete_pending_aggregation_request_output::DeletePendingAggregationRequestOutput;
 
 mod _delete_pending_aggregation_request_input;
 

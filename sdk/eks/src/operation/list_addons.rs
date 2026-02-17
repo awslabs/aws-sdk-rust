@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_addons::ListA
     }
 }
 
-pub use crate::operation::list_addons::_list_addons_output::ListAddonsOutput;
-
 pub use crate::operation::list_addons::_list_addons_input::ListAddonsInput;
+
+pub use crate::operation::list_addons::_list_addons_output::ListAddonsOutput;
 
 mod _list_addons_input;
 

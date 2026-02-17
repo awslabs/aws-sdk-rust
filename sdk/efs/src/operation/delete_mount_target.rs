@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mount_targe
     }
 }
 
-pub use crate::operation::delete_mount_target::_delete_mount_target_output::DeleteMountTargetOutput;
-
 pub use crate::operation::delete_mount_target::_delete_mount_target_input::DeleteMountTargetInput;
+
+pub use crate::operation::delete_mount_target::_delete_mount_target_output::DeleteMountTargetOutput;
 
 mod _delete_mount_target_input;
 

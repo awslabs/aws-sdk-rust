@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::forgot_password::F
     }
 }
 
-pub use crate::operation::forgot_password::_forgot_password_output::ForgotPasswordOutput;
-
 pub use crate::operation::forgot_password::_forgot_password_input::ForgotPasswordInput;
+
+pub use crate::operation::forgot_password::_forgot_password_output::ForgotPasswordOutput;
 
 mod _forgot_password_input;
 

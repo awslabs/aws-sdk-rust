@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_code_cove
     }
 }
 
-pub use crate::operation::describe_code_coverages::_describe_code_coverages_output::DescribeCodeCoveragesOutput;
-
 pub use crate::operation::describe_code_coverages::_describe_code_coverages_input::DescribeCodeCoveragesInput;
+
+pub use crate::operation::describe_code_coverages::_describe_code_coverages_output::DescribeCodeCoveragesOutput;
 
 mod _describe_code_coverages_input;
 

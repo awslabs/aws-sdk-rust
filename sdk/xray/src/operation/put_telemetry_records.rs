@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_telemetry_reco
     }
 }
 
-pub use crate::operation::put_telemetry_records::_put_telemetry_records_output::PutTelemetryRecordsOutput;
-
 pub use crate::operation::put_telemetry_records::_put_telemetry_records_input::PutTelemetryRecordsInput;
+
+pub use crate::operation::put_telemetry_records::_put_telemetry_records_output::PutTelemetryRecordsOutput;
 
 mod _put_telemetry_records_input;
 

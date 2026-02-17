@@ -478,9 +478,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_journey_execut
     }
 }
 
-pub use crate::operation::get_journey_execution_activity_metrics::_get_journey_execution_activity_metrics_output::GetJourneyExecutionActivityMetricsOutput;
-
 pub use crate::operation::get_journey_execution_activity_metrics::_get_journey_execution_activity_metrics_input::GetJourneyExecutionActivityMetricsInput;
+
+pub use crate::operation::get_journey_execution_activity_metrics::_get_journey_execution_activity_metrics_output::GetJourneyExecutionActivityMetricsOutput;
 
 mod _get_journey_execution_activity_metrics_input;
 

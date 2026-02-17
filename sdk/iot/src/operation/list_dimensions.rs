@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dimensions::L
     }
 }
 
-pub use crate::operation::list_dimensions::_list_dimensions_output::ListDimensionsOutput;
-
 pub use crate::operation::list_dimensions::_list_dimensions_input::ListDimensionsInput;
+
+pub use crate::operation::list_dimensions::_list_dimensions_output::ListDimensionsOutput;
 
 mod _list_dimensions_input;
 

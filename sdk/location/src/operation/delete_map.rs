@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_map::Delete
     }
 }
 
-pub use crate::operation::delete_map::_delete_map_output::DeleteMapOutput;
-
 pub use crate::operation::delete_map::_delete_map_input::DeleteMapInput;
+
+pub use crate::operation::delete_map::_delete_map_output::DeleteMapOutput;
 
 mod _delete_map_input;
 

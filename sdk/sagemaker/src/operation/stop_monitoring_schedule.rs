@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_monitoring_sc
     }
 }
 
-pub use crate::operation::stop_monitoring_schedule::_stop_monitoring_schedule_output::StopMonitoringScheduleOutput;
-
 pub use crate::operation::stop_monitoring_schedule::_stop_monitoring_schedule_input::StopMonitoringScheduleInput;
+
+pub use crate::operation::stop_monitoring_schedule::_stop_monitoring_schedule_output::StopMonitoringScheduleOutput;
 
 mod _stop_monitoring_schedule_input;
 

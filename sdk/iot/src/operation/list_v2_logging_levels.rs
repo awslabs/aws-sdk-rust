@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_v2_logging_le
     }
 }
 
-pub use crate::operation::list_v2_logging_levels::_list_v2_logging_levels_output::ListV2LoggingLevelsOutput;
-
 pub use crate::operation::list_v2_logging_levels::_list_v2_logging_levels_input::ListV2LoggingLevelsInput;
+
+pub use crate::operation::list_v2_logging_levels::_list_v2_logging_levels_output::ListV2LoggingLevelsOutput;
 
 mod _list_v2_logging_levels_input;
 

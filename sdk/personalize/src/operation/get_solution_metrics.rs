@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_solution_metri
     }
 }
 
-pub use crate::operation::get_solution_metrics::_get_solution_metrics_output::GetSolutionMetricsOutput;
-
 pub use crate::operation::get_solution_metrics::_get_solution_metrics_input::GetSolutionMetricsInput;
+
+pub use crate::operation::get_solution_metrics::_get_solution_metrics_output::GetSolutionMetricsOutput;
 
 mod _get_solution_metrics_input;
 

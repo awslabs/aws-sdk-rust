@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_class
     }
 }
 
-pub use crate::operation::describe_vpc_classic_link::_describe_vpc_classic_link_output::DescribeVpcClassicLinkOutput;
-
 pub use crate::operation::describe_vpc_classic_link::_describe_vpc_classic_link_input::DescribeVpcClassicLinkInput;
+
+pub use crate::operation::describe_vpc_classic_link::_describe_vpc_classic_link_output::DescribeVpcClassicLinkOutput;
 
 mod _describe_vpc_classic_link_input;
 

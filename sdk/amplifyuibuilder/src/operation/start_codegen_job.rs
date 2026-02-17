@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_codegen_job:
     }
 }
 
-pub use crate::operation::start_codegen_job::_start_codegen_job_output::StartCodegenJobOutput;
-
 pub use crate::operation::start_codegen_job::_start_codegen_job_input::StartCodegenJobInput;
+
+pub use crate::operation::start_codegen_job::_start_codegen_job_output::StartCodegenJobOutput;
 
 mod _start_codegen_job_input;
 

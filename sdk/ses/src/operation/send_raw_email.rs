@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_raw_email::Se
     }
 }
 
-pub use crate::operation::send_raw_email::_send_raw_email_output::SendRawEmailOutput;
-
 pub use crate::operation::send_raw_email::_send_raw_email_input::SendRawEmailInput;
+
+pub use crate::operation::send_raw_email::_send_raw_email_output::SendRawEmailOutput;
 
 mod _send_raw_email_input;
 

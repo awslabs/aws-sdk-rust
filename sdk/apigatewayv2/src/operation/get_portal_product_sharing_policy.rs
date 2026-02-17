@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_portal_product
     }
 }
 
-pub use crate::operation::get_portal_product_sharing_policy::_get_portal_product_sharing_policy_output::GetPortalProductSharingPolicyOutput;
-
 pub use crate::operation::get_portal_product_sharing_policy::_get_portal_product_sharing_policy_input::GetPortalProductSharingPolicyInput;
+
+pub use crate::operation::get_portal_product_sharing_policy::_get_portal_product_sharing_policy_output::GetPortalProductSharingPolicyOutput;
 
 mod _get_portal_product_sharing_policy_input;
 

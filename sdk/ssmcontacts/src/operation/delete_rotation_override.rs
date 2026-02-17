@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rotation_ov
     }
 }
 
-pub use crate::operation::delete_rotation_override::_delete_rotation_override_output::DeleteRotationOverrideOutput;
-
 pub use crate::operation::delete_rotation_override::_delete_rotation_override_input::DeleteRotationOverrideInput;
+
+pub use crate::operation::delete_rotation_override::_delete_rotation_override_output::DeleteRotationOverrideOutput;
 
 mod _delete_rotation_override_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_text_messag
     }
 }
 
-pub use crate::operation::delete_text_message_spend_limit_override::_delete_text_message_spend_limit_override_output::DeleteTextMessageSpendLimitOverrideOutput;
-
 pub use crate::operation::delete_text_message_spend_limit_override::_delete_text_message_spend_limit_override_input::DeleteTextMessageSpendLimitOverrideInput;
+
+pub use crate::operation::delete_text_message_spend_limit_override::_delete_text_message_spend_limit_override_output::DeleteTextMessageSpendLimitOverrideOutput;
 
 mod _delete_text_message_spend_limit_override_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_logging_con
     }
 }
 
-pub use crate::operation::delete_logging_configuration::_delete_logging_configuration_output::DeleteLoggingConfigurationOutput;
-
 pub use crate::operation::delete_logging_configuration::_delete_logging_configuration_input::DeleteLoggingConfigurationInput;
+
+pub use crate::operation::delete_logging_configuration::_delete_logging_configuration_output::DeleteLoggingConfigurationOutput;
 
 mod _delete_logging_configuration_input;
 

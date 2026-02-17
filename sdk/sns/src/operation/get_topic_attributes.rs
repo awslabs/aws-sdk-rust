@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_topic_attribut
     }
 }
 
-pub use crate::operation::get_topic_attributes::_get_topic_attributes_output::GetTopicAttributesOutput;
-
 pub use crate::operation::get_topic_attributes::_get_topic_attributes_input::GetTopicAttributesInput;
+
+pub use crate::operation::get_topic_attributes::_get_topic_attributes_output::GetTopicAttributesOutput;
 
 mod _get_topic_attributes_input;
 

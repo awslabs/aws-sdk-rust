@@ -7,7 +7,9 @@ pub use ::aws_smithy_types::byte_stream::ByteStream;
 pub use ::aws_smithy_types::byte_stream::FsBuilder;
 #[cfg(feature = "rt-tokio")]
 pub use ::aws_smithy_types::byte_stream::Length;
+pub use ::aws_smithy_types::date_time::Format as DateTimeFormat;
 pub use ::aws_smithy_types::Blob;
+pub use ::aws_smithy_types::DateTime;
 
 /// Event stream related primitives such as `Message` or `Header`.
 pub mod event_stream;

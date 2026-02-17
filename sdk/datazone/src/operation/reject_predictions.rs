@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_predictions
     }
 }
 
-pub use crate::operation::reject_predictions::_reject_predictions_output::RejectPredictionsOutput;
-
 pub use crate::operation::reject_predictions::_reject_predictions_input::RejectPredictionsInput;
+
+pub use crate::operation::reject_predictions::_reject_predictions_output::RejectPredictionsOutput;
 
 mod _reject_predictions_input;
 

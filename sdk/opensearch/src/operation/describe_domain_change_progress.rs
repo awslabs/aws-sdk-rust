@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain_ch
     }
 }
 
-pub use crate::operation::describe_domain_change_progress::_describe_domain_change_progress_output::DescribeDomainChangeProgressOutput;
-
 pub use crate::operation::describe_domain_change_progress::_describe_domain_change_progress_input::DescribeDomainChangeProgressInput;
+
+pub use crate::operation::describe_domain_change_progress::_describe_domain_change_progress_output::DescribeDomainChangeProgressOutput;
 
 mod _describe_domain_change_progress_input;
 

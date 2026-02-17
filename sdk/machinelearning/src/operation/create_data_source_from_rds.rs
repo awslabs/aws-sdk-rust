@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_source
     }
 }
 
-pub use crate::operation::create_data_source_from_rds::_create_data_source_from_rds_output::CreateDataSourceFromRdsOutput;
-
 pub use crate::operation::create_data_source_from_rds::_create_data_source_from_rds_input::CreateDataSourceFromRdsInput;
+
+pub use crate::operation::create_data_source_from_rds::_create_data_source_from_rds_output::CreateDataSourceFromRdsOutput;
 
 mod _create_data_source_from_rds_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_static_ip::
     }
 }
 
-pub use crate::operation::attach_static_ip::_attach_static_ip_output::AttachStaticIpOutput;
-
 pub use crate::operation::attach_static_ip::_attach_static_ip_input::AttachStaticIpInput;
+
+pub use crate::operation::attach_static_ip::_attach_static_ip_output::AttachStaticIpOutput;
 
 mod _attach_static_ip_input;
 

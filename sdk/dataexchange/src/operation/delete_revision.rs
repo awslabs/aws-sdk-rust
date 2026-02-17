@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_revision::D
     }
 }
 
-pub use crate::operation::delete_revision::_delete_revision_output::DeleteRevisionOutput;
-
 pub use crate::operation::delete_revision::_delete_revision_input::DeleteRevisionInput;
+
+pub use crate::operation::delete_revision::_delete_revision_output::DeleteRevisionOutput;
 
 mod _delete_revision_input;
 

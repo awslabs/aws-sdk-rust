@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_upload::GetUpl
     }
 }
 
-pub use crate::operation::get_upload::_get_upload_output::GetUploadOutput;
-
 pub use crate::operation::get_upload::_get_upload_input::GetUploadInput;
+
+pub use crate::operation::get_upload::_get_upload_output::GetUploadOutput;
 
 mod _get_upload_input;
 

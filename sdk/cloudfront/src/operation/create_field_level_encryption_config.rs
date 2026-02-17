@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_field_level
     }
 }
 
-pub use crate::operation::create_field_level_encryption_config::_create_field_level_encryption_config_output::CreateFieldLevelEncryptionConfigOutput;
-
 pub use crate::operation::create_field_level_encryption_config::_create_field_level_encryption_config_input::CreateFieldLevelEncryptionConfigInput;
+
+pub use crate::operation::create_field_level_encryption_config::_create_field_level_encryption_config_output::CreateFieldLevelEncryptionConfigOutput;
 
 mod _create_field_level_encryption_config_input;
 

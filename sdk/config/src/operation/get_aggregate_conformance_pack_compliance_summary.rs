@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_aggregate_conformance_pack_compliance_summary::_get_aggregate_conformance_pack_compliance_summary_output::GetAggregateConformancePackComplianceSummaryOutput;
-
 pub use crate::operation::get_aggregate_conformance_pack_compliance_summary::_get_aggregate_conformance_pack_compliance_summary_input::GetAggregateConformancePackComplianceSummaryInput;
+
+pub use crate::operation::get_aggregate_conformance_pack_compliance_summary::_get_aggregate_conformance_pack_compliance_summary_output::GetAggregateConformancePackComplianceSummaryOutput;
 
 mod _get_aggregate_conformance_pack_compliance_summary_input;
 

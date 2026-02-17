@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_query::Ge
     }
 }
 
-pub use crate::operation::generate_query::_generate_query_output::GenerateQueryOutput;
-
 pub use crate::operation::generate_query::_generate_query_input::GenerateQueryInput;
+
+pub use crate::operation::generate_query::_generate_query_output::GenerateQueryOutput;
 
 mod _generate_query_input;
 

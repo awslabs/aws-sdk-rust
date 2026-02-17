@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_featured_re
     }
 }
 
-pub use crate::operation::create_featured_results_set::_create_featured_results_set_output::CreateFeaturedResultsSetOutput;
-
 pub use crate::operation::create_featured_results_set::_create_featured_results_set_input::CreateFeaturedResultsSetInput;
+
+pub use crate::operation::create_featured_results_set::_create_featured_results_set_output::CreateFeaturedResultsSetOutput;
 
 mod _create_featured_results_set_input;
 

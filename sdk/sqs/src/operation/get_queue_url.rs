@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_queue_url::Get
     }
 }
 
-pub use crate::operation::get_queue_url::_get_queue_url_output::GetQueueUrlOutput;
-
 pub use crate::operation::get_queue_url::_get_queue_url_input::GetQueueUrlInput;
+
+pub use crate::operation::get_queue_url::_get_queue_url_output::GetQueueUrlOutput;
 
 mod _get_queue_url_input;
 

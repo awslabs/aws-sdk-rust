@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_job::Ter
     }
 }
 
-pub use crate::operation::terminate_job::_terminate_job_output::TerminateJobOutput;
-
 pub use crate::operation::terminate_job::_terminate_job_input::TerminateJobInput;
+
+pub use crate::operation::terminate_job::_terminate_job_output::TerminateJobOutput;
 
 mod _terminate_job_input;
 

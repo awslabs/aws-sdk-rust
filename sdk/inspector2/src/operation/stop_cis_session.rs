@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_cis_session::
     }
 }
 
-pub use crate::operation::stop_cis_session::_stop_cis_session_output::StopCisSessionOutput;
-
 pub use crate::operation::stop_cis_session::_stop_cis_session_input::StopCisSessionInput;
+
+pub use crate::operation::stop_cis_session::_stop_cis_session_output::StopCisSessionOutput;
 
 mod _stop_cis_session_input;
 

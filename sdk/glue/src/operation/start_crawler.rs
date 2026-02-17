@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_crawler::Sta
     }
 }
 
-pub use crate::operation::start_crawler::_start_crawler_output::StartCrawlerOutput;
-
 pub use crate::operation::start_crawler::_start_crawler_input::StartCrawlerInput;
+
+pub use crate::operation::start_crawler::_start_crawler_output::StartCrawlerOutput;
 
 mod _start_crawler_input;
 

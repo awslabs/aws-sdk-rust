@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_produc
     }
 }
 
-pub use crate::operation::create_data_product_revision::_create_data_product_revision_output::CreateDataProductRevisionOutput;
-
 pub use crate::operation::create_data_product_revision::_create_data_product_revision_input::CreateDataProductRevisionInput;
+
+pub use crate::operation::create_data_product_revision::_create_data_product_revision_output::CreateDataProductRevisionOutput;
 
 mod _create_data_product_revision_input;
 

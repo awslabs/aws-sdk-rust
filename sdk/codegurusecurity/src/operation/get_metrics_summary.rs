@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metrics_summar
     }
 }
 
-pub use crate::operation::get_metrics_summary::_get_metrics_summary_output::GetMetricsSummaryOutput;
-
 pub use crate::operation::get_metrics_summary::_get_metrics_summary_input::GetMetricsSummaryInput;
+
+pub use crate::operation::get_metrics_summary::_get_metrics_summary_output::GetMetricsSummaryOutput;
 
 mod _get_metrics_summary_input;
 

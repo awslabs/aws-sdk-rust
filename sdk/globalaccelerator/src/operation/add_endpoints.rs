@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_endpoints::Add
     }
 }
 
-pub use crate::operation::add_endpoints::_add_endpoints_output::AddEndpointsOutput;
-
 pub use crate::operation::add_endpoints::_add_endpoints_input::AddEndpointsInput;
+
+pub use crate::operation::add_endpoints::_add_endpoints_output::AddEndpointsOutput;
 
 mod _add_endpoints_input;
 

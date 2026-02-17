@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_invoke_method
     }
 }
 
-pub use crate::operation::test_invoke_method::_test_invoke_method_output::TestInvokeMethodOutput;
-
 pub use crate::operation::test_invoke_method::_test_invoke_method_input::TestInvokeMethodInput;
+
+pub use crate::operation::test_invoke_method::_test_invoke_method_output::TestInvokeMethodOutput;
 
 mod _test_invoke_method_input;
 

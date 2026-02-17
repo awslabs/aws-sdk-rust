@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_network_insights_access_scope_analysis::_delete_network_insights_access_scope_analysis_output::DeleteNetworkInsightsAccessScopeAnalysisOutput;
-
 pub use crate::operation::delete_network_insights_access_scope_analysis::_delete_network_insights_access_scope_analysis_input::DeleteNetworkInsightsAccessScopeAnalysisInput;
+
+pub use crate::operation::delete_network_insights_access_scope_analysis::_delete_network_insights_access_scope_analysis_output::DeleteNetworkInsightsAccessScopeAnalysisOutput;
 
 mod _delete_network_insights_access_scope_analysis_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_topic_rule_
     }
 }
 
-pub use crate::operation::delete_topic_rule_destination::_delete_topic_rule_destination_output::DeleteTopicRuleDestinationOutput;
-
 pub use crate::operation::delete_topic_rule_destination::_delete_topic_rule_destination_input::DeleteTopicRuleDestinationInput;
+
+pub use crate::operation::delete_topic_rule_destination::_delete_topic_rule_destination_output::DeleteTopicRuleDestinationOutput;
 
 mod _delete_topic_rule_destination_input;
 

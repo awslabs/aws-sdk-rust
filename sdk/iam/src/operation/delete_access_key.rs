@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_key:
     }
 }
 
-pub use crate::operation::delete_access_key::_delete_access_key_output::DeleteAccessKeyOutput;
-
 pub use crate::operation::delete_access_key::_delete_access_key_input::DeleteAccessKeyInput;
+
+pub use crate::operation::delete_access_key::_delete_access_key_output::DeleteAccessKeyOutput;
 
 mod _delete_access_key_input;
 

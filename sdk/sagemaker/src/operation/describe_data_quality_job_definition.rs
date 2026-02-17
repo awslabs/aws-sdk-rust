@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_qual
     }
 }
 
-pub use crate::operation::describe_data_quality_job_definition::_describe_data_quality_job_definition_output::DescribeDataQualityJobDefinitionOutput;
-
 pub use crate::operation::describe_data_quality_job_definition::_describe_data_quality_job_definition_input::DescribeDataQualityJobDefinitionInput;
+
+pub use crate::operation::describe_data_quality_job_definition::_describe_data_quality_job_definition_output::DescribeDataQualityJobDefinitionOutput;
 
 mod _describe_data_quality_job_definition_input;
 

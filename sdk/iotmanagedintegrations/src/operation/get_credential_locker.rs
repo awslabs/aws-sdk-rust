@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_credential_loc
     }
 }
 
-pub use crate::operation::get_credential_locker::_get_credential_locker_output::GetCredentialLockerOutput;
-
 pub use crate::operation::get_credential_locker::_get_credential_locker_input::GetCredentialLockerInput;
+
+pub use crate::operation::get_credential_locker::_get_credential_locker_output::GetCredentialLockerOutput;
 
 mod _get_credential_locker_input;
 

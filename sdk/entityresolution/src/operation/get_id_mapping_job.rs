@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_id_mapping_job
     }
 }
 
-pub use crate::operation::get_id_mapping_job::_get_id_mapping_job_output::GetIdMappingJobOutput;
-
 pub use crate::operation::get_id_mapping_job::_get_id_mapping_job_input::GetIdMappingJobInput;
+
+pub use crate::operation::get_id_mapping_job::_get_id_mapping_job_output::GetIdMappingJobOutput;
 
 mod _get_id_mapping_job_input;
 

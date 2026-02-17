@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::detach_customer_managed_policy_reference_from_permission_set::_detach_customer_managed_policy_reference_from_permission_set_output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput;
-
 pub use crate::operation::detach_customer_managed_policy_reference_from_permission_set::_detach_customer_managed_policy_reference_from_permission_set_input::DetachCustomerManagedPolicyReferenceFromPermissionSetInput;
+
+pub use crate::operation::detach_customer_managed_policy_reference_from_permission_set::_detach_customer_managed_policy_reference_from_permission_set_output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput;
 
 mod _detach_customer_managed_policy_reference_from_permission_set_input;
 

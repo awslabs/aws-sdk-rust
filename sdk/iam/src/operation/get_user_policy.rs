@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_policy::G
     }
 }
 
-pub use crate::operation::get_user_policy::_get_user_policy_output::GetUserPolicyOutput;
-
 pub use crate::operation::get_user_policy::_get_user_policy_input::GetUserPolicyInput;
+
+pub use crate::operation::get_user_policy::_get_user_policy_output::GetUserPolicyOutput;
 
 mod _get_user_policy_input;
 

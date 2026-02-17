@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_algorithm::
     }
 }
 
-pub use crate::operation::create_algorithm::_create_algorithm_output::CreateAlgorithmOutput;
-
 pub use crate::operation::create_algorithm::_create_algorithm_input::CreateAlgorithmInput;
+
+pub use crate::operation::create_algorithm::_create_algorithm_output::CreateAlgorithmOutput;
 
 mod _create_algorithm_input;
 

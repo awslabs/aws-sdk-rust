@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connect_insta
     }
 }
 
-pub use crate::operation::list_connect_instance_integrations::_list_connect_instance_integrations_output::ListConnectInstanceIntegrationsOutput;
-
 pub use crate::operation::list_connect_instance_integrations::_list_connect_instance_integrations_input::ListConnectInstanceIntegrationsInput;
+
+pub use crate::operation::list_connect_instance_integrations::_list_connect_instance_integrations_output::ListConnectInstanceIntegrationsOutput;
 
 mod _list_connect_instance_integrations_input;
 

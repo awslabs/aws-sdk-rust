@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_predefined_
     }
 }
 
-pub use crate::operation::search_predefined_attributes::_search_predefined_attributes_output::SearchPredefinedAttributesOutput;
-
 pub use crate::operation::search_predefined_attributes::_search_predefined_attributes_input::SearchPredefinedAttributesInput;
+
+pub use crate::operation::search_predefined_attributes::_search_predefined_attributes_output::SearchPredefinedAttributesOutput;
 
 mod _search_predefined_attributes_input;
 

@@ -341,9 +341,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_ipam::Modif
     }
 }
 
-pub use crate::operation::modify_ipam::_modify_ipam_output::ModifyIpamOutput;
-
 pub use crate::operation::modify_ipam::_modify_ipam_input::ModifyIpamInput;
+
+pub use crate::operation::modify_ipam::_modify_ipam_output::ModifyIpamOutput;
 
 mod _modify_ipam_input;
 

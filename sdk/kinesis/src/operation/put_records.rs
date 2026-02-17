@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_records::PutRe
     }
 }
 
-pub use crate::operation::put_records::_put_records_output::PutRecordsOutput;
-
 pub use crate::operation::put_records::_put_records_input::PutRecordsInput;
+
+pub use crate::operation::put_records::_put_records_output::PutRecordsOutput;
 
 mod _put_records_input;
 

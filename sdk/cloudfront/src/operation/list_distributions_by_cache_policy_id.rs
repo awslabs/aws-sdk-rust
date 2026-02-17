@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_cache_policy_id::_list_distributions_by_cache_policy_id_output::ListDistributionsByCachePolicyIdOutput;
-
 pub use crate::operation::list_distributions_by_cache_policy_id::_list_distributions_by_cache_policy_id_input::ListDistributionsByCachePolicyIdInput;
+
+pub use crate::operation::list_distributions_by_cache_policy_id::_list_distributions_by_cache_policy_id_output::ListDistributionsByCachePolicyIdOutput;
 
 mod _list_distributions_by_cache_policy_id_input;
 

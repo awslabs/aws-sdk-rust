@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_lake_n
     }
 }
 
-pub use crate::operation::update_data_lake_namespace::_update_data_lake_namespace_output::UpdateDataLakeNamespaceOutput;
-
 pub use crate::operation::update_data_lake_namespace::_update_data_lake_namespace_input::UpdateDataLakeNamespaceInput;
+
+pub use crate::operation::update_data_lake_namespace::_update_data_lake_namespace_output::UpdateDataLakeNamespaceOutput;
 
 mod _update_data_lake_namespace_input;
 

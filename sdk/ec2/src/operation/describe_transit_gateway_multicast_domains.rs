@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_transit_gateway_multicast_domains::_describe_transit_gateway_multicast_domains_output::DescribeTransitGatewayMulticastDomainsOutput;
-
 pub use crate::operation::describe_transit_gateway_multicast_domains::_describe_transit_gateway_multicast_domains_input::DescribeTransitGatewayMulticastDomainsInput;
+
+pub use crate::operation::describe_transit_gateway_multicast_domains::_describe_transit_gateway_multicast_domains_output::DescribeTransitGatewayMulticastDomainsOutput;
 
 mod _describe_transit_gateway_multicast_domains_input;
 

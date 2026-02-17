@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository::Ge
     }
 }
 
-pub use crate::operation::get_repository::_get_repository_output::GetRepositoryOutput;
-
 pub use crate::operation::get_repository::_get_repository_input::GetRepositoryInput;
+
+pub use crate::operation::get_repository::_get_repository_output::GetRepositoryOutput;
 
 mod _get_repository_input;
 

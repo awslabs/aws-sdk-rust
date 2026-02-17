@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_wireless_gate
     }
 }
 
-pub use crate::operation::list_wireless_gateways::_list_wireless_gateways_output::ListWirelessGatewaysOutput;
-
 pub use crate::operation::list_wireless_gateways::_list_wireless_gateways_input::ListWirelessGatewaysInput;
+
+pub use crate::operation::list_wireless_gateways::_list_wireless_gateways_output::ListWirelessGatewaysOutput;
 
 mod _list_wireless_gateways_input;
 

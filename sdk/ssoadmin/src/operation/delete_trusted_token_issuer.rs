@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trusted_tok
     }
 }
 
-pub use crate::operation::delete_trusted_token_issuer::_delete_trusted_token_issuer_output::DeleteTrustedTokenIssuerOutput;
-
 pub use crate::operation::delete_trusted_token_issuer::_delete_trusted_token_issuer_input::DeleteTrustedTokenIssuerInput;
+
+pub use crate::operation::delete_trusted_token_issuer::_delete_trusted_token_issuer_output::DeleteTrustedTokenIssuerOutput;
 
 mod _delete_trusted_token_issuer_input;
 

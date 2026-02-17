@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_framework::
     }
 }
 
-pub use crate::operation::create_framework::_create_framework_output::CreateFrameworkOutput;
-
 pub use crate::operation::create_framework::_create_framework_input::CreateFrameworkInput;
+
+pub use crate::operation::create_framework::_create_framework_output::CreateFrameworkOutput;
 
 mod _create_framework_input;
 

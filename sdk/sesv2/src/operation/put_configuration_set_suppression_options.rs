@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configuration_
     }
 }
 
-pub use crate::operation::put_configuration_set_suppression_options::_put_configuration_set_suppression_options_output::PutConfigurationSetSuppressionOptionsOutput;
-
 pub use crate::operation::put_configuration_set_suppression_options::_put_configuration_set_suppression_options_input::PutConfigurationSetSuppressionOptionsInput;
+
+pub use crate::operation::put_configuration_set_suppression_options::_put_configuration_set_suppression_options_output::PutConfigurationSetSuppressionOptionsOutput;
 
 mod _put_configuration_set_suppression_options_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_email_addre
     }
 }
 
-pub use crate::operation::verify_email_address::_verify_email_address_output::VerifyEmailAddressOutput;
-
 pub use crate::operation::verify_email_address::_verify_email_address_input::VerifyEmailAddressInput;
+
+pub use crate::operation::verify_email_address::_verify_email_address_output::VerifyEmailAddressOutput;
 
 mod _verify_email_address_input;
 

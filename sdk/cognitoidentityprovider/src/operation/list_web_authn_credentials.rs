@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_web_authn_cre
     }
 }
 
-pub use crate::operation::list_web_authn_credentials::_list_web_authn_credentials_output::ListWebAuthnCredentialsOutput;
-
 pub use crate::operation::list_web_authn_credentials::_list_web_authn_credentials_input::ListWebAuthnCredentialsInput;
+
+pub use crate::operation::list_web_authn_credentials::_list_web_authn_credentials_output::ListWebAuthnCredentialsOutput;
 
 mod _list_web_authn_credentials_input;
 

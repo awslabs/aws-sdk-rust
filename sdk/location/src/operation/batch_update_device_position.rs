@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_devic
     }
 }
 
-pub use crate::operation::batch_update_device_position::_batch_update_device_position_output::BatchUpdateDevicePositionOutput;
-
 pub use crate::operation::batch_update_device_position::_batch_update_device_position_input::BatchUpdateDevicePositionInput;
+
+pub use crate::operation::batch_update_device_position::_batch_update_device_position_output::BatchUpdateDevicePositionOutput;
 
 mod _batch_update_device_position_input;
 

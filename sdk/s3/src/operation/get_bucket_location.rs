@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_locatio
     }
 }
 
-pub use crate::operation::get_bucket_location::_get_bucket_location_output::GetBucketLocationOutput;
-
 pub use crate::operation::get_bucket_location::_get_bucket_location_input::GetBucketLocationInput;
+
+pub use crate::operation::get_bucket_location::_get_bucket_location_output::GetBucketLocationOutput;
 
 mod _get_bucket_location_input;
 

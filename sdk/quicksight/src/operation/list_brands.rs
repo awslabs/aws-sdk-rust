@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_brands::ListB
     }
 }
 
-pub use crate::operation::list_brands::_list_brands_output::ListBrandsOutput;
-
 pub use crate::operation::list_brands::_list_brands_input::ListBrandsInput;
+
+pub use crate::operation::list_brands::_list_brands_output::ListBrandsOutput;
 
 mod _list_brands_input;
 

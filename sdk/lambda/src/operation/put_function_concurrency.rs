@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_function_concu
     }
 }
 
-pub use crate::operation::put_function_concurrency::_put_function_concurrency_output::PutFunctionConcurrencyOutput;
-
 pub use crate::operation::put_function_concurrency::_put_function_concurrency_input::PutFunctionConcurrencyInput;
+
+pub use crate::operation::put_function_concurrency::_put_function_concurrency_output::PutFunctionConcurrencyOutput;
 
 mod _put_function_concurrency_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_encrypti
     }
 }
 
-pub use crate::operation::associate_encryption_config::_associate_encryption_config_output::AssociateEncryptionConfigOutput;
-
 pub use crate::operation::associate_encryption_config::_associate_encryption_config_input::AssociateEncryptionConfigInput;
+
+pub use crate::operation::associate_encryption_config::_associate_encryption_config_output::AssociateEncryptionConfigOutput;
 
 mod _associate_encryption_config_input;
 

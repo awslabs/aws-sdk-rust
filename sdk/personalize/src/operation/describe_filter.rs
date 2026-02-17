@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_filter::D
     }
 }
 
-pub use crate::operation::describe_filter::_describe_filter_output::DescribeFilterOutput;
-
 pub use crate::operation::describe_filter::_describe_filter_input::DescribeFilterInput;
+
+pub use crate::operation::describe_filter::_describe_filter_output::DescribeFilterOutput;
 
 mod _describe_filter_input;
 

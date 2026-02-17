@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::sync_resource::Syn
     }
 }
 
-pub use crate::operation::sync_resource::_sync_resource_output::SyncResourceOutput;
-
 pub use crate::operation::sync_resource::_sync_resource_input::SyncResourceInput;
+
+pub use crate::operation::sync_resource::_sync_resource_output::SyncResourceOutput;
 
 mod _sync_resource_input;
 

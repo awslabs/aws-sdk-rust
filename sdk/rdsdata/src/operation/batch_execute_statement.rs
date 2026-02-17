@@ -504,9 +504,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_execute_stat
     }
 }
 
-pub use crate::operation::batch_execute_statement::_batch_execute_statement_output::BatchExecuteStatementOutput;
-
 pub use crate::operation::batch_execute_statement::_batch_execute_statement_input::BatchExecuteStatementInput;
+
+pub use crate::operation::batch_execute_statement::_batch_execute_statement_output::BatchExecuteStatementOutput;
 
 mod _batch_execute_statement_input;
 

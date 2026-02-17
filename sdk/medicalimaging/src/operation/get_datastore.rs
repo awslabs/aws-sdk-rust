@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_datastore::Get
     }
 }
 
-pub use crate::operation::get_datastore::_get_datastore_output::GetDatastoreOutput;
-
 pub use crate::operation::get_datastore::_get_datastore_input::GetDatastoreInput;
+
+pub use crate::operation::get_datastore::_get_datastore_output::GetDatastoreOutput;
 
 mod _get_datastore_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configuration_
     }
 }
 
-pub use crate::operation::get_configuration_policy::_get_configuration_policy_output::GetConfigurationPolicyOutput;
-
 pub use crate::operation::get_configuration_policy::_get_configuration_policy_input::GetConfigurationPolicyInput;
+
+pub use crate::operation::get_configuration_policy::_get_configuration_policy_output::GetConfigurationPolicyOutput;
 
 mod _get_configuration_policy_input;
 

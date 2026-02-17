@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_shar
     }
 }
 
-pub use crate::operation::describe_data_shares_for_consumer::_describe_data_shares_for_consumer_output::DescribeDataSharesForConsumerOutput;
-
 pub use crate::operation::describe_data_shares_for_consumer::_describe_data_shares_for_consumer_input::DescribeDataSharesForConsumerInput;
+
+pub use crate::operation::describe_data_shares_for_consumer::_describe_data_shares_for_consumer_output::DescribeDataSharesForConsumerOutput;
 
 mod _describe_data_shares_for_consumer_input;
 

@@ -611,9 +611,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_aws_service_a
     }
 }
 
-pub use crate::operation::list_aws_service_access_for_organization::_list_aws_service_access_for_organization_output::ListAwsServiceAccessForOrganizationOutput;
-
 pub use crate::operation::list_aws_service_access_for_organization::_list_aws_service_access_for_organization_input::ListAwsServiceAccessForOrganizationInput;
+
+pub use crate::operation::list_aws_service_access_for_organization::_list_aws_service_access_for_organization_output::ListAwsServiceAccessForOrganizationOutput;
 
 mod _list_aws_service_access_for_organization_input;
 

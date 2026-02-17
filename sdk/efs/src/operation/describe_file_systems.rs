@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_file_syst
     }
 }
 
-pub use crate::operation::describe_file_systems::_describe_file_systems_output::DescribeFileSystemsOutput;
-
 pub use crate::operation::describe_file_systems::_describe_file_systems_input::DescribeFileSystemsInput;
+
+pub use crate::operation::describe_file_systems::_describe_file_systems_output::DescribeFileSystemsOutput;
 
 mod _describe_file_systems_input;
 

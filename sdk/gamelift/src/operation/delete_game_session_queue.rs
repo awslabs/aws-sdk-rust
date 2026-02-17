@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_game_sessio
     }
 }
 
-pub use crate::operation::delete_game_session_queue::_delete_game_session_queue_output::DeleteGameSessionQueueOutput;
-
 pub use crate::operation::delete_game_session_queue::_delete_game_session_queue_input::DeleteGameSessionQueueInput;
+
+pub use crate::operation::delete_game_session_queue::_delete_game_session_queue_output::DeleteGameSessionQueueOutput;
 
 mod _delete_game_session_queue_input;
 

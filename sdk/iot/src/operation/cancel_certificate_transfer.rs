@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_certificate
     }
 }
 
-pub use crate::operation::cancel_certificate_transfer::_cancel_certificate_transfer_output::CancelCertificateTransferOutput;
-
 pub use crate::operation::cancel_certificate_transfer::_cancel_certificate_transfer_input::CancelCertificateTransferInput;
+
+pub use crate::operation::cancel_certificate_transfer::_cancel_certificate_transfer_output::CancelCertificateTransferOutput;
 
 mod _cancel_certificate_transfer_input;
 

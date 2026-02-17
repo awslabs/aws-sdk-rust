@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_web_experie
     }
 }
 
-pub use crate::operation::create_web_experience::_create_web_experience_output::CreateWebExperienceOutput;
-
 pub use crate::operation::create_web_experience::_create_web_experience_input::CreateWebExperienceInput;
+
+pub use crate::operation::create_web_experience::_create_web_experience_output::CreateWebExperienceOutput;
 
 mod _create_web_experience_input;
 

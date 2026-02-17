@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tls_inspect
     }
 }
 
-pub use crate::operation::delete_tls_inspection_configuration::_delete_tls_inspection_configuration_output::DeleteTlsInspectionConfigurationOutput;
-
 pub use crate::operation::delete_tls_inspection_configuration::_delete_tls_inspection_configuration_input::DeleteTlsInspectionConfigurationInput;
+
+pub use crate::operation::delete_tls_inspection_configuration::_delete_tls_inspection_configuration_output::DeleteTlsInspectionConfigurationOutput;
 
 mod _delete_tls_inspection_configuration_input;
 

@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_state_machine
     }
 }
 
-pub use crate::operation::list_state_machines::_list_state_machines_output::ListStateMachinesOutput;
-
 pub use crate::operation::list_state_machines::_list_state_machines_input::ListStateMachinesInput;
+
+pub use crate::operation::list_state_machines::_list_state_machines_output::ListStateMachinesOutput;
 
 mod _list_state_machines_input;
 

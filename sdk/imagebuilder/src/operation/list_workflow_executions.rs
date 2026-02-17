@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_exec
     }
 }
 
-pub use crate::operation::list_workflow_executions::_list_workflow_executions_output::ListWorkflowExecutionsOutput;
-
 pub use crate::operation::list_workflow_executions::_list_workflow_executions_input::ListWorkflowExecutionsInput;
+
+pub use crate::operation::list_workflow_executions::_list_workflow_executions_output::ListWorkflowExecutionsOutput;
 
 mod _list_workflow_executions_input;
 

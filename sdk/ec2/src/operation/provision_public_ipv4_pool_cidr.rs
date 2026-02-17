@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provision_public_i
     }
 }
 
-pub use crate::operation::provision_public_ipv4_pool_cidr::_provision_public_ipv4_pool_cidr_output::ProvisionPublicIpv4PoolCidrOutput;
-
 pub use crate::operation::provision_public_ipv4_pool_cidr::_provision_public_ipv4_pool_cidr_input::ProvisionPublicIpv4PoolCidrInput;
+
+pub use crate::operation::provision_public_ipv4_pool_cidr::_provision_public_ipv4_pool_cidr_output::ProvisionPublicIpv4PoolCidrOutput;
 
 mod _provision_public_ipv4_pool_cidr_input;
 

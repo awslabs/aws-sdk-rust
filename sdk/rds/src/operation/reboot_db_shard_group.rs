@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_db_shard_gr
     }
 }
 
-pub use crate::operation::reboot_db_shard_group::_reboot_db_shard_group_output::RebootDbShardGroupOutput;
-
 pub use crate::operation::reboot_db_shard_group::_reboot_db_shard_group_input::RebootDbShardGroupInput;
+
+pub use crate::operation::reboot_db_shard_group::_reboot_db_shard_group_output::RebootDbShardGroupOutput;
 
 mod _reboot_db_shard_group_input;
 

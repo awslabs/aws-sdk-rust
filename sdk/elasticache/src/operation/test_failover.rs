@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_failover::Tes
     }
 }
 
-pub use crate::operation::test_failover::_test_failover_output::TestFailoverOutput;
-
 pub use crate::operation::test_failover::_test_failover_input::TestFailoverInput;
+
+pub use crate::operation::test_failover::_test_failover_output::TestFailoverOutput;
 
 mod _test_failover_input;
 

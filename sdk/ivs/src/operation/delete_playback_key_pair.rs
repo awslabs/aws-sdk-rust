@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_playback_ke
     }
 }
 
-pub use crate::operation::delete_playback_key_pair::_delete_playback_key_pair_output::DeletePlaybackKeyPairOutput;
-
 pub use crate::operation::delete_playback_key_pair::_delete_playback_key_pair_input::DeletePlaybackKeyPairInput;
+
+pub use crate::operation::delete_playback_key_pair::_delete_playback_key_pair_output::DeletePlaybackKeyPairOutput;
 
 mod _delete_playback_key_pair_input;
 

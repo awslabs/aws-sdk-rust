@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_custom_endpoin
     }
 }
 
-pub use crate::operation::get_custom_endpoint::_get_custom_endpoint_output::GetCustomEndpointOutput;
-
 pub use crate::operation::get_custom_endpoint::_get_custom_endpoint_input::GetCustomEndpointInput;
+
+pub use crate::operation::get_custom_endpoint::_get_custom_endpoint_output::GetCustomEndpointOutput;
 
 mod _get_custom_endpoint_input;
 

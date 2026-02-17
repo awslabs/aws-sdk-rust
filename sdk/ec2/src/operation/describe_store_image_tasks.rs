@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_store_ima
     }
 }
 
-pub use crate::operation::describe_store_image_tasks::_describe_store_image_tasks_output::DescribeStoreImageTasksOutput;
-
 pub use crate::operation::describe_store_image_tasks::_describe_store_image_tasks_input::DescribeStoreImageTasksInput;
+
+pub use crate::operation::describe_store_image_tasks::_describe_store_image_tasks_output::DescribeStoreImageTasksOutput;
 
 mod _describe_store_image_tasks_input;
 

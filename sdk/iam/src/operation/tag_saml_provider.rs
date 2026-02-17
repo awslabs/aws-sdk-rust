@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_saml_provider:
     }
 }
 
-pub use crate::operation::tag_saml_provider::_tag_saml_provider_output::TagSamlProviderOutput;
-
 pub use crate::operation::tag_saml_provider::_tag_saml_provider_input::TagSamlProviderInput;
+
+pub use crate::operation::tag_saml_provider::_tag_saml_provider_output::TagSamlProviderOutput;
 
 mod _tag_saml_provider_input;
 

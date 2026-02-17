@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_conversations
     }
 }
 
-pub use crate::operation::list_conversations::_list_conversations_output::ListConversationsOutput;
-
 pub use crate::operation::list_conversations::_list_conversations_input::ListConversationsInput;
+
+pub use crate::operation::list_conversations::_list_conversations_output::ListConversationsOutput;
 
 mod _list_conversations_input;
 

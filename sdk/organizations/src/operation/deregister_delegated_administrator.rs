@@ -639,9 +639,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_delegat
     }
 }
 
-pub use crate::operation::deregister_delegated_administrator::_deregister_delegated_administrator_output::DeregisterDelegatedAdministratorOutput;
-
 pub use crate::operation::deregister_delegated_administrator::_deregister_delegated_administrator_input::DeregisterDelegatedAdministratorInput;
+
+pub use crate::operation::deregister_delegated_administrator::_deregister_delegated_administrator_output::DeregisterDelegatedAdministratorOutput;
 
 mod _deregister_delegated_administrator_input;
 

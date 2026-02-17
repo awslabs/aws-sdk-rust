@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_restore_jobs_
     }
 }
 
-pub use crate::operation::list_restore_jobs_by_protected_resource::_list_restore_jobs_by_protected_resource_output::ListRestoreJobsByProtectedResourceOutput;
-
 pub use crate::operation::list_restore_jobs_by_protected_resource::_list_restore_jobs_by_protected_resource_input::ListRestoreJobsByProtectedResourceInput;
+
+pub use crate::operation::list_restore_jobs_by_protected_resource::_list_restore_jobs_by_protected_resource_output::ListRestoreJobsByProtectedResourceOutput;
 
 mod _list_restore_jobs_by_protected_resource_input;
 

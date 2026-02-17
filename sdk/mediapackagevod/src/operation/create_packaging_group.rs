@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_packaging_g
     }
 }
 
-pub use crate::operation::create_packaging_group::_create_packaging_group_output::CreatePackagingGroupOutput;
-
 pub use crate::operation::create_packaging_group::_create_packaging_group_input::CreatePackagingGroupInput;
+
+pub use crate::operation::create_packaging_group::_create_packaging_group_output::CreatePackagingGroupOutput;
 
 mod _create_packaging_group_input;
 

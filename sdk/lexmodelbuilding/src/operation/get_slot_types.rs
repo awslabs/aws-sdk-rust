@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_slot_types::Ge
     }
 }
 
-pub use crate::operation::get_slot_types::_get_slot_types_output::GetSlotTypesOutput;
-
 pub use crate::operation::get_slot_types::_get_slot_types_input::GetSlotTypesInput;
+
+pub use crate::operation::get_slot_types::_get_slot_types_output::GetSlotTypesOutput;
 
 mod _get_slot_types_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_key_group::
     }
 }
 
-pub use crate::operation::update_key_group::_update_key_group_output::UpdateKeyGroupOutput;
-
 pub use crate::operation::update_key_group::_update_key_group_input::UpdateKeyGroupInput;
+
+pub use crate::operation::update_key_group::_update_key_group_output::UpdateKeyGroupOutput;
 
 mod _update_key_group_input;
 

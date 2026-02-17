@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_change_se
     }
 }
 
-pub use crate::operation::describe_change_set::_describe_change_set_output::DescribeChangeSetOutput;
-
 pub use crate::operation::describe_change_set::_describe_change_set_input::DescribeChangeSetInput;
+
+pub use crate::operation::describe_change_set::_describe_change_set_output::DescribeChangeSetOutput;
 
 mod _describe_change_set_input;
 

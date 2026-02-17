@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_key::Export
     }
 }
 
-pub use crate::operation::export_key::_export_key_output::ExportKeyOutput;
-
 pub use crate::operation::export_key::_export_key_input::ExportKeyInput;
+
+pub use crate::operation::export_key::_export_key_output::ExportKeyOutput;
 
 mod _export_key_input;
 

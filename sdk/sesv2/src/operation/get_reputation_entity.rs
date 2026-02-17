@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reputation_ent
     }
 }
 
-pub use crate::operation::get_reputation_entity::_get_reputation_entity_output::GetReputationEntityOutput;
-
 pub use crate::operation::get_reputation_entity::_get_reputation_entity_input::GetReputationEntityInput;
+
+pub use crate::operation::get_reputation_entity::_get_reputation_entity_output::GetReputationEntityOutput;
 
 mod _get_reputation_entity_input;
 

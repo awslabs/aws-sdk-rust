@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_destination_n
     }
 }
 
-pub use crate::operation::send_destination_number_verification_code::_send_destination_number_verification_code_output::SendDestinationNumberVerificationCodeOutput;
-
 pub use crate::operation::send_destination_number_verification_code::_send_destination_number_verification_code_input::SendDestinationNumberVerificationCodeInput;
+
+pub use crate::operation::send_destination_number_verification_code::_send_destination_number_verification_code_output::SendDestinationNumberVerificationCodeOutput;
 
 mod _send_destination_number_verification_code_input;
 

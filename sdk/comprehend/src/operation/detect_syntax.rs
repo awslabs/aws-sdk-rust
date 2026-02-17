@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_syntax::Det
     }
 }
 
-pub use crate::operation::detect_syntax::_detect_syntax_output::DetectSyntaxOutput;
-
 pub use crate::operation::detect_syntax::_detect_syntax_input::DetectSyntaxInput;
+
+pub use crate::operation::detect_syntax::_detect_syntax_output::DetectSyntaxOutput;
 
 mod _detect_syntax_input;
 

@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_auto_terminati
     }
 }
 
-pub use crate::operation::put_auto_termination_policy::_put_auto_termination_policy_output::PutAutoTerminationPolicyOutput;
-
 pub use crate::operation::put_auto_termination_policy::_put_auto_termination_policy_input::PutAutoTerminationPolicyInput;
+
+pub use crate::operation::put_auto_termination_policy::_put_auto_termination_policy_output::PutAutoTerminationPolicyOutput;
 
 mod _put_auto_termination_policy_input;
 

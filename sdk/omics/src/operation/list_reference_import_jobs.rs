@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_reference_imp
     }
 }
 
-pub use crate::operation::list_reference_import_jobs::_list_reference_import_jobs_output::ListReferenceImportJobsOutput;
-
 pub use crate::operation::list_reference_import_jobs::_list_reference_import_jobs_input::ListReferenceImportJobsInput;
+
+pub use crate::operation::list_reference_import_jobs::_list_reference_import_jobs_output::ListReferenceImportJobsOutput;
 
 mod _list_reference_import_jobs_input;
 

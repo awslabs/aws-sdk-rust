@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sprites::GetSp
     }
 }
 
-pub use crate::operation::get_sprites::_get_sprites_output::GetSpritesOutput;
-
 pub use crate::operation::get_sprites::_get_sprites_input::GetSpritesInput;
+
+pub use crate::operation::get_sprites::_get_sprites_output::GetSpritesOutput;
 
 mod _get_sprites_input;
 

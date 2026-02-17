@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_apns_sandbox_c
     }
 }
 
-pub use crate::operation::get_apns_sandbox_channel::_get_apns_sandbox_channel_output::GetApnsSandboxChannelOutput;
-
 pub use crate::operation::get_apns_sandbox_channel::_get_apns_sandbox_channel_input::GetApnsSandboxChannelInput;
+
+pub use crate::operation::get_apns_sandbox_channel::_get_apns_sandbox_channel_output::GetApnsSandboxChannelOutput;
 
 mod _get_apns_sandbox_channel_input;
 

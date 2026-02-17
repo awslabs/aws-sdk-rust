@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_confli
     }
 }
 
-pub use crate::operation::list_domain_conflicts::_list_domain_conflicts_output::ListDomainConflictsOutput;
-
 pub use crate::operation::list_domain_conflicts::_list_domain_conflicts_input::ListDomainConflictsInput;
+
+pub use crate::operation::list_domain_conflicts::_list_domain_conflicts_output::ListDomainConflictsOutput;
 
 mod _list_domain_conflicts_input;
 

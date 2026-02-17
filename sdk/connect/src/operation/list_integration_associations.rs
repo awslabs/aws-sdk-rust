@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_integration_a
     }
 }
 
-pub use crate::operation::list_integration_associations::_list_integration_associations_output::ListIntegrationAssociationsOutput;
-
 pub use crate::operation::list_integration_associations::_list_integration_associations_input::ListIntegrationAssociationsInput;
+
+pub use crate::operation::list_integration_associations::_list_integration_associations_output::ListIntegrationAssociationsOutput;
 
 mod _list_integration_associations_input;
 

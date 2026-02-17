@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_delivery_
     }
 }
 
-pub use crate::operation::describe_delivery_channels::_describe_delivery_channels_output::DescribeDeliveryChannelsOutput;
-
 pub use crate::operation::describe_delivery_channels::_describe_delivery_channels_input::DescribeDeliveryChannelsInput;
+
+pub use crate::operation::describe_delivery_channels::_describe_delivery_channels_output::DescribeDeliveryChannelsOutput;
 
 mod _describe_delivery_channels_input;
 

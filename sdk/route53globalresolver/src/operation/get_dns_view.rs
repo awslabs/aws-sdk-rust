@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dns_view::GetD
     }
 }
 
-pub use crate::operation::get_dns_view::_get_dns_view_output::GetDnsViewOutput;
-
 pub use crate::operation::get_dns_view::_get_dns_view_input::GetDnsViewInput;
+
+pub use crate::operation::get_dns_view::_get_dns_view_output::GetDnsViewOutput;
 
 mod _get_dns_view_input;
 

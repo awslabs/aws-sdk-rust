@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_instance_ref
     }
 }
 
-pub use crate::operation::start_instance_refresh::_start_instance_refresh_output::StartInstanceRefreshOutput;
-
 pub use crate::operation::start_instance_refresh::_start_instance_refresh_input::StartInstanceRefreshInput;
+
+pub use crate::operation::start_instance_refresh::_start_instance_refresh_output::StartInstanceRefreshOutput;
 
 mod _start_instance_refresh_input;
 

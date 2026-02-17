@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_rx_norm_infer
     }
 }
 
-pub use crate::operation::stop_rx_norm_inference_job::_stop_rx_norm_inference_job_output::StopRxNormInferenceJobOutput;
-
 pub use crate::operation::stop_rx_norm_inference_job::_stop_rx_norm_inference_job_input::StopRxNormInferenceJobInput;
+
+pub use crate::operation::stop_rx_norm_inference_job::_stop_rx_norm_inference_job_output::StopRxNormInferenceJobOutput;
 
 mod _stop_rx_norm_inference_job_input;
 

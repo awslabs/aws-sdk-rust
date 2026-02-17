@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_user_
     }
 }
 
-pub use crate::operation::disassociate_user_access_logging_settings::_disassociate_user_access_logging_settings_output::DisassociateUserAccessLoggingSettingsOutput;
-
 pub use crate::operation::disassociate_user_access_logging_settings::_disassociate_user_access_logging_settings_input::DisassociateUserAccessLoggingSettingsInput;
+
+pub use crate::operation::disassociate_user_access_logging_settings::_disassociate_user_access_logging_settings_output::DisassociateUserAccessLoggingSettingsOutput;
 
 mod _disassociate_user_access_logging_settings_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ai_guardrail::
     }
 }
 
-pub use crate::operation::get_ai_guardrail::_get_ai_guardrail_output::GetAiGuardrailOutput;
-
 pub use crate::operation::get_ai_guardrail::_get_ai_guardrail_input::GetAiGuardrailInput;
+
+pub use crate::operation::get_ai_guardrail::_get_ai_guardrail_output::GetAiGuardrailOutput;
 
 mod _get_ai_guardrail_input;
 

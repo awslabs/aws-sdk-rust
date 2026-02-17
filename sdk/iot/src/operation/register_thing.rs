@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_thing::Re
     }
 }
 
-pub use crate::operation::register_thing::_register_thing_output::RegisterThingOutput;
-
 pub use crate::operation::register_thing::_register_thing_input::RegisterThingInput;
+
+pub use crate::operation::register_thing::_register_thing_output::RegisterThingOutput;
 
 mod _register_thing_input;
 

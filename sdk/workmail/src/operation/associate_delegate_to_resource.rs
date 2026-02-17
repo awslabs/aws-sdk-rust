@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_delegate
     }
 }
 
-pub use crate::operation::associate_delegate_to_resource::_associate_delegate_to_resource_output::AssociateDelegateToResourceOutput;
-
 pub use crate::operation::associate_delegate_to_resource::_associate_delegate_to_resource_input::AssociateDelegateToResourceInput;
+
+pub use crate::operation::associate_delegate_to_resource::_associate_delegate_to_resource_output::AssociateDelegateToResourceOutput;
 
 mod _associate_delegate_to_resource_input;
 

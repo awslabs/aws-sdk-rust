@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_account_lin
     }
 }
 
-pub use crate::operation::reject_account_link_invitation::_reject_account_link_invitation_output::RejectAccountLinkInvitationOutput;
-
 pub use crate::operation::reject_account_link_invitation::_reject_account_link_invitation_input::RejectAccountLinkInvitationInput;
+
+pub use crate::operation::reject_account_link_invitation::_reject_account_link_invitation_output::RejectAccountLinkInvitationOutput;
 
 mod _reject_account_link_invitation_input;
 

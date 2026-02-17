@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_conne
     }
 }
 
-pub use crate::operation::disassociate_connect_peer::_disassociate_connect_peer_output::DisassociateConnectPeerOutput;
-
 pub use crate::operation::disassociate_connect_peer::_disassociate_connect_peer_input::DisassociateConnectPeerInput;
+
+pub use crate::operation::disassociate_connect_peer::_disassociate_connect_peer_output::DisassociateConnectPeerOutput;
 
 mod _disassociate_connect_peer_input;
 

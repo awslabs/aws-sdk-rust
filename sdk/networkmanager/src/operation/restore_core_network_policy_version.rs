@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_core_netwo
     }
 }
 
-pub use crate::operation::restore_core_network_policy_version::_restore_core_network_policy_version_output::RestoreCoreNetworkPolicyVersionOutput;
-
 pub use crate::operation::restore_core_network_policy_version::_restore_core_network_policy_version_input::RestoreCoreNetworkPolicyVersionInput;
+
+pub use crate::operation::restore_core_network_policy_version::_restore_core_network_policy_version_output::RestoreCoreNetworkPolicyVersionOutput;
 
 mod _restore_core_network_policy_version_input;
 

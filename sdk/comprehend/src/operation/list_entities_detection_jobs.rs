@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entities_dete
     }
 }
 
-pub use crate::operation::list_entities_detection_jobs::_list_entities_detection_jobs_output::ListEntitiesDetectionJobsOutput;
-
 pub use crate::operation::list_entities_detection_jobs::_list_entities_detection_jobs_input::ListEntitiesDetectionJobsInput;
+
+pub use crate::operation::list_entities_detection_jobs::_list_entities_detection_jobs_output::ListEntitiesDetectionJobsOutput;
 
 mod _list_entities_detection_jobs_input;
 

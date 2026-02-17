@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_per
     }
 }
 
-pub use crate::operation::describe_image_permissions::_describe_image_permissions_output::DescribeImagePermissionsOutput;
-
 pub use crate::operation::describe_image_permissions::_describe_image_permissions_input::DescribeImagePermissionsInput;
+
+pub use crate::operation::describe_image_permissions::_describe_image_permissions_output::DescribeImagePermissionsOutput;
 
 mod _describe_image_permissions_input;
 

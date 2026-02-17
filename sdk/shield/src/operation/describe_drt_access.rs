@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_drt_acces
     }
 }
 
-pub use crate::operation::describe_drt_access::_describe_drt_access_output::DescribeDrtAccessOutput;
-
 pub use crate::operation::describe_drt_access::_describe_drt_access_input::DescribeDrtAccessInput;
+
+pub use crate::operation::describe_drt_access::_describe_drt_access_output::DescribeDrtAccessOutput;
 
 mod _describe_drt_access_input;
 

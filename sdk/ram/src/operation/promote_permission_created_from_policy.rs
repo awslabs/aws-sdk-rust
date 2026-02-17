@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::promote_permission
     }
 }
 
-pub use crate::operation::promote_permission_created_from_policy::_promote_permission_created_from_policy_output::PromotePermissionCreatedFromPolicyOutput;
-
 pub use crate::operation::promote_permission_created_from_policy::_promote_permission_created_from_policy_input::PromotePermissionCreatedFromPolicyInput;
+
+pub use crate::operation::promote_permission_created_from_policy::_promote_permission_created_from_policy_output::PromotePermissionCreatedFromPolicyOutput;
 
 mod _promote_permission_created_from_policy_input;
 

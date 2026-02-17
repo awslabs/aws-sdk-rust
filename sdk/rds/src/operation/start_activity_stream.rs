@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_activity_str
     }
 }
 
-pub use crate::operation::start_activity_stream::_start_activity_stream_output::StartActivityStreamOutput;
-
 pub use crate::operation::start_activity_stream::_start_activity_stream_input::StartActivityStreamInput;
+
+pub use crate::operation::start_activity_stream::_start_activity_stream_output::StartActivityStreamOutput;
 
 mod _start_activity_stream_input;
 

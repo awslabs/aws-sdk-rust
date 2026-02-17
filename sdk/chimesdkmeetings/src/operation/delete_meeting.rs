@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_meeting::De
     }
 }
 
-pub use crate::operation::delete_meeting::_delete_meeting_output::DeleteMeetingOutput;
-
 pub use crate::operation::delete_meeting::_delete_meeting_input::DeleteMeetingInput;
+
+pub use crate::operation::delete_meeting::_delete_meeting_output::DeleteMeetingOutput;
 
 mod _delete_meeting_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_onboa
     }
 }
 
-pub use crate::operation::get_instance_onboarding_job_status::_get_instance_onboarding_job_status_output::GetInstanceOnboardingJobStatusOutput;
-
 pub use crate::operation::get_instance_onboarding_job_status::_get_instance_onboarding_job_status_input::GetInstanceOnboardingJobStatusInput;
+
+pub use crate::operation::get_instance_onboarding_job_status::_get_instance_onboarding_job_status_output::GetInstanceOnboardingJobStatusOutput;
 
 mod _get_instance_onboarding_job_status_input;
 

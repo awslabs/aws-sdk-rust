@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_thing_runti
     }
 }
 
-pub use crate::operation::update_thing_runtime_configuration::_update_thing_runtime_configuration_output::UpdateThingRuntimeConfigurationOutput;
-
 pub use crate::operation::update_thing_runtime_configuration::_update_thing_runtime_configuration_input::UpdateThingRuntimeConfigurationInput;
+
+pub use crate::operation::update_thing_runtime_configuration::_update_thing_runtime_configuration_output::UpdateThingRuntimeConfigurationOutput;
 
 mod _update_thing_runtime_configuration_input;
 

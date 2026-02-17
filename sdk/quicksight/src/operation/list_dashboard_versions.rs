@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dashboard_ver
     }
 }
 
-pub use crate::operation::list_dashboard_versions::_list_dashboard_versions_output::ListDashboardVersionsOutput;
-
 pub use crate::operation::list_dashboard_versions::_list_dashboard_versions_input::ListDashboardVersionsInput;
+
+pub use crate::operation::list_dashboard_versions::_list_dashboard_versions_output::ListDashboardVersionsOutput;
 
 mod _list_dashboard_versions_input;
 

@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_groups::Sea
     }
 }
 
-pub use crate::operation::search_groups::_search_groups_output::SearchGroupsOutput;
-
 pub use crate::operation::search_groups::_search_groups_input::SearchGroupsInput;
+
+pub use crate::operation::search_groups::_search_groups_output::SearchGroupsOutput;
 
 mod _search_groups_input;
 

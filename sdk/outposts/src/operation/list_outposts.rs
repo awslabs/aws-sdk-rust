@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_outposts::Lis
     }
 }
 
-pub use crate::operation::list_outposts::_list_outposts_output::ListOutpostsOutput;
-
 pub use crate::operation::list_outposts::_list_outposts_input::ListOutpostsInput;
+
+pub use crate::operation::list_outposts::_list_outposts_output::ListOutpostsOutput;
 
 mod _list_outposts_input;
 

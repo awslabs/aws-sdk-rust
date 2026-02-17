@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_parameter
     }
 }
 
-pub use crate::operation::describe_parameter_groups::_describe_parameter_groups_output::DescribeParameterGroupsOutput;
-
 pub use crate::operation::describe_parameter_groups::_describe_parameter_groups_input::DescribeParameterGroupsInput;
+
+pub use crate::operation::describe_parameter_groups::_describe_parameter_groups_output::DescribeParameterGroupsOutput;
 
 mod _describe_parameter_groups_input;
 

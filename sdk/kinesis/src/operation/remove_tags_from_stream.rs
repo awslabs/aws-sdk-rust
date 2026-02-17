@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_tags_from_s
     }
 }
 
-pub use crate::operation::remove_tags_from_stream::_remove_tags_from_stream_output::RemoveTagsFromStreamOutput;
-
 pub use crate::operation::remove_tags_from_stream::_remove_tags_from_stream_input::RemoveTagsFromStreamInput;
+
+pub use crate::operation::remove_tags_from_stream::_remove_tags_from_stream_output::RemoveTagsFromStreamOutput;
 
 mod _remove_tags_from_stream_input;
 

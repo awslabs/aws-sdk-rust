@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_destination::P
     }
 }
 
-pub use crate::operation::put_destination::_put_destination_output::PutDestinationOutput;
-
 pub use crate::operation::put_destination::_put_destination_input::PutDestinationInput;
+
+pub use crate::operation::put_destination::_put_destination_output::PutDestinationOutput;
 
 mod _put_destination_input;
 

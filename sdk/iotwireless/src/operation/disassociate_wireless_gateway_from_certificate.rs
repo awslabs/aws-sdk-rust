@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disassociate_wireless_gateway_from_certificate_output::DisassociateWirelessGatewayFromCertificateOutput;
-
 pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disassociate_wireless_gateway_from_certificate_input::DisassociateWirelessGatewayFromCertificateInput;
+
+pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disassociate_wireless_gateway_from_certificate_output::DisassociateWirelessGatewayFromCertificateOutput;
 
 mod _disassociate_wireless_gateway_from_certificate_input;
 

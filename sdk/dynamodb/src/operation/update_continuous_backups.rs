@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_continuous_
     }
 }
 
-pub use crate::operation::update_continuous_backups::_update_continuous_backups_output::UpdateContinuousBackupsOutput;
-
 pub use crate::operation::update_continuous_backups::_update_continuous_backups_input::UpdateContinuousBackupsInput;
+
+pub use crate::operation::update_continuous_backups::_update_continuous_backups_output::UpdateContinuousBackupsOutput;
 
 mod _update_continuous_backups_input;
 

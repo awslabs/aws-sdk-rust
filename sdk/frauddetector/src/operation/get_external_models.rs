@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_external_model
     }
 }
 
-pub use crate::operation::get_external_models::_get_external_models_output::GetExternalModelsOutput;
-
 pub use crate::operation::get_external_models::_get_external_models_input::GetExternalModelsInput;
+
+pub use crate::operation::get_external_models::_get_external_models_output::GetExternalModelsOutput;
 
 mod _get_external_models_input;
 

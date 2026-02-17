@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_permission
     }
 }
 
-pub use crate::operation::replace_permission_associations::_replace_permission_associations_output::ReplacePermissionAssociationsOutput;
-
 pub use crate::operation::replace_permission_associations::_replace_permission_associations_input::ReplacePermissionAssociationsInput;
+
+pub use crate::operation::replace_permission_associations::_replace_permission_associations_output::ReplacePermissionAssociationsOutput;
 
 mod _replace_permission_associations_input;
 

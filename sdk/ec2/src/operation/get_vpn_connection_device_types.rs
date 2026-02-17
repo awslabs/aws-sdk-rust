@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpn_connection
     }
 }
 
-pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_device_types_output::GetVpnConnectionDeviceTypesOutput;
-
 pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_device_types_input::GetVpnConnectionDeviceTypesInput;
+
+pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_device_types_output::GetVpnConnectionDeviceTypesOutput;
 
 mod _get_vpn_connection_device_types_input;
 

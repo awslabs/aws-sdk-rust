@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::define_expression:
     }
 }
 
-pub use crate::operation::define_expression::_define_expression_output::DefineExpressionOutput;
-
 pub use crate::operation::define_expression::_define_expression_input::DefineExpressionInput;
+
+pub use crate::operation::define_expression::_define_expression_output::DefineExpressionOutput;
 
 mod _define_expression_input;
 

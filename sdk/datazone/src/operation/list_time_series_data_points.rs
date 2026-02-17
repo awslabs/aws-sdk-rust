@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_time_series_d
     }
 }
 
-pub use crate::operation::list_time_series_data_points::_list_time_series_data_points_output::ListTimeSeriesDataPointsOutput;
-
 pub use crate::operation::list_time_series_data_points::_list_time_series_data_points_input::ListTimeSeriesDataPointsInput;
+
+pub use crate::operation::list_time_series_data_points::_list_time_series_data_points_output::ListTimeSeriesDataPointsOutput;
 
 mod _list_time_series_data_points_input;
 

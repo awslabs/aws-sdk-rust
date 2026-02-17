@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_buckets::GetBu
     }
 }
 
-pub use crate::operation::get_buckets::_get_buckets_output::GetBucketsOutput;
-
 pub use crate::operation::get_buckets::_get_buckets_input::GetBucketsInput;
+
+pub use crate::operation::get_buckets::_get_buckets_output::GetBucketsOutput;
 
 mod _get_buckets_input;
 

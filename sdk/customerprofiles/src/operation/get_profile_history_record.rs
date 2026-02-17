@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_histor
     }
 }
 
-pub use crate::operation::get_profile_history_record::_get_profile_history_record_output::GetProfileHistoryRecordOutput;
-
 pub use crate::operation::get_profile_history_record::_get_profile_history_record_input::GetProfileHistoryRecordInput;
+
+pub use crate::operation::get_profile_history_record::_get_profile_history_record_output::GetProfileHistoryRecordOutput;
 
 mod _get_profile_history_record_input;
 

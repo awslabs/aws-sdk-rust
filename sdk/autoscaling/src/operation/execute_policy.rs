@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_policy::Ex
     }
 }
 
-pub use crate::operation::execute_policy::_execute_policy_output::ExecutePolicyOutput;
-
 pub use crate::operation::execute_policy::_execute_policy_input::ExecutePolicyInput;
+
+pub use crate::operation::execute_policy::_execute_policy_output::ExecutePolicyOutput;
 
 mod _execute_policy_input;
 

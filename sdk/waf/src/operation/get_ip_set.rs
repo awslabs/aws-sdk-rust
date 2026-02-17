@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ip_set::GetIPS
     }
 }
 
-pub use crate::operation::get_ip_set::_get_ip_set_output::GetIpSetOutput;
-
 pub use crate::operation::get_ip_set::_get_ip_set_input::GetIpSetInput;
+
+pub use crate::operation::get_ip_set::_get_ip_set_output::GetIpSetOutput;
 
 mod _get_ip_set_input;
 

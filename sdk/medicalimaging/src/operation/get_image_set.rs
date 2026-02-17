@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_set::Get
     }
 }
 
-pub use crate::operation::get_image_set::_get_image_set_output::GetImageSetOutput;
-
 pub use crate::operation::get_image_set::_get_image_set_input::GetImageSetInput;
+
+pub use crate::operation::get_image_set::_get_image_set_output::GetImageSetOutput;
 
 mod _get_image_set_input;
 

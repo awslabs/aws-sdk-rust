@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_db_cluster::
     }
 }
 
-pub use crate::operation::start_db_cluster::_start_db_cluster_output::StartDbClusterOutput;
-
 pub use crate::operation::start_db_cluster::_start_db_cluster_input::StartDbClusterInput;
+
+pub use crate::operation::start_db_cluster::_start_db_cluster_output::StartDbClusterOutput;
 
 mod _start_db_cluster_input;
 

@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::notify_application
     }
 }
 
-pub use crate::operation::notify_application_state::_notify_application_state_output::NotifyApplicationStateOutput;
-
 pub use crate::operation::notify_application_state::_notify_application_state_input::NotifyApplicationStateInput;
+
+pub use crate::operation::notify_application_state::_notify_application_state_output::NotifyApplicationStateOutput;
 
 mod _notify_application_state_input;
 

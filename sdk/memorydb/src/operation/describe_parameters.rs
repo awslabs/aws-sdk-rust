@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_parameter
     }
 }
 
-pub use crate::operation::describe_parameters::_describe_parameters_output::DescribeParametersOutput;
-
 pub use crate::operation::describe_parameters::_describe_parameters_input::DescribeParametersInput;
+
+pub use crate::operation::describe_parameters::_describe_parameters_output::DescribeParametersOutput;
 
 mod _describe_parameters_input;
 

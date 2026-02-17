@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ip_access_s
     }
 }
 
-pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_output::CreateIpAccessSettingsOutput;
-
 pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_input::CreateIpAccessSettingsInput;
+
+pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_output::CreateIpAccessSettingsOutput;
 
 mod _create_ip_access_settings_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::scan_provisioned_p
     }
 }
 
-pub use crate::operation::scan_provisioned_products::_scan_provisioned_products_output::ScanProvisionedProductsOutput;
-
 pub use crate::operation::scan_provisioned_products::_scan_provisioned_products_input::ScanProvisionedProductsInput;
+
+pub use crate::operation::scan_provisioned_products::_scan_provisioned_products_output::ScanProvisionedProductsOutput;
 
 mod _scan_provisioned_products_input;
 

@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_global_tables
     }
 }
 
-pub use crate::operation::list_global_tables::_list_global_tables_output::ListGlobalTablesOutput;
-
 pub use crate::operation::list_global_tables::_list_global_tables_input::ListGlobalTablesInput;
+
+pub use crate::operation::list_global_tables::_list_global_tables_output::ListGlobalTablesOutput;
 
 mod _list_global_tables_input;
 

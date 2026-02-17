@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_bus::
     }
 }
 
-pub use crate::operation::create_event_bus::_create_event_bus_output::CreateEventBusOutput;
-
 pub use crate::operation::create_event_bus::_create_event_bus_input::CreateEventBusInput;
+
+pub use crate::operation::create_event_bus::_create_event_bus_output::CreateEventBusOutput;
 
 mod _create_event_bus_input;
 

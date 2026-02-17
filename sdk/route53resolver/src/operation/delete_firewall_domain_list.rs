@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_firewall_do
     }
 }
 
-pub use crate::operation::delete_firewall_domain_list::_delete_firewall_domain_list_output::DeleteFirewallDomainListOutput;
-
 pub use crate::operation::delete_firewall_domain_list::_delete_firewall_domain_list_input::DeleteFirewallDomainListInput;
+
+pub use crate::operation::delete_firewall_domain_list::_delete_firewall_domain_list_output::DeleteFirewallDomainListOutput;
 
 mod _delete_firewall_domain_list_input;
 

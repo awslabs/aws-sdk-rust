@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_wireless_gatew
     }
 }
 
-pub use crate::operation::get_wireless_gateway_certificate::_get_wireless_gateway_certificate_output::GetWirelessGatewayCertificateOutput;
-
 pub use crate::operation::get_wireless_gateway_certificate::_get_wireless_gateway_certificate_input::GetWirelessGatewayCertificateInput;
+
+pub use crate::operation::get_wireless_gateway_certificate::_get_wireless_gateway_certificate_output::GetWirelessGatewayCertificateOutput;
 
 mod _get_wireless_gateway_certificate_input;
 

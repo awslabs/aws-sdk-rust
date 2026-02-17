@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_option_grou
     }
 }
 
-pub use crate::operation::delete_option_group::_delete_option_group_output::DeleteOptionGroupOutput;
-
 pub use crate::operation::delete_option_group::_delete_option_group_input::DeleteOptionGroupInput;
+
+pub use crate::operation::delete_option_group::_delete_option_group_output::DeleteOptionGroupOutput;
 
 mod _delete_option_group_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_keywords_for_
     }
 }
 
-pub use crate::operation::list_keywords_for_data_source::_list_keywords_for_data_source_output::ListKeywordsForDataSourceOutput;
-
 pub use crate::operation::list_keywords_for_data_source::_list_keywords_for_data_source_input::ListKeywordsForDataSourceInput;
+
+pub use crate::operation::list_keywords_for_data_source::_list_keywords_for_data_source_output::ListKeywordsForDataSourceOutput;
 
 mod _list_keywords_for_data_source_input;
 

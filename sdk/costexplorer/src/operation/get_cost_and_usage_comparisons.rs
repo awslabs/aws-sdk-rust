@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cost_and_usage
     }
 }
 
-pub use crate::operation::get_cost_and_usage_comparisons::_get_cost_and_usage_comparisons_output::GetCostAndUsageComparisonsOutput;
-
 pub use crate::operation::get_cost_and_usage_comparisons::_get_cost_and_usage_comparisons_input::GetCostAndUsageComparisonsInput;
+
+pub use crate::operation::get_cost_and_usage_comparisons::_get_cost_and_usage_comparisons_output::GetCostAndUsageComparisonsOutput;
 
 mod _get_cost_and_usage_comparisons_input;
 

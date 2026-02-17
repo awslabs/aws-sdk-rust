@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_private_dns
     }
 }
 
-pub use crate::operation::modify_private_dns_name_options::_modify_private_dns_name_options_output::ModifyPrivateDnsNameOptionsOutput;
-
 pub use crate::operation::modify_private_dns_name_options::_modify_private_dns_name_options_input::ModifyPrivateDnsNameOptionsInput;
+
+pub use crate::operation::modify_private_dns_name_options::_modify_private_dns_name_options_output::ModifyPrivateDnsNameOptionsOutput;
 
 mod _modify_private_dns_name_options_input;
 

@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_report_plans:
     }
 }
 
-pub use crate::operation::list_report_plans::_list_report_plans_output::ListReportPlansOutput;
-
 pub use crate::operation::list_report_plans::_list_report_plans_input::ListReportPlansInput;
+
+pub use crate::operation::list_report_plans::_list_report_plans_output::ListReportPlansOutput;
 
 mod _list_report_plans_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::write_records::Wri
     }
 }
 
-pub use crate::operation::write_records::_write_records_output::WriteRecordsOutput;
-
 pub use crate::operation::write_records::_write_records_input::WriteRecordsInput;
+
+pub use crate::operation::write_records::_write_records_output::WriteRecordsOutput;
 
 mod _write_records_input;
 

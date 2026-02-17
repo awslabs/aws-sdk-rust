@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_licen
     }
 }
 
-pub use crate::operation::disassociate_license::_disassociate_license_output::DisassociateLicenseOutput;
-
 pub use crate::operation::disassociate_license::_disassociate_license_input::DisassociateLicenseInput;
+
+pub use crate::operation::disassociate_license::_disassociate_license_output::DisassociateLicenseOutput;
 
 mod _disassociate_license_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::read_preset::ReadP
     }
 }
 
-pub use crate::operation::read_preset::_read_preset_output::ReadPresetOutput;
-
 pub use crate::operation::read_preset::_read_preset_input::ReadPresetInput;
+
+pub use crate::operation::read_preset::_read_preset_output::ReadPresetOutput;
 
 mod _read_preset_input;
 

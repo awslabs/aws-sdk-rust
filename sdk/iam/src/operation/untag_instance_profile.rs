@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_instance_pro
     }
 }
 
-pub use crate::operation::untag_instance_profile::_untag_instance_profile_output::UntagInstanceProfileOutput;
-
 pub use crate::operation::untag_instance_profile::_untag_instance_profile_input::UntagInstanceProfileInput;
+
+pub use crate::operation::untag_instance_profile::_untag_instance_profile_output::UntagInstanceProfileOutput;
 
 mod _untag_instance_profile_input;
 

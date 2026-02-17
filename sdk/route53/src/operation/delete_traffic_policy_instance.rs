@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_traffic_pol
     }
 }
 
-pub use crate::operation::delete_traffic_policy_instance::_delete_traffic_policy_instance_output::DeleteTrafficPolicyInstanceOutput;
-
 pub use crate::operation::delete_traffic_policy_instance::_delete_traffic_policy_instance_input::DeleteTrafficPolicyInstanceInput;
+
+pub use crate::operation::delete_traffic_policy_instance::_delete_traffic_policy_instance_output::DeleteTrafficPolicyInstanceOutput;
 
 mod _delete_traffic_policy_instance_input;
 

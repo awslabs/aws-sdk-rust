@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_actors::ListA
     }
 }
 
-pub use crate::operation::list_actors::_list_actors_output::ListActorsOutput;
-
 pub use crate::operation::list_actors::_list_actors_input::ListActorsInput;
+
+pub use crate::operation::list_actors::_list_actors_output::ListActorsOutput;
 
 mod _list_actors_input;
 

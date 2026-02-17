@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_verification
     }
 }
 
-pub use crate::operation::start_verification::_start_verification_output::StartVerificationOutput;
-
 pub use crate::operation::start_verification::_start_verification_input::StartVerificationInput;
+
+pub use crate::operation::start_verification::_start_verification_output::StartVerificationOutput;
 
 mod _start_verification_input;
 

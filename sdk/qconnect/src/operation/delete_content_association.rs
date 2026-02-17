@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_content_ass
     }
 }
 
-pub use crate::operation::delete_content_association::_delete_content_association_output::DeleteContentAssociationOutput;
-
 pub use crate::operation::delete_content_association::_delete_content_association_input::DeleteContentAssociationInput;
+
+pub use crate::operation::delete_content_association::_delete_content_association_output::DeleteContentAssociationOutput;
 
 mod _delete_content_association_input;
 

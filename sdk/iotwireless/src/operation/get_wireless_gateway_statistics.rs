@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_wireless_gatew
     }
 }
 
-pub use crate::operation::get_wireless_gateway_statistics::_get_wireless_gateway_statistics_output::GetWirelessGatewayStatisticsOutput;
-
 pub use crate::operation::get_wireless_gateway_statistics::_get_wireless_gateway_statistics_input::GetWirelessGatewayStatisticsInput;
+
+pub use crate::operation::get_wireless_gateway_statistics::_get_wireless_gateway_statistics_output::GetWirelessGatewayStatisticsOutput;
 
 mod _get_wireless_gateway_statistics_input;
 

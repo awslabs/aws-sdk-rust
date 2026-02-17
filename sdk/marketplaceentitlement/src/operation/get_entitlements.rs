@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_entitlements::
     }
 }
 
-pub use crate::operation::get_entitlements::_get_entitlements_output::GetEntitlementsOutput;
-
 pub use crate::operation::get_entitlements::_get_entitlements_input::GetEntitlementsInput;
+
+pub use crate::operation::get_entitlements::_get_entitlements_output::GetEntitlementsOutput;
 
 mod _get_entitlements_input;
 

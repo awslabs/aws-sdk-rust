@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cost_alloca
     }
 }
 
-pub use crate::operation::update_cost_allocation_tags_status::_update_cost_allocation_tags_status_output::UpdateCostAllocationTagsStatusOutput;
-
 pub use crate::operation::update_cost_allocation_tags_status::_update_cost_allocation_tags_status_input::UpdateCostAllocationTagsStatusInput;
+
+pub use crate::operation::update_cost_allocation_tags_status::_update_cost_allocation_tags_status_output::UpdateCostAllocationTagsStatusOutput;
 
 mod _update_cost_allocation_tags_status_input;
 

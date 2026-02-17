@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_multicast_grou
     }
 }
 
-pub use crate::operation::get_multicast_group::_get_multicast_group_output::GetMulticastGroupOutput;
-
 pub use crate::operation::get_multicast_group::_get_multicast_group_input::GetMulticastGroupInput;
+
+pub use crate::operation::get_multicast_group::_get_multicast_group_output::GetMulticastGroupOutput;
 
 mod _get_multicast_group_input;
 

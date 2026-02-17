@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_readiness_c
     }
 }
 
-pub use crate::operation::update_readiness_check::_update_readiness_check_output::UpdateReadinessCheckOutput;
-
 pub use crate::operation::update_readiness_check::_update_readiness_check_input::UpdateReadinessCheckInput;
+
+pub use crate::operation::update_readiness_check::_update_readiness_check_output::UpdateReadinessCheckOutput;
 
 mod _update_readiness_check_input;
 

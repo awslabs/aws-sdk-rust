@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_entities_det
     }
 }
 
-pub use crate::operation::start_entities_detection_job::_start_entities_detection_job_output::StartEntitiesDetectionJobOutput;
-
 pub use crate::operation::start_entities_detection_job::_start_entities_detection_job_input::StartEntitiesDetectionJobInput;
+
+pub use crate::operation::start_entities_detection_job::_start_entities_detection_job_output::StartEntitiesDetectionJobOutput;
 
 mod _start_entities_detection_job_input;
 

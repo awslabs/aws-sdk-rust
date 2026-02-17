@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vpce_config
     }
 }
 
-pub use crate::operation::update_vpce_configuration::_update_vpce_configuration_output::UpdateVpceConfigurationOutput;
-
 pub use crate::operation::update_vpce_configuration::_update_vpce_configuration_input::UpdateVpceConfigurationInput;
+
+pub use crate::operation::update_vpce_configuration::_update_vpce_configuration_output::UpdateVpceConfigurationOutput;
 
 mod _update_vpce_configuration_input;
 

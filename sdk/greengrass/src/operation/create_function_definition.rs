@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_function_de
     }
 }
 
-pub use crate::operation::create_function_definition::_create_function_definition_output::CreateFunctionDefinitionOutput;
-
 pub use crate::operation::create_function_definition::_create_function_definition_input::CreateFunctionDefinitionInput;
+
+pub use crate::operation::create_function_definition::_create_function_definition_output::CreateFunctionDefinitionOutput;
 
 mod _create_function_definition_input;
 

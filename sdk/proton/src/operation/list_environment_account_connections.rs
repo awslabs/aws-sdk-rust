@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_a
     }
 }
 
-pub use crate::operation::list_environment_account_connections::_list_environment_account_connections_output::ListEnvironmentAccountConnectionsOutput;
-
 pub use crate::operation::list_environment_account_connections::_list_environment_account_connections_input::ListEnvironmentAccountConnectionsInput;
+
+pub use crate::operation::list_environment_account_connections::_list_environment_account_connections_output::ListEnvironmentAccountConnectionsOutput;
 
 mod _list_environment_account_connections_input;
 

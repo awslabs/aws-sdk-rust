@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bot_locale:
     }
 }
 
-pub use crate::operation::delete_bot_locale::_delete_bot_locale_output::DeleteBotLocaleOutput;
-
 pub use crate::operation::delete_bot_locale::_delete_bot_locale_input::DeleteBotLocaleInput;
+
+pub use crate::operation::delete_bot_locale::_delete_bot_locale_output::DeleteBotLocaleOutput;
 
 mod _delete_bot_locale_input;
 

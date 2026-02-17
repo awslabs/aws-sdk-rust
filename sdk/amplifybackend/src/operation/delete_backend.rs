@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backend::De
     }
 }
 
-pub use crate::operation::delete_backend::_delete_backend_output::DeleteBackendOutput;
-
 pub use crate::operation::delete_backend::_delete_backend_input::DeleteBackendInput;
+
+pub use crate::operation::delete_backend::_delete_backend_output::DeleteBackendOutput;
 
 mod _delete_backend_input;
 

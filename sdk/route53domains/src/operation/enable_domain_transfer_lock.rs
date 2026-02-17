@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_domain_tran
     }
 }
 
-pub use crate::operation::enable_domain_transfer_lock::_enable_domain_transfer_lock_output::EnableDomainTransferLockOutput;
-
 pub use crate::operation::enable_domain_transfer_lock::_enable_domain_transfer_lock_input::EnableDomainTransferLockInput;
+
+pub use crate::operation::enable_domain_transfer_lock::_enable_domain_transfer_lock_output::EnableDomainTransferLockOutput;
 
 mod _enable_domain_transfer_lock_input;
 

@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unsubscribe_from_d
     }
 }
 
-pub use crate::operation::unsubscribe_from_dataset::_unsubscribe_from_dataset_output::UnsubscribeFromDatasetOutput;
-
 pub use crate::operation::unsubscribe_from_dataset::_unsubscribe_from_dataset_input::UnsubscribeFromDatasetInput;
+
+pub use crate::operation::unsubscribe_from_dataset::_unsubscribe_from_dataset_output::UnsubscribeFromDatasetOutput;
 
 mod _unsubscribe_from_dataset_input;
 

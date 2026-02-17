@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_consumabl
     }
 }
 
-pub use crate::operation::describe_consumable_resource::_describe_consumable_resource_output::DescribeConsumableResourceOutput;
-
 pub use crate::operation::describe_consumable_resource::_describe_consumable_resource_input::DescribeConsumableResourceInput;
+
+pub use crate::operation::describe_consumable_resource::_describe_consumable_resource_output::DescribeConsumableResourceOutput;
 
 mod _describe_consumable_resource_input;
 

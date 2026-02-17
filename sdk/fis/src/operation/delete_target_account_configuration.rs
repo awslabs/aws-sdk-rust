@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_target_acco
     }
 }
 
-pub use crate::operation::delete_target_account_configuration::_delete_target_account_configuration_output::DeleteTargetAccountConfigurationOutput;
-
 pub use crate::operation::delete_target_account_configuration::_delete_target_account_configuration_input::DeleteTargetAccountConfigurationInput;
+
+pub use crate::operation::delete_target_account_configuration::_delete_target_account_configuration_output::DeleteTargetAccountConfigurationOutput;
 
 mod _delete_target_account_configuration_input;
 

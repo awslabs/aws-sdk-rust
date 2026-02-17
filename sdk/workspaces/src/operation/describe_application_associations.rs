@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_applicati
     }
 }
 
-pub use crate::operation::describe_application_associations::_describe_application_associations_output::DescribeApplicationAssociationsOutput;
-
 pub use crate::operation::describe_application_associations::_describe_application_associations_input::DescribeApplicationAssociationsInput;
+
+pub use crate::operation::describe_application_associations::_describe_application_associations_output::DescribeApplicationAssociationsOutput;
 
 mod _describe_application_associations_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_rds_databas
     }
 }
 
-pub use crate::operation::export_rds_database_recommendations::_export_rds_database_recommendations_output::ExportRdsDatabaseRecommendationsOutput;
-
 pub use crate::operation::export_rds_database_recommendations::_export_rds_database_recommendations_input::ExportRdsDatabaseRecommendationsInput;
+
+pub use crate::operation::export_rds_database_recommendations::_export_rds_database_recommendations_output::ExportRdsDatabaseRecommendationsOutput;
 
 mod _export_rds_database_recommendations_input;
 

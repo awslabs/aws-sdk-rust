@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_configuratio
     }
 }
 
-pub use crate::operation::start_configuration_recorder::_start_configuration_recorder_output::StartConfigurationRecorderOutput;
-
 pub use crate::operation::start_configuration_recorder::_start_configuration_recorder_input::StartConfigurationRecorderInput;
+
+pub use crate::operation::start_configuration_recorder::_start_configuration_recorder_output::StartConfigurationRecorderOutput;
 
 mod _start_configuration_recorder_input;
 

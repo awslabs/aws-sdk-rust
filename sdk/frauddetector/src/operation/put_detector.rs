@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_detector::PutD
     }
 }
 
-pub use crate::operation::put_detector::_put_detector_output::PutDetectorOutput;
-
 pub use crate::operation::put_detector::_put_detector_input::PutDetectorInput;
+
+pub use crate::operation::put_detector::_put_detector_output::PutDetectorOutput;
 
 mod _put_detector_input;
 

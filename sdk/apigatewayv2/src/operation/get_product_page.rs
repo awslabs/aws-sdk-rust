@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_product_page::
     }
 }
 
-pub use crate::operation::get_product_page::_get_product_page_output::GetProductPageOutput;
-
 pub use crate::operation::get_product_page::_get_product_page_input::GetProductPageInput;
+
+pub use crate::operation::get_product_page::_get_product_page_output::GetProductPageOutput;
 
 mod _get_product_page_input;
 

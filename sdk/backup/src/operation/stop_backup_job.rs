@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_backup_job::S
     }
 }
 
-pub use crate::operation::stop_backup_job::_stop_backup_job_output::StopBackupJobOutput;
-
 pub use crate::operation::stop_backup_job::_stop_backup_job_input::StopBackupJobInput;
+
+pub use crate::operation::stop_backup_job::_stop_backup_job_output::StopBackupJobOutput;
 
 mod _stop_backup_job_input;
 

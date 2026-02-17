@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_job_queue
     }
 }
 
-pub use crate::operation::describe_job_queues::_describe_job_queues_output::DescribeJobQueuesOutput;
-
 pub use crate::operation::describe_job_queues::_describe_job_queues_input::DescribeJobQueuesInput;
+
+pub use crate::operation::describe_job_queues::_describe_job_queues_output::DescribeJobQueuesOutput;
 
 mod _describe_job_queues_input;
 

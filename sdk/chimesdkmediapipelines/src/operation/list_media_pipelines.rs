@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_media_pipelin
     }
 }
 
-pub use crate::operation::list_media_pipelines::_list_media_pipelines_output::ListMediaPipelinesOutput;
-
 pub use crate::operation::list_media_pipelines::_list_media_pipelines_input::ListMediaPipelinesInput;
+
+pub use crate::operation::list_media_pipelines::_list_media_pipelines_output::ListMediaPipelinesOutput;
 
 mod _list_media_pipelines_input;
 

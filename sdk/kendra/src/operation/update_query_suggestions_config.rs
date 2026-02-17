@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_query_sugge
     }
 }
 
-pub use crate::operation::update_query_suggestions_config::_update_query_suggestions_config_output::UpdateQuerySuggestionsConfigOutput;
-
 pub use crate::operation::update_query_suggestions_config::_update_query_suggestions_config_input::UpdateQuerySuggestionsConfigInput;
+
+pub use crate::operation::update_query_suggestions_config::_update_query_suggestions_config_output::UpdateQuerySuggestionsConfigOutput;
 
 mod _update_query_suggestions_config_input;
 

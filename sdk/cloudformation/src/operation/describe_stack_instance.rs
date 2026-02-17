@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stack_ins
     }
 }
 
-pub use crate::operation::describe_stack_instance::_describe_stack_instance_output::DescribeStackInstanceOutput;
-
 pub use crate::operation::describe_stack_instance::_describe_stack_instance_input::DescribeStackInstanceInput;
+
+pub use crate::operation::describe_stack_instance::_describe_stack_instance_output::DescribeStackInstanceOutput;
 
 mod _describe_stack_instance_input;
 

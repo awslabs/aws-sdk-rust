@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backend_storag
     }
 }
 
-pub use crate::operation::get_backend_storage::_get_backend_storage_output::GetBackendStorageOutput;
-
 pub use crate::operation::get_backend_storage::_get_backend_storage_input::GetBackendStorageInput;
+
+pub use crate::operation::get_backend_storage::_get_backend_storage_output::GetBackendStorageOutput;
 
 mod _get_backend_storage_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_gen
     }
 }
 
-pub use crate::operation::describe_image_generation_configuration::_describe_image_generation_configuration_output::DescribeImageGenerationConfigurationOutput;
-
 pub use crate::operation::describe_image_generation_configuration::_describe_image_generation_configuration_input::DescribeImageGenerationConfigurationInput;
+
+pub use crate::operation::describe_image_generation_configuration::_describe_image_generation_configuration_output::DescribeImageGenerationConfigurationOutput;
 
 mod _describe_image_generation_configuration_input;
 

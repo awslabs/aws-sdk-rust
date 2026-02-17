@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ephemeris::
     }
 }
 
-pub use crate::operation::update_ephemeris::_update_ephemeris_output::UpdateEphemerisOutput;
-
 pub use crate::operation::update_ephemeris::_update_ephemeris_input::UpdateEphemerisInput;
+
+pub use crate::operation::update_ephemeris::_update_ephemeris_output::UpdateEphemerisOutput;
 
 mod _update_ephemeris_input;
 

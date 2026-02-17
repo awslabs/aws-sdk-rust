@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ingestion_d
     }
 }
 
-pub use crate::operation::create_ingestion_destination::_create_ingestion_destination_output::CreateIngestionDestinationOutput;
-
 pub use crate::operation::create_ingestion_destination::_create_ingestion_destination_input::CreateIngestionDestinationInput;
+
+pub use crate::operation::create_ingestion_destination::_create_ingestion_destination_output::CreateIngestionDestinationOutput;
 
 mod _create_ingestion_destination_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_activity_
     }
 }
 
-pub use crate::operation::register_activity_type::_register_activity_type_output::RegisterActivityTypeOutput;
-
 pub use crate::operation::register_activity_type::_register_activity_type_input::RegisterActivityTypeInput;
+
+pub use crate::operation::register_activity_type::_register_activity_type_output::RegisterActivityTypeOutput;
 
 mod _register_activity_type_input;
 

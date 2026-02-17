@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::_get_automated_reasoning_policy_build_workflow_result_assets_output::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutput;
-
 pub use crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::_get_automated_reasoning_policy_build_workflow_result_assets_input::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput;
+
+pub use crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::_get_automated_reasoning_policy_build_workflow_result_assets_output::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsOutput;
 
 mod _get_automated_reasoning_policy_build_workflow_result_assets_input;
 

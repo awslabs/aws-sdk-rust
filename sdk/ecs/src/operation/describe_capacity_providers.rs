@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_capacity_
     }
 }
 
-pub use crate::operation::describe_capacity_providers::_describe_capacity_providers_output::DescribeCapacityProvidersOutput;
-
 pub use crate::operation::describe_capacity_providers::_describe_capacity_providers_input::DescribeCapacityProvidersInput;
+
+pub use crate::operation::describe_capacity_providers::_describe_capacity_providers_output::DescribeCapacityProvidersOutput;
 
 mod _describe_capacity_providers_input;
 

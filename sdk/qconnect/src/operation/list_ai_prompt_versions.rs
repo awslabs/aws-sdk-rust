@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ai_prompt_ver
     }
 }
 
-pub use crate::operation::list_ai_prompt_versions::_list_ai_prompt_versions_output::ListAiPromptVersionsOutput;
-
 pub use crate::operation::list_ai_prompt_versions::_list_ai_prompt_versions_input::ListAiPromptVersionsInput;
+
+pub use crate::operation::list_ai_prompt_versions::_list_ai_prompt_versions_output::ListAiPromptVersionsOutput;
 
 mod _list_ai_prompt_versions_input;
 

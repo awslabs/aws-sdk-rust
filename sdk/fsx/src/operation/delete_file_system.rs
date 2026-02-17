@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_file_system
     }
 }
 
-pub use crate::operation::delete_file_system::_delete_file_system_output::DeleteFileSystemOutput;
-
 pub use crate::operation::delete_file_system::_delete_file_system_input::DeleteFileSystemInput;
+
+pub use crate::operation::delete_file_system::_delete_file_system_output::DeleteFileSystemOutput;
 
 mod _delete_file_system_input;
 

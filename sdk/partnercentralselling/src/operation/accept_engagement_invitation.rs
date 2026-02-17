@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_engagement_
     }
 }
 
-pub use crate::operation::accept_engagement_invitation::_accept_engagement_invitation_output::AcceptEngagementInvitationOutput;
-
 pub use crate::operation::accept_engagement_invitation::_accept_engagement_invitation_input::AcceptEngagementInvitationInput;
+
+pub use crate::operation::accept_engagement_invitation::_accept_engagement_invitation_output::AcceptEngagementInvitationOutput;
 
 mod _accept_engagement_invitation_input;
 

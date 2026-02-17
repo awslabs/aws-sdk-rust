@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_license_serve
     }
 }
 
-pub use crate::operation::list_license_server_endpoints::_list_license_server_endpoints_output::ListLicenseServerEndpointsOutput;
-
 pub use crate::operation::list_license_server_endpoints::_list_license_server_endpoints_input::ListLicenseServerEndpointsInput;
+
+pub use crate::operation::list_license_server_endpoints::_list_license_server_endpoints_output::ListLicenseServerEndpointsOutput;
 
 mod _list_license_server_endpoints_input;
 

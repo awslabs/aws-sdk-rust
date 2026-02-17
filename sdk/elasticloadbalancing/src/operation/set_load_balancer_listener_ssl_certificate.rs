@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_load_balancer_
     }
 }
 
-pub use crate::operation::set_load_balancer_listener_ssl_certificate::_set_load_balancer_listener_ssl_certificate_output::SetLoadBalancerListenerSslCertificateOutput;
-
 pub use crate::operation::set_load_balancer_listener_ssl_certificate::_set_load_balancer_listener_ssl_certificate_input::SetLoadBalancerListenerSslCertificateInput;
+
+pub use crate::operation::set_load_balancer_listener_ssl_certificate::_set_load_balancer_listener_ssl_certificate_output::SetLoadBalancerListenerSslCertificateOutput;
 
 mod _set_load_balancer_listener_ssl_certificate_input;
 

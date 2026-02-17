@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_sbom_export
     }
 }
 
-pub use crate::operation::cancel_sbom_export::_cancel_sbom_export_output::CancelSbomExportOutput;
-
 pub use crate::operation::cancel_sbom_export::_cancel_sbom_export_input::CancelSbomExportInput;
+
+pub use crate::operation::cancel_sbom_export::_cancel_sbom_export_output::CancelSbomExportOutput;
 
 mod _cancel_sbom_export_input;
 

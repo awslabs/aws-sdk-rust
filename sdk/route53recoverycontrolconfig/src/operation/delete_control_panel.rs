@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_control_pan
     }
 }
 
-pub use crate::operation::delete_control_panel::_delete_control_panel_output::DeleteControlPanelOutput;
-
 pub use crate::operation::delete_control_panel::_delete_control_panel_input::DeleteControlPanelInput;
+
+pub use crate::operation::delete_control_panel::_delete_control_panel_output::DeleteControlPanelOutput;
 
 mod _delete_control_panel_input;
 

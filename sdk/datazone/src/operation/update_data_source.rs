@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_source
     }
 }
 
-pub use crate::operation::update_data_source::_update_data_source_output::UpdateDataSourceOutput;
-
 pub use crate::operation::update_data_source::_update_data_source_input::UpdateDataSourceInput;
+
+pub use crate::operation::update_data_source::_update_data_source_output::UpdateDataSourceOutput;
 
 mod _update_data_source_input;
 

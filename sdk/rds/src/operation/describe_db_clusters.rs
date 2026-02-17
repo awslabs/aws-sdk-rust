@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_cluste
     }
 }
 
-pub use crate::operation::describe_db_clusters::_describe_db_clusters_output::DescribeDbClustersOutput;
-
 pub use crate::operation::describe_db_clusters::_describe_db_clusters_input::DescribeDbClustersInput;
+
+pub use crate::operation::describe_db_clusters::_describe_db_clusters_output::DescribeDbClustersOutput;
 
 mod _describe_db_clusters_input;
 

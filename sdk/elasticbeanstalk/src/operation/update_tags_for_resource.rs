@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_tags_for_re
     }
 }
 
-pub use crate::operation::update_tags_for_resource::_update_tags_for_resource_output::UpdateTagsForResourceOutput;
-
 pub use crate::operation::update_tags_for_resource::_update_tags_for_resource_input::UpdateTagsForResourceInput;
+
+pub use crate::operation::update_tags_for_resource::_update_tags_for_resource_output::UpdateTagsForResourceOutput;
 
 mod _update_tags_for_resource_input;
 

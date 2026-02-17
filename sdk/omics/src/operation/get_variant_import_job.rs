@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_variant_import
     }
 }
 
-pub use crate::operation::get_variant_import_job::_get_variant_import_job_output::GetVariantImportJobOutput;
-
 pub use crate::operation::get_variant_import_job::_get_variant_import_job_input::GetVariantImportJobInput;
+
+pub use crate::operation::get_variant_import_job::_get_variant_import_job_output::GetVariantImportJobOutput;
 
 mod _get_variant_import_job_input;
 

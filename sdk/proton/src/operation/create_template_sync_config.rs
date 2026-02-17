@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_template_sy
     }
 }
 
-pub use crate::operation::create_template_sync_config::_create_template_sync_config_output::CreateTemplateSyncConfigOutput;
-
 pub use crate::operation::create_template_sync_config::_create_template_sync_config_input::CreateTemplateSyncConfigInput;
+
+pub use crate::operation::create_template_sync_config::_create_template_sync_config_output::CreateTemplateSyncConfigOutput;
 
 mod _create_template_sync_config_input;
 

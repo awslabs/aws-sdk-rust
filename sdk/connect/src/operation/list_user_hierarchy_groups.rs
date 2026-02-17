@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_hierarch
     }
 }
 
-pub use crate::operation::list_user_hierarchy_groups::_list_user_hierarchy_groups_output::ListUserHierarchyGroupsOutput;
-
 pub use crate::operation::list_user_hierarchy_groups::_list_user_hierarchy_groups_input::ListUserHierarchyGroupsInput;
+
+pub use crate::operation::list_user_hierarchy_groups::_list_user_hierarchy_groups_output::ListUserHierarchyGroupsOutput;
 
 mod _list_user_hierarchy_groups_input;
 

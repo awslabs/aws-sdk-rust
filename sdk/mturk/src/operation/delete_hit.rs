@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hit::Delete
     }
 }
 
-pub use crate::operation::delete_hit::_delete_hit_output::DeleteHitOutput;
-
 pub use crate::operation::delete_hit::_delete_hit_input::DeleteHitInput;
+
+pub use crate::operation::delete_hit::_delete_hit_output::DeleteHitOutput;
 
 mod _delete_hit_input;
 

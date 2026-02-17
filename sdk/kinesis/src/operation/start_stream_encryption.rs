@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_stream_encry
     }
 }
 
-pub use crate::operation::start_stream_encryption::_start_stream_encryption_output::StartStreamEncryptionOutput;
-
 pub use crate::operation::start_stream_encryption::_start_stream_encryption_input::StartStreamEncryptionInput;
+
+pub use crate::operation::start_stream_encryption::_start_stream_encryption_output::StartStreamEncryptionOutput;
 
 mod _start_stream_encryption_input;
 

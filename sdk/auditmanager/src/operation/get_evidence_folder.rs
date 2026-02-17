@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evidence_folde
     }
 }
 
-pub use crate::operation::get_evidence_folder::_get_evidence_folder_output::GetEvidenceFolderOutput;
-
 pub use crate::operation::get_evidence_folder::_get_evidence_folder_input::GetEvidenceFolderInput;
+
+pub use crate::operation::get_evidence_folder::_get_evidence_folder_output::GetEvidenceFolderOutput;
 
 mod _get_evidence_folder_input;
 

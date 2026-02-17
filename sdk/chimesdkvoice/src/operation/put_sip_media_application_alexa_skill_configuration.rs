@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_sip_media_application_alexa_skill_configuration::_put_sip_media_application_alexa_skill_configuration_output::PutSipMediaApplicationAlexaSkillConfigurationOutput;
-
 pub use crate::operation::put_sip_media_application_alexa_skill_configuration::_put_sip_media_application_alexa_skill_configuration_input::PutSipMediaApplicationAlexaSkillConfigurationInput;
+
+pub use crate::operation::put_sip_media_application_alexa_skill_configuration::_put_sip_media_application_alexa_skill_configuration_output::PutSipMediaApplicationAlexaSkillConfigurationOutput;
 
 mod _put_sip_media_application_alexa_skill_configuration_input;
 

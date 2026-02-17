@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pipeline::GetP
     }
 }
 
-pub use crate::operation::get_pipeline::_get_pipeline_output::GetPipelineOutput;
-
 pub use crate::operation::get_pipeline::_get_pipeline_input::GetPipelineInput;
+
+pub use crate::operation::get_pipeline::_get_pipeline_output::GetPipelineOutput;
 
 mod _get_pipeline_input;
 

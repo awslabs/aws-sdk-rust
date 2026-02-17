@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_transacti
     }
 }
 
-pub use crate::operation::describe_transaction::_describe_transaction_output::DescribeTransactionOutput;
-
 pub use crate::operation::describe_transaction::_describe_transaction_input::DescribeTransactionInput;
+
+pub use crate::operation::describe_transaction::_describe_transaction_output::DescribeTransactionOutput;
 
 mod _describe_transaction_input;
 

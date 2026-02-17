@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_session_actio
     }
 }
 
-pub use crate::operation::list_session_actions::_list_session_actions_output::ListSessionActionsOutput;
-
 pub use crate::operation::list_session_actions::_list_session_actions_input::ListSessionActionsInput;
+
+pub use crate::operation::list_session_actions::_list_session_actions_output::ListSessionActionsOutput;
 
 mod _list_session_actions_input;
 

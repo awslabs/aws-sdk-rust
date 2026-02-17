@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_effective_dep
     }
 }
 
-pub use crate::operation::list_effective_deployments::_list_effective_deployments_output::ListEffectiveDeploymentsOutput;
-
 pub use crate::operation::list_effective_deployments::_list_effective_deployments_input::ListEffectiveDeploymentsInput;
+
+pub use crate::operation::list_effective_deployments::_list_effective_deployments_output::ListEffectiveDeploymentsOutput;
 
 mod _list_effective_deployments_input;
 

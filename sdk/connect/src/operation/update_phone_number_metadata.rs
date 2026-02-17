@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_phone_numbe
     }
 }
 
-pub use crate::operation::update_phone_number_metadata::_update_phone_number_metadata_output::UpdatePhoneNumberMetadataOutput;
-
 pub use crate::operation::update_phone_number_metadata::_update_phone_number_metadata_input::UpdatePhoneNumberMetadataInput;
+
+pub use crate::operation::update_phone_number_metadata::_update_phone_number_metadata_output::UpdatePhoneNumberMetadataOutput;
 
 mod _update_phone_number_metadata_input;
 

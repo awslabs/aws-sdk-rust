@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_metrics
     }
 }
 
-pub use crate::operation::get_bucket_metrics_configuration::_get_bucket_metrics_configuration_output::GetBucketMetricsConfigurationOutput;
-
 pub use crate::operation::get_bucket_metrics_configuration::_get_bucket_metrics_configuration_input::GetBucketMetricsConfigurationInput;
+
+pub use crate::operation::get_bucket_metrics_configuration::_get_bucket_metrics_configuration_output::GetBucketMetricsConfigurationOutput;
 
 mod _get_bucket_metrics_configuration_input;
 

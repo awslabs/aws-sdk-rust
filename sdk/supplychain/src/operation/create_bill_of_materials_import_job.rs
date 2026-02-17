@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bill_of_mat
     }
 }
 
-pub use crate::operation::create_bill_of_materials_import_job::_create_bill_of_materials_import_job_output::CreateBillOfMaterialsImportJobOutput;
-
 pub use crate::operation::create_bill_of_materials_import_job::_create_bill_of_materials_import_job_input::CreateBillOfMaterialsImportJobInput;
+
+pub use crate::operation::create_bill_of_materials_import_job::_create_bill_of_materials_import_job_output::CreateBillOfMaterialsImportJobOutput;
 
 mod _create_bill_of_materials_import_job_input;
 

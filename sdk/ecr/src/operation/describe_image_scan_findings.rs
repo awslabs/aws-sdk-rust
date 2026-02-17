@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_sca
     }
 }
 
-pub use crate::operation::describe_image_scan_findings::_describe_image_scan_findings_output::DescribeImageScanFindingsOutput;
-
 pub use crate::operation::describe_image_scan_findings::_describe_image_scan_findings_input::DescribeImageScanFindingsInput;
+
+pub use crate::operation::describe_image_scan_findings::_describe_image_scan_findings_output::DescribeImageScanFindingsOutput;
 
 mod _describe_image_scan_findings_input;
 

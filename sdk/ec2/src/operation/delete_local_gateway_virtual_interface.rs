@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_local_gatew
     }
 }
 
-pub use crate::operation::delete_local_gateway_virtual_interface::_delete_local_gateway_virtual_interface_output::DeleteLocalGatewayVirtualInterfaceOutput;
-
 pub use crate::operation::delete_local_gateway_virtual_interface::_delete_local_gateway_virtual_interface_input::DeleteLocalGatewayVirtualInterfaceInput;
+
+pub use crate::operation::delete_local_gateway_virtual_interface::_delete_local_gateway_virtual_interface_output::DeleteLocalGatewayVirtualInterfaceOutput;
 
 mod _delete_local_gateway_virtual_interface_input;
 

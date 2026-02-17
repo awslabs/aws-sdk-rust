@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_edge_deploy
     }
 }
 
-pub use crate::operation::create_edge_deployment_plan::_create_edge_deployment_plan_output::CreateEdgeDeploymentPlanOutput;
-
 pub use crate::operation::create_edge_deployment_plan::_create_edge_deployment_plan_input::CreateEdgeDeploymentPlanInput;
+
+pub use crate::operation::create_edge_deployment_plan::_create_edge_deployment_plan_output::CreateEdgeDeploymentPlanOutput;
 
 mod _create_edge_deployment_plan_input;
 

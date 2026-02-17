@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_toke
     }
 }
 
-pub use crate::operation::create_access_token::_create_access_token_output::CreateAccessTokenOutput;
-
 pub use crate::operation::create_access_token::_create_access_token_input::CreateAccessTokenInput;
+
+pub use crate::operation::create_access_token::_create_access_token_output::CreateAccessTokenOutput;
 
 mod _create_access_token_input;
 

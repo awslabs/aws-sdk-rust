@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_experiment::S
     }
 }
 
-pub use crate::operation::stop_experiment::_stop_experiment_output::StopExperimentOutput;
-
 pub use crate::operation::stop_experiment::_stop_experiment_input::StopExperimentInput;
+
+pub use crate::operation::stop_experiment::_stop_experiment_output::StopExperimentOutput;
 
 mod _stop_experiment_input;
 

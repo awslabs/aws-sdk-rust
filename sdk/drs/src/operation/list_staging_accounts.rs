@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_staging_accou
     }
 }
 
-pub use crate::operation::list_staging_accounts::_list_staging_accounts_output::ListStagingAccountsOutput;
-
 pub use crate::operation::list_staging_accounts::_list_staging_accounts_input::ListStagingAccountsInput;
+
+pub use crate::operation::list_staging_accounts::_list_staging_accounts_output::ListStagingAccountsOutput;
 
 mod _list_staging_accounts_input;
 

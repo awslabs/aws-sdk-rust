@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_classic_l
     }
 }
 
-pub use crate::operation::describe_classic_link_instances::_describe_classic_link_instances_output::DescribeClassicLinkInstancesOutput;
-
 pub use crate::operation::describe_classic_link_instances::_describe_classic_link_instances_input::DescribeClassicLinkInstancesInput;
+
+pub use crate::operation::describe_classic_link_instances::_describe_classic_link_instances_output::DescribeClassicLinkInstancesOutput;
 
 mod _describe_classic_link_instances_input;
 

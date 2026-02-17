@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_subscribed_ru
     }
 }
 
-pub use crate::operation::list_subscribed_rule_groups::_list_subscribed_rule_groups_output::ListSubscribedRuleGroupsOutput;
-
 pub use crate::operation::list_subscribed_rule_groups::_list_subscribed_rule_groups_input::ListSubscribedRuleGroupsInput;
+
+pub use crate::operation::list_subscribed_rule_groups::_list_subscribed_rule_groups_output::ListSubscribedRuleGroupsOutput;
 
 mod _list_subscribed_rule_groups_input;
 

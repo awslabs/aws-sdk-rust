@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_retrieved_trac
     }
 }
 
-pub use crate::operation::get_retrieved_traces_graph::_get_retrieved_traces_graph_output::GetRetrievedTracesGraphOutput;
-
 pub use crate::operation::get_retrieved_traces_graph::_get_retrieved_traces_graph_input::GetRetrievedTracesGraphInput;
+
+pub use crate::operation::get_retrieved_traces_graph::_get_retrieved_traces_graph_output::GetRetrievedTracesGraphOutput;
 
 mod _get_retrieved_traces_graph_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_presets::List
     }
 }
 
-pub use crate::operation::list_presets::_list_presets_output::ListPresetsOutput;
-
 pub use crate::operation::list_presets::_list_presets_input::ListPresetsInput;
+
+pub use crate::operation::list_presets::_list_presets_output::ListPresetsOutput;
 
 mod _list_presets_input;
 

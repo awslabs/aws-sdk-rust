@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_index_type:
     }
 }
 
-pub use crate::operation::update_index_type::_update_index_type_output::UpdateIndexTypeOutput;
-
 pub use crate::operation::update_index_type::_update_index_type_input::UpdateIndexTypeInput;
+
+pub use crate::operation::update_index_type::_update_index_type_output::UpdateIndexTypeOutput;
 
 mod _update_index_type_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_package
     }
 }
 
-pub use crate::operation::list_image_packages::_list_image_packages_output::ListImagePackagesOutput;
-
 pub use crate::operation::list_image_packages::_list_image_packages_input::ListImagePackagesInput;
+
+pub use crate::operation::list_image_packages::_list_image_packages_output::ListImagePackagesOutput;
 
 mod _list_image_packages_input;
 

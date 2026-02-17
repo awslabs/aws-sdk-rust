@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_role_alias:
     }
 }
 
-pub use crate::operation::update_role_alias::_update_role_alias_output::UpdateRoleAliasOutput;
-
 pub use crate::operation::update_role_alias::_update_role_alias_input::UpdateRoleAliasInput;
+
+pub use crate::operation::update_role_alias::_update_role_alias_output::UpdateRoleAliasOutput;
 
 mod _update_role_alias_input;
 

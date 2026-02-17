@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_fleets
     }
 }
 
-pub use crate::operation::list_device_fleets::_list_device_fleets_output::ListDeviceFleetsOutput;
-
 pub use crate::operation::list_device_fleets::_list_device_fleets_input::ListDeviceFleetsInput;
+
+pub use crate::operation::list_device_fleets::_list_device_fleets_output::ListDeviceFleetsOutput;
 
 mod _list_device_fleets_input;
 

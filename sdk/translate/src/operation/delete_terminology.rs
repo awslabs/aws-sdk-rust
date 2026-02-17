@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_terminology
     }
 }
 
-pub use crate::operation::delete_terminology::_delete_terminology_output::DeleteTerminologyOutput;
-
 pub use crate::operation::delete_terminology::_delete_terminology_input::DeleteTerminologyInput;
+
+pub use crate::operation::delete_terminology::_delete_terminology_output::DeleteTerminologyOutput;
 
 mod _delete_terminology_input;
 

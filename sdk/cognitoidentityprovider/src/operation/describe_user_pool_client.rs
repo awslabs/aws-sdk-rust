@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user_pool
     }
 }
 
-pub use crate::operation::describe_user_pool_client::_describe_user_pool_client_output::DescribeUserPoolClientOutput;
-
 pub use crate::operation::describe_user_pool_client::_describe_user_pool_client_input::DescribeUserPoolClientInput;
+
+pub use crate::operation::describe_user_pool_client::_describe_user_pool_client_output::DescribeUserPoolClientOutput;
 
 mod _describe_user_pool_client_input;
 

@@ -504,9 +504,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_targets_for_p
     }
 }
 
-pub use crate::operation::list_targets_for_policy::_list_targets_for_policy_output::ListTargetsForPolicyOutput;
-
 pub use crate::operation::list_targets_for_policy::_list_targets_for_policy_input::ListTargetsForPolicyInput;
+
+pub use crate::operation::list_targets_for_policy::_list_targets_for_policy_output::ListTargetsForPolicyOutput;
 
 mod _list_targets_for_policy_input;
 

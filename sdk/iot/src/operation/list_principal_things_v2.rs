@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_principal_thi
     }
 }
 
-pub use crate::operation::list_principal_things_v2::_list_principal_things_v2_output::ListPrincipalThingsV2Output;
-
 pub use crate::operation::list_principal_things_v2::_list_principal_things_v2_input::ListPrincipalThingsV2Input;
+
+pub use crate::operation::list_principal_things_v2::_list_principal_things_v2_output::ListPrincipalThingsV2Output;
 
 mod _list_principal_things_v2_input;
 

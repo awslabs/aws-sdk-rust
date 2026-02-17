@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_pull_thro
     }
 }
 
-pub use crate::operation::validate_pull_through_cache_rule::_validate_pull_through_cache_rule_output::ValidatePullThroughCacheRuleOutput;
-
 pub use crate::operation::validate_pull_through_cache_rule::_validate_pull_through_cache_rule_input::ValidatePullThroughCacheRuleInput;
+
+pub use crate::operation::validate_pull_through_cache_rule::_validate_pull_through_cache_rule_output::ValidatePullThroughCacheRuleOutput;
 
 mod _validate_pull_through_cache_rule_input;
 

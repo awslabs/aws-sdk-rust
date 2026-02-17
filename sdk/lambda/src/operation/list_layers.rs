@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_layers::ListL
     }
 }
 
-pub use crate::operation::list_layers::_list_layers_output::ListLayersOutput;
-
 pub use crate::operation::list_layers::_list_layers_input::ListLayersInput;
+
+pub use crate::operation::list_layers::_list_layers_output::ListLayersOutput;
 
 mod _list_layers_input;
 

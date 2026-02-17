@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::monitor_contact::M
     }
 }
 
-pub use crate::operation::monitor_contact::_monitor_contact_output::MonitorContactOutput;
-
 pub use crate::operation::monitor_contact::_monitor_contact_input::MonitorContactInput;
+
+pub use crate::operation::monitor_contact::_monitor_contact_output::MonitorContactOutput;
 
 mod _monitor_contact_input;
 

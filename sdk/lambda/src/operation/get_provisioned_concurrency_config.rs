@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_provisioned_co
     }
 }
 
-pub use crate::operation::get_provisioned_concurrency_config::_get_provisioned_concurrency_config_output::GetProvisionedConcurrencyConfigOutput;
-
 pub use crate::operation::get_provisioned_concurrency_config::_get_provisioned_concurrency_config_input::GetProvisionedConcurrencyConfigInput;
+
+pub use crate::operation::get_provisioned_concurrency_config::_get_provisioned_concurrency_config_output::GetProvisionedConcurrencyConfigOutput;
 
 mod _get_provisioned_concurrency_config_input;
 

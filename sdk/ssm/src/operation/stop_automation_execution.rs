@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_automation_ex
     }
 }
 
-pub use crate::operation::stop_automation_execution::_stop_automation_execution_output::StopAutomationExecutionOutput;
-
 pub use crate::operation::stop_automation_execution::_stop_automation_execution_input::StopAutomationExecutionInput;
+
+pub use crate::operation::stop_automation_execution::_stop_automation_execution_output::StopAutomationExecutionOutput;
 
 mod _stop_automation_execution_input;
 

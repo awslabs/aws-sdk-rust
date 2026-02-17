@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_content_uplo
     }
 }
 
-pub use crate::operation::start_content_upload::_start_content_upload_output::StartContentUploadOutput;
-
 pub use crate::operation::start_content_upload::_start_content_upload_input::StartContentUploadInput;
+
+pub use crate::operation::start_content_upload::_start_content_upload_output::StartContentUploadOutput;
 
 mod _start_content_upload_input;
 

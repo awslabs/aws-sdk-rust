@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trusted_t
     }
 }
 
-pub use crate::operation::describe_trusted_token_issuer::_describe_trusted_token_issuer_output::DescribeTrustedTokenIssuerOutput;
-
 pub use crate::operation::describe_trusted_token_issuer::_describe_trusted_token_issuer_input::DescribeTrustedTokenIssuerInput;
+
+pub use crate::operation::describe_trusted_token_issuer::_describe_trusted_token_issuer_output::DescribeTrustedTokenIssuerOutput;
 
 mod _describe_trusted_token_issuer_input;
 

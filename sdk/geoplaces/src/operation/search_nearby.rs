@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_nearby::Sea
     }
 }
 
-pub use crate::operation::search_nearby::_search_nearby_output::SearchNearbyOutput;
-
 pub use crate::operation::search_nearby::_search_nearby_input::SearchNearbyInput;
+
+pub use crate::operation::search_nearby::_search_nearby_output::SearchNearbyOutput;
 
 mod _search_nearby_input;
 

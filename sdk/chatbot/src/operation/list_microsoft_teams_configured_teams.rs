@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_microsoft_tea
     }
 }
 
-pub use crate::operation::list_microsoft_teams_configured_teams::_list_microsoft_teams_configured_teams_output::ListMicrosoftTeamsConfiguredTeamsOutput;
-
 pub use crate::operation::list_microsoft_teams_configured_teams::_list_microsoft_teams_configured_teams_input::ListMicrosoftTeamsConfiguredTeamsInput;
+
+pub use crate::operation::list_microsoft_teams_configured_teams::_list_microsoft_teams_configured_teams_output::ListMicrosoftTeamsConfiguredTeamsOutput;
 
 mod _list_microsoft_teams_configured_teams_input;
 

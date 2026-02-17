@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_stream_group::
     }
 }
 
-pub use crate::operation::get_stream_group::_get_stream_group_output::GetStreamGroupOutput;
-
 pub use crate::operation::get_stream_group::_get_stream_group_input::GetStreamGroupInput;
+
+pub use crate::operation::get_stream_group::_get_stream_group_output::GetStreamGroupOutput;
 
 mod _get_stream_group_input;
 

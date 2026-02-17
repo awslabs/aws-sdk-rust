@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bucket::Cre
     }
 }
 
-pub use crate::operation::create_bucket::_create_bucket_output::CreateBucketOutput;
-
 pub use crate::operation::create_bucket::_create_bucket_input::CreateBucketInput;
+
+pub use crate::operation::create_bucket::_create_bucket_output::CreateBucketOutput;
 
 mod _create_bucket_input;
 

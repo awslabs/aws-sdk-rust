@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_container
     }
 }
 
-pub use crate::operation::register_container_image::_register_container_image_output::RegisterContainerImageOutput;
-
 pub use crate::operation::register_container_image::_register_container_image_input::RegisterContainerImageInput;
+
+pub use crate::operation::register_container_image::_register_container_image_output::RegisterContainerImageOutput;
 
 mod _register_container_image_input;
 

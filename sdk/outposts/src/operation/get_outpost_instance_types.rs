@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outpost_instan
     }
 }
 
-pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_types_output::GetOutpostInstanceTypesOutput;
-
 pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_types_input::GetOutpostInstanceTypesInput;
+
+pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_types_output::GetOutpostInstanceTypesOutput;
 
 mod _get_outpost_instance_types_input;
 

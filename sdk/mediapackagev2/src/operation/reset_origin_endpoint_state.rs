@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_origin_endpo
     }
 }
 
-pub use crate::operation::reset_origin_endpoint_state::_reset_origin_endpoint_state_output::ResetOriginEndpointStateOutput;
-
 pub use crate::operation::reset_origin_endpoint_state::_reset_origin_endpoint_state_input::ResetOriginEndpointStateInput;
+
+pub use crate::operation::reset_origin_endpoint_state::_reset_origin_endpoint_state_output::ResetOriginEndpointStateOutput;
 
 mod _reset_origin_endpoint_state_input;
 

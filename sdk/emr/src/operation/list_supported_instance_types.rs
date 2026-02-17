@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_supported_ins
     }
 }
 
-pub use crate::operation::list_supported_instance_types::_list_supported_instance_types_output::ListSupportedInstanceTypesOutput;
-
 pub use crate::operation::list_supported_instance_types::_list_supported_instance_types_input::ListSupportedInstanceTypesInput;
+
+pub use crate::operation::list_supported_instance_types::_list_supported_instance_types_output::ListSupportedInstanceTypesOutput;
 
 mod _list_supported_instance_types_input;
 

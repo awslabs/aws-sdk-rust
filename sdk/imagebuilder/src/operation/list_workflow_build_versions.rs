@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_buil
     }
 }
 
-pub use crate::operation::list_workflow_build_versions::_list_workflow_build_versions_output::ListWorkflowBuildVersionsOutput;
-
 pub use crate::operation::list_workflow_build_versions::_list_workflow_build_versions_input::ListWorkflowBuildVersionsInput;
+
+pub use crate::operation::list_workflow_build_versions::_list_workflow_build_versions_output::ListWorkflowBuildVersionsOutput;
 
 mod _list_workflow_build_versions_input;
 

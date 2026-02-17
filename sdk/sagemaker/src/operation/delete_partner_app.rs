@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_partner_app
     }
 }
 
-pub use crate::operation::delete_partner_app::_delete_partner_app_output::DeletePartnerAppOutput;
-
 pub use crate::operation::delete_partner_app::_delete_partner_app_input::DeletePartnerAppInput;
+
+pub use crate::operation::delete_partner_app::_delete_partner_app_output::DeletePartnerAppOutput;
 
 mod _delete_partner_app_input;
 

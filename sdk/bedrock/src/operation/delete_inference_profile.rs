@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inference_p
     }
 }
 
-pub use crate::operation::delete_inference_profile::_delete_inference_profile_output::DeleteInferenceProfileOutput;
-
 pub use crate::operation::delete_inference_profile::_delete_inference_profile_input::DeleteInferenceProfileInput;
+
+pub use crate::operation::delete_inference_profile::_delete_inference_profile_output::DeleteInferenceProfileOutput;
 
 mod _delete_inference_profile_input;
 

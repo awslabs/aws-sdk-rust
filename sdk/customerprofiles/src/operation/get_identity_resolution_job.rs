@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_resol
     }
 }
 
-pub use crate::operation::get_identity_resolution_job::_get_identity_resolution_job_output::GetIdentityResolutionJobOutput;
-
 pub use crate::operation::get_identity_resolution_job::_get_identity_resolution_job_input::GetIdentityResolutionJobInput;
+
+pub use crate::operation::get_identity_resolution_job::_get_identity_resolution_job_output::GetIdentityResolutionJobOutput;
 
 mod _get_identity_resolution_job_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_environment_bl
     }
 }
 
-pub use crate::operation::get_environment_blueprint_configuration::_get_environment_blueprint_configuration_output::GetEnvironmentBlueprintConfigurationOutput;
-
 pub use crate::operation::get_environment_blueprint_configuration::_get_environment_blueprint_configuration_input::GetEnvironmentBlueprintConfigurationInput;
+
+pub use crate::operation::get_environment_blueprint_configuration::_get_environment_blueprint_configuration_output::GetEnvironmentBlueprintConfigurationOutput;
 
 mod _get_environment_blueprint_configuration_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::add_application_input_processing_configuration::_add_application_input_processing_configuration_output::AddApplicationInputProcessingConfigurationOutput;
-
 pub use crate::operation::add_application_input_processing_configuration::_add_application_input_processing_configuration_input::AddApplicationInputProcessingConfigurationInput;
+
+pub use crate::operation::add_application_input_processing_configuration::_add_application_input_processing_configuration_output::AddApplicationInputProcessingConfigurationOutput;
 
 mod _add_application_input_processing_configuration_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sol_network
     }
 }
 
-pub use crate::operation::delete_sol_network_package::_delete_sol_network_package_output::DeleteSolNetworkPackageOutput;
-
 pub use crate::operation::delete_sol_network_package::_delete_sol_network_package_input::DeleteSolNetworkPackageInput;
+
+pub use crate::operation::delete_sol_network_package::_delete_sol_network_package_output::DeleteSolNetworkPackageOutput;
 
 mod _delete_sol_network_package_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subnet_grou
     }
 }
 
-pub use crate::operation::update_subnet_group::_update_subnet_group_output::UpdateSubnetGroupOutput;
-
 pub use crate::operation::update_subnet_group::_update_subnet_group_input::UpdateSubnetGroupInput;
+
+pub use crate::operation::update_subnet_group::_update_subnet_group_output::UpdateSubnetGroupOutput;
 
 mod _update_subnet_group_input;
 

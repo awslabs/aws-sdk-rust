@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ml_model::C
     }
 }
 
-pub use crate::operation::create_ml_model::_create_ml_model_output::CreateMlModelOutput;
-
 pub use crate::operation::create_ml_model::_create_ml_model_input::CreateMlModelInput;
+
+pub use crate::operation::create_ml_model::_create_ml_model_output::CreateMlModelOutput;
 
 mod _create_ml_model_input;
 

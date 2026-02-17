@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resources_for
     }
 }
 
-pub use crate::operation::list_resources_for_web_acl::_list_resources_for_web_acl_output::ListResourcesForWebAclOutput;
-
 pub use crate::operation::list_resources_for_web_acl::_list_resources_for_web_acl_input::ListResourcesForWebAclInput;
+
+pub use crate::operation::list_resources_for_web_acl::_list_resources_for_web_acl_output::ListResourcesForWebAclOutput;
 
 mod _list_resources_for_web_acl_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_practice_ru
     }
 }
 
-pub use crate::operation::update_practice_run_configuration::_update_practice_run_configuration_output::UpdatePracticeRunConfigurationOutput;
-
 pub use crate::operation::update_practice_run_configuration::_update_practice_run_configuration_input::UpdatePracticeRunConfigurationInput;
+
+pub use crate::operation::update_practice_run_configuration::_update_practice_run_configuration_output::UpdatePracticeRunConfigurationOutput;
 
 mod _update_practice_run_configuration_input;
 

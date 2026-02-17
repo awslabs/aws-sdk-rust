@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_export_co
     }
 }
 
-pub use crate::operation::describe_export_configurations::_describe_export_configurations_output::DescribeExportConfigurationsOutput;
-
 pub use crate::operation::describe_export_configurations::_describe_export_configurations_input::DescribeExportConfigurationsInput;
+
+pub use crate::operation::describe_export_configurations::_describe_export_configurations_output::DescribeExportConfigurationsOutput;
 
 mod _describe_export_configurations_input;
 

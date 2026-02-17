@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_inbound_c
     }
 }
 
-pub use crate::operation::describe_inbound_connections::_describe_inbound_connections_output::DescribeInboundConnectionsOutput;
-
 pub use crate::operation::describe_inbound_connections::_describe_inbound_connections_input::DescribeInboundConnectionsInput;
+
+pub use crate::operation::describe_inbound_connections::_describe_inbound_connections_output::DescribeInboundConnectionsOutput;
 
 mod _describe_inbound_connections_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_network_firewall_transit_gateway_attachment::_delete_network_firewall_transit_gateway_attachment_output::DeleteNetworkFirewallTransitGatewayAttachmentOutput;
-
 pub use crate::operation::delete_network_firewall_transit_gateway_attachment::_delete_network_firewall_transit_gateway_attachment_input::DeleteNetworkFirewallTransitGatewayAttachmentInput;
+
+pub use crate::operation::delete_network_firewall_transit_gateway_attachment::_delete_network_firewall_transit_gateway_attachment_output::DeleteNetworkFirewallTransitGatewayAttachmentOutput;
 
 mod _delete_network_firewall_transit_gateway_attachment_input;
 

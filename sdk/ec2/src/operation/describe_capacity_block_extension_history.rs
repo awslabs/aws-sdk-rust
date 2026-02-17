@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_capacity_
     }
 }
 
-pub use crate::operation::describe_capacity_block_extension_history::_describe_capacity_block_extension_history_output::DescribeCapacityBlockExtensionHistoryOutput;
-
 pub use crate::operation::describe_capacity_block_extension_history::_describe_capacity_block_extension_history_input::DescribeCapacityBlockExtensionHistoryInput;
+
+pub use crate::operation::describe_capacity_block_extension_history::_describe_capacity_block_extension_history_output::DescribeCapacityBlockExtensionHistoryOutput;
 
 mod _describe_capacity_block_extension_history_input;
 

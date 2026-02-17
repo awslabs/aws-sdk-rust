@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bill_estimate
     }
 }
 
-pub use crate::operation::list_bill_estimate_commitments::_list_bill_estimate_commitments_output::ListBillEstimateCommitmentsOutput;
-
 pub use crate::operation::list_bill_estimate_commitments::_list_bill_estimate_commitments_input::ListBillEstimateCommitmentsInput;
+
+pub use crate::operation::list_bill_estimate_commitments::_list_bill_estimate_commitments_output::ListBillEstimateCommitmentsOutput;
 
 mod _list_bill_estimate_commitments_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_media::GetMedi
     }
 }
 
-pub use crate::operation::get_media::_get_media_output::GetMediaOutput;
-
 pub use crate::operation::get_media::_get_media_input::GetMediaInput;
+
+pub use crate::operation::get_media::_get_media_output::GetMediaOutput;
 
 mod _get_media_input;
 

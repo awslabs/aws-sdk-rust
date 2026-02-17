@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_config
     }
 }
 
-pub use crate::operation::update_user_config::_update_user_config_output::UpdateUserConfigOutput;
-
 pub use crate::operation::update_user_config::_update_user_config_input::UpdateUserConfigInput;
+
+pub use crate::operation::update_user_config::_update_user_config_output::UpdateUserConfigOutput;
 
 mod _update_user_config_input;
 

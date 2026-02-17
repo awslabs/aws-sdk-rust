@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_datastore::
     }
 }
 
-pub use crate::operation::delete_datastore::_delete_datastore_output::DeleteDatastoreOutput;
-
 pub use crate::operation::delete_datastore::_delete_datastore_input::DeleteDatastoreInput;
+
+pub use crate::operation::delete_datastore::_delete_datastore_output::DeleteDatastoreOutput;
 
 mod _delete_datastore_input;
 

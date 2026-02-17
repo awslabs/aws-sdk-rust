@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_topology::_describe_instance_topology_output::DescribeInstanceTopologyOutput;
-
 pub use crate::operation::describe_instance_topology::_describe_instance_topology_input::DescribeInstanceTopologyInput;
+
+pub use crate::operation::describe_instance_topology::_describe_instance_topology_output::DescribeInstanceTopologyOutput;
 
 mod _describe_instance_topology_input;
 

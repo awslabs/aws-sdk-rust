@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_partner_eve
     }
 }
 
-pub use crate::operation::delete_partner_event_source::_delete_partner_event_source_output::DeletePartnerEventSourceOutput;
-
 pub use crate::operation::delete_partner_event_source::_delete_partner_event_source_input::DeletePartnerEventSourceInput;
+
+pub use crate::operation::delete_partner_event_source::_delete_partner_event_source_output::DeletePartnerEventSourceOutput;
 
 mod _delete_partner_event_source_input;
 

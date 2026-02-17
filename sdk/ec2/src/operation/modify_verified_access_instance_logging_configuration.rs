@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_verified_access_instance_logging_configuration::_modify_verified_access_instance_logging_configuration_output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput;
-
 pub use crate::operation::modify_verified_access_instance_logging_configuration::_modify_verified_access_instance_logging_configuration_input::ModifyVerifiedAccessInstanceLoggingConfigurationInput;
+
+pub use crate::operation::modify_verified_access_instance_logging_configuration::_modify_verified_access_instance_logging_configuration_output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput;
 
 mod _modify_verified_access_instance_logging_configuration_input;
 

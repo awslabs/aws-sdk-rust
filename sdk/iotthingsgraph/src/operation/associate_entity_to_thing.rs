@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_entity_t
     }
 }
 
-pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_output::AssociateEntityToThingOutput;
-
 pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_input::AssociateEntityToThingInput;
+
+pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_output::AssociateEntityToThingOutput;
 
 mod _associate_entity_to_thing_input;
 

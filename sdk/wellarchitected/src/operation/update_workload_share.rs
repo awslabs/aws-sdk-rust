@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workload_sh
     }
 }
 
-pub use crate::operation::update_workload_share::_update_workload_share_output::UpdateWorkloadShareOutput;
-
 pub use crate::operation::update_workload_share::_update_workload_share_input::UpdateWorkloadShareInput;
+
+pub use crate::operation::update_workload_share::_update_workload_share_output::UpdateWorkloadShareOutput;
 
 mod _update_workload_share_input;
 

@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_instance_re
     }
 }
 
-pub use crate::operation::cancel_instance_refresh::_cancel_instance_refresh_output::CancelInstanceRefreshOutput;
-
 pub use crate::operation::cancel_instance_refresh::_cancel_instance_refresh_input::CancelInstanceRefreshInput;
+
+pub use crate::operation::cancel_instance_refresh::_cancel_instance_refresh_output::CancelInstanceRefreshOutput;
 
 mod _cancel_instance_refresh_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_task_runs::
     }
 }
 
-pub use crate::operation::get_ml_task_runs::_get_ml_task_runs_output::GetMlTaskRunsOutput;
-
 pub use crate::operation::get_ml_task_runs::_get_ml_task_runs_input::GetMlTaskRunsInput;
+
+pub use crate::operation::get_ml_task_runs::_get_ml_task_runs_output::GetMlTaskRunsOutput;
 
 mod _get_ml_task_runs_input;
 

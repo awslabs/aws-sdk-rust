@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_pol
     }
 }
 
-pub use crate::operation::delete_account_policy::_delete_account_policy_output::DeleteAccountPolicyOutput;
-
 pub use crate::operation::delete_account_policy::_delete_account_policy_input::DeleteAccountPolicyInput;
+
+pub use crate::operation::delete_account_policy::_delete_account_policy_output::DeleteAccountPolicyOutput;
 
 mod _delete_account_policy_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_fleet
     }
 }
 
-pub use crate::operation::disassociate_fleet::_disassociate_fleet_output::DisassociateFleetOutput;
-
 pub use crate::operation::disassociate_fleet::_disassociate_fleet_input::DisassociateFleetInput;
+
+pub use crate::operation::disassociate_fleet::_disassociate_fleet_output::DisassociateFleetOutput;
 
 mod _disassociate_fleet_input;
 

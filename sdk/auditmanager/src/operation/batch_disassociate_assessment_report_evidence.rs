@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_disassociate_assessment_report_evidence::_batch_disassociate_assessment_report_evidence_output::BatchDisassociateAssessmentReportEvidenceOutput;
-
 pub use crate::operation::batch_disassociate_assessment_report_evidence::_batch_disassociate_assessment_report_evidence_input::BatchDisassociateAssessmentReportEvidenceInput;
+
+pub use crate::operation::batch_disassociate_assessment_report_evidence::_batch_disassociate_assessment_report_evidence_output::BatchDisassociateAssessmentReportEvidenceOutput;
 
 mod _batch_disassociate_assessment_report_evidence_input;
 

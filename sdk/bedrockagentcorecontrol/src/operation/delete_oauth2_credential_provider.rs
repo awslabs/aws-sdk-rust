@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_oauth2_cred
     }
 }
 
-pub use crate::operation::delete_oauth2_credential_provider::_delete_oauth2_credential_provider_output::DeleteOauth2CredentialProviderOutput;
-
 pub use crate::operation::delete_oauth2_credential_provider::_delete_oauth2_credential_provider_input::DeleteOauth2CredentialProviderInput;
+
+pub use crate::operation::delete_oauth2_credential_provider::_delete_oauth2_credential_provider_output::DeleteOauth2CredentialProviderOutput;
 
 mod _delete_oauth2_credential_provider_input;
 

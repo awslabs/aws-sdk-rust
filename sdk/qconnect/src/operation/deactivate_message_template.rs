@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_message
     }
 }
 
-pub use crate::operation::deactivate_message_template::_deactivate_message_template_output::DeactivateMessageTemplateOutput;
-
 pub use crate::operation::deactivate_message_template::_deactivate_message_template_input::DeactivateMessageTemplateInput;
+
+pub use crate::operation::deactivate_message_template::_deactivate_message_template_output::DeactivateMessageTemplateOutput;
 
 mod _deactivate_message_template_input;
 

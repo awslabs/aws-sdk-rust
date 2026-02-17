@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_phone_nu
     }
 }
 
-pub use crate::operation::associate_phone_number_contact_flow::_associate_phone_number_contact_flow_output::AssociatePhoneNumberContactFlowOutput;
-
 pub use crate::operation::associate_phone_number_contact_flow::_associate_phone_number_contact_flow_input::AssociatePhoneNumberContactFlowInput;
+
+pub use crate::operation::associate_phone_number_contact_flow::_associate_phone_number_contact_flow_output::AssociatePhoneNumberContactFlowOutput;
 
 mod _associate_phone_number_contact_flow_input;
 

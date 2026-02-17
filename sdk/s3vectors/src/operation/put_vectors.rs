@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_vectors::PutVe
     }
 }
 
-pub use crate::operation::put_vectors::_put_vectors_output::PutVectorsOutput;
-
 pub use crate::operation::put_vectors::_put_vectors_input::PutVectorsInput;
+
+pub use crate::operation::put_vectors::_put_vectors_output::PutVectorsOutput;
 
 mod _put_vectors_input;
 

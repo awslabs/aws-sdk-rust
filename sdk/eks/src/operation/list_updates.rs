@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_updates::List
     }
 }
 
-pub use crate::operation::list_updates::_list_updates_output::ListUpdatesOutput;
-
 pub use crate::operation::list_updates::_list_updates_input::ListUpdatesInput;
+
+pub use crate::operation::list_updates::_list_updates_output::ListUpdatesOutput;
 
 mod _list_updates_input;
 

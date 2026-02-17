@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bucket_bund
     }
 }
 
-pub use crate::operation::update_bucket_bundle::_update_bucket_bundle_output::UpdateBucketBundleOutput;
-
 pub use crate::operation::update_bucket_bundle::_update_bucket_bundle_input::UpdateBucketBundleInput;
+
+pub use crate::operation::update_bucket_bundle::_update_bucket_bundle_output::UpdateBucketBundleOutput;
 
 mod _update_bucket_bundle_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_secondary
     }
 }
 
-pub use crate::operation::describe_secondary_networks::_describe_secondary_networks_output::DescribeSecondaryNetworksOutput;
-
 pub use crate::operation::describe_secondary_networks::_describe_secondary_networks_input::DescribeSecondaryNetworksInput;
+
+pub use crate::operation::describe_secondary_networks::_describe_secondary_networks_output::DescribeSecondaryNetworksOutput;
 
 mod _describe_secondary_networks_input;
 

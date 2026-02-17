@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_participant_r
     }
 }
 
-pub use crate::operation::stop_participant_replication::_stop_participant_replication_output::StopParticipantReplicationOutput;
-
 pub use crate::operation::stop_participant_replication::_stop_participant_replication_input::StopParticipantReplicationInput;
+
+pub use crate::operation::stop_participant_replication::_stop_participant_replication_output::StopParticipantReplicationOutput;
 
 mod _stop_participant_replication_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_prompt::Upd
     }
 }
 
-pub use crate::operation::update_prompt::_update_prompt_output::UpdatePromptOutput;
-
 pub use crate::operation::update_prompt::_update_prompt_input::UpdatePromptInput;
+
+pub use crate::operation::update_prompt::_update_prompt_output::UpdatePromptOutput;
 
 mod _update_prompt_input;
 

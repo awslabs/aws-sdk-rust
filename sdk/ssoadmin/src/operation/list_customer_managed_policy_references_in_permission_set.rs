@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_customer_managed_policy_references_in_permission_set::_list_customer_managed_policy_references_in_permission_set_output::ListCustomerManagedPolicyReferencesInPermissionSetOutput;
-
 pub use crate::operation::list_customer_managed_policy_references_in_permission_set::_list_customer_managed_policy_references_in_permission_set_input::ListCustomerManagedPolicyReferencesInPermissionSetInput;
+
+pub use crate::operation::list_customer_managed_policy_references_in_permission_set::_list_customer_managed_policy_references_in_permission_set_output::ListCustomerManagedPolicyReferencesInPermissionSetOutput;
 
 mod _list_customer_managed_policy_references_in_permission_set_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_baidu_chann
     }
 }
 
-pub use crate::operation::delete_baidu_channel::_delete_baidu_channel_output::DeleteBaiduChannelOutput;
-
 pub use crate::operation::delete_baidu_channel::_delete_baidu_channel_input::DeleteBaiduChannelInput;
+
+pub use crate::operation::delete_baidu_channel::_delete_baidu_channel_output::DeleteBaiduChannelOutput;
 
 mod _delete_baidu_channel_input;
 

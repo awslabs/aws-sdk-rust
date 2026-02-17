@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_ip_acces
     }
 }
 
-pub use crate::operation::associate_ip_access_settings::_associate_ip_access_settings_output::AssociateIpAccessSettingsOutput;
-
 pub use crate::operation::associate_ip_access_settings::_associate_ip_access_settings_input::AssociateIpAccessSettingsInput;
+
+pub use crate::operation::associate_ip_access_settings::_associate_ip_access_settings_output::AssociateIpAccessSettingsOutput;
 
 mod _associate_ip_access_settings_input;
 

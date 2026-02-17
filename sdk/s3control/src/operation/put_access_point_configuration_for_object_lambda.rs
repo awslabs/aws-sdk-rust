@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_access_point_configuration_for_object_lambda::_put_access_point_configuration_for_object_lambda_output::PutAccessPointConfigurationForObjectLambdaOutput;
-
 pub use crate::operation::put_access_point_configuration_for_object_lambda::_put_access_point_configuration_for_object_lambda_input::PutAccessPointConfigurationForObjectLambdaInput;
+
+pub use crate::operation::put_access_point_configuration_for_object_lambda::_put_access_point_configuration_for_object_lambda_output::PutAccessPointConfigurationForObjectLambdaOutput;
 
 mod _put_access_point_configuration_for_object_lambda_input;
 

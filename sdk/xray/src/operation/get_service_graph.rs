@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_graph:
     }
 }
 
-pub use crate::operation::get_service_graph::_get_service_graph_output::GetServiceGraphOutput;
-
 pub use crate::operation::get_service_graph::_get_service_graph_input::GetServiceGraphInput;
+
+pub use crate::operation::get_service_graph::_get_service_graph_output::GetServiceGraphOutput;
 
 mod _get_service_graph_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sdk_types::Get
     }
 }
 
-pub use crate::operation::get_sdk_types::_get_sdk_types_output::GetSdkTypesOutput;
-
 pub use crate::operation::get_sdk_types::_get_sdk_types_input::GetSdkTypesInput;
+
+pub use crate::operation::get_sdk_types::_get_sdk_types_output::GetSdkTypesOutput;
 
 mod _get_sdk_types_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_crawler_sche
     }
 }
 
-pub use crate::operation::start_crawler_schedule::_start_crawler_schedule_output::StartCrawlerScheduleOutput;
-
 pub use crate::operation::start_crawler_schedule::_start_crawler_schedule_input::StartCrawlerScheduleInput;
+
+pub use crate::operation::start_crawler_schedule::_start_crawler_schedule_output::StartCrawlerScheduleOutput;
 
 mod _start_crawler_schedule_input;
 

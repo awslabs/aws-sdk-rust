@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recommend
     }
 }
 
-pub use crate::operation::describe_recommendation_export_jobs::_describe_recommendation_export_jobs_output::DescribeRecommendationExportJobsOutput;
-
 pub use crate::operation::describe_recommendation_export_jobs::_describe_recommendation_export_jobs_input::DescribeRecommendationExportJobsInput;
+
+pub use crate::operation::describe_recommendation_export_jobs::_describe_recommendation_export_jobs_output::DescribeRecommendationExportJobsOutput;
 
 mod _describe_recommendation_export_jobs_input;
 

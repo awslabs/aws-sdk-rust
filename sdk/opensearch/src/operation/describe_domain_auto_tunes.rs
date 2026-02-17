@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain_au
     }
 }
 
-pub use crate::operation::describe_domain_auto_tunes::_describe_domain_auto_tunes_output::DescribeDomainAutoTunesOutput;
-
 pub use crate::operation::describe_domain_auto_tunes::_describe_domain_auto_tunes_input::DescribeDomainAutoTunesInput;
+
+pub use crate::operation::describe_domain_auto_tunes::_describe_domain_auto_tunes_output::DescribeDomainAutoTunesOutput;
 
 mod _describe_domain_auto_tunes_input;
 

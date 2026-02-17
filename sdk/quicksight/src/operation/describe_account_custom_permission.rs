@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_c
     }
 }
 
-pub use crate::operation::describe_account_custom_permission::_describe_account_custom_permission_output::DescribeAccountCustomPermissionOutput;
-
 pub use crate::operation::describe_account_custom_permission::_describe_account_custom_permission_input::DescribeAccountCustomPermissionInput;
+
+pub use crate::operation::describe_account_custom_permission::_describe_account_custom_permission_output::DescribeAccountCustomPermissionOutput;
 
 mod _describe_account_custom_permission_input;
 

@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_role_custom
     }
 }
 
-pub use crate::operation::delete_role_custom_permission::_delete_role_custom_permission_output::DeleteRoleCustomPermissionOutput;
-
 pub use crate::operation::delete_role_custom_permission::_delete_role_custom_permission_input::DeleteRoleCustomPermissionInput;
+
+pub use crate::operation::delete_role_custom_permission::_delete_role_custom_permission_output::DeleteRoleCustomPermissionOutput;
 
 mod _delete_role_custom_permission_input;
 

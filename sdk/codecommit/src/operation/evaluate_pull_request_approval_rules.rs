@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate_pull_requ
     }
 }
 
-pub use crate::operation::evaluate_pull_request_approval_rules::_evaluate_pull_request_approval_rules_output::EvaluatePullRequestApprovalRulesOutput;
-
 pub use crate::operation::evaluate_pull_request_approval_rules::_evaluate_pull_request_approval_rules_input::EvaluatePullRequestApprovalRulesInput;
+
+pub use crate::operation::evaluate_pull_request_approval_rules::_evaluate_pull_request_approval_rules_output::EvaluatePullRequestApprovalRulesOutput;
 
 mod _evaluate_pull_request_approval_rules_input;
 

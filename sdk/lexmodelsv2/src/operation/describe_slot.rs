@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_slot::Des
     }
 }
 
-pub use crate::operation::describe_slot::_describe_slot_output::DescribeSlotOutput;
-
 pub use crate::operation::describe_slot::_describe_slot_input::DescribeSlotInput;
+
+pub use crate::operation::describe_slot::_describe_slot_output::DescribeSlotOutput;
 
 mod _describe_slot_input;
 

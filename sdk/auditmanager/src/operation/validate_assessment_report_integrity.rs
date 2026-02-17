@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_assessmen
     }
 }
 
-pub use crate::operation::validate_assessment_report_integrity::_validate_assessment_report_integrity_output::ValidateAssessmentReportIntegrityOutput;
-
 pub use crate::operation::validate_assessment_report_integrity::_validate_assessment_report_integrity_input::ValidateAssessmentReportIntegrityInput;
+
+pub use crate::operation::validate_assessment_report_integrity::_validate_assessment_report_integrity_output::ValidateAssessmentReportIntegrityOutput;
 
 mod _validate_assessment_report_integrity_input;
 

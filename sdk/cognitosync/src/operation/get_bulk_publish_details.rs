@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bulk_publish_d
     }
 }
 
-pub use crate::operation::get_bulk_publish_details::_get_bulk_publish_details_output::GetBulkPublishDetailsOutput;
-
 pub use crate::operation::get_bulk_publish_details::_get_bulk_publish_details_input::GetBulkPublishDetailsInput;
+
+pub use crate::operation::get_bulk_publish_details::_get_bulk_publish_details_output::GetBulkPublishDetailsOutput;
 
 mod _get_bulk_publish_details_input;
 

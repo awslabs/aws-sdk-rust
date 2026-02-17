@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_is_authorize
     }
 }
 
-pub use crate::operation::batch_is_authorized_with_token::_batch_is_authorized_with_token_output::BatchIsAuthorizedWithTokenOutput;
-
 pub use crate::operation::batch_is_authorized_with_token::_batch_is_authorized_with_token_input::BatchIsAuthorizedWithTokenInput;
+
+pub use crate::operation::batch_is_authorized_with_token::_batch_is_authorized_with_token_output::BatchIsAuthorizedWithTokenOutput;
 
 mod _batch_is_authorized_with_token_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_audience_gen
     }
 }
 
-pub use crate::operation::start_audience_generation_job::_start_audience_generation_job_output::StartAudienceGenerationJobOutput;
-
 pub use crate::operation::start_audience_generation_job::_start_audience_generation_job_input::StartAudienceGenerationJobInput;
+
+pub use crate::operation::start_audience_generation_job::_start_audience_generation_job_output::StartAudienceGenerationJobOutput;
 
 mod _start_audience_generation_job_input;
 

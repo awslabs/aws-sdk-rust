@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_response_he
     }
 }
 
-pub use crate::operation::delete_response_headers_policy::_delete_response_headers_policy_output::DeleteResponseHeadersPolicyOutput;
-
 pub use crate::operation::delete_response_headers_policy::_delete_response_headers_policy_input::DeleteResponseHeadersPolicyInput;
+
+pub use crate::operation::delete_response_headers_policy::_delete_response_headers_policy_output::DeleteResponseHeadersPolicyOutput;
 
 mod _delete_response_headers_policy_input;
 

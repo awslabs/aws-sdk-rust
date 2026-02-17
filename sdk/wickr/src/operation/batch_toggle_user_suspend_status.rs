@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_toggle_user_
     }
 }
 
-pub use crate::operation::batch_toggle_user_suspend_status::_batch_toggle_user_suspend_status_output::BatchToggleUserSuspendStatusOutput;
-
 pub use crate::operation::batch_toggle_user_suspend_status::_batch_toggle_user_suspend_status_input::BatchToggleUserSuspendStatusInput;
+
+pub use crate::operation::batch_toggle_user_suspend_status::_batch_toggle_user_suspend_status_output::BatchToggleUserSuspendStatusOutput;
 
 mod _batch_toggle_user_suspend_status_input;
 

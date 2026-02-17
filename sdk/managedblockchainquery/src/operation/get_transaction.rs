@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transaction::G
     }
 }
 
-pub use crate::operation::get_transaction::_get_transaction_output::GetTransactionOutput;
-
 pub use crate::operation::get_transaction::_get_transaction_input::GetTransactionInput;
+
+pub use crate::operation::get_transaction::_get_transaction_output::GetTransactionOutput;
 
 mod _get_transaction_input;
 

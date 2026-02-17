@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get_access_point_policy_status_for_object_lambda_output::GetAccessPointPolicyStatusForObjectLambdaOutput;
-
 pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get_access_point_policy_status_for_object_lambda_input::GetAccessPointPolicyStatusForObjectLambdaInput;
+
+pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get_access_point_policy_status_for_object_lambda_output::GetAccessPointPolicyStatusForObjectLambdaOutput;
 
 mod _get_access_point_policy_status_for_object_lambda_input;
 

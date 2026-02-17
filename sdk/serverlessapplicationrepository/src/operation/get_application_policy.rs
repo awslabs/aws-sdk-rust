@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_po
     }
 }
 
-pub use crate::operation::get_application_policy::_get_application_policy_output::GetApplicationPolicyOutput;
-
 pub use crate::operation::get_application_policy::_get_application_policy_input::GetApplicationPolicyInput;
+
+pub use crate::operation::get_application_policy::_get_application_policy_output::GetApplicationPolicyOutput;
 
 mod _get_application_policy_input;
 

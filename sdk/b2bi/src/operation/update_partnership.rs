@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_partnership
     }
 }
 
-pub use crate::operation::update_partnership::_update_partnership_output::UpdatePartnershipOutput;
-
 pub use crate::operation::update_partnership::_update_partnership_input::UpdatePartnershipInput;
+
+pub use crate::operation::update_partnership::_update_partnership_output::UpdatePartnershipOutput;
 
 mod _update_partnership_input;
 

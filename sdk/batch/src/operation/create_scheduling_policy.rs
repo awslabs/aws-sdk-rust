@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scheduling_
     }
 }
 
-pub use crate::operation::create_scheduling_policy::_create_scheduling_policy_output::CreateSchedulingPolicyOutput;
-
 pub use crate::operation::create_scheduling_policy::_create_scheduling_policy_input::CreateSchedulingPolicyInput;
+
+pub use crate::operation::create_scheduling_policy::_create_scheduling_policy_output::CreateSchedulingPolicyOutput;
 
 mod _create_scheduling_policy_input;
 

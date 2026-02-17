@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_glue_identi
     }
 }
 
-pub use crate::operation::update_glue_identity_center_configuration::_update_glue_identity_center_configuration_output::UpdateGlueIdentityCenterConfigurationOutput;
-
 pub use crate::operation::update_glue_identity_center_configuration::_update_glue_identity_center_configuration_input::UpdateGlueIdentityCenterConfigurationInput;
+
+pub use crate::operation::update_glue_identity_center_configuration::_update_glue_identity_center_configuration_output::UpdateGlueIdentityCenterConfigurationOutput;
 
 mod _update_glue_identity_center_configuration_input;
 

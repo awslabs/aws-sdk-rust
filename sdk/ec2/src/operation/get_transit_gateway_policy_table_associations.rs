@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_transit_gateway_policy_table_associations::_get_transit_gateway_policy_table_associations_output::GetTransitGatewayPolicyTableAssociationsOutput;
-
 pub use crate::operation::get_transit_gateway_policy_table_associations::_get_transit_gateway_policy_table_associations_input::GetTransitGatewayPolicyTableAssociationsInput;
+
+pub use crate::operation::get_transit_gateway_policy_table_associations::_get_transit_gateway_policy_table_associations_output::GetTransitGatewayPolicyTableAssociationsOutput;
 
 mod _get_transit_gateway_policy_table_associations_input;
 

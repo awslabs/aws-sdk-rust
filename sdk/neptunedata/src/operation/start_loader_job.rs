@@ -491,9 +491,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_loader_job::
     }
 }
 
-pub use crate::operation::start_loader_job::_start_loader_job_output::StartLoaderJobOutput;
-
 pub use crate::operation::start_loader_job::_start_loader_job_input::StartLoaderJobInput;
+
+pub use crate::operation::start_loader_job::_start_loader_job_output::StartLoaderJobOutput;
 
 mod _start_loader_job_input;
 

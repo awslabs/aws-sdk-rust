@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attacks::List
     }
 }
 
-pub use crate::operation::list_attacks::_list_attacks_output::ListAttacksOutput;
-
 pub use crate::operation::list_attacks::_list_attacks_input::ListAttacksInput;
+
+pub use crate::operation::list_attacks::_list_attacks_output::ListAttacksOutput;
 
 mod _list_attacks_input;
 

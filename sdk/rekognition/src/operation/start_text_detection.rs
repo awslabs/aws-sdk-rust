@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_text_detecti
     }
 }
 
-pub use crate::operation::start_text_detection::_start_text_detection_output::StartTextDetectionOutput;
-
 pub use crate::operation::start_text_detection::_start_text_detection_input::StartTextDetectionInput;
+
+pub use crate::operation::start_text_detection::_start_text_detection_output::StartTextDetectionOutput;
 
 mod _start_text_detection_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_sync_b
     }
 }
 
-pub use crate::operation::get_service_sync_blocker_summary::_get_service_sync_blocker_summary_output::GetServiceSyncBlockerSummaryOutput;
-
 pub use crate::operation::get_service_sync_blocker_summary::_get_service_sync_blocker_summary_input::GetServiceSyncBlockerSummaryInput;
+
+pub use crate::operation::get_service_sync_blocker_summary::_get_service_sync_blocker_summary_output::GetServiceSyncBlockerSummaryOutput;
 
 mod _get_service_sync_blocker_summary_input;
 

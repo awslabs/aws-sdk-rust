@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workspaces::L
     }
 }
 
-pub use crate::operation::list_workspaces::_list_workspaces_output::ListWorkspacesOutput;
-
 pub use crate::operation::list_workspaces::_list_workspaces_input::ListWorkspacesInput;
+
+pub use crate::operation::list_workspaces::_list_workspaces_output::ListWorkspacesOutput;
 
 mod _list_workspaces_input;
 

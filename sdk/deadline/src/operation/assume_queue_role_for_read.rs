@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_queue_role_
     }
 }
 
-pub use crate::operation::assume_queue_role_for_read::_assume_queue_role_for_read_output::AssumeQueueRoleForReadOutput;
-
 pub use crate::operation::assume_queue_role_for_read::_assume_queue_role_for_read_input::AssumeQueueRoleForReadInput;
+
+pub use crate::operation::assume_queue_role_for_read::_assume_queue_role_for_read_output::AssumeQueueRoleForReadOutput;
 
 mod _assume_queue_role_for_read_input;
 

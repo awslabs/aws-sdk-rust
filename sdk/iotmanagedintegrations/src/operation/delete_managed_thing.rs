@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_managed_thi
     }
 }
 
-pub use crate::operation::delete_managed_thing::_delete_managed_thing_output::DeleteManagedThingOutput;
-
 pub use crate::operation::delete_managed_thing::_delete_managed_thing_input::DeleteManagedThingInput;
+
+pub use crate::operation::delete_managed_thing::_delete_managed_thing_output::DeleteManagedThingOutput;
 
 mod _delete_managed_thing_input;
 

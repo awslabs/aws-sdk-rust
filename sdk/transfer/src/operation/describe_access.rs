@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_access::D
     }
 }
 
-pub use crate::operation::describe_access::_describe_access_output::DescribeAccessOutput;
-
 pub use crate::operation::describe_access::_describe_access_input::DescribeAccessInput;
+
+pub use crate::operation::describe_access::_describe_access_output::DescribeAccessOutput;
 
 mod _describe_access_input;
 

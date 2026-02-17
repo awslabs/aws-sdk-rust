@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_table_va
     }
 }
 
-pub use crate::operation::list_data_table_values::_list_data_table_values_output::ListDataTableValuesOutput;
-
 pub use crate::operation::list_data_table_values::_list_data_table_values_input::ListDataTableValuesInput;
+
+pub use crate::operation::list_data_table_values::_list_data_table_values_output::ListDataTableValuesOutput;
 
 mod _list_data_table_values_input;
 

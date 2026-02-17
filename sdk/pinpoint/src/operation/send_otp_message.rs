@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_otp_message::
     }
 }
 
-pub use crate::operation::send_otp_message::_send_otp_message_output::SendOtpMessageOutput;
-
 pub use crate::operation::send_otp_message::_send_otp_message_input::SendOtpMessageInput;
+
+pub use crate::operation::send_otp_message::_send_otp_message_output::SendOtpMessageOutput;
 
 mod _send_otp_message_input;
 

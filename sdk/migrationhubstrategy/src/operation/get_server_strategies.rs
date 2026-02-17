@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_server_strateg
     }
 }
 
-pub use crate::operation::get_server_strategies::_get_server_strategies_output::GetServerStrategiesOutput;
-
 pub use crate::operation::get_server_strategies::_get_server_strategies_input::GetServerStrategiesInput;
+
+pub use crate::operation::get_server_strategies::_get_server_strategies_output::GetServerStrategiesOutput;
 
 mod _get_server_strategies_input;
 

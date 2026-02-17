@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_subnet_g
     }
 }
 
-pub use crate::operation::modify_db_subnet_group::_modify_db_subnet_group_output::ModifyDbSubnetGroupOutput;
-
 pub use crate::operation::modify_db_subnet_group::_modify_db_subnet_group_input::ModifyDbSubnetGroupInput;
+
+pub use crate::operation::modify_db_subnet_group::_modify_db_subnet_group_output::ModifyDbSubnetGroupOutput;
 
 mod _modify_db_subnet_group_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_endpoint_gr
     }
 }
 
-pub use crate::operation::delete_endpoint_group::_delete_endpoint_group_output::DeleteEndpointGroupOutput;
-
 pub use crate::operation::delete_endpoint_group::_delete_endpoint_group_input::DeleteEndpointGroupInput;
+
+pub use crate::operation::delete_endpoint_group::_delete_endpoint_group_output::DeleteEndpointGroupOutput;
 
 mod _delete_endpoint_group_input;
 

@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workspace_ser
     }
 }
 
-pub use crate::operation::list_workspace_service_account_tokens::_list_workspace_service_account_tokens_output::ListWorkspaceServiceAccountTokensOutput;
-
 pub use crate::operation::list_workspace_service_account_tokens::_list_workspace_service_account_tokens_input::ListWorkspaceServiceAccountTokensInput;
+
+pub use crate::operation::list_workspace_service_account_tokens::_list_workspace_service_account_tokens_output::ListWorkspaceServiceAccountTokensOutput;
 
 mod _list_workspace_service_account_tokens_input;
 

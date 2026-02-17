@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_component_d
     }
 }
 
-pub use crate::operation::cancel_component_deployment::_cancel_component_deployment_output::CancelComponentDeploymentOutput;
-
 pub use crate::operation::cancel_component_deployment::_cancel_component_deployment_input::CancelComponentDeploymentInput;
+
+pub use crate::operation::cancel_component_deployment::_cancel_component_deployment_output::CancelComponentDeploymentOutput;
 
 mod _cancel_component_deployment_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replicati
     }
 }
 
-pub use crate::operation::describe_replication_subnet_groups::_describe_replication_subnet_groups_output::DescribeReplicationSubnetGroupsOutput;
-
 pub use crate::operation::describe_replication_subnet_groups::_describe_replication_subnet_groups_input::DescribeReplicationSubnetGroupsInput;
+
+pub use crate::operation::describe_replication_subnet_groups::_describe_replication_subnet_groups_output::DescribeReplicationSubnetGroupsOutput;
 
 mod _describe_replication_subnet_groups_input;
 

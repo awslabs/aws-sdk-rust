@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_device_prof
     }
 }
 
-pub use crate::operation::delete_device_profile::_delete_device_profile_output::DeleteDeviceProfileOutput;
-
 pub use crate::operation::delete_device_profile::_delete_device_profile_input::DeleteDeviceProfileInput;
+
+pub use crate::operation::delete_device_profile::_delete_device_profile_output::DeleteDeviceProfileOutput;
 
 mod _delete_device_profile_input;
 

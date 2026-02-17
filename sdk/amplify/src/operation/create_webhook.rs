@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_webhook::Cr
     }
 }
 
-pub use crate::operation::create_webhook::_create_webhook_output::CreateWebhookOutput;
-
 pub use crate::operation::create_webhook::_create_webhook_input::CreateWebhookInput;
+
+pub use crate::operation::create_webhook::_create_webhook_output::CreateWebhookOutput;
 
 mod _create_webhook_input;
 

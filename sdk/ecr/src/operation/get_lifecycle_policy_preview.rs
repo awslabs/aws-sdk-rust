@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lifecycle_poli
     }
 }
 
-pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_preview_output::GetLifecyclePolicyPreviewOutput;
-
 pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_preview_input::GetLifecyclePolicyPreviewInput;
+
+pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_preview_output::GetLifecyclePolicyPreviewOutput;
 
 mod _get_lifecycle_policy_preview_input;
 

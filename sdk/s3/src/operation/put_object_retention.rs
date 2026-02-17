@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_object_retenti
     }
 }
 
-pub use crate::operation::put_object_retention::_put_object_retention_output::PutObjectRetentionOutput;
-
 pub use crate::operation::put_object_retention::_put_object_retention_input::PutObjectRetentionInput;
+
+pub use crate::operation::put_object_retention::_put_object_retention_output::PutObjectRetentionOutput;
 
 mod _put_object_retention_input;
 

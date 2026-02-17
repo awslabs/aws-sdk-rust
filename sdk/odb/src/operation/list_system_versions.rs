@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_system_versio
     }
 }
 
-pub use crate::operation::list_system_versions::_list_system_versions_output::ListSystemVersionsOutput;
-
 pub use crate::operation::list_system_versions::_list_system_versions_input::ListSystemVersionsInput;
+
+pub use crate::operation::list_system_versions::_list_system_versions_output::ListSystemVersionsOutput;
 
 mod _list_system_versions_input;
 

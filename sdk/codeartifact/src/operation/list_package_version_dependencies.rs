@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_package_versi
     }
 }
 
-pub use crate::operation::list_package_version_dependencies::_list_package_version_dependencies_output::ListPackageVersionDependenciesOutput;
-
 pub use crate::operation::list_package_version_dependencies::_list_package_version_dependencies_input::ListPackageVersionDependenciesInput;
+
+pub use crate::operation::list_package_version_dependencies::_list_package_version_dependencies_output::ListPackageVersionDependenciesOutput;
 
 mod _list_package_version_dependencies_input;
 

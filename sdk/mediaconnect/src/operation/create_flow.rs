@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flow::Creat
     }
 }
 
-pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutput;
-
 pub use crate::operation::create_flow::_create_flow_input::CreateFlowInput;
+
+pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutput;
 
 mod _create_flow_input;
 

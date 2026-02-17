@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collaboration
     }
 }
 
-pub use crate::operation::list_collaborations::_list_collaborations_output::ListCollaborationsOutput;
-
 pub use crate::operation::list_collaborations::_list_collaborations_input::ListCollaborationsInput;
+
+pub use crate::operation::list_collaborations::_list_collaborations_output::ListCollaborationsOutput;
 
 mod _list_collaborations_input;
 

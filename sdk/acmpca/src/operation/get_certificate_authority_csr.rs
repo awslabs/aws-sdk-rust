@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_certificate_au
     }
 }
 
-pub use crate::operation::get_certificate_authority_csr::_get_certificate_authority_csr_output::GetCertificateAuthorityCsrOutput;
-
 pub use crate::operation::get_certificate_authority_csr::_get_certificate_authority_csr_input::GetCertificateAuthorityCsrInput;
+
+pub use crate::operation::get_certificate_authority_csr::_get_certificate_authority_csr_output::GetCertificateAuthorityCsrOutput;
 
 mod _get_certificate_authority_csr_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_restore_acc
     }
 }
 
-pub use crate::operation::create_restore_access_backup_vault::_create_restore_access_backup_vault_output::CreateRestoreAccessBackupVaultOutput;
-
 pub use crate::operation::create_restore_access_backup_vault::_create_restore_access_backup_vault_input::CreateRestoreAccessBackupVaultInput;
+
+pub use crate::operation::create_restore_access_backup_vault::_create_restore_access_backup_vault_output::CreateRestoreAccessBackupVaultOutput;
 
 mod _create_restore_access_backup_vault_input;
 

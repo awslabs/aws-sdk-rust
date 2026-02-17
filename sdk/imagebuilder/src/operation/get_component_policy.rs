@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_component_poli
     }
 }
 
-pub use crate::operation::get_component_policy::_get_component_policy_output::GetComponentPolicyOutput;
-
 pub use crate::operation::get_component_policy::_get_component_policy_input::GetComponentPolicyInput;
+
+pub use crate::operation::get_component_policy::_get_component_policy_output::GetComponentPolicyOutput;
 
 mod _get_component_policy_input;
 

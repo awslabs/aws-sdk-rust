@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_risk_configura
     }
 }
 
-pub use crate::operation::set_risk_configuration::_set_risk_configuration_output::SetRiskConfigurationOutput;
-
 pub use crate::operation::set_risk_configuration::_set_risk_configuration_input::SetRiskConfigurationInput;
+
+pub use crate::operation::set_risk_configuration::_set_risk_configuration_output::SetRiskConfigurationOutput;
 
 mod _set_risk_configuration_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_log_anomaly
     }
 }
 
-pub use crate::operation::delete_log_anomaly_detector::_delete_log_anomaly_detector_output::DeleteLogAnomalyDetectorOutput;
-
 pub use crate::operation::delete_log_anomaly_detector::_delete_log_anomaly_detector_input::DeleteLogAnomalyDetectorInput;
+
+pub use crate::operation::delete_log_anomaly_detector::_delete_log_anomaly_detector_output::DeleteLogAnomalyDetectorOutput;
 
 mod _delete_log_anomaly_detector_input;
 

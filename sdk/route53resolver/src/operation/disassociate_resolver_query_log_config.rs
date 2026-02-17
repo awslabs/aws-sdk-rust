@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_resol
     }
 }
 
-pub use crate::operation::disassociate_resolver_query_log_config::_disassociate_resolver_query_log_config_output::DisassociateResolverQueryLogConfigOutput;
-
 pub use crate::operation::disassociate_resolver_query_log_config::_disassociate_resolver_query_log_config_input::DisassociateResolverQueryLogConfigInput;
+
+pub use crate::operation::disassociate_resolver_query_log_config::_disassociate_resolver_query_log_config_output::DisassociateResolverQueryLogConfigOutput;
 
 mod _disassociate_resolver_query_log_config_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vehicle::De
     }
 }
 
-pub use crate::operation::delete_vehicle::_delete_vehicle_output::DeleteVehicleOutput;
-
 pub use crate::operation::delete_vehicle::_delete_vehicle_input::DeleteVehicleInput;
+
+pub use crate::operation::delete_vehicle::_delete_vehicle_output::DeleteVehicleOutput;
 
 mod _delete_vehicle_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_practice_ru
     }
 }
 
-pub use crate::operation::create_practice_run_configuration::_create_practice_run_configuration_output::CreatePracticeRunConfigurationOutput;
-
 pub use crate::operation::create_practice_run_configuration::_create_practice_run_configuration_input::CreatePracticeRunConfigurationInput;
+
+pub use crate::operation::create_practice_run_configuration::_create_practice_run_configuration_output::CreatePracticeRunConfigurationOutput;
 
 mod _create_practice_run_configuration_input;
 

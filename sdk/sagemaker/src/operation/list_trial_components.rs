@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trial_compone
     }
 }
 
-pub use crate::operation::list_trial_components::_list_trial_components_output::ListTrialComponentsOutput;
-
 pub use crate::operation::list_trial_components::_list_trial_components_input::ListTrialComponentsInput;
+
+pub use crate::operation::list_trial_components::_list_trial_components_output::ListTrialComponentsOutput;
 
 mod _list_trial_components_input;
 

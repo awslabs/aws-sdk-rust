@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_software_set::
     }
 }
 
-pub use crate::operation::get_software_set::_get_software_set_output::GetSoftwareSetOutput;
-
 pub use crate::operation::get_software_set::_get_software_set_input::GetSoftwareSetInput;
+
+pub use crate::operation::get_software_set::_get_software_set_output::GetSoftwareSetOutput;
 
 mod _get_software_set_input;
 

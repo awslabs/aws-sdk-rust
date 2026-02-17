@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disassociate
     }
 }
 
-pub use crate::operation::batch_disassociate_user_stack::_batch_disassociate_user_stack_output::BatchDisassociateUserStackOutput;
-
 pub use crate::operation::batch_disassociate_user_stack::_batch_disassociate_user_stack_input::BatchDisassociateUserStackInput;
+
+pub use crate::operation::batch_disassociate_user_stack::_batch_disassociate_user_stack_output::BatchDisassociateUserStackOutput;
 
 mod _batch_disassociate_user_stack_input;
 

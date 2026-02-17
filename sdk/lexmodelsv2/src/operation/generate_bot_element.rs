@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_bot_eleme
     }
 }
 
-pub use crate::operation::generate_bot_element::_generate_bot_element_output::GenerateBotElementOutput;
-
 pub use crate::operation::generate_bot_element::_generate_bot_element_input::GenerateBotElementInput;
+
+pub use crate::operation::generate_bot_element::_generate_bot_element_output::GenerateBotElementOutput;
 
 mod _generate_bot_element_input;
 

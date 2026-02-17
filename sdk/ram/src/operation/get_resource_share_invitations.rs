@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_share
     }
 }
 
-pub use crate::operation::get_resource_share_invitations::_get_resource_share_invitations_output::GetResourceShareInvitationsOutput;
-
 pub use crate::operation::get_resource_share_invitations::_get_resource_share_invitations_input::GetResourceShareInvitationsInput;
+
+pub use crate::operation::get_resource_share_invitations::_get_resource_share_invitations_output::GetResourceShareInvitationsOutput;
 
 mod _get_resource_share_invitations_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_policy::TagPol
     }
 }
 
-pub use crate::operation::tag_policy::_tag_policy_output::TagPolicyOutput;
-
 pub use crate::operation::tag_policy::_tag_policy_input::TagPolicyInput;
+
+pub use crate::operation::tag_policy::_tag_policy_output::TagPolicyOutput;
 
 mod _tag_policy_input;
 

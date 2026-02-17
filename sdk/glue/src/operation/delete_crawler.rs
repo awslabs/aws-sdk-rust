@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_crawler::De
     }
 }
 
-pub use crate::operation::delete_crawler::_delete_crawler_output::DeleteCrawlerOutput;
-
 pub use crate::operation::delete_crawler::_delete_crawler_input::DeleteCrawlerInput;
+
+pub use crate::operation::delete_crawler::_delete_crawler_output::DeleteCrawlerOutput;
 
 mod _delete_crawler_input;
 

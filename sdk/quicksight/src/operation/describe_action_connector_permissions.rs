@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_action_co
     }
 }
 
-pub use crate::operation::describe_action_connector_permissions::_describe_action_connector_permissions_output::DescribeActionConnectorPermissionsOutput;
-
 pub use crate::operation::describe_action_connector_permissions::_describe_action_connector_permissions_input::DescribeActionConnectorPermissionsInput;
+
+pub use crate::operation::describe_action_connector_permissions::_describe_action_connector_permissions_output::DescribeActionConnectorPermissionsOutput;
 
 mod _describe_action_connector_permissions_input;
 

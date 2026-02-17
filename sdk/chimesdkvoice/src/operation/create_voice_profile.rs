@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_voice_profi
     }
 }
 
-pub use crate::operation::create_voice_profile::_create_voice_profile_output::CreateVoiceProfileOutput;
-
 pub use crate::operation::create_voice_profile::_create_voice_profile_input::CreateVoiceProfileInput;
+
+pub use crate::operation::create_voice_profile::_create_voice_profile_output::CreateVoiceProfileOutput;
 
 mod _create_voice_profile_input;
 

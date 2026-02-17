@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_device::D
     }
 }
 
-pub use crate::operation::describe_device::_describe_device_output::DescribeDeviceOutput;
-
 pub use crate::operation::describe_device::_describe_device_input::DescribeDeviceInput;
+
+pub use crate::operation::describe_device::_describe_device_output::DescribeDeviceOutput;
 
 mod _describe_device_input;
 

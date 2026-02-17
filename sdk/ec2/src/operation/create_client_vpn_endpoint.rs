@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_client_vpn_
     }
 }
 
-pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoint_output::CreateClientVpnEndpointOutput;
-
 pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoint_input::CreateClientVpnEndpointInput;
+
+pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoint_output::CreateClientVpnEndpointOutput;
 
 mod _create_client_vpn_endpoint_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_artifacts::Li
     }
 }
 
-pub use crate::operation::list_artifacts::_list_artifacts_output::ListArtifactsOutput;
-
 pub use crate::operation::list_artifacts::_list_artifacts_input::ListArtifactsInput;
+
+pub use crate::operation::list_artifacts::_list_artifacts_output::ListArtifactsOutput;
 
 mod _list_artifacts_input;
 

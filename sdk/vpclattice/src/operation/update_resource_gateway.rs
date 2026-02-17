@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_ga
     }
 }
 
-pub use crate::operation::update_resource_gateway::_update_resource_gateway_output::UpdateResourceGatewayOutput;
-
 pub use crate::operation::update_resource_gateway::_update_resource_gateway_input::UpdateResourceGatewayInput;
+
+pub use crate::operation::update_resource_gateway::_update_resource_gateway_output::UpdateResourceGatewayOutput;
 
 mod _update_resource_gateway_input;
 

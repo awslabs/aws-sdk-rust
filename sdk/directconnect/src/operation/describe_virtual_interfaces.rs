@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_virtual_i
     }
 }
 
-pub use crate::operation::describe_virtual_interfaces::_describe_virtual_interfaces_output::DescribeVirtualInterfacesOutput;
-
 pub use crate::operation::describe_virtual_interfaces::_describe_virtual_interfaces_input::DescribeVirtualInterfacesInput;
+
+pub use crate::operation::describe_virtual_interfaces::_describe_virtual_interfaces_output::DescribeVirtualInterfacesOutput;
 
 mod _describe_virtual_interfaces_input;
 

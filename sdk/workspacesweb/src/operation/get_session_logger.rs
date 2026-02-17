@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_session_logger
     }
 }
 
-pub use crate::operation::get_session_logger::_get_session_logger_output::GetSessionLoggerOutput;
-
 pub use crate::operation::get_session_logger::_get_session_logger_input::GetSessionLoggerInput;
+
+pub use crate::operation::get_session_logger::_get_session_logger_output::GetSessionLoggerOutput;
 
 mod _get_session_logger_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_network_ana
     }
 }
 
-pub use crate::operation::update_network_analyzer_configuration::_update_network_analyzer_configuration_output::UpdateNetworkAnalyzerConfigurationOutput;
-
 pub use crate::operation::update_network_analyzer_configuration::_update_network_analyzer_configuration_input::UpdateNetworkAnalyzerConfigurationInput;
+
+pub use crate::operation::update_network_analyzer_configuration::_update_network_analyzer_configuration_output::UpdateNetworkAnalyzerConfigurationOutput;
 
 mod _update_network_analyzer_configuration_input;
 

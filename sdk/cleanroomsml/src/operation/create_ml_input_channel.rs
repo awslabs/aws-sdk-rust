@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ml_input_ch
     }
 }
 
-pub use crate::operation::create_ml_input_channel::_create_ml_input_channel_output::CreateMlInputChannelOutput;
-
 pub use crate::operation::create_ml_input_channel::_create_ml_input_channel_input::CreateMlInputChannelInput;
+
+pub use crate::operation::create_ml_input_channel::_create_ml_input_channel_output::CreateMlInputChannelOutput;
 
 mod _create_ml_input_channel_input;
 

@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ai_guardrai
     }
 }
 
-pub use crate::operation::delete_ai_guardrail_version::_delete_ai_guardrail_version_output::DeleteAiGuardrailVersionOutput;
-
 pub use crate::operation::delete_ai_guardrail_version::_delete_ai_guardrail_version_input::DeleteAiGuardrailVersionInput;
+
+pub use crate::operation::delete_ai_guardrail_version::_delete_ai_guardrail_version_output::DeleteAiGuardrailVersionOutput;
 
 mod _delete_ai_guardrail_version_input;
 

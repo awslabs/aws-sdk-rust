@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_brand_pub
     }
 }
 
-pub use crate::operation::describe_brand_published_version::_describe_brand_published_version_output::DescribeBrandPublishedVersionOutput;
-
 pub use crate::operation::describe_brand_published_version::_describe_brand_published_version_input::DescribeBrandPublishedVersionInput;
+
+pub use crate::operation::describe_brand_published_version::_describe_brand_published_version_output::DescribeBrandPublishedVersionOutput;
 
 mod _describe_brand_published_version_input;
 

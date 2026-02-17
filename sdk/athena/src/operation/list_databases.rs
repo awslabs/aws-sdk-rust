@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_databases::Li
     }
 }
 
-pub use crate::operation::list_databases::_list_databases_output::ListDatabasesOutput;
-
 pub use crate::operation::list_databases::_list_databases_input::ListDatabasesInput;
+
+pub use crate::operation::list_databases::_list_databases_output::ListDatabasesOutput;
 
 mod _list_databases_input;
 

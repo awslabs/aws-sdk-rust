@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_metric_attr
     }
 }
 
-pub use crate::operation::update_metric_attribution::_update_metric_attribution_output::UpdateMetricAttributionOutput;
-
 pub use crate::operation::update_metric_attribution::_update_metric_attribution_input::UpdateMetricAttributionInput;
+
+pub use crate::operation::update_metric_attribution::_update_metric_attribution_output::UpdateMetricAttributionOutput;
 
 mod _update_metric_attribution_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_token::GetToke
     }
 }
 
-pub use crate::operation::get_token::_get_token_output::GetTokenOutput;
-
 pub use crate::operation::get_token::_get_token_input::GetTokenInput;
+
+pub use crate::operation::get_token::_get_token_output::GetTokenOutput;
 
 mod _get_token_input;
 

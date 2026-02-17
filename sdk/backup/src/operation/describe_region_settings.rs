@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_region_se
     }
 }
 
-pub use crate::operation::describe_region_settings::_describe_region_settings_output::DescribeRegionSettingsOutput;
-
 pub use crate::operation::describe_region_settings::_describe_region_settings_input::DescribeRegionSettingsInput;
+
+pub use crate::operation::describe_region_settings::_describe_region_settings_output::DescribeRegionSettingsOutput;
 
 mod _describe_region_settings_input;
 

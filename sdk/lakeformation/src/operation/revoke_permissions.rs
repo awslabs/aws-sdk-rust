@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_permissions
     }
 }
 
-pub use crate::operation::revoke_permissions::_revoke_permissions_output::RevokePermissionsOutput;
-
 pub use crate::operation::revoke_permissions::_revoke_permissions_input::RevokePermissionsInput;
+
+pub use crate::operation::revoke_permissions::_revoke_permissions_output::RevokePermissionsOutput;
 
 mod _revoke_permissions_input;
 

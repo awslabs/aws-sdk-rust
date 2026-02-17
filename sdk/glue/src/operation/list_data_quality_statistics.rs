@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_quality_
     }
 }
 
-pub use crate::operation::list_data_quality_statistics::_list_data_quality_statistics_output::ListDataQualityStatisticsOutput;
-
 pub use crate::operation::list_data_quality_statistics::_list_data_quality_statistics_input::ListDataQualityStatisticsInput;
+
+pub use crate::operation::list_data_quality_statistics::_list_data_quality_statistics_output::ListDataQualityStatisticsOutput;
 
 mod _list_data_quality_statistics_input;
 

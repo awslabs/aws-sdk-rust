@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_response_head
     }
 }
 
-pub use crate::operation::list_response_headers_policies::_list_response_headers_policies_output::ListResponseHeadersPoliciesOutput;
-
 pub use crate::operation::list_response_headers_policies::_list_response_headers_policies_input::ListResponseHeadersPoliciesInput;
+
+pub use crate::operation::list_response_headers_policies::_list_response_headers_policies_output::ListResponseHeadersPoliciesOutput;
 
 mod _list_response_headers_policies_input;
 

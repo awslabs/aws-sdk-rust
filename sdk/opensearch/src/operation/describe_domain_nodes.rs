@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain_no
     }
 }
 
-pub use crate::operation::describe_domain_nodes::_describe_domain_nodes_output::DescribeDomainNodesOutput;
-
 pub use crate::operation::describe_domain_nodes::_describe_domain_nodes_input::DescribeDomainNodesInput;
+
+pub use crate::operation::describe_domain_nodes::_describe_domain_nodes_output::DescribeDomainNodesOutput;
 
 mod _describe_domain_nodes_input;
 

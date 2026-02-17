@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_relevant_co
     }
 }
 
-pub use crate::operation::search_relevant_content::_search_relevant_content_output::SearchRelevantContentOutput;
-
 pub use crate::operation::search_relevant_content::_search_relevant_content_input::SearchRelevantContentInput;
+
+pub use crate::operation::search_relevant_content::_search_relevant_content_output::SearchRelevantContentOutput;
 
 mod _search_relevant_content_input;
 

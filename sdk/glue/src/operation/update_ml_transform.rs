@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ml_transfor
     }
 }
 
-pub use crate::operation::update_ml_transform::_update_ml_transform_output::UpdateMlTransformOutput;
-
 pub use crate::operation::update_ml_transform::_update_ml_transform_input::UpdateMlTransformInput;
+
+pub use crate::operation::update_ml_transform::_update_ml_transform_output::UpdateMlTransformOutput;
 
 mod _update_ml_transform_input;
 

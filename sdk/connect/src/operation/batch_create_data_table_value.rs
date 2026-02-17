@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_data_
     }
 }
 
-pub use crate::operation::batch_create_data_table_value::_batch_create_data_table_value_output::BatchCreateDataTableValueOutput;
-
 pub use crate::operation::batch_create_data_table_value::_batch_create_data_table_value_input::BatchCreateDataTableValueInput;
+
+pub use crate::operation::batch_create_data_table_value::_batch_create_data_table_value_output::BatchCreateDataTableValueOutput;
 
 mod _batch_create_data_table_value_input;
 

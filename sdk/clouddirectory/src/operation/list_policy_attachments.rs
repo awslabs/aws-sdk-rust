@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_attach
     }
 }
 
-pub use crate::operation::list_policy_attachments::_list_policy_attachments_output::ListPolicyAttachmentsOutput;
-
 pub use crate::operation::list_policy_attachments::_list_policy_attachments_input::ListPolicyAttachmentsInput;
+
+pub use crate::operation::list_policy_attachments::_list_policy_attachments_output::ListPolicyAttachmentsOutput;
 
 mod _list_policy_attachments_input;
 

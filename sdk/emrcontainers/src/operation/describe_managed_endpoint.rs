@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_managed_e
     }
 }
 
-pub use crate::operation::describe_managed_endpoint::_describe_managed_endpoint_output::DescribeManagedEndpointOutput;
-
 pub use crate::operation::describe_managed_endpoint::_describe_managed_endpoint_input::DescribeManagedEndpointInput;
+
+pub use crate::operation::describe_managed_endpoint::_describe_managed_endpoint_output::DescribeManagedEndpointOutput;
 
 mod _describe_managed_endpoint_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sol_network_pa
     }
 }
 
-pub use crate::operation::get_sol_network_package::_get_sol_network_package_output::GetSolNetworkPackageOutput;
-
 pub use crate::operation::get_sol_network_package::_get_sol_network_package_input::GetSolNetworkPackageInput;
+
+pub use crate::operation::get_sol_network_package::_get_sol_network_package_output::GetSolNetworkPackageOutput;
 
 mod _get_sol_network_package_input;
 

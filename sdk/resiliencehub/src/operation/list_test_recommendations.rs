@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_recommen
     }
 }
 
-pub use crate::operation::list_test_recommendations::_list_test_recommendations_output::ListTestRecommendationsOutput;
-
 pub use crate::operation::list_test_recommendations::_list_test_recommendations_input::ListTestRecommendationsInput;
+
+pub use crate::operation::list_test_recommendations::_list_test_recommendations_output::ListTestRecommendationsOutput;
 
 mod _list_test_recommendations_input;
 

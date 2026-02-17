@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_subscriptio
     }
 }
 
-pub use crate::operation::reject_subscription_request::_reject_subscription_request_output::RejectSubscriptionRequestOutput;
-
 pub use crate::operation::reject_subscription_request::_reject_subscription_request_input::RejectSubscriptionRequestInput;
+
+pub use crate::operation::reject_subscription_request::_reject_subscription_request_output::RejectSubscriptionRequestOutput;
 
 mod _reject_subscription_request_input;
 

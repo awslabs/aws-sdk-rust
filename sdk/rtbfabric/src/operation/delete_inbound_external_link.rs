@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inbound_ext
     }
 }
 
-pub use crate::operation::delete_inbound_external_link::_delete_inbound_external_link_output::DeleteInboundExternalLinkOutput;
-
 pub use crate::operation::delete_inbound_external_link::_delete_inbound_external_link_input::DeleteInboundExternalLinkInput;
+
+pub use crate::operation::delete_inbound_external_link::_delete_inbound_external_link_output::DeleteInboundExternalLinkOutput;
 
 mod _delete_inbound_external_link_input;
 

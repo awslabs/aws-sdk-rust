@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_face_detecti
     }
 }
 
-pub use crate::operation::start_face_detection::_start_face_detection_output::StartFaceDetectionOutput;
-
 pub use crate::operation::start_face_detection::_start_face_detection_input::StartFaceDetectionInput;
+
+pub use crate::operation::start_face_detection::_start_face_detection_output::StartFaceDetectionOutput;
 
 mod _start_face_detection_input;
 

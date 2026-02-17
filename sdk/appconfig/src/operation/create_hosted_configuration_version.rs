@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hosted_conf
     }
 }
 
-pub use crate::operation::create_hosted_configuration_version::_create_hosted_configuration_version_output::CreateHostedConfigurationVersionOutput;
-
 pub use crate::operation::create_hosted_configuration_version::_create_hosted_configuration_version_input::CreateHostedConfigurationVersionInput;
+
+pub use crate::operation::create_hosted_configuration_version::_create_hosted_configuration_version_output::CreateHostedConfigurationVersionOutput;
 
 mod _create_hosted_configuration_version_input;
 

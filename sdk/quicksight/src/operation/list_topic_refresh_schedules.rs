@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_topic_refresh
     }
 }
 
-pub use crate::operation::list_topic_refresh_schedules::_list_topic_refresh_schedules_output::ListTopicRefreshSchedulesOutput;
-
 pub use crate::operation::list_topic_refresh_schedules::_list_topic_refresh_schedules_input::ListTopicRefreshSchedulesInput;
+
+pub use crate::operation::list_topic_refresh_schedules::_list_topic_refresh_schedules_output::ListTopicRefreshSchedulesOutput;
 
 mod _list_topic_refresh_schedules_input;
 

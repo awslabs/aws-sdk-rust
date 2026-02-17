@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_iam_portal_log
     }
 }
 
-pub use crate::operation::get_iam_portal_login_url::_get_iam_portal_login_url_output::GetIamPortalLoginUrlOutput;
-
 pub use crate::operation::get_iam_portal_login_url::_get_iam_portal_login_url_input::GetIamPortalLoginUrlInput;
+
+pub use crate::operation::get_iam_portal_login_url::_get_iam_portal_login_url_output::GetIamPortalLoginUrlOutput;
 
 mod _get_iam_portal_login_url_input;
 

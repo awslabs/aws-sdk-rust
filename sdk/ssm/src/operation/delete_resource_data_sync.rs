@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_da
     }
 }
 
-pub use crate::operation::delete_resource_data_sync::_delete_resource_data_sync_output::DeleteResourceDataSyncOutput;
-
 pub use crate::operation::delete_resource_data_sync::_delete_resource_data_sync_input::DeleteResourceDataSyncInput;
+
+pub use crate::operation::delete_resource_data_sync::_delete_resource_data_sync_output::DeleteResourceDataSyncOutput;
 
 mod _delete_resource_data_sync_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_customer_
     }
 }
 
-pub use crate::operation::describe_customer_metadata::_describe_customer_metadata_output::DescribeCustomerMetadataOutput;
-
 pub use crate::operation::describe_customer_metadata::_describe_customer_metadata_input::DescribeCustomerMetadataInput;
+
+pub use crate::operation::describe_customer_metadata::_describe_customer_metadata_output::DescribeCustomerMetadataOutput;
 
 mod _describe_customer_metadata_input;
 

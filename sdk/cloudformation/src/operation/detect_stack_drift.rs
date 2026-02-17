@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_stack_drift
     }
 }
 
-pub use crate::operation::detect_stack_drift::_detect_stack_drift_output::DetectStackDriftOutput;
-
 pub use crate::operation::detect_stack_drift::_detect_stack_drift_input::DetectStackDriftInput;
+
+pub use crate::operation::detect_stack_drift::_detect_stack_drift_output::DetectStackDriftOutput;
 
 mod _detect_stack_drift_input;
 

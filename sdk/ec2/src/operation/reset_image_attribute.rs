@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_image_attrib
     }
 }
 
-pub use crate::operation::reset_image_attribute::_reset_image_attribute_output::ResetImageAttributeOutput;
-
 pub use crate::operation::reset_image_attribute::_reset_image_attribute_input::ResetImageAttributeInput;
+
+pub use crate::operation::reset_image_attribute::_reset_image_attribute_output::ResetImageAttributeOutput;
 
 mod _reset_image_attribute_input;
 

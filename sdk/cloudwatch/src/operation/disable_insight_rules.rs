@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_insight_ru
     }
 }
 
-pub use crate::operation::disable_insight_rules::_disable_insight_rules_output::DisableInsightRulesOutput;
-
 pub use crate::operation::disable_insight_rules::_disable_insight_rules_input::DisableInsightRulesInput;
+
+pub use crate::operation::disable_insight_rules::_disable_insight_rules_output::DisableInsightRulesOutput;
 
 mod _disable_insight_rules_input;
 

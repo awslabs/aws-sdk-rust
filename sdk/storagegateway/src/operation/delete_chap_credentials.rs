@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_chap_creden
     }
 }
 
-pub use crate::operation::delete_chap_credentials::_delete_chap_credentials_output::DeleteChapCredentialsOutput;
-
 pub use crate::operation::delete_chap_credentials::_delete_chap_credentials_input::DeleteChapCredentialsInput;
+
+pub use crate::operation::delete_chap_credentials::_delete_chap_credentials_output::DeleteChapCredentialsOutput;
 
 mod _delete_chap_credentials_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pull_throug
     }
 }
 
-pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_cache_rule_output::CreatePullThroughCacheRuleOutput;
-
 pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_cache_rule_input::CreatePullThroughCacheRuleInput;
+
+pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_cache_rule_output::CreatePullThroughCacheRuleOutput;
 
 mod _create_pull_through_cache_rule_input;
 

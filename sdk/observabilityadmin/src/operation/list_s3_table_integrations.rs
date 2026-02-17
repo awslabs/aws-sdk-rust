@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_s3_table_inte
     }
 }
 
-pub use crate::operation::list_s3_table_integrations::_list_s3_table_integrations_output::ListS3TableIntegrationsOutput;
-
 pub use crate::operation::list_s3_table_integrations::_list_s3_table_integrations_input::ListS3TableIntegrationsInput;
+
+pub use crate::operation::list_s3_table_integrations::_list_s3_table_integrations_output::ListS3TableIntegrationsOutput;
 
 mod _list_s3_table_integrations_input;
 

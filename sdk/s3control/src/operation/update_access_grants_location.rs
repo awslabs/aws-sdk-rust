@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_access_gran
     }
 }
 
-pub use crate::operation::update_access_grants_location::_update_access_grants_location_output::UpdateAccessGrantsLocationOutput;
-
 pub use crate::operation::update_access_grants_location::_update_access_grants_location_input::UpdateAccessGrantsLocationInput;
+
+pub use crate::operation::update_access_grants_location::_update_access_grants_location_output::UpdateAccessGrantsLocationOutput;
 
 mod _update_access_grants_location_input;
 

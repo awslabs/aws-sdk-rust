@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_batch_job_exe
     }
 }
 
-pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_output::ListBatchJobExecutionsOutput;
-
 pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_input::ListBatchJobExecutionsInput;
+
+pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_output::ListBatchJobExecutionsOutput;
 
 mod _list_batch_job_executions_input;
 

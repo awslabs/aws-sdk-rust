@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_flow_outputs::
     }
 }
 
-pub use crate::operation::add_flow_outputs::_add_flow_outputs_output::AddFlowOutputsOutput;
-
 pub use crate::operation::add_flow_outputs::_add_flow_outputs_input::AddFlowOutputsInput;
+
+pub use crate::operation::add_flow_outputs::_add_flow_outputs_output::AddFlowOutputsOutput;
 
 mod _add_flow_outputs_input;
 

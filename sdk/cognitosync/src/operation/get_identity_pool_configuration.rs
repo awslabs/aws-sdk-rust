@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_pool_
     }
 }
 
-pub use crate::operation::get_identity_pool_configuration::_get_identity_pool_configuration_output::GetIdentityPoolConfigurationOutput;
-
 pub use crate::operation::get_identity_pool_configuration::_get_identity_pool_configuration_input::GetIdentityPoolConfigurationInput;
+
+pub use crate::operation::get_identity_pool_configuration::_get_identity_pool_configuration_output::GetIdentityPoolConfigurationOutput;
 
 mod _get_identity_pool_configuration_input;
 

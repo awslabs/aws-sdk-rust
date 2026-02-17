@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_virtual_ser
     }
 }
 
-pub use crate::operation::create_virtual_service::_create_virtual_service_output::CreateVirtualServiceOutput;
-
 pub use crate::operation::create_virtual_service::_create_virtual_service_input::CreateVirtualServiceInput;
+
+pub use crate::operation::create_virtual_service::_create_virtual_service_output::CreateVirtualServiceOutput;
 
 mod _create_virtual_service_input;
 

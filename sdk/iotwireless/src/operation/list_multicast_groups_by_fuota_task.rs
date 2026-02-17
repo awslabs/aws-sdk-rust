@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multicast_gro
     }
 }
 
-pub use crate::operation::list_multicast_groups_by_fuota_task::_list_multicast_groups_by_fuota_task_output::ListMulticastGroupsByFuotaTaskOutput;
-
 pub use crate::operation::list_multicast_groups_by_fuota_task::_list_multicast_groups_by_fuota_task_input::ListMulticastGroupsByFuotaTaskInput;
+
+pub use crate::operation::list_multicast_groups_by_fuota_task::_list_multicast_groups_by_fuota_task_output::ListMulticastGroupsByFuotaTaskOutput;
 
 mod _list_multicast_groups_by_fuota_task_input;
 

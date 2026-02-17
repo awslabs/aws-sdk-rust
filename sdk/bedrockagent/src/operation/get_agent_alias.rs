@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_alias::G
     }
 }
 
-pub use crate::operation::get_agent_alias::_get_agent_alias_output::GetAgentAliasOutput;
-
 pub use crate::operation::get_agent_alias::_get_agent_alias_input::GetAgentAliasInput;
+
+pub use crate::operation::get_agent_alias::_get_agent_alias_output::GetAgentAliasOutput;
 
 mod _get_agent_alias_input;
 

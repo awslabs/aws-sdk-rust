@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_topic_refre
     }
 }
 
-pub use crate::operation::delete_topic_refresh_schedule::_delete_topic_refresh_schedule_output::DeleteTopicRefreshScheduleOutput;
-
 pub use crate::operation::delete_topic_refresh_schedule::_delete_topic_refresh_schedule_input::DeleteTopicRefreshScheduleInput;
+
+pub use crate::operation::delete_topic_refresh_schedule::_delete_topic_refresh_schedule_output::DeleteTopicRefreshScheduleOutput;
 
 mod _delete_topic_refresh_schedule_input;
 

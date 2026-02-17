@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_effective_perm
     }
 }
 
-pub use crate::operation::get_effective_permissions_for_path::_get_effective_permissions_for_path_output::GetEffectivePermissionsForPathOutput;
-
 pub use crate::operation::get_effective_permissions_for_path::_get_effective_permissions_for_path_input::GetEffectivePermissionsForPathInput;
+
+pub use crate::operation::get_effective_permissions_for_path::_get_effective_permissions_for_path_output::GetEffectivePermissionsForPathOutput;
 
 mod _get_effective_permissions_for_path_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_server_details
     }
 }
 
-pub use crate::operation::get_server_details::_get_server_details_output::GetServerDetailsOutput;
-
 pub use crate::operation::get_server_details::_get_server_details_input::GetServerDetailsInput;
+
+pub use crate::operation::get_server_details::_get_server_details_output::GetServerDetailsOutput;
 
 mod _get_server_details_input;
 

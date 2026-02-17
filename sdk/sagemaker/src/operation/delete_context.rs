@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_context::De
     }
 }
 
-pub use crate::operation::delete_context::_delete_context_output::DeleteContextOutput;
-
 pub use crate::operation::delete_context::_delete_context_input::DeleteContextInput;
+
+pub use crate::operation::delete_context::_delete_context_output::DeleteContextOutput;
 
 mod _delete_context_input;
 

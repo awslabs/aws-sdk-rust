@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rooms::ListRo
     }
 }
 
-pub use crate::operation::list_rooms::_list_rooms_output::ListRoomsOutput;
-
 pub use crate::operation::list_rooms::_list_rooms_input::ListRoomsInput;
+
+pub use crate::operation::list_rooms::_list_rooms_output::ListRoomsOutput;
 
 mod _list_rooms_input;
 

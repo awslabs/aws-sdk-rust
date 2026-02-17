@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_service_sof
     }
 }
 
-pub use crate::operation::cancel_service_software_update::_cancel_service_software_update_output::CancelServiceSoftwareUpdateOutput;
-
 pub use crate::operation::cancel_service_software_update::_cancel_service_software_update_input::CancelServiceSoftwareUpdateInput;
+
+pub use crate::operation::cancel_service_software_update::_cancel_service_software_update_output::CancelServiceSoftwareUpdateOutput;
 
 mod _cancel_service_software_update_input;
 

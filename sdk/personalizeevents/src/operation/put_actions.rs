@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_actions::PutAc
     }
 }
 
-pub use crate::operation::put_actions::_put_actions_output::PutActionsOutput;
-
 pub use crate::operation::put_actions::_put_actions_input::PutActionsInput;
+
+pub use crate::operation::put_actions::_put_actions_output::PutActionsOutput;
 
 mod _put_actions_input;
 

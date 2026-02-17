@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_routing_pro
     }
 }
 
-pub use crate::operation::search_routing_profiles::_search_routing_profiles_output::SearchRoutingProfilesOutput;
-
 pub use crate::operation::search_routing_profiles::_search_routing_profiles_input::SearchRoutingProfilesInput;
+
+pub use crate::operation::search_routing_profiles::_search_routing_profiles_output::SearchRoutingProfilesOutput;
 
 mod _search_routing_profiles_input;
 

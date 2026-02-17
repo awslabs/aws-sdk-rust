@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_membership:
     }
 }
 
-pub use crate::operation::cancel_membership::_cancel_membership_output::CancelMembershipOutput;
-
 pub use crate::operation::cancel_membership::_cancel_membership_input::CancelMembershipInput;
+
+pub use crate::operation::cancel_membership::_cancel_membership_output::CancelMembershipOutput;
 
 mod _cancel_membership_input;
 

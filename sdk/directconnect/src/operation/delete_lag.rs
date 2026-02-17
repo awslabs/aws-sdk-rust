@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lag::Delete
     }
 }
 
-pub use crate::operation::delete_lag::_delete_lag_output::DeleteLagOutput;
-
 pub use crate::operation::delete_lag::_delete_lag_input::DeleteLagInput;
+
+pub use crate::operation::delete_lag::_delete_lag_output::DeleteLagOutput;
 
 mod _delete_lag_input;
 

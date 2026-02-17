@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_realtime_log_
     }
 }
 
-pub use crate::operation::list_realtime_log_configs::_list_realtime_log_configs_output::ListRealtimeLogConfigsOutput;
-
 pub use crate::operation::list_realtime_log_configs::_list_realtime_log_configs_input::ListRealtimeLogConfigsInput;
+
+pub use crate::operation::list_realtime_log_configs::_list_realtime_log_configs_output::ListRealtimeLogConfigsOutput;
 
 mod _list_realtime_log_configs_input;
 

@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configuration_
     }
 }
 
-pub use crate::operation::get_configuration_check_operation::_get_configuration_check_operation_output::GetConfigurationCheckOperationOutput;
-
 pub use crate::operation::get_configuration_check_operation::_get_configuration_check_operation_input::GetConfigurationCheckOperationInput;
+
+pub use crate::operation::get_configuration_check_operation::_get_configuration_check_operation_output::GetConfigurationCheckOperationOutput;
 
 mod _get_configuration_check_operation_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hosted_configu
     }
 }
 
-pub use crate::operation::get_hosted_configuration_version::_get_hosted_configuration_version_output::GetHostedConfigurationVersionOutput;
-
 pub use crate::operation::get_hosted_configuration_version::_get_hosted_configuration_version_input::GetHostedConfigurationVersionInput;
+
+pub use crate::operation::get_hosted_configuration_version::_get_hosted_configuration_version_output::GetHostedConfigurationVersionOutput;
 
 mod _get_hosted_configuration_version_input;
 

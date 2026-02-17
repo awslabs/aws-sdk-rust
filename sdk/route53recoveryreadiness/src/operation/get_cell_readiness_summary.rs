@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cell_readiness
     }
 }
 
-pub use crate::operation::get_cell_readiness_summary::_get_cell_readiness_summary_output::GetCellReadinessSummaryOutput;
-
 pub use crate::operation::get_cell_readiness_summary::_get_cell_readiness_summary_input::GetCellReadinessSummaryInput;
+
+pub use crate::operation::get_cell_readiness_summary::_get_cell_readiness_summary_output::GetCellReadinessSummaryOutput;
 
 mod _get_cell_readiness_summary_input;
 

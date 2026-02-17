@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_provisioned_mo
     }
 }
 
-pub use crate::operation::get_provisioned_model_throughput::_get_provisioned_model_throughput_output::GetProvisionedModelThroughputOutput;
-
 pub use crate::operation::get_provisioned_model_throughput::_get_provisioned_model_throughput_input::GetProvisionedModelThroughputInput;
+
+pub use crate::operation::get_provisioned_model_throughput::_get_provisioned_model_throughput_output::GetProvisionedModelThroughputOutput;
 
 mod _get_provisioned_model_throughput_input;
 

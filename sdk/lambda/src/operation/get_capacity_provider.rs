@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_capacity_provi
     }
 }
 
-pub use crate::operation::get_capacity_provider::_get_capacity_provider_output::GetCapacityProviderOutput;
-
 pub use crate::operation::get_capacity_provider::_get_capacity_provider_input::GetCapacityProviderInput;
+
+pub use crate::operation::get_capacity_provider::_get_capacity_provider_output::GetCapacityProviderOutput;
 
 mod _get_capacity_provider_input;
 

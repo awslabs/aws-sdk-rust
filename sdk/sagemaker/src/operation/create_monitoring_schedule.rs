@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_monitoring_
     }
 }
 
-pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedule_output::CreateMonitoringScheduleOutput;
-
 pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedule_input::CreateMonitoringScheduleInput;
+
+pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedule_output::CreateMonitoringScheduleOutput;
 
 mod _create_monitoring_schedule_input;
 

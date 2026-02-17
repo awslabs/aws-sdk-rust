@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_web_acl::De
     }
 }
 
-pub use crate::operation::delete_web_acl::_delete_web_acl_output::DeleteWebAclOutput;
-
 pub use crate::operation::delete_web_acl::_delete_web_acl_input::DeleteWebAclInput;
+
+pub use crate::operation::delete_web_acl::_delete_web_acl_output::DeleteWebAclOutput;
 
 mod _delete_web_acl_input;
 

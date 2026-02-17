@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hosted_zone::G
     }
 }
 
-pub use crate::operation::get_hosted_zone::_get_hosted_zone_output::GetHostedZoneOutput;
-
 pub use crate::operation::get_hosted_zone::_get_hosted_zone_input::GetHostedZoneInput;
+
+pub use crate::operation::get_hosted_zone::_get_hosted_zone_output::GetHostedZoneOutput;
 
 mod _get_hosted_zone_input;
 

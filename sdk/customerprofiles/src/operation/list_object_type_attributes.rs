@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_object_type_a
     }
 }
 
-pub use crate::operation::list_object_type_attributes::_list_object_type_attributes_output::ListObjectTypeAttributesOutput;
-
 pub use crate::operation::list_object_type_attributes::_list_object_type_attributes_input::ListObjectTypeAttributesInput;
+
+pub use crate::operation::list_object_type_attributes::_list_object_type_attributes_output::ListObjectTypeAttributesOutput;
 
 mod _list_object_type_attributes_input;
 

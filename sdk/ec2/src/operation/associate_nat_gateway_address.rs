@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_nat_gate
     }
 }
 
-pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_address_output::AssociateNatGatewayAddressOutput;
-
 pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_address_input::AssociateNatGatewayAddressInput;
+
+pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_address_output::AssociateNatGatewayAddressOutput;
 
 mod _associate_nat_gateway_address_input;
 

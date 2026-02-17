@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_node::GetNodeE
     }
 }
 
-pub use crate::operation::get_node::_get_node_output::GetNodeOutput;
-
 pub use crate::operation::get_node::_get_node_input::GetNodeInput;
+
+pub use crate::operation::get_node::_get_node_output::GetNodeOutput;
 
 mod _get_node_input;
 

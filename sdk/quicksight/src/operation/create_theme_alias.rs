@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_theme_alias
     }
 }
 
-pub use crate::operation::create_theme_alias::_create_theme_alias_output::CreateThemeAliasOutput;
-
 pub use crate::operation::create_theme_alias::_create_theme_alias_input::CreateThemeAliasInput;
+
+pub use crate::operation::create_theme_alias::_create_theme_alias_output::CreateThemeAliasOutput;
 
 mod _create_theme_alias_input;
 

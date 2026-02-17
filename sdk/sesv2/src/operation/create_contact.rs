@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_contact::Cr
     }
 }
 
-pub use crate::operation::create_contact::_create_contact_output::CreateContactOutput;
-
 pub use crate::operation::create_contact::_create_contact_input::CreateContactInput;
+
+pub use crate::operation::create_contact::_create_contact_output::CreateContactOutput;
 
 mod _create_contact_input;
 

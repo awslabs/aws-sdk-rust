@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_routing_contro
     }
 }
 
-pub use crate::operation::get_routing_control_state::_get_routing_control_state_output::GetRoutingControlStateOutput;
-
 pub use crate::operation::get_routing_control_state::_get_routing_control_state_input::GetRoutingControlStateInput;
+
+pub use crate::operation::get_routing_control_state::_get_routing_control_state_output::GetRoutingControlStateOutput;
 
 mod _get_routing_control_state_input;
 

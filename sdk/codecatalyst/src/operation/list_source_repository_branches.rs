@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_source_reposi
     }
 }
 
-pub use crate::operation::list_source_repository_branches::_list_source_repository_branches_output::ListSourceRepositoryBranchesOutput;
-
 pub use crate::operation::list_source_repository_branches::_list_source_repository_branches_input::ListSourceRepositoryBranchesInput;
+
+pub use crate::operation::list_source_repository_branches::_list_source_repository_branches_output::ListSourceRepositoryBranchesOutput;
 
 mod _list_source_repository_branches_input;
 

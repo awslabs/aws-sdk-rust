@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sink::GetSinkE
     }
 }
 
-pub use crate::operation::get_sink::_get_sink_output::GetSinkOutput;
-
 pub use crate::operation::get_sink::_get_sink_input::GetSinkInput;
+
+pub use crate::operation::get_sink::_get_sink_output::GetSinkOutput;
 
 mod _get_sink_input;
 

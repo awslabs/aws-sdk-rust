@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sdi_source:
     }
 }
 
-pub use crate::operation::update_sdi_source::_update_sdi_source_output::UpdateSdiSourceOutput;
-
 pub use crate::operation::update_sdi_source::_update_sdi_source_input::UpdateSdiSourceInput;
+
+pub use crate::operation::update_sdi_source::_update_sdi_source_output::UpdateSdiSourceOutput;
 
 mod _update_sdi_source_input;
 

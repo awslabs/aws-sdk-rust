@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_genera
     }
 }
 
-pub use crate::operation::list_policy_generations::_list_policy_generations_output::ListPolicyGenerationsOutput;
-
 pub use crate::operation::list_policy_generations::_list_policy_generations_input::ListPolicyGenerationsInput;
+
+pub use crate::operation::list_policy_generations::_list_policy_generations_output::ListPolicyGenerationsOutput;
 
 mod _list_policy_generations_input;
 

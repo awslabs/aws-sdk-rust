@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_gran
     }
 }
 
-pub use crate::operation::create_access_grants_location::_create_access_grants_location_output::CreateAccessGrantsLocationOutput;
-
 pub use crate::operation::create_access_grants_location::_create_access_grants_location_input::CreateAccessGrantsLocationInput;
+
+pub use crate::operation::create_access_grants_location::_create_access_grants_location_output::CreateAccessGrantsLocationOutput;
 
 mod _create_access_grants_location_input;
 

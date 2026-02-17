@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_column_stat
     }
 }
 
-pub use crate::operation::update_column_statistics_for_table::_update_column_statistics_for_table_output::UpdateColumnStatisticsForTableOutput;
-
 pub use crate::operation::update_column_statistics_for_table::_update_column_statistics_for_table_input::UpdateColumnStatisticsForTableInput;
+
+pub use crate::operation::update_column_statistics_for_table::_update_column_statistics_for_table_output::UpdateColumnStatisticsForTableOutput;
 
 mod _update_column_statistics_for_table_input;
 

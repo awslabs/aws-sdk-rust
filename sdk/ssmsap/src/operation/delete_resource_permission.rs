@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_pe
     }
 }
 
-pub use crate::operation::delete_resource_permission::_delete_resource_permission_output::DeleteResourcePermissionOutput;
-
 pub use crate::operation::delete_resource_permission::_delete_resource_permission_input::DeleteResourcePermissionInput;
+
+pub use crate::operation::delete_resource_permission::_delete_resource_permission_output::DeleteResourcePermissionOutput;
 
 mod _delete_resource_permission_input;
 

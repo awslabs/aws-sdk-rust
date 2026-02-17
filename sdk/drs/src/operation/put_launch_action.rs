@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_launch_action:
     }
 }
 
-pub use crate::operation::put_launch_action::_put_launch_action_output::PutLaunchActionOutput;
-
 pub use crate::operation::put_launch_action::_put_launch_action_input::PutLaunchActionInput;
+
+pub use crate::operation::put_launch_action::_put_launch_action_output::PutLaunchActionOutput;
 
 mod _put_launch_action_input;
 

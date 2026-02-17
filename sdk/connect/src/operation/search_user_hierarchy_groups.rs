@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_user_hierar
     }
 }
 
-pub use crate::operation::search_user_hierarchy_groups::_search_user_hierarchy_groups_output::SearchUserHierarchyGroupsOutput;
-
 pub use crate::operation::search_user_hierarchy_groups::_search_user_hierarchy_groups_input::SearchUserHierarchyGroupsInput;
+
+pub use crate::operation::search_user_hierarchy_groups::_search_user_hierarchy_groups_output::SearchUserHierarchyGroupsOutput;
 
 mod _search_user_hierarchy_groups_input;
 

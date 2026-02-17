@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_poli
     }
 }
 
-pub use crate::operation::delete_bucket_policy::_delete_bucket_policy_output::DeleteBucketPolicyOutput;
-
 pub use crate::operation::delete_bucket_policy::_delete_bucket_policy_input::DeleteBucketPolicyInput;
+
+pub use crate::operation::delete_bucket_policy::_delete_bucket_policy_output::DeleteBucketPolicyOutput;
 
 mod _delete_bucket_policy_input;
 

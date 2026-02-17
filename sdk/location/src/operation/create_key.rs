@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_key::Create
     }
 }
 
-pub use crate::operation::create_key::_create_key_output::CreateKeyOutput;
-
 pub use crate::operation::create_key::_create_key_input::CreateKeyInput;
+
+pub use crate::operation::create_key::_create_key_output::CreateKeyOutput;
 
 mod _create_key_input;
 

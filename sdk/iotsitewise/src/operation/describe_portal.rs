@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_portal::D
     }
 }
 
-pub use crate::operation::describe_portal::_describe_portal_output::DescribePortalOutput;
-
 pub use crate::operation::describe_portal::_describe_portal_input::DescribePortalInput;
+
+pub use crate::operation::describe_portal::_describe_portal_output::DescribePortalOutput;
 
 mod _describe_portal_input;
 

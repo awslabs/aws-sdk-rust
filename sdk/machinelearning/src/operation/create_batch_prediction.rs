@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_batch_predi
     }
 }
 
-pub use crate::operation::create_batch_prediction::_create_batch_prediction_output::CreateBatchPredictionOutput;
-
 pub use crate::operation::create_batch_prediction::_create_batch_prediction_input::CreateBatchPredictionInput;
+
+pub use crate::operation::create_batch_prediction::_create_batch_prediction_output::CreateBatchPredictionOutput;
 
 mod _create_batch_prediction_input;
 

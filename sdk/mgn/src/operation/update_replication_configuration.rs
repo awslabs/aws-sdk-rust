@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_replication
     }
 }
 
-pub use crate::operation::update_replication_configuration::_update_replication_configuration_output::UpdateReplicationConfigurationOutput;
-
 pub use crate::operation::update_replication_configuration::_update_replication_configuration_input::UpdateReplicationConfigurationInput;
+
+pub use crate::operation::update_replication_configuration::_update_replication_configuration_output::UpdateReplicationConfigurationOutput;
 
 mod _update_replication_configuration_input;
 

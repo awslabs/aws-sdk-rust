@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_retrieved_tra
     }
 }
 
-pub use crate::operation::list_retrieved_traces::_list_retrieved_traces_output::ListRetrievedTracesOutput;
-
 pub use crate::operation::list_retrieved_traces::_list_retrieved_traces_input::ListRetrievedTracesInput;
+
+pub use crate::operation::list_retrieved_traces::_list_retrieved_traces_output::ListRetrievedTracesOutput;
 
 mod _list_retrieved_traces_input;
 

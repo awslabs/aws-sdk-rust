@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compatible_ela
     }
 }
 
-pub use crate::operation::get_compatible_elasticsearch_versions::_get_compatible_elasticsearch_versions_output::GetCompatibleElasticsearchVersionsOutput;
-
 pub use crate::operation::get_compatible_elasticsearch_versions::_get_compatible_elasticsearch_versions_input::GetCompatibleElasticsearchVersionsInput;
+
+pub use crate::operation::get_compatible_elasticsearch_versions::_get_compatible_elasticsearch_versions_output::GetCompatibleElasticsearchVersionsOutput;
 
 mod _get_compatible_elasticsearch_versions_input;
 

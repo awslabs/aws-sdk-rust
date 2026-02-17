@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pull_request_o
     }
 }
 
-pub use crate::operation::get_pull_request_override_state::_get_pull_request_override_state_output::GetPullRequestOverrideStateOutput;
-
 pub use crate::operation::get_pull_request_override_state::_get_pull_request_override_state_input::GetPullRequestOverrideStateInput;
+
+pub use crate::operation::get_pull_request_override_state::_get_pull_request_override_state_output::GetPullRequestOverrideStateOutput;
 
 mod _get_pull_request_override_state_input;
 

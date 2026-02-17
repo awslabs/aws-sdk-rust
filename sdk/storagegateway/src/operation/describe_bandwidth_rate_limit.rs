@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bandwidth
     }
 }
 
-pub use crate::operation::describe_bandwidth_rate_limit::_describe_bandwidth_rate_limit_output::DescribeBandwidthRateLimitOutput;
-
 pub use crate::operation::describe_bandwidth_rate_limit::_describe_bandwidth_rate_limit_input::DescribeBandwidthRateLimitInput;
+
+pub use crate::operation::describe_bandwidth_rate_limit::_describe_bandwidth_rate_limit_output::DescribeBandwidthRateLimitOutput;
 
 mod _describe_bandwidth_rate_limit_input;
 

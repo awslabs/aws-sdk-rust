@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_tags_to_resour
     }
 }
 
-pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_output::AddTagsToResourceOutput;
-
 pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_input::AddTagsToResourceInput;
+
+pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_output::AddTagsToResourceOutput;
 
 mod _add_tags_to_resource_input;
 

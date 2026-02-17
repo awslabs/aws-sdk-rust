@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_enrollment_con
     }
 }
 
-pub use crate::operation::get_enrollment_configuration::_get_enrollment_configuration_output::GetEnrollmentConfigurationOutput;
-
 pub use crate::operation::get_enrollment_configuration::_get_enrollment_configuration_input::GetEnrollmentConfigurationInput;
+
+pub use crate::operation::get_enrollment_configuration::_get_enrollment_configuration_output::GetEnrollmentConfigurationOutput;
 
 mod _get_enrollment_configuration_input;
 

@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_export::Star
     }
 }
 
-pub use crate::operation::start_export::_start_export_output::StartExportOutput;
-
 pub use crate::operation::start_export::_start_export_input::StartExportInput;
+
+pub use crate::operation::start_export::_start_export_output::StartExportOutput;
 
 mod _start_export_input;
 

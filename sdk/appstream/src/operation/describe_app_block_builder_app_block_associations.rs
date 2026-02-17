@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_app_block_builder_app_block_associations::_describe_app_block_builder_app_block_associations_output::DescribeAppBlockBuilderAppBlockAssociationsOutput;
-
 pub use crate::operation::describe_app_block_builder_app_block_associations::_describe_app_block_builder_app_block_associations_input::DescribeAppBlockBuilderAppBlockAssociationsInput;
+
+pub use crate::operation::describe_app_block_builder_app_block_associations::_describe_app_block_builder_app_block_associations_output::DescribeAppBlockBuilderAppBlockAssociationsOutput;
 
 mod _describe_app_block_builder_app_block_associations_input;
 

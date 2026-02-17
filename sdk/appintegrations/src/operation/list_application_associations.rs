@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_a
     }
 }
 
-pub use crate::operation::list_application_associations::_list_application_associations_output::ListApplicationAssociationsOutput;
-
 pub use crate::operation::list_application_associations::_list_application_associations_input::ListApplicationAssociationsInput;
+
+pub use crate::operation::list_application_associations::_list_application_associations_output::ListApplicationAssociationsOutput;
 
 mod _list_application_associations_input;
 

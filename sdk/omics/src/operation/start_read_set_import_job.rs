@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_read_set_imp
     }
 }
 
-pub use crate::operation::start_read_set_import_job::_start_read_set_import_job_output::StartReadSetImportJobOutput;
-
 pub use crate::operation::start_read_set_import_job::_start_read_set_import_job_input::StartReadSetImportJobInput;
+
+pub use crate::operation::start_read_set_import_job::_start_read_set_import_job_output::StartReadSetImportJobOutput;
 
 mod _start_read_set_import_job_input;
 

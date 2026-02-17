@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_vector_enric
     }
 }
 
-pub use crate::operation::start_vector_enrichment_job::_start_vector_enrichment_job_output::StartVectorEnrichmentJobOutput;
-
 pub use crate::operation::start_vector_enrichment_job::_start_vector_enrichment_job_input::StartVectorEnrichmentJobInput;
+
+pub use crate::operation::start_vector_enrichment_job::_start_vector_enrichment_job_output::StartVectorEnrichmentJobOutput;
 
 mod _start_vector_enrichment_job_input;
 

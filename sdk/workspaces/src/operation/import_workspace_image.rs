@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_workspace_i
     }
 }
 
-pub use crate::operation::import_workspace_image::_import_workspace_image_output::ImportWorkspaceImageOutput;
-
 pub use crate::operation::import_workspace_image::_import_workspace_image_input::ImportWorkspaceImageInput;
+
+pub use crate::operation::import_workspace_image::_import_workspace_image_output::ImportWorkspaceImageOutput;
 
 mod _import_workspace_image_input;
 

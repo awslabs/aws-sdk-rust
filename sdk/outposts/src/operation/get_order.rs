@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_order::GetOrde
     }
 }
 
-pub use crate::operation::get_order::_get_order_output::GetOrderOutput;
-
 pub use crate::operation::get_order::_get_order_input::GetOrderInput;
+
+pub use crate::operation::get_order::_get_order_output::GetOrderOutput;
 
 mod _get_order_input;
 

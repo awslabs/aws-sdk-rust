@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_license_con
     }
 }
 
-pub use crate::operation::update_license_configuration::_update_license_configuration_output::UpdateLicenseConfigurationOutput;
-
 pub use crate::operation::update_license_configuration::_update_license_configuration_input::UpdateLicenseConfigurationInput;
+
+pub use crate::operation::update_license_configuration::_update_license_configuration_output::UpdateLicenseConfigurationOutput;
 
 mod _update_license_configuration_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_t
     }
 }
 
-pub use crate::operation::describe_cluster_tracks::_describe_cluster_tracks_output::DescribeClusterTracksOutput;
-
 pub use crate::operation::describe_cluster_tracks::_describe_cluster_tracks_input::DescribeClusterTracksInput;
+
+pub use crate::operation::describe_cluster_tracks::_describe_cluster_tracks_output::DescribeClusterTracksOutput;
 
 mod _describe_cluster_tracks_input;
 

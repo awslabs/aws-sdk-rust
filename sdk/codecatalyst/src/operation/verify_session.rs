@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_session::Ve
     }
 }
 
-pub use crate::operation::verify_session::_verify_session_output::VerifySessionOutput;
-
 pub use crate::operation::verify_session::_verify_session_input::VerifySessionInput;
+
+pub use crate::operation::verify_session::_verify_session_output::VerifySessionOutput;
 
 mod _verify_session_input;
 

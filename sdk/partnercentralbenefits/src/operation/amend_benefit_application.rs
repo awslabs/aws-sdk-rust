@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::amend_benefit_appl
     }
 }
 
-pub use crate::operation::amend_benefit_application::_amend_benefit_application_output::AmendBenefitApplicationOutput;
-
 pub use crate::operation::amend_benefit_application::_amend_benefit_application_input::AmendBenefitApplicationInput;
+
+pub use crate::operation::amend_benefit_application::_amend_benefit_application_output::AmendBenefitApplicationOutput;
 
 mod _amend_benefit_application_input;
 

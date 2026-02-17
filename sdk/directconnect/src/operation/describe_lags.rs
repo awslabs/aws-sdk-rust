@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_lags::Des
     }
 }
 
-pub use crate::operation::describe_lags::_describe_lags_output::DescribeLagsOutput;
-
 pub use crate::operation::describe_lags::_describe_lags_input::DescribeLagsInput;
+
+pub use crate::operation::describe_lags::_describe_lags_output::DescribeLagsOutput;
 
 mod _describe_lags_input;
 

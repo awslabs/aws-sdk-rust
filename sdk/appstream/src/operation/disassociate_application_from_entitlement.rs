@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_appli
     }
 }
 
-pub use crate::operation::disassociate_application_from_entitlement::_disassociate_application_from_entitlement_output::DisassociateApplicationFromEntitlementOutput;
-
 pub use crate::operation::disassociate_application_from_entitlement::_disassociate_application_from_entitlement_input::DisassociateApplicationFromEntitlementInput;
+
+pub use crate::operation::disassociate_application_from_entitlement::_disassociate_application_from_entitlement_output::DisassociateApplicationFromEntitlementOutput;
 
 mod _disassociate_application_from_entitlement_input;
 

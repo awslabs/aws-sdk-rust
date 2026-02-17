@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_database::D
     }
 }
 
-pub use crate::operation::delete_database::_delete_database_output::DeleteDatabaseOutput;
-
 pub use crate::operation::delete_database::_delete_database_input::DeleteDatabaseInput;
+
+pub use crate::operation::delete_database::_delete_database_output::DeleteDatabaseOutput;
 
 mod _delete_database_input;
 

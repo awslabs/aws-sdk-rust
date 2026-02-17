@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ingest_config
     }
 }
 
-pub use crate::operation::list_ingest_configurations::_list_ingest_configurations_output::ListIngestConfigurationsOutput;
-
 pub use crate::operation::list_ingest_configurations::_list_ingest_configurations_input::ListIngestConfigurationsInput;
+
+pub use crate::operation::list_ingest_configurations::_list_ingest_configurations_output::ListIngestConfigurationsOutput;
 
 mod _list_ingest_configurations_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_findings_repor
     }
 }
 
-pub use crate::operation::get_findings_report_account_summary::_get_findings_report_account_summary_output::GetFindingsReportAccountSummaryOutput;
-
 pub use crate::operation::get_findings_report_account_summary::_get_findings_report_account_summary_input::GetFindingsReportAccountSummaryInput;
+
+pub use crate::operation::get_findings_report_account_summary::_get_findings_report_account_summary_output::GetFindingsReportAccountSummaryOutput;
 
 mod _get_findings_report_account_summary_input;
 

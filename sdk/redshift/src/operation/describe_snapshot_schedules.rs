@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_snapshot_
     }
 }
 
-pub use crate::operation::describe_snapshot_schedules::_describe_snapshot_schedules_output::DescribeSnapshotSchedulesOutput;
-
 pub use crate::operation::describe_snapshot_schedules::_describe_snapshot_schedules_input::DescribeSnapshotSchedulesInput;
+
+pub use crate::operation::describe_snapshot_schedules::_describe_snapshot_schedules_output::DescribeSnapshotSchedulesOutput;
 
 mod _describe_snapshot_schedules_input;
 

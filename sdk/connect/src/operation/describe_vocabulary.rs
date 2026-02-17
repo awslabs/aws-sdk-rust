@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vocabular
     }
 }
 
-pub use crate::operation::describe_vocabulary::_describe_vocabulary_output::DescribeVocabularyOutput;
-
 pub use crate::operation::describe_vocabulary::_describe_vocabulary_input::DescribeVocabularyInput;
+
+pub use crate::operation::describe_vocabulary::_describe_vocabulary_output::DescribeVocabularyOutput;
 
 mod _describe_vocabulary_input;
 

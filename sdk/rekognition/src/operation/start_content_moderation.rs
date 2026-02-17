@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_content_mode
     }
 }
 
-pub use crate::operation::start_content_moderation::_start_content_moderation_output::StartContentModerationOutput;
-
 pub use crate::operation::start_content_moderation::_start_content_moderation_input::StartContentModerationInput;
+
+pub use crate::operation::start_content_moderation::_start_content_moderation_output::StartContentModerationOutput;
 
 mod _start_content_moderation_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_access_toke
     }
 }
 
-pub use crate::operation::update_access_token::_update_access_token_output::UpdateAccessTokenOutput;
-
 pub use crate::operation::update_access_token::_update_access_token_input::UpdateAccessTokenInput;
+
+pub use crate::operation::update_access_token::_update_access_token_output::UpdateAccessTokenOutput;
 
 mod _update_access_token_input;
 

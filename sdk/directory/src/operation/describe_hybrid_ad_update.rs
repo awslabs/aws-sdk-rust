@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hybrid_ad
     }
 }
 
-pub use crate::operation::describe_hybrid_ad_update::_describe_hybrid_ad_update_output::DescribeHybridAdUpdateOutput;
-
 pub use crate::operation::describe_hybrid_ad_update::_describe_hybrid_ad_update_input::DescribeHybridAdUpdateInput;
+
+pub use crate::operation::describe_hybrid_ad_update::_describe_hybrid_ad_update_output::DescribeHybridAdUpdateOutput;
 
 mod _describe_hybrid_ad_update_input;
 

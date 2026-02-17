@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_endpoint::I
     }
 }
 
-pub use crate::operation::invoke_endpoint::_invoke_endpoint_output::InvokeEndpointOutput;
-
 pub use crate::operation::invoke_endpoint::_invoke_endpoint_input::InvokeEndpointInput;
+
+pub use crate::operation::invoke_endpoint::_invoke_endpoint_output::InvokeEndpointOutput;
 
 mod _invoke_endpoint_input;
 

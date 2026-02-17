@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_managed_r
     }
 }
 
-pub use crate::operation::describe_managed_rule_group::_describe_managed_rule_group_output::DescribeManagedRuleGroupOutput;
-
 pub use crate::operation::describe_managed_rule_group::_describe_managed_rule_group_input::DescribeManagedRuleGroupInput;
+
+pub use crate::operation::describe_managed_rule_group::_describe_managed_rule_group_output::DescribeManagedRuleGroupOutput;
 
 mod _describe_managed_rule_group_input;
 

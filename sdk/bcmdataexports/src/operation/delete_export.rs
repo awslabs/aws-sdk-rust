@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_export::Del
     }
 }
 
-pub use crate::operation::delete_export::_delete_export_output::DeleteExportOutput;
-
 pub use crate::operation::delete_export::_delete_export_input::DeleteExportInput;
+
+pub use crate::operation::delete_export::_delete_export_output::DeleteExportOutput;
 
 mod _delete_export_input;
 

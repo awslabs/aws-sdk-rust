@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_server::Cre
     }
 }
 
-pub use crate::operation::create_server::_create_server_output::CreateServerOutput;
-
 pub use crate::operation::create_server::_create_server_input::CreateServerInput;
+
+pub use crate::operation::create_server::_create_server_output::CreateServerOutput;
 
 mod _create_server_input;
 

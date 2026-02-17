@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_mlflow_tracki
     }
 }
 
-pub use crate::operation::stop_mlflow_tracking_server::_stop_mlflow_tracking_server_output::StopMlflowTrackingServerOutput;
-
 pub use crate::operation::stop_mlflow_tracking_server::_stop_mlflow_tracking_server_input::StopMlflowTrackingServerInput;
+
+pub use crate::operation::stop_mlflow_tracking_server::_stop_mlflow_tracking_server_output::StopMlflowTrackingServerOutput;
 
 mod _stop_mlflow_tracking_server_input;
 

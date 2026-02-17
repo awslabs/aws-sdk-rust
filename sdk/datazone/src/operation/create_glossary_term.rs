@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_glossary_te
     }
 }
 
-pub use crate::operation::create_glossary_term::_create_glossary_term_output::CreateGlossaryTermOutput;
-
 pub use crate::operation::create_glossary_term::_create_glossary_term_input::CreateGlossaryTermInput;
+
+pub use crate::operation::create_glossary_term::_create_glossary_term_output::CreateGlossaryTermOutput;
 
 mod _create_glossary_term_input;
 

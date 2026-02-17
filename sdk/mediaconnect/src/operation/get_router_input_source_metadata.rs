@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_router_input_s
     }
 }
 
-pub use crate::operation::get_router_input_source_metadata::_get_router_input_source_metadata_output::GetRouterInputSourceMetadataOutput;
-
 pub use crate::operation::get_router_input_source_metadata::_get_router_input_source_metadata_input::GetRouterInputSourceMetadataInput;
+
+pub use crate::operation::get_router_input_source_metadata::_get_router_input_source_metadata_output::GetRouterInputSourceMetadataOutput;
 
 mod _get_router_input_source_metadata_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relational_dat
     }
 }
 
-pub use crate::operation::get_relational_database_snapshot::_get_relational_database_snapshot_output::GetRelationalDatabaseSnapshotOutput;
-
 pub use crate::operation::get_relational_database_snapshot::_get_relational_database_snapshot_input::GetRelationalDatabaseSnapshotInput;
+
+pub use crate::operation::get_relational_database_snapshot::_get_relational_database_snapshot_output::GetRelationalDatabaseSnapshotOutput;
 
 mod _get_relational_database_snapshot_input;
 

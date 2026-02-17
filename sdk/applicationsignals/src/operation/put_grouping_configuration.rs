@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_grouping_confi
     }
 }
 
-pub use crate::operation::put_grouping_configuration::_put_grouping_configuration_output::PutGroupingConfigurationOutput;
-
 pub use crate::operation::put_grouping_configuration::_put_grouping_configuration_input::PutGroupingConfigurationInput;
+
+pub use crate::operation::put_grouping_configuration::_put_grouping_configuration_output::PutGroupingConfigurationOutput;
 
 mod _put_grouping_configuration_input;
 

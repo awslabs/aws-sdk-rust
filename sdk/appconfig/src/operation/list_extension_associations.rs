@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_extension_ass
     }
 }
 
-pub use crate::operation::list_extension_associations::_list_extension_associations_output::ListExtensionAssociationsOutput;
-
 pub use crate::operation::list_extension_associations::_list_extension_associations_input::ListExtensionAssociationsInput;
+
+pub use crate::operation::list_extension_associations::_list_extension_associations_output::ListExtensionAssociationsOutput;
 
 mod _list_extension_associations_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cluster_pol
     }
 }
 
-pub use crate::operation::delete_cluster_policy::_delete_cluster_policy_output::DeleteClusterPolicyOutput;
-
 pub use crate::operation::delete_cluster_policy::_delete_cluster_policy_input::DeleteClusterPolicyInput;
+
+pub use crate::operation::delete_cluster_policy::_delete_cluster_policy_output::DeleteClusterPolicyOutput;
 
 mod _delete_cluster_policy_input;
 

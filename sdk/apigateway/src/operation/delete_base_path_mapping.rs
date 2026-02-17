@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_base_path_m
     }
 }
 
-pub use crate::operation::delete_base_path_mapping::_delete_base_path_mapping_output::DeleteBasePathMappingOutput;
-
 pub use crate::operation::delete_base_path_mapping::_delete_base_path_mapping_input::DeleteBasePathMappingInput;
+
+pub use crate::operation::delete_base_path_mapping::_delete_base_path_mapping_output::DeleteBasePathMappingOutput;
 
 mod _delete_base_path_mapping_input;
 

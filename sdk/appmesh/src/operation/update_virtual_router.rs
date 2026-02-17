@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_virtual_rou
     }
 }
 
-pub use crate::operation::update_virtual_router::_update_virtual_router_output::UpdateVirtualRouterOutput;
-
 pub use crate::operation::update_virtual_router::_update_virtual_router_input::UpdateVirtualRouterInput;
+
+pub use crate::operation::update_virtual_router::_update_virtual_router_output::UpdateVirtualRouterOutput;
 
 mod _update_virtual_router_input;
 

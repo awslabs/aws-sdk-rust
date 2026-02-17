@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_contact_flo
     }
 }
 
-pub use crate::operation::search_contact_flows::_search_contact_flows_output::SearchContactFlowsOutput;
-
 pub use crate::operation::search_contact_flows::_search_contact_flows_input::SearchContactFlowsInput;
+
+pub use crate::operation::search_contact_flows::_search_contact_flows_output::SearchContactFlowsOutput;
 
 mod _search_contact_flows_input;
 

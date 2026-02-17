@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_vector_enrich
     }
 }
 
-pub use crate::operation::stop_vector_enrichment_job::_stop_vector_enrichment_job_output::StopVectorEnrichmentJobOutput;
-
 pub use crate::operation::stop_vector_enrichment_job::_stop_vector_enrichment_job_input::StopVectorEnrichmentJobInput;
+
+pub use crate::operation::stop_vector_enrichment_job::_stop_vector_enrichment_job_output::StopVectorEnrichmentJobOutput;
 
 mod _stop_vector_enrichment_job_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_studio::Cre
     }
 }
 
-pub use crate::operation::create_studio::_create_studio_output::CreateStudioOutput;
-
 pub use crate::operation::create_studio::_create_studio_input::CreateStudioInput;
+
+pub use crate::operation::create_studio::_create_studio_output::CreateStudioOutput;
 
 mod _create_studio_input;
 

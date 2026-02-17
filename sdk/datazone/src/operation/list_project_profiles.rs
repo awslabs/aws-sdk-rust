@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_project_profi
     }
 }
 
-pub use crate::operation::list_project_profiles::_list_project_profiles_output::ListProjectProfilesOutput;
-
 pub use crate::operation::list_project_profiles::_list_project_profiles_input::ListProjectProfilesInput;
+
+pub use crate::operation::list_project_profiles::_list_project_profiles_output::ListProjectProfilesOutput;
 
 mod _list_project_profiles_input;
 

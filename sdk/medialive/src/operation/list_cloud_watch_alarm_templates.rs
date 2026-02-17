@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cloud_watch_a
     }
 }
 
-pub use crate::operation::list_cloud_watch_alarm_templates::_list_cloud_watch_alarm_templates_output::ListCloudWatchAlarmTemplatesOutput;
-
 pub use crate::operation::list_cloud_watch_alarm_templates::_list_cloud_watch_alarm_templates_input::ListCloudWatchAlarmTemplatesInput;
+
+pub use crate::operation::list_cloud_watch_alarm_templates::_list_cloud_watch_alarm_templates_output::ListCloudWatchAlarmTemplatesOutput;
 
 mod _list_cloud_watch_alarm_templates_input;
 

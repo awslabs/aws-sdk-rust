@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel_gro
     }
 }
 
-pub use crate::operation::update_channel_group::_update_channel_group_output::UpdateChannelGroupOutput;
-
 pub use crate::operation::update_channel_group::_update_channel_group_input::UpdateChannelGroupInput;
+
+pub use crate::operation::update_channel_group::_update_channel_group_output::UpdateChannelGroupOutput;
 
 mod _update_channel_group_input;
 

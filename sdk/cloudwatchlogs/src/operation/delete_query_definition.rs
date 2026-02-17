@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_query_defin
     }
 }
 
-pub use crate::operation::delete_query_definition::_delete_query_definition_output::DeleteQueryDefinitionOutput;
-
 pub use crate::operation::delete_query_definition::_delete_query_definition_input::DeleteQueryDefinitionInput;
+
+pub use crate::operation::delete_query_definition::_delete_query_definition_output::DeleteQueryDefinitionOutput;
 
 mod _delete_query_definition_input;
 

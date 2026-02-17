@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_accelerator
     }
 }
 
-pub use crate::operation::delete_accelerator::_delete_accelerator_output::DeleteAcceleratorOutput;
-
 pub use crate::operation::delete_accelerator::_delete_accelerator_input::DeleteAcceleratorInput;
+
+pub use crate::operation::delete_accelerator::_delete_accelerator_output::DeleteAcceleratorOutput;
 
 mod _delete_accelerator_input;
 

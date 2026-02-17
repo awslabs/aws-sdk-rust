@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_managed_rule_s
     }
 }
 
-pub use crate::operation::put_managed_rule_set_versions::_put_managed_rule_set_versions_output::PutManagedRuleSetVersionsOutput;
-
 pub use crate::operation::put_managed_rule_set_versions::_put_managed_rule_set_versions_input::PutManagedRuleSetVersionsInput;
+
+pub use crate::operation::put_managed_rule_set_versions::_put_managed_rule_set_versions_output::PutManagedRuleSetVersionsOutput;
 
 mod _put_managed_rule_set_versions_input;
 

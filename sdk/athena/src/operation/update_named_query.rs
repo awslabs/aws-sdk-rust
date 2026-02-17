@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_named_query
     }
 }
 
-pub use crate::operation::update_named_query::_update_named_query_output::UpdateNamedQueryOutput;
-
 pub use crate::operation::update_named_query::_update_named_query_input::UpdateNamedQueryInput;
+
+pub use crate::operation::update_named_query::_update_named_query_output::UpdateNamedQueryOutput;
 
 mod _update_named_query_input;
 

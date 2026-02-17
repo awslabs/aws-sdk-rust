@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_compute_quo
     }
 }
 
-pub use crate::operation::create_compute_quota::_create_compute_quota_output::CreateComputeQuotaOutput;
-
 pub use crate::operation::create_compute_quota::_create_compute_quota_input::CreateComputeQuotaInput;
+
+pub use crate::operation::create_compute_quota::_create_compute_quota_output::CreateComputeQuotaOutput;
 
 mod _create_compute_quota_input;
 

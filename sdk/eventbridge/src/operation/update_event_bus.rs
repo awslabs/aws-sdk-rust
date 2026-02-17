@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_bus::
     }
 }
 
-pub use crate::operation::update_event_bus::_update_event_bus_output::UpdateEventBusOutput;
-
 pub use crate::operation::update_event_bus::_update_event_bus_input::UpdateEventBusInput;
+
+pub use crate::operation::update_event_bus::_update_event_bus_output::UpdateEventBusOutput;
 
 mod _update_event_bus_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_retriever::Get
     }
 }
 
-pub use crate::operation::get_retriever::_get_retriever_output::GetRetrieverOutput;
-
 pub use crate::operation::get_retriever::_get_retriever_input::GetRetrieverInput;
+
+pub use crate::operation::get_retriever::_get_retriever_output::GetRetrieverOutput;
 
 mod _get_retriever_input;
 

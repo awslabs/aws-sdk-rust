@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_earth_observa
     }
 }
 
-pub use crate::operation::list_earth_observation_jobs::_list_earth_observation_jobs_output::ListEarthObservationJobsOutput;
-
 pub use crate::operation::list_earth_observation_jobs::_list_earth_observation_jobs_input::ListEarthObservationJobsInput;
+
+pub use crate::operation::list_earth_observation_jobs::_list_earth_observation_jobs_output::ListEarthObservationJobsOutput;
 
 mod _list_earth_observation_jobs_input;
 

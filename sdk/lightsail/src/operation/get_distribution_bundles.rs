@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution_b
     }
 }
 
-pub use crate::operation::get_distribution_bundles::_get_distribution_bundles_output::GetDistributionBundlesOutput;
-
 pub use crate::operation::get_distribution_bundles::_get_distribution_bundles_input::GetDistributionBundlesInput;
+
+pub use crate::operation::get_distribution_bundles::_get_distribution_bundles_output::GetDistributionBundlesOutput;
 
 mod _get_distribution_bundles_input;
 

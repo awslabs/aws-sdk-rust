@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_library_item::
     }
 }
 
-pub use crate::operation::get_library_item::_get_library_item_output::GetLibraryItemOutput;
-
 pub use crate::operation::get_library_item::_get_library_item_input::GetLibraryItemInput;
+
+pub use crate::operation::get_library_item::_get_library_item_output::GetLibraryItemOutput;
 
 mod _get_library_item_input;
 

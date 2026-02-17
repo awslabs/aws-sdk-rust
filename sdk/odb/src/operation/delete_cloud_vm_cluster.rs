@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cloud_vm_cl
     }
 }
 
-pub use crate::operation::delete_cloud_vm_cluster::_delete_cloud_vm_cluster_output::DeleteCloudVmClusterOutput;
-
 pub use crate::operation::delete_cloud_vm_cluster::_delete_cloud_vm_cluster_input::DeleteCloudVmClusterInput;
+
+pub use crate::operation::delete_cloud_vm_cluster::_delete_cloud_vm_cluster_output::DeleteCloudVmClusterOutput;
 
 mod _delete_cloud_vm_cluster_input;
 

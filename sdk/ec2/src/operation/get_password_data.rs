@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_password_data:
     }
 }
 
-pub use crate::operation::get_password_data::_get_password_data_output::GetPasswordDataOutput;
-
 pub use crate::operation::get_password_data::_get_password_data_input::GetPasswordDataInput;
+
+pub use crate::operation::get_password_data::_get_password_data_output::GetPasswordDataOutput;
 
 mod _get_password_data_input;
 

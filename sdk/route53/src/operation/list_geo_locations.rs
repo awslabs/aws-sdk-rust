@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_geo_locations
     }
 }
 
-pub use crate::operation::list_geo_locations::_list_geo_locations_output::ListGeoLocationsOutput;
-
 pub use crate::operation::list_geo_locations::_list_geo_locations_input::ListGeoLocationsInput;
+
+pub use crate::operation::list_geo_locations::_list_geo_locations_output::ListGeoLocationsOutput;
 
 mod _list_geo_locations_input;
 

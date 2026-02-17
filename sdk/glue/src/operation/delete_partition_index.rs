@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_partition_i
     }
 }
 
-pub use crate::operation::delete_partition_index::_delete_partition_index_output::DeletePartitionIndexOutput;
-
 pub use crate::operation::delete_partition_index::_delete_partition_index_input::DeletePartitionIndexInput;
+
+pub use crate::operation::delete_partition_index::_delete_partition_index_output::DeletePartitionIndexOutput;
 
 mod _delete_partition_index_input;
 

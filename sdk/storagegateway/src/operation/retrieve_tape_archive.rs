@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve_tape_arch
     }
 }
 
-pub use crate::operation::retrieve_tape_archive::_retrieve_tape_archive_output::RetrieveTapeArchiveOutput;
-
 pub use crate::operation::retrieve_tape_archive::_retrieve_tape_archive_input::RetrieveTapeArchiveInput;
+
+pub use crate::operation::retrieve_tape_archive::_retrieve_tape_archive_output::RetrieveTapeArchiveOutput;
 
 mod _retrieve_tape_archive_input;
 

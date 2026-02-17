@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vector_enrichm
     }
 }
 
-pub use crate::operation::get_vector_enrichment_job::_get_vector_enrichment_job_output::GetVectorEnrichmentJobOutput;
-
 pub use crate::operation::get_vector_enrichment_job::_get_vector_enrichment_job_input::GetVectorEnrichmentJobInput;
+
+pub use crate::operation::get_vector_enrichment_job::_get_vector_enrichment_job_output::GetVectorEnrichmentJobOutput;
 
 mod _get_vector_enrichment_job_input;
 

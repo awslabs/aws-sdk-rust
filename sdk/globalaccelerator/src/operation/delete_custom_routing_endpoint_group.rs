@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_rout
     }
 }
 
-pub use crate::operation::delete_custom_routing_endpoint_group::_delete_custom_routing_endpoint_group_output::DeleteCustomRoutingEndpointGroupOutput;
-
 pub use crate::operation::delete_custom_routing_endpoint_group::_delete_custom_routing_endpoint_group_input::DeleteCustomRoutingEndpointGroupInput;
+
+pub use crate::operation::delete_custom_routing_endpoint_group::_delete_custom_routing_endpoint_group_output::DeleteCustomRoutingEndpointGroupOutput;
 
 mod _delete_custom_routing_endpoint_group_input;
 

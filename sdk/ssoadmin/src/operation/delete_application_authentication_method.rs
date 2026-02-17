@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_authentication_method::_delete_application_authentication_method_output::DeleteApplicationAuthenticationMethodOutput;
-
 pub use crate::operation::delete_application_authentication_method::_delete_application_authentication_method_input::DeleteApplicationAuthenticationMethodInput;
+
+pub use crate::operation::delete_application_authentication_method::_delete_application_authentication_method_output::DeleteApplicationAuthenticationMethodOutput;
 
 mod _delete_application_authentication_method_input;
 

@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subscriptio
     }
 }
 
-pub use crate::operation::update_subscription_grant_status::_update_subscription_grant_status_output::UpdateSubscriptionGrantStatusOutput;
-
 pub use crate::operation::update_subscription_grant_status::_update_subscription_grant_status_input::UpdateSubscriptionGrantStatusInput;
+
+pub use crate::operation::update_subscription_grant_status::_update_subscription_grant_status_output::UpdateSubscriptionGrantStatusOutput;
 
 mod _update_subscription_grant_status_input;
 

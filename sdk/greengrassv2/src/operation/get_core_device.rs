@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_core_device::G
     }
 }
 
-pub use crate::operation::get_core_device::_get_core_device_output::GetCoreDeviceOutput;
-
 pub use crate::operation::get_core_device::_get_core_device_input::GetCoreDeviceInput;
+
+pub use crate::operation::get_core_device::_get_core_device_output::GetCoreDeviceOutput;
 
 mod _get_core_device_input;
 

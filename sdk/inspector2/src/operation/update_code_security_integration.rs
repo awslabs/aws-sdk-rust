@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_code_securi
     }
 }
 
-pub use crate::operation::update_code_security_integration::_update_code_security_integration_output::UpdateCodeSecurityIntegrationOutput;
-
 pub use crate::operation::update_code_security_integration::_update_code_security_integration_input::UpdateCodeSecurityIntegrationInput;
+
+pub use crate::operation::update_code_security_integration::_update_code_security_integration_output::UpdateCodeSecurityIntegrationOutput;
 
 mod _update_code_security_integration_input;
 

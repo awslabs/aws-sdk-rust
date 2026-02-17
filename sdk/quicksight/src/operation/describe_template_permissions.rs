@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_template_
     }
 }
 
-pub use crate::operation::describe_template_permissions::_describe_template_permissions_output::DescribeTemplatePermissionsOutput;
-
 pub use crate::operation::describe_template_permissions::_describe_template_permissions_input::DescribeTemplatePermissionsInput;
+
+pub use crate::operation::describe_template_permissions::_describe_template_permissions_output::DescribeTemplatePermissionsOutput;
 
 mod _describe_template_permissions_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_conditional
     }
 }
 
-pub use crate::operation::create_conditional_forwarder::_create_conditional_forwarder_output::CreateConditionalForwarderOutput;
-
 pub use crate::operation::create_conditional_forwarder::_create_conditional_forwarder_input::CreateConditionalForwarderInput;
+
+pub use crate::operation::create_conditional_forwarder::_create_conditional_forwarder_output::CreateConditionalForwarderOutput;
 
 mod _create_conditional_forwarder_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_certificate
     }
 }
 
-pub use crate::operation::reject_certificate_transfer::_reject_certificate_transfer_output::RejectCertificateTransferOutput;
-
 pub use crate::operation::reject_certificate_transfer::_reject_certificate_transfer_input::RejectCertificateTransferInput;
+
+pub use crate::operation::reject_certificate_transfer::_reject_certificate_transfer_output::RejectCertificateTransferOutput;
 
 mod _reject_certificate_transfer_input;
 

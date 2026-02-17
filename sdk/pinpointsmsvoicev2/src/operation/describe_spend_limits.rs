@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_spend_lim
     }
 }
 
-pub use crate::operation::describe_spend_limits::_describe_spend_limits_output::DescribeSpendLimitsOutput;
-
 pub use crate::operation::describe_spend_limits::_describe_spend_limits_input::DescribeSpendLimitsInput;
+
+pub use crate::operation::describe_spend_limits::_describe_spend_limits_output::DescribeSpendLimitsOutput;
 
 mod _describe_spend_limits_input;
 

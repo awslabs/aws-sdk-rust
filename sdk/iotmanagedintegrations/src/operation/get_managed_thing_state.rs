@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_thing_
     }
 }
 
-pub use crate::operation::get_managed_thing_state::_get_managed_thing_state_output::GetManagedThingStateOutput;
-
 pub use crate::operation::get_managed_thing_state::_get_managed_thing_state_input::GetManagedThingStateInput;
+
+pub use crate::operation::get_managed_thing_state::_get_managed_thing_state_output::GetManagedThingStateOutput;
 
 mod _get_managed_thing_state_input;
 

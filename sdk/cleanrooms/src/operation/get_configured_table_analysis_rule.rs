@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configured_tab
     }
 }
 
-pub use crate::operation::get_configured_table_analysis_rule::_get_configured_table_analysis_rule_output::GetConfiguredTableAnalysisRuleOutput;
-
 pub use crate::operation::get_configured_table_analysis_rule::_get_configured_table_analysis_rule_input::GetConfiguredTableAnalysisRuleInput;
+
+pub use crate::operation::get_configured_table_analysis_rule::_get_configured_table_analysis_rule_output::GetConfiguredTableAnalysisRuleOutput;
 
 mod _get_configured_table_analysis_rule_input;
 

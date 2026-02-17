@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_multi_reg
     }
 }
 
-pub use crate::operation::describe_multi_region_parameter_groups::_describe_multi_region_parameter_groups_output::DescribeMultiRegionParameterGroupsOutput;
-
 pub use crate::operation::describe_multi_region_parameter_groups::_describe_multi_region_parameter_groups_input::DescribeMultiRegionParameterGroupsInput;
+
+pub use crate::operation::describe_multi_region_parameter_groups::_describe_multi_region_parameter_groups_output::DescribeMultiRegionParameterGroupsOutput;
 
 mod _describe_multi_region_parameter_groups_input;
 

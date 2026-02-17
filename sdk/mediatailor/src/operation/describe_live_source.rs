@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_live_sour
     }
 }
 
-pub use crate::operation::describe_live_source::_describe_live_source_output::DescribeLiveSourceOutput;
-
 pub use crate::operation::describe_live_source::_describe_live_source_input::DescribeLiveSourceInput;
+
+pub use crate::operation::describe_live_source::_describe_live_source_output::DescribeLiveSourceOutput;
 
 mod _describe_live_source_input;
 

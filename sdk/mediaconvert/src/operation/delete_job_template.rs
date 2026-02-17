@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_job_templat
     }
 }
 
-pub use crate::operation::delete_job_template::_delete_job_template_output::DeleteJobTemplateOutput;
-
 pub use crate::operation::delete_job_template::_delete_job_template_input::DeleteJobTemplateInput;
+
+pub use crate::operation::delete_job_template::_delete_job_template_output::DeleteJobTemplateOutput;
 
 mod _delete_job_template_input;
 

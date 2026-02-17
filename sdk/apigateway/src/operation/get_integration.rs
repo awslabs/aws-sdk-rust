@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_integration::G
     }
 }
 
-pub use crate::operation::get_integration::_get_integration_output::GetIntegrationOutput;
-
 pub use crate::operation::get_integration::_get_integration_input::GetIntegrationInput;
+
+pub use crate::operation::get_integration::_get_integration_output::GetIntegrationOutput;
 
 mod _get_integration_input;
 

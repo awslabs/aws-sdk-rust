@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_phone
     }
 }
 
-pub use crate::operation::disassociate_phone_number_contact_flow::_disassociate_phone_number_contact_flow_output::DisassociatePhoneNumberContactFlowOutput;
-
 pub use crate::operation::disassociate_phone_number_contact_flow::_disassociate_phone_number_contact_flow_input::DisassociatePhoneNumberContactFlowInput;
+
+pub use crate::operation::disassociate_phone_number_contact_flow::_disassociate_phone_number_contact_flow_output::DisassociatePhoneNumberContactFlowOutput;
 
 mod _disassociate_phone_number_contact_flow_input;
 

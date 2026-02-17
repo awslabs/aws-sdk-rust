@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_unsupported_a
     }
 }
 
-pub use crate::operation::list_unsupported_app_version_resources::_list_unsupported_app_version_resources_output::ListUnsupportedAppVersionResourcesOutput;
-
 pub use crate::operation::list_unsupported_app_version_resources::_list_unsupported_app_version_resources_input::ListUnsupportedAppVersionResourcesInput;
+
+pub use crate::operation::list_unsupported_app_version_resources::_list_unsupported_app_version_resources_output::ListUnsupportedAppVersionResourcesOutput;
 
 mod _list_unsupported_app_version_resources_input;
 

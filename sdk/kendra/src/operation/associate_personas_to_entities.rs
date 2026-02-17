@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_personas
     }
 }
 
-pub use crate::operation::associate_personas_to_entities::_associate_personas_to_entities_output::AssociatePersonasToEntitiesOutput;
-
 pub use crate::operation::associate_personas_to_entities::_associate_personas_to_entities_input::AssociatePersonasToEntitiesInput;
+
+pub use crate::operation::associate_personas_to_entities::_associate_personas_to_entities_output::AssociatePersonasToEntitiesOutput;
 
 mod _associate_personas_to_entities_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_usage_limit
     }
 }
 
-pub use crate::operation::modify_usage_limit::_modify_usage_limit_output::ModifyUsageLimitOutput;
-
 pub use crate::operation::modify_usage_limit::_modify_usage_limit_input::ModifyUsageLimitInput;
+
+pub use crate::operation::modify_usage_limit::_modify_usage_limit_output::ModifyUsageLimitOutput;
 
 mod _modify_usage_limit_input;
 

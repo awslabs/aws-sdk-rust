@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_vgw_route_
     }
 }
 
-pub use crate::operation::disable_vgw_route_propagation::_disable_vgw_route_propagation_output::DisableVgwRoutePropagationOutput;
-
 pub use crate::operation::disable_vgw_route_propagation::_disable_vgw_route_propagation_input::DisableVgwRoutePropagationInput;
+
+pub use crate::operation::disable_vgw_route_propagation::_disable_vgw_route_propagation_output::DisableVgwRoutePropagationOutput;
 
 mod _disable_vgw_route_propagation_input;
 

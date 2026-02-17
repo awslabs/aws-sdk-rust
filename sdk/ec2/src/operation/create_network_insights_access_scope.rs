@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network_ins
     }
 }
 
-pub use crate::operation::create_network_insights_access_scope::_create_network_insights_access_scope_output::CreateNetworkInsightsAccessScopeOutput;
-
 pub use crate::operation::create_network_insights_access_scope::_create_network_insights_access_scope_input::CreateNetworkInsightsAccessScopeInput;
+
+pub use crate::operation::create_network_insights_access_scope::_create_network_insights_access_scope_output::CreateNetworkInsightsAccessScopeOutput;
 
 mod _create_network_insights_access_scope_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_workspace:
     }
 }
 
-pub use crate::operation::restore_workspace::_restore_workspace_output::RestoreWorkspaceOutput;
-
 pub use crate::operation::restore_workspace::_restore_workspace_input::RestoreWorkspaceInput;
+
+pub use crate::operation::restore_workspace::_restore_workspace_output::RestoreWorkspaceOutput;
 
 mod _restore_workspace_input;
 

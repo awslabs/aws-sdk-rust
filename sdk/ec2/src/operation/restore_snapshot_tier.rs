@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_snapshot_t
     }
 }
 
-pub use crate::operation::restore_snapshot_tier::_restore_snapshot_tier_output::RestoreSnapshotTierOutput;
-
 pub use crate::operation::restore_snapshot_tier::_restore_snapshot_tier_input::RestoreSnapshotTierInput;
+
+pub use crate::operation::restore_snapshot_tier::_restore_snapshot_tier_output::RestoreSnapshotTierOutput;
 
 mod _restore_snapshot_tier_input;
 

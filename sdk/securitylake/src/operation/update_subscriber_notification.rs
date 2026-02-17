@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subscriber_
     }
 }
 
-pub use crate::operation::update_subscriber_notification::_update_subscriber_notification_output::UpdateSubscriberNotificationOutput;
-
 pub use crate::operation::update_subscriber_notification::_update_subscriber_notification_input::UpdateSubscriberNotificationInput;
+
+pub use crate::operation::update_subscriber_notification::_update_subscriber_notification_output::UpdateSubscriberNotificationOutput;
 
 mod _update_subscriber_notification_input;
 

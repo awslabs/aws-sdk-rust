@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connection_
     }
 }
 
-pub use crate::operation::create_connection_invitation::_create_connection_invitation_output::CreateConnectionInvitationOutput;
-
 pub use crate::operation::create_connection_invitation::_create_connection_invitation_input::CreateConnectionInvitationInput;
+
+pub use crate::operation::create_connection_invitation::_create_connection_invitation_output::CreateConnectionInvitationOutput;
 
 mod _create_connection_invitation_input;
 

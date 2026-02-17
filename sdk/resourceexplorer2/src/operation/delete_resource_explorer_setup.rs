@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_ex
     }
 }
 
-pub use crate::operation::delete_resource_explorer_setup::_delete_resource_explorer_setup_output::DeleteResourceExplorerSetupOutput;
-
 pub use crate::operation::delete_resource_explorer_setup::_delete_resource_explorer_setup_input::DeleteResourceExplorerSetupInput;
+
+pub use crate::operation::delete_resource_explorer_setup::_delete_resource_explorer_setup_output::DeleteResourceExplorerSetupOutput;
 
 mod _delete_resource_explorer_setup_input;
 

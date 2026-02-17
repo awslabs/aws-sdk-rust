@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_defi
     }
 }
 
-pub use crate::operation::list_resource_definition_versions::_list_resource_definition_versions_output::ListResourceDefinitionVersionsOutput;
-
 pub use crate::operation::list_resource_definition_versions::_list_resource_definition_versions_input::ListResourceDefinitionVersionsInput;
+
+pub use crate::operation::list_resource_definition_versions::_list_resource_definition_versions_output::ListResourceDefinitionVersionsOutput;
 
 mod _list_resource_definition_versions_input;
 

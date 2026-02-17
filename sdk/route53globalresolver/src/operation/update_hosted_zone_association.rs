@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hosted_zone
     }
 }
 
-pub use crate::operation::update_hosted_zone_association::_update_hosted_zone_association_output::UpdateHostedZoneAssociationOutput;
-
 pub use crate::operation::update_hosted_zone_association::_update_hosted_zone_association_input::UpdateHostedZoneAssociationInput;
+
+pub use crate::operation::update_hosted_zone_association::_update_hosted_zone_association_output::UpdateHostedZoneAssociationOutput;
 
 mod _update_hosted_zone_association_input;
 

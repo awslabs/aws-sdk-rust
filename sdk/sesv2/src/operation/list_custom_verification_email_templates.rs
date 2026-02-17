@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_verifi
     }
 }
 
-pub use crate::operation::list_custom_verification_email_templates::_list_custom_verification_email_templates_output::ListCustomVerificationEmailTemplatesOutput;
-
 pub use crate::operation::list_custom_verification_email_templates::_list_custom_verification_email_templates_input::ListCustomVerificationEmailTemplatesInput;
+
+pub use crate::operation::list_custom_verification_email_templates::_list_custom_verification_email_templates_output::ListCustomVerificationEmailTemplatesOutput;
 
 mod _list_custom_verification_email_templates_input;
 

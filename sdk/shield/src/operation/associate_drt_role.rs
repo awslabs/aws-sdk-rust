@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_drt_role
     }
 }
 
-pub use crate::operation::associate_drt_role::_associate_drt_role_output::AssociateDrtRoleOutput;
-
 pub use crate::operation::associate_drt_role::_associate_drt_role_input::AssociateDrtRoleInput;
+
+pub use crate::operation::associate_drt_role::_associate_drt_role_output::AssociateDrtRoleOutput;
 
 mod _associate_drt_role_input;
 

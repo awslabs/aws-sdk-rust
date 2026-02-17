@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_platform_appl
     }
 }
 
-pub use crate::operation::list_platform_applications::_list_platform_applications_output::ListPlatformApplicationsOutput;
-
 pub use crate::operation::list_platform_applications::_list_platform_applications_input::ListPlatformApplicationsInput;
+
+pub use crate::operation::list_platform_applications::_list_platform_applications_output::ListPlatformApplicationsOutput;
 
 mod _list_platform_applications_input;
 

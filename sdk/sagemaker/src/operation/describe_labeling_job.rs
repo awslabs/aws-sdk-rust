@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_labeling_
     }
 }
 
-pub use crate::operation::describe_labeling_job::_describe_labeling_job_output::DescribeLabelingJobOutput;
-
 pub use crate::operation::describe_labeling_job::_describe_labeling_job_input::DescribeLabelingJobInput;
+
+pub use crate::operation::describe_labeling_job::_describe_labeling_job_output::DescribeLabelingJobOutput;
 
 mod _describe_labeling_job_input;
 

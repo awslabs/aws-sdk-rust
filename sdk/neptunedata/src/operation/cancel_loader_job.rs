@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_loader_job:
     }
 }
 
-pub use crate::operation::cancel_loader_job::_cancel_loader_job_output::CancelLoaderJobOutput;
-
 pub use crate::operation::cancel_loader_job::_cancel_loader_job_input::CancelLoaderJobInput;
+
+pub use crate::operation::cancel_loader_job::_cancel_loader_job_output::CancelLoaderJobOutput;
 
 mod _cancel_loader_job_input;
 

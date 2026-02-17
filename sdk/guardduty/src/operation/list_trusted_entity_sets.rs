@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trusted_entit
     }
 }
 
-pub use crate::operation::list_trusted_entity_sets::_list_trusted_entity_sets_output::ListTrustedEntitySetsOutput;
-
 pub use crate::operation::list_trusted_entity_sets::_list_trusted_entity_sets_input::ListTrustedEntitySetsInput;
+
+pub use crate::operation::list_trusted_entity_sets::_list_trusted_entity_sets_output::ListTrustedEntitySetsOutput;
 
 mod _list_trusted_entity_sets_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_wireless_ga
     }
 }
 
-pub use crate::operation::delete_wireless_gateway_task::_delete_wireless_gateway_task_output::DeleteWirelessGatewayTaskOutput;
-
 pub use crate::operation::delete_wireless_gateway_task::_delete_wireless_gateway_task_input::DeleteWirelessGatewayTaskInput;
+
+pub use crate::operation::delete_wireless_gateway_task::_delete_wireless_gateway_task_output::DeleteWirelessGatewayTaskOutput;
 
 mod _delete_wireless_gateway_task_input;
 

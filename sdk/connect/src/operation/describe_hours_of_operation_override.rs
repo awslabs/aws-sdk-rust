@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hours_of_
     }
 }
 
-pub use crate::operation::describe_hours_of_operation_override::_describe_hours_of_operation_override_output::DescribeHoursOfOperationOverrideOutput;
-
 pub use crate::operation::describe_hours_of_operation_override::_describe_hours_of_operation_override_input::DescribeHoursOfOperationOverrideInput;
+
+pub use crate::operation::describe_hours_of_operation_override::_describe_hours_of_operation_override_output::DescribeHoursOfOperationOverrideOutput;
 
 mod _describe_hours_of_operation_override_input;
 

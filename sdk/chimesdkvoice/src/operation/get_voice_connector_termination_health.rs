@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_voice_connecto
     }
 }
 
-pub use crate::operation::get_voice_connector_termination_health::_get_voice_connector_termination_health_output::GetVoiceConnectorTerminationHealthOutput;
-
 pub use crate::operation::get_voice_connector_termination_health::_get_voice_connector_termination_health_input::GetVoiceConnectorTerminationHealthInput;
+
+pub use crate::operation::get_voice_connector_termination_health::_get_voice_connector_termination_health_output::GetVoiceConnectorTerminationHealthOutput;
 
 mod _get_voice_connector_termination_health_input;
 

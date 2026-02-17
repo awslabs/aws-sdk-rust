@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_protect_con
     }
 }
 
-pub use crate::operation::delete_protect_configuration::_delete_protect_configuration_output::DeleteProtectConfigurationOutput;
-
 pub use crate::operation::delete_protect_configuration::_delete_protect_configuration_input::DeleteProtectConfigurationInput;
+
+pub use crate::operation::delete_protect_configuration::_delete_protect_configuration_output::DeleteProtectConfigurationOutput;
 
 mod _delete_protect_configuration_input;
 

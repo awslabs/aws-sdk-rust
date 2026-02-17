@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_role_policy
     }
 }
 
-pub use crate::operation::detach_role_policy::_detach_role_policy_output::DetachRolePolicyOutput;
-
 pub use crate::operation::detach_role_policy::_detach_role_policy_input::DetachRolePolicyInput;
+
+pub use crate::operation::detach_role_policy::_detach_role_policy_output::DetachRolePolicyOutput;
 
 mod _detach_role_policy_input;
 

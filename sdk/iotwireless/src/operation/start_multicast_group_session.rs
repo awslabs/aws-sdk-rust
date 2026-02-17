@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_multicast_gr
     }
 }
 
-pub use crate::operation::start_multicast_group_session::_start_multicast_group_session_output::StartMulticastGroupSessionOutput;
-
 pub use crate::operation::start_multicast_group_session::_start_multicast_group_session_input::StartMulticastGroupSessionInput;
+
+pub use crate::operation::start_multicast_group_session::_start_multicast_group_session_output::StartMulticastGroupSessionOutput;
 
 mod _start_multicast_group_session_input;
 

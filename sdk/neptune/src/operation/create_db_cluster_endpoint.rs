@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_cluster_
     }
 }
 
-pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoint_output::CreateDbClusterEndpointOutput;
-
 pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoint_input::CreateDbClusterEndpointInput;
+
+pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoint_output::CreateDbClusterEndpointOutput;
 
 mod _create_db_cluster_endpoint_input;
 

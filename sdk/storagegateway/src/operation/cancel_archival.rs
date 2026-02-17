@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_archival::C
     }
 }
 
-pub use crate::operation::cancel_archival::_cancel_archival_output::CancelArchivalOutput;
-
 pub use crate::operation::cancel_archival::_cancel_archival_input::CancelArchivalInput;
+
+pub use crate::operation::cancel_archival::_cancel_archival_output::CancelArchivalOutput;
 
 mod _cancel_archival_input;
 

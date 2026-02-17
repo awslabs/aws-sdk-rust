@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_key_phrases
     }
 }
 
-pub use crate::operation::detect_key_phrases::_detect_key_phrases_output::DetectKeyPhrasesOutput;
-
 pub use crate::operation::detect_key_phrases::_detect_key_phrases_input::DetectKeyPhrasesInput;
+
+pub use crate::operation::detect_key_phrases::_detect_key_phrases_output::DetectKeyPhrasesOutput;
 
 mod _detect_key_phrases_input;
 

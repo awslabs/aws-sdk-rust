@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_scaling_gr
     }
 }
 
-pub use crate::operation::list_kx_scaling_groups::_list_kx_scaling_groups_output::ListKxScalingGroupsOutput;
-
 pub use crate::operation::list_kx_scaling_groups::_list_kx_scaling_groups_input::ListKxScalingGroupsInput;
+
+pub use crate::operation::list_kx_scaling_groups::_list_kx_scaling_groups_output::ListKxScalingGroupsOutput;
 
 mod _list_kx_scaling_groups_input;
 

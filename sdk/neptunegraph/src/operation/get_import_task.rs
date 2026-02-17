@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_import_task::G
     }
 }
 
-pub use crate::operation::get_import_task::_get_import_task_output::GetImportTaskOutput;
-
 pub use crate::operation::get_import_task::_get_import_task_input::GetImportTaskInput;
+
+pub use crate::operation::get_import_task::_get_import_task_output::GetImportTaskOutput;
 
 mod _get_import_task_input;
 

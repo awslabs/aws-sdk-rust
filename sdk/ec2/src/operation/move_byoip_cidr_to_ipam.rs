@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::move_byoip_cidr_to
     }
 }
 
-pub use crate::operation::move_byoip_cidr_to_ipam::_move_byoip_cidr_to_ipam_output::MoveByoipCidrToIpamOutput;
-
 pub use crate::operation::move_byoip_cidr_to_ipam::_move_byoip_cidr_to_ipam_input::MoveByoipCidrToIpamInput;
+
+pub use crate::operation::move_byoip_cidr_to_ipam::_move_byoip_cidr_to_ipam_output::MoveByoipCidrToIpamOutput;
 
 mod _move_byoip_cidr_to_ipam_input;
 

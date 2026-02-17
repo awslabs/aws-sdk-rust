@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_milestone::Get
     }
 }
 
-pub use crate::operation::get_milestone::_get_milestone_output::GetMilestoneOutput;
-
 pub use crate::operation::get_milestone::_get_milestone_input::GetMilestoneInput;
+
+pub use crate::operation::get_milestone::_get_milestone_output::GetMilestoneOutput;
 
 mod _get_milestone_input;
 

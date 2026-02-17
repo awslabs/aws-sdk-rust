@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_firewall_de
     }
 }
 
-pub use crate::operation::update_firewall_delete_protection::_update_firewall_delete_protection_output::UpdateFirewallDeleteProtectionOutput;
-
 pub use crate::operation::update_firewall_delete_protection::_update_firewall_delete_protection_input::UpdateFirewallDeleteProtectionInput;
+
+pub use crate::operation::update_firewall_delete_protection::_update_firewall_delete_protection_output::UpdateFirewallDeleteProtectionOutput;
 
 mod _update_firewall_delete_protection_input;
 

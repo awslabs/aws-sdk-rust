@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_security_co
     }
 }
 
-pub use crate::operation::create_security_configuration::_create_security_configuration_output::CreateSecurityConfigurationOutput;
-
 pub use crate::operation::create_security_configuration::_create_security_configuration_input::CreateSecurityConfigurationInput;
+
+pub use crate::operation::create_security_configuration::_create_security_configuration_output::CreateSecurityConfigurationOutput;
 
 mod _create_security_configuration_input;
 

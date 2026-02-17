@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_size_constrai
     }
 }
 
-pub use crate::operation::list_size_constraint_sets::_list_size_constraint_sets_output::ListSizeConstraintSetsOutput;
-
 pub use crate::operation::list_size_constraint_sets::_list_size_constraint_sets_input::ListSizeConstraintSetsInput;
+
+pub use crate::operation::list_size_constraint_sets::_list_size_constraint_sets_output::ListSizeConstraintSetsOutput;
 
 mod _list_size_constraint_sets_input;
 

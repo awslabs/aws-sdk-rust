@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scheduled_a
     }
 }
 
-pub use crate::operation::update_scheduled_action::_update_scheduled_action_output::UpdateScheduledActionOutput;
-
 pub use crate::operation::update_scheduled_action::_update_scheduled_action_input::UpdateScheduledActionInput;
+
+pub use crate::operation::update_scheduled_action::_update_scheduled_action_output::UpdateScheduledActionOutput;
 
 mod _update_scheduled_action_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_load_balanc
     }
 }
 
-pub use crate::operation::create_load_balancer_listeners::_create_load_balancer_listeners_output::CreateLoadBalancerListenersOutput;
-
 pub use crate::operation::create_load_balancer_listeners::_create_load_balancer_listeners_input::CreateLoadBalancerListenersInput;
+
+pub use crate::operation::create_load_balancer_listeners::_create_load_balancer_listeners_output::CreateLoadBalancerListenersOutput;
 
 mod _create_load_balancer_listeners_input;
 

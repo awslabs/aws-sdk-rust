@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_network_pro
     }
 }
 
-pub use crate::operation::delete_network_profile::_delete_network_profile_output::DeleteNetworkProfileOutput;
-
 pub use crate::operation::delete_network_profile::_delete_network_profile_input::DeleteNetworkProfileInput;
+
+pub use crate::operation::delete_network_profile::_delete_network_profile_output::DeleteNetworkProfileOutput;
 
 mod _delete_network_profile_input;
 

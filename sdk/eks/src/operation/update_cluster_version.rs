@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster_ver
     }
 }
 
-pub use crate::operation::update_cluster_version::_update_cluster_version_output::UpdateClusterVersionOutput;
-
 pub use crate::operation::update_cluster_version::_update_cluster_version_input::UpdateClusterVersionInput;
+
+pub use crate::operation::update_cluster_version::_update_cluster_version_output::UpdateClusterVersionOutput;
 
 mod _update_cluster_version_input;
 

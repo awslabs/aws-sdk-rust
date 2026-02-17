@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_secret::Upd
     }
 }
 
-pub use crate::operation::update_secret::_update_secret_output::UpdateSecretOutput;
-
 pub use crate::operation::update_secret::_update_secret_input::UpdateSecretInput;
+
+pub use crate::operation::update_secret::_update_secret_output::UpdateSecretOutput;
 
 mod _update_secret_input;
 

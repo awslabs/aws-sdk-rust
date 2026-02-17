@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewall_poli
     }
 }
 
-pub use crate::operation::list_firewall_policies::_list_firewall_policies_output::ListFirewallPoliciesOutput;
-
 pub use crate::operation::list_firewall_policies::_list_firewall_policies_input::ListFirewallPoliciesInput;
+
+pub use crate::operation::list_firewall_policies::_list_firewall_policies_output::ListFirewallPoliciesOutput;
 
 mod _list_firewall_policies_input;
 

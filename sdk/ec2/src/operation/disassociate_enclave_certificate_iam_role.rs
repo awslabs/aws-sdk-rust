@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_encla
     }
 }
 
-pub use crate::operation::disassociate_enclave_certificate_iam_role::_disassociate_enclave_certificate_iam_role_output::DisassociateEnclaveCertificateIamRoleOutput;
-
 pub use crate::operation::disassociate_enclave_certificate_iam_role::_disassociate_enclave_certificate_iam_role_input::DisassociateEnclaveCertificateIamRoleInput;
+
+pub use crate::operation::disassociate_enclave_certificate_iam_role::_disassociate_enclave_certificate_iam_role_output::DisassociateEnclaveCertificateIamRoleOutput;
 
 mod _disassociate_enclave_certificate_iam_role_input;
 

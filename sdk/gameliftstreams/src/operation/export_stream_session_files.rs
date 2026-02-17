@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_stream_sess
     }
 }
 
-pub use crate::operation::export_stream_session_files::_export_stream_session_files_output::ExportStreamSessionFilesOutput;
-
 pub use crate::operation::export_stream_session_files::_export_stream_session_files_input::ExportStreamSessionFilesInput;
+
+pub use crate::operation::export_stream_session_files::_export_stream_session_files_output::ExportStreamSessionFilesOutput;
 
 mod _export_stream_session_files_input;
 

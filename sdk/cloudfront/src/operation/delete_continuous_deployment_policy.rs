@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_continuous_
     }
 }
 
-pub use crate::operation::delete_continuous_deployment_policy::_delete_continuous_deployment_policy_output::DeleteContinuousDeploymentPolicyOutput;
-
 pub use crate::operation::delete_continuous_deployment_policy::_delete_continuous_deployment_policy_input::DeleteContinuousDeploymentPolicyInput;
+
+pub use crate::operation::delete_continuous_deployment_policy::_delete_continuous_deployment_policy_output::DeleteContinuousDeploymentPolicyOutput;
 
 mod _delete_continuous_deployment_policy_input;
 

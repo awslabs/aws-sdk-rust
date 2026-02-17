@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_benef
     }
 }
 
-pub use crate::operation::disassociate_benefit_application_resource::_disassociate_benefit_application_resource_output::DisassociateBenefitApplicationResourceOutput;
-
 pub use crate::operation::disassociate_benefit_application_resource::_disassociate_benefit_application_resource_input::DisassociateBenefitApplicationResourceInput;
+
+pub use crate::operation::disassociate_benefit_application_resource::_disassociate_benefit_application_resource_output::DisassociateBenefitApplicationResourceOutput;
 
 mod _disassociate_benefit_application_resource_input;
 

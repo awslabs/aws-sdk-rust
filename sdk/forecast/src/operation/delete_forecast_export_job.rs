@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_forecast_ex
     }
 }
 
-pub use crate::operation::delete_forecast_export_job::_delete_forecast_export_job_output::DeleteForecastExportJobOutput;
-
 pub use crate::operation::delete_forecast_export_job::_delete_forecast_export_job_input::DeleteForecastExportJobInput;
+
+pub use crate::operation::delete_forecast_export_job::_delete_forecast_export_job_output::DeleteForecastExportJobOutput;
 
 mod _delete_forecast_export_job_input;
 

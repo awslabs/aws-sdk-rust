@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_human_task_ui
     }
 }
 
-pub use crate::operation::list_human_task_uis::_list_human_task_uis_output::ListHumanTaskUisOutput;
-
 pub use crate::operation::list_human_task_uis::_list_human_task_uis_input::ListHumanTaskUisInput;
+
+pub use crate::operation::list_human_task_uis::_list_human_task_uis_output::ListHumanTaskUisOutput;
 
 mod _list_human_task_uis_input;
 

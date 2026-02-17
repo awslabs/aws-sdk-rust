@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_address_attr
     }
 }
 
-pub use crate::operation::reset_address_attribute::_reset_address_attribute_output::ResetAddressAttributeOutput;
-
 pub use crate::operation::reset_address_attribute::_reset_address_attribute_input::ResetAddressAttributeInput;
+
+pub use crate::operation::reset_address_attribute::_reset_address_attribute_output::ResetAddressAttributeOutput;
 
 mod _reset_address_attribute_input;
 

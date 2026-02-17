@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_application:
     }
 }
 
-pub use crate::operation::start_application::_start_application_output::StartApplicationOutput;
-
 pub use crate::operation::start_application::_start_application_input::StartApplicationInput;
+
+pub use crate::operation::start_application::_start_application_output::StartApplicationOutput;
 
 mod _start_application_input;
 

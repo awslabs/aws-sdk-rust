@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_studio_life
     }
 }
 
-pub use crate::operation::delete_studio_lifecycle_config::_delete_studio_lifecycle_config_output::DeleteStudioLifecycleConfigOutput;
-
 pub use crate::operation::delete_studio_lifecycle_config::_delete_studio_lifecycle_config_input::DeleteStudioLifecycleConfigInput;
+
+pub use crate::operation::delete_studio_lifecycle_config::_delete_studio_lifecycle_config_output::DeleteStudioLifecycleConfigOutput;
 
 mod _delete_studio_lifecycle_config_input;
 

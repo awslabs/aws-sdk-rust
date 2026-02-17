@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_environment_managed_action_history::_describe_environment_managed_action_history_output::DescribeEnvironmentManagedActionHistoryOutput;
-
 pub use crate::operation::describe_environment_managed_action_history::_describe_environment_managed_action_history_input::DescribeEnvironmentManagedActionHistoryInput;
+
+pub use crate::operation::describe_environment_managed_action_history::_describe_environment_managed_action_history_output::DescribeEnvironmentManagedActionHistoryOutput;
 
 mod _describe_environment_managed_action_history_input;
 

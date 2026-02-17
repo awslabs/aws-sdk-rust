@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_field_op
     }
 }
 
-pub use crate::operation::batch_put_field_options::_batch_put_field_options_output::BatchPutFieldOptionsOutput;
-
 pub use crate::operation::batch_put_field_options::_batch_put_field_options_input::BatchPutFieldOptionsInput;
+
+pub use crate::operation::batch_put_field_options::_batch_put_field_options_output::BatchPutFieldOptionsOutput;
 
 mod _batch_put_field_options_input;
 

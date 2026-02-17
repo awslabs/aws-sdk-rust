@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_prefix_li
     }
 }
 
-pub use crate::operation::get_ipam_prefix_list_resolver_rules::_get_ipam_prefix_list_resolver_rules_output::GetIpamPrefixListResolverRulesOutput;
-
 pub use crate::operation::get_ipam_prefix_list_resolver_rules::_get_ipam_prefix_list_resolver_rules_input::GetIpamPrefixListResolverRulesInput;
+
+pub use crate::operation::get_ipam_prefix_list_resolver_rules::_get_ipam_prefix_list_resolver_rules_output::GetIpamPrefixListResolverRulesOutput;
 
 mod _get_ipam_prefix_list_resolver_rules_input;
 

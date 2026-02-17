@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_resour
     }
 }
 
-pub use crate::operation::get_profile_resource_association::_get_profile_resource_association_output::GetProfileResourceAssociationOutput;
-
 pub use crate::operation::get_profile_resource_association::_get_profile_resource_association_input::GetProfileResourceAssociationInput;
+
+pub use crate::operation::get_profile_resource_association::_get_profile_resource_association_output::GetProfileResourceAssociationOutput;
 
 mod _get_profile_resource_association_input;
 

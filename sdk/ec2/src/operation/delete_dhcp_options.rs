@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dhcp_option
     }
 }
 
-pub use crate::operation::delete_dhcp_options::_delete_dhcp_options_output::DeleteDhcpOptionsOutput;
-
 pub use crate::operation::delete_dhcp_options::_delete_dhcp_options_input::DeleteDhcpOptionsInput;
+
+pub use crate::operation::delete_dhcp_options::_delete_dhcp_options_output::DeleteDhcpOptionsOutput;
 
 mod _delete_dhcp_options_input;
 

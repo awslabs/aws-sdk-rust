@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::expire_session::Ex
     }
 }
 
-pub use crate::operation::expire_session::_expire_session_output::ExpireSessionOutput;
-
 pub use crate::operation::expire_session::_expire_session_input::ExpireSessionInput;
+
+pub use crate::operation::expire_session::_expire_session_output::ExpireSessionOutput;
 
 mod _expire_session_input;
 

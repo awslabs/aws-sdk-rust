@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_adapter_versio
     }
 }
 
-pub use crate::operation::get_adapter_version::_get_adapter_version_output::GetAdapterVersionOutput;
-
 pub use crate::operation::get_adapter_version::_get_adapter_version_input::GetAdapterVersionInput;
+
+pub use crate::operation::get_adapter_version::_get_adapter_version_output::GetAdapterVersionOutput;
 
 mod _get_adapter_version_input;
 

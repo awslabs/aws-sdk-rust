@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_managed_log
     }
 }
 
-pub use crate::operation::update_managed_login_branding::_update_managed_login_branding_output::UpdateManagedLoginBrandingOutput;
-
 pub use crate::operation::update_managed_login_branding::_update_managed_login_branding_input::UpdateManagedLoginBrandingInput;
+
+pub use crate::operation::update_managed_login_branding::_update_managed_login_branding_output::UpdateManagedLoginBrandingOutput;
 
 mod _update_managed_login_branding_input;
 

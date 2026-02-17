@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_domain
     }
 }
 
-pub use crate::operation::list_custom_domain_associations::_list_custom_domain_associations_output::ListCustomDomainAssociationsOutput;
-
 pub use crate::operation::list_custom_domain_associations::_list_custom_domain_associations_input::ListCustomDomainAssociationsInput;
+
+pub use crate::operation::list_custom_domain_associations::_list_custom_domain_associations_output::ListCustomDomainAssociationsOutput;
 
 mod _list_custom_domain_associations_input;
 

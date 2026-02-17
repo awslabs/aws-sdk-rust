@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_subjects::Lis
     }
 }
 
-pub use crate::operation::list_subjects::_list_subjects_output::ListSubjectsOutput;
-
 pub use crate::operation::list_subjects::_list_subjects_input::ListSubjectsInput;
+
+pub use crate::operation::list_subjects::_list_subjects_output::ListSubjectsOutput;
 
 mod _list_subjects_input;
 

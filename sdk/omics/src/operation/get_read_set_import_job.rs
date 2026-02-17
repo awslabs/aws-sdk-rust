@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_read_set_impor
     }
 }
 
-pub use crate::operation::get_read_set_import_job::_get_read_set_import_job_output::GetReadSetImportJobOutput;
-
 pub use crate::operation::get_read_set_import_job::_get_read_set_import_job_input::GetReadSetImportJobInput;
+
+pub use crate::operation::get_read_set_import_job::_get_read_set_import_job_output::GetReadSetImportJobOutput;
 
 mod _get_read_set_import_job_input;
 

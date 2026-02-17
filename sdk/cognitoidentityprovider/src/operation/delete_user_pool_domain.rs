@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_pool_d
     }
 }
 
-pub use crate::operation::delete_user_pool_domain::_delete_user_pool_domain_output::DeleteUserPoolDomainOutput;
-
 pub use crate::operation::delete_user_pool_domain::_delete_user_pool_domain_input::DeleteUserPoolDomainInput;
+
+pub use crate::operation::delete_user_pool_domain::_delete_user_pool_domain_output::DeleteUserPoolDomainOutput;
 
 mod _delete_user_pool_domain_input;
 

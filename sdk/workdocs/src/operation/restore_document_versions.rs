@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_document_v
     }
 }
 
-pub use crate::operation::restore_document_versions::_restore_document_versions_output::RestoreDocumentVersionsOutput;
-
 pub use crate::operation::restore_document_versions::_restore_document_versions_input::RestoreDocumentVersionsInput;
+
+pub use crate::operation::restore_document_versions::_restore_document_versions_output::RestoreDocumentVersionsOutput;
 
 mod _restore_document_versions_input;
 

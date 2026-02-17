@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_security
     }
 }
 
-pub use crate::operation::associate_security_key::_associate_security_key_output::AssociateSecurityKeyOutput;
-
 pub use crate::operation::associate_security_key::_associate_security_key_input::AssociateSecurityKeyInput;
+
+pub use crate::operation::associate_security_key::_associate_security_key_output::AssociateSecurityKeyOutput;
 
 mod _associate_security_key_input;
 

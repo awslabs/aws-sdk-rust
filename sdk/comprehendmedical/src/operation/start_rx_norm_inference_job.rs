@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_rx_norm_infe
     }
 }
 
-pub use crate::operation::start_rx_norm_inference_job::_start_rx_norm_inference_job_output::StartRxNormInferenceJobOutput;
-
 pub use crate::operation::start_rx_norm_inference_job::_start_rx_norm_inference_job_input::StartRxNormInferenceJobInput;
+
+pub use crate::operation::start_rx_norm_inference_job::_start_rx_norm_inference_job_output::StartRxNormInferenceJobOutput;
 
 mod _start_rx_norm_inference_job_input;
 

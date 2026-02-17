@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_set_pe
     }
 }
 
-pub use crate::operation::update_data_set_permissions::_update_data_set_permissions_output::UpdateDataSetPermissionsOutput;
-
 pub use crate::operation::update_data_set_permissions::_update_data_set_permissions_input::UpdateDataSetPermissionsInput;
+
+pub use crate::operation::update_data_set_permissions::_update_data_set_permissions_output::UpdateDataSetPermissionsOutput;
 
 mod _update_data_set_permissions_input;
 

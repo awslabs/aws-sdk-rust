@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_trans
     }
 }
 
-pub use crate::operation::disassociate_transit_gateway_connect_peer::_disassociate_transit_gateway_connect_peer_output::DisassociateTransitGatewayConnectPeerOutput;
-
 pub use crate::operation::disassociate_transit_gateway_connect_peer::_disassociate_transit_gateway_connect_peer_input::DisassociateTransitGatewayConnectPeerInput;
+
+pub use crate::operation::disassociate_transit_gateway_connect_peer::_disassociate_transit_gateway_connect_peer_output::DisassociateTransitGatewayConnectPeerOutput;
 
 mod _disassociate_transit_gateway_connect_peer_input;
 

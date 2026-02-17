@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ml_data_proce
     }
 }
 
-pub use crate::operation::list_ml_data_processing_jobs::_list_ml_data_processing_jobs_output::ListMlDataProcessingJobsOutput;
-
 pub use crate::operation::list_ml_data_processing_jobs::_list_ml_data_processing_jobs_input::ListMlDataProcessingJobsInput;
+
+pub use crate::operation::list_ml_data_processing_jobs::_list_ml_data_processing_jobs_output::ListMlDataProcessingJobsOutput;
 
 mod _list_ml_data_processing_jobs_input;
 

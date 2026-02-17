@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_portfolio_pref
     }
 }
 
-pub use crate::operation::get_portfolio_preferences::_get_portfolio_preferences_output::GetPortfolioPreferencesOutput;
-
 pub use crate::operation::get_portfolio_preferences::_get_portfolio_preferences_input::GetPortfolioPreferencesInput;
+
+pub use crate::operation::get_portfolio_preferences::_get_portfolio_preferences_output::GetPortfolioPreferencesOutput;
 
 mod _get_portfolio_preferences_input;
 

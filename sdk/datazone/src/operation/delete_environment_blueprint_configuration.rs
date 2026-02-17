@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_environment_blueprint_configuration::_delete_environment_blueprint_configuration_output::DeleteEnvironmentBlueprintConfigurationOutput;
-
 pub use crate::operation::delete_environment_blueprint_configuration::_delete_environment_blueprint_configuration_input::DeleteEnvironmentBlueprintConfigurationInput;
+
+pub use crate::operation::delete_environment_blueprint_configuration::_delete_environment_blueprint_configuration_output::DeleteEnvironmentBlueprintConfigurationOutput;
 
 mod _delete_environment_blueprint_configuration_input;
 

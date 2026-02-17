@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_patch_gro
     }
 }
 
-pub use crate::operation::describe_patch_group_state::_describe_patch_group_state_output::DescribePatchGroupStateOutput;
-
 pub use crate::operation::describe_patch_group_state::_describe_patch_group_state_input::DescribePatchGroupStateInput;
+
+pub use crate::operation::describe_patch_group_state::_describe_patch_group_state_output::DescribePatchGroupStateOutput;
 
 mod _describe_patch_group_state_input;
 

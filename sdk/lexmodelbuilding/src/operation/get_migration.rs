@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_migration::Get
     }
 }
 
-pub use crate::operation::get_migration::_get_migration_output::GetMigrationOutput;
-
 pub use crate::operation::get_migration::_get_migration_input::GetMigrationInput;
+
+pub use crate::operation::get_migration::_get_migration_output::GetMigrationOutput;
 
 mod _get_migration_input;
 

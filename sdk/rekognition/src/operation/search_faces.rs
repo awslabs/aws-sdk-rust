@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_faces::Sear
     }
 }
 
-pub use crate::operation::search_faces::_search_faces_output::SearchFacesOutput;
-
 pub use crate::operation::search_faces::_search_faces_input::SearchFacesInput;
+
+pub use crate::operation::search_faces::_search_faces_output::SearchFacesOutput;
 
 mod _search_faces_input;
 

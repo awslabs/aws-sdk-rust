@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workflow_ve
     }
 }
 
-pub use crate::operation::delete_workflow_version::_delete_workflow_version_output::DeleteWorkflowVersionOutput;
-
 pub use crate::operation::delete_workflow_version::_delete_workflow_version_input::DeleteWorkflowVersionInput;
+
+pub use crate::operation::delete_workflow_version::_delete_workflow_version_output::DeleteWorkflowVersionOutput;
 
 mod _delete_workflow_version_input;
 

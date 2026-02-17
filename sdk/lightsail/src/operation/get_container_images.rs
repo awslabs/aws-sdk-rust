@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_imag
     }
 }
 
-pub use crate::operation::get_container_images::_get_container_images_output::GetContainerImagesOutput;
-
 pub use crate::operation::get_container_images::_get_container_images_input::GetContainerImagesInput;
+
+pub use crate::operation::get_container_images::_get_container_images_output::GetContainerImagesOutput;
 
 mod _get_container_images_input;
 

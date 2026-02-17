@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_grouping_co
     }
 }
 
-pub use crate::operation::delete_grouping_configuration::_delete_grouping_configuration_output::DeleteGroupingConfigurationOutput;
-
 pub use crate::operation::delete_grouping_configuration::_delete_grouping_configuration_input::DeleteGroupingConfigurationInput;
+
+pub use crate::operation::delete_grouping_configuration::_delete_grouping_configuration_output::DeleteGroupingConfigurationOutput;
 
 mod _delete_grouping_configuration_input;
 

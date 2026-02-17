@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_sh
     }
 }
 
-pub use crate::operation::create_resource_share::_create_resource_share_output::CreateResourceShareOutput;
-
 pub use crate::operation::create_resource_share::_create_resource_share_input::CreateResourceShareInput;
+
+pub use crate::operation::create_resource_share::_create_resource_share_output::CreateResourceShareOutput;
 
 mod _create_resource_share_input;
 

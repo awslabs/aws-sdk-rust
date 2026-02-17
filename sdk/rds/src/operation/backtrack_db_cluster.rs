@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::backtrack_db_clust
     }
 }
 
-pub use crate::operation::backtrack_db_cluster::_backtrack_db_cluster_output::BacktrackDbClusterOutput;
-
 pub use crate::operation::backtrack_db_cluster::_backtrack_db_cluster_input::BacktrackDbClusterInput;
+
+pub use crate::operation::backtrack_db_cluster::_backtrack_db_cluster_output::BacktrackDbClusterOutput;
 
 mod _backtrack_db_cluster_input;
 

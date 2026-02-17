@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_policy:
     }
 }
 
-pub use crate::operation::get_access_policy::_get_access_policy_output::GetAccessPolicyOutput;
-
 pub use crate::operation::get_access_policy::_get_access_policy_input::GetAccessPolicyInput;
+
+pub use crate::operation::get_access_policy::_get_access_policy_output::GetAccessPolicyOutput;
 
 mod _get_access_policy_input;
 

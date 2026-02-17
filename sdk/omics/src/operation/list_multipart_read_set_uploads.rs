@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multipart_rea
     }
 }
 
-pub use crate::operation::list_multipart_read_set_uploads::_list_multipart_read_set_uploads_output::ListMultipartReadSetUploadsOutput;
-
 pub use crate::operation::list_multipart_read_set_uploads::_list_multipart_read_set_uploads_input::ListMultipartReadSetUploadsInput;
+
+pub use crate::operation::list_multipart_read_set_uploads::_list_multipart_read_set_uploads_output::ListMultipartReadSetUploadsOutput;
 
 mod _list_multipart_read_set_uploads_input;
 

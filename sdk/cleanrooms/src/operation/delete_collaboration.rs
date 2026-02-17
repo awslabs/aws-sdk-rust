@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_collaborati
     }
 }
 
-pub use crate::operation::delete_collaboration::_delete_collaboration_output::DeleteCollaborationOutput;
-
 pub use crate::operation::delete_collaboration::_delete_collaboration_input::DeleteCollaborationInput;
+
+pub use crate::operation::delete_collaboration::_delete_collaboration_output::DeleteCollaborationOutput;
 
 mod _delete_collaboration_input;
 

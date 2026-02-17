@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_tracker::Up
     }
 }
 
-pub use crate::operation::update_tracker::_update_tracker_output::UpdateTrackerOutput;
-
 pub use crate::operation::update_tracker::_update_tracker_input::UpdateTrackerInput;
+
+pub use crate::operation::update_tracker::_update_tracker_output::UpdateTrackerOutput;
 
 mod _update_tracker_input;
 

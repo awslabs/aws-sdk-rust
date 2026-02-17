@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_resource_pe
     }
 }
 
-pub use crate::operation::remove_resource_permission::_remove_resource_permission_output::RemoveResourcePermissionOutput;
-
 pub use crate::operation::remove_resource_permission::_remove_resource_permission_input::RemoveResourcePermissionInput;
+
+pub use crate::operation::remove_resource_permission::_remove_resource_permission_output::RemoveResourcePermissionOutput;
 
 mod _remove_resource_permission_input;
 

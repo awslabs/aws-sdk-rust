@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_action_ta
     }
 }
 
-pub use crate::operation::describe_action_targets::_describe_action_targets_output::DescribeActionTargetsOutput;
-
 pub use crate::operation::describe_action_targets::_describe_action_targets_input::DescribeActionTargetsInput;
+
+pub use crate::operation::describe_action_targets::_describe_action_targets_output::DescribeActionTargetsOutput;
 
 mod _describe_action_targets_input;
 

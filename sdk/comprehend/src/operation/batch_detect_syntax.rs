@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_detect_synta
     }
 }
 
-pub use crate::operation::batch_detect_syntax::_batch_detect_syntax_output::BatchDetectSyntaxOutput;
-
 pub use crate::operation::batch_detect_syntax::_batch_detect_syntax_input::BatchDetectSyntaxInput;
+
+pub use crate::operation::batch_detect_syntax::_batch_detect_syntax_output::BatchDetectSyntaxOutput;
 
 mod _batch_detect_syntax_input;
 

@@ -494,9 +494,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_organizat
     }
 }
 
-pub use crate::operation::describe_organizational_unit::_describe_organizational_unit_output::DescribeOrganizationalUnitOutput;
-
 pub use crate::operation::describe_organizational_unit::_describe_organizational_unit_input::DescribeOrganizationalUnitInput;
+
+pub use crate::operation::describe_organizational_unit::_describe_organizational_unit_output::DescribeOrganizationalUnitOutput;
 
 mod _describe_organizational_unit_input;
 

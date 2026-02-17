@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evaluator::Get
     }
 }
 
-pub use crate::operation::get_evaluator::_get_evaluator_output::GetEvaluatorOutput;
-
 pub use crate::operation::get_evaluator::_get_evaluator_input::GetEvaluatorInput;
+
+pub use crate::operation::get_evaluator::_get_evaluator_output::GetEvaluatorOutput;
 
 mod _get_evaluator_input;
 

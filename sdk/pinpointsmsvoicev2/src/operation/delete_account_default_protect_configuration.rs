@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_account_default_protect_configuration::_delete_account_default_protect_configuration_output::DeleteAccountDefaultProtectConfigurationOutput;
-
 pub use crate::operation::delete_account_default_protect_configuration::_delete_account_default_protect_configuration_input::DeleteAccountDefaultProtectConfigurationInput;
+
+pub use crate::operation::delete_account_default_protect_configuration::_delete_account_default_protect_configuration_output::DeleteAccountDefaultProtectConfigurationOutput;
 
 mod _delete_account_default_protect_configuration_input;
 

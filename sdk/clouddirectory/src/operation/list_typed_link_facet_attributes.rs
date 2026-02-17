@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_typed_link_fa
     }
 }
 
-pub use crate::operation::list_typed_link_facet_attributes::_list_typed_link_facet_attributes_output::ListTypedLinkFacetAttributesOutput;
-
 pub use crate::operation::list_typed_link_facet_attributes::_list_typed_link_facet_attributes_input::ListTypedLinkFacetAttributesInput;
+
+pub use crate::operation::list_typed_link_facet_attributes::_list_typed_link_facet_attributes_output::ListTypedLinkFacetAttributesOutput;
 
 mod _list_typed_link_facet_attributes_input;
 

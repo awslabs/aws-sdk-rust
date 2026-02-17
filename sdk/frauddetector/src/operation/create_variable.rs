@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_variable::C
     }
 }
 
-pub use crate::operation::create_variable::_create_variable_output::CreateVariableOutput;
-
 pub use crate::operation::create_variable::_create_variable_input::CreateVariableInput;
+
+pub use crate::operation::create_variable::_create_variable_output::CreateVariableOutput;
 
 mod _create_variable_input;
 

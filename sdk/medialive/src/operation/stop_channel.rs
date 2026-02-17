@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_channel::Stop
     }
 }
 
-pub use crate::operation::stop_channel::_stop_channel_output::StopChannelOutput;
-
 pub use crate::operation::stop_channel::_stop_channel_input::StopChannelInput;
+
+pub use crate::operation::stop_channel::_stop_channel_output::StopChannelOutput;
 
 mod _stop_channel_input;
 

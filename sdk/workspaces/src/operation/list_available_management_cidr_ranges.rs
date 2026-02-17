@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_man
     }
 }
 
-pub use crate::operation::list_available_management_cidr_ranges::_list_available_management_cidr_ranges_output::ListAvailableManagementCidrRangesOutput;
-
 pub use crate::operation::list_available_management_cidr_ranges::_list_available_management_cidr_ranges_input::ListAvailableManagementCidrRangesInput;
+
+pub use crate::operation::list_available_management_cidr_ranges::_list_available_management_cidr_ranges_output::ListAvailableManagementCidrRangesOutput;
 
 mod _list_available_management_cidr_ranges_input;
 

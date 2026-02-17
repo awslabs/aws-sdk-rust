@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_firewall_po
     }
 }
 
-pub use crate::operation::create_firewall_policy::_create_firewall_policy_output::CreateFirewallPolicyOutput;
-
 pub use crate::operation::create_firewall_policy::_create_firewall_policy_input::CreateFirewallPolicyInput;
+
+pub use crate::operation::create_firewall_policy::_create_firewall_policy_output::CreateFirewallPolicyOutput;
 
 mod _create_firewall_policy_input;
 

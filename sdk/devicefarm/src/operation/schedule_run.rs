@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::schedule_run::Sche
     }
 }
 
-pub use crate::operation::schedule_run::_schedule_run_output::ScheduleRunOutput;
-
 pub use crate::operation::schedule_run::_schedule_run_input::ScheduleRunInput;
+
+pub use crate::operation::schedule_run::_schedule_run_output::ScheduleRunOutput;
 
 mod _schedule_run_input;
 

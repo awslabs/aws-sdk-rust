@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_authorizer:
     }
 }
 
-pub use crate::operation::update_authorizer::_update_authorizer_output::UpdateAuthorizerOutput;
-
 pub use crate::operation::update_authorizer::_update_authorizer_input::UpdateAuthorizerInput;
+
+pub use crate::operation::update_authorizer::_update_authorizer_output::UpdateAuthorizerOutput;
 
 mod _update_authorizer_input;
 

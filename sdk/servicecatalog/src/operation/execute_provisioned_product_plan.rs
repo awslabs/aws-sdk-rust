@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_provisione
     }
 }
 
-pub use crate::operation::execute_provisioned_product_plan::_execute_provisioned_product_plan_output::ExecuteProvisionedProductPlanOutput;
-
 pub use crate::operation::execute_provisioned_product_plan::_execute_provisioned_product_plan_input::ExecuteProvisionedProductPlanInput;
+
+pub use crate::operation::execute_provisioned_product_plan::_execute_provisioned_product_plan_output::ExecuteProvisionedProductPlanOutput;
 
 mod _execute_provisioned_product_plan_input;
 

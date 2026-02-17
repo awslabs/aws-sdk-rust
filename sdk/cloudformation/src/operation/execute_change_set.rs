@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_change_set
     }
 }
 
-pub use crate::operation::execute_change_set::_execute_change_set_output::ExecuteChangeSetOutput;
-
 pub use crate::operation::execute_change_set::_execute_change_set_input::ExecuteChangeSetInput;
+
+pub use crate::operation::execute_change_set::_execute_change_set_output::ExecuteChangeSetOutput;
 
 mod _execute_change_set_input;
 

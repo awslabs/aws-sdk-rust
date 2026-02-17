@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_link_attribute
     }
 }
 
-pub use crate::operation::get_link_attributes::_get_link_attributes_output::GetLinkAttributesOutput;
-
 pub use crate::operation::get_link_attributes::_get_link_attributes_input::GetLinkAttributesInput;
+
+pub use crate::operation::get_link_attributes::_get_link_attributes_output::GetLinkAttributesOutput;
 
 mod _get_link_attributes_input;
 

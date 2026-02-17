@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_global_netw
     }
 }
 
-pub use crate::operation::update_global_network::_update_global_network_output::UpdateGlobalNetworkOutput;
-
 pub use crate::operation::update_global_network::_update_global_network_input::UpdateGlobalNetworkInput;
+
+pub use crate::operation::update_global_network::_update_global_network_output::UpdateGlobalNetworkOutput;
 
 mod _update_global_network_input;
 

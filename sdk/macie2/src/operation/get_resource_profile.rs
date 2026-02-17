@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_profi
     }
 }
 
-pub use crate::operation::get_resource_profile::_get_resource_profile_output::GetResourceProfileOutput;
-
 pub use crate::operation::get_resource_profile::_get_resource_profile_input::GetResourceProfileInput;
+
+pub use crate::operation::get_resource_profile::_get_resource_profile_output::GetResourceProfileOutput;
 
 mod _get_resource_profile_input;
 

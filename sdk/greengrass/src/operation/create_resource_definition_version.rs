@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_de
     }
 }
 
-pub use crate::operation::create_resource_definition_version::_create_resource_definition_version_output::CreateResourceDefinitionVersionOutput;
-
 pub use crate::operation::create_resource_definition_version::_create_resource_definition_version_input::CreateResourceDefinitionVersionInput;
+
+pub use crate::operation::create_resource_definition_version::_create_resource_definition_version_output::CreateResourceDefinitionVersionOutput;
 
 mod _create_resource_definition_version_input;
 

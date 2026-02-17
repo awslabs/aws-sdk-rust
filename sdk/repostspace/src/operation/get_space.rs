@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_space::GetSpac
     }
 }
 
-pub use crate::operation::get_space::_get_space_output::GetSpaceOutput;
-
 pub use crate::operation::get_space::_get_space_input::GetSpaceInput;
+
+pub use crate::operation::get_space::_get_space_output::GetSpaceOutput;
 
 mod _get_space_input;
 

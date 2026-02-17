@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_inventory
     }
 }
 
-pub use crate::operation::describe_inventory_deletions::_describe_inventory_deletions_output::DescribeInventoryDeletionsOutput;
-
 pub use crate::operation::describe_inventory_deletions::_describe_inventory_deletions_input::DescribeInventoryDeletionsInput;
+
+pub use crate::operation::describe_inventory_deletions::_describe_inventory_deletions_output::DescribeInventoryDeletionsOutput;
 
 mod _describe_inventory_deletions_input;
 

@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::checkout_license::
     }
 }
 
-pub use crate::operation::checkout_license::_checkout_license_output::CheckoutLicenseOutput;
-
 pub use crate::operation::checkout_license::_checkout_license_input::CheckoutLicenseInput;
+
+pub use crate::operation::checkout_license::_checkout_license_output::CheckoutLicenseOutput;
 
 mod _checkout_license_input;
 

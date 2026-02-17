@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_state_mach
     }
 }
 
-pub use crate::operation::publish_state_machine_version::_publish_state_machine_version_output::PublishStateMachineVersionOutput;
-
 pub use crate::operation::publish_state_machine_version::_publish_state_machine_version_input::PublishStateMachineVersionInput;
+
+pub use crate::operation::publish_state_machine_version::_publish_state_machine_version_output::PublishStateMachineVersionOutput;
 
 mod _publish_state_machine_version_input;
 

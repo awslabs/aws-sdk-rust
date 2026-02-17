@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_import::Del
     }
 }
 
-pub use crate::operation::delete_import::_delete_import_output::DeleteImportOutput;
-
 pub use crate::operation::delete_import::_delete_import_input::DeleteImportInput;
+
+pub use crate::operation::delete_import::_delete_import_output::DeleteImportOutput;
 
 mod _delete_import_input;
 

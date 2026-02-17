@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_vpn_tunnel_
     }
 }
 
-pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_output::ModifyVpnTunnelOptionsOutput;
-
 pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_input::ModifyVpnTunnelOptionsInput;
+
+pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_output::ModifyVpnTunnelOptionsOutput;
 
 mod _modify_vpn_tunnel_options_input;
 

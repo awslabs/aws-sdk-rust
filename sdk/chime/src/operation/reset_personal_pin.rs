@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_personal_pin
     }
 }
 
-pub use crate::operation::reset_personal_pin::_reset_personal_pin_output::ResetPersonalPinOutput;
-
 pub use crate::operation::reset_personal_pin::_reset_personal_pin_input::ResetPersonalPinInput;
+
+pub use crate::operation::reset_personal_pin::_reset_personal_pin_output::ResetPersonalPinOutput;
 
 mod _reset_personal_pin_input;
 

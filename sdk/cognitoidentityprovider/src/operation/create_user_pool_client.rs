@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_pool_c
     }
 }
 
-pub use crate::operation::create_user_pool_client::_create_user_pool_client_output::CreateUserPoolClientOutput;
-
 pub use crate::operation::create_user_pool_client::_create_user_pool_client_input::CreateUserPoolClientInput;
+
+pub use crate::operation::create_user_pool_client::_create_user_pool_client_output::CreateUserPoolClientOutput;
 
 mod _create_user_pool_client_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_nodegroup::
     }
 }
 
-pub use crate::operation::create_nodegroup::_create_nodegroup_output::CreateNodegroupOutput;
-
 pub use crate::operation::create_nodegroup::_create_nodegroup_input::CreateNodegroupInput;
+
+pub use crate::operation::create_nodegroup::_create_nodegroup_output::CreateNodegroupOutput;
 
 mod _create_nodegroup_input;
 

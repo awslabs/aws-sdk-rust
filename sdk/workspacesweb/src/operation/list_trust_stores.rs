@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trust_stores:
     }
 }
 
-pub use crate::operation::list_trust_stores::_list_trust_stores_output::ListTrustStoresOutput;
-
 pub use crate::operation::list_trust_stores::_list_trust_stores_input::ListTrustStoresInput;
+
+pub use crate::operation::list_trust_stores::_list_trust_stores_output::ListTrustStoresOutput;
 
 mod _list_trust_stores_input;
 

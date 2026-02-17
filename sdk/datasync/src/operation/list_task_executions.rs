@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_task_executio
     }
 }
 
-pub use crate::operation::list_task_executions::_list_task_executions_output::ListTaskExecutionsOutput;
-
 pub use crate::operation::list_task_executions::_list_task_executions_input::ListTaskExecutionsInput;
+
+pub use crate::operation::list_task_executions::_list_task_executions_output::ListTaskExecutionsOutput;
 
 mod _list_task_executions_input;
 

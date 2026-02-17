@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_command::Ca
     }
 }
 
-pub use crate::operation::cancel_command::_cancel_command_output::CancelCommandOutput;
-
 pub use crate::operation::cancel_command::_cancel_command_input::CancelCommandInput;
+
+pub use crate::operation::cancel_command::_cancel_command_output::CancelCommandOutput;
 
 mod _cancel_command_input;
 

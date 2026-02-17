@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::apply_schema::Appl
     }
 }
 
-pub use crate::operation::apply_schema::_apply_schema_output::ApplySchemaOutput;
-
 pub use crate::operation::apply_schema::_apply_schema_input::ApplySchemaInput;
+
+pub use crate::operation::apply_schema::_apply_schema_output::ApplySchemaOutput;
 
 mod _apply_schema_input;
 

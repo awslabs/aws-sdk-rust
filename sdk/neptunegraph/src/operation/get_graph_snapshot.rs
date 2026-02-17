@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_graph_snapshot
     }
 }
 
-pub use crate::operation::get_graph_snapshot::_get_graph_snapshot_output::GetGraphSnapshotOutput;
-
 pub use crate::operation::get_graph_snapshot::_get_graph_snapshot_input::GetGraphSnapshotInput;
+
+pub use crate::operation::get_graph_snapshot::_get_graph_snapshot_output::GetGraphSnapshotOutput;
 
 mod _get_graph_snapshot_input;
 

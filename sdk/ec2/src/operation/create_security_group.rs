@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_security_gr
     }
 }
 
-pub use crate::operation::create_security_group::_create_security_group_output::CreateSecurityGroupOutput;
-
 pub use crate::operation::create_security_group::_create_security_group_input::CreateSecurityGroupInput;
+
+pub use crate::operation::create_security_group::_create_security_group_output::CreateSecurityGroupOutput;
 
 mod _create_security_group_input;
 

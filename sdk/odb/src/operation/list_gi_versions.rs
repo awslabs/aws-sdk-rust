@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_gi_versions::
     }
 }
 
-pub use crate::operation::list_gi_versions::_list_gi_versions_output::ListGiVersionsOutput;
-
 pub use crate::operation::list_gi_versions::_list_gi_versions_input::ListGiVersionsInput;
+
+pub use crate::operation::list_gi_versions::_list_gi_versions_output::ListGiVersionsOutput;
 
 mod _list_gi_versions_input;
 

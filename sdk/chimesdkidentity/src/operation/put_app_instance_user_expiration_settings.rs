@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_app_instance_u
     }
 }
 
-pub use crate::operation::put_app_instance_user_expiration_settings::_put_app_instance_user_expiration_settings_output::PutAppInstanceUserExpirationSettingsOutput;
-
 pub use crate::operation::put_app_instance_user_expiration_settings::_put_app_instance_user_expiration_settings_input::PutAppInstanceUserExpirationSettingsInput;
+
+pub use crate::operation::put_app_instance_user_expiration_settings::_put_app_instance_user_expiration_settings_output::PutAppInstanceUserExpirationSettingsOutput;
 
 mod _put_app_instance_user_expiration_settings_input;
 

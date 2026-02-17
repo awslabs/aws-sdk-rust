@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_storage_profil
     }
 }
 
-pub use crate::operation::get_storage_profile_for_queue::_get_storage_profile_for_queue_output::GetStorageProfileForQueueOutput;
-
 pub use crate::operation::get_storage_profile_for_queue::_get_storage_profile_for_queue_input::GetStorageProfileForQueueInput;
+
+pub use crate::operation::get_storage_profile_for_queue::_get_storage_profile_for_queue_output::GetStorageProfileForQueueOutput;
 
 mod _get_storage_profile_for_queue_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_assistant_a
     }
 }
 
-pub use crate::operation::delete_assistant_association::_delete_assistant_association_output::DeleteAssistantAssociationOutput;
-
 pub use crate::operation::delete_assistant_association::_delete_assistant_association_input::DeleteAssistantAssociationInput;
+
+pub use crate::operation::delete_assistant_association::_delete_assistant_association_output::DeleteAssistantAssociationOutput;
 
 mod _delete_assistant_association_input;
 

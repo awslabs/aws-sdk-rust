@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_browser_pro
     }
 }
 
-pub use crate::operation::delete_browser_profile::_delete_browser_profile_output::DeleteBrowserProfileOutput;
-
 pub use crate::operation::delete_browser_profile::_delete_browser_profile_input::DeleteBrowserProfileInput;
+
+pub use crate::operation::delete_browser_profile::_delete_browser_profile_output::DeleteBrowserProfileOutput;
 
 mod _delete_browser_profile_input;
 

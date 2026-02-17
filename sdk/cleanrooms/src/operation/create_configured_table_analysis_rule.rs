@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configured_
     }
 }
 
-pub use crate::operation::create_configured_table_analysis_rule::_create_configured_table_analysis_rule_output::CreateConfiguredTableAnalysisRuleOutput;
-
 pub use crate::operation::create_configured_table_analysis_rule::_create_configured_table_analysis_rule_input::CreateConfiguredTableAnalysisRuleInput;
+
+pub use crate::operation::create_configured_table_analysis_rule::_create_configured_table_analysis_rule_output::CreateConfiguredTableAnalysisRuleOutput;
 
 mod _create_configured_table_analysis_rule_input;
 

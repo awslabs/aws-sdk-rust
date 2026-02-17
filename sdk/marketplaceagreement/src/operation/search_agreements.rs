@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_agreements:
     }
 }
 
-pub use crate::operation::search_agreements::_search_agreements_output::SearchAgreementsOutput;
-
 pub use crate::operation::search_agreements::_search_agreements_input::SearchAgreementsInput;
+
+pub use crate::operation::search_agreements::_search_agreements_output::SearchAgreementsOutput;
 
 mod _search_agreements_input;
 

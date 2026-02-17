@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connector_d
     }
 }
 
-pub use crate::operation::create_connector_definition_version::_create_connector_definition_version_output::CreateConnectorDefinitionVersionOutput;
-
 pub use crate::operation::create_connector_definition_version::_create_connector_definition_version_input::CreateConnectorDefinitionVersionInput;
+
+pub use crate::operation::create_connector_definition_version::_create_connector_definition_version_output::CreateConnectorDefinitionVersionOutput;
 
 mod _create_connector_definition_version_input;
 

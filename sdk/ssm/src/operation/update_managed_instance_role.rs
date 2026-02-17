@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_managed_ins
     }
 }
 
-pub use crate::operation::update_managed_instance_role::_update_managed_instance_role_output::UpdateManagedInstanceRoleOutput;
-
 pub use crate::operation::update_managed_instance_role::_update_managed_instance_role_input::UpdateManagedInstanceRoleInput;
+
+pub use crate::operation::update_managed_instance_role::_update_managed_instance_role_output::UpdateManagedInstanceRoleOutput;
 
 mod _update_managed_instance_role_input;
 

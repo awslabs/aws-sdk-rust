@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_brows
     }
 }
 
-pub use crate::operation::disassociate_browser_settings::_disassociate_browser_settings_output::DisassociateBrowserSettingsOutput;
-
 pub use crate::operation::disassociate_browser_settings::_disassociate_browser_settings_input::DisassociateBrowserSettingsInput;
+
+pub use crate::operation::disassociate_browser_settings::_disassociate_browser_settings_output::DisassociateBrowserSettingsOutput;
 
 mod _disassociate_browser_settings_input;
 

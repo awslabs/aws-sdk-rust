@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_s3
     }
 }
 
-pub use crate::operation::update_location_s3::_update_location_s3_output::UpdateLocationS3Output;
-
 pub use crate::operation::update_location_s3::_update_location_s3_input::UpdateLocationS3Input;
+
+pub use crate::operation::update_location_s3::_update_location_s3_output::UpdateLocationS3Output;
 
 mod _update_location_s3_input;
 

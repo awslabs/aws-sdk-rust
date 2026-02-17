@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_insights_data
     }
 }
 
-pub use crate::operation::list_insights_data::_list_insights_data_output::ListInsightsDataOutput;
-
 pub use crate::operation::list_insights_data::_list_insights_data_input::ListInsightsDataInput;
+
+pub use crate::operation::list_insights_data::_list_insights_data_output::ListInsightsDataOutput;
 
 mod _list_insights_data_input;
 

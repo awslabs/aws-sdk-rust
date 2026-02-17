@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_branch::Upd
     }
 }
 
-pub use crate::operation::update_branch::_update_branch_output::UpdateBranchOutput;
-
 pub use crate::operation::update_branch::_update_branch_input::UpdateBranchInput;
+
+pub use crate::operation::update_branch::_update_branch_output::UpdateBranchOutput;
 
 mod _update_branch_input;
 

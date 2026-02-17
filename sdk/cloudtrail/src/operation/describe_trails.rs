@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trails::D
     }
 }
 
-pub use crate::operation::describe_trails::_describe_trails_output::DescribeTrailsOutput;
-
 pub use crate::operation::describe_trails::_describe_trails_input::DescribeTrailsInput;
+
+pub use crate::operation::describe_trails::_describe_trails_output::DescribeTrailsOutput;
 
 mod _describe_trails_input;
 

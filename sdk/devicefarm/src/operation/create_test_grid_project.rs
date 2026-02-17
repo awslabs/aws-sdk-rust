@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_test_grid_p
     }
 }
 
-pub use crate::operation::create_test_grid_project::_create_test_grid_project_output::CreateTestGridProjectOutput;
-
 pub use crate::operation::create_test_grid_project::_create_test_grid_project_input::CreateTestGridProjectInput;
+
+pub use crate::operation::create_test_grid_project::_create_test_grid_project_output::CreateTestGridProjectOutput;
 
 mod _create_test_grid_project_input;
 

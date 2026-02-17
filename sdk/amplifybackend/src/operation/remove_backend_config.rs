@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_backend_con
     }
 }
 
-pub use crate::operation::remove_backend_config::_remove_backend_config_output::RemoveBackendConfigOutput;
-
 pub use crate::operation::remove_backend_config::_remove_backend_config_input::RemoveBackendConfigInput;
+
+pub use crate::operation::remove_backend_config::_remove_backend_config_output::RemoveBackendConfigOutput;
 
 mod _remove_backend_config_input;
 

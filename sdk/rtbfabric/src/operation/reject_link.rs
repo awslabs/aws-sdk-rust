@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_link::Rejec
     }
 }
 
-pub use crate::operation::reject_link::_reject_link_output::RejectLinkOutput;
-
 pub use crate::operation::reject_link::_reject_link_input::RejectLinkInput;
+
+pub use crate::operation::reject_link::_reject_link_output::RejectLinkOutput;
 
 mod _reject_link_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_package_g
     }
 }
 
-pub use crate::operation::describe_package_group::_describe_package_group_output::DescribePackageGroupOutput;
-
 pub use crate::operation::describe_package_group::_describe_package_group_input::DescribePackageGroupInput;
+
+pub use crate::operation::describe_package_group::_describe_package_group_output::DescribePackageGroupOutput;
 
 mod _describe_package_group_input;
 

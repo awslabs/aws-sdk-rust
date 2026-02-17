@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_closed_workfl
     }
 }
 
-pub use crate::operation::list_closed_workflow_executions::_list_closed_workflow_executions_output::ListClosedWorkflowExecutionsOutput;
-
 pub use crate::operation::list_closed_workflow_executions::_list_closed_workflow_executions_input::ListClosedWorkflowExecutionsInput;
+
+pub use crate::operation::list_closed_workflow_executions::_list_closed_workflow_executions_output::ListClosedWorkflowExecutionsOutput;
 
 mod _list_closed_workflow_executions_input;
 

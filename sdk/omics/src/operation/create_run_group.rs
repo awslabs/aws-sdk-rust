@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_run_group::
     }
 }
 
-pub use crate::operation::create_run_group::_create_run_group_output::CreateRunGroupOutput;
-
 pub use crate::operation::create_run_group::_create_run_group_input::CreateRunGroupInput;
+
+pub use crate::operation::create_run_group::_create_run_group_output::CreateRunGroupOutput;
 
 mod _create_run_group_input;
 

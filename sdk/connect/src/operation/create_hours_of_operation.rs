@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hours_of_op
     }
 }
 
-pub use crate::operation::create_hours_of_operation::_create_hours_of_operation_output::CreateHoursOfOperationOutput;
-
 pub use crate::operation::create_hours_of_operation::_create_hours_of_operation_input::CreateHoursOfOperationInput;
+
+pub use crate::operation::create_hours_of_operation::_create_hours_of_operation_output::CreateHoursOfOperationOutput;
 
 mod _create_hours_of_operation_input;
 

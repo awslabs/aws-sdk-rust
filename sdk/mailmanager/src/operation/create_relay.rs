@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_relay::Crea
     }
 }
 
-pub use crate::operation::create_relay::_create_relay_output::CreateRelayOutput;
-
 pub use crate::operation::create_relay::_create_relay_input::CreateRelayInput;
+
+pub use crate::operation::create_relay::_create_relay_output::CreateRelayOutput;
 
 mod _create_relay_input;
 

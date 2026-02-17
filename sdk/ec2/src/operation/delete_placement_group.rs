@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_placement_g
     }
 }
 
-pub use crate::operation::delete_placement_group::_delete_placement_group_output::DeletePlacementGroupOutput;
-
 pub use crate::operation::delete_placement_group::_delete_placement_group_input::DeletePlacementGroupInput;
+
+pub use crate::operation::delete_placement_group::_delete_placement_group_output::DeletePlacementGroupOutput;
 
 mod _delete_placement_group_input;
 

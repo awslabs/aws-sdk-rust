@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unlink_identity::U
     }
 }
 
-pub use crate::operation::unlink_identity::_unlink_identity_output::UnlinkIdentityOutput;
-
 pub use crate::operation::unlink_identity::_unlink_identity_input::UnlinkIdentityInput;
+
+pub use crate::operation::unlink_identity::_unlink_identity_output::UnlinkIdentityOutput;
 
 mod _unlink_identity_input;
 

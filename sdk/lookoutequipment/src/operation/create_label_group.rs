@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_label_group
     }
 }
 
-pub use crate::operation::create_label_group::_create_label_group_output::CreateLabelGroupOutput;
-
 pub use crate::operation::create_label_group::_create_label_group_input::CreateLabelGroupInput;
+
+pub use crate::operation::create_label_group::_create_label_group_output::CreateLabelGroupOutput;
 
 mod _create_label_group_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_mac::Verify
     }
 }
 
-pub use crate::operation::verify_mac::_verify_mac_output::VerifyMacOutput;
-
 pub use crate::operation::verify_mac::_verify_mac_input::VerifyMacInput;
+
+pub use crate::operation::verify_mac::_verify_mac_output::VerifyMacOutput;
 
 mod _verify_mac_input;
 

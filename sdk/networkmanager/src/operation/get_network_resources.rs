@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_resour
     }
 }
 
-pub use crate::operation::get_network_resources::_get_network_resources_output::GetNetworkResourcesOutput;
-
 pub use crate::operation::get_network_resources::_get_network_resources_input::GetNetworkResourcesInput;
+
+pub use crate::operation::get_network_resources::_get_network_resources_output::GetNetworkResourcesOutput;
 
 mod _get_network_resources_input;
 

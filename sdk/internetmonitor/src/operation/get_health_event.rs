@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_health_event::
     }
 }
 
-pub use crate::operation::get_health_event::_get_health_event_output::GetHealthEventOutput;
-
 pub use crate::operation::get_health_event::_get_health_event_input::GetHealthEventInput;
+
+pub use crate::operation::get_health_event::_get_health_event_output::GetHealthEventOutput;
 
 mod _get_health_event_input;
 

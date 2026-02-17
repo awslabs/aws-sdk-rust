@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ingestion::
     }
 }
 
-pub use crate::operation::create_ingestion::_create_ingestion_output::CreateIngestionOutput;
-
 pub use crate::operation::create_ingestion::_create_ingestion_input::CreateIngestionInput;
+
+pub use crate::operation::create_ingestion::_create_ingestion_output::CreateIngestionOutput;
 
 mod _create_ingestion_input;
 

@@ -343,9 +343,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_stream_k
     }
 }
 
-pub use crate::operation::batch_get_stream_key::_batch_get_stream_key_output::BatchGetStreamKeyOutput;
-
 pub use crate::operation::batch_get_stream_key::_batch_get_stream_key_input::BatchGetStreamKeyInput;
+
+pub use crate::operation::batch_get_stream_key::_batch_get_stream_key_output::BatchGetStreamKeyOutput;
 
 mod _batch_get_stream_key_input;
 

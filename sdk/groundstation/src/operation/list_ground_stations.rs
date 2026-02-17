@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ground_statio
     }
 }
 
-pub use crate::operation::list_ground_stations::_list_ground_stations_output::ListGroundStationsOutput;
-
 pub use crate::operation::list_ground_stations::_list_ground_stations_input::ListGroundStationsInput;
+
+pub use crate::operation::list_ground_stations::_list_ground_stations_output::ListGroundStationsOutput;
 
 mod _list_ground_stations_input;
 

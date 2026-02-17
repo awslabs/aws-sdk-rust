@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_phone_numbers_with_voice_connector_group::_associate_phone_numbers_with_voice_connector_group_output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput;
-
 pub use crate::operation::associate_phone_numbers_with_voice_connector_group::_associate_phone_numbers_with_voice_connector_group_input::AssociatePhoneNumbersWithVoiceConnectorGroupInput;
+
+pub use crate::operation::associate_phone_numbers_with_voice_connector_group::_associate_phone_numbers_with_voice_connector_group_output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput;
 
 mod _associate_phone_numbers_with_voice_connector_group_input;
 

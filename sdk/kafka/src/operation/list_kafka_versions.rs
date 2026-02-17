@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kafka_version
     }
 }
 
-pub use crate::operation::list_kafka_versions::_list_kafka_versions_output::ListKafkaVersionsOutput;
-
 pub use crate::operation::list_kafka_versions::_list_kafka_versions_input::ListKafkaVersionsInput;
+
+pub use crate::operation::list_kafka_versions::_list_kafka_versions_output::ListKafkaVersionsOutput;
 
 mod _list_kafka_versions_input;
 

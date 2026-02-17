@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mlflow_ap
     }
 }
 
-pub use crate::operation::describe_mlflow_app::_describe_mlflow_app_output::DescribeMlflowAppOutput;
-
 pub use crate::operation::describe_mlflow_app::_describe_mlflow_app_input::DescribeMlflowAppInput;
+
+pub use crate::operation::describe_mlflow_app::_describe_mlflow_app_output::DescribeMlflowAppOutput;
 
 mod _describe_mlflow_app_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_instance_capacity_reservation_attributes::_modify_instance_capacity_reservation_attributes_output::ModifyInstanceCapacityReservationAttributesOutput;
-
 pub use crate::operation::modify_instance_capacity_reservation_attributes::_modify_instance_capacity_reservation_attributes_input::ModifyInstanceCapacityReservationAttributesInput;
+
+pub use crate::operation::modify_instance_capacity_reservation_attributes::_modify_instance_capacity_reservation_attributes_output::ModifyInstanceCapacityReservationAttributesOutput;
 
 mod _modify_instance_capacity_reservation_attributes_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_environment
     }
 }
 
-pub use crate::operation::create_environment_membership::_create_environment_membership_output::CreateEnvironmentMembershipOutput;
-
 pub use crate::operation::create_environment_membership::_create_environment_membership_input::CreateEnvironmentMembershipInput;
+
+pub use crate::operation::create_environment_membership::_create_environment_membership_output::CreateEnvironmentMembershipOutput;
 
 mod _create_environment_membership_input;
 

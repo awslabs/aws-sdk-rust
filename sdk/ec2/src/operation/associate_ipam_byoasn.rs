@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_ipam_byo
     }
 }
 
-pub use crate::operation::associate_ipam_byoasn::_associate_ipam_byoasn_output::AssociateIpamByoasnOutput;
-
 pub use crate::operation::associate_ipam_byoasn::_associate_ipam_byoasn_input::AssociateIpamByoasnInput;
+
+pub use crate::operation::associate_ipam_byoasn::_associate_ipam_byoasn_output::AssociateIpamByoasnOutput;
 
 mod _associate_ipam_byoasn_input;
 

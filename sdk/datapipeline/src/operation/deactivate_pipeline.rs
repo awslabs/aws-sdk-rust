@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_pipelin
     }
 }
 
-pub use crate::operation::deactivate_pipeline::_deactivate_pipeline_output::DeactivatePipelineOutput;
-
 pub use crate::operation::deactivate_pipeline::_deactivate_pipeline_input::DeactivatePipelineInput;
+
+pub use crate::operation::deactivate_pipeline::_deactivate_pipeline_output::DeactivatePipelineOutput;
 
 mod _deactivate_pipeline_input;
 

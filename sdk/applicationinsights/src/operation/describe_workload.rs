@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workload:
     }
 }
 
-pub use crate::operation::describe_workload::_describe_workload_output::DescribeWorkloadOutput;
-
 pub use crate::operation::describe_workload::_describe_workload_input::DescribeWorkloadInput;
+
+pub use crate::operation::describe_workload::_describe_workload_output::DescribeWorkloadOutput;
 
 mod _describe_workload_input;
 

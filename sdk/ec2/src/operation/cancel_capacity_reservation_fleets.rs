@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_capacity_re
     }
 }
 
-pub use crate::operation::cancel_capacity_reservation_fleets::_cancel_capacity_reservation_fleets_output::CancelCapacityReservationFleetsOutput;
-
 pub use crate::operation::cancel_capacity_reservation_fleets::_cancel_capacity_reservation_fleets_input::CancelCapacityReservationFleetsInput;
+
+pub use crate::operation::cancel_capacity_reservation_fleets::_cancel_capacity_reservation_fleets_output::CancelCapacityReservationFleetsOutput;
 
 mod _cancel_capacity_reservation_fleets_input;
 

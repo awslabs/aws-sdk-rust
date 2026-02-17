@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_storage_vir
     }
 }
 
-pub use crate::operation::update_storage_virtual_machine::_update_storage_virtual_machine_output::UpdateStorageVirtualMachineOutput;
-
 pub use crate::operation::update_storage_virtual_machine::_update_storage_virtual_machine_input::UpdateStorageVirtualMachineInput;
+
+pub use crate::operation::update_storage_virtual_machine::_update_storage_virtual_machine_output::UpdateStorageVirtualMachineOutput;
 
 mod _update_storage_virtual_machine_input;
 

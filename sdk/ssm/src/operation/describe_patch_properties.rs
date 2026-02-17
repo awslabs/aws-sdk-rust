@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_patch_pro
     }
 }
 
-pub use crate::operation::describe_patch_properties::_describe_patch_properties_output::DescribePatchPropertiesOutput;
-
 pub use crate::operation::describe_patch_properties::_describe_patch_properties_input::DescribePatchPropertiesInput;
+
+pub use crate::operation::describe_patch_properties::_describe_patch_properties_output::DescribePatchPropertiesOutput;
 
 mod _describe_patch_properties_input;
 

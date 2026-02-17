@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_runs::ListRun
     }
 }
 
-pub use crate::operation::list_runs::_list_runs_output::ListRunsOutput;
-
 pub use crate::operation::list_runs::_list_runs_input::ListRunsInput;
+
+pub use crate::operation::list_runs::_list_runs_output::ListRunsOutput;
 
 mod _list_runs_input;
 

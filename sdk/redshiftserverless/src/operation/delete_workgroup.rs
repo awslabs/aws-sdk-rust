@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workgroup::
     }
 }
 
-pub use crate::operation::delete_workgroup::_delete_workgroup_output::DeleteWorkgroupOutput;
-
 pub use crate::operation::delete_workgroup::_delete_workgroup_input::DeleteWorkgroupInput;
+
+pub use crate::operation::delete_workgroup::_delete_workgroup_output::DeleteWorkgroupOutput;
 
 mod _delete_workgroup_input;
 

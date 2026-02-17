@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_buyer_dashboar
     }
 }
 
-pub use crate::operation::get_buyer_dashboard::_get_buyer_dashboard_output::GetBuyerDashboardOutput;
-
 pub use crate::operation::get_buyer_dashboard::_get_buyer_dashboard_input::GetBuyerDashboardInput;
+
+pub use crate::operation::get_buyer_dashboard::_get_buyer_dashboard_output::GetBuyerDashboardOutput;
 
 mod _get_buyer_dashboard_input;
 

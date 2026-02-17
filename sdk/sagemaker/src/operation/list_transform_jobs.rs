@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_transform_job
     }
 }
 
-pub use crate::operation::list_transform_jobs::_list_transform_jobs_output::ListTransformJobsOutput;
-
 pub use crate::operation::list_transform_jobs::_list_transform_jobs_input::ListTransformJobsInput;
+
+pub use crate::operation::list_transform_jobs::_list_transform_jobs_output::ListTransformJobsOutput;
 
 mod _list_transform_jobs_input;
 

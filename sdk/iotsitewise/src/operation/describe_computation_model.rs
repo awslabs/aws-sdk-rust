@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_computati
     }
 }
 
-pub use crate::operation::describe_computation_model::_describe_computation_model_output::DescribeComputationModelOutput;
-
 pub use crate::operation::describe_computation_model::_describe_computation_model_input::DescribeComputationModelInput;
+
+pub use crate::operation::describe_computation_model::_describe_computation_model_output::DescribeComputationModelOutput;
 
 mod _describe_computation_model_input;
 

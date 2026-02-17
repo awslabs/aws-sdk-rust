@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_findings_re
     }
 }
 
-pub use crate::operation::create_findings_report::_create_findings_report_output::CreateFindingsReportOutput;
-
 pub use crate::operation::create_findings_report::_create_findings_report_input::CreateFindingsReportInput;
+
+pub use crate::operation::create_findings_report::_create_findings_report_output::CreateFindingsReportOutput;
 
 mod _create_findings_report_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_device_p
     }
 }
 
-pub use crate::operation::batch_get_device_position::_batch_get_device_position_output::BatchGetDevicePositionOutput;
-
 pub use crate::operation::batch_get_device_position::_batch_get_device_position_input::BatchGetDevicePositionInput;
+
+pub use crate::operation::batch_get_device_position::_batch_get_device_position_output::BatchGetDevicePositionOutput;
 
 mod _batch_get_device_position_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_device_meta
     }
 }
 
-pub use crate::operation::update_device_metadata::_update_device_metadata_output::UpdateDeviceMetadataOutput;
-
 pub use crate::operation::update_device_metadata::_update_device_metadata_input::UpdateDeviceMetadataInput;
+
+pub use crate::operation::update_device_metadata::_update_device_metadata_output::UpdateDeviceMetadataOutput;
 
 mod _update_device_metadata_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_api::Ass
     }
 }
 
-pub use crate::operation::associate_api::_associate_api_output::AssociateApiOutput;
-
 pub use crate::operation::associate_api::_associate_api_input::AssociateApiInput;
+
+pub use crate::operation::associate_api::_associate_api_output::AssociateApiOutput;
 
 mod _associate_api_input;
 

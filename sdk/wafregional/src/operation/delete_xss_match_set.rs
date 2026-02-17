@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_xss_match_s
     }
 }
 
-pub use crate::operation::delete_xss_match_set::_delete_xss_match_set_output::DeleteXssMatchSetOutput;
-
 pub use crate::operation::delete_xss_match_set::_delete_xss_match_set_input::DeleteXssMatchSetInput;
+
+pub use crate::operation::delete_xss_match_set::_delete_xss_match_set_output::DeleteXssMatchSetOutput;
 
 mod _delete_xss_match_set_input;
 

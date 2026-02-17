@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_level
     }
 }
 
-pub use crate::operation::list_service_level_objectives::_list_service_level_objectives_output::ListServiceLevelObjectivesOutput;
-
 pub use crate::operation::list_service_level_objectives::_list_service_level_objectives_input::ListServiceLevelObjectivesInput;
+
+pub use crate::operation::list_service_level_objectives::_list_service_level_objectives_output::ListServiceLevelObjectivesOutput;
 
 mod _list_service_level_objectives_input;
 

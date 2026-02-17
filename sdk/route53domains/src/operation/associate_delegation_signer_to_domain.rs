@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_delegati
     }
 }
 
-pub use crate::operation::associate_delegation_signer_to_domain::_associate_delegation_signer_to_domain_output::AssociateDelegationSignerToDomainOutput;
-
 pub use crate::operation::associate_delegation_signer_to_domain::_associate_delegation_signer_to_domain_input::AssociateDelegationSignerToDomainInput;
+
+pub use crate::operation::associate_delegation_signer_to_domain::_associate_delegation_signer_to_domain_output::AssociateDelegationSignerToDomainOutput;
 
 mod _associate_delegation_signer_to_domain_input;
 

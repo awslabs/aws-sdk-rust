@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cross_acc
     }
 }
 
-pub use crate::operation::describe_cross_account_access_role::_describe_cross_account_access_role_output::DescribeCrossAccountAccessRoleOutput;
-
 pub use crate::operation::describe_cross_account_access_role::_describe_cross_account_access_role_input::DescribeCrossAccountAccessRoleInput;
+
+pub use crate::operation::describe_cross_account_access_role::_describe_cross_account_access_role_output::DescribeCrossAccountAccessRoleOutput;
 
 mod _describe_cross_account_access_role_input;
 

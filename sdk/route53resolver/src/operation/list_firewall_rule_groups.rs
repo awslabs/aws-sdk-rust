@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewall_rule
     }
 }
 
-pub use crate::operation::list_firewall_rule_groups::_list_firewall_rule_groups_output::ListFirewallRuleGroupsOutput;
-
 pub use crate::operation::list_firewall_rule_groups::_list_firewall_rule_groups_input::ListFirewallRuleGroupsInput;
+
+pub use crate::operation::list_firewall_rule_groups::_list_firewall_rule_groups_output::ListFirewallRuleGroupsOutput;
 
 mod _list_firewall_rule_groups_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_items::ListIt
     }
 }
 
-pub use crate::operation::list_items::_list_items_output::ListItemsOutput;
-
 pub use crate::operation::list_items::_list_items_input::ListItemsInput;
+
+pub use crate::operation::list_items::_list_items_output::ListItemsOutput;
 
 mod _list_items_input;
 

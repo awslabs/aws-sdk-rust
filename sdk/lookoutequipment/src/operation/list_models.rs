@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_models::ListM
     }
 }
 
-pub use crate::operation::list_models::_list_models_output::ListModelsOutput;
-
 pub use crate::operation::list_models::_list_models_input::ListModelsInput;
+
+pub use crate::operation::list_models::_list_models_output::ListModelsOutput;
 
 mod _list_models_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_v
     }
 }
 
-pub use crate::operation::update_workspace_visibility::_update_workspace_visibility_output::UpdateWorkspaceVisibilityOutput;
-
 pub use crate::operation::update_workspace_visibility::_update_workspace_visibility_input::UpdateWorkspaceVisibilityInput;
+
+pub use crate::operation::update_workspace_visibility::_update_workspace_visibility_output::UpdateWorkspaceVisibilityOutput;
 
 mod _update_workspace_visibility_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_v
     }
 }
 
-pub use crate::operation::list_environment_vlans::_list_environment_vlans_output::ListEnvironmentVlansOutput;
-
 pub use crate::operation::list_environment_vlans::_list_environment_vlans_input::ListEnvironmentVlansInput;
+
+pub use crate::operation::list_environment_vlans::_list_environment_vlans_output::ListEnvironmentVlansOutput;
 
 mod _list_environment_vlans_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_mitigation_
     }
 }
 
-pub use crate::operation::update_mitigation_action::_update_mitigation_action_output::UpdateMitigationActionOutput;
-
 pub use crate::operation::update_mitigation_action::_update_mitigation_action_input::UpdateMitigationActionInput;
+
+pub use crate::operation::update_mitigation_action::_update_mitigation_action_output::UpdateMitigationActionOutput;
 
 mod _update_mitigation_action_input;
 

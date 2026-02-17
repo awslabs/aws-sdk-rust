@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_object_tagg
     }
 }
 
-pub use crate::operation::delete_object_tagging::_delete_object_tagging_output::DeleteObjectTaggingOutput;
-
 pub use crate::operation::delete_object_tagging::_delete_object_tagging_input::DeleteObjectTaggingInput;
+
+pub use crate::operation::delete_object_tagging::_delete_object_tagging_output::DeleteObjectTaggingOutput;
 
 mod _delete_object_tagging_input;
 

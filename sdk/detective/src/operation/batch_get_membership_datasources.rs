@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_membersh
     }
 }
 
-pub use crate::operation::batch_get_membership_datasources::_batch_get_membership_datasources_output::BatchGetMembershipDatasourcesOutput;
-
 pub use crate::operation::batch_get_membership_datasources::_batch_get_membership_datasources_input::BatchGetMembershipDatasourcesInput;
+
+pub use crate::operation::batch_get_membership_datasources::_batch_get_membership_datasources_output::BatchGetMembershipDatasourcesOutput;
 
 mod _batch_get_membership_datasources_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_data_automa
     }
 }
 
-pub use crate::operation::invoke_data_automation::_invoke_data_automation_output::InvokeDataAutomationOutput;
-
 pub use crate::operation::invoke_data_automation::_invoke_data_automation_input::InvokeDataAutomationInput;
+
+pub use crate::operation::invoke_data_automation::_invoke_data_automation_output::InvokeDataAutomationOutput;
 
 mod _invoke_data_automation_input;
 

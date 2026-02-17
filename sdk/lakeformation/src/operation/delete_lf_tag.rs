@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lf_tag::Del
     }
 }
 
-pub use crate::operation::delete_lf_tag::_delete_lf_tag_output::DeleteLfTagOutput;
-
 pub use crate::operation::delete_lf_tag::_delete_lf_tag_input::DeleteLfTagInput;
+
+pub use crate::operation::delete_lf_tag::_delete_lf_tag_output::DeleteLfTagOutput;
 
 mod _delete_lf_tag_input;
 

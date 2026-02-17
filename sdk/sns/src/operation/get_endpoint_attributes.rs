@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_endpoint_attri
     }
 }
 
-pub use crate::operation::get_endpoint_attributes::_get_endpoint_attributes_output::GetEndpointAttributesOutput;
-
 pub use crate::operation::get_endpoint_attributes::_get_endpoint_attributes_input::GetEndpointAttributesInput;
+
+pub use crate::operation::get_endpoint_attributes::_get_endpoint_attributes_output::GetEndpointAttributesOutput;
 
 mod _get_endpoint_attributes_input;
 

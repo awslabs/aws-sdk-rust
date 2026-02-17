@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_materialized
     }
 }
 
-pub use crate::operation::start_materialized_view_refresh_task_run::_start_materialized_view_refresh_task_run_output::StartMaterializedViewRefreshTaskRunOutput;
-
 pub use crate::operation::start_materialized_view_refresh_task_run::_start_materialized_view_refresh_task_run_input::StartMaterializedViewRefreshTaskRunInput;
+
+pub use crate::operation::start_materialized_view_refresh_task_run::_start_materialized_view_refresh_task_run_output::StartMaterializedViewRefreshTaskRunOutput;
 
 mod _start_materialized_view_refresh_task_run_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_trained_mode
     }
 }
 
-pub use crate::operation::start_trained_model_export_job::_start_trained_model_export_job_output::StartTrainedModelExportJobOutput;
-
 pub use crate::operation::start_trained_model_export_job::_start_trained_model_export_job_input::StartTrainedModelExportJobInput;
+
+pub use crate::operation::start_trained_model_export_job::_start_trained_model_export_job_output::StartTrainedModelExportJobOutput;
 
 mod _start_trained_model_export_job_input;
 

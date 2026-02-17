@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_group_profi
     }
 }
 
-pub use crate::operation::search_group_profiles::_search_group_profiles_output::SearchGroupProfilesOutput;
-
 pub use crate::operation::search_group_profiles::_search_group_profiles_input::SearchGroupProfilesInput;
+
+pub use crate::operation::search_group_profiles::_search_group_profiles_output::SearchGroupProfilesOutput;
 
 mod _search_group_profiles_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_cache::Reset
     }
 }
 
-pub use crate::operation::reset_cache::_reset_cache_output::ResetCacheOutput;
-
 pub use crate::operation::reset_cache::_reset_cache_input::ResetCacheInput;
+
+pub use crate::operation::reset_cache::_reset_cache_output::ResetCacheOutput;
 
 mod _reset_cache_input;
 

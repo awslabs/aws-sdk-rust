@@ -275,20 +275,21 @@ pub fn de_db_instance_automated_backup(
                 builder = builder.set_encrypted(var_20);
             }
             ,
-            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBInstanceAutomatedBackup$StorageType */ =>  {
+            s if s.matches("StorageEncryptionType") /* StorageEncryptionType com.amazonaws.rds#DBInstanceAutomatedBackup$StorageEncryptionType */ =>  {
                 let var_21 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
+                        Result::<crate::types::StorageEncryptionType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::StorageEncryptionType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
                         )
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_21);
+                builder = builder.set_storage_encryption_type(var_21);
             }
             ,
-            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBInstanceAutomatedBackup$KmsKeyId */ =>  {
+            s if s.matches("StorageType") /* StorageType com.amazonaws.rds#DBInstanceAutomatedBackup$StorageType */ =>  {
                 let var_22 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -298,10 +299,10 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_kms_key_id(var_22);
+                builder = builder.set_storage_type(var_22);
             }
             ,
-            s if s.matches("Timezone") /* Timezone com.amazonaws.rds#DBInstanceAutomatedBackup$Timezone */ =>  {
+            s if s.matches("KmsKeyId") /* KmsKeyId com.amazonaws.rds#DBInstanceAutomatedBackup$KmsKeyId */ =>  {
                 let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -311,11 +312,24 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_timezone(var_23);
+                builder = builder.set_kms_key_id(var_23);
+            }
+            ,
+            s if s.matches("Timezone") /* Timezone com.amazonaws.rds#DBInstanceAutomatedBackup$Timezone */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_timezone(var_24);
             }
             ,
             s if s.matches("IAMDatabaseAuthenticationEnabled") /* IAMDatabaseAuthenticationEnabled com.amazonaws.rds#DBInstanceAutomatedBackup$IAMDatabaseAuthenticationEnabled */ =>  {
-                let var_24 =
+                let var_25 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -326,11 +340,11 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_iam_database_authentication_enabled(var_24);
+                builder = builder.set_iam_database_authentication_enabled(var_25);
             }
             ,
             s if s.matches("BackupRetentionPeriod") /* BackupRetentionPeriod com.amazonaws.rds#DBInstanceAutomatedBackup$BackupRetentionPeriod */ =>  {
-                let var_25 =
+                let var_26 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -341,23 +355,10 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_backup_retention_period(var_25);
+                builder = builder.set_backup_retention_period(var_26);
             }
             ,
             s if s.matches("PreferredBackupWindow") /* PreferredBackupWindow com.amazonaws.rds#DBInstanceAutomatedBackup$PreferredBackupWindow */ =>  {
-                let var_26 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_preferred_backup_window(var_26);
-            }
-            ,
-            s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsArn */ =>  {
                 let var_27 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -367,21 +368,34 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_arn(var_27);
+                builder = builder.set_preferred_backup_window(var_27);
+            }
+            ,
+            s if s.matches("DBInstanceAutomatedBackupsArn") /* DBInstanceAutomatedBackupsArn com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsArn */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_db_instance_automated_backups_arn(var_28);
             }
             ,
             s if s.matches("DBInstanceAutomatedBackupsReplications") /* DBInstanceAutomatedBackupsReplications com.amazonaws.rds#DBInstanceAutomatedBackup$DBInstanceAutomatedBackupsReplications */ =>  {
-                let var_28 =
+                let var_29 =
                     Some(
                         crate::protocol_serde::shape_db_instance_automated_backups_replication_list::de_db_instance_automated_backups_replication_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_db_instance_automated_backups_replications(var_28);
+                builder = builder.set_db_instance_automated_backups_replications(var_29);
             }
             ,
             s if s.matches("BackupTarget") /* BackupTarget com.amazonaws.rds#DBInstanceAutomatedBackup$BackupTarget */ =>  {
-                let var_29 =
+                let var_30 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -390,11 +404,11 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_backup_target(var_29);
+                builder = builder.set_backup_target(var_30);
             }
             ,
             s if s.matches("MultiTenant") /* MultiTenant com.amazonaws.rds#DBInstanceAutomatedBackup$MultiTenant */ =>  {
-                let var_30 =
+                let var_31 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -405,11 +419,11 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_multi_tenant(var_30);
+                builder = builder.set_multi_tenant(var_31);
             }
             ,
             s if s.matches("AwsBackupRecoveryPointArn") /* AwsBackupRecoveryPointArn com.amazonaws.rds#DBInstanceAutomatedBackup$AwsBackupRecoveryPointArn */ =>  {
-                let var_31 =
+                let var_32 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -418,21 +432,21 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_aws_backup_recovery_point_arn(var_31);
+                builder = builder.set_aws_backup_recovery_point_arn(var_32);
             }
             ,
             s if s.matches("TagList") /* TagList com.amazonaws.rds#DBInstanceAutomatedBackup$TagList */ =>  {
-                let var_32 =
+                let var_33 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_tag_list(var_32);
+                builder = builder.set_tag_list(var_33);
             }
             ,
             s if s.matches("DedicatedLogVolume") /* DedicatedLogVolume com.amazonaws.rds#DBInstanceAutomatedBackup$DedicatedLogVolume */ =>  {
-                let var_33 =
+                let var_34 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -443,17 +457,17 @@ pub fn de_db_instance_automated_backup(
                         ?
                     )
                 ;
-                builder = builder.set_dedicated_log_volume(var_33);
+                builder = builder.set_dedicated_log_volume(var_34);
             }
             ,
             s if s.matches("AdditionalStorageVolumes") /* AdditionalStorageVolumes com.amazonaws.rds#DBInstanceAutomatedBackup$AdditionalStorageVolumes */ =>  {
-                let var_34 =
+                let var_35 =
                     Some(
                         crate::protocol_serde::shape_additional_storage_volumes_list::de_additional_storage_volumes_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_additional_storage_volumes(var_34);
+                builder = builder.set_additional_storage_volumes(var_35);
             }
             ,
             _ => {}

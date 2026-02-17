@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_security_group
     }
 }
 
-pub use crate::operation::get_security_groups_for_vpc::_get_security_groups_for_vpc_output::GetSecurityGroupsForVpcOutput;
-
 pub use crate::operation::get_security_groups_for_vpc::_get_security_groups_for_vpc_input::GetSecurityGroupsForVpcInput;
+
+pub use crate::operation::get_security_groups_for_vpc::_get_security_groups_for_vpc_output::GetSecurityGroupsForVpcOutput;
 
 mod _get_security_groups_for_vpc_input;
 

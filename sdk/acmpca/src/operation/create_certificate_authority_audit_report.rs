@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_certificate
     }
 }
 
-pub use crate::operation::create_certificate_authority_audit_report::_create_certificate_authority_audit_report_output::CreateCertificateAuthorityAuditReportOutput;
-
 pub use crate::operation::create_certificate_authority_audit_report::_create_certificate_authority_audit_report_input::CreateCertificateAuthorityAuditReportInput;
+
+pub use crate::operation::create_certificate_authority_audit_report::_create_certificate_authority_audit_report_output::CreateCertificateAuthorityAuditReportOutput;
 
 mod _create_certificate_authority_audit_report_input;
 

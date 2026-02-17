@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::request_service_qu
     }
 }
 
-pub use crate::operation::request_service_quota_increase::_request_service_quota_increase_output::RequestServiceQuotaIncreaseOutput;
-
 pub use crate::operation::request_service_quota_increase::_request_service_quota_increase_input::RequestServiceQuotaIncreaseInput;
+
+pub use crate::operation::request_service_quota_increase::_request_service_quota_increase_output::RequestServiceQuotaIncreaseOutput;
 
 mod _request_service_quota_increase_input;
 

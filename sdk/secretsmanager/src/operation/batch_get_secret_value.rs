@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_secret_v
     }
 }
 
-pub use crate::operation::batch_get_secret_value::_batch_get_secret_value_output::BatchGetSecretValueOutput;
-
 pub use crate::operation::batch_get_secret_value::_batch_get_secret_value_input::BatchGetSecretValueInput;
+
+pub use crate::operation::batch_get_secret_value::_batch_get_secret_value_output::BatchGetSecretValueOutput;
 
 mod _batch_get_secret_value_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_custom_attribu
     }
 }
 
-pub use crate::operation::add_custom_attributes::_add_custom_attributes_output::AddCustomAttributesOutput;
-
 pub use crate::operation::add_custom_attributes::_add_custom_attributes_input::AddCustomAttributesInput;
+
+pub use crate::operation::add_custom_attributes::_add_custom_attributes_output::AddCustomAttributesOutput;
 
 mod _add_custom_attributes_input;
 

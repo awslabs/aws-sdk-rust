@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_dominant_la
     }
 }
 
-pub use crate::operation::detect_dominant_language::_detect_dominant_language_output::DetectDominantLanguageOutput;
-
 pub use crate::operation::detect_dominant_language::_detect_dominant_language_input::DetectDominantLanguageInput;
+
+pub use crate::operation::detect_dominant_language::_detect_dominant_language_output::DetectDominantLanguageOutput;
 
 mod _detect_dominant_language_input;
 

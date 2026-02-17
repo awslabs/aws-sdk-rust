@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_kms_k
     }
 }
 
-pub use crate::operation::disassociate_kms_key::_disassociate_kms_key_output::DisassociateKmsKeyOutput;
-
 pub use crate::operation::disassociate_kms_key::_disassociate_kms_key_input::DisassociateKmsKeyInput;
+
+pub use crate::operation::disassociate_kms_key::_disassociate_kms_key_output::DisassociateKmsKeyOutput;
 
 mod _disassociate_kms_key_input;
 

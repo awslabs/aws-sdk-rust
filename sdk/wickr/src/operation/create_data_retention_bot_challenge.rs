@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_retent
     }
 }
 
-pub use crate::operation::create_data_retention_bot_challenge::_create_data_retention_bot_challenge_output::CreateDataRetentionBotChallengeOutput;
-
 pub use crate::operation::create_data_retention_bot_challenge::_create_data_retention_bot_challenge_input::CreateDataRetentionBotChallengeInput;
+
+pub use crate::operation::create_data_retention_bot_challenge::_create_data_retention_bot_challenge_output::CreateDataRetentionBotChallengeOutput;
 
 mod _create_data_retention_bot_challenge_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_proxy_confi
     }
 }
 
-pub use crate::operation::update_proxy_configuration::_update_proxy_configuration_output::UpdateProxyConfigurationOutput;
-
 pub use crate::operation::update_proxy_configuration::_update_proxy_configuration_input::UpdateProxyConfigurationInput;
+
+pub use crate::operation::update_proxy_configuration::_update_proxy_configuration_output::UpdateProxyConfigurationOutput;
 
 mod _update_proxy_configuration_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_encryptio
     }
 }
 
-pub use crate::operation::describe_encryption_configuration::_describe_encryption_configuration_output::DescribeEncryptionConfigurationOutput;
-
 pub use crate::operation::describe_encryption_configuration::_describe_encryption_configuration_input::DescribeEncryptionConfigurationInput;
+
+pub use crate::operation::describe_encryption_configuration::_describe_encryption_configuration_output::DescribeEncryptionConfigurationOutput;
 
 mod _describe_encryption_configuration_input;
 

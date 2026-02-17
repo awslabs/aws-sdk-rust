@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_user_import_j
     }
 }
 
-pub use crate::operation::stop_user_import_job::_stop_user_import_job_output::StopUserImportJobOutput;
-
 pub use crate::operation::stop_user_import_job::_stop_user_import_job_input::StopUserImportJobInput;
+
+pub use crate::operation::stop_user_import_job::_stop_user_import_job_output::StopUserImportJobOutput;
 
 mod _stop_user_import_job_input;
 

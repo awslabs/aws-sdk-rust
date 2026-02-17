@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_credentials_fo
     }
 }
 
-pub use crate::operation::get_credentials_for_identity::_get_credentials_for_identity_output::GetCredentialsForIdentityOutput;
-
 pub use crate::operation::get_credentials_for_identity::_get_credentials_for_identity_input::GetCredentialsForIdentityInput;
+
+pub use crate::operation::get_credentials_for_identity::_get_credentials_for_identity_output::GetCredentialsForIdentityOutput;
 
 mod _get_credentials_for_identity_input;
 

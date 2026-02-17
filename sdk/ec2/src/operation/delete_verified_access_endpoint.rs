@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_verified_ac
     }
 }
 
-pub use crate::operation::delete_verified_access_endpoint::_delete_verified_access_endpoint_output::DeleteVerifiedAccessEndpointOutput;
-
 pub use crate::operation::delete_verified_access_endpoint::_delete_verified_access_endpoint_input::DeleteVerifiedAccessEndpointInput;
+
+pub use crate::operation::delete_verified_access_endpoint::_delete_verified_access_endpoint_output::DeleteVerifiedAccessEndpointOutput;
 
 mod _delete_verified_access_endpoint_input;
 

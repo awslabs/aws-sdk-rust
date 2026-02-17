@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_archive_rules
     }
 }
 
-pub use crate::operation::list_archive_rules::_list_archive_rules_output::ListArchiveRulesOutput;
-
 pub use crate::operation::list_archive_rules::_list_archive_rules_input::ListArchiveRulesInput;
+
+pub use crate::operation::list_archive_rules::_list_archive_rules_output::ListArchiveRulesOutput;
 
 mod _list_archive_rules_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_variable::D
     }
 }
 
-pub use crate::operation::delete_variable::_delete_variable_output::DeleteVariableOutput;
-
 pub use crate::operation::delete_variable::_delete_variable_input::DeleteVariableInput;
+
+pub use crate::operation::delete_variable::_delete_variable_output::DeleteVariableOutput;
 
 mod _delete_variable_input;
 

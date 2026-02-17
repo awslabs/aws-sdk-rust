@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dimension::
     }
 }
 
-pub use crate::operation::delete_dimension::_delete_dimension_output::DeleteDimensionOutput;
-
 pub use crate::operation::delete_dimension::_delete_dimension_input::DeleteDimensionInput;
+
+pub use crate::operation::delete_dimension::_delete_dimension_output::DeleteDimensionOutput;
 
 mod _delete_dimension_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_routing_
     }
 }
 
-pub use crate::operation::associate_routing_profile_queues::_associate_routing_profile_queues_output::AssociateRoutingProfileQueuesOutput;
-
 pub use crate::operation::associate_routing_profile_queues::_associate_routing_profile_queues_input::AssociateRoutingProfileQueuesInput;
+
+pub use crate::operation::associate_routing_profile_queues::_associate_routing_profile_queues_output::AssociateRoutingProfileQueuesOutput;
 
 mod _associate_routing_profile_queues_input;
 

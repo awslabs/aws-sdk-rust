@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_filters::List
     }
 }
 
-pub use crate::operation::list_filters::_list_filters_output::ListFiltersOutput;
-
 pub use crate::operation::list_filters::_list_filters_input::ListFiltersInput;
+
+pub use crate::operation::list_filters::_list_filters_output::ListFiltersOutput;
 
 mod _list_filters_input;
 

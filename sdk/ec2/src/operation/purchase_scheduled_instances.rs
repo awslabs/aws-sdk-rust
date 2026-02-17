@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_scheduled
     }
 }
 
-pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_instances_output::PurchaseScheduledInstancesOutput;
-
 pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_instances_input::PurchaseScheduledInstancesInput;
+
+pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_instances_output::PurchaseScheduledInstancesOutput;
 
 mod _purchase_scheduled_instances_input;
 

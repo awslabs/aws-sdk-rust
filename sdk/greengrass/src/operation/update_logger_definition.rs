@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_logger_defi
     }
 }
 
-pub use crate::operation::update_logger_definition::_update_logger_definition_output::UpdateLoggerDefinitionOutput;
-
 pub use crate::operation::update_logger_definition::_update_logger_definition_input::UpdateLoggerDefinitionInput;
+
+pub use crate::operation::update_logger_definition::_update_logger_definition_output::UpdateLoggerDefinitionOutput;
 
 mod _update_logger_definition_input;
 

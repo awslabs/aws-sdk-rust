@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_assessmen
     }
 }
 
-pub use crate::operation::describe_assessment_runs::_describe_assessment_runs_output::DescribeAssessmentRunsOutput;
-
 pub use crate::operation::describe_assessment_runs::_describe_assessment_runs_input::DescribeAssessmentRunsInput;
+
+pub use crate::operation::describe_assessment_runs::_describe_assessment_runs_output::DescribeAssessmentRunsOutput;
 
 mod _describe_assessment_runs_input;
 

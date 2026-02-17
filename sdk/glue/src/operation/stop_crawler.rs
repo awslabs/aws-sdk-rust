@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_crawler::Stop
     }
 }
 
-pub use crate::operation::stop_crawler::_stop_crawler_output::StopCrawlerOutput;
-
 pub use crate::operation::stop_crawler::_stop_crawler_input::StopCrawlerInput;
+
+pub use crate::operation::stop_crawler::_stop_crawler_output::StopCrawlerOutput;
 
 mod _stop_crawler_input;
 

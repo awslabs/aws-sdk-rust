@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_channel::
     }
 }
 
-pub use crate::operation::describe_channel::_describe_channel_output::DescribeChannelOutput;
-
 pub use crate::operation::describe_channel::_describe_channel_input::DescribeChannelInput;
+
+pub use crate::operation::describe_channel::_describe_channel_output::DescribeChannelOutput;
 
 mod _describe_channel_input;
 

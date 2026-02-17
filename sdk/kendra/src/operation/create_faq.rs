@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_faq::Create
     }
 }
 
-pub use crate::operation::create_faq::_create_faq_output::CreateFaqOutput;
-
 pub use crate::operation::create_faq::_create_faq_input::CreateFaqInput;
+
+pub use crate::operation::create_faq::_create_faq_output::CreateFaqOutput;
 
 mod _create_faq_input;
 

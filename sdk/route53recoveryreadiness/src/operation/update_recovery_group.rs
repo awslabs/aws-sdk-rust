@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recovery_gr
     }
 }
 
-pub use crate::operation::update_recovery_group::_update_recovery_group_output::UpdateRecoveryGroupOutput;
-
 pub use crate::operation::update_recovery_group::_update_recovery_group_input::UpdateRecoveryGroupInput;
+
+pub use crate::operation::update_recovery_group::_update_recovery_group_output::UpdateRecoveryGroupOutput;
 
 mod _update_recovery_group_input;
 

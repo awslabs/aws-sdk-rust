@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_token_balance
     }
 }
 
-pub use crate::operation::list_token_balances::_list_token_balances_output::ListTokenBalancesOutput;
-
 pub use crate::operation::list_token_balances::_list_token_balances_input::ListTokenBalancesInput;
+
+pub use crate::operation::list_token_balances::_list_token_balances_output::ListTokenBalancesOutput;
 
 mod _list_token_balances_input;
 

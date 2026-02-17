@@ -507,9 +507,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_handshake::
     }
 }
 
-pub use crate::operation::cancel_handshake::_cancel_handshake_output::CancelHandshakeOutput;
-
 pub use crate::operation::cancel_handshake::_cancel_handshake_input::CancelHandshakeInput;
+
+pub use crate::operation::cancel_handshake::_cancel_handshake_output::CancelHandshakeOutput;
 
 mod _cancel_handshake_input;
 

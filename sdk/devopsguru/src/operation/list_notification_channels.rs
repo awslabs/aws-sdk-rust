@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_notification_
     }
 }
 
-pub use crate::operation::list_notification_channels::_list_notification_channels_output::ListNotificationChannelsOutput;
-
 pub use crate::operation::list_notification_channels::_list_notification_channels_input::ListNotificationChannelsInput;
+
+pub use crate::operation::list_notification_channels::_list_notification_channels_output::ListNotificationChannelsOutput;
 
 mod _list_notification_channels_input;
 

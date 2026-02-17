@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pages_by_cont
     }
 }
 
-pub use crate::operation::list_pages_by_contact::_list_pages_by_contact_output::ListPagesByContactOutput;
-
 pub use crate::operation::list_pages_by_contact::_list_pages_by_contact_input::ListPagesByContactInput;
+
+pub use crate::operation::list_pages_by_contact::_list_pages_by_contact_output::ListPagesByContactOutput;
 
 mod _list_pages_by_contact_input;
 

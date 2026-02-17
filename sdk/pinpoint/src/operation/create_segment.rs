@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_segment::Cr
     }
 }
 
-pub use crate::operation::create_segment::_create_segment_output::CreateSegmentOutput;
-
 pub use crate::operation::create_segment::_create_segment_input::CreateSegmentInput;
+
+pub use crate::operation::create_segment::_create_segment_output::CreateSegmentOutput;
 
 mod _create_segment_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_configuratio
     }
 }
 
-pub use crate::operation::start_configuration_session::_start_configuration_session_output::StartConfigurationSessionOutput;
-
 pub use crate::operation::start_configuration_session::_start_configuration_session_input::StartConfigurationSessionInput;
+
+pub use crate::operation::start_configuration_session::_start_configuration_session_output::StartConfigurationSessionOutput;
 
 mod _start_configuration_session_input;
 

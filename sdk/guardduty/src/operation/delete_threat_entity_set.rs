@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_threat_enti
     }
 }
 
-pub use crate::operation::delete_threat_entity_set::_delete_threat_entity_set_output::DeleteThreatEntitySetOutput;
-
 pub use crate::operation::delete_threat_entity_set::_delete_threat_entity_set_input::DeleteThreatEntitySetInput;
+
+pub use crate::operation::delete_threat_entity_set::_delete_threat_entity_set_output::DeleteThreatEntitySetOutput;
 
 mod _delete_threat_entity_set_input;
 

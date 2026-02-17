@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_metadata_gene
     }
 }
 
-pub use crate::operation::list_metadata_generation_runs::_list_metadata_generation_runs_output::ListMetadataGenerationRunsOutput;
-
 pub use crate::operation::list_metadata_generation_runs::_list_metadata_generation_runs_input::ListMetadataGenerationRunsInput;
+
+pub use crate::operation::list_metadata_generation_runs::_list_metadata_generation_runs_output::ListMetadataGenerationRunsOutput;
 
 mod _list_metadata_generation_runs_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_subject::GetSu
     }
 }
 
-pub use crate::operation::get_subject::_get_subject_output::GetSubjectOutput;
-
 pub use crate::operation::get_subject::_get_subject_input::GetSubjectInput;
+
+pub use crate::operation::get_subject::_get_subject_output::GetSubjectOutput;
 
 mod _get_subject_input;
 

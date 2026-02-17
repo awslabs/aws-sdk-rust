@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::checkout_borrow_li
     }
 }
 
-pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_output::CheckoutBorrowLicenseOutput;
-
 pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_input::CheckoutBorrowLicenseInput;
+
+pub use crate::operation::checkout_borrow_license::_checkout_borrow_license_output::CheckoutBorrowLicenseOutput;
 
 mod _checkout_borrow_license_input;
 

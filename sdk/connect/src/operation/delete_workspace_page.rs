@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workspace_p
     }
 }
 
-pub use crate::operation::delete_workspace_page::_delete_workspace_page_output::DeleteWorkspacePageOutput;
-
 pub use crate::operation::delete_workspace_page::_delete_workspace_page_input::DeleteWorkspacePageInput;
+
+pub use crate::operation::delete_workspace_page::_delete_workspace_page_output::DeleteWorkspacePageOutput;
 
 mod _delete_workspace_page_input;
 

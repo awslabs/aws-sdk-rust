@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_online_eval
     }
 }
 
-pub use crate::operation::create_online_evaluation_config::_create_online_evaluation_config_output::CreateOnlineEvaluationConfigOutput;
-
 pub use crate::operation::create_online_evaluation_config::_create_online_evaluation_config_input::CreateOnlineEvaluationConfigInput;
+
+pub use crate::operation::create_online_evaluation_config::_create_online_evaluation_config_output::CreateOnlineEvaluationConfigOutput;
 
 mod _create_online_evaluation_config_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_command::Cr
     }
 }
 
-pub use crate::operation::create_command::_create_command_output::CreateCommandOutput;
-
 pub use crate::operation::create_command::_create_command_input::CreateCommandInput;
+
+pub use crate::operation::create_command::_create_command_output::CreateCommandOutput;
 
 mod _create_command_input;
 

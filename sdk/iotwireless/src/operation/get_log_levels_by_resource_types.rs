@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_log_levels_by_
     }
 }
 
-pub use crate::operation::get_log_levels_by_resource_types::_get_log_levels_by_resource_types_output::GetLogLevelsByResourceTypesOutput;
-
 pub use crate::operation::get_log_levels_by_resource_types::_get_log_levels_by_resource_types_input::GetLogLevelsByResourceTypesInput;
+
+pub use crate::operation::get_log_levels_by_resource_types::_get_log_levels_by_resource_types_output::GetLogLevelsByResourceTypesOutput;
 
 mod _get_log_levels_by_resource_types_input;
 

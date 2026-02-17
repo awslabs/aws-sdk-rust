@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_log_c
     }
 }
 
-pub use crate::operation::delete_event_log_configuration::_delete_event_log_configuration_output::DeleteEventLogConfigurationOutput;
-
 pub use crate::operation::delete_event_log_configuration::_delete_event_log_configuration_input::DeleteEventLogConfigurationInput;
+
+pub use crate::operation::delete_event_log_configuration::_delete_event_log_configuration_output::DeleteEventLogConfigurationOutput;
 
 mod _delete_event_log_configuration_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_graph_using
     }
 }
 
-pub use crate::operation::create_graph_using_import_task::_create_graph_using_import_task_output::CreateGraphUsingImportTaskOutput;
-
 pub use crate::operation::create_graph_using_import_task::_create_graph_using_import_task_input::CreateGraphUsingImportTaskInput;
+
+pub use crate::operation::create_graph_using_import_task::_create_graph_using_import_task_output::CreateGraphUsingImportTaskOutput;
 
 mod _create_graph_using_import_task_input;
 

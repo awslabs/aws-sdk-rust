@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_security
     }
 }
 
-pub use crate::operation::batch_get_security_controls::_batch_get_security_controls_output::BatchGetSecurityControlsOutput;
-
 pub use crate::operation::batch_get_security_controls::_batch_get_security_controls_input::BatchGetSecurityControlsInput;
+
+pub use crate::operation::batch_get_security_controls::_batch_get_security_controls_output::BatchGetSecurityControlsOutput;
 
 mod _batch_get_security_controls_input;
 

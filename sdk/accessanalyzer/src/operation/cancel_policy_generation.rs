@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_policy_gene
     }
 }
 
-pub use crate::operation::cancel_policy_generation::_cancel_policy_generation_output::CancelPolicyGenerationOutput;
-
 pub use crate::operation::cancel_policy_generation::_cancel_policy_generation_input::CancelPolicyGenerationInput;
+
+pub use crate::operation::cancel_policy_generation::_cancel_policy_generation_output::CancelPolicyGenerationOutput;
 
 mod _cancel_policy_generation_input;
 

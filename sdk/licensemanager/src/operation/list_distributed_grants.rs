@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributed_g
     }
 }
 
-pub use crate::operation::list_distributed_grants::_list_distributed_grants_output::ListDistributedGrantsOutput;
-
 pub use crate::operation::list_distributed_grants::_list_distributed_grants_input::ListDistributedGrantsInput;
+
+pub use crate::operation::list_distributed_grants::_list_distributed_grants_output::ListDistributedGrantsOutput;
 
 mod _list_distributed_grants_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_firewall
     }
 }
 
-pub use crate::operation::associate_firewall_policy::_associate_firewall_policy_output::AssociateFirewallPolicyOutput;
-
 pub use crate::operation::associate_firewall_policy::_associate_firewall_policy_input::AssociateFirewallPolicyInput;
+
+pub use crate::operation::associate_firewall_policy::_associate_firewall_policy_output::AssociateFirewallPolicyOutput;
 
 mod _associate_firewall_policy_input;
 

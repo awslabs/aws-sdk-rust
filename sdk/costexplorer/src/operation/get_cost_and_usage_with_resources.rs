@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cost_and_usage
     }
 }
 
-pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage_with_resources_output::GetCostAndUsageWithResourcesOutput;
-
 pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage_with_resources_input::GetCostAndUsageWithResourcesInput;
+
+pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage_with_resources_output::GetCostAndUsageWithResourcesOutput;
 
 mod _get_cost_and_usage_with_resources_input;
 

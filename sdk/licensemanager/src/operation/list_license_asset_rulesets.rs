@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_license_asset
     }
 }
 
-pub use crate::operation::list_license_asset_rulesets::_list_license_asset_rulesets_output::ListLicenseAssetRulesetsOutput;
-
 pub use crate::operation::list_license_asset_rulesets::_list_license_asset_rulesets_input::ListLicenseAssetRulesetsInput;
+
+pub use crate::operation::list_license_asset_rulesets::_list_license_asset_rulesets_output::ListLicenseAssetRulesetsOutput;
 
 mod _list_license_asset_rulesets_input;
 

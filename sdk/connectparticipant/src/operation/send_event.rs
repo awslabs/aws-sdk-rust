@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_event::SendEv
     }
 }
 
-pub use crate::operation::send_event::_send_event_output::SendEventOutput;
-
 pub use crate::operation::send_event::_send_event_input::SendEventInput;
+
+pub use crate::operation::send_event::_send_event_output::SendEventOutput;
 
 mod _send_event_input;
 

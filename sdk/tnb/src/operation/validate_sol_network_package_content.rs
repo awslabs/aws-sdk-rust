@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_sol_netwo
     }
 }
 
-pub use crate::operation::validate_sol_network_package_content::_validate_sol_network_package_content_output::ValidateSolNetworkPackageContentOutput;
-
 pub use crate::operation::validate_sol_network_package_content::_validate_sol_network_package_content_input::ValidateSolNetworkPackageContentInput;
+
+pub use crate::operation::validate_sol_network_package_content::_validate_sol_network_package_content_output::ValidateSolNetworkPackageContentOutput;
 
 mod _validate_sol_network_package_content_input;
 

@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_entity_aggregates_for_organization::_describe_entity_aggregates_for_organization_output::DescribeEntityAggregatesForOrganizationOutput;
-
 pub use crate::operation::describe_entity_aggregates_for_organization::_describe_entity_aggregates_for_organization_input::DescribeEntityAggregatesForOrganizationInput;
+
+pub use crate::operation::describe_entity_aggregates_for_organization::_describe_entity_aggregates_for_organization_output::DescribeEntityAggregatesForOrganizationOutput;
 
 mod _describe_entity_aggregates_for_organization_input;
 

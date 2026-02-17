@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::accept_direct_connect_gateway_association_proposal::_accept_direct_connect_gateway_association_proposal_output::AcceptDirectConnectGatewayAssociationProposalOutput;
-
 pub use crate::operation::accept_direct_connect_gateway_association_proposal::_accept_direct_connect_gateway_association_proposal_input::AcceptDirectConnectGatewayAssociationProposalInput;
+
+pub use crate::operation::accept_direct_connect_gateway_association_proposal::_accept_direct_connect_gateway_association_proposal_output::AcceptDirectConnectGatewayAssociationProposalOutput;
 
 mod _accept_direct_connect_gateway_association_proposal_input;
 

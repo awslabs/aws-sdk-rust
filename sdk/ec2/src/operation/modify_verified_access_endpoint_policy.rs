@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_verified_ac
     }
 }
 
-pub use crate::operation::modify_verified_access_endpoint_policy::_modify_verified_access_endpoint_policy_output::ModifyVerifiedAccessEndpointPolicyOutput;
-
 pub use crate::operation::modify_verified_access_endpoint_policy::_modify_verified_access_endpoint_policy_input::ModifyVerifiedAccessEndpointPolicyInput;
+
+pub use crate::operation::modify_verified_access_endpoint_policy::_modify_verified_access_endpoint_policy_output::ModifyVerifiedAccessEndpointPolicyOutput;
 
 mod _modify_verified_access_endpoint_policy_input;
 

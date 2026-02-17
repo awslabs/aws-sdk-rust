@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_session::Sta
     }
 }
 
-pub use crate::operation::start_session::_start_session_output::StartSessionOutput;
-
 pub use crate::operation::start_session::_start_session_input::StartSessionInput;
+
+pub use crate::operation::start_session::_start_session_output::StartSessionOutput;
 
 mod _start_session_input;
 

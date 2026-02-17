@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_items::PutItem
     }
 }
 
-pub use crate::operation::put_items::_put_items_output::PutItemsOutput;
-
 pub use crate::operation::put_items::_put_items_input::PutItemsInput;
+
+pub use crate::operation::put_items::_put_items_output::PutItemsOutput;
 
 mod _put_items_input;
 

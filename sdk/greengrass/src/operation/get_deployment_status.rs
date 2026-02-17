@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_sta
     }
 }
 
-pub use crate::operation::get_deployment_status::_get_deployment_status_output::GetDeploymentStatusOutput;
-
 pub use crate::operation::get_deployment_status::_get_deployment_status_input::GetDeploymentStatusInput;
+
+pub use crate::operation::get_deployment_status::_get_deployment_status_output::GetDeploymentStatusOutput;
 
 mod _get_deployment_status_input;
 

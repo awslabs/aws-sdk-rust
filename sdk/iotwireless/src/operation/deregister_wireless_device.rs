@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_wireles
     }
 }
 
-pub use crate::operation::deregister_wireless_device::_deregister_wireless_device_output::DeregisterWirelessDeviceOutput;
-
 pub use crate::operation::deregister_wireless_device::_deregister_wireless_device_input::DeregisterWirelessDeviceInput;
+
+pub use crate::operation::deregister_wireless_device::_deregister_wireless_device_output::DeregisterWirelessDeviceOutput;
 
 mod _deregister_wireless_device_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_relational_da
     }
 }
 
-pub use crate::operation::stop_relational_database::_stop_relational_database_output::StopRelationalDatabaseOutput;
-
 pub use crate::operation::stop_relational_database::_stop_relational_database_input::StopRelationalDatabaseInput;
+
+pub use crate::operation::stop_relational_database::_stop_relational_database_output::StopRelationalDatabaseOutput;
 
 mod _stop_relational_database_input;
 

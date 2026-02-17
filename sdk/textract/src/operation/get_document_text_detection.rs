@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_document_text_
     }
 }
 
-pub use crate::operation::get_document_text_detection::_get_document_text_detection_output::GetDocumentTextDetectionOutput;
-
 pub use crate::operation::get_document_text_detection::_get_document_text_detection_input::GetDocumentTextDetectionInput;
+
+pub use crate::operation::get_document_text_detection::_get_document_text_detection_output::GetDocumentTextDetectionOutput;
 
 mod _get_document_text_detection_input;
 

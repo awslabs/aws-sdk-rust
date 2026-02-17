@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_realtime_log_config::_list_distributions_by_realtime_log_config_output::ListDistributionsByRealtimeLogConfigOutput;
-
 pub use crate::operation::list_distributions_by_realtime_log_config::_list_distributions_by_realtime_log_config_input::ListDistributionsByRealtimeLogConfigInput;
+
+pub use crate::operation::list_distributions_by_realtime_log_config::_list_distributions_by_realtime_log_config_output::ListDistributionsByRealtimeLogConfigOutput;
 
 mod _list_distributions_by_realtime_log_config_input;
 

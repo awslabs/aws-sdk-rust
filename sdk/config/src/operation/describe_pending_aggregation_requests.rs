@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pending_a
     }
 }
 
-pub use crate::operation::describe_pending_aggregation_requests::_describe_pending_aggregation_requests_output::DescribePendingAggregationRequestsOutput;
-
 pub use crate::operation::describe_pending_aggregation_requests::_describe_pending_aggregation_requests_input::DescribePendingAggregationRequestsInput;
+
+pub use crate::operation::describe_pending_aggregation_requests::_describe_pending_aggregation_requests_output::DescribePendingAggregationRequestsOutput;
 
 mod _describe_pending_aggregation_requests_input;
 

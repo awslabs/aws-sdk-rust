@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewall_doma
     }
 }
 
-pub use crate::operation::list_firewall_domains::_list_firewall_domains_output::ListFirewallDomainsOutput;
-
 pub use crate::operation::list_firewall_domains::_list_firewall_domains_input::ListFirewallDomainsInput;
+
+pub use crate::operation::list_firewall_domains::_list_firewall_domains_output::ListFirewallDomainsOutput;
 
 mod _list_firewall_domains_input;
 

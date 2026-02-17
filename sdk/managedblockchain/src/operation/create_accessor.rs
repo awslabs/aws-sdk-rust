@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_accessor::C
     }
 }
 
-pub use crate::operation::create_accessor::_create_accessor_output::CreateAccessorOutput;
-
 pub use crate::operation::create_accessor::_create_accessor_input::CreateAccessorInput;
+
+pub use crate::operation::create_accessor::_create_accessor_output::CreateAccessorOutput;
 
 mod _create_accessor_input;
 

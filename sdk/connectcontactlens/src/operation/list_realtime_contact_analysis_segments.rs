@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_realtime_cont
     }
 }
 
-pub use crate::operation::list_realtime_contact_analysis_segments::_list_realtime_contact_analysis_segments_output::ListRealtimeContactAnalysisSegmentsOutput;
-
 pub use crate::operation::list_realtime_contact_analysis_segments::_list_realtime_contact_analysis_segments_input::ListRealtimeContactAnalysisSegmentsInput;
+
+pub use crate::operation::list_realtime_contact_analysis_segments::_list_realtime_contact_analysis_segments_output::ListRealtimeContactAnalysisSegmentsOutput;
 
 mod _list_realtime_contact_analysis_segments_input;
 

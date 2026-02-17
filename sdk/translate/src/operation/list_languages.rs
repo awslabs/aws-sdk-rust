@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_languages::Li
     }
 }
 
-pub use crate::operation::list_languages::_list_languages_output::ListLanguagesOutput;
-
 pub use crate::operation::list_languages::_list_languages_input::ListLanguagesInput;
+
+pub use crate::operation::list_languages::_list_languages_output::ListLanguagesOutput;
 
 mod _list_languages_input;
 

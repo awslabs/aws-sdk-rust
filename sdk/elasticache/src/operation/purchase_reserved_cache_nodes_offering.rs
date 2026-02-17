@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_reserved_
     }
 }
 
-pub use crate::operation::purchase_reserved_cache_nodes_offering::_purchase_reserved_cache_nodes_offering_output::PurchaseReservedCacheNodesOfferingOutput;
-
 pub use crate::operation::purchase_reserved_cache_nodes_offering::_purchase_reserved_cache_nodes_offering_input::PurchaseReservedCacheNodesOfferingInput;
+
+pub use crate::operation::purchase_reserved_cache_nodes_offering::_purchase_reserved_cache_nodes_offering_output::PurchaseReservedCacheNodesOfferingOutput;
 
 mod _purchase_reserved_cache_nodes_offering_input;
 

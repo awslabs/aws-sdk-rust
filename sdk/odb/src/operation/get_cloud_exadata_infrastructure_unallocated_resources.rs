@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_cloud_exadata_infrastructure_unallocated_resources::_get_cloud_exadata_infrastructure_unallocated_resources_output::GetCloudExadataInfrastructureUnallocatedResourcesOutput;
-
 pub use crate::operation::get_cloud_exadata_infrastructure_unallocated_resources::_get_cloud_exadata_infrastructure_unallocated_resources_input::GetCloudExadataInfrastructureUnallocatedResourcesInput;
+
+pub use crate::operation::get_cloud_exadata_infrastructure_unallocated_resources::_get_cloud_exadata_infrastructure_unallocated_resources_output::GetCloudExadataInfrastructureUnallocatedResourcesOutput;
 
 mod _get_cloud_exadata_infrastructure_unallocated_resources_input;
 

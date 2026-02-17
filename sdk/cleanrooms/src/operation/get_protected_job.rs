@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_protected_job:
     }
 }
 
-pub use crate::operation::get_protected_job::_get_protected_job_output::GetProtectedJobOutput;
-
 pub use crate::operation::get_protected_job::_get_protected_job_input::GetProtectedJobInput;
+
+pub use crate::operation::get_protected_job::_get_protected_job_output::GetProtectedJobOutput;
 
 mod _get_protected_job_input;
 

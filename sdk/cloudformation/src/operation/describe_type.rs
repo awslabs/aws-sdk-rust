@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_type::Des
     }
 }
 
-pub use crate::operation::describe_type::_describe_type_output::DescribeTypeOutput;
-
 pub use crate::operation::describe_type::_describe_type_input::DescribeTypeInput;
+
+pub use crate::operation::describe_type::_describe_type_output::DescribeTypeOutput;
 
 mod _describe_type_input;
 

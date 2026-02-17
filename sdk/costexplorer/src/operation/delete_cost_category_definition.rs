@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cost_catego
     }
 }
 
-pub use crate::operation::delete_cost_category_definition::_delete_cost_category_definition_output::DeleteCostCategoryDefinitionOutput;
-
 pub use crate::operation::delete_cost_category_definition::_delete_cost_category_definition_input::DeleteCostCategoryDefinitionInput;
+
+pub use crate::operation::delete_cost_category_definition::_delete_cost_category_definition_output::DeleteCostCategoryDefinitionOutput;
 
 mod _delete_cost_category_definition_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attachments::
     }
 }
 
-pub use crate::operation::list_attachments::_list_attachments_output::ListAttachmentsOutput;
-
 pub use crate::operation::list_attachments::_list_attachments_input::ListAttachmentsInput;
+
+pub use crate::operation::list_attachments::_list_attachments_output::ListAttachmentsOutput;
 
 mod _list_attachments_input;
 

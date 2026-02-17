@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_input_s
     }
 }
 
-pub use crate::operation::delete_app_input_source::_delete_app_input_source_output::DeleteAppInputSourceOutput;
-
 pub use crate::operation::delete_app_input_source::_delete_app_input_source_input::DeleteAppInputSourceInput;
+
+pub use crate::operation::delete_app_input_source::_delete_app_input_source_output::DeleteAppInputSourceOutput;
 
 mod _delete_app_input_source_input;
 

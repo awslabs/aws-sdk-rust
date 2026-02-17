@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ml_models
     }
 }
 
-pub use crate::operation::describe_ml_models::_describe_ml_models_output::DescribeMlModelsOutput;
-
 pub use crate::operation::describe_ml_models::_describe_ml_models_input::DescribeMlModelsInput;
+
+pub use crate::operation::describe_ml_models::_describe_ml_models_output::DescribeMlModelsOutput;
 
 mod _describe_ml_models_input;
 

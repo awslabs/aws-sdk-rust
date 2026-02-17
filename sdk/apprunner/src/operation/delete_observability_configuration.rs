@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_observabili
     }
 }
 
-pub use crate::operation::delete_observability_configuration::_delete_observability_configuration_output::DeleteObservabilityConfigurationOutput;
-
 pub use crate::operation::delete_observability_configuration::_delete_observability_configuration_input::DeleteObservabilityConfigurationInput;
+
+pub use crate::operation::delete_observability_configuration::_delete_observability_configuration_output::DeleteObservabilityConfigurationOutput;
 
 mod _delete_observability_configuration_input;
 

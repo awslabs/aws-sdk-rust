@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_log_sources::
     }
 }
 
-pub use crate::operation::list_log_sources::_list_log_sources_output::ListLogSourcesOutput;
-
 pub use crate::operation::list_log_sources::_list_log_sources_input::ListLogSourcesInput;
+
+pub use crate::operation::list_log_sources::_list_log_sources_output::ListLogSourcesOutput;
 
 mod _list_log_sources_input;
 

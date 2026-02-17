@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_effectiv
     }
 }
 
-pub use crate::operation::batch_get_effective_lifecycle_policy::_batch_get_effective_lifecycle_policy_output::BatchGetEffectiveLifecyclePolicyOutput;
-
 pub use crate::operation::batch_get_effective_lifecycle_policy::_batch_get_effective_lifecycle_policy_input::BatchGetEffectiveLifecyclePolicyInput;
+
+pub use crate::operation::batch_get_effective_lifecycle_policy::_batch_get_effective_lifecycle_policy_output::BatchGetEffectiveLifecyclePolicyOutput;
 
 mod _batch_get_effective_lifecycle_policy_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_input_devic
     }
 }
 
-pub use crate::operation::cancel_input_device_transfer::_cancel_input_device_transfer_output::CancelInputDeviceTransferOutput;
-
 pub use crate::operation::cancel_input_device_transfer::_cancel_input_device_transfer_input::CancelInputDeviceTransferInput;
+
+pub use crate::operation::cancel_input_device_transfer::_cancel_input_device_transfer_output::CancelInputDeviceTransferOutput;
 
 mod _cancel_input_device_transfer_input;
 

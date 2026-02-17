@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bot_recom
     }
 }
 
-pub use crate::operation::describe_bot_recommendation::_describe_bot_recommendation_output::DescribeBotRecommendationOutput;
-
 pub use crate::operation::describe_bot_recommendation::_describe_bot_recommendation_input::DescribeBotRecommendationInput;
+
+pub use crate::operation::describe_bot_recommendation::_describe_bot_recommendation_output::DescribeBotRecommendationOutput;
 
 mod _describe_bot_recommendation_input;
 

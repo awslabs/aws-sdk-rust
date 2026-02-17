@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bot_channel_as
     }
 }
 
-pub use crate::operation::get_bot_channel_associations::_get_bot_channel_associations_output::GetBotChannelAssociationsOutput;
-
 pub use crate::operation::get_bot_channel_associations::_get_bot_channel_associations_input::GetBotChannelAssociationsInput;
+
+pub use crate::operation::get_bot_channel_associations::_get_bot_channel_associations_output::GetBotChannelAssociationsOutput;
 
 mod _get_bot_channel_associations_input;
 

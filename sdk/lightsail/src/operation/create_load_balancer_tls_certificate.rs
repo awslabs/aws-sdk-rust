@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_load_balanc
     }
 }
 
-pub use crate::operation::create_load_balancer_tls_certificate::_create_load_balancer_tls_certificate_output::CreateLoadBalancerTlsCertificateOutput;
-
 pub use crate::operation::create_load_balancer_tls_certificate::_create_load_balancer_tls_certificate_input::CreateLoadBalancerTlsCertificateInput;
+
+pub use crate::operation::create_load_balancer_tls_certificate::_create_load_balancer_tls_certificate_output::CreateLoadBalancerTlsCertificateOutput;
 
 mod _create_load_balancer_tls_certificate_input;
 

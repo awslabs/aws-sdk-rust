@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_resolver
     }
 }
 
-pub use crate::operation::associate_resolver_query_log_config::_associate_resolver_query_log_config_output::AssociateResolverQueryLogConfigOutput;
-
 pub use crate::operation::associate_resolver_query_log_config::_associate_resolver_query_log_config_input::AssociateResolverQueryLogConfigInput;
+
+pub use crate::operation::associate_resolver_query_log_config::_associate_resolver_query_log_config_output::AssociateResolverQueryLogConfigOutput;
 
 mod _associate_resolver_query_log_config_input;
 

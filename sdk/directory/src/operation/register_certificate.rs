@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_certifica
     }
 }
 
-pub use crate::operation::register_certificate::_register_certificate_output::RegisterCertificateOutput;
-
 pub use crate::operation::register_certificate::_register_certificate_input::RegisterCertificateInput;
+
+pub use crate::operation::register_certificate::_register_certificate_output::RegisterCertificateOutput;
 
 mod _register_certificate_input;
 

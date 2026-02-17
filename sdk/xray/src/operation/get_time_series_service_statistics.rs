@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_time_series_se
     }
 }
 
-pub use crate::operation::get_time_series_service_statistics::_get_time_series_service_statistics_output::GetTimeSeriesServiceStatisticsOutput;
-
 pub use crate::operation::get_time_series_service_statistics::_get_time_series_service_statistics_input::GetTimeSeriesServiceStatisticsInput;
+
+pub use crate::operation::get_time_series_service_statistics::_get_time_series_service_statistics_output::GetTimeSeriesServiceStatisticsOutput;
 
 mod _get_time_series_service_statistics_input;
 

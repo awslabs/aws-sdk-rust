@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_incident_re
     }
 }
 
-pub use crate::operation::delete_incident_record::_delete_incident_record_output::DeleteIncidentRecordOutput;
-
 pub use crate::operation::delete_incident_record::_delete_incident_record_input::DeleteIncidentRecordInput;
+
+pub use crate::operation::delete_incident_record::_delete_incident_record_output::DeleteIncidentRecordOutput;
 
 mod _delete_incident_record_input;
 

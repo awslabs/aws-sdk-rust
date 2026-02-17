@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_log_anomaly
     }
 }
 
-pub use crate::operation::create_log_anomaly_detector::_create_log_anomaly_detector_output::CreateLogAnomalyDetectorOutput;
-
 pub use crate::operation::create_log_anomaly_detector::_create_log_anomaly_detector_input::CreateLogAnomalyDetectorInput;
+
+pub use crate::operation::create_log_anomaly_detector::_create_log_anomaly_detector_output::CreateLogAnomalyDetectorOutput;
 
 mod _create_log_anomaly_detector_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_api_destina
     }
 }
 
-pub use crate::operation::update_api_destination::_update_api_destination_output::UpdateApiDestinationOutput;
-
 pub use crate::operation::update_api_destination::_update_api_destination_input::UpdateApiDestinationInput;
+
+pub use crate::operation::update_api_destination::_update_api_destination_output::UpdateApiDestinationOutput;
 
 mod _update_api_destination_input;
 

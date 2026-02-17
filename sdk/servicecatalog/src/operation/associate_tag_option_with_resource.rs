@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_tag_opti
     }
 }
 
-pub use crate::operation::associate_tag_option_with_resource::_associate_tag_option_with_resource_output::AssociateTagOptionWithResourceOutput;
-
 pub use crate::operation::associate_tag_option_with_resource::_associate_tag_option_with_resource_input::AssociateTagOptionWithResourceInput;
+
+pub use crate::operation::associate_tag_option_with_resource::_associate_tag_option_with_resource_output::AssociateTagOptionWithResourceOutput;
 
 mod _associate_tag_option_with_resource_input;
 

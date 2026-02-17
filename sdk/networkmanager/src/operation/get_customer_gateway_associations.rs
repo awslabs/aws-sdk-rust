@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_customer_gatew
     }
 }
 
-pub use crate::operation::get_customer_gateway_associations::_get_customer_gateway_associations_output::GetCustomerGatewayAssociationsOutput;
-
 pub use crate::operation::get_customer_gateway_associations::_get_customer_gateway_associations_input::GetCustomerGatewayAssociationsInput;
+
+pub use crate::operation::get_customer_gateway_associations::_get_customer_gateway_associations_output::GetCustomerGatewayAssociationsOutput;
 
 mod _get_customer_gateway_associations_input;
 

@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_database
     }
 }
 
-pub use crate::operation::delete_kx_database::_delete_kx_database_output::DeleteKxDatabaseOutput;
-
 pub use crate::operation::delete_kx_database::_delete_kx_database_input::DeleteKxDatabaseInput;
+
+pub use crate::operation::delete_kx_database::_delete_kx_database_output::DeleteKxDatabaseOutput;
 
 mod _delete_kx_database_input;
 

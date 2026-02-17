@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_smb::_describe_location_smb_output::DescribeLocationSmbOutput;
-
 pub use crate::operation::describe_location_smb::_describe_location_smb_input::DescribeLocationSmbInput;
+
+pub use crate::operation::describe_location_smb::_describe_location_smb_output::DescribeLocationSmbOutput;
 
 mod _describe_location_smb_input;
 

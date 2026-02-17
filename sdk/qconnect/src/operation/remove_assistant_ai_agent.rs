@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_assistant_a
     }
 }
 
-pub use crate::operation::remove_assistant_ai_agent::_remove_assistant_ai_agent_output::RemoveAssistantAiAgentOutput;
-
 pub use crate::operation::remove_assistant_ai_agent::_remove_assistant_ai_agent_input::RemoveAssistantAiAgentInput;
+
+pub use crate::operation::remove_assistant_ai_agent::_remove_assistant_ai_agent_output::RemoveAssistantAiAgentOutput;
 
 mod _remove_assistant_ai_agent_input;
 

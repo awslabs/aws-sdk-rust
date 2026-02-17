@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_db_instances::_describe_reserved_db_instances_output::DescribeReservedDbInstancesOutput;
-
 pub use crate::operation::describe_reserved_db_instances::_describe_reserved_db_instances_input::DescribeReservedDbInstancesInput;
+
+pub use crate::operation::describe_reserved_db_instances::_describe_reserved_db_instances_output::DescribeReservedDbInstancesOutput;
 
 mod _describe_reserved_db_instances_input;
 

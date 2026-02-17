@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_firewall_ru
     }
 }
 
-pub use crate::operation::create_firewall_rule_group::_create_firewall_rule_group_output::CreateFirewallRuleGroupOutput;
-
 pub use crate::operation::create_firewall_rule_group::_create_firewall_rule_group_input::CreateFirewallRuleGroupInput;
+
+pub use crate::operation::create_firewall_rule_group::_create_firewall_rule_group_output::CreateFirewallRuleGroupOutput;
 
 mod _create_firewall_rule_group_input;
 

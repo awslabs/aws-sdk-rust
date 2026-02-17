@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_partner_e
     }
 }
 
-pub use crate::operation::describe_partner_event_source::_describe_partner_event_source_output::DescribePartnerEventSourceOutput;
-
 pub use crate::operation::describe_partner_event_source::_describe_partner_event_source_input::DescribePartnerEventSourceInput;
+
+pub use crate::operation::describe_partner_event_source::_describe_partner_event_source_output::DescribePartnerEventSourceOutput;
 
 mod _describe_partner_event_source_input;
 

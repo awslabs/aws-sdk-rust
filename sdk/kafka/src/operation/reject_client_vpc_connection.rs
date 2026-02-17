@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_client_vpc_
     }
 }
 
-pub use crate::operation::reject_client_vpc_connection::_reject_client_vpc_connection_output::RejectClientVpcConnectionOutput;
-
 pub use crate::operation::reject_client_vpc_connection::_reject_client_vpc_connection_input::RejectClientVpcConnectionInput;
+
+pub use crate::operation::reject_client_vpc_connection::_reject_client_vpc_connection_output::RejectClientVpcConnectionOutput;
 
 mod _reject_client_vpc_connection_input;
 

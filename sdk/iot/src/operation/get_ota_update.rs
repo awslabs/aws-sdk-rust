@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ota_update::Ge
     }
 }
 
-pub use crate::operation::get_ota_update::_get_ota_update_output::GetOtaUpdateOutput;
-
 pub use crate::operation::get_ota_update::_get_ota_update_input::GetOtaUpdateInput;
+
+pub use crate::operation::get_ota_update::_get_ota_update_output::GetOtaUpdateOutput;
 
 mod _get_ota_update_input;
 

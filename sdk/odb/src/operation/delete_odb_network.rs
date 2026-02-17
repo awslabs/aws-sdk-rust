@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_odb_network
     }
 }
 
-pub use crate::operation::delete_odb_network::_delete_odb_network_output::DeleteOdbNetworkOutput;
-
 pub use crate::operation::delete_odb_network::_delete_odb_network_input::DeleteOdbNetworkInput;
+
+pub use crate::operation::delete_odb_network::_delete_odb_network_output::DeleteOdbNetworkOutput;
 
 mod _delete_odb_network_input;
 

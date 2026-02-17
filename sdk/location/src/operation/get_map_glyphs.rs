@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_map_glyphs::Ge
     }
 }
 
-pub use crate::operation::get_map_glyphs::_get_map_glyphs_output::GetMapGlyphsOutput;
-
 pub use crate::operation::get_map_glyphs::_get_map_glyphs_input::GetMapGlyphsInput;
+
+pub use crate::operation::get_map_glyphs::_get_map_glyphs_output::GetMapGlyphsOutput;
 
 mod _get_map_glyphs_input;
 

@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_storage_len
     }
 }
 
-pub use crate::operation::create_storage_lens_group::_create_storage_lens_group_output::CreateStorageLensGroupOutput;
-
 pub use crate::operation::create_storage_lens_group::_create_storage_lens_group_input::CreateStorageLensGroupInput;
+
+pub use crate::operation::create_storage_lens_group::_create_storage_lens_group_output::CreateStorageLensGroupOutput;
 
 mod _create_storage_lens_group_input;
 

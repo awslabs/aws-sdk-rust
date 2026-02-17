@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_connectio
     }
 }
 
-pub use crate::operation::describe_connection_function::_describe_connection_function_output::DescribeConnectionFunctionOutput;
-
 pub use crate::operation::describe_connection_function::_describe_connection_function_input::DescribeConnectionFunctionInput;
+
+pub use crate::operation::describe_connection_function::_describe_connection_function_output::DescribeConnectionFunctionOutput;
 
 mod _describe_connection_function_input;
 

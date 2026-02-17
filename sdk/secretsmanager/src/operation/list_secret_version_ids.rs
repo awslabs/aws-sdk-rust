@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_secret_versio
     }
 }
 
-pub use crate::operation::list_secret_version_ids::_list_secret_version_ids_output::ListSecretVersionIdsOutput;
-
 pub use crate::operation::list_secret_version_ids::_list_secret_version_ids_input::ListSecretVersionIdsInput;
+
+pub use crate::operation::list_secret_version_ids::_list_secret_version_ids_output::ListSecretVersionIdsOutput;
 
 mod _list_secret_version_ids_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bulk_impo
     }
 }
 
-pub use crate::operation::describe_bulk_import_job::_describe_bulk_import_job_output::DescribeBulkImportJobOutput;
-
 pub use crate::operation::describe_bulk_import_job::_describe_bulk_import_job_input::DescribeBulkImportJobInput;
+
+pub use crate::operation::describe_bulk_import_job::_describe_bulk_import_job_output::DescribeBulkImportJobOutput;
 
 mod _describe_bulk_import_job_input;
 

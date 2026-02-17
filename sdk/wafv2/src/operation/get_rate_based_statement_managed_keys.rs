@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rate_based_sta
     }
 }
 
-pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based_statement_managed_keys_output::GetRateBasedStatementManagedKeysOutput;
-
 pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based_statement_managed_keys_input::GetRateBasedStatementManagedKeysInput;
+
+pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based_statement_managed_keys_output::GetRateBasedStatementManagedKeysOutput;
 
 mod _get_rate_based_statement_managed_keys_input;
 

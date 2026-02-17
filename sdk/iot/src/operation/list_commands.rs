@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_commands::Lis
     }
 }
 
-pub use crate::operation::list_commands::_list_commands_output::ListCommandsOutput;
-
 pub use crate::operation::list_commands::_list_commands_input::ListCommandsInput;
+
+pub use crate::operation::list_commands::_list_commands_output::ListCommandsOutput;
 
 mod _list_commands_input;
 

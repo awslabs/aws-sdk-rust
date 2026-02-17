@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_lexicon::PutLe
     }
 }
 
-pub use crate::operation::put_lexicon::_put_lexicon_output::PutLexiconOutput;
-
 pub use crate::operation::put_lexicon::_put_lexicon_input::PutLexiconInput;
+
+pub use crate::operation::put_lexicon::_put_lexicon_output::PutLexiconOutput;
 
 mod _put_lexicon_input;
 

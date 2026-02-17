@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_node_conf
     }
 }
 
-pub use crate::operation::describe_node_configuration_options::_describe_node_configuration_options_output::DescribeNodeConfigurationOptionsOutput;
-
 pub use crate::operation::describe_node_configuration_options::_describe_node_configuration_options_input::DescribeNodeConfigurationOptionsInput;
+
+pub use crate::operation::describe_node_configuration_options::_describe_node_configuration_options_output::DescribeNodeConfigurationOptionsOutput;
 
 mod _describe_node_configuration_options_input;
 

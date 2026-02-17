@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_entity_defi
     }
 }
 
-pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_output::UploadEntityDefinitionsOutput;
-
 pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_input::UploadEntityDefinitionsInput;
+
+pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_output::UploadEntityDefinitionsOutput;
 
 mod _upload_entity_definitions_input;
 

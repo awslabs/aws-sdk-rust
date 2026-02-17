@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recommendat
     }
 }
 
-pub use crate::operation::update_recommendation_lifecycle::_update_recommendation_lifecycle_output::UpdateRecommendationLifecycleOutput;
-
 pub use crate::operation::update_recommendation_lifecycle::_update_recommendation_lifecycle_input::UpdateRecommendationLifecycleInput;
+
+pub use crate::operation::update_recommendation_lifecycle::_update_recommendation_lifecycle_output::UpdateRecommendationLifecycleOutput;
 
 mod _update_recommendation_lifecycle_input;
 

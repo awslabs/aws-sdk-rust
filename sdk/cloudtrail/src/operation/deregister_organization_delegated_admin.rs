@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_organiz
     }
 }
 
-pub use crate::operation::deregister_organization_delegated_admin::_deregister_organization_delegated_admin_output::DeregisterOrganizationDelegatedAdminOutput;
-
 pub use crate::operation::deregister_organization_delegated_admin::_deregister_organization_delegated_admin_input::DeregisterOrganizationDelegatedAdminInput;
+
+pub use crate::operation::deregister_organization_delegated_admin::_deregister_organization_delegated_admin_output::DeregisterOrganizationDelegatedAdminOutput;
 
 mod _deregister_organization_delegated_admin_input;
 

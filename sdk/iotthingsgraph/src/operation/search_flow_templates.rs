@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_flow_templa
     }
 }
 
-pub use crate::operation::search_flow_templates::_search_flow_templates_output::SearchFlowTemplatesOutput;
-
 pub use crate::operation::search_flow_templates::_search_flow_templates_input::SearchFlowTemplatesInput;
+
+pub use crate::operation::search_flow_templates::_search_flow_templates_output::SearchFlowTemplatesOutput;
 
 mod _search_flow_templates_input;
 

@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::close_tunnel::Clos
     }
 }
 
-pub use crate::operation::close_tunnel::_close_tunnel_output::CloseTunnelOutput;
-
 pub use crate::operation::close_tunnel::_close_tunnel_input::CloseTunnelInput;
+
+pub use crate::operation::close_tunnel::_close_tunnel_output::CloseTunnelOutput;
 
 mod _close_tunnel_input;
 

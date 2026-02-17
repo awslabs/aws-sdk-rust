@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scraper::
     }
 }
 
-pub use crate::operation::describe_scraper::_describe_scraper_output::DescribeScraperOutput;
-
 pub use crate::operation::describe_scraper::_describe_scraper_input::DescribeScraperInput;
+
+pub use crate::operation::describe_scraper::_describe_scraper_output::DescribeScraperOutput;
 
 mod _describe_scraper_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_directory
     }
 }
 
-pub use crate::operation::describe_directory_data_access::_describe_directory_data_access_output::DescribeDirectoryDataAccessOutput;
-
 pub use crate::operation::describe_directory_data_access::_describe_directory_data_access_input::DescribeDirectoryDataAccessInput;
+
+pub use crate::operation::describe_directory_data_access::_describe_directory_data_access_output::DescribeDirectoryDataAccessOutput;
 
 mod _describe_directory_data_access_input;
 

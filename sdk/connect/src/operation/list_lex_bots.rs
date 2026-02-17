@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lex_bots::Lis
     }
 }
 
-pub use crate::operation::list_lex_bots::_list_lex_bots_output::ListLexBotsOutput;
-
 pub use crate::operation::list_lex_bots::_list_lex_bots_input::ListLexBotsInput;
+
+pub use crate::operation::list_lex_bots::_list_lex_bots_output::ListLexBotsOutput;
 
 mod _list_lex_bots_input;
 

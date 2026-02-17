@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_radius::Upd
     }
 }
 
-pub use crate::operation::update_radius::_update_radius_output::UpdateRadiusOutput;
-
 pub use crate::operation::update_radius::_update_radius_input::UpdateRadiusInput;
+
+pub use crate::operation::update_radius::_update_radius_output::UpdateRadiusOutput;
 
 mod _update_radius_input;
 

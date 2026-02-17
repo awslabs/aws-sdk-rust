@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_task_definiti
     }
 }
 
-pub use crate::operation::list_task_definitions::_list_task_definitions_output::ListTaskDefinitionsOutput;
-
 pub use crate::operation::list_task_definitions::_list_task_definitions_input::ListTaskDefinitionsInput;
+
+pub use crate::operation::list_task_definitions::_list_task_definitions_output::ListTaskDefinitionsOutput;
 
 mod _list_task_definitions_input;
 

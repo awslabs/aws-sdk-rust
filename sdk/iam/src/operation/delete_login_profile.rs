@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_login_profi
     }
 }
 
-pub use crate::operation::delete_login_profile::_delete_login_profile_output::DeleteLoginProfileOutput;
-
 pub use crate::operation::delete_login_profile::_delete_login_profile_input::DeleteLoginProfileInput;
+
+pub use crate::operation::delete_login_profile::_delete_login_profile_output::DeleteLoginProfileOutput;
 
 mod _delete_login_profile_input;
 

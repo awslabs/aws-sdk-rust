@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::abort_vault_lock::
     }
 }
 
-pub use crate::operation::abort_vault_lock::_abort_vault_lock_output::AbortVaultLockOutput;
-
 pub use crate::operation::abort_vault_lock::_abort_vault_lock_input::AbortVaultLockInput;
+
+pub use crate::operation::abort_vault_lock::_abort_vault_lock_output::AbortVaultLockOutput;
 
 mod _abort_vault_lock_input;
 

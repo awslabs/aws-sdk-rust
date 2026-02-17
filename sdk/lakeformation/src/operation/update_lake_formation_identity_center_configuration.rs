@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_lake_formation_identity_center_configuration::_update_lake_formation_identity_center_configuration_output::UpdateLakeFormationIdentityCenterConfigurationOutput;
-
 pub use crate::operation::update_lake_formation_identity_center_configuration::_update_lake_formation_identity_center_configuration_input::UpdateLakeFormationIdentityCenterConfigurationInput;
+
+pub use crate::operation::update_lake_formation_identity_center_configuration::_update_lake_formation_identity_center_configuration_output::UpdateLakeFormationIdentityCenterConfigurationOutput;
 
 mod _update_lake_formation_identity_center_configuration_input;
 

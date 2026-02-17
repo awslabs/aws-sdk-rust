@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_stream_sessi
     }
 }
 
-pub use crate::operation::start_stream_session::_start_stream_session_output::StartStreamSessionOutput;
-
 pub use crate::operation::start_stream_session::_start_stream_session_input::StartStreamSessionInput;
+
+pub use crate::operation::start_stream_session::_start_stream_session_output::StartStreamSessionOutput;
 
 mod _start_stream_session_input;
 

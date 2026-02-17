@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_protect_configuration_rule_set_number_override::_put_protect_configuration_rule_set_number_override_output::PutProtectConfigurationRuleSetNumberOverrideOutput;
-
 pub use crate::operation::put_protect_configuration_rule_set_number_override::_put_protect_configuration_rule_set_number_override_input::PutProtectConfigurationRuleSetNumberOverrideInput;
+
+pub use crate::operation::put_protect_configuration_rule_set_number_override::_put_protect_configuration_rule_set_number_override_output::PutProtectConfigurationRuleSetNumberOverrideOutput;
 
 mod _put_protect_configuration_rule_set_number_override_input;
 

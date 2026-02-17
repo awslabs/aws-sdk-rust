@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_macie_sessi
     }
 }
 
-pub use crate::operation::update_macie_session::_update_macie_session_output::UpdateMacieSessionOutput;
-
 pub use crate::operation::update_macie_session::_update_macie_session_input::UpdateMacieSessionInput;
+
+pub use crate::operation::update_macie_session::_update_macie_session_output::UpdateMacieSessionOutput;
 
 mod _update_macie_session_input;
 

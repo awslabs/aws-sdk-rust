@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_availabil
     }
 }
 
-pub use crate::operation::describe_availability_zones::_describe_availability_zones_output::DescribeAvailabilityZonesOutput;
-
 pub use crate::operation::describe_availability_zones::_describe_availability_zones_input::DescribeAvailabilityZonesInput;
+
+pub use crate::operation::describe_availability_zones::_describe_availability_zones_output::DescribeAvailabilityZonesOutput;
 
 mod _describe_availability_zones_input;
 

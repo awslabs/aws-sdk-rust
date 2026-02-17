@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pipeline_defin
     }
 }
 
-pub use crate::operation::get_pipeline_definition::_get_pipeline_definition_output::GetPipelineDefinitionOutput;
-
 pub use crate::operation::get_pipeline_definition::_get_pipeline_definition_input::GetPipelineDefinitionInput;
+
+pub use crate::operation::get_pipeline_definition::_get_pipeline_definition_output::GetPipelineDefinitionOutput;
 
 mod _get_pipeline_definition_input;
 

@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sampling_stati
     }
 }
 
-pub use crate::operation::get_sampling_statistic_summaries::_get_sampling_statistic_summaries_output::GetSamplingStatisticSummariesOutput;
-
 pub use crate::operation::get_sampling_statistic_summaries::_get_sampling_statistic_summaries_input::GetSamplingStatisticSummariesInput;
+
+pub use crate::operation::get_sampling_statistic_summaries::_get_sampling_statistic_summaries_output::GetSamplingStatisticSummariesOutput;
 
 mod _get_sampling_statistic_summaries_input;
 

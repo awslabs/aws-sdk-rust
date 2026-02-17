@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_insight::Cr
     }
 }
 
-pub use crate::operation::create_insight::_create_insight_output::CreateInsightOutput;
-
 pub use crate::operation::create_insight::_create_insight_input::CreateInsightInput;
+
+pub use crate::operation::create_insight::_create_insight_output::CreateInsightOutput;
 
 mod _create_insight_input;
 

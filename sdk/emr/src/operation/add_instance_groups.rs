@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_instance_group
     }
 }
 
-pub use crate::operation::add_instance_groups::_add_instance_groups_output::AddInstanceGroupsOutput;
-
 pub use crate::operation::add_instance_groups::_add_instance_groups_input::AddInstanceGroupsInput;
+
+pub use crate::operation::add_instance_groups::_add_instance_groups_output::AddInstanceGroupsOutput;
 
 mod _add_instance_groups_input;
 

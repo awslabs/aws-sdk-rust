@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_gatew
     }
 }
 
-pub use crate::operation::disassociate_gateway_from_server::_disassociate_gateway_from_server_output::DisassociateGatewayFromServerOutput;
-
 pub use crate::operation::disassociate_gateway_from_server::_disassociate_gateway_from_server_input::DisassociateGatewayFromServerInput;
+
+pub use crate::operation::disassociate_gateway_from_server::_disassociate_gateway_from_server_output::DisassociateGatewayFromServerOutput;
 
 mod _disassociate_gateway_from_server_input;
 

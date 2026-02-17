@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_restore_acc
     }
 }
 
-pub use crate::operation::revoke_restore_access_backup_vault::_revoke_restore_access_backup_vault_output::RevokeRestoreAccessBackupVaultOutput;
-
 pub use crate::operation::revoke_restore_access_backup_vault::_revoke_restore_access_backup_vault_input::RevokeRestoreAccessBackupVaultInput;
+
+pub use crate::operation::revoke_restore_access_backup_vault::_revoke_restore_access_backup_vault_output::RevokeRestoreAccessBackupVaultOutput;
 
 mod _revoke_restore_access_backup_vault_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ingestion::S
     }
 }
 
-pub use crate::operation::start_ingestion::_start_ingestion_output::StartIngestionOutput;
-
 pub use crate::operation::start_ingestion::_start_ingestion_input::StartIngestionInput;
+
+pub use crate::operation::start_ingestion::_start_ingestion_output::StartIngestionOutput;
 
 mod _start_ingestion_input;
 

@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_vpc_endpoint_service_payer_responsibility::_modify_vpc_endpoint_service_payer_responsibility_output::ModifyVpcEndpointServicePayerResponsibilityOutput;
-
 pub use crate::operation::modify_vpc_endpoint_service_payer_responsibility::_modify_vpc_endpoint_service_payer_responsibility_input::ModifyVpcEndpointServicePayerResponsibilityInput;
+
+pub use crate::operation::modify_vpc_endpoint_service_payer_responsibility::_modify_vpc_endpoint_service_payer_responsibility_output::ModifyVpcEndpointServicePayerResponsibilityOutput;
 
 mod _modify_vpc_endpoint_service_payer_responsibility_input;
 

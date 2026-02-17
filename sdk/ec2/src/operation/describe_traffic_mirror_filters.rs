@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_traffic_m
     }
 }
 
-pub use crate::operation::describe_traffic_mirror_filters::_describe_traffic_mirror_filters_output::DescribeTrafficMirrorFiltersOutput;
-
 pub use crate::operation::describe_traffic_mirror_filters::_describe_traffic_mirror_filters_input::DescribeTrafficMirrorFiltersInput;
+
+pub use crate::operation::describe_traffic_mirror_filters::_describe_traffic_mirror_filters_output::DescribeTrafficMirrorFiltersOutput;
 
 mod _describe_traffic_mirror_filters_input;
 

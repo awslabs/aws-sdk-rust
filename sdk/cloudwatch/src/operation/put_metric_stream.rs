@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metric_stream:
     }
 }
 
-pub use crate::operation::put_metric_stream::_put_metric_stream_output::PutMetricStreamOutput;
-
 pub use crate::operation::put_metric_stream::_put_metric_stream_input::PutMetricStreamInput;
+
+pub use crate::operation::put_metric_stream::_put_metric_stream_output::PutMetricStreamOutput;
 
 mod _put_metric_stream_input;
 

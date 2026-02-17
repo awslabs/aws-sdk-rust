@@ -639,9 +639,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_all_feature
     }
 }
 
-pub use crate::operation::enable_all_features::_enable_all_features_output::EnableAllFeaturesOutput;
-
 pub use crate::operation::enable_all_features::_enable_all_features_input::EnableAllFeaturesInput;
+
+pub use crate::operation::enable_all_features::_enable_all_features_output::EnableAllFeaturesOutput;
 
 mod _enable_all_features_input;
 

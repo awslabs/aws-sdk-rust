@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_execution
     }
 }
 
-pub use crate::operation::get_flow_execution::_get_flow_execution_output::GetFlowExecutionOutput;
-
 pub use crate::operation::get_flow_execution::_get_flow_execution_input::GetFlowExecutionInput;
+
+pub use crate::operation::get_flow_execution::_get_flow_execution_output::GetFlowExecutionOutput;
 
 mod _get_flow_execution_input;
 

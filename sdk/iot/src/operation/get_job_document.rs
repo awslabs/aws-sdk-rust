@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_document::
     }
 }
 
-pub use crate::operation::get_job_document::_get_job_document_output::GetJobDocumentOutput;
-
 pub use crate::operation::get_job_document::_get_job_document_input::GetJobDocumentInput;
+
+pub use crate::operation::get_job_document::_get_job_document_output::GetJobDocumentOutput;
 
 mod _get_job_document_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_instance::C
     }
 }
 
-pub use crate::operation::create_instance::_create_instance_output::CreateInstanceOutput;
-
 pub use crate::operation::create_instance::_create_instance_input::CreateInstanceInput;
+
+pub use crate::operation::create_instance::_create_instance_output::CreateInstanceOutput;
 
 mod _create_instance_input;
 

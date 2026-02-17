@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cross_accou
     }
 }
 
-pub use crate::operation::delete_cross_account_authorization::_delete_cross_account_authorization_output::DeleteCrossAccountAuthorizationOutput;
-
 pub use crate::operation::delete_cross_account_authorization::_delete_cross_account_authorization_input::DeleteCrossAccountAuthorizationInput;
+
+pub use crate::operation::delete_cross_account_authorization::_delete_cross_account_authorization_output::DeleteCrossAccountAuthorizationOutput;
 
 mod _delete_cross_account_authorization_input;
 

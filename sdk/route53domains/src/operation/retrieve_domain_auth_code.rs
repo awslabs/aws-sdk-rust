@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve_domain_au
     }
 }
 
-pub use crate::operation::retrieve_domain_auth_code::_retrieve_domain_auth_code_output::RetrieveDomainAuthCodeOutput;
-
 pub use crate::operation::retrieve_domain_auth_code::_retrieve_domain_auth_code_input::RetrieveDomainAuthCodeInput;
+
+pub use crate::operation::retrieve_domain_auth_code::_retrieve_domain_auth_code_output::RetrieveDomainAuthCodeOutput;
 
 mod _retrieve_domain_auth_code_input;
 

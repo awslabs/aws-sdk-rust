@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fleet_advis
     }
 }
 
-pub use crate::operation::create_fleet_advisor_collector::_create_fleet_advisor_collector_output::CreateFleetAdvisorCollectorOutput;
-
 pub use crate::operation::create_fleet_advisor_collector::_create_fleet_advisor_collector_input::CreateFleetAdvisorCollectorInput;
+
+pub use crate::operation::create_fleet_advisor_collector::_create_fleet_advisor_collector_output::CreateFleetAdvisorCollectorOutput;
 
 mod _create_fleet_advisor_collector_input;
 

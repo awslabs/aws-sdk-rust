@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_durable_execut
     }
 }
 
-pub use crate::operation::get_durable_execution_state::_get_durable_execution_state_output::GetDurableExecutionStateOutput;
-
 pub use crate::operation::get_durable_execution_state::_get_durable_execution_state_input::GetDurableExecutionStateInput;
+
+pub use crate::operation::get_durable_execution_state::_get_durable_execution_state_output::GetDurableExecutionStateOutput;
 
 mod _get_durable_execution_state_input;
 

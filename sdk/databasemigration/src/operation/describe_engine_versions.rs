@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_engine_ve
     }
 }
 
-pub use crate::operation::describe_engine_versions::_describe_engine_versions_output::DescribeEngineVersionsOutput;
-
 pub use crate::operation::describe_engine_versions::_describe_engine_versions_input::DescribeEngineVersionsInput;
+
+pub use crate::operation::describe_engine_versions::_describe_engine_versions_output::DescribeEngineVersionsOutput;
 
 mod _describe_engine_versions_input;
 

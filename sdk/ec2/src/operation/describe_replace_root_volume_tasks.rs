@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replace_r
     }
 }
 
-pub use crate::operation::describe_replace_root_volume_tasks::_describe_replace_root_volume_tasks_output::DescribeReplaceRootVolumeTasksOutput;
-
 pub use crate::operation::describe_replace_root_volume_tasks::_describe_replace_root_volume_tasks_input::DescribeReplaceRootVolumeTasksInput;
+
+pub use crate::operation::describe_replace_root_volume_tasks::_describe_replace_root_volume_tasks_output::DescribeReplaceRootVolumeTasksOutput;
 
 mod _describe_replace_root_volume_tasks_input;
 

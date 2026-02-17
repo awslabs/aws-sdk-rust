@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_p
     }
 }
 
-pub use crate::operation::list_environment_profiles::_list_environment_profiles_output::ListEnvironmentProfilesOutput;
-
 pub use crate::operation::list_environment_profiles::_list_environment_profiles_input::ListEnvironmentProfilesInput;
+
+pub use crate::operation::list_environment_profiles::_list_environment_profiles_output::ListEnvironmentProfilesOutput;
 
 mod _list_environment_profiles_input;
 

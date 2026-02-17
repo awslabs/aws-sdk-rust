@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_secrets::List
     }
 }
 
-pub use crate::operation::list_secrets::_list_secrets_output::ListSecretsOutput;
-
 pub use crate::operation::list_secrets::_list_secrets_input::ListSecretsInput;
+
+pub use crate::operation::list_secrets::_list_secrets_output::ListSecretsOutput;
 
 mod _list_secrets_input;
 

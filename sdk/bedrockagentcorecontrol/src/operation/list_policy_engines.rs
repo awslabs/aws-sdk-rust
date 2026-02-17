@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_engine
     }
 }
 
-pub use crate::operation::list_policy_engines::_list_policy_engines_output::ListPolicyEnginesOutput;
-
 pub use crate::operation::list_policy_engines::_list_policy_engines_input::ListPolicyEnginesInput;
+
+pub use crate::operation::list_policy_engines::_list_policy_engines_output::ListPolicyEnginesOutput;
 
 mod _list_policy_engines_input;
 

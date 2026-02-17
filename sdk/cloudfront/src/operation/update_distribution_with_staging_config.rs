@@ -1023,9 +1023,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_distributio
     }
 }
 
-pub use crate::operation::update_distribution_with_staging_config::_update_distribution_with_staging_config_output::UpdateDistributionWithStagingConfigOutput;
-
 pub use crate::operation::update_distribution_with_staging_config::_update_distribution_with_staging_config_input::UpdateDistributionWithStagingConfigInput;
+
+pub use crate::operation::update_distribution_with_staging_config::_update_distribution_with_staging_config_output::UpdateDistributionWithStagingConfigOutput;
 
 mod _update_distribution_with_staging_config_input;
 

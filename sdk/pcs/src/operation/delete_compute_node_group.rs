@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_compute_nod
     }
 }
 
-pub use crate::operation::delete_compute_node_group::_delete_compute_node_group_output::DeleteComputeNodeGroupOutput;
-
 pub use crate::operation::delete_compute_node_group::_delete_compute_node_group_input::DeleteComputeNodeGroupInput;
+
+pub use crate::operation::delete_compute_node_group::_delete_compute_node_group_output::DeleteComputeNodeGroupOutput;
 
 mod _delete_compute_node_group_input;
 

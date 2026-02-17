@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::is_authorized::IsA
     }
 }
 
-pub use crate::operation::is_authorized::_is_authorized_output::IsAuthorizedOutput;
-
 pub use crate::operation::is_authorized::_is_authorized_input::IsAuthorizedInput;
+
+pub use crate::operation::is_authorized::_is_authorized_output::IsAuthorizedOutput;
 
 mod _is_authorized_input;
 

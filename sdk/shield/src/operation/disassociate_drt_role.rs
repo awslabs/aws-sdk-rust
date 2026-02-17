@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_drt_r
     }
 }
 
-pub use crate::operation::disassociate_drt_role::_disassociate_drt_role_output::DisassociateDrtRoleOutput;
-
 pub use crate::operation::disassociate_drt_role::_disassociate_drt_role_input::DisassociateDrtRoleInput;
+
+pub use crate::operation::disassociate_drt_role::_disassociate_drt_role_output::DisassociateDrtRoleOutput;
 
 mod _disassociate_drt_role_input;
 

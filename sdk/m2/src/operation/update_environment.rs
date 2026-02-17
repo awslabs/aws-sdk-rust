@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_environment
     }
 }
 
-pub use crate::operation::update_environment::_update_environment_output::UpdateEnvironmentOutput;
-
 pub use crate::operation::update_environment::_update_environment_input::UpdateEnvironmentInput;
+
+pub use crate::operation::update_environment::_update_environment_output::UpdateEnvironmentOutput;
 
 mod _update_environment_input;
 

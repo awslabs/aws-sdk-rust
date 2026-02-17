@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_utterances:
     }
 }
 
-pub use crate::operation::delete_utterances::_delete_utterances_output::DeleteUtterancesOutput;
-
 pub use crate::operation::delete_utterances::_delete_utterances_input::DeleteUtterancesInput;
+
+pub use crate::operation::delete_utterances::_delete_utterances_output::DeleteUtterancesOutput;
 
 mod _delete_utterances_input;
 

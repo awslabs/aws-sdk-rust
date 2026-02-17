@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dataset_gro
     }
 }
 
-pub use crate::operation::delete_dataset_group::_delete_dataset_group_output::DeleteDatasetGroupOutput;
-
 pub use crate::operation::delete_dataset_group::_delete_dataset_group_input::DeleteDatasetGroupInput;
+
+pub use crate::operation::delete_dataset_group::_delete_dataset_group_output::DeleteDatasetGroupOutput;
 
 mod _delete_dataset_group_input;
 

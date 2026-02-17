@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_member_a
     }
 }
 
-pub use crate::operation::batch_get_member_account_details::_batch_get_member_account_details_output::BatchGetMemberAccountDetailsOutput;
-
 pub use crate::operation::batch_get_member_account_details::_batch_get_member_account_details_input::BatchGetMemberAccountDetailsInput;
+
+pub use crate::operation::batch_get_member_account_details::_batch_get_member_account_details_output::BatchGetMemberAccountDetailsOutput;
 
 mod _batch_get_member_account_details_input;
 

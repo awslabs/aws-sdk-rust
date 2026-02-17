@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_batch_predi
     }
 }
 
-pub use crate::operation::delete_batch_prediction_job::_delete_batch_prediction_job_output::DeleteBatchPredictionJobOutput;
-
 pub use crate::operation::delete_batch_prediction_job::_delete_batch_prediction_job_input::DeleteBatchPredictionJobInput;
+
+pub use crate::operation::delete_batch_prediction_job::_delete_batch_prediction_job_output::DeleteBatchPredictionJobOutput;
 
 mod _delete_batch_prediction_job_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_procurement
     }
 }
 
-pub use crate::operation::create_procurement_portal_preference::_create_procurement_portal_preference_output::CreateProcurementPortalPreferenceOutput;
-
 pub use crate::operation::create_procurement_portal_preference::_create_procurement_portal_preference_input::CreateProcurementPortalPreferenceInput;
+
+pub use crate::operation::create_procurement_portal_preference::_create_procurement_portal_preference_output::CreateProcurementPortalPreferenceOutput;
 
 mod _create_procurement_portal_preference_input;
 

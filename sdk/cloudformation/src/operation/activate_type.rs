@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_type::Act
     }
 }
 
-pub use crate::operation::activate_type::_activate_type_output::ActivateTypeOutput;
-
 pub use crate::operation::activate_type::_activate_type_input::ActivateTypeInput;
+
+pub use crate::operation::activate_type::_activate_type_output::ActivateTypeOutput;
 
 mod _activate_type_input;
 

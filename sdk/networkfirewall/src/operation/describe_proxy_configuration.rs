@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_proxy_con
     }
 }
 
-pub use crate::operation::describe_proxy_configuration::_describe_proxy_configuration_output::DescribeProxyConfigurationOutput;
-
 pub use crate::operation::describe_proxy_configuration::_describe_proxy_configuration_input::DescribeProxyConfigurationInput;
+
+pub use crate::operation::describe_proxy_configuration::_describe_proxy_configuration_output::DescribeProxyConfigurationOutput;
 
 mod _describe_proxy_configuration_input;
 

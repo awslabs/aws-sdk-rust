@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_component_configuration_recommendation::_describe_component_configuration_recommendation_output::DescribeComponentConfigurationRecommendationOutput;
-
 pub use crate::operation::describe_component_configuration_recommendation::_describe_component_configuration_recommendation_input::DescribeComponentConfigurationRecommendationInput;
+
+pub use crate::operation::describe_component_configuration_recommendation::_describe_component_configuration_recommendation_output::DescribeComponentConfigurationRecommendationOutput;
 
 mod _describe_component_configuration_recommendation_input;
 

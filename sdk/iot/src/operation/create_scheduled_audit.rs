@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scheduled_a
     }
 }
 
-pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_output::CreateScheduledAuditOutput;
-
 pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_input::CreateScheduledAuditInput;
+
+pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_output::CreateScheduledAuditOutput;
 
 mod _create_scheduled_audit_input;
 

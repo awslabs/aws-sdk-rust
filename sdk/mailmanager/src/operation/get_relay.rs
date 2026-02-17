@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relay::GetRela
     }
 }
 
-pub use crate::operation::get_relay::_get_relay_output::GetRelayOutput;
-
 pub use crate::operation::get_relay::_get_relay_input::GetRelayInput;
+
+pub use crate::operation::get_relay::_get_relay_output::GetRelayOutput;
 
 mod _get_relay_input;
 

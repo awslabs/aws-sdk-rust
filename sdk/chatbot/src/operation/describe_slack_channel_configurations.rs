@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_slack_cha
     }
 }
 
-pub use crate::operation::describe_slack_channel_configurations::_describe_slack_channel_configurations_output::DescribeSlackChannelConfigurationsOutput;
-
 pub use crate::operation::describe_slack_channel_configurations::_describe_slack_channel_configurations_input::DescribeSlackChannelConfigurationsInput;
+
+pub use crate::operation::describe_slack_channel_configurations::_describe_slack_channel_configurations_output::DescribeSlackChannelConfigurationsOutput;
 
 mod _describe_slack_channel_configurations_input;
 

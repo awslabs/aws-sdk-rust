@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_index
     }
 }
 
-pub use crate::operation::list_service_indexes::_list_service_indexes_output::ListServiceIndexesOutput;
-
 pub use crate::operation::list_service_indexes::_list_service_indexes_input::ListServiceIndexesInput;
+
+pub use crate::operation::list_service_indexes::_list_service_indexes_output::ListServiceIndexesOutput;
 
 mod _list_service_indexes_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recommended_a
     }
 }
 
-pub use crate::operation::list_recommended_actions::_list_recommended_actions_output::ListRecommendedActionsOutput;
-
 pub use crate::operation::list_recommended_actions::_list_recommended_actions_input::ListRecommendedActionsInput;
+
+pub use crate::operation::list_recommended_actions::_list_recommended_actions_output::ListRecommendedActionsOutput;
 
 mod _list_recommended_actions_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_grant::Revo
     }
 }
 
-pub use crate::operation::revoke_grant::_revoke_grant_output::RevokeGrantOutput;
-
 pub use crate::operation::revoke_grant::_revoke_grant_input::RevokeGrantInput;
+
+pub use crate::operation::revoke_grant::_revoke_grant_output::RevokeGrantOutput;
 
 mod _revoke_grant_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_product_pag
     }
 }
 
-pub use crate::operation::create_product_page::_create_product_page_output::CreateProductPageOutput;
-
 pub use crate::operation::create_product_page::_create_product_page_input::CreateProductPageInput;
+
+pub use crate::operation::create_product_page::_create_product_page_output::CreateProductPageOutput;
 
 mod _create_product_page_input;
 

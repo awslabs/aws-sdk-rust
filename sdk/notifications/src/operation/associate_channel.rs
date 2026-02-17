@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_channel:
     }
 }
 
-pub use crate::operation::associate_channel::_associate_channel_output::AssociateChannelOutput;
-
 pub use crate::operation::associate_channel::_associate_channel_input::AssociateChannelInput;
+
+pub use crate::operation::associate_channel::_associate_channel_output::AssociateChannelOutput;
 
 mod _associate_channel_input;
 

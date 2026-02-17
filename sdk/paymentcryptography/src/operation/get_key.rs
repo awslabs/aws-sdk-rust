@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_key::GetKeyErr
     }
 }
 
-pub use crate::operation::get_key::_get_key_output::GetKeyOutput;
-
 pub use crate::operation::get_key::_get_key_input::GetKeyInput;
+
+pub use crate::operation::get_key::_get_key_output::GetKeyOutput;
 
 mod _get_key_input;
 

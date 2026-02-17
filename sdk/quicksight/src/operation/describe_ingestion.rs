@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ingestion
     }
 }
 
-pub use crate::operation::describe_ingestion::_describe_ingestion_output::DescribeIngestionOutput;
-
 pub use crate::operation::describe_ingestion::_describe_ingestion_input::DescribeIngestionInput;
+
+pub use crate::operation::describe_ingestion::_describe_ingestion_output::DescribeIngestionOutput;
 
 mod _describe_ingestion_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workspace
     }
 }
 
-pub use crate::operation::describe_workspace_authentication::_describe_workspace_authentication_output::DescribeWorkspaceAuthenticationOutput;
-
 pub use crate::operation::describe_workspace_authentication::_describe_workspace_authentication_input::DescribeWorkspaceAuthenticationInput;
+
+pub use crate::operation::describe_workspace_authentication::_describe_workspace_authentication_output::DescribeWorkspaceAuthenticationOutput;
 
 mod _describe_workspace_authentication_input;
 

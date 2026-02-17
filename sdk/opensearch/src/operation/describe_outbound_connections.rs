@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_outbound_
     }
 }
 
-pub use crate::operation::describe_outbound_connections::_describe_outbound_connections_output::DescribeOutboundConnectionsOutput;
-
 pub use crate::operation::describe_outbound_connections::_describe_outbound_connections_input::DescribeOutboundConnectionsInput;
+
+pub use crate::operation::describe_outbound_connections::_describe_outbound_connections_output::DescribeOutboundConnectionsOutput;
 
 mod _describe_outbound_connections_input;
 

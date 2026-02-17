@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compliance_it
     }
 }
 
-pub use crate::operation::list_compliance_items::_list_compliance_items_output::ListComplianceItemsOutput;
-
 pub use crate::operation::list_compliance_items::_list_compliance_items_input::ListComplianceItemsInput;
+
+pub use crate::operation::list_compliance_items::_list_compliance_items_output::ListComplianceItemsOutput;
 
 mod _list_compliance_items_input;
 

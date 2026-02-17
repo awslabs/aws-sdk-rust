@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_jobs::Des
     }
 }
 
-pub use crate::operation::describe_jobs::_describe_jobs_output::DescribeJobsOutput;
-
 pub use crate::operation::describe_jobs::_describe_jobs_input::DescribeJobsInput;
+
+pub use crate::operation::describe_jobs::_describe_jobs_output::DescribeJobsOutput;
 
 mod _describe_jobs_input;
 

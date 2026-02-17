@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_temporary_glue
     }
 }
 
-pub use crate::operation::get_temporary_glue_partition_credentials::_get_temporary_glue_partition_credentials_output::GetTemporaryGluePartitionCredentialsOutput;
-
 pub use crate::operation::get_temporary_glue_partition_credentials::_get_temporary_glue_partition_credentials_input::GetTemporaryGluePartitionCredentialsInput;
+
+pub use crate::operation::get_temporary_glue_partition_credentials::_get_temporary_glue_partition_credentials_output::GetTemporaryGluePartitionCredentialsOutput;
 
 mod _get_temporary_glue_partition_credentials_input;
 

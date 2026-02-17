@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_conne
     }
 }
 
-pub use crate::operation::delete_voice_connector_termination::_delete_voice_connector_termination_output::DeleteVoiceConnectorTerminationOutput;
-
 pub use crate::operation::delete_voice_connector_termination::_delete_voice_connector_termination_input::DeleteVoiceConnectorTerminationInput;
+
+pub use crate::operation::delete_voice_connector_termination::_delete_voice_connector_termination_output::DeleteVoiceConnectorTerminationOutput;
 
 mod _delete_voice_connector_termination_input;
 

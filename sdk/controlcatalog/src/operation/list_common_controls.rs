@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_common_contro
     }
 }
 
-pub use crate::operation::list_common_controls::_list_common_controls_output::ListCommonControlsOutput;
-
 pub use crate::operation::list_common_controls::_list_common_controls_input::ListCommonControlsInput;
+
+pub use crate::operation::list_common_controls::_list_common_controls_output::ListCommonControlsOutput;
 
 mod _list_common_controls_input;
 

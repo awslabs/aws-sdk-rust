@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_confi
     }
 }
 
-pub use crate::operation::get_function_configuration::_get_function_configuration_output::GetFunctionConfigurationOutput;
-
 pub use crate::operation::get_function_configuration::_get_function_configuration_input::GetFunctionConfigurationInput;
+
+pub use crate::operation::get_function_configuration::_get_function_configuration_output::GetFunctionConfigurationOutput;
 
 mod _get_function_configuration_input;
 

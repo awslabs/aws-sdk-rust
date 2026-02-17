@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_routing_pro
     }
 }
 
-pub use crate::operation::create_routing_profile::_create_routing_profile_output::CreateRoutingProfileOutput;
-
 pub use crate::operation::create_routing_profile::_create_routing_profile_input::CreateRoutingProfileInput;
+
+pub use crate::operation::create_routing_profile::_create_routing_profile_output::CreateRoutingProfileOutput;
 
 mod _create_routing_profile_input;
 

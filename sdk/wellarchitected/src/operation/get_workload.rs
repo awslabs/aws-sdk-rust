@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workload::GetW
     }
 }
 
-pub use crate::operation::get_workload::_get_workload_output::GetWorkloadOutput;
-
 pub use crate::operation::get_workload::_get_workload_input::GetWorkloadInput;
+
+pub use crate::operation::get_workload::_get_workload_output::GetWorkloadOutput;
 
 mod _get_workload_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_opted_out_numb
     }
 }
 
-pub use crate::operation::put_opted_out_number::_put_opted_out_number_output::PutOptedOutNumberOutput;
-
 pub use crate::operation::put_opted_out_number::_put_opted_out_number_input::PutOptedOutNumberInput;
+
+pub use crate::operation::put_opted_out_number::_put_opted_out_number_output::PutOptedOutNumberOutput;
 
 mod _put_opted_out_number_input;
 

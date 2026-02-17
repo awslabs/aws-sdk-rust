@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tax_registr
     }
 }
 
-pub use crate::operation::delete_tax_registration::_delete_tax_registration_output::DeleteTaxRegistrationOutput;
-
 pub use crate::operation::delete_tax_registration::_delete_tax_registration_input::DeleteTaxRegistrationInput;
+
+pub use crate::operation::delete_tax_registration::_delete_tax_registration_output::DeleteTaxRegistrationOutput;
 
 mod _delete_tax_registration_input;
 

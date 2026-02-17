@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_celebrity_re
     }
 }
 
-pub use crate::operation::start_celebrity_recognition::_start_celebrity_recognition_output::StartCelebrityRecognitionOutput;
-
 pub use crate::operation::start_celebrity_recognition::_start_celebrity_recognition_input::StartCelebrityRecognitionInput;
+
+pub use crate::operation::start_celebrity_recognition::_start_celebrity_recognition_output::StartCelebrityRecognitionOutput;
 
 mod _start_celebrity_recognition_input;
 

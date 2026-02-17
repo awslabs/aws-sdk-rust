@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_threat_enti
     }
 }
 
-pub use crate::operation::update_threat_entity_set::_update_threat_entity_set_output::UpdateThreatEntitySetOutput;
-
 pub use crate::operation::update_threat_entity_set::_update_threat_entity_set_input::UpdateThreatEntitySetInput;
+
+pub use crate::operation::update_threat_entity_set::_update_threat_entity_set_output::UpdateThreatEntitySetOutput;
 
 mod _update_threat_entity_set_input;
 

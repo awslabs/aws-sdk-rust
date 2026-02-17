@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_ro
     }
 }
 
-pub use crate::operation::describe_custom_routing_accelerator::_describe_custom_routing_accelerator_output::DescribeCustomRoutingAcceleratorOutput;
-
 pub use crate::operation::describe_custom_routing_accelerator::_describe_custom_routing_accelerator_input::DescribeCustomRoutingAcceleratorInput;
+
+pub use crate::operation::describe_custom_routing_accelerator::_describe_custom_routing_accelerator_output::DescribeCustomRoutingAcceleratorOutput;
 
 mod _describe_custom_routing_accelerator_input;
 

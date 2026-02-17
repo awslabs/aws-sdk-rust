@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_meeting::GetMe
     }
 }
 
-pub use crate::operation::get_meeting::_get_meeting_output::GetMeetingOutput;
-
 pub use crate::operation::get_meeting::_get_meeting_input::GetMeetingInput;
+
+pub use crate::operation::get_meeting::_get_meeting_output::GetMeetingOutput;
 
 mod _get_meeting_input;
 

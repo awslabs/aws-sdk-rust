@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_rec
     }
 }
 
-pub use crate::operation::list_inference_recommendations_jobs::_list_inference_recommendations_jobs_output::ListInferenceRecommendationsJobsOutput;
-
 pub use crate::operation::list_inference_recommendations_jobs::_list_inference_recommendations_jobs_input::ListInferenceRecommendationsJobsInput;
+
+pub use crate::operation::list_inference_recommendations_jobs::_list_inference_recommendations_jobs_output::ListInferenceRecommendationsJobsOutput;
 
 mod _list_inference_recommendations_jobs_input;
 

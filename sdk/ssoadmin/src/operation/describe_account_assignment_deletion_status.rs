@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_account_assignment_deletion_status::_describe_account_assignment_deletion_status_output::DescribeAccountAssignmentDeletionStatusOutput;
-
 pub use crate::operation::describe_account_assignment_deletion_status::_describe_account_assignment_deletion_status_input::DescribeAccountAssignmentDeletionStatusInput;
+
+pub use crate::operation::describe_account_assignment_deletion_status::_describe_account_assignment_deletion_status_output::DescribeAccountAssignmentDeletionStatusOutput;
 
 mod _describe_account_assignment_deletion_status_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_layer_version:
     }
 }
 
-pub use crate::operation::get_layer_version::_get_layer_version_output::GetLayerVersionOutput;
-
 pub use crate::operation::get_layer_version::_get_layer_version_input::GetLayerVersionInput;
+
+pub use crate::operation::get_layer_version::_get_layer_version_output::GetLayerVersionOutput;
 
 mod _get_layer_version_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_trust
     }
 }
 
-pub use crate::operation::disassociate_trust_store::_disassociate_trust_store_output::DisassociateTrustStoreOutput;
-
 pub use crate::operation::disassociate_trust_store::_disassociate_trust_store_input::DisassociateTrustStoreInput;
+
+pub use crate::operation::disassociate_trust_store::_disassociate_trust_store_output::DisassociateTrustStoreOutput;
 
 mod _disassociate_trust_store_input;
 

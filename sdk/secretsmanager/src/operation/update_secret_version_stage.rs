@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_secret_vers
     }
 }
 
-pub use crate::operation::update_secret_version_stage::_update_secret_version_stage_output::UpdateSecretVersionStageOutput;
-
 pub use crate::operation::update_secret_version_stage::_update_secret_version_stage_input::UpdateSecretVersionStageInput;
+
+pub use crate::operation::update_secret_version_stage::_update_secret_version_stage_output::UpdateSecretVersionStageOutput;
 
 mod _update_secret_version_stage_input;
 

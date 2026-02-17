@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_whats_app_business_account_event_destinations::_put_whats_app_business_account_event_destinations_output::PutWhatsAppBusinessAccountEventDestinationsOutput;
-
 pub use crate::operation::put_whats_app_business_account_event_destinations::_put_whats_app_business_account_event_destinations_input::PutWhatsAppBusinessAccountEventDestinationsInput;
+
+pub use crate::operation::put_whats_app_business_account_event_destinations::_put_whats_app_business_account_event_destinations_output::PutWhatsAppBusinessAccountEventDestinationsOutput;
 
 mod _put_whats_app_business_account_event_destinations_input;
 

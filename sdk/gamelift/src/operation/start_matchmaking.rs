@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_matchmaking:
     }
 }
 
-pub use crate::operation::start_matchmaking::_start_matchmaking_output::StartMatchmakingOutput;
-
 pub use crate::operation::start_matchmaking::_start_matchmaking_input::StartMatchmakingInput;
+
+pub use crate::operation::start_matchmaking::_start_matchmaking_output::StartMatchmakingOutput;
 
 mod _start_matchmaking_input;
 

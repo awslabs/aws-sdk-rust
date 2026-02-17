@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_instance_pr
     }
 }
 
-pub use crate::operation::update_instance_profile::_update_instance_profile_output::UpdateInstanceProfileOutput;
-
 pub use crate::operation::update_instance_profile::_update_instance_profile_input::UpdateInstanceProfileInput;
+
+pub use crate::operation::update_instance_profile::_update_instance_profile_output::UpdateInstanceProfileOutput;
 
 mod _update_instance_profile_input;
 

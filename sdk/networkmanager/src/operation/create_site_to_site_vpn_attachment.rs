@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_site_to_sit
     }
 }
 
-pub use crate::operation::create_site_to_site_vpn_attachment::_create_site_to_site_vpn_attachment_output::CreateSiteToSiteVpnAttachmentOutput;
-
 pub use crate::operation::create_site_to_site_vpn_attachment::_create_site_to_site_vpn_attachment_input::CreateSiteToSiteVpnAttachmentInput;
+
+pub use crate::operation::create_site_to_site_vpn_attachment::_create_site_to_site_vpn_attachment_output::CreateSiteToSiteVpnAttachmentOutput;
 
 mod _create_site_to_site_vpn_attachment_input;
 

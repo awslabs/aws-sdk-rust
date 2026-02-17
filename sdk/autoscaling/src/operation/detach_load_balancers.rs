@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_load_balanc
     }
 }
 
-pub use crate::operation::detach_load_balancers::_detach_load_balancers_output::DetachLoadBalancersOutput;
-
 pub use crate::operation::detach_load_balancers::_detach_load_balancers_input::DetachLoadBalancersInput;
+
+pub use crate::operation::detach_load_balancers::_detach_load_balancers_output::DetachLoadBalancersOutput;
 
 mod _detach_load_balancers_input;
 

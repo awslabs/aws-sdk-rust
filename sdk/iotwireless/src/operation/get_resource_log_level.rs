@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_log_l
     }
 }
 
-pub use crate::operation::get_resource_log_level::_get_resource_log_level_output::GetResourceLogLevelOutput;
-
 pub use crate::operation::get_resource_log_level::_get_resource_log_level_input::GetResourceLogLevelInput;
+
+pub use crate::operation::get_resource_log_level::_get_resource_log_level_output::GetResourceLogLevelOutput;
 
 mod _get_resource_log_level_input;
 

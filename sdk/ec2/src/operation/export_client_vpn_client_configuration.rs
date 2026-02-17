@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_client_vpn_
     }
 }
 
-pub use crate::operation::export_client_vpn_client_configuration::_export_client_vpn_client_configuration_output::ExportClientVpnClientConfigurationOutput;
-
 pub use crate::operation::export_client_vpn_client_configuration::_export_client_vpn_client_configuration_input::ExportClientVpnClientConfigurationInput;
+
+pub use crate::operation::export_client_vpn_client_configuration::_export_client_vpn_client_configuration_output::ExportClientVpnClientConfigurationOutput;
 
 mod _export_client_vpn_client_configuration_input;
 

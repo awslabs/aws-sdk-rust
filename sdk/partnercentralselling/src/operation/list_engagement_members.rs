@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_engagement_me
     }
 }
 
-pub use crate::operation::list_engagement_members::_list_engagement_members_output::ListEngagementMembersOutput;
-
 pub use crate::operation::list_engagement_members::_list_engagement_members_input::ListEngagementMembersInput;
+
+pub use crate::operation::list_engagement_members::_list_engagement_members_output::ListEngagementMembersOutput;
 
 mod _list_engagement_members_input;
 

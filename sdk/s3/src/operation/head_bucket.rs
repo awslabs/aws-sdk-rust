@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::head_bucket::HeadB
     }
 }
 
-pub use crate::operation::head_bucket::_head_bucket_output::HeadBucketOutput;
-
 pub use crate::operation::head_bucket::_head_bucket_input::HeadBucketInput;
+
+pub use crate::operation::head_bucket::_head_bucket_output::HeadBucketOutput;
 
 mod _head_bucket_input;
 

@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_import::StopI
     }
 }
 
-pub use crate::operation::stop_import::_stop_import_output::StopImportOutput;
-
 pub use crate::operation::stop_import::_stop_import_input::StopImportInput;
+
+pub use crate::operation::stop_import::_stop_import_output::StopImportOutput;
 
 mod _stop_import_input;
 

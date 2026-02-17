@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_level_
     }
 }
 
-pub use crate::operation::get_account_level_service_configuration::_get_account_level_service_configuration_output::GetAccountLevelServiceConfigurationOutput;
-
 pub use crate::operation::get_account_level_service_configuration::_get_account_level_service_configuration_input::GetAccountLevelServiceConfigurationInput;
+
+pub use crate::operation::get_account_level_service_configuration::_get_account_level_service_configuration_output::GetAccountLevelServiceConfigurationOutput;
 
 mod _get_account_level_service_configuration_input;
 

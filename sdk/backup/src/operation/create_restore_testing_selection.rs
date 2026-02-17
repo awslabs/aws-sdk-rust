@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_restore_tes
     }
 }
 
-pub use crate::operation::create_restore_testing_selection::_create_restore_testing_selection_output::CreateRestoreTestingSelectionOutput;
-
 pub use crate::operation::create_restore_testing_selection::_create_restore_testing_selection_input::CreateRestoreTestingSelectionInput;
+
+pub use crate::operation::create_restore_testing_selection::_create_restore_testing_selection_output::CreateRestoreTestingSelectionOutput;
 
 mod _create_restore_testing_selection_input;
 

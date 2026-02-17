@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trust_anchor::
     }
 }
 
-pub use crate::operation::get_trust_anchor::_get_trust_anchor_output::GetTrustAnchorOutput;
-
 pub use crate::operation::get_trust_anchor::_get_trust_anchor_input::GetTrustAnchorInput;
+
+pub use crate::operation::get_trust_anchor::_get_trust_anchor_output::GetTrustAnchorOutput;
 
 mod _get_trust_anchor_input;
 

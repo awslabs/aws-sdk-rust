@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sip_media_a
     }
 }
 
-pub use crate::operation::delete_sip_media_application::_delete_sip_media_application_output::DeleteSipMediaApplicationOutput;
-
 pub use crate::operation::delete_sip_media_application::_delete_sip_media_application_input::DeleteSipMediaApplicationInput;
+
+pub use crate::operation::delete_sip_media_application::_delete_sip_media_application_output::DeleteSipMediaApplicationOutput;
 
 mod _delete_sip_media_application_input;
 

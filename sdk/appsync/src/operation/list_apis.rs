@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_apis::ListApi
     }
 }
 
-pub use crate::operation::list_apis::_list_apis_output::ListApisOutput;
-
 pub use crate::operation::list_apis::_list_apis_input::ListApisInput;
+
+pub use crate::operation::list_apis::_list_apis_output::ListApisOutput;
 
 mod _list_apis_input;
 

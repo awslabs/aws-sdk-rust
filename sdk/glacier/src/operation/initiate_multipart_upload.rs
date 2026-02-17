@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initiate_multipart
     }
 }
 
-pub use crate::operation::initiate_multipart_upload::_initiate_multipart_upload_output::InitiateMultipartUploadOutput;
-
 pub use crate::operation::initiate_multipart_upload::_initiate_multipart_upload_input::InitiateMultipartUploadInput;
+
+pub use crate::operation::initiate_multipart_upload::_initiate_multipart_upload_output::InitiateMultipartUploadOutput;
 
 mod _initiate_multipart_upload_input;
 

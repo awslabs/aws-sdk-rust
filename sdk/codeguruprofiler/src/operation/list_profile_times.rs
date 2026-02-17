@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_times
     }
 }
 
-pub use crate::operation::list_profile_times::_list_profile_times_output::ListProfileTimesOutput;
-
 pub use crate::operation::list_profile_times::_list_profile_times_input::ListProfileTimesInput;
+
+pub use crate::operation::list_profile_times::_list_profile_times_output::ListProfileTimesOutput;
 
 mod _list_profile_times_input;
 

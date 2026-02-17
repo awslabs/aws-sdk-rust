@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trust_ancho
     }
 }
 
-pub use crate::operation::delete_trust_anchor::_delete_trust_anchor_output::DeleteTrustAnchorOutput;
-
 pub use crate::operation::delete_trust_anchor::_delete_trust_anchor_input::DeleteTrustAnchorInput;
+
+pub use crate::operation::delete_trust_anchor::_delete_trust_anchor_output::DeleteTrustAnchorOutput;
 
 mod _delete_trust_anchor_input;
 

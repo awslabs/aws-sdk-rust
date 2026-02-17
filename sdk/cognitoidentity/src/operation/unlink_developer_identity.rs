@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unlink_developer_i
     }
 }
 
-pub use crate::operation::unlink_developer_identity::_unlink_developer_identity_output::UnlinkDeveloperIdentityOutput;
-
 pub use crate::operation::unlink_developer_identity::_unlink_developer_identity_input::UnlinkDeveloperIdentityInput;
+
+pub use crate::operation::unlink_developer_identity::_unlink_developer_identity_output::UnlinkDeveloperIdentityOutput;
 
 mod _unlink_developer_identity_input;
 

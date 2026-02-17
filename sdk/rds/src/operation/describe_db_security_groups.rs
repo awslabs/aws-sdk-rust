@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_securi
     }
 }
 
-pub use crate::operation::describe_db_security_groups::_describe_db_security_groups_output::DescribeDbSecurityGroupsOutput;
-
 pub use crate::operation::describe_db_security_groups::_describe_db_security_groups_input::DescribeDbSecurityGroupsInput;
+
+pub use crate::operation::describe_db_security_groups::_describe_db_security_groups_output::DescribeDbSecurityGroupsOutput;
 
 mod _describe_db_security_groups_input;
 

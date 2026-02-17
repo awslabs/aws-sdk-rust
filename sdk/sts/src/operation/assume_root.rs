@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_root::Assum
     }
 }
 
-pub use crate::operation::assume_root::_assume_root_output::AssumeRootOutput;
-
 pub use crate::operation::assume_root::_assume_root_input::AssumeRootInput;
+
+pub use crate::operation::assume_root::_assume_root_output::AssumeRootOutput;
 
 mod _assume_root_input;
 

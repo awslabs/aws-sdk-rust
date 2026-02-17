@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_alarm::TestAl
     }
 }
 
-pub use crate::operation::test_alarm::_test_alarm_output::TestAlarmOutput;
-
 pub use crate::operation::test_alarm::_test_alarm_input::TestAlarmInput;
+
+pub use crate::operation::test_alarm::_test_alarm_output::TestAlarmOutput;
 
 mod _test_alarm_input;
 

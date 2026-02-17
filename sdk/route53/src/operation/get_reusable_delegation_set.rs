@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reusable_deleg
     }
 }
 
-pub use crate::operation::get_reusable_delegation_set::_get_reusable_delegation_set_output::GetReusableDelegationSetOutput;
-
 pub use crate::operation::get_reusable_delegation_set::_get_reusable_delegation_set_input::GetReusableDelegationSetInput;
+
+pub use crate::operation::get_reusable_delegation_set::_get_reusable_delegation_set_output::GetReusableDelegationSetOutput;
 
 mod _get_reusable_delegation_set_input;
 

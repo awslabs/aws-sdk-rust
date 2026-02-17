@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dimension_key_
     }
 }
 
-pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_output::GetDimensionKeyDetailsOutput;
-
 pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_input::GetDimensionKeyDetailsInput;
+
+pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_output::GetDimensionKeyDetailsOutput;
 
 mod _get_dimension_key_details_input;
 

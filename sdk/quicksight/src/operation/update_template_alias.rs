@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_template_al
     }
 }
 
-pub use crate::operation::update_template_alias::_update_template_alias_output::UpdateTemplateAliasOutput;
-
 pub use crate::operation::update_template_alias::_update_template_alias_input::UpdateTemplateAliasInput;
+
+pub use crate::operation::update_template_alias::_update_template_alias_output::UpdateTemplateAliasOutput;
 
 mod _update_template_alias_input;
 

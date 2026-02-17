@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_proxie
     }
 }
 
-pub use crate::operation::describe_db_proxies::_describe_db_proxies_output::DescribeDbProxiesOutput;
-
 pub use crate::operation::describe_db_proxies::_describe_db_proxies_input::DescribeDbProxiesInput;
+
+pub use crate::operation::describe_db_proxies::_describe_db_proxies_output::DescribeDbProxiesOutput;
 
 mod _describe_db_proxies_input;
 

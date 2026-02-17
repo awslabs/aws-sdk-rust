@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_asset_filte
     }
 }
 
-pub use crate::operation::create_asset_filter::_create_asset_filter_output::CreateAssetFilterOutput;
-
 pub use crate::operation::create_asset_filter::_create_asset_filter_input::CreateAssetFilterInput;
+
+pub use crate::operation::create_asset_filter::_create_asset_filter_output::CreateAssetFilterOutput;
 
 mod _create_asset_filter_input;
 

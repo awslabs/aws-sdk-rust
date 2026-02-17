@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_session::PutSe
     }
 }
 
-pub use crate::operation::put_session::_put_session_output::PutSessionOutput;
-
 pub use crate::operation::put_session::_put_session_input::PutSessionInput;
+
+pub use crate::operation::put_session::_put_session_output::PutSessionOutput;
 
 mod _put_session_input;
 

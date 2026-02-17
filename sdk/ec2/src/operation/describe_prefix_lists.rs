@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_prefix_li
     }
 }
 
-pub use crate::operation::describe_prefix_lists::_describe_prefix_lists_output::DescribePrefixListsOutput;
-
 pub use crate::operation::describe_prefix_lists::_describe_prefix_lists_input::DescribePrefixListsInput;
+
+pub use crate::operation::describe_prefix_lists::_describe_prefix_lists_output::DescribePrefixListsOutput;
 
 mod _describe_prefix_lists_input;
 

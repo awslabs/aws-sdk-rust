@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dataflow_en
     }
 }
 
-pub use crate::operation::delete_dataflow_endpoint_group::_delete_dataflow_endpoint_group_output::DeleteDataflowEndpointGroupOutput;
-
 pub use crate::operation::delete_dataflow_endpoint_group::_delete_dataflow_endpoint_group_input::DeleteDataflowEndpointGroupInput;
+
+pub use crate::operation::delete_dataflow_endpoint_group::_delete_dataflow_endpoint_group_output::DeleteDataflowEndpointGroupOutput;
 
 mod _delete_dataflow_endpoint_group_input;
 

@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_suppressed_des
     }
 }
 
-pub use crate::operation::get_suppressed_destination::_get_suppressed_destination_output::GetSuppressedDestinationOutput;
-
 pub use crate::operation::get_suppressed_destination::_get_suppressed_destination_input::GetSuppressedDestinationInput;
+
+pub use crate::operation::get_suppressed_destination::_get_suppressed_destination_output::GetSuppressedDestinationOutput;
 
 mod _get_suppressed_destination_input;
 

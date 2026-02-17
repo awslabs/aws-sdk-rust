@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::_start_bulk_disassociate_wireless_device_from_multicast_group_output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput;
-
 pub use crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::_start_bulk_disassociate_wireless_device_from_multicast_group_input::StartBulkDisassociateWirelessDeviceFromMulticastGroupInput;
+
+pub use crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::_start_bulk_disassociate_wireless_device_from_multicast_group_output::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput;
 
 mod _start_bulk_disassociate_wireless_device_from_multicast_group_input;
 

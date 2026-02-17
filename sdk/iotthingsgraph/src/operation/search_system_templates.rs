@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_system_temp
     }
 }
 
-pub use crate::operation::search_system_templates::_search_system_templates_output::SearchSystemTemplatesOutput;
-
 pub use crate::operation::search_system_templates::_search_system_templates_input::SearchSystemTemplatesInput;
+
+pub use crate::operation::search_system_templates::_search_system_templates_output::SearchSystemTemplatesOutput;
 
 mod _search_system_templates_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_volumes::L
     }
 }
 
-pub use crate::operation::list_kx_volumes::_list_kx_volumes_output::ListKxVolumesOutput;
-
 pub use crate::operation::list_kx_volumes::_list_kx_volumes_input::ListKxVolumesInput;
+
+pub use crate::operation::list_kx_volumes::_list_kx_volumes_output::ListKxVolumesOutput;
 
 mod _list_kx_volumes_input;
 

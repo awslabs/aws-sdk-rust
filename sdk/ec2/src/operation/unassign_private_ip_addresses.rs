@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unassign_private_i
     }
 }
 
-pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_addresses_output::UnassignPrivateIpAddressesOutput;
-
 pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_addresses_input::UnassignPrivateIpAddressesInput;
+
+pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_addresses_output::UnassignPrivateIpAddressesOutput;
 
 mod _unassign_private_ip_addresses_input;
 

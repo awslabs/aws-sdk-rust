@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_position::GetP
     }
 }
 
-pub use crate::operation::get_position::_get_position_output::GetPositionOutput;
-
 pub use crate::operation::get_position::_get_position_input::GetPositionInput;
+
+pub use crate::operation::get_position::_get_position_output::GetPositionOutput;
 
 mod _get_position_input;
 

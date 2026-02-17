@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipam_pref
     }
 }
 
-pub use crate::operation::describe_ipam_prefix_list_resolvers::_describe_ipam_prefix_list_resolvers_output::DescribeIpamPrefixListResolversOutput;
-
 pub use crate::operation::describe_ipam_prefix_list_resolvers::_describe_ipam_prefix_list_resolvers_input::DescribeIpamPrefixListResolversInput;
+
+pub use crate::operation::describe_ipam_prefix_list_resolvers::_describe_ipam_prefix_list_resolvers_output::DescribeIpamPrefixListResolversOutput;
 
 mod _describe_ipam_prefix_list_resolvers_input;
 

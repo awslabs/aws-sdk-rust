@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queue::Dele
     }
 }
 
-pub use crate::operation::delete_queue::_delete_queue_output::DeleteQueueOutput;
-
 pub use crate::operation::delete_queue::_delete_queue_input::DeleteQueueInput;
+
+pub use crate::operation::delete_queue::_delete_queue_output::DeleteQueueOutput;
 
 mod _delete_queue_input;
 

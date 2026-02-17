@@ -469,9 +469,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_step_dependen
     }
 }
 
-pub use crate::operation::list_step_dependencies::_list_step_dependencies_output::ListStepDependenciesOutput;
-
 pub use crate::operation::list_step_dependencies::_list_step_dependencies_input::ListStepDependenciesInput;
+
+pub use crate::operation::list_step_dependencies::_list_step_dependencies_output::ListStepDependenciesOutput;
 
 mod _list_step_dependencies_input;
 

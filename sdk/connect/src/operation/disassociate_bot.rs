@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_bot::
     }
 }
 
-pub use crate::operation::disassociate_bot::_disassociate_bot_output::DisassociateBotOutput;
-
 pub use crate::operation::disassociate_bot::_disassociate_bot_input::DisassociateBotInput;
+
+pub use crate::operation::disassociate_bot::_disassociate_bot_output::DisassociateBotOutput;
 
 mod _disassociate_bot_input;
 

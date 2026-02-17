@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_memory::GetMem
     }
 }
 
-pub use crate::operation::get_memory::_get_memory_output::GetMemoryOutput;
-
 pub use crate::operation::get_memory::_get_memory_input::GetMemoryInput;
+
+pub use crate::operation::get_memory::_get_memory_output::GetMemoryOutput;
 
 mod _get_memory_input;
 

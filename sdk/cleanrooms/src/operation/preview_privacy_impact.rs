@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::preview_privacy_im
     }
 }
 
-pub use crate::operation::preview_privacy_impact::_preview_privacy_impact_output::PreviewPrivacyImpactOutput;
-
 pub use crate::operation::preview_privacy_impact::_preview_privacy_impact_input::PreviewPrivacyImpactInput;
+
+pub use crate::operation::preview_privacy_impact::_preview_privacy_impact_output::PreviewPrivacyImpactOutput;
 
 mod _preview_privacy_impact_input;
 

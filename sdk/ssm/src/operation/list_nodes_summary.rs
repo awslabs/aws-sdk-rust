@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_nodes_summary
     }
 }
 
-pub use crate::operation::list_nodes_summary::_list_nodes_summary_output::ListNodesSummaryOutput;
-
 pub use crate::operation::list_nodes_summary::_list_nodes_summary_input::ListNodesSummaryInput;
+
+pub use crate::operation::list_nodes_summary::_list_nodes_summary_output::ListNodesSummaryOutput;
 
 mod _list_nodes_summary_input;
 

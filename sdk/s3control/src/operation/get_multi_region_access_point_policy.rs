@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_multi_region_a
     }
 }
 
-pub use crate::operation::get_multi_region_access_point_policy::_get_multi_region_access_point_policy_output::GetMultiRegionAccessPointPolicyOutput;
-
 pub use crate::operation::get_multi_region_access_point_policy::_get_multi_region_access_point_policy_input::GetMultiRegionAccessPointPolicyInput;
+
+pub use crate::operation::get_multi_region_access_point_policy::_get_multi_region_access_point_policy_output::GetMultiRegionAccessPointPolicyOutput;
 
 mod _get_multi_region_access_point_policy_input;
 

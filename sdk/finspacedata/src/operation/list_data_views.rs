@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_views::L
     }
 }
 
-pub use crate::operation::list_data_views::_list_data_views_output::ListDataViewsOutput;
-
 pub use crate::operation::list_data_views::_list_data_views_input::ListDataViewsInput;
+
+pub use crate::operation::list_data_views::_list_data_views_output::ListDataViewsOutput;
 
 mod _list_data_views_input;
 

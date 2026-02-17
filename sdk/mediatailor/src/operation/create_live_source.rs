@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_live_source
     }
 }
 
-pub use crate::operation::create_live_source::_create_live_source_output::CreateLiveSourceOutput;
-
 pub use crate::operation::create_live_source::_create_live_source_input::CreateLiveSourceInput;
+
+pub use crate::operation::create_live_source::_create_live_source_output::CreateLiveSourceOutput;
 
 mod _create_live_source_input;
 

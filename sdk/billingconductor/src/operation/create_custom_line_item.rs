@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_line
     }
 }
 
-pub use crate::operation::create_custom_line_item::_create_custom_line_item_output::CreateCustomLineItemOutput;
-
 pub use crate::operation::create_custom_line_item::_create_custom_line_item_input::CreateCustomLineItemInput;
+
+pub use crate::operation::create_custom_line_item::_create_custom_line_item_output::CreateCustomLineItemOutput;
 
 mod _create_custom_line_item_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_categories::L
     }
 }
 
-pub use crate::operation::list_categories::_list_categories_output::ListCategoriesOutput;
-
 pub use crate::operation::list_categories::_list_categories_input::ListCategoriesInput;
+
+pub use crate::operation::list_categories::_list_categories_output::ListCategoriesOutput;
 
 mod _list_categories_input;
 

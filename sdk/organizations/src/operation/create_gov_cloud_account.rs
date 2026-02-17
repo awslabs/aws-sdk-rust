@@ -628,9 +628,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_gov_cloud_a
     }
 }
 
-pub use crate::operation::create_gov_cloud_account::_create_gov_cloud_account_output::CreateGovCloudAccountOutput;
-
 pub use crate::operation::create_gov_cloud_account::_create_gov_cloud_account_input::CreateGovCloudAccountInput;
+
+pub use crate::operation::create_gov_cloud_account::_create_gov_cloud_account_output::CreateGovCloudAccountOutput;
 
 mod _create_gov_cloud_account_input;
 

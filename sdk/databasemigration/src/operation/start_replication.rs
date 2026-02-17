@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_replication:
     }
 }
 
-pub use crate::operation::start_replication::_start_replication_output::StartReplicationOutput;
-
 pub use crate::operation::start_replication::_start_replication_input::StartReplicationInput;
+
+pub use crate::operation::start_replication::_start_replication_output::StartReplicationOutput;
 
 mod _start_replication_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_image_builde
     }
 }
 
-pub use crate::operation::start_image_builder::_start_image_builder_output::StartImageBuilderOutput;
-
 pub use crate::operation::start_image_builder::_start_image_builder_input::StartImageBuilderInput;
+
+pub use crate::operation::start_image_builder::_start_image_builder_output::StartImageBuilderOutput;
 
 mod _start_image_builder_input;
 

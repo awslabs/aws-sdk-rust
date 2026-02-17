@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vault::De
     }
 }
 
-pub use crate::operation::describe_vault::_describe_vault_output::DescribeVaultOutput;
-
 pub use crate::operation::describe_vault::_describe_vault_input::DescribeVaultInput;
+
+pub use crate::operation::describe_vault::_describe_vault_output::DescribeVaultOutput;
 
 mod _describe_vault_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_session_log
     }
 }
 
-pub use crate::operation::delete_session_logger::_delete_session_logger_output::DeleteSessionLoggerOutput;
-
 pub use crate::operation::delete_session_logger::_delete_session_logger_input::DeleteSessionLoggerInput;
+
+pub use crate::operation::delete_session_logger::_delete_session_logger_output::DeleteSessionLoggerOutput;
 
 mod _delete_session_logger_input;
 

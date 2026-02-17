@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_slack_chann
     }
 }
 
-pub use crate::operation::delete_slack_channel_configuration::_delete_slack_channel_configuration_output::DeleteSlackChannelConfigurationOutput;
-
 pub use crate::operation::delete_slack_channel_configuration::_delete_slack_channel_configuration_input::DeleteSlackChannelConfigurationInput;
+
+pub use crate::operation::delete_slack_channel_configuration::_delete_slack_channel_configuration_output::DeleteSlackChannelConfigurationOutput;
 
 mod _delete_slack_channel_configuration_input;
 

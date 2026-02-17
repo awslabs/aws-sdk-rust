@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_aggregator_
     }
 }
 
-pub use crate::operation::create_aggregator_v2::_create_aggregator_v2_output::CreateAggregatorV2Output;
-
 pub use crate::operation::create_aggregator_v2::_create_aggregator_v2_input::CreateAggregatorV2Input;
+
+pub use crate::operation::create_aggregator_v2::_create_aggregator_v2_output::CreateAggregatorV2Output;
 
 mod _create_aggregator_v2_input;
 

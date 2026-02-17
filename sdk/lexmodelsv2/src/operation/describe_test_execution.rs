@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_test_exec
     }
 }
 
-pub use crate::operation::describe_test_execution::_describe_test_execution_output::DescribeTestExecutionOutput;
-
 pub use crate::operation::describe_test_execution::_describe_test_execution_input::DescribeTestExecutionInput;
+
+pub use crate::operation::describe_test_execution::_describe_test_execution_output::DescribeTestExecutionOutput;
 
 mod _describe_test_execution_input;
 

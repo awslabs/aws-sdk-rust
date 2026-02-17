@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_signin_delegate_groups_with_account::_associate_signin_delegate_groups_with_account_output::AssociateSigninDelegateGroupsWithAccountOutput;
-
 pub use crate::operation::associate_signin_delegate_groups_with_account::_associate_signin_delegate_groups_with_account_input::AssociateSigninDelegateGroupsWithAccountInput;
+
+pub use crate::operation::associate_signin_delegate_groups_with_account::_associate_signin_delegate_groups_with_account_output::AssociateSigninDelegateGroupsWithAccountOutput;
 
 mod _associate_signin_delegate_groups_with_account_input;
 

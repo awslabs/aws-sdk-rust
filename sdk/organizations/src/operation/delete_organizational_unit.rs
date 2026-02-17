@@ -514,9 +514,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_organizatio
     }
 }
 
-pub use crate::operation::delete_organizational_unit::_delete_organizational_unit_output::DeleteOrganizationalUnitOutput;
-
 pub use crate::operation::delete_organizational_unit::_delete_organizational_unit_input::DeleteOrganizationalUnitInput;
+
+pub use crate::operation::delete_organizational_unit::_delete_organizational_unit_output::DeleteOrganizationalUnitOutput;
 
 mod _delete_organizational_unit_input;
 

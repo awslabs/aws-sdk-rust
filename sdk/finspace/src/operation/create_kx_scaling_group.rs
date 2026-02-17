@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_scaling_
     }
 }
 
-pub use crate::operation::create_kx_scaling_group::_create_kx_scaling_group_output::CreateKxScalingGroupOutput;
-
 pub use crate::operation::create_kx_scaling_group::_create_kx_scaling_group_input::CreateKxScalingGroupInput;
+
+pub use crate::operation::create_kx_scaling_group::_create_kx_scaling_group_output::CreateKxScalingGroupOutput;
 
 mod _create_kx_scaling_group_input;
 

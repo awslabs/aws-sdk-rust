@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_moderation_
     }
 }
 
-pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_output::DetectModerationLabelsOutput;
-
 pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_input::DetectModerationLabelsInput;
+
+pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_output::DetectModerationLabelsOutput;
 
 mod _detect_moderation_labels_input;
 

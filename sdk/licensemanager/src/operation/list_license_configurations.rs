@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_license_confi
     }
 }
 
-pub use crate::operation::list_license_configurations::_list_license_configurations_output::ListLicenseConfigurationsOutput;
-
 pub use crate::operation::list_license_configurations::_list_license_configurations_input::ListLicenseConfigurationsInput;
+
+pub use crate::operation::list_license_configurations::_list_license_configurations_output::ListLicenseConfigurationsOutput;
 
 mod _list_license_configurations_input;
 

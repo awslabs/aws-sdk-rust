@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_transforms:
     }
 }
 
-pub use crate::operation::get_ml_transforms::_get_ml_transforms_output::GetMlTransformsOutput;
-
 pub use crate::operation::get_ml_transforms::_get_ml_transforms_input::GetMlTransformsInput;
+
+pub use crate::operation::get_ml_transforms::_get_ml_transforms_output::GetMlTransformsOutput;
 
 mod _get_ml_transforms_input;
 

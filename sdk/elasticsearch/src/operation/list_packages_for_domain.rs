@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_packages_for_
     }
 }
 
-pub use crate::operation::list_packages_for_domain::_list_packages_for_domain_output::ListPackagesForDomainOutput;
-
 pub use crate::operation::list_packages_for_domain::_list_packages_for_domain_input::ListPackagesForDomainInput;
+
+pub use crate::operation::list_packages_for_domain::_list_packages_for_domain_output::ListPackagesForDomainOutput;
 
 mod _list_packages_for_domain_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipam_scop
     }
 }
 
-pub use crate::operation::describe_ipam_scopes::_describe_ipam_scopes_output::DescribeIpamScopesOutput;
-
 pub use crate::operation::describe_ipam_scopes::_describe_ipam_scopes_input::DescribeIpamScopesInput;
+
+pub use crate::operation::describe_ipam_scopes::_describe_ipam_scopes_output::DescribeIpamScopesOutput;
 
 mod _describe_ipam_scopes_input;
 

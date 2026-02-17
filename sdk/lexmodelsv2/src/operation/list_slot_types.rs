@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_slot_types::L
     }
 }
 
-pub use crate::operation::list_slot_types::_list_slot_types_output::ListSlotTypesOutput;
-
 pub use crate::operation::list_slot_types::_list_slot_types_input::ListSlotTypesInput;
+
+pub use crate::operation::list_slot_types::_list_slot_types_output::ListSlotTypesOutput;
 
 mod _list_slot_types_input;
 

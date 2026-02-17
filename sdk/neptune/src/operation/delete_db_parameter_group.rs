@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_paramete
     }
 }
 
-pub use crate::operation::delete_db_parameter_group::_delete_db_parameter_group_output::DeleteDbParameterGroupOutput;
-
 pub use crate::operation::delete_db_parameter_group::_delete_db_parameter_group_input::DeleteDbParameterGroupInput;
+
+pub use crate::operation::delete_db_parameter_group::_delete_db_parameter_group_output::DeleteDbParameterGroupOutput;
 
 mod _delete_db_parameter_group_input;
 

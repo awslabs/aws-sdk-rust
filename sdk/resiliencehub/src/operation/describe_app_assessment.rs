@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_asses
     }
 }
 
-pub use crate::operation::describe_app_assessment::_describe_app_assessment_output::DescribeAppAssessmentOutput;
-
 pub use crate::operation::describe_app_assessment::_describe_app_assessment_input::DescribeAppAssessmentInput;
+
+pub use crate::operation::describe_app_assessment::_describe_app_assessment_output::DescribeAppAssessmentOutput;
 
 mod _describe_app_assessment_input;
 

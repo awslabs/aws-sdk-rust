@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image_pipel
     }
 }
 
-pub use crate::operation::update_image_pipeline::_update_image_pipeline_output::UpdateImagePipelineOutput;
-
 pub use crate::operation::update_image_pipeline::_update_image_pipeline_input::UpdateImagePipelineInput;
+
+pub use crate::operation::update_image_pipeline::_update_image_pipeline_output::UpdateImagePipelineOutput;
 
 mod _update_image_pipeline_input;
 

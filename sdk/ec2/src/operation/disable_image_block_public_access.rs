@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_image_bloc
     }
 }
 
-pub use crate::operation::disable_image_block_public_access::_disable_image_block_public_access_output::DisableImageBlockPublicAccessOutput;
-
 pub use crate::operation::disable_image_block_public_access::_disable_image_block_public_access_input::DisableImageBlockPublicAccessInput;
+
+pub use crate::operation::disable_image_block_public_access::_disable_image_block_public_access_output::DisableImageBlockPublicAccessOutput;
 
 mod _disable_image_block_public_access_input;
 

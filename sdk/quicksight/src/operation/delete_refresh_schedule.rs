@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_refresh_sch
     }
 }
 
-pub use crate::operation::delete_refresh_schedule::_delete_refresh_schedule_output::DeleteRefreshScheduleOutput;
-
 pub use crate::operation::delete_refresh_schedule::_delete_refresh_schedule_input::DeleteRefreshScheduleInput;
+
+pub use crate::operation::delete_refresh_schedule::_delete_refresh_schedule_output::DeleteRefreshScheduleOutput;
 
 mod _delete_refresh_schedule_input;
 

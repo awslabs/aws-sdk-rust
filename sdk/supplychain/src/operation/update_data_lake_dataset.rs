@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_lake_d
     }
 }
 
-pub use crate::operation::update_data_lake_dataset::_update_data_lake_dataset_output::UpdateDataLakeDatasetOutput;
-
 pub use crate::operation::update_data_lake_dataset::_update_data_lake_dataset_input::UpdateDataLakeDatasetInput;
+
+pub use crate::operation::update_data_lake_dataset::_update_data_lake_dataset_output::UpdateDataLakeDatasetOutput;
 
 mod _update_data_lake_dataset_input;
 

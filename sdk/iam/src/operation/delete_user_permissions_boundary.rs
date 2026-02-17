@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_permis
     }
 }
 
-pub use crate::operation::delete_user_permissions_boundary::_delete_user_permissions_boundary_output::DeleteUserPermissionsBoundaryOutput;
-
 pub use crate::operation::delete_user_permissions_boundary::_delete_user_permissions_boundary_input::DeleteUserPermissionsBoundaryInput;
+
+pub use crate::operation::delete_user_permissions_boundary::_delete_user_permissions_boundary_output::DeleteUserPermissionsBoundaryOutput;
 
 mod _delete_user_permissions_boundary_input;
 

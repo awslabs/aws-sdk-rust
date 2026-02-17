@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tests::ListTe
     }
 }
 
-pub use crate::operation::list_tests::_list_tests_output::ListTestsOutput;
-
 pub use crate::operation::list_tests::_list_tests_input::ListTestsInput;
+
+pub use crate::operation::list_tests::_list_tests_output::ListTestsOutput;
 
 mod _list_tests_input;
 

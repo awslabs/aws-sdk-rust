@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_label::De
     }
 }
 
-pub use crate::operation::describe_label::_describe_label_output::DescribeLabelOutput;
-
 pub use crate::operation::describe_label::_describe_label_input::DescribeLabelInput;
+
+pub use crate::operation::describe_label::_describe_label_output::DescribeLabelOutput;
 
 mod _describe_label_input;
 

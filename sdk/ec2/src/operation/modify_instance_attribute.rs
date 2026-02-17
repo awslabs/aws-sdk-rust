@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_at
     }
 }
 
-pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_output::ModifyInstanceAttributeOutput;
-
 pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_input::ModifyInstanceAttributeInput;
+
+pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_output::ModifyInstanceAttributeOutput;
 
 mod _modify_instance_attribute_input;
 

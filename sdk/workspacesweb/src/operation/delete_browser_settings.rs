@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_browser_set
     }
 }
 
-pub use crate::operation::delete_browser_settings::_delete_browser_settings_output::DeleteBrowserSettingsOutput;
-
 pub use crate::operation::delete_browser_settings::_delete_browser_settings_input::DeleteBrowserSettingsInput;
+
+pub use crate::operation::delete_browser_settings::_delete_browser_settings_output::DeleteBrowserSettingsOutput;
 
 mod _delete_browser_settings_input;
 

@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_role::TestRol
     }
 }
 
-pub use crate::operation::test_role::_test_role_output::TestRoleOutput;
-
 pub use crate::operation::test_role::_test_role_input::TestRoleInput;
+
+pub use crate::operation::test_role::_test_role_output::TestRoleOutput;
 
 mod _test_role_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_type::Publ
     }
 }
 
-pub use crate::operation::publish_type::_publish_type_output::PublishTypeOutput;
-
 pub use crate::operation::publish_type::_publish_type_input::PublishTypeInput;
+
+pub use crate::operation::publish_type::_publish_type_output::PublishTypeOutput;
 
 mod _publish_type_input;
 

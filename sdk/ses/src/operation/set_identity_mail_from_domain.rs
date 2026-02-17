@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_identity_mail_
     }
 }
 
-pub use crate::operation::set_identity_mail_from_domain::_set_identity_mail_from_domain_output::SetIdentityMailFromDomainOutput;
-
 pub use crate::operation::set_identity_mail_from_domain::_set_identity_mail_from_domain_input::SetIdentityMailFromDomainInput;
+
+pub use crate::operation::set_identity_mail_from_domain::_set_identity_mail_from_domain_output::SetIdentityMailFromDomainOutput;
 
 mod _set_identity_mail_from_domain_input;
 

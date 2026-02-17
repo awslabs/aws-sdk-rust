@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cache_secur
     }
 }
 
-pub use crate::operation::delete_cache_security_group::_delete_cache_security_group_output::DeleteCacheSecurityGroupOutput;
-
 pub use crate::operation::delete_cache_security_group::_delete_cache_security_group_input::DeleteCacheSecurityGroupInput;
+
+pub use crate::operation::delete_cache_security_group::_delete_cache_security_group_output::DeleteCacheSecurityGroupOutput;
 
 mod _delete_cache_security_group_input;
 

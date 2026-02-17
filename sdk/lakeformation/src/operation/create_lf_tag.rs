@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lf_tag::Cre
     }
 }
 
-pub use crate::operation::create_lf_tag::_create_lf_tag_output::CreateLfTagOutput;
-
 pub use crate::operation::create_lf_tag::_create_lf_tag_input::CreateLfTagInput;
+
+pub use crate::operation::create_lf_tag::_create_lf_tag_output::CreateLfTagOutput;
 
 mod _create_lf_tag_input;
 

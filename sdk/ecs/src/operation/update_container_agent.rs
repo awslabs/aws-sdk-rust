@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_container_a
     }
 }
 
-pub use crate::operation::update_container_agent::_update_container_agent_output::UpdateContainerAgentOutput;
-
 pub use crate::operation::update_container_agent::_update_container_agent_input::UpdateContainerAgentInput;
+
+pub use crate::operation::update_container_agent::_update_container_agent_output::UpdateContainerAgentOutput;
 
 mod _update_container_agent_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_start_recomm
     }
 }
 
-pub use crate::operation::batch_start_recommendations::_batch_start_recommendations_output::BatchStartRecommendationsOutput;
-
 pub use crate::operation::batch_start_recommendations::_batch_start_recommendations_input::BatchStartRecommendationsInput;
+
+pub use crate::operation::batch_start_recommendations::_batch_start_recommendations_output::BatchStartRecommendationsOutput;
 
 mod _batch_start_recommendations_input;
 

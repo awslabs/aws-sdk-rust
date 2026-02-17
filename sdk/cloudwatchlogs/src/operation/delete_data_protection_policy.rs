@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_protec
     }
 }
 
-pub use crate::operation::delete_data_protection_policy::_delete_data_protection_policy_output::DeleteDataProtectionPolicyOutput;
-
 pub use crate::operation::delete_data_protection_policy::_delete_data_protection_policy_input::DeleteDataProtectionPolicyInput;
+
+pub use crate::operation::delete_data_protection_policy::_delete_data_protection_policy_output::DeleteDataProtectionPolicyOutput;
 
 mod _delete_data_protection_policy_input;
 

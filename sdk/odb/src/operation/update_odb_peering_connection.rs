@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_odb_peering
     }
 }
 
-pub use crate::operation::update_odb_peering_connection::_update_odb_peering_connection_output::UpdateOdbPeeringConnectionOutput;
-
 pub use crate::operation::update_odb_peering_connection::_update_odb_peering_connection_input::UpdateOdbPeeringConnectionInput;
+
+pub use crate::operation::update_odb_peering_connection::_update_odb_peering_connection_output::UpdateOdbPeeringConnectionOutput;
 
 mod _update_odb_peering_connection_input;
 

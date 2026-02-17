@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_update_recommendation_resource_exclusion::_batch_update_recommendation_resource_exclusion_output::BatchUpdateRecommendationResourceExclusionOutput;
-
 pub use crate::operation::batch_update_recommendation_resource_exclusion::_batch_update_recommendation_resource_exclusion_input::BatchUpdateRecommendationResourceExclusionInput;
+
+pub use crate::operation::batch_update_recommendation_resource_exclusion::_batch_update_recommendation_resource_exclusion_output::BatchUpdateRecommendationResourceExclusionOutput;
 
 mod _batch_update_recommendation_resource_exclusion_input;
 

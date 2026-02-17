@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_compute_quo
     }
 }
 
-pub use crate::operation::delete_compute_quota::_delete_compute_quota_output::DeleteComputeQuotaOutput;
-
 pub use crate::operation::delete_compute_quota::_delete_compute_quota_input::DeleteComputeQuotaInput;
+
+pub use crate::operation::delete_compute_quota::_delete_compute_quota_output::DeleteComputeQuotaOutput;
 
 mod _delete_compute_quota_input;
 

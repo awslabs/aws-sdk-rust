@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ml_model::U
     }
 }
 
-pub use crate::operation::update_ml_model::_update_ml_model_output::UpdateMlModelOutput;
-
 pub use crate::operation::update_ml_model::_update_ml_model_input::UpdateMlModelInput;
+
+pub use crate::operation::update_ml_model::_update_ml_model_output::UpdateMlModelOutput;
 
 mod _update_ml_model_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_origin_requ
     }
 }
 
-pub use crate::operation::create_origin_request_policy::_create_origin_request_policy_output::CreateOriginRequestPolicyOutput;
-
 pub use crate::operation::create_origin_request_policy::_create_origin_request_policy_input::CreateOriginRequestPolicyInput;
+
+pub use crate::operation::create_origin_request_policy::_create_origin_request_policy_output::CreateOriginRequestPolicyOutput;
 
 mod _create_origin_request_policy_input;
 

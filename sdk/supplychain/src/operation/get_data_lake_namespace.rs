@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_lake_name
     }
 }
 
-pub use crate::operation::get_data_lake_namespace::_get_data_lake_namespace_output::GetDataLakeNamespaceOutput;
-
 pub use crate::operation::get_data_lake_namespace::_get_data_lake_namespace_input::GetDataLakeNamespaceInput;
+
+pub use crate::operation::get_data_lake_namespace::_get_data_lake_namespace_output::GetDataLakeNamespaceOutput;
 
 mod _get_data_lake_namespace_input;
 

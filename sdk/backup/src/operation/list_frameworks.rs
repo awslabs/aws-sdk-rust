@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_frameworks::L
     }
 }
 
-pub use crate::operation::list_frameworks::_list_frameworks_output::ListFrameworksOutput;
-
 pub use crate::operation::list_frameworks::_list_frameworks_input::ListFrameworksInput;
+
+pub use crate::operation::list_frameworks::_list_frameworks_output::ListFrameworksOutput;
 
 mod _list_frameworks_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_package_versio
     }
 }
 
-pub use crate::operation::get_package_version_history::_get_package_version_history_output::GetPackageVersionHistoryOutput;
-
 pub use crate::operation::get_package_version_history::_get_package_version_history_input::GetPackageVersionHistoryInput;
+
+pub use crate::operation::get_package_version_history::_get_package_version_history_output::GetPackageVersionHistoryOutput;
 
 mod _get_package_version_history_input;
 

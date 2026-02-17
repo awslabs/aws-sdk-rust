@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_text_message_s
     }
 }
 
-pub use crate::operation::set_text_message_spend_limit_override::_set_text_message_spend_limit_override_output::SetTextMessageSpendLimitOverrideOutput;
-
 pub use crate::operation::set_text_message_spend_limit_override::_set_text_message_spend_limit_override_input::SetTextMessageSpendLimitOverrideInput;
+
+pub use crate::operation::set_text_message_spend_limit_override::_set_text_message_spend_limit_override_output::SetTextMessageSpendLimitOverrideOutput;
 
 mod _set_text_message_spend_limit_override_input;
 

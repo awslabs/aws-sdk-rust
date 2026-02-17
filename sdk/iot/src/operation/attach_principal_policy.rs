@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_principal_p
     }
 }
 
-pub use crate::operation::attach_principal_policy::_attach_principal_policy_output::AttachPrincipalPolicyOutput;
-
 pub use crate::operation::attach_principal_policy::_attach_principal_policy_input::AttachPrincipalPolicyInput;
+
+pub use crate::operation::attach_principal_policy::_attach_principal_policy_output::AttachPrincipalPolicyOutput;
 
 mod _attach_principal_policy_input;
 

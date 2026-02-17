@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_lake_e
     }
 }
 
-pub use crate::operation::delete_data_lake_exception_subscription::_delete_data_lake_exception_subscription_output::DeleteDataLakeExceptionSubscriptionOutput;
-
 pub use crate::operation::delete_data_lake_exception_subscription::_delete_data_lake_exception_subscription_input::DeleteDataLakeExceptionSubscriptionInput;
+
+pub use crate::operation::delete_data_lake_exception_subscription::_delete_data_lake_exception_subscription_output::DeleteDataLakeExceptionSubscriptionOutput;
 
 mod _delete_data_lake_exception_subscription_input;
 

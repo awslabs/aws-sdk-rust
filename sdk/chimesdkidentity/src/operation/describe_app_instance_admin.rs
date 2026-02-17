@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_insta
     }
 }
 
-pub use crate::operation::describe_app_instance_admin::_describe_app_instance_admin_output::DescribeAppInstanceAdminOutput;
-
 pub use crate::operation::describe_app_instance_admin::_describe_app_instance_admin_input::DescribeAppInstanceAdminInput;
+
+pub use crate::operation::describe_app_instance_admin::_describe_app_instance_admin_output::DescribeAppInstanceAdminOutput;
 
 mod _describe_app_instance_admin_input;
 

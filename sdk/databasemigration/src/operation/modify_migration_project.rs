@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_migration_p
     }
 }
 
-pub use crate::operation::modify_migration_project::_modify_migration_project_output::ModifyMigrationProjectOutput;
-
 pub use crate::operation::modify_migration_project::_modify_migration_project_input::ModifyMigrationProjectInput;
+
+pub use crate::operation::modify_migration_project::_modify_migration_project_output::ModifyMigrationProjectOutput;
 
 mod _modify_migration_project_input;
 

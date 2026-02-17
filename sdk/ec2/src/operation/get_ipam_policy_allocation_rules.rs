@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_policy_al
     }
 }
 
-pub use crate::operation::get_ipam_policy_allocation_rules::_get_ipam_policy_allocation_rules_output::GetIpamPolicyAllocationRulesOutput;
-
 pub use crate::operation::get_ipam_policy_allocation_rules::_get_ipam_policy_allocation_rules_input::GetIpamPolicyAllocationRulesInput;
+
+pub use crate::operation::get_ipam_policy_allocation_rules::_get_ipam_policy_allocation_rules_output::GetIpamPolicyAllocationRulesOutput;
 
 mod _get_ipam_policy_allocation_rules_input;
 

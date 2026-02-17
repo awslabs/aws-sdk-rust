@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::prepare_flow::Prep
     }
 }
 
-pub use crate::operation::prepare_flow::_prepare_flow_output::PrepareFlowOutput;
-
 pub use crate::operation::prepare_flow::_prepare_flow_input::PrepareFlowInput;
+
+pub use crate::operation::prepare_flow::_prepare_flow_output::PrepareFlowOutput;
 
 mod _prepare_flow_input;
 

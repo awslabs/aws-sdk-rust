@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_disassociate_code_security_scan_configuration::_batch_disassociate_code_security_scan_configuration_output::BatchDisassociateCodeSecurityScanConfigurationOutput;
-
 pub use crate::operation::batch_disassociate_code_security_scan_configuration::_batch_disassociate_code_security_scan_configuration_input::BatchDisassociateCodeSecurityScanConfigurationInput;
+
+pub use crate::operation::batch_disassociate_code_security_scan_configuration::_batch_disassociate_code_security_scan_configuration_output::BatchDisassociateCodeSecurityScanConfigurationOutput;
 
 mod _batch_disassociate_code_security_scan_configuration_input;
 

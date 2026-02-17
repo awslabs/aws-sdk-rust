@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_instances::St
     }
 }
 
-pub use crate::operation::stop_instances::_stop_instances_output::StopInstancesOutput;
-
 pub use crate::operation::stop_instances::_stop_instances_input::StopInstancesInput;
+
+pub use crate::operation::stop_instances::_stop_instances_output::StopInstancesOutput;
 
 mod _stop_instances_input;
 

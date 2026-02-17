@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_packaging_g
     }
 }
 
-pub use crate::operation::delete_packaging_group::_delete_packaging_group_output::DeletePackagingGroupOutput;
-
 pub use crate::operation::delete_packaging_group::_delete_packaging_group_input::DeletePackagingGroupInput;
+
+pub use crate::operation::delete_packaging_group::_delete_packaging_group_output::DeletePackagingGroupOutput;
 
 mod _delete_packaging_group_input;
 

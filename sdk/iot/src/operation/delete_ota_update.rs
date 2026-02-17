@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ota_update:
     }
 }
 
-pub use crate::operation::delete_ota_update::_delete_ota_update_output::DeleteOtaUpdateOutput;
-
 pub use crate::operation::delete_ota_update::_delete_ota_update_input::DeleteOtaUpdateInput;
+
+pub use crate::operation::delete_ota_update::_delete_ota_update_output::DeleteOtaUpdateOutput;
 
 mod _delete_ota_update_input;
 

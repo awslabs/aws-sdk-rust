@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_profiles
     }
 }
 
-pub use crate::operation::list_user_profiles::_list_user_profiles_output::ListUserProfilesOutput;
-
 pub use crate::operation::list_user_profiles::_list_user_profiles_input::ListUserProfilesInput;
+
+pub use crate::operation::list_user_profiles::_list_user_profiles_output::ListUserProfilesOutput;
 
 mod _list_user_profiles_input;
 

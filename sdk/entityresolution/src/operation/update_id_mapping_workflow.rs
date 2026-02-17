@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_id_mapping_
     }
 }
 
-pub use crate::operation::update_id_mapping_workflow::_update_id_mapping_workflow_output::UpdateIdMappingWorkflowOutput;
-
 pub use crate::operation::update_id_mapping_workflow::_update_id_mapping_workflow_input::UpdateIdMappingWorkflowInput;
+
+pub use crate::operation::update_id_mapping_workflow::_update_id_mapping_workflow_output::UpdateIdMappingWorkflowOutput;
 
 mod _update_id_mapping_workflow_input;
 

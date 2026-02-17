@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sql_injecti
     }
 }
 
-pub use crate::operation::delete_sql_injection_match_set::_delete_sql_injection_match_set_output::DeleteSqlInjectionMatchSetOutput;
-
 pub use crate::operation::delete_sql_injection_match_set::_delete_sql_injection_match_set_input::DeleteSqlInjectionMatchSetInput;
+
+pub use crate::operation::delete_sql_injection_match_set::_delete_sql_injection_match_set_output::DeleteSqlInjectionMatchSetOutput;
 
 mod _delete_sql_injection_match_set_input;
 

@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_file::GetFileE
     }
 }
 
-pub use crate::operation::get_file::_get_file_output::GetFileOutput;
-
 pub use crate::operation::get_file::_get_file_input::GetFileInput;
+
+pub use crate::operation::get_file::_get_file_output::GetFileOutput;
 
 mod _get_file_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_config_ru
     }
 }
 
-pub use crate::operation::describe_config_rules::_describe_config_rules_output::DescribeConfigRulesOutput;
-
 pub use crate::operation::describe_config_rules::_describe_config_rules_input::DescribeConfigRulesInput;
+
+pub use crate::operation::describe_config_rules::_describe_config_rules_output::DescribeConfigRulesOutput;
 
 mod _describe_config_rules_input;
 

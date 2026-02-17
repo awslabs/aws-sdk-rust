@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_job_def
     }
 }
 
-pub use crate::operation::deregister_job_definition::_deregister_job_definition_output::DeregisterJobDefinitionOutput;
-
 pub use crate::operation::deregister_job_definition::_deregister_job_definition_input::DeregisterJobDefinitionInput;
+
+pub use crate::operation::deregister_job_definition::_deregister_job_definition_output::DeregisterJobDefinitionOutput;
 
 mod _deregister_job_definition_input;
 

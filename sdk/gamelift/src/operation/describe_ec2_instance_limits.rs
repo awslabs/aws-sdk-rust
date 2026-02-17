@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ec2_insta
     }
 }
 
-pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_limits_output::DescribeEc2InstanceLimitsOutput;
-
 pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_limits_input::DescribeEc2InstanceLimitsInput;
+
+pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_limits_output::DescribeEc2InstanceLimitsOutput;
 
 mod _describe_ec2_instance_limits_input;
 

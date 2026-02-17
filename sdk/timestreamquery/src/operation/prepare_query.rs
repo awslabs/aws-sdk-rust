@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::prepare_query::Pre
     }
 }
 
-pub use crate::operation::prepare_query::_prepare_query_output::PrepareQueryOutput;
-
 pub use crate::operation::prepare_query::_prepare_query_input::PrepareQueryInput;
+
+pub use crate::operation::prepare_query::_prepare_query_output::PrepareQueryOutput;
 
 mod _prepare_query_input;
 

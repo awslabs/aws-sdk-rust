@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_instance_on
     }
 }
 
-pub use crate::operation::delete_instance_onboarding_job::_delete_instance_onboarding_job_output::DeleteInstanceOnboardingJobOutput;
-
 pub use crate::operation::delete_instance_onboarding_job::_delete_instance_onboarding_job_input::DeleteInstanceOnboardingJobInput;
+
+pub use crate::operation::delete_instance_onboarding_job::_delete_instance_onboarding_job_output::DeleteInstanceOnboardingJobOutput;
 
 mod _delete_instance_onboarding_job_input;
 

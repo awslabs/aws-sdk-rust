@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dev_environ
     }
 }
 
-pub use crate::operation::create_dev_environment::_create_dev_environment_output::CreateDevEnvironmentOutput;
-
 pub use crate::operation::create_dev_environment::_create_dev_environment_input::CreateDevEnvironmentInput;
+
+pub use crate::operation::create_dev_environment::_create_dev_environment_output::CreateDevEnvironmentOutput;
 
 mod _create_dev_environment_input;
 

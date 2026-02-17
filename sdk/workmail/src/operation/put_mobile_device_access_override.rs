@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_mobile_device_
     }
 }
 
-pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_access_override_output::PutMobileDeviceAccessOverrideOutput;
-
 pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_access_override_input::PutMobileDeviceAccessOverrideInput;
+
+pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_access_override_output::PutMobileDeviceAccessOverrideOutput;
 
 mod _put_mobile_device_access_override_input;
 

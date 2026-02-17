@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_database::C
     }
 }
 
-pub use crate::operation::create_database::_create_database_output::CreateDatabaseOutput;
-
 pub use crate::operation::create_database::_create_database_input::CreateDatabaseInput;
+
+pub use crate::operation::create_database::_create_database_output::CreateDatabaseOutput;
 
 mod _create_database_input;
 

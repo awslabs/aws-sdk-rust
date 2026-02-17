@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_log_record::Ge
     }
 }
 
-pub use crate::operation::get_log_record::_get_log_record_output::GetLogRecordOutput;
-
 pub use crate::operation::get_log_record::_get_log_record_input::GetLogRecordInput;
+
+pub use crate::operation::get_log_record::_get_log_record_output::GetLogRecordOutput;
 
 mod _get_log_record_input;
 

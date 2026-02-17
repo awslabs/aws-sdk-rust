@@ -721,9 +721,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_unreference
     }
 }
 
-pub use crate::operation::create_unreferenced_merge_commit::_create_unreferenced_merge_commit_output::CreateUnreferencedMergeCommitOutput;
-
 pub use crate::operation::create_unreferenced_merge_commit::_create_unreferenced_merge_commit_input::CreateUnreferencedMergeCommitInput;
+
+pub use crate::operation::create_unreferenced_merge_commit::_create_unreferenced_merge_commit_output::CreateUnreferencedMergeCommitOutput;
 
 mod _create_unreferenced_merge_commit_input;
 

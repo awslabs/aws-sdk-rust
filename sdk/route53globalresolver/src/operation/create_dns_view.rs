@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dns_view::C
     }
 }
 
-pub use crate::operation::create_dns_view::_create_dns_view_output::CreateDnsViewOutput;
-
 pub use crate::operation::create_dns_view::_create_dns_view_input::CreateDnsViewInput;
+
+pub use crate::operation::create_dns_view::_create_dns_view_output::CreateDnsViewOutput;
 
 mod _create_dns_view_input;
 

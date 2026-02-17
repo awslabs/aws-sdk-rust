@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_task_fr
     }
 }
 
-pub use crate::operation::deregister_task_from_maintenance_window::_deregister_task_from_maintenance_window_output::DeregisterTaskFromMaintenanceWindowOutput;
-
 pub use crate::operation::deregister_task_from_maintenance_window::_deregister_task_from_maintenance_window_input::DeregisterTaskFromMaintenanceWindowInput;
+
+pub use crate::operation::deregister_task_from_maintenance_window::_deregister_task_from_maintenance_window_output::DeregisterTaskFromMaintenanceWindowOutput;
 
 mod _deregister_task_from_maintenance_window_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_matchmaki
     }
 }
 
-pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_rule_set_output::ValidateMatchmakingRuleSetOutput;
-
 pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_rule_set_input::ValidateMatchmakingRuleSetInput;
+
+pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_rule_set_output::ValidateMatchmakingRuleSetOutput;
 
 mod _validate_matchmaking_rule_set_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_collabo
     }
 }
 
-pub use crate::operation::list_agent_collaborators::_list_agent_collaborators_output::ListAgentCollaboratorsOutput;
-
 pub use crate::operation::list_agent_collaborators::_list_agent_collaborators_input::ListAgentCollaboratorsInput;
+
+pub use crate::operation::list_agent_collaborators::_list_agent_collaborators_output::ListAgentCollaboratorsOutput;
 
 mod _list_agent_collaborators_input;
 

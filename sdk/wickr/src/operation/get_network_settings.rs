@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_settin
     }
 }
 
-pub use crate::operation::get_network_settings::_get_network_settings_output::GetNetworkSettingsOutput;
-
 pub use crate::operation::get_network_settings::_get_network_settings_input::GetNetworkSettingsInput;
+
+pub use crate::operation::get_network_settings::_get_network_settings_output::GetNetworkSettingsOutput;
 
 mod _get_network_settings_input;
 

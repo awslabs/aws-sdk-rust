@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_stream::StopS
     }
 }
 
-pub use crate::operation::stop_stream::_stop_stream_output::StopStreamOutput;
-
 pub use crate::operation::stop_stream::_stop_stream_input::StopStreamInput;
+
+pub use crate::operation::stop_stream::_stop_stream_output::StopStreamOutput;
 
 mod _stop_stream_input;
 

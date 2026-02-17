@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_retention_conf
     }
 }
 
-pub use crate::operation::put_retention_configuration::_put_retention_configuration_output::PutRetentionConfigurationOutput;
-
 pub use crate::operation::put_retention_configuration::_put_retention_configuration_input::PutRetentionConfigurationInput;
+
+pub use crate::operation::put_retention_configuration::_put_retention_configuration_output::PutRetentionConfigurationOutput;
 
 mod _put_retention_configuration_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_portal::Di
     }
 }
 
-pub use crate::operation::disable_portal::_disable_portal_output::DisablePortalOutput;
-
 pub use crate::operation::disable_portal::_disable_portal_input::DisablePortalInput;
+
+pub use crate::operation::disable_portal::_disable_portal_output::DisablePortalOutput;
 
 mod _disable_portal_input;
 

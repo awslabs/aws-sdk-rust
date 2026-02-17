@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::run_scheduled_inst
     }
 }
 
-pub use crate::operation::run_scheduled_instances::_run_scheduled_instances_output::RunScheduledInstancesOutput;
-
 pub use crate::operation::run_scheduled_instances::_run_scheduled_instances_input::RunScheduledInstancesInput;
+
+pub use crate::operation::run_scheduled_instances::_run_scheduled_instances_output::RunScheduledInstancesOutput;
 
 mod _run_scheduled_instances_input;
 

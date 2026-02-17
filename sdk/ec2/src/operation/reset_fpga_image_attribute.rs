@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_fpga_image_a
     }
 }
 
-pub use crate::operation::reset_fpga_image_attribute::_reset_fpga_image_attribute_output::ResetFpgaImageAttributeOutput;
-
 pub use crate::operation::reset_fpga_image_attribute::_reset_fpga_image_attribute_input::ResetFpgaImageAttributeInput;
+
+pub use crate::operation::reset_fpga_image_attribute::_reset_fpga_image_attribute_output::ResetFpgaImageAttributeOutput;
 
 mod _reset_fpga_image_attribute_input;
 

@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_user::Reg
     }
 }
 
-pub use crate::operation::register_user::_register_user_output::RegisterUserOutput;
-
 pub use crate::operation::register_user::_register_user_input::RegisterUserInput;
+
+pub use crate::operation::register_user::_register_user_output::RegisterUserOutput;
 
 mod _register_user_input;
 

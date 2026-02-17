@@ -563,9 +563,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_repository_tr
     }
 }
 
-pub use crate::operation::test_repository_triggers::_test_repository_triggers_output::TestRepositoryTriggersOutput;
-
 pub use crate::operation::test_repository_triggers::_test_repository_triggers_input::TestRepositoryTriggersInput;
+
+pub use crate::operation::test_repository_triggers::_test_repository_triggers_output::TestRepositoryTriggersOutput;
 
 mod _test_repository_triggers_input;
 

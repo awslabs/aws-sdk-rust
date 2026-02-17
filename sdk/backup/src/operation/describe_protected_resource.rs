@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_protected
     }
 }
 
-pub use crate::operation::describe_protected_resource::_describe_protected_resource_output::DescribeProtectedResourceOutput;
-
 pub use crate::operation::describe_protected_resource::_describe_protected_resource_input::DescribeProtectedResourceInput;
+
+pub use crate::operation::describe_protected_resource::_describe_protected_resource_output::DescribeProtectedResourceOutput;
 
 mod _describe_protected_resource_input;
 

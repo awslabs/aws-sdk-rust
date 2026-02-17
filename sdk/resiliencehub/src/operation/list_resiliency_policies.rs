@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resiliency_po
     }
 }
 
-pub use crate::operation::list_resiliency_policies::_list_resiliency_policies_output::ListResiliencyPoliciesOutput;
-
 pub use crate::operation::list_resiliency_policies::_list_resiliency_policies_input::ListResiliencyPoliciesInput;
+
+pub use crate::operation::list_resiliency_policies::_list_resiliency_policies_output::ListResiliencyPoliciesOutput;
 
 mod _list_resiliency_policies_input;
 

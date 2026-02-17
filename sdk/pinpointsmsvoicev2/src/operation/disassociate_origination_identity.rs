@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_origi
     }
 }
 
-pub use crate::operation::disassociate_origination_identity::_disassociate_origination_identity_output::DisassociateOriginationIdentityOutput;
-
 pub use crate::operation::disassociate_origination_identity::_disassociate_origination_identity_input::DisassociateOriginationIdentityInput;
+
+pub use crate::operation::disassociate_origination_identity::_disassociate_origination_identity_output::DisassociateOriginationIdentityOutput;
 
 mod _disassociate_origination_identity_input;
 

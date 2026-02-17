@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_default_
     }
 }
 
-pub use crate::operation::associate_default_vocabulary::_associate_default_vocabulary_output::AssociateDefaultVocabularyOutput;
-
 pub use crate::operation::associate_default_vocabulary::_associate_default_vocabulary_input::AssociateDefaultVocabularyInput;
+
+pub use crate::operation::associate_default_vocabulary::_associate_default_vocabulary_output::AssociateDefaultVocabularyOutput;
 
 mod _associate_default_vocabulary_input;
 

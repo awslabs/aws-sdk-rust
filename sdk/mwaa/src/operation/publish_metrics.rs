@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_metrics::P
     }
 }
 
-pub use crate::operation::publish_metrics::_publish_metrics_output::PublishMetricsOutput;
-
 pub use crate::operation::publish_metrics::_publish_metrics_input::PublishMetricsInput;
+
+pub use crate::operation::publish_metrics::_publish_metrics_output::PublishMetricsOutput;
 
 mod _publish_metrics_input;
 

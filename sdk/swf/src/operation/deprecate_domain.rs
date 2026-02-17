@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprecate_domain::
     }
 }
 
-pub use crate::operation::deprecate_domain::_deprecate_domain_output::DeprecateDomainOutput;
-
 pub use crate::operation::deprecate_domain::_deprecate_domain_input::DeprecateDomainInput;
+
+pub use crate::operation::deprecate_domain::_deprecate_domain_output::DeprecateDomainOutput;
 
 mod _deprecate_domain_input;
 

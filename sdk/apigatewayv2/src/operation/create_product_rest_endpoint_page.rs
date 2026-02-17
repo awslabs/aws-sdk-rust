@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_product_res
     }
 }
 
-pub use crate::operation::create_product_rest_endpoint_page::_create_product_rest_endpoint_page_output::CreateProductRestEndpointPageOutput;
-
 pub use crate::operation::create_product_rest_endpoint_page::_create_product_rest_endpoint_page_input::CreateProductRestEndpointPageInput;
+
+pub use crate::operation::create_product_rest_endpoint_page::_create_product_rest_endpoint_page_output::CreateProductRestEndpointPageOutput;
 
 mod _create_product_rest_endpoint_page_input;
 

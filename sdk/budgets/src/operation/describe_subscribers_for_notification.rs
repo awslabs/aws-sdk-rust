@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_subscribe
     }
 }
 
-pub use crate::operation::describe_subscribers_for_notification::_describe_subscribers_for_notification_output::DescribeSubscribersForNotificationOutput;
-
 pub use crate::operation::describe_subscribers_for_notification::_describe_subscribers_for_notification_input::DescribeSubscribersForNotificationInput;
+
+pub use crate::operation::describe_subscribers_for_notification::_describe_subscribers_for_notification_output::DescribeSubscribersForNotificationOutput;
 
 mod _describe_subscribers_for_notification_input;
 

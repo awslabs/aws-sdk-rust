@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_resource_
     }
 }
 
-pub use crate::operation::list_bot_resource_generations::_list_bot_resource_generations_output::ListBotResourceGenerationsOutput;
-
 pub use crate::operation::list_bot_resource_generations::_list_bot_resource_generations_input::ListBotResourceGenerationsInput;
+
+pub use crate::operation::list_bot_resource_generations::_list_bot_resource_generations_output::ListBotResourceGenerationsOutput;
 
 mod _list_bot_resource_generations_input;
 

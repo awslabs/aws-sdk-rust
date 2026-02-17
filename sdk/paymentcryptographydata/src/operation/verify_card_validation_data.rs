@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_card_valida
     }
 }
 
-pub use crate::operation::verify_card_validation_data::_verify_card_validation_data_output::VerifyCardValidationDataOutput;
-
 pub use crate::operation::verify_card_validation_data::_verify_card_validation_data_input::VerifyCardValidationDataInput;
+
+pub use crate::operation::verify_card_validation_data::_verify_card_validation_data_output::VerifyCardValidationDataOutput;
 
 mod _verify_card_validation_data_input;
 

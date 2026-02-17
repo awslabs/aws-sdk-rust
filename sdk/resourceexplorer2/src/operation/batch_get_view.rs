@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_view::Ba
     }
 }
 
-pub use crate::operation::batch_get_view::_batch_get_view_output::BatchGetViewOutput;
-
 pub use crate::operation::batch_get_view::_batch_get_view_input::BatchGetViewInput;
+
+pub use crate::operation::batch_get_view::_batch_get_view_output::BatchGetViewOutput;
 
 mod _batch_get_view_input;
 

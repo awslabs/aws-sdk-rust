@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_environment
     }
 }
 
-pub use crate::operation::create_environment_profile::_create_environment_profile_output::CreateEnvironmentProfileOutput;
-
 pub use crate::operation::create_environment_profile::_create_environment_profile_input::CreateEnvironmentProfileInput;
+
+pub use crate::operation::create_environment_profile::_create_environment_profile_output::CreateEnvironmentProfileOutput;
 
 mod _create_environment_profile_input;
 

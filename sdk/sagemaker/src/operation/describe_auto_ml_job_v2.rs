@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_auto_ml_j
     }
 }
 
-pub use crate::operation::describe_auto_ml_job_v2::_describe_auto_ml_job_v2_output::DescribeAutoMlJobV2Output;
-
 pub use crate::operation::describe_auto_ml_job_v2::_describe_auto_ml_job_v2_input::DescribeAutoMlJobV2Input;
+
+pub use crate::operation::describe_auto_ml_job_v2::_describe_auto_ml_job_v2_output::DescribeAutoMlJobV2Output;
 
 mod _describe_auto_ml_job_v2_input;
 

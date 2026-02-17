@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::reject_domain_transfer_from_another_aws_account::_reject_domain_transfer_from_another_aws_account_output::RejectDomainTransferFromAnotherAwsAccountOutput;
-
 pub use crate::operation::reject_domain_transfer_from_another_aws_account::_reject_domain_transfer_from_another_aws_account_input::RejectDomainTransferFromAnotherAwsAccountInput;
+
+pub use crate::operation::reject_domain_transfer_from_another_aws_account::_reject_domain_transfer_from_another_aws_account_output::RejectDomainTransferFromAnotherAwsAccountOutput;
 
 mod _reject_domain_transfer_from_another_aws_account_input;
 

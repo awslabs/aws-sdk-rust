@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_personalized_r
     }
 }
 
-pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_output::GetPersonalizedRankingOutput;
-
 pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_input::GetPersonalizedRankingInput;
+
+pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_output::GetPersonalizedRankingOutput;
 
 mod _get_personalized_ranking_input;
 

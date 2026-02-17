@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_load_balanc
     }
 }
 
-pub use crate::operation::create_load_balancer::_create_load_balancer_output::CreateLoadBalancerOutput;
-
 pub use crate::operation::create_load_balancer::_create_load_balancer_input::CreateLoadBalancerInput;
+
+pub use crate::operation::create_load_balancer::_create_load_balancer_output::CreateLoadBalancerOutput;
 
 mod _create_load_balancer_input;
 

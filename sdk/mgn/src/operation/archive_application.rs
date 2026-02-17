@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::archive_applicatio
     }
 }
 
-pub use crate::operation::archive_application::_archive_application_output::ArchiveApplicationOutput;
-
 pub use crate::operation::archive_application::_archive_application_input::ArchiveApplicationInput;
+
+pub use crate::operation::archive_application::_archive_application_output::ArchiveApplicationOutput;
 
 mod _archive_application_input;
 

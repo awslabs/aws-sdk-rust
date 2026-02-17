@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_pin_data::V
     }
 }
 
-pub use crate::operation::verify_pin_data::_verify_pin_data_output::VerifyPinDataOutput;
-
 pub use crate::operation::verify_pin_data::_verify_pin_data_input::VerifyPinDataInput;
+
+pub use crate::operation::verify_pin_data::_verify_pin_data_output::VerifyPinDataOutput;
 
 mod _verify_pin_data_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_participant
     }
 }
 
-pub use crate::operation::create_participant_connection::_create_participant_connection_output::CreateParticipantConnectionOutput;
-
 pub use crate::operation::create_participant_connection::_create_participant_connection_input::CreateParticipantConnectionInput;
+
+pub use crate::operation::create_participant_connection::_create_participant_connection_output::CreateParticipantConnectionOutput;
 
 mod _create_participant_connection_input;
 

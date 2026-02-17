@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_refresh_sch
     }
 }
 
-pub use crate::operation::create_refresh_schedule::_create_refresh_schedule_output::CreateRefreshScheduleOutput;
-
 pub use crate::operation::create_refresh_schedule::_create_refresh_schedule_input::CreateRefreshScheduleInput;
+
+pub use crate::operation::create_refresh_schedule::_create_refresh_schedule_output::CreateRefreshScheduleOutput;
 
 mod _create_refresh_schedule_input;
 

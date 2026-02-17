@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_server_cert
     }
 }
 
-pub use crate::operation::upload_server_certificate::_upload_server_certificate_output::UploadServerCertificateOutput;
-
 pub use crate::operation::upload_server_certificate::_upload_server_certificate_input::UploadServerCertificateInput;
+
+pub use crate::operation::upload_server_certificate::_upload_server_certificate_output::UploadServerCertificateOutput;
 
 mod _upload_server_certificate_input;
 

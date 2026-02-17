@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::derive_shared_secr
     }
 }
 
-pub use crate::operation::derive_shared_secret::_derive_shared_secret_output::DeriveSharedSecretOutput;
-
 pub use crate::operation::derive_shared_secret::_derive_shared_secret_input::DeriveSharedSecretInput;
+
+pub use crate::operation::derive_shared_secret::_derive_shared_secret_output::DeriveSharedSecretOutput;
 
 mod _derive_shared_secret_input;
 

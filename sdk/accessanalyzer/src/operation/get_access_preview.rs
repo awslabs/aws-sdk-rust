@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_preview
     }
 }
 
-pub use crate::operation::get_access_preview::_get_access_preview_output::GetAccessPreviewOutput;
-
 pub use crate::operation::get_access_preview::_get_access_preview_input::GetAccessPreviewInput;
+
+pub use crate::operation::get_access_preview::_get_access_preview_output::GetAccessPreviewOutput;
 
 mod _get_access_preview_input;
 

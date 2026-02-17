@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_idle_recomm
     }
 }
 
-pub use crate::operation::export_idle_recommendations::_export_idle_recommendations_output::ExportIdleRecommendationsOutput;
-
 pub use crate::operation::export_idle_recommendations::_export_idle_recommendations_input::ExportIdleRecommendationsInput;
+
+pub use crate::operation::export_idle_recommendations::_export_idle_recommendations_output::ExportIdleRecommendationsOutput;
 
 mod _export_idle_recommendations_input;
 

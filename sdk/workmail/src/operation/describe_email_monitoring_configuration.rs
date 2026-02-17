@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_email_mon
     }
 }
 
-pub use crate::operation::describe_email_monitoring_configuration::_describe_email_monitoring_configuration_output::DescribeEmailMonitoringConfigurationOutput;
-
 pub use crate::operation::describe_email_monitoring_configuration::_describe_email_monitoring_configuration_input::DescribeEmailMonitoringConfigurationInput;
+
+pub use crate::operation::describe_email_monitoring_configuration::_describe_email_monitoring_configuration_output::DescribeEmailMonitoringConfigurationOutput;
 
 mod _describe_email_monitoring_configuration_input;
 

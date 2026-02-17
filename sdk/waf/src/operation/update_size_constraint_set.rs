@@ -489,9 +489,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_size_constr
     }
 }
 
-pub use crate::operation::update_size_constraint_set::_update_size_constraint_set_output::UpdateSizeConstraintSetOutput;
-
 pub use crate::operation::update_size_constraint_set::_update_size_constraint_set_input::UpdateSizeConstraintSetInput;
+
+pub use crate::operation::update_size_constraint_set::_update_size_constraint_set_output::UpdateSizeConstraintSetOutput;
 
 mod _update_size_constraint_set_input;
 

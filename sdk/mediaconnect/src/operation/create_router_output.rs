@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_router_outp
     }
 }
 
-pub use crate::operation::create_router_output::_create_router_output_output::CreateRouterOutputOutput;
-
 pub use crate::operation::create_router_output::_create_router_output_input::CreateRouterOutputInput;
+
+pub use crate::operation::create_router_output::_create_router_output_output::CreateRouterOutputOutput;
 
 mod _create_router_output_input;
 

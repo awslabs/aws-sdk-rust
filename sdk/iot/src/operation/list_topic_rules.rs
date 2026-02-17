@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_topic_rules::
     }
 }
 
-pub use crate::operation::list_topic_rules::_list_topic_rules_output::ListTopicRulesOutput;
-
 pub use crate::operation::list_topic_rules::_list_topic_rules_input::ListTopicRulesInput;
+
+pub use crate::operation::list_topic_rules::_list_topic_rules_output::ListTopicRulesOutput;
 
 mod _list_topic_rules_input;
 

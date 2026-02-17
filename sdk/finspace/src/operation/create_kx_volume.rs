@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_volume::
     }
 }
 
-pub use crate::operation::create_kx_volume::_create_kx_volume_output::CreateKxVolumeOutput;
-
 pub use crate::operation::create_kx_volume::_create_kx_volume_input::CreateKxVolumeInput;
+
+pub use crate::operation::create_kx_volume::_create_kx_volume_output::CreateKxVolumeOutput;
 
 mod _create_kx_volume_input;
 

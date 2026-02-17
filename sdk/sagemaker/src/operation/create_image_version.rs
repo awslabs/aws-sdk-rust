@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_image_versi
     }
 }
 
-pub use crate::operation::create_image_version::_create_image_version_output::CreateImageVersionOutput;
-
 pub use crate::operation::create_image_version::_create_image_version_input::CreateImageVersionInput;
+
+pub use crate::operation::create_image_version::_create_image_version_output::CreateImageVersionOutput;
 
 mod _create_image_version_input;
 

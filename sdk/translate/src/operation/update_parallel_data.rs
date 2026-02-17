@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_parallel_da
     }
 }
 
-pub use crate::operation::update_parallel_data::_update_parallel_data_output::UpdateParallelDataOutput;
-
 pub use crate::operation::update_parallel_data::_update_parallel_data_input::UpdateParallelDataInput;
+
+pub use crate::operation::update_parallel_data::_update_parallel_data_output::UpdateParallelDataOutput;
 
 mod _update_parallel_data_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_brand::De
     }
 }
 
-pub use crate::operation::describe_brand::_describe_brand_output::DescribeBrandOutput;
-
 pub use crate::operation::describe_brand::_describe_brand_input::DescribeBrandInput;
+
+pub use crate::operation::describe_brand::_describe_brand_output::DescribeBrandOutput;
 
 mod _describe_brand_input;
 

@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_broker_en
     }
 }
 
-pub use crate::operation::describe_broker_engine_types::_describe_broker_engine_types_output::DescribeBrokerEngineTypesOutput;
-
 pub use crate::operation::describe_broker_engine_types::_describe_broker_engine_types_input::DescribeBrokerEngineTypesInput;
+
+pub use crate::operation::describe_broker_engine_types::_describe_broker_engine_types_output::DescribeBrokerEngineTypesOutput;
 
 mod _describe_broker_engine_types_input;
 

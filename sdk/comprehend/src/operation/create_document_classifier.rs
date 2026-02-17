@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_document_cl
     }
 }
 
-pub use crate::operation::create_document_classifier::_create_document_classifier_output::CreateDocumentClassifierOutput;
-
 pub use crate::operation::create_document_classifier::_create_document_classifier_input::CreateDocumentClassifierInput;
+
+pub use crate::operation::create_document_classifier::_create_document_classifier_output::CreateDocumentClassifierOutput;
 
 mod _create_document_classifier_input;
 

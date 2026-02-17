@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recommender
     }
 }
 
-pub use crate::operation::delete_recommender::_delete_recommender_output::DeleteRecommenderOutput;
-
 pub use crate::operation::delete_recommender::_delete_recommender_input::DeleteRecommenderInput;
+
+pub use crate::operation::delete_recommender::_delete_recommender_output::DeleteRecommenderOutput;
 
 mod _delete_recommender_input;
 

@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_document_versi
     }
 }
 
-pub use crate::operation::get_document_version::_get_document_version_output::GetDocumentVersionOutput;
-
 pub use crate::operation::get_document_version::_get_document_version_input::GetDocumentVersionInput;
+
+pub use crate::operation::get_document_version::_get_document_version_output::GetDocumentVersionOutput;
 
 mod _get_document_version_input;
 

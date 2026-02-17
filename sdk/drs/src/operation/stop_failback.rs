@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_failback::Sto
     }
 }
 
-pub use crate::operation::stop_failback::_stop_failback_output::StopFailbackOutput;
-
 pub use crate::operation::stop_failback::_stop_failback_input::StopFailbackInput;
+
+pub use crate::operation::stop_failback::_stop_failback_output::StopFailbackOutput;
 
 mod _stop_failback_input;
 

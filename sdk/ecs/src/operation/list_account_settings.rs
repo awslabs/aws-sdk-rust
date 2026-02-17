@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_setti
     }
 }
 
-pub use crate::operation::list_account_settings::_list_account_settings_output::ListAccountSettingsOutput;
-
 pub use crate::operation::list_account_settings::_list_account_settings_input::ListAccountSettingsInput;
+
+pub use crate::operation::list_account_settings::_list_account_settings_output::ListAccountSettingsOutput;
 
 mod _list_account_settings_input;
 

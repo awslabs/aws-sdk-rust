@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_channel_han
     }
 }
 
-pub use crate::operation::reject_channel_handshake::_reject_channel_handshake_output::RejectChannelHandshakeOutput;
-
 pub use crate::operation::reject_channel_handshake::_reject_channel_handshake_input::RejectChannelHandshakeInput;
+
+pub use crate::operation::reject_channel_handshake::_reject_channel_handshake_output::RejectChannelHandshakeOutput;
 
 mod _reject_channel_handshake_input;
 

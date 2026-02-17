@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_telemetry_pipe
     }
 }
 
-pub use crate::operation::get_telemetry_pipeline::_get_telemetry_pipeline_output::GetTelemetryPipelineOutput;
-
 pub use crate::operation::get_telemetry_pipeline::_get_telemetry_pipeline_input::GetTelemetryPipelineInput;
+
+pub use crate::operation::get_telemetry_pipeline::_get_telemetry_pipeline_output::GetTelemetryPipelineOutput;
 
 mod _get_telemetry_pipeline_input;
 

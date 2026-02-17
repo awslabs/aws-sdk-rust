@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_depen
     }
 }
 
-pub use crate::operation::list_service_dependents::_list_service_dependents_output::ListServiceDependentsOutput;
-
 pub use crate::operation::list_service_dependents::_list_service_dependents_input::ListServiceDependentsInput;
+
+pub use crate::operation::list_service_dependents::_list_service_dependents_output::ListServiceDependentsOutput;
 
 mod _list_service_dependents_input;
 

@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_voice_connector_termination_credentials::_put_voice_connector_termination_credentials_output::PutVoiceConnectorTerminationCredentialsOutput;
-
 pub use crate::operation::put_voice_connector_termination_credentials::_put_voice_connector_termination_credentials_input::PutVoiceConnectorTerminationCredentialsInput;
+
+pub use crate::operation::put_voice_connector_termination_credentials::_put_voice_connector_termination_credentials_output::PutVoiceConnectorTerminationCredentialsOutput;
 
 mod _put_voice_connector_termination_credentials_input;
 

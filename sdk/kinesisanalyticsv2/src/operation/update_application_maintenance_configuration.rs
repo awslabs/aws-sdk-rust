@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_application_maintenance_configuration::_update_application_maintenance_configuration_output::UpdateApplicationMaintenanceConfigurationOutput;
-
 pub use crate::operation::update_application_maintenance_configuration::_update_application_maintenance_configuration_input::UpdateApplicationMaintenanceConfigurationInput;
+
+pub use crate::operation::update_application_maintenance_configuration::_update_application_maintenance_configuration_output::UpdateApplicationMaintenanceConfigurationOutput;
 
 mod _update_application_maintenance_configuration_input;
 

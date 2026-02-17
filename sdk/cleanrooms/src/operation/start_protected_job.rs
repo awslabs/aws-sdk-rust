@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_protected_jo
     }
 }
 
-pub use crate::operation::start_protected_job::_start_protected_job_output::StartProtectedJobOutput;
-
 pub use crate::operation::start_protected_job::_start_protected_job_input::StartProtectedJobInput;
+
+pub use crate::operation::start_protected_job::_start_protected_job_output::StartProtectedJobOutput;
 
 mod _start_protected_job_input;
 

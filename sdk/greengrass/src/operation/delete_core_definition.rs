@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_core_defini
     }
 }
 
-pub use crate::operation::delete_core_definition::_delete_core_definition_output::DeleteCoreDefinitionOutput;
-
 pub use crate::operation::delete_core_definition::_delete_core_definition_input::DeleteCoreDefinitionInput;
+
+pub use crate::operation::delete_core_definition::_delete_core_definition_output::DeleteCoreDefinitionOutput;
 
 mod _delete_core_definition_input;
 

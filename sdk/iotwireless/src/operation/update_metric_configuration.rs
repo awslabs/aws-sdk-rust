@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_metric_conf
     }
 }
 
-pub use crate::operation::update_metric_configuration::_update_metric_configuration_output::UpdateMetricConfigurationOutput;
-
 pub use crate::operation::update_metric_configuration::_update_metric_configuration_input::UpdateMetricConfigurationInput;
+
+pub use crate::operation::update_metric_configuration::_update_metric_configuration_output::UpdateMetricConfigurationOutput;
 
 mod _update_metric_configuration_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_framework
     }
 }
 
-pub use crate::operation::describe_framework::_describe_framework_output::DescribeFrameworkOutput;
-
 pub use crate::operation::describe_framework::_describe_framework_input::DescribeFrameworkInput;
+
+pub use crate::operation::describe_framework::_describe_framework_output::DescribeFrameworkOutput;
 
 mod _describe_framework_input;
 

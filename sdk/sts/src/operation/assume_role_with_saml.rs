@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_role_with_s
     }
 }
 
-pub use crate::operation::assume_role_with_saml::_assume_role_with_saml_output::AssumeRoleWithSamlOutput;
-
 pub use crate::operation::assume_role_with_saml::_assume_role_with_saml_input::AssumeRoleWithSamlInput;
+
+pub use crate::operation::assume_role_with_saml::_assume_role_with_saml_output::AssumeRoleWithSamlOutput;
 
 mod _assume_role_with_saml_input;
 

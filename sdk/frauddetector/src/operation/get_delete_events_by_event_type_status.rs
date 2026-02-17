@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delete_events_
     }
 }
 
-pub use crate::operation::get_delete_events_by_event_type_status::_get_delete_events_by_event_type_status_output::GetDeleteEventsByEventTypeStatusOutput;
-
 pub use crate::operation::get_delete_events_by_event_type_status::_get_delete_events_by_event_type_status_input::GetDeleteEventsByEventTypeStatusInput;
+
+pub use crate::operation::get_delete_events_by_event_type_status::_get_delete_events_by_event_type_status_output::GetDeleteEventsByEventTypeStatusOutput;
 
 mod _get_delete_events_by_event_type_status_input;
 

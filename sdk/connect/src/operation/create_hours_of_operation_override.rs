@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hours_of_op
     }
 }
 
-pub use crate::operation::create_hours_of_operation_override::_create_hours_of_operation_override_output::CreateHoursOfOperationOverrideOutput;
-
 pub use crate::operation::create_hours_of_operation_override::_create_hours_of_operation_override_input::CreateHoursOfOperationOverrideInput;
+
+pub use crate::operation::create_hours_of_operation_override::_create_hours_of_operation_override_output::CreateHoursOfOperationOverrideOutput;
 
 mod _create_hours_of_operation_override_input;
 

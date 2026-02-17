@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_program_man
     }
 }
 
-pub use crate::operation::delete_program_management_account::_delete_program_management_account_output::DeleteProgramManagementAccountOutput;
-
 pub use crate::operation::delete_program_management_account::_delete_program_management_account_input::DeleteProgramManagementAccountInput;
+
+pub use crate::operation::delete_program_management_account::_delete_program_management_account_output::DeleteProgramManagementAccountOutput;
 
 mod _delete_program_management_account_input;
 

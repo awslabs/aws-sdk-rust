@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_intent_paths:
     }
 }
 
-pub use crate::operation::list_intent_paths::_list_intent_paths_output::ListIntentPathsOutput;
-
 pub use crate::operation::list_intent_paths::_list_intent_paths_input::ListIntentPathsInput;
+
+pub use crate::operation::list_intent_paths::_list_intent_paths_output::ListIntentPathsOutput;
 
 mod _list_intent_paths_input;
 

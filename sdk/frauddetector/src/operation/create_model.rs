@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model::Crea
     }
 }
 
-pub use crate::operation::create_model::_create_model_output::CreateModelOutput;
-
 pub use crate::operation::create_model::_create_model_input::CreateModelInput;
+
+pub use crate::operation::create_model::_create_model_output::CreateModelOutput;
 
 mod _create_model_input;
 

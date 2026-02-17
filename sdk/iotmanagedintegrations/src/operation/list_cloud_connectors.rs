@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cloud_connect
     }
 }
 
-pub use crate::operation::list_cloud_connectors::_list_cloud_connectors_output::ListCloudConnectorsOutput;
-
 pub use crate::operation::list_cloud_connectors::_list_cloud_connectors_input::ListCloudConnectorsInput;
+
+pub use crate::operation::list_cloud_connectors::_list_cloud_connectors_output::ListCloudConnectorsOutput;
 
 mod _list_cloud_connectors_input;
 

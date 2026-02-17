@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_pipeline_exe
     }
 }
 
-pub use crate::operation::start_pipeline_execution::_start_pipeline_execution_output::StartPipelineExecutionOutput;
-
 pub use crate::operation::start_pipeline_execution::_start_pipeline_execution_input::StartPipelineExecutionInput;
+
+pub use crate::operation::start_pipeline_execution::_start_pipeline_execution_output::StartPipelineExecutionOutput;
 
 mod _start_pipeline_execution_input;
 

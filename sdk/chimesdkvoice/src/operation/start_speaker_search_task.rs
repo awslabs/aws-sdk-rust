@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_speaker_sear
     }
 }
 
-pub use crate::operation::start_speaker_search_task::_start_speaker_search_task_output::StartSpeakerSearchTaskOutput;
-
 pub use crate::operation::start_speaker_search_task::_start_speaker_search_task_input::StartSpeakerSearchTaskInput;
+
+pub use crate::operation::start_speaker_search_task::_start_speaker_search_task_output::StartSpeakerSearchTaskOutput;
 
 mod _start_speaker_search_task_input;
 

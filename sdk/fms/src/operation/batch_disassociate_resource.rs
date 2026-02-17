@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disassociate
     }
 }
 
-pub use crate::operation::batch_disassociate_resource::_batch_disassociate_resource_output::BatchDisassociateResourceOutput;
-
 pub use crate::operation::batch_disassociate_resource::_batch_disassociate_resource_input::BatchDisassociateResourceInput;
+
+pub use crate::operation::batch_disassociate_resource::_batch_disassociate_resource_output::BatchDisassociateResourceOutput;
 
 mod _batch_disassociate_resource_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metadata_
     }
 }
 
-pub use crate::operation::describe_metadata_model_conversions::_describe_metadata_model_conversions_output::DescribeMetadataModelConversionsOutput;
-
 pub use crate::operation::describe_metadata_model_conversions::_describe_metadata_model_conversions_input::DescribeMetadataModelConversionsInput;
+
+pub use crate::operation::describe_metadata_model_conversions::_describe_metadata_model_conversions_output::DescribeMetadataModelConversionsOutput;
 
 mod _describe_metadata_model_conversions_input;
 

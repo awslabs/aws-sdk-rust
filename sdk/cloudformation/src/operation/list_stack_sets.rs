@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_sets::L
     }
 }
 
-pub use crate::operation::list_stack_sets::_list_stack_sets_output::ListStackSetsOutput;
-
 pub use crate::operation::list_stack_sets::_list_stack_sets_input::ListStackSetsInput;
+
+pub use crate::operation::list_stack_sets::_list_stack_sets_output::ListStackSetsOutput;
 
 mod _list_stack_sets_input;
 

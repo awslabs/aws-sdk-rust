@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_defini
     }
 }
 
-pub use crate::operation::get_segment_definition::_get_segment_definition_output::GetSegmentDefinitionOutput;
-
 pub use crate::operation::get_segment_definition::_get_segment_definition_input::GetSegmentDefinitionInput;
+
+pub use crate::operation::get_segment_definition::_get_segment_definition_output::GetSegmentDefinitionOutput;
 
 mod _get_segment_definition_input;
 

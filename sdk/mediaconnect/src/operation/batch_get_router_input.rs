@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_router_i
     }
 }
 
-pub use crate::operation::batch_get_router_input::_batch_get_router_input_output::BatchGetRouterInputOutput;
-
 pub use crate::operation::batch_get_router_input::_batch_get_router_input_input::BatchGetRouterInputInput;
+
+pub use crate::operation::batch_get_router_input::_batch_get_router_input_output::BatchGetRouterInputOutput;
 
 mod _batch_get_router_input_input;
 

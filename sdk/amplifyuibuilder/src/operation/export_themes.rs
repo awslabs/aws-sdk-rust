@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_themes::Exp
     }
 }
 
-pub use crate::operation::export_themes::_export_themes_output::ExportThemesOutput;
-
 pub use crate::operation::export_themes::_export_themes_input::ExportThemesInput;
+
+pub use crate::operation::export_themes::_export_themes_output::ExportThemesOutput;
 
 mod _export_themes_input;
 

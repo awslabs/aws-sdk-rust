@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_simulations::
     }
 }
 
-pub use crate::operation::list_simulations::_list_simulations_output::ListSimulationsOutput;
-
 pub use crate::operation::list_simulations::_list_simulations_input::ListSimulationsInput;
+
+pub use crate::operation::list_simulations::_list_simulations_output::ListSimulationsOutput;
 
 mod _list_simulations_input;
 

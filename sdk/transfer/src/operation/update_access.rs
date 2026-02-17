@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_access::Upd
     }
 }
 
-pub use crate::operation::update_access::_update_access_output::UpdateAccessOutput;
-
 pub use crate::operation::update_access::_update_access_input::UpdateAccessInput;
+
+pub use crate::operation::update_access::_update_access_output::UpdateAccessOutput;
 
 mod _update_access_input;
 

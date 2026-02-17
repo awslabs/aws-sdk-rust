@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_web_acl_id::_list_distributions_by_web_acl_id_output::ListDistributionsByWebAclIdOutput;
-
 pub use crate::operation::list_distributions_by_web_acl_id::_list_distributions_by_web_acl_id_input::ListDistributionsByWebAclIdInput;
+
+pub use crate::operation::list_distributions_by_web_acl_id::_list_distributions_by_web_acl_id_output::ListDistributionsByWebAclIdOutput;
 
 mod _list_distributions_by_web_acl_id_input;
 

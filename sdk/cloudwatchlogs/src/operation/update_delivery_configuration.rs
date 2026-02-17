@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_delivery_co
     }
 }
 
-pub use crate::operation::update_delivery_configuration::_update_delivery_configuration_output::UpdateDeliveryConfigurationOutput;
-
 pub use crate::operation::update_delivery_configuration::_update_delivery_configuration_input::UpdateDeliveryConfigurationInput;
+
+pub use crate::operation::update_delivery_configuration::_update_delivery_configuration_output::UpdateDeliveryConfigurationOutput;
 
 mod _update_delivery_configuration_input;
 

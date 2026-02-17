@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_metric_poli
     }
 }
 
-pub use crate::operation::delete_metric_policy::_delete_metric_policy_output::DeleteMetricPolicyOutput;
-
 pub use crate::operation::delete_metric_policy::_delete_metric_policy_input::DeleteMetricPolicyInput;
+
+pub use crate::operation::delete_metric_policy::_delete_metric_policy_output::DeleteMetricPolicyOutput;
 
 mod _delete_metric_policy_input;
 

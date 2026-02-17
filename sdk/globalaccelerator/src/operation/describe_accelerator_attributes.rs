@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_accelerat
     }
 }
 
-pub use crate::operation::describe_accelerator_attributes::_describe_accelerator_attributes_output::DescribeAcceleratorAttributesOutput;
-
 pub use crate::operation::describe_accelerator_attributes::_describe_accelerator_attributes_input::DescribeAcceleratorAttributesInput;
+
+pub use crate::operation::describe_accelerator_attributes::_describe_accelerator_attributes_output::DescribeAcceleratorAttributesOutput;
 
 mod _describe_accelerator_attributes_input;
 

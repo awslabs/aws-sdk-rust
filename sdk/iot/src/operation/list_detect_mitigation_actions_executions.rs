@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_detect_mitiga
     }
 }
 
-pub use crate::operation::list_detect_mitigation_actions_executions::_list_detect_mitigation_actions_executions_output::ListDetectMitigationActionsExecutionsOutput;
-
 pub use crate::operation::list_detect_mitigation_actions_executions::_list_detect_mitigation_actions_executions_input::ListDetectMitigationActionsExecutionsInput;
+
+pub use crate::operation::list_detect_mitigation_actions_executions::_list_detect_mitigation_actions_executions_output::ListDetectMitigationActionsExecutionsOutput;
 
 mod _list_detect_mitigation_actions_executions_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_syn
     }
 }
 
-pub use crate::operation::get_repository_sync_status::_get_repository_sync_status_output::GetRepositorySyncStatusOutput;
-
 pub use crate::operation::get_repository_sync_status::_get_repository_sync_status_input::GetRepositorySyncStatusInput;
+
+pub use crate::operation::get_repository_sync_status::_get_repository_sync_status_output::GetRepositorySyncStatusOutput;
 
 mod _get_repository_sync_status_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::pause_service::Pau
     }
 }
 
-pub use crate::operation::pause_service::_pause_service_output::PauseServiceOutput;
-
 pub use crate::operation::pause_service::_pause_service_input::PauseServiceInput;
+
+pub use crate::operation::pause_service::_pause_service_output::PauseServiceOutput;
 
 mod _pause_service_input;
 

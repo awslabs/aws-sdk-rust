@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_typ
     }
 }
 
-pub use crate::operation::describe_event_types::_describe_event_types_output::DescribeEventTypesOutput;
-
 pub use crate::operation::describe_event_types::_describe_event_types_input::DescribeEventTypesInput;
+
+pub use crate::operation::describe_event_types::_describe_event_types_output::DescribeEventTypesOutput;
 
 mod _describe_event_types_input;
 

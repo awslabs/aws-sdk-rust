@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hub_content
     }
 }
 
-pub use crate::operation::update_hub_content::_update_hub_content_output::UpdateHubContentOutput;
-
 pub use crate::operation::update_hub_content::_update_hub_content_input::UpdateHubContentInput;
+
+pub use crate::operation::update_hub_content::_update_hub_content_output::UpdateHubContentOutput;
 
 mod _update_hub_content_input;
 

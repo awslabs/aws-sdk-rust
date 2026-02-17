@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::transfer_contact::
     }
 }
 
-pub use crate::operation::transfer_contact::_transfer_contact_output::TransferContactOutput;
-
 pub use crate::operation::transfer_contact::_transfer_contact_input::TransferContactInput;
+
+pub use crate::operation::transfer_contact::_transfer_contact_output::TransferContactOutput;
 
 mod _transfer_contact_input;
 

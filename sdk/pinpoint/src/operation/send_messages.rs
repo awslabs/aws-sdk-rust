@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_messages::Sen
     }
 }
 
-pub use crate::operation::send_messages::_send_messages_output::SendMessagesOutput;
-
 pub use crate::operation::send_messages::_send_messages_input::SendMessagesInput;
+
+pub use crate::operation::send_messages::_send_messages_output::SendMessagesOutput;
 
 mod _send_messages_input;
 

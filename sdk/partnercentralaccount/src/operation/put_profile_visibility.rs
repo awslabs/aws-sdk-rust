@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_profile_visibi
     }
 }
 
-pub use crate::operation::put_profile_visibility::_put_profile_visibility_output::PutProfileVisibilityOutput;
-
 pub use crate::operation::put_profile_visibility::_put_profile_visibility_input::PutProfileVisibilityInput;
+
+pub use crate::operation::put_profile_visibility::_put_profile_visibility_output::PutProfileVisibilityOutput;
 
 mod _put_profile_visibility_input;
 

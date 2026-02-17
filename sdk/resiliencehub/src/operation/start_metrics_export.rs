@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_metrics_expo
     }
 }
 
-pub use crate::operation::start_metrics_export::_start_metrics_export_output::StartMetricsExportOutput;
-
 pub use crate::operation::start_metrics_export::_start_metrics_export_input::StartMetricsExportInput;
+
+pub use crate::operation::start_metrics_export::_start_metrics_export_output::StartMetricsExportOutput;
 
 mod _start_metrics_export_input;
 

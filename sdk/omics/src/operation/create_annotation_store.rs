@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_annotation_
     }
 }
 
-pub use crate::operation::create_annotation_store::_create_annotation_store_output::CreateAnnotationStoreOutput;
-
 pub use crate::operation::create_annotation_store::_create_annotation_store_input::CreateAnnotationStoreInput;
+
+pub use crate::operation::create_annotation_store::_create_annotation_store_output::CreateAnnotationStoreOutput;
 
 mod _create_annotation_store_input;
 

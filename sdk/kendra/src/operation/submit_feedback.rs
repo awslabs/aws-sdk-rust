@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_feedback::S
     }
 }
 
-pub use crate::operation::submit_feedback::_submit_feedback_output::SubmitFeedbackOutput;
-
 pub use crate::operation::submit_feedback::_submit_feedback_input::SubmitFeedbackInput;
+
+pub use crate::operation::submit_feedback::_submit_feedback_output::SubmitFeedbackOutput;
 
 mod _submit_feedback_input;
 

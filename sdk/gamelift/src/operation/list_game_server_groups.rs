@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_game_server_g
     }
 }
 
-pub use crate::operation::list_game_server_groups::_list_game_server_groups_output::ListGameServerGroupsOutput;
-
 pub use crate::operation::list_game_server_groups::_list_game_server_groups_input::ListGameServerGroupsInput;
+
+pub use crate::operation::list_game_server_groups::_list_game_server_groups_output::ListGameServerGroupsOutput;
 
 mod _list_game_server_groups_input;
 

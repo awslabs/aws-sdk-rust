@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_benefit_alloca
     }
 }
 
-pub use crate::operation::get_benefit_allocation::_get_benefit_allocation_output::GetBenefitAllocationOutput;
-
 pub use crate::operation::get_benefit_allocation::_get_benefit_allocation_input::GetBenefitAllocationInput;
+
+pub use crate::operation::get_benefit_allocation::_get_benefit_allocation_output::GetBenefitAllocationOutput;
 
 mod _get_benefit_allocation_input;
 

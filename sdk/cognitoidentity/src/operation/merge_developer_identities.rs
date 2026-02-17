@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_developer_id
     }
 }
 
-pub use crate::operation::merge_developer_identities::_merge_developer_identities_output::MergeDeveloperIdentitiesOutput;
-
 pub use crate::operation::merge_developer_identities::_merge_developer_identities_input::MergeDeveloperIdentitiesInput;
+
+pub use crate::operation::merge_developer_identities::_merge_developer_identities_output::MergeDeveloperIdentitiesOutput;
 
 mod _merge_developer_identities_input;
 

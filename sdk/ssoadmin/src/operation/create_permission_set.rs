@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_permission_
     }
 }
 
-pub use crate::operation::create_permission_set::_create_permission_set_output::CreatePermissionSetOutput;
-
 pub use crate::operation::create_permission_set::_create_permission_set_input::CreatePermissionSetInput;
+
+pub use crate::operation::create_permission_set::_create_permission_set_output::CreatePermissionSetOutput;
 
 mod _create_permission_set_input;
 

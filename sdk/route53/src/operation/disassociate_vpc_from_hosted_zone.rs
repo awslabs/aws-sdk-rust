@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_vpc_f
     }
 }
 
-pub use crate::operation::disassociate_vpc_from_hosted_zone::_disassociate_vpc_from_hosted_zone_output::DisassociateVpcFromHostedZoneOutput;
-
 pub use crate::operation::disassociate_vpc_from_hosted_zone::_disassociate_vpc_from_hosted_zone_input::DisassociateVpcFromHostedZoneInput;
+
+pub use crate::operation::disassociate_vpc_from_hosted_zone::_disassociate_vpc_from_hosted_zone_output::DisassociateVpcFromHostedZoneOutput;
 
 mod _disassociate_vpc_from_hosted_zone_input;
 

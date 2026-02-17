@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_batch_impor
     }
 }
 
-pub use crate::operation::cancel_batch_import_job::_cancel_batch_import_job_output::CancelBatchImportJobOutput;
-
 pub use crate::operation::cancel_batch_import_job::_cancel_batch_import_job_input::CancelBatchImportJobInput;
+
+pub use crate::operation::cancel_batch_import_job::_cancel_batch_import_job_output::CancelBatchImportJobOutput;
 
 mod _cancel_batch_import_job_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_partner_event
     }
 }
 
-pub use crate::operation::list_partner_event_source_accounts::_list_partner_event_source_accounts_output::ListPartnerEventSourceAccountsOutput;
-
 pub use crate::operation::list_partner_event_source_accounts::_list_partner_event_source_accounts_input::ListPartnerEventSourceAccountsInput;
+
+pub use crate::operation::list_partner_event_source_accounts::_list_partner_event_source_accounts_output::ListPartnerEventSourceAccountsOutput;
 
 mod _list_partner_event_source_accounts_input;
 

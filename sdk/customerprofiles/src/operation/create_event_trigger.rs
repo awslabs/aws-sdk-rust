@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_trigg
     }
 }
 
-pub use crate::operation::create_event_trigger::_create_event_trigger_output::CreateEventTriggerOutput;
-
 pub use crate::operation::create_event_trigger::_create_event_trigger_input::CreateEventTriggerInput;
+
+pub use crate::operation::create_event_trigger::_create_event_trigger_output::CreateEventTriggerOutput;
 
 mod _create_event_trigger_input;
 

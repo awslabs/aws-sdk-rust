@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_adapter::GetAd
     }
 }
 
-pub use crate::operation::get_adapter::_get_adapter_output::GetAdapterOutput;
-
 pub use crate::operation::get_adapter::_get_adapter_input::GetAdapterInput;
+
+pub use crate::operation::get_adapter::_get_adapter_output::GetAdapterOutput;
 
 mod _get_adapter_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::report_task_progre
     }
 }
 
-pub use crate::operation::report_task_progress::_report_task_progress_output::ReportTaskProgressOutput;
-
 pub use crate::operation::report_task_progress::_report_task_progress_input::ReportTaskProgressInput;
+
+pub use crate::operation::report_task_progress::_report_task_progress_output::ReportTaskProgressOutput;
 
 mod _report_task_progress_input;
 

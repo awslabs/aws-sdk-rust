@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_luna_clients:
     }
 }
 
-pub use crate::operation::list_luna_clients::_list_luna_clients_output::ListLunaClientsOutput;
-
 pub use crate::operation::list_luna_clients::_list_luna_clients_input::ListLunaClientsInput;
+
+pub use crate::operation::list_luna_clients::_list_luna_clients_output::ListLunaClientsOutput;
 
 mod _list_luna_clients_input;
 

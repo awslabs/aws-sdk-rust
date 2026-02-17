@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_campaign::C
     }
 }
 
-pub use crate::operation::create_campaign::_create_campaign_output::CreateCampaignOutput;
-
 pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaignInput;
+
+pub use crate::operation::create_campaign::_create_campaign_output::CreateCampaignOutput;
 
 mod _create_campaign_input;
 

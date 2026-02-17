@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_policy::
     }
 }
 
-pub use crate::operation::get_image_policy::_get_image_policy_output::GetImagePolicyOutput;
-
 pub use crate::operation::get_image_policy::_get_image_policy_input::GetImagePolicyInput;
+
+pub use crate::operation::get_image_policy::_get_image_policy_output::GetImagePolicyOutput;
 
 mod _get_image_policy_input;
 

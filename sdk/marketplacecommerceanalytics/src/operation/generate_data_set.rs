@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_data_set:
     }
 }
 
-pub use crate::operation::generate_data_set::_generate_data_set_output::GenerateDataSetOutput;
-
 pub use crate::operation::generate_data_set::_generate_data_set_input::GenerateDataSetInput;
+
+pub use crate::operation::generate_data_set::_generate_data_set_output::GenerateDataSetOutput;
 
 mod _generate_data_set_input;
 

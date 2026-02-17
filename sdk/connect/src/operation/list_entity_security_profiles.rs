@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entity_securi
     }
 }
 
-pub use crate::operation::list_entity_security_profiles::_list_entity_security_profiles_output::ListEntitySecurityProfilesOutput;
-
 pub use crate::operation::list_entity_security_profiles::_list_entity_security_profiles_input::ListEntitySecurityProfilesInput;
+
+pub use crate::operation::list_entity_security_profiles::_list_entity_security_profiles_output::ListEntitySecurityProfilesOutput;
 
 mod _list_entity_security_profiles_input;
 

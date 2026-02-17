@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cell::Creat
     }
 }
 
-pub use crate::operation::create_cell::_create_cell_output::CreateCellOutput;
-
 pub use crate::operation::create_cell::_create_cell_input::CreateCellInput;
+
+pub use crate::operation::create_cell::_create_cell_output::CreateCellOutput;
 
 mod _create_cell_input;
 

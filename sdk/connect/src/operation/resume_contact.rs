@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_contact::Re
     }
 }
 
-pub use crate::operation::resume_contact::_resume_contact_output::ResumeContactOutput;
-
 pub use crate::operation::resume_contact::_resume_contact_input::ResumeContactInput;
+
+pub use crate::operation::resume_contact::_resume_contact_output::ResumeContactOutput;
 
 mod _resume_contact_input;
 

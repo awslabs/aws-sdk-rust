@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_campaign_versi
     }
 }
 
-pub use crate::operation::get_campaign_versions::_get_campaign_versions_output::GetCampaignVersionsOutput;
-
 pub use crate::operation::get_campaign_versions::_get_campaign_versions_input::GetCampaignVersionsInput;
+
+pub use crate::operation::get_campaign_versions::_get_campaign_versions_output::GetCampaignVersionsOutput;
 
 mod _get_campaign_versions_input;
 

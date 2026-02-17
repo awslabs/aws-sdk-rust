@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_approval_ru
     }
 }
 
-pub use crate::operation::update_approval_rule_template_description::_update_approval_rule_template_description_output::UpdateApprovalRuleTemplateDescriptionOutput;
-
 pub use crate::operation::update_approval_rule_template_description::_update_approval_rule_template_description_input::UpdateApprovalRuleTemplateDescriptionInput;
+
+pub use crate::operation::update_approval_rule_template_description::_update_approval_rule_template_description_output::UpdateApprovalRuleTemplateDescriptionOutput;
 
 mod _update_approval_rule_template_description_input;
 

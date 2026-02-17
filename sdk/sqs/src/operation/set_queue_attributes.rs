@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_queue_attribut
     }
 }
 
-pub use crate::operation::set_queue_attributes::_set_queue_attributes_output::SetQueueAttributesOutput;
-
 pub use crate::operation::set_queue_attributes::_set_queue_attributes_input::SetQueueAttributesInput;
+
+pub use crate::operation::set_queue_attributes::_set_queue_attributes_output::SetQueueAttributesOutput;
 
 mod _set_queue_attributes_input;
 

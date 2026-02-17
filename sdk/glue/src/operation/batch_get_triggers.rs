@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_triggers
     }
 }
 
-pub use crate::operation::batch_get_triggers::_batch_get_triggers_output::BatchGetTriggersOutput;
-
 pub use crate::operation::batch_get_triggers::_batch_get_triggers_input::BatchGetTriggersInput;
+
+pub use crate::operation::batch_get_triggers::_batch_get_triggers_output::BatchGetTriggersOutput;
 
 mod _batch_get_triggers_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lifecycle_exe
     }
 }
 
-pub use crate::operation::list_lifecycle_executions::_list_lifecycle_executions_output::ListLifecycleExecutionsOutput;
-
 pub use crate::operation::list_lifecycle_executions::_list_lifecycle_executions_input::ListLifecycleExecutionsInput;
+
+pub use crate::operation::list_lifecycle_executions::_list_lifecycle_executions_output::ListLifecycleExecutionsOutput;
 
 mod _list_lifecycle_executions_input;
 

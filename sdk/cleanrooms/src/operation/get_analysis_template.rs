@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_analysis_templ
     }
 }
 
-pub use crate::operation::get_analysis_template::_get_analysis_template_output::GetAnalysisTemplateOutput;
-
 pub use crate::operation::get_analysis_template::_get_analysis_template_input::GetAnalysisTemplateInput;
+
+pub use crate::operation::get_analysis_template::_get_analysis_template_output::GetAnalysisTemplateOutput;
 
 mod _get_analysis_template_input;
 

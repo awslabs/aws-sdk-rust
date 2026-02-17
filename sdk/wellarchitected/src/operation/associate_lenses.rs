@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_lenses::
     }
 }
 
-pub use crate::operation::associate_lenses::_associate_lenses_output::AssociateLensesOutput;
-
 pub use crate::operation::associate_lenses::_associate_lenses_input::AssociateLensesInput;
+
+pub use crate::operation::associate_lenses::_associate_lenses_output::AssociateLensesOutput;
 
 mod _associate_lenses_input;
 

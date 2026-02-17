@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_api_k
     }
 }
 
-pub use crate::operation::get_resource_api_key::_get_resource_api_key_output::GetResourceApiKeyOutput;
-
 pub use crate::operation::get_resource_api_key::_get_resource_api_key_input::GetResourceApiKeyInput;
+
+pub use crate::operation::get_resource_api_key::_get_resource_api_key_output::GetResourceApiKeyOutput;
 
 mod _get_resource_api_key_input;
 

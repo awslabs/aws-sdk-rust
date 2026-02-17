@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_prici
     }
 }
 
-pub use crate::operation::disassociate_pricing_rules::_disassociate_pricing_rules_output::DisassociatePricingRulesOutput;
-
 pub use crate::operation::disassociate_pricing_rules::_disassociate_pricing_rules_input::DisassociatePricingRulesInput;
+
+pub use crate::operation::disassociate_pricing_rules::_disassociate_pricing_rules_output::DisassociatePricingRulesOutput;
 
 mod _disassociate_pricing_rules_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_connect_instan
     }
 }
 
-pub use crate::operation::put_connect_instance_integration::_put_connect_instance_integration_output::PutConnectInstanceIntegrationOutput;
-
 pub use crate::operation::put_connect_instance_integration::_put_connect_instance_integration_input::PutConnectInstanceIntegrationInput;
+
+pub use crate::operation::put_connect_instance_integration::_put_connect_instance_integration_output::PutConnectInstanceIntegrationOutput;
 
 mod _put_connect_instance_integration_input;
 

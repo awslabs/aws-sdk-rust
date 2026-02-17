@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_relational_
     }
 }
 
-pub use crate::operation::create_relational_database_from_snapshot::_create_relational_database_from_snapshot_output::CreateRelationalDatabaseFromSnapshotOutput;
-
 pub use crate::operation::create_relational_database_from_snapshot::_create_relational_database_from_snapshot_input::CreateRelationalDatabaseFromSnapshotInput;
+
+pub use crate::operation::create_relational_database_from_snapshot::_create_relational_database_from_snapshot_output::CreateRelationalDatabaseFromSnapshotOutput;
 
 mod _create_relational_database_from_snapshot_input;
 

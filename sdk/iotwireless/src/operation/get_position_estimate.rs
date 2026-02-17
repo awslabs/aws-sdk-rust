@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_position_estim
     }
 }
 
-pub use crate::operation::get_position_estimate::_get_position_estimate_output::GetPositionEstimateOutput;
-
 pub use crate::operation::get_position_estimate::_get_position_estimate_input::GetPositionEstimateInput;
+
+pub use crate::operation::get_position_estimate::_get_position_estimate_output::GetPositionEstimateOutput;
 
 mod _get_position_estimate_input;
 

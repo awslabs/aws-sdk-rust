@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_object::CopyO
     }
 }
 
-pub use crate::operation::copy_object::_copy_object_output::CopyObjectOutput;
-
 pub use crate::operation::copy_object::_copy_object_input::CopyObjectInput;
+
+pub use crate::operation::copy_object::_copy_object_output::CopyObjectOutput;
 
 mod _copy_object_input;
 

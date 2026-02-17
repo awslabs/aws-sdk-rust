@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_cache_se
     }
 }
 
-pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cache_security_group_ingress_output::AuthorizeCacheSecurityGroupIngressOutput;
-
 pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cache_security_group_ingress_input::AuthorizeCacheSecurityGroupIngressInput;
+
+pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cache_security_group_ingress_output::AuthorizeCacheSecurityGroupIngressOutput;
 
 mod _authorize_cache_security_group_ingress_input;
 

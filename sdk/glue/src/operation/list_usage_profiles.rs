@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_usage_profile
     }
 }
 
-pub use crate::operation::list_usage_profiles::_list_usage_profiles_output::ListUsageProfilesOutput;
-
 pub use crate::operation::list_usage_profiles::_list_usage_profiles_input::ListUsageProfilesInput;
+
+pub use crate::operation::list_usage_profiles::_list_usage_profiles_output::ListUsageProfilesOutput;
 
 mod _list_usage_profiles_input;
 

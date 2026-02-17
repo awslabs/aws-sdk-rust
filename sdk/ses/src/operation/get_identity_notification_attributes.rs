@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_notif
     }
 }
 
-pub use crate::operation::get_identity_notification_attributes::_get_identity_notification_attributes_output::GetIdentityNotificationAttributesOutput;
-
 pub use crate::operation::get_identity_notification_attributes::_get_identity_notification_attributes_input::GetIdentityNotificationAttributesInput;
+
+pub use crate::operation::get_identity_notification_attributes::_get_identity_notification_attributes_output::GetIdentityNotificationAttributesOutput;
 
 mod _get_identity_notification_attributes_input;
 

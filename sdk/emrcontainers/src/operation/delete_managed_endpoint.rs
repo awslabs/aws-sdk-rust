@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_managed_end
     }
 }
 
-pub use crate::operation::delete_managed_endpoint::_delete_managed_endpoint_output::DeleteManagedEndpointOutput;
-
 pub use crate::operation::delete_managed_endpoint::_delete_managed_endpoint_input::DeleteManagedEndpointInput;
+
+pub use crate::operation::delete_managed_endpoint::_delete_managed_endpoint_output::DeleteManagedEndpointOutput;
 
 mod _delete_managed_endpoint_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backend_envir
     }
 }
 
-pub use crate::operation::list_backend_environments::_list_backend_environments_output::ListBackendEnvironmentsOutput;
-
 pub use crate::operation::list_backend_environments::_list_backend_environments_input::ListBackendEnvironmentsInput;
+
+pub use crate::operation::list_backend_environments::_list_backend_environments_output::ListBackendEnvironmentsOutput;
 
 mod _list_backend_environments_input;
 

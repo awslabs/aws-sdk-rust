@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connect_pee
     }
 }
 
-pub use crate::operation::create_connect_peer::_create_connect_peer_output::CreateConnectPeerOutput;
-
 pub use crate::operation::create_connect_peer::_create_connect_peer_input::CreateConnectPeerInput;
+
+pub use crate::operation::create_connect_peer::_create_connect_peer_output::CreateConnectPeerOutput;
 
 mod _create_connect_peer_input;
 

@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::abort_environment_
     }
 }
 
-pub use crate::operation::abort_environment_update::_abort_environment_update_output::AbortEnvironmentUpdateOutput;
-
 pub use crate::operation::abort_environment_update::_abort_environment_update_input::AbortEnvironmentUpdateInput;
+
+pub use crate::operation::abort_environment_update::_abort_environment_update_output::AbortEnvironmentUpdateOutput;
 
 mod _abort_environment_update_input;
 

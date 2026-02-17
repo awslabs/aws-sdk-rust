@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_form::Delet
     }
 }
 
-pub use crate::operation::delete_form::_delete_form_output::DeleteFormOutput;
-
 pub use crate::operation::delete_form::_delete_form_input::DeleteFormInput;
+
+pub use crate::operation::delete_form::_delete_form_output::DeleteFormOutput;
 
 mod _delete_form_input;
 

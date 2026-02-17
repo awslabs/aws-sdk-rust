@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_thesaurus::
     }
 }
 
-pub use crate::operation::update_thesaurus::_update_thesaurus_output::UpdateThesaurusOutput;
-
 pub use crate::operation::update_thesaurus::_update_thesaurus_input::UpdateThesaurusInput;
+
+pub use crate::operation::update_thesaurus::_update_thesaurus_output::UpdateThesaurusOutput;
 
 mod _update_thesaurus_input;
 

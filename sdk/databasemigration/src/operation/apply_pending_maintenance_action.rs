@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::apply_pending_main
     }
 }
 
-pub use crate::operation::apply_pending_maintenance_action::_apply_pending_maintenance_action_output::ApplyPendingMaintenanceActionOutput;
-
 pub use crate::operation::apply_pending_maintenance_action::_apply_pending_maintenance_action_input::ApplyPendingMaintenanceActionInput;
+
+pub use crate::operation::apply_pending_maintenance_action::_apply_pending_maintenance_action_output::ApplyPendingMaintenanceActionOutput;
 
 mod _apply_pending_maintenance_action_input;
 

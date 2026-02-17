@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_tags::Remov
     }
 }
 
-pub use crate::operation::remove_tags::_remove_tags_output::RemoveTagsOutput;
-
 pub use crate::operation::remove_tags::_remove_tags_input::RemoveTagsInput;
+
+pub use crate::operation::remove_tags::_remove_tags_output::RemoveTagsOutput;
 
 mod _remove_tags_input;
 

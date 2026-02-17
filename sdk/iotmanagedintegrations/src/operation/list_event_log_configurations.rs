@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_log_con
     }
 }
 
-pub use crate::operation::list_event_log_configurations::_list_event_log_configurations_output::ListEventLogConfigurationsOutput;
-
 pub use crate::operation::list_event_log_configurations::_list_event_log_configurations_input::ListEventLogConfigurationsInput;
+
+pub use crate::operation::list_event_log_configurations::_list_event_log_configurations_output::ListEventLogConfigurationsOutput;
 
 mod _list_event_log_configurations_input;
 

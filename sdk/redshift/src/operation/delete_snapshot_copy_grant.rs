@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_snapshot_co
     }
 }
 
-pub use crate::operation::delete_snapshot_copy_grant::_delete_snapshot_copy_grant_output::DeleteSnapshotCopyGrantOutput;
-
 pub use crate::operation::delete_snapshot_copy_grant::_delete_snapshot_copy_grant_input::DeleteSnapshotCopyGrantInput;
+
+pub use crate::operation::delete_snapshot_copy_grant::_delete_snapshot_copy_grant_output::DeleteSnapshotCopyGrantOutput;
 
 mod _delete_snapshot_copy_grant_input;
 

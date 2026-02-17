@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_notebook_in
     }
 }
 
-pub use crate::operation::create_notebook_instance_lifecycle_config::_create_notebook_instance_lifecycle_config_output::CreateNotebookInstanceLifecycleConfigOutput;
-
 pub use crate::operation::create_notebook_instance_lifecycle_config::_create_notebook_instance_lifecycle_config_input::CreateNotebookInstanceLifecycleConfigInput;
+
+pub use crate::operation::create_notebook_instance_lifecycle_config::_create_notebook_instance_lifecycle_config_output::CreateNotebookInstanceLifecycleConfigOutput;
 
 mod _create_notebook_instance_lifecycle_config_input;
 

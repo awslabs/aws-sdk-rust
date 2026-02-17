@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_invocat
     }
 }
 
-pub use crate::operation::list_model_invocation_jobs::_list_model_invocation_jobs_output::ListModelInvocationJobsOutput;
-
 pub use crate::operation::list_model_invocation_jobs::_list_model_invocation_jobs_input::ListModelInvocationJobsInput;
+
+pub use crate::operation::list_model_invocation_jobs::_list_model_invocation_jobs_output::ListModelInvocationJobsOutput;
 
 mod _list_model_invocation_jobs_input;
 

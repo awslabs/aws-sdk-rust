@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_notificatio
     }
 }
 
-pub use crate::operation::create_notification_rule::_create_notification_rule_output::CreateNotificationRuleOutput;
-
 pub use crate::operation::create_notification_rule::_create_notification_rule_input::CreateNotificationRuleInput;
+
+pub use crate::operation::create_notification_rule::_create_notification_rule_output::CreateNotificationRuleOutput;
 
 mod _create_notification_rule_input;
 

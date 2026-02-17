@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_cluster_capaci
     }
 }
 
-pub use crate::operation::put_cluster_capacity_providers::_put_cluster_capacity_providers_output::PutClusterCapacityProvidersOutput;
-
 pub use crate::operation::put_cluster_capacity_providers::_put_cluster_capacity_providers_input::PutClusterCapacityProvidersInput;
+
+pub use crate::operation::put_cluster_capacity_providers::_put_cluster_capacity_providers_output::PutClusterCapacityProvidersOutput;
 
 mod _put_cluster_capacity_providers_input;
 

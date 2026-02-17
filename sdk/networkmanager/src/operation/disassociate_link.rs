@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_link:
     }
 }
 
-pub use crate::operation::disassociate_link::_disassociate_link_output::DisassociateLinkOutput;
-
 pub use crate::operation::disassociate_link::_disassociate_link_input::DisassociateLinkInput;
+
+pub use crate::operation::disassociate_link::_disassociate_link_output::DisassociateLinkOutput;
 
 mod _disassociate_link_input;
 

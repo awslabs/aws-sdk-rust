@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_vault_notifica
     }
 }
 
-pub use crate::operation::set_vault_notifications::_set_vault_notifications_output::SetVaultNotificationsOutput;
-
 pub use crate::operation::set_vault_notifications::_set_vault_notifications_input::SetVaultNotificationsInput;
+
+pub use crate::operation::set_vault_notifications::_set_vault_notifications_output::SetVaultNotificationsOutput;
 
 mod _set_vault_notifications_input;
 

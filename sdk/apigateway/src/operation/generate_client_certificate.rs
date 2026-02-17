@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_client_ce
     }
 }
 
-pub use crate::operation::generate_client_certificate::_generate_client_certificate_output::GenerateClientCertificateOutput;
-
 pub use crate::operation::generate_client_certificate::_generate_client_certificate_input::GenerateClientCertificateInput;
+
+pub use crate::operation::generate_client_certificate::_generate_client_certificate_output::GenerateClientCertificateOutput;
 
 mod _generate_client_certificate_input;
 

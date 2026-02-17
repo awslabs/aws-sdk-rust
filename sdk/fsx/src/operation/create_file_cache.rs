@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_file_cache:
     }
 }
 
-pub use crate::operation::create_file_cache::_create_file_cache_output::CreateFileCacheOutput;
-
 pub use crate::operation::create_file_cache::_create_file_cache_input::CreateFileCacheInput;
+
+pub use crate::operation::create_file_cache::_create_file_cache_output::CreateFileCacheOutput;
 
 mod _create_file_cache_input;
 

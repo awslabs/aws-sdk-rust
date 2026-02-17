@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_portfolio
     }
 }
 
-pub use crate::operation::describe_portfolio::_describe_portfolio_output::DescribePortfolioOutput;
-
 pub use crate::operation::describe_portfolio::_describe_portfolio_input::DescribePortfolioInput;
+
+pub use crate::operation::describe_portfolio::_describe_portfolio_output::DescribePortfolioOutput;
 
 mod _describe_portfolio_input;
 

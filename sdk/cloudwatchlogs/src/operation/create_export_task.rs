@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_export_task
     }
 }
 
-pub use crate::operation::create_export_task::_create_export_task_output::CreateExportTaskOutput;
-
 pub use crate::operation::create_export_task::_create_export_task_input::CreateExportTaskInput;
+
+pub use crate::operation::create_export_task::_create_export_task_output::CreateExportTaskOutput;
 
 mod _create_export_task_input;
 

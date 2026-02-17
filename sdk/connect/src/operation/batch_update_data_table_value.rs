@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_data_
     }
 }
 
-pub use crate::operation::batch_update_data_table_value::_batch_update_data_table_value_output::BatchUpdateDataTableValueOutput;
-
 pub use crate::operation::batch_update_data_table_value::_batch_update_data_table_value_input::BatchUpdateDataTableValueInput;
+
+pub use crate::operation::batch_update_data_table_value::_batch_update_data_table_value_output::BatchUpdateDataTableValueOutput;
 
 mod _batch_update_data_table_value_input;
 

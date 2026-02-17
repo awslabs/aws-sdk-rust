@@ -491,9 +491,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_federation
     }
 }
 
-pub use crate::operation::disable_federation::_disable_federation_output::DisableFederationOutput;
-
 pub use crate::operation::disable_federation::_disable_federation_input::DisableFederationInput;
+
+pub use crate::operation::disable_federation::_disable_federation_output::DisableFederationOutput;
 
 mod _disable_federation_input;
 

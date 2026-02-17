@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_app_version_resources_resolution_status::_describe_app_version_resources_resolution_status_output::DescribeAppVersionResourcesResolutionStatusOutput;
-
 pub use crate::operation::describe_app_version_resources_resolution_status::_describe_app_version_resources_resolution_status_input::DescribeAppVersionResourcesResolutionStatusInput;
+
+pub use crate::operation::describe_app_version_resources_resolution_status::_describe_app_version_resources_resolution_status_output::DescribeAppVersionResourcesResolutionStatusOutput;
 
 mod _describe_app_version_resources_resolution_status_input;
 

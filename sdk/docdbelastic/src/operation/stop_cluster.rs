@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_cluster::Stop
     }
 }
 
-pub use crate::operation::stop_cluster::_stop_cluster_output::StopClusterOutput;
-
 pub use crate::operation::stop_cluster::_stop_cluster_input::StopClusterInput;
+
+pub use crate::operation::stop_cluster::_stop_cluster_output::StopClusterOutput;
 
 mod _stop_cluster_input;
 

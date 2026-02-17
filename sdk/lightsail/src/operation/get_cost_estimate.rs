@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cost_estimate:
     }
 }
 
-pub use crate::operation::get_cost_estimate::_get_cost_estimate_output::GetCostEstimateOutput;
-
 pub use crate::operation::get_cost_estimate::_get_cost_estimate_input::GetCostEstimateInput;
+
+pub use crate::operation::get_cost_estimate::_get_cost_estimate_output::GetCostEstimateOutput;
 
 mod _get_cost_estimate_input;
 

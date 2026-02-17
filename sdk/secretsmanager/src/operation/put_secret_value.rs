@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_secret_value::
     }
 }
 
-pub use crate::operation::put_secret_value::_put_secret_value_output::PutSecretValueOutput;
-
 pub use crate::operation::put_secret_value::_put_secret_value_input::PutSecretValueInput;
+
+pub use crate::operation::put_secret_value::_put_secret_value_output::PutSecretValueOutput;
 
 mod _put_secret_value_input;
 

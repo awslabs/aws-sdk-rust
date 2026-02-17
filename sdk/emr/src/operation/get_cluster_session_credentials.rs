@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cluster_sessio
     }
 }
 
-pub use crate::operation::get_cluster_session_credentials::_get_cluster_session_credentials_output::GetClusterSessionCredentialsOutput;
-
 pub use crate::operation::get_cluster_session_credentials::_get_cluster_session_credentials_input::GetClusterSessionCredentialsInput;
+
+pub use crate::operation::get_cluster_session_credentials::_get_cluster_session_credentials_output::GetClusterSessionCredentialsOutput;
 
 mod _get_cluster_session_credentials_input;
 

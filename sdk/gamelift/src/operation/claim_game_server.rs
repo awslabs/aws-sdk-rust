@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::claim_game_server:
     }
 }
 
-pub use crate::operation::claim_game_server::_claim_game_server_output::ClaimGameServerOutput;
-
 pub use crate::operation::claim_game_server::_claim_game_server_input::ClaimGameServerInput;
+
+pub use crate::operation::claim_game_server::_claim_game_server_output::ClaimGameServerOutput;
 
 mod _claim_game_server_input;
 

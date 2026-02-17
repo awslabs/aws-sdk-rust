@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_alias_rep
     }
 }
 
-pub use crate::operation::list_bot_alias_replicas::_list_bot_alias_replicas_output::ListBotAliasReplicasOutput;
-
 pub use crate::operation::list_bot_alias_replicas::_list_bot_alias_replicas_input::ListBotAliasReplicasInput;
+
+pub use crate::operation::list_bot_alias_replicas::_list_bot_alias_replicas_output::ListBotAliasReplicasOutput;
 
 mod _list_bot_alias_replicas_input;
 

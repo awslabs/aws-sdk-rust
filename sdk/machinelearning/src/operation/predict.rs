@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::predict::PredictEr
     }
 }
 
-pub use crate::operation::predict::_predict_output::PredictOutput;
-
 pub use crate::operation::predict::_predict_input::PredictInput;
+
+pub use crate::operation::predict::_predict_output::PredictOutput;
 
 mod _predict_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_time_series::
     }
 }
 
-pub use crate::operation::list_time_series::_list_time_series_output::ListTimeSeriesOutput;
-
 pub use crate::operation::list_time_series::_list_time_series_input::ListTimeSeriesInput;
+
+pub use crate::operation::list_time_series::_list_time_series_output::ListTimeSeriesOutput;
 
 mod _list_time_series_input;
 

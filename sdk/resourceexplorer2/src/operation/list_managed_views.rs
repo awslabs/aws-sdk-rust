@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_views
     }
 }
 
-pub use crate::operation::list_managed_views::_list_managed_views_output::ListManagedViewsOutput;
-
 pub use crate::operation::list_managed_views::_list_managed_views_input::ListManagedViewsInput;
+
+pub use crate::operation::list_managed_views::_list_managed_views_output::ListManagedViewsOutput;
 
 mod _list_managed_views_input;
 

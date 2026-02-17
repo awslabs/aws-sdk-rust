@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_language_mode
     }
 }
 
-pub use crate::operation::list_language_models::_list_language_models_output::ListLanguageModelsOutput;
-
 pub use crate::operation::list_language_models::_list_language_models_input::ListLanguageModelsInput;
+
+pub use crate::operation::list_language_models::_list_language_models_output::ListLanguageModelsOutput;
 
 mod _list_language_models_input;
 

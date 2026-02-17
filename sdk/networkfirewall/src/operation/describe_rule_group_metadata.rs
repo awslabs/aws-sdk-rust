@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_rule_grou
     }
 }
 
-pub use crate::operation::describe_rule_group_metadata::_describe_rule_group_metadata_output::DescribeRuleGroupMetadataOutput;
-
 pub use crate::operation::describe_rule_group_metadata::_describe_rule_group_metadata_input::DescribeRuleGroupMetadataInput;
+
+pub use crate::operation::describe_rule_group_metadata::_describe_rule_group_metadata_output::DescribeRuleGroupMetadataOutput;
 
 mod _describe_rule_group_metadata_input;
 

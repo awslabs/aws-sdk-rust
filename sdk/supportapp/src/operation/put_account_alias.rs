@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_alias:
     }
 }
 
-pub use crate::operation::put_account_alias::_put_account_alias_output::PutAccountAliasOutput;
-
 pub use crate::operation::put_account_alias::_put_account_alias_input::PutAccountAliasInput;
+
+pub use crate::operation::put_account_alias::_put_account_alias_output::PutAccountAliasOutput;
 
 mod _put_account_alias_input;
 

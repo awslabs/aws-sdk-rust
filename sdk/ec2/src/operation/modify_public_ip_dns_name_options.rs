@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_public_ip_d
     }
 }
 
-pub use crate::operation::modify_public_ip_dns_name_options::_modify_public_ip_dns_name_options_output::ModifyPublicIpDnsNameOptionsOutput;
-
 pub use crate::operation::modify_public_ip_dns_name_options::_modify_public_ip_dns_name_options_input::ModifyPublicIpDnsNameOptionsInput;
+
+pub use crate::operation::modify_public_ip_dns_name_options::_modify_public_ip_dns_name_options_output::ModifyPublicIpDnsNameOptionsOutput;
 
 mod _modify_public_ip_dns_name_options_input;
 

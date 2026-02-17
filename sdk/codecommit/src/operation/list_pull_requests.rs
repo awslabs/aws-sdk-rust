@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pull_requests
     }
 }
 
-pub use crate::operation::list_pull_requests::_list_pull_requests_output::ListPullRequestsOutput;
-
 pub use crate::operation::list_pull_requests::_list_pull_requests_input::ListPullRequestsInput;
+
+pub use crate::operation::list_pull_requests::_list_pull_requests_output::ListPullRequestsOutput;
 
 mod _list_pull_requests_input;
 

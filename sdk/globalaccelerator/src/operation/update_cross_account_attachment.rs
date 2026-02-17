@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cross_accou
     }
 }
 
-pub use crate::operation::update_cross_account_attachment::_update_cross_account_attachment_output::UpdateCrossAccountAttachmentOutput;
-
 pub use crate::operation::update_cross_account_attachment::_update_cross_account_attachment_input::UpdateCrossAccountAttachmentInput;
+
+pub use crate::operation::update_cross_account_attachment::_update_cross_account_attachment_output::UpdateCrossAccountAttachmentOutput;
 
 mod _update_cross_account_attachment_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_agent_alias
     }
 }
 
-pub use crate::operation::create_agent_alias::_create_agent_alias_output::CreateAgentAliasOutput;
-
 pub use crate::operation::create_agent_alias::_create_agent_alias_input::CreateAgentAliasInput;
+
+pub use crate::operation::create_agent_alias::_create_agent_alias_output::CreateAgentAliasOutput;
 
 mod _create_agent_alias_input;
 

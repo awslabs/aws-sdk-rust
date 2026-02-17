@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_file_sys
     }
 }
 
-pub use crate::operation::associate_file_system_aliases::_associate_file_system_aliases_output::AssociateFileSystemAliasesOutput;
-
 pub use crate::operation::associate_file_system_aliases::_associate_file_system_aliases_input::AssociateFileSystemAliasesInput;
+
+pub use crate::operation::associate_file_system_aliases::_associate_file_system_aliases_output::AssociateFileSystemAliasesOutput;
 
 mod _associate_file_system_aliases_input;
 

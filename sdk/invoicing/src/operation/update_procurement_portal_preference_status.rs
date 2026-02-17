@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_procurement_portal_preference_status::_update_procurement_portal_preference_status_output::UpdateProcurementPortalPreferenceStatusOutput;
-
 pub use crate::operation::update_procurement_portal_preference_status::_update_procurement_portal_preference_status_input::UpdateProcurementPortalPreferenceStatusInput;
+
+pub use crate::operation::update_procurement_portal_preference_status::_update_procurement_portal_preference_status_output::UpdateProcurementPortalPreferenceStatusOutput;
 
 mod _update_procurement_portal_preference_status_input;
 

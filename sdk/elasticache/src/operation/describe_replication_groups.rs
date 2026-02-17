@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replicati
     }
 }
 
-pub use crate::operation::describe_replication_groups::_describe_replication_groups_output::DescribeReplicationGroupsOutput;
-
 pub use crate::operation::describe_replication_groups::_describe_replication_groups_input::DescribeReplicationGroupsInput;
+
+pub use crate::operation::describe_replication_groups::_describe_replication_groups_output::DescribeReplicationGroupsOutput;
 
 mod _describe_replication_groups_input;
 

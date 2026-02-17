@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_firewall_confi
     }
 }
 
-pub use crate::operation::get_firewall_config::_get_firewall_config_output::GetFirewallConfigOutput;
-
 pub use crate::operation::get_firewall_config::_get_firewall_config_input::GetFirewallConfigInput;
+
+pub use crate::operation::get_firewall_config::_get_firewall_config_output::GetFirewallConfigOutput;
 
 mod _get_firewall_config_input;
 

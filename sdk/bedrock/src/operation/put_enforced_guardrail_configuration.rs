@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_enforced_guard
     }
 }
 
-pub use crate::operation::put_enforced_guardrail_configuration::_put_enforced_guardrail_configuration_output::PutEnforcedGuardrailConfigurationOutput;
-
 pub use crate::operation::put_enforced_guardrail_configuration::_put_enforced_guardrail_configuration_input::PutEnforcedGuardrailConfigurationInput;
+
+pub use crate::operation::put_enforced_guardrail_configuration::_put_enforced_guardrail_configuration_output::PutEnforcedGuardrailConfigurationOutput;
 
 mod _put_enforced_guardrail_configuration_input;
 

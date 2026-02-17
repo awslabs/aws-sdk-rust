@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_source_m
     }
 }
 
-pub use crate::operation::get_event_source_mapping::_get_event_source_mapping_output::GetEventSourceMappingOutput;
-
 pub use crate::operation::get_event_source_mapping::_get_event_source_mapping_input::GetEventSourceMappingInput;
+
+pub use crate::operation::get_event_source_mapping::_get_event_source_mapping_output::GetEventSourceMappingOutput;
 
 mod _get_event_source_mapping_input;
 

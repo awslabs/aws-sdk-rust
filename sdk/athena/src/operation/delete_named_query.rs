@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_named_query
     }
 }
 
-pub use crate::operation::delete_named_query::_delete_named_query_output::DeleteNamedQueryOutput;
-
 pub use crate::operation::delete_named_query::_delete_named_query_input::DeleteNamedQueryInput;
+
+pub use crate::operation::delete_named_query::_delete_named_query_output::DeleteNamedQueryOutput;
 
 mod _delete_named_query_input;
 

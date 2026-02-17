@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_documents::
     }
 }
 
-pub use crate::operation::upload_documents::_upload_documents_output::UploadDocumentsOutput;
-
 pub use crate::operation::upload_documents::_upload_documents_input::UploadDocumentsInput;
+
+pub use crate::operation::upload_documents::_upload_documents_output::UploadDocumentsOutput;
 
 mod _upload_documents_input;
 

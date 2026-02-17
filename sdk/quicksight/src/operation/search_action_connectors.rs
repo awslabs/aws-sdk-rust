@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_action_conn
     }
 }
 
-pub use crate::operation::search_action_connectors::_search_action_connectors_output::SearchActionConnectorsOutput;
-
 pub use crate::operation::search_action_connectors::_search_action_connectors_input::SearchActionConnectorsInput;
+
+pub use crate::operation::search_action_connectors::_search_action_connectors_output::SearchActionConnectorsOutput;
 
 mod _search_action_connectors_input;
 

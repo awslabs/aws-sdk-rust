@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_address_list::
     }
 }
 
-pub use crate::operation::get_address_list::_get_address_list_output::GetAddressListOutput;
-
 pub use crate::operation::get_address_list::_get_address_list_input::GetAddressListInput;
+
+pub use crate::operation::get_address_list::_get_address_list_output::GetAddressListOutput;
 
 mod _get_address_list_input;
 

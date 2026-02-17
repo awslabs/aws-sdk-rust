@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_role_policy
     }
 }
 
-pub use crate::operation::delete_role_policy::_delete_role_policy_output::DeleteRolePolicyOutput;
-
 pub use crate::operation::delete_role_policy::_delete_role_policy_input::DeleteRolePolicyInput;
+
+pub use crate::operation::delete_role_policy::_delete_role_policy_output::DeleteRolePolicyOutput;
 
 mod _delete_role_policy_input;
 

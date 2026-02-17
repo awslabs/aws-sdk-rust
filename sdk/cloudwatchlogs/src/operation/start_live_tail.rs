@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_live_tail::S
     }
 }
 
-pub use crate::operation::start_live_tail::_start_live_tail_output::StartLiveTailOutput;
-
 pub use crate::operation::start_live_tail::_start_live_tail_input::StartLiveTailInput;
+
+pub use crate::operation::start_live_tail::_start_live_tail_output::StartLiveTailOutput;
 
 mod _start_live_tail_input;
 

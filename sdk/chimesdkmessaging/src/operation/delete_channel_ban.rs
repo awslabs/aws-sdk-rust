@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_channel_ban
     }
 }
 
-pub use crate::operation::delete_channel_ban::_delete_channel_ban_output::DeleteChannelBanOutput;
-
 pub use crate::operation::delete_channel_ban::_delete_channel_ban_input::DeleteChannelBanInput;
+
+pub use crate::operation::delete_channel_ban::_delete_channel_ban_output::DeleteChannelBanOutput;
 
 mod _delete_channel_ban_input;
 

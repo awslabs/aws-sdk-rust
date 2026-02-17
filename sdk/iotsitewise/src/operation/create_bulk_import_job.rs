@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bulk_import
     }
 }
 
-pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_output::CreateBulkImportJobOutput;
-
 pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_input::CreateBulkImportJobInput;
+
+pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_output::CreateBulkImportJobOutput;
 
 mod _create_bulk_import_job_input;
 

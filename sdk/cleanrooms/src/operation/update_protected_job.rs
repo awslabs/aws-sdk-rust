@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_protected_j
     }
 }
 
-pub use crate::operation::update_protected_job::_update_protected_job_output::UpdateProtectedJobOutput;
-
 pub use crate::operation::update_protected_job::_update_protected_job_input::UpdateProtectedJobInput;
+
+pub use crate::operation::update_protected_job::_update_protected_job_output::UpdateProtectedJobOutput;
 
 mod _update_protected_job_input;
 

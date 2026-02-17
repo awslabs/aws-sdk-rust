@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_threat_intel_
     }
 }
 
-pub use crate::operation::list_threat_intel_sets::_list_threat_intel_sets_output::ListThreatIntelSetsOutput;
-
 pub use crate::operation::list_threat_intel_sets::_list_threat_intel_sets_input::ListThreatIntelSetsInput;
+
+pub use crate::operation::list_threat_intel_sets::_list_threat_intel_sets_output::ListThreatIntelSetsOutput;
 
 mod _list_threat_intel_sets_input;
 

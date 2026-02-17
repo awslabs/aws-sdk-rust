@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_session_log
     }
 }
 
-pub use crate::operation::update_session_logger::_update_session_logger_output::UpdateSessionLoggerOutput;
-
 pub use crate::operation::update_session_logger::_update_session_logger_input::UpdateSessionLoggerInput;
+
+pub use crate::operation::update_session_logger::_update_session_logger_output::UpdateSessionLoggerOutput;
 
 mod _update_session_logger_input;
 

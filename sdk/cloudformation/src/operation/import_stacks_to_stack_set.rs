@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_stacks_to_s
     }
 }
 
-pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_set_output::ImportStacksToStackSetOutput;
-
 pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_set_input::ImportStacksToStackSetInput;
+
+pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_set_output::ImportStacksToStackSetOutput;
 
 mod _import_stacks_to_stack_set_input;
 

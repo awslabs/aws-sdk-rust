@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_monitoring_sc
     }
 }
 
-pub use crate::operation::list_monitoring_schedules::_list_monitoring_schedules_output::ListMonitoringSchedulesOutput;
-
 pub use crate::operation::list_monitoring_schedules::_list_monitoring_schedules_input::ListMonitoringSchedulesInput;
+
+pub use crate::operation::list_monitoring_schedules::_list_monitoring_schedules_output::ListMonitoringSchedulesOutput;
 
 mod _list_monitoring_schedules_input;
 

@@ -608,9 +608,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_delegated_adm
     }
 }
 
-pub use crate::operation::list_delegated_administrators::_list_delegated_administrators_output::ListDelegatedAdministratorsOutput;
-
 pub use crate::operation::list_delegated_administrators::_list_delegated_administrators_input::ListDelegatedAdministratorsInput;
+
+pub use crate::operation::list_delegated_administrators::_list_delegated_administrators_output::ListDelegatedAdministratorsOutput;
 
 mod _list_delegated_administrators_input;
 

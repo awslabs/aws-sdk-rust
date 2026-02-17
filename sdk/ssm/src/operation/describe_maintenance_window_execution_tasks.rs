@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_maintenance_window_execution_tasks::_describe_maintenance_window_execution_tasks_output::DescribeMaintenanceWindowExecutionTasksOutput;
-
 pub use crate::operation::describe_maintenance_window_execution_tasks::_describe_maintenance_window_execution_tasks_input::DescribeMaintenanceWindowExecutionTasksInput;
+
+pub use crate::operation::describe_maintenance_window_execution_tasks::_describe_maintenance_window_execution_tasks_output::DescribeMaintenanceWindowExecutionTasksOutput;
 
 mod _describe_maintenance_window_execution_tasks_input;
 

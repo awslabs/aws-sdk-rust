@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connector::Get
     }
 }
 
-pub use crate::operation::get_connector::_get_connector_output::GetConnectorOutput;
-
 pub use crate::operation::get_connector::_get_connector_input::GetConnectorInput;
+
+pub use crate::operation::get_connector::_get_connector_output::GetConnectorOutput;
 
 mod _get_connector_input;
 

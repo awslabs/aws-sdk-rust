@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dataset::
     }
 }
 
-pub use crate::operation::describe_dataset::_describe_dataset_output::DescribeDatasetOutput;
-
 pub use crate::operation::describe_dataset::_describe_dataset_input::DescribeDatasetInput;
+
+pub use crate::operation::describe_dataset::_describe_dataset_output::DescribeDatasetOutput;
 
 mod _describe_dataset_input;
 

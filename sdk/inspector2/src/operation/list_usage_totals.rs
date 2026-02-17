@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_usage_totals:
     }
 }
 
-pub use crate::operation::list_usage_totals::_list_usage_totals_output::ListUsageTotalsOutput;
-
 pub use crate::operation::list_usage_totals::_list_usage_totals_input::ListUsageTotalsInput;
+
+pub use crate::operation::list_usage_totals::_list_usage_totals_output::ListUsageTotalsOutput;
 
 mod _list_usage_totals_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ip_restri
     }
 }
 
-pub use crate::operation::describe_ip_restriction::_describe_ip_restriction_output::DescribeIpRestrictionOutput;
-
 pub use crate::operation::describe_ip_restriction::_describe_ip_restriction_input::DescribeIpRestrictionInput;
+
+pub use crate::operation::describe_ip_restriction::_describe_ip_restriction_output::DescribeIpRestrictionOutput;
 
 mod _describe_ip_restriction_input;
 

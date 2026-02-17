@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_proposal::GetP
     }
 }
 
-pub use crate::operation::get_proposal::_get_proposal_output::GetProposalOutput;
-
 pub use crate::operation::get_proposal::_get_proposal_input::GetProposalInput;
+
+pub use crate::operation::get_proposal::_get_proposal_output::GetProposalOutput;
 
 mod _get_proposal_input;
 

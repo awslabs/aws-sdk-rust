@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_workl
     }
 }
 
-pub use crate::operation::batch_update_workload_estimate_usage::_batch_update_workload_estimate_usage_output::BatchUpdateWorkloadEstimateUsageOutput;
-
 pub use crate::operation::batch_update_workload_estimate_usage::_batch_update_workload_estimate_usage_input::BatchUpdateWorkloadEstimateUsageInput;
+
+pub use crate::operation::batch_update_workload_estimate_usage::_batch_update_workload_estimate_usage_output::BatchUpdateWorkloadEstimateUsageOutput;
 
 mod _batch_update_workload_estimate_usage_input;
 

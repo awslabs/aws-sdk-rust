@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dicom_import_j
     }
 }
 
-pub use crate::operation::get_dicom_import_job::_get_dicom_import_job_output::GetDicomImportJobOutput;
-
 pub use crate::operation::get_dicom_import_job::_get_dicom_import_job_input::GetDicomImportJobInput;
+
+pub use crate::operation::get_dicom_import_job::_get_dicom_import_job_output::GetDicomImportJobOutput;
 
 mod _get_dicom_import_job_input;
 

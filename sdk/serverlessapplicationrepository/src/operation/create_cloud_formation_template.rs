@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_forma
     }
 }
 
-pub use crate::operation::create_cloud_formation_template::_create_cloud_formation_template_output::CreateCloudFormationTemplateOutput;
-
 pub use crate::operation::create_cloud_formation_template::_create_cloud_formation_template_input::CreateCloudFormationTemplateInput;
+
+pub use crate::operation::create_cloud_formation_template::_create_cloud_formation_template_output::CreateCloudFormationTemplateOutput;
 
 mod _create_cloud_formation_template_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::poll_for_third_par
     }
 }
 
-pub use crate::operation::poll_for_third_party_jobs::_poll_for_third_party_jobs_output::PollForThirdPartyJobsOutput;
-
 pub use crate::operation::poll_for_third_party_jobs::_poll_for_third_party_jobs_input::PollForThirdPartyJobsInput;
+
+pub use crate::operation::poll_for_third_party_jobs::_poll_for_third_party_jobs_output::PollForThirdPartyJobsOutput;
 
 mod _poll_for_third_party_jobs_input;
 

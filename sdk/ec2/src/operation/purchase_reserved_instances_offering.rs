@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_reserved_
     }
 }
 
-pub use crate::operation::purchase_reserved_instances_offering::_purchase_reserved_instances_offering_output::PurchaseReservedInstancesOfferingOutput;
-
 pub use crate::operation::purchase_reserved_instances_offering::_purchase_reserved_instances_offering_input::PurchaseReservedInstancesOfferingInput;
+
+pub use crate::operation::purchase_reserved_instances_offering::_purchase_reserved_instances_offering_output::PurchaseReservedInstancesOfferingOutput;
 
 mod _purchase_reserved_instances_offering_input;
 

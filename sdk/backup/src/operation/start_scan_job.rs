@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_scan_job::St
     }
 }
 
-pub use crate::operation::start_scan_job::_start_scan_job_output::StartScanJobOutput;
-
 pub use crate::operation::start_scan_job::_start_scan_job_input::StartScanJobInput;
+
+pub use crate::operation::start_scan_job::_start_scan_job_output::StartScanJobOutput;
 
 mod _start_scan_job_input;
 

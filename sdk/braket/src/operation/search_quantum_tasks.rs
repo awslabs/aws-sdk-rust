@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_quantum_tas
     }
 }
 
-pub use crate::operation::search_quantum_tasks::_search_quantum_tasks_output::SearchQuantumTasksOutput;
-
 pub use crate::operation::search_quantum_tasks::_search_quantum_tasks_input::SearchQuantumTasksInput;
+
+pub use crate::operation::search_quantum_tasks::_search_quantum_tasks_output::SearchQuantumTasksOutput;
 
 mod _search_quantum_tasks_input;
 

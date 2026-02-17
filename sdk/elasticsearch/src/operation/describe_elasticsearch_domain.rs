@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_elasticse
     }
 }
 
-pub use crate::operation::describe_elasticsearch_domain::_describe_elasticsearch_domain_output::DescribeElasticsearchDomainOutput;
-
 pub use crate::operation::describe_elasticsearch_domain::_describe_elasticsearch_domain_input::DescribeElasticsearchDomainInput;
+
+pub use crate::operation::describe_elasticsearch_domain::_describe_elasticsearch_domain_output::DescribeElasticsearchDomainOutput;
 
 mod _describe_elasticsearch_domain_input;
 

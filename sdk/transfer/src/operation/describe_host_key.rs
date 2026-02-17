@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_host_key:
     }
 }
 
-pub use crate::operation::describe_host_key::_describe_host_key_output::DescribeHostKeyOutput;
-
 pub use crate::operation::describe_host_key::_describe_host_key_input::DescribeHostKeyInput;
+
+pub use crate::operation::describe_host_key::_describe_host_key_output::DescribeHostKeyOutput;
 
 mod _describe_host_key_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_ipam_pool_
     }
 }
 
-pub use crate::operation::release_ipam_pool_allocation::_release_ipam_pool_allocation_output::ReleaseIpamPoolAllocationOutput;
-
 pub use crate::operation::release_ipam_pool_allocation::_release_ipam_pool_allocation_input::ReleaseIpamPoolAllocationInput;
+
+pub use crate::operation::release_ipam_pool_allocation::_release_ipam_pool_allocation_output::ReleaseIpamPoolAllocationOutput;
 
 mod _release_ipam_pool_allocation_input;
 

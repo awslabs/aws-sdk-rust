@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_contact_flo
     }
 }
 
-pub use crate::operation::delete_contact_flow_module_alias::_delete_contact_flow_module_alias_output::DeleteContactFlowModuleAliasOutput;
-
 pub use crate::operation::delete_contact_flow_module_alias::_delete_contact_flow_module_alias_input::DeleteContactFlowModuleAliasInput;
+
+pub use crate::operation::delete_contact_flow_module_alias::_delete_contact_flow_module_alias_output::DeleteContactFlowModuleAliasOutput;
 
 mod _delete_contact_flow_module_alias_input;
 

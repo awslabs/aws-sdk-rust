@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_case_attachmen
     }
 }
 
-pub use crate::operation::get_case_attachment_upload_url::_get_case_attachment_upload_url_output::GetCaseAttachmentUploadUrlOutput;
-
 pub use crate::operation::get_case_attachment_upload_url::_get_case_attachment_upload_url_input::GetCaseAttachmentUploadUrlInput;
+
+pub use crate::operation::get_case_attachment_upload_url::_get_case_attachment_upload_url_output::GetCaseAttachmentUploadUrlOutput;
 
 mod _get_case_attachment_upload_url_input;
 

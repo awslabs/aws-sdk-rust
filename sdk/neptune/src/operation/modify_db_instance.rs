@@ -508,9 +508,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_instance
     }
 }
 
-pub use crate::operation::modify_db_instance::_modify_db_instance_output::ModifyDbInstanceOutput;
-
 pub use crate::operation::modify_db_instance::_modify_db_instance_input::ModifyDbInstanceInput;
+
+pub use crate::operation::modify_db_instance::_modify_db_instance_output::ModifyDbInstanceOutput;
 
 mod _modify_db_instance_input;
 

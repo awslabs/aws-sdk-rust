@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_auto_sca
     }
 }
 
-pub use crate::operation::get_table_auto_scaling_settings::_get_table_auto_scaling_settings_output::GetTableAutoScalingSettingsOutput;
-
 pub use crate::operation::get_table_auto_scaling_settings::_get_table_auto_scaling_settings_input::GetTableAutoScalingSettingsInput;
+
+pub use crate::operation::get_table_auto_scaling_settings::_get_table_auto_scaling_settings_output::GetTableAutoScalingSettingsOutput;
 
 mod _get_table_auto_scaling_settings_input;
 

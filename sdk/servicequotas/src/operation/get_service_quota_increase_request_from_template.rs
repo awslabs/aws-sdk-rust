@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_service_quota_increase_request_from_template::_get_service_quota_increase_request_from_template_output::GetServiceQuotaIncreaseRequestFromTemplateOutput;
-
 pub use crate::operation::get_service_quota_increase_request_from_template::_get_service_quota_increase_request_from_template_input::GetServiceQuotaIncreaseRequestFromTemplateInput;
+
+pub use crate::operation::get_service_quota_increase_request_from_template::_get_service_quota_increase_request_from_template_output::GetServiceQuotaIncreaseRequestFromTemplateOutput;
 
 mod _get_service_quota_increase_request_from_template_input;
 

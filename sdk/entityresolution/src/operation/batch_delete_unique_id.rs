@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_uniqu
     }
 }
 
-pub use crate::operation::batch_delete_unique_id::_batch_delete_unique_id_output::BatchDeleteUniqueIdOutput;
-
 pub use crate::operation::batch_delete_unique_id::_batch_delete_unique_id_input::BatchDeleteUniqueIdInput;
+
+pub use crate::operation::batch_delete_unique_id::_batch_delete_unique_id_output::BatchDeleteUniqueIdOutput;
 
 mod _batch_delete_unique_id_input;
 

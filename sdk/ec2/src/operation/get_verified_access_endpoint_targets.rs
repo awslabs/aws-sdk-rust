@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_verified_acces
     }
 }
 
-pub use crate::operation::get_verified_access_endpoint_targets::_get_verified_access_endpoint_targets_output::GetVerifiedAccessEndpointTargetsOutput;
-
 pub use crate::operation::get_verified_access_endpoint_targets::_get_verified_access_endpoint_targets_input::GetVerifiedAccessEndpointTargetsInput;
+
+pub use crate::operation::get_verified_access_endpoint_targets::_get_verified_access_endpoint_targets_output::GetVerifiedAccessEndpointTargetsOutput;
 
 mod _get_verified_access_endpoint_targets_input;
 

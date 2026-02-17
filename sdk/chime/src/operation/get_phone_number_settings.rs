@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_phone_number_s
     }
 }
 
-pub use crate::operation::get_phone_number_settings::_get_phone_number_settings_output::GetPhoneNumberSettingsOutput;
-
 pub use crate::operation::get_phone_number_settings::_get_phone_number_settings_input::GetPhoneNumberSettingsInput;
+
+pub use crate::operation::get_phone_number_settings::_get_phone_number_settings_output::GetPhoneNumberSettingsOutput;
 
 mod _get_phone_number_settings_input;
 

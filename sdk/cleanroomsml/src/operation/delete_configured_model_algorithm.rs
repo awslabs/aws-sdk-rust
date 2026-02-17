@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configured_
     }
 }
 
-pub use crate::operation::delete_configured_model_algorithm::_delete_configured_model_algorithm_output::DeleteConfiguredModelAlgorithmOutput;
-
 pub use crate::operation::delete_configured_model_algorithm::_delete_configured_model_algorithm_input::DeleteConfiguredModelAlgorithmInput;
+
+pub use crate::operation::delete_configured_model_algorithm::_delete_configured_model_algorithm_output::DeleteConfiguredModelAlgorithmOutput;
 
 mod _delete_configured_model_algorithm_input;
 

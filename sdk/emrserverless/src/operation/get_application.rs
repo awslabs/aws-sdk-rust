@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application::G
     }
 }
 
-pub use crate::operation::get_application::_get_application_output::GetApplicationOutput;
-
 pub use crate::operation::get_application::_get_application_input::GetApplicationInput;
+
+pub use crate::operation::get_application::_get_application_output::GetApplicationOutput;
 
 mod _get_application_input;
 

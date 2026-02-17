@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_plan_s
     }
 }
 
-pub use crate::operation::get_account_plan_state::_get_account_plan_state_output::GetAccountPlanStateOutput;
-
 pub use crate::operation::get_account_plan_state::_get_account_plan_state_input::GetAccountPlanStateInput;
+
+pub use crate::operation::get_account_plan_state::_get_account_plan_state_output::GetAccountPlanStateOutput;
 
 mod _get_account_plan_state_input;
 

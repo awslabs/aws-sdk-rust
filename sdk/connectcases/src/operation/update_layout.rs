@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_layout::Upd
     }
 }
 
-pub use crate::operation::update_layout::_update_layout_output::UpdateLayoutOutput;
-
 pub use crate::operation::update_layout::_update_layout_input::UpdateLayoutInput;
+
+pub use crate::operation::update_layout::_update_layout_output::UpdateLayoutOutput;
 
 mod _update_layout_input;
 

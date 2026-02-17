@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_landing_zone
     }
 }
 
-pub use crate::operation::reset_landing_zone::_reset_landing_zone_output::ResetLandingZoneOutput;
-
 pub use crate::operation::reset_landing_zone::_reset_landing_zone_input::ResetLandingZoneInput;
+
+pub use crate::operation::reset_landing_zone::_reset_landing_zone_output::ResetLandingZoneOutput;
 
 mod _reset_landing_zone_input;
 

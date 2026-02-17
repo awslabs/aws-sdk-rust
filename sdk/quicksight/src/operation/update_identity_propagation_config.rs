@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_identity_pr
     }
 }
 
-pub use crate::operation::update_identity_propagation_config::_update_identity_propagation_config_output::UpdateIdentityPropagationConfigOutput;
-
 pub use crate::operation::update_identity_propagation_config::_update_identity_propagation_config_input::UpdateIdentityPropagationConfigInput;
+
+pub use crate::operation::update_identity_propagation_config::_update_identity_propagation_config_output::UpdateIdentityPropagationConfigOutput;
 
 mod _update_identity_propagation_config_input;
 

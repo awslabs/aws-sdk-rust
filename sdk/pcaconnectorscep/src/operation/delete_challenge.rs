@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_challenge::
     }
 }
 
-pub use crate::operation::delete_challenge::_delete_challenge_output::DeleteChallengeOutput;
-
 pub use crate::operation::delete_challenge::_delete_challenge_input::DeleteChallengeInput;
+
+pub use crate::operation::delete_challenge::_delete_challenge_output::DeleteChallengeOutput;
 
 mod _delete_challenge_input;
 

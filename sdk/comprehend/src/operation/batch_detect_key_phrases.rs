@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_detect_key_p
     }
 }
 
-pub use crate::operation::batch_detect_key_phrases::_batch_detect_key_phrases_output::BatchDetectKeyPhrasesOutput;
-
 pub use crate::operation::batch_detect_key_phrases::_batch_detect_key_phrases_input::BatchDetectKeyPhrasesInput;
+
+pub use crate::operation::batch_detect_key_phrases::_batch_detect_key_phrases_output::BatchDetectKeyPhrasesOutput;
 
 mod _batch_detect_key_phrases_input;
 

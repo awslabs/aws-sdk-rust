@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_microsoft_t
     }
 }
 
-pub use crate::operation::delete_microsoft_teams_user_identity::_delete_microsoft_teams_user_identity_output::DeleteMicrosoftTeamsUserIdentityOutput;
-
 pub use crate::operation::delete_microsoft_teams_user_identity::_delete_microsoft_teams_user_identity_input::DeleteMicrosoftTeamsUserIdentityInput;
+
+pub use crate::operation::delete_microsoft_teams_user_identity::_delete_microsoft_teams_user_identity_output::DeleteMicrosoftTeamsUserIdentityOutput;
 
 mod _delete_microsoft_teams_user_identity_input;
 

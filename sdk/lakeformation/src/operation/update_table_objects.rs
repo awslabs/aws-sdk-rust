@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_table_objec
     }
 }
 
-pub use crate::operation::update_table_objects::_update_table_objects_output::UpdateTableObjectsOutput;
-
 pub use crate::operation::update_table_objects::_update_table_objects_input::UpdateTableObjectsInput;
+
+pub use crate::operation::update_table_objects::_update_table_objects_output::UpdateTableObjectsOutput;
 
 mod _update_table_objects_input;
 

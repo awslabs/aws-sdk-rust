@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_delivery_str
     }
 }
 
-pub use crate::operation::start_delivery_stream_encryption::_start_delivery_stream_encryption_output::StartDeliveryStreamEncryptionOutput;
-
 pub use crate::operation::start_delivery_stream_encryption::_start_delivery_stream_encryption_input::StartDeliveryStreamEncryptionInput;
+
+pub use crate::operation::start_delivery_stream_encryption::_start_delivery_stream_encryption_output::StartDeliveryStreamEncryptionOutput;
 
 mod _start_delivery_stream_encryption_input;
 

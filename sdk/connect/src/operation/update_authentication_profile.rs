@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_authenticat
     }
 }
 
-pub use crate::operation::update_authentication_profile::_update_authentication_profile_output::UpdateAuthenticationProfileOutput;
-
 pub use crate::operation::update_authentication_profile::_update_authentication_profile_input::UpdateAuthenticationProfileInput;
+
+pub use crate::operation::update_authentication_profile::_update_authentication_profile_output::UpdateAuthenticationProfileOutput;
 
 mod _update_authentication_profile_input;
 

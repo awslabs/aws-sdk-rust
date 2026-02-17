@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_objects_v2::L
     }
 }
 
-pub use crate::operation::list_objects_v2::_list_objects_v2_output::ListObjectsV2Output;
-
 pub use crate::operation::list_objects_v2::_list_objects_v2_input::ListObjectsV2Input;
+
+pub use crate::operation::list_objects_v2::_list_objects_v2_output::ListObjectsV2Output;
 
 mod _list_objects_v2_input;
 

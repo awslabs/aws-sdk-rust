@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_log_delivery_c
     }
 }
 
-pub use crate::operation::set_log_delivery_configuration::_set_log_delivery_configuration_output::SetLogDeliveryConfigurationOutput;
-
 pub use crate::operation::set_log_delivery_configuration::_set_log_delivery_configuration_input::SetLogDeliveryConfigurationInput;
+
+pub use crate::operation::set_log_delivery_configuration::_set_log_delivery_configuration_output::SetLogDeliveryConfigurationOutput;
 
 mod _set_log_delivery_configuration_input;
 

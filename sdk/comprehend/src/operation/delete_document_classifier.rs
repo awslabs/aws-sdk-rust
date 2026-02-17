@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_document_cl
     }
 }
 
-pub use crate::operation::delete_document_classifier::_delete_document_classifier_output::DeleteDocumentClassifierOutput;
-
 pub use crate::operation::delete_document_classifier::_delete_document_classifier_input::DeleteDocumentClassifierInput;
+
+pub use crate::operation::delete_document_classifier::_delete_document_classifier_output::DeleteDocumentClassifierOutput;
 
 mod _delete_document_classifier_input;
 

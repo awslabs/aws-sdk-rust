@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_file_cache:
     }
 }
 
-pub use crate::operation::delete_file_cache::_delete_file_cache_output::DeleteFileCacheOutput;
-
 pub use crate::operation::delete_file_cache::_delete_file_cache_input::DeleteFileCacheInput;
+
+pub use crate::operation::delete_file_cache::_delete_file_cache_output::DeleteFileCacheOutput;
 
 mod _delete_file_cache_input;
 

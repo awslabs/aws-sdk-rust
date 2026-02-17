@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dataflow_endp
     }
 }
 
-pub use crate::operation::list_dataflow_endpoint_groups::_list_dataflow_endpoint_groups_output::ListDataflowEndpointGroupsOutput;
-
 pub use crate::operation::list_dataflow_endpoint_groups::_list_dataflow_endpoint_groups_input::ListDataflowEndpointGroupsInput;
+
+pub use crate::operation::list_dataflow_endpoint_groups::_list_dataflow_endpoint_groups_output::ListDataflowEndpointGroupsOutput;
 
 mod _list_dataflow_endpoint_groups_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_certifica
     }
 }
 
-pub use crate::operation::describe_certificate_authority::_describe_certificate_authority_output::DescribeCertificateAuthorityOutput;
-
 pub use crate::operation::describe_certificate_authority::_describe_certificate_authority_input::DescribeCertificateAuthorityInput;
+
+pub use crate::operation::describe_certificate_authority::_describe_certificate_authority_output::DescribeCertificateAuthorityOutput;
 
 mod _describe_certificate_authority_input;
 

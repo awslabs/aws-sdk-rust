@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_default_vocab
     }
 }
 
-pub use crate::operation::list_default_vocabularies::_list_default_vocabularies_output::ListDefaultVocabulariesOutput;
-
 pub use crate::operation::list_default_vocabularies::_list_default_vocabularies_input::ListDefaultVocabulariesInput;
+
+pub use crate::operation::list_default_vocabularies::_list_default_vocabularies_output::ListDefaultVocabulariesOutput;
 
 mod _list_default_vocabularies_input;
 

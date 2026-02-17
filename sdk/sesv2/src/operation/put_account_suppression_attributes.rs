@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_suppre
     }
 }
 
-pub use crate::operation::put_account_suppression_attributes::_put_account_suppression_attributes_output::PutAccountSuppressionAttributesOutput;
-
 pub use crate::operation::put_account_suppression_attributes::_put_account_suppression_attributes_input::PutAccountSuppressionAttributesInput;
+
+pub use crate::operation::put_account_suppression_attributes::_put_account_suppression_attributes_output::PutAccountSuppressionAttributesOutput;
 
 mod _put_account_suppression_attributes_input;
 

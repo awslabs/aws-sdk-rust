@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_annotation_im
     }
 }
 
-pub use crate::operation::list_annotation_import_jobs::_list_annotation_import_jobs_output::ListAnnotationImportJobsOutput;
-
 pub use crate::operation::list_annotation_import_jobs::_list_annotation_import_jobs_input::ListAnnotationImportJobsInput;
+
+pub use crate::operation::list_annotation_import_jobs::_list_annotation_import_jobs_output::ListAnnotationImportJobsOutput;
 
 mod _list_annotation_import_jobs_input;
 

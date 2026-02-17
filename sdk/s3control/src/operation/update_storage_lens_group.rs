@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_storage_len
     }
 }
 
-pub use crate::operation::update_storage_lens_group::_update_storage_lens_group_output::UpdateStorageLensGroupOutput;
-
 pub use crate::operation::update_storage_lens_group::_update_storage_lens_group_input::UpdateStorageLensGroupInput;
+
+pub use crate::operation::update_storage_lens_group::_update_storage_lens_group_output::UpdateStorageLensGroupOutput;
 
 mod _update_storage_lens_group_input;
 

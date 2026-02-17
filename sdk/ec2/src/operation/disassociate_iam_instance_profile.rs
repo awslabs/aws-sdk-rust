@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_iam_i
     }
 }
 
-pub use crate::operation::disassociate_iam_instance_profile::_disassociate_iam_instance_profile_output::DisassociateIamInstanceProfileOutput;
-
 pub use crate::operation::disassociate_iam_instance_profile::_disassociate_iam_instance_profile_input::DisassociateIamInstanceProfileInput;
+
+pub use crate::operation::disassociate_iam_instance_profile::_disassociate_iam_instance_profile_output::DisassociateIamInstanceProfileOutput;
 
 mod _disassociate_iam_instance_profile_input;
 

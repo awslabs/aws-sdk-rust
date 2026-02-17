@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_smb_file_sh
     }
 }
 
-pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_share_visibility_output::UpdateSmbFileShareVisibilityOutput;
-
 pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_share_visibility_input::UpdateSmbFileShareVisibilityInput;
+
+pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_share_visibility_output::UpdateSmbFileShareVisibilityOutput;
 
 mod _update_smb_file_share_visibility_input;
 

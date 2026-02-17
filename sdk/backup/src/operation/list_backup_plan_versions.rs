@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backup_plan_v
     }
 }
 
-pub use crate::operation::list_backup_plan_versions::_list_backup_plan_versions_output::ListBackupPlanVersionsOutput;
-
 pub use crate::operation::list_backup_plan_versions::_list_backup_plan_versions_input::ListBackupPlanVersionsInput;
+
+pub use crate::operation::list_backup_plan_versions::_list_backup_plan_versions_output::ListBackupPlanVersionsOutput;
 
 mod _list_backup_plan_versions_input;
 

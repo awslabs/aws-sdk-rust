@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_origination_n
     }
 }
 
-pub use crate::operation::list_origination_numbers::_list_origination_numbers_output::ListOriginationNumbersOutput;
-
 pub use crate::operation::list_origination_numbers::_list_origination_numbers_input::ListOriginationNumbersInput;
+
+pub use crate::operation::list_origination_numbers::_list_origination_numbers_output::ListOriginationNumbersOutput;
 
 mod _list_origination_numbers_input;
 

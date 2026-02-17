@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recovery_po
     }
 }
 
-pub use crate::operation::update_recovery_point_lifecycle::_update_recovery_point_lifecycle_output::UpdateRecoveryPointLifecycleOutput;
-
 pub use crate::operation::update_recovery_point_lifecycle::_update_recovery_point_lifecycle_input::UpdateRecoveryPointLifecycleInput;
+
+pub use crate::operation::update_recovery_point_lifecycle::_update_recovery_point_lifecycle_output::UpdateRecoveryPointLifecycleOutput;
 
 mod _update_recovery_point_lifecycle_input;
 

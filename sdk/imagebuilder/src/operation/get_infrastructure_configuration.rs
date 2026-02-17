@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_infrastructure
     }
 }
 
-pub use crate::operation::get_infrastructure_configuration::_get_infrastructure_configuration_output::GetInfrastructureConfigurationOutput;
-
 pub use crate::operation::get_infrastructure_configuration::_get_infrastructure_configuration_input::GetInfrastructureConfigurationInput;
+
+pub use crate::operation::get_infrastructure_configuration::_get_infrastructure_configuration_output::GetInfrastructureConfigurationOutput;
 
 mod _get_infrastructure_configuration_input;
 

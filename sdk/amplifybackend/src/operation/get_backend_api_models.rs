@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backend_api_mo
     }
 }
 
-pub use crate::operation::get_backend_api_models::_get_backend_api_models_output::GetBackendApiModelsOutput;
-
 pub use crate::operation::get_backend_api_models::_get_backend_api_models_input::GetBackendApiModelsInput;
+
+pub use crate::operation::get_backend_api_models::_get_backend_api_models_output::GetBackendApiModelsOutput;
 
 mod _get_backend_api_models_input;
 

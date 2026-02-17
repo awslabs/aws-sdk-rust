@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lifecycle_p
     }
 }
 
-pub use crate::operation::delete_lifecycle_policy::_delete_lifecycle_policy_output::DeleteLifecyclePolicyOutput;
-
 pub use crate::operation::delete_lifecycle_policy::_delete_lifecycle_policy_input::DeleteLifecyclePolicyInput;
+
+pub use crate::operation::delete_lifecycle_policy::_delete_lifecycle_policy_output::DeleteLifecyclePolicyOutput;
 
 mod _delete_lifecycle_policy_input;
 

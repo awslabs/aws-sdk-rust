@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_inference_rec
     }
 }
 
-pub use crate::operation::stop_inference_recommendations_job::_stop_inference_recommendations_job_output::StopInferenceRecommendationsJobOutput;
-
 pub use crate::operation::stop_inference_recommendations_job::_stop_inference_recommendations_job_input::StopInferenceRecommendationsJobInput;
+
+pub use crate::operation::stop_inference_recommendations_job::_stop_inference_recommendations_job_output::StopInferenceRecommendationsJobOutput;
 
 mod _stop_inference_recommendations_job_input;
 

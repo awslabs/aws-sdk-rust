@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_project_profil
     }
 }
 
-pub use crate::operation::get_project_profile::_get_project_profile_output::GetProjectProfileOutput;
-
 pub use crate::operation::get_project_profile::_get_project_profile_input::GetProjectProfileInput;
+
+pub use crate::operation::get_project_profile::_get_project_profile_output::GetProjectProfileOutput;
 
 mod _get_project_profile_input;
 

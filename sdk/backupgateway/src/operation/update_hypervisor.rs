@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hypervisor:
     }
 }
 
-pub use crate::operation::update_hypervisor::_update_hypervisor_output::UpdateHypervisorOutput;
-
 pub use crate::operation::update_hypervisor::_update_hypervisor_input::UpdateHypervisorInput;
+
+pub use crate::operation::update_hypervisor::_update_hypervisor_output::UpdateHypervisorOutput;
 
 mod _update_hypervisor_input;
 

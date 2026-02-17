@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_async_invoke::
     }
 }
 
-pub use crate::operation::get_async_invoke::_get_async_invoke_output::GetAsyncInvokeOutput;
-
 pub use crate::operation::get_async_invoke::_get_async_invoke_input::GetAsyncInvokeInput;
+
+pub use crate::operation::get_async_invoke::_get_async_invoke_output::GetAsyncInvokeOutput;
 
 mod _get_async_invoke_input;
 

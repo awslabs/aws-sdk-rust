@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_authenticatio
     }
 }
 
-pub use crate::operation::list_authentication_profiles::_list_authentication_profiles_output::ListAuthenticationProfilesOutput;
-
 pub use crate::operation::list_authentication_profiles::_list_authentication_profiles_input::ListAuthenticationProfilesInput;
+
+pub use crate::operation::list_authentication_profiles::_list_authentication_profiles_output::ListAuthenticationProfilesOutput;
 
 mod _list_authentication_profiles_input;
 

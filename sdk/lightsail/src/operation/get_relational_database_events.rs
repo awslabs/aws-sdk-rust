@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relational_dat
     }
 }
 
-pub use crate::operation::get_relational_database_events::_get_relational_database_events_output::GetRelationalDatabaseEventsOutput;
-
 pub use crate::operation::get_relational_database_events::_get_relational_database_events_input::GetRelationalDatabaseEventsInput;
+
+pub use crate::operation::get_relational_database_events::_get_relational_database_events_output::GetRelationalDatabaseEventsOutput;
 
 mod _get_relational_database_events_input;
 

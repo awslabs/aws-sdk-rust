@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_multi_regio
     }
 }
 
-pub use crate::operation::delete_multi_region_cluster::_delete_multi_region_cluster_output::DeleteMultiRegionClusterOutput;
-
 pub use crate::operation::delete_multi_region_cluster::_delete_multi_region_cluster_input::DeleteMultiRegionClusterInput;
+
+pub use crate::operation::delete_multi_region_cluster::_delete_multi_region_cluster_output::DeleteMultiRegionClusterOutput;
 
 mod _delete_multi_region_cluster_input;
 

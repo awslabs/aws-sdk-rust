@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resources_stat
     }
 }
 
-pub use crate::operation::get_resources_statistics_v2::_get_resources_statistics_v2_output::GetResourcesStatisticsV2Output;
-
 pub use crate::operation::get_resources_statistics_v2::_get_resources_statistics_v2_input::GetResourcesStatisticsV2Input;
+
+pub use crate::operation::get_resources_statistics_v2::_get_resources_statistics_v2_output::GetResourcesStatisticsV2Output;
 
 mod _get_resources_statistics_v2_input;
 

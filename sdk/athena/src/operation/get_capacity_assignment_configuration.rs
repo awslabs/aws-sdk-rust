@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_capacity_assig
     }
 }
 
-pub use crate::operation::get_capacity_assignment_configuration::_get_capacity_assignment_configuration_output::GetCapacityAssignmentConfigurationOutput;
-
 pub use crate::operation::get_capacity_assignment_configuration::_get_capacity_assignment_configuration_input::GetCapacityAssignmentConfigurationInput;
+
+pub use crate::operation::get_capacity_assignment_configuration::_get_capacity_assignment_configuration_output::GetCapacityAssignmentConfigurationOutput;
 
 mod _get_capacity_assignment_configuration_input;
 

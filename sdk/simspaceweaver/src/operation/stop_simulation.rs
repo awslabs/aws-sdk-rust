@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_simulation::S
     }
 }
 
-pub use crate::operation::stop_simulation::_stop_simulation_output::StopSimulationOutput;
-
 pub use crate::operation::stop_simulation::_stop_simulation_input::StopSimulationInput;
+
+pub use crate::operation::stop_simulation::_stop_simulation_output::StopSimulationOutput;
 
 mod _stop_simulation_input;
 

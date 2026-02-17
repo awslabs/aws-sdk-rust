@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configured_mod
     }
 }
 
-pub use crate::operation::get_configured_model_algorithm::_get_configured_model_algorithm_output::GetConfiguredModelAlgorithmOutput;
-
 pub use crate::operation::get_configured_model_algorithm::_get_configured_model_algorithm_input::GetConfiguredModelAlgorithmInput;
+
+pub use crate::operation::get_configured_model_algorithm::_get_configured_model_algorithm_output::GetConfiguredModelAlgorithmOutput;
 
 mod _get_configured_model_algorithm_input;
 

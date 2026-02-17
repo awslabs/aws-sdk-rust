@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_policy::GetPol
     }
 }
 
-pub use crate::operation::get_policy::_get_policy_output::GetPolicyOutput;
-
 pub use crate::operation::get_policy::_get_policy_input::GetPolicyInput;
+
+pub use crate::operation::get_policy::_get_policy_output::GetPolicyOutput;
 
 mod _get_policy_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backend_con
     }
 }
 
-pub use crate::operation::create_backend_config::_create_backend_config_output::CreateBackendConfigOutput;
-
 pub use crate::operation::create_backend_config::_create_backend_config_input::CreateBackendConfigInput;
+
+pub use crate::operation::create_backend_config::_create_backend_config_output::CreateBackendConfigOutput;
 
 mod _create_backend_config_input;
 

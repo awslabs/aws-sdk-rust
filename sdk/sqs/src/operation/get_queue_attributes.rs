@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_queue_attribut
     }
 }
 
-pub use crate::operation::get_queue_attributes::_get_queue_attributes_output::GetQueueAttributesOutput;
-
 pub use crate::operation::get_queue_attributes::_get_queue_attributes_input::GetQueueAttributesInput;
+
+pub use crate::operation::get_queue_attributes::_get_queue_attributes_output::GetQueueAttributesOutput;
 
 mod _get_queue_attributes_input;
 

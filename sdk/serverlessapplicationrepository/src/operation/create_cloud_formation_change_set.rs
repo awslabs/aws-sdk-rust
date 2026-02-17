@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_forma
     }
 }
 
-pub use crate::operation::create_cloud_formation_change_set::_create_cloud_formation_change_set_output::CreateCloudFormationChangeSetOutput;
-
 pub use crate::operation::create_cloud_formation_change_set::_create_cloud_formation_change_set_input::CreateCloudFormationChangeSetInput;
+
+pub use crate::operation::create_cloud_formation_change_set::_create_cloud_formation_change_set_output::CreateCloudFormationChangeSetOutput;
 
 mod _create_cloud_formation_change_set_input;
 

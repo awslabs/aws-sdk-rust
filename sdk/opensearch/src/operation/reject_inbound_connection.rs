@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_inbound_con
     }
 }
 
-pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_output::RejectInboundConnectionOutput;
-
 pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_input::RejectInboundConnectionInput;
+
+pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_output::RejectInboundConnectionOutput;
 
 mod _reject_inbound_connection_input;
 

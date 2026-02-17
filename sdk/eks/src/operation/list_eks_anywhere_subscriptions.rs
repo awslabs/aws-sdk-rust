@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_eks_anywhere_
     }
 }
 
-pub use crate::operation::list_eks_anywhere_subscriptions::_list_eks_anywhere_subscriptions_output::ListEksAnywhereSubscriptionsOutput;
-
 pub use crate::operation::list_eks_anywhere_subscriptions::_list_eks_anywhere_subscriptions_input::ListEksAnywhereSubscriptionsInput;
+
+pub use crate::operation::list_eks_anywhere_subscriptions::_list_eks_anywhere_subscriptions_output::ListEksAnywhereSubscriptionsOutput;
 
 mod _list_eks_anywhere_subscriptions_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_matchmaking::
     }
 }
 
-pub use crate::operation::stop_matchmaking::_stop_matchmaking_output::StopMatchmakingOutput;
-
 pub use crate::operation::stop_matchmaking::_stop_matchmaking_input::StopMatchmakingInput;
+
+pub use crate::operation::stop_matchmaking::_stop_matchmaking_output::StopMatchmakingOutput;
 
 mod _stop_matchmaking_input;
 

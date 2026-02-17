@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_topic_ref
     }
 }
 
-pub use crate::operation::describe_topic_refresh_schedule::_describe_topic_refresh_schedule_output::DescribeTopicRefreshScheduleOutput;
-
 pub use crate::operation::describe_topic_refresh_schedule::_describe_topic_refresh_schedule_input::DescribeTopicRefreshScheduleInput;
+
+pub use crate::operation::describe_topic_refresh_schedule::_describe_topic_refresh_schedule_output::DescribeTopicRefreshScheduleOutput;
 
 mod _describe_topic_refresh_schedule_input;
 

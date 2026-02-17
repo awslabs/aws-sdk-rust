@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_prompts::Se
     }
 }
 
-pub use crate::operation::search_prompts::_search_prompts_output::SearchPromptsOutput;
-
 pub use crate::operation::search_prompts::_search_prompts_input::SearchPromptsInput;
+
+pub use crate::operation::search_prompts::_search_prompts_output::SearchPromptsOutput;
 
 mod _search_prompts_input;
 

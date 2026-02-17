@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_channe
     }
 }
 
-pub use crate::operation::get_contact_channel::_get_contact_channel_output::GetContactChannelOutput;
-
 pub use crate::operation::get_contact_channel::_get_contact_channel_input::GetContactChannelInput;
+
+pub use crate::operation::get_contact_channel::_get_contact_channel_output::GetContactChannelOutput;
 
 mod _get_contact_channel_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_draft_app_vers
     }
 }
 
-pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_app_version_resource_mappings_output::AddDraftAppVersionResourceMappingsOutput;
-
 pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_app_version_resource_mappings_input::AddDraftAppVersionResourceMappingsInput;
+
+pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_app_version_resource_mappings_output::AddDraftAppVersionResourceMappingsOutput;
 
 mod _add_draft_app_version_resource_mappings_input;
 

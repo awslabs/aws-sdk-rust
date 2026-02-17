@@ -637,9 +637,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_comment_for_p
     }
 }
 
-pub use crate::operation::post_comment_for_pull_request::_post_comment_for_pull_request_output::PostCommentForPullRequestOutput;
-
 pub use crate::operation::post_comment_for_pull_request::_post_comment_for_pull_request_input::PostCommentForPullRequestInput;
+
+pub use crate::operation::post_comment_for_pull_request::_post_comment_for_pull_request_output::PostCommentForPullRequestOutput;
 
 mod _post_comment_for_pull_request_input;
 

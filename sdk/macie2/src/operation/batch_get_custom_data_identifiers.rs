@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_custom_d
     }
 }
 
-pub use crate::operation::batch_get_custom_data_identifiers::_batch_get_custom_data_identifiers_output::BatchGetCustomDataIdentifiersOutput;
-
 pub use crate::operation::batch_get_custom_data_identifiers::_batch_get_custom_data_identifiers_input::BatchGetCustomDataIdentifiersInput;
+
+pub use crate::operation::batch_get_custom_data_identifiers::_batch_get_custom_data_identifiers_output::BatchGetCustomDataIdentifiersOutput;
 
 mod _batch_get_custom_data_identifiers_input;
 

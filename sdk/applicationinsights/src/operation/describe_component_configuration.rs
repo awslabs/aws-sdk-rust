@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_component
     }
 }
 
-pub use crate::operation::describe_component_configuration::_describe_component_configuration_output::DescribeComponentConfigurationOutput;
-
 pub use crate::operation::describe_component_configuration::_describe_component_configuration_input::DescribeComponentConfigurationInput;
+
+pub use crate::operation::describe_component_configuration::_describe_component_configuration_output::DescribeComponentConfigurationOutput;
 
 mod _describe_component_configuration_input;
 

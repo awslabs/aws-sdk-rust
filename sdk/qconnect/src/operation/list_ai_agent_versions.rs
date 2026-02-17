@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ai_agent_vers
     }
 }
 
-pub use crate::operation::list_ai_agent_versions::_list_ai_agent_versions_output::ListAiAgentVersionsOutput;
-
 pub use crate::operation::list_ai_agent_versions::_list_ai_agent_versions_input::ListAiAgentVersionsInput;
+
+pub use crate::operation::list_ai_agent_versions::_list_ai_agent_versions_output::ListAiAgentVersionsOutput;
 
 mod _list_ai_agent_versions_input;
 

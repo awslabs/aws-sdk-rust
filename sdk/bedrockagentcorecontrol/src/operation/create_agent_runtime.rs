@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_agent_runti
     }
 }
 
-pub use crate::operation::create_agent_runtime::_create_agent_runtime_output::CreateAgentRuntimeOutput;
-
 pub use crate::operation::create_agent_runtime::_create_agent_runtime_input::CreateAgentRuntimeInput;
+
+pub use crate::operation::create_agent_runtime::_create_agent_runtime_output::CreateAgentRuntimeOutput;
 
 mod _create_agent_runtime_input;
 

@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_security_
     }
 }
 
-pub use crate::operation::describe_security_group_vpc_associations::_describe_security_group_vpc_associations_output::DescribeSecurityGroupVpcAssociationsOutput;
-
 pub use crate::operation::describe_security_group_vpc_associations::_describe_security_group_vpc_associations_input::DescribeSecurityGroupVpcAssociationsInput;
+
+pub use crate::operation::describe_security_group_vpc_associations::_describe_security_group_vpc_associations_output::DescribeSecurityGroupVpcAssociationsOutput;
 
 mod _describe_security_group_vpc_associations_input;
 

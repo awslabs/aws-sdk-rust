@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_poin
     }
 }
 
-pub use crate::operation::delete_access_point_scope::_delete_access_point_scope_output::DeleteAccessPointScopeOutput;
-
 pub use crate::operation::delete_access_point_scope::_delete_access_point_scope_input::DeleteAccessPointScopeInput;
+
+pub use crate::operation::delete_access_point_scope::_delete_access_point_scope_output::DeleteAccessPointScopeOutput;
 
 mod _delete_access_point_scope_input;
 

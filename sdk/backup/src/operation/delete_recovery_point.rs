@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recovery_po
     }
 }
 
-pub use crate::operation::delete_recovery_point::_delete_recovery_point_output::DeleteRecoveryPointOutput;
-
 pub use crate::operation::delete_recovery_point::_delete_recovery_point_input::DeleteRecoveryPointInput;
+
+pub use crate::operation::delete_recovery_point::_delete_recovery_point_output::DeleteRecoveryPointOutput;
 
 mod _delete_recovery_point_input;
 

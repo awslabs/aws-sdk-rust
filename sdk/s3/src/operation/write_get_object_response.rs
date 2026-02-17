@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::write_get_object_r
     }
 }
 
-pub use crate::operation::write_get_object_response::_write_get_object_response_output::WriteGetObjectResponseOutput;
-
 pub use crate::operation::write_get_object_response::_write_get_object_response_input::WriteGetObjectResponseInput;
+
+pub use crate::operation::write_get_object_response::_write_get_object_response_output::WriteGetObjectResponseOutput;
 
 mod _write_get_object_response_input;
 

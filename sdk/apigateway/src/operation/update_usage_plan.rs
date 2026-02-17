@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_usage_plan:
     }
 }
 
-pub use crate::operation::update_usage_plan::_update_usage_plan_output::UpdateUsagePlanOutput;
-
 pub use crate::operation::update_usage_plan::_update_usage_plan_input::UpdateUsagePlanInput;
+
+pub use crate::operation::update_usage_plan::_update_usage_plan_output::UpdateUsagePlanOutput;
 
 mod _update_usage_plan_input;
 

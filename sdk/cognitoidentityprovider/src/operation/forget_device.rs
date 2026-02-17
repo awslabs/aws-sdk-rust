@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::forget_device::For
     }
 }
 
-pub use crate::operation::forget_device::_forget_device_output::ForgetDeviceOutput;
-
 pub use crate::operation::forget_device::_forget_device_input::ForgetDeviceInput;
+
+pub use crate::operation::forget_device::_forget_device_output::ForgetDeviceOutput;
 
 mod _forget_device_input;
 

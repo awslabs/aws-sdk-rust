@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_hub_content
     }
 }
 
-pub use crate::operation::import_hub_content::_import_hub_content_output::ImportHubContentOutput;
-
 pub use crate::operation::import_hub_content::_import_hub_content_input::ImportHubContentInput;
+
+pub use crate::operation::import_hub_content::_import_hub_content_output::ImportHubContentOutput;
 
 mod _import_hub_content_input;
 

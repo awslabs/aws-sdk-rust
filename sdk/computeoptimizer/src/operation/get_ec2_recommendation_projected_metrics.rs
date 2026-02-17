@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ec2_recommenda
     }
 }
 
-pub use crate::operation::get_ec2_recommendation_projected_metrics::_get_ec2_recommendation_projected_metrics_output::GetEc2RecommendationProjectedMetricsOutput;
-
 pub use crate::operation::get_ec2_recommendation_projected_metrics::_get_ec2_recommendation_projected_metrics_input::GetEc2RecommendationProjectedMetricsInput;
+
+pub use crate::operation::get_ec2_recommendation_projected_metrics::_get_ec2_recommendation_projected_metrics_output::GetEc2RecommendationProjectedMetricsOutput;
 
 mod _get_ec2_recommendation_projected_metrics_input;
 

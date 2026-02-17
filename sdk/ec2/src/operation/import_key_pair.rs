@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_key_pair::I
     }
 }
 
-pub use crate::operation::import_key_pair::_import_key_pair_output::ImportKeyPairOutput;
-
 pub use crate::operation::import_key_pair::_import_key_pair_input::ImportKeyPairInput;
+
+pub use crate::operation::import_key_pair::_import_key_pair_output::ImportKeyPairOutput;
 
 mod _import_key_pair_input;
 

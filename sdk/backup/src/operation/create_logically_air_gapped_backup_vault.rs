@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_logically_a
     }
 }
 
-pub use crate::operation::create_logically_air_gapped_backup_vault::_create_logically_air_gapped_backup_vault_output::CreateLogicallyAirGappedBackupVaultOutput;
-
 pub use crate::operation::create_logically_air_gapped_backup_vault::_create_logically_air_gapped_backup_vault_input::CreateLogicallyAirGappedBackupVaultInput;
+
+pub use crate::operation::create_logically_air_gapped_backup_vault::_create_logically_air_gapped_backup_vault_output::CreateLogicallyAirGappedBackupVaultOutput;
 
 mod _create_logically_air_gapped_backup_vault_input;
 

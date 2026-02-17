@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_thing_princ
     }
 }
 
-pub use crate::operation::detach_thing_principal::_detach_thing_principal_output::DetachThingPrincipalOutput;
-
 pub use crate::operation::detach_thing_principal::_detach_thing_principal_input::DetachThingPrincipalInput;
+
+pub use crate::operation::detach_thing_principal::_detach_thing_principal_output::DetachThingPrincipalOutput;
 
 mod _detach_thing_principal_input;
 

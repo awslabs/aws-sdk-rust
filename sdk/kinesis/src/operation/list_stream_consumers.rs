@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stream_consum
     }
 }
 
-pub use crate::operation::list_stream_consumers::_list_stream_consumers_output::ListStreamConsumersOutput;
-
 pub use crate::operation::list_stream_consumers::_list_stream_consumers_input::ListStreamConsumersInput;
+
+pub use crate::operation::list_stream_consumers::_list_stream_consumers_output::ListStreamConsumersOutput;
 
 mod _list_stream_consumers_input;
 

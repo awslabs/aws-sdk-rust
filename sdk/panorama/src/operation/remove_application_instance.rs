@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_application
     }
 }
 
-pub use crate::operation::remove_application_instance::_remove_application_instance_output::RemoveApplicationInstanceOutput;
-
 pub use crate::operation::remove_application_instance::_remove_application_instance_input::RemoveApplicationInstanceInput;
+
+pub use crate::operation::remove_application_instance::_remove_application_instance_output::RemoveApplicationInstanceOutput;
 
 mod _remove_application_instance_input;
 

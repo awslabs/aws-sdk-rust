@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_delegati
     }
 }
 
-pub use crate::operation::associate_delegation_request::_associate_delegation_request_output::AssociateDelegationRequestOutput;
-
 pub use crate::operation::associate_delegation_request::_associate_delegation_request_input::AssociateDelegationRequestInput;
+
+pub use crate::operation::associate_delegation_request::_associate_delegation_request_output::AssociateDelegationRequestOutput;
 
 mod _associate_delegation_request_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bill_scenario:
     }
 }
 
-pub use crate::operation::get_bill_scenario::_get_bill_scenario_output::GetBillScenarioOutput;
-
 pub use crate::operation::get_bill_scenario::_get_bill_scenario_input::GetBillScenarioInput;
+
+pub use crate::operation::get_bill_scenario::_get_bill_scenario_output::GetBillScenarioOutput;
 
 mod _get_bill_scenario_input;
 

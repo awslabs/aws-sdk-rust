@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backup_plan
     }
 }
 
-pub use crate::operation::create_backup_plan::_create_backup_plan_output::CreateBackupPlanOutput;
-
 pub use crate::operation::create_backup_plan::_create_backup_plan_input::CreateBackupPlanInput;
+
+pub use crate::operation::create_backup_plan::_create_backup_plan_output::CreateBackupPlanOutput;
 
 mod _create_backup_plan_input;
 

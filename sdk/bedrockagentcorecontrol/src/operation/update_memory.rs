@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_memory::Upd
     }
 }
 
-pub use crate::operation::update_memory::_update_memory_output::UpdateMemoryOutput;
-
 pub use crate::operation::update_memory::_update_memory_input::UpdateMemoryInput;
+
+pub use crate::operation::update_memory::_update_memory_output::UpdateMemoryOutput;
 
 mod _update_memory_input;
 

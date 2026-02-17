@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stream_keys::
     }
 }
 
-pub use crate::operation::list_stream_keys::_list_stream_keys_output::ListStreamKeysOutput;
-
 pub use crate::operation::list_stream_keys::_list_stream_keys_input::ListStreamKeysInput;
+
+pub use crate::operation::list_stream_keys::_list_stream_keys_output::ListStreamKeysOutput;
 
 mod _list_stream_keys_input;
 

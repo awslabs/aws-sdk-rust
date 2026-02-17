@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_model_packa
     }
 }
 
-pub use crate::operation::delete_model_package_group_policy::_delete_model_package_group_policy_output::DeleteModelPackageGroupPolicyOutput;
-
 pub use crate::operation::delete_model_package_group_policy::_delete_model_package_group_policy_input::DeleteModelPackageGroupPolicyInput;
+
+pub use crate::operation::delete_model_package_group_policy::_delete_model_package_group_policy_output::DeleteModelPackageGroupPolicyOutput;
 
 mod _delete_model_package_group_policy_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_prompt_router:
     }
 }
 
-pub use crate::operation::get_prompt_router::_get_prompt_router_output::GetPromptRouterOutput;
-
 pub use crate::operation::get_prompt_router::_get_prompt_router_input::GetPromptRouterInput;
+
+pub use crate::operation::get_prompt_router::_get_prompt_router_output::GetPromptRouterOutput;
 
 mod _get_prompt_router_input;
 

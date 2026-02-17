@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resources_for
     }
 }
 
-pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag_option_output::ListResourcesForTagOptionOutput;
-
 pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag_option_input::ListResourcesForTagOptionInput;
+
+pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag_option_output::ListResourcesForTagOptionOutput;
 
 mod _list_resources_for_tag_option_input;
 

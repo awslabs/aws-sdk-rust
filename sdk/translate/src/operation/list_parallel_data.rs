@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_parallel_data
     }
 }
 
-pub use crate::operation::list_parallel_data::_list_parallel_data_output::ListParallelDataOutput;
-
 pub use crate::operation::list_parallel_data::_list_parallel_data_input::ListParallelDataInput;
+
+pub use crate::operation::list_parallel_data::_list_parallel_data_output::ListParallelDataOutput;
 
 mod _list_parallel_data_input;
 

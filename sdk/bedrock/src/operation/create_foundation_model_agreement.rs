@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_foundation_
     }
 }
 
-pub use crate::operation::create_foundation_model_agreement::_create_foundation_model_agreement_output::CreateFoundationModelAgreementOutput;
-
 pub use crate::operation::create_foundation_model_agreement::_create_foundation_model_agreement_input::CreateFoundationModelAgreementInput;
+
+pub use crate::operation::create_foundation_model_agreement::_create_foundation_model_agreement_output::CreateFoundationModelAgreementOutput;
 
 mod _create_foundation_model_agreement_input;
 

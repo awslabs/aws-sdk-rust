@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_effective_reco
     }
 }
 
-pub use crate::operation::get_effective_recommendation_preferences::_get_effective_recommendation_preferences_output::GetEffectiveRecommendationPreferencesOutput;
-
 pub use crate::operation::get_effective_recommendation_preferences::_get_effective_recommendation_preferences_input::GetEffectiveRecommendationPreferencesInput;
+
+pub use crate::operation::get_effective_recommendation_preferences::_get_effective_recommendation_preferences_output::GetEffectiveRecommendationPreferencesOutput;
 
 mod _get_effective_recommendation_preferences_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_message::Send
     }
 }
 
-pub use crate::operation::send_message::_send_message_output::SendMessageOutput;
-
 pub use crate::operation::send_message::_send_message_input::SendMessageInput;
+
+pub use crate::operation::send_message::_send_message_output::SendMessageOutput;
 
 mod _send_message_input;
 

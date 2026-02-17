@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_aggregation
     }
 }
 
-pub use crate::operation::delete_aggregation_authorization::_delete_aggregation_authorization_output::DeleteAggregationAuthorizationOutput;
-
 pub use crate::operation::delete_aggregation_authorization::_delete_aggregation_authorization_input::DeleteAggregationAuthorizationInput;
+
+pub use crate::operation::delete_aggregation_authorization::_delete_aggregation_authorization_output::DeleteAggregationAuthorizationOutput;
 
 mod _delete_aggregation_authorization_input;
 

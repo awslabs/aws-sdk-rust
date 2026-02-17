@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rule_based_ma
     }
 }
 
-pub use crate::operation::list_rule_based_matches::_list_rule_based_matches_output::ListRuleBasedMatchesOutput;
-
 pub use crate::operation::list_rule_based_matches::_list_rule_based_matches_input::ListRuleBasedMatchesInput;
+
+pub use crate::operation::list_rule_based_matches::_list_rule_based_matches_output::ListRuleBasedMatchesOutput;
 
 mod _list_rule_based_matches_input;
 

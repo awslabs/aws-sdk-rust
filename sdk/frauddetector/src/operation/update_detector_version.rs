@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_detector_ve
     }
 }
 
-pub use crate::operation::update_detector_version::_update_detector_version_output::UpdateDetectorVersionOutput;
-
 pub use crate::operation::update_detector_version::_update_detector_version_input::UpdateDetectorVersionInput;
+
+pub use crate::operation::update_detector_version::_update_detector_version_output::UpdateDetectorVersionOutput;
 
 mod _update_detector_version_input;
 

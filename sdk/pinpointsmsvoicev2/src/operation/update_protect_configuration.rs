@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_protect_con
     }
 }
 
-pub use crate::operation::update_protect_configuration::_update_protect_configuration_output::UpdateProtectConfigurationOutput;
-
 pub use crate::operation::update_protect_configuration::_update_protect_configuration_input::UpdateProtectConfigurationInput;
+
+pub use crate::operation::update_protect_configuration::_update_protect_configuration_output::UpdateProtectConfigurationOutput;
 
 mod _update_protect_configuration_input;
 

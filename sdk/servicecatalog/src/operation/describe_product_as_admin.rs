@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_product_a
     }
 }
 
-pub use crate::operation::describe_product_as_admin::_describe_product_as_admin_output::DescribeProductAsAdminOutput;
-
 pub use crate::operation::describe_product_as_admin::_describe_product_as_admin_input::DescribeProductAsAdminInput;
+
+pub use crate::operation::describe_product_as_admin::_describe_product_as_admin_output::DescribeProductAsAdminOutput;
 
 mod _describe_product_as_admin_input;
 

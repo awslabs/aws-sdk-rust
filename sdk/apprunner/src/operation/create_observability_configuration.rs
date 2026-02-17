@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_observabili
     }
 }
 
-pub use crate::operation::create_observability_configuration::_create_observability_configuration_output::CreateObservabilityConfigurationOutput;
-
 pub use crate::operation::create_observability_configuration::_create_observability_configuration_input::CreateObservabilityConfigurationInput;
+
+pub use crate::operation::create_observability_configuration::_create_observability_configuration_output::CreateObservabilityConfigurationOutput;
 
 mod _create_observability_configuration_input;
 

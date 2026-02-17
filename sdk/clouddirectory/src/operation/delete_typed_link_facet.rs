@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_typed_link_
     }
 }
 
-pub use crate::operation::delete_typed_link_facet::_delete_typed_link_facet_output::DeleteTypedLinkFacetOutput;
-
 pub use crate::operation::delete_typed_link_facet::_delete_typed_link_facet_input::DeleteTypedLinkFacetInput;
+
+pub use crate::operation::delete_typed_link_facet::_delete_typed_link_facet_output::DeleteTypedLinkFacetOutput;
 
 mod _delete_typed_link_facet_input;
 

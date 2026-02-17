@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_person_track
     }
 }
 
-pub use crate::operation::start_person_tracking::_start_person_tracking_output::StartPersonTrackingOutput;
-
 pub use crate::operation::start_person_tracking::_start_person_tracking_input::StartPersonTrackingInput;
+
+pub use crate::operation::start_person_tracking::_start_person_tracking_output::StartPersonTrackingOutput;
 
 mod _start_person_tracking_input;
 

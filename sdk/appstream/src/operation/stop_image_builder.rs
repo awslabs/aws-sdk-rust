@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_image_builder
     }
 }
 
-pub use crate::operation::stop_image_builder::_stop_image_builder_output::StopImageBuilderOutput;
-
 pub use crate::operation::stop_image_builder::_stop_image_builder_input::StopImageBuilderInput;
+
+pub use crate::operation::stop_image_builder::_stop_image_builder_output::StopImageBuilderOutput;
 
 mod _stop_image_builder_input;
 

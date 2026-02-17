@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_infrastruct
     }
 }
 
-pub use crate::operation::update_infrastructure_configuration::_update_infrastructure_configuration_output::UpdateInfrastructureConfigurationOutput;
-
 pub use crate::operation::update_infrastructure_configuration::_update_infrastructure_configuration_input::UpdateInfrastructureConfigurationInput;
+
+pub use crate::operation::update_infrastructure_configuration::_update_infrastructure_configuration_output::UpdateInfrastructureConfigurationOutput;
 
 mod _update_infrastructure_configuration_input;
 

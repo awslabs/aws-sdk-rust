@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_flow_capture
     }
 }
 
-pub use crate::operation::start_flow_capture::_start_flow_capture_output::StartFlowCaptureOutput;
-
 pub use crate::operation::start_flow_capture::_start_flow_capture_input::StartFlowCaptureInput;
+
+pub use crate::operation::start_flow_capture::_start_flow_capture_output::StartFlowCaptureOutput;
 
 mod _start_flow_capture_input;
 

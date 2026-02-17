@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rules_of_ip
     }
 }
 
-pub use crate::operation::update_rules_of_ip_group::_update_rules_of_ip_group_output::UpdateRulesOfIpGroupOutput;
-
 pub use crate::operation::update_rules_of_ip_group::_update_rules_of_ip_group_input::UpdateRulesOfIpGroupInput;
+
+pub use crate::operation::update_rules_of_ip_group::_update_rules_of_ip_group_output::UpdateRulesOfIpGroupOutput;
 
 mod _update_rules_of_ip_group_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_place_index
     }
 }
 
-pub use crate::operation::search_place_index_for_position::_search_place_index_for_position_output::SearchPlaceIndexForPositionOutput;
-
 pub use crate::operation::search_place_index_for_position::_search_place_index_for_position_input::SearchPlaceIndexForPositionInput;
+
+pub use crate::operation::search_place_index_for_position::_search_place_index_for_position_output::SearchPlaceIndexForPositionOutput;
 
 mod _search_place_index_for_position_input;
 

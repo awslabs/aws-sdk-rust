@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_human_tas
     }
 }
 
-pub use crate::operation::describe_human_task_ui::_describe_human_task_ui_output::DescribeHumanTaskUiOutput;
-
 pub use crate::operation::describe_human_task_ui::_describe_human_task_ui_input::DescribeHumanTaskUiInput;
+
+pub use crate::operation::describe_human_task_ui::_describe_human_task_ui_output::DescribeHumanTaskUiOutput;
 
 mod _describe_human_task_ui_input;
 

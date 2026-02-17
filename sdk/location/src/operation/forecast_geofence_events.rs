@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::forecast_geofence_
     }
 }
 
-pub use crate::operation::forecast_geofence_events::_forecast_geofence_events_output::ForecastGeofenceEventsOutput;
-
 pub use crate::operation::forecast_geofence_events::_forecast_geofence_events_input::ForecastGeofenceEventsInput;
+
+pub use crate::operation::forecast_geofence_events::_forecast_geofence_events_output::ForecastGeofenceEventsOutput;
 
 mod _forecast_geofence_events_input;
 

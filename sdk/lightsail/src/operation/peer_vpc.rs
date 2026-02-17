@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::peer_vpc::PeerVpcE
     }
 }
 
-pub use crate::operation::peer_vpc::_peer_vpc_output::PeerVpcOutput;
-
 pub use crate::operation::peer_vpc::_peer_vpc_input::PeerVpcInput;
+
+pub use crate::operation::peer_vpc::_peer_vpc_output::PeerVpcOutput;
 
 mod _peer_vpc_input;
 

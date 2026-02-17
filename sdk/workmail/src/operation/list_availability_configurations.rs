@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_availability_
     }
 }
 
-pub use crate::operation::list_availability_configurations::_list_availability_configurations_output::ListAvailabilityConfigurationsOutput;
-
 pub use crate::operation::list_availability_configurations::_list_availability_configurations_input::ListAvailabilityConfigurationsInput;
+
+pub use crate::operation::list_availability_configurations::_list_availability_configurations_output::ListAvailabilityConfigurationsOutput;
 
 mod _list_availability_configurations_input;
 

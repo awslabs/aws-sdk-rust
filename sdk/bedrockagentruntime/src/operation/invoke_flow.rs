@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_flow::Invok
     }
 }
 
-pub use crate::operation::invoke_flow::_invoke_flow_output::InvokeFlowOutput;
-
 pub use crate::operation::invoke_flow::_invoke_flow_input::InvokeFlowInput;
+
+pub use crate::operation::invoke_flow::_invoke_flow_output::InvokeFlowOutput;
 
 mod _invoke_flow_input;
 

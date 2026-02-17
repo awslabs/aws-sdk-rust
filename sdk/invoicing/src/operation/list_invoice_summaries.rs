@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_invoice_summa
     }
 }
 
-pub use crate::operation::list_invoice_summaries::_list_invoice_summaries_output::ListInvoiceSummariesOutput;
-
 pub use crate::operation::list_invoice_summaries::_list_invoice_summaries_input::ListInvoiceSummariesInput;
+
+pub use crate::operation::list_invoice_summaries::_list_invoice_summaries_output::ListInvoiceSummariesOutput;
 
 mod _list_invoice_summaries_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_applied_schem
     }
 }
 
-pub use crate::operation::list_applied_schema_arns::_list_applied_schema_arns_output::ListAppliedSchemaArnsOutput;
-
 pub use crate::operation::list_applied_schema_arns::_list_applied_schema_arns_input::ListAppliedSchemaArnsInput;
+
+pub use crate::operation::list_applied_schema_arns::_list_applied_schema_arns_output::ListAppliedSchemaArnsOutput;
 
 mod _list_applied_schema_arns_input;
 

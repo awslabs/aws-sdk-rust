@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_princi
     }
 }
 
-pub use crate::operation::list_policy_principals::_list_policy_principals_output::ListPolicyPrincipalsOutput;
-
 pub use crate::operation::list_policy_principals::_list_policy_principals_input::ListPolicyPrincipalsInput;
+
+pub use crate::operation::list_policy_principals::_list_policy_principals_output::ListPolicyPrincipalsOutput;
 
 mod _list_policy_principals_input;
 

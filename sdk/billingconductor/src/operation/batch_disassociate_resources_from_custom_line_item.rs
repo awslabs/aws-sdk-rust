@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_disassociate_resources_from_custom_line_item::_batch_disassociate_resources_from_custom_line_item_output::BatchDisassociateResourcesFromCustomLineItemOutput;
-
 pub use crate::operation::batch_disassociate_resources_from_custom_line_item::_batch_disassociate_resources_from_custom_line_item_input::BatchDisassociateResourcesFromCustomLineItemInput;
+
+pub use crate::operation::batch_disassociate_resources_from_custom_line_item::_batch_disassociate_resources_from_custom_line_item_output::BatchDisassociateResourcesFromCustomLineItemOutput;
 
 mod _batch_disassociate_resources_from_custom_line_item_input;
 

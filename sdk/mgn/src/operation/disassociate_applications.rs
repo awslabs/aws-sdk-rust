@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_appli
     }
 }
 
-pub use crate::operation::disassociate_applications::_disassociate_applications_output::DisassociateApplicationsOutput;
-
 pub use crate::operation::disassociate_applications::_disassociate_applications_input::DisassociateApplicationsInput;
+
+pub use crate::operation::disassociate_applications::_disassociate_applications_output::DisassociateApplicationsOutput;
 
 mod _disassociate_applications_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_settin
     }
 }
 
-pub use crate::operation::put_account_setting::_put_account_setting_output::PutAccountSettingOutput;
-
 pub use crate::operation::put_account_setting::_put_account_setting_input::PutAccountSettingInput;
+
+pub use crate::operation::put_account_setting::_put_account_setting_output::PutAccountSettingOutput;
 
 mod _put_account_setting_input;
 

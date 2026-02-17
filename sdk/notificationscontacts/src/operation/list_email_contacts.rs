@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_email_contact
     }
 }
 
-pub use crate::operation::list_email_contacts::_list_email_contacts_output::ListEmailContactsOutput;
-
 pub use crate::operation::list_email_contacts::_list_email_contacts_input::ListEmailContactsInput;
+
+pub use crate::operation::list_email_contacts::_list_email_contacts_output::ListEmailContactsOutput;
 
 mod _list_email_contacts_input;
 

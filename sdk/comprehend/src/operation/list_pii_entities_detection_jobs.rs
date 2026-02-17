@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pii_entities_
     }
 }
 
-pub use crate::operation::list_pii_entities_detection_jobs::_list_pii_entities_detection_jobs_output::ListPiiEntitiesDetectionJobsOutput;
-
 pub use crate::operation::list_pii_entities_detection_jobs::_list_pii_entities_detection_jobs_input::ListPiiEntitiesDetectionJobsInput;
+
+pub use crate::operation::list_pii_entities_detection_jobs::_list_pii_entities_detection_jobs_output::ListPiiEntitiesDetectionJobsOutput;
 
 mod _list_pii_entities_detection_jobs_input;
 

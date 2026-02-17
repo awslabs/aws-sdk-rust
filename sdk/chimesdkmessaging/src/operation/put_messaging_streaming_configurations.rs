@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_messaging_stre
     }
 }
 
-pub use crate::operation::put_messaging_streaming_configurations::_put_messaging_streaming_configurations_output::PutMessagingStreamingConfigurationsOutput;
-
 pub use crate::operation::put_messaging_streaming_configurations::_put_messaging_streaming_configurations_input::PutMessagingStreamingConfigurationsInput;
+
+pub use crate::operation::put_messaging_streaming_configurations::_put_messaging_streaming_configurations_output::PutMessagingStreamingConfigurationsOutput;
 
 mod _put_messaging_streaming_configurations_input;
 

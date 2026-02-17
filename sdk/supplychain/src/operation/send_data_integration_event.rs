@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_data_integrat
     }
 }
 
-pub use crate::operation::send_data_integration_event::_send_data_integration_event_output::SendDataIntegrationEventOutput;
-
 pub use crate::operation::send_data_integration_event::_send_data_integration_event_input::SendDataIntegrationEventInput;
+
+pub use crate::operation::send_data_integration_event::_send_data_integration_event_output::SendDataIntegrationEventOutput;
 
 mod _send_data_integration_event_input;
 

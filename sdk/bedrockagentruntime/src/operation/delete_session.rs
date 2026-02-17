@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_session::De
     }
 }
 
-pub use crate::operation::delete_session::_delete_session_output::DeleteSessionOutput;
-
 pub use crate::operation::delete_session::_delete_session_input::DeleteSessionInput;
+
+pub use crate::operation::delete_session::_delete_session_output::DeleteSessionOutput;
 
 mod _delete_session_input;
 

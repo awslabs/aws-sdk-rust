@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_stream_key::Ge
     }
 }
 
-pub use crate::operation::get_stream_key::_get_stream_key_output::GetStreamKeyOutput;
-
 pub use crate::operation::get_stream_key::_get_stream_key_input::GetStreamKeyInput;
+
+pub use crate::operation::get_stream_key::_get_stream_key_output::GetStreamKeyOutput;
 
 mod _get_stream_key_input;
 

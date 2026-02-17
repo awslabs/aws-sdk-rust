@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe_elasticsearch_instance_type_limits_output::DescribeElasticsearchInstanceTypeLimitsOutput;
-
 pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe_elasticsearch_instance_type_limits_input::DescribeElasticsearchInstanceTypeLimitsInput;
+
+pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe_elasticsearch_instance_type_limits_output::DescribeElasticsearchInstanceTypeLimitsOutput;
 
 mod _describe_elasticsearch_instance_type_limits_input;
 

@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stage_devices
     }
 }
 
-pub use crate::operation::list_stage_devices::_list_stage_devices_output::ListStageDevicesOutput;
-
 pub use crate::operation::list_stage_devices::_list_stage_devices_input::ListStageDevicesInput;
+
+pub use crate::operation::list_stage_devices::_list_stage_devices_output::ListStageDevicesOutput;
 
 mod _list_stage_devices_input;
 

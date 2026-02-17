@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_topic_per
     }
 }
 
-pub use crate::operation::describe_topic_permissions::_describe_topic_permissions_output::DescribeTopicPermissionsOutput;
-
 pub use crate::operation::describe_topic_permissions::_describe_topic_permissions_input::DescribeTopicPermissionsInput;
+
+pub use crate::operation::describe_topic_permissions::_describe_topic_permissions_output::DescribeTopicPermissionsOutput;
 
 mod _describe_topic_permissions_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_grant_versi
     }
 }
 
-pub use crate::operation::create_grant_version::_create_grant_version_output::CreateGrantVersionOutput;
-
 pub use crate::operation::create_grant_version::_create_grant_version_input::CreateGrantVersionInput;
+
+pub use crate::operation::create_grant_version::_create_grant_version_output::CreateGrantVersionOutput;
 
 mod _create_grant_version_input;
 

@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_training_plan
     }
 }
 
-pub use crate::operation::list_training_plans::_list_training_plans_output::ListTrainingPlansOutput;
-
 pub use crate::operation::list_training_plans::_list_training_plans_input::ListTrainingPlansInput;
+
+pub use crate::operation::list_training_plans::_list_training_plans_output::ListTrainingPlansOutput;
 
 mod _list_training_plans_input;
 

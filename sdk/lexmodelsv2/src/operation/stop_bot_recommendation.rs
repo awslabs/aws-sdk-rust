@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_bot_recommend
     }
 }
 
-pub use crate::operation::stop_bot_recommendation::_stop_bot_recommendation_output::StopBotRecommendationOutput;
-
 pub use crate::operation::stop_bot_recommendation::_stop_bot_recommendation_input::StopBotRecommendationInput;
+
+pub use crate::operation::stop_bot_recommendation::_stop_bot_recommendation_output::StopBotRecommendationOutput;
 
 mod _stop_bot_recommendation_input;
 

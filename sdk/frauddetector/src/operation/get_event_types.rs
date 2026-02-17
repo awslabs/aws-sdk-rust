@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_types::G
     }
 }
 
-pub use crate::operation::get_event_types::_get_event_types_output::GetEventTypesOutput;
-
 pub use crate::operation::get_event_types::_get_event_types_input::GetEventTypesInput;
+
+pub use crate::operation::get_event_types::_get_event_types_output::GetEventTypesOutput;
 
 mod _get_event_types_input;
 

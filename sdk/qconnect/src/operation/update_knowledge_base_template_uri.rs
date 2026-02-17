@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_knowledge_b
     }
 }
 
-pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_base_template_uri_output::UpdateKnowledgeBaseTemplateUriOutput;
-
 pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_base_template_uri_input::UpdateKnowledgeBaseTemplateUriInput;
+
+pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_base_template_uri_output::UpdateKnowledgeBaseTemplateUriOutput;
 
 mod _update_knowledge_base_template_uri_input;
 

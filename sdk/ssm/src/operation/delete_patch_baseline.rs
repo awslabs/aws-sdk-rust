@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_patch_basel
     }
 }
 
-pub use crate::operation::delete_patch_baseline::_delete_patch_baseline_output::DeletePatchBaselineOutput;
-
 pub use crate::operation::delete_patch_baseline::_delete_patch_baseline_input::DeletePatchBaselineInput;
+
+pub use crate::operation::delete_patch_baseline::_delete_patch_baseline_output::DeletePatchBaselineOutput;
 
 mod _delete_patch_baseline_input;
 

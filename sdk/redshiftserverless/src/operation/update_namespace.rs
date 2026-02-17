@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_namespace::
     }
 }
 
-pub use crate::operation::update_namespace::_update_namespace_output::UpdateNamespaceOutput;
-
 pub use crate::operation::update_namespace::_update_namespace_input::UpdateNamespaceInput;
+
+pub use crate::operation::update_namespace::_update_namespace_output::UpdateNamespaceOutput;
 
 mod _update_namespace_input;
 

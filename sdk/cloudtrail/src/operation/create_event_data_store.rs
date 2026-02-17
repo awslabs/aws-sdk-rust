@@ -555,9 +555,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_data_
     }
 }
 
-pub use crate::operation::create_event_data_store::_create_event_data_store_output::CreateEventDataStoreOutput;
-
 pub use crate::operation::create_event_data_store::_create_event_data_store_input::CreateEventDataStoreInput;
+
+pub use crate::operation::create_event_data_store::_create_event_data_store_output::CreateEventDataStoreOutput;
 
 mod _create_event_data_store_input;
 

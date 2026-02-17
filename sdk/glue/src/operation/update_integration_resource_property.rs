@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_integration
     }
 }
 
-pub use crate::operation::update_integration_resource_property::_update_integration_resource_property_output::UpdateIntegrationResourcePropertyOutput;
-
 pub use crate::operation::update_integration_resource_property::_update_integration_resource_property_input::UpdateIntegrationResourcePropertyInput;
+
+pub use crate::operation::update_integration_resource_property::_update_integration_resource_property_output::UpdateIntegrationResourcePropertyOutput;
 
 mod _update_integration_resource_property_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_agreement
     }
 }
 
-pub use crate::operation::describe_agreement::_describe_agreement_output::DescribeAgreementOutput;
-
 pub use crate::operation::describe_agreement::_describe_agreement_input::DescribeAgreementInput;
+
+pub use crate::operation::describe_agreement::_describe_agreement_output::DescribeAgreementOutput;
 
 mod _describe_agreement_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_slot_type_v
     }
 }
 
-pub use crate::operation::delete_slot_type_version::_delete_slot_type_version_output::DeleteSlotTypeVersionOutput;
-
 pub use crate::operation::delete_slot_type_version::_delete_slot_type_version_input::DeleteSlotTypeVersionInput;
+
+pub use crate::operation::delete_slot_type_version::_delete_slot_type_version_output::DeleteSlotTypeVersionOutput;
 
 mod _delete_slot_type_version_input;
 

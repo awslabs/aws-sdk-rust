@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_certificate
     }
 }
 
-pub use crate::operation::update_certificate_options::_update_certificate_options_output::UpdateCertificateOptionsOutput;
-
 pub use crate::operation::update_certificate_options::_update_certificate_options_input::UpdateCertificateOptionsInput;
+
+pub use crate::operation::update_certificate_options::_update_certificate_options_output::UpdateCertificateOptionsOutput;
 
 mod _update_certificate_options_input;
 

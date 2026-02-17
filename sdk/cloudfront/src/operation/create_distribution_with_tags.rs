@@ -1048,9 +1048,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_distributio
     }
 }
 
-pub use crate::operation::create_distribution_with_tags::_create_distribution_with_tags_output::CreateDistributionWithTagsOutput;
-
 pub use crate::operation::create_distribution_with_tags::_create_distribution_with_tags_input::CreateDistributionWithTagsInput;
+
+pub use crate::operation::create_distribution_with_tags::_create_distribution_with_tags_output::CreateDistributionWithTagsOutput;
 
 mod _create_distribution_with_tags_input;
 

@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ai_agent_ve
     }
 }
 
-pub use crate::operation::create_ai_agent_version::_create_ai_agent_version_output::CreateAiAgentVersionOutput;
-
 pub use crate::operation::create_ai_agent_version::_create_ai_agent_version_input::CreateAiAgentVersionInput;
+
+pub use crate::operation::create_ai_agent_version::_create_ai_agent_version_output::CreateAiAgentVersionOutput;
 
 mod _create_ai_agent_version_input;
 

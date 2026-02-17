@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_package_gro
     }
 }
 
-pub use crate::operation::update_package_group_origin_configuration::_update_package_group_origin_configuration_output::UpdatePackageGroupOriginConfigurationOutput;
-
 pub use crate::operation::update_package_group_origin_configuration::_update_package_group_origin_configuration_input::UpdatePackageGroupOriginConfigurationInput;
+
+pub use crate::operation::update_package_group_origin_configuration::_update_package_group_origin_configuration_output::UpdatePackageGroupOriginConfigurationOutput;
 
 mod _update_package_group_origin_configuration_input;
 

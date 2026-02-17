@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_bus
     }
 }
 
-pub use crate::operation::describe_event_bus::_describe_event_bus_output::DescribeEventBusOutput;
-
 pub use crate::operation::describe_event_bus::_describe_event_bus_input::DescribeEventBusInput;
+
+pub use crate::operation::describe_event_bus::_describe_event_bus_output::DescribeEventBusOutput;
 
 mod _describe_event_bus_input;
 

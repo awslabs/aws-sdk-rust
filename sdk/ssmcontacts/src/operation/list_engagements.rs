@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_engagements::
     }
 }
 
-pub use crate::operation::list_engagements::_list_engagements_output::ListEngagementsOutput;
-
 pub use crate::operation::list_engagements::_list_engagements_input::ListEngagementsInput;
+
+pub use crate::operation::list_engagements::_list_engagements_output::ListEngagementsOutput;
 
 mod _list_engagements_input;
 

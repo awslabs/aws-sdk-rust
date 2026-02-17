@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_memory_reco
     }
 }
 
-pub use crate::operation::delete_memory_record::_delete_memory_record_output::DeleteMemoryRecordOutput;
-
 pub use crate::operation::delete_memory_record::_delete_memory_record_input::DeleteMemoryRecordInput;
+
+pub use crate::operation::delete_memory_record::_delete_memory_record_output::DeleteMemoryRecordOutput;
 
 mod _delete_memory_record_input;
 

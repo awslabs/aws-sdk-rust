@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_share
     }
 }
 
-pub use crate::operation::get_resource_share_associations::_get_resource_share_associations_output::GetResourceShareAssociationsOutput;
-
 pub use crate::operation::get_resource_share_associations::_get_resource_share_associations_input::GetResourceShareAssociationsInput;
+
+pub use crate::operation::get_resource_share_associations::_get_resource_share_associations_output::GetResourceShareAssociationsOutput;
 
 mod _get_resource_share_associations_input;
 

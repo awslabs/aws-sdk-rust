@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cloud_autonom
     }
 }
 
-pub use crate::operation::list_cloud_autonomous_vm_clusters::_list_cloud_autonomous_vm_clusters_output::ListCloudAutonomousVmClustersOutput;
-
 pub use crate::operation::list_cloud_autonomous_vm_clusters::_list_cloud_autonomous_vm_clusters_input::ListCloudAutonomousVmClustersInput;
+
+pub use crate::operation::list_cloud_autonomous_vm_clusters::_list_cloud_autonomous_vm_clusters_output::ListCloudAutonomousVmClustersOutput;
 
 mod _list_cloud_autonomous_vm_clusters_input;
 

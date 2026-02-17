@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_usage_limit
     }
 }
 
-pub use crate::operation::update_usage_limit::_update_usage_limit_output::UpdateUsageLimitOutput;
-
 pub use crate::operation::update_usage_limit::_update_usage_limit_input::UpdateUsageLimitInput;
+
+pub use crate::operation::update_usage_limit::_update_usage_limit_output::UpdateUsageLimitOutput;
 
 mod _update_usage_limit_input;
 

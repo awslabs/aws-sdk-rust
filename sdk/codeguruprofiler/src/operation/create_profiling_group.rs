@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_profiling_g
     }
 }
 
-pub use crate::operation::create_profiling_group::_create_profiling_group_output::CreateProfilingGroupOutput;
-
 pub use crate::operation::create_profiling_group::_create_profiling_group_input::CreateProfilingGroupInput;
+
+pub use crate::operation::create_profiling_group::_create_profiling_group_output::CreateProfilingGroupOutput;
 
 mod _create_profiling_group_input;
 

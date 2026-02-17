@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_microsoft_teams_channel_configuration::_delete_microsoft_teams_channel_configuration_output::DeleteMicrosoftTeamsChannelConfigurationOutput;
-
 pub use crate::operation::delete_microsoft_teams_channel_configuration::_delete_microsoft_teams_channel_configuration_input::DeleteMicrosoftTeamsChannelConfigurationInput;
+
+pub use crate::operation::delete_microsoft_teams_channel_configuration::_delete_microsoft_teams_channel_configuration_output::DeleteMicrosoftTeamsChannelConfigurationOutput;
 
 mod _delete_microsoft_teams_channel_configuration_input;
 

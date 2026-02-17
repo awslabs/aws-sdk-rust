@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stack_refac
     }
 }
 
-pub use crate::operation::create_stack_refactor::_create_stack_refactor_output::CreateStackRefactorOutput;
-
 pub use crate::operation::create_stack_refactor::_create_stack_refactor_input::CreateStackRefactorInput;
+
+pub use crate::operation::create_stack_refactor::_create_stack_refactor_output::CreateStackRefactorOutput;
 
 mod _create_stack_refactor_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_topic_rule_des
     }
 }
 
-pub use crate::operation::get_topic_rule_destination::_get_topic_rule_destination_output::GetTopicRuleDestinationOutput;
-
 pub use crate::operation::get_topic_rule_destination::_get_topic_rule_destination_input::GetTopicRuleDestinationInput;
+
+pub use crate::operation::get_topic_rule_destination::_get_topic_rule_destination_output::GetTopicRuleDestinationOutput;
 
 mod _get_topic_rule_destination_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_rest_api::I
     }
 }
 
-pub use crate::operation::import_rest_api::_import_rest_api_output::ImportRestApiOutput;
-
 pub use crate::operation::import_rest_api::_import_rest_api_input::ImportRestApiInput;
+
+pub use crate::operation::import_rest_api::_import_rest_api_output::ImportRestApiOutput;
 
 mod _import_rest_api_input;
 

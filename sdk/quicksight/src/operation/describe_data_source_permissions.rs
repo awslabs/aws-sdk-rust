@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_sour
     }
 }
 
-pub use crate::operation::describe_data_source_permissions::_describe_data_source_permissions_output::DescribeDataSourcePermissionsOutput;
-
 pub use crate::operation::describe_data_source_permissions::_describe_data_source_permissions_input::DescribeDataSourcePermissionsInput;
+
+pub use crate::operation::describe_data_source_permissions::_describe_data_source_permissions_output::DescribeDataSourcePermissionsOutput;
 
 mod _describe_data_source_permissions_input;
 

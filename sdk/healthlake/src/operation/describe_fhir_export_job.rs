@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fhir_expo
     }
 }
 
-pub use crate::operation::describe_fhir_export_job::_describe_fhir_export_job_output::DescribeFhirExportJobOutput;
-
 pub use crate::operation::describe_fhir_export_job::_describe_fhir_export_job_input::DescribeFhirExportJobInput;
+
+pub use crate::operation::describe_fhir_export_job::_describe_fhir_export_job_output::DescribeFhirExportJobOutput;
 
 mod _describe_fhir_export_job_input;
 

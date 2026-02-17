@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_report_plan
     }
 }
 
-pub use crate::operation::create_report_plan::_create_report_plan_output::CreateReportPlanOutput;
-
 pub use crate::operation::create_report_plan::_create_report_plan_input::CreateReportPlanInput;
+
+pub use crate::operation::create_report_plan::_create_report_plan_output::CreateReportPlanOutput;
 
 mod _create_report_plan_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_multicas
     }
 }
 
-pub use crate::operation::associate_multicast_group_with_fuota_task::_associate_multicast_group_with_fuota_task_output::AssociateMulticastGroupWithFuotaTaskOutput;
-
 pub use crate::operation::associate_multicast_group_with_fuota_task::_associate_multicast_group_with_fuota_task_input::AssociateMulticastGroupWithFuotaTaskInput;
+
+pub use crate::operation::associate_multicast_group_with_fuota_task::_associate_multicast_group_with_fuota_task_output::AssociateMulticastGroupWithFuotaTaskOutput;
 
 mod _associate_multicast_group_with_fuota_task_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workload_acces
     }
 }
 
-pub use crate::operation::get_workload_access_token::_get_workload_access_token_output::GetWorkloadAccessTokenOutput;
-
 pub use crate::operation::get_workload_access_token::_get_workload_access_token_input::GetWorkloadAccessTokenInput;
+
+pub use crate::operation::get_workload_access_token::_get_workload_access_token_output::GetWorkloadAccessTokenOutput;
 
 mod _get_workload_access_token_input;
 

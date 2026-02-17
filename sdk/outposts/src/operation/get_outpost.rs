@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outpost::GetOu
     }
 }
 
-pub use crate::operation::get_outpost::_get_outpost_output::GetOutpostOutput;
-
 pub use crate::operation::get_outpost::_get_outpost_input::GetOutpostInput;
+
+pub use crate::operation::get_outpost::_get_outpost_output::GetOutpostOutput;
 
 mod _get_outpost_input;
 

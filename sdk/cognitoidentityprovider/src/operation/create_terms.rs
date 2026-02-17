@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_terms::Crea
     }
 }
 
-pub use crate::operation::create_terms::_create_terms_output::CreateTermsOutput;
-
 pub use crate::operation::create_terms::_create_terms_input::CreateTermsInput;
+
+pub use crate::operation::create_terms::_create_terms_output::CreateTermsOutput;
 
 mod _create_terms_input;
 

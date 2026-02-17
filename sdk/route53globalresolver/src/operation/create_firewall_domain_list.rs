@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_firewall_do
     }
 }
 
-pub use crate::operation::create_firewall_domain_list::_create_firewall_domain_list_output::CreateFirewallDomainListOutput;
-
 pub use crate::operation::create_firewall_domain_list::_create_firewall_domain_list_input::CreateFirewallDomainListInput;
+
+pub use crate::operation::create_firewall_domain_list::_create_firewall_domain_list_output::CreateFirewallDomainListOutput;
 
 mod _create_firewall_domain_list_input;
 

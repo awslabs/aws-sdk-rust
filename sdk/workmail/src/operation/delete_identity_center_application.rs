@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_identity_ce
     }
 }
 
-pub use crate::operation::delete_identity_center_application::_delete_identity_center_application_output::DeleteIdentityCenterApplicationOutput;
-
 pub use crate::operation::delete_identity_center_application::_delete_identity_center_application_input::DeleteIdentityCenterApplicationInput;
+
+pub use crate::operation::delete_identity_center_application::_delete_identity_center_application_output::DeleteIdentityCenterApplicationOutput;
 
 mod _delete_identity_center_application_input;
 

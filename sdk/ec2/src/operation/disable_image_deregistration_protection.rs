@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_image_dere
     }
 }
 
-pub use crate::operation::disable_image_deregistration_protection::_disable_image_deregistration_protection_output::DisableImageDeregistrationProtectionOutput;
-
 pub use crate::operation::disable_image_deregistration_protection::_disable_image_deregistration_protection_input::DisableImageDeregistrationProtectionInput;
+
+pub use crate::operation::disable_image_deregistration_protection::_disable_image_deregistration_protection_output::DisableImageDeregistrationProtectionOutput;
 
 mod _disable_image_deregistration_protection_input;
 

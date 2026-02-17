@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_namespace
     }
 }
 
-pub use crate::operation::register_namespace::_register_namespace_output::RegisterNamespaceOutput;
-
 pub use crate::operation::register_namespace::_register_namespace_input::RegisterNamespaceInput;
+
+pub use crate::operation::register_namespace::_register_namespace_output::RegisterNamespaceOutput;
 
 mod _register_namespace_input;
 

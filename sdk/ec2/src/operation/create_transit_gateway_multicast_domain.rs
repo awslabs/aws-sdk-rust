@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_transit_gat
     }
 }
 
-pub use crate::operation::create_transit_gateway_multicast_domain::_create_transit_gateway_multicast_domain_output::CreateTransitGatewayMulticastDomainOutput;
-
 pub use crate::operation::create_transit_gateway_multicast_domain::_create_transit_gateway_multicast_domain_input::CreateTransitGatewayMulticastDomainInput;
+
+pub use crate::operation::create_transit_gateway_multicast_domain::_create_transit_gateway_multicast_domain_output::CreateTransitGatewayMulticastDomainOutput;
 
 mod _create_transit_gateway_multicast_domain_input;
 

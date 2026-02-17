@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multi_region_
     }
 }
 
-pub use crate::operation::list_multi_region_access_points::_list_multi_region_access_points_output::ListMultiRegionAccessPointsOutput;
-
 pub use crate::operation::list_multi_region_access_points::_list_multi_region_access_points_input::ListMultiRegionAccessPointsInput;
+
+pub use crate::operation::list_multi_region_access_points::_list_multi_region_access_points_output::ListMultiRegionAccessPointsOutput;
 
 mod _list_multi_region_access_points_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_engine_status:
     }
 }
 
-pub use crate::operation::get_engine_status::_get_engine_status_output::GetEngineStatusOutput;
-
 pub use crate::operation::get_engine_status::_get_engine_status_input::GetEngineStatusInput;
+
+pub use crate::operation::get_engine_status::_get_engine_status_output::GetEngineStatusOutput;
 
 mod _get_engine_status_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_collection:
     }
 }
 
-pub use crate::operation::delete_collection::_delete_collection_output::DeleteCollectionOutput;
-
 pub use crate::operation::delete_collection::_delete_collection_input::DeleteCollectionInput;
+
+pub use crate::operation::delete_collection::_delete_collection_output::DeleteCollectionOutput;
 
 mod _delete_collection_input;
 

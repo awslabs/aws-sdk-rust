@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_context_keys_f
     }
 }
 
-pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_for_custom_policy_output::GetContextKeysForCustomPolicyOutput;
-
 pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_for_custom_policy_input::GetContextKeysForCustomPolicyInput;
+
+pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_for_custom_policy_output::GetContextKeysForCustomPolicyOutput;
 
 mod _get_context_keys_for_custom_policy_input;
 

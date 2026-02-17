@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_traffic_m
     }
 }
 
-pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mirror_targets_output::DescribeTrafficMirrorTargetsOutput;
-
 pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mirror_targets_input::DescribeTrafficMirrorTargetsInput;
+
+pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mirror_targets_output::DescribeTrafficMirrorTargetsOutput;
 
 mod _describe_traffic_mirror_targets_input;
 

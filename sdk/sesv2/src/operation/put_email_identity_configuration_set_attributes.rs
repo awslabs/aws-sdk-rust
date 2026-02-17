@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_email_identity_configuration_set_attributes::_put_email_identity_configuration_set_attributes_output::PutEmailIdentityConfigurationSetAttributesOutput;
-
 pub use crate::operation::put_email_identity_configuration_set_attributes::_put_email_identity_configuration_set_attributes_input::PutEmailIdentityConfigurationSetAttributesInput;
+
+pub use crate::operation::put_email_identity_configuration_set_attributes::_put_email_identity_configuration_set_attributes_output::PutEmailIdentityConfigurationSetAttributesOutput;
 
 mod _put_email_identity_configuration_set_attributes_input;
 

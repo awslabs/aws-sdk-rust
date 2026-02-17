@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_in_app_temp
     }
 }
 
-pub use crate::operation::create_in_app_template::_create_in_app_template_output::CreateInAppTemplateOutput;
-
 pub use crate::operation::create_in_app_template::_create_in_app_template_input::CreateInAppTemplateInput;
+
+pub use crate::operation::create_in_app_template::_create_in_app_template_output::CreateInAppTemplateOutput;
 
 mod _create_in_app_template_input;
 

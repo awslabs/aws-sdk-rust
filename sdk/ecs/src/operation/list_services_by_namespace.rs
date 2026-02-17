@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_services_by_n
     }
 }
 
-pub use crate::operation::list_services_by_namespace::_list_services_by_namespace_output::ListServicesByNamespaceOutput;
-
 pub use crate::operation::list_services_by_namespace::_list_services_by_namespace_input::ListServicesByNamespaceInput;
+
+pub use crate::operation::list_services_by_namespace::_list_services_by_namespace_output::ListServicesByNamespaceOutput;
 
 mod _list_services_by_namespace_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_serv
     }
 }
 
-pub use crate::operation::get_container_service_powers::_get_container_service_powers_output::GetContainerServicePowersOutput;
-
 pub use crate::operation::get_container_service_powers::_get_container_service_powers_input::GetContainerServicePowersInput;
+
+pub use crate::operation::get_container_service_powers::_get_container_service_powers_output::GetContainerServicePowersOutput;
 
 mod _get_container_service_powers_input;
 

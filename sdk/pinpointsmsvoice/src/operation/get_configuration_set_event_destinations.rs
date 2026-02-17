@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configuration_
     }
 }
 
-pub use crate::operation::get_configuration_set_event_destinations::_get_configuration_set_event_destinations_output::GetConfigurationSetEventDestinationsOutput;
-
 pub use crate::operation::get_configuration_set_event_destinations::_get_configuration_set_event_destinations_input::GetConfigurationSetEventDestinationsInput;
+
+pub use crate::operation::get_configuration_set_event_destinations::_get_configuration_set_event_destinations_output::GetConfigurationSetEventDestinationsOutput;
 
 mod _get_configuration_set_event_destinations_input;
 

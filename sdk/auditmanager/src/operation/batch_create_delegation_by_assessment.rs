@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_deleg
     }
 }
 
-pub use crate::operation::batch_create_delegation_by_assessment::_batch_create_delegation_by_assessment_output::BatchCreateDelegationByAssessmentOutput;
-
 pub use crate::operation::batch_create_delegation_by_assessment::_batch_create_delegation_by_assessment_input::BatchCreateDelegationByAssessmentInput;
+
+pub use crate::operation::batch_create_delegation_by_assessment::_batch_create_delegation_by_assessment_output::BatchCreateDelegationByAssessmentOutput;
 
 mod _batch_create_delegation_by_assessment_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_continuous_
     }
 }
 
-pub use crate::operation::update_continuous_deployment_policy::_update_continuous_deployment_policy_output::UpdateContinuousDeploymentPolicyOutput;
-
 pub use crate::operation::update_continuous_deployment_policy::_update_continuous_deployment_policy_input::UpdateContinuousDeploymentPolicyInput;
+
+pub use crate::operation::update_continuous_deployment_policy::_update_continuous_deployment_policy_output::UpdateContinuousDeploymentPolicyOutput;
 
 mod _update_continuous_deployment_policy_input;
 

@@ -496,9 +496,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_sign_up::C
     }
 }
 
-pub use crate::operation::confirm_sign_up::_confirm_sign_up_output::ConfirmSignUpOutput;
-
 pub use crate::operation::confirm_sign_up::_confirm_sign_up_input::ConfirmSignUpInput;
+
+pub use crate::operation::confirm_sign_up::_confirm_sign_up_output::ConfirmSignUpOutput;
 
 mod _confirm_sign_up_input;
 

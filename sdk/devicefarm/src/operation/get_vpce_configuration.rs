@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpce_configura
     }
 }
 
-pub use crate::operation::get_vpce_configuration::_get_vpce_configuration_output::GetVpceConfigurationOutput;
-
 pub use crate::operation::get_vpce_configuration::_get_vpce_configuration_input::GetVpceConfigurationInput;
+
+pub use crate::operation::get_vpce_configuration::_get_vpce_configuration_output::GetVpceConfigurationOutput;
 
 mod _get_vpce_configuration_input;
 

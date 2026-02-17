@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_fs
     }
 }
 
-pub use crate::operation::update_location_fsx_lustre::_update_location_fsx_lustre_output::UpdateLocationFsxLustreOutput;
-
 pub use crate::operation::update_location_fsx_lustre::_update_location_fsx_lustre_input::UpdateLocationFsxLustreInput;
+
+pub use crate::operation::update_location_fsx_lustre::_update_location_fsx_lustre_output::UpdateLocationFsxLustreOutput;
 
 mod _update_location_fsx_lustre_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_principal_p
     }
 }
 
-pub use crate::operation::detach_principal_policy::_detach_principal_policy_output::DetachPrincipalPolicyOutput;
-
 pub use crate::operation::detach_principal_policy::_detach_principal_policy_input::DetachPrincipalPolicyInput;
+
+pub use crate::operation::detach_principal_policy::_detach_principal_policy_output::DetachPrincipalPolicyOutput;
 
 mod _detach_principal_policy_input;
 

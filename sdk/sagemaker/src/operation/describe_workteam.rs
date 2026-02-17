@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workteam:
     }
 }
 
-pub use crate::operation::describe_workteam::_describe_workteam_output::DescribeWorkteamOutput;
-
 pub use crate::operation::describe_workteam::_describe_workteam_input::DescribeWorkteamInput;
+
+pub use crate::operation::describe_workteam::_describe_workteam_output::DescribeWorkteamOutput;
 
 mod _describe_workteam_input;
 

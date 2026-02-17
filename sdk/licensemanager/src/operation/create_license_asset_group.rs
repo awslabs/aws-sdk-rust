@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_license_ass
     }
 }
 
-pub use crate::operation::create_license_asset_group::_create_license_asset_group_output::CreateLicenseAssetGroupOutput;
-
 pub use crate::operation::create_license_asset_group::_create_license_asset_group_input::CreateLicenseAssetGroupInput;
+
+pub use crate::operation::create_license_asset_group::_create_license_asset_group_output::CreateLicenseAssetGroupOutput;
 
 mod _create_license_asset_group_input;
 

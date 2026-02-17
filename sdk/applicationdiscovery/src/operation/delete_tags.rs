@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tags::Delet
     }
 }
 
-pub use crate::operation::delete_tags::_delete_tags_output::DeleteTagsOutput;
-
 pub use crate::operation::delete_tags::_delete_tags_input::DeleteTagsInput;
+
+pub use crate::operation::delete_tags::_delete_tags_output::DeleteTagsOutput;
 
 mod _delete_tags_input;
 

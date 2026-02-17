@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpn_tunnel_rep
     }
 }
 
-pub use crate::operation::get_vpn_tunnel_replacement_status::_get_vpn_tunnel_replacement_status_output::GetVpnTunnelReplacementStatusOutput;
-
 pub use crate::operation::get_vpn_tunnel_replacement_status::_get_vpn_tunnel_replacement_status_input::GetVpnTunnelReplacementStatusInput;
+
+pub use crate::operation::get_vpn_tunnel_replacement_status::_get_vpn_tunnel_replacement_status_output::GetVpnTunnelReplacementStatusOutput;
 
 mod _get_vpn_tunnel_replacement_status_input;
 

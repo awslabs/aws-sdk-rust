@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_contact_lis
     }
 }
 
-pub use crate::operation::delete_contact_list::_delete_contact_list_output::DeleteContactListOutput;
-
 pub use crate::operation::delete_contact_list::_delete_contact_list_input::DeleteContactListInput;
+
+pub use crate::operation::delete_contact_list::_delete_contact_list_output::DeleteContactListOutput;
 
 mod _delete_contact_list_input;
 

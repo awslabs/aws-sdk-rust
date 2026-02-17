@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_variant_store:
     }
 }
 
-pub use crate::operation::get_variant_store::_get_variant_store_output::GetVariantStoreOutput;
-
 pub use crate::operation::get_variant_store::_get_variant_store_input::GetVariantStoreInput;
+
+pub use crate::operation::get_variant_store::_get_variant_store_output::GetVariantStoreOutput;
 
 mod _get_variant_store_input;
 

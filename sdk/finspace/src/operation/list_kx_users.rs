@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_users::Lis
     }
 }
 
-pub use crate::operation::list_kx_users::_list_kx_users_output::ListKxUsersOutput;
-
 pub use crate::operation::list_kx_users::_list_kx_users_input::ListKxUsersInput;
+
+pub use crate::operation::list_kx_users::_list_kx_users_output::ListKxUsersOutput;
 
 mod _list_kx_users_input;
 

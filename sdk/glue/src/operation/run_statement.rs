@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::run_statement::Run
     }
 }
 
-pub use crate::operation::run_statement::_run_statement_output::RunStatementOutput;
-
 pub use crate::operation::run_statement::_run_statement_input::RunStatementInput;
+
+pub use crate::operation::run_statement::_run_statement_output::RunStatementOutput;
 
 mod _run_statement_input;
 

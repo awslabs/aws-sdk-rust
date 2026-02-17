@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_queue_snap
     }
 }
 
-pub use crate::operation::get_job_queue_snapshot::_get_job_queue_snapshot_output::GetJobQueueSnapshotOutput;
-
 pub use crate::operation::get_job_queue_snapshot::_get_job_queue_snapshot_input::GetJobQueueSnapshotInput;
+
+pub use crate::operation::get_job_queue_snapshot::_get_job_queue_snapshot_output::GetJobQueueSnapshotOutput;
 
 mod _get_job_queue_snapshot_input;
 

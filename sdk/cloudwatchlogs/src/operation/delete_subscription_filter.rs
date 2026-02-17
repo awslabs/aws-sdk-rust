@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_subscriptio
     }
 }
 
-pub use crate::operation::delete_subscription_filter::_delete_subscription_filter_output::DeleteSubscriptionFilterOutput;
-
 pub use crate::operation::delete_subscription_filter::_delete_subscription_filter_input::DeleteSubscriptionFilterInput;
+
+pub use crate::operation::delete_subscription_filter::_delete_subscription_filter_output::DeleteSubscriptionFilterOutput;
 
 mod _delete_subscription_filter_input;
 

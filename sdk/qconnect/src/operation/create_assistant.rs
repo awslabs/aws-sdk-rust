@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_assistant::
     }
 }
 
-pub use crate::operation::create_assistant::_create_assistant_output::CreateAssistantOutput;
-
 pub use crate::operation::create_assistant::_create_assistant_input::CreateAssistantInput;
+
+pub use crate::operation::create_assistant::_create_assistant_output::CreateAssistantOutput;
 
 mod _create_assistant_input;
 

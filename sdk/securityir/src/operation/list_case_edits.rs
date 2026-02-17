@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_case_edits::L
     }
 }
 
-pub use crate::operation::list_case_edits::_list_case_edits_output::ListCaseEditsOutput;
-
 pub use crate::operation::list_case_edits::_list_case_edits_input::ListCaseEditsInput;
+
+pub use crate::operation::list_case_edits::_list_case_edits_output::ListCaseEditsOutput;
 
 mod _list_case_edits_input;
 

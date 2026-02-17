@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_rule::Ge
     }
 }
 
-pub use crate::operation::get_event_rule::_get_event_rule_output::GetEventRuleOutput;
-
 pub use crate::operation::get_event_rule::_get_event_rule_input::GetEventRuleInput;
+
+pub use crate::operation::get_event_rule::_get_event_rule_output::GetEventRuleOutput;
 
 mod _get_event_rule_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_image
     }
 }
 
-pub use crate::operation::describe_app_image_config::_describe_app_image_config_output::DescribeAppImageConfigOutput;
-
 pub use crate::operation::describe_app_image_config::_describe_app_image_config_input::DescribeAppImageConfigInput;
+
+pub use crate::operation::describe_app_image_config::_describe_app_image_config_output::DescribeAppImageConfigOutput;
 
 mod _describe_app_image_config_input;
 

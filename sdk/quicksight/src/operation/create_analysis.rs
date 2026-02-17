@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_analysis::C
     }
 }
 
-pub use crate::operation::create_analysis::_create_analysis_output::CreateAnalysisOutput;
-
 pub use crate::operation::create_analysis::_create_analysis_input::CreateAnalysisInput;
+
+pub use crate::operation::create_analysis::_create_analysis_output::CreateAnalysisOutput;
 
 mod _create_analysis_input;
 

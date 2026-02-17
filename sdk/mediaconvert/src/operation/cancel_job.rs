@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_job::Cancel
     }
 }
 
-pub use crate::operation::cancel_job::_cancel_job_output::CancelJobOutput;
-
 pub use crate::operation::cancel_job::_cancel_job_input::CancelJobInput;
+
+pub use crate::operation::cancel_job::_cancel_job_output::CancelJobOutput;
 
 mod _cancel_job_input;
 

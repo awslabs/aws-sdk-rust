@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_toxic_conte
     }
 }
 
-pub use crate::operation::detect_toxic_content::_detect_toxic_content_output::DetectToxicContentOutput;
-
 pub use crate::operation::detect_toxic_content::_detect_toxic_content_input::DetectToxicContentInput;
+
+pub use crate::operation::detect_toxic_content::_detect_toxic_content_output::DetectToxicContentOutput;
 
 mod _detect_toxic_content_input;
 

@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_resour
     }
 }
 
-pub use crate::operation::get_network_resource_relationships::_get_network_resource_relationships_output::GetNetworkResourceRelationshipsOutput;
-
 pub use crate::operation::get_network_resource_relationships::_get_network_resource_relationships_input::GetNetworkResourceRelationshipsInput;
+
+pub use crate::operation::get_network_resource_relationships::_get_network_resource_relationships_output::GetNetworkResourceRelationshipsOutput;
 
 mod _get_network_resource_relationships_input;
 

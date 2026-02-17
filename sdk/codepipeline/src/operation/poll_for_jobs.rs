@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::poll_for_jobs::Pol
     }
 }
 
-pub use crate::operation::poll_for_jobs::_poll_for_jobs_output::PollForJobsOutput;
-
 pub use crate::operation::poll_for_jobs::_poll_for_jobs_input::PollForJobsInput;
+
+pub use crate::operation::poll_for_jobs::_poll_for_jobs_output::PollForJobsOutput;
 
 mod _poll_for_jobs_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_parameter_g
     }
 }
 
-pub use crate::operation::create_parameter_group::_create_parameter_group_output::CreateParameterGroupOutput;
-
 pub use crate::operation::create_parameter_group::_create_parameter_group_input::CreateParameterGroupInput;
+
+pub use crate::operation::create_parameter_group::_create_parameter_group_output::CreateParameterGroupOutput;
 
 mod _create_parameter_group_input;
 

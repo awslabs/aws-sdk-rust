@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_stored_query::
     }
 }
 
-pub use crate::operation::put_stored_query::_put_stored_query_output::PutStoredQueryOutput;
-
 pub use crate::operation::put_stored_query::_put_stored_query_input::PutStoredQueryInput;
+
+pub use crate::operation::put_stored_query::_put_stored_query_output::PutStoredQueryOutput;
 
 mod _put_stored_query_input;
 

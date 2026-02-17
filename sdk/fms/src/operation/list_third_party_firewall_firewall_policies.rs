@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_third_party_firewall_firewall_policies::_list_third_party_firewall_firewall_policies_output::ListThirdPartyFirewallFirewallPoliciesOutput;
-
 pub use crate::operation::list_third_party_firewall_firewall_policies::_list_third_party_firewall_firewall_policies_input::ListThirdPartyFirewallFirewallPoliciesInput;
+
+pub use crate::operation::list_third_party_firewall_firewall_policies::_list_third_party_firewall_firewall_policies_output::ListThirdPartyFirewallFirewallPoliciesOutput;
 
 mod _list_third_party_firewall_firewall_policies_input;
 

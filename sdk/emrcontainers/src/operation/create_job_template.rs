@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_job_templat
     }
 }
 
-pub use crate::operation::create_job_template::_create_job_template_output::CreateJobTemplateOutput;
-
 pub use crate::operation::create_job_template::_create_job_template_input::CreateJobTemplateInput;
+
+pub use crate::operation::create_job_template::_create_job_template_output::CreateJobTemplateOutput;
 
 mod _create_job_template_input;
 

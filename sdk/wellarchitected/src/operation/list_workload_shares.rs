@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workload_shar
     }
 }
 
-pub use crate::operation::list_workload_shares::_list_workload_shares_output::ListWorkloadSharesOutput;
-
 pub use crate::operation::list_workload_shares::_list_workload_shares_input::ListWorkloadSharesInput;
+
+pub use crate::operation::list_workload_shares::_list_workload_shares_output::ListWorkloadSharesOutput;
 
 mod _list_workload_shares_input;
 

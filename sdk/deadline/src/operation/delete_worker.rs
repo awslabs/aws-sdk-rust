@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_worker::Del
     }
 }
 
-pub use crate::operation::delete_worker::_delete_worker_output::DeleteWorkerOutput;
-
 pub use crate::operation::delete_worker::_delete_worker_input::DeleteWorkerInput;
+
+pub use crate::operation::delete_worker::_delete_worker_output::DeleteWorkerOutput;
 
 mod _delete_worker_input;
 

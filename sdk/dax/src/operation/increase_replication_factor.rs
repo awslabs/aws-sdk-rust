@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::increase_replicati
     }
 }
 
-pub use crate::operation::increase_replication_factor::_increase_replication_factor_output::IncreaseReplicationFactorOutput;
-
 pub use crate::operation::increase_replication_factor::_increase_replication_factor_input::IncreaseReplicationFactorInput;
+
+pub use crate::operation::increase_replication_factor::_increase_replication_factor_output::IncreaseReplicationFactorOutput;
 
 mod _increase_replication_factor_input;
 

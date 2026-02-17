@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_page_receipts
     }
 }
 
-pub use crate::operation::list_page_receipts::_list_page_receipts_output::ListPageReceiptsOutput;
-
 pub use crate::operation::list_page_receipts::_list_page_receipts_input::ListPageReceiptsInput;
+
+pub use crate::operation::list_page_receipts::_list_page_receipts_output::ListPageReceiptsOutput;
 
 mod _list_page_receipts_input;
 

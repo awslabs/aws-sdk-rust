@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_test::GetTestE
     }
 }
 
-pub use crate::operation::get_test::_get_test_output::GetTestOutput;
-
 pub use crate::operation::get_test::_get_test_input::GetTestInput;
+
+pub use crate::operation::get_test::_get_test_output::GetTestOutput;
 
 mod _get_test_input;
 

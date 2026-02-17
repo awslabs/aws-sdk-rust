@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::apply_archive_rule
     }
 }
 
-pub use crate::operation::apply_archive_rule::_apply_archive_rule_output::ApplyArchiveRuleOutput;
-
 pub use crate::operation::apply_archive_rule::_apply_archive_rule_input::ApplyArchiveRuleInput;
+
+pub use crate::operation::apply_archive_rule::_apply_archive_rule_output::ApplyArchiveRuleOutput;
 
 mod _apply_archive_rule_input;
 

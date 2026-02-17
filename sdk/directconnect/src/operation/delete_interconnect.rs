@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_interconnec
     }
 }
 
-pub use crate::operation::delete_interconnect::_delete_interconnect_output::DeleteInterconnectOutput;
-
 pub use crate::operation::delete_interconnect::_delete_interconnect_input::DeleteInterconnectInput;
+
+pub use crate::operation::delete_interconnect::_delete_interconnect_output::DeleteInterconnectOutput;
 
 mod _delete_interconnect_input;
 

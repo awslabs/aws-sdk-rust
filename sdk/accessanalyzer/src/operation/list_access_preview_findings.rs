@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_previe
     }
 }
 
-pub use crate::operation::list_access_preview_findings::_list_access_preview_findings_output::ListAccessPreviewFindingsOutput;
-
 pub use crate::operation::list_access_preview_findings::_list_access_preview_findings_input::ListAccessPreviewFindingsInput;
+
+pub use crate::operation::list_access_preview_findings::_list_access_preview_findings_output::ListAccessPreviewFindingsOutput;
 
 mod _list_access_preview_findings_input;
 

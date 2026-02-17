@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_slack_chann
     }
 }
 
-pub use crate::operation::update_slack_channel_configuration::_update_slack_channel_configuration_output::UpdateSlackChannelConfigurationOutput;
-
 pub use crate::operation::update_slack_channel_configuration::_update_slack_channel_configuration_input::UpdateSlackChannelConfigurationInput;
+
+pub use crate::operation::update_slack_channel_configuration::_update_slack_channel_configuration_output::UpdateSlackChannelConfigurationOutput;
 
 mod _update_slack_channel_configuration_input;
 

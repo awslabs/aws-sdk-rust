@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::deregister_instance_event_notification_attributes::_deregister_instance_event_notification_attributes_output::DeregisterInstanceEventNotificationAttributesOutput;
-
 pub use crate::operation::deregister_instance_event_notification_attributes::_deregister_instance_event_notification_attributes_input::DeregisterInstanceEventNotificationAttributesInput;
+
+pub use crate::operation::deregister_instance_event_notification_attributes::_deregister_instance_event_notification_attributes_output::DeregisterInstanceEventNotificationAttributesOutput;
 
 mod _deregister_instance_event_notification_attributes_input;
 

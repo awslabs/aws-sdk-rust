@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_bulk_template
     }
 }
 
-pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_output::SendBulkTemplatedEmailOutput;
-
 pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_input::SendBulkTemplatedEmailInput;
+
+pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_output::SendBulkTemplatedEmailOutput;
 
 mod _send_bulk_templated_email_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_workflow_run_p
     }
 }
 
-pub use crate::operation::put_workflow_run_properties::_put_workflow_run_properties_output::PutWorkflowRunPropertiesOutput;
-
 pub use crate::operation::put_workflow_run_properties::_put_workflow_run_properties_input::PutWorkflowRunPropertiesInput;
+
+pub use crate::operation::put_workflow_run_properties::_put_workflow_run_properties_output::PutWorkflowRunPropertiesOutput;
 
 mod _put_workflow_run_properties_input;
 

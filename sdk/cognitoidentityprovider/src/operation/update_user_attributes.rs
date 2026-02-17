@@ -537,9 +537,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_attrib
     }
 }
 
-pub use crate::operation::update_user_attributes::_update_user_attributes_output::UpdateUserAttributesOutput;
-
 pub use crate::operation::update_user_attributes::_update_user_attributes_input::UpdateUserAttributesInput;
+
+pub use crate::operation::update_user_attributes::_update_user_attributes_output::UpdateUserAttributesOutput;
 
 mod _update_user_attributes_input;
 

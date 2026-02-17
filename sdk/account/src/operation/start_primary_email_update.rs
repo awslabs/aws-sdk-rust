@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_primary_emai
     }
 }
 
-pub use crate::operation::start_primary_email_update::_start_primary_email_update_output::StartPrimaryEmailUpdateOutput;
-
 pub use crate::operation::start_primary_email_update::_start_primary_email_update_input::StartPrimaryEmailUpdateInput;
+
+pub use crate::operation::start_primary_email_update::_start_primary_email_update_output::StartPrimaryEmailUpdateOutput;
 
 mod _start_primary_email_update_input;
 

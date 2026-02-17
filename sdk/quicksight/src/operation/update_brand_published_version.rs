@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_brand_publi
     }
 }
 
-pub use crate::operation::update_brand_published_version::_update_brand_published_version_output::UpdateBrandPublishedVersionOutput;
-
 pub use crate::operation::update_brand_published_version::_update_brand_published_version_input::UpdateBrandPublishedVersionInput;
+
+pub use crate::operation::update_brand_published_version::_update_brand_published_version_output::UpdateBrandPublishedVersionOutput;
 
 mod _update_brand_published_version_input;
 

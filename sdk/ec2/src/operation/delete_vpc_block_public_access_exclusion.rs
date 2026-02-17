@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_block_p
     }
 }
 
-pub use crate::operation::delete_vpc_block_public_access_exclusion::_delete_vpc_block_public_access_exclusion_output::DeleteVpcBlockPublicAccessExclusionOutput;
-
 pub use crate::operation::delete_vpc_block_public_access_exclusion::_delete_vpc_block_public_access_exclusion_input::DeleteVpcBlockPublicAccessExclusionInput;
+
+pub use crate::operation::delete_vpc_block_public_access_exclusion::_delete_vpc_block_public_access_exclusion_output::DeleteVpcBlockPublicAccessExclusionOutput;
 
 mod _delete_vpc_block_public_access_exclusion_input;
 

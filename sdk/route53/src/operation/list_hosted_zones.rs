@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hosted_zones:
     }
 }
 
-pub use crate::operation::list_hosted_zones::_list_hosted_zones_output::ListHostedZonesOutput;
-
 pub use crate::operation::list_hosted_zones::_list_hosted_zones_input::ListHostedZonesInput;
+
+pub use crate::operation::list_hosted_zones::_list_hosted_zones_output::ListHostedZonesOutput;
 
 mod _list_hosted_zones_input;
 

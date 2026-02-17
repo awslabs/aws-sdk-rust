@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_endpoint:
     }
 }
 
-pub use crate::operation::get_data_endpoint::_get_data_endpoint_output::GetDataEndpointOutput;
-
 pub use crate::operation::get_data_endpoint::_get_data_endpoint_input::GetDataEndpointInput;
+
+pub use crate::operation::get_data_endpoint::_get_data_endpoint_output::GetDataEndpointOutput;
 
 mod _get_data_endpoint_input;
 

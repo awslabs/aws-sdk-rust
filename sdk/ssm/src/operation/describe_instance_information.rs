@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_information::_describe_instance_information_output::DescribeInstanceInformationOutput;
-
 pub use crate::operation::describe_instance_information::_describe_instance_information_input::DescribeInstanceInformationInput;
+
+pub use crate::operation::describe_instance_information::_describe_instance_information_output::DescribeInstanceInformationOutput;
 
 mod _describe_instance_information_input;
 

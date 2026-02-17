@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_schedule_gr
     }
 }
 
-pub use crate::operation::create_schedule_group::_create_schedule_group_output::CreateScheduleGroupOutput;
-
 pub use crate::operation::create_schedule_group::_create_schedule_group_input::CreateScheduleGroupInput;
+
+pub use crate::operation::create_schedule_group::_create_schedule_group_output::CreateScheduleGroupOutput;
 
 mod _create_schedule_group_input;
 

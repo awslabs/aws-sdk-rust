@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_node::Updat
     }
 }
 
-pub use crate::operation::update_node::_update_node_output::UpdateNodeOutput;
-
 pub use crate::operation::update_node::_update_node_input::UpdateNodeInput;
+
+pub use crate::operation::update_node::_update_node_output::UpdateNodeOutput;
 
 mod _update_node_input;
 

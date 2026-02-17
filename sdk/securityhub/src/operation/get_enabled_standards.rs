@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_enabled_standa
     }
 }
 
-pub use crate::operation::get_enabled_standards::_get_enabled_standards_output::GetEnabledStandardsOutput;
-
 pub use crate::operation::get_enabled_standards::_get_enabled_standards_input::GetEnabledStandardsInput;
+
+pub use crate::operation::get_enabled_standards::_get_enabled_standards_output::GetEnabledStandardsOutput;
 
 mod _get_enabled_standards_input;
 

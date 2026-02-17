@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_finding_statis
     }
 }
 
-pub use crate::operation::get_finding_statistics::_get_finding_statistics_output::GetFindingStatisticsOutput;
-
 pub use crate::operation::get_finding_statistics::_get_finding_statistics_input::GetFindingStatisticsInput;
+
+pub use crate::operation::get_finding_statistics::_get_finding_statistics_output::GetFindingStatisticsOutput;
 
 mod _get_finding_statistics_input;
 

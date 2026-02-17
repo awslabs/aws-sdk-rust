@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_portal_prod
     }
 }
 
-pub use crate::operation::update_portal_product::_update_portal_product_output::UpdatePortalProductOutput;
-
 pub use crate::operation::update_portal_product::_update_portal_product_input::UpdatePortalProductInput;
+
+pub use crate::operation::update_portal_product::_update_portal_product_output::UpdatePortalProductOutput;
 
 mod _update_portal_product_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_capability:
     }
 }
 
-pub use crate::operation::update_capability::_update_capability_output::UpdateCapabilityOutput;
-
 pub use crate::operation::update_capability::_update_capability_input::UpdateCapabilityInput;
+
+pub use crate::operation::update_capability::_update_capability_output::UpdateCapabilityOutput;
 
 mod _update_capability_input;
 

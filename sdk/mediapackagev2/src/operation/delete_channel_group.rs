@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_channel_gro
     }
 }
 
-pub use crate::operation::delete_channel_group::_delete_channel_group_output::DeleteChannelGroupOutput;
-
 pub use crate::operation::delete_channel_group::_delete_channel_group_input::DeleteChannelGroupInput;
+
+pub use crate::operation::delete_channel_group::_delete_channel_group_output::DeleteChannelGroupOutput;
 
 mod _delete_channel_group_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_id_namespace_
     }
 }
 
-pub use crate::operation::list_id_namespace_associations::_list_id_namespace_associations_output::ListIdNamespaceAssociationsOutput;
-
 pub use crate::operation::list_id_namespace_associations::_list_id_namespace_associations_input::ListIdNamespaceAssociationsInput;
+
+pub use crate::operation::list_id_namespace_associations::_list_id_namespace_associations_output::ListIdNamespaceAssociationsOutput;
 
 mod _list_id_namespace_associations_input;
 

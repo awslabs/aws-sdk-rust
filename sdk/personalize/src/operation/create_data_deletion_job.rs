@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_deleti
     }
 }
 
-pub use crate::operation::create_data_deletion_job::_create_data_deletion_job_output::CreateDataDeletionJobOutput;
-
 pub use crate::operation::create_data_deletion_job::_create_data_deletion_job_input::CreateDataDeletionJobInput;
+
+pub use crate::operation::create_data_deletion_job::_create_data_deletion_job_output::CreateDataDeletionJobOutput;
 
 mod _create_data_deletion_job_input;
 

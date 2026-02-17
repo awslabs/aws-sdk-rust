@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_nfs_file_sh
     }
 }
 
-pub use crate::operation::create_nfs_file_share::_create_nfs_file_share_output::CreateNfsFileShareOutput;
-
 pub use crate::operation::create_nfs_file_share::_create_nfs_file_share_input::CreateNfsFileShareInput;
+
+pub use crate::operation::create_nfs_file_share::_create_nfs_file_share_output::CreateNfsFileShareOutput;
 
 mod _create_nfs_file_share_input;
 

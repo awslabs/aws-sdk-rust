@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_system_templat
     }
 }
 
-pub use crate::operation::get_system_template::_get_system_template_output::GetSystemTemplateOutput;
-
 pub use crate::operation::get_system_template::_get_system_template_input::GetSystemTemplateInput;
+
+pub use crate::operation::get_system_template::_get_system_template_output::GetSystemTemplateOutput;
 
 mod _get_system_template_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_table::Crea
     }
 }
 
-pub use crate::operation::create_table::_create_table_output::CreateTableOutput;
-
 pub use crate::operation::create_table::_create_table_input::CreateTableInput;
+
+pub use crate::operation::create_table::_create_table_output::CreateTableOutput;
 
 mod _create_table_input;
 

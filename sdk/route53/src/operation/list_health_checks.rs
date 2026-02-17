@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_health_checks
     }
 }
 
-pub use crate::operation::list_health_checks::_list_health_checks_output::ListHealthChecksOutput;
-
 pub use crate::operation::list_health_checks::_list_health_checks_input::ListHealthChecksInput;
+
+pub use crate::operation::list_health_checks::_list_health_checks_output::ListHealthChecksOutput;
 
 mod _list_health_checks_input;
 

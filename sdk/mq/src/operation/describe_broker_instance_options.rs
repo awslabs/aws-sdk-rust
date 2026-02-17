@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_broker_in
     }
 }
 
-pub use crate::operation::describe_broker_instance_options::_describe_broker_instance_options_output::DescribeBrokerInstanceOptionsOutput;
-
 pub use crate::operation::describe_broker_instance_options::_describe_broker_instance_options_input::DescribeBrokerInstanceOptionsInput;
+
+pub use crate::operation::describe_broker_instance_options::_describe_broker_instance_options_output::DescribeBrokerInstanceOptionsOutput;
 
 mod _describe_broker_instance_options_input;
 

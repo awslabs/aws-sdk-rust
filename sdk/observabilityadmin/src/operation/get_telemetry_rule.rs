@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_telemetry_rule
     }
 }
 
-pub use crate::operation::get_telemetry_rule::_get_telemetry_rule_output::GetTelemetryRuleOutput;
-
 pub use crate::operation::get_telemetry_rule::_get_telemetry_rule_input::GetTelemetryRuleInput;
+
+pub use crate::operation::get_telemetry_rule::_get_telemetry_rule_output::GetTelemetryRuleOutput;
 
 mod _get_telemetry_rule_input;
 

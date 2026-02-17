@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster_kaf
     }
 }
 
-pub use crate::operation::update_cluster_kafka_version::_update_cluster_kafka_version_output::UpdateClusterKafkaVersionOutput;
-
 pub use crate::operation::update_cluster_kafka_version::_update_cluster_kafka_version_input::UpdateClusterKafkaVersionInput;
+
+pub use crate::operation::update_cluster_kafka_version::_update_cluster_kafka_version_output::UpdateClusterKafkaVersionOutput;
 
 mod _update_cluster_kafka_version_input;
 

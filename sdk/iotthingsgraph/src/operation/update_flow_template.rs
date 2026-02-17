@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_flow_templa
     }
 }
 
-pub use crate::operation::update_flow_template::_update_flow_template_output::UpdateFlowTemplateOutput;
-
 pub use crate::operation::update_flow_template::_update_flow_template_input::UpdateFlowTemplateInput;
+
+pub use crate::operation::update_flow_template::_update_flow_template_output::UpdateFlowTemplateOutput;
 
 mod _update_flow_template_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_sourc
     }
 }
 
-pub use crate::operation::update_event_sources_config::_update_event_sources_config_output::UpdateEventSourcesConfigOutput;
-
 pub use crate::operation::update_event_sources_config::_update_event_sources_config_input::UpdateEventSourcesConfigInput;
+
+pub use crate::operation::update_event_sources_config::_update_event_sources_config_output::UpdateEventSourcesConfigOutput;
 
 mod _update_event_sources_config_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cidr_blocks::
     }
 }
 
-pub use crate::operation::list_cidr_blocks::_list_cidr_blocks_output::ListCidrBlocksOutput;
-
 pub use crate::operation::list_cidr_blocks::_list_cidr_blocks_input::ListCidrBlocksInput;
+
+pub use crate::operation::list_cidr_blocks::_list_cidr_blocks_output::ListCidrBlocksOutput;
 
 mod _list_cidr_blocks_input;
 

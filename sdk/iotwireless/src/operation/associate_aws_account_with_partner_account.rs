@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_aws_acco
     }
 }
 
-pub use crate::operation::associate_aws_account_with_partner_account::_associate_aws_account_with_partner_account_output::AssociateAwsAccountWithPartnerAccountOutput;
-
 pub use crate::operation::associate_aws_account_with_partner_account::_associate_aws_account_with_partner_account_input::AssociateAwsAccountWithPartnerAccountInput;
+
+pub use crate::operation::associate_aws_account_with_partner_account::_associate_aws_account_with_partner_account_output::AssociateAwsAccountWithPartnerAccountOutput;
 
 mod _associate_aws_account_with_partner_account_input;
 

@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::bundle_instance::B
     }
 }
 
-pub use crate::operation::bundle_instance::_bundle_instance_output::BundleInstanceOutput;
-
 pub use crate::operation::bundle_instance::_bundle_instance_input::BundleInstanceInput;
+
+pub use crate::operation::bundle_instance::_bundle_instance_output::BundleInstanceOutput;
 
 mod _bundle_instance_input;
 

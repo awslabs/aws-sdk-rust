@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_adm_channel
     }
 }
 
-pub use crate::operation::update_adm_channel::_update_adm_channel_output::UpdateAdmChannelOutput;
-
 pub use crate::operation::update_adm_channel::_update_adm_channel_input::UpdateAdmChannelInput;
+
+pub use crate::operation::update_adm_channel::_update_adm_channel_output::UpdateAdmChannelOutput;
 
 mod _update_adm_channel_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_custom_routing_accelerator_attributes::_update_custom_routing_accelerator_attributes_output::UpdateCustomRoutingAcceleratorAttributesOutput;
-
 pub use crate::operation::update_custom_routing_accelerator_attributes::_update_custom_routing_accelerator_attributes_input::UpdateCustomRoutingAcceleratorAttributesInput;
+
+pub use crate::operation::update_custom_routing_accelerator_attributes::_update_custom_routing_accelerator_attributes_output::UpdateCustomRoutingAcceleratorAttributesOutput;
 
 mod _update_custom_routing_accelerator_attributes_input;
 

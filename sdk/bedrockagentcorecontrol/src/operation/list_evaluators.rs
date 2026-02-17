@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_evaluators::L
     }
 }
 
-pub use crate::operation::list_evaluators::_list_evaluators_output::ListEvaluatorsOutput;
-
 pub use crate::operation::list_evaluators::_list_evaluators_input::ListEvaluatorsInput;
+
+pub use crate::operation::list_evaluators::_list_evaluators_output::ListEvaluatorsOutput;
 
 mod _list_evaluators_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workspace::
     }
 }
 
-pub use crate::operation::delete_workspace::_delete_workspace_output::DeleteWorkspaceOutput;
-
 pub use crate::operation::delete_workspace::_delete_workspace_input::DeleteWorkspaceInput;
+
+pub use crate::operation::delete_workspace::_delete_workspace_output::DeleteWorkspaceOutput;
 
 mod _delete_workspace_input;
 

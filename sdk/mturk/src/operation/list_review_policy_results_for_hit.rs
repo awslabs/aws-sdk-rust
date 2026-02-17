@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_review_policy
     }
 }
 
-pub use crate::operation::list_review_policy_results_for_hit::_list_review_policy_results_for_hit_output::ListReviewPolicyResultsForHitOutput;
-
 pub use crate::operation::list_review_policy_results_for_hit::_list_review_policy_results_for_hit_input::ListReviewPolicyResultsForHitInput;
+
+pub use crate::operation::list_review_policy_results_for_hit::_list_review_policy_results_for_hit_output::ListReviewPolicyResultsForHitOutput;
 
 mod _list_review_policy_results_for_hit_input;
 

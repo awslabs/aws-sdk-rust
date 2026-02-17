@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_locked_sn
     }
 }
 
-pub use crate::operation::describe_locked_snapshots::_describe_locked_snapshots_output::DescribeLockedSnapshotsOutput;
-
 pub use crate::operation::describe_locked_snapshots::_describe_locked_snapshots_input::DescribeLockedSnapshotsInput;
+
+pub use crate::operation::describe_locked_snapshots::_describe_locked_snapshots_output::DescribeLockedSnapshotsOutput;
 
 mod _describe_locked_snapshots_input;
 

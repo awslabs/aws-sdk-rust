@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_virtual_rou
     }
 }
 
-pub use crate::operation::create_virtual_router::_create_virtual_router_output::CreateVirtualRouterOutput;
-
 pub use crate::operation::create_virtual_router::_create_virtual_router_input::CreateVirtualRouterInput;
+
+pub use crate::operation::create_virtual_router::_create_virtual_router_output::CreateVirtualRouterOutput;
 
 mod _create_virtual_router_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_configured_table_association_analysis_rule::_delete_configured_table_association_analysis_rule_output::DeleteConfiguredTableAssociationAnalysisRuleOutput;
-
 pub use crate::operation::delete_configured_table_association_analysis_rule::_delete_configured_table_association_analysis_rule_input::DeleteConfiguredTableAssociationAnalysisRuleInput;
+
+pub use crate::operation::delete_configured_table_association_analysis_rule::_delete_configured_table_association_analysis_rule_output::DeleteConfiguredTableAssociationAnalysisRuleOutput;
 
 mod _delete_configured_table_association_analysis_rule_input;
 

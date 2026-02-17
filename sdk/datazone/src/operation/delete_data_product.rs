@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_produc
     }
 }
 
-pub use crate::operation::delete_data_product::_delete_data_product_output::DeleteDataProductOutput;
-
 pub use crate::operation::delete_data_product::_delete_data_product_input::DeleteDataProductInput;
+
+pub use crate::operation::delete_data_product::_delete_data_product_output::DeleteDataProductOutput;
 
 mod _delete_data_product_input;
 

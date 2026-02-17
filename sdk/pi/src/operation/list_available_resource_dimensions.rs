@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_res
     }
 }
 
-pub use crate::operation::list_available_resource_dimensions::_list_available_resource_dimensions_output::ListAvailableResourceDimensionsOutput;
-
 pub use crate::operation::list_available_resource_dimensions::_list_available_resource_dimensions_input::ListAvailableResourceDimensionsInput;
+
+pub use crate::operation::list_available_resource_dimensions::_list_available_resource_dimensions_output::ListAvailableResourceDimensionsOutput;
 
 mod _list_available_resource_dimensions_input;
 

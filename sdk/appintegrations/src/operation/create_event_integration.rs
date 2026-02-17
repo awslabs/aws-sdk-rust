@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_integ
     }
 }
 
-pub use crate::operation::create_event_integration::_create_event_integration_output::CreateEventIntegrationOutput;
-
 pub use crate::operation::create_event_integration::_create_event_integration_input::CreateEventIntegrationInput;
+
+pub use crate::operation::create_event_integration::_create_event_integration_output::CreateEventIntegrationOutput;
 
 mod _create_event_integration_input;
 

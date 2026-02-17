@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_ldaps::Dis
     }
 }
 
-pub use crate::operation::disable_ldaps::_disable_ldaps_output::DisableLdapsOutput;
-
 pub use crate::operation::disable_ldaps::_disable_ldaps_input::DisableLdapsInput;
+
+pub use crate::operation::disable_ldaps::_disable_ldaps_output::DisableLdapsOutput;
 
 mod _disable_ldaps_input;
 

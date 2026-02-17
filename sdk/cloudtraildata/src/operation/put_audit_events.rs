@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_audit_events::
     }
 }
 
-pub use crate::operation::put_audit_events::_put_audit_events_output::PutAuditEventsOutput;
-
 pub use crate::operation::put_audit_events::_put_audit_events_input::PutAuditEventsInput;
+
+pub use crate::operation::put_audit_events::_put_audit_events_output::PutAuditEventsOutput;
 
 mod _put_audit_events_input;
 

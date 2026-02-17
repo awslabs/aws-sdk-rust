@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_com
     }
 }
 
-pub use crate::operation::list_inference_components::_list_inference_components_output::ListInferenceComponentsOutput;
-
 pub use crate::operation::list_inference_components::_list_inference_components_input::ListInferenceComponentsInput;
+
+pub use crate::operation::list_inference_components::_list_inference_components_output::ListInferenceComponentsOutput;
 
 mod _list_inference_components_input;
 

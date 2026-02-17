@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_bulk_deploym
     }
 }
 
-pub use crate::operation::start_bulk_deployment::_start_bulk_deployment_output::StartBulkDeploymentOutput;
-
 pub use crate::operation::start_bulk_deployment::_start_bulk_deployment_input::StartBulkDeploymentInput;
+
+pub use crate::operation::start_bulk_deployment::_start_bulk_deployment_output::StartBulkDeploymentOutput;
 
 mod _start_bulk_deployment_input;
 

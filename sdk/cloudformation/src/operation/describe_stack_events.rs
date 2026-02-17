@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stack_eve
     }
 }
 
-pub use crate::operation::describe_stack_events::_describe_stack_events_output::DescribeStackEventsOutput;
-
 pub use crate::operation::describe_stack_events::_describe_stack_events_input::DescribeStackEventsInput;
+
+pub use crate::operation::describe_stack_events::_describe_stack_events_output::DescribeStackEventsOutput;
 
 mod _describe_stack_events_input;
 

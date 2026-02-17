@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_receipt_rul
     }
 }
 
-pub use crate::operation::delete_receipt_rule::_delete_receipt_rule_output::DeleteReceiptRuleOutput;
-
 pub use crate::operation::delete_receipt_rule::_delete_receipt_rule_input::DeleteReceiptRuleInput;
+
+pub use crate::operation::delete_receipt_rule::_delete_receipt_rule_output::DeleteReceiptRuleOutput;
 
 mod _delete_receipt_rule_input;
 

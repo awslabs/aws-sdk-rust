@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_snapshot_sc
     }
 }
 
-pub use crate::operation::modify_snapshot_schedule::_modify_snapshot_schedule_output::ModifySnapshotScheduleOutput;
-
 pub use crate::operation::modify_snapshot_schedule::_modify_snapshot_schedule_input::ModifySnapshotScheduleInput;
+
+pub use crate::operation::modify_snapshot_schedule::_modify_snapshot_schedule_output::ModifySnapshotScheduleOutput;
 
 mod _modify_snapshot_schedule_input;
 

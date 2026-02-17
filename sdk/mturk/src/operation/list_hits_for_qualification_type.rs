@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hits_for_qual
     }
 }
 
-pub use crate::operation::list_hits_for_qualification_type::_list_hits_for_qualification_type_output::ListHiTsForQualificationTypeOutput;
-
 pub use crate::operation::list_hits_for_qualification_type::_list_hits_for_qualification_type_input::ListHiTsForQualificationTypeInput;
+
+pub use crate::operation::list_hits_for_qualification_type::_list_hits_for_qualification_type_output::ListHiTsForQualificationTypeOutput;
 
 mod _list_hits_for_qualification_type_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::issue_certificate:
     }
 }
 
-pub use crate::operation::issue_certificate::_issue_certificate_output::IssueCertificateOutput;
-
 pub use crate::operation::issue_certificate::_issue_certificate_input::IssueCertificateInput;
+
+pub use crate::operation::issue_certificate::_issue_certificate_output::IssueCertificateOutput;
 
 mod _issue_certificate_input;
 

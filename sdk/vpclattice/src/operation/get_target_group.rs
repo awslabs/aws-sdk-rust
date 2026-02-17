@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_target_group::
     }
 }
 
-pub use crate::operation::get_target_group::_get_target_group_output::GetTargetGroupOutput;
-
 pub use crate::operation::get_target_group::_get_target_group_input::GetTargetGroupInput;
+
+pub use crate::operation::get_target_group::_get_target_group_output::GetTargetGroupOutput;
 
 mod _get_target_group_input;
 

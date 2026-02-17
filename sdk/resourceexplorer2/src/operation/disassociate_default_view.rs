@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_defau
     }
 }
 
-pub use crate::operation::disassociate_default_view::_disassociate_default_view_output::DisassociateDefaultViewOutput;
-
 pub use crate::operation::disassociate_default_view::_disassociate_default_view_input::DisassociateDefaultViewInput;
+
+pub use crate::operation::disassociate_default_view::_disassociate_default_view_output::DisassociateDefaultViewOutput;
 
 mod _disassociate_default_view_input;
 

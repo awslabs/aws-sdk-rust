@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_administrator_
     }
 }
 
-pub use crate::operation::get_administrator_account::_get_administrator_account_output::GetAdministratorAccountOutput;
-
 pub use crate::operation::get_administrator_account::_get_administrator_account_input::GetAdministratorAccountInput;
+
+pub use crate::operation::get_administrator_account::_get_administrator_account_output::GetAdministratorAccountOutput;
 
 mod _get_administrator_account_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_default_permis
     }
 }
 
-pub use crate::operation::set_default_permission_version::_set_default_permission_version_output::SetDefaultPermissionVersionOutput;
-
 pub use crate::operation::set_default_permission_version::_set_default_permission_version_input::SetDefaultPermissionVersionInput;
+
+pub use crate::operation::set_default_permission_version::_set_default_permission_version_output::SetDefaultPermissionVersionOutput;
 
 mod _set_default_permission_version_input;
 

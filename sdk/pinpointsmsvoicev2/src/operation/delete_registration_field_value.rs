@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_registratio
     }
 }
 
-pub use crate::operation::delete_registration_field_value::_delete_registration_field_value_output::DeleteRegistrationFieldValueOutput;
-
 pub use crate::operation::delete_registration_field_value::_delete_registration_field_value_input::DeleteRegistrationFieldValueInput;
+
+pub use crate::operation::delete_registration_field_value::_delete_registration_field_value_output::DeleteRegistrationFieldValueOutput;
 
 mod _delete_registration_field_value_input;
 

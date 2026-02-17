@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_vpc_endpoint_service_configurations::_describe_vpc_endpoint_service_configurations_output::DescribeVpcEndpointServiceConfigurationsOutput;
-
 pub use crate::operation::describe_vpc_endpoint_service_configurations::_describe_vpc_endpoint_service_configurations_input::DescribeVpcEndpointServiceConfigurationsInput;
+
+pub use crate::operation::describe_vpc_endpoint_service_configurations::_describe_vpc_endpoint_service_configurations_output::DescribeVpcEndpointServiceConfigurationsOutput;
 
 mod _describe_vpc_endpoint_service_configurations_input;
 

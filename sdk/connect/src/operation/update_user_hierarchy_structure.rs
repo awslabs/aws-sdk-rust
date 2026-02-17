@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_hierar
     }
 }
 
-pub use crate::operation::update_user_hierarchy_structure::_update_user_hierarchy_structure_output::UpdateUserHierarchyStructureOutput;
-
 pub use crate::operation::update_user_hierarchy_structure::_update_user_hierarchy_structure_input::UpdateUserHierarchyStructureInput;
+
+pub use crate::operation::update_user_hierarchy_structure::_update_user_hierarchy_structure_output::UpdateUserHierarchyStructureOutput;
 
 mod _update_user_hierarchy_structure_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_column_stat
     }
 }
 
-pub use crate::operation::delete_column_statistics_for_table::_delete_column_statistics_for_table_output::DeleteColumnStatisticsForTableOutput;
-
 pub use crate::operation::delete_column_statistics_for_table::_delete_column_statistics_for_table_input::DeleteColumnStatisticsForTableInput;
+
+pub use crate::operation::delete_column_statistics_for_table::_delete_column_statistics_for_table_output::DeleteColumnStatisticsForTableOutput;
 
 mod _delete_column_statistics_for_table_input;
 

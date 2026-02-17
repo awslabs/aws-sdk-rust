@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resources_in_
     }
 }
 
-pub use crate::operation::list_resources_in_protection_group::_list_resources_in_protection_group_output::ListResourcesInProtectionGroupOutput;
-
 pub use crate::operation::list_resources_in_protection_group::_list_resources_in_protection_group_input::ListResourcesInProtectionGroupInput;
+
+pub use crate::operation::list_resources_in_protection_group::_list_resources_in_protection_group_output::ListResourcesInProtectionGroupOutput;
 
 mod _list_resources_in_protection_group_input;
 

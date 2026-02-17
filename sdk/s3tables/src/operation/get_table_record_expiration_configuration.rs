@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_record_e
     }
 }
 
-pub use crate::operation::get_table_record_expiration_configuration::_get_table_record_expiration_configuration_output::GetTableRecordExpirationConfigurationOutput;
-
 pub use crate::operation::get_table_record_expiration_configuration::_get_table_record_expiration_configuration_input::GetTableRecordExpirationConfigurationInput;
+
+pub use crate::operation::get_table_record_expiration_configuration::_get_table_record_expiration_configuration_output::GetTableRecordExpirationConfigurationOutput;
 
 mod _get_table_record_expiration_configuration_input;
 

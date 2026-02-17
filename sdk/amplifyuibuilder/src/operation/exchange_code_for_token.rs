@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::exchange_code_for_
     }
 }
 
-pub use crate::operation::exchange_code_for_token::_exchange_code_for_token_output::ExchangeCodeForTokenOutput;
-
 pub use crate::operation::exchange_code_for_token::_exchange_code_for_token_input::ExchangeCodeForTokenInput;
+
+pub use crate::operation::exchange_code_for_token::_exchange_code_for_token_output::ExchangeCodeForTokenOutput;
 
 mod _exchange_code_for_token_input;
 

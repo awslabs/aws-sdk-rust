@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ruleset::
     }
 }
 
-pub use crate::operation::describe_ruleset::_describe_ruleset_output::DescribeRulesetOutput;
-
 pub use crate::operation::describe_ruleset::_describe_ruleset_input::DescribeRulesetInput;
+
+pub use crate::operation::describe_ruleset::_describe_ruleset_output::DescribeRulesetOutput;
 
 mod _describe_ruleset_input;
 

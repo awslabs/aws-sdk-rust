@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_entity_reco
     }
 }
 
-pub use crate::operation::create_entity_recognizer::_create_entity_recognizer_output::CreateEntityRecognizerOutput;
-
 pub use crate::operation::create_entity_recognizer::_create_entity_recognizer_input::CreateEntityRecognizerInput;
+
+pub use crate::operation::create_entity_recognizer::_create_entity_recognizer_output::CreateEntityRecognizerOutput;
 
 mod _create_entity_recognizer_input;
 

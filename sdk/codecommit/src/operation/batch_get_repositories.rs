@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_reposito
     }
 }
 
-pub use crate::operation::batch_get_repositories::_batch_get_repositories_output::BatchGetRepositoriesOutput;
-
 pub use crate::operation::batch_get_repositories::_batch_get_repositories_input::BatchGetRepositoriesInput;
+
+pub use crate::operation::batch_get_repositories::_batch_get_repositories_output::BatchGetRepositoriesOutput;
 
 mod _batch_get_repositories_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_adapter_versi
     }
 }
 
-pub use crate::operation::list_adapter_versions::_list_adapter_versions_output::ListAdapterVersionsOutput;
-
 pub use crate::operation::list_adapter_versions::_list_adapter_versions_input::ListAdapterVersionsInput;
+
+pub use crate::operation::list_adapter_versions::_list_adapter_versions_output::ListAdapterVersionsOutput;
 
 mod _list_adapter_versions_input;
 

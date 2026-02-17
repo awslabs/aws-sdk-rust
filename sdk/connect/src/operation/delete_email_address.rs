@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_email_addre
     }
 }
 
-pub use crate::operation::delete_email_address::_delete_email_address_output::DeleteEmailAddressOutput;
-
 pub use crate::operation::delete_email_address::_delete_email_address_input::DeleteEmailAddressInput;
+
+pub use crate::operation::delete_email_address::_delete_email_address_output::DeleteEmailAddressOutput;
 
 mod _delete_email_address_input;
 

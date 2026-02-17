@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::respond_activity_t
     }
 }
 
-pub use crate::operation::respond_activity_task_failed::_respond_activity_task_failed_output::RespondActivityTaskFailedOutput;
-
 pub use crate::operation::respond_activity_task_failed::_respond_activity_task_failed_input::RespondActivityTaskFailedInput;
+
+pub use crate::operation::respond_activity_task_failed::_respond_activity_task_failed_output::RespondActivityTaskFailedOutput;
 
 mod _respond_activity_task_failed_input;
 

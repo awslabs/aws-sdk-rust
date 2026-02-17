@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_failback_repli
     }
 }
 
-pub use crate::operation::get_failback_replication_configuration::_get_failback_replication_configuration_output::GetFailbackReplicationConfigurationOutput;
-
 pub use crate::operation::get_failback_replication_configuration::_get_failback_replication_configuration_input::GetFailbackReplicationConfigurationInput;
+
+pub use crate::operation::get_failback_replication_configuration::_get_failback_replication_configuration_output::GetFailbackReplicationConfigurationOutput;
 
 mod _get_failback_replication_configuration_input;
 

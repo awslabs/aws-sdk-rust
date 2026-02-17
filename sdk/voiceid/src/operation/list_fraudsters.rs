@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fraudsters::L
     }
 }
 
-pub use crate::operation::list_fraudsters::_list_fraudsters_output::ListFraudstersOutput;
-
 pub use crate::operation::list_fraudsters::_list_fraudsters_input::ListFraudstersInput;
+
+pub use crate::operation::list_fraudsters::_list_fraudsters_output::ListFraudstersOutput;
 
 mod _list_fraudsters_input;
 

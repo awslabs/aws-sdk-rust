@@ -474,9 +474,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_roots::ListRo
     }
 }
 
-pub use crate::operation::list_roots::_list_roots_output::ListRootsOutput;
-
 pub use crate::operation::list_roots::_list_roots_input::ListRootsInput;
+
+pub use crate::operation::list_roots::_list_roots_output::ListRootsOutput;
 
 mod _list_roots_input;
 

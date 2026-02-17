@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_theme::De
     }
 }
 
-pub use crate::operation::describe_theme::_describe_theme_output::DescribeThemeOutput;
-
 pub use crate::operation::describe_theme::_describe_theme_input::DescribeThemeInput;
+
+pub use crate::operation::describe_theme::_describe_theme_output::DescribeThemeOutput;
 
 mod _describe_theme_input;
 

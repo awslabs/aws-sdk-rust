@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_port_
     }
 }
 
-pub use crate::operation::get_instance_port_states::_get_instance_port_states_output::GetInstancePortStatesOutput;
-
 pub use crate::operation::get_instance_port_states::_get_instance_port_states_input::GetInstancePortStatesInput;
+
+pub use crate::operation::get_instance_port_states::_get_instance_port_states_output::GetInstancePortStatesOutput;
 
 mod _get_instance_port_states_input;
 

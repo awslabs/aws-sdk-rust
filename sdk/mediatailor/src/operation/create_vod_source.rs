@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vod_source:
     }
 }
 
-pub use crate::operation::create_vod_source::_create_vod_source_output::CreateVodSourceOutput;
-
 pub use crate::operation::create_vod_source::_create_vod_source_input::CreateVodSourceInput;
+
+pub use crate::operation::create_vod_source::_create_vod_source_output::CreateVodSourceOutput;
 
 mod _create_vod_source_input;
 

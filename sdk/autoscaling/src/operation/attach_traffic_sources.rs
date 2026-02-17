@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_traffic_sou
     }
 }
 
-pub use crate::operation::attach_traffic_sources::_attach_traffic_sources_output::AttachTrafficSourcesOutput;
-
 pub use crate::operation::attach_traffic_sources::_attach_traffic_sources_input::AttachTrafficSourcesInput;
+
+pub use crate::operation::attach_traffic_sources::_attach_traffic_sources_output::AttachTrafficSourcesOutput;
 
 mod _attach_traffic_sources_input;
 

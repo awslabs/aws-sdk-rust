@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_version_r
     }
 }
 
-pub use crate::operation::list_app_version_resource_mappings::_list_app_version_resource_mappings_output::ListAppVersionResourceMappingsOutput;
-
 pub use crate::operation::list_app_version_resource_mappings::_list_app_version_resource_mappings_input::ListAppVersionResourceMappingsInput;
+
+pub use crate::operation::list_app_version_resource_mappings::_list_app_version_resource_mappings_output::ListAppVersionResourceMappingsOutput;
 
 mod _list_app_version_resource_mappings_input;
 

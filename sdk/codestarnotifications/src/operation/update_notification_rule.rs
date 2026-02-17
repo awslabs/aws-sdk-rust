@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_notificatio
     }
 }
 
-pub use crate::operation::update_notification_rule::_update_notification_rule_output::UpdateNotificationRuleOutput;
-
 pub use crate::operation::update_notification_rule::_update_notification_rule_input::UpdateNotificationRuleInput;
+
+pub use crate::operation::update_notification_rule::_update_notification_rule_output::UpdateNotificationRuleOutput;
 
 mod _update_notification_rule_input;
 

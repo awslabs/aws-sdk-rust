@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_statuse
     }
 }
 
-pub use crate::operation::list_agent_statuses::_list_agent_statuses_output::ListAgentStatusesOutput;
-
 pub use crate::operation::list_agent_statuses::_list_agent_statuses_input::ListAgentStatusesInput;
+
+pub use crate::operation::list_agent_statuses::_list_agent_statuses_output::ListAgentStatusesOutput;
 
 mod _list_agent_statuses_input;
 

@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_asset_filte
     }
 }
 
-pub use crate::operation::delete_asset_filter::_delete_asset_filter_output::DeleteAssetFilterOutput;
-
 pub use crate::operation::delete_asset_filter::_delete_asset_filter_input::DeleteAssetFilterInput;
+
+pub use crate::operation::delete_asset_filter::_delete_asset_filter_output::DeleteAssetFilterOutput;
 
 mod _delete_asset_filter_input;
 

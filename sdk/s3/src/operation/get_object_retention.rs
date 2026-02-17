@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_retenti
     }
 }
 
-pub use crate::operation::get_object_retention::_get_object_retention_output::GetObjectRetentionOutput;
-
 pub use crate::operation::get_object_retention::_get_object_retention_input::GetObjectRetentionInput;
+
+pub use crate::operation::get_object_retention::_get_object_retention_output::GetObjectRetentionOutput;
 
 mod _get_object_retention_input;
 

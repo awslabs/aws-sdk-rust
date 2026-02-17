@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_user_attrib
     }
 }
 
-pub use crate::operation::verify_user_attribute::_verify_user_attribute_output::VerifyUserAttributeOutput;
-
 pub use crate::operation::verify_user_attribute::_verify_user_attribute_input::VerifyUserAttributeInput;
+
+pub use crate::operation::verify_user_attribute::_verify_user_attribute_output::VerifyUserAttributeOutput;
 
 mod _verify_user_attribute_input;
 

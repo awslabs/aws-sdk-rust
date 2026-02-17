@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bot_locale:
     }
 }
 
-pub use crate::operation::update_bot_locale::_update_bot_locale_output::UpdateBotLocaleOutput;
-
 pub use crate::operation::update_bot_locale::_update_bot_locale_input::UpdateBotLocaleInput;
+
+pub use crate::operation::update_bot_locale::_update_bot_locale_output::UpdateBotLocaleOutput;
 
 mod _update_bot_locale_input;
 

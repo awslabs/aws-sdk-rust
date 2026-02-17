@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_plugin::GetPlu
     }
 }
 
-pub use crate::operation::get_plugin::_get_plugin_output::GetPluginOutput;
-
 pub use crate::operation::get_plugin::_get_plugin_input::GetPluginInput;
+
+pub use crate::operation::get_plugin::_get_plugin_output::GetPluginOutput;
 
 mod _get_plugin_input;
 

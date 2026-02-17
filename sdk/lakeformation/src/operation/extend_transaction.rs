@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::extend_transaction
     }
 }
 
-pub use crate::operation::extend_transaction::_extend_transaction_output::ExtendTransactionOutput;
-
 pub use crate::operation::extend_transaction::_extend_transaction_input::ExtendTransactionInput;
+
+pub use crate::operation::extend_transaction::_extend_transaction_output::ExtendTransactionOutput;
 
 mod _extend_transaction_input;
 

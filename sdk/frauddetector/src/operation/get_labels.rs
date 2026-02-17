@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_labels::GetLab
     }
 }
 
-pub use crate::operation::get_labels::_get_labels_output::GetLabelsOutput;
-
 pub use crate::operation::get_labels::_get_labels_input::GetLabelsInput;
+
+pub use crate::operation::get_labels::_get_labels_output::GetLabelsOutput;
 
 mod _get_labels_input;
 

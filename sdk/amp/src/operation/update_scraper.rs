@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scraper::Up
     }
 }
 
-pub use crate::operation::update_scraper::_update_scraper_output::UpdateScraperOutput;
-
 pub use crate::operation::update_scraper::_update_scraper_input::UpdateScraperInput;
+
+pub use crate::operation::update_scraper::_update_scraper_output::UpdateScraperOutput;
 
 mod _update_scraper_input;
 

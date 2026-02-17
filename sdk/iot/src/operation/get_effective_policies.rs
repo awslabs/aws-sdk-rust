@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_effective_poli
     }
 }
 
-pub use crate::operation::get_effective_policies::_get_effective_policies_output::GetEffectivePoliciesOutput;
-
 pub use crate::operation::get_effective_policies::_get_effective_policies_input::GetEffectivePoliciesInput;
+
+pub use crate::operation::get_effective_policies::_get_effective_policies_output::GetEffectivePoliciesOutput;
 
 mod _get_effective_policies_input;
 

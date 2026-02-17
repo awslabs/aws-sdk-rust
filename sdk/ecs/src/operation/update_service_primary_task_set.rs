@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_pri
     }
 }
 
-pub use crate::operation::update_service_primary_task_set::_update_service_primary_task_set_output::UpdateServicePrimaryTaskSetOutput;
-
 pub use crate::operation::update_service_primary_task_set::_update_service_primary_task_set_input::UpdateServicePrimaryTaskSetInput;
+
+pub use crate::operation::update_service_primary_task_set::_update_service_primary_task_set_output::UpdateServicePrimaryTaskSetOutput;
 
 mod _update_service_primary_task_set_input;
 

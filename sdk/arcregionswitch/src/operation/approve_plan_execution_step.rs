@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::approve_plan_execu
     }
 }
 
-pub use crate::operation::approve_plan_execution_step::_approve_plan_execution_step_output::ApprovePlanExecutionStepOutput;
-
 pub use crate::operation::approve_plan_execution_step::_approve_plan_execution_step_input::ApprovePlanExecutionStepInput;
+
+pub use crate::operation::approve_plan_execution_step::_approve_plan_execution_step_output::ApprovePlanExecutionStepOutput;
 
 mod _approve_plan_execution_step_input;
 

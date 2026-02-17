@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_tags_from_r
     }
 }
 
-pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_output::RemoveTagsFromResourceOutput;
-
 pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_input::RemoveTagsFromResourceInput;
+
+pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_output::RemoveTagsFromResourceOutput;
 
 mod _remove_tags_from_resource_input;
 

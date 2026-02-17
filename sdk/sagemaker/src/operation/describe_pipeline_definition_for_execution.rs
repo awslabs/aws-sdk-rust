@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_pipeline_definition_for_execution::_describe_pipeline_definition_for_execution_output::DescribePipelineDefinitionForExecutionOutput;
-
 pub use crate::operation::describe_pipeline_definition_for_execution::_describe_pipeline_definition_for_execution_input::DescribePipelineDefinitionForExecutionInput;
+
+pub use crate::operation::describe_pipeline_definition_for_execution::_describe_pipeline_definition_for_execution_output::DescribePipelineDefinitionForExecutionOutput;
 
 mod _describe_pipeline_definition_for_execution_input;
 

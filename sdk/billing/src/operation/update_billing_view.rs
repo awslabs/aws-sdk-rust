@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_billing_vie
     }
 }
 
-pub use crate::operation::update_billing_view::_update_billing_view_output::UpdateBillingViewOutput;
-
 pub use crate::operation::update_billing_view::_update_billing_view_input::UpdateBillingViewInput;
+
+pub use crate::operation::update_billing_view::_update_billing_view_output::UpdateBillingViewOutput;
 
 mod _update_billing_view_input;
 

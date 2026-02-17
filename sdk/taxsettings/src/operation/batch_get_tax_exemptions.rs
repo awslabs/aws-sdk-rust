@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_tax_exem
     }
 }
 
-pub use crate::operation::batch_get_tax_exemptions::_batch_get_tax_exemptions_output::BatchGetTaxExemptionsOutput;
-
 pub use crate::operation::batch_get_tax_exemptions::_batch_get_tax_exemptions_input::BatchGetTaxExemptionsInput;
+
+pub use crate::operation::batch_get_tax_exemptions::_batch_get_tax_exemptions_output::BatchGetTaxExemptionsOutput;
 
 mod _batch_get_tax_exemptions_input;
 

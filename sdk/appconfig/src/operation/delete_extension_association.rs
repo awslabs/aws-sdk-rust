@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_extension_a
     }
 }
 
-pub use crate::operation::delete_extension_association::_delete_extension_association_output::DeleteExtensionAssociationOutput;
-
 pub use crate::operation::delete_extension_association::_delete_extension_association_input::DeleteExtensionAssociationInput;
+
+pub use crate::operation::delete_extension_association::_delete_extension_association_output::DeleteExtensionAssociationOutput;
 
 mod _delete_extension_association_input;
 

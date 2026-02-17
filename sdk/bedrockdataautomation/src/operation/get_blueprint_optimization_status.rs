@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_blueprint_opti
     }
 }
 
-pub use crate::operation::get_blueprint_optimization_status::_get_blueprint_optimization_status_output::GetBlueprintOptimizationStatusOutput;
-
 pub use crate::operation::get_blueprint_optimization_status::_get_blueprint_optimization_status_input::GetBlueprintOptimizationStatusInput;
+
+pub use crate::operation::get_blueprint_optimization_status::_get_blueprint_optimization_status_output::GetBlueprintOptimizationStatusOutput;
 
 mod _get_blueprint_optimization_status_input;
 

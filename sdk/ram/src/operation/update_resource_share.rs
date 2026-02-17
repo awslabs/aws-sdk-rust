@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_sh
     }
 }
 
-pub use crate::operation::update_resource_share::_update_resource_share_output::UpdateResourceShareOutput;
-
 pub use crate::operation::update_resource_share::_update_resource_share_input::UpdateResourceShareInput;
+
+pub use crate::operation::update_resource_share::_update_resource_share_output::UpdateResourceShareOutput;
 
 mod _update_resource_share_input;
 

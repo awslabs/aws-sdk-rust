@@ -469,9 +469,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_xss_match_s
     }
 }
 
-pub use crate::operation::update_xss_match_set::_update_xss_match_set_output::UpdateXssMatchSetOutput;
-
 pub use crate::operation::update_xss_match_set::_update_xss_match_set_input::UpdateXssMatchSetInput;
+
+pub use crate::operation::update_xss_match_set::_update_xss_match_set_output::UpdateXssMatchSetOutput;
 
 mod _update_xss_match_set_input;
 

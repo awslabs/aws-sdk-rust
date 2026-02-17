@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_channel_mes
     }
 }
 
-pub use crate::operation::delete_channel_message::_delete_channel_message_output::DeleteChannelMessageOutput;
-
 pub use crate::operation::delete_channel_message::_delete_channel_message_input::DeleteChannelMessageInput;
+
+pub use crate::operation::delete_channel_message::_delete_channel_message_output::DeleteChannelMessageOutput;
 
 mod _delete_channel_message_input;
 

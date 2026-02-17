@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_code_securi
     }
 }
 
-pub use crate::operation::create_code_security_integration::_create_code_security_integration_output::CreateCodeSecurityIntegrationOutput;
-
 pub use crate::operation::create_code_security_integration::_create_code_security_integration_input::CreateCodeSecurityIntegrationInput;
+
+pub use crate::operation::create_code_security_integration::_create_code_security_integration_output::CreateCodeSecurityIntegrationOutput;
 
 mod _create_code_security_integration_input;
 

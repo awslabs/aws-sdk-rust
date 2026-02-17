@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_prefetch_sche
     }
 }
 
-pub use crate::operation::list_prefetch_schedules::_list_prefetch_schedules_output::ListPrefetchSchedulesOutput;
-
 pub use crate::operation::list_prefetch_schedules::_list_prefetch_schedules_input::ListPrefetchSchedulesInput;
+
+pub use crate::operation::list_prefetch_schedules::_list_prefetch_schedules_output::ListPrefetchSchedulesOutput;
 
 mod _list_prefetch_schedules_input;
 

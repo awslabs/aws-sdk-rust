@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_graph::Dele
     }
 }
 
-pub use crate::operation::delete_graph::_delete_graph_output::DeleteGraphOutput;
-
 pub use crate::operation::delete_graph::_delete_graph_input::DeleteGraphInput;
+
+pub use crate::operation::delete_graph::_delete_graph_output::DeleteGraphOutput;
 
 mod _delete_graph_input;
 

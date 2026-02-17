@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_registry_po
     }
 }
 
-pub use crate::operation::delete_registry_policy::_delete_registry_policy_output::DeleteRegistryPolicyOutput;
-
 pub use crate::operation::delete_registry_policy::_delete_registry_policy_input::DeleteRegistryPolicyInput;
+
+pub use crate::operation::delete_registry_policy::_delete_registry_policy_output::DeleteRegistryPolicyOutput;
 
 mod _delete_registry_policy_input;
 

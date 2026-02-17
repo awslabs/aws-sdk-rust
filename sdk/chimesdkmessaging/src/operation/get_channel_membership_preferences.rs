@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel_member
     }
 }
 
-pub use crate::operation::get_channel_membership_preferences::_get_channel_membership_preferences_output::GetChannelMembershipPreferencesOutput;
-
 pub use crate::operation::get_channel_membership_preferences::_get_channel_membership_preferences_input::GetChannelMembershipPreferencesInput;
+
+pub use crate::operation::get_channel_membership_preferences::_get_channel_membership_preferences_output::GetChannelMembershipPreferencesOutput;
 
 mod _get_channel_membership_preferences_input;
 

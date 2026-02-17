@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_device_posi
     }
 }
 
-pub use crate::operation::verify_device_position::_verify_device_position_output::VerifyDevicePositionOutput;
-
 pub use crate::operation::verify_device_position::_verify_device_position_input::VerifyDevicePositionInput;
+
+pub use crate::operation::verify_device_position::_verify_device_position_output::VerifyDevicePositionOutput;
 
 mod _verify_device_position_input;
 

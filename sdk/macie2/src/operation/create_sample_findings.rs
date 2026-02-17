@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sample_find
     }
 }
 
-pub use crate::operation::create_sample_findings::_create_sample_findings_output::CreateSampleFindingsOutput;
-
 pub use crate::operation::create_sample_findings::_create_sample_findings_input::CreateSampleFindingsInput;
+
+pub use crate::operation::create_sample_findings::_create_sample_findings_output::CreateSampleFindingsOutput;
 
 mod _create_sample_findings_input;
 

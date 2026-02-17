@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_script::Cre
     }
 }
 
-pub use crate::operation::create_script::_create_script_output::CreateScriptOutput;
-
 pub use crate::operation::create_script::_create_script_input::CreateScriptInput;
+
+pub use crate::operation::create_script::_create_script_output::CreateScriptOutput;
 
 mod _create_script_input;
 

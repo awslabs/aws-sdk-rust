@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_extensions::L
     }
 }
 
-pub use crate::operation::list_extensions::_list_extensions_output::ListExtensionsOutput;
-
 pub use crate::operation::list_extensions::_list_extensions_input::ListExtensionsInput;
+
+pub use crate::operation::list_extensions::_list_extensions_output::ListExtensionsOutput;
 
 mod _list_extensions_input;
 

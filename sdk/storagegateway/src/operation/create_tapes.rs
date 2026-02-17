@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tapes::Crea
     }
 }
 
-pub use crate::operation::create_tapes::_create_tapes_output::CreateTapesOutput;
-
 pub use crate::operation::create_tapes::_create_tapes_input::CreateTapesInput;
+
+pub use crate::operation::create_tapes::_create_tapes_output::CreateTapesOutput;
 
 mod _create_tapes_input;
 

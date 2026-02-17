@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewall_rule
     }
 }
 
-pub use crate::operation::list_firewall_rules::_list_firewall_rules_output::ListFirewallRulesOutput;
-
 pub use crate::operation::list_firewall_rules::_list_firewall_rules_input::ListFirewallRulesInput;
+
+pub use crate::operation::list_firewall_rules::_list_firewall_rules_output::ListFirewallRulesOutput;
 
 mod _list_firewall_rules_input;
 

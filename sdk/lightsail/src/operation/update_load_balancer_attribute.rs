@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_load_balanc
     }
 }
 
-pub use crate::operation::update_load_balancer_attribute::_update_load_balancer_attribute_output::UpdateLoadBalancerAttributeOutput;
-
 pub use crate::operation::update_load_balancer_attribute::_update_load_balancer_attribute_input::UpdateLoadBalancerAttributeInput;
+
+pub use crate::operation::update_load_balancer_attribute::_update_load_balancer_attribute_output::UpdateLoadBalancerAttributeOutput;
 
 mod _update_load_balancer_attribute_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_monitor
     }
 }
 
-pub use crate::operation::delete_app_monitor::_delete_app_monitor_output::DeleteAppMonitorOutput;
-
 pub use crate::operation::delete_app_monitor::_delete_app_monitor_input::DeleteAppMonitorInput;
+
+pub use crate::operation::delete_app_monitor::_delete_app_monitor_output::DeleteAppMonitorOutput;
 
 mod _delete_app_monitor_input;
 

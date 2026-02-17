@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_solution_vers
     }
 }
 
-pub use crate::operation::list_solution_versions::_list_solution_versions_output::ListSolutionVersionsOutput;
-
 pub use crate::operation::list_solution_versions::_list_solution_versions_input::ListSolutionVersionsInput;
+
+pub use crate::operation::list_solution_versions::_list_solution_versions_output::ListSolutionVersionsOutput;
 
 mod _list_solution_versions_input;
 

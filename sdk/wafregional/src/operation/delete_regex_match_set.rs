@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_regex_match
     }
 }
 
-pub use crate::operation::delete_regex_match_set::_delete_regex_match_set_output::DeleteRegexMatchSetOutput;
-
 pub use crate::operation::delete_regex_match_set::_delete_regex_match_set_input::DeleteRegexMatchSetInput;
+
+pub use crate::operation::delete_regex_match_set::_delete_regex_match_set_output::DeleteRegexMatchSetOutput;
 
 mod _delete_regex_match_set_input;
 

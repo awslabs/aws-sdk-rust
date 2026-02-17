@@ -563,9 +563,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_repository_tri
     }
 }
 
-pub use crate::operation::put_repository_triggers::_put_repository_triggers_output::PutRepositoryTriggersOutput;
-
 pub use crate::operation::put_repository_triggers::_put_repository_triggers_input::PutRepositoryTriggersInput;
+
+pub use crate::operation::put_repository_triggers::_put_repository_triggers_output::PutRepositoryTriggersOutput;
 
 mod _put_repository_triggers_input;
 

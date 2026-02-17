@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_remote_move:
     }
 }
 
-pub use crate::operation::start_remote_move::_start_remote_move_output::StartRemoteMoveOutput;
-
 pub use crate::operation::start_remote_move::_start_remote_move_input::StartRemoteMoveInput;
+
+pub use crate::operation::start_remote_move::_start_remote_move_output::StartRemoteMoveOutput;
 
 mod _start_remote_move_input;
 

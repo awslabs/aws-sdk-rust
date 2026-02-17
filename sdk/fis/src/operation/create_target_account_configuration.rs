@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_target_acco
     }
 }
 
-pub use crate::operation::create_target_account_configuration::_create_target_account_configuration_output::CreateTargetAccountConfigurationOutput;
-
 pub use crate::operation::create_target_account_configuration::_create_target_account_configuration_input::CreateTargetAccountConfigurationInput;
+
+pub use crate::operation::create_target_account_configuration::_create_target_account_configuration_output::CreateTargetAccountConfigurationOutput;
 
 mod _create_target_account_configuration_input;
 

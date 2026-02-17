@@ -474,9 +474,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_automation_e
     }
 }
 
-pub use crate::operation::start_automation_event::_start_automation_event_output::StartAutomationEventOutput;
-
 pub use crate::operation::start_automation_event::_start_automation_event_input::StartAutomationEventInput;
+
+pub use crate::operation::start_automation_event::_start_automation_event_output::StartAutomationEventOutput;
 
 mod _start_automation_event_input;
 

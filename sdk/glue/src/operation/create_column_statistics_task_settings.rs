@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_column_stat
     }
 }
 
-pub use crate::operation::create_column_statistics_task_settings::_create_column_statistics_task_settings_output::CreateColumnStatisticsTaskSettingsOutput;
-
 pub use crate::operation::create_column_statistics_task_settings::_create_column_statistics_task_settings_input::CreateColumnStatisticsTaskSettingsInput;
+
+pub use crate::operation::create_column_statistics_task_settings::_create_column_statistics_task_settings_output::CreateColumnStatisticsTaskSettingsOutput;
 
 mod _create_column_statistics_task_settings_input;
 

@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_audit_task:
     }
 }
 
-pub use crate::operation::cancel_audit_task::_cancel_audit_task_output::CancelAuditTaskOutput;
-
 pub use crate::operation::cancel_audit_task::_cancel_audit_task_input::CancelAuditTaskInput;
+
+pub use crate::operation::cancel_audit_task::_cancel_audit_task_output::CancelAuditTaskOutput;
 
 mod _cancel_audit_task_input;
 

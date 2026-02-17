@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_model::GetM
     }
 }
 
-pub use crate::operation::get_ml_model::_get_ml_model_output::GetMlModelOutput;
-
 pub use crate::operation::get_ml_model::_get_ml_model_input::GetMlModelInput;
+
+pub use crate::operation::get_ml_model::_get_ml_model_output::GetMlModelOutput;
 
 mod _get_ml_model_input;
 

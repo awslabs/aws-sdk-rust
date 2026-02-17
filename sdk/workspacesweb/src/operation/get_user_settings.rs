@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_settings:
     }
 }
 
-pub use crate::operation::get_user_settings::_get_user_settings_output::GetUserSettingsOutput;
-
 pub use crate::operation::get_user_settings::_get_user_settings_input::GetUserSettingsInput;
+
+pub use crate::operation::get_user_settings::_get_user_settings_output::GetUserSettingsOutput;
 
 mod _get_user_settings_input;
 

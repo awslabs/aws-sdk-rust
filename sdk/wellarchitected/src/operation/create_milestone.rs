@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_milestone::
     }
 }
 
-pub use crate::operation::create_milestone::_create_milestone_output::CreateMilestoneOutput;
-
 pub use crate::operation::create_milestone::_create_milestone_input::CreateMilestoneInput;
+
+pub use crate::operation::create_milestone::_create_milestone_output::CreateMilestoneOutput;
 
 mod _create_milestone_input;
 

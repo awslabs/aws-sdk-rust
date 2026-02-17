@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_label_gro
     }
 }
 
-pub use crate::operation::describe_label_group::_describe_label_group_output::DescribeLabelGroupOutput;
-
 pub use crate::operation::describe_label_group::_describe_label_group_input::DescribeLabelGroupInput;
+
+pub use crate::operation::describe_label_group::_describe_label_group_output::DescribeLabelGroupOutput;
 
 mod _describe_label_group_input;
 

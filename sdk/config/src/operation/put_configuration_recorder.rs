@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configuration_
     }
 }
 
-pub use crate::operation::put_configuration_recorder::_put_configuration_recorder_output::PutConfigurationRecorderOutput;
-
 pub use crate::operation::put_configuration_recorder::_put_configuration_recorder_input::PutConfigurationRecorderInput;
+
+pub use crate::operation::put_configuration_recorder::_put_configuration_recorder_output::PutConfigurationRecorderOutput;
 
 mod _put_configuration_recorder_input;
 

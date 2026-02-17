@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_public_acce
     }
 }
 
-pub use crate::operation::delete_public_access_block::_delete_public_access_block_output::DeletePublicAccessBlockOutput;
-
 pub use crate::operation::delete_public_access_block::_delete_public_access_block_input::DeletePublicAccessBlockInput;
+
+pub use crate::operation::delete_public_access_block::_delete_public_access_block_output::DeletePublicAccessBlockOutput;
 
 mod _delete_public_access_block_input;
 

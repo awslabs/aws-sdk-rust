@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cell::Delet
     }
 }
 
-pub use crate::operation::delete_cell::_delete_cell_output::DeleteCellOutput;
-
 pub use crate::operation::delete_cell::_delete_cell_input::DeleteCellInput;
+
+pub use crate::operation::delete_cell::_delete_cell_output::DeleteCellOutput;
 
 mod _delete_cell_input;
 

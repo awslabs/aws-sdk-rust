@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_integration
     }
 }
 
-pub use crate::operation::delete_integration_resource_property::_delete_integration_resource_property_output::DeleteIntegrationResourcePropertyOutput;
-
 pub use crate::operation::delete_integration_resource_property::_delete_integration_resource_property_input::DeleteIntegrationResourcePropertyInput;
+
+pub use crate::operation::delete_integration_resource_property::_delete_integration_resource_property_output::DeleteIntegrationResourcePropertyOutput;
 
 mod _delete_integration_resource_property_input;
 

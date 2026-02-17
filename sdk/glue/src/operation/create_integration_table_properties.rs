@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_integration
     }
 }
 
-pub use crate::operation::create_integration_table_properties::_create_integration_table_properties_output::CreateIntegrationTablePropertiesOutput;
-
 pub use crate::operation::create_integration_table_properties::_create_integration_table_properties_input::CreateIntegrationTablePropertiesInput;
+
+pub use crate::operation::create_integration_table_properties::_create_integration_table_properties_output::CreateIntegrationTablePropertiesOutput;
 
 mod _create_integration_table_properties_input;
 

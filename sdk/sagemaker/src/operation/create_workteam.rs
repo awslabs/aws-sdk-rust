@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workteam::C
     }
 }
 
-pub use crate::operation::create_workteam::_create_workteam_output::CreateWorkteamOutput;
-
 pub use crate::operation::create_workteam::_create_workteam_input::CreateWorkteamInput;
+
+pub use crate::operation::create_workteam::_create_workteam_output::CreateWorkteamOutput;
 
 mod _create_workteam_input;
 

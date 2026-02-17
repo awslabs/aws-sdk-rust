@@ -673,9 +673,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_deployment_
     }
 }
 
-pub use crate::operation::update_deployment_group::_update_deployment_group_output::UpdateDeploymentGroupOutput;
-
 pub use crate::operation::update_deployment_group::_update_deployment_group_input::UpdateDeploymentGroupInput;
+
+pub use crate::operation::update_deployment_group::_update_deployment_group_output::UpdateDeploymentGroupOutput;
 
 mod _update_deployment_group_input;
 

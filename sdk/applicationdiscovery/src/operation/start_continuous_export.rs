@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_continuous_e
     }
 }
 
-pub use crate::operation::start_continuous_export::_start_continuous_export_output::StartContinuousExportOutput;
-
 pub use crate::operation::start_continuous_export::_start_continuous_export_input::StartContinuousExportInput;
+
+pub use crate::operation::start_continuous_export::_start_continuous_export_output::StartContinuousExportOutput;
 
 mod _start_continuous_export_input;
 

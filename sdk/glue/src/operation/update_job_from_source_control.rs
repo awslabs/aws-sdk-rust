@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_job_from_so
     }
 }
 
-pub use crate::operation::update_job_from_source_control::_update_job_from_source_control_output::UpdateJobFromSourceControlOutput;
-
 pub use crate::operation::update_job_from_source_control::_update_job_from_source_control_input::UpdateJobFromSourceControlInput;
+
+pub use crate::operation::update_job_from_source_control::_update_job_from_source_control_output::UpdateJobFromSourceControlOutput;
 
 mod _update_job_from_source_control_input;
 

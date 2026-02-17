@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_instanc
     }
 }
 
-pub use crate::operation::list_stack_instances::_list_stack_instances_output::ListStackInstancesOutput;
-
 pub use crate::operation::list_stack_instances::_list_stack_instances_input::ListStackInstancesInput;
+
+pub use crate::operation::list_stack_instances::_list_stack_instances_output::ListStackInstancesOutput;
 
 mod _list_stack_instances_input;
 

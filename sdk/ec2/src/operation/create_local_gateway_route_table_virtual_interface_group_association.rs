@@ -336,9 +336,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_local_gatew
                                 }
                             }
 
-pub use crate::operation::create_local_gateway_route_table_virtual_interface_group_association::_create_local_gateway_route_table_virtual_interface_group_association_output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput;
-
 pub use crate::operation::create_local_gateway_route_table_virtual_interface_group_association::_create_local_gateway_route_table_virtual_interface_group_association_input::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput;
+
+pub use crate::operation::create_local_gateway_route_table_virtual_interface_group_association::_create_local_gateway_route_table_virtual_interface_group_association_output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput;
 
 mod _create_local_gateway_route_table_virtual_interface_group_association_input;
 

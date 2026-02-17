@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_accessor
     }
 }
 
-pub use crate::operation::list_data_accessors::_list_data_accessors_output::ListDataAccessorsOutput;
-
 pub use crate::operation::list_data_accessors::_list_data_accessors_input::ListDataAccessorsInput;
+
+pub use crate::operation::list_data_accessors::_list_data_accessors_output::ListDataAccessorsOutput;
 
 mod _list_data_accessors_input;
 

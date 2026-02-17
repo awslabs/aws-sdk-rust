@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_detector_
     }
 }
 
-pub use crate::operation::describe_detector_model::_describe_detector_model_output::DescribeDetectorModelOutput;
-
 pub use crate::operation::describe_detector_model::_describe_detector_model_input::DescribeDetectorModelInput;
+
+pub use crate::operation::describe_detector_model::_describe_detector_model_output::DescribeDetectorModelOutput;
 
 mod _describe_detector_model_input;
 

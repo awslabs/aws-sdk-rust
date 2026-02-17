@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_control_p
     }
 }
 
-pub use crate::operation::describe_control_panel::_describe_control_panel_output::DescribeControlPanelOutput;
-
 pub use crate::operation::describe_control_panel::_describe_control_panel_input::DescribeControlPanelInput;
+
+pub use crate::operation::describe_control_panel::_describe_control_panel_output::DescribeControlPanelOutput;
 
 mod _describe_control_panel_input;
 

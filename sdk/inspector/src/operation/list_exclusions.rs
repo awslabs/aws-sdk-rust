@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_exclusions::L
     }
 }
 
-pub use crate::operation::list_exclusions::_list_exclusions_output::ListExclusionsOutput;
-
 pub use crate::operation::list_exclusions::_list_exclusions_input::ListExclusionsInput;
+
+pub use crate::operation::list_exclusions::_list_exclusions_output::ListExclusionsOutput;
 
 mod _list_exclusions_input;
 

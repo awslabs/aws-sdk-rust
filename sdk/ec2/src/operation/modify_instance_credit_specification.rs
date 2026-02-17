@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_cr
     }
 }
 
-pub use crate::operation::modify_instance_credit_specification::_modify_instance_credit_specification_output::ModifyInstanceCreditSpecificationOutput;
-
 pub use crate::operation::modify_instance_credit_specification::_modify_instance_credit_specification_input::ModifyInstanceCreditSpecificationInput;
+
+pub use crate::operation::modify_instance_credit_specification::_modify_instance_credit_specification_output::ModifyInstanceCreditSpecificationOutput;
 
 mod _modify_instance_credit_specification_input;
 

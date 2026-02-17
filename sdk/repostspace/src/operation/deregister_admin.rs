@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_admin::
     }
 }
 
-pub use crate::operation::deregister_admin::_deregister_admin_output::DeregisterAdminOutput;
-
 pub use crate::operation::deregister_admin::_deregister_admin_input::DeregisterAdminInput;
+
+pub use crate::operation::deregister_admin::_deregister_admin_output::DeregisterAdminOutput;
 
 mod _deregister_admin_input;
 

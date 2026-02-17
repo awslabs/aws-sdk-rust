@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_applicati
     }
 }
 
-pub use crate::operation::register_application::_register_application_output::RegisterApplicationOutput;
-
 pub use crate::operation::register_application::_register_application_input::RegisterApplicationInput;
+
+pub use crate::operation::register_application::_register_application_output::RegisterApplicationOutput;
 
 mod _register_application_input;
 

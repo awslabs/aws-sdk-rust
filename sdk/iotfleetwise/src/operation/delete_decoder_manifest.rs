@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_decoder_man
     }
 }
 
-pub use crate::operation::delete_decoder_manifest::_delete_decoder_manifest_output::DeleteDecoderManifestOutput;
-
 pub use crate::operation::delete_decoder_manifest::_delete_decoder_manifest_input::DeleteDecoderManifestInput;
+
+pub use crate::operation::delete_decoder_manifest::_delete_decoder_manifest_output::DeleteDecoderManifestOutput;
 
 mod _delete_decoder_manifest_input;
 

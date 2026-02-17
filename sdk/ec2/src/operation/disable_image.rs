@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_image::Dis
     }
 }
 
-pub use crate::operation::disable_image::_disable_image_output::DisableImageOutput;
-
 pub use crate::operation::disable_image::_disable_image_input::DisableImageInput;
+
+pub use crate::operation::disable_image::_disable_image_output::DisableImageOutput;
 
 mod _disable_image_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_acl::Ge
     }
 }
 
-pub use crate::operation::get_object_acl::_get_object_acl_output::GetObjectAclOutput;
-
 pub use crate::operation::get_object_acl::_get_object_acl_input::GetObjectAclInput;
+
+pub use crate::operation::get_object_acl::_get_object_acl_output::GetObjectAclOutput;
 
 mod _get_object_acl_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sinks::ListSi
     }
 }
 
-pub use crate::operation::list_sinks::_list_sinks_output::ListSinksOutput;
-
 pub use crate::operation::list_sinks::_list_sinks_input::ListSinksInput;
+
+pub use crate::operation::list_sinks::_list_sinks_output::ListSinksOutput;
 
 mod _list_sinks_input;
 

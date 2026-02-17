@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_environment
     }
 }
 
-pub use crate::operation::delete_environment_account_connection::_delete_environment_account_connection_output::DeleteEnvironmentAccountConnectionOutput;
-
 pub use crate::operation::delete_environment_account_connection::_delete_environment_account_connection_input::DeleteEnvironmentAccountConnectionInput;
+
+pub use crate::operation::delete_environment_account_connection::_delete_environment_account_connection_output::DeleteEnvironmentAccountConnectionOutput;
 
 mod _delete_environment_account_connection_input;
 

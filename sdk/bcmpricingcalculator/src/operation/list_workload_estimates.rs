@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workload_esti
     }
 }
 
-pub use crate::operation::list_workload_estimates::_list_workload_estimates_output::ListWorkloadEstimatesOutput;
-
 pub use crate::operation::list_workload_estimates::_list_workload_estimates_input::ListWorkloadEstimatesInput;
+
+pub use crate::operation::list_workload_estimates::_list_workload_estimates_output::ListWorkloadEstimatesOutput;
 
 mod _list_workload_estimates_input;
 

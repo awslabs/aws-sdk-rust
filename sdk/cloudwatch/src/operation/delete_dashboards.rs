@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dashboards:
     }
 }
 
-pub use crate::operation::delete_dashboards::_delete_dashboards_output::DeleteDashboardsOutput;
-
 pub use crate::operation::delete_dashboards::_delete_dashboards_input::DeleteDashboardsInput;
+
+pub use crate::operation::delete_dashboards::_delete_dashboards_output::DeleteDashboardsOutput;
 
 mod _delete_dashboards_input;
 

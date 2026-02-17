@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query_objects::Que
     }
 }
 
-pub use crate::operation::query_objects::_query_objects_output::QueryObjectsOutput;
-
 pub use crate::operation::query_objects::_query_objects_input::QueryObjectsInput;
+
+pub use crate::operation::query_objects::_query_objects_output::QueryObjectsOutput;
 
 mod _query_objects_input;
 

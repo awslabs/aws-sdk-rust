@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver_endpo
     }
 }
 
-pub use crate::operation::get_resolver_endpoint::_get_resolver_endpoint_output::GetResolverEndpointOutput;
-
 pub use crate::operation::get_resolver_endpoint::_get_resolver_endpoint_input::GetResolverEndpointInput;
+
+pub use crate::operation::get_resolver_endpoint::_get_resolver_endpoint_output::GetResolverEndpointOutput;
 
 mod _get_resolver_endpoint_input;
 

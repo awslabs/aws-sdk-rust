@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_replication_se
     }
 }
 
-pub use crate::operation::get_replication_set::_get_replication_set_output::GetReplicationSetOutput;
-
 pub use crate::operation::get_replication_set::_get_replication_set_input::GetReplicationSetInput;
+
+pub use crate::operation::get_replication_set::_get_replication_set_output::GetReplicationSetOutput;
 
 mod _get_replication_set_input;
 

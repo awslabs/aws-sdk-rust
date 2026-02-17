@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_host_rese
     }
 }
 
-pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_output::PurchaseHostReservationOutput;
-
 pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_input::PurchaseHostReservationInput;
+
+pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_output::PurchaseHostReservationOutput;
 
 mod _purchase_host_reservation_input;
 

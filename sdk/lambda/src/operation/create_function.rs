@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_function::C
     }
 }
 
-pub use crate::operation::create_function::_create_function_output::CreateFunctionOutput;
-
 pub use crate::operation::create_function::_create_function_input::CreateFunctionInput;
+
+pub use crate::operation::create_function::_create_function_output::CreateFunctionOutput;
 
 mod _create_function_input;
 

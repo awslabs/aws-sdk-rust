@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_experiment_target_account_configuration::_get_experiment_target_account_configuration_output::GetExperimentTargetAccountConfigurationOutput;
-
 pub use crate::operation::get_experiment_target_account_configuration::_get_experiment_target_account_configuration_input::GetExperimentTargetAccountConfigurationInput;
+
+pub use crate::operation::get_experiment_target_account_configuration::_get_experiment_target_account_configuration_output::GetExperimentTargetAccountConfigurationOutput;
 
 mod _get_experiment_target_account_configuration_input;
 

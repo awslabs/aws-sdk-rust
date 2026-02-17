@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_archive_rul
     }
 }
 
-pub use crate::operation::delete_archive_rule::_delete_archive_rule_output::DeleteArchiveRuleOutput;
-
 pub use crate::operation::delete_archive_rule::_delete_archive_rule_input::DeleteArchiveRuleInput;
+
+pub use crate::operation::delete_archive_rule::_delete_archive_rule_output::DeleteArchiveRuleOutput;
 
 mod _delete_archive_rule_input;
 

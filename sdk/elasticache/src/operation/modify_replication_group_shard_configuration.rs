@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_replication_group_shard_configuration::_modify_replication_group_shard_configuration_output::ModifyReplicationGroupShardConfigurationOutput;
-
 pub use crate::operation::modify_replication_group_shard_configuration::_modify_replication_group_shard_configuration_input::ModifyReplicationGroupShardConfigurationInput;
+
+pub use crate::operation::modify_replication_group_shard_configuration::_modify_replication_group_shard_configuration_output::ModifyReplicationGroupShardConfigurationOutput;
 
 mod _modify_replication_group_shard_configuration_input;
 

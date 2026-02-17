@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::select_resource_co
     }
 }
 
-pub use crate::operation::select_resource_config::_select_resource_config_output::SelectResourceConfigOutput;
-
 pub use crate::operation::select_resource_config::_select_resource_config_input::SelectResourceConfigInput;
+
+pub use crate::operation::select_resource_config::_select_resource_config_output::SelectResourceConfigOutput;
 
 mod _select_resource_config_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_notebook_in
     }
 }
 
-pub use crate::operation::update_notebook_instance_lifecycle_config::_update_notebook_instance_lifecycle_config_output::UpdateNotebookInstanceLifecycleConfigOutput;
-
 pub use crate::operation::update_notebook_instance_lifecycle_config::_update_notebook_instance_lifecycle_config_input::UpdateNotebookInstanceLifecycleConfigInput;
+
+pub use crate::operation::update_notebook_instance_lifecycle_config::_update_notebook_instance_lifecycle_config_output::UpdateNotebookInstanceLifecycleConfigOutput;
 
 mod _update_notebook_instance_lifecycle_config_input;
 

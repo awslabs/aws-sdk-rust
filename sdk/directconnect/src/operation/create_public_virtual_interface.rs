@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_public_virt
     }
 }
 
-pub use crate::operation::create_public_virtual_interface::_create_public_virtual_interface_output::CreatePublicVirtualInterfaceOutput;
-
 pub use crate::operation::create_public_virtual_interface::_create_public_virtual_interface_input::CreatePublicVirtualInterfaceInput;
+
+pub use crate::operation::create_public_virtual_interface::_create_public_virtual_interface_output::CreatePublicVirtualInterfaceOutput;
 
 mod _create_public_virtual_interface_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_session::Ca
     }
 }
 
-pub use crate::operation::cancel_session::_cancel_session_output::CancelSessionOutput;
-
 pub use crate::operation::cancel_session::_cancel_session_input::CancelSessionInput;
+
+pub use crate::operation::cancel_session::_cancel_session_output::CancelSessionOutput;
 
 mod _cancel_session_input;
 

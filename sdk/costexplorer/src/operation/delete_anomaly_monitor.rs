@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_anomaly_mon
     }
 }
 
-pub use crate::operation::delete_anomaly_monitor::_delete_anomaly_monitor_output::DeleteAnomalyMonitorOutput;
-
 pub use crate::operation::delete_anomaly_monitor::_delete_anomaly_monitor_input::DeleteAnomalyMonitorInput;
+
+pub use crate::operation::delete_anomaly_monitor::_delete_anomaly_monitor_output::DeleteAnomalyMonitorOutput;
 
 mod _delete_anomaly_monitor_input;
 

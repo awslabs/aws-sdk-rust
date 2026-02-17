@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_suite::GetSuit
     }
 }
 
-pub use crate::operation::get_suite::_get_suite_output::GetSuiteOutput;
-
 pub use crate::operation::get_suite::_get_suite_input::GetSuiteInput;
+
+pub use crate::operation::get_suite::_get_suite_output::GetSuiteOutput;
 
 mod _get_suite_input;
 

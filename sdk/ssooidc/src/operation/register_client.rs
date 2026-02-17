@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_client::R
     }
 }
 
-pub use crate::operation::register_client::_register_client_output::RegisterClientOutput;
-
 pub use crate::operation::register_client::_register_client_input::RegisterClientInput;
+
+pub use crate::operation::register_client::_register_client_output::RegisterClientOutput;
 
 mod _register_client_input;
 

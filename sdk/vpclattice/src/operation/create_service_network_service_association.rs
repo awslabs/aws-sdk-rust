@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_service_network_service_association::_create_service_network_service_association_output::CreateServiceNetworkServiceAssociationOutput;
-
 pub use crate::operation::create_service_network_service_association::_create_service_network_service_association_input::CreateServiceNetworkServiceAssociationInput;
+
+pub use crate::operation::create_service_network_service_association::_create_service_network_service_association_output::CreateServiceNetworkServiceAssociationOutput;
 
 mod _create_service_network_service_association_input;
 

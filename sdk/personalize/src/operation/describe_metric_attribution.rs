@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metric_at
     }
 }
 
-pub use crate::operation::describe_metric_attribution::_describe_metric_attribution_output::DescribeMetricAttributionOutput;
-
 pub use crate::operation::describe_metric_attribution::_describe_metric_attribution_input::DescribeMetricAttributionInput;
+
+pub use crate::operation::describe_metric_attribution::_describe_metric_attribution_output::DescribeMetricAttributionOutput;
 
 mod _describe_metric_attribution_input;
 

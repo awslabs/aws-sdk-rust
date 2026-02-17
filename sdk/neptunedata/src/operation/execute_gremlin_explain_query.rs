@@ -562,9 +562,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_gremlin_ex
     }
 }
 
-pub use crate::operation::execute_gremlin_explain_query::_execute_gremlin_explain_query_output::ExecuteGremlinExplainQueryOutput;
-
 pub use crate::operation::execute_gremlin_explain_query::_execute_gremlin_explain_query_input::ExecuteGremlinExplainQueryInput;
+
+pub use crate::operation::execute_gremlin_explain_query::_execute_gremlin_explain_query_output::ExecuteGremlinExplainQueryOutput;
 
 mod _execute_gremlin_explain_query_input;
 

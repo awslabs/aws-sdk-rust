@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_inference_c
     }
 }
 
-pub use crate::operation::create_inference_component::_create_inference_component_output::CreateInferenceComponentOutput;
-
 pub use crate::operation::create_inference_component::_create_inference_component_input::CreateInferenceComponentInput;
+
+pub use crate::operation::create_inference_component::_create_inference_component_output::CreateInferenceComponentOutput;
 
 mod _create_inference_component_input;
 

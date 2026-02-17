@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_alarms::ListA
     }
 }
 
-pub use crate::operation::list_alarms::_list_alarms_output::ListAlarmsOutput;
-
 pub use crate::operation::list_alarms::_list_alarms_input::ListAlarmsInput;
+
+pub use crate::operation::list_alarms::_list_alarms_output::ListAlarmsOutput;
 
 mod _list_alarms_input;
 

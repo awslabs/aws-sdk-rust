@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue::Upda
     }
 }
 
-pub use crate::operation::update_queue::_update_queue_output::UpdateQueueOutput;
-
 pub use crate::operation::update_queue::_update_queue_input::UpdateQueueInput;
+
+pub use crate::operation::update_queue::_update_queue_output::UpdateQueueOutput;
 
 mod _update_queue_input;
 

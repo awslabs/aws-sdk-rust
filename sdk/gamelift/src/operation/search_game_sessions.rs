@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_game_sessio
     }
 }
 
-pub use crate::operation::search_game_sessions::_search_game_sessions_output::SearchGameSessionsOutput;
-
 pub use crate::operation::search_game_sessions::_search_game_sessions_input::SearchGameSessionsInput;
+
+pub use crate::operation::search_game_sessions::_search_game_sessions_output::SearchGameSessionsOutput;
 
 mod _search_game_sessions_input;
 

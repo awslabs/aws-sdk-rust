@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dhcp_opti
     }
 }
 
-pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_output::DescribeDhcpOptionsOutput;
-
 pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_input::DescribeDhcpOptionsInput;
+
+pub use crate::operation::describe_dhcp_options::_describe_dhcp_options_output::DescribeDhcpOptionsOutput;
 
 mod _describe_dhcp_options_input;
 

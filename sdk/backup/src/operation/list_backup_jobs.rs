@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backup_jobs::
     }
 }
 
-pub use crate::operation::list_backup_jobs::_list_backup_jobs_output::ListBackupJobsOutput;
-
 pub use crate::operation::list_backup_jobs::_list_backup_jobs_input::ListBackupJobsInput;
+
+pub use crate::operation::list_backup_jobs::_list_backup_jobs_output::ListBackupJobsOutput;
 
 mod _list_backup_jobs_input;
 

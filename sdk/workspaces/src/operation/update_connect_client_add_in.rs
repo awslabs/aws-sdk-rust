@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connect_cli
     }
 }
 
-pub use crate::operation::update_connect_client_add_in::_update_connect_client_add_in_output::UpdateConnectClientAddInOutput;
-
 pub use crate::operation::update_connect_client_add_in::_update_connect_client_add_in_input::UpdateConnectClientAddInInput;
+
+pub use crate::operation::update_connect_client_add_in::_update_connect_client_add_in_output::UpdateConnectClientAddInOutput;
 
 mod _update_connect_client_add_in_input;
 

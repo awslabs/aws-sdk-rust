@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mapping::GetMa
     }
 }
 
-pub use crate::operation::get_mapping::_get_mapping_output::GetMappingOutput;
-
 pub use crate::operation::get_mapping::_get_mapping_input::GetMappingInput;
+
+pub use crate::operation::get_mapping::_get_mapping_output::GetMappingOutput;
 
 mod _get_mapping_input;
 

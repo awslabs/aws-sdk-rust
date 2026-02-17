@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_events_by_e
     }
 }
 
-pub use crate::operation::delete_events_by_event_type::_delete_events_by_event_type_output::DeleteEventsByEventTypeOutput;
-
 pub use crate::operation::delete_events_by_event_type::_delete_events_by_event_type_input::DeleteEventsByEventTypeInput;
+
+pub use crate::operation::delete_events_by_event_type::_delete_events_by_event_type_output::DeleteEventsByEventTypeOutput;
 
 mod _delete_events_by_event_type_input;
 

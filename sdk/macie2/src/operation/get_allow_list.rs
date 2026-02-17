@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_allow_list::Ge
     }
 }
 
-pub use crate::operation::get_allow_list::_get_allow_list_output::GetAllowListOutput;
-
 pub use crate::operation::get_allow_list::_get_allow_list_input::GetAllowListInput;
+
+pub use crate::operation::get_allow_list::_get_allow_list_output::GetAllowListOutput;
 
 mod _get_allow_list_input;
 

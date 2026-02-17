@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_monitoring_sub
     }
 }
 
-pub use crate::operation::get_monitoring_subscription::_get_monitoring_subscription_output::GetMonitoringSubscriptionOutput;
-
 pub use crate::operation::get_monitoring_subscription::_get_monitoring_subscription_input::GetMonitoringSubscriptionInput;
+
+pub use crate::operation::get_monitoring_subscription::_get_monitoring_subscription_output::GetMonitoringSubscriptionOutput;
 
 mod _get_monitoring_subscription_input;
 

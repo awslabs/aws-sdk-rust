@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_telemetry_eval
     }
 }
 
-pub use crate::operation::get_telemetry_evaluation_status::_get_telemetry_evaluation_status_output::GetTelemetryEvaluationStatusOutput;
-
 pub use crate::operation::get_telemetry_evaluation_status::_get_telemetry_evaluation_status_input::GetTelemetryEvaluationStatusInput;
+
+pub use crate::operation::get_telemetry_evaluation_status::_get_telemetry_evaluation_status_output::GetTelemetryEvaluationStatusOutput;
 
 mod _get_telemetry_evaluation_status_input;
 

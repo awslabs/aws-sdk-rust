@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trained_model_
     }
 }
 
-pub use crate::operation::get_trained_model_inference_job::_get_trained_model_inference_job_output::GetTrainedModelInferenceJobOutput;
-
 pub use crate::operation::get_trained_model_inference_job::_get_trained_model_inference_job_input::GetTrainedModelInferenceJobInput;
+
+pub use crate::operation::get_trained_model_inference_job::_get_trained_model_inference_job_output::GetTrainedModelInferenceJobOutput;
 
 mod _get_trained_model_inference_job_input;
 

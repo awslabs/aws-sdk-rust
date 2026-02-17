@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_kx_cluster_
     }
 }
 
-pub use crate::operation::update_kx_cluster_databases::_update_kx_cluster_databases_output::UpdateKxClusterDatabasesOutput;
-
 pub use crate::operation::update_kx_cluster_databases::_update_kx_cluster_databases_input::UpdateKxClusterDatabasesInput;
+
+pub use crate::operation::update_kx_cluster_databases::_update_kx_cluster_databases_output::UpdateKxClusterDatabasesOutput;
 
 mod _update_kx_cluster_databases_input;
 

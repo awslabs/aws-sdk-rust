@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_types_by_asso
     }
 }
 
-pub use crate::operation::list_types_by_association::_list_types_by_association_output::ListTypesByAssociationOutput;
-
 pub use crate::operation::list_types_by_association::_list_types_by_association_input::ListTypesByAssociationInput;
+
+pub use crate::operation::list_types_by_association::_list_types_by_association_output::ListTypesByAssociationOutput;
 
 mod _list_types_by_association_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_vehic
     }
 }
 
-pub use crate::operation::batch_update_vehicle::_batch_update_vehicle_output::BatchUpdateVehicleOutput;
-
 pub use crate::operation::batch_update_vehicle::_batch_update_vehicle_input::BatchUpdateVehicleInput;
+
+pub use crate::operation::batch_update_vehicle::_batch_update_vehicle_output::BatchUpdateVehicleOutput;
 
 mod _batch_update_vehicle_input;
 

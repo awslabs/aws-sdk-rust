@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_key_descrip
     }
 }
 
-pub use crate::operation::update_key_description::_update_key_description_output::UpdateKeyDescriptionOutput;
-
 pub use crate::operation::update_key_description::_update_key_description_input::UpdateKeyDescriptionInput;
+
+pub use crate::operation::update_key_description::_update_key_description_output::UpdateKeyDescriptionOutput;
 
 mod _update_key_description_input;
 

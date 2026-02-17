@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_transit_gat
     }
 }
 
-pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_output::ModifyTransitGatewayOutput;
-
 pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_input::ModifyTransitGatewayInput;
+
+pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_output::ModifyTransitGatewayOutput;
 
 mod _modify_transit_gateway_input;
 

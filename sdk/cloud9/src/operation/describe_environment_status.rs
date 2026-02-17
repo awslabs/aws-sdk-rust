@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_environme
     }
 }
 
-pub use crate::operation::describe_environment_status::_describe_environment_status_output::DescribeEnvironmentStatusOutput;
-
 pub use crate::operation::describe_environment_status::_describe_environment_status_input::DescribeEnvironmentStatusInput;
+
+pub use crate::operation::describe_environment_status::_describe_environment_status_output::DescribeEnvironmentStatusOutput;
 
 mod _describe_environment_status_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connectors_v2
     }
 }
 
-pub use crate::operation::list_connectors_v2::_list_connectors_v2_output::ListConnectorsV2Output;
-
 pub use crate::operation::list_connectors_v2::_list_connectors_v2_input::ListConnectorsV2Input;
+
+pub use crate::operation::list_connectors_v2::_list_connectors_v2_output::ListConnectorsV2Output;
 
 mod _list_connectors_v2_input;
 

@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scheduled_aud
     }
 }
 
-pub use crate::operation::list_scheduled_audits::_list_scheduled_audits_output::ListScheduledAuditsOutput;
-
 pub use crate::operation::list_scheduled_audits::_list_scheduled_audits_input::ListScheduledAuditsInput;
+
+pub use crate::operation::list_scheduled_audits::_list_scheduled_audits_output::ListScheduledAuditsOutput;
 
 mod _list_scheduled_audits_input;
 

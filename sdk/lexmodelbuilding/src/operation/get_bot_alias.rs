@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bot_alias::Get
     }
 }
 
-pub use crate::operation::get_bot_alias::_get_bot_alias_output::GetBotAliasOutput;
-
 pub use crate::operation::get_bot_alias::_get_bot_alias_input::GetBotAliasInput;
+
+pub use crate::operation::get_bot_alias::_get_bot_alias_output::GetBotAliasOutput;
 
 mod _get_bot_alias_input;
 

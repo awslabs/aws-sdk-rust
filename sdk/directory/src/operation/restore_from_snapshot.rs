@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_from_snaps
     }
 }
 
-pub use crate::operation::restore_from_snapshot::_restore_from_snapshot_output::RestoreFromSnapshotOutput;
-
 pub use crate::operation::restore_from_snapshot::_restore_from_snapshot_input::RestoreFromSnapshotInput;
+
+pub use crate::operation::restore_from_snapshot::_restore_from_snapshot_output::RestoreFromSnapshotOutput;
 
 mod _restore_from_snapshot_input;
 

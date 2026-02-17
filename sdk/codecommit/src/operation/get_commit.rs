@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_commit::GetCom
     }
 }
 
-pub use crate::operation::get_commit::_get_commit_output::GetCommitOutput;
-
 pub use crate::operation::get_commit::_get_commit_input::GetCommitInput;
+
+pub use crate::operation::get_commit::_get_commit_output::GetCommitOutput;
 
 mod _get_commit_input;
 

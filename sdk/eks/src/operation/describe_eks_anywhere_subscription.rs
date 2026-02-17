@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_eks_anywh
     }
 }
 
-pub use crate::operation::describe_eks_anywhere_subscription::_describe_eks_anywhere_subscription_output::DescribeEksAnywhereSubscriptionOutput;
-
 pub use crate::operation::describe_eks_anywhere_subscription::_describe_eks_anywhere_subscription_input::DescribeEksAnywhereSubscriptionInput;
+
+pub use crate::operation::describe_eks_anywhere_subscription::_describe_eks_anywhere_subscription_output::DescribeEksAnywhereSubscriptionOutput;
 
 mod _describe_eks_anywhere_subscription_input;
 

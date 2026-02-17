@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_client_pr
     }
 }
 
-pub use crate::operation::describe_client_properties::_describe_client_properties_output::DescribeClientPropertiesOutput;
-
 pub use crate::operation::describe_client_properties::_describe_client_properties_input::DescribeClientPropertiesInput;
+
+pub use crate::operation::describe_client_properties::_describe_client_properties_output::DescribeClientPropertiesOutput;
 
 mod _describe_client_properties_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_intents::List
     }
 }
 
-pub use crate::operation::list_intents::_list_intents_output::ListIntentsOutput;
-
 pub use crate::operation::list_intents::_list_intents_input::ListIntentsInput;
+
+pub use crate::operation::list_intents::_list_intents_output::ListIntentsOutput;
 
 mod _list_intents_input;
 

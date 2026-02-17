@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_health_chec
     }
 }
 
-pub use crate::operation::update_health_check::_update_health_check_output::UpdateHealthCheckOutput;
-
 pub use crate::operation::update_health_check::_update_health_check_input::UpdateHealthCheckInput;
+
+pub use crate::operation::update_health_check::_update_health_check_output::UpdateHealthCheckOutput;
 
 mod _update_health_check_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_backend_jobs:
     }
 }
 
-pub use crate::operation::list_backend_jobs::_list_backend_jobs_output::ListBackendJobsOutput;
-
 pub use crate::operation::list_backend_jobs::_list_backend_jobs_input::ListBackendJobsInput;
+
+pub use crate::operation::list_backend_jobs::_list_backend_jobs_output::ListBackendJobsOutput;
 
 mod _list_backend_jobs_input;
 

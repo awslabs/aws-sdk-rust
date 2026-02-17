@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fpga_imag
     }
 }
 
-pub use crate::operation::describe_fpga_images::_describe_fpga_images_output::DescribeFpgaImagesOutput;
-
 pub use crate::operation::describe_fpga_images::_describe_fpga_images_input::DescribeFpgaImagesInput;
+
+pub use crate::operation::describe_fpga_images::_describe_fpga_images_output::DescribeFpgaImagesOutput;
 
 mod _describe_fpga_images_input;
 

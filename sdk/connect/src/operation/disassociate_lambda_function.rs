@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_lambd
     }
 }
 
-pub use crate::operation::disassociate_lambda_function::_disassociate_lambda_function_output::DisassociateLambdaFunctionOutput;
-
 pub use crate::operation::disassociate_lambda_function::_disassociate_lambda_function_input::DisassociateLambdaFunctionInput;
+
+pub use crate::operation::disassociate_lambda_function::_disassociate_lambda_function_output::DisassociateLambdaFunctionOutput;
 
 mod _disassociate_lambda_function_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_folder_perm
     }
 }
 
-pub use crate::operation::update_folder_permissions::_update_folder_permissions_output::UpdateFolderPermissionsOutput;
-
 pub use crate::operation::update_folder_permissions::_update_folder_permissions_input::UpdateFolderPermissionsInput;
+
+pub use crate::operation::update_folder_permissions::_update_folder_permissions_output::UpdateFolderPermissionsOutput;
 
 mod _update_folder_permissions_input;
 

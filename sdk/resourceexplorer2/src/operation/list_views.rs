@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_views::ListVi
     }
 }
 
-pub use crate::operation::list_views::_list_views_output::ListViewsOutput;
-
 pub use crate::operation::list_views::_list_views_input::ListViewsInput;
+
+pub use crate::operation::list_views::_list_views_output::ListViewsOutput;
 
 mod _list_views_input;
 

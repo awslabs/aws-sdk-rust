@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_web_acl::GetWe
     }
 }
 
-pub use crate::operation::get_web_acl::_get_web_acl_output::GetWebAclOutput;
-
 pub use crate::operation::get_web_acl::_get_web_acl_input::GetWebAclInput;
+
+pub use crate::operation::get_web_acl::_get_web_acl_output::GetWebAclOutput;
 
 mod _get_web_acl_input;
 

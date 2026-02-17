@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dedicated_i
     }
 }
 
-pub use crate::operation::delete_dedicated_ip_pool::_delete_dedicated_ip_pool_output::DeleteDedicatedIpPoolOutput;
-
 pub use crate::operation::delete_dedicated_ip_pool::_delete_dedicated_ip_pool_input::DeleteDedicatedIpPoolInput;
+
+pub use crate::operation::delete_dedicated_ip_pool::_delete_dedicated_ip_pool_output::DeleteDedicatedIpPoolOutput;
 
 mod _delete_dedicated_ip_pool_input;
 

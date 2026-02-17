@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pipe::Creat
     }
 }
 
-pub use crate::operation::create_pipe::_create_pipe_output::CreatePipeOutput;
-
 pub use crate::operation::create_pipe::_create_pipe_input::CreatePipeInput;
+
+pub use crate::operation::create_pipe::_create_pipe_output::CreatePipeOutput;
 
 mod _create_pipe_input;
 

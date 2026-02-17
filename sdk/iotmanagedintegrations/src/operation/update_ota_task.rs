@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ota_task::U
     }
 }
 
-pub use crate::operation::update_ota_task::_update_ota_task_output::UpdateOtaTaskOutput;
-
 pub use crate::operation::update_ota_task::_update_ota_task_input::UpdateOtaTaskInput;
+
+pub use crate::operation::update_ota_task::_update_ota_task_output::UpdateOtaTaskOutput;
 
 mod _update_ota_task_input;
 

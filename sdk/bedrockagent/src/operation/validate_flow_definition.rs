@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_flow_defi
     }
 }
 
-pub use crate::operation::validate_flow_definition::_validate_flow_definition_output::ValidateFlowDefinitionOutput;
-
 pub use crate::operation::validate_flow_definition::_validate_flow_definition_input::ValidateFlowDefinitionInput;
+
+pub use crate::operation::validate_flow_definition::_validate_flow_definition_output::ValidateFlowDefinitionOutput;
 
 mod _validate_flow_definition_input;
 

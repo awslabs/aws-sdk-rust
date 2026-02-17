@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_change_set:
     }
 }
 
-pub use crate::operation::delete_change_set::_delete_change_set_output::DeleteChangeSetOutput;
-
 pub use crate::operation::delete_change_set::_delete_change_set_input::DeleteChangeSetInput;
+
+pub use crate::operation::delete_change_set::_delete_change_set_output::DeleteChangeSetOutput;
 
 mod _delete_change_set_input;
 

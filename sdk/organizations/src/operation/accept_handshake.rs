@@ -692,9 +692,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_handshake::
     }
 }
 
-pub use crate::operation::accept_handshake::_accept_handshake_output::AcceptHandshakeOutput;
-
 pub use crate::operation::accept_handshake::_accept_handshake_input::AcceptHandshakeInput;
+
+pub use crate::operation::accept_handshake::_accept_handshake_output::AcceptHandshakeOutput;
 
 mod _accept_handshake_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_get_member_ec2_deep_inspection_status::_batch_get_member_ec2_deep_inspection_status_output::BatchGetMemberEc2DeepInspectionStatusOutput;
-
 pub use crate::operation::batch_get_member_ec2_deep_inspection_status::_batch_get_member_ec2_deep_inspection_status_input::BatchGetMemberEc2DeepInspectionStatusInput;
+
+pub use crate::operation::batch_get_member_ec2_deep_inspection_status::_batch_get_member_ec2_deep_inspection_status_output::BatchGetMemberEc2DeepInspectionStatusOutput;
 
 mod _batch_get_member_ec2_deep_inspection_status_input;
 

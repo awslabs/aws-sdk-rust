@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_load_balanc
     }
 }
 
-pub use crate::operation::create_load_balancer_policy::_create_load_balancer_policy_output::CreateLoadBalancerPolicyOutput;
-
 pub use crate::operation::create_load_balancer_policy::_create_load_balancer_policy_input::CreateLoadBalancerPolicyInput;
+
+pub use crate::operation::create_load_balancer_policy::_create_load_balancer_policy_output::CreateLoadBalancerPolicyOutput;
 
 mod _create_load_balancer_policy_input;
 

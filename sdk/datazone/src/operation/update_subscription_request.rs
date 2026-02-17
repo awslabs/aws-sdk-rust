@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subscriptio
     }
 }
 
-pub use crate::operation::update_subscription_request::_update_subscription_request_output::UpdateSubscriptionRequestOutput;
-
 pub use crate::operation::update_subscription_request::_update_subscription_request_input::UpdateSubscriptionRequestInput;
+
+pub use crate::operation::update_subscription_request::_update_subscription_request_output::UpdateSubscriptionRequestOutput;
 
 mod _update_subscription_request_input;
 

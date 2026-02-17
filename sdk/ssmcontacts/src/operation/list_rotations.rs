@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rotations::Li
     }
 }
 
-pub use crate::operation::list_rotations::_list_rotations_output::ListRotationsOutput;
-
 pub use crate::operation::list_rotations::_list_rotations_input::ListRotationsInput;
+
+pub use crate::operation::list_rotations::_list_rotations_output::ListRotationsOutput;
 
 mod _list_rotations_input;
 

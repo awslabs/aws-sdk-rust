@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_subscriptio
     }
 }
 
-pub use crate::operation::accept_subscription_request::_accept_subscription_request_output::AcceptSubscriptionRequestOutput;
-
 pub use crate::operation::accept_subscription_request::_accept_subscription_request_input::AcceptSubscriptionRequestInput;
+
+pub use crate::operation::accept_subscription_request::_accept_subscription_request_output::AcceptSubscriptionRequestOutput;
 
 mod _accept_subscription_request_input;
 

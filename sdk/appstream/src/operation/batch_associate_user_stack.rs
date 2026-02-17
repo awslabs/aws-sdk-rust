@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_associate_us
     }
 }
 
-pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stack_output::BatchAssociateUserStackOutput;
-
 pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stack_input::BatchAssociateUserStackInput;
+
+pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stack_output::BatchAssociateUserStackOutput;
 
 mod _batch_associate_user_stack_input;
 

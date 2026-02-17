@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_dns_answer::T
     }
 }
 
-pub use crate::operation::test_dns_answer::_test_dns_answer_output::TestDnsAnswerOutput;
-
 pub use crate::operation::test_dns_answer::_test_dns_answer_input::TestDnsAnswerInput;
+
+pub use crate::operation::test_dns_answer::_test_dns_answer_output::TestDnsAnswerOutput;
 
 mod _test_dns_answer_input;
 

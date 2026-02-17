@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_bucket_r
     }
 }
 
-pub use crate::operation::put_table_bucket_replication::_put_table_bucket_replication_output::PutTableBucketReplicationOutput;
-
 pub use crate::operation::put_table_bucket_replication::_put_table_bucket_replication_input::PutTableBucketReplicationInput;
+
+pub use crate::operation::put_table_bucket_replication::_put_table_bucket_replication_output::PutTableBucketReplicationOutput;
 
 mod _put_table_bucket_replication_input;
 

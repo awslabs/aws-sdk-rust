@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_contact::Ca
     }
 }
 
-pub use crate::operation::cancel_contact::_cancel_contact_output::CancelContactOutput;
-
 pub use crate::operation::cancel_contact::_cancel_contact_input::CancelContactInput;
+
+pub use crate::operation::cancel_contact::_cancel_contact_output::CancelContactOutput;
 
 mod _cancel_contact_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_aggregated_ut
     }
 }
 
-pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterances_output::ListAggregatedUtterancesOutput;
-
 pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterances_input::ListAggregatedUtterancesInput;
+
+pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterances_output::ListAggregatedUtterancesOutput;
 
 mod _list_aggregated_utterances_input;
 

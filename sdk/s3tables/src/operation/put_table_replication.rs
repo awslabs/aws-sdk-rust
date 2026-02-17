@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_replicat
     }
 }
 
-pub use crate::operation::put_table_replication::_put_table_replication_output::PutTableReplicationOutput;
-
 pub use crate::operation::put_table_replication::_put_table_replication_input::PutTableReplicationInput;
+
+pub use crate::operation::put_table_replication::_put_table_replication_output::PutTableReplicationOutput;
 
 mod _put_table_replication_input;
 

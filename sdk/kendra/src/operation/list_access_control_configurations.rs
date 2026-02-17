@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_contro
     }
 }
 
-pub use crate::operation::list_access_control_configurations::_list_access_control_configurations_output::ListAccessControlConfigurationsOutput;
-
 pub use crate::operation::list_access_control_configurations::_list_access_control_configurations_input::ListAccessControlConfigurationsInput;
+
+pub use crate::operation::list_access_control_configurations::_list_access_control_configurations_output::ListAccessControlConfigurationsOutput;
 
 mod _list_access_control_configurations_input;
 

@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dev_environme
     }
 }
 
-pub use crate::operation::list_dev_environment_sessions::_list_dev_environment_sessions_output::ListDevEnvironmentSessionsOutput;
-
 pub use crate::operation::list_dev_environment_sessions::_list_dev_environment_sessions_input::ListDevEnvironmentSessionsInput;
+
+pub use crate::operation::list_dev_environment_sessions::_list_dev_environment_sessions_output::ListDevEnvironmentSessionsOutput;
 
 mod _list_dev_environment_sessions_input;
 

@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_import
     }
 }
 
-pub use crate::operation::get_segment_import_jobs::_get_segment_import_jobs_output::GetSegmentImportJobsOutput;
-
 pub use crate::operation::get_segment_import_jobs::_get_segment_import_jobs_input::GetSegmentImportJobsInput;
+
+pub use crate::operation::get_segment_import_jobs::_get_segment_import_jobs_output::GetSegmentImportJobsOutput;
 
 mod _get_segment_import_jobs_input;
 

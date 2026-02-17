@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_impor
     }
 }
 
-pub use crate::operation::batch_delete_import_data::_batch_delete_import_data_output::BatchDeleteImportDataOutput;
-
 pub use crate::operation::batch_delete_import_data::_batch_delete_import_data_input::BatchDeleteImportDataInput;
+
+pub use crate::operation::batch_delete_import_data::_batch_delete_import_data_output::BatchDeleteImportDataOutput;
 
 mod _batch_delete_import_data_input;
 

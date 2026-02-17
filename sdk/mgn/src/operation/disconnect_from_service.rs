@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disconnect_from_se
     }
 }
 
-pub use crate::operation::disconnect_from_service::_disconnect_from_service_output::DisconnectFromServiceOutput;
-
 pub use crate::operation::disconnect_from_service::_disconnect_from_service_input::DisconnectFromServiceInput;
+
+pub use crate::operation::disconnect_from_service::_disconnect_from_service_output::DisconnectFromServiceOutput;
 
 mod _disconnect_from_service_input;
 

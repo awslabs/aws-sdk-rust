@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resolver::C
     }
 }
 
-pub use crate::operation::create_resolver::_create_resolver_output::CreateResolverOutput;
-
 pub use crate::operation::create_resolver::_create_resolver_input::CreateResolverInput;
+
+pub use crate::operation::create_resolver::_create_resolver_output::CreateResolverOutput;
 
 mod _create_resolver_input;
 

@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_asset_revis
     }
 }
 
-pub use crate::operation::create_asset_revision::_create_asset_revision_output::CreateAssetRevisionOutput;
-
 pub use crate::operation::create_asset_revision::_create_asset_revision_input::CreateAssetRevisionInput;
+
+pub use crate::operation::create_asset_revision::_create_asset_revision_output::CreateAssetRevisionOutput;
 
 mod _create_asset_revision_input;
 

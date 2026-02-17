@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_medical_voc
     }
 }
 
-pub use crate::operation::update_medical_vocabulary::_update_medical_vocabulary_output::UpdateMedicalVocabularyOutput;
-
 pub use crate::operation::update_medical_vocabulary::_update_medical_vocabulary_input::UpdateMedicalVocabularyInput;
+
+pub use crate::operation::update_medical_vocabulary::_update_medical_vocabulary_output::UpdateMedicalVocabularyOutput;
 
 mod _update_medical_vocabulary_input;
 

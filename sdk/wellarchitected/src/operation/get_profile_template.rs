@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_templa
     }
 }
 
-pub use crate::operation::get_profile_template::_get_profile_template_output::GetProfileTemplateOutput;
-
 pub use crate::operation::get_profile_template::_get_profile_template_input::GetProfileTemplateInput;
+
+pub use crate::operation::get_profile_template::_get_profile_template_output::GetProfileTemplateOutput;
 
 mod _get_profile_template_input;
 

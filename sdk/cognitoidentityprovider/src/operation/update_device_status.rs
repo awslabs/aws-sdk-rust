@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_device_stat
     }
 }
 
-pub use crate::operation::update_device_status::_update_device_status_output::UpdateDeviceStatusOutput;
-
 pub use crate::operation::update_device_status::_update_device_status_input::UpdateDeviceStatusInput;
+
+pub use crate::operation::update_device_status::_update_device_status_output::UpdateDeviceStatusOutput;
 
 mod _update_device_status_input;
 

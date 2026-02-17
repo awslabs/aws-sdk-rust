@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_read_sets::Li
     }
 }
 
-pub use crate::operation::list_read_sets::_list_read_sets_output::ListReadSetsOutput;
-
 pub use crate::operation::list_read_sets::_list_read_sets_input::ListReadSetsInput;
+
+pub use crate::operation::list_read_sets::_list_read_sets_output::ListReadSetsOutput;
 
 mod _list_read_sets_input;
 

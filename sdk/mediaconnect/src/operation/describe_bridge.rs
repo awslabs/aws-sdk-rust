@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bridge::D
     }
 }
 
-pub use crate::operation::describe_bridge::_describe_bridge_output::DescribeBridgeOutput;
-
 pub use crate::operation::describe_bridge::_describe_bridge_input::DescribeBridgeInput;
+
+pub use crate::operation::describe_bridge::_describe_bridge_output::DescribeBridgeOutput;
 
 mod _describe_bridge_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_template::GetT
     }
 }
 
-pub use crate::operation::get_template::_get_template_output::GetTemplateOutput;
-
 pub use crate::operation::get_template::_get_template_input::GetTemplateInput;
+
+pub use crate::operation::get_template::_get_template_output::GetTemplateOutput;
 
 mod _get_template_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_ebs_encryp
     }
 }
 
-pub use crate::operation::disable_ebs_encryption_by_default::_disable_ebs_encryption_by_default_output::DisableEbsEncryptionByDefaultOutput;
-
 pub use crate::operation::disable_ebs_encryption_by_default::_disable_ebs_encryption_by_default_input::DisableEbsEncryptionByDefaultInput;
+
+pub use crate::operation::disable_ebs_encryption_by_default::_disable_ebs_encryption_by_default_output::DisableEbsEncryptionByDefaultOutput;
 
 mod _disable_ebs_encryption_by_default_input;
 

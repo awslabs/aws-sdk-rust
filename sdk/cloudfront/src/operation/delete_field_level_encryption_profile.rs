@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_field_level
     }
 }
 
-pub use crate::operation::delete_field_level_encryption_profile::_delete_field_level_encryption_profile_output::DeleteFieldLevelEncryptionProfileOutput;
-
 pub use crate::operation::delete_field_level_encryption_profile::_delete_field_level_encryption_profile_input::DeleteFieldLevelEncryptionProfileInput;
+
+pub use crate::operation::delete_field_level_encryption_profile::_delete_field_level_encryption_profile_output::DeleteFieldLevelEncryptionProfileOutput;
 
 mod _delete_field_level_encryption_profile_input;
 

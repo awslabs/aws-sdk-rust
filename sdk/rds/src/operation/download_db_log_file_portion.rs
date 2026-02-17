@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::download_db_log_fi
     }
 }
 
-pub use crate::operation::download_db_log_file_portion::_download_db_log_file_portion_output::DownloadDbLogFilePortionOutput;
-
 pub use crate::operation::download_db_log_file_portion::_download_db_log_file_portion_input::DownloadDbLogFilePortionInput;
+
+pub use crate::operation::download_db_log_file_portion::_download_db_log_file_portion_output::DownloadDbLogFilePortionOutput;
 
 mod _download_db_log_file_portion_input;
 

@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_fleet
     }
 }
 
-pub use crate::operation::update_queue_fleet_association::_update_queue_fleet_association_output::UpdateQueueFleetAssociationOutput;
-
 pub use crate::operation::update_queue_fleet_association::_update_queue_fleet_association_input::UpdateQueueFleetAssociationInput;
+
+pub use crate::operation::update_queue_fleet_association::_update_queue_fleet_association_output::UpdateQueueFleetAssociationOutput;
 
 mod _update_queue_fleet_association_input;
 

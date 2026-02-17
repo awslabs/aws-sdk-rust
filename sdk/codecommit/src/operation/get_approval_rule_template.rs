@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_approval_rule_
     }
 }
 
-pub use crate::operation::get_approval_rule_template::_get_approval_rule_template_output::GetApprovalRuleTemplateOutput;
-
 pub use crate::operation::get_approval_rule_template::_get_approval_rule_template_input::GetApprovalRuleTemplateInput;
+
+pub use crate::operation::get_approval_rule_template::_get_approval_rule_template_output::GetApprovalRuleTemplateOutput;
 
 mod _get_approval_rule_template_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_views
     }
 }
 
-pub use crate::operation::list_service_views::_list_service_views_output::ListServiceViewsOutput;
-
 pub use crate::operation::list_service_views::_list_service_views_input::ListServiceViewsInput;
+
+pub use crate::operation::list_service_views::_list_service_views_output::ListServiceViewsOutput;
 
 mod _list_service_views_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_membership:
     }
 }
 
-pub use crate::operation::update_membership::_update_membership_output::UpdateMembershipOutput;
-
 pub use crate::operation::update_membership::_update_membership_input::UpdateMembershipInput;
+
+pub use crate::operation::update_membership::_update_membership_output::UpdateMembershipOutput;
 
 mod _update_membership_input;
 

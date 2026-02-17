@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_backup_v
     }
 }
 
-pub use crate::operation::associate_backup_vault_mpa_approval_team::_associate_backup_vault_mpa_approval_team_output::AssociateBackupVaultMpaApprovalTeamOutput;
-
 pub use crate::operation::associate_backup_vault_mpa_approval_team::_associate_backup_vault_mpa_approval_team_input::AssociateBackupVaultMpaApprovalTeamInput;
+
+pub use crate::operation::associate_backup_vault_mpa_approval_team::_associate_backup_vault_mpa_approval_team_output::AssociateBackupVaultMpaApprovalTeamOutput;
 
 mod _associate_backup_vault_mpa_approval_team_input;
 

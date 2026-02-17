@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_default_q_b
     }
 }
 
-pub use crate::operation::update_default_q_business_application::_update_default_q_business_application_output::UpdateDefaultQBusinessApplicationOutput;
-
 pub use crate::operation::update_default_q_business_application::_update_default_q_business_application_input::UpdateDefaultQBusinessApplicationInput;
+
+pub use crate::operation::update_default_q_business_application::_update_default_q_business_application_output::UpdateDefaultQBusinessApplicationOutput;
 
 mod _update_default_q_business_application_input;
 

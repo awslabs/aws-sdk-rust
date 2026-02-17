@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_edge_conf
     }
 }
 
-pub use crate::operation::describe_edge_configuration::_describe_edge_configuration_output::DescribeEdgeConfigurationOutput;
-
 pub use crate::operation::describe_edge_configuration::_describe_edge_configuration_input::DescribeEdgeConfigurationInput;
+
+pub use crate::operation::describe_edge_configuration::_describe_edge_configuration_output::DescribeEdgeConfigurationOutput;
 
 mod _describe_edge_configuration_input;
 

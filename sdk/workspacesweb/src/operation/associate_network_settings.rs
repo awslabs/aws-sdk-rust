@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_network_
     }
 }
 
-pub use crate::operation::associate_network_settings::_associate_network_settings_output::AssociateNetworkSettingsOutput;
-
 pub use crate::operation::associate_network_settings::_associate_network_settings_input::AssociateNetworkSettingsInput;
+
+pub use crate::operation::associate_network_settings::_associate_network_settings_output::AssociateNetworkSettingsOutput;
 
 mod _associate_network_settings_input;
 

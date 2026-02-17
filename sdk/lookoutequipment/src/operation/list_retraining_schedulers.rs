@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_retraining_sc
     }
 }
 
-pub use crate::operation::list_retraining_schedulers::_list_retraining_schedulers_output::ListRetrainingSchedulersOutput;
-
 pub use crate::operation::list_retraining_schedulers::_list_retraining_schedulers_input::ListRetrainingSchedulersInput;
+
+pub use crate::operation::list_retraining_schedulers::_list_retraining_schedulers_output::ListRetrainingSchedulersOutput;
 
 mod _list_retraining_schedulers_input;
 

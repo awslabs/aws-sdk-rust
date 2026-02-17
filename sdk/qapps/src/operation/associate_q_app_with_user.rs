@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_q_app_wi
     }
 }
 
-pub use crate::operation::associate_q_app_with_user::_associate_q_app_with_user_output::AssociateQAppWithUserOutput;
-
 pub use crate::operation::associate_q_app_with_user::_associate_q_app_with_user_input::AssociateQAppWithUserInput;
+
+pub use crate::operation::associate_q_app_with_user::_associate_q_app_with_user_output::AssociateQAppWithUserOutput;
 
 mod _associate_q_app_with_user_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_key_usage::S
     }
 }
 
-pub use crate::operation::start_key_usage::_start_key_usage_output::StartKeyUsageOutput;
-
 pub use crate::operation::start_key_usage::_start_key_usage_input::StartKeyUsageInput;
+
+pub use crate::operation::start_key_usage::_start_key_usage_output::StartKeyUsageOutput;
 
 mod _start_key_usage_input;
 

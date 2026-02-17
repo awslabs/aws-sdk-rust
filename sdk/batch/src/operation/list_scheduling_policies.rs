@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scheduling_po
     }
 }
 
-pub use crate::operation::list_scheduling_policies::_list_scheduling_policies_output::ListSchedulingPoliciesOutput;
-
 pub use crate::operation::list_scheduling_policies::_list_scheduling_policies_input::ListSchedulingPoliciesInput;
+
+pub use crate::operation::list_scheduling_policies::_list_scheduling_policies_output::ListSchedulingPoliciesOutput;
 
 mod _list_scheduling_policies_input;
 

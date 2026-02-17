@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_notification_
     }
 }
 
-pub use crate::operation::list_notification_events::_list_notification_events_output::ListNotificationEventsOutput;
-
 pub use crate::operation::list_notification_events::_list_notification_events_input::ListNotificationEventsInput;
+
+pub use crate::operation::list_notification_events::_list_notification_events_output::ListNotificationEventsOutput;
 
 mod _list_notification_events_input;
 

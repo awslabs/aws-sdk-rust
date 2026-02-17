@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_text::PostTex
     }
 }
 
-pub use crate::operation::post_text::_post_text_output::PostTextOutput;
-
 pub use crate::operation::post_text::_post_text_input::PostTextInput;
+
+pub use crate::operation::post_text::_post_text_output::PostTextOutput;
 
 mod _post_text_input;
 

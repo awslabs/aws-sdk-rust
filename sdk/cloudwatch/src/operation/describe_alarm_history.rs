@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_alarm_his
     }
 }
 
-pub use crate::operation::describe_alarm_history::_describe_alarm_history_output::DescribeAlarmHistoryOutput;
-
 pub use crate::operation::describe_alarm_history::_describe_alarm_history_input::DescribeAlarmHistoryInput;
+
+pub use crate::operation::describe_alarm_history::_describe_alarm_history_output::DescribeAlarmHistoryOutput;
 
 mod _describe_alarm_history_input;
 

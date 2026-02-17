@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resource_
     }
 }
 
-pub use crate::operation::describe_resource_collection_health::_describe_resource_collection_health_output::DescribeResourceCollectionHealthOutput;
-
 pub use crate::operation::describe_resource_collection_health::_describe_resource_collection_health_input::DescribeResourceCollectionHealthInput;
+
+pub use crate::operation::describe_resource_collection_health::_describe_resource_collection_health_output::DescribeResourceCollectionHealthOutput;
 
 mod _describe_resource_collection_health_input;
 

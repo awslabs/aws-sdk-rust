@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_spot_instan
     }
 }
 
-pub use crate::operation::cancel_spot_instance_requests::_cancel_spot_instance_requests_output::CancelSpotInstanceRequestsOutput;
-
 pub use crate::operation::cancel_spot_instance_requests::_cancel_spot_instance_requests_input::CancelSpotInstanceRequestsInput;
+
+pub use crate::operation::cancel_spot_instance_requests::_cancel_spot_instance_requests_output::CancelSpotInstanceRequestsOutput;
 
 mod _cancel_spot_instance_requests_input;
 

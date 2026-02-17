@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cluster_nodes
     }
 }
 
-pub use crate::operation::list_cluster_nodes::_list_cluster_nodes_output::ListClusterNodesOutput;
-
 pub use crate::operation::list_cluster_nodes::_list_cluster_nodes_input::ListClusterNodesInput;
+
+pub use crate::operation::list_cluster_nodes::_list_cluster_nodes_output::ListClusterNodesOutput;
 
 mod _list_cluster_nodes_input;
 

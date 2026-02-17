@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_type::D
     }
 }
 
-pub use crate::operation::deactivate_type::_deactivate_type_output::DeactivateTypeOutput;
-
 pub use crate::operation::deactivate_type::_deactivate_type_input::DeactivateTypeInput;
+
+pub use crate::operation::deactivate_type::_deactivate_type_output::DeactivateTypeOutput;
 
 mod _deactivate_type_input;
 

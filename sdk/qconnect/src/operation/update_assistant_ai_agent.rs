@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_assistant_a
     }
 }
 
-pub use crate::operation::update_assistant_ai_agent::_update_assistant_ai_agent_output::UpdateAssistantAiAgentOutput;
-
 pub use crate::operation::update_assistant_ai_agent::_update_assistant_ai_agent_input::UpdateAssistantAiAgentInput;
+
+pub use crate::operation::update_assistant_ai_agent::_update_assistant_ai_agent_output::UpdateAssistantAiAgentOutput;
 
 mod _update_assistant_ai_agent_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resources_summ
     }
 }
 
-pub use crate::operation::get_resources_summary::_get_resources_summary_output::GetResourcesSummaryOutput;
-
 pub use crate::operation::get_resources_summary::_get_resources_summary_input::GetResourcesSummaryInput;
+
+pub use crate::operation::get_resources_summary::_get_resources_summary_output::GetResourcesSummaryOutput;
 
 mod _get_resources_summary_input;
 

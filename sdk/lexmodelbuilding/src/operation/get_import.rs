@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_import::GetImp
     }
 }
 
-pub use crate::operation::get_import::_get_import_output::GetImportOutput;
-
 pub use crate::operation::get_import::_get_import_input::GetImportInput;
+
+pub use crate::operation::get_import::_get_import_output::GetImportOutput;
 
 mod _get_import_input;
 

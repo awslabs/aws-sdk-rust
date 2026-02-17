@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_voice_connecto
     }
 }
 
-pub use crate::operation::put_voice_connector_termination::_put_voice_connector_termination_output::PutVoiceConnectorTerminationOutput;
-
 pub use crate::operation::put_voice_connector_termination::_put_voice_connector_termination_input::PutVoiceConnectorTerminationInput;
+
+pub use crate::operation::put_voice_connector_termination::_put_voice_connector_termination_output::PutVoiceConnectorTerminationOutput;
 
 mod _put_voice_connector_termination_input;
 

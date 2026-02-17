@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_slot::Creat
     }
 }
 
-pub use crate::operation::create_slot::_create_slot_output::CreateSlotOutput;
-
 pub use crate::operation::create_slot::_create_slot_input::CreateSlotInput;
+
+pub use crate::operation::create_slot::_create_slot_output::CreateSlotOutput;
 
 mod _create_slot_input;
 

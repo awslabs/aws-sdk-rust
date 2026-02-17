@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_broker::Reb
     }
 }
 
-pub use crate::operation::reboot_broker::_reboot_broker_output::RebootBrokerOutput;
-
 pub use crate::operation::reboot_broker::_reboot_broker_input::RebootBrokerInput;
+
+pub use crate::operation::reboot_broker::_reboot_broker_output::RebootBrokerOutput;
 
 mod _reboot_broker_input;
 

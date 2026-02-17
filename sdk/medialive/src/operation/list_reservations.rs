@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_reservations:
     }
 }
 
-pub use crate::operation::list_reservations::_list_reservations_output::ListReservationsOutput;
-
 pub use crate::operation::list_reservations::_list_reservations_input::ListReservationsInput;
+
+pub use crate::operation::list_reservations::_list_reservations_output::ListReservationsOutput;
 
 mod _list_reservations_input;
 

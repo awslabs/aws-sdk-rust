@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_mfa_device:
     }
 }
 
-pub use crate::operation::enable_mfa_device::_enable_mfa_device_output::EnableMfaDeviceOutput;
-
 pub use crate::operation::enable_mfa_device::_enable_mfa_device_input::EnableMfaDeviceInput;
+
+pub use crate::operation::enable_mfa_device::_enable_mfa_device_output::EnableMfaDeviceOutput;
 
 mod _enable_mfa_device_input;
 

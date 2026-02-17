@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cis_scan_conf
     }
 }
 
-pub use crate::operation::list_cis_scan_configurations::_list_cis_scan_configurations_output::ListCisScanConfigurationsOutput;
-
 pub use crate::operation::list_cis_scan_configurations::_list_cis_scan_configurations_input::ListCisScanConfigurationsInput;
+
+pub use crate::operation::list_cis_scan_configurations::_list_cis_scan_configurations_output::ListCisScanConfigurationsOutput;
 
 mod _list_cis_scan_configurations_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_filter::Upd
     }
 }
 
-pub use crate::operation::update_filter::_update_filter_output::UpdateFilterOutput;
-
 pub use crate::operation::update_filter::_update_filter_input::UpdateFilterInput;
+
+pub use crate::operation::update_filter::_update_filter_output::UpdateFilterOutput;
 
 mod _update_filter_input;
 

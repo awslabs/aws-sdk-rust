@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_units_
     }
 }
 
-pub use crate::operation::list_domain_units_for_parent::_list_domain_units_for_parent_output::ListDomainUnitsForParentOutput;
-
 pub use crate::operation::list_domain_units_for_parent::_list_domain_units_for_parent_input::ListDomainUnitsForParentInput;
+
+pub use crate::operation::list_domain_units_for_parent::_list_domain_units_for_parent_output::ListDomainUnitsForParentOutput;
 
 mod _list_domain_units_for_parent_input;
 

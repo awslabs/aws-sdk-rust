@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pod_identity_
     }
 }
 
-pub use crate::operation::list_pod_identity_associations::_list_pod_identity_associations_output::ListPodIdentityAssociationsOutput;
-
 pub use crate::operation::list_pod_identity_associations::_list_pod_identity_associations_input::ListPodIdentityAssociationsInput;
+
+pub use crate::operation::list_pod_identity_associations::_list_pod_identity_associations_output::ListPodIdentityAssociationsOutput;
 
 mod _list_pod_identity_associations_input;
 

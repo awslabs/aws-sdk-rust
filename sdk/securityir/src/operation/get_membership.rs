@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_membership::Ge
     }
 }
 
-pub use crate::operation::get_membership::_get_membership_output::GetMembershipOutput;
-
 pub use crate::operation::get_membership::_get_membership_input::GetMembershipInput;
+
+pub use crate::operation::get_membership::_get_membership_output::GetMembershipOutput;
 
 mod _get_membership_input;
 

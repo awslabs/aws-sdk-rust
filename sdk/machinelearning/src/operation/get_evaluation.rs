@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evaluation::Ge
     }
 }
 
-pub use crate::operation::get_evaluation::_get_evaluation_output::GetEvaluationOutput;
-
 pub use crate::operation::get_evaluation::_get_evaluation_input::GetEvaluationInput;
+
+pub use crate::operation::get_evaluation::_get_evaluation_output::GetEvaluationOutput;
 
 mod _get_evaluation_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_ssh_public_
     }
 }
 
-pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_output::ImportSshPublicKeyOutput;
-
 pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_input::ImportSshPublicKeyInput;
+
+pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_output::ImportSshPublicKeyOutput;
 
 mod _import_ssh_public_key_input;
 

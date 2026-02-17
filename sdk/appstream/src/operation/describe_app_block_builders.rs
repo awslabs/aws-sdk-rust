@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_block
     }
 }
 
-pub use crate::operation::describe_app_block_builders::_describe_app_block_builders_output::DescribeAppBlockBuildersOutput;
-
 pub use crate::operation::describe_app_block_builders::_describe_app_block_builders_input::DescribeAppBlockBuildersInput;
+
+pub use crate::operation::describe_app_block_builders::_describe_app_block_builders_output::DescribeAppBlockBuildersOutput;
 
 mod _describe_app_block_builders_input;
 

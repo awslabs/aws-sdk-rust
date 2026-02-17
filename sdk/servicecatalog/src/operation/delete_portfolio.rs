@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_portfolio::
     }
 }
 
-pub use crate::operation::delete_portfolio::_delete_portfolio_output::DeletePortfolioOutput;
-
 pub use crate::operation::delete_portfolio::_delete_portfolio_input::DeletePortfolioInput;
+
+pub use crate::operation::delete_portfolio::_delete_portfolio_output::DeletePortfolioOutput;
 
 mod _delete_portfolio_input;
 

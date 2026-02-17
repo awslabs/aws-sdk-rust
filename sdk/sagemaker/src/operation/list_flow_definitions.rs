@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flow_definiti
     }
 }
 
-pub use crate::operation::list_flow_definitions::_list_flow_definitions_output::ListFlowDefinitionsOutput;
-
 pub use crate::operation::list_flow_definitions::_list_flow_definitions_input::ListFlowDefinitionsInput;
+
+pub use crate::operation::list_flow_definitions::_list_flow_definitions_output::ListFlowDefinitionsOutput;
 
 mod _list_flow_definitions_input;
 

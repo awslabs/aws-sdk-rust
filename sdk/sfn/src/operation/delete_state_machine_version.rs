@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_state_machi
     }
 }
 
-pub use crate::operation::delete_state_machine_version::_delete_state_machine_version_output::DeleteStateMachineVersionOutput;
-
 pub use crate::operation::delete_state_machine_version::_delete_state_machine_version_input::DeleteStateMachineVersionInput;
+
+pub use crate::operation::delete_state_machine_version::_delete_state_machine_version_output::DeleteStateMachineVersionOutput;
 
 mod _delete_state_machine_version_input;
 

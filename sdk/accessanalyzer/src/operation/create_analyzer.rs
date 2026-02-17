@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_analyzer::C
     }
 }
 
-pub use crate::operation::create_analyzer::_create_analyzer_output::CreateAnalyzerOutput;
-
 pub use crate::operation::create_analyzer::_create_analyzer_input::CreateAnalyzerInput;
+
+pub use crate::operation::create_analyzer::_create_analyzer_output::CreateAnalyzerOutput;
 
 mod _create_analyzer_input;
 

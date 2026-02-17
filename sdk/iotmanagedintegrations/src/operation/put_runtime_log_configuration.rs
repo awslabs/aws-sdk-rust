@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_runtime_log_co
     }
 }
 
-pub use crate::operation::put_runtime_log_configuration::_put_runtime_log_configuration_output::PutRuntimeLogConfigurationOutput;
-
 pub use crate::operation::put_runtime_log_configuration::_put_runtime_log_configuration_input::PutRuntimeLogConfigurationInput;
+
+pub use crate::operation::put_runtime_log_configuration::_put_runtime_log_configuration_output::PutRuntimeLogConfigurationOutput;
 
 mod _put_runtime_log_configuration_input;
 

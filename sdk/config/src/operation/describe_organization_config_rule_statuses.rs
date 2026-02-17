@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_organization_config_rule_statuses::_describe_organization_config_rule_statuses_output::DescribeOrganizationConfigRuleStatusesOutput;
-
 pub use crate::operation::describe_organization_config_rule_statuses::_describe_organization_config_rule_statuses_input::DescribeOrganizationConfigRuleStatusesInput;
+
+pub use crate::operation::describe_organization_config_rule_statuses::_describe_organization_config_rule_statuses_output::DescribeOrganizationConfigRuleStatusesOutput;
 
 mod _describe_organization_config_rule_statuses_input;
 

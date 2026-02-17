@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ipam_pool::
     }
 }
 
-pub use crate::operation::create_ipam_pool::_create_ipam_pool_output::CreateIpamPoolOutput;
-
 pub use crate::operation::create_ipam_pool::_create_ipam_pool_input::CreateIpamPoolInput;
+
+pub use crate::operation::create_ipam_pool::_create_ipam_pool_output::CreateIpamPoolOutput;
 
 mod _create_ipam_pool_input;
 

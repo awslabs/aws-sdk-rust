@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_tags::Li
     }
 }
 
-pub use crate::operation::list_user_tags::_list_user_tags_output::ListUserTagsOutput;
-
 pub use crate::operation::list_user_tags::_list_user_tags_input::ListUserTagsInput;
+
+pub use crate::operation::list_user_tags::_list_user_tags_output::ListUserTagsOutput;
 
 mod _list_user_tags_input;
 

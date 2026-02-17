@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::close_instance_pub
     }
 }
 
-pub use crate::operation::close_instance_public_ports::_close_instance_public_ports_output::CloseInstancePublicPortsOutput;
-
 pub use crate::operation::close_instance_public_ports::_close_instance_public_ports_input::CloseInstancePublicPortsInput;
+
+pub use crate::operation::close_instance_public_ports::_close_instance_public_ports_output::CloseInstancePublicPortsOutput;
 
 mod _close_instance_public_ports_input;
 

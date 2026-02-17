@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_standards
     }
 }
 
-pub use crate::operation::describe_standards::_describe_standards_output::DescribeStandardsOutput;
-
 pub use crate::operation::describe_standards::_describe_standards_input::DescribeStandardsInput;
+
+pub use crate::operation::describe_standards::_describe_standards_output::DescribeStandardsOutput;
 
 mod _describe_standards_input;
 

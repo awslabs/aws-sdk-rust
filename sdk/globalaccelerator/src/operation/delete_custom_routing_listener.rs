@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_rout
     }
 }
 
-pub use crate::operation::delete_custom_routing_listener::_delete_custom_routing_listener_output::DeleteCustomRoutingListenerOutput;
-
 pub use crate::operation::delete_custom_routing_listener::_delete_custom_routing_listener_input::DeleteCustomRoutingListenerInput;
+
+pub use crate::operation::delete_custom_routing_listener::_delete_custom_routing_listener_output::DeleteCustomRoutingListenerOutput;
 
 mod _delete_custom_routing_listener_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mail_domain::G
     }
 }
 
-pub use crate::operation::get_mail_domain::_get_mail_domain_output::GetMailDomainOutput;
-
 pub use crate::operation::get_mail_domain::_get_mail_domain_input::GetMailDomainInput;
+
+pub use crate::operation::get_mail_domain::_get_mail_domain_output::GetMailDomainOutput;
 
 mod _get_mail_domain_input;
 

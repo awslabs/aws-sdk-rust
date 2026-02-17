@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_task_status::S
     }
 }
 
-pub use crate::operation::set_task_status::_set_task_status_output::SetTaskStatusOutput;
-
 pub use crate::operation::set_task_status::_set_task_status_input::SetTaskStatusInput;
+
+pub use crate::operation::set_task_status::_set_task_status_output::SetTaskStatusOutput;
 
 mod _set_task_status_input;
 

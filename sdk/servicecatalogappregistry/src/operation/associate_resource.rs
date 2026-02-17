@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_resource
     }
 }
 
-pub use crate::operation::associate_resource::_associate_resource_output::AssociateResourceOutput;
-
 pub use crate::operation::associate_resource::_associate_resource_input::AssociateResourceInput;
+
+pub use crate::operation::associate_resource::_associate_resource_output::AssociateResourceOutput;
 
 mod _associate_resource_input;
 

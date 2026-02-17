@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_slack_use
     }
 }
 
-pub use crate::operation::describe_slack_user_identities::_describe_slack_user_identities_output::DescribeSlackUserIdentitiesOutput;
-
 pub use crate::operation::describe_slack_user_identities::_describe_slack_user_identities_input::DescribeSlackUserIdentitiesInput;
+
+pub use crate::operation::describe_slack_user_identities::_describe_slack_user_identities_output::DescribeSlackUserIdentitiesOutput;
 
 mod _describe_slack_user_identities_input;
 

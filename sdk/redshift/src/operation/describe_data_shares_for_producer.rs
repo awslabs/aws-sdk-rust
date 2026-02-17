@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_shar
     }
 }
 
-pub use crate::operation::describe_data_shares_for_producer::_describe_data_shares_for_producer_output::DescribeDataSharesForProducerOutput;
-
 pub use crate::operation::describe_data_shares_for_producer::_describe_data_shares_for_producer_input::DescribeDataSharesForProducerInput;
+
+pub use crate::operation::describe_data_shares_for_producer::_describe_data_shares_for_producer_output::DescribeDataSharesForProducerOutput;
 
 mod _describe_data_shares_for_producer_input;
 

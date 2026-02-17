@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_tabl
     }
 }
 
-pub use crate::operation::describe_data_table::_describe_data_table_output::DescribeDataTableOutput;
-
 pub use crate::operation::describe_data_table::_describe_data_table_input::DescribeDataTableInput;
+
+pub use crate::operation::describe_data_table::_describe_data_table_output::DescribeDataTableOutput;
 
 mod _describe_data_table_input;
 

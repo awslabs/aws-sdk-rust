@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_quick_sight_q_search_configuration::_describe_quick_sight_q_search_configuration_output::DescribeQuickSightQSearchConfigurationOutput;
-
 pub use crate::operation::describe_quick_sight_q_search_configuration::_describe_quick_sight_q_search_configuration_input::DescribeQuickSightQSearchConfigurationInput;
+
+pub use crate::operation::describe_quick_sight_q_search_configuration::_describe_quick_sight_q_search_configuration_output::DescribeQuickSightQSearchConfigurationOutput;
 
 mod _describe_quick_sight_q_search_configuration_input;
 

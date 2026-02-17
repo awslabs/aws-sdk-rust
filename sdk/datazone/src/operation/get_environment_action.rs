@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_environment_ac
     }
 }
 
-pub use crate::operation::get_environment_action::_get_environment_action_output::GetEnvironmentActionOutput;
-
 pub use crate::operation::get_environment_action::_get_environment_action_input::GetEnvironmentActionInput;
+
+pub use crate::operation::get_environment_action::_get_environment_action_output::GetEnvironmentActionOutput;
 
 mod _get_environment_action_input;
 

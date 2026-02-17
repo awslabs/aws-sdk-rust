@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_current_metric
     }
 }
 
-pub use crate::operation::get_current_metric_data::_get_current_metric_data_output::GetCurrentMetricDataOutput;
-
 pub use crate::operation::get_current_metric_data::_get_current_metric_data_input::GetCurrentMetricDataInput;
+
+pub use crate::operation::get_current_metric_data::_get_current_metric_data_output::GetCurrentMetricDataOutput;
 
 mod _get_current_metric_data_input;
 

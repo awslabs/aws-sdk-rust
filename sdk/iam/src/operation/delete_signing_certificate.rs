@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_signing_cer
     }
 }
 
-pub use crate::operation::delete_signing_certificate::_delete_signing_certificate_output::DeleteSigningCertificateOutput;
-
 pub use crate::operation::delete_signing_certificate::_delete_signing_certificate_input::DeleteSigningCertificateInput;
+
+pub use crate::operation::delete_signing_certificate::_delete_signing_certificate_output::DeleteSigningCertificateOutput;
 
 mod _delete_signing_certificate_input;
 

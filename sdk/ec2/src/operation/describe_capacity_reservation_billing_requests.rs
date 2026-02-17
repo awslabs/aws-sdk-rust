@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_capacity_reservation_billing_requests::_describe_capacity_reservation_billing_requests_output::DescribeCapacityReservationBillingRequestsOutput;
-
 pub use crate::operation::describe_capacity_reservation_billing_requests::_describe_capacity_reservation_billing_requests_input::DescribeCapacityReservationBillingRequestsInput;
+
+pub use crate::operation::describe_capacity_reservation_billing_requests::_describe_capacity_reservation_billing_requests_output::DescribeCapacityReservationBillingRequestsOutput;
 
 mod _describe_capacity_reservation_billing_requests_input;
 

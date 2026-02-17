@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workflow_step_
     }
 }
 
-pub use crate::operation::get_workflow_step_execution::_get_workflow_step_execution_output::GetWorkflowStepExecutionOutput;
-
 pub use crate::operation::get_workflow_step_execution::_get_workflow_step_execution_input::GetWorkflowStepExecutionInput;
+
+pub use crate::operation::get_workflow_step_execution::_get_workflow_step_execution_output::GetWorkflowStepExecutionOutput;
 
 mod _get_workflow_step_execution_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::cancel_data_quality_rule_recommendation_run::_cancel_data_quality_rule_recommendation_run_output::CancelDataQualityRuleRecommendationRunOutput;
-
 pub use crate::operation::cancel_data_quality_rule_recommendation_run::_cancel_data_quality_rule_recommendation_run_input::CancelDataQualityRuleRecommendationRunInput;
+
+pub use crate::operation::cancel_data_quality_rule_recommendation_run::_cancel_data_quality_rule_recommendation_run_output::CancelDataQualityRuleRecommendationRunOutput;
 
 mod _cancel_data_quality_rule_recommendation_run_input;
 

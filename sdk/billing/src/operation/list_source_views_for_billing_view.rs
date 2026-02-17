@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_source_views_
     }
 }
 
-pub use crate::operation::list_source_views_for_billing_view::_list_source_views_for_billing_view_output::ListSourceViewsForBillingViewOutput;
-
 pub use crate::operation::list_source_views_for_billing_view::_list_source_views_for_billing_view_input::ListSourceViewsForBillingViewInput;
+
+pub use crate::operation::list_source_views_for_billing_view::_list_source_views_for_billing_view_output::ListSourceViewsForBillingViewOutput;
 
 mod _list_source_views_for_billing_view_input;
 

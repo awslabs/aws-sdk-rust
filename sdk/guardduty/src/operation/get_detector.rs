@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_detector::GetD
     }
 }
 
-pub use crate::operation::get_detector::_get_detector_output::GetDetectorOutput;
-
 pub use crate::operation::get_detector::_get_detector_input::GetDetectorInput;
+
+pub use crate::operation::get_detector::_get_detector_output::GetDetectorOutput;
 
 mod _get_detector_input;
 

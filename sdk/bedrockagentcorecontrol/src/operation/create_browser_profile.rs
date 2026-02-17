@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_browser_pro
     }
 }
 
-pub use crate::operation::create_browser_profile::_create_browser_profile_output::CreateBrowserProfileOutput;
-
 pub use crate::operation::create_browser_profile::_create_browser_profile_input::CreateBrowserProfileInput;
+
+pub use crate::operation::create_browser_profile::_create_browser_profile_output::CreateBrowserProfileOutput;
 
 mod _create_browser_profile_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_presigned_u
     }
 }
 
-pub use crate::operation::create_presigned_url::_create_presigned_url_output::CreatePresignedUrlOutput;
-
 pub use crate::operation::create_presigned_url::_create_presigned_url_input::CreatePresignedUrlInput;
+
+pub use crate::operation::create_presigned_url::_create_presigned_url_output::CreatePresignedUrlOutput;
 
 mod _create_presigned_url_input;
 

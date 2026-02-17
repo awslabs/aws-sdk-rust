@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_procurement
     }
 }
 
-pub use crate::operation::delete_procurement_portal_preference::_delete_procurement_portal_preference_output::DeleteProcurementPortalPreferenceOutput;
-
 pub use crate::operation::delete_procurement_portal_preference::_delete_procurement_portal_preference_input::DeleteProcurementPortalPreferenceInput;
+
+pub use crate::operation::delete_procurement_portal_preference::_delete_procurement_portal_preference_output::DeleteProcurementPortalPreferenceOutput;
 
 mod _delete_procurement_portal_preference_input;
 

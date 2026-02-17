@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_fleet::Modi
     }
 }
 
-pub use crate::operation::modify_fleet::_modify_fleet_output::ModifyFleetOutput;
-
 pub use crate::operation::modify_fleet::_modify_fleet_input::ModifyFleetInput;
+
+pub use crate::operation::modify_fleet::_modify_fleet_output::ModifyFleetOutput;
 
 mod _modify_fleet_input;
 

@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_job_run::
     }
 }
 
-pub use crate::operation::describe_job_run::_describe_job_run_output::DescribeJobRunOutput;
-
 pub use crate::operation::describe_job_run::_describe_job_run_input::DescribeJobRunInput;
+
+pub use crate::operation::describe_job_run::_describe_job_run_output::DescribeJobRunOutput;
 
 mod _describe_job_run_input;
 

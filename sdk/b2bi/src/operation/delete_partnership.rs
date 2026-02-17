@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_partnership
     }
 }
 
-pub use crate::operation::delete_partnership::_delete_partnership_output::DeletePartnershipOutput;
-
 pub use crate::operation::delete_partnership::_delete_partnership_input::DeletePartnershipInput;
+
+pub use crate::operation::delete_partnership::_delete_partnership_output::DeletePartnershipOutput;
 
 mod _delete_partnership_input;
 

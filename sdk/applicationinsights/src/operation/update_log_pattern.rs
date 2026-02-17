@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_log_pattern
     }
 }
 
-pub use crate::operation::update_log_pattern::_update_log_pattern_output::UpdateLogPatternOutput;
-
 pub use crate::operation::update_log_pattern::_update_log_pattern_input::UpdateLogPatternInput;
+
+pub use crate::operation::update_log_pattern::_update_log_pattern_output::UpdateLogPatternOutput;
 
 mod _update_log_pattern_input;
 

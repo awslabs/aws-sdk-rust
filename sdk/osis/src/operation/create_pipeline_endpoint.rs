@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pipeline_en
     }
 }
 
-pub use crate::operation::create_pipeline_endpoint::_create_pipeline_endpoint_output::CreatePipelineEndpointOutput;
-
 pub use crate::operation::create_pipeline_endpoint::_create_pipeline_endpoint_input::CreatePipelineEndpointInput;
+
+pub use crate::operation::create_pipeline_endpoint::_create_pipeline_endpoint_output::CreatePipelineEndpointOutput;
 
 mod _create_pipeline_endpoint_input;
 

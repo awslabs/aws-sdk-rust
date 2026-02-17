@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_informa
     }
 }
 
-pub use crate::operation::get_object_information::_get_object_information_output::GetObjectInformationOutput;
-
 pub use crate::operation::get_object_information::_get_object_information_input::GetObjectInformationInput;
+
+pub use crate::operation::get_object_information::_get_object_information_output::GetObjectInformationOutput;
 
 mod _get_object_information_input;
 

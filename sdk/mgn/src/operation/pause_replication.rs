@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::pause_replication:
     }
 }
 
-pub use crate::operation::pause_replication::_pause_replication_output::PauseReplicationOutput;
-
 pub use crate::operation::pause_replication::_pause_replication_input::PauseReplicationInput;
+
+pub use crate::operation::pause_replication::_pause_replication_output::PauseReplicationOutput;
 
 mod _pause_replication_input;
 

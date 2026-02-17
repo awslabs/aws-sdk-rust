@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configurati
     }
 }
 
-pub use crate::operation::update_configuration_profile::_update_configuration_profile_output::UpdateConfigurationProfileOutput;
-
 pub use crate::operation::update_configuration_profile::_update_configuration_profile_input::UpdateConfigurationProfileInput;
+
+pub use crate::operation::update_configuration_profile::_update_configuration_profile_output::UpdateConfigurationProfileOutput;
 
 mod _update_configuration_profile_input;
 

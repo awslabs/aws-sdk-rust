@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_alarm::PutAlar
     }
 }
 
-pub use crate::operation::put_alarm::_put_alarm_output::PutAlarmOutput;
-
 pub use crate::operation::put_alarm::_put_alarm_input::PutAlarmInput;
+
+pub use crate::operation::put_alarm::_put_alarm_output::PutAlarmOutput;
 
 mod _put_alarm_input;
 

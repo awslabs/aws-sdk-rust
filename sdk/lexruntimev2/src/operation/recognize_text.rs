@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::recognize_text::Re
     }
 }
 
-pub use crate::operation::recognize_text::_recognize_text_output::RecognizeTextOutput;
-
 pub use crate::operation::recognize_text::_recognize_text_input::RecognizeTextInput;
+
+pub use crate::operation::recognize_text::_recognize_text_output::RecognizeTextOutput;
 
 mod _recognize_text_input;
 

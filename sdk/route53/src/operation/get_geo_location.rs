@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_geo_location::
     }
 }
 
-pub use crate::operation::get_geo_location::_get_geo_location_output::GetGeoLocationOutput;
-
 pub use crate::operation::get_geo_location::_get_geo_location_input::GetGeoLocationInput;
+
+pub use crate::operation::get_geo_location::_get_geo_location_output::GetGeoLocationOutput;
 
 mod _get_geo_location_input;
 

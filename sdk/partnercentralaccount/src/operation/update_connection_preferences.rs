@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connection_
     }
 }
 
-pub use crate::operation::update_connection_preferences::_update_connection_preferences_output::UpdateConnectionPreferencesOutput;
-
 pub use crate::operation::update_connection_preferences::_update_connection_preferences_input::UpdateConnectionPreferencesInput;
+
+pub use crate::operation::update_connection_preferences::_update_connection_preferences_output::UpdateConnectionPreferencesOutput;
 
 mod _update_connection_preferences_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_wireless_gateway_with_certificate::_associate_wireless_gateway_with_certificate_output::AssociateWirelessGatewayWithCertificateOutput;
-
 pub use crate::operation::associate_wireless_gateway_with_certificate::_associate_wireless_gateway_with_certificate_input::AssociateWirelessGatewayWithCertificateInput;
+
+pub use crate::operation::associate_wireless_gateway_with_certificate::_associate_wireless_gateway_with_certificate_output::AssociateWirelessGatewayWithCertificateOutput;
 
 mod _associate_wireless_gateway_with_certificate_input;
 

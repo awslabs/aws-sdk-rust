@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_realtime_lo
     }
 }
 
-pub use crate::operation::update_realtime_log_config::_update_realtime_log_config_output::UpdateRealtimeLogConfigOutput;
-
 pub use crate::operation::update_realtime_log_config::_update_realtime_log_config_input::UpdateRealtimeLogConfigInput;
+
+pub use crate::operation::update_realtime_log_config::_update_realtime_log_config_output::UpdateRealtimeLogConfigOutput;
 
 mod _update_realtime_log_config_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_spending_li
     }
 }
 
-pub use crate::operation::search_spending_limits::_search_spending_limits_output::SearchSpendingLimitsOutput;
-
 pub use crate::operation::search_spending_limits::_search_spending_limits_input::SearchSpendingLimitsInput;
+
+pub use crate::operation::search_spending_limits::_search_spending_limits_output::SearchSpendingLimitsOutput;
 
 mod _search_spending_limits_input;
 

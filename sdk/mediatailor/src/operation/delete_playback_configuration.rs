@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_playback_co
     }
 }
 
-pub use crate::operation::delete_playback_configuration::_delete_playback_configuration_output::DeletePlaybackConfigurationOutput;
-
 pub use crate::operation::delete_playback_configuration::_delete_playback_configuration_input::DeletePlaybackConfigurationInput;
+
+pub use crate::operation::delete_playback_configuration::_delete_playback_configuration_output::DeletePlaybackConfigurationOutput;
 
 mod _delete_playback_configuration_input;
 

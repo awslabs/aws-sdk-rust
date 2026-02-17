@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_bulk_email::S
     }
 }
 
-pub use crate::operation::send_bulk_email::_send_bulk_email_output::SendBulkEmailOutput;
-
 pub use crate::operation::send_bulk_email::_send_bulk_email_input::SendBulkEmailInput;
+
+pub use crate::operation::send_bulk_email::_send_bulk_email_output::SendBulkEmailOutput;
 
 mod _send_bulk_email_input;
 

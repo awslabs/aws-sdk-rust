@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_cluster_no
     }
 }
 
-pub use crate::operation::list_kx_cluster_nodes::_list_kx_cluster_nodes_output::ListKxClusterNodesOutput;
-
 pub use crate::operation::list_kx_cluster_nodes::_list_kx_cluster_nodes_input::ListKxClusterNodesInput;
+
+pub use crate::operation::list_kx_cluster_nodes::_list_kx_cluster_nodes_output::ListKxClusterNodesOutput;
 
 mod _list_kx_cluster_nodes_input;
 

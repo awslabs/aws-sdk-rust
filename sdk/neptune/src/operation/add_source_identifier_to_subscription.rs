@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_source_identif
     }
 }
 
-pub use crate::operation::add_source_identifier_to_subscription::_add_source_identifier_to_subscription_output::AddSourceIdentifierToSubscriptionOutput;
-
 pub use crate::operation::add_source_identifier_to_subscription::_add_source_identifier_to_subscription_input::AddSourceIdentifierToSubscriptionInput;
+
+pub use crate::operation::add_source_identifier_to_subscription::_add_source_identifier_to_subscription_output::AddSourceIdentifierToSubscriptionOutput;
 
 mod _add_source_identifier_to_subscription_input;
 

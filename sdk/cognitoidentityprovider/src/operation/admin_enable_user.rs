@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_enable_user:
     }
 }
 
-pub use crate::operation::admin_enable_user::_admin_enable_user_output::AdminEnableUserOutput;
-
 pub use crate::operation::admin_enable_user::_admin_enable_user_input::AdminEnableUserInput;
+
+pub use crate::operation::admin_enable_user::_admin_enable_user_output::AdminEnableUserOutput;
 
 mod _admin_enable_user_input;
 

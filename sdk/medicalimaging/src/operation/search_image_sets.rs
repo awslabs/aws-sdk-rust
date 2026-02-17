@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_image_sets:
     }
 }
 
-pub use crate::operation::search_image_sets::_search_image_sets_output::SearchImageSetsOutput;
-
 pub use crate::operation::search_image_sets::_search_image_sets_input::SearchImageSetsInput;
+
+pub use crate::operation::search_image_sets::_search_image_sets_output::SearchImageSetsOutput;
 
 mod _search_image_sets_input;
 

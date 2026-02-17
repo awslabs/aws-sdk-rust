@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_glossary_term:
     }
 }
 
-pub use crate::operation::get_glossary_term::_get_glossary_term_output::GetGlossaryTermOutput;
-
 pub use crate::operation::get_glossary_term::_get_glossary_term_input::GetGlossaryTermInput;
+
+pub use crate::operation::get_glossary_term::_get_glossary_term_output::GetGlossaryTermOutput;
 
 mod _get_glossary_term_input;
 

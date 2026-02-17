@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_api::Update
     }
 }
 
-pub use crate::operation::update_api::_update_api_output::UpdateApiOutput;
-
 pub use crate::operation::update_api::_update_api_input::UpdateApiInput;
+
+pub use crate::operation::update_api::_update_api_output::UpdateApiOutput;
 
 mod _update_api_input;
 

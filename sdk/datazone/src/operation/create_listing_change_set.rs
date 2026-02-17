@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_listing_cha
     }
 }
 
-pub use crate::operation::create_listing_change_set::_create_listing_change_set_output::CreateListingChangeSetOutput;
-
 pub use crate::operation::create_listing_change_set::_create_listing_change_set_input::CreateListingChangeSetInput;
+
+pub use crate::operation::create_listing_change_set::_create_listing_change_set_output::CreateListingChangeSetOutput;
 
 mod _create_listing_change_set_input;
 

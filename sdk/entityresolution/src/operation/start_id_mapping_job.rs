@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_id_mapping_j
     }
 }
 
-pub use crate::operation::start_id_mapping_job::_start_id_mapping_job_output::StartIdMappingJobOutput;
-
 pub use crate::operation::start_id_mapping_job::_start_id_mapping_job_input::StartIdMappingJobInput;
+
+pub use crate::operation::start_id_mapping_job::_start_id_mapping_job_output::StartIdMappingJobOutput;
 
 mod _start_id_mapping_job_input;
 

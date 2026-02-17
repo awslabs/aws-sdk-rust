@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_run_cache::
     }
 }
 
-pub use crate::operation::delete_run_cache::_delete_run_cache_output::DeleteRunCacheOutput;
-
 pub use crate::operation::delete_run_cache::_delete_run_cache_input::DeleteRunCacheInput;
+
+pub use crate::operation::delete_run_cache::_delete_run_cache_output::DeleteRunCacheOutput;
 
 mod _delete_run_cache_input;
 

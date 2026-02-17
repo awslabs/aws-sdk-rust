@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_ingesti
     }
 }
 
-pub use crate::operation::start_data_ingestion_job::_start_data_ingestion_job_output::StartDataIngestionJobOutput;
-
 pub use crate::operation::start_data_ingestion_job::_start_data_ingestion_job_input::StartDataIngestionJobInput;
+
+pub use crate::operation::start_data_ingestion_job::_start_data_ingestion_job_output::StartDataIngestionJobOutput;
 
 mod _start_data_ingestion_job_input;
 

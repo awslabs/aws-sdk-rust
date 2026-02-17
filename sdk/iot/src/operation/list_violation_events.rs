@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_violation_eve
     }
 }
 
-pub use crate::operation::list_violation_events::_list_violation_events_output::ListViolationEventsOutput;
-
 pub use crate::operation::list_violation_events::_list_violation_events_input::ListViolationEventsInput;
+
+pub use crate::operation::list_violation_events::_list_violation_events_output::ListViolationEventsOutput;
 
 mod _list_violation_events_input;
 

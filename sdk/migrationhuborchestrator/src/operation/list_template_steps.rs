@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_template_step
     }
 }
 
-pub use crate::operation::list_template_steps::_list_template_steps_output::ListTemplateStepsOutput;
-
 pub use crate::operation::list_template_steps::_list_template_steps_input::ListTemplateStepsInput;
+
+pub use crate::operation::list_template_steps::_list_template_steps_output::ListTemplateStepsOutput;
 
 mod _list_template_steps_input;
 

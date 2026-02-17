@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_eks_anywher
     }
 }
 
-pub use crate::operation::create_eks_anywhere_subscription::_create_eks_anywhere_subscription_output::CreateEksAnywhereSubscriptionOutput;
-
 pub use crate::operation::create_eks_anywhere_subscription::_create_eks_anywhere_subscription_input::CreateEksAnywhereSubscriptionInput;
+
+pub use crate::operation::create_eks_anywhere_subscription::_create_eks_anywhere_subscription_output::CreateEksAnywhereSubscriptionOutput;
 
 mod _create_eks_anywhere_subscription_input;
 

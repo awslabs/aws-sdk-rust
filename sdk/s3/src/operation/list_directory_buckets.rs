@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_directory_buc
     }
 }
 
-pub use crate::operation::list_directory_buckets::_list_directory_buckets_output::ListDirectoryBucketsOutput;
-
 pub use crate::operation::list_directory_buckets::_list_directory_buckets_input::ListDirectoryBucketsInput;
+
+pub use crate::operation::list_directory_buckets::_list_directory_buckets_output::ListDirectoryBucketsOutput;
 
 mod _list_directory_buckets_input;
 

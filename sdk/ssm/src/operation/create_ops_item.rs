@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ops_item::C
     }
 }
 
-pub use crate::operation::create_ops_item::_create_ops_item_output::CreateOpsItemOutput;
-
 pub use crate::operation::create_ops_item::_create_ops_item_input::CreateOpsItemInput;
+
+pub use crate::operation::create_ops_item::_create_ops_item_output::CreateOpsItemOutput;
 
 mod _create_ops_item_input;
 

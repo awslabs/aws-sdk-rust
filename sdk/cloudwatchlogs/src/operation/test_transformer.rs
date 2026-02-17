@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_transformer::
     }
 }
 
-pub use crate::operation::test_transformer::_test_transformer_output::TestTransformerOutput;
-
 pub use crate::operation::test_transformer::_test_transformer_input::TestTransformerInput;
+
+pub use crate::operation::test_transformer::_test_transformer_output::TestTransformerOutput;
 
 mod _test_transformer_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_source_repo
     }
 }
 
-pub use crate::operation::delete_source_repository::_delete_source_repository_output::DeleteSourceRepositoryOutput;
-
 pub use crate::operation::delete_source_repository::_delete_source_repository_input::DeleteSourceRepositoryInput;
+
+pub use crate::operation::delete_source_repository::_delete_source_repository_output::DeleteSourceRepositoryOutput;
 
 mod _delete_source_repository_input;
 

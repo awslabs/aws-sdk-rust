@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_review_templa
     }
 }
 
-pub use crate::operation::list_review_templates::_list_review_templates_output::ListReviewTemplatesOutput;
-
 pub use crate::operation::list_review_templates::_list_review_templates_input::ListReviewTemplatesInput;
+
+pub use crate::operation::list_review_templates::_list_review_templates_output::ListReviewTemplatesOutput;
 
 mod _list_review_templates_input;
 

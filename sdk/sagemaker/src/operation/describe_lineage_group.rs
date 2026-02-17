@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_lineage_g
     }
 }
 
-pub use crate::operation::describe_lineage_group::_describe_lineage_group_output::DescribeLineageGroupOutput;
-
 pub use crate::operation::describe_lineage_group::_describe_lineage_group_input::DescribeLineageGroupInput;
+
+pub use crate::operation::describe_lineage_group::_describe_lineage_group_output::DescribeLineageGroupOutput;
 
 mod _describe_lineage_group_input;
 

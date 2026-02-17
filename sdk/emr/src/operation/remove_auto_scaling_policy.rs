@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_auto_scalin
     }
 }
 
-pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_policy_output::RemoveAutoScalingPolicyOutput;
-
 pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_policy_input::RemoveAutoScalingPolicyInput;
+
+pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_policy_output::RemoveAutoScalingPolicyOutput;
 
 mod _remove_auto_scaling_policy_input;
 

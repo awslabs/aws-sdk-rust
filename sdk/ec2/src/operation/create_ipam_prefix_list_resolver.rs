@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ipam_prefix
     }
 }
 
-pub use crate::operation::create_ipam_prefix_list_resolver::_create_ipam_prefix_list_resolver_output::CreateIpamPrefixListResolverOutput;
-
 pub use crate::operation::create_ipam_prefix_list_resolver::_create_ipam_prefix_list_resolver_input::CreateIpamPrefixListResolverInput;
+
+pub use crate::operation::create_ipam_prefix_list_resolver::_create_ipam_prefix_list_resolver_output::CreateIpamPrefixListResolverOutput;
 
 mod _create_ipam_prefix_list_resolver_input;
 

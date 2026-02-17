@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_notifi
     }
 }
 
-pub use crate::operation::update_user_notification_status::_update_user_notification_status_output::UpdateUserNotificationStatusOutput;
-
 pub use crate::operation::update_user_notification_status::_update_user_notification_status_input::UpdateUserNotificationStatusInput;
+
+pub use crate::operation::update_user_notification_status::_update_user_notification_status_output::UpdateUserNotificationStatusOutput;
 
 mod _update_user_notification_status_input;
 

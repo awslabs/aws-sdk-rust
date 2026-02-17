@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_matchmaking
     }
 }
 
-pub use crate::operation::create_matchmaking_rule_set::_create_matchmaking_rule_set_output::CreateMatchmakingRuleSetOutput;
-
 pub use crate::operation::create_matchmaking_rule_set::_create_matchmaking_rule_set_input::CreateMatchmakingRuleSetInput;
+
+pub use crate::operation::create_matchmaking_rule_set::_create_matchmaking_rule_set_output::CreateMatchmakingRuleSetOutput;
 
 mod _create_matchmaking_rule_set_input;
 

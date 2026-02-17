@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_executions::L
     }
 }
 
-pub use crate::operation::list_executions::_list_executions_output::ListExecutionsOutput;
-
 pub use crate::operation::list_executions::_list_executions_input::ListExecutionsInput;
+
+pub use crate::operation::list_executions::_list_executions_output::ListExecutionsOutput;
 
 mod _list_executions_input;
 

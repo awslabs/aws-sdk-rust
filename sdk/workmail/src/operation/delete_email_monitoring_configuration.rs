@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_email_monit
     }
 }
 
-pub use crate::operation::delete_email_monitoring_configuration::_delete_email_monitoring_configuration_output::DeleteEmailMonitoringConfigurationOutput;
-
 pub use crate::operation::delete_email_monitoring_configuration::_delete_email_monitoring_configuration_input::DeleteEmailMonitoringConfigurationInput;
+
+pub use crate::operation::delete_email_monitoring_configuration::_delete_email_monitoring_configuration_output::DeleteEmailMonitoringConfigurationOutput;
 
 mod _delete_email_monitoring_configuration_input;
 

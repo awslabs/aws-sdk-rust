@@ -507,9 +507,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pull_reques
     }
 }
 
-pub use crate::operation::create_pull_request_approval_rule::_create_pull_request_approval_rule_output::CreatePullRequestApprovalRuleOutput;
-
 pub use crate::operation::create_pull_request_approval_rule::_create_pull_request_approval_rule_input::CreatePullRequestApprovalRuleInput;
+
+pub use crate::operation::create_pull_request_approval_rule::_create_pull_request_approval_rule_output::CreatePullRequestApprovalRuleOutput;
 
 mod _create_pull_request_approval_rule_input;
 

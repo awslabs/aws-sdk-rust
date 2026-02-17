@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_auto_manage
     }
 }
 
-pub use crate::operation::update_auto_management::_update_auto_management_output::UpdateAutoManagementOutput;
-
 pub use crate::operation::update_auto_management::_update_auto_management_input::UpdateAutoManagementInput;
+
+pub use crate::operation::update_auto_management::_update_auto_management_output::UpdateAutoManagementOutput;
 
 mod _update_auto_management_input;
 

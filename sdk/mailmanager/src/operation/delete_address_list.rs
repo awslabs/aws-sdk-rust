@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_address_lis
     }
 }
 
-pub use crate::operation::delete_address_list::_delete_address_list_output::DeleteAddressListOutput;
-
 pub use crate::operation::delete_address_list::_delete_address_list_input::DeleteAddressListInput;
+
+pub use crate::operation::delete_address_list::_delete_address_list_output::DeleteAddressListOutput;
 
 mod _delete_address_list_input;
 

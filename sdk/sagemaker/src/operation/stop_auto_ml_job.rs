@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_auto_ml_job::
     }
 }
 
-pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_output::StopAutoMlJobOutput;
-
 pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_input::StopAutoMlJobInput;
+
+pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_output::StopAutoMlJobOutput;
 
 mod _stop_auto_ml_job_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disconnect_source_
     }
 }
 
-pub use crate::operation::disconnect_source_server::_disconnect_source_server_output::DisconnectSourceServerOutput;
-
 pub use crate::operation::disconnect_source_server::_disconnect_source_server_input::DisconnectSourceServerInput;
+
+pub use crate::operation::disconnect_source_server::_disconnect_source_server_output::DisconnectSourceServerOutput;
 
 mod _disconnect_source_server_input;
 

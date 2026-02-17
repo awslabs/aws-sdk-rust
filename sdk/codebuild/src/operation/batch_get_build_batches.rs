@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_build_ba
     }
 }
 
-pub use crate::operation::batch_get_build_batches::_batch_get_build_batches_output::BatchGetBuildBatchesOutput;
-
 pub use crate::operation::batch_get_build_batches::_batch_get_build_batches_input::BatchGetBuildBatchesInput;
+
+pub use crate::operation::batch_get_build_batches::_batch_get_build_batches_output::BatchGetBuildBatchesOutput;
 
 mod _batch_get_build_batches_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_templates
     }
 }
 
-pub use crate::operation::list_job_templates::_list_job_templates_output::ListJobTemplatesOutput;
-
 pub use crate::operation::list_job_templates::_list_job_templates_input::ListJobTemplatesInput;
+
+pub use crate::operation::list_job_templates::_list_job_templates_output::ListJobTemplatesOutput;
 
 mod _list_job_templates_input;
 

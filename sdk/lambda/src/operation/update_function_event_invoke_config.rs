@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_function_ev
     }
 }
 
-pub use crate::operation::update_function_event_invoke_config::_update_function_event_invoke_config_output::UpdateFunctionEventInvokeConfigOutput;
-
 pub use crate::operation::update_function_event_invoke_config::_update_function_event_invoke_config_input::UpdateFunctionEventInvokeConfigInput;
+
+pub use crate::operation::update_function_event_invoke_config::_update_function_event_invoke_config_output::UpdateFunctionEventInvokeConfigOutput;
 
 mod _update_function_event_invoke_config_input;
 

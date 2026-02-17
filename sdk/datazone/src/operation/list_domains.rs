@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domains::List
     }
 }
 
-pub use crate::operation::list_domains::_list_domains_output::ListDomainsOutput;
-
 pub use crate::operation::list_domains::_list_domains_input::ListDomainsInput;
+
+pub use crate::operation::list_domains::_list_domains_output::ListDomainsOutput;
 
 mod _list_domains_input;
 

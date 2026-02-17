@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_create_bill_scenario_usage_modification::_batch_create_bill_scenario_usage_modification_output::BatchCreateBillScenarioUsageModificationOutput;
-
 pub use crate::operation::batch_create_bill_scenario_usage_modification::_batch_create_bill_scenario_usage_modification_input::BatchCreateBillScenarioUsageModificationInput;
+
+pub use crate::operation::batch_create_bill_scenario_usage_modification::_batch_create_bill_scenario_usage_modification_output::BatchCreateBillScenarioUsageModificationOutput;
 
 mod _batch_create_bill_scenario_usage_modification_input;
 

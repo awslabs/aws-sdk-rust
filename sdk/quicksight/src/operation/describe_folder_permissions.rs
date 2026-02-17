@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_folder_pe
     }
 }
 
-pub use crate::operation::describe_folder_permissions::_describe_folder_permissions_output::DescribeFolderPermissionsOutput;
-
 pub use crate::operation::describe_folder_permissions::_describe_folder_permissions_input::DescribeFolderPermissionsInput;
+
+pub use crate::operation::describe_folder_permissions::_describe_folder_permissions_output::DescribeFolderPermissionsOutput;
 
 mod _describe_folder_permissions_input;
 

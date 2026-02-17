@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_security
     }
 }
 
-pub use crate::operation::associate_security_profiles::_associate_security_profiles_output::AssociateSecurityProfilesOutput;
-
 pub use crate::operation::associate_security_profiles::_associate_security_profiles_input::AssociateSecurityProfilesInput;
+
+pub use crate::operation::associate_security_profiles::_associate_security_profiles_output::AssociateSecurityProfilesOutput;
 
 mod _associate_security_profiles_input;
 

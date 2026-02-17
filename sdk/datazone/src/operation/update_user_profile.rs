@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_profil
     }
 }
 
-pub use crate::operation::update_user_profile::_update_user_profile_output::UpdateUserProfileOutput;
-
 pub use crate::operation::update_user_profile::_update_user_profile_input::UpdateUserProfileInput;
+
+pub use crate::operation::update_user_profile::_update_user_profile_output::UpdateUserProfileOutput;
 
 mod _update_user_profile_input;
 

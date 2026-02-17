@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_campaign::Sto
     }
 }
 
-pub use crate::operation::stop_campaign::_stop_campaign_output::StopCampaignOutput;
-
 pub use crate::operation::stop_campaign::_stop_campaign_input::StopCampaignInput;
+
+pub use crate::operation::stop_campaign::_stop_campaign_output::StopCampaignOutput;
 
 mod _stop_campaign_input;
 

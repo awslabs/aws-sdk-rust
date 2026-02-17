@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provision_byoip_ci
     }
 }
 
-pub use crate::operation::provision_byoip_cidr::_provision_byoip_cidr_output::ProvisionByoipCidrOutput;
-
 pub use crate::operation::provision_byoip_cidr::_provision_byoip_cidr_input::ProvisionByoipCidrInput;
+
+pub use crate::operation::provision_byoip_cidr::_provision_byoip_cidr_output::ProvisionByoipCidrOutput;
 
 mod _provision_byoip_cidr_input;
 

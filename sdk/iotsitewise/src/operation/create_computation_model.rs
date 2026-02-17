@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_computation
     }
 }
 
-pub use crate::operation::create_computation_model::_create_computation_model_output::CreateComputationModelOutput;
-
 pub use crate::operation::create_computation_model::_create_computation_model_input::CreateComputationModelInput;
+
+pub use crate::operation::create_computation_model::_create_computation_model_output::CreateComputationModelOutput;
 
 mod _create_computation_model_input;
 

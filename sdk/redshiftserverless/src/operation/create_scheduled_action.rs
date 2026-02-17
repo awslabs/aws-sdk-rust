@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scheduled_a
     }
 }
 
-pub use crate::operation::create_scheduled_action::_create_scheduled_action_output::CreateScheduledActionOutput;
-
 pub use crate::operation::create_scheduled_action::_create_scheduled_action_input::CreateScheduledActionInput;
+
+pub use crate::operation::create_scheduled_action::_create_scheduled_action_output::CreateScheduledActionOutput;
 
 mod _create_scheduled_action_input;
 

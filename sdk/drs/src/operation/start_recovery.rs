@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_recovery::St
     }
 }
 
-pub use crate::operation::start_recovery::_start_recovery_output::StartRecoveryOutput;
-
 pub use crate::operation::start_recovery::_start_recovery_input::StartRecoveryInput;
+
+pub use crate::operation::start_recovery::_start_recovery_output::StartRecoveryOutput;
 
 mod _start_recovery_input;
 

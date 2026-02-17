@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_aws_organiz
     }
 }
 
-pub use crate::operation::enable_aws_organizations_access::_enable_aws_organizations_access_output::EnableAwsOrganizationsAccessOutput;
-
 pub use crate::operation::enable_aws_organizations_access::_enable_aws_organizations_access_input::EnableAwsOrganizationsAccessInput;
+
+pub use crate::operation::enable_aws_organizations_access::_enable_aws_organizations_access_output::EnableAwsOrganizationsAccessOutput;
 
 mod _enable_aws_organizations_access_input;
 

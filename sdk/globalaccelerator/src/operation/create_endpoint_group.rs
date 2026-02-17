@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_endpoint_gr
     }
 }
 
-pub use crate::operation::create_endpoint_group::_create_endpoint_group_output::CreateEndpointGroupOutput;
-
 pub use crate::operation::create_endpoint_group::_create_endpoint_group_input::CreateEndpointGroupInput;
+
+pub use crate::operation::create_endpoint_group::_create_endpoint_group_output::CreateEndpointGroupOutput;
 
 mod _create_endpoint_group_input;
 

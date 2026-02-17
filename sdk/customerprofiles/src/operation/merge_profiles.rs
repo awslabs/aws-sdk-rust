@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_profiles::Me
     }
 }
 
-pub use crate::operation::merge_profiles::_merge_profiles_output::MergeProfilesOutput;
-
 pub use crate::operation::merge_profiles::_merge_profiles_input::MergeProfilesInput;
+
+pub use crate::operation::merge_profiles::_merge_profiles_output::MergeProfilesOutput;
 
 mod _merge_profiles_input;
 

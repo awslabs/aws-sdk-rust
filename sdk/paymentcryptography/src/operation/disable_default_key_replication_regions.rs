@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_default_ke
     }
 }
 
-pub use crate::operation::disable_default_key_replication_regions::_disable_default_key_replication_regions_output::DisableDefaultKeyReplicationRegionsOutput;
-
 pub use crate::operation::disable_default_key_replication_regions::_disable_default_key_replication_regions_input::DisableDefaultKeyReplicationRegionsInput;
+
+pub use crate::operation::disable_default_key_replication_regions::_disable_default_key_replication_regions_output::DisableDefaultKeyReplicationRegionsOutput;
 
 mod _disable_default_key_replication_regions_input;
 

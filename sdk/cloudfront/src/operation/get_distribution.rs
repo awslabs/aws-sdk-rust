@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution::
     }
 }
 
-pub use crate::operation::get_distribution::_get_distribution_output::GetDistributionOutput;
-
 pub use crate::operation::get_distribution::_get_distribution_input::GetDistributionInput;
+
+pub use crate::operation::get_distribution::_get_distribution_output::GetDistributionOutput;
 
 mod _get_distribution_input;
 

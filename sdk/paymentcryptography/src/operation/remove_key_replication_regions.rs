@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_key_replica
     }
 }
 
-pub use crate::operation::remove_key_replication_regions::_remove_key_replication_regions_output::RemoveKeyReplicationRegionsOutput;
-
 pub use crate::operation::remove_key_replication_regions::_remove_key_replication_regions_input::RemoveKeyReplicationRegionsInput;
+
+pub use crate::operation::remove_key_replication_regions::_remove_key_replication_regions_output::RemoveKeyReplicationRegionsOutput;
 
 mod _remove_key_replication_regions_input;
 

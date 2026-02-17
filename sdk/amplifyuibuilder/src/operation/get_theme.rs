@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_theme::GetThem
     }
 }
 
-pub use crate::operation::get_theme::_get_theme_output::GetThemeOutput;
-
 pub use crate::operation::get_theme::_get_theme_input::GetThemeInput;
+
+pub use crate::operation::get_theme::_get_theme_output::GetThemeOutput;
 
 mod _get_theme_input;
 

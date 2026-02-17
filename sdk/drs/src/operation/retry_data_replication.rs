@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retry_data_replica
     }
 }
 
-pub use crate::operation::retry_data_replication::_retry_data_replication_output::RetryDataReplicationOutput;
-
 pub use crate::operation::retry_data_replication::_retry_data_replication_input::RetryDataReplicationInput;
+
+pub use crate::operation::retry_data_replication::_retry_data_replication_output::RetryDataReplicationOutput;
 
 mod _retry_data_replication_input;
 

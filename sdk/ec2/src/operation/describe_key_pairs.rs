@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_key_pairs
     }
 }
 
-pub use crate::operation::describe_key_pairs::_describe_key_pairs_output::DescribeKeyPairsOutput;
-
 pub use crate::operation::describe_key_pairs::_describe_key_pairs_input::DescribeKeyPairsInput;
+
+pub use crate::operation::describe_key_pairs::_describe_key_pairs_output::DescribeKeyPairsOutput;
 
 mod _describe_key_pairs_input;
 

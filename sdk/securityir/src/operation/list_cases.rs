@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cases::ListCa
     }
 }
 
-pub use crate::operation::list_cases::_list_cases_output::ListCasesOutput;
-
 pub use crate::operation::list_cases::_list_cases_input::ListCasesInput;
+
+pub use crate::operation::list_cases::_list_cases_output::ListCasesOutput;
 
 mod _list_cases_input;
 

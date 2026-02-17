@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_return_ship
     }
 }
 
-pub use crate::operation::create_return_shipping_label::_create_return_shipping_label_output::CreateReturnShippingLabelOutput;
-
 pub use crate::operation::create_return_shipping_label::_create_return_shipping_label_input::CreateReturnShippingLabelInput;
+
+pub use crate::operation::create_return_shipping_label::_create_return_shipping_label_output::CreateReturnShippingLabelOutput;
 
 mod _create_return_shipping_label_input;
 

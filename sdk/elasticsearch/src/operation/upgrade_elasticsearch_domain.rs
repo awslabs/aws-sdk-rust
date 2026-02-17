@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upgrade_elasticsea
     }
 }
 
-pub use crate::operation::upgrade_elasticsearch_domain::_upgrade_elasticsearch_domain_output::UpgradeElasticsearchDomainOutput;
-
 pub use crate::operation::upgrade_elasticsearch_domain::_upgrade_elasticsearch_domain_input::UpgradeElasticsearchDomainInput;
+
+pub use crate::operation::upgrade_elasticsearch_domain::_upgrade_elasticsearch_domain_output::UpgradeElasticsearchDomainOutput;
 
 mod _upgrade_elasticsearch_domain_input;
 

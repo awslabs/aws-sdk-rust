@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_deliverabil
     }
 }
 
-pub use crate::operation::create_deliverability_test_report::_create_deliverability_test_report_output::CreateDeliverabilityTestReportOutput;
-
 pub use crate::operation::create_deliverability_test_report::_create_deliverability_test_report_input::CreateDeliverabilityTestReportInput;
+
+pub use crate::operation::create_deliverability_test_report::_create_deliverability_test_report_output::CreateDeliverabilityTestReportOutput;
 
 mod _create_deliverability_test_report_input;
 

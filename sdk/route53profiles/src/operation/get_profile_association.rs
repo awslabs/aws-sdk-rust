@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_associ
     }
 }
 
-pub use crate::operation::get_profile_association::_get_profile_association_output::GetProfileAssociationOutput;
-
 pub use crate::operation::get_profile_association::_get_profile_association_input::GetProfileAssociationInput;
+
+pub use crate::operation::get_profile_association::_get_profile_association_output::GetProfileAssociationOutput;
 
 mod _get_profile_association_input;
 

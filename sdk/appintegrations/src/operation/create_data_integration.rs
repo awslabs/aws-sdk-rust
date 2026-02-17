@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_integr
     }
 }
 
-pub use crate::operation::create_data_integration::_create_data_integration_output::CreateDataIntegrationOutput;
-
 pub use crate::operation::create_data_integration::_create_data_integration_input::CreateDataIntegrationInput;
+
+pub use crate::operation::create_data_integration::_create_data_integration_output::CreateDataIntegrationOutput;
 
 mod _create_data_integration_input;
 

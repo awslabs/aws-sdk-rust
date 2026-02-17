@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_state_machine
     }
 }
 
-pub use crate::operation::list_state_machine_versions::_list_state_machine_versions_output::ListStateMachineVersionsOutput;
-
 pub use crate::operation::list_state_machine_versions::_list_state_machine_versions_input::ListStateMachineVersionsInput;
+
+pub use crate::operation::list_state_machine_versions::_list_state_machine_versions_output::ListStateMachineVersionsOutput;
 
 mod _list_state_machine_versions_input;
 

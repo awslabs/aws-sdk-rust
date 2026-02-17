@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backend_job::G
     }
 }
 
-pub use crate::operation::get_backend_job::_get_backend_job_output::GetBackendJobOutput;
-
 pub use crate::operation::get_backend_job::_get_backend_job_input::GetBackendJobInput;
+
+pub use crate::operation::get_backend_job::_get_backend_job_output::GetBackendJobOutput;
 
 mod _get_backend_job_input;
 

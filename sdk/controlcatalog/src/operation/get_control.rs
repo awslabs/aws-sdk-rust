@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_control::GetCo
     }
 }
 
-pub use crate::operation::get_control::_get_control_output::GetControlOutput;
-
 pub use crate::operation::get_control::_get_control_input::GetControlInput;
+
+pub use crate::operation::get_control::_get_control_output::GetControlOutput;
 
 mod _get_control_input;
 

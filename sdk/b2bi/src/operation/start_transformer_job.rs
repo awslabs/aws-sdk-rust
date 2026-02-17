@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_transformer_
     }
 }
 
-pub use crate::operation::start_transformer_job::_start_transformer_job_output::StartTransformerJobOutput;
-
 pub use crate::operation::start_transformer_job::_start_transformer_job_input::StartTransformerJobInput;
+
+pub use crate::operation::start_transformer_job::_start_transformer_job_output::StartTransformerJobOutput;
 
 mod _start_transformer_job_input;
 

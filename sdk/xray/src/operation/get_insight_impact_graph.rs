@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_insight_impact
     }
 }
 
-pub use crate::operation::get_insight_impact_graph::_get_insight_impact_graph_output::GetInsightImpactGraphOutput;
-
 pub use crate::operation::get_insight_impact_graph::_get_insight_impact_graph_input::GetInsightImpactGraphInput;
+
+pub use crate::operation::get_insight_impact_graph::_get_insight_impact_graph_output::GetInsightImpactGraphOutput;
 
 mod _get_insight_impact_graph_input;
 

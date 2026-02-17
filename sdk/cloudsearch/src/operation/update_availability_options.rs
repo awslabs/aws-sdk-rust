@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_availabilit
     }
 }
 
-pub use crate::operation::update_availability_options::_update_availability_options_output::UpdateAvailabilityOptionsOutput;
-
 pub use crate::operation::update_availability_options::_update_availability_options_input::UpdateAvailabilityOptionsInput;
+
+pub use crate::operation::update_availability_options::_update_availability_options_output::UpdateAvailabilityOptionsOutput;
 
 mod _update_availability_options_input;
 

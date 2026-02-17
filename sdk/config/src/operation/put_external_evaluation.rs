@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_external_evalu
     }
 }
 
-pub use crate::operation::put_external_evaluation::_put_external_evaluation_output::PutExternalEvaluationOutput;
-
 pub use crate::operation::put_external_evaluation::_put_external_evaluation_input::PutExternalEvaluationInput;
+
+pub use crate::operation::put_external_evaluation::_put_external_evaluation_output::PutExternalEvaluationOutput;
 
 mod _put_external_evaluation_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_opportunities
     }
 }
 
-pub use crate::operation::list_opportunities::_list_opportunities_output::ListOpportunitiesOutput;
-
 pub use crate::operation::list_opportunities::_list_opportunities_input::ListOpportunitiesInput;
+
+pub use crate::operation::list_opportunities::_list_opportunities_output::ListOpportunitiesOutput;
 
 mod _list_opportunities_input;
 

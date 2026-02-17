@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_grid_ses
     }
 }
 
-pub use crate::operation::list_test_grid_session_artifacts::_list_test_grid_session_artifacts_output::ListTestGridSessionArtifactsOutput;
-
 pub use crate::operation::list_test_grid_session_artifacts::_list_test_grid_session_artifacts_input::ListTestGridSessionArtifactsInput;
+
+pub use crate::operation::list_test_grid_session_artifacts::_list_test_grid_session_artifacts_output::ListTestGridSessionArtifactsOutput;
 
 mod _list_test_grid_session_artifacts_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_mfa_dev
     }
 }
 
-pub use crate::operation::deactivate_mfa_device::_deactivate_mfa_device_output::DeactivateMfaDeviceOutput;
-
 pub use crate::operation::deactivate_mfa_device::_deactivate_mfa_device_input::DeactivateMfaDeviceInput;
+
+pub use crate::operation::deactivate_mfa_device::_deactivate_mfa_device_output::DeactivateMfaDeviceOutput;
 
 mod _deactivate_mfa_device_input;
 

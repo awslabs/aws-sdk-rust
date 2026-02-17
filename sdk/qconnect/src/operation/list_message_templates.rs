@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_message_templ
     }
 }
 
-pub use crate::operation::list_message_templates::_list_message_templates_output::ListMessageTemplatesOutput;
-
 pub use crate::operation::list_message_templates::_list_message_templates_input::ListMessageTemplatesInput;
+
+pub use crate::operation::list_message_templates::_list_message_templates_output::ListMessageTemplatesOutput;
 
 mod _list_message_templates_input;
 

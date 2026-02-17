@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_token::Dele
     }
 }
 
-pub use crate::operation::delete_token::_delete_token_output::DeleteTokenOutput;
-
 pub use crate::operation::delete_token::_delete_token_input::DeleteTokenInput;
+
+pub use crate::operation::delete_token::_delete_token_output::DeleteTokenOutput;
 
 mod _delete_token_input;
 

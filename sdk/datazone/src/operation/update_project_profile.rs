@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_project_pro
     }
 }
 
-pub use crate::operation::update_project_profile::_update_project_profile_output::UpdateProjectProfileOutput;
-
 pub use crate::operation::update_project_profile::_update_project_profile_input::UpdateProjectProfileInput;
+
+pub use crate::operation::update_project_profile::_update_project_profile_output::UpdateProjectProfileOutput;
 
 mod _update_project_profile_input;
 

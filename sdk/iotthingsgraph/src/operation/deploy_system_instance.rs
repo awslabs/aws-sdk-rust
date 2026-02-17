@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deploy_system_inst
     }
 }
 
-pub use crate::operation::deploy_system_instance::_deploy_system_instance_output::DeploySystemInstanceOutput;
-
 pub use crate::operation::deploy_system_instance::_deploy_system_instance_input::DeploySystemInstanceInput;
+
+pub use crate::operation::deploy_system_instance::_deploy_system_instance_output::DeploySystemInstanceOutput;
 
 mod _deploy_system_instance_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_media_messa
     }
 }
 
-pub use crate::operation::delete_media_message_spend_limit_override::_delete_media_message_spend_limit_override_output::DeleteMediaMessageSpendLimitOverrideOutput;
-
 pub use crate::operation::delete_media_message_spend_limit_override::_delete_media_message_spend_limit_override_input::DeleteMediaMessageSpendLimitOverrideInput;
+
+pub use crate::operation::delete_media_message_spend_limit_override::_delete_media_message_spend_limit_override_output::DeleteMediaMessageSpendLimitOverrideOutput;
 
 mod _delete_media_message_spend_limit_override_input;
 

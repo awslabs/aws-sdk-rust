@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_plugin_action
     }
 }
 
-pub use crate::operation::list_plugin_actions::_list_plugin_actions_output::ListPluginActionsOutput;
-
 pub use crate::operation::list_plugin_actions::_list_plugin_actions_input::ListPluginActionsInput;
+
+pub use crate::operation::list_plugin_actions::_list_plugin_actions_output::ListPluginActionsOutput;
 
 mod _list_plugin_actions_input;
 

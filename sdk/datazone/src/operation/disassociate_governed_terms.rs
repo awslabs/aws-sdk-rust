@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_gover
     }
 }
 
-pub use crate::operation::disassociate_governed_terms::_disassociate_governed_terms_output::DisassociateGovernedTermsOutput;
-
 pub use crate::operation::disassociate_governed_terms::_disassociate_governed_terms_input::DisassociateGovernedTermsInput;
+
+pub use crate::operation::disassociate_governed_terms::_disassociate_governed_terms_output::DisassociateGovernedTermsOutput;
 
 mod _disassociate_governed_terms_input;
 

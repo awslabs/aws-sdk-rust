@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_origin_access
     }
 }
 
-pub use crate::operation::list_origin_access_controls::_list_origin_access_controls_output::ListOriginAccessControlsOutput;
-
 pub use crate::operation::list_origin_access_controls::_list_origin_access_controls_input::ListOriginAccessControlsInput;
+
+pub use crate::operation::list_origin_access_controls::_list_origin_access_controls_output::ListOriginAccessControlsOutput;
 
 mod _list_origin_access_controls_input;
 

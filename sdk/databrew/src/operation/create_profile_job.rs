@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_profile_job
     }
 }
 
-pub use crate::operation::create_profile_job::_create_profile_job_output::CreateProfileJobOutput;
-
 pub use crate::operation::create_profile_job::_create_profile_job_input::CreateProfileJobInput;
+
+pub use crate::operation::create_profile_job::_create_profile_job_output::CreateProfileJobOutput;
 
 mod _create_profile_job_input;
 

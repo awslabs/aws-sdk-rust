@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_self_upgrad
     }
 }
 
-pub use crate::operation::update_self_upgrade_configuration::_update_self_upgrade_configuration_output::UpdateSelfUpgradeConfigurationOutput;
-
 pub use crate::operation::update_self_upgrade_configuration::_update_self_upgrade_configuration_input::UpdateSelfUpgradeConfigurationInput;
+
+pub use crate::operation::update_self_upgrade_configuration::_update_self_upgrade_configuration_output::UpdateSelfUpgradeConfigurationOutput;
 
 mod _update_self_upgrade_configuration_input;
 

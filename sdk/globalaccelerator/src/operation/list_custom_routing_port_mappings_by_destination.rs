@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_custom_routing_port_mappings_by_destination::_list_custom_routing_port_mappings_by_destination_output::ListCustomRoutingPortMappingsByDestinationOutput;
-
 pub use crate::operation::list_custom_routing_port_mappings_by_destination::_list_custom_routing_port_mappings_by_destination_input::ListCustomRoutingPortMappingsByDestinationInput;
+
+pub use crate::operation::list_custom_routing_port_mappings_by_destination::_list_custom_routing_port_mappings_by_destination_output::ListCustomRoutingPortMappingsByDestinationOutput;
 
 mod _list_custom_routing_port_mappings_by_destination_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_outpost::Cr
     }
 }
 
-pub use crate::operation::create_outpost::_create_outpost_output::CreateOutpostOutput;
-
 pub use crate::operation::create_outpost::_create_outpost_input::CreateOutpostInput;
+
+pub use crate::operation::create_outpost::_create_outpost_output::CreateOutpostOutput;
 
 mod _create_outpost_input;
 

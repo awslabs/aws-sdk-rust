@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_random_passwor
     }
 }
 
-pub use crate::operation::get_random_password::_get_random_password_output::GetRandomPasswordOutput;
-
 pub use crate::operation::get_random_password::_get_random_password_input::GetRandomPasswordInput;
+
+pub use crate::operation::get_random_password::_get_random_password_output::GetRandomPasswordOutput;
 
 mod _get_random_password_input;
 

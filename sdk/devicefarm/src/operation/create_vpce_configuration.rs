@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpce_config
     }
 }
 
-pub use crate::operation::create_vpce_configuration::_create_vpce_configuration_output::CreateVpceConfigurationOutput;
-
 pub use crate::operation::create_vpce_configuration::_create_vpce_configuration_input::CreateVpceConfigurationInput;
+
+pub use crate::operation::create_vpce_configuration::_create_vpce_configuration_output::CreateVpceConfigurationOutput;
 
 mod _create_vpce_configuration_input;
 

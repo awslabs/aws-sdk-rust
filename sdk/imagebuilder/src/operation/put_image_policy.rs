@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_image_policy::
     }
 }
 
-pub use crate::operation::put_image_policy::_put_image_policy_output::PutImagePolicyOutput;
-
 pub use crate::operation::put_image_policy::_put_image_policy_input::PutImagePolicyInput;
+
+pub use crate::operation::put_image_policy::_put_image_policy_output::PutImagePolicyOutput;
 
 mod _put_image_policy_input;
 

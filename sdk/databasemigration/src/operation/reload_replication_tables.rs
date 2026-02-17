@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reload_replication
     }
 }
 
-pub use crate::operation::reload_replication_tables::_reload_replication_tables_output::ReloadReplicationTablesOutput;
-
 pub use crate::operation::reload_replication_tables::_reload_replication_tables_input::ReloadReplicationTablesInput;
+
+pub use crate::operation::reload_replication_tables::_reload_replication_tables_output::ReloadReplicationTablesOutput;
 
 mod _reload_replication_tables_input;
 

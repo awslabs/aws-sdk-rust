@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_cont
     }
 }
 
-pub use crate::operation::create_access_control_configuration::_create_access_control_configuration_output::CreateAccessControlConfigurationOutput;
-
 pub use crate::operation::create_access_control_configuration::_create_access_control_configuration_input::CreateAccessControlConfigurationInput;
+
+pub use crate::operation::create_access_control_configuration::_create_access_control_configuration_output::CreateAccessControlConfigurationOutput;
 
 mod _create_access_control_configuration_input;
 

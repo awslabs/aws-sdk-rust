@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_snaps
     }
 }
 
-pub use crate::operation::get_instance_snapshot::_get_instance_snapshot_output::GetInstanceSnapshotOutput;
-
 pub use crate::operation::get_instance_snapshot::_get_instance_snapshot_input::GetInstanceSnapshotInput;
+
+pub use crate::operation::get_instance_snapshot::_get_instance_snapshot_output::GetInstanceSnapshotOutput;
 
 mod _get_instance_snapshot_input;
 

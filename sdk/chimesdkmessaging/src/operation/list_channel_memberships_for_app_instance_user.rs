@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_channel_memberships_for_app_instance_user::_list_channel_memberships_for_app_instance_user_output::ListChannelMembershipsForAppInstanceUserOutput;
-
 pub use crate::operation::list_channel_memberships_for_app_instance_user::_list_channel_memberships_for_app_instance_user_input::ListChannelMembershipsForAppInstanceUserInput;
+
+pub use crate::operation::list_channel_memberships_for_app_instance_user::_list_channel_memberships_for_app_instance_user_output::ListChannelMembershipsForAppInstanceUserOutput;
 
 mod _list_channel_memberships_for_app_instance_user_input;
 

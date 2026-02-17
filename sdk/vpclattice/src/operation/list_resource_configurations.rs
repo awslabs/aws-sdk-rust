@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_conf
     }
 }
 
-pub use crate::operation::list_resource_configurations::_list_resource_configurations_output::ListResourceConfigurationsOutput;
-
 pub use crate::operation::list_resource_configurations::_list_resource_configurations_input::ListResourceConfigurationsInput;
+
+pub use crate::operation::list_resource_configurations::_list_resource_configurations_output::ListResourceConfigurationsOutput;
 
 mod _list_resource_configurations_input;
 

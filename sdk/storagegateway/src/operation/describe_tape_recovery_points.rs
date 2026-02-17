@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tape_reco
     }
 }
 
-pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery_points_output::DescribeTapeRecoveryPointsOutput;
-
 pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery_points_input::DescribeTapeRecoveryPointsInput;
+
+pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery_points_output::DescribeTapeRecoveryPointsOutput;
 
 mod _describe_tape_recovery_points_input;
 

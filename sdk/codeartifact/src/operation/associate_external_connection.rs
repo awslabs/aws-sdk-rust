@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_external
     }
 }
 
-pub use crate::operation::associate_external_connection::_associate_external_connection_output::AssociateExternalConnectionOutput;
-
 pub use crate::operation::associate_external_connection::_associate_external_connection_input::AssociateExternalConnectionInput;
+
+pub use crate::operation::associate_external_connection::_associate_external_connection_output::AssociateExternalConnectionOutput;
 
 mod _associate_external_connection_input;
 

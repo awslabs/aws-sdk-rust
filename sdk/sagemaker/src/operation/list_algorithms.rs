@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_algorithms::L
     }
 }
 
-pub use crate::operation::list_algorithms::_list_algorithms_output::ListAlgorithmsOutput;
-
 pub use crate::operation::list_algorithms::_list_algorithms_input::ListAlgorithmsInput;
+
+pub use crate::operation::list_algorithms::_list_algorithms_output::ListAlgorithmsOutput;
 
 mod _list_algorithms_input;
 

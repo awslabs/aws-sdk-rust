@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_voice_profile
     }
 }
 
-pub use crate::operation::list_voice_profile_domains::_list_voice_profile_domains_output::ListVoiceProfileDomainsOutput;
-
 pub use crate::operation::list_voice_profile_domains::_list_voice_profile_domains_input::ListVoiceProfileDomainsInput;
+
+pub use crate::operation::list_voice_profile_domains::_list_voice_profile_domains_output::ListVoiceProfileDomainsOutput;
 
 mod _list_voice_profile_domains_input;
 

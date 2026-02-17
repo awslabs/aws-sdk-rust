@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_associate_client_device_with_core_device::_batch_associate_client_device_with_core_device_output::BatchAssociateClientDeviceWithCoreDeviceOutput;
-
 pub use crate::operation::batch_associate_client_device_with_core_device::_batch_associate_client_device_with_core_device_input::BatchAssociateClientDeviceWithCoreDeviceInput;
+
+pub use crate::operation::batch_associate_client_device_with_core_device::_batch_associate_client_device_with_core_device_output::BatchAssociateClientDeviceWithCoreDeviceOutput;
 
 mod _batch_associate_client_device_with_core_device_input;
 

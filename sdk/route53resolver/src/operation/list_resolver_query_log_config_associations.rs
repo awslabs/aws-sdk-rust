@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_resolver_query_log_config_associations::_list_resolver_query_log_config_associations_output::ListResolverQueryLogConfigAssociationsOutput;
-
 pub use crate::operation::list_resolver_query_log_config_associations::_list_resolver_query_log_config_associations_input::ListResolverQueryLogConfigAssociationsInput;
+
+pub use crate::operation::list_resolver_query_log_config_associations::_list_resolver_query_log_config_associations_output::ListResolverQueryLogConfigAssociationsOutput;
 
 mod _list_resolver_query_log_config_associations_input;
 

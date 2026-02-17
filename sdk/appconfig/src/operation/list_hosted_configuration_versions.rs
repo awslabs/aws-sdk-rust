@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hosted_config
     }
 }
 
-pub use crate::operation::list_hosted_configuration_versions::_list_hosted_configuration_versions_output::ListHostedConfigurationVersionsOutput;
-
 pub use crate::operation::list_hosted_configuration_versions::_list_hosted_configuration_versions_input::ListHostedConfigurationVersionsInput;
+
+pub use crate::operation::list_hosted_configuration_versions::_list_hosted_configuration_versions_output::ListHostedConfigurationVersionsOutput;
 
 mod _list_hosted_configuration_versions_input;
 

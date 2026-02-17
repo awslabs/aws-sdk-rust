@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_archive_search
     }
 }
 
-pub use crate::operation::get_archive_search::_get_archive_search_output::GetArchiveSearchOutput;
-
 pub use crate::operation::get_archive_search::_get_archive_search_input::GetArchiveSearchInput;
+
+pub use crate::operation::get_archive_search::_get_archive_search_output::GetArchiveSearchOutput;
 
 mod _get_archive_search_input;
 

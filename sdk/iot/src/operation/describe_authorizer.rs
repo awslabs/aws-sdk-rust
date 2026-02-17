@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_authorize
     }
 }
 
-pub use crate::operation::describe_authorizer::_describe_authorizer_output::DescribeAuthorizerOutput;
-
 pub use crate::operation::describe_authorizer::_describe_authorizer_input::DescribeAuthorizerInput;
+
+pub use crate::operation::describe_authorizer::_describe_authorizer_output::DescribeAuthorizerOutput;
 
 mod _describe_authorizer_input;
 

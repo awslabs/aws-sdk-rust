@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_worker_bloc
     }
 }
 
-pub use crate::operation::create_worker_block::_create_worker_block_output::CreateWorkerBlockOutput;
-
 pub use crate::operation::create_worker_block::_create_worker_block_input::CreateWorkerBlockInput;
+
+pub use crate::operation::create_worker_block::_create_worker_block_output::CreateWorkerBlockOutput;
 
 mod _create_worker_block_input;
 

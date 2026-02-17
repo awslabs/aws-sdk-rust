@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_event
     }
 }
 
-pub use crate::operation::get_function_event_invoke_config::_get_function_event_invoke_config_output::GetFunctionEventInvokeConfigOutput;
-
 pub use crate::operation::get_function_event_invoke_config::_get_function_event_invoke_config_input::GetFunctionEventInvokeConfigInput;
+
+pub use crate::operation::get_function_event_invoke_config::_get_function_event_invoke_config_output::GetFunctionEventInvokeConfigOutput;
 
 mod _get_function_event_invoke_config_input;
 

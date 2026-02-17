@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_fpga_image_
     }
 }
 
-pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attribute_output::ModifyFpgaImageAttributeOutput;
-
 pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attribute_input::ModifyFpgaImageAttributeInput;
+
+pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attribute_output::ModifyFpgaImageAttributeOutput;
 
 mod _modify_fpga_image_attribute_input;
 

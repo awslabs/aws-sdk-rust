@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_mapping::
     }
 }
 
-pub use crate::operation::generate_mapping::_generate_mapping_output::GenerateMappingOutput;
-
 pub use crate::operation::generate_mapping::_generate_mapping_input::GenerateMappingInput;
+
+pub use crate::operation::generate_mapping::_generate_mapping_output::GenerateMappingOutput;
 
 mod _generate_mapping_input;
 

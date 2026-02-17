@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_server_neighb
     }
 }
 
-pub use crate::operation::list_server_neighbors::_list_server_neighbors_output::ListServerNeighborsOutput;
-
 pub use crate::operation::list_server_neighbors::_list_server_neighbors_input::ListServerNeighborsInput;
+
+pub use crate::operation::list_server_neighbors::_list_server_neighbors_output::ListServerNeighborsOutput;
 
 mod _list_server_neighbors_input;
 

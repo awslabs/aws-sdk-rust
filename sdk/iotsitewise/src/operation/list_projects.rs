@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_projects::Lis
     }
 }
 
-pub use crate::operation::list_projects::_list_projects_output::ListProjectsOutput;
-
 pub use crate::operation::list_projects::_list_projects_input::ListProjectsInput;
+
+pub use crate::operation::list_projects::_list_projects_output::ListProjectsOutput;
 
 mod _list_projects_input;
 

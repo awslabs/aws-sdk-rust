@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rule_set::GetR
     }
 }
 
-pub use crate::operation::get_rule_set::_get_rule_set_output::GetRuleSetOutput;
-
 pub use crate::operation::get_rule_set::_get_rule_set_input::GetRuleSetInput;
+
+pub use crate::operation::get_rule_set::_get_rule_set_output::GetRuleSetOutput;
 
 mod _get_rule_set_input;
 

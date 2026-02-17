@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_replication
     }
 }
 
-pub use crate::operation::cancel_replication_task_assessment_run::_cancel_replication_task_assessment_run_output::CancelReplicationTaskAssessmentRunOutput;
-
 pub use crate::operation::cancel_replication_task_assessment_run::_cancel_replication_task_assessment_run_input::CancelReplicationTaskAssessmentRunInput;
+
+pub use crate::operation::cancel_replication_task_assessment_run::_cancel_replication_task_assessment_run_output::CancelReplicationTaskAssessmentRunOutput;
 
 mod _cancel_replication_task_assessment_run_input;
 

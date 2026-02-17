@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rule_metada
     }
 }
 
-pub use crate::operation::update_rule_metadata::_update_rule_metadata_output::UpdateRuleMetadataOutput;
-
 pub use crate::operation::update_rule_metadata::_update_rule_metadata_input::UpdateRuleMetadataInput;
+
+pub use crate::operation::update_rule_metadata::_update_rule_metadata_output::UpdateRuleMetadataOutput;
 
 mod _update_rule_metadata_input;
 

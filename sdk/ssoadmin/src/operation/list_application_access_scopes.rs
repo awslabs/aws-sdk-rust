@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_a
     }
 }
 
-pub use crate::operation::list_application_access_scopes::_list_application_access_scopes_output::ListApplicationAccessScopesOutput;
-
 pub use crate::operation::list_application_access_scopes::_list_application_access_scopes_input::ListApplicationAccessScopesInput;
+
+pub use crate::operation::list_application_access_scopes::_list_application_access_scopes_output::ListApplicationAccessScopesOutput;
 
 mod _list_application_access_scopes_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::is_member_in_group
     }
 }
 
-pub use crate::operation::is_member_in_groups::_is_member_in_groups_output::IsMemberInGroupsOutput;
-
 pub use crate::operation::is_member_in_groups::_is_member_in_groups_input::IsMemberInGroupsInput;
+
+pub use crate::operation::is_member_in_groups::_is_member_in_groups_output::IsMemberInGroupsOutput;
 
 mod _is_member_in_groups_input;
 

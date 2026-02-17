@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sync_config
     }
 }
 
-pub use crate::operation::update_sync_configuration::_update_sync_configuration_output::UpdateSyncConfigurationOutput;
-
 pub use crate::operation::update_sync_configuration::_update_sync_configuration_input::UpdateSyncConfigurationInput;
+
+pub use crate::operation::update_sync_configuration::_update_sync_configuration_output::UpdateSyncConfigurationOutput;
 
 mod _update_sync_configuration_input;
 

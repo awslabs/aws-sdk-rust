@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pool_originat
     }
 }
 
-pub use crate::operation::list_pool_origination_identities::_list_pool_origination_identities_output::ListPoolOriginationIdentitiesOutput;
-
 pub use crate::operation::list_pool_origination_identities::_list_pool_origination_identities_input::ListPoolOriginationIdentitiesInput;
+
+pub use crate::operation::list_pool_origination_identities::_list_pool_origination_identities_output::ListPoolOriginationIdentitiesOutput;
 
 mod _list_pool_origination_identities_input;
 

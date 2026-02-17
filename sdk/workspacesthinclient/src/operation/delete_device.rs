@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_device::Del
     }
 }
 
-pub use crate::operation::delete_device::_delete_device_output::DeleteDeviceOutput;
-
 pub use crate::operation::delete_device::_delete_device_input::DeleteDeviceInput;
+
+pub use crate::operation::delete_device::_delete_device_output::DeleteDeviceOutput;
 
 mod _delete_device_input;
 

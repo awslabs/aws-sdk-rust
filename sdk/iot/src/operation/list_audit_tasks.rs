@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audit_tasks::
     }
 }
 
-pub use crate::operation::list_audit_tasks::_list_audit_tasks_output::ListAuditTasksOutput;
-
 pub use crate::operation::list_audit_tasks::_list_audit_tasks_input::ListAuditTasksInput;
+
+pub use crate::operation::list_audit_tasks::_list_audit_tasks_output::ListAuditTasksOutput;
 
 mod _list_audit_tasks_input;
 

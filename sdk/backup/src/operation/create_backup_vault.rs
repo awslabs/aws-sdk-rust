@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backup_vaul
     }
 }
 
-pub use crate::operation::create_backup_vault::_create_backup_vault_output::CreateBackupVaultOutput;
-
 pub use crate::operation::create_backup_vault::_create_backup_vault_input::CreateBackupVaultInput;
+
+pub use crate::operation::create_backup_vault::_create_backup_vault_output::CreateBackupVaultOutput;
 
 mod _create_backup_vault_input;
 

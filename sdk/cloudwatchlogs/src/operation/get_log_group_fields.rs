@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_log_group_fiel
     }
 }
 
-pub use crate::operation::get_log_group_fields::_get_log_group_fields_output::GetLogGroupFieldsOutput;
-
 pub use crate::operation::get_log_group_fields::_get_log_group_fields_input::GetLogGroupFieldsInput;
+
+pub use crate::operation::get_log_group_fields::_get_log_group_fields_output::GetLogGroupFieldsOutput;
 
 mod _get_log_group_fields_input;
 

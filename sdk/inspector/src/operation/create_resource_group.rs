@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_gr
     }
 }
 
-pub use crate::operation::create_resource_group::_create_resource_group_output::CreateResourceGroupOutput;
-
 pub use crate::operation::create_resource_group::_create_resource_group_input::CreateResourceGroupInput;
+
+pub use crate::operation::create_resource_group::_create_resource_group_output::CreateResourceGroupOutput;
 
 mod _create_resource_group_input;
 

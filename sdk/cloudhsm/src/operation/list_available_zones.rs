@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_zon
     }
 }
 
-pub use crate::operation::list_available_zones::_list_available_zones_output::ListAvailableZonesOutput;
-
 pub use crate::operation::list_available_zones::_list_available_zones_input::ListAvailableZonesInput;
+
+pub use crate::operation::list_available_zones::_list_available_zones_output::ListAvailableZonesOutput;
 
 mod _list_available_zones_input;
 

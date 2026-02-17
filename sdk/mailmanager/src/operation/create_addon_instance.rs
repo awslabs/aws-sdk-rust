@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_addon_insta
     }
 }
 
-pub use crate::operation::create_addon_instance::_create_addon_instance_output::CreateAddonInstanceOutput;
-
 pub use crate::operation::create_addon_instance::_create_addon_instance_input::CreateAddonInstanceInput;
+
+pub use crate::operation::create_addon_instance::_create_addon_instance_output::CreateAddonInstanceOutput;
 
 mod _create_addon_instance_input;
 

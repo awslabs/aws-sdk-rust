@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_live_source
     }
 }
 
-pub use crate::operation::update_live_source::_update_live_source_output::UpdateLiveSourceOutput;
-
 pub use crate::operation::update_live_source::_update_live_source_input::UpdateLiveSourceInput;
+
+pub use crate::operation::update_live_source::_update_live_source_output::UpdateLiveSourceOutput;
 
 mod _update_live_source_input;
 

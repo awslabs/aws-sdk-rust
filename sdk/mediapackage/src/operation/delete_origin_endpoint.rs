@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_origin_endp
     }
 }
 
-pub use crate::operation::delete_origin_endpoint::_delete_origin_endpoint_output::DeleteOriginEndpointOutput;
-
 pub use crate::operation::delete_origin_endpoint::_delete_origin_endpoint_input::DeleteOriginEndpointInput;
+
+pub use crate::operation::delete_origin_endpoint::_delete_origin_endpoint_output::DeleteOriginEndpointOutput;
 
 mod _delete_origin_endpoint_input;
 

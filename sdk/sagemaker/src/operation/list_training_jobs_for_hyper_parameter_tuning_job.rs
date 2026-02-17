@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::_list_training_jobs_for_hyper_parameter_tuning_job_output::ListTrainingJobsForHyperParameterTuningJobOutput;
-
 pub use crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::_list_training_jobs_for_hyper_parameter_tuning_job_input::ListTrainingJobsForHyperParameterTuningJobInput;
+
+pub use crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::_list_training_jobs_for_hyper_parameter_tuning_job_output::ListTrainingJobsForHyperParameterTuningJobOutput;
 
 mod _list_training_jobs_for_hyper_parameter_tuning_job_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_portfolio
     }
 }
 
-pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_output::DescribePortfolioSharesOutput;
-
 pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_input::DescribePortfolioSharesInput;
+
+pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_output::DescribePortfolioSharesOutput;
 
 mod _describe_portfolio_shares_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_namespaces::L
     }
 }
 
-pub use crate::operation::list_namespaces::_list_namespaces_output::ListNamespacesOutput;
-
 pub use crate::operation::list_namespaces::_list_namespaces_input::ListNamespacesInput;
+
+pub use crate::operation::list_namespaces::_list_namespaces_output::ListNamespacesOutput;
 
 mod _list_namespaces_input;
 

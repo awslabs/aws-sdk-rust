@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_subnet_cidr
     }
 }
 
-pub use crate::operation::delete_subnet_cidr_reservation::_delete_subnet_cidr_reservation_output::DeleteSubnetCidrReservationOutput;
-
 pub use crate::operation::delete_subnet_cidr_reservation::_delete_subnet_cidr_reservation_input::DeleteSubnetCidrReservationInput;
+
+pub use crate::operation::delete_subnet_cidr_reservation::_delete_subnet_cidr_reservation_output::DeleteSubnetCidrReservationOutput;
 
 mod _delete_subnet_cidr_reservation_input;
 

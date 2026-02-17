@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_targeted_
     }
 }
 
-pub use crate::operation::describe_targeted_sentiment_detection_job::_describe_targeted_sentiment_detection_job_output::DescribeTargetedSentimentDetectionJobOutput;
-
 pub use crate::operation::describe_targeted_sentiment_detection_job::_describe_targeted_sentiment_detection_job_input::DescribeTargetedSentimentDetectionJobInput;
+
+pub use crate::operation::describe_targeted_sentiment_detection_job::_describe_targeted_sentiment_detection_job_output::DescribeTargetedSentimentDetectionJobOutput;
 
 mod _describe_targeted_sentiment_detection_job_input;
 

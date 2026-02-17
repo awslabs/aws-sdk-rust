@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_authenticat
     }
 }
 
-pub use crate::operation::create_authentication_profile::_create_authentication_profile_output::CreateAuthenticationProfileOutput;
-
 pub use crate::operation::create_authentication_profile::_create_authentication_profile_input::CreateAuthenticationProfileInput;
+
+pub use crate::operation::create_authentication_profile::_create_authentication_profile_output::CreateAuthenticationProfileOutput;
 
 mod _create_authentication_profile_input;
 

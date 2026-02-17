@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_detect_mitig
     }
 }
 
-pub use crate::operation::start_detect_mitigation_actions_task::_start_detect_mitigation_actions_task_output::StartDetectMitigationActionsTaskOutput;
-
 pub use crate::operation::start_detect_mitigation_actions_task::_start_detect_mitigation_actions_task_input::StartDetectMitigationActionsTaskInput;
+
+pub use crate::operation::start_detect_mitigation_actions_task::_start_detect_mitigation_actions_task_output::StartDetectMitigationActionsTaskOutput;
 
 mod _start_detect_mitigation_actions_task_input;
 

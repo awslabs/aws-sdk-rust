@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_servi
     }
 }
 
-pub use crate::operation::disassociate_service_quota_template::_disassociate_service_quota_template_output::DisassociateServiceQuotaTemplateOutput;
-
 pub use crate::operation::disassociate_service_quota_template::_disassociate_service_quota_template_input::DisassociateServiceQuotaTemplateInput;
+
+pub use crate::operation::disassociate_service_quota_template::_disassociate_service_quota_template_output::DisassociateServiceQuotaTemplateOutput;
 
 mod _disassociate_service_quota_template_input;
 

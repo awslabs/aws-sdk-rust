@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_continuous_
     }
 }
 
-pub use crate::operation::create_continuous_deployment_policy::_create_continuous_deployment_policy_output::CreateContinuousDeploymentPolicyOutput;
-
 pub use crate::operation::create_continuous_deployment_policy::_create_continuous_deployment_policy_input::CreateContinuousDeploymentPolicyInput;
+
+pub use crate::operation::create_continuous_deployment_policy::_create_continuous_deployment_policy_output::CreateContinuousDeploymentPolicyOutput;
 
 mod _create_continuous_deployment_policy_input;
 

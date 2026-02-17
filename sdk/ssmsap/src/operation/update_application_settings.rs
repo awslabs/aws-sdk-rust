@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_application
     }
 }
 
-pub use crate::operation::update_application_settings::_update_application_settings_output::UpdateApplicationSettingsOutput;
-
 pub use crate::operation::update_application_settings::_update_application_settings_input::UpdateApplicationSettingsInput;
+
+pub use crate::operation::update_application_settings::_update_application_settings_output::UpdateApplicationSettingsOutput;
 
 mod _update_application_settings_input;
 

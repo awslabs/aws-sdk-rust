@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_code_securi
     }
 }
 
-pub use crate::operation::delete_code_security_integration::_delete_code_security_integration_output::DeleteCodeSecurityIntegrationOutput;
-
 pub use crate::operation::delete_code_security_integration::_delete_code_security_integration_input::DeleteCodeSecurityIntegrationInput;
+
+pub use crate::operation::delete_code_security_integration::_delete_code_security_integration_output::DeleteCodeSecurityIntegrationOutput;
 
 mod _delete_code_security_integration_input;
 

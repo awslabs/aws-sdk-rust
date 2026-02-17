@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_v
     }
 }
 
-pub use crate::operation::list_environment_vpcs::_list_environment_vpcs_output::ListEnvironmentVpcsOutput;
-
 pub use crate::operation::list_environment_vpcs::_list_environment_vpcs_input::ListEnvironmentVpcsInput;
+
+pub use crate::operation::list_environment_vpcs::_list_environment_vpcs_output::ListEnvironmentVpcsOutput;
 
 mod _list_environment_vpcs_input;
 

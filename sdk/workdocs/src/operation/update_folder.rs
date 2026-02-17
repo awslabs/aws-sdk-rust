@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_folder::Upd
     }
 }
 
-pub use crate::operation::update_folder::_update_folder_output::UpdateFolderOutput;
-
 pub use crate::operation::update_folder::_update_folder_input::UpdateFolderInput;
+
+pub use crate::operation::update_folder::_update_folder_output::UpdateFolderOutput;
 
 mod _update_folder_input;
 

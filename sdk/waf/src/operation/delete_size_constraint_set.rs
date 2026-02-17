@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_size_constr
     }
 }
 
-pub use crate::operation::delete_size_constraint_set::_delete_size_constraint_set_output::DeleteSizeConstraintSetOutput;
-
 pub use crate::operation::delete_size_constraint_set::_delete_size_constraint_set_input::DeleteSizeConstraintSetInput;
+
+pub use crate::operation::delete_size_constraint_set::_delete_size_constraint_set_output::DeleteSizeConstraintSetOutput;
 
 mod _delete_size_constraint_set_input;
 

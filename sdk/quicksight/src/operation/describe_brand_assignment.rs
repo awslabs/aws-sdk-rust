@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_brand_ass
     }
 }
 
-pub use crate::operation::describe_brand_assignment::_describe_brand_assignment_output::DescribeBrandAssignmentOutput;
-
 pub use crate::operation::describe_brand_assignment::_describe_brand_assignment_input::DescribeBrandAssignmentInput;
+
+pub use crate::operation::describe_brand_assignment::_describe_brand_assignment_output::DescribeBrandAssignmentOutput;
 
 mod _describe_brand_assignment_input;
 

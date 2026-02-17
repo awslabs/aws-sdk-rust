@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_drt_l
     }
 }
 
-pub use crate::operation::disassociate_drt_log_bucket::_disassociate_drt_log_bucket_output::DisassociateDrtLogBucketOutput;
-
 pub use crate::operation::disassociate_drt_log_bucket::_disassociate_drt_log_bucket_input::DisassociateDrtLogBucketInput;
+
+pub use crate::operation::disassociate_drt_log_bucket::_disassociate_drt_log_bucket_output::DisassociateDrtLogBucketOutput;
 
 mod _disassociate_drt_log_bucket_input;
 

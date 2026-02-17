@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_endpoint::G
     }
 }
 
-pub use crate::operation::get_ml_endpoint::_get_ml_endpoint_output::GetMlEndpointOutput;
-
 pub use crate::operation::get_ml_endpoint::_get_ml_endpoint_input::GetMlEndpointInput;
+
+pub use crate::operation::get_ml_endpoint::_get_ml_endpoint_output::GetMlEndpointOutput;
 
 mod _get_ml_endpoint_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_enable_stand
     }
 }
 
-pub use crate::operation::batch_enable_standards::_batch_enable_standards_output::BatchEnableStandardsOutput;
-
 pub use crate::operation::batch_enable_standards::_batch_enable_standards_input::BatchEnableStandardsInput;
+
+pub use crate::operation::batch_enable_standards::_batch_enable_standards_output::BatchEnableStandardsOutput;
 
 mod _batch_enable_standards_input;
 

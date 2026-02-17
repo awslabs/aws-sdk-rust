@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_replication
     }
 }
 
-pub use crate::operation::update_replication_set::_update_replication_set_output::UpdateReplicationSetOutput;
-
 pub use crate::operation::update_replication_set::_update_replication_set_input::UpdateReplicationSetInput;
+
+pub use crate::operation::update_replication_set::_update_replication_set_output::UpdateReplicationSetOutput;
 
 mod _update_replication_set_input;
 

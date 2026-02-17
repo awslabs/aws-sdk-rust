@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_notebook_exec
     }
 }
 
-pub use crate::operation::list_notebook_executions::_list_notebook_executions_output::ListNotebookExecutionsOutput;
-
 pub use crate::operation::list_notebook_executions::_list_notebook_executions_input::ListNotebookExecutionsInput;
+
+pub use crate::operation::list_notebook_executions::_list_notebook_executions_output::ListNotebookExecutionsOutput;
 
 mod _list_notebook_executions_input;
 

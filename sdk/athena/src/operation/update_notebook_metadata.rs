@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_notebook_me
     }
 }
 
-pub use crate::operation::update_notebook_metadata::_update_notebook_metadata_output::UpdateNotebookMetadataOutput;
-
 pub use crate::operation::update_notebook_metadata::_update_notebook_metadata_input::UpdateNotebookMetadataInput;
+
+pub use crate::operation::update_notebook_metadata::_update_notebook_metadata_output::UpdateNotebookMetadataOutput;
 
 mod _update_notebook_metadata_input;
 

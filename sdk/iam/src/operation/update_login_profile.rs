@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_login_profi
     }
 }
 
-pub use crate::operation::update_login_profile::_update_login_profile_output::UpdateLoginProfileOutput;
-
 pub use crate::operation::update_login_profile::_update_login_profile_input::UpdateLoginProfileInput;
+
+pub use crate::operation::update_login_profile::_update_login_profile_output::UpdateLoginProfileOutput;
 
 mod _update_login_profile_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pull_thro
     }
 }
 
-pub use crate::operation::describe_pull_through_cache_rules::_describe_pull_through_cache_rules_output::DescribePullThroughCacheRulesOutput;
-
 pub use crate::operation::describe_pull_through_cache_rules::_describe_pull_through_cache_rules_input::DescribePullThroughCacheRulesInput;
+
+pub use crate::operation::describe_pull_through_cache_rules::_describe_pull_through_cache_rules_output::DescribePullThroughCacheRulesOutput;
 
 mod _describe_pull_through_cache_rules_input;
 

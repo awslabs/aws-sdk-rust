@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_spaces::ListS
     }
 }
 
-pub use crate::operation::list_spaces::_list_spaces_output::ListSpacesOutput;
-
 pub use crate::operation::list_spaces::_list_spaces_input::ListSpacesInput;
+
+pub use crate::operation::list_spaces::_list_spaces_output::ListSpacesOutput;
 
 mod _list_spaces_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provisioned_c
     }
 }
 
-pub use crate::operation::list_provisioned_capacity::_list_provisioned_capacity_output::ListProvisionedCapacityOutput;
-
 pub use crate::operation::list_provisioned_capacity::_list_provisioned_capacity_input::ListProvisionedCapacityInput;
+
+pub use crate::operation::list_provisioned_capacity::_list_provisioned_capacity_output::ListProvisionedCapacityOutput;
 
 mod _list_provisioned_capacity_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_snomedct_infe
     }
 }
 
-pub use crate::operation::stop_snomedct_inference_job::_stop_snomedct_inference_job_output::StopSnomedctInferenceJobOutput;
-
 pub use crate::operation::stop_snomedct_inference_job::_stop_snomedct_inference_job_input::StopSnomedctInferenceJobInput;
+
+pub use crate::operation::stop_snomedct_inference_job::_stop_snomedct_inference_job_output::StopSnomedctInferenceJobOutput;
 
 mod _stop_snomedct_inference_job_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_statement_resu
     }
 }
 
-pub use crate::operation::get_statement_result::_get_statement_result_output::GetStatementResultOutput;
-
 pub use crate::operation::get_statement_result::_get_statement_result_input::GetStatementResultInput;
+
+pub use crate::operation::get_statement_result::_get_statement_result_output::GetStatementResultOutput;
 
 mod _get_statement_result_input;
 

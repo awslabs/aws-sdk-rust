@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_associati
     }
 }
 
-pub use crate::operation::get_flow_association::_get_flow_association_output::GetFlowAssociationOutput;
-
 pub use crate::operation::get_flow_association::_get_flow_association_input::GetFlowAssociationInput;
+
+pub use crate::operation::get_flow_association::_get_flow_association_output::GetFlowAssociationOutput;
 
 mod _get_flow_association_input;
 

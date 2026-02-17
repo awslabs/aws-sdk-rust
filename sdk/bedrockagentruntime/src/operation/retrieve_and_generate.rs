@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve_and_gener
     }
 }
 
-pub use crate::operation::retrieve_and_generate::_retrieve_and_generate_output::RetrieveAndGenerateOutput;
-
 pub use crate::operation::retrieve_and_generate::_retrieve_and_generate_input::RetrieveAndGenerateInput;
+
+pub use crate::operation::retrieve_and_generate::_retrieve_and_generate_output::RetrieveAndGenerateOutput;
 
 mod _retrieve_and_generate_input;
 

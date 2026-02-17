@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_firewall_conf
     }
 }
 
-pub use crate::operation::list_firewall_configs::_list_firewall_configs_output::ListFirewallConfigsOutput;
-
 pub use crate::operation::list_firewall_configs::_list_firewall_configs_input::ListFirewallConfigsInput;
+
+pub use crate::operation::list_firewall_configs::_list_firewall_configs_output::ListFirewallConfigsOutput;
 
 mod _list_firewall_configs_input;
 

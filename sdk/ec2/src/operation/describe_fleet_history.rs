@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_his
     }
 }
 
-pub use crate::operation::describe_fleet_history::_describe_fleet_history_output::DescribeFleetHistoryOutput;
-
 pub use crate::operation::describe_fleet_history::_describe_fleet_history_input::DescribeFleetHistoryInput;
+
+pub use crate::operation::describe_fleet_history::_describe_fleet_history_output::DescribeFleetHistoryOutput;
 
 mod _describe_fleet_history_input;
 

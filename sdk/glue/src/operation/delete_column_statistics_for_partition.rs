@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_column_stat
     }
 }
 
-pub use crate::operation::delete_column_statistics_for_partition::_delete_column_statistics_for_partition_output::DeleteColumnStatisticsForPartitionOutput;
-
 pub use crate::operation::delete_column_statistics_for_partition::_delete_column_statistics_for_partition_input::DeleteColumnStatisticsForPartitionInput;
+
+pub use crate::operation::delete_column_statistics_for_partition::_delete_column_statistics_for_partition_output::DeleteColumnStatisticsForPartitionOutput;
 
 mod _delete_column_statistics_for_partition_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_update_bill_scenario_commitment_modification::_batch_update_bill_scenario_commitment_modification_output::BatchUpdateBillScenarioCommitmentModificationOutput;
-
 pub use crate::operation::batch_update_bill_scenario_commitment_modification::_batch_update_bill_scenario_commitment_modification_input::BatchUpdateBillScenarioCommitmentModificationInput;
+
+pub use crate::operation::batch_update_bill_scenario_commitment_modification::_batch_update_bill_scenario_commitment_modification_output::BatchUpdateBillScenarioCommitmentModificationOutput;
 
 mod _batch_update_bill_scenario_commitment_modification_input;
 

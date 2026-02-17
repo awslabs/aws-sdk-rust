@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_open_id_token:
     }
 }
 
-pub use crate::operation::get_open_id_token::_get_open_id_token_output::GetOpenIdTokenOutput;
-
 pub use crate::operation::get_open_id_token::_get_open_id_token_input::GetOpenIdTokenInput;
+
+pub use crate::operation::get_open_id_token::_get_open_id_token_output::GetOpenIdTokenOutput;
 
 mod _get_open_id_token_input;
 

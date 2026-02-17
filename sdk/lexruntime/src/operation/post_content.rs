@@ -516,9 +516,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_content::Post
     }
 }
 
-pub use crate::operation::post_content::_post_content_output::PostContentOutput;
-
 pub use crate::operation::post_content::_post_content_input::PostContentInput;
+
+pub use crate::operation::post_content::_post_content_output::PostContentOutput;
 
 mod _post_content_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_free_tri
     }
 }
 
-pub use crate::operation::batch_get_free_trial_info::_batch_get_free_trial_info_output::BatchGetFreeTrialInfoOutput;
-
 pub use crate::operation::batch_get_free_trial_info::_batch_get_free_trial_info_input::BatchGetFreeTrialInfoInput;
+
+pub use crate::operation::batch_get_free_trial_info::_batch_get_free_trial_info_output::BatchGetFreeTrialInfoOutput;
 
 mod _batch_get_free_trial_info_input;
 

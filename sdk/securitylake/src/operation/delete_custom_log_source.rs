@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_log_
     }
 }
 
-pub use crate::operation::delete_custom_log_source::_delete_custom_log_source_output::DeleteCustomLogSourceOutput;
-
 pub use crate::operation::delete_custom_log_source::_delete_custom_log_source_input::DeleteCustomLogSourceInput;
+
+pub use crate::operation::delete_custom_log_source::_delete_custom_log_source_output::DeleteCustomLogSourceOutput;
 
 mod _delete_custom_log_source_input;
 

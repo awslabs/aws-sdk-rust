@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_user_set
     }
 }
 
-pub use crate::operation::associate_user_settings::_associate_user_settings_output::AssociateUserSettingsOutput;
-
 pub use crate::operation::associate_user_settings::_associate_user_settings_input::AssociateUserSettingsInput;
+
+pub use crate::operation::associate_user_settings::_associate_user_settings_output::AssociateUserSettingsOutput;
 
 mod _associate_user_settings_input;
 

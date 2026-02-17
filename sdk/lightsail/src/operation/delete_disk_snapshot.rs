@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_disk_snapsh
     }
 }
 
-pub use crate::operation::delete_disk_snapshot::_delete_disk_snapshot_output::DeleteDiskSnapshotOutput;
-
 pub use crate::operation::delete_disk_snapshot::_delete_disk_snapshot_input::DeleteDiskSnapshotInput;
+
+pub use crate::operation::delete_disk_snapshot::_delete_disk_snapshot_output::DeleteDiskSnapshotOutput;
 
 mod _delete_disk_snapshot_input;
 

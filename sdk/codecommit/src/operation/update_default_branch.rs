@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_default_bra
     }
 }
 
-pub use crate::operation::update_default_branch::_update_default_branch_output::UpdateDefaultBranchOutput;
-
 pub use crate::operation::update_default_branch::_update_default_branch_input::UpdateDefaultBranchInput;
+
+pub use crate::operation::update_default_branch::_update_default_branch_output::UpdateDefaultBranchOutput;
 
 mod _update_default_branch_input;
 

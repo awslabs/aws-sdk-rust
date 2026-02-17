@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_topic::Dele
     }
 }
 
-pub use crate::operation::delete_topic::_delete_topic_output::DeleteTopicOutput;
-
 pub use crate::operation::delete_topic::_delete_topic_input::DeleteTopicInput;
+
+pub use crate::operation::delete_topic::_delete_topic_output::DeleteTopicOutput;
 
 mod _delete_topic_input;
 

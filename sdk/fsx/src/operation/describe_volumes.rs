@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_volumes::
     }
 }
 
-pub use crate::operation::describe_volumes::_describe_volumes_output::DescribeVolumesOutput;
-
 pub use crate::operation::describe_volumes::_describe_volumes_input::DescribeVolumesInput;
+
+pub use crate::operation::describe_volumes::_describe_volumes_output::DescribeVolumesOutput;
 
 mod _describe_volumes_input;
 

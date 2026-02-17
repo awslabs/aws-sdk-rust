@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_static_map::Ge
     }
 }
 
-pub use crate::operation::get_static_map::_get_static_map_output::GetStaticMapOutput;
-
 pub use crate::operation::get_static_map::_get_static_map_input::GetStaticMapInput;
+
+pub use crate::operation::get_static_map::_get_static_map_output::GetStaticMapOutput;
 
 mod _get_static_map_input;
 

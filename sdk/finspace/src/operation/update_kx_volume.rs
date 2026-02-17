@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_kx_volume::
     }
 }
 
-pub use crate::operation::update_kx_volume::_update_kx_volume_output::UpdateKxVolumeOutput;
-
 pub use crate::operation::update_kx_volume::_update_kx_volume_input::UpdateKxVolumeInput;
+
+pub use crate::operation::update_kx_volume::_update_kx_volume_output::UpdateKxVolumeOutput;
 
 mod _update_kx_volume_input;
 

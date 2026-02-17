@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protection_gr
     }
 }
 
-pub use crate::operation::list_protection_groups::_list_protection_groups_output::ListProtectionGroupsOutput;
-
 pub use crate::operation::list_protection_groups::_list_protection_groups_input::ListProtectionGroupsInput;
+
+pub use crate::operation::list_protection_groups::_list_protection_groups_output::ListProtectionGroupsOutput;
 
 mod _list_protection_groups_input;
 

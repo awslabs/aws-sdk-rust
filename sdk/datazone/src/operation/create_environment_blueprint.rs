@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_environment
     }
 }
 
-pub use crate::operation::create_environment_blueprint::_create_environment_blueprint_output::CreateEnvironmentBlueprintOutput;
-
 pub use crate::operation::create_environment_blueprint::_create_environment_blueprint_input::CreateEnvironmentBlueprintInput;
+
+pub use crate::operation::create_environment_blueprint::_create_environment_blueprint_output::CreateEnvironmentBlueprintOutput;
 
 mod _create_environment_blueprint_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_in_app_templat
     }
 }
 
-pub use crate::operation::get_in_app_template::_get_in_app_template_output::GetInAppTemplateOutput;
-
 pub use crate::operation::get_in_app_template::_get_in_app_template_input::GetInAppTemplateInput;
+
+pub use crate::operation::get_in_app_template::_get_in_app_template_output::GetInAppTemplateOutput;
 
 mod _get_in_app_template_input;
 

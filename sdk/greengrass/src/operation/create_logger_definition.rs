@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_logger_defi
     }
 }
 
-pub use crate::operation::create_logger_definition::_create_logger_definition_output::CreateLoggerDefinitionOutput;
-
 pub use crate::operation::create_logger_definition::_create_logger_definition_input::CreateLoggerDefinitionInput;
+
+pub use crate::operation::create_logger_definition::_create_logger_definition_output::CreateLoggerDefinitionOutput;
 
 mod _create_logger_definition_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_invocations::
     }
 }
 
-pub use crate::operation::list_invocations::_list_invocations_output::ListInvocationsOutput;
-
 pub use crate::operation::list_invocations::_list_invocations_input::ListInvocationsInput;
+
+pub use crate::operation::list_invocations::_list_invocations_output::ListInvocationsOutput;
 
 mod _list_invocations_input;
 

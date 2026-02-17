@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_poin
     }
 }
 
-pub use crate::operation::delete_access_point_for_object_lambda::_delete_access_point_for_object_lambda_output::DeleteAccessPointForObjectLambdaOutput;
-
 pub use crate::operation::delete_access_point_for_object_lambda::_delete_access_point_for_object_lambda_input::DeleteAccessPointForObjectLambdaInput;
+
+pub use crate::operation::delete_access_point_for_object_lambda::_delete_access_point_for_object_lambda_output::DeleteAccessPointForObjectLambdaOutput;
 
 mod _delete_access_point_for_object_lambda_input;
 

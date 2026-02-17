@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_account::Mo
     }
 }
 
-pub use crate::operation::modify_account::_modify_account_output::ModifyAccountOutput;
-
 pub use crate::operation::modify_account::_modify_account_input::ModifyAccountInput;
+
+pub use crate::operation::modify_account::_modify_account_output::ModifyAccountOutput;
 
 mod _modify_account_input;
 

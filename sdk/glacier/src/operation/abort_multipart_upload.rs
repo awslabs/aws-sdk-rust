@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::abort_multipart_up
     }
 }
 
-pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_output::AbortMultipartUploadOutput;
-
 pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_input::AbortMultipartUploadInput;
+
+pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_output::AbortMultipartUploadOutput;
 
 mod _abort_multipart_upload_input;
 

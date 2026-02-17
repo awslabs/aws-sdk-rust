@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_snapshot_ac
     }
 }
 
-pub use crate::operation::revoke_snapshot_access::_revoke_snapshot_access_output::RevokeSnapshotAccessOutput;
-
 pub use crate::operation::revoke_snapshot_access::_revoke_snapshot_access_input::RevokeSnapshotAccessInput;
+
+pub use crate::operation::revoke_snapshot_access::_revoke_snapshot_access_output::RevokeSnapshotAccessOutput;
 
 mod _revoke_snapshot_access_input;
 

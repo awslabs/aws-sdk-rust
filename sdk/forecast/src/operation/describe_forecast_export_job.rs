@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_forecast_
     }
 }
 
-pub use crate::operation::describe_forecast_export_job::_describe_forecast_export_job_output::DescribeForecastExportJobOutput;
-
 pub use crate::operation::describe_forecast_export_job::_describe_forecast_export_job_input::DescribeForecastExportJobInput;
+
+pub use crate::operation::describe_forecast_export_job::_describe_forecast_export_job_output::DescribeForecastExportJobOutput;
 
 mod _describe_forecast_export_job_input;
 

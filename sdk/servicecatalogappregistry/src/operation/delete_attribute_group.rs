@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_attribute_g
     }
 }
 
-pub use crate::operation::delete_attribute_group::_delete_attribute_group_output::DeleteAttributeGroupOutput;
-
 pub use crate::operation::delete_attribute_group::_delete_attribute_group_input::DeleteAttributeGroupInput;
+
+pub use crate::operation::delete_attribute_group::_delete_attribute_group_output::DeleteAttributeGroupOutput;
 
 mod _delete_attribute_group_input;
 

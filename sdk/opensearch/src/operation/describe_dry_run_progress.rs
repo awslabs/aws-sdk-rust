@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dry_run_p
     }
 }
 
-pub use crate::operation::describe_dry_run_progress::_describe_dry_run_progress_output::DescribeDryRunProgressOutput;
-
 pub use crate::operation::describe_dry_run_progress::_describe_dry_run_progress_input::DescribeDryRunProgressInput;
+
+pub use crate::operation::describe_dry_run_progress::_describe_dry_run_progress_output::DescribeDryRunProgressOutput;
 
 mod _describe_dry_run_progress_input;
 

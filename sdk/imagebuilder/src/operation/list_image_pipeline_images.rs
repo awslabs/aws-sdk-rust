@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_pipelin
     }
 }
 
-pub use crate::operation::list_image_pipeline_images::_list_image_pipeline_images_output::ListImagePipelineImagesOutput;
-
 pub use crate::operation::list_image_pipeline_images::_list_image_pipeline_images_input::ListImagePipelineImagesInput;
+
+pub use crate::operation::list_image_pipeline_images::_list_image_pipeline_images_output::ListImagePipelineImagesOutput;
 
 mod _list_image_pipeline_images_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_buckets_aggreg
     }
 }
 
-pub use crate::operation::get_buckets_aggregation::_get_buckets_aggregation_output::GetBucketsAggregationOutput;
-
 pub use crate::operation::get_buckets_aggregation::_get_buckets_aggregation_input::GetBucketsAggregationInput;
+
+pub use crate::operation::get_buckets_aggregation::_get_buckets_aggregation_output::GetBucketsAggregationOutput;
 
 mod _get_buckets_aggregation_input;
 

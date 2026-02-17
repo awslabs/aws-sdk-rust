@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_application
     }
 }
 
-pub use crate::operation::import_application_usage::_import_application_usage_output::ImportApplicationUsageOutput;
-
 pub use crate::operation::import_application_usage::_import_application_usage_input::ImportApplicationUsageInput;
+
+pub use crate::operation::import_application_usage::_import_application_usage_output::ImportApplicationUsageOutput;
 
 mod _import_application_usage_input;
 

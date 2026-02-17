@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_part::Uploa
     }
 }
 
-pub use crate::operation::upload_part::_upload_part_output::UploadPartOutput;
-
 pub use crate::operation::upload_part::_upload_part_input::UploadPartInput;
+
+pub use crate::operation::upload_part::_upload_part_output::UploadPartOutput;
 
 mod _upload_part_input;
 

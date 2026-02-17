@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_domain_name
     }
 }
 
-pub use crate::operation::delete_domain_name_access_association::_delete_domain_name_access_association_output::DeleteDomainNameAccessAssociationOutput;
-
 pub use crate::operation::delete_domain_name_access_association::_delete_domain_name_access_association_input::DeleteDomainNameAccessAssociationInput;
+
+pub use crate::operation::delete_domain_name_access_association::_delete_domain_name_access_association_output::DeleteDomainNameAccessAssociationOutput;
 
 mod _delete_domain_name_access_association_input;
 

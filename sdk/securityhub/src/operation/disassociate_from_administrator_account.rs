@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_from_
     }
 }
 
-pub use crate::operation::disassociate_from_administrator_account::_disassociate_from_administrator_account_output::DisassociateFromAdministratorAccountOutput;
-
 pub use crate::operation::disassociate_from_administrator_account::_disassociate_from_administrator_account_input::DisassociateFromAdministratorAccountInput;
+
+pub use crate::operation::disassociate_from_administrator_account::_disassociate_from_administrator_account_output::DisassociateFromAdministratorAccountOutput;
 
 mod _disassociate_from_administrator_account_input;
 

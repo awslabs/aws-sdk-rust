@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::register_transit_gateway_multicast_group_members::_register_transit_gateway_multicast_group_members_output::RegisterTransitGatewayMulticastGroupMembersOutput;
-
 pub use crate::operation::register_transit_gateway_multicast_group_members::_register_transit_gateway_multicast_group_members_input::RegisterTransitGatewayMulticastGroupMembersInput;
+
+pub use crate::operation::register_transit_gateway_multicast_group_members::_register_transit_gateway_multicast_group_members_output::RegisterTransitGatewayMulticastGroupMembersOutput;
 
 mod _register_transit_gateway_multicast_group_members_input;
 

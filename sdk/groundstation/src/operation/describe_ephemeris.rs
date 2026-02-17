@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ephemeris
     }
 }
 
-pub use crate::operation::describe_ephemeris::_describe_ephemeris_output::DescribeEphemerisOutput;
-
 pub use crate::operation::describe_ephemeris::_describe_ephemeris_input::DescribeEphemerisInput;
+
+pub use crate::operation::describe_ephemeris::_describe_ephemeris_output::DescribeEphemerisOutput;
 
 mod _describe_ephemeris_input;
 

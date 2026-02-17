@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_signing_certi
     }
 }
 
-pub use crate::operation::list_signing_certificates::_list_signing_certificates_output::ListSigningCertificatesOutput;
-
 pub use crate::operation::list_signing_certificates::_list_signing_certificates_input::ListSigningCertificatesInput;
+
+pub use crate::operation::list_signing_certificates::_list_signing_certificates_output::ListSigningCertificatesOutput;
 
 mod _list_signing_certificates_input;
 

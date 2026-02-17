@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table::GetTabl
     }
 }
 
-pub use crate::operation::get_table::_get_table_output::GetTableOutput;
-
 pub use crate::operation::get_table::_get_table_input::GetTableInput;
+
+pub use crate::operation::get_table::_get_table_output::GetTableOutput;
 
 mod _get_table_input;
 

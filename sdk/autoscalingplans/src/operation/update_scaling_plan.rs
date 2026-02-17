@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scaling_pla
     }
 }
 
-pub use crate::operation::update_scaling_plan::_update_scaling_plan_output::UpdateScalingPlanOutput;
-
 pub use crate::operation::update_scaling_plan::_update_scaling_plan_input::UpdateScalingPlanInput;
+
+pub use crate::operation::update_scaling_plan::_update_scaling_plan_output::UpdateScalingPlanOutput;
 
 mod _update_scaling_plan_input;
 

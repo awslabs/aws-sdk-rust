@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cidr_collec
     }
 }
 
-pub use crate::operation::create_cidr_collection::_create_cidr_collection_output::CreateCidrCollectionOutput;
-
 pub use crate::operation::create_cidr_collection::_create_cidr_collection_input::CreateCidrCollectionInput;
+
+pub use crate::operation::create_cidr_collection::_create_cidr_collection_output::CreateCidrCollectionOutput;
 
 mod _create_cidr_collection_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_associate_re
     }
 }
 
-pub use crate::operation::batch_associate_resource::_batch_associate_resource_output::BatchAssociateResourceOutput;
-
 pub use crate::operation::batch_associate_resource::_batch_associate_resource_input::BatchAssociateResourceInput;
+
+pub use crate::operation::batch_associate_resource::_batch_associate_resource_output::BatchAssociateResourceOutput;
 
 mod _batch_associate_resource_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_c
     }
 }
 
-pub use crate::operation::describe_account_customization::_describe_account_customization_output::DescribeAccountCustomizationOutput;
-
 pub use crate::operation::describe_account_customization::_describe_account_customization_input::DescribeAccountCustomizationInput;
+
+pub use crate::operation::describe_account_customization::_describe_account_customization_output::DescribeAccountCustomizationOutput;
 
 mod _describe_account_customization_input;
 

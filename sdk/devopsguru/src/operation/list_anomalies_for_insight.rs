@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_anomalies_for
     }
 }
 
-pub use crate::operation::list_anomalies_for_insight::_list_anomalies_for_insight_output::ListAnomaliesForInsightOutput;
-
 pub use crate::operation::list_anomalies_for_insight::_list_anomalies_for_insight_input::ListAnomaliesForInsightInput;
+
+pub use crate::operation::list_anomalies_for_insight::_list_anomalies_for_insight_output::ListAnomaliesForInsightOutput;
 
 mod _list_anomalies_for_insight_input;
 

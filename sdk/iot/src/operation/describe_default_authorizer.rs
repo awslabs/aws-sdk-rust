@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_default_a
     }
 }
 
-pub use crate::operation::describe_default_authorizer::_describe_default_authorizer_output::DescribeDefaultAuthorizerOutput;
-
 pub use crate::operation::describe_default_authorizer::_describe_default_authorizer_input::DescribeDefaultAuthorizerInput;
+
+pub use crate::operation::describe_default_authorizer::_describe_default_authorizer_output::DescribeDefaultAuthorizerOutput;
 
 mod _describe_default_authorizer_input;
 

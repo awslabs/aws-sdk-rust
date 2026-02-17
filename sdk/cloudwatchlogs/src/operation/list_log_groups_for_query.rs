@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_log_groups_fo
     }
 }
 
-pub use crate::operation::list_log_groups_for_query::_list_log_groups_for_query_output::ListLogGroupsForQueryOutput;
-
 pub use crate::operation::list_log_groups_for_query::_list_log_groups_for_query_input::ListLogGroupsForQueryInput;
+
+pub use crate::operation::list_log_groups_for_query::_list_log_groups_for_query_output::ListLogGroupsForQueryOutput;
 
 mod _list_log_groups_for_query_input;
 

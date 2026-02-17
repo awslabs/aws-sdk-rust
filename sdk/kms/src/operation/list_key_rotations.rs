@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_key_rotations
     }
 }
 
-pub use crate::operation::list_key_rotations::_list_key_rotations_output::ListKeyRotationsOutput;
-
 pub use crate::operation::list_key_rotations::_list_key_rotations_input::ListKeyRotationsInput;
+
+pub use crate::operation::list_key_rotations::_list_key_rotations_output::ListKeyRotationsOutput;
 
 mod _list_key_rotations_input;
 

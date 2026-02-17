@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_automation_
     }
 }
 
-pub use crate::operation::create_automation_rule_v2::_create_automation_rule_v2_output::CreateAutomationRuleV2Output;
-
 pub use crate::operation::create_automation_rule_v2::_create_automation_rule_v2_input::CreateAutomationRuleV2Input;
+
+pub use crate::operation::create_automation_rule_v2::_create_automation_rule_v2_output::CreateAutomationRuleV2Output;
 
 mod _create_automation_rule_v2_input;
 

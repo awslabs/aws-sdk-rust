@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_development_s
     }
 }
 
-pub use crate::operation::list_development_schema_arns::_list_development_schema_arns_output::ListDevelopmentSchemaArnsOutput;
-
 pub use crate::operation::list_development_schema_arns::_list_development_schema_arns_input::ListDevelopmentSchemaArnsInput;
+
+pub use crate::operation::list_development_schema_arns::_list_development_schema_arns_output::ListDevelopmentSchemaArnsOutput;
 
 mod _list_development_schema_arns_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_auth_policy
     }
 }
 
-pub use crate::operation::delete_auth_policy::_delete_auth_policy_output::DeleteAuthPolicyOutput;
-
 pub use crate::operation::delete_auth_policy::_delete_auth_policy_input::DeleteAuthPolicyInput;
+
+pub use crate::operation::delete_auth_policy::_delete_auth_policy_output::DeleteAuthPolicyOutput;
 
 mod _delete_auth_policy_input;
 

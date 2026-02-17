@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_key::PutKeyErr
     }
 }
 
-pub use crate::operation::put_key::_put_key_output::PutKeyOutput;
-
 pub use crate::operation::put_key::_put_key_input::PutKeyInput;
+
+pub use crate::operation::put_key::_put_key_output::PutKeyOutput;
 
 mod _put_key_input;
 

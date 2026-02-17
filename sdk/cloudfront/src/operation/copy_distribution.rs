@@ -1016,9 +1016,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_distribution:
     }
 }
 
-pub use crate::operation::copy_distribution::_copy_distribution_output::CopyDistributionOutput;
-
 pub use crate::operation::copy_distribution::_copy_distribution_input::CopyDistributionInput;
+
+pub use crate::operation::copy_distribution::_copy_distribution_output::CopyDistributionOutput;
 
 mod _copy_distribution_input;
 

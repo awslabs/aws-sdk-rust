@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_default_applic
     }
 }
 
-pub use crate::operation::put_default_application_setting::_put_default_application_setting_output::PutDefaultApplicationSettingOutput;
-
 pub use crate::operation::put_default_application_setting::_put_default_application_setting_input::PutDefaultApplicationSettingInput;
+
+pub use crate::operation::put_default_application_setting::_put_default_application_setting_output::PutDefaultApplicationSettingOutput;
 
 mod _put_default_application_setting_input;
 

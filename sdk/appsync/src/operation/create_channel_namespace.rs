@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_nam
     }
 }
 
-pub use crate::operation::create_channel_namespace::_create_channel_namespace_output::CreateChannelNamespaceOutput;
-
 pub use crate::operation::create_channel_namespace::_create_channel_namespace_input::CreateChannelNamespaceInput;
+
+pub use crate::operation::create_channel_namespace::_create_channel_namespace_output::CreateChannelNamespaceOutput;
 
 mod _create_channel_namespace_input;
 

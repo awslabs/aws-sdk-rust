@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_b
     }
 }
 
-pub use crate::operation::list_environment_blueprint_configurations::_list_environment_blueprint_configurations_output::ListEnvironmentBlueprintConfigurationsOutput;
-
 pub use crate::operation::list_environment_blueprint_configurations::_list_environment_blueprint_configurations_input::ListEnvironmentBlueprintConfigurationsInput;
+
+pub use crate::operation::list_environment_blueprint_configurations::_list_environment_blueprint_configurations_output::ListEnvironmentBlueprintConfigurationsOutput;
 
 mod _list_environment_blueprint_configurations_input;
 

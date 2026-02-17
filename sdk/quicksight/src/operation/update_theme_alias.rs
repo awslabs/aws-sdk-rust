@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_theme_alias
     }
 }
 
-pub use crate::operation::update_theme_alias::_update_theme_alias_output::UpdateThemeAliasOutput;
-
 pub use crate::operation::update_theme_alias::_update_theme_alias_input::UpdateThemeAliasInput;
+
+pub use crate::operation::update_theme_alias::_update_theme_alias_output::UpdateThemeAliasOutput;
 
 mod _update_theme_alias_input;
 

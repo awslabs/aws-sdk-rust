@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ebs_default_km
     }
 }
 
-pub use crate::operation::get_ebs_default_kms_key_id::_get_ebs_default_kms_key_id_output::GetEbsDefaultKmsKeyIdOutput;
-
 pub use crate::operation::get_ebs_default_kms_key_id::_get_ebs_default_kms_key_id_input::GetEbsDefaultKmsKeyIdInput;
+
+pub use crate::operation::get_ebs_default_kms_key_id::_get_ebs_default_kms_key_id_output::GetEbsDefaultKmsKeyIdOutput;
 
 mod _get_ebs_default_kms_key_id_input;
 

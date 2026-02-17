@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scaling_pol
     }
 }
 
-pub use crate::operation::delete_scaling_policy::_delete_scaling_policy_output::DeleteScalingPolicyOutput;
-
 pub use crate::operation::delete_scaling_policy::_delete_scaling_policy_input::DeleteScalingPolicyInput;
+
+pub use crate::operation::delete_scaling_policy::_delete_scaling_policy_output::DeleteScalingPolicyOutput;
 
 mod _delete_scaling_policy_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_suppressed_des
     }
 }
 
-pub use crate::operation::put_suppressed_destination::_put_suppressed_destination_output::PutSuppressedDestinationOutput;
-
 pub use crate::operation::put_suppressed_destination::_put_suppressed_destination_input::PutSuppressedDestinationInput;
+
+pub use crate::operation::put_suppressed_destination::_put_suppressed_destination_output::PutSuppressedDestinationOutput;
 
 mod _put_suppressed_destination_input;
 

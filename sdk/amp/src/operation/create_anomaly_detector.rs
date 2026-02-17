@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_anomaly_det
     }
 }
 
-pub use crate::operation::create_anomaly_detector::_create_anomaly_detector_output::CreateAnomalyDetectorOutput;
-
 pub use crate::operation::create_anomaly_detector::_create_anomaly_detector_input::CreateAnomalyDetectorInput;
+
+pub use crate::operation::create_anomaly_detector::_create_anomaly_detector_output::CreateAnomalyDetectorOutput;
 
 mod _create_anomaly_detector_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_volume_io::
     }
 }
 
-pub use crate::operation::enable_volume_io::_enable_volume_io_output::EnableVolumeIoOutput;
-
 pub use crate::operation::enable_volume_io::_enable_volume_io_input::EnableVolumeIoInput;
+
+pub use crate::operation::enable_volume_io::_enable_volume_io_output::EnableVolumeIoOutput;
 
 mod _enable_volume_io_input;
 

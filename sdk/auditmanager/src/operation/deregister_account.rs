@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_account
     }
 }
 
-pub use crate::operation::deregister_account::_deregister_account_output::DeregisterAccountOutput;
-
 pub use crate::operation::deregister_account::_deregister_account_input::DeregisterAccountInput;
+
+pub use crate::operation::deregister_account::_deregister_account_output::DeregisterAccountOutput;
 
 mod _deregister_account_input;
 

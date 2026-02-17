@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_instances_
     }
 }
 
-pub use crate::operation::list_db_instances_for_cluster::_list_db_instances_for_cluster_output::ListDbInstancesForClusterOutput;
-
 pub use crate::operation::list_db_instances_for_cluster::_list_db_instances_for_cluster_input::ListDbInstancesForClusterInput;
+
+pub use crate::operation::list_db_instances_for_cluster::_list_db_instances_for_cluster_output::ListDbInstancesForClusterOutput;
 
 mod _list_db_instances_for_cluster_input;
 

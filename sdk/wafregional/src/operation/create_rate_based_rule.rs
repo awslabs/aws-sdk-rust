@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rate_based_
     }
 }
 
-pub use crate::operation::create_rate_based_rule::_create_rate_based_rule_output::CreateRateBasedRuleOutput;
-
 pub use crate::operation::create_rate_based_rule::_create_rate_based_rule_input::CreateRateBasedRuleInput;
+
+pub use crate::operation::create_rate_based_rule::_create_rate_based_rule_output::CreateRateBasedRuleOutput;
 
 mod _create_rate_based_rule_input;
 

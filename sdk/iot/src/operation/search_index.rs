@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_index::Sear
     }
 }
 
-pub use crate::operation::search_index::_search_index_output::SearchIndexOutput;
-
 pub use crate::operation::search_index::_search_index_input::SearchIndexInput;
+
+pub use crate::operation::search_index::_search_index_output::SearchIndexOutput;
 
 mod _search_index_input;
 

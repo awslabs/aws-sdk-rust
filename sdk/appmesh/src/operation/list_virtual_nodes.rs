@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_nodes
     }
 }
 
-pub use crate::operation::list_virtual_nodes::_list_virtual_nodes_output::ListVirtualNodesOutput;
-
 pub use crate::operation::list_virtual_nodes::_list_virtual_nodes_input::ListVirtualNodesInput;
+
+pub use crate::operation::list_virtual_nodes::_list_virtual_nodes_output::ListVirtualNodesOutput;
 
 mod _list_virtual_nodes_input;
 

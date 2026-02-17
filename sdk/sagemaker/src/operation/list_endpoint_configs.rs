@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_endpoint_conf
     }
 }
 
-pub use crate::operation::list_endpoint_configs::_list_endpoint_configs_output::ListEndpointConfigsOutput;
-
 pub use crate::operation::list_endpoint_configs::_list_endpoint_configs_input::ListEndpointConfigsInput;
+
+pub use crate::operation::list_endpoint_configs::_list_endpoint_configs_output::ListEndpointConfigsOutput;
 
 mod _list_endpoint_configs_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_datasource_pa
     }
 }
 
-pub use crate::operation::list_datasource_packages::_list_datasource_packages_output::ListDatasourcePackagesOutput;
-
 pub use crate::operation::list_datasource_packages::_list_datasource_packages_input::ListDatasourcePackagesInput;
+
+pub use crate::operation::list_datasource_packages::_list_datasource_packages_output::ListDatasourcePackagesOutput;
 
 mod _list_datasource_packages_input;
 

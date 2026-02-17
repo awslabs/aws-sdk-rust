@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_signal_catalo
     }
 }
 
-pub use crate::operation::list_signal_catalog_nodes::_list_signal_catalog_nodes_output::ListSignalCatalogNodesOutput;
-
 pub use crate::operation::list_signal_catalog_nodes::_list_signal_catalog_nodes_input::ListSignalCatalogNodesInput;
+
+pub use crate::operation::list_signal_catalog_nodes::_list_signal_catalog_nodes_output::ListSignalCatalogNodesOutput;
 
 mod _list_signal_catalog_nodes_input;
 

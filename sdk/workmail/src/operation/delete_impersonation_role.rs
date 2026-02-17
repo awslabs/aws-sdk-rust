@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_impersonati
     }
 }
 
-pub use crate::operation::delete_impersonation_role::_delete_impersonation_role_output::DeleteImpersonationRoleOutput;
-
 pub use crate::operation::delete_impersonation_role::_delete_impersonation_role_input::DeleteImpersonationRoleInput;
+
+pub use crate::operation::delete_impersonation_role::_delete_impersonation_role_output::DeleteImpersonationRoleOutput;
 
 mod _delete_impersonation_role_input;
 

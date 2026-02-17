@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_wireless_device_from_fuota_task::_disassociate_wireless_device_from_fuota_task_output::DisassociateWirelessDeviceFromFuotaTaskOutput;
-
 pub use crate::operation::disassociate_wireless_device_from_fuota_task::_disassociate_wireless_device_from_fuota_task_input::DisassociateWirelessDeviceFromFuotaTaskInput;
+
+pub use crate::operation::disassociate_wireless_device_from_fuota_task::_disassociate_wireless_device_from_fuota_task_output::DisassociateWirelessDeviceFromFuotaTaskOutput;
 
 mod _disassociate_wireless_device_from_fuota_task_input;
 

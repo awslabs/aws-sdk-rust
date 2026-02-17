@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_config_rules
     }
 }
 
-pub use crate::operation::start_config_rules_evaluation::_start_config_rules_evaluation_output::StartConfigRulesEvaluationOutput;
-
 pub use crate::operation::start_config_rules_evaluation::_start_config_rules_evaluation_input::StartConfigRulesEvaluationInput;
+
+pub use crate::operation::start_config_rules_evaluation::_start_config_rules_evaluation_output::StartConfigRulesEvaluationOutput;
 
 mod _start_config_rules_evaluation_input;
 

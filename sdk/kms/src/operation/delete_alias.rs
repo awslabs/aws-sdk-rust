@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_alias::Dele
     }
 }
 
-pub use crate::operation::delete_alias::_delete_alias_output::DeleteAliasOutput;
-
 pub use crate::operation::delete_alias::_delete_alias_input::DeleteAliasInput;
+
+pub use crate::operation::delete_alias::_delete_alias_output::DeleteAliasOutput;
 
 mod _delete_alias_input;
 

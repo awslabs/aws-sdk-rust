@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_table_from
     }
 }
 
-pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_output::RestoreTableFromBackupOutput;
-
 pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_input::RestoreTableFromBackupInput;
+
+pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_output::RestoreTableFromBackupOutput;
 
 mod _restore_table_from_backup_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_de
     }
 }
 
-pub use crate::operation::update_resource_definition::_update_resource_definition_output::UpdateResourceDefinitionOutput;
-
 pub use crate::operation::update_resource_definition::_update_resource_definition_input::UpdateResourceDefinitionInput;
+
+pub use crate::operation::update_resource_definition::_update_resource_definition_output::UpdateResourceDefinitionOutput;
 
 mod _update_resource_definition_input;
 

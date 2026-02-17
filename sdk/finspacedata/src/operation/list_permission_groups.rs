@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_permission_gr
     }
 }
 
-pub use crate::operation::list_permission_groups::_list_permission_groups_output::ListPermissionGroupsOutput;
-
 pub use crate::operation::list_permission_groups::_list_permission_groups_input::ListPermissionGroupsInput;
+
+pub use crate::operation::list_permission_groups::_list_permission_groups_output::ListPermissionGroupsOutput;
 
 mod _list_permission_groups_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_solution_vers
     }
 }
 
-pub use crate::operation::stop_solution_version_creation::_stop_solution_version_creation_output::StopSolutionVersionCreationOutput;
-
 pub use crate::operation::stop_solution_version_creation::_stop_solution_version_creation_input::StopSolutionVersionCreationInput;
+
+pub use crate::operation::stop_solution_version_creation::_stop_solution_version_creation_output::StopSolutionVersionCreationOutput;
 
 mod _stop_solution_version_creation_input;
 

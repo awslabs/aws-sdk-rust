@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_problem::Up
     }
 }
 
-pub use crate::operation::update_problem::_update_problem_output::UpdateProblemOutput;
-
 pub use crate::operation::update_problem::_update_problem_input::UpdateProblemInput;
+
+pub use crate::operation::update_problem::_update_problem_output::UpdateProblemOutput;
 
 mod _update_problem_input;
 

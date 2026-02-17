@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_publishing_
     }
 }
 
-pub use crate::operation::update_publishing_destination::_update_publishing_destination_output::UpdatePublishingDestinationOutput;
-
 pub use crate::operation::update_publishing_destination::_update_publishing_destination_input::UpdatePublishingDestinationInput;
+
+pub use crate::operation::update_publishing_destination::_update_publishing_destination_output::UpdatePublishingDestinationOutput;
 
 mod _update_publishing_destination_input;
 

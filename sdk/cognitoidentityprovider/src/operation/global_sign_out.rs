@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::global_sign_out::G
     }
 }
 
-pub use crate::operation::global_sign_out::_global_sign_out_output::GlobalSignOutOutput;
-
 pub use crate::operation::global_sign_out::_global_sign_out_input::GlobalSignOutInput;
+
+pub use crate::operation::global_sign_out::_global_sign_out_output::GlobalSignOutOutput;
 
 mod _global_sign_out_input;
 

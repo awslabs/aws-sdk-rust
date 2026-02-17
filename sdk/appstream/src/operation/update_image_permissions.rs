@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image_permi
     }
 }
 
-pub use crate::operation::update_image_permissions::_update_image_permissions_output::UpdateImagePermissionsOutput;
-
 pub use crate::operation::update_image_permissions::_update_image_permissions_input::UpdateImagePermissionsInput;
+
+pub use crate::operation::update_image_permissions::_update_image_permissions_output::UpdateImagePermissionsOutput;
 
 mod _update_image_permissions_input;
 

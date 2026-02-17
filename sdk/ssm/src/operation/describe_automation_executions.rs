@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_automatio
     }
 }
 
-pub use crate::operation::describe_automation_executions::_describe_automation_executions_output::DescribeAutomationExecutionsOutput;
-
 pub use crate::operation::describe_automation_executions::_describe_automation_executions_input::DescribeAutomationExecutionsInput;
+
+pub use crate::operation::describe_automation_executions::_describe_automation_executions_output::DescribeAutomationExecutionsOutput;
 
 mod _describe_automation_executions_input;
 

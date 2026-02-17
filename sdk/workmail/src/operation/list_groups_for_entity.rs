@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_groups_for_en
     }
 }
 
-pub use crate::operation::list_groups_for_entity::_list_groups_for_entity_output::ListGroupsForEntityOutput;
-
 pub use crate::operation::list_groups_for_entity::_list_groups_for_entity_input::ListGroupsForEntityInput;
+
+pub use crate::operation::list_groups_for_entity::_list_groups_for_entity_output::ListGroupsForEntityOutput;
 
 mod _list_groups_for_entity_input;
 

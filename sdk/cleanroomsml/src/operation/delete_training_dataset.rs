@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_training_da
     }
 }
 
-pub use crate::operation::delete_training_dataset::_delete_training_dataset_output::DeleteTrainingDatasetOutput;
-
 pub use crate::operation::delete_training_dataset::_delete_training_dataset_input::DeleteTrainingDatasetInput;
+
+pub use crate::operation::delete_training_dataset::_delete_training_dataset_output::DeleteTrainingDatasetOutput;
 
 mod _delete_training_dataset_input;
 

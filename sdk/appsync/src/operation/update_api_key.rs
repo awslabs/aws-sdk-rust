@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_api_key::Up
     }
 }
 
-pub use crate::operation::update_api_key::_update_api_key_output::UpdateApiKeyOutput;
-
 pub use crate::operation::update_api_key::_update_api_key_input::UpdateApiKeyInput;
+
+pub use crate::operation::update_api_key::_update_api_key_output::UpdateApiKeyOutput;
 
 mod _update_api_key_input;
 

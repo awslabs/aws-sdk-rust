@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bill_scenar
     }
 }
 
-pub use crate::operation::update_bill_scenario::_update_bill_scenario_output::UpdateBillScenarioOutput;
-
 pub use crate::operation::update_bill_scenario::_update_bill_scenario_input::UpdateBillScenarioInput;
+
+pub use crate::operation::update_bill_scenario::_update_bill_scenario_output::UpdateBillScenarioOutput;
 
 mod _update_bill_scenario_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_security_po
     }
 }
 
-pub use crate::operation::create_security_policy::_create_security_policy_output::CreateSecurityPolicyOutput;
-
 pub use crate::operation::create_security_policy::_create_security_policy_input::CreateSecurityPolicyInput;
+
+pub use crate::operation::create_security_policy::_create_security_policy_output::CreateSecurityPolicyOutput;
 
 mod _create_security_policy_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_enabled_basel
     }
 }
 
-pub use crate::operation::list_enabled_baselines::_list_enabled_baselines_output::ListEnabledBaselinesOutput;
-
 pub use crate::operation::list_enabled_baselines::_list_enabled_baselines_input::ListEnabledBaselinesInput;
+
+pub use crate::operation::list_enabled_baselines::_list_enabled_baselines_output::ListEnabledBaselinesOutput;
 
 mod _list_enabled_baselines_input;
 

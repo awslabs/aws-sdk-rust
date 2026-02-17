@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_sets::_list_configuration_sets_output::ListConfigurationSetsOutput;
-
 pub use crate::operation::list_configuration_sets::_list_configuration_sets_input::ListConfigurationSetsInput;
+
+pub use crate::operation::list_configuration_sets::_list_configuration_sets_output::ListConfigurationSetsOutput;
 
 mod _list_configuration_sets_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_role_policy::P
     }
 }
 
-pub use crate::operation::put_role_policy::_put_role_policy_output::PutRolePolicyOutput;
-
 pub use crate::operation::put_role_policy::_put_role_policy_input::PutRolePolicyInput;
+
+pub use crate::operation::put_role_policy::_put_role_policy_output::PutRolePolicyOutput;
 
 mod _put_role_policy_input;
 

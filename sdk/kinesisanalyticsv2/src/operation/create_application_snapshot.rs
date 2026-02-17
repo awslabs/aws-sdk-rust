@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_application
     }
 }
 
-pub use crate::operation::create_application_snapshot::_create_application_snapshot_output::CreateApplicationSnapshotOutput;
-
 pub use crate::operation::create_application_snapshot::_create_application_snapshot_input::CreateApplicationSnapshotInput;
+
+pub use crate::operation::create_application_snapshot::_create_application_snapshot_output::CreateApplicationSnapshotOutput;
 
 mod _create_application_snapshot_input;
 

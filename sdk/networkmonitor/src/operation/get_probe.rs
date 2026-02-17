@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_probe::GetProb
     }
 }
 
-pub use crate::operation::get_probe::_get_probe_output::GetProbeOutput;
-
 pub use crate::operation::get_probe::_get_probe_input::GetProbeInput;
+
+pub use crate::operation::get_probe::_get_probe_output::GetProbeOutput;
 
 mod _get_probe_input;
 

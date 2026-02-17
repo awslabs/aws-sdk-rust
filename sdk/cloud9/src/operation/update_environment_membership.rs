@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_environment
     }
 }
 
-pub use crate::operation::update_environment_membership::_update_environment_membership_output::UpdateEnvironmentMembershipOutput;
-
 pub use crate::operation::update_environment_membership::_update_environment_membership_input::UpdateEnvironmentMembershipInput;
+
+pub use crate::operation::update_environment_membership::_update_environment_membership_output::UpdateEnvironmentMembershipOutput;
 
 mod _update_environment_membership_input;
 

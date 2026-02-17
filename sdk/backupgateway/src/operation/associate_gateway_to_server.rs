@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_gateway_
     }
 }
 
-pub use crate::operation::associate_gateway_to_server::_associate_gateway_to_server_output::AssociateGatewayToServerOutput;
-
 pub use crate::operation::associate_gateway_to_server::_associate_gateway_to_server_input::AssociateGatewayToServerInput;
+
+pub use crate::operation::associate_gateway_to_server::_associate_gateway_to_server_output::AssociateGatewayToServerOutput;
 
 mod _associate_gateway_to_server_input;
 

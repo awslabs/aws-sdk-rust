@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_playback_restr
     }
 }
 
-pub use crate::operation::get_playback_restriction_policy::_get_playback_restriction_policy_output::GetPlaybackRestrictionPolicyOutput;
-
 pub use crate::operation::get_playback_restriction_policy::_get_playback_restriction_policy_input::GetPlaybackRestrictionPolicyInput;
+
+pub use crate::operation::get_playback_restriction_policy::_get_playback_restriction_policy_output::GetPlaybackRestrictionPolicyOutput;
 
 mod _get_playback_restriction_policy_input;
 

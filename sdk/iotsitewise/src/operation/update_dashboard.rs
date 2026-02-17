@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dashboard::
     }
 }
 
-pub use crate::operation::update_dashboard::_update_dashboard_output::UpdateDashboardOutput;
-
 pub use crate::operation::update_dashboard::_update_dashboard_input::UpdateDashboardInput;
+
+pub use crate::operation::update_dashboard::_update_dashboard_output::UpdateDashboardOutput;
 
 mod _update_dashboard_input;
 

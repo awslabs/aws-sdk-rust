@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_schemas::Se
     }
 }
 
-pub use crate::operation::search_schemas::_search_schemas_output::SearchSchemasOutput;
-
 pub use crate::operation::search_schemas::_search_schemas_input::SearchSchemasInput;
+
+pub use crate::operation::search_schemas::_search_schemas_output::SearchSchemasOutput;
 
 mod _search_schemas_input;
 

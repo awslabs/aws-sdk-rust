@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_voice_profile_
     }
 }
 
-pub use crate::operation::get_voice_profile_domain::_get_voice_profile_domain_output::GetVoiceProfileDomainOutput;
-
 pub use crate::operation::get_voice_profile_domain::_get_voice_profile_domain_input::GetVoiceProfileDomainInput;
+
+pub use crate::operation::get_voice_profile_domain::_get_voice_profile_domain_output::GetVoiceProfileDomainOutput;
 
 mod _get_voice_profile_domain_input;
 

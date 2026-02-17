@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_source
     }
 }
 
-pub use crate::operation::create_data_source_from_s3::_create_data_source_from_s3_output::CreateDataSourceFromS3Output;
-
 pub use crate::operation::create_data_source_from_s3::_create_data_source_from_s3_input::CreateDataSourceFromS3Input;
+
+pub use crate::operation::create_data_source_from_s3::_create_data_source_from_s3_output::CreateDataSourceFromS3Output;
 
 mod _create_data_source_from_s3_input;
 

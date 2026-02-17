@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flow_alias:
     }
 }
 
-pub use crate::operation::delete_flow_alias::_delete_flow_alias_output::DeleteFlowAliasOutput;
-
 pub use crate::operation::delete_flow_alias::_delete_flow_alias_input::DeleteFlowAliasInput;
+
+pub use crate::operation::delete_flow_alias::_delete_flow_alias_output::DeleteFlowAliasOutput;
 
 mod _delete_flow_alias_input;
 

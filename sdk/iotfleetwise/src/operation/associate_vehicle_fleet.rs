@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_vehicle_
     }
 }
 
-pub use crate::operation::associate_vehicle_fleet::_associate_vehicle_fleet_output::AssociateVehicleFleetOutput;
-
 pub use crate::operation::associate_vehicle_fleet::_associate_vehicle_fleet_input::AssociateVehicleFleetInput;
+
+pub use crate::operation::associate_vehicle_fleet::_associate_vehicle_fleet_output::AssociateVehicleFleetOutput;
 
 mod _associate_vehicle_fleet_input;
 

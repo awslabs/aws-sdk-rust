@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_repository_
     }
 }
 
-pub use crate::operation::create_repository_link::_create_repository_link_output::CreateRepositoryLinkOutput;
-
 pub use crate::operation::create_repository_link::_create_repository_link_input::CreateRepositoryLinkInput;
+
+pub use crate::operation::create_repository_link::_create_repository_link_output::CreateRepositoryLinkOutput;
 
 mod _create_repository_link_input;
 

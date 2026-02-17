@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_permis
     }
 }
 
-pub use crate::operation::list_custom_permissions::_list_custom_permissions_output::ListCustomPermissionsOutput;
-
 pub use crate::operation::list_custom_permissions::_list_custom_permissions_input::ListCustomPermissionsInput;
+
+pub use crate::operation::list_custom_permissions::_list_custom_permissions_output::ListCustomPermissionsOutput;
 
 mod _list_custom_permissions_input;
 

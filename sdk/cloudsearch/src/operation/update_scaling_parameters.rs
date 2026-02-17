@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scaling_par
     }
 }
 
-pub use crate::operation::update_scaling_parameters::_update_scaling_parameters_output::UpdateScalingParametersOutput;
-
 pub use crate::operation::update_scaling_parameters::_update_scaling_parameters_input::UpdateScalingParametersInput;
+
+pub use crate::operation::update_scaling_parameters::_update_scaling_parameters_output::UpdateScalingParametersOutput;
 
 mod _update_scaling_parameters_input;
 

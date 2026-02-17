@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sensitivity_i
     }
 }
 
-pub use crate::operation::list_sensitivity_inspection_templates::_list_sensitivity_inspection_templates_output::ListSensitivityInspectionTemplatesOutput;
-
 pub use crate::operation::list_sensitivity_inspection_templates::_list_sensitivity_inspection_templates_input::ListSensitivityInspectionTemplatesInput;
+
+pub use crate::operation::list_sensitivity_inspection_templates::_list_sensitivity_inspection_templates_output::ListSensitivityInspectionTemplatesOutput;
 
 mod _list_sensitivity_inspection_templates_input;
 

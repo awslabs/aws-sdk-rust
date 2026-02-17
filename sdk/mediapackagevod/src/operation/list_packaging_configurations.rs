@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_packaging_con
     }
 }
 
-pub use crate::operation::list_packaging_configurations::_list_packaging_configurations_output::ListPackagingConfigurationsOutput;
-
 pub use crate::operation::list_packaging_configurations::_list_packaging_configurations_input::ListPackagingConfigurationsInput;
+
+pub use crate::operation::list_packaging_configurations::_list_packaging_configurations_output::ListPackagingConfigurationsOutput;
 
 mod _list_packaging_configurations_input;
 

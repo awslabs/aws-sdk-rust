@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_origin_acce
     }
 }
 
-pub use crate::operation::delete_origin_access_control::_delete_origin_access_control_output::DeleteOriginAccessControlOutput;
-
 pub use crate::operation::delete_origin_access_control::_delete_origin_access_control_input::DeleteOriginAccessControlInput;
+
+pub use crate::operation::delete_origin_access_control::_delete_origin_access_control_output::DeleteOriginAccessControlOutput;
 
 mod _delete_origin_access_control_input;
 

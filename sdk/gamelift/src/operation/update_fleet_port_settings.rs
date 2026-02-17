@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_fleet_port_
     }
 }
 
-pub use crate::operation::update_fleet_port_settings::_update_fleet_port_settings_output::UpdateFleetPortSettingsOutput;
-
 pub use crate::operation::update_fleet_port_settings::_update_fleet_port_settings_input::UpdateFleetPortSettingsInput;
+
+pub use crate::operation::update_fleet_port_settings::_update_fleet_port_settings_output::UpdateFleetPortSettingsOutput;
 
 mod _update_fleet_port_settings_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_target_grou
     }
 }
 
-pub use crate::operation::modify_target_group_attributes::_modify_target_group_attributes_output::ModifyTargetGroupAttributesOutput;
-
 pub use crate::operation::modify_target_group_attributes::_modify_target_group_attributes_input::ModifyTargetGroupAttributesInput;
+
+pub use crate::operation::modify_target_group_attributes::_modify_target_group_attributes_output::ModifyTargetGroupAttributesOutput;
 
 mod _modify_target_group_attributes_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dataset::Cr
     }
 }
 
-pub use crate::operation::create_dataset::_create_dataset_output::CreateDatasetOutput;
-
 pub use crate::operation::create_dataset::_create_dataset_input::CreateDatasetInput;
+
+pub use crate::operation::create_dataset::_create_dataset_output::CreateDatasetOutput;
 
 mod _create_dataset_input;
 

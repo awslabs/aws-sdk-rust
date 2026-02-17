@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_domain_avail
     }
 }
 
-pub use crate::operation::check_domain_availability::_check_domain_availability_output::CheckDomainAvailabilityOutput;
-
 pub use crate::operation::check_domain_availability::_check_domain_availability_input::CheckDomainAvailabilityInput;
+
+pub use crate::operation::check_domain_availability::_check_domain_availability_output::CheckDomainAvailabilityOutput;
 
 mod _check_domain_availability_input;
 

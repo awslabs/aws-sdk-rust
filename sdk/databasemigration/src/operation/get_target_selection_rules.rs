@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_target_selecti
     }
 }
 
-pub use crate::operation::get_target_selection_rules::_get_target_selection_rules_output::GetTargetSelectionRulesOutput;
-
 pub use crate::operation::get_target_selection_rules::_get_target_selection_rules_input::GetTargetSelectionRulesInput;
+
+pub use crate::operation::get_target_selection_rules::_get_target_selection_rules_output::GetTargetSelectionRulesOutput;
 
 mod _get_target_selection_rules_input;
 

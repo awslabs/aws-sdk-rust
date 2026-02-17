@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_service_linked_configuration_recorder::_delete_service_linked_configuration_recorder_output::DeleteServiceLinkedConfigurationRecorderOutput;
-
 pub use crate::operation::delete_service_linked_configuration_recorder::_delete_service_linked_configuration_recorder_input::DeleteServiceLinkedConfigurationRecorderInput;
+
+pub use crate::operation::delete_service_linked_configuration_recorder::_delete_service_linked_configuration_recorder_output::DeleteServiceLinkedConfigurationRecorderOutput;
 
 mod _delete_service_linked_configuration_recorder_input;
 

@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configurati
     }
 }
 
-pub use crate::operation::update_configuration_set_sending_enabled::_update_configuration_set_sending_enabled_output::UpdateConfigurationSetSendingEnabledOutput;
-
 pub use crate::operation::update_configuration_set_sending_enabled::_update_configuration_set_sending_enabled_input::UpdateConfigurationSetSendingEnabledInput;
+
+pub use crate::operation::update_configuration_set_sending_enabled::_update_configuration_set_sending_enabled_output::UpdateConfigurationSetSendingEnabledOutput;
 
 mod _update_configuration_set_sending_enabled_input;
 

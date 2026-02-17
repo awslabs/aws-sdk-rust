@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_monitor::De
     }
 }
 
-pub use crate::operation::delete_monitor::_delete_monitor_output::DeleteMonitorOutput;
-
 pub use crate::operation::delete_monitor::_delete_monitor_input::DeleteMonitorInput;
+
+pub use crate::operation::delete_monitor::_delete_monitor_output::DeleteMonitorOutput;
 
 mod _delete_monitor_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query_schema_versi
     }
 }
 
-pub use crate::operation::query_schema_version_metadata::_query_schema_version_metadata_output::QuerySchemaVersionMetadataOutput;
-
 pub use crate::operation::query_schema_version_metadata::_query_schema_version_metadata_input::QuerySchemaVersionMetadataInput;
+
+pub use crate::operation::query_schema_version_metadata::_query_schema_version_metadata_output::QuerySchemaVersionMetadataOutput;
 
 mod _query_schema_version_metadata_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_code_interp
     }
 }
 
-pub use crate::operation::create_code_interpreter::_create_code_interpreter_output::CreateCodeInterpreterOutput;
-
 pub use crate::operation::create_code_interpreter::_create_code_interpreter_input::CreateCodeInterpreterInput;
+
+pub use crate::operation::create_code_interpreter::_create_code_interpreter_output::CreateCodeInterpreterOutput;
 
 mod _create_code_interpreter_input;
 

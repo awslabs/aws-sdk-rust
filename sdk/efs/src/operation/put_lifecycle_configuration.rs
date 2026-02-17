@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_lifecycle_conf
     }
 }
 
-pub use crate::operation::put_lifecycle_configuration::_put_lifecycle_configuration_output::PutLifecycleConfigurationOutput;
-
 pub use crate::operation::put_lifecycle_configuration::_put_lifecycle_configuration_input::PutLifecycleConfigurationInput;
+
+pub use crate::operation::put_lifecycle_configuration::_put_lifecycle_configuration_output::PutLifecycleConfigurationOutput;
 
 mod _put_lifecycle_configuration_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relational_dat
     }
 }
 
-pub use crate::operation::get_relational_database_bundles::_get_relational_database_bundles_output::GetRelationalDatabaseBundlesOutput;
-
 pub use crate::operation::get_relational_database_bundles::_get_relational_database_bundles_input::GetRelationalDatabaseBundlesInput;
+
+pub use crate::operation::get_relational_database_bundles::_get_relational_database_bundles_output::GetRelationalDatabaseBundlesOutput;
 
 mod _get_relational_database_bundles_input;
 

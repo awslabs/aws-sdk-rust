@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpce_config
     }
 }
 
-pub use crate::operation::delete_vpce_configuration::_delete_vpce_configuration_output::DeleteVpceConfigurationOutput;
-
 pub use crate::operation::delete_vpce_configuration::_delete_vpce_configuration_input::DeleteVpceConfigurationInput;
+
+pub use crate::operation::delete_vpce_configuration::_delete_vpce_configuration_output::DeleteVpceConfigurationOutput;
 
 mod _delete_vpce_configuration_input;
 

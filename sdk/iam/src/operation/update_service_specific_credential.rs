@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_spe
     }
 }
 
-pub use crate::operation::update_service_specific_credential::_update_service_specific_credential_output::UpdateServiceSpecificCredentialOutput;
-
 pub use crate::operation::update_service_specific_credential::_update_service_specific_credential_input::UpdateServiceSpecificCredentialInput;
+
+pub use crate::operation::update_service_specific_credential::_update_service_specific_credential_output::UpdateServiceSpecificCredentialOutput;
 
 mod _update_service_specific_credential_input;
 

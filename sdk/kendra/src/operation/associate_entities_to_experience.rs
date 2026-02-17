@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_entities
     }
 }
 
-pub use crate::operation::associate_entities_to_experience::_associate_entities_to_experience_output::AssociateEntitiesToExperienceOutput;
-
 pub use crate::operation::associate_entities_to_experience::_associate_entities_to_experience_input::AssociateEntitiesToExperienceInput;
+
+pub use crate::operation::associate_entities_to_experience::_associate_entities_to_experience_output::AssociateEntitiesToExperienceOutput;
 
 mod _associate_entities_to_experience_input;
 

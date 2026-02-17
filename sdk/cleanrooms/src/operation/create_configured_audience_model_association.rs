@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_configured_audience_model_association::_create_configured_audience_model_association_output::CreateConfiguredAudienceModelAssociationOutput;
-
 pub use crate::operation::create_configured_audience_model_association::_create_configured_audience_model_association_input::CreateConfiguredAudienceModelAssociationInput;
+
+pub use crate::operation::create_configured_audience_model_association::_create_configured_audience_model_association_output::CreateConfiguredAudienceModelAssociationOutput;
 
 mod _create_configured_audience_model_association_input;
 

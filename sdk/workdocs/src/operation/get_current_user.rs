@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_current_user::
     }
 }
 
-pub use crate::operation::get_current_user::_get_current_user_output::GetCurrentUserOutput;
-
 pub use crate::operation::get_current_user::_get_current_user_input::GetCurrentUserInput;
+
+pub use crate::operation::get_current_user::_get_current_user_output::GetCurrentUserOutput;
 
 mod _get_current_user_input;
 

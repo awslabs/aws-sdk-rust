@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_admin_ac
     }
 }
 
-pub use crate::operation::associate_admin_account::_associate_admin_account_output::AssociateAdminAccountOutput;
-
 pub use crate::operation::associate_admin_account::_associate_admin_account_input::AssociateAdminAccountInput;
+
+pub use crate::operation::associate_admin_account::_associate_admin_account_output::AssociateAdminAccountOutput;
 
 mod _associate_admin_account_input;
 

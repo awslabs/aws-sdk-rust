@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_lifecycl
     }
 }
 
-pub use crate::operation::batch_get_lifecycle_policy::_batch_get_lifecycle_policy_output::BatchGetLifecyclePolicyOutput;
-
 pub use crate::operation::batch_get_lifecycle_policy::_batch_get_lifecycle_policy_input::BatchGetLifecyclePolicyInput;
+
+pub use crate::operation::batch_get_lifecycle_policy::_batch_get_lifecycle_policy_output::BatchGetLifecyclePolicyOutput;
 
 mod _batch_get_lifecycle_policy_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_me
     }
 }
 
-pub use crate::operation::describe_custom_metric::_describe_custom_metric_output::DescribeCustomMetricOutput;
-
 pub use crate::operation::describe_custom_metric::_describe_custom_metric_input::DescribeCustomMetricInput;
+
+pub use crate::operation::describe_custom_metric::_describe_custom_metric_output::DescribeCustomMetricOutput;
 
 mod _describe_custom_metric_input;
 

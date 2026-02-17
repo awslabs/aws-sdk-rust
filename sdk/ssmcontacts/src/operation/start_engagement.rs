@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_engagement::
     }
 }
 
-pub use crate::operation::start_engagement::_start_engagement_output::StartEngagementOutput;
-
 pub use crate::operation::start_engagement::_start_engagement_input::StartEngagementInput;
+
+pub use crate::operation::start_engagement::_start_engagement_output::StartEngagementOutput;
 
 mod _start_engagement_input;
 

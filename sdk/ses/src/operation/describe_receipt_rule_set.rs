@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_receipt_r
     }
 }
 
-pub use crate::operation::describe_receipt_rule_set::_describe_receipt_rule_set_output::DescribeReceiptRuleSetOutput;
-
 pub use crate::operation::describe_receipt_rule_set::_describe_receipt_rule_set_input::DescribeReceiptRuleSetInput;
+
+pub use crate::operation::describe_receipt_rule_set::_describe_receipt_rule_set_output::DescribeReceiptRuleSetOutput;
 
 mod _describe_receipt_rule_set_input;
 

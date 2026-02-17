@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_public_key:
     }
 }
 
-pub use crate::operation::create_public_key::_create_public_key_output::CreatePublicKeyOutput;
-
 pub use crate::operation::create_public_key::_create_public_key_input::CreatePublicKeyInput;
+
+pub use crate::operation::create_public_key::_create_public_key_output::CreatePublicKeyOutput;
 
 mod _create_public_key_input;
 

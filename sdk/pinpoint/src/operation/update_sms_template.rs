@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sms_templat
     }
 }
 
-pub use crate::operation::update_sms_template::_update_sms_template_output::UpdateSmsTemplateOutput;
-
 pub use crate::operation::update_sms_template::_update_sms_template_input::UpdateSmsTemplateInput;
+
+pub use crate::operation::update_sms_template::_update_sms_template_output::UpdateSmsTemplateOutput;
 
 mod _update_sms_template_input;
 

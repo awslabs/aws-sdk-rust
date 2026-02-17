@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_exter
     }
 }
 
-pub use crate::operation::disassociate_external_connection::_disassociate_external_connection_output::DisassociateExternalConnectionOutput;
-
 pub use crate::operation::disassociate_external_connection::_disassociate_external_connection_input::DisassociateExternalConnectionInput;
+
+pub use crate::operation::disassociate_external_connection::_disassociate_external_connection_output::DisassociateExternalConnectionOutput;
 
 mod _disassociate_external_connection_input;
 

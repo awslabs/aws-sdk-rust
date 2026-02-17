@@ -619,9 +619,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object::GetObj
     }
 }
 
-pub use crate::operation::get_object::_get_object_output::GetObjectOutput;
-
 pub use crate::operation::get_object::_get_object_input::GetObjectInput;
+
+pub use crate::operation::get_object::_get_object_output::GetObjectOutput;
 
 mod _get_object_input;
 

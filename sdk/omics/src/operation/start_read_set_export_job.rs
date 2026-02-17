@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_read_set_exp
     }
 }
 
-pub use crate::operation::start_read_set_export_job::_start_read_set_export_job_output::StartReadSetExportJobOutput;
-
 pub use crate::operation::start_read_set_export_job::_start_read_set_export_job_input::StartReadSetExportJobInput;
+
+pub use crate::operation::start_read_set_export_job::_start_read_set_export_job_output::StartReadSetExportJobOutput;
 
 mod _start_read_set_export_job_input;
 

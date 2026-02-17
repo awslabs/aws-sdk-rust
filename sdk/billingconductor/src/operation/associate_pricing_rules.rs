@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_pricing_
     }
 }
 
-pub use crate::operation::associate_pricing_rules::_associate_pricing_rules_output::AssociatePricingRulesOutput;
-
 pub use crate::operation::associate_pricing_rules::_associate_pricing_rules_input::AssociatePricingRulesInput;
+
+pub use crate::operation::associate_pricing_rules::_associate_pricing_rules_output::AssociatePricingRulesOutput;
 
 mod _associate_pricing_rules_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_place_index
     }
 }
 
-pub use crate::operation::create_place_index::_create_place_index_output::CreatePlaceIndexOutput;
-
 pub use crate::operation::create_place_index::_create_place_index_input::CreatePlaceIndexInput;
+
+pub use crate::operation::create_place_index::_create_place_index_output::CreatePlaceIndexOutput;
 
 mod _create_place_index_input;
 

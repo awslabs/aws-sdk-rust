@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_api_keys::Lis
     }
 }
 
-pub use crate::operation::list_api_keys::_list_api_keys_output::ListApiKeysOutput;
-
 pub use crate::operation::list_api_keys::_list_api_keys_input::ListApiKeysInput;
+
+pub use crate::operation::list_api_keys::_list_api_keys_output::ListApiKeysOutput;
 
 mod _list_api_keys_input;
 

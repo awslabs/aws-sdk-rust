@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_permission_sets_provisioned_to_account::_list_permission_sets_provisioned_to_account_output::ListPermissionSetsProvisionedToAccountOutput;
-
 pub use crate::operation::list_permission_sets_provisioned_to_account::_list_permission_sets_provisioned_to_account_input::ListPermissionSetsProvisionedToAccountInput;
+
+pub use crate::operation::list_permission_sets_provisioned_to_account::_list_permission_sets_provisioned_to_account_output::ListPermissionSetsProvisionedToAccountOutput;
 
 mod _list_permission_sets_provisioned_to_account_input;
 

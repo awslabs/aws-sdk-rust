@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_action_
     }
 }
 
-pub use crate::operation::list_agent_action_groups::_list_agent_action_groups_output::ListAgentActionGroupsOutput;
-
 pub use crate::operation::list_agent_action_groups::_list_agent_action_groups_input::ListAgentActionGroupsInput;
+
+pub use crate::operation::list_agent_action_groups::_list_agent_action_groups_output::ListAgentActionGroupsOutput;
 
 mod _list_agent_action_groups_input;
 

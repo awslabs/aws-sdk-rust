@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_device_fl
     }
 }
 
-pub use crate::operation::describe_device_fleet::_describe_device_fleet_output::DescribeDeviceFleetOutput;
-
 pub use crate::operation::describe_device_fleet::_describe_device_fleet_input::DescribeDeviceFleetInput;
+
+pub use crate::operation::describe_device_fleet::_describe_device_fleet_output::DescribeDeviceFleetOutput;
 
 mod _describe_device_fleet_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lambda_functi
     }
 }
 
-pub use crate::operation::list_lambda_functions::_list_lambda_functions_output::ListLambdaFunctionsOutput;
-
 pub use crate::operation::list_lambda_functions::_list_lambda_functions_input::ListLambdaFunctionsInput;
+
+pub use crate::operation::list_lambda_functions::_list_lambda_functions_output::ListLambdaFunctionsOutput;
 
 mod _list_lambda_functions_input;
 

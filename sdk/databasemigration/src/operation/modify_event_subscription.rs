@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_event_subsc
     }
 }
 
-pub use crate::operation::modify_event_subscription::_modify_event_subscription_output::ModifyEventSubscriptionOutput;
-
 pub use crate::operation::modify_event_subscription::_modify_event_subscription_input::ModifyEventSubscriptionInput;
+
+pub use crate::operation::modify_event_subscription::_modify_event_subscription_output::ModifyEventSubscriptionOutput;
 
 mod _modify_event_subscription_input;
 

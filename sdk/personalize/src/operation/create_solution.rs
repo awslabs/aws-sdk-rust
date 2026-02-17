@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_solution::C
     }
 }
 
-pub use crate::operation::create_solution::_create_solution_output::CreateSolutionOutput;
-
 pub use crate::operation::create_solution::_create_solution_input::CreateSolutionInput;
+
+pub use crate::operation::create_solution::_create_solution_output::CreateSolutionOutput;
 
 mod _create_solution_input;
 

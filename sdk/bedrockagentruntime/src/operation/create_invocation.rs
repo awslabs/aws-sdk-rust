@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_invocation:
     }
 }
 
-pub use crate::operation::create_invocation::_create_invocation_output::CreateInvocationOutput;
-
 pub use crate::operation::create_invocation::_create_invocation_input::CreateInvocationInput;
+
+pub use crate::operation::create_invocation::_create_invocation_output::CreateInvocationOutput;
 
 mod _create_invocation_input;
 

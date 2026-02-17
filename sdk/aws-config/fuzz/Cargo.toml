@@ -24,7 +24,7 @@ version = "1.8.14"
 
 [dependencies.aws-types]
 path = "../../../sdk/build/aws-sdk/sdk/aws-types"
-version = "1.3.12"
+version = "1.3.13"
 
 [workspace]
 members = ["."]

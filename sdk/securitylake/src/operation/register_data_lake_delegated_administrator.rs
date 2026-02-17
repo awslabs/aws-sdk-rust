@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::register_data_lake_delegated_administrator::_register_data_lake_delegated_administrator_output::RegisterDataLakeDelegatedAdministratorOutput;
-
 pub use crate::operation::register_data_lake_delegated_administrator::_register_data_lake_delegated_administrator_input::RegisterDataLakeDelegatedAdministratorInput;
+
+pub use crate::operation::register_data_lake_delegated_administrator::_register_data_lake_delegated_administrator_output::RegisterDataLakeDelegatedAdministratorOutput;
 
 mod _register_data_lake_delegated_administrator_input;
 

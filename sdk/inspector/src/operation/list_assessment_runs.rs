@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assessment_ru
     }
 }
 
-pub use crate::operation::list_assessment_runs::_list_assessment_runs_output::ListAssessmentRunsOutput;
-
 pub use crate::operation::list_assessment_runs::_list_assessment_runs_input::ListAssessmentRunsInput;
+
+pub use crate::operation::list_assessment_runs::_list_assessment_runs_output::ListAssessmentRunsOutput;
 
 mod _list_assessment_runs_input;
 

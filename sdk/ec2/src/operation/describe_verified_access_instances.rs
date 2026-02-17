@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_verified_
     }
 }
 
-pub use crate::operation::describe_verified_access_instances::_describe_verified_access_instances_output::DescribeVerifiedAccessInstancesOutput;
-
 pub use crate::operation::describe_verified_access_instances::_describe_verified_access_instances_input::DescribeVerifiedAccessInstancesInput;
+
+pub use crate::operation::describe_verified_access_instances::_describe_verified_access_instances_output::DescribeVerifiedAccessInstancesOutput;
 
 mod _describe_verified_access_instances_input;
 

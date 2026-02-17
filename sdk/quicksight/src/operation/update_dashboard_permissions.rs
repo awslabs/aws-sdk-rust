@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dashboard_p
     }
 }
 
-pub use crate::operation::update_dashboard_permissions::_update_dashboard_permissions_output::UpdateDashboardPermissionsOutput;
-
 pub use crate::operation::update_dashboard_permissions::_update_dashboard_permissions_input::UpdateDashboardPermissionsInput;
+
+pub use crate::operation::update_dashboard_permissions::_update_dashboard_permissions_output::UpdateDashboardPermissionsOutput;
 
 mod _update_dashboard_permissions_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_billing_group
     }
 }
 
-pub use crate::operation::list_billing_group_cost_reports::_list_billing_group_cost_reports_output::ListBillingGroupCostReportsOutput;
-
 pub use crate::operation::list_billing_group_cost_reports::_list_billing_group_cost_reports_input::ListBillingGroupCostReportsInput;
+
+pub use crate::operation::list_billing_group_cost_reports::_list_billing_group_cost_reports_output::ListBillingGroupCostReportsOutput;
 
 mod _list_billing_group_cost_reports_input;
 

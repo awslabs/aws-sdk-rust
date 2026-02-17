@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_sourc
     }
 }
 
-pub use crate::operation::create_event_source_mapping::_create_event_source_mapping_output::CreateEventSourceMappingOutput;
-
 pub use crate::operation::create_event_source_mapping::_create_event_source_mapping_input::CreateEventSourceMappingInput;
+
+pub use crate::operation::create_event_source_mapping::_create_event_source_mapping_output::CreateEventSourceMappingOutput;
 
 mod _create_event_source_mapping_input;
 

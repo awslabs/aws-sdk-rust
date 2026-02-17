@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_web_login_t
     }
 }
 
-pub use crate::operation::create_web_login_token::_create_web_login_token_output::CreateWebLoginTokenOutput;
-
 pub use crate::operation::create_web_login_token::_create_web_login_token_input::CreateWebLoginTokenInput;
+
+pub use crate::operation::create_web_login_token::_create_web_login_token_output::CreateWebLoginTokenOutput;
 
 mod _create_web_login_token_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_vpc_endp
     }
 }
 
-pub use crate::operation::authorize_vpc_endpoint_access::_authorize_vpc_endpoint_access_output::AuthorizeVpcEndpointAccessOutput;
-
 pub use crate::operation::authorize_vpc_endpoint_access::_authorize_vpc_endpoint_access_input::AuthorizeVpcEndpointAccessInput;
+
+pub use crate::operation::authorize_vpc_endpoint_access::_authorize_vpc_endpoint_access_output::AuthorizeVpcEndpointAccessOutput;
 
 mod _authorize_vpc_endpoint_access_input;
 

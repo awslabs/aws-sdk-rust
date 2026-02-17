@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_application_cl
     }
 }
 
-pub use crate::operation::add_application_cloud_watch_logging_option::_add_application_cloud_watch_logging_option_output::AddApplicationCloudWatchLoggingOptionOutput;
-
 pub use crate::operation::add_application_cloud_watch_logging_option::_add_application_cloud_watch_logging_option_input::AddApplicationCloudWatchLoggingOptionInput;
+
+pub use crate::operation::add_application_cloud_watch_logging_option::_add_application_cloud_watch_logging_option_output::AddApplicationCloudWatchLoggingOptionOutput;
 
 mod _add_application_cloud_watch_logging_option_input;
 

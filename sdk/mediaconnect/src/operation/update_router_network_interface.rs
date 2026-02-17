@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_router_netw
     }
 }
 
-pub use crate::operation::update_router_network_interface::_update_router_network_interface_output::UpdateRouterNetworkInterfaceOutput;
-
 pub use crate::operation::update_router_network_interface::_update_router_network_interface_input::UpdateRouterNetworkInterfaceInput;
+
+pub use crate::operation::update_router_network_interface::_update_router_network_interface_output::UpdateRouterNetworkInterfaceOutput;
 
 mod _update_router_network_interface_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::clear_default_auth
     }
 }
 
-pub use crate::operation::clear_default_authorizer::_clear_default_authorizer_output::ClearDefaultAuthorizerOutput;
-
 pub use crate::operation::clear_default_authorizer::_clear_default_authorizer_input::ClearDefaultAuthorizerInput;
+
+pub use crate::operation::clear_default_authorizer::_clear_default_authorizer_output::ClearDefaultAuthorizerOutput;
 
 mod _clear_default_authorizer_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_document_cla
     }
 }
 
-pub use crate::operation::start_document_classification_job::_start_document_classification_job_output::StartDocumentClassificationJobOutput;
-
 pub use crate::operation::start_document_classification_job::_start_document_classification_job_input::StartDocumentClassificationJobInput;
+
+pub use crate::operation::start_document_classification_job::_start_document_classification_job_output::StartDocumentClassificationJobOutput;
 
 mod _start_document_classification_job_input;
 

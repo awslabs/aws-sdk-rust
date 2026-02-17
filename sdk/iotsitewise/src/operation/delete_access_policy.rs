@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_poli
     }
 }
 
-pub use crate::operation::delete_access_policy::_delete_access_policy_output::DeleteAccessPolicyOutput;
-
 pub use crate::operation::delete_access_policy::_delete_access_policy_input::DeleteAccessPolicyInput;
+
+pub use crate::operation::delete_access_policy::_delete_access_policy_output::DeleteAccessPolicyOutput;
 
 mod _delete_access_policy_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_studio::Del
     }
 }
 
-pub use crate::operation::delete_studio::_delete_studio_output::DeleteStudioOutput;
-
 pub use crate::operation::delete_studio::_delete_studio_input::DeleteStudioInput;
+
+pub use crate::operation::delete_studio::_delete_studio_output::DeleteStudioOutput;
 
 mod _delete_studio_input;
 

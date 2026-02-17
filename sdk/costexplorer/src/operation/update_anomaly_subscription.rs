@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_anomaly_sub
     }
 }
 
-pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscription_output::UpdateAnomalySubscriptionOutput;
-
 pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscription_input::UpdateAnomalySubscriptionInput;
+
+pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscription_output::UpdateAnomalySubscriptionOutput;
 
 mod _update_anomaly_subscription_input;
 

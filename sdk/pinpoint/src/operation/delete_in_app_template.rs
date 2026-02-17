@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_in_app_temp
     }
 }
 
-pub use crate::operation::delete_in_app_template::_delete_in_app_template_output::DeleteInAppTemplateOutput;
-
 pub use crate::operation::delete_in_app_template::_delete_in_app_template_input::DeleteInAppTemplateInput;
+
+pub use crate::operation::delete_in_app_template::_delete_in_app_template_output::DeleteInAppTemplateOutput;
 
 mod _delete_in_app_template_input;
 

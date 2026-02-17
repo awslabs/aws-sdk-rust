@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_key_signing
     }
 }
 
-pub use crate::operation::create_key_signing_key::_create_key_signing_key_output::CreateKeySigningKeyOutput;
-
 pub use crate::operation::create_key_signing_key::_create_key_signing_key_input::CreateKeySigningKeyInput;
+
+pub use crate::operation::create_key_signing_key::_create_key_signing_key_output::CreateKeySigningKeyOutput;
 
 mod _create_key_signing_key_input;
 

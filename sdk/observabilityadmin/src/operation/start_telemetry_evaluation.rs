@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_telemetry_ev
     }
 }
 
-pub use crate::operation::start_telemetry_evaluation::_start_telemetry_evaluation_output::StartTelemetryEvaluationOutput;
-
 pub use crate::operation::start_telemetry_evaluation::_start_telemetry_evaluation_input::StartTelemetryEvaluationInput;
+
+pub use crate::operation::start_telemetry_evaluation::_start_telemetry_evaluation_output::StartTelemetryEvaluationOutput;
 
 mod _start_telemetry_evaluation_input;
 

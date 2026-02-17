@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_cache::AddCach
     }
 }
 
-pub use crate::operation::add_cache::_add_cache_output::AddCacheOutput;
-
 pub use crate::operation::add_cache::_add_cache_input::AddCacheInput;
+
+pub use crate::operation::add_cache::_add_cache_output::AddCacheOutput;
 
 mod _add_cache_input;
 

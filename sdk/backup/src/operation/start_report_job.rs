@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_report_job::
     }
 }
 
-pub use crate::operation::start_report_job::_start_report_job_output::StartReportJobOutput;
-
 pub use crate::operation::start_report_job::_start_report_job_input::StartReportJobInput;
+
+pub use crate::operation::start_report_job::_start_report_job_output::StartReportJobOutput;
 
 mod _start_report_job_input;
 

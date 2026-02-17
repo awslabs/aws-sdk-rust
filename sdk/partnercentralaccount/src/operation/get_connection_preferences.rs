@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_pre
     }
 }
 
-pub use crate::operation::get_connection_preferences::_get_connection_preferences_output::GetConnectionPreferencesOutput;
-
 pub use crate::operation::get_connection_preferences::_get_connection_preferences_input::GetConnectionPreferencesInput;
+
+pub use crate::operation::get_connection_preferences::_get_connection_preferences_output::GetConnectionPreferencesOutput;
 
 mod _get_connection_preferences_input;
 

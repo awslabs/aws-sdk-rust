@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_search_resul
     }
 }
 
-pub use crate::operation::start_search_result_export_job::_start_search_result_export_job_output::StartSearchResultExportJobOutput;
-
 pub use crate::operation::start_search_result_export_job::_start_search_result_export_job_input::StartSearchResultExportJobInput;
+
+pub use crate::operation::start_search_result_export_job::_start_search_result_export_job_output::StartSearchResultExportJobOutput;
 
 mod _start_search_result_export_job_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_document_
     }
 }
 
-pub use crate::operation::describe_document_permission::_describe_document_permission_output::DescribeDocumentPermissionOutput;
-
 pub use crate::operation::describe_document_permission::_describe_document_permission_input::DescribeDocumentPermissionInput;
+
+pub use crate::operation::describe_document_permission::_describe_document_permission_output::DescribeDocumentPermissionOutput;
 
 mod _describe_document_permission_input;
 

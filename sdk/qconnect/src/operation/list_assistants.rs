@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assistants::L
     }
 }
 
-pub use crate::operation::list_assistants::_list_assistants_output::ListAssistantsOutput;
-
 pub use crate::operation::list_assistants::_list_assistants_input::ListAssistantsInput;
+
+pub use crate::operation::list_assistants::_list_assistants_output::ListAssistantsOutput;
 
 mod _list_assistants_input;
 

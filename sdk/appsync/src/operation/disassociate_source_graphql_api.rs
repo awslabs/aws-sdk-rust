@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_sourc
     }
 }
 
-pub use crate::operation::disassociate_source_graphql_api::_disassociate_source_graphql_api_output::DisassociateSourceGraphqlApiOutput;
-
 pub use crate::operation::disassociate_source_graphql_api::_disassociate_source_graphql_api_input::DisassociateSourceGraphqlApiInput;
+
+pub use crate::operation::disassociate_source_graphql_api::_disassociate_source_graphql_api_output::DisassociateSourceGraphqlApiOutput;
 
 mod _disassociate_source_graphql_api_input;
 

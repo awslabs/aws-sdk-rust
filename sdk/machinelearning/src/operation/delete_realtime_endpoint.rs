@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_realtime_en
     }
 }
 
-pub use crate::operation::delete_realtime_endpoint::_delete_realtime_endpoint_output::DeleteRealtimeEndpointOutput;
-
 pub use crate::operation::delete_realtime_endpoint::_delete_realtime_endpoint_input::DeleteRealtimeEndpointInput;
+
+pub use crate::operation::delete_realtime_endpoint::_delete_realtime_endpoint_output::DeleteRealtimeEndpointOutput;
 
 mod _delete_realtime_endpoint_input;
 

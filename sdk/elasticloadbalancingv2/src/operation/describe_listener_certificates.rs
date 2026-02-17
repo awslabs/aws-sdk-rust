@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_listener_
     }
 }
 
-pub use crate::operation::describe_listener_certificates::_describe_listener_certificates_output::DescribeListenerCertificatesOutput;
-
 pub use crate::operation::describe_listener_certificates::_describe_listener_certificates_input::DescribeListenerCertificatesInput;
+
+pub use crate::operation::describe_listener_certificates::_describe_listener_certificates_output::DescribeListenerCertificatesOutput;
 
 mod _describe_listener_certificates_input;
 

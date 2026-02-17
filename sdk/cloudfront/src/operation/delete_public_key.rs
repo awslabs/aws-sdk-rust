@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_public_key:
     }
 }
 
-pub use crate::operation::delete_public_key::_delete_public_key_output::DeletePublicKeyOutput;
-
 pub use crate::operation::delete_public_key::_delete_public_key_input::DeletePublicKeyInput;
+
+pub use crate::operation::delete_public_key::_delete_public_key_output::DeletePublicKeyOutput;
 
 mod _delete_public_key_input;
 

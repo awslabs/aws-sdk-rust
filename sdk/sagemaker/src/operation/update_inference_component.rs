@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_inference_c
     }
 }
 
-pub use crate::operation::update_inference_component::_update_inference_component_output::UpdateInferenceComponentOutput;
-
 pub use crate::operation::update_inference_component::_update_inference_component_input::UpdateInferenceComponentInput;
+
+pub use crate::operation::update_inference_component::_update_inference_component_output::UpdateInferenceComponentOutput;
 
 mod _update_inference_component_input;
 

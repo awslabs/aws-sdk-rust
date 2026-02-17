@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_command_invoca
     }
 }
 
-pub use crate::operation::get_command_invocation::_get_command_invocation_output::GetCommandInvocationOutput;
-
 pub use crate::operation::get_command_invocation::_get_command_invocation_input::GetCommandInvocationInput;
+
+pub use crate::operation::get_command_invocation::_get_command_invocation_output::GetCommandInvocationOutput;
 
 mod _get_command_invocation_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_field::Dele
     }
 }
 
-pub use crate::operation::delete_field::_delete_field_output::DeleteFieldOutput;
-
 pub use crate::operation::delete_field::_delete_field_input::DeleteFieldInput;
+
+pub use crate::operation::delete_field::_delete_field_output::DeleteFieldOutput;
 
 mod _delete_field_input;
 

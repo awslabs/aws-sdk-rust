@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_dhcp_opt
     }
 }
 
-pub use crate::operation::associate_dhcp_options::_associate_dhcp_options_output::AssociateDhcpOptionsOutput;
-
 pub use crate::operation::associate_dhcp_options::_associate_dhcp_options_input::AssociateDhcpOptionsInput;
+
+pub use crate::operation::associate_dhcp_options::_associate_dhcp_options_output::AssociateDhcpOptionsOutput;
 
 mod _associate_dhcp_options_input;
 

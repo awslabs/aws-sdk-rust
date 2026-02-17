@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rule::Creat
     }
 }
 
-pub use crate::operation::create_rule::_create_rule_output::CreateRuleOutput;
-
 pub use crate::operation::create_rule::_create_rule_input::CreateRuleInput;
+
+pub use crate::operation::create_rule::_create_rule_output::CreateRuleOutput;
 
 mod _create_rule_input;
 

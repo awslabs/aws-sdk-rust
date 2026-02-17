@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_reference_data_source::_delete_application_reference_data_source_output::DeleteApplicationReferenceDataSourceOutput;
-
 pub use crate::operation::delete_application_reference_data_source::_delete_application_reference_data_source_input::DeleteApplicationReferenceDataSourceInput;
+
+pub use crate::operation::delete_application_reference_data_source::_delete_application_reference_data_source_output::DeleteApplicationReferenceDataSourceOutput;
 
 mod _delete_application_reference_data_source_input;
 

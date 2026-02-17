@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_workspace_m
     }
 }
 
-pub use crate::operation::import_workspace_media::_import_workspace_media_output::ImportWorkspaceMediaOutput;
-
 pub use crate::operation::import_workspace_media::_import_workspace_media_input::ImportWorkspaceMediaInput;
+
+pub use crate::operation::import_workspace_media::_import_workspace_media_output::ImportWorkspaceMediaOutput;
 
 mod _import_workspace_media_input;
 

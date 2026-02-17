@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_computation_m
     }
 }
 
-pub use crate::operation::list_computation_models::_list_computation_models_output::ListComputationModelsOutput;
-
 pub use crate::operation::list_computation_models::_list_computation_models_input::ListComputationModelsInput;
+
+pub use crate::operation::list_computation_models::_list_computation_models_output::ListComputationModelsOutput;
 
 mod _list_computation_models_input;
 

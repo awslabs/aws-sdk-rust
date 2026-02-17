@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_data_reposi
     }
 }
 
-pub use crate::operation::cancel_data_repository_task::_cancel_data_repository_task_output::CancelDataRepositoryTaskOutput;
-
 pub use crate::operation::cancel_data_repository_task::_cancel_data_repository_task_input::CancelDataRepositoryTaskInput;
+
+pub use crate::operation::cancel_data_repository_task::_cancel_data_repository_task_output::CancelDataRepositoryTaskOutput;
 
 mod _cancel_data_repository_task_input;
 

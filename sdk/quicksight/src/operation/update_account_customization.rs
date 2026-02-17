@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account_cus
     }
 }
 
-pub use crate::operation::update_account_customization::_update_account_customization_output::UpdateAccountCustomizationOutput;
-
 pub use crate::operation::update_account_customization::_update_account_customization_input::UpdateAccountCustomizationInput;
+
+pub use crate::operation::update_account_customization::_update_account_customization_output::UpdateAccountCustomizationOutput;
 
 mod _update_account_customization_input;
 

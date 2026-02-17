@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disable_alar
     }
 }
 
-pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_output::BatchDisableAlarmOutput;
-
 pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_input::BatchDisableAlarmInput;
+
+pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_output::BatchDisableAlarmOutput;
 
 mod _batch_disable_alarm_input;
 

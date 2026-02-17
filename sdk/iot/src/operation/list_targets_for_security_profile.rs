@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_targets_for_s
     }
 }
 
-pub use crate::operation::list_targets_for_security_profile::_list_targets_for_security_profile_output::ListTargetsForSecurityProfileOutput;
-
 pub use crate::operation::list_targets_for_security_profile::_list_targets_for_security_profile_input::ListTargetsForSecurityProfileInput;
+
+pub use crate::operation::list_targets_for_security_profile::_list_targets_for_security_profile_output::ListTargetsForSecurityProfileOutput;
 
 mod _list_targets_for_security_profile_input;
 

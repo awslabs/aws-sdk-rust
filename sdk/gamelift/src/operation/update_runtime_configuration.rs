@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_runtime_con
     }
 }
 
-pub use crate::operation::update_runtime_configuration::_update_runtime_configuration_output::UpdateRuntimeConfigurationOutput;
-
 pub use crate::operation::update_runtime_configuration::_update_runtime_configuration_input::UpdateRuntimeConfigurationInput;
+
+pub use crate::operation::update_runtime_configuration::_update_runtime_configuration_output::UpdateRuntimeConfigurationOutput;
 
 mod _update_runtime_configuration_input;
 

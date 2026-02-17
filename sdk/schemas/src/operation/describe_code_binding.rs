@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_code_bind
     }
 }
 
-pub use crate::operation::describe_code_binding::_describe_code_binding_output::DescribeCodeBindingOutput;
-
 pub use crate::operation::describe_code_binding::_describe_code_binding_input::DescribeCodeBindingInput;
+
+pub use crate::operation::describe_code_binding::_describe_code_binding_output::DescribeCodeBindingOutput;
 
 mod _describe_code_binding_input;
 

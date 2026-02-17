@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_changesets
     }
 }
 
-pub use crate::operation::list_kx_changesets::_list_kx_changesets_output::ListKxChangesetsOutput;
-
 pub use crate::operation::list_kx_changesets::_list_kx_changesets_input::ListKxChangesetsInput;
+
+pub use crate::operation::list_kx_changesets::_list_kx_changesets_output::ListKxChangesetsOutput;
 
 mod _list_kx_changesets_input;
 

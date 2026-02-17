@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_compute_nod
     }
 }
 
-pub use crate::operation::create_compute_node_group::_create_compute_node_group_output::CreateComputeNodeGroupOutput;
-
 pub use crate::operation::create_compute_node_group::_create_compute_node_group_input::CreateComputeNodeGroupInput;
+
+pub use crate::operation::create_compute_node_group::_create_compute_node_group_output::CreateComputeNodeGroupOutput;
 
 mod _create_compute_node_group_input;
 

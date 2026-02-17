@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dataflow_en
     }
 }
 
-pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpoint_group_output::CreateDataflowEndpointGroupOutput;
-
 pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpoint_group_input::CreateDataflowEndpointGroupInput;
+
+pub use crate::operation::create_dataflow_endpoint_group::_create_dataflow_endpoint_group_output::CreateDataflowEndpointGroupOutput;
 
 mod _create_dataflow_endpoint_group_input;
 

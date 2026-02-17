@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_whats_app_m
     }
 }
 
-pub use crate::operation::delete_whats_app_message_template::_delete_whats_app_message_template_output::DeleteWhatsAppMessageTemplateOutput;
-
 pub use crate::operation::delete_whats_app_message_template::_delete_whats_app_message_template_input::DeleteWhatsAppMessageTemplateInput;
+
+pub use crate::operation::delete_whats_app_message_template::_delete_whats_app_message_template_output::DeleteWhatsAppMessageTemplateOutput;
 
 mod _delete_whats_app_message_template_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_instance_at
     }
 }
 
-pub use crate::operation::update_instance_attribute::_update_instance_attribute_output::UpdateInstanceAttributeOutput;
-
 pub use crate::operation::update_instance_attribute::_update_instance_attribute_input::UpdateInstanceAttributeInput;
+
+pub use crate::operation::update_instance_attribute::_update_instance_attribute_output::UpdateInstanceAttributeOutput;
 
 mod _update_instance_attribute_input;
 

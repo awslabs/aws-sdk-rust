@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_integ
     }
 }
 
-pub use crate::operation::delete_event_integration::_delete_event_integration_output::DeleteEventIntegrationOutput;
-
 pub use crate::operation::delete_event_integration::_delete_event_integration_input::DeleteEventIntegrationInput;
+
+pub use crate::operation::delete_event_integration::_delete_event_integration_output::DeleteEventIntegrationOutput;
 
 mod _delete_event_integration_input;
 

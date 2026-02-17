@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_group_versi
     }
 }
 
-pub use crate::operation::create_group_version::_create_group_version_output::CreateGroupVersionOutput;
-
 pub use crate::operation::create_group_version::_create_group_version_input::CreateGroupVersionInput;
+
+pub use crate::operation::create_group_version::_create_group_version_output::CreateGroupVersionOutput;
 
 mod _create_group_version_input;
 

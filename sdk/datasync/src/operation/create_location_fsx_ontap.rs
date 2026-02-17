@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_fs
     }
 }
 
-pub use crate::operation::create_location_fsx_ontap::_create_location_fsx_ontap_output::CreateLocationFsxOntapOutput;
-
 pub use crate::operation::create_location_fsx_ontap::_create_location_fsx_ontap_input::CreateLocationFsxOntapInput;
+
+pub use crate::operation::create_location_fsx_ontap::_create_location_fsx_ontap_output::CreateLocationFsxOntapOutput;
 
 mod _create_location_fsx_ontap_input;
 

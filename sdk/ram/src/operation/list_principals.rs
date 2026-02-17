@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_principals::L
     }
 }
 
-pub use crate::operation::list_principals::_list_principals_output::ListPrincipalsOutput;
-
 pub use crate::operation::list_principals::_list_principals_input::ListPrincipalsInput;
+
+pub use crate::operation::list_principals::_list_principals_output::ListPrincipalsOutput;
 
 mod _list_principals_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_key_phrases_
     }
 }
 
-pub use crate::operation::start_key_phrases_detection_job::_start_key_phrases_detection_job_output::StartKeyPhrasesDetectionJobOutput;
-
 pub use crate::operation::start_key_phrases_detection_job::_start_key_phrases_detection_job_input::StartKeyPhrasesDetectionJobInput;
+
+pub use crate::operation::start_key_phrases_detection_job::_start_key_phrases_detection_job_output::StartKeyPhrasesDetectionJobOutput;
 
 mod _start_key_phrases_detection_job_input;
 

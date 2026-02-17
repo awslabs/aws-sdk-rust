@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hit_type_of
     }
 }
 
-pub use crate::operation::update_hit_type_of_hit::_update_hit_type_of_hit_output::UpdateHitTypeOfHitOutput;
-
 pub use crate::operation::update_hit_type_of_hit::_update_hit_type_of_hit_input::UpdateHitTypeOfHitInput;
+
+pub use crate::operation::update_hit_type_of_hit::_update_hit_type_of_hit_output::UpdateHitTypeOfHitOutput;
 
 mod _update_hit_type_of_hit_input;
 

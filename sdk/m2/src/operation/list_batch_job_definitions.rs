@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_batch_job_def
     }
 }
 
-pub use crate::operation::list_batch_job_definitions::_list_batch_job_definitions_output::ListBatchJobDefinitionsOutput;
-
 pub use crate::operation::list_batch_job_definitions::_list_batch_job_definitions_input::ListBatchJobDefinitionsInput;
+
+pub use crate::operation::list_batch_job_definitions::_list_batch_job_definitions_output::ListBatchJobDefinitionsOutput;
 
 mod _list_batch_job_definitions_input;
 

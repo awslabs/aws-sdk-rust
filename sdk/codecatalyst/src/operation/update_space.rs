@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_space::Upda
     }
 }
 
-pub use crate::operation::update_space::_update_space_output::UpdateSpaceOutput;
-
 pub use crate::operation::update_space::_update_space_input::UpdateSpaceInput;
+
+pub use crate::operation::update_space::_update_space_output::UpdateSpaceOutput;
 
 mod _update_space_input;
 

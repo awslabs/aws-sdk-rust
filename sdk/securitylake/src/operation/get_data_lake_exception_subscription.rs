@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_lake_exce
     }
 }
 
-pub use crate::operation::get_data_lake_exception_subscription::_get_data_lake_exception_subscription_output::GetDataLakeExceptionSubscriptionOutput;
-
 pub use crate::operation::get_data_lake_exception_subscription::_get_data_lake_exception_subscription_input::GetDataLakeExceptionSubscriptionInput;
+
+pub use crate::operation::get_data_lake_exception_subscription::_get_data_lake_exception_subscription_output::GetDataLakeExceptionSubscriptionOutput;
 
 mod _get_data_lake_exception_subscription_input;
 

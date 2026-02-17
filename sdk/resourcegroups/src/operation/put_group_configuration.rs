@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_group_configur
     }
 }
 
-pub use crate::operation::put_group_configuration::_put_group_configuration_output::PutGroupConfigurationOutput;
-
 pub use crate::operation::put_group_configuration::_put_group_configuration_input::PutGroupConfigurationInput;
+
+pub use crate::operation::put_group_configuration::_put_group_configuration_output::PutGroupConfigurationOutput;
 
 mod _put_group_configuration_input;
 

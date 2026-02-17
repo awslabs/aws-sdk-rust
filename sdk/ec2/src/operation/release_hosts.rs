@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_hosts::Rel
     }
 }
 
-pub use crate::operation::release_hosts::_release_hosts_output::ReleaseHostsOutput;
-
 pub use crate::operation::release_hosts::_release_hosts_input::ReleaseHostsInput;
+
+pub use crate::operation::release_hosts::_release_hosts_output::ReleaseHostsOutput;
 
 mod _release_hosts_input;
 

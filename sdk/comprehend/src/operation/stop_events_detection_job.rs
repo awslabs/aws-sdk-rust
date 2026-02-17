@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_events_detect
     }
 }
 
-pub use crate::operation::stop_events_detection_job::_stop_events_detection_job_output::StopEventsDetectionJobOutput;
-
 pub use crate::operation::stop_events_detection_job::_stop_events_detection_job_input::StopEventsDetectionJobInput;
+
+pub use crate::operation::stop_events_detection_job::_stop_events_detection_job_output::StopEventsDetectionJobOutput;
 
 mod _stop_events_detection_job_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_proxies::List
     }
 }
 
-pub use crate::operation::list_proxies::_list_proxies_output::ListProxiesOutput;
-
 pub use crate::operation::list_proxies::_list_proxies_input::ListProxiesInput;
+
+pub use crate::operation::list_proxies::_list_proxies_output::ListProxiesOutput;
 
 mod _list_proxies_input;
 

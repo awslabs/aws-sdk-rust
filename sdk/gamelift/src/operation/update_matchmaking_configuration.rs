@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_matchmaking
     }
 }
 
-pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_configuration_output::UpdateMatchmakingConfigurationOutput;
-
 pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_configuration_input::UpdateMatchmakingConfigurationInput;
+
+pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_configuration_output::UpdateMatchmakingConfigurationOutput;
 
 mod _update_matchmaking_configuration_input;
 

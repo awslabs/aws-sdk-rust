@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_q_apps::ListQ
     }
 }
 
-pub use crate::operation::list_q_apps::_list_q_apps_output::ListQAppsOutput;
-
 pub use crate::operation::list_q_apps::_list_q_apps_input::ListQAppsInput;
+
+pub use crate::operation::list_q_apps::_list_q_apps_output::ListQAppsOutput;
 
 mod _list_q_apps_input;
 

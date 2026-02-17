@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_contact_eva
     }
 }
 
-pub use crate::operation::search_contact_evaluations::_search_contact_evaluations_output::SearchContactEvaluationsOutput;
-
 pub use crate::operation::search_contact_evaluations::_search_contact_evaluations_input::SearchContactEvaluationsInput;
+
+pub use crate::operation::search_contact_evaluations::_search_contact_evaluations_output::SearchContactEvaluationsOutput;
 
 mod _search_contact_evaluations_input;
 

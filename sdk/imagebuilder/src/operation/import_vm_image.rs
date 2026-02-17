@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_vm_image::I
     }
 }
 
-pub use crate::operation::import_vm_image::_import_vm_image_output::ImportVmImageOutput;
-
 pub use crate::operation::import_vm_image::_import_vm_image_input::ImportVmImageInput;
+
+pub use crate::operation::import_vm_image::_import_vm_image_output::ImportVmImageOutput;
 
 mod _import_vm_image_input;
 

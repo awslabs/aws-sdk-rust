@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_wireless
     }
 }
 
-pub use crate::operation::associate_wireless_device_with_thing::_associate_wireless_device_with_thing_output::AssociateWirelessDeviceWithThingOutput;
-
 pub use crate::operation::associate_wireless_device_with_thing::_associate_wireless_device_with_thing_input::AssociateWirelessDeviceWithThingInput;
+
+pub use crate::operation::associate_wireless_device_with_thing::_associate_wireless_device_with_thing_output::AssociateWirelessDeviceWithThingOutput;
 
 mod _associate_wireless_device_with_thing_input;
 

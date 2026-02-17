@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_performance_an
     }
 }
 
-pub use crate::operation::get_performance_analysis_report::_get_performance_analysis_report_output::GetPerformanceAnalysisReportOutput;
-
 pub use crate::operation::get_performance_analysis_report::_get_performance_analysis_report_input::GetPerformanceAnalysisReportInput;
+
+pub use crate::operation::get_performance_analysis_report::_get_performance_analysis_report_output::GetPerformanceAnalysisReportOutput;
 
 mod _get_performance_analysis_report_input;
 

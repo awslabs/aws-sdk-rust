@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_invitations::
     }
 }
 
-pub use crate::operation::list_invitations::_list_invitations_output::ListInvitationsOutput;
-
 pub use crate::operation::list_invitations::_list_invitations_input::ListInvitationsInput;
+
+pub use crate::operation::list_invitations::_list_invitations_output::ListInvitationsOutput;
 
 mod _list_invitations_input;
 

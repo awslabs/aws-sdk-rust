@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_license_man
     }
 }
 
-pub use crate::operation::delete_license_manager_report_generator::_delete_license_manager_report_generator_output::DeleteLicenseManagerReportGeneratorOutput;
-
 pub use crate::operation::delete_license_manager_report_generator::_delete_license_manager_report_generator_input::DeleteLicenseManagerReportGeneratorInput;
+
+pub use crate::operation::delete_license_manager_report_generator::_delete_license_manager_report_generator_output::DeleteLicenseManagerReportGeneratorOutput;
 
 mod _delete_license_manager_report_generator_input;
 

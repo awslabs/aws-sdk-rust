@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_document_vers
     }
 }
 
-pub use crate::operation::list_document_versions::_list_document_versions_output::ListDocumentVersionsOutput;
-
 pub use crate::operation::list_document_versions::_list_document_versions_input::ListDocumentVersionsInput;
+
+pub use crate::operation::list_document_versions::_list_document_versions_output::ListDocumentVersionsOutput;
 
 mod _list_document_versions_input;
 

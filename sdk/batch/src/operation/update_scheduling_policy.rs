@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scheduling_
     }
 }
 
-pub use crate::operation::update_scheduling_policy::_update_scheduling_policy_output::UpdateSchedulingPolicyOutput;
-
 pub use crate::operation::update_scheduling_policy::_update_scheduling_policy_input::UpdateSchedulingPolicyInput;
+
+pub use crate::operation::update_scheduling_policy::_update_scheduling_policy_output::UpdateSchedulingPolicyOutput;
 
 mod _update_scheduling_policy_input;
 

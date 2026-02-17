@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_entity::Del
     }
 }
 
-pub use crate::operation::delete_entity::_delete_entity_output::DeleteEntityOutput;
-
 pub use crate::operation::delete_entity::_delete_entity_input::DeleteEntityInput;
+
+pub use crate::operation::delete_entity::_delete_entity_output::DeleteEntityOutput;
 
 mod _delete_entity_input;
 

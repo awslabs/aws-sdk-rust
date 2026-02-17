@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_load_balanc
     }
 }
 
-pub use crate::operation::attach_load_balancers::_attach_load_balancers_output::AttachLoadBalancersOutput;
-
 pub use crate::operation::attach_load_balancers::_attach_load_balancers_input::AttachLoadBalancersInput;
+
+pub use crate::operation::attach_load_balancers::_attach_load_balancers_output::AttachLoadBalancersOutput;
 
 mod _attach_load_balancers_input;
 

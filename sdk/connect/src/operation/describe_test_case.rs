@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_test_case
     }
 }
 
-pub use crate::operation::describe_test_case::_describe_test_case_output::DescribeTestCaseOutput;
-
 pub use crate::operation::describe_test_case::_describe_test_case_input::DescribeTestCaseInput;
+
+pub use crate::operation::describe_test_case::_describe_test_case_output::DescribeTestCaseOutput;
 
 mod _describe_test_case_input;
 

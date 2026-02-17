@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_user_access_
     }
 }
 
-pub use crate::operation::start_user_access_tasks::_start_user_access_tasks_output::StartUserAccessTasksOutput;
-
 pub use crate::operation::start_user_access_tasks::_start_user_access_tasks_input::StartUserAccessTasksInput;
+
+pub use crate::operation::start_user_access_tasks::_start_user_access_tasks_output::StartUserAccessTasksOutput;
 
 mod _start_user_access_tasks_input;
 

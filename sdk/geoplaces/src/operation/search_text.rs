@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_text::Searc
     }
 }
 
-pub use crate::operation::search_text::_search_text_output::SearchTextOutput;
-
 pub use crate::operation::search_text::_search_text_input::SearchTextInput;
+
+pub use crate::operation::search_text::_search_text_output::SearchTextOutput;
 
 mod _search_text_input;
 

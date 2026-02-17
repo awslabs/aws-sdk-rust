@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_plan_evaluatio
     }
 }
 
-pub use crate::operation::get_plan_evaluation_status::_get_plan_evaluation_status_output::GetPlanEvaluationStatusOutput;
-
 pub use crate::operation::get_plan_evaluation_status::_get_plan_evaluation_status_input::GetPlanEvaluationStatusInput;
+
+pub use crate::operation::get_plan_evaluation_status::_get_plan_evaluation_status_output::GetPlanEvaluationStatusOutput;
 
 mod _get_plan_evaluation_status_input;
 

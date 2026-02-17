@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_ingestion::St
     }
 }
 
-pub use crate::operation::stop_ingestion::_stop_ingestion_output::StopIngestionOutput;
-
 pub use crate::operation::stop_ingestion::_stop_ingestion_input::StopIngestionInput;
+
+pub use crate::operation::stop_ingestion::_stop_ingestion_output::StopIngestionOutput;
 
 mod _stop_ingestion_input;
 

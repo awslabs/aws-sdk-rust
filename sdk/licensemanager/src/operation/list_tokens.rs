@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tokens::ListT
     }
 }
 
-pub use crate::operation::list_tokens::_list_tokens_output::ListTokensOutput;
-
 pub use crate::operation::list_tokens::_list_tokens_input::ListTokensInput;
+
+pub use crate::operation::list_tokens::_list_tokens_output::ListTokensOutput;
 
 mod _list_tokens_input;
 

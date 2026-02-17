@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connector_d
     }
 }
 
-pub use crate::operation::create_connector_destination::_create_connector_destination_output::CreateConnectorDestinationOutput;
-
 pub use crate::operation::create_connector_destination::_create_connector_destination_input::CreateConnectorDestinationInput;
+
+pub use crate::operation::create_connector_destination::_create_connector_destination_output::CreateConnectorDestinationOutput;
 
 mod _create_connector_destination_input;
 

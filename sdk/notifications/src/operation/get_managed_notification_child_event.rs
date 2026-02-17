@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_notifi
     }
 }
 
-pub use crate::operation::get_managed_notification_child_event::_get_managed_notification_child_event_output::GetManagedNotificationChildEventOutput;
-
 pub use crate::operation::get_managed_notification_child_event::_get_managed_notification_child_event_input::GetManagedNotificationChildEventInput;
+
+pub use crate::operation::get_managed_notification_child_event::_get_managed_notification_child_event_output::GetManagedNotificationChildEventOutput;
 
 mod _get_managed_notification_child_event_input;
 

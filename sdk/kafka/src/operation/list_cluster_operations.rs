@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cluster_opera
     }
 }
 
-pub use crate::operation::list_cluster_operations::_list_cluster_operations_output::ListClusterOperationsOutput;
-
 pub use crate::operation::list_cluster_operations::_list_cluster_operations_input::ListClusterOperationsInput;
+
+pub use crate::operation::list_cluster_operations::_list_cluster_operations_output::ListClusterOperationsOutput;
 
 mod _list_cluster_operations_input;
 

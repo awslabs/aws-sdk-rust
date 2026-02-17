@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_image::PutImag
     }
 }
 
-pub use crate::operation::put_image::_put_image_output::PutImageOutput;
-
 pub use crate::operation::put_image::_put_image_input::PutImageInput;
+
+pub use crate::operation::put_image::_put_image_output::PutImageOutput;
 
 mod _put_image_input;
 

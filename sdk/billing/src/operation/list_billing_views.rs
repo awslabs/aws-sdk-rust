@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_billing_views
     }
 }
 
-pub use crate::operation::list_billing_views::_list_billing_views_output::ListBillingViewsOutput;
-
 pub use crate::operation::list_billing_views::_list_billing_views_input::ListBillingViewsInput;
+
+pub use crate::operation::list_billing_views::_list_billing_views_output::ListBillingViewsOutput;
 
 mod _list_billing_views_input;
 

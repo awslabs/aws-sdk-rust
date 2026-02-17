@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reimport_api::Reim
     }
 }
 
-pub use crate::operation::reimport_api::_reimport_api_output::ReimportApiOutput;
-
 pub use crate::operation::reimport_api::_reimport_api_input::ReimportApiInput;
+
+pub use crate::operation::reimport_api::_reimport_api_output::ReimportApiOutput;
 
 mod _reimport_api_input;
 

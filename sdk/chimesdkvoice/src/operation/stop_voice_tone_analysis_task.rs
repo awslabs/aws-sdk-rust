@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_voice_tone_an
     }
 }
 
-pub use crate::operation::stop_voice_tone_analysis_task::_stop_voice_tone_analysis_task_output::StopVoiceToneAnalysisTaskOutput;
-
 pub use crate::operation::stop_voice_tone_analysis_task::_stop_voice_tone_analysis_task_input::StopVoiceToneAnalysisTaskInput;
+
+pub use crate::operation::stop_voice_tone_analysis_task::_stop_voice_tone_analysis_task_output::StopVoiceToneAnalysisTaskOutput;
 
 mod _stop_voice_tone_analysis_task_input;
 

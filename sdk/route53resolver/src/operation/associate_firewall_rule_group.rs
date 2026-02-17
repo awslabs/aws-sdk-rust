@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_firewall
     }
 }
 
-pub use crate::operation::associate_firewall_rule_group::_associate_firewall_rule_group_output::AssociateFirewallRuleGroupOutput;
-
 pub use crate::operation::associate_firewall_rule_group::_associate_firewall_rule_group_input::AssociateFirewallRuleGroupInput;
+
+pub use crate::operation::associate_firewall_rule_group::_associate_firewall_rule_group_output::AssociateFirewallRuleGroupOutput;
 
 mod _associate_firewall_rule_group_input;
 

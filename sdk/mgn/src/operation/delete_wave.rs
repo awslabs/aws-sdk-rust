@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_wave::Delet
     }
 }
 
-pub use crate::operation::delete_wave::_delete_wave_output::DeleteWaveOutput;
-
 pub use crate::operation::delete_wave::_delete_wave_input::DeleteWaveInput;
+
+pub use crate::operation::delete_wave::_delete_wave_output::DeleteWaveOutput;
 
 mod _delete_wave_input;
 

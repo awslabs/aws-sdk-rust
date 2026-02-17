@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_scheduled_upda
     }
 }
 
-pub use crate::operation::put_scheduled_update_group_action::_put_scheduled_update_group_action_output::PutScheduledUpdateGroupActionOutput;
-
 pub use crate::operation::put_scheduled_update_group_action::_put_scheduled_update_group_action_input::PutScheduledUpdateGroupActionInput;
+
+pub use crate::operation::put_scheduled_update_group_action::_put_scheduled_update_group_action_output::PutScheduledUpdateGroupActionOutput;
 
 mod _put_scheduled_update_group_action_input;
 

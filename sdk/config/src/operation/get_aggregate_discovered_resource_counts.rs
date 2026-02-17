@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aggregate_disc
     }
 }
 
-pub use crate::operation::get_aggregate_discovered_resource_counts::_get_aggregate_discovered_resource_counts_output::GetAggregateDiscoveredResourceCountsOutput;
-
 pub use crate::operation::get_aggregate_discovered_resource_counts::_get_aggregate_discovered_resource_counts_input::GetAggregateDiscoveredResourceCountsInput;
+
+pub use crate::operation::get_aggregate_discovered_resource_counts::_get_aggregate_discovered_resource_counts_output::GetAggregateDiscoveredResourceCountsOutput;
 
 mod _get_aggregate_discovered_resource_counts_input;
 

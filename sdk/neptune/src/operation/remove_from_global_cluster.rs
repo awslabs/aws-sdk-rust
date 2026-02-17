@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_from_global
     }
 }
 
-pub use crate::operation::remove_from_global_cluster::_remove_from_global_cluster_output::RemoveFromGlobalClusterOutput;
-
 pub use crate::operation::remove_from_global_cluster::_remove_from_global_cluster_input::RemoveFromGlobalClusterInput;
+
+pub use crate::operation::remove_from_global_cluster::_remove_from_global_cluster_output::RemoveFromGlobalClusterOutput;
 
 mod _remove_from_global_cluster_input;
 

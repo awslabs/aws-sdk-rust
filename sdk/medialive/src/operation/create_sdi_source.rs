@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sdi_source:
     }
 }
 
-pub use crate::operation::create_sdi_source::_create_sdi_source_output::CreateSdiSourceOutput;
-
 pub use crate::operation::create_sdi_source::_create_sdi_source_input::CreateSdiSourceInput;
+
+pub use crate::operation::create_sdi_source::_create_sdi_source_output::CreateSdiSourceOutput;
 
 mod _create_sdi_source_input;
 

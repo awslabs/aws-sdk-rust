@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_transformer::P
     }
 }
 
-pub use crate::operation::put_transformer::_put_transformer_output::PutTransformerOutput;
-
 pub use crate::operation::put_transformer::_put_transformer_input::PutTransformerInput;
+
+pub use crate::operation::put_transformer::_put_transformer_output::PutTransformerOutput;
 
 mod _put_transformer_input;
 

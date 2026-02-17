@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_folder_cont
     }
 }
 
-pub use crate::operation::delete_folder_contents::_delete_folder_contents_output::DeleteFolderContentsOutput;
-
 pub use crate::operation::delete_folder_contents::_delete_folder_contents_input::DeleteFolderContentsInput;
+
+pub use crate::operation::delete_folder_contents::_delete_folder_contents_output::DeleteFolderContentsOutput;
 
 mod _delete_folder_contents_input;
 

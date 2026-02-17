@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_identity
     }
 }
 
-pub use crate::operation::associate_identity_provider_config::_associate_identity_provider_config_output::AssociateIdentityProviderConfigOutput;
-
 pub use crate::operation::associate_identity_provider_config::_associate_identity_provider_config_input::AssociateIdentityProviderConfigInput;
+
+pub use crate::operation::associate_identity_provider_config::_associate_identity_provider_config_output::AssociateIdentityProviderConfigOutput;
 
 mod _associate_identity_provider_config_input;
 

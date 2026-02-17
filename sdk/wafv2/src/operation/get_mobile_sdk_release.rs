@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mobile_sdk_rel
     }
 }
 
-pub use crate::operation::get_mobile_sdk_release::_get_mobile_sdk_release_output::GetMobileSdkReleaseOutput;
-
 pub use crate::operation::get_mobile_sdk_release::_get_mobile_sdk_release_input::GetMobileSdkReleaseInput;
+
+pub use crate::operation::get_mobile_sdk_release::_get_mobile_sdk_release_output::GetMobileSdkReleaseOutput;
 
 mod _get_mobile_sdk_release_input;
 

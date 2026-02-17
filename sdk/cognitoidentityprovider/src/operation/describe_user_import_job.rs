@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user_impo
     }
 }
 
-pub use crate::operation::describe_user_import_job::_describe_user_import_job_output::DescribeUserImportJobOutput;
-
 pub use crate::operation::describe_user_import_job::_describe_user_import_job_input::DescribeUserImportJobInput;
+
+pub use crate::operation::describe_user_import_job::_describe_user_import_job_output::DescribeUserImportJobOutput;
 
 mod _describe_user_import_job_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_setup_history:
     }
 }
 
-pub use crate::operation::get_setup_history::_get_setup_history_output::GetSetupHistoryOutput;
-
 pub use crate::operation::get_setup_history::_get_setup_history_input::GetSetupHistoryInput;
+
+pub use crate::operation::get_setup_history::_get_setup_history_output::GetSetupHistoryOutput;
 
 mod _get_setup_history_input;
 

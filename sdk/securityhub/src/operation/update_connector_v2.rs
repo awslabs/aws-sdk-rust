@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connector_v
     }
 }
 
-pub use crate::operation::update_connector_v2::_update_connector_v2_output::UpdateConnectorV2Output;
-
 pub use crate::operation::update_connector_v2::_update_connector_v2_input::UpdateConnectorV2Input;
+
+pub use crate::operation::update_connector_v2::_update_connector_v2_output::UpdateConnectorV2Output;
 
 mod _update_connector_v2_input;
 

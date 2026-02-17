@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_instance_network_performance_options::_modify_instance_network_performance_options_output::ModifyInstanceNetworkPerformanceOptionsOutput;
-
 pub use crate::operation::modify_instance_network_performance_options::_modify_instance_network_performance_options_input::ModifyInstanceNetworkPerformanceOptionsInput;
+
+pub use crate::operation::modify_instance_network_performance_options::_modify_instance_network_performance_options_output::ModifyInstanceNetworkPerformanceOptionsOutput;
 
 mod _modify_instance_network_performance_options_input;
 

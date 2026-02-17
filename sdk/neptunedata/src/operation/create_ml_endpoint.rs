@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ml_endpoint
     }
 }
 
-pub use crate::operation::create_ml_endpoint::_create_ml_endpoint_output::CreateMlEndpointOutput;
-
 pub use crate::operation::create_ml_endpoint::_create_ml_endpoint_input::CreateMlEndpointInput;
+
+pub use crate::operation::create_ml_endpoint::_create_ml_endpoint_output::CreateMlEndpointOutput;
 
 mod _create_ml_endpoint_input;
 

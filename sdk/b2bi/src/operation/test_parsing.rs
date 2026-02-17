@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_parsing::Test
     }
 }
 
-pub use crate::operation::test_parsing::_test_parsing_output::TestParsingOutput;
-
 pub use crate::operation::test_parsing::_test_parsing_input::TestParsingInput;
+
+pub use crate::operation::test_parsing::_test_parsing_output::TestParsingOutput;
 
 mod _test_parsing_input;
 

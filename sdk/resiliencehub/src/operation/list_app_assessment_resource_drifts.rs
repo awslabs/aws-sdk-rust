@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_assessmen
     }
 }
 
-pub use crate::operation::list_app_assessment_resource_drifts::_list_app_assessment_resource_drifts_output::ListAppAssessmentResourceDriftsOutput;
-
 pub use crate::operation::list_app_assessment_resource_drifts::_list_app_assessment_resource_drifts_input::ListAppAssessmentResourceDriftsInput;
+
+pub use crate::operation::list_app_assessment_resource_drifts::_list_app_assessment_resource_drifts_output::ListAppAssessmentResourceDriftsOutput;
 
 mod _list_app_assessment_resource_drifts_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hsm_client_
     }
 }
 
-pub use crate::operation::delete_hsm_client_certificate::_delete_hsm_client_certificate_output::DeleteHsmClientCertificateOutput;
-
 pub use crate::operation::delete_hsm_client_certificate::_delete_hsm_client_certificate_input::DeleteHsmClientCertificateInput;
+
+pub use crate::operation::delete_hsm_client_certificate::_delete_hsm_client_certificate_output::DeleteHsmClientCertificateOutput;
 
 mod _delete_hsm_client_certificate_input;
 

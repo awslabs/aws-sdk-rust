@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_automatic_tap
     }
 }
 
-pub use crate::operation::list_automatic_tape_creation_policies::_list_automatic_tape_creation_policies_output::ListAutomaticTapeCreationPoliciesOutput;
-
 pub use crate::operation::list_automatic_tape_creation_policies::_list_automatic_tape_creation_policies_input::ListAutomaticTapeCreationPoliciesInput;
+
+pub use crate::operation::list_automatic_tape_creation_policies::_list_automatic_tape_creation_policies_output::ListAutomaticTapeCreationPoliciesOutput;
 
 mod _list_automatic_tape_creation_policies_input;
 

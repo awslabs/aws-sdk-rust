@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_column_statist
     }
 }
 
-pub use crate::operation::get_column_statistics_task_runs::_get_column_statistics_task_runs_output::GetColumnStatisticsTaskRunsOutput;
-
 pub use crate::operation::get_column_statistics_task_runs::_get_column_statistics_task_runs_input::GetColumnStatisticsTaskRunsInput;
+
+pub use crate::operation::get_column_statistics_task_runs::_get_column_statistics_task_runs_output::GetColumnStatisticsTaskRunsOutput;
 
 mod _get_column_statistics_task_runs_input;
 

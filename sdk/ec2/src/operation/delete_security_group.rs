@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_security_gr
     }
 }
 
-pub use crate::operation::delete_security_group::_delete_security_group_output::DeleteSecurityGroupOutput;
-
 pub use crate::operation::delete_security_group::_delete_security_group_input::DeleteSecurityGroupInput;
+
+pub use crate::operation::delete_security_group::_delete_security_group_output::DeleteSecurityGroupOutput;
 
 mod _delete_security_group_input;
 

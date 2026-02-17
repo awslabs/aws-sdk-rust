@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cloud_exada
     }
 }
 
-pub use crate::operation::update_cloud_exadata_infrastructure::_update_cloud_exadata_infrastructure_output::UpdateCloudExadataInfrastructureOutput;
-
 pub use crate::operation::update_cloud_exadata_infrastructure::_update_cloud_exadata_infrastructure_input::UpdateCloudExadataInfrastructureInput;
+
+pub use crate::operation::update_cloud_exadata_infrastructure::_update_cloud_exadata_infrastructure_output::UpdateCloudExadataInfrastructureOutput;
 
 mod _update_cloud_exadata_infrastructure_input;
 

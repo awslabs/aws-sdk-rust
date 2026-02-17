@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_request
     }
 }
 
-pub use crate::operation::put_bucket_request_payment::_put_bucket_request_payment_output::PutBucketRequestPaymentOutput;
-
 pub use crate::operation::put_bucket_request_payment::_put_bucket_request_payment_input::PutBucketRequestPaymentInput;
+
+pub use crate::operation::put_bucket_request_payment::_put_bucket_request_payment_output::PutBucketRequestPaymentOutput;
 
 mod _put_bucket_request_payment_input;
 

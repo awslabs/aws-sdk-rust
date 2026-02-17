@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_automatic_t
     }
 }
 
-pub use crate::operation::update_automatic_tape_creation_policy::_update_automatic_tape_creation_policy_output::UpdateAutomaticTapeCreationPolicyOutput;
-
 pub use crate::operation::update_automatic_tape_creation_policy::_update_automatic_tape_creation_policy_input::UpdateAutomaticTapeCreationPolicyInput;
+
+pub use crate::operation::update_automatic_tape_creation_policy::_update_automatic_tape_creation_policy_output::UpdateAutomaticTapeCreationPolicyOutput;
 
 mod _update_automatic_tape_creation_policy_input;
 

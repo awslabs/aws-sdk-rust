@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_gateway_targe
     }
 }
 
-pub use crate::operation::list_gateway_targets::_list_gateway_targets_output::ListGatewayTargetsOutput;
-
 pub use crate::operation::list_gateway_targets::_list_gateway_targets_input::ListGatewayTargetsInput;
+
+pub use crate::operation::list_gateway_targets::_list_gateway_targets_output::ListGatewayTargetsOutput;
 
 mod _list_gateway_targets_input;
 

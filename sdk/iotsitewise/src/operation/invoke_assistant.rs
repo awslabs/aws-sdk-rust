@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_assistant::
     }
 }
 
-pub use crate::operation::invoke_assistant::_invoke_assistant_output::InvokeAssistantOutput;
-
 pub use crate::operation::invoke_assistant::_invoke_assistant_input::InvokeAssistantInput;
+
+pub use crate::operation::invoke_assistant::_invoke_assistant_output::InvokeAssistantOutput;
 
 mod _invoke_assistant_input;
 

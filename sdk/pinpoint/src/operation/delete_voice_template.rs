@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_templ
     }
 }
 
-pub use crate::operation::delete_voice_template::_delete_voice_template_output::DeleteVoiceTemplateOutput;
-
 pub use crate::operation::delete_voice_template::_delete_voice_template_input::DeleteVoiceTemplateInput;
+
+pub use crate::operation::delete_voice_template::_delete_voice_template_output::DeleteVoiceTemplateOutput;
 
 mod _delete_voice_template_input;
 

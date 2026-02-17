@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_admin_scope::G
     }
 }
 
-pub use crate::operation::get_admin_scope::_get_admin_scope_output::GetAdminScopeOutput;
-
 pub use crate::operation::get_admin_scope::_get_admin_scope_input::GetAdminScopeInput;
+
+pub use crate::operation::get_admin_scope::_get_admin_scope_output::GetAdminScopeOutput;
 
 mod _get_admin_scope_input;
 

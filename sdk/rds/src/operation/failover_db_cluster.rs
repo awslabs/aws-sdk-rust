@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::failover_db_cluste
     }
 }
 
-pub use crate::operation::failover_db_cluster::_failover_db_cluster_output::FailoverDbClusterOutput;
-
 pub use crate::operation::failover_db_cluster::_failover_db_cluster_input::FailoverDbClusterInput;
+
+pub use crate::operation::failover_db_cluster::_failover_db_cluster_output::FailoverDbClusterOutput;
 
 mod _failover_db_cluster_input;
 

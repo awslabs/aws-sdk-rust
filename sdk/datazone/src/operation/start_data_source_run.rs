@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_source_
     }
 }
 
-pub use crate::operation::start_data_source_run::_start_data_source_run_output::StartDataSourceRunOutput;
-
 pub use crate::operation::start_data_source_run::_start_data_source_run_input::StartDataSourceRunInput;
+
+pub use crate::operation::start_data_source_run::_start_data_source_run_output::StartDataSourceRunOutput;
 
 mod _start_data_source_run_input;
 

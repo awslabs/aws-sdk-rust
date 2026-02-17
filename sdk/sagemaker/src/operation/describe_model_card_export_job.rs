@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_model_car
     }
 }
 
-pub use crate::operation::describe_model_card_export_job::_describe_model_card_export_job_output::DescribeModelCardExportJobOutput;
-
 pub use crate::operation::describe_model_card_export_job::_describe_model_card_export_job_input::DescribeModelCardExportJobInput;
+
+pub use crate::operation::describe_model_card_export_job::_describe_model_card_export_job_output::DescribeModelCardExportJobOutput;
 
 mod _describe_model_card_export_job_input;
 

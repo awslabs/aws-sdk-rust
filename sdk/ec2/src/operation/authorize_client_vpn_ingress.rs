@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_client_v
     }
 }
 
-pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_ingress_output::AuthorizeClientVpnIngressOutput;
-
 pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_ingress_input::AuthorizeClientVpnIngressInput;
+
+pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_ingress_output::AuthorizeClientVpnIngressOutput;
 
 mod _authorize_client_vpn_ingress_input;
 

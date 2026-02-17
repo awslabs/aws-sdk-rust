@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_security_pr
     }
 }
 
-pub use crate::operation::attach_security_profile::_attach_security_profile_output::AttachSecurityProfileOutput;
-
 pub use crate::operation::attach_security_profile::_attach_security_profile_input::AttachSecurityProfileInput;
+
+pub use crate::operation::attach_security_profile::_attach_security_profile_output::AttachSecurityProfileOutput;
 
 mod _attach_security_profile_input;
 

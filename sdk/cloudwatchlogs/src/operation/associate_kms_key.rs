@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_kms_key:
     }
 }
 
-pub use crate::operation::associate_kms_key::_associate_kms_key_output::AssociateKmsKeyOutput;
-
 pub use crate::operation::associate_kms_key::_associate_kms_key_input::AssociateKmsKeyInput;
+
+pub use crate::operation::associate_kms_key::_associate_kms_key_output::AssociateKmsKeyOutput;
 
 mod _associate_kms_key_input;
 

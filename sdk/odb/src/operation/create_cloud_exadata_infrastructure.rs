@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_exada
     }
 }
 
-pub use crate::operation::create_cloud_exadata_infrastructure::_create_cloud_exadata_infrastructure_output::CreateCloudExadataInfrastructureOutput;
-
 pub use crate::operation::create_cloud_exadata_infrastructure::_create_cloud_exadata_infrastructure_input::CreateCloudExadataInfrastructureInput;
+
+pub use crate::operation::create_cloud_exadata_infrastructure::_create_cloud_exadata_infrastructure_output::CreateCloudExadataInfrastructureOutput;
 
 mod _create_cloud_exadata_infrastructure_input;
 

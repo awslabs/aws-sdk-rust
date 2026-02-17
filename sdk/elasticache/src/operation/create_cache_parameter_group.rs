@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cache_param
     }
 }
 
-pub use crate::operation::create_cache_parameter_group::_create_cache_parameter_group_output::CreateCacheParameterGroupOutput;
-
 pub use crate::operation::create_cache_parameter_group::_create_cache_parameter_group_input::CreateCacheParameterGroupInput;
+
+pub use crate::operation::create_cache_parameter_group::_create_cache_parameter_group_output::CreateCacheParameterGroupOutput;
 
 mod _create_cache_parameter_group_input;
 

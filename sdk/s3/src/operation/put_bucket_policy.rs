@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_policy:
     }
 }
 
-pub use crate::operation::put_bucket_policy::_put_bucket_policy_output::PutBucketPolicyOutput;
-
 pub use crate::operation::put_bucket_policy::_put_bucket_policy_input::PutBucketPolicyInput;
+
+pub use crate::operation::put_bucket_policy::_put_bucket_policy_output::PutBucketPolicyOutput;
 
 mod _put_bucket_policy_input;
 

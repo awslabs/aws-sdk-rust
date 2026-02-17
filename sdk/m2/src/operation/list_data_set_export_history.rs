@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_set_expo
     }
 }
 
-pub use crate::operation::list_data_set_export_history::_list_data_set_export_history_output::ListDataSetExportHistoryOutput;
-
 pub use crate::operation::list_data_set_export_history::_list_data_set_export_history_input::ListDataSetExportHistoryInput;
+
+pub use crate::operation::list_data_set_export_history::_list_data_set_export_history_output::ListDataSetExportHistoryOutput;
 
 mod _list_data_set_export_history_input;
 

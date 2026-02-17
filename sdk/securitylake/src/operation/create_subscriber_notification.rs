@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subscriber_
     }
 }
 
-pub use crate::operation::create_subscriber_notification::_create_subscriber_notification_output::CreateSubscriberNotificationOutput;
-
 pub use crate::operation::create_subscriber_notification::_create_subscriber_notification_input::CreateSubscriberNotificationInput;
+
+pub use crate::operation::create_subscriber_notification::_create_subscriber_notification_output::CreateSubscriberNotificationOutput;
 
 mod _create_subscriber_notification_input;
 

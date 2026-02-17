@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_similar_profil
     }
 }
 
-pub use crate::operation::get_similar_profiles::_get_similar_profiles_output::GetSimilarProfilesOutput;
-
 pub use crate::operation::get_similar_profiles::_get_similar_profiles_input::GetSimilarProfilesInput;
+
+pub use crate::operation::get_similar_profiles::_get_similar_profiles_output::GetSimilarProfilesOutput;
 
 mod _get_similar_profiles_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_replicator:
     }
 }
 
-pub use crate::operation::create_replicator::_create_replicator_output::CreateReplicatorOutput;
-
 pub use crate::operation::create_replicator::_create_replicator_input::CreateReplicatorInput;
+
+pub use crate::operation::create_replicator::_create_replicator_output::CreateReplicatorOutput;
 
 mod _create_replicator_input;
 

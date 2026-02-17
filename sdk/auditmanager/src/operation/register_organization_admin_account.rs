@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_organizat
     }
 }
 
-pub use crate::operation::register_organization_admin_account::_register_organization_admin_account_output::RegisterOrganizationAdminAccountOutput;
-
 pub use crate::operation::register_organization_admin_account::_register_organization_admin_account_input::RegisterOrganizationAdminAccountInput;
+
+pub use crate::operation::register_organization_admin_account::_register_organization_admin_account_output::RegisterOrganizationAdminAccountOutput;
 
 mod _register_organization_admin_account_input;
 

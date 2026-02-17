@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mitigation_
     }
 }
 
-pub use crate::operation::delete_mitigation_action::_delete_mitigation_action_output::DeleteMitigationActionOutput;
-
 pub use crate::operation::delete_mitigation_action::_delete_mitigation_action_input::DeleteMitigationActionInput;
+
+pub use crate::operation::delete_mitigation_action::_delete_mitigation_action_output::DeleteMitigationActionOutput;
 
 mod _delete_mitigation_action_input;
 

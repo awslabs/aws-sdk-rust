@@ -480,9 +480,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_response_he
     }
 }
 
-pub use crate::operation::update_response_headers_policy::_update_response_headers_policy_output::UpdateResponseHeadersPolicyOutput;
-
 pub use crate::operation::update_response_headers_policy::_update_response_headers_policy_input::UpdateResponseHeadersPolicyInput;
+
+pub use crate::operation::update_response_headers_policy::_update_response_headers_policy_output::UpdateResponseHeadersPolicyOutput;
 
 mod _update_response_headers_policy_input;
 

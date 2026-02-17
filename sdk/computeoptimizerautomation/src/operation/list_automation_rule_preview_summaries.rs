@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_automation_ru
     }
 }
 
-pub use crate::operation::list_automation_rule_preview_summaries::_list_automation_rule_preview_summaries_output::ListAutomationRulePreviewSummariesOutput;
-
 pub use crate::operation::list_automation_rule_preview_summaries::_list_automation_rule_preview_summaries_input::ListAutomationRulePreviewSummariesInput;
+
+pub use crate::operation::list_automation_rule_preview_summaries::_list_automation_rule_preview_summaries_output::ListAutomationRulePreviewSummariesOutput;
 
 mod _list_automation_rule_preview_summaries_input;
 

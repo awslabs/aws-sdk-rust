@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configurati
     }
 }
 
-pub use crate::operation::delete_configuration_template::_delete_configuration_template_output::DeleteConfigurationTemplateOutput;
-
 pub use crate::operation::delete_configuration_template::_delete_configuration_template_input::DeleteConfigurationTemplateInput;
+
+pub use crate::operation::delete_configuration_template::_delete_configuration_template_output::DeleteConfigurationTemplateOutput;
 
 mod _delete_configuration_template_input;
 

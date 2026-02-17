@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_instance_access_control_attribute_configuration::_create_instance_access_control_attribute_configuration_output::CreateInstanceAccessControlAttributeConfigurationOutput;
-
 pub use crate::operation::create_instance_access_control_attribute_configuration::_create_instance_access_control_attribute_configuration_input::CreateInstanceAccessControlAttributeConfigurationInput;
+
+pub use crate::operation::create_instance_access_control_attribute_configuration::_create_instance_access_control_attribute_configuration_output::CreateInstanceAccessControlAttributeConfigurationOutput;
 
 mod _create_instance_access_control_attribute_configuration_input;
 

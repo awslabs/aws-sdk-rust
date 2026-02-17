@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delivery_desti
     }
 }
 
-pub use crate::operation::get_delivery_destination_policy::_get_delivery_destination_policy_output::GetDeliveryDestinationPolicyOutput;
-
 pub use crate::operation::get_delivery_destination_policy::_get_delivery_destination_policy_input::GetDeliveryDestinationPolicyInput;
+
+pub use crate::operation::get_delivery_destination_policy::_get_delivery_destination_policy_output::GetDeliveryDestinationPolicyOutput;
 
 mod _get_delivery_destination_policy_input;
 

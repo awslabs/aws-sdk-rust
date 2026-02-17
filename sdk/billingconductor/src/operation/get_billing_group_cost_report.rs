@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_billing_group_
     }
 }
 
-pub use crate::operation::get_billing_group_cost_report::_get_billing_group_cost_report_output::GetBillingGroupCostReportOutput;
-
 pub use crate::operation::get_billing_group_cost_report::_get_billing_group_cost_report_input::GetBillingGroupCostReportInput;
+
+pub use crate::operation::get_billing_group_cost_report::_get_billing_group_cost_report_output::GetBillingGroupCostReportOutput;
 
 mod _get_billing_group_cost_report_input;
 

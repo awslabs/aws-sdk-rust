@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unlock_snapshot::U
     }
 }
 
-pub use crate::operation::unlock_snapshot::_unlock_snapshot_output::UnlockSnapshotOutput;
-
 pub use crate::operation::unlock_snapshot::_unlock_snapshot_input::UnlockSnapshotInput;
+
+pub use crate::operation::unlock_snapshot::_unlock_snapshot_output::UnlockSnapshotOutput;
 
 mod _unlock_snapshot_input;
 

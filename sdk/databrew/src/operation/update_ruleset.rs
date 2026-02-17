@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ruleset::Up
     }
 }
 
-pub use crate::operation::update_ruleset::_update_ruleset_output::UpdateRulesetOutput;
-
 pub use crate::operation::update_ruleset::_update_ruleset_input::UpdateRulesetInput;
+
+pub use crate::operation::update_ruleset::_update_ruleset_output::UpdateRulesetOutput;
 
 mod _update_ruleset_input;
 

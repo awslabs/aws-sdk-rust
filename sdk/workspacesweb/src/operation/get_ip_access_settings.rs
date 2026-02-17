@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ip_access_sett
     }
 }
 
-pub use crate::operation::get_ip_access_settings::_get_ip_access_settings_output::GetIpAccessSettingsOutput;
-
 pub use crate::operation::get_ip_access_settings::_get_ip_access_settings_input::GetIpAccessSettingsInput;
+
+pub use crate::operation::get_ip_access_settings::_get_ip_access_settings_output::GetIpAccessSettingsOutput;
 
 mod _get_ip_access_settings_input;
 

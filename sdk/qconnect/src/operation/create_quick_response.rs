@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_quick_respo
     }
 }
 
-pub use crate::operation::create_quick_response::_create_quick_response_output::CreateQuickResponseOutput;
-
 pub use crate::operation::create_quick_response::_create_quick_response_input::CreateQuickResponseInput;
+
+pub use crate::operation::create_quick_response::_create_quick_response_output::CreateQuickResponseOutput;
 
 mod _create_quick_response_input;
 

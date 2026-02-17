@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_model_ver
     }
 }
 
-pub use crate::operation::describe_model_version::_describe_model_version_output::DescribeModelVersionOutput;
-
 pub use crate::operation::describe_model_version::_describe_model_version_input::DescribeModelVersionInput;
+
+pub use crate::operation::describe_model_version::_describe_model_version_output::DescribeModelVersionOutput;
 
 mod _describe_model_version_input;
 

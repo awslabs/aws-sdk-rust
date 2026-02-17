@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tag_option:
     }
 }
 
-pub use crate::operation::delete_tag_option::_delete_tag_option_output::DeleteTagOptionOutput;
-
 pub use crate::operation::delete_tag_option::_delete_tag_option_input::DeleteTagOptionInput;
+
+pub use crate::operation::delete_tag_option::_delete_tag_option_output::DeleteTagOptionOutput;
 
 mod _delete_tag_option_input;
 

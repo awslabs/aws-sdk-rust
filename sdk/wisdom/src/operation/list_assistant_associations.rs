@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assistant_ass
     }
 }
 
-pub use crate::operation::list_assistant_associations::_list_assistant_associations_output::ListAssistantAssociationsOutput;
-
 pub use crate::operation::list_assistant_associations::_list_assistant_associations_input::ListAssistantAssociationsInput;
+
+pub use crate::operation::list_assistant_associations::_list_assistant_associations_output::ListAssistantAssociationsOutput;
 
 mod _list_assistant_associations_input;
 

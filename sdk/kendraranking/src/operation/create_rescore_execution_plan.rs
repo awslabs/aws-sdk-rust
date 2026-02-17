@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rescore_exe
     }
 }
 
-pub use crate::operation::create_rescore_execution_plan::_create_rescore_execution_plan_output::CreateRescoreExecutionPlanOutput;
-
 pub use crate::operation::create_rescore_execution_plan::_create_rescore_execution_plan_input::CreateRescoreExecutionPlanInput;
+
+pub use crate::operation::create_rescore_execution_plan::_create_rescore_execution_plan_output::CreateRescoreExecutionPlanOutput;
 
 mod _create_rescore_execution_plan_input;
 

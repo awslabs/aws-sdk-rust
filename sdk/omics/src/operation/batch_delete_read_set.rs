@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_read_
     }
 }
 
-pub use crate::operation::batch_delete_read_set::_batch_delete_read_set_output::BatchDeleteReadSetOutput;
-
 pub use crate::operation::batch_delete_read_set::_batch_delete_read_set_input::BatchDeleteReadSetInput;
+
+pub use crate::operation::batch_delete_read_set::_batch_delete_read_set_output::BatchDeleteReadSetOutput;
 
 mod _batch_delete_read_set_input;
 

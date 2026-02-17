@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_package_versi
     }
 }
 
-pub use crate::operation::list_package_version_assets::_list_package_version_assets_output::ListPackageVersionAssetsOutput;
-
 pub use crate::operation::list_package_version_assets::_list_package_version_assets_input::ListPackageVersionAssetsInput;
+
+pub use crate::operation::list_package_version_assets::_list_package_version_assets_output::ListPackageVersionAssetsOutput;
 
 mod _list_package_version_assets_input;
 

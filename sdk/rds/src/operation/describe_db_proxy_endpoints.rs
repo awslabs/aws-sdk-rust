@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_proxy_
     }
 }
 
-pub use crate::operation::describe_db_proxy_endpoints::_describe_db_proxy_endpoints_output::DescribeDbProxyEndpointsOutput;
-
 pub use crate::operation::describe_db_proxy_endpoints::_describe_db_proxy_endpoints_input::DescribeDbProxyEndpointsInput;
+
+pub use crate::operation::describe_db_proxy_endpoints::_describe_db_proxy_endpoints_output::DescribeDbProxyEndpointsOutput;
 
 mod _describe_db_proxy_endpoints_input;
 

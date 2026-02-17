@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_enabled_contro
     }
 }
 
-pub use crate::operation::get_enabled_control::_get_enabled_control_output::GetEnabledControlOutput;
-
 pub use crate::operation::get_enabled_control::_get_enabled_control_input::GetEnabledControlInput;
+
+pub use crate::operation::get_enabled_control::_get_enabled_control_output::GetEnabledControlOutput;
 
 mod _get_enabled_control_input;
 

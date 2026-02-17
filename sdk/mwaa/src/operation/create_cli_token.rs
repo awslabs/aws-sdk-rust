@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cli_token::
     }
 }
 
-pub use crate::operation::create_cli_token::_create_cli_token_output::CreateCliTokenOutput;
-
 pub use crate::operation::create_cli_token::_create_cli_token_input::CreateCliTokenInput;
+
+pub use crate::operation::create_cli_token::_create_cli_token_output::CreateCliTokenOutput;
 
 mod _create_cli_token_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_user_permissio
     }
 }
 
-pub use crate::operation::put_user_permissions_boundary::_put_user_permissions_boundary_output::PutUserPermissionsBoundaryOutput;
-
 pub use crate::operation::put_user_permissions_boundary::_put_user_permissions_boundary_input::PutUserPermissionsBoundaryInput;
+
+pub use crate::operation::put_user_permissions_boundary::_put_user_permissions_boundary_output::PutUserPermissionsBoundaryOutput;
 
 mod _put_user_permissions_boundary_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_p
     }
 }
 
-pub use crate::operation::list_environment_provisioned_resources::_list_environment_provisioned_resources_output::ListEnvironmentProvisionedResourcesOutput;
-
 pub use crate::operation::list_environment_provisioned_resources::_list_environment_provisioned_resources_input::ListEnvironmentProvisionedResourcesInput;
+
+pub use crate::operation::list_environment_provisioned_resources::_list_environment_provisioned_resources_output::ListEnvironmentProvisionedResourcesOutput;
 
 mod _list_environment_provisioned_resources_input;
 

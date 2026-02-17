@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpc_origins::
     }
 }
 
-pub use crate::operation::list_vpc_origins::_list_vpc_origins_output::ListVpcOriginsOutput;
-
 pub use crate::operation::list_vpc_origins::_list_vpc_origins_input::ListVpcOriginsInput;
+
+pub use crate::operation::list_vpc_origins::_list_vpc_origins_output::ListVpcOriginsOutput;
 
 mod _list_vpc_origins_input;
 

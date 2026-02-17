@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_link::Creat
     }
 }
 
-pub use crate::operation::create_link::_create_link_output::CreateLinkOutput;
-
 pub use crate::operation::create_link::_create_link_input::CreateLinkInput;
+
+pub use crate::operation::create_link::_create_link_output::CreateLinkOutput;
 
 mod _create_link_input;
 

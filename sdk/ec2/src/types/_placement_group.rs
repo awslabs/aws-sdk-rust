@@ -22,6 +22,8 @@ pub struct PlacementGroup {
     pub spread_level: ::std::option::Option<crate::types::SpreadLevel>,
     /// <p>Reserved for future use.</p>
     pub linked_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>The service provider that manages the Placement Group.</p>
+    pub operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl PlacementGroup {
     /// <p>The name of the placement group.</p>
@@ -62,6 +64,10 @@ impl PlacementGroup {
     pub fn linked_group_id(&self) -> ::std::option::Option<&str> {
         self.linked_group_id.as_deref()
     }
+    /// <p>The service provider that manages the Placement Group.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::OperatorResponse> {
+        self.operator.as_ref()
+    }
 }
 impl PlacementGroup {
     /// Creates a new builder-style object to manufacture [`PlacementGroup`](crate::types::PlacementGroup).
@@ -83,6 +89,7 @@ pub struct PlacementGroupBuilder {
     pub(crate) group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) spread_level: ::std::option::Option<crate::types::SpreadLevel>,
     pub(crate) linked_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) operator: ::std::option::Option<crate::types::OperatorResponse>,
 }
 impl PlacementGroupBuilder {
     /// <p>The name of the placement group.</p>
@@ -217,6 +224,20 @@ impl PlacementGroupBuilder {
     pub fn get_linked_group_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.linked_group_id
     }
+    /// <p>The service provider that manages the Placement Group.</p>
+    pub fn operator(mut self, input: crate::types::OperatorResponse) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The service provider that manages the Placement Group.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::OperatorResponse>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The service provider that manages the Placement Group.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::OperatorResponse> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`PlacementGroup`](crate::types::PlacementGroup).
     pub fn build(self) -> crate::types::PlacementGroup {
         crate::types::PlacementGroup {
@@ -229,6 +250,7 @@ impl PlacementGroupBuilder {
             group_arn: self.group_arn,
             spread_level: self.spread_level,
             linked_group_id: self.linked_group_id,
+            operator: self.operator,
         }
     }
 }

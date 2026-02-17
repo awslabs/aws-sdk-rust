@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cache_reports
     }
 }
 
-pub use crate::operation::list_cache_reports::_list_cache_reports_output::ListCacheReportsOutput;
-
 pub use crate::operation::list_cache_reports::_list_cache_reports_input::ListCacheReportsInput;
+
+pub use crate::operation::list_cache_reports::_list_cache_reports_output::ListCacheReportsOutput;
 
 mod _list_cache_reports_input;
 

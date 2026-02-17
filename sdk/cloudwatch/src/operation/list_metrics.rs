@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_metrics::List
     }
 }
 
-pub use crate::operation::list_metrics::_list_metrics_output::ListMetricsOutput;
-
 pub use crate::operation::list_metrics::_list_metrics_input::ListMetricsInput;
+
+pub use crate::operation::list_metrics::_list_metrics_output::ListMetricsOutput;
 
 mod _list_metrics_input;
 

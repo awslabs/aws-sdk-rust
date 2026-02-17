@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_asset_propert
     }
 }
 
-pub use crate::operation::list_asset_properties::_list_asset_properties_output::ListAssetPropertiesOutput;
-
 pub use crate::operation::list_asset_properties::_list_asset_properties_input::ListAssetPropertiesInput;
+
+pub use crate::operation::list_asset_properties::_list_asset_properties_output::ListAssetPropertiesOutput;
 
 mod _list_asset_properties_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_channel_han
     }
 }
 
-pub use crate::operation::accept_channel_handshake::_accept_channel_handshake_output::AcceptChannelHandshakeOutput;
-
 pub use crate::operation::accept_channel_handshake::_accept_channel_handshake_input::AcceptChannelHandshakeInput;
+
+pub use crate::operation::accept_channel_handshake::_accept_channel_handshake_output::AcceptChannelHandshakeOutput;
 
 mod _accept_channel_handshake_input;
 

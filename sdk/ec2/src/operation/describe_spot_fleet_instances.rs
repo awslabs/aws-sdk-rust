@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_spot_flee
     }
 }
 
-pub use crate::operation::describe_spot_fleet_instances::_describe_spot_fleet_instances_output::DescribeSpotFleetInstancesOutput;
-
 pub use crate::operation::describe_spot_fleet_instances::_describe_spot_fleet_instances_input::DescribeSpotFleetInstancesInput;
+
+pub use crate::operation::describe_spot_fleet_instances::_describe_spot_fleet_instances_output::DescribeSpotFleetInstancesOutput;
 
 mod _describe_spot_fleet_instances_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_recommender::
     }
 }
 
-pub use crate::operation::stop_recommender::_stop_recommender_output::StopRecommenderOutput;
-
 pub use crate::operation::stop_recommender::_stop_recommender_input::StopRecommenderInput;
+
+pub use crate::operation::stop_recommender::_stop_recommender_output::StopRecommenderOutput;
 
 mod _stop_recommender_input;
 

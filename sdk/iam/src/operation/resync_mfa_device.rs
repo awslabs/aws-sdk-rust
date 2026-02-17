@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resync_mfa_device:
     }
 }
 
-pub use crate::operation::resync_mfa_device::_resync_mfa_device_output::ResyncMfaDeviceOutput;
-
 pub use crate::operation::resync_mfa_device::_resync_mfa_device_input::ResyncMfaDeviceInput;
+
+pub use crate::operation::resync_mfa_device::_resync_mfa_device_output::ResyncMfaDeviceOutput;
 
 mod _resync_mfa_device_input;
 

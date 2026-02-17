@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_view::
     }
 }
 
-pub use crate::operation::create_data_view::_create_data_view_output::CreateDataViewOutput;
-
 pub use crate::operation::create_data_view::_create_data_view_input::CreateDataViewInput;
+
+pub use crate::operation::create_data_view::_create_data_view_output::CreateDataViewOutput;
 
 mod _create_data_view_input;
 

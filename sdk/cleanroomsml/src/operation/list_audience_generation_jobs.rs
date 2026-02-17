@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audience_gene
     }
 }
 
-pub use crate::operation::list_audience_generation_jobs::_list_audience_generation_jobs_output::ListAudienceGenerationJobsOutput;
-
 pub use crate::operation::list_audience_generation_jobs::_list_audience_generation_jobs_input::ListAudienceGenerationJobsInput;
+
+pub use crate::operation::list_audience_generation_jobs::_list_audience_generation_jobs_output::ListAudienceGenerationJobsOutput;
 
 mod _list_audience_generation_jobs_input;
 

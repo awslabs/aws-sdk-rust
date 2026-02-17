@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_source_locati
     }
 }
 
-pub use crate::operation::list_source_locations::_list_source_locations_output::ListSourceLocationsOutput;
-
 pub use crate::operation::list_source_locations::_list_source_locations_input::ListSourceLocationsInput;
+
+pub use crate::operation::list_source_locations::_list_source_locations_output::ListSourceLocationsOutput;
 
 mod _list_source_locations_input;
 

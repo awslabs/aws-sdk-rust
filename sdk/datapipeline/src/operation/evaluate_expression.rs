@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate_expressio
     }
 }
 
-pub use crate::operation::evaluate_expression::_evaluate_expression_output::EvaluateExpressionOutput;
-
 pub use crate::operation::evaluate_expression::_evaluate_expression_input::EvaluateExpressionInput;
+
+pub use crate::operation::evaluate_expression::_evaluate_expression_output::EvaluateExpressionOutput;
 
 mod _evaluate_expression_input;
 

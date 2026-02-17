@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_script::D
     }
 }
 
-pub use crate::operation::describe_script::_describe_script_output::DescribeScriptOutput;
-
 pub use crate::operation::describe_script::_describe_script_input::DescribeScriptInput;
+
+pub use crate::operation::describe_script::_describe_script_output::DescribeScriptOutput;
 
 mod _describe_script_input;
 

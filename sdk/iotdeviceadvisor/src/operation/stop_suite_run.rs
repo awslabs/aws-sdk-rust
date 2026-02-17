@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_suite_run::St
     }
 }
 
-pub use crate::operation::stop_suite_run::_stop_suite_run_output::StopSuiteRunOutput;
-
 pub use crate::operation::stop_suite_run::_stop_suite_run_input::StopSuiteRunInput;
+
+pub use crate::operation::stop_suite_run::_stop_suite_run_output::StopSuiteRunOutput;
 
 mod _stop_suite_run_input;
 

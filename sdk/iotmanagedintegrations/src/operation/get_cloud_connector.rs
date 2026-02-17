@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_connecto
     }
 }
 
-pub use crate::operation::get_cloud_connector::_get_cloud_connector_output::GetCloudConnectorOutput;
-
 pub use crate::operation::get_cloud_connector::_get_cloud_connector_input::GetCloudConnectorInput;
+
+pub use crate::operation::get_cloud_connector::_get_cloud_connector_output::GetCloudConnectorOutput;
 
 mod _get_cloud_connector_input;
 

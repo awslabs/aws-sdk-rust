@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_blue_green_
     }
 }
 
-pub use crate::operation::create_blue_green_deployment::_create_blue_green_deployment_output::CreateBlueGreenDeploymentOutput;
-
 pub use crate::operation::create_blue_green_deployment::_create_blue_green_deployment_input::CreateBlueGreenDeploymentInput;
+
+pub use crate::operation::create_blue_green_deployment::_create_blue_green_deployment_output::CreateBlueGreenDeploymentOutput;
 
 mod _create_blue_green_deployment_input;
 

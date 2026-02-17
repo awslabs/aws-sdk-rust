@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trust_anchors
     }
 }
 
-pub use crate::operation::list_trust_anchors::_list_trust_anchors_output::ListTrustAnchorsOutput;
-
 pub use crate::operation::list_trust_anchors::_list_trust_anchors_input::ListTrustAnchorsInput;
+
+pub use crate::operation::list_trust_anchors::_list_trust_anchors_output::ListTrustAnchorsOutput;
 
 mod _list_trust_anchors_input;
 

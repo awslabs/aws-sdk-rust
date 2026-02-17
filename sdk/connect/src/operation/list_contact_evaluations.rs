@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contact_evalu
     }
 }
 
-pub use crate::operation::list_contact_evaluations::_list_contact_evaluations_output::ListContactEvaluationsOutput;
-
 pub use crate::operation::list_contact_evaluations::_list_contact_evaluations_input::ListContactEvaluationsInput;
+
+pub use crate::operation::list_contact_evaluations::_list_contact_evaluations_output::ListContactEvaluationsOutput;
 
 mod _list_contact_evaluations_input;
 

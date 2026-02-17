@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replicate_instance
     }
 }
 
-pub use crate::operation::replicate_instance::_replicate_instance_output::ReplicateInstanceOutput;
-
 pub use crate::operation::replicate_instance::_replicate_instance_input::ReplicateInstanceInput;
+
+pub use crate::operation::replicate_instance::_replicate_instance_output::ReplicateInstanceOutput;
 
 mod _replicate_instance_input;
 

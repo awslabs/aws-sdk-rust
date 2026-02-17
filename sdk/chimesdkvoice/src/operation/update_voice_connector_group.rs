@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_voice_conne
     }
 }
 
-pub use crate::operation::update_voice_connector_group::_update_voice_connector_group_output::UpdateVoiceConnectorGroupOutput;
-
 pub use crate::operation::update_voice_connector_group::_update_voice_connector_group_input::UpdateVoiceConnectorGroupInput;
+
+pub use crate::operation::update_voice_connector_group::_update_voice_connector_group_output::UpdateVoiceConnectorGroupOutput;
 
 mod _update_voice_connector_group_input;
 

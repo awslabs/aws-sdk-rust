@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_stream::Unta
     }
 }
 
-pub use crate::operation::untag_stream::_untag_stream_output::UntagStreamOutput;
-
 pub use crate::operation::untag_stream::_untag_stream_input::UntagStreamInput;
+
+pub use crate::operation::untag_stream::_untag_stream_output::UntagStreamOutput;
 
 mod _untag_stream_input;
 

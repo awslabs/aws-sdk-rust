@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_route::De
     }
 }
 
-pub use crate::operation::describe_route::_describe_route_output::DescribeRouteOutput;
-
 pub use crate::operation::describe_route::_describe_route_input::DescribeRouteInput;
+
+pub use crate::operation::describe_route::_describe_route_output::DescribeRouteOutput;
 
 mod _describe_route_input;
 

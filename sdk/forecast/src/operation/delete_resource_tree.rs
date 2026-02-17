@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_tr
     }
 }
 
-pub use crate::operation::delete_resource_tree::_delete_resource_tree_output::DeleteResourceTreeOutput;
-
 pub use crate::operation::delete_resource_tree::_delete_resource_tree_input::DeleteResourceTreeInput;
+
+pub use crate::operation::delete_resource_tree::_delete_resource_tree_output::DeleteResourceTreeOutput;
 
 mod _delete_resource_tree_input;
 

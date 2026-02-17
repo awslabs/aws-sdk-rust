@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_provisionin
     }
 }
 
-pub use crate::operation::create_provisioning_profile::_create_provisioning_profile_output::CreateProvisioningProfileOutput;
-
 pub use crate::operation::create_provisioning_profile::_create_provisioning_profile_input::CreateProvisioningProfileInput;
+
+pub use crate::operation::create_provisioning_profile::_create_provisioning_profile_output::CreateProvisioningProfileOutput;
 
 mod _create_provisioning_profile_input;
 

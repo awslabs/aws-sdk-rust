@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_thing_shado
     }
 }
 
-pub use crate::operation::update_thing_shadow::_update_thing_shadow_output::UpdateThingShadowOutput;
-
 pub use crate::operation::update_thing_shadow::_update_thing_shadow_input::UpdateThingShadowInput;
+
+pub use crate::operation::update_thing_shadow::_update_thing_shadow_output::UpdateThingShadowOutput;
 
 mod _update_thing_shadow_input;
 

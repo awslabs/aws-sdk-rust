@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entity_events
     }
 }
 
-pub use crate::operation::list_entity_events::_list_entity_events_output::ListEntityEventsOutput;
-
 pub use crate::operation::list_entity_events::_list_entity_events_input::ListEntityEventsInput;
+
+pub use crate::operation::list_entity_events::_list_entity_events_output::ListEntityEventsOutput;
 
 mod _list_entity_events_input;
 

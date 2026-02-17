@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_runtime_manage
     }
 }
 
-pub use crate::operation::put_runtime_management_config::_put_runtime_management_config_output::PutRuntimeManagementConfigOutput;
-
 pub use crate::operation::put_runtime_management_config::_put_runtime_management_config_input::PutRuntimeManagementConfigInput;
+
+pub use crate::operation::put_runtime_management_config::_put_runtime_management_config_output::PutRuntimeManagementConfigOutput;
 
 mod _put_runtime_management_config_input;
 

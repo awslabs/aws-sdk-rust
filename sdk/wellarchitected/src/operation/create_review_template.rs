@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_review_temp
     }
 }
 
-pub use crate::operation::create_review_template::_create_review_template_output::CreateReviewTemplateOutput;
-
 pub use crate::operation::create_review_template::_create_review_template_input::CreateReviewTemplateInput;
+
+pub use crate::operation::create_review_template::_create_review_template_output::CreateReviewTemplateOutput;
 
 mod _create_review_template_input;
 

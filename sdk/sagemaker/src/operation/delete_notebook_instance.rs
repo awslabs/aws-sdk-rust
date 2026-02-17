@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_notebook_in
     }
 }
 
-pub use crate::operation::delete_notebook_instance::_delete_notebook_instance_output::DeleteNotebookInstanceOutput;
-
 pub use crate::operation::delete_notebook_instance::_delete_notebook_instance_input::DeleteNotebookInstanceInput;
+
+pub use crate::operation::delete_notebook_instance::_delete_notebook_instance_output::DeleteNotebookInstanceOutput;
 
 mod _delete_notebook_instance_input;
 

@@ -552,9 +552,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_snapshot_bloc
     }
 }
 
-pub use crate::operation::list_snapshot_blocks::_list_snapshot_blocks_output::ListSnapshotBlocksOutput;
-
 pub use crate::operation::list_snapshot_blocks::_list_snapshot_blocks_input::ListSnapshotBlocksInput;
+
+pub use crate::operation::list_snapshot_blocks::_list_snapshot_blocks_output::ListSnapshotBlocksOutput;
 
 mod _list_snapshot_blocks_input;
 

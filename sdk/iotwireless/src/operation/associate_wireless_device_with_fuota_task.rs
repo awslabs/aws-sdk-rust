@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_wireless
     }
 }
 
-pub use crate::operation::associate_wireless_device_with_fuota_task::_associate_wireless_device_with_fuota_task_output::AssociateWirelessDeviceWithFuotaTaskOutput;
-
 pub use crate::operation::associate_wireless_device_with_fuota_task::_associate_wireless_device_with_fuota_task_input::AssociateWirelessDeviceWithFuotaTaskInput;
+
+pub use crate::operation::associate_wireless_device_with_fuota_task::_associate_wireless_device_with_fuota_task_output::AssociateWirelessDeviceWithFuotaTaskOutput;
 
 mod _associate_wireless_device_with_fuota_task_input;
 

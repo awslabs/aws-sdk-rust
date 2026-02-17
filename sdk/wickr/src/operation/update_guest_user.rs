@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_guest_user:
     }
 }
 
-pub use crate::operation::update_guest_user::_update_guest_user_output::UpdateGuestUserOutput;
-
 pub use crate::operation::update_guest_user::_update_guest_user_input::UpdateGuestUserInput;
+
+pub use crate::operation::update_guest_user::_update_guest_user_output::UpdateGuestUserOutput;
 
 mod _update_guest_user_input;
 

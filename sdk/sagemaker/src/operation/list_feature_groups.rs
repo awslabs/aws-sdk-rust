@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_feature_group
     }
 }
 
-pub use crate::operation::list_feature_groups::_list_feature_groups_output::ListFeatureGroupsOutput;
-
 pub use crate::operation::list_feature_groups::_list_feature_groups_input::ListFeatureGroupsInput;
+
+pub use crate::operation::list_feature_groups::_list_feature_groups_output::ListFeatureGroupsOutput;
 
 mod _list_feature_groups_input;
 

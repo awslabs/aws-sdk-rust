@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_affected_
     }
 }
 
-pub use crate::operation::describe_affected_entities::_describe_affected_entities_output::DescribeAffectedEntitiesOutput;
-
 pub use crate::operation::describe_affected_entities::_describe_affected_entities_input::DescribeAffectedEntitiesInput;
+
+pub use crate::operation::describe_affected_entities::_describe_affected_entities_output::DescribeAffectedEntitiesOutput;
 
 mod _describe_affected_entities_input;
 

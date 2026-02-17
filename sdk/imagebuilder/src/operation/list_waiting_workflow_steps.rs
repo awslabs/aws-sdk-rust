@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_waiting_workf
     }
 }
 
-pub use crate::operation::list_waiting_workflow_steps::_list_waiting_workflow_steps_output::ListWaitingWorkflowStepsOutput;
-
 pub use crate::operation::list_waiting_workflow_steps::_list_waiting_workflow_steps_input::ListWaitingWorkflowStepsInput;
+
+pub use crate::operation::list_waiting_workflow_steps::_list_waiting_workflow_steps_output::ListWaitingWorkflowStepsOutput;
 
 mod _list_waiting_workflow_steps_input;
 

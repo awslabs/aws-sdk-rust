@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_backup::Re
     }
 }
 
-pub use crate::operation::restore_backup::_restore_backup_output::RestoreBackupOutput;
-
 pub use crate::operation::restore_backup::_restore_backup_input::RestoreBackupInput;
+
+pub use crate::operation::restore_backup::_restore_backup_output::RestoreBackupOutput;
 
 mod _restore_backup_input;
 

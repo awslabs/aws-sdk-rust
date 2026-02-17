@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_registration_
     }
 }
 
-pub use crate::operation::list_registration_associations::_list_registration_associations_output::ListRegistrationAssociationsOutput;
-
 pub use crate::operation::list_registration_associations::_list_registration_associations_input::ListRegistrationAssociationsInput;
+
+pub use crate::operation::list_registration_associations::_list_registration_associations_output::ListRegistrationAssociationsOutput;
 
 mod _list_registration_associations_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_function::
     }
 }
 
-pub use crate::operation::publish_function::_publish_function_output::PublishFunctionOutput;
-
 pub use crate::operation::publish_function::_publish_function_input::PublishFunctionInput;
+
+pub use crate::operation::publish_function::_publish_function_output::PublishFunctionOutput;
 
 mod _publish_function_input;
 

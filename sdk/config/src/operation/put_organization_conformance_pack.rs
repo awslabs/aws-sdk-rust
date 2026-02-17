@@ -511,9 +511,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_organization_c
     }
 }
 
-pub use crate::operation::put_organization_conformance_pack::_put_organization_conformance_pack_output::PutOrganizationConformancePackOutput;
-
 pub use crate::operation::put_organization_conformance_pack::_put_organization_conformance_pack_input::PutOrganizationConformancePackInput;
+
+pub use crate::operation::put_organization_conformance_pack::_put_organization_conformance_pack_output::PutOrganizationConformancePackOutput;
 
 mod _put_organization_conformance_pack_input;
 

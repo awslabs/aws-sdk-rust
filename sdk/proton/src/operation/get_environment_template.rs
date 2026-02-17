@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_environment_te
     }
 }
 
-pub use crate::operation::get_environment_template::_get_environment_template_output::GetEnvironmentTemplateOutput;
-
 pub use crate::operation::get_environment_template::_get_environment_template_input::GetEnvironmentTemplateInput;
+
+pub use crate::operation::get_environment_template::_get_environment_template_output::GetEnvironmentTemplateOutput;
 
 mod _get_environment_template_input;
 

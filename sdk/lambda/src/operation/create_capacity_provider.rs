@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_capacity_pr
     }
 }
 
-pub use crate::operation::create_capacity_provider::_create_capacity_provider_output::CreateCapacityProviderOutput;
-
 pub use crate::operation::create_capacity_provider::_create_capacity_provider_input::CreateCapacityProviderInput;
+
+pub use crate::operation::create_capacity_provider::_create_capacity_provider_output::CreateCapacityProviderOutput;
 
 mod _create_capacity_provider_input;
 

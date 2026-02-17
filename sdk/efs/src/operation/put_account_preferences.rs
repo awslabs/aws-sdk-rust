@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_prefer
     }
 }
 
-pub use crate::operation::put_account_preferences::_put_account_preferences_output::PutAccountPreferencesOutput;
-
 pub use crate::operation::put_account_preferences::_put_account_preferences_input::PutAccountPreferencesInput;
+
+pub use crate::operation::put_account_preferences::_put_account_preferences_output::PutAccountPreferencesOutput;
 
 mod _put_account_preferences_input;
 

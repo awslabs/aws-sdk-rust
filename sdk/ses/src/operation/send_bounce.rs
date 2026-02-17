@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_bounce::SendB
     }
 }
 
-pub use crate::operation::send_bounce::_send_bounce_output::SendBounceOutput;
-
 pub use crate::operation::send_bounce::_send_bounce_input::SendBounceInput;
+
+pub use crate::operation::send_bounce::_send_bounce_output::SendBounceOutput;
 
 mod _send_bounce_input;
 

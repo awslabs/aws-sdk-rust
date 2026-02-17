@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_edge_deploy
     }
 }
 
-pub use crate::operation::delete_edge_deployment_stage::_delete_edge_deployment_stage_output::DeleteEdgeDeploymentStageOutput;
-
 pub use crate::operation::delete_edge_deployment_stage::_delete_edge_deployment_stage_input::DeleteEdgeDeploymentStageInput;
+
+pub use crate::operation::delete_edge_deployment_stage::_delete_edge_deployment_stage_output::DeleteEdgeDeploymentStageOutput;
 
 mod _delete_edge_deployment_stage_input;
 

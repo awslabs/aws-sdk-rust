@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_whats_app_mes
     }
 }
 
-pub use crate::operation::post_whats_app_message_media::_post_whats_app_message_media_output::PostWhatsAppMessageMediaOutput;
-
 pub use crate::operation::post_whats_app_message_media::_post_whats_app_message_media_input::PostWhatsAppMessageMediaInput;
+
+pub use crate::operation::post_whats_app_message_media::_post_whats_app_message_media_output::PostWhatsAppMessageMediaOutput;
 
 mod _post_whats_app_message_media_input;
 

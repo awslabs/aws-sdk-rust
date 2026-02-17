@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_load_bala
     }
 }
 
-pub use crate::operation::describe_load_balancers::_describe_load_balancers_output::DescribeLoadBalancersOutput;
-
 pub use crate::operation::describe_load_balancers::_describe_load_balancers_input::DescribeLoadBalancersInput;
+
+pub use crate::operation::describe_load_balancers::_describe_load_balancers_output::DescribeLoadBalancersOutput;
 
 mod _describe_load_balancers_input;
 

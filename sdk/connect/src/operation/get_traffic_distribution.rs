@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_traffic_distri
     }
 }
 
-pub use crate::operation::get_traffic_distribution::_get_traffic_distribution_output::GetTrafficDistributionOutput;
-
 pub use crate::operation::get_traffic_distribution::_get_traffic_distribution_input::GetTrafficDistributionInput;
+
+pub use crate::operation::get_traffic_distribution::_get_traffic_distribution_output::GetTrafficDistributionOutput;
 
 mod _get_traffic_distribution_input;
 

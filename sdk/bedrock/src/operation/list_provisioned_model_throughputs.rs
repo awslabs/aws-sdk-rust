@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provisioned_m
     }
 }
 
-pub use crate::operation::list_provisioned_model_throughputs::_list_provisioned_model_throughputs_output::ListProvisionedModelThroughputsOutput;
-
 pub use crate::operation::list_provisioned_model_throughputs::_list_provisioned_model_throughputs_input::ListProvisionedModelThroughputsInput;
+
+pub use crate::operation::list_provisioned_model_throughputs::_list_provisioned_model_throughputs_output::ListProvisionedModelThroughputsOutput;
 
 mod _list_provisioned_model_throughputs_input;
 

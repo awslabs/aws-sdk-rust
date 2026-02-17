@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_role_permis
     }
 }
 
-pub use crate::operation::delete_role_permissions_boundary::_delete_role_permissions_boundary_output::DeleteRolePermissionsBoundaryOutput;
-
 pub use crate::operation::delete_role_permissions_boundary::_delete_role_permissions_boundary_input::DeleteRolePermissionsBoundaryInput;
+
+pub use crate::operation::delete_role_permissions_boundary::_delete_role_permissions_boundary_output::DeleteRolePermissionsBoundaryOutput;
 
 mod _delete_role_permissions_boundary_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_quality_m
     }
 }
 
-pub use crate::operation::get_data_quality_model_result::_get_data_quality_model_result_output::GetDataQualityModelResultOutput;
-
 pub use crate::operation::get_data_quality_model_result::_get_data_quality_model_result_input::GetDataQualityModelResultInput;
+
+pub use crate::operation::get_data_quality_model_result::_get_data_quality_model_result_output::GetDataQualityModelResultOutput;
 
 mod _get_data_quality_model_result_input;
 

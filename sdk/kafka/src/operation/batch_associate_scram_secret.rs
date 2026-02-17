@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_associate_sc
     }
 }
 
-pub use crate::operation::batch_associate_scram_secret::_batch_associate_scram_secret_output::BatchAssociateScramSecretOutput;
-
 pub use crate::operation::batch_associate_scram_secret::_batch_associate_scram_secret_input::BatchAssociateScramSecretInput;
+
+pub use crate::operation::batch_associate_scram_secret::_batch_associate_scram_secret_output::BatchAssociateScramSecretOutput;
 
 mod _batch_associate_scram_secret_input;
 

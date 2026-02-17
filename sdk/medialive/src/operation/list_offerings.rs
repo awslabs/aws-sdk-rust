@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_offerings::Li
     }
 }
 
-pub use crate::operation::list_offerings::_list_offerings_output::ListOfferingsOutput;
-
 pub use crate::operation::list_offerings::_list_offerings_input::ListOfferingsInput;
+
+pub use crate::operation::list_offerings::_list_offerings_output::ListOfferingsOutput;
 
 mod _list_offerings_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_replication
     }
 }
 
-pub use crate::operation::delete_replication_instance::_delete_replication_instance_output::DeleteReplicationInstanceOutput;
-
 pub use crate::operation::delete_replication_instance::_delete_replication_instance_input::DeleteReplicationInstanceInput;
+
+pub use crate::operation::delete_replication_instance::_delete_replication_instance_output::DeleteReplicationInstanceOutput;
 
 mod _delete_replication_instance_input;
 

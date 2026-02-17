@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_targeted_sen
     }
 }
 
-pub use crate::operation::start_targeted_sentiment_detection_job::_start_targeted_sentiment_detection_job_output::StartTargetedSentimentDetectionJobOutput;
-
 pub use crate::operation::start_targeted_sentiment_detection_job::_start_targeted_sentiment_detection_job_input::StartTargetedSentimentDetectionJobInput;
+
+pub use crate::operation::start_targeted_sentiment_detection_job::_start_targeted_sentiment_detection_job_output::StartTargetedSentimentDetectionJobOutput;
 
 mod _start_targeted_sentiment_detection_job_input;
 

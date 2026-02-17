@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_set_
     }
 }
 
-pub use crate::operation::describe_data_set_refresh_properties::_describe_data_set_refresh_properties_output::DescribeDataSetRefreshPropertiesOutput;
-
 pub use crate::operation::describe_data_set_refresh_properties::_describe_data_set_refresh_properties_input::DescribeDataSetRefreshPropertiesInput;
+
+pub use crate::operation::describe_data_set_refresh_properties::_describe_data_set_refresh_properties_output::DescribeDataSetRefreshPropertiesOutput;
 
 mod _describe_data_set_refresh_properties_input;
 

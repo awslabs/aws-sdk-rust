@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::is_vpc_peered::IsV
     }
 }
 
-pub use crate::operation::is_vpc_peered::_is_vpc_peered_output::IsVpcPeeredOutput;
-
 pub use crate::operation::is_vpc_peered::_is_vpc_peered_input::IsVpcPeeredInput;
+
+pub use crate::operation::is_vpc_peered::_is_vpc_peered_output::IsVpcPeeredOutput;
 
 mod _is_vpc_peered_input;
 

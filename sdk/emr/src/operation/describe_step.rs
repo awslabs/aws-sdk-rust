@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_step::Des
     }
 }
 
-pub use crate::operation::describe_step::_describe_step_output::DescribeStepOutput;
-
 pub use crate::operation::describe_step::_describe_step_input::DescribeStepInput;
+
+pub use crate::operation::describe_step::_describe_step_output::DescribeStepOutput;
 
 mod _describe_step_input;
 

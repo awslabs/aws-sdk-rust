@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_identity_po
     }
 }
 
-pub use crate::operation::create_identity_pool::_create_identity_pool_output::CreateIdentityPoolOutput;
-
 pub use crate::operation::create_identity_pool::_create_identity_pool_input::CreateIdentityPoolInput;
+
+pub use crate::operation::create_identity_pool::_create_identity_pool_output::CreateIdentityPoolOutput;
 
 mod _create_identity_pool_input;
 

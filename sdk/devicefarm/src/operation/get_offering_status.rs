@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_offering_statu
     }
 }
 
-pub use crate::operation::get_offering_status::_get_offering_status_output::GetOfferingStatusOutput;
-
 pub use crate::operation::get_offering_status::_get_offering_status_input::GetOfferingStatusInput;
+
+pub use crate::operation::get_offering_status::_get_offering_status_output::GetOfferingStatusOutput;
 
 mod _get_offering_status_input;
 

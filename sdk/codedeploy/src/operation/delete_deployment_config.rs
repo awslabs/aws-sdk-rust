@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_deployment_
     }
 }
 
-pub use crate::operation::delete_deployment_config::_delete_deployment_config_output::DeleteDeploymentConfigOutput;
-
 pub use crate::operation::delete_deployment_config::_delete_deployment_config_input::DeleteDeploymentConfigInput;
+
+pub use crate::operation::delete_deployment_config::_delete_deployment_config_output::DeleteDeploymentConfigOutput;
 
 mod _delete_deployment_config_input;
 

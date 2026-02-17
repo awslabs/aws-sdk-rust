@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_por
     }
 }
 
-pub use crate::operation::describe_fleet_port_settings::_describe_fleet_port_settings_output::DescribeFleetPortSettingsOutput;
-
 pub use crate::operation::describe_fleet_port_settings::_describe_fleet_port_settings_input::DescribeFleetPortSettingsInput;
+
+pub use crate::operation::describe_fleet_port_settings::_describe_fleet_port_settings_output::DescribeFleetPortSettingsOutput;
 
 mod _describe_fleet_port_settings_input;
 

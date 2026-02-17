@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_reacha
     }
 }
 
-pub use crate::operation::get_contact_reachability_status::_get_contact_reachability_status_output::GetContactReachabilityStatusOutput;
-
 pub use crate::operation::get_contact_reachability_status::_get_contact_reachability_status_input::GetContactReachabilityStatusInput;
+
+pub use crate::operation::get_contact_reachability_status::_get_contact_reachability_status_output::GetContactReachabilityStatusOutput;
 
 mod _get_contact_reachability_status_input;
 

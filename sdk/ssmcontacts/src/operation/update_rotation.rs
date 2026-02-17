@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rotation::U
     }
 }
 
-pub use crate::operation::update_rotation::_update_rotation_output::UpdateRotationOutput;
-
 pub use crate::operation::update_rotation::_update_rotation_input::UpdateRotationInput;
+
+pub use crate::operation::update_rotation::_update_rotation_output::UpdateRotationOutput;
 
 mod _update_rotation_input;
 

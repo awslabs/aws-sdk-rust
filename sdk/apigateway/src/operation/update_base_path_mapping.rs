@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_base_path_m
     }
 }
 
-pub use crate::operation::update_base_path_mapping::_update_base_path_mapping_output::UpdateBasePathMappingOutput;
-
 pub use crate::operation::update_base_path_mapping::_update_base_path_mapping_input::UpdateBasePathMappingInput;
+
+pub use crate::operation::update_base_path_mapping::_update_base_path_mapping_output::UpdateBasePathMappingOutput;
 
 mod _update_base_path_mapping_input;
 

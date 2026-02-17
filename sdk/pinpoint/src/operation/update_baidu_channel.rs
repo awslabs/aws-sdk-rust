@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_baidu_chann
     }
 }
 
-pub use crate::operation::update_baidu_channel::_update_baidu_channel_output::UpdateBaiduChannelOutput;
-
 pub use crate::operation::update_baidu_channel::_update_baidu_channel_input::UpdateBaiduChannelInput;
+
+pub use crate::operation::update_baidu_channel::_update_baidu_channel_output::UpdateBaiduChannelOutput;
 
 mod _update_baidu_channel_input;
 

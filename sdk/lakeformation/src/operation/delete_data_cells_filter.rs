@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_cells_
     }
 }
 
-pub use crate::operation::delete_data_cells_filter::_delete_data_cells_filter_output::DeleteDataCellsFilterOutput;
-
 pub use crate::operation::delete_data_cells_filter::_delete_data_cells_filter_input::DeleteDataCellsFilterInput;
+
+pub use crate::operation::delete_data_cells_filter::_delete_data_cells_filter_output::DeleteDataCellsFilterOutput;
 
 mod _delete_data_cells_filter_input;
 

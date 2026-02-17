@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_engagement::S
     }
 }
 
-pub use crate::operation::stop_engagement::_stop_engagement_output::StopEngagementOutput;
-
 pub use crate::operation::stop_engagement::_stop_engagement_input::StopEngagementInput;
+
+pub use crate::operation::stop_engagement::_stop_engagement_output::StopEngagementOutput;
 
 mod _stop_engagement_input;
 

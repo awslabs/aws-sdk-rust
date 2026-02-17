@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_input_devices
     }
 }
 
-pub use crate::operation::list_input_devices::_list_input_devices_output::ListInputDevicesOutput;
-
 pub use crate::operation::list_input_devices::_list_input_devices_input::ListInputDevicesInput;
+
+pub use crate::operation::list_input_devices::_list_input_devices_output::ListInputDevicesOutput;
 
 mod _list_input_devices_input;
 

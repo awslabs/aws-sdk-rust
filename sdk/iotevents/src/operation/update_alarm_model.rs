@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_alarm_model
     }
 }
 
-pub use crate::operation::update_alarm_model::_update_alarm_model_output::UpdateAlarmModelOutput;
-
 pub use crate::operation::update_alarm_model::_update_alarm_model_input::UpdateAlarmModelInput;
+
+pub use crate::operation::update_alarm_model::_update_alarm_model_output::UpdateAlarmModelOutput;
 
 mod _update_alarm_model_input;
 

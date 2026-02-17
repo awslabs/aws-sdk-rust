@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_device_flee
     }
 }
 
-pub use crate::operation::delete_device_fleet::_delete_device_fleet_output::DeleteDeviceFleetOutput;
-
 pub use crate::operation::delete_device_fleet::_delete_device_fleet_input::DeleteDeviceFleetInput;
+
+pub use crate::operation::delete_device_fleet::_delete_device_fleet_output::DeleteDeviceFleetOutput;
 
 mod _delete_device_fleet_input;
 

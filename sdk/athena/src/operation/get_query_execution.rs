@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_executio
     }
 }
 
-pub use crate::operation::get_query_execution::_get_query_execution_output::GetQueryExecutionOutput;
-
 pub use crate::operation::get_query_execution::_get_query_execution_input::GetQueryExecutionInput;
+
+pub use crate::operation::get_query_execution::_get_query_execution_output::GetQueryExecutionOutput;
 
 mod _get_query_execution_input;
 

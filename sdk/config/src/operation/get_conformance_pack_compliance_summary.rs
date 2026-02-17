@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_conformance_pa
     }
 }
 
-pub use crate::operation::get_conformance_pack_compliance_summary::_get_conformance_pack_compliance_summary_output::GetConformancePackComplianceSummaryOutput;
-
 pub use crate::operation::get_conformance_pack_compliance_summary::_get_conformance_pack_compliance_summary_input::GetConformancePackComplianceSummaryInput;
+
+pub use crate::operation::get_conformance_pack_compliance_summary::_get_conformance_pack_compliance_summary_output::GetConformancePackComplianceSummaryOutput;
 
 mod _get_conformance_pack_compliance_summary_input;
 

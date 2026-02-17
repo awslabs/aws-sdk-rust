@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_custom_doma
     }
 }
 
-pub use crate::operation::modify_custom_domain_association::_modify_custom_domain_association_output::ModifyCustomDomainAssociationOutput;
-
 pub use crate::operation::modify_custom_domain_association::_modify_custom_domain_association_input::ModifyCustomDomainAssociationInput;
+
+pub use crate::operation::modify_custom_domain_association::_modify_custom_domain_association_output::ModifyCustomDomainAssociationOutput;
 
 mod _modify_custom_domain_association_input;
 

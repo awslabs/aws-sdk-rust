@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unshare_applicatio
     }
 }
 
-pub use crate::operation::unshare_application::_unshare_application_output::UnshareApplicationOutput;
-
 pub use crate::operation::unshare_application::_unshare_application_input::UnshareApplicationInput;
+
+pub use crate::operation::unshare_application::_unshare_application_output::UnshareApplicationOutput;
 
 mod _unshare_application_input;
 

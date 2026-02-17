@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_key_registr
     }
 }
 
-pub use crate::operation::update_key_registration::_update_key_registration_output::UpdateKeyRegistrationOutput;
-
 pub use crate::operation::update_key_registration::_update_key_registration_input::UpdateKeyRegistrationInput;
+
+pub use crate::operation::update_key_registration::_update_key_registration_output::UpdateKeyRegistrationOutput;
 
 mod _update_key_registration_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_attached
     }
 }
 
-pub use crate::operation::batch_get_attached_file_metadata::_batch_get_attached_file_metadata_output::BatchGetAttachedFileMetadataOutput;
-
 pub use crate::operation::batch_get_attached_file_metadata::_batch_get_attached_file_metadata_input::BatchGetAttachedFileMetadataInput;
+
+pub use crate::operation::batch_get_attached_file_metadata::_batch_get_attached_file_metadata_output::BatchGetAttachedFileMetadataOutput;
 
 mod _batch_get_attached_file_metadata_input;
 

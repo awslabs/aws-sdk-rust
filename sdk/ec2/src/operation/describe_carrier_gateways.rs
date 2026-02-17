@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_carrier_g
     }
 }
 
-pub use crate::operation::describe_carrier_gateways::_describe_carrier_gateways_output::DescribeCarrierGatewaysOutput;
-
 pub use crate::operation::describe_carrier_gateways::_describe_carrier_gateways_input::DescribeCarrierGatewaysInput;
+
+pub use crate::operation::describe_carrier_gateways::_describe_carrier_gateways_output::DescribeCarrierGatewaysOutput;
 
 mod _describe_carrier_gateways_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_mlflow_app:
     }
 }
 
-pub use crate::operation::update_mlflow_app::_update_mlflow_app_output::UpdateMlflowAppOutput;
-
 pub use crate::operation::update_mlflow_app::_update_mlflow_app_input::UpdateMlflowAppInput;
+
+pub use crate::operation::update_mlflow_app::_update_mlflow_app_output::UpdateMlflowAppOutput;
 
 mod _update_mlflow_app_input;
 

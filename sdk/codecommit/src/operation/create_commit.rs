@@ -731,9 +731,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_commit::Cre
     }
 }
 
-pub use crate::operation::create_commit::_create_commit_output::CreateCommitOutput;
-
 pub use crate::operation::create_commit::_create_commit_input::CreateCommitInput;
+
+pub use crate::operation::create_commit::_create_commit_output::CreateCommitOutput;
 
 mod _create_commit_input;
 

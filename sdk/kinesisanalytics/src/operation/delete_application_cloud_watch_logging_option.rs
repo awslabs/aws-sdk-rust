@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_application_cloud_watch_logging_option::_delete_application_cloud_watch_logging_option_output::DeleteApplicationCloudWatchLoggingOptionOutput;
-
 pub use crate::operation::delete_application_cloud_watch_logging_option::_delete_application_cloud_watch_logging_option_input::DeleteApplicationCloudWatchLoggingOptionInput;
+
+pub use crate::operation::delete_application_cloud_watch_logging_option::_delete_application_cloud_watch_logging_option_output::DeleteApplicationCloudWatchLoggingOptionOutput;
 
 mod _delete_application_cloud_watch_logging_option_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_quantum_tas
     }
 }
 
-pub use crate::operation::cancel_quantum_task::_cancel_quantum_task_output::CancelQuantumTaskOutput;
-
 pub use crate::operation::cancel_quantum_task::_cancel_quantum_task_input::CancelQuantumTaskInput;
+
+pub use crate::operation::cancel_quantum_task::_cancel_quantum_task_output::CancelQuantumTaskOutput;
 
 mod _cancel_quantum_task_input;
 

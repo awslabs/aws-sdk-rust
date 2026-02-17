@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_portal::Del
     }
 }
 
-pub use crate::operation::delete_portal::_delete_portal_output::DeletePortalOutput;
-
 pub use crate::operation::delete_portal::_delete_portal_input::DeletePortalInput;
+
+pub use crate::operation::delete_portal::_delete_portal_output::DeletePortalOutput;
 
 mod _delete_portal_input;
 

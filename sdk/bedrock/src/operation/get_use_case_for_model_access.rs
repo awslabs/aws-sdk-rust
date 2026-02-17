@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_use_case_for_m
     }
 }
 
-pub use crate::operation::get_use_case_for_model_access::_get_use_case_for_model_access_output::GetUseCaseForModelAccessOutput;
-
 pub use crate::operation::get_use_case_for_model_access::_get_use_case_for_model_access_input::GetUseCaseForModelAccessInput;
+
+pub use crate::operation::get_use_case_for_model_access::_get_use_case_for_model_access_output::GetUseCaseForModelAccessOutput;
 
 mod _get_use_case_for_model_access_input;
 

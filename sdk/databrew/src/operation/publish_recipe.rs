@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_recipe::Pu
     }
 }
 
-pub use crate::operation::publish_recipe::_publish_recipe_output::PublishRecipeOutput;
-
 pub use crate::operation::publish_recipe::_publish_recipe_input::PublishRecipeInput;
+
+pub use crate::operation::publish_recipe::_publish_recipe_output::PublishRecipeOutput;
 
 mod _publish_recipe_input;
 

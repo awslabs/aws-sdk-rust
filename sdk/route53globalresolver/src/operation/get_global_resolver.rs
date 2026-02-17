@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_global_resolve
     }
 }
 
-pub use crate::operation::get_global_resolver::_get_global_resolver_output::GetGlobalResolverOutput;
-
 pub use crate::operation::get_global_resolver::_get_global_resolver_input::GetGlobalResolverInput;
+
+pub use crate::operation::get_global_resolver::_get_global_resolver_output::GetGlobalResolverOutput;
 
 mod _get_global_resolver_input;
 

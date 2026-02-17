@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_automated_reasoning_policy_build_workflow::_delete_automated_reasoning_policy_build_workflow_output::DeleteAutomatedReasoningPolicyBuildWorkflowOutput;
-
 pub use crate::operation::delete_automated_reasoning_policy_build_workflow::_delete_automated_reasoning_policy_build_workflow_input::DeleteAutomatedReasoningPolicyBuildWorkflowInput;
+
+pub use crate::operation::delete_automated_reasoning_policy_build_workflow::_delete_automated_reasoning_policy_build_workflow_output::DeleteAutomatedReasoningPolicyBuildWorkflowOutput;
 
 mod _delete_automated_reasoning_policy_build_workflow_input;
 

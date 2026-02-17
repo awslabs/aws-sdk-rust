@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_connect_endpoints::_describe_instance_connect_endpoints_output::DescribeInstanceConnectEndpointsOutput;
-
 pub use crate::operation::describe_instance_connect_endpoints::_describe_instance_connect_endpoints_input::DescribeInstanceConnectEndpointsInput;
+
+pub use crate::operation::describe_instance_connect_endpoints::_describe_instance_connect_endpoints_output::DescribeInstanceConnectEndpointsOutput;
 
 mod _describe_instance_connect_endpoints_input;
 

@@ -51,6 +51,16 @@ pub struct DbSnapshot {
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB snapshot is encrypted.</p>
     pub encrypted: ::std::option::Option<bool>,
+    /// <p>The type of encryption used to protect data at rest in the DB snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
@@ -182,6 +192,18 @@ impl DbSnapshot {
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the DB snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
+    }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -294,6 +316,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
     pub(crate) tde_credential_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted: ::std::option::Option<bool>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -635,6 +658,44 @@ impl DbSnapshotBuilder {
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the DB snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
+    }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -926,6 +987,7 @@ impl DbSnapshotBuilder {
             storage_type: self.storage_type,
             tde_credential_arn: self.tde_credential_arn,
             encrypted: self.encrypted,
+            storage_encryption_type: self.storage_encryption_type,
             backup_retention_period: self.backup_retention_period,
             preferred_backup_window: self.preferred_backup_window,
             kms_key_id: self.kms_key_id,

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sender_id::
     }
 }
 
-pub use crate::operation::update_sender_id::_update_sender_id_output::UpdateSenderIdOutput;
-
 pub use crate::operation::update_sender_id::_update_sender_id_input::UpdateSenderIdInput;
+
+pub use crate::operation::update_sender_id::_update_sender_id_output::UpdateSenderIdOutput;
 
 mod _update_sender_id_input;
 

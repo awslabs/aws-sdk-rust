@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_starter_map
     }
 }
 
-pub use crate::operation::create_starter_mapping_template::_create_starter_mapping_template_output::CreateStarterMappingTemplateOutput;
-
 pub use crate::operation::create_starter_mapping_template::_create_starter_mapping_template_input::CreateStarterMappingTemplateInput;
+
+pub use crate::operation::create_starter_mapping_template::_create_starter_mapping_template_output::CreateStarterMappingTemplateOutput;
 
 mod _create_starter_mapping_template_input;
 

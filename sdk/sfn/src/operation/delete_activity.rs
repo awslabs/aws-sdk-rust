@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_activity::D
     }
 }
 
-pub use crate::operation::delete_activity::_delete_activity_output::DeleteActivityOutput;
-
 pub use crate::operation::delete_activity::_delete_activity_input::DeleteActivityInput;
+
+pub use crate::operation::delete_activity::_delete_activity_output::DeleteActivityOutput;
 
 mod _delete_activity_input;
 

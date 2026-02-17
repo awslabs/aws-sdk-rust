@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_role_credentia
     }
 }
 
-pub use crate::operation::get_role_credentials::_get_role_credentials_output::GetRoleCredentialsOutput;
-
 pub use crate::operation::get_role_credentials::_get_role_credentials_input::GetRoleCredentialsInput;
+
+pub use crate::operation::get_role_credentials::_get_role_credentials_output::GetRoleCredentialsOutput;
 
 mod _get_role_credentials_input;
 

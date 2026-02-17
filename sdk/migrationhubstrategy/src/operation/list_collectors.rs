@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collectors::L
     }
 }
 
-pub use crate::operation::list_collectors::_list_collectors_output::ListCollectorsOutput;
-
 pub use crate::operation::list_collectors::_list_collectors_input::ListCollectorsInput;
+
+pub use crate::operation::list_collectors::_list_collectors_output::ListCollectorsOutput;
 
 mod _list_collectors_input;
 

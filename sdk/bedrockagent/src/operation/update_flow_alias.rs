@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_flow_alias:
     }
 }
 
-pub use crate::operation::update_flow_alias::_update_flow_alias_output::UpdateFlowAliasOutput;
-
 pub use crate::operation::update_flow_alias::_update_flow_alias_input::UpdateFlowAliasInput;
+
+pub use crate::operation::update_flow_alias::_update_flow_alias_output::UpdateFlowAliasOutput;
 
 mod _update_flow_alias_input;
 

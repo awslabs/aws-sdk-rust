@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_project::Up
     }
 }
 
-pub use crate::operation::update_project::_update_project_output::UpdateProjectOutput;
-
 pub use crate::operation::update_project::_update_project_input::UpdateProjectInput;
+
+pub use crate::operation::update_project::_update_project_output::UpdateProjectOutput;
 
 mod _update_project_input;
 

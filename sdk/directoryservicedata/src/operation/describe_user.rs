@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user::Des
     }
 }
 
-pub use crate::operation::describe_user::_describe_user_output::DescribeUserOutput;
-
 pub use crate::operation::describe_user::_describe_user_input::DescribeUserInput;
+
+pub use crate::operation::describe_user::_describe_user_output::DescribeUserOutput;
 
 mod _describe_user_input;
 

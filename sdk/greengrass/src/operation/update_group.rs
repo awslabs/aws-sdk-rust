@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_group::Upda
     }
 }
 
-pub use crate::operation::update_group::_update_group_output::UpdateGroupOutput;
-
 pub use crate::operation::update_group::_update_group_input::UpdateGroupInput;
+
+pub use crate::operation::update_group::_update_group_output::UpdateGroupOutput;
 
 mod _update_group_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_blueprin
     }
 }
 
-pub use crate::operation::batch_get_blueprints::_batch_get_blueprints_output::BatchGetBlueprintsOutput;
-
 pub use crate::operation::batch_get_blueprints::_batch_get_blueprints_input::BatchGetBlueprintsInput;
+
+pub use crate::operation::batch_get_blueprints::_batch_get_blueprints_output::BatchGetBlueprintsOutput;
 
 mod _batch_get_blueprints_input;
 

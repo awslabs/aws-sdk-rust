@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_resource
     }
 }
 
-pub use crate::operation::associate_resource_to_profile::_associate_resource_to_profile_output::AssociateResourceToProfileOutput;
-
 pub use crate::operation::associate_resource_to_profile::_associate_resource_to_profile_input::AssociateResourceToProfileInput;
+
+pub use crate::operation::associate_resource_to_profile::_associate_resource_to_profile_output::AssociateResourceToProfileOutput;
 
 mod _associate_resource_to_profile_input;
 

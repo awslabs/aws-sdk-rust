@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_int
     }
 }
 
-pub use crate::operation::delete_virtual_interface::_delete_virtual_interface_output::DeleteVirtualInterfaceOutput;
-
 pub use crate::operation::delete_virtual_interface::_delete_virtual_interface_input::DeleteVirtualInterfaceInput;
+
+pub use crate::operation::delete_virtual_interface::_delete_virtual_interface_output::DeleteVirtualInterfaceOutput;
 
 mod _delete_virtual_interface_input;
 

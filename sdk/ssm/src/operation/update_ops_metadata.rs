@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ops_metadat
     }
 }
 
-pub use crate::operation::update_ops_metadata::_update_ops_metadata_output::UpdateOpsMetadataOutput;
-
 pub use crate::operation::update_ops_metadata::_update_ops_metadata_input::UpdateOpsMetadataInput;
+
+pub use crate::operation::update_ops_metadata::_update_ops_metadata_output::UpdateOpsMetadataOutput;
 
 mod _update_ops_metadata_input;
 

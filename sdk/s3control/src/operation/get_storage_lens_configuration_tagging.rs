@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_storage_lens_c
     }
 }
 
-pub use crate::operation::get_storage_lens_configuration_tagging::_get_storage_lens_configuration_tagging_output::GetStorageLensConfigurationTaggingOutput;
-
 pub use crate::operation::get_storage_lens_configuration_tagging::_get_storage_lens_configuration_tagging_input::GetStorageLensConfigurationTaggingInput;
+
+pub use crate::operation::get_storage_lens_configuration_tagging::_get_storage_lens_configuration_tagging_output::GetStorageLensConfigurationTaggingOutput;
 
 mod _get_storage_lens_configuration_tagging_input;
 

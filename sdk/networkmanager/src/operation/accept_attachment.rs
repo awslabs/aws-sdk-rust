@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_attachment:
     }
 }
 
-pub use crate::operation::accept_attachment::_accept_attachment_output::AcceptAttachmentOutput;
-
 pub use crate::operation::accept_attachment::_accept_attachment_input::AcceptAttachmentInput;
+
+pub use crate::operation::accept_attachment::_accept_attachment_output::AcceptAttachmentOutput;
 
 mod _accept_attachment_input;
 

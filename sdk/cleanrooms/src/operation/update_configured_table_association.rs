@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configured_
     }
 }
 
-pub use crate::operation::update_configured_table_association::_update_configured_table_association_output::UpdateConfiguredTableAssociationOutput;
-
 pub use crate::operation::update_configured_table_association::_update_configured_table_association_input::UpdateConfiguredTableAssociationInput;
+
+pub use crate::operation::update_configured_table_association::_update_configured_table_association_output::UpdateConfiguredTableAssociationOutput;
 
 mod _update_configured_table_association_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_aggregator_
     }
 }
 
-pub use crate::operation::delete_aggregator_v2::_delete_aggregator_v2_output::DeleteAggregatorV2Output;
-
 pub use crate::operation::delete_aggregator_v2::_delete_aggregator_v2_input::DeleteAggregatorV2Input;
+
+pub use crate::operation::delete_aggregator_v2::_delete_aggregator_v2_output::DeleteAggregatorV2Output;
 
 mod _delete_aggregator_v2_input;
 

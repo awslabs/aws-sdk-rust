@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_assessment_fra
     }
 }
 
-pub use crate::operation::get_assessment_framework::_get_assessment_framework_output::GetAssessmentFrameworkOutput;
-
 pub use crate::operation::get_assessment_framework::_get_assessment_framework_input::GetAssessmentFrameworkInput;
+
+pub use crate::operation::get_assessment_framework::_get_assessment_framework_output::GetAssessmentFrameworkOutput;
 
 mod _get_assessment_framework_input;
 

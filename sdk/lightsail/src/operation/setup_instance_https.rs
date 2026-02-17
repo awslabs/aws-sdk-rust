@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::setup_instance_htt
     }
 }
 
-pub use crate::operation::setup_instance_https::_setup_instance_https_output::SetupInstanceHttpsOutput;
-
 pub use crate::operation::setup_instance_https::_setup_instance_https_input::SetupInstanceHttpsInput;
+
+pub use crate::operation::setup_instance_https::_setup_instance_https_output::SetupInstanceHttpsOutput;
 
 mod _setup_instance_https_input;
 

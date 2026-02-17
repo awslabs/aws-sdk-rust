@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_continuous_de
     }
 }
 
-pub use crate::operation::list_continuous_deployment_policies::_list_continuous_deployment_policies_output::ListContinuousDeploymentPoliciesOutput;
-
 pub use crate::operation::list_continuous_deployment_policies::_list_continuous_deployment_policies_input::ListContinuousDeploymentPoliciesInput;
+
+pub use crate::operation::list_continuous_deployment_policies::_list_continuous_deployment_policies_output::ListContinuousDeploymentPoliciesOutput;
 
 mod _list_continuous_deployment_policies_input;
 

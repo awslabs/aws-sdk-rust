@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_insight_rul
     }
 }
 
-pub use crate::operation::delete_insight_rules::_delete_insight_rules_output::DeleteInsightRulesOutput;
-
 pub use crate::operation::delete_insight_rules::_delete_insight_rules_input::DeleteInsightRulesInput;
+
+pub use crate::operation::delete_insight_rules::_delete_insight_rules_output::DeleteInsightRulesOutput;
 
 mod _delete_insight_rules_input;
 

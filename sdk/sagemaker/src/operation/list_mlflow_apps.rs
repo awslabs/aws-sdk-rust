@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mlflow_apps::
     }
 }
 
-pub use crate::operation::list_mlflow_apps::_list_mlflow_apps_output::ListMlflowAppsOutput;
-
 pub use crate::operation::list_mlflow_apps::_list_mlflow_apps_input::ListMlflowAppsInput;
+
+pub use crate::operation::list_mlflow_apps::_list_mlflow_apps_output::ListMlflowAppsOutput;
 
 mod _list_mlflow_apps_input;
 

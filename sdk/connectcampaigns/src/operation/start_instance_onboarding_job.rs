@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_instance_onb
     }
 }
 
-pub use crate::operation::start_instance_onboarding_job::_start_instance_onboarding_job_output::StartInstanceOnboardingJobOutput;
-
 pub use crate::operation::start_instance_onboarding_job::_start_instance_onboarding_job_input::StartInstanceOnboardingJobInput;
+
+pub use crate::operation::start_instance_onboarding_job::_start_instance_onboarding_job_output::StartInstanceOnboardingJobOutput;
 
 mod _start_instance_onboarding_job_input;
 

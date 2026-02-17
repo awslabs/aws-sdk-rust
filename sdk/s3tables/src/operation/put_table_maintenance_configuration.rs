@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_maintena
     }
 }
 
-pub use crate::operation::put_table_maintenance_configuration::_put_table_maintenance_configuration_output::PutTableMaintenanceConfigurationOutput;
-
 pub use crate::operation::put_table_maintenance_configuration::_put_table_maintenance_configuration_input::PutTableMaintenanceConfigurationInput;
+
+pub use crate::operation::put_table_maintenance_configuration::_put_table_maintenance_configuration_output::PutTableMaintenanceConfigurationOutput;
 
 mod _put_table_maintenance_configuration_input;
 

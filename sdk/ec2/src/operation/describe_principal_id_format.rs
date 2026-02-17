@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_principal
     }
 }
 
-pub use crate::operation::describe_principal_id_format::_describe_principal_id_format_output::DescribePrincipalIdFormatOutput;
-
 pub use crate::operation::describe_principal_id_format::_describe_principal_id_format_input::DescribePrincipalIdFormatInput;
+
+pub use crate::operation::describe_principal_id_format::_describe_principal_id_format_output::DescribePrincipalIdFormatOutput;
 
 mod _describe_principal_id_format_input;
 

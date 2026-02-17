@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_bucket_metadata_journal_table_configuration::_update_bucket_metadata_journal_table_configuration_output::UpdateBucketMetadataJournalTableConfigurationOutput;
-
 pub use crate::operation::update_bucket_metadata_journal_table_configuration::_update_bucket_metadata_journal_table_configuration_input::UpdateBucketMetadataJournalTableConfigurationInput;
+
+pub use crate::operation::update_bucket_metadata_journal_table_configuration::_update_bucket_metadata_journal_table_configuration_output::UpdateBucketMetadataJournalTableConfigurationOutput;
 
 mod _update_bucket_metadata_journal_table_configuration_input;
 

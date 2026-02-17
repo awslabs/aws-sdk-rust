@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_field_level
     }
 }
 
-pub use crate::operation::update_field_level_encryption_config::_update_field_level_encryption_config_output::UpdateFieldLevelEncryptionConfigOutput;
-
 pub use crate::operation::update_field_level_encryption_config::_update_field_level_encryption_config_input::UpdateFieldLevelEncryptionConfigInput;
+
+pub use crate::operation::update_field_level_encryption_config::_update_field_level_encryption_config_output::UpdateFieldLevelEncryptionConfigOutput;
 
 mod _update_field_level_encryption_config_input;
 

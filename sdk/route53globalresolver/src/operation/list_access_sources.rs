@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_source
     }
 }
 
-pub use crate::operation::list_access_sources::_list_access_sources_output::ListAccessSourcesOutput;
-
 pub use crate::operation::list_access_sources::_list_access_sources_input::ListAccessSourcesInput;
+
+pub use crate::operation::list_access_sources::_list_access_sources_output::ListAccessSourcesOutput;
 
 mod _list_access_sources_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_member::GetMem
     }
 }
 
-pub use crate::operation::get_member::_get_member_output::GetMemberOutput;
-
 pub use crate::operation::get_member::_get_member_input::GetMemberInput;
+
+pub use crate::operation::get_member::_get_member_output::GetMemberOutput;
 
 mod _get_member_input;
 

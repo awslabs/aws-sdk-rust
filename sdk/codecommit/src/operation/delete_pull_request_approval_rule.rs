@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pull_reques
     }
 }
 
-pub use crate::operation::delete_pull_request_approval_rule::_delete_pull_request_approval_rule_output::DeletePullRequestApprovalRuleOutput;
-
 pub use crate::operation::delete_pull_request_approval_rule::_delete_pull_request_approval_rule_input::DeletePullRequestApprovalRuleInput;
+
+pub use crate::operation::delete_pull_request_approval_rule::_delete_pull_request_approval_rule_output::DeletePullRequestApprovalRuleOutput;
 
 mod _delete_pull_request_approval_rule_input;
 

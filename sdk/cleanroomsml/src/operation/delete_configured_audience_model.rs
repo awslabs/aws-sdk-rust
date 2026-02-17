@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configured_
     }
 }
 
-pub use crate::operation::delete_configured_audience_model::_delete_configured_audience_model_output::DeleteConfiguredAudienceModelOutput;
-
 pub use crate::operation::delete_configured_audience_model::_delete_configured_audience_model_input::DeleteConfiguredAudienceModelInput;
+
+pub use crate::operation::delete_configured_audience_model::_delete_configured_audience_model_output::DeleteConfiguredAudienceModelOutput;
 
 mod _delete_configured_audience_model_input;
 

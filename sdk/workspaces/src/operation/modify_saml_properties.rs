@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_saml_proper
     }
 }
 
-pub use crate::operation::modify_saml_properties::_modify_saml_properties_output::ModifySamlPropertiesOutput;
-
 pub use crate::operation::modify_saml_properties::_modify_saml_properties_input::ModifySamlPropertiesInput;
+
+pub use crate::operation::modify_saml_properties::_modify_saml_properties_output::ModifySamlPropertiesOutput;
 
 mod _modify_saml_properties_input;
 

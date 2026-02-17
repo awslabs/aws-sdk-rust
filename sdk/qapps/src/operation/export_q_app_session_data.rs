@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_q_app_sessi
     }
 }
 
-pub use crate::operation::export_q_app_session_data::_export_q_app_session_data_output::ExportQAppSessionDataOutput;
-
 pub use crate::operation::export_q_app_session_data::_export_q_app_session_data_input::ExportQAppSessionDataInput;
+
+pub use crate::operation::export_q_app_session_data::_export_q_app_session_data_output::ExportQAppSessionDataOutput;
 
 mod _export_q_app_session_data_input;
 

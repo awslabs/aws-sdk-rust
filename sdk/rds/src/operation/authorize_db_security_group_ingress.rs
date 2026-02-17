@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_db_secur
     }
 }
 
-pub use crate::operation::authorize_db_security_group_ingress::_authorize_db_security_group_ingress_output::AuthorizeDbSecurityGroupIngressOutput;
-
 pub use crate::operation::authorize_db_security_group_ingress::_authorize_db_security_group_ingress_input::AuthorizeDbSecurityGroupIngressInput;
+
+pub use crate::operation::authorize_db_security_group_ingress::_authorize_db_security_group_ingress_output::AuthorizeDbSecurityGroupIngressOutput;
 
 mod _authorize_db_security_group_ingress_input;
 

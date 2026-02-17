@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_maintenance_wi
     }
 }
 
-pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_task_output::GetMaintenanceWindowTaskOutput;
-
 pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_task_input::GetMaintenanceWindowTaskInput;
+
+pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_task_output::GetMaintenanceWindowTaskOutput;
 
 mod _get_maintenance_window_task_input;
 

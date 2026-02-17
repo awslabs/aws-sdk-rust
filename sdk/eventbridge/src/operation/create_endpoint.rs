@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_endpoint::C
     }
 }
 
-pub use crate::operation::create_endpoint::_create_endpoint_output::CreateEndpointOutput;
-
 pub use crate::operation::create_endpoint::_create_endpoint_input::CreateEndpointInput;
+
+pub use crate::operation::create_endpoint::_create_endpoint_output::CreateEndpointOutput;
 
 mod _create_endpoint_input;
 

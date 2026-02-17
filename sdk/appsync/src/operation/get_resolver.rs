@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver::GetR
     }
 }
 
-pub use crate::operation::get_resolver::_get_resolver_output::GetResolverOutput;
-
 pub use crate::operation::get_resolver::_get_resolver_input::GetResolverInput;
+
+pub use crate::operation::get_resolver::_get_resolver_output::GetResolverOutput;
 
 mod _get_resolver_input;
 

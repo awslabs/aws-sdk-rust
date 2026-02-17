@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_anomaly::Up
     }
 }
 
-pub use crate::operation::update_anomaly::_update_anomaly_output::UpdateAnomalyOutput;
-
 pub use crate::operation::update_anomaly::_update_anomaly_input::UpdateAnomalyInput;
+
+pub use crate::operation::update_anomaly::_update_anomaly_output::UpdateAnomalyOutput;
 
 mod _update_anomaly_input;
 

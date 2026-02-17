@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_metric_filter
     }
 }
 
-pub use crate::operation::test_metric_filter::_test_metric_filter_output::TestMetricFilterOutput;
-
 pub use crate::operation::test_metric_filter::_test_metric_filter_input::TestMetricFilterInput;
+
+pub use crate::operation::test_metric_filter::_test_metric_filter_output::TestMetricFilterOutput;
 
 mod _test_metric_filter_input;
 

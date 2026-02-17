@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_findings_repor
     }
 }
 
-pub use crate::operation::get_findings_report_status::_get_findings_report_status_output::GetFindingsReportStatusOutput;
-
 pub use crate::operation::get_findings_report_status::_get_findings_report_status_input::GetFindingsReportStatusInput;
+
+pub use crate::operation::get_findings_report_status::_get_findings_report_status_output::GetFindingsReportStatusOutput;
 
 mod _get_findings_report_status_input;
 

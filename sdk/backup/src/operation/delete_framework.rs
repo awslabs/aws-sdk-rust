@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_framework::
     }
 }
 
-pub use crate::operation::delete_framework::_delete_framework_output::DeleteFrameworkOutput;
-
 pub use crate::operation::delete_framework::_delete_framework_input::DeleteFrameworkInput;
+
+pub use crate::operation::delete_framework::_delete_framework_output::DeleteFrameworkOutput;
 
 mod _delete_framework_input;
 

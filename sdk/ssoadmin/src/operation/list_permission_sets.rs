@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_permission_se
     }
 }
 
-pub use crate::operation::list_permission_sets::_list_permission_sets_output::ListPermissionSetsOutput;
-
 pub use crate::operation::list_permission_sets::_list_permission_sets_input::ListPermissionSetsInput;
+
+pub use crate::operation::list_permission_sets::_list_permission_sets_output::ListPermissionSetsOutput;
 
 mod _list_permission_sets_input;
 

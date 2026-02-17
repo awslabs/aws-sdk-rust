@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::calculate_route_ma
     }
 }
 
-pub use crate::operation::calculate_route_matrix::_calculate_route_matrix_output::CalculateRouteMatrixOutput;
-
 pub use crate::operation::calculate_route_matrix::_calculate_route_matrix_input::CalculateRouteMatrixInput;
+
+pub use crate::operation::calculate_route_matrix::_calculate_route_matrix_output::CalculateRouteMatrixOutput;
 
 mod _calculate_route_matrix_input;
 

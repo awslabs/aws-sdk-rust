@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_point_p
     }
 }
 
-pub use crate::operation::get_access_point_policy_status::_get_access_point_policy_status_output::GetAccessPointPolicyStatusOutput;
-
 pub use crate::operation::get_access_point_policy_status::_get_access_point_policy_status_input::GetAccessPointPolicyStatusInput;
+
+pub use crate::operation::get_access_point_policy_status::_get_access_point_policy_status_output::GetAccessPointPolicyStatusOutput;
 
 mod _get_access_point_policy_status_input;
 

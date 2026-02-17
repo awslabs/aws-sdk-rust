@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_transit_v
     }
 }
 
-pub use crate::operation::allocate_transit_virtual_interface::_allocate_transit_virtual_interface_output::AllocateTransitVirtualInterfaceOutput;
-
 pub use crate::operation::allocate_transit_virtual_interface::_allocate_transit_virtual_interface_input::AllocateTransitVirtualInterfaceInput;
+
+pub use crate::operation::allocate_transit_virtual_interface::_allocate_transit_virtual_interface_output::AllocateTransitVirtualInterfaceOutput;
 
 mod _allocate_transit_virtual_interface_input;
 

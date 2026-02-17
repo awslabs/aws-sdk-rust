@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_discovered_sch
     }
 }
 
-pub use crate::operation::get_discovered_schema::_get_discovered_schema_output::GetDiscoveredSchemaOutput;
-
 pub use crate::operation::get_discovered_schema::_get_discovered_schema_input::GetDiscoveredSchemaInput;
+
+pub use crate::operation::get_discovered_schema::_get_discovered_schema_output::GetDiscoveredSchemaOutput;
 
 mod _get_discovered_schema_input;
 

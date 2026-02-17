@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_phi_detec
     }
 }
 
-pub use crate::operation::describe_phi_detection_job::_describe_phi_detection_job_output::DescribePhiDetectionJobOutput;
-
 pub use crate::operation::describe_phi_detection_job::_describe_phi_detection_job_input::DescribePhiDetectionJobInput;
+
+pub use crate::operation::describe_phi_detection_job::_describe_phi_detection_job_output::DescribePhiDetectionJobOutput;
 
 mod _describe_phi_detection_job_input;
 

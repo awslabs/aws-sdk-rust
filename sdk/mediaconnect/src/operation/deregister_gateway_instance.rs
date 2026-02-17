@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_gateway
     }
 }
 
-pub use crate::operation::deregister_gateway_instance::_deregister_gateway_instance_output::DeregisterGatewayInstanceOutput;
-
 pub use crate::operation::deregister_gateway_instance::_deregister_gateway_instance_input::DeregisterGatewayInstanceInput;
+
+pub use crate::operation::deregister_gateway_instance::_deregister_gateway_instance_output::DeregisterGatewayInstanceOutput;
 
 mod _deregister_gateway_instance_input;
 

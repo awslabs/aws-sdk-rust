@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_template_summa
     }
 }
 
-pub use crate::operation::get_template_summary::_get_template_summary_output::GetTemplateSummaryOutput;
-
 pub use crate::operation::get_template_summary::_get_template_summary_input::GetTemplateSummaryInput;
+
+pub use crate::operation::get_template_summary::_get_template_summary_output::GetTemplateSummaryOutput;
 
 mod _get_template_summary_input;
 

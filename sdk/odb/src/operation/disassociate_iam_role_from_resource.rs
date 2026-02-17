@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_iam_r
     }
 }
 
-pub use crate::operation::disassociate_iam_role_from_resource::_disassociate_iam_role_from_resource_output::DisassociateIamRoleFromResourceOutput;
-
 pub use crate::operation::disassociate_iam_role_from_resource::_disassociate_iam_role_from_resource_input::DisassociateIamRoleFromResourceInput;
+
+pub use crate::operation::disassociate_iam_role_from_resource::_disassociate_iam_role_from_resource_output::DisassociateIamRoleFromResourceOutput;
 
 mod _disassociate_iam_role_from_resource_input;
 

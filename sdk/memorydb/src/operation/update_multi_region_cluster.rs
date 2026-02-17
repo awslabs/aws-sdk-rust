@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_multi_regio
     }
 }
 
-pub use crate::operation::update_multi_region_cluster::_update_multi_region_cluster_output::UpdateMultiRegionClusterOutput;
-
 pub use crate::operation::update_multi_region_cluster::_update_multi_region_cluster_input::UpdateMultiRegionClusterInput;
+
+pub use crate::operation::update_multi_region_cluster::_update_multi_region_cluster_output::UpdateMultiRegionClusterOutput;
 
 mod _update_multi_region_cluster_input;
 

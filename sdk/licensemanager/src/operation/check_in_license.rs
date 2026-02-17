@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_in_license::
     }
 }
 
-pub use crate::operation::check_in_license::_check_in_license_output::CheckInLicenseOutput;
-
 pub use crate::operation::check_in_license::_check_in_license_input::CheckInLicenseInput;
+
+pub use crate::operation::check_in_license::_check_in_license_output::CheckInLicenseOutput;
 
 mod _check_in_license_input;
 

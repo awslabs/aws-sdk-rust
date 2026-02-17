@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rdf_graph_summ
     }
 }
 
-pub use crate::operation::get_rdf_graph_summary::_get_rdf_graph_summary_output::GetRdfGraphSummaryOutput;
-
 pub use crate::operation::get_rdf_graph_summary::_get_rdf_graph_summary_input::GetRdfGraphSummaryInput;
+
+pub use crate::operation::get_rdf_graph_summary::_get_rdf_graph_summary_output::GetRdfGraphSummaryOutput;
 
 mod _get_rdf_graph_summary_input;
 

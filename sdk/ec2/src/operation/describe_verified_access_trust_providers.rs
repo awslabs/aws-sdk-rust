@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_verified_
     }
 }
 
-pub use crate::operation::describe_verified_access_trust_providers::_describe_verified_access_trust_providers_output::DescribeVerifiedAccessTrustProvidersOutput;
-
 pub use crate::operation::describe_verified_access_trust_providers::_describe_verified_access_trust_providers_input::DescribeVerifiedAccessTrustProvidersInput;
+
+pub use crate::operation::describe_verified_access_trust_providers::_describe_verified_access_trust_providers_output::DescribeVerifiedAccessTrustProvidersOutput;
 
 mod _describe_verified_access_trust_providers_input;
 

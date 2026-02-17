@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_savings_plans_purchase_recommendation_generation::_list_savings_plans_purchase_recommendation_generation_output::ListSavingsPlansPurchaseRecommendationGenerationOutput;
-
 pub use crate::operation::list_savings_plans_purchase_recommendation_generation::_list_savings_plans_purchase_recommendation_generation_input::ListSavingsPlansPurchaseRecommendationGenerationInput;
+
+pub use crate::operation::list_savings_plans_purchase_recommendation_generation::_list_savings_plans_purchase_recommendation_generation_output::ListSavingsPlansPurchaseRecommendationGenerationOutput;
 
 mod _list_savings_plans_purchase_recommendation_generation_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_eval
     }
 }
 
-pub use crate::operation::list_resource_evaluations::_list_resource_evaluations_output::ListResourceEvaluationsOutput;
-
 pub use crate::operation::list_resource_evaluations::_list_resource_evaluations_input::ListResourceEvaluationsInput;
+
+pub use crate::operation::list_resource_evaluations::_list_resource_evaluations_output::ListResourceEvaluationsOutput;
 
 mod _list_resource_evaluations_input;
 

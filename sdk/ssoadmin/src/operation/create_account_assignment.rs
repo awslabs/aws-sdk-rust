@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account_ass
     }
 }
 
-pub use crate::operation::create_account_assignment::_create_account_assignment_output::CreateAccountAssignmentOutput;
-
 pub use crate::operation::create_account_assignment::_create_account_assignment_input::CreateAccountAssignmentInput;
+
+pub use crate::operation::create_account_assignment::_create_account_assignment_output::CreateAccountAssignmentOutput;
 
 mod _create_account_assignment_input;
 

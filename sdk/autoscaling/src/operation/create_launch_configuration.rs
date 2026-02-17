@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_launch_conf
     }
 }
 
-pub use crate::operation::create_launch_configuration::_create_launch_configuration_output::CreateLaunchConfigurationOutput;
-
 pub use crate::operation::create_launch_configuration::_create_launch_configuration_input::CreateLaunchConfigurationInput;
+
+pub use crate::operation::create_launch_configuration::_create_launch_configuration_output::CreateLaunchConfigurationOutput;
 
 mod _create_launch_configuration_input;
 

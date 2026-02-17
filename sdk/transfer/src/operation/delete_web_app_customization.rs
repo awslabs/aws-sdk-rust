@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_web_app_cus
     }
 }
 
-pub use crate::operation::delete_web_app_customization::_delete_web_app_customization_output::DeleteWebAppCustomizationOutput;
-
 pub use crate::operation::delete_web_app_customization::_delete_web_app_customization_input::DeleteWebAppCustomizationInput;
+
+pub use crate::operation::delete_web_app_customization::_delete_web_app_customization_output::DeleteWebAppCustomizationOutput;
 
 mod _delete_web_app_customization_input;
 

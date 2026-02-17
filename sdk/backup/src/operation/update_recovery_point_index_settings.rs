@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recovery_po
     }
 }
 
-pub use crate::operation::update_recovery_point_index_settings::_update_recovery_point_index_settings_output::UpdateRecoveryPointIndexSettingsOutput;
-
 pub use crate::operation::update_recovery_point_index_settings::_update_recovery_point_index_settings_input::UpdateRecoveryPointIndexSettingsInput;
+
+pub use crate::operation::update_recovery_point_index_settings::_update_recovery_point_index_settings_output::UpdateRecoveryPointIndexSettingsOutput;
 
 mod _update_recovery_point_index_settings_input;
 

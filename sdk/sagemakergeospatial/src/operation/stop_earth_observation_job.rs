@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_earth_observa
     }
 }
 
-pub use crate::operation::stop_earth_observation_job::_stop_earth_observation_job_output::StopEarthObservationJobOutput;
-
 pub use crate::operation::stop_earth_observation_job::_stop_earth_observation_job_input::StopEarthObservationJobInput;
+
+pub use crate::operation::stop_earth_observation_job::_stop_earth_observation_job_output::StopEarthObservationJobOutput;
 
 mod _stop_earth_observation_job_input;
 

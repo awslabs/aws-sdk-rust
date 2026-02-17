@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_storage_con
     }
 }
 
-pub use crate::operation::delete_storage_configuration::_delete_storage_configuration_output::DeleteStorageConfigurationOutput;
-
 pub use crate::operation::delete_storage_configuration::_delete_storage_configuration_input::DeleteStorageConfigurationInput;
+
+pub use crate::operation::delete_storage_configuration::_delete_storage_configuration_output::DeleteStorageConfigurationOutput;
 
 mod _delete_storage_configuration_input;
 

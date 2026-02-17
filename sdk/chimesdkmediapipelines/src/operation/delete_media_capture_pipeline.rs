@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_media_captu
     }
 }
 
-pub use crate::operation::delete_media_capture_pipeline::_delete_media_capture_pipeline_output::DeleteMediaCapturePipelineOutput;
-
 pub use crate::operation::delete_media_capture_pipeline::_delete_media_capture_pipeline_input::DeleteMediaCapturePipelineInput;
+
+pub use crate::operation::delete_media_capture_pipeline::_delete_media_capture_pipeline_output::DeleteMediaCapturePipelineOutput;
 
 mod _delete_media_capture_pipeline_input;
 

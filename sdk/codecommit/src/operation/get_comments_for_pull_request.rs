@@ -529,9 +529,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_comments_for_p
     }
 }
 
-pub use crate::operation::get_comments_for_pull_request::_get_comments_for_pull_request_output::GetCommentsForPullRequestOutput;
-
 pub use crate::operation::get_comments_for_pull_request::_get_comments_for_pull_request_input::GetCommentsForPullRequestInput;
+
+pub use crate::operation::get_comments_for_pull_request::_get_comments_for_pull_request_output::GetCommentsForPullRequestOutput;
 
 mod _get_comments_for_pull_request_input;
 

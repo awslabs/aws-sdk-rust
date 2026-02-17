@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_indices::List
     }
 }
 
-pub use crate::operation::list_indices::_list_indices_output::ListIndicesOutput;
-
 pub use crate::operation::list_indices::_list_indices_input::ListIndicesInput;
+
+pub use crate::operation::list_indices::_list_indices_output::ListIndicesOutput;
 
 mod _list_indices_input;
 

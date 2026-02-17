@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_snapshot::I
     }
 }
 
-pub use crate::operation::import_snapshot::_import_snapshot_output::ImportSnapshotOutput;
-
 pub use crate::operation::import_snapshot::_import_snapshot_input::ImportSnapshotInput;
+
+pub use crate::operation::import_snapshot::_import_snapshot_output::ImportSnapshotOutput;
 
 mod _import_snapshot_input;
 

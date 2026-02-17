@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_command_execu
     }
 }
 
-pub use crate::operation::list_command_executions_for_sandbox::_list_command_executions_for_sandbox_output::ListCommandExecutionsForSandboxOutput;
-
 pub use crate::operation::list_command_executions_for_sandbox::_list_command_executions_for_sandbox_input::ListCommandExecutionsForSandboxInput;
+
+pub use crate::operation::list_command_executions_for_sandbox::_list_command_executions_for_sandbox_output::ListCommandExecutionsForSandboxOutput;
 
 mod _list_command_executions_for_sandbox_input;
 

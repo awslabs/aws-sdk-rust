@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_whats_app_mes
     }
 }
 
-pub use crate::operation::list_whats_app_message_templates::_list_whats_app_message_templates_output::ListWhatsAppMessageTemplatesOutput;
-
 pub use crate::operation::list_whats_app_message_templates::_list_whats_app_message_templates_input::ListWhatsAppMessageTemplatesInput;
+
+pub use crate::operation::list_whats_app_message_templates::_list_whats_app_message_templates_output::ListWhatsAppMessageTemplatesOutput;
 
 mod _list_whats_app_message_templates_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sdi_sources::
     }
 }
 
-pub use crate::operation::list_sdi_sources::_list_sdi_sources_output::ListSdiSourcesOutput;
-
 pub use crate::operation::list_sdi_sources::_list_sdi_sources_input::ListSdiSourcesInput;
+
+pub use crate::operation::list_sdi_sources::_list_sdi_sources_output::ListSdiSourcesOutput;
 
 mod _list_sdi_sources_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_stream_proces
     }
 }
 
-pub use crate::operation::stop_stream_processor::_stop_stream_processor_output::StopStreamProcessorOutput;
-
 pub use crate::operation::stop_stream_processor::_stop_stream_processor_input::StopStreamProcessorInput;
+
+pub use crate::operation::stop_stream_processor::_stop_stream_processor_output::StopStreamProcessorOutput;
 
 mod _stop_stream_processor_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_vector_enri
     }
 }
 
-pub use crate::operation::export_vector_enrichment_job::_export_vector_enrichment_job_output::ExportVectorEnrichmentJobOutput;
-
 pub use crate::operation::export_vector_enrichment_job::_export_vector_enrichment_job_input::ExportVectorEnrichmentJobInput;
+
+pub use crate::operation::export_vector_enrichment_job::_export_vector_enrichment_job_output::ExportVectorEnrichmentJobOutput;
 
 mod _export_vector_enrichment_job_input;
 

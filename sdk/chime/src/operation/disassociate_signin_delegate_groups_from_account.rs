@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_signin_delegate_groups_from_account::_disassociate_signin_delegate_groups_from_account_output::DisassociateSigninDelegateGroupsFromAccountOutput;
-
 pub use crate::operation::disassociate_signin_delegate_groups_from_account::_disassociate_signin_delegate_groups_from_account_input::DisassociateSigninDelegateGroupsFromAccountInput;
+
+pub use crate::operation::disassociate_signin_delegate_groups_from_account::_disassociate_signin_delegate_groups_from_account_output::DisassociateSigninDelegateGroupsFromAccountOutput;
 
 mod _disassociate_signin_delegate_groups_from_account_input;
 

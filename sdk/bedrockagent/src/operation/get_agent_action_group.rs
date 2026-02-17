@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_action_g
     }
 }
 
-pub use crate::operation::get_agent_action_group::_get_agent_action_group_output::GetAgentActionGroupOutput;
-
 pub use crate::operation::get_agent_action_group::_get_agent_action_group_input::GetAgentActionGroupInput;
+
+pub use crate::operation::get_agent_action_group::_get_agent_action_group_output::GetAgentActionGroupOutput;
 
 mod _get_agent_action_group_input;
 

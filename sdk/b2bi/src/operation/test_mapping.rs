@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_mapping::Test
     }
 }
 
-pub use crate::operation::test_mapping::_test_mapping_output::TestMappingOutput;
-
 pub use crate::operation::test_mapping::_test_mapping_input::TestMappingInput;
+
+pub use crate::operation::test_mapping::_test_mapping_output::TestMappingOutput;
 
 mod _test_mapping_input;
 

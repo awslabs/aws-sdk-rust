@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_monitoring_
     }
 }
 
-pub use crate::operation::delete_monitoring_subscription::_delete_monitoring_subscription_output::DeleteMonitoringSubscriptionOutput;
-
 pub use crate::operation::delete_monitoring_subscription::_delete_monitoring_subscription_input::DeleteMonitoringSubscriptionInput;
+
+pub use crate::operation::delete_monitoring_subscription::_delete_monitoring_subscription_output::DeleteMonitoringSubscriptionOutput;
 
 mod _delete_monitoring_subscription_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_content::Cr
     }
 }
 
-pub use crate::operation::create_content::_create_content_output::CreateContentOutput;
-
 pub use crate::operation::create_content::_create_content_input::CreateContentInput;
+
+pub use crate::operation::create_content::_create_content_output::CreateContentOutput;
 
 mod _create_content_input;
 

@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_network_inte
     }
 }
 
-pub use crate::operation::reset_network_interface_attribute::_reset_network_interface_attribute_output::ResetNetworkInterfaceAttributeOutput;
-
 pub use crate::operation::reset_network_interface_attribute::_reset_network_interface_attribute_input::ResetNetworkInterfaceAttributeInput;
+
+pub use crate::operation::reset_network_interface_attribute::_reset_network_interface_attribute_output::ResetNetworkInterfaceAttributeOutput;
 
 mod _reset_network_interface_attribute_input;
 

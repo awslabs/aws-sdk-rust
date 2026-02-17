@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_federation_tok
     }
 }
 
-pub use crate::operation::get_federation_token::_get_federation_token_output::GetFederationTokenOutput;
-
 pub use crate::operation::get_federation_token::_get_federation_token_input::GetFederationTokenInput;
+
+pub use crate::operation::get_federation_token::_get_federation_token_output::GetFederationTokenOutput;
 
 mod _get_federation_token_input;
 

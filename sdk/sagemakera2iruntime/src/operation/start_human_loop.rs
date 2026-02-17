@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_human_loop::
     }
 }
 
-pub use crate::operation::start_human_loop::_start_human_loop_output::StartHumanLoopOutput;
-
 pub use crate::operation::start_human_loop::_start_human_loop_input::StartHumanLoopInput;
+
+pub use crate::operation::start_human_loop::_start_human_loop_output::StartHumanLoopOutput;
 
 mod _start_human_loop_input;
 

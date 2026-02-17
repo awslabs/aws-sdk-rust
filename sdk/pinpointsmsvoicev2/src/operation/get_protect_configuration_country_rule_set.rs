@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_protect_config
     }
 }
 
-pub use crate::operation::get_protect_configuration_country_rule_set::_get_protect_configuration_country_rule_set_output::GetProtectConfigurationCountryRuleSetOutput;
-
 pub use crate::operation::get_protect_configuration_country_rule_set::_get_protect_configuration_country_rule_set_input::GetProtectConfigurationCountryRuleSetInput;
+
+pub use crate::operation::get_protect_configuration_country_rule_set::_get_protect_configuration_country_rule_set_output::GetProtectConfigurationCountryRuleSetOutput;
 
 mod _get_protect_configuration_country_rule_set_input;
 

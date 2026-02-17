@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_package:
     }
 }
 
-pub use crate::operation::associate_package::_associate_package_output::AssociatePackageOutput;
-
 pub use crate::operation::associate_package::_associate_package_input::AssociatePackageInput;
+
+pub use crate::operation::associate_package::_associate_package_output::AssociatePackageOutput;
 
 mod _associate_package_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initialize_cluster
     }
 }
 
-pub use crate::operation::initialize_cluster::_initialize_cluster_output::InitializeClusterOutput;
-
 pub use crate::operation::initialize_cluster::_initialize_cluster_input::InitializeClusterInput;
+
+pub use crate::operation::initialize_cluster::_initialize_cluster_output::InitializeClusterOutput;
 
 mod _initialize_cluster_input;
 

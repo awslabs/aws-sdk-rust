@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contacts::Lis
     }
 }
 
-pub use crate::operation::list_contacts::_list_contacts_output::ListContactsOutput;
-
 pub use crate::operation::list_contacts::_list_contacts_input::ListContactsInput;
+
+pub use crate::operation::list_contacts::_list_contacts_output::ListContactsOutput;
 
 mod _list_contacts_input;
 

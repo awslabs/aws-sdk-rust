@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_recommender
     }
 }
 
-pub use crate::operation::create_recommender_configuration::_create_recommender_configuration_output::CreateRecommenderConfigurationOutput;
-
 pub use crate::operation::create_recommender_configuration::_create_recommender_configuration_input::CreateRecommenderConfigurationInput;
+
+pub use crate::operation::create_recommender_configuration::_create_recommender_configuration_output::CreateRecommenderConfigurationOutput;
 
 mod _create_recommender_configuration_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_inbound_con
     }
 }
 
-pub use crate::operation::accept_inbound_connection::_accept_inbound_connection_output::AcceptInboundConnectionOutput;
-
 pub use crate::operation::accept_inbound_connection::_accept_inbound_connection_input::AcceptInboundConnectionInput;
+
+pub use crate::operation::accept_inbound_connection::_accept_inbound_connection_output::AcceptInboundConnectionOutput;
 
 mod _accept_inbound_connection_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_gateway::
     }
 }
 
-pub use crate::operation::activate_gateway::_activate_gateway_output::ActivateGatewayOutput;
-
 pub use crate::operation::activate_gateway::_activate_gateway_input::ActivateGatewayInput;
+
+pub use crate::operation::activate_gateway::_activate_gateway_output::ActivateGatewayOutput;
 
 mod _activate_gateway_input;
 

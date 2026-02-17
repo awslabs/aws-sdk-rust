@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configured_
     }
 }
 
-pub use crate::operation::update_configured_table_analysis_rule::_update_configured_table_analysis_rule_output::UpdateConfiguredTableAnalysisRuleOutput;
-
 pub use crate::operation::update_configured_table_analysis_rule::_update_configured_table_analysis_rule_input::UpdateConfiguredTableAnalysisRuleInput;
+
+pub use crate::operation::update_configured_table_analysis_rule::_update_configured_table_analysis_rule_output::UpdateConfiguredTableAnalysisRuleOutput;
 
 mod _update_configured_table_analysis_rule_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_medical_scribe
     }
 }
 
-pub use crate::operation::get_medical_scribe_stream::_get_medical_scribe_stream_output::GetMedicalScribeStreamOutput;
-
 pub use crate::operation::get_medical_scribe_stream::_get_medical_scribe_stream_input::GetMedicalScribeStreamInput;
+
+pub use crate::operation::get_medical_scribe_stream::_get_medical_scribe_stream_output::GetMedicalScribeStreamOutput;
 
 mod _get_medical_scribe_stream_input;
 

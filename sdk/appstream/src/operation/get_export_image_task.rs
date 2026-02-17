@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_export_image_t
     }
 }
 
-pub use crate::operation::get_export_image_task::_get_export_image_task_output::GetExportImageTaskOutput;
-
 pub use crate::operation::get_export_image_task::_get_export_image_task_input::GetExportImageTaskInput;
+
+pub use crate::operation::get_export_image_task::_get_export_image_task_output::GetExportImageTaskOutput;
 
 mod _get_export_image_task_input;
 

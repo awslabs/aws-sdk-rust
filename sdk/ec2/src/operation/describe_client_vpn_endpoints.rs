@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_client_vp
     }
 }
 
-pub use crate::operation::describe_client_vpn_endpoints::_describe_client_vpn_endpoints_output::DescribeClientVpnEndpointsOutput;
-
 pub use crate::operation::describe_client_vpn_endpoints::_describe_client_vpn_endpoints_input::DescribeClientVpnEndpointsInput;
+
+pub use crate::operation::describe_client_vpn_endpoints::_describe_client_vpn_endpoints_output::DescribeClientVpnEndpointsOutput;
 
 mod _describe_client_vpn_endpoints_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_entitlement
     }
 }
 
-pub use crate::operation::create_entitlement::_create_entitlement_output::CreateEntitlementOutput;
-
 pub use crate::operation::create_entitlement::_create_entitlement_input::CreateEntitlementInput;
+
+pub use crate::operation::create_entitlement::_create_entitlement_output::CreateEntitlementOutput;
 
 mod _create_entitlement_input;
 

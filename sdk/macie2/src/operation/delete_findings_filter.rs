@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_findings_fi
     }
 }
 
-pub use crate::operation::delete_findings_filter::_delete_findings_filter_output::DeleteFindingsFilterOutput;
-
 pub use crate::operation::delete_findings_filter::_delete_findings_filter_input::DeleteFindingsFilterInput;
+
+pub use crate::operation::delete_findings_filter::_delete_findings_filter_output::DeleteFindingsFilterOutput;
 
 mod _delete_findings_filter_input;
 

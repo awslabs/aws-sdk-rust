@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_log_stream:
     }
 }
 
-pub use crate::operation::delete_log_stream::_delete_log_stream_output::DeleteLogStreamOutput;
-
 pub use crate::operation::delete_log_stream::_delete_log_stream_input::DeleteLogStreamInput;
+
+pub use crate::operation::delete_log_stream::_delete_log_stream_output::DeleteLogStreamOutput;
 
 mod _delete_log_stream_input;
 

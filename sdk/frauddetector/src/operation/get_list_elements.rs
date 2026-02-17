@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_list_elements:
     }
 }
 
-pub use crate::operation::get_list_elements::_get_list_elements_output::GetListElementsOutput;
-
 pub use crate::operation::get_list_elements::_get_list_elements_input::GetListElementsInput;
+
+pub use crate::operation::get_list_elements::_get_list_elements_output::GetListElementsOutput;
 
 mod _get_list_elements_input;
 

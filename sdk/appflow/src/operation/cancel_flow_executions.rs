@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_flow_execut
     }
 }
 
-pub use crate::operation::cancel_flow_executions::_cancel_flow_executions_output::CancelFlowExecutionsOutput;
-
 pub use crate::operation::cancel_flow_executions::_cancel_flow_executions_input::CancelFlowExecutionsInput;
+
+pub use crate::operation::cancel_flow_executions::_cancel_flow_executions_output::CancelFlowExecutionsOutput;
 
 mod _cancel_flow_executions_input;
 

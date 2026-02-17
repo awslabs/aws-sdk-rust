@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_traffic_polic
     }
 }
 
-pub use crate::operation::list_traffic_policy_versions::_list_traffic_policy_versions_output::ListTrafficPolicyVersionsOutput;
-
 pub use crate::operation::list_traffic_policy_versions::_list_traffic_policy_versions_input::ListTrafficPolicyVersionsInput;
+
+pub use crate::operation::list_traffic_policy_versions::_list_traffic_policy_versions_output::ListTrafficPolicyVersionsOutput;
 
 mod _list_traffic_policy_versions_input;
 

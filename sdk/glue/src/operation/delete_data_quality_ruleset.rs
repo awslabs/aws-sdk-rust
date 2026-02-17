@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_qualit
     }
 }
 
-pub use crate::operation::delete_data_quality_ruleset::_delete_data_quality_ruleset_output::DeleteDataQualityRulesetOutput;
-
 pub use crate::operation::delete_data_quality_ruleset::_delete_data_quality_ruleset_input::DeleteDataQualityRulesetInput;
+
+pub use crate::operation::delete_data_quality_ruleset::_delete_data_quality_ruleset_output::DeleteDataQualityRulesetOutput;
 
 mod _delete_data_quality_ruleset_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_game_sess
     }
 }
 
-pub use crate::operation::describe_game_session_placement::_describe_game_session_placement_output::DescribeGameSessionPlacementOutput;
-
 pub use crate::operation::describe_game_session_placement::_describe_game_session_placement_input::DescribeGameSessionPlacementInput;
+
+pub use crate::operation::describe_game_session_placement::_describe_game_session_placement_output::DescribeGameSessionPlacementOutput;
 
 mod _describe_game_session_placement_input;
 

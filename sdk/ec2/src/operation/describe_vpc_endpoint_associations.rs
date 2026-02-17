@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_endpo
     }
 }
 
-pub use crate::operation::describe_vpc_endpoint_associations::_describe_vpc_endpoint_associations_output::DescribeVpcEndpointAssociationsOutput;
-
 pub use crate::operation::describe_vpc_endpoint_associations::_describe_vpc_endpoint_associations_input::DescribeVpcEndpointAssociationsInput;
+
+pub use crate::operation::describe_vpc_endpoint_associations::_describe_vpc_endpoint_associations_output::DescribeVpcEndpointAssociationsOutput;
 
 mod _describe_vpc_endpoint_associations_input;
 

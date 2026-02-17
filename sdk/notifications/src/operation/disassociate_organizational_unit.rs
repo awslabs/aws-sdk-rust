@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_organ
     }
 }
 
-pub use crate::operation::disassociate_organizational_unit::_disassociate_organizational_unit_output::DisassociateOrganizationalUnitOutput;
-
 pub use crate::operation::disassociate_organizational_unit::_disassociate_organizational_unit_input::DisassociateOrganizationalUnitInput;
+
+pub use crate::operation::disassociate_organizational_unit::_disassociate_organizational_unit_output::DisassociateOrganizationalUnitOutput;
 
 mod _disassociate_organizational_unit_input;
 

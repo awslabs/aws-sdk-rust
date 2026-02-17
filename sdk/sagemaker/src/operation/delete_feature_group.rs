@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_feature_gro
     }
 }
 
-pub use crate::operation::delete_feature_group::_delete_feature_group_output::DeleteFeatureGroupOutput;
-
 pub use crate::operation::delete_feature_group::_delete_feature_group_input::DeleteFeatureGroupInput;
+
+pub use crate::operation::delete_feature_group::_delete_feature_group_output::DeleteFeatureGroupOutput;
 
 mod _delete_feature_group_input;
 

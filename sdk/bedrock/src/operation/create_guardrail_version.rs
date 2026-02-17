@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_guardrail_v
     }
 }
 
-pub use crate::operation::create_guardrail_version::_create_guardrail_version_output::CreateGuardrailVersionOutput;
-
 pub use crate::operation::create_guardrail_version::_create_guardrail_version_input::CreateGuardrailVersionInput;
+
+pub use crate::operation::create_guardrail_version::_create_guardrail_version_output::CreateGuardrailVersionOutput;
 
 mod _create_guardrail_version_input;
 

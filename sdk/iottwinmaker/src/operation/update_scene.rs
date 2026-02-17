@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scene::Upda
     }
 }
 
-pub use crate::operation::update_scene::_update_scene_output::UpdateSceneOutput;
-
 pub use crate::operation::update_scene::_update_scene_input::UpdateSceneInput;
+
+pub use crate::operation::update_scene::_update_scene_output::UpdateSceneOutput;
 
 mod _update_scene_input;
 

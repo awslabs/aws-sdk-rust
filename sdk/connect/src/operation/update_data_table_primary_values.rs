@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_table_
     }
 }
 
-pub use crate::operation::update_data_table_primary_values::_update_data_table_primary_values_output::UpdateDataTablePrimaryValuesOutput;
-
 pub use crate::operation::update_data_table_primary_values::_update_data_table_primary_values_input::UpdateDataTablePrimaryValuesInput;
+
+pub use crate::operation::update_data_table_primary_values::_update_data_table_primary_values_output::UpdateDataTablePrimaryValuesOutput;
 
 mod _update_data_table_primary_values_input;
 

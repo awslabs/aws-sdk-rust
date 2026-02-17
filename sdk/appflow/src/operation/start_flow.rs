@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_flow::StartF
     }
 }
 
-pub use crate::operation::start_flow::_start_flow_output::StartFlowOutput;
-
 pub use crate::operation::start_flow::_start_flow_input::StartFlowInput;
+
+pub use crate::operation::start_flow::_start_flow_output::StartFlowOutput;
 
 mod _start_flow_input;
 

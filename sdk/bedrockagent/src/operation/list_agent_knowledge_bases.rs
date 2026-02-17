@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_knowled
     }
 }
 
-pub use crate::operation::list_agent_knowledge_bases::_list_agent_knowledge_bases_output::ListAgentKnowledgeBasesOutput;
-
 pub use crate::operation::list_agent_knowledge_bases::_list_agent_knowledge_bases_input::ListAgentKnowledgeBasesInput;
+
+pub use crate::operation::list_agent_knowledge_bases::_list_agent_knowledge_bases_output::ListAgentKnowledgeBasesOutput;
 
 mod _list_agent_knowledge_bases_input;
 

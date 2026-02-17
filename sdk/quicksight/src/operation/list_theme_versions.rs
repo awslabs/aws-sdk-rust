@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_theme_version
     }
 }
 
-pub use crate::operation::list_theme_versions::_list_theme_versions_output::ListThemeVersionsOutput;
-
 pub use crate::operation::list_theme_versions::_list_theme_versions_input::ListThemeVersionsInput;
+
+pub use crate::operation::list_theme_versions::_list_theme_versions_output::ListThemeVersionsOutput;
 
 mod _list_theme_versions_input;
 

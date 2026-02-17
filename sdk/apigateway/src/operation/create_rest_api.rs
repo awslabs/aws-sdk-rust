@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rest_api::C
     }
 }
 
-pub use crate::operation::create_rest_api::_create_rest_api_output::CreateRestApiOutput;
-
 pub use crate::operation::create_rest_api::_create_rest_api_input::CreateRestApiInput;
+
+pub use crate::operation::create_rest_api::_create_rest_api_output::CreateRestApiOutput;
 
 mod _create_rest_api_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_from_recov
     }
 }
 
-pub use crate::operation::restore_from_recovery_point::_restore_from_recovery_point_output::RestoreFromRecoveryPointOutput;
-
 pub use crate::operation::restore_from_recovery_point::_restore_from_recovery_point_input::RestoreFromRecoveryPointInput;
+
+pub use crate::operation::restore_from_recovery_point::_restore_from_recovery_point_output::RestoreFromRecoveryPointOutput;
 
 mod _restore_from_recovery_point_input;
 

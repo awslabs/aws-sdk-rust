@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_custom_e
     }
 }
 
-pub use crate::operation::batch_get_custom_entity_types::_batch_get_custom_entity_types_output::BatchGetCustomEntityTypesOutput;
-
 pub use crate::operation::batch_get_custom_entity_types::_batch_get_custom_entity_types_input::BatchGetCustomEntityTypesInput;
+
+pub use crate::operation::batch_get_custom_entity_types::_batch_get_custom_entity_types_output::BatchGetCustomEntityTypesOutput;
 
 mod _batch_get_custom_entity_types_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_ve
     }
 }
 
-pub use crate::operation::get_application_version::_get_application_version_output::GetApplicationVersionOutput;
-
 pub use crate::operation::get_application_version::_get_application_version_input::GetApplicationVersionInput;
+
+pub use crate::operation::get_application_version::_get_application_version_output::GetApplicationVersionOutput;
 
 mod _get_application_version_input;
 

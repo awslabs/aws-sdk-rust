@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_monitors::Lis
     }
 }
 
-pub use crate::operation::list_monitors::_list_monitors_output::ListMonitorsOutput;
-
 pub use crate::operation::list_monitors::_list_monitors_input::ListMonitorsInput;
+
+pub use crate::operation::list_monitors::_list_monitors_output::ListMonitorsOutput;
 
 mod _list_monitors_input;
 

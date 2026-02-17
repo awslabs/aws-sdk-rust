@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_policy_version
     }
 }
 
-pub use crate::operation::get_policy_version::_get_policy_version_output::GetPolicyVersionOutput;
-
 pub use crate::operation::get_policy_version::_get_policy_version_input::GetPolicyVersionInput;
+
+pub use crate::operation::get_policy_version::_get_policy_version_output::GetPolicyVersionOutput;
 
 mod _get_policy_version_input;
 

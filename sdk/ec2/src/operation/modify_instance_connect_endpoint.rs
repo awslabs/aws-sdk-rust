@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_co
     }
 }
 
-pub use crate::operation::modify_instance_connect_endpoint::_modify_instance_connect_endpoint_output::ModifyInstanceConnectEndpointOutput;
-
 pub use crate::operation::modify_instance_connect_endpoint::_modify_instance_connect_endpoint_input::ModifyInstanceConnectEndpointInput;
+
+pub use crate::operation::modify_instance_connect_endpoint::_modify_instance_connect_endpoint_output::ModifyInstanceConnectEndpointOutput;
 
 mod _modify_instance_connect_endpoint_input;
 

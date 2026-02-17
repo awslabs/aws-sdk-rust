@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ml_labeling_
     }
 }
 
-pub use crate::operation::start_ml_labeling_set_generation_task_run::_start_ml_labeling_set_generation_task_run_output::StartMlLabelingSetGenerationTaskRunOutput;
-
 pub use crate::operation::start_ml_labeling_set_generation_task_run::_start_ml_labeling_set_generation_task_run_input::StartMlLabelingSetGenerationTaskRunInput;
+
+pub use crate::operation::start_ml_labeling_set_generation_task_run::_start_ml_labeling_set_generation_task_run_output::StartMlLabelingSetGenerationTaskRunOutput;
 
 mod _start_ml_labeling_set_generation_task_run_input;
 

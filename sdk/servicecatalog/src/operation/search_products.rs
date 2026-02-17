@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_products::S
     }
 }
 
-pub use crate::operation::search_products::_search_products_output::SearchProductsOutput;
-
 pub use crate::operation::search_products::_search_products_input::SearchProductsInput;
+
+pub use crate::operation::search_products::_search_products_output::SearchProductsOutput;
 
 mod _search_products_input;
 

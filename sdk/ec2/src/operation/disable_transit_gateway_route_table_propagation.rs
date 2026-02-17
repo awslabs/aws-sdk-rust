@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_transit_gateway_route_table_propagation::_disable_transit_gateway_route_table_propagation_output::DisableTransitGatewayRouteTablePropagationOutput;
-
 pub use crate::operation::disable_transit_gateway_route_table_propagation::_disable_transit_gateway_route_table_propagation_input::DisableTransitGatewayRouteTablePropagationInput;
+
+pub use crate::operation::disable_transit_gateway_route_table_propagation::_disable_transit_gateway_route_table_propagation_output::DisableTransitGatewayRouteTablePropagationOutput;
 
 mod _disable_transit_gateway_route_table_propagation_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_tags_to_certif
     }
 }
 
-pub use crate::operation::add_tags_to_certificate::_add_tags_to_certificate_output::AddTagsToCertificateOutput;
-
 pub use crate::operation::add_tags_to_certificate::_add_tags_to_certificate_input::AddTagsToCertificateInput;
+
+pub use crate::operation::add_tags_to_certificate::_add_tags_to_certificate_output::AddTagsToCertificateOutput;
 
 mod _add_tags_to_certificate_input;
 

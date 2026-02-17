@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_dynamic_thi
     }
 }
 
-pub use crate::operation::delete_dynamic_thing_group::_delete_dynamic_thing_group_output::DeleteDynamicThingGroupOutput;
-
 pub use crate::operation::delete_dynamic_thing_group::_delete_dynamic_thing_group_input::DeleteDynamicThingGroupInput;
+
+pub use crate::operation::delete_dynamic_thing_group::_delete_dynamic_thing_group_output::DeleteDynamicThingGroupOutput;
 
 mod _delete_dynamic_thing_group_input;
 

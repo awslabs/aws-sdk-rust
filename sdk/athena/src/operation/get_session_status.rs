@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_session_status
     }
 }
 
-pub use crate::operation::get_session_status::_get_session_status_output::GetSessionStatusOutput;
-
 pub use crate::operation::get_session_status::_get_session_status_input::GetSessionStatusInput;
+
+pub use crate::operation::get_session_status::_get_session_status_output::GetSessionStatusOutput;
 
 mod _get_session_status_input;
 

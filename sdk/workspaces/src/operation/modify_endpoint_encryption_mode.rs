@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_endpoint_en
     }
 }
 
-pub use crate::operation::modify_endpoint_encryption_mode::_modify_endpoint_encryption_mode_output::ModifyEndpointEncryptionModeOutput;
-
 pub use crate::operation::modify_endpoint_encryption_mode::_modify_endpoint_encryption_mode_input::ModifyEndpointEncryptionModeInput;
+
+pub use crate::operation::modify_endpoint_encryption_mode::_modify_endpoint_encryption_mode_output::ModifyEndpointEncryptionModeOutput;
 
 mod _modify_endpoint_encryption_mode_input;
 

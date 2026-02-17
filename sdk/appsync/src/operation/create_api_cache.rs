@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_api_cache::
     }
 }
 
-pub use crate::operation::create_api_cache::_create_api_cache_output::CreateApiCacheOutput;
-
 pub use crate::operation::create_api_cache::_create_api_cache_input::CreateApiCacheInput;
+
+pub use crate::operation::create_api_cache::_create_api_cache_output::CreateApiCacheOutput;
 
 mod _create_api_cache_input;
 

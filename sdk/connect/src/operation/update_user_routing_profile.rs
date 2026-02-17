@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_routin
     }
 }
 
-pub use crate::operation::update_user_routing_profile::_update_user_routing_profile_output::UpdateUserRoutingProfileOutput;
-
 pub use crate::operation::update_user_routing_profile::_update_user_routing_profile_input::UpdateUserRoutingProfileInput;
+
+pub use crate::operation::update_user_routing_profile::_update_user_routing_profile_output::UpdateUserRoutingProfileOutput;
 
 mod _update_user_routing_profile_input;
 

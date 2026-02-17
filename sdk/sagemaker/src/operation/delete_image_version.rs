@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_image_versi
     }
 }
 
-pub use crate::operation::delete_image_version::_delete_image_version_output::DeleteImageVersionOutput;
-
 pub use crate::operation::delete_image_version::_delete_image_version_input::DeleteImageVersionInput;
+
+pub use crate::operation::delete_image_version::_delete_image_version_output::DeleteImageVersionOutput;
 
 mod _delete_image_version_input;
 

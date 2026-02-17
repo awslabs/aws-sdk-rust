@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_effective
     }
 }
 
-pub use crate::operation::describe_effective_instance_associations::_describe_effective_instance_associations_output::DescribeEffectiveInstanceAssociationsOutput;
-
 pub use crate::operation::describe_effective_instance_associations::_describe_effective_instance_associations_input::DescribeEffectiveInstanceAssociationsInput;
+
+pub use crate::operation::describe_effective_instance_associations::_describe_effective_instance_associations_output::DescribeEffectiveInstanceAssociationsOutput;
 
 mod _describe_effective_instance_associations_input;
 

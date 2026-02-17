@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::archive_findings::
     }
 }
 
-pub use crate::operation::archive_findings::_archive_findings_output::ArchiveFindingsOutput;
-
 pub use crate::operation::archive_findings::_archive_findings_input::ArchiveFindingsInput;
+
+pub use crate::operation::archive_findings::_archive_findings_output::ArchiveFindingsOutput;
 
 mod _archive_findings_input;
 

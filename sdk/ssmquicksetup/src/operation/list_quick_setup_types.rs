@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_quick_setup_t
     }
 }
 
-pub use crate::operation::list_quick_setup_types::_list_quick_setup_types_output::ListQuickSetupTypesOutput;
-
 pub use crate::operation::list_quick_setup_types::_list_quick_setup_types_input::ListQuickSetupTypesInput;
+
+pub use crate::operation::list_quick_setup_types::_list_quick_setup_types_output::ListQuickSetupTypesOutput;
 
 mod _list_quick_setup_types_input;
 

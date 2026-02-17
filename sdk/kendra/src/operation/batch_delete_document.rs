@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_docum
     }
 }
 
-pub use crate::operation::batch_delete_document::_batch_delete_document_output::BatchDeleteDocumentOutput;
-
 pub use crate::operation::batch_delete_document::_batch_delete_document_input::BatchDeleteDocumentInput;
+
+pub use crate::operation::batch_delete_document::_batch_delete_document_output::BatchDeleteDocumentOutput;
 
 mod _batch_delete_document_input;
 

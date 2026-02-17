@@ -493,9 +493,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_data_
     }
 }
 
-pub use crate::operation::delete_event_data_store::_delete_event_data_store_output::DeleteEventDataStoreOutput;
-
 pub use crate::operation::delete_event_data_store::_delete_event_data_store_input::DeleteEventDataStoreInput;
+
+pub use crate::operation::delete_event_data_store::_delete_event_data_store_output::DeleteEventDataStoreOutput;
 
 mod _delete_event_data_store_input;
 

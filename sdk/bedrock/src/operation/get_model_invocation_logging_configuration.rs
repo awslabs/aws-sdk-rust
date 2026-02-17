@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_model_invocation_logging_configuration::_get_model_invocation_logging_configuration_output::GetModelInvocationLoggingConfigurationOutput;
-
 pub use crate::operation::get_model_invocation_logging_configuration::_get_model_invocation_logging_configuration_input::GetModelInvocationLoggingConfigurationInput;
+
+pub use crate::operation::get_model_invocation_logging_configuration::_get_model_invocation_logging_configuration_output::GetModelInvocationLoggingConfigurationOutput;
 
 mod _get_model_invocation_logging_configuration_input;
 

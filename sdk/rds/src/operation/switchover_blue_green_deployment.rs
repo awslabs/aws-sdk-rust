@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::switchover_blue_gr
     }
 }
 
-pub use crate::operation::switchover_blue_green_deployment::_switchover_blue_green_deployment_output::SwitchoverBlueGreenDeploymentOutput;
-
 pub use crate::operation::switchover_blue_green_deployment::_switchover_blue_green_deployment_input::SwitchoverBlueGreenDeploymentInput;
+
+pub use crate::operation::switchover_blue_green_deployment::_switchover_blue_green_deployment_output::SwitchoverBlueGreenDeploymentOutput;
 
 mod _switchover_blue_green_deployment_input;
 

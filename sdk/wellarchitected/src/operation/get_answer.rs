@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_answer::GetAns
     }
 }
 
-pub use crate::operation::get_answer::_get_answer_output::GetAnswerOutput;
-
 pub use crate::operation::get_answer::_get_answer_input::GetAnswerInput;
+
+pub use crate::operation::get_answer::_get_answer_output::GetAnswerOutput;
 
 mod _get_answer_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workforce::
     }
 }
 
-pub use crate::operation::update_workforce::_update_workforce_output::UpdateWorkforceOutput;
-
 pub use crate::operation::update_workforce::_update_workforce_input::UpdateWorkforceInput;
+
+pub use crate::operation::update_workforce::_update_workforce_output::UpdateWorkforceOutput;
 
 mod _update_workforce_input;
 

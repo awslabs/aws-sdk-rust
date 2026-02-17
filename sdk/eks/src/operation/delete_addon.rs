@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_addon::Dele
     }
 }
 
-pub use crate::operation::delete_addon::_delete_addon_output::DeleteAddonOutput;
-
 pub use crate::operation::delete_addon::_delete_addon_input::DeleteAddonInput;
+
+pub use crate::operation::delete_addon::_delete_addon_output::DeleteAddonOutput;
 
 mod _delete_addon_input;
 

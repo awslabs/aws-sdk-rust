@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_text_tran
     }
 }
 
-pub use crate::operation::describe_text_translation_job::_describe_text_translation_job_output::DescribeTextTranslationJobOutput;
-
 pub use crate::operation::describe_text_translation_job::_describe_text_translation_job_input::DescribeTextTranslationJobInput;
+
+pub use crate::operation::describe_text_translation_job::_describe_text_translation_job_output::DescribeTextTranslationJobOutput;
 
 mod _describe_text_translation_job_input;
 

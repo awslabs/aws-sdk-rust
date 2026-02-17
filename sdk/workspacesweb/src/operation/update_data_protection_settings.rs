@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_protec
     }
 }
 
-pub use crate::operation::update_data_protection_settings::_update_data_protection_settings_output::UpdateDataProtectionSettingsOutput;
-
 pub use crate::operation::update_data_protection_settings::_update_data_protection_settings_input::UpdateDataProtectionSettingsInput;
+
+pub use crate::operation::update_data_protection_settings::_update_data_protection_settings_output::UpdateDataProtectionSettingsOutput;
 
 mod _update_data_protection_settings_input;
 

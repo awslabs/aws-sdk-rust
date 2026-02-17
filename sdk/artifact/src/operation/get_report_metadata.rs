@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_report_metadat
     }
 }
 
-pub use crate::operation::get_report_metadata::_get_report_metadata_output::GetReportMetadataOutput;
-
 pub use crate::operation::get_report_metadata::_get_report_metadata_input::GetReportMetadataInput;
+
+pub use crate::operation::get_report_metadata::_get_report_metadata_output::GetReportMetadataOutput;
 
 mod _get_report_metadata_input;
 

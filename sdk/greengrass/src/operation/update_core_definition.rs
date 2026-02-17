@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_core_defini
     }
 }
 
-pub use crate::operation::update_core_definition::_update_core_definition_output::UpdateCoreDefinitionOutput;
-
 pub use crate::operation::update_core_definition::_update_core_definition_input::UpdateCoreDefinitionInput;
+
+pub use crate::operation::update_core_definition::_update_core_definition_output::UpdateCoreDefinitionOutput;
 
 mod _update_core_definition_input;
 

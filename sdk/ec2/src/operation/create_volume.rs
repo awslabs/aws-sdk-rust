@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_volume::Cre
     }
 }
 
-pub use crate::operation::create_volume::_create_volume_output::CreateVolumeOutput;
-
 pub use crate::operation::create_volume::_create_volume_input::CreateVolumeInput;
+
+pub use crate::operation::create_volume::_create_volume_output::CreateVolumeOutput;
 
 mod _create_volume_input;
 

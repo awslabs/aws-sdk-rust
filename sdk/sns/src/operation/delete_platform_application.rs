@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_platform_ap
     }
 }
 
-pub use crate::operation::delete_platform_application::_delete_platform_application_output::DeletePlatformApplicationOutput;
-
 pub use crate::operation::delete_platform_application::_delete_platform_application_input::DeletePlatformApplicationInput;
+
+pub use crate::operation::delete_platform_application::_delete_platform_application_output::DeletePlatformApplicationOutput;
 
 mod _delete_platform_application_input;
 

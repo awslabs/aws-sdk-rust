@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_automated_reas
     }
 }
 
-pub use crate::operation::get_automated_reasoning_policy_test_case::_get_automated_reasoning_policy_test_case_output::GetAutomatedReasoningPolicyTestCaseOutput;
-
 pub use crate::operation::get_automated_reasoning_policy_test_case::_get_automated_reasoning_policy_test_case_input::GetAutomatedReasoningPolicyTestCaseInput;
+
+pub use crate::operation::get_automated_reasoning_policy_test_case::_get_automated_reasoning_policy_test_case_output::GetAutomatedReasoningPolicyTestCaseOutput;
 
 mod _get_automated_reasoning_policy_test_case_input;
 

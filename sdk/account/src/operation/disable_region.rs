@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_region::Di
     }
 }
 
-pub use crate::operation::disable_region::_disable_region_output::DisableRegionOutput;
-
 pub use crate::operation::disable_region::_disable_region_input::DisableRegionInput;
+
+pub use crate::operation::disable_region::_disable_region_output::DisableRegionOutput;
 
 mod _disable_region_input;
 

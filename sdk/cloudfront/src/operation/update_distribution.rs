@@ -1043,9 +1043,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_distributio
     }
 }
 
-pub use crate::operation::update_distribution::_update_distribution_output::UpdateDistributionOutput;
-
 pub use crate::operation::update_distribution::_update_distribution_input::UpdateDistributionInput;
+
+pub use crate::operation::update_distribution::_update_distribution_output::UpdateDistributionOutput;
 
 mod _update_distribution_input;
 

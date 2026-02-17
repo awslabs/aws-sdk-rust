@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_thing_typ
     }
 }
 
-pub use crate::operation::describe_thing_type::_describe_thing_type_output::DescribeThingTypeOutput;
-
 pub use crate::operation::describe_thing_type::_describe_thing_type_input::DescribeThingTypeInput;
+
+pub use crate::operation::describe_thing_type::_describe_thing_type_output::DescribeThingTypeOutput;
 
 mod _describe_thing_type_input;
 

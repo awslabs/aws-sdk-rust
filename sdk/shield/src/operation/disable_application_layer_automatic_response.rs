@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_application_layer_automatic_response::_disable_application_layer_automatic_response_output::DisableApplicationLayerAutomaticResponseOutput;
-
 pub use crate::operation::disable_application_layer_automatic_response::_disable_application_layer_automatic_response_input::DisableApplicationLayerAutomaticResponseInput;
+
+pub use crate::operation::disable_application_layer_automatic_response::_disable_application_layer_automatic_response_output::DisableApplicationLayerAutomaticResponseOutput;
 
 mod _disable_application_layer_automatic_response_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_threat_entity
     }
 }
 
-pub use crate::operation::list_threat_entity_sets::_list_threat_entity_sets_output::ListThreatEntitySetsOutput;
-
 pub use crate::operation::list_threat_entity_sets::_list_threat_entity_sets_input::ListThreatEntitySetsInput;
+
+pub use crate::operation::list_threat_entity_sets::_list_threat_entity_sets_output::ListThreatEntitySetsOutput;
 
 mod _list_threat_entity_sets_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_data_sets::
     }
 }
 
-pub use crate::operation::search_data_sets::_search_data_sets_output::SearchDataSetsOutput;
-
 pub use crate::operation::search_data_sets::_search_data_sets_input::SearchDataSetsInput;
+
+pub use crate::operation::search_data_sets::_search_data_sets_output::SearchDataSetsOutput;
 
 mod _search_data_sets_input;
 

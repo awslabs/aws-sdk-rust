@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_associa
     }
 }
 
-pub use crate::operation::create_vpc_association_authorization::_create_vpc_association_authorization_output::CreateVpcAssociationAuthorizationOutput;
-
 pub use crate::operation::create_vpc_association_authorization::_create_vpc_association_authorization_input::CreateVpcAssociationAuthorizationInput;
+
+pub use crate::operation::create_vpc_association_authorization::_create_vpc_association_authorization_output::CreateVpcAssociationAuthorizationOutput;
 
 mod _create_vpc_association_authorization_input;
 

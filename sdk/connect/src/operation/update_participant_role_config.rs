@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_participant
     }
 }
 
-pub use crate::operation::update_participant_role_config::_update_participant_role_config_output::UpdateParticipantRoleConfigOutput;
-
 pub use crate::operation::update_participant_role_config::_update_participant_role_config_input::UpdateParticipantRoleConfigInput;
+
+pub use crate::operation::update_participant_role_config::_update_participant_role_config_output::UpdateParticipantRoleConfigOutput;
 
 mod _update_participant_role_config_input;
 

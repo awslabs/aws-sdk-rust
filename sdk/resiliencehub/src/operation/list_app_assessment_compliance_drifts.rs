@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_assessmen
     }
 }
 
-pub use crate::operation::list_app_assessment_compliance_drifts::_list_app_assessment_compliance_drifts_output::ListAppAssessmentComplianceDriftsOutput;
-
 pub use crate::operation::list_app_assessment_compliance_drifts::_list_app_assessment_compliance_drifts_input::ListAppAssessmentComplianceDriftsInput;
+
+pub use crate::operation::list_app_assessment_compliance_drifts::_list_app_assessment_compliance_drifts_output::ListAppAssessmentComplianceDriftsOutput;
 
 mod _list_app_assessment_compliance_drifts_input;
 

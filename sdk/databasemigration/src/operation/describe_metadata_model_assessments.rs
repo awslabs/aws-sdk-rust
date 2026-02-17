@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metadata_
     }
 }
 
-pub use crate::operation::describe_metadata_model_assessments::_describe_metadata_model_assessments_output::DescribeMetadataModelAssessmentsOutput;
-
 pub use crate::operation::describe_metadata_model_assessments::_describe_metadata_model_assessments_input::DescribeMetadataModelAssessmentsInput;
+
+pub use crate::operation::describe_metadata_model_assessments::_describe_metadata_model_assessments_output::DescribeMetadataModelAssessmentsOutput;
 
 mod _describe_metadata_model_assessments_input;
 

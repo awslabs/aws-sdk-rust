@@ -608,9 +608,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pull_reques
     }
 }
 
-pub use crate::operation::create_pull_request::_create_pull_request_output::CreatePullRequestOutput;
-
 pub use crate::operation::create_pull_request::_create_pull_request_input::CreatePullRequestInput;
+
+pub use crate::operation::create_pull_request::_create_pull_request_output::CreatePullRequestOutput;
 
 mod _create_pull_request_input;
 

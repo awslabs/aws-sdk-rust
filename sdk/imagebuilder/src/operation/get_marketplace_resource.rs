@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_marketplace_re
     }
 }
 
-pub use crate::operation::get_marketplace_resource::_get_marketplace_resource_output::GetMarketplaceResourceOutput;
-
 pub use crate::operation::get_marketplace_resource::_get_marketplace_resource_input::GetMarketplaceResourceInput;
+
+pub use crate::operation::get_marketplace_resource::_get_marketplace_resource_output::GetMarketplaceResourceOutput;
 
 mod _get_marketplace_resource_input;
 

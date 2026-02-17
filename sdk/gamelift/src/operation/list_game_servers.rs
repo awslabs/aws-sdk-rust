@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_game_servers:
     }
 }
 
-pub use crate::operation::list_game_servers::_list_game_servers_output::ListGameServersOutput;
-
 pub use crate::operation::list_game_servers::_list_game_servers_input::ListGameServersInput;
+
+pub use crate::operation::list_game_servers::_list_game_servers_output::ListGameServersOutput;
 
 mod _list_game_servers_input;
 

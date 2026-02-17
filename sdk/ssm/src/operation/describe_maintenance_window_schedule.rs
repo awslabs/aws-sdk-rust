@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_maintenan
     }
 }
 
-pub use crate::operation::describe_maintenance_window_schedule::_describe_maintenance_window_schedule_output::DescribeMaintenanceWindowScheduleOutput;
-
 pub use crate::operation::describe_maintenance_window_schedule::_describe_maintenance_window_schedule_input::DescribeMaintenanceWindowScheduleInput;
+
+pub use crate::operation::describe_maintenance_window_schedule::_describe_maintenance_window_schedule_output::DescribeMaintenanceWindowScheduleOutput;
 
 mod _describe_maintenance_window_schedule_input;
 

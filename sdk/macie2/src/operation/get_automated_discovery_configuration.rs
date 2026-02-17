@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_automated_disc
     }
 }
 
-pub use crate::operation::get_automated_discovery_configuration::_get_automated_discovery_configuration_output::GetAutomatedDiscoveryConfigurationOutput;
-
 pub use crate::operation::get_automated_discovery_configuration::_get_automated_discovery_configuration_input::GetAutomatedDiscoveryConfigurationInput;
+
+pub use crate::operation::get_automated_discovery_configuration::_get_automated_discovery_configuration_output::GetAutomatedDiscoveryConfigurationOutput;
 
 mod _get_automated_discovery_configuration_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vectors::List
     }
 }
 
-pub use crate::operation::list_vectors::_list_vectors_output::ListVectorsOutput;
-
 pub use crate::operation::list_vectors::_list_vectors_input::ListVectorsInput;
+
+pub use crate::operation::list_vectors::_list_vectors_output::ListVectorsOutput;
 
 mod _list_vectors_input;
 

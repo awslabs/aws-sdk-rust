@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_sm
     }
 }
 
-pub use crate::operation::update_location_smb::_update_location_smb_output::UpdateLocationSmbOutput;
-
 pub use crate::operation::update_location_smb::_update_location_smb_input::UpdateLocationSmbInput;
+
+pub use crate::operation::update_location_smb::_update_location_smb_output::UpdateLocationSmbOutput;
 
 mod _update_location_smb_input;
 

@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rate_based_ru
     }
 }
 
-pub use crate::operation::list_rate_based_rules::_list_rate_based_rules_output::ListRateBasedRulesOutput;
-
 pub use crate::operation::list_rate_based_rules::_list_rate_based_rules_input::ListRateBasedRulesInput;
+
+pub use crate::operation::list_rate_based_rules::_list_rate_based_rules_output::ListRateBasedRulesOutput;
 
 mod _list_rate_based_rules_input;
 

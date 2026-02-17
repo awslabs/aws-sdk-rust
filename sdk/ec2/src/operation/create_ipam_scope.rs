@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ipam_scope:
     }
 }
 
-pub use crate::operation::create_ipam_scope::_create_ipam_scope_output::CreateIpamScopeOutput;
-
 pub use crate::operation::create_ipam_scope::_create_ipam_scope_input::CreateIpamScopeInput;
+
+pub use crate::operation::create_ipam_scope::_create_ipam_scope_output::CreateIpamScopeOutput;
 
 mod _create_ipam_scope_input;
 

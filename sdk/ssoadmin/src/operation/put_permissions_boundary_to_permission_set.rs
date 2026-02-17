@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_permissions_bo
     }
 }
 
-pub use crate::operation::put_permissions_boundary_to_permission_set::_put_permissions_boundary_to_permission_set_output::PutPermissionsBoundaryToPermissionSetOutput;
-
 pub use crate::operation::put_permissions_boundary_to_permission_set::_put_permissions_boundary_to_permission_set_input::PutPermissionsBoundaryToPermissionSetInput;
+
+pub use crate::operation::put_permissions_boundary_to_permission_set::_put_permissions_boundary_to_permission_set_output::PutPermissionsBoundaryToPermissionSetOutput;
 
 mod _put_permissions_boundary_to_permission_set_input;
 

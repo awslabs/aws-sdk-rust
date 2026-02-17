@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_agent_profile
     }
 }
 
-pub use crate::operation::post_agent_profile::_post_agent_profile_output::PostAgentProfileOutput;
-
 pub use crate::operation::post_agent_profile::_post_agent_profile_input::PostAgentProfileInput;
+
+pub use crate::operation::post_agent_profile::_post_agent_profile_output::PostAgentProfileOutput;
 
 mod _post_agent_profile_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_flywheel::U
     }
 }
 
-pub use crate::operation::update_flywheel::_update_flywheel_output::UpdateFlywheelOutput;
-
 pub use crate::operation::update_flywheel::_update_flywheel_input::UpdateFlywheelInput;
+
+pub use crate::operation::update_flywheel::_update_flywheel_output::UpdateFlywheelOutput;
 
 mod _update_flywheel_input;
 

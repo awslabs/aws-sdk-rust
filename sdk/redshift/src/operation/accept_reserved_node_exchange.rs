@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_reserved_no
     }
 }
 
-pub use crate::operation::accept_reserved_node_exchange::_accept_reserved_node_exchange_output::AcceptReservedNodeExchangeOutput;
-
 pub use crate::operation::accept_reserved_node_exchange::_accept_reserved_node_exchange_input::AcceptReservedNodeExchangeInput;
+
+pub use crate::operation::accept_reserved_node_exchange::_accept_reserved_node_exchange_output::AcceptReservedNodeExchangeOutput;
 
 mod _accept_reserved_node_exchange_input;
 

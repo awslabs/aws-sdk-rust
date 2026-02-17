@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_ip_pools::M
     }
 }
 
-pub use crate::operation::modify_ip_pools::_modify_ip_pools_output::ModifyIpPoolsOutput;
-
 pub use crate::operation::modify_ip_pools::_modify_ip_pools_input::ModifyIpPoolsInput;
+
+pub use crate::operation::modify_ip_pools::_modify_ip_pools_output::ModifyIpPoolsOutput;
 
 mod _modify_ip_pools_input;
 

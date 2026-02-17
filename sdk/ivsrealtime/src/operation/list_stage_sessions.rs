@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stage_session
     }
 }
 
-pub use crate::operation::list_stage_sessions::_list_stage_sessions_output::ListStageSessionsOutput;
-
 pub use crate::operation::list_stage_sessions::_list_stage_sessions_input::ListStageSessionsInput;
+
+pub use crate::operation::list_stage_sessions::_list_stage_sessions_output::ListStageSessionsOutput;
 
 mod _list_stage_sessions_input;
 

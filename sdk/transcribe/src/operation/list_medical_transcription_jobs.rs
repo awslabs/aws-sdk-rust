@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_medical_trans
     }
 }
 
-pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcription_jobs_output::ListMedicalTranscriptionJobsOutput;
-
 pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcription_jobs_input::ListMedicalTranscriptionJobsInput;
+
+pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcription_jobs_output::ListMedicalTranscriptionJobsOutput;
 
 mod _list_medical_transcription_jobs_input;
 

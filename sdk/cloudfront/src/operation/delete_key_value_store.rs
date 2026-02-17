@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_key_value_s
     }
 }
 
-pub use crate::operation::delete_key_value_store::_delete_key_value_store_output::DeleteKeyValueStoreOutput;
-
 pub use crate::operation::delete_key_value_store::_delete_key_value_store_input::DeleteKeyValueStoreInput;
+
+pub use crate::operation::delete_key_value_store::_delete_key_value_store_output::DeleteKeyValueStoreOutput;
 
 mod _delete_key_value_store_input;
 

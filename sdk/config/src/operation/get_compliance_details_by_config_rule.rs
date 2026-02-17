@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compliance_det
     }
 }
 
-pub use crate::operation::get_compliance_details_by_config_rule::_get_compliance_details_by_config_rule_output::GetComplianceDetailsByConfigRuleOutput;
-
 pub use crate::operation::get_compliance_details_by_config_rule::_get_compliance_details_by_config_rule_input::GetComplianceDetailsByConfigRuleInput;
+
+pub use crate::operation::get_compliance_details_by_config_rule::_get_compliance_details_by_config_rule_output::GetComplianceDetailsByConfigRuleOutput;
 
 mod _get_compliance_details_by_config_rule_input;
 

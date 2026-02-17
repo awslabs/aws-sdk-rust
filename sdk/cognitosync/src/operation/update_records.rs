@@ -475,9 +475,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_records::Up
     }
 }
 
-pub use crate::operation::update_records::_update_records_output::UpdateRecordsOutput;
-
 pub use crate::operation::update_records::_update_records_input::UpdateRecordsInput;
+
+pub use crate::operation::update_records::_update_records_output::UpdateRecordsOutput;
 
 mod _update_records_input;
 

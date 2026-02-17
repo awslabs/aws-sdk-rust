@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_parameters_for
     }
 }
 
-pub use crate::operation::get_parameters_for_import::_get_parameters_for_import_output::GetParametersForImportOutput;
-
 pub use crate::operation::get_parameters_for_import::_get_parameters_for_import_input::GetParametersForImportInput;
+
+pub use crate::operation::get_parameters_for_import::_get_parameters_for_import_output::GetParametersForImportOutput;
 
 mod _get_parameters_for_import_input;
 

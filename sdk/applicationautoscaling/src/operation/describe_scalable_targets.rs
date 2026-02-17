@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scalable_
     }
 }
 
-pub use crate::operation::describe_scalable_targets::_describe_scalable_targets_output::DescribeScalableTargetsOutput;
-
 pub use crate::operation::describe_scalable_targets::_describe_scalable_targets_input::DescribeScalableTargetsInput;
+
+pub use crate::operation::describe_scalable_targets::_describe_scalable_targets_output::DescribeScalableTargetsOutput;
 
 mod _describe_scalable_targets_input;
 

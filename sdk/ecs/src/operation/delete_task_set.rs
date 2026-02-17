@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_task_set::D
     }
 }
 
-pub use crate::operation::delete_task_set::_delete_task_set_output::DeleteTaskSetOutput;
-
 pub use crate::operation::delete_task_set::_delete_task_set_input::DeleteTaskSetInput;
+
+pub use crate::operation::delete_task_set::_delete_task_set_output::DeleteTaskSetOutput;
 
 mod _delete_task_set_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_provisionin
     }
 }
 
-pub use crate::operation::delete_provisioning_template::_delete_provisioning_template_output::DeleteProvisioningTemplateOutput;
-
 pub use crate::operation::delete_provisioning_template::_delete_provisioning_template_input::DeleteProvisioningTemplateInput;
+
+pub use crate::operation::delete_provisioning_template::_delete_provisioning_template_output::DeleteProvisioningTemplateOutput;
 
 mod _delete_provisioning_template_input;
 

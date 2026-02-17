@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_directory_r
     }
 }
 
-pub use crate::operation::create_directory_registration::_create_directory_registration_output::CreateDirectoryRegistrationOutput;
-
 pub use crate::operation::create_directory_registration::_create_directory_registration_input::CreateDirectoryRegistrationInput;
+
+pub use crate::operation::create_directory_registration::_create_directory_registration_output::CreateDirectoryRegistrationOutput;
 
 mod _create_directory_registration_input;
 

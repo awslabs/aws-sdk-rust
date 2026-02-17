@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_image_permi
     }
 }
 
-pub use crate::operation::delete_image_permissions::_delete_image_permissions_output::DeleteImagePermissionsOutput;
-
 pub use crate::operation::delete_image_permissions::_delete_image_permissions_input::DeleteImagePermissionsInput;
+
+pub use crate::operation::delete_image_permissions::_delete_image_permissions_output::DeleteImagePermissionsOutput;
 
 mod _delete_image_permissions_input;
 

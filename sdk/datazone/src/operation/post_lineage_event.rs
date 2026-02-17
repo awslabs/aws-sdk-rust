@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_lineage_event
     }
 }
 
-pub use crate::operation::post_lineage_event::_post_lineage_event_output::PostLineageEventOutput;
-
 pub use crate::operation::post_lineage_event::_post_lineage_event_input::PostLineageEventInput;
+
+pub use crate::operation::post_lineage_event::_post_lineage_event_output::PostLineageEventOutput;
 
 mod _post_lineage_event_input;
 

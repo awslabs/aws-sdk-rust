@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_activation_co
     }
 }
 
-pub use crate::operation::send_activation_code::_send_activation_code_output::SendActivationCodeOutput;
-
 pub use crate::operation::send_activation_code::_send_activation_code_input::SendActivationCodeInput;
+
+pub use crate::operation::send_activation_code::_send_activation_code_output::SendActivationCodeOutput;
 
 mod _send_activation_code_input;
 

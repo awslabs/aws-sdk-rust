@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_installed_com
     }
 }
 
-pub use crate::operation::list_installed_components::_list_installed_components_output::ListInstalledComponentsOutput;
-
 pub use crate::operation::list_installed_components::_list_installed_components_input::ListInstalledComponentsInput;
+
+pub use crate::operation::list_installed_components::_list_installed_components_output::ListInstalledComponentsOutput;
 
 mod _list_installed_components_input;
 

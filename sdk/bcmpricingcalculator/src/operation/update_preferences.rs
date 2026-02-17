@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_preferences
     }
 }
 
-pub use crate::operation::update_preferences::_update_preferences_output::UpdatePreferencesOutput;
-
 pub use crate::operation::update_preferences::_update_preferences_input::UpdatePreferencesInput;
+
+pub use crate::operation::update_preferences::_update_preferences_output::UpdatePreferencesOutput;
 
 mod _update_preferences_input;
 

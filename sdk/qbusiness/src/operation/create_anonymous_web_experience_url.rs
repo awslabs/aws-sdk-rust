@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_anonymous_w
     }
 }
 
-pub use crate::operation::create_anonymous_web_experience_url::_create_anonymous_web_experience_url_output::CreateAnonymousWebExperienceUrlOutput;
-
 pub use crate::operation::create_anonymous_web_experience_url::_create_anonymous_web_experience_url_input::CreateAnonymousWebExperienceUrlInput;
+
+pub use crate::operation::create_anonymous_web_experience_url::_create_anonymous_web_experience_url_output::CreateAnonymousWebExperienceUrlOutput;
 
 mod _create_anonymous_web_experience_url_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_declarati
     }
 }
 
-pub use crate::operation::describe_declarative_policies_reports::_describe_declarative_policies_reports_output::DescribeDeclarativePoliciesReportsOutput;
-
 pub use crate::operation::describe_declarative_policies_reports::_describe_declarative_policies_reports_input::DescribeDeclarativePoliciesReportsInput;
+
+pub use crate::operation::describe_declarative_policies_reports::_describe_declarative_policies_reports_output::DescribeDeclarativePoliciesReportsOutput;
 
 mod _describe_declarative_policies_reports_input;
 

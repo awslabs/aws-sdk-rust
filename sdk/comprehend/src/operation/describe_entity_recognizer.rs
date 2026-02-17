@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_entity_re
     }
 }
 
-pub use crate::operation::describe_entity_recognizer::_describe_entity_recognizer_output::DescribeEntityRecognizerOutput;
-
 pub use crate::operation::describe_entity_recognizer::_describe_entity_recognizer_input::DescribeEntityRecognizerInput;
+
+pub use crate::operation::describe_entity_recognizer::_describe_entity_recognizer_output::DescribeEntityRecognizerOutput;
 
 mod _describe_entity_recognizer_input;
 

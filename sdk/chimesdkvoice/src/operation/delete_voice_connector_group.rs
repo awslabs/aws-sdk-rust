@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_conne
     }
 }
 
-pub use crate::operation::delete_voice_connector_group::_delete_voice_connector_group_output::DeleteVoiceConnectorGroupOutput;
-
 pub use crate::operation::delete_voice_connector_group::_delete_voice_connector_group_input::DeleteVoiceConnectorGroupInput;
+
+pub use crate::operation::delete_voice_connector_group::_delete_voice_connector_group_output::DeleteVoiceConnectorGroupOutput;
 
 mod _delete_voice_connector_group_input;
 

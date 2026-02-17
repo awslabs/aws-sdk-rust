@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_acknowledge_
     }
 }
 
-pub use crate::operation::batch_acknowledge_alarm::_batch_acknowledge_alarm_output::BatchAcknowledgeAlarmOutput;
-
 pub use crate::operation::batch_acknowledge_alarm::_batch_acknowledge_alarm_input::BatchAcknowledgeAlarmInput;
+
+pub use crate::operation::batch_acknowledge_alarm::_batch_acknowledge_alarm_output::BatchAcknowledgeAlarmOutput;
 
 mod _batch_acknowledge_alarm_input;
 

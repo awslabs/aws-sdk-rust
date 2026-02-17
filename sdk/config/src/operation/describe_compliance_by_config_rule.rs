@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_complianc
     }
 }
 
-pub use crate::operation::describe_compliance_by_config_rule::_describe_compliance_by_config_rule_output::DescribeComplianceByConfigRuleOutput;
-
 pub use crate::operation::describe_compliance_by_config_rule::_describe_compliance_by_config_rule_input::DescribeComplianceByConfigRuleInput;
+
+pub use crate::operation::describe_compliance_by_config_rule::_describe_compliance_by_config_rule_output::DescribeComplianceByConfigRuleOutput;
 
 mod _describe_compliance_by_config_rule_input;
 

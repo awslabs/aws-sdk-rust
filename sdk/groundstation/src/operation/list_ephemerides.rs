@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ephemerides::
     }
 }
 
-pub use crate::operation::list_ephemerides::_list_ephemerides_output::ListEphemeridesOutput;
-
 pub use crate::operation::list_ephemerides::_list_ephemerides_input::ListEphemeridesInput;
+
+pub use crate::operation::list_ephemerides::_list_ephemerides_output::ListEphemeridesOutput;
 
 mod _list_ephemerides_input;
 

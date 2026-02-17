@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_field_level_e
     }
 }
 
-pub use crate::operation::list_field_level_encryption_configs::_list_field_level_encryption_configs_output::ListFieldLevelEncryptionConfigsOutput;
-
 pub use crate::operation::list_field_level_encryption_configs::_list_field_level_encryption_configs_input::ListFieldLevelEncryptionConfigsInput;
+
+pub use crate::operation::list_field_level_encryption_configs::_list_field_level_encryption_configs_output::ListFieldLevelEncryptionConfigsOutput;
 
 mod _list_field_level_encryption_configs_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cluster_policy
     }
 }
 
-pub use crate::operation::get_cluster_policy::_get_cluster_policy_output::GetClusterPolicyOutput;
-
 pub use crate::operation::get_cluster_policy::_get_cluster_policy_input::GetClusterPolicyInput;
+
+pub use crate::operation::get_cluster_policy::_get_cluster_policy_output::GetClusterPolicyOutput;
 
 mod _get_cluster_policy_input;
 

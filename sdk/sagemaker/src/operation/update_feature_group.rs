@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_feature_gro
     }
 }
 
-pub use crate::operation::update_feature_group::_update_feature_group_output::UpdateFeatureGroupOutput;
-
 pub use crate::operation::update_feature_group::_update_feature_group_input::UpdateFeatureGroupInput;
+
+pub use crate::operation::update_feature_group::_update_feature_group_output::UpdateFeatureGroupOutput;
 
 mod _update_feature_group_input;
 

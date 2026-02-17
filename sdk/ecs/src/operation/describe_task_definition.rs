@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_task_defi
     }
 }
 
-pub use crate::operation::describe_task_definition::_describe_task_definition_output::DescribeTaskDefinitionOutput;
-
 pub use crate::operation::describe_task_definition::_describe_task_definition_input::DescribeTaskDefinitionInput;
+
+pub use crate::operation::describe_task_definition::_describe_task_definition_output::DescribeTaskDefinitionOutput;
 
 mod _describe_task_definition_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_modify_clust
     }
 }
 
-pub use crate::operation::batch_modify_cluster_snapshots::_batch_modify_cluster_snapshots_output::BatchModifyClusterSnapshotsOutput;
-
 pub use crate::operation::batch_modify_cluster_snapshots::_batch_modify_cluster_snapshots_input::BatchModifyClusterSnapshotsInput;
+
+pub use crate::operation::batch_modify_cluster_snapshots::_batch_modify_cluster_snapshots_output::BatchModifyClusterSnapshotsOutput;
 
 mod _batch_modify_cluster_snapshots_input;
 

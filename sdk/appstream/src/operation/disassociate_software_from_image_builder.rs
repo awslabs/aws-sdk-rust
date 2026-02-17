@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_softw
     }
 }
 
-pub use crate::operation::disassociate_software_from_image_builder::_disassociate_software_from_image_builder_output::DisassociateSoftwareFromImageBuilderOutput;
-
 pub use crate::operation::disassociate_software_from_image_builder::_disassociate_software_from_image_builder_input::DisassociateSoftwareFromImageBuilderInput;
+
+pub use crate::operation::disassociate_software_from_image_builder::_disassociate_software_from_image_builder_output::DisassociateSoftwareFromImageBuilderOutput;
 
 mod _disassociate_software_from_image_builder_input;
 

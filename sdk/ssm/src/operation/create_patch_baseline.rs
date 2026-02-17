@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_patch_basel
     }
 }
 
-pub use crate::operation::create_patch_baseline::_create_patch_baseline_output::CreatePatchBaselineOutput;
-
 pub use crate::operation::create_patch_baseline::_create_patch_baseline_input::CreatePatchBaselineInput;
+
+pub use crate::operation::create_patch_baseline::_create_patch_baseline_output::CreatePatchBaselineOutput;
 
 mod _create_patch_baseline_input;
 

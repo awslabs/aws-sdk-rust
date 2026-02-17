@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_phone_number::
     }
 }
 
-pub use crate::operation::get_phone_number::_get_phone_number_output::GetPhoneNumberOutput;
-
 pub use crate::operation::get_phone_number::_get_phone_number_input::GetPhoneNumberInput;
+
+pub use crate::operation::get_phone_number::_get_phone_number_output::GetPhoneNumberOutput;
 
 mod _get_phone_number_input;
 

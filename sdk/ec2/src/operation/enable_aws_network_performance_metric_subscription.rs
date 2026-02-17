@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_aws_network_performance_metric_subscription::_enable_aws_network_performance_metric_subscription_output::EnableAwsNetworkPerformanceMetricSubscriptionOutput;
-
 pub use crate::operation::enable_aws_network_performance_metric_subscription::_enable_aws_network_performance_metric_subscription_input::EnableAwsNetworkPerformanceMetricSubscriptionInput;
+
+pub use crate::operation::enable_aws_network_performance_metric_subscription::_enable_aws_network_performance_metric_subscription_output::EnableAwsNetworkPerformanceMetricSubscriptionOutput;
 
 mod _enable_aws_network_performance_metric_subscription_input;
 

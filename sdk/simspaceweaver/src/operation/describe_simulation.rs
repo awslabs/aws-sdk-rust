@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_simulatio
     }
 }
 
-pub use crate::operation::describe_simulation::_describe_simulation_output::DescribeSimulationOutput;
-
 pub use crate::operation::describe_simulation::_describe_simulation_input::DescribeSimulationInput;
+
+pub use crate::operation::describe_simulation::_describe_simulation_output::DescribeSimulationOutput;
 
 mod _describe_simulation_input;
 

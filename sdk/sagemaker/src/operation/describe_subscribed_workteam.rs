@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_subscribe
     }
 }
 
-pub use crate::operation::describe_subscribed_workteam::_describe_subscribed_workteam_output::DescribeSubscribedWorkteamOutput;
-
 pub use crate::operation::describe_subscribed_workteam::_describe_subscribed_workteam_input::DescribeSubscribedWorkteamInput;
+
+pub use crate::operation::describe_subscribed_workteam::_describe_subscribed_workteam_output::DescribeSubscribedWorkteamOutput;
 
 mod _describe_subscribed_workteam_input;
 

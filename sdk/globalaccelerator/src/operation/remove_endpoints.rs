@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_endpoints::
     }
 }
 
-pub use crate::operation::remove_endpoints::_remove_endpoints_output::RemoveEndpointsOutput;
-
 pub use crate::operation::remove_endpoints::_remove_endpoints_input::RemoveEndpointsInput;
+
+pub use crate::operation::remove_endpoints::_remove_endpoints_output::RemoveEndpointsOutput;
 
 mod _remove_endpoints_input;
 

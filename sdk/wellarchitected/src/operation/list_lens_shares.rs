@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lens_shares::
     }
 }
 
-pub use crate::operation::list_lens_shares::_list_lens_shares_output::ListLensSharesOutput;
-
 pub use crate::operation::list_lens_shares::_list_lens_shares_input::ListLensSharesInput;
+
+pub use crate::operation::list_lens_shares::_list_lens_shares_output::ListLensSharesOutput;
 
 mod _list_lens_shares_input;
 

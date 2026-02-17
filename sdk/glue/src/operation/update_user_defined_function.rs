@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_define
     }
 }
 
-pub use crate::operation::update_user_defined_function::_update_user_defined_function_output::UpdateUserDefinedFunctionOutput;
-
 pub use crate::operation::update_user_defined_function::_update_user_defined_function_input::UpdateUserDefinedFunctionInput;
+
+pub use crate::operation::update_user_defined_function::_update_user_defined_function_output::UpdateUserDefinedFunctionOutput;
 
 mod _update_user_defined_function_input;
 

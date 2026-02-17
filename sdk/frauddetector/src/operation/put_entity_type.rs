@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_entity_type::P
     }
 }
 
-pub use crate::operation::put_entity_type::_put_entity_type_output::PutEntityTypeOutput;
-
 pub use crate::operation::put_entity_type::_put_entity_type_input::PutEntityTypeInput;
+
+pub use crate::operation::put_entity_type::_put_entity_type_output::PutEntityTypeOutput;
 
 mod _put_entity_type_input;
 

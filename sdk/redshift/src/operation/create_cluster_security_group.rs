@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cluster_sec
     }
 }
 
-pub use crate::operation::create_cluster_security_group::_create_cluster_security_group_output::CreateClusterSecurityGroupOutput;
-
 pub use crate::operation::create_cluster_security_group::_create_cluster_security_group_input::CreateClusterSecurityGroupInput;
+
+pub use crate::operation::create_cluster_security_group::_create_cluster_security_group_output::CreateClusterSecurityGroupOutput;
 
 mod _create_cluster_security_group_input;
 

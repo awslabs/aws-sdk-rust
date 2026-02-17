@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queue_quick_c
     }
 }
 
-pub use crate::operation::list_queue_quick_connects::_list_queue_quick_connects_output::ListQueueQuickConnectsOutput;
-
 pub use crate::operation::list_queue_quick_connects::_list_queue_quick_connects_input::ListQueueQuickConnectsInput;
+
+pub use crate::operation::list_queue_quick_connects::_list_queue_quick_connects_output::ListQueueQuickConnectsOutput;
 
 mod _list_queue_quick_connects_input;
 

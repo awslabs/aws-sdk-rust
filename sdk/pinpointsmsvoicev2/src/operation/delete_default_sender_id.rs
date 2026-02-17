@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_default_sen
     }
 }
 
-pub use crate::operation::delete_default_sender_id::_delete_default_sender_id_output::DeleteDefaultSenderIdOutput;
-
 pub use crate::operation::delete_default_sender_id::_delete_default_sender_id_input::DeleteDefaultSenderIdInput;
+
+pub use crate::operation::delete_default_sender_id::_delete_default_sender_id_output::DeleteDefaultSenderIdOutput;
 
 mod _delete_default_sender_id_input;
 

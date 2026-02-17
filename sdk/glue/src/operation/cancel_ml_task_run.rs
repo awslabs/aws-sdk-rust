@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_ml_task_run
     }
 }
 
-pub use crate::operation::cancel_ml_task_run::_cancel_ml_task_run_output::CancelMlTaskRunOutput;
-
 pub use crate::operation::cancel_ml_task_run::_cancel_ml_task_run_input::CancelMlTaskRunInput;
+
+pub use crate::operation::cancel_ml_task_run::_cancel_ml_task_run_output::CancelMlTaskRunOutput;
 
 mod _cancel_ml_task_run_input;
 

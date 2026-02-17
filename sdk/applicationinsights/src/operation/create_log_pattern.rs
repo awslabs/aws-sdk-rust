@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_log_pattern
     }
 }
 
-pub use crate::operation::create_log_pattern::_create_log_pattern_output::CreateLogPatternOutput;
-
 pub use crate::operation::create_log_pattern::_create_log_pattern_input::CreateLogPatternInput;
+
+pub use crate::operation::create_log_pattern::_create_log_pattern_output::CreateLogPatternOutput;
 
 mod _create_log_pattern_input;
 

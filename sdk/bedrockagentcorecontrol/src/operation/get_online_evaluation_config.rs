@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_online_evaluat
     }
 }
 
-pub use crate::operation::get_online_evaluation_config::_get_online_evaluation_config_output::GetOnlineEvaluationConfigOutput;
-
 pub use crate::operation::get_online_evaluation_config::_get_online_evaluation_config_input::GetOnlineEvaluationConfigInput;
+
+pub use crate::operation::get_online_evaluation_config::_get_online_evaluation_config_output::GetOnlineEvaluationConfigOutput;
 
 mod _get_online_evaluation_config_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_workl
     }
 }
 
-pub use crate::operation::batch_delete_workload_estimate_usage::_batch_delete_workload_estimate_usage_output::BatchDeleteWorkloadEstimateUsageOutput;
-
 pub use crate::operation::batch_delete_workload_estimate_usage::_batch_delete_workload_estimate_usage_input::BatchDeleteWorkloadEstimateUsageInput;
+
+pub use crate::operation::batch_delete_workload_estimate_usage::_batch_delete_workload_estimate_usage_output::BatchDeleteWorkloadEstimateUsageOutput;
 
 mod _batch_delete_workload_estimate_usage_input;
 

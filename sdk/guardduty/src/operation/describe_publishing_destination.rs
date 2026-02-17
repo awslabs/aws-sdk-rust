@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_publishin
     }
 }
 
-pub use crate::operation::describe_publishing_destination::_describe_publishing_destination_output::DescribePublishingDestinationOutput;
-
 pub use crate::operation::describe_publishing_destination::_describe_publishing_destination_input::DescribePublishingDestinationInput;
+
+pub use crate::operation::describe_publishing_destination::_describe_publishing_destination_output::DescribePublishingDestinationOutput;
 
 mod _describe_publishing_destination_input;
 

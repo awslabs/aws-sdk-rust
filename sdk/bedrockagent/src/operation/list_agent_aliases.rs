@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_aliases
     }
 }
 
-pub use crate::operation::list_agent_aliases::_list_agent_aliases_output::ListAgentAliasesOutput;
-
 pub use crate::operation::list_agent_aliases::_list_agent_aliases_input::ListAgentAliasesInput;
+
+pub use crate::operation::list_agent_aliases::_list_agent_aliases_output::ListAgentAliasesOutput;
 
 mod _list_agent_aliases_input;
 

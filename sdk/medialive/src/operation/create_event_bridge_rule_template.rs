@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_bridg
     }
 }
 
-pub use crate::operation::create_event_bridge_rule_template::_create_event_bridge_rule_template_output::CreateEventBridgeRuleTemplateOutput;
-
 pub use crate::operation::create_event_bridge_rule_template::_create_event_bridge_rule_template_input::CreateEventBridgeRuleTemplateInput;
+
+pub use crate::operation::create_event_bridge_rule_template::_create_event_bridge_rule_template_output::CreateEventBridgeRuleTemplateOutput;
 
 mod _create_event_bridge_rule_template_input;
 

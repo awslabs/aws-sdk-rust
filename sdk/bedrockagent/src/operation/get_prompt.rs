@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_prompt::GetPro
     }
 }
 
-pub use crate::operation::get_prompt::_get_prompt_output::GetPromptOutput;
-
 pub use crate::operation::get_prompt::_get_prompt_input::GetPromptInput;
+
+pub use crate::operation::get_prompt::_get_prompt_output::GetPromptOutput;
 
 mod _get_prompt_input;
 

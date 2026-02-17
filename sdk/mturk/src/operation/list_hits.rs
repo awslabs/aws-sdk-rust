@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hits::ListHIT
     }
 }
 
-pub use crate::operation::list_hits::_list_hits_output::ListHiTsOutput;
-
 pub use crate::operation::list_hits::_list_hits_input::ListHiTsInput;
+
+pub use crate::operation::list_hits::_list_hits_output::ListHiTsOutput;
 
 mod _list_hits_input;
 

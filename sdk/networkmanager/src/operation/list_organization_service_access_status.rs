@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_organization_
     }
 }
 
-pub use crate::operation::list_organization_service_access_status::_list_organization_service_access_status_output::ListOrganizationServiceAccessStatusOutput;
-
 pub use crate::operation::list_organization_service_access_status::_list_organization_service_access_status_input::ListOrganizationServiceAccessStatusInput;
+
+pub use crate::operation::list_organization_service_access_status::_list_organization_service_access_status_output::ListOrganizationServiceAccessStatusOutput;
 
 mod _list_organization_service_access_status_input;
 

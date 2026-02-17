@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_message_bat
     }
 }
 
-pub use crate::operation::delete_message_batch::_delete_message_batch_output::DeleteMessageBatchOutput;
-
 pub use crate::operation::delete_message_batch::_delete_message_batch_input::DeleteMessageBatchInput;
+
+pub use crate::operation::delete_message_batch::_delete_message_batch_output::DeleteMessageBatchOutput;
 
 mod _delete_message_batch_input;
 

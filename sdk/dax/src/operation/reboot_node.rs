@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_node::Reboo
     }
 }
 
-pub use crate::operation::reboot_node::_reboot_node_output::RebootNodeOutput;
-
 pub use crate::operation::reboot_node::_reboot_node_input::RebootNodeInput;
+
+pub use crate::operation::reboot_node::_reboot_node_output::RebootNodeOutput;
 
 mod _reboot_node_input;
 

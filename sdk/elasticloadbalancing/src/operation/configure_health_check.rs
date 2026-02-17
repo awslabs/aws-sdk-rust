@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::configure_health_c
     }
 }
 
-pub use crate::operation::configure_health_check::_configure_health_check_output::ConfigureHealthCheckOutput;
-
 pub use crate::operation::configure_health_check::_configure_health_check_input::ConfigureHealthCheckInput;
+
+pub use crate::operation::configure_health_check::_configure_health_check_output::ConfigureHealthCheckOutput;
 
 mod _configure_health_check_input;
 

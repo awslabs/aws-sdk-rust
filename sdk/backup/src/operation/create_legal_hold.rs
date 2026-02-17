@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_legal_hold:
     }
 }
 
-pub use crate::operation::create_legal_hold::_create_legal_hold_output::CreateLegalHoldOutput;
-
 pub use crate::operation::create_legal_hold::_create_legal_hold_input::CreateLegalHoldInput;
+
+pub use crate::operation::create_legal_hold::_create_legal_hold_output::CreateLegalHoldOutput;
 
 mod _create_legal_hold_input;
 

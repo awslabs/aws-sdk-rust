@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::select_object_cont
     }
 }
 
-pub use crate::operation::select_object_content::_select_object_content_output::SelectObjectContentOutput;
-
 pub use crate::operation::select_object_content::_select_object_content_input::SelectObjectContentInput;
+
+pub use crate::operation::select_object_content::_select_object_content_output::SelectObjectContentOutput;
 
 mod _select_object_content_input;
 

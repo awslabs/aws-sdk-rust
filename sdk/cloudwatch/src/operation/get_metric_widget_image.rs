@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metric_widget_
     }
 }
 
-pub use crate::operation::get_metric_widget_image::_get_metric_widget_image_output::GetMetricWidgetImageOutput;
-
 pub use crate::operation::get_metric_widget_image::_get_metric_widget_image_input::GetMetricWidgetImageInput;
+
+pub use crate::operation::get_metric_widget_image::_get_metric_widget_image_output::GetMetricWidgetImageOutput;
 
 mod _get_metric_widget_image_input;
 

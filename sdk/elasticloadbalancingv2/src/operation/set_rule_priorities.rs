@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_rule_prioritie
     }
 }
 
-pub use crate::operation::set_rule_priorities::_set_rule_priorities_output::SetRulePrioritiesOutput;
-
 pub use crate::operation::set_rule_priorities::_set_rule_priorities_input::SetRulePrioritiesInput;
+
+pub use crate::operation::set_rule_priorities::_set_rule_priorities_output::SetRulePrioritiesOutput;
 
 mod _set_rule_priorities_input;
 

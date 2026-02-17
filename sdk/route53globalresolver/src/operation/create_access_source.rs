@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_sour
     }
 }
 
-pub use crate::operation::create_access_source::_create_access_source_output::CreateAccessSourceOutput;
-
 pub use crate::operation::create_access_source::_create_access_source_input::CreateAccessSourceInput;
+
+pub use crate::operation::create_access_source::_create_access_source_output::CreateAccessSourceOutput;
 
 mod _create_access_source_input;
 

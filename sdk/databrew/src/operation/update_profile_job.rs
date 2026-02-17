@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_profile_job
     }
 }
 
-pub use crate::operation::update_profile_job::_update_profile_job_output::UpdateProfileJobOutput;
-
 pub use crate::operation::update_profile_job::_update_profile_job_input::UpdateProfileJobInput;
+
+pub use crate::operation::update_profile_job::_update_profile_job_output::UpdateProfileJobOutput;
 
 mod _update_profile_job_input;
 

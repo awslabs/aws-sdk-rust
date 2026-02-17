@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ai_guardrai
     }
 }
 
-pub use crate::operation::update_ai_guardrail::_update_ai_guardrail_output::UpdateAiGuardrailOutput;
-
 pub use crate::operation::update_ai_guardrail::_update_ai_guardrail_input::UpdateAiGuardrailInput;
+
+pub use crate::operation::update_ai_guardrail::_update_ai_guardrail_output::UpdateAiGuardrailOutput;
 
 mod _update_ai_guardrail_input;
 

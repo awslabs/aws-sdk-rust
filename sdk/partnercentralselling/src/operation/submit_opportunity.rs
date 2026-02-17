@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_opportunity
     }
 }
 
-pub use crate::operation::submit_opportunity::_submit_opportunity_output::SubmitOpportunityOutput;
-
 pub use crate::operation::submit_opportunity::_submit_opportunity_input::SubmitOpportunityInput;
+
+pub use crate::operation::submit_opportunity::_submit_opportunity_output::SubmitOpportunityOutput;
 
 mod _submit_opportunity_input;
 

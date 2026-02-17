@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ota_task_co
     }
 }
 
-pub use crate::operation::delete_ota_task_configuration::_delete_ota_task_configuration_output::DeleteOtaTaskConfigurationOutput;
-
 pub use crate::operation::delete_ota_task_configuration::_delete_ota_task_configuration_input::DeleteOtaTaskConfigurationInput;
+
+pub use crate::operation::delete_ota_task_configuration::_delete_ota_task_configuration_output::DeleteOtaTaskConfigurationOutput;
 
 mod _delete_ota_task_configuration_input;
 

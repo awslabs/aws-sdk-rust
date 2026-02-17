@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_reset_alarm:
     }
 }
 
-pub use crate::operation::batch_reset_alarm::_batch_reset_alarm_output::BatchResetAlarmOutput;
-
 pub use crate::operation::batch_reset_alarm::_batch_reset_alarm_input::BatchResetAlarmInput;
+
+pub use crate::operation::batch_reset_alarm::_batch_reset_alarm_output::BatchResetAlarmOutput;
 
 mod _batch_reset_alarm_input;
 

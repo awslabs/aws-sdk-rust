@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entitled_appl
     }
 }
 
-pub use crate::operation::list_entitled_applications::_list_entitled_applications_output::ListEntitledApplicationsOutput;
-
 pub use crate::operation::list_entitled_applications::_list_entitled_applications_input::ListEntitledApplicationsInput;
+
+pub use crate::operation::list_entitled_applications::_list_entitled_applications_output::ListEntitledApplicationsOutput;
 
 mod _list_entitled_applications_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_replication
     }
 }
 
-pub use crate::operation::delete_replication_subnet_group::_delete_replication_subnet_group_output::DeleteReplicationSubnetGroupOutput;
-
 pub use crate::operation::delete_replication_subnet_group::_delete_replication_subnet_group_input::DeleteReplicationSubnetGroupInput;
+
+pub use crate::operation::delete_replication_subnet_group::_delete_replication_subnet_group_output::DeleteReplicationSubnetGroupOutput;
 
 mod _delete_replication_subnet_group_input;
 

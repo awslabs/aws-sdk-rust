@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_face_livene
     }
 }
 
-pub use crate::operation::create_face_liveness_session::_create_face_liveness_session_output::CreateFaceLivenessSessionOutput;
-
 pub use crate::operation::create_face_liveness_session::_create_face_liveness_session_input::CreateFaceLivenessSessionInput;
+
+pub use crate::operation::create_face_liveness_session::_create_face_liveness_session_output::CreateFaceLivenessSessionOutput;
 
 mod _create_face_liveness_session_input;
 

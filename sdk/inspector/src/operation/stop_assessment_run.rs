@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_assessment_ru
     }
 }
 
-pub use crate::operation::stop_assessment_run::_stop_assessment_run_output::StopAssessmentRunOutput;
-
 pub use crate::operation::stop_assessment_run::_stop_assessment_run_input::StopAssessmentRunInput;
+
+pub use crate::operation::stop_assessment_run::_stop_assessment_run_output::StopAssessmentRunOutput;
 
 mod _stop_assessment_run_input;
 

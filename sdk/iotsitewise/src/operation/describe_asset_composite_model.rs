@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_asset_com
     }
 }
 
-pub use crate::operation::describe_asset_composite_model::_describe_asset_composite_model_output::DescribeAssetCompositeModelOutput;
-
 pub use crate::operation::describe_asset_composite_model::_describe_asset_composite_model_input::DescribeAssetCompositeModelInput;
+
+pub use crate::operation::describe_asset_composite_model::_describe_asset_composite_model_output::DescribeAssetCompositeModelOutput;
 
 mod _describe_asset_composite_model_input;
 

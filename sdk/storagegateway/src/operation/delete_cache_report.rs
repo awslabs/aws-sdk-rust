@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cache_repor
     }
 }
 
-pub use crate::operation::delete_cache_report::_delete_cache_report_output::DeleteCacheReportOutput;
-
 pub use crate::operation::delete_cache_report::_delete_cache_report_input::DeleteCacheReportInput;
+
+pub use crate::operation::delete_cache_report::_delete_cache_report_output::DeleteCacheReportOutput;
 
 mod _delete_cache_report_input;
 

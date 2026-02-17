@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_metadata_mo
     }
 }
 
-pub use crate::operation::export_metadata_model_assessment::_export_metadata_model_assessment_output::ExportMetadataModelAssessmentOutput;
-
 pub use crate::operation::export_metadata_model_assessment::_export_metadata_model_assessment_input::ExportMetadataModelAssessmentInput;
+
+pub use crate::operation::export_metadata_model_assessment::_export_metadata_model_assessment_output::ExportMetadataModelAssessmentOutput;
 
 mod _export_metadata_model_assessment_input;
 

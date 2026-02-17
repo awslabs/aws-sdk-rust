@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact::Up
     }
 }
 
-pub use crate::operation::update_contact::_update_contact_output::UpdateContactOutput;
-
 pub use crate::operation::update_contact::_update_contact_input::UpdateContactInput;
+
+pub use crate::operation::update_contact::_update_contact_output::UpdateContactOutput;
 
 mod _update_contact_input;
 

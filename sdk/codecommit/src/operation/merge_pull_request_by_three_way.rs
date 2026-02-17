@@ -741,9 +741,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_pull_request
     }
 }
 
-pub use crate::operation::merge_pull_request_by_three_way::_merge_pull_request_by_three_way_output::MergePullRequestByThreeWayOutput;
-
 pub use crate::operation::merge_pull_request_by_three_way::_merge_pull_request_by_three_way_input::MergePullRequestByThreeWayInput;
+
+pub use crate::operation::merge_pull_request_by_three_way::_merge_pull_request_by_three_way_output::MergePullRequestByThreeWayOutput;
 
 mod _merge_pull_request_by_three_way_input;
 

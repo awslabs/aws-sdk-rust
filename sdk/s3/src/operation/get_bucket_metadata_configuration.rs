@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_metadat
     }
 }
 
-pub use crate::operation::get_bucket_metadata_configuration::_get_bucket_metadata_configuration_output::GetBucketMetadataConfigurationOutput;
-
 pub use crate::operation::get_bucket_metadata_configuration::_get_bucket_metadata_configuration_input::GetBucketMetadataConfigurationInput;
+
+pub use crate::operation::get_bucket_metadata_configuration::_get_bucket_metadata_configuration_output::GetBucketMetadataConfigurationOutput;
 
 mod _get_bucket_metadata_configuration_input;
 

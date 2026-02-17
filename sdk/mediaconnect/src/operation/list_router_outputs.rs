@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_router_output
     }
 }
 
-pub use crate::operation::list_router_outputs::_list_router_outputs_output::ListRouterOutputsOutput;
-
 pub use crate::operation::list_router_outputs::_list_router_outputs_input::ListRouterOutputsInput;
+
+pub use crate::operation::list_router_outputs::_list_router_outputs_output::ListRouterOutputsOutput;
 
 mod _list_router_outputs_input;
 

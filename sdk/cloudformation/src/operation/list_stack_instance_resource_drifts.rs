@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_instanc
     }
 }
 
-pub use crate::operation::list_stack_instance_resource_drifts::_list_stack_instance_resource_drifts_output::ListStackInstanceResourceDriftsOutput;
-
 pub use crate::operation::list_stack_instance_resource_drifts::_list_stack_instance_resource_drifts_input::ListStackInstanceResourceDriftsInput;
+
+pub use crate::operation::list_stack_instance_resource_drifts::_list_stack_instance_resource_drifts_output::ListStackInstanceResourceDriftsOutput;
 
 mod _list_stack_instance_resource_drifts_input;
 

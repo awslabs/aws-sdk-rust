@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_tiering_con
     }
 }
 
-pub use crate::operation::update_tiering_configuration::_update_tiering_configuration_output::UpdateTieringConfigurationOutput;
-
 pub use crate::operation::update_tiering_configuration::_update_tiering_configuration_input::UpdateTieringConfigurationInput;
+
+pub use crate::operation::update_tiering_configuration::_update_tiering_configuration_output::UpdateTieringConfigurationOutput;
 
 mod _update_tiering_configuration_input;
 

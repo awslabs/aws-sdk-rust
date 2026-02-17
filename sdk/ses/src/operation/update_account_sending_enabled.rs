@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account_sen
     }
 }
 
-pub use crate::operation::update_account_sending_enabled::_update_account_sending_enabled_output::UpdateAccountSendingEnabledOutput;
-
 pub use crate::operation::update_account_sending_enabled::_update_account_sending_enabled_input::UpdateAccountSendingEnabledInput;
+
+pub use crate::operation::update_account_sending_enabled::_update_account_sending_enabled_output::UpdateAccountSendingEnabledOutput;
 
 mod _update_account_sending_enabled_input;
 

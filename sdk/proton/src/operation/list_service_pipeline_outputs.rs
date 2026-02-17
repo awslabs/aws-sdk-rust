@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_pipel
     }
 }
 
-pub use crate::operation::list_service_pipeline_outputs::_list_service_pipeline_outputs_output::ListServicePipelineOutputsOutput;
-
 pub use crate::operation::list_service_pipeline_outputs::_list_service_pipeline_outputs_input::ListServicePipelineOutputsInput;
+
+pub use crate::operation::list_service_pipeline_outputs::_list_service_pipeline_outputs_output::ListServicePipelineOutputsOutput;
 
 mod _list_service_pipeline_outputs_input;
 

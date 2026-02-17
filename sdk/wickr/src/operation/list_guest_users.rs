@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_guest_users::
     }
 }
 
-pub use crate::operation::list_guest_users::_list_guest_users_output::ListGuestUsersOutput;
-
 pub use crate::operation::list_guest_users::_list_guest_users_input::ListGuestUsersInput;
+
+pub use crate::operation::list_guest_users::_list_guest_users_output::ListGuestUsersOutput;
 
 mod _list_guest_users_input;
 

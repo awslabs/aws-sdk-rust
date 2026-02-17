@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_index::GetInde
     }
 }
 
-pub use crate::operation::get_index::_get_index_output::GetIndexOutput;
-
 pub use crate::operation::get_index::_get_index_input::GetIndexInput;
+
+pub use crate::operation::get_index::_get_index_output::GetIndexOutput;
 
 mod _get_index_input;
 

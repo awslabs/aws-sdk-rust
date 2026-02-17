@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_teleme
     }
 }
 
-pub use crate::operation::get_network_telemetry::_get_network_telemetry_output::GetNetworkTelemetryOutput;
-
 pub use crate::operation::get_network_telemetry::_get_network_telemetry_input::GetNetworkTelemetryInput;
+
+pub use crate::operation::get_network_telemetry::_get_network_telemetry_output::GetNetworkTelemetryOutput;
 
 mod _get_network_telemetry_input;
 

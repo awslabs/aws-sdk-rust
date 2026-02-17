@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_upload::Del
     }
 }
 
-pub use crate::operation::delete_upload::_delete_upload_output::DeleteUploadOutput;
-
 pub use crate::operation::delete_upload::_delete_upload_input::DeleteUploadInput;
+
+pub use crate::operation::delete_upload::_delete_upload_output::DeleteUploadOutput;
 
 mod _delete_upload_input;
 

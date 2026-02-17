@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_environme
     }
 }
 
-pub use crate::operation::describe_environment_health::_describe_environment_health_output::DescribeEnvironmentHealthOutput;
-
 pub use crate::operation::describe_environment_health::_describe_environment_health_input::DescribeEnvironmentHealthInput;
+
+pub use crate::operation::describe_environment_health::_describe_environment_health_output::DescribeEnvironmentHealthOutput;
 
 mod _describe_environment_health_input;
 

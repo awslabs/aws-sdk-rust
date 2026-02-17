@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_lag::Update
     }
 }
 
-pub use crate::operation::update_lag::_update_lag_output::UpdateLagOutput;
-
 pub use crate::operation::update_lag::_update_lag_input::UpdateLagInput;
+
+pub use crate::operation::update_lag::_update_lag_output::UpdateLagOutput;
 
 mod _update_lag_input;
 

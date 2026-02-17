@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deliverabilit
     }
 }
 
-pub use crate::operation::list_deliverability_test_reports::_list_deliverability_test_reports_output::ListDeliverabilityTestReportsOutput;
-
 pub use crate::operation::list_deliverability_test_reports::_list_deliverability_test_reports_input::ListDeliverabilityTestReportsInput;
+
+pub use crate::operation::list_deliverability_test_reports::_list_deliverability_test_reports_output::ListDeliverabilityTestReportsOutput;
 
 mod _list_deliverability_test_reports_input;
 

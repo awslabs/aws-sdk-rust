@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_versions:
     }
 }
 
-pub use crate::operation::list_bot_versions::_list_bot_versions_output::ListBotVersionsOutput;
-
 pub use crate::operation::list_bot_versions::_list_bot_versions_input::ListBotVersionsInput;
+
+pub use crate::operation::list_bot_versions::_list_bot_versions_output::ListBotVersionsOutput;
 
 mod _list_bot_versions_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cluster::GetCl
     }
 }
 
-pub use crate::operation::get_cluster::_get_cluster_output::GetClusterOutput;
-
 pub use crate::operation::get_cluster::_get_cluster_input::GetClusterInput;
+
+pub use crate::operation::get_cluster::_get_cluster_output::GetClusterOutput;
 
 mod _get_cluster_input;
 

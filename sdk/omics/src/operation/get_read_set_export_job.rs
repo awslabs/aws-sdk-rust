@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_read_set_expor
     }
 }
 
-pub use crate::operation::get_read_set_export_job::_get_read_set_export_job_output::GetReadSetExportJobOutput;
-
 pub use crate::operation::get_read_set_export_job::_get_read_set_export_job_input::GetReadSetExportJobInput;
+
+pub use crate::operation::get_read_set_export_job::_get_read_set_export_job_output::GetReadSetExportJobOutput;
 
 mod _get_read_set_export_job_input;
 

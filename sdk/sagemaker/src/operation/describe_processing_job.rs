@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_processin
     }
 }
 
-pub use crate::operation::describe_processing_job::_describe_processing_job_output::DescribeProcessingJobOutput;
-
 pub use crate::operation::describe_processing_job::_describe_processing_job_input::DescribeProcessingJobInput;
+
+pub use crate::operation::describe_processing_job::_describe_processing_job_output::DescribeProcessingJobOutput;
 
 mod _describe_processing_job_input;
 

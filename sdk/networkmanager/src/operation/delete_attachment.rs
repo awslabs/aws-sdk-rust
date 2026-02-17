@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_attachment:
     }
 }
 
-pub use crate::operation::delete_attachment::_delete_attachment_output::DeleteAttachmentOutput;
-
 pub use crate::operation::delete_attachment::_delete_attachment_input::DeleteAttachmentInput;
+
+pub use crate::operation::delete_attachment::_delete_attachment_output::DeleteAttachmentOutput;
 
 mod _delete_attachment_input;
 

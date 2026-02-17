@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_delegation_signer_from_domain::_disassociate_delegation_signer_from_domain_output::DisassociateDelegationSignerFromDomainOutput;
-
 pub use crate::operation::disassociate_delegation_signer_from_domain::_disassociate_delegation_signer_from_domain_input::DisassociateDelegationSignerFromDomainInput;
+
+pub use crate::operation::disassociate_delegation_signer_from_domain::_disassociate_delegation_signer_from_domain_output::DisassociateDelegationSignerFromDomainOutput;
 
 mod _disassociate_delegation_signer_from_domain_input;
 

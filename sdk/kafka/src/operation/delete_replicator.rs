@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_replicator:
     }
 }
 
-pub use crate::operation::delete_replicator::_delete_replicator_output::DeleteReplicatorOutput;
-
 pub use crate::operation::delete_replicator::_delete_replicator_input::DeleteReplicatorInput;
+
+pub use crate::operation::delete_replicator::_delete_replicator_output::DeleteReplicatorOutput;
 
 mod _delete_replicator_input;
 

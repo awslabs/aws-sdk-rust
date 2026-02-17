@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_discoverer::S
     }
 }
 
-pub use crate::operation::stop_discoverer::_stop_discoverer_output::StopDiscovererOutput;
-
 pub use crate::operation::stop_discoverer::_stop_discoverer_input::StopDiscovererInput;
+
+pub use crate::operation::stop_discoverer::_stop_discoverer_output::StopDiscovererOutput;
 
 mod _stop_discoverer_input;
 

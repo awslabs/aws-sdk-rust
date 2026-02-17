@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_snapshots::
     }
 }
 
-pub use crate::operation::create_snapshots::_create_snapshots_output::CreateSnapshotsOutput;
-
 pub use crate::operation::create_snapshots::_create_snapshots_input::CreateSnapshotsInput;
+
+pub use crate::operation::create_snapshots::_create_snapshots_output::CreateSnapshotsOutput;
 
 mod _create_snapshots_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_bridg
     }
 }
 
-pub use crate::operation::delete_event_bridge_rule_template::_delete_event_bridge_rule_template_output::DeleteEventBridgeRuleTemplateOutput;
-
 pub use crate::operation::delete_event_bridge_rule_template::_delete_event_bridge_rule_template_input::DeleteEventBridgeRuleTemplateInput;
+
+pub use crate::operation::delete_event_bridge_rule_template::_delete_event_bridge_rule_template_output::DeleteEventBridgeRuleTemplateOutput;
 
 mod _delete_event_bridge_rule_template_input;
 

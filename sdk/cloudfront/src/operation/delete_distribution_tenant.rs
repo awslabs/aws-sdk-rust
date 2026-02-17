@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_distributio
     }
 }
 
-pub use crate::operation::delete_distribution_tenant::_delete_distribution_tenant_output::DeleteDistributionTenantOutput;
-
 pub use crate::operation::delete_distribution_tenant::_delete_distribution_tenant_input::DeleteDistributionTenantInput;
+
+pub use crate::operation::delete_distribution_tenant::_delete_distribution_tenant_output::DeleteDistributionTenantOutput;
 
 mod _delete_distribution_tenant_input;
 

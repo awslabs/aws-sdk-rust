@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_identi
     }
 }
 
-pub use crate::operation::update_user_identity_info::_update_user_identity_info_output::UpdateUserIdentityInfoOutput;
-
 pub use crate::operation::update_user_identity_info::_update_user_identity_info_input::UpdateUserIdentityInfoInput;
+
+pub use crate::operation::update_user_identity_info::_update_user_identity_info_output::UpdateUserIdentityInfoOutput;
 
 mod _update_user_identity_info_input;
 

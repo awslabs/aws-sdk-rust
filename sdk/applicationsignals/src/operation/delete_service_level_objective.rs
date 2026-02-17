@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_lev
     }
 }
 
-pub use crate::operation::delete_service_level_objective::_delete_service_level_objective_output::DeleteServiceLevelObjectiveOutput;
-
 pub use crate::operation::delete_service_level_objective::_delete_service_level_objective_input::DeleteServiceLevelObjectiveInput;
+
+pub use crate::operation::delete_service_level_objective::_delete_service_level_objective_output::DeleteServiceLevelObjectiveOutput;
 
 mod _delete_service_level_objective_input;
 

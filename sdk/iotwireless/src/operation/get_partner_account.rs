@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_partner_accoun
     }
 }
 
-pub use crate::operation::get_partner_account::_get_partner_account_output::GetPartnerAccountOutput;
-
 pub use crate::operation::get_partner_account::_get_partner_account_input::GetPartnerAccountInput;
+
+pub use crate::operation::get_partner_account::_get_partner_account_output::GetPartnerAccountOutput;
 
 mod _get_partner_account_input;
 

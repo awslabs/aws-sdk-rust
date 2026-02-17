@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recommendat
     }
 }
 
-pub use crate::operation::delete_recommendation_preferences::_delete_recommendation_preferences_output::DeleteRecommendationPreferencesOutput;
-
 pub use crate::operation::delete_recommendation_preferences::_delete_recommendation_preferences_input::DeleteRecommendationPreferencesInput;
+
+pub use crate::operation::delete_recommendation_preferences::_delete_recommendation_preferences_output::DeleteRecommendationPreferencesOutput;
 
 mod _delete_recommendation_preferences_input;
 

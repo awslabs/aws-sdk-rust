@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpc_link::GetV
     }
 }
 
-pub use crate::operation::get_vpc_link::_get_vpc_link_output::GetVpcLinkOutput;
-
 pub use crate::operation::get_vpc_link::_get_vpc_link_input::GetVpcLinkInput;
+
+pub use crate::operation::get_vpc_link::_get_vpc_link_output::GetVpcLinkOutput;
 
 mod _get_vpc_link_input;
 

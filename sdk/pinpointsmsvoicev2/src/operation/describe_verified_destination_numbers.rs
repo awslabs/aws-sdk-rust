@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_verified_
     }
 }
 
-pub use crate::operation::describe_verified_destination_numbers::_describe_verified_destination_numbers_output::DescribeVerifiedDestinationNumbersOutput;
-
 pub use crate::operation::describe_verified_destination_numbers::_describe_verified_destination_numbers_input::DescribeVerifiedDestinationNumbersInput;
+
+pub use crate::operation::describe_verified_destination_numbers::_describe_verified_destination_numbers_output::DescribeVerifiedDestinationNumbersOutput;
 
 mod _describe_verified_destination_numbers_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_describe_ent
     }
 }
 
-pub use crate::operation::batch_describe_entities::_batch_describe_entities_output::BatchDescribeEntitiesOutput;
-
 pub use crate::operation::batch_describe_entities::_batch_describe_entities_input::BatchDescribeEntitiesInput;
+
+pub use crate::operation::batch_describe_entities::_batch_describe_entities_output::BatchDescribeEntitiesOutput;
 
 mod _batch_describe_entities_input;
 

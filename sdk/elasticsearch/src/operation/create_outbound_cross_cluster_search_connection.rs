@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_outbound_cross_cluster_search_connection::_create_outbound_cross_cluster_search_connection_output::CreateOutboundCrossClusterSearchConnectionOutput;
-
 pub use crate::operation::create_outbound_cross_cluster_search_connection::_create_outbound_cross_cluster_search_connection_input::CreateOutboundCrossClusterSearchConnectionInput;
+
+pub use crate::operation::create_outbound_cross_cluster_search_connection::_create_outbound_cross_cluster_search_connection_output::CreateOutboundCrossClusterSearchConnectionOutput;
 
 mod _create_outbound_cross_cluster_search_connection_input;
 

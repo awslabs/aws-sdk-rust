@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_data_key_
     }
 }
 
-pub use crate::operation::generate_data_key_pair_without_plaintext::_generate_data_key_pair_without_plaintext_output::GenerateDataKeyPairWithoutPlaintextOutput;
-
 pub use crate::operation::generate_data_key_pair_without_plaintext::_generate_data_key_pair_without_plaintext_input::GenerateDataKeyPairWithoutPlaintextInput;
+
+pub use crate::operation::generate_data_key_pair_without_plaintext::_generate_data_key_pair_without_plaintext_output::GenerateDataKeyPairWithoutPlaintextOutput;
 
 mod _generate_data_key_pair_without_plaintext_input;
 

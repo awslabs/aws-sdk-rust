@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_provisio
     }
 }
 
-pub use crate::operation::terminate_provisioned_product::_terminate_provisioned_product_output::TerminateProvisionedProductOutput;
-
 pub use crate::operation::terminate_provisioned_product::_terminate_provisioned_product_input::TerminateProvisionedProductInput;
+
+pub use crate::operation::terminate_provisioned_product::_terminate_provisioned_product_output::TerminateProvisionedProductOutput;
 
 mod _terminate_provisioned_product_input;
 

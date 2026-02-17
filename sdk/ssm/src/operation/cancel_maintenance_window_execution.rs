@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_maintenance
     }
 }
 
-pub use crate::operation::cancel_maintenance_window_execution::_cancel_maintenance_window_execution_output::CancelMaintenanceWindowExecutionOutput;
-
 pub use crate::operation::cancel_maintenance_window_execution::_cancel_maintenance_window_execution_input::CancelMaintenanceWindowExecutionInput;
+
+pub use crate::operation::cancel_maintenance_window_execution::_cancel_maintenance_window_execution_output::CancelMaintenanceWindowExecutionOutput;
 
 mod _cancel_maintenance_window_execution_input;
 

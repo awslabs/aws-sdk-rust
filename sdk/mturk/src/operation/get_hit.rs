@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hit::GetHITErr
     }
 }
 
-pub use crate::operation::get_hit::_get_hit_output::GetHitOutput;
-
 pub use crate::operation::get_hit::_get_hit_input::GetHitInput;
+
+pub use crate::operation::get_hit::_get_hit_output::GetHitOutput;
 
 mod _get_hit_input;
 

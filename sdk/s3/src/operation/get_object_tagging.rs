@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_tagging
     }
 }
 
-pub use crate::operation::get_object_tagging::_get_object_tagging_output::GetObjectTaggingOutput;
-
 pub use crate::operation::get_object_tagging::_get_object_tagging_input::GetObjectTaggingInput;
+
+pub use crate::operation::get_object_tagging::_get_object_tagging_output::GetObjectTaggingOutput;
 
 mod _get_object_tagging_input;
 

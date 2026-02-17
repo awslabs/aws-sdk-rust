@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workflow_execu
     }
 }
 
-pub use crate::operation::get_workflow_execution_history::_get_workflow_execution_history_output::GetWorkflowExecutionHistoryOutput;
-
 pub use crate::operation::get_workflow_execution_history::_get_workflow_execution_history_input::GetWorkflowExecutionHistoryInput;
+
+pub use crate::operation::get_workflow_execution_history::_get_workflow_execution_history_output::GetWorkflowExecutionHistoryOutput;
 
 mod _get_workflow_execution_history_input;
 

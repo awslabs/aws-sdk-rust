@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_regions::
     }
 }
 
-pub use crate::operation::describe_regions::_describe_regions_output::DescribeRegionsOutput;
-
 pub use crate::operation::describe_regions::_describe_regions_input::DescribeRegionsInput;
+
+pub use crate::operation::describe_regions::_describe_regions_output::DescribeRegionsOutput;
 
 mod _describe_regions_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_contact::Stop
     }
 }
 
-pub use crate::operation::stop_contact::_stop_contact_output::StopContactOutput;
-
 pub use crate::operation::stop_contact::_stop_contact_input::StopContactInput;
+
+pub use crate::operation::stop_contact::_stop_contact_output::StopContactOutput;
 
 mod _stop_contact_input;
 

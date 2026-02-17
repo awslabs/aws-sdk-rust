@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_integration
     }
 }
 
-pub use crate::operation::delete_integration_response::_delete_integration_response_output::DeleteIntegrationResponseOutput;
-
 pub use crate::operation::delete_integration_response::_delete_integration_response_input::DeleteIntegrationResponseInput;
+
+pub use crate::operation::delete_integration_response::_delete_integration_response_output::DeleteIntegrationResponseOutput;
 
 mod _delete_integration_response_input;
 

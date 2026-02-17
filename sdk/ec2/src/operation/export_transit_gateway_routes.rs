@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_transit_gat
     }
 }
 
-pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway_routes_output::ExportTransitGatewayRoutesOutput;
-
 pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway_routes_input::ExportTransitGatewayRoutesInput;
+
+pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway_routes_output::ExportTransitGatewayRoutesOutput;
 
 mod _export_transit_gateway_routes_input;
 

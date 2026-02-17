@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_verification_s
     }
 }
 
-pub use crate::operation::put_verification_state_on_violation::_put_verification_state_on_violation_output::PutVerificationStateOnViolationOutput;
-
 pub use crate::operation::put_verification_state_on_violation::_put_verification_state_on_violation_input::PutVerificationStateOnViolationInput;
+
+pub use crate::operation::put_verification_state_on_violation::_put_verification_state_on_violation_output::PutVerificationStateOnViolationOutput;
 
 mod _put_verification_state_on_violation_input;
 

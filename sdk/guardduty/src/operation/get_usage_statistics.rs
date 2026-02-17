@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_usage_statisti
     }
 }
 
-pub use crate::operation::get_usage_statistics::_get_usage_statistics_output::GetUsageStatisticsOutput;
-
 pub use crate::operation::get_usage_statistics::_get_usage_statistics_input::GetUsageStatisticsInput;
+
+pub use crate::operation::get_usage_statistics::_get_usage_statistics_output::GetUsageStatisticsOutput;
 
 mod _get_usage_statistics_input;
 

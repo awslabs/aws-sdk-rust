@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vaults::ListV
     }
 }
 
-pub use crate::operation::list_vaults::_list_vaults_output::ListVaultsOutput;
-
 pub use crate::operation::list_vaults::_list_vaults_input::ListVaultsInput;
+
+pub use crate::operation::list_vaults::_list_vaults_output::ListVaultsOutput;
 
 mod _list_vaults_input;
 

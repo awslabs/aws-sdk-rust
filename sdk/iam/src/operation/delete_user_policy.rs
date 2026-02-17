@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_policy
     }
 }
 
-pub use crate::operation::delete_user_policy::_delete_user_policy_output::DeleteUserPolicyOutput;
-
 pub use crate::operation::delete_user_policy::_delete_user_policy_input::DeleteUserPolicyInput;
+
+pub use crate::operation::delete_user_policy::_delete_user_policy_output::DeleteUserPolicyOutput;
 
 mod _delete_user_policy_input;
 

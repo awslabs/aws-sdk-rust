@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_statement:
     }
 }
 
-pub use crate::operation::execute_statement::_execute_statement_output::ExecuteStatementOutput;
-
 pub use crate::operation::execute_statement::_execute_statement_input::ExecuteStatementInput;
+
+pub use crate::operation::execute_statement::_execute_statement_output::ExecuteStatementOutput;
 
 mod _execute_statement_input;
 

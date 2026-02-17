@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_batch_del
     }
 }
 
-pub use crate::operation::describe_batch_delete_configuration_task::_describe_batch_delete_configuration_task_output::DescribeBatchDeleteConfigurationTaskOutput;
-
 pub use crate::operation::describe_batch_delete_configuration_task::_describe_batch_delete_configuration_task_input::DescribeBatchDeleteConfigurationTaskInput;
+
+pub use crate::operation::describe_batch_delete_configuration_task::_describe_batch_delete_configuration_task_output::DescribeBatchDeleteConfigurationTaskOutput;
 
 mod _describe_batch_delete_configuration_task_input;
 

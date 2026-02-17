@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_associations_for_license_configuration::_list_associations_for_license_configuration_output::ListAssociationsForLicenseConfigurationOutput;
-
 pub use crate::operation::list_associations_for_license_configuration::_list_associations_for_license_configuration_input::ListAssociationsForLicenseConfigurationInput;
+
+pub use crate::operation::list_associations_for_license_configuration::_list_associations_for_license_configuration_output::ListAssociationsForLicenseConfigurationOutput;
 
 mod _list_associations_for_license_configuration_input;
 

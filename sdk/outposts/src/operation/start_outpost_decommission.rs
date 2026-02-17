@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_outpost_deco
     }
 }
 
-pub use crate::operation::start_outpost_decommission::_start_outpost_decommission_output::StartOutpostDecommissionOutput;
-
 pub use crate::operation::start_outpost_decommission::_start_outpost_decommission_input::StartOutpostDecommissionInput;
+
+pub use crate::operation::start_outpost_decommission::_start_outpost_decommission_output::StartOutpostDecommissionOutput;
 
 mod _start_outpost_decommission_input;
 

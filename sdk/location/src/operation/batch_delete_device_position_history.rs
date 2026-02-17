@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_devic
     }
 }
 
-pub use crate::operation::batch_delete_device_position_history::_batch_delete_device_position_history_output::BatchDeleteDevicePositionHistoryOutput;
-
 pub use crate::operation::batch_delete_device_position_history::_batch_delete_device_position_history_input::BatchDeleteDevicePositionHistoryInput;
+
+pub use crate::operation::batch_delete_device_position_history::_batch_delete_device_position_history_output::BatchDeleteDevicePositionHistoryOutput;
 
 mod _batch_delete_device_position_history_input;
 

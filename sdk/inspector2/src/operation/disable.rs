@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable::DisableEr
     }
 }
 
-pub use crate::operation::disable::_disable_output::DisableOutput;
-
 pub use crate::operation::disable::_disable_input::DisableInput;
+
+pub use crate::operation::disable::_disable_output::DisableOutput;
 
 mod _disable_input;
 

@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_voice_connecto
     }
 }
 
-pub use crate::operation::put_voice_connector_proxy::_put_voice_connector_proxy_output::PutVoiceConnectorProxyOutput;
-
 pub use crate::operation::put_voice_connector_proxy::_put_voice_connector_proxy_input::PutVoiceConnectorProxyInput;
+
+pub use crate::operation::put_voice_connector_proxy::_put_voice_connector_proxy_output::PutVoiceConnectorProxyOutput;
 
 mod _put_voice_connector_proxy_input;
 

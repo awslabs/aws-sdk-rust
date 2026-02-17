@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_fleet::GetFlee
     }
 }
 
-pub use crate::operation::get_fleet::_get_fleet_output::GetFleetOutput;
-
 pub use crate::operation::get_fleet::_get_fleet_input::GetFleetInput;
+
+pub use crate::operation::get_fleet::_get_fleet_output::GetFleetOutput;
 
 mod _get_fleet_input;
 

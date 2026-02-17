@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_preset::Cre
     }
 }
 
-pub use crate::operation::create_preset::_create_preset_output::CreatePresetOutput;
-
 pub use crate::operation::create_preset::_create_preset_input::CreatePresetInput;
+
+pub use crate::operation::create_preset::_create_preset_output::CreatePresetOutput;
 
 mod _create_preset_input;
 

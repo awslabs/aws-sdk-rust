@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_bundle_task
     }
 }
 
-pub use crate::operation::cancel_bundle_task::_cancel_bundle_task_output::CancelBundleTaskOutput;
-
 pub use crate::operation::cancel_bundle_task::_cancel_bundle_task_input::CancelBundleTaskInput;
+
+pub use crate::operation::cancel_bundle_task::_cancel_bundle_task_output::CancelBundleTaskOutput;
 
 mod _cancel_bundle_task_input;
 

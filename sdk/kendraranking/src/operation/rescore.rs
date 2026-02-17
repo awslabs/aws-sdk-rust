@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rescore::RescoreEr
     }
 }
 
-pub use crate::operation::rescore::_rescore_output::RescoreOutput;
-
 pub use crate::operation::rescore::_rescore_input::RescoreInput;
+
+pub use crate::operation::rescore::_rescore_output::RescoreOutput;
 
 mod _rescore_input;
 

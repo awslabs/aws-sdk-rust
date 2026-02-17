@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::discard_registrati
     }
 }
 
-pub use crate::operation::discard_registration_version::_discard_registration_version_output::DiscardRegistrationVersionOutput;
-
 pub use crate::operation::discard_registration_version::_discard_registration_version_input::DiscardRegistrationVersionInput;
+
+pub use crate::operation::discard_registration_version::_discard_registration_version_output::DiscardRegistrationVersionOutput;
 
 mod _discard_registration_version_input;
 

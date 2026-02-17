@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel_namesp
     }
 }
 
-pub use crate::operation::get_channel_namespace::_get_channel_namespace_output::GetChannelNamespaceOutput;
-
 pub use crate::operation::get_channel_namespace::_get_channel_namespace_input::GetChannelNamespaceInput;
+
+pub use crate::operation::get_channel_namespace::_get_channel_namespace_output::GetChannelNamespaceOutput;
 
 mod _get_channel_namespace_input;
 

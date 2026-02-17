@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_peeri
     }
 }
 
-pub use crate::operation::describe_vpc_peering_connections::_describe_vpc_peering_connections_output::DescribeVpcPeeringConnectionsOutput;
-
 pub use crate::operation::describe_vpc_peering_connections::_describe_vpc_peering_connections_input::DescribeVpcPeeringConnectionsInput;
+
+pub use crate::operation::describe_vpc_peering_connections::_describe_vpc_peering_connections_output::DescribeVpcPeeringConnectionsOutput;
 
 mod _describe_vpc_peering_connections_input;
 

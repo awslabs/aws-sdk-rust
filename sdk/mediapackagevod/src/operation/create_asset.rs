@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_asset::Crea
     }
 }
 
-pub use crate::operation::create_asset::_create_asset_output::CreateAssetOutput;
-
 pub use crate::operation::create_asset::_create_asset_input::CreateAssetInput;
+
+pub use crate::operation::create_asset::_create_asset_output::CreateAssetOutput;
 
 mod _create_asset_input;
 

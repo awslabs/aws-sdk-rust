@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_trace_segments
     }
 }
 
-pub use crate::operation::put_trace_segments::_put_trace_segments_output::PutTraceSegmentsOutput;
-
 pub use crate::operation::put_trace_segments::_put_trace_segments_input::PutTraceSegmentsInput;
+
+pub use crate::operation::put_trace_segments::_put_trace_segments_output::PutTraceSegmentsOutput;
 
 mod _put_trace_segments_input;
 

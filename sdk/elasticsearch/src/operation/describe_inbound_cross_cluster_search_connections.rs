@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_inbound_cross_cluster_search_connections::_describe_inbound_cross_cluster_search_connections_output::DescribeInboundCrossClusterSearchConnectionsOutput;
-
 pub use crate::operation::describe_inbound_cross_cluster_search_connections::_describe_inbound_cross_cluster_search_connections_input::DescribeInboundCrossClusterSearchConnectionsInput;
+
+pub use crate::operation::describe_inbound_cross_cluster_search_connections::_describe_inbound_cross_cluster_search_connections_output::DescribeInboundCrossClusterSearchConnectionsOutput;
 
 mod _describe_inbound_cross_cluster_search_connections_input;
 

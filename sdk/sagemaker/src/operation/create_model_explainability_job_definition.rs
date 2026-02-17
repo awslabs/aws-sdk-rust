@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_model_explainability_job_definition::_create_model_explainability_job_definition_output::CreateModelExplainabilityJobDefinitionOutput;
-
 pub use crate::operation::create_model_explainability_job_definition::_create_model_explainability_job_definition_input::CreateModelExplainabilityJobDefinitionInput;
+
+pub use crate::operation::create_model_explainability_job_definition::_create_model_explainability_job_definition_output::CreateModelExplainabilityJobDefinitionOutput;
 
 mod _create_model_explainability_job_definition_input;
 

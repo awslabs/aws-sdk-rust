@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_cluster::Ca
     }
 }
 
-pub use crate::operation::cancel_cluster::_cancel_cluster_output::CancelClusterOutput;
-
 pub use crate::operation::cancel_cluster::_cancel_cluster_input::CancelClusterInput;
+
+pub use crate::operation::cancel_cluster::_cancel_cluster_output::CancelClusterOutput;
 
 mod _cancel_cluster_input;
 

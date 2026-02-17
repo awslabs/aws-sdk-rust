@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_source_reposit
     }
 }
 
-pub use crate::operation::get_source_repository_clone_urls::_get_source_repository_clone_urls_output::GetSourceRepositoryCloneUrlsOutput;
-
 pub use crate::operation::get_source_repository_clone_urls::_get_source_repository_clone_urls_input::GetSourceRepositoryCloneUrlsInput;
+
+pub use crate::operation::get_source_repository_clone_urls::_get_source_repository_clone_urls_output::GetSourceRepositoryCloneUrlsOutput;
 
 mod _get_source_repository_clone_urls_input;
 

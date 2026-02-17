@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_resource_permi
     }
 }
 
-pub use crate::operation::add_resource_permissions::_add_resource_permissions_output::AddResourcePermissionsOutput;
-
 pub use crate::operation::add_resource_permissions::_add_resource_permissions_input::AddResourcePermissionsInput;
+
+pub use crate::operation::add_resource_permissions::_add_resource_permissions_output::AddResourcePermissionsOutput;
 
 mod _add_resource_permissions_input;
 

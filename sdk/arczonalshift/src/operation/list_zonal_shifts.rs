@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_zonal_shifts:
     }
 }
 
-pub use crate::operation::list_zonal_shifts::_list_zonal_shifts_output::ListZonalShiftsOutput;
-
 pub use crate::operation::list_zonal_shifts::_list_zonal_shifts_input::ListZonalShiftsInput;
+
+pub use crate::operation::list_zonal_shifts::_list_zonal_shifts_output::ListZonalShiftsOutput;
 
 mod _list_zonal_shifts_input;
 

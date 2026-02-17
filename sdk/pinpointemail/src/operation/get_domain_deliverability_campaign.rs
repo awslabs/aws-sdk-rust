@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_deliver
     }
 }
 
-pub use crate::operation::get_domain_deliverability_campaign::_get_domain_deliverability_campaign_output::GetDomainDeliverabilityCampaignOutput;
-
 pub use crate::operation::get_domain_deliverability_campaign::_get_domain_deliverability_campaign_input::GetDomainDeliverabilityCampaignInput;
+
+pub use crate::operation::get_domain_deliverability_campaign::_get_domain_deliverability_campaign_output::GetDomainDeliverabilityCampaignOutput;
 
 mod _get_domain_deliverability_campaign_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::render_message_tem
     }
 }
 
-pub use crate::operation::render_message_template::_render_message_template_output::RenderMessageTemplateOutput;
-
 pub use crate::operation::render_message_template::_render_message_template_input::RenderMessageTemplateInput;
+
+pub use crate::operation::render_message_template::_render_message_template_output::RenderMessageTemplateOutput;
 
 mod _render_message_template_input;
 

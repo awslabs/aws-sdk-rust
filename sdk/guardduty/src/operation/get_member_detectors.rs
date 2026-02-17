@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_member_detecto
     }
 }
 
-pub use crate::operation::get_member_detectors::_get_member_detectors_output::GetMemberDetectorsOutput;
-
 pub use crate::operation::get_member_detectors::_get_member_detectors_input::GetMemberDetectorsInput;
+
+pub use crate::operation::get_member_detectors::_get_member_detectors_output::GetMemberDetectorsOutput;
 
 mod _get_member_detectors_input;
 

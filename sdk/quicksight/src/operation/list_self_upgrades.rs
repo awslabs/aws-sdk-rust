@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_self_upgrades
     }
 }
 
-pub use crate::operation::list_self_upgrades::_list_self_upgrades_output::ListSelfUpgradesOutput;
-
 pub use crate::operation::list_self_upgrades::_list_self_upgrades_input::ListSelfUpgradesInput;
+
+pub use crate::operation::list_self_upgrades::_list_self_upgrades_output::ListSelfUpgradesOutput;
 
 mod _list_self_upgrades_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_syn
     }
 }
 
-pub use crate::operation::update_service_sync_config::_update_service_sync_config_output::UpdateServiceSyncConfigOutput;
-
 pub use crate::operation::update_service_sync_config::_update_service_sync_config_input::UpdateServiceSyncConfigInput;
+
+pub use crate::operation::update_service_sync_config::_update_service_sync_config_output::UpdateServiceSyncConfigOutput;
 
 mod _update_service_sync_config_input;
 

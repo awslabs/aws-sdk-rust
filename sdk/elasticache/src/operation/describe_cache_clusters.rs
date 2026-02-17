@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_clu
     }
 }
 
-pub use crate::operation::describe_cache_clusters::_describe_cache_clusters_output::DescribeCacheClustersOutput;
-
 pub use crate::operation::describe_cache_clusters::_describe_cache_clusters_input::DescribeCacheClustersInput;
+
+pub use crate::operation::describe_cache_clusters::_describe_cache_clusters_output::DescribeCacheClustersOutput;
 
 mod _describe_cache_clusters_input;
 

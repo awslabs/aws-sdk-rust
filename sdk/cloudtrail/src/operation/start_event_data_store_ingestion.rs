@@ -469,9 +469,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_event_data_s
     }
 }
 
-pub use crate::operation::start_event_data_store_ingestion::_start_event_data_store_ingestion_output::StartEventDataStoreIngestionOutput;
-
 pub use crate::operation::start_event_data_store_ingestion::_start_event_data_store_ingestion_input::StartEventDataStoreIngestionInput;
+
+pub use crate::operation::start_event_data_store_ingestion::_start_event_data_store_ingestion_output::StartEventDataStoreIngestionOutput;
 
 mod _start_event_data_store_ingestion_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_master_account
     }
 }
 
-pub use crate::operation::get_master_account::_get_master_account_output::GetMasterAccountOutput;
-
 pub use crate::operation::get_master_account::_get_master_account_input::GetMasterAccountInput;
+
+pub use crate::operation::get_master_account::_get_master_account_output::GetMasterAccountOutput;
 
 mod _get_master_account_input;
 

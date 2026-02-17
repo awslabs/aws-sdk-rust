@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_compute_nod
     }
 }
 
-pub use crate::operation::update_compute_node_group::_update_compute_node_group_output::UpdateComputeNodeGroupOutput;
-
 pub use crate::operation::update_compute_node_group::_update_compute_node_group_input::UpdateComputeNodeGroupInput;
+
+pub use crate::operation::update_compute_node_group::_update_compute_node_group_output::UpdateComputeNodeGroupOutput;
 
 mod _update_compute_node_group_input;
 

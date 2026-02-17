@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::return_savings_pla
     }
 }
 
-pub use crate::operation::return_savings_plan::_return_savings_plan_output::ReturnSavingsPlanOutput;
-
 pub use crate::operation::return_savings_plan::_return_savings_plan_input::ReturnSavingsPlanInput;
+
+pub use crate::operation::return_savings_plan::_return_savings_plan_output::ReturnSavingsPlanOutput;
 
 mod _return_savings_plan_input;
 

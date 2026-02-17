@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_marketplace
     }
 }
 
-pub use crate::operation::create_marketplace_model_endpoint::_create_marketplace_model_endpoint_output::CreateMarketplaceModelEndpointOutput;
-
 pub use crate::operation::create_marketplace_model_endpoint::_create_marketplace_model_endpoint_input::CreateMarketplaceModelEndpointInput;
+
+pub use crate::operation::create_marketplace_model_endpoint::_create_marketplace_model_endpoint_output::CreateMarketplaceModelEndpointOutput;
 
 mod _create_marketplace_model_endpoint_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_run_group::
     }
 }
 
-pub use crate::operation::delete_run_group::_delete_run_group_output::DeleteRunGroupOutput;
-
 pub use crate::operation::delete_run_group::_delete_run_group_input::DeleteRunGroupInput;
+
+pub use crate::operation::delete_run_group::_delete_run_group_output::DeleteRunGroupOutput;
 
 mod _delete_run_group_input;
 

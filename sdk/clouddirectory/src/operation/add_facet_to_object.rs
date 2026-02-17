@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_facet_to_objec
     }
 }
 
-pub use crate::operation::add_facet_to_object::_add_facet_to_object_output::AddFacetToObjectOutput;
-
 pub use crate::operation::add_facet_to_object::_add_facet_to_object_input::AddFacetToObjectInput;
+
+pub use crate::operation::add_facet_to_object::_add_facet_to_object_output::AddFacetToObjectOutput;
 
 mod _add_facet_to_object_input;
 

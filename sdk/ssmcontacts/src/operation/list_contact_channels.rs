@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contact_chann
     }
 }
 
-pub use crate::operation::list_contact_channels::_list_contact_channels_output::ListContactChannelsOutput;
-
 pub use crate::operation::list_contact_channels::_list_contact_channels_input::ListContactChannelsInput;
+
+pub use crate::operation::list_contact_channels::_list_contact_channels_output::ListContactChannelsOutput;
 
 mod _list_contact_channels_input;
 

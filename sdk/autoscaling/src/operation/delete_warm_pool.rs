@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_warm_pool::
     }
 }
 
-pub use crate::operation::delete_warm_pool::_delete_warm_pool_output::DeleteWarmPoolOutput;
-
 pub use crate::operation::delete_warm_pool::_delete_warm_pool_input::DeleteWarmPoolInput;
+
+pub use crate::operation::delete_warm_pool::_delete_warm_pool_output::DeleteWarmPoolOutput;
 
 mod _delete_warm_pool_input;
 

@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_auto_ml_jobs:
     }
 }
 
-pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_output::ListAutoMlJobsOutput;
-
 pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_input::ListAutoMlJobsInput;
+
+pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_output::ListAutoMlJobsOutput;
 
 mod _list_auto_ml_jobs_input;
 

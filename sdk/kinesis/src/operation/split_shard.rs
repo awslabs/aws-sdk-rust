@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::split_shard::Split
     }
 }
 
-pub use crate::operation::split_shard::_split_shard_output::SplitShardOutput;
-
 pub use crate::operation::split_shard::_split_shard_input::SplitShardInput;
+
+pub use crate::operation::split_shard::_split_shard_output::SplitShardOutput;
 
 mod _split_shard_input;
 

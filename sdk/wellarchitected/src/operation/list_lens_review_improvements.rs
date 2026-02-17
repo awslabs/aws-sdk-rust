@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lens_review_i
     }
 }
 
-pub use crate::operation::list_lens_review_improvements::_list_lens_review_improvements_output::ListLensReviewImprovementsOutput;
-
 pub use crate::operation::list_lens_review_improvements::_list_lens_review_improvements_input::ListLensReviewImprovementsInput;
+
+pub use crate::operation::list_lens_review_improvements::_list_lens_review_improvements_output::ListLensReviewImprovementsOutput;
 
 mod _list_lens_review_improvements_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_messaging_sess
     }
 }
 
-pub use crate::operation::get_messaging_session_endpoint::_get_messaging_session_endpoint_output::GetMessagingSessionEndpointOutput;
-
 pub use crate::operation::get_messaging_session_endpoint::_get_messaging_session_endpoint_input::GetMessagingSessionEndpointInput;
+
+pub use crate::operation::get_messaging_session_endpoint::_get_messaging_session_endpoint_output::GetMessagingSessionEndpointOutput;
 
 mod _get_messaging_session_endpoint_input;
 

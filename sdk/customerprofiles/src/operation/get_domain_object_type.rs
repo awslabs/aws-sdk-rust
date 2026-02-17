@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_object_
     }
 }
 
-pub use crate::operation::get_domain_object_type::_get_domain_object_type_output::GetDomainObjectTypeOutput;
-
 pub use crate::operation::get_domain_object_type::_get_domain_object_type_input::GetDomainObjectTypeInput;
+
+pub use crate::operation::get_domain_object_type::_get_domain_object_type_output::GetDomainObjectTypeOutput;
 
 mod _get_domain_object_type_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_column_statis
     }
 }
 
-pub use crate::operation::stop_column_statistics_task_run_schedule::_stop_column_statistics_task_run_schedule_output::StopColumnStatisticsTaskRunScheduleOutput;
-
 pub use crate::operation::stop_column_statistics_task_run_schedule::_stop_column_statistics_task_run_schedule_input::StopColumnStatisticsTaskRunScheduleInput;
+
+pub use crate::operation::stop_column_statistics_task_run_schedule::_stop_column_statistics_task_run_schedule_output::StopColumnStatisticsTaskRunScheduleOutput;
 
 mod _stop_column_statistics_task_run_schedule_input;
 

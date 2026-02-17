@@ -340,9 +340,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc::Delete
     }
 }
 
-pub use crate::operation::delete_vpc::_delete_vpc_output::DeleteVpcOutput;
-
 pub use crate::operation::delete_vpc::_delete_vpc_input::DeleteVpcInput;
+
+pub use crate::operation::delete_vpc::_delete_vpc_output::DeleteVpcOutput;
 
 mod _delete_vpc_input;
 

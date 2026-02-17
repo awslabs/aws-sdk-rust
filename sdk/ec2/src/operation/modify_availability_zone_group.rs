@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_availabilit
     }
 }
 
-pub use crate::operation::modify_availability_zone_group::_modify_availability_zone_group_output::ModifyAvailabilityZoneGroupOutput;
-
 pub use crate::operation::modify_availability_zone_group::_modify_availability_zone_group_input::ModifyAvailabilityZoneGroupInput;
+
+pub use crate::operation::modify_availability_zone_group::_modify_availability_zone_group_output::ModifyAvailabilityZoneGroupOutput;
 
 mod _modify_availability_zone_group_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_runtime_
     }
 }
 
-pub use crate::operation::get_query_runtime_statistics::_get_query_runtime_statistics_output::GetQueryRuntimeStatisticsOutput;
-
 pub use crate::operation::get_query_runtime_statistics::_get_query_runtime_statistics_input::GetQueryRuntimeStatisticsInput;
+
+pub use crate::operation::get_query_runtime_statistics::_get_query_runtime_statistics_output::GetQueryRuntimeStatisticsOutput;
 
 mod _get_query_runtime_statistics_input;
 

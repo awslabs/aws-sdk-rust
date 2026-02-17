@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_telemetry_enr
     }
 }
 
-pub use crate::operation::stop_telemetry_enrichment::_stop_telemetry_enrichment_output::StopTelemetryEnrichmentOutput;
-
 pub use crate::operation::stop_telemetry_enrichment::_stop_telemetry_enrichment_input::StopTelemetryEnrichmentInput;
+
+pub use crate::operation::stop_telemetry_enrichment::_stop_telemetry_enrichment_output::StopTelemetryEnrichmentOutput;
 
 mod _stop_telemetry_enrichment_input;
 

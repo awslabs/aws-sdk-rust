@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::record_handler_pro
     }
 }
 
-pub use crate::operation::record_handler_progress::_record_handler_progress_output::RecordHandlerProgressOutput;
-
 pub use crate::operation::record_handler_progress::_record_handler_progress_input::RecordHandlerProgressInput;
+
+pub use crate::operation::record_handler_progress::_record_handler_progress_output::RecordHandlerProgressOutput;
 
 mod _record_handler_progress_input;
 

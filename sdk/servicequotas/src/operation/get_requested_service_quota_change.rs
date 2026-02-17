@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_requested_serv
     }
 }
 
-pub use crate::operation::get_requested_service_quota_change::_get_requested_service_quota_change_output::GetRequestedServiceQuotaChangeOutput;
-
 pub use crate::operation::get_requested_service_quota_change::_get_requested_service_quota_change_input::GetRequestedServiceQuotaChangeInput;
+
+pub use crate::operation::get_requested_service_quota_change::_get_requested_service_quota_change_output::GetRequestedServiceQuotaChangeOutput;
 
 mod _get_requested_service_quota_change_input;
 

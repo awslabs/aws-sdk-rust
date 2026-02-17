@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_gateway_inf
     }
 }
 
-pub use crate::operation::update_gateway_information::_update_gateway_information_output::UpdateGatewayInformationOutput;
-
 pub use crate::operation::update_gateway_information::_update_gateway_information_input::UpdateGatewayInformationInput;
+
+pub use crate::operation::update_gateway_information::_update_gateway_information_output::UpdateGatewayInformationOutput;
 
 mod _update_gateway_information_input;
 

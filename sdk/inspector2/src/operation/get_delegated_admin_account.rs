@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delegated_admi
     }
 }
 
-pub use crate::operation::get_delegated_admin_account::_get_delegated_admin_account_output::GetDelegatedAdminAccountOutput;
-
 pub use crate::operation::get_delegated_admin_account::_get_delegated_admin_account_input::GetDelegatedAdminAccountInput;
+
+pub use crate::operation::get_delegated_admin_account::_get_delegated_admin_account_output::GetDelegatedAdminAccountOutput;
 
 mod _get_delegated_admin_account_input;
 

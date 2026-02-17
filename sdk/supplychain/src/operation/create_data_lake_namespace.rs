@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_lake_n
     }
 }
 
-pub use crate::operation::create_data_lake_namespace::_create_data_lake_namespace_output::CreateDataLakeNamespaceOutput;
-
 pub use crate::operation::create_data_lake_namespace::_create_data_lake_namespace_input::CreateDataLakeNamespaceInput;
+
+pub use crate::operation::create_data_lake_namespace::_create_data_lake_namespace_output::CreateDataLakeNamespaceOutput;
 
 mod _create_data_lake_namespace_input;
 

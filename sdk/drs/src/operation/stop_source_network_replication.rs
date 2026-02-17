@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_source_networ
     }
 }
 
-pub use crate::operation::stop_source_network_replication::_stop_source_network_replication_output::StopSourceNetworkReplicationOutput;
-
 pub use crate::operation::stop_source_network_replication::_stop_source_network_replication_input::StopSourceNetworkReplicationInput;
+
+pub use crate::operation::stop_source_network_replication::_stop_source_network_replication_output::StopSourceNetworkReplicationOutput;
 
 mod _stop_source_network_replication_input;
 

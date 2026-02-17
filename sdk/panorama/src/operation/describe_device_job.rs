@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_device_jo
     }
 }
 
-pub use crate::operation::describe_device_job::_describe_device_job_output::DescribeDeviceJobOutput;
-
 pub use crate::operation::describe_device_job::_describe_device_job_input::DescribeDeviceJobInput;
+
+pub use crate::operation::describe_device_job::_describe_device_job_output::DescribeDeviceJobOutput;
 
 mod _describe_device_job_input;
 

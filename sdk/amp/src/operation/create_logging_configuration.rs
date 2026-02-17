@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_logging_con
     }
 }
 
-pub use crate::operation::create_logging_configuration::_create_logging_configuration_output::CreateLoggingConfigurationOutput;
-
 pub use crate::operation::create_logging_configuration::_create_logging_configuration_input::CreateLoggingConfigurationInput;
+
+pub use crate::operation::create_logging_configuration::_create_logging_configuration_output::CreateLoggingConfigurationOutput;
 
 mod _create_logging_configuration_input;
 

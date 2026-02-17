@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_person_trackin
     }
 }
 
-pub use crate::operation::get_person_tracking::_get_person_tracking_output::GetPersonTrackingOutput;
-
 pub use crate::operation::get_person_tracking::_get_person_tracking_input::GetPersonTrackingInput;
+
+pub use crate::operation::get_person_tracking::_get_person_tracking_output::GetPersonTrackingOutput;
 
 mod _get_person_tracking_input;
 

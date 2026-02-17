@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::signal_application_instance_node_instances::_signal_application_instance_node_instances_output::SignalApplicationInstanceNodeInstancesOutput;
-
 pub use crate::operation::signal_application_instance_node_instances::_signal_application_instance_node_instances_input::SignalApplicationInstanceNodeInstancesInput;
+
+pub use crate::operation::signal_application_instance_node_instances::_signal_application_instance_node_instances_output::SignalApplicationInstanceNodeInstancesOutput;
 
 mod _signal_application_instance_node_instances_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_member_
     }
 }
 
-pub use crate::operation::deregister_member_from_address_list::_deregister_member_from_address_list_output::DeregisterMemberFromAddressListOutput;
-
 pub use crate::operation::deregister_member_from_address_list::_deregister_member_from_address_list_input::DeregisterMemberFromAddressListInput;
+
+pub use crate::operation::deregister_member_from_address_list::_deregister_member_from_address_list_output::DeregisterMemberFromAddressListOutput;
 
 mod _deregister_member_from_address_list_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_project::GetPr
     }
 }
 
-pub use crate::operation::get_project::_get_project_output::GetProjectOutput;
-
 pub use crate::operation::get_project::_get_project_input::GetProjectInput;
+
+pub use crate::operation::get_project::_get_project_output::GetProjectOutput;
 
 mod _get_project_input;
 

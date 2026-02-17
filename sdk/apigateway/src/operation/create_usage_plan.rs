@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_usage_plan:
     }
 }
 
-pub use crate::operation::create_usage_plan::_create_usage_plan_output::CreateUsagePlanOutput;
-
 pub use crate::operation::create_usage_plan::_create_usage_plan_input::CreateUsagePlanInput;
+
+pub use crate::operation::create_usage_plan::_create_usage_plan_output::CreateUsagePlanOutput;
 
 mod _create_usage_plan_input;
 

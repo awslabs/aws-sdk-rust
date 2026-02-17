@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ml_transfor
     }
 }
 
-pub use crate::operation::create_ml_transform::_create_ml_transform_output::CreateMlTransformOutput;
-
 pub use crate::operation::create_ml_transform::_create_ml_transform_input::CreateMlTransformInput;
+
+pub use crate::operation::create_ml_transform::_create_ml_transform_output::CreateMlTransformOutput;
 
 mod _create_ml_transform_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::shutdown_gateway::
     }
 }
 
-pub use crate::operation::shutdown_gateway::_shutdown_gateway_output::ShutdownGatewayOutput;
-
 pub use crate::operation::shutdown_gateway::_shutdown_gateway_input::ShutdownGatewayInput;
+
+pub use crate::operation::shutdown_gateway::_shutdown_gateway_output::ShutdownGatewayOutput;
 
 mod _shutdown_gateway_input;
 

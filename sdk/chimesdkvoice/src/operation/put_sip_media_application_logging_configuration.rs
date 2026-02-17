@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_sip_media_application_logging_configuration::_put_sip_media_application_logging_configuration_output::PutSipMediaApplicationLoggingConfigurationOutput;
-
 pub use crate::operation::put_sip_media_application_logging_configuration::_put_sip_media_application_logging_configuration_input::PutSipMediaApplicationLoggingConfigurationInput;
+
+pub use crate::operation::put_sip_media_application_logging_configuration::_put_sip_media_application_logging_configuration_output::PutSipMediaApplicationLoggingConfigurationOutput;
 
 mod _put_sip_media_application_logging_configuration_input;
 

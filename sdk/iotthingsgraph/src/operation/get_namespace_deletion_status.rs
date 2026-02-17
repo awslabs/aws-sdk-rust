@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_namespace_dele
     }
 }
 
-pub use crate::operation::get_namespace_deletion_status::_get_namespace_deletion_status_output::GetNamespaceDeletionStatusOutput;
-
 pub use crate::operation::get_namespace_deletion_status::_get_namespace_deletion_status_input::GetNamespaceDeletionStatusInput;
+
+pub use crate::operation::get_namespace_deletion_status::_get_namespace_deletion_status_output::GetNamespaceDeletionStatusOutput;
 
 mod _get_namespace_deletion_status_input;
 

@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_proxy::D
     }
 }
 
-pub use crate::operation::delete_db_proxy::_delete_db_proxy_output::DeleteDbProxyOutput;
-
 pub use crate::operation::delete_db_proxy::_delete_db_proxy_input::DeleteDbProxyInput;
+
+pub use crate::operation::delete_db_proxy::_delete_db_proxy_output::DeleteDbProxyOutput;
 
 mod _delete_db_proxy_input;
 

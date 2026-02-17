@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_engagement_by_accepting_invitation_task::_start_engagement_by_accepting_invitation_task_output::StartEngagementByAcceptingInvitationTaskOutput;
-
 pub use crate::operation::start_engagement_by_accepting_invitation_task::_start_engagement_by_accepting_invitation_task_input::StartEngagementByAcceptingInvitationTaskInput;
+
+pub use crate::operation::start_engagement_by_accepting_invitation_task::_start_engagement_by_accepting_invitation_task_output::StartEngagementByAcceptingInvitationTaskOutput;
 
 mod _start_engagement_by_accepting_invitation_task_input;
 

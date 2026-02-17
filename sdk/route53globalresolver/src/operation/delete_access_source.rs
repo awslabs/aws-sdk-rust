@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_sour
     }
 }
 
-pub use crate::operation::delete_access_source::_delete_access_source_output::DeleteAccessSourceOutput;
-
 pub use crate::operation::delete_access_source::_delete_access_source_input::DeleteAccessSourceInput;
+
+pub use crate::operation::delete_access_source::_delete_access_source_output::DeleteAccessSourceOutput;
 
 mod _delete_access_source_input;
 

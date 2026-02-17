@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workload_deplo
     }
 }
 
-pub use crate::operation::get_workload_deployment_pattern::_get_workload_deployment_pattern_output::GetWorkloadDeploymentPatternOutput;
-
 pub use crate::operation::get_workload_deployment_pattern::_get_workload_deployment_pattern_input::GetWorkloadDeploymentPatternInput;
+
+pub use crate::operation::get_workload_deployment_pattern::_get_workload_deployment_pattern_output::GetWorkloadDeploymentPatternOutput;
 
 mod _get_workload_deployment_pattern_input;
 

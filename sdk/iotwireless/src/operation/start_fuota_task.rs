@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_fuota_task::
     }
 }
 
-pub use crate::operation::start_fuota_task::_start_fuota_task_output::StartFuotaTaskOutput;
-
 pub use crate::operation::start_fuota_task::_start_fuota_task_input::StartFuotaTaskInput;
+
+pub use crate::operation::start_fuota_task::_start_fuota_task_output::StartFuotaTaskOutput;
 
 mod _start_fuota_task_input;
 

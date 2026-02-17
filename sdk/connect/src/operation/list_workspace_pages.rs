@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workspace_pag
     }
 }
 
-pub use crate::operation::list_workspace_pages::_list_workspace_pages_output::ListWorkspacePagesOutput;
-
 pub use crate::operation::list_workspace_pages::_list_workspace_pages_input::ListWorkspacePagesInput;
+
+pub use crate::operation::list_workspace_pages::_list_workspace_pages_output::ListWorkspacePagesOutput;
 
 mod _list_workspace_pages_input;
 

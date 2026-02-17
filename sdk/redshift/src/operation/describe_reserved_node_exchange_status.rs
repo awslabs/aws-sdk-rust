@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_node_exchange_status::_describe_reserved_node_exchange_status_output::DescribeReservedNodeExchangeStatusOutput;
-
 pub use crate::operation::describe_reserved_node_exchange_status::_describe_reserved_node_exchange_status_input::DescribeReservedNodeExchangeStatusInput;
+
+pub use crate::operation::describe_reserved_node_exchange_status::_describe_reserved_node_exchange_status_output::DescribeReservedNodeExchangeStatusOutput;
 
 mod _describe_reserved_node_exchange_status_input;
 

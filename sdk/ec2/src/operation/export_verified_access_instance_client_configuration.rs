@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::export_verified_access_instance_client_configuration::_export_verified_access_instance_client_configuration_output::ExportVerifiedAccessInstanceClientConfigurationOutput;
-
 pub use crate::operation::export_verified_access_instance_client_configuration::_export_verified_access_instance_client_configuration_input::ExportVerifiedAccessInstanceClientConfigurationInput;
+
+pub use crate::operation::export_verified_access_instance_client_configuration::_export_verified_access_instance_client_configuration_output::ExportVerifiedAccessInstanceClientConfigurationOutput;
 
 mod _export_verified_access_instance_client_configuration_input;
 

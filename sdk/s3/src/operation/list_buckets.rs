@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_buckets::List
     }
 }
 
-pub use crate::operation::list_buckets::_list_buckets_output::ListBucketsOutput;
-
 pub use crate::operation::list_buckets::_list_buckets_input::ListBucketsInput;
+
+pub use crate::operation::list_buckets::_list_buckets_output::ListBucketsOutput;
 
 mod _list_buckets_input;
 

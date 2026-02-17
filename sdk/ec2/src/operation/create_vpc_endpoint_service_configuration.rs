@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_endpoin
     }
 }
 
-pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc_endpoint_service_configuration_output::CreateVpcEndpointServiceConfigurationOutput;
-
 pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc_endpoint_service_configuration_input::CreateVpcEndpointServiceConfigurationInput;
+
+pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc_endpoint_service_configuration_output::CreateVpcEndpointServiceConfigurationOutput;
 
 mod _create_vpc_endpoint_service_configuration_input;
 

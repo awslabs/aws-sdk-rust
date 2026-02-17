@@ -745,9 +745,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_branches_by_
     }
 }
 
-pub use crate::operation::merge_branches_by_squash::_merge_branches_by_squash_output::MergeBranchesBySquashOutput;
-
 pub use crate::operation::merge_branches_by_squash::_merge_branches_by_squash_input::MergeBranchesBySquashInput;
+
+pub use crate::operation::merge_branches_by_squash::_merge_branches_by_squash_output::MergeBranchesBySquashOutput;
 
 mod _merge_branches_by_squash_input;
 

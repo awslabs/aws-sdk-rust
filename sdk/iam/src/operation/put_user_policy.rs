@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_user_policy::P
     }
 }
 
-pub use crate::operation::put_user_policy::_put_user_policy_output::PutUserPolicyOutput;
-
 pub use crate::operation::put_user_policy::_put_user_policy_input::PutUserPolicyInput;
+
+pub use crate::operation::put_user_policy::_put_user_policy_output::PutUserPolicyOutput;
 
 mod _put_user_policy_input;
 

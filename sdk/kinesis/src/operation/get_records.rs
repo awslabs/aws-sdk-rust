@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_records::GetRe
     }
 }
 
-pub use crate::operation::get_records::_get_records_output::GetRecordsOutput;
-
 pub use crate::operation::get_records::_get_records_input::GetRecordsInput;
+
+pub use crate::operation::get_records::_get_records_output::GetRecordsOutput;
 
 mod _get_records_input;
 

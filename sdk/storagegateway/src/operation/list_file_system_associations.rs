@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_file_system_a
     }
 }
 
-pub use crate::operation::list_file_system_associations::_list_file_system_associations_output::ListFileSystemAssociationsOutput;
-
 pub use crate::operation::list_file_system_associations::_list_file_system_associations_input::ListFileSystemAssociationsInput;
+
+pub use crate::operation::list_file_system_associations::_list_file_system_associations_output::ListFileSystemAssociationsOutput;
 
 mod _list_file_system_associations_input;
 

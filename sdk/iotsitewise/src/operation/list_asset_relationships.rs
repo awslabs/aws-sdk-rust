@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_asset_relatio
     }
 }
 
-pub use crate::operation::list_asset_relationships::_list_asset_relationships_output::ListAssetRelationshipsOutput;
-
 pub use crate::operation::list_asset_relationships::_list_asset_relationships_input::ListAssetRelationshipsInput;
+
+pub use crate::operation::list_asset_relationships::_list_asset_relationships_output::ListAssetRelationshipsOutput;
 
 mod _list_asset_relationships_input;
 

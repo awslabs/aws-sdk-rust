@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upgrade_published_
     }
 }
 
-pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_output::UpgradePublishedSchemaOutput;
-
 pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_input::UpgradePublishedSchemaInput;
+
+pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_output::UpgradePublishedSchemaOutput;
 
 mod _upgrade_published_schema_input;
 

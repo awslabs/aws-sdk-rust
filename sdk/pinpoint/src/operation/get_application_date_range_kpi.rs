@@ -478,9 +478,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_da
     }
 }
 
-pub use crate::operation::get_application_date_range_kpi::_get_application_date_range_kpi_output::GetApplicationDateRangeKpiOutput;
-
 pub use crate::operation::get_application_date_range_kpi::_get_application_date_range_kpi_input::GetApplicationDateRangeKpiInput;
+
+pub use crate::operation::get_application_date_range_kpi::_get_application_date_range_kpi_output::GetApplicationDateRangeKpiOutput;
 
 mod _get_application_date_range_kpi_input;
 

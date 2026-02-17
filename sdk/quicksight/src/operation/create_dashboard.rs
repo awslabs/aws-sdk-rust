@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dashboard::
     }
 }
 
-pub use crate::operation::create_dashboard::_create_dashboard_output::CreateDashboardOutput;
-
 pub use crate::operation::create_dashboard::_create_dashboard_input::CreateDashboardInput;
+
+pub use crate::operation::create_dashboard::_create_dashboard_output::CreateDashboardOutput;
 
 mod _create_dashboard_input;
 

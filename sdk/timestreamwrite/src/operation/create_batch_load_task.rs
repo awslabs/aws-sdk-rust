@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_batch_load_
     }
 }
 
-pub use crate::operation::create_batch_load_task::_create_batch_load_task_output::CreateBatchLoadTaskOutput;
-
 pub use crate::operation::create_batch_load_task::_create_batch_load_task_input::CreateBatchLoadTaskInput;
+
+pub use crate::operation::create_batch_load_task::_create_batch_load_task_output::CreateBatchLoadTaskOutput;
 
 mod _create_batch_load_task_input;
 

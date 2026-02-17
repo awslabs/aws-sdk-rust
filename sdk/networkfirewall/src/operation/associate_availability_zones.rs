@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_availabi
     }
 }
 
-pub use crate::operation::associate_availability_zones::_associate_availability_zones_output::AssociateAvailabilityZonesOutput;
-
 pub use crate::operation::associate_availability_zones::_associate_availability_zones_input::AssociateAvailabilityZonesInput;
+
+pub use crate::operation::associate_availability_zones::_associate_availability_zones_output::AssociateAvailabilityZonesOutput;
 
 mod _associate_availability_zones_input;
 

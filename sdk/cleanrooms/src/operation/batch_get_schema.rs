@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_schema::
     }
 }
 
-pub use crate::operation::batch_get_schema::_batch_get_schema_output::BatchGetSchemaOutput;
-
 pub use crate::operation::batch_get_schema::_batch_get_schema_input::BatchGetSchemaInput;
+
+pub use crate::operation::batch_get_schema::_batch_get_schema_output::BatchGetSchemaOutput;
 
 mod _batch_get_schema_input;
 

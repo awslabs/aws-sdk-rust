@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_edge_deployme
     }
 }
 
-pub use crate::operation::stop_edge_deployment_stage::_stop_edge_deployment_stage_output::StopEdgeDeploymentStageOutput;
-
 pub use crate::operation::stop_edge_deployment_stage::_stop_edge_deployment_stage_input::StopEdgeDeploymentStageInput;
+
+pub use crate::operation::stop_edge_deployment_stage::_stop_edge_deployment_stage_output::StopEdgeDeploymentStageOutput;
 
 mod _stop_edge_deployment_stage_input;
 

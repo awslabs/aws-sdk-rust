@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_export::Upd
     }
 }
 
-pub use crate::operation::update_export::_update_export_output::UpdateExportOutput;
-
 pub use crate::operation::update_export::_update_export_input::UpdateExportInput;
+
+pub use crate::operation::update_export::_update_export_output::UpdateExportOutput;
 
 mod _update_export_input;
 

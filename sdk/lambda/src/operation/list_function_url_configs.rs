@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_function_url_
     }
 }
 
-pub use crate::operation::list_function_url_configs::_list_function_url_configs_output::ListFunctionUrlConfigsOutput;
-
 pub use crate::operation::list_function_url_configs::_list_function_url_configs_input::ListFunctionUrlConfigsInput;
+
+pub use crate::operation::list_function_url_configs::_list_function_url_configs_output::ListFunctionUrlConfigsOutput;
 
 mod _list_function_url_configs_input;
 

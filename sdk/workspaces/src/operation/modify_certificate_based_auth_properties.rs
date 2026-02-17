@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_certificate
     }
 }
 
-pub use crate::operation::modify_certificate_based_auth_properties::_modify_certificate_based_auth_properties_output::ModifyCertificateBasedAuthPropertiesOutput;
-
 pub use crate::operation::modify_certificate_based_auth_properties::_modify_certificate_based_auth_properties_input::ModifyCertificateBasedAuthPropertiesInput;
+
+pub use crate::operation::modify_certificate_based_auth_properties::_modify_certificate_based_auth_properties_output::ModifyCertificateBasedAuthPropertiesOutput;
 
 mod _modify_certificate_based_auth_properties_input;
 

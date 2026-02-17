@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workspace_a
     }
 }
 
-pub use crate::operation::create_workspace_api_key::_create_workspace_api_key_output::CreateWorkspaceApiKeyOutput;
-
 pub use crate::operation::create_workspace_api_key::_create_workspace_api_key_input::CreateWorkspaceApiKeyInput;
+
+pub use crate::operation::create_workspace_api_key::_create_workspace_api_key_output::CreateWorkspaceApiKeyOutput;
 
 mod _create_workspace_api_key_input;
 

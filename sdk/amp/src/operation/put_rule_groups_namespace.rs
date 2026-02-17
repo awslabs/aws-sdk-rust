@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_rule_groups_na
     }
 }
 
-pub use crate::operation::put_rule_groups_namespace::_put_rule_groups_namespace_output::PutRuleGroupsNamespaceOutput;
-
 pub use crate::operation::put_rule_groups_namespace::_put_rule_groups_namespace_input::PutRuleGroupsNamespaceInput;
+
+pub use crate::operation::put_rule_groups_namespace::_put_rule_groups_namespace_output::PutRuleGroupsNamespaceOutput;
 
 mod _put_rule_groups_namespace_input;
 

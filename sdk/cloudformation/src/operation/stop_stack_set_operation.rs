@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_stack_set_ope
     }
 }
 
-pub use crate::operation::stop_stack_set_operation::_stop_stack_set_operation_output::StopStackSetOperationOutput;
-
 pub use crate::operation::stop_stack_set_operation::_stop_stack_set_operation_input::StopStackSetOperationInput;
+
+pub use crate::operation::stop_stack_set_operation::_stop_stack_set_operation_output::StopStackSetOperationOutput;
 
 mod _stop_stack_set_operation_input;
 

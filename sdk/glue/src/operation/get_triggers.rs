@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_triggers::GetT
     }
 }
 
-pub use crate::operation::get_triggers::_get_triggers_output::GetTriggersOutput;
-
 pub use crate::operation::get_triggers::_get_triggers_input::GetTriggersInput;
+
+pub use crate::operation::get_triggers::_get_triggers_output::GetTriggersOutput;
 
 mod _get_triggers_input;
 

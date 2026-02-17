@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_execution::S
     }
 }
 
-pub use crate::operation::start_execution::_start_execution_output::StartExecutionOutput;
-
 pub use crate::operation::start_execution::_start_execution_input::StartExecutionInput;
+
+pub use crate::operation::start_execution::_start_execution_output::StartExecutionOutput;
 
 mod _start_execution_input;
 

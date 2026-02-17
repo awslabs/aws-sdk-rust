@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_recipes
     }
 }
 
-pub use crate::operation::list_image_recipes::_list_image_recipes_output::ListImageRecipesOutput;
-
 pub use crate::operation::list_image_recipes::_list_image_recipes_input::ListImageRecipesInput;
+
+pub use crate::operation::list_image_recipes::_list_image_recipes_output::ListImageRecipesOutput;
 
 mod _list_image_recipes_input;
 

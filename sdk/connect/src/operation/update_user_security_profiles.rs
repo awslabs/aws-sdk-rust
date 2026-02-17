@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_securi
     }
 }
 
-pub use crate::operation::update_user_security_profiles::_update_user_security_profiles_output::UpdateUserSecurityProfilesOutput;
-
 pub use crate::operation::update_user_security_profiles::_update_user_security_profiles_input::UpdateUserSecurityProfilesInput;
+
+pub use crate::operation::update_user_security_profiles::_update_user_security_profiles_output::UpdateUserSecurityProfilesOutput;
 
 mod _update_user_security_profiles_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_spice_capac
     }
 }
 
-pub use crate::operation::update_spice_capacity_configuration::_update_spice_capacity_configuration_output::UpdateSpiceCapacityConfigurationOutput;
-
 pub use crate::operation::update_spice_capacity_configuration::_update_spice_capacity_configuration_input::UpdateSpiceCapacityConfigurationInput;
+
+pub use crate::operation::update_spice_capacity_configuration::_update_spice_capacity_configuration_output::UpdateSpiceCapacityConfigurationOutput;
 
 mod _update_spice_capacity_configuration_input;
 

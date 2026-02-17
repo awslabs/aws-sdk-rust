@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_theme_per
     }
 }
 
-pub use crate::operation::describe_theme_permissions::_describe_theme_permissions_output::DescribeThemePermissionsOutput;
-
 pub use crate::operation::describe_theme_permissions::_describe_theme_permissions_input::DescribeThemePermissionsInput;
+
+pub use crate::operation::describe_theme_permissions::_describe_theme_permissions_output::DescribeThemePermissionsOutput;
 
 mod _describe_theme_permissions_input;
 

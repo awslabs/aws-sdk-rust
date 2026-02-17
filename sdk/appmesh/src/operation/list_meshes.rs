@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_meshes::ListM
     }
 }
 
-pub use crate::operation::list_meshes::_list_meshes_output::ListMeshesOutput;
-
 pub use crate::operation::list_meshes::_list_meshes_input::ListMeshesInput;
+
+pub use crate::operation::list_meshes::_list_meshes_output::ListMeshesOutput;
 
 mod _list_meshes_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_add_role::Ba
     }
 }
 
-pub use crate::operation::batch_add_role::_batch_add_role_output::BatchAddRoleOutput;
-
 pub use crate::operation::batch_add_role::_batch_add_role_input::BatchAddRoleInput;
+
+pub use crate::operation::batch_add_role::_batch_add_role_output::BatchAddRoleOutput;
 
 mod _batch_add_role_input;
 

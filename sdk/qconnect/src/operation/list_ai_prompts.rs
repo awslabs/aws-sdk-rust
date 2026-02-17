@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ai_prompts::L
     }
 }
 
-pub use crate::operation::list_ai_prompts::_list_ai_prompts_output::ListAiPromptsOutput;
-
 pub use crate::operation::list_ai_prompts::_list_ai_prompts_input::ListAiPromptsInput;
+
+pub use crate::operation::list_ai_prompts::_list_ai_prompts_output::ListAiPromptsOutput;
 
 mod _list_ai_prompts_input;
 

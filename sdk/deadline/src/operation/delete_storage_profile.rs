@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_storage_pro
     }
 }
 
-pub use crate::operation::delete_storage_profile::_delete_storage_profile_output::DeleteStorageProfileOutput;
-
 pub use crate::operation::delete_storage_profile::_delete_storage_profile_input::DeleteStorageProfileInput;
+
+pub use crate::operation::delete_storage_profile::_delete_storage_profile_output::DeleteStorageProfileOutput;
 
 mod _delete_storage_profile_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sip_media_appl
     }
 }
 
-pub use crate::operation::get_sip_media_application::_get_sip_media_application_output::GetSipMediaApplicationOutput;
-
 pub use crate::operation::get_sip_media_application::_get_sip_media_application_input::GetSipMediaApplicationInput;
+
+pub use crate::operation::get_sip_media_application::_get_sip_media_application_output::GetSipMediaApplicationOutput;
 
 mod _get_sip_media_application_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_migration
     }
 }
 
-pub use crate::operation::describe_migration_projects::_describe_migration_projects_output::DescribeMigrationProjectsOutput;
-
 pub use crate::operation::describe_migration_projects::_describe_migration_projects_input::DescribeMigrationProjectsInput;
+
+pub use crate::operation::describe_migration_projects::_describe_migration_projects_output::DescribeMigrationProjectsOutput;
 
 mod _describe_migration_projects_input;
 

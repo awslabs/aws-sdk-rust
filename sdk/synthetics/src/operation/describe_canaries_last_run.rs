@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_canaries_
     }
 }
 
-pub use crate::operation::describe_canaries_last_run::_describe_canaries_last_run_output::DescribeCanariesLastRunOutput;
-
 pub use crate::operation::describe_canaries_last_run::_describe_canaries_last_run_input::DescribeCanariesLastRunInput;
+
+pub use crate::operation::describe_canaries_last_run::_describe_canaries_last_run_output::DescribeCanariesLastRunOutput;
 
 mod _describe_canaries_last_run_input;
 

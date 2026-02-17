@@ -507,9 +507,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decline_handshake:
     }
 }
 
-pub use crate::operation::decline_handshake::_decline_handshake_output::DeclineHandshakeOutput;
-
 pub use crate::operation::decline_handshake::_decline_handshake_input::DeclineHandshakeInput;
+
+pub use crate::operation::decline_handshake::_decline_handshake_output::DeclineHandshakeOutput;
 
 mod _decline_handshake_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_quick_respo
     }
 }
 
-pub use crate::operation::update_quick_response::_update_quick_response_output::UpdateQuickResponseOutput;
-
 pub use crate::operation::update_quick_response::_update_quick_response_input::UpdateQuickResponseInput;
+
+pub use crate::operation::update_quick_response::_update_quick_response_output::UpdateQuickResponseOutput;
 
 mod _update_quick_response_input;
 

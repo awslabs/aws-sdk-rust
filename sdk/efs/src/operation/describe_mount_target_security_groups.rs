@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mount_tar
     }
 }
 
-pub use crate::operation::describe_mount_target_security_groups::_describe_mount_target_security_groups_output::DescribeMountTargetSecurityGroupsOutput;
-
 pub use crate::operation::describe_mount_target_security_groups::_describe_mount_target_security_groups_input::DescribeMountTargetSecurityGroupsInput;
+
+pub use crate::operation::describe_mount_target_security_groups::_describe_mount_target_security_groups_output::DescribeMountTargetSecurityGroupsOutput;
 
 mod _describe_mount_target_security_groups_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_embed_url
     }
 }
 
-pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed_url_for_anonymous_user_output::GenerateEmbedUrlForAnonymousUserOutput;
-
 pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed_url_for_anonymous_user_input::GenerateEmbedUrlForAnonymousUserInput;
+
+pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed_url_for_anonymous_user_output::GenerateEmbedUrlForAnonymousUserOutput;
 
 mod _generate_embed_url_for_anonymous_user_input;
 

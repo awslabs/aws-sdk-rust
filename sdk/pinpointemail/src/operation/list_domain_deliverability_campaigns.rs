@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_delive
     }
 }
 
-pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_deliverability_campaigns_output::ListDomainDeliverabilityCampaignsOutput;
-
 pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_deliverability_campaigns_input::ListDomainDeliverabilityCampaignsInput;
+
+pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_deliverability_campaigns_output::ListDomainDeliverabilityCampaignsOutput;
 
 mod _list_domain_deliverability_campaigns_input;
 

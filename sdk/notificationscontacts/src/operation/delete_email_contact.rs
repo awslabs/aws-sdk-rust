@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_email_conta
     }
 }
 
-pub use crate::operation::delete_email_contact::_delete_email_contact_output::DeleteEmailContactOutput;
-
 pub use crate::operation::delete_email_contact::_delete_email_contact_input::DeleteEmailContactInput;
+
+pub use crate::operation::delete_email_contact::_delete_email_contact_output::DeleteEmailContactOutput;
 
 mod _delete_email_contact_input;
 

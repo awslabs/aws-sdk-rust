@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_migrat
     }
 }
 
-pub use crate::operation::delete_data_migration::_delete_data_migration_output::DeleteDataMigrationOutput;
-
 pub use crate::operation::delete_data_migration::_delete_data_migration_input::DeleteDataMigrationInput;
+
+pub use crate::operation::delete_data_migration::_delete_data_migration_output::DeleteDataMigrationOutput;
 
 mod _delete_data_migration_input;
 

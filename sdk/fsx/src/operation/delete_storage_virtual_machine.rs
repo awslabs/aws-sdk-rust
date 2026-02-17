@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_storage_vir
     }
 }
 
-pub use crate::operation::delete_storage_virtual_machine::_delete_storage_virtual_machine_output::DeleteStorageVirtualMachineOutput;
-
 pub use crate::operation::delete_storage_virtual_machine::_delete_storage_virtual_machine_input::DeleteStorageVirtualMachineInput;
+
+pub use crate::operation::delete_storage_virtual_machine::_delete_storage_virtual_machine_output::DeleteStorageVirtualMachineOutput;
 
 mod _delete_storage_virtual_machine_input;
 

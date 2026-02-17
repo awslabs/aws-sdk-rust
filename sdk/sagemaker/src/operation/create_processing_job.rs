@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_processing_
     }
 }
 
-pub use crate::operation::create_processing_job::_create_processing_job_output::CreateProcessingJobOutput;
-
 pub use crate::operation::create_processing_job::_create_processing_job_input::CreateProcessingJobInput;
+
+pub use crate::operation::create_processing_job::_create_processing_job_output::CreateProcessingJobOutput;
 
 mod _create_processing_job_input;
 

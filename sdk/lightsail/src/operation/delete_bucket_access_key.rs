@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_acce
     }
 }
 
-pub use crate::operation::delete_bucket_access_key::_delete_bucket_access_key_output::DeleteBucketAccessKeyOutput;
-
 pub use crate::operation::delete_bucket_access_key::_delete_bucket_access_key_input::DeleteBucketAccessKeyInput;
+
+pub use crate::operation::delete_bucket_access_key::_delete_bucket_access_key_output::DeleteBucketAccessKeyOutput;
 
 mod _delete_bucket_access_key_input;
 

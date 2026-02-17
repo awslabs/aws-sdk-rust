@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_agent::Dele
     }
 }
 
-pub use crate::operation::delete_agent::_delete_agent_output::DeleteAgentOutput;
-
 pub use crate::operation::delete_agent::_delete_agent_input::DeleteAgentInput;
+
+pub use crate::operation::delete_agent::_delete_agent_output::DeleteAgentOutput;
 
 mod _delete_agent_input;
 

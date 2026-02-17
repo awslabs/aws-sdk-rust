@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_domain_obje
     }
 }
 
-pub use crate::operation::delete_domain_object_type::_delete_domain_object_type_output::DeleteDomainObjectTypeOutput;
-
 pub use crate::operation::delete_domain_object_type::_delete_domain_object_type_input::DeleteDomainObjectTypeInput;
+
+pub use crate::operation::delete_domain_object_type::_delete_domain_object_type_output::DeleteDomainObjectTypeOutput;
 
 mod _delete_domain_object_type_input;
 

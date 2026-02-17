@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_labeling_jobs
     }
 }
 
-pub use crate::operation::list_labeling_jobs_for_workteam::_list_labeling_jobs_for_workteam_output::ListLabelingJobsForWorkteamOutput;
-
 pub use crate::operation::list_labeling_jobs_for_workteam::_list_labeling_jobs_for_workteam_input::ListLabelingJobsForWorkteamInput;
+
+pub use crate::operation::list_labeling_jobs_for_workteam::_list_labeling_jobs_for_workteam_output::ListLabelingJobsForWorkteamOutput;
 
 mod _list_labeling_jobs_for_workteam_input;
 

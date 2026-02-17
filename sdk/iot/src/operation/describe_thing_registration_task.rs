@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_thing_reg
     }
 }
 
-pub use crate::operation::describe_thing_registration_task::_describe_thing_registration_task_output::DescribeThingRegistrationTaskOutput;
-
 pub use crate::operation::describe_thing_registration_task::_describe_thing_registration_task_input::DescribeThingRegistrationTaskInput;
+
+pub use crate::operation::describe_thing_registration_task::_describe_thing_registration_task_output::DescribeThingRegistrationTaskOutput;
 
 mod _describe_thing_registration_task_input;
 

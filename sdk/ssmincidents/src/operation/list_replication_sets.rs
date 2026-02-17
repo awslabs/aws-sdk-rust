@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_replication_s
     }
 }
 
-pub use crate::operation::list_replication_sets::_list_replication_sets_output::ListReplicationSetsOutput;
-
 pub use crate::operation::list_replication_sets::_list_replication_sets_input::ListReplicationSetsInput;
+
+pub use crate::operation::list_replication_sets::_list_replication_sets_output::ListReplicationSetsOutput;
 
 mod _list_replication_sets_input;
 

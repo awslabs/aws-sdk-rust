@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_organization_recommendation_resources::_list_organization_recommendation_resources_output::ListOrganizationRecommendationResourcesOutput;
-
 pub use crate::operation::list_organization_recommendation_resources::_list_organization_recommendation_resources_input::ListOrganizationRecommendationResourcesInput;
+
+pub use crate::operation::list_organization_recommendation_resources::_list_organization_recommendation_resources_output::ListOrganizationRecommendationResourcesOutput;
 
 mod _list_organization_recommendation_resources_input;
 

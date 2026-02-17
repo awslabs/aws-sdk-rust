@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_practice_ru
     }
 }
 
-pub use crate::operation::delete_practice_run_configuration::_delete_practice_run_configuration_output::DeletePracticeRunConfigurationOutput;
-
 pub use crate::operation::delete_practice_run_configuration::_delete_practice_run_configuration_input::DeletePracticeRunConfigurationInput;
+
+pub use crate::operation::delete_practice_run_configuration::_delete_practice_run_configuration_output::DeletePracticeRunConfigurationOutput;
 
 mod _delete_practice_run_configuration_input;
 

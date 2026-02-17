@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_route53_healt
     }
 }
 
-pub use crate::operation::list_route53_health_checks::_list_route53_health_checks_output::ListRoute53HealthChecksOutput;
-
 pub use crate::operation::list_route53_health_checks::_list_route53_health_checks_input::ListRoute53HealthChecksInput;
+
+pub use crate::operation::list_route53_health_checks::_list_route53_health_checks_output::ListRoute53HealthChecksOutput;
 
 mod _list_route53_health_checks_input;
 

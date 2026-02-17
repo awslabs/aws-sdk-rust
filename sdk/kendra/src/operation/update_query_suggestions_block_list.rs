@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_query_sugge
     }
 }
 
-pub use crate::operation::update_query_suggestions_block_list::_update_query_suggestions_block_list_output::UpdateQuerySuggestionsBlockListOutput;
-
 pub use crate::operation::update_query_suggestions_block_list::_update_query_suggestions_block_list_input::UpdateQuerySuggestionsBlockListInput;
+
+pub use crate::operation::update_query_suggestions_block_list::_update_query_suggestions_block_list_output::UpdateQuerySuggestionsBlockListOutput;
 
 mod _update_query_suggestions_block_list_input;
 

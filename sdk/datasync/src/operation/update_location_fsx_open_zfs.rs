@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_fs
     }
 }
 
-pub use crate::operation::update_location_fsx_open_zfs::_update_location_fsx_open_zfs_output::UpdateLocationFsxOpenZfsOutput;
-
 pub use crate::operation::update_location_fsx_open_zfs::_update_location_fsx_open_zfs_input::UpdateLocationFsxOpenZfsInput;
+
+pub use crate::operation::update_location_fsx_open_zfs::_update_location_fsx_open_zfs_output::UpdateLocationFsxOpenZfsOutput;
 
 mod _update_location_fsx_open_zfs_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hub_content
     }
 }
 
-pub use crate::operation::create_hub_content_presigned_urls::_create_hub_content_presigned_urls_output::CreateHubContentPresignedUrlsOutput;
-
 pub use crate::operation::create_hub_content_presigned_urls::_create_hub_content_presigned_urls_input::CreateHubContentPresignedUrlsInput;
+
+pub use crate::operation::create_hub_content_presigned_urls::_create_hub_content_presigned_urls_output::CreateHubContentPresignedUrlsOutput;
 
 mod _create_hub_content_presigned_urls_input;
 

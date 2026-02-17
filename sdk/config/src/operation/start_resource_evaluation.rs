@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_resource_eva
     }
 }
 
-pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_output::StartResourceEvaluationOutput;
-
 pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_input::StartResourceEvaluationInput;
+
+pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_output::StartResourceEvaluationOutput;
 
 mod _start_resource_evaluation_input;
 

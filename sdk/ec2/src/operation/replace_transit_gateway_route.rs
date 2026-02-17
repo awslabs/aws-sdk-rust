@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_transit_ga
     }
 }
 
-pub use crate::operation::replace_transit_gateway_route::_replace_transit_gateway_route_output::ReplaceTransitGatewayRouteOutput;
-
 pub use crate::operation::replace_transit_gateway_route::_replace_transit_gateway_route_input::ReplaceTransitGatewayRouteInput;
+
+pub use crate::operation::replace_transit_gateway_route::_replace_transit_gateway_route_output::ReplaceTransitGatewayRouteOutput;
 
 mod _replace_transit_gateway_route_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_remote_access
     }
 }
 
-pub use crate::operation::stop_remote_access_session::_stop_remote_access_session_output::StopRemoteAccessSessionOutput;
-
 pub use crate::operation::stop_remote_access_session::_stop_remote_access_session_input::StopRemoteAccessSessionInput;
+
+pub use crate::operation::stop_remote_access_session::_stop_remote_access_session_output::StopRemoteAccessSessionOutput;
 
 mod _stop_remote_access_session_input;
 

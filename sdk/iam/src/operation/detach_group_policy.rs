@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_group_polic
     }
 }
 
-pub use crate::operation::detach_group_policy::_detach_group_policy_output::DetachGroupPolicyOutput;
-
 pub use crate::operation::detach_group_policy::_detach_group_policy_input::DetachGroupPolicyInput;
+
+pub use crate::operation::detach_group_policy::_detach_group_policy_output::DetachGroupPolicyOutput;
 
 mod _detach_group_policy_input;
 

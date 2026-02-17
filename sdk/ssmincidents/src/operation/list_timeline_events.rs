@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_timeline_even
     }
 }
 
-pub use crate::operation::list_timeline_events::_list_timeline_events_output::ListTimelineEventsOutput;
-
 pub use crate::operation::list_timeline_events::_list_timeline_events_input::ListTimelineEventsInput;
+
+pub use crate::operation::list_timeline_events::_list_timeline_events_output::ListTimelineEventsOutput;
 
 mod _list_timeline_events_input;
 

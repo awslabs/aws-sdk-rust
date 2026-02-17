@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_entity_reco
     }
 }
 
-pub use crate::operation::delete_entity_recognizer::_delete_entity_recognizer_output::DeleteEntityRecognizerOutput;
-
 pub use crate::operation::delete_entity_recognizer::_delete_entity_recognizer_input::DeleteEntityRecognizerInput;
+
+pub use crate::operation::delete_entity_recognizer::_delete_entity_recognizer_output::DeleteEntityRecognizerOutput;
 
 mod _delete_entity_recognizer_input;
 

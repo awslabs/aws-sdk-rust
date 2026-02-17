@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_s
     }
 }
 
-pub use crate::operation::describe_account_subscription::_describe_account_subscription_output::DescribeAccountSubscriptionOutput;
-
 pub use crate::operation::describe_account_subscription::_describe_account_subscription_input::DescribeAccountSubscriptionInput;
+
+pub use crate::operation::describe_account_subscription::_describe_account_subscription_output::DescribeAccountSubscriptionOutput;
 
 mod _describe_account_subscription_input;
 

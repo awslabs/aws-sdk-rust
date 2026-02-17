@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_users_by_im
     }
 }
 
-pub use crate::operation::search_users_by_image::_search_users_by_image_output::SearchUsersByImageOutput;
-
 pub use crate::operation::search_users_by_image::_search_users_by_image_input::SearchUsersByImageInput;
+
+pub use crate::operation::search_users_by_image::_search_users_by_image_output::SearchUsersByImageOutput;
 
 mod _search_users_by_image_input;
 

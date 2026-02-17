@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::carrier_lookup::Ca
     }
 }
 
-pub use crate::operation::carrier_lookup::_carrier_lookup_output::CarrierLookupOutput;
-
 pub use crate::operation::carrier_lookup::_carrier_lookup_input::CarrierLookupInput;
+
+pub use crate::operation::carrier_lookup::_carrier_lookup_output::CarrierLookupOutput;
 
 mod _carrier_lookup_input;
 

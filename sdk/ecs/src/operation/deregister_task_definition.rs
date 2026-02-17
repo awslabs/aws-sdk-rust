@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_task_de
     }
 }
 
-pub use crate::operation::deregister_task_definition::_deregister_task_definition_output::DeregisterTaskDefinitionOutput;
-
 pub use crate::operation::deregister_task_definition::_deregister_task_definition_input::DeregisterTaskDefinitionInput;
+
+pub use crate::operation::deregister_task_definition::_deregister_task_definition_output::DeregisterTaskDefinitionOutput;
 
 mod _deregister_task_definition_input;
 

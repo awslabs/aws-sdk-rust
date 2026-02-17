@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_interconn
     }
 }
 
-pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_output::DescribeInterconnectLoaOutput;
-
 pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_input::DescribeInterconnectLoaInput;
+
+pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_output::DescribeInterconnectLoaOutput;
 
 mod _describe_interconnect_loa_input;
 

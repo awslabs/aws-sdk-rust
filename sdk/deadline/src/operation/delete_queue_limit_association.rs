@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queue_limit
     }
 }
 
-pub use crate::operation::delete_queue_limit_association::_delete_queue_limit_association_output::DeleteQueueLimitAssociationOutput;
-
 pub use crate::operation::delete_queue_limit_association::_delete_queue_limit_association_input::DeleteQueueLimitAssociationInput;
+
+pub use crate::operation::delete_queue_limit_association::_delete_queue_limit_association_output::DeleteQueueLimitAssociationOutput;
 
 mod _delete_queue_limit_association_input;
 

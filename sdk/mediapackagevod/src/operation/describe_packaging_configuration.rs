@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_packaging
     }
 }
 
-pub use crate::operation::describe_packaging_configuration::_describe_packaging_configuration_output::DescribePackagingConfigurationOutput;
-
 pub use crate::operation::describe_packaging_configuration::_describe_packaging_configuration_input::DescribePackagingConfigurationInput;
+
+pub use crate::operation::describe_packaging_configuration::_describe_packaging_configuration_output::DescribePackagingConfigurationOutput;
 
 mod _describe_packaging_configuration_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_component_type
     }
 }
 
-pub use crate::operation::get_component_type::_get_component_type_output::GetComponentTypeOutput;
-
 pub use crate::operation::get_component_type::_get_component_type_input::GetComponentTypeInput;
+
+pub use crate::operation::get_component_type::_get_component_type_output::GetComponentTypeOutput;
 
 mod _get_component_type_input;
 

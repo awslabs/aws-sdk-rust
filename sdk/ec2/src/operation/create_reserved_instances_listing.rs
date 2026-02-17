@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_reserved_in
     }
 }
 
-pub use crate::operation::create_reserved_instances_listing::_create_reserved_instances_listing_output::CreateReservedInstancesListingOutput;
-
 pub use crate::operation::create_reserved_instances_listing::_create_reserved_instances_listing_input::CreateReservedInstancesListingInput;
+
+pub use crate::operation::create_reserved_instances_listing::_create_reserved_instances_listing_output::CreateReservedInstancesListingOutput;
 
 mod _create_reserved_instances_listing_input;
 

@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_app_insta
     }
 }
 
-pub use crate::operation::register_app_instance_user_endpoint::_register_app_instance_user_endpoint_output::RegisterAppInstanceUserEndpointOutput;
-
 pub use crate::operation::register_app_instance_user_endpoint::_register_app_instance_user_endpoint_input::RegisterAppInstanceUserEndpointInput;
+
+pub use crate::operation::register_app_instance_user_endpoint::_register_app_instance_user_endpoint_output::RegisterAppInstanceUserEndpointOutput;
 
 mod _register_app_instance_user_endpoint_input;
 

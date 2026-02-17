@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_partner_eve
     }
 }
 
-pub use crate::operation::create_partner_event_source::_create_partner_event_source_output::CreatePartnerEventSourceOutput;
-
 pub use crate::operation::create_partner_event_source::_create_partner_event_source_input::CreatePartnerEventSourceInput;
+
+pub use crate::operation::create_partner_event_source::_create_partner_event_source_output::CreatePartnerEventSourceOutput;
 
 mod _create_partner_event_source_input;
 

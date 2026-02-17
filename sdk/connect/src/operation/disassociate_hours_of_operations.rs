@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_hours
     }
 }
 
-pub use crate::operation::disassociate_hours_of_operations::_disassociate_hours_of_operations_output::DisassociateHoursOfOperationsOutput;
-
 pub use crate::operation::disassociate_hours_of_operations::_disassociate_hours_of_operations_input::DisassociateHoursOfOperationsInput;
+
+pub use crate::operation::disassociate_hours_of_operations::_disassociate_hours_of_operations_output::DisassociateHoursOfOperationsOutput;
 
 mod _disassociate_hours_of_operations_input;
 

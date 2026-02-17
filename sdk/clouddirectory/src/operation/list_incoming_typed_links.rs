@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_incoming_type
     }
 }
 
-pub use crate::operation::list_incoming_typed_links::_list_incoming_typed_links_output::ListIncomingTypedLinksOutput;
-
 pub use crate::operation::list_incoming_typed_links::_list_incoming_typed_links_input::ListIncomingTypedLinksInput;
+
+pub use crate::operation::list_incoming_typed_links::_list_incoming_typed_links_output::ListIncomingTypedLinksOutput;
 
 mod _list_incoming_typed_links_input;
 

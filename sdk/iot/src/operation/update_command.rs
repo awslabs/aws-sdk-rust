@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_command::Up
     }
 }
 
-pub use crate::operation::update_command::_update_command_output::UpdateCommandOutput;
-
 pub use crate::operation::update_command::_update_command_input::UpdateCommandInput;
+
+pub use crate::operation::update_command::_update_command_output::UpdateCommandOutput;
 
 mod _update_command_input;
 

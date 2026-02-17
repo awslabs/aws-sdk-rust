@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_access_point_policy_for_object_lambda::_delete_access_point_policy_for_object_lambda_output::DeleteAccessPointPolicyForObjectLambdaOutput;
-
 pub use crate::operation::delete_access_point_policy_for_object_lambda::_delete_access_point_policy_for_object_lambda_input::DeleteAccessPointPolicyForObjectLambdaInput;
+
+pub use crate::operation::delete_access_point_policy_for_object_lambda::_delete_access_point_policy_for_object_lambda_output::DeleteAccessPointPolicyForObjectLambdaOutput;
 
 mod _delete_access_point_policy_for_object_lambda_input;
 

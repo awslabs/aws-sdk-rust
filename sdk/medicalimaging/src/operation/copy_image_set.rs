@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_image_set::Co
     }
 }
 
-pub use crate::operation::copy_image_set::_copy_image_set_output::CopyImageSetOutput;
-
 pub use crate::operation::copy_image_set::_copy_image_set_input::CopyImageSetInput;
+
+pub use crate::operation::copy_image_set::_copy_image_set_output::CopyImageSetOutput;
 
 mod _copy_image_set_input;
 

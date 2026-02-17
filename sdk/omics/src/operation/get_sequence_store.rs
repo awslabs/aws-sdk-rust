@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sequence_store
     }
 }
 
-pub use crate::operation::get_sequence_store::_get_sequence_store_output::GetSequenceStoreOutput;
-
 pub use crate::operation::get_sequence_store::_get_sequence_store_input::GetSequenceStoreInput;
+
+pub use crate::operation::get_sequence_store::_get_sequence_store_output::GetSequenceStoreOutput;
 
 mod _get_sequence_store_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_jobs::ListJob
     }
 }
 
-pub use crate::operation::list_jobs::_list_jobs_output::ListJobsOutput;
-
 pub use crate::operation::list_jobs::_list_jobs_input::ListJobsInput;
+
+pub use crate::operation::list_jobs::_list_jobs_output::ListJobsOutput;
 
 mod _list_jobs_input;
 

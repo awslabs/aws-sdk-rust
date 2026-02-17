@@ -475,9 +475,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bot_recomme
     }
 }
 
-pub use crate::operation::update_bot_recommendation::_update_bot_recommendation_output::UpdateBotRecommendationOutput;
-
 pub use crate::operation::update_bot_recommendation::_update_bot_recommendation_input::UpdateBotRecommendationInput;
+
+pub use crate::operation::update_bot_recommendation::_update_bot_recommendation_output::UpdateBotRecommendationOutput;
 
 mod _update_bot_recommendation_input;
 

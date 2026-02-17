@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_push_notifi
     }
 }
 
-pub use crate::operation::delete_push_notification_registration::_delete_push_notification_registration_output::DeletePushNotificationRegistrationOutput;
-
 pub use crate::operation::delete_push_notification_registration::_delete_push_notification_registration_input::DeletePushNotificationRegistrationInput;
+
+pub use crate::operation::delete_push_notification_registration::_delete_push_notification_registration_output::DeletePushNotificationRegistrationOutput;
 
 mod _delete_push_notification_registration_input;
 

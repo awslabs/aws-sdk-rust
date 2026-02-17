@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_client_certifi
     }
 }
 
-pub use crate::operation::get_client_certificate::_get_client_certificate_output::GetClientCertificateOutput;
-
 pub use crate::operation::get_client_certificate::_get_client_certificate_input::GetClientCertificateInput;
+
+pub use crate::operation::get_client_certificate::_get_client_certificate_output::GetClientCertificateOutput;
 
 mod _get_client_certificate_input;
 

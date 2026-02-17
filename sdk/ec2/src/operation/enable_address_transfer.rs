@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_address_tra
     }
 }
 
-pub use crate::operation::enable_address_transfer::_enable_address_transfer_output::EnableAddressTransferOutput;
-
 pub use crate::operation::enable_address_transfer::_enable_address_transfer_input::EnableAddressTransferInput;
+
+pub use crate::operation::enable_address_transfer::_enable_address_transfer_output::EnableAddressTransferOutput;
 
 mod _enable_address_transfer_input;
 

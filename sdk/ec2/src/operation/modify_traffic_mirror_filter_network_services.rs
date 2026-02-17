@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_traffic_mirror_filter_network_services::_modify_traffic_mirror_filter_network_services_output::ModifyTrafficMirrorFilterNetworkServicesOutput;
-
 pub use crate::operation::modify_traffic_mirror_filter_network_services::_modify_traffic_mirror_filter_network_services_input::ModifyTrafficMirrorFilterNetworkServicesInput;
+
+pub use crate::operation::modify_traffic_mirror_filter_network_services::_modify_traffic_mirror_filter_network_services_output::ModifyTrafficMirrorFilterNetworkServicesOutput;
 
 mod _modify_traffic_mirror_filter_network_services_input;
 

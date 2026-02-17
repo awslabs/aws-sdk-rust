@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_mailbox_expo
     }
 }
 
-pub use crate::operation::start_mailbox_export_job::_start_mailbox_export_job_output::StartMailboxExportJobOutput;
-
 pub use crate::operation::start_mailbox_export_job::_start_mailbox_export_job_input::StartMailboxExportJobInput;
+
+pub use crate::operation::start_mailbox_export_job::_start_mailbox_export_job_output::StartMailboxExportJobOutput;
 
 mod _start_mailbox_export_job_input;
 

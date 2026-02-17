@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_scheduled_a
     }
 }
 
-pub use crate::operation::modify_scheduled_action::_modify_scheduled_action_output::ModifyScheduledActionOutput;
-
 pub use crate::operation::modify_scheduled_action::_modify_scheduled_action_input::ModifyScheduledActionInput;
+
+pub use crate::operation::modify_scheduled_action::_modify_scheduled_action_output::ModifyScheduledActionOutput;
 
 mod _modify_scheduled_action_input;
 

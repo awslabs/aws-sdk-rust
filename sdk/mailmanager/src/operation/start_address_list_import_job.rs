@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_address_list
     }
 }
 
-pub use crate::operation::start_address_list_import_job::_start_address_list_import_job_output::StartAddressListImportJobOutput;
-
 pub use crate::operation::start_address_list_import_job::_start_address_list_import_job_input::StartAddressListImportJobInput;
+
+pub use crate::operation::start_address_list_import_job::_start_address_list_import_job_output::StartAddressListImportJobOutput;
 
 mod _start_address_list_import_job_input;
 

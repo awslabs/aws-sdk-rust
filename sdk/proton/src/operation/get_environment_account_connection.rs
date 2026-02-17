@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_environment_ac
     }
 }
 
-pub use crate::operation::get_environment_account_connection::_get_environment_account_connection_output::GetEnvironmentAccountConnectionOutput;
-
 pub use crate::operation::get_environment_account_connection::_get_environment_account_connection_input::GetEnvironmentAccountConnectionInput;
+
+pub use crate::operation::get_environment_account_connection::_get_environment_account_connection_output::GetEnvironmentAccountConnectionOutput;
 
 mod _get_environment_account_connection_input;
 

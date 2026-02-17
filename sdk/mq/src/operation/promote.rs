@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::promote::PromoteEr
     }
 }
 
-pub use crate::operation::promote::_promote_output::PromoteOutput;
-
 pub use crate::operation::promote::_promote_input::PromoteInput;
+
+pub use crate::operation::promote::_promote_output::PromoteOutput;
 
 mod _promote_input;
 

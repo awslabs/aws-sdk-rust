@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_log_group::
     }
 }
 
-pub use crate::operation::create_log_group::_create_log_group_output::CreateLogGroupOutput;
-
 pub use crate::operation::create_log_group::_create_log_group_input::CreateLogGroupInput;
+
+pub use crate::operation::create_log_group::_create_log_group_output::CreateLogGroupOutput;
 
 mod _create_log_group_input;
 

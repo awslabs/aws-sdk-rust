@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_grant::Reje
     }
 }
 
-pub use crate::operation::reject_grant::_reject_grant_output::RejectGrantOutput;
-
 pub use crate::operation::reject_grant::_reject_grant_input::RejectGrantInput;
+
+pub use crate::operation::reject_grant::_reject_grant_output::RejectGrantOutput;
 
 mod _reject_grant_input;
 

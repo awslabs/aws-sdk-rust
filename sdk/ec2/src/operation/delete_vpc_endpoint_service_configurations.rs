@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_vpc_endpoint_service_configurations::_delete_vpc_endpoint_service_configurations_output::DeleteVpcEndpointServiceConfigurationsOutput;
-
 pub use crate::operation::delete_vpc_endpoint_service_configurations::_delete_vpc_endpoint_service_configurations_input::DeleteVpcEndpointServiceConfigurationsInput;
+
+pub use crate::operation::delete_vpc_endpoint_service_configurations::_delete_vpc_endpoint_service_configurations_output::DeleteVpcEndpointServiceConfigurationsOutput;
 
 mod _delete_vpc_endpoint_service_configurations_input;
 

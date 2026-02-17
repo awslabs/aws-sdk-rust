@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_system_temp
     }
 }
 
-pub use crate::operation::delete_system_template::_delete_system_template_output::DeleteSystemTemplateOutput;
-
 pub use crate::operation::delete_system_template::_delete_system_template_input::DeleteSystemTemplateInput;
+
+pub use crate::operation::delete_system_template::_delete_system_template_output::DeleteSystemTemplateOutput;
 
 mod _delete_system_template_input;
 

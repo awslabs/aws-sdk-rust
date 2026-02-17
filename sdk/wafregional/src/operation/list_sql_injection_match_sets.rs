@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sql_injection
     }
 }
 
-pub use crate::operation::list_sql_injection_match_sets::_list_sql_injection_match_sets_output::ListSqlInjectionMatchSetsOutput;
-
 pub use crate::operation::list_sql_injection_match_sets::_list_sql_injection_match_sets_input::ListSqlInjectionMatchSetsInput;
+
+pub use crate::operation::list_sql_injection_match_sets::_list_sql_injection_match_sets_output::ListSqlInjectionMatchSetsOutput;
 
 mod _list_sql_injection_match_sets_input;
 

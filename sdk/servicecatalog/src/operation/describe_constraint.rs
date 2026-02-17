@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_constrain
     }
 }
 
-pub use crate::operation::describe_constraint::_describe_constraint_output::DescribeConstraintOutput;
-
 pub use crate::operation::describe_constraint::_describe_constraint_input::DescribeConstraintInput;
+
+pub use crate::operation::describe_constraint::_describe_constraint_output::DescribeConstraintOutput;
 
 mod _describe_constraint_input;
 

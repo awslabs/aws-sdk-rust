@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rotate_secret::Rot
     }
 }
 
-pub use crate::operation::rotate_secret::_rotate_secret_output::RotateSecretOutput;
-
 pub use crate::operation::rotate_secret::_rotate_secret_input::RotateSecretInput;
+
+pub use crate::operation::rotate_secret::_rotate_secret_output::RotateSecretOutput;
 
 mod _rotate_secret_input;
 

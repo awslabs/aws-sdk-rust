@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_link::Accep
     }
 }
 
-pub use crate::operation::accept_link::_accept_link_output::AcceptLinkOutput;
-
 pub use crate::operation::accept_link::_accept_link_input::AcceptLinkInput;
+
+pub use crate::operation::accept_link::_accept_link_output::AcceptLinkOutput;
 
 mod _accept_link_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_audience_mode
     }
 }
 
-pub use crate::operation::list_audience_models::_list_audience_models_output::ListAudienceModelsOutput;
-
 pub use crate::operation::list_audience_models::_list_audience_models_input::ListAudienceModelsInput;
+
+pub use crate::operation::list_audience_models::_list_audience_models_output::ListAudienceModelsOutput;
 
 mod _list_audience_models_input;
 

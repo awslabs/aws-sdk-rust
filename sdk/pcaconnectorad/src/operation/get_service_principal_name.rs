@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_princi
     }
 }
 
-pub use crate::operation::get_service_principal_name::_get_service_principal_name_output::GetServicePrincipalNameOutput;
-
 pub use crate::operation::get_service_principal_name::_get_service_principal_name_input::GetServicePrincipalNameInput;
+
+pub use crate::operation::get_service_principal_name::_get_service_principal_name_output::GetServicePrincipalNameOutput;
 
 mod _get_service_principal_name_input;
 

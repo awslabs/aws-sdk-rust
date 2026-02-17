@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_blob::GetBlobE
     }
 }
 
-pub use crate::operation::get_blob::_get_blob_output::GetBlobOutput;
-
 pub use crate::operation::get_blob::_get_blob_input::GetBlobInput;
+
+pub use crate::operation::get_blob::_get_blob_output::GetBlobOutput;
 
 mod _get_blob_input;
 

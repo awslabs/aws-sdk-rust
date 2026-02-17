@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_associated_rol
     }
 }
 
-pub use crate::operation::get_associated_role::_get_associated_role_output::GetAssociatedRoleOutput;
-
 pub use crate::operation::get_associated_role::_get_associated_role_input::GetAssociatedRoleInput;
+
+pub use crate::operation::get_associated_role::_get_associated_role_output::GetAssociatedRoleOutput;
 
 mod _get_associated_role_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_db_e
     }
 }
 
-pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_engine_version_output::DeleteCustomDbEngineVersionOutput;
-
 pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_engine_version_input::DeleteCustomDbEngineVersionInput;
+
+pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_engine_version_output::DeleteCustomDbEngineVersionOutput;
 
 mod _delete_custom_db_engine_version_input;
 

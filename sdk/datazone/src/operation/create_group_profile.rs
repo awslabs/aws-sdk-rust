@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_group_profi
     }
 }
 
-pub use crate::operation::create_group_profile::_create_group_profile_output::CreateGroupProfileOutput;
-
 pub use crate::operation::create_group_profile::_create_group_profile_input::CreateGroupProfileInput;
+
+pub use crate::operation::create_group_profile::_create_group_profile_output::CreateGroupProfileOutput;
 
 mod _create_group_profile_input;
 

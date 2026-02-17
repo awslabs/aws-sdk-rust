@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_sms_sandbox
     }
 }
 
-pub use crate::operation::verify_sms_sandbox_phone_number::_verify_sms_sandbox_phone_number_output::VerifySmsSandboxPhoneNumberOutput;
-
 pub use crate::operation::verify_sms_sandbox_phone_number::_verify_sms_sandbox_phone_number_input::VerifySmsSandboxPhoneNumberInput;
+
+pub use crate::operation::verify_sms_sandbox_phone_number::_verify_sms_sandbox_phone_number_output::VerifySmsSandboxPhoneNumberOutput;
 
 mod _verify_sms_sandbox_phone_number_input;
 

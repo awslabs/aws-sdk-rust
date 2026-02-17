@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_stack_resou
     }
 }
 
-pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_drift_output::DetectStackResourceDriftOutput;
-
 pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_drift_input::DetectStackResourceDriftInput;
+
+pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_drift_output::DetectStackResourceDriftOutput;
 
 mod _detect_stack_resource_drift_input;
 

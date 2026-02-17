@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_parameter_hist
     }
 }
 
-pub use crate::operation::get_parameter_history::_get_parameter_history_output::GetParameterHistoryOutput;
-
 pub use crate::operation::get_parameter_history::_get_parameter_history_input::GetParameterHistoryInput;
+
+pub use crate::operation::get_parameter_history::_get_parameter_history_output::GetParameterHistoryOutput;
 
 mod _get_parameter_history_input;
 

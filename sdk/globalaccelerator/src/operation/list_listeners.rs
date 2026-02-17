@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_listeners::Li
     }
 }
 
-pub use crate::operation::list_listeners::_list_listeners_output::ListListenersOutput;
-
 pub use crate::operation::list_listeners::_list_listeners_input::ListListenersInput;
+
+pub use crate::operation::list_listeners::_list_listeners_output::ListListenersOutput;
 
 mod _list_listeners_input;
 

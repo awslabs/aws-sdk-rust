@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_cat
     }
 }
 
-pub use crate::operation::describe_event_categories::_describe_event_categories_output::DescribeEventCategoriesOutput;
-
 pub use crate::operation::describe_event_categories::_describe_event_categories_input::DescribeEventCategoriesInput;
+
+pub use crate::operation::describe_event_categories::_describe_event_categories_output::DescribeEventCategoriesOutput;
 
 mod _describe_event_categories_input;
 

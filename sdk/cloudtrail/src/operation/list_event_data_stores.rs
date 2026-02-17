@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_data_st
     }
 }
 
-pub use crate::operation::list_event_data_stores::_list_event_data_stores_output::ListEventDataStoresOutput;
-
 pub use crate::operation::list_event_data_stores::_list_event_data_stores_input::ListEventDataStoresInput;
+
+pub use crate::operation::list_event_data_stores::_list_event_data_stores_output::ListEventDataStoresOutput;
 
 mod _list_event_data_stores_input;
 

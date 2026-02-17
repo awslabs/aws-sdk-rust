@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::extend_license_con
     }
 }
 
-pub use crate::operation::extend_license_consumption::_extend_license_consumption_output::ExtendLicenseConsumptionOutput;
-
 pub use crate::operation::extend_license_consumption::_extend_license_consumption_input::ExtendLicenseConsumptionInput;
+
+pub use crate::operation::extend_license_consumption::_extend_license_consumption_output::ExtendLicenseConsumptionOutput;
 
 mod _extend_license_consumption_input;
 

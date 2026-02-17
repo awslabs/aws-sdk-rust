@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_topic_rule:
     }
 }
 
-pub use crate::operation::enable_topic_rule::_enable_topic_rule_output::EnableTopicRuleOutput;
-
 pub use crate::operation::enable_topic_rule::_enable_topic_rule_input::EnableTopicRuleInput;
+
+pub use crate::operation::enable_topic_rule::_enable_topic_rule_output::EnableTopicRuleOutput;
 
 mod _enable_topic_rule_input;
 

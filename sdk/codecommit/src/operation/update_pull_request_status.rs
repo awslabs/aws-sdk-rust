@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pull_reques
     }
 }
 
-pub use crate::operation::update_pull_request_status::_update_pull_request_status_output::UpdatePullRequestStatusOutput;
-
 pub use crate::operation::update_pull_request_status::_update_pull_request_status_input::UpdatePullRequestStatusInput;
+
+pub use crate::operation::update_pull_request_status::_update_pull_request_status_output::UpdatePullRequestStatusOutput;
 
 mod _update_pull_request_status_input;
 

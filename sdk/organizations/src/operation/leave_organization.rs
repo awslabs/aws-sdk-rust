@@ -616,9 +616,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::leave_organization
     }
 }
 
-pub use crate::operation::leave_organization::_leave_organization_output::LeaveOrganizationOutput;
-
 pub use crate::operation::leave_organization::_leave_organization_input::LeaveOrganizationInput;
+
+pub use crate::operation::leave_organization::_leave_organization_output::LeaveOrganizationOutput;
 
 mod _leave_organization_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_documentati
     }
 }
 
-pub use crate::operation::create_documentation_part::_create_documentation_part_output::CreateDocumentationPartOutput;
-
 pub use crate::operation::create_documentation_part::_create_documentation_part_input::CreateDocumentationPartInput;
+
+pub use crate::operation::create_documentation_part::_create_documentation_part_output::CreateDocumentationPartOutput;
 
 mod _create_documentation_part_input;
 

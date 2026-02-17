@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::modify_vpc_endpoint_connection_notification::_modify_vpc_endpoint_connection_notification_output::ModifyVpcEndpointConnectionNotificationOutput;
-
 pub use crate::operation::modify_vpc_endpoint_connection_notification::_modify_vpc_endpoint_connection_notification_input::ModifyVpcEndpointConnectionNotificationInput;
+
+pub use crate::operation::modify_vpc_endpoint_connection_notification::_modify_vpc_endpoint_connection_notification_output::ModifyVpcEndpointConnectionNotificationOutput;
 
 mod _modify_vpc_endpoint_connection_notification_input;
 

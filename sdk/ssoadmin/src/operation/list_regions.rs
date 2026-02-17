@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_regions::List
     }
 }
 
-pub use crate::operation::list_regions::_list_regions_output::ListRegionsOutput;
-
 pub use crate::operation::list_regions::_list_regions_input::ListRegionsInput;
+
+pub use crate::operation::list_regions::_list_regions_output::ListRegionsOutput;
 
 mod _list_regions_input;
 

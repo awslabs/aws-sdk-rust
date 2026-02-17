@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_quick_conne
     }
 }
 
-pub use crate::operation::update_quick_connect_name::_update_quick_connect_name_output::UpdateQuickConnectNameOutput;
-
 pub use crate::operation::update_quick_connect_name::_update_quick_connect_name_input::UpdateQuickConnectNameInput;
+
+pub use crate::operation::update_quick_connect_name::_update_quick_connect_name_output::UpdateQuickConnectNameOutput;
 
 mod _update_quick_connect_name_input;
 

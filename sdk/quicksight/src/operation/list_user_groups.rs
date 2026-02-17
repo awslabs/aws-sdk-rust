@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_groups::
     }
 }
 
-pub use crate::operation::list_user_groups::_list_user_groups_output::ListUserGroupsOutput;
-
 pub use crate::operation::list_user_groups::_list_user_groups_input::ListUserGroupsInput;
+
+pub use crate::operation::list_user_groups::_list_user_groups_output::ListUserGroupsOutput;
 
 mod _list_user_groups_input;
 

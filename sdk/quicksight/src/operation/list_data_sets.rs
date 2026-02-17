@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_sets::Li
     }
 }
 
-pub use crate::operation::list_data_sets::_list_data_sets_output::ListDataSetsOutput;
-
 pub use crate::operation::list_data_sets::_list_data_sets_input::ListDataSetsInput;
+
+pub use crate::operation::list_data_sets::_list_data_sets_output::ListDataSetsOutput;
 
 mod _list_data_sets_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tag_optio
     }
 }
 
-pub use crate::operation::describe_tag_option::_describe_tag_option_output::DescribeTagOptionOutput;
-
 pub use crate::operation::describe_tag_option::_describe_tag_option_input::DescribeTagOptionInput;
+
+pub use crate::operation::describe_tag_option::_describe_tag_option_output::DescribeTagOptionOutput;
 
 mod _describe_tag_option_input;
 

@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hsm::Desc
     }
 }
 
-pub use crate::operation::describe_hsm::_describe_hsm_output::DescribeHsmOutput;
-
 pub use crate::operation::describe_hsm::_describe_hsm_input::DescribeHsmInput;
+
+pub use crate::operation::describe_hsm::_describe_hsm_output::DescribeHsmOutput;
 
 mod _describe_hsm_input;
 

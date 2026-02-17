@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_q_personali
     }
 }
 
-pub use crate::operation::update_q_personalization_configuration::_update_q_personalization_configuration_output::UpdateQPersonalizationConfigurationOutput;
-
 pub use crate::operation::update_q_personalization_configuration::_update_q_personalization_configuration_input::UpdateQPersonalizationConfigurationInput;
+
+pub use crate::operation::update_q_personalization_configuration::_update_q_personalization_configuration_output::UpdateQPersonalizationConfigurationOutput;
 
 mod _update_q_personalization_configuration_input;
 

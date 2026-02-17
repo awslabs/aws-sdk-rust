@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_container_gro
     }
 }
 
-pub use crate::operation::list_container_group_definitions::_list_container_group_definitions_output::ListContainerGroupDefinitionsOutput;
-
 pub use crate::operation::list_container_group_definitions::_list_container_group_definitions_input::ListContainerGroupDefinitionsInput;
+
+pub use crate::operation::list_container_group_definitions::_list_container_group_definitions_output::ListContainerGroupDefinitionsOutput;
 
 mod _list_container_group_definitions_input;
 

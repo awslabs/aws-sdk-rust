@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_resour
     }
 }
 
-pub use crate::operation::get_managed_resource::_get_managed_resource_output::GetManagedResourceOutput;
-
 pub use crate::operation::get_managed_resource::_get_managed_resource_input::GetManagedResourceInput;
+
+pub use crate::operation::get_managed_resource::_get_managed_resource_output::GetManagedResourceOutput;
 
 mod _get_managed_resource_input;
 

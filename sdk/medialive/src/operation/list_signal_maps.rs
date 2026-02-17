@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_signal_maps::
     }
 }
 
-pub use crate::operation::list_signal_maps::_list_signal_maps_output::ListSignalMapsOutput;
-
 pub use crate::operation::list_signal_maps::_list_signal_maps_input::ListSignalMapsInput;
+
+pub use crate::operation::list_signal_maps::_list_signal_maps_output::ListSignalMapsOutput;
 
 mod _list_signal_maps_input;
 

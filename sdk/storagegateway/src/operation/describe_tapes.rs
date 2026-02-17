@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tapes::De
     }
 }
 
-pub use crate::operation::describe_tapes::_describe_tapes_output::DescribeTapesOutput;
-
 pub use crate::operation::describe_tapes::_describe_tapes_input::DescribeTapesInput;
+
+pub use crate::operation::describe_tapes::_describe_tapes_output::DescribeTapesOutput;
 
 mod _describe_tapes_input;
 

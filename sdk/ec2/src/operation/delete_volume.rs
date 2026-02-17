@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_volume::Del
     }
 }
 
-pub use crate::operation::delete_volume::_delete_volume_output::DeleteVolumeOutput;
-
 pub use crate::operation::delete_volume::_delete_volume_input::DeleteVolumeInput;
+
+pub use crate::operation::delete_volume::_delete_volume_output::DeleteVolumeOutput;
 
 mod _delete_volume_input;
 

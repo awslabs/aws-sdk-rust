@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_instanc
     }
 }
 
-pub use crate::operation::get_device_instance::_get_device_instance_output::GetDeviceInstanceOutput;
-
 pub use crate::operation::get_device_instance::_get_device_instance_input::GetDeviceInstanceInput;
+
+pub use crate::operation::get_device_instance::_get_device_instance_output::GetDeviceInstanceOutput;
 
 mod _get_device_instance_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tag_options::
     }
 }
 
-pub use crate::operation::list_tag_options::_list_tag_options_output::ListTagOptionsOutput;
-
 pub use crate::operation::list_tag_options::_list_tag_options_input::ListTagOptionsInput;
+
+pub use crate::operation::list_tag_options::_list_tag_options_output::ListTagOptionsOutput;
 
 mod _list_tag_options_input;
 

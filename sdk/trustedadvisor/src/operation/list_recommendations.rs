@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recommendatio
     }
 }
 
-pub use crate::operation::list_recommendations::_list_recommendations_output::ListRecommendationsOutput;
-
 pub use crate::operation::list_recommendations::_list_recommendations_input::ListRecommendationsInput;
+
+pub use crate::operation::list_recommendations::_list_recommendations_output::ListRecommendationsOutput;
 
 mod _list_recommendations_input;
 

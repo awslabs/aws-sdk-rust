@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_archive_expor
     }
 }
 
-pub use crate::operation::stop_archive_export::_stop_archive_export_output::StopArchiveExportOutput;
-
 pub use crate::operation::stop_archive_export::_stop_archive_export_input::StopArchiveExportInput;
+
+pub use crate::operation::stop_archive_export::_stop_archive_export_output::StopArchiveExportOutput;
 
 mod _stop_archive_export_input;
 

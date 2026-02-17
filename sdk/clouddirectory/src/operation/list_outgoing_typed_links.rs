@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_outgoing_type
     }
 }
 
-pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_output::ListOutgoingTypedLinksOutput;
-
 pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_input::ListOutgoingTypedLinksInput;
+
+pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_output::ListOutgoingTypedLinksOutput;
 
 mod _list_outgoing_typed_links_input;
 

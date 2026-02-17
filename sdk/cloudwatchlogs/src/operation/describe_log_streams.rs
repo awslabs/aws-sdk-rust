@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_log_strea
     }
 }
 
-pub use crate::operation::describe_log_streams::_describe_log_streams_output::DescribeLogStreamsOutput;
-
 pub use crate::operation::describe_log_streams::_describe_log_streams_input::DescribeLogStreamsInput;
+
+pub use crate::operation::describe_log_streams::_describe_log_streams_output::DescribeLogStreamsOutput;
 
 mod _describe_log_streams_input;
 

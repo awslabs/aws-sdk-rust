@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_device_defi
     }
 }
 
-pub use crate::operation::delete_device_definition::_delete_device_definition_output::DeleteDeviceDefinitionOutput;
-
 pub use crate::operation::delete_device_definition::_delete_device_definition_input::DeleteDeviceDefinitionInput;
+
+pub use crate::operation::delete_device_definition::_delete_device_definition_output::DeleteDeviceDefinitionOutput;
 
 mod _delete_device_definition_input;
 

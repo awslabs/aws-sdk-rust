@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_serverless_ca
     }
 }
 
-pub use crate::operation::copy_serverless_cache_snapshot::_copy_serverless_cache_snapshot_output::CopyServerlessCacheSnapshotOutput;
-
 pub use crate::operation::copy_serverless_cache_snapshot::_copy_serverless_cache_snapshot_input::CopyServerlessCacheSnapshotInput;
+
+pub use crate::operation::copy_serverless_cache_snapshot::_copy_serverless_cache_snapshot_output::CopyServerlessCacheSnapshotOutput;
 
 mod _copy_serverless_cache_snapshot_input;
 

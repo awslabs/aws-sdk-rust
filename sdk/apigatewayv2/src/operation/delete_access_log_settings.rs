@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_log_
     }
 }
 
-pub use crate::operation::delete_access_log_settings::_delete_access_log_settings_output::DeleteAccessLogSettingsOutput;
-
 pub use crate::operation::delete_access_log_settings::_delete_access_log_settings_input::DeleteAccessLogSettingsInput;
+
+pub use crate::operation::delete_access_log_settings::_delete_access_log_settings_output::DeleteAccessLogSettingsOutput;
 
 mod _delete_access_log_settings_input;
 

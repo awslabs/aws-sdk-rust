@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_message_tem
     }
 }
 
-pub use crate::operation::delete_message_template::_delete_message_template_output::DeleteMessageTemplateOutput;
-
 pub use crate::operation::delete_message_template::_delete_message_template_input::DeleteMessageTemplateInput;
+
+pub use crate::operation::delete_message_template::_delete_message_template_output::DeleteMessageTemplateOutput;
 
 mod _delete_message_template_input;
 

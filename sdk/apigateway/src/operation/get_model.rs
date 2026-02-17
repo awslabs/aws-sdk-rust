@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_model::GetMode
     }
 }
 
-pub use crate::operation::get_model::_get_model_output::GetModelOutput;
-
 pub use crate::operation::get_model::_get_model_input::GetModelInput;
+
+pub use crate::operation::get_model::_get_model_output::GetModelOutput;
 
 mod _get_model_input;
 

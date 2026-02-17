@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_linked_whats_
     }
 }
 
-pub use crate::operation::list_linked_whats_app_business_accounts::_list_linked_whats_app_business_accounts_output::ListLinkedWhatsAppBusinessAccountsOutput;
-
 pub use crate::operation::list_linked_whats_app_business_accounts::_list_linked_whats_app_business_accounts_input::ListLinkedWhatsAppBusinessAccountsInput;
+
+pub use crate::operation::list_linked_whats_app_business_accounts::_list_linked_whats_app_business_accounts_output::ListLinkedWhatsAppBusinessAccountsOutput;
 
 mod _list_linked_whats_app_business_accounts_input;
 

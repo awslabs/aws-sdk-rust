@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ai_agent::C
     }
 }
 
-pub use crate::operation::create_ai_agent::_create_ai_agent_output::CreateAiAgentOutput;
-
 pub use crate::operation::create_ai_agent::_create_ai_agent_input::CreateAiAgentInput;
+
+pub use crate::operation::create_ai_agent::_create_ai_agent_output::CreateAiAgentOutput;
 
 mod _create_ai_agent_input;
 

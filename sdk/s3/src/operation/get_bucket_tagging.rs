@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_tagging
     }
 }
 
-pub use crate::operation::get_bucket_tagging::_get_bucket_tagging_output::GetBucketTaggingOutput;
-
 pub use crate::operation::get_bucket_tagging::_get_bucket_tagging_input::GetBucketTaggingInput;
+
+pub use crate::operation::get_bucket_tagging::_get_bucket_tagging_output::GetBucketTaggingOutput;
 
 mod _get_bucket_tagging_input;
 

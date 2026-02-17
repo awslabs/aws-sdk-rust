@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_job_bookmark
     }
 }
 
-pub use crate::operation::reset_job_bookmark::_reset_job_bookmark_output::ResetJobBookmarkOutput;
-
 pub use crate::operation::reset_job_bookmark::_reset_job_bookmark_input::ResetJobBookmarkInput;
+
+pub use crate::operation::reset_job_bookmark::_reset_job_bookmark_output::ResetJobBookmarkOutput;
 
 mod _reset_job_bookmark_input;
 

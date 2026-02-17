@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_principal
     }
 }
 
-pub use crate::operation::describe_principal_mapping::_describe_principal_mapping_output::DescribePrincipalMappingOutput;
-
 pub use crate::operation::describe_principal_mapping::_describe_principal_mapping_input::DescribePrincipalMappingInput;
+
+pub use crate::operation::describe_principal_mapping::_describe_principal_mapping_output::DescribePrincipalMappingOutput;
 
 mod _describe_principal_mapping_input;
 

@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_object_attr
     }
 }
 
-pub use crate::operation::update_object_attributes::_update_object_attributes_output::UpdateObjectAttributesOutput;
-
 pub use crate::operation::update_object_attributes::_update_object_attributes_input::UpdateObjectAttributesInput;
+
+pub use crate::operation::update_object_attributes::_update_object_attributes_output::UpdateObjectAttributesOutput;
 
 mod _update_object_attributes_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_extension::Get
     }
 }
 
-pub use crate::operation::get_extension::_get_extension_output::GetExtensionOutput;
-
 pub use crate::operation::get_extension::_get_extension_input::GetExtensionInput;
+
+pub use crate::operation::get_extension::_get_extension_output::GetExtensionOutput;
 
 mod _get_extension_input;
 

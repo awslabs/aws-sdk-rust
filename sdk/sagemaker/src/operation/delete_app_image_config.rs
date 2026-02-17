@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_image_c
     }
 }
 
-pub use crate::operation::delete_app_image_config::_delete_app_image_config_output::DeleteAppImageConfigOutput;
-
 pub use crate::operation::delete_app_image_config::_delete_app_image_config_input::DeleteAppImageConfigInput;
+
+pub use crate::operation::delete_app_image_config::_delete_app_image_config_output::DeleteAppImageConfigOutput;
 
 mod _delete_app_image_config_input;
 

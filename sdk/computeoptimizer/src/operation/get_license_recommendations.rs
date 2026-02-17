@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_license_recomm
     }
 }
 
-pub use crate::operation::get_license_recommendations::_get_license_recommendations_output::GetLicenseRecommendationsOutput;
-
 pub use crate::operation::get_license_recommendations::_get_license_recommendations_input::GetLicenseRecommendationsInput;
+
+pub use crate::operation::get_license_recommendations::_get_license_recommendations_output::GetLicenseRecommendationsOutput;
 
 mod _get_license_recommendations_input;
 

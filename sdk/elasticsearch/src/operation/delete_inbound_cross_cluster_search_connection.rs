@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_inbound_cross_cluster_search_connection::_delete_inbound_cross_cluster_search_connection_output::DeleteInboundCrossClusterSearchConnectionOutput;
-
 pub use crate::operation::delete_inbound_cross_cluster_search_connection::_delete_inbound_cross_cluster_search_connection_input::DeleteInboundCrossClusterSearchConnectionInput;
+
+pub use crate::operation::delete_inbound_cross_cluster_search_connection::_delete_inbound_cross_cluster_search_connection_output::DeleteInboundCrossClusterSearchConnectionOutput;
 
 mod _delete_inbound_cross_cluster_search_connection_input;
 

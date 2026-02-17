@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_authori
     }
 }
 
-pub use crate::operation::create_app_authorization::_create_app_authorization_output::CreateAppAuthorizationOutput;
-
 pub use crate::operation::create_app_authorization::_create_app_authorization_input::CreateAppAuthorizationInput;
+
+pub use crate::operation::create_app_authorization::_create_app_authorization_output::CreateAppAuthorizationOutput;
 
 mod _create_app_authorization_input;
 

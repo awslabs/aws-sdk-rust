@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_pe
     }
 }
 
-pub use crate::operation::describe_custom_permissions::_describe_custom_permissions_output::DescribeCustomPermissionsOutput;
-
 pub use crate::operation::describe_custom_permissions::_describe_custom_permissions_input::DescribeCustomPermissionsInput;
+
+pub use crate::operation::describe_custom_permissions::_describe_custom_permissions_output::DescribeCustomPermissionsOutput;
 
 mod _describe_custom_permissions_input;
 

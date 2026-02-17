@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_stream_
     }
 }
 
-pub use crate::operation::deregister_stream_consumer::_deregister_stream_consumer_output::DeregisterStreamConsumerOutput;
-
 pub use crate::operation::deregister_stream_consumer::_deregister_stream_consumer_input::DeregisterStreamConsumerInput;
+
+pub use crate::operation::deregister_stream_consumer::_deregister_stream_consumer_output::DeregisterStreamConsumerOutput;
 
 mod _deregister_stream_consumer_input;
 

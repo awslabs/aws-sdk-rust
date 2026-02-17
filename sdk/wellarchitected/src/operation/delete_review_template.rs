@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_review_temp
     }
 }
 
-pub use crate::operation::delete_review_template::_delete_review_template_output::DeleteReviewTemplateOutput;
-
 pub use crate::operation::delete_review_template::_delete_review_template_input::DeleteReviewTemplateInput;
+
+pub use crate::operation::delete_review_template::_delete_review_template_output::DeleteReviewTemplateOutput;
 
 mod _delete_review_template_input;
 

@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_browser_sessi
     }
 }
 
-pub use crate::operation::stop_browser_session::_stop_browser_session_output::StopBrowserSessionOutput;
-
 pub use crate::operation::stop_browser_session::_stop_browser_session_input::StopBrowserSessionInput;
+
+pub use crate::operation::stop_browser_session::_stop_browser_session_output::StopBrowserSessionOutput;
 
 mod _stop_browser_session_input;
 

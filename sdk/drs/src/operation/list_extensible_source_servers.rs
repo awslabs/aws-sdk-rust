@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_extensible_so
     }
 }
 
-pub use crate::operation::list_extensible_source_servers::_list_extensible_source_servers_output::ListExtensibleSourceServersOutput;
-
 pub use crate::operation::list_extensible_source_servers::_list_extensible_source_servers_input::ListExtensibleSourceServersInput;
+
+pub use crate::operation::list_extensible_source_servers::_list_extensible_source_servers_output::ListExtensibleSourceServersOutput;
 
 mod _list_extensible_source_servers_input;
 

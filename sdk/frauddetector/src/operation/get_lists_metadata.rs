@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lists_metadata
     }
 }
 
-pub use crate::operation::get_lists_metadata::_get_lists_metadata_output::GetListsMetadataOutput;
-
 pub use crate::operation::get_lists_metadata::_get_lists_metadata_input::GetListsMetadataInput;
+
+pub use crate::operation::get_lists_metadata::_get_lists_metadata_output::GetListsMetadataOutput;
 
 mod _get_lists_metadata_input;
 

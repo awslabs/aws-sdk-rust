@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_playback_re
     }
 }
 
-pub use crate::operation::create_playback_restriction_policy::_create_playback_restriction_policy_output::CreatePlaybackRestrictionPolicyOutput;
-
 pub use crate::operation::create_playback_restriction_policy::_create_playback_restriction_policy_input::CreatePlaybackRestrictionPolicyInput;
+
+pub use crate::operation::create_playback_restriction_policy::_create_playback_restriction_policy_output::CreatePlaybackRestrictionPolicyOutput;
 
 mod _create_playback_restriction_policy_input;
 

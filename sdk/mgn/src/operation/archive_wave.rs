@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::archive_wave::Arch
     }
 }
 
-pub use crate::operation::archive_wave::_archive_wave_output::ArchiveWaveOutput;
-
 pub use crate::operation::archive_wave::_archive_wave_input::ArchiveWaveInput;
+
+pub use crate::operation::archive_wave::_archive_wave_output::ArchiveWaveOutput;
 
 mod _archive_wave_input;
 

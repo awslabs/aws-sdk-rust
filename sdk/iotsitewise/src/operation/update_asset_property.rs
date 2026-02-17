@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_asset_prope
     }
 }
 
-pub use crate::operation::update_asset_property::_update_asset_property_output::UpdateAssetPropertyOutput;
-
 pub use crate::operation::update_asset_property::_update_asset_property_input::UpdateAssetPropertyInput;
+
+pub use crate::operation::update_asset_property::_update_asset_property_output::UpdateAssetPropertyOutput;
 
 mod _update_asset_property_input;
 

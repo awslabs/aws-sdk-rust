@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resize::D
     }
 }
 
-pub use crate::operation::describe_resize::_describe_resize_output::DescribeResizeOutput;
-
 pub use crate::operation::describe_resize::_describe_resize_input::DescribeResizeInput;
+
+pub use crate::operation::describe_resize::_describe_resize_output::DescribeResizeOutput;
 
 mod _describe_resize_input;
 

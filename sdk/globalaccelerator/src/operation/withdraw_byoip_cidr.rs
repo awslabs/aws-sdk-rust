@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::withdraw_byoip_cid
     }
 }
 
-pub use crate::operation::withdraw_byoip_cidr::_withdraw_byoip_cidr_output::WithdrawByoipCidrOutput;
-
 pub use crate::operation::withdraw_byoip_cidr::_withdraw_byoip_cidr_input::WithdrawByoipCidrInput;
+
+pub use crate::operation::withdraw_byoip_cidr::_withdraw_byoip_cidr_output::WithdrawByoipCidrOutput;
 
 mod _withdraw_byoip_cidr_input;
 

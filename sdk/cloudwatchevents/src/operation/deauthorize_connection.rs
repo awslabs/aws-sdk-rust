@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deauthorize_connec
     }
 }
 
-pub use crate::operation::deauthorize_connection::_deauthorize_connection_output::DeauthorizeConnectionOutput;
-
 pub use crate::operation::deauthorize_connection::_deauthorize_connection_input::DeauthorizeConnectionInput;
+
+pub use crate::operation::deauthorize_connection::_deauthorize_connection_output::DeauthorizeConnectionOutput;
 
 mod _deauthorize_connection_input;
 

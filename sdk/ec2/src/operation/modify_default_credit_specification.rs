@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_default_cre
     }
 }
 
-pub use crate::operation::modify_default_credit_specification::_modify_default_credit_specification_output::ModifyDefaultCreditSpecificationOutput;
-
 pub use crate::operation::modify_default_credit_specification::_modify_default_credit_specification_input::ModifyDefaultCreditSpecificationInput;
+
+pub use crate::operation::modify_default_credit_specification::_modify_default_credit_specification_output::ModifyDefaultCreditSpecificationOutput;
 
 mod _modify_default_credit_specification_input;
 

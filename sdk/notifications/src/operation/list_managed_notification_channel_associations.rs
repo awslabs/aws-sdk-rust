@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_managed_notification_channel_associations::_list_managed_notification_channel_associations_output::ListManagedNotificationChannelAssociationsOutput;
-
 pub use crate::operation::list_managed_notification_channel_associations::_list_managed_notification_channel_associations_input::ListManagedNotificationChannelAssociationsInput;
+
+pub use crate::operation::list_managed_notification_channel_associations::_list_managed_notification_channel_associations_output::ListManagedNotificationChannelAssociationsOutput;
 
 mod _list_managed_notification_channel_associations_input;
 

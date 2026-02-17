@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_message_tem
     }
 }
 
-pub use crate::operation::create_message_template_attachment::_create_message_template_attachment_output::CreateMessageTemplateAttachmentOutput;
-
 pub use crate::operation::create_message_template_attachment::_create_message_template_attachment_input::CreateMessageTemplateAttachmentInput;
+
+pub use crate::operation::create_message_template_attachment::_create_message_template_attachment_output::CreateMessageTemplateAttachmentOutput;
 
 mod _create_message_template_attachment_input;
 

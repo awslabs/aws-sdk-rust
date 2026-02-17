@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::geocode::GeocodeEr
     }
 }
 
-pub use crate::operation::geocode::_geocode_output::GeocodeOutput;
-
 pub use crate::operation::geocode::_geocode_input::GeocodeInput;
+
+pub use crate::operation::geocode::_geocode_output::GeocodeOutput;
 
 mod _geocode_input;
 

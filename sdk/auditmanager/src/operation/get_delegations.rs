@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delegations::G
     }
 }
 
-pub use crate::operation::get_delegations::_get_delegations_output::GetDelegationsOutput;
-
 pub use crate::operation::get_delegations::_get_delegations_input::GetDelegationsInput;
+
+pub use crate::operation::get_delegations::_get_delegations_output::GetDelegationsOutput;
 
 mod _get_delegations_input;
 

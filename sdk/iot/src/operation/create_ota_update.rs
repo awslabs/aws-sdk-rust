@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ota_update:
     }
 }
 
-pub use crate::operation::create_ota_update::_create_ota_update_output::CreateOtaUpdateOutput;
-
 pub use crate::operation::create_ota_update::_create_ota_update_input::CreateOtaUpdateInput;
+
+pub use crate::operation::create_ota_update::_create_ota_update_output::CreateOtaUpdateOutput;
 
 mod _create_ota_update_input;
 

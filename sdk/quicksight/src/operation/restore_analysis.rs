@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_analysis::
     }
 }
 
-pub use crate::operation::restore_analysis::_restore_analysis_output::RestoreAnalysisOutput;
-
 pub use crate::operation::restore_analysis::_restore_analysis_input::RestoreAnalysisInput;
+
+pub use crate::operation::restore_analysis::_restore_analysis_output::RestoreAnalysisOutput;
 
 mod _restore_analysis_input;
 

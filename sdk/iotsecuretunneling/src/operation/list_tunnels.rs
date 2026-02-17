@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tunnels::List
     }
 }
 
-pub use crate::operation::list_tunnels::_list_tunnels_output::ListTunnelsOutput;
-
 pub use crate::operation::list_tunnels::_list_tunnels_input::ListTunnelsInput;
+
+pub use crate::operation::list_tunnels::_list_tunnels_output::ListTunnelsOutput;
 
 mod _list_tunnels_input;
 

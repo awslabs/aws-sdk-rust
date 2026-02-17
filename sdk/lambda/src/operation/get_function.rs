@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function::GetF
     }
 }
 
-pub use crate::operation::get_function::_get_function_output::GetFunctionOutput;
-
 pub use crate::operation::get_function::_get_function_input::GetFunctionInput;
+
+pub use crate::operation::get_function::_get_function_output::GetFunctionOutput;
 
 mod _get_function_input;
 

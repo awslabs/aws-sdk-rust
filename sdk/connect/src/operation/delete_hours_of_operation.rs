@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hours_of_op
     }
 }
 
-pub use crate::operation::delete_hours_of_operation::_delete_hours_of_operation_output::DeleteHoursOfOperationOutput;
-
 pub use crate::operation::delete_hours_of_operation::_delete_hours_of_operation_input::DeleteHoursOfOperationInput;
+
+pub use crate::operation::delete_hours_of_operation::_delete_hours_of_operation_output::DeleteHoursOfOperationOutput;
 
 mod _delete_hours_of_operation_input;
 

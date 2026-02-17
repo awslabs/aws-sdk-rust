@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_group:
     }
 }
 
-pub use crate::operation::create_user_group::_create_user_group_output::CreateUserGroupOutput;
-
 pub use crate::operation::create_user_group::_create_user_group_input::CreateUserGroupInput;
+
+pub use crate::operation::create_user_group::_create_user_group_output::CreateUserGroupOutput;
 
 mod _create_user_group_input;
 

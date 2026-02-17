@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_email_contac
     }
 }
 
-pub use crate::operation::start_email_contact::_start_email_contact_output::StartEmailContactOutput;
-
 pub use crate::operation::start_email_contact::_start_email_contact_input::StartEmailContactInput;
+
+pub use crate::operation::start_email_contact::_start_email_contact_output::StartEmailContactOutput;
 
 mod _start_email_contact_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_configurati
     }
 }
 
-pub use crate::operation::get_ml_configuration::_get_ml_configuration_output::GetMlConfigurationOutput;
-
 pub use crate::operation::get_ml_configuration::_get_ml_configuration_input::GetMlConfigurationInput;
+
+pub use crate::operation::get_ml_configuration::_get_ml_configuration_output::GetMlConfigurationOutput;
 
 mod _get_ml_configuration_input;
 

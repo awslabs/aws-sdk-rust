@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_signal_cata
     }
 }
 
-pub use crate::operation::import_signal_catalog::_import_signal_catalog_output::ImportSignalCatalogOutput;
-
 pub use crate::operation::import_signal_catalog::_import_signal_catalog_input::ImportSignalCatalogInput;
+
+pub use crate::operation::import_signal_catalog::_import_signal_catalog_output::ImportSignalCatalogOutput;
 
 mod _import_signal_catalog_input;
 

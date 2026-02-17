@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_member_t
     }
 }
 
-pub use crate::operation::associate_member_to_job::_associate_member_to_job_output::AssociateMemberToJobOutput;
-
 pub use crate::operation::associate_member_to_job::_associate_member_to_job_input::AssociateMemberToJobInput;
+
+pub use crate::operation::associate_member_to_job::_associate_member_to_job_output::AssociateMemberToJobOutput;
 
 mod _associate_member_to_job_input;
 

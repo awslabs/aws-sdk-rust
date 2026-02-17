@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_variable::U
     }
 }
 
-pub use crate::operation::update_variable::_update_variable_output::UpdateVariableOutput;
-
 pub use crate::operation::update_variable::_update_variable_input::UpdateVariableInput;
+
+pub use crate::operation::update_variable::_update_variable_output::UpdateVariableOutput;
 
 mod _update_variable_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_type::D
     }
 }
 
-pub use crate::operation::deregister_type::_deregister_type_output::DeregisterTypeOutput;
-
 pub use crate::operation::deregister_type::_deregister_type_input::DeregisterTypeInput;
+
+pub use crate::operation::deregister_type::_deregister_type_output::DeregisterTypeOutput;
 
 mod _deregister_type_input;
 

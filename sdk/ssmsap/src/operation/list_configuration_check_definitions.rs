@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_check_definitions::_list_configuration_check_definitions_output::ListConfigurationCheckDefinitionsOutput;
-
 pub use crate::operation::list_configuration_check_definitions::_list_configuration_check_definitions_input::ListConfigurationCheckDefinitionsInput;
+
+pub use crate::operation::list_configuration_check_definitions::_list_configuration_check_definitions_output::ListConfigurationCheckDefinitionsOutput;
 
 mod _list_configuration_check_definitions_input;
 

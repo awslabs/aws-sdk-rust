@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_trust_store
     }
 }
 
-pub use crate::operation::modify_trust_store::_modify_trust_store_output::ModifyTrustStoreOutput;
-
 pub use crate::operation::modify_trust_store::_modify_trust_store_input::ModifyTrustStoreInput;
+
+pub use crate::operation::modify_trust_store::_modify_trust_store_output::ModifyTrustStoreOutput;
 
 mod _modify_trust_store_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_service_sett
     }
 }
 
-pub use crate::operation::reset_service_setting::_reset_service_setting_output::ResetServiceSettingOutput;
-
 pub use crate::operation::reset_service_setting::_reset_service_setting_input::ResetServiceSettingInput;
+
+pub use crate::operation::reset_service_setting::_reset_service_setting_output::ResetServiceSettingOutput;
 
 mod _reset_service_setting_input;
 

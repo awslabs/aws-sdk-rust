@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_file_cach
     }
 }
 
-pub use crate::operation::describe_file_caches::_describe_file_caches_output::DescribeFileCachesOutput;
-
 pub use crate::operation::describe_file_caches::_describe_file_caches_input::DescribeFileCachesInput;
+
+pub use crate::operation::describe_file_caches::_describe_file_caches_output::DescribeFileCachesOutput;
 
 mod _describe_file_caches_input;
 

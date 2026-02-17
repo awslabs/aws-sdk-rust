@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_signal_map::Ge
     }
 }
 
-pub use crate::operation::get_signal_map::_get_signal_map_output::GetSignalMapOutput;
-
 pub use crate::operation::get_signal_map::_get_signal_map_input::GetSignalMapInput;
+
+pub use crate::operation::get_signal_map::_get_signal_map_output::GetSignalMapOutput;
 
 mod _get_signal_map_input;
 

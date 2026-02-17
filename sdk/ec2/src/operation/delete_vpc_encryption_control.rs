@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_encrypt
     }
 }
 
-pub use crate::operation::delete_vpc_encryption_control::_delete_vpc_encryption_control_output::DeleteVpcEncryptionControlOutput;
-
 pub use crate::operation::delete_vpc_encryption_control::_delete_vpc_encryption_control_input::DeleteVpcEncryptionControlInput;
+
+pub use crate::operation::delete_vpc_encryption_control::_delete_vpc_encryption_control_output::DeleteVpcEncryptionControlOutput;
 
 mod _delete_vpc_encryption_control_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recommendat
     }
 }
 
-pub use crate::operation::delete_recommendation_template::_delete_recommendation_template_output::DeleteRecommendationTemplateOutput;
-
 pub use crate::operation::delete_recommendation_template::_delete_recommendation_template_input::DeleteRecommendationTemplateInput;
+
+pub use crate::operation::delete_recommendation_template::_delete_recommendation_template_output::DeleteRecommendationTemplateOutput;
 
 mod _delete_recommendation_template_input;
 

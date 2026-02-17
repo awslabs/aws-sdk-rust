@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_firewall_rule_
     }
 }
 
-pub use crate::operation::put_firewall_rule_group_policy::_put_firewall_rule_group_policy_output::PutFirewallRuleGroupPolicyOutput;
-
 pub use crate::operation::put_firewall_rule_group_policy::_put_firewall_rule_group_policy_input::PutFirewallRuleGroupPolicyInput;
+
+pub use crate::operation::put_firewall_rule_group_policy::_put_firewall_rule_group_policy_output::PutFirewallRuleGroupPolicyOutput;
 
 mod _put_firewall_rule_group_policy_input;
 

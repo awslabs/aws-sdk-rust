@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dashboard_p
     }
 }
 
-pub use crate::operation::update_dashboard_published_version::_update_dashboard_published_version_output::UpdateDashboardPublishedVersionOutput;
-
 pub use crate::operation::update_dashboard_published_version::_update_dashboard_published_version_input::UpdateDashboardPublishedVersionInput;
+
+pub use crate::operation::update_dashboard_published_version::_update_dashboard_published_version_output::UpdateDashboardPublishedVersionOutput;
 
 mod _update_dashboard_published_version_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_usage_totals::
     }
 }
 
-pub use crate::operation::get_usage_totals::_get_usage_totals_output::GetUsageTotalsOutput;
-
 pub use crate::operation::get_usage_totals::_get_usage_totals_input::GetUsageTotalsInput;
+
+pub use crate::operation::get_usage_totals::_get_usage_totals_output::GetUsageTotalsOutput;
 
 mod _get_usage_totals_input;
 

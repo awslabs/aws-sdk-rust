@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dns_views::Li
     }
 }
 
-pub use crate::operation::list_dns_views::_list_dns_views_output::ListDnsViewsOutput;
-
 pub use crate::operation::list_dns_views::_list_dns_views_input::ListDnsViewsInput;
+
+pub use crate::operation::list_dns_views::_list_dns_views_output::ListDnsViewsOutput;
 
 mod _list_dns_views_input;
 

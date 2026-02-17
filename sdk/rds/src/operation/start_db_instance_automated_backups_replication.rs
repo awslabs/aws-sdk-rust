@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_db_instance_automated_backups_replication::_start_db_instance_automated_backups_replication_output::StartDbInstanceAutomatedBackupsReplicationOutput;
-
 pub use crate::operation::start_db_instance_automated_backups_replication::_start_db_instance_automated_backups_replication_input::StartDbInstanceAutomatedBackupsReplicationInput;
+
+pub use crate::operation::start_db_instance_automated_backups_replication::_start_db_instance_automated_backups_replication_output::StartDbInstanceAutomatedBackupsReplicationOutput;
 
 mod _start_db_instance_automated_backups_replication_input;
 

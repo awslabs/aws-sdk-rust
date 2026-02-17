@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_alert_manager_
     }
 }
 
-pub use crate::operation::put_alert_manager_definition::_put_alert_manager_definition_output::PutAlertManagerDefinitionOutput;
-
 pub use crate::operation::put_alert_manager_definition::_put_alert_manager_definition_input::PutAlertManagerDefinitionInput;
+
+pub use crate::operation::put_alert_manager_definition::_put_alert_manager_definition_output::PutAlertManagerDefinitionOutput;
 
 mod _put_alert_manager_definition_input;
 

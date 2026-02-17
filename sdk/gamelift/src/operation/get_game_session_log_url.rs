@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_game_session_l
     }
 }
 
-pub use crate::operation::get_game_session_log_url::_get_game_session_log_url_output::GetGameSessionLogUrlOutput;
-
 pub use crate::operation::get_game_session_log_url::_get_game_session_log_url_input::GetGameSessionLogUrlInput;
+
+pub use crate::operation::get_game_session_log_url::_get_game_session_log_url_output::GetGameSessionLogUrlOutput;
 
 mod _get_game_session_log_url_input;
 

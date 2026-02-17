@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_analyti
     }
 }
 
-pub use crate::operation::get_bucket_analytics_configuration::_get_bucket_analytics_configuration_output::GetBucketAnalyticsConfigurationOutput;
-
 pub use crate::operation::get_bucket_analytics_configuration::_get_bucket_analytics_configuration_input::GetBucketAnalyticsConfigurationInput;
+
+pub use crate::operation::get_bucket_analytics_configuration::_get_bucket_analytics_configuration_output::GetBucketAnalyticsConfigurationOutput;
 
 mod _get_bucket_analytics_configuration_input;
 

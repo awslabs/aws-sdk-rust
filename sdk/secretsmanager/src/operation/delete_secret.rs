@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_secret::Del
     }
 }
 
-pub use crate::operation::delete_secret::_delete_secret_output::DeleteSecretOutput;
-
 pub use crate::operation::delete_secret::_delete_secret_input::DeleteSecretInput;
+
+pub use crate::operation::delete_secret::_delete_secret_output::DeleteSecretOutput;
 
 mod _delete_secret_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stream_co
     }
 }
 
-pub use crate::operation::describe_stream_consumer::_describe_stream_consumer_output::DescribeStreamConsumerOutput;
-
 pub use crate::operation::describe_stream_consumer::_describe_stream_consumer_input::DescribeStreamConsumerInput;
+
+pub use crate::operation::describe_stream_consumer::_describe_stream_consumer_output::DescribeStreamConsumerOutput;
 
 mod _describe_stream_consumer_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_evaluation_
     }
 }
 
-pub use crate::operation::search_evaluation_forms::_search_evaluation_forms_output::SearchEvaluationFormsOutput;
-
 pub use crate::operation::search_evaluation_forms::_search_evaluation_forms_input::SearchEvaluationFormsInput;
+
+pub use crate::operation::search_evaluation_forms::_search_evaluation_forms_output::SearchEvaluationFormsOutput;
 
 mod _search_evaluation_forms_input;
 

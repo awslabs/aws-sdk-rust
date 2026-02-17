@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_enrollment_
     }
 }
 
-pub use crate::operation::update_enrollment_status::_update_enrollment_status_output::UpdateEnrollmentStatusOutput;
-
 pub use crate::operation::update_enrollment_status::_update_enrollment_status_input::UpdateEnrollmentStatusInput;
+
+pub use crate::operation::update_enrollment_status::_update_enrollment_status_output::UpdateEnrollmentStatusOutput;
 
 mod _update_enrollment_status_input;
 

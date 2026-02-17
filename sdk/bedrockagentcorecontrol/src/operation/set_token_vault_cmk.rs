@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_token_vault_cm
     }
 }
 
-pub use crate::operation::set_token_vault_cmk::_set_token_vault_cmk_output::SetTokenVaultCmkOutput;
-
 pub use crate::operation::set_token_vault_cmk::_set_token_vault_cmk_input::SetTokenVaultCmkInput;
+
+pub use crate::operation::set_token_vault_cmk::_set_token_vault_cmk_output::SetTokenVaultCmkOutput;
 
 mod _set_token_vault_cmk_input;
 

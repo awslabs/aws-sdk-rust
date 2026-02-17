@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_fleet::StopFl
     }
 }
 
-pub use crate::operation::stop_fleet::_stop_fleet_output::StopFleetOutput;
-
 pub use crate::operation::stop_fleet::_stop_fleet_input::StopFleetInput;
+
+pub use crate::operation::stop_fleet::_stop_fleet_output::StopFleetOutput;
 
 mod _stop_fleet_input;
 

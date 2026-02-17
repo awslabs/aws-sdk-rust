@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_keyspaces::Li
     }
 }
 
-pub use crate::operation::list_keyspaces::_list_keyspaces_output::ListKeyspacesOutput;
-
 pub use crate::operation::list_keyspaces::_list_keyspaces_input::ListKeyspacesInput;
+
+pub use crate::operation::list_keyspaces::_list_keyspaces_output::ListKeyspacesOutput;
 
 mod _list_keyspaces_input;
 

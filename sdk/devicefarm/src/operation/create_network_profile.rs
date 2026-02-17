@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network_pro
     }
 }
 
-pub use crate::operation::create_network_profile::_create_network_profile_output::CreateNetworkProfileOutput;
-
 pub use crate::operation::create_network_profile::_create_network_profile_input::CreateNetworkProfileInput;
+
+pub use crate::operation::create_network_profile::_create_network_profile_output::CreateNetworkProfileOutput;
 
 mod _create_network_profile_input;
 

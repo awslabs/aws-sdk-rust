@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_logging::D
     }
 }
 
-pub use crate::operation::disable_logging::_disable_logging_output::DisableLoggingOutput;
-
 pub use crate::operation::disable_logging::_disable_logging_input::DisableLoggingInput;
+
+pub use crate::operation::disable_logging::_disable_logging_output::DisableLoggingOutput;
 
 mod _disable_logging_input;
 

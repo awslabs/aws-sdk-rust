@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_code_security
     }
 }
 
-pub use crate::operation::list_code_security_integrations::_list_code_security_integrations_output::ListCodeSecurityIntegrationsOutput;
-
 pub use crate::operation::list_code_security_integrations::_list_code_security_integrations_input::ListCodeSecurityIntegrationsInput;
+
+pub use crate::operation::list_code_security_integrations::_list_code_security_integrations_output::ListCodeSecurityIntegrationsOutput;
 
 mod _list_code_security_integrations_input;
 

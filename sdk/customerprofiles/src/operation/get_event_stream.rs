@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_stream::
     }
 }
 
-pub use crate::operation::get_event_stream::_get_event_stream_output::GetEventStreamOutput;
-
 pub use crate::operation::get_event_stream::_get_event_stream_input::GetEventStreamInput;
+
+pub use crate::operation::get_event_stream::_get_event_stream_output::GetEventStreamOutput;
 
 mod _get_event_stream_input;
 

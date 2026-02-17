@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_class
     }
 }
 
-pub use crate::operation::describe_vpc_classic_link_dns_support::_describe_vpc_classic_link_dns_support_output::DescribeVpcClassicLinkDnsSupportOutput;
-
 pub use crate::operation::describe_vpc_classic_link_dns_support::_describe_vpc_classic_link_dns_support_input::DescribeVpcClassicLinkDnsSupportInput;
+
+pub use crate::operation::describe_vpc_classic_link_dns_support::_describe_vpc_classic_link_dns_support_output::DescribeVpcClassicLinkDnsSupportOutput;
 
 mod _describe_vpc_classic_link_dns_support_input;
 

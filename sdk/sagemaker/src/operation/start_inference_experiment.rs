@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_inference_ex
     }
 }
 
-pub use crate::operation::start_inference_experiment::_start_inference_experiment_output::StartInferenceExperimentOutput;
-
 pub use crate::operation::start_inference_experiment::_start_inference_experiment_input::StartInferenceExperimentInput;
+
+pub use crate::operation::start_inference_experiment::_start_inference_experiment_output::StartInferenceExperimentOutput;
 
 mod _start_inference_experiment_input;
 

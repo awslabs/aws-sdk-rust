@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_schema::Pu
     }
 }
 
-pub use crate::operation::publish_schema::_publish_schema_output::PublishSchemaOutput;
-
 pub use crate::operation::publish_schema::_publish_schema_input::PublishSchemaInput;
+
+pub use crate::operation::publish_schema::_publish_schema_output::PublishSchemaOutput;
 
 mod _publish_schema_input;
 

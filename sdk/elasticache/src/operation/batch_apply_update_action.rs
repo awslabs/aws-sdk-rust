@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_apply_update
     }
 }
 
-pub use crate::operation::batch_apply_update_action::_batch_apply_update_action_output::BatchApplyUpdateActionOutput;
-
 pub use crate::operation::batch_apply_update_action::_batch_apply_update_action_input::BatchApplyUpdateActionInput;
+
+pub use crate::operation::batch_apply_update_action::_batch_apply_update_action_output::BatchApplyUpdateActionOutput;
 
 mod _batch_apply_update_action_input;
 

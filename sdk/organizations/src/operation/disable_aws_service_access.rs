@@ -617,9 +617,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_aws_servic
     }
 }
 
-pub use crate::operation::disable_aws_service_access::_disable_aws_service_access_output::DisableAwsServiceAccessOutput;
-
 pub use crate::operation::disable_aws_service_access::_disable_aws_service_access_input::DisableAwsServiceAccessInput;
+
+pub use crate::operation::disable_aws_service_access::_disable_aws_service_access_output::DisableAwsServiceAccessOutput;
 
 mod _disable_aws_service_access_input;
 

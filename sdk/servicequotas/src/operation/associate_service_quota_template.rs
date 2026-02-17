@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_service_
     }
 }
 
-pub use crate::operation::associate_service_quota_template::_associate_service_quota_template_output::AssociateServiceQuotaTemplateOutput;
-
 pub use crate::operation::associate_service_quota_template::_associate_service_quota_template_input::AssociateServiceQuotaTemplateInput;
+
+pub use crate::operation::associate_service_quota_template::_associate_service_quota_template_output::AssociateServiceQuotaTemplateOutput;
 
 mod _associate_service_quota_template_input;
 

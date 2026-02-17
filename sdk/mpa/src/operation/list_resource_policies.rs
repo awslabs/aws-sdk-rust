@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_poli
     }
 }
 
-pub use crate::operation::list_resource_policies::_list_resource_policies_output::ListResourcePoliciesOutput;
-
 pub use crate::operation::list_resource_policies::_list_resource_policies_input::ListResourcePoliciesInput;
+
+pub use crate::operation::list_resource_policies::_list_resource_policies_output::ListResourcePoliciesOutput;
 
 mod _list_resource_policies_input;
 

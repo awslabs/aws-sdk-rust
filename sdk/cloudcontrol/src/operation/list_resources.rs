@@ -520,9 +520,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resources::Li
     }
 }
 
-pub use crate::operation::list_resources::_list_resources_output::ListResourcesOutput;
-
 pub use crate::operation::list_resources::_list_resources_input::ListResourcesInput;
+
+pub use crate::operation::list_resources::_list_resources_output::ListResourcesOutput;
 
 mod _list_resources_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_chat_controls_
     }
 }
 
-pub use crate::operation::get_chat_controls_configuration::_get_chat_controls_configuration_output::GetChatControlsConfigurationOutput;
-
 pub use crate::operation::get_chat_controls_configuration::_get_chat_controls_configuration_input::GetChatControlsConfigurationInput;
+
+pub use crate::operation::get_chat_controls_configuration::_get_chat_controls_configuration_output::GetChatControlsConfigurationOutput;
 
 mod _get_chat_controls_configuration_input;
 

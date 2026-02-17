@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_express_gat
     }
 }
 
-pub use crate::operation::delete_express_gateway_service::_delete_express_gateway_service_output::DeleteExpressGatewayServiceOutput;
-
 pub use crate::operation::delete_express_gateway_service::_delete_express_gateway_service_input::DeleteExpressGatewayServiceInput;
+
+pub use crate::operation::delete_express_gateway_service::_delete_express_gateway_service_output::DeleteExpressGatewayServiceOutput;
 
 mod _delete_express_gateway_service_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_meeting::Cr
     }
 }
 
-pub use crate::operation::create_meeting::_create_meeting_output::CreateMeetingOutput;
-
 pub use crate::operation::create_meeting::_create_meeting_input::CreateMeetingInput;
+
+pub use crate::operation::create_meeting::_create_meeting_output::CreateMeetingOutput;
 
 mod _create_meeting_input;
 

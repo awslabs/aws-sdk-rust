@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_agent_alias
     }
 }
 
-pub use crate::operation::update_agent_alias::_update_agent_alias_output::UpdateAgentAliasOutput;
-
 pub use crate::operation::update_agent_alias::_update_agent_alias_input::UpdateAgentAliasInput;
+
+pub use crate::operation::update_agent_alias::_update_agent_alias_output::UpdateAgentAliasOutput;
 
 mod _update_agent_alias_input;
 

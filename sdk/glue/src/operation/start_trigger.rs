@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_trigger::Sta
     }
 }
 
-pub use crate::operation::start_trigger::_start_trigger_output::StartTriggerOutput;
-
 pub use crate::operation::start_trigger::_start_trigger_input::StartTriggerInput;
+
+pub use crate::operation::start_trigger::_start_trigger_output::StartTriggerOutput;
 
 mod _start_trigger_input;
 

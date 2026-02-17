@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_package_con
     }
 }
 
-pub use crate::operation::update_package_configuration::_update_package_configuration_output::UpdatePackageConfigurationOutput;
-
 pub use crate::operation::update_package_configuration::_update_package_configuration_input::UpdatePackageConfigurationInput;
+
+pub use crate::operation::update_package_configuration::_update_package_configuration_output::UpdatePackageConfigurationOutput;
 
 mod _update_package_configuration_input;
 

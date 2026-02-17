@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_public_key::Ge
     }
 }
 
-pub use crate::operation::get_public_key::_get_public_key_output::GetPublicKeyOutput;
-
 pub use crate::operation::get_public_key::_get_public_key_input::GetPublicKeyInput;
+
+pub use crate::operation::get_public_key::_get_public_key_output::GetPublicKeyOutput;
 
 mod _get_public_key_input;
 

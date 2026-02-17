@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_layout::GetLay
     }
 }
 
-pub use crate::operation::get_layout::_get_layout_output::GetLayoutOutput;
-
 pub use crate::operation::get_layout::_get_layout_input::GetLayoutInput;
+
+pub use crate::operation::get_layout::_get_layout_output::GetLayoutOutput;
 
 mod _get_layout_input;
 

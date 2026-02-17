@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_verific
     }
 }
 
-pub use crate::operation::get_domain_verification::_get_domain_verification_output::GetDomainVerificationOutput;
-
 pub use crate::operation::get_domain_verification::_get_domain_verification_input::GetDomainVerificationInput;
+
+pub use crate::operation::get_domain_verification::_get_domain_verification_output::GetDomainVerificationOutput;
 
 mod _get_domain_verification_input;
 

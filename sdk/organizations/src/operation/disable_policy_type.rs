@@ -639,9 +639,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_policy_typ
     }
 }
 
-pub use crate::operation::disable_policy_type::_disable_policy_type_output::DisablePolicyTypeOutput;
-
 pub use crate::operation::disable_policy_type::_disable_policy_type_input::DisablePolicyTypeInput;
+
+pub use crate::operation::disable_policy_type::_disable_policy_type_output::DisablePolicyTypeOutput;
 
 mod _disable_policy_type_input;
 

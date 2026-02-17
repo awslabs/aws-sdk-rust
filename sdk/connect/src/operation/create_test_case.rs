@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_test_case::
     }
 }
 
-pub use crate::operation::create_test_case::_create_test_case_output::CreateTestCaseOutput;
-
 pub use crate::operation::create_test_case::_create_test_case_input::CreateTestCaseInput;
+
+pub use crate::operation::create_test_case::_create_test_case_output::CreateTestCaseOutput;
 
 mod _create_test_case_input;
 

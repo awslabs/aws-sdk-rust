@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_game_server
     }
 }
 
-pub use crate::operation::resume_game_server_group::_resume_game_server_group_output::ResumeGameServerGroupOutput;
-
 pub use crate::operation::resume_game_server_group::_resume_game_server_group_input::ResumeGameServerGroupInput;
+
+pub use crate::operation::resume_game_server_group::_resume_game_server_group_output::ResumeGameServerGroupOutput;
 
 mod _resume_game_server_group_input;
 

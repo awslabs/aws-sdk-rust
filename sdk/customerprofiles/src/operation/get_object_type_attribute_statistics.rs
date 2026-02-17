@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_type_at
     }
 }
 
-pub use crate::operation::get_object_type_attribute_statistics::_get_object_type_attribute_statistics_output::GetObjectTypeAttributeStatisticsOutput;
-
 pub use crate::operation::get_object_type_attribute_statistics::_get_object_type_attribute_statistics_input::GetObjectTypeAttributeStatisticsInput;
+
+pub use crate::operation::get_object_type_attribute_statistics::_get_object_type_attribute_statistics_output::GetObjectTypeAttributeStatisticsOutput;
 
 mod _get_object_type_attribute_statistics_input;
 

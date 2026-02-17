@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_crawlers
     }
 }
 
-pub use crate::operation::batch_get_crawlers::_batch_get_crawlers_output::BatchGetCrawlersOutput;
-
 pub use crate::operation::batch_get_crawlers::_batch_get_crawlers_input::BatchGetCrawlersInput;
+
+pub use crate::operation::batch_get_crawlers::_batch_get_crawlers_output::BatchGetCrawlersOutput;
 
 mod _batch_get_crawlers_input;
 

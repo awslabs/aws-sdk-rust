@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_query_monitor
     }
 }
 
-pub use crate::operation::stop_query_monitor_top_contributors::_stop_query_monitor_top_contributors_output::StopQueryMonitorTopContributorsOutput;
-
 pub use crate::operation::stop_query_monitor_top_contributors::_stop_query_monitor_top_contributors_input::StopQueryMonitorTopContributorsInput;
+
+pub use crate::operation::stop_query_monitor_top_contributors::_stop_query_monitor_top_contributors_output::StopQueryMonitorTopContributorsOutput;
 
 mod _stop_query_monitor_top_contributors_input;
 

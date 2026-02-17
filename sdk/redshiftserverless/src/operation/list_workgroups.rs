@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workgroups::L
     }
 }
 
-pub use crate::operation::list_workgroups::_list_workgroups_output::ListWorkgroupsOutput;
-
 pub use crate::operation::list_workgroups::_list_workgroups_input::ListWorkgroupsInput;
+
+pub use crate::operation::list_workgroups::_list_workgroups_output::ListWorkgroupsOutput;
 
 mod _list_workgroups_input;
 

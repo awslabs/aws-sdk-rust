@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_source:
     }
 }
 
-pub use crate::operation::get_access_source::_get_access_source_output::GetAccessSourceOutput;
-
 pub use crate::operation::get_access_source::_get_access_source_input::GetAccessSourceInput;
+
+pub use crate::operation::get_access_source::_get_access_source_output::GetAccessSourceOutput;
 
 mod _get_access_source_input;
 

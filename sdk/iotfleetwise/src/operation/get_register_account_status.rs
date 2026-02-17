@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_register_accou
     }
 }
 
-pub use crate::operation::get_register_account_status::_get_register_account_status_output::GetRegisterAccountStatusOutput;
-
 pub use crate::operation::get_register_account_status::_get_register_account_status_input::GetRegisterAccountStatusInput;
+
+pub use crate::operation::get_register_account_status::_get_register_account_status_output::GetRegisterAccountStatusOutput;
 
 mod _get_register_account_status_input;
 

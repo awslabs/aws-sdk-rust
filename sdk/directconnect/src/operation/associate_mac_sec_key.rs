@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_mac_sec_
     }
 }
 
-pub use crate::operation::associate_mac_sec_key::_associate_mac_sec_key_output::AssociateMacSecKeyOutput;
-
 pub use crate::operation::associate_mac_sec_key::_associate_mac_sec_key_input::AssociateMacSecKeyInput;
+
+pub use crate::operation::associate_mac_sec_key::_associate_mac_sec_key_output::AssociateMacSecKeyOutput;
 
 mod _associate_mac_sec_key_input;
 

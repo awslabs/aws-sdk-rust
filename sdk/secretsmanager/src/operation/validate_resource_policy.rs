@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_resource_
     }
 }
 
-pub use crate::operation::validate_resource_policy::_validate_resource_policy_output::ValidateResourcePolicyOutput;
-
 pub use crate::operation::validate_resource_policy::_validate_resource_policy_input::ValidateResourcePolicyInput;
+
+pub use crate::operation::validate_resource_policy::_validate_resource_policy_output::ValidateResourcePolicyOutput;
 
 mod _validate_resource_policy_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_plugin
     }
 }
 
-pub use crate::operation::list_custom_plugins::_list_custom_plugins_output::ListCustomPluginsOutput;
-
 pub use crate::operation::list_custom_plugins::_list_custom_plugins_input::ListCustomPluginsInput;
+
+pub use crate::operation::list_custom_plugins::_list_custom_plugins_output::ListCustomPluginsOutput;
 
 mod _list_custom_plugins_input;
 

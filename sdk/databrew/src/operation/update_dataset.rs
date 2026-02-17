@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dataset::Up
     }
 }
 
-pub use crate::operation::update_dataset::_update_dataset_output::UpdateDatasetOutput;
-
 pub use crate::operation::update_dataset::_update_dataset_input::UpdateDatasetInput;
+
+pub use crate::operation::update_dataset::_update_dataset_output::UpdateDatasetOutput;
 
 mod _update_dataset_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_deployme
     }
 }
 
-pub use crate::operation::batch_get_deployment_targets::_batch_get_deployment_targets_output::BatchGetDeploymentTargetsOutput;
-
 pub use crate::operation::batch_get_deployment_targets::_batch_get_deployment_targets_input::BatchGetDeploymentTargetsInput;
+
+pub use crate::operation::batch_get_deployment_targets::_batch_get_deployment_targets_output::BatchGetDeploymentTargetsOutput;
 
 mod _batch_get_deployment_targets_input;
 

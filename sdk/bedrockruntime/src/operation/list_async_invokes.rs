@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_async_invokes
     }
 }
 
-pub use crate::operation::list_async_invokes::_list_async_invokes_output::ListAsyncInvokesOutput;
-
 pub use crate::operation::list_async_invokes::_list_async_invokes_input::ListAsyncInvokesInput;
+
+pub use crate::operation::list_async_invokes::_list_async_invokes_output::ListAsyncInvokesOutput;
 
 mod _list_async_invokes_input;
 

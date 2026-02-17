@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_insights_metr
     }
 }
 
-pub use crate::operation::list_insights_metric_data::_list_insights_metric_data_output::ListInsightsMetricDataOutput;
-
 pub use crate::operation::list_insights_metric_data::_list_insights_metric_data_input::ListInsightsMetricDataInput;
+
+pub use crate::operation::list_insights_metric_data::_list_insights_metric_data_output::ListInsightsMetricDataOutput;
 
 mod _list_insights_metric_data_input;
 

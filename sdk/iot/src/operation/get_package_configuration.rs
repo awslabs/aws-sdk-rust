@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_package_config
     }
 }
 
-pub use crate::operation::get_package_configuration::_get_package_configuration_output::GetPackageConfigurationOutput;
-
 pub use crate::operation::get_package_configuration::_get_package_configuration_input::GetPackageConfigurationInput;
+
+pub use crate::operation::get_package_configuration::_get_package_configuration_output::GetPackageConfigurationOutput;
 
 mod _get_package_configuration_input;
 

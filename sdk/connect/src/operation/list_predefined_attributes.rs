@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_predefined_at
     }
 }
 
-pub use crate::operation::list_predefined_attributes::_list_predefined_attributes_output::ListPredefinedAttributesOutput;
-
 pub use crate::operation::list_predefined_attributes::_list_predefined_attributes_input::ListPredefinedAttributesInput;
+
+pub use crate::operation::list_predefined_attributes::_list_predefined_attributes_output::ListPredefinedAttributesOutput;
 
 mod _list_predefined_attributes_input;
 

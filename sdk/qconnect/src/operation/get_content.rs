@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_content::GetCo
     }
 }
 
-pub use crate::operation::get_content::_get_content_output::GetContentOutput;
-
 pub use crate::operation::get_content::_get_content_input::GetContentInput;
+
+pub use crate::operation::get_content::_get_content_output::GetContentOutput;
 
 mod _get_content_input;
 

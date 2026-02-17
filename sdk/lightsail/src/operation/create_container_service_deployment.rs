@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_container_s
     }
 }
 
-pub use crate::operation::create_container_service_deployment::_create_container_service_deployment_output::CreateContainerServiceDeploymentOutput;
-
 pub use crate::operation::create_container_service_deployment::_create_container_service_deployment_input::CreateContainerServiceDeploymentInput;
+
+pub use crate::operation::create_container_service_deployment::_create_container_service_deployment_output::CreateContainerServiceDeploymentOutput;
 
 mod _create_container_service_deployment_input;
 

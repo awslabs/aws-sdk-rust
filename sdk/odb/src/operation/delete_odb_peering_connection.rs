@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_odb_peering
     }
 }
 
-pub use crate::operation::delete_odb_peering_connection::_delete_odb_peering_connection_output::DeleteOdbPeeringConnectionOutput;
-
 pub use crate::operation::delete_odb_peering_connection::_delete_odb_peering_connection_input::DeleteOdbPeeringConnectionInput;
+
+pub use crate::operation::delete_odb_peering_connection::_delete_odb_peering_connection_output::DeleteOdbPeeringConnectionOutput;
 
 mod _delete_odb_peering_connection_input;
 

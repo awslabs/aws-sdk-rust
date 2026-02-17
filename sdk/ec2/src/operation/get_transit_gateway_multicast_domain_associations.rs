@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_transit_gateway_multicast_domain_associations::_get_transit_gateway_multicast_domain_associations_output::GetTransitGatewayMulticastDomainAssociationsOutput;
-
 pub use crate::operation::get_transit_gateway_multicast_domain_associations::_get_transit_gateway_multicast_domain_associations_input::GetTransitGatewayMulticastDomainAssociationsInput;
+
+pub use crate::operation::get_transit_gateway_multicast_domain_associations::_get_transit_gateway_multicast_domain_associations_output::GetTransitGatewayMulticastDomainAssociationsOutput;
 
 mod _get_transit_gateway_multicast_domain_associations_input;
 

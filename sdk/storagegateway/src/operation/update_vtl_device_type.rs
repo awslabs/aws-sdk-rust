@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vtl_device_
     }
 }
 
-pub use crate::operation::update_vtl_device_type::_update_vtl_device_type_output::UpdateVtlDeviceTypeOutput;
-
 pub use crate::operation::update_vtl_device_type::_update_vtl_device_type_input::UpdateVtlDeviceTypeInput;
+
+pub use crate::operation::update_vtl_device_type::_update_vtl_device_type_output::UpdateVtlDeviceTypeOutput;
 
 mod _update_vtl_device_type_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::advertise_byoip_ci
     }
 }
 
-pub use crate::operation::advertise_byoip_cidr::_advertise_byoip_cidr_output::AdvertiseByoipCidrOutput;
-
 pub use crate::operation::advertise_byoip_cidr::_advertise_byoip_cidr_input::AdvertiseByoipCidrInput;
+
+pub use crate::operation::advertise_byoip_cidr::_advertise_byoip_cidr_output::AdvertiseByoipCidrOutput;
 
 mod _advertise_byoip_cidr_input;
 

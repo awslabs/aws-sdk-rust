@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_variant_sto
     }
 }
 
-pub use crate::operation::create_variant_store::_create_variant_store_output::CreateVariantStoreOutput;
-
 pub use crate::operation::create_variant_store::_create_variant_store_input::CreateVariantStoreInput;
+
+pub use crate::operation::create_variant_store::_create_variant_store_output::CreateVariantStoreOutput;
 
 mod _create_variant_store_input;
 

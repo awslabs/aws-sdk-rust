@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entity_owners
     }
 }
 
-pub use crate::operation::list_entity_owners::_list_entity_owners_output::ListEntityOwnersOutput;
-
 pub use crate::operation::list_entity_owners::_list_entity_owners_input::ListEntityOwnersInput;
+
+pub use crate::operation::list_entity_owners::_list_entity_owners_output::ListEntityOwnersOutput;
 
 mod _list_entity_owners_input;
 

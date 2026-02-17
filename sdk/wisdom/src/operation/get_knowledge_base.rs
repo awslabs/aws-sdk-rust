@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_knowledge_base
     }
 }
 
-pub use crate::operation::get_knowledge_base::_get_knowledge_base_output::GetKnowledgeBaseOutput;
-
 pub use crate::operation::get_knowledge_base::_get_knowledge_base_input::GetKnowledgeBaseInput;
+
+pub use crate::operation::get_knowledge_base::_get_knowledge_base_output::GetKnowledgeBaseOutput;
 
 mod _get_knowledge_base_input;
 

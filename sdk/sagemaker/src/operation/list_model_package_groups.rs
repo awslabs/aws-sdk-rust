@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_package
     }
 }
 
-pub use crate::operation::list_model_package_groups::_list_model_package_groups_output::ListModelPackageGroupsOutput;
-
 pub use crate::operation::list_model_package_groups::_list_model_package_groups_input::ListModelPackageGroupsInput;
+
+pub use crate::operation::list_model_package_groups::_list_model_package_groups_output::ListModelPackageGroupsOutput;
 
 mod _list_model_package_groups_input;
 

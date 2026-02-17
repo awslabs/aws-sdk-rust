@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_candidates_fo
     }
 }
 
-pub use crate::operation::list_candidates_for_auto_ml_job::_list_candidates_for_auto_ml_job_output::ListCandidatesForAutoMlJobOutput;
-
 pub use crate::operation::list_candidates_for_auto_ml_job::_list_candidates_for_auto_ml_job_input::ListCandidatesForAutoMlJobInput;
+
+pub use crate::operation::list_candidates_for_auto_ml_job::_list_candidates_for_auto_ml_job_output::ListCandidatesForAutoMlJobOutput;
 
 mod _list_candidates_for_auto_ml_job_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decode_authorizati
     }
 }
 
-pub use crate::operation::decode_authorization_message::_decode_authorization_message_output::DecodeAuthorizationMessageOutput;
-
 pub use crate::operation::decode_authorization_message::_decode_authorization_message_input::DecodeAuthorizationMessageInput;
+
+pub use crate::operation::decode_authorization_message::_decode_authorization_message_output::DecodeAuthorizationMessageOutput;
 
 mod _decode_authorization_message_input;
 

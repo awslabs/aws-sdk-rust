@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_computation_m
     }
 }
 
-pub use crate::operation::list_computation_model_data_binding_usages::_list_computation_model_data_binding_usages_output::ListComputationModelDataBindingUsagesOutput;
-
 pub use crate::operation::list_computation_model_data_binding_usages::_list_computation_model_data_binding_usages_input::ListComputationModelDataBindingUsagesInput;
+
+pub use crate::operation::list_computation_model_data_binding_usages::_list_computation_model_data_binding_usages_output::ListComputationModelDataBindingUsagesOutput;
 
 mod _list_computation_model_data_binding_usages_input;
 

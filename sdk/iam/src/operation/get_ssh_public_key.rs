@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ssh_public_key
     }
 }
 
-pub use crate::operation::get_ssh_public_key::_get_ssh_public_key_output::GetSshPublicKeyOutput;
-
 pub use crate::operation::get_ssh_public_key::_get_ssh_public_key_input::GetSshPublicKeyInput;
+
+pub use crate::operation::get_ssh_public_key::_get_ssh_public_key_output::GetSshPublicKeyOutput;
 
 mod _get_ssh_public_key_input;
 

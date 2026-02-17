@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_permission_pol
     }
 }
 
-pub use crate::operation::put_permission_policy::_put_permission_policy_output::PutPermissionPolicyOutput;
-
 pub use crate::operation::put_permission_policy::_put_permission_policy_input::PutPermissionPolicyInput;
+
+pub use crate::operation::put_permission_policy::_put_permission_policy_output::PutPermissionPolicyOutput;
 
 mod _put_permission_policy_input;
 

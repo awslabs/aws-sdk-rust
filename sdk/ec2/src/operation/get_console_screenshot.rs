@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_console_screen
     }
 }
 
-pub use crate::operation::get_console_screenshot::_get_console_screenshot_output::GetConsoleScreenshotOutput;
-
 pub use crate::operation::get_console_screenshot::_get_console_screenshot_input::GetConsoleScreenshotInput;
+
+pub use crate::operation::get_console_screenshot::_get_console_screenshot_output::GetConsoleScreenshotOutput;
 
 mod _get_console_screenshot_input;
 

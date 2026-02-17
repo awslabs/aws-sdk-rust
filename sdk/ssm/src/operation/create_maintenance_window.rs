@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_maintenance
     }
 }
 
-pub use crate::operation::create_maintenance_window::_create_maintenance_window_output::CreateMaintenanceWindowOutput;
-
 pub use crate::operation::create_maintenance_window::_create_maintenance_window_input::CreateMaintenanceWindowInput;
+
+pub use crate::operation::create_maintenance_window::_create_maintenance_window_output::CreateMaintenanceWindowOutput;
 
 mod _create_maintenance_window_input;
 

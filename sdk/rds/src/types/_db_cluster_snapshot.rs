@@ -47,6 +47,16 @@ pub struct DbClusterSnapshot {
     pub percent_progress: ::std::option::Option<i32>,
     /// <p>Indicates whether the DB cluster snapshot is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
+    /// <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub backup_retention_period: ::std::option::Option<i32>,
     /// <p>The daily time range during which automated backups are created if automated backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.</p>
@@ -153,6 +163,18 @@ impl DbClusterSnapshot {
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
+    }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(&self) -> ::std::option::Option<i32> {
         self.backup_retention_period
@@ -232,6 +254,7 @@ pub struct DbClusterSnapshotBuilder {
     pub(crate) snapshot_type: ::std::option::Option<::std::string::String>,
     pub(crate) percent_progress: ::std::option::Option<i32>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) backup_retention_period: ::std::option::Option<i32>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
@@ -513,6 +536,44 @@ impl DbClusterSnapshotBuilder {
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster snapshot. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster snapshot is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster snapshot is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster snapshot is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
+    }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
         self.backup_retention_period = ::std::option::Option::Some(input);
@@ -705,6 +766,7 @@ impl DbClusterSnapshotBuilder {
             snapshot_type: self.snapshot_type,
             percent_progress: self.percent_progress,
             storage_encrypted: self.storage_encrypted,
+            storage_encryption_type: self.storage_encryption_type,
             backup_retention_period: self.backup_retention_period,
             preferred_backup_window: self.preferred_backup_window,
             kms_key_id: self.kms_key_id,

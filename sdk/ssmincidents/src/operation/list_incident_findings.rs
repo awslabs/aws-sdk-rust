@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_incident_find
     }
 }
 
-pub use crate::operation::list_incident_findings::_list_incident_findings_output::ListIncidentFindingsOutput;
-
 pub use crate::operation::list_incident_findings::_list_incident_findings_input::ListIncidentFindingsInput;
+
+pub use crate::operation::list_incident_findings::_list_incident_findings_output::ListIncidentFindingsOutput;
 
 mod _list_incident_findings_input;
 

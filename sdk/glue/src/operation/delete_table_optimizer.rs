@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_table_optim
     }
 }
 
-pub use crate::operation::delete_table_optimizer::_delete_table_optimizer_output::DeleteTableOptimizerOutput;
-
 pub use crate::operation::delete_table_optimizer::_delete_table_optimizer_input::DeleteTableOptimizerInput;
+
+pub use crate::operation::delete_table_optimizer::_delete_table_optimizer_output::DeleteTableOptimizerOutput;
 
 mod _delete_table_optimizer_input;
 

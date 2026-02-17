@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_revision::R
     }
 }
 
-pub use crate::operation::revoke_revision::_revoke_revision_output::RevokeRevisionOutput;
-
 pub use crate::operation::revoke_revision::_revoke_revision_input::RevokeRevisionInput;
+
+pub use crate::operation::revoke_revision::_revoke_revision_output::RevokeRevisionOutput;
 
 mod _revoke_revision_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_encrypti
     }
 }
 
-pub use crate::operation::get_table_encryption::_get_table_encryption_output::GetTableEncryptionOutput;
-
 pub use crate::operation::get_table_encryption::_get_table_encryption_input::GetTableEncryptionInput;
+
+pub use crate::operation::get_table_encryption::_get_table_encryption_output::GetTableEncryptionOutput;
 
 mod _get_table_encryption_input;
 

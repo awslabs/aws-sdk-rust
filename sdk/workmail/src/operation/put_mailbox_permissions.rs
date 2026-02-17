@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_mailbox_permis
     }
 }
 
-pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_output::PutMailboxPermissionsOutput;
-
 pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_input::PutMailboxPermissionsInput;
+
+pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_output::PutMailboxPermissionsOutput;
 
 mod _put_mailbox_permissions_input;
 

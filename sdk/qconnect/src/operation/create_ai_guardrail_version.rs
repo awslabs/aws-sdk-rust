@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ai_guardrai
     }
 }
 
-pub use crate::operation::create_ai_guardrail_version::_create_ai_guardrail_version_output::CreateAiGuardrailVersionOutput;
-
 pub use crate::operation::create_ai_guardrail_version::_create_ai_guardrail_version_input::CreateAiGuardrailVersionInput;
+
+pub use crate::operation::create_ai_guardrail_version::_create_ai_guardrail_version_output::CreateAiGuardrailVersionOutput;
 
 mod _create_ai_guardrail_version_input;
 

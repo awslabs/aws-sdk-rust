@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_user::Cr
     }
 }
 
-pub use crate::operation::create_kx_user::_create_kx_user_output::CreateKxUserOutput;
-
 pub use crate::operation::create_kx_user::_create_kx_user_input::CreateKxUserInput;
+
+pub use crate::operation::create_kx_user::_create_kx_user_output::CreateKxUserOutput;
 
 mod _create_kx_user_input;
 

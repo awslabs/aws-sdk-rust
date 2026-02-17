@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_logger_defini
     }
 }
 
-pub use crate::operation::list_logger_definitions::_list_logger_definitions_output::ListLoggerDefinitionsOutput;
-
 pub use crate::operation::list_logger_definitions::_list_logger_definitions_input::ListLoggerDefinitionsInput;
+
+pub use crate::operation::list_logger_definitions::_list_logger_definitions_output::ListLoggerDefinitionsOutput;
 
 mod _list_logger_definitions_input;
 

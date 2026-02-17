@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_samples::List
     }
 }
 
-pub use crate::operation::list_samples::_list_samples_output::ListSamplesOutput;
-
 pub use crate::operation::list_samples::_list_samples_input::ListSamplesInput;
+
+pub use crate::operation::list_samples::_list_samples_output::ListSamplesOutput;
 
 mod _list_samples_input;
 

@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_package_ver
     }
 }
 
-pub use crate::operation::update_package_versions_status::_update_package_versions_status_output::UpdatePackageVersionsStatusOutput;
-
 pub use crate::operation::update_package_versions_status::_update_package_versions_status_input::UpdatePackageVersionsStatusInput;
+
+pub use crate::operation::update_package_versions_status::_update_package_versions_status_output::UpdatePackageVersionsStatusOutput;
 
 mod _update_package_versions_status_input;
 

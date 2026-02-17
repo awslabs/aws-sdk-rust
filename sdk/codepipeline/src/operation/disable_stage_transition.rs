@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_stage_tran
     }
 }
 
-pub use crate::operation::disable_stage_transition::_disable_stage_transition_output::DisableStageTransitionOutput;
-
 pub use crate::operation::disable_stage_transition::_disable_stage_transition_input::DisableStageTransitionInput;
+
+pub use crate::operation::disable_stage_transition::_disable_stage_transition_output::DisableStageTransitionOutput;
 
 mod _disable_stage_transition_input;
 

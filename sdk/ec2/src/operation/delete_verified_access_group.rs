@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_verified_ac
     }
 }
 
-pub use crate::operation::delete_verified_access_group::_delete_verified_access_group_output::DeleteVerifiedAccessGroupOutput;
-
 pub use crate::operation::delete_verified_access_group::_delete_verified_access_group_input::DeleteVerifiedAccessGroupInput;
+
+pub use crate::operation::delete_verified_access_group::_delete_verified_access_group_output::DeleteVerifiedAccessGroupOutput;
 
 mod _delete_verified_access_group_input;
 

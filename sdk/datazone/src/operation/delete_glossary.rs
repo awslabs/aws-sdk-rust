@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_glossary::D
     }
 }
 
-pub use crate::operation::delete_glossary::_delete_glossary_output::DeleteGlossaryOutput;
-
 pub use crate::operation::delete_glossary::_delete_glossary_input::DeleteGlossaryInput;
+
+pub use crate::operation::delete_glossary::_delete_glossary_output::DeleteGlossaryOutput;
 
 mod _delete_glossary_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_resource_
     }
 }
 
-pub use crate::operation::complete_resource_token_auth::_complete_resource_token_auth_output::CompleteResourceTokenAuthOutput;
-
 pub use crate::operation::complete_resource_token_auth::_complete_resource_token_auth_input::CompleteResourceTokenAuthInput;
+
+pub use crate::operation::complete_resource_token_auth::_complete_resource_token_auth_output::CompleteResourceTokenAuthOutput;
 
 mod _complete_resource_token_auth_input;
 

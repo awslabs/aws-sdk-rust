@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_partner_a
     }
 }
 
-pub use crate::operation::describe_partner_app::_describe_partner_app_output::DescribePartnerAppOutput;
-
 pub use crate::operation::describe_partner_app::_describe_partner_app_input::DescribePartnerAppInput;
+
+pub use crate::operation::describe_partner_app::_describe_partner_app_output::DescribePartnerAppOutput;
 
 mod _describe_partner_app_input;
 

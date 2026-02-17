@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_multiplex::S
     }
 }
 
-pub use crate::operation::start_multiplex::_start_multiplex_output::StartMultiplexOutput;
-
 pub use crate::operation::start_multiplex::_start_multiplex_input::StartMultiplexInput;
+
+pub use crate::operation::start_multiplex::_start_multiplex_output::StartMultiplexOutput;
 
 mod _start_multiplex_input;
 

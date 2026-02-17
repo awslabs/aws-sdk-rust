@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_tables::Sea
     }
 }
 
-pub use crate::operation::search_tables::_search_tables_output::SearchTablesOutput;
-
 pub use crate::operation::search_tables::_search_tables_input::SearchTablesInput;
+
+pub use crate::operation::search_tables::_search_tables_output::SearchTablesOutput;
 
 mod _search_tables_input;
 

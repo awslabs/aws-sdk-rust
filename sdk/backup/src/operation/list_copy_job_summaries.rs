@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_copy_job_summ
     }
 }
 
-pub use crate::operation::list_copy_job_summaries::_list_copy_job_summaries_output::ListCopyJobSummariesOutput;
-
 pub use crate::operation::list_copy_job_summaries::_list_copy_job_summaries_input::ListCopyJobSummariesInput;
+
+pub use crate::operation::list_copy_job_summaries::_list_copy_job_summaries_output::ListCopyJobSummariesOutput;
 
 mod _list_copy_job_summaries_input;
 

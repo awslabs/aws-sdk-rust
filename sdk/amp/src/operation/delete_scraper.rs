@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scraper::De
     }
 }
 
-pub use crate::operation::delete_scraper::_delete_scraper_output::DeleteScraperOutput;
-
 pub use crate::operation::delete_scraper::_delete_scraper_input::DeleteScraperInput;
+
+pub use crate::operation::delete_scraper::_delete_scraper_output::DeleteScraperOutput;
 
 mod _delete_scraper_input;
 

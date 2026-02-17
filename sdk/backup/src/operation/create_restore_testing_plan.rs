@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_restore_tes
     }
 }
 
-pub use crate::operation::create_restore_testing_plan::_create_restore_testing_plan_output::CreateRestoreTestingPlanOutput;
-
 pub use crate::operation::create_restore_testing_plan::_create_restore_testing_plan_input::CreateRestoreTestingPlanInput;
+
+pub use crate::operation::create_restore_testing_plan::_create_restore_testing_plan_output::CreateRestoreTestingPlanOutput;
 
 mod _create_restore_testing_plan_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_document_te
     }
 }
 
-pub use crate::operation::detect_document_text::_detect_document_text_output::DetectDocumentTextOutput;
-
 pub use crate::operation::detect_document_text::_detect_document_text_input::DetectDocumentTextInput;
+
+pub use crate::operation::detect_document_text::_detect_document_text_output::DetectDocumentTextOutput;
 
 mod _detect_document_text_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel_nam
     }
 }
 
-pub use crate::operation::update_channel_namespace::_update_channel_namespace_output::UpdateChannelNamespaceOutput;
-
 pub use crate::operation::update_channel_namespace::_update_channel_namespace_input::UpdateChannelNamespaceInput;
+
+pub use crate::operation::update_channel_namespace::_update_channel_namespace_output::UpdateChannelNamespaceOutput;
 
 mod _update_channel_namespace_input;
 

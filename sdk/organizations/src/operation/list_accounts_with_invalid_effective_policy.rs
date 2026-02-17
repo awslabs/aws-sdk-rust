@@ -624,9 +624,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_accounts_with_invalid_effective_policy::_list_accounts_with_invalid_effective_policy_output::ListAccountsWithInvalidEffectivePolicyOutput;
-
 pub use crate::operation::list_accounts_with_invalid_effective_policy::_list_accounts_with_invalid_effective_policy_input::ListAccountsWithInvalidEffectivePolicyInput;
+
+pub use crate::operation::list_accounts_with_invalid_effective_policy::_list_accounts_with_invalid_effective_policy_output::ListAccountsWithInvalidEffectivePolicyOutput;
 
 mod _list_accounts_with_invalid_effective_policy_input;
 

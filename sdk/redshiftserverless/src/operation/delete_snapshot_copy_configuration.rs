@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_snapshot_co
     }
 }
 
-pub use crate::operation::delete_snapshot_copy_configuration::_delete_snapshot_copy_configuration_output::DeleteSnapshotCopyConfigurationOutput;
-
 pub use crate::operation::delete_snapshot_copy_configuration::_delete_snapshot_copy_configuration_input::DeleteSnapshotCopyConfigurationInput;
+
+pub use crate::operation::delete_snapshot_copy_configuration::_delete_snapshot_copy_configuration_output::DeleteSnapshotCopyConfigurationOutput;
 
 mod _delete_snapshot_copy_configuration_input;
 

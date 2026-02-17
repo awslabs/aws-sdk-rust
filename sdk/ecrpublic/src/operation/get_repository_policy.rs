@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_pol
     }
 }
 
-pub use crate::operation::get_repository_policy::_get_repository_policy_output::GetRepositoryPolicyOutput;
-
 pub use crate::operation::get_repository_policy::_get_repository_policy_input::GetRepositoryPolicyInput;
+
+pub use crate::operation::get_repository_policy::_get_repository_policy_output::GetRepositoryPolicyOutput;
 
 mod _get_repository_policy_input;
 

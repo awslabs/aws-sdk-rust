@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hapg::Des
     }
 }
 
-pub use crate::operation::describe_hapg::_describe_hapg_output::DescribeHapgOutput;
-
 pub use crate::operation::describe_hapg::_describe_hapg_input::DescribeHapgInput;
+
+pub use crate::operation::describe_hapg::_describe_hapg_output::DescribeHapgOutput;
 
 mod _describe_hapg_input;
 

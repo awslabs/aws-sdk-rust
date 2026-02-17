@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_gr
     }
 }
 
-pub use crate::operation::list_associated_groups::_list_associated_groups_output::ListAssociatedGroupsOutput;
-
 pub use crate::operation::list_associated_groups::_list_associated_groups_input::ListAssociatedGroupsInput;
+
+pub use crate::operation::list_associated_groups::_list_associated_groups_output::ListAssociatedGroupsOutput;
 
 mod _list_associated_groups_input;
 

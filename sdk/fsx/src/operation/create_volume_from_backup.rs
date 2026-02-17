@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_volume_from
     }
 }
 
-pub use crate::operation::create_volume_from_backup::_create_volume_from_backup_output::CreateVolumeFromBackupOutput;
-
 pub use crate::operation::create_volume_from_backup::_create_volume_from_backup_input::CreateVolumeFromBackupInput;
+
+pub use crate::operation::create_volume_from_backup::_create_volume_from_backup_output::CreateVolumeFromBackupOutput;
 
 mod _create_volume_from_backup_input;
 

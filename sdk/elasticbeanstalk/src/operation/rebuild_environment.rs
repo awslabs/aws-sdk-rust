@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rebuild_environmen
     }
 }
 
-pub use crate::operation::rebuild_environment::_rebuild_environment_output::RebuildEnvironmentOutput;
-
 pub use crate::operation::rebuild_environment::_rebuild_environment_input::RebuildEnvironmentInput;
+
+pub use crate::operation::rebuild_environment::_rebuild_environment_output::RebuildEnvironmentOutput;
 
 mod _rebuild_environment_input;
 

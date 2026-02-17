@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_progress_up
     }
 }
 
-pub use crate::operation::delete_progress_update_stream::_delete_progress_update_stream_output::DeleteProgressUpdateStreamOutput;
-
 pub use crate::operation::delete_progress_update_stream::_delete_progress_update_stream_input::DeleteProgressUpdateStreamInput;
+
+pub use crate::operation::delete_progress_update_stream::_delete_progress_update_stream_output::DeleteProgressUpdateStreamOutput;
 
 mod _delete_progress_update_stream_input;
 

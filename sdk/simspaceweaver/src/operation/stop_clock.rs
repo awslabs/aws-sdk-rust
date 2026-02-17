@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_clock::StopCl
     }
 }
 
-pub use crate::operation::stop_clock::_stop_clock_output::StopClockOutput;
-
 pub use crate::operation::stop_clock::_stop_clock_input::StopClockInput;
+
+pub use crate::operation::stop_clock::_stop_clock_output::StopClockOutput;
 
 mod _stop_clock_input;
 

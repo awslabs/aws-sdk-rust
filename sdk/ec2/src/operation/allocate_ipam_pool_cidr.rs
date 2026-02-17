@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_ipam_pool
     }
 }
 
-pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_output::AllocateIpamPoolCidrOutput;
-
 pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_input::AllocateIpamPoolCidrInput;
+
+pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_output::AllocateIpamPoolCidrOutput;
 
 mod _allocate_ipam_pool_cidr_input;
 

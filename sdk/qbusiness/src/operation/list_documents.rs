@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_documents::Li
     }
 }
 
-pub use crate::operation::list_documents::_list_documents_output::ListDocumentsOutput;
-
 pub use crate::operation::list_documents::_list_documents_input::ListDocumentsInput;
+
+pub use crate::operation::list_documents::_list_documents_output::ListDocumentsOutput;
 
 mod _list_documents_input;
 

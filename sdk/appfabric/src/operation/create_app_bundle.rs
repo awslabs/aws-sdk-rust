@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_bundle:
     }
 }
 
-pub use crate::operation::create_app_bundle::_create_app_bundle_output::CreateAppBundleOutput;
-
 pub use crate::operation::create_app_bundle::_create_app_bundle_input::CreateAppBundleInput;
+
+pub use crate::operation::create_app_bundle::_create_app_bundle_output::CreateAppBundleOutput;
 
 mod _create_app_bundle_input;
 

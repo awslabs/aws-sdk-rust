@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resource_
     }
 }
 
-pub use crate::operation::describe_resource_server::_describe_resource_server_output::DescribeResourceServerOutput;
-
 pub use crate::operation::describe_resource_server::_describe_resource_server_input::DescribeResourceServerInput;
+
+pub use crate::operation::describe_resource_server::_describe_resource_server_output::DescribeResourceServerOutput;
 
 mod _describe_resource_server_input;
 

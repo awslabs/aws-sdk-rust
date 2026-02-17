@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ml_data_proc
     }
 }
 
-pub use crate::operation::start_ml_data_processing_job::_start_ml_data_processing_job_output::StartMlDataProcessingJobOutput;
-
 pub use crate::operation::start_ml_data_processing_job::_start_ml_data_processing_job_input::StartMlDataProcessingJobInput;
+
+pub use crate::operation::start_ml_data_processing_job::_start_ml_data_processing_job_output::StartMlDataProcessingJobOutput;
 
 mod _start_ml_data_processing_job_input;
 

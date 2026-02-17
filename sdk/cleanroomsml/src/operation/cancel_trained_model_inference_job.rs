@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_trained_mod
     }
 }
 
-pub use crate::operation::cancel_trained_model_inference_job::_cancel_trained_model_inference_job_output::CancelTrainedModelInferenceJobOutput;
-
 pub use crate::operation::cancel_trained_model_inference_job::_cancel_trained_model_inference_job_input::CancelTrainedModelInferenceJobInput;
+
+pub use crate::operation::cancel_trained_model_inference_job::_cancel_trained_model_inference_job_output::CancelTrainedModelInferenceJobOutput;
 
 mod _cancel_trained_model_inference_job_input;
 

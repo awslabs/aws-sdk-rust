@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vector_bucket:
     }
 }
 
-pub use crate::operation::get_vector_bucket::_get_vector_bucket_output::GetVectorBucketOutput;
-
 pub use crate::operation::get_vector_bucket::_get_vector_bucket_input::GetVectorBucketInput;
+
+pub use crate::operation::get_vector_bucket::_get_vector_bucket_output::GetVectorBucketOutput;
 
 mod _get_vector_bucket_input;
 

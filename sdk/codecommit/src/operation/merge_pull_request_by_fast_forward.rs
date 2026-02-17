@@ -551,9 +551,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_pull_request
     }
 }
 
-pub use crate::operation::merge_pull_request_by_fast_forward::_merge_pull_request_by_fast_forward_output::MergePullRequestByFastForwardOutput;
-
 pub use crate::operation::merge_pull_request_by_fast_forward::_merge_pull_request_by_fast_forward_input::MergePullRequestByFastForwardInput;
+
+pub use crate::operation::merge_pull_request_by_fast_forward::_merge_pull_request_by_fast_forward_output::MergePullRequestByFastForwardOutput;
 
 mod _merge_pull_request_by_fast_forward_input;
 

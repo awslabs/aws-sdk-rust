@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_metrics_co
     }
 }
 
-pub use crate::operation::disable_metrics_collection::_disable_metrics_collection_output::DisableMetricsCollectionOutput;
-
 pub use crate::operation::disable_metrics_collection::_disable_metrics_collection_input::DisableMetricsCollectionInput;
+
+pub use crate::operation::disable_metrics_collection::_disable_metrics_collection_output::DisableMetricsCollectionOutput;
 
 mod _disable_metrics_collection_input;
 

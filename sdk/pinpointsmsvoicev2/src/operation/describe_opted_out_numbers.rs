@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_opted_out
     }
 }
 
-pub use crate::operation::describe_opted_out_numbers::_describe_opted_out_numbers_output::DescribeOptedOutNumbersOutput;
-
 pub use crate::operation::describe_opted_out_numbers::_describe_opted_out_numbers_input::DescribeOptedOutNumbersInput;
+
+pub use crate::operation::describe_opted_out_numbers::_describe_opted_out_numbers_output::DescribeOptedOutNumbersOutput;
 
 mod _describe_opted_out_numbers_input;
 

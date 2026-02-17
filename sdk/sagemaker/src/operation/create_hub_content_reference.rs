@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hub_content
     }
 }
 
-pub use crate::operation::create_hub_content_reference::_create_hub_content_reference_output::CreateHubContentReferenceOutput;
-
 pub use crate::operation::create_hub_content_reference::_create_hub_content_reference_input::CreateHubContentReferenceInput;
+
+pub use crate::operation::create_hub_content_reference::_create_hub_content_reference_output::CreateHubContentReferenceOutput;
 
 mod _create_hub_content_reference_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device::GetDev
     }
 }
 
-pub use crate::operation::get_device::_get_device_output::GetDeviceOutput;
-
 pub use crate::operation::get_device::_get_device_input::GetDeviceInput;
+
+pub use crate::operation::get_device::_get_device_output::GetDeviceOutput;
 
 mod _get_device_input;
 

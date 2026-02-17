@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_default_retent
     }
 }
 
-pub use crate::operation::get_default_retention_policy::_get_default_retention_policy_output::GetDefaultRetentionPolicyOutput;
-
 pub use crate::operation::get_default_retention_policy::_get_default_retention_policy_input::GetDefaultRetentionPolicyInput;
+
+pub use crate::operation::get_default_retention_policy::_get_default_retention_policy_output::GetDefaultRetentionPolicyOutput;
 
 mod _get_default_retention_policy_input;
 

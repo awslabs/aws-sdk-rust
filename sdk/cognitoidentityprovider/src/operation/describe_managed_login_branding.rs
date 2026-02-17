@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_managed_l
     }
 }
 
-pub use crate::operation::describe_managed_login_branding::_describe_managed_login_branding_output::DescribeManagedLoginBrandingOutput;
-
 pub use crate::operation::describe_managed_login_branding::_describe_managed_login_branding_input::DescribeManagedLoginBrandingInput;
+
+pub use crate::operation::describe_managed_login_branding::_describe_managed_login_branding_output::DescribeManagedLoginBrandingOutput;
 
 mod _describe_managed_login_branding_input;
 

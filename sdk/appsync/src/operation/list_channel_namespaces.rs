@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_names
     }
 }
 
-pub use crate::operation::list_channel_namespaces::_list_channel_namespaces_output::ListChannelNamespacesOutput;
-
 pub use crate::operation::list_channel_namespaces::_list_channel_namespaces_input::ListChannelNamespacesInput;
+
+pub use crate::operation::list_channel_namespaces::_list_channel_namespaces_output::ListChannelNamespacesOutput;
 
 mod _list_channel_namespaces_input;
 

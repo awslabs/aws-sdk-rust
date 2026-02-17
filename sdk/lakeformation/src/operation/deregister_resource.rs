@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_resourc
     }
 }
 
-pub use crate::operation::deregister_resource::_deregister_resource_output::DeregisterResourceOutput;
-
 pub use crate::operation::deregister_resource::_deregister_resource_input::DeregisterResourceInput;
+
+pub use crate::operation::deregister_resource::_deregister_resource_output::DeregisterResourceOutput;
 
 mod _deregister_resource_input;
 

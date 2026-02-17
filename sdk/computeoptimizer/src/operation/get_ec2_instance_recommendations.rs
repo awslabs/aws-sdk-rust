@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ec2_instance_r
     }
 }
 
-pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_recommendations_output::GetEc2InstanceRecommendationsOutput;
-
 pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_recommendations_input::GetEc2InstanceRecommendationsInput;
+
+pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_recommendations_output::GetEc2InstanceRecommendationsOutput;
 
 mod _get_ec2_instance_recommendations_input;
 

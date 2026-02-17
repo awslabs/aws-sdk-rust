@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_permission_
     }
 }
 
-pub use crate::operation::update_permission_set::_update_permission_set_output::UpdatePermissionSetOutput;
-
 pub use crate::operation::update_permission_set::_update_permission_set_input::UpdatePermissionSetInput;
+
+pub use crate::operation::update_permission_set::_update_permission_set_output::UpdatePermissionSetOutput;
 
 mod _update_permission_set_input;
 

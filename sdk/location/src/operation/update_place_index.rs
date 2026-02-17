@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_place_index
     }
 }
 
-pub use crate::operation::update_place_index::_update_place_index_output::UpdatePlaceIndexOutput;
-
 pub use crate::operation::update_place_index::_update_place_index_input::UpdatePlaceIndexInput;
+
+pub use crate::operation::update_place_index::_update_place_index_output::UpdatePlaceIndexOutput;
 
 mod _update_place_index_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_trained_mod
     }
 }
 
-pub use crate::operation::cancel_trained_model::_cancel_trained_model_output::CancelTrainedModelOutput;
-
 pub use crate::operation::cancel_trained_model::_cancel_trained_model_input::CancelTrainedModelInput;
+
+pub use crate::operation::cancel_trained_model::_cancel_trained_model_output::CancelTrainedModelOutput;
 
 mod _cancel_trained_model_input;
 

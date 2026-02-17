@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_se
     }
 }
 
-pub use crate::operation::create_resource_set::_create_resource_set_output::CreateResourceSetOutput;
-
 pub use crate::operation::create_resource_set::_create_resource_set_input::CreateResourceSetInput;
+
+pub use crate::operation::create_resource_set::_create_resource_set_output::CreateResourceSetOutput;
 
 mod _create_resource_set_input;
 

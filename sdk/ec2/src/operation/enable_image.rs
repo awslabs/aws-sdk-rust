@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_image::Enab
     }
 }
 
-pub use crate::operation::enable_image::_enable_image_output::EnableImageOutput;
-
 pub use crate::operation::enable_image::_enable_image_input::EnableImageInput;
+
+pub use crate::operation::enable_image::_enable_image_output::EnableImageOutput;
 
 mod _enable_image_input;
 

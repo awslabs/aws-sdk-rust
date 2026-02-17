@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_finding_aggre
     }
 }
 
-pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_output::ListFindingAggregationsOutput;
-
 pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_input::ListFindingAggregationsInput;
+
+pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_output::ListFindingAggregationsOutput;
 
 mod _list_finding_aggregations_input;
 

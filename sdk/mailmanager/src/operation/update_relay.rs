@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_relay::Upda
     }
 }
 
-pub use crate::operation::update_relay::_update_relay_output::UpdateRelayOutput;
-
 pub use crate::operation::update_relay::_update_relay_input::UpdateRelayInput;
+
+pub use crate::operation::update_relay::_update_relay_output::UpdateRelayOutput;
 
 mod _update_relay_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_constraint:
     }
 }
 
-pub use crate::operation::update_constraint::_update_constraint_output::UpdateConstraintOutput;
-
 pub use crate::operation::update_constraint::_update_constraint_input::UpdateConstraintInput;
+
+pub use crate::operation::update_constraint::_update_constraint_output::UpdateConstraintOutput;
 
 mod _update_constraint_input;
 

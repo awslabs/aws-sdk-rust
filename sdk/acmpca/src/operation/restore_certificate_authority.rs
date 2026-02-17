@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_certificat
     }
 }
 
-pub use crate::operation::restore_certificate_authority::_restore_certificate_authority_output::RestoreCertificateAuthorityOutput;
-
 pub use crate::operation::restore_certificate_authority::_restore_certificate_authority_input::RestoreCertificateAuthorityInput;
+
+pub use crate::operation::restore_certificate_authority::_restore_certificate_authority_output::RestoreCertificateAuthorityOutput;
 
 mod _restore_certificate_authority_input;
 

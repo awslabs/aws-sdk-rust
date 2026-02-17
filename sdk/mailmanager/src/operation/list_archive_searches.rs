@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_archive_searc
     }
 }
 
-pub use crate::operation::list_archive_searches::_list_archive_searches_output::ListArchiveSearchesOutput;
-
 pub use crate::operation::list_archive_searches::_list_archive_searches_input::ListArchiveSearchesInput;
+
+pub use crate::operation::list_archive_searches::_list_archive_searches_output::ListArchiveSearchesOutput;
 
 mod _list_archive_searches_input;
 

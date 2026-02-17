@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_odb_network
     }
 }
 
-pub use crate::operation::create_odb_network::_create_odb_network_output::CreateOdbNetworkOutput;
-
 pub use crate::operation::create_odb_network::_create_odb_network_input::CreateOdbNetworkInput;
+
+pub use crate::operation::create_odb_network::_create_odb_network_output::CreateOdbNetworkOutput;
 
 mod _create_odb_network_input;
 

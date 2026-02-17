@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vectors::De
     }
 }
 
-pub use crate::operation::delete_vectors::_delete_vectors_output::DeleteVectorsOutput;
-
 pub use crate::operation::delete_vectors::_delete_vectors_input::DeleteVectorsInput;
+
+pub use crate::operation::delete_vectors::_delete_vectors_output::DeleteVectorsOutput;
 
 mod _delete_vectors_input;
 

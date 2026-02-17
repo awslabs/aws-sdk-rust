@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_cells_
     }
 }
 
-pub use crate::operation::create_data_cells_filter::_create_data_cells_filter_output::CreateDataCellsFilterOutput;
-
 pub use crate::operation::create_data_cells_filter::_create_data_cells_filter_input::CreateDataCellsFilterInput;
+
+pub use crate::operation::create_data_cells_filter::_create_data_cells_filter_output::CreateDataCellsFilterOutput;
 
 mod _create_data_cells_filter_input;
 

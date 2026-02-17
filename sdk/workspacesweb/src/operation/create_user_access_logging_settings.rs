@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_access
     }
 }
 
-pub use crate::operation::create_user_access_logging_settings::_create_user_access_logging_settings_output::CreateUserAccessLoggingSettingsOutput;
-
 pub use crate::operation::create_user_access_logging_settings::_create_user_access_logging_settings_input::CreateUserAccessLoggingSettingsInput;
+
+pub use crate::operation::create_user_access_logging_settings::_create_user_access_logging_settings_output::CreateUserAccessLoggingSettingsOutput;
 
 mod _create_user_access_logging_settings_input;
 

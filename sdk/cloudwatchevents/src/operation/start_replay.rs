@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_replay::Star
     }
 }
 
-pub use crate::operation::start_replay::_start_replay_output::StartReplayOutput;
-
 pub use crate::operation::start_replay::_start_replay_input::StartReplayInput;
+
+pub use crate::operation::start_replay::_start_replay_output::StartReplayOutput;
 
 mod _start_replay_input;
 

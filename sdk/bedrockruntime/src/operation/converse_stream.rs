@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::converse_stream::C
     }
 }
 
-pub use crate::operation::converse_stream::_converse_stream_output::ConverseStreamOutput;
-
 pub use crate::operation::converse_stream::_converse_stream_input::ConverseStreamInput;
+
+pub use crate::operation::converse_stream::_converse_stream_output::ConverseStreamOutput;
 
 mod _converse_stream_input;
 

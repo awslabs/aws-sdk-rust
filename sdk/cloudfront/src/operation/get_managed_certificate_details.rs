@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_certif
     }
 }
 
-pub use crate::operation::get_managed_certificate_details::_get_managed_certificate_details_output::GetManagedCertificateDetailsOutput;
-
 pub use crate::operation::get_managed_certificate_details::_get_managed_certificate_details_input::GetManagedCertificateDetailsInput;
+
+pub use crate::operation::get_managed_certificate_details::_get_managed_certificate_details_output::GetManagedCertificateDetailsOutput;
 
 mod _get_managed_certificate_details_input;
 

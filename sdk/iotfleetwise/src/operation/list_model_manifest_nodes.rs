@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_manifes
     }
 }
 
-pub use crate::operation::list_model_manifest_nodes::_list_model_manifest_nodes_output::ListModelManifestNodesOutput;
-
 pub use crate::operation::list_model_manifest_nodes::_list_model_manifest_nodes_input::ListModelManifestNodesInput;
+
+pub use crate::operation::list_model_manifest_nodes::_list_model_manifest_nodes_output::ListModelManifestNodesOutput;
 
 mod _list_model_manifest_nodes_input;
 

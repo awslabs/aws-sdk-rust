@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tape_archiv
     }
 }
 
-pub use crate::operation::delete_tape_archive::_delete_tape_archive_output::DeleteTapeArchiveOutput;
-
 pub use crate::operation::delete_tape_archive::_delete_tape_archive_input::DeleteTapeArchiveInput;
+
+pub use crate::operation::delete_tape_archive::_delete_tape_archive_output::DeleteTapeArchiveOutput;
 
 mod _delete_tape_archive_input;
 

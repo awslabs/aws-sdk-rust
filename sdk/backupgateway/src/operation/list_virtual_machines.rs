@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_machi
     }
 }
 
-pub use crate::operation::list_virtual_machines::_list_virtual_machines_output::ListVirtualMachinesOutput;
-
 pub use crate::operation::list_virtual_machines::_list_virtual_machines_input::ListVirtualMachinesInput;
+
+pub use crate::operation::list_virtual_machines::_list_virtual_machines_output::ListVirtualMachinesOutput;
 
 mod _list_virtual_machines_input;
 

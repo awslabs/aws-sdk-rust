@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_logging
     }
 }
 
-pub use crate::operation::put_bucket_logging::_put_bucket_logging_output::PutBucketLoggingOutput;
-
 pub use crate::operation::put_bucket_logging::_put_bucket_logging_input::PutBucketLoggingInput;
+
+pub use crate::operation::put_bucket_logging::_put_bucket_logging_output::PutBucketLoggingOutput;
 
 mod _put_bucket_logging_input;
 

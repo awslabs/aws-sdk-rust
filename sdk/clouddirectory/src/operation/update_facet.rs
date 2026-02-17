@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_facet::Upda
     }
 }
 
-pub use crate::operation::update_facet::_update_facet_output::UpdateFacetOutput;
-
 pub use crate::operation::update_facet::_update_facet_input::UpdateFacetInput;
+
+pub use crate::operation::update_facet::_update_facet_output::UpdateFacetOutput;
 
 mod _update_facet_input;
 

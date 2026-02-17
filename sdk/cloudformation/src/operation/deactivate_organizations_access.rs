@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_organiz
     }
 }
 
-pub use crate::operation::deactivate_organizations_access::_deactivate_organizations_access_output::DeactivateOrganizationsAccessOutput;
-
 pub use crate::operation::deactivate_organizations_access::_deactivate_organizations_access_input::DeactivateOrganizationsAccessInput;
+
+pub use crate::operation::deactivate_organizations_access::_deactivate_organizations_access_output::DeactivateOrganizationsAccessOutput;
 
 mod _deactivate_organizations_access_input;
 

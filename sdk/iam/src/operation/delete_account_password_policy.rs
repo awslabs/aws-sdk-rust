@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_pas
     }
 }
 
-pub use crate::operation::delete_account_password_policy::_delete_account_password_policy_output::DeleteAccountPasswordPolicyOutput;
-
 pub use crate::operation::delete_account_password_policy::_delete_account_password_policy_input::DeleteAccountPasswordPolicyInput;
+
+pub use crate::operation::delete_account_password_policy::_delete_account_password_policy_output::DeleteAccountPasswordPolicyOutput;
 
 mod _delete_account_password_policy_input;
 

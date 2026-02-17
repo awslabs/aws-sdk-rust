@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_keyspace::C
     }
 }
 
-pub use crate::operation::create_keyspace::_create_keyspace_output::CreateKeyspaceOutput;
-
 pub use crate::operation::create_keyspace::_create_keyspace_input::CreateKeyspaceInput;
+
+pub use crate::operation::create_keyspace::_create_keyspace_output::CreateKeyspaceOutput;
 
 mod _create_keyspace_input;
 

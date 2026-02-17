@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_route_ser
     }
 }
 
-pub use crate::operation::describe_route_server_endpoints::_describe_route_server_endpoints_output::DescribeRouteServerEndpointsOutput;
-
 pub use crate::operation::describe_route_server_endpoints::_describe_route_server_endpoints_input::DescribeRouteServerEndpointsInput;
+
+pub use crate::operation::describe_route_server_endpoints::_describe_route_server_endpoints_output::DescribeRouteServerEndpointsOutput;
 
 mod _describe_route_server_endpoints_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_mail_doma
     }
 }
 
-pub use crate::operation::register_mail_domain::_register_mail_domain_output::RegisterMailDomainOutput;
-
 pub use crate::operation::register_mail_domain::_register_mail_domain_input::RegisterMailDomainInput;
+
+pub use crate::operation::register_mail_domain::_register_mail_domain_output::RegisterMailDomainOutput;
 
 mod _register_mail_domain_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_rest_api::PutR
     }
 }
 
-pub use crate::operation::put_rest_api::_put_rest_api_output::PutRestApiOutput;
-
 pub use crate::operation::put_rest_api::_put_rest_api_input::PutRestApiInput;
+
+pub use crate::operation::put_rest_api::_put_rest_api_output::PutRestApiOutput;
 
 mod _put_rest_api_input;
 

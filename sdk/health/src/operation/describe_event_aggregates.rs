@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_agg
     }
 }
 
-pub use crate::operation::describe_event_aggregates::_describe_event_aggregates_output::DescribeEventAggregatesOutput;
-
 pub use crate::operation::describe_event_aggregates::_describe_event_aggregates_input::DescribeEventAggregatesInput;
+
+pub use crate::operation::describe_event_aggregates::_describe_event_aggregates_output::DescribeEventAggregatesOutput;
 
 mod _describe_event_aggregates_input;
 

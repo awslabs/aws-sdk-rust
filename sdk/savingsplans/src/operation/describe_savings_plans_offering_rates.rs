@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_savings_p
     }
 }
 
-pub use crate::operation::describe_savings_plans_offering_rates::_describe_savings_plans_offering_rates_output::DescribeSavingsPlansOfferingRatesOutput;
-
 pub use crate::operation::describe_savings_plans_offering_rates::_describe_savings_plans_offering_rates_input::DescribeSavingsPlansOfferingRatesInput;
+
+pub use crate::operation::describe_savings_plans_offering_rates::_describe_savings_plans_offering_rates_output::DescribeSavingsPlansOfferingRatesOutput;
 
 mod _describe_savings_plans_offering_rates_input;
 

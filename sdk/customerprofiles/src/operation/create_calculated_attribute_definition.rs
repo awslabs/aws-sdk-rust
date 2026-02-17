@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_calculated_
     }
 }
 
-pub use crate::operation::create_calculated_attribute_definition::_create_calculated_attribute_definition_output::CreateCalculatedAttributeDefinitionOutput;
-
 pub use crate::operation::create_calculated_attribute_definition::_create_calculated_attribute_definition_input::CreateCalculatedAttributeDefinitionInput;
+
+pub use crate::operation::create_calculated_attribute_definition::_create_calculated_attribute_definition_output::CreateCalculatedAttributeDefinitionOutput;
 
 mod _create_calculated_attribute_definition_input;
 

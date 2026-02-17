@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_layer_vers
     }
 }
 
-pub use crate::operation::publish_layer_version::_publish_layer_version_output::PublishLayerVersionOutput;
-
 pub use crate::operation::publish_layer_version::_publish_layer_version_input::PublishLayerVersionInput;
+
+pub use crate::operation::publish_layer_version::_publish_layer_version_output::PublishLayerVersionOutput;
 
 mod _publish_layer_version_input;
 

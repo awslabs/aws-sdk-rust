@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_time_ser
     }
 }
 
-pub use crate::operation::associate_time_series_to_asset_property::_associate_time_series_to_asset_property_output::AssociateTimeSeriesToAssetPropertyOutput;
-
 pub use crate::operation::associate_time_series_to_asset_property::_associate_time_series_to_asset_property_input::AssociateTimeSeriesToAssetPropertyInput;
+
+pub use crate::operation::associate_time_series_to_asset_property::_associate_time_series_to_asset_property_output::AssociateTimeSeriesToAssetPropertyOutput;
 
 mod _associate_time_series_to_asset_property_input;
 

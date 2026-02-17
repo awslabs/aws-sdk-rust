@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_id_namespace::
     }
 }
 
-pub use crate::operation::get_id_namespace::_get_id_namespace_output::GetIdNamespaceOutput;
-
 pub use crate::operation::get_id_namespace::_get_id_namespace_input::GetIdNamespaceInput;
+
+pub use crate::operation::get_id_namespace::_get_id_namespace_output::GetIdNamespaceOutput;
 
 mod _get_id_namespace_input;
 

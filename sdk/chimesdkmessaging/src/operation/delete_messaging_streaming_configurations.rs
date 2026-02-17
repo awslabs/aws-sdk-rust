@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_messaging_s
     }
 }
 
-pub use crate::operation::delete_messaging_streaming_configurations::_delete_messaging_streaming_configurations_output::DeleteMessagingStreamingConfigurationsOutput;
-
 pub use crate::operation::delete_messaging_streaming_configurations::_delete_messaging_streaming_configurations_input::DeleteMessagingStreamingConfigurationsInput;
+
+pub use crate::operation::delete_messaging_streaming_configurations::_delete_messaging_streaming_configurations_output::DeleteMessagingStreamingConfigurationsOutput;
 
 mod _delete_messaging_streaming_configurations_input;
 

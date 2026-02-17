@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_eve
     }
 }
 
-pub use crate::operation::list_inference_events::_list_inference_events_output::ListInferenceEventsOutput;
-
 pub use crate::operation::list_inference_events::_list_inference_events_input::ListInferenceEventsInput;
+
+pub use crate::operation::list_inference_events::_list_inference_events_output::ListInferenceEventsOutput;
 
 mod _list_inference_events_input;
 

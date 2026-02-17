@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_to_confi
     }
 }
 
-pub use crate::operation::associate_to_configuration::_associate_to_configuration_output::AssociateToConfigurationOutput;
-
 pub use crate::operation::associate_to_configuration::_associate_to_configuration_input::AssociateToConfigurationInput;
+
+pub use crate::operation::associate_to_configuration::_associate_to_configuration_output::AssociateToConfigurationOutput;
 
 mod _associate_to_configuration_input;
 

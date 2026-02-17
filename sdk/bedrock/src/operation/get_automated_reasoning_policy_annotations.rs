@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_automated_reasoning_policy_annotations::_get_automated_reasoning_policy_annotations_output::GetAutomatedReasoningPolicyAnnotationsOutput;
-
 pub use crate::operation::get_automated_reasoning_policy_annotations::_get_automated_reasoning_policy_annotations_input::GetAutomatedReasoningPolicyAnnotationsInput;
+
+pub use crate::operation::get_automated_reasoning_policy_annotations::_get_automated_reasoning_policy_annotations_output::GetAutomatedReasoningPolicyAnnotationsOutput;
 
 mod _get_automated_reasoning_policy_annotations_input;
 

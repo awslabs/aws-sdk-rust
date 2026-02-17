@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_db_cluster_p
     }
 }
 
-pub use crate::operation::reset_db_cluster_parameter_group::_reset_db_cluster_parameter_group_output::ResetDbClusterParameterGroupOutput;
-
 pub use crate::operation::reset_db_cluster_parameter_group::_reset_db_cluster_parameter_group_input::ResetDbClusterParameterGroupInput;
+
+pub use crate::operation::reset_db_cluster_parameter_group::_reset_db_cluster_parameter_group_output::ResetDbClusterParameterGroupOutput;
 
 mod _reset_db_cluster_parameter_group_input;
 

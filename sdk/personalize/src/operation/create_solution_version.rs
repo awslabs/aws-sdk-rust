@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_solution_ve
     }
 }
 
-pub use crate::operation::create_solution_version::_create_solution_version_output::CreateSolutionVersionOutput;
-
 pub use crate::operation::create_solution_version::_create_solution_version_input::CreateSolutionVersionInput;
+
+pub use crate::operation::create_solution_version::_create_solution_version_output::CreateSolutionVersionOutput;
 
 mod _create_solution_version_input;
 

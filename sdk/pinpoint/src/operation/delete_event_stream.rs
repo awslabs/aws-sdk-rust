@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_strea
     }
 }
 
-pub use crate::operation::delete_event_stream::_delete_event_stream_output::DeleteEventStreamOutput;
-
 pub use crate::operation::delete_event_stream::_delete_event_stream_input::DeleteEventStreamInput;
+
+pub use crate::operation::delete_event_stream::_delete_event_stream_output::DeleteEventStreamOutput;
 
 mod _delete_event_stream_input;
 

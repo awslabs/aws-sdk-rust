@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_license_conve
     }
 }
 
-pub use crate::operation::list_license_conversion_tasks::_list_license_conversion_tasks_output::ListLicenseConversionTasksOutput;
-
 pub use crate::operation::list_license_conversion_tasks::_list_license_conversion_tasks_input::ListLicenseConversionTasksInput;
+
+pub use crate::operation::list_license_conversion_tasks::_list_license_conversion_tasks_output::ListLicenseConversionTasksOutput;
 
 mod _list_license_conversion_tasks_input;
 

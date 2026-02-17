@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ipam_scope:
     }
 }
 
-pub use crate::operation::delete_ipam_scope::_delete_ipam_scope_output::DeleteIpamScopeOutput;
-
 pub use crate::operation::delete_ipam_scope::_delete_ipam_scope_input::DeleteIpamScopeInput;
+
+pub use crate::operation::delete_ipam_scope::_delete_ipam_scope_output::DeleteIpamScopeOutput;
 
 mod _delete_ipam_scope_input;
 

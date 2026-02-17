@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipeline_endp
     }
 }
 
-pub use crate::operation::list_pipeline_endpoints::_list_pipeline_endpoints_output::ListPipelineEndpointsOutput;
-
 pub use crate::operation::list_pipeline_endpoints::_list_pipeline_endpoints_input::ListPipelineEndpointsInput;
+
+pub use crate::operation::list_pipeline_endpoints::_list_pipeline_endpoints_output::ListPipelineEndpointsOutput;
 
 mod _list_pipeline_endpoints_input;
 

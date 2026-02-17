@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::dissociate_entity_
     }
 }
 
-pub use crate::operation::dissociate_entity_from_thing::_dissociate_entity_from_thing_output::DissociateEntityFromThingOutput;
-
 pub use crate::operation::dissociate_entity_from_thing::_dissociate_entity_from_thing_input::DissociateEntityFromThingInput;
+
+pub use crate::operation::dissociate_entity_from_thing::_dissociate_entity_from_thing_output::DissociateEntityFromThingOutput;
 
 mod _dissociate_entity_from_thing_input;
 

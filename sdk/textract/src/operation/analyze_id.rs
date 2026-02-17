@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::analyze_id::Analyz
     }
 }
 
-pub use crate::operation::analyze_id::_analyze_id_output::AnalyzeIdOutput;
-
 pub use crate::operation::analyze_id::_analyze_id_input::AnalyzeIdInput;
+
+pub use crate::operation::analyze_id::_analyze_id_output::AnalyzeIdOutput;
 
 mod _analyze_id_input;
 

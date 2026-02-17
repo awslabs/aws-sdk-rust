@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_change_logs::G
     }
 }
 
-pub use crate::operation::get_change_logs::_get_change_logs_output::GetChangeLogsOutput;
-
 pub use crate::operation::get_change_logs::_get_change_logs_input::GetChangeLogsInput;
+
+pub use crate::operation::get_change_logs::_get_change_logs_output::GetChangeLogsOutput;
 
 mod _get_change_logs_input;
 

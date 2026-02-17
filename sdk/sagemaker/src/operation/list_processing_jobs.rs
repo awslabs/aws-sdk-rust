@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_processing_jo
     }
 }
 
-pub use crate::operation::list_processing_jobs::_list_processing_jobs_output::ListProcessingJobsOutput;
-
 pub use crate::operation::list_processing_jobs::_list_processing_jobs_input::ListProcessingJobsInput;
+
+pub use crate::operation::list_processing_jobs::_list_processing_jobs_output::ListProcessingJobsOutput;
 
 mod _list_processing_jobs_input;
 

@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_agent_actio
     }
 }
 
-pub use crate::operation::create_agent_action_group::_create_agent_action_group_output::CreateAgentActionGroupOutput;
-
 pub use crate::operation::create_agent_action_group::_create_agent_action_group_input::CreateAgentActionGroupInput;
+
+pub use crate::operation::create_agent_action_group::_create_agent_action_group_output::CreateAgentActionGroupOutput;
 
 mod _create_agent_action_group_input;
 

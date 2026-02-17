@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_key_las
     }
 }
 
-pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_output::GetAccessKeyLastUsedOutput;
-
 pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_input::GetAccessKeyLastUsedInput;
+
+pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_output::GetAccessKeyLastUsedOutput;
 
 mod _get_access_key_last_used_input;
 

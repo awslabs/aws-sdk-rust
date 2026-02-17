@@ -475,9 +475,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sparql_statist
     }
 }
 
-pub use crate::operation::get_sparql_statistics::_get_sparql_statistics_output::GetSparqlStatisticsOutput;
-
 pub use crate::operation::get_sparql_statistics::_get_sparql_statistics_input::GetSparqlStatisticsInput;
+
+pub use crate::operation::get_sparql_statistics::_get_sparql_statistics_output::GetSparqlStatisticsOutput;
 
 mod _get_sparql_statistics_input;
 

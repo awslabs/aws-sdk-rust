@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_documentati
     }
 }
 
-pub use crate::operation::import_documentation_parts::_import_documentation_parts_output::ImportDocumentationPartsOutput;
-
 pub use crate::operation::import_documentation_parts::_import_documentation_parts_input::ImportDocumentationPartsInput;
+
+pub use crate::operation::import_documentation_parts::_import_documentation_parts_output::ImportDocumentationPartsOutput;
 
 mod _import_documentation_parts_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_networ
     }
 }
 
-pub use crate::operation::get_service_network::_get_service_network_output::GetServiceNetworkOutput;
-
 pub use crate::operation::get_service_network::_get_service_network_input::GetServiceNetworkInput;
+
+pub use crate::operation::get_service_network::_get_service_network_output::GetServiceNetworkOutput;
 
 mod _get_service_network_input;
 

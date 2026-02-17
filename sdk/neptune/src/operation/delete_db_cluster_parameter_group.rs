@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_cluster_
     }
 }
 
-pub use crate::operation::delete_db_cluster_parameter_group::_delete_db_cluster_parameter_group_output::DeleteDbClusterParameterGroupOutput;
-
 pub use crate::operation::delete_db_cluster_parameter_group::_delete_db_cluster_parameter_group_input::DeleteDbClusterParameterGroupInput;
+
+pub use crate::operation::delete_db_cluster_parameter_group::_delete_db_cluster_parameter_group_output::DeleteDbClusterParameterGroupOutput;
 
 mod _delete_db_cluster_parameter_group_input;
 

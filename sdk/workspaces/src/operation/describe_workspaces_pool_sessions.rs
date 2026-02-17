@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workspace
     }
 }
 
-pub use crate::operation::describe_workspaces_pool_sessions::_describe_workspaces_pool_sessions_output::DescribeWorkspacesPoolSessionsOutput;
-
 pub use crate::operation::describe_workspaces_pool_sessions::_describe_workspaces_pool_sessions_input::DescribeWorkspacesPoolSessionsInput;
+
+pub use crate::operation::describe_workspaces_pool_sessions::_describe_workspaces_pool_sessions_output::DescribeWorkspacesPoolSessionsOutput;
 
 mod _describe_workspaces_pool_sessions_input;
 

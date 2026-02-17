@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::respond_decision_t
     }
 }
 
-pub use crate::operation::respond_decision_task_completed::_respond_decision_task_completed_output::RespondDecisionTaskCompletedOutput;
-
 pub use crate::operation::respond_decision_task_completed::_respond_decision_task_completed_input::RespondDecisionTaskCompletedInput;
+
+pub use crate::operation::respond_decision_task_completed::_respond_decision_task_completed_output::RespondDecisionTaskCompletedOutput;
 
 mod _respond_decision_task_completed_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_media_message_
     }
 }
 
-pub use crate::operation::set_media_message_spend_limit_override::_set_media_message_spend_limit_override_output::SetMediaMessageSpendLimitOverrideOutput;
-
 pub use crate::operation::set_media_message_spend_limit_override::_set_media_message_spend_limit_override_input::SetMediaMessageSpendLimitOverrideInput;
+
+pub use crate::operation::set_media_message_spend_limit_override::_set_media_message_spend_limit_override_output::SetMediaMessageSpendLimitOverrideOutput;
 
 mod _set_media_message_spend_limit_override_input;
 

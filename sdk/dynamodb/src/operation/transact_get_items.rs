@@ -575,9 +575,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::transact_get_items
     }
 }
 
-pub use crate::operation::transact_get_items::_transact_get_items_output::TransactGetItemsOutput;
-
 pub use crate::operation::transact_get_items::_transact_get_items_input::TransactGetItemsInput;
+
+pub use crate::operation::transact_get_items::_transact_get_items_output::TransactGetItemsOutput;
 
 mod _transact_get_items_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workers_with_
     }
 }
 
-pub use crate::operation::list_workers_with_qualification_type::_list_workers_with_qualification_type_output::ListWorkersWithQualificationTypeOutput;
-
 pub use crate::operation::list_workers_with_qualification_type::_list_workers_with_qualification_type_input::ListWorkersWithQualificationTypeInput;
+
+pub use crate::operation::list_workers_with_qualification_type::_list_workers_with_qualification_type_output::ListWorkersWithQualificationTypeOutput;
 
 mod _list_workers_with_qualification_type_input;
 

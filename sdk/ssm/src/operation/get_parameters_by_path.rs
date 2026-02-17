@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_parameters_by_
     }
 }
 
-pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_output::GetParametersByPathOutput;
-
 pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_input::GetParametersByPathInput;
+
+pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_output::GetParametersByPathOutput;
 
 mod _get_parameters_by_path_input;
 

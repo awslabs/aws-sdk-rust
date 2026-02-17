@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identity_reso
     }
 }
 
-pub use crate::operation::list_identity_resolution_jobs::_list_identity_resolution_jobs_output::ListIdentityResolutionJobsOutput;
-
 pub use crate::operation::list_identity_resolution_jobs::_list_identity_resolution_jobs_input::ListIdentityResolutionJobsInput;
+
+pub use crate::operation::list_identity_resolution_jobs::_list_identity_resolution_jobs_output::ListIdentityResolutionJobsOutput;
 
 mod _list_identity_resolution_jobs_input;
 

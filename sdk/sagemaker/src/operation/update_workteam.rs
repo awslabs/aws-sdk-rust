@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workteam::U
     }
 }
 
-pub use crate::operation::update_workteam::_update_workteam_output::UpdateWorkteamOutput;
-
 pub use crate::operation::update_workteam::_update_workteam_input::UpdateWorkteamInput;
+
+pub use crate::operation::update_workteam::_update_workteam_output::UpdateWorkteamOutput;
 
 mod _update_workteam_input;
 

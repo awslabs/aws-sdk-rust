@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_restore_testi
     }
 }
 
-pub use crate::operation::list_restore_testing_selections::_list_restore_testing_selections_output::ListRestoreTestingSelectionsOutput;
-
 pub use crate::operation::list_restore_testing_selections::_list_restore_testing_selections_input::ListRestoreTestingSelectionsInput;
+
+pub use crate::operation::list_restore_testing_selections::_list_restore_testing_selections_output::ListRestoreTestingSelectionsOutput;
 
 mod _list_restore_testing_selections_input;
 

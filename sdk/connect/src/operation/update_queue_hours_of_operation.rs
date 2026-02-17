@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_hours
     }
 }
 
-pub use crate::operation::update_queue_hours_of_operation::_update_queue_hours_of_operation_output::UpdateQueueHoursOfOperationOutput;
-
 pub use crate::operation::update_queue_hours_of_operation::_update_queue_hours_of_operation_input::UpdateQueueHoursOfOperationInput;
+
+pub use crate::operation::update_queue_hours_of_operation::_update_queue_hours_of_operation_output::UpdateQueueHoursOfOperationOutput;
 
 mod _update_queue_hours_of_operation_input;
 

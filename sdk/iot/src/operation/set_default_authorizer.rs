@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_default_author
     }
 }
 
-pub use crate::operation::set_default_authorizer::_set_default_authorizer_output::SetDefaultAuthorizerOutput;
-
 pub use crate::operation::set_default_authorizer::_set_default_authorizer_input::SetDefaultAuthorizerInput;
+
+pub use crate::operation::set_default_authorizer::_set_default_authorizer_output::SetDefaultAuthorizerOutput;
 
 mod _set_default_authorizer_input;
 

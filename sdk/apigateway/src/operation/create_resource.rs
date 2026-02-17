@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource::C
     }
 }
 
-pub use crate::operation::create_resource::_create_resource_output::CreateResourceOutput;
-
 pub use crate::operation::create_resource::_create_resource_input::CreateResourceInput;
+
+pub use crate::operation::create_resource::_create_resource_output::CreateResourceOutput;
 
 mod _create_resource_input;
 

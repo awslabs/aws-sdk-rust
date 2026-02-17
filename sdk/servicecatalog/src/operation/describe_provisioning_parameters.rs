@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_provision
     }
 }
 
-pub use crate::operation::describe_provisioning_parameters::_describe_provisioning_parameters_output::DescribeProvisioningParametersOutput;
-
 pub use crate::operation::describe_provisioning_parameters::_describe_provisioning_parameters_input::DescribeProvisioningParametersInput;
+
+pub use crate::operation::describe_provisioning_parameters::_describe_provisioning_parameters_output::DescribeProvisioningParametersOutput;
 
 mod _describe_provisioning_parameters_input;
 

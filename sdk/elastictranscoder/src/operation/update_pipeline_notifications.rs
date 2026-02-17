@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pipeline_no
     }
 }
 
-pub use crate::operation::update_pipeline_notifications::_update_pipeline_notifications_output::UpdatePipelineNotificationsOutput;
-
 pub use crate::operation::update_pipeline_notifications::_update_pipeline_notifications_input::UpdatePipelineNotificationsInput;
+
+pub use crate::operation::update_pipeline_notifications::_update_pipeline_notifications_output::UpdatePipelineNotificationsOutput;
 
 mod _update_pipeline_notifications_input;
 

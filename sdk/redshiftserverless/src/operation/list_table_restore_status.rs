@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_table_restore
     }
 }
 
-pub use crate::operation::list_table_restore_status::_list_table_restore_status_output::ListTableRestoreStatusOutput;
-
 pub use crate::operation::list_table_restore_status::_list_table_restore_status_input::ListTableRestoreStatusInput;
+
+pub use crate::operation::list_table_restore_status::_list_table_restore_status_output::ListTableRestoreStatusOutput;
 
 mod _list_table_restore_status_input;
 

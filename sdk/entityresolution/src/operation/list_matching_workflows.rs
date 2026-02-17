@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_matching_work
     }
 }
 
-pub use crate::operation::list_matching_workflows::_list_matching_workflows_output::ListMatchingWorkflowsOutput;
-
 pub use crate::operation::list_matching_workflows::_list_matching_workflows_input::ListMatchingWorkflowsInput;
+
+pub use crate::operation::list_matching_workflows::_list_matching_workflows_output::ListMatchingWorkflowsOutput;
 
 mod _list_matching_workflows_input;
 

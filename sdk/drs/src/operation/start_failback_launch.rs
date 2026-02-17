@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_failback_lau
     }
 }
 
-pub use crate::operation::start_failback_launch::_start_failback_launch_output::StartFailbackLaunchOutput;
-
 pub use crate::operation::start_failback_launch::_start_failback_launch_input::StartFailbackLaunchInput;
+
+pub use crate::operation::start_failback_launch::_start_failback_launch_output::StartFailbackLaunchOutput;
 
 mod _start_failback_launch_input;
 

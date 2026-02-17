@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_retrievers::L
     }
 }
 
-pub use crate::operation::list_retrievers::_list_retrievers_output::ListRetrieversOutput;
-
 pub use crate::operation::list_retrievers::_list_retrievers_input::ListRetrieversInput;
+
+pub use crate::operation::list_retrievers::_list_retrievers_output::ListRetrieversOutput;
 
 mod _list_retrievers_input;
 

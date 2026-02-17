@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dns_view::U
     }
 }
 
-pub use crate::operation::update_dns_view::_update_dns_view_output::UpdateDnsViewOutput;
-
 pub use crate::operation::update_dns_view::_update_dns_view_input::UpdateDnsViewInput;
+
+pub use crate::operation::update_dns_view::_update_dns_view_output::UpdateDnsViewOutput;
 
 mod _update_dns_view_input;
 

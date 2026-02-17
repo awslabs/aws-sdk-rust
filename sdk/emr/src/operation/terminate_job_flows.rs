@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_job_flow
     }
 }
 
-pub use crate::operation::terminate_job_flows::_terminate_job_flows_output::TerminateJobFlowsOutput;
-
 pub use crate::operation::terminate_job_flows::_terminate_job_flows_input::TerminateJobFlowsInput;
+
+pub use crate::operation::terminate_job_flows::_terminate_job_flows_output::TerminateJobFlowsOutput;
 
 mod _terminate_job_flows_input;
 

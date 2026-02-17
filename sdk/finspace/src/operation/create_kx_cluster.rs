@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_cluster:
     }
 }
 
-pub use crate::operation::create_kx_cluster::_create_kx_cluster_output::CreateKxClusterOutput;
-
 pub use crate::operation::create_kx_cluster::_create_kx_cluster_input::CreateKxClusterInput;
+
+pub use crate::operation::create_kx_cluster::_create_kx_cluster_output::CreateKxClusterOutput;
 
 mod _create_kx_cluster_input;
 

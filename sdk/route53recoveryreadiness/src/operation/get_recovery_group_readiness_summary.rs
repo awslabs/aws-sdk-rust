@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_recovery_group
     }
 }
 
-pub use crate::operation::get_recovery_group_readiness_summary::_get_recovery_group_readiness_summary_output::GetRecoveryGroupReadinessSummaryOutput;
-
 pub use crate::operation::get_recovery_group_readiness_summary::_get_recovery_group_readiness_summary_input::GetRecoveryGroupReadinessSummaryInput;
+
+pub use crate::operation::get_recovery_group_readiness_summary::_get_recovery_group_readiness_summary_output::GetRecoveryGroupReadinessSummaryOutput;
 
 mod _get_recovery_group_readiness_summary_input;
 

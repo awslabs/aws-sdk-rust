@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ai_prompt_v
     }
 }
 
-pub use crate::operation::create_ai_prompt_version::_create_ai_prompt_version_output::CreateAiPromptVersionOutput;
-
 pub use crate::operation::create_ai_prompt_version::_create_ai_prompt_version_input::CreateAiPromptVersionInput;
+
+pub use crate::operation::create_ai_prompt_version::_create_ai_prompt_version_output::CreateAiPromptVersionOutput;
 
 mod _create_ai_prompt_version_input;
 

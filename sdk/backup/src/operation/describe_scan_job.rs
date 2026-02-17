@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scan_job:
     }
 }
 
-pub use crate::operation::describe_scan_job::_describe_scan_job_output::DescribeScanJobOutput;
-
 pub use crate::operation::describe_scan_job::_describe_scan_job_input::DescribeScanJobInput;
+
+pub use crate::operation::describe_scan_job::_describe_scan_job_output::DescribeScanJobOutput;
 
 mod _describe_scan_job_input;
 

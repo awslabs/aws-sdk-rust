@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_detector::U
     }
 }
 
-pub use crate::operation::update_detector::_update_detector_output::UpdateDetectorOutput;
-
 pub use crate::operation::update_detector::_update_detector_input::UpdateDetectorInput;
+
+pub use crate::operation::update_detector::_update_detector_output::UpdateDetectorOutput;
 
 mod _update_detector_input;
 

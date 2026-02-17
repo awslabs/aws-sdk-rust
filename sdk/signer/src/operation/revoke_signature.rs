@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_signature::
     }
 }
 
-pub use crate::operation::revoke_signature::_revoke_signature_output::RevokeSignatureOutput;
-
 pub use crate::operation::revoke_signature::_revoke_signature_input::RevokeSignatureInput;
+
+pub use crate::operation::revoke_signature::_revoke_signature_output::RevokeSignatureOutput;
 
 mod _revoke_signature_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_test_set_
     }
 }
 
-pub use crate::operation::describe_test_set_generation::_describe_test_set_generation_output::DescribeTestSetGenerationOutput;
-
 pub use crate::operation::describe_test_set_generation::_describe_test_set_generation_input::DescribeTestSetGenerationInput;
+
+pub use crate::operation::describe_test_set_generation::_describe_test_set_generation_output::DescribeTestSetGenerationOutput;
 
 mod _describe_test_set_generation_input;
 

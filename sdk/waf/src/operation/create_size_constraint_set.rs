@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_size_constr
     }
 }
 
-pub use crate::operation::create_size_constraint_set::_create_size_constraint_set_output::CreateSizeConstraintSetOutput;
-
 pub use crate::operation::create_size_constraint_set::_create_size_constraint_set_input::CreateSizeConstraintSetInput;
+
+pub use crate::operation::create_size_constraint_set::_create_size_constraint_set_output::CreateSizeConstraintSetOutput;
 
 mod _create_size_constraint_set_input;
 

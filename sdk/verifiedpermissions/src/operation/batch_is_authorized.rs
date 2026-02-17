@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_is_authorize
     }
 }
 
-pub use crate::operation::batch_is_authorized::_batch_is_authorized_output::BatchIsAuthorizedOutput;
-
 pub use crate::operation::batch_is_authorized::_batch_is_authorized_input::BatchIsAuthorizedInput;
+
+pub use crate::operation::batch_is_authorized::_batch_is_authorized_output::BatchIsAuthorizedOutput;
 
 mod _batch_is_authorized_input;
 

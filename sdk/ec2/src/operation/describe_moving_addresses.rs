@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_moving_ad
     }
 }
 
-pub use crate::operation::describe_moving_addresses::_describe_moving_addresses_output::DescribeMovingAddressesOutput;
-
 pub use crate::operation::describe_moving_addresses::_describe_moving_addresses_input::DescribeMovingAddressesInput;
+
+pub use crate::operation::describe_moving_addresses::_describe_moving_addresses_output::DescribeMovingAddressesOutput;
 
 mod _describe_moving_addresses_input;
 

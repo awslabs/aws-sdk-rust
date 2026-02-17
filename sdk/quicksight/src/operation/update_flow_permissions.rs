@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_flow_permis
     }
 }
 
-pub use crate::operation::update_flow_permissions::_update_flow_permissions_output::UpdateFlowPermissionsOutput;
-
 pub use crate::operation::update_flow_permissions::_update_flow_permissions_input::UpdateFlowPermissionsInput;
+
+pub use crate::operation::update_flow_permissions::_update_flow_permissions_output::UpdateFlowPermissionsOutput;
 
 mod _update_flow_permissions_input;
 

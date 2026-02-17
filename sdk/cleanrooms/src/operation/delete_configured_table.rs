@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configured_
     }
 }
 
-pub use crate::operation::delete_configured_table::_delete_configured_table_output::DeleteConfiguredTableOutput;
-
 pub use crate::operation::delete_configured_table::_delete_configured_table_input::DeleteConfiguredTableInput;
+
+pub use crate::operation::delete_configured_table::_delete_configured_table_output::DeleteConfiguredTableOutput;
 
 mod _delete_configured_table_input;
 

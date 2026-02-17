@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_layer_versi
     }
 }
 
-pub use crate::operation::delete_layer_version::_delete_layer_version_output::DeleteLayerVersionOutput;
-
 pub use crate::operation::delete_layer_version::_delete_layer_version_input::DeleteLayerVersionInput;
+
+pub use crate::operation::delete_layer_version::_delete_layer_version_output::DeleteLayerVersionOutput;
 
 mod _delete_layer_version_input;
 

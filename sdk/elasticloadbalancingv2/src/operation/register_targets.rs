@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_targets::
     }
 }
 
-pub use crate::operation::register_targets::_register_targets_output::RegisterTargetsOutput;
-
 pub use crate::operation::register_targets::_register_targets_input::RegisterTargetsInput;
+
+pub use crate::operation::register_targets::_register_targets_output::RegisterTargetsOutput;
 
 mod _register_targets_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scope::GetScop
     }
 }
 
-pub use crate::operation::get_scope::_get_scope_output::GetScopeOutput;
-
 pub use crate::operation::get_scope::_get_scope_input::GetScopeInput;
+
+pub use crate::operation::get_scope::_get_scope_output::GetScopeOutput;
 
 mod _get_scope_input;
 

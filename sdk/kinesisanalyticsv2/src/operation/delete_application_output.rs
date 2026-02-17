@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_output::_delete_application_output_output::DeleteApplicationOutputOutput;
-
 pub use crate::operation::delete_application_output::_delete_application_output_input::DeleteApplicationOutputInput;
+
+pub use crate::operation::delete_application_output::_delete_application_output_output::DeleteApplicationOutputOutput;
 
 mod _delete_application_output_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_role::Delet
     }
 }
 
-pub use crate::operation::delete_role::_delete_role_output::DeleteRoleOutput;
-
 pub use crate::operation::delete_role::_delete_role_input::DeleteRoleInput;
+
+pub use crate::operation::delete_role::_delete_role_output::DeleteRoleOutput;
 
 mod _delete_role_input;
 

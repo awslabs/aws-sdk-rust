@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mapped_re
     }
 }
 
-pub use crate::operation::describe_mapped_resource_configuration::_describe_mapped_resource_configuration_output::DescribeMappedResourceConfigurationOutput;
-
 pub use crate::operation::describe_mapped_resource_configuration::_describe_mapped_resource_configuration_input::DescribeMappedResourceConfigurationInput;
+
+pub use crate::operation::describe_mapped_resource_configuration::_describe_mapped_resource_configuration_output::DescribeMappedResourceConfigurationOutput;
 
 mod _describe_mapped_resource_configuration_input;
 

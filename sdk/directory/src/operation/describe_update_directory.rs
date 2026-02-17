@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_update_di
     }
 }
 
-pub use crate::operation::describe_update_directory::_describe_update_directory_output::DescribeUpdateDirectoryOutput;
-
 pub use crate::operation::describe_update_directory::_describe_update_directory_input::DescribeUpdateDirectoryInput;
+
+pub use crate::operation::describe_update_directory::_describe_update_directory_output::DescribeUpdateDirectoryOutput;
 
 mod _describe_update_directory_input;
 

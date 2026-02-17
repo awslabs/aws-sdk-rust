@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_home_region::G
     }
 }
 
-pub use crate::operation::get_home_region::_get_home_region_output::GetHomeRegionOutput;
-
 pub use crate::operation::get_home_region::_get_home_region_input::GetHomeRegionInput;
+
+pub use crate::operation::get_home_region::_get_home_region_output::GetHomeRegionOutput;
 
 mod _get_home_region_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_offering:
     }
 }
 
-pub use crate::operation::describe_offering::_describe_offering_output::DescribeOfferingOutput;
-
 pub use crate::operation::describe_offering::_describe_offering_input::DescribeOfferingInput;
+
+pub use crate::operation::describe_offering::_describe_offering_output::DescribeOfferingOutput;
 
 mod _describe_offering_input;
 

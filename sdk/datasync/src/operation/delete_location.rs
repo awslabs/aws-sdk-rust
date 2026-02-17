@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_location::D
     }
 }
 
-pub use crate::operation::delete_location::_delete_location_output::DeleteLocationOutput;
-
 pub use crate::operation::delete_location::_delete_location_input::DeleteLocationInput;
+
+pub use crate::operation::delete_location::_delete_location_output::DeleteLocationOutput;
 
 mod _delete_location_input;
 

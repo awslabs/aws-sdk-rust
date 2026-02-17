@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bulk_deployme
     }
 }
 
-pub use crate::operation::list_bulk_deployments::_list_bulk_deployments_output::ListBulkDeploymentsOutput;
-
 pub use crate::operation::list_bulk_deployments::_list_bulk_deployments_input::ListBulkDeploymentsInput;
+
+pub use crate::operation::list_bulk_deployments::_list_bulk_deployments_output::ListBulkDeploymentsOutput;
 
 mod _list_bulk_deployments_input;
 

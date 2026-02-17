@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_capacity_task:
     }
 }
 
-pub use crate::operation::get_capacity_task::_get_capacity_task_output::GetCapacityTaskOutput;
-
 pub use crate::operation::get_capacity_task::_get_capacity_task_input::GetCapacityTaskInput;
+
+pub use crate::operation::get_capacity_task::_get_capacity_task_output::GetCapacityTaskOutput;
 
 mod _get_capacity_task_input;
 

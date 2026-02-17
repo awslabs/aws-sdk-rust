@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_agreement::
     }
 }
 
-pub use crate::operation::create_agreement::_create_agreement_output::CreateAgreementOutput;
-
 pub use crate::operation::create_agreement::_create_agreement_input::CreateAgreementInput;
+
+pub use crate::operation::create_agreement::_create_agreement_output::CreateAgreementOutput;
 
 mod _create_agreement_input;
 

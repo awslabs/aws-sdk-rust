@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_subnet_attr
     }
 }
 
-pub use crate::operation::modify_subnet_attribute::_modify_subnet_attribute_output::ModifySubnetAttributeOutput;
-
 pub use crate::operation::modify_subnet_attribute::_modify_subnet_attribute_input::ModifySubnetAttributeInput;
+
+pub use crate::operation::modify_subnet_attribute::_modify_subnet_attribute_output::ModifySubnetAttributeOutput;
 
 mod _modify_subnet_attribute_input;
 

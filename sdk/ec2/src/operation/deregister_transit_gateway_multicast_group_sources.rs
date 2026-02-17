@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::deregister_transit_gateway_multicast_group_sources::_deregister_transit_gateway_multicast_group_sources_output::DeregisterTransitGatewayMulticastGroupSourcesOutput;
-
 pub use crate::operation::deregister_transit_gateway_multicast_group_sources::_deregister_transit_gateway_multicast_group_sources_input::DeregisterTransitGatewayMulticastGroupSourcesInput;
+
+pub use crate::operation::deregister_transit_gateway_multicast_group_sources::_deregister_transit_gateway_multicast_group_sources_output::DeregisterTransitGatewayMulticastGroupSourcesOutput;
 
 mod _deregister_transit_gateway_multicast_group_sources_input;
 

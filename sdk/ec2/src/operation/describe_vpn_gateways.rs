@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpn_gatew
     }
 }
 
-pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_output::DescribeVpnGatewaysOutput;
-
 pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_input::DescribeVpnGatewaysInput;
+
+pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_output::DescribeVpnGatewaysOutput;
 
 mod _describe_vpn_gateways_input;
 

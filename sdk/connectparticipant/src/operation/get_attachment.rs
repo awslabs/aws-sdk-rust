@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_attachment::Ge
     }
 }
 
-pub use crate::operation::get_attachment::_get_attachment_output::GetAttachmentOutput;
-
 pub use crate::operation::get_attachment::_get_attachment_input::GetAttachmentInput;
+
+pub use crate::operation::get_attachment::_get_attachment_output::GetAttachmentOutput;
 
 mod _get_attachment_input;
 

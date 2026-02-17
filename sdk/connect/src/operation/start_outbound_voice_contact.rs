@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_outbound_voi
     }
 }
 
-pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_contact_output::StartOutboundVoiceContactOutput;
-
 pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_contact_input::StartOutboundVoiceContactInput;
+
+pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_contact_output::StartOutboundVoiceContactOutput;
 
 mod _start_outbound_voice_contact_input;
 

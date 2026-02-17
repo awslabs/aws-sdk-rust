@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_version::
     }
 }
 
-pub use crate::operation::get_flow_version::_get_flow_version_output::GetFlowVersionOutput;
-
 pub use crate::operation::get_flow_version::_get_flow_version_input::GetFlowVersionInput;
+
+pub use crate::operation::get_flow_version::_get_flow_version_output::GetFlowVersionOutput;
 
 mod _get_flow_version_input;
 

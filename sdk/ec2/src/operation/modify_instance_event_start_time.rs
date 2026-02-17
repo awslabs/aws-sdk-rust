@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_ev
     }
 }
 
-pub use crate::operation::modify_instance_event_start_time::_modify_instance_event_start_time_output::ModifyInstanceEventStartTimeOutput;
-
 pub use crate::operation::modify_instance_event_start_time::_modify_instance_event_start_time_input::ModifyInstanceEventStartTimeInput;
+
+pub use crate::operation::modify_instance_event_start_time::_modify_instance_event_start_time_output::ModifyInstanceEventStartTimeOutput;
 
 mod _modify_instance_event_start_time_input;
 

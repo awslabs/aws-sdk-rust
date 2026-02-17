@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_volume::
     }
 }
 
-pub use crate::operation::delete_kx_volume::_delete_kx_volume_output::DeleteKxVolumeOutput;
-
 pub use crate::operation::delete_kx_volume::_delete_kx_volume_input::DeleteKxVolumeInput;
+
+pub use crate::operation::delete_kx_volume::_delete_kx_volume_output::DeleteKxVolumeOutput;
 
 mod _delete_kx_volume_input;
 

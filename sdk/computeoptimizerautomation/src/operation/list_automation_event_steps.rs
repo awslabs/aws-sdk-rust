@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_automation_ev
     }
 }
 
-pub use crate::operation::list_automation_event_steps::_list_automation_event_steps_output::ListAutomationEventStepsOutput;
-
 pub use crate::operation::list_automation_event_steps::_list_automation_event_steps_input::ListAutomationEventStepsInput;
+
+pub use crate::operation::list_automation_event_steps::_list_automation_event_steps_output::ListAutomationEventStepsOutput;
 
 mod _list_automation_event_steps_input;
 

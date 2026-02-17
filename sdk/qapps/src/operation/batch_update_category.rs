@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_categ
     }
 }
 
-pub use crate::operation::batch_update_category::_batch_update_category_output::BatchUpdateCategoryOutput;
-
 pub use crate::operation::batch_update_category::_batch_update_category_input::BatchUpdateCategoryInput;
+
+pub use crate::operation::batch_update_category::_batch_update_category_output::BatchUpdateCategoryOutput;
 
 mod _batch_update_category_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_ebs_default_
     }
 }
 
-pub use crate::operation::reset_ebs_default_kms_key_id::_reset_ebs_default_kms_key_id_output::ResetEbsDefaultKmsKeyIdOutput;
-
 pub use crate::operation::reset_ebs_default_kms_key_id::_reset_ebs_default_kms_key_id_input::ResetEbsDefaultKmsKeyIdInput;
+
+pub use crate::operation::reset_ebs_default_kms_key_id::_reset_ebs_default_kms_key_id_output::ResetEbsDefaultKmsKeyIdOutput;
 
 mod _reset_ebs_default_kms_key_id_input;
 

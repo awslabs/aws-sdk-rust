@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_private_v
     }
 }
 
-pub use crate::operation::allocate_private_virtual_interface::_allocate_private_virtual_interface_output::AllocatePrivateVirtualInterfaceOutput;
-
 pub use crate::operation::allocate_private_virtual_interface::_allocate_private_virtual_interface_input::AllocatePrivateVirtualInterfaceInput;
+
+pub use crate::operation::allocate_private_virtual_interface::_allocate_private_virtual_interface_output::AllocatePrivateVirtualInterfaceOutput;
 
 mod _allocate_private_virtual_interface_input;
 

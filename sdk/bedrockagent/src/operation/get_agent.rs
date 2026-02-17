@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent::GetAgen
     }
 }
 
-pub use crate::operation::get_agent::_get_agent_output::GetAgentOutput;
-
 pub use crate::operation::get_agent::_get_agent_input::GetAgentInput;
+
+pub use crate::operation::get_agent::_get_agent_output::GetAgentOutput;
 
 mod _get_agent_input;
 

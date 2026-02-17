@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_connection_mode::_list_distributions_by_connection_mode_output::ListDistributionsByConnectionModeOutput;
-
 pub use crate::operation::list_distributions_by_connection_mode::_list_distributions_by_connection_mode_input::ListDistributionsByConnectionModeInput;
+
+pub use crate::operation::list_distributions_by_connection_mode::_list_distributions_by_connection_mode_output::ListDistributionsByConnectionModeOutput;
 
 mod _list_distributions_by_connection_mode_input;
 

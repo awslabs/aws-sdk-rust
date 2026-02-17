@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_run::StopRunE
     }
 }
 
-pub use crate::operation::stop_run::_stop_run_output::StopRunOutput;
-
 pub use crate::operation::stop_run::_stop_run_input::StopRunInput;
+
+pub use crate::operation::stop_run::_stop_run_output::StopRunOutput;
 
 mod _stop_run_input;
 

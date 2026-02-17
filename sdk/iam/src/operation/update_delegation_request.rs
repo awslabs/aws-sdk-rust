@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_delegation_
     }
 }
 
-pub use crate::operation::update_delegation_request::_update_delegation_request_output::UpdateDelegationRequestOutput;
-
 pub use crate::operation::update_delegation_request::_update_delegation_request_input::UpdateDelegationRequestInput;
+
+pub use crate::operation::update_delegation_request::_update_delegation_request_output::UpdateDelegationRequestOutput;
 
 mod _update_delegation_request_input;
 

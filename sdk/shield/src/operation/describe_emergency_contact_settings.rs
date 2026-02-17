@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_emergency
     }
 }
 
-pub use crate::operation::describe_emergency_contact_settings::_describe_emergency_contact_settings_output::DescribeEmergencyContactSettingsOutput;
-
 pub use crate::operation::describe_emergency_contact_settings::_describe_emergency_contact_settings_input::DescribeEmergencyContactSettingsInput;
+
+pub use crate::operation::describe_emergency_contact_settings::_describe_emergency_contact_settings_output::DescribeEmergencyContactSettingsOutput;
 
 mod _describe_emergency_contact_settings_input;
 

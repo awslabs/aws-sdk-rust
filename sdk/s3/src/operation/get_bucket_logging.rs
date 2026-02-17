@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_logging
     }
 }
 
-pub use crate::operation::get_bucket_logging::_get_bucket_logging_output::GetBucketLoggingOutput;
-
 pub use crate::operation::get_bucket_logging::_get_bucket_logging_input::GetBucketLoggingInput;
+
+pub use crate::operation::get_bucket_logging::_get_bucket_logging_output::GetBucketLoggingOutput;
 
 mod _get_bucket_logging_input;
 

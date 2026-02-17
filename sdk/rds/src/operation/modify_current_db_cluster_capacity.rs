@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_current_db_
     }
 }
 
-pub use crate::operation::modify_current_db_cluster_capacity::_modify_current_db_cluster_capacity_output::ModifyCurrentDbClusterCapacityOutput;
-
 pub use crate::operation::modify_current_db_cluster_capacity::_modify_current_db_cluster_capacity_input::ModifyCurrentDbClusterCapacityInput;
+
+pub use crate::operation::modify_current_db_cluster_capacity::_modify_current_db_cluster_capacity_output::ModifyCurrentDbClusterCapacityOutput;
 
 mod _modify_current_db_cluster_capacity_input;
 

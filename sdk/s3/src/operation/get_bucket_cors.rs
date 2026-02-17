@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_cors::G
     }
 }
 
-pub use crate::operation::get_bucket_cors::_get_bucket_cors_output::GetBucketCorsOutput;
-
 pub use crate::operation::get_bucket_cors::_get_bucket_cors_input::GetBucketCorsInput;
+
+pub use crate::operation::get_bucket_cors::_get_bucket_cors_output::GetBucketCorsOutput;
 
 mod _get_bucket_cors_input;
 

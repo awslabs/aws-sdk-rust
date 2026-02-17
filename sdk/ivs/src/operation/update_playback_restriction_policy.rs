@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_playback_re
     }
 }
 
-pub use crate::operation::update_playback_restriction_policy::_update_playback_restriction_policy_output::UpdatePlaybackRestrictionPolicyOutput;
-
 pub use crate::operation::update_playback_restriction_policy::_update_playback_restriction_policy_input::UpdatePlaybackRestrictionPolicyInput;
+
+pub use crate::operation::update_playback_restriction_policy::_update_playback_restriction_policy_output::UpdatePlaybackRestrictionPolicyOutput;
 
 mod _update_playback_restriction_policy_input;
 

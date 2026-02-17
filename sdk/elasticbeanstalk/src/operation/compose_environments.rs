@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::compose_environmen
     }
 }
 
-pub use crate::operation::compose_environments::_compose_environments_output::ComposeEnvironmentsOutput;
-
 pub use crate::operation::compose_environments::_compose_environments_input::ComposeEnvironmentsInput;
+
+pub use crate::operation::compose_environments::_compose_environments_output::ComposeEnvironmentsOutput;
 
 mod _compose_environments_input;
 

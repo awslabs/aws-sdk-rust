@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_s3_table_in
     }
 }
 
-pub use crate::operation::create_s3_table_integration::_create_s3_table_integration_output::CreateS3TableIntegrationOutput;
-
 pub use crate::operation::create_s3_table_integration::_create_s3_table_integration_input::CreateS3TableIntegrationInput;
+
+pub use crate::operation::create_s3_table_integration::_create_s3_table_integration_output::CreateS3TableIntegrationOutput;
 
 mod _create_s3_table_integration_input;
 

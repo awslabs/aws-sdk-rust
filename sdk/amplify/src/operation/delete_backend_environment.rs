@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backend_env
     }
 }
 
-pub use crate::operation::delete_backend_environment::_delete_backend_environment_output::DeleteBackendEnvironmentOutput;
-
 pub use crate::operation::delete_backend_environment::_delete_backend_environment_input::DeleteBackendEnvironmentInput;
+
+pub use crate::operation::delete_backend_environment::_delete_backend_environment_output::DeleteBackendEnvironmentOutput;
 
 mod _delete_backend_environment_input;
 

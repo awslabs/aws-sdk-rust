@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_attributes::Pu
     }
 }
 
-pub use crate::operation::put_attributes::_put_attributes_output::PutAttributesOutput;
-
 pub use crate::operation::put_attributes::_put_attributes_input::PutAttributesInput;
+
+pub use crate::operation::put_attributes::_put_attributes_output::PutAttributesOutput;
 
 mod _put_attributes_input;
 

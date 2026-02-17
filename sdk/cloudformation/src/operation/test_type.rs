@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_type::TestTyp
     }
 }
 
-pub use crate::operation::test_type::_test_type_output::TestTypeOutput;
-
 pub use crate::operation::test_type::_test_type_input::TestTypeInput;
+
+pub use crate::operation::test_type::_test_type_output::TestTypeOutput;
 
 mod _test_type_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::pause_campaign::Pa
     }
 }
 
-pub use crate::operation::pause_campaign::_pause_campaign_output::PauseCampaignOutput;
-
 pub use crate::operation::pause_campaign::_pause_campaign_input::PauseCampaignInput;
+
+pub use crate::operation::pause_campaign::_pause_campaign_output::PauseCampaignOutput;
 
 mod _pause_campaign_input;
 

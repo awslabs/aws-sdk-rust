@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_availability
     }
 }
 
-pub use crate::operation::start_availability_monitor_test::_start_availability_monitor_test_output::StartAvailabilityMonitorTestOutput;
-
 pub use crate::operation::start_availability_monitor_test::_start_availability_monitor_test_input::StartAvailabilityMonitorTestInput;
+
+pub use crate::operation::start_availability_monitor_test::_start_availability_monitor_test_output::StartAvailabilityMonitorTestOutput;
 
 mod _start_availability_monitor_test_input;
 

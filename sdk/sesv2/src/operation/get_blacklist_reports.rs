@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_blacklist_repo
     }
 }
 
-pub use crate::operation::get_blacklist_reports::_get_blacklist_reports_output::GetBlacklistReportsOutput;
-
 pub use crate::operation::get_blacklist_reports::_get_blacklist_reports_input::GetBlacklistReportsInput;
+
+pub use crate::operation::get_blacklist_reports::_get_blacklist_reports_output::GetBlacklistReportsOutput;
 
 mod _get_blacklist_reports_input;
 

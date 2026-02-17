@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multipart_upl
     }
 }
 
-pub use crate::operation::list_multipart_uploads::_list_multipart_uploads_output::ListMultipartUploadsOutput;
-
 pub use crate::operation::list_multipart_uploads::_list_multipart_uploads_input::ListMultipartUploadsInput;
+
+pub use crate::operation::list_multipart_uploads::_list_multipart_uploads_output::ListMultipartUploadsOutput;
 
 mod _list_multipart_uploads_input;
 

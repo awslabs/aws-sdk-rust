@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_user:
     }
 }
 
-pub use crate::operation::batch_delete_user::_batch_delete_user_output::BatchDeleteUserOutput;
-
 pub use crate::operation::batch_delete_user::_batch_delete_user_input::BatchDeleteUserInput;
+
+pub use crate::operation::batch_delete_user::_batch_delete_user_output::BatchDeleteUserOutput;
 
 mod _batch_delete_user_input;
 

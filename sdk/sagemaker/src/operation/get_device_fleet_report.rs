@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_fleet_r
     }
 }
 
-pub use crate::operation::get_device_fleet_report::_get_device_fleet_report_output::GetDeviceFleetReportOutput;
-
 pub use crate::operation::get_device_fleet_report::_get_device_fleet_report_input::GetDeviceFleetReportInput;
+
+pub use crate::operation::get_device_fleet_report::_get_device_fleet_report_output::GetDeviceFleetReportOutput;
 
 mod _get_device_fleet_report_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_collaborati
     }
 }
 
-pub use crate::operation::update_collaboration::_update_collaboration_output::UpdateCollaborationOutput;
-
 pub use crate::operation::update_collaboration::_update_collaboration_input::UpdateCollaborationInput;
+
+pub use crate::operation::update_collaboration::_update_collaboration_output::UpdateCollaborationOutput;
 
 mod _update_collaboration_input;
 

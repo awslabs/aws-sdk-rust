@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_aws_log_sou
     }
 }
 
-pub use crate::operation::create_aws_log_source::_create_aws_log_source_output::CreateAwsLogSourceOutput;
-
 pub use crate::operation::create_aws_log_source::_create_aws_log_source_input::CreateAwsLogSourceInput;
+
+pub use crate::operation::create_aws_log_source::_create_aws_log_source_output::CreateAwsLogSourceOutput;
 
 mod _create_aws_log_source_input;
 

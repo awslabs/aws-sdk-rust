@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identity_poli
     }
 }
 
-pub use crate::operation::list_identity_policies::_list_identity_policies_output::ListIdentityPoliciesOutput;
-
 pub use crate::operation::list_identity_policies::_list_identity_policies_input::ListIdentityPoliciesInput;
+
+pub use crate::operation::list_identity_policies::_list_identity_policies_output::ListIdentityPoliciesOutput;
 
 mod _list_identity_policies_input;
 

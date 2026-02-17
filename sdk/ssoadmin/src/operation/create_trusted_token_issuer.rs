@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trusted_tok
     }
 }
 
-pub use crate::operation::create_trusted_token_issuer::_create_trusted_token_issuer_output::CreateTrustedTokenIssuerOutput;
-
 pub use crate::operation::create_trusted_token_issuer::_create_trusted_token_issuer_input::CreateTrustedTokenIssuerInput;
+
+pub use crate::operation::create_trusted_token_issuer::_create_trusted_token_issuer_output::CreateTrustedTokenIssuerOutput;
 
 mod _create_trusted_token_issuer_input;
 

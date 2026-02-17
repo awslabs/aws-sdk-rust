@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_customer_
     }
 }
 
-pub use crate::operation::describe_customer_gateways::_describe_customer_gateways_output::DescribeCustomerGatewaysOutput;
-
 pub use crate::operation::describe_customer_gateways::_describe_customer_gateways_input::DescribeCustomerGatewaysInput;
+
+pub use crate::operation::describe_customer_gateways::_describe_customer_gateways_output::DescribeCustomerGatewaysOutput;
 
 mod _describe_customer_gateways_input;
 

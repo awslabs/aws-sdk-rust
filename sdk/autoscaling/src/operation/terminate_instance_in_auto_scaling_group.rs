@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_instance
     }
 }
 
-pub use crate::operation::terminate_instance_in_auto_scaling_group::_terminate_instance_in_auto_scaling_group_output::TerminateInstanceInAutoScalingGroupOutput;
-
 pub use crate::operation::terminate_instance_in_auto_scaling_group::_terminate_instance_in_auto_scaling_group_input::TerminateInstanceInAutoScalingGroupInput;
+
+pub use crate::operation::terminate_instance_in_auto_scaling_group::_terminate_instance_in_auto_scaling_group_output::TerminateInstanceInAutoScalingGroupOutput;
 
 mod _terminate_instance_in_auto_scaling_group_input;
 

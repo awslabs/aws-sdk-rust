@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_proposal::C
     }
 }
 
-pub use crate::operation::create_proposal::_create_proposal_output::CreateProposalOutput;
-
 pub use crate::operation::create_proposal::_create_proposal_input::CreateProposalInput;
+
+pub use crate::operation::create_proposal::_create_proposal_output::CreateProposalOutput;
 
 mod _create_proposal_input;
 

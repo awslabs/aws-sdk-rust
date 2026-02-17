@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_voice_connector_emergency_calling_configuration::_delete_voice_connector_emergency_calling_configuration_output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput;
-
 pub use crate::operation::delete_voice_connector_emergency_calling_configuration::_delete_voice_connector_emergency_calling_configuration_input::DeleteVoiceConnectorEmergencyCallingConfigurationInput;
+
+pub use crate::operation::delete_voice_connector_emergency_calling_configuration::_delete_voice_connector_emergency_calling_configuration_output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput;
 
 mod _delete_voice_connector_emergency_calling_configuration_input;
 

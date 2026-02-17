@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ingestion_d
     }
 }
 
-pub use crate::operation::delete_ingestion_destination::_delete_ingestion_destination_output::DeleteIngestionDestinationOutput;
-
 pub use crate::operation::delete_ingestion_destination::_delete_ingestion_destination_input::DeleteIngestionDestinationInput;
+
+pub use crate::operation::delete_ingestion_destination::_delete_ingestion_destination_output::DeleteIngestionDestinationOutput;
 
 mod _delete_ingestion_destination_input;
 

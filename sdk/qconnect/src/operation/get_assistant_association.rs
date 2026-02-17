@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_assistant_asso
     }
 }
 
-pub use crate::operation::get_assistant_association::_get_assistant_association_output::GetAssistantAssociationOutput;
-
 pub use crate::operation::get_assistant_association::_get_assistant_association_input::GetAssistantAssociationInput;
+
+pub use crate::operation::get_assistant_association::_get_assistant_association_output::GetAssistantAssociationOutput;
 
 mod _get_assistant_association_input;
 

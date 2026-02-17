@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_canary_runs::G
     }
 }
 
-pub use crate::operation::get_canary_runs::_get_canary_runs_output::GetCanaryRunsOutput;
-
 pub use crate::operation::get_canary_runs::_get_canary_runs_input::GetCanaryRunsInput;
+
+pub use crate::operation::get_canary_runs::_get_canary_runs_output::GetCanaryRunsOutput;
 
 mod _get_canary_runs_input;
 

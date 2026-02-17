@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_refresh_sched
     }
 }
 
-pub use crate::operation::list_refresh_schedules::_list_refresh_schedules_output::ListRefreshSchedulesOutput;
-
 pub use crate::operation::list_refresh_schedules::_list_refresh_schedules_input::ListRefreshSchedulesInput;
+
+pub use crate::operation::list_refresh_schedules::_list_refresh_schedules_output::ListRefreshSchedulesOutput;
 
 mod _list_refresh_schedules_input;
 

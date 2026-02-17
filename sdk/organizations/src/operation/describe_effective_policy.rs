@@ -627,9 +627,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_effective
     }
 }
 
-pub use crate::operation::describe_effective_policy::_describe_effective_policy_output::DescribeEffectivePolicyOutput;
-
 pub use crate::operation::describe_effective_policy::_describe_effective_policy_input::DescribeEffectivePolicyInput;
+
+pub use crate::operation::describe_effective_policy::_describe_effective_policy_output::DescribeEffectivePolicyOutput;
 
 mod _describe_effective_policy_input;
 

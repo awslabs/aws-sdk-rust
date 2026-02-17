@@ -648,9 +648,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_responsi
     }
 }
 
-pub use crate::operation::terminate_responsibility_transfer::_terminate_responsibility_transfer_output::TerminateResponsibilityTransferOutput;
-
 pub use crate::operation::terminate_responsibility_transfer::_terminate_responsibility_transfer_input::TerminateResponsibilityTransferInput;
+
+pub use crate::operation::terminate_responsibility_transfer::_terminate_responsibility_transfer_output::TerminateResponsibilityTransferOutput;
 
 mod _terminate_responsibility_transfer_input;
 

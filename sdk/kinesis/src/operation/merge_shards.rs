@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_shards::Merg
     }
 }
 
-pub use crate::operation::merge_shards::_merge_shards_output::MergeShardsOutput;
-
 pub use crate::operation::merge_shards::_merge_shards_input::MergeShardsInput;
+
+pub use crate::operation::merge_shards::_merge_shards_output::MergeShardsOutput;
 
 mod _merge_shards_input;
 

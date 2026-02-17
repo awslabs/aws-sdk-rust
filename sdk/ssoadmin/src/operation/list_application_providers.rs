@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_p
     }
 }
 
-pub use crate::operation::list_application_providers::_list_application_providers_output::ListApplicationProvidersOutput;
-
 pub use crate::operation::list_application_providers::_list_application_providers_input::ListApplicationProvidersInput;
+
+pub use crate::operation::list_application_providers::_list_application_providers_output::ListApplicationProvidersOutput;
 
 mod _list_application_providers_input;
 

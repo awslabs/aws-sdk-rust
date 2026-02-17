@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_profile_res
     }
 }
 
-pub use crate::operation::update_profile_resource_association::_update_profile_resource_association_output::UpdateProfileResourceAssociationOutput;
-
 pub use crate::operation::update_profile_resource_association::_update_profile_resource_association_input::UpdateProfileResourceAssociationInput;
+
+pub use crate::operation::update_profile_resource_association::_update_profile_resource_association_output::UpdateProfileResourceAssociationOutput;
 
 mod _update_profile_resource_association_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_recovery_point
     }
 }
 
-pub use crate::operation::get_recovery_point_restore_metadata::_get_recovery_point_restore_metadata_output::GetRecoveryPointRestoreMetadataOutput;
-
 pub use crate::operation::get_recovery_point_restore_metadata::_get_recovery_point_restore_metadata_input::GetRecoveryPointRestoreMetadataInput;
+
+pub use crate::operation::get_recovery_point_restore_metadata::_get_recovery_point_restore_metadata_output::GetRecoveryPointRestoreMetadataOutput;
 
 mod _get_recovery_point_restore_metadata_input;
 

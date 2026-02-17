@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_signing_cer
     }
 }
 
-pub use crate::operation::upload_signing_certificate::_upload_signing_certificate_output::UploadSigningCertificateOutput;
-
 pub use crate::operation::upload_signing_certificate::_upload_signing_certificate_input::UploadSigningCertificateInput;
+
+pub use crate::operation::upload_signing_certificate::_upload_signing_certificate_output::UploadSigningCertificateOutput;
 
 mod _upload_signing_certificate_input;
 

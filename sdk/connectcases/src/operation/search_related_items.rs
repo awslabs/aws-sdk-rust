@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_related_ite
     }
 }
 
-pub use crate::operation::search_related_items::_search_related_items_output::SearchRelatedItemsOutput;
-
 pub use crate::operation::search_related_items::_search_related_items_input::SearchRelatedItemsInput;
+
+pub use crate::operation::search_related_items::_search_related_items_output::SearchRelatedItemsOutput;
 
 mod _search_related_items_input;
 

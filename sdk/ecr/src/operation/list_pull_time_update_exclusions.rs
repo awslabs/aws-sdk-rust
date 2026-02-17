@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pull_time_upd
     }
 }
 
-pub use crate::operation::list_pull_time_update_exclusions::_list_pull_time_update_exclusions_output::ListPullTimeUpdateExclusionsOutput;
-
 pub use crate::operation::list_pull_time_update_exclusions::_list_pull_time_update_exclusions_input::ListPullTimeUpdateExclusionsInput;
+
+pub use crate::operation::list_pull_time_update_exclusions::_list_pull_time_update_exclusions_output::ListPullTimeUpdateExclusionsOutput;
 
 mod _list_pull_time_update_exclusions_input;
 

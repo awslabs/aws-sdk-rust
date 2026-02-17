@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_role_
     }
 }
 
-pub use crate::operation::disassociate_role_from_group::_disassociate_role_from_group_output::DisassociateRoleFromGroupOutput;
-
 pub use crate::operation::disassociate_role_from_group::_disassociate_role_from_group_input::DisassociateRoleFromGroupInput;
+
+pub use crate::operation::disassociate_role_from_group::_disassociate_role_from_group_output::DisassociateRoleFromGroupOutput;
 
 mod _disassociate_role_from_group_input;
 

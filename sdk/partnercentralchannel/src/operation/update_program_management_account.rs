@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_program_man
     }
 }
 
-pub use crate::operation::update_program_management_account::_update_program_management_account_output::UpdateProgramManagementAccountOutput;
-
 pub use crate::operation::update_program_management_account::_update_program_management_account_input::UpdateProgramManagementAccountInput;
+
+pub use crate::operation::update_program_management_account::_update_program_management_account_output::UpdateProgramManagementAccountOutput;
 
 mod _update_program_management_account_input;
 

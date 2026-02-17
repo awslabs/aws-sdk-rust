@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_ipam_prefix_list_resolver_version_entries::_get_ipam_prefix_list_resolver_version_entries_output::GetIpamPrefixListResolverVersionEntriesOutput;
-
 pub use crate::operation::get_ipam_prefix_list_resolver_version_entries::_get_ipam_prefix_list_resolver_version_entries_input::GetIpamPrefixListResolverVersionEntriesInput;
+
+pub use crate::operation::get_ipam_prefix_list_resolver_version_entries::_get_ipam_prefix_list_resolver_version_entries_output::GetIpamPrefixListResolverVersionEntriesOutput;
 
 mod _get_ipam_prefix_list_resolver_version_entries_input;
 

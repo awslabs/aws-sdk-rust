@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_alias
     }
 }
 
-pub use crate::operation::list_account_aliases::_list_account_aliases_output::ListAccountAliasesOutput;
-
 pub use crate::operation::list_account_aliases::_list_account_aliases_input::ListAccountAliasesInput;
+
+pub use crate::operation::list_account_aliases::_list_account_aliases_output::ListAccountAliasesOutput;
 
 mod _list_account_aliases_input;
 

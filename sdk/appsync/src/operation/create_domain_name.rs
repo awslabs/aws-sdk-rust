@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_domain_name
     }
 }
 
-pub use crate::operation::create_domain_name::_create_domain_name_output::CreateDomainNameOutput;
-
 pub use crate::operation::create_domain_name::_create_domain_name_input::CreateDomainNameInput;
+
+pub use crate::operation::create_domain_name::_create_domain_name_output::CreateDomainNameOutput;
 
 mod _create_domain_name_input;
 

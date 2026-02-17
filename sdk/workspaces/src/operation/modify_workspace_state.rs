@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_workspace_s
     }
 }
 
-pub use crate::operation::modify_workspace_state::_modify_workspace_state_output::ModifyWorkspaceStateOutput;
-
 pub use crate::operation::modify_workspace_state::_modify_workspace_state_input::ModifyWorkspaceStateInput;
+
+pub use crate::operation::modify_workspace_state::_modify_workspace_state_output::ModifyWorkspaceStateOutput;
 
 mod _modify_workspace_state_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_persistent_app
     }
 }
 
-pub use crate::operation::get_persistent_app_ui_presigned_url::_get_persistent_app_ui_presigned_url_output::GetPersistentAppUiPresignedUrlOutput;
-
 pub use crate::operation::get_persistent_app_ui_presigned_url::_get_persistent_app_ui_presigned_url_input::GetPersistentAppUiPresignedUrlInput;
+
+pub use crate::operation::get_persistent_app_ui_presigned_url::_get_persistent_app_ui_presigned_url_output::GetPersistentAppUiPresignedUrlOutput;
 
 mod _get_persistent_app_ui_presigned_url_input;
 

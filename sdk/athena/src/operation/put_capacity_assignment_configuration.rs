@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_capacity_assig
     }
 }
 
-pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_assignment_configuration_output::PutCapacityAssignmentConfigurationOutput;
-
 pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_assignment_configuration_input::PutCapacityAssignmentConfigurationInput;
+
+pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_assignment_configuration_output::PutCapacityAssignmentConfigurationOutput;
 
 mod _put_capacity_assignment_configuration_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_key_policy::Pu
     }
 }
 
-pub use crate::operation::put_key_policy::_put_key_policy_output::PutKeyPolicyOutput;
-
 pub use crate::operation::put_key_policy::_put_key_policy_input::PutKeyPolicyInput;
+
+pub use crate::operation::put_key_policy::_put_key_policy_output::PutKeyPolicyOutput;
 
 mod _put_key_policy_input;
 

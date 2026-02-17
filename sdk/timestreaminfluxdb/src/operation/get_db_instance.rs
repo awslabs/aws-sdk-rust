@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_db_instance::G
     }
 }
 
-pub use crate::operation::get_db_instance::_get_db_instance_output::GetDbInstanceOutput;
-
 pub use crate::operation::get_db_instance::_get_db_instance_input::GetDbInstanceInput;
+
+pub use crate::operation::get_db_instance::_get_db_instance_output::GetDbInstanceOutput;
 
 mod _get_db_instance_input;
 

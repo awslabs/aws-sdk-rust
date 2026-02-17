@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provisioning_
     }
 }
 
-pub use crate::operation::list_provisioning_templates::_list_provisioning_templates_output::ListProvisioningTemplatesOutput;
-
 pub use crate::operation::list_provisioning_templates::_list_provisioning_templates_input::ListProvisioningTemplatesInput;
+
+pub use crate::operation::list_provisioning_templates::_list_provisioning_templates_output::ListProvisioningTemplatesOutput;
 
 mod _list_provisioning_templates_input;
 

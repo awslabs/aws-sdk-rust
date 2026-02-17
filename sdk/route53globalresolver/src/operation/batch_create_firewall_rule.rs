@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_firew
     }
 }
 
-pub use crate::operation::batch_create_firewall_rule::_batch_create_firewall_rule_output::BatchCreateFirewallRuleOutput;
-
 pub use crate::operation::batch_create_firewall_rule::_batch_create_firewall_rule_input::BatchCreateFirewallRuleInput;
+
+pub use crate::operation::batch_create_firewall_rule::_batch_create_firewall_rule_output::BatchCreateFirewallRuleOutput;
 
 mod _batch_create_firewall_rule_input;
 

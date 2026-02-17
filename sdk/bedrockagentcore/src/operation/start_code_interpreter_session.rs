@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_code_interpr
     }
 }
 
-pub use crate::operation::start_code_interpreter_session::_start_code_interpreter_session_output::StartCodeInterpreterSessionOutput;
-
 pub use crate::operation::start_code_interpreter_session::_start_code_interpreter_session_input::StartCodeInterpreterSessionInput;
+
+pub use crate::operation::start_code_interpreter_session::_start_code_interpreter_session_output::StartCodeInterpreterSessionOutput;
 
 mod _start_code_interpreter_session_input;
 

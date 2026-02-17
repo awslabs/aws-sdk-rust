@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_delete_user_
     }
 }
 
-pub use crate::operation::admin_delete_user_attributes::_admin_delete_user_attributes_output::AdminDeleteUserAttributesOutput;
-
 pub use crate::operation::admin_delete_user_attributes::_admin_delete_user_attributes_input::AdminDeleteUserAttributesInput;
+
+pub use crate::operation::admin_delete_user_attributes::_admin_delete_user_attributes_output::AdminDeleteUserAttributesOutput;
 
 mod _admin_delete_user_attributes_input;
 

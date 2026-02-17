@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_telemetry_rul
     }
 }
 
-pub use crate::operation::list_telemetry_rules::_list_telemetry_rules_output::ListTelemetryRulesOutput;
-
 pub use crate::operation::list_telemetry_rules::_list_telemetry_rules_input::ListTelemetryRulesInput;
+
+pub use crate::operation::list_telemetry_rules::_list_telemetry_rules_output::ListTelemetryRulesOutput;
 
 mod _list_telemetry_rules_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recipe::D
     }
 }
 
-pub use crate::operation::describe_recipe::_describe_recipe_output::DescribeRecipeOutput;
-
 pub use crate::operation::describe_recipe::_describe_recipe_input::DescribeRecipeInput;
+
+pub use crate::operation::describe_recipe::_describe_recipe_output::DescribeRecipeOutput;
 
 mod _describe_recipe_input;
 

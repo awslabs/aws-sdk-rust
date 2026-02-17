@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queued_rese
     }
 }
 
-pub use crate::operation::delete_queued_reserved_instances::_delete_queued_reserved_instances_output::DeleteQueuedReservedInstancesOutput;
-
 pub use crate::operation::delete_queued_reserved_instances::_delete_queued_reserved_instances_input::DeleteQueuedReservedInstancesInput;
+
+pub use crate::operation::delete_queued_reserved_instances::_delete_queued_reserved_instances_output::DeleteQueuedReservedInstancesOutput;
 
 mod _delete_queued_reserved_instances_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_lake::
     }
 }
 
-pub use crate::operation::delete_data_lake::_delete_data_lake_output::DeleteDataLakeOutput;
-
 pub use crate::operation::delete_data_lake::_delete_data_lake_input::DeleteDataLakeInput;
+
+pub use crate::operation::delete_data_lake::_delete_data_lake_output::DeleteDataLakeOutput;
 
 mod _delete_data_lake_input;
 

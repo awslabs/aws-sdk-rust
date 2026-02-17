@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_auth_reques
     }
 }
 
-pub use crate::operation::verify_auth_request_cryptogram::_verify_auth_request_cryptogram_output::VerifyAuthRequestCryptogramOutput;
-
 pub use crate::operation::verify_auth_request_cryptogram::_verify_auth_request_cryptogram_input::VerifyAuthRequestCryptogramInput;
+
+pub use crate::operation::verify_auth_request_cryptogram::_verify_auth_request_cryptogram_output::VerifyAuthRequestCryptogramOutput;
 
 mod _verify_auth_request_cryptogram_input;
 

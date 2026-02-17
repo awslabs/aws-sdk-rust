@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_application_assignments_for_principal::_list_application_assignments_for_principal_output::ListApplicationAssignmentsForPrincipalOutput;
-
 pub use crate::operation::list_application_assignments_for_principal::_list_application_assignments_for_principal_input::ListApplicationAssignmentsForPrincipalInput;
+
+pub use crate::operation::list_application_assignments_for_principal::_list_application_assignments_for_principal_output::ListApplicationAssignmentsForPrincipalOutput;
 
 mod _list_application_assignments_for_principal_input;
 

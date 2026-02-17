@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_contact_f
     }
 }
 
-pub use crate::operation::describe_contact_flow_module::_describe_contact_flow_module_output::DescribeContactFlowModuleOutput;
-
 pub use crate::operation::describe_contact_flow_module::_describe_contact_flow_module_input::DescribeContactFlowModuleInput;
+
+pub use crate::operation::describe_contact_flow_module::_describe_contact_flow_module_output::DescribeContactFlowModuleOutput;
 
 mod _describe_contact_flow_module_input;
 

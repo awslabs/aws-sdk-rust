@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scan::Creat
     }
 }
 
-pub use crate::operation::create_scan::_create_scan_output::CreateScanOutput;
-
 pub use crate::operation::create_scan::_create_scan_input::CreateScanInput;
+
+pub use crate::operation::create_scan::_create_scan_output::CreateScanOutput;
 
 mod _create_scan_input;
 

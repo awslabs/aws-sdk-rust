@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_quota_utilizat
     }
 }
 
-pub use crate::operation::get_quota_utilization_report::_get_quota_utilization_report_output::GetQuotaUtilizationReportOutput;
-
 pub use crate::operation::get_quota_utilization_report::_get_quota_utilization_report_input::GetQuotaUtilizationReportInput;
+
+pub use crate::operation::get_quota_utilization_report::_get_quota_utilization_report_output::GetQuotaUtilizationReportOutput;
 
 mod _get_quota_utilization_report_input;
 

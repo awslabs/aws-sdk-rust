@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_settin
     }
 }
 
-pub use crate::operation::get_account_setting::_get_account_setting_output::GetAccountSettingOutput;
-
 pub use crate::operation::get_account_setting::_get_account_setting_input::GetAccountSettingInput;
+
+pub use crate::operation::get_account_setting::_get_account_setting_output::GetAccountSettingOutput;
 
 mod _get_account_setting_input;
 

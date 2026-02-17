@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_create_accoun
     }
 }
 
-pub use crate::operation::list_create_account_status::_list_create_account_status_output::ListCreateAccountStatusOutput;
-
 pub use crate::operation::list_create_account_status::_list_create_account_status_input::ListCreateAccountStatusInput;
+
+pub use crate::operation::list_create_account_status::_list_create_account_status_output::ListCreateAccountStatusOutput;
 
 mod _list_create_account_status_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_offering_tran
     }
 }
 
-pub use crate::operation::list_offering_transactions::_list_offering_transactions_output::ListOfferingTransactionsOutput;
-
 pub use crate::operation::list_offering_transactions::_list_offering_transactions_input::ListOfferingTransactionsInput;
+
+pub use crate::operation::list_offering_transactions::_list_offering_transactions_output::ListOfferingTransactionsOutput;
 
 mod _list_offering_transactions_input;
 

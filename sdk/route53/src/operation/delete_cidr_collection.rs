@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cidr_collec
     }
 }
 
-pub use crate::operation::delete_cidr_collection::_delete_cidr_collection_output::DeleteCidrCollectionOutput;
-
 pub use crate::operation::delete_cidr_collection::_delete_cidr_collection_input::DeleteCidrCollectionInput;
+
+pub use crate::operation::delete_cidr_collection::_delete_cidr_collection_output::DeleteCidrCollectionOutput;
 
 mod _delete_cidr_collection_input;
 

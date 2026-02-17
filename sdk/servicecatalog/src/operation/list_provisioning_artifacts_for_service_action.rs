@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_provisioning_artifacts_for_service_action::_list_provisioning_artifacts_for_service_action_output::ListProvisioningArtifactsForServiceActionOutput;
-
 pub use crate::operation::list_provisioning_artifacts_for_service_action::_list_provisioning_artifacts_for_service_action_input::ListProvisioningArtifactsForServiceActionInput;
+
+pub use crate::operation::list_provisioning_artifacts_for_service_action::_list_provisioning_artifacts_for_service_action_output::ListProvisioningArtifactsForServiceActionOutput;
 
 mod _list_provisioning_artifacts_for_service_action_input;
 

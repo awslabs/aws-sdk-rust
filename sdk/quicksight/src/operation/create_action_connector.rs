@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_action_conn
     }
 }
 
-pub use crate::operation::create_action_connector::_create_action_connector_output::CreateActionConnectorOutput;
-
 pub use crate::operation::create_action_connector::_create_action_connector_input::CreateActionConnectorInput;
+
+pub use crate::operation::create_action_connector::_create_action_connector_output::CreateActionConnectorOutput;
 
 mod _create_action_connector_input;
 

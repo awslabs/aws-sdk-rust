@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_ip_routes::Add
     }
 }
 
-pub use crate::operation::add_ip_routes::_add_ip_routes_output::AddIpRoutesOutput;
-
 pub use crate::operation::add_ip_routes::_add_ip_routes_input::AddIpRoutesInput;
+
+pub use crate::operation::add_ip_routes::_add_ip_routes_output::AddIpRoutesOutput;
 
 mod _add_ip_routes_input;
 

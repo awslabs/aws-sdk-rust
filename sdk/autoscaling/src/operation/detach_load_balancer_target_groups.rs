@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_load_balanc
     }
 }
 
-pub use crate::operation::detach_load_balancer_target_groups::_detach_load_balancer_target_groups_output::DetachLoadBalancerTargetGroupsOutput;
-
 pub use crate::operation::detach_load_balancer_target_groups::_detach_load_balancer_target_groups_input::DetachLoadBalancerTargetGroupsInput;
+
+pub use crate::operation::detach_load_balancer_target_groups::_detach_load_balancer_target_groups_output::DetachLoadBalancerTargetGroupsOutput;
 
 mod _detach_load_balancer_target_groups_input;
 

@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_import_evidence_to_assessment_control_output::BatchImportEvidenceToAssessmentControlOutput;
-
 pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_import_evidence_to_assessment_control_input::BatchImportEvidenceToAssessmentControlInput;
+
+pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_import_evidence_to_assessment_control_output::BatchImportEvidenceToAssessmentControlOutput;
 
 mod _batch_import_evidence_to_assessment_control_input;
 

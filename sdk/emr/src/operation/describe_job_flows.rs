@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_job_flows
     }
 }
 
-pub use crate::operation::describe_job_flows::_describe_job_flows_output::DescribeJobFlowsOutput;
-
 pub use crate::operation::describe_job_flows::_describe_job_flows_input::DescribeJobFlowsInput;
+
+pub use crate::operation::describe_job_flows::_describe_job_flows_output::DescribeJobFlowsOutput;
 
 mod _describe_job_flows_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_reputation_entity_customer_managed_status::_update_reputation_entity_customer_managed_status_output::UpdateReputationEntityCustomerManagedStatusOutput;
-
 pub use crate::operation::update_reputation_entity_customer_managed_status::_update_reputation_entity_customer_managed_status_input::UpdateReputationEntityCustomerManagedStatusInput;
+
+pub use crate::operation::update_reputation_entity_customer_managed_status::_update_reputation_entity_customer_managed_status_output::UpdateReputationEntityCustomerManagedStatusOutput;
 
 mod _update_reputation_entity_customer_managed_status_input;
 

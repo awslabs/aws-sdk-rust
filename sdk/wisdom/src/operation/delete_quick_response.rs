@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_quick_respo
     }
 }
 
-pub use crate::operation::delete_quick_response::_delete_quick_response_output::DeleteQuickResponseOutput;
-
 pub use crate::operation::delete_quick_response::_delete_quick_response_input::DeleteQuickResponseInput;
+
+pub use crate::operation::delete_quick_response::_delete_quick_response_output::DeleteQuickResponseOutput;
 
 mod _delete_quick_response_input;
 

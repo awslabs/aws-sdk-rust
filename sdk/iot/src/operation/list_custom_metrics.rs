@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_metric
     }
 }
 
-pub use crate::operation::list_custom_metrics::_list_custom_metrics_output::ListCustomMetricsOutput;
-
 pub use crate::operation::list_custom_metrics::_list_custom_metrics_input::ListCustomMetricsInput;
+
+pub use crate::operation::list_custom_metrics::_list_custom_metrics_output::ListCustomMetricsOutput;
 
 mod _list_custom_metrics_input;
 

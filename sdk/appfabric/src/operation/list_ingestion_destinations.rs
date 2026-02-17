@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ingestion_des
     }
 }
 
-pub use crate::operation::list_ingestion_destinations::_list_ingestion_destinations_output::ListIngestionDestinationsOutput;
-
 pub use crate::operation::list_ingestion_destinations::_list_ingestion_destinations_input::ListIngestionDestinationsInput;
+
+pub use crate::operation::list_ingestion_destinations::_list_ingestion_destinations_output::ListIngestionDestinationsOutput;
 
 mod _list_ingestion_destinations_input;
 

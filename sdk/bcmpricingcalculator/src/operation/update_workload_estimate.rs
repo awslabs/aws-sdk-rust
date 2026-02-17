@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workload_es
     }
 }
 
-pub use crate::operation::update_workload_estimate::_update_workload_estimate_output::UpdateWorkloadEstimateOutput;
-
 pub use crate::operation::update_workload_estimate::_update_workload_estimate_input::UpdateWorkloadEstimateInput;
+
+pub use crate::operation::update_workload_estimate::_update_workload_estimate_output::UpdateWorkloadEstimateOutput;
 
 mod _update_workload_estimate_input;
 

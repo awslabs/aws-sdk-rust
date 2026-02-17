@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::contains_pii_entit
     }
 }
 
-pub use crate::operation::contains_pii_entities::_contains_pii_entities_output::ContainsPiiEntitiesOutput;
-
 pub use crate::operation::contains_pii_entities::_contains_pii_entities_input::ContainsPiiEntitiesInput;
+
+pub use crate::operation::contains_pii_entities::_contains_pii_entities_output::ContainsPiiEntitiesOutput;
 
 mod _contains_pii_entities_input;
 

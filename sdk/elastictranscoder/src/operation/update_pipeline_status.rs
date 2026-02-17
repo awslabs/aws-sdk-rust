@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pipeline_st
     }
 }
 
-pub use crate::operation::update_pipeline_status::_update_pipeline_status_output::UpdatePipelineStatusOutput;
-
 pub use crate::operation::update_pipeline_status::_update_pipeline_status_input::UpdatePipelineStatusInput;
+
+pub use crate::operation::update_pipeline_status::_update_pipeline_status_output::UpdatePipelineStatusOutput;
 
 mod _update_pipeline_status_input;
 

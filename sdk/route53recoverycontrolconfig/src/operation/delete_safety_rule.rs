@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_safety_rule
     }
 }
 
-pub use crate::operation::delete_safety_rule::_delete_safety_rule_output::DeleteSafetyRuleOutput;
-
 pub use crate::operation::delete_safety_rule::_delete_safety_rule_input::DeleteSafetyRuleInput;
+
+pub use crate::operation::delete_safety_rule::_delete_safety_rule_output::DeleteSafetyRuleOutput;
 
 mod _delete_safety_rule_input;
 

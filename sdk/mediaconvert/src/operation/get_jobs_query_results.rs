@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_jobs_query_res
     }
 }
 
-pub use crate::operation::get_jobs_query_results::_get_jobs_query_results_output::GetJobsQueryResultsOutput;
-
 pub use crate::operation::get_jobs_query_results::_get_jobs_query_results_input::GetJobsQueryResultsInput;
+
+pub use crate::operation::get_jobs_query_results::_get_jobs_query_results_output::GetJobsQueryResultsOutput;
 
 mod _get_jobs_query_results_input;
 

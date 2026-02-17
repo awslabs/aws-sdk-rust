@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_partner_sta
     }
 }
 
-pub use crate::operation::update_partner_status::_update_partner_status_output::UpdatePartnerStatusOutput;
-
 pub use crate::operation::update_partner_status::_update_partner_status_input::UpdatePartnerStatusInput;
+
+pub use crate::operation::update_partner_status::_update_partner_status_output::UpdatePartnerStatusOutput;
 
 mod _update_partner_status_input;
 

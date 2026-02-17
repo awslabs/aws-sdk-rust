@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_query_loggi
     }
 }
 
-pub use crate::operation::delete_query_logging_configuration::_delete_query_logging_configuration_output::DeleteQueryLoggingConfigurationOutput;
-
 pub use crate::operation::delete_query_logging_configuration::_delete_query_logging_configuration_input::DeleteQueryLoggingConfigurationInput;
+
+pub use crate::operation::delete_query_logging_configuration::_delete_query_logging_configuration_output::DeleteQueryLoggingConfigurationOutput;
 
 mod _delete_query_logging_configuration_input;
 

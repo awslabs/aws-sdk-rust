@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_schema::Exp
     }
 }
 
-pub use crate::operation::export_schema::_export_schema_output::ExportSchemaOutput;
-
 pub use crate::operation::export_schema::_export_schema_input::ExportSchemaInput;
+
+pub use crate::operation::export_schema::_export_schema_output::ExportSchemaOutput;
 
 mod _export_schema_input;
 

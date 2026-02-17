@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_source_
     }
 }
 
-pub use crate::operation::start_data_source_introspection::_start_data_source_introspection_output::StartDataSourceIntrospectionOutput;
-
 pub use crate::operation::start_data_source_introspection::_start_data_source_introspection_input::StartDataSourceIntrospectionInput;
+
+pub use crate::operation::start_data_source_introspection::_start_data_source_introspection_output::StartDataSourceIntrospectionOutput;
 
 mod _start_data_source_introspection_input;
 

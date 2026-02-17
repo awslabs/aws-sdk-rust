@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_profi
     }
 }
 
-pub use crate::operation::get_instance_profile::_get_instance_profile_output::GetInstanceProfileOutput;
-
 pub use crate::operation::get_instance_profile::_get_instance_profile_input::GetInstanceProfileInput;
+
+pub use crate::operation::get_instance_profile::_get_instance_profile_output::GetInstanceProfileOutput;
 
 mod _get_instance_profile_input;
 

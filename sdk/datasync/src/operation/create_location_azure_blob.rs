@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_az
     }
 }
 
-pub use crate::operation::create_location_azure_blob::_create_location_azure_blob_output::CreateLocationAzureBlobOutput;
-
 pub use crate::operation::create_location_azure_blob::_create_location_azure_blob_input::CreateLocationAzureBlobInput;
+
+pub use crate::operation::create_location_azure_blob::_create_location_azure_blob_output::CreateLocationAzureBlobOutput;
 
 mod _create_location_azure_blob_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_asset_bundle_
     }
 }
 
-pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_import_jobs_output::ListAssetBundleImportJobsOutput;
-
 pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_import_jobs_input::ListAssetBundleImportJobsInput;
+
+pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_import_jobs_output::ListAssetBundleImportJobsOutput;
 
 mod _list_asset_bundle_import_jobs_input;
 

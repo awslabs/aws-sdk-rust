@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_tem
     }
 }
 
-pub use crate::operation::delete_service_template_version::_delete_service_template_version_output::DeleteServiceTemplateVersionOutput;
-
 pub use crate::operation::delete_service_template_version::_delete_service_template_version_input::DeleteServiceTemplateVersionInput;
+
+pub use crate::operation::delete_service_template_version::_delete_service_template_version_output::DeleteServiceTemplateVersionOutput;
 
 mod _delete_service_template_version_input;
 

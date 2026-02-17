@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_domain_iden
     }
 }
 
-pub use crate::operation::verify_domain_identity::_verify_domain_identity_output::VerifyDomainIdentityOutput;
-
 pub use crate::operation::verify_domain_identity::_verify_domain_identity_input::VerifyDomainIdentityInput;
+
+pub use crate::operation::verify_domain_identity::_verify_domain_identity_output::VerifyDomainIdentityOutput;
 
 mod _verify_domain_identity_input;
 

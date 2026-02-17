@@ -485,9 +485,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rule::Updat
     }
 }
 
-pub use crate::operation::update_rule::_update_rule_output::UpdateRuleOutput;
-
 pub use crate::operation::update_rule::_update_rule_input::UpdateRuleInput;
+
+pub use crate::operation::update_rule::_update_rule_output::UpdateRuleOutput;
 
 mod _update_rule_input;
 

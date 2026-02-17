@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_cookie_
     }
 }
 
-pub use crate::operation::create_app_cookie_stickiness_policy::_create_app_cookie_stickiness_policy_output::CreateAppCookieStickinessPolicyOutput;
-
 pub use crate::operation::create_app_cookie_stickiness_policy::_create_app_cookie_stickiness_policy_input::CreateAppCookieStickinessPolicyInput;
+
+pub use crate::operation::create_app_cookie_stickiness_policy::_create_app_cookie_stickiness_policy_output::CreateAppCookieStickinessPolicyOutput;
 
 mod _create_app_cookie_stickiness_policy_input;
 

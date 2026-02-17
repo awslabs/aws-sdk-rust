@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_fast_snapsh
     }
 }
 
-pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_restores_output::EnableFastSnapshotRestoresOutput;
-
 pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_restores_input::EnableFastSnapshotRestoresInput;
+
+pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_restores_output::EnableFastSnapshotRestoresOutput;
 
 mod _enable_fast_snapshot_restores_input;
 

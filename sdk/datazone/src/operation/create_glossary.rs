@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_glossary::C
     }
 }
 
-pub use crate::operation::create_glossary::_create_glossary_output::CreateGlossaryOutput;
-
 pub use crate::operation::create_glossary::_create_glossary_input::CreateGlossaryInput;
+
+pub use crate::operation::create_glossary::_create_glossary_output::CreateGlossaryOutput;
 
 mod _create_glossary_input;
 

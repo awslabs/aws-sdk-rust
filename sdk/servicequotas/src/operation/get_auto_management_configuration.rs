@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_auto_managemen
     }
 }
 
-pub use crate::operation::get_auto_management_configuration::_get_auto_management_configuration_output::GetAutoManagementConfigurationOutput;
-
 pub use crate::operation::get_auto_management_configuration::_get_auto_management_configuration_input::GetAutoManagementConfigurationInput;
+
+pub use crate::operation::get_auto_management_configuration::_get_auto_management_configuration_output::GetAutoManagementConfigurationOutput;
 
 mod _get_auto_management_configuration_input;
 

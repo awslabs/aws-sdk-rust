@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_quick_conne
     }
 }
 
-pub use crate::operation::search_quick_connects::_search_quick_connects_output::SearchQuickConnectsOutput;
-
 pub use crate::operation::search_quick_connects::_search_quick_connects_input::SearchQuickConnectsInput;
+
+pub use crate::operation::search_quick_connects::_search_quick_connects_output::SearchQuickConnectsOutput;
 
 mod _search_quick_connects_input;
 

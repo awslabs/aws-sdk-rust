@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_profile_key::A
     }
 }
 
-pub use crate::operation::add_profile_key::_add_profile_key_output::AddProfileKeyOutput;
-
 pub use crate::operation::add_profile_key::_add_profile_key_input::AddProfileKeyInput;
+
+pub use crate::operation::add_profile_key::_add_profile_key_output::AddProfileKeyOutput;
 
 mod _add_profile_key_input;
 

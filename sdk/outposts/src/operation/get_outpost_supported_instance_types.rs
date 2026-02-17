@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outpost_suppor
     }
 }
 
-pub use crate::operation::get_outpost_supported_instance_types::_get_outpost_supported_instance_types_output::GetOutpostSupportedInstanceTypesOutput;
-
 pub use crate::operation::get_outpost_supported_instance_types::_get_outpost_supported_instance_types_input::GetOutpostSupportedInstanceTypesInput;
+
+pub use crate::operation::get_outpost_supported_instance_types::_get_outpost_supported_instance_types_output::GetOutpostSupportedInstanceTypesOutput;
 
 mod _get_outpost_supported_instance_types_input;
 

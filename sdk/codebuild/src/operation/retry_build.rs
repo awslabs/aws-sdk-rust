@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retry_build::Retry
     }
 }
 
-pub use crate::operation::retry_build::_retry_build_output::RetryBuildOutput;
-
 pub use crate::operation::retry_build::_retry_build_input::RetryBuildInput;
+
+pub use crate::operation::retry_build::_retry_build_output::RetryBuildOutput;
 
 mod _retry_build_input;
 

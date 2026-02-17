@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_supported_res
     }
 }
 
-pub use crate::operation::list_supported_resource_types::_list_supported_resource_types_output::ListSupportedResourceTypesOutput;
-
 pub use crate::operation::list_supported_resource_types::_list_supported_resource_types_input::ListSupportedResourceTypesInput;
+
+pub use crate::operation::list_supported_resource_types::_list_supported_resource_types_output::ListSupportedResourceTypesOutput;
 
 mod _list_supported_resource_types_input;
 

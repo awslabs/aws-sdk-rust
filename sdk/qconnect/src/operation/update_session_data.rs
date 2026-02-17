@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_session_dat
     }
 }
 
-pub use crate::operation::update_session_data::_update_session_data_output::UpdateSessionDataOutput;
-
 pub use crate::operation::update_session_data::_update_session_data_input::UpdateSessionDataInput;
+
+pub use crate::operation::update_session_data::_update_session_data_output::UpdateSessionDataOutput;
 
 mod _update_session_data_input;
 

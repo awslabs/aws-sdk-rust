@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_multi_regio
     }
 }
 
-pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi_region_access_point_routes_output::SubmitMultiRegionAccessPointRoutesOutput;
-
 pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi_region_access_point_routes_input::SubmitMultiRegionAccessPointRoutesInput;
+
+pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi_region_access_point_routes_output::SubmitMultiRegionAccessPointRoutesOutput;
 
 mod _submit_multi_region_access_point_routes_input;
 

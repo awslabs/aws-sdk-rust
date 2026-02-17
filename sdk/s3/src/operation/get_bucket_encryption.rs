@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_encrypt
     }
 }
 
-pub use crate::operation::get_bucket_encryption::_get_bucket_encryption_output::GetBucketEncryptionOutput;
-
 pub use crate::operation::get_bucket_encryption::_get_bucket_encryption_input::GetBucketEncryptionInput;
+
+pub use crate::operation::get_bucket_encryption::_get_bucket_encryption_output::GetBucketEncryptionOutput;
 
 mod _get_bucket_encryption_input;
 

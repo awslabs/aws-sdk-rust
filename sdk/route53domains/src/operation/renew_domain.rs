@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::renew_domain::Rene
     }
 }
 
-pub use crate::operation::renew_domain::_renew_domain_output::RenewDomainOutput;
-
 pub use crate::operation::renew_domain::_renew_domain_input::RenewDomainInput;
+
+pub use crate::operation::renew_domain::_renew_domain_output::RenewDomainOutput;
 
 mod _renew_domain_input;
 

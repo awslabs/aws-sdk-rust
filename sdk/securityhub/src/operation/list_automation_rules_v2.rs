@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_automation_ru
     }
 }
 
-pub use crate::operation::list_automation_rules_v2::_list_automation_rules_v2_output::ListAutomationRulesV2Output;
-
 pub use crate::operation::list_automation_rules_v2::_list_automation_rules_v2_input::ListAutomationRulesV2Input;
+
+pub use crate::operation::list_automation_rules_v2::_list_automation_rules_v2_output::ListAutomationRulesV2Output;
 
 mod _list_automation_rules_v2_input;
 

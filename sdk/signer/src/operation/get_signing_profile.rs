@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_signing_profil
     }
 }
 
-pub use crate::operation::get_signing_profile::_get_signing_profile_output::GetSigningProfileOutput;
-
 pub use crate::operation::get_signing_profile::_get_signing_profile_input::GetSigningProfileInput;
+
+pub use crate::operation::get_signing_profile::_get_signing_profile_output::GetSigningProfileOutput;
 
 mod _get_signing_profile_input;
 

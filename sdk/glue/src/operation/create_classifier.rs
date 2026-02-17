@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_classifier:
     }
 }
 
-pub use crate::operation::create_classifier::_create_classifier_output::CreateClassifierOutput;
-
 pub use crate::operation::create_classifier::_create_classifier_input::CreateClassifierInput;
+
+pub use crate::operation::create_classifier::_create_classifier_output::CreateClassifierOutput;
 
 mod _create_classifier_input;
 

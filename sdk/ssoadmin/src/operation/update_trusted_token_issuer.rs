@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trusted_tok
     }
 }
 
-pub use crate::operation::update_trusted_token_issuer::_update_trusted_token_issuer_output::UpdateTrustedTokenIssuerOutput;
-
 pub use crate::operation::update_trusted_token_issuer::_update_trusted_token_issuer_input::UpdateTrustedTokenIssuerInput;
+
+pub use crate::operation::update_trusted_token_issuer::_update_trusted_token_issuer_output::UpdateTrustedTokenIssuerOutput;
 
 mod _update_trusted_token_issuer_input;
 

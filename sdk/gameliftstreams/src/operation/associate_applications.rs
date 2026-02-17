@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_applicat
     }
 }
 
-pub use crate::operation::associate_applications::_associate_applications_output::AssociateApplicationsOutput;
-
 pub use crate::operation::associate_applications::_associate_applications_input::AssociateApplicationsInput;
+
+pub use crate::operation::associate_applications::_associate_applications_output::AssociateApplicationsOutput;
 
 mod _associate_applications_input;
 

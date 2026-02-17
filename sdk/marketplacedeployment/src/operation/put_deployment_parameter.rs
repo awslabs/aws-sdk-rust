@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_deployment_par
     }
 }
 
-pub use crate::operation::put_deployment_parameter::_put_deployment_parameter_output::PutDeploymentParameterOutput;
-
 pub use crate::operation::put_deployment_parameter::_put_deployment_parameter_input::PutDeploymentParameterInput;
+
+pub use crate::operation::put_deployment_parameter::_put_deployment_parameter_output::PutDeploymentParameterOutput;
 
 mod _put_deployment_parameter_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_schema_exten
     }
 }
 
-pub use crate::operation::start_schema_extension::_start_schema_extension_output::StartSchemaExtensionOutput;
-
 pub use crate::operation::start_schema_extension::_start_schema_extension_input::StartSchemaExtensionInput;
+
+pub use crate::operation::start_schema_extension::_start_schema_extension_output::StartSchemaExtensionOutput;
 
 mod _start_schema_extension_input;
 

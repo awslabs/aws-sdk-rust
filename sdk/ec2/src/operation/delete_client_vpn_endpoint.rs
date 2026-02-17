@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_client_vpn_
     }
 }
 
-pub use crate::operation::delete_client_vpn_endpoint::_delete_client_vpn_endpoint_output::DeleteClientVpnEndpointOutput;
-
 pub use crate::operation::delete_client_vpn_endpoint::_delete_client_vpn_endpoint_input::DeleteClientVpnEndpointInput;
+
+pub use crate::operation::delete_client_vpn_endpoint::_delete_client_vpn_endpoint_output::DeleteClientVpnEndpointOutput;
 
 mod _delete_client_vpn_endpoint_input;
 

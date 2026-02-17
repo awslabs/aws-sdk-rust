@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_repository_sy
     }
 }
 
-pub use crate::operation::list_repository_sync_definitions::_list_repository_sync_definitions_output::ListRepositorySyncDefinitionsOutput;
-
 pub use crate::operation::list_repository_sync_definitions::_list_repository_sync_definitions_input::ListRepositorySyncDefinitionsInput;
+
+pub use crate::operation::list_repository_sync_definitions::_list_repository_sync_definitions_output::ListRepositorySyncDefinitionsOutput;
 
 mod _list_repository_sync_definitions_input;
 

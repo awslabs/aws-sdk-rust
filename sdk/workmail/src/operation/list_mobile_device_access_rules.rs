@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mobile_device
     }
 }
 
-pub use crate::operation::list_mobile_device_access_rules::_list_mobile_device_access_rules_output::ListMobileDeviceAccessRulesOutput;
-
 pub use crate::operation::list_mobile_device_access_rules::_list_mobile_device_access_rules_input::ListMobileDeviceAccessRulesInput;
+
+pub use crate::operation::list_mobile_device_access_rules::_list_mobile_device_access_rules_output::ListMobileDeviceAccessRulesOutput;
 
 mod _list_mobile_device_access_rules_input;
 

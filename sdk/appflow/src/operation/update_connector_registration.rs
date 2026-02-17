@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connector_r
     }
 }
 
-pub use crate::operation::update_connector_registration::_update_connector_registration_output::UpdateConnectorRegistrationOutput;
-
 pub use crate::operation::update_connector_registration::_update_connector_registration_input::UpdateConnectorRegistrationInput;
+
+pub use crate::operation::update_connector_registration::_update_connector_registration_output::UpdateConnectorRegistrationOutput;
 
 mod _update_connector_registration_input;
 

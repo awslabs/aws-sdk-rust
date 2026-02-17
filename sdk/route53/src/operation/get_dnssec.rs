@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dnssec::GetDNS
     }
 }
 
-pub use crate::operation::get_dnssec::_get_dnssec_output::GetDnssecOutput;
-
 pub use crate::operation::get_dnssec::_get_dnssec_input::GetDnssecInput;
+
+pub use crate::operation::get_dnssec::_get_dnssec_output::GetDnssecOutput;
 
 mod _get_dnssec_input;
 

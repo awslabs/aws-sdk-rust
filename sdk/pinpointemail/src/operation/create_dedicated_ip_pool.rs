@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dedicated_i
     }
 }
 
-pub use crate::operation::create_dedicated_ip_pool::_create_dedicated_ip_pool_output::CreateDedicatedIpPoolOutput;
-
 pub use crate::operation::create_dedicated_ip_pool::_create_dedicated_ip_pool_input::CreateDedicatedIpPoolInput;
+
+pub use crate::operation::create_dedicated_ip_pool::_create_dedicated_ip_pool_output::CreateDedicatedIpPoolOutput;
 
 mod _create_dedicated_ip_pool_input;
 

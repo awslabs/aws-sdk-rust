@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_retained_messa
     }
 }
 
-pub use crate::operation::get_retained_message::_get_retained_message_output::GetRetainedMessageOutput;
-
 pub use crate::operation::get_retained_message::_get_retained_message_input::GetRetainedMessageInput;
+
+pub use crate::operation::get_retained_message::_get_retained_message_output::GetRetainedMessageOutput;
 
 mod _get_retained_message_input;
 

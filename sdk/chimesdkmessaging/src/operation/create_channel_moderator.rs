@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_mod
     }
 }
 
-pub use crate::operation::create_channel_moderator::_create_channel_moderator_output::CreateChannelModeratorOutput;
-
 pub use crate::operation::create_channel_moderator::_create_channel_moderator_input::CreateChannelModeratorInput;
+
+pub use crate::operation::create_channel_moderator::_create_channel_moderator_output::CreateChannelModeratorOutput;
 
 mod _create_channel_moderator_input;
 

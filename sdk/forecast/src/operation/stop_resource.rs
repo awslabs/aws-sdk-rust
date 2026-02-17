@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_resource::Sto
     }
 }
 
-pub use crate::operation::stop_resource::_stop_resource_output::StopResourceOutput;
-
 pub use crate::operation::stop_resource::_stop_resource_input::StopResourceInput;
+
+pub use crate::operation::stop_resource::_stop_resource_output::StopResourceOutput;
 
 mod _stop_resource_input;
 

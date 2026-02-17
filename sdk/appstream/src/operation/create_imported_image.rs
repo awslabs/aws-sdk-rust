@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_imported_im
     }
 }
 
-pub use crate::operation::create_imported_image::_create_imported_image_output::CreateImportedImageOutput;
-
 pub use crate::operation::create_imported_image::_create_imported_image_input::CreateImportedImageInput;
+
+pub use crate::operation::create_imported_image::_create_imported_image_output::CreateImportedImageOutput;
 
 mod _create_imported_image_input;
 

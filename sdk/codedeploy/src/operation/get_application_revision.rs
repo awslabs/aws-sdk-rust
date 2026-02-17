@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_re
     }
 }
 
-pub use crate::operation::get_application_revision::_get_application_revision_output::GetApplicationRevisionOutput;
-
 pub use crate::operation::get_application_revision::_get_application_revision_input::GetApplicationRevisionInput;
+
+pub use crate::operation::get_application_revision::_get_application_revision_output::GetApplicationRevisionOutput;
 
 mod _get_application_revision_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_origin_acce
     }
 }
 
-pub use crate::operation::create_origin_access_control::_create_origin_access_control_output::CreateOriginAccessControlOutput;
-
 pub use crate::operation::create_origin_access_control::_create_origin_access_control_input::CreateOriginAccessControlInput;
+
+pub use crate::operation::create_origin_access_control::_create_origin_access_control_output::CreateOriginAccessControlOutput;
 
 mod _create_origin_access_control_input;
 

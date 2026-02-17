@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decrypt_data::Decr
     }
 }
 
-pub use crate::operation::decrypt_data::_decrypt_data_output::DecryptDataOutput;
-
 pub use crate::operation::decrypt_data::_decrypt_data_input::DecryptDataInput;
+
+pub use crate::operation::decrypt_data::_decrypt_data_output::DecryptDataOutput;
 
 mod _decrypt_data_input;
 

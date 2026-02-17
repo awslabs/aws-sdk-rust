@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_vpc_endpoint_connection_notifications::_describe_vpc_endpoint_connection_notifications_output::DescribeVpcEndpointConnectionNotificationsOutput;
-
 pub use crate::operation::describe_vpc_endpoint_connection_notifications::_describe_vpc_endpoint_connection_notifications_input::DescribeVpcEndpointConnectionNotificationsInput;
+
+pub use crate::operation::describe_vpc_endpoint_connection_notifications::_describe_vpc_endpoint_connection_notifications_output::DescribeVpcEndpointConnectionNotificationsOutput;
 
 mod _describe_vpc_endpoint_connection_notifications_input;
 

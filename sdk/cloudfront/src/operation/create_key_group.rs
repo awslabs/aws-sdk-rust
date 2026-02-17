@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_key_group::
     }
 }
 
-pub use crate::operation::create_key_group::_create_key_group_output::CreateKeyGroupOutput;
-
 pub use crate::operation::create_key_group::_create_key_group_input::CreateKeyGroupInput;
+
+pub use crate::operation::create_key_group::_create_key_group_output::CreateKeyGroupOutput;
 
 mod _create_key_group_input;
 

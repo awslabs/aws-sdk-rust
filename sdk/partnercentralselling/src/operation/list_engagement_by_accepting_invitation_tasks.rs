@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_engagement_by_accepting_invitation_tasks::_list_engagement_by_accepting_invitation_tasks_output::ListEngagementByAcceptingInvitationTasksOutput;
-
 pub use crate::operation::list_engagement_by_accepting_invitation_tasks::_list_engagement_by_accepting_invitation_tasks_input::ListEngagementByAcceptingInvitationTasksInput;
+
+pub use crate::operation::list_engagement_by_accepting_invitation_tasks::_list_engagement_by_accepting_invitation_tasks_output::ListEngagementByAcceptingInvitationTasksOutput;
 
 mod _list_engagement_by_accepting_invitation_tasks_input;
 

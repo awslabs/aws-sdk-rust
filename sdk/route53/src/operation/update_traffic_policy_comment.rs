@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_traffic_pol
     }
 }
 
-pub use crate::operation::update_traffic_policy_comment::_update_traffic_policy_comment_output::UpdateTrafficPolicyCommentOutput;
-
 pub use crate::operation::update_traffic_policy_comment::_update_traffic_policy_comment_input::UpdateTrafficPolicyCommentInput;
+
+pub use crate::operation::update_traffic_policy_comment::_update_traffic_policy_comment_output::UpdateTrafficPolicyCommentOutput;
 
 mod _update_traffic_policy_comment_input;
 

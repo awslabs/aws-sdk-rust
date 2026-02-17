@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_alerts::ListA
     }
 }
 
-pub use crate::operation::list_alerts::_list_alerts_output::ListAlertsOutput;
-
 pub use crate::operation::list_alerts::_list_alerts_input::ListAlertsInput;
+
+pub use crate::operation::list_alerts::_list_alerts_output::ListAlertsOutput;
 
 mod _list_alerts_input;
 

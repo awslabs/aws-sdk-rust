@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_stre
     }
 }
 
-pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_output::ListTagsForStreamOutput;
-
 pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_input::ListTagsForStreamInput;
+
+pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_output::ListTagsForStreamOutput;
 
 mod _list_tags_for_stream_input;
 

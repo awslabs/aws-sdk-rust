@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_log:
     }
 }
 
-pub use crate::operation::get_container_log::_get_container_log_output::GetContainerLogOutput;
-
 pub use crate::operation::get_container_log::_get_container_log_input::GetContainerLogInput;
+
+pub use crate::operation::get_container_log::_get_container_log_output::GetContainerLogOutput;
 
 mod _get_container_log_input;
 

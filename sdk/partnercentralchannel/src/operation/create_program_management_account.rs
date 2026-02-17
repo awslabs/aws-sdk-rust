@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_program_man
     }
 }
 
-pub use crate::operation::create_program_management_account::_create_program_management_account_output::CreateProgramManagementAccountOutput;
-
 pub use crate::operation::create_program_management_account::_create_program_management_account_input::CreateProgramManagementAccountInput;
+
+pub use crate::operation::create_program_management_account::_create_program_management_account_output::CreateProgramManagementAccountOutput;
 
 mod _create_program_management_account_input;
 

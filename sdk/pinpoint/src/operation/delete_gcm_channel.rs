@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_gcm_channel
     }
 }
 
-pub use crate::operation::delete_gcm_channel::_delete_gcm_channel_output::DeleteGcmChannelOutput;
-
 pub use crate::operation::delete_gcm_channel::_delete_gcm_channel_input::DeleteGcmChannelInput;
+
+pub use crate::operation::delete_gcm_channel::_delete_gcm_channel_output::DeleteGcmChannelOutput;
 
 mod _delete_gcm_channel_input;
 

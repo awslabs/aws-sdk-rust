@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_direct_connect_gateway_attachments::_describe_direct_connect_gateway_attachments_output::DescribeDirectConnectGatewayAttachmentsOutput;
-
 pub use crate::operation::describe_direct_connect_gateway_attachments::_describe_direct_connect_gateway_attachments_input::DescribeDirectConnectGatewayAttachmentsInput;
+
+pub use crate::operation::describe_direct_connect_gateway_attachments::_describe_direct_connect_gateway_attachments_output::DescribeDirectConnectGatewayAttachmentsOutput;
 
 mod _describe_direct_connect_gateway_attachments_input;
 

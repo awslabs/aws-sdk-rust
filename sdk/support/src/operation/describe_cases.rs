@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cases::De
     }
 }
 
-pub use crate::operation::describe_cases::_describe_cases_output::DescribeCasesOutput;
-
 pub use crate::operation::describe_cases::_describe_cases_input::DescribeCasesInput;
+
+pub use crate::operation::describe_cases::_describe_cases_output::DescribeCasesOutput;
 
 mod _describe_cases_input;
 

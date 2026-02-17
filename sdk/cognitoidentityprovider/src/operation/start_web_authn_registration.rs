@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_web_authn_re
     }
 }
 
-pub use crate::operation::start_web_authn_registration::_start_web_authn_registration_output::StartWebAuthnRegistrationOutput;
-
 pub use crate::operation::start_web_authn_registration::_start_web_authn_registration_input::StartWebAuthnRegistrationInput;
+
+pub use crate::operation::start_web_authn_registration::_start_web_authn_registration_output::StartWebAuthnRegistrationOutput;
 
 mod _start_web_authn_registration_input;
 

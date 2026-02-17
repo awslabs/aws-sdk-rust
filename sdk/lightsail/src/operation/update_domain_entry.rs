@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_entr
     }
 }
 
-pub use crate::operation::update_domain_entry::_update_domain_entry_output::UpdateDomainEntryOutput;
-
 pub use crate::operation::update_domain_entry::_update_domain_entry_input::UpdateDomainEntryInput;
+
+pub use crate::operation::update_domain_entry::_update_domain_entry_output::UpdateDomainEntryOutput;
 
 mod _update_domain_entry_input;
 

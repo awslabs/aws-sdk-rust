@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_portfolio::
     }
 }
 
-pub use crate::operation::create_portfolio::_create_portfolio_output::CreatePortfolioOutput;
-
 pub use crate::operation::create_portfolio::_create_portfolio_input::CreatePortfolioInput;
+
+pub use crate::operation::create_portfolio::_create_portfolio_output::CreatePortfolioOutput;
 
 mod _create_portfolio_input;
 

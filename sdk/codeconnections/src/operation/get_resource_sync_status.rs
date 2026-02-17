@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_sync_
     }
 }
 
-pub use crate::operation::get_resource_sync_status::_get_resource_sync_status_output::GetResourceSyncStatusOutput;
-
 pub use crate::operation::get_resource_sync_status::_get_resource_sync_status_input::GetResourceSyncStatusInput;
+
+pub use crate::operation::get_resource_sync_status::_get_resource_sync_status_output::GetResourceSyncStatusOutput;
 
 mod _get_resource_sync_status_input;
 

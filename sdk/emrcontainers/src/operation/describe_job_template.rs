@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_job_templ
     }
 }
 
-pub use crate::operation::describe_job_template::_describe_job_template_output::DescribeJobTemplateOutput;
-
 pub use crate::operation::describe_job_template::_describe_job_template_input::DescribeJobTemplateInput;
+
+pub use crate::operation::describe_job_template::_describe_job_template_output::DescribeJobTemplateOutput;
 
 mod _describe_job_template_input;
 

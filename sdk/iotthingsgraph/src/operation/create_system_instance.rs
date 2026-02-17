@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_system_inst
     }
 }
 
-pub use crate::operation::create_system_instance::_create_system_instance_output::CreateSystemInstanceOutput;
-
 pub use crate::operation::create_system_instance::_create_system_instance_input::CreateSystemInstanceInput;
+
+pub use crate::operation::create_system_instance::_create_system_instance_output::CreateSystemInstanceOutput;
 
 mod _create_system_instance_input;
 

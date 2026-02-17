@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_maintenan
     }
 }
 
-pub use crate::operation::describe_maintenance_start_time::_describe_maintenance_start_time_output::DescribeMaintenanceStartTimeOutput;
-
 pub use crate::operation::describe_maintenance_start_time::_describe_maintenance_start_time_input::DescribeMaintenanceStartTimeInput;
+
+pub use crate::operation::describe_maintenance_start_time::_describe_maintenance_start_time_output::DescribeMaintenanceStartTimeOutput;
 
 mod _describe_maintenance_start_time_input;
 

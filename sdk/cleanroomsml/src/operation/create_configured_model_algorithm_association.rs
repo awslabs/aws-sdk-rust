@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_configured_model_algorithm_association::_create_configured_model_algorithm_association_output::CreateConfiguredModelAlgorithmAssociationOutput;
-
 pub use crate::operation::create_configured_model_algorithm_association::_create_configured_model_algorithm_association_input::CreateConfiguredModelAlgorithmAssociationInput;
+
+pub use crate::operation::create_configured_model_algorithm_association::_create_configured_model_algorithm_association_output::CreateConfiguredModelAlgorithmAssociationOutput;
 
 mod _create_configured_model_algorithm_association_input;
 

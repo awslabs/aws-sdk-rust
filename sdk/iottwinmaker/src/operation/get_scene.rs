@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scene::GetScen
     }
 }
 
-pub use crate::operation::get_scene::_get_scene_output::GetSceneOutput;
-
 pub use crate::operation::get_scene::_get_scene_input::GetSceneInput;
+
+pub use crate::operation::get_scene::_get_scene_output::GetSceneOutput;
 
 mod _get_scene_input;
 

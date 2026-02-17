@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_thing_group
     }
 }
 
-pub use crate::operation::update_thing_group::_update_thing_group_output::UpdateThingGroupOutput;
-
 pub use crate::operation::update_thing_group::_update_thing_group_input::UpdateThingGroupInput;
+
+pub use crate::operation::update_thing_group::_update_thing_group_output::UpdateThingGroupOutput;
 
 mod _update_thing_group_input;
 

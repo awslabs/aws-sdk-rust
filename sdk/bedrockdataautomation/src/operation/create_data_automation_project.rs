@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_automa
     }
 }
 
-pub use crate::operation::create_data_automation_project::_create_data_automation_project_output::CreateDataAutomationProjectOutput;
-
 pub use crate::operation::create_data_automation_project::_create_data_automation_project_input::CreateDataAutomationProjectInput;
+
+pub use crate::operation::create_data_automation_project::_create_data_automation_project_output::CreateDataAutomationProjectOutput;
 
 mod _create_data_automation_project_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_transform_j
     }
 }
 
-pub use crate::operation::create_transform_job::_create_transform_job_output::CreateTransformJobOutput;
-
 pub use crate::operation::create_transform_job::_create_transform_job_input::CreateTransformJobInput;
+
+pub use crate::operation::create_transform_job::_create_transform_job_output::CreateTransformJobOutput;
 
 mod _create_transform_job_input;
 

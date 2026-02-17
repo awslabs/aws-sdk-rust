@@ -617,9 +617,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_aws_service
     }
 }
 
-pub use crate::operation::enable_aws_service_access::_enable_aws_service_access_output::EnableAwsServiceAccessOutput;
-
 pub use crate::operation::enable_aws_service_access::_enable_aws_service_access_input::EnableAwsServiceAccessInput;
+
+pub use crate::operation::enable_aws_service_access::_enable_aws_service_access_output::EnableAwsServiceAccessOutput;
 
 mod _enable_aws_service_access_input;
 

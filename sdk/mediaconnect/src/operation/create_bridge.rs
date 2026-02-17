@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bridge::Cre
     }
 }
 
-pub use crate::operation::create_bridge::_create_bridge_output::CreateBridgeOutput;
-
 pub use crate::operation::create_bridge::_create_bridge_input::CreateBridgeInput;
+
+pub use crate::operation::create_bridge::_create_bridge_output::CreateBridgeOutput;
 
 mod _create_bridge_input;
 

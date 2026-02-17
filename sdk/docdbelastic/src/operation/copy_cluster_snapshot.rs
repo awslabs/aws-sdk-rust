@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_cluster_snaps
     }
 }
 
-pub use crate::operation::copy_cluster_snapshot::_copy_cluster_snapshot_output::CopyClusterSnapshotOutput;
-
 pub use crate::operation::copy_cluster_snapshot::_copy_cluster_snapshot_input::CopyClusterSnapshotInput;
+
+pub use crate::operation::copy_cluster_snapshot::_copy_cluster_snapshot_output::CopyClusterSnapshotOutput;
 
 mod _copy_cluster_snapshot_input;
 

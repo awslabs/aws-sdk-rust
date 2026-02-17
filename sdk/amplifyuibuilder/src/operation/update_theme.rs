@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_theme::Upda
     }
 }
 
-pub use crate::operation::update_theme::_update_theme_output::UpdateThemeOutput;
-
 pub use crate::operation::update_theme::_update_theme_input::UpdateThemeInput;
+
+pub use crate::operation::update_theme::_update_theme_output::UpdateThemeOutput;
 
 mod _update_theme_input;
 

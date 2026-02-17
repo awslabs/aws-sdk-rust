@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::run_fleet_advisor_
     }
 }
 
-pub use crate::operation::run_fleet_advisor_lsa_analysis::_run_fleet_advisor_lsa_analysis_output::RunFleetAdvisorLsaAnalysisOutput;
-
 pub use crate::operation::run_fleet_advisor_lsa_analysis::_run_fleet_advisor_lsa_analysis_input::RunFleetAdvisorLsaAnalysisInput;
+
+pub use crate::operation::run_fleet_advisor_lsa_analysis::_run_fleet_advisor_lsa_analysis_output::RunFleetAdvisorLsaAnalysisOutput;
 
 mod _run_fleet_advisor_lsa_analysis_input;
 

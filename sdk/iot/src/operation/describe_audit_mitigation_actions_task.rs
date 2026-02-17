@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_audit_mit
     }
 }
 
-pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audit_mitigation_actions_task_output::DescribeAuditMitigationActionsTaskOutput;
-
 pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audit_mitigation_actions_task_input::DescribeAuditMitigationActionsTaskInput;
+
+pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audit_mitigation_actions_task_output::DescribeAuditMitigationActionsTaskOutput;
 
 mod _describe_audit_mitigation_actions_task_input;
 

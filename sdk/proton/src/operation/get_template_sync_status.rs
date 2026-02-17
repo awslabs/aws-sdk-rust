@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_template_sync_
     }
 }
 
-pub use crate::operation::get_template_sync_status::_get_template_sync_status_output::GetTemplateSyncStatusOutput;
-
 pub use crate::operation::get_template_sync_status::_get_template_sync_status_input::GetTemplateSyncStatusInput;
+
+pub use crate::operation::get_template_sync_status::_get_template_sync_status_output::GetTemplateSyncStatusOutput;
 
 mod _get_template_sync_status_input;
 

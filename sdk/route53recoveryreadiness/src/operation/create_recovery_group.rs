@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_recovery_gr
     }
 }
 
-pub use crate::operation::create_recovery_group::_create_recovery_group_output::CreateRecoveryGroupOutput;
-
 pub use crate::operation::create_recovery_group::_create_recovery_group_input::CreateRecoveryGroupInput;
+
+pub use crate::operation::create_recovery_group::_create_recovery_group_output::CreateRecoveryGroupOutput;
 
 mod _create_recovery_group_input;
 

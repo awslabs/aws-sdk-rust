@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_plan_execution
     }
 }
 
-pub use crate::operation::get_plan_execution::_get_plan_execution_output::GetPlanExecutionOutput;
-
 pub use crate::operation::get_plan_execution::_get_plan_execution_input::GetPlanExecutionInput;
+
+pub use crate::operation::get_plan_execution::_get_plan_execution_output::GetPlanExecutionOutput;
 
 mod _get_plan_execution_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_elastic_g
     }
 }
 
-pub use crate::operation::describe_elastic_gpus::_describe_elastic_gpus_output::DescribeElasticGpusOutput;
-
 pub use crate::operation::describe_elastic_gpus::_describe_elastic_gpus_input::DescribeElasticGpusInput;
+
+pub use crate::operation::describe_elastic_gpus::_describe_elastic_gpus_output::DescribeElasticGpusOutput;
 
 mod _describe_elastic_gpus_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_updated_ima
     }
 }
 
-pub use crate::operation::create_updated_image::_create_updated_image_output::CreateUpdatedImageOutput;
-
 pub use crate::operation::create_updated_image::_create_updated_image_input::CreateUpdatedImageInput;
+
+pub use crate::operation::create_updated_image::_create_updated_image_output::CreateUpdatedImageOutput;
 
 mod _create_updated_image_input;
 

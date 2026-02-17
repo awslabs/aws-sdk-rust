@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_delivery_desti
     }
 }
 
-pub use crate::operation::put_delivery_destination_policy::_put_delivery_destination_policy_output::PutDeliveryDestinationPolicyOutput;
-
 pub use crate::operation::put_delivery_destination_policy::_put_delivery_destination_policy_input::PutDeliveryDestinationPolicyInput;
+
+pub use crate::operation::put_delivery_destination_policy::_put_delivery_destination_policy_output::PutDeliveryDestinationPolicyOutput;
 
 mod _put_delivery_destination_policy_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_software_se
     }
 }
 
-pub use crate::operation::update_software_set::_update_software_set_output::UpdateSoftwareSetOutput;
-
 pub use crate::operation::update_software_set::_update_software_set_input::UpdateSoftwareSetInput;
+
+pub use crate::operation::update_software_set::_update_software_set_output::UpdateSoftwareSetOutput;
 
 mod _update_software_set_input;
 

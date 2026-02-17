@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_decoder_manif
     }
 }
 
-pub use crate::operation::list_decoder_manifests::_list_decoder_manifests_output::ListDecoderManifestsOutput;
-
 pub use crate::operation::list_decoder_manifests::_list_decoder_manifests_input::ListDecoderManifestsInput;
+
+pub use crate::operation::list_decoder_manifests::_list_decoder_manifests_output::ListDecoderManifestsOutput;
 
 mod _list_decoder_manifests_input;
 

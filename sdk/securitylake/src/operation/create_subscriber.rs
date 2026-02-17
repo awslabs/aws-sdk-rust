@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subscriber:
     }
 }
 
-pub use crate::operation::create_subscriber::_create_subscriber_output::CreateSubscriberOutput;
-
 pub use crate::operation::create_subscriber::_create_subscriber_input::CreateSubscriberInput;
+
+pub use crate::operation::create_subscriber::_create_subscriber_output::CreateSubscriberOutput;
 
 mod _create_subscriber_input;
 

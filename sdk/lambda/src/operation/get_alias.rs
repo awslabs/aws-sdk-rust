@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_alias::GetAlia
     }
 }
 
-pub use crate::operation::get_alias::_get_alias_output::GetAliasOutput;
-
 pub use crate::operation::get_alias::_get_alias_input::GetAliasInput;
+
+pub use crate::operation::get_alias::_get_alias_output::GetAliasOutput;
 
 mod _get_alias_input;
 

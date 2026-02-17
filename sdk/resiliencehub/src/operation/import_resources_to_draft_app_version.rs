@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_resources_t
     }
 }
 
-pub use crate::operation::import_resources_to_draft_app_version::_import_resources_to_draft_app_version_output::ImportResourcesToDraftAppVersionOutput;
-
 pub use crate::operation::import_resources_to_draft_app_version::_import_resources_to_draft_app_version_input::ImportResourcesToDraftAppVersionInput;
+
+pub use crate::operation::import_resources_to_draft_app_version::_import_resources_to_draft_app_version_output::ImportResourcesToDraftAppVersionOutput;
 
 mod _import_resources_to_draft_app_version_input;
 

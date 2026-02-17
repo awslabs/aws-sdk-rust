@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_direct_conn
     }
 }
 
-pub use crate::operation::delete_direct_connect_gateway::_delete_direct_connect_gateway_output::DeleteDirectConnectGatewayOutput;
-
 pub use crate::operation::delete_direct_connect_gateway::_delete_direct_connect_gateway_input::DeleteDirectConnectGatewayInput;
+
+pub use crate::operation::delete_direct_connect_gateway::_delete_direct_connect_gateway_output::DeleteDirectConnectGatewayOutput;
 
 mod _delete_direct_connect_gateway_input;
 

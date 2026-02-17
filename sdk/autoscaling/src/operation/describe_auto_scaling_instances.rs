@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_auto_scal
     }
 }
 
-pub use crate::operation::describe_auto_scaling_instances::_describe_auto_scaling_instances_output::DescribeAutoScalingInstancesOutput;
-
 pub use crate::operation::describe_auto_scaling_instances::_describe_auto_scaling_instances_input::DescribeAutoScalingInstancesInput;
+
+pub use crate::operation::describe_auto_scaling_instances::_describe_auto_scaling_instances_output::DescribeAutoScalingInstancesOutput;
 
 mod _describe_auto_scaling_instances_input;
 

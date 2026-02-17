@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_readiness_c
     }
 }
 
-pub use crate::operation::delete_readiness_check::_delete_readiness_check_output::DeleteReadinessCheckOutput;
-
 pub use crate::operation::delete_readiness_check::_delete_readiness_check_input::DeleteReadinessCheckInput;
+
+pub use crate::operation::delete_readiness_check::_delete_readiness_check_output::DeleteReadinessCheckOutput;
 
 mod _delete_readiness_check_input;
 

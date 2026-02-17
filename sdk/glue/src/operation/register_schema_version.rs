@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_schema_ve
     }
 }
 
-pub use crate::operation::register_schema_version::_register_schema_version_output::RegisterSchemaVersionOutput;
-
 pub use crate::operation::register_schema_version::_register_schema_version_input::RegisterSchemaVersionInput;
+
+pub use crate::operation::register_schema_version::_register_schema_version_output::RegisterSchemaVersionOutput;
 
 mod _register_schema_version_input;
 

@@ -531,9 +531,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_open_cypher_q
     }
 }
 
-pub use crate::operation::list_open_cypher_queries::_list_open_cypher_queries_output::ListOpenCypherQueriesOutput;
-
 pub use crate::operation::list_open_cypher_queries::_list_open_cypher_queries_input::ListOpenCypherQueriesInput;
+
+pub use crate::operation::list_open_cypher_queries::_list_open_cypher_queries_output::ListOpenCypherQueriesOutput;
 
 mod _list_open_cypher_queries_input;
 

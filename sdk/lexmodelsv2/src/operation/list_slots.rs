@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_slots::ListSl
     }
 }
 
-pub use crate::operation::list_slots::_list_slots_output::ListSlotsOutput;
-
 pub use crate::operation::list_slots::_list_slots_input::ListSlotsInput;
+
+pub use crate::operation::list_slots::_list_slots_output::ListSlotsOutput;
 
 mod _list_slots_input;
 

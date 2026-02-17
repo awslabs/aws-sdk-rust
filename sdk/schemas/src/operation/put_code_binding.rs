@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_code_binding::
     }
 }
 
-pub use crate::operation::put_code_binding::_put_code_binding_output::PutCodeBindingOutput;
-
 pub use crate::operation::put_code_binding::_put_code_binding_input::PutCodeBindingInput;
+
+pub use crate::operation::put_code_binding::_put_code_binding_output::PutCodeBindingOutput;
 
 mod _put_code_binding_input;
 

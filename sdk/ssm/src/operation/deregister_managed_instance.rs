@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_managed
     }
 }
 
-pub use crate::operation::deregister_managed_instance::_deregister_managed_instance_output::DeregisterManagedInstanceOutput;
-
 pub use crate::operation::deregister_managed_instance::_deregister_managed_instance_input::DeregisterManagedInstanceInput;
+
+pub use crate::operation::deregister_managed_instance::_deregister_managed_instance_output::DeregisterManagedInstanceOutput;
 
 mod _deregister_managed_instance_input;
 

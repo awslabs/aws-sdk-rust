@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_opportun
     }
 }
 
-pub use crate::operation::associate_opportunity::_associate_opportunity_output::AssociateOpportunityOutput;
-
 pub use crate::operation::associate_opportunity::_associate_opportunity_input::AssociateOpportunityInput;
+
+pub use crate::operation::associate_opportunity::_associate_opportunity_output::AssociateOpportunityOutput;
 
 mod _associate_opportunity_input;
 

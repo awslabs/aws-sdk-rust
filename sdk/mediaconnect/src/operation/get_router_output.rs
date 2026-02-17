@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_router_output:
     }
 }
 
-pub use crate::operation::get_router_output::_get_router_output_output::GetRouterOutputOutput;
-
 pub use crate::operation::get_router_output::_get_router_output_input::GetRouterOutputInput;
+
+pub use crate::operation::get_router_output::_get_router_output_output::GetRouterOutputOutput;
 
 mod _get_router_output_input;
 

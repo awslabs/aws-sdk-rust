@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_vpc_peering
     }
 }
 
-pub use crate::operation::reject_vpc_peering_connection::_reject_vpc_peering_connection_output::RejectVpcPeeringConnectionOutput;
-
 pub use crate::operation::reject_vpc_peering_connection::_reject_vpc_peering_connection_input::RejectVpcPeeringConnectionInput;
+
+pub use crate::operation::reject_vpc_peering_connection::_reject_vpc_peering_connection_output::RejectVpcPeeringConnectionOutput;
 
 mod _reject_vpc_peering_connection_input;
 

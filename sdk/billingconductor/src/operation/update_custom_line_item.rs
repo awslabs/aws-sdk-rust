@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_line
     }
 }
 
-pub use crate::operation::update_custom_line_item::_update_custom_line_item_output::UpdateCustomLineItemOutput;
-
 pub use crate::operation::update_custom_line_item::_update_custom_line_item_input::UpdateCustomLineItemInput;
+
+pub use crate::operation::update_custom_line_item::_update_custom_line_item_output::UpdateCustomLineItemOutput;
 
 mod _update_custom_line_item_input;
 

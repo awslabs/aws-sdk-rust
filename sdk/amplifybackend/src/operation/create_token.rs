@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_token::Crea
     }
 }
 
-pub use crate::operation::create_token::_create_token_output::CreateTokenOutput;
-
 pub use crate::operation::create_token::_create_token_input::CreateTokenInput;
+
+pub use crate::operation::create_token::_create_token_output::CreateTokenOutput;
 
 mod _create_token_input;
 

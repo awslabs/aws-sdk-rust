@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connection_ty
     }
 }
 
-pub use crate::operation::list_connection_types::_list_connection_types_output::ListConnectionTypesOutput;
-
 pub use crate::operation::list_connection_types::_list_connection_types_input::ListConnectionTypesInput;
+
+pub use crate::operation::list_connection_types::_list_connection_types_output::ListConnectionTypesOutput;
 
 mod _list_connection_types_input;
 

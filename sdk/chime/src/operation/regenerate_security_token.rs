@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::regenerate_securit
     }
 }
 
-pub use crate::operation::regenerate_security_token::_regenerate_security_token_output::RegenerateSecurityTokenOutput;
-
 pub use crate::operation::regenerate_security_token::_regenerate_security_token_input::RegenerateSecurityTokenInput;
+
+pub use crate::operation::regenerate_security_token::_regenerate_security_token_output::RegenerateSecurityTokenOutput;
 
 mod _regenerate_security_token_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_retent
     }
 }
 
-pub use crate::operation::delete_data_retention_bot::_delete_data_retention_bot_output::DeleteDataRetentionBotOutput;
-
 pub use crate::operation::delete_data_retention_bot::_delete_data_retention_bot_input::DeleteDataRetentionBotInput;
+
+pub use crate::operation::delete_data_retention_bot::_delete_data_retention_bot_output::DeleteDataRetentionBotOutput;
 
 mod _delete_data_retention_bot_input;
 

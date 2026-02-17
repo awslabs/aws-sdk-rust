@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_attrib
     }
 }
 
-pub use crate::operation::get_service_attributes::_get_service_attributes_output::GetServiceAttributesOutput;
-
 pub use crate::operation::get_service_attributes::_get_service_attributes_input::GetServiceAttributesInput;
+
+pub use crate::operation::get_service_attributes::_get_service_attributes_output::GetServiceAttributesOutput;
 
 mod _get_service_attributes_input;
 

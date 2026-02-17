@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cloud_conne
     }
 }
 
-pub use crate::operation::update_cloud_connector::_update_cloud_connector_output::UpdateCloudConnectorOutput;
-
 pub use crate::operation::update_cloud_connector::_update_cloud_connector_input::UpdateCloudConnectorInput;
+
+pub use crate::operation::update_cloud_connector::_update_cloud_connector_output::UpdateCloudConnectorOutput;
 
 mod _update_cloud_connector_input;
 

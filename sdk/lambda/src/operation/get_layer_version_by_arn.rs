@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_layer_version_
     }
 }
 
-pub use crate::operation::get_layer_version_by_arn::_get_layer_version_by_arn_output::GetLayerVersionByArnOutput;
-
 pub use crate::operation::get_layer_version_by_arn::_get_layer_version_by_arn_input::GetLayerVersionByArnInput;
+
+pub use crate::operation::get_layer_version_by_arn::_get_layer_version_by_arn_output::GetLayerVersionByArnOutput;
 
 mod _get_layer_version_by_arn_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_screen_shari
     }
 }
 
-pub use crate::operation::start_screen_sharing::_start_screen_sharing_output::StartScreenSharingOutput;
-
 pub use crate::operation::start_screen_sharing::_start_screen_sharing_input::StartScreenSharingInput;
+
+pub use crate::operation::start_screen_sharing::_start_screen_sharing_output::StartScreenSharingOutput;
 
 mod _start_screen_sharing_input;
 

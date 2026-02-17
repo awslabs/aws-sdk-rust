@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_devices::GetDe
     }
 }
 
-pub use crate::operation::get_devices::_get_devices_output::GetDevicesOutput;
-
 pub use crate::operation::get_devices::_get_devices_input::GetDevicesInput;
+
+pub use crate::operation::get_devices::_get_devices_output::GetDevicesOutput;
 
 mod _get_devices_input;
 

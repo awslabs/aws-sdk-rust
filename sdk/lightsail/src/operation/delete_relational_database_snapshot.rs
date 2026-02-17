@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_relational_
     }
 }
 
-pub use crate::operation::delete_relational_database_snapshot::_delete_relational_database_snapshot_output::DeleteRelationalDatabaseSnapshotOutput;
-
 pub use crate::operation::delete_relational_database_snapshot::_delete_relational_database_snapshot_input::DeleteRelationalDatabaseSnapshotInput;
+
+pub use crate::operation::delete_relational_database_snapshot::_delete_relational_database_snapshot_output::DeleteRelationalDatabaseSnapshotOutput;
 
 mod _delete_relational_database_snapshot_input;
 

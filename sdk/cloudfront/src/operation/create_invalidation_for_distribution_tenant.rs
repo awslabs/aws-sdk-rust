@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_invalidation_for_distribution_tenant::_create_invalidation_for_distribution_tenant_output::CreateInvalidationForDistributionTenantOutput;
-
 pub use crate::operation::create_invalidation_for_distribution_tenant::_create_invalidation_for_distribution_tenant_input::CreateInvalidationForDistributionTenantInput;
+
+pub use crate::operation::create_invalidation_for_distribution_tenant::_create_invalidation_for_distribution_tenant_output::CreateInvalidationForDistributionTenantOutput;
 
 mod _create_invalidation_for_distribution_tenant_input;
 

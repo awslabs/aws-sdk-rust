@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_connection_
     }
 }
 
-pub use crate::operation::reject_connection_invitation::_reject_connection_invitation_output::RejectConnectionInvitationOutput;
-
 pub use crate::operation::reject_connection_invitation::_reject_connection_invitation_input::RejectConnectionInvitationInput;
+
+pub use crate::operation::reject_connection_invitation::_reject_connection_invitation_output::RejectConnectionInvitationOutput;
 
 mod _reject_connection_invitation_input;
 

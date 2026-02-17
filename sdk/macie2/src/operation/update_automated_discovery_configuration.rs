@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_automated_d
     }
 }
 
-pub use crate::operation::update_automated_discovery_configuration::_update_automated_discovery_configuration_output::UpdateAutomatedDiscoveryConfigurationOutput;
-
 pub use crate::operation::update_automated_discovery_configuration::_update_automated_discovery_configuration_input::UpdateAutomatedDiscoveryConfigurationInput;
+
+pub use crate::operation::update_automated_discovery_configuration::_update_automated_discovery_configuration_output::UpdateAutomatedDiscoveryConfigurationOutput;
 
 mod _update_automated_discovery_configuration_input;
 

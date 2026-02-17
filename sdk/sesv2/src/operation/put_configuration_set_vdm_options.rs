@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configuration_
     }
 }
 
-pub use crate::operation::put_configuration_set_vdm_options::_put_configuration_set_vdm_options_output::PutConfigurationSetVdmOptionsOutput;
-
 pub use crate::operation::put_configuration_set_vdm_options::_put_configuration_set_vdm_options_input::PutConfigurationSetVdmOptionsInput;
+
+pub use crate::operation::put_configuration_set_vdm_options::_put_configuration_set_vdm_options_output::PutConfigurationSetVdmOptionsOutput;
 
 mod _put_configuration_set_vdm_options_input;
 

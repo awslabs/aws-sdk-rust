@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_classific
     }
 }
 
-pub use crate::operation::describe_classification_job::_describe_classification_job_output::DescribeClassificationJobOutput;
-
 pub use crate::operation::describe_classification_job::_describe_classification_job_input::DescribeClassificationJobInput;
+
+pub use crate::operation::describe_classification_job::_describe_classification_job_output::DescribeClassificationJobOutput;
 
 mod _describe_classification_job_input;
 

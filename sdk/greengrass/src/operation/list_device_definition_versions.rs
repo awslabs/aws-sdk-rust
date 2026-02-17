@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_defini
     }
 }
 
-pub use crate::operation::list_device_definition_versions::_list_device_definition_versions_output::ListDeviceDefinitionVersionsOutput;
-
 pub use crate::operation::list_device_definition_versions::_list_device_definition_versions_input::ListDeviceDefinitionVersionsInput;
+
+pub use crate::operation::list_device_definition_versions::_list_device_definition_versions_output::ListDeviceDefinitionVersionsOutput;
 
 mod _list_device_definition_versions_input;
 

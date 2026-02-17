@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_csv_header::Ge
     }
 }
 
-pub use crate::operation::get_csv_header::_get_csv_header_output::GetCsvHeaderOutput;
-
 pub use crate::operation::get_csv_header::_get_csv_header_input::GetCsvHeaderInput;
+
+pub use crate::operation::get_csv_header::_get_csv_header_output::GetCsvHeaderOutput;
 
 mod _get_csv_header_input;
 

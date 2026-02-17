@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_calculated_
     }
 }
 
-pub use crate::operation::delete_calculated_attribute_definition::_delete_calculated_attribute_definition_output::DeleteCalculatedAttributeDefinitionOutput;
-
 pub use crate::operation::delete_calculated_attribute_definition::_delete_calculated_attribute_definition_input::DeleteCalculatedAttributeDefinitionInput;
+
+pub use crate::operation::delete_calculated_attribute_definition::_delete_calculated_attribute_definition_output::DeleteCalculatedAttributeDefinitionOutput;
 
 mod _delete_calculated_attribute_definition_input;
 

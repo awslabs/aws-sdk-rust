@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_versions
     }
 }
 
-pub use crate::operation::get_table_versions::_get_table_versions_output::GetTableVersionsOutput;
-
 pub use crate::operation::get_table_versions::_get_table_versions_input::GetTableVersionsInput;
+
+pub use crate::operation::get_table_versions::_get_table_versions_output::GetTableVersionsOutput;
 
 mod _get_table_versions_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_instance_profi
     }
 }
 
-pub use crate::operation::tag_instance_profile::_tag_instance_profile_output::TagInstanceProfileOutput;
-
 pub use crate::operation::tag_instance_profile::_tag_instance_profile_input::TagInstanceProfileInput;
+
+pub use crate::operation::tag_instance_profile::_tag_instance_profile_output::TagInstanceProfileOutput;
 
 mod _tag_instance_profile_input;
 

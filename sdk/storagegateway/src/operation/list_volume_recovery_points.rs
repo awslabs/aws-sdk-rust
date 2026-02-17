@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_volume_recove
     }
 }
 
-pub use crate::operation::list_volume_recovery_points::_list_volume_recovery_points_output::ListVolumeRecoveryPointsOutput;
-
 pub use crate::operation::list_volume_recovery_points::_list_volume_recovery_points_input::ListVolumeRecoveryPointsInput;
+
+pub use crate::operation::list_volume_recovery_points::_list_volume_recovery_points_output::ListVolumeRecoveryPointsOutput;
 
 mod _list_volume_recovery_points_input;
 

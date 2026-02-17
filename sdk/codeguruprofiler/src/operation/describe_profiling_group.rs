@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_profiling
     }
 }
 
-pub use crate::operation::describe_profiling_group::_describe_profiling_group_output::DescribeProfilingGroupOutput;
-
 pub use crate::operation::describe_profiling_group::_describe_profiling_group_input::DescribeProfilingGroupInput;
+
+pub use crate::operation::describe_profiling_group::_describe_profiling_group_output::DescribeProfilingGroupOutput;
 
 mod _describe_profiling_group_input;
 

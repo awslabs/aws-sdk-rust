@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_source_api_as
     }
 }
 
-pub use crate::operation::list_source_api_associations::_list_source_api_associations_output::ListSourceApiAssociationsOutput;
-
 pub use crate::operation::list_source_api_associations::_list_source_api_associations_input::ListSourceApiAssociationsInput;
+
+pub use crate::operation::list_source_api_associations::_list_source_api_associations_output::ListSourceApiAssociationsOutput;
 
 mod _list_source_api_associations_input;
 

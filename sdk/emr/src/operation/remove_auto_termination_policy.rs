@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_auto_termin
     }
 }
 
-pub use crate::operation::remove_auto_termination_policy::_remove_auto_termination_policy_output::RemoveAutoTerminationPolicyOutput;
-
 pub use crate::operation::remove_auto_termination_policy::_remove_auto_termination_policy_input::RemoveAutoTerminationPolicyInput;
+
+pub use crate::operation::remove_auto_termination_policy::_remove_auto_termination_policy_output::RemoveAutoTerminationPolicyOutput;
 
 mod _remove_auto_termination_policy_input;
 

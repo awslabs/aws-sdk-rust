@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_snomedct_infe
     }
 }
 
-pub use crate::operation::list_snomedct_inference_jobs::_list_snomedct_inference_jobs_output::ListSnomedctInferenceJobsOutput;
-
 pub use crate::operation::list_snomedct_inference_jobs::_list_snomedct_inference_jobs_input::ListSnomedctInferenceJobsInput;
+
+pub use crate::operation::list_snomedct_inference_jobs::_list_snomedct_inference_jobs_output::ListSnomedctInferenceJobsOutput;
 
 mod _list_snomedct_inference_jobs_input;
 

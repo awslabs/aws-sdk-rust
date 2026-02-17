@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::reject_inbound_cross_cluster_search_connection::_reject_inbound_cross_cluster_search_connection_output::RejectInboundCrossClusterSearchConnectionOutput;
-
 pub use crate::operation::reject_inbound_cross_cluster_search_connection::_reject_inbound_cross_cluster_search_connection_input::RejectInboundCrossClusterSearchConnectionInput;
+
+pub use crate::operation::reject_inbound_cross_cluster_search_connection::_reject_inbound_cross_cluster_search_connection_output::RejectInboundCrossClusterSearchConnectionOutput;
 
 mod _reject_inbound_cross_cluster_search_connection_input;
 

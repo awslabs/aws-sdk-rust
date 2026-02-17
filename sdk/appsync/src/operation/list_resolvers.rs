@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolvers::Li
     }
 }
 
-pub use crate::operation::list_resolvers::_list_resolvers_output::ListResolversOutput;
-
 pub use crate::operation::list_resolvers::_list_resolvers_input::ListResolversInput;
+
+pub use crate::operation::list_resolvers::_list_resolvers_output::ListResolversOutput;
 
 mod _list_resolvers_input;
 

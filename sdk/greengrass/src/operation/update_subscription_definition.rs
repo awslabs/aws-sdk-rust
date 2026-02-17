@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subscriptio
     }
 }
 
-pub use crate::operation::update_subscription_definition::_update_subscription_definition_output::UpdateSubscriptionDefinitionOutput;
-
 pub use crate::operation::update_subscription_definition::_update_subscription_definition_input::UpdateSubscriptionDefinitionInput;
+
+pub use crate::operation::update_subscription_definition::_update_subscription_definition_output::UpdateSubscriptionDefinitionOutput;
 
 mod _update_subscription_definition_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_email_conta
     }
 }
 
-pub use crate::operation::create_email_contact::_create_email_contact_output::CreateEmailContactOutput;
-
 pub use crate::operation::create_email_contact::_create_email_contact_input::CreateEmailContactInput;
+
+pub use crate::operation::create_email_contact::_create_email_contact_output::CreateEmailContactOutput;
 
 mod _create_email_contact_input;
 

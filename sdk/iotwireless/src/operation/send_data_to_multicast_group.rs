@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_data_to_multi
     }
 }
 
-pub use crate::operation::send_data_to_multicast_group::_send_data_to_multicast_group_output::SendDataToMulticastGroupOutput;
-
 pub use crate::operation::send_data_to_multicast_group::_send_data_to_multicast_group_input::SendDataToMulticastGroupInput;
+
+pub use crate::operation::send_data_to_multicast_group::_send_data_to_multicast_group_output::SendDataToMulticastGroupOutput;
 
 mod _send_data_to_multicast_group_input;
 

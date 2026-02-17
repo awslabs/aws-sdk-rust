@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_lev
     }
 }
 
-pub use crate::operation::create_service_level_objective::_create_service_level_objective_output::CreateServiceLevelObjectiveOutput;
-
 pub use crate::operation::create_service_level_objective::_create_service_level_objective_input::CreateServiceLevelObjectiveInput;
+
+pub use crate::operation::create_service_level_objective::_create_service_level_objective_output::CreateServiceLevelObjectiveOutput;
 
 mod _create_service_level_objective_input;
 

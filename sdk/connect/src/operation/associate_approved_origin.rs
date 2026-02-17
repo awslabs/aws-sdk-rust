@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_approved
     }
 }
 
-pub use crate::operation::associate_approved_origin::_associate_approved_origin_output::AssociateApprovedOriginOutput;
-
 pub use crate::operation::associate_approved_origin::_associate_approved_origin_input::AssociateApprovedOriginInput;
+
+pub use crate::operation::associate_approved_origin::_associate_approved_origin_output::AssociateApprovedOriginOutput;
 
 mod _associate_approved_origin_input;
 

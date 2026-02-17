@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_selfservice
     }
 }
 
-pub use crate::operation::modify_selfservice_permissions::_modify_selfservice_permissions_output::ModifySelfservicePermissionsOutput;
-
 pub use crate::operation::modify_selfservice_permissions::_modify_selfservice_permissions_input::ModifySelfservicePermissionsInput;
+
+pub use crate::operation::modify_selfservice_permissions::_modify_selfservice_permissions_output::ModifySelfservicePermissionsOutput;
 
 mod _modify_selfservice_permissions_input;
 

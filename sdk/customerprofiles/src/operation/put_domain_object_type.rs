@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_domain_object_
     }
 }
 
-pub use crate::operation::put_domain_object_type::_put_domain_object_type_output::PutDomainObjectTypeOutput;
-
 pub use crate::operation::put_domain_object_type::_put_domain_object_type_input::PutDomainObjectTypeInput;
+
+pub use crate::operation::put_domain_object_type::_put_domain_object_type_output::PutDomainObjectTypeOutput;
 
 mod _put_domain_object_type_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_explainabil
     }
 }
 
-pub use crate::operation::delete_explainability_export::_delete_explainability_export_output::DeleteExplainabilityExportOutput;
-
 pub use crate::operation::delete_explainability_export::_delete_explainability_export_input::DeleteExplainabilityExportInput;
+
+pub use crate::operation::delete_explainability_export::_delete_explainability_export_output::DeleteExplainabilityExportOutput;
 
 mod _delete_explainability_export_input;
 

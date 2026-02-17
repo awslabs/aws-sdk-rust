@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_finding::GetFi
     }
 }
 
-pub use crate::operation::get_finding::_get_finding_output::GetFindingOutput;
-
 pub use crate::operation::get_finding::_get_finding_input::GetFindingInput;
+
+pub use crate::operation::get_finding::_get_finding_output::GetFindingOutput;
 
 mod _get_finding_input;
 

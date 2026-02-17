@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rule_groups
     }
 }
 
-pub use crate::operation::create_rule_groups_namespace::_create_rule_groups_namespace_output::CreateRuleGroupsNamespaceOutput;
-
 pub use crate::operation::create_rule_groups_namespace::_create_rule_groups_namespace_input::CreateRuleGroupsNamespaceInput;
+
+pub use crate::operation::create_rule_groups_namespace::_create_rule_groups_namespace_output::CreateRuleGroupsNamespaceOutput;
 
 mod _create_rule_groups_namespace_input;
 

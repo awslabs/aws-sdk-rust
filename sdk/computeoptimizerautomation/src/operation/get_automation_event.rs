@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_automation_eve
     }
 }
 
-pub use crate::operation::get_automation_event::_get_automation_event_output::GetAutomationEventOutput;
-
 pub use crate::operation::get_automation_event::_get_automation_event_input::GetAutomationEventInput;
+
+pub use crate::operation::get_automation_event::_get_automation_event_output::GetAutomationEventOutput;
 
 mod _get_automation_event_input;
 

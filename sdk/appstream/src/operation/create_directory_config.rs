@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_directory_c
     }
 }
 
-pub use crate::operation::create_directory_config::_create_directory_config_output::CreateDirectoryConfigOutput;
-
 pub use crate::operation::create_directory_config::_create_directory_config_input::CreateDirectoryConfigInput;
+
+pub use crate::operation::create_directory_config::_create_directory_config_output::CreateDirectoryConfigOutput;
 
 mod _create_directory_config_input;
 

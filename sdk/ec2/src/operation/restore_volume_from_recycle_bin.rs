@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_volume_fro
     }
 }
 
-pub use crate::operation::restore_volume_from_recycle_bin::_restore_volume_from_recycle_bin_output::RestoreVolumeFromRecycleBinOutput;
-
 pub use crate::operation::restore_volume_from_recycle_bin::_restore_volume_from_recycle_bin_input::RestoreVolumeFromRecycleBinInput;
+
+pub use crate::operation::restore_volume_from_recycle_bin::_restore_volume_from_recycle_bin_output::RestoreVolumeFromRecycleBinOutput;
 
 mod _restore_volume_from_recycle_bin_input;
 

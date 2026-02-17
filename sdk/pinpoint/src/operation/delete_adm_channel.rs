@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_adm_channel
     }
 }
 
-pub use crate::operation::delete_adm_channel::_delete_adm_channel_output::DeleteAdmChannelOutput;
-
 pub use crate::operation::delete_adm_channel::_delete_adm_channel_input::DeleteAdmChannelInput;
+
+pub use crate::operation::delete_adm_channel::_delete_adm_channel_output::DeleteAdmChannelOutput;
 
 mod _delete_adm_channel_input;
 

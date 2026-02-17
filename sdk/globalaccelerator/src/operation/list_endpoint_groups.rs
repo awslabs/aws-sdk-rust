@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_endpoint_grou
     }
 }
 
-pub use crate::operation::list_endpoint_groups::_list_endpoint_groups_output::ListEndpointGroupsOutput;
-
 pub use crate::operation::list_endpoint_groups::_list_endpoint_groups_input::ListEndpointGroupsInput;
+
+pub use crate::operation::list_endpoint_groups::_list_endpoint_groups_output::ListEndpointGroupsOutput;
 
 mod _list_endpoint_groups_input;
 

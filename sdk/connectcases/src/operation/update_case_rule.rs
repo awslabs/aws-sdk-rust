@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_case_rule::
     }
 }
 
-pub use crate::operation::update_case_rule::_update_case_rule_output::UpdateCaseRuleOutput;
-
 pub use crate::operation::update_case_rule::_update_case_rule_input::UpdateCaseRuleInput;
+
+pub use crate::operation::update_case_rule::_update_case_rule_output::UpdateCaseRuleOutput;
 
 mod _update_case_rule_input;
 

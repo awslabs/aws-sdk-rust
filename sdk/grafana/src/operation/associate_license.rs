@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_license:
     }
 }
 
-pub use crate::operation::associate_license::_associate_license_output::AssociateLicenseOutput;
-
 pub use crate::operation::associate_license::_associate_license_input::AssociateLicenseInput;
+
+pub use crate::operation::associate_license::_associate_license_output::AssociateLicenseOutput;
 
 mod _associate_license_input;
 

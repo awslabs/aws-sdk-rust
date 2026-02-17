@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assessment_ru
     }
 }
 
-pub use crate::operation::list_assessment_run_agents::_list_assessment_run_agents_output::ListAssessmentRunAgentsOutput;
-
 pub use crate::operation::list_assessment_run_agents::_list_assessment_run_agents_input::ListAssessmentRunAgentsInput;
+
+pub use crate::operation::list_assessment_run_agents::_list_assessment_run_agents_output::ListAssessmentRunAgentsOutput;
 
 mod _list_assessment_run_agents_input;
 

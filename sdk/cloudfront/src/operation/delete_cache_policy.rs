@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cache_polic
     }
 }
 
-pub use crate::operation::delete_cache_policy::_delete_cache_policy_output::DeleteCachePolicyOutput;
-
 pub use crate::operation::delete_cache_policy::_delete_cache_policy_input::DeleteCachePolicyInput;
+
+pub use crate::operation::delete_cache_policy::_delete_cache_policy_output::DeleteCachePolicyOutput;
 
 mod _delete_cache_policy_input;
 

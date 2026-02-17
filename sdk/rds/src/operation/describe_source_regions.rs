@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_source_re
     }
 }
 
-pub use crate::operation::describe_source_regions::_describe_source_regions_output::DescribeSourceRegionsOutput;
-
 pub use crate::operation::describe_source_regions::_describe_source_regions_input::DescribeSourceRegionsInput;
+
+pub use crate::operation::describe_source_regions::_describe_source_regions_output::DescribeSourceRegionsOutput;
 
 mod _describe_source_regions_input;
 

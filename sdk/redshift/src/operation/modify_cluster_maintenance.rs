@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cluster_mai
     }
 }
 
-pub use crate::operation::modify_cluster_maintenance::_modify_cluster_maintenance_output::ModifyClusterMaintenanceOutput;
-
 pub use crate::operation::modify_cluster_maintenance::_modify_cluster_maintenance_input::ModifyClusterMaintenanceInput;
+
+pub use crate::operation::modify_cluster_maintenance::_modify_cluster_maintenance_output::ModifyClusterMaintenanceOutput;
 
 mod _modify_cluster_maintenance_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_versions_by_f
     }
 }
 
-pub use crate::operation::list_versions_by_function::_list_versions_by_function_output::ListVersionsByFunctionOutput;
-
 pub use crate::operation::list_versions_by_function::_list_versions_by_function_input::ListVersionsByFunctionInput;
+
+pub use crate::operation::list_versions_by_function::_list_versions_by_function_output::ListVersionsByFunctionOutput;
 
 mod _list_versions_by_function_input;
 

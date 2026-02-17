@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_link::
     }
 }
 
-pub use crate::operation::get_account_link::_get_account_link_output::GetAccountLinkOutput;
-
 pub use crate::operation::get_account_link::_get_account_link_input::GetAccountLinkInput;
+
+pub use crate::operation::get_account_link::_get_account_link_output::GetAccountLinkOutput;
 
 mod _get_account_link_input;
 

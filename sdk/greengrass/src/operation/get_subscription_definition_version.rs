@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_subscription_d
     }
 }
 
-pub use crate::operation::get_subscription_definition_version::_get_subscription_definition_version_output::GetSubscriptionDefinitionVersionOutput;
-
 pub use crate::operation::get_subscription_definition_version::_get_subscription_definition_version_input::GetSubscriptionDefinitionVersionInput;
+
+pub use crate::operation::get_subscription_definition_version::_get_subscription_definition_version_output::GetSubscriptionDefinitionVersionOutput;
 
 mod _get_subscription_definition_version_input;
 

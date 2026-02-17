@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_gateway_cap
     }
 }
 
-pub use crate::operation::update_gateway_capability_configuration::_update_gateway_capability_configuration_output::UpdateGatewayCapabilityConfigurationOutput;
-
 pub use crate::operation::update_gateway_capability_configuration::_update_gateway_capability_configuration_input::UpdateGatewayCapabilityConfigurationInput;
+
+pub use crate::operation::update_gateway_capability_configuration::_update_gateway_capability_configuration_output::UpdateGatewayCapabilityConfigurationOutput;
 
 mod _update_gateway_capability_configuration_input;
 

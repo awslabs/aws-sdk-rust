@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_object
     }
 }
 
-pub use crate::operation::get_profile_object_type::_get_profile_object_type_output::GetProfileObjectTypeOutput;
-
 pub use crate::operation::get_profile_object_type::_get_profile_object_type_input::GetProfileObjectTypeInput;
+
+pub use crate::operation::get_profile_object_type::_get_profile_object_type_output::GetProfileObjectTypeOutput;
 
 mod _get_profile_object_type_input;
 

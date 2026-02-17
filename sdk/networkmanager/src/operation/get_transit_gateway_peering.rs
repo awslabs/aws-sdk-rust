@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transit_gatewa
     }
 }
 
-pub use crate::operation::get_transit_gateway_peering::_get_transit_gateway_peering_output::GetTransitGatewayPeeringOutput;
-
 pub use crate::operation::get_transit_gateway_peering::_get_transit_gateway_peering_input::GetTransitGatewayPeeringInput;
+
+pub use crate::operation::get_transit_gateway_peering::_get_transit_gateway_peering_output::GetTransitGatewayPeeringOutput;
 
 mod _get_transit_gateway_peering_input;
 

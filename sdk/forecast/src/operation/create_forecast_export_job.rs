@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_forecast_ex
     }
 }
 
-pub use crate::operation::create_forecast_export_job::_create_forecast_export_job_output::CreateForecastExportJobOutput;
-
 pub use crate::operation::create_forecast_export_job::_create_forecast_export_job_input::CreateForecastExportJobInput;
+
+pub use crate::operation::create_forecast_export_job::_create_forecast_export_job_output::CreateForecastExportJobOutput;
 
 mod _create_forecast_export_job_input;
 

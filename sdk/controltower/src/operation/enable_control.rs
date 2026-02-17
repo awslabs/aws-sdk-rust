@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_control::En
     }
 }
 
-pub use crate::operation::enable_control::_enable_control_output::EnableControlOutput;
-
 pub use crate::operation::enable_control::_enable_control_input::EnableControlInput;
+
+pub use crate::operation::enable_control::_enable_control_output::EnableControlOutput;
 
 mod _enable_control_input;
 

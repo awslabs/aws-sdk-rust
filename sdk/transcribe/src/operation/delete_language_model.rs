@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_language_mo
     }
 }
 
-pub use crate::operation::delete_language_model::_delete_language_model_output::DeleteLanguageModelOutput;
-
 pub use crate::operation::delete_language_model::_delete_language_model_input::DeleteLanguageModelInput;
+
+pub use crate::operation::delete_language_model::_delete_language_model_output::DeleteLanguageModelOutput;
 
 mod _delete_language_model_input;
 

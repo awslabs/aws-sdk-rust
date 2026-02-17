@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_phi_detection
     }
 }
 
-pub use crate::operation::stop_phi_detection_job::_stop_phi_detection_job_output::StopPhiDetectionJobOutput;
-
 pub use crate::operation::stop_phi_detection_job::_stop_phi_detection_job_input::StopPhiDetectionJobInput;
+
+pub use crate::operation::stop_phi_detection_job::_stop_phi_detection_job_output::StopPhiDetectionJobOutput;
 
 mod _stop_phi_detection_job_input;
 

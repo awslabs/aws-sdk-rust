@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_maintenance
     }
 }
 
-pub use crate::operation::update_maintenance_window_target::_update_maintenance_window_target_output::UpdateMaintenanceWindowTargetOutput;
-
 pub use crate::operation::update_maintenance_window_target::_update_maintenance_window_target_input::UpdateMaintenanceWindowTargetInput;
+
+pub use crate::operation::update_maintenance_window_target::_update_maintenance_window_target_output::UpdateMaintenanceWindowTargetOutput;
 
 mod _update_maintenance_window_target_input;
 

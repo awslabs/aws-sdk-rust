@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_destination
     }
 }
 
-pub use crate::operation::update_destination::_update_destination_output::UpdateDestinationOutput;
-
 pub use crate::operation::update_destination::_update_destination_input::UpdateDestinationInput;
+
+pub use crate::operation::update_destination::_update_destination_output::UpdateDestinationOutput;
 
 mod _update_destination_input;
 

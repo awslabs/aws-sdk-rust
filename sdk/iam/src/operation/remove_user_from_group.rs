@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_user_from_g
     }
 }
 
-pub use crate::operation::remove_user_from_group::_remove_user_from_group_output::RemoveUserFromGroupOutput;
-
 pub use crate::operation::remove_user_from_group::_remove_user_from_group_input::RemoveUserFromGroupInput;
+
+pub use crate::operation::remove_user_from_group::_remove_user_from_group_output::RemoveUserFromGroupOutput;
 
 mod _remove_user_from_group_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_watch
     }
 }
 
-pub use crate::operation::create_cloud_watch_alarm_template::_create_cloud_watch_alarm_template_output::CreateCloudWatchAlarmTemplateOutput;
-
 pub use crate::operation::create_cloud_watch_alarm_template::_create_cloud_watch_alarm_template_input::CreateCloudWatchAlarmTemplateInput;
+
+pub use crate::operation::create_cloud_watch_alarm_template::_create_cloud_watch_alarm_template_output::CreateCloudWatchAlarmTemplateOutput;
 
 mod _create_cloud_watch_alarm_template_input;
 

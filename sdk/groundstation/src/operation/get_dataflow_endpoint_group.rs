@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dataflow_endpo
     }
 }
 
-pub use crate::operation::get_dataflow_endpoint_group::_get_dataflow_endpoint_group_output::GetDataflowEndpointGroupOutput;
-
 pub use crate::operation::get_dataflow_endpoint_group::_get_dataflow_endpoint_group_input::GetDataflowEndpointGroupInput;
+
+pub use crate::operation::get_dataflow_endpoint_group::_get_dataflow_endpoint_group_output::GetDataflowEndpointGroupOutput;
 
 mod _get_dataflow_endpoint_group_input;
 

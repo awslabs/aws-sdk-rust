@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_odb_peering
     }
 }
 
-pub use crate::operation::create_odb_peering_connection::_create_odb_peering_connection_output::CreateOdbPeeringConnectionOutput;
-
 pub use crate::operation::create_odb_peering_connection::_create_odb_peering_connection_input::CreateOdbPeeringConnectionInput;
+
+pub use crate::operation::create_odb_peering_connection::_create_odb_peering_connection_output::CreateOdbPeeringConnectionOutput;
 
 mod _create_odb_peering_connection_input;
 

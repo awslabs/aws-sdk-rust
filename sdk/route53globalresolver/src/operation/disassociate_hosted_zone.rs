@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_hoste
     }
 }
 
-pub use crate::operation::disassociate_hosted_zone::_disassociate_hosted_zone_output::DisassociateHostedZoneOutput;
-
 pub use crate::operation::disassociate_hosted_zone::_disassociate_hosted_zone_input::DisassociateHostedZoneInput;
+
+pub use crate::operation::disassociate_hosted_zone::_disassociate_hosted_zone_output::DisassociateHostedZoneOutput;
 
 mod _disassociate_hosted_zone_input;
 

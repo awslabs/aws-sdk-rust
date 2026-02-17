@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_edge_agent_co
     }
 }
 
-pub use crate::operation::list_edge_agent_configurations::_list_edge_agent_configurations_output::ListEdgeAgentConfigurationsOutput;
-
 pub use crate::operation::list_edge_agent_configurations::_list_edge_agent_configurations_input::ListEdgeAgentConfigurationsInput;
+
+pub use crate::operation::list_edge_agent_configurations::_list_edge_agent_configurations_output::ListEdgeAgentConfigurationsOutput;
 
 mod _list_edge_agent_configurations_input;
 

@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_automated_reasoning_policy_test_workflow::_start_automated_reasoning_policy_test_workflow_output::StartAutomatedReasoningPolicyTestWorkflowOutput;
-
 pub use crate::operation::start_automated_reasoning_policy_test_workflow::_start_automated_reasoning_policy_test_workflow_input::StartAutomatedReasoningPolicyTestWorkflowInput;
+
+pub use crate::operation::start_automated_reasoning_policy_test_workflow::_start_automated_reasoning_policy_test_workflow_output::StartAutomatedReasoningPolicyTestWorkflowOutput;
 
 mod _start_automated_reasoning_policy_test_workflow_input;
 

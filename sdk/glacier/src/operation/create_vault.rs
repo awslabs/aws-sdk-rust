@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vault::Crea
     }
 }
 
-pub use crate::operation::create_vault::_create_vault_output::CreateVaultOutput;
-
 pub use crate::operation::create_vault::_create_vault_input::CreateVaultInput;
+
+pub use crate::operation::create_vault::_create_vault_output::CreateVaultOutput;
 
 mod _create_vault_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_baseline_opera
     }
 }
 
-pub use crate::operation::get_baseline_operation::_get_baseline_operation_output::GetBaselineOperationOutput;
-
 pub use crate::operation::get_baseline_operation::_get_baseline_operation_input::GetBaselineOperationInput;
+
+pub use crate::operation::get_baseline_operation::_get_baseline_operation_output::GetBaselineOperationOutput;
 
 mod _get_baseline_operation_input;
 

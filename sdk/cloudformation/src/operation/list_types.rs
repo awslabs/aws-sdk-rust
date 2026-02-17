@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_types::ListTy
     }
 }
 
-pub use crate::operation::list_types::_list_types_output::ListTypesOutput;
-
 pub use crate::operation::list_types::_list_types_input::ListTypesInput;
+
+pub use crate::operation::list_types::_list_types_output::ListTypesOutput;
 
 mod _list_types_input;
 

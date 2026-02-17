@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_connection
     }
 }
 
-pub use crate::operation::publish_connection_function::_publish_connection_function_output::PublishConnectionFunctionOutput;
-
 pub use crate::operation::publish_connection_function::_publish_connection_function_input::PublishConnectionFunctionInput;
+
+pub use crate::operation::publish_connection_function::_publish_connection_function_output::PublishConnectionFunctionOutput;
 
 mod _publish_connection_function_input;
 

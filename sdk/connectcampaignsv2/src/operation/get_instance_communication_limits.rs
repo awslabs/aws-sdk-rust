@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_commu
     }
 }
 
-pub use crate::operation::get_instance_communication_limits::_get_instance_communication_limits_output::GetInstanceCommunicationLimitsOutput;
-
 pub use crate::operation::get_instance_communication_limits::_get_instance_communication_limits_input::GetInstanceCommunicationLimitsInput;
+
+pub use crate::operation::get_instance_communication_limits::_get_instance_communication_limits_output::GetInstanceCommunicationLimitsOutput;
 
 mod _get_instance_communication_limits_input;
 

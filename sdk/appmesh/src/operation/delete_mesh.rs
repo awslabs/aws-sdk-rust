@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mesh::Delet
     }
 }
 
-pub use crate::operation::delete_mesh::_delete_mesh_output::DeleteMeshOutput;
-
 pub use crate::operation::delete_mesh::_delete_mesh_input::DeleteMeshInput;
+
+pub use crate::operation::delete_mesh::_delete_mesh_output::DeleteMeshOutput;
 
 mod _delete_mesh_input;
 

@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_annotation_
     }
 }
 
-pub use crate::operation::delete_annotation_store_versions::_delete_annotation_store_versions_output::DeleteAnnotationStoreVersionsOutput;
-
 pub use crate::operation::delete_annotation_store_versions::_delete_annotation_store_versions_input::DeleteAnnotationStoreVersionsInput;
+
+pub use crate::operation::delete_annotation_store_versions::_delete_annotation_store_versions_output::DeleteAnnotationStoreVersionsOutput;
 
 mod _delete_annotation_store_versions_input;
 

@@ -707,9 +707,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trail::Upda
     }
 }
 
-pub use crate::operation::update_trail::_update_trail_output::UpdateTrailOutput;
-
 pub use crate::operation::update_trail::_update_trail_input::UpdateTrailInput;
+
+pub use crate::operation::update_trail::_update_trail_output::UpdateTrailOutput;
 
 mod _update_trail_input;
 

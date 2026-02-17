@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_db_cluster_pa
     }
 }
 
-pub use crate::operation::copy_db_cluster_parameter_group::_copy_db_cluster_parameter_group_output::CopyDbClusterParameterGroupOutput;
-
 pub use crate::operation::copy_db_cluster_parameter_group::_copy_db_cluster_parameter_group_input::CopyDbClusterParameterGroupInput;
+
+pub use crate::operation::copy_db_cluster_parameter_group::_copy_db_cluster_parameter_group_output::CopyDbClusterParameterGroupOutput;
 
 mod _copy_db_cluster_parameter_group_input;
 

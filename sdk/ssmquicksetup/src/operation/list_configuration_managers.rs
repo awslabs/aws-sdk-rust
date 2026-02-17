@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_managers::_list_configuration_managers_output::ListConfigurationManagersOutput;
-
 pub use crate::operation::list_configuration_managers::_list_configuration_managers_input::ListConfigurationManagersInput;
+
+pub use crate::operation::list_configuration_managers::_list_configuration_managers_output::ListConfigurationManagersOutput;
 
 mod _list_configuration_managers_input;
 

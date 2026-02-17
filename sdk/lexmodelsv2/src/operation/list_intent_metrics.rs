@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_intent_metric
     }
 }
 
-pub use crate::operation::list_intent_metrics::_list_intent_metrics_output::ListIntentMetricsOutput;
-
 pub use crate::operation::list_intent_metrics::_list_intent_metrics_input::ListIntentMetricsInput;
+
+pub use crate::operation::list_intent_metrics::_list_intent_metrics_output::ListIntentMetricsOutput;
 
 mod _list_intent_metrics_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_automati
     }
 }
 
-pub use crate::operation::batch_get_automation_rules::_batch_get_automation_rules_output::BatchGetAutomationRulesOutput;
-
 pub use crate::operation::batch_get_automation_rules::_batch_get_automation_rules_input::BatchGetAutomationRulesInput;
+
+pub use crate::operation::batch_get_automation_rules::_batch_get_automation_rules_output::BatchGetAutomationRulesOutput;
 
 mod _batch_get_automation_rules_input;
 

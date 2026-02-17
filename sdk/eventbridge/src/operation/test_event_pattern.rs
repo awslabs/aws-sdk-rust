@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_event_pattern
     }
 }
 
-pub use crate::operation::test_event_pattern::_test_event_pattern_output::TestEventPatternOutput;
-
 pub use crate::operation::test_event_pattern::_test_event_pattern_input::TestEventPatternInput;
+
+pub use crate::operation::test_event_pattern::_test_event_pattern_output::TestEventPatternOutput;
 
 mod _test_event_pattern_input;
 

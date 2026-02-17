@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cache_policie
     }
 }
 
-pub use crate::operation::list_cache_policies::_list_cache_policies_output::ListCachePoliciesOutput;
-
 pub use crate::operation::list_cache_policies::_list_cache_policies_input::ListCachePoliciesInput;
+
+pub use crate::operation::list_cache_policies::_list_cache_policies_output::ListCachePoliciesOutput;
 
 mod _list_cache_policies_input;
 

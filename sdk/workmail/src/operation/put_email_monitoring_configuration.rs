@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_email_monitori
     }
 }
 
-pub use crate::operation::put_email_monitoring_configuration::_put_email_monitoring_configuration_output::PutEmailMonitoringConfigurationOutput;
-
 pub use crate::operation::put_email_monitoring_configuration::_put_email_monitoring_configuration_input::PutEmailMonitoringConfigurationInput;
+
+pub use crate::operation::put_email_monitoring_configuration::_put_email_monitoring_configuration_output::PutEmailMonitoringConfigurationOutput;
 
 mod _put_email_monitoring_configuration_input;
 

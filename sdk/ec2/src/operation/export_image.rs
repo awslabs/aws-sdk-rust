@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_image::Expo
     }
 }
 
-pub use crate::operation::export_image::_export_image_output::ExportImageOutput;
-
 pub use crate::operation::export_image::_export_image_input::ExportImageInput;
+
+pub use crate::operation::export_image::_export_image_output::ExportImageOutput;
 
 mod _export_image_input;
 

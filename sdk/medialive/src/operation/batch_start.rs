@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_start::Batch
     }
 }
 
-pub use crate::operation::batch_start::_batch_start_output::BatchStartOutput;
-
 pub use crate::operation::batch_start::_batch_start_input::BatchStartInput;
+
+pub use crate::operation::batch_start::_batch_start_output::BatchStartOutput;
 
 mod _batch_start_input;
 

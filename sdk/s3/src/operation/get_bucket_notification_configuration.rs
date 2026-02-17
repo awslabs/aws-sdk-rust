@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_notific
     }
 }
 
-pub use crate::operation::get_bucket_notification_configuration::_get_bucket_notification_configuration_output::GetBucketNotificationConfigurationOutput;
-
 pub use crate::operation::get_bucket_notification_configuration::_get_bucket_notification_configuration_input::GetBucketNotificationConfigurationInput;
+
+pub use crate::operation::get_bucket_notification_configuration::_get_bucket_notification_configuration_output::GetBucketNotificationConfigurationOutput;
 
 mod _get_bucket_notification_configuration_input;
 

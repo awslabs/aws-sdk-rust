@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_evaluation_jo
     }
 }
 
-pub use crate::operation::stop_evaluation_job::_stop_evaluation_job_output::StopEvaluationJobOutput;
-
 pub use crate::operation::stop_evaluation_job::_stop_evaluation_job_input::StopEvaluationJobInput;
+
+pub use crate::operation::stop_evaluation_job::_stop_evaluation_job_output::StopEvaluationJobOutput;
 
 mod _stop_evaluation_job_input;
 

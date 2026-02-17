@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_presigned_n
     }
 }
 
-pub use crate::operation::create_presigned_notebook_url::_create_presigned_notebook_url_output::CreatePresignedNotebookUrlOutput;
-
 pub use crate::operation::create_presigned_notebook_url::_create_presigned_notebook_url_input::CreatePresignedNotebookUrlInput;
+
+pub use crate::operation::create_presigned_notebook_url::_create_presigned_notebook_url_output::CreatePresignedNotebookUrlOutput;
 
 mod _create_presigned_notebook_url_input;
 

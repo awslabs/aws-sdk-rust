@@ -470,9 +470,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_queue::Crea
     }
 }
 
-pub use crate::operation::create_queue::_create_queue_output::CreateQueueOutput;
-
 pub use crate::operation::create_queue::_create_queue_input::CreateQueueInput;
+
+pub use crate::operation::create_queue::_create_queue_output::CreateQueueOutput;
 
 mod _create_queue_input;
 

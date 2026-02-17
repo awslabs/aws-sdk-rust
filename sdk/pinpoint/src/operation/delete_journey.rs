@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_journey::De
     }
 }
 
-pub use crate::operation::delete_journey::_delete_journey_output::DeleteJourneyOutput;
-
 pub use crate::operation::delete_journey::_delete_journey_input::DeleteJourneyInput;
+
+pub use crate::operation::delete_journey::_delete_journey_output::DeleteJourneyOutput;
 
 mod _delete_journey_input;
 

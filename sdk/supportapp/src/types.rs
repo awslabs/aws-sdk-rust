@@ -3,9 +3,9 @@ pub use crate::types::_notification_severity_level::NotificationSeverityLevel;
 
 pub use crate::types::_account_type::AccountType;
 
-pub use crate::types::_slack_workspace_configuration::SlackWorkspaceConfiguration;
-
 pub use crate::types::_slack_channel_configuration::SlackChannelConfiguration;
+
+pub use crate::types::_slack_workspace_configuration::SlackWorkspaceConfiguration;
 
 mod _account_type;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_type_limits::_describe_instance_type_limits_output::DescribeInstanceTypeLimitsOutput;
-
 pub use crate::operation::describe_instance_type_limits::_describe_instance_type_limits_input::DescribeInstanceTypeLimitsInput;
+
+pub use crate::operation::describe_instance_type_limits::_describe_instance_type_limits_output::DescribeInstanceTypeLimitsOutput;
 
 mod _describe_instance_type_limits_input;
 

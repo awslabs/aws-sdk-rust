@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_cases::Sear
     }
 }
 
-pub use crate::operation::search_cases::_search_cases_output::SearchCasesOutput;
-
 pub use crate::operation::search_cases::_search_cases_input::SearchCasesInput;
+
+pub use crate::operation::search_cases::_search_cases_output::SearchCasesOutput;
 
 mod _search_cases_input;
 

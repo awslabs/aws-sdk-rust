@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ingestion::
     }
 }
 
-pub use crate::operation::delete_ingestion::_delete_ingestion_output::DeleteIngestionOutput;
-
 pub use crate::operation::delete_ingestion::_delete_ingestion_input::DeleteIngestionInput;
+
+pub use crate::operation::delete_ingestion::_delete_ingestion_output::DeleteIngestionOutput;
 
 mod _delete_ingestion_input;
 

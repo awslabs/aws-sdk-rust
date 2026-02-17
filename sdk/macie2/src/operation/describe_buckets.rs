@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_buckets::
     }
 }
 
-pub use crate::operation::describe_buckets::_describe_buckets_output::DescribeBucketsOutput;
-
 pub use crate::operation::describe_buckets::_describe_buckets_input::DescribeBucketsInput;
+
+pub use crate::operation::describe_buckets::_describe_buckets_output::DescribeBucketsOutput;
 
 mod _describe_buckets_input;
 

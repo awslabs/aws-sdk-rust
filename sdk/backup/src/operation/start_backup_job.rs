@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_backup_job::
     }
 }
 
-pub use crate::operation::start_backup_job::_start_backup_job_output::StartBackupJobOutput;
-
 pub use crate::operation::start_backup_job::_start_backup_job_input::StartBackupJobInput;
+
+pub use crate::operation::start_backup_job::_start_backup_job_output::StartBackupJobOutput;
 
 mod _start_backup_job_input;
 

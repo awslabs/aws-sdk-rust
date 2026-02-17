@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_aggregator_
     }
 }
 
-pub use crate::operation::update_aggregator_v2::_update_aggregator_v2_output::UpdateAggregatorV2Output;
-
 pub use crate::operation::update_aggregator_v2::_update_aggregator_v2_input::UpdateAggregatorV2Input;
+
+pub use crate::operation::update_aggregator_v2::_update_aggregator_v2_output::UpdateAggregatorV2Output;
 
 mod _update_aggregator_v2_input;
 

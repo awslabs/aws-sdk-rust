@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_spending_li
     }
 }
 
-pub use crate::operation::delete_spending_limit::_delete_spending_limit_output::DeleteSpendingLimitOutput;
-
 pub use crate::operation::delete_spending_limit::_delete_spending_limit_input::DeleteSpendingLimitInput;
+
+pub use crate::operation::delete_spending_limit::_delete_spending_limit_output::DeleteSpendingLimitOutput;
 
 mod _delete_spending_limit_input;
 

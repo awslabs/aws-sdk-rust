@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sip_rules::Li
     }
 }
 
-pub use crate::operation::list_sip_rules::_list_sip_rules_output::ListSipRulesOutput;
-
 pub use crate::operation::list_sip_rules::_list_sip_rules_input::ListSipRulesInput;
+
+pub use crate::operation::list_sip_rules::_list_sip_rules_output::ListSipRulesOutput;
 
 mod _list_sip_rules_input;
 

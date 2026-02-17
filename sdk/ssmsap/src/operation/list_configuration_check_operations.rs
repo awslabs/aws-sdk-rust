@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_check_operations::_list_configuration_check_operations_output::ListConfigurationCheckOperationsOutput;
-
 pub use crate::operation::list_configuration_check_operations::_list_configuration_check_operations_input::ListConfigurationCheckOperationsInput;
+
+pub use crate::operation::list_configuration_check_operations::_list_configuration_check_operations_output::ListConfigurationCheckOperationsOutput;
 
 mod _list_configuration_check_operations_input;
 

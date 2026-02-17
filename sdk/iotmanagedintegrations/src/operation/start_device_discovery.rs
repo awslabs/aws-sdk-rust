@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_device_disco
     }
 }
 
-pub use crate::operation::start_device_discovery::_start_device_discovery_output::StartDeviceDiscoveryOutput;
-
 pub use crate::operation::start_device_discovery::_start_device_discovery_input::StartDeviceDiscoveryInput;
+
+pub use crate::operation::start_device_discovery::_start_device_discovery_output::StartDeviceDiscoveryOutput;
 
 mod _start_device_discovery_input;
 

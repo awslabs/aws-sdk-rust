@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_slack_works
     }
 }
 
-pub use crate::operation::delete_slack_workspace_authorization::_delete_slack_workspace_authorization_output::DeleteSlackWorkspaceAuthorizationOutput;
-
 pub use crate::operation::delete_slack_workspace_authorization::_delete_slack_workspace_authorization_input::DeleteSlackWorkspaceAuthorizationInput;
+
+pub use crate::operation::delete_slack_workspace_authorization::_delete_slack_workspace_authorization_output::DeleteSlackWorkspaceAuthorizationOutput;
 
 mod _delete_slack_workspace_authorization_input;
 

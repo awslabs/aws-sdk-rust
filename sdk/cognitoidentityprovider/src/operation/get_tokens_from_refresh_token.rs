@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tokens_from_re
     }
 }
 
-pub use crate::operation::get_tokens_from_refresh_token::_get_tokens_from_refresh_token_output::GetTokensFromRefreshTokenOutput;
-
 pub use crate::operation::get_tokens_from_refresh_token::_get_tokens_from_refresh_token_input::GetTokensFromRefreshTokenInput;
+
+pub use crate::operation::get_tokens_from_refresh_token::_get_tokens_from_refresh_token_output::GetTokensFromRefreshTokenOutput;
 
 mod _get_tokens_from_refresh_token_input;
 

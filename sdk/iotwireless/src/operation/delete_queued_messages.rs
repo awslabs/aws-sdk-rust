@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queued_mess
     }
 }
 
-pub use crate::operation::delete_queued_messages::_delete_queued_messages_output::DeleteQueuedMessagesOutput;
-
 pub use crate::operation::delete_queued_messages::_delete_queued_messages_input::DeleteQueuedMessagesInput;
+
+pub use crate::operation::delete_queued_messages::_delete_queued_messages_output::DeleteQueuedMessagesOutput;
 
 mod _delete_queued_messages_input;
 

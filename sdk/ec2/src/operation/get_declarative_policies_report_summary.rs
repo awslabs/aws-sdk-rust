@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_declarative_po
     }
 }
 
-pub use crate::operation::get_declarative_policies_report_summary::_get_declarative_policies_report_summary_output::GetDeclarativePoliciesReportSummaryOutput;
-
 pub use crate::operation::get_declarative_policies_report_summary::_get_declarative_policies_report_summary_input::GetDeclarativePoliciesReportSummaryInput;
+
+pub use crate::operation::get_declarative_policies_report_summary::_get_declarative_policies_report_summary_output::GetDeclarativePoliciesReportSummaryOutput;
 
 mod _get_declarative_policies_report_summary_input;
 

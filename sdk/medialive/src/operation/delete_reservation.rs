@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_reservation
     }
 }
 
-pub use crate::operation::delete_reservation::_delete_reservation_output::DeleteReservationOutput;
-
 pub use crate::operation::delete_reservation::_delete_reservation_input::DeleteReservationInput;
+
+pub use crate::operation::delete_reservation::_delete_reservation_output::DeleteReservationOutput;
 
 mod _delete_reservation_input;
 

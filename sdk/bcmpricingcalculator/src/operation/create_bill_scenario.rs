@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bill_scenar
     }
 }
 
-pub use crate::operation::create_bill_scenario::_create_bill_scenario_output::CreateBillScenarioOutput;
-
 pub use crate::operation::create_bill_scenario::_create_bill_scenario_input::CreateBillScenarioInput;
+
+pub use crate::operation::create_bill_scenario::_create_bill_scenario_output::CreateBillScenarioOutput;
 
 mod _create_bill_scenario_input;
 

@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_sagemaker_servicecatalog_portfolio_status::_get_sagemaker_servicecatalog_portfolio_status_output::GetSagemakerServicecatalogPortfolioStatusOutput;
-
 pub use crate::operation::get_sagemaker_servicecatalog_portfolio_status::_get_sagemaker_servicecatalog_portfolio_status_input::GetSagemakerServicecatalogPortfolioStatusInput;
+
+pub use crate::operation::get_sagemaker_servicecatalog_portfolio_status::_get_sagemaker_servicecatalog_portfolio_status_output::GetSagemakerServicecatalogPortfolioStatusOutput;
 
 mod _get_sagemaker_servicecatalog_portfolio_status_input;
 

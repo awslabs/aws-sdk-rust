@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_agent
     }
 }
 
-pub use crate::operation::disassociate_agent_collaborator::_disassociate_agent_collaborator_output::DisassociateAgentCollaboratorOutput;
-
 pub use crate::operation::disassociate_agent_collaborator::_disassociate_agent_collaborator_input::DisassociateAgentCollaboratorInput;
+
+pub use crate::operation::disassociate_agent_collaborator::_disassociate_agent_collaborator_output::DisassociateAgentCollaboratorOutput;
 
 mod _disassociate_agent_collaborator_input;
 

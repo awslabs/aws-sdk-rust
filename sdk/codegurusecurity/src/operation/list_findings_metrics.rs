@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_findings_metr
     }
 }
 
-pub use crate::operation::list_findings_metrics::_list_findings_metrics_output::ListFindingsMetricsOutput;
-
 pub use crate::operation::list_findings_metrics::_list_findings_metrics_input::ListFindingsMetricsInput;
+
+pub use crate::operation::list_findings_metrics::_list_findings_metrics_output::ListFindingsMetricsOutput;
 
 mod _list_findings_metrics_input;
 

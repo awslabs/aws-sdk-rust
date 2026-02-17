@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_user:
     }
 }
 
-pub use crate::operation::batch_create_user::_batch_create_user_output::BatchCreateUserOutput;
-
 pub use crate::operation::batch_create_user::_batch_create_user_input::BatchCreateUserInput;
+
+pub use crate::operation::batch_create_user::_batch_create_user_output::BatchCreateUserOutput;
 
 mod _batch_create_user_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_versio
     }
 }
 
-pub use crate::operation::list_policy_versions::_list_policy_versions_output::ListPolicyVersionsOutput;
-
 pub use crate::operation::list_policy_versions::_list_policy_versions_input::ListPolicyVersionsInput;
+
+pub use crate::operation::list_policy_versions::_list_policy_versions_output::ListPolicyVersionsOutput;
 
 mod _list_policy_versions_input;
 

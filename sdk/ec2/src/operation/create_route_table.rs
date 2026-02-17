@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_route_table
     }
 }
 
-pub use crate::operation::create_route_table::_create_route_table_output::CreateRouteTableOutput;
-
 pub use crate::operation::create_route_table::_create_route_table_input::CreateRouteTableInput;
+
+pub use crate::operation::create_route_table::_create_route_table_output::CreateRouteTableOutput;
 
 mod _create_route_table_input;
 

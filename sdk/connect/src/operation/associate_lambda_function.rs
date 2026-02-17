@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_lambda_f
     }
 }
 
-pub use crate::operation::associate_lambda_function::_associate_lambda_function_output::AssociateLambdaFunctionOutput;
-
 pub use crate::operation::associate_lambda_function::_associate_lambda_function_input::AssociateLambdaFunctionInput;
+
+pub use crate::operation::associate_lambda_function::_associate_lambda_function_output::AssociateLambdaFunctionOutput;
 
 mod _associate_lambda_function_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unshare_directory:
     }
 }
 
-pub use crate::operation::unshare_directory::_unshare_directory_output::UnshareDirectoryOutput;
-
 pub use crate::operation::unshare_directory::_unshare_directory_input::UnshareDirectoryInput;
+
+pub use crate::operation::unshare_directory::_unshare_directory_output::UnshareDirectoryOutput;
 
 mod _unshare_directory_input;
 

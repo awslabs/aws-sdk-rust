@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_authori
     }
 }
 
-pub use crate::operation::delete_app_authorization::_delete_app_authorization_output::DeleteAppAuthorizationOutput;
-
 pub use crate::operation::delete_app_authorization::_delete_app_authorization_input::DeleteAppAuthorizationInput;
+
+pub use crate::operation::delete_app_authorization::_delete_app_authorization_output::DeleteAppAuthorizationOutput;
 
 mod _delete_app_authorization_input;
 

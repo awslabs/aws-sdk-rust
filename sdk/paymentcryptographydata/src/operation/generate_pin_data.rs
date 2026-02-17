@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_pin_data:
     }
 }
 
-pub use crate::operation::generate_pin_data::_generate_pin_data_output::GeneratePinDataOutput;
-
 pub use crate::operation::generate_pin_data::_generate_pin_data_input::GeneratePinDataInput;
+
+pub use crate::operation::generate_pin_data::_generate_pin_data_output::GeneratePinDataOutput;
 
 mod _generate_pin_data_input;
 

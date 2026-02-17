@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_sched
     }
 }
 
-pub use crate::operation::batch_delete_scheduled_action::_batch_delete_scheduled_action_output::BatchDeleteScheduledActionOutput;
-
 pub use crate::operation::batch_delete_scheduled_action::_batch_delete_scheduled_action_input::BatchDeleteScheduledActionInput;
+
+pub use crate::operation::batch_delete_scheduled_action::_batch_delete_scheduled_action_output::BatchDeleteScheduledActionOutput;
 
 mod _batch_delete_scheduled_action_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lag::Create
     }
 }
 
-pub use crate::operation::create_lag::_create_lag_output::CreateLagOutput;
-
 pub use crate::operation::create_lag::_create_lag_input::CreateLagInput;
+
+pub use crate::operation::create_lag::_create_lag_output::CreateLagOutput;
 
 mod _create_lag_input;
 

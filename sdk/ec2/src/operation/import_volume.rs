@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_volume::Imp
     }
 }
 
-pub use crate::operation::import_volume::_import_volume_output::ImportVolumeOutput;
-
 pub use crate::operation::import_volume::_import_volume_input::ImportVolumeInput;
+
+pub use crate::operation::import_volume::_import_volume_output::ImportVolumeOutput;
 
 mod _import_volume_input;
 

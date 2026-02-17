@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_replication
     }
 }
 
-pub use crate::operation::create_replication_instance::_create_replication_instance_output::CreateReplicationInstanceOutput;
-
 pub use crate::operation::create_replication_instance::_create_replication_instance_input::CreateReplicationInstanceInput;
+
+pub use crate::operation::create_replication_instance::_create_replication_instance_output::CreateReplicationInstanceOutput;
 
 mod _create_replication_instance_input;
 

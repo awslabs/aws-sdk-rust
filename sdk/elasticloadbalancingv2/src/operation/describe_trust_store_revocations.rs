@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trust_sto
     }
 }
 
-pub use crate::operation::describe_trust_store_revocations::_describe_trust_store_revocations_output::DescribeTrustStoreRevocationsOutput;
-
 pub use crate::operation::describe_trust_store_revocations::_describe_trust_store_revocations_input::DescribeTrustStoreRevocationsInput;
+
+pub use crate::operation::describe_trust_store_revocations::_describe_trust_store_revocations_output::DescribeTrustStoreRevocationsOutput;
 
 mod _describe_trust_store_revocations_input;
 

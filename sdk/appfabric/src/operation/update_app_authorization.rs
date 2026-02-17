@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_app_authori
     }
 }
 
-pub use crate::operation::update_app_authorization::_update_app_authorization_output::UpdateAppAuthorizationOutput;
-
 pub use crate::operation::update_app_authorization::_update_app_authorization_input::UpdateAppAuthorizationInput;
+
+pub use crate::operation::update_app_authorization::_update_app_authorization_output::UpdateAppAuthorizationOutput;
 
 mod _update_app_authorization_input;
 

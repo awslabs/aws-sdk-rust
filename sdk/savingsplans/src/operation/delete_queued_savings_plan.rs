@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queued_savi
     }
 }
 
-pub use crate::operation::delete_queued_savings_plan::_delete_queued_savings_plan_output::DeleteQueuedSavingsPlanOutput;
-
 pub use crate::operation::delete_queued_savings_plan::_delete_queued_savings_plan_input::DeleteQueuedSavingsPlanInput;
+
+pub use crate::operation::delete_queued_savings_plan::_delete_queued_savings_plan_output::DeleteQueuedSavingsPlanOutput;
 
 mod _delete_queued_savings_plan_input;
 

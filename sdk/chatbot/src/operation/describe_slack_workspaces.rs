@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_slack_wor
     }
 }
 
-pub use crate::operation::describe_slack_workspaces::_describe_slack_workspaces_output::DescribeSlackWorkspacesOutput;
-
 pub use crate::operation::describe_slack_workspaces::_describe_slack_workspaces_input::DescribeSlackWorkspacesInput;
+
+pub use crate::operation::describe_slack_workspaces::_describe_slack_workspaces_output::DescribeSlackWorkspacesOutput;
 
 mod _describe_slack_workspaces_input;
 

@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_folder_memb
     }
 }
 
-pub use crate::operation::delete_folder_membership::_delete_folder_membership_output::DeleteFolderMembershipOutput;
-
 pub use crate::operation::delete_folder_membership::_delete_folder_membership_input::DeleteFolderMembershipInput;
+
+pub use crate::operation::delete_folder_membership::_delete_folder_membership_output::DeleteFolderMembershipOutput;
 
 mod _delete_folder_membership_input;
 

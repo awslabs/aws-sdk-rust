@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_enabled_con
     }
 }
 
-pub use crate::operation::update_enabled_control::_update_enabled_control_output::UpdateEnabledControlOutput;
-
 pub use crate::operation::update_enabled_control::_update_enabled_control_input::UpdateEnabledControlInput;
+
+pub use crate::operation::update_enabled_control::_update_enabled_control_output::UpdateEnabledControlOutput;
 
 mod _update_enabled_control_input;
 

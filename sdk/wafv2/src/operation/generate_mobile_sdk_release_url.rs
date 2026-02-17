@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_mobile_sd
     }
 }
 
-pub use crate::operation::generate_mobile_sdk_release_url::_generate_mobile_sdk_release_url_output::GenerateMobileSdkReleaseUrlOutput;
-
 pub use crate::operation::generate_mobile_sdk_release_url::_generate_mobile_sdk_release_url_input::GenerateMobileSdkReleaseUrlInput;
+
+pub use crate::operation::generate_mobile_sdk_release_url::_generate_mobile_sdk_release_url_output::GenerateMobileSdkReleaseUrlOutput;
 
 mod _generate_mobile_sdk_release_url_input;
 

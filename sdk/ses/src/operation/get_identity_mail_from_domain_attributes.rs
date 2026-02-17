@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_mail_
     }
 }
 
-pub use crate::operation::get_identity_mail_from_domain_attributes::_get_identity_mail_from_domain_attributes_output::GetIdentityMailFromDomainAttributesOutput;
-
 pub use crate::operation::get_identity_mail_from_domain_attributes::_get_identity_mail_from_domain_attributes_input::GetIdentityMailFromDomainAttributesInput;
+
+pub use crate::operation::get_identity_mail_from_domain_attributes::_get_identity_mail_from_domain_attributes_output::GetIdentityMailFromDomainAttributesOutput;
 
 mod _get_identity_mail_from_domain_attributes_input;
 

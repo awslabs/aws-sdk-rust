@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recovery_
     }
 }
 
-pub use crate::operation::describe_recovery_instances::_describe_recovery_instances_output::DescribeRecoveryInstancesOutput;
-
 pub use crate::operation::describe_recovery_instances::_describe_recovery_instances_input::DescribeRecoveryInstancesInput;
+
+pub use crate::operation::describe_recovery_instances::_describe_recovery_instances_output::DescribeRecoveryInstancesOutput;
 
 mod _describe_recovery_instances_input;
 

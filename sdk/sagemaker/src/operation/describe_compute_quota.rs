@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_compute_q
     }
 }
 
-pub use crate::operation::describe_compute_quota::_describe_compute_quota_output::DescribeComputeQuotaOutput;
-
 pub use crate::operation::describe_compute_quota::_describe_compute_quota_input::DescribeComputeQuotaInput;
+
+pub use crate::operation::describe_compute_quota::_describe_compute_quota_output::DescribeComputeQuotaOutput;
 
 mod _describe_compute_quota_input;
 

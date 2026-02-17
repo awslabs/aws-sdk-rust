@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_programmatic_a
     }
 }
 
-pub use crate::operation::get_programmatic_access_credentials::_get_programmatic_access_credentials_output::GetProgrammaticAccessCredentialsOutput;
-
 pub use crate::operation::get_programmatic_access_credentials::_get_programmatic_access_credentials_input::GetProgrammaticAccessCredentialsInput;
+
+pub use crate::operation::get_programmatic_access_credentials::_get_programmatic_access_credentials_output::GetProgrammaticAccessCredentialsOutput;
 
 mod _get_programmatic_access_credentials_input;
 

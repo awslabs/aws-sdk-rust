@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_direct_conn
     }
 }
 
-pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_gateway_output::CreateDirectConnectGatewayOutput;
-
 pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_gateway_input::CreateDirectConnectGatewayInput;
+
+pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_gateway_output::CreateDirectConnectGatewayOutput;
 
 mod _create_direct_connect_gateway_input;
 

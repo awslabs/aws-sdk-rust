@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_db_cluster::S
     }
 }
 
-pub use crate::operation::stop_db_cluster::_stop_db_cluster_output::StopDbClusterOutput;
-
 pub use crate::operation::stop_db_cluster::_stop_db_cluster_input::StopDbClusterInput;
+
+pub use crate::operation::stop_db_cluster::_stop_db_cluster_output::StopDbClusterOutput;
 
 mod _stop_db_cluster_input;
 

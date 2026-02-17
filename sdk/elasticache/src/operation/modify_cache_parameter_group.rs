@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cache_param
     }
 }
 
-pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_group_output::ModifyCacheParameterGroupOutput;
-
 pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_group_input::ModifyCacheParameterGroupInput;
+
+pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_group_output::ModifyCacheParameterGroupOutput;
 
 mod _modify_cache_parameter_group_input;
 

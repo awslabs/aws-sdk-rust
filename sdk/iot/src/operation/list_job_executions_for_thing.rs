@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_execution
     }
 }
 
-pub use crate::operation::list_job_executions_for_thing::_list_job_executions_for_thing_output::ListJobExecutionsForThingOutput;
-
 pub use crate::operation::list_job_executions_for_thing::_list_job_executions_for_thing_input::ListJobExecutionsForThingInput;
+
+pub use crate::operation::list_job_executions_for_thing::_list_job_executions_for_thing_output::ListJobExecutionsForThingOutput;
 
 mod _list_job_executions_for_thing_input;
 

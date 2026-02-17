@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_monitor::Up
     }
 }
 
-pub use crate::operation::update_monitor::_update_monitor_output::UpdateMonitorOutput;
-
 pub use crate::operation::update_monitor::_update_monitor_input::UpdateMonitorInput;
+
+pub use crate::operation::update_monitor::_update_monitor_output::UpdateMonitorOutput;
 
 mod _update_monitor_input;
 

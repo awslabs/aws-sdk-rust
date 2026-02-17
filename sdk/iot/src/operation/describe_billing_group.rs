@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_billing_g
     }
 }
 
-pub use crate::operation::describe_billing_group::_describe_billing_group_output::DescribeBillingGroupOutput;
-
 pub use crate::operation::describe_billing_group::_describe_billing_group_input::DescribeBillingGroupInput;
+
+pub use crate::operation::describe_billing_group::_describe_billing_group_output::DescribeBillingGroupOutput;
 
 mod _describe_billing_group_input;
 

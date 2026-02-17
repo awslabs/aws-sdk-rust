@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cluster_sub
     }
 }
 
-pub use crate::operation::modify_cluster_subnet_group::_modify_cluster_subnet_group_output::ModifyClusterSubnetGroupOutput;
-
 pub use crate::operation::modify_cluster_subnet_group::_modify_cluster_subnet_group_input::ModifyClusterSubnetGroupInput;
+
+pub use crate::operation::modify_cluster_subnet_group::_modify_cluster_subnet_group_output::ModifyClusterSubnetGroupOutput;
 
 mod _modify_cluster_subnet_group_input;
 

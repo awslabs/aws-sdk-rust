@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_phone_number_
     }
 }
 
-pub use crate::operation::list_phone_number_orders::_list_phone_number_orders_output::ListPhoneNumberOrdersOutput;
-
 pub use crate::operation::list_phone_number_orders::_list_phone_number_orders_input::ListPhoneNumberOrdersInput;
+
+pub use crate::operation::list_phone_number_orders::_list_phone_number_orders_output::ListPhoneNumberOrdersOutput;
 
 mod _list_phone_number_orders_input;
 

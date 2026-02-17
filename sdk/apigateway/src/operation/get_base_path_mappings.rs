@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_base_path_mapp
     }
 }
 
-pub use crate::operation::get_base_path_mappings::_get_base_path_mappings_output::GetBasePathMappingsOutput;
-
 pub use crate::operation::get_base_path_mappings::_get_base_path_mappings_input::GetBasePathMappingsInput;
+
+pub use crate::operation::get_base_path_mappings::_get_base_path_mappings_output::GetBasePathMappingsOutput;
 
 mod _get_base_path_mappings_input;
 

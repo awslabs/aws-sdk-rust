@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lake_format
     }
 }
 
-pub use crate::operation::delete_lake_formation_opt_in::_delete_lake_formation_opt_in_output::DeleteLakeFormationOptInOutput;
-
 pub use crate::operation::delete_lake_formation_opt_in::_delete_lake_formation_opt_in_input::DeleteLakeFormationOptInInput;
+
+pub use crate::operation::delete_lake_formation_opt_in::_delete_lake_formation_opt_in_output::DeleteLakeFormationOptInOutput;
 
 mod _delete_lake_formation_opt_in_input;
 

@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_permi
     }
 }
 
-pub use crate::operation::get_resource_permission::_get_resource_permission_output::GetResourcePermissionOutput;
-
 pub use crate::operation::get_resource_permission::_get_resource_permission_input::GetResourcePermissionInput;
+
+pub use crate::operation::get_resource_permission::_get_resource_permission_output::GetResourcePermissionOutput;
 
 mod _get_resource_permission_input;
 

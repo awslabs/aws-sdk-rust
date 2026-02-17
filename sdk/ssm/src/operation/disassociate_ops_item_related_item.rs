@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_ops_i
     }
 }
 
-pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_item_related_item_output::DisassociateOpsItemRelatedItemOutput;
-
 pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_item_related_item_input::DisassociateOpsItemRelatedItemInput;
+
+pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_item_related_item_output::DisassociateOpsItemRelatedItemOutput;
 
 mod _disassociate_ops_item_related_item_input;
 

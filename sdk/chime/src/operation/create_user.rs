@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user::Creat
     }
 }
 
-pub use crate::operation::create_user::_create_user_output::CreateUserOutput;
-
 pub use crate::operation::create_user::_create_user_input::CreateUserInput;
+
+pub use crate::operation::create_user::_create_user_output::CreateUserOutput;
 
 mod _create_user_input;
 

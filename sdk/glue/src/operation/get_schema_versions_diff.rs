@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_version
     }
 }
 
-pub use crate::operation::get_schema_versions_diff::_get_schema_versions_diff_output::GetSchemaVersionsDiffOutput;
-
 pub use crate::operation::get_schema_versions_diff::_get_schema_versions_diff_input::GetSchemaVersionsDiffInput;
+
+pub use crate::operation::get_schema_versions_diff::_get_schema_versions_diff_output::GetSchemaVersionsDiffOutput;
 
 mod _get_schema_versions_diff_input;
 

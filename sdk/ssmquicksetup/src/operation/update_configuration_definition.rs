@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configurati
     }
 }
 
-pub use crate::operation::update_configuration_definition::_update_configuration_definition_output::UpdateConfigurationDefinitionOutput;
-
 pub use crate::operation::update_configuration_definition::_update_configuration_definition_input::UpdateConfigurationDefinitionInput;
+
+pub use crate::operation::update_configuration_definition::_update_configuration_definition_output::UpdateConfigurationDefinitionOutput;
 
 mod _update_configuration_definition_input;
 

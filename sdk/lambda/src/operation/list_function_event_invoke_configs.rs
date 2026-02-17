@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_function_even
     }
 }
 
-pub use crate::operation::list_function_event_invoke_configs::_list_function_event_invoke_configs_output::ListFunctionEventInvokeConfigsOutput;
-
 pub use crate::operation::list_function_event_invoke_configs::_list_function_event_invoke_configs_input::ListFunctionEventInvokeConfigsInput;
+
+pub use crate::operation::list_function_event_invoke_configs::_list_function_event_invoke_configs_output::ListFunctionEventInvokeConfigsOutput;
 
 mod _list_function_event_invoke_configs_input;
 

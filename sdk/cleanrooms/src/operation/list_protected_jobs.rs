@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protected_job
     }
 }
 
-pub use crate::operation::list_protected_jobs::_list_protected_jobs_output::ListProtectedJobsOutput;
-
 pub use crate::operation::list_protected_jobs::_list_protected_jobs_input::ListProtectedJobsInput;
+
+pub use crate::operation::list_protected_jobs::_list_protected_jobs_output::ListProtectedJobsOutput;
 
 mod _list_protected_jobs_input;
 

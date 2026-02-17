@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::grant_permissions:
     }
 }
 
-pub use crate::operation::grant_permissions::_grant_permissions_output::GrantPermissionsOutput;
-
 pub use crate::operation::grant_permissions::_grant_permissions_input::GrantPermissionsInput;
+
+pub use crate::operation::grant_permissions::_grant_permissions_output::GrantPermissionsOutput;
 
 mod _grant_permissions_input;
 

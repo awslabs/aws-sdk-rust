@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_configura
     }
 }
 
-pub use crate::operation::validate_configuration_settings::_validate_configuration_settings_output::ValidateConfigurationSettingsOutput;
-
 pub use crate::operation::validate_configuration_settings::_validate_configuration_settings_input::ValidateConfigurationSettingsInput;
+
+pub use crate::operation::validate_configuration_settings::_validate_configuration_settings_output::ValidateConfigurationSettingsOutput;
 
 mod _validate_configuration_settings_input;
 

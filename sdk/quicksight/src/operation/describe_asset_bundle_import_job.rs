@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_asset_bun
     }
 }
 
-pub use crate::operation::describe_asset_bundle_import_job::_describe_asset_bundle_import_job_output::DescribeAssetBundleImportJobOutput;
-
 pub use crate::operation::describe_asset_bundle_import_job::_describe_asset_bundle_import_job_input::DescribeAssetBundleImportJobInput;
+
+pub use crate::operation::describe_asset_bundle_import_job::_describe_asset_bundle_import_job_output::DescribeAssetBundleImportJobOutput;
 
 mod _describe_asset_bundle_import_job_input;
 

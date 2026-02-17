@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_di
     }
 }
 
-pub use crate::operation::update_campaign_dialer_config::_update_campaign_dialer_config_output::UpdateCampaignDialerConfigOutput;
-
 pub use crate::operation::update_campaign_dialer_config::_update_campaign_dialer_config_input::UpdateCampaignDialerConfigInput;
+
+pub use crate::operation::update_campaign_dialer_config::_update_campaign_dialer_config_output::UpdateCampaignDialerConfigOutput;
 
 mod _update_campaign_dialer_config_input;
 

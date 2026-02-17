@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flywheel:
     }
 }
 
-pub use crate::operation::describe_flywheel::_describe_flywheel_output::DescribeFlywheelOutput;
-
 pub use crate::operation::describe_flywheel::_describe_flywheel_input::DescribeFlywheelInput;
+
+pub use crate::operation::describe_flywheel::_describe_flywheel_output::DescribeFlywheelOutput;
 
 mod _describe_flywheel_input;
 

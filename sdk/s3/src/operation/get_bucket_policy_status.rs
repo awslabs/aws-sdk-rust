@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_policy_
     }
 }
 
-pub use crate::operation::get_bucket_policy_status::_get_bucket_policy_status_output::GetBucketPolicyStatusOutput;
-
 pub use crate::operation::get_bucket_policy_status::_get_bucket_policy_status_input::GetBucketPolicyStatusInput;
+
+pub use crate::operation::get_bucket_policy_status::_get_bucket_policy_status_output::GetBucketPolicyStatusOutput;
 
 mod _get_bucket_policy_status_input;
 

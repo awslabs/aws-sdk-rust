@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_revocation_sta
     }
 }
 
-pub use crate::operation::get_revocation_status::_get_revocation_status_output::GetRevocationStatusOutput;
-
 pub use crate::operation::get_revocation_status::_get_revocation_status_input::GetRevocationStatusInput;
+
+pub use crate::operation::get_revocation_status::_get_revocation_status_output::GetRevocationStatusOutput;
 
 mod _get_revocation_status_input;
 

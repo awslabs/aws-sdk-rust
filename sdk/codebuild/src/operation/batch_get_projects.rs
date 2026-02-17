@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_projects
     }
 }
 
-pub use crate::operation::batch_get_projects::_batch_get_projects_output::BatchGetProjectsOutput;
-
 pub use crate::operation::batch_get_projects::_batch_get_projects_input::BatchGetProjectsInput;
+
+pub use crate::operation::batch_get_projects::_batch_get_projects_output::BatchGetProjectsOutput;
 
 mod _batch_get_projects_input;
 

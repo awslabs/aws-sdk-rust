@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_notification_c
     }
 }
 
-pub use crate::operation::get_notification_configuration::_get_notification_configuration_output::GetNotificationConfigurationOutput;
-
 pub use crate::operation::get_notification_configuration::_get_notification_configuration_input::GetNotificationConfigurationInput;
+
+pub use crate::operation::get_notification_configuration::_get_notification_configuration_output::GetNotificationConfigurationOutput;
 
 mod _get_notification_configuration_input;
 

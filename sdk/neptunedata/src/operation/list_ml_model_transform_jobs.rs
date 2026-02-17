@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ml_model_tran
     }
 }
 
-pub use crate::operation::list_ml_model_transform_jobs::_list_ml_model_transform_jobs_output::ListMlModelTransformJobsOutput;
-
 pub use crate::operation::list_ml_model_transform_jobs::_list_ml_model_transform_jobs_input::ListMlModelTransformJobsInput;
+
+pub use crate::operation::list_ml_model_transform_jobs::_list_ml_model_transform_jobs_output::ListMlModelTransformJobsOutput;
 
 mod _list_ml_model_transform_jobs_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_global_clus
     }
 }
 
-pub use crate::operation::delete_global_cluster::_delete_global_cluster_output::DeleteGlobalClusterOutput;
-
 pub use crate::operation::delete_global_cluster::_delete_global_cluster_input::DeleteGlobalClusterInput;
+
+pub use crate::operation::delete_global_cluster::_delete_global_cluster_output::DeleteGlobalClusterOutput;
 
 mod _delete_global_cluster_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_entrie
     }
 }
 
-pub use crate::operation::list_access_entries::_list_access_entries_output::ListAccessEntriesOutput;
-
 pub use crate::operation::list_access_entries::_list_access_entries_input::ListAccessEntriesInput;
+
+pub use crate::operation::list_access_entries::_list_access_entries_output::ListAccessEntriesOutput;
 
 mod _list_access_entries_input;
 

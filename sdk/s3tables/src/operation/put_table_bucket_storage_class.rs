@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_bucket_s
     }
 }
 
-pub use crate::operation::put_table_bucket_storage_class::_put_table_bucket_storage_class_output::PutTableBucketStorageClassOutput;
-
 pub use crate::operation::put_table_bucket_storage_class::_put_table_bucket_storage_class_input::PutTableBucketStorageClassInput;
+
+pub use crate::operation::put_table_bucket_storage_class::_put_table_bucket_storage_class_output::PutTableBucketStorageClassOutput;
 
 mod _put_table_bucket_storage_class_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_impersonation
     }
 }
 
-pub use crate::operation::list_impersonation_roles::_list_impersonation_roles_output::ListImpersonationRolesOutput;
-
 pub use crate::operation::list_impersonation_roles::_list_impersonation_roles_input::ListImpersonationRolesInput;
+
+pub use crate::operation::list_impersonation_roles::_list_impersonation_roles_output::ListImpersonationRolesOutput;
 
 mod _list_impersonation_roles_input;
 

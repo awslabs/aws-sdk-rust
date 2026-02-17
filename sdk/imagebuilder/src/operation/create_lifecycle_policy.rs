@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lifecycle_p
     }
 }
 
-pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_output::CreateLifecyclePolicyOutput;
-
 pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_input::CreateLifecyclePolicyInput;
+
+pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_output::CreateLifecyclePolicyOutput;
 
 mod _create_lifecycle_policy_input;
 

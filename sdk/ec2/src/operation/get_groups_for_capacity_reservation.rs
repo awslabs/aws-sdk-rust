@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_groups_for_cap
     }
 }
 
-pub use crate::operation::get_groups_for_capacity_reservation::_get_groups_for_capacity_reservation_output::GetGroupsForCapacityReservationOutput;
-
 pub use crate::operation::get_groups_for_capacity_reservation::_get_groups_for_capacity_reservation_input::GetGroupsForCapacityReservationInput;
+
+pub use crate::operation::get_groups_for_capacity_reservation::_get_groups_for_capacity_reservation_output::GetGroupsForCapacityReservationOutput;
 
 mod _get_groups_for_capacity_reservation_input;
 

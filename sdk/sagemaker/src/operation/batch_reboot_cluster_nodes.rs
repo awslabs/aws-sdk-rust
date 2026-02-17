@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_reboot_clust
     }
 }
 
-pub use crate::operation::batch_reboot_cluster_nodes::_batch_reboot_cluster_nodes_output::BatchRebootClusterNodesOutput;
-
 pub use crate::operation::batch_reboot_cluster_nodes::_batch_reboot_cluster_nodes_input::BatchRebootClusterNodesInput;
+
+pub use crate::operation::batch_reboot_cluster_nodes::_batch_reboot_cluster_nodes_output::BatchRebootClusterNodesOutput;
 
 mod _batch_reboot_cluster_nodes_input;
 

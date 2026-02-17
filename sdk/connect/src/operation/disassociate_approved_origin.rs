@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_appro
     }
 }
 
-pub use crate::operation::disassociate_approved_origin::_disassociate_approved_origin_output::DisassociateApprovedOriginOutput;
-
 pub use crate::operation::disassociate_approved_origin::_disassociate_approved_origin_input::DisassociateApprovedOriginInput;
+
+pub use crate::operation::disassociate_approved_origin::_disassociate_approved_origin_output::DisassociateApprovedOriginOutput;
 
 mod _disassociate_approved_origin_input;
 

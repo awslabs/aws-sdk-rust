@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_key_policy::Ge
     }
 }
 
-pub use crate::operation::get_key_policy::_get_key_policy_output::GetKeyPolicyOutput;
-
 pub use crate::operation::get_key_policy::_get_key_policy_input::GetKeyPolicyInput;
+
+pub use crate::operation::get_key_policy::_get_key_policy_output::GetKeyPolicyOutput;
 
 mod _get_key_policy_input;
 

@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_sh
     }
 }
 
-pub use crate::operation::delete_resource_share::_delete_resource_share_output::DeleteResourceShareOutput;
-
 pub use crate::operation::delete_resource_share::_delete_resource_share_input::DeleteResourceShareInput;
+
+pub use crate::operation::delete_resource_share::_delete_resource_share_output::DeleteResourceShareOutput;
 
 mod _delete_resource_share_input;
 

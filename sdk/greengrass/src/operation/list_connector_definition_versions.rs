@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connector_def
     }
 }
 
-pub use crate::operation::list_connector_definition_versions::_list_connector_definition_versions_output::ListConnectorDefinitionVersionsOutput;
-
 pub use crate::operation::list_connector_definition_versions::_list_connector_definition_versions_input::ListConnectorDefinitionVersionsInput;
+
+pub use crate::operation::list_connector_definition_versions::_list_connector_definition_versions_output::ListConnectorDefinitionVersionsOutput;
 
 mod _list_connector_definition_versions_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account::Cr
     }
 }
 
-pub use crate::operation::create_account::_create_account_output::CreateAccountOutput;
-
 pub use crate::operation::create_account::_create_account_input::CreateAccountInput;
+
+pub use crate::operation::create_account::_create_account_output::CreateAccountOutput;
 
 mod _create_account_input;
 

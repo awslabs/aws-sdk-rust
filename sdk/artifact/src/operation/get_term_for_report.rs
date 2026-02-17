@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_term_for_repor
     }
 }
 
-pub use crate::operation::get_term_for_report::_get_term_for_report_output::GetTermForReportOutput;
-
 pub use crate::operation::get_term_for_report::_get_term_for_report_input::GetTermForReportInput;
+
+pub use crate::operation::get_term_for_report::_get_term_for_report_output::GetTermForReportOutput;
 
 mod _get_term_for_report_input;
 

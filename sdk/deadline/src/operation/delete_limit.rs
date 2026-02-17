@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_limit::Dele
     }
 }
 
-pub use crate::operation::delete_limit::_delete_limit_output::DeleteLimitOutput;
-
 pub use crate::operation::delete_limit::_delete_limit_input::DeleteLimitInput;
+
+pub use crate::operation::delete_limit::_delete_limit_output::DeleteLimitOutput;
 
 mod _delete_limit_input;
 

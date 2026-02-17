@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_public_dns_
     }
 }
 
-pub use crate::operation::update_public_dns_namespace::_update_public_dns_namespace_output::UpdatePublicDnsNamespaceOutput;
-
 pub use crate::operation::update_public_dns_namespace::_update_public_dns_namespace_input::UpdatePublicDnsNamespaceInput;
+
+pub use crate::operation::update_public_dns_namespace::_update_public_dns_namespace_output::UpdatePublicDnsNamespaceOutput;
 
 mod _update_public_dns_namespace_input;
 

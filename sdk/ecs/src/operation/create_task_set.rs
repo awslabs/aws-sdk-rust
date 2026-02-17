@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_task_set::C
     }
 }
 
-pub use crate::operation::create_task_set::_create_task_set_output::CreateTaskSetOutput;
-
 pub use crate::operation::create_task_set::_create_task_set_input::CreateTaskSetInput;
+
+pub use crate::operation::create_task_set::_create_task_set_output::CreateTaskSetOutput;
 
 mod _create_task_set_input;
 

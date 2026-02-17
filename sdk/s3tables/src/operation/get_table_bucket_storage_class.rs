@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_bucket_s
     }
 }
 
-pub use crate::operation::get_table_bucket_storage_class::_get_table_bucket_storage_class_output::GetTableBucketStorageClassOutput;
-
 pub use crate::operation::get_table_bucket_storage_class::_get_table_bucket_storage_class_input::GetTableBucketStorageClassInput;
+
+pub use crate::operation::get_table_bucket_storage_class::_get_table_bucket_storage_class_output::GetTableBucketStorageClassOutput;
 
 mod _get_table_bucket_storage_class_input;
 

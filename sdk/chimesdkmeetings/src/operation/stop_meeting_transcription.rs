@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_meeting_trans
     }
 }
 
-pub use crate::operation::stop_meeting_transcription::_stop_meeting_transcription_output::StopMeetingTranscriptionOutput;
-
 pub use crate::operation::stop_meeting_transcription::_stop_meeting_transcription_input::StopMeetingTranscriptionInput;
+
+pub use crate::operation::stop_meeting_transcription::_stop_meeting_transcription_output::StopMeetingTranscriptionOutput;
 
 mod _stop_meeting_transcription_input;
 

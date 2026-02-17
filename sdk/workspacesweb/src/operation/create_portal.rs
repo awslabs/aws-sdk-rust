@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_portal::Cre
     }
 }
 
-pub use crate::operation::create_portal::_create_portal_output::CreatePortalOutput;
-
 pub use crate::operation::create_portal::_create_portal_input::CreatePortalInput;
+
+pub use crate::operation::create_portal::_create_portal_output::CreatePortalOutput;
 
 mod _create_portal_input;
 

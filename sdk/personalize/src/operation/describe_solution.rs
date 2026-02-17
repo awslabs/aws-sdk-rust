@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_solution:
     }
 }
 
-pub use crate::operation::describe_solution::_describe_solution_output::DescribeSolutionOutput;
-
 pub use crate::operation::describe_solution::_describe_solution_input::DescribeSolutionInput;
+
+pub use crate::operation::describe_solution::_describe_solution_output::DescribeSolutionOutput;
 
 mod _describe_solution_input;
 

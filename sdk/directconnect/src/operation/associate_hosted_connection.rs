@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_hosted_c
     }
 }
 
-pub use crate::operation::associate_hosted_connection::_associate_hosted_connection_output::AssociateHostedConnectionOutput;
-
 pub use crate::operation::associate_hosted_connection::_associate_hosted_connection_input::AssociateHostedConnectionInput;
+
+pub use crate::operation::associate_hosted_connection::_associate_hosted_connection_output::AssociateHostedConnectionOutput;
 
 mod _associate_hosted_connection_input;
 

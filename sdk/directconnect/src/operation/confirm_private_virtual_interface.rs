@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_private_vi
     }
 }
 
-pub use crate::operation::confirm_private_virtual_interface::_confirm_private_virtual_interface_output::ConfirmPrivateVirtualInterfaceOutput;
-
 pub use crate::operation::confirm_private_virtual_interface::_confirm_private_virtual_interface_input::ConfirmPrivateVirtualInterfaceInput;
+
+pub use crate::operation::confirm_private_virtual_interface::_confirm_private_virtual_interface_output::ConfirmPrivateVirtualInterfaceOutput;
 
 mod _confirm_private_virtual_interface_input;
 

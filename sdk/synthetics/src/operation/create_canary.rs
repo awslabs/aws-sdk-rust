@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_canary::Cre
     }
 }
 
-pub use crate::operation::create_canary::_create_canary_output::CreateCanaryOutput;
-
 pub use crate::operation::create_canary::_create_canary_input::CreateCanaryInput;
+
+pub use crate::operation::create_canary::_create_canary_output::CreateCanaryOutput;
 
 mod _create_canary_input;
 

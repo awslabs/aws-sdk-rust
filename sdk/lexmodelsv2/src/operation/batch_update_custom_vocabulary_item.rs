@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_custo
     }
 }
 
-pub use crate::operation::batch_update_custom_vocabulary_item::_batch_update_custom_vocabulary_item_output::BatchUpdateCustomVocabularyItemOutput;
-
 pub use crate::operation::batch_update_custom_vocabulary_item::_batch_update_custom_vocabulary_item_input::BatchUpdateCustomVocabularyItemInput;
+
+pub use crate::operation::batch_update_custom_vocabulary_item::_batch_update_custom_vocabulary_item_output::BatchUpdateCustomVocabularyItemOutput;
 
 mod _batch_update_custom_vocabulary_item_input;
 

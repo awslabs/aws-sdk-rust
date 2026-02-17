@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connector_des
     }
 }
 
-pub use crate::operation::list_connector_destinations::_list_connector_destinations_output::ListConnectorDestinationsOutput;
-
 pub use crate::operation::list_connector_destinations::_list_connector_destinations_input::ListConnectorDestinationsInput;
+
+pub use crate::operation::list_connector_destinations::_list_connector_destinations_output::ListConnectorDestinationsOutput;
 
 mod _list_connector_destinations_input;
 

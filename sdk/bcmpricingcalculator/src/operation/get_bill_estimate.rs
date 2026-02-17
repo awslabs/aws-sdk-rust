@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bill_estimate:
     }
 }
 
-pub use crate::operation::get_bill_estimate::_get_bill_estimate_output::GetBillEstimateOutput;
-
 pub use crate::operation::get_bill_estimate::_get_bill_estimate_input::GetBillEstimateInput;
+
+pub use crate::operation::get_bill_estimate::_get_bill_estimate_output::GetBillEstimateOutput;
 
 mod _get_bill_estimate_input;
 

@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_policies_stats
     }
 }
 
-pub use crate::operation::get_policies_stats::_get_policies_stats_output::GetPoliciesStatsOutput;
-
 pub use crate::operation::get_policies_stats::_get_policies_stats_input::GetPoliciesStatsInput;
+
+pub use crate::operation::get_policies_stats::_get_policies_stats_output::GetPoliciesStatsOutput;
 
 mod _get_policies_stats_input;
 

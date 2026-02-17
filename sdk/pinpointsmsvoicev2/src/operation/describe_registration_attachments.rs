@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_registrat
     }
 }
 
-pub use crate::operation::describe_registration_attachments::_describe_registration_attachments_output::DescribeRegistrationAttachmentsOutput;
-
 pub use crate::operation::describe_registration_attachments::_describe_registration_attachments_input::DescribeRegistrationAttachmentsInput;
+
+pub use crate::operation::describe_registration_attachments::_describe_registration_attachments_output::DescribeRegistrationAttachmentsOutput;
 
 mod _describe_registration_attachments_input;
 

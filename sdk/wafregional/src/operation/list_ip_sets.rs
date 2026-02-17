@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ip_sets::List
     }
 }
 
-pub use crate::operation::list_ip_sets::_list_ip_sets_output::ListIpSetsOutput;
-
 pub use crate::operation::list_ip_sets::_list_ip_sets_input::ListIpSetsInput;
+
+pub use crate::operation::list_ip_sets::_list_ip_sets_output::ListIpSetsOutput;
 
 mod _list_ip_sets_input;
 

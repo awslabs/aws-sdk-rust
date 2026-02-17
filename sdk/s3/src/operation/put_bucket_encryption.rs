@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_encrypt
     }
 }
 
-pub use crate::operation::put_bucket_encryption::_put_bucket_encryption_output::PutBucketEncryptionOutput;
-
 pub use crate::operation::put_bucket_encryption::_put_bucket_encryption_input::PutBucketEncryptionInput;
+
+pub use crate::operation::put_bucket_encryption::_put_bucket_encryption_output::PutBucketEncryptionOutput;
 
 mod _put_bucket_encryption_input;
 

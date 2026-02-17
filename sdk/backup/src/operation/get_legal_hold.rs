@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_legal_hold::Ge
     }
 }
 
-pub use crate::operation::get_legal_hold::_get_legal_hold_output::GetLegalHoldOutput;
-
 pub use crate::operation::get_legal_hold::_get_legal_hold_input::GetLegalHoldInput;
+
+pub use crate::operation::get_legal_hold::_get_legal_hold_output::GetLegalHoldOutput;
 
 mod _get_legal_hold_input;
 

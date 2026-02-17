@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ruleset::Cr
     }
 }
 
-pub use crate::operation::create_ruleset::_create_ruleset_output::CreateRulesetOutput;
-
 pub use crate::operation::create_ruleset::_create_ruleset_input::CreateRulesetInput;
+
+pub use crate::operation::create_ruleset::_create_ruleset_output::CreateRulesetOutput;
 
 mod _create_ruleset_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_pipeline_en
     }
 }
 
-pub use crate::operation::revoke_pipeline_endpoint_connections::_revoke_pipeline_endpoint_connections_output::RevokePipelineEndpointConnectionsOutput;
-
 pub use crate::operation::revoke_pipeline_endpoint_connections::_revoke_pipeline_endpoint_connections_input::RevokePipelineEndpointConnectionsInput;
+
+pub use crate::operation::revoke_pipeline_endpoint_connections::_revoke_pipeline_endpoint_connections_output::RevokePipelineEndpointConnectionsOutput;
 
 mod _revoke_pipeline_endpoint_connections_input;
 

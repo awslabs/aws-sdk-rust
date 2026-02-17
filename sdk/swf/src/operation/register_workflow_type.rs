@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_workflow_
     }
 }
 
-pub use crate::operation::register_workflow_type::_register_workflow_type_output::RegisterWorkflowTypeOutput;
-
 pub use crate::operation::register_workflow_type::_register_workflow_type_input::RegisterWorkflowTypeInput;
+
+pub use crate::operation::register_workflow_type::_register_workflow_type_output::RegisterWorkflowTypeOutput;
 
 mod _register_workflow_type_input;
 

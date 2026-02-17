@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_load_balancer_
     }
 }
 
-pub use crate::operation::set_load_balancer_policies_of_listener::_set_load_balancer_policies_of_listener_output::SetLoadBalancerPoliciesOfListenerOutput;
-
 pub use crate::operation::set_load_balancer_policies_of_listener::_set_load_balancer_policies_of_listener_input::SetLoadBalancerPoliciesOfListenerInput;
+
+pub use crate::operation::set_load_balancer_policies_of_listener::_set_load_balancer_policies_of_listener_output::SetLoadBalancerPoliciesOfListenerOutput;
 
 mod _set_load_balancer_policies_of_listener_input;
 

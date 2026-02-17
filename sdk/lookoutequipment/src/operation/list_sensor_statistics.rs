@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sensor_statis
     }
 }
 
-pub use crate::operation::list_sensor_statistics::_list_sensor_statistics_output::ListSensorStatisticsOutput;
-
 pub use crate::operation::list_sensor_statistics::_list_sensor_statistics_input::ListSensorStatisticsInput;
+
+pub use crate::operation::list_sensor_statistics::_list_sensor_statistics_output::ListSensorStatisticsOutput;
 
 mod _list_sensor_statistics_input;
 

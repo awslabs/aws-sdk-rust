@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_runs::Lis
     }
 }
 
-pub use crate::operation::list_job_runs::_list_job_runs_output::ListJobRunsOutput;
-
 pub use crate::operation::list_job_runs::_list_job_runs_input::ListJobRunsInput;
+
+pub use crate::operation::list_job_runs::_list_job_runs_output::ListJobRunsOutput;
 
 mod _list_job_runs_input;
 

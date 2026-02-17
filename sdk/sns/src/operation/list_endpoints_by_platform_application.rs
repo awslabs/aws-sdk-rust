@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_endpoints_by_
     }
 }
 
-pub use crate::operation::list_endpoints_by_platform_application::_list_endpoints_by_platform_application_output::ListEndpointsByPlatformApplicationOutput;
-
 pub use crate::operation::list_endpoints_by_platform_application::_list_endpoints_by_platform_application_input::ListEndpointsByPlatformApplicationInput;
+
+pub use crate::operation::list_endpoints_by_platform_application::_list_endpoints_by_platform_application_output::ListEndpointsByPlatformApplicationOutput;
 
 mod _list_endpoints_by_platform_application_input;
 

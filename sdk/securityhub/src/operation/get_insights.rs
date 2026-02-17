@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_insights::GetI
     }
 }
 
-pub use crate::operation::get_insights::_get_insights_output::GetInsightsOutput;
-
 pub use crate::operation::get_insights::_get_insights_input::GetInsightsInput;
+
+pub use crate::operation::get_insights::_get_insights_output::GetInsightsOutput;
 
 mod _get_insights_input;
 

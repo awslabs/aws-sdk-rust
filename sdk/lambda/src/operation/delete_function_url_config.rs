@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_function_ur
     }
 }
 
-pub use crate::operation::delete_function_url_config::_delete_function_url_config_output::DeleteFunctionUrlConfigOutput;
-
 pub use crate::operation::delete_function_url_config::_delete_function_url_config_input::DeleteFunctionUrlConfigInput;
+
+pub use crate::operation::delete_function_url_config::_delete_function_url_config_output::DeleteFunctionUrlConfigOutput;
 
 mod _delete_function_url_config_input;
 

@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_agent_colla
     }
 }
 
-pub use crate::operation::update_agent_collaborator::_update_agent_collaborator_output::UpdateAgentCollaboratorOutput;
-
 pub use crate::operation::update_agent_collaborator::_update_agent_collaborator_input::UpdateAgentCollaboratorInput;
+
+pub use crate::operation::update_agent_collaborator::_update_agent_collaborator_output::UpdateAgentCollaboratorOutput;
 
 mod _update_agent_collaborator_input;
 

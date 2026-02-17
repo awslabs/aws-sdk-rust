@@ -484,9 +484,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_journey_date_r
     }
 }
 
-pub use crate::operation::get_journey_date_range_kpi::_get_journey_date_range_kpi_output::GetJourneyDateRangeKpiOutput;
-
 pub use crate::operation::get_journey_date_range_kpi::_get_journey_date_range_kpi_input::GetJourneyDateRangeKpiInput;
+
+pub use crate::operation::get_journey_date_range_kpi::_get_journey_date_range_kpi_output::GetJourneyDateRangeKpiOutput;
 
 mod _get_journey_date_range_kpi_input;
 

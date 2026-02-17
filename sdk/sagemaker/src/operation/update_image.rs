@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image::Upda
     }
 }
 
-pub use crate::operation::update_image::_update_image_output::UpdateImageOutput;
-
 pub use crate::operation::update_image::_update_image_input::UpdateImageInput;
+
+pub use crate::operation::update_image::_update_image_output::UpdateImageOutput;
 
 mod _update_image_input;
 

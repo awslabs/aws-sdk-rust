@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_protected_quer
     }
 }
 
-pub use crate::operation::get_protected_query::_get_protected_query_output::GetProtectedQueryOutput;
-
 pub use crate::operation::get_protected_query::_get_protected_query_input::GetProtectedQueryInput;
+
+pub use crate::operation::get_protected_query::_get_protected_query_output::GetProtectedQueryOutput;
 
 mod _get_protected_query_input;
 

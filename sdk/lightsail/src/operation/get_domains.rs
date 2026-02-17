@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domains::GetDo
     }
 }
 
-pub use crate::operation::get_domains::_get_domains_output::GetDomainsOutput;
-
 pub use crate::operation::get_domains::_get_domains_input::GetDomainsInput;
+
+pub use crate::operation::get_domains::_get_domains_output::GetDomainsOutput;
 
 mod _get_domains_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::end_session::EndSe
     }
 }
 
-pub use crate::operation::end_session::_end_session_output::EndSessionOutput;
-
 pub use crate::operation::end_session::_end_session_input::EndSessionInput;
+
+pub use crate::operation::end_session::_end_session_output::EndSessionOutput;
 
 mod _end_session_input;
 

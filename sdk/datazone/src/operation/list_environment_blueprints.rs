@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_environment_b
     }
 }
 
-pub use crate::operation::list_environment_blueprints::_list_environment_blueprints_output::ListEnvironmentBlueprintsOutput;
-
 pub use crate::operation::list_environment_blueprints::_list_environment_blueprints_input::ListEnvironmentBlueprintsInput;
+
+pub use crate::operation::list_environment_blueprints::_list_environment_blueprints_output::ListEnvironmentBlueprintsOutput;
 
 mod _list_environment_blueprints_input;
 

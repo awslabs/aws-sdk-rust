@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_traffic_policy
     }
 }
 
-pub use crate::operation::get_traffic_policy_instance::_get_traffic_policy_instance_output::GetTrafficPolicyInstanceOutput;
-
 pub use crate::operation::get_traffic_policy_instance::_get_traffic_policy_instance_input::GetTrafficPolicyInstanceInput;
+
+pub use crate::operation::get_traffic_policy_instance::_get_traffic_policy_instance_output::GetTrafficPolicyInstanceOutput;
 
 mod _get_traffic_policy_instance_input;
 

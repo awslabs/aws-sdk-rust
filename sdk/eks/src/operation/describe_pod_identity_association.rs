@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pod_ident
     }
 }
 
-pub use crate::operation::describe_pod_identity_association::_describe_pod_identity_association_output::DescribePodIdentityAssociationOutput;
-
 pub use crate::operation::describe_pod_identity_association::_describe_pod_identity_association_input::DescribePodIdentityAssociationInput;
+
+pub use crate::operation::describe_pod_identity_association::_describe_pod_identity_association_output::DescribePodIdentityAssociationOutput;
 
 mod _describe_pod_identity_association_input;
 

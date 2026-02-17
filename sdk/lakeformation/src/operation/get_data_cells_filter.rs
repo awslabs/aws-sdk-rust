@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_cells_fil
     }
 }
 
-pub use crate::operation::get_data_cells_filter::_get_data_cells_filter_output::GetDataCellsFilterOutput;
-
 pub use crate::operation::get_data_cells_filter::_get_data_cells_filter_input::GetDataCellsFilterInput;
+
+pub use crate::operation::get_data_cells_filter::_get_data_cells_filter_output::GetDataCellsFilterOutput;
 
 mod _get_data_cells_filter_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_network_setti
     }
 }
 
-pub use crate::operation::list_network_settings::_list_network_settings_output::ListNetworkSettingsOutput;
-
 pub use crate::operation::list_network_settings::_list_network_settings_input::ListNetworkSettingsInput;
+
+pub use crate::operation::list_network_settings::_list_network_settings_output::ListNetworkSettingsOutput;
 
 mod _list_network_settings_input;
 

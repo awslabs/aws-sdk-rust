@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_object::Att
     }
 }
 
-pub use crate::operation::attach_object::_attach_object_output::AttachObjectOutput;
-
 pub use crate::operation::attach_object::_attach_object_input::AttachObjectInput;
+
+pub use crate::operation::attach_object::_attach_object_output::AttachObjectOutput;
 
 mod _attach_object_input;
 

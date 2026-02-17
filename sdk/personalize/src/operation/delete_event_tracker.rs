@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_track
     }
 }
 
-pub use crate::operation::delete_event_tracker::_delete_event_tracker_output::DeleteEventTrackerOutput;
-
 pub use crate::operation::delete_event_tracker::_delete_event_tracker_input::DeleteEventTrackerInput;
+
+pub use crate::operation::delete_event_tracker::_delete_event_tracker_output::DeleteEventTrackerOutput;
 
 mod _delete_event_tracker_input;
 

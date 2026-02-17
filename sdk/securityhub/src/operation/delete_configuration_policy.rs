@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configurati
     }
 }
 
-pub use crate::operation::delete_configuration_policy::_delete_configuration_policy_output::DeleteConfigurationPolicyOutput;
-
 pub use crate::operation::delete_configuration_policy::_delete_configuration_policy_input::DeleteConfigurationPolicyInput;
+
+pub use crate::operation::delete_configuration_policy::_delete_configuration_policy_output::DeleteConfigurationPolicyOutput;
 
 mod _delete_configuration_policy_input;
 

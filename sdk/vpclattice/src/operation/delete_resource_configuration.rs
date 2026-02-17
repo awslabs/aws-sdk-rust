@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_co
     }
 }
 
-pub use crate::operation::delete_resource_configuration::_delete_resource_configuration_output::DeleteResourceConfigurationOutput;
-
 pub use crate::operation::delete_resource_configuration::_delete_resource_configuration_input::DeleteResourceConfigurationInput;
+
+pub use crate::operation::delete_resource_configuration::_delete_resource_configuration_output::DeleteResourceConfigurationOutput;
 
 mod _delete_resource_configuration_input;
 

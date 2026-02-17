@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_channel_expira
     }
 }
 
-pub use crate::operation::put_channel_expiration_settings::_put_channel_expiration_settings_output::PutChannelExpirationSettingsOutput;
-
 pub use crate::operation::put_channel_expiration_settings::_put_channel_expiration_settings_input::PutChannelExpirationSettingsInput;
+
+pub use crate::operation::put_channel_expiration_settings::_put_channel_expiration_settings_output::PutChannelExpirationSettingsOutput;
 
 mod _put_channel_expiration_settings_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_coip_pool::
     }
 }
 
-pub use crate::operation::create_coip_pool::_create_coip_pool_output::CreateCoipPoolOutput;
-
 pub use crate::operation::create_coip_pool::_create_coip_pool_input::CreateCoipPoolInput;
+
+pub use crate::operation::create_coip_pool::_create_coip_pool_output::CreateCoipPoolOutput;
 
 mod _create_coip_pool_input;
 

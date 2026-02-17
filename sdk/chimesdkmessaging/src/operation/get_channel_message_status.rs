@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_channel_messag
     }
 }
 
-pub use crate::operation::get_channel_message_status::_get_channel_message_status_output::GetChannelMessageStatusOutput;
-
 pub use crate::operation::get_channel_message_status::_get_channel_message_status_input::GetChannelMessageStatusInput;
+
+pub use crate::operation::get_channel_message_status::_get_channel_message_status_output::GetChannelMessageStatusOutput;
 
 mod _get_channel_message_status_input;
 

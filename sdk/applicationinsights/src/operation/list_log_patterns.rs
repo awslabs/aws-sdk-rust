@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_log_patterns:
     }
 }
 
-pub use crate::operation::list_log_patterns::_list_log_patterns_output::ListLogPatternsOutput;
-
 pub use crate::operation::list_log_patterns::_list_log_patterns_input::ListLogPatternsInput;
+
+pub use crate::operation::list_log_patterns::_list_log_patterns_output::ListLogPatternsOutput;
 
 mod _list_log_patterns_input;
 

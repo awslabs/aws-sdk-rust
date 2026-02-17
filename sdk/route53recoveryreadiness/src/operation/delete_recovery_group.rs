@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recovery_gr
     }
 }
 
-pub use crate::operation::delete_recovery_group::_delete_recovery_group_output::DeleteRecoveryGroupOutput;
-
 pub use crate::operation::delete_recovery_group::_delete_recovery_group_input::DeleteRecoveryGroupInput;
+
+pub use crate::operation::delete_recovery_group::_delete_recovery_group_output::DeleteRecoveryGroupOutput;
 
 mod _delete_recovery_group_input;
 

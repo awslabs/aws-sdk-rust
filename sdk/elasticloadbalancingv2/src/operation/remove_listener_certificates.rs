@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_listener_ce
     }
 }
 
-pub use crate::operation::remove_listener_certificates::_remove_listener_certificates_output::RemoveListenerCertificatesOutput;
-
 pub use crate::operation::remove_listener_certificates::_remove_listener_certificates_input::RemoveListenerCertificatesInput;
+
+pub use crate::operation::remove_listener_certificates::_remove_listener_certificates_output::RemoveListenerCertificatesOutput;
 
 mod _remove_listener_certificates_input;
 

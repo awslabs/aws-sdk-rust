@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_challenge::
     }
 }
 
-pub use crate::operation::create_challenge::_create_challenge_output::CreateChallengeOutput;
-
 pub use crate::operation::create_challenge::_create_challenge_input::CreateChallengeInput;
+
+pub use crate::operation::create_challenge::_create_challenge_output::CreateChallengeOutput;
 
 mod _create_challenge_input;
 

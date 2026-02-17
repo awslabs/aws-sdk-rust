@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connection_
     }
 }
 
-pub use crate::operation::update_connection_alias_permission::_update_connection_alias_permission_output::UpdateConnectionAliasPermissionOutput;
-
 pub use crate::operation::update_connection_alias_permission::_update_connection_alias_permission_input::UpdateConnectionAliasPermissionInput;
+
+pub use crate::operation::update_connection_alias_permission::_update_connection_alias_permission_output::UpdateConnectionAliasPermissionOutput;
 
 mod _update_connection_alias_permission_input;
 

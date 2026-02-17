@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_game_session_
     }
 }
 
-pub use crate::operation::stop_game_session_placement::_stop_game_session_placement_output::StopGameSessionPlacementOutput;
-
 pub use crate::operation::stop_game_session_placement::_stop_game_session_placement_input::StopGameSessionPlacementInput;
+
+pub use crate::operation::stop_game_session_placement::_stop_game_session_placement_output::StopGameSessionPlacementOutput;
 
 mod _stop_game_session_placement_input;
 

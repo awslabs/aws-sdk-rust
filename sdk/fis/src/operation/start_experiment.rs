@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_experiment::
     }
 }
 
-pub use crate::operation::start_experiment::_start_experiment_output::StartExperimentOutput;
-
 pub use crate::operation::start_experiment::_start_experiment_input::StartExperimentInput;
+
+pub use crate::operation::start_experiment::_start_experiment_output::StartExperimentOutput;
 
 mod _start_experiment_input;
 

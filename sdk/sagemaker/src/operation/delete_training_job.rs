@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_training_jo
     }
 }
 
-pub use crate::operation::delete_training_job::_delete_training_job_output::DeleteTrainingJobOutput;
-
 pub use crate::operation::delete_training_job::_delete_training_job_input::DeleteTrainingJobInput;
+
+pub use crate::operation::delete_training_job::_delete_training_job_output::DeleteTrainingJobOutput;
 
 mod _delete_training_job_input;
 

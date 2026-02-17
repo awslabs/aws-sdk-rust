@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hosted_zone
     }
 }
 
-pub use crate::operation::update_hosted_zone_comment::_update_hosted_zone_comment_output::UpdateHostedZoneCommentOutput;
-
 pub use crate::operation::update_hosted_zone_comment::_update_hosted_zone_comment_input::UpdateHostedZoneCommentInput;
+
+pub use crate::operation::update_hosted_zone_comment::_update_hosted_zone_comment_output::UpdateHostedZoneCommentOutput;
 
 mod _update_hosted_zone_comment_input;
 

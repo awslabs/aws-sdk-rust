@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_supplemental_
     }
 }
 
-pub use crate::operation::list_supplemental_tax_registrations::_list_supplemental_tax_registrations_output::ListSupplementalTaxRegistrationsOutput;
-
 pub use crate::operation::list_supplemental_tax_registrations::_list_supplemental_tax_registrations_input::ListSupplementalTaxRegistrationsInput;
+
+pub use crate::operation::list_supplemental_tax_registrations::_list_supplemental_tax_registrations_output::ListSupplementalTaxRegistrationsOutput;
 
 mod _list_supplemental_tax_registrations_input;
 

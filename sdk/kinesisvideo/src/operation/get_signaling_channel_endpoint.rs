@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_signaling_chan
     }
 }
 
-pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel_endpoint_output::GetSignalingChannelEndpointOutput;
-
 pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel_endpoint_input::GetSignalingChannelEndpointInput;
+
+pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel_endpoint_output::GetSignalingChannelEndpointOutput;
 
 mod _get_signaling_channel_endpoint_input;
 

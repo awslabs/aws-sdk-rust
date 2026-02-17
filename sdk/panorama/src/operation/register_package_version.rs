@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_package_v
     }
 }
 
-pub use crate::operation::register_package_version::_register_package_version_output::RegisterPackageVersionOutput;
-
 pub use crate::operation::register_package_version::_register_package_version_input::RegisterPackageVersionInput;
+
+pub use crate::operation::register_package_version::_register_package_version_output::RegisterPackageVersionOutput;
 
 mod _register_package_version_input;
 

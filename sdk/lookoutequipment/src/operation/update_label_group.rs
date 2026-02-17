@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_label_group
     }
 }
 
-pub use crate::operation::update_label_group::_update_label_group_output::UpdateLabelGroupOutput;
-
 pub use crate::operation::update_label_group::_update_label_group_input::UpdateLabelGroupInput;
+
+pub use crate::operation::update_label_group::_update_label_group_output::UpdateLabelGroupOutput;
 
 mod _update_label_group_input;
 

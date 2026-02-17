@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_document_ana
     }
 }
 
-pub use crate::operation::start_document_analysis::_start_document_analysis_output::StartDocumentAnalysisOutput;
-
 pub use crate::operation::start_document_analysis::_start_document_analysis_input::StartDocumentAnalysisInput;
+
+pub use crate::operation::start_document_analysis::_start_document_analysis_output::StartDocumentAnalysisOutput;
 
 mod _start_document_analysis_input;
 

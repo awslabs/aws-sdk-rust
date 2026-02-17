@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_sso::Enable
     }
 }
 
-pub use crate::operation::enable_sso::_enable_sso_output::EnableSsoOutput;
-
 pub use crate::operation::enable_sso::_enable_sso_input::EnableSsoInput;
+
+pub use crate::operation::enable_sso::_enable_sso_output::EnableSsoOutput;
 
 mod _enable_sso_input;
 

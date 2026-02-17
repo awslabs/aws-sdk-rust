@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_asset_model
     }
 }
 
-pub use crate::operation::create_asset_model::_create_asset_model_output::CreateAssetModelOutput;
-
 pub use crate::operation::create_asset_model::_create_asset_model_input::CreateAssetModelInput;
+
+pub use crate::operation::create_asset_model::_create_asset_model_output::CreateAssetModelOutput;
 
 mod _create_asset_model_input;
 

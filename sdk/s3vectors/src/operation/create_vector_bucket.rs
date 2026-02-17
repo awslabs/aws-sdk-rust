@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vector_buck
     }
 }
 
-pub use crate::operation::create_vector_bucket::_create_vector_bucket_output::CreateVectorBucketOutput;
-
 pub use crate::operation::create_vector_bucket::_create_vector_bucket_input::CreateVectorBucketInput;
+
+pub use crate::operation::create_vector_bucket::_create_vector_bucket_output::CreateVectorBucketOutput;
 
 mod _create_vector_bucket_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_remote_delet
     }
 }
 
-pub use crate::operation::start_remote_delete::_start_remote_delete_output::StartRemoteDeleteOutput;
-
 pub use crate::operation::start_remote_delete::_start_remote_delete_input::StartRemoteDeleteInput;
+
+pub use crate::operation::start_remote_delete::_start_remote_delete_output::StartRemoteDeleteOutput;
 
 mod _start_remote_delete_input;
 

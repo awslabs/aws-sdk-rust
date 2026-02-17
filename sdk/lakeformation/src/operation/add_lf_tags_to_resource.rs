@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_lf_tags_to_res
     }
 }
 
-pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_output::AddLfTagsToResourceOutput;
-
 pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_input::AddLfTagsToResourceInput;
+
+pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_output::AddLfTagsToResourceOutput;
 
 mod _add_lf_tags_to_resource_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_mode
     }
 }
 
-pub use crate::operation::update_custom_model_deployment::_update_custom_model_deployment_output::UpdateCustomModelDeploymentOutput;
-
 pub use crate::operation::update_custom_model_deployment::_update_custom_model_deployment_input::UpdateCustomModelDeploymentInput;
+
+pub use crate::operation::update_custom_model_deployment::_update_custom_model_deployment_output::UpdateCustomModelDeploymentOutput;
 
 mod _update_custom_model_deployment_input;
 

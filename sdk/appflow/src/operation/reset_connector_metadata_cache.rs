@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_connector_me
     }
 }
 
-pub use crate::operation::reset_connector_metadata_cache::_reset_connector_metadata_cache_output::ResetConnectorMetadataCacheOutput;
-
 pub use crate::operation::reset_connector_metadata_cache::_reset_connector_metadata_cache_input::ResetConnectorMetadataCacheInput;
+
+pub use crate::operation::reset_connector_metadata_cache::_reset_connector_metadata_cache_output::ResetConnectorMetadataCacheOutput;
 
 mod _reset_connector_metadata_cache_input;
 

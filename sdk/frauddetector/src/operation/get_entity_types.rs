@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_entity_types::
     }
 }
 
-pub use crate::operation::get_entity_types::_get_entity_types_output::GetEntityTypesOutput;
-
 pub use crate::operation::get_entity_types::_get_entity_types_input::GetEntityTypesInput;
+
+pub use crate::operation::get_entity_types::_get_entity_types_output::GetEntityTypesOutput;
 
 mod _get_entity_types_input;
 

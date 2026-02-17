@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_classificat
     }
 }
 
-pub use crate::operation::update_classification_scope::_update_classification_scope_output::UpdateClassificationScopeOutput;
-
 pub use crate::operation::update_classification_scope::_update_classification_scope_input::UpdateClassificationScopeInput;
+
+pub use crate::operation::update_classification_scope::_update_classification_scope_output::UpdateClassificationScopeOutput;
 
 mod _update_classification_scope_input;
 

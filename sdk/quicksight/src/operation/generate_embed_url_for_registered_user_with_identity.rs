@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::generate_embed_url_for_registered_user_with_identity::_generate_embed_url_for_registered_user_with_identity_output::GenerateEmbedUrlForRegisteredUserWithIdentityOutput;
-
 pub use crate::operation::generate_embed_url_for_registered_user_with_identity::_generate_embed_url_for_registered_user_with_identity_input::GenerateEmbedUrlForRegisteredUserWithIdentityInput;
+
+pub use crate::operation::generate_embed_url_for_registered_user_with_identity::_generate_embed_url_for_registered_user_with_identity_output::GenerateEmbedUrlForRegisteredUserWithIdentityOutput;
 
 mod _generate_embed_url_for_registered_user_with_identity_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_geo_match_s
     }
 }
 
-pub use crate::operation::delete_geo_match_set::_delete_geo_match_set_output::DeleteGeoMatchSetOutput;
-
 pub use crate::operation::delete_geo_match_set::_delete_geo_match_set_input::DeleteGeoMatchSetInput;
+
+pub use crate::operation::delete_geo_match_set::_delete_geo_match_set_output::DeleteGeoMatchSetOutput;
 
 mod _delete_geo_match_set_input;
 

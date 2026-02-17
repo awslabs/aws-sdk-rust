@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vcenter_c
     }
 }
 
-pub use crate::operation::describe_vcenter_clients::_describe_vcenter_clients_output::DescribeVcenterClientsOutput;
-
 pub use crate::operation::describe_vcenter_clients::_describe_vcenter_clients_input::DescribeVcenterClientsInput;
+
+pub use crate::operation::describe_vcenter_clients::_describe_vcenter_clients_output::DescribeVcenterClientsOutput;
 
 mod _describe_vcenter_clients_input;
 

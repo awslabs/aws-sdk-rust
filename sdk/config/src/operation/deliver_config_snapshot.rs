@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deliver_config_sna
     }
 }
 
-pub use crate::operation::deliver_config_snapshot::_deliver_config_snapshot_output::DeliverConfigSnapshotOutput;
-
 pub use crate::operation::deliver_config_snapshot::_deliver_config_snapshot_input::DeliverConfigSnapshotInput;
+
+pub use crate::operation::deliver_config_snapshot::_deliver_config_snapshot_output::DeliverConfigSnapshotOutput;
 
 mod _deliver_config_snapshot_input;
 

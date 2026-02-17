@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ipam_pool::
     }
 }
 
-pub use crate::operation::delete_ipam_pool::_delete_ipam_pool_output::DeleteIpamPoolOutput;
-
 pub use crate::operation::delete_ipam_pool::_delete_ipam_pool_input::DeleteIpamPoolInput;
+
+pub use crate::operation::delete_ipam_pool::_delete_ipam_pool_output::DeleteIpamPoolOutput;
 
 mod _delete_ipam_pool_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_template::
     }
 }
 
-pub use crate::operation::get_job_template::_get_job_template_output::GetJobTemplateOutput;
-
 pub use crate::operation::get_job_template::_get_job_template_input::GetJobTemplateInput;
+
+pub use crate::operation::get_job_template::_get_job_template_output::GetJobTemplateOutput;
 
 mod _get_job_template_input;
 

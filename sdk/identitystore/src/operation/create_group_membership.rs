@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_group_membe
     }
 }
 
-pub use crate::operation::create_group_membership::_create_group_membership_output::CreateGroupMembershipOutput;
-
 pub use crate::operation::create_group_membership::_create_group_membership_input::CreateGroupMembershipInput;
+
+pub use crate::operation::create_group_membership::_create_group_membership_output::CreateGroupMembershipOutput;
 
 mod _create_group_membership_input;
 

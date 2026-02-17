@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lineage_event:
     }
 }
 
-pub use crate::operation::get_lineage_event::_get_lineage_event_output::GetLineageEventOutput;
-
 pub use crate::operation::get_lineage_event::_get_lineage_event_input::GetLineageEventInput;
+
+pub use crate::operation::get_lineage_event::_get_lineage_event_output::GetLineageEventOutput;
 
 mod _get_lineage_event_input;
 

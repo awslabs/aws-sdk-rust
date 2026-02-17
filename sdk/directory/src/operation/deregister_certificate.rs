@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_certifi
     }
 }
 
-pub use crate::operation::deregister_certificate::_deregister_certificate_output::DeregisterCertificateOutput;
-
 pub use crate::operation::deregister_certificate::_deregister_certificate_input::DeregisterCertificateInput;
+
+pub use crate::operation::deregister_certificate::_deregister_certificate_output::DeregisterCertificateOutput;
 
 mod _deregister_certificate_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_snapshot_
     }
 }
 
-pub use crate::operation::describe_snapshot_attribute::_describe_snapshot_attribute_output::DescribeSnapshotAttributeOutput;
-
 pub use crate::operation::describe_snapshot_attribute::_describe_snapshot_attribute_input::DescribeSnapshotAttributeInput;
+
+pub use crate::operation::describe_snapshot_attribute::_describe_snapshot_attribute_output::DescribeSnapshotAttributeOutput;
 
 mod _describe_snapshot_attribute_input;
 

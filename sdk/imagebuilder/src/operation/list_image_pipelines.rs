@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_pipelin
     }
 }
 
-pub use crate::operation::list_image_pipelines::_list_image_pipelines_output::ListImagePipelinesOutput;
-
 pub use crate::operation::list_image_pipelines::_list_image_pipelines_input::ListImagePipelinesInput;
+
+pub use crate::operation::list_image_pipelines::_list_image_pipelines_output::ListImagePipelinesOutput;
 
 mod _list_image_pipelines_input;
 

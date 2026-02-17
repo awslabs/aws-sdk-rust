@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instances
     }
 }
 
-pub use crate::operation::describe_instances::_describe_instances_output::DescribeInstancesOutput;
-
 pub use crate::operation::describe_instances::_describe_instances_input::DescribeInstancesInput;
+
+pub use crate::operation::describe_instances::_describe_instances_output::DescribeInstancesOutput;
 
 mod _describe_instances_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_api_destinati
     }
 }
 
-pub use crate::operation::list_api_destinations::_list_api_destinations_output::ListApiDestinationsOutput;
-
 pub use crate::operation::list_api_destinations::_list_api_destinations_input::ListApiDestinationsInput;
+
+pub use crate::operation::list_api_destinations::_list_api_destinations_output::ListApiDestinationsOutput;
 
 mod _list_api_destinations_input;
 

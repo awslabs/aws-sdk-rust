@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_cells_fi
     }
 }
 
-pub use crate::operation::list_data_cells_filter::_list_data_cells_filter_output::ListDataCellsFilterOutput;
-
 pub use crate::operation::list_data_cells_filter::_list_data_cells_filter_input::ListDataCellsFilterInput;
+
+pub use crate::operation::list_data_cells_filter::_list_data_cells_filter_output::ListDataCellsFilterOutput;
 
 mod _list_data_cells_filter_input;
 

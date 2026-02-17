@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_packages::Lis
     }
 }
 
-pub use crate::operation::list_packages::_list_packages_output::ListPackagesOutput;
-
 pub use crate::operation::list_packages::_list_packages_input::ListPackagesInput;
+
+pub use crate::operation::list_packages::_list_packages_output::ListPackagesOutput;
 
 mod _list_packages_input;
 

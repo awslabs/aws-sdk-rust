@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_task_instance:
     }
 }
 
-pub use crate::operation::get_task_instance::_get_task_instance_output::GetTaskInstanceOutput;
-
 pub use crate::operation::get_task_instance::_get_task_instance_input::GetTaskInstanceInput;
+
+pub use crate::operation::get_task_instance::_get_task_instance_output::GetTaskInstanceOutput;
 
 mod _get_task_instance_input;
 

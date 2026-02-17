@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_templ
     }
 }
 
-pub use crate::operation::list_service_template_versions::_list_service_template_versions_output::ListServiceTemplateVersionsOutput;
-
 pub use crate::operation::list_service_template_versions::_list_service_template_versions_input::ListServiceTemplateVersionsInput;
+
+pub use crate::operation::list_service_template_versions::_list_service_template_versions_output::ListServiceTemplateVersionsOutput;
 
 mod _list_service_template_versions_input;
 

@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_harvest_job
     }
 }
 
-pub use crate::operation::cancel_harvest_job::_cancel_harvest_job_output::CancelHarvestJobOutput;
-
 pub use crate::operation::cancel_harvest_job::_cancel_harvest_job_input::CancelHarvestJobInput;
+
+pub use crate::operation::cancel_harvest_job::_cancel_harvest_job_output::CancelHarvestJobOutput;
 
 mod _cancel_harvest_job_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_invoice_pdf::G
     }
 }
 
-pub use crate::operation::get_invoice_pdf::_get_invoice_pdf_output::GetInvoicePdfOutput;
-
 pub use crate::operation::get_invoice_pdf::_get_invoice_pdf_input::GetInvoicePdfInput;
+
+pub use crate::operation::get_invoice_pdf::_get_invoice_pdf_output::GetInvoicePdfOutput;
 
 mod _get_invoice_pdf_input;
 

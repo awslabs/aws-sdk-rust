@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_dev_endp
     }
 }
 
-pub use crate::operation::batch_get_dev_endpoints::_batch_get_dev_endpoints_output::BatchGetDevEndpointsOutput;
-
 pub use crate::operation::batch_get_dev_endpoints::_batch_get_dev_endpoints_input::BatchGetDevEndpointsInput;
+
+pub use crate::operation::batch_get_dev_endpoints::_batch_get_dev_endpoints_output::BatchGetDevEndpointsOutput;
 
 mod _batch_get_dev_endpoints_input;
 

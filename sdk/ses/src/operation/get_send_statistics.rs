@@ -341,9 +341,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_send_statistic
     }
 }
 
-pub use crate::operation::get_send_statistics::_get_send_statistics_output::GetSendStatisticsOutput;
-
 pub use crate::operation::get_send_statistics::_get_send_statistics_input::GetSendStatisticsInput;
+
+pub use crate::operation::get_send_statistics::_get_send_statistics_output::GetSendStatisticsOutput;
 
 mod _get_send_statistics_input;
 

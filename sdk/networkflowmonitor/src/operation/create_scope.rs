@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scope::Crea
     }
 }
 
-pub use crate::operation::create_scope::_create_scope_output::CreateScopeOutput;
-
 pub use crate::operation::create_scope::_create_scope_input::CreateScopeInput;
+
+pub use crate::operation::create_scope::_create_scope_output::CreateScopeOutput;
 
 mod _create_scope_input;
 

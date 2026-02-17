@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_capacity_ta
     }
 }
 
-pub use crate::operation::cancel_capacity_task::_cancel_capacity_task_output::CancelCapacityTaskOutput;
-
 pub use crate::operation::cancel_capacity_task::_cancel_capacity_task_input::CancelCapacityTaskInput;
+
+pub use crate::operation::cancel_capacity_task::_cancel_capacity_task_output::CancelCapacityTaskOutput;
 
 mod _cancel_capacity_task_input;
 

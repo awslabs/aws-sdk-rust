@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_locations::Li
     }
 }
 
-pub use crate::operation::list_locations::_list_locations_output::ListLocationsOutput;
-
 pub use crate::operation::list_locations::_list_locations_input::ListLocationsInput;
+
+pub use crate::operation::list_locations::_list_locations_output::ListLocationsOutput;
 
 mod _list_locations_input;
 

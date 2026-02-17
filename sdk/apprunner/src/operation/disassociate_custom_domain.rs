@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_custo
     }
 }
 
-pub use crate::operation::disassociate_custom_domain::_disassociate_custom_domain_output::DisassociateCustomDomainOutput;
-
 pub use crate::operation::disassociate_custom_domain::_disassociate_custom_domain_input::DisassociateCustomDomainInput;
+
+pub use crate::operation::disassociate_custom_domain::_disassociate_custom_domain_output::DisassociateCustomDomainOutput;
 
 mod _disassociate_custom_domain_input;
 

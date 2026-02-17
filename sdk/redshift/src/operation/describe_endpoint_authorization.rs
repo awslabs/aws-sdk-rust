@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_endpoint_
     }
 }
 
-pub use crate::operation::describe_endpoint_authorization::_describe_endpoint_authorization_output::DescribeEndpointAuthorizationOutput;
-
 pub use crate::operation::describe_endpoint_authorization::_describe_endpoint_authorization_input::DescribeEndpointAuthorizationInput;
+
+pub use crate::operation::describe_endpoint_authorization::_describe_endpoint_authorization_output::DescribeEndpointAuthorizationOutput;
 
 mod _describe_endpoint_authorization_input;
 

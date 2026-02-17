@@ -637,9 +637,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_delegated
     }
 }
 
-pub use crate::operation::register_delegated_administrator::_register_delegated_administrator_output::RegisterDelegatedAdministratorOutput;
-
 pub use crate::operation::register_delegated_administrator::_register_delegated_administrator_input::RegisterDelegatedAdministratorInput;
+
+pub use crate::operation::register_delegated_administrator::_register_delegated_administrator_output::RegisterDelegatedAdministratorOutput;
 
 mod _register_delegated_administrator_input;
 

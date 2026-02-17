@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_notificat
     }
 }
 
-pub use crate::operation::describe_notification_configuration::_describe_notification_configuration_output::DescribeNotificationConfigurationOutput;
-
 pub use crate::operation::describe_notification_configuration::_describe_notification_configuration_input::DescribeNotificationConfigurationInput;
+
+pub use crate::operation::describe_notification_configuration::_describe_notification_configuration_output::DescribeNotificationConfigurationOutput;
 
 mod _describe_notification_configuration_input;
 

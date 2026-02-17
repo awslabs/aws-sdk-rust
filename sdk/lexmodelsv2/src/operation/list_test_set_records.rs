@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_set_reco
     }
 }
 
-pub use crate::operation::list_test_set_records::_list_test_set_records_output::ListTestSetRecordsOutput;
-
 pub use crate::operation::list_test_set_records::_list_test_set_records_input::ListTestSetRecordsInput;
+
+pub use crate::operation::list_test_set_records::_list_test_set_records_output::ListTestSetRecordsOutput;
 
 mod _list_test_set_records_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assignments_f
     }
 }
 
-pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_output::ListAssignmentsForHitOutput;
-
 pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_input::ListAssignmentsForHitInput;
+
+pub use crate::operation::list_assignments_for_hit::_list_assignments_for_hit_output::ListAssignmentsForHitOutput;
 
 mod _list_assignments_for_hit_input;
 

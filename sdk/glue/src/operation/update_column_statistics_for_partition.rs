@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_column_stat
     }
 }
 
-pub use crate::operation::update_column_statistics_for_partition::_update_column_statistics_for_partition_output::UpdateColumnStatisticsForPartitionOutput;
-
 pub use crate::operation::update_column_statistics_for_partition::_update_column_statistics_for_partition_input::UpdateColumnStatisticsForPartitionInput;
+
+pub use crate::operation::update_column_statistics_for_partition::_update_column_statistics_for_partition_output::UpdateColumnStatisticsForPartitionOutput;
 
 mod _update_column_statistics_for_partition_input;
 

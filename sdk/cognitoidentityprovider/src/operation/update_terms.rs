@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_terms::Upda
     }
 }
 
-pub use crate::operation::update_terms::_update_terms_output::UpdateTermsOutput;
-
 pub use crate::operation::update_terms::_update_terms_input::UpdateTermsInput;
+
+pub use crate::operation::update_terms::_update_terms_output::UpdateTermsOutput;
 
 mod _update_terms_input;
 

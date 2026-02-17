@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metric_co
     }
 }
 
-pub use crate::operation::describe_metric_collection_types::_describe_metric_collection_types_output::DescribeMetricCollectionTypesOutput;
-
 pub use crate::operation::describe_metric_collection_types::_describe_metric_collection_types_input::DescribeMetricCollectionTypesInput;
+
+pub use crate::operation::describe_metric_collection_types::_describe_metric_collection_types_output::DescribeMetricCollectionTypesOutput;
 
 mod _describe_metric_collection_types_input;
 

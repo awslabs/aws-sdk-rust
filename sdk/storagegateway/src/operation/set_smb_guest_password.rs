@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_smb_guest_pass
     }
 }
 
-pub use crate::operation::set_smb_guest_password::_set_smb_guest_password_output::SetSmbGuestPasswordOutput;
-
 pub use crate::operation::set_smb_guest_password::_set_smb_guest_password_input::SetSmbGuestPasswordInput;
+
+pub use crate::operation::set_smb_guest_password::_set_smb_guest_password_output::SetSmbGuestPasswordOutput;
 
 mod _set_smb_guest_password_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_image::Crea
     }
 }
 
-pub use crate::operation::create_image::_create_image_output::CreateImageOutput;
-
 pub use crate::operation::create_image::_create_image_input::CreateImageInput;
+
+pub use crate::operation::create_image::_create_image_output::CreateImageOutput;
 
 mod _create_image_input;
 

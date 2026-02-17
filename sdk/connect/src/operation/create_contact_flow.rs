@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_contact_flo
     }
 }
 
-pub use crate::operation::create_contact_flow::_create_contact_flow_output::CreateContactFlowOutput;
-
 pub use crate::operation::create_contact_flow::_create_contact_flow_input::CreateContactFlowInput;
+
+pub use crate::operation::create_contact_flow::_create_contact_flow_output::CreateContactFlowOutput;
 
 mod _create_contact_flow_input;
 

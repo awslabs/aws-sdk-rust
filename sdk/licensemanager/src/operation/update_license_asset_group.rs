@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_license_ass
     }
 }
 
-pub use crate::operation::update_license_asset_group::_update_license_asset_group_output::UpdateLicenseAssetGroupOutput;
-
 pub use crate::operation::update_license_asset_group::_update_license_asset_group_input::UpdateLicenseAssetGroupInput;
+
+pub use crate::operation::update_license_asset_group::_update_license_asset_group_output::UpdateLicenseAssetGroupOutput;
 
 mod _update_license_asset_group_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_insights::Lis
     }
 }
 
-pub use crate::operation::list_insights::_list_insights_output::ListInsightsOutput;
-
 pub use crate::operation::list_insights::_list_insights_input::ListInsightsInput;
+
+pub use crate::operation::list_insights::_list_insights_output::ListInsightsOutput;
 
 mod _list_insights_input;
 

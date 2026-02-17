@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_application_
     }
 }
 
-pub use crate::operation::start_application_refresh::_start_application_refresh_output::StartApplicationRefreshOutput;
-
 pub use crate::operation::start_application_refresh::_start_application_refresh_input::StartApplicationRefreshInput;
+
+pub use crate::operation::start_application_refresh::_start_application_refresh_output::StartApplicationRefreshOutput;
 
 mod _start_application_refresh_input;
 

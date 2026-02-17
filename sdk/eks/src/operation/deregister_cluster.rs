@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_cluster
     }
 }
 
-pub use crate::operation::deregister_cluster::_deregister_cluster_output::DeregisterClusterOutput;
-
 pub use crate::operation::deregister_cluster::_deregister_cluster_input::DeregisterClusterInput;
+
+pub use crate::operation::deregister_cluster::_deregister_cluster_output::DeregisterClusterOutput;
 
 mod _deregister_cluster_input;
 

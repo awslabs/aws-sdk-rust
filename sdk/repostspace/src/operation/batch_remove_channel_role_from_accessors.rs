@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_remove_chann
     }
 }
 
-pub use crate::operation::batch_remove_channel_role_from_accessors::_batch_remove_channel_role_from_accessors_output::BatchRemoveChannelRoleFromAccessorsOutput;
-
 pub use crate::operation::batch_remove_channel_role_from_accessors::_batch_remove_channel_role_from_accessors_input::BatchRemoveChannelRoleFromAccessorsInput;
+
+pub use crate::operation::batch_remove_channel_role_from_accessors::_batch_remove_channel_role_from_accessors_output::BatchRemoveChannelRoleFromAccessorsOutput;
 
 mod _batch_remove_channel_role_from_accessors_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_con
     }
 }
 
-pub use crate::operation::get_deployment_config::_get_deployment_config_output::GetDeploymentConfigOutput;
-
 pub use crate::operation::get_deployment_config::_get_deployment_config_input::GetDeploymentConfigInput;
+
+pub use crate::operation::get_deployment_config::_get_deployment_config_output::GetDeploymentConfigOutput;
 
 mod _get_deployment_config_input;
 

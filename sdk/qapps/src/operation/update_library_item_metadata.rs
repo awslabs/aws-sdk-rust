@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_library_ite
     }
 }
 
-pub use crate::operation::update_library_item_metadata::_update_library_item_metadata_output::UpdateLibraryItemMetadataOutput;
-
 pub use crate::operation::update_library_item_metadata::_update_library_item_metadata_input::UpdateLibraryItemMetadataInput;
+
+pub use crate::operation::update_library_item_metadata::_update_library_item_metadata_output::UpdateLibraryItemMetadataOutput;
 
 mod _update_library_item_metadata_input;
 

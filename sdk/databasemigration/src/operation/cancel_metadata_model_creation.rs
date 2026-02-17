@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_metadata_mo
     }
 }
 
-pub use crate::operation::cancel_metadata_model_creation::_cancel_metadata_model_creation_output::CancelMetadataModelCreationOutput;
-
 pub use crate::operation::cancel_metadata_model_creation::_cancel_metadata_model_creation_input::CancelMetadataModelCreationInput;
+
+pub use crate::operation::cancel_metadata_model_creation::_cancel_metadata_model_creation_output::CancelMetadataModelCreationOutput;
 
 mod _cancel_metadata_model_creation_input;
 

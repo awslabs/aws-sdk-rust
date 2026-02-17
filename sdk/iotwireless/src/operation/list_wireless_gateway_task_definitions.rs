@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_wireless_gate
     }
 }
 
-pub use crate::operation::list_wireless_gateway_task_definitions::_list_wireless_gateway_task_definitions_output::ListWirelessGatewayTaskDefinitionsOutput;
-
 pub use crate::operation::list_wireless_gateway_task_definitions::_list_wireless_gateway_task_definitions_input::ListWirelessGatewayTaskDefinitionsInput;
+
+pub use crate::operation::list_wireless_gateway_task_definitions::_list_wireless_gateway_task_definitions_output::ListWirelessGatewayTaskDefinitionsOutput;
 
 mod _list_wireless_gateway_task_definitions_input;
 

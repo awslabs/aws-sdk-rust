@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_spending_li
     }
 }
 
-pub use crate::operation::update_spending_limit::_update_spending_limit_output::UpdateSpendingLimitOutput;
-
 pub use crate::operation::update_spending_limit::_update_spending_limit_input::UpdateSpendingLimitInput;
+
+pub use crate::operation::update_spending_limit::_update_spending_limit_output::UpdateSpendingLimitOutput;
 
 mod _update_spending_limit_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_assets::
     }
 }
 
-pub use crate::operation::associate_assets::_associate_assets_output::AssociateAssetsOutput;
-
 pub use crate::operation::associate_assets::_associate_assets_input::AssociateAssetsInput;
+
+pub use crate::operation::associate_assets::_associate_assets_output::AssociateAssetsOutput;
 
 mod _associate_assets_input;
 

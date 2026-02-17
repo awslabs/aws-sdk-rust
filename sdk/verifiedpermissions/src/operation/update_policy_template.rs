@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_policy_temp
     }
 }
 
-pub use crate::operation::update_policy_template::_update_policy_template_output::UpdatePolicyTemplateOutput;
-
 pub use crate::operation::update_policy_template::_update_policy_template_input::UpdatePolicyTemplateInput;
+
+pub use crate::operation::update_policy_template::_update_policy_template_output::UpdatePolicyTemplateOutput;
 
 mod _update_policy_template_input;
 

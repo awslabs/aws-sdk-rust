@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_network_
     }
 }
 
-pub use crate::operation::list_core_network_routing_information::_list_core_network_routing_information_output::ListCoreNetworkRoutingInformationOutput;
-
 pub use crate::operation::list_core_network_routing_information::_list_core_network_routing_information_input::ListCoreNetworkRoutingInformationInput;
+
+pub use crate::operation::list_core_network_routing_information::_list_core_network_routing_information_output::ListCoreNetworkRoutingInformationOutput;
 
 mod _list_core_network_routing_information_input;
 

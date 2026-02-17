@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_categ
     }
 }
 
-pub use crate::operation::batch_create_category::_batch_create_category_output::BatchCreateCategoryOutput;
-
 pub use crate::operation::batch_create_category::_batch_create_category_input::BatchCreateCategoryInput;
+
+pub use crate::operation::batch_create_category::_batch_create_category_output::BatchCreateCategoryOutput;
 
 mod _batch_create_category_input;
 

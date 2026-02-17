@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_standard
     }
 }
 
-pub use crate::operation::batch_get_standards_control_associations::_batch_get_standards_control_associations_output::BatchGetStandardsControlAssociationsOutput;
-
 pub use crate::operation::batch_get_standards_control_associations::_batch_get_standards_control_associations_input::BatchGetStandardsControlAssociationsInput;
+
+pub use crate::operation::batch_get_standards_control_associations::_batch_get_standards_control_associations_output::BatchGetStandardsControlAssociationsOutput;
 
 mod _batch_get_standards_control_associations_input;
 

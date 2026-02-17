@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_rule:
     }
 }
 
-pub use crate::operation::delete_event_rule::_delete_event_rule_output::DeleteEventRuleOutput;
-
 pub use crate::operation::delete_event_rule::_delete_event_rule_input::DeleteEventRuleInput;
+
+pub use crate::operation::delete_event_rule::_delete_event_rule_output::DeleteEventRuleOutput;
 
 mod _delete_event_rule_input;
 

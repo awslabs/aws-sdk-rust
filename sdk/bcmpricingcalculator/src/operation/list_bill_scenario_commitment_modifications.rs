@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_bill_scenario_commitment_modifications::_list_bill_scenario_commitment_modifications_output::ListBillScenarioCommitmentModificationsOutput;
-
 pub use crate::operation::list_bill_scenario_commitment_modifications::_list_bill_scenario_commitment_modifications_input::ListBillScenarioCommitmentModificationsInput;
+
+pub use crate::operation::list_bill_scenario_commitment_modifications::_list_bill_scenario_commitment_modifications_output::ListBillScenarioCommitmentModificationsOutput;
 
 mod _list_bill_scenario_commitment_modifications_input;
 

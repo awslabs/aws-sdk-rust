@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pickup_locati
     }
 }
 
-pub use crate::operation::list_pickup_locations::_list_pickup_locations_output::ListPickupLocationsOutput;
-
 pub use crate::operation::list_pickup_locations::_list_pickup_locations_input::ListPickupLocationsInput;
+
+pub use crate::operation::list_pickup_locations::_list_pickup_locations_output::ListPickupLocationsOutput;
 
 mod _list_pickup_locations_input;
 

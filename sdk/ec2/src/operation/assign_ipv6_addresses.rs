@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assign_ipv6_addres
     }
 }
 
-pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_output::AssignIpv6AddressesOutput;
-
 pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_input::AssignIpv6AddressesInput;
+
+pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_output::AssignIpv6AddressesOutput;
 
 mod _assign_ipv6_addresses_input;
 

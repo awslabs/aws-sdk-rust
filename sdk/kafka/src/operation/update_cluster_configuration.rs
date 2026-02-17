@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster_con
     }
 }
 
-pub use crate::operation::update_cluster_configuration::_update_cluster_configuration_output::UpdateClusterConfigurationOutput;
-
 pub use crate::operation::update_cluster_configuration::_update_cluster_configuration_input::UpdateClusterConfigurationInput;
+
+pub use crate::operation::update_cluster_configuration::_update_cluster_configuration_output::UpdateClusterConfigurationOutput;
 
 mod _update_cluster_configuration_input;
 

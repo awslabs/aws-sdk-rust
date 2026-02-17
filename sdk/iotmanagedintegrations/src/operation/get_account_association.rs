@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_associ
     }
 }
 
-pub use crate::operation::get_account_association::_get_account_association_output::GetAccountAssociationOutput;
-
 pub use crate::operation::get_account_association::_get_account_association_input::GetAccountAssociationInput;
+
+pub use crate::operation::get_account_association::_get_account_association_output::GetAccountAssociationOutput;
 
 mod _get_account_association_input;
 

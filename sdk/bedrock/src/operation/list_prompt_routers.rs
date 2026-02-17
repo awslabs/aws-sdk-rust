@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_prompt_router
     }
 }
 
-pub use crate::operation::list_prompt_routers::_list_prompt_routers_output::ListPromptRoutersOutput;
-
 pub use crate::operation::list_prompt_routers::_list_prompt_routers_input::ListPromptRoutersInput;
+
+pub use crate::operation::list_prompt_routers::_list_prompt_routers_output::ListPromptRoutersOutput;
 
 mod _list_prompt_routers_input;
 

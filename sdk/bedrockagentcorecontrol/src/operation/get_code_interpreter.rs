@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_code_interpret
     }
 }
 
-pub use crate::operation::get_code_interpreter::_get_code_interpreter_output::GetCodeInterpreterOutput;
-
 pub use crate::operation::get_code_interpreter::_get_code_interpreter_input::GetCodeInterpreterInput;
+
+pub use crate::operation::get_code_interpreter::_get_code_interpreter_output::GetCodeInterpreterOutput;
 
 mod _get_code_interpreter_input;
 

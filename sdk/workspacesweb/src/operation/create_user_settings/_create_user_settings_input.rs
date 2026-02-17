@@ -32,7 +32,7 @@ pub struct CreateUserSettingsInput {
     pub deep_link_allowed: ::std::option::Option<crate::types::EnabledType>,
     /// <p>The configuration of the toolbar. This allows administrators to select the toolbar type and visual mode, set maximum display resolution for sessions, and choose which items are visible to end users during their sessions. If administrators do not modify these settings, end users retain control over their toolbar preferences.</p>
     pub toolbar_configuration: ::std::option::Option<crate::types::ToolbarConfiguration>,
-    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, localized strings, color theme, and optionally a wallpaper and terms of service.</p>
     pub branding_configuration_input: ::std::option::Option<crate::types::BrandingConfigurationCreateInput>,
     /// <p>Specifies whether the user can use WebAuthn redirection for passwordless login to websites within the streaming session.</p>
     pub web_authn_allowed: ::std::option::Option<crate::types::EnabledType>,
@@ -97,7 +97,7 @@ impl CreateUserSettingsInput {
     pub fn toolbar_configuration(&self) -> ::std::option::Option<&crate::types::ToolbarConfiguration> {
         self.toolbar_configuration.as_ref()
     }
-    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, localized strings, color theme, and optionally a wallpaper and terms of service.</p>
     pub fn branding_configuration_input(&self) -> ::std::option::Option<&crate::types::BrandingConfigurationCreateInput> {
         self.branding_configuration_input.as_ref()
     }
@@ -385,17 +385,17 @@ impl CreateUserSettingsInputBuilder {
     pub fn get_toolbar_configuration(&self) -> &::std::option::Option<crate::types::ToolbarConfiguration> {
         &self.toolbar_configuration
     }
-    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, localized strings, color theme, and optionally a wallpaper and terms of service.</p>
     pub fn branding_configuration_input(mut self, input: crate::types::BrandingConfigurationCreateInput) -> Self {
         self.branding_configuration_input = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, localized strings, color theme, and optionally a wallpaper and terms of service.</p>
     pub fn set_branding_configuration_input(mut self, input: ::std::option::Option<crate::types::BrandingConfigurationCreateInput>) -> Self {
         self.branding_configuration_input = input;
         self
     }
-    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, wallpaper, localized strings, color theme, and an optional terms of service.</p>
+    /// <p>The branding configuration input that customizes the appearance of the web portal for end users. This includes a custom logo, favicon, localized strings, color theme, and optionally a wallpaper and terms of service.</p>
     pub fn get_branding_configuration_input(&self) -> &::std::option::Option<crate::types::BrandingConfigurationCreateInput> {
         &self.branding_configuration_input
     }

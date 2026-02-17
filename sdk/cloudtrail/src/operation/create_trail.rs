@@ -692,9 +692,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trail::Crea
     }
 }
 
-pub use crate::operation::create_trail::_create_trail_output::CreateTrailOutput;
-
 pub use crate::operation::create_trail::_create_trail_input::CreateTrailInput;
+
+pub use crate::operation::create_trail::_create_trail_output::CreateTrailOutput;
 
 mod _create_trail_input;
 

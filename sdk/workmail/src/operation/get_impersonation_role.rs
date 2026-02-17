@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_impersonation_
     }
 }
 
-pub use crate::operation::get_impersonation_role::_get_impersonation_role_output::GetImpersonationRoleOutput;
-
 pub use crate::operation::get_impersonation_role::_get_impersonation_role_input::GetImpersonationRoleInput;
+
+pub use crate::operation::get_impersonation_role::_get_impersonation_role_output::GetImpersonationRoleOutput;
 
 mod _get_impersonation_role_input;
 

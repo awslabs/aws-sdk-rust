@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_fl
     }
 }
 
-pub use crate::operation::list_associated_fleets::_list_associated_fleets_output::ListAssociatedFleetsOutput;
-
 pub use crate::operation::list_associated_fleets::_list_associated_fleets_input::ListAssociatedFleetsInput;
+
+pub use crate::operation::list_associated_fleets::_list_associated_fleets_output::ListAssociatedFleetsOutput;
 
 mod _list_associated_fleets_input;
 

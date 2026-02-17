@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_distributions_by_response_headers_policy_id::_list_distributions_by_response_headers_policy_id_output::ListDistributionsByResponseHeadersPolicyIdOutput;
-
 pub use crate::operation::list_distributions_by_response_headers_policy_id::_list_distributions_by_response_headers_policy_id_input::ListDistributionsByResponseHeadersPolicyIdInput;
+
+pub use crate::operation::list_distributions_by_response_headers_policy_id::_list_distributions_by_response_headers_policy_id_output::ListDistributionsByResponseHeadersPolicyIdOutput;
 
 mod _list_distributions_by_response_headers_policy_id_input;
 

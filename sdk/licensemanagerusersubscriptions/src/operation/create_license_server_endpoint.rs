@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_license_ser
     }
 }
 
-pub use crate::operation::create_license_server_endpoint::_create_license_server_endpoint_output::CreateLicenseServerEndpointOutput;
-
 pub use crate::operation::create_license_server_endpoint::_create_license_server_endpoint_input::CreateLicenseServerEndpointInput;
+
+pub use crate::operation::create_license_server_endpoint::_create_license_server_endpoint_output::CreateLicenseServerEndpointOutput;
 
 mod _create_license_server_endpoint_input;
 

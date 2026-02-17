@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_extended_so
     }
 }
 
-pub use crate::operation::create_extended_source_server::_create_extended_source_server_output::CreateExtendedSourceServerOutput;
-
 pub use crate::operation::create_extended_source_server::_create_extended_source_server_input::CreateExtendedSourceServerInput;
+
+pub use crate::operation::create_extended_source_server::_create_extended_source_server_output::CreateExtendedSourceServerOutput;
 
 mod _create_extended_source_server_input;
 

@@ -604,9 +604,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_transactio
     }
 }
 
-pub use crate::operation::execute_transaction::_execute_transaction_output::ExecuteTransactionOutput;
-
 pub use crate::operation::execute_transaction::_execute_transaction_input::ExecuteTransactionInput;
+
+pub use crate::operation::execute_transaction::_execute_transaction_output::ExecuteTransactionOutput;
 
 mod _execute_transaction_input;
 

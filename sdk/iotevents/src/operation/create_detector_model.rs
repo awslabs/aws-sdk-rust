@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_detector_mo
     }
 }
 
-pub use crate::operation::create_detector_model::_create_detector_model_output::CreateDetectorModelOutput;
-
 pub use crate::operation::create_detector_model::_create_detector_model_input::CreateDetectorModelInput;
+
+pub use crate::operation::create_detector_model::_create_detector_model_output::CreateDetectorModelOutput;
 
 mod _create_detector_model_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_contact::De
     }
 }
 
-pub use crate::operation::delete_contact::_delete_contact_output::DeleteContactOutput;
-
 pub use crate::operation::delete_contact::_delete_contact_input::DeleteContactInput;
+
+pub use crate::operation::delete_contact::_delete_contact_output::DeleteContactOutput;
 
 mod _delete_contact_input;
 

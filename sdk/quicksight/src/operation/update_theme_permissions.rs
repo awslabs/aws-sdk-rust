@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_theme_permi
     }
 }
 
-pub use crate::operation::update_theme_permissions::_update_theme_permissions_output::UpdateThemePermissionsOutput;
-
 pub use crate::operation::update_theme_permissions::_update_theme_permissions_input::UpdateThemePermissionsInput;
+
+pub use crate::operation::update_theme_permissions::_update_theme_permissions_output::UpdateThemePermissionsOutput;
 
 mod _update_theme_permissions_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vault_lock::Ge
     }
 }
 
-pub use crate::operation::get_vault_lock::_get_vault_lock_output::GetVaultLockOutput;
-
 pub use crate::operation::get_vault_lock::_get_vault_lock_input::GetVaultLockInput;
+
+pub use crate::operation::get_vault_lock::_get_vault_lock_output::GetVaultLockOutput;
 
 mod _get_vault_lock_input;
 

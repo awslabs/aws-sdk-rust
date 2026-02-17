@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_topic_reviewe
     }
 }
 
-pub use crate::operation::list_topic_reviewed_answers::_list_topic_reviewed_answers_output::ListTopicReviewedAnswersOutput;
-
 pub use crate::operation::list_topic_reviewed_answers::_list_topic_reviewed_answers_input::ListTopicReviewedAnswersInput;
+
+pub use crate::operation::list_topic_reviewed_answers::_list_topic_reviewed_answers_output::ListTopicReviewedAnswersOutput;
 
 mod _list_topic_reviewed_answers_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workflow_st
     }
 }
 
-pub use crate::operation::delete_workflow_step::_delete_workflow_step_output::DeleteWorkflowStepOutput;
-
 pub use crate::operation::delete_workflow_step::_delete_workflow_step_input::DeleteWorkflowStepInput;
+
+pub use crate::operation::delete_workflow_step::_delete_workflow_step_output::DeleteWorkflowStepOutput;
 
 mod _delete_workflow_step_input;
 

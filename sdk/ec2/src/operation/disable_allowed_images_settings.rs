@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_allowed_im
     }
 }
 
-pub use crate::operation::disable_allowed_images_settings::_disable_allowed_images_settings_output::DisableAllowedImagesSettingsOutput;
-
 pub use crate::operation::disable_allowed_images_settings::_disable_allowed_images_settings_input::DisableAllowedImagesSettingsInput;
+
+pub use crate::operation::disable_allowed_images_settings::_disable_allowed_images_settings_output::DisableAllowedImagesSettingsOutput;
 
 mod _disable_allowed_images_settings_input;
 

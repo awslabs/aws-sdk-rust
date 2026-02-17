@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_object_childr
     }
 }
 
-pub use crate::operation::list_object_children::_list_object_children_output::ListObjectChildrenOutput;
-
 pub use crate::operation::list_object_children::_list_object_children_input::ListObjectChildrenInput;
+
+pub use crate::operation::list_object_children::_list_object_children_output::ListObjectChildrenOutput;
 
 mod _list_object_children_input;
 

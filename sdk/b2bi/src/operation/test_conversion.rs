@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_conversion::T
     }
 }
 
-pub use crate::operation::test_conversion::_test_conversion_output::TestConversionOutput;
-
 pub use crate::operation::test_conversion::_test_conversion_input::TestConversionInput;
+
+pub use crate::operation::test_conversion::_test_conversion_output::TestConversionOutput;
 
 mod _test_conversion_input;
 

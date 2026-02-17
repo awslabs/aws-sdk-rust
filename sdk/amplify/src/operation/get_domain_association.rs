@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_associa
     }
 }
 
-pub use crate::operation::get_domain_association::_get_domain_association_output::GetDomainAssociationOutput;
-
 pub use crate::operation::get_domain_association::_get_domain_association_input::GetDomainAssociationInput;
+
+pub use crate::operation::get_domain_association::_get_domain_association_output::GetDomainAssociationOutput;
 
 mod _get_domain_association_input;
 

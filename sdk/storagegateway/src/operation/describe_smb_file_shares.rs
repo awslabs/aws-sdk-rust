@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_smb_file_
     }
 }
 
-pub use crate::operation::describe_smb_file_shares::_describe_smb_file_shares_output::DescribeSmbFileSharesOutput;
-
 pub use crate::operation::describe_smb_file_shares::_describe_smb_file_shares_input::DescribeSmbFileSharesInput;
+
+pub use crate::operation::describe_smb_file_shares::_describe_smb_file_shares_output::DescribeSmbFileSharesOutput;
 
 mod _describe_smb_file_shares_input;
 

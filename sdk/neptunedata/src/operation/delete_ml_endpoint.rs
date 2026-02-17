@@ -484,9 +484,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ml_endpoint
     }
 }
 
-pub use crate::operation::delete_ml_endpoint::_delete_ml_endpoint_output::DeleteMlEndpointOutput;
-
 pub use crate::operation::delete_ml_endpoint::_delete_ml_endpoint_input::DeleteMlEndpointInput;
+
+pub use crate::operation::delete_ml_endpoint::_delete_ml_endpoint_output::DeleteMlEndpointOutput;
 
 mod _delete_ml_endpoint_input;
 

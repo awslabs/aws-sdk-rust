@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_version
     }
 }
 
-pub use crate::operation::delete_app_version_resource::_delete_app_version_resource_output::DeleteAppVersionResourceOutput;
-
 pub use crate::operation::delete_app_version_resource::_delete_app_version_resource_input::DeleteAppVersionResourceInput;
+
+pub use crate::operation::delete_app_version_resource::_delete_app_version_resource_output::DeleteAppVersionResourceOutput;
 
 mod _delete_app_version_resource_input;
 

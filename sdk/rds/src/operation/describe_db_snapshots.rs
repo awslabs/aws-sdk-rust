@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_snapsh
     }
 }
 
-pub use crate::operation::describe_db_snapshots::_describe_db_snapshots_output::DescribeDbSnapshotsOutput;
-
 pub use crate::operation::describe_db_snapshots::_describe_db_snapshots_input::DescribeDbSnapshotsInput;
+
+pub use crate::operation::describe_db_snapshots::_describe_db_snapshots_output::DescribeDbSnapshotsOutput;
 
 mod _describe_db_snapshots_input;
 

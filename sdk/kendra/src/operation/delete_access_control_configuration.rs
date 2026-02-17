@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_cont
     }
 }
 
-pub use crate::operation::delete_access_control_configuration::_delete_access_control_configuration_output::DeleteAccessControlConfigurationOutput;
-
 pub use crate::operation::delete_access_control_configuration::_delete_access_control_configuration_input::DeleteAccessControlConfigurationInput;
+
+pub use crate::operation::delete_access_control_configuration::_delete_access_control_configuration_output::DeleteAccessControlConfigurationOutput;
 
 mod _delete_access_control_configuration_input;
 

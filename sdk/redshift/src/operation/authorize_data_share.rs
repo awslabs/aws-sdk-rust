@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_data_sha
     }
 }
 
-pub use crate::operation::authorize_data_share::_authorize_data_share_output::AuthorizeDataShareOutput;
-
 pub use crate::operation::authorize_data_share::_authorize_data_share_input::AuthorizeDataShareInput;
+
+pub use crate::operation::authorize_data_share::_authorize_data_share_output::AuthorizeDataShareOutput;
 
 mod _authorize_data_share_input;
 

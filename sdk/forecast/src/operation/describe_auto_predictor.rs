@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_auto_pred
     }
 }
 
-pub use crate::operation::describe_auto_predictor::_describe_auto_predictor_output::DescribeAutoPredictorOutput;
-
 pub use crate::operation::describe_auto_predictor::_describe_auto_predictor_input::DescribeAutoPredictorInput;
+
+pub use crate::operation::describe_auto_predictor::_describe_auto_predictor_output::DescribeAutoPredictorOutput;
 
 mod _describe_auto_predictor_input;
 

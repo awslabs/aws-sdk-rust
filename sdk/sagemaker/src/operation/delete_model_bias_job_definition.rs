@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_model_bias_
     }
 }
 
-pub use crate::operation::delete_model_bias_job_definition::_delete_model_bias_job_definition_output::DeleteModelBiasJobDefinitionOutput;
-
 pub use crate::operation::delete_model_bias_job_definition::_delete_model_bias_job_definition_input::DeleteModelBiasJobDefinitionInput;
+
+pub use crate::operation::delete_model_bias_job_definition::_delete_model_bias_job_definition_output::DeleteModelBiasJobDefinitionOutput;
 
 mod _delete_model_bias_job_definition_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_app_monitor_da
     }
 }
 
-pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_output::GetAppMonitorDataOutput;
-
 pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_input::GetAppMonitorDataInput;
+
+pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_output::GetAppMonitorDataOutput;
 
 mod _get_app_monitor_data_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_autom
     }
 }
 
-pub use crate::operation::batch_delete_automation_rules::_batch_delete_automation_rules_output::BatchDeleteAutomationRulesOutput;
-
 pub use crate::operation::batch_delete_automation_rules::_batch_delete_automation_rules_input::BatchDeleteAutomationRulesInput;
+
+pub use crate::operation::batch_delete_automation_rules::_batch_delete_automation_rules_output::BatchDeleteAutomationRulesOutput;
 
 mod _batch_delete_automation_rules_input;
 

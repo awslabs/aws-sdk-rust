@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_time_series_from_asset_property::_disassociate_time_series_from_asset_property_output::DisassociateTimeSeriesFromAssetPropertyOutput;
-
 pub use crate::operation::disassociate_time_series_from_asset_property::_disassociate_time_series_from_asset_property_input::DisassociateTimeSeriesFromAssetPropertyInput;
+
+pub use crate::operation::disassociate_time_series_from_asset_property::_disassociate_time_series_from_asset_property_output::DisassociateTimeSeriesFromAssetPropertyOutput;
 
 mod _disassociate_time_series_from_asset_property_input;
 

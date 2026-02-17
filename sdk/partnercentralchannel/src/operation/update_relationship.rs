@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_relationshi
     }
 }
 
-pub use crate::operation::update_relationship::_update_relationship_output::UpdateRelationshipOutput;
-
 pub use crate::operation::update_relationship::_update_relationship_input::UpdateRelationshipInput;
+
+pub use crate::operation::update_relationship::_update_relationship_output::UpdateRelationshipOutput;
 
 mod _update_relationship_input;
 

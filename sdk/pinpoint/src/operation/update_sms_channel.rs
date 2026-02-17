@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sms_channel
     }
 }
 
-pub use crate::operation::update_sms_channel::_update_sms_channel_output::UpdateSmsChannelOutput;
-
 pub use crate::operation::update_sms_channel::_update_sms_channel_input::UpdateSmsChannelInput;
+
+pub use crate::operation::update_sms_channel::_update_sms_channel_output::UpdateSmsChannelOutput;
 
 mod _update_sms_channel_input;
 

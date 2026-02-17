@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lexicon::De
     }
 }
 
-pub use crate::operation::delete_lexicon::_delete_lexicon_output::DeleteLexiconOutput;
-
 pub use crate::operation::delete_lexicon::_delete_lexicon_input::DeleteLexiconInput;
+
+pub use crate::operation::delete_lexicon::_delete_lexicon_output::DeleteLexiconOutput;
 
 mod _delete_lexicon_input;
 

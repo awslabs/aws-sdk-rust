@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_imports::List
     }
 }
 
-pub use crate::operation::list_imports::_list_imports_output::ListImportsOutput;
-
 pub use crate::operation::list_imports::_list_imports_input::ListImportsInput;
+
+pub use crate::operation::list_imports::_list_imports_output::ListImportsOutput;
 
 mod _list_imports_input;
 

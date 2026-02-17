@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_account_assignment_creation_status::_describe_account_assignment_creation_status_output::DescribeAccountAssignmentCreationStatusOutput;
-
 pub use crate::operation::describe_account_assignment_creation_status::_describe_account_assignment_creation_status_input::DescribeAccountAssignmentCreationStatusInput;
+
+pub use crate::operation::describe_account_assignment_creation_status::_describe_account_assignment_creation_status_output::DescribeAccountAssignmentCreationStatusOutput;
 
 mod _describe_account_assignment_creation_status_input;
 

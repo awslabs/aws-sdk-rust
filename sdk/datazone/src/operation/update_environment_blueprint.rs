@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_environment
     }
 }
 
-pub use crate::operation::update_environment_blueprint::_update_environment_blueprint_output::UpdateEnvironmentBlueprintOutput;
-
 pub use crate::operation::update_environment_blueprint::_update_environment_blueprint_input::UpdateEnvironmentBlueprintInput;
+
+pub use crate::operation::update_environment_blueprint::_update_environment_blueprint_output::UpdateEnvironmentBlueprintOutput;
 
 mod _update_environment_blueprint_input;
 

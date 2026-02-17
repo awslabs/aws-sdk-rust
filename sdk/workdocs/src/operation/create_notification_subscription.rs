@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_notificatio
     }
 }
 
-pub use crate::operation::create_notification_subscription::_create_notification_subscription_output::CreateNotificationSubscriptionOutput;
-
 pub use crate::operation::create_notification_subscription::_create_notification_subscription_input::CreateNotificationSubscriptionInput;
+
+pub use crate::operation::create_notification_subscription::_create_notification_subscription_output::CreateNotificationSubscriptionOutput;
 
 mod _create_notification_subscription_input;
 

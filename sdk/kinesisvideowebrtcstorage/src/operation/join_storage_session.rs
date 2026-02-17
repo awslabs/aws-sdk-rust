@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::join_storage_sessi
     }
 }
 
-pub use crate::operation::join_storage_session::_join_storage_session_output::JoinStorageSessionOutput;
-
 pub use crate::operation::join_storage_session::_join_storage_session_input::JoinStorageSessionInput;
+
+pub use crate::operation::join_storage_session::_join_storage_session_output::JoinStorageSessionOutput;
 
 mod _join_storage_session_input;
 

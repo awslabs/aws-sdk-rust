@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_profile_key
     }
 }
 
-pub use crate::operation::delete_profile_key::_delete_profile_key_output::DeleteProfileKeyOutput;
-
 pub use crate::operation::delete_profile_key::_delete_profile_key_input::DeleteProfileKeyInput;
+
+pub use crate::operation::delete_profile_key::_delete_profile_key_output::DeleteProfileKeyOutput;
 
 mod _delete_profile_key_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_hdfs::_describe_location_hdfs_output::DescribeLocationHdfsOutput;
-
 pub use crate::operation::describe_location_hdfs::_describe_location_hdfs_input::DescribeLocationHdfsInput;
+
+pub use crate::operation::describe_location_hdfs::_describe_location_hdfs_output::DescribeLocationHdfsOutput;
 
 mod _describe_location_hdfs_input;
 

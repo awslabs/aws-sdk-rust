@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_block_b
     }
 }
 
-pub use crate::operation::create_app_block_builder::_create_app_block_builder_output::CreateAppBlockBuilderOutput;
-
 pub use crate::operation::create_app_block_builder::_create_app_block_builder_input::CreateAppBlockBuilderInput;
+
+pub use crate::operation::create_app_block_builder::_create_app_block_builder_output::CreateAppBlockBuilderOutput;
 
 mod _create_app_block_builder_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hub_content_v
     }
 }
 
-pub use crate::operation::list_hub_content_versions::_list_hub_content_versions_output::ListHubContentVersionsOutput;
-
 pub use crate::operation::list_hub_content_versions::_list_hub_content_versions_input::ListHubContentVersionsInput;
+
+pub use crate::operation::list_hub_content_versions::_list_hub_content_versions_output::ListHubContentVersionsOutput;
 
 mod _list_hub_content_versions_input;
 

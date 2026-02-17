@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_monitoring_ex
     }
 }
 
-pub use crate::operation::list_monitoring_executions::_list_monitoring_executions_output::ListMonitoringExecutionsOutput;
-
 pub use crate::operation::list_monitoring_executions::_list_monitoring_executions_input::ListMonitoringExecutionsInput;
+
+pub use crate::operation::list_monitoring_executions::_list_monitoring_executions_output::ListMonitoringExecutionsOutput;
 
 mod _list_monitoring_executions_input;
 

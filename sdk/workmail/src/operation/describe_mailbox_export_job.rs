@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mailbox_e
     }
 }
 
-pub use crate::operation::describe_mailbox_export_job::_describe_mailbox_export_job_output::DescribeMailboxExportJobOutput;
-
 pub use crate::operation::describe_mailbox_export_job::_describe_mailbox_export_job_input::DescribeMailboxExportJobInput;
+
+pub use crate::operation::describe_mailbox_export_job::_describe_mailbox_export_job_output::DescribeMailboxExportJobOutput;
 
 mod _describe_mailbox_export_job_input;
 

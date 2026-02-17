@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replicato
     }
 }
 
-pub use crate::operation::describe_replicator::_describe_replicator_output::DescribeReplicatorOutput;
-
 pub use crate::operation::describe_replicator::_describe_replicator_input::DescribeReplicatorInput;
+
+pub use crate::operation::describe_replicator::_describe_replicator_output::DescribeReplicatorOutput;
 
 mod _describe_replicator_input;
 

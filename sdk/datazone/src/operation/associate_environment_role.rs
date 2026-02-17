@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_environm
     }
 }
 
-pub use crate::operation::associate_environment_role::_associate_environment_role_output::AssociateEnvironmentRoleOutput;
-
 pub use crate::operation::associate_environment_role::_associate_environment_role_input::AssociateEnvironmentRoleInput;
+
+pub use crate::operation::associate_environment_role::_associate_environment_role_output::AssociateEnvironmentRoleOutput;
 
 mod _associate_environment_role_input;
 

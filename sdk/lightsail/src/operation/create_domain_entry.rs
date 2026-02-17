@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_domain_entr
     }
 }
 
-pub use crate::operation::create_domain_entry::_create_domain_entry_output::CreateDomainEntryOutput;
-
 pub use crate::operation::create_domain_entry::_create_domain_entry_input::CreateDomainEntryInput;
+
+pub use crate::operation::create_domain_entry::_create_domain_entry_output::CreateDomainEntryOutput;
 
 mod _create_domain_entry_input;
 

@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_interpolated_a
     }
 }
 
-pub use crate::operation::get_interpolated_asset_property_values::_get_interpolated_asset_property_values_output::GetInterpolatedAssetPropertyValuesOutput;
-
 pub use crate::operation::get_interpolated_asset_property_values::_get_interpolated_asset_property_values_input::GetInterpolatedAssetPropertyValuesInput;
+
+pub use crate::operation::get_interpolated_asset_property_values::_get_interpolated_asset_property_values_output::GetInterpolatedAssetPropertyValuesOutput;
 
 mod _get_interpolated_asset_property_values_input;
 

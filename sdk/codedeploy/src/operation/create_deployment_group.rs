@@ -693,9 +693,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_deployment_
     }
 }
 
-pub use crate::operation::create_deployment_group::_create_deployment_group_output::CreateDeploymentGroupOutput;
-
 pub use crate::operation::create_deployment_group::_create_deployment_group_input::CreateDeploymentGroupInput;
+
+pub use crate::operation::create_deployment_group::_create_deployment_group_output::CreateDeploymentGroupOutput;
 
 mod _create_deployment_group_input;
 

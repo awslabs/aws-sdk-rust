@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_workspace
     }
 }
 
-pub use crate::operation::describe_workspace_snapshots::_describe_workspace_snapshots_output::DescribeWorkspaceSnapshotsOutput;
-
 pub use crate::operation::describe_workspace_snapshots::_describe_workspace_snapshots_input::DescribeWorkspaceSnapshotsInput;
+
+pub use crate::operation::describe_workspace_snapshots::_describe_workspace_snapshots_output::DescribeWorkspaceSnapshotsOutput;
 
 mod _describe_workspace_snapshots_input;
 

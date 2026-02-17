@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_actio
     }
 }
 
-pub use crate::operation::create_event_action::_create_event_action_output::CreateEventActionOutput;
-
 pub use crate::operation::create_event_action::_create_event_action_input::CreateEventActionInput;
+
+pub use crate::operation::create_event_action::_create_event_action_output::CreateEventActionOutput;
 
 mod _create_event_action_input;
 

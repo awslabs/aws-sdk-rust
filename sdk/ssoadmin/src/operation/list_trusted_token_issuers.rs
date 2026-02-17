@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trusted_token
     }
 }
 
-pub use crate::operation::list_trusted_token_issuers::_list_trusted_token_issuers_output::ListTrustedTokenIssuersOutput;
-
 pub use crate::operation::list_trusted_token_issuers::_list_trusted_token_issuers_input::ListTrustedTokenIssuersInput;
+
+pub use crate::operation::list_trusted_token_issuers::_list_trusted_token_issuers_output::ListTrustedTokenIssuersOutput;
 
 mod _list_trusted_token_issuers_input;
 

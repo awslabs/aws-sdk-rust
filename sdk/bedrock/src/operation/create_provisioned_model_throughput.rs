@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_provisioned
     }
 }
 
-pub use crate::operation::create_provisioned_model_throughput::_create_provisioned_model_throughput_output::CreateProvisionedModelThroughputOutput;
-
 pub use crate::operation::create_provisioned_model_throughput::_create_provisioned_model_throughput_input::CreateProvisionedModelThroughputInput;
+
+pub use crate::operation::create_provisioned_model_throughput::_create_provisioned_model_throughput_output::CreateProvisionedModelThroughputOutput;
 
 mod _create_provisioned_model_throughput_input;
 

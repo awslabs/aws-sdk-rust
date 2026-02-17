@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_decrypted_api_
     }
 }
 
-pub use crate::operation::get_decrypted_api_key::_get_decrypted_api_key_output::GetDecryptedApiKeyOutput;
-
 pub use crate::operation::get_decrypted_api_key::_get_decrypted_api_key_input::GetDecryptedApiKeyInput;
+
+pub use crate::operation::get_decrypted_api_key::_get_decrypted_api_key_output::GetDecryptedApiKeyOutput;
 
 mod _get_decrypted_api_key_input;
 

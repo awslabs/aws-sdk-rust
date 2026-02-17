@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_storage_lens_
     }
 }
 
-pub use crate::operation::list_storage_lens_configurations::_list_storage_lens_configurations_output::ListStorageLensConfigurationsOutput;
-
 pub use crate::operation::list_storage_lens_configurations::_list_storage_lens_configurations_input::ListStorageLensConfigurationsInput;
+
+pub use crate::operation::list_storage_lens_configurations::_list_storage_lens_configurations_output::ListStorageLensConfigurationsOutput;
 
 mod _list_storage_lens_configurations_input;
 

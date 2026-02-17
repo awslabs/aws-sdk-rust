@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trust::Upda
     }
 }
 
-pub use crate::operation::update_trust::_update_trust_output::UpdateTrustOutput;
-
 pub use crate::operation::update_trust::_update_trust_input::UpdateTrustInput;
+
+pub use crate::operation::update_trust::_update_trust_output::UpdateTrustOutput;
 
 mod _update_trust_input;
 

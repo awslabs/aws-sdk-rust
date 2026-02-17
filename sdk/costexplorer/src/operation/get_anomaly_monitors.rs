@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_anomaly_monito
     }
 }
 
-pub use crate::operation::get_anomaly_monitors::_get_anomaly_monitors_output::GetAnomalyMonitorsOutput;
-
 pub use crate::operation::get_anomaly_monitors::_get_anomaly_monitors_input::GetAnomalyMonitorsInput;
+
+pub use crate::operation::get_anomaly_monitors::_get_anomaly_monitors_output::GetAnomalyMonitorsOutput;
 
 mod _get_anomaly_monitors_input;
 

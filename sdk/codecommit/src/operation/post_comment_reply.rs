@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_comment_reply
     }
 }
 
-pub use crate::operation::post_comment_reply::_post_comment_reply_output::PostCommentReplyOutput;
-
 pub use crate::operation::post_comment_reply::_post_comment_reply_input::PostCommentReplyInput;
+
+pub use crate::operation::post_comment_reply::_post_comment_reply_output::PostCommentReplyOutput;
 
 mod _post_comment_reply_input;
 

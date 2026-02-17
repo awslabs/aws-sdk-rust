@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_resource_permi
     }
 }
 
-pub use crate::operation::put_resource_permission::_put_resource_permission_output::PutResourcePermissionOutput;
-
 pub use crate::operation::put_resource_permission::_put_resource_permission_input::PutResourcePermissionInput;
+
+pub use crate::operation::put_resource_permission::_put_resource_permission_output::PutResourcePermissionOutput;
 
 mod _put_resource_permission_input;
 

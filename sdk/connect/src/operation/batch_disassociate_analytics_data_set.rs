@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disassociate
     }
 }
 
-pub use crate::operation::batch_disassociate_analytics_data_set::_batch_disassociate_analytics_data_set_output::BatchDisassociateAnalyticsDataSetOutput;
-
 pub use crate::operation::batch_disassociate_analytics_data_set::_batch_disassociate_analytics_data_set_input::BatchDisassociateAnalyticsDataSetInput;
+
+pub use crate::operation::batch_disassociate_analytics_data_set::_batch_disassociate_analytics_data_set_output::BatchDisassociateAnalyticsDataSetOutput;
 
 mod _batch_disassociate_analytics_data_set_input;
 

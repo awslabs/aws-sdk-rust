@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_security_pr
     }
 }
 
-pub use crate::operation::detach_security_profile::_detach_security_profile_output::DetachSecurityProfileOutput;
-
 pub use crate::operation::detach_security_profile::_detach_security_profile_input::DetachSecurityProfileInput;
+
+pub use crate::operation::detach_security_profile::_detach_security_profile_output::DetachSecurityProfileOutput;
 
 mod _detach_security_profile_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_thing_princip
     }
 }
 
-pub use crate::operation::list_thing_principals::_list_thing_principals_output::ListThingPrincipalsOutput;
-
 pub use crate::operation::list_thing_principals::_list_thing_principals_input::ListThingPrincipalsInput;
+
+pub use crate::operation::list_thing_principals::_list_thing_principals_output::ListThingPrincipalsOutput;
 
 mod _list_thing_principals_input;
 

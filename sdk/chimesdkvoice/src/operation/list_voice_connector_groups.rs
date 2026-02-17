@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_voice_connect
     }
 }
 
-pub use crate::operation::list_voice_connector_groups::_list_voice_connector_groups_output::ListVoiceConnectorGroupsOutput;
-
 pub use crate::operation::list_voice_connector_groups::_list_voice_connector_groups_input::ListVoiceConnectorGroupsInput;
+
+pub use crate::operation::list_voice_connector_groups::_list_voice_connector_groups_output::ListVoiceConnectorGroupsOutput;
 
 mod _list_voice_connector_groups_input;
 

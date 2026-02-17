@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_db_node::Sta
     }
 }
 
-pub use crate::operation::start_db_node::_start_db_node_output::StartDbNodeOutput;
-
 pub use crate::operation::start_db_node::_start_db_node_input::StartDbNodeInput;
+
+pub use crate::operation::start_db_node::_start_db_node_output::StartDbNodeOutput;
 
 mod _start_db_node_input;
 

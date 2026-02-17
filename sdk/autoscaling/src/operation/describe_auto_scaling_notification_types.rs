@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_auto_scal
     }
 }
 
-pub use crate::operation::describe_auto_scaling_notification_types::_describe_auto_scaling_notification_types_output::DescribeAutoScalingNotificationTypesOutput;
-
 pub use crate::operation::describe_auto_scaling_notification_types::_describe_auto_scaling_notification_types_input::DescribeAutoScalingNotificationTypesInput;
+
+pub use crate::operation::describe_auto_scaling_notification_types::_describe_auto_scaling_notification_types_output::DescribeAutoScalingNotificationTypesOutput;
 
 mod _describe_auto_scaling_notification_types_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_list_user_au
     }
 }
 
-pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_events_output::AdminListUserAuthEventsOutput;
-
 pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_events_input::AdminListUserAuthEventsInput;
+
+pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_events_output::AdminListUserAuthEventsOutput;
 
 mod _admin_list_user_auth_events_input;
 

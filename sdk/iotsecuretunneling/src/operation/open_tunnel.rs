@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::open_tunnel::OpenT
     }
 }
 
-pub use crate::operation::open_tunnel::_open_tunnel_output::OpenTunnelOutput;
-
 pub use crate::operation::open_tunnel::_open_tunnel_input::OpenTunnelInput;
+
+pub use crate::operation::open_tunnel::_open_tunnel_output::OpenTunnelOutput;
 
 mod _open_tunnel_input;
 

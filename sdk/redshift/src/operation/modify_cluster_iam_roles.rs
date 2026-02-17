@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cluster_iam
     }
 }
 
-pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_output::ModifyClusterIamRolesOutput;
-
 pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_input::ModifyClusterIamRolesInput;
+
+pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_output::ModifyClusterIamRolesOutput;
 
 mod _modify_cluster_iam_roles_input;
 

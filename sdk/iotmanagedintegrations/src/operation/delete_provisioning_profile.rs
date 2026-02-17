@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_provisionin
     }
 }
 
-pub use crate::operation::delete_provisioning_profile::_delete_provisioning_profile_output::DeleteProvisioningProfileOutput;
-
 pub use crate::operation::delete_provisioning_profile::_delete_provisioning_profile_input::DeleteProvisioningProfileInput;
+
+pub use crate::operation::delete_provisioning_profile::_delete_provisioning_profile_output::DeleteProvisioningProfileOutput;
 
 mod _delete_provisioning_profile_input;
 

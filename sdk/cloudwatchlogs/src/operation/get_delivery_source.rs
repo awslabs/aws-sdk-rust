@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delivery_sourc
     }
 }
 
-pub use crate::operation::get_delivery_source::_get_delivery_source_output::GetDeliverySourceOutput;
-
 pub use crate::operation::get_delivery_source::_get_delivery_source_input::GetDeliverySourceInput;
+
+pub use crate::operation::get_delivery_source::_get_delivery_source_output::GetDeliverySourceOutput;
 
 mod _get_delivery_source_input;
 

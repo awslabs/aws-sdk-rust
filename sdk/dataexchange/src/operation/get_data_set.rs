@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_set::GetD
     }
 }
 
-pub use crate::operation::get_data_set::_get_data_set_output::GetDataSetOutput;
-
 pub use crate::operation::get_data_set::_get_data_set_input::GetDataSetInput;
+
+pub use crate::operation::get_data_set::_get_data_set_output::GetDataSetOutput;
 
 mod _get_data_set_input;
 

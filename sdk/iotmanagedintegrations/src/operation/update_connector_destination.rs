@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connector_d
     }
 }
 
-pub use crate::operation::update_connector_destination::_update_connector_destination_output::UpdateConnectorDestinationOutput;
-
 pub use crate::operation::update_connector_destination::_update_connector_destination_input::UpdateConnectorDestinationInput;
+
+pub use crate::operation::update_connector_destination::_update_connector_destination_output::UpdateConnectorDestinationOutput;
 
 mod _update_connector_destination_input;
 

@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_run_tasks::Li
     }
 }
 
-pub use crate::operation::list_run_tasks::_list_run_tasks_output::ListRunTasksOutput;
-
 pub use crate::operation::list_run_tasks::_list_run_tasks_input::ListRunTasksInput;
+
+pub use crate::operation::list_run_tasks::_list_run_tasks_output::ListRunTasksOutput;
 
 mod _list_run_tasks_input;
 

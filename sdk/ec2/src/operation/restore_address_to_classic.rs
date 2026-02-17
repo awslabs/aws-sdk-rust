@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_address_to
     }
 }
 
-pub use crate::operation::restore_address_to_classic::_restore_address_to_classic_output::RestoreAddressToClassicOutput;
-
 pub use crate::operation::restore_address_to_classic::_restore_address_to_classic_input::RestoreAddressToClassicInput;
+
+pub use crate::operation::restore_address_to_classic::_restore_address_to_classic_output::RestoreAddressToClassicOutput;
 
 mod _restore_address_to_classic_input;
 

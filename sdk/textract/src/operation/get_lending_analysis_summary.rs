@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lending_analys
     }
 }
 
-pub use crate::operation::get_lending_analysis_summary::_get_lending_analysis_summary_output::GetLendingAnalysisSummaryOutput;
-
 pub use crate::operation::get_lending_analysis_summary::_get_lending_analysis_summary_input::GetLendingAnalysisSummaryInput;
+
+pub use crate::operation::get_lending_analysis_summary::_get_lending_analysis_summary_output::GetLendingAnalysisSummaryOutput;
 
 mod _get_lending_analysis_summary_input;
 

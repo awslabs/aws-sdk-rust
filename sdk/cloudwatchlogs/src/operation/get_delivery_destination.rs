@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delivery_desti
     }
 }
 
-pub use crate::operation::get_delivery_destination::_get_delivery_destination_output::GetDeliveryDestinationOutput;
-
 pub use crate::operation::get_delivery_destination::_get_delivery_destination_input::GetDeliveryDestinationInput;
+
+pub use crate::operation::get_delivery_destination::_get_delivery_destination_output::GetDeliveryDestinationOutput;
 
 mod _get_delivery_destination_input;
 

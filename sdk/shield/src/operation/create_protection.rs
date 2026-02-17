@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_protection:
     }
 }
 
-pub use crate::operation::create_protection::_create_protection_output::CreateProtectionOutput;
-
 pub use crate::operation::create_protection::_create_protection_input::CreateProtectionInput;
+
+pub use crate::operation::create_protection::_create_protection_output::CreateProtectionOutput;
 
 mod _create_protection_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_direct_query_d
     }
 }
 
-pub use crate::operation::get_direct_query_data_source::_get_direct_query_data_source_output::GetDirectQueryDataSourceOutput;
-
 pub use crate::operation::get_direct_query_data_source::_get_direct_query_data_source_input::GetDirectQueryDataSourceInput;
+
+pub use crate::operation::get_direct_query_data_source::_get_direct_query_data_source_output::GetDirectQueryDataSourceOutput;
 
 mod _get_direct_query_data_source_input;
 

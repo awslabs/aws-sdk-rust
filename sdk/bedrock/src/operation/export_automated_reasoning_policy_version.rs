@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_automated_r
     }
 }
 
-pub use crate::operation::export_automated_reasoning_policy_version::_export_automated_reasoning_policy_version_output::ExportAutomatedReasoningPolicyVersionOutput;
-
 pub use crate::operation::export_automated_reasoning_policy_version::_export_automated_reasoning_policy_version_input::ExportAutomatedReasoningPolicyVersionInput;
+
+pub use crate::operation::export_automated_reasoning_policy_version::_export_automated_reasoning_policy_version_output::ExportAutomatedReasoningPolicyVersionOutput;
 
 mod _export_automated_reasoning_policy_version_input;
 

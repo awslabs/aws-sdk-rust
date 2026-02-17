@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_conversatio
     }
 }
 
-pub use crate::operation::delete_conversation::_delete_conversation_output::DeleteConversationOutput;
-
 pub use crate::operation::delete_conversation::_delete_conversation_input::DeleteConversationInput;
+
+pub use crate::operation::delete_conversation::_delete_conversation_output::DeleteConversationOutput;
 
 mod _delete_conversation_input;
 

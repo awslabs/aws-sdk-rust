@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_sessions_sta
     }
 }
 
-pub use crate::operation::start_sessions_statistics_aggregation::_start_sessions_statistics_aggregation_output::StartSessionsStatisticsAggregationOutput;
-
 pub use crate::operation::start_sessions_statistics_aggregation::_start_sessions_statistics_aggregation_input::StartSessionsStatisticsAggregationInput;
+
+pub use crate::operation::start_sessions_statistics_aggregation::_start_sessions_statistics_aggregation_output::StartSessionsStatisticsAggregationOutput;
 
 mod _start_sessions_statistics_aggregation_input;
 

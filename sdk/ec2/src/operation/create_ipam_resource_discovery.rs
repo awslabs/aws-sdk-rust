@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ipam_resour
     }
 }
 
-pub use crate::operation::create_ipam_resource_discovery::_create_ipam_resource_discovery_output::CreateIpamResourceDiscoveryOutput;
-
 pub use crate::operation::create_ipam_resource_discovery::_create_ipam_resource_discovery_input::CreateIpamResourceDiscoveryInput;
+
+pub use crate::operation::create_ipam_resource_discovery::_create_ipam_resource_discovery_output::CreateIpamResourceDiscoveryOutput;
 
 mod _create_ipam_resource_discovery_input;
 

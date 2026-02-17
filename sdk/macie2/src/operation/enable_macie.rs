@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_macie::Enab
     }
 }
 
-pub use crate::operation::enable_macie::_enable_macie_output::EnableMacieOutput;
-
 pub use crate::operation::enable_macie::_enable_macie_input::EnableMacieInput;
+
+pub use crate::operation::enable_macie::_enable_macie_output::EnableMacieOutput;
 
 mod _enable_macie_input;
 

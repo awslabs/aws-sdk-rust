@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_default_messag
     }
 }
 
-pub use crate::operation::set_default_message_type::_set_default_message_type_output::SetDefaultMessageTypeOutput;
-
 pub use crate::operation::set_default_message_type::_set_default_message_type_input::SetDefaultMessageTypeInput;
+
+pub use crate::operation::set_default_message_type::_set_default_message_type_output::SetDefaultMessageTypeOutput;
 
 mod _set_default_message_type_input;
 

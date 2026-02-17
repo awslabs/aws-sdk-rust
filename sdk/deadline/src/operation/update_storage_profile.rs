@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_storage_pro
     }
 }
 
-pub use crate::operation::update_storage_profile::_update_storage_profile_output::UpdateStorageProfileOutput;
-
 pub use crate::operation::update_storage_profile::_update_storage_profile_input::UpdateStorageProfileInput;
+
+pub use crate::operation::update_storage_profile::_update_storage_profile_output::UpdateStorageProfileOutput;
 
 mod _update_storage_profile_input;
 

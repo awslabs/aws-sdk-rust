@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_graph_summary:
     }
 }
 
-pub use crate::operation::get_graph_summary::_get_graph_summary_output::GetGraphSummaryOutput;
-
 pub use crate::operation::get_graph_summary::_get_graph_summary_input::GetGraphSummaryInput;
+
+pub use crate::operation::get_graph_summary::_get_graph_summary_output::GetGraphSummaryOutput;
 
 mod _get_graph_summary_input;
 

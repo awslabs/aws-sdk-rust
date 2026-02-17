@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_incident_reco
     }
 }
 
-pub use crate::operation::list_incident_records::_list_incident_records_output::ListIncidentRecordsOutput;
-
 pub use crate::operation::list_incident_records::_list_incident_records_input::ListIncidentRecordsInput;
+
+pub use crate::operation::list_incident_records::_list_incident_records_output::ListIncidentRecordsOutput;
 
 mod _list_incident_records_input;
 

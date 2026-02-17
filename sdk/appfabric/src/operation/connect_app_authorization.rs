@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::connect_app_author
     }
 }
 
-pub use crate::operation::connect_app_authorization::_connect_app_authorization_output::ConnectAppAuthorizationOutput;
-
 pub use crate::operation::connect_app_authorization::_connect_app_authorization_input::ConnectAppAuthorizationInput;
+
+pub use crate::operation::connect_app_authorization::_connect_app_authorization_output::ConnectAppAuthorizationOutput;
 
 mod _connect_app_authorization_input;
 

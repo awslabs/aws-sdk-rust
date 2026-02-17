@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_built_in_inte
     }
 }
 
-pub use crate::operation::list_built_in_intents::_list_built_in_intents_output::ListBuiltInIntentsOutput;
-
 pub use crate::operation::list_built_in_intents::_list_built_in_intents_input::ListBuiltInIntentsInput;
+
+pub use crate::operation::list_built_in_intents::_list_built_in_intents_output::ListBuiltInIntentsOutput;
 
 mod _list_built_in_intents_input;
 

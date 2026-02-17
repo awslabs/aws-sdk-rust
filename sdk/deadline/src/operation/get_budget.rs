@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_budget::GetBud
     }
 }
 
-pub use crate::operation::get_budget::_get_budget_output::GetBudgetOutput;
-
 pub use crate::operation::get_budget::_get_budget_input::GetBudgetInput;
+
+pub use crate::operation::get_budget::_get_budget_output::GetBudgetOutput;
 
 mod _get_budget_input;
 

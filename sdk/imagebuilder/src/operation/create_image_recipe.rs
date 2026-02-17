@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_image_recip
     }
 }
 
-pub use crate::operation::create_image_recipe::_create_image_recipe_output::CreateImageRecipeOutput;
-
 pub use crate::operation::create_image_recipe::_create_image_recipe_input::CreateImageRecipeInput;
+
+pub use crate::operation::create_image_recipe::_create_image_recipe_output::CreateImageRecipeOutput;
 
 mod _create_image_recipe_input;
 

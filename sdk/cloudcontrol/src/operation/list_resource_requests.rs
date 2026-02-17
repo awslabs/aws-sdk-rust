@@ -352,9 +352,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_requ
     }
 }
 
-pub use crate::operation::list_resource_requests::_list_resource_requests_output::ListResourceRequestsOutput;
-
 pub use crate::operation::list_resource_requests::_list_resource_requests_input::ListResourceRequestsInput;
+
+pub use crate::operation::list_resource_requests::_list_resource_requests_output::ListResourceRequestsOutput;
 
 mod _list_resource_requests_input;
 

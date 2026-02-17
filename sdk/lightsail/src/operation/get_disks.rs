@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_disks::GetDisk
     }
 }
 
-pub use crate::operation::get_disks::_get_disks_output::GetDisksOutput;
-
 pub use crate::operation::get_disks::_get_disks_input::GetDisksInput;
+
+pub use crate::operation::get_disks::_get_disks_output::GetDisksOutput;
 
 mod _get_disks_input;
 

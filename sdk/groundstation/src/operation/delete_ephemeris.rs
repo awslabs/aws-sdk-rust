@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ephemeris::
     }
 }
 
-pub use crate::operation::delete_ephemeris::_delete_ephemeris_output::DeleteEphemerisOutput;
-
 pub use crate::operation::delete_ephemeris::_delete_ephemeris_input::DeleteEphemerisInput;
+
+pub use crate::operation::delete_ephemeris::_delete_ephemeris_output::DeleteEphemerisOutput;
 
 mod _delete_ephemeris_input;
 

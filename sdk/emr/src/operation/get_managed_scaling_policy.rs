@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_scalin
     }
 }
 
-pub use crate::operation::get_managed_scaling_policy::_get_managed_scaling_policy_output::GetManagedScalingPolicyOutput;
-
 pub use crate::operation::get_managed_scaling_policy::_get_managed_scaling_policy_input::GetManagedScalingPolicyInput;
+
+pub use crate::operation::get_managed_scaling_policy::_get_managed_scaling_policy_output::GetManagedScalingPolicyOutput;
 
 mod _get_managed_scaling_policy_input;
 

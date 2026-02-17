@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_mission_pro
     }
 }
 
-pub use crate::operation::update_mission_profile::_update_mission_profile_output::UpdateMissionProfileOutput;
-
 pub use crate::operation::update_mission_profile::_update_mission_profile_input::UpdateMissionProfileInput;
+
+pub use crate::operation::update_mission_profile::_update_mission_profile_output::UpdateMissionProfileOutput;
 
 mod _update_mission_profile_input;
 

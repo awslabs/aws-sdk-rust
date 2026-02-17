@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_routing_con
     }
 }
 
-pub use crate::operation::update_routing_control::_update_routing_control_output::UpdateRoutingControlOutput;
-
 pub use crate::operation::update_routing_control::_update_routing_control_input::UpdateRoutingControlInput;
+
+pub use crate::operation::update_routing_control::_update_routing_control_output::UpdateRoutingControlOutput;
 
 mod _update_routing_control_input;
 

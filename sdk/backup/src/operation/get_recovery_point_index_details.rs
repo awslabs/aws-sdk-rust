@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_recovery_point
     }
 }
 
-pub use crate::operation::get_recovery_point_index_details::_get_recovery_point_index_details_output::GetRecoveryPointIndexDetailsOutput;
-
 pub use crate::operation::get_recovery_point_index_details::_get_recovery_point_index_details_input::GetRecoveryPointIndexDetailsInput;
+
+pub use crate::operation::get_recovery_point_index_details::_get_recovery_point_index_details_output::GetRecoveryPointIndexDetailsOutput;
 
 mod _get_recovery_point_index_details_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_scalable_
     }
 }
 
-pub use crate::operation::register_scalable_target::_register_scalable_target_output::RegisterScalableTargetOutput;
-
 pub use crate::operation::register_scalable_target::_register_scalable_target_input::RegisterScalableTargetInput;
+
+pub use crate::operation::register_scalable_target::_register_scalable_target_output::RegisterScalableTargetOutput;
 
 mod _register_scalable_target_input;
 

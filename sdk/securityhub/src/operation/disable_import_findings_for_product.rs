@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_import_fin
     }
 }
 
-pub use crate::operation::disable_import_findings_for_product::_disable_import_findings_for_product_output::DisableImportFindingsForProductOutput;
-
 pub use crate::operation::disable_import_findings_for_product::_disable_import_findings_for_product_input::DisableImportFindingsForProductInput;
+
+pub use crate::operation::disable_import_findings_for_product::_disable_import_findings_for_product_output::DisableImportFindingsForProductOutput;
 
 mod _disable_import_findings_for_product_input;
 

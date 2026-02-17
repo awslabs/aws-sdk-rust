@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_produ
     }
 }
 
-pub use crate::operation::disassociate_product_from_portfolio::_disassociate_product_from_portfolio_output::DisassociateProductFromPortfolioOutput;
-
 pub use crate::operation::disassociate_product_from_portfolio::_disassociate_product_from_portfolio_input::DisassociateProductFromPortfolioInput;
+
+pub use crate::operation::disassociate_product_from_portfolio::_disassociate_product_from_portfolio_output::DisassociateProductFromPortfolioOutput;
 
 mod _disassociate_product_from_portfolio_input;
 

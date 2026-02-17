@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_ipam_external_resource_verification_token::_delete_ipam_external_resource_verification_token_output::DeleteIpamExternalResourceVerificationTokenOutput;
-
 pub use crate::operation::delete_ipam_external_resource_verification_token::_delete_ipam_external_resource_verification_token_input::DeleteIpamExternalResourceVerificationTokenInput;
+
+pub use crate::operation::delete_ipam_external_resource_verification_token::_delete_ipam_external_resource_verification_token_output::DeleteIpamExternalResourceVerificationTokenOutput;
 
 mod _delete_ipam_external_resource_verification_token_input;
 

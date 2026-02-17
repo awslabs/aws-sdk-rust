@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recovery_poin
     }
 }
 
-pub use crate::operation::list_recovery_points_by_backup_vault::_list_recovery_points_by_backup_vault_output::ListRecoveryPointsByBackupVaultOutput;
-
 pub use crate::operation::list_recovery_points_by_backup_vault::_list_recovery_points_by_backup_vault_input::ListRecoveryPointsByBackupVaultInput;
+
+pub use crate::operation::list_recovery_points_by_backup_vault::_list_recovery_points_by_backup_vault_output::ListRecoveryPointsByBackupVaultOutput;
 
 mod _list_recovery_points_by_backup_vault_input;
 

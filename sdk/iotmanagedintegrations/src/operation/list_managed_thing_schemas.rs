@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_thing
     }
 }
 
-pub use crate::operation::list_managed_thing_schemas::_list_managed_thing_schemas_output::ListManagedThingSchemasOutput;
-
 pub use crate::operation::list_managed_thing_schemas::_list_managed_thing_schemas_input::ListManagedThingSchemasInput;
+
+pub use crate::operation::list_managed_thing_schemas::_list_managed_thing_schemas_output::ListManagedThingSchemasOutput;
 
 mod _list_managed_thing_schemas_input;
 

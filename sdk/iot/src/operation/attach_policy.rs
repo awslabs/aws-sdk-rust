@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_policy::Att
     }
 }
 
-pub use crate::operation::attach_policy::_attach_policy_output::AttachPolicyOutput;
-
 pub use crate::operation::attach_policy::_attach_policy_input::AttachPolicyInput;
+
+pub use crate::operation::attach_policy::_attach_policy_output::AttachPolicyOutput;
 
 mod _attach_policy_input;
 

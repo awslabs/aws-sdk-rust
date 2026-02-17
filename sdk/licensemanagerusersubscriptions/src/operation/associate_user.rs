@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_user::As
     }
 }
 
-pub use crate::operation::associate_user::_associate_user_output::AssociateUserOutput;
-
 pub use crate::operation::associate_user::_associate_user_input::AssociateUserInput;
+
+pub use crate::operation::associate_user::_associate_user_output::AssociateUserOutput;
 
 mod _associate_user_input;
 

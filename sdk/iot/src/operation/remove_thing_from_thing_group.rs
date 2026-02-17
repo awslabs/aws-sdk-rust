@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_thing_from_
     }
 }
 
-pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thing_group_output::RemoveThingFromThingGroupOutput;
-
 pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thing_group_input::RemoveThingFromThingGroupInput;
+
+pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thing_group_output::RemoveThingFromThingGroupOutput;
 
 mod _remove_thing_from_thing_group_input;
 

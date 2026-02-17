@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_report_defi
     }
 }
 
-pub use crate::operation::delete_report_definition::_delete_report_definition_output::DeleteReportDefinitionOutput;
-
 pub use crate::operation::delete_report_definition::_delete_report_definition_input::DeleteReportDefinitionInput;
+
+pub use crate::operation::delete_report_definition::_delete_report_definition_output::DeleteReportDefinitionOutput;
 
 mod _delete_report_definition_input;
 

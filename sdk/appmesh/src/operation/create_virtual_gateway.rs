@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_virtual_gat
     }
 }
 
-pub use crate::operation::create_virtual_gateway::_create_virtual_gateway_output::CreateVirtualGatewayOutput;
-
 pub use crate::operation::create_virtual_gateway::_create_virtual_gateway_input::CreateVirtualGatewayInput;
+
+pub use crate::operation::create_virtual_gateway::_create_virtual_gateway_output::CreateVirtualGatewayOutput;
 
 mod _create_virtual_gateway_input;
 

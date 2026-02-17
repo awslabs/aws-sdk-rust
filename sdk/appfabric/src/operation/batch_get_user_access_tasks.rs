@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_user_acc
     }
 }
 
-pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_tasks_output::BatchGetUserAccessTasksOutput;
-
 pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_tasks_input::BatchGetUserAccessTasksInput;
+
+pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_tasks_output::BatchGetUserAccessTasksOutput;
 
 mod _batch_get_user_access_tasks_input;
 

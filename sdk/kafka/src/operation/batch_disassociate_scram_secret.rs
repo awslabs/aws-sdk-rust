@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disassociate
     }
 }
 
-pub use crate::operation::batch_disassociate_scram_secret::_batch_disassociate_scram_secret_output::BatchDisassociateScramSecretOutput;
-
 pub use crate::operation::batch_disassociate_scram_secret::_batch_disassociate_scram_secret_input::BatchDisassociateScramSecretInput;
+
+pub use crate::operation::batch_disassociate_scram_secret::_batch_disassociate_scram_secret_output::BatchDisassociateScramSecretOutput;
 
 mod _batch_disassociate_scram_secret_input;
 

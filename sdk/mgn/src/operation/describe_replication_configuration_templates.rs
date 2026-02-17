@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_replication_configuration_templates::_describe_replication_configuration_templates_output::DescribeReplicationConfigurationTemplatesOutput;
-
 pub use crate::operation::describe_replication_configuration_templates::_describe_replication_configuration_templates_input::DescribeReplicationConfigurationTemplatesInput;
+
+pub use crate::operation::describe_replication_configuration_templates::_describe_replication_configuration_templates_output::DescribeReplicationConfigurationTemplatesOutput;
 
 mod _describe_replication_configuration_templates_input;
 

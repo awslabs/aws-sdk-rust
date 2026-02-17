@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema::GetSch
     }
 }
 
-pub use crate::operation::get_schema::_get_schema_output::GetSchemaOutput;
-
 pub use crate::operation::get_schema::_get_schema_input::GetSchemaInput;
+
+pub use crate::operation::get_schema::_get_schema_output::GetSchemaOutput;
 
 mod _get_schema_input;
 

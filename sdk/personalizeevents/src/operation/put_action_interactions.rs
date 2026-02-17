@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_action_interac
     }
 }
 
-pub use crate::operation::put_action_interactions::_put_action_interactions_output::PutActionInteractionsOutput;
-
 pub use crate::operation::put_action_interactions::_put_action_interactions_input::PutActionInteractionsInput;
+
+pub use crate::operation::put_action_interactions::_put_action_interactions_output::PutActionInteractionsOutput;
 
 mod _put_action_interactions_input;
 

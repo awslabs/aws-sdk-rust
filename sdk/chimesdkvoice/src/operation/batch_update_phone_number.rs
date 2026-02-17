@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_phone
     }
 }
 
-pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_output::BatchUpdatePhoneNumberOutput;
-
 pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_input::BatchUpdatePhoneNumberInput;
+
+pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_output::BatchUpdatePhoneNumberOutput;
 
 mod _batch_update_phone_number_input;
 

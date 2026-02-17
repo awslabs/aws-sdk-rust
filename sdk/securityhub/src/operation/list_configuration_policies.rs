@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_policies::_list_configuration_policies_output::ListConfigurationPoliciesOutput;
-
 pub use crate::operation::list_configuration_policies::_list_configuration_policies_input::ListConfigurationPoliciesInput;
+
+pub use crate::operation::list_configuration_policies::_list_configuration_policies_output::ListConfigurationPoliciesOutput;
 
 mod _list_configuration_policies_input;
 

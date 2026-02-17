@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_document_
     }
 }
 
-pub use crate::operation::describe_document_classifier::_describe_document_classifier_output::DescribeDocumentClassifierOutput;
-
 pub use crate::operation::describe_document_classifier::_describe_document_classifier_input::DescribeDocumentClassifierInput;
+
+pub use crate::operation::describe_document_classifier::_describe_document_classifier_output::DescribeDocumentClassifierOutput;
 
 mod _describe_document_classifier_input;
 

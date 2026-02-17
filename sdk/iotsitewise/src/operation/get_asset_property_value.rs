@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_asset_property
     }
 }
 
-pub use crate::operation::get_asset_property_value::_get_asset_property_value_output::GetAssetPropertyValueOutput;
-
 pub use crate::operation::get_asset_property_value::_get_asset_property_value_input::GetAssetPropertyValueInput;
+
+pub use crate::operation::get_asset_property_value::_get_asset_property_value_output::GetAssetPropertyValueOutput;
 
 mod _get_asset_property_value_input;
 

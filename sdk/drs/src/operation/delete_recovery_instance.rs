@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_recovery_in
     }
 }
 
-pub use crate::operation::delete_recovery_instance::_delete_recovery_instance_output::DeleteRecoveryInstanceOutput;
-
 pub use crate::operation::delete_recovery_instance::_delete_recovery_instance_input::DeleteRecoveryInstanceInput;
+
+pub use crate::operation::delete_recovery_instance::_delete_recovery_instance_output::DeleteRecoveryInstanceOutput;
 
 mod _delete_recovery_instance_input;
 

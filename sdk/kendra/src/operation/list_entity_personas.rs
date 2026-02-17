@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entity_person
     }
 }
 
-pub use crate::operation::list_entity_personas::_list_entity_personas_output::ListEntityPersonasOutput;
-
 pub use crate::operation::list_entity_personas::_list_entity_personas_input::ListEntityPersonasInput;
+
+pub use crate::operation::list_entity_personas::_list_entity_personas_output::ListEntityPersonasOutput;
 
 mod _list_entity_personas_input;
 

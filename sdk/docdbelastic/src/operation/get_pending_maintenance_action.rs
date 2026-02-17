@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pending_mainte
     }
 }
 
-pub use crate::operation::get_pending_maintenance_action::_get_pending_maintenance_action_output::GetPendingMaintenanceActionOutput;
-
 pub use crate::operation::get_pending_maintenance_action::_get_pending_maintenance_action_input::GetPendingMaintenanceActionInput;
+
+pub use crate::operation::get_pending_maintenance_action::_get_pending_maintenance_action_output::GetPendingMaintenanceActionOutput;
 
 mod _get_pending_maintenance_action_input;
 

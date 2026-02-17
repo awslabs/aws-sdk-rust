@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_publisher
     }
 }
 
-pub use crate::operation::register_publisher::_register_publisher_output::RegisterPublisherOutput;
-
 pub use crate::operation::register_publisher::_register_publisher_input::RegisterPublisherInput;
+
+pub use crate::operation::register_publisher::_register_publisher_output::RegisterPublisherOutput;
 
 mod _register_publisher_input;
 

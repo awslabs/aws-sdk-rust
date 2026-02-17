@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_finding_recomm
     }
 }
 
-pub use crate::operation::get_finding_recommendation::_get_finding_recommendation_output::GetFindingRecommendationOutput;
-
 pub use crate::operation::get_finding_recommendation::_get_finding_recommendation_input::GetFindingRecommendationInput;
+
+pub use crate::operation::get_finding_recommendation::_get_finding_recommendation_output::GetFindingRecommendationOutput;
 
 mod _get_finding_recommendation_input;
 

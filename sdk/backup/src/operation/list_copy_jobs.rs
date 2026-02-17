@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_copy_jobs::Li
     }
 }
 
-pub use crate::operation::list_copy_jobs::_list_copy_jobs_output::ListCopyJobsOutput;
-
 pub use crate::operation::list_copy_jobs::_list_copy_jobs_input::ListCopyJobsInput;
+
+pub use crate::operation::list_copy_jobs::_list_copy_jobs_output::ListCopyJobsOutput;
 
 mod _list_copy_jobs_input;
 

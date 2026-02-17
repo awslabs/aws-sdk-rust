@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scraper_l
     }
 }
 
-pub use crate::operation::describe_scraper_logging_configuration::_describe_scraper_logging_configuration_output::DescribeScraperLoggingConfigurationOutput;
-
 pub use crate::operation::describe_scraper_logging_configuration::_describe_scraper_logging_configuration_input::DescribeScraperLoggingConfigurationInput;
+
+pub use crate::operation::describe_scraper_logging_configuration::_describe_scraper_logging_configuration_output::DescribeScraperLoggingConfigurationOutput;
 
 mod _describe_scraper_logging_configuration_input;
 

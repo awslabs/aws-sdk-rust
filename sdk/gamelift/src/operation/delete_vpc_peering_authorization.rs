@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_peering
     }
 }
 
-pub use crate::operation::delete_vpc_peering_authorization::_delete_vpc_peering_authorization_output::DeleteVpcPeeringAuthorizationOutput;
-
 pub use crate::operation::delete_vpc_peering_authorization::_delete_vpc_peering_authorization_input::DeleteVpcPeeringAuthorizationInput;
+
+pub use crate::operation::delete_vpc_peering_authorization::_delete_vpc_peering_authorization_output::DeleteVpcPeeringAuthorizationOutput;
 
 mod _delete_vpc_peering_authorization_input;
 

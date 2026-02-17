@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_global_reso
     }
 }
 
-pub use crate::operation::create_global_resolver::_create_global_resolver_output::CreateGlobalResolverOutput;
-
 pub use crate::operation::create_global_resolver::_create_global_resolver_input::CreateGlobalResolverInput;
+
+pub use crate::operation::create_global_resolver::_create_global_resolver_output::CreateGlobalResolverOutput;
 
 mod _create_global_resolver_input;
 

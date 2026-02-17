@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_oppor
     }
 }
 
-pub use crate::operation::disassociate_opportunity::_disassociate_opportunity_output::DisassociateOpportunityOutput;
-
 pub use crate::operation::disassociate_opportunity::_disassociate_opportunity_input::DisassociateOpportunityInput;
+
+pub use crate::operation::disassociate_opportunity::_disassociate_opportunity_output::DisassociateOpportunityOutput;
 
 mod _disassociate_opportunity_input;
 

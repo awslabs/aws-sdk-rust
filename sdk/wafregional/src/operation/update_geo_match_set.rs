@@ -488,9 +488,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_geo_match_s
     }
 }
 
-pub use crate::operation::update_geo_match_set::_update_geo_match_set_output::UpdateGeoMatchSetOutput;
-
 pub use crate::operation::update_geo_match_set::_update_geo_match_set_input::UpdateGeoMatchSetInput;
+
+pub use crate::operation::update_geo_match_set::_update_geo_match_set_output::UpdateGeoMatchSetOutput;
 
 mod _update_geo_match_set_input;
 

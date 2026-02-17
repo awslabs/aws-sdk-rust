@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_marketplace_m
     }
 }
 
-pub use crate::operation::list_marketplace_model_endpoints::_list_marketplace_model_endpoints_output::ListMarketplaceModelEndpointsOutput;
-
 pub use crate::operation::list_marketplace_model_endpoints::_list_marketplace_model_endpoints_input::ListMarketplaceModelEndpointsInput;
+
+pub use crate::operation::list_marketplace_model_endpoints::_list_marketplace_model_endpoints_output::ListMarketplaceModelEndpointsOutput;
 
 mod _list_marketplace_model_endpoints_input;
 

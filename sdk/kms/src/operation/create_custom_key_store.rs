@@ -539,9 +539,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_key_
     }
 }
 
-pub use crate::operation::create_custom_key_store::_create_custom_key_store_output::CreateCustomKeyStoreOutput;
-
 pub use crate::operation::create_custom_key_store::_create_custom_key_store_input::CreateCustomKeyStoreInput;
+
+pub use crate::operation::create_custom_key_store::_create_custom_key_store_output::CreateCustomKeyStoreOutput;
 
 mod _create_custom_key_store_input;
 

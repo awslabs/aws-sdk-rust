@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_package_gro
     }
 }
 
-pub use crate::operation::update_package_group::_update_package_group_output::UpdatePackageGroupOutput;
-
 pub use crate::operation::update_package_group::_update_package_group_input::UpdatePackageGroupInput;
+
+pub use crate::operation::update_package_group::_update_package_group_output::UpdatePackageGroupOutput;
 
 mod _update_package_group_input;
 

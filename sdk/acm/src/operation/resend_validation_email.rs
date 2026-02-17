@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resend_validation_
     }
 }
 
-pub use crate::operation::resend_validation_email::_resend_validation_email_output::ResendValidationEmailOutput;
-
 pub use crate::operation::resend_validation_email::_resend_validation_email_input::ResendValidationEmailInput;
+
+pub use crate::operation::resend_validation_email::_resend_validation_email_output::ResendValidationEmailOutput;
 
 mod _resend_validation_email_input;
 

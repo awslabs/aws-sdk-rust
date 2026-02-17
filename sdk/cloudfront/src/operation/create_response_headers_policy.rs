@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_response_he
     }
 }
 
-pub use crate::operation::create_response_headers_policy::_create_response_headers_policy_output::CreateResponseHeadersPolicyOutput;
-
 pub use crate::operation::create_response_headers_policy::_create_response_headers_policy_input::CreateResponseHeadersPolicyInput;
+
+pub use crate::operation::create_response_headers_policy::_create_response_headers_policy_output::CreateResponseHeadersPolicyOutput;
 
 mod _create_response_headers_policy_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_utterances_vie
     }
 }
 
-pub use crate::operation::get_utterances_view::_get_utterances_view_output::GetUtterancesViewOutput;
-
 pub use crate::operation::get_utterances_view::_get_utterances_view_input::GetUtterancesViewInput;
+
+pub use crate::operation::get_utterances_view::_get_utterances_view_output::GetUtterancesViewOutput;
 
 mod _get_utterances_view_input;
 

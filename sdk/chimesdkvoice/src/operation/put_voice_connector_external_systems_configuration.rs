@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_voice_connector_external_systems_configuration::_put_voice_connector_external_systems_configuration_output::PutVoiceConnectorExternalSystemsConfigurationOutput;
-
 pub use crate::operation::put_voice_connector_external_systems_configuration::_put_voice_connector_external_systems_configuration_input::PutVoiceConnectorExternalSystemsConfigurationInput;
+
+pub use crate::operation::put_voice_connector_external_systems_configuration::_put_voice_connector_external_systems_configuration_output::PutVoiceConnectorExternalSystemsConfigurationOutput;
 
 mod _put_voice_connector_external_systems_configuration_input;
 

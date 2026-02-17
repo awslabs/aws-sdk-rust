@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lf_tag_express
     }
 }
 
-pub use crate::operation::get_lf_tag_expression::_get_lf_tag_expression_output::GetLfTagExpressionOutput;
-
 pub use crate::operation::get_lf_tag_expression::_get_lf_tag_expression_input::GetLfTagExpressionInput;
+
+pub use crate::operation::get_lf_tag_expression::_get_lf_tag_expression_output::GetLfTagExpressionOutput;
 
 mod _get_lf_tag_expression_input;
 

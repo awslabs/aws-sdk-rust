@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_capacity_prov
     }
 }
 
-pub use crate::operation::list_capacity_providers::_list_capacity_providers_output::ListCapacityProvidersOutput;
-
 pub use crate::operation::list_capacity_providers::_list_capacity_providers_input::ListCapacityProvidersInput;
+
+pub use crate::operation::list_capacity_providers::_list_capacity_providers_output::ListCapacityProvidersOutput;
 
 mod _list_capacity_providers_input;
 

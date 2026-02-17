@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_product_rest_
     }
 }
 
-pub use crate::operation::list_product_rest_endpoint_pages::_list_product_rest_endpoint_pages_output::ListProductRestEndpointPagesOutput;
-
 pub use crate::operation::list_product_rest_endpoint_pages::_list_product_rest_endpoint_pages_input::ListProductRestEndpointPagesInput;
+
+pub use crate::operation::list_product_rest_endpoint_pages::_list_product_rest_endpoint_pages_output::ListProductRestEndpointPagesOutput;
 
 mod _list_product_rest_endpoint_pages_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_temporary_data
     }
 }
 
-pub use crate::operation::get_temporary_data_location_credentials::_get_temporary_data_location_credentials_output::GetTemporaryDataLocationCredentialsOutput;
-
 pub use crate::operation::get_temporary_data_location_credentials::_get_temporary_data_location_credentials_input::GetTemporaryDataLocationCredentialsInput;
+
+pub use crate::operation::get_temporary_data_location_credentials::_get_temporary_data_location_credentials_output::GetTemporaryDataLocationCredentialsOutput;
 
 mod _get_temporary_data_location_credentials_input;
 

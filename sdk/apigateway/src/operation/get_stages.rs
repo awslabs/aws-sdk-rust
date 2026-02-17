@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_stages::GetSta
     }
 }
 
-pub use crate::operation::get_stages::_get_stages_output::GetStagesOutput;
-
 pub use crate::operation::get_stages::_get_stages_input::GetStagesInput;
+
+pub use crate::operation::get_stages::_get_stages_output::GetStagesOutput;
 
 mod _get_stages_input;
 

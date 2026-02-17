@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployments::
     }
 }
 
-pub use crate::operation::list_deployments::_list_deployments_output::ListDeploymentsOutput;
-
 pub use crate::operation::list_deployments::_list_deployments_input::ListDeploymentsInput;
+
+pub use crate::operation::list_deployments::_list_deployments_output::ListDeploymentsOutput;
 
 mod _list_deployments_input;
 

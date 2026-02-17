@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_availabil
     }
 }
 
-pub use crate::operation::describe_availability_monitor_test::_describe_availability_monitor_test_output::DescribeAvailabilityMonitorTestOutput;
-
 pub use crate::operation::describe_availability_monitor_test::_describe_availability_monitor_test_input::DescribeAvailabilityMonitorTestInput;
+
+pub use crate::operation::describe_availability_monitor_test::_describe_availability_monitor_test_output::DescribeAvailabilityMonitorTestOutput;
 
 mod _describe_availability_monitor_test_input;
 

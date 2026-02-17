@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_doma
     }
 }
 
-pub use crate::operation::list_tags_for_domain::_list_tags_for_domain_output::ListTagsForDomainOutput;
-
 pub use crate::operation::list_tags_for_domain::_list_tags_for_domain_input::ListTagsForDomainInput;
+
+pub use crate::operation::list_tags_for_domain::_list_tags_for_domain_output::ListTagsForDomainOutput;
 
 mod _list_tags_for_domain_input;
 

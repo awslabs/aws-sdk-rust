@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_findings_v2::
     }
 }
 
-pub use crate::operation::list_findings_v2::_list_findings_v2_output::ListFindingsV2Output;
-
 pub use crate::operation::list_findings_v2::_list_findings_v2_input::ListFindingsV2Input;
+
+pub use crate::operation::list_findings_v2::_list_findings_v2_output::ListFindingsV2Output;
 
 mod _list_findings_v2_input;
 

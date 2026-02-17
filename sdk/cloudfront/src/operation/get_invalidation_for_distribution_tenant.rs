@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_invalidation_f
     }
 }
 
-pub use crate::operation::get_invalidation_for_distribution_tenant::_get_invalidation_for_distribution_tenant_output::GetInvalidationForDistributionTenantOutput;
-
 pub use crate::operation::get_invalidation_for_distribution_tenant::_get_invalidation_for_distribution_tenant_input::GetInvalidationForDistributionTenantInput;
+
+pub use crate::operation::get_invalidation_for_distribution_tenant::_get_invalidation_for_distribution_tenant_output::GetInvalidationForDistributionTenantOutput;
 
 mod _get_invalidation_for_distribution_tenant_input;
 

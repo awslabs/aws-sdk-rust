@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_cluster_sec
     }
 }
 
-pub use crate::operation::revoke_cluster_security_group_ingress::_revoke_cluster_security_group_ingress_output::RevokeClusterSecurityGroupIngressOutput;
-
 pub use crate::operation::revoke_cluster_security_group_ingress::_revoke_cluster_security_group_ingress_input::RevokeClusterSecurityGroupIngressInput;
+
+pub use crate::operation::revoke_cluster_security_group_ingress::_revoke_cluster_security_group_ingress_output::RevokeClusterSecurityGroupIngressOutput;
 
 mod _revoke_cluster_security_group_ingress_input;
 

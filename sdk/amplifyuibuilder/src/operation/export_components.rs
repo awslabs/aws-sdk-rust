@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_components:
     }
 }
 
-pub use crate::operation::export_components::_export_components_output::ExportComponentsOutput;
-
 pub use crate::operation::export_components::_export_components_input::ExportComponentsInput;
+
+pub use crate::operation::export_components::_export_components_output::ExportComponentsOutput;
 
 mod _export_components_input;
 

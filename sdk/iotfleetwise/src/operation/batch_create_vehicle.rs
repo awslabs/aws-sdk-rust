@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_vehic
     }
 }
 
-pub use crate::operation::batch_create_vehicle::_batch_create_vehicle_output::BatchCreateVehicleOutput;
-
 pub use crate::operation::batch_create_vehicle::_batch_create_vehicle_input::BatchCreateVehicleInput;
+
+pub use crate::operation::batch_create_vehicle::_batch_create_vehicle_output::BatchCreateVehicleOutput;
 
 mod _batch_create_vehicle_input;
 

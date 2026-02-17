@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_service_a
     }
 }
 
-pub use crate::operation::describe_service_action::_describe_service_action_output::DescribeServiceActionOutput;
-
 pub use crate::operation::describe_service_action::_describe_service_action_input::DescribeServiceActionInput;
+
+pub use crate::operation::describe_service_action::_describe_service_action_output::DescribeServiceActionOutput;
 
 mod _describe_service_action_input;
 

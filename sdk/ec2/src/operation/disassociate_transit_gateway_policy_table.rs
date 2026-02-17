@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_trans
     }
 }
 
-pub use crate::operation::disassociate_transit_gateway_policy_table::_disassociate_transit_gateway_policy_table_output::DisassociateTransitGatewayPolicyTableOutput;
-
 pub use crate::operation::disassociate_transit_gateway_policy_table::_disassociate_transit_gateway_policy_table_input::DisassociateTransitGatewayPolicyTableInput;
+
+pub use crate::operation::disassociate_transit_gateway_policy_table::_disassociate_transit_gateway_policy_table_output::DisassociateTransitGatewayPolicyTableOutput;
 
 mod _disassociate_transit_gateway_policy_table_input;
 

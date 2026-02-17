@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_set::D
     }
 }
 
-pub use crate::operation::delete_data_set::_delete_data_set_output::DeleteDataSetOutput;
-
 pub use crate::operation::delete_data_set::_delete_data_set_input::DeleteDataSetInput;
+
+pub use crate::operation::delete_data_set::_delete_data_set_output::DeleteDataSetOutput;
 
 mod _delete_data_set_input;
 

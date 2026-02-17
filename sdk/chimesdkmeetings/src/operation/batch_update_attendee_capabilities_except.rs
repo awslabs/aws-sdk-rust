@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_atten
     }
 }
 
-pub use crate::operation::batch_update_attendee_capabilities_except::_batch_update_attendee_capabilities_except_output::BatchUpdateAttendeeCapabilitiesExceptOutput;
-
 pub use crate::operation::batch_update_attendee_capabilities_except::_batch_update_attendee_capabilities_except_input::BatchUpdateAttendeeCapabilitiesExceptInput;
+
+pub use crate::operation::batch_update_attendee_capabilities_except::_batch_update_attendee_capabilities_except_output::BatchUpdateAttendeeCapabilitiesExceptOutput;
 
 mod _batch_update_attendee_capabilities_except_input;
 

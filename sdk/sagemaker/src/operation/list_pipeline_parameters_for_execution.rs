@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipeline_para
     }
 }
 
-pub use crate::operation::list_pipeline_parameters_for_execution::_list_pipeline_parameters_for_execution_output::ListPipelineParametersForExecutionOutput;
-
 pub use crate::operation::list_pipeline_parameters_for_execution::_list_pipeline_parameters_for_execution_input::ListPipelineParametersForExecutionInput;
+
+pub use crate::operation::list_pipeline_parameters_for_execution::_list_pipeline_parameters_for_execution_output::ListPipelineParametersForExecutionOutput;
 
 mod _list_pipeline_parameters_for_execution_input;
 

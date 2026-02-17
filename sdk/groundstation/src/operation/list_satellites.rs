@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_satellites::L
     }
 }
 
-pub use crate::operation::list_satellites::_list_satellites_output::ListSatellitesOutput;
-
 pub use crate::operation::list_satellites::_list_satellites_input::ListSatellitesInput;
+
+pub use crate::operation::list_satellites::_list_satellites_output::ListSatellitesOutput;
 
 mod _list_satellites_input;
 

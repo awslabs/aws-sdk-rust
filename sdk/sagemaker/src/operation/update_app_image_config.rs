@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_app_image_c
     }
 }
 
-pub use crate::operation::update_app_image_config::_update_app_image_config_output::UpdateAppImageConfigOutput;
-
 pub use crate::operation::update_app_image_config::_update_app_image_config_input::UpdateAppImageConfigInput;
+
+pub use crate::operation::update_app_image_config::_update_app_image_config_output::UpdateAppImageConfigOutput;
 
 mod _update_app_image_config_input;
 

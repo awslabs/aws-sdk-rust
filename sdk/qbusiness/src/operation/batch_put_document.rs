@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_document
     }
 }
 
-pub use crate::operation::batch_put_document::_batch_put_document_output::BatchPutDocumentOutput;
-
 pub use crate::operation::batch_put_document::_batch_put_document_input::BatchPutDocumentInput;
+
+pub use crate::operation::batch_put_document::_batch_put_document_output::BatchPutDocumentOutput;
 
 mod _batch_put_document_input;
 

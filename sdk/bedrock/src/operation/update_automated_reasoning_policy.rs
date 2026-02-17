@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_automated_r
     }
 }
 
-pub use crate::operation::update_automated_reasoning_policy::_update_automated_reasoning_policy_output::UpdateAutomatedReasoningPolicyOutput;
-
 pub use crate::operation::update_automated_reasoning_policy::_update_automated_reasoning_policy_input::UpdateAutomatedReasoningPolicyInput;
+
+pub use crate::operation::update_automated_reasoning_policy::_update_automated_reasoning_policy_output::UpdateAutomatedReasoningPolicyOutput;
 
 mod _update_automated_reasoning_policy_input;
 

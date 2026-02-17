@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_infrastructur
     }
 }
 
-pub use crate::operation::list_infrastructure_configurations::_list_infrastructure_configurations_output::ListInfrastructureConfigurationsOutput;
-
 pub use crate::operation::list_infrastructure_configurations::_list_infrastructure_configurations_input::ListInfrastructureConfigurationsInput;
+
+pub use crate::operation::list_infrastructure_configurations::_list_infrastructure_configurations_output::ListInfrastructureConfigurationsOutput;
 
 mod _list_infrastructure_configurations_input;
 

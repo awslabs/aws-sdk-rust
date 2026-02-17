@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_evaluate_geo
     }
 }
 
-pub use crate::operation::batch_evaluate_geofences::_batch_evaluate_geofences_output::BatchEvaluateGeofencesOutput;
-
 pub use crate::operation::batch_evaluate_geofences::_batch_evaluate_geofences_input::BatchEvaluateGeofencesInput;
+
+pub use crate::operation::batch_evaluate_geofences::_batch_evaluate_geofences_output::BatchEvaluateGeofencesOutput;
 
 mod _batch_evaluate_geofences_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_remote_acce
     }
 }
 
-pub use crate::operation::delete_remote_access_session::_delete_remote_access_session_output::DeleteRemoteAccessSessionOutput;
-
 pub use crate::operation::delete_remote_access_session::_delete_remote_access_session_input::DeleteRemoteAccessSessionInput;
+
+pub use crate::operation::delete_remote_access_session::_delete_remote_access_session_output::DeleteRemoteAccessSessionOutput;
 
 mod _delete_remote_access_session_input;
 

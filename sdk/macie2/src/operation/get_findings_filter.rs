@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_findings_filte
     }
 }
 
-pub use crate::operation::get_findings_filter::_get_findings_filter_output::GetFindingsFilterOutput;
-
 pub use crate::operation::get_findings_filter::_get_findings_filter_input::GetFindingsFilterInput;
+
+pub use crate::operation::get_findings_filter::_get_findings_filter_output::GetFindingsFilterOutput;
 
 mod _get_findings_filter_input;
 

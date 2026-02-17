@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolver_endp
     }
 }
 
-pub use crate::operation::list_resolver_endpoint_ip_addresses::_list_resolver_endpoint_ip_addresses_output::ListResolverEndpointIpAddressesOutput;
-
 pub use crate::operation::list_resolver_endpoint_ip_addresses::_list_resolver_endpoint_ip_addresses_input::ListResolverEndpointIpAddressesInput;
+
+pub use crate::operation::list_resolver_endpoint_ip_addresses::_list_resolver_endpoint_ip_addresses_output::ListResolverEndpointIpAddressesOutput;
 
 mod _list_resolver_endpoint_ip_addresses_input;
 

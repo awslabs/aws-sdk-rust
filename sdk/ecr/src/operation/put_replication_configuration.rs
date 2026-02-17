@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_replication_co
     }
 }
 
-pub use crate::operation::put_replication_configuration::_put_replication_configuration_output::PutReplicationConfigurationOutput;
-
 pub use crate::operation::put_replication_configuration::_put_replication_configuration_input::PutReplicationConfigurationInput;
+
+pub use crate::operation::put_replication_configuration::_put_replication_configuration_output::PutReplicationConfigurationOutput;
 
 mod _put_replication_configuration_input;
 

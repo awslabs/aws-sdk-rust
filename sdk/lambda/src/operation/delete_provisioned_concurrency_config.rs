@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_provisioned
     }
 }
 
-pub use crate::operation::delete_provisioned_concurrency_config::_delete_provisioned_concurrency_config_output::DeleteProvisionedConcurrencyConfigOutput;
-
 pub use crate::operation::delete_provisioned_concurrency_config::_delete_provisioned_concurrency_config_input::DeleteProvisionedConcurrencyConfigInput;
+
+pub use crate::operation::delete_provisioned_concurrency_config::_delete_provisioned_concurrency_config_output::DeleteProvisionedConcurrencyConfigOutput;
 
 mod _delete_provisioned_concurrency_config_input;
 

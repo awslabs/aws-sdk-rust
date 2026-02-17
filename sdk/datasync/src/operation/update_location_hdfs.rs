@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_hd
     }
 }
 
-pub use crate::operation::update_location_hdfs::_update_location_hdfs_output::UpdateLocationHdfsOutput;
-
 pub use crate::operation::update_location_hdfs::_update_location_hdfs_input::UpdateLocationHdfsInput;
+
+pub use crate::operation::update_location_hdfs::_update_location_hdfs_output::UpdateLocationHdfsOutput;
 
 mod _update_location_hdfs_input;
 

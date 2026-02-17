@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_disk::Creat
     }
 }
 
-pub use crate::operation::create_disk::_create_disk_output::CreateDiskOutput;
-
 pub use crate::operation::create_disk::_create_disk_input::CreateDiskInput;
+
+pub use crate::operation::create_disk::_create_disk_output::CreateDiskOutput;
 
 mod _create_disk_input;
 

@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_merge_commit::
     }
 }
 
-pub use crate::operation::get_merge_commit::_get_merge_commit_output::GetMergeCommitOutput;
-
 pub use crate::operation::get_merge_commit::_get_merge_commit_input::GetMergeCommitInput;
+
+pub use crate::operation::get_merge_commit::_get_merge_commit_output::GetMergeCommitOutput;
 
 mod _get_merge_commit_input;
 

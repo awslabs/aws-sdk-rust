@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_theme_for_s
     }
 }
 
-pub use crate::operation::create_theme_for_stack::_create_theme_for_stack_output::CreateThemeForStackOutput;
-
 pub use crate::operation::create_theme_for_stack::_create_theme_for_stack_input::CreateThemeForStackInput;
+
+pub use crate::operation::create_theme_for_stack::_create_theme_for_stack_output::CreateThemeForStackOutput;
 
 mod _create_theme_for_stack_input;
 

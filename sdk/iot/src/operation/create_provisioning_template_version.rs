@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_provisionin
     }
 }
 
-pub use crate::operation::create_provisioning_template_version::_create_provisioning_template_version_output::CreateProvisioningTemplateVersionOutput;
-
 pub use crate::operation::create_provisioning_template_version::_create_provisioning_template_version_input::CreateProvisioningTemplateVersionInput;
+
+pub use crate::operation::create_provisioning_template_version::_create_provisioning_template_version_output::CreateProvisioningTemplateVersionOutput;
 
 mod _create_provisioning_template_version_input;
 

@@ -710,9 +710,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_with_respon
     }
 }
 
-pub use crate::operation::invoke_with_response_stream::_invoke_with_response_stream_output::InvokeWithResponseStreamOutput;
-
 pub use crate::operation::invoke_with_response_stream::_invoke_with_response_stream_input::InvokeWithResponseStreamInput;
+
+pub use crate::operation::invoke_with_response_stream::_invoke_with_response_stream_output::InvokeWithResponseStreamOutput;
 
 mod _invoke_with_response_stream_input;
 

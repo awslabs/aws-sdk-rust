@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_job_enti
     }
 }
 
-pub use crate::operation::batch_get_job_entity::_batch_get_job_entity_output::BatchGetJobEntityOutput;
-
 pub use crate::operation::batch_get_job_entity::_batch_get_job_entity_input::BatchGetJobEntityInput;
+
+pub use crate::operation::batch_get_job_entity::_batch_get_job_entity_output::BatchGetJobEntityOutput;
 
 mod _batch_get_job_entity_input;
 

@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::subscribe_to_datas
     }
 }
 
-pub use crate::operation::subscribe_to_dataset::_subscribe_to_dataset_output::SubscribeToDatasetOutput;
-
 pub use crate::operation::subscribe_to_dataset::_subscribe_to_dataset_input::SubscribeToDatasetInput;
+
+pub use crate::operation::subscribe_to_dataset::_subscribe_to_dataset_output::SubscribeToDatasetOutput;
 
 mod _subscribe_to_dataset_input;
 

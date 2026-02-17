@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_graphql_apis:
     }
 }
 
-pub use crate::operation::list_graphql_apis::_list_graphql_apis_output::ListGraphqlApisOutput;
-
 pub use crate::operation::list_graphql_apis::_list_graphql_apis_input::ListGraphqlApisInput;
+
+pub use crate::operation::list_graphql_apis::_list_graphql_apis_output::ListGraphqlApisOutput;
 
 mod _list_graphql_apis_input;
 

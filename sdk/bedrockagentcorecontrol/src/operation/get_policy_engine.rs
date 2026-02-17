@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_policy_engine:
     }
 }
 
-pub use crate::operation::get_policy_engine::_get_policy_engine_output::GetPolicyEngineOutput;
-
 pub use crate::operation::get_policy_engine::_get_policy_engine_input::GetPolicyEngineInput;
+
+pub use crate::operation::get_policy_engine::_get_policy_engine_output::GetPolicyEngineOutput;
 
 mod _get_policy_engine_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_protection_sta
     }
 }
 
-pub use crate::operation::get_protection_status::_get_protection_status_output::GetProtectionStatusOutput;
-
 pub use crate::operation::get_protection_status::_get_protection_status_input::GetProtectionStatusInput;
+
+pub use crate::operation::get_protection_status::_get_protection_status_output::GetProtectionStatusOutput;
 
 mod _get_protection_status_input;
 

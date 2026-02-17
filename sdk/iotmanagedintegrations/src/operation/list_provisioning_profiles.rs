@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provisioning_
     }
 }
 
-pub use crate::operation::list_provisioning_profiles::_list_provisioning_profiles_output::ListProvisioningProfilesOutput;
-
 pub use crate::operation::list_provisioning_profiles::_list_provisioning_profiles_input::ListProvisioningProfilesInput;
+
+pub use crate::operation::list_provisioning_profiles::_list_provisioning_profiles_output::ListProvisioningProfilesOutput;
 
 mod _list_provisioning_profiles_input;
 

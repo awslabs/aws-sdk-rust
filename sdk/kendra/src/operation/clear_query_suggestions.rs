@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::clear_query_sugges
     }
 }
 
-pub use crate::operation::clear_query_suggestions::_clear_query_suggestions_output::ClearQuerySuggestionsOutput;
-
 pub use crate::operation::clear_query_suggestions::_clear_query_suggestions_input::ClearQuerySuggestionsInput;
+
+pub use crate::operation::clear_query_suggestions::_clear_query_suggestions_output::ClearQuerySuggestionsOutput;
 
 mod _clear_query_suggestions_input;
 

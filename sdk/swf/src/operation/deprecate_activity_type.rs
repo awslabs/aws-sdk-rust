@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprecate_activity
     }
 }
 
-pub use crate::operation::deprecate_activity_type::_deprecate_activity_type_output::DeprecateActivityTypeOutput;
-
 pub use crate::operation::deprecate_activity_type::_deprecate_activity_type_input::DeprecateActivityTypeInput;
+
+pub use crate::operation::deprecate_activity_type::_deprecate_activity_type_output::DeprecateActivityTypeOutput;
 
 mod _deprecate_activity_type_input;
 

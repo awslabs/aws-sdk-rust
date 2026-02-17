@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_participant
     }
 }
 
-pub use crate::operation::cancel_participant_authentication::_cancel_participant_authentication_output::CancelParticipantAuthenticationOutput;
-
 pub use crate::operation::cancel_participant_authentication::_cancel_participant_authentication_input::CancelParticipantAuthenticationInput;
+
+pub use crate::operation::cancel_participant_authentication::_cancel_participant_authentication_output::CancelParticipantAuthenticationOutput;
 
 mod _cancel_participant_authentication_input;
 

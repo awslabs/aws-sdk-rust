@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_registrat
     }
 }
 
-pub use crate::operation::describe_registrations::_describe_registrations_output::DescribeRegistrationsOutput;
-
 pub use crate::operation::describe_registrations::_describe_registrations_input::DescribeRegistrationsInput;
+
+pub use crate::operation::describe_registrations::_describe_registrations_output::DescribeRegistrationsOutput;
 
 mod _describe_registrations_input;
 

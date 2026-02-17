@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_task::StopTas
     }
 }
 
-pub use crate::operation::stop_task::_stop_task_output::StopTaskOutput;
-
 pub use crate::operation::stop_task::_stop_task_input::StopTaskInput;
+
+pub use crate::operation::stop_task::_stop_task_output::StopTaskOutput;
 
 mod _stop_task_input;
 

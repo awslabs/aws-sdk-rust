@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_delete_bill_scenario_usage_modification::_batch_delete_bill_scenario_usage_modification_output::BatchDeleteBillScenarioUsageModificationOutput;
-
 pub use crate::operation::batch_delete_bill_scenario_usage_modification::_batch_delete_bill_scenario_usage_modification_input::BatchDeleteBillScenarioUsageModificationInput;
+
+pub use crate::operation::batch_delete_bill_scenario_usage_modification::_batch_delete_bill_scenario_usage_modification_output::BatchDeleteBillScenarioUsageModificationOutput;
 
 mod _batch_delete_bill_scenario_usage_modification_input;
 

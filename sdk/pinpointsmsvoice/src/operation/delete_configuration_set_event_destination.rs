@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_configuration_set_event_destination::_delete_configuration_set_event_destination_output::DeleteConfigurationSetEventDestinationOutput;
-
 pub use crate::operation::delete_configuration_set_event_destination::_delete_configuration_set_event_destination_input::DeleteConfigurationSetEventDestinationInput;
+
+pub use crate::operation::delete_configuration_set_event_destination::_delete_configuration_set_event_destination_output::DeleteConfigurationSetEventDestinationOutput;
 
 mod _delete_configuration_set_event_destination_input;
 

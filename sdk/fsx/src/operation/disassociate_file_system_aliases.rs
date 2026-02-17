@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_file_
     }
 }
 
-pub use crate::operation::disassociate_file_system_aliases::_disassociate_file_system_aliases_output::DisassociateFileSystemAliasesOutput;
-
 pub use crate::operation::disassociate_file_system_aliases::_disassociate_file_system_aliases_input::DisassociateFileSystemAliasesInput;
+
+pub use crate::operation::disassociate_file_system_aliases::_disassociate_file_system_aliases_output::DisassociateFileSystemAliasesOutput;
 
 mod _disassociate_file_system_aliases_input;
 

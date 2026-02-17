@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_endpo
     }
 }
 
-pub use crate::operation::describe_vpc_endpoints::_describe_vpc_endpoints_output::DescribeVpcEndpointsOutput;
-
 pub use crate::operation::describe_vpc_endpoints::_describe_vpc_endpoints_input::DescribeVpcEndpointsInput;
+
+pub use crate::operation::describe_vpc_endpoints::_describe_vpc_endpoints_output::DescribeVpcEndpointsOutput;
 
 mod _describe_vpc_endpoints_input;
 

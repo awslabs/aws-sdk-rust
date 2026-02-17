@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_targets_by_ru
     }
 }
 
-pub use crate::operation::list_targets_by_rule::_list_targets_by_rule_output::ListTargetsByRuleOutput;
-
 pub use crate::operation::list_targets_by_rule::_list_targets_by_rule_input::ListTargetsByRuleInput;
+
+pub use crate::operation::list_targets_by_rule::_list_targets_by_rule_output::ListTargetsByRuleOutput;
 
 mod _list_targets_by_rule_input;
 

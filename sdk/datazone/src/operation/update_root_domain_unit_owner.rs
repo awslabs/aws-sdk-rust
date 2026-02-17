@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_root_domain
     }
 }
 
-pub use crate::operation::update_root_domain_unit_owner::_update_root_domain_unit_owner_output::UpdateRootDomainUnitOwnerOutput;
-
 pub use crate::operation::update_root_domain_unit_owner::_update_root_domain_unit_owner_input::UpdateRootDomainUnitOwnerInput;
+
+pub use crate::operation::update_root_domain_unit_owner::_update_root_domain_unit_owner_output::UpdateRootDomainUnitOwnerOutput;
 
 mod _update_root_domain_unit_owner_input;
 

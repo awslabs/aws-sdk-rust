@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_traffic_s
     }
 }
 
-pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_output::DescribeTrafficSourcesOutput;
-
 pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_input::DescribeTrafficSourcesInput;
+
+pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_output::DescribeTrafficSourcesOutput;
 
 mod _describe_traffic_sources_input;
 

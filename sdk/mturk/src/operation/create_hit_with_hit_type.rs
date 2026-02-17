@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hit_with_hi
     }
 }
 
-pub use crate::operation::create_hit_with_hit_type::_create_hit_with_hit_type_output::CreateHitWithHitTypeOutput;
-
 pub use crate::operation::create_hit_with_hit_type::_create_hit_with_hit_type_input::CreateHitWithHitTypeInput;
+
+pub use crate::operation::create_hit_with_hit_type::_create_hit_with_hit_type_output::CreateHitWithHitTypeOutput;
 
 mod _create_hit_with_hit_type_input;
 

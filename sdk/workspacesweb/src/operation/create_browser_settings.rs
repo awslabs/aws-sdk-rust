@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_browser_set
     }
 }
 
-pub use crate::operation::create_browser_settings::_create_browser_settings_output::CreateBrowserSettingsOutput;
-
 pub use crate::operation::create_browser_settings::_create_browser_settings_input::CreateBrowserSettingsInput;
+
+pub use crate::operation::create_browser_settings::_create_browser_settings_output::CreateBrowserSettingsOutput;
 
 mod _create_browser_settings_input;
 

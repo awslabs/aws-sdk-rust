@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_report_defini
     }
 }
 
-pub use crate::operation::list_report_definitions::_list_report_definitions_output::ListReportDefinitionsOutput;
-
 pub use crate::operation::list_report_definitions::_list_report_definitions_input::ListReportDefinitionsInput;
+
+pub use crate::operation::list_report_definitions::_list_report_definitions_output::ListReportDefinitionsOutput;
 
 mod _list_report_definitions_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backup_vault_a
     }
 }
 
-pub use crate::operation::get_backup_vault_access_policy::_get_backup_vault_access_policy_output::GetBackupVaultAccessPolicyOutput;
-
 pub use crate::operation::get_backup_vault_access_policy::_get_backup_vault_access_policy_input::GetBackupVaultAccessPolicyInput;
+
+pub use crate::operation::get_backup_vault_access_policy::_get_backup_vault_access_policy_output::GetBackupVaultAccessPolicyOutput;
 
 mod _get_backup_vault_access_policy_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ml_evaluatio
     }
 }
 
-pub use crate::operation::start_ml_evaluation_task_run::_start_ml_evaluation_task_run_output::StartMlEvaluationTaskRunOutput;
-
 pub use crate::operation::start_ml_evaluation_task_run::_start_ml_evaluation_task_run_input::StartMlEvaluationTaskRunInput;
+
+pub use crate::operation::start_ml_evaluation_task_run::_start_ml_evaluation_task_run_output::StartMlEvaluationTaskRunOutput;
 
 mod _start_ml_evaluation_task_run_input;
 

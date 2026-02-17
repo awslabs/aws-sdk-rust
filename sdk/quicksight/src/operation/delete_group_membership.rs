@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_group_membe
     }
 }
 
-pub use crate::operation::delete_group_membership::_delete_group_membership_output::DeleteGroupMembershipOutput;
-
 pub use crate::operation::delete_group_membership::_delete_group_membership_input::DeleteGroupMembershipInput;
+
+pub use crate::operation::delete_group_membership::_delete_group_membership_output::DeleteGroupMembershipOutput;
 
 mod _delete_group_membership_input;
 

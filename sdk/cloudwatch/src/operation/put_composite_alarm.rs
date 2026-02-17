@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_composite_alar
     }
 }
 
-pub use crate::operation::put_composite_alarm::_put_composite_alarm_output::PutCompositeAlarmOutput;
-
 pub use crate::operation::put_composite_alarm::_put_composite_alarm_input::PutCompositeAlarmInput;
+
+pub use crate::operation::put_composite_alarm::_put_composite_alarm_output::PutCompositeAlarmOutput;
 
 mod _put_composite_alarm_input;
 

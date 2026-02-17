@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_multi_regio
     }
 }
 
-pub use crate::operation::delete_multi_region_access_point::_delete_multi_region_access_point_output::DeleteMultiRegionAccessPointOutput;
-
 pub use crate::operation::delete_multi_region_access_point::_delete_multi_region_access_point_input::DeleteMultiRegionAccessPointInput;
+
+pub use crate::operation::delete_multi_region_access_point::_delete_multi_region_access_point_output::DeleteMultiRegionAccessPointOutput;
 
 mod _delete_multi_region_access_point_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relational_dat
     }
 }
 
-pub use crate::operation::get_relational_database_parameters::_get_relational_database_parameters_output::GetRelationalDatabaseParametersOutput;
-
 pub use crate::operation::get_relational_database_parameters::_get_relational_database_parameters_input::GetRelationalDatabaseParametersInput;
+
+pub use crate::operation::get_relational_database_parameters::_get_relational_database_parameters_output::GetRelationalDatabaseParametersOutput;
 
 mod _get_relational_database_parameters_input;
 

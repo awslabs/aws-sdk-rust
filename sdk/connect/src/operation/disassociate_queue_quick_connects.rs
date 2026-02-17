@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_queue
     }
 }
 
-pub use crate::operation::disassociate_queue_quick_connects::_disassociate_queue_quick_connects_output::DisassociateQueueQuickConnectsOutput;
-
 pub use crate::operation::disassociate_queue_quick_connects::_disassociate_queue_quick_connects_input::DisassociateQueueQuickConnectsInput;
+
+pub use crate::operation::disassociate_queue_quick_connects::_disassociate_queue_quick_connects_output::DisassociateQueueQuickConnectsOutput;
 
 mod _disassociate_queue_quick_connects_input;
 

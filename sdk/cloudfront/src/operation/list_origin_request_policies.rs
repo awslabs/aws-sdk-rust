@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_origin_reques
     }
 }
 
-pub use crate::operation::list_origin_request_policies::_list_origin_request_policies_output::ListOriginRequestPoliciesOutput;
-
 pub use crate::operation::list_origin_request_policies::_list_origin_request_policies_input::ListOriginRequestPoliciesInput;
+
+pub use crate::operation::list_origin_request_policies::_list_origin_request_policies_output::ListOriginRequestPoliciesOutput;
 
 mod _list_origin_request_policies_input;
 

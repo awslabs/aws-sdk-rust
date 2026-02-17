@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_edge_config
     }
 }
 
-pub use crate::operation::delete_edge_configuration::_delete_edge_configuration_output::DeleteEdgeConfigurationOutput;
-
 pub use crate::operation::delete_edge_configuration::_delete_edge_configuration_input::DeleteEdgeConfigurationInput;
+
+pub use crate::operation::delete_edge_configuration::_delete_edge_configuration_output::DeleteEdgeConfigurationOutput;
 
 mod _delete_edge_configuration_input;
 

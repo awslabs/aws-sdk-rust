@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_volume_attr
     }
 }
 
-pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_output::ModifyVolumeAttributeOutput;
-
 pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_input::ModifyVolumeAttributeInput;
+
+pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_output::ModifyVolumeAttributeOutput;
 
 mod _modify_volume_attribute_input;
 

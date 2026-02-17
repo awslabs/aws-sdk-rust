@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_apis::GetApisE
     }
 }
 
-pub use crate::operation::get_apis::_get_apis_output::GetApisOutput;
-
 pub use crate::operation::get_apis::_get_apis_input::GetApisInput;
+
+pub use crate::operation::get_apis::_get_apis_output::GetApisOutput;
 
 mod _get_apis_input;
 

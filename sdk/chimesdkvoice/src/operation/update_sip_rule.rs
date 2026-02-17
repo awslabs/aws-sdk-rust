@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sip_rule::U
     }
 }
 
-pub use crate::operation::update_sip_rule::_update_sip_rule_output::UpdateSipRuleOutput;
-
 pub use crate::operation::update_sip_rule::_update_sip_rule_input::UpdateSipRuleInput;
+
+pub use crate::operation::update_sip_rule::_update_sip_rule_output::UpdateSipRuleOutput;
 
 mod _update_sip_rule_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_tags_to_vault:
     }
 }
 
-pub use crate::operation::add_tags_to_vault::_add_tags_to_vault_output::AddTagsToVaultOutput;
-
 pub use crate::operation::add_tags_to_vault::_add_tags_to_vault_input::AddTagsToVaultInput;
+
+pub use crate::operation::add_tags_to_vault::_add_tags_to_vault_output::AddTagsToVaultOutput;
 
 mod _add_tags_to_vault_input;
 

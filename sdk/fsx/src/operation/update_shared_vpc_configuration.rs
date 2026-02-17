@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_shared_vpc_
     }
 }
 
-pub use crate::operation::update_shared_vpc_configuration::_update_shared_vpc_configuration_output::UpdateSharedVpcConfigurationOutput;
-
 pub use crate::operation::update_shared_vpc_configuration::_update_shared_vpc_configuration_input::UpdateSharedVpcConfigurationInput;
+
+pub use crate::operation::update_shared_vpc_configuration::_update_shared_vpc_configuration_output::UpdateSharedVpcConfigurationOutput;
 
 mod _update_shared_vpc_configuration_input;
 

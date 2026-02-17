@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_state_template
     }
 }
 
-pub use crate::operation::get_state_template::_get_state_template_output::GetStateTemplateOutput;
-
 pub use crate::operation::get_state_template::_get_state_template_input::GetStateTemplateInput;
+
+pub use crate::operation::get_state_template::_get_state_template_output::GetStateTemplateOutput;
 
 mod _get_state_template_input;
 

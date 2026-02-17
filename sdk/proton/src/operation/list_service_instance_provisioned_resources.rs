@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_service_instance_provisioned_resources::_list_service_instance_provisioned_resources_output::ListServiceInstanceProvisionedResourcesOutput;
-
 pub use crate::operation::list_service_instance_provisioned_resources::_list_service_instance_provisioned_resources_input::ListServiceInstanceProvisionedResourcesInput;
+
+pub use crate::operation::list_service_instance_provisioned_resources::_list_service_instance_provisioned_resources_output::ListServiceInstanceProvisionedResourcesOutput;
 
 mod _list_service_instance_provisioned_resources_input;
 

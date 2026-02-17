@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_budget_acti
     }
 }
 
-pub use crate::operation::create_budget_action::_create_budget_action_output::CreateBudgetActionOutput;
-
 pub use crate::operation::create_budget_action::_create_budget_action_input::CreateBudgetActionInput;
+
+pub use crate::operation::create_budget_action::_create_budget_action_output::CreateBudgetActionOutput;
 
 mod _create_budget_action_input;
 

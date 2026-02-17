@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_portal::Pu
     }
 }
 
-pub use crate::operation::publish_portal::_publish_portal_output::PublishPortalOutput;
-
 pub use crate::operation::publish_portal::_publish_portal_input::PublishPortalInput;
+
+pub use crate::operation::publish_portal::_publish_portal_output::PublishPortalOutput;
 
 mod _publish_portal_input;
 

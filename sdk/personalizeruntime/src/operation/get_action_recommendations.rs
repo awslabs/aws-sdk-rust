@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_action_recomme
     }
 }
 
-pub use crate::operation::get_action_recommendations::_get_action_recommendations_output::GetActionRecommendationsOutput;
-
 pub use crate::operation::get_action_recommendations::_get_action_recommendations_input::GetActionRecommendationsInput;
+
+pub use crate::operation::get_action_recommendations::_get_action_recommendations_output::GetActionRecommendationsOutput;
 
 mod _get_action_recommendations_input;
 

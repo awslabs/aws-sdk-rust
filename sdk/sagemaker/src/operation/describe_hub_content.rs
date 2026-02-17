@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hub_conte
     }
 }
 
-pub use crate::operation::describe_hub_content::_describe_hub_content_output::DescribeHubContentOutput;
-
 pub use crate::operation::describe_hub_content::_describe_hub_content_input::DescribeHubContentInput;
+
+pub use crate::operation::describe_hub_content::_describe_hub_content_output::DescribeHubContentOutput;
 
 mod _describe_hub_content_input;
 

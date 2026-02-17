@@ -519,9 +519,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_gremlin_query_
     }
 }
 
-pub use crate::operation::get_gremlin_query_status::_get_gremlin_query_status_output::GetGremlinQueryStatusOutput;
-
 pub use crate::operation::get_gremlin_query_status::_get_gremlin_query_status_input::GetGremlinQueryStatusInput;
+
+pub use crate::operation::get_gremlin_query_status::_get_gremlin_query_status_output::GetGremlinQueryStatusOutput;
 
 mod _get_gremlin_query_status_input;
 

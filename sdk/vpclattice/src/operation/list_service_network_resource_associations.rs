@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_service_network_resource_associations::_list_service_network_resource_associations_output::ListServiceNetworkResourceAssociationsOutput;
-
 pub use crate::operation::list_service_network_resource_associations::_list_service_network_resource_associations_input::ListServiceNetworkResourceAssociationsInput;
+
+pub use crate::operation::list_service_network_resource_associations::_list_service_network_resource_associations_output::ListServiceNetworkResourceAssociationsOutput;
 
 mod _list_service_network_resource_associations_input;
 

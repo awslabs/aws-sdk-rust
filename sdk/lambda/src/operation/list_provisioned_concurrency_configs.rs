@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provisioned_c
     }
 }
 
-pub use crate::operation::list_provisioned_concurrency_configs::_list_provisioned_concurrency_configs_output::ListProvisionedConcurrencyConfigsOutput;
-
 pub use crate::operation::list_provisioned_concurrency_configs::_list_provisioned_concurrency_configs_input::ListProvisionedConcurrencyConfigsInput;
+
+pub use crate::operation::list_provisioned_concurrency_configs::_list_provisioned_concurrency_configs_output::ListProvisionedConcurrencyConfigsOutput;
 
 mod _list_provisioned_concurrency_configs_input;
 

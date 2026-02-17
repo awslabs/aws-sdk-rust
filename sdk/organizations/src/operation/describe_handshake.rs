@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_handshake
     }
 }
 
-pub use crate::operation::describe_handshake::_describe_handshake_output::DescribeHandshakeOutput;
-
 pub use crate::operation::describe_handshake::_describe_handshake_input::DescribeHandshakeInput;
+
+pub use crate::operation::describe_handshake::_describe_handshake_output::DescribeHandshakeOutput;
 
 mod _describe_handshake_input;
 

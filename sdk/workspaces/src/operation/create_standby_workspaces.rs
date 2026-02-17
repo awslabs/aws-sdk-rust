@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_standby_wor
     }
 }
 
-pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_output::CreateStandbyWorkspacesOutput;
-
 pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_input::CreateStandbyWorkspacesInput;
+
+pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_output::CreateStandbyWorkspacesOutput;
 
 mod _create_standby_workspaces_input;
 

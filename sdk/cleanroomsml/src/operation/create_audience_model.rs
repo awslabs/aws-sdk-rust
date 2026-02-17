@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_audience_mo
     }
 }
 
-pub use crate::operation::create_audience_model::_create_audience_model_output::CreateAudienceModelOutput;
-
 pub use crate::operation::create_audience_model::_create_audience_model_input::CreateAudienceModelInput;
+
+pub use crate::operation::create_audience_model::_create_audience_model_output::CreateAudienceModelOutput;
 
 mod _create_audience_model_input;
 

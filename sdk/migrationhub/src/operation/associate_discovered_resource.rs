@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_discover
     }
 }
 
-pub use crate::operation::associate_discovered_resource::_associate_discovered_resource_output::AssociateDiscoveredResourceOutput;
-
 pub use crate::operation::associate_discovered_resource::_associate_discovered_resource_input::AssociateDiscoveredResourceInput;
+
+pub use crate::operation::associate_discovered_resource::_associate_discovered_resource_output::AssociateDiscoveredResourceOutput;
 
 mod _associate_discovered_resource_input;
 

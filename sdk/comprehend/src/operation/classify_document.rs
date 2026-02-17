@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::classify_document:
     }
 }
 
-pub use crate::operation::classify_document::_classify_document_output::ClassifyDocumentOutput;
-
 pub use crate::operation::classify_document::_classify_document_input::ClassifyDocumentInput;
+
+pub use crate::operation::classify_document::_classify_document_output::ClassifyDocumentOutput;
 
 mod _classify_document_input;
 

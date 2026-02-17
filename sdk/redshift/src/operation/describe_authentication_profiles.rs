@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_authentic
     }
 }
 
-pub use crate::operation::describe_authentication_profiles::_describe_authentication_profiles_output::DescribeAuthenticationProfilesOutput;
-
 pub use crate::operation::describe_authentication_profiles::_describe_authentication_profiles_input::DescribeAuthenticationProfilesInput;
+
+pub use crate::operation::describe_authentication_profiles::_describe_authentication_profiles_output::DescribeAuthenticationProfilesOutput;
 
 mod _describe_authentication_profiles_input;
 

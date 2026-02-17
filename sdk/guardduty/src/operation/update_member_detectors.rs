@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_member_dete
     }
 }
 
-pub use crate::operation::update_member_detectors::_update_member_detectors_output::UpdateMemberDetectorsOutput;
-
 pub use crate::operation::update_member_detectors::_update_member_detectors_input::UpdateMemberDetectorsInput;
+
+pub use crate::operation::update_member_detectors::_update_member_detectors_output::UpdateMemberDetectorsOutput;
 
 mod _update_member_detectors_input;
 

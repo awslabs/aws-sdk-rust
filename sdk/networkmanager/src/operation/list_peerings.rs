@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_peerings::Lis
     }
 }
 
-pub use crate::operation::list_peerings::_list_peerings_output::ListPeeringsOutput;
-
 pub use crate::operation::list_peerings::_list_peerings_input::ListPeeringsInput;
+
+pub use crate::operation::list_peerings::_list_peerings_output::ListPeeringsOutput;
 
 mod _list_peerings_input;
 

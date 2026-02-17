@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_queue_outbo
     }
 }
 
-pub use crate::operation::update_queue_outbound_email_config::_update_queue_outbound_email_config_output::UpdateQueueOutboundEmailConfigOutput;
-
 pub use crate::operation::update_queue_outbound_email_config::_update_queue_outbound_email_config_input::UpdateQueueOutboundEmailConfigInput;
+
+pub use crate::operation::update_queue_outbound_email_config::_update_queue_outbound_email_config_output::UpdateQueueOutboundEmailConfigOutput;
 
 mod _update_queue_outbound_email_config_input;
 

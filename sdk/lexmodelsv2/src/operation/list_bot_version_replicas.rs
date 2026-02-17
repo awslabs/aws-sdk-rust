@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_version_r
     }
 }
 
-pub use crate::operation::list_bot_version_replicas::_list_bot_version_replicas_output::ListBotVersionReplicasOutput;
-
 pub use crate::operation::list_bot_version_replicas::_list_bot_version_replicas_input::ListBotVersionReplicasInput;
+
+pub use crate::operation::list_bot_version_replicas::_list_bot_version_replicas_output::ListBotVersionReplicasOutput;
 
 mod _list_bot_version_replicas_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sub_channels:
     }
 }
 
-pub use crate::operation::list_sub_channels::_list_sub_channels_output::ListSubChannelsOutput;
-
 pub use crate::operation::list_sub_channels::_list_sub_channels_input::ListSubChannelsInput;
+
+pub use crate::operation::list_sub_channels::_list_sub_channels_output::ListSubChannelsOutput;
 
 mod _list_sub_channels_input;
 

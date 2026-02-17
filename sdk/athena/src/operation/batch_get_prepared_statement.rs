@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_prepared
     }
 }
 
-pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_statement_output::BatchGetPreparedStatementOutput;
-
 pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_statement_input::BatchGetPreparedStatementInput;
+
+pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_statement_output::BatchGetPreparedStatementOutput;
 
 mod _batch_get_prepared_statement_input;
 

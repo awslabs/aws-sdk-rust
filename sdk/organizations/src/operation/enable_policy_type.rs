@@ -649,9 +649,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_policy_type
     }
 }
 
-pub use crate::operation::enable_policy_type::_enable_policy_type_output::EnablePolicyTypeOutput;
-
 pub use crate::operation::enable_policy_type::_enable_policy_type_input::EnablePolicyTypeInput;
+
+pub use crate::operation::enable_policy_type::_enable_policy_type_output::EnablePolicyTypeOutput;
 
 mod _enable_policy_type_input;
 

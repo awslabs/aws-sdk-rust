@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_browser_setti
     }
 }
 
-pub use crate::operation::list_browser_settings::_list_browser_settings_output::ListBrowserSettingsOutput;
-
 pub use crate::operation::list_browser_settings::_list_browser_settings_input::ListBrowserSettingsInput;
+
+pub use crate::operation::list_browser_settings::_list_browser_settings_output::ListBrowserSettingsOutput;
 
 mod _list_browser_settings_input;
 

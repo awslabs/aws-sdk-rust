@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subnet_cidr
     }
 }
 
-pub use crate::operation::create_subnet_cidr_reservation::_create_subnet_cidr_reservation_output::CreateSubnetCidrReservationOutput;
-
 pub use crate::operation::create_subnet_cidr_reservation::_create_subnet_cidr_reservation_input::CreateSubnetCidrReservationInput;
+
+pub use crate::operation::create_subnet_cidr_reservation::_create_subnet_cidr_reservation_output::CreateSubnetCidrReservationOutput;
 
 mod _create_subnet_cidr_reservation_input;
 

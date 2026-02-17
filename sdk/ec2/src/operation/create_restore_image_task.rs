@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_restore_ima
     }
 }
 
-pub use crate::operation::create_restore_image_task::_create_restore_image_task_output::CreateRestoreImageTaskOutput;
-
 pub use crate::operation::create_restore_image_task::_create_restore_image_task_input::CreateRestoreImageTaskInput;
+
+pub use crate::operation::create_restore_image_task::_create_restore_image_task_output::CreateRestoreImageTaskOutput;
 
 mod _create_restore_image_task_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_requester_g
     }
 }
 
-pub use crate::operation::update_requester_gateway::_update_requester_gateway_output::UpdateRequesterGatewayOutput;
-
 pub use crate::operation::update_requester_gateway::_update_requester_gateway_input::UpdateRequesterGatewayInput;
+
+pub use crate::operation::update_requester_gateway::_update_requester_gateway_output::UpdateRequesterGatewayOutput;
 
 mod _update_requester_gateway_input;
 

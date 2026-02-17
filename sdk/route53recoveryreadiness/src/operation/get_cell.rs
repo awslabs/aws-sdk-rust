@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cell::GetCellE
     }
 }
 
-pub use crate::operation::get_cell::_get_cell_output::GetCellOutput;
-
 pub use crate::operation::get_cell::_get_cell_input::GetCellInput;
+
+pub use crate::operation::get_cell::_get_cell_output::GetCellOutput;
 
 mod _get_cell_input;
 

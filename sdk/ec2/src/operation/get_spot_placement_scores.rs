@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_spot_placement
     }
 }
 
-pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_output::GetSpotPlacementScoresOutput;
-
 pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_input::GetSpotPlacementScoresInput;
+
+pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_output::GetSpotPlacementScoresOutput;
 
 mod _get_spot_placement_scores_input;
 

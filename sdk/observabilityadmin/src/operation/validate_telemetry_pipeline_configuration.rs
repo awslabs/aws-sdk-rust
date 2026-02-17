@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_telemetry
     }
 }
 
-pub use crate::operation::validate_telemetry_pipeline_configuration::_validate_telemetry_pipeline_configuration_output::ValidateTelemetryPipelineConfigurationOutput;
-
 pub use crate::operation::validate_telemetry_pipeline_configuration::_validate_telemetry_pipeline_configuration_input::ValidateTelemetryPipelineConfigurationInput;
+
+pub use crate::operation::validate_telemetry_pipeline_configuration::_validate_telemetry_pipeline_configuration_output::ValidateTelemetryPipelineConfigurationOutput;
 
 mod _validate_telemetry_pipeline_configuration_input;
 

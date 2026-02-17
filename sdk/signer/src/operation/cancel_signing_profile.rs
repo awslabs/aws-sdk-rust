@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_signing_pro
     }
 }
 
-pub use crate::operation::cancel_signing_profile::_cancel_signing_profile_output::CancelSigningProfileOutput;
-
 pub use crate::operation::cancel_signing_profile::_cancel_signing_profile_input::CancelSigningProfileInput;
+
+pub use crate::operation::cancel_signing_profile::_cancel_signing_profile_output::CancelSigningProfileOutput;
 
 mod _cancel_signing_profile_input;
 

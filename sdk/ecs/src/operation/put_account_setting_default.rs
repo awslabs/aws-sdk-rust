@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_settin
     }
 }
 
-pub use crate::operation::put_account_setting_default::_put_account_setting_default_output::PutAccountSettingDefaultOutput;
-
 pub use crate::operation::put_account_setting_default::_put_account_setting_default_input::PutAccountSettingDefaultInput;
+
+pub use crate::operation::put_account_setting_default::_put_account_setting_default_output::PutAccountSettingDefaultOutput;
 
 mod _put_account_setting_default_input;
 

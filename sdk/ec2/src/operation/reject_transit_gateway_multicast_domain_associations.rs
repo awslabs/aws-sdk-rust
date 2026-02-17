@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::reject_transit_gateway_multicast_domain_associations::_reject_transit_gateway_multicast_domain_associations_output::RejectTransitGatewayMulticastDomainAssociationsOutput;
-
 pub use crate::operation::reject_transit_gateway_multicast_domain_associations::_reject_transit_gateway_multicast_domain_associations_input::RejectTransitGatewayMulticastDomainAssociationsInput;
+
+pub use crate::operation::reject_transit_gateway_multicast_domain_associations::_reject_transit_gateway_multicast_domain_associations_output::RejectTransitGatewayMulticastDomainAssociationsOutput;
 
 mod _reject_transit_gateway_multicast_domain_associations_input;
 

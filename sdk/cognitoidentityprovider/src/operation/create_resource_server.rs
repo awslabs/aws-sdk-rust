@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_se
     }
 }
 
-pub use crate::operation::create_resource_server::_create_resource_server_output::CreateResourceServerOutput;
-
 pub use crate::operation::create_resource_server::_create_resource_server_input::CreateResourceServerInput;
+
+pub use crate::operation::create_resource_server::_create_resource_server_output::CreateResourceServerOutput;
 
 mod _create_resource_server_input;
 

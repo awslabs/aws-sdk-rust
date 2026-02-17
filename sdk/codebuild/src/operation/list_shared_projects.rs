@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_shared_projec
     }
 }
 
-pub use crate::operation::list_shared_projects::_list_shared_projects_output::ListSharedProjectsOutput;
-
 pub use crate::operation::list_shared_projects::_list_shared_projects_input::ListSharedProjectsInput;
+
+pub use crate::operation::list_shared_projects::_list_shared_projects_output::ListSharedProjectsOutput;
 
 mod _list_shared_projects_input;
 

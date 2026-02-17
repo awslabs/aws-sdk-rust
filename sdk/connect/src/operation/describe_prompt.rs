@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_prompt::D
     }
 }
 
-pub use crate::operation::describe_prompt::_describe_prompt_output::DescribePromptOutput;
-
 pub use crate::operation::describe_prompt::_describe_prompt_input::DescribePromptInput;
+
+pub use crate::operation::describe_prompt::_describe_prompt_output::DescribePromptOutput;
 
 mod _describe_prompt_input;
 

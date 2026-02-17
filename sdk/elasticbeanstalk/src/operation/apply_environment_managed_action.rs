@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::apply_environment_
     }
 }
 
-pub use crate::operation::apply_environment_managed_action::_apply_environment_managed_action_output::ApplyEnvironmentManagedActionOutput;
-
 pub use crate::operation::apply_environment_managed_action::_apply_environment_managed_action_input::ApplyEnvironmentManagedActionInput;
+
+pub use crate::operation::apply_environment_managed_action::_apply_environment_managed_action_output::ApplyEnvironmentManagedActionOutput;
 
 mod _apply_environment_managed_action_input;
 

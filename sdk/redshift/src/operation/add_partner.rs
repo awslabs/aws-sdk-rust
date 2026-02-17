@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_partner::AddPa
     }
 }
 
-pub use crate::operation::add_partner::_add_partner_output::AddPartnerOutput;
-
 pub use crate::operation::add_partner::_add_partner_input::AddPartnerInput;
+
+pub use crate::operation::add_partner::_add_partner_output::AddPartnerOutput;
 
 mod _add_partner_input;
 

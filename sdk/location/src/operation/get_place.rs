@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_place::GetPlac
     }
 }
 
-pub use crate::operation::get_place::_get_place_output::GetPlaceOutput;
-
 pub use crate::operation::get_place::_get_place_input::GetPlaceInput;
+
+pub use crate::operation::get_place::_get_place_output::GetPlaceOutput;
 
 mod _get_place_input;
 

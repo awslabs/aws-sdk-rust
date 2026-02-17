@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cluster_sna
     }
 }
 
-pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_output::CreateClusterSnapshotOutput;
-
 pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_input::CreateClusterSnapshotInput;
+
+pub use crate::operation::create_cluster_snapshot::_create_cluster_snapshot_output::CreateClusterSnapshotOutput;
 
 mod _create_cluster_snapshot_input;
 

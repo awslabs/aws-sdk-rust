@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_preview_rotat
     }
 }
 
-pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_shifts_output::ListPreviewRotationShiftsOutput;
-
 pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_shifts_input::ListPreviewRotationShiftsInput;
+
+pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_shifts_output::ListPreviewRotationShiftsOutput;
 
 mod _list_preview_rotation_shifts_input;
 

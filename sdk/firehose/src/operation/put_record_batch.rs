@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_record_batch::
     }
 }
 
-pub use crate::operation::put_record_batch::_put_record_batch_output::PutRecordBatchOutput;
-
 pub use crate::operation::put_record_batch::_put_record_batch_input::PutRecordBatchInput;
+
+pub use crate::operation::put_record_batch::_put_record_batch_output::PutRecordBatchOutput;
 
 mod _put_record_batch_input;
 

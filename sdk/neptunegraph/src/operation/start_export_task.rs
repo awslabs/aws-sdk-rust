@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_export_task:
     }
 }
 
-pub use crate::operation::start_export_task::_start_export_task_output::StartExportTaskOutput;
-
 pub use crate::operation::start_export_task::_start_export_task_input::StartExportTaskInput;
+
+pub use crate::operation::start_export_task::_start_export_task_output::StartExportTaskOutput;
 
 mod _start_export_task_input;
 

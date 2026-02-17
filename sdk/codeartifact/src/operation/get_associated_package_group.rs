@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_associated_pac
     }
 }
 
-pub use crate::operation::get_associated_package_group::_get_associated_package_group_output::GetAssociatedPackageGroupOutput;
-
 pub use crate::operation::get_associated_package_group::_get_associated_package_group_input::GetAssociatedPackageGroupInput;
+
+pub use crate::operation::get_associated_package_group::_get_associated_package_group_output::GetAssociatedPackageGroupOutput;
 
 mod _get_associated_package_group_input;
 

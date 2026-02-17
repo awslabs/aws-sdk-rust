@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_authenticat
     }
 }
 
-pub use crate::operation::delete_authentication_profile::_delete_authentication_profile_output::DeleteAuthenticationProfileOutput;
-
 pub use crate::operation::delete_authentication_profile::_delete_authentication_profile_input::DeleteAuthenticationProfileInput;
+
+pub use crate::operation::delete_authentication_profile::_delete_authentication_profile_output::DeleteAuthenticationProfileOutput;
 
 mod _delete_authentication_profile_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_notebook_exec
     }
 }
 
-pub use crate::operation::stop_notebook_execution::_stop_notebook_execution_output::StopNotebookExecutionOutput;
-
 pub use crate::operation::stop_notebook_execution::_stop_notebook_execution_input::StopNotebookExecutionInput;
+
+pub use crate::operation::stop_notebook_execution::_stop_notebook_execution_output::StopNotebookExecutionOutput;
 
 mod _stop_notebook_execution_input;
 

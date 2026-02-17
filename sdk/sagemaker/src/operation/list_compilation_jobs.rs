@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compilation_j
     }
 }
 
-pub use crate::operation::list_compilation_jobs::_list_compilation_jobs_output::ListCompilationJobsOutput;
-
 pub use crate::operation::list_compilation_jobs::_list_compilation_jobs_input::ListCompilationJobsInput;
+
+pub use crate::operation::list_compilation_jobs::_list_compilation_jobs_output::ListCompilationJobsOutput;
 
 mod _list_compilation_jobs_input;
 

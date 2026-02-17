@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_image_scanning
     }
 }
 
-pub use crate::operation::put_image_scanning_configuration::_put_image_scanning_configuration_output::PutImageScanningConfigurationOutput;
-
 pub use crate::operation::put_image_scanning_configuration::_put_image_scanning_configuration_input::PutImageScanningConfigurationInput;
+
+pub use crate::operation::put_image_scanning_configuration::_put_image_scanning_configuration_output::PutImageScanningConfigurationOutput;
 
 mod _put_image_scanning_configuration_input;
 

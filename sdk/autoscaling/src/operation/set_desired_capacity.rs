@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_desired_capaci
     }
 }
 
-pub use crate::operation::set_desired_capacity::_set_desired_capacity_output::SetDesiredCapacityOutput;
-
 pub use crate::operation::set_desired_capacity::_set_desired_capacity_input::SetDesiredCapacityInput;
+
+pub use crate::operation::set_desired_capacity::_set_desired_capacity_output::SetDesiredCapacityOutput;
 
 mod _set_desired_capacity_input;
 

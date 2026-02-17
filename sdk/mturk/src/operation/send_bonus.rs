@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_bonus::SendBo
     }
 }
 
-pub use crate::operation::send_bonus::_send_bonus_output::SendBonusOutput;
-
 pub use crate::operation::send_bonus::_send_bonus_input::SendBonusInput;
+
+pub use crate::operation::send_bonus::_send_bonus_output::SendBonusOutput;
 
 mod _send_bonus_input;
 

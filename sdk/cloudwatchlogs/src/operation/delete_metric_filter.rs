@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_metric_filt
     }
 }
 
-pub use crate::operation::delete_metric_filter::_delete_metric_filter_output::DeleteMetricFilterOutput;
-
 pub use crate::operation::delete_metric_filter::_delete_metric_filter_input::DeleteMetricFilterInput;
+
+pub use crate::operation::delete_metric_filter::_delete_metric_filter_output::DeleteMetricFilterOutput;
 
 mod _delete_metric_filter_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_peering
     }
 }
 
-pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_connection_output::DeleteVpcPeeringConnectionOutput;
-
 pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_connection_input::DeleteVpcPeeringConnectionInput;
+
+pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_connection_output::DeleteVpcPeeringConnectionOutput;
 
 mod _delete_vpc_peering_connection_input;
 

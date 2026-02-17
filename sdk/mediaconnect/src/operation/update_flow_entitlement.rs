@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_flow_entitl
     }
 }
 
-pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_output::UpdateFlowEntitlementOutput;
-
 pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_input::UpdateFlowEntitlementInput;
+
+pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_output::UpdateFlowEntitlementOutput;
 
 mod _update_flow_entitlement_input;
 

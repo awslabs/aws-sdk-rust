@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_microsoft_teams_channel_configuration::_update_microsoft_teams_channel_configuration_output::UpdateMicrosoftTeamsChannelConfigurationOutput;
-
 pub use crate::operation::update_microsoft_teams_channel_configuration::_update_microsoft_teams_channel_configuration_input::UpdateMicrosoftTeamsChannelConfigurationInput;
+
+pub use crate::operation::update_microsoft_teams_channel_configuration::_update_microsoft_teams_channel_configuration_output::UpdateMicrosoftTeamsChannelConfigurationOutput;
 
 mod _update_microsoft_teams_channel_configuration_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_template_actio
     }
 }
 
-pub use crate::operation::put_template_action::_put_template_action_output::PutTemplateActionOutput;
-
 pub use crate::operation::put_template_action::_put_template_action_input::PutTemplateActionInput;
+
+pub use crate::operation::put_template_action::_put_template_action_output::PutTemplateActionOutput;
 
 mod _put_template_action_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_system_instanc
     }
 }
 
-pub use crate::operation::get_system_instance::_get_system_instance_output::GetSystemInstanceOutput;
-
 pub use crate::operation::get_system_instance::_get_system_instance_input::GetSystemInstanceInput;
+
+pub use crate::operation::get_system_instance::_get_system_instance_output::GetSystemInstanceOutput;
 
 mod _get_system_instance_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_contact_c
     }
 }
 
-pub use crate::operation::activate_contact_channel::_activate_contact_channel_output::ActivateContactChannelOutput;
-
 pub use crate::operation::activate_contact_channel::_activate_contact_channel_input::ActivateContactChannelInput;
+
+pub use crate::operation::activate_contact_channel::_activate_contact_channel_output::ActivateContactChannelOutput;
 
 mod _activate_contact_channel_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rename_object::Ren
     }
 }
 
-pub use crate::operation::rename_object::_rename_object_output::RenameObjectOutput;
-
 pub use crate::operation::rename_object::_rename_object_input::RenameObjectInput;
+
+pub use crate::operation::rename_object::_rename_object_output::RenameObjectOutput;
 
 mod _rename_object_input;
 

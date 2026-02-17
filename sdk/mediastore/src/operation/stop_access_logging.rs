@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_access_loggin
     }
 }
 
-pub use crate::operation::stop_access_logging::_stop_access_logging_output::StopAccessLoggingOutput;
-
 pub use crate::operation::stop_access_logging::_stop_access_logging_input::StopAccessLoggingInput;
+
+pub use crate::operation::stop_access_logging::_stop_access_logging_output::StopAccessLoggingOutput;
 
 mod _stop_access_logging_input;
 

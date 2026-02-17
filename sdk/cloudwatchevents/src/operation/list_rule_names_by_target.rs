@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rule_names_by
     }
 }
 
-pub use crate::operation::list_rule_names_by_target::_list_rule_names_by_target_output::ListRuleNamesByTargetOutput;
-
 pub use crate::operation::list_rule_names_by_target::_list_rule_names_by_target_input::ListRuleNamesByTargetInput;
+
+pub use crate::operation::list_rule_names_by_target::_list_rule_names_by_target_output::ListRuleNamesByTargetOutput;
 
 mod _list_rule_names_by_target_input;
 

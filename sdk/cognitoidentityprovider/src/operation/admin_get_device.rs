@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_get_device::
     }
 }
 
-pub use crate::operation::admin_get_device::_admin_get_device_output::AdminGetDeviceOutput;
-
 pub use crate::operation::admin_get_device::_admin_get_device_input::AdminGetDeviceInput;
+
+pub use crate::operation::admin_get_device::_admin_get_device_output::AdminGetDeviceOutput;
 
 mod _admin_get_device_input;
 

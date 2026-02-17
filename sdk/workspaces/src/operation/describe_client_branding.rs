@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_client_br
     }
 }
 
-pub use crate::operation::describe_client_branding::_describe_client_branding_output::DescribeClientBrandingOutput;
-
 pub use crate::operation::describe_client_branding::_describe_client_branding_input::DescribeClientBrandingInput;
+
+pub use crate::operation::describe_client_branding::_describe_client_branding_output::DescribeClientBrandingOutput;
 
 mod _describe_client_branding_input;
 

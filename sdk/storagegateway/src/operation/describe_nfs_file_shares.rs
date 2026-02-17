@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_nfs_file_
     }
 }
 
-pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_output::DescribeNfsFileSharesOutput;
-
 pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_input::DescribeNfsFileSharesInput;
+
+pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_output::DescribeNfsFileSharesOutput;
 
 mod _describe_nfs_file_shares_input;
 

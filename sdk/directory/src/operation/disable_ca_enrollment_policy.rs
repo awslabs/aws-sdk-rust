@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_ca_enrollm
     }
 }
 
-pub use crate::operation::disable_ca_enrollment_policy::_disable_ca_enrollment_policy_output::DisableCaEnrollmentPolicyOutput;
-
 pub use crate::operation::disable_ca_enrollment_policy::_disable_ca_enrollment_policy_input::DisableCaEnrollmentPolicyInput;
+
+pub use crate::operation::disable_ca_enrollment_policy::_disable_ca_enrollment_policy_output::DisableCaEnrollmentPolicyOutput;
 
 mod _disable_ca_enrollment_policy_input;
 

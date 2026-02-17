@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_image_tag_muta
     }
 }
 
-pub use crate::operation::put_image_tag_mutability::_put_image_tag_mutability_output::PutImageTagMutabilityOutput;
-
 pub use crate::operation::put_image_tag_mutability::_put_image_tag_mutability_input::PutImageTagMutabilityInput;
+
+pub use crate::operation::put_image_tag_mutability::_put_image_tag_mutability_output::PutImageTagMutabilityOutput;
 
 mod _put_image_tag_mutability_input;
 

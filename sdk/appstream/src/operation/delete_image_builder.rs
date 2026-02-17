@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_image_build
     }
 }
 
-pub use crate::operation::delete_image_builder::_delete_image_builder_output::DeleteImageBuilderOutput;
-
 pub use crate::operation::delete_image_builder::_delete_image_builder_input::DeleteImageBuilderInput;
+
+pub use crate::operation::delete_image_builder::_delete_image_builder_output::DeleteImageBuilderOutput;
 
 mod _delete_image_builder_input;
 

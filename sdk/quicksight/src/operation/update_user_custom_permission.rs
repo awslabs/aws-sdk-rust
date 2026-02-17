@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_custom
     }
 }
 
-pub use crate::operation::update_user_custom_permission::_update_user_custom_permission_output::UpdateUserCustomPermissionOutput;
-
 pub use crate::operation::update_user_custom_permission::_update_user_custom_permission_input::UpdateUserCustomPermissionInput;
+
+pub use crate::operation::update_user_custom_permission::_update_user_custom_permission_output::UpdateUserCustomPermissionOutput;
 
 mod _update_user_custom_permission_input;
 

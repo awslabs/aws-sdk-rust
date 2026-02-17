@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_dial_request_b
     }
 }
 
-pub use crate::operation::put_dial_request_batch::_put_dial_request_batch_output::PutDialRequestBatchOutput;
-
 pub use crate::operation::put_dial_request_batch::_put_dial_request_batch_input::PutDialRequestBatchInput;
+
+pub use crate::operation::put_dial_request_batch::_put_dial_request_batch_output::PutDialRequestBatchOutput;
 
 mod _put_dial_request_batch_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ssh_public_
     }
 }
 
-pub use crate::operation::delete_ssh_public_key::_delete_ssh_public_key_output::DeleteSshPublicKeyOutput;
-
 pub use crate::operation::delete_ssh_public_key::_delete_ssh_public_key_input::DeleteSshPublicKeyInput;
+
+pub use crate::operation::delete_ssh_public_key::_delete_ssh_public_key_output::DeleteSshPublicKeyOutput;
 
 mod _delete_ssh_public_key_input;
 

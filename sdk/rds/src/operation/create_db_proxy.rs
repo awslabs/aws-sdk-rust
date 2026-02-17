@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_proxy::C
     }
 }
 
-pub use crate::operation::create_db_proxy::_create_db_proxy_output::CreateDbProxyOutput;
-
 pub use crate::operation::create_db_proxy::_create_db_proxy_input::CreateDbProxyInput;
+
+pub use crate::operation::create_db_proxy::_create_db_proxy_output::CreateDbProxyOutput;
 
 mod _create_db_proxy_input;
 

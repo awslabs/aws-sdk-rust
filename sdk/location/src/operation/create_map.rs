@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_map::Create
     }
 }
 
-pub use crate::operation::create_map::_create_map_output::CreateMapOutput;
-
 pub use crate::operation::create_map::_create_map_input::CreateMapInput;
+
+pub use crate::operation::create_map::_create_map_output::CreateMapOutput;
 
 mod _create_map_input;
 

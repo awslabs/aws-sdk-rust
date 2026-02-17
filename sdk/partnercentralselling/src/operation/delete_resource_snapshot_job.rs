@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resource_sn
     }
 }
 
-pub use crate::operation::delete_resource_snapshot_job::_delete_resource_snapshot_job_output::DeleteResourceSnapshotJobOutput;
-
 pub use crate::operation::delete_resource_snapshot_job::_delete_resource_snapshot_job_input::DeleteResourceSnapshotJobInput;
+
+pub use crate::operation::delete_resource_snapshot_job::_delete_resource_snapshot_job_output::DeleteResourceSnapshotJobOutput;
 
 mod _delete_resource_snapshot_job_input;
 

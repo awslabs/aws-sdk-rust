@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dynamic_thi
     }
 }
 
-pub use crate::operation::create_dynamic_thing_group::_create_dynamic_thing_group_output::CreateDynamicThingGroupOutput;
-
 pub use crate::operation::create_dynamic_thing_group::_create_dynamic_thing_group_input::CreateDynamicThingGroupInput;
+
+pub use crate::operation::create_dynamic_thing_group::_create_dynamic_thing_group_output::CreateDynamicThingGroupOutput;
 
 mod _create_dynamic_thing_group_input;
 

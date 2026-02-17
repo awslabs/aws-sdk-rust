@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_inline_policy_
     }
 }
 
-pub use crate::operation::get_inline_policy_for_permission_set::_get_inline_policy_for_permission_set_output::GetInlinePolicyForPermissionSetOutput;
-
 pub use crate::operation::get_inline_policy_for_permission_set::_get_inline_policy_for_permission_set_input::GetInlinePolicyForPermissionSetInput;
+
+pub use crate::operation::get_inline_policy_for_permission_set::_get_inline_policy_for_permission_set_output::GetInlinePolicyForPermissionSetOutput;
 
 mod _get_inline_policy_for_permission_set_input;
 

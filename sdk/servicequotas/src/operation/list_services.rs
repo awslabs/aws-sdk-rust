@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_services::Lis
     }
 }
 
-pub use crate::operation::list_services::_list_services_output::ListServicesOutput;
-
 pub use crate::operation::list_services::_list_services_input::ListServicesInput;
+
+pub use crate::operation::list_services::_list_services_output::ListServicesOutput;
 
 mod _list_services_input;
 

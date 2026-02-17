@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_runtime_manage
     }
 }
 
-pub use crate::operation::get_runtime_management_config::_get_runtime_management_config_output::GetRuntimeManagementConfigOutput;
-
 pub use crate::operation::get_runtime_management_config::_get_runtime_management_config_input::GetRuntimeManagementConfigInput;
+
+pub use crate::operation::get_runtime_management_config::_get_runtime_management_config_output::GetRuntimeManagementConfigOutput;
 
 mod _get_runtime_management_config_input;
 

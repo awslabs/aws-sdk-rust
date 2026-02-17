@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_runtime_v
     }
 }
 
-pub use crate::operation::describe_runtime_versions::_describe_runtime_versions_output::DescribeRuntimeVersionsOutput;
-
 pub use crate::operation::describe_runtime_versions::_describe_runtime_versions_input::DescribeRuntimeVersionsInput;
+
+pub use crate::operation::describe_runtime_versions::_describe_runtime_versions_output::DescribeRuntimeVersionsOutput;
 
 mod _describe_runtime_versions_input;
 

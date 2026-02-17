@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_co
     }
 }
 
-pub use crate::operation::update_campaign_communication_limits::_update_campaign_communication_limits_output::UpdateCampaignCommunicationLimitsOutput;
-
 pub use crate::operation::update_campaign_communication_limits::_update_campaign_communication_limits_input::UpdateCampaignCommunicationLimitsInput;
+
+pub use crate::operation::update_campaign_communication_limits::_update_campaign_communication_limits_output::UpdateCampaignCommunicationLimitsOutput;
 
 mod _update_campaign_communication_limits_input;
 

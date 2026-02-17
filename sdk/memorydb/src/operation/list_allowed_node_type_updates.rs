@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_allowed_node_
     }
 }
 
-pub use crate::operation::list_allowed_node_type_updates::_list_allowed_node_type_updates_output::ListAllowedNodeTypeUpdatesOutput;
-
 pub use crate::operation::list_allowed_node_type_updates::_list_allowed_node_type_updates_input::ListAllowedNodeTypeUpdatesInput;
+
+pub use crate::operation::list_allowed_node_type_updates::_list_allowed_node_type_updates_output::ListAllowedNodeTypeUpdatesOutput;
 
 mod _list_allowed_node_type_updates_input;
 

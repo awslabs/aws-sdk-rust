@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_db_cluster_sn
     }
 }
 
-pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_output::CopyDbClusterSnapshotOutput;
-
 pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_input::CopyDbClusterSnapshotInput;
+
+pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_output::CopyDbClusterSnapshotOutput;
 
 mod _copy_db_cluster_snapshot_input;
 

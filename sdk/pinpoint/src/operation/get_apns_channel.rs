@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_apns_channel::
     }
 }
 
-pub use crate::operation::get_apns_channel::_get_apns_channel_output::GetApnsChannelOutput;
-
 pub use crate::operation::get_apns_channel::_get_apns_channel_input::GetApnsChannelInput;
+
+pub use crate::operation::get_apns_channel::_get_apns_channel_output::GetApnsChannelOutput;
 
 mod _get_apns_channel_input;
 

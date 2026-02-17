@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_input_devic
     }
 }
 
-pub use crate::operation::update_input_device::_update_input_device_output::UpdateInputDeviceOutput;
-
 pub use crate::operation::update_input_device::_update_input_device_input::UpdateInputDeviceInput;
+
+pub use crate::operation::update_input_device::_update_input_device_output::UpdateInputDeviceOutput;
 
 mod _update_input_device_input;
 

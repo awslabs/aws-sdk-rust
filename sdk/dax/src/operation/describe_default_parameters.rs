@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_default_p
     }
 }
 
-pub use crate::operation::describe_default_parameters::_describe_default_parameters_output::DescribeDefaultParametersOutput;
-
 pub use crate::operation::describe_default_parameters::_describe_default_parameters_input::DescribeDefaultParametersInput;
+
+pub use crate::operation::describe_default_parameters::_describe_default_parameters_output::DescribeDefaultParametersOutput;
 
 mod _describe_default_parameters_input;
 

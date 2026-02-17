@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cis_scan_co
     }
 }
 
-pub use crate::operation::create_cis_scan_configuration::_create_cis_scan_configuration_output::CreateCisScanConfigurationOutput;
-
 pub use crate::operation::create_cis_scan_configuration::_create_cis_scan_configuration_input::CreateCisScanConfigurationInput;
+
+pub use crate::operation::create_cis_scan_configuration::_create_cis_scan_configuration_output::CreateCisScanConfigurationOutput;
 
 mod _create_cis_scan_configuration_input;
 

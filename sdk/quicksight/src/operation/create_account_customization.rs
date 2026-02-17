@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account_cus
     }
 }
 
-pub use crate::operation::create_account_customization::_create_account_customization_output::CreateAccountCustomizationOutput;
-
 pub use crate::operation::create_account_customization::_create_account_customization_input::CreateAccountCustomizationInput;
+
+pub use crate::operation::create_account_customization::_create_account_customization_output::CreateAccountCustomizationOutput;
 
 mod _create_account_customization_input;
 

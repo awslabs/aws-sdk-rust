@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_network_ac
     }
 }
 
-pub use crate::operation::replace_network_acl_association::_replace_network_acl_association_output::ReplaceNetworkAclAssociationOutput;
-
 pub use crate::operation::replace_network_acl_association::_replace_network_acl_association_input::ReplaceNetworkAclAssociationInput;
+
+pub use crate::operation::replace_network_acl_association::_replace_network_acl_association_output::ReplaceNetworkAclAssociationOutput;
 
 mod _replace_network_acl_association_input;
 

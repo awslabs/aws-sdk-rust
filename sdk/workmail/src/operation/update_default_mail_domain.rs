@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_default_mai
     }
 }
 
-pub use crate::operation::update_default_mail_domain::_update_default_mail_domain_output::UpdateDefaultMailDomainOutput;
-
 pub use crate::operation::update_default_mail_domain::_update_default_mail_domain_input::UpdateDefaultMailDomainInput;
+
+pub use crate::operation::update_default_mail_domain::_update_default_mail_domain_output::UpdateDefaultMailDomainOutput;
 
 mod _update_default_mail_domain_input;
 

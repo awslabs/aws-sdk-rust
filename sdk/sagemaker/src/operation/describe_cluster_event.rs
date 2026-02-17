@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_e
     }
 }
 
-pub use crate::operation::describe_cluster_event::_describe_cluster_event_output::DescribeClusterEventOutput;
-
 pub use crate::operation::describe_cluster_event::_describe_cluster_event_input::DescribeClusterEventInput;
+
+pub use crate::operation::describe_cluster_event::_describe_cluster_event_output::DescribeClusterEventOutput;
 
 mod _describe_cluster_event_input;
 

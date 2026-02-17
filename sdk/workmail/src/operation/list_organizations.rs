@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_organizations
     }
 }
 
-pub use crate::operation::list_organizations::_list_organizations_output::ListOrganizationsOutput;
-
 pub use crate::operation::list_organizations::_list_organizations_input::ListOrganizationsInput;
+
+pub use crate::operation::list_organizations::_list_organizations_output::ListOrganizationsOutput;
 
 mod _list_organizations_input;
 

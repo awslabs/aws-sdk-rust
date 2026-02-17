@@ -562,9 +562,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_changed_block
     }
 }
 
-pub use crate::operation::list_changed_blocks::_list_changed_blocks_output::ListChangedBlocksOutput;
-
 pub use crate::operation::list_changed_blocks::_list_changed_blocks_input::ListChangedBlocksInput;
+
+pub use crate::operation::list_changed_blocks::_list_changed_blocks_output::ListChangedBlocksOutput;
 
 mod _list_changed_blocks_input;
 

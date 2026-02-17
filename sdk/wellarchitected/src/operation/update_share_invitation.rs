@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_share_invit
     }
 }
 
-pub use crate::operation::update_share_invitation::_update_share_invitation_output::UpdateShareInvitationOutput;
-
 pub use crate::operation::update_share_invitation::_update_share_invitation_input::UpdateShareInvitationInput;
+
+pub use crate::operation::update_share_invitation::_update_share_invitation_output::UpdateShareInvitationOutput;
 
 mod _update_share_invitation_input;
 

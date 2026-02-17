@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bot_version
     }
 }
 
-pub use crate::operation::create_bot_version::_create_bot_version_output::CreateBotVersionOutput;
-
 pub use crate::operation::create_bot_version::_create_bot_version_input::CreateBotVersionInput;
+
+pub use crate::operation::create_bot_version::_create_bot_version_output::CreateBotVersionOutput;
 
 mod _create_bot_version_input;
 

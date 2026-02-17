@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_schem
     }
 }
 
-pub use crate::operation::list_managed_schema_arns::_list_managed_schema_arns_output::ListManagedSchemaArnsOutput;
-
 pub use crate::operation::list_managed_schema_arns::_list_managed_schema_arns_input::ListManagedSchemaArnsInput;
+
+pub use crate::operation::list_managed_schema_arns::_list_managed_schema_arns_output::ListManagedSchemaArnsOutput;
 
 mod _list_managed_schema_arns_input;
 

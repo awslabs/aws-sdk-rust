@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_radius::Ena
     }
 }
 
-pub use crate::operation::enable_radius::_enable_radius_output::EnableRadiusOutput;
-
 pub use crate::operation::enable_radius::_enable_radius_input::EnableRadiusInput;
+
+pub use crate::operation::enable_radius::_enable_radius_output::EnableRadiusOutput;
 
 mod _enable_radius_input;
 

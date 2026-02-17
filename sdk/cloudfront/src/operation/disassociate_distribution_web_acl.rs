@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_distr
     }
 }
 
-pub use crate::operation::disassociate_distribution_web_acl::_disassociate_distribution_web_acl_output::DisassociateDistributionWebAclOutput;
-
 pub use crate::operation::disassociate_distribution_web_acl::_disassociate_distribution_web_acl_input::DisassociateDistributionWebAclInput;
+
+pub use crate::operation::disassociate_distribution_web_acl::_disassociate_distribution_web_acl_output::DisassociateDistributionWebAclOutput;
 
 mod _disassociate_distribution_web_acl_input;
 

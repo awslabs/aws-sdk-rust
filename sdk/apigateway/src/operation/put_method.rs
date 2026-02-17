@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_method::PutMet
     }
 }
 
-pub use crate::operation::put_method::_put_method_output::PutMethodOutput;
-
 pub use crate::operation::put_method::_put_method_input::PutMethodInput;
+
+pub use crate::operation::put_method::_put_method_output::PutMethodOutput;
 
 mod _put_method_input;
 

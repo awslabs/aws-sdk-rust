@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dataset_expor
     }
 }
 
-pub use crate::operation::list_dataset_export_jobs::_list_dataset_export_jobs_output::ListDatasetExportJobsOutput;
-
 pub use crate::operation::list_dataset_export_jobs::_list_dataset_export_jobs_input::ListDatasetExportJobsInput;
+
+pub use crate::operation::list_dataset_export_jobs::_list_dataset_export_jobs_output::ListDatasetExportJobsOutput;
 
 mod _list_dataset_export_jobs_input;
 

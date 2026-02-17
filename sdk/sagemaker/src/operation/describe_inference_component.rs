@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_inference
     }
 }
 
-pub use crate::operation::describe_inference_component::_describe_inference_component_output::DescribeInferenceComponentOutput;
-
 pub use crate::operation::describe_inference_component::_describe_inference_component_input::DescribeInferenceComponentInput;
+
+pub use crate::operation::describe_inference_component::_describe_inference_component_output::DescribeInferenceComponentOutput;
 
 mod _describe_inference_component_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_private_dns
     }
 }
 
-pub use crate::operation::update_private_dns_namespace::_update_private_dns_namespace_output::UpdatePrivateDnsNamespaceOutput;
-
 pub use crate::operation::update_private_dns_namespace::_update_private_dns_namespace_input::UpdatePrivateDnsNamespaceInput;
+
+pub use crate::operation::update_private_dns_namespace::_update_private_dns_namespace_output::UpdatePrivateDnsNamespaceOutput;
 
 mod _update_private_dns_namespace_input;
 

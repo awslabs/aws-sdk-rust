@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_training_datas
     }
 }
 
-pub use crate::operation::get_training_dataset::_get_training_dataset_output::GetTrainingDatasetOutput;
-
 pub use crate::operation::get_training_dataset::_get_training_dataset_input::GetTrainingDatasetInput;
+
+pub use crate::operation::get_training_dataset::_get_training_dataset_output::GetTrainingDatasetOutput;
 
 mod _get_training_dataset_input;
 

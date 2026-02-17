@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_audit_mitig
     }
 }
 
-pub use crate::operation::cancel_audit_mitigation_actions_task::_cancel_audit_mitigation_actions_task_output::CancelAuditMitigationActionsTaskOutput;
-
 pub use crate::operation::cancel_audit_mitigation_actions_task::_cancel_audit_mitigation_actions_task_input::CancelAuditMitigationActionsTaskInput;
+
+pub use crate::operation::cancel_audit_mitigation_actions_task::_cancel_audit_mitigation_actions_task_output::CancelAuditMitigationActionsTaskOutput;
 
 mod _cancel_audit_mitigation_actions_task_input;
 

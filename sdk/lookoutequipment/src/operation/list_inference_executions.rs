@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_exe
     }
 }
 
-pub use crate::operation::list_inference_executions::_list_inference_executions_output::ListInferenceExecutionsOutput;
-
 pub use crate::operation::list_inference_executions::_list_inference_executions_input::ListInferenceExecutionsInput;
+
+pub use crate::operation::list_inference_executions::_list_inference_executions_output::ListInferenceExecutionsOutput;
 
 mod _list_inference_executions_input;
 

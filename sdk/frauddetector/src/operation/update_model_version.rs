@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_model_versi
     }
 }
 
-pub use crate::operation::update_model_version::_update_model_version_output::UpdateModelVersionOutput;
-
 pub use crate::operation::update_model_version::_update_model_version_input::UpdateModelVersionInput;
+
+pub use crate::operation::update_model_version::_update_model_version_output::UpdateModelVersionOutput;
 
 mod _update_model_version_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_billing_vie
     }
 }
 
-pub use crate::operation::create_billing_view::_create_billing_view_output::CreateBillingViewOutput;
-
 pub use crate::operation::create_billing_view::_create_billing_view_input::CreateBillingViewInput;
+
+pub use crate::operation::create_billing_view::_create_billing_view_output::CreateBillingViewOutput;
 
 mod _create_billing_view_input;
 

@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_instance_st
     }
 }
 
-pub use crate::operation::update_instance_storage_config::_update_instance_storage_config_output::UpdateInstanceStorageConfigOutput;
-
 pub use crate::operation::update_instance_storage_config::_update_instance_storage_config_input::UpdateInstanceStorageConfigInput;
+
+pub use crate::operation::update_instance_storage_config::_update_instance_storage_config_output::UpdateInstanceStorageConfigOutput;
 
 mod _update_instance_storage_config_input;
 

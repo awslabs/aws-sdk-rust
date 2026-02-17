@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_flow_flush::
     }
 }
 
-pub use crate::operation::start_flow_flush::_start_flow_flush_output::StartFlowFlushOutput;
-
 pub use crate::operation::start_flow_flush::_start_flow_flush_input::StartFlowFlushInput;
+
+pub use crate::operation::start_flow_flush::_start_flow_flush_output::StartFlowFlushOutput;
 
 mod _start_flow_flush_input;
 

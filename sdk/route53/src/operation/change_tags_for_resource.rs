@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::change_tags_for_re
     }
 }
 
-pub use crate::operation::change_tags_for_resource::_change_tags_for_resource_output::ChangeTagsForResourceOutput;
-
 pub use crate::operation::change_tags_for_resource::_change_tags_for_resource_input::ChangeTagsForResourceInput;
+
+pub use crate::operation::change_tags_for_resource::_change_tags_for_resource_output::ChangeTagsForResourceOutput;
 
 mod _change_tags_for_resource_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_certificate
     }
 }
 
-pub use crate::operation::update_certificate_authority::_update_certificate_authority_output::UpdateCertificateAuthorityOutput;
-
 pub use crate::operation::update_certificate_authority::_update_certificate_authority_input::UpdateCertificateAuthorityInput;
+
+pub use crate::operation::update_certificate_authority::_update_certificate_authority_output::UpdateCertificateAuthorityOutput;
 
 mod _update_certificate_authority_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_topic_rule_
     }
 }
 
-pub use crate::operation::create_topic_rule_destination::_create_topic_rule_destination_output::CreateTopicRuleDestinationOutput;
-
 pub use crate::operation::create_topic_rule_destination::_create_topic_rule_destination_input::CreateTopicRuleDestinationInput;
+
+pub use crate::operation::create_topic_rule_destination::_create_topic_rule_destination_output::CreateTopicRuleDestinationOutput;
 
 mod _create_topic_rule_destination_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_do
     }
 }
 
-pub use crate::operation::describe_custom_domains::_describe_custom_domains_output::DescribeCustomDomainsOutput;
-
 pub use crate::operation::describe_custom_domains::_describe_custom_domains_input::DescribeCustomDomainsInput;
+
+pub use crate::operation::describe_custom_domains::_describe_custom_domains_output::DescribeCustomDomainsOutput;
 
 mod _describe_custom_domains_input;
 

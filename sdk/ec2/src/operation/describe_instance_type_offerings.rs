@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_type_offerings::_describe_instance_type_offerings_output::DescribeInstanceTypeOfferingsOutput;
-
 pub use crate::operation::describe_instance_type_offerings::_describe_instance_type_offerings_input::DescribeInstanceTypeOfferingsInput;
+
+pub use crate::operation::describe_instance_type_offerings::_describe_instance_type_offerings_output::DescribeInstanceTypeOfferingsOutput;
 
 mod _describe_instance_type_offerings_input;
 

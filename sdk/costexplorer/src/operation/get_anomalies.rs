@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_anomalies::Get
     }
 }
 
-pub use crate::operation::get_anomalies::_get_anomalies_output::GetAnomaliesOutput;
-
 pub use crate::operation::get_anomalies::_get_anomalies_input::GetAnomaliesInput;
+
+pub use crate::operation::get_anomalies::_get_anomalies_output::GetAnomaliesOutput;
 
 mod _get_anomalies_input;
 

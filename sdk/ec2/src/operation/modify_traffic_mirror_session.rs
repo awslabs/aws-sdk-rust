@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_traffic_mir
     }
 }
 
-pub use crate::operation::modify_traffic_mirror_session::_modify_traffic_mirror_session_output::ModifyTrafficMirrorSessionOutput;
-
 pub use crate::operation::modify_traffic_mirror_session::_modify_traffic_mirror_session_input::ModifyTrafficMirrorSessionInput;
+
+pub use crate::operation::modify_traffic_mirror_session::_modify_traffic_mirror_session_output::ModifyTrafficMirrorSessionOutput;
 
 mod _modify_traffic_mirror_session_input;
 

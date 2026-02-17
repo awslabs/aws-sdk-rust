@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decline_invitation
     }
 }
 
-pub use crate::operation::decline_invitations::_decline_invitations_output::DeclineInvitationsOutput;
-
 pub use crate::operation::decline_invitations::_decline_invitations_input::DeclineInvitationsInput;
+
+pub use crate::operation::decline_invitations::_decline_invitations_output::DeclineInvitationsOutput;
 
 mod _decline_invitations_input;
 

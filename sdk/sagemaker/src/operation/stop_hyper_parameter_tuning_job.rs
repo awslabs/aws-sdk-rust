@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_hyper_paramet
     }
 }
 
-pub use crate::operation::stop_hyper_parameter_tuning_job::_stop_hyper_parameter_tuning_job_output::StopHyperParameterTuningJobOutput;
-
 pub use crate::operation::stop_hyper_parameter_tuning_job::_stop_hyper_parameter_tuning_job_input::StopHyperParameterTuningJobInput;
+
+pub use crate::operation::stop_hyper_parameter_tuning_job::_stop_hyper_parameter_tuning_job_output::StopHyperParameterTuningJobOutput;
 
 mod _stop_hyper_parameter_tuning_job_input;
 

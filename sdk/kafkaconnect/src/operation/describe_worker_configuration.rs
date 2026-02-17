@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_worker_co
     }
 }
 
-pub use crate::operation::describe_worker_configuration::_describe_worker_configuration_output::DescribeWorkerConfigurationOutput;
-
 pub use crate::operation::describe_worker_configuration::_describe_worker_configuration_input::DescribeWorkerConfigurationInput;
+
+pub use crate::operation::describe_worker_configuration::_describe_worker_configuration_output::DescribeWorkerConfigurationOutput;
 
 mod _describe_worker_configuration_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_targeted_sent
     }
 }
 
-pub use crate::operation::list_targeted_sentiment_detection_jobs::_list_targeted_sentiment_detection_jobs_output::ListTargetedSentimentDetectionJobsOutput;
-
 pub use crate::operation::list_targeted_sentiment_detection_jobs::_list_targeted_sentiment_detection_jobs_input::ListTargetedSentimentDetectionJobsInput;
+
+pub use crate::operation::list_targeted_sentiment_detection_jobs::_list_targeted_sentiment_detection_jobs_output::ListTargetedSentimentDetectionJobsOutput;
 
 mod _list_targeted_sentiment_detection_jobs_input;
 

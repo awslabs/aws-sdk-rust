@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_configuration_set_reputation_metrics_enabled::_update_configuration_set_reputation_metrics_enabled_output::UpdateConfigurationSetReputationMetricsEnabledOutput;
-
 pub use crate::operation::update_configuration_set_reputation_metrics_enabled::_update_configuration_set_reputation_metrics_enabled_input::UpdateConfigurationSetReputationMetricsEnabledInput;
+
+pub use crate::operation::update_configuration_set_reputation_metrics_enabled::_update_configuration_set_reputation_metrics_enabled_output::UpdateConfigurationSetReputationMetricsEnabledOutput;
 
 mod _update_configuration_set_reputation_metrics_enabled_input;
 

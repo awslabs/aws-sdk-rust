@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disconnect_custom_
     }
 }
 
-pub use crate::operation::disconnect_custom_key_store::_disconnect_custom_key_store_output::DisconnectCustomKeyStoreOutput;
-
 pub use crate::operation::disconnect_custom_key_store::_disconnect_custom_key_store_input::DisconnectCustomKeyStoreInput;
+
+pub use crate::operation::disconnect_custom_key_store::_disconnect_custom_key_store_output::DisconnectCustomKeyStoreOutput;
 
 mod _disconnect_custom_key_store_input;
 

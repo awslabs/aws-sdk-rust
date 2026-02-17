@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_schemas::
     }
 }
 
-pub use crate::operation::describe_schemas::_describe_schemas_output::DescribeSchemasOutput;
-
 pub use crate::operation::describe_schemas::_describe_schemas_input::DescribeSchemasInput;
+
+pub use crate::operation::describe_schemas::_describe_schemas_output::DescribeSchemasOutput;
 
 mod _describe_schemas_input;
 

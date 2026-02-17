@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_notebook_instance_lifecycle_config::_describe_notebook_instance_lifecycle_config_output::DescribeNotebookInstanceLifecycleConfigOutput;
-
 pub use crate::operation::describe_notebook_instance_lifecycle_config::_describe_notebook_instance_lifecycle_config_input::DescribeNotebookInstanceLifecycleConfigInput;
+
+pub use crate::operation::describe_notebook_instance_lifecycle_config::_describe_notebook_instance_lifecycle_config_output::DescribeNotebookInstanceLifecycleConfigOutput;
 
 mod _describe_notebook_instance_lifecycle_config_input;
 

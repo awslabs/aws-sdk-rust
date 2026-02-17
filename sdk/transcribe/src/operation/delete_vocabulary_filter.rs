@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vocabulary_
     }
 }
 
-pub use crate::operation::delete_vocabulary_filter::_delete_vocabulary_filter_output::DeleteVocabularyFilterOutput;
-
 pub use crate::operation::delete_vocabulary_filter::_delete_vocabulary_filter_input::DeleteVocabularyFilterInput;
+
+pub use crate::operation::delete_vocabulary_filter::_delete_vocabulary_filter_output::DeleteVocabularyFilterOutput;
 
 mod _delete_vocabulary_filter_input;
 

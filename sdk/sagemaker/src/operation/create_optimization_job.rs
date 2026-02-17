@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_optimizatio
     }
 }
 
-pub use crate::operation::create_optimization_job::_create_optimization_job_output::CreateOptimizationJobOutput;
-
 pub use crate::operation::create_optimization_job::_create_optimization_job_input::CreateOptimizationJobInput;
+
+pub use crate::operation::create_optimization_job::_create_optimization_job_output::CreateOptimizationJobOutput;
 
 mod _create_optimization_job_input;
 

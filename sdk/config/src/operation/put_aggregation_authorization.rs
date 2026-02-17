@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_aggregation_au
     }
 }
 
-pub use crate::operation::put_aggregation_authorization::_put_aggregation_authorization_output::PutAggregationAuthorizationOutput;
-
 pub use crate::operation::put_aggregation_authorization::_put_aggregation_authorization_input::PutAggregationAuthorizationInput;
+
+pub use crate::operation::put_aggregation_authorization::_put_aggregation_authorization_output::PutAggregationAuthorizationOutput;
 
 mod _put_aggregation_authorization_input;
 

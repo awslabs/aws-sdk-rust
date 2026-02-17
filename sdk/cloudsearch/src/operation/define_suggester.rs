@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::define_suggester::
     }
 }
 
-pub use crate::operation::define_suggester::_define_suggester_output::DefineSuggesterOutput;
-
 pub use crate::operation::define_suggester::_define_suggester_input::DefineSuggesterInput;
+
+pub use crate::operation::define_suggester::_define_suggester_output::DefineSuggesterOutput;
 
 mod _define_suggester_input;
 

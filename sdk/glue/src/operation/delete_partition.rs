@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_partition::
     }
 }
 
-pub use crate::operation::delete_partition::_delete_partition_output::DeletePartitionOutput;
-
 pub use crate::operation::delete_partition::_delete_partition_input::DeletePartitionInput;
+
+pub use crate::operation::delete_partition::_delete_partition_output::DeletePartitionOutput;
 
 mod _delete_partition_input;
 

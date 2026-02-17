@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_suggesti
     }
 }
 
-pub use crate::operation::get_query_suggestions::_get_query_suggestions_output::GetQuerySuggestionsOutput;
-
 pub use crate::operation::get_query_suggestions::_get_query_suggestions_input::GetQuerySuggestionsInput;
+
+pub use crate::operation::get_query_suggestions::_get_query_suggestions_output::GetQuerySuggestionsOutput;
 
 mod _get_query_suggestions_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_snap
     }
 }
 
-pub use crate::operation::list_resource_snapshot_jobs::_list_resource_snapshot_jobs_output::ListResourceSnapshotJobsOutput;
-
 pub use crate::operation::list_resource_snapshot_jobs::_list_resource_snapshot_jobs_input::ListResourceSnapshotJobsInput;
+
+pub use crate::operation::list_resource_snapshot_jobs::_list_resource_snapshot_jobs_output::ListResourceSnapshotJobsOutput;
 
 mod _list_resource_snapshot_jobs_input;
 

@@ -505,9 +505,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_responsib
     }
 }
 
-pub use crate::operation::describe_responsibility_transfer::_describe_responsibility_transfer_output::DescribeResponsibilityTransferOutput;
-
 pub use crate::operation::describe_responsibility_transfer::_describe_responsibility_transfer_input::DescribeResponsibilityTransferInput;
+
+pub use crate::operation::describe_responsibility_transfer::_describe_responsibility_transfer_output::DescribeResponsibilityTransferOutput;
 
 mod _describe_responsibility_transfer_input;
 

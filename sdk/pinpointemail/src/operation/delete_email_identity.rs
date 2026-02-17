@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_email_ident
     }
 }
 
-pub use crate::operation::delete_email_identity::_delete_email_identity_output::DeleteEmailIdentityOutput;
-
 pub use crate::operation::delete_email_identity::_delete_email_identity_input::DeleteEmailIdentityInput;
+
+pub use crate::operation::delete_email_identity::_delete_email_identity_output::DeleteEmailIdentityOutput;
 
 mod _delete_email_identity_input;
 

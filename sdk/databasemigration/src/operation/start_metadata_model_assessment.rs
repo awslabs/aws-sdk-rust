@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_metadata_mod
     }
 }
 
-pub use crate::operation::start_metadata_model_assessment::_start_metadata_model_assessment_output::StartMetadataModelAssessmentOutput;
-
 pub use crate::operation::start_metadata_model_assessment::_start_metadata_model_assessment_input::StartMetadataModelAssessmentInput;
+
+pub use crate::operation::start_metadata_model_assessment::_start_metadata_model_assessment_output::StartMetadataModelAssessmentOutput;
 
 mod _start_metadata_model_assessment_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_shar
     }
 }
 
-pub use crate::operation::describe_data_shares::_describe_data_shares_output::DescribeDataSharesOutput;
-
 pub use crate::operation::describe_data_shares::_describe_data_shares_input::DescribeDataSharesInput;
+
+pub use crate::operation::describe_data_shares::_describe_data_shares_output::DescribeDataSharesOutput;
 
 mod _describe_data_shares_input;
 

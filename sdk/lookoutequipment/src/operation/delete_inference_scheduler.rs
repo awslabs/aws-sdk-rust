@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inference_s
     }
 }
 
-pub use crate::operation::delete_inference_scheduler::_delete_inference_scheduler_output::DeleteInferenceSchedulerOutput;
-
 pub use crate::operation::delete_inference_scheduler::_delete_inference_scheduler_input::DeleteInferenceSchedulerInput;
+
+pub use crate::operation::delete_inference_scheduler::_delete_inference_scheduler_output::DeleteInferenceSchedulerOutput;
 
 mod _delete_inference_scheduler_input;
 

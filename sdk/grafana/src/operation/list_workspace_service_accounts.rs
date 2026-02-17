@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workspace_ser
     }
 }
 
-pub use crate::operation::list_workspace_service_accounts::_list_workspace_service_accounts_output::ListWorkspaceServiceAccountsOutput;
-
 pub use crate::operation::list_workspace_service_accounts::_list_workspace_service_accounts_input::ListWorkspaceServiceAccountsInput;
+
+pub use crate::operation::list_workspace_service_accounts::_list_workspace_service_accounts_output::ListWorkspaceServiceAccountsOutput;
 
 mod _list_workspace_service_accounts_input;
 

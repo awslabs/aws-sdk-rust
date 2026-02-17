@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_migration_t
     }
 }
 
-pub use crate::operation::import_migration_task::_import_migration_task_output::ImportMigrationTaskOutput;
-
 pub use crate::operation::import_migration_task::_import_migration_task_input::ImportMigrationTaskInput;
+
+pub use crate::operation::import_migration_task::_import_migration_task_output::ImportMigrationTaskOutput;
 
 mod _import_migration_task_input;
 

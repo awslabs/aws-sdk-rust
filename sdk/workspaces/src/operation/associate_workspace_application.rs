@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_workspac
     }
 }
 
-pub use crate::operation::associate_workspace_application::_associate_workspace_application_output::AssociateWorkspaceApplicationOutput;
-
 pub use crate::operation::associate_workspace_application::_associate_workspace_application_input::AssociateWorkspaceApplicationInput;
+
+pub use crate::operation::associate_workspace_application::_associate_workspace_application_output::AssociateWorkspaceApplicationOutput;
 
 mod _associate_workspace_application_input;
 

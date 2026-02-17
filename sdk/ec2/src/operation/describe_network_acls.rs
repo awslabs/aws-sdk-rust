@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_network_a
     }
 }
 
-pub use crate::operation::describe_network_acls::_describe_network_acls_output::DescribeNetworkAclsOutput;
-
 pub use crate::operation::describe_network_acls::_describe_network_acls_input::DescribeNetworkAclsInput;
+
+pub use crate::operation::describe_network_acls::_describe_network_acls_output::DescribeNetworkAclsOutput;
 
 mod _describe_network_acls_input;
 

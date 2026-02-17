@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_policy_grant::
     }
 }
 
-pub use crate::operation::add_policy_grant::_add_policy_grant_output::AddPolicyGrantOutput;
-
 pub use crate::operation::add_policy_grant::_add_policy_grant_input::AddPolicyGrantInput;
+
+pub use crate::operation::add_policy_grant::_add_policy_grant_output::AddPolicyGrantOutput;
 
 mod _add_policy_grant_input;
 

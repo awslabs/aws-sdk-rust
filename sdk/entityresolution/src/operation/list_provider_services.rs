@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provider_serv
     }
 }
 
-pub use crate::operation::list_provider_services::_list_provider_services_output::ListProviderServicesOutput;
-
 pub use crate::operation::list_provider_services::_list_provider_services_input::ListProviderServicesInput;
+
+pub use crate::operation::list_provider_services::_list_provider_services_output::ListProviderServicesOutput;
 
 mod _list_provider_services_input;
 

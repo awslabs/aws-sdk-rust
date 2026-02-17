@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_form::Creat
     }
 }
 
-pub use crate::operation::create_form::_create_form_output::CreateFormOutput;
-
 pub use crate::operation::create_form::_create_form_input::CreateFormInput;
+
+pub use crate::operation::create_form::_create_form_output::CreateFormOutput;
 
 mod _create_form_input;
 

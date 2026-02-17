@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_assistant::
     }
 }
 
-pub use crate::operation::delete_assistant::_delete_assistant_output::DeleteAssistantOutput;
-
 pub use crate::operation::delete_assistant::_delete_assistant_input::DeleteAssistantInput;
+
+pub use crate::operation::delete_assistant::_delete_assistant_output::DeleteAssistantOutput;
 
 mod _delete_assistant_input;
 

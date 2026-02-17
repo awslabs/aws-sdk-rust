@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_template_pe
     }
 }
 
-pub use crate::operation::update_template_permissions::_update_template_permissions_output::UpdateTemplatePermissionsOutput;
-
 pub use crate::operation::update_template_permissions::_update_template_permissions_input::UpdateTemplatePermissionsInput;
+
+pub use crate::operation::update_template_permissions::_update_template_permissions_output::UpdateTemplatePermissionsOutput;
 
 mod _update_template_permissions_input;
 

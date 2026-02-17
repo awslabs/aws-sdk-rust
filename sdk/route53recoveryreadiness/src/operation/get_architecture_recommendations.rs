@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_architecture_r
     }
 }
 
-pub use crate::operation::get_architecture_recommendations::_get_architecture_recommendations_output::GetArchitectureRecommendationsOutput;
-
 pub use crate::operation::get_architecture_recommendations::_get_architecture_recommendations_input::GetArchitectureRecommendationsInput;
+
+pub use crate::operation::get_architecture_recommendations::_get_architecture_recommendations_output::GetArchitectureRecommendationsOutput;
 
 mod _get_architecture_recommendations_input;
 

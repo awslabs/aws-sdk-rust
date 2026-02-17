@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_license_man
     }
 }
 
-pub use crate::operation::update_license_manager_report_generator::_update_license_manager_report_generator_output::UpdateLicenseManagerReportGeneratorOutput;
-
 pub use crate::operation::update_license_manager_report_generator::_update_license_manager_report_generator_input::UpdateLicenseManagerReportGeneratorInput;
+
+pub use crate::operation::update_license_manager_report_generator::_update_license_manager_report_generator_output::UpdateLicenseManagerReportGeneratorOutput;
 
 mod _update_license_manager_report_generator_input;
 

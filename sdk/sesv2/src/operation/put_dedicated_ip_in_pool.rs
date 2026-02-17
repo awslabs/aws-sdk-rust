@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_dedicated_ip_i
     }
 }
 
-pub use crate::operation::put_dedicated_ip_in_pool::_put_dedicated_ip_in_pool_output::PutDedicatedIpInPoolOutput;
-
 pub use crate::operation::put_dedicated_ip_in_pool::_put_dedicated_ip_in_pool_input::PutDedicatedIpInPoolInput;
+
+pub use crate::operation::put_dedicated_ip_in_pool::_put_dedicated_ip_in_pool_output::PutDedicatedIpInPoolOutput;
 
 mod _put_dedicated_ip_in_pool_input;
 

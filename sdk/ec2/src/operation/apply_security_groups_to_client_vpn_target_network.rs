@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_apply_security_groups_to_client_vpn_target_network_output::ApplySecurityGroupsToClientVpnTargetNetworkOutput;
-
 pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_apply_security_groups_to_client_vpn_target_network_input::ApplySecurityGroupsToClientVpnTargetNetworkInput;
+
+pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_apply_security_groups_to_client_vpn_target_network_output::ApplySecurityGroupsToClientVpnTargetNetworkOutput;
 
 mod _apply_security_groups_to_client_vpn_target_network_input;
 

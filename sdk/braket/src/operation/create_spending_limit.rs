@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_spending_li
     }
 }
 
-pub use crate::operation::create_spending_limit::_create_spending_limit_output::CreateSpendingLimitOutput;
-
 pub use crate::operation::create_spending_limit::_create_spending_limit_input::CreateSpendingLimitInput;
+
+pub use crate::operation::create_spending_limit::_create_spending_limit_output::CreateSpendingLimitOutput;
 
 mod _create_spending_limit_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_authorizer:
     }
 }
 
-pub use crate::operation::create_authorizer::_create_authorizer_output::CreateAuthorizerOutput;
-
 pub use crate::operation::create_authorizer::_create_authorizer_input::CreateAuthorizerInput;
+
+pub use crate::operation::create_authorizer::_create_authorizer_output::CreateAuthorizerOutput;
 
 mod _create_authorizer_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_input_devic
     }
 }
 
-pub use crate::operation::reject_input_device_transfer::_reject_input_device_transfer_output::RejectInputDeviceTransferOutput;
-
 pub use crate::operation::reject_input_device_transfer::_reject_input_device_transfer_input::RejectInputDeviceTransferInput;
+
+pub use crate::operation::reject_input_device_transfer::_reject_input_device_transfer_output::RejectInputDeviceTransferOutput;
 
 mod _reject_input_device_transfer_input;
 

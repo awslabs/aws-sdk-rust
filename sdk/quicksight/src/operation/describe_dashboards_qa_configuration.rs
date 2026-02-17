@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dashboard
     }
 }
 
-pub use crate::operation::describe_dashboards_qa_configuration::_describe_dashboards_qa_configuration_output::DescribeDashboardsQaConfigurationOutput;
-
 pub use crate::operation::describe_dashboards_qa_configuration::_describe_dashboards_qa_configuration_input::DescribeDashboardsQaConfigurationInput;
+
+pub use crate::operation::describe_dashboards_qa_configuration::_describe_dashboards_qa_configuration_output::DescribeDashboardsQaConfigurationOutput;
 
 mod _describe_dashboards_qa_configuration_input;
 

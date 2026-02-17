@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sip_rule::GetS
     }
 }
 
-pub use crate::operation::get_sip_rule::_get_sip_rule_output::GetSipRuleOutput;
-
 pub use crate::operation::get_sip_rule::_get_sip_rule_input::GetSipRuleInput;
+
+pub use crate::operation::get_sip_rule::_get_sip_rule_output::GetSipRuleOutput;
 
 mod _get_sip_rule_input;
 

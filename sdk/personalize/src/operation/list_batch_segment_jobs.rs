@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_batch_segment
     }
 }
 
-pub use crate::operation::list_batch_segment_jobs::_list_batch_segment_jobs_output::ListBatchSegmentJobsOutput;
-
 pub use crate::operation::list_batch_segment_jobs::_list_batch_segment_jobs_input::ListBatchSegmentJobsInput;
+
+pub use crate::operation::list_batch_segment_jobs::_list_batch_segment_jobs_output::ListBatchSegmentJobsOutput;
 
 mod _list_batch_segment_jobs_input;
 

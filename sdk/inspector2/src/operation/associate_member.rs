@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_member::
     }
 }
 
-pub use crate::operation::associate_member::_associate_member_output::AssociateMemberOutput;
-
 pub use crate::operation::associate_member::_associate_member_input::AssociateMemberInput;
+
+pub use crate::operation::associate_member::_associate_member_output::AssociateMemberOutput;
 
 mod _associate_member_input;
 

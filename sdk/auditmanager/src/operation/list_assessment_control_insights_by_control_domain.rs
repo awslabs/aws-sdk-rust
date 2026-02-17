@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_assessment_control_insights_by_control_domain::_list_assessment_control_insights_by_control_domain_output::ListAssessmentControlInsightsByControlDomainOutput;
-
 pub use crate::operation::list_assessment_control_insights_by_control_domain::_list_assessment_control_insights_by_control_domain_input::ListAssessmentControlInsightsByControlDomainInput;
+
+pub use crate::operation::list_assessment_control_insights_by_control_domain::_list_assessment_control_insights_by_control_domain_output::ListAssessmentControlInsightsByControlDomainOutput;
 
 mod _list_assessment_control_insights_by_control_domain_input;
 

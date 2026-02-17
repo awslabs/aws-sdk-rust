@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::claim_device::Clai
     }
 }
 
-pub use crate::operation::claim_device::_claim_device_output::ClaimDeviceOutput;
-
 pub use crate::operation::claim_device::_claim_device_input::ClaimDeviceInput;
+
+pub use crate::operation::claim_device::_claim_device_output::ClaimDeviceOutput;
 
 mod _claim_device_input;
 

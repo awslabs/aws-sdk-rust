@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::probe::ProbeError 
     }
 }
 
-pub use crate::operation::probe::_probe_output::ProbeOutput;
-
 pub use crate::operation::probe::_probe_input::ProbeInput;
+
+pub use crate::operation::probe::_probe_output::ProbeOutput;
 
 mod _probe_input;
 

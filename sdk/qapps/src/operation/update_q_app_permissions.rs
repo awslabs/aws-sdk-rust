@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_q_app_permi
     }
 }
 
-pub use crate::operation::update_q_app_permissions::_update_q_app_permissions_output::UpdateQAppPermissionsOutput;
-
 pub use crate::operation::update_q_app_permissions::_update_q_app_permissions_input::UpdateQAppPermissionsInput;
+
+pub use crate::operation::update_q_app_permissions::_update_q_app_permissions_output::UpdateQAppPermissionsOutput;
 
 mod _update_q_app_permissions_input;
 

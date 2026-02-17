@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_associate_approval_rule_template_with_repositories::_batch_associate_approval_rule_template_with_repositories_output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput;
-
 pub use crate::operation::batch_associate_approval_rule_template_with_repositories::_batch_associate_approval_rule_template_with_repositories_input::BatchAssociateApprovalRuleTemplateWithRepositoriesInput;
+
+pub use crate::operation::batch_associate_approval_rule_template_with_repositories::_batch_associate_approval_rule_template_with_repositories_output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput;
 
 mod _batch_associate_approval_rule_template_with_repositories_input;
 

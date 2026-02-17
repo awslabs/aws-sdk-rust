@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_loc
     }
 }
 
-pub use crate::operation::describe_fleet_location_attributes::_describe_fleet_location_attributes_output::DescribeFleetLocationAttributesOutput;
-
 pub use crate::operation::describe_fleet_location_attributes::_describe_fleet_location_attributes_input::DescribeFleetLocationAttributesInput;
+
+pub use crate::operation::describe_fleet_location_attributes::_describe_fleet_location_attributes_output::DescribeFleetLocationAttributesOutput;
 
 mod _describe_fleet_location_attributes_input;
 

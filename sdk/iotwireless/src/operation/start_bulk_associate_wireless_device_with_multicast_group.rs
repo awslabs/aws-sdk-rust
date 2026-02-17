@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_bulk_associate_wireless_device_with_multicast_group::_start_bulk_associate_wireless_device_with_multicast_group_output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput;
-
 pub use crate::operation::start_bulk_associate_wireless_device_with_multicast_group::_start_bulk_associate_wireless_device_with_multicast_group_input::StartBulkAssociateWirelessDeviceWithMulticastGroupInput;
+
+pub use crate::operation::start_bulk_associate_wireless_device_with_multicast_group::_start_bulk_associate_wireless_device_with_multicast_group_output::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput;
 
 mod _start_bulk_associate_wireless_device_with_multicast_group_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_remote_access
     }
 }
 
-pub use crate::operation::list_remote_access_sessions::_list_remote_access_sessions_output::ListRemoteAccessSessionsOutput;
-
 pub use crate::operation::list_remote_access_sessions::_list_remote_access_sessions_input::ListRemoteAccessSessionsInput;
+
+pub use crate::operation::list_remote_access_sessions::_list_remote_access_sessions_output::ListRemoteAccessSessionsOutput;
 
 mod _list_remote_access_sessions_input;
 

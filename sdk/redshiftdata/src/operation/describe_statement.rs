@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_statement
     }
 }
 
-pub use crate::operation::describe_statement::_describe_statement_output::DescribeStatementOutput;
-
 pub use crate::operation::describe_statement::_describe_statement_input::DescribeStatementInput;
+
+pub use crate::operation::describe_statement::_describe_statement_output::DescribeStatementOutput;
 
 mod _describe_statement_input;
 

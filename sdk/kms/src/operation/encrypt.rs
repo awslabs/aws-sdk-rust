@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::encrypt::EncryptEr
     }
 }
 
-pub use crate::operation::encrypt::_encrypt_output::EncryptOutput;
-
 pub use crate::operation::encrypt::_encrypt_input::EncryptInput;
+
+pub use crate::operation::encrypt::_encrypt_output::EncryptOutput;
 
 mod _encrypt_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_topic_ref
     }
 }
 
-pub use crate::operation::describe_topic_refresh::_describe_topic_refresh_output::DescribeTopicRefreshOutput;
-
 pub use crate::operation::describe_topic_refresh::_describe_topic_refresh_input::DescribeTopicRefreshInput;
+
+pub use crate::operation::describe_topic_refresh::_describe_topic_refresh_output::DescribeTopicRefreshOutput;
 
 mod _describe_topic_refresh_input;
 

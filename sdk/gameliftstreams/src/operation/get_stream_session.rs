@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_stream_session
     }
 }
 
-pub use crate::operation::get_stream_session::_get_stream_session_output::GetStreamSessionOutput;
-
 pub use crate::operation::get_stream_session::_get_stream_session_input::GetStreamSessionInput;
+
+pub use crate::operation::get_stream_session::_get_stream_session_output::GetStreamSessionOutput;
 
 mod _get_stream_session_input;
 

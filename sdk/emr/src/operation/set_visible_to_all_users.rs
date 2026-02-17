@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_visible_to_all
     }
 }
 
-pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_output::SetVisibleToAllUsersOutput;
-
 pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_input::SetVisibleToAllUsersInput;
+
+pub use crate::operation::set_visible_to_all_users::_set_visible_to_all_users_output::SetVisibleToAllUsersOutput;
 
 mod _set_visible_to_all_users_input;
 

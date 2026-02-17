@@ -503,9 +503,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_organizat
     }
 }
 
-pub use crate::operation::register_organization_delegated_admin::_register_organization_delegated_admin_output::RegisterOrganizationDelegatedAdminOutput;
-
 pub use crate::operation::register_organization_delegated_admin::_register_organization_delegated_admin_input::RegisterOrganizationDelegatedAdminInput;
+
+pub use crate::operation::register_organization_delegated_admin::_register_organization_delegated_admin_output::RegisterOrganizationDelegatedAdminOutput;
 
 mod _register_organization_delegated_admin_input;
 

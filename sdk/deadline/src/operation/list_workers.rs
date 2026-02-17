@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workers::List
     }
 }
 
-pub use crate::operation::list_workers::_list_workers_output::ListWorkersOutput;
-
 pub use crate::operation::list_workers::_list_workers_input::ListWorkersInput;
+
+pub use crate::operation::list_workers::_list_workers_output::ListWorkersOutput;
 
 mod _list_workers_input;
 

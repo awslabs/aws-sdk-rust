@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_originat
     }
 }
 
-pub use crate::operation::associate_origination_identity::_associate_origination_identity_output::AssociateOriginationIdentityOutput;
-
 pub use crate::operation::associate_origination_identity::_associate_origination_identity_input::AssociateOriginationIdentityInput;
+
+pub use crate::operation::associate_origination_identity::_associate_origination_identity_output::AssociateOriginationIdentityOutput;
 
 mod _associate_origination_identity_input;
 

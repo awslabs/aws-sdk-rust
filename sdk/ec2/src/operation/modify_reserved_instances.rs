@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_reserved_in
     }
 }
 
-pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_output::ModifyReservedInstancesOutput;
-
 pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_input::ModifyReservedInstancesInput;
+
+pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_output::ModifyReservedInstancesOutput;
 
 mod _modify_reserved_instances_input;
 

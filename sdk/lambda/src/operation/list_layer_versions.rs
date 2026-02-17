@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_layer_version
     }
 }
 
-pub use crate::operation::list_layer_versions::_list_layer_versions_output::ListLayerVersionsOutput;
-
 pub use crate::operation::list_layer_versions::_list_layer_versions_input::ListLayerVersionsInput;
+
+pub use crate::operation::list_layer_versions::_list_layer_versions_output::ListLayerVersionsOutput;
 
 mod _list_layer_versions_input;
 

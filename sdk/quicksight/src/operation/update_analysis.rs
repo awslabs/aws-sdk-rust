@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_analysis::U
     }
 }
 
-pub use crate::operation::update_analysis::_update_analysis_output::UpdateAnalysisOutput;
-
 pub use crate::operation::update_analysis::_update_analysis_input::UpdateAnalysisInput;
+
+pub use crate::operation::update_analysis::_update_analysis_output::UpdateAnalysisOutput;
 
 mod _update_analysis_input;
 

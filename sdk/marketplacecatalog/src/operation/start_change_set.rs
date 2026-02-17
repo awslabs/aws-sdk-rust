@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_change_set::
     }
 }
 
-pub use crate::operation::start_change_set::_start_change_set_output::StartChangeSetOutput;
-
 pub use crate::operation::start_change_set::_start_change_set_input::StartChangeSetInput;
+
+pub use crate::operation::start_change_set::_start_change_set_output::StartChangeSetOutput;
 
 mod _start_change_set_input;
 

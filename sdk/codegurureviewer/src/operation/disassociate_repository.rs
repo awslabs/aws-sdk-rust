@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_repos
     }
 }
 
-pub use crate::operation::disassociate_repository::_disassociate_repository_output::DisassociateRepositoryOutput;
-
 pub use crate::operation::disassociate_repository::_disassociate_repository_input::DisassociateRepositoryInput;
+
+pub use crate::operation::disassociate_repository::_disassociate_repository_output::DisassociateRepositoryOutput;
 
 mod _disassociate_repository_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_rest_api::I
     }
 }
 
-pub use crate::operation::invoke_rest_api::_invoke_rest_api_output::InvokeRestApiOutput;
-
 pub use crate::operation::invoke_rest_api::_invoke_rest_api_input::InvokeRestApiInput;
+
+pub use crate::operation::invoke_rest_api::_invoke_rest_api_output::InvokeRestApiOutput;
 
 mod _invoke_rest_api_input;
 

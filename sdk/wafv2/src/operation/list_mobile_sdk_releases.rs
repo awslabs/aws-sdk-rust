@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mobile_sdk_re
     }
 }
 
-pub use crate::operation::list_mobile_sdk_releases::_list_mobile_sdk_releases_output::ListMobileSdkReleasesOutput;
-
 pub use crate::operation::list_mobile_sdk_releases::_list_mobile_sdk_releases_input::ListMobileSdkReleasesInput;
+
+pub use crate::operation::list_mobile_sdk_releases::_list_mobile_sdk_releases_output::ListMobileSdkReleasesOutput;
 
 mod _list_mobile_sdk_releases_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::ungroup_resources:
     }
 }
 
-pub use crate::operation::ungroup_resources::_ungroup_resources_output::UngroupResourcesOutput;
-
 pub use crate::operation::ungroup_resources::_ungroup_resources_input::UngroupResourcesInput;
+
+pub use crate::operation::ungroup_resources::_ungroup_resources_output::UngroupResourcesOutput;
 
 mod _ungroup_resources_input;
 

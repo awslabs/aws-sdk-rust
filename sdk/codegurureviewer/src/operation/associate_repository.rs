@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_reposito
     }
 }
 
-pub use crate::operation::associate_repository::_associate_repository_output::AssociateRepositoryOutput;
-
 pub use crate::operation::associate_repository::_associate_repository_input::AssociateRepositoryInput;
+
+pub use crate::operation::associate_repository::_associate_repository_output::AssociateRepositoryOutput;
 
 mod _associate_repository_input;
 

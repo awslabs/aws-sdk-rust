@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_instance_s
     }
 }
 
-pub use crate::operation::disable_instance_sql_ha_standby_detections::_disable_instance_sql_ha_standby_detections_output::DisableInstanceSqlHaStandbyDetectionsOutput;
-
 pub use crate::operation::disable_instance_sql_ha_standby_detections::_disable_instance_sql_ha_standby_detections_input::DisableInstanceSqlHaStandbyDetectionsInput;
+
+pub use crate::operation::disable_instance_sql_ha_standby_detections::_disable_instance_sql_ha_standby_detections_output::DisableInstanceSqlHaStandbyDetectionsOutput;
 
 mod _disable_instance_sql_ha_standby_detections_input;
 

@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_compute_e
     }
 }
 
-pub use crate::operation::describe_compute_environments::_describe_compute_environments_output::DescribeComputeEnvironmentsOutput;
-
 pub use crate::operation::describe_compute_environments::_describe_compute_environments_input::DescribeComputeEnvironmentsInput;
+
+pub use crate::operation::describe_compute_environments::_describe_compute_environments_output::DescribeComputeEnvironmentsOutput;
 
 mod _describe_compute_environments_input;
 

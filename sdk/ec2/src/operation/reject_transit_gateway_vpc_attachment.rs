@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_transit_gat
     }
 }
 
-pub use crate::operation::reject_transit_gateway_vpc_attachment::_reject_transit_gateway_vpc_attachment_output::RejectTransitGatewayVpcAttachmentOutput;
-
 pub use crate::operation::reject_transit_gateway_vpc_attachment::_reject_transit_gateway_vpc_attachment_input::RejectTransitGatewayVpcAttachmentInput;
+
+pub use crate::operation::reject_transit_gateway_vpc_attachment::_reject_transit_gateway_vpc_attachment_output::RejectTransitGatewayVpcAttachmentOutput;
 
 mod _reject_transit_gateway_vpc_attachment_input;
 

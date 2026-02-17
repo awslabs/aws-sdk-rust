@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cluster_sch
     }
 }
 
-pub use crate::operation::delete_cluster_scheduler_config::_delete_cluster_scheduler_config_output::DeleteClusterSchedulerConfigOutput;
-
 pub use crate::operation::delete_cluster_scheduler_config::_delete_cluster_scheduler_config_input::DeleteClusterSchedulerConfigInput;
+
+pub use crate::operation::delete_cluster_scheduler_config::_delete_cluster_scheduler_config_output::DeleteClusterSchedulerConfigOutput;
 
 mod _delete_cluster_scheduler_config_input;
 

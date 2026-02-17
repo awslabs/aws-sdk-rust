@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_networks
     }
 }
 
-pub use crate::operation::list_core_networks::_list_core_networks_output::ListCoreNetworksOutput;
-
 pub use crate::operation::list_core_networks::_list_core_networks_input::ListCoreNetworksInput;
+
+pub use crate::operation::list_core_networks::_list_core_networks_output::ListCoreNetworksOutput;
 
 mod _list_core_networks_input;
 

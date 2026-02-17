@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_attached_fi
     }
 }
 
-pub use crate::operation::delete_attached_file::_delete_attached_file_output::DeleteAttachedFileOutput;
-
 pub use crate::operation::delete_attached_file::_delete_attached_file_input::DeleteAttachedFileInput;
+
+pub use crate::operation::delete_attached_file::_delete_attached_file_output::DeleteAttachedFileOutput;
 
 mod _delete_attached_file_input;
 

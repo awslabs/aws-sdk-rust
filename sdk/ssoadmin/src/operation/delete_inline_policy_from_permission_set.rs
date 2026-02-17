@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inline_poli
     }
 }
 
-pub use crate::operation::delete_inline_policy_from_permission_set::_delete_inline_policy_from_permission_set_output::DeleteInlinePolicyFromPermissionSetOutput;
-
 pub use crate::operation::delete_inline_policy_from_permission_set::_delete_inline_policy_from_permission_set_input::DeleteInlinePolicyFromPermissionSetInput;
+
+pub use crate::operation::delete_inline_policy_from_permission_set::_delete_inline_policy_from_permission_set_output::DeleteInlinePolicyFromPermissionSetOutput;
 
 mod _delete_inline_policy_from_permission_set_input;
 

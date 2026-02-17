@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::transfer_input_dev
     }
 }
 
-pub use crate::operation::transfer_input_device::_transfer_input_device_output::TransferInputDeviceOutput;
-
 pub use crate::operation::transfer_input_device::_transfer_input_device_input::TransferInputDeviceInput;
+
+pub use crate::operation::transfer_input_device::_transfer_input_device_output::TransferInputDeviceOutput;
 
 mod _transfer_input_device_input;
 

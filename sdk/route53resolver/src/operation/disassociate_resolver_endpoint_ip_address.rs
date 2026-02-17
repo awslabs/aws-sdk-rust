@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_resol
     }
 }
 
-pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassociate_resolver_endpoint_ip_address_output::DisassociateResolverEndpointIpAddressOutput;
-
 pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassociate_resolver_endpoint_ip_address_input::DisassociateResolverEndpointIpAddressInput;
+
+pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassociate_resolver_endpoint_ip_address_output::DisassociateResolverEndpointIpAddressOutput;
 
 mod _disassociate_resolver_endpoint_ip_address_input;
 

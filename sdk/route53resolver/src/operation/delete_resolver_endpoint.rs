@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resolver_en
     }
 }
 
-pub use crate::operation::delete_resolver_endpoint::_delete_resolver_endpoint_output::DeleteResolverEndpointOutput;
-
 pub use crate::operation::delete_resolver_endpoint::_delete_resolver_endpoint_input::DeleteResolverEndpointInput;
+
+pub use crate::operation::delete_resolver_endpoint::_delete_resolver_endpoint_output::DeleteResolverEndpointOutput;
 
 mod _delete_resolver_endpoint_input;
 

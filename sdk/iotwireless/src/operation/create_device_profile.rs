@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_device_prof
     }
 }
 
-pub use crate::operation::create_device_profile::_create_device_profile_output::CreateDeviceProfileOutput;
-
 pub use crate::operation::create_device_profile::_create_device_profile_input::CreateDeviceProfileInput;
+
+pub use crate::operation::create_device_profile::_create_device_profile_output::CreateDeviceProfileOutput;
 
 mod _create_device_profile_input;
 

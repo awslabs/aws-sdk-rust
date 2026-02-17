@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_rout
     }
 }
 
-pub use crate::operation::delete_custom_routing_accelerator::_delete_custom_routing_accelerator_output::DeleteCustomRoutingAcceleratorOutput;
-
 pub use crate::operation::delete_custom_routing_accelerator::_delete_custom_routing_accelerator_input::DeleteCustomRoutingAcceleratorInput;
+
+pub use crate::operation::delete_custom_routing_accelerator::_delete_custom_routing_accelerator_output::DeleteCustomRoutingAcceleratorOutput;
 
 mod _delete_custom_routing_accelerator_input;
 

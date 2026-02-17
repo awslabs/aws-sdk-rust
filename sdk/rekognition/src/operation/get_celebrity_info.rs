@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_celebrity_info
     }
 }
 
-pub use crate::operation::get_celebrity_info::_get_celebrity_info_output::GetCelebrityInfoOutput;
-
 pub use crate::operation::get_celebrity_info::_get_celebrity_info_input::GetCelebrityInfoInput;
+
+pub use crate::operation::get_celebrity_info::_get_celebrity_info_output::GetCelebrityInfoOutput;
 
 mod _get_celebrity_info_input;
 

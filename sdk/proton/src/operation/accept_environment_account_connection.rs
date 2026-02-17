@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_environment
     }
 }
 
-pub use crate::operation::accept_environment_account_connection::_accept_environment_account_connection_output::AcceptEnvironmentAccountConnectionOutput;
-
 pub use crate::operation::accept_environment_account_connection::_accept_environment_account_connection_input::AcceptEnvironmentAccountConnectionInput;
+
+pub use crate::operation::accept_environment_account_connection::_accept_environment_account_connection_output::AcceptEnvironmentAccountConnectionOutput;
 
 mod _accept_environment_account_connection_input;
 

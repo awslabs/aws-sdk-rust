@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_connector_eve
     }
 }
 
-pub use crate::operation::send_connector_event::_send_connector_event_output::SendConnectorEventOutput;
-
 pub use crate::operation::send_connector_event::_send_connector_event_input::SendConnectorEventInput;
+
+pub use crate::operation::send_connector_event::_send_connector_event_output::SendConnectorEventOutput;
 
 mod _send_connector_event_input;
 

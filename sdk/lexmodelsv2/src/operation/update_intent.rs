@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_intent::Upd
     }
 }
 
-pub use crate::operation::update_intent::_update_intent_output::UpdateIntentOutput;
-
 pub use crate::operation::update_intent::_update_intent_input::UpdateIntentInput;
+
+pub use crate::operation::update_intent::_update_intent_output::UpdateIntentOutput;
 
 mod _update_intent_input;
 

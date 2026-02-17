@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpn_concent
     }
 }
 
-pub use crate::operation::create_vpn_concentrator::_create_vpn_concentrator_output::CreateVpnConcentratorOutput;
-
 pub use crate::operation::create_vpn_concentrator::_create_vpn_concentrator_input::CreateVpnConcentratorInput;
+
+pub use crate::operation::create_vpn_concentrator::_create_vpn_concentrator_output::CreateVpnConcentratorOutput;
 
 mod _create_vpn_concentrator_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rotate_ingest_endp
     }
 }
 
-pub use crate::operation::rotate_ingest_endpoint_credentials::_rotate_ingest_endpoint_credentials_output::RotateIngestEndpointCredentialsOutput;
-
 pub use crate::operation::rotate_ingest_endpoint_credentials::_rotate_ingest_endpoint_credentials_input::RotateIngestEndpointCredentialsInput;
+
+pub use crate::operation::rotate_ingest_endpoint_credentials::_rotate_ingest_endpoint_credentials_output::RotateIngestEndpointCredentialsOutput;
 
 mod _rotate_ingest_endpoint_credentials_input;
 

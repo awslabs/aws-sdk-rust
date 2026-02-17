@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_settings:
     }
 }
 
-pub use crate::operation::describe_settings::_describe_settings_output::DescribeSettingsOutput;
-
 pub use crate::operation::describe_settings::_describe_settings_input::DescribeSettingsInput;
+
+pub use crate::operation::describe_settings::_describe_settings_output::DescribeSettingsOutput;
 
 mod _describe_settings_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_registered_sub
     }
 }
 
-pub use crate::operation::get_registered_subscription_provider::_get_registered_subscription_provider_output::GetRegisteredSubscriptionProviderOutput;
-
 pub use crate::operation::get_registered_subscription_provider::_get_registered_subscription_provider_input::GetRegisteredSubscriptionProviderInput;
+
+pub use crate::operation::get_registered_subscription_provider::_get_registered_subscription_provider_output::GetRegisteredSubscriptionProviderOutput;
 
 mod _get_registered_subscription_provider_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_recommen
     }
 }
 
-pub use crate::operation::modify_db_recommendation::_modify_db_recommendation_output::ModifyDbRecommendationOutput;
-
 pub use crate::operation::modify_db_recommendation::_modify_db_recommendation_input::ModifyDbRecommendationInput;
+
+pub use crate::operation::modify_db_recommendation::_modify_db_recommendation_output::ModifyDbRecommendationOutput;
 
 mod _modify_db_recommendation_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_invoice_uni
     }
 }
 
-pub use crate::operation::update_invoice_unit::_update_invoice_unit_output::UpdateInvoiceUnitOutput;
-
 pub use crate::operation::update_invoice_unit::_update_invoice_unit_input::UpdateInvoiceUnitInput;
+
+pub use crate::operation::update_invoice_unit::_update_invoice_unit_output::UpdateInvoiceUnitOutput;
 
 mod _update_invoice_unit_input;
 

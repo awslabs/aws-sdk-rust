@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resolver_dn
     }
 }
 
-pub use crate::operation::update_resolver_dnssec_config::_update_resolver_dnssec_config_output::UpdateResolverDnssecConfigOutput;
-
 pub use crate::operation::update_resolver_dnssec_config::_update_resolver_dnssec_config_input::UpdateResolverDnssecConfigInput;
+
+pub use crate::operation::update_resolver_dnssec_config::_update_resolver_dnssec_config_output::UpdateResolverDnssecConfigOutput;
 
 mod _update_resolver_dnssec_config_input;
 

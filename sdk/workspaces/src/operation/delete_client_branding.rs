@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_client_bran
     }
 }
 
-pub use crate::operation::delete_client_branding::_delete_client_branding_output::DeleteClientBrandingOutput;
-
 pub use crate::operation::delete_client_branding::_delete_client_branding_input::DeleteClientBrandingInput;
+
+pub use crate::operation::delete_client_branding::_delete_client_branding_output::DeleteClientBrandingOutput;
 
 mod _delete_client_branding_input;
 

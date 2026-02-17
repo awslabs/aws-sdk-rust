@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_addon_instanc
     }
 }
 
-pub use crate::operation::list_addon_instances::_list_addon_instances_output::ListAddonInstancesOutput;
-
 pub use crate::operation::list_addon_instances::_list_addon_instances_input::ListAddonInstancesInput;
+
+pub use crate::operation::list_addon_instances::_list_addon_instances_output::ListAddonInstancesOutput;
 
 mod _list_addon_instances_input;
 

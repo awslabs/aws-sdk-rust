@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_repository_cat
     }
 }
 
-pub use crate::operation::put_repository_catalog_data::_put_repository_catalog_data_output::PutRepositoryCatalogDataOutput;
-
 pub use crate::operation::put_repository_catalog_data::_put_repository_catalog_data_input::PutRepositoryCatalogDataInput;
+
+pub use crate::operation::put_repository_catalog_data::_put_repository_catalog_data_output::PutRepositoryCatalogDataOutput;
 
 mod _put_repository_catalog_data_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lf_tags::List
     }
 }
 
-pub use crate::operation::list_lf_tags::_list_lf_tags_output::ListLfTagsOutput;
-
 pub use crate::operation::list_lf_tags::_list_lf_tags_input::ListLfTagsInput;
+
+pub use crate::operation::list_lf_tags::_list_lf_tags_output::ListLfTagsOutput;
 
 mod _list_lf_tags_input;
 

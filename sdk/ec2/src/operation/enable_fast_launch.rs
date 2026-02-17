@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_fast_launch
     }
 }
 
-pub use crate::operation::enable_fast_launch::_enable_fast_launch_output::EnableFastLaunchOutput;
-
 pub use crate::operation::enable_fast_launch::_enable_fast_launch_input::EnableFastLaunchInput;
+
+pub use crate::operation::enable_fast_launch::_enable_fast_launch_output::EnableFastLaunchOutput;
 
 mod _enable_fast_launch_input;
 

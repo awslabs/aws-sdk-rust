@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_clust
     }
 }
 
-pub use crate::operation::batch_update_cluster::_batch_update_cluster_output::BatchUpdateClusterOutput;
-
 pub use crate::operation::batch_update_cluster::_batch_update_cluster_input::BatchUpdateClusterInput;
+
+pub use crate::operation::batch_update_cluster::_batch_update_cluster_output::BatchUpdateClusterOutput;
 
 mod _batch_update_cluster_input;
 

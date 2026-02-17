@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_license_ass
     }
 }
 
-pub use crate::operation::delete_license_asset_ruleset::_delete_license_asset_ruleset_output::DeleteLicenseAssetRulesetOutput;
-
 pub use crate::operation::delete_license_asset_ruleset::_delete_license_asset_ruleset_input::DeleteLicenseAssetRulesetInput;
+
+pub use crate::operation::delete_license_asset_ruleset::_delete_license_asset_ruleset_output::DeleteLicenseAssetRulesetOutput;
 
 mod _delete_license_asset_ruleset_input;
 

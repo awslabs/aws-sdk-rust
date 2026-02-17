@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_snapsh
     }
 }
 
-pub use crate::operation::describe_db_snapshot_tenant_databases::_describe_db_snapshot_tenant_databases_output::DescribeDbSnapshotTenantDatabasesOutput;
-
 pub use crate::operation::describe_db_snapshot_tenant_databases::_describe_db_snapshot_tenant_databases_input::DescribeDbSnapshotTenantDatabasesInput;
+
+pub use crate::operation::describe_db_snapshot_tenant_databases::_describe_db_snapshot_tenant_databases_output::DescribeDbSnapshotTenantDatabasesOutput;
 
 mod _describe_db_snapshot_tenant_databases_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_queue_fleet
     }
 }
 
-pub use crate::operation::create_queue_fleet_association::_create_queue_fleet_association_output::CreateQueueFleetAssociationOutput;
-
 pub use crate::operation::create_queue_fleet_association::_create_queue_fleet_association_input::CreateQueueFleetAssociationInput;
+
+pub use crate::operation::create_queue_fleet_association::_create_queue_fleet_association_output::CreateQueueFleetAssociationOutput;
 
 mod _create_queue_fleet_association_input;
 

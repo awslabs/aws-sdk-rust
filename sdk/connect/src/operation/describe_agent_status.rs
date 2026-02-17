@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_agent_sta
     }
 }
 
-pub use crate::operation::describe_agent_status::_describe_agent_status_output::DescribeAgentStatusOutput;
-
 pub use crate::operation::describe_agent_status::_describe_agent_status_input::DescribeAgentStatusInput;
+
+pub use crate::operation::describe_agent_status::_describe_agent_status_output::DescribeAgentStatusOutput;
 
 mod _describe_agent_status_input;
 

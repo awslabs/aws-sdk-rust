@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_web_acl:
     }
 }
 
-pub use crate::operation::associate_web_acl::_associate_web_acl_output::AssociateWebAclOutput;
-
 pub use crate::operation::associate_web_acl::_associate_web_acl_input::AssociateWebAclInput;
+
+pub use crate::operation::associate_web_acl::_associate_web_acl_output::AssociateWebAclOutput;
 
 mod _associate_web_acl_input;
 

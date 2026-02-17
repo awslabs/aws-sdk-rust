@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_audit_tas
     }
 }
 
-pub use crate::operation::describe_audit_task::_describe_audit_task_output::DescribeAuditTaskOutput;
-
 pub use crate::operation::describe_audit_task::_describe_audit_task_input::DescribeAuditTaskInput;
+
+pub use crate::operation::describe_audit_task::_describe_audit_task_output::DescribeAuditTaskOutput;
 
 mod _describe_audit_task_input;
 

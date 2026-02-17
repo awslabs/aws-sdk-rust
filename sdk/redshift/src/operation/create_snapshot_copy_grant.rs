@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_snapshot_co
     }
 }
 
-pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_grant_output::CreateSnapshotCopyGrantOutput;
-
 pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_grant_input::CreateSnapshotCopyGrantInput;
+
+pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_grant_output::CreateSnapshotCopyGrantOutput;
 
 mod _create_snapshot_copy_grant_input;
 

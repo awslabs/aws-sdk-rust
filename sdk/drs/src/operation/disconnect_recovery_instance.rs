@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disconnect_recover
     }
 }
 
-pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_instance_output::DisconnectRecoveryInstanceOutput;
-
 pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_instance_input::DisconnectRecoveryInstanceInput;
+
+pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_instance_output::DisconnectRecoveryInstanceOutput;
 
 mod _disconnect_recovery_instance_input;
 

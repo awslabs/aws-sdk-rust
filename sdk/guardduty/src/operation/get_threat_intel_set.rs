@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_threat_intel_s
     }
 }
 
-pub use crate::operation::get_threat_intel_set::_get_threat_intel_set_output::GetThreatIntelSetOutput;
-
 pub use crate::operation::get_threat_intel_set::_get_threat_intel_set_input::GetThreatIntelSetInput;
+
+pub use crate::operation::get_threat_intel_set::_get_threat_intel_set_output::GetThreatIntelSetOutput;
 
 mod _get_threat_intel_set_input;
 

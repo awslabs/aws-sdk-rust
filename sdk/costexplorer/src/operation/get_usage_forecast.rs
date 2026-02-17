@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_usage_forecast
     }
 }
 
-pub use crate::operation::get_usage_forecast::_get_usage_forecast_output::GetUsageForecastOutput;
-
 pub use crate::operation::get_usage_forecast::_get_usage_forecast_input::GetUsageForecastInput;
+
+pub use crate::operation::get_usage_forecast::_get_usage_forecast_output::GetUsageForecastOutput;
 
 mod _get_usage_forecast_input;
 

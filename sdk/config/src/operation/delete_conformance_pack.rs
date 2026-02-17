@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_conformance
     }
 }
 
-pub use crate::operation::delete_conformance_pack::_delete_conformance_pack_output::DeleteConformancePackOutput;
-
 pub use crate::operation::delete_conformance_pack::_delete_conformance_pack_input::DeleteConformancePackInput;
+
+pub use crate::operation::delete_conformance_pack::_delete_conformance_pack_output::DeleteConformancePackOutput;
 
 mod _delete_conformance_pack_input;
 

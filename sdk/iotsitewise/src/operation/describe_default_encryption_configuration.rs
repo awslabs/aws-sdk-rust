@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_default_e
     }
 }
 
-pub use crate::operation::describe_default_encryption_configuration::_describe_default_encryption_configuration_output::DescribeDefaultEncryptionConfigurationOutput;
-
 pub use crate::operation::describe_default_encryption_configuration::_describe_default_encryption_configuration_input::DescribeDefaultEncryptionConfigurationInput;
+
+pub use crate::operation::describe_default_encryption_configuration::_describe_default_encryption_configuration_output::DescribeDefaultEncryptionConfigurationOutput;
 
 mod _describe_default_encryption_configuration_input;
 

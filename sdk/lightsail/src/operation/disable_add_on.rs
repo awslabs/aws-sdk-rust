@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_add_on::Di
     }
 }
 
-pub use crate::operation::disable_add_on::_disable_add_on_output::DisableAddOnOutput;
-
 pub use crate::operation::disable_add_on::_disable_add_on_input::DisableAddOnInput;
+
+pub use crate::operation::disable_add_on::_disable_add_on_output::DisableAddOnOutput;
 
 mod _disable_add_on_input;
 

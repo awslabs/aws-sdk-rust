@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_software
     }
 }
 
-pub use crate::operation::associate_software_token::_associate_software_token_output::AssociateSoftwareTokenOutput;
-
 pub use crate::operation::associate_software_token::_associate_software_token_input::AssociateSoftwareTokenInput;
+
+pub use crate::operation::associate_software_token::_associate_software_token_output::AssociateSoftwareTokenOutput;
 
 mod _associate_software_token_input;
 

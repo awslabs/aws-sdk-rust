@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_receipt_fil
     }
 }
 
-pub use crate::operation::delete_receipt_filter::_delete_receipt_filter_output::DeleteReceiptFilterOutput;
-
 pub use crate::operation::delete_receipt_filter::_delete_receipt_filter_input::DeleteReceiptFilterInput;
+
+pub use crate::operation::delete_receipt_filter::_delete_receipt_filter_output::DeleteReceiptFilterOutput;
 
 mod _delete_receipt_filter_input;
 

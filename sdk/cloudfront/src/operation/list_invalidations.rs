@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_invalidations
     }
 }
 
-pub use crate::operation::list_invalidations::_list_invalidations_output::ListInvalidationsOutput;
-
 pub use crate::operation::list_invalidations::_list_invalidations_input::ListInvalidationsInput;
+
+pub use crate::operation::list_invalidations::_list_invalidations_output::ListInvalidationsOutput;
 
 mod _list_invalidations_input;
 

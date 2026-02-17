@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_quota:
     }
 }
 
-pub use crate::operation::get_service_quota::_get_service_quota_output::GetServiceQuotaOutput;
-
 pub use crate::operation::get_service_quota::_get_service_quota_input::GetServiceQuotaInput;
+
+pub use crate::operation::get_service_quota::_get_service_quota_output::GetServiceQuotaOutput;
 
 mod _get_service_quota_input;
 

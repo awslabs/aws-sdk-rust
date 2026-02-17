@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_from_wo
     }
 }
 
-pub use crate::operation::deregister_from_work_mail::_deregister_from_work_mail_output::DeregisterFromWorkMailOutput;
-
 pub use crate::operation::deregister_from_work_mail::_deregister_from_work_mail_input::DeregisterFromWorkMailInput;
+
+pub use crate::operation::deregister_from_work_mail::_deregister_from_work_mail_output::DeregisterFromWorkMailOutput;
 
 mod _deregister_from_work_mail_input;
 

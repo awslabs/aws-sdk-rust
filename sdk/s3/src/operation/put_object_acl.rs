@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_object_acl::Pu
     }
 }
 
-pub use crate::operation::put_object_acl::_put_object_acl_output::PutObjectAclOutput;
-
 pub use crate::operation::put_object_acl::_put_object_acl_input::PutObjectAclInput;
+
+pub use crate::operation::put_object_acl::_put_object_acl_output::PutObjectAclOutput;
 
 mod _put_object_acl_input;
 

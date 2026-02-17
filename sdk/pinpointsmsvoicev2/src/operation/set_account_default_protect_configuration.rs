@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_account_defaul
     }
 }
 
-pub use crate::operation::set_account_default_protect_configuration::_set_account_default_protect_configuration_output::SetAccountDefaultProtectConfigurationOutput;
-
 pub use crate::operation::set_account_default_protect_configuration::_set_account_default_protect_configuration_input::SetAccountDefaultProtectConfigurationInput;
+
+pub use crate::operation::set_account_default_protect_configuration::_set_account_default_protect_configuration_output::SetAccountDefaultProtectConfigurationOutput;
 
 mod _set_account_default_protect_configuration_input;
 

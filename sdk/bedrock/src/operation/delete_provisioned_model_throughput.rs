@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_provisioned
     }
 }
 
-pub use crate::operation::delete_provisioned_model_throughput::_delete_provisioned_model_throughput_output::DeleteProvisionedModelThroughputOutput;
-
 pub use crate::operation::delete_provisioned_model_throughput::_delete_provisioned_model_throughput_input::DeleteProvisionedModelThroughputInput;
+
+pub use crate::operation::delete_provisioned_model_throughput::_delete_provisioned_model_throughput_output::DeleteProvisionedModelThroughputOutput;
 
 mod _delete_provisioned_model_throughput_input;
 

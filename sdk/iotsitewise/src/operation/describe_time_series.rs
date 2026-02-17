@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_time_seri
     }
 }
 
-pub use crate::operation::describe_time_series::_describe_time_series_output::DescribeTimeSeriesOutput;
-
 pub use crate::operation::describe_time_series::_describe_time_series_input::DescribeTimeSeriesInput;
+
+pub use crate::operation::describe_time_series::_describe_time_series_output::DescribeTimeSeriesOutput;
 
 mod _describe_time_series_input;
 

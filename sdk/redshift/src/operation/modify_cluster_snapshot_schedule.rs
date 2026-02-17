@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cluster_sna
     }
 }
 
-pub use crate::operation::modify_cluster_snapshot_schedule::_modify_cluster_snapshot_schedule_output::ModifyClusterSnapshotScheduleOutput;
-
 pub use crate::operation::modify_cluster_snapshot_schedule::_modify_cluster_snapshot_schedule_input::ModifyClusterSnapshotScheduleInput;
+
+pub use crate::operation::modify_cluster_snapshot_schedule::_modify_cluster_snapshot_schedule_output::ModifyClusterSnapshotScheduleOutput;
 
 mod _modify_cluster_snapshot_schedule_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_capacity_pr
     }
 }
 
-pub use crate::operation::update_capacity_provider::_update_capacity_provider_output::UpdateCapacityProviderOutput;
-
 pub use crate::operation::update_capacity_provider::_update_capacity_provider_input::UpdateCapacityProviderInput;
+
+pub use crate::operation::update_capacity_provider::_update_capacity_provider_output::UpdateCapacityProviderOutput;
 
 mod _update_capacity_provider_input;
 

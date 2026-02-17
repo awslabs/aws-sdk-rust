@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_host_key::U
     }
 }
 
-pub use crate::operation::update_host_key::_update_host_key_output::UpdateHostKeyOutput;
-
 pub use crate::operation::update_host_key::_update_host_key_input::UpdateHostKeyInput;
+
+pub use crate::operation::update_host_key::_update_host_key_output::UpdateHostKeyOutput;
 
 mod _update_host_key_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assessment_te
     }
 }
 
-pub use crate::operation::list_assessment_templates::_list_assessment_templates_output::ListAssessmentTemplatesOutput;
-
 pub use crate::operation::list_assessment_templates::_list_assessment_templates_input::ListAssessmentTemplatesInput;
+
+pub use crate::operation::list_assessment_templates::_list_assessment_templates_output::ListAssessmentTemplatesOutput;
 
 mod _list_assessment_templates_input;
 

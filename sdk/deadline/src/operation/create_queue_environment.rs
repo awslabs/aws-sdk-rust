@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_queue_envir
     }
 }
 
-pub use crate::operation::create_queue_environment::_create_queue_environment_output::CreateQueueEnvironmentOutput;
-
 pub use crate::operation::create_queue_environment::_create_queue_environment_input::CreateQueueEnvironmentInput;
+
+pub use crate::operation::create_queue_environment::_create_queue_environment_output::CreateQueueEnvironmentOutput;
 
 mod _create_queue_environment_input;
 

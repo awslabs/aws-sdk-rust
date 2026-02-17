@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_q_app
     }
 }
 
-pub use crate::operation::disassociate_q_app_from_user::_disassociate_q_app_from_user_output::DisassociateQAppFromUserOutput;
-
 pub use crate::operation::disassociate_q_app_from_user::_disassociate_q_app_from_user_input::DisassociateQAppFromUserInput;
+
+pub use crate::operation::disassociate_q_app_from_user::_disassociate_q_app_from_user_output::DisassociateQAppFromUserOutput;
 
 mod _disassociate_q_app_from_user_input;
 

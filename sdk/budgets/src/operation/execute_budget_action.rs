@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_budget_act
     }
 }
 
-pub use crate::operation::execute_budget_action::_execute_budget_action_output::ExecuteBudgetActionOutput;
-
 pub use crate::operation::execute_budget_action::_execute_budget_action_input::ExecuteBudgetActionInput;
+
+pub use crate::operation::execute_budget_action::_execute_budget_action_output::ExecuteBudgetActionOutput;
 
 mod _execute_budget_action_input;
 

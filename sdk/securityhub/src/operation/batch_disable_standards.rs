@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disable_stan
     }
 }
 
-pub use crate::operation::batch_disable_standards::_batch_disable_standards_output::BatchDisableStandardsOutput;
-
 pub use crate::operation::batch_disable_standards::_batch_disable_standards_input::BatchDisableStandardsInput;
+
+pub use crate::operation::batch_disable_standards::_batch_disable_standards_output::BatchDisableStandardsOutput;
 
 mod _batch_disable_standards_input;
 

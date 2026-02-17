@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_tele
     }
 }
 
-pub use crate::operation::list_resource_telemetry::_list_resource_telemetry_output::ListResourceTelemetryOutput;
-
 pub use crate::operation::list_resource_telemetry::_list_resource_telemetry_input::ListResourceTelemetryInput;
+
+pub use crate::operation::list_resource_telemetry::_list_resource_telemetry_output::ListResourceTelemetryOutput;
 
 mod _list_resource_telemetry_input;
 

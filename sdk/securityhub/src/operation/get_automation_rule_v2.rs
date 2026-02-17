@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_automation_rul
     }
 }
 
-pub use crate::operation::get_automation_rule_v2::_get_automation_rule_v2_output::GetAutomationRuleV2Output;
-
 pub use crate::operation::get_automation_rule_v2::_get_automation_rule_v2_input::GetAutomationRuleV2Input;
+
+pub use crate::operation::get_automation_rule_v2::_get_automation_rule_v2_output::GetAutomationRuleV2Output;
 
 mod _get_automation_rule_v2_input;
 

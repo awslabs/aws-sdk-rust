@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_custom_d
     }
 }
 
-pub use crate::operation::associate_custom_domain::_associate_custom_domain_output::AssociateCustomDomainOutput;
-
 pub use crate::operation::associate_custom_domain::_associate_custom_domain_input::AssociateCustomDomainInput;
+
+pub use crate::operation::associate_custom_domain::_associate_custom_domain_output::AssociateCustomDomainOutput;
 
 mod _associate_custom_domain_input;
 

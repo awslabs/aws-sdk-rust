@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_rescore_e
     }
 }
 
-pub use crate::operation::describe_rescore_execution_plan::_describe_rescore_execution_plan_output::DescribeRescoreExecutionPlanOutput;
-
 pub use crate::operation::describe_rescore_execution_plan::_describe_rescore_execution_plan_input::DescribeRescoreExecutionPlanInput;
+
+pub use crate::operation::describe_rescore_execution_plan::_describe_rescore_execution_plan_output::DescribeRescoreExecutionPlanOutput;
 
 mod _describe_rescore_execution_plan_input;
 

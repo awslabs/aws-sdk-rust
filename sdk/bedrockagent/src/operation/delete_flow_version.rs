@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flow_versio
     }
 }
 
-pub use crate::operation::delete_flow_version::_delete_flow_version_output::DeleteFlowVersionOutput;
-
 pub use crate::operation::delete_flow_version::_delete_flow_version_input::DeleteFlowVersionInput;
+
+pub use crate::operation::delete_flow_version::_delete_flow_version_output::DeleteFlowVersionOutput;
 
 mod _delete_flow_version_input;
 

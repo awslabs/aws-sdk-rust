@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_organization_
     }
 }
 
-pub use crate::operation::list_organization_portfolio_access::_list_organization_portfolio_access_output::ListOrganizationPortfolioAccessOutput;
-
 pub use crate::operation::list_organization_portfolio_access::_list_organization_portfolio_access_input::ListOrganizationPortfolioAccessInput;
+
+pub use crate::operation::list_organization_portfolio_access::_list_organization_portfolio_access_output::ListOrganizationPortfolioAccessOutput;
 
 mod _list_organization_portfolio_access_input;
 

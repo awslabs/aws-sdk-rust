@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_capacity_m
     }
 }
 
-pub use crate::operation::disable_capacity_manager::_disable_capacity_manager_output::DisableCapacityManagerOutput;
-
 pub use crate::operation::disable_capacity_manager::_disable_capacity_manager_input::DisableCapacityManagerInput;
+
+pub use crate::operation::disable_capacity_manager::_disable_capacity_manager_output::DisableCapacityManagerOutput;
 
 mod _disable_capacity_manager_input;
 

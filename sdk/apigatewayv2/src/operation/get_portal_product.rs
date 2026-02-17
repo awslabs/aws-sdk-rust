@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_portal_product
     }
 }
 
-pub use crate::operation::get_portal_product::_get_portal_product_output::GetPortalProductOutput;
-
 pub use crate::operation::get_portal_product::_get_portal_product_input::GetPortalProductInput;
+
+pub use crate::operation::get_portal_product::_get_portal_product_output::GetPortalProductOutput;
 
 mod _get_portal_product_input;
 

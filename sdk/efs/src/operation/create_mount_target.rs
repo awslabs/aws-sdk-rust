@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_mount_targe
     }
 }
 
-pub use crate::operation::create_mount_target::_create_mount_target_output::CreateMountTargetOutput;
-
 pub use crate::operation::create_mount_target::_create_mount_target_input::CreateMountTargetInput;
+
+pub use crate::operation::create_mount_target::_create_mount_target_output::CreateMountTargetOutput;
 
 mod _create_mount_target_input;
 

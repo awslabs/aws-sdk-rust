@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_feature_gro
     }
 }
 
-pub use crate::operation::create_feature_group::_create_feature_group_output::CreateFeatureGroupOutput;
-
 pub use crate::operation::create_feature_group::_create_feature_group_input::CreateFeatureGroupInput;
+
+pub use crate::operation::create_feature_group::_create_feature_group_output::CreateFeatureGroupOutput;
 
 mod _create_feature_group_input;
 

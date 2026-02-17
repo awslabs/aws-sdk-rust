@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_configura
     }
 }
 
-pub use crate::operation::describe_configuration_recorder_status::_describe_configuration_recorder_status_output::DescribeConfigurationRecorderStatusOutput;
-
 pub use crate::operation::describe_configuration_recorder_status::_describe_configuration_recorder_status_input::DescribeConfigurationRecorderStatusInput;
+
+pub use crate::operation::describe_configuration_recorder_status::_describe_configuration_recorder_status_output::DescribeConfigurationRecorderStatusOutput;
 
 mod _describe_configuration_recorder_status_input;
 

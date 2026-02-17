@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query_assistant::Q
     }
 }
 
-pub use crate::operation::query_assistant::_query_assistant_output::QueryAssistantOutput;
-
 pub use crate::operation::query_assistant::_query_assistant_input::QueryAssistantInput;
+
+pub use crate::operation::query_assistant::_query_assistant_output::QueryAssistantOutput;
 
 mod _query_assistant_input;
 

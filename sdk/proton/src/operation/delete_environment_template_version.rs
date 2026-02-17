@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_environment
     }
 }
 
-pub use crate::operation::delete_environment_template_version::_delete_environment_template_version_output::DeleteEnvironmentTemplateVersionOutput;
-
 pub use crate::operation::delete_environment_template_version::_delete_environment_template_version_input::DeleteEnvironmentTemplateVersionInput;
+
+pub use crate::operation::delete_environment_template_version::_delete_environment_template_version_output::DeleteEnvironmentTemplateVersionOutput;
 
 mod _delete_environment_template_version_input;
 

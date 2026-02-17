@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_query_ex
     }
 }
 
-pub use crate::operation::batch_get_query_execution::_batch_get_query_execution_output::BatchGetQueryExecutionOutput;
-
 pub use crate::operation::batch_get_query_execution::_batch_get_query_execution_input::BatchGetQueryExecutionInput;
+
+pub use crate::operation::batch_get_query_execution::_batch_get_query_execution_output::BatchGetQueryExecutionOutput;
 
 mod _batch_get_query_execution_input;
 

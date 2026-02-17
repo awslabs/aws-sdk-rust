@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_app_versio
     }
 }
 
-pub use crate::operation::publish_app_version::_publish_app_version_output::PublishAppVersionOutput;
-
 pub use crate::operation::publish_app_version::_publish_app_version_input::PublishAppVersionInput;
+
+pub use crate::operation::publish_app_version::_publish_app_version_output::PublishAppVersionOutput;
 
 mod _publish_app_version_input;
 

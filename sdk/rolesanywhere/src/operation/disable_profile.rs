@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_profile::D
     }
 }
 
-pub use crate::operation::disable_profile::_disable_profile_output::DisableProfileOutput;
-
 pub use crate::operation::disable_profile::_disable_profile_input::DisableProfileInput;
+
+pub use crate::operation::disable_profile::_disable_profile_output::DisableProfileOutput;
 
 mod _disable_profile_input;
 

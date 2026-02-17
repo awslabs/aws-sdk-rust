@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_origin:
     }
 }
 
-pub use crate::operation::delete_vpc_origin::_delete_vpc_origin_output::DeleteVpcOriginOutput;
-
 pub use crate::operation::delete_vpc_origin::_delete_vpc_origin_input::DeleteVpcOriginInput;
+
+pub use crate::operation::delete_vpc_origin::_delete_vpc_origin_output::DeleteVpcOriginOutput;
 
 mod _delete_vpc_origin_input;
 

@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_comment::Cr
     }
 }
 
-pub use crate::operation::create_comment::_create_comment_output::CreateCommentOutput;
-
 pub use crate::operation::create_comment::_create_comment_input::CreateCommentInput;
+
+pub use crate::operation::create_comment::_create_comment_output::CreateCommentOutput;
 
 mod _create_comment_input;
 

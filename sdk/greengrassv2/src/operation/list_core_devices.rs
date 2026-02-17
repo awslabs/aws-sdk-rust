@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_devices:
     }
 }
 
-pub use crate::operation::list_core_devices::_list_core_devices_output::ListCoreDevicesOutput;
-
 pub use crate::operation::list_core_devices::_list_core_devices_input::ListCoreDevicesInput;
+
+pub use crate::operation::list_core_devices::_list_core_devices_output::ListCoreDevicesOutput;
 
 mod _list_core_devices_input;
 

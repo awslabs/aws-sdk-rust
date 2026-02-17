@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_archive_expo
     }
 }
 
-pub use crate::operation::start_archive_export::_start_archive_export_output::StartArchiveExportOutput;
-
 pub use crate::operation::start_archive_export::_start_archive_export_input::StartArchiveExportInput;
+
+pub use crate::operation::start_archive_export::_start_archive_export_output::StartArchiveExportOutput;
 
 mod _start_archive_export_input;
 

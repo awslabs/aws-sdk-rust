@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_insight_summar
     }
 }
 
-pub use crate::operation::get_insight_summaries::_get_insight_summaries_output::GetInsightSummariesOutput;
-
 pub use crate::operation::get_insight_summaries::_get_insight_summaries_input::GetInsightSummariesInput;
+
+pub use crate::operation::get_insight_summaries::_get_insight_summaries_output::GetInsightSummariesOutput;
 
 mod _get_insight_summaries_input;
 

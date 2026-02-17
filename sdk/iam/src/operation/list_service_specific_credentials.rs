@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_speci
     }
 }
 
-pub use crate::operation::list_service_specific_credentials::_list_service_specific_credentials_output::ListServiceSpecificCredentialsOutput;
-
 pub use crate::operation::list_service_specific_credentials::_list_service_specific_credentials_input::ListServiceSpecificCredentialsInput;
+
+pub use crate::operation::list_service_specific_credentials::_list_service_specific_credentials_output::ListServiceSpecificCredentialsOutput;
 
 mod _list_service_specific_credentials_input;
 

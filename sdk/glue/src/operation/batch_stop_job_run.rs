@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_stop_job_run
     }
 }
 
-pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_output::BatchStopJobRunOutput;
-
 pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_input::BatchStopJobRunInput;
+
+pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_output::BatchStopJobRunOutput;
 
 mod _batch_stop_job_run_input;
 

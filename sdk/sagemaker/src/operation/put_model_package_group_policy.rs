@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_model_package_
     }
 }
 
-pub use crate::operation::put_model_package_group_policy::_put_model_package_group_policy_output::PutModelPackageGroupPolicyOutput;
-
 pub use crate::operation::put_model_package_group_policy::_put_model_package_group_policy_input::PutModelPackageGroupPolicyInput;
+
+pub use crate::operation::put_model_package_group_policy::_put_model_package_group_policy_output::PutModelPackageGroupPolicyOutput;
 
 mod _put_model_package_group_policy_input;
 

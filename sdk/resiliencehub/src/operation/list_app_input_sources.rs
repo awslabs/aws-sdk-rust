@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_input_sou
     }
 }
 
-pub use crate::operation::list_app_input_sources::_list_app_input_sources_output::ListAppInputSourcesOutput;
-
 pub use crate::operation::list_app_input_sources::_list_app_input_sources_input::ListAppInputSourcesInput;
+
+pub use crate::operation::list_app_input_sources::_list_app_input_sources_output::ListAppInputSourcesOutput;
 
 mod _list_app_input_sources_input;
 

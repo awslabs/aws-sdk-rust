@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_volume_at
     }
 }
 
-pub use crate::operation::describe_volume_attribute::_describe_volume_attribute_output::DescribeVolumeAttributeOutput;
-
 pub use crate::operation::describe_volume_attribute::_describe_volume_attribute_input::DescribeVolumeAttributeInput;
+
+pub use crate::operation::describe_volume_attribute::_describe_volume_attribute_output::DescribeVolumeAttributeOutput;
 
 mod _describe_volume_attribute_input;
 

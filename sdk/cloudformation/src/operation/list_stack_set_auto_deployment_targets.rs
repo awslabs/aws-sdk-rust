@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_set_aut
     }
 }
 
-pub use crate::operation::list_stack_set_auto_deployment_targets::_list_stack_set_auto_deployment_targets_output::ListStackSetAutoDeploymentTargetsOutput;
-
 pub use crate::operation::list_stack_set_auto_deployment_targets::_list_stack_set_auto_deployment_targets_input::ListStackSetAutoDeploymentTargetsInput;
+
+pub use crate::operation::list_stack_set_auto_deployment_targets::_list_stack_set_auto_deployment_targets_output::ListStackSetAutoDeploymentTargetsOutput;
 
 mod _list_stack_set_auto_deployment_targets_input;
 

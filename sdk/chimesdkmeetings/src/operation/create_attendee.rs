@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_attendee::C
     }
 }
 
-pub use crate::operation::create_attendee::_create_attendee_output::CreateAttendeeOutput;
-
 pub use crate::operation::create_attendee::_create_attendee_input::CreateAttendeeInput;
+
+pub use crate::operation::create_attendee::_create_attendee_output::CreateAttendeeOutput;
 
 mod _create_attendee_input;
 

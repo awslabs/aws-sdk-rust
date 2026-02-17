@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rum_metric_
     }
 }
 
-pub use crate::operation::update_rum_metric_definition::_update_rum_metric_definition_output::UpdateRumMetricDefinitionOutput;
-
 pub use crate::operation::update_rum_metric_definition::_update_rum_metric_definition_input::UpdateRumMetricDefinitionInput;
+
+pub use crate::operation::update_rum_metric_definition::_update_rum_metric_definition_output::UpdateRumMetricDefinitionOutput;
 
 mod _update_rum_metric_definition_input;
 

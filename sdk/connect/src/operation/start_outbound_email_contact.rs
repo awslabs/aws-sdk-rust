@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_outbound_ema
     }
 }
 
-pub use crate::operation::start_outbound_email_contact::_start_outbound_email_contact_output::StartOutboundEmailContactOutput;
-
 pub use crate::operation::start_outbound_email_contact::_start_outbound_email_contact_input::StartOutboundEmailContactInput;
+
+pub use crate::operation::start_outbound_email_contact::_start_outbound_email_contact_output::StartOutboundEmailContactOutput;
 
 mod _start_outbound_email_contact_input;
 

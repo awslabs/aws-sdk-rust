@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_integration
     }
 }
 
-pub use crate::operation::delete_integration_association::_delete_integration_association_output::DeleteIntegrationAssociationOutput;
-
 pub use crate::operation::delete_integration_association::_delete_integration_association_input::DeleteIntegrationAssociationInput;
+
+pub use crate::operation::delete_integration_association::_delete_integration_association_output::DeleteIntegrationAssociationOutput;
 
 mod _delete_integration_association_input;
 

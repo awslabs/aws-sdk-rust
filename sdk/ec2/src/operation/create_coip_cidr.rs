@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_coip_cidr::
     }
 }
 
-pub use crate::operation::create_coip_cidr::_create_coip_cidr_output::CreateCoipCidrOutput;
-
 pub use crate::operation::create_coip_cidr::_create_coip_cidr_input::CreateCoipCidrInput;
+
+pub use crate::operation::create_coip_cidr::_create_coip_cidr_output::CreateCoipCidrOutput;
 
 mod _create_coip_cidr_input;
 

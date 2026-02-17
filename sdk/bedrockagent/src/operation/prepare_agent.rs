@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::prepare_agent::Pre
     }
 }
 
-pub use crate::operation::prepare_agent::_prepare_agent_output::PrepareAgentOutput;
-
 pub use crate::operation::prepare_agent::_prepare_agent_input::PrepareAgentInput;
+
+pub use crate::operation::prepare_agent::_prepare_agent_output::PrepareAgentOutput;
 
 mod _prepare_agent_input;
 

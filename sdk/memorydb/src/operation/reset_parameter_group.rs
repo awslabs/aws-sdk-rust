@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_parameter_gr
     }
 }
 
-pub use crate::operation::reset_parameter_group::_reset_parameter_group_output::ResetParameterGroupOutput;
-
 pub use crate::operation::reset_parameter_group::_reset_parameter_group_input::ResetParameterGroupInput;
+
+pub use crate::operation::reset_parameter_group::_reset_parameter_group_output::ResetParameterGroupOutput;
 
 mod _reset_parameter_group_input;
 

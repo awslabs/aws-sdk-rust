@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_decoder_manif
     }
 }
 
-pub use crate::operation::list_decoder_manifest_network_interfaces::_list_decoder_manifest_network_interfaces_output::ListDecoderManifestNetworkInterfacesOutput;
-
 pub use crate::operation::list_decoder_manifest_network_interfaces::_list_decoder_manifest_network_interfaces_input::ListDecoderManifestNetworkInterfacesInput;
+
+pub use crate::operation::list_decoder_manifest_network_interfaces::_list_decoder_manifest_network_interfaces_output::ListDecoderManifestNetworkInterfacesOutput;
 
 mod _list_decoder_manifest_network_interfaces_input;
 

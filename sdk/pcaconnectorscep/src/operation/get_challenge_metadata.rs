@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_challenge_meta
     }
 }
 
-pub use crate::operation::get_challenge_metadata::_get_challenge_metadata_output::GetChallengeMetadataOutput;
-
 pub use crate::operation::get_challenge_metadata::_get_challenge_metadata_input::GetChallengeMetadataInput;
+
+pub use crate::operation::get_challenge_metadata::_get_challenge_metadata_output::GetChallengeMetadataOutput;
 
 mod _get_challenge_metadata_input;
 

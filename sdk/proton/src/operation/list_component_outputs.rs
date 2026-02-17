@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_component_out
     }
 }
 
-pub use crate::operation::list_component_outputs::_list_component_outputs_output::ListComponentOutputsOutput;
-
 pub use crate::operation::list_component_outputs::_list_component_outputs_input::ListComponentOutputsInput;
+
+pub use crate::operation::list_component_outputs::_list_component_outputs_output::ListComponentOutputsOutput;
 
 mod _list_component_outputs_input;
 

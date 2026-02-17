@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hsm::Create
     }
 }
 
-pub use crate::operation::create_hsm::_create_hsm_output::CreateHsmOutput;
-
 pub use crate::operation::create_hsm::_create_hsm_input::CreateHsmInput;
+
+pub use crate::operation::create_hsm::_create_hsm_output::CreateHsmOutput;
 
 mod _create_hsm_input;
 

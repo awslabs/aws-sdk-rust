@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver_confi
     }
 }
 
-pub use crate::operation::get_resolver_config::_get_resolver_config_output::GetResolverConfigOutput;
-
 pub use crate::operation::get_resolver_config::_get_resolver_config_input::GetResolverConfigInput;
+
+pub use crate::operation::get_resolver_config::_get_resolver_config_output::GetResolverConfigOutput;
 
 mod _get_resolver_config_input;
 

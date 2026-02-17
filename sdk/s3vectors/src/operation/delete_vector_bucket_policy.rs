@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vector_buck
     }
 }
 
-pub use crate::operation::delete_vector_bucket_policy::_delete_vector_bucket_policy_output::DeleteVectorBucketPolicyOutput;
-
 pub use crate::operation::delete_vector_bucket_policy::_delete_vector_bucket_policy_input::DeleteVectorBucketPolicyInput;
+
+pub use crate::operation::delete_vector_bucket_policy::_delete_vector_bucket_policy_output::DeleteVectorBucketPolicyOutput;
 
 mod _delete_vector_bucket_policy_input;
 

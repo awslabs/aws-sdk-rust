@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_campaign::R
     }
 }
 
-pub use crate::operation::resume_campaign::_resume_campaign_output::ResumeCampaignOutput;
-
 pub use crate::operation::resume_campaign::_resume_campaign_input::ResumeCampaignInput;
+
+pub use crate::operation::resume_campaign::_resume_campaign_output::ResumeCampaignOutput;
 
 mod _resume_campaign_input;
 

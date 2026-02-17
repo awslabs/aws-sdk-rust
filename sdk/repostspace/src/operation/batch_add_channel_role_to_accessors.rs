@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_add_channel_
     }
 }
 
-pub use crate::operation::batch_add_channel_role_to_accessors::_batch_add_channel_role_to_accessors_output::BatchAddChannelRoleToAccessorsOutput;
-
 pub use crate::operation::batch_add_channel_role_to_accessors::_batch_add_channel_role_to_accessors_input::BatchAddChannelRoleToAccessorsInput;
+
+pub use crate::operation::batch_add_channel_role_to_accessors::_batch_add_channel_role_to_accessors_output::BatchAddChannelRoleToAccessorsOutput;
 
 mod _batch_add_channel_role_to_accessors_input;
 

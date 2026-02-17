@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_project_asset
     }
 }
 
-pub use crate::operation::list_project_assets::_list_project_assets_output::ListProjectAssetsOutput;
-
 pub use crate::operation::list_project_assets::_list_project_assets_input::ListProjectAssetsInput;
+
+pub use crate::operation::list_project_assets::_list_project_assets_output::ListProjectAssetsOutput;
 
 mod _list_project_assets_input;
 

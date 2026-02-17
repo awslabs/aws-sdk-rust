@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_answer::Upd
     }
 }
 
-pub use crate::operation::update_answer::_update_answer_output::UpdateAnswerOutput;
-
 pub use crate::operation::update_answer::_update_answer_input::UpdateAnswerInput;
+
+pub use crate::operation::update_answer::_update_answer_output::UpdateAnswerOutput;
 
 mod _update_answer_input;
 

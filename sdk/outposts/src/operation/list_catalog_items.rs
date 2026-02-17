@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_catalog_items
     }
 }
 
-pub use crate::operation::list_catalog_items::_list_catalog_items_output::ListCatalogItemsOutput;
-
 pub use crate::operation::list_catalog_items::_list_catalog_items_input::ListCatalogItemsInput;
+
+pub use crate::operation::list_catalog_items::_list_catalog_items_output::ListCatalogItemsOutput;
 
 mod _list_catalog_items_input;
 

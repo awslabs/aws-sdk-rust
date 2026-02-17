@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recommend
     }
 }
 
-pub use crate::operation::describe_recommendations::_describe_recommendations_output::DescribeRecommendationsOutput;
-
 pub use crate::operation::describe_recommendations::_describe_recommendations_input::DescribeRecommendationsInput;
+
+pub use crate::operation::describe_recommendations::_describe_recommendations_output::DescribeRecommendationsOutput;
 
 mod _describe_recommendations_input;
 

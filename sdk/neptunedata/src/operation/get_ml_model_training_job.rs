@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_model_train
     }
 }
 
-pub use crate::operation::get_ml_model_training_job::_get_ml_model_training_job_output::GetMlModelTrainingJobOutput;
-
 pub use crate::operation::get_ml_model_training_job::_get_ml_model_training_job_input::GetMlModelTrainingJobInput;
+
+pub use crate::operation::get_ml_model_training_job::_get_ml_model_training_job_output::GetMlModelTrainingJobOutput;
 
 mod _get_ml_model_training_job_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_role_from_d
     }
 }
 
-pub use crate::operation::remove_role_from_db_instance::_remove_role_from_db_instance_output::RemoveRoleFromDbInstanceOutput;
-
 pub use crate::operation::remove_role_from_db_instance::_remove_role_from_db_instance_input::RemoveRoleFromDbInstanceInput;
+
+pub use crate::operation::remove_role_from_db_instance::_remove_role_from_db_instance_output::RemoveRoleFromDbInstanceOutput;
 
 mod _remove_role_from_db_instance_input;
 

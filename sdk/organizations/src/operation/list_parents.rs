@@ -486,9 +486,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_parents::List
     }
 }
 
-pub use crate::operation::list_parents::_list_parents_output::ListParentsOutput;
-
 pub use crate::operation::list_parents::_list_parents_input::ListParentsInput;
+
+pub use crate::operation::list_parents::_list_parents_output::ListParentsOutput;
 
 mod _list_parents_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_database::U
     }
 }
 
-pub use crate::operation::update_database::_update_database_output::UpdateDatabaseOutput;
-
 pub use crate::operation::update_database::_update_database_input::UpdateDatabaseInput;
+
+pub use crate::operation::update_database::_update_database_output::UpdateDatabaseOutput;
 
 mod _update_database_input;
 

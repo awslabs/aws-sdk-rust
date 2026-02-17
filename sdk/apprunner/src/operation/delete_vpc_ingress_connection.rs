@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_ingress
     }
 }
 
-pub use crate::operation::delete_vpc_ingress_connection::_delete_vpc_ingress_connection_output::DeleteVpcIngressConnectionOutput;
-
 pub use crate::operation::delete_vpc_ingress_connection::_delete_vpc_ingress_connection_input::DeleteVpcIngressConnectionInput;
+
+pub use crate::operation::delete_vpc_ingress_connection::_delete_vpc_ingress_connection_output::DeleteVpcIngressConnectionOutput;
 
 mod _delete_vpc_ingress_connection_input;
 

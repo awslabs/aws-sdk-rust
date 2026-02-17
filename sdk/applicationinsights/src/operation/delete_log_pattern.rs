@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_log_pattern
     }
 }
 
-pub use crate::operation::delete_log_pattern::_delete_log_pattern_output::DeleteLogPatternOutput;
-
 pub use crate::operation::delete_log_pattern::_delete_log_pattern_input::DeleteLogPatternInput;
+
+pub use crate::operation::delete_log_pattern::_delete_log_pattern_output::DeleteLogPatternOutput;
 
 mod _delete_log_pattern_input;
 

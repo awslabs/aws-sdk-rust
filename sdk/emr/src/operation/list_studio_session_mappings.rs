@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_studio_sessio
     }
 }
 
-pub use crate::operation::list_studio_session_mappings::_list_studio_session_mappings_output::ListStudioSessionMappingsOutput;
-
 pub use crate::operation::list_studio_session_mappings::_list_studio_session_mappings_input::ListStudioSessionMappingsInput;
+
+pub use crate::operation::list_studio_session_mappings::_list_studio_session_mappings_output::ListStudioSessionMappingsOutput;
 
 mod _list_studio_session_mappings_input;
 

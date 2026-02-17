@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_data_
     }
 }
 
-pub use crate::operation::batch_delete_data_table_value::_batch_delete_data_table_value_output::BatchDeleteDataTableValueOutput;
-
 pub use crate::operation::batch_delete_data_table_value::_batch_delete_data_table_value_input::BatchDeleteDataTableValueInput;
+
+pub use crate::operation::batch_delete_data_table_value::_batch_delete_data_table_value_output::BatchDeleteDataTableValueOutput;
 
 mod _batch_delete_data_table_value_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_elasticsearch_service_software_update::_start_elasticsearch_service_software_update_output::StartElasticsearchServiceSoftwareUpdateOutput;
-
 pub use crate::operation::start_elasticsearch_service_software_update::_start_elasticsearch_service_software_update_input::StartElasticsearchServiceSoftwareUpdateInput;
+
+pub use crate::operation::start_elasticsearch_service_software_update::_start_elasticsearch_service_software_update_output::StartElasticsearchServiceSoftwareUpdateOutput;
 
 mod _start_elasticsearch_service_software_update_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_qualific
     }
 }
 
-pub use crate::operation::associate_qualification_with_worker::_associate_qualification_with_worker_output::AssociateQualificationWithWorkerOutput;
-
 pub use crate::operation::associate_qualification_with_worker::_associate_qualification_with_worker_input::AssociateQualificationWithWorkerInput;
+
+pub use crate::operation::associate_qualification_with_worker::_associate_qualification_with_worker_output::AssociateQualificationWithWorkerOutput;
 
 mod _associate_qualification_with_worker_input;
 

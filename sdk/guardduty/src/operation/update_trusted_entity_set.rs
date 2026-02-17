@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trusted_ent
     }
 }
 
-pub use crate::operation::update_trusted_entity_set::_update_trusted_entity_set_output::UpdateTrustedEntitySetOutput;
-
 pub use crate::operation::update_trusted_entity_set::_update_trusted_entity_set_input::UpdateTrustedEntitySetInput;
+
+pub use crate::operation::update_trusted_entity_set::_update_trusted_entity_set_output::UpdateTrustedEntitySetOutput;
 
 mod _update_trusted_entity_set_input;
 

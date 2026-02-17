@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain_en
     }
 }
 
-pub use crate::operation::describe_domain_endpoint_options::_describe_domain_endpoint_options_output::DescribeDomainEndpointOptionsOutput;
-
 pub use crate::operation::describe_domain_endpoint_options::_describe_domain_endpoint_options_input::DescribeDomainEndpointOptionsInput;
+
+pub use crate::operation::describe_domain_endpoint_options::_describe_domain_endpoint_options_output::DescribeDomainEndpointOptionsOutput;
 
 mod _describe_domain_endpoint_options_input;
 

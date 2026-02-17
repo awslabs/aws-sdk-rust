@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dimension
     }
 }
 
-pub use crate::operation::describe_dimension::_describe_dimension_output::DescribeDimensionOutput;
-
 pub use crate::operation::describe_dimension::_describe_dimension_input::DescribeDimensionInput;
+
+pub use crate::operation::describe_dimension::_describe_dimension_output::DescribeDimensionOutput;
 
 mod _describe_dimension_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_organizat
     }
 }
 
-pub use crate::operation::describe_organizations_access::_describe_organizations_access_output::DescribeOrganizationsAccessOutput;
-
 pub use crate::operation::describe_organizations_access::_describe_organizations_access_input::DescribeOrganizationsAccessInput;
+
+pub use crate::operation::describe_organizations_access::_describe_organizations_access_output::DescribeOrganizationsAccessOutput;
 
 mod _describe_organizations_access_input;
 

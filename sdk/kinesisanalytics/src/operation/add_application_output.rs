@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_application_ou
     }
 }
 
-pub use crate::operation::add_application_output::_add_application_output_output::AddApplicationOutputOutput;
-
 pub use crate::operation::add_application_output::_add_application_output_input::AddApplicationOutputInput;
+
+pub use crate::operation::add_application_output::_add_application_output_output::AddApplicationOutputOutput;
 
 mod _add_application_output_input;
 

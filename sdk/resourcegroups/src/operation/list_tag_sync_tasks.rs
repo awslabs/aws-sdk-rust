@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tag_sync_task
     }
 }
 
-pub use crate::operation::list_tag_sync_tasks::_list_tag_sync_tasks_output::ListTagSyncTasksOutput;
-
 pub use crate::operation::list_tag_sync_tasks::_list_tag_sync_tasks_input::ListTagSyncTasksInput;
+
+pub use crate::operation::list_tag_sync_tasks::_list_tag_sync_tasks_output::ListTagSyncTasksOutput;
 
 mod _list_tag_sync_tasks_input;
 

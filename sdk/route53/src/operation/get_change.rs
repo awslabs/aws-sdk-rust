@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_change::GetCha
     }
 }
 
-pub use crate::operation::get_change::_get_change_output::GetChangeOutput;
-
 pub use crate::operation::get_change::_get_change_input::GetChangeInput;
+
+pub use crate::operation::get_change::_get_change_output::GetChangeOutput;
 
 mod _get_change_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_rule_
     }
 }
 
-pub use crate::operation::list_managed_rule_sets::_list_managed_rule_sets_output::ListManagedRuleSetsOutput;
-
 pub use crate::operation::list_managed_rule_sets::_list_managed_rule_sets_input::ListManagedRuleSetsInput;
+
+pub use crate::operation::list_managed_rule_sets::_list_managed_rule_sets_output::ListManagedRuleSetsOutput;
 
 mod _list_managed_rule_sets_input;
 

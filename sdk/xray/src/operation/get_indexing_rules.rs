@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_indexing_rules
     }
 }
 
-pub use crate::operation::get_indexing_rules::_get_indexing_rules_output::GetIndexingRulesOutput;
-
 pub use crate::operation::get_indexing_rules::_get_indexing_rules_input::GetIndexingRulesInput;
+
+pub use crate::operation::get_indexing_rules::_get_indexing_rules_output::GetIndexingRulesOutput;
 
 mod _get_indexing_rules_input;
 

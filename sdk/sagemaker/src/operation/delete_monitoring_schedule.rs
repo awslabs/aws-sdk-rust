@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_monitoring_
     }
 }
 
-pub use crate::operation::delete_monitoring_schedule::_delete_monitoring_schedule_output::DeleteMonitoringScheduleOutput;
-
 pub use crate::operation::delete_monitoring_schedule::_delete_monitoring_schedule_input::DeleteMonitoringScheduleInput;
+
+pub use crate::operation::delete_monitoring_schedule::_delete_monitoring_schedule_output::DeleteMonitoringScheduleOutput;
 
 mod _delete_monitoring_schedule_input;
 

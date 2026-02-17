@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_things_in_bil
     }
 }
 
-pub use crate::operation::list_things_in_billing_group::_list_things_in_billing_group_output::ListThingsInBillingGroupOutput;
-
 pub use crate::operation::list_things_in_billing_group::_list_things_in_billing_group_input::ListThingsInBillingGroupInput;
+
+pub use crate::operation::list_things_in_billing_group::_list_things_in_billing_group_output::ListThingsInBillingGroupOutput;
 
 mod _list_things_in_billing_group_input;
 

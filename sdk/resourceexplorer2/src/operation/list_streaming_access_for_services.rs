@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_streaming_acc
     }
 }
 
-pub use crate::operation::list_streaming_access_for_services::_list_streaming_access_for_services_output::ListStreamingAccessForServicesOutput;
-
 pub use crate::operation::list_streaming_access_for_services::_list_streaming_access_for_services_input::ListStreamingAccessForServicesInput;
+
+pub use crate::operation::list_streaming_access_for_services::_list_streaming_access_for_services_output::ListStreamingAccessForServicesOutput;
 
 mod _list_streaming_access_for_services_input;
 

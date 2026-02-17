@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_cluster_
     }
 }
 
-pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_cluster_security_group_ingress_output::AuthorizeClusterSecurityGroupIngressOutput;
-
 pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_cluster_security_group_ingress_input::AuthorizeClusterSecurityGroupIngressInput;
+
+pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_cluster_security_group_ingress_output::AuthorizeClusterSecurityGroupIngressOutput;
 
 mod _authorize_cluster_security_group_ingress_input;
 

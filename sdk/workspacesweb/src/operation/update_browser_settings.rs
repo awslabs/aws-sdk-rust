@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_browser_set
     }
 }
 
-pub use crate::operation::update_browser_settings::_update_browser_settings_output::UpdateBrowserSettingsOutput;
-
 pub use crate::operation::update_browser_settings::_update_browser_settings_input::UpdateBrowserSettingsInput;
+
+pub use crate::operation::update_browser_settings::_update_browser_settings_output::UpdateBrowserSettingsOutput;
 
 mod _update_browser_settings_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stream_sessio
     }
 }
 
-pub use crate::operation::list_stream_sessions::_list_stream_sessions_output::ListStreamSessionsOutput;
-
 pub use crate::operation::list_stream_sessions::_list_stream_sessions_input::ListStreamSessionsInput;
+
+pub use crate::operation::list_stream_sessions::_list_stream_sessions_output::ListStreamSessionsOutput;
 
 mod _list_stream_sessions_input;
 

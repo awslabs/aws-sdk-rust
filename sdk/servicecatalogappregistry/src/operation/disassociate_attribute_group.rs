@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_attri
     }
 }
 
-pub use crate::operation::disassociate_attribute_group::_disassociate_attribute_group_output::DisassociateAttributeGroupOutput;
-
 pub use crate::operation::disassociate_attribute_group::_disassociate_attribute_group_input::DisassociateAttributeGroupInput;
+
+pub use crate::operation::disassociate_attribute_group::_disassociate_attribute_group_output::DisassociateAttributeGroupOutput;
 
 mod _disassociate_attribute_group_input;
 

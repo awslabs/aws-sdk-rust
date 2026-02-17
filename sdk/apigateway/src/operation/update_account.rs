@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account::Up
     }
 }
 
-pub use crate::operation::update_account::_update_account_output::UpdateAccountOutput;
-
 pub use crate::operation::update_account::_update_account_input::UpdateAccountInput;
+
+pub use crate::operation::update_account::_update_account_output::UpdateAccountOutput;
 
 mod _update_account_input;
 

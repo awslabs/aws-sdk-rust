@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain_co
     }
 }
 
-pub use crate::operation::describe_domain_configuration::_describe_domain_configuration_output::DescribeDomainConfigurationOutput;
-
 pub use crate::operation::describe_domain_configuration::_describe_domain_configuration_input::DescribeDomainConfigurationInput;
+
+pub use crate::operation::describe_domain_configuration::_describe_domain_configuration_output::DescribeDomainConfigurationOutput;
 
 mod _describe_domain_configuration_input;
 

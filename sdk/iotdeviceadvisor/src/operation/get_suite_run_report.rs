@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_suite_run_repo
     }
 }
 
-pub use crate::operation::get_suite_run_report::_get_suite_run_report_output::GetSuiteRunReportOutput;
-
 pub use crate::operation::get_suite_run_report::_get_suite_run_report_input::GetSuiteRunReportInput;
+
+pub use crate::operation::get_suite_run_report::_get_suite_run_report_output::GetSuiteRunReportOutput;
 
 mod _get_suite_run_report_input;
 

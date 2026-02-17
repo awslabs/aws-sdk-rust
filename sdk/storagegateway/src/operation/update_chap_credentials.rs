@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_chap_creden
     }
 }
 
-pub use crate::operation::update_chap_credentials::_update_chap_credentials_output::UpdateChapCredentialsOutput;
-
 pub use crate::operation::update_chap_credentials::_update_chap_credentials_input::UpdateChapCredentialsInput;
+
+pub use crate::operation::update_chap_credentials::_update_chap_credentials_output::UpdateChapCredentialsOutput;
 
 mod _update_chap_credentials_input;
 

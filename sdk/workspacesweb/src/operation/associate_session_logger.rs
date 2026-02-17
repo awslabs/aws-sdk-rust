@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_session_
     }
 }
 
-pub use crate::operation::associate_session_logger::_associate_session_logger_output::AssociateSessionLoggerOutput;
-
 pub use crate::operation::associate_session_logger::_associate_session_logger_input::AssociateSessionLoggerInput;
+
+pub use crate::operation::associate_session_logger::_associate_session_logger_output::AssociateSessionLoggerOutput;
 
 mod _associate_session_logger_input;
 

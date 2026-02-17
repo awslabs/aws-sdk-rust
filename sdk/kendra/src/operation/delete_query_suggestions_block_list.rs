@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_query_sugge
     }
 }
 
-pub use crate::operation::delete_query_suggestions_block_list::_delete_query_suggestions_block_list_output::DeleteQuerySuggestionsBlockListOutput;
-
 pub use crate::operation::delete_query_suggestions_block_list::_delete_query_suggestions_block_list_input::DeleteQuerySuggestionsBlockListInput;
+
+pub use crate::operation::delete_query_suggestions_block_list::_delete_query_suggestions_block_list_output::DeleteQuerySuggestionsBlockListOutput;
 
 mod _delete_query_suggestions_block_list_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_s
     }
 }
 
-pub use crate::operation::describe_cluster_snapshots::_describe_cluster_snapshots_output::DescribeClusterSnapshotsOutput;
-
 pub use crate::operation::describe_cluster_snapshots::_describe_cluster_snapshots_input::DescribeClusterSnapshotsInput;
+
+pub use crate::operation::describe_cluster_snapshots::_describe_cluster_snapshots_output::DescribeClusterSnapshotsOutput;
 
 mod _describe_cluster_snapshots_input;
 

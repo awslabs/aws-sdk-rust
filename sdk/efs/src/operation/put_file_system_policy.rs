@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_file_system_po
     }
 }
 
-pub use crate::operation::put_file_system_policy::_put_file_system_policy_output::PutFileSystemPolicyOutput;
-
 pub use crate::operation::put_file_system_policy::_put_file_system_policy_input::PutFileSystemPolicyInput;
+
+pub use crate::operation::put_file_system_policy::_put_file_system_policy_output::PutFileSystemPolicyOutput;
 
 mod _put_file_system_policy_input;
 

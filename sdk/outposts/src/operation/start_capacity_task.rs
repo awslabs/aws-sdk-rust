@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_capacity_tas
     }
 }
 
-pub use crate::operation::start_capacity_task::_start_capacity_task_output::StartCapacityTaskOutput;
-
 pub use crate::operation::start_capacity_task::_start_capacity_task_input::StartCapacityTaskInput;
+
+pub use crate::operation::start_capacity_task::_start_capacity_task_output::StartCapacityTaskOutput;
 
 mod _start_capacity_task_input;
 

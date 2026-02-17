@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_document_
     }
 }
 
-pub use crate::operation::describe_document_classification_job::_describe_document_classification_job_output::DescribeDocumentClassificationJobOutput;
-
 pub use crate::operation::describe_document_classification_job::_describe_document_classification_job_input::DescribeDocumentClassificationJobInput;
+
+pub use crate::operation::describe_document_classification_job::_describe_document_classification_job_output::DescribeDocumentClassificationJobOutput;
 
 mod _describe_document_classification_job_input;
 

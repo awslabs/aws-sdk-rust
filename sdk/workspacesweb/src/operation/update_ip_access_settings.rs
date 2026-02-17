@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ip_access_s
     }
 }
 
-pub use crate::operation::update_ip_access_settings::_update_ip_access_settings_output::UpdateIpAccessSettingsOutput;
-
 pub use crate::operation::update_ip_access_settings::_update_ip_access_settings_input::UpdateIpAccessSettingsInput;
+
+pub use crate::operation::update_ip_access_settings::_update_ip_access_settings_output::UpdateIpAccessSettingsOutput;
 
 mod _update_ip_access_settings_input;
 

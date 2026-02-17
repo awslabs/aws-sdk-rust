@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_default_mes
     }
 }
 
-pub use crate::operation::delete_default_message_type::_delete_default_message_type_output::DeleteDefaultMessageTypeOutput;
-
 pub use crate::operation::delete_default_message_type::_delete_default_message_type_input::DeleteDefaultMessageTypeInput;
+
+pub use crate::operation::delete_default_message_type::_delete_default_message_type_output::DeleteDefaultMessageTypeOutput;
 
 mod _delete_default_message_type_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_steps::Canc
     }
 }
 
-pub use crate::operation::cancel_steps::_cancel_steps_output::CancelStepsOutput;
-
 pub use crate::operation::cancel_steps::_cancel_steps_input::CancelStepsInput;
+
+pub use crate::operation::cancel_steps::_cancel_steps_output::CancelStepsOutput;
 
 mod _cancel_steps_input;
 

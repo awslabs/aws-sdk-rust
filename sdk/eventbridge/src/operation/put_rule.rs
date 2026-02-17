@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_rule::PutRuleE
     }
 }
 
-pub use crate::operation::put_rule::_put_rule_output::PutRuleOutput;
-
 pub use crate::operation::put_rule::_put_rule_input::PutRuleInput;
+
+pub use crate::operation::put_rule::_put_rule_output::PutRuleOutput;
 
 mod _put_rule_input;
 

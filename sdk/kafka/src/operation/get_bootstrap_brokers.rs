@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bootstrap_brok
     }
 }
 
-pub use crate::operation::get_bootstrap_brokers::_get_bootstrap_brokers_output::GetBootstrapBrokersOutput;
-
 pub use crate::operation::get_bootstrap_brokers::_get_bootstrap_brokers_input::GetBootstrapBrokersInput;
+
+pub use crate::operation::get_bootstrap_brokers::_get_bootstrap_brokers_output::GetBootstrapBrokersOutput;
 
 mod _get_bootstrap_brokers_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_trigger
     }
 }
 
-pub use crate::operation::list_event_triggers::_list_event_triggers_output::ListEventTriggersOutput;
-
 pub use crate::operation::list_event_triggers::_list_event_triggers_input::ListEventTriggersInput;
+
+pub use crate::operation::list_event_triggers::_list_event_triggers_output::ListEventTriggersOutput;
 
 mod _list_event_triggers_input;
 

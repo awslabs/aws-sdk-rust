@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_keys_and_ce
     }
 }
 
-pub use crate::operation::create_keys_and_certificate::_create_keys_and_certificate_output::CreateKeysAndCertificateOutput;
-
 pub use crate::operation::create_keys_and_certificate::_create_keys_and_certificate_input::CreateKeysAndCertificateInput;
+
+pub use crate::operation::create_keys_and_certificate::_create_keys_and_certificate_output::CreateKeysAndCertificateOutput;
 
 mod _create_keys_and_certificate_input;
 

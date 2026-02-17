@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disconnect_partici
     }
 }
 
-pub use crate::operation::disconnect_participant::_disconnect_participant_output::DisconnectParticipantOutput;
-
 pub use crate::operation::disconnect_participant::_disconnect_participant_input::DisconnectParticipantInput;
+
+pub use crate::operation::disconnect_participant::_disconnect_participant_output::DisconnectParticipantOutput;
 
 mod _disconnect_participant_input;
 

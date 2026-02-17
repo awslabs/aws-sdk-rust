@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connectivity_i
     }
 }
 
-pub use crate::operation::get_connectivity_info::_get_connectivity_info_output::GetConnectivityInfoOutput;
-
 pub use crate::operation::get_connectivity_info::_get_connectivity_info_input::GetConnectivityInfoInput;
+
+pub use crate::operation::get_connectivity_info::_get_connectivity_info_output::GetConnectivityInfoOutput;
 
 mod _get_connectivity_info_input;
 

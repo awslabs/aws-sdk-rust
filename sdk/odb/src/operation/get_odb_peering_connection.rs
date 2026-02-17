@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_odb_peering_co
     }
 }
 
-pub use crate::operation::get_odb_peering_connection::_get_odb_peering_connection_output::GetOdbPeeringConnectionOutput;
-
 pub use crate::operation::get_odb_peering_connection::_get_odb_peering_connection_input::GetOdbPeeringConnectionInput;
+
+pub use crate::operation::get_odb_peering_connection::_get_odb_peering_connection_output::GetOdbPeeringConnectionOutput;
 
 mod _get_odb_peering_connection_input;
 

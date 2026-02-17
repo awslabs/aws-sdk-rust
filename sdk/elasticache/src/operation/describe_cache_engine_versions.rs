@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_eng
     }
 }
 
-pub use crate::operation::describe_cache_engine_versions::_describe_cache_engine_versions_output::DescribeCacheEngineVersionsOutput;
-
 pub use crate::operation::describe_cache_engine_versions::_describe_cache_engine_versions_input::DescribeCacheEngineVersionsInput;
+
+pub use crate::operation::describe_cache_engine_versions::_describe_cache_engine_versions_output::DescribeCacheEngineVersionsOutput;
 
 mod _describe_cache_engine_versions_input;
 

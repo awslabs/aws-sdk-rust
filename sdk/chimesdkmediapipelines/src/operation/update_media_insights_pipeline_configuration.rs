@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_media_insights_pipeline_configuration::_update_media_insights_pipeline_configuration_output::UpdateMediaInsightsPipelineConfigurationOutput;
-
 pub use crate::operation::update_media_insights_pipeline_configuration::_update_media_insights_pipeline_configuration_input::UpdateMediaInsightsPipelineConfigurationInput;
+
+pub use crate::operation::update_media_insights_pipeline_configuration::_update_media_insights_pipeline_configuration_output::UpdateMediaInsightsPipelineConfigurationOutput;
 
 mod _update_media_insights_pipeline_configuration_input;
 

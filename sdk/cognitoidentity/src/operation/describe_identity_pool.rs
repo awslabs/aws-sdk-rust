@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_identity_
     }
 }
 
-pub use crate::operation::describe_identity_pool::_describe_identity_pool_output::DescribeIdentityPoolOutput;
-
 pub use crate::operation::describe_identity_pool::_describe_identity_pool_input::DescribeIdentityPoolInput;
+
+pub use crate::operation::describe_identity_pool::_describe_identity_pool_output::DescribeIdentityPoolOutput;
 
 mod _describe_identity_pool_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hyper_param
     }
 }
 
-pub use crate::operation::delete_hyper_parameter_tuning_job::_delete_hyper_parameter_tuning_job_output::DeleteHyperParameterTuningJobOutput;
-
 pub use crate::operation::delete_hyper_parameter_tuning_job::_delete_hyper_parameter_tuning_job_input::DeleteHyperParameterTuningJobInput;
+
+pub use crate::operation::delete_hyper_parameter_tuning_job::_delete_hyper_parameter_tuning_job_output::DeleteHyperParameterTuningJobOutput;
 
 mod _delete_hyper_parameter_tuning_job_input;
 

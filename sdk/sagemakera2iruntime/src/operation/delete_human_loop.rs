@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_human_loop:
     }
 }
 
-pub use crate::operation::delete_human_loop::_delete_human_loop_output::DeleteHumanLoopOutput;
-
 pub use crate::operation::delete_human_loop::_delete_human_loop_input::DeleteHumanLoopInput;
+
+pub use crate::operation::delete_human_loop::_delete_human_loop_output::DeleteHumanLoopOutput;
 
 mod _delete_human_loop_input;
 

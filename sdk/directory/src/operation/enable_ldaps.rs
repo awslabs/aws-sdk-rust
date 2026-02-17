@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_ldaps::Enab
     }
 }
 
-pub use crate::operation::enable_ldaps::_enable_ldaps_output::EnableLdapsOutput;
-
 pub use crate::operation::enable_ldaps::_enable_ldaps_input::EnableLdapsInput;
+
+pub use crate::operation::enable_ldaps::_enable_ldaps_output::EnableLdapsOutput;
 
 mod _enable_ldaps_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_azure_blob::_describe_location_azure_blob_output::DescribeLocationAzureBlobOutput;
-
 pub use crate::operation::describe_location_azure_blob::_describe_location_azure_blob_input::DescribeLocationAzureBlobInput;
+
+pub use crate::operation::describe_location_azure_blob::_describe_location_azure_blob_output::DescribeLocationAzureBlobOutput;
 
 mod _describe_location_azure_blob_input;
 

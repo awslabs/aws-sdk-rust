@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_vpc_resources_blocking_encryption_enforcement::_get_vpc_resources_blocking_encryption_enforcement_output::GetVpcResourcesBlockingEncryptionEnforcementOutput;
-
 pub use crate::operation::get_vpc_resources_blocking_encryption_enforcement::_get_vpc_resources_blocking_encryption_enforcement_input::GetVpcResourcesBlockingEncryptionEnforcementInput;
+
+pub use crate::operation::get_vpc_resources_blocking_encryption_enforcement::_get_vpc_resources_blocking_encryption_enforcement_output::GetVpcResourcesBlockingEncryptionEnforcementOutput;
 
 mod _get_vpc_resources_blocking_encryption_enforcement_input;
 

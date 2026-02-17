@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_lifecycle_even
     }
 }
 
-pub use crate::operation::put_lifecycle_event_hook_execution_status::_put_lifecycle_event_hook_execution_status_output::PutLifecycleEventHookExecutionStatusOutput;
-
 pub use crate::operation::put_lifecycle_event_hook_execution_status::_put_lifecycle_event_hook_execution_status_input::PutLifecycleEventHookExecutionStatusInput;
+
+pub use crate::operation::put_lifecycle_event_hook_execution_status::_put_lifecycle_event_hook_execution_status_output::PutLifecycleEventHookExecutionStatusOutput;
 
 mod _put_lifecycle_event_hook_execution_status_input;
 

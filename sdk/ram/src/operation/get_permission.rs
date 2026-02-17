@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_permission::Ge
     }
 }
 
-pub use crate::operation::get_permission::_get_permission_output::GetPermissionOutput;
-
 pub use crate::operation::get_permission::_get_permission_input::GetPermissionInput;
+
+pub use crate::operation::get_permission::_get_permission_output::GetPermissionOutput;
 
 mod _get_permission_input;
 

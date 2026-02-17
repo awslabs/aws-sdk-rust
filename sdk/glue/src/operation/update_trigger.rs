@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trigger::Up
     }
 }
 
-pub use crate::operation::update_trigger::_update_trigger_output::UpdateTriggerOutput;
-
 pub use crate::operation::update_trigger::_update_trigger_input::UpdateTriggerInput;
+
+pub use crate::operation::update_trigger::_update_trigger_output::UpdateTriggerOutput;
 
 mod _update_trigger_input;
 

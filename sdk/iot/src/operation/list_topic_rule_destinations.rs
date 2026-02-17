@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_topic_rule_de
     }
 }
 
-pub use crate::operation::list_topic_rule_destinations::_list_topic_rule_destinations_output::ListTopicRuleDestinationsOutput;
-
 pub use crate::operation::list_topic_rule_destinations::_list_topic_rule_destinations_input::ListTopicRuleDestinationsInput;
+
+pub use crate::operation::list_topic_rule_destinations::_list_topic_rule_destinations_output::ListTopicRuleDestinationsOutput;
 
 mod _list_topic_rule_destinations_input;
 

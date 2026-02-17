@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_engagement_
     }
 }
 
-pub use crate::operation::reject_engagement_invitation::_reject_engagement_invitation_output::RejectEngagementInvitationOutput;
-
 pub use crate::operation::reject_engagement_invitation::_reject_engagement_invitation_input::RejectEngagementInvitationInput;
+
+pub use crate::operation::reject_engagement_invitation::_reject_engagement_invitation_output::RejectEngagementInvitationOutput;
 
 mod _reject_engagement_invitation_input;
 

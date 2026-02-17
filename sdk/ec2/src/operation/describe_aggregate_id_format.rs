@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_aggregate
     }
 }
 
-pub use crate::operation::describe_aggregate_id_format::_describe_aggregate_id_format_output::DescribeAggregateIdFormatOutput;
-
 pub use crate::operation::describe_aggregate_id_format::_describe_aggregate_id_format_input::DescribeAggregateIdFormatInput;
+
+pub use crate::operation::describe_aggregate_id_format::_describe_aggregate_id_format_output::DescribeAggregateIdFormatOutput;
 
 mod _describe_aggregate_id_format_input;
 

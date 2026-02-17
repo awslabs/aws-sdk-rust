@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_subne
     }
 }
 
-pub use crate::operation::disassociate_subnet_cidr_block::_disassociate_subnet_cidr_block_output::DisassociateSubnetCidrBlockOutput;
-
 pub use crate::operation::disassociate_subnet_cidr_block::_disassociate_subnet_cidr_block_input::DisassociateSubnetCidrBlockInput;
+
+pub use crate::operation::disassociate_subnet_cidr_block::_disassociate_subnet_cidr_block_output::DisassociateSubnetCidrBlockOutput;
 
 mod _disassociate_subnet_cidr_block_input;
 

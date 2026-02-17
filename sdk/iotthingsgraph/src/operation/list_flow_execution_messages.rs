@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flow_executio
     }
 }
 
-pub use crate::operation::list_flow_execution_messages::_list_flow_execution_messages_output::ListFlowExecutionMessagesOutput;
-
 pub use crate::operation::list_flow_execution_messages::_list_flow_execution_messages_input::ListFlowExecutionMessagesInput;
+
+pub use crate::operation::list_flow_execution_messages::_list_flow_execution_messages_output::ListFlowExecutionMessagesOutput;
 
 mod _list_flow_execution_messages_input;
 

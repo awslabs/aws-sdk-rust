@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mlflow_tracki
     }
 }
 
-pub use crate::operation::list_mlflow_tracking_servers::_list_mlflow_tracking_servers_output::ListMlflowTrackingServersOutput;
-
 pub use crate::operation::list_mlflow_tracking_servers::_list_mlflow_tracking_servers_input::ListMlflowTrackingServersInput;
+
+pub use crate::operation::list_mlflow_tracking_servers::_list_mlflow_tracking_servers_output::ListMlflowTrackingServersOutput;
 
 mod _list_mlflow_tracking_servers_input;
 

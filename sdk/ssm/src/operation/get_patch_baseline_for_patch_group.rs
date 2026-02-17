@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_patch_baseline
     }
 }
 
-pub use crate::operation::get_patch_baseline_for_patch_group::_get_patch_baseline_for_patch_group_output::GetPatchBaselineForPatchGroupOutput;
-
 pub use crate::operation::get_patch_baseline_for_patch_group::_get_patch_baseline_for_patch_group_input::GetPatchBaselineForPatchGroupInput;
+
+pub use crate::operation::get_patch_baseline_for_patch_group::_get_patch_baseline_for_patch_group_output::GetPatchBaselineForPatchGroupOutput;
 
 mod _get_patch_baseline_for_patch_group_input;
 

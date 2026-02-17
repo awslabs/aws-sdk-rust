@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workflow_defin
     }
 }
 
-pub use crate::operation::get_workflow_definition::_get_workflow_definition_output::GetWorkflowDefinitionOutput;
-
 pub use crate::operation::get_workflow_definition::_get_workflow_definition_input::GetWorkflowDefinitionInput;
+
+pub use crate::operation::get_workflow_definition::_get_workflow_definition_output::GetWorkflowDefinitionOutput;
 
 mod _get_workflow_definition_input;
 

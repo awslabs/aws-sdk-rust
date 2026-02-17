@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resource_
     }
 }
 
-pub use crate::operation::describe_resource_policy::_describe_resource_policy_output::DescribeResourcePolicyOutput;
-
 pub use crate::operation::describe_resource_policy::_describe_resource_policy_input::DescribeResourcePolicyInput;
+
+pub use crate::operation::describe_resource_policy::_describe_resource_policy_output::DescribeResourcePolicyOutput;
 
 mod _describe_resource_policy_input;
 

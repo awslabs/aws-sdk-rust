@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_image_recipe_p
     }
 }
 
-pub use crate::operation::put_image_recipe_policy::_put_image_recipe_policy_output::PutImageRecipePolicyOutput;
-
 pub use crate::operation::put_image_recipe_policy::_put_image_recipe_policy_input::PutImageRecipePolicyInput;
+
+pub use crate::operation::put_image_recipe_policy::_put_image_recipe_policy_output::PutImageRecipePolicyOutput;
 
 mod _put_image_recipe_policy_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpc_endpoints
     }
 }
 
-pub use crate::operation::list_vpc_endpoints_for_domain::_list_vpc_endpoints_for_domain_output::ListVpcEndpointsForDomainOutput;
-
 pub use crate::operation::list_vpc_endpoints_for_domain::_list_vpc_endpoints_for_domain_input::ListVpcEndpointsForDomainInput;
+
+pub use crate::operation::list_vpc_endpoints_for_domain::_list_vpc_endpoints_for_domain_output::ListVpcEndpointsForDomainOutput;
 
 mod _list_vpc_endpoints_for_domain_input;
 

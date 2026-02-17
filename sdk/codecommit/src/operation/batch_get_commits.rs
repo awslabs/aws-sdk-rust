@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_commits:
     }
 }
 
-pub use crate::operation::batch_get_commits::_batch_get_commits_output::BatchGetCommitsOutput;
-
 pub use crate::operation::batch_get_commits::_batch_get_commits_input::BatchGetCommitsInput;
+
+pub use crate::operation::batch_get_commits::_batch_get_commits_output::BatchGetCommitsOutput;
 
 mod _batch_get_commits_input;
 

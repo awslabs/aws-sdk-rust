@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::vote_on_proposal::
     }
 }
 
-pub use crate::operation::vote_on_proposal::_vote_on_proposal_output::VoteOnProposalOutput;
-
 pub use crate::operation::vote_on_proposal::_vote_on_proposal_input::VoteOnProposalInput;
+
+pub use crate::operation::vote_on_proposal::_vote_on_proposal_output::VoteOnProposalOutput;
 
 mod _vote_on_proposal_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_recomm
     }
 }
 
-pub use crate::operation::get_profile_recommendations::_get_profile_recommendations_output::GetProfileRecommendationsOutput;
-
 pub use crate::operation::get_profile_recommendations::_get_profile_recommendations_input::GetProfileRecommendationsInput;
+
+pub use crate::operation::get_profile_recommendations::_get_profile_recommendations_output::GetProfileRecommendationsOutput;
 
 mod _get_profile_recommendations_input;
 

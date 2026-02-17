@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_task_protectio
     }
 }
 
-pub use crate::operation::get_task_protection::_get_task_protection_output::GetTaskProtectionOutput;
-
 pub use crate::operation::get_task_protection::_get_task_protection_input::GetTaskProtectionInput;
+
+pub use crate::operation::get_task_protection::_get_task_protection_output::GetTaskProtectionOutput;
 
 mod _get_task_protection_input;
 

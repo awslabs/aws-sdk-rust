@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_grants::ListG
     }
 }
 
-pub use crate::operation::list_grants::_list_grants_output::ListGrantsOutput;
-
 pub use crate::operation::list_grants::_list_grants_input::ListGrantsInput;
+
+pub use crate::operation::list_grants::_list_grants_output::ListGrantsOutput;
 
 mod _list_grants_input;
 

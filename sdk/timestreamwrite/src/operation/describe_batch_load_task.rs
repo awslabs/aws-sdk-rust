@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_batch_loa
     }
 }
 
-pub use crate::operation::describe_batch_load_task::_describe_batch_load_task_output::DescribeBatchLoadTaskOutput;
-
 pub use crate::operation::describe_batch_load_task::_describe_batch_load_task_input::DescribeBatchLoadTaskInput;
+
+pub use crate::operation::describe_batch_load_task::_describe_batch_load_task_output::DescribeBatchLoadTaskOutput;
 
 mod _describe_batch_load_task_input;
 

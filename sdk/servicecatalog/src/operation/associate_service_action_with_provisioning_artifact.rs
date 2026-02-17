@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_service_action_with_provisioning_artifact::_associate_service_action_with_provisioning_artifact_output::AssociateServiceActionWithProvisioningArtifactOutput;
-
 pub use crate::operation::associate_service_action_with_provisioning_artifact::_associate_service_action_with_provisioning_artifact_input::AssociateServiceActionWithProvisioningArtifactInput;
+
+pub use crate::operation::associate_service_action_with_provisioning_artifact::_associate_service_action_with_provisioning_artifact_output::AssociateServiceActionWithProvisioningArtifactOutput;
 
 mod _associate_service_action_with_provisioning_artifact_input;
 

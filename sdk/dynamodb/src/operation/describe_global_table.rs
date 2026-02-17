@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_global_ta
     }
 }
 
-pub use crate::operation::describe_global_table::_describe_global_table_output::DescribeGlobalTableOutput;
-
 pub use crate::operation::describe_global_table::_describe_global_table_input::DescribeGlobalTableInput;
+
+pub use crate::operation::describe_global_table::_describe_global_table_output::DescribeGlobalTableOutput;
 
 mod _describe_global_table_input;
 

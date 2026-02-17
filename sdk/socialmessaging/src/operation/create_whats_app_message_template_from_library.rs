@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_whats_app_message_template_from_library::_create_whats_app_message_template_from_library_output::CreateWhatsAppMessageTemplateFromLibraryOutput;
-
 pub use crate::operation::create_whats_app_message_template_from_library::_create_whats_app_message_template_from_library_input::CreateWhatsAppMessageTemplateFromLibraryInput;
+
+pub use crate::operation::create_whats_app_message_template_from_library::_create_whats_app_message_template_from_library_output::CreateWhatsAppMessageTemplateFromLibraryOutput;
 
 mod _create_whats_app_message_template_from_library_input;
 

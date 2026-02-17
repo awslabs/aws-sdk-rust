@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate::Evaluate
     }
 }
 
-pub use crate::operation::evaluate::_evaluate_output::EvaluateOutput;
-
 pub use crate::operation::evaluate::_evaluate_input::EvaluateInput;
+
+pub use crate::operation::evaluate::_evaluate_output::EvaluateOutput;
 
 mod _evaluate_input;
 

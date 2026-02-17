@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_subsc
     }
 }
 
-pub use crate::operation::create_event_subscription::_create_event_subscription_output::CreateEventSubscriptionOutput;
-
 pub use crate::operation::create_event_subscription::_create_event_subscription_input::CreateEventSubscriptionInput;
+
+pub use crate::operation::create_event_subscription::_create_event_subscription_output::CreateEventSubscriptionOutput;
 
 mod _create_event_subscription_input;
 

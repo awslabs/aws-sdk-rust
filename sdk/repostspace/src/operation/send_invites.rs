@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_invites::Send
     }
 }
 
-pub use crate::operation::send_invites::_send_invites_output::SendInvitesOutput;
-
 pub use crate::operation::send_invites::_send_invites_input::SendInvitesInput;
+
+pub use crate::operation::send_invites::_send_invites_output::SendInvitesOutput;
 
 mod _send_invites_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_cis_session_h
     }
 }
 
-pub use crate::operation::send_cis_session_health::_send_cis_session_health_output::SendCisSessionHealthOutput;
-
 pub use crate::operation::send_cis_session_health::_send_cis_session_health_input::SendCisSessionHealthInput;
+
+pub use crate::operation::send_cis_session_health::_send_cis_session_health_output::SendCisSessionHealthOutput;
 
 mod _send_cis_session_health_input;
 

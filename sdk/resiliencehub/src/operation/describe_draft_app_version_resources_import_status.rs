@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_draft_app_version_resources_import_status::_describe_draft_app_version_resources_import_status_output::DescribeDraftAppVersionResourcesImportStatusOutput;
-
 pub use crate::operation::describe_draft_app_version_resources_import_status::_describe_draft_app_version_resources_import_status_input::DescribeDraftAppVersionResourcesImportStatusInput;
+
+pub use crate::operation::describe_draft_app_version_resources_import_status::_describe_draft_app_version_resources_import_status_output::DescribeDraftAppVersionResourcesImportStatusOutput;
 
 mod _describe_draft_app_version_resources_import_status_input;
 

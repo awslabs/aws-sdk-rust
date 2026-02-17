@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate_mapping_t
     }
 }
 
-pub use crate::operation::evaluate_mapping_template::_evaluate_mapping_template_output::EvaluateMappingTemplateOutput;
-
 pub use crate::operation::evaluate_mapping_template::_evaluate_mapping_template_input::EvaluateMappingTemplateInput;
+
+pub use crate::operation::evaluate_mapping_template::_evaluate_mapping_template_output::EvaluateMappingTemplateOutput;
 
 mod _evaluate_mapping_template_input;
 

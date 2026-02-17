@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_contact::Unt
     }
 }
 
-pub use crate::operation::untag_contact::_untag_contact_output::UntagContactOutput;
-
 pub use crate::operation::untag_contact::_untag_contact_input::UntagContactInput;
+
+pub use crate::operation::untag_contact::_untag_contact_output::UntagContactOutput;
 
 mod _untag_contact_input;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_disco
     }
 }
 
-pub use crate::operation::disassociate_discovered_resource::_disassociate_discovered_resource_output::DisassociateDiscoveredResourceOutput;
-
 pub use crate::operation::disassociate_discovered_resource::_disassociate_discovered_resource_input::DisassociateDiscoveredResourceInput;
+
+pub use crate::operation::disassociate_discovered_resource::_disassociate_discovered_resource_output::DisassociateDiscoveredResourceOutput;
 
 mod _disassociate_discovered_resource_input;
 

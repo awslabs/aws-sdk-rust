@@ -475,9 +475,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lineage_node_
     }
 }
 
-pub use crate::operation::list_lineage_node_history::_list_lineage_node_history_output::ListLineageNodeHistoryOutput;
-
 pub use crate::operation::list_lineage_node_history::_list_lineage_node_history_input::ListLineageNodeHistoryInput;
+
+pub use crate::operation::list_lineage_node_history::_list_lineage_node_history_output::ListLineageNodeHistoryOutput;
 
 mod _list_lineage_node_history_input;
 

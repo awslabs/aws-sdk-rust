@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_computer::C
     }
 }
 
-pub use crate::operation::create_computer::_create_computer_output::CreateComputerOutput;
-
 pub use crate::operation::create_computer::_create_computer_input::CreateComputerInput;
+
+pub use crate::operation::create_computer::_create_computer_output::CreateComputerOutput;
 
 mod _create_computer_input;
 

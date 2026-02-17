@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stream_stor
     }
 }
 
-pub use crate::operation::update_stream_storage_configuration::_update_stream_storage_configuration_output::UpdateStreamStorageConfigurationOutput;
-
 pub use crate::operation::update_stream_storage_configuration::_update_stream_storage_configuration_input::UpdateStreamStorageConfigurationInput;
+
+pub use crate::operation::update_stream_storage_configuration::_update_stream_storage_configuration_output::UpdateStreamStorageConfigurationOutput;
 
 mod _update_stream_storage_configuration_input;
 

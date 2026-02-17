@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fargate_pro
     }
 }
 
-pub use crate::operation::delete_fargate_profile::_delete_fargate_profile_output::DeleteFargateProfileOutput;
-
 pub use crate::operation::delete_fargate_profile::_delete_fargate_profile_input::DeleteFargateProfileInput;
+
+pub use crate::operation::delete_fargate_profile::_delete_fargate_profile_output::DeleteFargateProfileOutput;
 
 mod _delete_fargate_profile_input;
 

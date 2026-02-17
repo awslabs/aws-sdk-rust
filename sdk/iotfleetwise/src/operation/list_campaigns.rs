@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_campaigns::Li
     }
 }
 
-pub use crate::operation::list_campaigns::_list_campaigns_output::ListCampaignsOutput;
-
 pub use crate::operation::list_campaigns::_list_campaigns_input::ListCampaignsInput;
+
+pub use crate::operation::list_campaigns::_list_campaigns_output::ListCampaignsOutput;
 
 mod _list_campaigns_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_quick_conne
     }
 }
 
-pub use crate::operation::create_quick_connect::_create_quick_connect_output::CreateQuickConnectOutput;
-
 pub use crate::operation::create_quick_connect::_create_quick_connect_input::CreateQuickConnectInput;
+
+pub use crate::operation::create_quick_connect::_create_quick_connect_output::CreateQuickConnectOutput;
 
 mod _create_quick_connect_input;
 

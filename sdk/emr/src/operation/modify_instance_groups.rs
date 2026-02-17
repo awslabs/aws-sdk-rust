@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_gr
     }
 }
 
-pub use crate::operation::modify_instance_groups::_modify_instance_groups_output::ModifyInstanceGroupsOutput;
-
 pub use crate::operation::modify_instance_groups::_modify_instance_groups_input::ModifyInstanceGroupsInput;
+
+pub use crate::operation::modify_instance_groups::_modify_instance_groups_output::ModifyInstanceGroupsOutput;
 
 mod _modify_instance_groups_input;
 

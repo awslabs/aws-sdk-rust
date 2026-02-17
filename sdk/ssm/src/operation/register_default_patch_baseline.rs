@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_default_p
     }
 }
 
-pub use crate::operation::register_default_patch_baseline::_register_default_patch_baseline_output::RegisterDefaultPatchBaselineOutput;
-
 pub use crate::operation::register_default_patch_baseline::_register_default_patch_baseline_input::RegisterDefaultPatchBaselineInput;
+
+pub use crate::operation::register_default_patch_baseline::_register_default_patch_baseline_output::RegisterDefaultPatchBaselineOutput;
 
 mod _register_default_patch_baseline_input;
 

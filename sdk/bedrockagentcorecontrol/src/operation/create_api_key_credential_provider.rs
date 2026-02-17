@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_api_key_cre
     }
 }
 
-pub use crate::operation::create_api_key_credential_provider::_create_api_key_credential_provider_output::CreateApiKeyCredentialProviderOutput;
-
 pub use crate::operation::create_api_key_credential_provider::_create_api_key_credential_provider_input::CreateApiKeyCredentialProviderInput;
+
+pub use crate::operation::create_api_key_credential_provider::_create_api_key_credential_provider_output::CreateApiKeyCredentialProviderOutput;
 
 mod _create_api_key_credential_provider_input;
 

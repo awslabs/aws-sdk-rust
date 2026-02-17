@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_signal_map:
     }
 }
 
-pub use crate::operation::delete_signal_map::_delete_signal_map_output::DeleteSignalMapOutput;
-
 pub use crate::operation::delete_signal_map::_delete_signal_map_input::DeleteSignalMapInput;
+
+pub use crate::operation::delete_signal_map::_delete_signal_map_output::DeleteSignalMapOutput;
 
 mod _delete_signal_map_input;
 

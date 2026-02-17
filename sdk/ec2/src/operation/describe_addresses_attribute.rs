@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_addresses
     }
 }
 
-pub use crate::operation::describe_addresses_attribute::_describe_addresses_attribute_output::DescribeAddressesAttributeOutput;
-
 pub use crate::operation::describe_addresses_attribute::_describe_addresses_attribute_input::DescribeAddressesAttributeInput;
+
+pub use crate::operation::describe_addresses_attribute::_describe_addresses_attribute_output::DescribeAddressesAttributeOutput;
 
 mod _describe_addresses_attribute_input;
 

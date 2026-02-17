@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_route_serve
     }
 }
 
-pub use crate::operation::delete_route_server_peer::_delete_route_server_peer_output::DeleteRouteServerPeerOutput;
-
 pub use crate::operation::delete_route_server_peer::_delete_route_server_peer_input::DeleteRouteServerPeerInput;
+
+pub use crate::operation::delete_route_server_peer::_delete_route_server_peer_output::DeleteRouteServerPeerOutput;
 
 mod _delete_route_server_peer_input;
 

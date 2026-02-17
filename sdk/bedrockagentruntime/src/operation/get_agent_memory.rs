@@ -498,9 +498,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_memory::
     }
 }
 
-pub use crate::operation::get_agent_memory::_get_agent_memory_output::GetAgentMemoryOutput;
-
 pub use crate::operation::get_agent_memory::_get_agent_memory_input::GetAgentMemoryInput;
+
+pub use crate::operation::get_agent_memory::_get_agent_memory_output::GetAgentMemoryOutput;
 
 mod _get_agent_memory_input;
 

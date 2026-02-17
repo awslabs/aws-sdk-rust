@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_fs
     }
 }
 
-pub use crate::operation::update_location_fsx_ontap::_update_location_fsx_ontap_output::UpdateLocationFsxOntapOutput;
-
 pub use crate::operation::update_location_fsx_ontap::_update_location_fsx_ontap_input::UpdateLocationFsxOntapInput;
+
+pub use crate::operation::update_location_fsx_ontap::_update_location_fsx_ontap_output::UpdateLocationFsxOntapOutput;
 
 mod _update_location_fsx_ontap_input;
 

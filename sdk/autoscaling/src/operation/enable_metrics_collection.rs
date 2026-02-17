@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_metrics_col
     }
 }
 
-pub use crate::operation::enable_metrics_collection::_enable_metrics_collection_output::EnableMetricsCollectionOutput;
-
 pub use crate::operation::enable_metrics_collection::_enable_metrics_collection_input::EnableMetricsCollectionInput;
+
+pub use crate::operation::enable_metrics_collection::_enable_metrics_collection_output::EnableMetricsCollectionOutput;
 
 mod _enable_metrics_collection_input;
 

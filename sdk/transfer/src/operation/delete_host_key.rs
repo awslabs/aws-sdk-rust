@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_host_key::D
     }
 }
 
-pub use crate::operation::delete_host_key::_delete_host_key_output::DeleteHostKeyOutput;
-
 pub use crate::operation::delete_host_key::_delete_host_key_input::DeleteHostKeyInput;
+
+pub use crate::operation::delete_host_key::_delete_host_key_output::DeleteHostKeyOutput;
 
 mod _delete_host_key_input;
 

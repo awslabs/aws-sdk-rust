@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_recov
     }
 }
 
-pub use crate::operation::disassociate_recovery_point::_disassociate_recovery_point_output::DisassociateRecoveryPointOutput;
-
 pub use crate::operation::disassociate_recovery_point::_disassociate_recovery_point_input::DisassociateRecoveryPointInput;
+
+pub use crate::operation::disassociate_recovery_point::_disassociate_recovery_point_output::DisassociateRecoveryPointOutput;
 
 mod _disassociate_recovery_point_input;
 

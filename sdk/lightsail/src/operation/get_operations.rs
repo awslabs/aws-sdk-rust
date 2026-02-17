@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_operations::Ge
     }
 }
 
-pub use crate::operation::get_operations::_get_operations_output::GetOperationsOutput;
-
 pub use crate::operation::get_operations::_get_operations_input::GetOperationsInput;
+
+pub use crate::operation::get_operations::_get_operations_output::GetOperationsOutput;
 
 mod _get_operations_input;
 

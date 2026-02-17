@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hosted_zone
     }
 }
 
-pub use crate::operation::delete_hosted_zone::_delete_hosted_zone_output::DeleteHostedZoneOutput;
-
 pub use crate::operation::delete_hosted_zone::_delete_hosted_zone_input::DeleteHostedZoneInput;
+
+pub use crate::operation::delete_hosted_zone::_delete_hosted_zone_output::DeleteHostedZoneOutput;
 
 mod _delete_hosted_zone_input;
 

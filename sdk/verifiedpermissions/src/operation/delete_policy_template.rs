@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_policy_temp
     }
 }
 
-pub use crate::operation::delete_policy_template::_delete_policy_template_output::DeletePolicyTemplateOutput;
-
 pub use crate::operation::delete_policy_template::_delete_policy_template_input::DeletePolicyTemplateInput;
+
+pub use crate::operation::delete_policy_template::_delete_policy_template_output::DeletePolicyTemplateOutput;
 
 mod _delete_policy_template_input;
 

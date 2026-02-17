@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ai_prompt::
     }
 }
 
-pub use crate::operation::update_ai_prompt::_update_ai_prompt_output::UpdateAiPromptOutput;
-
 pub use crate::operation::update_ai_prompt::_update_ai_prompt_input::UpdateAiPromptInput;
+
+pub use crate::operation::update_ai_prompt::_update_ai_prompt_output::UpdateAiPromptOutput;
 
 mod _update_ai_prompt_input;
 

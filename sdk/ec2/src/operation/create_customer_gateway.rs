@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_customer_ga
     }
 }
 
-pub use crate::operation::create_customer_gateway::_create_customer_gateway_output::CreateCustomerGatewayOutput;
-
 pub use crate::operation::create_customer_gateway::_create_customer_gateway_input::CreateCustomerGatewayInput;
+
+pub use crate::operation::create_customer_gateway::_create_customer_gateway_output::CreateCustomerGatewayOutput;
 
 mod _create_customer_gateway_input;
 

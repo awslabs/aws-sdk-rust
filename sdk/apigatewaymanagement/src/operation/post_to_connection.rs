@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_to_connection
     }
 }
 
-pub use crate::operation::post_to_connection::_post_to_connection_output::PostToConnectionOutput;
-
 pub use crate::operation::post_to_connection::_post_to_connection_input::PostToConnectionInput;
+
+pub use crate::operation::post_to_connection::_post_to_connection_output::PostToConnectionOutput;
 
 mod _post_to_connection_input;
 

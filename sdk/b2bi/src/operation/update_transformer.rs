@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_transformer
     }
 }
 
-pub use crate::operation::update_transformer::_update_transformer_output::UpdateTransformerOutput;
-
 pub use crate::operation::update_transformer::_update_transformer_input::UpdateTransformerInput;
+
+pub use crate::operation::update_transformer::_update_transformer_output::UpdateTransformerOutput;
 
 mod _update_transformer_input;
 

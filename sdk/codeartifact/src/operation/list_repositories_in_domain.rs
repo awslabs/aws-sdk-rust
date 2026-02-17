@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_repositories_
     }
 }
 
-pub use crate::operation::list_repositories_in_domain::_list_repositories_in_domain_output::ListRepositoriesInDomainOutput;
-
 pub use crate::operation::list_repositories_in_domain::_list_repositories_in_domain_input::ListRepositoriesInDomainInput;
+
+pub use crate::operation::list_repositories_in_domain::_list_repositories_in_domain_output::ListRepositoriesInDomainOutput;
 
 mod _list_repositories_in_domain_input;
 

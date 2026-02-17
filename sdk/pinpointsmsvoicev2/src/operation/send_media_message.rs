@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_media_message
     }
 }
 
-pub use crate::operation::send_media_message::_send_media_message_output::SendMediaMessageOutput;
-
 pub use crate::operation::send_media_message::_send_media_message_input::SendMediaMessageInput;
+
+pub use crate::operation::send_media_message::_send_media_message_output::SendMediaMessageOutput;
 
 mod _send_media_message_input;
 

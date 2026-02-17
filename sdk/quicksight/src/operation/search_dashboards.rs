@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_dashboards:
     }
 }
 
-pub use crate::operation::search_dashboards::_search_dashboards_output::SearchDashboardsOutput;
-
 pub use crate::operation::search_dashboards::_search_dashboards_input::SearchDashboardsInput;
+
+pub use crate::operation::search_dashboards::_search_dashboards_output::SearchDashboardsOutput;
 
 mod _search_dashboards_input;
 

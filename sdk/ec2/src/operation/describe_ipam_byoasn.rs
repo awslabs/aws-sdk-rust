@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipam_byoa
     }
 }
 
-pub use crate::operation::describe_ipam_byoasn::_describe_ipam_byoasn_output::DescribeIpamByoasnOutput;
-
 pub use crate::operation::describe_ipam_byoasn::_describe_ipam_byoasn_input::DescribeIpamByoasnInput;
+
+pub use crate::operation::describe_ipam_byoasn::_describe_ipam_byoasn_output::DescribeIpamByoasnOutput;
 
 mod _describe_ipam_byoasn_input;
 

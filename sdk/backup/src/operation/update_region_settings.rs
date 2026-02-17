@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_region_sett
     }
 }
 
-pub use crate::operation::update_region_settings::_update_region_settings_output::UpdateRegionSettingsOutput;
-
 pub use crate::operation::update_region_settings::_update_region_settings_input::UpdateRegionSettingsInput;
+
+pub use crate::operation::update_region_settings::_update_region_settings_output::UpdateRegionSettingsOutput;
 
 mod _update_region_settings_input;
 

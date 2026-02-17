@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_layer_version_
     }
 }
 
-pub use crate::operation::add_layer_version_permission::_add_layer_version_permission_output::AddLayerVersionPermissionOutput;
-
 pub use crate::operation::add_layer_version_permission::_add_layer_version_permission_input::AddLayerVersionPermissionInput;
+
+pub use crate::operation::add_layer_version_permission::_add_layer_version_permission_output::AddLayerVersionPermissionOutput;
 
 mod _add_layer_version_permission_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_server::Star
     }
 }
 
-pub use crate::operation::start_server::_start_server_output::StartServerOutput;
-
 pub use crate::operation::start_server::_start_server_input::StartServerInput;
+
+pub use crate::operation::start_server::_start_server_output::StartServerOutput;
 
 mod _start_server_input;
 

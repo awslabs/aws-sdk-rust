@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_nf
     }
 }
 
-pub use crate::operation::update_location_nfs::_update_location_nfs_output::UpdateLocationNfsOutput;
-
 pub use crate::operation::update_location_nfs::_update_location_nfs_input::UpdateLocationNfsInput;
+
+pub use crate::operation::update_location_nfs::_update_location_nfs_output::UpdateLocationNfsOutput;
 
 mod _update_location_nfs_input;
 

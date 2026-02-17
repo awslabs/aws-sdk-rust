@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_instance_healt
     }
 }
 
-pub use crate::operation::set_instance_health::_set_instance_health_output::SetInstanceHealthOutput;
-
 pub use crate::operation::set_instance_health::_set_instance_health_input::SetInstanceHealthInput;
+
+pub use crate::operation::set_instance_health::_set_instance_health_output::SetInstanceHealthOutput;
 
 mod _set_instance_health_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_vpc_c
     }
 }
 
-pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_block_output::DisassociateVpcCidrBlockOutput;
-
 pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_block_input::DisassociateVpcCidrBlockInput;
+
+pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_block_output::DisassociateVpcCidrBlockOutput;
 
 mod _disassociate_vpc_cidr_block_input;
 

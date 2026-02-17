@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_edge_packag
     }
 }
 
-pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_output::CreateEdgePackagingJobOutput;
-
 pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_input::CreateEdgePackagingJobInput;
+
+pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_output::CreateEdgePackagingJobOutput;
 
 mod _create_edge_packaging_job_input;
 

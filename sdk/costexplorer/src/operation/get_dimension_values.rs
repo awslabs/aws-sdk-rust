@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dimension_valu
     }
 }
 
-pub use crate::operation::get_dimension_values::_get_dimension_values_output::GetDimensionValuesOutput;
-
 pub use crate::operation::get_dimension_values::_get_dimension_values_input::GetDimensionValuesInput;
+
+pub use crate::operation::get_dimension_values::_get_dimension_values_output::GetDimensionValuesOutput;
 
 mod _get_dimension_values_input;
 

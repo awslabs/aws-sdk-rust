@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_auto_scaling_
     }
 }
 
-pub use crate::operation::list_auto_scaling_configurations::_list_auto_scaling_configurations_output::ListAutoScalingConfigurationsOutput;
-
 pub use crate::operation::list_auto_scaling_configurations::_list_auto_scaling_configurations_input::ListAutoScalingConfigurationsInput;
+
+pub use crate::operation::list_auto_scaling_configurations::_list_auto_scaling_configurations_output::ListAutoScalingConfigurationsOutput;
 
 mod _list_auto_scaling_configurations_input;
 

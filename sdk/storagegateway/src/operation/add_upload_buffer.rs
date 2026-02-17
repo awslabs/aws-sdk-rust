@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_upload_buffer:
     }
 }
 
-pub use crate::operation::add_upload_buffer::_add_upload_buffer_output::AddUploadBufferOutput;
-
 pub use crate::operation::add_upload_buffer::_add_upload_buffer_input::AddUploadBufferInput;
+
+pub use crate::operation::add_upload_buffer::_add_upload_buffer_output::AddUploadBufferOutput;
 
 mod _add_upload_buffer_input;
 

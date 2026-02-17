@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_refacto
     }
 }
 
-pub use crate::operation::list_stack_refactors::_list_stack_refactors_output::ListStackRefactorsOutput;
-
 pub use crate::operation::list_stack_refactors::_list_stack_refactors_input::ListStackRefactorsInput;
+
+pub use crate::operation::list_stack_refactors::_list_stack_refactors_output::ListStackRefactorsOutput;
 
 mod _list_stack_refactors_input;
 

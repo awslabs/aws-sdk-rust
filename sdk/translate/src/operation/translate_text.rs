@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::translate_text::Tr
     }
 }
 
-pub use crate::operation::translate_text::_translate_text_output::TranslateTextOutput;
-
 pub use crate::operation::translate_text::_translate_text_input::TranslateTextInput;
+
+pub use crate::operation::translate_text::_translate_text_output::TranslateTextOutput;
 
 mod _translate_text_input;
 

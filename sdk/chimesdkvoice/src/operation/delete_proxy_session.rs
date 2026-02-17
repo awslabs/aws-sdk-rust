@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_proxy_sessi
     }
 }
 
-pub use crate::operation::delete_proxy_session::_delete_proxy_session_output::DeleteProxySessionOutput;
-
 pub use crate::operation::delete_proxy_session::_delete_proxy_session_input::DeleteProxySessionInput;
+
+pub use crate::operation::delete_proxy_session::_delete_proxy_session_output::DeleteProxySessionOutput;
 
 mod _delete_proxy_session_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assessment_fr
     }
 }
 
-pub use crate::operation::list_assessment_frameworks::_list_assessment_frameworks_output::ListAssessmentFrameworksOutput;
-
 pub use crate::operation::list_assessment_frameworks::_list_assessment_frameworks_input::ListAssessmentFrameworksInput;
+
+pub use crate::operation::list_assessment_frameworks::_list_assessment_frameworks_output::ListAssessmentFrameworksOutput;
 
 mod _list_assessment_frameworks_input;
 

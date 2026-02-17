@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_connect_cli
     }
 }
 
-pub use crate::operation::delete_connect_client_add_in::_delete_connect_client_add_in_output::DeleteConnectClientAddInOutput;
-
 pub use crate::operation::delete_connect_client_add_in::_delete_connect_client_add_in_input::DeleteConnectClientAddInInput;
+
+pub use crate::operation::delete_connect_client_add_in::_delete_connect_client_add_in_output::DeleteConnectClientAddInOutput;
 
 mod _delete_connect_client_add_in_input;
 

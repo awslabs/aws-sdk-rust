@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bot::PutBotErr
     }
 }
 
-pub use crate::operation::put_bot::_put_bot_output::PutBotOutput;
-
 pub use crate::operation::put_bot::_put_bot_input::PutBotInput;
+
+pub use crate::operation::put_bot::_put_bot_output::PutBotOutput;
 
 mod _put_bot_input;
 

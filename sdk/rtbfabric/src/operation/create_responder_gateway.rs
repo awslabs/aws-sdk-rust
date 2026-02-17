@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_responder_g
     }
 }
 
-pub use crate::operation::create_responder_gateway::_create_responder_gateway_output::CreateResponderGatewayOutput;
-
 pub use crate::operation::create_responder_gateway::_create_responder_gateway_input::CreateResponderGatewayInput;
+
+pub use crate::operation::create_responder_gateway::_create_responder_gateway_output::CreateResponderGatewayOutput;
 
 mod _create_responder_gateway_input;
 

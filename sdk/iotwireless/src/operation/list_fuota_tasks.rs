@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fuota_tasks::
     }
 }
 
-pub use crate::operation::list_fuota_tasks::_list_fuota_tasks_output::ListFuotaTasksOutput;
-
 pub use crate::operation::list_fuota_tasks::_list_fuota_tasks_input::ListFuotaTasksInput;
+
+pub use crate::operation::list_fuota_tasks::_list_fuota_tasks_output::ListFuotaTasksOutput;
 
 mod _list_fuota_tasks_input;
 

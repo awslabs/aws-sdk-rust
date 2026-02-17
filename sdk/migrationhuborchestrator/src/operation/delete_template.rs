@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_template::D
     }
 }
 
-pub use crate::operation::delete_template::_delete_template_output::DeleteTemplateOutput;
-
 pub use crate::operation::delete_template::_delete_template_input::DeleteTemplateInput;
+
+pub use crate::operation::delete_template::_delete_template_output::DeleteTemplateOutput;
 
 mod _delete_template_input;
 

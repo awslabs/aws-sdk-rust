@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_owne
     }
 }
 
-pub use crate::operation::delete_bucket_ownership_controls::_delete_bucket_ownership_controls_output::DeleteBucketOwnershipControlsOutput;
-
 pub use crate::operation::delete_bucket_ownership_controls::_delete_bucket_ownership_controls_input::DeleteBucketOwnershipControlsInput;
+
+pub use crate::operation::delete_bucket_ownership_controls::_delete_bucket_ownership_controls_output::DeleteBucketOwnershipControlsOutput;
 
 mod _delete_bucket_ownership_controls_input;
 

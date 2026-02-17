@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_permissio
     }
 }
 
-pub use crate::operation::describe_permission_set::_describe_permission_set_output::DescribePermissionSetOutput;
-
 pub use crate::operation::describe_permission_set::_describe_permission_set_input::DescribePermissionSetInput;
+
+pub use crate::operation::describe_permission_set::_describe_permission_set_output::DescribePermissionSetOutput;
 
 mod _describe_permission_set_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_sc
     }
 }
 
-pub use crate::operation::update_campaign_schedule::_update_campaign_schedule_output::UpdateCampaignScheduleOutput;
-
 pub use crate::operation::update_campaign_schedule::_update_campaign_schedule_input::UpdateCampaignScheduleInput;
+
+pub use crate::operation::update_campaign_schedule::_update_campaign_schedule_output::UpdateCampaignScheduleOutput;
 
 mod _update_campaign_schedule_input;
 

@@ -340,9 +340,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_tags::AddTagsE
     }
 }
 
-pub use crate::operation::add_tags::_add_tags_output::AddTagsOutput;
-
 pub use crate::operation::add_tags::_add_tags_input::AddTagsInput;
+
+pub use crate::operation::add_tags::_add_tags_output::AddTagsOutput;
 
 mod _add_tags_input;
 

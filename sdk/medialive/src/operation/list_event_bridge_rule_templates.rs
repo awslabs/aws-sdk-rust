@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_bridge_
     }
 }
 
-pub use crate::operation::list_event_bridge_rule_templates::_list_event_bridge_rule_templates_output::ListEventBridgeRuleTemplatesOutput;
-
 pub use crate::operation::list_event_bridge_rule_templates::_list_event_bridge_rule_templates_input::ListEventBridgeRuleTemplatesInput;
+
+pub use crate::operation::list_event_bridge_rule_templates::_list_event_bridge_rule_templates_output::ListEventBridgeRuleTemplatesOutput;
 
 mod _list_event_bridge_rule_templates_input;
 

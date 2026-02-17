@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_clusters_for_i
     }
 }
 
-pub use crate::operation::get_clusters_for_image::_get_clusters_for_image_output::GetClustersForImageOutput;
-
 pub use crate::operation::get_clusters_for_image::_get_clusters_for_image_input::GetClustersForImageInput;
+
+pub use crate::operation::get_clusters_for_image::_get_clusters_for_image_output::GetClustersForImageOutput;
 
 mod _get_clusters_for_image_input;
 

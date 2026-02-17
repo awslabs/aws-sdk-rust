@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_public_ipv4
     }
 }
 
-pub use crate::operation::delete_public_ipv4_pool::_delete_public_ipv4_pool_output::DeletePublicIpv4PoolOutput;
-
 pub use crate::operation::delete_public_ipv4_pool::_delete_public_ipv4_pool_input::DeletePublicIpv4PoolInput;
+
+pub use crate::operation::delete_public_ipv4_pool::_delete_public_ipv4_pool_output::DeletePublicIpv4PoolOutput;
 
 mod _delete_public_ipv4_pool_input;
 

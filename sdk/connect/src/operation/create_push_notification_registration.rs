@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_push_notifi
     }
 }
 
-pub use crate::operation::create_push_notification_registration::_create_push_notification_registration_output::CreatePushNotificationRegistrationOutput;
-
 pub use crate::operation::create_push_notification_registration::_create_push_notification_registration_input::CreatePushNotificationRegistrationInput;
+
+pub use crate::operation::create_push_notification_registration::_create_push_notification_registration_output::CreatePushNotificationRegistrationOutput;
 
 mod _create_push_notification_registration_input;
 

@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_gran
     }
 }
 
-pub use crate::operation::delete_access_grants_location::_delete_access_grants_location_output::DeleteAccessGrantsLocationOutput;
-
 pub use crate::operation::delete_access_grants_location::_delete_access_grants_location_input::DeleteAccessGrantsLocationInput;
+
+pub use crate::operation::delete_access_grants_location::_delete_access_grants_location_output::DeleteAccessGrantsLocationOutput;
 
 mod _delete_access_grants_location_input;
 

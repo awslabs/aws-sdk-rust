@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_budget_w
     }
 }
 
-pub use crate::operation::associate_budget_with_resource::_associate_budget_with_resource_output::AssociateBudgetWithResourceOutput;
-
 pub use crate::operation::associate_budget_with_resource::_associate_budget_with_resource_input::AssociateBudgetWithResourceInput;
+
+pub use crate::operation::associate_budget_with_resource::_associate_budget_with_resource_output::AssociateBudgetWithResourceOutput;
 
 mod _associate_budget_with_resource_input;
 

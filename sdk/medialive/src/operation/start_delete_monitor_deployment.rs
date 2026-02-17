@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_delete_monit
     }
 }
 
-pub use crate::operation::start_delete_monitor_deployment::_start_delete_monitor_deployment_output::StartDeleteMonitorDeploymentOutput;
-
 pub use crate::operation::start_delete_monitor_deployment::_start_delete_monitor_deployment_input::StartDeleteMonitorDeploymentInput;
+
+pub use crate::operation::start_delete_monitor_deployment::_start_delete_monitor_deployment_output::StartDeleteMonitorDeploymentOutput;
 
 mod _start_delete_monitor_deployment_input;
 

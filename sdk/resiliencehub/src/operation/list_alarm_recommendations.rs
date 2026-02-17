@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_alarm_recomme
     }
 }
 
-pub use crate::operation::list_alarm_recommendations::_list_alarm_recommendations_output::ListAlarmRecommendationsOutput;
-
 pub use crate::operation::list_alarm_recommendations::_list_alarm_recommendations_input::ListAlarmRecommendationsInput;
+
+pub use crate::operation::list_alarm_recommendations::_list_alarm_recommendations_output::ListAlarmRecommendationsOutput;
 
 mod _list_alarm_recommendations_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_notificatio
     }
 }
 
-pub use crate::operation::delete_notification_subscription::_delete_notification_subscription_output::DeleteNotificationSubscriptionOutput;
-
 pub use crate::operation::delete_notification_subscription::_delete_notification_subscription_input::DeleteNotificationSubscriptionInput;
+
+pub use crate::operation::delete_notification_subscription::_delete_notification_subscription_output::DeleteNotificationSubscriptionOutput;
 
 mod _delete_notification_subscription_input;
 

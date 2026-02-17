@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_vpc_endp
     }
 }
 
-pub use crate::operation::batch_get_vpc_endpoint::_batch_get_vpc_endpoint_output::BatchGetVpcEndpointOutput;
-
 pub use crate::operation::batch_get_vpc_endpoint::_batch_get_vpc_endpoint_input::BatchGetVpcEndpointInput;
+
+pub use crate::operation::batch_get_vpc_endpoint::_batch_get_vpc_endpoint_output::BatchGetVpcEndpointOutput;
 
 mod _batch_get_vpc_endpoint_input;
 

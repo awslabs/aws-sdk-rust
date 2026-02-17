@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rest_api::U
     }
 }
 
-pub use crate::operation::update_rest_api::_update_rest_api_output::UpdateRestApiOutput;
-
 pub use crate::operation::update_rest_api::_update_rest_api_input::UpdateRestApiInput;
+
+pub use crate::operation::update_rest_api::_update_rest_api_output::UpdateRestApiOutput;
 
 mod _update_rest_api_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unarchive_applicat
     }
 }
 
-pub use crate::operation::unarchive_application::_unarchive_application_output::UnarchiveApplicationOutput;
-
 pub use crate::operation::unarchive_application::_unarchive_application_input::UnarchiveApplicationInput;
+
+pub use crate::operation::unarchive_application::_unarchive_application_output::UnarchiveApplicationOutput;
 
 mod _unarchive_application_input;
 

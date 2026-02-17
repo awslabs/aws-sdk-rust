@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::lookup_events::Loo
     }
 }
 
-pub use crate::operation::lookup_events::_lookup_events_output::LookupEventsOutput;
-
 pub use crate::operation::lookup_events::_lookup_events_input::LookupEventsInput;
+
+pub use crate::operation::lookup_events::_lookup_events_output::LookupEventsOutput;
 
 mod _lookup_events_input;
 

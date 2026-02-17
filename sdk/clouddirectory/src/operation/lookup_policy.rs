@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::lookup_policy::Loo
     }
 }
 
-pub use crate::operation::lookup_policy::_lookup_policy_output::LookupPolicyOutput;
-
 pub use crate::operation::lookup_policy::_lookup_policy_input::LookupPolicyInput;
+
+pub use crate::operation::lookup_policy::_lookup_policy_output::LookupPolicyOutput;
 
 mod _lookup_policy_input;
 

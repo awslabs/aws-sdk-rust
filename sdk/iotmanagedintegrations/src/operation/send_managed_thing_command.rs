@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_managed_thing
     }
 }
 
-pub use crate::operation::send_managed_thing_command::_send_managed_thing_command_output::SendManagedThingCommandOutput;
-
 pub use crate::operation::send_managed_thing_command::_send_managed_thing_command_input::SendManagedThingCommandInput;
+
+pub use crate::operation::send_managed_thing_command::_send_managed_thing_command_output::SendManagedThingCommandOutput;
 
 mod _send_managed_thing_command_input;
 

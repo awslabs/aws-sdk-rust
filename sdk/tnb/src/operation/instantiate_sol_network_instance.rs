@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::instantiate_sol_ne
     }
 }
 
-pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_network_instance_output::InstantiateSolNetworkInstanceOutput;
-
 pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_network_instance_input::InstantiateSolNetworkInstanceInput;
+
+pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_network_instance_output::InstantiateSolNetworkInstanceOutput;
 
 mod _instantiate_sol_network_instance_input;
 

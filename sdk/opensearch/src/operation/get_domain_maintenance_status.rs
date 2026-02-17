@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_mainten
     }
 }
 
-pub use crate::operation::get_domain_maintenance_status::_get_domain_maintenance_status_output::GetDomainMaintenanceStatusOutput;
-
 pub use crate::operation::get_domain_maintenance_status::_get_domain_maintenance_status_input::GetDomainMaintenanceStatusInput;
+
+pub use crate::operation::get_domain_maintenance_status::_get_domain_maintenance_status_output::GetDomainMaintenanceStatusOutput;
 
 mod _get_domain_maintenance_status_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fpga_image:
     }
 }
 
-pub use crate::operation::create_fpga_image::_create_fpga_image_output::CreateFpgaImageOutput;
-
 pub use crate::operation::create_fpga_image::_create_fpga_image_input::CreateFpgaImageInput;
+
+pub use crate::operation::create_fpga_image::_create_fpga_image_output::CreateFpgaImageOutput;
 
 mod _create_fpga_image_input;
 

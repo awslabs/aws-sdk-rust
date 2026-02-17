@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_integration_r
     }
 }
 
-pub use crate::operation::list_integration_resource_properties::_list_integration_resource_properties_output::ListIntegrationResourcePropertiesOutput;
-
 pub use crate::operation::list_integration_resource_properties::_list_integration_resource_properties_input::ListIntegrationResourcePropertiesInput;
+
+pub use crate::operation::list_integration_resource_properties::_list_integration_resource_properties_output::ListIntegrationResourcePropertiesOutput;
 
 mod _list_integration_resource_properties_input;
 

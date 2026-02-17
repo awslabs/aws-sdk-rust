@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ops_summary::G
     }
 }
 
-pub use crate::operation::get_ops_summary::_get_ops_summary_output::GetOpsSummaryOutput;
-
 pub use crate::operation::get_ops_summary::_get_ops_summary_input::GetOpsSummaryInput;
+
+pub use crate::operation::get_ops_summary::_get_ops_summary_output::GetOpsSummaryOutput;
 
 mod _get_ops_summary_input;
 

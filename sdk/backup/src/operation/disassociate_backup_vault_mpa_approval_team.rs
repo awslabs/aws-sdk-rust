@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_backup_vault_mpa_approval_team::_disassociate_backup_vault_mpa_approval_team_output::DisassociateBackupVaultMpaApprovalTeamOutput;
-
 pub use crate::operation::disassociate_backup_vault_mpa_approval_team::_disassociate_backup_vault_mpa_approval_team_input::DisassociateBackupVaultMpaApprovalTeamInput;
+
+pub use crate::operation::disassociate_backup_vault_mpa_approval_team::_disassociate_backup_vault_mpa_approval_team_output::DisassociateBackupVaultMpaApprovalTeamOutput;
 
 mod _disassociate_backup_vault_mpa_approval_team_input;
 

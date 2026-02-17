@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact_att
     }
 }
 
-pub use crate::operation::update_contact_attributes::_update_contact_attributes_output::UpdateContactAttributesOutput;
-
 pub use crate::operation::update_contact_attributes::_update_contact_attributes_input::UpdateContactAttributesInput;
+
+pub use crate::operation::update_contact_attributes::_update_contact_attributes_output::UpdateContactAttributesOutput;
 
 mod _update_contact_attributes_input;
 

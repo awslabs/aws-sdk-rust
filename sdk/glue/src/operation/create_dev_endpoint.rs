@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dev_endpoin
     }
 }
 
-pub use crate::operation::create_dev_endpoint::_create_dev_endpoint_output::CreateDevEndpointOutput;
-
 pub use crate::operation::create_dev_endpoint::_create_dev_endpoint_input::CreateDevEndpointInput;
+
+pub use crate::operation::create_dev_endpoint::_create_dev_endpoint_output::CreateDevEndpointOutput;
 
 mod _create_dev_endpoint_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sub_check_res
     }
 }
 
-pub use crate::operation::list_sub_check_results::_list_sub_check_results_output::ListSubCheckResultsOutput;
-
 pub use crate::operation::list_sub_check_results::_list_sub_check_results_input::ListSubCheckResultsInput;
+
+pub use crate::operation::list_sub_check_results::_list_sub_check_results_output::ListSubCheckResultsOutput;
 
 mod _list_sub_check_results_input;
 

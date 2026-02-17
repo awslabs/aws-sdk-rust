@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_classification
     }
 }
 
-pub use crate::operation::get_classification_export_configuration::_get_classification_export_configuration_output::GetClassificationExportConfigurationOutput;
-
 pub use crate::operation::get_classification_export_configuration::_get_classification_export_configuration_input::GetClassificationExportConfigurationInput;
+
+pub use crate::operation::get_classification_export_configuration::_get_classification_export_configuration_output::GetClassificationExportConfigurationOutput;
 
 mod _get_classification_export_configuration_input;
 

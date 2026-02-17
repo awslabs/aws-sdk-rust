@@ -504,9 +504,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::publish_package_ve
     }
 }
 
-pub use crate::operation::publish_package_version::_publish_package_version_output::PublishPackageVersionOutput;
-
 pub use crate::operation::publish_package_version::_publish_package_version_input::PublishPackageVersionInput;
+
+pub use crate::operation::publish_package_version::_publish_package_version_output::PublishPackageVersionOutput;
 
 mod _publish_package_version_input;
 

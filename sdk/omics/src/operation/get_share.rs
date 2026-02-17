@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_share::GetShar
     }
 }
 
-pub use crate::operation::get_share::_get_share_output::GetShareOutput;
-
 pub use crate::operation::get_share::_get_share_input::GetShareInput;
+
+pub use crate::operation::get_share::_get_share_output::GetShareOutput;
 
 mod _get_share_input;
 

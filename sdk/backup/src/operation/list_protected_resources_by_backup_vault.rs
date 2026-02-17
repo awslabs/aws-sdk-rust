@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protected_res
     }
 }
 
-pub use crate::operation::list_protected_resources_by_backup_vault::_list_protected_resources_by_backup_vault_output::ListProtectedResourcesByBackupVaultOutput;
-
 pub use crate::operation::list_protected_resources_by_backup_vault::_list_protected_resources_by_backup_vault_input::ListProtectedResourcesByBackupVaultInput;
+
+pub use crate::operation::list_protected_resources_by_backup_vault::_list_protected_resources_by_backup_vault_output::ListProtectedResourcesByBackupVaultOutput;
 
 mod _list_protected_resources_by_backup_vault_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workspace_b
     }
 }
 
-pub use crate::operation::delete_workspace_bundle::_delete_workspace_bundle_output::DeleteWorkspaceBundleOutput;
-
 pub use crate::operation::delete_workspace_bundle::_delete_workspace_bundle_input::DeleteWorkspaceBundleInput;
+
+pub use crate::operation::delete_workspace_bundle::_delete_workspace_bundle_output::DeleteWorkspaceBundleOutput;
 
 mod _delete_workspace_bundle_input;
 

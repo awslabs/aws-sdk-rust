@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_folders::Se
     }
 }
 
-pub use crate::operation::search_folders::_search_folders_output::SearchFoldersOutput;
-
 pub use crate::operation::search_folders::_search_folders_input::SearchFoldersInput;
+
+pub use crate::operation::search_folders::_search_folders_output::SearchFoldersOutput;
 
 mod _search_folders_input;
 

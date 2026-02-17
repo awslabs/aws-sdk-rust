@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workload_iden
     }
 }
 
-pub use crate::operation::list_workload_identities::_list_workload_identities_output::ListWorkloadIdentitiesOutput;
-
 pub use crate::operation::list_workload_identities::_list_workload_identities_input::ListWorkloadIdentitiesInput;
+
+pub use crate::operation::list_workload_identities::_list_workload_identities_output::ListWorkloadIdentitiesOutput;
 
 mod _list_workload_identities_input;
 

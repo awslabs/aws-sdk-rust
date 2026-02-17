@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dev_environme
     }
 }
 
-pub use crate::operation::list_dev_environments::_list_dev_environments_output::ListDevEnvironmentsOutput;
-
 pub use crate::operation::list_dev_environments::_list_dev_environments_input::ListDevEnvironmentsInput;
+
+pub use crate::operation::list_dev_environments::_list_dev_environments_output::ListDevEnvironmentsOutput;
 
 mod _list_dev_environments_input;
 

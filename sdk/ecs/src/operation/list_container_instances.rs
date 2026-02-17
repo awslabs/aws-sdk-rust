@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_container_ins
     }
 }
 
-pub use crate::operation::list_container_instances::_list_container_instances_output::ListContainerInstancesOutput;
-
 pub use crate::operation::list_container_instances::_list_container_instances_input::ListContainerInstancesInput;
+
+pub use crate::operation::list_container_instances::_list_container_instances_output::ListContainerInstancesOutput;
 
 mod _list_container_instances_input;
 

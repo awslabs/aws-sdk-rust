@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_security_pr
     }
 }
 
-pub use crate::operation::search_security_profiles::_search_security_profiles_output::SearchSecurityProfilesOutput;
-
 pub use crate::operation::search_security_profiles::_search_security_profiles_input::SearchSecurityProfilesInput;
+
+pub use crate::operation::search_security_profiles::_search_security_profiles_output::SearchSecurityProfilesOutput;
 
 mod _search_security_profiles_input;
 

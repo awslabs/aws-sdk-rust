@@ -501,9 +501,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_federation:
     }
 }
 
-pub use crate::operation::enable_federation::_enable_federation_output::EnableFederationOutput;
-
 pub use crate::operation::enable_federation::_enable_federation_input::EnableFederationInput;
+
+pub use crate::operation::enable_federation::_enable_federation_output::EnableFederationOutput;
 
 mod _enable_federation_input;
 

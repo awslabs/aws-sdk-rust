@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_gro
     }
 }
 
-pub use crate::operation::get_deployment_group::_get_deployment_group_output::GetDeploymentGroupOutput;
-
 pub use crate::operation::get_deployment_group::_get_deployment_group_input::GetDeploymentGroupInput;
+
+pub use crate::operation::get_deployment_group::_get_deployment_group_output::GetDeploymentGroupOutput;
 
 mod _get_deployment_group_input;
 

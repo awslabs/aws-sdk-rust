@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_lake_data
     }
 }
 
-pub use crate::operation::get_data_lake_dataset::_get_data_lake_dataset_output::GetDataLakeDatasetOutput;
-
 pub use crate::operation::get_data_lake_dataset::_get_data_lake_dataset_input::GetDataLakeDatasetInput;
+
+pub use crate::operation::get_data_lake_dataset::_get_data_lake_dataset_output::GetDataLakeDatasetOutput;
 
 mod _get_data_lake_dataset_input;
 

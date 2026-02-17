@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_approval_rule
     }
 }
 
-pub use crate::operation::list_approval_rule_templates::_list_approval_rule_templates_output::ListApprovalRuleTemplatesOutput;
-
 pub use crate::operation::list_approval_rule_templates::_list_approval_rule_templates_input::ListApprovalRuleTemplatesInput;
+
+pub use crate::operation::list_approval_rule_templates::_list_approval_rule_templates_output::ListApprovalRuleTemplatesOutput;
 
 mod _list_approval_rule_templates_input;
 

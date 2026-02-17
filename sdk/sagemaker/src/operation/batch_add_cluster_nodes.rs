@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_add_cluster_
     }
 }
 
-pub use crate::operation::batch_add_cluster_nodes::_batch_add_cluster_nodes_output::BatchAddClusterNodesOutput;
-
 pub use crate::operation::batch_add_cluster_nodes::_batch_add_cluster_nodes_input::BatchAddClusterNodesInput;
+
+pub use crate::operation::batch_add_cluster_nodes::_batch_add_cluster_nodes_output::BatchAddClusterNodesOutput;
 
 mod _batch_add_cluster_nodes_input;
 

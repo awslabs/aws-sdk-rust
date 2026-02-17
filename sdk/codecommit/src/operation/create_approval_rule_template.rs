@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_approval_ru
     }
 }
 
-pub use crate::operation::create_approval_rule_template::_create_approval_rule_template_output::CreateApprovalRuleTemplateOutput;
-
 pub use crate::operation::create_approval_rule_template::_create_approval_rule_template_input::CreateApprovalRuleTemplateInput;
+
+pub use crate::operation::create_approval_rule_template::_create_approval_rule_template_output::CreateApprovalRuleTemplateOutput;
 
 mod _create_approval_rule_template_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_multicast_g
     }
 }
 
-pub use crate::operation::update_multicast_group::_update_multicast_group_output::UpdateMulticastGroupOutput;
-
 pub use crate::operation::update_multicast_group::_update_multicast_group_input::UpdateMulticastGroupInput;
+
+pub use crate::operation::update_multicast_group::_update_multicast_group_output::UpdateMulticastGroupOutput;
 
 mod _update_multicast_group_input;
 

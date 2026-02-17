@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_change_reque
     }
 }
 
-pub use crate::operation::start_change_request_execution::_start_change_request_execution_output::StartChangeRequestExecutionOutput;
-
 pub use crate::operation::start_change_request_execution::_start_change_request_execution_input::StartChangeRequestExecutionInput;
+
+pub use crate::operation::start_change_request_execution::_start_change_request_execution_output::StartChangeRequestExecutionOutput;
 
 mod _start_change_request_execution_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_recommend
     }
 }
 
-pub use crate::operation::list_bot_recommendations::_list_bot_recommendations_output::ListBotRecommendationsOutput;
-
 pub use crate::operation::list_bot_recommendations::_list_bot_recommendations_input::ListBotRecommendationsInput;
+
+pub use crate::operation::list_bot_recommendations::_list_bot_recommendations_output::ListBotRecommendationsOutput;
 
 mod _list_bot_recommendations_input;
 

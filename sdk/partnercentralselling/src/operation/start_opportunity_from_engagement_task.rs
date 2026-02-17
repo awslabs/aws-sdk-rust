@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_opportunity_
     }
 }
 
-pub use crate::operation::start_opportunity_from_engagement_task::_start_opportunity_from_engagement_task_output::StartOpportunityFromEngagementTaskOutput;
-
 pub use crate::operation::start_opportunity_from_engagement_task::_start_opportunity_from_engagement_task_input::StartOpportunityFromEngagementTaskInput;
+
+pub use crate::operation::start_opportunity_from_engagement_task::_start_opportunity_from_engagement_task_output::StartOpportunityFromEngagementTaskOutput;
 
 mod _start_opportunity_from_engagement_task_input;
 

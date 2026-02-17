@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transcripti
     }
 }
 
-pub use crate::operation::delete_transcription_job::_delete_transcription_job_output::DeleteTranscriptionJobOutput;
-
 pub use crate::operation::delete_transcription_job::_delete_transcription_job_input::DeleteTranscriptionJobInput;
+
+pub use crate::operation::delete_transcription_job::_delete_transcription_job_output::DeleteTranscriptionJobOutput;
 
 mod _delete_transcription_job_input;
 

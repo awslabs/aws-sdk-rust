@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_baseline::E
     }
 }
 
-pub use crate::operation::enable_baseline::_enable_baseline_output::EnableBaselineOutput;
-
 pub use crate::operation::enable_baseline::_enable_baseline_input::EnableBaselineInput;
+
+pub use crate::operation::enable_baseline::_enable_baseline_output::EnableBaselineOutput;
 
 mod _enable_baseline_input;
 

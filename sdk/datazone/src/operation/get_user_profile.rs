@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_profile::
     }
 }
 
-pub use crate::operation::get_user_profile::_get_user_profile_output::GetUserProfileOutput;
-
 pub use crate::operation::get_user_profile::_get_user_profile_input::GetUserProfileInput;
+
+pub use crate::operation::get_user_profile::_get_user_profile_output::GetUserProfileOutput;
 
 mod _get_user_profile_input;
 

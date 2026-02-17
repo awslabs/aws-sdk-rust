@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_security
     }
 }
 
-pub use crate::operation::associate_security_group_vpc::_associate_security_group_vpc_output::AssociateSecurityGroupVpcOutput;
-
 pub use crate::operation::associate_security_group_vpc::_associate_security_group_vpc_input::AssociateSecurityGroupVpcInput;
+
+pub use crate::operation::associate_security_group_vpc::_associate_security_group_vpc_output::AssociateSecurityGroupVpcOutput;
 
 mod _associate_security_group_vpc_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tag_option:
     }
 }
 
-pub use crate::operation::create_tag_option::_create_tag_option_output::CreateTagOptionOutput;
-
 pub use crate::operation::create_tag_option::_create_tag_option_input::CreateTagOptionInput;
+
+pub use crate::operation::create_tag_option::_create_tag_option_output::CreateTagOptionOutput;
 
 mod _create_tag_option_input;
 

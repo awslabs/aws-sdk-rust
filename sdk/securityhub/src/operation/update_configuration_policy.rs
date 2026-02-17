@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configurati
     }
 }
 
-pub use crate::operation::update_configuration_policy::_update_configuration_policy_output::UpdateConfigurationPolicyOutput;
-
 pub use crate::operation::update_configuration_policy::_update_configuration_policy_input::UpdateConfigurationPolicyInput;
+
+pub use crate::operation::update_configuration_policy::_update_configuration_policy_output::UpdateConfigurationPolicyOutput;
 
 mod _update_configuration_policy_input;
 

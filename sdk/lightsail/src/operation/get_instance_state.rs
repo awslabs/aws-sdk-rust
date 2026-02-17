@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_state
     }
 }
 
-pub use crate::operation::get_instance_state::_get_instance_state_output::GetInstanceStateOutput;
-
 pub use crate::operation::get_instance_state::_get_instance_state_input::GetInstanceStateInput;
+
+pub use crate::operation::get_instance_state::_get_instance_state_output::GetInstanceStateOutput;
 
 mod _get_instance_state_input;
 

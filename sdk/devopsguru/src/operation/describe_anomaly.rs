@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_anomaly::
     }
 }
 
-pub use crate::operation::describe_anomaly::_describe_anomaly_output::DescribeAnomalyOutput;
-
 pub use crate::operation::describe_anomaly::_describe_anomaly_input::DescribeAnomalyInput;
+
+pub use crate::operation::describe_anomaly::_describe_anomaly_output::DescribeAnomalyOutput;
 
 mod _describe_anomaly_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_migrat
     }
 }
 
-pub use crate::operation::create_data_migration::_create_data_migration_output::CreateDataMigrationOutput;
-
 pub use crate::operation::create_data_migration::_create_data_migration_input::CreateDataMigrationInput;
+
+pub use crate::operation::create_data_migration::_create_data_migration_output::CreateDataMigrationOutput;
 
 mod _create_data_migration_input;
 

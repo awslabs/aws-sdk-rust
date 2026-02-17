@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_db_instance::
     }
 }
 
-pub use crate::operation::stop_db_instance::_stop_db_instance_output::StopDbInstanceOutput;
-
 pub use crate::operation::stop_db_instance::_stop_db_instance_input::StopDbInstanceInput;
+
+pub use crate::operation::stop_db_instance::_stop_db_instance_output::StopDbInstanceOutput;
 
 mod _stop_db_instance_input;
 

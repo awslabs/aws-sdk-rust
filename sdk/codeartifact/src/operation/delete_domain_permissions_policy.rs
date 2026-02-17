@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_domain_perm
     }
 }
 
-pub use crate::operation::delete_domain_permissions_policy::_delete_domain_permissions_policy_output::DeleteDomainPermissionsPolicyOutput;
-
 pub use crate::operation::delete_domain_permissions_policy::_delete_domain_permissions_policy_input::DeleteDomainPermissionsPolicyInput;
+
+pub use crate::operation::delete_domain_permissions_policy::_delete_domain_permissions_policy_output::DeleteDomainPermissionsPolicyOutput;
 
 mod _delete_domain_permissions_policy_input;
 

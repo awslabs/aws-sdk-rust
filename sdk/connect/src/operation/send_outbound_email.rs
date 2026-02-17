@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_outbound_emai
     }
 }
 
-pub use crate::operation::send_outbound_email::_send_outbound_email_output::SendOutboundEmailOutput;
-
 pub use crate::operation::send_outbound_email::_send_outbound_email_input::SendOutboundEmailInput;
+
+pub use crate::operation::send_outbound_email::_send_outbound_email_output::SendOutboundEmailOutput;
 
 mod _send_outbound_email_input;
 

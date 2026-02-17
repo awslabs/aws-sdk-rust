@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_code_signing_
     }
 }
 
-pub use crate::operation::list_code_signing_configs::_list_code_signing_configs_output::ListCodeSigningConfigsOutput;
-
 pub use crate::operation::list_code_signing_configs::_list_code_signing_configs_input::ListCodeSigningConfigsInput;
+
+pub use crate::operation::list_code_signing_configs::_list_code_signing_configs_output::ListCodeSigningConfigsOutput;
 
 mod _list_code_signing_configs_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::dissociate_package
     }
 }
 
-pub use crate::operation::dissociate_package::_dissociate_package_output::DissociatePackageOutput;
-
 pub use crate::operation::dissociate_package::_dissociate_package_input::DissociatePackageInput;
+
+pub use crate::operation::dissociate_package::_dissociate_package_output::DissociatePackageOutput;
 
 mod _dissociate_package_input;
 

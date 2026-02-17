@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_desti
     }
 }
 
-pub use crate::operation::update_event_destination::_update_event_destination_output::UpdateEventDestinationOutput;
-
 pub use crate::operation::update_event_destination::_update_event_destination_input::UpdateEventDestinationInput;
+
+pub use crate::operation::update_event_destination::_update_event_destination_output::UpdateEventDestinationOutput;
 
 mod _update_event_destination_input;
 

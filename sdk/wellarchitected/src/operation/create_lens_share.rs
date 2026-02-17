@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lens_share:
     }
 }
 
-pub use crate::operation::create_lens_share::_create_lens_share_output::CreateLensShareOutput;
-
 pub use crate::operation::create_lens_share::_create_lens_share_input::CreateLensShareInput;
+
+pub use crate::operation::create_lens_share::_create_lens_share_output::CreateLensShareOutput;
 
 mod _create_lens_share_input;
 

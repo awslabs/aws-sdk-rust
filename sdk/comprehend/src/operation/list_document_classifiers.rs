@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_document_clas
     }
 }
 
-pub use crate::operation::list_document_classifiers::_list_document_classifiers_output::ListDocumentClassifiersOutput;
-
 pub use crate::operation::list_document_classifiers::_list_document_classifiers_input::ListDocumentClassifiersInput;
+
+pub use crate::operation::list_document_classifiers::_list_document_classifiers_output::ListDocumentClassifiersOutput;
 
 mod _list_document_classifiers_input;
 

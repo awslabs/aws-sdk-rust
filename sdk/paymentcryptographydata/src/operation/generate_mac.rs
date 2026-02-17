@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_mac::Gene
     }
 }
 
-pub use crate::operation::generate_mac::_generate_mac_output::GenerateMacOutput;
-
 pub use crate::operation::generate_mac::_generate_mac_input::GenerateMacInput;
+
+pub use crate::operation::generate_mac::_generate_mac_output::GenerateMacOutput;
 
 mod _generate_mac_input;
 

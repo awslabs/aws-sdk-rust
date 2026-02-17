@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image_set_m
     }
 }
 
-pub use crate::operation::update_image_set_metadata::_update_image_set_metadata_output::UpdateImageSetMetadataOutput;
-
 pub use crate::operation::update_image_set_metadata::_update_image_set_metadata_input::UpdateImageSetMetadataInput;
+
+pub use crate::operation::update_image_set_metadata::_update_image_set_metadata_output::UpdateImageSetMetadataOutput;
 
 mod _update_image_set_metadata_input;
 

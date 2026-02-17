@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_rules::
     }
 }
 
-pub use crate::operation::list_event_rules::_list_event_rules_output::ListEventRulesOutput;
-
 pub use crate::operation::list_event_rules::_list_event_rules_input::ListEventRulesInput;
+
+pub use crate::operation::list_event_rules::_list_event_rules_output::ListEventRulesOutput;
 
 mod _list_event_rules_input;
 

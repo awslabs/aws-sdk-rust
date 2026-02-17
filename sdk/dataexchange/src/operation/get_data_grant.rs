@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_grant::Ge
     }
 }
 
-pub use crate::operation::get_data_grant::_get_data_grant_output::GetDataGrantOutput;
-
 pub use crate::operation::get_data_grant::_get_data_grant_input::GetDataGrantInput;
+
+pub use crate::operation::get_data_grant::_get_data_grant_output::GetDataGrantOutput;
 
 mod _get_data_grant_input;
 

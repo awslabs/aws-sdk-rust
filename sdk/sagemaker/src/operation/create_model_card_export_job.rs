@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_card_
     }
 }
 
-pub use crate::operation::create_model_card_export_job::_create_model_card_export_job_output::CreateModelCardExportJobOutput;
-
 pub use crate::operation::create_model_card_export_job::_create_model_card_export_job_input::CreateModelCardExportJobInput;
+
+pub use crate::operation::create_model_card_export_job::_create_model_card_export_job_output::CreateModelCardExportJobOutput;
 
 mod _create_model_card_export_job_input;
 

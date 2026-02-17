@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_object::Cre
     }
 }
 
-pub use crate::operation::create_object::_create_object_output::CreateObjectOutput;
-
 pub use crate::operation::create_object::_create_object_input::CreateObjectInput;
+
+pub use crate::operation::create_object::_create_object_output::CreateObjectOutput;
 
 mod _create_object_input;
 

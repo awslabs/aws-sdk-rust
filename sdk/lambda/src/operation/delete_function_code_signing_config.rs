@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_function_co
     }
 }
 
-pub use crate::operation::delete_function_code_signing_config::_delete_function_code_signing_config_output::DeleteFunctionCodeSigningConfigOutput;
-
 pub use crate::operation::delete_function_code_signing_config::_delete_function_code_signing_config_input::DeleteFunctionCodeSigningConfigInput;
+
+pub use crate::operation::delete_function_code_signing_config::_delete_function_code_signing_config_output::DeleteFunctionCodeSigningConfigOutput;
 
 mod _delete_function_code_signing_config_input;
 

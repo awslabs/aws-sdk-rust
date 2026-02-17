@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fleet::Crea
     }
 }
 
-pub use crate::operation::create_fleet::_create_fleet_output::CreateFleetOutput;
-
 pub use crate::operation::create_fleet::_create_fleet_input::CreateFleetInput;
+
+pub use crate::operation::create_fleet::_create_fleet_output::CreateFleetOutput;
 
 mod _create_fleet_input;
 

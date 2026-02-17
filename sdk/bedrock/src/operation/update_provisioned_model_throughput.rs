@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_provisioned
     }
 }
 
-pub use crate::operation::update_provisioned_model_throughput::_update_provisioned_model_throughput_output::UpdateProvisionedModelThroughputOutput;
-
 pub use crate::operation::update_provisioned_model_throughput::_update_provisioned_model_throughput_input::UpdateProvisionedModelThroughputInput;
+
+pub use crate::operation::update_provisioned_model_throughput::_update_provisioned_model_throughput_output::UpdateProvisionedModelThroughputOutput;
 
 mod _update_provisioned_model_throughput_input;
 

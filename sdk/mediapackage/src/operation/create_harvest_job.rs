@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_harvest_job
     }
 }
 
-pub use crate::operation::create_harvest_job::_create_harvest_job_output::CreateHarvestJobOutput;
-
 pub use crate::operation::create_harvest_job::_create_harvest_job_input::CreateHarvestJobInput;
+
+pub use crate::operation::create_harvest_job::_create_harvest_job_output::CreateHarvestJobOutput;
 
 mod _create_harvest_job_input;
 

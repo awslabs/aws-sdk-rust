@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_run_cache::
     }
 }
 
-pub use crate::operation::update_run_cache::_update_run_cache_output::UpdateRunCacheOutput;
-
 pub use crate::operation::update_run_cache::_update_run_cache_input::UpdateRunCacheInput;
+
+pub use crate::operation::update_run_cache::_update_run_cache_output::UpdateRunCacheOutput;
 
 mod _update_run_cache_input;
 

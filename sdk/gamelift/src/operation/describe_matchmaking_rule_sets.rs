@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_matchmaki
     }
 }
 
-pub use crate::operation::describe_matchmaking_rule_sets::_describe_matchmaking_rule_sets_output::DescribeMatchmakingRuleSetsOutput;
-
 pub use crate::operation::describe_matchmaking_rule_sets::_describe_matchmaking_rule_sets_input::DescribeMatchmakingRuleSetsInput;
+
+pub use crate::operation::describe_matchmaking_rule_sets::_describe_matchmaking_rule_sets_output::DescribeMatchmakingRuleSetsOutput;
 
 mod _describe_matchmaking_rule_sets_input;
 

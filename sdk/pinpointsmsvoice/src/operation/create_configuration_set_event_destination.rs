@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_configuration_set_event_destination::_create_configuration_set_event_destination_output::CreateConfigurationSetEventDestinationOutput;
-
 pub use crate::operation::create_configuration_set_event_destination::_create_configuration_set_event_destination_input::CreateConfigurationSetEventDestinationInput;
+
+pub use crate::operation::create_configuration_set_event_destination::_create_configuration_set_event_destination_output::CreateConfigurationSetEventDestinationOutput;
 
 mod _create_configuration_set_event_destination_input;
 

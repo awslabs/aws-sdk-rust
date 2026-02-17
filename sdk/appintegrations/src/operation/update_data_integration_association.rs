@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_integr
     }
 }
 
-pub use crate::operation::update_data_integration_association::_update_data_integration_association_output::UpdateDataIntegrationAssociationOutput;
-
 pub use crate::operation::update_data_integration_association::_update_data_integration_association_input::UpdateDataIntegrationAssociationInput;
+
+pub use crate::operation::update_data_integration_association::_update_data_integration_association_output::UpdateDataIntegrationAssociationOutput;
 
 mod _update_data_integration_association_input;
 

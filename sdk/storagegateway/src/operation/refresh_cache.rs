@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::refresh_cache::Ref
     }
 }
 
-pub use crate::operation::refresh_cache::_refresh_cache_output::RefreshCacheOutput;
-
 pub use crate::operation::refresh_cache::_refresh_cache_input::RefreshCacheInput;
+
+pub use crate::operation::refresh_cache::_refresh_cache_output::RefreshCacheOutput;
 
 mod _refresh_cache_input;
 

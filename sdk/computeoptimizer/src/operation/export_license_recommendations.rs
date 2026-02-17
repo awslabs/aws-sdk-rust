@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_license_rec
     }
 }
 
-pub use crate::operation::export_license_recommendations::_export_license_recommendations_output::ExportLicenseRecommendationsOutput;
-
 pub use crate::operation::export_license_recommendations::_export_license_recommendations_input::ExportLicenseRecommendationsInput;
+
+pub use crate::operation::export_license_recommendations::_export_license_recommendations_output::ExportLicenseRecommendationsOutput;
 
 mod _export_license_recommendations_input;
 

@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flow_alias:
     }
 }
 
-pub use crate::operation::create_flow_alias::_create_flow_alias_output::CreateFlowAliasOutput;
-
 pub use crate::operation::create_flow_alias::_create_flow_alias_input::CreateFlowAliasInput;
+
+pub use crate::operation::create_flow_alias::_create_flow_alias_output::CreateFlowAliasOutput;
 
 mod _create_flow_alias_input;
 

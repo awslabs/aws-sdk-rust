@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_task_instance
     }
 }
 
-pub use crate::operation::list_task_instances::_list_task_instances_output::ListTaskInstancesOutput;
-
 pub use crate::operation::list_task_instances::_list_task_instances_input::ListTaskInstancesInput;
+
+pub use crate::operation::list_task_instances::_list_task_instances_output::ListTaskInstancesOutput;
 
 mod _list_task_instances_input;
 

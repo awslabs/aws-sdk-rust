@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_extension_a
     }
 }
 
-pub use crate::operation::update_extension_association::_update_extension_association_output::UpdateExtensionAssociationOutput;
-
 pub use crate::operation::update_extension_association::_update_extension_association_input::UpdateExtensionAssociationInput;
+
+pub use crate::operation::update_extension_association::_update_extension_association_output::UpdateExtensionAssociationOutput;
 
 mod _update_extension_association_input;
 

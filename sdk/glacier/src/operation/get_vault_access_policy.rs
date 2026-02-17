@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vault_access_p
     }
 }
 
-pub use crate::operation::get_vault_access_policy::_get_vault_access_policy_output::GetVaultAccessPolicyOutput;
-
 pub use crate::operation::get_vault_access_policy::_get_vault_access_policy_input::GetVaultAccessPolicyInput;
+
+pub use crate::operation::get_vault_access_policy::_get_vault_access_policy_output::GetVaultAccessPolicyOutput;
 
 mod _get_vault_access_policy_input;
 

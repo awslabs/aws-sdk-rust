@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_encr
     }
 }
 
-pub use crate::operation::delete_bucket_encryption::_delete_bucket_encryption_output::DeleteBucketEncryptionOutput;
-
 pub use crate::operation::delete_bucket_encryption::_delete_bucket_encryption_input::DeleteBucketEncryptionInput;
+
+pub use crate::operation::delete_bucket_encryption::_delete_bucket_encryption_output::DeleteBucketEncryptionOutput;
 
 mod _delete_bucket_encryption_input;
 

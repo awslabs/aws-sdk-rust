@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_finding_agg
     }
 }
 
-pub use crate::operation::delete_finding_aggregator::_delete_finding_aggregator_output::DeleteFindingAggregatorOutput;
-
 pub use crate::operation::delete_finding_aggregator::_delete_finding_aggregator_input::DeleteFindingAggregatorInput;
+
+pub use crate::operation::delete_finding_aggregator::_delete_finding_aggregator_output::DeleteFindingAggregatorOutput;
 
 mod _delete_finding_aggregator_input;
 

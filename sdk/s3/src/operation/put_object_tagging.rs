@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_object_tagging
     }
 }
 
-pub use crate::operation::put_object_tagging::_put_object_tagging_output::PutObjectTaggingOutput;
-
 pub use crate::operation::put_object_tagging::_put_object_tagging_input::PutObjectTaggingInput;
+
+pub use crate::operation::put_object_tagging::_put_object_tagging_output::PutObjectTaggingOutput;
 
 mod _put_object_tagging_input;
 

@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_iam_polic
     }
 }
 
-pub use crate::operation::describe_iam_policy_assignment::_describe_iam_policy_assignment_output::DescribeIamPolicyAssignmentOutput;
-
 pub use crate::operation::describe_iam_policy_assignment::_describe_iam_policy_assignment_input::DescribeIamPolicyAssignmentInput;
+
+pub use crate::operation::describe_iam_policy_assignment::_describe_iam_policy_assignment_output::DescribeIamPolicyAssignmentOutput;
 
 mod _describe_iam_policy_assignment_input;
 

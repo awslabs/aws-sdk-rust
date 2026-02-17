@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_log_stream:
     }
 }
 
-pub use crate::operation::create_log_stream::_create_log_stream_output::CreateLogStreamOutput;
-
 pub use crate::operation::create_log_stream::_create_log_stream_input::CreateLogStreamInput;
+
+pub use crate::operation::create_log_stream::_create_log_stream_output::CreateLogStreamOutput;
 
 mod _create_log_stream_input;
 

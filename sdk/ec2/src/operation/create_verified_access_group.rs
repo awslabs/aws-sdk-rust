@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_verified_ac
     }
 }
 
-pub use crate::operation::create_verified_access_group::_create_verified_access_group_output::CreateVerifiedAccessGroupOutput;
-
 pub use crate::operation::create_verified_access_group::_create_verified_access_group_input::CreateVerifiedAccessGroupInput;
+
+pub use crate::operation::create_verified_access_group::_create_verified_access_group_output::CreateVerifiedAccessGroupOutput;
 
 mod _create_verified_access_group_input;
 

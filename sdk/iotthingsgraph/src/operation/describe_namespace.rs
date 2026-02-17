@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_namespace
     }
 }
 
-pub use crate::operation::describe_namespace::_describe_namespace_output::DescribeNamespaceOutput;
-
 pub use crate::operation::describe_namespace::_describe_namespace_input::DescribeNamespaceInput;
+
+pub use crate::operation::describe_namespace::_describe_namespace_output::DescribeNamespaceOutput;
 
 mod _describe_namespace_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_subnets::
     }
 }
 
-pub use crate::operation::describe_subnets::_describe_subnets_output::DescribeSubnetsOutput;
-
 pub use crate::operation::describe_subnets::_describe_subnets_input::DescribeSubnetsInput;
+
+pub use crate::operation::describe_subnets::_describe_subnets_output::DescribeSubnetsOutput;
 
 mod _describe_subnets_input;
 

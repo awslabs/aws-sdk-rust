@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_smb_setti
     }
 }
 
-pub use crate::operation::describe_smb_settings::_describe_smb_settings_output::DescribeSmbSettingsOutput;
-
 pub use crate::operation::describe_smb_settings::_describe_smb_settings_input::DescribeSmbSettingsInput;
+
+pub use crate::operation::describe_smb_settings::_describe_smb_settings_output::DescribeSmbSettingsOutput;
 
 mod _describe_smb_settings_input;
 

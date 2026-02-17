@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_content::Se
     }
 }
 
-pub use crate::operation::search_content::_search_content_output::SearchContentOutput;
-
 pub use crate::operation::search_content::_search_content_input::SearchContentInput;
+
+pub use crate::operation::search_content::_search_content_output::SearchContentOutput;
 
 mod _search_content_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_indicators::L
     }
 }
 
-pub use crate::operation::list_indicators::_list_indicators_output::ListIndicatorsOutput;
-
 pub use crate::operation::list_indicators::_list_indicators_input::ListIndicatorsInput;
+
+pub use crate::operation::list_indicators::_list_indicators_output::ListIndicatorsOutput;
 
 mod _list_indicators_input;
 

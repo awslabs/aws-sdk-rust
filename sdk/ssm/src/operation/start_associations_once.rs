@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_associations
     }
 }
 
-pub use crate::operation::start_associations_once::_start_associations_once_output::StartAssociationsOnceOutput;
-
 pub use crate::operation::start_associations_once::_start_associations_once_input::StartAssociationsOnceInput;
+
+pub use crate::operation::start_associations_once::_start_associations_once_output::StartAssociationsOnceOutput;
 
 mod _start_associations_once_input;
 

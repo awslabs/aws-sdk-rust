@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metadata::PutM
     }
 }
 
-pub use crate::operation::put_metadata::_put_metadata_output::PutMetadataOutput;
-
 pub use crate::operation::put_metadata::_put_metadata_input::PutMetadataInput;
+
+pub use crate::operation::put_metadata::_put_metadata_output::PutMetadataOutput;
 
 mod _put_metadata_input;
 

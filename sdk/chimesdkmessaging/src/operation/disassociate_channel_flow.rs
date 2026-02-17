@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_chann
     }
 }
 
-pub use crate::operation::disassociate_channel_flow::_disassociate_channel_flow_output::DisassociateChannelFlowOutput;
-
 pub use crate::operation::disassociate_channel_flow::_disassociate_channel_flow_input::DisassociateChannelFlowInput;
+
+pub use crate::operation::disassociate_channel_flow::_disassociate_channel_flow_output::DisassociateChannelFlowOutput;
 
 mod _disassociate_channel_flow_input;
 

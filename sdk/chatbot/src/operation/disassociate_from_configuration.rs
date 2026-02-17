@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_from_
     }
 }
 
-pub use crate::operation::disassociate_from_configuration::_disassociate_from_configuration_output::DisassociateFromConfigurationOutput;
-
 pub use crate::operation::disassociate_from_configuration::_disassociate_from_configuration_input::DisassociateFromConfigurationInput;
+
+pub use crate::operation::disassociate_from_configuration::_disassociate_from_configuration_output::DisassociateFromConfigurationOutput;
 
 mod _disassociate_from_configuration_input;
 

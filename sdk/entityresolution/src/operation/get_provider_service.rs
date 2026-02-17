@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_provider_servi
     }
 }
 
-pub use crate::operation::get_provider_service::_get_provider_service_output::GetProviderServiceOutput;
-
 pub use crate::operation::get_provider_service::_get_provider_service_input::GetProviderServiceInput;
+
+pub use crate::operation::get_provider_service::_get_provider_service_output::GetProviderServiceOutput;
 
 mod _get_provider_service_input;
 

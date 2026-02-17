@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_severity_
     }
 }
 
-pub use crate::operation::describe_severity_levels::_describe_severity_levels_output::DescribeSeverityLevelsOutput;
-
 pub use crate::operation::describe_severity_levels::_describe_severity_levels_input::DescribeSeverityLevelsInput;
+
+pub use crate::operation::describe_severity_levels::_describe_severity_levels_output::DescribeSeverityLevelsOutput;
 
 mod _describe_severity_levels_input;
 

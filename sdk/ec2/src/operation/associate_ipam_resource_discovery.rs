@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_ipam_res
     }
 }
 
-pub use crate::operation::associate_ipam_resource_discovery::_associate_ipam_resource_discovery_output::AssociateIpamResourceDiscoveryOutput;
-
 pub use crate::operation::associate_ipam_resource_discovery::_associate_ipam_resource_discovery_input::AssociateIpamResourceDiscoveryInput;
+
+pub use crate::operation::associate_ipam_resource_discovery::_associate_ipam_resource_discovery_output::AssociateIpamResourceDiscoveryOutput;
 
 mod _associate_ipam_resource_discovery_input;
 

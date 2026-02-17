@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network::Cr
     }
 }
 
-pub use crate::operation::create_network::_create_network_output::CreateNetworkOutput;
-
 pub use crate::operation::create_network::_create_network_input::CreateNetworkInput;
+
+pub use crate::operation::create_network::_create_network_output::CreateNetworkOutput;
 
 mod _create_network_input;
 

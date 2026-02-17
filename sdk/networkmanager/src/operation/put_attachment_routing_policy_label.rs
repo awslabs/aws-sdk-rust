@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_attachment_rou
     }
 }
 
-pub use crate::operation::put_attachment_routing_policy_label::_put_attachment_routing_policy_label_output::PutAttachmentRoutingPolicyLabelOutput;
-
 pub use crate::operation::put_attachment_routing_policy_label::_put_attachment_routing_policy_label_input::PutAttachmentRoutingPolicyLabelInput;
+
+pub use crate::operation::put_attachment_routing_policy_label::_put_attachment_routing_policy_label_output::PutAttachmentRoutingPolicyLabelOutput;
 
 mod _put_attachment_routing_policy_label_input;
 

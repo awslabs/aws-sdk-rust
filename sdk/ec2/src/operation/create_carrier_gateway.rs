@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_carrier_gat
     }
 }
 
-pub use crate::operation::create_carrier_gateway::_create_carrier_gateway_output::CreateCarrierGatewayOutput;
-
 pub use crate::operation::create_carrier_gateway::_create_carrier_gateway_input::CreateCarrierGatewayInput;
+
+pub use crate::operation::create_carrier_gateway::_create_carrier_gateway_output::CreateCarrierGatewayOutput;
 
 mod _create_carrier_gateway_input;
 

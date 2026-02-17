@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_cluster::
     }
 }
 
-pub use crate::operation::register_cluster::_register_cluster_output::RegisterClusterOutput;
-
 pub use crate::operation::register_cluster::_register_cluster_input::RegisterClusterInput;
+
+pub use crate::operation::register_cluster::_register_cluster_output::RegisterClusterOutput;
 
 mod _register_cluster_input;
 

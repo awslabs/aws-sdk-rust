@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_findings_publi
     }
 }
 
-pub use crate::operation::put_findings_publication_configuration::_put_findings_publication_configuration_output::PutFindingsPublicationConfigurationOutput;
-
 pub use crate::operation::put_findings_publication_configuration::_put_findings_publication_configuration_input::PutFindingsPublicationConfigurationInput;
+
+pub use crate::operation::put_findings_publication_configuration::_put_findings_publication_configuration_output::PutFindingsPublicationConfigurationOutput;
 
 mod _put_findings_publication_configuration_input;
 

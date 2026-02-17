@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_data_retrieval
     }
 }
 
-pub use crate::operation::set_data_retrieval_policy::_set_data_retrieval_policy_output::SetDataRetrievalPolicyOutput;
-
 pub use crate::operation::set_data_retrieval_policy::_set_data_retrieval_policy_input::SetDataRetrievalPolicyInput;
+
+pub use crate::operation::set_data_retrieval_policy::_set_data_retrieval_policy_output::SetDataRetrievalPolicyOutput;
 
 mod _set_data_retrieval_policy_input;
 

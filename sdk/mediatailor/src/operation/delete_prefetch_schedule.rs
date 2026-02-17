@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_prefetch_sc
     }
 }
 
-pub use crate::operation::delete_prefetch_schedule::_delete_prefetch_schedule_output::DeletePrefetchScheduleOutput;
-
 pub use crate::operation::delete_prefetch_schedule::_delete_prefetch_schedule_input::DeletePrefetchScheduleInput;
+
+pub use crate::operation::delete_prefetch_schedule::_delete_prefetch_schedule_output::DeletePrefetchScheduleOutput;
 
 mod _delete_prefetch_schedule_input;
 

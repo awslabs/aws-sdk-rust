@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_table_stora
     }
 }
 
-pub use crate::operation::update_table_storage_optimizer::_update_table_storage_optimizer_output::UpdateTableStorageOptimizerOutput;
-
 pub use crate::operation::update_table_storage_optimizer::_update_table_storage_optimizer_input::UpdateTableStorageOptimizerInput;
+
+pub use crate::operation::update_table_storage_optimizer::_update_table_storage_optimizer_output::UpdateTableStorageOptimizerOutput;
 
 mod _update_table_storage_optimizer_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flywheel_iter
     }
 }
 
-pub use crate::operation::list_flywheel_iteration_history::_list_flywheel_iteration_history_output::ListFlywheelIterationHistoryOutput;
-
 pub use crate::operation::list_flywheel_iteration_history::_list_flywheel_iteration_history_input::ListFlywheelIterationHistoryInput;
+
+pub use crate::operation::list_flywheel_iteration_history::_list_flywheel_iteration_history_output::ListFlywheelIterationHistoryOutput;
 
 mod _list_flywheel_iteration_history_input;
 

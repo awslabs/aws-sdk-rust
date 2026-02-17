@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_certific
     }
 }
 
-pub use crate::operation::associate_certificate::_associate_certificate_output::AssociateCertificateOutput;
-
 pub use crate::operation::associate_certificate::_associate_certificate_input::AssociateCertificateInput;
+
+pub use crate::operation::associate_certificate::_associate_certificate_output::AssociateCertificateOutput;
 
 mod _associate_certificate_input;
 

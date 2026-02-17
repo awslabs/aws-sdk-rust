@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_compute_env
     }
 }
 
-pub use crate::operation::create_compute_environment::_create_compute_environment_output::CreateComputeEnvironmentOutput;
-
 pub use crate::operation::create_compute_environment::_create_compute_environment_input::CreateComputeEnvironmentInput;
+
+pub use crate::operation::create_compute_environment::_create_compute_environment_output::CreateComputeEnvironmentOutput;
 
 mod _create_compute_environment_input;
 

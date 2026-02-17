@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_ban
     }
 }
 
-pub use crate::operation::create_channel_ban::_create_channel_ban_output::CreateChannelBanOutput;
-
 pub use crate::operation::create_channel_ban::_create_channel_ban_input::CreateChannelBanInput;
+
+pub use crate::operation::create_channel_ban::_create_channel_ban_output::CreateChannelBanOutput;
 
 mod _create_channel_ban_input;
 

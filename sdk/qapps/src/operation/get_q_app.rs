@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_q_app::GetQApp
     }
 }
 
-pub use crate::operation::get_q_app::_get_q_app_output::GetQAppOutput;
-
 pub use crate::operation::get_q_app::_get_q_app_input::GetQAppInput;
+
+pub use crate::operation::get_q_app::_get_q_app_output::GetQAppOutput;
 
 mod _get_q_app_input;
 

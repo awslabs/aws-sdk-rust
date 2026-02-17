@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_remediation_co
     }
 }
 
-pub use crate::operation::put_remediation_configurations::_put_remediation_configurations_output::PutRemediationConfigurationsOutput;
-
 pub use crate::operation::put_remediation_configurations::_put_remediation_configurations_input::PutRemediationConfigurationsInput;
+
+pub use crate::operation::put_remediation_configurations::_put_remediation_configurations_output::PutRemediationConfigurationsOutput;
 
 mod _put_remediation_configurations_input;
 

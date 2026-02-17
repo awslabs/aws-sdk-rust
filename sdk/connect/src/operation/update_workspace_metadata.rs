@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_m
     }
 }
 
-pub use crate::operation::update_workspace_metadata::_update_workspace_metadata_output::UpdateWorkspaceMetadataOutput;
-
 pub use crate::operation::update_workspace_metadata::_update_workspace_metadata_input::UpdateWorkspaceMetadataInput;
+
+pub use crate::operation::update_workspace_metadata::_update_workspace_metadata_output::UpdateWorkspaceMetadataOutput;
 
 mod _update_workspace_metadata_input;
 

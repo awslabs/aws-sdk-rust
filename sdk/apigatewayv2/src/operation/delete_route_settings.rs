@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_route_setti
     }
 }
 
-pub use crate::operation::delete_route_settings::_delete_route_settings_output::DeleteRouteSettingsOutput;
-
 pub use crate::operation::delete_route_settings::_delete_route_settings_input::DeleteRouteSettingsInput;
+
+pub use crate::operation::delete_route_settings::_delete_route_settings_output::DeleteRouteSettingsOutput;
 
 mod _delete_route_settings_input;
 

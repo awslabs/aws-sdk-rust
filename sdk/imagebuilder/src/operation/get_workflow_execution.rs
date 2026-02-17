@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workflow_execu
     }
 }
 
-pub use crate::operation::get_workflow_execution::_get_workflow_execution_output::GetWorkflowExecutionOutput;
-
 pub use crate::operation::get_workflow_execution::_get_workflow_execution_input::GetWorkflowExecutionInput;
+
+pub use crate::operation::get_workflow_execution::_get_workflow_execution_output::GetWorkflowExecutionOutput;
 
 mod _get_workflow_execution_input;
 

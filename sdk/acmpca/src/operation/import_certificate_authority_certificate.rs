@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_certificate
     }
 }
 
-pub use crate::operation::import_certificate_authority_certificate::_import_certificate_authority_certificate_output::ImportCertificateAuthorityCertificateOutput;
-
 pub use crate::operation::import_certificate_authority_certificate::_import_certificate_authority_certificate_input::ImportCertificateAuthorityCertificateInput;
+
+pub use crate::operation::import_certificate_authority_certificate::_import_certificate_authority_certificate_output::ImportCertificateAuthorityCertificateOutput;
 
 mod _import_certificate_authority_certificate_input;
 

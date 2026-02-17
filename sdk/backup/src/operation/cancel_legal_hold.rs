@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_legal_hold:
     }
 }
 
-pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_output::CancelLegalHoldOutput;
-
 pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_input::CancelLegalHoldInput;
+
+pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_output::CancelLegalHoldOutput;
 
 mod _cancel_legal_hold_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_profile::En
     }
 }
 
-pub use crate::operation::enable_profile::_enable_profile_output::EnableProfileOutput;
-
 pub use crate::operation::enable_profile::_enable_profile_input::EnableProfileInput;
+
+pub use crate::operation::enable_profile::_enable_profile_output::EnableProfileOutput;
 
 mod _enable_profile_input;
 

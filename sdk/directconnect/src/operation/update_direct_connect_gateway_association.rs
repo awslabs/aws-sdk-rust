@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_direct_conn
     }
 }
 
-pub use crate::operation::update_direct_connect_gateway_association::_update_direct_connect_gateway_association_output::UpdateDirectConnectGatewayAssociationOutput;
-
 pub use crate::operation::update_direct_connect_gateway_association::_update_direct_connect_gateway_association_input::UpdateDirectConnectGatewayAssociationInput;
+
+pub use crate::operation::update_direct_connect_gateway_association::_update_direct_connect_gateway_association_output::UpdateDirectConnectGatewayAssociationOutput;
 
 mod _update_direct_connect_gateway_association_input;
 

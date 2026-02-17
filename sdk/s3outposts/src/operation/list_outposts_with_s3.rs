@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_outposts_with
     }
 }
 
-pub use crate::operation::list_outposts_with_s3::_list_outposts_with_s3_output::ListOutpostsWithS3Output;
-
 pub use crate::operation::list_outposts_with_s3::_list_outposts_with_s3_input::ListOutpostsWithS3Input;
+
+pub use crate::operation::list_outposts_with_s3::_list_outposts_with_s3_output::ListOutpostsWithS3Output;
 
 mod _list_outposts_with_s3_input;
 

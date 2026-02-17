@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_journey::Cr
     }
 }
 
-pub use crate::operation::create_journey::_create_journey_output::CreateJourneyOutput;
-
 pub use crate::operation::create_journey::_create_journey_input::CreateJourneyInput;
+
+pub use crate::operation::create_journey::_create_journey_output::CreateJourneyOutput;
 
 mod _create_journey_input;
 

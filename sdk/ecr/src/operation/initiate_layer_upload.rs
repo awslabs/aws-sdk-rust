@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initiate_layer_upl
     }
 }
 
-pub use crate::operation::initiate_layer_upload::_initiate_layer_upload_output::InitiateLayerUploadOutput;
-
 pub use crate::operation::initiate_layer_upload::_initiate_layer_upload_input::InitiateLayerUploadInput;
+
+pub use crate::operation::initiate_layer_upload::_initiate_layer_upload_output::InitiateLayerUploadOutput;
 
 mod _initiate_layer_upload_input;
 

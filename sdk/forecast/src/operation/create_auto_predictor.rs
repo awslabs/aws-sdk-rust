@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_auto_predic
     }
 }
 
-pub use crate::operation::create_auto_predictor::_create_auto_predictor_output::CreateAutoPredictorOutput;
-
 pub use crate::operation::create_auto_predictor::_create_auto_predictor_input::CreateAutoPredictorInput;
+
+pub use crate::operation::create_auto_predictor::_create_auto_predictor_output::CreateAutoPredictorOutput;
 
 mod _create_auto_predictor_input;
 

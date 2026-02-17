@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_reco
     }
 }
 
-pub use crate::operation::list_resource_record_sets::_list_resource_record_sets_output::ListResourceRecordSetsOutput;
-
 pub use crate::operation::list_resource_record_sets::_list_resource_record_sets_input::ListResourceRecordSetsInput;
+
+pub use crate::operation::list_resource_record_sets::_list_resource_record_sets_output::ListResourceRecordSetsOutput;
 
 mod _list_resource_record_sets_input;
 

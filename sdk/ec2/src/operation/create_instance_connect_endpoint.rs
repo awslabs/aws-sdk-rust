@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_instance_co
     }
 }
 
-pub use crate::operation::create_instance_connect_endpoint::_create_instance_connect_endpoint_output::CreateInstanceConnectEndpointOutput;
-
 pub use crate::operation::create_instance_connect_endpoint::_create_instance_connect_endpoint_input::CreateInstanceConnectEndpointInput;
+
+pub use crate::operation::create_instance_connect_endpoint::_create_instance_connect_endpoint_output::CreateInstanceConnectEndpointOutput;
 
 mod _create_instance_connect_endpoint_input;
 

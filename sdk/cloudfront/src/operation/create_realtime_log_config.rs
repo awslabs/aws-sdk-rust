@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_realtime_lo
     }
 }
 
-pub use crate::operation::create_realtime_log_config::_create_realtime_log_config_output::CreateRealtimeLogConfigOutput;
-
 pub use crate::operation::create_realtime_log_config::_create_realtime_log_config_input::CreateRealtimeLogConfigInput;
+
+pub use crate::operation::create_realtime_log_config::_create_realtime_log_config_output::CreateRealtimeLogConfigOutput;
 
 mod _create_realtime_log_config_input;
 

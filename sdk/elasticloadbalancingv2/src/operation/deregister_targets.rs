@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_targets
     }
 }
 
-pub use crate::operation::deregister_targets::_deregister_targets_output::DeregisterTargetsOutput;
-
 pub use crate::operation::deregister_targets::_deregister_targets_input::DeregisterTargetsInput;
+
+pub use crate::operation::deregister_targets::_deregister_targets_output::DeregisterTargetsOutput;
 
 mod _deregister_targets_input;
 

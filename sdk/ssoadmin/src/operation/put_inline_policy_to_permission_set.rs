@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_inline_policy_
     }
 }
 
-pub use crate::operation::put_inline_policy_to_permission_set::_put_inline_policy_to_permission_set_output::PutInlinePolicyToPermissionSetOutput;
-
 pub use crate::operation::put_inline_policy_to_permission_set::_put_inline_policy_to_permission_set_input::PutInlinePolicyToPermissionSetInput;
+
+pub use crate::operation::put_inline_policy_to_permission_set::_put_inline_policy_to_permission_set_output::PutInlinePolicyToPermissionSetOutput;
 
 mod _put_inline_policy_to_permission_set_input;
 

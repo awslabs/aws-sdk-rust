@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_telemetry_enri
     }
 }
 
-pub use crate::operation::get_telemetry_enrichment_status::_get_telemetry_enrichment_status_output::GetTelemetryEnrichmentStatusOutput;
-
 pub use crate::operation::get_telemetry_enrichment_status::_get_telemetry_enrichment_status_input::GetTelemetryEnrichmentStatusInput;
+
+pub use crate::operation::get_telemetry_enrichment_status::_get_telemetry_enrichment_status_output::GetTelemetryEnrichmentStatusOutput;
 
 mod _get_telemetry_enrichment_status_input;
 

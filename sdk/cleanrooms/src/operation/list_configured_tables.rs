@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configured_ta
     }
 }
 
-pub use crate::operation::list_configured_tables::_list_configured_tables_output::ListConfiguredTablesOutput;
-
 pub use crate::operation::list_configured_tables::_list_configured_tables_input::ListConfiguredTablesInput;
+
+pub use crate::operation::list_configured_tables::_list_configured_tables_output::ListConfiguredTablesOutput;
 
 mod _list_configured_tables_input;
 

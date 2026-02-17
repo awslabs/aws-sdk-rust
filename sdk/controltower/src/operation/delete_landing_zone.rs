@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_landing_zon
     }
 }
 
-pub use crate::operation::delete_landing_zone::_delete_landing_zone_output::DeleteLandingZoneOutput;
-
 pub use crate::operation::delete_landing_zone::_delete_landing_zone_input::DeleteLandingZoneInput;
+
+pub use crate::operation::delete_landing_zone::_delete_landing_zone_output::DeleteLandingZoneOutput;
 
 mod _delete_landing_zone_input;
 

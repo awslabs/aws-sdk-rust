@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_comment_reacti
     }
 }
 
-pub use crate::operation::put_comment_reaction::_put_comment_reaction_output::PutCommentReactionOutput;
-
 pub use crate::operation::put_comment_reaction::_put_comment_reaction_input::PutCommentReactionInput;
+
+pub use crate::operation::put_comment_reaction::_put_comment_reaction_output::PutCommentReactionOutput;
 
 mod _put_comment_reaction_input;
 

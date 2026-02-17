@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hls_streaming_
     }
 }
 
-pub use crate::operation::get_hls_streaming_session_url::_get_hls_streaming_session_url_output::GetHlsStreamingSessionUrlOutput;
-
 pub use crate::operation::get_hls_streaming_session_url::_get_hls_streaming_session_url_input::GetHlsStreamingSessionUrlInput;
+
+pub use crate::operation::get_hls_streaming_session_url::_get_hls_streaming_session_url_output::GetHlsStreamingSessionUrlOutput;
 
 mod _get_hls_streaming_session_url_input;
 

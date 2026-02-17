@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_job_shipmen
     }
 }
 
-pub use crate::operation::update_job_shipment_state::_update_job_shipment_state_output::UpdateJobShipmentStateOutput;
-
 pub use crate::operation::update_job_shipment_state::_update_job_shipment_state_input::UpdateJobShipmentStateInput;
+
+pub use crate::operation::update_job_shipment_state::_update_job_shipment_state_output::UpdateJobShipmentStateOutput;
 
 mod _update_job_shipment_state_input;
 

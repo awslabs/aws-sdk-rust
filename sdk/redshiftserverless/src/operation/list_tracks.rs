@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tracks::ListT
     }
 }
 
-pub use crate::operation::list_tracks::_list_tracks_output::ListTracksOutput;
-
 pub use crate::operation::list_tracks::_list_tracks_input::ListTracksInput;
+
+pub use crate::operation::list_tracks::_list_tracks_output::ListTracksOutput;
 
 mod _list_tracks_input;
 

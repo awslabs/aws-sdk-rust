@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_chat_respon
     }
 }
 
-pub use crate::operation::delete_chat_response_configuration::_delete_chat_response_configuration_output::DeleteChatResponseConfigurationOutput;
-
 pub use crate::operation::delete_chat_response_configuration::_delete_chat_response_configuration_input::DeleteChatResponseConfigurationInput;
+
+pub use crate::operation::delete_chat_response_configuration::_delete_chat_response_configuration_output::DeleteChatResponseConfigurationOutput;
 
 mod _delete_chat_response_configuration_input;
 

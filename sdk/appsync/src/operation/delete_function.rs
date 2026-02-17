@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_function::D
     }
 }
 
-pub use crate::operation::delete_function::_delete_function_output::DeleteFunctionOutput;
-
 pub use crate::operation::delete_function::_delete_function_input::DeleteFunctionInput;
+
+pub use crate::operation::delete_function::_delete_function_output::DeleteFunctionOutput;
 
 mod _delete_function_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_route_respo
     }
 }
 
-pub use crate::operation::delete_route_response::_delete_route_response_output::DeleteRouteResponseOutput;
-
 pub use crate::operation::delete_route_response::_delete_route_response_input::DeleteRouteResponseInput;
+
+pub use crate::operation::delete_route_response::_delete_route_response_output::DeleteRouteResponseOutput;
 
 mod _delete_route_response_input;
 

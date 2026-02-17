@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stack_insta
     }
 }
 
-pub use crate::operation::update_stack_instances::_update_stack_instances_output::UpdateStackInstancesOutput;
-
 pub use crate::operation::update_stack_instances::_update_stack_instances_input::UpdateStackInstancesInput;
+
+pub use crate::operation::update_stack_instances::_update_stack_instances_output::UpdateStackInstancesOutput;
 
 mod _update_stack_instances_input;
 

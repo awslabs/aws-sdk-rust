@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::take_router_input:
     }
 }
 
-pub use crate::operation::take_router_input::_take_router_input_output::TakeRouterInputOutput;
-
 pub use crate::operation::take_router_input::_take_router_input_input::TakeRouterInputInput;
+
+pub use crate::operation::take_router_input::_take_router_input_output::TakeRouterInputOutput;
 
 mod _take_router_input_input;
 

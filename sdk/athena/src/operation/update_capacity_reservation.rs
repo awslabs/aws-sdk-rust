@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_capacity_re
     }
 }
 
-pub use crate::operation::update_capacity_reservation::_update_capacity_reservation_output::UpdateCapacityReservationOutput;
-
 pub use crate::operation::update_capacity_reservation::_update_capacity_reservation_input::UpdateCapacityReservationInput;
+
+pub use crate::operation::update_capacity_reservation::_update_capacity_reservation_output::UpdateCapacityReservationOutput;
 
 mod _update_capacity_reservation_input;
 

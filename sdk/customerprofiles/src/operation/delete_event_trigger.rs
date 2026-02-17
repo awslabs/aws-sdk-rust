@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_trigg
     }
 }
 
-pub use crate::operation::delete_event_trigger::_delete_event_trigger_output::DeleteEventTriggerOutput;
-
 pub use crate::operation::delete_event_trigger::_delete_event_trigger_input::DeleteEventTriggerInput;
+
+pub use crate::operation::delete_event_trigger::_delete_event_trigger_output::DeleteEventTriggerOutput;
 
 mod _delete_event_trigger_input;
 

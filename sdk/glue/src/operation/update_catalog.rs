@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_catalog::Up
     }
 }
 
-pub use crate::operation::update_catalog::_update_catalog_output::UpdateCatalogOutput;
-
 pub use crate::operation::update_catalog::_update_catalog_input::UpdateCatalogInput;
+
+pub use crate::operation::update_catalog::_update_catalog_output::UpdateCatalogOutput;
 
 mod _update_catalog_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_media_pipeline_kinesis_video_stream_pool::_delete_media_pipeline_kinesis_video_stream_pool_output::DeleteMediaPipelineKinesisVideoStreamPoolOutput;
-
 pub use crate::operation::delete_media_pipeline_kinesis_video_stream_pool::_delete_media_pipeline_kinesis_video_stream_pool_input::DeleteMediaPipelineKinesisVideoStreamPoolInput;
+
+pub use crate::operation::delete_media_pipeline_kinesis_video_stream_pool::_delete_media_pipeline_kinesis_video_stream_pool_output::DeleteMediaPipelineKinesisVideoStreamPoolOutput;
 
 mod _delete_media_pipeline_kinesis_video_stream_pool_input;
 

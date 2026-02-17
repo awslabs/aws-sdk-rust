@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_notific
     }
 }
 
-pub use crate::operation::put_bucket_notification_configuration::_put_bucket_notification_configuration_output::PutBucketNotificationConfigurationOutput;
-
 pub use crate::operation::put_bucket_notification_configuration::_put_bucket_notification_configuration_input::PutBucketNotificationConfigurationInput;
+
+pub use crate::operation::put_bucket_notification_configuration::_put_bucket_notification_configuration_output::PutBucketNotificationConfigurationOutput;
 
 mod _put_bucket_notification_configuration_input;
 

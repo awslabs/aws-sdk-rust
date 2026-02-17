@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trust::Dele
     }
 }
 
-pub use crate::operation::delete_trust::_delete_trust_output::DeleteTrustOutput;
-
 pub use crate::operation::delete_trust::_delete_trust_input::DeleteTrustInput;
+
+pub use crate::operation::delete_trust::_delete_trust_output::DeleteTrustOutput;
 
 mod _delete_trust_input;
 

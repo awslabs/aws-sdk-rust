@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_topic_rule
     }
 }
 
-pub use crate::operation::disable_topic_rule::_disable_topic_rule_output::DisableTopicRuleOutput;
-
 pub use crate::operation::disable_topic_rule::_disable_topic_rule_input::DisableTopicRuleInput;
+
+pub use crate::operation::disable_topic_rule::_disable_topic_rule_output::DisableTopicRuleOutput;
 
 mod _disable_topic_rule_input;
 

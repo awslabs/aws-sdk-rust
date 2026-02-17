@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpn_concent
     }
 }
 
-pub use crate::operation::delete_vpn_concentrator::_delete_vpn_concentrator_output::DeleteVpnConcentratorOutput;
-
 pub use crate::operation::delete_vpn_concentrator::_delete_vpn_concentrator_input::DeleteVpnConcentratorInput;
+
+pub use crate::operation::delete_vpn_concentrator::_delete_vpn_concentrator_output::DeleteVpnConcentratorOutput;
 
 mod _delete_vpn_concentrator_input;
 

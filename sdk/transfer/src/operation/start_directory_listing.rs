@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_directory_li
     }
 }
 
-pub use crate::operation::start_directory_listing::_start_directory_listing_output::StartDirectoryListingOutput;
-
 pub use crate::operation::start_directory_listing::_start_directory_listing_input::StartDirectoryListingInput;
+
+pub use crate::operation::start_directory_listing::_start_directory_listing_output::StartDirectoryListingOutput;
 
 mod _start_directory_listing_input;
 

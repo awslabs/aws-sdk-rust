@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::chat_sync::ChatSyn
     }
 }
 
-pub use crate::operation::chat_sync::_chat_sync_output::ChatSyncOutput;
-
 pub use crate::operation::chat_sync::_chat_sync_input::ChatSyncInput;
+
+pub use crate::operation::chat_sync::_chat_sync_output::ChatSyncOutput;
 
 mod _chat_sync_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_memories::Lis
     }
 }
 
-pub use crate::operation::list_memories::_list_memories_output::ListMemoriesOutput;
-
 pub use crate::operation::list_memories::_list_memories_input::ListMemoriesInput;
+
+pub use crate::operation::list_memories::_list_memories_output::ListMemoriesOutput;
 
 mod _list_memories_input;
 

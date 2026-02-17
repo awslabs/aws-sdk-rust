@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_aliases::
     }
 }
 
-pub use crate::operation::list_bot_aliases::_list_bot_aliases_output::ListBotAliasesOutput;
-
 pub use crate::operation::list_bot_aliases::_list_bot_aliases_input::ListBotAliasesInput;
+
+pub use crate::operation::list_bot_aliases::_list_bot_aliases_output::ListBotAliasesOutput;
 
 mod _list_bot_aliases_input;
 

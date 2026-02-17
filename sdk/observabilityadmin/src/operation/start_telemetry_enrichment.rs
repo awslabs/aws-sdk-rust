@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_telemetry_en
     }
 }
 
-pub use crate::operation::start_telemetry_enrichment::_start_telemetry_enrichment_output::StartTelemetryEnrichmentOutput;
-
 pub use crate::operation::start_telemetry_enrichment::_start_telemetry_enrichment_input::StartTelemetryEnrichmentInput;
+
+pub use crate::operation::start_telemetry_enrichment::_start_telemetry_enrichment_output::StartTelemetryEnrichmentOutput;
 
 mod _start_telemetry_enrichment_input;
 

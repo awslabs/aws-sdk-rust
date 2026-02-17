@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_author
     }
 }
 
-pub use crate::operation::get_account_authorization_details::_get_account_authorization_details_output::GetAccountAuthorizationDetailsOutput;
-
 pub use crate::operation::get_account_authorization_details::_get_account_authorization_details_input::GetAccountAuthorizationDetailsInput;
+
+pub use crate::operation::get_account_authorization_details::_get_account_authorization_details_output::GetAccountAuthorizationDetailsOutput;
 
 mod _get_account_authorization_details_input;
 

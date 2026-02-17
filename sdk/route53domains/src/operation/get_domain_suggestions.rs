@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_suggest
     }
 }
 
-pub use crate::operation::get_domain_suggestions::_get_domain_suggestions_output::GetDomainSuggestionsOutput;
-
 pub use crate::operation::get_domain_suggestions::_get_domain_suggestions_input::GetDomainSuggestionsInput;
+
+pub use crate::operation::get_domain_suggestions::_get_domain_suggestions_output::GetDomainSuggestionsOutput;
 
 mod _get_domain_suggestions_input;
 

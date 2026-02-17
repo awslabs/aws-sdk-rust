@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_table_pr
     }
 }
 
-pub use crate::operation::list_data_table_primary_values::_list_data_table_primary_values_output::ListDataTablePrimaryValuesOutput;
-
 pub use crate::operation::list_data_table_primary_values::_list_data_table_primary_values_input::ListDataTablePrimaryValuesInput;
+
+pub use crate::operation::list_data_table_primary_values::_list_data_table_primary_values_output::ListDataTablePrimaryValuesOutput;
 
 mod _list_data_table_primary_values_input;
 

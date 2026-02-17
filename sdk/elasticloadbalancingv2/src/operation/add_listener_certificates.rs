@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_listener_certi
     }
 }
 
-pub use crate::operation::add_listener_certificates::_add_listener_certificates_output::AddListenerCertificatesOutput;
-
 pub use crate::operation::add_listener_certificates::_add_listener_certificates_input::AddListenerCertificatesInput;
+
+pub use crate::operation::add_listener_certificates::_add_listener_certificates_output::AddListenerCertificatesOutput;
 
 mod _add_listener_certificates_input;
 

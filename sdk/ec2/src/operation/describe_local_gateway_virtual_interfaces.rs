@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_local_gat
     }
 }
 
-pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_local_gateway_virtual_interfaces_output::DescribeLocalGatewayVirtualInterfacesOutput;
-
 pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_local_gateway_virtual_interfaces_input::DescribeLocalGatewayVirtualInterfacesInput;
+
+pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_local_gateway_virtual_interfaces_output::DescribeLocalGatewayVirtualInterfacesOutput;
 
 mod _describe_local_gateway_virtual_interfaces_input;
 

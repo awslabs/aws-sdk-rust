@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_speaker::De
     }
 }
 
-pub use crate::operation::delete_speaker::_delete_speaker_output::DeleteSpeakerOutput;
-
 pub use crate::operation::delete_speaker::_delete_speaker_input::DeleteSpeakerInput;
+
+pub use crate::operation::delete_speaker::_delete_speaker_output::DeleteSpeakerOutput;
 
 mod _delete_speaker_input;
 

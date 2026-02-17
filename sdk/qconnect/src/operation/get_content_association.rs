@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_content_associ
     }
 }
 
-pub use crate::operation::get_content_association::_get_content_association_output::GetContentAssociationOutput;
-
 pub use crate::operation::get_content_association::_get_content_association_input::GetContentAssociationInput;
+
+pub use crate::operation::get_content_association::_get_content_association_output::GetContentAssociationOutput;
 
 mod _get_content_association_input;
 

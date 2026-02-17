@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_regions_fro
     }
 }
 
-pub use crate::operation::remove_regions_from_replication::_remove_regions_from_replication_output::RemoveRegionsFromReplicationOutput;
-
 pub use crate::operation::remove_regions_from_replication::_remove_regions_from_replication_input::RemoveRegionsFromReplicationInput;
+
+pub use crate::operation::remove_regions_from_replication::_remove_regions_from_replication_output::RemoveRegionsFromReplicationOutput;
 
 mod _remove_regions_from_replication_input;
 

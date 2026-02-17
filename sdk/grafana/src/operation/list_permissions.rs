@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_permissions::
     }
 }
 
-pub use crate::operation::list_permissions::_list_permissions_output::ListPermissionsOutput;
-
 pub use crate::operation::list_permissions::_list_permissions_input::ListPermissionsInput;
+
+pub use crate::operation::list_permissions::_list_permissions_output::ListPermissionsOutput;
 
 mod _list_permissions_input;
 

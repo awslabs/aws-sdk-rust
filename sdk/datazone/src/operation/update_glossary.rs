@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_glossary::U
     }
 }
 
-pub use crate::operation::update_glossary::_update_glossary_output::UpdateGlossaryOutput;
-
 pub use crate::operation::update_glossary::_update_glossary_input::UpdateGlossaryInput;
+
+pub use crate::operation::update_glossary::_update_glossary_output::UpdateGlossaryOutput;
 
 mod _update_glossary_input;
 

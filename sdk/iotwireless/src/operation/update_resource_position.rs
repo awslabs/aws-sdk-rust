@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_po
     }
 }
 
-pub use crate::operation::update_resource_position::_update_resource_position_output::UpdateResourcePositionOutput;
-
 pub use crate::operation::update_resource_position::_update_resource_position_input::UpdateResourcePositionInput;
+
+pub use crate::operation::update_resource_position::_update_resource_position_output::UpdateResourcePositionOutput;
 
 mod _update_resource_position_input;
 

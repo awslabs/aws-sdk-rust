@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_package_i
     }
 }
 
-pub use crate::operation::describe_package_import_job::_describe_package_import_job_output::DescribePackageImportJobOutput;
-
 pub use crate::operation::describe_package_import_job::_describe_package_import_job_input::DescribePackageImportJobInput;
+
+pub use crate::operation::describe_package_import_job::_describe_package_import_job_output::DescribePackageImportJobOutput;
 
 mod _describe_package_import_job_input;
 

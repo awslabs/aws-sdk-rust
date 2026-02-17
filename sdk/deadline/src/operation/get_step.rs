@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_step::GetStepE
     }
 }
 
-pub use crate::operation::get_step::_get_step_output::GetStepOutput;
-
 pub use crate::operation::get_step::_get_step_input::GetStepInput;
+
+pub use crate::operation::get_step::_get_step_output::GetStepOutput;
 
 mod _get_step_input;
 

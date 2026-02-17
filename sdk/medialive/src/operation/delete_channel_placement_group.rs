@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_channel_pla
     }
 }
 
-pub use crate::operation::delete_channel_placement_group::_delete_channel_placement_group_output::DeleteChannelPlacementGroupOutput;
-
 pub use crate::operation::delete_channel_placement_group::_delete_channel_placement_group_input::DeleteChannelPlacementGroupInput;
+
+pub use crate::operation::delete_channel_placement_group::_delete_channel_placement_group_output::DeleteChannelPlacementGroupOutput;
 
 mod _delete_channel_placement_group_input;
 

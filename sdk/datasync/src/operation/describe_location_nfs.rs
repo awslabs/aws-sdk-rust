@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_nfs::_describe_location_nfs_output::DescribeLocationNfsOutput;
-
 pub use crate::operation::describe_location_nfs::_describe_location_nfs_input::DescribeLocationNfsInput;
+
+pub use crate::operation::describe_location_nfs::_describe_location_nfs_output::DescribeLocationNfsOutput;
 
 mod _describe_location_nfs_input;
 

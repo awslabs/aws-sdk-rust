@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_provid
     }
 }
 
-pub use crate::operation::delete_data_provider::_delete_data_provider_output::DeleteDataProviderOutput;
-
 pub use crate::operation::delete_data_provider::_delete_data_provider_input::DeleteDataProviderInput;
+
+pub use crate::operation::delete_data_provider::_delete_data_provider_output::DeleteDataProviderOutput;
 
 mod _delete_data_provider_input;
 

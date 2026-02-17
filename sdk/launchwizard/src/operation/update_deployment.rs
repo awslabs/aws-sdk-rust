@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_deployment:
     }
 }
 
-pub use crate::operation::update_deployment::_update_deployment_output::UpdateDeploymentOutput;
-
 pub use crate::operation::update_deployment::_update_deployment_input::UpdateDeploymentInput;
+
+pub use crate::operation::update_deployment::_update_deployment_output::UpdateDeploymentOutput;
 
 mod _update_deployment_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_column_stati
     }
 }
 
-pub use crate::operation::start_column_statistics_task_run_schedule::_start_column_statistics_task_run_schedule_output::StartColumnStatisticsTaskRunScheduleOutput;
-
 pub use crate::operation::start_column_statistics_task_run_schedule::_start_column_statistics_task_run_schedule_input::StartColumnStatisticsTaskRunScheduleInput;
+
+pub use crate::operation::start_column_statistics_task_run_schedule::_start_column_statistics_task_run_schedule_output::StartColumnStatisticsTaskRunScheduleOutput;
 
 mod _start_column_statistics_task_run_schedule_input;
 

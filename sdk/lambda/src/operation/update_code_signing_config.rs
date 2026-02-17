@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_code_signin
     }
 }
 
-pub use crate::operation::update_code_signing_config::_update_code_signing_config_output::UpdateCodeSigningConfigOutput;
-
 pub use crate::operation::update_code_signing_config::_update_code_signing_config_input::UpdateCodeSigningConfigInput;
+
+pub use crate::operation::update_code_signing_config::_update_code_signing_config_output::UpdateCodeSigningConfigOutput;
 
 mod _update_code_signing_config_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_otp_message
     }
 }
 
-pub use crate::operation::verify_otp_message::_verify_otp_message_output::VerifyOtpMessageOutput;
-
 pub use crate::operation::verify_otp_message::_verify_otp_message_input::VerifyOtpMessageInput;
+
+pub use crate::operation::verify_otp_message::_verify_otp_message_output::VerifyOtpMessageOutput;
 
 mod _verify_otp_message_input;
 

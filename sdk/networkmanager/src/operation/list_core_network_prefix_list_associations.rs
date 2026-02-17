@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_network_
     }
 }
 
-pub use crate::operation::list_core_network_prefix_list_associations::_list_core_network_prefix_list_associations_output::ListCoreNetworkPrefixListAssociationsOutput;
-
 pub use crate::operation::list_core_network_prefix_list_associations::_list_core_network_prefix_list_associations_input::ListCoreNetworkPrefixListAssociationsInput;
+
+pub use crate::operation::list_core_network_prefix_list_associations::_list_core_network_prefix_list_associations_output::ListCoreNetworkPrefixListAssociationsOutput;
 
 mod _list_core_network_prefix_list_associations_input;
 

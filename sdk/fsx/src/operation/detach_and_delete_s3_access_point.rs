@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_and_delete_
     }
 }
 
-pub use crate::operation::detach_and_delete_s3_access_point::_detach_and_delete_s3_access_point_output::DetachAndDeleteS3AccessPointOutput;
-
 pub use crate::operation::detach_and_delete_s3_access_point::_detach_and_delete_s3_access_point_input::DetachAndDeleteS3AccessPointInput;
+
+pub use crate::operation::detach_and_delete_s3_access_point::_detach_and_delete_s3_access_point_output::DetachAndDeleteS3AccessPointOutput;
 
 mod _detach_and_delete_s3_access_point_input;
 

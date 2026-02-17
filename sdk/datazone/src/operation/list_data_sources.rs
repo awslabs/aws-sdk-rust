@@ -494,9 +494,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_sources:
     }
 }
 
-pub use crate::operation::list_data_sources::_list_data_sources_output::ListDataSourcesOutput;
-
 pub use crate::operation::list_data_sources::_list_data_sources_input::ListDataSourcesInput;
+
+pub use crate::operation::list_data_sources::_list_data_sources_output::ListDataSourcesOutput;
 
 mod _list_data_sources_input;
 

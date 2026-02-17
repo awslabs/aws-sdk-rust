@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_space::Dele
     }
 }
 
-pub use crate::operation::delete_space::_delete_space_output::DeleteSpaceOutput;
-
 pub use crate::operation::delete_space::_delete_space_input::DeleteSpaceInput;
+
+pub use crate::operation::delete_space::_delete_space_output::DeleteSpaceOutput;
 
 mod _delete_space_input;
 

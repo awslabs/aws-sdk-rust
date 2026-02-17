@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_canary::StopC
     }
 }
 
-pub use crate::operation::stop_canary::_stop_canary_output::StopCanaryOutput;
-
 pub use crate::operation::stop_canary::_stop_canary_input::StopCanaryInput;
+
+pub use crate::operation::stop_canary::_stop_canary_output::StopCanaryOutput;
 
 mod _stop_canary_input;
 

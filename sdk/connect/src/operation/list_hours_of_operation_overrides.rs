@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hours_of_oper
     }
 }
 
-pub use crate::operation::list_hours_of_operation_overrides::_list_hours_of_operation_overrides_output::ListHoursOfOperationOverridesOutput;
-
 pub use crate::operation::list_hours_of_operation_overrides::_list_hours_of_operation_overrides_input::ListHoursOfOperationOverridesInput;
+
+pub use crate::operation::list_hours_of_operation_overrides::_list_hours_of_operation_overrides_output::ListHoursOfOperationOverridesOutput;
 
 mod _list_hours_of_operation_overrides_input;
 

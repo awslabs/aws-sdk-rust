@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_ebs_encrypt
     }
 }
 
-pub use crate::operation::enable_ebs_encryption_by_default::_enable_ebs_encryption_by_default_output::EnableEbsEncryptionByDefaultOutput;
-
 pub use crate::operation::enable_ebs_encryption_by_default::_enable_ebs_encryption_by_default_input::EnableEbsEncryptionByDefaultInput;
+
+pub use crate::operation::enable_ebs_encryption_by_default::_enable_ebs_encryption_by_default_output::EnableEbsEncryptionByDefaultOutput;
 
 mod _enable_ebs_encryption_by_default_input;
 

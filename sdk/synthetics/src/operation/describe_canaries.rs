@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_canaries:
     }
 }
 
-pub use crate::operation::describe_canaries::_describe_canaries_output::DescribeCanariesOutput;
-
 pub use crate::operation::describe_canaries::_describe_canaries_input::DescribeCanariesInput;
+
+pub use crate::operation::describe_canaries::_describe_canaries_output::DescribeCanariesOutput;
 
 mod _describe_canaries_input;
 

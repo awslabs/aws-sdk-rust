@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_acti
     }
 }
 
-pub use crate::operation::create_custom_action::_create_custom_action_output::CreateCustomActionOutput;
-
 pub use crate::operation::create_custom_action::_create_custom_action_input::CreateCustomActionInput;
+
+pub use crate::operation::create_custom_action::_create_custom_action_output::CreateCustomActionOutput;
 
 mod _create_custom_action_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_model_versi
     }
 }
 
-pub use crate::operation::import_model_version::_import_model_version_output::ImportModelVersionOutput;
-
 pub use crate::operation::import_model_version::_import_model_version_input::ImportModelVersionInput;
+
+pub use crate::operation::import_model_version::_import_model_version_output::ImportModelVersionOutput;
 
 mod _import_model_version_input;
 

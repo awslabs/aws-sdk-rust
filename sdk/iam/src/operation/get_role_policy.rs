@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_role_policy::G
     }
 }
 
-pub use crate::operation::get_role_policy::_get_role_policy_output::GetRolePolicyOutput;
-
 pub use crate::operation::get_role_policy::_get_role_policy_input::GetRolePolicyInput;
+
+pub use crate::operation::get_role_policy::_get_role_policy_output::GetRolePolicyOutput;
 
 mod _get_role_policy_input;
 

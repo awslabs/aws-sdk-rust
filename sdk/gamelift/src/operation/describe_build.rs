@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_build::De
     }
 }
 
-pub use crate::operation::describe_build::_describe_build_output::DescribeBuildOutput;
-
 pub use crate::operation::describe_build::_describe_build_input::DescribeBuildInput;
+
+pub use crate::operation::describe_build::_describe_build_output::DescribeBuildOutput;
 
 mod _describe_build_input;
 

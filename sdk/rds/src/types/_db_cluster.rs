@@ -79,6 +79,16 @@ pub struct DbCluster {
     pub hosted_zone_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the DB cluster is encrypted.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
+    /// <p>The type of encryption used to protect data at rest in the DB cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
@@ -380,6 +390,18 @@ impl DbCluster {
     /// <p>Indicates whether the DB cluster is encrypted.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
     }
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -693,6 +715,7 @@ pub struct DbClusterBuilder {
     pub(crate) vpc_security_groups: ::std::option::Option<::std::vec::Vec<crate::types::VpcSecurityGroupMembership>>,
     pub(crate) hosted_zone_id: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_cluster_arn: ::std::option::Option<::std::string::String>,
@@ -1254,6 +1277,44 @@ impl DbClusterBuilder {
     /// <p>Indicates whether the DB cluster is encrypted.</p>
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
     }
     /// <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier for the encrypted DB cluster.</p>
     /// <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
@@ -2207,6 +2268,7 @@ impl DbClusterBuilder {
             vpc_security_groups: self.vpc_security_groups,
             hosted_zone_id: self.hosted_zone_id,
             storage_encrypted: self.storage_encrypted,
+            storage_encryption_type: self.storage_encryption_type,
             kms_key_id: self.kms_key_id,
             db_cluster_resource_id: self.db_cluster_resource_id,
             db_cluster_arn: self.db_cluster_arn,

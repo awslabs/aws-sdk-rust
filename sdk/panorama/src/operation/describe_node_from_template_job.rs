@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_node_from
     }
 }
 
-pub use crate::operation::describe_node_from_template_job::_describe_node_from_template_job_output::DescribeNodeFromTemplateJobOutput;
-
 pub use crate::operation::describe_node_from_template_job::_describe_node_from_template_job_input::DescribeNodeFromTemplateJobInput;
+
+pub use crate::operation::describe_node_from_template_job::_describe_node_from_template_job_output::DescribeNodeFromTemplateJobOutput;
 
 mod _describe_node_from_template_job_input;
 

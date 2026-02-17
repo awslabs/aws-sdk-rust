@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_key_pair::GetK
     }
 }
 
-pub use crate::operation::get_key_pair::_get_key_pair_output::GetKeyPairOutput;
-
 pub use crate::operation::get_key_pair::_get_key_pair_input::GetKeyPairInput;
+
+pub use crate::operation::get_key_pair::_get_key_pair_output::GetKeyPairOutput;
 
 mod _get_key_pair_input;
 

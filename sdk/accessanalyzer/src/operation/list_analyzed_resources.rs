@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analyzed_reso
     }
 }
 
-pub use crate::operation::list_analyzed_resources::_list_analyzed_resources_output::ListAnalyzedResourcesOutput;
-
 pub use crate::operation::list_analyzed_resources::_list_analyzed_resources_input::ListAnalyzedResourcesInput;
+
+pub use crate::operation::list_analyzed_resources::_list_analyzed_resources_output::ListAnalyzedResourcesOutput;
 
 mod _list_analyzed_resources_input;
 

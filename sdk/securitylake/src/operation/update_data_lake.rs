@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_lake::
     }
 }
 
-pub use crate::operation::update_data_lake::_update_data_lake_output::UpdateDataLakeOutput;
-
 pub use crate::operation::update_data_lake::_update_data_lake_input::UpdateDataLakeInput;
+
+pub use crate::operation::update_data_lake::_update_data_lake_output::UpdateDataLakeOutput;
 
 mod _update_data_lake_input;
 

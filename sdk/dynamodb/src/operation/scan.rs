@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::scan::ScanError {
     }
 }
 
-pub use crate::operation::scan::_scan_output::ScanOutput;
-
 pub use crate::operation::scan::_scan_input::ScanInput;
+
+pub use crate::operation::scan::_scan_output::ScanOutput;
 
 mod _scan_input;
 

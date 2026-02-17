@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_network_pro
     }
 }
 
-pub use crate::operation::update_network_profile::_update_network_profile_output::UpdateNetworkProfileOutput;
-
 pub use crate::operation::update_network_profile::_update_network_profile_input::UpdateNetworkProfileInput;
+
+pub use crate::operation::update_network_profile::_update_network_profile_output::UpdateNetworkProfileOutput;
 
 mod _update_network_profile_input;
 

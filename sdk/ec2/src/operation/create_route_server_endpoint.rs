@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_route_serve
     }
 }
 
-pub use crate::operation::create_route_server_endpoint::_create_route_server_endpoint_output::CreateRouteServerEndpointOutput;
-
 pub use crate::operation::create_route_server_endpoint::_create_route_server_endpoint_input::CreateRouteServerEndpointInput;
+
+pub use crate::operation::create_route_server_endpoint::_create_route_server_endpoint_output::CreateRouteServerEndpointOutput;
 
 mod _create_route_server_endpoint_input;
 

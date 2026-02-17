@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_report_grou
     }
 }
 
-pub use crate::operation::create_report_group::_create_report_group_output::CreateReportGroupOutput;
-
 pub use crate::operation::create_report_group::_create_report_group_input::CreateReportGroupInput;
+
+pub use crate::operation::create_report_group::_create_report_group_output::CreateReportGroupOutput;
 
 mod _create_report_group_input;
 

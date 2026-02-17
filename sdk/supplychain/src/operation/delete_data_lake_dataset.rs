@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_lake_d
     }
 }
 
-pub use crate::operation::delete_data_lake_dataset::_delete_data_lake_dataset_output::DeleteDataLakeDatasetOutput;
-
 pub use crate::operation::delete_data_lake_dataset::_delete_data_lake_dataset_input::DeleteDataLakeDatasetInput;
+
+pub use crate::operation::delete_data_lake_dataset::_delete_data_lake_dataset_output::DeleteDataLakeDatasetOutput;
 
 mod _delete_data_lake_dataset_input;
 

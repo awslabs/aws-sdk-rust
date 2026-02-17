@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::render_ui_template
     }
 }
 
-pub use crate::operation::render_ui_template::_render_ui_template_output::RenderUiTemplateOutput;
-
 pub use crate::operation::render_ui_template::_render_ui_template_input::RenderUiTemplateInput;
+
+pub use crate::operation::render_ui_template::_render_ui_template_output::RenderUiTemplateOutput;
 
 mod _render_ui_template_input;
 

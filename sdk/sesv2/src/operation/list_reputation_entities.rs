@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_reputation_en
     }
 }
 
-pub use crate::operation::list_reputation_entities::_list_reputation_entities_output::ListReputationEntitiesOutput;
-
 pub use crate::operation::list_reputation_entities::_list_reputation_entities_input::ListReputationEntitiesInput;
+
+pub use crate::operation::list_reputation_entities::_list_reputation_entities_output::ListReputationEntitiesOutput;
 
 mod _list_reputation_entities_input;
 

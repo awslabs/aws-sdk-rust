@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_capacity_ma
     }
 }
 
-pub use crate::operation::enable_capacity_manager::_enable_capacity_manager_output::EnableCapacityManagerOutput;
-
 pub use crate::operation::enable_capacity_manager::_enable_capacity_manager_input::EnableCapacityManagerInput;
+
+pub use crate::operation::enable_capacity_manager::_enable_capacity_manager_output::EnableCapacityManagerOutput;
 
 mod _enable_capacity_manager_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_connector
     }
 }
 
-pub use crate::operation::register_connector_v2::_register_connector_v2_output::RegisterConnectorV2Output;
-
 pub use crate::operation::register_connector_v2::_register_connector_v2_input::RegisterConnectorV2Input;
+
+pub use crate::operation::register_connector_v2::_register_connector_v2_output::RegisterConnectorV2Output;
 
 mod _register_connector_v2_input;
 

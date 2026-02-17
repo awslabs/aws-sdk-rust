@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_security_h
     }
 }
 
-pub use crate::operation::disable_security_hub::_disable_security_hub_output::DisableSecurityHubOutput;
-
 pub use crate::operation::disable_security_hub::_disable_security_hub_input::DisableSecurityHubInput;
+
+pub use crate::operation::disable_security_hub::_disable_security_hub_output::DisableSecurityHubOutput;
 
 mod _disable_security_hub_input;
 

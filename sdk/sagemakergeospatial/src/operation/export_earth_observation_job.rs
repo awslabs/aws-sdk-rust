@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_earth_obser
     }
 }
 
-pub use crate::operation::export_earth_observation_job::_export_earth_observation_job_output::ExportEarthObservationJobOutput;
-
 pub use crate::operation::export_earth_observation_job::_export_earth_observation_job_input::ExportEarthObservationJobInput;
+
+pub use crate::operation::export_earth_observation_job::_export_earth_observation_job_output::ExportEarthObservationJobOutput;
 
 mod _export_earth_observation_job_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_nodegroup_c
     }
 }
 
-pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_output::UpdateNodegroupConfigOutput;
-
 pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_input::UpdateNodegroupConfigInput;
+
+pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_output::UpdateNodegroupConfigOutput;
 
 mod _update_nodegroup_config_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_experienc
     }
 }
 
-pub use crate::operation::describe_experience::_describe_experience_output::DescribeExperienceOutput;
-
 pub use crate::operation::describe_experience::_describe_experience_input::DescribeExperienceInput;
+
+pub use crate::operation::describe_experience::_describe_experience_output::DescribeExperienceOutput;
 
 mod _describe_experience_input;
 

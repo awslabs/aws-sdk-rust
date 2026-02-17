@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_model_version:
     }
 }
 
-pub use crate::operation::get_model_version::_get_model_version_output::GetModelVersionOutput;
-
 pub use crate::operation::get_model_version::_get_model_version_input::GetModelVersionInput;
+
+pub use crate::operation::get_model_version::_get_model_version_output::GetModelVersionOutput;
 
 mod _get_model_version_input;
 

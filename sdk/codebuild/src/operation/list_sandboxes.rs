@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sandboxes::Li
     }
 }
 
-pub use crate::operation::list_sandboxes::_list_sandboxes_output::ListSandboxesOutput;
-
 pub use crate::operation::list_sandboxes::_list_sandboxes_input::ListSandboxesInput;
+
+pub use crate::operation::list_sandboxes::_list_sandboxes_output::ListSandboxesOutput;
 
 mod _list_sandboxes_input;
 

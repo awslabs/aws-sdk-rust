@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_source_serv
     }
 }
 
-pub use crate::operation::delete_source_server::_delete_source_server_output::DeleteSourceServerOutput;
-
 pub use crate::operation::delete_source_server::_delete_source_server_input::DeleteSourceServerInput;
+
+pub use crate::operation::delete_source_server::_delete_source_server_output::DeleteSourceServerOutput;
 
 mod _delete_source_server_input;
 

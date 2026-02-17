@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_introspection_
     }
 }
 
-pub use crate::operation::get_introspection_schema::_get_introspection_schema_output::GetIntrospectionSchemaOutput;
-
 pub use crate::operation::get_introspection_schema::_get_introspection_schema_input::GetIntrospectionSchemaInput;
+
+pub use crate::operation::get_introspection_schema::_get_introspection_schema_output::GetIntrospectionSchemaOutput;
 
 mod _get_introspection_schema_input;
 

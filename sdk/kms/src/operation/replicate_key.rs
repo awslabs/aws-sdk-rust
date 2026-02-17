@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replicate_key::Rep
     }
 }
 
-pub use crate::operation::replicate_key::_replicate_key_output::ReplicateKeyOutput;
-
 pub use crate::operation::replicate_key::_replicate_key_input::ReplicateKeyInput;
+
+pub use crate::operation::replicate_key::_replicate_key_output::ReplicateKeyOutput;
 
 mod _replicate_key_input;
 

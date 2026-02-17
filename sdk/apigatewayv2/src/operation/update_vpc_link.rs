@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vpc_link::U
     }
 }
 
-pub use crate::operation::update_vpc_link::_update_vpc_link_output::UpdateVpcLinkOutput;
-
 pub use crate::operation::update_vpc_link::_update_vpc_link_input::UpdateVpcLinkInput;
+
+pub use crate::operation::update_vpc_link::_update_vpc_link_output::UpdateVpcLinkOutput;
 
 mod _update_vpc_link_input;
 

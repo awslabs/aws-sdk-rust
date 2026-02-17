@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_browser_
     }
 }
 
-pub use crate::operation::associate_browser_settings::_associate_browser_settings_output::AssociateBrowserSettingsOutput;
-
 pub use crate::operation::associate_browser_settings::_associate_browser_settings_input::AssociateBrowserSettingsInput;
+
+pub use crate::operation::associate_browser_settings::_associate_browser_settings_output::AssociateBrowserSettingsOutput;
 
 mod _associate_browser_settings_input;
 

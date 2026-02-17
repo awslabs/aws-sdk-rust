@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_volum
     }
 }
 
-pub use crate::operation::disassociate_volume::_disassociate_volume_output::DisassociateVolumeOutput;
-
 pub use crate::operation::disassociate_volume::_disassociate_volume_input::DisassociateVolumeInput;
+
+pub use crate::operation::disassociate_volume::_disassociate_volume_output::DisassociateVolumeOutput;
 
 mod _disassociate_volume_input;
 

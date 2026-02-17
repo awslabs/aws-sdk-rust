@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workflow_ve
     }
 }
 
-pub use crate::operation::create_workflow_version::_create_workflow_version_output::CreateWorkflowVersionOutput;
-
 pub use crate::operation::create_workflow_version::_create_workflow_version_input::CreateWorkflowVersionInput;
+
+pub use crate::operation::create_workflow_version::_create_workflow_version_output::CreateWorkflowVersionOutput;
 
 mod _create_workflow_version_input;
 

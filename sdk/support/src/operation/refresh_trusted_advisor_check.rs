@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::refresh_trusted_ad
     }
 }
 
-pub use crate::operation::refresh_trusted_advisor_check::_refresh_trusted_advisor_check_output::RefreshTrustedAdvisorCheckOutput;
-
 pub use crate::operation::refresh_trusted_advisor_check::_refresh_trusted_advisor_check_input::RefreshTrustedAdvisorCheckInput;
+
+pub use crate::operation::refresh_trusted_advisor_check::_refresh_trusted_advisor_check_output::RefreshTrustedAdvisorCheckOutput;
 
 mod _refresh_trusted_advisor_check_input;
 

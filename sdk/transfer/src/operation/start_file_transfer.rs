@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_file_transfe
     }
 }
 
-pub use crate::operation::start_file_transfer::_start_file_transfer_output::StartFileTransferOutput;
-
 pub use crate::operation::start_file_transfer::_start_file_transfer_input::StartFileTransferInput;
+
+pub use crate::operation::start_file_transfer::_start_file_transfer_output::StartFileTransferOutput;
 
 mod _start_file_transfer_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_cells_
     }
 }
 
-pub use crate::operation::update_data_cells_filter::_update_data_cells_filter_output::UpdateDataCellsFilterOutput;
-
 pub use crate::operation::update_data_cells_filter::_update_data_cells_filter_input::UpdateDataCellsFilterInput;
+
+pub use crate::operation::update_data_cells_filter::_update_data_cells_filter_output::UpdateDataCellsFilterOutput;
 
 mod _update_data_cells_filter_input;
 

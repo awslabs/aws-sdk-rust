@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_associate_resources_to_custom_line_item::_batch_associate_resources_to_custom_line_item_output::BatchAssociateResourcesToCustomLineItemOutput;
-
 pub use crate::operation::batch_associate_resources_to_custom_line_item::_batch_associate_resources_to_custom_line_item_input::BatchAssociateResourcesToCustomLineItemInput;
+
+pub use crate::operation::batch_associate_resources_to_custom_line_item::_batch_associate_resources_to_custom_line_item_output::BatchAssociateResourcesToCustomLineItemOutput;
 
 mod _batch_associate_resources_to_custom_line_item_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_alias::De
     }
 }
 
-pub use crate::operation::describe_alias::_describe_alias_output::DescribeAliasOutput;
-
 pub use crate::operation::describe_alias::_describe_alias_input::DescribeAliasInput;
+
+pub use crate::operation::describe_alias::_describe_alias_output::DescribeAliasOutput;
 
 mod _describe_alias_input;
 

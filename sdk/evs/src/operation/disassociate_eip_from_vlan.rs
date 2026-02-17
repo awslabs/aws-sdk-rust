@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_eip_f
     }
 }
 
-pub use crate::operation::disassociate_eip_from_vlan::_disassociate_eip_from_vlan_output::DisassociateEipFromVlanOutput;
-
 pub use crate::operation::disassociate_eip_from_vlan::_disassociate_eip_from_vlan_input::DisassociateEipFromVlanInput;
+
+pub use crate::operation::disassociate_eip_from_vlan::_disassociate_eip_from_vlan_output::DisassociateEipFromVlanOutput;
 
 mod _disassociate_eip_from_vlan_input;
 

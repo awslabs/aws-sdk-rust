@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_query::Start
     }
 }
 
-pub use crate::operation::start_query::_start_query_output::StartQueryOutput;
-
 pub use crate::operation::start_query::_start_query_input::StartQueryInput;
+
+pub use crate::operation::start_query::_start_query_output::StartQueryOutput;
 
 mod _start_query_input;
 

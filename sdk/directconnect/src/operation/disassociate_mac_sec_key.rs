@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_mac_s
     }
 }
 
-pub use crate::operation::disassociate_mac_sec_key::_disassociate_mac_sec_key_output::DisassociateMacSecKeyOutput;
-
 pub use crate::operation::disassociate_mac_sec_key::_disassociate_mac_sec_key_input::DisassociateMacSecKeyInput;
+
+pub use crate::operation::disassociate_mac_sec_key::_disassociate_mac_sec_key_output::DisassociateMacSecKeyOutput;
 
 mod _disassociate_mac_sec_key_input;
 

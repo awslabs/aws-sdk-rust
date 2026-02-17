@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_firew
     }
 }
 
-pub use crate::operation::batch_delete_firewall_rule::_batch_delete_firewall_rule_output::BatchDeleteFirewallRuleOutput;
-
 pub use crate::operation::batch_delete_firewall_rule::_batch_delete_firewall_rule_input::BatchDeleteFirewallRuleInput;
+
+pub use crate::operation::batch_delete_firewall_rule::_batch_delete_firewall_rule_output::BatchDeleteFirewallRuleOutput;
 
 mod _batch_delete_firewall_rule_input;
 

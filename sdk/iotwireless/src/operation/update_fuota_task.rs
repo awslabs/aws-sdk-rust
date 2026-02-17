@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_fuota_task:
     }
 }
 
-pub use crate::operation::update_fuota_task::_update_fuota_task_output::UpdateFuotaTaskOutput;
-
 pub use crate::operation::update_fuota_task::_update_fuota_task_input::UpdateFuotaTaskInput;
+
+pub use crate::operation::update_fuota_task::_update_fuota_task_output::UpdateFuotaTaskOutput;
 
 mod _update_fuota_task_input;
 

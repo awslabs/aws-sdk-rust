@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_lex_b
     }
 }
 
-pub use crate::operation::disassociate_lex_bot::_disassociate_lex_bot_output::DisassociateLexBotOutput;
-
 pub use crate::operation::disassociate_lex_bot::_disassociate_lex_bot_input::DisassociateLexBotInput;
+
+pub use crate::operation::disassociate_lex_bot::_disassociate_lex_bot_output::DisassociateLexBotOutput;
 
 mod _disassociate_lex_bot_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_training_job:
     }
 }
 
-pub use crate::operation::stop_training_job::_stop_training_job_output::StopTrainingJobOutput;
-
 pub use crate::operation::stop_training_job::_stop_training_job_input::StopTrainingJobInput;
+
+pub use crate::operation::stop_training_job::_stop_training_job_output::StopTrainingJobOutput;
 
 mod _stop_training_job_input;
 

@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::share_directory::S
     }
 }
 
-pub use crate::operation::share_directory::_share_directory_output::ShareDirectoryOutput;
-
 pub use crate::operation::share_directory::_share_directory_input::ShareDirectoryInput;
+
+pub use crate::operation::share_directory::_share_directory_output::ShareDirectoryOutput;
 
 mod _share_directory_input;
 

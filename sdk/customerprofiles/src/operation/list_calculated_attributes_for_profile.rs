@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_calculated_at
     }
 }
 
-pub use crate::operation::list_calculated_attributes_for_profile::_list_calculated_attributes_for_profile_output::ListCalculatedAttributesForProfileOutput;
-
 pub use crate::operation::list_calculated_attributes_for_profile::_list_calculated_attributes_for_profile_input::ListCalculatedAttributesForProfileInput;
+
+pub use crate::operation::list_calculated_attributes_for_profile::_list_calculated_attributes_for_profile_output::ListCalculatedAttributesForProfileOutput;
 
 mod _list_calculated_attributes_for_profile_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_system_inst
     }
 }
 
-pub use crate::operation::search_system_instances::_search_system_instances_output::SearchSystemInstancesOutput;
-
 pub use crate::operation::search_system_instances::_search_system_instances_input::SearchSystemInstancesInput;
+
+pub use crate::operation::search_system_instances::_search_system_instances_output::SearchSystemInstancesOutput;
 
 mod _search_system_instances_input;
 

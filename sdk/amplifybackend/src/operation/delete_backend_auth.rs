@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backend_aut
     }
 }
 
-pub use crate::operation::delete_backend_auth::_delete_backend_auth_output::DeleteBackendAuthOutput;
-
 pub use crate::operation::delete_backend_auth::_delete_backend_auth_input::DeleteBackendAuthInput;
+
+pub use crate::operation::delete_backend_auth::_delete_backend_auth_output::DeleteBackendAuthOutput;
 
 mod _delete_backend_auth_input;
 

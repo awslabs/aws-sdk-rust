@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_update_standards_control_associations::_batch_update_standards_control_associations_output::BatchUpdateStandardsControlAssociationsOutput;
-
 pub use crate::operation::batch_update_standards_control_associations::_batch_update_standards_control_associations_input::BatchUpdateStandardsControlAssociationsInput;
+
+pub use crate::operation::batch_update_standards_control_associations::_batch_update_standards_control_associations_output::BatchUpdateStandardsControlAssociationsOutput;
 
 mod _batch_update_standards_control_associations_input;
 

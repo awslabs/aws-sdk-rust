@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_network_
     }
 }
 
-pub use crate::operation::list_core_network_policy_versions::_list_core_network_policy_versions_output::ListCoreNetworkPolicyVersionsOutput;
-
 pub use crate::operation::list_core_network_policy_versions::_list_core_network_policy_versions_input::ListCoreNetworkPolicyVersionsInput;
+
+pub use crate::operation::list_core_network_policy_versions::_list_core_network_policy_versions_output::ListCoreNetworkPolicyVersionsOutput;
 
 mod _list_core_network_policy_versions_input;
 

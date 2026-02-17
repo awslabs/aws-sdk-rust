@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vector_bucket
     }
 }
 
-pub use crate::operation::list_vector_buckets::_list_vector_buckets_output::ListVectorBucketsOutput;
-
 pub use crate::operation::list_vector_buckets::_list_vector_buckets_input::ListVectorBucketsInput;
+
+pub use crate::operation::list_vector_buckets::_list_vector_buckets_output::ListVectorBucketsOutput;
 
 mod _list_vector_buckets_input;
 

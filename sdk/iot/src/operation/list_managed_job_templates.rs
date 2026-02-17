@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_job_t
     }
 }
 
-pub use crate::operation::list_managed_job_templates::_list_managed_job_templates_output::ListManagedJobTemplatesOutput;
-
 pub use crate::operation::list_managed_job_templates::_list_managed_job_templates_input::ListManagedJobTemplatesInput;
+
+pub use crate::operation::list_managed_job_templates::_list_managed_job_templates_output::ListManagedJobTemplatesOutput;
 
 mod _list_managed_job_templates_input;
 

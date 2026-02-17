@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_routing_profi
     }
 }
 
-pub use crate::operation::list_routing_profiles::_list_routing_profiles_output::ListRoutingProfilesOutput;
-
 pub use crate::operation::list_routing_profiles::_list_routing_profiles_input::ListRoutingProfilesInput;
+
+pub use crate::operation::list_routing_profiles::_list_routing_profiles_output::ListRoutingProfilesOutput;
 
 mod _list_routing_profiles_input;
 

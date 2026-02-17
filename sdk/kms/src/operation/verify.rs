@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify::VerifyErro
     }
 }
 
-pub use crate::operation::verify::_verify_output::VerifyOutput;
-
 pub use crate::operation::verify::_verify_input::VerifyInput;
+
+pub use crate::operation::verify::_verify_output::VerifyOutput;
 
 mod _verify_input;
 

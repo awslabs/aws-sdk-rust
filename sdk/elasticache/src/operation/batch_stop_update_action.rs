@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_stop_update_
     }
 }
 
-pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_output::BatchStopUpdateActionOutput;
-
 pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_input::BatchStopUpdateActionInput;
+
+pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_output::BatchStopUpdateActionOutput;
 
 mod _batch_stop_update_action_input;
 

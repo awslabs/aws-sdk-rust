@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_permissio
     }
 }
 
-pub use crate::operation::get_flow_permissions::_get_flow_permissions_output::GetFlowPermissionsOutput;
-
 pub use crate::operation::get_flow_permissions::_get_flow_permissions_input::GetFlowPermissionsInput;
+
+pub use crate::operation::get_flow_permissions::_get_flow_permissions_output::GetFlowPermissionsOutput;
 
 mod _get_flow_permissions_input;
 

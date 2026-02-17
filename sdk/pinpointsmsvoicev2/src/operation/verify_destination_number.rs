@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_destination
     }
 }
 
-pub use crate::operation::verify_destination_number::_verify_destination_number_output::VerifyDestinationNumberOutput;
-
 pub use crate::operation::verify_destination_number::_verify_destination_number_input::VerifyDestinationNumberInput;
+
+pub use crate::operation::verify_destination_number::_verify_destination_number_output::VerifyDestinationNumberOutput;
 
 mod _verify_destination_number_input;
 

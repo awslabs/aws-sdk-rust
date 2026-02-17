@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_attribut
     }
 }
 
-pub use crate::operation::associate_attribute_group::_associate_attribute_group_output::AssociateAttributeGroupOutput;
-
 pub use crate::operation::associate_attribute_group::_associate_attribute_group_input::AssociateAttributeGroupInput;
+
+pub use crate::operation::associate_attribute_group::_associate_attribute_group_output::AssociateAttributeGroupOutput;
 
 mod _associate_attribute_group_input;
 

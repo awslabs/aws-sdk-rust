@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outpost_billin
     }
 }
 
-pub use crate::operation::get_outpost_billing_information::_get_outpost_billing_information_output::GetOutpostBillingInformationOutput;
-
 pub use crate::operation::get_outpost_billing_information::_get_outpost_billing_information_input::GetOutpostBillingInformationInput;
+
+pub use crate::operation::get_outpost_billing_information::_get_outpost_billing_information_output::GetOutpostBillingInformationOutput;
 
 mod _get_outpost_billing_information_input;
 

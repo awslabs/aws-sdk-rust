@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_lin
     }
 }
 
-pub use crate::operation::get_repository_link::_get_repository_link_output::GetRepositoryLinkOutput;
-
 pub use crate::operation::get_repository_link::_get_repository_link_input::GetRepositoryLinkInput;
+
+pub use crate::operation::get_repository_link::_get_repository_link_output::GetRepositoryLinkOutput;
 
 mod _get_repository_link_input;
 

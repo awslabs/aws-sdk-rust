@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_hd
     }
 }
 
-pub use crate::operation::create_location_hdfs::_create_location_hdfs_output::CreateLocationHdfsOutput;
-
 pub use crate::operation::create_location_hdfs::_create_location_hdfs_input::CreateLocationHdfsInput;
+
+pub use crate::operation::create_location_hdfs::_create_location_hdfs_output::CreateLocationHdfsOutput;
 
 mod _create_location_hdfs_input;
 

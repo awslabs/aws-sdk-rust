@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scaling_pla
     }
 }
 
-pub use crate::operation::delete_scaling_plan::_delete_scaling_plan_output::DeleteScalingPlanOutput;
-
 pub use crate::operation::delete_scaling_plan::_delete_scaling_plan_input::DeleteScalingPlanInput;
+
+pub use crate::operation::delete_scaling_plan::_delete_scaling_plan_output::DeleteScalingPlanOutput;
 
 mod _delete_scaling_plan_input;
 

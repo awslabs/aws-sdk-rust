@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_spans::ListSp
     }
 }
 
-pub use crate::operation::list_spans::_list_spans_output::ListSpansOutput;
-
 pub use crate::operation::list_spans::_list_spans_input::ListSpansInput;
+
+pub use crate::operation::list_spans::_list_spans_output::ListSpansOutput;
 
 mod _list_spans_input;
 

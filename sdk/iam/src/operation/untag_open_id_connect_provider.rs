@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_open_id_conn
     }
 }
 
-pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect_provider_output::UntagOpenIdConnectProviderOutput;
-
 pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect_provider_input::UntagOpenIdConnectProviderInput;
+
+pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect_provider_output::UntagOpenIdConnectProviderOutput;
 
 mod _untag_open_id_connect_provider_input;
 

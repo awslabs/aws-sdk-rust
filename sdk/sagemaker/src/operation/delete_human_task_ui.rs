@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_human_task_
     }
 }
 
-pub use crate::operation::delete_human_task_ui::_delete_human_task_ui_output::DeleteHumanTaskUiOutput;
-
 pub use crate::operation::delete_human_task_ui::_delete_human_task_ui_input::DeleteHumanTaskUiInput;
+
+pub use crate::operation::delete_human_task_ui::_delete_human_task_ui_output::DeleteHumanTaskUiOutput;
 
 mod _delete_human_task_ui_input;
 

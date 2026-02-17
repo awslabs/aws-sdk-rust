@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invalidate_project
     }
 }
 
-pub use crate::operation::invalidate_project_cache::_invalidate_project_cache_output::InvalidateProjectCacheOutput;
-
 pub use crate::operation::invalidate_project_cache::_invalidate_project_cache_input::InvalidateProjectCacheInput;
+
+pub use crate::operation::invalidate_project_cache::_invalidate_project_cache_output::InvalidateProjectCacheOutput;
 
 mod _invalidate_project_cache_input;
 

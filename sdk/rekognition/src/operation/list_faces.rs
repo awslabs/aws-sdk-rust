@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_faces::ListFa
     }
 }
 
-pub use crate::operation::list_faces::_list_faces_output::ListFacesOutput;
-
 pub use crate::operation::list_faces::_list_faces_input::ListFacesInput;
+
+pub use crate::operation::list_faces::_list_faces_output::ListFacesOutput;
 
 mod _list_faces_input;
 

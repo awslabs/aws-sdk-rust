@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_export_im
     }
 }
 
-pub use crate::operation::describe_export_image_tasks::_describe_export_image_tasks_output::DescribeExportImageTasksOutput;
-
 pub use crate::operation::describe_export_image_tasks::_describe_export_image_tasks_input::DescribeExportImageTasksInput;
+
+pub use crate::operation::describe_export_image_tasks::_describe_export_image_tasks_output::DescribeExportImageTasksOutput;
 
 mod _describe_export_image_tasks_input;
 

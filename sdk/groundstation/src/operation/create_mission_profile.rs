@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_mission_pro
     }
 }
 
-pub use crate::operation::create_mission_profile::_create_mission_profile_output::CreateMissionProfileOutput;
-
 pub use crate::operation::create_mission_profile::_create_mission_profile_input::CreateMissionProfileInput;
+
+pub use crate::operation::create_mission_profile::_create_mission_profile_output::CreateMissionProfileOutput;
 
 mod _create_mission_profile_input;
 

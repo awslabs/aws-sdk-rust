@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_identity_prov
     }
 }
 
-pub use crate::operation::test_identity_provider::_test_identity_provider_output::TestIdentityProviderOutput;
-
 pub use crate::operation::test_identity_provider::_test_identity_provider_input::TestIdentityProviderInput;
+
+pub use crate::operation::test_identity_provider::_test_identity_provider_output::TestIdentityProviderOutput;
 
 mod _test_identity_provider_input;
 

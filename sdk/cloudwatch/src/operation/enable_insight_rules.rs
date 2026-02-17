@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_insight_rul
     }
 }
 
-pub use crate::operation::enable_insight_rules::_enable_insight_rules_output::EnableInsightRulesOutput;
-
 pub use crate::operation::enable_insight_rules::_enable_insight_rules_input::EnableInsightRulesInput;
+
+pub use crate::operation::enable_insight_rules::_enable_insight_rules_output::EnableInsightRulesOutput;
 
 mod _enable_insight_rules_input;
 

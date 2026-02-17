@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_program::Up
     }
 }
 
-pub use crate::operation::update_program::_update_program_output::UpdateProgramOutput;
-
 pub use crate::operation::update_program::_update_program_input::UpdateProgramInput;
+
+pub use crate::operation::update_program::_update_program_output::UpdateProgramOutput;
 
 mod _update_program_input;
 

@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_virtual_n
     }
 }
 
-pub use crate::operation::describe_virtual_node::_describe_virtual_node_output::DescribeVirtualNodeOutput;
-
 pub use crate::operation::describe_virtual_node::_describe_virtual_node_input::DescribeVirtualNodeInput;
+
+pub use crate::operation::describe_virtual_node::_describe_virtual_node_output::DescribeVirtualNodeOutput;
 
 mod _describe_virtual_node_input;
 

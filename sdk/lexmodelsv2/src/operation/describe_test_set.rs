@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_test_set:
     }
 }
 
-pub use crate::operation::describe_test_set::_describe_test_set_output::DescribeTestSetOutput;
-
 pub use crate::operation::describe_test_set::_describe_test_set_input::DescribeTestSetInput;
+
+pub use crate::operation::describe_test_set::_describe_test_set_output::DescribeTestSetOutput;
 
 mod _describe_test_set_input;
 

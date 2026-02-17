@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_function_ev
     }
 }
 
-pub use crate::operation::delete_function_event_invoke_config::_delete_function_event_invoke_config_output::DeleteFunctionEventInvokeConfigOutput;
-
 pub use crate::operation::delete_function_event_invoke_config::_delete_function_event_invoke_config_input::DeleteFunctionEventInvokeConfigInput;
+
+pub use crate::operation::delete_function_event_invoke_config::_delete_function_event_invoke_config_output::DeleteFunctionEventInvokeConfigOutput;
 
 mod _delete_function_event_invoke_config_input;
 

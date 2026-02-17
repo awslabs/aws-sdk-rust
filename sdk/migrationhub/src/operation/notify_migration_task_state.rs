@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::notify_migration_t
     }
 }
 
-pub use crate::operation::notify_migration_task_state::_notify_migration_task_state_output::NotifyMigrationTaskStateOutput;
-
 pub use crate::operation::notify_migration_task_state::_notify_migration_task_state_input::NotifyMigrationTaskStateInput;
+
+pub use crate::operation::notify_migration_task_state::_notify_migration_task_state_output::NotifyMigrationTaskStateOutput;
 
 mod _notify_migration_task_state_input;
 

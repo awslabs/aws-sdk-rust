@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_fraud
     }
 }
 
-pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_output::DisassociateFraudsterOutput;
-
 pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_input::DisassociateFraudsterInput;
+
+pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_output::DisassociateFraudsterOutput;
 
 mod _disassociate_fraudster_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stream_grou
     }
 }
 
-pub use crate::operation::update_stream_group::_update_stream_group_output::UpdateStreamGroupOutput;
-
 pub use crate::operation::update_stream_group::_update_stream_group_input::UpdateStreamGroupInput;
+
+pub use crate::operation::update_stream_group::_update_stream_group_output::UpdateStreamGroupOutput;
 
 mod _update_stream_group_input;
 

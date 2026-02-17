@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_metadata_ge
     }
 }
 
-pub use crate::operation::cancel_metadata_generation_run::_cancel_metadata_generation_run_output::CancelMetadataGenerationRunOutput;
-
 pub use crate::operation::cancel_metadata_generation_run::_cancel_metadata_generation_run_input::CancelMetadataGenerationRunInput;
+
+pub use crate::operation::cancel_metadata_generation_run::_cancel_metadata_generation_run_output::CancelMetadataGenerationRunOutput;
 
 mod _cancel_metadata_generation_run_input;
 

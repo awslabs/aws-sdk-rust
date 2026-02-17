@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_tag_sync_ta
     }
 }
 
-pub use crate::operation::cancel_tag_sync_task::_cancel_tag_sync_task_output::CancelTagSyncTaskOutput;
-
 pub use crate::operation::cancel_tag_sync_task::_cancel_tag_sync_task_input::CancelTagSyncTaskInput;
+
+pub use crate::operation::cancel_tag_sync_task::_cancel_tag_sync_task_output::CancelTagSyncTaskOutput;
 
 mod _cancel_tag_sync_task_input;
 

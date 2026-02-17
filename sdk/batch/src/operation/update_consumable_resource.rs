@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_consumable_
     }
 }
 
-pub use crate::operation::update_consumable_resource::_update_consumable_resource_output::UpdateConsumableResourceOutput;
-
 pub use crate::operation::update_consumable_resource::_update_consumable_resource_input::UpdateConsumableResourceInput;
+
+pub use crate::operation::update_consumable_resource::_update_consumable_resource_output::UpdateConsumableResourceOutput;
 
 mod _update_consumable_resource_input;
 

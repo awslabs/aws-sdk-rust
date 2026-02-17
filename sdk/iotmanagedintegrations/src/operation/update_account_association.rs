@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account_ass
     }
 }
 
-pub use crate::operation::update_account_association::_update_account_association_output::UpdateAccountAssociationOutput;
-
 pub use crate::operation::update_account_association::_update_account_association_input::UpdateAccountAssociationInput;
+
+pub use crate::operation::update_account_association::_update_account_association_output::UpdateAccountAssociationOutput;
 
 mod _update_account_association_input;
 

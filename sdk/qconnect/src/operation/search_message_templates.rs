@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_message_tem
     }
 }
 
-pub use crate::operation::search_message_templates::_search_message_templates_output::SearchMessageTemplatesOutput;
-
 pub use crate::operation::search_message_templates::_search_message_templates_input::SearchMessageTemplatesInput;
+
+pub use crate::operation::search_message_templates::_search_message_templates_output::SearchMessageTemplatesOutput;
 
 mod _search_message_templates_input;
 

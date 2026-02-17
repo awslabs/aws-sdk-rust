@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_co
     }
 }
 
-pub use crate::operation::get_application_component_details::_get_application_component_details_output::GetApplicationComponentDetailsOutput;
-
 pub use crate::operation::get_application_component_details::_get_application_component_details_input::GetApplicationComponentDetailsInput;
+
+pub use crate::operation::get_application_component_details::_get_application_component_details_output::GetApplicationComponentDetailsOutput;
 
 mod _get_application_component_details_input;
 

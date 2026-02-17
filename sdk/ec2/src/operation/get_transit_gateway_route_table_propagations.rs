@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_transit_gateway_route_table_propagations::_get_transit_gateway_route_table_propagations_output::GetTransitGatewayRouteTablePropagationsOutput;
-
 pub use crate::operation::get_transit_gateway_route_table_propagations::_get_transit_gateway_route_table_propagations_input::GetTransitGatewayRouteTablePropagationsInput;
+
+pub use crate::operation::get_transit_gateway_route_table_propagations::_get_transit_gateway_route_table_propagations_output::GetTransitGatewayRouteTablePropagationsOutput;
 
 mod _get_transit_gateway_route_table_propagations_input;
 

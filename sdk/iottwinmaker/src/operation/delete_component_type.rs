@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_component_t
     }
 }
 
-pub use crate::operation::delete_component_type::_delete_component_type_output::DeleteComponentTypeOutput;
-
 pub use crate::operation::delete_component_type::_delete_component_type_input::DeleteComponentTypeInput;
+
+pub use crate::operation::delete_component_type::_delete_component_type_output::DeleteComponentTypeOutput;
 
 mod _delete_component_type_input;
 

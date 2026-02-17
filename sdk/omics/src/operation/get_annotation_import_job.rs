@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_annotation_imp
     }
 }
 
-pub use crate::operation::get_annotation_import_job::_get_annotation_import_job_output::GetAnnotationImportJobOutput;
-
 pub use crate::operation::get_annotation_import_job::_get_annotation_import_job_input::GetAnnotationImportJobInput;
+
+pub use crate::operation::get_annotation_import_job::_get_annotation_import_job_output::GetAnnotationImportJobOutput;
 
 mod _get_annotation_import_job_input;
 

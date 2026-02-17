@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_c
     }
 }
 
-pub use crate::operation::list_application_components::_list_application_components_output::ListApplicationComponentsOutput;
-
 pub use crate::operation::list_application_components::_list_application_components_input::ListApplicationComponentsInput;
+
+pub use crate::operation::list_application_components::_list_application_components_output::ListApplicationComponentsOutput;
 
 mod _list_application_components_input;
 

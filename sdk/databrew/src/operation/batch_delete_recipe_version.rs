@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_recip
     }
 }
 
-pub use crate::operation::batch_delete_recipe_version::_batch_delete_recipe_version_output::BatchDeleteRecipeVersionOutput;
-
 pub use crate::operation::batch_delete_recipe_version::_batch_delete_recipe_version_input::BatchDeleteRecipeVersionInput;
+
+pub use crate::operation::batch_delete_recipe_version::_batch_delete_recipe_version_output::BatchDeleteRecipeVersionOutput;
 
 mod _batch_delete_recipe_version_input;
 

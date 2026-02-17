@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_route_calcu
     }
 }
 
-pub use crate::operation::delete_route_calculator::_delete_route_calculator_output::DeleteRouteCalculatorOutput;
-
 pub use crate::operation::delete_route_calculator::_delete_route_calculator_input::DeleteRouteCalculatorInput;
+
+pub use crate::operation::delete_route_calculator::_delete_route_calculator_output::DeleteRouteCalculatorOutput;
 
 mod _delete_route_calculator_input;
 

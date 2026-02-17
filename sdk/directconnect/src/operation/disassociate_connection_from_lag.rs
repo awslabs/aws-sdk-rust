@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_conne
     }
 }
 
-pub use crate::operation::disassociate_connection_from_lag::_disassociate_connection_from_lag_output::DisassociateConnectionFromLagOutput;
-
 pub use crate::operation::disassociate_connection_from_lag::_disassociate_connection_from_lag_input::DisassociateConnectionFromLagInput;
+
+pub use crate::operation::disassociate_connection_from_lag::_disassociate_connection_from_lag_output::DisassociateConnectionFromLagOutput;
 
 mod _disassociate_connection_from_lag_input;
 

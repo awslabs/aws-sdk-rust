@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_documentati
     }
 }
 
-pub use crate::operation::delete_documentation_version::_delete_documentation_version_output::DeleteDocumentationVersionOutput;
-
 pub use crate::operation::delete_documentation_version::_delete_documentation_version_input::DeleteDocumentationVersionInput;
+
+pub use crate::operation::delete_documentation_version::_delete_documentation_version_output::DeleteDocumentationVersionOutput;
 
 mod _delete_documentation_version_input;
 

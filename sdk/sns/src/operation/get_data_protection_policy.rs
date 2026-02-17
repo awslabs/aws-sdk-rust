@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_protectio
     }
 }
 
-pub use crate::operation::get_data_protection_policy::_get_data_protection_policy_output::GetDataProtectionPolicyOutput;
-
 pub use crate::operation::get_data_protection_policy::_get_data_protection_policy_input::GetDataProtectionPolicyInput;
+
+pub use crate::operation::get_data_protection_policy::_get_data_protection_policy_output::GetDataProtectionPolicyOutput;
 
 mod _get_data_protection_policy_input;
 

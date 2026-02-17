@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_what_if_for
     }
 }
 
-pub use crate::operation::create_what_if_forecast_export::_create_what_if_forecast_export_output::CreateWhatIfForecastExportOutput;
-
 pub use crate::operation::create_what_if_forecast_export::_create_what_if_forecast_export_input::CreateWhatIfForecastExportInput;
+
+pub use crate::operation::create_what_if_forecast_export::_create_what_if_forecast_export_output::CreateWhatIfForecastExportOutput;
 
 mod _create_what_if_forecast_export_input;
 

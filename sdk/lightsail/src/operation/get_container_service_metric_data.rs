@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_serv
     }
 }
 
-pub use crate::operation::get_container_service_metric_data::_get_container_service_metric_data_output::GetContainerServiceMetricDataOutput;
-
 pub use crate::operation::get_container_service_metric_data::_get_container_service_metric_data_input::GetContainerServiceMetricDataInput;
+
+pub use crate::operation::get_container_service_metric_data::_get_container_service_metric_data_output::GetContainerServiceMetricDataOutput;
 
 mod _get_container_service_metric_data_input;
 

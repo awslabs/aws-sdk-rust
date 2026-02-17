@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_ev
     }
 }
 
-pub use crate::operation::update_resource_event_configuration::_update_resource_event_configuration_output::UpdateResourceEventConfigurationOutput;
-
 pub use crate::operation::update_resource_event_configuration::_update_resource_event_configuration_input::UpdateResourceEventConfigurationInput;
+
+pub use crate::operation::update_resource_event_configuration::_update_resource_event_configuration_output::UpdateResourceEventConfigurationOutput;
 
 mod _update_resource_event_configuration_input;
 

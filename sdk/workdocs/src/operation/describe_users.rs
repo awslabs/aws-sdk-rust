@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_users::De
     }
 }
 
-pub use crate::operation::describe_users::_describe_users_output::DescribeUsersOutput;
-
 pub use crate::operation::describe_users::_describe_users_input::DescribeUsersInput;
+
+pub use crate::operation::describe_users::_describe_users_output::DescribeUsersOutput;
 
 mod _describe_users_input;
 

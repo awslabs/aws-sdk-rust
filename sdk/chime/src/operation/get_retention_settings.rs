@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_retention_sett
     }
 }
 
-pub use crate::operation::get_retention_settings::_get_retention_settings_output::GetRetentionSettingsOutput;
-
 pub use crate::operation::get_retention_settings::_get_retention_settings_input::GetRetentionSettingsInput;
+
+pub use crate::operation::get_retention_settings::_get_retention_settings_output::GetRetentionSettingsOutput;
 
 mod _get_retention_settings_input;
 

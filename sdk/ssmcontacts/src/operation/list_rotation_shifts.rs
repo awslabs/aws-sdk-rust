@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rotation_shif
     }
 }
 
-pub use crate::operation::list_rotation_shifts::_list_rotation_shifts_output::ListRotationShiftsOutput;
-
 pub use crate::operation::list_rotation_shifts::_list_rotation_shifts_input::ListRotationShiftsInput;
+
+pub use crate::operation::list_rotation_shifts::_list_rotation_shifts_output::ListRotationShiftsOutput;
 
 mod _list_rotation_shifts_input;
 

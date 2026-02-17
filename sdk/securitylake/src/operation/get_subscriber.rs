@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_subscriber::Ge
     }
 }
 
-pub use crate::operation::get_subscriber::_get_subscriber_output::GetSubscriberOutput;
-
 pub use crate::operation::get_subscriber::_get_subscriber_input::GetSubscriberInput;
+
+pub use crate::operation::get_subscriber::_get_subscriber_output::GetSubscriberOutput;
 
 mod _get_subscriber_input;
 

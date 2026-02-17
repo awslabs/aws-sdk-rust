@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_global_resourc
     }
 }
 
-pub use crate::operation::tag_global_resource::_tag_global_resource_output::TagGlobalResourceOutput;
-
 pub use crate::operation::tag_global_resource::_tag_global_resource_input::TagGlobalResourceInput;
+
+pub use crate::operation::tag_global_resource::_tag_global_resource_output::TagGlobalResourceOutput;
 
 mod _tag_global_resource_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_engine_default_cluster_parameters::_describe_engine_default_cluster_parameters_output::DescribeEngineDefaultClusterParametersOutput;
-
 pub use crate::operation::describe_engine_default_cluster_parameters::_describe_engine_default_cluster_parameters_input::DescribeEngineDefaultClusterParametersInput;
+
+pub use crate::operation::describe_engine_default_cluster_parameters::_describe_engine_default_cluster_parameters_output::DescribeEngineDefaultClusterParametersOutput;
 
 mod _describe_engine_default_cluster_parameters_input;
 

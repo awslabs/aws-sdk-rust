@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_lakehouse_c
     }
 }
 
-pub use crate::operation::modify_lakehouse_configuration::_modify_lakehouse_configuration_output::ModifyLakehouseConfigurationOutput;
-
 pub use crate::operation::modify_lakehouse_configuration::_modify_lakehouse_configuration_input::ModifyLakehouseConfigurationInput;
+
+pub use crate::operation::modify_lakehouse_configuration::_modify_lakehouse_configuration_output::ModifyLakehouseConfigurationOutput;
 
 mod _modify_lakehouse_configuration_input;
 

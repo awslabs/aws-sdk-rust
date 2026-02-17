@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags::ListTag
     }
 }
 
-pub use crate::operation::list_tags::_list_tags_output::ListTagsOutput;
-
 pub use crate::operation::list_tags::_list_tags_input::ListTagsInput;
+
+pub use crate::operation::list_tags::_list_tags_output::ListTagsOutput;
 
 mod _list_tags_input;
 

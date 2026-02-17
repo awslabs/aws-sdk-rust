@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_outcomes::GetO
     }
 }
 
-pub use crate::operation::get_outcomes::_get_outcomes_output::GetOutcomesOutput;
-
 pub use crate::operation::get_outcomes::_get_outcomes_input::GetOutcomesInput;
+
+pub use crate::operation::get_outcomes::_get_outcomes_output::GetOutcomesOutput;
 
 mod _get_outcomes_input;
 

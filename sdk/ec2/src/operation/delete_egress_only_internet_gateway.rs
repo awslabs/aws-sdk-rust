@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_egress_only
     }
 }
 
-pub use crate::operation::delete_egress_only_internet_gateway::_delete_egress_only_internet_gateway_output::DeleteEgressOnlyInternetGatewayOutput;
-
 pub use crate::operation::delete_egress_only_internet_gateway::_delete_egress_only_internet_gateway_input::DeleteEgressOnlyInternetGatewayInput;
+
+pub use crate::operation::delete_egress_only_internet_gateway::_delete_egress_only_internet_gateway_output::DeleteEgressOnlyInternetGatewayOutput;
 
 mod _delete_egress_only_internet_gateway_input;
 

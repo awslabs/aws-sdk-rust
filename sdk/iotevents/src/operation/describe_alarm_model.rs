@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_alarm_mod
     }
 }
 
-pub use crate::operation::describe_alarm_model::_describe_alarm_model_output::DescribeAlarmModelOutput;
-
 pub use crate::operation::describe_alarm_model::_describe_alarm_model_input::DescribeAlarmModelInput;
+
+pub use crate::operation::describe_alarm_model::_describe_alarm_model_output::DescribeAlarmModelOutput;
 
 mod _describe_alarm_model_input;
 

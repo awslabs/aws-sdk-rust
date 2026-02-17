@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_restore_tes
     }
 }
 
-pub use crate::operation::delete_restore_testing_plan::_delete_restore_testing_plan_output::DeleteRestoreTestingPlanOutput;
-
 pub use crate::operation::delete_restore_testing_plan::_delete_restore_testing_plan_input::DeleteRestoreTestingPlanInput;
+
+pub use crate::operation::delete_restore_testing_plan::_delete_restore_testing_plan_output::DeleteRestoreTestingPlanOutput;
 
 mod _delete_restore_testing_plan_input;
 

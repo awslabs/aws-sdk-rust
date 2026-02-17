@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cardinality::G
     }
 }
 
-pub use crate::operation::get_cardinality::_get_cardinality_output::GetCardinalityOutput;
-
 pub use crate::operation::get_cardinality::_get_cardinality_input::GetCardinalityInput;
+
+pub use crate::operation::get_cardinality::_get_cardinality_output::GetCardinalityOutput;
 
 mod _get_cardinality_input;
 

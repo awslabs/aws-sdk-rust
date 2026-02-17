@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_oauth
     }
 }
 
-pub use crate::operation::get_resource_oauth2_token::_get_resource_oauth2_token_output::GetResourceOauth2TokenOutput;
-
 pub use crate::operation::get_resource_oauth2_token::_get_resource_oauth2_token_input::GetResourceOauth2TokenInput;
+
+pub use crate::operation::get_resource_oauth2_token::_get_resource_oauth2_token_output::GetResourceOauth2TokenOutput;
 
 mod _get_resource_oauth2_token_input;
 

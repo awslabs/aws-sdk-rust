@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_collaboration_trained_model_export_jobs::_list_collaboration_trained_model_export_jobs_output::ListCollaborationTrainedModelExportJobsOutput;
-
 pub use crate::operation::list_collaboration_trained_model_export_jobs::_list_collaboration_trained_model_export_jobs_input::ListCollaborationTrainedModelExportJobsInput;
+
+pub use crate::operation::list_collaboration_trained_model_export_jobs::_list_collaboration_trained_model_export_jobs_output::ListCollaborationTrainedModelExportJobsOutput;
 
 mod _list_collaboration_trained_model_export_jobs_input;
 

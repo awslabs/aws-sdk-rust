@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_target_wi
     }
 }
 
-pub use crate::operation::register_target_with_maintenance_window::_register_target_with_maintenance_window_output::RegisterTargetWithMaintenanceWindowOutput;
-
 pub use crate::operation::register_target_with_maintenance_window::_register_target_with_maintenance_window_input::RegisterTargetWithMaintenanceWindowInput;
+
+pub use crate::operation::register_target_with_maintenance_window::_register_target_with_maintenance_window_output::RegisterTargetWithMaintenanceWindowOutput;
 
 mod _register_target_with_maintenance_window_input;
 

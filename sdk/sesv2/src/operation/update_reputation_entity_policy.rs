@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_reputation_
     }
 }
 
-pub use crate::operation::update_reputation_entity_policy::_update_reputation_entity_policy_output::UpdateReputationEntityPolicyOutput;
-
 pub use crate::operation::update_reputation_entity_policy::_update_reputation_entity_policy_input::UpdateReputationEntityPolicyInput;
+
+pub use crate::operation::update_reputation_entity_policy::_update_reputation_entity_policy_output::UpdateReputationEntityPolicyOutput;
 
 mod _update_reputation_entity_policy_input;
 

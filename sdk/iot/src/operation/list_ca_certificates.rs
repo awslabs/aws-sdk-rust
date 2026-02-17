@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ca_certificat
     }
 }
 
-pub use crate::operation::list_ca_certificates::_list_ca_certificates_output::ListCaCertificatesOutput;
-
 pub use crate::operation::list_ca_certificates::_list_ca_certificates_input::ListCaCertificatesInput;
+
+pub use crate::operation::list_ca_certificates::_list_ca_certificates_output::ListCaCertificatesOutput;
 
 mod _list_ca_certificates_input;
 

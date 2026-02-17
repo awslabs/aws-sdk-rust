@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connection_fu
     }
 }
 
-pub use crate::operation::list_connection_functions::_list_connection_functions_output::ListConnectionFunctionsOutput;
-
 pub use crate::operation::list_connection_functions::_list_connection_functions_input::ListConnectionFunctionsInput;
+
+pub use crate::operation::list_connection_functions::_list_connection_functions_output::ListConnectionFunctionsOutput;
 
 mod _list_connection_functions_input;
 

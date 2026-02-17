@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::select_aggregate_r
     }
 }
 
-pub use crate::operation::select_aggregate_resource_config::_select_aggregate_resource_config_output::SelectAggregateResourceConfigOutput;
-
 pub use crate::operation::select_aggregate_resource_config::_select_aggregate_resource_config_input::SelectAggregateResourceConfigInput;
+
+pub use crate::operation::select_aggregate_resource_config::_select_aggregate_resource_config_output::SelectAggregateResourceConfigOutput;
 
 mod _select_aggregate_resource_config_input;
 

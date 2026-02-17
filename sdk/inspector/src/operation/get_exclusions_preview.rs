@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_exclusions_pre
     }
 }
 
-pub use crate::operation::get_exclusions_preview::_get_exclusions_preview_output::GetExclusionsPreviewOutput;
-
 pub use crate::operation::get_exclusions_preview::_get_exclusions_preview_input::GetExclusionsPreviewInput;
+
+pub use crate::operation::get_exclusions_preview::_get_exclusions_preview_output::GetExclusionsPreviewOutput;
 
 mod _get_exclusions_preview_input;
 

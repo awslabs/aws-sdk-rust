@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_vaul
     }
 }
 
-pub use crate::operation::list_tags_for_vault::_list_tags_for_vault_output::ListTagsForVaultOutput;
-
 pub use crate::operation::list_tags_for_vault::_list_tags_for_vault_input::ListTagsForVaultInput;
+
+pub use crate::operation::list_tags_for_vault::_list_tags_for_vault_output::ListTagsForVaultOutput;
 
 mod _list_tags_for_vault_input;
 

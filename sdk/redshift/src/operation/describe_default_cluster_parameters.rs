@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_default_c
     }
 }
 
-pub use crate::operation::describe_default_cluster_parameters::_describe_default_cluster_parameters_output::DescribeDefaultClusterParametersOutput;
-
 pub use crate::operation::describe_default_cluster_parameters::_describe_default_cluster_parameters_input::DescribeDefaultClusterParametersInput;
+
+pub use crate::operation::describe_default_cluster_parameters::_describe_default_cluster_parameters_output::DescribeDefaultClusterParametersOutput;
 
 mod _describe_default_cluster_parameters_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_name_ac
     }
 }
 
-pub use crate::operation::get_domain_name_access_associations::_get_domain_name_access_associations_output::GetDomainNameAccessAssociationsOutput;
-
 pub use crate::operation::get_domain_name_access_associations::_get_domain_name_access_associations_input::GetDomainNameAccessAssociationsInput;
+
+pub use crate::operation::get_domain_name_access_associations::_get_domain_name_access_associations_output::GetDomainNameAccessAssociationsOutput;
 
 mod _get_domain_name_access_associations_input;
 

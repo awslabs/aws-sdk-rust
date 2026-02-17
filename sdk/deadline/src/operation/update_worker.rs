@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_worker::Upd
     }
 }
 
-pub use crate::operation::update_worker::_update_worker_output::UpdateWorkerOutput;
-
 pub use crate::operation::update_worker::_update_worker_input::UpdateWorkerInput;
+
+pub use crate::operation::update_worker::_update_worker_output::UpdateWorkerOutput;
 
 mod _update_worker_input;
 

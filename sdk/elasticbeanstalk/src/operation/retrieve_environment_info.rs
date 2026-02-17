@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retrieve_environme
     }
 }
 
-pub use crate::operation::retrieve_environment_info::_retrieve_environment_info_output::RetrieveEnvironmentInfoOutput;
-
 pub use crate::operation::retrieve_environment_info::_retrieve_environment_info_input::RetrieveEnvironmentInfoInput;
+
+pub use crate::operation::retrieve_environment_info::_retrieve_environment_info_output::RetrieveEnvironmentInfoOutput;
 
 mod _retrieve_environment_info_input;
 

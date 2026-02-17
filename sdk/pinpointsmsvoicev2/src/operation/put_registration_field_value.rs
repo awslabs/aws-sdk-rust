@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_registration_f
     }
 }
 
-pub use crate::operation::put_registration_field_value::_put_registration_field_value_output::PutRegistrationFieldValueOutput;
-
 pub use crate::operation::put_registration_field_value::_put_registration_field_value_input::PutRegistrationFieldValueInput;
+
+pub use crate::operation::put_registration_field_value::_put_registration_field_value_output::PutRegistrationFieldValueOutput;
 
 mod _put_registration_field_value_input;
 

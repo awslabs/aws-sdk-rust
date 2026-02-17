@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_transit_gateway_route_table_associations::_get_transit_gateway_route_table_associations_output::GetTransitGatewayRouteTableAssociationsOutput;
-
 pub use crate::operation::get_transit_gateway_route_table_associations::_get_transit_gateway_route_table_associations_input::GetTransitGatewayRouteTableAssociationsInput;
+
+pub use crate::operation::get_transit_gateway_route_table_associations::_get_transit_gateway_route_table_associations_output::GetTransitGatewayRouteTableAssociationsOutput;
 
 mod _get_transit_gateway_route_table_associations_input;
 

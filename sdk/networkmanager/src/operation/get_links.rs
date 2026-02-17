@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_links::GetLink
     }
 }
 
-pub use crate::operation::get_links::_get_links_output::GetLinksOutput;
-
 pub use crate::operation::get_links::_get_links_input::GetLinksInput;
+
+pub use crate::operation::get_links::_get_links_output::GetLinksOutput;
 
 mod _get_links_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_position::U
     }
 }
 
-pub use crate::operation::update_position::_update_position_output::UpdatePositionOutput;
-
 pub use crate::operation::update_position::_update_position_input::UpdatePositionInput;
+
+pub use crate::operation::update_position::_update_position_output::UpdatePositionOutput;
 
 mod _update_position_input;
 

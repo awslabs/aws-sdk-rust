@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_configured_model_algorithm_association::_delete_configured_model_algorithm_association_output::DeleteConfiguredModelAlgorithmAssociationOutput;
-
 pub use crate::operation::delete_configured_model_algorithm_association::_delete_configured_model_algorithm_association_input::DeleteConfiguredModelAlgorithmAssociationInput;
+
+pub use crate::operation::delete_configured_model_algorithm_association::_delete_configured_model_algorithm_association_output::DeleteConfiguredModelAlgorithmAssociationOutput;
 
 mod _delete_configured_model_algorithm_association_input;
 

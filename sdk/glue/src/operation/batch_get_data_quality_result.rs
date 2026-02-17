@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_data_qua
     }
 }
 
-pub use crate::operation::batch_get_data_quality_result::_batch_get_data_quality_result_output::BatchGetDataQualityResultOutput;
-
 pub use crate::operation::batch_get_data_quality_result::_batch_get_data_quality_result_input::BatchGetDataQualityResultInput;
+
+pub use crate::operation::batch_get_data_quality_result::_batch_get_data_quality_result_output::BatchGetDataQualityResultOutput;
 
 mod _batch_get_data_quality_result_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::change_resource_re
     }
 }
 
-pub use crate::operation::change_resource_record_sets::_change_resource_record_sets_output::ChangeResourceRecordSetsOutput;
-
 pub use crate::operation::change_resource_record_sets::_change_resource_record_sets_input::ChangeResourceRecordSetsInput;
+
+pub use crate::operation::change_resource_record_sets::_change_resource_record_sets_output::ChangeResourceRecordSetsOutput;
 
 mod _change_resource_record_sets_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_flow::As
     }
 }
 
-pub use crate::operation::associate_flow::_associate_flow_output::AssociateFlowOutput;
-
 pub use crate::operation::associate_flow::_associate_flow_input::AssociateFlowInput;
+
+pub use crate::operation::associate_flow::_associate_flow_output::AssociateFlowOutput;
 
 mod _associate_flow_input;
 

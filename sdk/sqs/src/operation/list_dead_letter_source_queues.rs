@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dead_letter_s
     }
 }
 
-pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_source_queues_output::ListDeadLetterSourceQueuesOutput;
-
 pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_source_queues_input::ListDeadLetterSourceQueuesInput;
+
+pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_source_queues_output::ListDeadLetterSourceQueuesOutput;
 
 mod _list_dead_letter_source_queues_input;
 

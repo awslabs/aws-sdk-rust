@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_global_clus
     }
 }
 
-pub use crate::operation::modify_global_cluster::_modify_global_cluster_output::ModifyGlobalClusterOutput;
-
 pub use crate::operation::modify_global_cluster::_modify_global_cluster_input::ModifyGlobalClusterInput;
+
+pub use crate::operation::modify_global_cluster::_modify_global_cluster_output::ModifyGlobalClusterOutput;
 
 mod _modify_global_cluster_input;
 

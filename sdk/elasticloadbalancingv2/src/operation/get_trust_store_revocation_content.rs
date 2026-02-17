@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trust_store_re
     }
 }
 
-pub use crate::operation::get_trust_store_revocation_content::_get_trust_store_revocation_content_output::GetTrustStoreRevocationContentOutput;
-
 pub use crate::operation::get_trust_store_revocation_content::_get_trust_store_revocation_content_input::GetTrustStoreRevocationContentInput;
+
+pub use crate::operation::get_trust_store_revocation_content::_get_trust_store_revocation_content_output::GetTrustStoreRevocationContentOutput;
 
 mod _get_trust_store_revocation_content_input;
 

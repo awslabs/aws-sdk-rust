@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reveal_configu
     }
 }
 
-pub use crate::operation::get_reveal_configuration::_get_reveal_configuration_output::GetRevealConfigurationOutput;
-
 pub use crate::operation::get_reveal_configuration::_get_reveal_configuration_input::GetRevealConfigurationInput;
+
+pub use crate::operation::get_reveal_configuration::_get_reveal_configuration_output::GetRevealConfigurationOutput;
 
 mod _get_reveal_configuration_input;
 

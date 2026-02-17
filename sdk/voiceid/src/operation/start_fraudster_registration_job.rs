@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_fraudster_re
     }
 }
 
-pub use crate::operation::start_fraudster_registration_job::_start_fraudster_registration_job_output::StartFraudsterRegistrationJobOutput;
-
 pub use crate::operation::start_fraudster_registration_job::_start_fraudster_registration_job_input::StartFraudsterRegistrationJobInput;
+
+pub use crate::operation::start_fraudster_registration_job::_start_fraudster_registration_job_output::StartFraudsterRegistrationJobOutput;
 
 mod _start_fraudster_registration_job_input;
 

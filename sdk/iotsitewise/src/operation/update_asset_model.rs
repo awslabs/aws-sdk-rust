@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_asset_model
     }
 }
 
-pub use crate::operation::update_asset_model::_update_asset_model_output::UpdateAssetModelOutput;
-
 pub use crate::operation::update_asset_model::_update_asset_model_input::UpdateAssetModelInput;
+
+pub use crate::operation::update_asset_model::_update_asset_model_output::UpdateAssetModelOutput;
 
 mod _update_asset_model_input;
 

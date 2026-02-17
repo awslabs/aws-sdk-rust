@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_spot_datafe
     }
 }
 
-pub use crate::operation::create_spot_datafeed_subscription::_create_spot_datafeed_subscription_output::CreateSpotDatafeedSubscriptionOutput;
-
 pub use crate::operation::create_spot_datafeed_subscription::_create_spot_datafeed_subscription_input::CreateSpotDatafeedSubscriptionInput;
+
+pub use crate::operation::create_spot_datafeed_subscription::_create_spot_datafeed_subscription_output::CreateSpotDatafeedSubscriptionOutput;
 
 mod _create_spot_datafeed_subscription_input;
 

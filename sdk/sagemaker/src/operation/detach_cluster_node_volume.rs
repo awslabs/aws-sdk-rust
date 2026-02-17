@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_cluster_nod
     }
 }
 
-pub use crate::operation::detach_cluster_node_volume::_detach_cluster_node_volume_output::DetachClusterNodeVolumeOutput;
-
 pub use crate::operation::detach_cluster_node_volume::_detach_cluster_node_volume_input::DetachClusterNodeVolumeInput;
+
+pub use crate::operation::detach_cluster_node_volume::_detach_cluster_node_volume_output::DetachClusterNodeVolumeOutput;
 
 mod _detach_cluster_node_volume_input;
 

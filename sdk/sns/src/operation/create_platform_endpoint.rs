@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_platform_en
     }
 }
 
-pub use crate::operation::create_platform_endpoint::_create_platform_endpoint_output::CreatePlatformEndpointOutput;
-
 pub use crate::operation::create_platform_endpoint::_create_platform_endpoint_input::CreatePlatformEndpointInput;
+
+pub use crate::operation::create_platform_endpoint::_create_platform_endpoint_output::CreatePlatformEndpointOutput;
 
 mod _create_platform_endpoint_input;
 

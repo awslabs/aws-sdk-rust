@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_address_lis
     }
 }
 
-pub use crate::operation::create_address_list_import_job::_create_address_list_import_job_output::CreateAddressListImportJobOutput;
-
 pub use crate::operation::create_address_list_import_job::_create_address_list_import_job_input::CreateAddressListImportJobInput;
+
+pub use crate::operation::create_address_list_import_job::_create_address_list_import_job_output::CreateAddressListImportJobOutput;
 
 mod _create_address_list_import_job_input;
 

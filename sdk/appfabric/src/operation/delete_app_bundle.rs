@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_bundle:
     }
 }
 
-pub use crate::operation::delete_app_bundle::_delete_app_bundle_output::DeleteAppBundleOutput;
-
 pub use crate::operation::delete_app_bundle::_delete_app_bundle_input::DeleteAppBundleInput;
+
+pub use crate::operation::delete_app_bundle::_delete_app_bundle_output::DeleteAppBundleOutput;
 
 mod _delete_app_bundle_input;
 

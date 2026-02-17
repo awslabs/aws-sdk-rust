@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_upload::Upd
     }
 }
 
-pub use crate::operation::update_upload::_update_upload_output::UpdateUploadOutput;
-
 pub use crate::operation::update_upload::_update_upload_input::UpdateUploadInput;
+
+pub use crate::operation::update_upload::_update_upload_output::UpdateUploadOutput;
 
 mod _update_upload_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_core_network_c
     }
 }
 
-pub use crate::operation::get_core_network_change_set::_get_core_network_change_set_output::GetCoreNetworkChangeSetOutput;
-
 pub use crate::operation::get_core_network_change_set::_get_core_network_change_set_input::GetCoreNetworkChangeSetInput;
+
+pub use crate::operation::get_core_network_change_set::_get_core_network_change_set_output::GetCoreNetworkChangeSetOutput;
 
 mod _get_core_network_change_set_input;
 

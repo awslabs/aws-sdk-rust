@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sessions_stati
     }
 }
 
-pub use crate::operation::get_sessions_statistics_aggregation::_get_sessions_statistics_aggregation_output::GetSessionsStatisticsAggregationOutput;
-
 pub use crate::operation::get_sessions_statistics_aggregation::_get_sessions_statistics_aggregation_input::GetSessionsStatisticsAggregationInput;
+
+pub use crate::operation::get_sessions_statistics_aggregation::_get_sessions_statistics_aggregation_output::GetSessionsStatisticsAggregationOutput;
 
 mod _get_sessions_statistics_aggregation_input;
 

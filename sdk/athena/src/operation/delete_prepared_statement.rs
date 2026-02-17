@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_prepared_st
     }
 }
 
-pub use crate::operation::delete_prepared_statement::_delete_prepared_statement_output::DeletePreparedStatementOutput;
-
 pub use crate::operation::delete_prepared_statement::_delete_prepared_statement_input::DeletePreparedStatementInput;
+
+pub use crate::operation::delete_prepared_statement::_delete_prepared_statement_output::DeletePreparedStatementOutput;
 
 mod _delete_prepared_statement_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_notif
     }
 }
 
-pub use crate::operation::list_managed_notification_events::_list_managed_notification_events_output::ListManagedNotificationEventsOutput;
-
 pub use crate::operation::list_managed_notification_events::_list_managed_notification_events_input::ListManagedNotificationEventsInput;
+
+pub use crate::operation::list_managed_notification_events::_list_managed_notification_events_output::ListManagedNotificationEventsOutput;
 
 mod _list_managed_notification_events_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unpeer_vpc::Unpeer
     }
 }
 
-pub use crate::operation::unpeer_vpc::_unpeer_vpc_output::UnpeerVpcOutput;
-
 pub use crate::operation::unpeer_vpc::_unpeer_vpc_input::UnpeerVpcInput;
+
+pub use crate::operation::unpeer_vpc::_unpeer_vpc_output::UnpeerVpcOutput;
 
 mod _unpeer_vpc_input;
 

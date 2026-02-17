@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_monitoring_m
     }
 }
 
-pub use crate::operation::start_monitoring_members::_start_monitoring_members_output::StartMonitoringMembersOutput;
-
 pub use crate::operation::start_monitoring_members::_start_monitoring_members_input::StartMonitoringMembersInput;
+
+pub use crate::operation::start_monitoring_members::_start_monitoring_members_output::StartMonitoringMembersOutput;
 
 mod _start_monitoring_members_input;
 

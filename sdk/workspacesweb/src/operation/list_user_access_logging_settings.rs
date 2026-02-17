@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_user_access_l
     }
 }
 
-pub use crate::operation::list_user_access_logging_settings::_list_user_access_logging_settings_output::ListUserAccessLoggingSettingsOutput;
-
 pub use crate::operation::list_user_access_logging_settings::_list_user_access_logging_settings_input::ListUserAccessLoggingSettingsInput;
+
+pub use crate::operation::list_user_access_logging_settings::_list_user_access_logging_settings_output::ListUserAccessLoggingSettingsOutput;
 
 mod _list_user_access_logging_settings_input;
 

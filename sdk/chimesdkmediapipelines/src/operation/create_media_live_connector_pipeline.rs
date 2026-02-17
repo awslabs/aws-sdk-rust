@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_media_live_
     }
 }
 
-pub use crate::operation::create_media_live_connector_pipeline::_create_media_live_connector_pipeline_output::CreateMediaLiveConnectorPipelineOutput;
-
 pub use crate::operation::create_media_live_connector_pipeline::_create_media_live_connector_pipeline_input::CreateMediaLiveConnectorPipelineInput;
+
+pub use crate::operation::create_media_live_connector_pipeline::_create_media_live_connector_pipeline_output::CreateMediaLiveConnectorPipelineOutput;
 
 mod _create_media_live_connector_pipeline_input;
 

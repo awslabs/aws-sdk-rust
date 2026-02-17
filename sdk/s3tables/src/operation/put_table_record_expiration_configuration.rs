@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_record_e
     }
 }
 
-pub use crate::operation::put_table_record_expiration_configuration::_put_table_record_expiration_configuration_output::PutTableRecordExpirationConfigurationOutput;
-
 pub use crate::operation::put_table_record_expiration_configuration::_put_table_record_expiration_configuration_input::PutTableRecordExpirationConfigurationInput;
+
+pub use crate::operation::put_table_record_expiration_configuration::_put_table_record_expiration_configuration_output::PutTableRecordExpirationConfigurationOutput;
 
 mod _put_table_record_expiration_configuration_input;
 

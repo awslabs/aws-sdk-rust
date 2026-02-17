@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_scraper_log
     }
 }
 
-pub use crate::operation::update_scraper_logging_configuration::_update_scraper_logging_configuration_output::UpdateScraperLoggingConfigurationOutput;
-
 pub use crate::operation::update_scraper_logging_configuration::_update_scraper_logging_configuration_input::UpdateScraperLoggingConfigurationInput;
+
+pub use crate::operation::update_scraper_logging_configuration::_update_scraper_logging_configuration_output::UpdateScraperLoggingConfigurationOutput;
 
 mod _update_scraper_logging_configuration_input;
 

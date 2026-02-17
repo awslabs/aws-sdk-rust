@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_mount_targe
     }
 }
 
-pub use crate::operation::modify_mount_target_security_groups::_modify_mount_target_security_groups_output::ModifyMountTargetSecurityGroupsOutput;
-
 pub use crate::operation::modify_mount_target_security_groups::_modify_mount_target_security_groups_input::ModifyMountTargetSecurityGroupsInput;
+
+pub use crate::operation::modify_mount_target_security_groups::_modify_mount_target_security_groups_output::ModifyMountTargetSecurityGroupsOutput;
 
 mod _modify_mount_target_security_groups_input;
 

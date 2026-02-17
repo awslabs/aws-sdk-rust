@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::is_authorized_with
     }
 }
 
-pub use crate::operation::is_authorized_with_token::_is_authorized_with_token_output::IsAuthorizedWithTokenOutput;
-
 pub use crate::operation::is_authorized_with_token::_is_authorized_with_token_input::IsAuthorizedWithTokenInput;
+
+pub use crate::operation::is_authorized_with_token::_is_authorized_with_token_output::IsAuthorizedWithTokenOutput;
 
 mod _is_authorized_with_token_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_rule:
     }
 }
 
-pub use crate::operation::batch_update_rule::_batch_update_rule_output::BatchUpdateRuleOutput;
-
 pub use crate::operation::batch_update_rule::_batch_update_rule_input::BatchUpdateRuleInput;
+
+pub use crate::operation::batch_update_rule::_batch_update_rule_output::BatchUpdateRuleOutput;
 
 mod _batch_update_rule_input;
 

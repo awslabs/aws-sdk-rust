@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_certificate
     }
 }
 
-pub use crate::operation::delete_certificate::_delete_certificate_output::DeleteCertificateOutput;
-
 pub use crate::operation::delete_certificate::_delete_certificate_input::DeleteCertificateInput;
+
+pub use crate::operation::delete_certificate::_delete_certificate_output::DeleteCertificateOutput;
 
 mod _delete_certificate_input;
 

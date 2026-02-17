@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_training_da
     }
 }
 
-pub use crate::operation::create_training_dataset::_create_training_dataset_output::CreateTrainingDatasetOutput;
-
 pub use crate::operation::create_training_dataset::_create_training_dataset_input::CreateTrainingDatasetInput;
+
+pub use crate::operation::create_training_dataset::_create_training_dataset_output::CreateTrainingDatasetOutput;
 
 mod _create_training_dataset_input;
 

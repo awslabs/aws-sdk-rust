@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_disassociate
     }
 }
 
-pub use crate::operation::batch_disassociate_project_assets::_batch_disassociate_project_assets_output::BatchDisassociateProjectAssetsOutput;
-
 pub use crate::operation::batch_disassociate_project_assets::_batch_disassociate_project_assets_input::BatchDisassociateProjectAssetsInput;
+
+pub use crate::operation::batch_disassociate_project_assets::_batch_disassociate_project_assets_output::BatchDisassociateProjectAssetsOutput;
 
 mod _batch_disassociate_project_assets_input;
 

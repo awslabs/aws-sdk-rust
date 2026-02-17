@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_code_signin
     }
 }
 
-pub use crate::operation::create_code_signing_config::_create_code_signing_config_output::CreateCodeSigningConfigOutput;
-
 pub use crate::operation::create_code_signing_config::_create_code_signing_config_input::CreateCodeSigningConfigInput;
+
+pub use crate::operation::create_code_signing_config::_create_code_signing_config_output::CreateCodeSigningConfigOutput;
 
 mod _create_code_signing_config_input;
 

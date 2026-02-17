@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_chime_web
     }
 }
 
-pub use crate::operation::describe_chime_webhook_configurations::_describe_chime_webhook_configurations_output::DescribeChimeWebhookConfigurationsOutput;
-
 pub use crate::operation::describe_chime_webhook_configurations::_describe_chime_webhook_configurations_input::DescribeChimeWebhookConfigurationsInput;
+
+pub use crate::operation::describe_chime_webhook_configurations::_describe_chime_webhook_configurations_output::DescribeChimeWebhookConfigurationsOutput;
 
 mod _describe_chime_webhook_configurations_input;
 

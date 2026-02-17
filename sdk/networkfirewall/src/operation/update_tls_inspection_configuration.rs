@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_tls_inspect
     }
 }
 
-pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspection_configuration_output::UpdateTlsInspectionConfigurationOutput;
-
 pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspection_configuration_input::UpdateTlsInspectionConfigurationInput;
+
+pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspection_configuration_output::UpdateTlsInspectionConfigurationOutput;
 
 mod _update_tls_inspection_configuration_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hypervisor:
     }
 }
 
-pub use crate::operation::delete_hypervisor::_delete_hypervisor_output::DeleteHypervisorOutput;
-
 pub use crate::operation::delete_hypervisor::_delete_hypervisor_input::DeleteHypervisorInput;
+
+pub use crate::operation::delete_hypervisor::_delete_hypervisor_output::DeleteHypervisorOutput;
 
 mod _delete_hypervisor_input;
 

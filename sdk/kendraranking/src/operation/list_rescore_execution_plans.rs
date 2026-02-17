@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rescore_execu
     }
 }
 
-pub use crate::operation::list_rescore_execution_plans::_list_rescore_execution_plans_output::ListRescoreExecutionPlansOutput;
-
 pub use crate::operation::list_rescore_execution_plans::_list_rescore_execution_plans_input::ListRescoreExecutionPlansInput;
+
+pub use crate::operation::list_rescore_execution_plans::_list_rescore_execution_plans_output::ListRescoreExecutionPlansOutput;
 
 mod _list_rescore_execution_plans_input;
 

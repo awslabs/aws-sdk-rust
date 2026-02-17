@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_volume::Get
     }
 }
 
-pub use crate::operation::get_kx_volume::_get_kx_volume_output::GetKxVolumeOutput;
-
 pub use crate::operation::get_kx_volume::_get_kx_volume_input::GetKxVolumeInput;
+
+pub use crate::operation::get_kx_volume::_get_kx_volume_output::GetKxVolumeOutput;
 
 mod _get_kx_volume_input;
 

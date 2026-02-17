@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_optimization_
     }
 }
 
-pub use crate::operation::list_optimization_jobs::_list_optimization_jobs_output::ListOptimizationJobsOutput;
-
 pub use crate::operation::list_optimization_jobs::_list_optimization_jobs_input::ListOptimizationJobsInput;
+
+pub use crate::operation::list_optimization_jobs::_list_optimization_jobs_output::ListOptimizationJobsOutput;
 
 mod _list_optimization_jobs_input;
 

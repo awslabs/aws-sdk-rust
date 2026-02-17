@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_destination
     }
 }
 
-pub use crate::operation::create_destination::_create_destination_output::CreateDestinationOutput;
-
 pub use crate::operation::create_destination::_create_destination_input::CreateDestinationInput;
+
+pub use crate::operation::create_destination::_create_destination_output::CreateDestinationOutput;
 
 mod _create_destination_input;
 

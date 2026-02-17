@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_sentiment
     }
 }
 
-pub use crate::operation::describe_sentiment_detection_job::_describe_sentiment_detection_job_output::DescribeSentimentDetectionJobOutput;
-
 pub use crate::operation::describe_sentiment_detection_job::_describe_sentiment_detection_job_input::DescribeSentimentDetectionJobInput;
+
+pub use crate::operation::describe_sentiment_detection_job::_describe_sentiment_detection_job_output::DescribeSentimentDetectionJobOutput;
 
 mod _describe_sentiment_detection_job_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_free_tier_usag
     }
 }
 
-pub use crate::operation::get_free_tier_usage::_get_free_tier_usage_output::GetFreeTierUsageOutput;
-
 pub use crate::operation::get_free_tier_usage::_get_free_tier_usage_input::GetFreeTierUsageInput;
+
+pub use crate::operation::get_free_tier_usage::_get_free_tier_usage_output::GetFreeTierUsageOutput;
 
 mod _get_free_tier_usage_input;
 

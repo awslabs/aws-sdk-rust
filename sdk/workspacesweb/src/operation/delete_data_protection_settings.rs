@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_protec
     }
 }
 
-pub use crate::operation::delete_data_protection_settings::_delete_data_protection_settings_output::DeleteDataProtectionSettingsOutput;
-
 pub use crate::operation::delete_data_protection_settings::_delete_data_protection_settings_input::DeleteDataProtectionSettingsInput;
+
+pub use crate::operation::delete_data_protection_settings::_delete_data_protection_settings_output::DeleteDataProtectionSettingsOutput;
 
 mod _delete_data_protection_settings_input;
 

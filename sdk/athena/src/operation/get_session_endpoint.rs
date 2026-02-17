@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_session_endpoi
     }
 }
 
-pub use crate::operation::get_session_endpoint::_get_session_endpoint_output::GetSessionEndpointOutput;
-
 pub use crate::operation::get_session_endpoint::_get_session_endpoint_input::GetSessionEndpointInput;
+
+pub use crate::operation::get_session_endpoint::_get_session_endpoint_output::GetSessionEndpointOutput;
 
 mod _get_session_endpoint_input;
 

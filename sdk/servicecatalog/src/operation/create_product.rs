@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_product::Cr
     }
 }
 
-pub use crate::operation::create_product::_create_product_output::CreateProductOutput;
-
 pub use crate::operation::create_product::_create_product_input::CreateProductInput;
+
+pub use crate::operation::create_product::_create_product_output::CreateProductOutput;
 
 mod _create_product_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_net
     }
 }
 
-pub use crate::operation::update_service_network_vpc_association::_update_service_network_vpc_association_output::UpdateServiceNetworkVpcAssociationOutput;
-
 pub use crate::operation::update_service_network_vpc_association::_update_service_network_vpc_association_input::UpdateServiceNetworkVpcAssociationInput;
+
+pub use crate::operation::update_service_network_vpc_association::_update_service_network_vpc_association_output::UpdateServiceNetworkVpcAssociationOutput;
 
 mod _update_service_network_vpc_association_input;
 

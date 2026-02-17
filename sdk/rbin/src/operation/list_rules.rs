@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rules::ListRu
     }
 }
 
-pub use crate::operation::list_rules::_list_rules_output::ListRulesOutput;
-
 pub use crate::operation::list_rules::_list_rules_input::ListRulesInput;
+
+pub use crate::operation::list_rules::_list_rules_output::ListRulesOutput;
 
 mod _list_rules_input;
 

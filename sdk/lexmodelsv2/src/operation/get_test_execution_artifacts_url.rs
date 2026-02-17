@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_test_execution
     }
 }
 
-pub use crate::operation::get_test_execution_artifacts_url::_get_test_execution_artifacts_url_output::GetTestExecutionArtifactsUrlOutput;
-
 pub use crate::operation::get_test_execution_artifacts_url::_get_test_execution_artifacts_url_input::GetTestExecutionArtifactsUrlInput;
+
+pub use crate::operation::get_test_execution_artifacts_url::_get_test_execution_artifacts_url_output::GetTestExecutionArtifactsUrlOutput;
 
 mod _get_test_execution_artifacts_url_input;
 

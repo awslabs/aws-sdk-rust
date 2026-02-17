@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group_membersh
     }
 }
 
-pub use crate::operation::get_group_membership_id::_get_group_membership_id_output::GetGroupMembershipIdOutput;
-
 pub use crate::operation::get_group_membership_id::_get_group_membership_id_input::GetGroupMembershipIdInput;
+
+pub use crate::operation::get_group_membership_id::_get_group_membership_id_output::GetGroupMembershipIdOutput;
 
 mod _get_group_membership_id_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_transit
     }
 }
 
-pub use crate::operation::deregister_transit_gateway::_deregister_transit_gateway_output::DeregisterTransitGatewayOutput;
-
 pub use crate::operation::deregister_transit_gateway::_deregister_transit_gateway_input::DeregisterTransitGatewayInput;
+
+pub use crate::operation::deregister_transit_gateway::_deregister_transit_gateway_output::DeregisterTransitGatewayOutput;
 
 mod _deregister_transit_gateway_input;
 

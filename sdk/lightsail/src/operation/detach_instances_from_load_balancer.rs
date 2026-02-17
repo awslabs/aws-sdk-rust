@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_instances_f
     }
 }
 
-pub use crate::operation::detach_instances_from_load_balancer::_detach_instances_from_load_balancer_output::DetachInstancesFromLoadBalancerOutput;
-
 pub use crate::operation::detach_instances_from_load_balancer::_detach_instances_from_load_balancer_input::DetachInstancesFromLoadBalancerInput;
+
+pub use crate::operation::detach_instances_from_load_balancer::_detach_instances_from_load_balancer_output::DetachInstancesFromLoadBalancerOutput;
 
 mod _detach_instances_from_load_balancer_input;
 

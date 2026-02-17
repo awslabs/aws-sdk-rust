@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_app_insta
     }
 }
 
-pub use crate::operation::describe_app_instance_bot::_describe_app_instance_bot_output::DescribeAppInstanceBotOutput;
-
 pub use crate::operation::describe_app_instance_bot::_describe_app_instance_bot_input::DescribeAppInstanceBotInput;
+
+pub use crate::operation::describe_app_instance_bot::_describe_app_instance_bot_output::DescribeAppInstanceBotOutput;
 
 mod _describe_app_instance_bot_input;
 

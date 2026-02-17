@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cache_polic
     }
 }
 
-pub use crate::operation::update_cache_policy::_update_cache_policy_output::UpdateCachePolicyOutput;
-
 pub use crate::operation::update_cache_policy::_update_cache_policy_input::UpdateCachePolicyInput;
+
+pub use crate::operation::update_cache_policy::_update_cache_policy_output::UpdateCachePolicyOutput;
 
 mod _update_cache_policy_input;
 

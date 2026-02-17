@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_playback_key_p
     }
 }
 
-pub use crate::operation::get_playback_key_pair::_get_playback_key_pair_output::GetPlaybackKeyPairOutput;
-
 pub use crate::operation::get_playback_key_pair::_get_playback_key_pair_input::GetPlaybackKeyPairInput;
+
+pub use crate::operation::get_playback_key_pair::_get_playback_key_pair_output::GetPlaybackKeyPairOutput;
 
 mod _get_playback_key_pair_input;
 

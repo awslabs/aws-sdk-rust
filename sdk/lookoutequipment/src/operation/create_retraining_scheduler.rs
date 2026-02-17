@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_retraining_
     }
 }
 
-pub use crate::operation::create_retraining_scheduler::_create_retraining_scheduler_output::CreateRetrainingSchedulerOutput;
-
 pub use crate::operation::create_retraining_scheduler::_create_retraining_scheduler_input::CreateRetrainingSchedulerInput;
+
+pub use crate::operation::create_retraining_scheduler::_create_retraining_scheduler_output::CreateRetrainingSchedulerOutput;
 
 mod _create_retraining_scheduler_input;
 

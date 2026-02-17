@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_transit_g
     }
 }
 
-pub use crate::operation::describe_transit_gateway_connects::_describe_transit_gateway_connects_output::DescribeTransitGatewayConnectsOutput;
-
 pub use crate::operation::describe_transit_gateway_connects::_describe_transit_gateway_connects_input::DescribeTransitGatewayConnectsInput;
+
+pub use crate::operation::describe_transit_gateway_connects::_describe_transit_gateway_connects_output::DescribeTransitGatewayConnectsOutput;
 
 mod _describe_transit_gateway_connects_input;
 

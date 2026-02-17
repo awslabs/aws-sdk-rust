@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_retention_c
     }
 }
 
-pub use crate::operation::delete_retention_configuration::_delete_retention_configuration_output::DeleteRetentionConfigurationOutput;
-
 pub use crate::operation::delete_retention_configuration::_delete_retention_configuration_input::DeleteRetentionConfigurationInput;
+
+pub use crate::operation::delete_retention_configuration::_delete_retention_configuration_output::DeleteRetentionConfigurationOutput;
 
 mod _delete_retention_configuration_input;
 

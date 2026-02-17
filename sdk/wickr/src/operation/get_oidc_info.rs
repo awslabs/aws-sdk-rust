@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_oidc_info::Get
     }
 }
 
-pub use crate::operation::get_oidc_info::_get_oidc_info_output::GetOidcInfoOutput;
-
 pub use crate::operation::get_oidc_info::_get_oidc_info_input::GetOidcInfoInput;
+
+pub use crate::operation::get_oidc_info::_get_oidc_info_output::GetOidcInfoOutput;
 
 mod _get_oidc_info_input;
 

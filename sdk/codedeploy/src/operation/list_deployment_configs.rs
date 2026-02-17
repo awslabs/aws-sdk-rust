@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployment_co
     }
 }
 
-pub use crate::operation::list_deployment_configs::_list_deployment_configs_output::ListDeploymentConfigsOutput;
-
 pub use crate::operation::list_deployment_configs::_list_deployment_configs_input::ListDeploymentConfigsInput;
+
+pub use crate::operation::list_deployment_configs::_list_deployment_configs_output::ListDeploymentConfigsOutput;
 
 mod _list_deployment_configs_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cachedi_s
     }
 }
 
-pub use crate::operation::describe_cachedi_scsi_volumes::_describe_cachedi_scsi_volumes_output::DescribeCachediScsiVolumesOutput;
-
 pub use crate::operation::describe_cachedi_scsi_volumes::_describe_cachedi_scsi_volumes_input::DescribeCachediScsiVolumesInput;
+
+pub use crate::operation::describe_cachedi_scsi_volumes::_describe_cachedi_scsi_volumes_output::DescribeCachediScsiVolumesOutput;
 
 mod _describe_cachedi_scsi_volumes_input;
 

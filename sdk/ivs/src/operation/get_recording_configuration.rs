@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_recording_conf
     }
 }
 
-pub use crate::operation::get_recording_configuration::_get_recording_configuration_output::GetRecordingConfigurationOutput;
-
 pub use crate::operation::get_recording_configuration::_get_recording_configuration_input::GetRecordingConfigurationInput;
+
+pub use crate::operation::get_recording_configuration::_get_recording_configuration_output::GetRecordingConfigurationOutput;
 
 mod _get_recording_configuration_input;
 

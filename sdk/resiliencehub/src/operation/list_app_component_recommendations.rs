@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_component
     }
 }
 
-pub use crate::operation::list_app_component_recommendations::_list_app_component_recommendations_output::ListAppComponentRecommendationsOutput;
-
 pub use crate::operation::list_app_component_recommendations::_list_app_component_recommendations_input::ListAppComponentRecommendationsInput;
+
+pub use crate::operation::list_app_component_recommendations::_list_app_component_recommendations_output::ListAppComponentRecommendationsOutput;
 
 mod _list_app_component_recommendations_input;
 

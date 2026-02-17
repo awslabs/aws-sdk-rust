@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_image_pipeli
     }
 }
 
-pub use crate::operation::start_image_pipeline_execution::_start_image_pipeline_execution_output::StartImagePipelineExecutionOutput;
-
 pub use crate::operation::start_image_pipeline_execution::_start_image_pipeline_execution_input::StartImagePipelineExecutionInput;
+
+pub use crate::operation::start_image_pipeline_execution::_start_image_pipeline_execution_output::StartImagePipelineExecutionOutput;
 
 mod _start_image_pipeline_execution_input;
 

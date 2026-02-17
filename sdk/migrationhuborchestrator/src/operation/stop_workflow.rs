@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_workflow::Sto
     }
 }
 
-pub use crate::operation::stop_workflow::_stop_workflow_output::StopWorkflowOutput;
-
 pub use crate::operation::stop_workflow::_stop_workflow_input::StopWorkflowInput;
+
+pub use crate::operation::stop_workflow::_stop_workflow_output::StopWorkflowOutput;
 
 mod _stop_workflow_input;
 

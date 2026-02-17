@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_key_group_conf
     }
 }
 
-pub use crate::operation::get_key_group_config::_get_key_group_config_output::GetKeyGroupConfigOutput;
-
 pub use crate::operation::get_key_group_config::_get_key_group_config_input::GetKeyGroupConfigInput;
+
+pub use crate::operation::get_key_group_config::_get_key_group_config_output::GetKeyGroupConfigOutput;
 
 mod _get_key_group_config_input;
 

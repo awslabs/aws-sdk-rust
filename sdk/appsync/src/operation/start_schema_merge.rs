@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_schema_merge
     }
 }
 
-pub use crate::operation::start_schema_merge::_start_schema_merge_output::StartSchemaMergeOutput;
-
 pub use crate::operation::start_schema_merge::_start_schema_merge_input::StartSchemaMergeInput;
+
+pub use crate::operation::start_schema_merge::_start_schema_merge_output::StartSchemaMergeOutput;
 
 mod _start_schema_merge_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_lake_n
     }
 }
 
-pub use crate::operation::delete_data_lake_namespace::_delete_data_lake_namespace_output::DeleteDataLakeNamespaceOutput;
-
 pub use crate::operation::delete_data_lake_namespace::_delete_data_lake_namespace_input::DeleteDataLakeNamespaceInput;
+
+pub use crate::operation::delete_data_lake_namespace::_delete_data_lake_namespace_output::DeleteDataLakeNamespaceOutput;
 
 mod _delete_data_lake_namespace_input;
 

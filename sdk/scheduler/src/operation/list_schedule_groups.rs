@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_schedule_grou
     }
 }
 
-pub use crate::operation::list_schedule_groups::_list_schedule_groups_output::ListScheduleGroupsOutput;
-
 pub use crate::operation::list_schedule_groups::_list_schedule_groups_input::ListScheduleGroupsInput;
+
+pub use crate::operation::list_schedule_groups::_list_schedule_groups_output::ListScheduleGroupsOutput;
 
 mod _list_schedule_groups_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_calculation_e
     }
 }
 
-pub use crate::operation::list_calculation_executions::_list_calculation_executions_output::ListCalculationExecutionsOutput;
-
 pub use crate::operation::list_calculation_executions::_list_calculation_executions_input::ListCalculationExecutionsInput;
+
+pub use crate::operation::list_calculation_executions::_list_calculation_executions_output::ListCalculationExecutionsOutput;
 
 mod _list_calculation_executions_input;
 

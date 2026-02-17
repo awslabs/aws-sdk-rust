@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cluster::Cr
     }
 }
 
-pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterOutput;
-
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInput;
+
+pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterOutput;
 
 mod _create_cluster_input;
 

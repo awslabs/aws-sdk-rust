@@ -485,9 +485,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_data_proces
     }
 }
 
-pub use crate::operation::get_ml_data_processing_job::_get_ml_data_processing_job_output::GetMlDataProcessingJobOutput;
-
 pub use crate::operation::get_ml_data_processing_job::_get_ml_data_processing_job_input::GetMlDataProcessingJobInput;
+
+pub use crate::operation::get_ml_data_processing_job::_get_ml_data_processing_job_output::GetMlDataProcessingJobOutput;
 
 mod _get_ml_data_processing_job_input;
 

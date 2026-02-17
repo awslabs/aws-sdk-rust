@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_object
     }
 }
 
-pub use crate::operation::list_domain_object_types::_list_domain_object_types_output::ListDomainObjectTypesOutput;
-
 pub use crate::operation::list_domain_object_types::_list_domain_object_types_input::ListDomainObjectTypesInput;
+
+pub use crate::operation::list_domain_object_types::_list_domain_object_types_output::ListDomainObjectTypesOutput;
 
 mod _list_domain_object_types_input;
 

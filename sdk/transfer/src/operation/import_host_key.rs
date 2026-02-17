@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_host_key::I
     }
 }
 
-pub use crate::operation::import_host_key::_import_host_key_output::ImportHostKeyOutput;
-
 pub use crate::operation::import_host_key::_import_host_key_input::ImportHostKeyInput;
+
+pub use crate::operation::import_host_key::_import_host_key_output::ImportHostKeyOutput;
 
 mod _import_host_key_input;
 

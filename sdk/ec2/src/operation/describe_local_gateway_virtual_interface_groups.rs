@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_local_gateway_virtual_interface_groups::_describe_local_gateway_virtual_interface_groups_output::DescribeLocalGatewayVirtualInterfaceGroupsOutput;
-
 pub use crate::operation::describe_local_gateway_virtual_interface_groups::_describe_local_gateway_virtual_interface_groups_input::DescribeLocalGatewayVirtualInterfaceGroupsInput;
+
+pub use crate::operation::describe_local_gateway_virtual_interface_groups::_describe_local_gateway_virtual_interface_groups_output::DescribeLocalGatewayVirtualInterfaceGroupsOutput;
 
 mod _describe_local_gateway_virtual_interface_groups_input;
 

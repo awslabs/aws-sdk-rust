@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_container_f
     }
 }
 
-pub use crate::operation::create_container_fleet::_create_container_fleet_output::CreateContainerFleetOutput;
-
 pub use crate::operation::create_container_fleet::_create_container_fleet_input::CreateContainerFleetInput;
+
+pub use crate::operation::create_container_fleet::_create_container_fleet_output::CreateContainerFleetOutput;
 
 mod _create_container_fleet_input;
 

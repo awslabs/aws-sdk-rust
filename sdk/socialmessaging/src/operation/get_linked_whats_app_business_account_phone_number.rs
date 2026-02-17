@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_linked_whats_app_business_account_phone_number::_get_linked_whats_app_business_account_phone_number_output::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput;
-
 pub use crate::operation::get_linked_whats_app_business_account_phone_number::_get_linked_whats_app_business_account_phone_number_input::GetLinkedWhatsAppBusinessAccountPhoneNumberInput;
+
+pub use crate::operation::get_linked_whats_app_business_account_phone_number::_get_linked_whats_app_business_account_phone_number_output::GetLinkedWhatsAppBusinessAccountPhoneNumberOutput;
 
 mod _get_linked_whats_app_business_account_phone_number_input;
 

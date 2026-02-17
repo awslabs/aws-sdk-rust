@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_access
     }
 }
 
-pub use crate::operation::create_data_accessor::_create_data_accessor_output::CreateDataAccessorOutput;
-
 pub use crate::operation::create_data_accessor::_create_data_accessor_input::CreateDataAccessorInput;
+
+pub use crate::operation::create_data_accessor::_create_data_accessor_output::CreateDataAccessorOutput;
 
 mod _create_data_accessor_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_text_translat
     }
 }
 
-pub use crate::operation::list_text_translation_jobs::_list_text_translation_jobs_output::ListTextTranslationJobsOutput;
-
 pub use crate::operation::list_text_translation_jobs::_list_text_translation_jobs_input::ListTextTranslationJobsInput;
+
+pub use crate::operation::list_text_translation_jobs::_list_text_translation_jobs_output::ListTextTranslationJobsOutput;
 
 mod _list_text_translation_jobs_input;
 

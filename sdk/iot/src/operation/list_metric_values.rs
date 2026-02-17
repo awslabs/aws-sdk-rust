@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_metric_values
     }
 }
 
-pub use crate::operation::list_metric_values::_list_metric_values_output::ListMetricValuesOutput;
-
 pub use crate::operation::list_metric_values::_list_metric_values_input::ListMetricValuesInput;
+
+pub use crate::operation::list_metric_values::_list_metric_values_output::ListMetricValuesOutput;
 
 mod _list_metric_values_input;
 

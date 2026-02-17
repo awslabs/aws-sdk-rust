@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_auto_scalin
     }
 }
 
-pub use crate::operation::update_auto_scaling_group::_update_auto_scaling_group_output::UpdateAutoScalingGroupOutput;
-
 pub use crate::operation::update_auto_scaling_group::_update_auto_scaling_group_input::UpdateAutoScalingGroupInput;
+
+pub use crate::operation::update_auto_scaling_group::_update_auto_scaling_group_output::UpdateAutoScalingGroupOutput;
 
 mod _update_auto_scaling_group_input;
 

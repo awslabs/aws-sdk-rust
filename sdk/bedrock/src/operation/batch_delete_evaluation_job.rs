@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_evalu
     }
 }
 
-pub use crate::operation::batch_delete_evaluation_job::_batch_delete_evaluation_job_output::BatchDeleteEvaluationJobOutput;
-
 pub use crate::operation::batch_delete_evaluation_job::_batch_delete_evaluation_job_input::BatchDeleteEvaluationJobInput;
+
+pub use crate::operation::batch_delete_evaluation_job::_batch_delete_evaluation_job_output::BatchDeleteEvaluationJobOutput;
 
 mod _batch_delete_evaluation_job_input;
 

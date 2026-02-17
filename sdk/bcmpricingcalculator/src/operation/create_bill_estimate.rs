@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bill_estima
     }
 }
 
-pub use crate::operation::create_bill_estimate::_create_bill_estimate_output::CreateBillEstimateOutput;
-
 pub use crate::operation::create_bill_estimate::_create_bill_estimate_input::CreateBillEstimateInput;
+
+pub use crate::operation::create_bill_estimate::_create_bill_estimate_output::CreateBillEstimateOutput;
 
 mod _create_bill_estimate_input;
 

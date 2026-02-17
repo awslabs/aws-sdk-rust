@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_medical_scr
     }
 }
 
-pub use crate::operation::delete_medical_scribe_job::_delete_medical_scribe_job_output::DeleteMedicalScribeJobOutput;
-
 pub use crate::operation::delete_medical_scribe_job::_delete_medical_scribe_job_input::DeleteMedicalScribeJobInput;
+
+pub use crate::operation::delete_medical_scribe_job::_delete_medical_scribe_job_output::DeleteMedicalScribeJobOutput;
 
 mod _delete_medical_scribe_job_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_identit
     }
 }
 
-pub use crate::operation::deregister_identity_provider::_deregister_identity_provider_output::DeregisterIdentityProviderOutput;
-
 pub use crate::operation::deregister_identity_provider::_deregister_identity_provider_input::DeregisterIdentityProviderInput;
+
+pub use crate::operation::deregister_identity_provider::_deregister_identity_provider_output::DeregisterIdentityProviderOutput;
 
 mod _deregister_identity_provider_input;
 

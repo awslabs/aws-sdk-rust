@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_auth_event_
     }
 }
 
-pub use crate::operation::update_auth_event_feedback::_update_auth_event_feedback_output::UpdateAuthEventFeedbackOutput;
-
 pub use crate::operation::update_auth_event_feedback::_update_auth_event_feedback_input::UpdateAuthEventFeedbackInput;
+
+pub use crate::operation::update_auth_event_feedback::_update_auth_event_feedback_output::UpdateAuthEventFeedbackOutput;
 
 mod _update_auth_event_feedback_input;
 

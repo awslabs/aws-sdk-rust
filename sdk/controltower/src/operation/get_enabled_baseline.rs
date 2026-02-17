@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_enabled_baseli
     }
 }
 
-pub use crate::operation::get_enabled_baseline::_get_enabled_baseline_output::GetEnabledBaselineOutput;
-
 pub use crate::operation::get_enabled_baseline::_get_enabled_baseline_input::GetEnabledBaselineInput;
+
+pub use crate::operation::get_enabled_baseline::_get_enabled_baseline_output::GetEnabledBaselineOutput;
 
 mod _get_enabled_baseline_input;
 

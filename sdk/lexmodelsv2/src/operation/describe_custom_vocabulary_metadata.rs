@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_vo
     }
 }
 
-pub use crate::operation::describe_custom_vocabulary_metadata::_describe_custom_vocabulary_metadata_output::DescribeCustomVocabularyMetadataOutput;
-
 pub use crate::operation::describe_custom_vocabulary_metadata::_describe_custom_vocabulary_metadata_input::DescribeCustomVocabularyMetadataInput;
+
+pub use crate::operation::describe_custom_vocabulary_metadata::_describe_custom_vocabulary_metadata_output::DescribeCustomVocabularyMetadataOutput;
 
 mod _describe_custom_vocabulary_metadata_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_route_response
     }
 }
 
-pub use crate::operation::get_route_response::_get_route_response_output::GetRouteResponseOutput;
-
 pub use crate::operation::get_route_response::_get_route_response_input::GetRouteResponseInput;
+
+pub use crate::operation::get_route_response::_get_route_response_output::GetRouteResponseOutput;
 
 mod _get_route_response_input;
 

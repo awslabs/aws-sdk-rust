@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_security_gr
     }
 }
 
-pub use crate::operation::modify_security_group_rules::_modify_security_group_rules_output::ModifySecurityGroupRulesOutput;
-
 pub use crate::operation::modify_security_group_rules::_modify_security_group_rules_input::ModifySecurityGroupRulesInput;
+
+pub use crate::operation::modify_security_group_rules::_modify_security_group_rules_output::ModifySecurityGroupRulesOutput;
 
 mod _modify_security_group_rules_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_project_vis
     }
 }
 
-pub use crate::operation::update_project_visibility::_update_project_visibility_output::UpdateProjectVisibilityOutput;
-
 pub use crate::operation::update_project_visibility::_update_project_visibility_input::UpdateProjectVisibilityInput;
+
+pub use crate::operation::update_project_visibility::_update_project_visibility_output::UpdateProjectVisibilityOutput;
 
 mod _update_project_visibility_input;
 

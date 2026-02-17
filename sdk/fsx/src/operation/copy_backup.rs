@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_backup::CopyB
     }
 }
 
-pub use crate::operation::copy_backup::_copy_backup_output::CopyBackupOutput;
-
 pub use crate::operation::copy_backup::_copy_backup_input::CopyBackupInput;
+
+pub use crate::operation::copy_backup::_copy_backup_output::CopyBackupOutput;
 
 mod _copy_backup_input;
 

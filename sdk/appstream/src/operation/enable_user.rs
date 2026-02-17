@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_user::Enabl
     }
 }
 
-pub use crate::operation::enable_user::_enable_user_output::EnableUserOutput;
-
 pub use crate::operation::enable_user::_enable_user_input::EnableUserInput;
+
+pub use crate::operation::enable_user::_enable_user_output::EnableUserOutput;
 
 mod _enable_user_input;
 

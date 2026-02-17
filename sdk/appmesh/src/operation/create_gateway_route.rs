@@ -478,9 +478,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_gateway_rou
     }
 }
 
-pub use crate::operation::create_gateway_route::_create_gateway_route_output::CreateGatewayRouteOutput;
-
 pub use crate::operation::create_gateway_route::_create_gateway_route_input::CreateGatewayRouteInput;
+
+pub use crate::operation::create_gateway_route::_create_gateway_route_output::CreateGatewayRouteOutput;
 
 mod _create_gateway_route_input;
 

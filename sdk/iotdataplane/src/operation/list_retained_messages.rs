@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_retained_mess
     }
 }
 
-pub use crate::operation::list_retained_messages::_list_retained_messages_output::ListRetainedMessagesOutput;
-
 pub use crate::operation::list_retained_messages::_list_retained_messages_input::ListRetainedMessagesInput;
+
+pub use crate::operation::list_retained_messages::_list_retained_messages_output::ListRetainedMessagesOutput;
 
 mod _list_retained_messages_input;
 

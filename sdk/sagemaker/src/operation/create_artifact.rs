@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_artifact::C
     }
 }
 
-pub use crate::operation::create_artifact::_create_artifact_output::CreateArtifactOutput;
-
 pub use crate::operation::create_artifact::_create_artifact_input::CreateArtifactInput;
+
+pub use crate::operation::create_artifact::_create_artifact_output::CreateArtifactOutput;
 
 mod _create_artifact_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_budget_ac
     }
 }
 
-pub use crate::operation::describe_budget_action_histories::_describe_budget_action_histories_output::DescribeBudgetActionHistoriesOutput;
-
 pub use crate::operation::describe_budget_action_histories::_describe_budget_action_histories_input::DescribeBudgetActionHistoriesInput;
+
+pub use crate::operation::describe_budget_action_histories::_describe_budget_action_histories_output::DescribeBudgetActionHistoriesOutput;
 
 mod _describe_budget_action_histories_input;
 

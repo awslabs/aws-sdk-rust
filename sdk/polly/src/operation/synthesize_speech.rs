@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::synthesize_speech:
     }
 }
 
-pub use crate::operation::synthesize_speech::_synthesize_speech_output::SynthesizeSpeechOutput;
-
 pub use crate::operation::synthesize_speech::_synthesize_speech_input::SynthesizeSpeechInput;
+
+pub use crate::operation::synthesize_speech::_synthesize_speech_output::SynthesizeSpeechOutput;
 
 mod _synthesize_speech_input;
 

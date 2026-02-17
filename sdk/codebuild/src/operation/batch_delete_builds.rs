@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_build
     }
 }
 
-pub use crate::operation::batch_delete_builds::_batch_delete_builds_output::BatchDeleteBuildsOutput;
-
 pub use crate::operation::batch_delete_builds::_batch_delete_builds_input::BatchDeleteBuildsInput;
+
+pub use crate::operation::batch_delete_builds::_batch_delete_builds_output::BatchDeleteBuildsOutput;
 
 mod _batch_delete_builds_input;
 

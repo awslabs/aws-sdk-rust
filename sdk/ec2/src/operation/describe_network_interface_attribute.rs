@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_network_i
     }
 }
 
-pub use crate::operation::describe_network_interface_attribute::_describe_network_interface_attribute_output::DescribeNetworkInterfaceAttributeOutput;
-
 pub use crate::operation::describe_network_interface_attribute::_describe_network_interface_attribute_input::DescribeNetworkInterfaceAttributeInput;
+
+pub use crate::operation::describe_network_interface_attribute::_describe_network_interface_attribute_output::DescribeNetworkInterfaceAttributeOutput;
 
 mod _describe_network_interface_attribute_input;
 

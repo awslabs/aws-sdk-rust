@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_hierar
     }
 }
 
-pub use crate::operation::update_user_hierarchy_group_name::_update_user_hierarchy_group_name_output::UpdateUserHierarchyGroupNameOutput;
-
 pub use crate::operation::update_user_hierarchy_group_name::_update_user_hierarchy_group_name_input::UpdateUserHierarchyGroupNameInput;
+
+pub use crate::operation::update_user_hierarchy_group_name::_update_user_hierarchy_group_name_output::UpdateUserHierarchyGroupNameOutput;
 
 mod _update_user_hierarchy_group_name_input;
 

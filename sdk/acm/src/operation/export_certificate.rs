@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_certificate
     }
 }
 
-pub use crate::operation::export_certificate::_export_certificate_output::ExportCertificateOutput;
-
 pub use crate::operation::export_certificate::_export_certificate_input::ExportCertificateInput;
+
+pub use crate::operation::export_certificate::_export_certificate_output::ExportCertificateOutput;
 
 mod _export_certificate_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_instance_types_from_instance_requirements::_get_instance_types_from_instance_requirements_output::GetInstanceTypesFromInstanceRequirementsOutput;
-
 pub use crate::operation::get_instance_types_from_instance_requirements::_get_instance_types_from_instance_requirements_input::GetInstanceTypesFromInstanceRequirementsInput;
+
+pub use crate::operation::get_instance_types_from_instance_requirements::_get_instance_types_from_instance_requirements_output::GetInstanceTypesFromInstanceRequirementsOutput;
 
 mod _get_instance_types_from_instance_requirements_input;
 

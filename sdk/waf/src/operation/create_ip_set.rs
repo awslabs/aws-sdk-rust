@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ip_set::Cre
     }
 }
 
-pub use crate::operation::create_ip_set::_create_ip_set_output::CreateIpSetOutput;
-
 pub use crate::operation::create_ip_set::_create_ip_set_input::CreateIpSetInput;
+
+pub use crate::operation::create_ip_set::_create_ip_set_output::CreateIpSetOutput;
 
 mod _create_ip_set_input;
 

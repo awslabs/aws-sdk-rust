@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bonus_payment
     }
 }
 
-pub use crate::operation::list_bonus_payments::_list_bonus_payments_output::ListBonusPaymentsOutput;
-
 pub use crate::operation::list_bonus_payments::_list_bonus_payments_input::ListBonusPaymentsInput;
+
+pub use crate::operation::list_bonus_payments::_list_bonus_payments_output::ListBonusPaymentsOutput;
 
 mod _list_bonus_payments_input;
 

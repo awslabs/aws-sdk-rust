@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_repositor
     }
 }
 
-pub use crate::operation::describe_repositories::_describe_repositories_output::DescribeRepositoriesOutput;
-
 pub use crate::operation::describe_repositories::_describe_repositories_input::DescribeRepositoriesInput;
+
+pub use crate::operation::describe_repositories::_describe_repositories_output::DescribeRepositoriesOutput;
 
 mod _describe_repositories_input;
 

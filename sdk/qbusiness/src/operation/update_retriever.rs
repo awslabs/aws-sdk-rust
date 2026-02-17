@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_retriever::
     }
 }
 
-pub use crate::operation::update_retriever::_update_retriever_output::UpdateRetrieverOutput;
-
 pub use crate::operation::update_retriever::_update_retriever_input::UpdateRetrieverInput;
+
+pub use crate::operation::update_retriever::_update_retriever_output::UpdateRetrieverOutput;
 
 mod _update_retriever_input;
 

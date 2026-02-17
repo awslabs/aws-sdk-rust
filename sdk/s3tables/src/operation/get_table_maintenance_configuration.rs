@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_maintena
     }
 }
 
-pub use crate::operation::get_table_maintenance_configuration::_get_table_maintenance_configuration_output::GetTableMaintenanceConfigurationOutput;
-
 pub use crate::operation::get_table_maintenance_configuration::_get_table_maintenance_configuration_input::GetTableMaintenanceConfigurationInput;
+
+pub use crate::operation::get_table_maintenance_configuration::_get_table_maintenance_configuration_output::GetTableMaintenanceConfigurationOutput;
 
 mod _get_table_maintenance_configuration_input;
 

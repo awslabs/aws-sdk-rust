@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_asset_revisio
     }
 }
 
-pub use crate::operation::list_asset_revisions::_list_asset_revisions_output::ListAssetRevisionsOutput;
-
 pub use crate::operation::list_asset_revisions::_list_asset_revisions_input::ListAssetRevisionsInput;
+
+pub use crate::operation::list_asset_revisions::_list_asset_revisions_output::ListAssetRevisionsOutput;
 
 mod _list_asset_revisions_input;
 

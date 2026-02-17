@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_recipe::
     }
 }
 
-pub use crate::operation::get_image_recipe::_get_image_recipe_output::GetImageRecipeOutput;
-
 pub use crate::operation::get_image_recipe::_get_image_recipe_input::GetImageRecipeInput;
+
+pub use crate::operation::get_image_recipe::_get_image_recipe_output::GetImageRecipeOutput;
 
 mod _get_image_recipe_input;
 

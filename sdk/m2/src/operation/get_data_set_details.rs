@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_set_detai
     }
 }
 
-pub use crate::operation::get_data_set_details::_get_data_set_details_output::GetDataSetDetailsOutput;
-
 pub use crate::operation::get_data_set_details::_get_data_set_details_input::GetDataSetDetailsInput;
+
+pub use crate::operation::get_data_set_details::_get_data_set_details_output::GetDataSetDetailsOutput;
 
 mod _get_data_set_details_input;
 

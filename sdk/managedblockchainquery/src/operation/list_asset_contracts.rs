@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_asset_contrac
     }
 }
 
-pub use crate::operation::list_asset_contracts::_list_asset_contracts_output::ListAssetContractsOutput;
-
 pub use crate::operation::list_asset_contracts::_list_asset_contracts_input::ListAssetContractsInput;
+
+pub use crate::operation::list_asset_contracts::_list_asset_contracts_output::ListAssetContractsOutput;
 
 mod _list_asset_contracts_input;
 

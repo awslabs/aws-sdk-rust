@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_keys::ListKey
     }
 }
 
-pub use crate::operation::list_keys::_list_keys_output::ListKeysOutput;
-
 pub use crate::operation::list_keys::_list_keys_input::ListKeysInput;
+
+pub use crate::operation::list_keys::_list_keys_output::ListKeysOutput;
 
 mod _list_keys_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_global_tabl
     }
 }
 
-pub use crate::operation::update_global_table::_update_global_table_output::UpdateGlobalTableOutput;
-
 pub use crate::operation::update_global_table::_update_global_table_input::UpdateGlobalTableInput;
+
+pub use crate::operation::update_global_table::_update_global_table_output::UpdateGlobalTableOutput;
 
 mod _update_global_table_input;
 

@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_reset_device
     }
 }
 
-pub use crate::operation::batch_reset_devices_for_user::_batch_reset_devices_for_user_output::BatchResetDevicesForUserOutput;
-
 pub use crate::operation::batch_reset_devices_for_user::_batch_reset_devices_for_user_input::BatchResetDevicesForUserInput;
+
+pub use crate::operation::batch_reset_devices_for_user::_batch_reset_devices_for_user_output::BatchResetDevicesForUserOutput;
 
 mod _batch_reset_devices_for_user_input;
 

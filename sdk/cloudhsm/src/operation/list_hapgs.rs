@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hapgs::ListHa
     }
 }
 
-pub use crate::operation::list_hapgs::_list_hapgs_output::ListHapgsOutput;
-
 pub use crate::operation::list_hapgs::_list_hapgs_input::ListHapgsInput;
+
+pub use crate::operation::list_hapgs::_list_hapgs_output::ListHapgsOutput;
 
 mod _list_hapgs_input;
 

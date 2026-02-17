@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_messa
     }
 }
 
-pub use crate::operation::delete_voice_message_spend_limit_override::_delete_voice_message_spend_limit_override_output::DeleteVoiceMessageSpendLimitOverrideOutput;
-
 pub use crate::operation::delete_voice_message_spend_limit_override::_delete_voice_message_spend_limit_override_input::DeleteVoiceMessageSpendLimitOverrideInput;
+
+pub use crate::operation::delete_voice_message_spend_limit_override::_delete_voice_message_spend_limit_override_output::DeleteVoiceMessageSpendLimitOverrideOutput;
 
 mod _delete_voice_message_spend_limit_override_input;
 

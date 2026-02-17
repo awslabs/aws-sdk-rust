@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cache_subne
     }
 }
 
-pub use crate::operation::delete_cache_subnet_group::_delete_cache_subnet_group_output::DeleteCacheSubnetGroupOutput;
-
 pub use crate::operation::delete_cache_subnet_group::_delete_cache_subnet_group_input::DeleteCacheSubnetGroupInput;
+
+pub use crate::operation::delete_cache_subnet_group::_delete_cache_subnet_group_output::DeleteCacheSubnetGroupOutput;
 
 mod _delete_cache_subnet_group_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pipe::Updat
     }
 }
 
-pub use crate::operation::update_pipe::_update_pipe_output::UpdatePipeOutput;
-
 pub use crate::operation::update_pipe::_update_pipe_input::UpdatePipeInput;
+
+pub use crate::operation::update_pipe::_update_pipe_output::UpdatePipeOutput;
 
 mod _update_pipe_input;
 

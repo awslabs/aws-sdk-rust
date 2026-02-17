@@ -90,7 +90,6 @@ impl BrandingConfigurationBuilder {
         &self.logo
     }
     /// <p>Metadata for the wallpaper image file, including the MIME type, file extension, and upload timestamp.</p>
-    /// This field is required.
     pub fn wallpaper(mut self, input: crate::types::ImageMetadata) -> Self {
         self.wallpaper = ::std::option::Option::Some(input);
         self

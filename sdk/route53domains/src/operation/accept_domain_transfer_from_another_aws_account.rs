@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::accept_domain_transfer_from_another_aws_account::_accept_domain_transfer_from_another_aws_account_output::AcceptDomainTransferFromAnotherAwsAccountOutput;
-
 pub use crate::operation::accept_domain_transfer_from_another_aws_account::_accept_domain_transfer_from_another_aws_account_input::AcceptDomainTransferFromAnotherAwsAccountInput;
+
+pub use crate::operation::accept_domain_transfer_from_another_aws_account::_accept_domain_transfer_from_another_aws_account_output::AcceptDomainTransferFromAnotherAwsAccountOutput;
 
 mod _accept_domain_transfer_from_another_aws_account_input;
 

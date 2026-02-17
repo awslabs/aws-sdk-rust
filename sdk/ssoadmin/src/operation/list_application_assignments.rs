@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_a
     }
 }
 
-pub use crate::operation::list_application_assignments::_list_application_assignments_output::ListApplicationAssignmentsOutput;
-
 pub use crate::operation::list_application_assignments::_list_application_assignments_input::ListApplicationAssignmentsInput;
+
+pub use crate::operation::list_application_assignments::_list_application_assignments_output::ListApplicationAssignmentsOutput;
 
 mod _list_application_assignments_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_thing_group
     }
 }
 
-pub use crate::operation::update_thing_groups_for_thing::_update_thing_groups_for_thing_output::UpdateThingGroupsForThingOutput;
-
 pub use crate::operation::update_thing_groups_for_thing::_update_thing_groups_for_thing_input::UpdateThingGroupsForThingInput;
+
+pub use crate::operation::update_thing_groups_for_thing::_update_thing_groups_for_thing_output::UpdateThingGroupsForThingOutput;
 
 mod _update_thing_groups_for_thing_input;
 

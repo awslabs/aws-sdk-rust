@@ -497,9 +497,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resend_confirmatio
     }
 }
 
-pub use crate::operation::resend_confirmation_code::_resend_confirmation_code_output::ResendConfirmationCodeOutput;
-
 pub use crate::operation::resend_confirmation_code::_resend_confirmation_code_input::ResendConfirmationCodeInput;
+
+pub use crate::operation::resend_confirmation_code::_resend_confirmation_code_output::ResendConfirmationCodeOutput;
 
 mod _resend_confirmation_code_input;
 

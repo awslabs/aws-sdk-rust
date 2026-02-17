@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_predictors::L
     }
 }
 
-pub use crate::operation::list_predictors::_list_predictors_output::ListPredictorsOutput;
-
 pub use crate::operation::list_predictors::_list_predictors_input::ListPredictorsInput;
+
+pub use crate::operation::list_predictors::_list_predictors_output::ListPredictorsOutput;
 
 mod _list_predictors_input;
 

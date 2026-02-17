@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_key_sig
     }
 }
 
-pub use crate::operation::deactivate_key_signing_key::_deactivate_key_signing_key_output::DeactivateKeySigningKeyOutput;
-
 pub use crate::operation::deactivate_key_signing_key::_deactivate_key_signing_key_input::DeactivateKeySigningKeyInput;
+
+pub use crate::operation::deactivate_key_signing_key::_deactivate_key_signing_key_output::DeactivateKeySigningKeyOutput;
 
 mod _deactivate_key_signing_key_input;
 

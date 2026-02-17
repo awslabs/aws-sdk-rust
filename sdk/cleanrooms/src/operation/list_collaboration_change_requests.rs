@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collaboration
     }
 }
 
-pub use crate::operation::list_collaboration_change_requests::_list_collaboration_change_requests_output::ListCollaborationChangeRequestsOutput;
-
 pub use crate::operation::list_collaboration_change_requests::_list_collaboration_change_requests_input::ListCollaborationChangeRequestsInput;
+
+pub use crate::operation::list_collaboration_change_requests::_list_collaboration_change_requests_output::ListCollaborationChangeRequestsOutput;
 
 mod _list_collaboration_change_requests_input;
 

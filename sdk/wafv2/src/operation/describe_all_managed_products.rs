@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_all_manag
     }
 }
 
-pub use crate::operation::describe_all_managed_products::_describe_all_managed_products_output::DescribeAllManagedProductsOutput;
-
 pub use crate::operation::describe_all_managed_products::_describe_all_managed_products_input::DescribeAllManagedProductsInput;
+
+pub use crate::operation::describe_all_managed_products::_describe_all_managed_products_output::DescribeAllManagedProductsOutput;
 
 mod _describe_all_managed_products_input;
 

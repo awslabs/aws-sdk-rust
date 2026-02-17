@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_role::GetRoleE
     }
 }
 
-pub use crate::operation::get_role::_get_role_output::GetRoleOutput;
-
 pub use crate::operation::get_role::_get_role_input::GetRoleInput;
+
+pub use crate::operation::get_role::_get_role_output::GetRoleOutput;
 
 mod _get_role_input;
 

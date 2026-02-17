@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queued_messag
     }
 }
 
-pub use crate::operation::list_queued_messages::_list_queued_messages_output::ListQueuedMessagesOutput;
-
 pub use crate::operation::list_queued_messages::_list_queued_messages_input::ListQueuedMessagesInput;
+
+pub use crate::operation::list_queued_messages::_list_queued_messages_output::ListQueuedMessagesOutput;
 
 mod _list_queued_messages_input;
 

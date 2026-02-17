@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_config::Del
     }
 }
 
-pub use crate::operation::delete_config::_delete_config_output::DeleteConfigOutput;
-
 pub use crate::operation::delete_config::_delete_config_input::DeleteConfigInput;
+
+pub use crate::operation::delete_config::_delete_config_output::DeleteConfigOutput;
 
 mod _delete_config_input;
 

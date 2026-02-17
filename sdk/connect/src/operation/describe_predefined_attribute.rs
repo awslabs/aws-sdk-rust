@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_predefine
     }
 }
 
-pub use crate::operation::describe_predefined_attribute::_describe_predefined_attribute_output::DescribePredefinedAttributeOutput;
-
 pub use crate::operation::describe_predefined_attribute::_describe_predefined_attribute_input::DescribePredefinedAttributeInput;
+
+pub use crate::operation::describe_predefined_attribute::_describe_predefined_attribute_output::DescribePredefinedAttributeOutput;
 
 mod _describe_predefined_attribute_input;
 

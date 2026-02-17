@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_executors::Li
     }
 }
 
-pub use crate::operation::list_executors::_list_executors_output::ListExecutorsOutput;
-
 pub use crate::operation::list_executors::_list_executors_input::ListExecutorsInput;
+
+pub use crate::operation::list_executors::_list_executors_output::ListExecutorsOutput;
 
 mod _list_executors_input;
 

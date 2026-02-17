@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_managed_thi
     }
 }
 
-pub use crate::operation::create_managed_thing::_create_managed_thing_output::CreateManagedThingOutput;
-
 pub use crate::operation::create_managed_thing::_create_managed_thing_input::CreateManagedThingInput;
+
+pub use crate::operation::create_managed_thing::_create_managed_thing_output::CreateManagedThingOutput;
 
 mod _create_managed_thing_input;
 

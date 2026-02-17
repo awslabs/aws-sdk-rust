@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_code_securi
     }
 }
 
-pub use crate::operation::create_code_security_scan_configuration::_create_code_security_scan_configuration_output::CreateCodeSecurityScanConfigurationOutput;
-
 pub use crate::operation::create_code_security_scan_configuration::_create_code_security_scan_configuration_input::CreateCodeSecurityScanConfigurationInput;
+
+pub use crate::operation::create_code_security_scan_configuration::_create_code_security_scan_configuration_output::CreateCodeSecurityScanConfigurationOutput;
 
 mod _create_code_security_scan_configuration_input;
 

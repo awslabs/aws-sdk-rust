@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_spot_pric
     }
 }
 
-pub use crate::operation::describe_spot_price_history::_describe_spot_price_history_output::DescribeSpotPriceHistoryOutput;
-
 pub use crate::operation::describe_spot_price_history::_describe_spot_price_history_input::DescribeSpotPriceHistoryInput;
+
+pub use crate::operation::describe_spot_price_history::_describe_spot_price_history_output::DescribeSpotPriceHistoryOutput;
 
 mod _describe_spot_price_history_input;
 

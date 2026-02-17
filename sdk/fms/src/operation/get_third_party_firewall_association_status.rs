@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_third_party_firewall_association_status::_get_third_party_firewall_association_status_output::GetThirdPartyFirewallAssociationStatusOutput;
-
 pub use crate::operation::get_third_party_firewall_association_status::_get_third_party_firewall_association_status_input::GetThirdPartyFirewallAssociationStatusInput;
+
+pub use crate::operation::get_third_party_firewall_association_status::_get_third_party_firewall_association_status_output::GetThirdPartyFirewallAssociationStatusOutput;
 
 mod _get_third_party_firewall_association_status_input;
 

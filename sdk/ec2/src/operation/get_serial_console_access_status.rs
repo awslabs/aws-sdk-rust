@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_serial_console
     }
 }
 
-pub use crate::operation::get_serial_console_access_status::_get_serial_console_access_status_output::GetSerialConsoleAccessStatusOutput;
-
 pub use crate::operation::get_serial_console_access_status::_get_serial_console_access_status_input::GetSerialConsoleAccessStatusInput;
+
+pub use crate::operation::get_serial_console_access_status::_get_serial_console_access_status_output::GetSerialConsoleAccessStatusOutput;
 
 mod _get_serial_console_access_status_input;
 

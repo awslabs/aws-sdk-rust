@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_performance
     }
 }
 
-pub use crate::operation::delete_performance_analysis_report::_delete_performance_analysis_report_output::DeletePerformanceAnalysisReportOutput;
-
 pub use crate::operation::delete_performance_analysis_report::_delete_performance_analysis_report_input::DeletePerformanceAnalysisReportInput;
+
+pub use crate::operation::delete_performance_analysis_report::_delete_performance_analysis_report_output::DeletePerformanceAnalysisReportOutput;
 
 mod _delete_performance_analysis_report_input;
 

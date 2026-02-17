@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_folder::GetFol
     }
 }
 
-pub use crate::operation::get_folder::_get_folder_output::GetFolderOutput;
-
 pub use crate::operation::get_folder::_get_folder_input::GetFolderInput;
+
+pub use crate::operation::get_folder::_get_folder_output::GetFolderOutput;
 
 mod _get_folder_input;
 

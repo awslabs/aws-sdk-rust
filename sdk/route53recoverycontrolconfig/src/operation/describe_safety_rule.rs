@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_safety_ru
     }
 }
 
-pub use crate::operation::describe_safety_rule::_describe_safety_rule_output::DescribeSafetyRuleOutput;
-
 pub use crate::operation::describe_safety_rule::_describe_safety_rule_input::DescribeSafetyRuleInput;
+
+pub use crate::operation::describe_safety_rule::_describe_safety_rule_output::DescribeSafetyRuleOutput;
 
 mod _describe_safety_rule_input;
 

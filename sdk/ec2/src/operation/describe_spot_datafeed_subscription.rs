@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_spot_data
     }
 }
 
-pub use crate::operation::describe_spot_datafeed_subscription::_describe_spot_datafeed_subscription_output::DescribeSpotDatafeedSubscriptionOutput;
-
 pub use crate::operation::describe_spot_datafeed_subscription::_describe_spot_datafeed_subscription_input::DescribeSpotDatafeedSubscriptionInput;
+
+pub use crate::operation::describe_spot_datafeed_subscription::_describe_spot_datafeed_subscription_output::DescribeSpotDatafeedSubscriptionOutput;
 
 mod _describe_spot_datafeed_subscription_input;
 

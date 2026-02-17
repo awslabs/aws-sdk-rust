@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_insta
     }
 }
 
-pub use crate::operation::disassociate_instance_storage_config::_disassociate_instance_storage_config_output::DisassociateInstanceStorageConfigOutput;
-
 pub use crate::operation::disassociate_instance_storage_config::_disassociate_instance_storage_config_input::DisassociateInstanceStorageConfigInput;
+
+pub use crate::operation::disassociate_instance_storage_config::_disassociate_instance_storage_config_output::DisassociateInstanceStorageConfigOutput;
 
 mod _disassociate_instance_storage_config_input;
 

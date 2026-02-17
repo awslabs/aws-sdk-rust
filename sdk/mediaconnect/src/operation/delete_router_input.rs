@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_router_inpu
     }
 }
 
-pub use crate::operation::delete_router_input::_delete_router_input_output::DeleteRouterInputOutput;
-
 pub use crate::operation::delete_router_input::_delete_router_input_input::DeleteRouterInputInput;
+
+pub use crate::operation::delete_router_input::_delete_router_input_output::DeleteRouterInputOutput;
 
 mod _delete_router_input_input;
 

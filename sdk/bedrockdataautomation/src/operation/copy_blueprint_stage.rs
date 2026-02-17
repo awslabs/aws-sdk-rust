@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_blueprint_sta
     }
 }
 
-pub use crate::operation::copy_blueprint_stage::_copy_blueprint_stage_output::CopyBlueprintStageOutput;
-
 pub use crate::operation::copy_blueprint_stage::_copy_blueprint_stage_input::CopyBlueprintStageInput;
+
+pub use crate::operation::copy_blueprint_stage::_copy_blueprint_stage_output::CopyBlueprintStageOutput;
 
 mod _copy_blueprint_stage_input;
 

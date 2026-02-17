@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_memory_record:
     }
 }
 
-pub use crate::operation::get_memory_record::_get_memory_record_output::GetMemoryRecordOutput;
-
 pub use crate::operation::get_memory_record::_get_memory_record_input::GetMemoryRecordInput;
+
+pub use crate::operation::get_memory_record::_get_memory_record_output::GetMemoryRecordOutput;
 
 mod _get_memory_record_input;
 

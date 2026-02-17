@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_graph_snaps
     }
 }
 
-pub use crate::operation::delete_graph_snapshot::_delete_graph_snapshot_output::DeleteGraphSnapshotOutput;
-
 pub use crate::operation::delete_graph_snapshot::_delete_graph_snapshot_input::DeleteGraphSnapshotInput;
+
+pub use crate::operation::delete_graph_snapshot::_delete_graph_snapshot_output::DeleteGraphSnapshotOutput;
 
 mod _delete_graph_snapshot_input;
 

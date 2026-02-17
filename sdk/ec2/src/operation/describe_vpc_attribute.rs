@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_attri
     }
 }
 
-pub use crate::operation::describe_vpc_attribute::_describe_vpc_attribute_output::DescribeVpcAttributeOutput;
-
 pub use crate::operation::describe_vpc_attribute::_describe_vpc_attribute_input::DescribeVpcAttributeInput;
+
+pub use crate::operation::describe_vpc_attribute::_describe_vpc_attribute_output::DescribeVpcAttributeOutput;
 
 mod _describe_vpc_attribute_input;
 

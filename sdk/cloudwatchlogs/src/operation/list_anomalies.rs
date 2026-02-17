@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_anomalies::Li
     }
 }
 
-pub use crate::operation::list_anomalies::_list_anomalies_output::ListAnomaliesOutput;
-
 pub use crate::operation::list_anomalies::_list_anomalies_input::ListAnomaliesInput;
+
+pub use crate::operation::list_anomalies::_list_anomalies_output::ListAnomaliesOutput;
 
 mod _list_anomalies_input;
 

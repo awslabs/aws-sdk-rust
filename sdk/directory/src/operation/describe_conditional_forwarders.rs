@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_condition
     }
 }
 
-pub use crate::operation::describe_conditional_forwarders::_describe_conditional_forwarders_output::DescribeConditionalForwardersOutput;
-
 pub use crate::operation::describe_conditional_forwarders::_describe_conditional_forwarders_input::DescribeConditionalForwardersInput;
+
+pub use crate::operation::describe_conditional_forwarders::_describe_conditional_forwarders_output::DescribeConditionalForwardersOutput;
 
 mod _describe_conditional_forwarders_input;
 

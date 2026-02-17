@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_root_fold
     }
 }
 
-pub use crate::operation::describe_root_folders::_describe_root_folders_output::DescribeRootFoldersOutput;
-
 pub use crate::operation::describe_root_folders::_describe_root_folders_input::DescribeRootFoldersInput;
+
+pub use crate::operation::describe_root_folders::_describe_root_folders_output::DescribeRootFoldersOutput;
 
 mod _describe_root_folders_input;
 

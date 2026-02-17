@@ -422,12 +422,6 @@ pub(crate) fn branding_configuration_correct_errors(
             crate::serde_util::image_metadata_correct_errors(builder).build().ok()
         }
     }
-    if builder.wallpaper.is_none() {
-        builder.wallpaper = {
-            let builder = crate::types::builders::ImageMetadataBuilder::default();
-            crate::serde_util::image_metadata_correct_errors(builder).build().ok()
-        }
-    }
     if builder.favicon.is_none() {
         builder.favicon = {
             let builder = crate::types::builders::ImageMetadataBuilder::default();

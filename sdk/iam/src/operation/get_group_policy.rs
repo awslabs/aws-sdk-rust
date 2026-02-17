@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group_policy::
     }
 }
 
-pub use crate::operation::get_group_policy::_get_group_policy_output::GetGroupPolicyOutput;
-
 pub use crate::operation::get_group_policy::_get_group_policy_input::GetGroupPolicyInput;
+
+pub use crate::operation::get_group_policy::_get_group_policy_output::GetGroupPolicyOutput;
 
 mod _get_group_policy_input;
 

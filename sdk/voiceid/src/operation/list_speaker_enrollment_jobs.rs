@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_speaker_enrol
     }
 }
 
-pub use crate::operation::list_speaker_enrollment_jobs::_list_speaker_enrollment_jobs_output::ListSpeakerEnrollmentJobsOutput;
-
 pub use crate::operation::list_speaker_enrollment_jobs::_list_speaker_enrollment_jobs_input::ListSpeakerEnrollmentJobsInput;
+
+pub use crate::operation::list_speaker_enrollment_jobs::_list_speaker_enrollment_jobs_output::ListSpeakerEnrollmentJobsOutput;
 
 mod _list_speaker_enrollment_jobs_input;
 

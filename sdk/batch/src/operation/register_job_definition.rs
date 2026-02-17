@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_job_defin
     }
 }
 
-pub use crate::operation::register_job_definition::_register_job_definition_output::RegisterJobDefinitionOutput;
-
 pub use crate::operation::register_job_definition::_register_job_definition_input::RegisterJobDefinitionInput;
+
+pub use crate::operation::register_job_definition::_register_job_definition_output::RegisterJobDefinitionOutput;
 
 mod _register_job_definition_input;
 

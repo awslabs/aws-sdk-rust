@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_alarm_con
     }
 }
 
-pub use crate::operation::describe_alarm_contributors::_describe_alarm_contributors_output::DescribeAlarmContributorsOutput;
-
 pub use crate::operation::describe_alarm_contributors::_describe_alarm_contributors_input::DescribeAlarmContributorsInput;
+
+pub use crate::operation::describe_alarm_contributors::_describe_alarm_contributors_output::DescribeAlarmContributorsOutput;
 
 mod _describe_alarm_contributors_input;
 

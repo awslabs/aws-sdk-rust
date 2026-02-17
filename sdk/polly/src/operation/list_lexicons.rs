@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lexicons::Lis
     }
 }
 
-pub use crate::operation::list_lexicons::_list_lexicons_output::ListLexiconsOutput;
-
 pub use crate::operation::list_lexicons::_list_lexicons_input::ListLexiconsInput;
+
+pub use crate::operation::list_lexicons::_list_lexicons_output::ListLexiconsOutput;
 
 mod _list_lexicons_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_firewall:
     }
 }
 
-pub use crate::operation::describe_firewall::_describe_firewall_output::DescribeFirewallOutput;
-
 pub use crate::operation::describe_firewall::_describe_firewall_input::DescribeFirewallInput;
+
+pub use crate::operation::describe_firewall::_describe_firewall_output::DescribeFirewallOutput;
 
 mod _describe_firewall_input;
 

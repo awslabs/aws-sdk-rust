@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_retent
     }
 }
 
-pub use crate::operation::update_data_retention::_update_data_retention_output::UpdateDataRetentionOutput;
-
 pub use crate::operation::update_data_retention::_update_data_retention_input::UpdateDataRetentionInput;
+
+pub use crate::operation::update_data_retention::_update_data_retention_output::UpdateDataRetentionOutput;
 
 mod _update_data_retention_input;
 

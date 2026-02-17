@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_routing_pro
     }
 }
 
-pub use crate::operation::delete_routing_profile::_delete_routing_profile_output::DeleteRoutingProfileOutput;
-
 pub use crate::operation::delete_routing_profile::_delete_routing_profile_input::DeleteRoutingProfileInput;
+
+pub use crate::operation::delete_routing_profile::_delete_routing_profile_output::DeleteRoutingProfileOutput;
 
 mod _delete_routing_profile_input;
 

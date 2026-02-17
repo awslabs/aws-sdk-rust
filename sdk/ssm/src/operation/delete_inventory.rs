@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inventory::
     }
 }
 
-pub use crate::operation::delete_inventory::_delete_inventory_output::DeleteInventoryOutput;
-
 pub use crate::operation::delete_inventory::_delete_inventory_input::DeleteInventoryInput;
+
+pub use crate::operation::delete_inventory::_delete_inventory_output::DeleteInventoryOutput;
 
 mod _delete_inventory_input;
 

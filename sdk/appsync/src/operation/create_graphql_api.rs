@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_graphql_api
     }
 }
 
-pub use crate::operation::create_graphql_api::_create_graphql_api_output::CreateGraphqlApiOutput;
-
 pub use crate::operation::create_graphql_api::_create_graphql_api_input::CreateGraphqlApiInput;
+
+pub use crate::operation::create_graphql_api::_create_graphql_api_output::CreateGraphqlApiOutput;
 
 mod _create_graphql_api_input;
 

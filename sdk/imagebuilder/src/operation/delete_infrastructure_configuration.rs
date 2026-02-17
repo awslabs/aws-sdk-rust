@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_infrastruct
     }
 }
 
-pub use crate::operation::delete_infrastructure_configuration::_delete_infrastructure_configuration_output::DeleteInfrastructureConfigurationOutput;
-
 pub use crate::operation::delete_infrastructure_configuration::_delete_infrastructure_configuration_input::DeleteInfrastructureConfigurationInput;
+
+pub use crate::operation::delete_infrastructure_configuration::_delete_infrastructure_configuration_output::DeleteInfrastructureConfigurationOutput;
 
 mod _delete_infrastructure_configuration_input;
 

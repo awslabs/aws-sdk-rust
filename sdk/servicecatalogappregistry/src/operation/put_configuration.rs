@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configuration:
     }
 }
 
-pub use crate::operation::put_configuration::_put_configuration_output::PutConfigurationOutput;
-
 pub use crate::operation::put_configuration::_put_configuration_input::PutConfigurationInput;
+
+pub use crate::operation::put_configuration::_put_configuration_output::PutConfigurationOutput;
 
 mod _put_configuration_input;
 

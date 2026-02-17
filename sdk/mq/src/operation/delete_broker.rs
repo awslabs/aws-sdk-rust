@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_broker::Del
     }
 }
 
-pub use crate::operation::delete_broker::_delete_broker_output::DeleteBrokerOutput;
-
 pub use crate::operation::delete_broker::_delete_broker_input::DeleteBrokerInput;
+
+pub use crate::operation::delete_broker::_delete_broker_output::DeleteBrokerOutput;
 
 mod _delete_broker_input;
 

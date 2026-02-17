@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_origin_access_
     }
 }
 
-pub use crate::operation::get_origin_access_control::_get_origin_access_control_output::GetOriginAccessControlOutput;
-
 pub use crate::operation::get_origin_access_control::_get_origin_access_control_input::GetOriginAccessControlInput;
+
+pub use crate::operation::get_origin_access_control::_get_origin_access_control_output::GetOriginAccessControlOutput;
 
 mod _get_origin_access_control_input;
 

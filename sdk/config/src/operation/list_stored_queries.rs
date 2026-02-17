@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stored_querie
     }
 }
 
-pub use crate::operation::list_stored_queries::_list_stored_queries_output::ListStoredQueriesOutput;
-
 pub use crate::operation::list_stored_queries::_list_stored_queries_input::ListStoredQueriesInput;
+
+pub use crate::operation::list_stored_queries::_list_stored_queries_output::ListStoredQueriesOutput;
 
 mod _list_stored_queries_input;
 

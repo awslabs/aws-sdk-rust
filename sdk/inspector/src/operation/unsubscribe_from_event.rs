@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unsubscribe_from_e
     }
 }
 
-pub use crate::operation::unsubscribe_from_event::_unsubscribe_from_event_output::UnsubscribeFromEventOutput;
-
 pub use crate::operation::unsubscribe_from_event::_unsubscribe_from_event_input::UnsubscribeFromEventInput;
+
+pub use crate::operation::unsubscribe_from_event::_unsubscribe_from_event_output::UnsubscribeFromEventOutput;
 
 mod _unsubscribe_from_event_input;
 

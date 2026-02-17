@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_configura
     }
 }
 
-pub use crate::operation::describe_configuration_aggregators::_describe_configuration_aggregators_output::DescribeConfigurationAggregatorsOutput;
-
 pub use crate::operation::describe_configuration_aggregators::_describe_configuration_aggregators_input::DescribeConfigurationAggregatorsInput;
+
+pub use crate::operation::describe_configuration_aggregators::_describe_configuration_aggregators_output::DescribeConfigurationAggregatorsOutput;
 
 mod _describe_configuration_aggregators_input;
 

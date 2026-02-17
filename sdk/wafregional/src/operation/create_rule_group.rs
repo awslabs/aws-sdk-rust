@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rule_group:
     }
 }
 
-pub use crate::operation::create_rule_group::_create_rule_group_output::CreateRuleGroupOutput;
-
 pub use crate::operation::create_rule_group::_create_rule_group_input::CreateRuleGroupInput;
+
+pub use crate::operation::create_rule_group::_create_rule_group_output::CreateRuleGroupOutput;
 
 mod _create_rule_group_input;
 

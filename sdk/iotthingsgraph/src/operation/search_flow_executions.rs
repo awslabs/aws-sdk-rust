@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_flow_execut
     }
 }
 
-pub use crate::operation::search_flow_executions::_search_flow_executions_output::SearchFlowExecutionsOutput;
-
 pub use crate::operation::search_flow_executions::_search_flow_executions_input::SearchFlowExecutionsInput;
+
+pub use crate::operation::search_flow_executions::_search_flow_executions_output::SearchFlowExecutionsOutput;
 
 mod _search_flow_executions_input;
 

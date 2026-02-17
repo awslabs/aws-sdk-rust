@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_resource_
     }
 }
 
-pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_output::GetIpamResourceCidrsOutput;
-
 pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_input::GetIpamResourceCidrsInput;
+
+pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_output::GetIpamResourceCidrsOutput;
 
 mod _get_ipam_resource_cidrs_input;
 

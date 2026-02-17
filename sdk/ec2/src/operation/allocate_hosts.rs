@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_hosts::Al
     }
 }
 
-pub use crate::operation::allocate_hosts::_allocate_hosts_output::AllocateHostsOutput;
-
 pub use crate::operation::allocate_hosts::_allocate_hosts_input::AllocateHostsInput;
+
+pub use crate::operation::allocate_hosts::_allocate_hosts_output::AllocateHostsOutput;
 
 mod _allocate_hosts_input;
 

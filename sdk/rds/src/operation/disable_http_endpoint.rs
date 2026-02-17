@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_http_endpo
     }
 }
 
-pub use crate::operation::disable_http_endpoint::_disable_http_endpoint_output::DisableHttpEndpointOutput;
-
 pub use crate::operation::disable_http_endpoint::_disable_http_endpoint_input::DisableHttpEndpointInput;
+
+pub use crate::operation::disable_http_endpoint::_disable_http_endpoint_output::DisableHttpEndpointOutput;
 
 mod _disable_http_endpoint_input;
 

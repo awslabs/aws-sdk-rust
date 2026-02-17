@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_package_versi
     }
 }
 
-pub use crate::operation::copy_package_versions::_copy_package_versions_output::CopyPackageVersionsOutput;
-
 pub use crate::operation::copy_package_versions::_copy_package_versions_input::CopyPackageVersionsInput;
+
+pub use crate::operation::copy_package_versions::_copy_package_versions_output::CopyPackageVersionsOutput;
 
 mod _copy_package_versions_input;
 

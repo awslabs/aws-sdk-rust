@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policies::Lis
     }
 }
 
-pub use crate::operation::list_policies::_list_policies_output::ListPoliciesOutput;
-
 pub use crate::operation::list_policies::_list_policies_input::ListPoliciesInput;
+
+pub use crate::operation::list_policies::_list_policies_output::ListPoliciesOutput;
 
 mod _list_policies_input;
 

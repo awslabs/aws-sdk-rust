@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_working_s
     }
 }
 
-pub use crate::operation::describe_working_storage::_describe_working_storage_output::DescribeWorkingStorageOutput;
-
 pub use crate::operation::describe_working_storage::_describe_working_storage_input::DescribeWorkingStorageInput;
+
+pub use crate::operation::describe_working_storage::_describe_working_storage_output::DescribeWorkingStorageOutput;
 
 mod _describe_working_storage_input;
 

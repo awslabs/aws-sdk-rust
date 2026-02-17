@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_build::Dele
     }
 }
 
-pub use crate::operation::delete_build::_delete_build_output::DeleteBuildOutput;
-
 pub use crate::operation::delete_build::_delete_build_input::DeleteBuildInput;
+
+pub use crate::operation::delete_build::_delete_build_output::DeleteBuildOutput;
 
 mod _delete_build_input;
 

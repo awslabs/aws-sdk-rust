@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_bundle_ta
     }
 }
 
-pub use crate::operation::describe_bundle_tasks::_describe_bundle_tasks_output::DescribeBundleTasksOutput;
-
 pub use crate::operation::describe_bundle_tasks::_describe_bundle_tasks_input::DescribeBundleTasksInput;
+
+pub use crate::operation::describe_bundle_tasks::_describe_bundle_tasks_output::DescribeBundleTasksOutput;
 
 mod _describe_bundle_tasks_input;
 

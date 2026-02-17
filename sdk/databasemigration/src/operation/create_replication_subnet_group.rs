@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_replication
     }
 }
 
-pub use crate::operation::create_replication_subnet_group::_create_replication_subnet_group_output::CreateReplicationSubnetGroupOutput;
-
 pub use crate::operation::create_replication_subnet_group::_create_replication_subnet_group_input::CreateReplicationSubnetGroupInput;
+
+pub use crate::operation::create_replication_subnet_group::_create_replication_subnet_group_output::CreateReplicationSubnetGroupOutput;
 
 mod _create_replication_subnet_group_input;
 

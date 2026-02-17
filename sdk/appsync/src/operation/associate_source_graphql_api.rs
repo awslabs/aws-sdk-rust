@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_source_g
     }
 }
 
-pub use crate::operation::associate_source_graphql_api::_associate_source_graphql_api_output::AssociateSourceGraphqlApiOutput;
-
 pub use crate::operation::associate_source_graphql_api::_associate_source_graphql_api_input::AssociateSourceGraphqlApiInput;
+
+pub use crate::operation::associate_source_graphql_api::_associate_source_graphql_api_output::AssociateSourceGraphqlApiOutput;
 
 mod _associate_source_graphql_api_input;
 

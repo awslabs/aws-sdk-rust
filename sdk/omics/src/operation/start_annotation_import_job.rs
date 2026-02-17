@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_annotation_i
     }
 }
 
-pub use crate::operation::start_annotation_import_job::_start_annotation_import_job_output::StartAnnotationImportJobOutput;
-
 pub use crate::operation::start_annotation_import_job::_start_annotation_import_job_input::StartAnnotationImportJobInput;
+
+pub use crate::operation::start_annotation_import_job::_start_annotation_import_job_output::StartAnnotationImportJobOutput;
 
 mod _start_annotation_import_job_input;
 

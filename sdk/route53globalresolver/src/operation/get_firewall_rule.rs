@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_firewall_rule:
     }
 }
 
-pub use crate::operation::get_firewall_rule::_get_firewall_rule_output::GetFirewallRuleOutput;
-
 pub use crate::operation::get_firewall_rule::_get_firewall_rule_input::GetFirewallRuleInput;
+
+pub use crate::operation::get_firewall_rule::_get_firewall_rule_output::GetFirewallRuleOutput;
 
 mod _get_firewall_rule_input;
 

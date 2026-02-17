@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_failures_for_license_configuration_operations::_list_failures_for_license_configuration_operations_output::ListFailuresForLicenseConfigurationOperationsOutput;
-
 pub use crate::operation::list_failures_for_license_configuration_operations::_list_failures_for_license_configuration_operations_input::ListFailuresForLicenseConfigurationOperationsInput;
+
+pub use crate::operation::list_failures_for_license_configuration_operations::_list_failures_for_license_configuration_operations_output::ListFailuresForLicenseConfigurationOperationsOutput;
 
 mod _list_failures_for_license_configuration_operations_input;
 

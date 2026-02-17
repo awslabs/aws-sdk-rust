@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_group_certi
     }
 }
 
-pub use crate::operation::update_group_certificate_configuration::_update_group_certificate_configuration_output::UpdateGroupCertificateConfigurationOutput;
-
 pub use crate::operation::update_group_certificate_configuration::_update_group_certificate_configuration_input::UpdateGroupCertificateConfigurationInput;
+
+pub use crate::operation::update_group_certificate_configuration::_update_group_certificate_configuration_output::UpdateGroupCertificateConfigurationOutput;
 
 mod _update_group_certificate_configuration_input;
 

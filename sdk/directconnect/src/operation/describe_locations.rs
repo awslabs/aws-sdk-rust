@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_locations
     }
 }
 
-pub use crate::operation::describe_locations::_describe_locations_output::DescribeLocationsOutput;
-
 pub use crate::operation::describe_locations::_describe_locations_input::DescribeLocationsInput;
+
+pub use crate::operation::describe_locations::_describe_locations_output::DescribeLocationsOutput;
 
 mod _describe_locations_input;
 

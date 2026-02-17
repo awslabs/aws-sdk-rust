@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subscriptio
     }
 }
 
-pub use crate::operation::create_subscription_definition::_create_subscription_definition_output::CreateSubscriptionDefinitionOutput;
-
 pub use crate::operation::create_subscription_definition::_create_subscription_definition_input::CreateSubscriptionDefinitionInput;
+
+pub use crate::operation::create_subscription_definition::_create_subscription_definition_output::CreateSubscriptionDefinitionOutput;
 
 mod _create_subscription_definition_input;
 

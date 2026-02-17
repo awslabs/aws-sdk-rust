@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backup_plan_fr
     }
 }
 
-pub use crate::operation::get_backup_plan_from_template::_get_backup_plan_from_template_output::GetBackupPlanFromTemplateOutput;
-
 pub use crate::operation::get_backup_plan_from_template::_get_backup_plan_from_template_input::GetBackupPlanFromTemplateInput;
+
+pub use crate::operation::get_backup_plan_from_template::_get_backup_plan_from_template_output::GetBackupPlanFromTemplateOutput;
 
 mod _get_backup_plan_from_template_input;
 

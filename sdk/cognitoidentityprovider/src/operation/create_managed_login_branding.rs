@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_managed_log
     }
 }
 
-pub use crate::operation::create_managed_login_branding::_create_managed_login_branding_output::CreateManagedLoginBrandingOutput;
-
 pub use crate::operation::create_managed_login_branding::_create_managed_login_branding_input::CreateManagedLoginBrandingInput;
+
+pub use crate::operation::create_managed_login_branding::_create_managed_login_branding_output::CreateManagedLoginBrandingOutput;
 
 mod _create_managed_login_branding_input;
 

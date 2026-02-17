@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_type
     }
 }
 
-pub use crate::operation::list_workflow_types::_list_workflow_types_output::ListWorkflowTypesOutput;
-
 pub use crate::operation::list_workflow_types::_list_workflow_types_input::ListWorkflowTypesInput;
+
+pub use crate::operation::list_workflow_types::_list_workflow_types_output::ListWorkflowTypesOutput;
 
 mod _list_workflow_types_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_table_
     }
 }
 
-pub use crate::operation::delete_data_table_attribute::_delete_data_table_attribute_output::DeleteDataTableAttributeOutput;
-
 pub use crate::operation::delete_data_table_attribute::_delete_data_table_attribute_input::DeleteDataTableAttributeInput;
+
+pub use crate::operation::delete_data_table_attribute::_delete_data_table_attribute_output::DeleteDataTableAttributeOutput;
 
 mod _delete_data_table_attribute_input;
 

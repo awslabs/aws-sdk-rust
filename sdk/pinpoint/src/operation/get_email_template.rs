@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_email_template
     }
 }
 
-pub use crate::operation::get_email_template::_get_email_template_output::GetEmailTemplateOutput;
-
 pub use crate::operation::get_email_template::_get_email_template_input::GetEmailTemplateInput;
+
+pub use crate::operation::get_email_template::_get_email_template_output::GetEmailTemplateOutput;
 
 mod _get_email_template_input;
 

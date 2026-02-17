@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_continuou
     }
 }
 
-pub use crate::operation::describe_continuous_backups::_describe_continuous_backups_output::DescribeContinuousBackupsOutput;
-
 pub use crate::operation::describe_continuous_backups::_describe_continuous_backups_input::DescribeContinuousBackupsInput;
+
+pub use crate::operation::describe_continuous_backups::_describe_continuous_backups_output::DescribeContinuousBackupsOutput;
 
 mod _describe_continuous_backups_input;
 

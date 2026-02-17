@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_component
     }
 }
 
-pub use crate::operation::list_app_component_compliances::_list_app_component_compliances_output::ListAppComponentCompliancesOutput;
-
 pub use crate::operation::list_app_component_compliances::_list_app_component_compliances_input::ListAppComponentCompliancesInput;
+
+pub use crate::operation::list_app_component_compliances::_list_app_component_compliances_output::ListAppComponentCompliancesOutput;
 
 mod _list_app_component_compliances_input;
 

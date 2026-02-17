@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_s
     }
 }
 
-pub use crate::operation::list_application_states::_list_application_states_output::ListApplicationStatesOutput;
-
 pub use crate::operation::list_application_states::_list_application_states_input::ListApplicationStatesInput;
+
+pub use crate::operation::list_application_states::_list_application_states_output::ListApplicationStatesOutput;
 
 mod _list_application_states_input;
 

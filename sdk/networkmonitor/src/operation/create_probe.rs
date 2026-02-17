@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_probe::Crea
     }
 }
 
-pub use crate::operation::create_probe::_create_probe_output::CreateProbeOutput;
-
 pub use crate::operation::create_probe::_create_probe_input::CreateProbeInput;
+
+pub use crate::operation::create_probe::_create_probe_output::CreateProbeOutput;
 
 mod _create_probe_input;
 

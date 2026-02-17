@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel::Cr
     }
 }
 
-pub use crate::operation::create_channel::_create_channel_output::CreateChannelOutput;
-
 pub use crate::operation::create_channel::_create_channel_input::CreateChannelInput;
+
+pub use crate::operation::create_channel::_create_channel_output::CreateChannelOutput;
 
 mod _create_channel_input;
 

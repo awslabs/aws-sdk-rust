@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_table_bucke
     }
 }
 
-pub use crate::operation::delete_table_bucket::_delete_table_bucket_output::DeleteTableBucketOutput;
-
 pub use crate::operation::delete_table_bucket::_delete_table_bucket_input::DeleteTableBucketInput;
+
+pub use crate::operation::delete_table_bucket::_delete_table_bucket_output::DeleteTableBucketOutput;
 
 mod _delete_table_bucket_input;
 

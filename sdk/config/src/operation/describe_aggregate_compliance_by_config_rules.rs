@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_aggregate_compliance_by_config_rules::_describe_aggregate_compliance_by_config_rules_output::DescribeAggregateComplianceByConfigRulesOutput;
-
 pub use crate::operation::describe_aggregate_compliance_by_config_rules::_describe_aggregate_compliance_by_config_rules_input::DescribeAggregateComplianceByConfigRulesInput;
+
+pub use crate::operation::describe_aggregate_compliance_by_config_rules::_describe_aggregate_compliance_by_config_rules_output::DescribeAggregateComplianceByConfigRulesOutput;
 
 mod _describe_aggregate_compliance_by_config_rules_input;
 

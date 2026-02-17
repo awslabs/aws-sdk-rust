@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_forecast::D
     }
 }
 
-pub use crate::operation::delete_forecast::_delete_forecast_output::DeleteForecastOutput;
-
 pub use crate::operation::delete_forecast::_delete_forecast_input::DeleteForecastInput;
+
+pub use crate::operation::delete_forecast::_delete_forecast_output::DeleteForecastOutput;
 
 mod _delete_forecast_input;
 

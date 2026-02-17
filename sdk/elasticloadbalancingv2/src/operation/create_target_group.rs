@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_target_grou
     }
 }
 
-pub use crate::operation::create_target_group::_create_target_group_output::CreateTargetGroupOutput;
-
 pub use crate::operation::create_target_group::_create_target_group_input::CreateTargetGroupInput;
+
+pub use crate::operation::create_target_group::_create_target_group_output::CreateTargetGroupOutput;
 
 mod _create_target_group_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_partition::Get
     }
 }
 
-pub use crate::operation::get_partition::_get_partition_output::GetPartitionOutput;
-
 pub use crate::operation::get_partition::_get_partition_input::GetPartitionInput;
+
+pub use crate::operation::get_partition::_get_partition_output::GetPartitionOutput;
 
 mod _get_partition_input;
 

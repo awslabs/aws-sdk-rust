@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_certificate
     }
 }
 
-pub use crate::operation::revoke_certificate::_revoke_certificate_output::RevokeCertificateOutput;
-
 pub use crate::operation::revoke_certificate::_revoke_certificate_input::RevokeCertificateInput;
+
+pub use crate::operation::revoke_certificate::_revoke_certificate_output::RevokeCertificateOutput;
 
 mod _revoke_certificate_input;
 

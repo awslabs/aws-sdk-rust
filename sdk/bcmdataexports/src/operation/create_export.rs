@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_export::Cre
     }
 }
 
-pub use crate::operation::create_export::_create_export_output::CreateExportOutput;
-
 pub use crate::operation::create_export::_create_export_input::CreateExportInput;
+
+pub use crate::operation::create_export::_create_export_output::CreateExportOutput;
 
 mod _create_export_input;
 

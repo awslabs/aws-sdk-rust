@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::opt_out_speaker::O
     }
 }
 
-pub use crate::operation::opt_out_speaker::_opt_out_speaker_output::OptOutSpeakerOutput;
-
 pub use crate::operation::opt_out_speaker::_opt_out_speaker_input::OptOutSpeakerInput;
+
+pub use crate::operation::opt_out_speaker::_opt_out_speaker_output::OptOutSpeakerOutput;
 
 mod _opt_out_speaker_input;
 

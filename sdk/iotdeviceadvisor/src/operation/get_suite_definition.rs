@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_suite_definiti
     }
 }
 
-pub use crate::operation::get_suite_definition::_get_suite_definition_output::GetSuiteDefinitionOutput;
-
 pub use crate::operation::get_suite_definition::_get_suite_definition_input::GetSuiteDefinitionInput;
+
+pub use crate::operation::get_suite_definition::_get_suite_definition_output::GetSuiteDefinitionOutput;
 
 mod _get_suite_definition_input;
 

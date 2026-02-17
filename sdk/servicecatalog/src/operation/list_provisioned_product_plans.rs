@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_provisioned_p
     }
 }
 
-pub use crate::operation::list_provisioned_product_plans::_list_provisioned_product_plans_output::ListProvisionedProductPlansOutput;
-
 pub use crate::operation::list_provisioned_product_plans::_list_provisioned_product_plans_input::ListProvisionedProductPlansInput;
+
+pub use crate::operation::list_provisioned_product_plans::_list_provisioned_product_plans_output::ListProvisionedProductPlansOutput;
 
 mod _list_provisioned_product_plans_input;
 

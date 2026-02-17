@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mission_profil
     }
 }
 
-pub use crate::operation::get_mission_profile::_get_mission_profile_output::GetMissionProfileOutput;
-
 pub use crate::operation::get_mission_profile::_get_mission_profile_input::GetMissionProfileInput;
+
+pub use crate::operation::get_mission_profile::_get_mission_profile_output::GetMissionProfileOutput;
 
 mod _get_mission_profile_input;
 

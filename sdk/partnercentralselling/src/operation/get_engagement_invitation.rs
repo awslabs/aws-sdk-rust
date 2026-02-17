@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_engagement_inv
     }
 }
 
-pub use crate::operation::get_engagement_invitation::_get_engagement_invitation_output::GetEngagementInvitationOutput;
-
 pub use crate::operation::get_engagement_invitation::_get_engagement_invitation_input::GetEngagementInvitationInput;
+
+pub use crate::operation::get_engagement_invitation::_get_engagement_invitation_output::GetEngagementInvitationOutput;
 
 mod _get_engagement_invitation_input;
 

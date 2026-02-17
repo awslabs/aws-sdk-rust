@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vod_source:
     }
 }
 
-pub use crate::operation::update_vod_source::_update_vod_source_output::UpdateVodSourceOutput;
-
 pub use crate::operation::update_vod_source::_update_vod_source_input::UpdateVodSourceInput;
+
+pub use crate::operation::update_vod_source::_update_vod_source_output::UpdateVodSourceOutput;
 
 mod _update_vod_source_input;
 

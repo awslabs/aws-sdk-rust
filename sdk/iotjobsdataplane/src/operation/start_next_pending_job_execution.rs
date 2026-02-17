@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_next_pending
     }
 }
 
-pub use crate::operation::start_next_pending_job_execution::_start_next_pending_job_execution_output::StartNextPendingJobExecutionOutput;
-
 pub use crate::operation::start_next_pending_job_execution::_start_next_pending_job_execution_input::StartNextPendingJobExecutionInput;
+
+pub use crate::operation::start_next_pending_job_execution::_start_next_pending_job_execution_output::StartNextPendingJobExecutionOutput;
 
 mod _start_next_pending_job_execution_input;
 

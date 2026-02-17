@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_spot_fleet_
     }
 }
 
-pub use crate::operation::modify_spot_fleet_request::_modify_spot_fleet_request_output::ModifySpotFleetRequestOutput;
-
 pub use crate::operation::modify_spot_fleet_request::_modify_spot_fleet_request_input::ModifySpotFleetRequestInput;
+
+pub use crate::operation::modify_spot_fleet_request::_modify_spot_fleet_request_output::ModifySpotFleetRequestOutput;
 
 mod _modify_spot_fleet_request_input;
 

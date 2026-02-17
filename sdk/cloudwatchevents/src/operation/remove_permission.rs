@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_permission:
     }
 }
 
-pub use crate::operation::remove_permission::_remove_permission_output::RemovePermissionOutput;
-
 pub use crate::operation::remove_permission::_remove_permission_input::RemovePermissionInput;
+
+pub use crate::operation::remove_permission::_remove_permission_output::RemovePermissionOutput;
 
 mod _remove_permission_input;
 

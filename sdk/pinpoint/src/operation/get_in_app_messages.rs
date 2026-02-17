@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_in_app_message
     }
 }
 
-pub use crate::operation::get_in_app_messages::_get_in_app_messages_output::GetInAppMessagesOutput;
-
 pub use crate::operation::get_in_app_messages::_get_in_app_messages_input::GetInAppMessagesInput;
+
+pub use crate::operation::get_in_app_messages::_get_in_app_messages_output::GetInAppMessagesOutput;
 
 mod _get_in_app_messages_input;
 

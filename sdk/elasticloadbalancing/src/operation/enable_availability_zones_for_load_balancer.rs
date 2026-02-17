@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_availability_zones_for_load_balancer::_enable_availability_zones_for_load_balancer_output::EnableAvailabilityZonesForLoadBalancerOutput;
-
 pub use crate::operation::enable_availability_zones_for_load_balancer::_enable_availability_zones_for_load_balancer_input::EnableAvailabilityZonesForLoadBalancerInput;
+
+pub use crate::operation::enable_availability_zones_for_load_balancer::_enable_availability_zones_for_load_balancer_output::EnableAvailabilityZonesForLoadBalancerOutput;
 
 mod _enable_availability_zones_for_load_balancer_input;
 

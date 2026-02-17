@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_code_securit
     }
 }
 
-pub use crate::operation::start_code_security_scan::_start_code_security_scan_output::StartCodeSecurityScanOutput;
-
 pub use crate::operation::start_code_security_scan::_start_code_security_scan_input::StartCodeSecurityScanInput;
+
+pub use crate::operation::start_code_security_scan::_start_code_security_scan_output::StartCodeSecurityScanOutput;
 
 mod _start_code_security_scan_input;
 

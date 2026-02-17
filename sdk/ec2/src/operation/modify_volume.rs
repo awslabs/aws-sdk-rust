@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_volume::Mod
     }
 }
 
-pub use crate::operation::modify_volume::_modify_volume_output::ModifyVolumeOutput;
-
 pub use crate::operation::modify_volume::_modify_volume_input::ModifyVolumeInput;
+
+pub use crate::operation::modify_volume::_modify_volume_output::ModifyVolumeOutput;
 
 mod _modify_volume_input;
 

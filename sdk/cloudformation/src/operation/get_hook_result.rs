@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hook_result::G
     }
 }
 
-pub use crate::operation::get_hook_result::_get_hook_result_output::GetHookResultOutput;
-
 pub use crate::operation::get_hook_result::_get_hook_result_input::GetHookResultInput;
+
+pub use crate::operation::get_hook_result::_get_hook_result_output::GetHookResultOutput;
 
 mod _get_hook_result_input;
 

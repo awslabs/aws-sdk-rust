@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_streaming_dis
     }
 }
 
-pub use crate::operation::list_streaming_distributions::_list_streaming_distributions_output::ListStreamingDistributionsOutput;
-
 pub use crate::operation::list_streaming_distributions::_list_streaming_distributions_input::ListStreamingDistributionsInput;
+
+pub use crate::operation::list_streaming_distributions::_list_streaming_distributions_output::ListStreamingDistributionsOutput;
 
 mod _list_streaming_distributions_input;
 

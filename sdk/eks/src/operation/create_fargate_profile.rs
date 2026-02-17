@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fargate_pro
     }
 }
 
-pub use crate::operation::create_fargate_profile::_create_fargate_profile_output::CreateFargateProfileOutput;
-
 pub use crate::operation::create_fargate_profile::_create_fargate_profile_input::CreateFargateProfileInput;
+
+pub use crate::operation::create_fargate_profile::_create_fargate_profile_output::CreateFargateProfileOutput;
 
 mod _create_fargate_profile_input;
 

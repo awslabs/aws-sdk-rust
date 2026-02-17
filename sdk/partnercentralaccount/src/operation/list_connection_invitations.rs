@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connection_in
     }
 }
 
-pub use crate::operation::list_connection_invitations::_list_connection_invitations_output::ListConnectionInvitationsOutput;
-
 pub use crate::operation::list_connection_invitations::_list_connection_invitations_input::ListConnectionInvitationsInput;
+
+pub use crate::operation::list_connection_invitations::_list_connection_invitations_output::ListConnectionInvitationsOutput;
 
 mod _list_connection_invitations_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_allowed_images
     }
 }
 
-pub use crate::operation::get_allowed_images_settings::_get_allowed_images_settings_output::GetAllowedImagesSettingsOutput;
-
 pub use crate::operation::get_allowed_images_settings::_get_allowed_images_settings_input::GetAllowedImagesSettingsInput;
+
+pub use crate::operation::get_allowed_images_settings::_get_allowed_images_settings_output::GetAllowedImagesSettingsOutput;
 
 mod _get_allowed_images_settings_input;
 

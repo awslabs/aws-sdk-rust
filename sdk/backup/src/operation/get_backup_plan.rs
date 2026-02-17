@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backup_plan::G
     }
 }
 
-pub use crate::operation::get_backup_plan::_get_backup_plan_output::GetBackupPlanOutput;
-
 pub use crate::operation::get_backup_plan::_get_backup_plan_input::GetBackupPlanInput;
+
+pub use crate::operation::get_backup_plan::_get_backup_plan_output::GetBackupPlanOutput;
 
 mod _get_backup_plan_input;
 

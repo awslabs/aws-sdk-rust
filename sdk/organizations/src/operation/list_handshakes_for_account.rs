@@ -485,9 +485,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_handshakes_fo
     }
 }
 
-pub use crate::operation::list_handshakes_for_account::_list_handshakes_for_account_output::ListHandshakesForAccountOutput;
-
 pub use crate::operation::list_handshakes_for_account::_list_handshakes_for_account_input::ListHandshakesForAccountInput;
+
+pub use crate::operation::list_handshakes_for_account::_list_handshakes_for_account_output::ListHandshakesForAccountOutput;
 
 mod _list_handshakes_for_account_input;
 

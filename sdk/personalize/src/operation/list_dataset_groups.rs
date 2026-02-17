@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dataset_group
     }
 }
 
-pub use crate::operation::list_dataset_groups::_list_dataset_groups_output::ListDatasetGroupsOutput;
-
 pub use crate::operation::list_dataset_groups::_list_dataset_groups_input::ListDatasetGroupsInput;
+
+pub use crate::operation::list_dataset_groups::_list_dataset_groups_output::ListDatasetGroupsOutput;
 
 mod _list_dataset_groups_input;
 

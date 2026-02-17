@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_ob
     }
 }
 
-pub use crate::operation::update_location_object_storage::_update_location_object_storage_output::UpdateLocationObjectStorageOutput;
-
 pub use crate::operation::update_location_object_storage::_update_location_object_storage_input::UpdateLocationObjectStorageInput;
+
+pub use crate::operation::update_location_object_storage::_update_location_object_storage_output::UpdateLocationObjectStorageOutput;
 
 mod _update_location_object_storage_input;
 

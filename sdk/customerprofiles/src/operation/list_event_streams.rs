@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_streams
     }
 }
 
-pub use crate::operation::list_event_streams::_list_event_streams_output::ListEventStreamsOutput;
-
 pub use crate::operation::list_event_streams::_list_event_streams_input::ListEventStreamsInput;
+
+pub use crate::operation::list_event_streams::_list_event_streams_output::ListEventStreamsOutput;
 
 mod _list_event_streams_input;
 

@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_instance_sq
     }
 }
 
-pub use crate::operation::enable_instance_sql_ha_standby_detections::_enable_instance_sql_ha_standby_detections_output::EnableInstanceSqlHaStandbyDetectionsOutput;
-
 pub use crate::operation::enable_instance_sql_ha_standby_detections::_enable_instance_sql_ha_standby_detections_input::EnableInstanceSqlHaStandbyDetectionsInput;
+
+pub use crate::operation::enable_instance_sql_ha_standby_detections::_enable_instance_sql_ha_standby_detections_output::EnableInstanceSqlHaStandbyDetectionsOutput;
 
 mod _enable_instance_sql_ha_standby_detections_input;
 

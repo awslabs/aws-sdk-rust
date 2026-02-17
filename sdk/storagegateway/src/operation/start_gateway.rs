@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_gateway::Sta
     }
 }
 
-pub use crate::operation::start_gateway::_start_gateway_output::StartGatewayOutput;
-
 pub use crate::operation::start_gateway::_start_gateway_input::StartGatewayInput;
+
+pub use crate::operation::start_gateway::_start_gateway_output::StartGatewayOutput;
 
 mod _start_gateway_input;
 

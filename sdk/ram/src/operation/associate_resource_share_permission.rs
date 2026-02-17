@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_resource
     }
 }
 
-pub use crate::operation::associate_resource_share_permission::_associate_resource_share_permission_output::AssociateResourceSharePermissionOutput;
-
 pub use crate::operation::associate_resource_share_permission::_associate_resource_share_permission_input::AssociateResourceSharePermissionInput;
+
+pub use crate::operation::associate_resource_share_permission::_associate_resource_share_permission_output::AssociateResourceSharePermissionOutput;
 
 mod _associate_resource_share_permission_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_delivery_chann
     }
 }
 
-pub use crate::operation::put_delivery_channel::_put_delivery_channel_output::PutDeliveryChannelOutput;
-
 pub use crate::operation::put_delivery_channel::_put_delivery_channel_input::PutDeliveryChannelInput;
+
+pub use crate::operation::put_delivery_channel::_put_delivery_channel_output::PutDeliveryChannelOutput;
 
 mod _put_delivery_channel_input;
 

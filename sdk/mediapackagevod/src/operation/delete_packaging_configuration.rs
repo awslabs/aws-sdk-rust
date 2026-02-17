@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_packaging_c
     }
 }
 
-pub use crate::operation::delete_packaging_configuration::_delete_packaging_configuration_output::DeletePackagingConfigurationOutput;
-
 pub use crate::operation::delete_packaging_configuration::_delete_packaging_configuration_input::DeletePackagingConfigurationInput;
+
+pub use crate::operation::delete_packaging_configuration::_delete_packaging_configuration_output::DeletePackagingConfigurationOutput;
 
 mod _delete_packaging_configuration_input;
 

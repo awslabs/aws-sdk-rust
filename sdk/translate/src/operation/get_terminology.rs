@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_terminology::G
     }
 }
 
-pub use crate::operation::get_terminology::_get_terminology_output::GetTerminologyOutput;
-
 pub use crate::operation::get_terminology::_get_terminology_input::GetTerminologyInput;
+
+pub use crate::operation::get_terminology::_get_terminology_output::GetTerminologyOutput;
 
 mod _get_terminology_input;
 

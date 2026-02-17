@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_routing_rule::
     }
 }
 
-pub use crate::operation::get_routing_rule::_get_routing_rule_output::GetRoutingRuleOutput;
-
 pub use crate::operation::get_routing_rule::_get_routing_rule_input::GetRoutingRuleInput;
+
+pub use crate::operation::get_routing_rule::_get_routing_rule_output::GetRoutingRuleOutput;
 
 mod _get_routing_rule_input;
 

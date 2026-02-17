@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_foundation_mod
     }
 }
 
-pub use crate::operation::get_foundation_model_availability::_get_foundation_model_availability_output::GetFoundationModelAvailabilityOutput;
-
 pub use crate::operation::get_foundation_model_availability::_get_foundation_model_availability_input::GetFoundationModelAvailabilityInput;
+
+pub use crate::operation::get_foundation_model_availability::_get_foundation_model_availability_output::GetFoundationModelAvailabilityOutput;
 
 mod _get_foundation_model_availability_input;
 

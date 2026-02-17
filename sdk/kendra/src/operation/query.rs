@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query::QueryError 
     }
 }
 
-pub use crate::operation::query::_query_output::QueryOutput;
-
 pub use crate::operation::query::_query_input::QueryInput;
+
+pub use crate::operation::query::_query_output::QueryOutput;
 
 mod _query_input;
 

@@ -578,9 +578,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::respond_to_auth_ch
     }
 }
 
-pub use crate::operation::respond_to_auth_challenge::_respond_to_auth_challenge_output::RespondToAuthChallengeOutput;
-
 pub use crate::operation::respond_to_auth_challenge::_respond_to_auth_challenge_input::RespondToAuthChallengeInput;
+
+pub use crate::operation::respond_to_auth_challenge::_respond_to_auth_challenge_output::RespondToAuthChallengeOutput;
 
 mod _respond_to_auth_challenge_input;
 

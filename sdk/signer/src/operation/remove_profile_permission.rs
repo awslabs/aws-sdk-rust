@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_profile_per
     }
 }
 
-pub use crate::operation::remove_profile_permission::_remove_profile_permission_output::RemoveProfilePermissionOutput;
-
 pub use crate::operation::remove_profile_permission::_remove_profile_permission_input::RemoveProfilePermissionInput;
+
+pub use crate::operation::remove_profile_permission::_remove_profile_permission_output::RemoveProfilePermissionOutput;
 
 mod _remove_profile_permission_input;
 

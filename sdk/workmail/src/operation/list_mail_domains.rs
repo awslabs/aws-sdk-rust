@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mail_domains:
     }
 }
 
-pub use crate::operation::list_mail_domains::_list_mail_domains_output::ListMailDomainsOutput;
-
 pub use crate::operation::list_mail_domains::_list_mail_domains_input::ListMailDomainsInput;
+
+pub use crate::operation::list_mail_domains::_list_mail_domains_output::ListMailDomainsOutput;
 
 mod _list_mail_domains_input;
 

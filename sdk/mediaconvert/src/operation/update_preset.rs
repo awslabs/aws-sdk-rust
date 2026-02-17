@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_preset::Upd
     }
 }
 
-pub use crate::operation::update_preset::_update_preset_output::UpdatePresetOutput;
-
 pub use crate::operation::update_preset::_update_preset_input::UpdatePresetInput;
+
+pub use crate::operation::update_preset::_update_preset_output::UpdatePresetOutput;
 
 mod _update_preset_input;
 

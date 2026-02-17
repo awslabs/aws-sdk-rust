@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hosted_co
     }
 }
 
-pub use crate::operation::describe_hosted_connections::_describe_hosted_connections_output::DescribeHostedConnectionsOutput;
-
 pub use crate::operation::describe_hosted_connections::_describe_hosted_connections_input::DescribeHostedConnectionsInput;
+
+pub use crate::operation::describe_hosted_connections::_describe_hosted_connections_output::DescribeHostedConnectionsOutput;
 
 mod _describe_hosted_connections_input;
 

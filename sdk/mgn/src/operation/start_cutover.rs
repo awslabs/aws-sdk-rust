@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_cutover::Sta
     }
 }
 
-pub use crate::operation::start_cutover::_start_cutover_output::StartCutoverOutput;
-
 pub use crate::operation::start_cutover::_start_cutover_input::StartCutoverInput;
+
+pub use crate::operation::start_cutover::_start_cutover_output::StartCutoverOutput;
 
 mod _start_cutover_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_agent_runti
     }
 }
 
-pub use crate::operation::update_agent_runtime::_update_agent_runtime_output::UpdateAgentRuntimeOutput;
-
 pub use crate::operation::update_agent_runtime::_update_agent_runtime_input::UpdateAgentRuntimeInput;
+
+pub use crate::operation::update_agent_runtime::_update_agent_runtime_output::UpdateAgentRuntimeOutput;
 
 mod _update_agent_runtime_input;
 

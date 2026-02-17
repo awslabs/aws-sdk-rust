@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bucket_meta
     }
 }
 
-pub use crate::operation::create_bucket_metadata_configuration::_create_bucket_metadata_configuration_output::CreateBucketMetadataConfigurationOutput;
-
 pub use crate::operation::create_bucket_metadata_configuration::_create_bucket_metadata_configuration_input::CreateBucketMetadataConfigurationInput;
+
+pub use crate::operation::create_bucket_metadata_configuration::_create_bucket_metadata_configuration_output::CreateBucketMetadataConfigurationOutput;
 
 mod _create_bucket_metadata_configuration_input;
 

@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_live_source
     }
 }
 
-pub use crate::operation::delete_live_source::_delete_live_source_output::DeleteLiveSourceOutput;
-
 pub use crate::operation::delete_live_source::_delete_live_source_input::DeleteLiveSourceInput;
+
+pub use crate::operation::delete_live_source::_delete_live_source_output::DeleteLiveSourceOutput;
 
 mod _delete_live_source_input;
 

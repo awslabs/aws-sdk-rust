@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_archive::Cr
     }
 }
 
-pub use crate::operation::create_archive::_create_archive_output::CreateArchiveOutput;
-
 pub use crate::operation::create_archive::_create_archive_input::CreateArchiveInput;
+
+pub use crate::operation::create_archive::_create_archive_output::CreateArchiveOutput;
 
 mod _create_archive_input;
 

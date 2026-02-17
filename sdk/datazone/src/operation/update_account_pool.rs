@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account_poo
     }
 }
 
-pub use crate::operation::update_account_pool::_update_account_pool_output::UpdateAccountPoolOutput;
-
 pub use crate::operation::update_account_pool::_update_account_pool_input::UpdateAccountPoolInput;
+
+pub use crate::operation::update_account_pool::_update_account_pool_output::UpdateAccountPoolOutput;
 
 mod _update_account_pool_input;
 

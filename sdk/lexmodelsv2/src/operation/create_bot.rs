@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bot::Create
     }
 }
 
-pub use crate::operation::create_bot::_create_bot_output::CreateBotOutput;
-
 pub use crate::operation::create_bot::_create_bot_input::CreateBotInput;
+
+pub use crate::operation::create_bot::_create_bot_output::CreateBotOutput;
 
 mod _create_bot_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_grant::GetGran
     }
 }
 
-pub use crate::operation::get_grant::_get_grant_output::GetGrantOutput;
-
 pub use crate::operation::get_grant::_get_grant_input::GetGrantInput;
+
+pub use crate::operation::get_grant::_get_grant_output::GetGrantOutput;
 
 mod _get_grant_input;
 

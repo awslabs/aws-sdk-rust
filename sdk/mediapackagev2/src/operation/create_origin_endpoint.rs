@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_origin_endp
     }
 }
 
-pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_output::CreateOriginEndpointOutput;
-
 pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_input::CreateOriginEndpointInput;
+
+pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_output::CreateOriginEndpointOutput;
 
 mod _create_origin_endpoint_input;
 

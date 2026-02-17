@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_regex_match_se
     }
 }
 
-pub use crate::operation::get_regex_match_set::_get_regex_match_set_output::GetRegexMatchSetOutput;
-
 pub use crate::operation::get_regex_match_set::_get_regex_match_set_input::GetRegexMatchSetInput;
+
+pub use crate::operation::get_regex_match_set::_get_regex_match_set_output::GetRegexMatchSetOutput;
 
 mod _get_regex_match_set_input;
 

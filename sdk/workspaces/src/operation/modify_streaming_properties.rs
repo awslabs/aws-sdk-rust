@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_streaming_p
     }
 }
 
-pub use crate::operation::modify_streaming_properties::_modify_streaming_properties_output::ModifyStreamingPropertiesOutput;
-
 pub use crate::operation::modify_streaming_properties::_modify_streaming_properties_input::ModifyStreamingPropertiesInput;
+
+pub use crate::operation::modify_streaming_properties::_modify_streaming_properties_output::ModifyStreamingPropertiesOutput;
 
 mod _modify_streaming_properties_input;
 

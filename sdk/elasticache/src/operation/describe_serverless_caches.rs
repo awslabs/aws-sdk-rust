@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_serverles
     }
 }
 
-pub use crate::operation::describe_serverless_caches::_describe_serverless_caches_output::DescribeServerlessCachesOutput;
-
 pub use crate::operation::describe_serverless_caches::_describe_serverless_caches_input::DescribeServerlessCachesInput;
+
+pub use crate::operation::describe_serverless_caches::_describe_serverless_caches_output::DescribeServerlessCachesOutput;
 
 mod _describe_serverless_caches_input;
 

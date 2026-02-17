@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_method_resp
     }
 }
 
-pub use crate::operation::update_method_response::_update_method_response_output::UpdateMethodResponseOutput;
-
 pub use crate::operation::update_method_response::_update_method_response_input::UpdateMethodResponseInput;
+
+pub use crate::operation::update_method_response::_update_method_response_output::UpdateMethodResponseOutput;
 
 mod _update_method_response_input;
 

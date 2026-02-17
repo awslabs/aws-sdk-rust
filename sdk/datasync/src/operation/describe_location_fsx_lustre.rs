@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_fsx_lustre::_describe_location_fsx_lustre_output::DescribeLocationFsxLustreOutput;
-
 pub use crate::operation::describe_location_fsx_lustre::_describe_location_fsx_lustre_input::DescribeLocationFsxLustreInput;
+
+pub use crate::operation::describe_location_fsx_lustre::_describe_location_fsx_lustre_output::DescribeLocationFsxLustreOutput;
 
 mod _describe_location_fsx_lustre_input;
 

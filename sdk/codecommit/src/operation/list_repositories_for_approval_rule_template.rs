@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_repositories_for_approval_rule_template::_list_repositories_for_approval_rule_template_output::ListRepositoriesForApprovalRuleTemplateOutput;
-
 pub use crate::operation::list_repositories_for_approval_rule_template::_list_repositories_for_approval_rule_template_input::ListRepositoriesForApprovalRuleTemplateInput;
+
+pub use crate::operation::list_repositories_for_approval_rule_template::_list_repositories_for_approval_rule_template_output::ListRepositoriesForApprovalRuleTemplateOutput;
 
 mod _list_repositories_for_approval_rule_template_input;
 

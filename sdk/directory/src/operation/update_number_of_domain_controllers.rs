@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_number_of_d
     }
 }
 
-pub use crate::operation::update_number_of_domain_controllers::_update_number_of_domain_controllers_output::UpdateNumberOfDomainControllersOutput;
-
 pub use crate::operation::update_number_of_domain_controllers::_update_number_of_domain_controllers_input::UpdateNumberOfDomainControllersInput;
+
+pub use crate::operation::update_number_of_domain_controllers::_update_number_of_domain_controllers_output::UpdateNumberOfDomainControllersOutput;
 
 mod _update_number_of_domain_controllers_input;
 

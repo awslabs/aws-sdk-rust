@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_statist
     }
 }
 
-pub use crate::operation::get_bucket_statistics::_get_bucket_statistics_output::GetBucketStatisticsOutput;
-
 pub use crate::operation::get_bucket_statistics::_get_bucket_statistics_input::GetBucketStatisticsInput;
+
+pub use crate::operation::get_bucket_statistics::_get_bucket_statistics_output::GetBucketStatisticsOutput;
 
 mod _get_bucket_statistics_input;
 

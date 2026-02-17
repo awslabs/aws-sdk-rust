@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_connection
     }
 }
 
-pub use crate::operation::confirm_connection::_confirm_connection_output::ConfirmConnectionOutput;
-
 pub use crate::operation::confirm_connection::_confirm_connection_input::ConfirmConnectionInput;
+
+pub use crate::operation::confirm_connection::_confirm_connection_output::ConfirmConnectionOutput;
 
 mod _confirm_connection_input;
 

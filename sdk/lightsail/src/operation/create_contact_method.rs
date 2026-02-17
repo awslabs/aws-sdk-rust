@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_contact_met
     }
 }
 
-pub use crate::operation::create_contact_method::_create_contact_method_output::CreateContactMethodOutput;
-
 pub use crate::operation::create_contact_method::_create_contact_method_input::CreateContactMethodInput;
+
+pub use crate::operation::create_contact_method::_create_contact_method_output::CreateContactMethodOutput;
 
 mod _create_contact_method_input;
 

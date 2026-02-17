@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_shard_
     }
 }
 
-pub use crate::operation::describe_db_shard_groups::_describe_db_shard_groups_output::DescribeDbShardGroupsOutput;
-
 pub use crate::operation::describe_db_shard_groups::_describe_db_shard_groups_input::DescribeDbShardGroupsInput;
+
+pub use crate::operation::describe_db_shard_groups::_describe_db_shard_groups_output::DescribeDbShardGroupsOutput;
 
 mod _describe_db_shard_groups_input;
 

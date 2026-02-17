@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tls_inspe
     }
 }
 
-pub use crate::operation::describe_tls_inspection_configuration::_describe_tls_inspection_configuration_output::DescribeTlsInspectionConfigurationOutput;
-
 pub use crate::operation::describe_tls_inspection_configuration::_describe_tls_inspection_configuration_input::DescribeTlsInspectionConfigurationInput;
+
+pub use crate::operation::describe_tls_inspection_configuration::_describe_tls_inspection_configuration_output::DescribeTlsInspectionConfigurationOutput;
 
 mod _describe_tls_inspection_configuration_input;
 

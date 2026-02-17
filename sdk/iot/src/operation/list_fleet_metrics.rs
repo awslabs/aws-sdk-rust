@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fleet_metrics
     }
 }
 
-pub use crate::operation::list_fleet_metrics::_list_fleet_metrics_output::ListFleetMetricsOutput;
-
 pub use crate::operation::list_fleet_metrics::_list_fleet_metrics_input::ListFleetMetricsInput;
+
+pub use crate::operation::list_fleet_metrics::_list_fleet_metrics_output::ListFleetMetricsOutput;
 
 mod _list_fleet_metrics_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_no_new_acces
     }
 }
 
-pub use crate::operation::check_no_new_access::_check_no_new_access_output::CheckNoNewAccessOutput;
-
 pub use crate::operation::check_no_new_access::_check_no_new_access_input::CheckNoNewAccessInput;
+
+pub use crate::operation::check_no_new_access::_check_no_new_access_output::CheckNoNewAccessOutput;
 
 mod _check_no_new_access_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_baseline::GetB
     }
 }
 
-pub use crate::operation::get_baseline::_get_baseline_output::GetBaselineOutput;
-
 pub use crate::operation::get_baseline::_get_baseline_input::GetBaselineInput;
+
+pub use crate::operation::get_baseline::_get_baseline_output::GetBaselineOutput;
 
 mod _get_baseline_input;
 

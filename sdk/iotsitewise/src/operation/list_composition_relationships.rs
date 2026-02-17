@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_composition_r
     }
 }
 
-pub use crate::operation::list_composition_relationships::_list_composition_relationships_output::ListCompositionRelationshipsOutput;
-
 pub use crate::operation::list_composition_relationships::_list_composition_relationships_input::ListCompositionRelationshipsInput;
+
+pub use crate::operation::list_composition_relationships::_list_composition_relationships_output::ListCompositionRelationshipsOutput;
 
 mod _list_composition_relationships_input;
 

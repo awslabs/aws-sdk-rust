@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_resource::R
     }
 }
 
-pub use crate::operation::resume_resource::_resume_resource_output::ResumeResourceOutput;
-
 pub use crate::operation::resume_resource::_resume_resource_input::ResumeResourceInput;
+
+pub use crate::operation::resume_resource::_resume_resource_output::ResumeResourceOutput;
 
 mod _resume_resource_input;
 

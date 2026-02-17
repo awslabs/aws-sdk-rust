@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_variant_imp
     }
 }
 
-pub use crate::operation::cancel_variant_import_job::_cancel_variant_import_job_output::CancelVariantImportJobOutput;
-
 pub use crate::operation::cancel_variant_import_job::_cancel_variant_import_job_input::CancelVariantImportJobInput;
+
+pub use crate::operation::cancel_variant_import_job::_cancel_variant_import_job_output::CancelVariantImportJobOutput;
 
 mod _cancel_variant_import_job_input;
 

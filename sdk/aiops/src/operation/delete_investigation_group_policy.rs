@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_investigati
     }
 }
 
-pub use crate::operation::delete_investigation_group_policy::_delete_investigation_group_policy_output::DeleteInvestigationGroupPolicyOutput;
-
 pub use crate::operation::delete_investigation_group_policy::_delete_investigation_group_policy_input::DeleteInvestigationGroupPolicyInput;
+
+pub use crate::operation::delete_investigation_group_policy::_delete_investigation_group_policy_output::DeleteInvestigationGroupPolicyOutput;
 
 mod _delete_investigation_group_policy_input;
 

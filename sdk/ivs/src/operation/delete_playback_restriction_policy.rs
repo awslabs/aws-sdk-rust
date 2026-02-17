@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_playback_re
     }
 }
 
-pub use crate::operation::delete_playback_restriction_policy::_delete_playback_restriction_policy_output::DeletePlaybackRestrictionPolicyOutput;
-
 pub use crate::operation::delete_playback_restriction_policy::_delete_playback_restriction_policy_input::DeletePlaybackRestrictionPolicyInput;
+
+pub use crate::operation::delete_playback_restriction_policy::_delete_playback_restriction_policy_output::DeletePlaybackRestrictionPolicyOutput;
 
 mod _delete_playback_restriction_policy_input;
 

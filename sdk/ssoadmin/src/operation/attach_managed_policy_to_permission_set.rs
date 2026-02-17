@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_managed_pol
     }
 }
 
-pub use crate::operation::attach_managed_policy_to_permission_set::_attach_managed_policy_to_permission_set_output::AttachManagedPolicyToPermissionSetOutput;
-
 pub use crate::operation::attach_managed_policy_to_permission_set::_attach_managed_policy_to_permission_set_input::AttachManagedPolicyToPermissionSetInput;
+
+pub use crate::operation::attach_managed_policy_to_permission_set::_attach_managed_policy_to_permission_set_output::AttachManagedPolicyToPermissionSetOutput;
 
 mod _attach_managed_policy_to_permission_set_input;
 

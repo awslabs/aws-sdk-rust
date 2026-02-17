@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aws_opportunit
     }
 }
 
-pub use crate::operation::get_aws_opportunity_summary::_get_aws_opportunity_summary_output::GetAwsOpportunitySummaryOutput;
-
 pub use crate::operation::get_aws_opportunity_summary::_get_aws_opportunity_summary_input::GetAwsOpportunitySummaryInput;
+
+pub use crate::operation::get_aws_opportunity_summary::_get_aws_opportunity_summary_output::GetAwsOpportunitySummaryOutput;
 
 mod _get_aws_opportunity_summary_input;
 

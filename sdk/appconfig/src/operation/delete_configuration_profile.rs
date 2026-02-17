@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configurati
     }
 }
 
-pub use crate::operation::delete_configuration_profile::_delete_configuration_profile_output::DeleteConfigurationProfileOutput;
-
 pub use crate::operation::delete_configuration_profile::_delete_configuration_profile_input::DeleteConfigurationProfileInput;
+
+pub use crate::operation::delete_configuration_profile::_delete_configuration_profile_output::DeleteConfigurationProfileOutput;
 
 mod _delete_configuration_profile_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_personal_ac
     }
 }
 
-pub use crate::operation::delete_personal_access_token::_delete_personal_access_token_output::DeletePersonalAccessTokenOutput;
-
 pub use crate::operation::delete_personal_access_token::_delete_personal_access_token_input::DeletePersonalAccessTokenInput;
+
+pub use crate::operation::delete_personal_access_token::_delete_personal_access_token_output::DeletePersonalAccessTokenOutput;
 
 mod _delete_personal_access_token_input;
 

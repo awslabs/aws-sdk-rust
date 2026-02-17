@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reusable_deleg
     }
 }
 
-pub use crate::operation::get_reusable_delegation_set_limit::_get_reusable_delegation_set_limit_output::GetReusableDelegationSetLimitOutput;
-
 pub use crate::operation::get_reusable_delegation_set_limit::_get_reusable_delegation_set_limit_input::GetReusableDelegationSetLimitInput;
+
+pub use crate::operation::get_reusable_delegation_set_limit::_get_reusable_delegation_set_limit_output::GetReusableDelegationSetLimitOutput;
 
 mod _get_reusable_delegation_set_limit_input;
 

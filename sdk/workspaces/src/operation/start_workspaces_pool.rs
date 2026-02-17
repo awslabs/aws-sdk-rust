@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_workspaces_p
     }
 }
 
-pub use crate::operation::start_workspaces_pool::_start_workspaces_pool_output::StartWorkspacesPoolOutput;
-
 pub use crate::operation::start_workspaces_pool::_start_workspaces_pool_input::StartWorkspacesPoolInput;
+
+pub use crate::operation::start_workspaces_pool::_start_workspaces_pool_output::StartWorkspacesPoolOutput;
 
 mod _start_workspaces_pool_input;
 

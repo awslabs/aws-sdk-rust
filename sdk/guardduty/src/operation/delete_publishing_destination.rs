@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_publishing_
     }
 }
 
-pub use crate::operation::delete_publishing_destination::_delete_publishing_destination_output::DeletePublishingDestinationOutput;
-
 pub use crate::operation::delete_publishing_destination::_delete_publishing_destination_input::DeletePublishingDestinationInput;
+
+pub use crate::operation::delete_publishing_destination::_delete_publishing_destination_output::DeletePublishingDestinationOutput;
 
 mod _delete_publishing_destination_input;
 

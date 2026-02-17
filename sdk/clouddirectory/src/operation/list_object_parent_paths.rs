@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_object_parent
     }
 }
 
-pub use crate::operation::list_object_parent_paths::_list_object_parent_paths_output::ListObjectParentPathsOutput;
-
 pub use crate::operation::list_object_parent_paths::_list_object_parent_paths_input::ListObjectParentPathsInput;
+
+pub use crate::operation::list_object_parent_paths::_list_object_parent_paths_output::ListObjectParentPathsOutput;
 
 mod _list_object_parent_paths_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_index:
     }
 }
 
-pub use crate::operation::get_service_index::_get_service_index_output::GetServiceIndexOutput;
-
 pub use crate::operation::get_service_index::_get_service_index_input::GetServiceIndexInput;
+
+pub use crate::operation::get_service_index::_get_service_index_output::GetServiceIndexOutput;
 
 mod _get_service_index_input;
 

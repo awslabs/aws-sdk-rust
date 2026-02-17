@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reorder_receipt_ru
     }
 }
 
-pub use crate::operation::reorder_receipt_rule_set::_reorder_receipt_rule_set_output::ReorderReceiptRuleSetOutput;
-
 pub use crate::operation::reorder_receipt_rule_set::_reorder_receipt_rule_set_input::ReorderReceiptRuleSetInput;
+
+pub use crate::operation::reorder_receipt_rule_set::_reorder_receipt_rule_set_output::ReorderReceiptRuleSetOutput;
 
 mod _reorder_receipt_rule_set_input;
 

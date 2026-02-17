@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_from_environment::_delete_application_from_environment_output::DeleteApplicationFromEnvironmentOutput;
-
 pub use crate::operation::delete_application_from_environment::_delete_application_from_environment_input::DeleteApplicationFromEnvironmentInput;
+
+pub use crate::operation::delete_application_from_environment::_delete_application_from_environment_output::DeleteApplicationFromEnvironmentOutput;
 
 mod _delete_application_from_environment_input;
 

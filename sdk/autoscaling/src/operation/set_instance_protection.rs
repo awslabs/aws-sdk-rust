@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_instance_prote
     }
 }
 
-pub use crate::operation::set_instance_protection::_set_instance_protection_output::SetInstanceProtectionOutput;
-
 pub use crate::operation::set_instance_protection::_set_instance_protection_input::SetInstanceProtectionInput;
+
+pub use crate::operation::set_instance_protection::_set_instance_protection_output::SetInstanceProtectionOutput;
 
 mod _set_instance_protection_input;
 

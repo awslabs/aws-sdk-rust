@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_oauth2_cred
     }
 }
 
-pub use crate::operation::update_oauth2_credential_provider::_update_oauth2_credential_provider_output::UpdateOauth2CredentialProviderOutput;
-
 pub use crate::operation::update_oauth2_credential_provider::_update_oauth2_credential_provider_input::UpdateOauth2CredentialProviderInput;
+
+pub use crate::operation::update_oauth2_credential_provider::_update_oauth2_credential_provider_output::UpdateOauth2CredentialProviderOutput;
 
 mod _update_oauth2_credential_provider_input;
 

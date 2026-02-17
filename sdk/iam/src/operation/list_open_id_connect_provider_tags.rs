@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_open_id_conne
     }
 }
 
-pub use crate::operation::list_open_id_connect_provider_tags::_list_open_id_connect_provider_tags_output::ListOpenIdConnectProviderTagsOutput;
-
 pub use crate::operation::list_open_id_connect_provider_tags::_list_open_id_connect_provider_tags_input::ListOpenIdConnectProviderTagsInput;
+
+pub use crate::operation::list_open_id_connect_provider_tags::_list_open_id_connect_provider_tags_output::ListOpenIdConnectProviderTagsOutput;
 
 mod _list_open_id_connect_provider_tags_input;
 

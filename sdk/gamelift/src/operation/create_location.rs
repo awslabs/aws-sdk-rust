@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location::C
     }
 }
 
-pub use crate::operation::create_location::_create_location_output::CreateLocationOutput;
-
 pub use crate::operation::create_location::_create_location_input::CreateLocationInput;
+
+pub use crate::operation::create_location::_create_location_output::CreateLocationOutput;
 
 mod _create_location_input;
 

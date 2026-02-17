@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_engagement_
     }
 }
 
-pub use crate::operation::update_engagement_context::_update_engagement_context_output::UpdateEngagementContextOutput;
-
 pub use crate::operation::update_engagement_context::_update_engagement_context_input::UpdateEngagementContextInput;
+
+pub use crate::operation::update_engagement_context::_update_engagement_context_output::UpdateEngagementContextOutput;
 
 mod _update_engagement_context_input;
 

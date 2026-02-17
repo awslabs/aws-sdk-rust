@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compute::List
     }
 }
 
-pub use crate::operation::list_compute::_list_compute_output::ListComputeOutput;
-
 pub use crate::operation::list_compute::_list_compute_input::ListComputeInput;
+
+pub use crate::operation::list_compute::_list_compute_output::ListComputeOutput;
 
 mod _list_compute_input;
 

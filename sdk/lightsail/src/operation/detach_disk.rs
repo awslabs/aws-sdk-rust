@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_disk::Detac
     }
 }
 
-pub use crate::operation::detach_disk::_detach_disk_output::DetachDiskOutput;
-
 pub use crate::operation::detach_disk::_detach_disk_input::DetachDiskInput;
+
+pub use crate::operation::detach_disk::_detach_disk_output::DetachDiskOutput;
 
 mod _detach_disk_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_event_t
     }
 }
 
-pub use crate::operation::deregister_event_topic::_deregister_event_topic_output::DeregisterEventTopicOutput;
-
 pub use crate::operation::deregister_event_topic::_deregister_event_topic_input::DeregisterEventTopicInput;
+
+pub use crate::operation::deregister_event_topic::_deregister_event_topic_output::DeregisterEventTopicOutput;
 
 mod _deregister_event_topic_input;
 

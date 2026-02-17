@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backup_sele
     }
 }
 
-pub use crate::operation::delete_backup_selection::_delete_backup_selection_output::DeleteBackupSelectionOutput;
-
 pub use crate::operation::delete_backup_selection::_delete_backup_selection_input::DeleteBackupSelectionInput;
+
+pub use crate::operation::delete_backup_selection::_delete_backup_selection_output::DeleteBackupSelectionOutput;
 
 mod _delete_backup_selection_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_guardrail::
     }
 }
 
-pub use crate::operation::update_guardrail::_update_guardrail_output::UpdateGuardrailOutput;
-
 pub use crate::operation::update_guardrail::_update_guardrail_input::UpdateGuardrailInput;
+
+pub use crate::operation::update_guardrail::_update_guardrail_output::UpdateGuardrailOutput;
 
 mod _update_guardrail_input;
 

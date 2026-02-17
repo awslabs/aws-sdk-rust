@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_theme_ali
     }
 }
 
-pub use crate::operation::describe_theme_alias::_describe_theme_alias_output::DescribeThemeAliasOutput;
-
 pub use crate::operation::describe_theme_alias::_describe_theme_alias_input::DescribeThemeAliasInput;
+
+pub use crate::operation::describe_theme_alias::_describe_theme_alias_output::DescribeThemeAliasOutput;
 
 mod _describe_theme_alias_input;
 

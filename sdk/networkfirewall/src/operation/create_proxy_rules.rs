@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_proxy_rules
     }
 }
 
-pub use crate::operation::create_proxy_rules::_create_proxy_rules_output::CreateProxyRulesOutput;
-
 pub use crate::operation::create_proxy_rules::_create_proxy_rules_input::CreateProxyRulesInput;
+
+pub use crate::operation::create_proxy_rules::_create_proxy_rules_output::CreateProxyRulesOutput;
 
 mod _create_proxy_rules_input;
 

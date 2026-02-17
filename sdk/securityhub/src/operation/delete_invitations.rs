@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_invitations
     }
 }
 
-pub use crate::operation::delete_invitations::_delete_invitations_output::DeleteInvitationsOutput;
-
 pub use crate::operation::delete_invitations::_delete_invitations_input::DeleteInvitationsInput;
+
+pub use crate::operation::delete_invitations::_delete_invitations_output::DeleteInvitationsOutput;
 
 mod _delete_invitations_input;
 

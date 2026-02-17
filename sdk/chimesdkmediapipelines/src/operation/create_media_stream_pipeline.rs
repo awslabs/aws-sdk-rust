@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_media_strea
     }
 }
 
-pub use crate::operation::create_media_stream_pipeline::_create_media_stream_pipeline_output::CreateMediaStreamPipelineOutput;
-
 pub use crate::operation::create_media_stream_pipeline::_create_media_stream_pipeline_input::CreateMediaStreamPipelineInput;
+
+pub use crate::operation::create_media_stream_pipeline::_create_media_stream_pipeline_output::CreateMediaStreamPipelineOutput;
 
 mod _create_media_stream_pipeline_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_build::Upda
     }
 }
 
-pub use crate::operation::update_build::_update_build_output::UpdateBuildOutput;
-
 pub use crate::operation::update_build::_update_build_input::UpdateBuildInput;
+
+pub use crate::operation::update_build::_update_build_output::UpdateBuildOutput;
 
 mod _update_build_input;
 

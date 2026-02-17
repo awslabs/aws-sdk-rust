@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identity_prop
     }
 }
 
-pub use crate::operation::list_identity_propagation_configs::_list_identity_propagation_configs_output::ListIdentityPropagationConfigsOutput;
-
 pub use crate::operation::list_identity_propagation_configs::_list_identity_propagation_configs_input::ListIdentityPropagationConfigsInput;
+
+pub use crate::operation::list_identity_propagation_configs::_list_identity_propagation_configs_output::ListIdentityPropagationConfigsOutput;
 
 mod _list_identity_propagation_configs_input;
 

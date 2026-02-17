@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_activitie
     }
 }
 
-pub use crate::operation::describe_activities::_describe_activities_output::DescribeActivitiesOutput;
-
 pub use crate::operation::describe_activities::_describe_activities_input::DescribeActivitiesInput;
+
+pub use crate::operation::describe_activities::_describe_activities_output::DescribeActivitiesOutput;
 
 mod _describe_activities_input;
 

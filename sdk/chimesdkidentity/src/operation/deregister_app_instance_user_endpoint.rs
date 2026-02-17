@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_app_ins
     }
 }
 
-pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app_instance_user_endpoint_output::DeregisterAppInstanceUserEndpointOutput;
-
 pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app_instance_user_endpoint_input::DeregisterAppInstanceUserEndpointInput;
+
+pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app_instance_user_endpoint_output::DeregisterAppInstanceUserEndpointOutput;
 
 mod _deregister_app_instance_user_endpoint_input;
 

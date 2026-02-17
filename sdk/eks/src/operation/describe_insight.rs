@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_insight::
     }
 }
 
-pub use crate::operation::describe_insight::_describe_insight_output::DescribeInsightOutput;
-
 pub use crate::operation::describe_insight::_describe_insight_input::DescribeInsightInput;
+
+pub use crate::operation::describe_insight::_describe_insight_output::DescribeInsightOutput;
 
 mod _describe_insight_input;
 

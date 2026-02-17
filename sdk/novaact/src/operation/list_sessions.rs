@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sessions::Lis
     }
 }
 
-pub use crate::operation::list_sessions::_list_sessions_output::ListSessionsOutput;
-
 pub use crate::operation::list_sessions::_list_sessions_input::ListSessionsInput;
+
+pub use crate::operation::list_sessions::_list_sessions_output::ListSessionsOutput;
 
 mod _list_sessions_input;
 

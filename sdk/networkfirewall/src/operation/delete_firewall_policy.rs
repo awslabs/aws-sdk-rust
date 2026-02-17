@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_firewall_po
     }
 }
 
-pub use crate::operation::delete_firewall_policy::_delete_firewall_policy_output::DeleteFirewallPolicyOutput;
-
 pub use crate::operation::delete_firewall_policy::_delete_firewall_policy_input::DeleteFirewallPolicyInput;
+
+pub use crate::operation::delete_firewall_policy::_delete_firewall_policy_output::DeleteFirewallPolicyOutput;
 
 mod _delete_firewall_policy_input;
 

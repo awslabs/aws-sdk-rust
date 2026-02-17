@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_template_vers
     }
 }
 
-pub use crate::operation::list_template_versions::_list_template_versions_output::ListTemplateVersionsOutput;
-
 pub use crate::operation::list_template_versions::_list_template_versions_input::ListTemplateVersionsInput;
+
+pub use crate::operation::list_template_versions::_list_template_versions_output::ListTemplateVersionsOutput;
 
 mod _list_template_versions_input;
 

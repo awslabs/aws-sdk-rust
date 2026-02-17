@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_failback_re
     }
 }
 
-pub use crate::operation::update_failback_replication_configuration::_update_failback_replication_configuration_output::UpdateFailbackReplicationConfigurationOutput;
-
 pub use crate::operation::update_failback_replication_configuration::_update_failback_replication_configuration_input::UpdateFailbackReplicationConfigurationInput;
+
+pub use crate::operation::update_failback_replication_configuration::_update_failback_replication_configuration_output::UpdateFailbackReplicationConfigurationOutput;
 
 mod _update_failback_replication_configuration_input;
 

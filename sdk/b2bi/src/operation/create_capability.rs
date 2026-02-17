@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_capability:
     }
 }
 
-pub use crate::operation::create_capability::_create_capability_output::CreateCapabilityOutput;
-
 pub use crate::operation::create_capability::_create_capability_input::CreateCapabilityInput;
+
+pub use crate::operation::create_capability::_create_capability_output::CreateCapabilityOutput;
 
 mod _create_capability_input;
 

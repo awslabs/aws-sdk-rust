@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_route_tab
     }
 }
 
-pub use crate::operation::describe_route_tables::_describe_route_tables_output::DescribeRouteTablesOutput;
-
 pub use crate::operation::describe_route_tables::_describe_route_tables_input::DescribeRouteTablesInput;
+
+pub use crate::operation::describe_route_tables::_describe_route_tables_output::DescribeRouteTablesOutput;
 
 mod _describe_route_tables_input;
 

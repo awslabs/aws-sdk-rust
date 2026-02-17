@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vocabulary::Ge
     }
 }
 
-pub use crate::operation::get_vocabulary::_get_vocabulary_output::GetVocabularyOutput;
-
 pub use crate::operation::get_vocabulary::_get_vocabulary_input::GetVocabularyInput;
+
+pub use crate::operation::get_vocabulary::_get_vocabulary_output::GetVocabularyOutput;
 
 mod _get_vocabulary_input;
 

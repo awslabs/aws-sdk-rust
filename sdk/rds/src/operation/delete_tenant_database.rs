@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tenant_data
     }
 }
 
-pub use crate::operation::delete_tenant_database::_delete_tenant_database_output::DeleteTenantDatabaseOutput;
-
 pub use crate::operation::delete_tenant_database::_delete_tenant_database_input::DeleteTenantDatabaseInput;
+
+pub use crate::operation::delete_tenant_database::_delete_tenant_database_output::DeleteTenantDatabaseOutput;
 
 mod _delete_tenant_database_input;
 

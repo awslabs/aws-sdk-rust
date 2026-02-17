@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::phone_number_valid
     }
 }
 
-pub use crate::operation::phone_number_validate::_phone_number_validate_output::PhoneNumberValidateOutput;
-
 pub use crate::operation::phone_number_validate::_phone_number_validate_input::PhoneNumberValidateInput;
+
+pub use crate::operation::phone_number_validate::_phone_number_validate_output::PhoneNumberValidateOutput;
 
 mod _phone_number_validate_input;
 

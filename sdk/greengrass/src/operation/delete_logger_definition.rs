@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_logger_defi
     }
 }
 
-pub use crate::operation::delete_logger_definition::_delete_logger_definition_output::DeleteLoggerDefinitionOutput;
-
 pub use crate::operation::delete_logger_definition::_delete_logger_definition_input::DeleteLoggerDefinitionInput;
+
+pub use crate::operation::delete_logger_definition::_delete_logger_definition_output::DeleteLoggerDefinitionOutput;
 
 mod _delete_logger_definition_input;
 

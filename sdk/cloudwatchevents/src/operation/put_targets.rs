@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_targets::PutTa
     }
 }
 
-pub use crate::operation::put_targets::_put_targets_output::PutTargetsOutput;
-
 pub use crate::operation::put_targets::_put_targets_input::PutTargetsInput;
+
+pub use crate::operation::put_targets::_put_targets_output::PutTargetsOutput;
 
 mod _put_targets_input;
 

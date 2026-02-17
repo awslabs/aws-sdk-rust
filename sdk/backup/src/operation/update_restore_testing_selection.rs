@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_restore_tes
     }
 }
 
-pub use crate::operation::update_restore_testing_selection::_update_restore_testing_selection_output::UpdateRestoreTestingSelectionOutput;
-
 pub use crate::operation::update_restore_testing_selection::_update_restore_testing_selection_input::UpdateRestoreTestingSelectionInput;
+
+pub use crate::operation::update_restore_testing_selection::_update_restore_testing_selection_output::UpdateRestoreTestingSelectionOutput;
 
 mod _update_restore_testing_selection_input;
 

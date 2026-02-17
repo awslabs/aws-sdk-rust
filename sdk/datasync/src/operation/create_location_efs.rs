@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_ef
     }
 }
 
-pub use crate::operation::create_location_efs::_create_location_efs_output::CreateLocationEfsOutput;
-
 pub use crate::operation::create_location_efs::_create_location_efs_input::CreateLocationEfsInput;
+
+pub use crate::operation::create_location_efs::_create_location_efs_output::CreateLocationEfsOutput;
 
 mod _create_location_efs_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_db_snapshot::
     }
 }
 
-pub use crate::operation::copy_db_snapshot::_copy_db_snapshot_output::CopyDbSnapshotOutput;
-
 pub use crate::operation::copy_db_snapshot::_copy_db_snapshot_input::CopyDbSnapshotInput;
+
+pub use crate::operation::copy_db_snapshot::_copy_db_snapshot_output::CopyDbSnapshotOutput;
 
 mod _copy_db_snapshot_input;
 

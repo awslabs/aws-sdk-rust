@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_discovery::S
     }
 }
 
-pub use crate::operation::start_discovery::_start_discovery_output::StartDiscoveryOutput;
-
 pub use crate::operation::start_discovery::_start_discovery_input::StartDiscoveryInput;
+
+pub use crate::operation::start_discovery::_start_discovery_output::StartDiscoveryOutput;
 
 mod _start_discovery_input;
 

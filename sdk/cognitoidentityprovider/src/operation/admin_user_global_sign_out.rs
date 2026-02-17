@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_user_global_
     }
 }
 
-pub use crate::operation::admin_user_global_sign_out::_admin_user_global_sign_out_output::AdminUserGlobalSignOutOutput;
-
 pub use crate::operation::admin_user_global_sign_out::_admin_user_global_sign_out_input::AdminUserGlobalSignOutInput;
+
+pub use crate::operation::admin_user_global_sign_out::_admin_user_global_sign_out_output::AdminUserGlobalSignOutOutput;
 
 mod _admin_user_global_sign_out_input;
 

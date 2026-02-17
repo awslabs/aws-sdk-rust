@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_aws_account_from_partner_account::_disassociate_aws_account_from_partner_account_output::DisassociateAwsAccountFromPartnerAccountOutput;
-
 pub use crate::operation::disassociate_aws_account_from_partner_account::_disassociate_aws_account_from_partner_account_input::DisassociateAwsAccountFromPartnerAccountInput;
+
+pub use crate::operation::disassociate_aws_account_from_partner_account::_disassociate_aws_account_from_partner_account_output::DisassociateAwsAccountFromPartnerAccountOutput;
 
 mod _disassociate_aws_account_from_partner_account_input;
 

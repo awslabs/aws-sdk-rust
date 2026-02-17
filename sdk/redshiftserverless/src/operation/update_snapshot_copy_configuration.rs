@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_snapshot_co
     }
 }
 
-pub use crate::operation::update_snapshot_copy_configuration::_update_snapshot_copy_configuration_output::UpdateSnapshotCopyConfigurationOutput;
-
 pub use crate::operation::update_snapshot_copy_configuration::_update_snapshot_copy_configuration_input::UpdateSnapshotCopyConfigurationInput;
+
+pub use crate::operation::update_snapshot_copy_configuration::_update_snapshot_copy_configuration_output::UpdateSnapshotCopyConfigurationOutput;
 
 mod _update_snapshot_copy_configuration_input;
 

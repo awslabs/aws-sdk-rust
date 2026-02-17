@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_bridge_outputs
     }
 }
 
-pub use crate::operation::add_bridge_outputs::_add_bridge_outputs_output::AddBridgeOutputsOutput;
-
 pub use crate::operation::add_bridge_outputs::_add_bridge_outputs_input::AddBridgeOutputsInput;
+
+pub use crate::operation::add_bridge_outputs::_add_bridge_outputs_output::AddBridgeOutputsOutput;
 
 mod _add_bridge_outputs_input;
 

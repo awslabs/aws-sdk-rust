@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_portals::List
     }
 }
 
-pub use crate::operation::list_portals::_list_portals_output::ListPortalsOutput;
-
 pub use crate::operation::list_portals::_list_portals_input::ListPortalsInput;
+
+pub use crate::operation::list_portals::_list_portals_output::ListPortalsOutput;
 
 mod _list_portals_input;
 

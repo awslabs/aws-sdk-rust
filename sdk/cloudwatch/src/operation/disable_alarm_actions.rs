@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_alarm_acti
     }
 }
 
-pub use crate::operation::disable_alarm_actions::_disable_alarm_actions_output::DisableAlarmActionsOutput;
-
 pub use crate::operation::disable_alarm_actions::_disable_alarm_actions_input::DisableAlarmActionsInput;
+
+pub use crate::operation::disable_alarm_actions::_disable_alarm_actions_output::DisableAlarmActionsOutput;
 
 mod _disable_alarm_actions_input;
 

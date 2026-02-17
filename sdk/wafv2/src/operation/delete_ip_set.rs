@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ip_set::Del
     }
 }
 
-pub use crate::operation::delete_ip_set::_delete_ip_set_output::DeleteIpSetOutput;
-
 pub use crate::operation::delete_ip_set::_delete_ip_set_input::DeleteIpSetInput;
+
+pub use crate::operation::delete_ip_set::_delete_ip_set_output::DeleteIpSetOutput;
 
 mod _delete_ip_set_input;
 

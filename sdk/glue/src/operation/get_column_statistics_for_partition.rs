@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_column_statist
     }
 }
 
-pub use crate::operation::get_column_statistics_for_partition::_get_column_statistics_for_partition_output::GetColumnStatisticsForPartitionOutput;
-
 pub use crate::operation::get_column_statistics_for_partition::_get_column_statistics_for_partition_input::GetColumnStatisticsForPartitionInput;
+
+pub use crate::operation::get_column_statistics_for_partition::_get_column_statistics_for_partition_output::GetColumnStatisticsForPartitionOutput;
 
 mod _get_column_statistics_for_partition_input;
 

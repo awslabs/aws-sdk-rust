@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_access_grants_
     }
 }
 
-pub use crate::operation::put_access_grants_instance_resource_policy::_put_access_grants_instance_resource_policy_output::PutAccessGrantsInstanceResourcePolicyOutput;
-
 pub use crate::operation::put_access_grants_instance_resource_policy::_put_access_grants_instance_resource_policy_input::PutAccessGrantsInstanceResourcePolicyInput;
+
+pub use crate::operation::put_access_grants_instance_resource_policy::_put_access_grants_instance_resource_policy_output::PutAccessGrantsInstanceResourcePolicyOutput;
 
 mod _put_access_grants_instance_resource_policy_input;
 

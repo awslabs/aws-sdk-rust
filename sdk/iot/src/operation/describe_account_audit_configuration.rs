@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_a
     }
 }
 
-pub use crate::operation::describe_account_audit_configuration::_describe_account_audit_configuration_output::DescribeAccountAuditConfigurationOutput;
-
 pub use crate::operation::describe_account_audit_configuration::_describe_account_audit_configuration_input::DescribeAccountAuditConfigurationInput;
+
+pub use crate::operation::describe_account_audit_configuration::_describe_account_audit_configuration_output::DescribeAccountAuditConfigurationOutput;
 
 mod _describe_account_audit_configuration_input;
 

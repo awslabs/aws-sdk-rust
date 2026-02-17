@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cache_policy::
     }
 }
 
-pub use crate::operation::get_cache_policy::_get_cache_policy_output::GetCachePolicyOutput;
-
 pub use crate::operation::get_cache_policy::_get_cache_policy_input::GetCachePolicyInput;
+
+pub use crate::operation::get_cache_policy::_get_cache_policy_output::GetCachePolicyOutput;
 
 mod _get_cache_policy_input;
 

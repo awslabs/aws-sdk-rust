@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_snapshot_co
     }
 }
 
-pub use crate::operation::enable_snapshot_copy::_enable_snapshot_copy_output::EnableSnapshotCopyOutput;
-
 pub use crate::operation::enable_snapshot_copy::_enable_snapshot_copy_input::EnableSnapshotCopyInput;
+
+pub use crate::operation::enable_snapshot_copy::_enable_snapshot_copy_output::EnableSnapshotCopyOutput;
 
 mod _enable_snapshot_copy_input;
 

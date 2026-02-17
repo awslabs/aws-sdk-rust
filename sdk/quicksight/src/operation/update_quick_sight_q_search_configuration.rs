@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_quick_sight
     }
 }
 
-pub use crate::operation::update_quick_sight_q_search_configuration::_update_quick_sight_q_search_configuration_output::UpdateQuickSightQSearchConfigurationOutput;
-
 pub use crate::operation::update_quick_sight_q_search_configuration::_update_quick_sight_q_search_configuration_input::UpdateQuickSightQSearchConfigurationInput;
+
+pub use crate::operation::update_quick_sight_q_search_configuration::_update_quick_sight_q_search_configuration_output::UpdateQuickSightQSearchConfigurationOutput;
 
 mod _update_quick_sight_q_search_configuration_input;
 

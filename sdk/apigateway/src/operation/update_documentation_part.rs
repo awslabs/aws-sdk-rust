@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_documentati
     }
 }
 
-pub use crate::operation::update_documentation_part::_update_documentation_part_output::UpdateDocumentationPartOutput;
-
 pub use crate::operation::update_documentation_part::_update_documentation_part_input::UpdateDocumentationPartInput;
+
+pub use crate::operation::update_documentation_part::_update_documentation_part_output::UpdateDocumentationPartOutput;
 
 mod _update_documentation_part_input;
 

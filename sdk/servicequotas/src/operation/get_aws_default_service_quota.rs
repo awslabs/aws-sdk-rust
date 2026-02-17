@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aws_default_se
     }
 }
 
-pub use crate::operation::get_aws_default_service_quota::_get_aws_default_service_quota_output::GetAwsDefaultServiceQuotaOutput;
-
 pub use crate::operation::get_aws_default_service_quota::_get_aws_default_service_quota_input::GetAwsDefaultServiceQuotaInput;
+
+pub use crate::operation::get_aws_default_service_quota::_get_aws_default_service_quota_output::GetAwsDefaultServiceQuotaOutput;
 
 mod _get_aws_default_service_quota_input;
 

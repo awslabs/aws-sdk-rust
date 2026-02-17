@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_capacity::_describe_reserved_capacity_output::DescribeReservedCapacityOutput;
-
 pub use crate::operation::describe_reserved_capacity::_describe_reserved_capacity_input::DescribeReservedCapacityInput;
+
+pub use crate::operation::describe_reserved_capacity::_describe_reserved_capacity_output::DescribeReservedCapacityOutput;
 
 mod _describe_reserved_capacity_input;
 

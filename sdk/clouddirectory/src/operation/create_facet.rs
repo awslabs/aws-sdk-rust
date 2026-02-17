@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_facet::Crea
     }
 }
 
-pub use crate::operation::create_facet::_create_facet_output::CreateFacetOutput;
-
 pub use crate::operation::create_facet::_create_facet_input::CreateFacetInput;
+
+pub use crate::operation::create_facet::_create_facet_output::CreateFacetOutput;
 
 mod _create_facet_input;
 

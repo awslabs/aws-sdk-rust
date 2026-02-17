@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_change_set:
     }
 }
 
-pub use crate::operation::create_change_set::_create_change_set_output::CreateChangeSetOutput;
-
 pub use crate::operation::create_change_set::_create_change_set_input::CreateChangeSetInput;
+
+pub use crate::operation::create_change_set::_create_change_set_output::CreateChangeSetOutput;
 
 mod _create_change_set_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agreements::L
     }
 }
 
-pub use crate::operation::list_agreements::_list_agreements_output::ListAgreementsOutput;
-
 pub use crate::operation::list_agreements::_list_agreements_input::ListAgreementsInput;
+
+pub use crate::operation::list_agreements::_list_agreements_output::ListAgreementsOutput;
 
 mod _list_agreements_input;
 

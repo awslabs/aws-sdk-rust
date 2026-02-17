@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_prefer
     }
 }
 
-pub use crate::operation::get_account_preferences::_get_account_preferences_output::GetAccountPreferencesOutput;
-
 pub use crate::operation::get_account_preferences::_get_account_preferences_input::GetAccountPreferencesInput;
+
+pub use crate::operation::get_account_preferences::_get_account_preferences_output::GetAccountPreferencesOutput;
 
 mod _get_account_preferences_input;
 

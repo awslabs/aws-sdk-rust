@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_pri
     }
 }
 
-pub use crate::operation::delete_service_principal_name::_delete_service_principal_name_output::DeleteServicePrincipalNameOutput;
-
 pub use crate::operation::delete_service_principal_name::_delete_service_principal_name_input::DeleteServicePrincipalNameInput;
+
+pub use crate::operation::delete_service_principal_name::_delete_service_principal_name_output::DeleteServicePrincipalNameOutput;
 
 mod _delete_service_principal_name_input;
 

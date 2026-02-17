@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_notificatio
     }
 }
 
-pub use crate::operation::search_notifications::_search_notifications_output::SearchNotificationsOutput;
-
 pub use crate::operation::search_notifications::_search_notifications_input::SearchNotificationsInput;
+
+pub use crate::operation::search_notifications::_search_notifications_output::SearchNotificationsOutput;
 
 mod _search_notifications_input;
 

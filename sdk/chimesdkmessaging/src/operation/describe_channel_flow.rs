@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_channel_f
     }
 }
 
-pub use crate::operation::describe_channel_flow::_describe_channel_flow_output::DescribeChannelFlowOutput;
-
 pub use crate::operation::describe_channel_flow::_describe_channel_flow_input::DescribeChannelFlowInput;
+
+pub use crate::operation::describe_channel_flow::_describe_channel_flow_output::DescribeChannelFlowOutput;
 
 mod _describe_channel_flow_input;
 

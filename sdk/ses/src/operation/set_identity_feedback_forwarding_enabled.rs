@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_identity_feedb
     }
 }
 
-pub use crate::operation::set_identity_feedback_forwarding_enabled::_set_identity_feedback_forwarding_enabled_output::SetIdentityFeedbackForwardingEnabledOutput;
-
 pub use crate::operation::set_identity_feedback_forwarding_enabled::_set_identity_feedback_forwarding_enabled_input::SetIdentityFeedbackForwardingEnabledInput;
+
+pub use crate::operation::set_identity_feedback_forwarding_enabled::_set_identity_feedback_forwarding_enabled_output::SetIdentityFeedbackForwardingEnabledOutput;
 
 mod _set_identity_feedback_forwarding_enabled_input;
 

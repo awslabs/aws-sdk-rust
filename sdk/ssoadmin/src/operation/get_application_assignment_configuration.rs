@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_as
     }
 }
 
-pub use crate::operation::get_application_assignment_configuration::_get_application_assignment_configuration_output::GetApplicationAssignmentConfigurationOutput;
-
 pub use crate::operation::get_application_assignment_configuration::_get_application_assignment_configuration_input::GetApplicationAssignmentConfigurationInput;
+
+pub use crate::operation::get_application_assignment_configuration::_get_application_assignment_configuration_output::GetApplicationAssignmentConfigurationOutput;
 
 mod _get_application_assignment_configuration_input;
 

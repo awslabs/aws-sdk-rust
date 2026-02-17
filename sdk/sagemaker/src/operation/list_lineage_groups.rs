@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_lineage_group
     }
 }
 
-pub use crate::operation::list_lineage_groups::_list_lineage_groups_output::ListLineageGroupsOutput;
-
 pub use crate::operation::list_lineage_groups::_list_lineage_groups_input::ListLineageGroupsInput;
+
+pub use crate::operation::list_lineage_groups::_list_lineage_groups_output::ListLineageGroupsOutput;
 
 mod _list_lineage_groups_input;
 

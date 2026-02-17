@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_public_access_
     }
 }
 
-pub use crate::operation::put_public_access_block::_put_public_access_block_output::PutPublicAccessBlockOutput;
-
 pub use crate::operation::put_public_access_block::_put_public_access_block_input::PutPublicAccessBlockInput;
+
+pub use crate::operation::put_public_access_block::_put_public_access_block_output::PutPublicAccessBlockOutput;
 
 mod _put_public_access_block_input;
 

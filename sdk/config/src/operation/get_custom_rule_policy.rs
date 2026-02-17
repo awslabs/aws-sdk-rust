@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_custom_rule_po
     }
 }
 
-pub use crate::operation::get_custom_rule_policy::_get_custom_rule_policy_output::GetCustomRulePolicyOutput;
-
 pub use crate::operation::get_custom_rule_policy::_get_custom_rule_policy_input::GetCustomRulePolicyInput;
+
+pub use crate::operation::get_custom_rule_policy::_get_custom_rule_policy_output::GetCustomRulePolicyOutput;
 
 mod _get_custom_rule_policy_input;
 

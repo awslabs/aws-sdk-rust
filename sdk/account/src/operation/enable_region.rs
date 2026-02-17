@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_region::Ena
     }
 }
 
-pub use crate::operation::enable_region::_enable_region_output::EnableRegionOutput;
-
 pub use crate::operation::enable_region::_enable_region_input::EnableRegionInput;
+
+pub use crate::operation::enable_region::_enable_region_output::EnableRegionOutput;
 
 mod _enable_region_input;
 

@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_configured_table_association_analysis_rule::_update_configured_table_association_analysis_rule_output::UpdateConfiguredTableAssociationAnalysisRuleOutput;
-
 pub use crate::operation::update_configured_table_association_analysis_rule::_update_configured_table_association_analysis_rule_input::UpdateConfiguredTableAssociationAnalysisRuleInput;
+
+pub use crate::operation::update_configured_table_association_analysis_rule::_update_configured_table_association_analysis_rule_output::UpdateConfiguredTableAssociationAnalysisRuleOutput;
 
 mod _update_configured_table_association_analysis_rule_input;
 

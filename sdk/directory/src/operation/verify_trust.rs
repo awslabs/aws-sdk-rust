@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_trust::Veri
     }
 }
 
-pub use crate::operation::verify_trust::_verify_trust_output::VerifyTrustOutput;
-
 pub use crate::operation::verify_trust::_verify_trust_input::VerifyTrustInput;
+
+pub use crate::operation::verify_trust::_verify_trust_output::VerifyTrustOutput;
 
 mod _verify_trust_input;
 

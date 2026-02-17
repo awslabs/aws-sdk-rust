@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_api::Delete
     }
 }
 
-pub use crate::operation::delete_api::_delete_api_output::DeleteApiOutput;
-
 pub use crate::operation::delete_api::_delete_api_input::DeleteApiInput;
+
+pub use crate::operation::delete_api::_delete_api_output::DeleteApiOutput;
 
 mod _delete_api_input;
 

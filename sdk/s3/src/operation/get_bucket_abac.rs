@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_abac::G
     }
 }
 
-pub use crate::operation::get_bucket_abac::_get_bucket_abac_output::GetBucketAbacOutput;
-
 pub use crate::operation::get_bucket_abac::_get_bucket_abac_input::GetBucketAbacInput;
+
+pub use crate::operation::get_bucket_abac::_get_bucket_abac_output::GetBucketAbacOutput;
 
 mod _get_bucket_abac_input;
 

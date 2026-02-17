@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::failover_shard::Fa
     }
 }
 
-pub use crate::operation::failover_shard::_failover_shard_output::FailoverShardOutput;
-
 pub use crate::operation::failover_shard::_failover_shard_input::FailoverShardInput;
+
+pub use crate::operation::failover_shard::_failover_shard_output::FailoverShardOutput;
 
 mod _failover_shard_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_web_app_cus
     }
 }
 
-pub use crate::operation::update_web_app_customization::_update_web_app_customization_output::UpdateWebAppCustomizationOutput;
-
 pub use crate::operation::update_web_app_customization::_update_web_app_customization_input::UpdateWebAppCustomizationInput;
+
+pub use crate::operation::update_web_app_customization::_update_web_app_customization_output::UpdateWebAppCustomizationOutput;
 
 mod _update_web_app_customization_input;
 

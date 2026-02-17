@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_device_flee
     }
 }
 
-pub use crate::operation::create_device_fleet::_create_device_fleet_output::CreateDeviceFleetOutput;
-
 pub use crate::operation::create_device_fleet::_create_device_fleet_input::CreateDeviceFleetInput;
+
+pub use crate::operation::create_device_fleet::_create_device_fleet_output::CreateDeviceFleetOutput;
 
 mod _create_device_fleet_input;
 

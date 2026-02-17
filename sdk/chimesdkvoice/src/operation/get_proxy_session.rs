@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_proxy_session:
     }
 }
 
-pub use crate::operation::get_proxy_session::_get_proxy_session_output::GetProxySessionOutput;
-
 pub use crate::operation::get_proxy_session::_get_proxy_session_input::GetProxySessionInput;
+
+pub use crate::operation::get_proxy_session::_get_proxy_session_output::GetProxySessionOutput;
 
 mod _get_proxy_session_input;
 

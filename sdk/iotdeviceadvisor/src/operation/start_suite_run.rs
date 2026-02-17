@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_suite_run::S
     }
 }
 
-pub use crate::operation::start_suite_run::_start_suite_run_output::StartSuiteRunOutput;
-
 pub use crate::operation::start_suite_run::_start_suite_run_input::StartSuiteRunInput;
+
+pub use crate::operation::start_suite_run::_start_suite_run_output::StartSuiteRunOutput;
 
 mod _start_suite_run_input;
 

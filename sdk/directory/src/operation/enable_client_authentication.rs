@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_client_auth
     }
 }
 
-pub use crate::operation::enable_client_authentication::_enable_client_authentication_output::EnableClientAuthenticationOutput;
-
 pub use crate::operation::enable_client_authentication::_enable_client_authentication_input::EnableClientAuthenticationInput;
+
+pub use crate::operation::enable_client_authentication::_enable_client_authentication_output::EnableClientAuthenticationOutput;
 
 mod _enable_client_authentication_input;
 

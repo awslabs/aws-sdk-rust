@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::request_upload_cre
     }
 }
 
-pub use crate::operation::request_upload_credentials::_request_upload_credentials_output::RequestUploadCredentialsOutput;
-
 pub use crate::operation::request_upload_credentials::_request_upload_credentials_input::RequestUploadCredentialsInput;
+
+pub use crate::operation::request_upload_credentials::_request_upload_credentials_output::RequestUploadCredentialsOutput;
 
 mod _request_upload_credentials_input;
 

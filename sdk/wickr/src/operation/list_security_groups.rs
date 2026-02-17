@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_grou
     }
 }
 
-pub use crate::operation::list_security_groups::_list_security_groups_output::ListSecurityGroupsOutput;
-
 pub use crate::operation::list_security_groups::_list_security_groups_input::ListSecurityGroupsInput;
+
+pub use crate::operation::list_security_groups::_list_security_groups_output::ListSecurityGroupsOutput;
 
 mod _list_security_groups_input;
 

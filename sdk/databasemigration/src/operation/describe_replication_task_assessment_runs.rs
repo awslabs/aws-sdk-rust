@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_replicati
     }
 }
 
-pub use crate::operation::describe_replication_task_assessment_runs::_describe_replication_task_assessment_runs_output::DescribeReplicationTaskAssessmentRunsOutput;
-
 pub use crate::operation::describe_replication_task_assessment_runs::_describe_replication_task_assessment_runs_input::DescribeReplicationTaskAssessmentRunsInput;
+
+pub use crate::operation::describe_replication_task_assessment_runs::_describe_replication_task_assessment_runs_output::DescribeReplicationTaskAssessmentRunsOutput;
 
 mod _describe_replication_task_assessment_runs_input;
 

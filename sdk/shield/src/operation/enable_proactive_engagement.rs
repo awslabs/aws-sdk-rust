@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_proactive_e
     }
 }
 
-pub use crate::operation::enable_proactive_engagement::_enable_proactive_engagement_output::EnableProactiveEngagementOutput;
-
 pub use crate::operation::enable_proactive_engagement::_enable_proactive_engagement_input::EnableProactiveEngagementInput;
+
+pub use crate::operation::enable_proactive_engagement::_enable_proactive_engagement_output::EnableProactiveEngagementOutput;
 
 mod _enable_proactive_engagement_input;
 

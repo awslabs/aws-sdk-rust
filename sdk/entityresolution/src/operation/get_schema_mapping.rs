@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_mapping
     }
 }
 
-pub use crate::operation::get_schema_mapping::_get_schema_mapping_output::GetSchemaMappingOutput;
-
 pub use crate::operation::get_schema_mapping::_get_schema_mapping_input::GetSchemaMappingInput;
+
+pub use crate::operation::get_schema_mapping::_get_schema_mapping_output::GetSchemaMappingOutput;
 
 mod _get_schema_mapping_input;
 

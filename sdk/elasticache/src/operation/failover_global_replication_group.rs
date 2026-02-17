@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::failover_global_re
     }
 }
 
-pub use crate::operation::failover_global_replication_group::_failover_global_replication_group_output::FailoverGlobalReplicationGroupOutput;
-
 pub use crate::operation::failover_global_replication_group::_failover_global_replication_group_input::FailoverGlobalReplicationGroupInput;
+
+pub use crate::operation::failover_global_replication_group::_failover_global_replication_group_output::FailoverGlobalReplicationGroupOutput;
 
 mod _failover_global_replication_group_input;
 

@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_threat_enti
     }
 }
 
-pub use crate::operation::create_threat_entity_set::_create_threat_entity_set_output::CreateThreatEntitySetOutput;
-
 pub use crate::operation::create_threat_entity_set::_create_threat_entity_set_input::CreateThreatEntitySetInput;
+
+pub use crate::operation::create_threat_entity_set::_create_threat_entity_set_output::CreateThreatEntitySetOutput;
 
 mod _create_threat_entity_set_input;
 

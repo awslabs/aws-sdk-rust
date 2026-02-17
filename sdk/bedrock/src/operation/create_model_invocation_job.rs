@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_invoc
     }
 }
 
-pub use crate::operation::create_model_invocation_job::_create_model_invocation_job_output::CreateModelInvocationJobOutput;
-
 pub use crate::operation::create_model_invocation_job::_create_model_invocation_job_input::CreateModelInvocationJobInput;
+
+pub use crate::operation::create_model_invocation_job::_create_model_invocation_job_output::CreateModelInvocationJobOutput;
 
 mod _create_model_invocation_job_input;
 

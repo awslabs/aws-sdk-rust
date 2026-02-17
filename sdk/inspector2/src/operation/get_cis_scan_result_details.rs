@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cis_scan_resul
     }
 }
 
-pub use crate::operation::get_cis_scan_result_details::_get_cis_scan_result_details_output::GetCisScanResultDetailsOutput;
-
 pub use crate::operation::get_cis_scan_result_details::_get_cis_scan_result_details_input::GetCisScanResultDetailsInput;
+
+pub use crate::operation::get_cis_scan_result_details::_get_cis_scan_result_details_output::GetCisScanResultDetailsOutput;
 
 mod _get_cis_scan_result_details_input;
 

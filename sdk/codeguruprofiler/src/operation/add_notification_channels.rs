@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_notification_c
     }
 }
 
-pub use crate::operation::add_notification_channels::_add_notification_channels_output::AddNotificationChannelsOutput;
-
 pub use crate::operation::add_notification_channels::_add_notification_channels_input::AddNotificationChannelsInput;
+
+pub use crate::operation::add_notification_channels::_add_notification_channels_output::AddNotificationChannelsOutput;
 
 mod _add_notification_channels_input;
 

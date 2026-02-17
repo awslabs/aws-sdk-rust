@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_log_group::U
     }
 }
 
-pub use crate::operation::untag_log_group::_untag_log_group_output::UntagLogGroupOutput;
-
 pub use crate::operation::untag_log_group::_untag_log_group_input::UntagLogGroupInput;
+
+pub use crate::operation::untag_log_group::_untag_log_group_output::UntagLogGroupOutput;
 
 mod _untag_log_group_input;
 

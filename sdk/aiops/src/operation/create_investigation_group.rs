@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_investigati
     }
 }
 
-pub use crate::operation::create_investigation_group::_create_investigation_group_output::CreateInvestigationGroupOutput;
-
 pub use crate::operation::create_investigation_group::_create_investigation_group_input::CreateInvestigationGroupInput;
+
+pub use crate::operation::create_investigation_group::_create_investigation_group_output::CreateInvestigationGroupOutput;
 
 mod _create_investigation_group_input;
 

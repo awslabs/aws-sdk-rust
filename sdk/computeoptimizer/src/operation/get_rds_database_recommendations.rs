@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rds_database_r
     }
 }
 
-pub use crate::operation::get_rds_database_recommendations::_get_rds_database_recommendations_output::GetRdsDatabaseRecommendationsOutput;
-
 pub use crate::operation::get_rds_database_recommendations::_get_rds_database_recommendations_input::GetRdsDatabaseRecommendationsInput;
+
+pub use crate::operation::get_rds_database_recommendations::_get_rds_database_recommendations_output::GetRdsDatabaseRecommendationsOutput;
 
 mod _get_rds_database_recommendations_input;
 

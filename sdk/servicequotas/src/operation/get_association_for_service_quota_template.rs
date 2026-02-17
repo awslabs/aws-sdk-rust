@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_association_fo
     }
 }
 
-pub use crate::operation::get_association_for_service_quota_template::_get_association_for_service_quota_template_output::GetAssociationForServiceQuotaTemplateOutput;
-
 pub use crate::operation::get_association_for_service_quota_template::_get_association_for_service_quota_template_input::GetAssociationForServiceQuotaTemplateInput;
+
+pub use crate::operation::get_association_for_service_quota_template::_get_association_for_service_quota_template_output::GetAssociationForServiceQuotaTemplateOutput;
 
 mod _get_association_for_service_quota_template_input;
 

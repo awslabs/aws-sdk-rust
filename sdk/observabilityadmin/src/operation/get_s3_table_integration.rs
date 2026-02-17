@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_s3_table_integ
     }
 }
 
-pub use crate::operation::get_s3_table_integration::_get_s3_table_integration_output::GetS3TableIntegrationOutput;
-
 pub use crate::operation::get_s3_table_integration::_get_s3_table_integration_input::GetS3TableIntegrationInput;
+
+pub use crate::operation::get_s3_table_integration::_get_s3_table_integration_output::GetS3TableIntegrationOutput;
 
 mod _get_s3_table_integration_input;
 

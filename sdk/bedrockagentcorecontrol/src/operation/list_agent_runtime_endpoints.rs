@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_runtime
     }
 }
 
-pub use crate::operation::list_agent_runtime_endpoints::_list_agent_runtime_endpoints_output::ListAgentRuntimeEndpointsOutput;
-
 pub use crate::operation::list_agent_runtime_endpoints::_list_agent_runtime_endpoints_input::ListAgentRuntimeEndpointsInput;
+
+pub use crate::operation::list_agent_runtime_endpoints::_list_agent_runtime_endpoints_output::ListAgentRuntimeEndpointsOutput;
 
 mod _list_agent_runtime_endpoints_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_snapshot_and_
     }
 }
 
-pub use crate::operation::copy_snapshot_and_update_volume::_copy_snapshot_and_update_volume_output::CopySnapshotAndUpdateVolumeOutput;
-
 pub use crate::operation::copy_snapshot_and_update_volume::_copy_snapshot_and_update_volume_input::CopySnapshotAndUpdateVolumeInput;
+
+pub use crate::operation::copy_snapshot_and_update_volume::_copy_snapshot_and_update_volume_output::CopySnapshotAndUpdateVolumeOutput;
 
 mod _copy_snapshot_and_update_volume_input;
 

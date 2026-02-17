@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_portfolio::
     }
 }
 
-pub use crate::operation::update_portfolio::_update_portfolio_output::UpdatePortfolioOutput;
-
 pub use crate::operation::update_portfolio::_update_portfolio_input::UpdatePortfolioInput;
+
+pub use crate::operation::update_portfolio::_update_portfolio_output::UpdatePortfolioOutput;
 
 mod _update_portfolio_input;
 

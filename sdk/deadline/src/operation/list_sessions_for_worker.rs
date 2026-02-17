@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sessions_for_
     }
 }
 
-pub use crate::operation::list_sessions_for_worker::_list_sessions_for_worker_output::ListSessionsForWorkerOutput;
-
 pub use crate::operation::list_sessions_for_worker::_list_sessions_for_worker_input::ListSessionsForWorkerInput;
+
+pub use crate::operation::list_sessions_for_worker::_list_sessions_for_worker_output::ListSessionsForWorkerOutput;
 
 mod _list_sessions_for_worker_input;
 

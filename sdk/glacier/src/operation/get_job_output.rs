@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_output::Ge
     }
 }
 
-pub use crate::operation::get_job_output::_get_job_output_output::GetJobOutputOutput;
-
 pub use crate::operation::get_job_output::_get_job_output_input::GetJobOutputInput;
+
+pub use crate::operation::get_job_output::_get_job_output_output::GetJobOutputOutput;
 
 mod _get_job_output_input;
 

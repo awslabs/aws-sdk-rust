@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sdk::GetSdkErr
     }
 }
 
-pub use crate::operation::get_sdk::_get_sdk_output::GetSdkOutput;
-
 pub use crate::operation::get_sdk::_get_sdk_input::GetSdkInput;
+
+pub use crate::operation::get_sdk::_get_sdk_output::GetSdkOutput;
 
 mod _get_sdk_input;
 

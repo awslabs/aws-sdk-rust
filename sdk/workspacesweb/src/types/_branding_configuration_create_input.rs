@@ -6,7 +6,7 @@
 pub struct BrandingConfigurationCreateInput {
     /// <p>The logo image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 100 KB in JPEG, PNG, or ICO format.</p>
     pub logo: ::std::option::Option<crate::types::IconImageInput>,
-    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
+    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a default wallpaper will be used as the background image.</p>
     pub wallpaper: ::std::option::Option<crate::types::WallpaperImageInput>,
     /// <p>The favicon image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 100 KB in JPEG, PNG, or ICO format.</p>
     pub favicon: ::std::option::Option<crate::types::IconImageInput>,
@@ -22,7 +22,7 @@ impl BrandingConfigurationCreateInput {
     pub fn logo(&self) -> ::std::option::Option<&crate::types::IconImageInput> {
         self.logo.as_ref()
     }
-    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
+    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a default wallpaper will be used as the background image.</p>
     pub fn wallpaper(&self) -> ::std::option::Option<&crate::types::WallpaperImageInput> {
         self.wallpaper.as_ref()
     }
@@ -89,18 +89,17 @@ impl BrandingConfigurationCreateInputBuilder {
     pub fn get_logo(&self) -> &::std::option::Option<crate::types::IconImageInput> {
         &self.logo
     }
-    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
-    /// This field is required.
+    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a default wallpaper will be used as the background image.</p>
     pub fn wallpaper(mut self, input: crate::types::WallpaperImageInput) -> Self {
         self.wallpaper = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
+    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a default wallpaper will be used as the background image.</p>
     pub fn set_wallpaper(mut self, input: ::std::option::Option<crate::types::WallpaperImageInput>) -> Self {
         self.wallpaper = input;
         self
     }
-    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format.</p>
+    /// <p>The wallpaper image for the portal. Provide either a binary image file or an S3 URI pointing to the image file. Maximum 5 MB in JPEG or PNG format. If not provided, a default wallpaper will be used as the background image.</p>
     pub fn get_wallpaper(&self) -> &::std::option::Option<crate::types::WallpaperImageInput> {
         &self.wallpaper
     }

@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_feedback::Sen
     }
 }
 
-pub use crate::operation::send_feedback::_send_feedback_output::SendFeedbackOutput;
-
 pub use crate::operation::send_feedback::_send_feedback_input::SendFeedbackInput;
+
+pub use crate::operation::send_feedback::_send_feedback_output::SendFeedbackOutput;
 
 mod _send_feedback_input;
 

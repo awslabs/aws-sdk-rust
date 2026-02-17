@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vpc_connect
     }
 }
 
-pub use crate::operation::update_vpc_connection::_update_vpc_connection_output::UpdateVpcConnectionOutput;
-
 pub use crate::operation::update_vpc_connection::_update_vpc_connection_input::UpdateVpcConnectionInput;
+
+pub use crate::operation::update_vpc_connection::_update_vpc_connection_output::UpdateVpcConnectionOutput;
 
 mod _update_vpc_connection_input;
 

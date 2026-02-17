@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_quali
     }
 }
 
-pub use crate::operation::disassociate_qualification_from_worker::_disassociate_qualification_from_worker_output::DisassociateQualificationFromWorkerOutput;
-
 pub use crate::operation::disassociate_qualification_from_worker::_disassociate_qualification_from_worker_input::DisassociateQualificationFromWorkerInput;
+
+pub use crate::operation::disassociate_qualification_from_worker::_disassociate_qualification_from_worker_output::DisassociateQualificationFromWorkerOutput;
 
 mod _disassociate_qualification_from_worker_input;
 

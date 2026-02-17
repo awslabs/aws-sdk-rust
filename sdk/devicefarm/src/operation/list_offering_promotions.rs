@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_offering_prom
     }
 }
 
-pub use crate::operation::list_offering_promotions::_list_offering_promotions_output::ListOfferingPromotionsOutput;
-
 pub use crate::operation::list_offering_promotions::_list_offering_promotions_input::ListOfferingPromotionsInput;
+
+pub use crate::operation::list_offering_promotions::_list_offering_promotions_output::ListOfferingPromotionsOutput;
 
 mod _list_offering_promotions_input;
 

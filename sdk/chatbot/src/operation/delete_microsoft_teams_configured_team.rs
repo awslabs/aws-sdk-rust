@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_microsoft_t
     }
 }
 
-pub use crate::operation::delete_microsoft_teams_configured_team::_delete_microsoft_teams_configured_team_output::DeleteMicrosoftTeamsConfiguredTeamOutput;
-
 pub use crate::operation::delete_microsoft_teams_configured_team::_delete_microsoft_teams_configured_team_input::DeleteMicrosoftTeamsConfiguredTeamInput;
+
+pub use crate::operation::delete_microsoft_teams_configured_team::_delete_microsoft_teams_configured_team_output::DeleteMicrosoftTeamsConfiguredTeamOutput;
 
 mod _delete_microsoft_teams_configured_team_input;
 

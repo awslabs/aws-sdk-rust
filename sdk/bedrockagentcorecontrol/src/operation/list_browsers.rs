@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_browsers::Lis
     }
 }
 
-pub use crate::operation::list_browsers::_list_browsers_output::ListBrowsersOutput;
-
 pub use crate::operation::list_browsers::_list_browsers_input::ListBrowsersInput;
+
+pub use crate::operation::list_browsers::_list_browsers_output::ListBrowsersOutput;
 
 mod _list_browsers_input;
 

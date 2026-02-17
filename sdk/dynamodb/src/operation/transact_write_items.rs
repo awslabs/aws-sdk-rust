@@ -643,9 +643,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::transact_write_ite
     }
 }
 
-pub use crate::operation::transact_write_items::_transact_write_items_output::TransactWriteItemsOutput;
-
 pub use crate::operation::transact_write_items::_transact_write_items_input::TransactWriteItemsInput;
+
+pub use crate::operation::transact_write_items::_transact_write_items_output::TransactWriteItemsOutput;
 
 mod _transact_write_items_input;
 

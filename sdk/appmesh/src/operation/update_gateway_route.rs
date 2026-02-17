@@ -490,9 +490,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_gateway_rou
     }
 }
 
-pub use crate::operation::update_gateway_route::_update_gateway_route_output::UpdateGatewayRouteOutput;
-
 pub use crate::operation::update_gateway_route::_update_gateway_route_input::UpdateGatewayRouteInput;
+
+pub use crate::operation::update_gateway_route::_update_gateway_route_output::UpdateGatewayRouteOutput;
 
 mod _update_gateway_route_input;
 

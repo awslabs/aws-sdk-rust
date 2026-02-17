@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::replace_image_criteria_in_allowed_images_settings::_replace_image_criteria_in_allowed_images_settings_output::ReplaceImageCriteriaInAllowedImagesSettingsOutput;
-
 pub use crate::operation::replace_image_criteria_in_allowed_images_settings::_replace_image_criteria_in_allowed_images_settings_input::ReplaceImageCriteriaInAllowedImagesSettingsInput;
+
+pub use crate::operation::replace_image_criteria_in_allowed_images_settings::_replace_image_criteria_in_allowed_images_settings_output::ReplaceImageCriteriaInAllowedImagesSettingsOutput;
 
 mod _replace_image_criteria_in_allowed_images_settings_input;
 

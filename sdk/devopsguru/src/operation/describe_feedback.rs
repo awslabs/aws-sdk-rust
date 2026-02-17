@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_feedback:
     }
 }
 
-pub use crate::operation::describe_feedback::_describe_feedback_output::DescribeFeedbackOutput;
-
 pub use crate::operation::describe_feedback::_describe_feedback_input::DescribeFeedbackInput;
+
+pub use crate::operation::describe_feedback::_describe_feedback_output::DescribeFeedbackOutput;
 
 mod _describe_feedback_input;
 

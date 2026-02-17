@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_deletion_pr
     }
 }
 
-pub use crate::operation::update_deletion_protection::_update_deletion_protection_output::UpdateDeletionProtectionOutput;
-
 pub use crate::operation::update_deletion_protection::_update_deletion_protection_input::UpdateDeletionProtectionInput;
+
+pub use crate::operation::update_deletion_protection::_update_deletion_protection_output::UpdateDeletionProtectionOutput;
 
 mod _update_deletion_protection_input;
 

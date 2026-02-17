@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_profile::Cr
     }
 }
 
-pub use crate::operation::create_profile::_create_profile_output::CreateProfileOutput;
-
 pub use crate::operation::create_profile::_create_profile_input::CreateProfileInput;
+
+pub use crate::operation::create_profile::_create_profile_output::CreateProfileOutput;
 
 mod _create_profile_input;
 

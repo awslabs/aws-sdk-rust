@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_radius::Di
     }
 }
 
-pub use crate::operation::disable_radius::_disable_radius_output::DisableRadiusOutput;
-
 pub use crate::operation::disable_radius::_disable_radius_input::DisableRadiusInput;
+
+pub use crate::operation::disable_radius::_disable_radius_output::DisableRadiusOutput;
 
 mod _disable_radius_input;
 

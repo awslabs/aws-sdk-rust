@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_sink_policy::P
     }
 }
 
-pub use crate::operation::put_sink_policy::_put_sink_policy_output::PutSinkPolicyOutput;
-
 pub use crate::operation::put_sink_policy::_put_sink_policy_input::PutSinkPolicyInput;
+
+pub use crate::operation::put_sink_policy::_put_sink_policy_output::PutSinkPolicyOutput;
 
 mod _put_sink_policy_input;
 

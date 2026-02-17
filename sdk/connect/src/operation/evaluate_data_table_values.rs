@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate_data_tabl
     }
 }
 
-pub use crate::operation::evaluate_data_table_values::_evaluate_data_table_values_output::EvaluateDataTableValuesOutput;
-
 pub use crate::operation::evaluate_data_table_values::_evaluate_data_table_values_input::EvaluateDataTableValuesInput;
+
+pub use crate::operation::evaluate_data_table_values::_evaluate_data_table_values_output::EvaluateDataTableValuesOutput;
 
 mod _evaluate_data_table_values_input;
 

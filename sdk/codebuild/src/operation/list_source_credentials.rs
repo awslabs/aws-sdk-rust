@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_source_creden
     }
 }
 
-pub use crate::operation::list_source_credentials::_list_source_credentials_output::ListSourceCredentialsOutput;
-
 pub use crate::operation::list_source_credentials::_list_source_credentials_input::ListSourceCredentialsInput;
+
+pub use crate::operation::list_source_credentials::_list_source_credentials_output::ListSourceCredentialsOutput;
 
 mod _list_source_credentials_input;
 

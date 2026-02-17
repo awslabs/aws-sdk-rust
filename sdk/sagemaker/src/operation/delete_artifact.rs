@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_artifact::D
     }
 }
 
-pub use crate::operation::delete_artifact::_delete_artifact_output::DeleteArtifactOutput;
-
 pub use crate::operation::delete_artifact::_delete_artifact_input::DeleteArtifactInput;
+
+pub use crate::operation::delete_artifact::_delete_artifact_output::DeleteArtifactOutput;
 
 mod _delete_artifact_input;
 

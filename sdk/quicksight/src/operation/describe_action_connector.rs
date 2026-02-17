@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_action_co
     }
 }
 
-pub use crate::operation::describe_action_connector::_describe_action_connector_output::DescribeActionConnectorOutput;
-
 pub use crate::operation::describe_action_connector::_describe_action_connector_input::DescribeActionConnectorInput;
+
+pub use crate::operation::describe_action_connector::_describe_action_connector_output::DescribeActionConnectorOutput;
 
 mod _describe_action_connector_input;
 

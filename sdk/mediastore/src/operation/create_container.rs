@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_container::
     }
 }
 
-pub use crate::operation::create_container::_create_container_output::CreateContainerOutput;
-
 pub use crate::operation::create_container::_create_container_input::CreateContainerInput;
+
+pub use crate::operation::create_container::_create_container_output::CreateContainerOutput;
 
 mod _create_container_input;
 

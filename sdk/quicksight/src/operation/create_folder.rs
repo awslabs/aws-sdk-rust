@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_folder::Cre
     }
 }
 
-pub use crate::operation::create_folder::_create_folder_output::CreateFolderOutput;
-
 pub use crate::operation::create_folder::_create_folder_input::CreateFolderInput;
+
+pub use crate::operation::create_folder::_create_folder_output::CreateFolderOutput;
 
 mod _create_folder_input;
 

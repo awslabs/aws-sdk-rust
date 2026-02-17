@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_trace_retri
     }
 }
 
-pub use crate::operation::cancel_trace_retrieval::_cancel_trace_retrieval_output::CancelTraceRetrievalOutput;
-
 pub use crate::operation::cancel_trace_retrieval::_cancel_trace_retrieval_input::CancelTraceRetrievalInput;
+
+pub use crate::operation::cancel_trace_retrieval::_cancel_trace_retrieval_output::CancelTraceRetrievalOutput;
 
 mod _cancel_trace_retrieval_input;
 

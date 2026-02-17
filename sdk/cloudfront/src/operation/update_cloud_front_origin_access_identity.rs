@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cloud_front
     }
 }
 
-pub use crate::operation::update_cloud_front_origin_access_identity::_update_cloud_front_origin_access_identity_output::UpdateCloudFrontOriginAccessIdentityOutput;
-
 pub use crate::operation::update_cloud_front_origin_access_identity::_update_cloud_front_origin_access_identity_input::UpdateCloudFrontOriginAccessIdentityInput;
+
+pub use crate::operation::update_cloud_front_origin_access_identity::_update_cloud_front_origin_access_identity_output::UpdateCloudFrontOriginAccessIdentityOutput;
 
 mod _update_cloud_front_origin_access_identity_input;
 

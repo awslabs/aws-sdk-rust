@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_backup::D
     }
 }
 
-pub use crate::operation::describe_backup::_describe_backup_output::DescribeBackupOutput;
-
 pub use crate::operation::describe_backup::_describe_backup_input::DescribeBackupInput;
+
+pub use crate::operation::describe_backup::_describe_backup_output::DescribeBackupOutput;
 
 mod _describe_backup_input;
 

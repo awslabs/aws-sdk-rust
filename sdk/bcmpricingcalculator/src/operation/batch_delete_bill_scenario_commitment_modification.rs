@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_delete_bill_scenario_commitment_modification::_batch_delete_bill_scenario_commitment_modification_output::BatchDeleteBillScenarioCommitmentModificationOutput;
-
 pub use crate::operation::batch_delete_bill_scenario_commitment_modification::_batch_delete_bill_scenario_commitment_modification_input::BatchDeleteBillScenarioCommitmentModificationInput;
+
+pub use crate::operation::batch_delete_bill_scenario_commitment_modification::_batch_delete_bill_scenario_commitment_modification_output::BatchDeleteBillScenarioCommitmentModificationOutput;
 
 mod _batch_delete_bill_scenario_commitment_modification_input;
 

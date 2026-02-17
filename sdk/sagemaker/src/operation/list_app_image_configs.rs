@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_image_con
     }
 }
 
-pub use crate::operation::list_app_image_configs::_list_app_image_configs_output::ListAppImageConfigsOutput;
-
 pub use crate::operation::list_app_image_configs::_list_app_image_configs_input::ListAppImageConfigsInput;
+
+pub use crate::operation::list_app_image_configs::_list_app_image_configs_output::ListAppImageConfigsOutput;
 
 mod _list_app_image_configs_input;
 

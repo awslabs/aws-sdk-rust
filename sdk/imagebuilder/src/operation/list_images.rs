@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_images::ListI
     }
 }
 
-pub use crate::operation::list_images::_list_images_output::ListImagesOutput;
-
 pub use crate::operation::list_images::_list_images_input::ListImagesInput;
+
+pub use crate::operation::list_images::_list_images_output::ListImagesOutput;
 
 mod _list_images_input;
 

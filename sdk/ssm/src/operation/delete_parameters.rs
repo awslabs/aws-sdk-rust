@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_parameters:
     }
 }
 
-pub use crate::operation::delete_parameters::_delete_parameters_output::DeleteParametersOutput;
-
 pub use crate::operation::delete_parameters::_delete_parameters_input::DeleteParametersInput;
+
+pub use crate::operation::delete_parameters::_delete_parameters_output::DeleteParametersOutput;
 
 mod _delete_parameters_input;
 

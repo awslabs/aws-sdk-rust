@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_reposi
     }
 }
 
-pub use crate::operation::update_data_repository_association::_update_data_repository_association_output::UpdateDataRepositoryAssociationOutput;
-
 pub use crate::operation::update_data_repository_association::_update_data_repository_association_input::UpdateDataRepositoryAssociationInput;
+
+pub use crate::operation::update_data_repository_association::_update_data_repository_association_output::UpdateDataRepositoryAssociationOutput;
 
 mod _update_data_repository_association_input;
 

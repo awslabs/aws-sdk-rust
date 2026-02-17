@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::poll_for_decision_
     }
 }
 
-pub use crate::operation::poll_for_decision_task::_poll_for_decision_task_output::PollForDecisionTaskOutput;
-
 pub use crate::operation::poll_for_decision_task::_poll_for_decision_task_input::PollForDecisionTaskInput;
+
+pub use crate::operation::poll_for_decision_task::_poll_for_decision_task_output::PollForDecisionTaskOutput;
 
 mod _poll_for_decision_task_input;
 

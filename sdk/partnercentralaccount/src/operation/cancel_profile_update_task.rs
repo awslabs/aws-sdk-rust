@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_profile_upd
     }
 }
 
-pub use crate::operation::cancel_profile_update_task::_cancel_profile_update_task_output::CancelProfileUpdateTaskOutput;
-
 pub use crate::operation::cancel_profile_update_task::_cancel_profile_update_task_input::CancelProfileUpdateTaskInput;
+
+pub use crate::operation::cancel_profile_update_task::_cancel_profile_update_task_output::CancelProfileUpdateTaskOutput;
 
 mod _cancel_profile_update_task_input;
 

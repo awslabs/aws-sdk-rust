@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_plans_in_regi
     }
 }
 
-pub use crate::operation::list_plans_in_region::_list_plans_in_region_output::ListPlansInRegionOutput;
-
 pub use crate::operation::list_plans_in_region::_list_plans_in_region_input::ListPlansInRegionInput;
+
+pub use crate::operation::list_plans_in_region::_list_plans_in_region_output::ListPlansInRegionOutput;
 
 mod _list_plans_in_region_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_perso
     }
 }
 
-pub use crate::operation::disassociate_personas_from_entities::_disassociate_personas_from_entities_output::DisassociatePersonasFromEntitiesOutput;
-
 pub use crate::operation::disassociate_personas_from_entities::_disassociate_personas_from_entities_input::DisassociatePersonasFromEntitiesInput;
+
+pub use crate::operation::disassociate_personas_from_entities::_disassociate_personas_from_entities_output::DisassociatePersonasFromEntitiesOutput;
 
 mod _disassociate_personas_from_entities_input;
 

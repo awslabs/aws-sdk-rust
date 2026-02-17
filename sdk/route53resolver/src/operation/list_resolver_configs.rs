@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resolver_conf
     }
 }
 
-pub use crate::operation::list_resolver_configs::_list_resolver_configs_output::ListResolverConfigsOutput;
-
 pub use crate::operation::list_resolver_configs::_list_resolver_configs_input::ListResolverConfigsInput;
+
+pub use crate::operation::list_resolver_configs::_list_resolver_configs_output::ListResolverConfigsOutput;
 
 mod _list_resolver_configs_input;
 

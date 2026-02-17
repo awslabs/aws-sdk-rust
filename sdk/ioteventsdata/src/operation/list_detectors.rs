@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_detectors::Li
     }
 }
 
-pub use crate::operation::list_detectors::_list_detectors_output::ListDetectorsOutput;
-
 pub use crate::operation::list_detectors::_list_detectors_input::ListDetectorsInput;
+
+pub use crate::operation::list_detectors::_list_detectors_output::ListDetectorsOutput;
 
 mod _list_detectors_input;
 

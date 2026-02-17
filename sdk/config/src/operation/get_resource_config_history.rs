@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_confi
     }
 }
 
-pub use crate::operation::get_resource_config_history::_get_resource_config_history_output::GetResourceConfigHistoryOutput;
-
 pub use crate::operation::get_resource_config_history::_get_resource_config_history_input::GetResourceConfigHistoryInput;
+
+pub use crate::operation::get_resource_config_history::_get_resource_config_history_output::GetResourceConfigHistoryOutput;
 
 mod _get_resource_config_history_input;
 

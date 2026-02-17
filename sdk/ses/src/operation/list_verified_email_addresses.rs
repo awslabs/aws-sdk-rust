@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_verified_emai
     }
 }
 
-pub use crate::operation::list_verified_email_addresses::_list_verified_email_addresses_output::ListVerifiedEmailAddressesOutput;
-
 pub use crate::operation::list_verified_email_addresses::_list_verified_email_addresses_input::ListVerifiedEmailAddressesInput;
+
+pub use crate::operation::list_verified_email_addresses::_list_verified_email_addresses_output::ListVerifiedEmailAddressesOutput;
 
 mod _list_verified_email_addresses_input;
 

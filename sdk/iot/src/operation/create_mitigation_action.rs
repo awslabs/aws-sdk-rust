@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_mitigation_
     }
 }
 
-pub use crate::operation::create_mitigation_action::_create_mitigation_action_output::CreateMitigationActionOutput;
-
 pub use crate::operation::create_mitigation_action::_create_mitigation_action_input::CreateMitigationActionInput;
+
+pub use crate::operation::create_mitigation_action::_create_mitigation_action_output::CreateMitigationActionOutput;
 
 mod _create_mitigation_action_input;
 

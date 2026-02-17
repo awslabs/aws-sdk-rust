@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_icd10_cm_infe
     }
 }
 
-pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_job_output::StopIcd10CmInferenceJobOutput;
-
 pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_job_input::StopIcd10CmInferenceJobInput;
+
+pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_job_output::StopIcd10CmInferenceJobOutput;
 
 mod _stop_icd10_cm_inference_job_input;
 

@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_dataview
     }
 }
 
-pub use crate::operation::delete_kx_dataview::_delete_kx_dataview_output::DeleteKxDataviewOutput;
-
 pub use crate::operation::delete_kx_dataview::_delete_kx_dataview_input::DeleteKxDataviewInput;
+
+pub use crate::operation::delete_kx_dataview::_delete_kx_dataview_output::DeleteKxDataviewOutput;
 
 mod _delete_kx_dataview_input;
 

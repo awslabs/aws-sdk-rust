@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::move_address_to_vp
     }
 }
 
-pub use crate::operation::move_address_to_vpc::_move_address_to_vpc_output::MoveAddressToVpcOutput;
-
 pub use crate::operation::move_address_to_vpc::_move_address_to_vpc_input::MoveAddressToVpcInput;
+
+pub use crate::operation::move_address_to_vpc::_move_address_to_vpc_output::MoveAddressToVpcOutput;
 
 mod _move_address_to_vpc_input;
 

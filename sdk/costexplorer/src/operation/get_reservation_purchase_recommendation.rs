@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reservation_pu
     }
 }
 
-pub use crate::operation::get_reservation_purchase_recommendation::_get_reservation_purchase_recommendation_output::GetReservationPurchaseRecommendationOutput;
-
 pub use crate::operation::get_reservation_purchase_recommendation::_get_reservation_purchase_recommendation_input::GetReservationPurchaseRecommendationInput;
+
+pub use crate::operation::get_reservation_purchase_recommendation::_get_reservation_purchase_recommendation_output::GetReservationPurchaseRecommendationOutput;
 
 mod _get_reservation_purchase_recommendation_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_composition:
     }
 }
 
-pub use crate::operation::start_composition::_start_composition_output::StartCompositionOutput;
-
 pub use crate::operation::start_composition::_start_composition_input::StartCompositionInput;
+
+pub use crate::operation::start_composition::_start_composition_output::StartCompositionOutput;
 
 mod _start_composition_input;
 

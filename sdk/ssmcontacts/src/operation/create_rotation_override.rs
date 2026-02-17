@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_rotation_ov
     }
 }
 
-pub use crate::operation::create_rotation_override::_create_rotation_override_output::CreateRotationOverrideOutput;
-
 pub use crate::operation::create_rotation_override::_create_rotation_override_input::CreateRotationOverrideInput;
+
+pub use crate::operation::create_rotation_override::_create_rotation_override_output::CreateRotationOverrideOutput;
 
 mod _create_rotation_override_input;
 

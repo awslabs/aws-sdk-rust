@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fhir_export_j
     }
 }
 
-pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_output::ListFhirExportJobsOutput;
-
 pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_input::ListFhirExportJobsInput;
+
+pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_output::ListFhirExportJobsOutput;
 
 mod _list_fhir_export_jobs_input;
 

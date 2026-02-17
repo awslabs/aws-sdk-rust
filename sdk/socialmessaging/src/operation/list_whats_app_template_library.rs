@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_whats_app_tem
     }
 }
 
-pub use crate::operation::list_whats_app_template_library::_list_whats_app_template_library_output::ListWhatsAppTemplateLibraryOutput;
-
 pub use crate::operation::list_whats_app_template_library::_list_whats_app_template_library_input::ListWhatsAppTemplateLibraryInput;
+
+pub use crate::operation::list_whats_app_template_library::_list_whats_app_template_library_output::ListWhatsAppTemplateLibraryOutput;
 
 mod _list_whats_app_template_library_input;
 

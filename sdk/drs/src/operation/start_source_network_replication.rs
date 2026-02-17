@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_source_netwo
     }
 }
 
-pub use crate::operation::start_source_network_replication::_start_source_network_replication_output::StartSourceNetworkReplicationOutput;
-
 pub use crate::operation::start_source_network_replication::_start_source_network_replication_input::StartSourceNetworkReplicationInput;
+
+pub use crate::operation::start_source_network_replication::_start_source_network_replication_output::StartSourceNetworkReplicationOutput;
 
 mod _start_source_network_replication_input;
 

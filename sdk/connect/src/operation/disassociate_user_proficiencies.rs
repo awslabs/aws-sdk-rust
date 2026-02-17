@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_user_
     }
 }
 
-pub use crate::operation::disassociate_user_proficiencies::_disassociate_user_proficiencies_output::DisassociateUserProficienciesOutput;
-
 pub use crate::operation::disassociate_user_proficiencies::_disassociate_user_proficiencies_input::DisassociateUserProficienciesInput;
+
+pub use crate::operation::disassociate_user_proficiencies::_disassociate_user_proficiencies_output::DisassociateUserProficienciesOutput;
 
 mod _disassociate_user_proficiencies_input;
 

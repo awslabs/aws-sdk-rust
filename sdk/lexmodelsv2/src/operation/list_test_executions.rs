@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_executio
     }
 }
 
-pub use crate::operation::list_test_executions::_list_test_executions_output::ListTestExecutionsOutput;
-
 pub use crate::operation::list_test_executions::_list_test_executions_input::ListTestExecutionsInput;
+
+pub use crate::operation::list_test_executions::_list_test_executions_output::ListTestExecutionsOutput;
 
 mod _list_test_executions_input;
 

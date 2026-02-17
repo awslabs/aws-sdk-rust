@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_dashboard_sn
     }
 }
 
-pub use crate::operation::start_dashboard_snapshot_job::_start_dashboard_snapshot_job_output::StartDashboardSnapshotJobOutput;
-
 pub use crate::operation::start_dashboard_snapshot_job::_start_dashboard_snapshot_job_input::StartDashboardSnapshotJobInput;
+
+pub use crate::operation::start_dashboard_snapshot_job::_start_dashboard_snapshot_job_output::StartDashboardSnapshotJobOutput;
 
 mod _start_dashboard_snapshot_job_input;
 

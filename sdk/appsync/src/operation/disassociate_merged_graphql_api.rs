@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_merge
     }
 }
 
-pub use crate::operation::disassociate_merged_graphql_api::_disassociate_merged_graphql_api_output::DisassociateMergedGraphqlApiOutput;
-
 pub use crate::operation::disassociate_merged_graphql_api::_disassociate_merged_graphql_api_input::DisassociateMergedGraphqlApiInput;
+
+pub use crate::operation::disassociate_merged_graphql_api::_disassociate_merged_graphql_api_output::DisassociateMergedGraphqlApiOutput;
 
 mod _disassociate_merged_graphql_api_input;
 

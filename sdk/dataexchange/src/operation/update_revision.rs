@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_revision::U
     }
 }
 
-pub use crate::operation::update_revision::_update_revision_output::UpdateRevisionOutput;
-
 pub use crate::operation::update_revision::_update_revision_input::UpdateRevisionInput;
+
+pub use crate::operation::update_revision::_update_revision_output::UpdateRevisionOutput;
 
 mod _update_revision_input;
 

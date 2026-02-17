@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_backend_sto
     }
 }
 
-pub use crate::operation::update_backend_storage::_update_backend_storage_output::UpdateBackendStorageOutput;
-
 pub use crate::operation::update_backend_storage::_update_backend_storage_input::UpdateBackendStorageInput;
+
+pub use crate::operation::update_backend_storage::_update_backend_storage_output::UpdateBackendStorageOutput;
 
 mod _update_backend_storage_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_auto_snapshots
     }
 }
 
-pub use crate::operation::get_auto_snapshots::_get_auto_snapshots_output::GetAutoSnapshotsOutput;
-
 pub use crate::operation::get_auto_snapshots::_get_auto_snapshots_input::GetAutoSnapshotsInput;
+
+pub use crate::operation::get_auto_snapshots::_get_auto_snapshots_output::GetAutoSnapshotsOutput;
 
 mod _get_auto_snapshots_input;
 

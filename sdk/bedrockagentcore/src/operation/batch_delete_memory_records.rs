@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_memor
     }
 }
 
-pub use crate::operation::batch_delete_memory_records::_batch_delete_memory_records_output::BatchDeleteMemoryRecordsOutput;
-
 pub use crate::operation::batch_delete_memory_records::_batch_delete_memory_records_input::BatchDeleteMemoryRecordsInput;
+
+pub use crate::operation::batch_delete_memory_records::_batch_delete_memory_records_output::BatchDeleteMemoryRecordsOutput;
 
 mod _batch_delete_memory_records_input;
 

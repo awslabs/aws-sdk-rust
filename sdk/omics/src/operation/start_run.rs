@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_run::StartRu
     }
 }
 
-pub use crate::operation::start_run::_start_run_output::StartRunOutput;
-
 pub use crate::operation::start_run::_start_run_input::StartRunInput;
+
+pub use crate::operation::start_run::_start_run_output::StartRunOutput;
 
 mod _start_run_input;
 

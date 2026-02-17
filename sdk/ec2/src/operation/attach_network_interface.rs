@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_network_int
     }
 }
 
-pub use crate::operation::attach_network_interface::_attach_network_interface_output::AttachNetworkInterfaceOutput;
-
 pub use crate::operation::attach_network_interface::_attach_network_interface_input::AttachNetworkInterfaceInput;
+
+pub use crate::operation::attach_network_interface::_attach_network_interface_output::AttachNetworkInterfaceOutput;
 
 mod _attach_network_interface_input;
 

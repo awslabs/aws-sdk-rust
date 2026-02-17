@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_metric_d
     }
 }
 
-pub use crate::operation::batch_get_metric_data::_batch_get_metric_data_output::BatchGetMetricDataOutput;
-
 pub use crate::operation::batch_get_metric_data::_batch_get_metric_data_input::BatchGetMetricDataInput;
+
+pub use crate::operation::batch_get_metric_data::_batch_get_metric_data_output::BatchGetMetricDataOutput;
 
 mod _batch_get_metric_data_input;
 

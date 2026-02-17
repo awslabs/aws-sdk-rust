@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_nodegroup
     }
 }
 
-pub use crate::operation::describe_nodegroup::_describe_nodegroup_output::DescribeNodegroupOutput;
-
 pub use crate::operation::describe_nodegroup::_describe_nodegroup_input::DescribeNodegroupInput;
+
+pub use crate::operation::describe_nodegroup::_describe_nodegroup_output::DescribeNodegroupOutput;
 
 mod _describe_nodegroup_input;
 

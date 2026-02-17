@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_grant_permis
     }
 }
 
-pub use crate::operation::batch_grant_permissions::_batch_grant_permissions_output::BatchGrantPermissionsOutput;
-
 pub use crate::operation::batch_grant_permissions::_batch_grant_permissions_input::BatchGrantPermissionsInput;
+
+pub use crate::operation::batch_grant_permissions::_batch_grant_permissions_output::BatchGrantPermissionsOutput;
 
 mod _batch_grant_permissions_input;
 

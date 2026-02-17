@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_target_gr
     }
 }
 
-pub use crate::operation::describe_target_group_attributes::_describe_target_group_attributes_output::DescribeTargetGroupAttributesOutput;
-
 pub use crate::operation::describe_target_group_attributes::_describe_target_group_attributes_input::DescribeTargetGroupAttributesInput;
+
+pub use crate::operation::describe_target_group_attributes::_describe_target_group_attributes_output::DescribeTargetGroupAttributesOutput;
 
 mod _describe_target_group_attributes_input;
 

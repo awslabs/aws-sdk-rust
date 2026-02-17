@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_ownersh
     }
 }
 
-pub use crate::operation::put_bucket_ownership_controls::_put_bucket_ownership_controls_output::PutBucketOwnershipControlsOutput;
-
 pub use crate::operation::put_bucket_ownership_controls::_put_bucket_ownership_controls_input::PutBucketOwnershipControlsInput;
+
+pub use crate::operation::put_bucket_ownership_controls::_put_bucket_ownership_controls_output::PutBucketOwnershipControlsOutput;
 
 mod _put_bucket_ownership_controls_input;
 

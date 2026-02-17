@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_transit_gat
     }
 }
 
-pub use crate::operation::accept_transit_gateway_peering_attachment::_accept_transit_gateway_peering_attachment_output::AcceptTransitGatewayPeeringAttachmentOutput;
-
 pub use crate::operation::accept_transit_gateway_peering_attachment::_accept_transit_gateway_peering_attachment_input::AcceptTransitGatewayPeeringAttachmentInput;
+
+pub use crate::operation::accept_transit_gateway_peering_attachment::_accept_transit_gateway_peering_attachment_output::AcceptTransitGatewayPeeringAttachmentOutput;
 
 mod _accept_transit_gateway_peering_attachment_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sbom_export
     }
 }
 
-pub use crate::operation::create_sbom_export::_create_sbom_export_output::CreateSbomExportOutput;
-
 pub use crate::operation::create_sbom_export::_create_sbom_export_input::CreateSbomExportInput;
+
+pub use crate::operation::create_sbom_export::_create_sbom_export_output::CreateSbomExportOutput;
 
 mod _create_sbom_export_input;
 

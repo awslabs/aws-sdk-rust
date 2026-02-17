@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network_int
     }
 }
 
-pub use crate::operation::create_network_interface_permission::_create_network_interface_permission_output::CreateNetworkInterfacePermissionOutput;
-
 pub use crate::operation::create_network_interface_permission::_create_network_interface_permission_input::CreateNetworkInterfacePermissionInput;
+
+pub use crate::operation::create_network_interface_permission::_create_network_interface_permission_output::CreateNetworkInterfacePermissionOutput;
 
 mod _create_network_interface_permission_input;
 

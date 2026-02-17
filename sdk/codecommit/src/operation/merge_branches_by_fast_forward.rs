@@ -549,9 +549,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_branches_by_
     }
 }
 
-pub use crate::operation::merge_branches_by_fast_forward::_merge_branches_by_fast_forward_output::MergeBranchesByFastForwardOutput;
-
 pub use crate::operation::merge_branches_by_fast_forward::_merge_branches_by_fast_forward_input::MergeBranchesByFastForwardInput;
+
+pub use crate::operation::merge_branches_by_fast_forward::_merge_branches_by_fast_forward_output::MergeBranchesByFastForwardOutput;
 
 mod _merge_branches_by_fast_forward_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_responder_gat
     }
 }
 
-pub use crate::operation::list_responder_gateways::_list_responder_gateways_output::ListResponderGatewaysOutput;
-
 pub use crate::operation::list_responder_gateways::_list_responder_gateways_input::ListResponderGatewaysInput;
+
+pub use crate::operation::list_responder_gateways::_list_responder_gateways_output::ListResponderGatewaysOutput;
 
 mod _list_responder_gateways_input;
 

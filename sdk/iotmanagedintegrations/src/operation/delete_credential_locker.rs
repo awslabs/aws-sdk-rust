@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_credential_
     }
 }
 
-pub use crate::operation::delete_credential_locker::_delete_credential_locker_output::DeleteCredentialLockerOutput;
-
 pub use crate::operation::delete_credential_locker::_delete_credential_locker_input::DeleteCredentialLockerInput;
+
+pub use crate::operation::delete_credential_locker::_delete_credential_locker_output::DeleteCredentialLockerOutput;
 
 mod _delete_credential_locker_input;
 

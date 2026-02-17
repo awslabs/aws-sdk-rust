@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lens_version_d
     }
 }
 
-pub use crate::operation::get_lens_version_difference::_get_lens_version_difference_output::GetLensVersionDifferenceOutput;
-
 pub use crate::operation::get_lens_version_difference::_get_lens_version_difference_input::GetLensVersionDifferenceInput;
+
+pub use crate::operation::get_lens_version_difference::_get_lens_version_difference_output::GetLensVersionDifferenceOutput;
 
 mod _get_lens_version_difference_input;
 

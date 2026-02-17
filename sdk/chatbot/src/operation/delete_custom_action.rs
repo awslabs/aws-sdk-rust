@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_acti
     }
 }
 
-pub use crate::operation::delete_custom_action::_delete_custom_action_output::DeleteCustomActionOutput;
-
 pub use crate::operation::delete_custom_action::_delete_custom_action_input::DeleteCustomActionInput;
+
+pub use crate::operation::delete_custom_action::_delete_custom_action_output::DeleteCustomActionOutput;
 
 mod _delete_custom_action_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ml_configur
     }
 }
 
-pub use crate::operation::delete_ml_configuration::_delete_ml_configuration_output::DeleteMlConfigurationOutput;
-
 pub use crate::operation::delete_ml_configuration::_delete_ml_configuration_input::DeleteMlConfigurationInput;
+
+pub use crate::operation::delete_ml_configuration::_delete_ml_configuration_output::DeleteMlConfigurationOutput;
 
 mod _delete_ml_configuration_input;
 

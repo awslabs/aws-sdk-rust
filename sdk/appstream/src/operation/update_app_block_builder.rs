@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_app_block_b
     }
 }
 
-pub use crate::operation::update_app_block_builder::_update_app_block_builder_output::UpdateAppBlockBuilderOutput;
-
 pub use crate::operation::update_app_block_builder::_update_app_block_builder_input::UpdateAppBlockBuilderInput;
+
+pub use crate::operation::update_app_block_builder::_update_app_block_builder_output::UpdateAppBlockBuilderOutput;
 
 mod _update_app_block_builder_input;
 

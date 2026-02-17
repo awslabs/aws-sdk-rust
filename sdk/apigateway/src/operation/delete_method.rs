@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_method::Del
     }
 }
 
-pub use crate::operation::delete_method::_delete_method_output::DeleteMethodOutput;
-
 pub use crate::operation::delete_method::_delete_method_input::DeleteMethodInput;
+
+pub use crate::operation::delete_method::_delete_method_output::DeleteMethodOutput;
 
 mod _delete_method_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_organizatio
     }
 }
 
-pub use crate::operation::create_organization::_create_organization_output::CreateOrganizationOutput;
-
 pub use crate::operation::create_organization::_create_organization_input::CreateOrganizationInput;
+
+pub use crate::operation::create_organization::_create_organization_output::CreateOrganizationOutput;
 
 mod _create_organization_input;
 

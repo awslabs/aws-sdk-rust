@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_attribut
     }
 }
 
-pub use crate::operation::batch_put_attributes_metadata::_batch_put_attributes_metadata_output::BatchPutAttributesMetadataOutput;
-
 pub use crate::operation::batch_put_attributes_metadata::_batch_put_attributes_metadata_input::BatchPutAttributesMetadataInput;
+
+pub use crate::operation::batch_put_attributes_metadata::_batch_put_attributes_metadata_output::BatchPutAttributesMetadataOutput;
 
 mod _batch_put_attributes_metadata_input;
 

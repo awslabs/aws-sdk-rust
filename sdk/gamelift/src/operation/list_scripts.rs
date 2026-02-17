@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_scripts::List
     }
 }
 
-pub use crate::operation::list_scripts::_list_scripts_output::ListScriptsOutput;
-
 pub use crate::operation::list_scripts::_list_scripts_input::ListScriptsInput;
+
+pub use crate::operation::list_scripts::_list_scripts_output::ListScriptsOutput;
 
 mod _list_scripts_input;
 

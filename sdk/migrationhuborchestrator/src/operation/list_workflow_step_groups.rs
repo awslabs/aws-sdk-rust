@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_step
     }
 }
 
-pub use crate::operation::list_workflow_step_groups::_list_workflow_step_groups_output::ListWorkflowStepGroupsOutput;
-
 pub use crate::operation::list_workflow_step_groups::_list_workflow_step_groups_input::ListWorkflowStepGroupsInput;
+
+pub use crate::operation::list_workflow_step_groups::_list_workflow_step_groups_output::ListWorkflowStepGroupsOutput;
 
 mod _list_workflow_step_groups_input;
 

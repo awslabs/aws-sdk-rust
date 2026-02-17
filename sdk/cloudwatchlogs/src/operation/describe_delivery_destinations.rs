@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_delivery_
     }
 }
 
-pub use crate::operation::describe_delivery_destinations::_describe_delivery_destinations_output::DescribeDeliveryDestinationsOutput;
-
 pub use crate::operation::describe_delivery_destinations::_describe_delivery_destinations_input::DescribeDeliveryDestinationsInput;
+
+pub use crate::operation::describe_delivery_destinations::_describe_delivery_destinations_output::DescribeDeliveryDestinationsOutput;
 
 mod _describe_delivery_destinations_input;
 

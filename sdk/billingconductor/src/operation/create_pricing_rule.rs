@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_pricing_rul
     }
 }
 
-pub use crate::operation::create_pricing_rule::_create_pricing_rule_output::CreatePricingRuleOutput;
-
 pub use crate::operation::create_pricing_rule::_create_pricing_rule_input::CreatePricingRuleInput;
+
+pub use crate::operation::create_pricing_rule::_create_pricing_rule_output::CreatePricingRuleOutput;
 
 mod _create_pricing_rule_input;
 

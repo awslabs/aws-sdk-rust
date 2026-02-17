@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_evaluation:
     }
 }
 
-pub use crate::operation::delete_evaluation::_delete_evaluation_output::DeleteEvaluationOutput;
-
 pub use crate::operation::delete_evaluation::_delete_evaluation_input::DeleteEvaluationInput;
+
+pub use crate::operation::delete_evaluation::_delete_evaluation_output::DeleteEvaluationOutput;
 
 mod _delete_evaluation_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_key::Enable
     }
 }
 
-pub use crate::operation::enable_key::_enable_key_output::EnableKeyOutput;
-
 pub use crate::operation::enable_key::_enable_key_input::EnableKeyInput;
+
+pub use crate::operation::enable_key::_enable_key_output::EnableKeyOutput;
 
 mod _enable_key_input;
 

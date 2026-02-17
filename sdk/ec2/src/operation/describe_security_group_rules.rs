@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_security_
     }
 }
 
-pub use crate::operation::describe_security_group_rules::_describe_security_group_rules_output::DescribeSecurityGroupRulesOutput;
-
 pub use crate::operation::describe_security_group_rules::_describe_security_group_rules_input::DescribeSecurityGroupRulesInput;
+
+pub use crate::operation::describe_security_group_rules::_describe_security_group_rules_output::DescribeSecurityGroupRulesOutput;
 
 mod _describe_security_group_rules_input;
 

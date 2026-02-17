@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_decoder_manif
     }
 }
 
-pub use crate::operation::list_decoder_manifest_signals::_list_decoder_manifest_signals_output::ListDecoderManifestSignalsOutput;
-
 pub use crate::operation::list_decoder_manifest_signals::_list_decoder_manifest_signals_input::ListDecoderManifestSignalsInput;
+
+pub use crate::operation::list_decoder_manifest_signals::_list_decoder_manifest_signals_output::ListDecoderManifestSignalsOutput;
 
 mod _list_decoder_manifest_signals_input;
 

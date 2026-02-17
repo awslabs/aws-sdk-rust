@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_voi
     }
 }
 
-pub use crate::operation::list_available_voice_connector_regions::_list_available_voice_connector_regions_output::ListAvailableVoiceConnectorRegionsOutput;
-
 pub use crate::operation::list_available_voice_connector_regions::_list_available_voice_connector_regions_input::ListAvailableVoiceConnectorRegionsInput;
+
+pub use crate::operation::list_available_voice_connector_regions::_list_available_voice_connector_regions_output::ListAvailableVoiceConnectorRegionsOutput;
 
 mod _list_available_voice_connector_regions_input;
 

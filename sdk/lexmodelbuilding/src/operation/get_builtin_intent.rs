@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_builtin_intent
     }
 }
 
-pub use crate::operation::get_builtin_intent::_get_builtin_intent_output::GetBuiltinIntentOutput;
-
 pub use crate::operation::get_builtin_intent::_get_builtin_intent_input::GetBuiltinIntentInput;
+
+pub use crate::operation::get_builtin_intent::_get_builtin_intent_output::GetBuiltinIntentOutput;
 
 mod _get_builtin_intent_input;
 

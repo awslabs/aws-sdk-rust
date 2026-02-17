@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_capacity_manager_organizations_access::_update_capacity_manager_organizations_access_output::UpdateCapacityManagerOrganizationsAccessOutput;
-
 pub use crate::operation::update_capacity_manager_organizations_access::_update_capacity_manager_organizations_access_input::UpdateCapacityManagerOrganizationsAccessInput;
+
+pub use crate::operation::update_capacity_manager_organizations_access::_update_capacity_manager_organizations_access_output::UpdateCapacityManagerOrganizationsAccessOutput;
 
 mod _update_capacity_manager_organizations_access_input;
 

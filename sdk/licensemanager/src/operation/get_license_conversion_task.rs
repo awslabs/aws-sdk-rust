@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_license_conver
     }
 }
 
-pub use crate::operation::get_license_conversion_task::_get_license_conversion_task_output::GetLicenseConversionTaskOutput;
-
 pub use crate::operation::get_license_conversion_task::_get_license_conversion_task_input::GetLicenseConversionTaskInput;
+
+pub use crate::operation::get_license_conversion_task::_get_license_conversion_task_output::GetLicenseConversionTaskOutput;
 
 mod _get_license_conversion_task_input;
 

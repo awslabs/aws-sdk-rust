@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_shar
     }
 }
 
-pub use crate::operation::list_resource_share_permissions::_list_resource_share_permissions_output::ListResourceSharePermissionsOutput;
-
 pub use crate::operation::list_resource_share_permissions::_list_resource_share_permissions_input::ListResourceSharePermissionsInput;
+
+pub use crate::operation::list_resource_share_permissions::_list_resource_share_permissions_output::ListResourceSharePermissionsOutput;
 
 mod _list_resource_share_permissions_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_identity_provi
     }
 }
 
-pub use crate::operation::put_identity_provider_configuration::_put_identity_provider_configuration_output::PutIdentityProviderConfigurationOutput;
-
 pub use crate::operation::put_identity_provider_configuration::_put_identity_provider_configuration_input::PutIdentityProviderConfigurationInput;
+
+pub use crate::operation::put_identity_provider_configuration::_put_identity_provider_configuration_output::PutIdentityProviderConfigurationOutput;
 
 mod _put_identity_provider_configuration_input;
 

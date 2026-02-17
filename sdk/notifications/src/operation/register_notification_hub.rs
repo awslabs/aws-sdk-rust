@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_notificat
     }
 }
 
-pub use crate::operation::register_notification_hub::_register_notification_hub_output::RegisterNotificationHubOutput;
-
 pub use crate::operation::register_notification_hub::_register_notification_hub_input::RegisterNotificationHubInput;
+
+pub use crate::operation::register_notification_hub::_register_notification_hub_output::RegisterNotificationHubOutput;
 
 mod _register_notification_hub_input;
 

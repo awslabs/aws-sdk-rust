@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_typed_link_
     }
 }
 
-pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_output::UpdateTypedLinkFacetOutput;
-
 pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_input::UpdateTypedLinkFacetInput;
+
+pub use crate::operation::update_typed_link_facet::_update_typed_link_facet_output::UpdateTypedLinkFacetOutput;
 
 mod _update_typed_link_facet_input;
 

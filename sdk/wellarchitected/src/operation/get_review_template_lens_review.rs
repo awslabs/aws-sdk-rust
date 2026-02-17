@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_review_templat
     }
 }
 
-pub use crate::operation::get_review_template_lens_review::_get_review_template_lens_review_output::GetReviewTemplateLensReviewOutput;
-
 pub use crate::operation::get_review_template_lens_review::_get_review_template_lens_review_input::GetReviewTemplateLensReviewInput;
+
+pub use crate::operation::get_review_template_lens_review::_get_review_template_lens_review_output::GetReviewTemplateLensReviewOutput;
 
 mod _get_review_template_lens_review_input;
 

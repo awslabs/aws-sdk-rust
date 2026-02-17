@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backend_env
     }
 }
 
-pub use crate::operation::create_backend_environment::_create_backend_environment_output::CreateBackendEnvironmentOutput;
-
 pub use crate::operation::create_backend_environment::_create_backend_environment_input::CreateBackendEnvironmentInput;
+
+pub use crate::operation::create_backend_environment::_create_backend_environment_output::CreateBackendEnvironmentOutput;
 
 mod _create_backend_environment_input;
 

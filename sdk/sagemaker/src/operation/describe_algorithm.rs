@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_algorithm
     }
 }
 
-pub use crate::operation::describe_algorithm::_describe_algorithm_output::DescribeAlgorithmOutput;
-
 pub use crate::operation::describe_algorithm::_describe_algorithm_input::DescribeAlgorithmInput;
+
+pub use crate::operation::describe_algorithm::_describe_algorithm_output::DescribeAlgorithmOutput;
 
 mod _describe_algorithm_input;
 

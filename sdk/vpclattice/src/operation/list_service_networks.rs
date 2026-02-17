@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_netwo
     }
 }
 
-pub use crate::operation::list_service_networks::_list_service_networks_output::ListServiceNetworksOutput;
-
 pub use crate::operation::list_service_networks::_list_service_networks_input::ListServiceNetworksInput;
+
+pub use crate::operation::list_service_networks::_list_service_networks_output::ListServiceNetworksOutput;
 
 mod _list_service_networks_input;
 

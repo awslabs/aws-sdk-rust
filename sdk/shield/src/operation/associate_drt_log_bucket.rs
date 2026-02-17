@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_drt_log_
     }
 }
 
-pub use crate::operation::associate_drt_log_bucket::_associate_drt_log_bucket_output::AssociateDrtLogBucketOutput;
-
 pub use crate::operation::associate_drt_log_bucket::_associate_drt_log_bucket_input::AssociateDrtLogBucketInput;
+
+pub use crate::operation::associate_drt_log_bucket::_associate_drt_log_bucket_output::AssociateDrtLogBucketOutput;
 
 mod _associate_drt_log_bucket_input;
 

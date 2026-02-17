@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_inline_agen
     }
 }
 
-pub use crate::operation::invoke_inline_agent::_invoke_inline_agent_output::InvokeInlineAgentOutput;
-
 pub use crate::operation::invoke_inline_agent::_invoke_inline_agent_input::InvokeInlineAgentInput;
+
+pub use crate::operation::invoke_inline_agent::_invoke_inline_agent_output::InvokeInlineAgentOutput;
 
 mod _invoke_inline_agent_input;
 

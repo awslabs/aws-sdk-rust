@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_investigati
     }
 }
 
-pub use crate::operation::update_investigation_state::_update_investigation_state_output::UpdateInvestigationStateOutput;
-
 pub use crate::operation::update_investigation_state::_update_investigation_state_input::UpdateInvestigationStateInput;
+
+pub use crate::operation::update_investigation_state::_update_investigation_state_output::UpdateInvestigationStateOutput;
 
 mod _update_investigation_state_input;
 

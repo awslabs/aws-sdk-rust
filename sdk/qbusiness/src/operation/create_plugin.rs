@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_plugin::Cre
     }
 }
 
-pub use crate::operation::create_plugin::_create_plugin_output::CreatePluginOutput;
-
 pub use crate::operation::create_plugin::_create_plugin_input::CreatePluginInput;
+
+pub use crate::operation::create_plugin::_create_plugin_output::CreatePluginOutput;
 
 mod _create_plugin_input;
 

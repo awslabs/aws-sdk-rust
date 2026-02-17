@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_form::Updat
     }
 }
 
-pub use crate::operation::update_form::_update_form_output::UpdateFormOutput;
-
 pub use crate::operation::update_form::_update_form_input::UpdateFormInput;
+
+pub use crate::operation::update_form::_update_form_output::UpdateFormOutput;
 
 mod _update_form_input;
 

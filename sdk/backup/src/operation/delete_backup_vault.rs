@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_backup_vaul
     }
 }
 
-pub use crate::operation::delete_backup_vault::_delete_backup_vault_output::DeleteBackupVaultOutput;
-
 pub use crate::operation::delete_backup_vault::_delete_backup_vault_input::DeleteBackupVaultInput;
+
+pub use crate::operation::delete_backup_vault::_delete_backup_vault_output::DeleteBackupVaultOutput;
 
 mod _delete_backup_vault_input;
 

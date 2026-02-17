@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_media_pipeline_kinesis_video_stream_pool::_update_media_pipeline_kinesis_video_stream_pool_output::UpdateMediaPipelineKinesisVideoStreamPoolOutput;
-
 pub use crate::operation::update_media_pipeline_kinesis_video_stream_pool::_update_media_pipeline_kinesis_video_stream_pool_input::UpdateMediaPipelineKinesisVideoStreamPoolInput;
+
+pub use crate::operation::update_media_pipeline_kinesis_video_stream_pool::_update_media_pipeline_kinesis_video_stream_pool_output::UpdateMediaPipelineKinesisVideoStreamPoolOutput;
 
 mod _update_media_pipeline_kinesis_video_stream_pool_input;
 

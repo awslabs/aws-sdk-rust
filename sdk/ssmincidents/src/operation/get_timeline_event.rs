@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_timeline_event
     }
 }
 
-pub use crate::operation::get_timeline_event::_get_timeline_event_output::GetTimelineEventOutput;
-
 pub use crate::operation::get_timeline_event::_get_timeline_event_input::GetTimelineEventInput;
+
+pub use crate::operation::get_timeline_event::_get_timeline_event_output::GetTimelineEventOutput;
 
 mod _get_timeline_event_input;
 

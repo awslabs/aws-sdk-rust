@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bill_scenar
     }
 }
 
-pub use crate::operation::delete_bill_scenario::_delete_bill_scenario_output::DeleteBillScenarioOutput;
-
 pub use crate::operation::delete_bill_scenario::_delete_bill_scenario_input::DeleteBillScenarioInput;
+
+pub use crate::operation::delete_bill_scenario::_delete_bill_scenario_output::DeleteBillScenarioOutput;
 
 mod _delete_bill_scenario_input;
 

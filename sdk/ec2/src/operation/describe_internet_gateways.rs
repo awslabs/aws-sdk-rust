@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_internet_
     }
 }
 
-pub use crate::operation::describe_internet_gateways::_describe_internet_gateways_output::DescribeInternetGatewaysOutput;
-
 pub use crate::operation::describe_internet_gateways::_describe_internet_gateways_input::DescribeInternetGatewaysInput;
+
+pub use crate::operation::describe_internet_gateways::_describe_internet_gateways_output::DescribeInternetGatewaysOutput;
 
 mod _describe_internet_gateways_input;
 

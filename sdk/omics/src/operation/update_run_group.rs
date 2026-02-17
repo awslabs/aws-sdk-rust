@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_run_group::
     }
 }
 
-pub use crate::operation::update_run_group::_update_run_group_output::UpdateRunGroupOutput;
-
 pub use crate::operation::update_run_group::_update_run_group_input::UpdateRunGroupInput;
+
+pub use crate::operation::update_run_group::_update_run_group_output::UpdateRunGroupOutput;
 
 mod _update_run_group_input;
 

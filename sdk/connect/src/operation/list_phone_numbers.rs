@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_phone_numbers
     }
 }
 
-pub use crate::operation::list_phone_numbers::_list_phone_numbers_output::ListPhoneNumbersOutput;
-
 pub use crate::operation::list_phone_numbers::_list_phone_numbers_input::ListPhoneNumbersInput;
+
+pub use crate::operation::list_phone_numbers::_list_phone_numbers_output::ListPhoneNumbersOutput;
 
 mod _list_phone_numbers_input;
 

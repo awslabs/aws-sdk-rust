@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user_by_pri
     }
 }
 
-pub use crate::operation::delete_user_by_principal_id::_delete_user_by_principal_id_output::DeleteUserByPrincipalIdOutput;
-
 pub use crate::operation::delete_user_by_principal_id::_delete_user_by_principal_id_input::DeleteUserByPrincipalIdInput;
+
+pub use crate::operation::delete_user_by_principal_id::_delete_user_by_principal_id_output::DeleteUserByPrincipalIdOutput;
 
 mod _delete_user_by_principal_id_input;
 

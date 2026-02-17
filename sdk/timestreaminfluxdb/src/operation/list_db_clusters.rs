@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_clusters::
     }
 }
 
-pub use crate::operation::list_db_clusters::_list_db_clusters_output::ListDbClustersOutput;
-
 pub use crate::operation::list_db_clusters::_list_db_clusters_input::ListDbClustersInput;
+
+pub use crate::operation::list_db_clusters::_list_db_clusters_output::ListDbClustersOutput;
 
 mod _list_db_clusters_input;
 

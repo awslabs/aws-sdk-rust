@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_saml_provider:
     }
 }
 
-pub use crate::operation::get_saml_provider::_get_saml_provider_output::GetSamlProviderOutput;
-
 pub use crate::operation::get_saml_provider::_get_saml_provider_input::GetSamlProviderInput;
+
+pub use crate::operation::get_saml_provider::_get_saml_provider_output::GetSamlProviderOutput;
 
 mod _get_saml_provider_input;
 

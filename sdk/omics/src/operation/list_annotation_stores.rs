@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_annotation_st
     }
 }
 
-pub use crate::operation::list_annotation_stores::_list_annotation_stores_output::ListAnnotationStoresOutput;
-
 pub use crate::operation::list_annotation_stores::_list_annotation_stores_input::ListAnnotationStoresInput;
+
+pub use crate::operation::list_annotation_stores::_list_annotation_stores_output::ListAnnotationStoresOutput;
 
 mod _list_annotation_stores_input;
 

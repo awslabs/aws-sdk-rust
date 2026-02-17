@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_association
     }
 }
 
-pub use crate::operation::create_association::_create_association_output::CreateAssociationOutput;
-
 pub use crate::operation::create_association::_create_association_input::CreateAssociationInput;
+
+pub use crate::operation::create_association::_create_association_output::CreateAssociationOutput;
 
 mod _create_association_input;
 

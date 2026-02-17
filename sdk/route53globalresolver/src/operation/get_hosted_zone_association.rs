@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hosted_zone_as
     }
 }
 
-pub use crate::operation::get_hosted_zone_association::_get_hosted_zone_association_output::GetHostedZoneAssociationOutput;
-
 pub use crate::operation::get_hosted_zone_association::_get_hosted_zone_association_input::GetHostedZoneAssociationInput;
+
+pub use crate::operation::get_hosted_zone_association::_get_hosted_zone_association_output::GetHostedZoneAssociationOutput;
 
 mod _get_hosted_zone_association_input;
 

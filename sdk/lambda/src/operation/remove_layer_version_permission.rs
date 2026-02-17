@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_layer_versi
     }
 }
 
-pub use crate::operation::remove_layer_version_permission::_remove_layer_version_permission_output::RemoveLayerVersionPermissionOutput;
-
 pub use crate::operation::remove_layer_version_permission::_remove_layer_version_permission_input::RemoveLayerVersionPermissionInput;
+
+pub use crate::operation::remove_layer_version_permission::_remove_layer_version_permission_output::RemoveLayerVersionPermissionOutput;
 
 mod _remove_layer_version_permission_input;
 

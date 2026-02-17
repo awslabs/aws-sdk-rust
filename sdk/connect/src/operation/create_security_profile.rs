@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_security_pr
     }
 }
 
-pub use crate::operation::create_security_profile::_create_security_profile_output::CreateSecurityProfileOutput;
-
 pub use crate::operation::create_security_profile::_create_security_profile_input::CreateSecurityProfileInput;
+
+pub use crate::operation::create_security_profile::_create_security_profile_output::CreateSecurityProfileOutput;
 
 mod _create_security_profile_input;
 

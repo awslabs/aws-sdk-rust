@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_regex_match
     }
 }
 
-pub use crate::operation::update_regex_match_set::_update_regex_match_set_output::UpdateRegexMatchSetOutput;
-
 pub use crate::operation::update_regex_match_set::_update_regex_match_set_input::UpdateRegexMatchSetInput;
+
+pub use crate::operation::update_regex_match_set::_update_regex_match_set_output::UpdateRegexMatchSetOutput;
 
 mod _update_regex_match_set_input;
 

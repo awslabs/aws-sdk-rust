@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_parame
     }
 }
 
-pub use crate::operation::describe_db_parameter_groups::_describe_db_parameter_groups_output::DescribeDbParameterGroupsOutput;
-
 pub use crate::operation::describe_db_parameter_groups::_describe_db_parameter_groups_input::DescribeDbParameterGroupsInput;
+
+pub use crate::operation::describe_db_parameter_groups::_describe_db_parameter_groups_output::DescribeDbParameterGroupsOutput;
 
 mod _describe_db_parameter_groups_input;
 

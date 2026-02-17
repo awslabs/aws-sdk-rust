@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_addon_subscrip
     }
 }
 
-pub use crate::operation::get_addon_subscription::_get_addon_subscription_output::GetAddonSubscriptionOutput;
-
 pub use crate::operation::get_addon_subscription::_get_addon_subscription_input::GetAddonSubscriptionInput;
+
+pub use crate::operation::get_addon_subscription::_get_addon_subscription_output::GetAddonSubscriptionOutput;
 
 mod _get_addon_subscription_input;
 

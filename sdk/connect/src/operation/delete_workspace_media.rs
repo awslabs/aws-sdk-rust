@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workspace_m
     }
 }
 
-pub use crate::operation::delete_workspace_media::_delete_workspace_media_output::DeleteWorkspaceMediaOutput;
-
 pub use crate::operation::delete_workspace_media::_delete_workspace_media_input::DeleteWorkspaceMediaInput;
+
+pub use crate::operation::delete_workspace_media::_delete_workspace_media_output::DeleteWorkspaceMediaOutput;
 
 mod _delete_workspace_media_input;
 

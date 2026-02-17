@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_email_templ
     }
 }
 
-pub use crate::operation::delete_email_template::_delete_email_template_output::DeleteEmailTemplateOutput;
-
 pub use crate::operation::delete_email_template::_delete_email_template_input::DeleteEmailTemplateInput;
+
+pub use crate::operation::delete_email_template::_delete_email_template_output::DeleteEmailTemplateOutput;
 
 mod _delete_email_template_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_subscripti
     }
 }
 
-pub use crate::operation::confirm_subscription::_confirm_subscription_output::ConfirmSubscriptionOutput;
-
 pub use crate::operation::confirm_subscription::_confirm_subscription_input::ConfirmSubscriptionInput;
+
+pub use crate::operation::confirm_subscription::_confirm_subscription_output::ConfirmSubscriptionOutput;
 
 mod _confirm_subscription_input;
 

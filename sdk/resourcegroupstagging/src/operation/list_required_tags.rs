@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_required_tags
     }
 }
 
-pub use crate::operation::list_required_tags::_list_required_tags_output::ListRequiredTagsOutput;
-
 pub use crate::operation::list_required_tags::_list_required_tags_input::ListRequiredTagsInput;
+
+pub use crate::operation::list_required_tags::_list_required_tags_output::ListRequiredTagsOutput;
 
 mod _list_required_tags_input;
 

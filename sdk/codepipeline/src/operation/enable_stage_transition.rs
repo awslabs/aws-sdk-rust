@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_stage_trans
     }
 }
 
-pub use crate::operation::enable_stage_transition::_enable_stage_transition_output::EnableStageTransitionOutput;
-
 pub use crate::operation::enable_stage_transition::_enable_stage_transition_input::EnableStageTransitionInput;
+
+pub use crate::operation::enable_stage_transition::_enable_stage_transition_output::EnableStageTransitionOutput;
 
 mod _enable_stage_transition_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_nfs_file_sh
     }
 }
 
-pub use crate::operation::update_nfs_file_share::_update_nfs_file_share_output::UpdateNfsFileShareOutput;
-
 pub use crate::operation::update_nfs_file_share::_update_nfs_file_share_input::UpdateNfsFileShareInput;
+
+pub use crate::operation::update_nfs_file_share::_update_nfs_file_share_output::UpdateNfsFileShareOutput;
 
 mod _update_nfs_file_share_input;
 

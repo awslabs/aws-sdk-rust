@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_budget::Cre
     }
 }
 
-pub use crate::operation::create_budget::_create_budget_output::CreateBudgetOutput;
-
 pub use crate::operation::create_budget::_create_budget_input::CreateBudgetInput;
+
+pub use crate::operation::create_budget::_create_budget_output::CreateBudgetOutput;
 
 mod _create_budget_input;
 

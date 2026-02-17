@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_cluster:
     }
 }
 
-pub use crate::operation::delete_kx_cluster::_delete_kx_cluster_output::DeleteKxClusterOutput;
-
 pub use crate::operation::delete_kx_cluster::_delete_kx_cluster_input::DeleteKxClusterInput;
+
+pub use crate::operation::delete_kx_cluster::_delete_kx_cluster_output::DeleteKxClusterOutput;
 
 mod _delete_kx_cluster_input;
 

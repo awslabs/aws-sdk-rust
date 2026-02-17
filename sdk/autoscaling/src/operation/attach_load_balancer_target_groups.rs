@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_load_balanc
     }
 }
 
-pub use crate::operation::attach_load_balancer_target_groups::_attach_load_balancer_target_groups_output::AttachLoadBalancerTargetGroupsOutput;
-
 pub use crate::operation::attach_load_balancer_target_groups::_attach_load_balancer_target_groups_input::AttachLoadBalancerTargetGroupsInput;
+
+pub use crate::operation::attach_load_balancer_target_groups::_attach_load_balancer_target_groups_output::AttachLoadBalancerTargetGroupsOutput;
 
 mod _attach_load_balancer_target_groups_input;
 

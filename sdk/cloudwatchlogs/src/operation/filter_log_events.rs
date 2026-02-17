@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::filter_log_events:
     }
 }
 
-pub use crate::operation::filter_log_events::_filter_log_events_output::FilterLogEventsOutput;
-
 pub use crate::operation::filter_log_events::_filter_log_events_input::FilterLogEventsInput;
+
+pub use crate::operation::filter_log_events::_filter_log_events_output::FilterLogEventsOutput;
 
 mod _filter_log_events_input;
 

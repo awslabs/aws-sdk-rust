@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_realtime_en
     }
 }
 
-pub use crate::operation::create_realtime_endpoint::_create_realtime_endpoint_output::CreateRealtimeEndpointOutput;
-
 pub use crate::operation::create_realtime_endpoint::_create_realtime_endpoint_input::CreateRealtimeEndpointInput;
+
+pub use crate::operation::create_realtime_endpoint::_create_realtime_endpoint_output::CreateRealtimeEndpointOutput;
 
 mod _create_realtime_endpoint_input;
 

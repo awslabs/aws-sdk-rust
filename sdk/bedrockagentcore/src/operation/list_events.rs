@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_events::ListE
     }
 }
 
-pub use crate::operation::list_events::_list_events_output::ListEventsOutput;
-
 pub use crate::operation::list_events::_list_events_input::ListEventsInput;
+
+pub use crate::operation::list_events::_list_events_output::ListEventsOutput;
 
 mod _list_events_input;
 

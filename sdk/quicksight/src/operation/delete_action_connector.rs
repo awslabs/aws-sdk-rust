@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_action_conn
     }
 }
 
-pub use crate::operation::delete_action_connector::_delete_action_connector_output::DeleteActionConnectorOutput;
-
 pub use crate::operation::delete_action_connector::_delete_action_connector_input::DeleteActionConnectorInput;
+
+pub use crate::operation::delete_action_connector::_delete_action_connector_output::DeleteActionConnectorOutput;
 
 mod _delete_action_connector_input;
 

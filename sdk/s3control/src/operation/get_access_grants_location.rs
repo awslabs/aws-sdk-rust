@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_grants_
     }
 }
 
-pub use crate::operation::get_access_grants_location::_get_access_grants_location_output::GetAccessGrantsLocationOutput;
-
 pub use crate::operation::get_access_grants_location::_get_access_grants_location_input::GetAccessGrantsLocationInput;
+
+pub use crate::operation::get_access_grants_location::_get_access_grants_location_output::GetAccessGrantsLocationOutput;
 
 mod _get_access_grants_location_input;
 

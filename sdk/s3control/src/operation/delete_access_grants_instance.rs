@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_access_gran
     }
 }
 
-pub use crate::operation::delete_access_grants_instance::_delete_access_grants_instance_output::DeleteAccessGrantsInstanceOutput;
-
 pub use crate::operation::delete_access_grants_instance::_delete_access_grants_instance_input::DeleteAccessGrantsInstanceInput;
+
+pub use crate::operation::delete_access_grants_instance::_delete_access_grants_instance_output::DeleteAccessGrantsInstanceOutput;
 
 mod _delete_access_grants_instance_input;
 

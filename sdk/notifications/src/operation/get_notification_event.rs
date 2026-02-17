@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_notification_e
     }
 }
 
-pub use crate::operation::get_notification_event::_get_notification_event_output::GetNotificationEventOutput;
-
 pub use crate::operation::get_notification_event::_get_notification_event_input::GetNotificationEventInput;
+
+pub use crate::operation::get_notification_event::_get_notification_event_output::GetNotificationEventOutput;
 
 mod _get_notification_event_input;
 

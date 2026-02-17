@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mailbox_per
     }
 }
 
-pub use crate::operation::delete_mailbox_permissions::_delete_mailbox_permissions_output::DeleteMailboxPermissionsOutput;
-
 pub use crate::operation::delete_mailbox_permissions::_delete_mailbox_permissions_input::DeleteMailboxPermissionsInput;
+
+pub use crate::operation::delete_mailbox_permissions::_delete_mailbox_permissions_output::DeleteMailboxPermissionsOutput;
 
 mod _delete_mailbox_permissions_input;
 

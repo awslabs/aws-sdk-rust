@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_app_version
     }
 }
 
-pub use crate::operation::update_app_version_app_component::_update_app_version_app_component_output::UpdateAppVersionAppComponentOutput;
-
 pub use crate::operation::update_app_version_app_component::_update_app_version_app_component_input::UpdateAppVersionAppComponentInput;
+
+pub use crate::operation::update_app_version_app_component::_update_app_version_app_component_output::UpdateAppVersionAppComponentOutput;
 
 mod _update_app_version_app_component_input;
 

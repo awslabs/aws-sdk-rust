@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_credit_specifications::_describe_instance_credit_specifications_output::DescribeInstanceCreditSpecificationsOutput;
-
 pub use crate::operation::describe_instance_credit_specifications::_describe_instance_credit_specifications_input::DescribeInstanceCreditSpecificationsInput;
+
+pub use crate::operation::describe_instance_credit_specifications::_describe_instance_credit_specifications_output::DescribeInstanceCreditSpecificationsOutput;
 
 mod _describe_instance_credit_specifications_input;
 

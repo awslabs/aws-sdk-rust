@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::infer_snomedct::In
     }
 }
 
-pub use crate::operation::infer_snomedct::_infer_snomedct_output::InferSnomedctOutput;
-
 pub use crate::operation::infer_snomedct::_infer_snomedct_input::InferSnomedctInput;
+
+pub use crate::operation::infer_snomedct::_infer_snomedct_output::InferSnomedctOutput;
 
 mod _infer_snomedct_input;
 

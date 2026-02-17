@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_suite_defin
     }
 }
 
-pub use crate::operation::delete_suite_definition::_delete_suite_definition_output::DeleteSuiteDefinitionOutput;
-
 pub use crate::operation::delete_suite_definition::_delete_suite_definition_input::DeleteSuiteDefinitionInput;
+
+pub use crate::operation::delete_suite_definition::_delete_suite_definition_output::DeleteSuiteDefinitionOutput;
 
 mod _delete_suite_definition_input;
 

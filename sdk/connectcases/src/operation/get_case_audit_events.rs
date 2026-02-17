@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_case_audit_eve
     }
 }
 
-pub use crate::operation::get_case_audit_events::_get_case_audit_events_output::GetCaseAuditEventsOutput;
-
 pub use crate::operation::get_case_audit_events::_get_case_audit_events_input::GetCaseAuditEventsInput;
+
+pub use crate::operation::get_case_audit_events::_get_case_audit_events_output::GetCaseAuditEventsOutput;
 
 mod _get_case_audit_events_input;
 

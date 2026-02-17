@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_user::Act
     }
 }
 
-pub use crate::operation::activate_user::_activate_user_output::ActivateUserOutput;
-
 pub use crate::operation::activate_user::_activate_user_input::ActivateUserInput;
+
+pub use crate::operation::activate_user::_activate_user_output::ActivateUserOutput;
 
 mod _activate_user_input;
 

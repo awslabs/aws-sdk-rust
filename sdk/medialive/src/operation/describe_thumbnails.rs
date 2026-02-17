@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_thumbnail
     }
 }
 
-pub use crate::operation::describe_thumbnails::_describe_thumbnails_output::DescribeThumbnailsOutput;
-
 pub use crate::operation::describe_thumbnails::_describe_thumbnails_input::DescribeThumbnailsInput;
+
+pub use crate::operation::describe_thumbnails::_describe_thumbnails_output::DescribeThumbnailsOutput;
 
 mod _describe_thumbnails_input;
 

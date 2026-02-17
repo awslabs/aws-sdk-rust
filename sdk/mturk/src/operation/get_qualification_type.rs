@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_qualification_
     }
 }
 
-pub use crate::operation::get_qualification_type::_get_qualification_type_output::GetQualificationTypeOutput;
-
 pub use crate::operation::get_qualification_type::_get_qualification_type_input::GetQualificationTypeInput;
+
+pub use crate::operation::get_qualification_type::_get_qualification_type_output::GetQualificationTypeOutput;
 
 mod _get_qualification_type_input;
 

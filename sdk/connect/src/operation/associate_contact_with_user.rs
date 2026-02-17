@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_contact_
     }
 }
 
-pub use crate::operation::associate_contact_with_user::_associate_contact_with_user_output::AssociateContactWithUserOutput;
-
 pub use crate::operation::associate_contact_with_user::_associate_contact_with_user_input::AssociateContactWithUserInput;
+
+pub use crate::operation::associate_contact_with_user::_associate_contact_with_user_output::AssociateContactWithUserOutput;
 
 mod _associate_contact_with_user_input;
 

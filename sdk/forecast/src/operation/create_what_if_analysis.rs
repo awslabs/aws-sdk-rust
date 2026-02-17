@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_what_if_ana
     }
 }
 
-pub use crate::operation::create_what_if_analysis::_create_what_if_analysis_output::CreateWhatIfAnalysisOutput;
-
 pub use crate::operation::create_what_if_analysis::_create_what_if_analysis_input::CreateWhatIfAnalysisInput;
+
+pub use crate::operation::create_what_if_analysis::_create_what_if_analysis_output::CreateWhatIfAnalysisOutput;
 
 mod _create_what_if_analysis_input;
 

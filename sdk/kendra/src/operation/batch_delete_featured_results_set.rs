@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_featu
     }
 }
 
-pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featured_results_set_output::BatchDeleteFeaturedResultsSetOutput;
-
 pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featured_results_set_input::BatchDeleteFeaturedResultsSetInput;
+
+pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featured_results_set_output::BatchDeleteFeaturedResultsSetOutput;
 
 mod _batch_delete_featured_results_set_input;
 

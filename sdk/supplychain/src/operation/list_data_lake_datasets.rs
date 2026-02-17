@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_lake_dat
     }
 }
 
-pub use crate::operation::list_data_lake_datasets::_list_data_lake_datasets_output::ListDataLakeDatasetsOutput;
-
 pub use crate::operation::list_data_lake_datasets::_list_data_lake_datasets_input::ListDataLakeDatasetsInput;
+
+pub use crate::operation::list_data_lake_datasets::_list_data_lake_datasets_output::ListDataLakeDatasetsOutput;
 
 mod _list_data_lake_datasets_input;
 

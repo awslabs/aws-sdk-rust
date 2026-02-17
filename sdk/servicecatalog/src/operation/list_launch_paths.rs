@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_launch_paths:
     }
 }
 
-pub use crate::operation::list_launch_paths::_list_launch_paths_output::ListLaunchPathsOutput;
-
 pub use crate::operation::list_launch_paths::_list_launch_paths_input::ListLaunchPathsInput;
+
+pub use crate::operation::list_launch_paths::_list_launch_paths_output::ListLaunchPathsOutput;
 
 mod _list_launch_paths_input;
 

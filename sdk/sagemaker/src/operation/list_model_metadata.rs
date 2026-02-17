@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_metadat
     }
 }
 
-pub use crate::operation::list_model_metadata::_list_model_metadata_output::ListModelMetadataOutput;
-
 pub use crate::operation::list_model_metadata::_list_model_metadata_input::ListModelMetadataInput;
+
+pub use crate::operation::list_model_metadata::_list_model_metadata_output::ListModelMetadataOutput;
 
 mod _list_model_metadata_input;
 

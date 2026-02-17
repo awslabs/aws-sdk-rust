@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_certifica
     }
 }
 
-pub use crate::operation::register_certificate_without_ca::_register_certificate_without_ca_output::RegisterCertificateWithoutCaOutput;
-
 pub use crate::operation::register_certificate_without_ca::_register_certificate_without_ca_input::RegisterCertificateWithoutCaInput;
+
+pub use crate::operation::register_certificate_without_ca::_register_certificate_without_ca_output::RegisterCertificateWithoutCaOutput;
 
 mod _register_certificate_without_ca_input;
 

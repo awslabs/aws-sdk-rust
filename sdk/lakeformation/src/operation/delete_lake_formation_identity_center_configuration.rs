@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_lake_formation_identity_center_configuration::_delete_lake_formation_identity_center_configuration_output::DeleteLakeFormationIdentityCenterConfigurationOutput;
-
 pub use crate::operation::delete_lake_formation_identity_center_configuration::_delete_lake_formation_identity_center_configuration_input::DeleteLakeFormationIdentityCenterConfigurationInput;
+
+pub use crate::operation::delete_lake_formation_identity_center_configuration::_delete_lake_formation_identity_center_configuration_output::DeleteLakeFormationIdentityCenterConfigurationOutput;
 
 mod _delete_lake_formation_identity_center_configuration_input;
 

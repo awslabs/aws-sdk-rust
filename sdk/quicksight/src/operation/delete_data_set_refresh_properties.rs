@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_set_re
     }
 }
 
-pub use crate::operation::delete_data_set_refresh_properties::_delete_data_set_refresh_properties_output::DeleteDataSetRefreshPropertiesOutput;
-
 pub use crate::operation::delete_data_set_refresh_properties::_delete_data_set_refresh_properties_input::DeleteDataSetRefreshPropertiesInput;
+
+pub use crate::operation::delete_data_set_refresh_properties::_delete_data_set_refresh_properties_output::DeleteDataSetRefreshPropertiesOutput;
 
 mod _delete_data_set_refresh_properties_input;
 

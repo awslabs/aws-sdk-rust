@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_message_templ
     }
 }
 
-pub use crate::operation::list_message_template_versions::_list_message_template_versions_output::ListMessageTemplateVersionsOutput;
-
 pub use crate::operation::list_message_template_versions::_list_message_template_versions_input::ListMessageTemplateVersionsInput;
+
+pub use crate::operation::list_message_template_versions::_list_message_template_versions_output::ListMessageTemplateVersionsOutput;
 
 mod _list_message_template_versions_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_parameter::Get
     }
 }
 
-pub use crate::operation::get_parameter::_get_parameter_output::GetParameterOutput;
-
 pub use crate::operation::get_parameter::_get_parameter_input::GetParameterInput;
+
+pub use crate::operation::get_parameter::_get_parameter_output::GetParameterOutput;
 
 mod _get_parameter_input;
 

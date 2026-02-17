@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_thing_to_billi
     }
 }
 
-pub use crate::operation::add_thing_to_billing_group::_add_thing_to_billing_group_output::AddThingToBillingGroupOutput;
-
 pub use crate::operation::add_thing_to_billing_group::_add_thing_to_billing_group_input::AddThingToBillingGroupInput;
+
+pub use crate::operation::add_thing_to_billing_group::_add_thing_to_billing_group_output::AddThingToBillingGroupOutput;
 
 mod _add_thing_to_billing_group_input;
 

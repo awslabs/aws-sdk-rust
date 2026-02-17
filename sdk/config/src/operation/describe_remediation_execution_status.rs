@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_remediati
     }
 }
 
-pub use crate::operation::describe_remediation_execution_status::_describe_remediation_execution_status_output::DescribeRemediationExecutionStatusOutput;
-
 pub use crate::operation::describe_remediation_execution_status::_describe_remediation_execution_status_input::DescribeRemediationExecutionStatusInput;
+
+pub use crate::operation::describe_remediation_execution_status::_describe_remediation_execution_status_output::DescribeRemediationExecutionStatusOutput;
 
 mod _describe_remediation_execution_status_input;
 

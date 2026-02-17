@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_automated_dis
     }
 }
 
-pub use crate::operation::list_automated_discovery_accounts::_list_automated_discovery_accounts_output::ListAutomatedDiscoveryAccountsOutput;
-
 pub use crate::operation::list_automated_discovery_accounts::_list_automated_discovery_accounts_input::ListAutomatedDiscoveryAccountsInput;
+
+pub use crate::operation::list_automated_discovery_accounts::_list_automated_discovery_accounts_output::ListAutomatedDiscoveryAccountsOutput;
 
 mod _list_automated_discovery_accounts_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_task_protec
     }
 }
 
-pub use crate::operation::update_task_protection::_update_task_protection_output::UpdateTaskProtectionOutput;
-
 pub use crate::operation::update_task_protection::_update_task_protection_input::UpdateTaskProtectionInput;
+
+pub use crate::operation::update_task_protection::_update_task_protection_output::UpdateTaskProtectionOutput;
 
 mod _update_task_protection_input;
 

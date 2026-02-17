@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_router_input:
     }
 }
 
-pub use crate::operation::stop_router_input::_stop_router_input_output::StopRouterInputOutput;
-
 pub use crate::operation::stop_router_input::_stop_router_input_input::StopRouterInputInput;
+
+pub use crate::operation::stop_router_input::_stop_router_input_output::StopRouterInputOutput;
 
 mod _stop_router_input_input;
 

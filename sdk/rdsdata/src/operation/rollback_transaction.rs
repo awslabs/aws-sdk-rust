@@ -503,9 +503,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rollback_transacti
     }
 }
 
-pub use crate::operation::rollback_transaction::_rollback_transaction_output::RollbackTransactionOutput;
-
 pub use crate::operation::rollback_transaction::_rollback_transaction_input::RollbackTransactionInput;
+
+pub use crate::operation::rollback_transaction::_rollback_transaction_output::RollbackTransactionOutput;
 
 mod _rollback_transaction_input;
 

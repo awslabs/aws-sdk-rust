@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_profile_sha
     }
 }
 
-pub use crate::operation::delete_profile_share::_delete_profile_share_output::DeleteProfileShareOutput;
-
 pub use crate::operation::delete_profile_share::_delete_profile_share_input::DeleteProfileShareInput;
+
+pub use crate::operation::delete_profile_share::_delete_profile_share_output::DeleteProfileShareOutput;
 
 mod _delete_profile_share_input;
 

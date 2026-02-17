@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_cors::P
     }
 }
 
-pub use crate::operation::put_bucket_cors::_put_bucket_cors_output::PutBucketCorsOutput;
-
 pub use crate::operation::put_bucket_cors::_put_bucket_cors_input::PutBucketCorsInput;
+
+pub use crate::operation::put_bucket_cors::_put_bucket_cors_output::PutBucketCorsOutput;
 
 mod _put_bucket_cors_input;
 

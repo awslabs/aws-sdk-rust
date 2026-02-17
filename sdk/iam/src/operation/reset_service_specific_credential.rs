@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_service_spec
     }
 }
 
-pub use crate::operation::reset_service_specific_credential::_reset_service_specific_credential_output::ResetServiceSpecificCredentialOutput;
-
 pub use crate::operation::reset_service_specific_credential::_reset_service_specific_credential_input::ResetServiceSpecificCredentialInput;
+
+pub use crate::operation::reset_service_specific_credential::_reset_service_specific_credential_output::ResetServiceSpecificCredentialOutput;
 
 mod _reset_service_specific_credential_input;
 

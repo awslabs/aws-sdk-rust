@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_signed_bluinsi
     }
 }
 
-pub use crate::operation::get_signed_bluinsights_url::_get_signed_bluinsights_url_output::GetSignedBluinsightsUrlOutput;
-
 pub use crate::operation::get_signed_bluinsights_url::_get_signed_bluinsights_url_input::GetSignedBluinsightsUrlInput;
+
+pub use crate::operation::get_signed_bluinsights_url::_get_signed_bluinsights_url_output::GetSignedBluinsightsUrlOutput;
 
 mod _get_signed_bluinsights_url_input;
 

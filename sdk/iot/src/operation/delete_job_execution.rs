@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_job_executi
     }
 }
 
-pub use crate::operation::delete_job_execution::_delete_job_execution_output::DeleteJobExecutionOutput;
-
 pub use crate::operation::delete_job_execution::_delete_job_execution_input::DeleteJobExecutionInput;
+
+pub use crate::operation::delete_job_execution::_delete_job_execution_output::DeleteJobExecutionOutput;
 
 mod _delete_job_execution_input;
 

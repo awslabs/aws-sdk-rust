@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_c
     }
 }
 
-pub use crate::operation::describe_account_configuration::_describe_account_configuration_output::DescribeAccountConfigurationOutput;
-
 pub use crate::operation::describe_account_configuration::_describe_account_configuration_input::DescribeAccountConfigurationInput;
+
+pub use crate::operation::describe_account_configuration::_describe_account_configuration_output::DescribeAccountConfigurationOutput;
 
 mod _describe_account_configuration_input;
 

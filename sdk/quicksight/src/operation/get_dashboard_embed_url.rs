@@ -543,9 +543,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dashboard_embe
     }
 }
 
-pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_output::GetDashboardEmbedUrlOutput;
-
 pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_input::GetDashboardEmbedUrlInput;
+
+pub use crate::operation::get_dashboard_embed_url::_get_dashboard_embed_url_output::GetDashboardEmbedUrlOutput;
 
 mod _get_dashboard_embed_url_input;
 

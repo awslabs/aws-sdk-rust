@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_open_id_connec
     }
 }
 
-pub use crate::operation::tag_open_id_connect_provider::_tag_open_id_connect_provider_output::TagOpenIdConnectProviderOutput;
-
 pub use crate::operation::tag_open_id_connect_provider::_tag_open_id_connect_provider_input::TagOpenIdConnectProviderInput;
+
+pub use crate::operation::tag_open_id_connect_provider::_tag_open_id_connect_provider_output::TagOpenIdConnectProviderOutput;
 
 mod _tag_open_id_connect_provider_input;
 

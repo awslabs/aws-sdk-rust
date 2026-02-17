@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_plan_executi
     }
 }
 
-pub use crate::operation::start_plan_execution::_start_plan_execution_output::StartPlanExecutionOutput;
-
 pub use crate::operation::start_plan_execution::_start_plan_execution_input::StartPlanExecutionInput;
+
+pub use crate::operation::start_plan_execution::_start_plan_execution_output::StartPlanExecutionOutput;
 
 mod _start_plan_execution_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_sync_c
     }
 }
 
-pub use crate::operation::get_service_sync_config::_get_service_sync_config_output::GetServiceSyncConfigOutput;
-
 pub use crate::operation::get_service_sync_config::_get_service_sync_config_input::GetServiceSyncConfigInput;
+
+pub use crate::operation::get_service_sync_config::_get_service_sync_config_output::GetServiceSyncConfigOutput;
 
 mod _get_service_sync_config_input;
 

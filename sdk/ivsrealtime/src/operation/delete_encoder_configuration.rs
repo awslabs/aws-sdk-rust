@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_encoder_con
     }
 }
 
-pub use crate::operation::delete_encoder_configuration::_delete_encoder_configuration_output::DeleteEncoderConfigurationOutput;
-
 pub use crate::operation::delete_encoder_configuration::_delete_encoder_configuration_input::DeleteEncoderConfigurationInput;
+
+pub use crate::operation::delete_encoder_configuration::_delete_encoder_configuration_output::DeleteEncoderConfigurationOutput;
 
 mod _delete_encoder_configuration_input;
 

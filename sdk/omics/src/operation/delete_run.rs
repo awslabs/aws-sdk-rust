@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_run::Delete
     }
 }
 
-pub use crate::operation::delete_run::_delete_run_output::DeleteRunOutput;
-
 pub use crate::operation::delete_run::_delete_run_input::DeleteRunInput;
+
+pub use crate::operation::delete_run::_delete_run_output::DeleteRunOutput;
 
 mod _delete_run_input;
 

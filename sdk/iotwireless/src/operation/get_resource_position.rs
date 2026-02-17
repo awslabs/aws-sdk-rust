@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_posit
     }
 }
 
-pub use crate::operation::get_resource_position::_get_resource_position_output::GetResourcePositionOutput;
-
 pub use crate::operation::get_resource_position::_get_resource_position_input::GetResourcePositionInput;
+
+pub use crate::operation::get_resource_position::_get_resource_position_output::GetResourcePositionOutput;
 
 mod _get_resource_position_input;
 

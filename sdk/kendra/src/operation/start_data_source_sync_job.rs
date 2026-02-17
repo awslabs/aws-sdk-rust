@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_source_
     }
 }
 
-pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_job_output::StartDataSourceSyncJobOutput;
-
 pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_job_input::StartDataSourceSyncJobInput;
+
+pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_job_output::StartDataSourceSyncJobOutput;
 
 mod _start_data_source_sync_job_input;
 

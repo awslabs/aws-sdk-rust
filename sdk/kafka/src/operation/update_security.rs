@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_security::U
     }
 }
 
-pub use crate::operation::update_security::_update_security_output::UpdateSecurityOutput;
-
 pub use crate::operation::update_security::_update_security_input::UpdateSecurityInput;
+
+pub use crate::operation::update_security::_update_security_output::UpdateSecurityOutput;
 
 mod _update_security_input;
 

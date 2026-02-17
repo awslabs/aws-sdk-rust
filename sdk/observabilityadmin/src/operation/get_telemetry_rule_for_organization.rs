@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_telemetry_rule
     }
 }
 
-pub use crate::operation::get_telemetry_rule_for_organization::_get_telemetry_rule_for_organization_output::GetTelemetryRuleForOrganizationOutput;
-
 pub use crate::operation::get_telemetry_rule_for_organization::_get_telemetry_rule_for_organization_input::GetTelemetryRuleForOrganizationInput;
+
+pub use crate::operation::get_telemetry_rule_for_organization::_get_telemetry_rule_for_organization_output::GetTelemetryRuleForOrganizationOutput;
 
 mod _get_telemetry_rule_for_organization_input;
 

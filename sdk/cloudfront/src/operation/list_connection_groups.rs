@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connection_gr
     }
 }
 
-pub use crate::operation::list_connection_groups::_list_connection_groups_output::ListConnectionGroupsOutput;
-
 pub use crate::operation::list_connection_groups::_list_connection_groups_input::ListConnectionGroupsInput;
+
+pub use crate::operation::list_connection_groups::_list_connection_groups_output::ListConnectionGroupsOutput;
 
 mod _list_connection_groups_input;
 

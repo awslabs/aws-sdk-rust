@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_table
     }
 }
 
-pub use crate::operation::batch_delete_table::_batch_delete_table_output::BatchDeleteTableOutput;
-
 pub use crate::operation::batch_delete_table::_batch_delete_table_input::BatchDeleteTableInput;
+
+pub use crate::operation::batch_delete_table::_batch_delete_table_output::BatchDeleteTableOutput;
 
 mod _batch_delete_table_input;
 

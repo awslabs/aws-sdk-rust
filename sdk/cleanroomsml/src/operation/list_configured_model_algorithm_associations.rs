@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_configured_model_algorithm_associations::_list_configured_model_algorithm_associations_output::ListConfiguredModelAlgorithmAssociationsOutput;
-
 pub use crate::operation::list_configured_model_algorithm_associations::_list_configured_model_algorithm_associations_input::ListConfiguredModelAlgorithmAssociationsInput;
+
+pub use crate::operation::list_configured_model_algorithm_associations::_list_configured_model_algorithm_associations_output::ListConfiguredModelAlgorithmAssociationsOutput;
 
 mod _list_configured_model_algorithm_associations_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_notebook_in
     }
 }
 
-pub use crate::operation::create_notebook_instance::_create_notebook_instance_output::CreateNotebookInstanceOutput;
-
 pub use crate::operation::create_notebook_instance::_create_notebook_instance_input::CreateNotebookInstanceInput;
+
+pub use crate::operation::create_notebook_instance::_create_notebook_instance_output::CreateNotebookInstanceOutput;
 
 mod _create_notebook_instance_input;
 

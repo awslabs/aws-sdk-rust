@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::change_server_life
     }
 }
 
-pub use crate::operation::change_server_life_cycle_state::_change_server_life_cycle_state_output::ChangeServerLifeCycleStateOutput;
-
 pub use crate::operation::change_server_life_cycle_state::_change_server_life_cycle_state_input::ChangeServerLifeCycleStateInput;
+
+pub use crate::operation::change_server_life_cycle_state::_change_server_life_cycle_state_output::ChangeServerLifeCycleStateOutput;
 
 mod _change_server_life_cycle_state_input;
 

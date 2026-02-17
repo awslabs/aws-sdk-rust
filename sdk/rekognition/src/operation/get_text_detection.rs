@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_text_detection
     }
 }
 
-pub use crate::operation::get_text_detection::_get_text_detection_output::GetTextDetectionOutput;
-
 pub use crate::operation::get_text_detection::_get_text_detection_input::GetTextDetectionInput;
+
+pub use crate::operation::get_text_detection::_get_text_detection_output::GetTextDetectionOutput;
 
 mod _get_text_detection_input;
 

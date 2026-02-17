@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_applicat
     }
 }
 
-pub use crate::operation::associate_application_to_entitlement::_associate_application_to_entitlement_output::AssociateApplicationToEntitlementOutput;
-
 pub use crate::operation::associate_application_to_entitlement::_associate_application_to_entitlement_input::AssociateApplicationToEntitlementInput;
+
+pub use crate::operation::associate_application_to_entitlement::_associate_application_to_entitlement_output::AssociateApplicationToEntitlementOutput;
 
 mod _associate_application_to_entitlement_input;
 

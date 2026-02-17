@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_availability_
     }
 }
 
-pub use crate::operation::test_availability_configuration::_test_availability_configuration_output::TestAvailabilityConfigurationOutput;
-
 pub use crate::operation::test_availability_configuration::_test_availability_configuration_input::TestAvailabilityConfigurationInput;
+
+pub use crate::operation::test_availability_configuration::_test_availability_configuration_output::TestAvailabilityConfigurationOutput;
 
 mod _test_availability_configuration_input;
 

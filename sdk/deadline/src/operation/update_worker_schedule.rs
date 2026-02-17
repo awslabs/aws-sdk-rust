@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_worker_sche
     }
 }
 
-pub use crate::operation::update_worker_schedule::_update_worker_schedule_output::UpdateWorkerScheduleOutput;
-
 pub use crate::operation::update_worker_schedule::_update_worker_schedule_input::UpdateWorkerScheduleInput;
+
+pub use crate::operation::update_worker_schedule::_update_worker_schedule_output::UpdateWorkerScheduleOutput;
 
 mod _update_worker_schedule_input;
 

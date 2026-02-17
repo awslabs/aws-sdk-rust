@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_global_repl
     }
 }
 
-pub use crate::operation::create_global_replication_group::_create_global_replication_group_output::CreateGlobalReplicationGroupOutput;
-
 pub use crate::operation::create_global_replication_group::_create_global_replication_group_input::CreateGlobalReplicationGroupInput;
+
+pub use crate::operation::create_global_replication_group::_create_global_replication_group_output::CreateGlobalReplicationGroupOutput;
 
 mod _create_global_replication_group_input;
 

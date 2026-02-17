@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user_grou
     }
 }
 
-pub use crate::operation::describe_user_groups::_describe_user_groups_output::DescribeUserGroupsOutput;
-
 pub use crate::operation::describe_user_groups::_describe_user_groups_input::DescribeUserGroupsInput;
+
+pub use crate::operation::describe_user_groups::_describe_user_groups_output::DescribeUserGroupsOutput;
 
 mod _describe_user_groups_input;
 

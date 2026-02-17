@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_services_in_sc
     }
 }
 
-pub use crate::operation::get_services_in_scope::_get_services_in_scope_output::GetServicesInScopeOutput;
-
 pub use crate::operation::get_services_in_scope::_get_services_in_scope_input::GetServicesInScopeInput;
+
+pub use crate::operation::get_services_in_scope::_get_services_in_scope_output::GetServicesInScopeOutput;
 
 mod _get_services_in_scope_input;
 

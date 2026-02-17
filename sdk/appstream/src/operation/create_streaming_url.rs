@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_streaming_u
     }
 }
 
-pub use crate::operation::create_streaming_url::_create_streaming_url_output::CreateStreamingUrlOutput;
-
 pub use crate::operation::create_streaming_url::_create_streaming_url_input::CreateStreamingUrlInput;
+
+pub use crate::operation::create_streaming_url::_create_streaming_url_output::CreateStreamingUrlOutput;
 
 mod _create_streaming_url_input;
 

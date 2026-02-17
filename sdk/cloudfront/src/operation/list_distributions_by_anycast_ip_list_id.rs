@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_anycast_ip_list_id::_list_distributions_by_anycast_ip_list_id_output::ListDistributionsByAnycastIpListIdOutput;
-
 pub use crate::operation::list_distributions_by_anycast_ip_list_id::_list_distributions_by_anycast_ip_list_id_input::ListDistributionsByAnycastIpListIdInput;
+
+pub use crate::operation::list_distributions_by_anycast_ip_list_id::_list_distributions_by_anycast_ip_list_id_output::ListDistributionsByAnycastIpListIdOutput;
 
 mod _list_distributions_by_anycast_ip_list_id_input;
 

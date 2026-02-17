@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_maintena
     }
 }
 
-pub use crate::operation::get_table_maintenance_job_status::_get_table_maintenance_job_status_output::GetTableMaintenanceJobStatusOutput;
-
 pub use crate::operation::get_table_maintenance_job_status::_get_table_maintenance_job_status_input::GetTableMaintenanceJobStatusInput;
+
+pub use crate::operation::get_table_maintenance_job_status::_get_table_maintenance_job_status_output::GetTableMaintenanceJobStatusOutput;
 
 mod _get_table_maintenance_job_status_input;
 

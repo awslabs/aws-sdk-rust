@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_storage_profil
     }
 }
 
-pub use crate::operation::get_storage_profile::_get_storage_profile_output::GetStorageProfileOutput;
-
 pub use crate::operation::get_storage_profile::_get_storage_profile_input::GetStorageProfileInput;
+
+pub use crate::operation::get_storage_profile::_get_storage_profile_output::GetStorageProfileOutput;
 
 mod _get_storage_profile_input;
 

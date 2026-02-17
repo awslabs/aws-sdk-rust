@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_channel_b
     }
 }
 
-pub use crate::operation::describe_channel_ban::_describe_channel_ban_output::DescribeChannelBanOutput;
-
 pub use crate::operation::describe_channel_ban::_describe_channel_ban_input::DescribeChannelBanInput;
+
+pub use crate::operation::describe_channel_ban::_describe_channel_ban_output::DescribeChannelBanOutput;
 
 mod _describe_channel_ban_input;
 

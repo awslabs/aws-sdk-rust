@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_configured_table_association_analysis_rule::_get_configured_table_association_analysis_rule_output::GetConfiguredTableAssociationAnalysisRuleOutput;
-
 pub use crate::operation::get_configured_table_association_analysis_rule::_get_configured_table_association_analysis_rule_input::GetConfiguredTableAssociationAnalysisRuleInput;
+
+pub use crate::operation::get_configured_table_association_analysis_rule::_get_configured_table_association_analysis_rule_output::GetConfiguredTableAssociationAnalysisRuleOutput;
 
 mod _get_configured_table_association_analysis_rule_input;
 

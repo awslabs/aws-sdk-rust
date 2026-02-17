@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ingestion_jo
     }
 }
 
-pub use crate::operation::start_ingestion_job::_start_ingestion_job_output::StartIngestionJobOutput;
-
 pub use crate::operation::start_ingestion_job::_start_ingestion_job_input::StartIngestionJobInput;
+
+pub use crate::operation::start_ingestion_job::_start_ingestion_job_output::StartIngestionJobOutput;
 
 mod _start_ingestion_job_input;
 

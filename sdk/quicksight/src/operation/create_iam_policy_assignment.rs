@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_iam_policy_
     }
 }
 
-pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assignment_output::CreateIamPolicyAssignmentOutput;
-
 pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assignment_input::CreateIamPolicyAssignmentInput;
+
+pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assignment_output::CreateIamPolicyAssignmentOutput;
 
 mod _create_iam_policy_assignment_input;
 

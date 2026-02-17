@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_sbom_wit
     }
 }
 
-pub use crate::operation::associate_sbom_with_package_version::_associate_sbom_with_package_version_output::AssociateSbomWithPackageVersionOutput;
-
 pub use crate::operation::associate_sbom_with_package_version::_associate_sbom_with_package_version_input::AssociateSbomWithPackageVersionInput;
+
+pub use crate::operation::associate_sbom_with_package_version::_associate_sbom_with_package_version_output::AssociateSbomWithPackageVersionOutput;
 
 mod _associate_sbom_with_package_version_input;
 

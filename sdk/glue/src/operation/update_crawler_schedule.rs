@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_crawler_sch
     }
 }
 
-pub use crate::operation::update_crawler_schedule::_update_crawler_schedule_output::UpdateCrawlerScheduleOutput;
-
 pub use crate::operation::update_crawler_schedule::_update_crawler_schedule_input::UpdateCrawlerScheduleInput;
+
+pub use crate::operation::update_crawler_schedule::_update_crawler_schedule_output::UpdateCrawlerScheduleOutput;
 
 mod _update_crawler_schedule_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_folders::List
     }
 }
 
-pub use crate::operation::list_folders::_list_folders_output::ListFoldersOutput;
-
 pub use crate::operation::list_folders::_list_folders_input::ListFoldersInput;
+
+pub use crate::operation::list_folders::_list_folders_output::ListFoldersOutput;
 
 mod _list_folders_input;
 

@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_membe
     }
 }
 
-pub use crate::operation::disassociate_member_from_queue::_disassociate_member_from_queue_output::DisassociateMemberFromQueueOutput;
-
 pub use crate::operation::disassociate_member_from_queue::_disassociate_member_from_queue_input::DisassociateMemberFromQueueInput;
+
+pub use crate::operation::disassociate_member_from_queue::_disassociate_member_from_queue_output::DisassociateMemberFromQueueOutput;
 
 mod _disassociate_member_from_queue_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_repositor
     }
 }
 
-pub use crate::operation::describe_repository_association::_describe_repository_association_output::DescribeRepositoryAssociationOutput;
-
 pub use crate::operation::describe_repository_association::_describe_repository_association_input::DescribeRepositoryAssociationInput;
+
+pub use crate::operation::describe_repository_association::_describe_repository_association_output::DescribeRepositoryAssociationOutput;
 
 mod _describe_repository_association_input;
 

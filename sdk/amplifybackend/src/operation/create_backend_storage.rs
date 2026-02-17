@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_backend_sto
     }
 }
 
-pub use crate::operation::create_backend_storage::_create_backend_storage_output::CreateBackendStorageOutput;
-
 pub use crate::operation::create_backend_storage::_create_backend_storage_input::CreateBackendStorageInput;
+
+pub use crate::operation::create_backend_storage::_create_backend_storage_output::CreateBackendStorageOutput;
 
 mod _create_backend_storage_input;
 

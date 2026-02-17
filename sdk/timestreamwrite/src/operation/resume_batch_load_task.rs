@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_batch_load_
     }
 }
 
-pub use crate::operation::resume_batch_load_task::_resume_batch_load_task_output::ResumeBatchLoadTaskOutput;
-
 pub use crate::operation::resume_batch_load_task::_resume_batch_load_task_input::ResumeBatchLoadTaskInput;
+
+pub use crate::operation::resume_batch_load_task::_resume_batch_load_task_output::ResumeBatchLoadTaskOutput;
 
 mod _resume_batch_load_task_input;
 

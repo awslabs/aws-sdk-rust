@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trial::Dele
     }
 }
 
-pub use crate::operation::delete_trial::_delete_trial_output::DeleteTrialOutput;
-
 pub use crate::operation::delete_trial::_delete_trial_input::DeleteTrialInput;
+
+pub use crate::operation::delete_trial::_delete_trial_output::DeleteTrialOutput;
 
 mod _delete_trial_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configured_
     }
 }
 
-pub use crate::operation::create_configured_table_association::_create_configured_table_association_output::CreateConfiguredTableAssociationOutput;
-
 pub use crate::operation::create_configured_table_association::_create_configured_table_association_input::CreateConfiguredTableAssociationInput;
+
+pub use crate::operation::create_configured_table_association::_create_configured_table_association_output::CreateConfiguredTableAssociationOutput;
 
 mod _create_configured_table_association_input;
 

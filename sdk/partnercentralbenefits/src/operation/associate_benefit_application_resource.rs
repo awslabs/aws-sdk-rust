@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_benefit_
     }
 }
 
-pub use crate::operation::associate_benefit_application_resource::_associate_benefit_application_resource_output::AssociateBenefitApplicationResourceOutput;
-
 pub use crate::operation::associate_benefit_application_resource::_associate_benefit_application_resource_input::AssociateBenefitApplicationResourceInput;
+
+pub use crate::operation::associate_benefit_application_resource::_associate_benefit_application_resource_output::AssociateBenefitApplicationResourceOutput;
 
 mod _associate_benefit_application_resource_input;
 

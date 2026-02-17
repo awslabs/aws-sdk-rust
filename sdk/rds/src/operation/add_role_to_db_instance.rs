@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_role_to_db_ins
     }
 }
 
-pub use crate::operation::add_role_to_db_instance::_add_role_to_db_instance_output::AddRoleToDbInstanceOutput;
-
 pub use crate::operation::add_role_to_db_instance::_add_role_to_db_instance_input::AddRoleToDbInstanceInput;
+
+pub use crate::operation::add_role_to_db_instance::_add_role_to_db_instance_output::AddRoleToDbInstanceOutput;
 
 mod _add_role_to_db_instance_input;
 

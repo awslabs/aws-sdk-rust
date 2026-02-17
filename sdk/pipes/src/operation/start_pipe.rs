@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_pipe::StartP
     }
 }
 
-pub use crate::operation::start_pipe::_start_pipe_output::StartPipeOutput;
-
 pub use crate::operation::start_pipe::_start_pipe_input::StartPipeInput;
+
+pub use crate::operation::start_pipe::_start_pipe_output::StartPipeOutput;
 
 mod _start_pipe_input;
 

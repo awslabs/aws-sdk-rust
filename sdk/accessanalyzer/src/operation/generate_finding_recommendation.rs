@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_finding_r
     }
 }
 
-pub use crate::operation::generate_finding_recommendation::_generate_finding_recommendation_output::GenerateFindingRecommendationOutput;
-
 pub use crate::operation::generate_finding_recommendation::_generate_finding_recommendation_input::GenerateFindingRecommendationInput;
+
+pub use crate::operation::generate_finding_recommendation::_generate_finding_recommendation_output::GenerateFindingRecommendationOutput;
 
 mod _generate_finding_recommendation_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_case::GetCaseE
     }
 }
 
-pub use crate::operation::get_case::_get_case_output::GetCaseOutput;
-
 pub use crate::operation::get_case::_get_case_input::GetCaseInput;
+
+pub use crate::operation::get_case::_get_case_output::GetCaseOutput;
 
 mod _get_case_input;
 

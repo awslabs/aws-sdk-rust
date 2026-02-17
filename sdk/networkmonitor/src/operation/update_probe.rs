@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_probe::Upda
     }
 }
 
-pub use crate::operation::update_probe::_update_probe_output::UpdateProbeOutput;
-
 pub use crate::operation::update_probe::_update_probe_input::UpdateProbeInput;
+
+pub use crate::operation::update_probe::_update_probe_output::UpdateProbeOutput;
 
 mod _update_probe_input;
 

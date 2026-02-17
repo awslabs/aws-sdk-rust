@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::monitor_instances:
     }
 }
 
-pub use crate::operation::monitor_instances::_monitor_instances_output::MonitorInstancesOutput;
-
 pub use crate::operation::monitor_instances::_monitor_instances_input::MonitorInstancesInput;
+
+pub use crate::operation::monitor_instances::_monitor_instances_output::MonitorInstancesOutput;
 
 mod _monitor_instances_input;
 

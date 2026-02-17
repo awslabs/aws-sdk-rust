@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_group_certifi
     }
 }
 
-pub use crate::operation::list_group_certificate_authorities::_list_group_certificate_authorities_output::ListGroupCertificateAuthoritiesOutput;
-
 pub use crate::operation::list_group_certificate_authorities::_list_group_certificate_authorities_input::ListGroupCertificateAuthoritiesInput;
+
+pub use crate::operation::list_group_certificate_authorities::_list_group_certificate_authorities_output::ListGroupCertificateAuthoritiesOutput;
 
 mod _list_group_certificate_authorities_input;
 

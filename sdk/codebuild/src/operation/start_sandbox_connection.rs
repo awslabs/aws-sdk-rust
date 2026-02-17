@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_sandbox_conn
     }
 }
 
-pub use crate::operation::start_sandbox_connection::_start_sandbox_connection_output::StartSandboxConnectionOutput;
-
 pub use crate::operation::start_sandbox_connection::_start_sandbox_connection_input::StartSandboxConnectionInput;
+
+pub use crate::operation::start_sandbox_connection::_start_sandbox_connection_output::StartSandboxConnectionOutput;
 
 mod _start_sandbox_connection_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_key_value_s
     }
 }
 
-pub use crate::operation::create_key_value_store::_create_key_value_store_output::CreateKeyValueStoreOutput;
-
 pub use crate::operation::create_key_value_store::_create_key_value_store_input::CreateKeyValueStoreInput;
+
+pub use crate::operation::create_key_value_store::_create_key_value_store_output::CreateKeyValueStoreOutput;
 
 mod _create_key_value_store_input;
 

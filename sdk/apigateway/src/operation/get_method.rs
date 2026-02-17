@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_method::GetMet
     }
 }
 
-pub use crate::operation::get_method::_get_method_output::GetMethodOutput;
-
 pub use crate::operation::get_method::_get_method_input::GetMethodInput;
+
+pub use crate::operation::get_method::_get_method_output::GetMethodOutput;
 
 mod _get_method_input;
 

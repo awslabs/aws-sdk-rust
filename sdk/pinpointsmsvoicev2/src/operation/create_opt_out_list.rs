@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_opt_out_lis
     }
 }
 
-pub use crate::operation::create_opt_out_list::_create_opt_out_list_output::CreateOptOutListOutput;
-
 pub use crate::operation::create_opt_out_list::_create_opt_out_list_input::CreateOptOutListInput;
+
+pub use crate::operation::create_opt_out_list::_create_opt_out_list_output::CreateOptOutListOutput;
 
 mod _create_opt_out_list_input;
 

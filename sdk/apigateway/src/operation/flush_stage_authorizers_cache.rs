@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::flush_stage_author
     }
 }
 
-pub use crate::operation::flush_stage_authorizers_cache::_flush_stage_authorizers_cache_output::FlushStageAuthorizersCacheOutput;
-
 pub use crate::operation::flush_stage_authorizers_cache::_flush_stage_authorizers_cache_input::FlushStageAuthorizersCacheInput;
+
+pub use crate::operation::flush_stage_authorizers_cache::_flush_stage_authorizers_cache_output::FlushStageAuthorizersCacheOutput;
 
 mod _flush_stage_authorizers_cache_input;
 

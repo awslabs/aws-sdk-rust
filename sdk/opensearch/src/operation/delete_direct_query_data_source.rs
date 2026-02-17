@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_direct_quer
     }
 }
 
-pub use crate::operation::delete_direct_query_data_source::_delete_direct_query_data_source_output::DeleteDirectQueryDataSourceOutput;
-
 pub use crate::operation::delete_direct_query_data_source::_delete_direct_query_data_source_input::DeleteDirectQueryDataSourceInput;
+
+pub use crate::operation::delete_direct_query_data_source::_delete_direct_query_data_source_output::DeleteDirectQueryDataSourceOutput;
 
 mod _delete_direct_query_data_source_input;
 

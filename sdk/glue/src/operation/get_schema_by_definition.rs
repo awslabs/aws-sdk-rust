@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schema_by_defi
     }
 }
 
-pub use crate::operation::get_schema_by_definition::_get_schema_by_definition_output::GetSchemaByDefinitionOutput;
-
 pub use crate::operation::get_schema_by_definition::_get_schema_by_definition_input::GetSchemaByDefinitionInput;
+
+pub use crate::operation::get_schema_by_definition::_get_schema_by_definition_output::GetSchemaByDefinitionOutput;
 
 mod _get_schema_by_definition_input;
 

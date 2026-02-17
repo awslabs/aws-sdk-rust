@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_monitor::Cr
     }
 }
 
-pub use crate::operation::create_monitor::_create_monitor_output::CreateMonitorOutput;
-
 pub use crate::operation::create_monitor::_create_monitor_input::CreateMonitorInput;
+
+pub use crate::operation::create_monitor::_create_monitor_output::CreateMonitorOutput;
 
 mod _create_monitor_input;
 

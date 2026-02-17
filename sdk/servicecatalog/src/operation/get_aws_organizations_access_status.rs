@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aws_organizati
     }
 }
 
-pub use crate::operation::get_aws_organizations_access_status::_get_aws_organizations_access_status_output::GetAwsOrganizationsAccessStatusOutput;
-
 pub use crate::operation::get_aws_organizations_access_status::_get_aws_organizations_access_status_input::GetAwsOrganizationsAccessStatusInput;
+
+pub use crate::operation::get_aws_organizations_access_status::_get_aws_organizations_access_status_output::GetAwsOrganizationsAccessStatusOutput;
 
 mod _get_aws_organizations_access_status_input;
 

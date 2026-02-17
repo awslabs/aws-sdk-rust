@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_applica
     }
 }
 
-pub use crate::operation::deregister_application::_deregister_application_output::DeregisterApplicationOutput;
-
 pub use crate::operation::deregister_application::_deregister_application_input::DeregisterApplicationInput;
+
+pub use crate::operation::deregister_application::_deregister_application_output::DeregisterApplicationOutput;
 
 mod _deregister_application_input;
 

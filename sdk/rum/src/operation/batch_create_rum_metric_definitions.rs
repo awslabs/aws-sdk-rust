@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_rum_m
     }
 }
 
-pub use crate::operation::batch_create_rum_metric_definitions::_batch_create_rum_metric_definitions_output::BatchCreateRumMetricDefinitionsOutput;
-
 pub use crate::operation::batch_create_rum_metric_definitions::_batch_create_rum_metric_definitions_input::BatchCreateRumMetricDefinitionsInput;
+
+pub use crate::operation::batch_create_rum_metric_definitions::_batch_create_rum_metric_definitions_output::BatchCreateRumMetricDefinitionsOutput;
 
 mod _batch_create_rum_metric_definitions_input;
 

@@ -526,9 +526,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_initiate_aut
     }
 }
 
-pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_output::AdminInitiateAuthOutput;
-
 pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_input::AdminInitiateAuthInput;
+
+pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_output::AdminInitiateAuthOutput;
 
 mod _admin_initiate_auth_input;
 

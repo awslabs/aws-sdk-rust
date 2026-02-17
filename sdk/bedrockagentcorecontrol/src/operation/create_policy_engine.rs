@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_policy_engi
     }
 }
 
-pub use crate::operation::create_policy_engine::_create_policy_engine_output::CreatePolicyEngineOutput;
-
 pub use crate::operation::create_policy_engine::_create_policy_engine_input::CreatePolicyEngineInput;
+
+pub use crate::operation::create_policy_engine::_create_policy_engine_output::CreatePolicyEngineOutput;
 
 mod _create_policy_engine_input;
 

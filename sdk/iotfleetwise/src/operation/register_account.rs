@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_account::
     }
 }
 
-pub use crate::operation::register_account::_register_account_output::RegisterAccountOutput;
-
 pub use crate::operation::register_account::_register_account_input::RegisterAccountInput;
+
+pub use crate::operation::register_account::_register_account_output::RegisterAccountOutput;
 
 mod _register_account_input;
 

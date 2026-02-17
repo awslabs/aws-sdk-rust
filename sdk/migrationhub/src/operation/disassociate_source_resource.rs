@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_sourc
     }
 }
 
-pub use crate::operation::disassociate_source_resource::_disassociate_source_resource_output::DisassociateSourceResourceOutput;
-
 pub use crate::operation::disassociate_source_resource::_disassociate_source_resource_input::DisassociateSourceResourceInput;
+
+pub use crate::operation::disassociate_source_resource::_disassociate_source_resource_output::DisassociateSourceResourceOutput;
 
 mod _disassociate_source_resource_input;
 

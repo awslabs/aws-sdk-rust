@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_milestones::L
     }
 }
 
-pub use crate::operation::list_milestones::_list_milestones_output::ListMilestonesOutput;
-
 pub use crate::operation::list_milestones::_list_milestones_input::ListMilestonesInput;
+
+pub use crate::operation::list_milestones::_list_milestones_output::ListMilestonesOutput;
 
 mod _list_milestones_input;
 

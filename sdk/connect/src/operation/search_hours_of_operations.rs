@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_hours_of_op
     }
 }
 
-pub use crate::operation::search_hours_of_operations::_search_hours_of_operations_output::SearchHoursOfOperationsOutput;
-
 pub use crate::operation::search_hours_of_operations::_search_hours_of_operations_input::SearchHoursOfOperationsInput;
+
+pub use crate::operation::search_hours_of_operations::_search_hours_of_operations_output::SearchHoursOfOperationsOutput;
 
 mod _search_hours_of_operations_input;
 

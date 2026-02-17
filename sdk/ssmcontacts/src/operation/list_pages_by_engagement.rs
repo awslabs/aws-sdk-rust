@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pages_by_enga
     }
 }
 
-pub use crate::operation::list_pages_by_engagement::_list_pages_by_engagement_output::ListPagesByEngagementOutput;
-
 pub use crate::operation::list_pages_by_engagement::_list_pages_by_engagement_input::ListPagesByEngagementInput;
+
+pub use crate::operation::list_pages_by_engagement::_list_pages_by_engagement_output::ListPagesByEngagementOutput;
 
 mod _list_pages_by_engagement_input;
 

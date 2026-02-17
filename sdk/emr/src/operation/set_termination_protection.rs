@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_termination_pr
     }
 }
 
-pub use crate::operation::set_termination_protection::_set_termination_protection_output::SetTerminationProtectionOutput;
-
 pub use crate::operation::set_termination_protection::_set_termination_protection_input::SetTerminationProtectionInput;
+
+pub use crate::operation::set_termination_protection::_set_termination_protection_output::SetTerminationProtectionOutput;
 
 mod _set_termination_protection_input;
 

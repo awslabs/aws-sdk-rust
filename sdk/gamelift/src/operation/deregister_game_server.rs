@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_game_se
     }
 }
 
-pub use crate::operation::deregister_game_server::_deregister_game_server_output::DeregisterGameServerOutput;
-
 pub use crate::operation::deregister_game_server::_deregister_game_server_input::DeregisterGameServerInput;
+
+pub use crate::operation::deregister_game_server::_deregister_game_server_output::DeregisterGameServerOutput;
 
 mod _deregister_game_server_input;
 

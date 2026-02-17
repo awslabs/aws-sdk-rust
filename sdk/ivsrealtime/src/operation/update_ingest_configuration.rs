@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ingest_conf
     }
 }
 
-pub use crate::operation::update_ingest_configuration::_update_ingest_configuration_output::UpdateIngestConfigurationOutput;
-
 pub use crate::operation::update_ingest_configuration::_update_ingest_configuration_input::UpdateIngestConfigurationInput;
+
+pub use crate::operation::update_ingest_configuration::_update_ingest_configuration_output::UpdateIngestConfigurationOutput;
 
 mod _update_ingest_configuration_input;
 

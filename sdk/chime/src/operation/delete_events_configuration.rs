@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_events_conf
     }
 }
 
-pub use crate::operation::delete_events_configuration::_delete_events_configuration_output::DeleteEventsConfigurationOutput;
-
 pub use crate::operation::delete_events_configuration::_delete_events_configuration_input::DeleteEventsConfigurationInput;
+
+pub use crate::operation::delete_events_configuration::_delete_events_configuration_output::DeleteEventsConfigurationOutput;
 
 mod _delete_events_configuration_input;
 

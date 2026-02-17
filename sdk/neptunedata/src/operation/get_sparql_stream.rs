@@ -496,9 +496,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sparql_stream:
     }
 }
 
-pub use crate::operation::get_sparql_stream::_get_sparql_stream_output::GetSparqlStreamOutput;
-
 pub use crate::operation::get_sparql_stream::_get_sparql_stream_input::GetSparqlStreamInput;
+
+pub use crate::operation::get_sparql_stream::_get_sparql_stream_output::GetSparqlStreamOutput;
 
 mod _get_sparql_stream_input;
 

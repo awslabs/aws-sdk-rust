@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_whats_app_mes
     }
 }
 
-pub use crate::operation::send_whats_app_message::_send_whats_app_message_output::SendWhatsAppMessageOutput;
-
 pub use crate::operation::send_whats_app_message::_send_whats_app_message_input::SendWhatsAppMessageInput;
+
+pub use crate::operation::send_whats_app_message::_send_whats_app_message_output::SendWhatsAppMessageOutput;
 
 mod _send_whats_app_message_input;
 

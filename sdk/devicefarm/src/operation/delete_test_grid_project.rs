@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_test_grid_p
     }
 }
 
-pub use crate::operation::delete_test_grid_project::_delete_test_grid_project_output::DeleteTestGridProjectOutput;
-
 pub use crate::operation::delete_test_grid_project::_delete_test_grid_project_input::DeleteTestGridProjectInput;
+
+pub use crate::operation::delete_test_grid_project::_delete_test_grid_project_output::DeleteTestGridProjectOutput;
 
 mod _delete_test_grid_project_input;
 

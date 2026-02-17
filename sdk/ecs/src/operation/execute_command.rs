@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_command::E
     }
 }
 
-pub use crate::operation::execute_command::_execute_command_output::ExecuteCommandOutput;
-
 pub use crate::operation::execute_command::_execute_command_input::ExecuteCommandInput;
+
+pub use crate::operation::execute_command::_execute_command_output::ExecuteCommandOutput;
 
 mod _execute_command_input;
 

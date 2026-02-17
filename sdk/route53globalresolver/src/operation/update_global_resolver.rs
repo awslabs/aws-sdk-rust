@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_global_reso
     }
 }
 
-pub use crate::operation::update_global_resolver::_update_global_resolver_output::UpdateGlobalResolverOutput;
-
 pub use crate::operation::update_global_resolver::_update_global_resolver_input::UpdateGlobalResolverInput;
+
+pub use crate::operation::update_global_resolver::_update_global_resolver_output::UpdateGlobalResolverOutput;
 
 mod _update_global_resolver_input;
 

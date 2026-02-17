@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_email_addre
     }
 }
 
-pub use crate::operation::create_email_address::_create_email_address_output::CreateEmailAddressOutput;
-
 pub use crate::operation::create_email_address::_create_email_address_input::CreateEmailAddressInput;
+
+pub use crate::operation::create_email_address::_create_email_address_output::CreateEmailAddressOutput;
 
 mod _create_email_address_input;
 

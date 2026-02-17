@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_defin
     }
 }
 
-pub use crate::operation::get_function_definition_version::_get_function_definition_version_output::GetFunctionDefinitionVersionOutput;
-
 pub use crate::operation::get_function_definition_version::_get_function_definition_version_input::GetFunctionDefinitionVersionInput;
+
+pub use crate::operation::get_function_definition_version::_get_function_definition_version_output::GetFunctionDefinitionVersionOutput;
 
 mod _get_function_definition_version_input;
 

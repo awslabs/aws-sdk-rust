@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_bucket_intelligent_tiering_configuration_output::PutBucketIntelligentTieringConfigurationOutput;
-
 pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_bucket_intelligent_tiering_configuration_input::PutBucketIntelligentTieringConfigurationInput;
+
+pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_bucket_intelligent_tiering_configuration_output::PutBucketIntelligentTieringConfigurationOutput;
 
 mod _put_bucket_intelligent_tiering_configuration_input;
 

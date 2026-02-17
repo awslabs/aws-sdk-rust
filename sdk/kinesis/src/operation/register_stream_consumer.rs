@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_stream_co
     }
 }
 
-pub use crate::operation::register_stream_consumer::_register_stream_consumer_output::RegisterStreamConsumerOutput;
-
 pub use crate::operation::register_stream_consumer::_register_stream_consumer_input::RegisterStreamConsumerInput;
+
+pub use crate::operation::register_stream_consumer::_register_stream_consumer_output::RegisterStreamConsumerOutput;
 
 mod _register_stream_consumer_input;
 

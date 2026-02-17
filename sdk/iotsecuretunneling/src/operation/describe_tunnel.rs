@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tunnel::D
     }
 }
 
-pub use crate::operation::describe_tunnel::_describe_tunnel_output::DescribeTunnelOutput;
-
 pub use crate::operation::describe_tunnel::_describe_tunnel_input::DescribeTunnelInput;
+
+pub use crate::operation::describe_tunnel::_describe_tunnel_output::DescribeTunnelOutput;
 
 mod _describe_tunnel_input;
 

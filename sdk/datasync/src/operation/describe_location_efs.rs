@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_efs::_describe_location_efs_output::DescribeLocationEfsOutput;
-
 pub use crate::operation::describe_location_efs::_describe_location_efs_input::DescribeLocationEfsInput;
+
+pub use crate::operation::describe_location_efs::_describe_location_efs_output::DescribeLocationEfsOutput;
 
 mod _describe_location_efs_input;
 

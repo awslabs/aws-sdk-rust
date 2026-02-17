@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_archive::
     }
 }
 
-pub use crate::operation::describe_archive::_describe_archive_output::DescribeArchiveOutput;
-
 pub use crate::operation::describe_archive::_describe_archive_input::DescribeArchiveInput;
+
+pub use crate::operation::describe_archive::_describe_archive_output::DescribeArchiveOutput;
 
 mod _describe_archive_input;
 

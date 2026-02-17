@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_requester_gat
     }
 }
 
-pub use crate::operation::list_requester_gateways::_list_requester_gateways_output::ListRequesterGatewaysOutput;
-
 pub use crate::operation::list_requester_gateways::_list_requester_gateways_input::ListRequesterGatewaysInput;
+
+pub use crate::operation::list_requester_gateways::_list_requester_gateways_output::ListRequesterGatewaysOutput;
 
 mod _list_requester_gateways_input;
 

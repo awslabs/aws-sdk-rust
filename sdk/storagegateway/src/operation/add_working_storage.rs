@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_working_storag
     }
 }
 
-pub use crate::operation::add_working_storage::_add_working_storage_output::AddWorkingStorageOutput;
-
 pub use crate::operation::add_working_storage::_add_working_storage_input::AddWorkingStorageInput;
+
+pub use crate::operation::add_working_storage::_add_working_storage_output::AddWorkingStorageOutput;
 
 mod _add_working_storage_input;
 

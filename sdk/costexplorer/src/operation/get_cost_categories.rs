@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cost_categorie
     }
 }
 
-pub use crate::operation::get_cost_categories::_get_cost_categories_output::GetCostCategoriesOutput;
-
 pub use crate::operation::get_cost_categories::_get_cost_categories_input::GetCostCategoriesInput;
+
+pub use crate::operation::get_cost_categories::_get_cost_categories_output::GetCostCategoriesOutput;
 
 mod _get_cost_categories_input;
 

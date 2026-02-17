@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_logger_defi
     }
 }
 
-pub use crate::operation::create_logger_definition_version::_create_logger_definition_version_output::CreateLoggerDefinitionVersionOutput;
-
 pub use crate::operation::create_logger_definition_version::_create_logger_definition_version_input::CreateLoggerDefinitionVersionInput;
+
+pub use crate::operation::create_logger_definition_version::_create_logger_definition_version_output::CreateLoggerDefinitionVersionOutput;
 
 mod _create_logger_definition_version_input;
 

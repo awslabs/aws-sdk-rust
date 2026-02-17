@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_rule_s
     }
 }
 
-pub use crate::operation::get_managed_rule_set::_get_managed_rule_set_output::GetManagedRuleSetOutput;
-
 pub use crate::operation::get_managed_rule_set::_get_managed_rule_set_input::GetManagedRuleSetInput;
+
+pub use crate::operation::get_managed_rule_set::_get_managed_rule_set_output::GetManagedRuleSetOutput;
 
 mod _get_managed_rule_set_input;
 

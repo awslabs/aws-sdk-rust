@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_api::
     }
 }
 
-pub use crate::operation::disassociate_api::_disassociate_api_output::DisassociateApiOutput;
-
 pub use crate::operation::disassociate_api::_disassociate_api_input::DisassociateApiInput;
+
+pub use crate::operation::disassociate_api::_disassociate_api_output::DisassociateApiOutput;
 
 mod _disassociate_api_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tenant_reso
     }
 }
 
-pub use crate::operation::create_tenant_resource_association::_create_tenant_resource_association_output::CreateTenantResourceAssociationOutput;
-
 pub use crate::operation::create_tenant_resource_association::_create_tenant_resource_association_input::CreateTenantResourceAssociationInput;
+
+pub use crate::operation::create_tenant_resource_association::_create_tenant_resource_association_output::CreateTenantResourceAssociationOutput;
 
 mod _create_tenant_resource_association_input;
 

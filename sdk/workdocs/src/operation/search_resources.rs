@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_resources::
     }
 }
 
-pub use crate::operation::search_resources::_search_resources_output::SearchResourcesOutput;
-
 pub use crate::operation::search_resources::_search_resources_input::SearchResourcesInput;
+
+pub use crate::operation::search_resources::_search_resources_output::SearchResourcesOutput;
 
 mod _search_resources_input;
 

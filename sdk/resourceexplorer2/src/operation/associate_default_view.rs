@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_default_
     }
 }
 
-pub use crate::operation::associate_default_view::_associate_default_view_output::AssociateDefaultViewOutput;
-
 pub use crate::operation::associate_default_view::_associate_default_view_input::AssociateDefaultViewInput;
+
+pub use crate::operation::associate_default_view::_associate_default_view_output::AssociateDefaultViewOutput;
 
 mod _associate_default_view_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_metric_attr
     }
 }
 
-pub use crate::operation::delete_metric_attribution::_delete_metric_attribution_output::DeleteMetricAttributionOutput;
-
 pub use crate::operation::delete_metric_attribution::_delete_metric_attribution_input::DeleteMetricAttributionInput;
+
+pub use crate::operation::delete_metric_attribution::_delete_metric_attribution_output::DeleteMetricAttributionOutput;
 
 mod _delete_metric_attribution_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trusted_a
     }
 }
 
-pub use crate::operation::describe_trusted_advisor_check_result::_describe_trusted_advisor_check_result_output::DescribeTrustedAdvisorCheckResultOutput;
-
 pub use crate::operation::describe_trusted_advisor_check_result::_describe_trusted_advisor_check_result_input::DescribeTrustedAdvisorCheckResultInput;
+
+pub use crate::operation::describe_trusted_advisor_check_result::_describe_trusted_advisor_check_result_output::DescribeTrustedAdvisorCheckResultOutput;
 
 mod _describe_trusted_advisor_check_result_input;
 

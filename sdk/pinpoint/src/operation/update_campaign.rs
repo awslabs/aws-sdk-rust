@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign::U
     }
 }
 
-pub use crate::operation::update_campaign::_update_campaign_output::UpdateCampaignOutput;
-
 pub use crate::operation::update_campaign::_update_campaign_input::UpdateCampaignInput;
+
+pub use crate::operation::update_campaign::_update_campaign_output::UpdateCampaignOutput;
 
 mod _update_campaign_input;
 

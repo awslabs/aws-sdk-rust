@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_import_job:
     }
 }
 
-pub use crate::operation::create_import_job::_create_import_job_output::CreateImportJobOutput;
-
 pub use crate::operation::create_import_job::_create_import_job_input::CreateImportJobInput;
+
+pub use crate::operation::create_import_job::_create_import_job_output::CreateImportJobOutput;
 
 mod _create_import_job_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_organization_r
     }
 }
 
-pub use crate::operation::get_organization_recommendation::_get_organization_recommendation_output::GetOrganizationRecommendationOutput;
-
 pub use crate::operation::get_organization_recommendation::_get_organization_recommendation_input::GetOrganizationRecommendationInput;
+
+pub use crate::operation::get_organization_recommendation::_get_organization_recommendation_output::GetOrganizationRecommendationOutput;
 
 mod _get_organization_recommendation_input;
 

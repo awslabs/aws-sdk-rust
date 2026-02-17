@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_metr
     }
 }
 
-pub use crate::operation::create_custom_metric::_create_custom_metric_output::CreateCustomMetricOutput;
-
 pub use crate::operation::create_custom_metric::_create_custom_metric_input::CreateCustomMetricInput;
+
+pub use crate::operation::create_custom_metric::_create_custom_metric_output::CreateCustomMetricOutput;
 
 mod _create_custom_metric_input;
 

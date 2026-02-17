@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_compilati
     }
 }
 
-pub use crate::operation::describe_compilation_job::_describe_compilation_job_output::DescribeCompilationJobOutput;
-
 pub use crate::operation::describe_compilation_job::_describe_compilation_job_input::DescribeCompilationJobInput;
+
+pub use crate::operation::describe_compilation_job::_describe_compilation_job_output::DescribeCompilationJobOutput;
 
 mod _describe_compilation_job_input;
 

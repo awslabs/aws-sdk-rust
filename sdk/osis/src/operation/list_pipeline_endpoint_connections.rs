@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipeline_endp
     }
 }
 
-pub use crate::operation::list_pipeline_endpoint_connections::_list_pipeline_endpoint_connections_output::ListPipelineEndpointConnectionsOutput;
-
 pub use crate::operation::list_pipeline_endpoint_connections::_list_pipeline_endpoint_connections_input::ListPipelineEndpointConnectionsInput;
+
+pub use crate::operation::list_pipeline_endpoint_connections::_list_pipeline_endpoint_connections_output::ListPipelineEndpointConnectionsOutput;
 
 mod _list_pipeline_endpoint_connections_input;
 

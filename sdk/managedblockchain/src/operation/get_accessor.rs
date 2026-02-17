@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_accessor::GetA
     }
 }
 
-pub use crate::operation::get_accessor::_get_accessor_output::GetAccessorOutput;
-
 pub use crate::operation::get_accessor::_get_accessor_input::GetAccessorInput;
+
+pub use crate::operation::get_accessor::_get_accessor_output::GetAccessorOutput;
 
 mod _get_accessor_input;
 

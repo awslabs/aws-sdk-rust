@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_elasticsearch
     }
 }
 
-pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch_instance_types_output::ListElasticsearchInstanceTypesOutput;
-
 pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch_instance_types_input::ListElasticsearchInstanceTypesInput;
+
+pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch_instance_types_output::ListElasticsearchInstanceTypesOutput;
 
 mod _list_elasticsearch_instance_types_input;
 

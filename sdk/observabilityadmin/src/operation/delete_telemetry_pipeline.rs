@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_telemetry_p
     }
 }
 
-pub use crate::operation::delete_telemetry_pipeline::_delete_telemetry_pipeline_output::DeleteTelemetryPipelineOutput;
-
 pub use crate::operation::delete_telemetry_pipeline::_delete_telemetry_pipeline_input::DeleteTelemetryPipelineInput;
+
+pub use crate::operation::delete_telemetry_pipeline::_delete_telemetry_pipeline_output::DeleteTelemetryPipelineOutput;
 
 mod _delete_telemetry_pipeline_input;
 

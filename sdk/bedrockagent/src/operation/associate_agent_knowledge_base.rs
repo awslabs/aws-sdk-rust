@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_agent_kn
     }
 }
 
-pub use crate::operation::associate_agent_knowledge_base::_associate_agent_knowledge_base_output::AssociateAgentKnowledgeBaseOutput;
-
 pub use crate::operation::associate_agent_knowledge_base::_associate_agent_knowledge_base_input::AssociateAgentKnowledgeBaseInput;
+
+pub use crate::operation::associate_agent_knowledge_base::_associate_agent_knowledge_base_output::AssociateAgentKnowledgeBaseOutput;
 
 mod _associate_agent_knowledge_base_input;
 

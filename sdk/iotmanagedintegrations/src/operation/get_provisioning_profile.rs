@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_provisioning_p
     }
 }
 
-pub use crate::operation::get_provisioning_profile::_get_provisioning_profile_output::GetProvisioningProfileOutput;
-
 pub use crate::operation::get_provisioning_profile::_get_provisioning_profile_input::GetProvisioningProfileInput;
+
+pub use crate::operation::get_provisioning_profile::_get_provisioning_profile_output::GetProvisioningProfileOutput;
 
 mod _get_provisioning_profile_input;
 

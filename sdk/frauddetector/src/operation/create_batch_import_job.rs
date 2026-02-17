@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_batch_impor
     }
 }
 
-pub use crate::operation::create_batch_import_job::_create_batch_import_job_output::CreateBatchImportJobOutput;
-
 pub use crate::operation::create_batch_import_job::_create_batch_import_job_input::CreateBatchImportJobInput;
+
+pub use crate::operation::create_batch_import_job::_create_batch_import_job_output::CreateBatchImportJobOutput;
 
 mod _create_batch_import_job_input;
 

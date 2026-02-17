@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_brand::Crea
     }
 }
 
-pub use crate::operation::create_brand::_create_brand_output::CreateBrandOutput;
-
 pub use crate::operation::create_brand::_create_brand_input::CreateBrandInput;
+
+pub use crate::operation::create_brand::_create_brand_output::CreateBrandOutput;
 
 mod _create_brand_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_portfolios::L
     }
 }
 
-pub use crate::operation::list_portfolios::_list_portfolios_output::ListPortfoliosOutput;
-
 pub use crate::operation::list_portfolios::_list_portfolios_input::ListPortfoliosInput;
+
+pub use crate::operation::list_portfolios::_list_portfolios_output::ListPortfoliosOutput;
 
 mod _list_portfolios_input;
 

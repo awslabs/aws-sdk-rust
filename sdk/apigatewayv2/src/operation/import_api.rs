@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_api::Import
     }
 }
 
-pub use crate::operation::import_api::_import_api_output::ImportApiOutput;
-
 pub use crate::operation::import_api::_import_api_input::ImportApiInput;
+
+pub use crate::operation::import_api::_import_api_output::ImportApiOutput;
 
 mod _import_api_input;
 

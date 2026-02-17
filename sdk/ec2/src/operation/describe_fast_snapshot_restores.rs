@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fast_snap
     }
 }
 
-pub use crate::operation::describe_fast_snapshot_restores::_describe_fast_snapshot_restores_output::DescribeFastSnapshotRestoresOutput;
-
 pub use crate::operation::describe_fast_snapshot_restores::_describe_fast_snapshot_restores_input::DescribeFastSnapshotRestoresInput;
+
+pub use crate::operation::describe_fast_snapshot_restores::_describe_fast_snapshot_restores_output::DescribeFastSnapshotRestoresOutput;
 
 mod _describe_fast_snapshot_restores_input;
 

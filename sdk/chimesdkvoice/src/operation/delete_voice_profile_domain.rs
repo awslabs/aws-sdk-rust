@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_voice_profi
     }
 }
 
-pub use crate::operation::delete_voice_profile_domain::_delete_voice_profile_domain_output::DeleteVoiceProfileDomainOutput;
-
 pub use crate::operation::delete_voice_profile_domain::_delete_voice_profile_domain_input::DeleteVoiceProfileDomainInput;
+
+pub use crate::operation::delete_voice_profile_domain::_delete_voice_profile_domain_output::DeleteVoiceProfileDomainOutput;
 
 mod _delete_voice_profile_domain_input;
 

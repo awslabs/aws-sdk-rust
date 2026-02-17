@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_wireless_de
     }
 }
 
-pub use crate::operation::delete_wireless_device::_delete_wireless_device_output::DeleteWirelessDeviceOutput;
-
 pub use crate::operation::delete_wireless_device::_delete_wireless_device_input::DeleteWirelessDeviceInput;
+
+pub use crate::operation::delete_wireless_device::_delete_wireless_device_output::DeleteWirelessDeviceOutput;
 
 mod _delete_wireless_device_input;
 

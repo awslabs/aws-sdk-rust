@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_application_input_processing_configuration::_delete_application_input_processing_configuration_output::DeleteApplicationInputProcessingConfigurationOutput;
-
 pub use crate::operation::delete_application_input_processing_configuration::_delete_application_input_processing_configuration_input::DeleteApplicationInputProcessingConfigurationInput;
+
+pub use crate::operation::delete_application_input_processing_configuration::_delete_application_input_processing_configuration_output::DeleteApplicationInputProcessingConfigurationOutput;
 
 mod _delete_application_input_processing_configuration_input;
 

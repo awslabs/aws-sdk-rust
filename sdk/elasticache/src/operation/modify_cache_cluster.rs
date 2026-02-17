@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cache_clust
     }
 }
 
-pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_output::ModifyCacheClusterOutput;
-
 pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_input::ModifyCacheClusterInput;
+
+pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_output::ModifyCacheClusterOutput;
 
 mod _modify_cache_cluster_input;
 

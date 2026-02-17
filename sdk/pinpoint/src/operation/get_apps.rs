@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_apps::GetAppsE
     }
 }
 
-pub use crate::operation::get_apps::_get_apps_output::GetAppsOutput;
-
 pub use crate::operation::get_apps::_get_apps_input::GetAppsInput;
+
+pub use crate::operation::get_apps::_get_apps_output::GetAppsOutput;
 
 mod _get_apps_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_problems::Lis
     }
 }
 
-pub use crate::operation::list_problems::_list_problems_output::ListProblemsOutput;
-
 pub use crate::operation::list_problems::_list_problems_input::ListProblemsInput;
+
+pub use crate::operation::list_problems::_list_problems_output::ListProblemsOutput;
 
 mod _list_problems_input;
 

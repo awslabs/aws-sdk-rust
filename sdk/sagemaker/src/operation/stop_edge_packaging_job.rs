@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_edge_packagin
     }
 }
 
-pub use crate::operation::stop_edge_packaging_job::_stop_edge_packaging_job_output::StopEdgePackagingJobOutput;
-
 pub use crate::operation::stop_edge_packaging_job::_stop_edge_packaging_job_input::StopEdgePackagingJobInput;
+
+pub use crate::operation::stop_edge_packaging_job::_stop_edge_packaging_job_output::StopEdgePackagingJobOutput;
 
 mod _stop_edge_packaging_job_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_continuous_ex
     }
 }
 
-pub use crate::operation::stop_continuous_export::_stop_continuous_export_output::StopContinuousExportOutput;
-
 pub use crate::operation::stop_continuous_export::_stop_continuous_export_input::StopContinuousExportInput;
+
+pub use crate::operation::stop_continuous_export::_stop_continuous_export_output::StopContinuousExportOutput;
 
 mod _stop_continuous_export_input;
 

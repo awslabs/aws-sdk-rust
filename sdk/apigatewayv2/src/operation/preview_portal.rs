@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::preview_portal::Pr
     }
 }
 
-pub use crate::operation::preview_portal::_preview_portal_output::PreviewPortalOutput;
-
 pub use crate::operation::preview_portal::_preview_portal_input::PreviewPortalInput;
+
+pub use crate::operation::preview_portal::_preview_portal_output::PreviewPortalOutput;
 
 mod _preview_portal_input;
 

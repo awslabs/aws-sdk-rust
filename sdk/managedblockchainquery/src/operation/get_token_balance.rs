@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_token_balance:
     }
 }
 
-pub use crate::operation::get_token_balance::_get_token_balance_output::GetTokenBalanceOutput;
-
 pub use crate::operation::get_token_balance::_get_token_balance_input::GetTokenBalanceInput;
+
+pub use crate::operation::get_token_balance::_get_token_balance_output::GetTokenBalanceOutput;
 
 mod _get_token_balance_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_private_graph_
     }
 }
 
-pub use crate::operation::get_private_graph_endpoint::_get_private_graph_endpoint_output::GetPrivateGraphEndpointOutput;
-
 pub use crate::operation::get_private_graph_endpoint::_get_private_graph_endpoint_input::GetPrivateGraphEndpointInput;
+
+pub use crate::operation::get_private_graph_endpoint::_get_private_graph_endpoint_output::GetPrivateGraphEndpointOutput;
 
 mod _get_private_graph_endpoint_input;
 

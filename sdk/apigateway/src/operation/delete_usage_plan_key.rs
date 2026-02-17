@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_usage_plan_
     }
 }
 
-pub use crate::operation::delete_usage_plan_key::_delete_usage_plan_key_output::DeleteUsagePlanKeyOutput;
-
 pub use crate::operation::delete_usage_plan_key::_delete_usage_plan_key_input::DeleteUsagePlanKeyInput;
+
+pub use crate::operation::delete_usage_plan_key::_delete_usage_plan_key_output::DeleteUsagePlanKeyOutput;
 
 mod _delete_usage_plan_key_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_file_transfer
     }
 }
 
-pub use crate::operation::list_file_transfer_results::_list_file_transfer_results_output::ListFileTransferResultsOutput;
-
 pub use crate::operation::list_file_transfer_results::_list_file_transfer_results_input::ListFileTransferResultsInput;
+
+pub use crate::operation::list_file_transfer_results::_list_file_transfer_results_output::ListFileTransferResultsOutput;
 
 mod _list_file_transfer_results_input;
 

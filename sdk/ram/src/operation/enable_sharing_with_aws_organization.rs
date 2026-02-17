@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_sharing_wit
     }
 }
 
-pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_with_aws_organization_output::EnableSharingWithAwsOrganizationOutput;
-
 pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_with_aws_organization_input::EnableSharingWithAwsOrganizationInput;
+
+pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_with_aws_organization_output::EnableSharingWithAwsOrganizationOutput;
 
 mod _enable_sharing_with_aws_organization_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_knowledge_bas
     }
 }
 
-pub use crate::operation::list_knowledge_base_documents::_list_knowledge_base_documents_output::ListKnowledgeBaseDocumentsOutput;
-
 pub use crate::operation::list_knowledge_base_documents::_list_knowledge_base_documents_input::ListKnowledgeBaseDocumentsInput;
+
+pub use crate::operation::list_knowledge_base_documents::_list_knowledge_base_documents_output::ListKnowledgeBaseDocumentsOutput;
 
 mod _list_knowledge_base_documents_input;
 

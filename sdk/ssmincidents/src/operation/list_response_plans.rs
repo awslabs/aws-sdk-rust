@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_response_plan
     }
 }
 
-pub use crate::operation::list_response_plans::_list_response_plans_output::ListResponsePlansOutput;
-
 pub use crate::operation::list_response_plans::_list_response_plans_input::ListResponsePlansInput;
+
+pub use crate::operation::list_response_plans::_list_response_plans_output::ListResponsePlansOutput;
 
 mod _list_response_plans_input;
 

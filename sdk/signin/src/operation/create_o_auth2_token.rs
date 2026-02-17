@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_o_auth2_tok
     }
 }
 
-pub use crate::operation::create_o_auth2_token::_create_o_auth2_token_output::CreateOAuth2TokenOutput;
-
 pub use crate::operation::create_o_auth2_token::_create_o_auth2_token_input::CreateOAuth2TokenInput;
+
+pub use crate::operation::create_o_auth2_token::_create_o_auth2_token_output::CreateOAuth2TokenOutput;
 
 mod _create_o_auth2_token_input;
 

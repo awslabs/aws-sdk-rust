@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster::Up
     }
 }
 
-pub use crate::operation::update_cluster::_update_cluster_output::UpdateClusterOutput;
-
 pub use crate::operation::update_cluster::_update_cluster_input::UpdateClusterInput;
+
+pub use crate::operation::update_cluster::_update_cluster_output::UpdateClusterOutput;
 
 mod _update_cluster_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_function::Tes
     }
 }
 
-pub use crate::operation::test_function::_test_function_output::TestFunctionOutput;
-
 pub use crate::operation::test_function::_test_function_input::TestFunctionInput;
+
+pub use crate::operation::test_function::_test_function_output::TestFunctionOutput;
 
 mod _test_function_input;
 

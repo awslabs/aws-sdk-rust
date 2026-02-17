@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_accelerator
     }
 }
 
-pub use crate::operation::update_accelerator::_update_accelerator_output::UpdateAcceleratorOutput;
-
 pub use crate::operation::update_accelerator::_update_accelerator_input::UpdateAcceleratorInput;
+
+pub use crate::operation::update_accelerator::_update_accelerator_output::UpdateAcceleratorOutput;
 
 mod _update_accelerator_input;
 

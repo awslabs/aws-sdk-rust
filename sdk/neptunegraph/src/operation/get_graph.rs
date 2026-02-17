@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_graph::GetGrap
     }
 }
 
-pub use crate::operation::get_graph::_get_graph_output::GetGraphOutput;
-
 pub use crate::operation::get_graph::_get_graph_input::GetGraphInput;
+
+pub use crate::operation::get_graph::_get_graph_output::GetGraphOutput;
 
 mod _get_graph_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_conditional
     }
 }
 
-pub use crate::operation::delete_conditional_forwarder::_delete_conditional_forwarder_output::DeleteConditionalForwarderOutput;
-
 pub use crate::operation::delete_conditional_forwarder::_delete_conditional_forwarder_input::DeleteConditionalForwarderInput;
+
+pub use crate::operation::delete_conditional_forwarder::_delete_conditional_forwarder_output::DeleteConditionalForwarderOutput;
 
 mod _delete_conditional_forwarder_input;
 

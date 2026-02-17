@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contact_cha
     }
 }
 
-pub use crate::operation::update_contact_channel::_update_contact_channel_output::UpdateContactChannelOutput;
-
 pub use crate::operation::update_contact_channel::_update_contact_channel_input::UpdateContactChannelInput;
+
+pub use crate::operation::update_contact_channel::_update_contact_channel_output::UpdateContactChannelOutput;
 
 mod _update_contact_channel_input;
 

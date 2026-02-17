@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::purchase_reserved_elasticsearch_instance_offering::_purchase_reserved_elasticsearch_instance_offering_output::PurchaseReservedElasticsearchInstanceOfferingOutput;
-
 pub use crate::operation::purchase_reserved_elasticsearch_instance_offering::_purchase_reserved_elasticsearch_instance_offering_input::PurchaseReservedElasticsearchInstanceOfferingInput;
+
+pub use crate::operation::purchase_reserved_elasticsearch_instance_offering::_purchase_reserved_elasticsearch_instance_offering_output::PurchaseReservedElasticsearchInstanceOfferingOutput;
 
 mod _purchase_reserved_elasticsearch_instance_offering_input;
 

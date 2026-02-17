@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_transit_g
     }
 }
 
-pub use crate::operation::describe_transit_gateway_vpc_attachments::_describe_transit_gateway_vpc_attachments_output::DescribeTransitGatewayVpcAttachmentsOutput;
-
 pub use crate::operation::describe_transit_gateway_vpc_attachments::_describe_transit_gateway_vpc_attachments_input::DescribeTransitGatewayVpcAttachmentsInput;
+
+pub use crate::operation::describe_transit_gateway_vpc_attachments::_describe_transit_gateway_vpc_attachments_output::DescribeTransitGatewayVpcAttachmentsOutput;
 
 mod _describe_transit_gateway_vpc_attachments_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ipam_resour
     }
 }
 
-pub use crate::operation::delete_ipam_resource_discovery::_delete_ipam_resource_discovery_output::DeleteIpamResourceDiscoveryOutput;
-
 pub use crate::operation::delete_ipam_resource_discovery::_delete_ipam_resource_discovery_input::DeleteIpamResourceDiscoveryInput;
+
+pub use crate::operation::delete_ipam_resource_discovery::_delete_ipam_resource_discovery_output::DeleteIpamResourceDiscoveryOutput;
 
 mod _delete_ipam_resource_discovery_input;
 

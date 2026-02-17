@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_image_build
     }
 }
 
-pub use crate::operation::create_image_builder_streaming_url::_create_image_builder_streaming_url_output::CreateImageBuilderStreamingUrlOutput;
-
 pub use crate::operation::create_image_builder_streaming_url::_create_image_builder_streaming_url_input::CreateImageBuilderStreamingUrlInput;
+
+pub use crate::operation::create_image_builder_streaming_url::_create_image_builder_streaming_url_output::CreateImageBuilderStreamingUrlOutput;
 
 mod _create_image_builder_streaming_url_input;
 

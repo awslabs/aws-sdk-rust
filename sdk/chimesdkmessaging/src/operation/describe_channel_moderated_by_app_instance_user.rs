@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_channel_moderated_by_app_instance_user::_describe_channel_moderated_by_app_instance_user_output::DescribeChannelModeratedByAppInstanceUserOutput;
-
 pub use crate::operation::describe_channel_moderated_by_app_instance_user::_describe_channel_moderated_by_app_instance_user_input::DescribeChannelModeratedByAppInstanceUserInput;
+
+pub use crate::operation::describe_channel_moderated_by_app_instance_user::_describe_channel_moderated_by_app_instance_user_output::DescribeChannelModeratedByAppInstanceUserOutput;
 
 mod _describe_channel_moderated_by_app_instance_user_input;
 

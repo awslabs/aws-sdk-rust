@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_container_rec
     }
 }
 
-pub use crate::operation::list_container_recipes::_list_container_recipes_output::ListContainerRecipesOutput;
-
 pub use crate::operation::list_container_recipes::_list_container_recipes_input::ListContainerRecipesInput;
+
+pub use crate::operation::list_container_recipes::_list_container_recipes_output::ListContainerRecipesOutput;
 
 mod _list_container_recipes_input;
 

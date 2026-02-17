@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_verified_ac
     }
 }
 
-pub use crate::operation::modify_verified_access_endpoint::_modify_verified_access_endpoint_output::ModifyVerifiedAccessEndpointOutput;
-
 pub use crate::operation::modify_verified_access_endpoint::_modify_verified_access_endpoint_input::ModifyVerifiedAccessEndpointInput;
+
+pub use crate::operation::modify_verified_access_endpoint::_modify_verified_access_endpoint_output::ModifyVerifiedAccessEndpointOutput;
 
 mod _modify_verified_access_endpoint_input;
 

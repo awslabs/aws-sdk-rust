@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_addon_ver
     }
 }
 
-pub use crate::operation::describe_addon_versions::_describe_addon_versions_output::DescribeAddonVersionsOutput;
-
 pub use crate::operation::describe_addon_versions::_describe_addon_versions_input::DescribeAddonVersionsInput;
+
+pub use crate::operation::describe_addon_versions::_describe_addon_versions_output::DescribeAddonVersionsOutput;
 
 mod _describe_addon_versions_input;
 

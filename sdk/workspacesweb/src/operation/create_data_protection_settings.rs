@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_protec
     }
 }
 
-pub use crate::operation::create_data_protection_settings::_create_data_protection_settings_output::CreateDataProtectionSettingsOutput;
-
 pub use crate::operation::create_data_protection_settings::_create_data_protection_settings_input::CreateDataProtectionSettingsInput;
+
+pub use crate::operation::create_data_protection_settings::_create_data_protection_settings_output::CreateDataProtectionSettingsOutput;
 
 mod _create_data_protection_settings_input;
 

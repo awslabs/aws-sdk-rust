@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_code_security_
     }
 }
 
-pub use crate::operation::get_code_security_scan::_get_code_security_scan_output::GetCodeSecurityScanOutput;
-
 pub use crate::operation::get_code_security_scan::_get_code_security_scan_input::GetCodeSecurityScanInput;
+
+pub use crate::operation::get_code_security_scan::_get_code_security_scan_output::GetCodeSecurityScanOutput;
 
 mod _get_code_security_scan_input;
 

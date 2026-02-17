@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_client_au
     }
 }
 
-pub use crate::operation::describe_client_authentication_settings::_describe_client_authentication_settings_output::DescribeClientAuthenticationSettingsOutput;
-
 pub use crate::operation::describe_client_authentication_settings::_describe_client_authentication_settings_input::DescribeClientAuthenticationSettingsInput;
+
+pub use crate::operation::describe_client_authentication_settings::_describe_client_authentication_settings_output::DescribeClientAuthenticationSettingsOutput;
 
 mod _describe_client_authentication_settings_input;
 

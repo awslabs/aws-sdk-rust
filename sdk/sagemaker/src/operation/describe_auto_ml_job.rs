@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_auto_ml_j
     }
 }
 
-pub use crate::operation::describe_auto_ml_job::_describe_auto_ml_job_output::DescribeAutoMlJobOutput;
-
 pub use crate::operation::describe_auto_ml_job::_describe_auto_ml_job_input::DescribeAutoMlJobInput;
+
+pub use crate::operation::describe_auto_ml_job::_describe_auto_ml_job_output::DescribeAutoMlJobOutput;
 
 mod _describe_auto_ml_job_input;
 

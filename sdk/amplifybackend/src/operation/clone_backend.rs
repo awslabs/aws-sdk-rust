@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::clone_backend::Clo
     }
 }
 
-pub use crate::operation::clone_backend::_clone_backend_output::CloneBackendOutput;
-
 pub use crate::operation::clone_backend::_clone_backend_input::CloneBackendInput;
+
+pub use crate::operation::clone_backend::_clone_backend_output::CloneBackendOutput;
 
 mod _clone_backend_input;
 

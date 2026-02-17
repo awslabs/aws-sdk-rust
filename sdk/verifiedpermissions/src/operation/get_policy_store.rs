@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_policy_store::
     }
 }
 
-pub use crate::operation::get_policy_store::_get_policy_store_output::GetPolicyStoreOutput;
-
 pub use crate::operation::get_policy_store::_get_policy_store_input::GetPolicyStoreInput;
+
+pub use crate::operation::get_policy_store::_get_policy_store_output::GetPolicyStoreOutput;
 
 mod _get_policy_store_input;
 

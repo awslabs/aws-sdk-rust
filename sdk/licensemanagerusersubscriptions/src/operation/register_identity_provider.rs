@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_identity_
     }
 }
 
-pub use crate::operation::register_identity_provider::_register_identity_provider_output::RegisterIdentityProviderOutput;
-
 pub use crate::operation::register_identity_provider::_register_identity_provider_input::RegisterIdentityProviderInput;
+
+pub use crate::operation::register_identity_provider::_register_identity_provider_output::RegisterIdentityProviderOutput;
 
 mod _register_identity_provider_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_table::Impo
     }
 }
 
-pub use crate::operation::import_table::_import_table_output::ImportTableOutput;
-
 pub use crate::operation::import_table::_import_table_input::ImportTableInput;
+
+pub use crate::operation::import_table::_import_table_output::ImportTableOutput;
 
 mod _import_table_input;
 

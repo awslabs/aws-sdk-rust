@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cell::Updat
     }
 }
 
-pub use crate::operation::update_cell::_update_cell_output::UpdateCellOutput;
-
 pub use crate::operation::update_cell::_update_cell_input::UpdateCellInput;
+
+pub use crate::operation::update_cell::_update_cell_output::UpdateCellOutput;
 
 mod _update_cell_input;
 

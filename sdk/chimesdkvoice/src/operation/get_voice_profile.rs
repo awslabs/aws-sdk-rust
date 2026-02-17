@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_voice_profile:
     }
 }
 
-pub use crate::operation::get_voice_profile::_get_voice_profile_output::GetVoiceProfileOutput;
-
 pub use crate::operation::get_voice_profile::_get_voice_profile_input::GetVoiceProfileInput;
+
+pub use crate::operation::get_voice_profile::_get_voice_profile_output::GetVoiceProfileOutput;
 
 mod _get_voice_profile_input;
 

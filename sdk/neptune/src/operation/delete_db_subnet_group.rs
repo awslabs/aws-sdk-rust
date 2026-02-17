@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_db_subnet_g
     }
 }
 
-pub use crate::operation::delete_db_subnet_group::_delete_db_subnet_group_output::DeleteDbSubnetGroupOutput;
-
 pub use crate::operation::delete_db_subnet_group::_delete_db_subnet_group_input::DeleteDbSubnetGroupInput;
+
+pub use crate::operation::delete_db_subnet_group::_delete_db_subnet_group_output::DeleteDbSubnetGroupOutput;
 
 mod _delete_db_subnet_group_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_key::Resto
     }
 }
 
-pub use crate::operation::restore_key::_restore_key_output::RestoreKeyOutput;
-
 pub use crate::operation::restore_key::_restore_key_input::RestoreKeyInput;
+
+pub use crate::operation::restore_key::_restore_key_output::RestoreKeyOutput;
 
 mod _restore_key_input;
 

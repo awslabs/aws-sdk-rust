@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_chat_respon
     }
 }
 
-pub use crate::operation::update_chat_response_configuration::_update_chat_response_configuration_output::UpdateChatResponseConfigurationOutput;
-
 pub use crate::operation::update_chat_response_configuration::_update_chat_response_configuration_input::UpdateChatResponseConfigurationInput;
+
+pub use crate::operation::update_chat_response_configuration::_update_chat_response_configuration_output::UpdateChatResponseConfigurationOutput;
 
 mod _update_chat_response_configuration_input;
 

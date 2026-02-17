@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_topic_par
     }
 }
 
-pub use crate::operation::describe_topic_partitions::_describe_topic_partitions_output::DescribeTopicPartitionsOutput;
-
 pub use crate::operation::describe_topic_partitions::_describe_topic_partitions_input::DescribeTopicPartitionsInput;
+
+pub use crate::operation::describe_topic_partitions::_describe_topic_partitions_output::DescribeTopicPartitionsOutput;
 
 mod _describe_topic_partitions_input;
 

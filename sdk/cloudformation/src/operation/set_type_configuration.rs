@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_type_configura
     }
 }
 
-pub use crate::operation::set_type_configuration::_set_type_configuration_output::SetTypeConfigurationOutput;
-
 pub use crate::operation::set_type_configuration::_set_type_configuration_input::SetTypeConfigurationInput;
+
+pub use crate::operation::set_type_configuration::_set_type_configuration_output::SetTypeConfigurationOutput;
 
 mod _set_type_configuration_input;
 

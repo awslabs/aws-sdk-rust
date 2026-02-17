@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_build::StopBu
     }
 }
 
-pub use crate::operation::stop_build::_stop_build_output::StopBuildOutput;
-
 pub use crate::operation::stop_build::_stop_build_input::StopBuildInput;
+
+pub use crate::operation::stop_build::_stop_build_output::StopBuildOutput;
 
 mod _stop_build_input;
 

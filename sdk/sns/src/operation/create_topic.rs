@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_topic::Crea
     }
 }
 
-pub use crate::operation::create_topic::_create_topic_output::CreateTopicOutput;
-
 pub use crate::operation::create_topic::_create_topic_input::CreateTopicInput;
+
+pub use crate::operation::create_topic::_create_topic_output::CreateTopicOutput;
 
 mod _create_topic_input;
 

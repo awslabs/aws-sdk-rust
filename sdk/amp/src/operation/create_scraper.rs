@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_scraper::Cr
     }
 }
 
-pub use crate::operation::create_scraper::_create_scraper_output::CreateScraperOutput;
-
 pub use crate::operation::create_scraper::_create_scraper_input::CreateScraperInput;
+
+pub use crate::operation::create_scraper::_create_scraper_output::CreateScraperOutput;
 
 mod _create_scraper_input;
 

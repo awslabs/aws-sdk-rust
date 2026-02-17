@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_telemetry_meta
     }
 }
 
-pub use crate::operation::get_telemetry_metadata::_get_telemetry_metadata_output::GetTelemetryMetadataOutput;
-
 pub use crate::operation::get_telemetry_metadata::_get_telemetry_metadata_input::GetTelemetryMetadataInput;
+
+pub use crate::operation::get_telemetry_metadata::_get_telemetry_metadata_output::GetTelemetryMetadataOutput;
 
 mod _get_telemetry_metadata_input;
 

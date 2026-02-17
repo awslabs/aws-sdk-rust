@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_get_service_level_objective_budget_report::_batch_get_service_level_objective_budget_report_output::BatchGetServiceLevelObjectiveBudgetReportOutput;
-
 pub use crate::operation::batch_get_service_level_objective_budget_report::_batch_get_service_level_objective_budget_report_input::BatchGetServiceLevelObjectiveBudgetReportInput;
+
+pub use crate::operation::batch_get_service_level_objective_budget_report::_batch_get_service_level_objective_budget_report_output::BatchGetServiceLevelObjectiveBudgetReportOutput;
 
 mod _batch_get_service_level_objective_budget_report_input;
 

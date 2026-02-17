@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_target::Del
     }
 }
 
-pub use crate::operation::delete_target::_delete_target_output::DeleteTargetOutput;
-
 pub use crate::operation::delete_target::_delete_target_input::DeleteTargetInput;
+
+pub use crate::operation::delete_target::_delete_target_output::DeleteTargetOutput;
 
 mod _delete_target_input;
 

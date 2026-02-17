@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_set_
     }
 }
 
-pub use crate::operation::describe_data_set_permissions::_describe_data_set_permissions_output::DescribeDataSetPermissionsOutput;
-
 pub use crate::operation::describe_data_set_permissions::_describe_data_set_permissions_input::DescribeDataSetPermissionsInput;
+
+pub use crate::operation::describe_data_set_permissions::_describe_data_set_permissions_output::DescribeDataSetPermissionsOutput;
 
 mod _describe_data_set_permissions_input;
 

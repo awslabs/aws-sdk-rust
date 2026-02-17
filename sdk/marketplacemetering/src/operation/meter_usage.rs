@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::meter_usage::Meter
     }
 }
 
-pub use crate::operation::meter_usage::_meter_usage_output::MeterUsageOutput;
-
 pub use crate::operation::meter_usage::_meter_usage_input::MeterUsageInput;
+
+pub use crate::operation::meter_usage::_meter_usage_output::MeterUsageOutput;
 
 mod _meter_usage_input;
 

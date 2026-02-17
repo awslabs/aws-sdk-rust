@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_segment_def
     }
 }
 
-pub use crate::operation::delete_segment_definition::_delete_segment_definition_output::DeleteSegmentDefinitionOutput;
-
 pub use crate::operation::delete_segment_definition::_delete_segment_definition_input::DeleteSegmentDefinitionInput;
+
+pub use crate::operation::delete_segment_definition::_delete_segment_definition_output::DeleteSegmentDefinitionOutput;
 
 mod _delete_segment_definition_input;
 

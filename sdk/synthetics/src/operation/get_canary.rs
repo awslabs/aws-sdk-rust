@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_canary::GetCan
     }
 }
 
-pub use crate::operation::get_canary::_get_canary_output::GetCanaryOutput;
-
 pub use crate::operation::get_canary::_get_canary_input::GetCanaryInput;
+
+pub use crate::operation::get_canary::_get_canary_output::GetCanaryOutput;
 
 mod _get_canary_input;
 

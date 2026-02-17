@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_det
     }
 }
 
-pub use crate::operation::describe_event_details_for_organization::_describe_event_details_for_organization_output::DescribeEventDetailsForOrganizationOutput;
-
 pub use crate::operation::describe_event_details_for_organization::_describe_event_details_for_organization_input::DescribeEventDetailsForOrganizationInput;
+
+pub use crate::operation::describe_event_details_for_organization::_describe_event_details_for_organization_output::DescribeEventDetailsForOrganizationOutput;
 
 mod _describe_event_details_for_organization_input;
 

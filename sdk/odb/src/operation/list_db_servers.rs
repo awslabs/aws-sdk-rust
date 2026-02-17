@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_servers::L
     }
 }
 
-pub use crate::operation::list_db_servers::_list_db_servers_output::ListDbServersOutput;
-
 pub use crate::operation::list_db_servers::_list_db_servers_input::ListDbServersInput;
+
+pub use crate::operation::list_db_servers::_list_db_servers_output::ListDbServersOutput;
 
 mod _list_db_servers_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_adapters::Lis
     }
 }
 
-pub use crate::operation::list_adapters::_list_adapters_output::ListAdaptersOutput;
-
 pub use crate::operation::list_adapters::_list_adapters_input::ListAdaptersInput;
+
+pub use crate::operation::list_adapters::_list_adapters_output::ListAdaptersOutput;
 
 mod _list_adapters_input;
 

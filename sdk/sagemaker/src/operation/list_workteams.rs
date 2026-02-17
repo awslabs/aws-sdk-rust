@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workteams::Li
     }
 }
 
-pub use crate::operation::list_workteams::_list_workteams_output::ListWorkteamsOutput;
-
 pub use crate::operation::list_workteams::_list_workteams_input::ListWorkteamsInput;
+
+pub use crate::operation::list_workteams::_list_workteams_output::ListWorkteamsOutput;
 
 mod _list_workteams_input;
 

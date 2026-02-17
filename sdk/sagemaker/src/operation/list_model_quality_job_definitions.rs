@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_model_quality
     }
 }
 
-pub use crate::operation::list_model_quality_job_definitions::_list_model_quality_job_definitions_output::ListModelQualityJobDefinitionsOutput;
-
 pub use crate::operation::list_model_quality_job_definitions::_list_model_quality_job_definitions_input::ListModelQualityJobDefinitionsInput;
+
+pub use crate::operation::list_model_quality_job_definitions::_list_model_quality_job_definitions_output::ListModelQualityJobDefinitionsOutput;
 
 mod _list_model_quality_job_definitions_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sms_sandbox
     }
 }
 
-pub use crate::operation::create_sms_sandbox_phone_number::_create_sms_sandbox_phone_number_output::CreateSmsSandboxPhoneNumberOutput;
-
 pub use crate::operation::create_sms_sandbox_phone_number::_create_sms_sandbox_phone_number_input::CreateSmsSandboxPhoneNumberInput;
+
+pub use crate::operation::create_sms_sandbox_phone_number::_create_sms_sandbox_phone_number_output::CreateSmsSandboxPhoneNumberOutput;
 
 mod _create_sms_sandbox_phone_number_input;
 

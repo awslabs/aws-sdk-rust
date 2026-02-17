@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::respond_activity_t
     }
 }
 
-pub use crate::operation::respond_activity_task_canceled::_respond_activity_task_canceled_output::RespondActivityTaskCanceledOutput;
-
 pub use crate::operation::respond_activity_task_canceled::_respond_activity_task_canceled_input::RespondActivityTaskCanceledInput;
+
+pub use crate::operation::respond_activity_task_canceled::_respond_activity_task_canceled_output::RespondActivityTaskCanceledOutput;
 
 mod _respond_activity_task_canceled_input;
 

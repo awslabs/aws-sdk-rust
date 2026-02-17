@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_anomaly_mon
     }
 }
 
-pub use crate::operation::create_anomaly_monitor::_create_anomaly_monitor_output::CreateAnomalyMonitorOutput;
-
 pub use crate::operation::create_anomaly_monitor::_create_anomaly_monitor_input::CreateAnomalyMonitorInput;
+
+pub use crate::operation::create_anomaly_monitor::_create_anomaly_monitor_output::CreateAnomalyMonitorOutput;
 
 mod _create_anomaly_monitor_input;
 

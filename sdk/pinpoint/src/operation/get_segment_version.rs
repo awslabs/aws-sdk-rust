@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_versio
     }
 }
 
-pub use crate::operation::get_segment_version::_get_segment_version_output::GetSegmentVersionOutput;
-
 pub use crate::operation::get_segment_version::_get_segment_version_input::GetSegmentVersionInput;
+
+pub use crate::operation::get_segment_version::_get_segment_version_output::GetSegmentVersionOutput;
 
 mod _get_segment_version_input;
 

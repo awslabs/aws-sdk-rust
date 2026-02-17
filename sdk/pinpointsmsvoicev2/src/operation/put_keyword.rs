@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_keyword::PutKe
     }
 }
 
-pub use crate::operation::put_keyword::_put_keyword_output::PutKeywordOutput;
-
 pub use crate::operation::put_keyword::_put_keyword_input::PutKeywordInput;
+
+pub use crate::operation::put_keyword::_put_keyword_output::PutKeywordOutput;
 
 mod _put_keyword_input;
 

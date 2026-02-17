@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_ip_gr
     }
 }
 
-pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_output::DisassociateIpGroupsOutput;
-
 pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_input::DisassociateIpGroupsInput;
+
+pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_output::DisassociateIpGroupsOutput;
 
 mod _disassociate_ip_groups_input;
 

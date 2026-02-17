@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_state_mac
     }
 }
 
-pub use crate::operation::validate_state_machine_definition::_validate_state_machine_definition_output::ValidateStateMachineDefinitionOutput;
-
 pub use crate::operation::validate_state_machine_definition::_validate_state_machine_definition_input::ValidateStateMachineDefinitionInput;
+
+pub use crate::operation::validate_state_machine_definition::_validate_state_machine_definition_output::ValidateStateMachineDefinitionOutput;
 
 mod _validate_state_machine_definition_input;
 

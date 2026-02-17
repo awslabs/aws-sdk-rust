@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trackers::Lis
     }
 }
 
-pub use crate::operation::list_trackers::_list_trackers_output::ListTrackersOutput;
-
 pub use crate::operation::list_trackers::_list_trackers_input::ListTrackersInput;
+
+pub use crate::operation::list_trackers::_list_trackers_output::ListTrackersOutput;
 
 mod _list_trackers_input;
 

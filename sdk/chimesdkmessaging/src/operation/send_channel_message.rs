@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_channel_messa
     }
 }
 
-pub use crate::operation::send_channel_message::_send_channel_message_output::SendChannelMessageOutput;
-
 pub use crate::operation::send_channel_message::_send_channel_message_input::SendChannelMessageInput;
+
+pub use crate::operation::send_channel_message::_send_channel_message_output::SendChannelMessageOutput;
 
 mod _send_channel_message_input;
 

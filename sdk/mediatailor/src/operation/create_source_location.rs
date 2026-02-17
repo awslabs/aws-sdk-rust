@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_source_loca
     }
 }
 
-pub use crate::operation::create_source_location::_create_source_location_output::CreateSourceLocationOutput;
-
 pub use crate::operation::create_source_location::_create_source_location_input::CreateSourceLocationInput;
+
+pub use crate::operation::create_source_location::_create_source_location_output::CreateSourceLocationOutput;
 
 mod _create_source_location_input;
 

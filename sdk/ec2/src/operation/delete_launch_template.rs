@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_launch_temp
     }
 }
 
-pub use crate::operation::delete_launch_template::_delete_launch_template_output::DeleteLaunchTemplateOutput;
-
 pub use crate::operation::delete_launch_template::_delete_launch_template_input::DeleteLaunchTemplateInput;
+
+pub use crate::operation::delete_launch_template::_delete_launch_template_output::DeleteLaunchTemplateOutput;
 
 mod _delete_launch_template_input;
 

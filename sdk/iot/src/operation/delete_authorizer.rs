@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_authorizer:
     }
 }
 
-pub use crate::operation::delete_authorizer::_delete_authorizer_output::DeleteAuthorizerOutput;
-
 pub use crate::operation::delete_authorizer::_delete_authorizer_input::DeleteAuthorizerInput;
+
+pub use crate::operation::delete_authorizer::_delete_authorizer_output::DeleteAuthorizerOutput;
 
 mod _delete_authorizer_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_code_sni
     }
 }
 
-pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_output::BatchGetCodeSnippetOutput;
-
 pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_input::BatchGetCodeSnippetInput;
+
+pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_output::BatchGetCodeSnippetOutput;
 
 mod _batch_get_code_snippet_input;
 

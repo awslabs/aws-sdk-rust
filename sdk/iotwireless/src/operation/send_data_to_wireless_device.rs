@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_data_to_wirel
     }
 }
 
-pub use crate::operation::send_data_to_wireless_device::_send_data_to_wireless_device_output::SendDataToWirelessDeviceOutput;
-
 pub use crate::operation::send_data_to_wireless_device::_send_data_to_wireless_device_input::SendDataToWirelessDeviceInput;
+
+pub use crate::operation::send_data_to_wireless_device::_send_data_to_wireless_device_output::SendDataToWirelessDeviceOutput;
 
 mod _send_data_to_wireless_device_input;
 

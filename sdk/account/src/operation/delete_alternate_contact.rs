@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_alternate_c
     }
 }
 
-pub use crate::operation::delete_alternate_contact::_delete_alternate_contact_output::DeleteAlternateContactOutput;
-
 pub use crate::operation::delete_alternate_contact::_delete_alternate_contact_input::DeleteAlternateContactInput;
+
+pub use crate::operation::delete_alternate_contact::_delete_alternate_contact_output::DeleteAlternateContactOutput;
 
 mod _delete_alternate_contact_input;
 

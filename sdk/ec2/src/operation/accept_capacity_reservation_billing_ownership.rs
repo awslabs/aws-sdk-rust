@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::accept_capacity_reservation_billing_ownership::_accept_capacity_reservation_billing_ownership_output::AcceptCapacityReservationBillingOwnershipOutput;
-
 pub use crate::operation::accept_capacity_reservation_billing_ownership::_accept_capacity_reservation_billing_ownership_input::AcceptCapacityReservationBillingOwnershipInput;
+
+pub use crate::operation::accept_capacity_reservation_billing_ownership::_accept_capacity_reservation_billing_ownership_output::AcceptCapacityReservationBillingOwnershipOutput;
 
 mod _accept_capacity_reservation_billing_ownership_input;
 

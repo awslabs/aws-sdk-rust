@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transit_gat
     }
 }
 
-pub use crate::operation::delete_transit_gateway_peering_attachment::_delete_transit_gateway_peering_attachment_output::DeleteTransitGatewayPeeringAttachmentOutput;
-
 pub use crate::operation::delete_transit_gateway_peering_attachment::_delete_transit_gateway_peering_attachment_input::DeleteTransitGatewayPeeringAttachmentInput;
+
+pub use crate::operation::delete_transit_gateway_peering_attachment::_delete_transit_gateway_peering_attachment_output::DeleteTransitGatewayPeeringAttachmentOutput;
 
 mod _delete_transit_gateway_peering_attachment_input;
 

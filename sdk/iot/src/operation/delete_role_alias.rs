@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_role_alias:
     }
 }
 
-pub use crate::operation::delete_role_alias::_delete_role_alias_output::DeleteRoleAliasOutput;
-
 pub use crate::operation::delete_role_alias::_delete_role_alias_input::DeleteRoleAliasInput;
+
+pub use crate::operation::delete_role_alias::_delete_role_alias_output::DeleteRoleAliasOutput;
 
 mod _delete_role_alias_input;
 

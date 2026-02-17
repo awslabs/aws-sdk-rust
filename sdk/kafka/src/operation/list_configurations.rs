@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configurations::_list_configurations_output::ListConfigurationsOutput;
-
 pub use crate::operation::list_configurations::_list_configurations_input::ListConfigurationsInput;
+
+pub use crate::operation::list_configurations::_list_configurations_output::ListConfigurationsOutput;
 
 mod _list_configurations_input;
 

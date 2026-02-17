@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_functions::Li
     }
 }
 
-pub use crate::operation::list_functions::_list_functions_output::ListFunctionsOutput;
-
 pub use crate::operation::list_functions::_list_functions_input::ListFunctionsInput;
+
+pub use crate::operation::list_functions::_list_functions_output::ListFunctionsOutput;
 
 mod _list_functions_input;
 

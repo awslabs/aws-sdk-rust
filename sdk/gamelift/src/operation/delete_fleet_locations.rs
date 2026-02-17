@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fleet_locat
     }
 }
 
-pub use crate::operation::delete_fleet_locations::_delete_fleet_locations_output::DeleteFleetLocationsOutput;
-
 pub use crate::operation::delete_fleet_locations::_delete_fleet_locations_input::DeleteFleetLocationsInput;
+
+pub use crate::operation::delete_fleet_locations::_delete_fleet_locations_output::DeleteFleetLocationsOutput;
 
 mod _delete_fleet_locations_input;
 

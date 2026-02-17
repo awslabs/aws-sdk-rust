@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_logs_inte
     }
 }
 
-pub use crate::operation::get_flow_logs_integration_template::_get_flow_logs_integration_template_output::GetFlowLogsIntegrationTemplateOutput;
-
 pub use crate::operation::get_flow_logs_integration_template::_get_flow_logs_integration_template_input::GetFlowLogsIntegrationTemplateInput;
+
+pub use crate::operation::get_flow_logs_integration_template::_get_flow_logs_integration_template_output::GetFlowLogsIntegrationTemplateOutput;
 
 mod _get_flow_logs_integration_template_input;
 

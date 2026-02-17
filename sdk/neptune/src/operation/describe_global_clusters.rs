@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_global_cl
     }
 }
 
-pub use crate::operation::describe_global_clusters::_describe_global_clusters_output::DescribeGlobalClustersOutput;
-
 pub use crate::operation::describe_global_clusters::_describe_global_clusters_input::DescribeGlobalClustersInput;
+
+pub use crate::operation::describe_global_clusters::_describe_global_clusters_output::DescribeGlobalClustersOutput;
 
 mod _describe_global_clusters_input;
 

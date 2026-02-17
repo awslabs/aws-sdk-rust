@@ -340,9 +340,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc::Create
     }
 }
 
-pub use crate::operation::create_vpc::_create_vpc_output::CreateVpcOutput;
-
 pub use crate::operation::create_vpc::_create_vpc_input::CreateVpcInput;
+
+pub use crate::operation::create_vpc::_create_vpc_output::CreateVpcOutput;
 
 mod _create_vpc_input;
 

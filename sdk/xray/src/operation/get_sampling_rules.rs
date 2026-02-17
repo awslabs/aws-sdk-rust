@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sampling_rules
     }
 }
 
-pub use crate::operation::get_sampling_rules::_get_sampling_rules_output::GetSamplingRulesOutput;
-
 pub use crate::operation::get_sampling_rules::_get_sampling_rules_input::GetSamplingRulesInput;
+
+pub use crate::operation::get_sampling_rules::_get_sampling_rules_output::GetSamplingRulesOutput;
 
 mod _get_sampling_rules_input;
 

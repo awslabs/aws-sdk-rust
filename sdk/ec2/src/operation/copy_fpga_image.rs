@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_fpga_image::C
     }
 }
 
-pub use crate::operation::copy_fpga_image::_copy_fpga_image_output::CopyFpgaImageOutput;
-
 pub use crate::operation::copy_fpga_image::_copy_fpga_image_input::CopyFpgaImageInput;
+
+pub use crate::operation::copy_fpga_image::_copy_fpga_image_output::CopyFpgaImageOutput;
 
 mod _copy_fpga_image_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_script::Upd
     }
 }
 
-pub use crate::operation::update_script::_update_script_output::UpdateScriptOutput;
-
 pub use crate::operation::update_script::_update_script_input::UpdateScriptInput;
+
+pub use crate::operation::update_script::_update_script_output::UpdateScriptOutput;
 
 mod _update_script_input;
 

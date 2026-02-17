@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_log_events::Ge
     }
 }
 
-pub use crate::operation::get_log_events::_get_log_events_output::GetLogEventsOutput;
-
 pub use crate::operation::get_log_events::_get_log_events_input::GetLogEventsInput;
+
+pub use crate::operation::get_log_events::_get_log_events_output::GetLogEventsOutput;
 
 mod _get_log_events_input;
 

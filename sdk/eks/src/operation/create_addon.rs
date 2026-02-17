@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_addon::Crea
     }
 }
 
-pub use crate::operation::create_addon::_create_addon_output::CreateAddonOutput;
-
 pub use crate::operation::create_addon::_create_addon_input::CreateAddonInput;
+
+pub use crate::operation::create_addon::_create_addon_output::CreateAddonOutput;
 
 mod _create_addon_input;
 

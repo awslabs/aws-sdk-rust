@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_queue::Untag
     }
 }
 
-pub use crate::operation::untag_queue::_untag_queue_output::UntagQueueOutput;
-
 pub use crate::operation::untag_queue::_untag_queue_input::UntagQueueInput;
+
+pub use crate::operation::untag_queue::_untag_queue_output::UntagQueueOutput;
 
 mod _untag_queue_input;
 

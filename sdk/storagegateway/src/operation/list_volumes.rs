@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_volumes::List
     }
 }
 
-pub use crate::operation::list_volumes::_list_volumes_output::ListVolumesOutput;
-
 pub use crate::operation::list_volumes::_list_volumes_input::ListVolumesInput;
+
+pub use crate::operation::list_volumes::_list_volumes_output::ListVolumesOutput;
 
 mod _list_volumes_input;
 

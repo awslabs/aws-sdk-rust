@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stage::Crea
     }
 }
 
-pub use crate::operation::create_stage::_create_stage_output::CreateStageOutput;
-
 pub use crate::operation::create_stage::_create_stage_input::CreateStageInput;
+
+pub use crate::operation::create_stage::_create_stage_output::CreateStageOutput;
 
 mod _create_stage_input;
 

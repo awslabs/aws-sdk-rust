@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_communica
     }
 }
 
-pub use crate::operation::describe_communications::_describe_communications_output::DescribeCommunicationsOutput;
-
 pub use crate::operation::describe_communications::_describe_communications_input::DescribeCommunicationsInput;
+
+pub use crate::operation::describe_communications::_describe_communications_output::DescribeCommunicationsOutput;
 
 mod _describe_communications_input;
 

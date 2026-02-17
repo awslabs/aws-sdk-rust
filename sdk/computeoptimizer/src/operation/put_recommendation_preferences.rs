@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_recommendation
     }
 }
 
-pub use crate::operation::put_recommendation_preferences::_put_recommendation_preferences_output::PutRecommendationPreferencesOutput;
-
 pub use crate::operation::put_recommendation_preferences::_put_recommendation_preferences_input::PutRecommendationPreferencesInput;
+
+pub use crate::operation::put_recommendation_preferences::_put_recommendation_preferences_output::PutRecommendationPreferencesOutput;
 
 mod _put_recommendation_preferences_input;
 

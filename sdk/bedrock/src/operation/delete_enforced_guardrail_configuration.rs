@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_enforced_gu
     }
 }
 
-pub use crate::operation::delete_enforced_guardrail_configuration::_delete_enforced_guardrail_configuration_output::DeleteEnforcedGuardrailConfigurationOutput;
-
 pub use crate::operation::delete_enforced_guardrail_configuration::_delete_enforced_guardrail_configuration_input::DeleteEnforcedGuardrailConfigurationInput;
+
+pub use crate::operation::delete_enforced_guardrail_configuration::_delete_enforced_guardrail_configuration_output::DeleteEnforcedGuardrailConfigurationOutput;
 
 mod _delete_enforced_guardrail_configuration_input;
 

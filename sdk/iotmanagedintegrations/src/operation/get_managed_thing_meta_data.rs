@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_thing_
     }
 }
 
-pub use crate::operation::get_managed_thing_meta_data::_get_managed_thing_meta_data_output::GetManagedThingMetaDataOutput;
-
 pub use crate::operation::get_managed_thing_meta_data::_get_managed_thing_meta_data_input::GetManagedThingMetaDataInput;
+
+pub use crate::operation::get_managed_thing_meta_data::_get_managed_thing_meta_data_output::GetManagedThingMetaDataOutput;
 
 mod _get_managed_thing_meta_data_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connect_attach
     }
 }
 
-pub use crate::operation::get_connect_attachment::_get_connect_attachment_output::GetConnectAttachmentOutput;
-
 pub use crate::operation::get_connect_attachment::_get_connect_attachment_input::GetConnectAttachmentInput;
+
+pub use crate::operation::get_connect_attachment::_get_connect_attachment_output::GetConnectAttachmentOutput;
 
 mod _get_connect_attachment_input;
 

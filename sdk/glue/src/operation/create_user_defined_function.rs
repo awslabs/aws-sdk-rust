@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_define
     }
 }
 
-pub use crate::operation::create_user_defined_function::_create_user_defined_function_output::CreateUserDefinedFunctionOutput;
-
 pub use crate::operation::create_user_defined_function::_create_user_defined_function_input::CreateUserDefinedFunctionInput;
+
+pub use crate::operation::create_user_defined_function::_create_user_defined_function_output::CreateUserDefinedFunctionOutput;
 
 mod _create_user_defined_function_input;
 

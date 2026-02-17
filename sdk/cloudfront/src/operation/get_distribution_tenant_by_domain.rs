@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution_t
     }
 }
 
-pub use crate::operation::get_distribution_tenant_by_domain::_get_distribution_tenant_by_domain_output::GetDistributionTenantByDomainOutput;
-
 pub use crate::operation::get_distribution_tenant_by_domain::_get_distribution_tenant_by_domain_input::GetDistributionTenantByDomainInput;
+
+pub use crate::operation::get_distribution_tenant_by_domain::_get_distribution_tenant_by_domain_output::GetDistributionTenantByDomainOutput;
 
 mod _get_distribution_tenant_by_domain_input;
 

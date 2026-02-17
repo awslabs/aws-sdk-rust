@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_session::Re
     }
 }
 
-pub use crate::operation::resume_session::_resume_session_output::ResumeSessionOutput;
-
 pub use crate::operation::resume_session::_resume_session_input::ResumeSessionInput;
+
+pub use crate::operation::resume_session::_resume_session_output::ResumeSessionOutput;
 
 mod _resume_session_input;
 

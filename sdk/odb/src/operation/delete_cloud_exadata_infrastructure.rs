@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cloud_exada
     }
 }
 
-pub use crate::operation::delete_cloud_exadata_infrastructure::_delete_cloud_exadata_infrastructure_output::DeleteCloudExadataInfrastructureOutput;
-
 pub use crate::operation::delete_cloud_exadata_infrastructure::_delete_cloud_exadata_infrastructure_input::DeleteCloudExadataInfrastructureInput;
+
+pub use crate::operation::delete_cloud_exadata_infrastructure::_delete_cloud_exadata_infrastructure_output::DeleteCloudExadataInfrastructureOutput;
 
 mod _delete_cloud_exadata_infrastructure_input;
 

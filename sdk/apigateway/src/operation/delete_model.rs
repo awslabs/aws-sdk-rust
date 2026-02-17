@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_model::Dele
     }
 }
 
-pub use crate::operation::delete_model::_delete_model_output::DeleteModelOutput;
-
 pub use crate::operation::delete_model::_delete_model_input::DeleteModelInput;
+
+pub use crate::operation::delete_model::_delete_model_output::DeleteModelOutput;
 
 mod _delete_model_input;
 

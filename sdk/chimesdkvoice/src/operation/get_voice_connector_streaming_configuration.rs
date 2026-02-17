@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_voice_connector_streaming_configuration::_get_voice_connector_streaming_configuration_output::GetVoiceConnectorStreamingConfigurationOutput;
-
 pub use crate::operation::get_voice_connector_streaming_configuration::_get_voice_connector_streaming_configuration_input::GetVoiceConnectorStreamingConfigurationInput;
+
+pub use crate::operation::get_voice_connector_streaming_configuration::_get_voice_connector_streaming_configuration_output::GetVoiceConnectorStreamingConfigurationOutput;
 
 mod _get_voice_connector_streaming_configuration_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_endpoint_gr
     }
 }
 
-pub use crate::operation::update_endpoint_group::_update_endpoint_group_output::UpdateEndpointGroupOutput;
-
 pub use crate::operation::update_endpoint_group::_update_endpoint_group_input::UpdateEndpointGroupInput;
+
+pub use crate::operation::update_endpoint_group::_update_endpoint_group_output::UpdateEndpointGroupOutput;
 
 mod _update_endpoint_group_input;
 

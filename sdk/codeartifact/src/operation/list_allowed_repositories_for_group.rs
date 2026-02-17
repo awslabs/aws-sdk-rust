@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_allowed_repos
     }
 }
 
-pub use crate::operation::list_allowed_repositories_for_group::_list_allowed_repositories_for_group_output::ListAllowedRepositoriesForGroupOutput;
-
 pub use crate::operation::list_allowed_repositories_for_group::_list_allowed_repositories_for_group_input::ListAllowedRepositoriesForGroupInput;
+
+pub use crate::operation::list_allowed_repositories_for_group::_list_allowed_repositories_for_group_output::ListAllowedRepositoriesForGroupOutput;
 
 mod _list_allowed_repositories_for_group_input;
 

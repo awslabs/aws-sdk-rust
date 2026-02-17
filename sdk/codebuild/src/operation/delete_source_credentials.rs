@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_source_cred
     }
 }
 
-pub use crate::operation::delete_source_credentials::_delete_source_credentials_output::DeleteSourceCredentialsOutput;
-
 pub use crate::operation::delete_source_credentials::_delete_source_credentials_input::DeleteSourceCredentialsInput;
+
+pub use crate::operation::delete_source_credentials::_delete_source_credentials_output::DeleteSourceCredentialsOutput;
 
 mod _delete_source_credentials_input;
 

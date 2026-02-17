@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_aws_network_performance_metric_subscription::_disable_aws_network_performance_metric_subscription_output::DisableAwsNetworkPerformanceMetricSubscriptionOutput;
-
 pub use crate::operation::disable_aws_network_performance_metric_subscription::_disable_aws_network_performance_metric_subscription_input::DisableAwsNetworkPerformanceMetricSubscriptionInput;
+
+pub use crate::operation::disable_aws_network_performance_metric_subscription::_disable_aws_network_performance_metric_subscription_output::DisableAwsNetworkPerformanceMetricSubscriptionOutput;
 
 mod _disable_aws_network_performance_metric_subscription_input;
 

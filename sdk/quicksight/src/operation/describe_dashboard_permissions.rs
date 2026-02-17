@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dashboard
     }
 }
 
-pub use crate::operation::describe_dashboard_permissions::_describe_dashboard_permissions_output::DescribeDashboardPermissionsOutput;
-
 pub use crate::operation::describe_dashboard_permissions::_describe_dashboard_permissions_input::DescribeDashboardPermissionsInput;
+
+pub use crate::operation::describe_dashboard_permissions::_describe_dashboard_permissions_output::DescribeDashboardPermissionsOutput;
 
 mod _describe_dashboard_permissions_input;
 

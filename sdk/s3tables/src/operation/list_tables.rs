@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tables::ListT
     }
 }
 
-pub use crate::operation::list_tables::_list_tables_output::ListTablesOutput;
-
 pub use crate::operation::list_tables::_list_tables_input::ListTablesInput;
+
+pub use crate::operation::list_tables::_list_tables_output::ListTablesOutput;
 
 mod _list_tables_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_browser_settin
     }
 }
 
-pub use crate::operation::get_browser_settings::_get_browser_settings_output::GetBrowserSettingsOutput;
-
 pub use crate::operation::get_browser_settings::_get_browser_settings_input::GetBrowserSettingsInput;
+
+pub use crate::operation::get_browser_settings::_get_browser_settings_output::GetBrowserSettingsOutput;
 
 mod _get_browser_settings_input;
 

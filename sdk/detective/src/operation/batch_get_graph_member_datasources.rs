@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_graph_me
     }
 }
 
-pub use crate::operation::batch_get_graph_member_datasources::_batch_get_graph_member_datasources_output::BatchGetGraphMemberDatasourcesOutput;
-
 pub use crate::operation::batch_get_graph_member_datasources::_batch_get_graph_member_datasources_input::BatchGetGraphMemberDatasourcesInput;
+
+pub use crate::operation::batch_get_graph_member_datasources::_batch_get_graph_member_datasources_output::BatchGetGraphMemberDatasourcesOutput;
 
 mod _batch_get_graph_member_datasources_input;
 

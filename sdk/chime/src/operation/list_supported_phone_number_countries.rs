@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_supported_pho
     }
 }
 
-pub use crate::operation::list_supported_phone_number_countries::_list_supported_phone_number_countries_output::ListSupportedPhoneNumberCountriesOutput;
-
 pub use crate::operation::list_supported_phone_number_countries::_list_supported_phone_number_countries_input::ListSupportedPhoneNumberCountriesInput;
+
+pub use crate::operation::list_supported_phone_number_countries::_list_supported_phone_number_countries_output::ListSupportedPhoneNumberCountriesOutput;
 
 mod _list_supported_phone_number_countries_input;
 

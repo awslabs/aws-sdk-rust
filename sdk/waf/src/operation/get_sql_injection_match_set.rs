@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sql_injection_
     }
 }
 
-pub use crate::operation::get_sql_injection_match_set::_get_sql_injection_match_set_output::GetSqlInjectionMatchSetOutput;
-
 pub use crate::operation::get_sql_injection_match_set::_get_sql_injection_match_set_input::GetSqlInjectionMatchSetInput;
+
+pub use crate::operation::get_sql_injection_match_set::_get_sql_injection_match_set_output::GetSqlInjectionMatchSetOutput;
 
 mod _get_sql_injection_match_set_input;
 

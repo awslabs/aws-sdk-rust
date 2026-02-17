@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_usage_lim
     }
 }
 
-pub use crate::operation::describe_usage_limits::_describe_usage_limits_output::DescribeUsageLimitsOutput;
-
 pub use crate::operation::describe_usage_limits::_describe_usage_limits_input::DescribeUsageLimitsInput;
+
+pub use crate::operation::describe_usage_limits::_describe_usage_limits_output::DescribeUsageLimitsOutput;
 
 mod _describe_usage_limits_input;
 

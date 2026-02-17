@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_traffic_distr
     }
 }
 
-pub use crate::operation::list_traffic_distribution_group_users::_list_traffic_distribution_group_users_output::ListTrafficDistributionGroupUsersOutput;
-
 pub use crate::operation::list_traffic_distribution_group_users::_list_traffic_distribution_group_users_input::ListTrafficDistributionGroupUsersInput;
+
+pub use crate::operation::list_traffic_distribution_group_users::_list_traffic_distribution_group_users_output::ListTrafficDistributionGroupUsersOutput;
 
 mod _list_traffic_distribution_group_users_input;
 

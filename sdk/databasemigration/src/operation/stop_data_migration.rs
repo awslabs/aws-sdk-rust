@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_data_migratio
     }
 }
 
-pub use crate::operation::stop_data_migration::_stop_data_migration_output::StopDataMigrationOutput;
-
 pub use crate::operation::stop_data_migration::_stop_data_migration_input::StopDataMigrationInput;
+
+pub use crate::operation::stop_data_migration::_stop_data_migration_output::StopDataMigrationOutput;
 
 mod _stop_data_migration_input;
 

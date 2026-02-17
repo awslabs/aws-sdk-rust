@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vocabulary_
     }
 }
 
-pub use crate::operation::update_vocabulary_filter::_update_vocabulary_filter_output::UpdateVocabularyFilterOutput;
-
 pub use crate::operation::update_vocabulary_filter::_update_vocabulary_filter_input::UpdateVocabularyFilterInput;
+
+pub use crate::operation::update_vocabulary_filter::_update_vocabulary_filter_output::UpdateVocabularyFilterOutput;
 
 mod _update_vocabulary_filter_input;
 

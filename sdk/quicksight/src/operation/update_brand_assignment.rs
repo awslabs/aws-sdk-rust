@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_brand_assig
     }
 }
 
-pub use crate::operation::update_brand_assignment::_update_brand_assignment_output::UpdateBrandAssignmentOutput;
-
 pub use crate::operation::update_brand_assignment::_update_brand_assignment_input::UpdateBrandAssignmentInput;
+
+pub use crate::operation::update_brand_assignment::_update_brand_assignment_output::UpdateBrandAssignmentOutput;
 
 mod _update_brand_assignment_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evict_files_failin
     }
 }
 
-pub use crate::operation::evict_files_failing_upload::_evict_files_failing_upload_output::EvictFilesFailingUploadOutput;
-
 pub use crate::operation::evict_files_failing_upload::_evict_files_failing_upload_input::EvictFilesFailingUploadInput;
+
+pub use crate::operation::evict_files_failing_upload::_evict_files_failing_upload_output::EvictFilesFailingUploadOutput;
 
 mod _evict_files_failing_upload_input;
 

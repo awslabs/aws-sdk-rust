@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_token_with_
     }
 }
 
-pub use crate::operation::create_token_with_iam::_create_token_with_iam_output::CreateTokenWithIamOutput;
-
 pub use crate::operation::create_token_with_iam::_create_token_with_iam_input::CreateTokenWithIamInput;
+
+pub use crate::operation::create_token_with_iam::_create_token_with_iam_output::CreateTokenWithIamOutput;
 
 mod _create_token_with_iam_input;
 

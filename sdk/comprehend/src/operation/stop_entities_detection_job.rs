@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_entities_dete
     }
 }
 
-pub use crate::operation::stop_entities_detection_job::_stop_entities_detection_job_output::StopEntitiesDetectionJobOutput;
-
 pub use crate::operation::stop_entities_detection_job::_stop_entities_detection_job_input::StopEntitiesDetectionJobInput;
+
+pub use crate::operation::stop_entities_detection_job::_stop_entities_detection_job_output::StopEntitiesDetectionJobOutput;
 
 mod _stop_entities_detection_job_input;
 

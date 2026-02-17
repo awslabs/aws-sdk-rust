@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_trained_mode
     }
 }
 
-pub use crate::operation::start_trained_model_inference_job::_start_trained_model_inference_job_output::StartTrainedModelInferenceJobOutput;
-
 pub use crate::operation::start_trained_model_inference_job::_start_trained_model_inference_job_input::StartTrainedModelInferenceJobInput;
+
+pub use crate::operation::start_trained_model_inference_job::_start_trained_model_inference_job_output::StartTrainedModelInferenceJobOutput;
 
 mod _start_trained_model_inference_job_input;
 

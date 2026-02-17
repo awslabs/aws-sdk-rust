@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_investigation:
     }
 }
 
-pub use crate::operation::get_investigation::_get_investigation_output::GetInvestigationOutput;
-
 pub use crate::operation::get_investigation::_get_investigation_input::GetInvestigationInput;
+
+pub use crate::operation::get_investigation::_get_investigation_output::GetInvestigationOutput;
 
 mod _get_investigation_input;
 

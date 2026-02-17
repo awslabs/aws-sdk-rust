@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_action_revisio
     }
 }
 
-pub use crate::operation::put_action_revision::_put_action_revision_output::PutActionRevisionOutput;
-
 pub use crate::operation::put_action_revision::_put_action_revision_input::PutActionRevisionInput;
+
+pub use crate::operation::put_action_revision::_put_action_revision_output::PutActionRevisionOutput;
 
 mod _put_action_revision_input;
 

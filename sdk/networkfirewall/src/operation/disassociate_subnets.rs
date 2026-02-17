@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_subne
     }
 }
 
-pub use crate::operation::disassociate_subnets::_disassociate_subnets_output::DisassociateSubnetsOutput;
-
 pub use crate::operation::disassociate_subnets::_disassociate_subnets_input::DisassociateSubnetsInput;
+
+pub use crate::operation::disassociate_subnets::_disassociate_subnets_output::DisassociateSubnetsOutput;
 
 mod _disassociate_subnets_input;
 

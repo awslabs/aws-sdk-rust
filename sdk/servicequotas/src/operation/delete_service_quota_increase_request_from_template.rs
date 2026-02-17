@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_service_quota_increase_request_from_template::_delete_service_quota_increase_request_from_template_output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput;
-
 pub use crate::operation::delete_service_quota_increase_request_from_template::_delete_service_quota_increase_request_from_template_input::DeleteServiceQuotaIncreaseRequestFromTemplateInput;
+
+pub use crate::operation::delete_service_quota_increase_request_from_template::_delete_service_quota_increase_request_from_template_output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput;
 
 mod _delete_service_quota_increase_request_from_template_input;
 

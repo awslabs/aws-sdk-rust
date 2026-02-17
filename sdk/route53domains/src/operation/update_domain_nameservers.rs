@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_name
     }
 }
 
-pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_output::UpdateDomainNameserversOutput;
-
 pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_input::UpdateDomainNameserversInput;
+
+pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_output::UpdateDomainNameserversOutput;
 
 mod _update_domain_nameservers_input;
 

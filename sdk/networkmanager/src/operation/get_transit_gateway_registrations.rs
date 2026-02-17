@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_transit_gatewa
     }
 }
 
-pub use crate::operation::get_transit_gateway_registrations::_get_transit_gateway_registrations_output::GetTransitGatewayRegistrationsOutput;
-
 pub use crate::operation::get_transit_gateway_registrations::_get_transit_gateway_registrations_input::GetTransitGatewayRegistrationsInput;
+
+pub use crate::operation::get_transit_gateway_registrations::_get_transit_gateway_registrations_output::GetTransitGatewayRegistrationsOutput;
 
 mod _get_transit_gateway_registrations_input;
 

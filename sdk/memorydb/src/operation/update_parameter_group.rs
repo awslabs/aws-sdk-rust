@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_parameter_g
     }
 }
 
-pub use crate::operation::update_parameter_group::_update_parameter_group_output::UpdateParameterGroupOutput;
-
 pub use crate::operation::update_parameter_group::_update_parameter_group_input::UpdateParameterGroupInput;
+
+pub use crate::operation::update_parameter_group::_update_parameter_group_output::UpdateParameterGroupOutput;
 
 mod _update_parameter_group_input;
 

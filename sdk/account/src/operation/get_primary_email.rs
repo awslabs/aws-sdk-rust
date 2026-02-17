@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_primary_email:
     }
 }
 
-pub use crate::operation::get_primary_email::_get_primary_email_output::GetPrimaryEmailOutput;
-
 pub use crate::operation::get_primary_email::_get_primary_email_input::GetPrimaryEmailInput;
+
+pub use crate::operation::get_primary_email::_get_primary_email_output::GetPrimaryEmailOutput;
 
 mod _get_primary_email_input;
 

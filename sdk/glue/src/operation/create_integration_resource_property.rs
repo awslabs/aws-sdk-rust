@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_integration
     }
 }
 
-pub use crate::operation::create_integration_resource_property::_create_integration_resource_property_output::CreateIntegrationResourcePropertyOutput;
-
 pub use crate::operation::create_integration_resource_property::_create_integration_resource_property_input::CreateIntegrationResourcePropertyInput;
+
+pub use crate::operation::create_integration_resource_property::_create_integration_resource_property_output::CreateIntegrationResourcePropertyOutput;
 
 mod _create_integration_resource_property_input;
 

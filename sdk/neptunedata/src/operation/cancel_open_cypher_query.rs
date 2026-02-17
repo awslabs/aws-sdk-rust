@@ -522,9 +522,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_open_cypher
     }
 }
 
-pub use crate::operation::cancel_open_cypher_query::_cancel_open_cypher_query_output::CancelOpenCypherQueryOutput;
-
 pub use crate::operation::cancel_open_cypher_query::_cancel_open_cypher_query_input::CancelOpenCypherQueryInput;
+
+pub use crate::operation::cancel_open_cypher_query::_cancel_open_cypher_query_output::CancelOpenCypherQueryOutput;
 
 mod _cancel_open_cypher_query_input;
 

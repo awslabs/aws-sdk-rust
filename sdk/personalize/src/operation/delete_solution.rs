@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_solution::D
     }
 }
 
-pub use crate::operation::delete_solution::_delete_solution_output::DeleteSolutionOutput;
-
 pub use crate::operation::delete_solution::_delete_solution_input::DeleteSolutionInput;
+
+pub use crate::operation::delete_solution::_delete_solution_output::DeleteSolutionOutput;
 
 mod _delete_solution_input;
 

@@ -483,9 +483,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_speaker_searc
     }
 }
 
-pub use crate::operation::stop_speaker_search_task::_stop_speaker_search_task_output::StopSpeakerSearchTaskOutput;
-
 pub use crate::operation::stop_speaker_search_task::_stop_speaker_search_task_input::StopSpeakerSearchTaskInput;
+
+pub use crate::operation::stop_speaker_search_task::_stop_speaker_search_task_output::StopSpeakerSearchTaskOutput;
 
 mod _stop_speaker_search_task_input;
 

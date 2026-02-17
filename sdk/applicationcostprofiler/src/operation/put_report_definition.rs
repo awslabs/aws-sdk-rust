@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_report_definit
     }
 }
 
-pub use crate::operation::put_report_definition::_put_report_definition_output::PutReportDefinitionOutput;
-
 pub use crate::operation::put_report_definition::_put_report_definition_input::PutReportDefinitionInput;
+
+pub use crate::operation::put_report_definition::_put_report_definition_output::PutReportDefinitionOutput;
 
 mod _put_report_definition_input;
 

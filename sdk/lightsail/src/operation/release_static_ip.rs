@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::release_static_ip:
     }
 }
 
-pub use crate::operation::release_static_ip::_release_static_ip_output::ReleaseStaticIpOutput;
-
 pub use crate::operation::release_static_ip::_release_static_ip_input::ReleaseStaticIpInput;
+
+pub use crate::operation::release_static_ip::_release_static_ip_output::ReleaseStaticIpOutput;
 
 mod _release_static_ip_input;
 

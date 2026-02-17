@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_export_jobs::G
     }
 }
 
-pub use crate::operation::get_export_jobs::_get_export_jobs_output::GetExportJobsOutput;
-
 pub use crate::operation::get_export_jobs::_get_export_jobs_input::GetExportJobsInput;
+
+pub use crate::operation::get_export_jobs::_get_export_jobs_output::GetExportJobsOutput;
 
 mod _get_export_jobs_input;
 

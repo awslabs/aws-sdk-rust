@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sol_function_p
     }
 }
 
-pub use crate::operation::get_sol_function_package_descriptor::_get_sol_function_package_descriptor_output::GetSolFunctionPackageDescriptorOutput;
-
 pub use crate::operation::get_sol_function_package_descriptor::_get_sol_function_package_descriptor_input::GetSolFunctionPackageDescriptorInput;
+
+pub use crate::operation::get_sol_function_package_descriptor::_get_sol_function_package_descriptor_output::GetSolFunctionPackageDescriptorOutput;
 
 mod _get_sol_function_package_descriptor_input;
 

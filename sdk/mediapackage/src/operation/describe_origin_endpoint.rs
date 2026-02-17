@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_origin_en
     }
 }
 
-pub use crate::operation::describe_origin_endpoint::_describe_origin_endpoint_output::DescribeOriginEndpointOutput;
-
 pub use crate::operation::describe_origin_endpoint::_describe_origin_endpoint_input::DescribeOriginEndpointInput;
+
+pub use crate::operation::describe_origin_endpoint::_describe_origin_endpoint_output::DescribeOriginEndpointOutput;
 
 mod _describe_origin_endpoint_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_distribu
     }
 }
 
-pub use crate::operation::associate_distribution_web_acl::_associate_distribution_web_acl_output::AssociateDistributionWebAclOutput;
-
 pub use crate::operation::associate_distribution_web_acl::_associate_distribution_web_acl_input::AssociateDistributionWebAclInput;
+
+pub use crate::operation::associate_distribution_web_acl::_associate_distribution_web_acl_output::AssociateDistributionWebAclOutput;
 
 mod _associate_distribution_web_acl_input;
 

@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_ke
     }
 }
 
-pub use crate::operation::describe_custom_key_stores::_describe_custom_key_stores_output::DescribeCustomKeyStoresOutput;
-
 pub use crate::operation::describe_custom_key_stores::_describe_custom_key_stores_input::DescribeCustomKeyStoresInput;
+
+pub use crate::operation::describe_custom_key_stores::_describe_custom_key_stores_output::DescribeCustomKeyStoresOutput;
 
 mod _describe_custom_key_stores_input;
 

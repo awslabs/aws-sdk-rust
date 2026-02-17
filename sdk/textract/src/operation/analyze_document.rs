@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::analyze_document::
     }
 }
 
-pub use crate::operation::analyze_document::_analyze_document_output::AnalyzeDocumentOutput;
-
 pub use crate::operation::analyze_document::_analyze_document_input::AnalyzeDocumentInput;
+
+pub use crate::operation::analyze_document::_analyze_document_output::AnalyzeDocumentOutput;
 
 mod _analyze_document_input;
 

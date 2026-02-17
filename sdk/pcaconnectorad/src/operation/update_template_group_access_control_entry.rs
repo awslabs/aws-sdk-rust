@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_template_gr
     }
 }
 
-pub use crate::operation::update_template_group_access_control_entry::_update_template_group_access_control_entry_output::UpdateTemplateGroupAccessControlEntryOutput;
-
 pub use crate::operation::update_template_group_access_control_entry::_update_template_group_access_control_entry_input::UpdateTemplateGroupAccessControlEntryInput;
+
+pub use crate::operation::update_template_group_access_control_entry::_update_template_group_access_control_entry_output::UpdateTemplateGroupAccessControlEntryOutput;
 
 mod _update_template_group_access_control_entry_input;
 

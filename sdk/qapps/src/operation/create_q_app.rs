@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_q_app::Crea
     }
 }
 
-pub use crate::operation::create_q_app::_create_q_app_output::CreateQAppOutput;
-
 pub use crate::operation::create_q_app::_create_q_app_input::CreateQAppInput;
+
+pub use crate::operation::create_q_app::_create_q_app_output::CreateQAppOutput;
 
 mod _create_q_app_input;
 

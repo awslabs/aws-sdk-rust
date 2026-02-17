@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sol_function_i
     }
 }
 
-pub use crate::operation::get_sol_function_instance::_get_sol_function_instance_output::GetSolFunctionInstanceOutput;
-
 pub use crate::operation::get_sol_function_instance::_get_sol_function_instance_input::GetSolFunctionInstanceInput;
+
+pub use crate::operation::get_sol_function_instance::_get_sol_function_instance_output::GetSolFunctionInstanceOutput;
 
 mod _get_sol_function_instance_input;
 

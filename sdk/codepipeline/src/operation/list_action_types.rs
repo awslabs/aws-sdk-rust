@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_action_types:
     }
 }
 
-pub use crate::operation::list_action_types::_list_action_types_output::ListActionTypesOutput;
-
 pub use crate::operation::list_action_types::_list_action_types_input::ListActionTypesInput;
+
+pub use crate::operation::list_action_types::_list_action_types_output::ListActionTypesOutput;
 
 mod _list_action_types_input;
 

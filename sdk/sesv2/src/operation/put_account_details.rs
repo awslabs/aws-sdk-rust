@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_detail
     }
 }
 
-pub use crate::operation::put_account_details::_put_account_details_output::PutAccountDetailsOutput;
-
 pub use crate::operation::put_account_details::_put_account_details_input::PutAccountDetailsInput;
+
+pub use crate::operation::put_account_details::_put_account_details_output::PutAccountDetailsOutput;
 
 mod _put_account_details_input;
 

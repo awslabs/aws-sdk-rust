@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_guest_user_his
     }
 }
 
-pub use crate::operation::get_guest_user_history_count::_get_guest_user_history_count_output::GetGuestUserHistoryCountOutput;
-
 pub use crate::operation::get_guest_user_history_count::_get_guest_user_history_count_input::GetGuestUserHistoryCountInput;
+
+pub use crate::operation::get_guest_user_history_count::_get_guest_user_history_count_output::GetGuestUserHistoryCountOutput;
 
 mod _get_guest_user_history_count_input;
 

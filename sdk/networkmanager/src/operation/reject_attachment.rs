@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_attachment:
     }
 }
 
-pub use crate::operation::reject_attachment::_reject_attachment_output::RejectAttachmentOutput;
-
 pub use crate::operation::reject_attachment::_reject_attachment_input::RejectAttachmentInput;
+
+pub use crate::operation::reject_attachment::_reject_attachment_output::RejectAttachmentOutput;
 
 mod _reject_attachment_input;
 

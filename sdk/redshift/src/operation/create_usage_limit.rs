@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_usage_limit
     }
 }
 
-pub use crate::operation::create_usage_limit::_create_usage_limit_output::CreateUsageLimitOutput;
-
 pub use crate::operation::create_usage_limit::_create_usage_limit_input::CreateUsageLimitInput;
+
+pub use crate::operation::create_usage_limit::_create_usage_limit_output::CreateUsageLimitOutput;
 
 mod _create_usage_limit_input;
 

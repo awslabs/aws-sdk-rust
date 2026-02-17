@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tenant::GetTen
     }
 }
 
-pub use crate::operation::get_tenant::_get_tenant_output::GetTenantOutput;
-
 pub use crate::operation::get_tenant::_get_tenant_input::GetTenantInput;
+
+pub use crate::operation::get_tenant::_get_tenant_output::GetTenantOutput;
 
 mod _get_tenant_input;
 

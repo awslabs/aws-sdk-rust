@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transit_gat
     }
 }
 
-pub use crate::operation::delete_transit_gateway_vpc_attachment::_delete_transit_gateway_vpc_attachment_output::DeleteTransitGatewayVpcAttachmentOutput;
-
 pub use crate::operation::delete_transit_gateway_vpc_attachment::_delete_transit_gateway_vpc_attachment_input::DeleteTransitGatewayVpcAttachmentInput;
+
+pub use crate::operation::delete_transit_gateway_vpc_attachment::_delete_transit_gateway_vpc_attachment_output::DeleteTransitGatewayVpcAttachmentOutput;
 
 mod _delete_transit_gateway_vpc_attachment_input;
 

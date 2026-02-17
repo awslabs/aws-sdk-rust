@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_route_serve
     }
 }
 
-pub use crate::operation::modify_route_server::_modify_route_server_output::ModifyRouteServerOutput;
-
 pub use crate::operation::modify_route_server::_modify_route_server_input::ModifyRouteServerInput;
+
+pub use crate::operation::modify_route_server::_modify_route_server_output::ModifyRouteServerOutput;
 
 mod _modify_route_server_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_gateway::D
     }
 }
 
-pub use crate::operation::disable_gateway::_disable_gateway_output::DisableGatewayOutput;
-
 pub use crate::operation::disable_gateway::_disable_gateway_input::DisableGatewayInput;
+
+pub use crate::operation::disable_gateway::_disable_gateway_output::DisableGatewayOutput;
 
 mod _disable_gateway_input;
 

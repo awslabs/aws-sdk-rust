@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_sbom_
     }
 }
 
-pub use crate::operation::disassociate_sbom_from_package_version::_disassociate_sbom_from_package_version_output::DisassociateSbomFromPackageVersionOutput;
-
 pub use crate::operation::disassociate_sbom_from_package_version::_disassociate_sbom_from_package_version_input::DisassociateSbomFromPackageVersionInput;
+
+pub use crate::operation::disassociate_sbom_from_package_version::_disassociate_sbom_from_package_version_output::DisassociateSbomFromPackageVersionOutput;
 
 mod _disassociate_sbom_from_package_version_input;
 

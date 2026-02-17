@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_calculation_
     }
 }
 
-pub use crate::operation::start_calculation_execution::_start_calculation_execution_output::StartCalculationExecutionOutput;
-
 pub use crate::operation::start_calculation_execution::_start_calculation_execution_input::StartCalculationExecutionInput;
+
+pub use crate::operation::start_calculation_execution::_start_calculation_execution_output::StartCalculationExecutionOutput;
 
 mod _start_calculation_execution_input;
 

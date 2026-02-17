@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_list_devices
     }
 }
 
-pub use crate::operation::admin_list_devices::_admin_list_devices_output::AdminListDevicesOutput;
-
 pub use crate::operation::admin_list_devices::_admin_list_devices_input::AdminListDevicesInput;
+
+pub use crate::operation::admin_list_devices::_admin_list_devices_output::AdminListDevicesOutput;
 
 mod _admin_list_devices_input;
 

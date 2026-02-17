@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_threat_inte
     }
 }
 
-pub use crate::operation::update_threat_intel_set::_update_threat_intel_set_output::UpdateThreatIntelSetOutput;
-
 pub use crate::operation::update_threat_intel_set::_update_threat_intel_set_input::UpdateThreatIntelSetInput;
+
+pub use crate::operation::update_threat_intel_set::_update_threat_intel_set_output::UpdateThreatIntelSetOutput;
 
 mod _update_threat_intel_set_input;
 

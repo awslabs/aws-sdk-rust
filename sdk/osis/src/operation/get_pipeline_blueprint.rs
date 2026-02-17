@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pipeline_bluep
     }
 }
 
-pub use crate::operation::get_pipeline_blueprint::_get_pipeline_blueprint_output::GetPipelineBlueprintOutput;
-
 pub use crate::operation::get_pipeline_blueprint::_get_pipeline_blueprint_input::GetPipelineBlueprintInput;
+
+pub use crate::operation::get_pipeline_blueprint::_get_pipeline_blueprint_output::GetPipelineBlueprintOutput;
 
 mod _get_pipeline_blueprint_input;
 

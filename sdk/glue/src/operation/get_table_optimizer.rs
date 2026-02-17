@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_optimize
     }
 }
 
-pub use crate::operation::get_table_optimizer::_get_table_optimizer_output::GetTableOptimizerOutput;
-
 pub use crate::operation::get_table_optimizer::_get_table_optimizer_input::GetTableOptimizerInput;
+
+pub use crate::operation::get_table_optimizer::_get_table_optimizer_output::GetTableOptimizerOutput;
 
 mod _get_table_optimizer_input;
 

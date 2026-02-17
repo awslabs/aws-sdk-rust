@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_attribute_grou
     }
 }
 
-pub use crate::operation::get_attribute_group::_get_attribute_group_output::GetAttributeGroupOutput;
-
 pub use crate::operation::get_attribute_group::_get_attribute_group_input::GetAttributeGroupInput;
+
+pub use crate::operation::get_attribute_group::_get_attribute_group_output::GetAttributeGroupOutput;
 
 mod _get_attribute_group_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_read_set_act
     }
 }
 
-pub use crate::operation::start_read_set_activation_job::_start_read_set_activation_job_output::StartReadSetActivationJobOutput;
-
 pub use crate::operation::start_read_set_activation_job::_start_read_set_activation_job_input::StartReadSetActivationJobInput;
+
+pub use crate::operation::start_read_set_activation_job::_start_read_set_activation_job_output::StartReadSetActivationJobOutput;
 
 mod _start_read_set_activation_job_input;
 

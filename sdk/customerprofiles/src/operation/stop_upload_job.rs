@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_upload_job::S
     }
 }
 
-pub use crate::operation::stop_upload_job::_stop_upload_job_output::StopUploadJobOutput;
-
 pub use crate::operation::stop_upload_job::_stop_upload_job_input::StopUploadJobInput;
+
+pub use crate::operation::stop_upload_job::_stop_upload_job_output::StopUploadJobOutput;
 
 mod _stop_upload_job_input;
 

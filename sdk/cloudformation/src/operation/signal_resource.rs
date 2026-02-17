@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::signal_resource::S
     }
 }
 
-pub use crate::operation::signal_resource::_signal_resource_output::SignalResourceOutput;
-
 pub use crate::operation::signal_resource::_signal_resource_input::SignalResourceInput;
+
+pub use crate::operation::signal_resource::_signal_resource_output::SignalResourceOutput;
 
 mod _signal_resource_input;
 

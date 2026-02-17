@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sparql_stat
     }
 }
 
-pub use crate::operation::delete_sparql_statistics::_delete_sparql_statistics_output::DeleteSparqlStatisticsOutput;
-
 pub use crate::operation::delete_sparql_statistics::_delete_sparql_statistics_input::DeleteSparqlStatisticsInput;
+
+pub use crate::operation::delete_sparql_statistics::_delete_sparql_statistics_output::DeleteSparqlStatisticsOutput;
 
 mod _delete_sparql_statistics_input;
 

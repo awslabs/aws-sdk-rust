@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_managed_pre
     }
 }
 
-pub use crate::operation::modify_managed_prefix_list::_modify_managed_prefix_list_output::ModifyManagedPrefixListOutput;
-
 pub use crate::operation::modify_managed_prefix_list::_modify_managed_prefix_list_input::ModifyManagedPrefixListInput;
+
+pub use crate::operation::modify_managed_prefix_list::_modify_managed_prefix_list_output::ModifyManagedPrefixListOutput;
 
 mod _modify_managed_prefix_list_input;
 

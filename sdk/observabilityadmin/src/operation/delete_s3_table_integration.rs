@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_s3_table_in
     }
 }
 
-pub use crate::operation::delete_s3_table_integration::_delete_s3_table_integration_output::DeleteS3TableIntegrationOutput;
-
 pub use crate::operation::delete_s3_table_integration::_delete_s3_table_integration_input::DeleteS3TableIntegrationInput;
+
+pub use crate::operation::delete_s3_table_integration::_delete_s3_table_integration_output::DeleteS3TableIntegrationOutput;
 
 mod _delete_s3_table_integration_input;
 

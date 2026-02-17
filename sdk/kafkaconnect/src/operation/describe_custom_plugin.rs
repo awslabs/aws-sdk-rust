@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_pl
     }
 }
 
-pub use crate::operation::describe_custom_plugin::_describe_custom_plugin_output::DescribeCustomPluginOutput;
-
 pub use crate::operation::describe_custom_plugin::_describe_custom_plugin_input::DescribeCustomPluginInput;
+
+pub use crate::operation::describe_custom_plugin::_describe_custom_plugin_output::DescribeCustomPluginOutput;
 
 mod _describe_custom_plugin_input;
 

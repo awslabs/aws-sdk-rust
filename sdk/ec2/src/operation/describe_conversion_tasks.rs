@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_conversio
     }
 }
 
-pub use crate::operation::describe_conversion_tasks::_describe_conversion_tasks_output::DescribeConversionTasksOutput;
-
 pub use crate::operation::describe_conversion_tasks::_describe_conversion_tasks_input::DescribeConversionTasksInput;
+
+pub use crate::operation::describe_conversion_tasks::_describe_conversion_tasks_output::DescribeConversionTasksOutput;
 
 mod _describe_conversion_tasks_input;
 

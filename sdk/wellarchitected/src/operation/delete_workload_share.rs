@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workload_sh
     }
 }
 
-pub use crate::operation::delete_workload_share::_delete_workload_share_output::DeleteWorkloadShareOutput;
-
 pub use crate::operation::delete_workload_share::_delete_workload_share_input::DeleteWorkloadShareInput;
+
+pub use crate::operation::delete_workload_share::_delete_workload_share_output::DeleteWorkloadShareOutput;
 
 mod _delete_workload_share_input;
 

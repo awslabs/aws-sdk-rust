@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_serverless_
     }
 }
 
-pub use crate::operation::delete_serverless_cache::_delete_serverless_cache_output::DeleteServerlessCacheOutput;
-
 pub use crate::operation::delete_serverless_cache::_delete_serverless_cache_input::DeleteServerlessCacheInput;
+
+pub use crate::operation::delete_serverless_cache::_delete_serverless_cache_output::DeleteServerlessCacheOutput;
 
 mod _delete_serverless_cache_input;
 

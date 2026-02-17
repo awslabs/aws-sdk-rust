@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unassign_private_n
     }
 }
 
-pub use crate::operation::unassign_private_nat_gateway_address::_unassign_private_nat_gateway_address_output::UnassignPrivateNatGatewayAddressOutput;
-
 pub use crate::operation::unassign_private_nat_gateway_address::_unassign_private_nat_gateway_address_input::UnassignPrivateNatGatewayAddressInput;
+
+pub use crate::operation::unassign_private_nat_gateway_address::_unassign_private_nat_gateway_address_output::UnassignPrivateNatGatewayAddressOutput;
 
 mod _unassign_private_nat_gateway_address_input;
 

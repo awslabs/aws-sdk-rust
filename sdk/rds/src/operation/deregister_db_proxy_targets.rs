@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_db_prox
     }
 }
 
-pub use crate::operation::deregister_db_proxy_targets::_deregister_db_proxy_targets_output::DeregisterDbProxyTargetsOutput;
-
 pub use crate::operation::deregister_db_proxy_targets::_deregister_db_proxy_targets_input::DeregisterDbProxyTargetsInput;
+
+pub use crate::operation::deregister_db_proxy_targets::_deregister_db_proxy_targets_output::DeregisterDbProxyTargetsOutput;
 
 mod _deregister_db_proxy_targets_input;
 

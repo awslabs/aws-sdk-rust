@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_connecti
     }
 }
 
-pub use crate::operation::associate_connection_with_lag::_associate_connection_with_lag_output::AssociateConnectionWithLagOutput;
-
 pub use crate::operation::associate_connection_with_lag::_associate_connection_with_lag_input::AssociateConnectionWithLagInput;
+
+pub use crate::operation::associate_connection_with_lag::_associate_connection_with_lag_output::AssociateConnectionWithLagOutput;
 
 mod _associate_connection_with_lag_input;
 

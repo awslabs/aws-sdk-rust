@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_email_address_
     }
 }
 
-pub use crate::operation::get_email_address_insights::_get_email_address_insights_output::GetEmailAddressInsightsOutput;
-
 pub use crate::operation::get_email_address_insights::_get_email_address_insights_input::GetEmailAddressInsightsInput;
+
+pub use crate::operation::get_email_address_insights::_get_email_address_insights_output::GetEmailAddressInsightsOutput;
 
 mod _get_email_address_insights_input;
 

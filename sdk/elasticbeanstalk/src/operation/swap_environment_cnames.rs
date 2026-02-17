@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::swap_environment_c
     }
 }
 
-pub use crate::operation::swap_environment_cnames::_swap_environment_cnames_output::SwapEnvironmentCnamEsOutput;
-
 pub use crate::operation::swap_environment_cnames::_swap_environment_cnames_input::SwapEnvironmentCnamEsInput;
+
+pub use crate::operation::swap_environment_cnames::_swap_environment_cnames_output::SwapEnvironmentCnamEsOutput;
 
 mod _swap_environment_cnames_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_queues::Sea
     }
 }
 
-pub use crate::operation::search_queues::_search_queues_output::SearchQueuesOutput;
-
 pub use crate::operation::search_queues::_search_queues_input::SearchQueuesInput;
+
+pub use crate::operation::search_queues::_search_queues_output::SearchQueuesOutput;
 
 mod _search_queues_input;
 

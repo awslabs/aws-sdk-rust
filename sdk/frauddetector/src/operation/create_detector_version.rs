@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_detector_ve
     }
 }
 
-pub use crate::operation::create_detector_version::_create_detector_version_output::CreateDetectorVersionOutput;
-
 pub use crate::operation::create_detector_version::_create_detector_version_input::CreateDetectorVersionInput;
+
+pub use crate::operation::create_detector_version::_create_detector_version_output::CreateDetectorVersionOutput;
 
 mod _create_detector_version_input;
 

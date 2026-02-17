@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vault_notif
     }
 }
 
-pub use crate::operation::delete_vault_notifications::_delete_vault_notifications_output::DeleteVaultNotificationsOutput;
-
 pub use crate::operation::delete_vault_notifications::_delete_vault_notifications_input::DeleteVaultNotificationsInput;
+
+pub use crate::operation::delete_vault_notifications::_delete_vault_notifications_output::DeleteVaultNotificationsOutput;
 
 mod _delete_vault_notifications_input;
 

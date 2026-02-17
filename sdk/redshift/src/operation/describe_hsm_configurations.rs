@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hsm_confi
     }
 }
 
-pub use crate::operation::describe_hsm_configurations::_describe_hsm_configurations_output::DescribeHsmConfigurationsOutput;
-
 pub use crate::operation::describe_hsm_configurations::_describe_hsm_configurations_input::DescribeHsmConfigurationsInput;
+
+pub use crate::operation::describe_hsm_configurations::_describe_hsm_configurations_output::DescribeHsmConfigurationsOutput;
 
 mod _describe_hsm_configurations_input;
 

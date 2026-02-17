@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ai_guardrails
     }
 }
 
-pub use crate::operation::list_ai_guardrails::_list_ai_guardrails_output::ListAiGuardrailsOutput;
-
 pub use crate::operation::list_ai_guardrails::_list_ai_guardrails_input::ListAiGuardrailsInput;
+
+pub use crate::operation::list_ai_guardrails::_list_ai_guardrails_output::ListAiGuardrailsOutput;
 
 mod _list_ai_guardrails_input;
 

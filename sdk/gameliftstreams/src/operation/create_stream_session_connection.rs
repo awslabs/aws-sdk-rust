@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stream_sess
     }
 }
 
-pub use crate::operation::create_stream_session_connection::_create_stream_session_connection_output::CreateStreamSessionConnectionOutput;
-
 pub use crate::operation::create_stream_session_connection::_create_stream_session_connection_input::CreateStreamSessionConnectionInput;
+
+pub use crate::operation::create_stream_session_connection::_create_stream_session_connection_output::CreateStreamSessionConnectionOutput;
 
 mod _create_stream_session_connection_input;
 

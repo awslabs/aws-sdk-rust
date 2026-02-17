@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_metr
     }
 }
 
-pub use crate::operation::delete_bucket_metrics_configuration::_delete_bucket_metrics_configuration_output::DeleteBucketMetricsConfigurationOutput;
-
 pub use crate::operation::delete_bucket_metrics_configuration::_delete_bucket_metrics_configuration_input::DeleteBucketMetricsConfigurationInput;
+
+pub use crate::operation::delete_bucket_metrics_configuration::_delete_bucket_metrics_configuration_output::DeleteBucketMetricsConfigurationOutput;
 
 mod _delete_bucket_metrics_configuration_input;
 

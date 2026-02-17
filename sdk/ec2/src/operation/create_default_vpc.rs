@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_default_vpc
     }
 }
 
-pub use crate::operation::create_default_vpc::_create_default_vpc_output::CreateDefaultVpcOutput;
-
 pub use crate::operation::create_default_vpc::_create_default_vpc_input::CreateDefaultVpcInput;
+
+pub use crate::operation::create_default_vpc::_create_default_vpc_output::CreateDefaultVpcOutput;
 
 mod _create_default_vpc_input;
 

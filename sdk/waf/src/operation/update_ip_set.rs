@@ -484,9 +484,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ip_set::Upd
     }
 }
 
-pub use crate::operation::update_ip_set::_update_ip_set_output::UpdateIpSetOutput;
-
 pub use crate::operation::update_ip_set::_update_ip_set_input::UpdateIpSetInput;
+
+pub use crate::operation::update_ip_set::_update_ip_set_output::UpdateIpSetOutput;
 
 mod _update_ip_set_input;
 

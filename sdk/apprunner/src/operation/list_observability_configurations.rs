@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_observability
     }
 }
 
-pub use crate::operation::list_observability_configurations::_list_observability_configurations_output::ListObservabilityConfigurationsOutput;
-
 pub use crate::operation::list_observability_configurations::_list_observability_configurations_input::ListObservabilityConfigurationsInput;
+
+pub use crate::operation::list_observability_configurations::_list_observability_configurations_output::ListObservabilityConfigurationsOutput;
 
 mod _list_observability_configurations_input;
 

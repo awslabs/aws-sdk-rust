@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bucket_metric
     }
 }
 
-pub use crate::operation::list_bucket_metrics_configurations::_list_bucket_metrics_configurations_output::ListBucketMetricsConfigurationsOutput;
-
 pub use crate::operation::list_bucket_metrics_configurations::_list_bucket_metrics_configurations_input::ListBucketMetricsConfigurationsInput;
+
+pub use crate::operation::list_bucket_metrics_configurations::_list_bucket_metrics_configurations_output::ListBucketMetricsConfigurationsOutput;
 
 mod _list_bucket_metrics_configurations_input;
 

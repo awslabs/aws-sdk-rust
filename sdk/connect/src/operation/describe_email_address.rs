@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_email_add
     }
 }
 
-pub use crate::operation::describe_email_address::_describe_email_address_output::DescribeEmailAddressOutput;
-
 pub use crate::operation::describe_email_address::_describe_email_address_input::DescribeEmailAddressInput;
+
+pub use crate::operation::describe_email_address::_describe_email_address_output::DescribeEmailAddressOutput;
 
 mod _describe_email_address_input;
 

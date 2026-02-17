@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_view::GetViewE
     }
 }
 
-pub use crate::operation::get_view::_get_view_output::GetViewOutput;
-
 pub use crate::operation::get_view::_get_view_input::GetViewInput;
+
+pub use crate::operation::get_view::_get_view_output::GetViewOutput;
 
 mod _get_view_input;
 

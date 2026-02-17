@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_network_i
     }
 }
 
-pub use crate::operation::describe_network_insights_paths::_describe_network_insights_paths_output::DescribeNetworkInsightsPathsOutput;
-
 pub use crate::operation::describe_network_insights_paths::_describe_network_insights_paths_input::DescribeNetworkInsightsPathsInput;
+
+pub use crate::operation::describe_network_insights_paths::_describe_network_insights_paths_output::DescribeNetworkInsightsPathsOutput;
 
 mod _describe_network_insights_paths_input;
 

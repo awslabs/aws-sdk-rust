@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user::GetUserE
     }
 }
 
-pub use crate::operation::get_user::_get_user_output::GetUserOutput;
-
 pub use crate::operation::get_user::_get_user_input::GetUserInput;
+
+pub use crate::operation::get_user::_get_user_output::GetUserOutput;
 
 mod _get_user_input;
 

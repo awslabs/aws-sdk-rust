@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_org_ec2_deep_inspection_configuration::_update_org_ec2_deep_inspection_configuration_output::UpdateOrgEc2DeepInspectionConfigurationOutput;
-
 pub use crate::operation::update_org_ec2_deep_inspection_configuration::_update_org_ec2_deep_inspection_configuration_input::UpdateOrgEc2DeepInspectionConfigurationInput;
+
+pub use crate::operation::update_org_ec2_deep_inspection_configuration::_update_org_ec2_deep_inspection_configuration_output::UpdateOrgEc2DeepInspectionConfigurationOutput;
 
 mod _update_org_ec2_deep_inspection_configuration_input;
 

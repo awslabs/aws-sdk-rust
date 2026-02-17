@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_lake_e
     }
 }
 
-pub use crate::operation::update_data_lake_exception_subscription::_update_data_lake_exception_subscription_output::UpdateDataLakeExceptionSubscriptionOutput;
-
 pub use crate::operation::update_data_lake_exception_subscription::_update_data_lake_exception_subscription_input::UpdateDataLakeExceptionSubscriptionInput;
+
+pub use crate::operation::update_data_lake_exception_subscription::_update_data_lake_exception_subscription_output::UpdateDataLakeExceptionSubscriptionOutput;
 
 mod _update_data_lake_exception_subscription_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_agent_versi
     }
 }
 
-pub use crate::operation::delete_agent_version::_delete_agent_version_output::DeleteAgentVersionOutput;
-
 pub use crate::operation::delete_agent_version::_delete_agent_version_input::DeleteAgentVersionInput;
+
+pub use crate::operation::delete_agent_version::_delete_agent_version_output::DeleteAgentVersionOutput;
 
 mod _delete_agent_version_input;
 

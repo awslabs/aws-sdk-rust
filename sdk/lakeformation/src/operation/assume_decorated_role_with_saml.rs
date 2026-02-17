@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_decorated_r
     }
 }
 
-pub use crate::operation::assume_decorated_role_with_saml::_assume_decorated_role_with_saml_output::AssumeDecoratedRoleWithSamlOutput;
-
 pub use crate::operation::assume_decorated_role_with_saml::_assume_decorated_role_with_saml_input::AssumeDecoratedRoleWithSamlInput;
+
+pub use crate::operation::assume_decorated_role_with_saml::_assume_decorated_role_with_saml_output::AssumeDecoratedRoleWithSamlOutput;
 
 mod _assume_decorated_role_with_saml_input;
 

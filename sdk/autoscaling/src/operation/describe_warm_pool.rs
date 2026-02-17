@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_warm_pool
     }
 }
 
-pub use crate::operation::describe_warm_pool::_describe_warm_pool_output::DescribeWarmPoolOutput;
-
 pub use crate::operation::describe_warm_pool::_describe_warm_pool_input::DescribeWarmPoolInput;
+
+pub use crate::operation::describe_warm_pool::_describe_warm_pool_output::DescribeWarmPoolOutput;
 
 mod _describe_warm_pool_input;
 

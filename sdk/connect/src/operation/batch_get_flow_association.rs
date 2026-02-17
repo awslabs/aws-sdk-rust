@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_flow_ass
     }
 }
 
-pub use crate::operation::batch_get_flow_association::_batch_get_flow_association_output::BatchGetFlowAssociationOutput;
-
 pub use crate::operation::batch_get_flow_association::_batch_get_flow_association_input::BatchGetFlowAssociationInput;
+
+pub use crate::operation::batch_get_flow_association::_batch_get_flow_association_output::BatchGetFlowAssociationOutput;
 
 mod _batch_get_flow_association_input;
 

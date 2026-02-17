@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployment_tar
     }
 }
 
-pub use crate::operation::get_deployment_target::_get_deployment_target_output::GetDeploymentTargetOutput;
-
 pub use crate::operation::get_deployment_target::_get_deployment_target_input::GetDeploymentTargetInput;
+
+pub use crate::operation::get_deployment_target::_get_deployment_target_output::GetDeploymentTargetOutput;
 
 mod _get_deployment_target_input;
 

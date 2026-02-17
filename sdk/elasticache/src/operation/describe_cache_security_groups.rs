@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_sec
     }
 }
 
-pub use crate::operation::describe_cache_security_groups::_describe_cache_security_groups_output::DescribeCacheSecurityGroupsOutput;
-
 pub use crate::operation::describe_cache_security_groups::_describe_cache_security_groups_input::DescribeCacheSecurityGroupsInput;
+
+pub use crate::operation::describe_cache_security_groups::_describe_cache_security_groups_output::DescribeCacheSecurityGroupsOutput;
 
 mod _describe_cache_security_groups_input;
 

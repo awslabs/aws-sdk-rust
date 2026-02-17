@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cloud_exadata
     }
 }
 
-pub use crate::operation::list_cloud_exadata_infrastructures::_list_cloud_exadata_infrastructures_output::ListCloudExadataInfrastructuresOutput;
-
 pub use crate::operation::list_cloud_exadata_infrastructures::_list_cloud_exadata_infrastructures_input::ListCloudExadataInfrastructuresInput;
+
+pub use crate::operation::list_cloud_exadata_infrastructures::_list_cloud_exadata_infrastructures_output::ListCloudExadataInfrastructuresOutput;
 
 mod _list_cloud_exadata_infrastructures_input;
 

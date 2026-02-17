@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_fuota_task::Ge
     }
 }
 
-pub use crate::operation::get_fuota_task::_get_fuota_task_output::GetFuotaTaskOutput;
-
 pub use crate::operation::get_fuota_task::_get_fuota_task_input::GetFuotaTaskInput;
+
+pub use crate::operation::get_fuota_task::_get_fuota_task_output::GetFuotaTaskOutput;
 
 mod _get_fuota_task_input;
 

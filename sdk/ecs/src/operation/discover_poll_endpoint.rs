@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::discover_poll_endp
     }
 }
 
-pub use crate::operation::discover_poll_endpoint::_discover_poll_endpoint_output::DiscoverPollEndpointOutput;
-
 pub use crate::operation::discover_poll_endpoint::_discover_poll_endpoint_input::DiscoverPollEndpointInput;
+
+pub use crate::operation::discover_poll_endpoint::_discover_poll_endpoint_output::DiscoverPollEndpointOutput;
 
 mod _discover_poll_endpoint_input;
 

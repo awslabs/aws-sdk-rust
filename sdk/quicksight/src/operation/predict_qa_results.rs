@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::predict_qa_results
     }
 }
 
-pub use crate::operation::predict_qa_results::_predict_qa_results_output::PredictQaResultsOutput;
-
 pub use crate::operation::predict_qa_results::_predict_qa_results_input::PredictQaResultsInput;
+
+pub use crate::operation::predict_qa_results::_predict_qa_results_output::PredictQaResultsOutput;
 
 mod _predict_qa_results_input;
 

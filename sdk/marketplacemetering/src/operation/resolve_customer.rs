@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resolve_customer::
     }
 }
 
-pub use crate::operation::resolve_customer::_resolve_customer_output::ResolveCustomerOutput;
-
 pub use crate::operation::resolve_customer::_resolve_customer_input::ResolveCustomerInput;
+
+pub use crate::operation::resolve_customer::_resolve_customer_output::ResolveCustomerOutput;
 
 mod _resolve_customer_input;
 

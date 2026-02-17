@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configuration
     }
 }
 
-pub use crate::operation::list_configuration_history::_list_configuration_history_output::ListConfigurationHistoryOutput;
-
 pub use crate::operation::list_configuration_history::_list_configuration_history_input::ListConfigurationHistoryInput;
+
+pub use crate::operation::list_configuration_history::_list_configuration_history_output::ListConfigurationHistoryOutput;
 
 mod _list_configuration_history_input;
 

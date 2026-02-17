@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_attribute_valu
     }
 }
 
-pub use crate::operation::get_attribute_values::_get_attribute_values_output::GetAttributeValuesOutput;
-
 pub use crate::operation::get_attribute_values::_get_attribute_values_input::GetAttributeValuesInput;
+
+pub use crate::operation::get_attribute_values::_get_attribute_values_output::GetAttributeValuesOutput;
 
 mod _get_attribute_values_input;
 

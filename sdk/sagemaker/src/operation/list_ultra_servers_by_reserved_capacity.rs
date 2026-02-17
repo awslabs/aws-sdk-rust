@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ultra_servers
     }
 }
 
-pub use crate::operation::list_ultra_servers_by_reserved_capacity::_list_ultra_servers_by_reserved_capacity_output::ListUltraServersByReservedCapacityOutput;
-
 pub use crate::operation::list_ultra_servers_by_reserved_capacity::_list_ultra_servers_by_reserved_capacity_input::ListUltraServersByReservedCapacityInput;
+
+pub use crate::operation::list_ultra_servers_by_reserved_capacity::_list_ultra_servers_by_reserved_capacity_output::ListUltraServersByReservedCapacityOutput;
 
 mod _list_ultra_servers_by_reserved_capacity_input;
 

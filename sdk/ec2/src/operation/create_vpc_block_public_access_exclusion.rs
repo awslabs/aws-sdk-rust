@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_block_p
     }
 }
 
-pub use crate::operation::create_vpc_block_public_access_exclusion::_create_vpc_block_public_access_exclusion_output::CreateVpcBlockPublicAccessExclusionOutput;
-
 pub use crate::operation::create_vpc_block_public_access_exclusion::_create_vpc_block_public_access_exclusion_input::CreateVpcBlockPublicAccessExclusionInput;
+
+pub use crate::operation::create_vpc_block_public_access_exclusion::_create_vpc_block_public_access_exclusion_output::CreateVpcBlockPublicAccessExclusionOutput;
 
 mod _create_vpc_block_public_access_exclusion_input;
 

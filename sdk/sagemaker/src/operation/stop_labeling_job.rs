@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_labeling_job:
     }
 }
 
-pub use crate::operation::stop_labeling_job::_stop_labeling_job_output::StopLabelingJobOutput;
-
 pub use crate::operation::stop_labeling_job::_stop_labeling_job_input::StopLabelingJobInput;
+
+pub use crate::operation::stop_labeling_job::_stop_labeling_job_output::StopLabelingJobOutput;
 
 mod _stop_labeling_job_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_personal_acces
     }
 }
 
-pub use crate::operation::get_personal_access_token_metadata::_get_personal_access_token_metadata_output::GetPersonalAccessTokenMetadataOutput;
-
 pub use crate::operation::get_personal_access_token_metadata::_get_personal_access_token_metadata_input::GetPersonalAccessTokenMetadataInput;
+
+pub use crate::operation::get_personal_access_token_metadata::_get_personal_access_token_metadata_output::GetPersonalAccessTokenMetadataOutput;
 
 mod _get_personal_access_token_metadata_input;
 

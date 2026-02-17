@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_insights_ref
     }
 }
 
-pub use crate::operation::start_insights_refresh::_start_insights_refresh_output::StartInsightsRefreshOutput;
-
 pub use crate::operation::start_insights_refresh::_start_insights_refresh_input::StartInsightsRefreshInput;
+
+pub use crate::operation::start_insights_refresh::_start_insights_refresh_output::StartInsightsRefreshOutput;
 
 mod _start_insights_refresh_input;
 

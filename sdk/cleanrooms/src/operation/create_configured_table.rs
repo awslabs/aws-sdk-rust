@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configured_
     }
 }
 
-pub use crate::operation::create_configured_table::_create_configured_table_output::CreateConfiguredTableOutput;
-
 pub use crate::operation::create_configured_table::_create_configured_table_input::CreateConfiguredTableInput;
+
+pub use crate::operation::create_configured_table::_create_configured_table_output::CreateConfiguredTableOutput;
 
 mod _create_configured_table_input;
 

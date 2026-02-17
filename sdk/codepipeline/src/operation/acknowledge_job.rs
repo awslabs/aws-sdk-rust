@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::acknowledge_job::A
     }
 }
 
-pub use crate::operation::acknowledge_job::_acknowledge_job_output::AcknowledgeJobOutput;
-
 pub use crate::operation::acknowledge_job::_acknowledge_job_input::AcknowledgeJobInput;
+
+pub use crate::operation::acknowledge_job::_acknowledge_job_output::AcknowledgeJobOutput;
 
 mod _acknowledge_job_input;
 

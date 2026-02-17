@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identity_pool
     }
 }
 
-pub use crate::operation::list_identity_pool_usage::_list_identity_pool_usage_output::ListIdentityPoolUsageOutput;
-
 pub use crate::operation::list_identity_pool_usage::_list_identity_pool_usage_input::ListIdentityPoolUsageInput;
+
+pub use crate::operation::list_identity_pool_usage::_list_identity_pool_usage_output::ListIdentityPoolUsageOutput;
 
 mod _list_identity_pool_usage_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_subscription::
     }
 }
 
-pub use crate::operation::get_subscription::_get_subscription_output::GetSubscriptionOutput;
-
 pub use crate::operation::get_subscription::_get_subscription_input::GetSubscriptionInput;
+
+pub use crate::operation::get_subscription::_get_subscription_output::GetSubscriptionOutput;
 
 mod _get_subscription_input;
 

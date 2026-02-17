@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_sol_network
     }
 }
 
-pub use crate::operation::cancel_sol_network_operation::_cancel_sol_network_operation_output::CancelSolNetworkOperationOutput;
-
 pub use crate::operation::cancel_sol_network_operation::_cancel_sol_network_operation_input::CancelSolNetworkOperationInput;
+
+pub use crate::operation::cancel_sol_network_operation::_cancel_sol_network_operation_output::CancelSolNetworkOperationOutput;
 
 mod _cancel_sol_network_operation_input;
 

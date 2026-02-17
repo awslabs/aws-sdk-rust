@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_orders::ListO
     }
 }
 
-pub use crate::operation::list_orders::_list_orders_output::ListOrdersOutput;
-
 pub use crate::operation::list_orders::_list_orders_input::ListOrdersInput;
+
+pub use crate::operation::list_orders::_list_orders_output::ListOrdersOutput;
 
 mod _list_orders_input;
 

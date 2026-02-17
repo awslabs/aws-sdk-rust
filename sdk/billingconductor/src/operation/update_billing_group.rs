@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_billing_gro
     }
 }
 
-pub use crate::operation::update_billing_group::_update_billing_group_output::UpdateBillingGroupOutput;
-
 pub use crate::operation::update_billing_group::_update_billing_group_input::UpdateBillingGroupInput;
+
+pub use crate::operation::update_billing_group::_update_billing_group_output::UpdateBillingGroupOutput;
 
 mod _update_billing_group_input;
 

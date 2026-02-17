@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disable_sagemaker_servicecatalog_portfolio::_disable_sagemaker_servicecatalog_portfolio_output::DisableSagemakerServicecatalogPortfolioOutput;
-
 pub use crate::operation::disable_sagemaker_servicecatalog_portfolio::_disable_sagemaker_servicecatalog_portfolio_input::DisableSagemakerServicecatalogPortfolioInput;
+
+pub use crate::operation::disable_sagemaker_servicecatalog_portfolio::_disable_sagemaker_servicecatalog_portfolio_output::DisableSagemakerServicecatalogPortfolioOutput;
 
 mod _disable_sagemaker_servicecatalog_portfolio_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_assessment_
     }
 }
 
-pub use crate::operation::create_assessment_target::_create_assessment_target_output::CreateAssessmentTargetOutput;
-
 pub use crate::operation::create_assessment_target::_create_assessment_target_input::CreateAssessmentTargetInput;
+
+pub use crate::operation::create_assessment_target::_create_assessment_target_output::CreateAssessmentTargetOutput;
 
 mod _create_assessment_target_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_vpc_classi
     }
 }
 
-pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_output::DisableVpcClassicLinkOutput;
-
 pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_input::DisableVpcClassicLinkInput;
+
+pub use crate::operation::disable_vpc_classic_link::_disable_vpc_classic_link_output::DisableVpcClassicLinkOutput;
 
 mod _disable_vpc_classic_link_input;
 

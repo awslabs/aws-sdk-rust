@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::approve_assignment
     }
 }
 
-pub use crate::operation::approve_assignment::_approve_assignment_output::ApproveAssignmentOutput;
-
 pub use crate::operation::approve_assignment::_approve_assignment_input::ApproveAssignmentInput;
+
+pub use crate::operation::approve_assignment::_approve_assignment_output::ApproveAssignmentOutput;
 
 mod _approve_assignment_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_replace_clus
     }
 }
 
-pub use crate::operation::batch_replace_cluster_nodes::_batch_replace_cluster_nodes_output::BatchReplaceClusterNodesOutput;
-
 pub use crate::operation::batch_replace_cluster_nodes::_batch_replace_cluster_nodes_input::BatchReplaceClusterNodesInput;
+
+pub use crate::operation::batch_replace_cluster_nodes::_batch_replace_cluster_nodes_output::BatchReplaceClusterNodesOutput;
 
 mod _batch_replace_cluster_nodes_input;
 

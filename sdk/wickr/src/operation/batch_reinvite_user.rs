@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_reinvite_use
     }
 }
 
-pub use crate::operation::batch_reinvite_user::_batch_reinvite_user_output::BatchReinviteUserOutput;
-
 pub use crate::operation::batch_reinvite_user::_batch_reinvite_user_input::BatchReinviteUserInput;
+
+pub use crate::operation::batch_reinvite_user::_batch_reinvite_user_output::BatchReinviteUserOutput;
 
 mod _batch_reinvite_user_input;
 

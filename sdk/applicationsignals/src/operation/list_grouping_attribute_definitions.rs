@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_grouping_attr
     }
 }
 
-pub use crate::operation::list_grouping_attribute_definitions::_list_grouping_attribute_definitions_output::ListGroupingAttributeDefinitionsOutput;
-
 pub use crate::operation::list_grouping_attribute_definitions::_list_grouping_attribute_definitions_input::ListGroupingAttributeDefinitionsInput;
+
+pub use crate::operation::list_grouping_attribute_definitions::_list_grouping_attribute_definitions_output::ListGroupingAttributeDefinitionsOutput;
 
 mod _list_grouping_attribute_definitions_input;
 

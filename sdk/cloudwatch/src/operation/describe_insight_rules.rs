@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_insight_r
     }
 }
 
-pub use crate::operation::describe_insight_rules::_describe_insight_rules_output::DescribeInsightRulesOutput;
-
 pub use crate::operation::describe_insight_rules::_describe_insight_rules_input::DescribeInsightRulesInput;
+
+pub use crate::operation::describe_insight_rules::_describe_insight_rules_output::DescribeInsightRulesOutput;
 
 mod _describe_insight_rules_input;
 

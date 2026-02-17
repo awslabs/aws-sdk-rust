@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_task_template
     }
 }
 
-pub use crate::operation::list_task_templates::_list_task_templates_output::ListTaskTemplatesOutput;
-
 pub use crate::operation::list_task_templates::_list_task_templates_input::ListTaskTemplatesInput;
+
+pub use crate::operation::list_task_templates::_list_task_templates_output::ListTaskTemplatesOutput;
 
 mod _list_task_templates_input;
 

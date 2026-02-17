@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_permissi
     }
 }
 
-pub use crate::operation::associate_permission::_associate_permission_output::AssociatePermissionOutput;
-
 pub use crate::operation::associate_permission::_associate_permission_input::AssociatePermissionInput;
+
+pub use crate::operation::associate_permission::_associate_permission_output::AssociatePermissionOutput;
 
 mod _associate_permission_input;
 

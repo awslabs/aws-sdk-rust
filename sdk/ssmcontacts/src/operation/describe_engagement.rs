@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_engagemen
     }
 }
 
-pub use crate::operation::describe_engagement::_describe_engagement_output::DescribeEngagementOutput;
-
 pub use crate::operation::describe_engagement::_describe_engagement_input::DescribeEngagementInput;
+
+pub use crate::operation::describe_engagement::_describe_engagement_output::DescribeEngagementOutput;
 
 mod _describe_engagement_input;
 

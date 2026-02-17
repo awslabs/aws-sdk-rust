@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_crawler_sched
     }
 }
 
-pub use crate::operation::stop_crawler_schedule::_stop_crawler_schedule_output::StopCrawlerScheduleOutput;
-
 pub use crate::operation::stop_crawler_schedule::_stop_crawler_schedule_input::StopCrawlerScheduleInput;
+
+pub use crate::operation::stop_crawler_schedule::_stop_crawler_schedule_output::StopCrawlerScheduleOutput;
 
 mod _stop_crawler_schedule_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_processes::
     }
 }
 
-pub use crate::operation::resume_processes::_resume_processes_output::ResumeProcessesOutput;
-
 pub use crate::operation::resume_processes::_resume_processes_input::ResumeProcessesInput;
+
+pub use crate::operation::resume_processes::_resume_processes_output::ResumeProcessesOutput;
 
 mod _resume_processes_input;
 

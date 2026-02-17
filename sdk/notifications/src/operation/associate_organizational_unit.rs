@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_organiza
     }
 }
 
-pub use crate::operation::associate_organizational_unit::_associate_organizational_unit_output::AssociateOrganizationalUnitOutput;
-
 pub use crate::operation::associate_organizational_unit::_associate_organizational_unit_input::AssociateOrganizationalUnitInput;
+
+pub use crate::operation::associate_organizational_unit::_associate_organizational_unit_output::AssociateOrganizationalUnitOutput;
 
 mod _associate_organizational_unit_input;
 

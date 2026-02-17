@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_channel::Sta
     }
 }
 
-pub use crate::operation::start_channel::_start_channel_output::StartChannelOutput;
-
 pub use crate::operation::start_channel::_start_channel_input::StartChannelInput;
+
+pub use crate::operation::start_channel::_start_channel_output::StartChannelOutput;
 
 mod _start_channel_input;
 

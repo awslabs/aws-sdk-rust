@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_endpoint_ac
     }
 }
 
-pub use crate::operation::create_endpoint_access::_create_endpoint_access_output::CreateEndpointAccessOutput;
-
 pub use crate::operation::create_endpoint_access::_create_endpoint_access_input::CreateEndpointAccessInput;
+
+pub use crate::operation::create_endpoint_access::_create_endpoint_access_output::CreateEndpointAccessOutput;
 
 mod _create_endpoint_access_input;
 

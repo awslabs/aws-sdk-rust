@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_commitment_pu
     }
 }
 
-pub use crate::operation::list_commitment_purchase_analyses::_list_commitment_purchase_analyses_output::ListCommitmentPurchaseAnalysesOutput;
-
 pub use crate::operation::list_commitment_purchase_analyses::_list_commitment_purchase_analyses_input::ListCommitmentPurchaseAnalysesInput;
+
+pub use crate::operation::list_commitment_purchase_analyses::_list_commitment_purchase_analyses_output::ListCommitmentPurchaseAnalysesOutput;
 
 mod _list_commitment_purchase_analyses_input;
 

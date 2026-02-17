@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instances_heal
     }
 }
 
-pub use crate::operation::get_instances_health_status::_get_instances_health_status_output::GetInstancesHealthStatusOutput;
-
 pub use crate::operation::get_instances_health_status::_get_instances_health_status_input::GetInstancesHealthStatusInput;
+
+pub use crate::operation::get_instances_health_status::_get_instances_health_status_output::GetInstancesHealthStatusOutput;
 
 mod _get_instances_health_status_input;
 

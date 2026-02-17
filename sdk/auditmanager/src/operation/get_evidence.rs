@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evidence::GetE
     }
 }
 
-pub use crate::operation::get_evidence::_get_evidence_output::GetEvidenceOutput;
-
 pub use crate::operation::get_evidence::_get_evidence_input::GetEvidenceInput;
+
+pub use crate::operation::get_evidence::_get_evidence_output::GetEvidenceOutput;
 
 mod _get_evidence_input;
 

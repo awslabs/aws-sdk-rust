@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_graph::Reset
     }
 }
 
-pub use crate::operation::reset_graph::_reset_graph_output::ResetGraphOutput;
-
 pub use crate::operation::reset_graph::_reset_graph_input::ResetGraphInput;
+
+pub use crate::operation::reset_graph::_reset_graph_output::ResetGraphOutput;
 
 mod _reset_graph_input;
 

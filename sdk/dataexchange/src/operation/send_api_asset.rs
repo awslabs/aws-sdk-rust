@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_api_asset::Se
     }
 }
 
-pub use crate::operation::send_api_asset::_send_api_asset_output::SendApiAssetOutput;
-
 pub use crate::operation::send_api_asset::_send_api_asset_input::SendApiAssetInput;
+
+pub use crate::operation::send_api_asset::_send_api_asset_output::SendApiAssetOutput;
 
 mod _send_api_asset_input;
 

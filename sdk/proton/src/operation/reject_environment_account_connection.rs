@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_environment
     }
 }
 
-pub use crate::operation::reject_environment_account_connection::_reject_environment_account_connection_output::RejectEnvironmentAccountConnectionOutput;
-
 pub use crate::operation::reject_environment_account_connection::_reject_environment_account_connection_input::RejectEnvironmentAccountConnectionInput;
+
+pub use crate::operation::reject_environment_account_connection::_reject_environment_account_connection_output::RejectEnvironmentAccountConnectionOutput;
 
 mod _reject_environment_account_connection_input;
 

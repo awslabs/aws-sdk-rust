@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_collection_
     }
 }
 
-pub use crate::operation::update_collection_group::_update_collection_group_output::UpdateCollectionGroupOutput;
-
 pub use crate::operation::update_collection_group::_update_collection_group_input::UpdateCollectionGroupInput;
+
+pub use crate::operation::update_collection_group::_update_collection_group_output::UpdateCollectionGroupOutput;
 
 mod _update_collection_group_input;
 

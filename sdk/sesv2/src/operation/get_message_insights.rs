@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_message_insigh
     }
 }
 
-pub use crate::operation::get_message_insights::_get_message_insights_output::GetMessageInsightsOutput;
-
 pub use crate::operation::get_message_insights::_get_message_insights_input::GetMessageInsightsInput;
+
+pub use crate::operation::get_message_insights::_get_message_insights_output::GetMessageInsightsOutput;
 
 mod _get_message_insights_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_bgp_failover
     }
 }
 
-pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_output::StartBgpFailoverTestOutput;
-
 pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_input::StartBgpFailoverTestInput;
+
+pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_output::StartBgpFailoverTestOutput;
 
 mod _start_bgp_failover_test_input;
 

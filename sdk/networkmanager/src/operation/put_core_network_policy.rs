@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_core_network_p
     }
 }
 
-pub use crate::operation::put_core_network_policy::_put_core_network_policy_output::PutCoreNetworkPolicyOutput;
-
 pub use crate::operation::put_core_network_policy::_put_core_network_policy_input::PutCoreNetworkPolicyInput;
+
+pub use crate::operation::put_core_network_policy::_put_core_network_policy_output::PutCoreNetworkPolicyOutput;
 
 mod _put_core_network_policy_input;
 

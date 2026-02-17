@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_id::GetIdError
     }
 }
 
-pub use crate::operation::get_id::_get_id_output::GetIdOutput;
-
 pub use crate::operation::get_id::_get_id_input::GetIdInput;
+
+pub use crate::operation::get_id::_get_id_output::GetIdOutput;
 
 mod _get_id_input;
 

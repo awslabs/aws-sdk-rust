@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_assoc
     }
 }
 
-pub use crate::operation::list_profile_associations::_list_profile_associations_output::ListProfileAssociationsOutput;
-
 pub use crate::operation::list_profile_associations::_list_profile_associations_input::ListProfileAssociationsInput;
+
+pub use crate::operation::list_profile_associations::_list_profile_associations_output::ListProfileAssociationsOutput;
 
 mod _list_profile_associations_input;
 

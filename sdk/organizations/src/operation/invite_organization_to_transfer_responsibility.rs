@@ -677,9 +677,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::invite_organization_to_transfer_responsibility::_invite_organization_to_transfer_responsibility_output::InviteOrganizationToTransferResponsibilityOutput;
-
 pub use crate::operation::invite_organization_to_transfer_responsibility::_invite_organization_to_transfer_responsibility_input::InviteOrganizationToTransferResponsibilityInput;
+
+pub use crate::operation::invite_organization_to_transfer_responsibility::_invite_organization_to_transfer_responsibility_output::InviteOrganizationToTransferResponsibilityOutput;
 
 mod _invite_organization_to_transfer_responsibility_input;
 

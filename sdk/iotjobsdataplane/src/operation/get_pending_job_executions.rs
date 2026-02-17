@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pending_job_ex
     }
 }
 
-pub use crate::operation::get_pending_job_executions::_get_pending_job_executions_output::GetPendingJobExecutionsOutput;
-
 pub use crate::operation::get_pending_job_executions::_get_pending_job_executions_input::GetPendingJobExecutionsInput;
+
+pub use crate::operation::get_pending_job_executions::_get_pending_job_executions_output::GetPendingJobExecutionsOutput;
 
 mod _get_pending_job_executions_input;
 

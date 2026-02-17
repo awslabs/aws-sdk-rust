@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_transit_gateway_peering_attachments::_describe_transit_gateway_peering_attachments_output::DescribeTransitGatewayPeeringAttachmentsOutput;
-
 pub use crate::operation::describe_transit_gateway_peering_attachments::_describe_transit_gateway_peering_attachments_input::DescribeTransitGatewayPeeringAttachmentsInput;
+
+pub use crate::operation::describe_transit_gateway_peering_attachments::_describe_transit_gateway_peering_attachments_output::DescribeTransitGatewayPeeringAttachmentsOutput;
 
 mod _describe_transit_gateway_peering_attachments_input;
 

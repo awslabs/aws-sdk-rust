@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sol_functio
     }
 }
 
-pub use crate::operation::update_sol_function_package::_update_sol_function_package_output::UpdateSolFunctionPackageOutput;
-
 pub use crate::operation::update_sol_function_package::_update_sol_function_package_input::UpdateSolFunctionPackageInput;
+
+pub use crate::operation::update_sol_function_package::_update_sol_function_package_output::UpdateSolFunctionPackageOutput;
 
 mod _update_sol_function_package_input;
 

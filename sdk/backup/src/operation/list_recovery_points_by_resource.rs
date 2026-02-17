@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recovery_poin
     }
 }
 
-pub use crate::operation::list_recovery_points_by_resource::_list_recovery_points_by_resource_output::ListRecoveryPointsByResourceOutput;
-
 pub use crate::operation::list_recovery_points_by_resource::_list_recovery_points_by_resource_input::ListRecoveryPointsByResourceInput;
+
+pub use crate::operation::list_recovery_points_by_resource::_list_recovery_points_by_resource_output::ListRecoveryPointsByResourceOutput;
 
 mod _list_recovery_points_by_resource_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_host_rese
     }
 }
 
-pub use crate::operation::describe_host_reservations::_describe_host_reservations_output::DescribeHostReservationsOutput;
-
 pub use crate::operation::describe_host_reservations::_describe_host_reservations_input::DescribeHostReservationsInput;
+
+pub use crate::operation::describe_host_reservations::_describe_host_reservations_output::DescribeHostReservationsOutput;
 
 mod _describe_host_reservations_input;
 

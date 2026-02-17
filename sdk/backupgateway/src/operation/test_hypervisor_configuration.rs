@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_hypervisor_co
     }
 }
 
-pub use crate::operation::test_hypervisor_configuration::_test_hypervisor_configuration_output::TestHypervisorConfigurationOutput;
-
 pub use crate::operation::test_hypervisor_configuration::_test_hypervisor_configuration_input::TestHypervisorConfigurationInput;
+
+pub use crate::operation::test_hypervisor_configuration::_test_hypervisor_configuration_output::TestHypervisorConfigurationOutput;
 
 mod _test_hypervisor_configuration_input;
 

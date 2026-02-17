@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sdi_source:
     }
 }
 
-pub use crate::operation::delete_sdi_source::_delete_sdi_source_output::DeleteSdiSourceOutput;
-
 pub use crate::operation::delete_sdi_source::_delete_sdi_source_input::DeleteSdiSourceInput;
+
+pub use crate::operation::delete_sdi_source::_delete_sdi_source_output::DeleteSdiSourceOutput;
 
 mod _delete_sdi_source_input;
 

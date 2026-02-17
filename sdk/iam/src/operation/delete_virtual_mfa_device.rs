@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_mfa
     }
 }
 
-pub use crate::operation::delete_virtual_mfa_device::_delete_virtual_mfa_device_output::DeleteVirtualMfaDeviceOutput;
-
 pub use crate::operation::delete_virtual_mfa_device::_delete_virtual_mfa_device_input::DeleteVirtualMfaDeviceInput;
+
+pub use crate::operation::delete_virtual_mfa_device::_delete_virtual_mfa_device_output::DeleteVirtualMfaDeviceOutput;
 
 mod _delete_virtual_mfa_device_input;
 

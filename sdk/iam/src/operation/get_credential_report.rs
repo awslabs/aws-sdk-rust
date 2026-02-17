@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_credential_rep
     }
 }
 
-pub use crate::operation::get_credential_report::_get_credential_report_output::GetCredentialReportOutput;
-
 pub use crate::operation::get_credential_report::_get_credential_report_input::GetCredentialReportInput;
+
+pub use crate::operation::get_credential_report::_get_credential_report_output::GetCredentialReportOutput;
 
 mod _get_credential_report_input;
 

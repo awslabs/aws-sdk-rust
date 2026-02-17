@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_knowledge_b
     }
 }
 
-pub use crate::operation::update_knowledge_base::_update_knowledge_base_output::UpdateKnowledgeBaseOutput;
-
 pub use crate::operation::update_knowledge_base::_update_knowledge_base_input::UpdateKnowledgeBaseInput;
+
+pub use crate::operation::update_knowledge_base::_update_knowledge_base_output::UpdateKnowledgeBaseOutput;
 
 mod _update_knowledge_base_input;
 

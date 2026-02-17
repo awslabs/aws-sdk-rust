@@ -741,9 +741,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::merge_pull_request
     }
 }
 
-pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_squash_output::MergePullRequestBySquashOutput;
-
 pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_squash_input::MergePullRequestBySquashInput;
+
+pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_squash_output::MergePullRequestBySquashOutput;
 
 mod _merge_pull_request_by_squash_input;
 

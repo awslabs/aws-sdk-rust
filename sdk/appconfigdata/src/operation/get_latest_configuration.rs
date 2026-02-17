@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_latest_configu
     }
 }
 
-pub use crate::operation::get_latest_configuration::_get_latest_configuration_output::GetLatestConfigurationOutput;
-
 pub use crate::operation::get_latest_configuration::_get_latest_configuration_input::GetLatestConfigurationInput;
+
+pub use crate::operation::get_latest_configuration::_get_latest_configuration_output::GetLatestConfigurationOutput;
 
 mod _get_latest_configuration_input;
 

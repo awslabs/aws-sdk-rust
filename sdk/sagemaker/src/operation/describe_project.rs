@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_project::
     }
 }
 
-pub use crate::operation::describe_project::_describe_project_output::DescribeProjectOutput;
-
 pub use crate::operation::describe_project::_describe_project_input::DescribeProjectInput;
+
+pub use crate::operation::describe_project::_describe_project_output::DescribeProjectOutput;
 
 mod _describe_project_input;
 

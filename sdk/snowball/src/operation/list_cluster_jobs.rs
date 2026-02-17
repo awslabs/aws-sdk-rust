@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cluster_jobs:
     }
 }
 
-pub use crate::operation::list_cluster_jobs::_list_cluster_jobs_output::ListClusterJobsOutput;
-
 pub use crate::operation::list_cluster_jobs::_list_cluster_jobs_input::ListClusterJobsInput;
+
+pub use crate::operation::list_cluster_jobs::_list_cluster_jobs_output::ListClusterJobsOutput;
 
 mod _list_cluster_jobs_input;
 

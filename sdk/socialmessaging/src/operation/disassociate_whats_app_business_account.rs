@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_whats
     }
 }
 
-pub use crate::operation::disassociate_whats_app_business_account::_disassociate_whats_app_business_account_output::DisassociateWhatsAppBusinessAccountOutput;
-
 pub use crate::operation::disassociate_whats_app_business_account::_disassociate_whats_app_business_account_input::DisassociateWhatsAppBusinessAccountInput;
+
+pub use crate::operation::disassociate_whats_app_business_account::_disassociate_whats_app_business_account_output::DisassociateWhatsAppBusinessAccountOutput;
 
 mod _disassociate_whats_app_business_account_input;
 

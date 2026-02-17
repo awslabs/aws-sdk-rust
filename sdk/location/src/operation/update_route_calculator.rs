@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_route_calcu
     }
 }
 
-pub use crate::operation::update_route_calculator::_update_route_calculator_output::UpdateRouteCalculatorOutput;
-
 pub use crate::operation::update_route_calculator::_update_route_calculator_input::UpdateRouteCalculatorInput;
+
+pub use crate::operation::update_route_calculator::_update_route_calculator_output::UpdateRouteCalculatorOutput;
 
 mod _update_route_calculator_input;
 

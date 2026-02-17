@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_integrati
     }
 }
 
-pub use crate::operation::get_data_integration_event::_get_data_integration_event_output::GetDataIntegrationEventOutput;
-
 pub use crate::operation::get_data_integration_event::_get_data_integration_event_input::GetDataIntegrationEventInput;
+
+pub use crate::operation::get_data_integration_event::_get_data_integration_event_output::GetDataIntegrationEventOutput;
 
 mod _get_data_integration_event_input;
 

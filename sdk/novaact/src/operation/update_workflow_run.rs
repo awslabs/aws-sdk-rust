@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workflow_ru
     }
 }
 
-pub use crate::operation::update_workflow_run::_update_workflow_run_output::UpdateWorkflowRunOutput;
-
 pub use crate::operation::update_workflow_run::_update_workflow_run_input::UpdateWorkflowRunInput;
+
+pub use crate::operation::update_workflow_run::_update_workflow_run_output::UpdateWorkflowRunOutput;
 
 mod _update_workflow_run_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_build_batch:
     }
 }
 
-pub use crate::operation::start_build_batch::_start_build_batch_output::StartBuildBatchOutput;
-
 pub use crate::operation::start_build_batch::_start_build_batch_input::StartBuildBatchInput;
+
+pub use crate::operation::start_build_batch::_start_build_batch_output::StartBuildBatchOutput;
 
 mod _start_build_batch_input;
 

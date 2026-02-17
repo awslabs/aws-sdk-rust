@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_changeset::Get
     }
 }
 
-pub use crate::operation::get_changeset::_get_changeset_output::GetChangesetOutput;
-
 pub use crate::operation::get_changeset::_get_changeset_input::GetChangesetInput;
+
+pub use crate::operation::get_changeset::_get_changeset_output::GetChangesetOutput;
 
 mod _get_changeset_input;
 

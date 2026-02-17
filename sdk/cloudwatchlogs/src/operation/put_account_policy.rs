@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_policy
     }
 }
 
-pub use crate::operation::put_account_policy::_put_account_policy_output::PutAccountPolicyOutput;
-
 pub use crate::operation::put_account_policy::_put_account_policy_input::PutAccountPolicyInput;
+
+pub use crate::operation::put_account_policy::_put_account_policy_output::PutAccountPolicyOutput;
 
 mod _put_account_policy_input;
 

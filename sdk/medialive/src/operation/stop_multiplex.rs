@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_multiplex::St
     }
 }
 
-pub use crate::operation::stop_multiplex::_stop_multiplex_output::StopMultiplexOutput;
-
 pub use crate::operation::stop_multiplex::_stop_multiplex_input::StopMultiplexInput;
+
+pub use crate::operation::stop_multiplex::_stop_multiplex_output::StopMultiplexOutput;
 
 mod _stop_multiplex_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_assume_role
     }
 }
 
-pub use crate::operation::update_assume_role_policy::_update_assume_role_policy_output::UpdateAssumeRolePolicyOutput;
-
 pub use crate::operation::update_assume_role_policy::_update_assume_role_policy_input::UpdateAssumeRolePolicyInput;
+
+pub use crate::operation::update_assume_role_policy::_update_assume_role_policy_output::UpdateAssumeRolePolicyOutput;
 
 mod _update_assume_role_policy_input;
 

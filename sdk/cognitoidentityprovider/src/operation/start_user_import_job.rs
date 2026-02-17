@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_user_import_
     }
 }
 
-pub use crate::operation::start_user_import_job::_start_user_import_job_output::StartUserImportJobOutput;
-
 pub use crate::operation::start_user_import_job::_start_user_import_job_input::StartUserImportJobInput;
+
+pub use crate::operation::start_user_import_job::_start_user_import_job_output::StartUserImportJobOutput;
 
 mod _start_user_import_job_input;
 

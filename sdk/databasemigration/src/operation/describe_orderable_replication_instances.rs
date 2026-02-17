@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_orderable
     }
 }
 
-pub use crate::operation::describe_orderable_replication_instances::_describe_orderable_replication_instances_output::DescribeOrderableReplicationInstancesOutput;
-
 pub use crate::operation::describe_orderable_replication_instances::_describe_orderable_replication_instances_input::DescribeOrderableReplicationInstancesInput;
+
+pub use crate::operation::describe_orderable_replication_instances::_describe_orderable_replication_instances_output::DescribeOrderableReplicationInstancesOutput;
 
 mod _describe_orderable_replication_instances_input;
 

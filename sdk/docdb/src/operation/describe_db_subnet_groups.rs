@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_subnet
     }
 }
 
-pub use crate::operation::describe_db_subnet_groups::_describe_db_subnet_groups_output::DescribeDbSubnetGroupsOutput;
-
 pub use crate::operation::describe_db_subnet_groups::_describe_db_subnet_groups_input::DescribeDbSubnetGroupsInput;
+
+pub use crate::operation::describe_db_subnet_groups::_describe_db_subnet_groups_output::DescribeDbSubnetGroupsOutput;
 
 mod _describe_db_subnet_groups_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_repository_pol
     }
 }
 
-pub use crate::operation::set_repository_policy::_set_repository_policy_output::SetRepositoryPolicyOutput;
-
 pub use crate::operation::set_repository_policy::_set_repository_policy_input::SetRepositoryPolicyInput;
+
+pub use crate::operation::set_repository_policy::_set_repository_policy_output::SetRepositoryPolicyOutput;
 
 mod _set_repository_policy_input;
 

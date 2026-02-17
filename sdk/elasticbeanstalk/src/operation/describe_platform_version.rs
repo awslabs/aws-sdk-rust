@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_platform_
     }
 }
 
-pub use crate::operation::describe_platform_version::_describe_platform_version_output::DescribePlatformVersionOutput;
-
 pub use crate::operation::describe_platform_version::_describe_platform_version_input::DescribePlatformVersionInput;
+
+pub use crate::operation::describe_platform_version::_describe_platform_version_output::DescribePlatformVersionOutput;
 
 mod _describe_platform_version_input;
 

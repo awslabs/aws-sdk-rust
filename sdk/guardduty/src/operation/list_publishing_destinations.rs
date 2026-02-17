@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_publishing_de
     }
 }
 
-pub use crate::operation::list_publishing_destinations::_list_publishing_destinations_output::ListPublishingDestinationsOutput;
-
 pub use crate::operation::list_publishing_destinations::_list_publishing_destinations_input::ListPublishingDestinationsInput;
+
+pub use crate::operation::list_publishing_destinations::_list_publishing_destinations_output::ListPublishingDestinationsOutput;
 
 mod _list_publishing_destinations_input;
 

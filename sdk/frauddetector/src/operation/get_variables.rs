@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_variables::Get
     }
 }
 
-pub use crate::operation::get_variables::_get_variables_output::GetVariablesOutput;
-
 pub use crate::operation::get_variables::_get_variables_input::GetVariablesInput;
+
+pub use crate::operation::get_variables::_get_variables_output::GetVariablesOutput;
 
 mod _get_variables_input;
 

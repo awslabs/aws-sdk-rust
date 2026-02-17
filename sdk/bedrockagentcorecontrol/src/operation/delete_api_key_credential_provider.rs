@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_api_key_cre
     }
 }
 
-pub use crate::operation::delete_api_key_credential_provider::_delete_api_key_credential_provider_output::DeleteApiKeyCredentialProviderOutput;
-
 pub use crate::operation::delete_api_key_credential_provider::_delete_api_key_credential_provider_input::DeleteApiKeyCredentialProviderInput;
+
+pub use crate::operation::delete_api_key_credential_provider::_delete_api_key_credential_provider_output::DeleteApiKeyCredentialProviderOutput;
 
 mod _delete_api_key_credential_provider_input;
 

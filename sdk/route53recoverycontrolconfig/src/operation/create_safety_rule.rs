@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_safety_rule
     }
 }
 
-pub use crate::operation::create_safety_rule::_create_safety_rule_output::CreateSafetyRuleOutput;
-
 pub use crate::operation::create_safety_rule::_create_safety_rule_input::CreateSafetyRuleInput;
+
+pub use crate::operation::create_safety_rule::_create_safety_rule_output::CreateSafetyRuleOutput;
 
 mod _create_safety_rule_input;
 

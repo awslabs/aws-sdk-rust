@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_latest_assessm
     }
 }
 
-pub use crate::operation::get_latest_assessment_id::_get_latest_assessment_id_output::GetLatestAssessmentIdOutput;
-
 pub use crate::operation::get_latest_assessment_id::_get_latest_assessment_id_input::GetLatestAssessmentIdInput;
+
+pub use crate::operation::get_latest_assessment_id::_get_latest_assessment_id_output::GetLatestAssessmentIdOutput;
 
 mod _get_latest_assessment_id_input;
 

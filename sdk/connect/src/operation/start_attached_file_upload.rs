@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_attached_fil
     }
 }
 
-pub use crate::operation::start_attached_file_upload::_start_attached_file_upload_output::StartAttachedFileUploadOutput;
-
 pub use crate::operation::start_attached_file_upload::_start_attached_file_upload_input::StartAttachedFileUploadInput;
+
+pub use crate::operation::start_attached_file_upload::_start_attached_file_upload_output::StartAttachedFileUploadOutput;
 
 mod _start_attached_file_upload_input;
 

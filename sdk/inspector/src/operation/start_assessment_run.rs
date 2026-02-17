@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_assessment_r
     }
 }
 
-pub use crate::operation::start_assessment_run::_start_assessment_run_output::StartAssessmentRunOutput;
-
 pub use crate::operation::start_assessment_run::_start_assessment_run_input::StartAssessmentRunInput;
+
+pub use crate::operation::start_assessment_run::_start_assessment_run_output::StartAssessmentRunOutput;
 
 mod _start_assessment_run_input;
 

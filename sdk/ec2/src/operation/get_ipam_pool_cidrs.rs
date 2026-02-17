@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_pool_cidr
     }
 }
 
-pub use crate::operation::get_ipam_pool_cidrs::_get_ipam_pool_cidrs_output::GetIpamPoolCidrsOutput;
-
 pub use crate::operation::get_ipam_pool_cidrs::_get_ipam_pool_cidrs_input::GetIpamPoolCidrsInput;
+
+pub use crate::operation::get_ipam_pool_cidrs::_get_ipam_pool_cidrs_output::GetIpamPoolCidrsOutput;
 
 mod _get_ipam_pool_cidrs_input;
 

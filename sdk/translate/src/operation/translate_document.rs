@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::translate_document
     }
 }
 
-pub use crate::operation::translate_document::_translate_document_output::TranslateDocumentOutput;
-
 pub use crate::operation::translate_document::_translate_document_input::TranslateDocumentInput;
+
+pub use crate::operation::translate_document::_translate_document_output::TranslateDocumentOutput;
 
 mod _translate_document_input;
 

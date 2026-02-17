@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_distribution
     }
 }
 
-pub use crate::operation::reset_distribution_cache::_reset_distribution_cache_output::ResetDistributionCacheOutput;
-
 pub use crate::operation::reset_distribution_cache::_reset_distribution_cache_input::ResetDistributionCacheInput;
+
+pub use crate::operation::reset_distribution_cache::_reset_distribution_cache_output::ResetDistributionCacheOutput;
 
 mod _reset_distribution_cache_input;
 

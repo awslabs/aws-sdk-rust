@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_build::Crea
     }
 }
 
-pub use crate::operation::create_build::_create_build_output::CreateBuildOutput;
-
 pub use crate::operation::create_build::_create_build_input::CreateBuildInput;
+
+pub use crate::operation::create_build::_create_build_output::CreateBuildOutput;
 
 mod _create_build_input;
 

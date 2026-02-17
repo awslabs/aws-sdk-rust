@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_impersonation_
     }
 }
 
-pub use crate::operation::get_impersonation_role_effect::_get_impersonation_role_effect_output::GetImpersonationRoleEffectOutput;
-
 pub use crate::operation::get_impersonation_role_effect::_get_impersonation_role_effect_input::GetImpersonationRoleEffectInput;
+
+pub use crate::operation::get_impersonation_role_effect::_get_impersonation_role_effect_output::GetImpersonationRoleEffectOutput;
 
 mod _get_impersonation_role_effect_input;
 

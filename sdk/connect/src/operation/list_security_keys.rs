@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_keys
     }
 }
 
-pub use crate::operation::list_security_keys::_list_security_keys_output::ListSecurityKeysOutput;
-
 pub use crate::operation::list_security_keys::_list_security_keys_input::ListSecurityKeysInput;
+
+pub use crate::operation::list_security_keys::_list_security_keys_output::ListSecurityKeysOutput;
 
 mod _list_security_keys_input;
 

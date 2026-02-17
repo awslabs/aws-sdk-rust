@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_automatic_t
     }
 }
 
-pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automatic_tape_creation_policy_output::DeleteAutomaticTapeCreationPolicyOutput;
-
 pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automatic_tape_creation_policy_input::DeleteAutomaticTapeCreationPolicyInput;
+
+pub use crate::operation::delete_automatic_tape_creation_policy::_delete_automatic_tape_creation_policy_output::DeleteAutomaticTapeCreationPolicyOutput;
 
 mod _delete_automatic_tape_creation_policy_input;
 

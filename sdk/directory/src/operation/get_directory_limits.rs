@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_directory_limi
     }
 }
 
-pub use crate::operation::get_directory_limits::_get_directory_limits_output::GetDirectoryLimitsOutput;
-
 pub use crate::operation::get_directory_limits::_get_directory_limits_input::GetDirectoryLimitsInput;
+
+pub use crate::operation::get_directory_limits::_get_directory_limits_output::GetDirectoryLimitsOutput;
 
 mod _get_directory_limits_input;
 

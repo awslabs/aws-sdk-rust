@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_static_ip
     }
 }
 
-pub use crate::operation::allocate_static_ip::_allocate_static_ip_output::AllocateStaticIpOutput;
-
 pub use crate::operation::allocate_static_ip::_allocate_static_ip_input::AllocateStaticIpInput;
+
+pub use crate::operation::allocate_static_ip::_allocate_static_ip_output::AllocateStaticIpOutput;
 
 mod _allocate_static_ip_input;
 

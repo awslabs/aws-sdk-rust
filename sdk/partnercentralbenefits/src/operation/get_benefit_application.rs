@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_benefit_applic
     }
 }
 
-pub use crate::operation::get_benefit_application::_get_benefit_application_output::GetBenefitApplicationOutput;
-
 pub use crate::operation::get_benefit_application::_get_benefit_application_input::GetBenefitApplicationInput;
+
+pub use crate::operation::get_benefit_application::_get_benefit_application_output::GetBenefitApplicationOutput;
 
 mod _get_benefit_application_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_cluste
     }
 }
 
-pub use crate::operation::describe_db_cluster_backtracks::_describe_db_cluster_backtracks_output::DescribeDbClusterBacktracksOutput;
-
 pub use crate::operation::describe_db_cluster_backtracks::_describe_db_cluster_backtracks_input::DescribeDbClusterBacktracksInput;
+
+pub use crate::operation::describe_db_cluster_backtracks::_describe_db_cluster_backtracks_output::DescribeDbClusterBacktracksOutput;
 
 mod _describe_db_cluster_backtracks_input;
 

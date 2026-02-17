@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_administrat
     }
 }
 
-pub use crate::operation::accept_administrator_invitation::_accept_administrator_invitation_output::AcceptAdministratorInvitationOutput;
-
 pub use crate::operation::accept_administrator_invitation::_accept_administrator_invitation_input::AcceptAdministratorInvitationInput;
+
+pub use crate::operation::accept_administrator_invitation::_accept_administrator_invitation_output::AcceptAdministratorInvitationOutput;
 
 mod _accept_administrator_invitation_input;
 

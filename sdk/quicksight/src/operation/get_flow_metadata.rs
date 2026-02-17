@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_flow_metadata:
     }
 }
 
-pub use crate::operation::get_flow_metadata::_get_flow_metadata_output::GetFlowMetadataOutput;
-
 pub use crate::operation::get_flow_metadata::_get_flow_metadata_input::GetFlowMetadataInput;
+
+pub use crate::operation::get_flow_metadata::_get_flow_metadata_output::GetFlowMetadataOutput;
 
 mod _get_flow_metadata_input;
 

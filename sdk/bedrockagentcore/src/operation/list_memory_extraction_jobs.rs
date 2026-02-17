@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_memory_extrac
     }
 }
 
-pub use crate::operation::list_memory_extraction_jobs::_list_memory_extraction_jobs_output::ListMemoryExtractionJobsOutput;
-
 pub use crate::operation::list_memory_extraction_jobs::_list_memory_extraction_jobs_input::ListMemoryExtractionJobsInput;
+
+pub use crate::operation::list_memory_extraction_jobs::_list_memory_extraction_jobs_output::ListMemoryExtractionJobsOutput;
 
 mod _list_memory_extraction_jobs_input;
 

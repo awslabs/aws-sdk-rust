@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_members::List
     }
 }
 
-pub use crate::operation::list_members::_list_members_output::ListMembersOutput;
-
 pub use crate::operation::list_members::_list_members_input::ListMembersInput;
+
+pub use crate::operation::list_members::_list_members_output::ListMembersOutput;
 
 mod _list_members_input;
 

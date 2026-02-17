@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_enabled_bas
     }
 }
 
-pub use crate::operation::update_enabled_baseline::_update_enabled_baseline_output::UpdateEnabledBaselineOutput;
-
 pub use crate::operation::update_enabled_baseline::_update_enabled_baseline_input::UpdateEnabledBaselineInput;
+
+pub use crate::operation::update_enabled_baseline::_update_enabled_baseline_output::UpdateEnabledBaselineOutput;
 
 mod _update_enabled_baseline_input;
 

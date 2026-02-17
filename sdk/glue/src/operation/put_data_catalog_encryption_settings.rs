@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_data_catalog_e
     }
 }
 
-pub use crate::operation::put_data_catalog_encryption_settings::_put_data_catalog_encryption_settings_output::PutDataCatalogEncryptionSettingsOutput;
-
 pub use crate::operation::put_data_catalog_encryption_settings::_put_data_catalog_encryption_settings_input::PutDataCatalogEncryptionSettingsInput;
+
+pub use crate::operation::put_data_catalog_encryption_settings::_put_data_catalog_encryption_settings_output::PutDataCatalogEncryptionSettingsOutput;
 
 mod _put_data_catalog_encryption_settings_input;
 

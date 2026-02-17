@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_db_parameter_g
     }
 }
 
-pub use crate::operation::get_db_parameter_group::_get_db_parameter_group_output::GetDbParameterGroupOutput;
-
 pub use crate::operation::get_db_parameter_group::_get_db_parameter_group_input::GetDbParameterGroupInput;
+
+pub use crate::operation::get_db_parameter_group::_get_db_parameter_group_output::GetDbParameterGroupOutput;
 
 mod _get_db_parameter_group_input;
 

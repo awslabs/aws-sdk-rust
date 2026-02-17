@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_registry_scann
     }
 }
 
-pub use crate::operation::put_registry_scanning_configuration::_put_registry_scanning_configuration_output::PutRegistryScanningConfigurationOutput;
-
 pub use crate::operation::put_registry_scanning_configuration::_put_registry_scanning_configuration_input::PutRegistryScanningConfigurationInput;
+
+pub use crate::operation::put_registry_scanning_configuration::_put_registry_scanning_configuration_output::PutRegistryScanningConfigurationOutput;
 
 mod _put_registry_scanning_configuration_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::apply_security_gro
     }
 }
 
-pub use crate::operation::apply_security_groups_to_load_balancer::_apply_security_groups_to_load_balancer_output::ApplySecurityGroupsToLoadBalancerOutput;
-
 pub use crate::operation::apply_security_groups_to_load_balancer::_apply_security_groups_to_load_balancer_input::ApplySecurityGroupsToLoadBalancerInput;
+
+pub use crate::operation::apply_security_groups_to_load_balancer::_apply_security_groups_to_load_balancer_output::ApplySecurityGroupsToLoadBalancerOutput;
 
 mod _apply_security_groups_to_load_balancer_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_encryption_key
     }
 }
 
-pub use crate::operation::get_encryption_key::_get_encryption_key_output::GetEncryptionKeyOutput;
-
 pub use crate::operation::get_encryption_key::_get_encryption_key_input::GetEncryptionKeyInput;
+
+pub use crate::operation::get_encryption_key::_get_encryption_key_output::GetEncryptionKeyOutput;
 
 mod _get_encryption_key_input;
 

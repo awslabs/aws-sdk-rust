@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_crl::Enable
     }
 }
 
-pub use crate::operation::enable_crl::_enable_crl_output::EnableCrlOutput;
-
 pub use crate::operation::enable_crl::_enable_crl_input::EnableCrlInput;
+
+pub use crate::operation::enable_crl::_enable_crl_output::EnableCrlOutput;
 
 mod _enable_crl_input;
 

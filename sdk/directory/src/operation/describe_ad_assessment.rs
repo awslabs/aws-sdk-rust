@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ad_assess
     }
 }
 
-pub use crate::operation::describe_ad_assessment::_describe_ad_assessment_output::DescribeAdAssessmentOutput;
-
 pub use crate::operation::describe_ad_assessment::_describe_ad_assessment_input::DescribeAdAssessmentInput;
+
+pub use crate::operation::describe_ad_assessment::_describe_ad_assessment_output::DescribeAdAssessmentOutput;
 
 mod _describe_ad_assessment_input;
 

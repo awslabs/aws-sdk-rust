@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_inbound_dmarc_
     }
 }
 
-pub use crate::operation::put_inbound_dmarc_settings::_put_inbound_dmarc_settings_output::PutInboundDmarcSettingsOutput;
-
 pub use crate::operation::put_inbound_dmarc_settings::_put_inbound_dmarc_settings_input::PutInboundDmarcSettingsInput;
+
+pub use crate::operation::put_inbound_dmarc_settings::_put_inbound_dmarc_settings_output::PutInboundDmarcSettingsOutput;
 
 mod _put_inbound_dmarc_settings_input;
 

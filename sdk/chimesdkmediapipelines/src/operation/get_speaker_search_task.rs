@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_speaker_search
     }
 }
 
-pub use crate::operation::get_speaker_search_task::_get_speaker_search_task_output::GetSpeakerSearchTaskOutput;
-
 pub use crate::operation::get_speaker_search_task::_get_speaker_search_task_input::GetSpeakerSearchTaskInput;
+
+pub use crate::operation::get_speaker_search_task::_get_speaker_search_task_output::GetSpeakerSearchTaskOutput;
 
 mod _get_speaker_search_task_input;
 

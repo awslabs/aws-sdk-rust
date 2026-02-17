@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sequence_st
     }
 }
 
-pub use crate::operation::create_sequence_store::_create_sequence_store_output::CreateSequenceStoreOutput;
-
 pub use crate::operation::create_sequence_store::_create_sequence_store_input::CreateSequenceStoreInput;
+
+pub use crate::operation::create_sequence_store::_create_sequence_store_output::CreateSequenceStoreOutput;
 
 mod _create_sequence_store_input;
 

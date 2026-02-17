@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_published_sch
     }
 }
 
-pub use crate::operation::list_published_schema_arns::_list_published_schema_arns_output::ListPublishedSchemaArnsOutput;
-
 pub use crate::operation::list_published_schema_arns::_list_published_schema_arns_input::ListPublishedSchemaArnsInput;
+
+pub use crate::operation::list_published_schema_arns::_list_published_schema_arns_output::ListPublishedSchemaArnsOutput;
 
 mod _list_published_schema_arns_input;
 

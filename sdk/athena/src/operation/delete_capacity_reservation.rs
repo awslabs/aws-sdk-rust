@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_capacity_re
     }
 }
 
-pub use crate::operation::delete_capacity_reservation::_delete_capacity_reservation_output::DeleteCapacityReservationOutput;
-
 pub use crate::operation::delete_capacity_reservation::_delete_capacity_reservation_input::DeleteCapacityReservationInput;
+
+pub use crate::operation::delete_capacity_reservation::_delete_capacity_reservation_output::DeleteCapacityReservationOutput;
 
 mod _delete_capacity_reservation_input;
 

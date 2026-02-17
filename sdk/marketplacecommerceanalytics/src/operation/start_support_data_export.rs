@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_support_data
     }
 }
 
-pub use crate::operation::start_support_data_export::_start_support_data_export_output::StartSupportDataExportOutput;
-
 pub use crate::operation::start_support_data_export::_start_support_data_export_input::StartSupportDataExportInput;
+
+pub use crate::operation::start_support_data_export::_start_support_data_export_output::StartSupportDataExportOutput;
 
 mod _start_support_data_export_input;
 

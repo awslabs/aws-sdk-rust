@@ -502,9 +502,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_propertygraph_
     }
 }
 
-pub use crate::operation::get_propertygraph_stream::_get_propertygraph_stream_output::GetPropertygraphStreamOutput;
-
 pub use crate::operation::get_propertygraph_stream::_get_propertygraph_stream_input::GetPropertygraphStreamInput;
+
+pub use crate::operation::get_propertygraph_stream::_get_propertygraph_stream_output::GetPropertygraphStreamOutput;
 
 mod _get_propertygraph_stream_input;
 

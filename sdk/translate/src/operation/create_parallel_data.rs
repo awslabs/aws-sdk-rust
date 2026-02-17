@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_parallel_da
     }
 }
 
-pub use crate::operation::create_parallel_data::_create_parallel_data_output::CreateParallelDataOutput;
-
 pub use crate::operation::create_parallel_data::_create_parallel_data_input::CreateParallelDataInput;
+
+pub use crate::operation::create_parallel_data::_create_parallel_data_output::CreateParallelDataOutput;
 
 mod _create_parallel_data_input;
 

@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_compilation_j
     }
 }
 
-pub use crate::operation::stop_compilation_job::_stop_compilation_job_output::StopCompilationJobOutput;
-
 pub use crate::operation::stop_compilation_job::_stop_compilation_job_input::StopCompilationJobInput;
+
+pub use crate::operation::stop_compilation_job::_stop_compilation_job_output::StopCompilationJobOutput;
 
 mod _stop_compilation_job_input;
 

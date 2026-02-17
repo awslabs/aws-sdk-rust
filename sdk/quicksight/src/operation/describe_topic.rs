@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_topic::De
     }
 }
 
-pub use crate::operation::describe_topic::_describe_topic_output::DescribeTopicOutput;
-
 pub use crate::operation::describe_topic::_describe_topic_input::DescribeTopicInput;
+
+pub use crate::operation::describe_topic::_describe_topic_output::DescribeTopicOutput;
 
 mod _describe_topic_input;
 

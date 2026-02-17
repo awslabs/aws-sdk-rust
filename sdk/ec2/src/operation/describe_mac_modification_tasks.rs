@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mac_modif
     }
 }
 
-pub use crate::operation::describe_mac_modification_tasks::_describe_mac_modification_tasks_output::DescribeMacModificationTasksOutput;
-
 pub use crate::operation::describe_mac_modification_tasks::_describe_mac_modification_tasks_input::DescribeMacModificationTasksInput;
+
+pub use crate::operation::describe_mac_modification_tasks::_describe_mac_modification_tasks_output::DescribeMacModificationTasksOutput;
 
 mod _describe_mac_modification_tasks_input;
 

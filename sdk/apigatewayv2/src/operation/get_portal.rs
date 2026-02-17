@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_portal::GetPor
     }
 }
 
-pub use crate::operation::get_portal::_get_portal_output::GetPortalOutput;
-
 pub use crate::operation::get_portal::_get_portal_input::GetPortalInput;
+
+pub use crate::operation::get_portal::_get_portal_output::GetPortalOutput;
 
 mod _get_portal_input;
 

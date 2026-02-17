@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_delivery_de
     }
 }
 
-pub use crate::operation::delete_delivery_destination_policy::_delete_delivery_destination_policy_output::DeleteDeliveryDestinationPolicyOutput;
-
 pub use crate::operation::delete_delivery_destination_policy::_delete_delivery_destination_policy_input::DeleteDeliveryDestinationPolicyInput;
+
+pub use crate::operation::delete_delivery_destination_policy::_delete_delivery_destination_policy_output::DeleteDeliveryDestinationPolicyOutput;
 
 mod _delete_delivery_destination_policy_input;
 

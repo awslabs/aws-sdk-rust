@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_bucket_metadata_table_configuration::_create_bucket_metadata_table_configuration_output::CreateBucketMetadataTableConfigurationOutput;
-
 pub use crate::operation::create_bucket_metadata_table_configuration::_create_bucket_metadata_table_configuration_input::CreateBucketMetadataTableConfigurationInput;
+
+pub use crate::operation::create_bucket_metadata_table_configuration::_create_bucket_metadata_table_configuration_output::CreateBucketMetadataTableConfigurationOutput;
 
 mod _create_bucket_metadata_table_configuration_input;
 

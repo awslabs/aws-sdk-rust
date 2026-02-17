@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_app_monitor
     }
 }
 
-pub use crate::operation::update_app_monitor::_update_app_monitor_output::UpdateAppMonitorOutput;
-
 pub use crate::operation::update_app_monitor::_update_app_monitor_input::UpdateAppMonitorInput;
+
+pub use crate::operation::update_app_monitor::_update_app_monitor_output::UpdateAppMonitorOutput;
 
 mod _update_app_monitor_input;
 

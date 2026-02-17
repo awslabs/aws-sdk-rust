@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analysis_temp
     }
 }
 
-pub use crate::operation::list_analysis_templates::_list_analysis_templates_output::ListAnalysisTemplatesOutput;
-
 pub use crate::operation::list_analysis_templates::_list_analysis_templates_input::ListAnalysisTemplatesInput;
+
+pub use crate::operation::list_analysis_templates::_list_analysis_templates_output::ListAnalysisTemplatesOutput;
 
 mod _list_analysis_templates_input;
 

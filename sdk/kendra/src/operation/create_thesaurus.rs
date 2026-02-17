@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_thesaurus::
     }
 }
 
-pub use crate::operation::create_thesaurus::_create_thesaurus_output::CreateThesaurusOutput;
-
 pub use crate::operation::create_thesaurus::_create_thesaurus_input::CreateThesaurusInput;
+
+pub use crate::operation::create_thesaurus::_create_thesaurus_output::CreateThesaurusOutput;
 
 mod _create_thesaurus_input;
 

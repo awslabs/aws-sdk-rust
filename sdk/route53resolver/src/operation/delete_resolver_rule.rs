@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resolver_ru
     }
 }
 
-pub use crate::operation::delete_resolver_rule::_delete_resolver_rule_output::DeleteResolverRuleOutput;
-
 pub use crate::operation::delete_resolver_rule::_delete_resolver_rule_input::DeleteResolverRuleInput;
+
+pub use crate::operation::delete_resolver_rule::_delete_resolver_rule_output::DeleteResolverRuleOutput;
 
 mod _delete_resolver_rule_input;
 

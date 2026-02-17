@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_workspaces:
     }
 }
 
-pub use crate::operation::reboot_workspaces::_reboot_workspaces_output::RebootWorkspacesOutput;
-
 pub use crate::operation::reboot_workspaces::_reboot_workspaces_input::RebootWorkspacesInput;
+
+pub use crate::operation::reboot_workspaces::_reboot_workspaces_output::RebootWorkspacesOutput;
 
 mod _reboot_workspaces_input;
 

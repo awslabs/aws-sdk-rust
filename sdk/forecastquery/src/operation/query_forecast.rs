@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query_forecast::Qu
     }
 }
 
-pub use crate::operation::query_forecast::_query_forecast_output::QueryForecastOutput;
-
 pub use crate::operation::query_forecast::_query_forecast_input::QueryForecastInput;
+
+pub use crate::operation::query_forecast::_query_forecast_output::QueryForecastOutput;
 
 mod _query_forecast_input;
 

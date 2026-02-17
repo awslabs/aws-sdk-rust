@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tenant_resour
     }
 }
 
-pub use crate::operation::list_tenant_resources::_list_tenant_resources_output::ListTenantResourcesOutput;
-
 pub use crate::operation::list_tenant_resources::_list_tenant_resources_input::ListTenantResourcesInput;
+
+pub use crate::operation::list_tenant_resources::_list_tenant_resources_output::ListTenantResourcesOutput;
 
 mod _list_tenant_resources_input;
 

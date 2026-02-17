@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_kx_databases:
     }
 }
 
-pub use crate::operation::list_kx_databases::_list_kx_databases_output::ListKxDatabasesOutput;
-
 pub use crate::operation::list_kx_databases::_list_kx_databases_input::ListKxDatabasesInput;
+
+pub use crate::operation::list_kx_databases::_list_kx_databases_output::ListKxDatabasesOutput;
 
 mod _list_kx_databases_input;
 

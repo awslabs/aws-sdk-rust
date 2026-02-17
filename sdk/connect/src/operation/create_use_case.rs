@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_use_case::C
     }
 }
 
-pub use crate::operation::create_use_case::_create_use_case_output::CreateUseCaseOutput;
-
 pub use crate::operation::create_use_case::_create_use_case_input::CreateUseCaseInput;
+
+pub use crate::operation::create_use_case::_create_use_case_output::CreateUseCaseOutput;
 
 mod _create_use_case_input;
 

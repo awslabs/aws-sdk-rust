@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_db_proxy_
     }
 }
 
-pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_output::RegisterDbProxyTargetsOutput;
-
 pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_input::RegisterDbProxyTargetsInput;
+
+pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_output::RegisterDbProxyTargetsOutput;
 
 mod _register_db_proxy_targets_input;
 

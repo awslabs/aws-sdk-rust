@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_contributor
     }
 }
 
-pub use crate::operation::update_contributor_insights::_update_contributor_insights_output::UpdateContributorInsightsOutput;
-
 pub use crate::operation::update_contributor_insights::_update_contributor_insights_input::UpdateContributorInsightsInput;
+
+pub use crate::operation::update_contributor_insights::_update_contributor_insights_output::UpdateContributorInsightsOutput;
 
 mod _update_contributor_insights_input;
 

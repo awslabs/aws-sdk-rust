@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_strea
     }
 }
 
-pub use crate::operation::create_event_stream::_create_event_stream_output::CreateEventStreamOutput;
-
 pub use crate::operation::create_event_stream::_create_event_stream_input::CreateEventStreamInput;
+
+pub use crate::operation::create_event_stream::_create_event_stream_output::CreateEventStreamOutput;
 
 mod _create_event_stream_input;
 

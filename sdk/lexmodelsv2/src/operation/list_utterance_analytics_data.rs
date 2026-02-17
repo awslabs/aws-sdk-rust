@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_utterance_ana
     }
 }
 
-pub use crate::operation::list_utterance_analytics_data::_list_utterance_analytics_data_output::ListUtteranceAnalyticsDataOutput;
-
 pub use crate::operation::list_utterance_analytics_data::_list_utterance_analytics_data_input::ListUtteranceAnalyticsDataInput;
+
+pub use crate::operation::list_utterance_analytics_data::_list_utterance_analytics_data_output::ListUtteranceAnalyticsDataOutput;
 
 mod _list_utterance_analytics_data_input;
 

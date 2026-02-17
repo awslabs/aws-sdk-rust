@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_monitoring:
     }
 }
 
-pub use crate::operation::update_monitoring::_update_monitoring_output::UpdateMonitoringOutput;
-
 pub use crate::operation::update_monitoring::_update_monitoring_input::UpdateMonitoringInput;
+
+pub use crate::operation::update_monitoring::_update_monitoring_output::UpdateMonitoringOutput;
 
 mod _update_monitoring_input;
 

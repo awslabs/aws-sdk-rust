@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_tag_o
     }
 }
 
-pub use crate::operation::disassociate_tag_option_from_resource::_disassociate_tag_option_from_resource_output::DisassociateTagOptionFromResourceOutput;
-
 pub use crate::operation::disassociate_tag_option_from_resource::_disassociate_tag_option_from_resource_input::DisassociateTagOptionFromResourceInput;
+
+pub use crate::operation::disassociate_tag_option_from_resource::_disassociate_tag_option_from_resource_output::DisassociateTagOptionFromResourceOutput;
 
 mod _disassociate_tag_option_from_resource_input;
 

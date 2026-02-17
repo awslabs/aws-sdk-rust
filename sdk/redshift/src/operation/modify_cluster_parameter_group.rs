@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_cluster_par
     }
 }
 
-pub use crate::operation::modify_cluster_parameter_group::_modify_cluster_parameter_group_output::ModifyClusterParameterGroupOutput;
-
 pub use crate::operation::modify_cluster_parameter_group::_modify_cluster_parameter_group_input::ModifyClusterParameterGroupInput;
+
+pub use crate::operation::modify_cluster_parameter_group::_modify_cluster_parameter_group_output::ModifyClusterParameterGroupOutput;
 
 mod _modify_cluster_parameter_group_input;
 

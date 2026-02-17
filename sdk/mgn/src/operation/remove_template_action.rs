@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_template_ac
     }
 }
 
-pub use crate::operation::remove_template_action::_remove_template_action_output::RemoveTemplateActionOutput;
-
 pub use crate::operation::remove_template_action::_remove_template_action_input::RemoveTemplateActionInput;
+
+pub use crate::operation::remove_template_action::_remove_template_action_output::RemoveTemplateActionOutput;
 
 mod _remove_template_action_input;
 

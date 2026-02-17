@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_import_errors
     }
 }
 
-pub use crate::operation::list_import_errors::_list_import_errors_output::ListImportErrorsOutput;
-
 pub use crate::operation::list_import_errors::_list_import_errors_input::ListImportErrorsInput;
+
+pub use crate::operation::list_import_errors::_list_import_errors_output::ListImportErrorsOutput;
 
 mod _list_import_errors_input;
 

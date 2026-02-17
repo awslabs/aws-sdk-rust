@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_rule_grou
     }
 }
 
-pub use crate::operation::describe_rule_groups_namespace::_describe_rule_groups_namespace_output::DescribeRuleGroupsNamespaceOutput;
-
 pub use crate::operation::describe_rule_groups_namespace::_describe_rule_groups_namespace_input::DescribeRuleGroupsNamespaceInput;
+
+pub use crate::operation::describe_rule_groups_namespace::_describe_rule_groups_namespace_output::DescribeRuleGroupsNamespaceOutput;
 
 mod _describe_rule_groups_namespace_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_experience:
     }
 }
 
-pub use crate::operation::delete_experience::_delete_experience_output::DeleteExperienceOutput;
-
 pub use crate::operation::delete_experience::_delete_experience_input::DeleteExperienceInput;
+
+pub use crate::operation::delete_experience::_delete_experience_output::DeleteExperienceOutput;
 
 mod _delete_experience_input;
 

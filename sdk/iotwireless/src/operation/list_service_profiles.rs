@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_profi
     }
 }
 
-pub use crate::operation::list_service_profiles::_list_service_profiles_output::ListServiceProfilesOutput;
-
 pub use crate::operation::list_service_profiles::_list_service_profiles_input::ListServiceProfilesInput;
+
+pub use crate::operation::list_service_profiles::_list_service_profiles_output::ListServiceProfilesOutput;
 
 mod _list_service_profiles_input;
 

@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_table_
     }
 }
 
-pub use crate::operation::update_data_table_metadata::_update_data_table_metadata_output::UpdateDataTableMetadataOutput;
-
 pub use crate::operation::update_data_table_metadata::_update_data_table_metadata_input::UpdateDataTableMetadataInput;
+
+pub use crate::operation::update_data_table_metadata::_update_data_table_metadata_output::UpdateDataTableMetadataOutput;
 
 mod _update_data_table_metadata_input;
 

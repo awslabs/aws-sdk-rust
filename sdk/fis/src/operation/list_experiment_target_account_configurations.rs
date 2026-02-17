@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_experiment_target_account_configurations::_list_experiment_target_account_configurations_output::ListExperimentTargetAccountConfigurationsOutput;
-
 pub use crate::operation::list_experiment_target_account_configurations::_list_experiment_target_account_configurations_input::ListExperimentTargetAccountConfigurationsInput;
+
+pub use crate::operation::list_experiment_target_account_configurations::_list_experiment_target_account_configurations_output::ListExperimentTargetAccountConfigurationsOutput;
 
 mod _list_experiment_target_account_configurations_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_conne
     }
 }
 
-pub use crate::operation::create_cloud_connector::_create_cloud_connector_output::CreateCloudConnectorOutput;
-
 pub use crate::operation::create_cloud_connector::_create_cloud_connector_input::CreateCloudConnectorInput;
+
+pub use crate::operation::create_cloud_connector::_create_cloud_connector_output::CreateCloudConnectorOutput;
 
 mod _create_cloud_connector_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_named_queries
     }
 }
 
-pub use crate::operation::list_named_queries::_list_named_queries_output::ListNamedQueriesOutput;
-
 pub use crate::operation::list_named_queries::_list_named_queries_input::ListNamedQueriesInput;
+
+pub use crate::operation::list_named_queries::_list_named_queries_output::ListNamedQueriesOutput;
 
 mod _list_named_queries_input;
 

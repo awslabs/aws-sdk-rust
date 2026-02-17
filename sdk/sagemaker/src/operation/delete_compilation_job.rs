@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_compilation
     }
 }
 
-pub use crate::operation::delete_compilation_job::_delete_compilation_job_output::DeleteCompilationJobOutput;
-
 pub use crate::operation::delete_compilation_job::_delete_compilation_job_input::DeleteCompilationJobInput;
+
+pub use crate::operation::delete_compilation_job::_delete_compilation_job_output::DeleteCompilationJobOutput;
 
 mod _delete_compilation_job_input;
 

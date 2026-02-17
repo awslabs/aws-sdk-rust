@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_media_insights
     }
 }
 
-pub use crate::operation::get_media_insights_pipeline_configuration::_get_media_insights_pipeline_configuration_output::GetMediaInsightsPipelineConfigurationOutput;
-
 pub use crate::operation::get_media_insights_pipeline_configuration::_get_media_insights_pipeline_configuration_input::GetMediaInsightsPipelineConfigurationInput;
+
+pub use crate::operation::get_media_insights_pipeline_configuration::_get_media_insights_pipeline_configuration_output::GetMediaInsightsPipelineConfigurationOutput;
 
 mod _get_media_insights_pipeline_configuration_input;
 

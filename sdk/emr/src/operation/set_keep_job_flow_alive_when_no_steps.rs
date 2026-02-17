@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_keep_job_flow_
     }
 }
 
-pub use crate::operation::set_keep_job_flow_alive_when_no_steps::_set_keep_job_flow_alive_when_no_steps_output::SetKeepJobFlowAliveWhenNoStepsOutput;
-
 pub use crate::operation::set_keep_job_flow_alive_when_no_steps::_set_keep_job_flow_alive_when_no_steps_input::SetKeepJobFlowAliveWhenNoStepsInput;
+
+pub use crate::operation::set_keep_job_flow_alive_when_no_steps::_set_keep_job_flow_alive_when_no_steps_output::SetKeepJobFlowAliveWhenNoStepsOutput;
 
 mod _set_keep_job_flow_alive_when_no_steps_input;
 

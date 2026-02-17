@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipams::De
     }
 }
 
-pub use crate::operation::describe_ipams::_describe_ipams_output::DescribeIpamsOutput;
-
 pub use crate::operation::describe_ipams::_describe_ipams_input::DescribeIpamsInput;
+
+pub use crate::operation::describe_ipams::_describe_ipams_output::DescribeIpamsOutput;
 
 mod _describe_ipams_input;
 

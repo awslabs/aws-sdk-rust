@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_profile
     }
 }
 
-pub use crate::operation::get_device_profile::_get_device_profile_output::GetDeviceProfileOutput;
-
 pub use crate::operation::get_device_profile::_get_device_profile_input::GetDeviceProfileInput;
+
+pub use crate::operation::get_device_profile::_get_device_profile_output::GetDeviceProfileOutput;
 
 mod _get_device_profile_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_traffic_policy_instances_by_hosted_zone_output::ListTrafficPolicyInstancesByHostedZoneOutput;
-
 pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_traffic_policy_instances_by_hosted_zone_input::ListTrafficPolicyInstancesByHostedZoneInput;
+
+pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_traffic_policy_instances_by_hosted_zone_output::ListTrafficPolicyInstancesByHostedZoneOutput;
 
 mod _list_traffic_policy_instances_by_hosted_zone_input;
 

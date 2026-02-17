@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_coverage_stat
     }
 }
 
-pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_output::ListCoverageStatisticsOutput;
-
 pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_input::ListCoverageStatisticsInput;
+
+pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_output::ListCoverageStatisticsOutput;
 
 mod _list_coverage_statistics_input;
 

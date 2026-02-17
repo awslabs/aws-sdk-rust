@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_log_group::Tag
     }
 }
 
-pub use crate::operation::tag_log_group::_tag_log_group_output::TagLogGroupOutput;
-
 pub use crate::operation::tag_log_group::_tag_log_group_input::TagLogGroupInput;
+
+pub use crate::operation::tag_log_group::_tag_log_group_output::TagLogGroupOutput;
 
 mod _tag_log_group_input;
 

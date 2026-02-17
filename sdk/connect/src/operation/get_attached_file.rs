@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_attached_file:
     }
 }
 
-pub use crate::operation::get_attached_file::_get_attached_file_output::GetAttachedFileOutput;
-
 pub use crate::operation::get_attached_file::_get_attached_file_input::GetAttachedFileInput;
+
+pub use crate::operation::get_attached_file::_get_attached_file_output::GetAttachedFileOutput;
 
 mod _get_attached_file_input;
 

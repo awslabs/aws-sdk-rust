@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tenant::Cre
     }
 }
 
-pub use crate::operation::create_tenant::_create_tenant_output::CreateTenantOutput;
-
 pub use crate::operation::create_tenant::_create_tenant_input::CreateTenantInput;
+
+pub use crate::operation::create_tenant::_create_tenant_output::CreateTenantOutput;
 
 mod _create_tenant_input;
 

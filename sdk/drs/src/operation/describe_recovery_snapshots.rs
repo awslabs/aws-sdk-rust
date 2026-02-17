@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recovery_
     }
 }
 
-pub use crate::operation::describe_recovery_snapshots::_describe_recovery_snapshots_output::DescribeRecoverySnapshotsOutput;
-
 pub use crate::operation::describe_recovery_snapshots::_describe_recovery_snapshots_input::DescribeRecoverySnapshotsInput;
+
+pub use crate::operation::describe_recovery_snapshots::_describe_recovery_snapshots_output::DescribeRecoverySnapshotsOutput;
 
 mod _describe_recovery_snapshots_input;
 

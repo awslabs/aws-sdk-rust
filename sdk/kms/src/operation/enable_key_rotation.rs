@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_key_rotatio
     }
 }
 
-pub use crate::operation::enable_key_rotation::_enable_key_rotation_output::EnableKeyRotationOutput;
-
 pub use crate::operation::enable_key_rotation::_enable_key_rotation_input::EnableKeyRotationInput;
+
+pub use crate::operation::enable_key_rotation::_enable_key_rotation_output::EnableKeyRotationOutput;
 
 mod _enable_key_rotation_input;
 

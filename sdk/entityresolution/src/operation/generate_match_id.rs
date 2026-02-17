@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_match_id:
     }
 }
 
-pub use crate::operation::generate_match_id::_generate_match_id_output::GenerateMatchIdOutput;
-
 pub use crate::operation::generate_match_id::_generate_match_id_input::GenerateMatchIdInput;
+
+pub use crate::operation::generate_match_id::_generate_match_id_output::GenerateMatchIdOutput;
 
 mod _generate_match_id_input;
 

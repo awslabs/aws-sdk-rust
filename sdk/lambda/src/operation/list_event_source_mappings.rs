@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_source_
     }
 }
 
-pub use crate::operation::list_event_source_mappings::_list_event_source_mappings_output::ListEventSourceMappingsOutput;
-
 pub use crate::operation::list_event_source_mappings::_list_event_source_mappings_input::ListEventSourceMappingsInput;
+
+pub use crate::operation::list_event_source_mappings::_list_event_source_mappings_output::ListEventSourceMappingsOutput;
 
 mod _list_event_source_mappings_input;
 

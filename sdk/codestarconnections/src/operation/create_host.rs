@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_host::Creat
     }
 }
 
-pub use crate::operation::create_host::_create_host_output::CreateHostOutput;
-
 pub use crate::operation::create_host::_create_host_input::CreateHostInput;
+
+pub use crate::operation::create_host::_create_host_output::CreateHostOutput;
 
 mod _create_host_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_fs
     }
 }
 
-pub use crate::operation::create_location_fsx_windows::_create_location_fsx_windows_output::CreateLocationFsxWindowsOutput;
-
 pub use crate::operation::create_location_fsx_windows::_create_location_fsx_windows_input::CreateLocationFsxWindowsInput;
+
+pub use crate::operation::create_location_fsx_windows::_create_location_fsx_windows_output::CreateLocationFsxWindowsOutput;
 
 mod _create_location_fsx_windows_input;
 

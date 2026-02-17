@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_web_app_c
     }
 }
 
-pub use crate::operation::describe_web_app_customization::_describe_web_app_customization_output::DescribeWebAppCustomizationOutput;
-
 pub use crate::operation::describe_web_app_customization::_describe_web_app_customization_input::DescribeWebAppCustomizationInput;
+
+pub use crate::operation::describe_web_app_customization::_describe_web_app_customization_output::DescribeWebAppCustomizationOutput;
 
 mod _describe_web_app_customization_input;
 

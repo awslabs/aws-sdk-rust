@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_multipart
     }
 }
 
-pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_output::CompleteMultipartUploadOutput;
-
 pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_input::CompleteMultipartUploadInput;
+
+pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_output::CompleteMultipartUploadOutput;
 
 mod _complete_multipart_upload_input;
 

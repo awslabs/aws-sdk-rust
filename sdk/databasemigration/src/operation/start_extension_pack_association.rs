@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_extension_pa
     }
 }
 
-pub use crate::operation::start_extension_pack_association::_start_extension_pack_association_output::StartExtensionPackAssociationOutput;
-
 pub use crate::operation::start_extension_pack_association::_start_extension_pack_association_input::StartExtensionPackAssociationInput;
+
+pub use crate::operation::start_extension_pack_association::_start_extension_pack_association_output::StartExtensionPackAssociationOutput;
 
 mod _start_extension_pack_association_input;
 

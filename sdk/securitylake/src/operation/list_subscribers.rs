@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_subscribers::
     }
 }
 
-pub use crate::operation::list_subscribers::_list_subscribers_output::ListSubscribersOutput;
-
 pub use crate::operation::list_subscribers::_list_subscribers_input::ListSubscribersInput;
+
+pub use crate::operation::list_subscribers::_list_subscribers_output::ListSubscribersOutput;
 
 mod _list_subscribers_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_remediati
     }
 }
 
-pub use crate::operation::describe_remediation_configurations::_describe_remediation_configurations_output::DescribeRemediationConfigurationsOutput;
-
 pub use crate::operation::describe_remediation_configurations::_describe_remediation_configurations_input::DescribeRemediationConfigurationsInput;
+
+pub use crate::operation::describe_remediation_configurations::_describe_remediation_configurations_output::DescribeRemediationConfigurationsOutput;
 
 mod _describe_remediation_configurations_input;
 

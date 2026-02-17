@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_outpost_l
     }
 }
 
-pub use crate::operation::describe_outpost_lags::_describe_outpost_lags_output::DescribeOutpostLagsOutput;
-
 pub use crate::operation::describe_outpost_lags::_describe_outpost_lags_input::DescribeOutpostLagsInput;
+
+pub use crate::operation::describe_outpost_lags::_describe_outpost_lags_output::DescribeOutpostLagsOutput;
 
 mod _describe_outpost_lags_input;
 

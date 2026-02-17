@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_extension::
     }
 }
 
-pub use crate::operation::create_extension::_create_extension_output::CreateExtensionOutput;
-
 pub use crate::operation::create_extension::_create_extension_input::CreateExtensionInput;
+
+pub use crate::operation::create_extension::_create_extension_output::CreateExtensionOutput;
 
 mod _create_extension_input;
 

@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_verified_ac
     }
 }
 
-pub use crate::operation::delete_verified_access_trust_provider::_delete_verified_access_trust_provider_output::DeleteVerifiedAccessTrustProviderOutput;
-
 pub use crate::operation::delete_verified_access_trust_provider::_delete_verified_access_trust_provider_input::DeleteVerifiedAccessTrustProviderInput;
+
+pub use crate::operation::delete_verified_access_trust_provider::_delete_verified_access_trust_provider_output::DeleteVerifiedAccessTrustProviderOutput;
 
 mod _delete_verified_access_trust_provider_input;
 

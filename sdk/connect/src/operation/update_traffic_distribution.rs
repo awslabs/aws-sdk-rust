@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_traffic_dis
     }
 }
 
-pub use crate::operation::update_traffic_distribution::_update_traffic_distribution_output::UpdateTrafficDistributionOutput;
-
 pub use crate::operation::update_traffic_distribution::_update_traffic_distribution_input::UpdateTrafficDistributionInput;
+
+pub use crate::operation::update_traffic_distribution::_update_traffic_distribution_output::UpdateTrafficDistributionOutput;
 
 mod _update_traffic_distribution_input;
 

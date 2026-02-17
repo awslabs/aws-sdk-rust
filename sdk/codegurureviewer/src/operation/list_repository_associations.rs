@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_repository_as
     }
 }
 
-pub use crate::operation::list_repository_associations::_list_repository_associations_output::ListRepositoryAssociationsOutput;
-
 pub use crate::operation::list_repository_associations::_list_repository_associations_input::ListRepositoryAssociationsInput;
+
+pub use crate::operation::list_repository_associations::_list_repository_associations_output::ListRepositoryAssociationsOutput;
 
 mod _list_repository_associations_input;
 

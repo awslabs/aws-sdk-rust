@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_media_analysi
     }
 }
 
-pub use crate::operation::list_media_analysis_jobs::_list_media_analysis_jobs_output::ListMediaAnalysisJobsOutput;
-
 pub use crate::operation::list_media_analysis_jobs::_list_media_analysis_jobs_input::ListMediaAnalysisJobsInput;
+
+pub use crate::operation::list_media_analysis_jobs::_list_media_analysis_jobs_output::ListMediaAnalysisJobsOutput;
 
 mod _list_media_analysis_jobs_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_share_invitat
     }
 }
 
-pub use crate::operation::list_share_invitations::_list_share_invitations_output::ListShareInvitationsOutput;
-
 pub use crate::operation::list_share_invitations::_list_share_invitations_input::ListShareInvitationsInput;
+
+pub use crate::operation::list_share_invitations::_list_share_invitations_output::ListShareInvitationsOutput;
 
 mod _list_share_invitations_input;
 

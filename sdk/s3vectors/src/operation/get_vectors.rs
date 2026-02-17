@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vectors::GetVe
     }
 }
 
-pub use crate::operation::get_vectors::_get_vectors_output::GetVectorsOutput;
-
 pub use crate::operation::get_vectors::_get_vectors_input::GetVectorsInput;
+
+pub use crate::operation::get_vectors::_get_vectors_output::GetVectorsOutput;
 
 mod _get_vectors_input;
 

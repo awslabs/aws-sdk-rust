@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprovision_ipam_b
     }
 }
 
-pub use crate::operation::deprovision_ipam_byoasn::_deprovision_ipam_byoasn_output::DeprovisionIpamByoasnOutput;
-
 pub use crate::operation::deprovision_ipam_byoasn::_deprovision_ipam_byoasn_input::DeprovisionIpamByoasnInput;
+
+pub use crate::operation::deprovision_ipam_byoasn::_deprovision_ipam_byoasn_output::DeprovisionIpamByoasnOutput;
 
 mod _deprovision_ipam_byoasn_input;
 

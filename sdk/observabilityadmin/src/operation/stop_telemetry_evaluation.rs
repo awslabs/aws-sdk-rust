@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_telemetry_eva
     }
 }
 
-pub use crate::operation::stop_telemetry_evaluation::_stop_telemetry_evaluation_output::StopTelemetryEvaluationOutput;
-
 pub use crate::operation::stop_telemetry_evaluation::_stop_telemetry_evaluation_input::StopTelemetryEvaluationInput;
+
+pub use crate::operation::stop_telemetry_evaluation::_stop_telemetry_evaluation_output::StopTelemetryEvaluationOutput;
 
 mod _stop_telemetry_evaluation_input;
 

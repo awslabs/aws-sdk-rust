@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_environment
     }
 }
 
-pub use crate::operation::create_environment_template::_create_environment_template_output::CreateEnvironmentTemplateOutput;
-
 pub use crate::operation::create_environment_template::_create_environment_template_input::CreateEnvironmentTemplateInput;
+
+pub use crate::operation::create_environment_template::_create_environment_template_output::CreateEnvironmentTemplateOutput;
 
 mod _create_environment_template_input;
 

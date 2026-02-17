@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_keys::Updat
     }
 }
 
-pub use crate::operation::update_keys::_update_keys_output::UpdateKeysOutput;
-
 pub use crate::operation::update_keys::_update_keys_input::UpdateKeysInput;
+
+pub use crate::operation::update_keys::_update_keys_output::UpdateKeysOutput;
 
 mod _update_keys_input;
 

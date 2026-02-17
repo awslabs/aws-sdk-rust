@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_identity_po
     }
 }
 
-pub use crate::operation::update_identity_pool::_update_identity_pool_output::UpdateIdentityPoolOutput;
-
 pub use crate::operation::update_identity_pool::_update_identity_pool_input::UpdateIdentityPoolInput;
+
+pub use crate::operation::update_identity_pool::_update_identity_pool_output::UpdateIdentityPoolOutput;
 
 mod _update_identity_pool_input;
 

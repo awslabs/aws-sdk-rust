@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_remaining_free
     }
 }
 
-pub use crate::operation::get_remaining_free_trial_days::_get_remaining_free_trial_days_output::GetRemainingFreeTrialDaysOutput;
-
 pub use crate::operation::get_remaining_free_trial_days::_get_remaining_free_trial_days_input::GetRemainingFreeTrialDaysInput;
+
+pub use crate::operation::get_remaining_free_trial_days::_get_remaining_free_trial_days_output::GetRemainingFreeTrialDaysOutput;
 
 mod _get_remaining_free_trial_days_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_facet::GetFace
     }
 }
 
-pub use crate::operation::get_facet::_get_facet_output::GetFacetOutput;
-
 pub use crate::operation::get_facet::_get_facet_input::GetFacetInput;
+
+pub use crate::operation::get_facet::_get_facet_output::GetFacetOutput;
 
 mod _get_facet_input;
 

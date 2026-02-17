@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subnet::Cre
     }
 }
 
-pub use crate::operation::create_subnet::_create_subnet_output::CreateSubnetOutput;
-
 pub use crate::operation::create_subnet::_create_subnet_input::CreateSubnetInput;
+
+pub use crate::operation::create_subnet::_create_subnet_output::CreateSubnetOutput;
 
 mod _create_subnet_input;
 

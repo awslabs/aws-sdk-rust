@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flow_aliases:
     }
 }
 
-pub use crate::operation::list_flow_aliases::_list_flow_aliases_output::ListFlowAliasesOutput;
-
 pub use crate::operation::list_flow_aliases::_list_flow_aliases_input::ListFlowAliasesInput;
+
+pub use crate::operation::list_flow_aliases::_list_flow_aliases_output::ListFlowAliasesOutput;
 
 mod _list_flow_aliases_input;
 

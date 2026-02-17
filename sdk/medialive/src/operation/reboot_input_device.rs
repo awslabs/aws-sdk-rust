@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reboot_input_devic
     }
 }
 
-pub use crate::operation::reboot_input_device::_reboot_input_device_output::RebootInputDeviceOutput;
-
 pub use crate::operation::reboot_input_device::_reboot_input_device_input::RebootInputDeviceInput;
+
+pub use crate::operation::reboot_input_device::_reboot_input_device_output::RebootInputDeviceOutput;
 
 mod _reboot_input_device_input;
 

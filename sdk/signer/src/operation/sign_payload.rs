@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::sign_payload::Sign
     }
 }
 
-pub use crate::operation::sign_payload::_sign_payload_output::SignPayloadOutput;
-
 pub use crate::operation::sign_payload::_sign_payload_input::SignPayloadInput;
+
+pub use crate::operation::sign_payload::_sign_payload_output::SignPayloadOutput;
 
 mod _sign_payload_input;
 

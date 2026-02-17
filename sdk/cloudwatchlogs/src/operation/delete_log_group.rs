@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_log_group::
     }
 }
 
-pub use crate::operation::delete_log_group::_delete_log_group_output::DeleteLogGroupOutput;
-
 pub use crate::operation::delete_log_group::_delete_log_group_input::DeleteLogGroupInput;
+
+pub use crate::operation::delete_log_group::_delete_log_group_output::DeleteLogGroupOutput;
 
 mod _delete_log_group_input;
 

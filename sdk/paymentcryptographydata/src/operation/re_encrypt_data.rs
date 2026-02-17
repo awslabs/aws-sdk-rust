@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::re_encrypt_data::R
     }
 }
 
-pub use crate::operation::re_encrypt_data::_re_encrypt_data_output::ReEncryptDataOutput;
-
 pub use crate::operation::re_encrypt_data::_re_encrypt_data_input::ReEncryptDataInput;
+
+pub use crate::operation::re_encrypt_data::_re_encrypt_data_output::ReEncryptDataOutput;
 
 mod _re_encrypt_data_input;
 

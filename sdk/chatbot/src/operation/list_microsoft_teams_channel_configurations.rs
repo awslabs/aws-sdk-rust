@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_microsoft_teams_channel_configurations::_list_microsoft_teams_channel_configurations_output::ListMicrosoftTeamsChannelConfigurationsOutput;
-
 pub use crate::operation::list_microsoft_teams_channel_configurations::_list_microsoft_teams_channel_configurations_input::ListMicrosoftTeamsChannelConfigurationsInput;
+
+pub use crate::operation::list_microsoft_teams_channel_configurations::_list_microsoft_teams_channel_configurations_output::ListMicrosoftTeamsChannelConfigurationsOutput;
 
 mod _list_microsoft_teams_channel_configurations_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_annotation_
     }
 }
 
-pub use crate::operation::update_annotation_store::_update_annotation_store_output::UpdateAnnotationStoreOutput;
-
 pub use crate::operation::update_annotation_store::_update_annotation_store_input::UpdateAnnotationStoreInput;
+
+pub use crate::operation::update_annotation_store::_update_annotation_store_output::UpdateAnnotationStoreOutput;
 
 mod _update_annotation_store_input;
 

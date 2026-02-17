@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_mac_system_integrity_protection_modification_task::_create_mac_system_integrity_protection_modification_task_output::CreateMacSystemIntegrityProtectionModificationTaskOutput;
-
 pub use crate::operation::create_mac_system_integrity_protection_modification_task::_create_mac_system_integrity_protection_modification_task_input::CreateMacSystemIntegrityProtectionModificationTaskInput;
+
+pub use crate::operation::create_mac_system_integrity_protection_modification_task::_create_mac_system_integrity_protection_modification_task_output::CreateMacSystemIntegrityProtectionModificationTaskOutput;
 
 mod _create_mac_system_integrity_protection_modification_task_input;
 

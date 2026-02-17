@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_method_respons
     }
 }
 
-pub use crate::operation::get_method_response::_get_method_response_output::GetMethodResponseOutput;
-
 pub use crate::operation::get_method_response::_get_method_response_input::GetMethodResponseInput;
+
+pub use crate::operation::get_method_response::_get_method_response_output::GetMethodResponseOutput;
 
 mod _get_method_response_input;
 

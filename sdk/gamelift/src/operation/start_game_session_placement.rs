@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_game_session
     }
 }
 
-pub use crate::operation::start_game_session_placement::_start_game_session_placement_output::StartGameSessionPlacementOutput;
-
 pub use crate::operation::start_game_session_placement::_start_game_session_placement_input::StartGameSessionPlacementInput;
+
+pub use crate::operation::start_game_session_placement::_start_game_session_placement_output::StartGameSessionPlacementOutput;
 
 mod _start_game_session_placement_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_attendee::GetA
     }
 }
 
-pub use crate::operation::get_attendee::_get_attendee_output::GetAttendeeOutput;
-
 pub use crate::operation::get_attendee::_get_attendee_input::GetAttendeeInput;
+
+pub use crate::operation::get_attendee::_get_attendee_output::GetAttendeeOutput;
 
 mod _get_attendee_input;
 

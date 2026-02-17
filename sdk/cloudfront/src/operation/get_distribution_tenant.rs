@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution_t
     }
 }
 
-pub use crate::operation::get_distribution_tenant::_get_distribution_tenant_output::GetDistributionTenantOutput;
-
 pub use crate::operation::get_distribution_tenant::_get_distribution_tenant_input::GetDistributionTenantInput;
+
+pub use crate::operation::get_distribution_tenant::_get_distribution_tenant_output::GetDistributionTenantOutput;
 
 mod _get_distribution_tenant_input;
 

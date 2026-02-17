@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_public_vir
     }
 }
 
-pub use crate::operation::confirm_public_virtual_interface::_confirm_public_virtual_interface_output::ConfirmPublicVirtualInterfaceOutput;
-
 pub use crate::operation::confirm_public_virtual_interface::_confirm_public_virtual_interface_input::ConfirmPublicVirtualInterfaceInput;
+
+pub use crate::operation::confirm_public_virtual_interface::_confirm_public_virtual_interface_output::ConfirmPublicVirtualInterfaceOutput;
 
 mod _confirm_public_virtual_interface_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_report_plan
     }
 }
 
-pub use crate::operation::update_report_plan::_update_report_plan_output::UpdateReportPlanOutput;
-
 pub use crate::operation::update_report_plan::_update_report_plan_input::UpdateReportPlanInput;
+
+pub use crate::operation::update_report_plan::_update_report_plan_output::UpdateReportPlanOutput;
 
 mod _update_report_plan_input;
 

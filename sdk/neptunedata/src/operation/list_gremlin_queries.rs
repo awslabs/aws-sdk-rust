@@ -521,9 +521,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_gremlin_queri
     }
 }
 
-pub use crate::operation::list_gremlin_queries::_list_gremlin_queries_output::ListGremlinQueriesOutput;
-
 pub use crate::operation::list_gremlin_queries::_list_gremlin_queries_input::ListGremlinQueriesInput;
+
+pub use crate::operation::list_gremlin_queries::_list_gremlin_queries_output::ListGremlinQueriesOutput;
 
 mod _list_gremlin_queries_input;
 

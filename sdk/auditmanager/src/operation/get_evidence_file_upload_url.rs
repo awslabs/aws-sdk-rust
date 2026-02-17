@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_evidence_file_
     }
 }
 
-pub use crate::operation::get_evidence_file_upload_url::_get_evidence_file_upload_url_output::GetEvidenceFileUploadUrlOutput;
-
 pub use crate::operation::get_evidence_file_upload_url::_get_evidence_file_upload_url_input::GetEvidenceFileUploadUrlInput;
+
+pub use crate::operation::get_evidence_file_upload_url::_get_evidence_file_upload_url_output::GetEvidenceFileUploadUrlOutput;
 
 mod _get_evidence_file_upload_url_input;
 

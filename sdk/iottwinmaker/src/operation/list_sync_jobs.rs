@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sync_jobs::Li
     }
 }
 
-pub use crate::operation::list_sync_jobs::_list_sync_jobs_output::ListSyncJobsOutput;
-
 pub use crate::operation::list_sync_jobs::_list_sync_jobs_input::ListSyncJobsInput;
+
+pub use crate::operation::list_sync_jobs::_list_sync_jobs_output::ListSyncJobsOutput;
 
 mod _list_sync_jobs_input;
 

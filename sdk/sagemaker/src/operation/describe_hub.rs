@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hub::Desc
     }
 }
 
-pub use crate::operation::describe_hub::_describe_hub_output::DescribeHubOutput;
-
 pub use crate::operation::describe_hub::_describe_hub_input::DescribeHubInput;
+
+pub use crate::operation::describe_hub::_describe_hub_output::DescribeHubOutput;
 
 mod _describe_hub_input;
 

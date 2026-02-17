@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sync_job::D
     }
 }
 
-pub use crate::operation::delete_sync_job::_delete_sync_job_output::DeleteSyncJobOutput;
-
 pub use crate::operation::delete_sync_job::_delete_sync_job_input::DeleteSyncJobInput;
+
+pub use crate::operation::delete_sync_job::_delete_sync_job_output::DeleteSyncJobOutput;
 
 mod _delete_sync_job_input;
 

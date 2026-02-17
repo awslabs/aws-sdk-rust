@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_s3_access_poli
     }
 }
 
-pub use crate::operation::put_s3_access_policy::_put_s3_access_policy_output::PutS3AccessPolicyOutput;
-
 pub use crate::operation::put_s3_access_policy::_put_s3_access_policy_input::PutS3AccessPolicyInput;
+
+pub use crate::operation::put_s3_access_policy::_put_s3_access_policy_output::PutS3AccessPolicyOutput;
 
 mod _put_s3_access_policy_input;
 

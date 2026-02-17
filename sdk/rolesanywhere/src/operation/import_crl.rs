@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_crl::Import
     }
 }
 
-pub use crate::operation::import_crl::_import_crl_output::ImportCrlOutput;
-
 pub use crate::operation::import_crl::_import_crl_input::ImportCrlInput;
+
+pub use crate::operation::import_crl::_import_crl_output::ImportCrlOutput;
 
 mod _import_crl_input;
 

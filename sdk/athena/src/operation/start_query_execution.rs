@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_query_execut
     }
 }
 
-pub use crate::operation::start_query_execution::_start_query_execution_output::StartQueryExecutionOutput;
-
 pub use crate::operation::start_query_execution::_start_query_execution_input::StartQueryExecutionInput;
+
+pub use crate::operation::start_query_execution::_start_query_execution_output::StartQueryExecutionOutput;
 
 mod _start_query_execution_input;
 

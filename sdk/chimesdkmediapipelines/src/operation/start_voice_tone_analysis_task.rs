@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_voice_tone_a
     }
 }
 
-pub use crate::operation::start_voice_tone_analysis_task::_start_voice_tone_analysis_task_output::StartVoiceToneAnalysisTaskOutput;
-
 pub use crate::operation::start_voice_tone_analysis_task::_start_voice_tone_analysis_task_input::StartVoiceToneAnalysisTaskInput;
+
+pub use crate::operation::start_voice_tone_analysis_task::_start_voice_tone_analysis_task_output::StartVoiceToneAnalysisTaskOutput;
 
 mod _start_voice_tone_analysis_task_input;
 

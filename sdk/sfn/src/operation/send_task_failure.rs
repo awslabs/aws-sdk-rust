@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_task_failure:
     }
 }
 
-pub use crate::operation::send_task_failure::_send_task_failure_output::SendTaskFailureOutput;
-
 pub use crate::operation::send_task_failure::_send_task_failure_input::SendTaskFailureInput;
+
+pub use crate::operation::send_task_failure::_send_task_failure_output::SendTaskFailureOutput;
 
 mod _send_task_failure_input;
 

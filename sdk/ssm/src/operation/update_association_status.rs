@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_association
     }
 }
 
-pub use crate::operation::update_association_status::_update_association_status_output::UpdateAssociationStatusOutput;
-
 pub use crate::operation::update_association_status::_update_association_status_input::UpdateAssociationStatusInput;
+
+pub use crate::operation::update_association_status::_update_association_status_output::UpdateAssociationStatusOutput;
 
 mod _update_association_status_input;
 

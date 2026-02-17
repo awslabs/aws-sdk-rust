@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_trigg
     }
 }
 
-pub use crate::operation::update_event_trigger::_update_event_trigger_output::UpdateEventTriggerOutput;
-
 pub use crate::operation::update_event_trigger::_update_event_trigger_input::UpdateEventTriggerInput;
+
+pub use crate::operation::update_event_trigger::_update_event_trigger_output::UpdateEventTriggerOutput;
 
 mod _update_event_trigger_input;
 

@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_thing_shado
     }
 }
 
-pub use crate::operation::delete_thing_shadow::_delete_thing_shadow_output::DeleteThingShadowOutput;
-
 pub use crate::operation::delete_thing_shadow::_delete_thing_shadow_input::DeleteThingShadowInput;
+
+pub use crate::operation::delete_thing_shadow::_delete_thing_shadow_output::DeleteThingShadowOutput;
 
 mod _delete_thing_shadow_input;
 

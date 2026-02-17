@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_track
     }
 }
 
-pub use crate::operation::disassociate_tracker_consumer::_disassociate_tracker_consumer_output::DisassociateTrackerConsumerOutput;
-
 pub use crate::operation::disassociate_tracker_consumer::_disassociate_tracker_consumer_input::DisassociateTrackerConsumerInput;
+
+pub use crate::operation::disassociate_tracker_consumer::_disassociate_tracker_consumer_output::DisassociateTrackerConsumerOutput;
 
 mod _disassociate_tracker_consumer_input;
 

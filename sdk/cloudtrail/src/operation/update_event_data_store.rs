@@ -586,9 +586,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_data_
     }
 }
 
-pub use crate::operation::update_event_data_store::_update_event_data_store_output::UpdateEventDataStoreOutput;
-
 pub use crate::operation::update_event_data_store::_update_event_data_store_input::UpdateEventDataStoreInput;
+
+pub use crate::operation::update_event_data_store::_update_event_data_store_output::UpdateEventDataStoreOutput;
 
 mod _update_event_data_store_input;
 

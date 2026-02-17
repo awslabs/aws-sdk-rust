@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_shared_report
     }
 }
 
-pub use crate::operation::list_shared_report_groups::_list_shared_report_groups_output::ListSharedReportGroupsOutput;
-
 pub use crate::operation::list_shared_report_groups::_list_shared_report_groups_input::ListSharedReportGroupsInput;
+
+pub use crate::operation::list_shared_report_groups::_list_shared_report_groups_output::ListSharedReportGroupsOutput;
 
 mod _list_shared_report_groups_input;
 

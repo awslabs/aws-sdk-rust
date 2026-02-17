@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_inference_e
     }
 }
 
-pub use crate::operation::delete_inference_experiment::_delete_inference_experiment_output::DeleteInferenceExperimentOutput;
-
 pub use crate::operation::delete_inference_experiment::_delete_inference_experiment_input::DeleteInferenceExperimentInput;
+
+pub use crate::operation::delete_inference_experiment::_delete_inference_experiment_output::DeleteInferenceExperimentOutput;
 
 mod _delete_inference_experiment_input;
 

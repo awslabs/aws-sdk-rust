@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tags_for_reso
     }
 }
 
-pub use crate::operation::list_tags_for_resources::_list_tags_for_resources_output::ListTagsForResourcesOutput;
-
 pub use crate::operation::list_tags_for_resources::_list_tags_for_resources_input::ListTagsForResourcesInput;
+
+pub use crate::operation::list_tags_for_resources::_list_tags_for_resources_output::ListTagsForResourcesOutput;
 
 mod _list_tags_for_resources_input;
 

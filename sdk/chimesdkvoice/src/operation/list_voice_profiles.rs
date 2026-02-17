@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_voice_profile
     }
 }
 
-pub use crate::operation::list_voice_profiles::_list_voice_profiles_output::ListVoiceProfilesOutput;
-
 pub use crate::operation::list_voice_profiles::_list_voice_profiles_input::ListVoiceProfilesInput;
+
+pub use crate::operation::list_voice_profiles::_list_voice_profiles_output::ListVoiceProfilesOutput;
 
 mod _list_voice_profiles_input;
 

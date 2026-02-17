@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_databases::Get
     }
 }
 
-pub use crate::operation::get_databases::_get_databases_output::GetDatabasesOutput;
-
 pub use crate::operation::get_databases::_get_databases_input::GetDatabasesInput;
+
+pub use crate::operation::get_databases::_get_databases_output::GetDatabasesOutput;
 
 mod _get_databases_input;
 

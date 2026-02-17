@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_security
     }
 }
 
-pub use crate::operation::authorize_security_group_ingress::_authorize_security_group_ingress_output::AuthorizeSecurityGroupIngressOutput;
-
 pub use crate::operation::authorize_security_group_ingress::_authorize_security_group_ingress_input::AuthorizeSecurityGroupIngressInput;
+
+pub use crate::operation::authorize_security_group_ingress::_authorize_security_group_ingress_output::AuthorizeSecurityGroupIngressOutput;
 
 mod _authorize_security_group_ingress_input;
 

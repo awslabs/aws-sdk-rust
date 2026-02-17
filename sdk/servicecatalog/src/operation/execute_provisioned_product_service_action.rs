@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::execute_provisioned_product_service_action::_execute_provisioned_product_service_action_output::ExecuteProvisionedProductServiceActionOutput;
-
 pub use crate::operation::execute_provisioned_product_service_action::_execute_provisioned_product_service_action_input::ExecuteProvisionedProductServiceActionInput;
+
+pub use crate::operation::execute_provisioned_product_service_action::_execute_provisioned_product_service_action_output::ExecuteProvisionedProductServiceActionOutput;
 
 mod _execute_provisioned_product_service_action_input;
 

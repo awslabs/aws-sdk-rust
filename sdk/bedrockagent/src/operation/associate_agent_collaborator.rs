@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_agent_co
     }
 }
 
-pub use crate::operation::associate_agent_collaborator::_associate_agent_collaborator_output::AssociateAgentCollaboratorOutput;
-
 pub use crate::operation::associate_agent_collaborator::_associate_agent_collaborator_input::AssociateAgentCollaboratorInput;
+
+pub use crate::operation::associate_agent_collaborator::_associate_agent_collaborator_output::AssociateAgentCollaboratorOutput;
 
 mod _associate_agent_collaborator_input;
 

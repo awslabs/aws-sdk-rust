@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_crl::Update
     }
 }
 
-pub use crate::operation::update_crl::_update_crl_output::UpdateCrlOutput;
-
 pub use crate::operation::update_crl::_update_crl_input::UpdateCrlInput;
+
+pub use crate::operation::update_crl::_update_crl_output::UpdateCrlOutput;
 
 mod _update_crl_input;
 

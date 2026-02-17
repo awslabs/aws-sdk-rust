@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_findings_trend
     }
 }
 
-pub use crate::operation::get_findings_trends_v2::_get_findings_trends_v2_output::GetFindingsTrendsV2Output;
-
 pub use crate::operation::get_findings_trends_v2::_get_findings_trends_v2_input::GetFindingsTrendsV2Input;
+
+pub use crate::operation::get_findings_trends_v2::_get_findings_trends_v2_output::GetFindingsTrendsV2Output;
 
 mod _get_findings_trends_v2_input;
 

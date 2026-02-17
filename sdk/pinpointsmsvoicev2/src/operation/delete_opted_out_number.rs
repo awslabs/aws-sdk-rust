@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_opted_out_n
     }
 }
 
-pub use crate::operation::delete_opted_out_number::_delete_opted_out_number_output::DeleteOptedOutNumberOutput;
-
 pub use crate::operation::delete_opted_out_number::_delete_opted_out_number_input::DeleteOptedOutNumberInput;
+
+pub use crate::operation::delete_opted_out_number::_delete_opted_out_number_output::DeleteOptedOutNumberOutput;
 
 mod _delete_opted_out_number_input;
 

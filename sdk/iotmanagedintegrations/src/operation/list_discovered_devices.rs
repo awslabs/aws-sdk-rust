@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_discovered_de
     }
 }
 
-pub use crate::operation::list_discovered_devices::_list_discovered_devices_output::ListDiscoveredDevicesOutput;
-
 pub use crate::operation::list_discovered_devices::_list_discovered_devices_input::ListDiscoveredDevicesInput;
+
+pub use crate::operation::list_discovered_devices::_list_discovered_devices_output::ListDiscoveredDevicesOutput;
 
 mod _list_discovered_devices_input;
 

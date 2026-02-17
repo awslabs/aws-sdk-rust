@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_signing_profil
     }
 }
 
-pub use crate::operation::put_signing_profile::_put_signing_profile_output::PutSigningProfileOutput;
-
 pub use crate::operation::put_signing_profile::_put_signing_profile_input::PutSigningProfileInput;
+
+pub use crate::operation::put_signing_profile::_put_signing_profile_output::PutSigningProfileOutput;
 
 mod _put_signing_profile_input;
 

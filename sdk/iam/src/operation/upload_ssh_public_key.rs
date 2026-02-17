@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_ssh_public_
     }
 }
 
-pub use crate::operation::upload_ssh_public_key::_upload_ssh_public_key_output::UploadSshPublicKeyOutput;
-
 pub use crate::operation::upload_ssh_public_key::_upload_ssh_public_key_input::UploadSshPublicKeyInput;
+
+pub use crate::operation::upload_ssh_public_key::_upload_ssh_public_key_output::UploadSshPublicKeyOutput;
 
 mod _upload_ssh_public_key_input;
 

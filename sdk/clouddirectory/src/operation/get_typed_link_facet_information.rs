@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_typed_link_fac
     }
 }
 
-pub use crate::operation::get_typed_link_facet_information::_get_typed_link_facet_information_output::GetTypedLinkFacetInformationOutput;
-
 pub use crate::operation::get_typed_link_facet_information::_get_typed_link_facet_information_input::GetTypedLinkFacetInformationInput;
+
+pub use crate::operation::get_typed_link_facet_information::_get_typed_link_facet_information_output::GetTypedLinkFacetInformationOutput;
 
 mod _get_typed_link_facet_information_input;
 

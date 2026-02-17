@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_export_co
     }
 }
 
-pub use crate::operation::get_data_export_configuration::_get_data_export_configuration_output::GetDataExportConfigurationOutput;
-
 pub use crate::operation::get_data_export_configuration::_get_data_export_configuration_input::GetDataExportConfigurationInput;
+
+pub use crate::operation::get_data_export_configuration::_get_data_export_configuration_output::GetDataExportConfigurationOutput;
 
 mod _get_data_export_configuration_input;
 

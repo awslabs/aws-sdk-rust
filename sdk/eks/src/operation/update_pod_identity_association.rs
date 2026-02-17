@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pod_identit
     }
 }
 
-pub use crate::operation::update_pod_identity_association::_update_pod_identity_association_output::UpdatePodIdentityAssociationOutput;
-
 pub use crate::operation::update_pod_identity_association::_update_pod_identity_association_input::UpdatePodIdentityAssociationInput;
+
+pub use crate::operation::update_pod_identity_association::_update_pod_identity_association_output::UpdatePodIdentityAssociationOutput;
 
 mod _update_pod_identity_association_input;
 

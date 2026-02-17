@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_campaign::D
     }
 }
 
-pub use crate::operation::delete_campaign::_delete_campaign_output::DeleteCampaignOutput;
-
 pub use crate::operation::delete_campaign::_delete_campaign_input::DeleteCampaignInput;
+
+pub use crate::operation::delete_campaign::_delete_campaign_output::DeleteCampaignOutput;
 
 mod _delete_campaign_input;
 

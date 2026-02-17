@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_version:
     }
 }
 
-pub use crate::operation::get_agent_version::_get_agent_version_output::GetAgentVersionOutput;
-
 pub use crate::operation::get_agent_version::_get_agent_version_input::GetAgentVersionInput;
+
+pub use crate::operation::get_agent_version::_get_agent_version_output::GetAgentVersionOutput;
 
 mod _get_agent_version_input;
 

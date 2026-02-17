@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_watchlists::L
     }
 }
 
-pub use crate::operation::list_watchlists::_list_watchlists_output::ListWatchlistsOutput;
-
 pub use crate::operation::list_watchlists::_list_watchlists_input::ListWatchlistsInput;
+
+pub use crate::operation::list_watchlists::_list_watchlists_output::ListWatchlistsOutput;
 
 mod _list_watchlists_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_database
     }
 }
 
-pub use crate::operation::create_kx_database::_create_kx_database_output::CreateKxDatabaseOutput;
-
 pub use crate::operation::create_kx_database::_create_kx_database_input::CreateKxDatabaseInput;
+
+pub use crate::operation::create_kx_database::_create_kx_database_output::CreateKxDatabaseOutput;
 
 mod _create_kx_database_input;
 

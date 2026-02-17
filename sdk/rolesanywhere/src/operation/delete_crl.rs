@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_crl::Delete
     }
 }
 
-pub use crate::operation::delete_crl::_delete_crl_output::DeleteCrlOutput;
-
 pub use crate::operation::delete_crl::_delete_crl_input::DeleteCrlInput;
+
+pub use crate::operation::delete_crl::_delete_crl_output::DeleteCrlOutput;
 
 mod _delete_crl_input;
 

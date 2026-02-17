@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_firewall_ma
     }
 }
 
-pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_manager_rule_groups_output::DeleteFirewallManagerRuleGroupsOutput;
-
 pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_manager_rule_groups_input::DeleteFirewallManagerRuleGroupsInput;
+
+pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_manager_rule_groups_output::DeleteFirewallManagerRuleGroupsOutput;
 
 mod _delete_firewall_manager_rule_groups_input;
 

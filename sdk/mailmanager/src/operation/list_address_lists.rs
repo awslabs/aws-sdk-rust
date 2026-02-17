@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_address_lists
     }
 }
 
-pub use crate::operation::list_address_lists::_list_address_lists_output::ListAddressListsOutput;
-
 pub use crate::operation::list_address_lists::_list_address_lists_input::ListAddressListsInput;
+
+pub use crate::operation::list_address_lists::_list_address_lists_output::ListAddressListsOutput;
 
 mod _list_address_lists_input;
 

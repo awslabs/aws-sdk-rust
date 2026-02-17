@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::push_domain::PushD
     }
 }
 
-pub use crate::operation::push_domain::_push_domain_output::PushDomainOutput;
-
 pub use crate::operation::push_domain::_push_domain_input::PushDomainInput;
+
+pub use crate::operation::push_domain::_push_domain_output::PushDomainOutput;
 
 mod _push_domain_input;
 

@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_role_f
     }
 }
 
-pub use crate::operation::get_service_role_for_account::_get_service_role_for_account_output::GetServiceRoleForAccountOutput;
-
 pub use crate::operation::get_service_role_for_account::_get_service_role_for_account_input::GetServiceRoleForAccountInput;
+
+pub use crate::operation::get_service_role_for_account::_get_service_role_for_account_output::GetServiceRoleForAccountOutput;
 
 mod _get_service_role_for_account_input;
 

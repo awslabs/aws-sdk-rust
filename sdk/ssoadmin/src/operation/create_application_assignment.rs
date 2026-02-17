@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_application
     }
 }
 
-pub use crate::operation::create_application_assignment::_create_application_assignment_output::CreateApplicationAssignmentOutput;
-
 pub use crate::operation::create_application_assignment::_create_application_assignment_input::CreateApplicationAssignmentInput;
+
+pub use crate::operation::create_application_assignment::_create_application_assignment_output::CreateApplicationAssignmentOutput;
 
 mod _create_application_assignment_input;
 

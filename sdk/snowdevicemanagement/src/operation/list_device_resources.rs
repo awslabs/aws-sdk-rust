@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_resour
     }
 }
 
-pub use crate::operation::list_device_resources::_list_device_resources_output::ListDeviceResourcesOutput;
-
 pub use crate::operation::list_device_resources::_list_device_resources_input::ListDeviceResourcesInput;
+
+pub use crate::operation::list_device_resources::_list_device_resources_output::ListDeviceResourcesOutput;
 
 mod _list_device_resources_input;
 

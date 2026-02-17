@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_create_workl
     }
 }
 
-pub use crate::operation::batch_create_workload_estimate_usage::_batch_create_workload_estimate_usage_output::BatchCreateWorkloadEstimateUsageOutput;
-
 pub use crate::operation::batch_create_workload_estimate_usage::_batch_create_workload_estimate_usage_input::BatchCreateWorkloadEstimateUsageInput;
+
+pub use crate::operation::batch_create_workload_estimate_usage::_batch_create_workload_estimate_usage_output::BatchCreateWorkloadEstimateUsageOutput;
 
 mod _batch_create_workload_estimate_usage_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_web_identity_t
     }
 }
 
-pub use crate::operation::get_web_identity_token::_get_web_identity_token_output::GetWebIdentityTokenOutput;
-
 pub use crate::operation::get_web_identity_token::_get_web_identity_token_input::GetWebIdentityTokenInput;
+
+pub use crate::operation::get_web_identity_token::_get_web_identity_token_output::GetWebIdentityTokenOutput;
 
 mod _get_web_identity_token_input;
 

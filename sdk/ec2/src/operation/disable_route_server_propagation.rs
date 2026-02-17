@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_route_serv
     }
 }
 
-pub use crate::operation::disable_route_server_propagation::_disable_route_server_propagation_output::DisableRouteServerPropagationOutput;
-
 pub use crate::operation::disable_route_server_propagation::_disable_route_server_propagation_input::DisableRouteServerPropagationInput;
+
+pub use crate::operation::disable_route_server_propagation::_disable_route_server_propagation_output::DisableRouteServerPropagationOutput;
 
 mod _disable_route_server_propagation_input;
 

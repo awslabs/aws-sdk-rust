@@ -350,9 +350,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hosted_zone_co
     }
 }
 
-pub use crate::operation::get_hosted_zone_count::_get_hosted_zone_count_output::GetHostedZoneCountOutput;
-
 pub use crate::operation::get_hosted_zone_count::_get_hosted_zone_count_input::GetHostedZoneCountInput;
+
+pub use crate::operation::get_hosted_zone_count::_get_hosted_zone_count_output::GetHostedZoneCountOutput;
 
 mod _get_hosted_zone_count_input;
 

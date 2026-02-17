@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_assignment:
     }
 }
 
-pub use crate::operation::reject_assignment::_reject_assignment_output::RejectAssignmentOutput;
-
 pub use crate::operation::reject_assignment::_reject_assignment_input::RejectAssignmentInput;
+
+pub use crate::operation::reject_assignment::_reject_assignment_output::RejectAssignmentOutput;
 
 mod _reject_assignment_input;
 

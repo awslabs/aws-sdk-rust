@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_medical_scrib
     }
 }
 
-pub use crate::operation::list_medical_scribe_jobs::_list_medical_scribe_jobs_output::ListMedicalScribeJobsOutput;
-
 pub use crate::operation::list_medical_scribe_jobs::_list_medical_scribe_jobs_input::ListMedicalScribeJobsInput;
+
+pub use crate::operation::list_medical_scribe_jobs::_list_medical_scribe_jobs_output::ListMedicalScribeJobsOutput;
 
 mod _list_medical_scribe_jobs_input;
 

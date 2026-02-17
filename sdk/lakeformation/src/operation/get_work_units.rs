@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_work_units::Ge
     }
 }
 
-pub use crate::operation::get_work_units::_get_work_units_output::GetWorkUnitsOutput;
-
 pub use crate::operation::get_work_units::_get_work_units_input::GetWorkUnitsInput;
+
+pub use crate::operation::get_work_units::_get_work_units_output::GetWorkUnitsOutput;
 
 mod _get_work_units_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_pl
     }
 }
 
-pub use crate::operation::modify_instance_placement::_modify_instance_placement_output::ModifyInstancePlacementOutput;
-
 pub use crate::operation::modify_instance_placement::_modify_instance_placement_input::ModifyInstancePlacementInput;
+
+pub use crate::operation::modify_instance_placement::_modify_instance_placement_output::ModifyInstancePlacementOutput;
 
 mod _modify_instance_placement_input;
 

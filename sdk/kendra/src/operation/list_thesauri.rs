@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_thesauri::Lis
     }
 }
 
-pub use crate::operation::list_thesauri::_list_thesauri_output::ListThesauriOutput;
-
 pub use crate::operation::list_thesauri::_list_thesauri_input::ListThesauriInput;
+
+pub use crate::operation::list_thesauri::_list_thesauri_output::ListThesauriOutput;
 
 mod _list_thesauri_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_domain::D
     }
 }
 
-pub use crate::operation::describe_domain::_describe_domain_output::DescribeDomainOutput;
-
 pub use crate::operation::describe_domain::_describe_domain_input::DescribeDomainInput;
+
+pub use crate::operation::describe_domain::_describe_domain_output::DescribeDomainOutput;
 
 mod _describe_domain_input;
 

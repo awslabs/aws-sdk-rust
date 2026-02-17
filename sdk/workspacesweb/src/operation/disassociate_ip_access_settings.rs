@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_ip_ac
     }
 }
 
-pub use crate::operation::disassociate_ip_access_settings::_disassociate_ip_access_settings_output::DisassociateIpAccessSettingsOutput;
-
 pub use crate::operation::disassociate_ip_access_settings::_disassociate_ip_access_settings_input::DisassociateIpAccessSettingsInput;
+
+pub use crate::operation::disassociate_ip_access_settings::_disassociate_ip_access_settings_output::DisassociateIpAccessSettingsOutput;
 
 mod _disassociate_ip_access_settings_input;
 

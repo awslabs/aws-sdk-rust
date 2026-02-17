@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_builds::ListB
     }
 }
 
-pub use crate::operation::list_builds::_list_builds_output::ListBuildsOutput;
-
 pub use crate::operation::list_builds::_list_builds_input::ListBuildsInput;
+
+pub use crate::operation::list_builds::_list_builds_output::ListBuildsOutput;
 
 mod _list_builds_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stream_key:
     }
 }
 
-pub use crate::operation::delete_stream_key::_delete_stream_key_output::DeleteStreamKeyOutput;
-
 pub use crate::operation::delete_stream_key::_delete_stream_key_input::DeleteStreamKeyInput;
+
+pub use crate::operation::delete_stream_key::_delete_stream_key_output::DeleteStreamKeyOutput;
 
 mod _delete_stream_key_input;
 

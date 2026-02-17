@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_interconn
     }
 }
 
-pub use crate::operation::describe_interconnects::_describe_interconnects_output::DescribeInterconnectsOutput;
-
 pub use crate::operation::describe_interconnects::_describe_interconnects_input::DescribeInterconnectsInput;
+
+pub use crate::operation::describe_interconnects::_describe_interconnects_output::DescribeInterconnectsOutput;
 
 mod _describe_interconnects_input;
 

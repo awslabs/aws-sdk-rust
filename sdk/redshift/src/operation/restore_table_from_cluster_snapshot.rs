@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_table_from
     }
 }
 
-pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_from_cluster_snapshot_output::RestoreTableFromClusterSnapshotOutput;
-
 pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_from_cluster_snapshot_input::RestoreTableFromClusterSnapshotInput;
+
+pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_from_cluster_snapshot_output::RestoreTableFromClusterSnapshotOutput;
 
 mod _restore_table_from_cluster_snapshot_input;
 

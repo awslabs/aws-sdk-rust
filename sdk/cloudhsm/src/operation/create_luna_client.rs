@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_luna_client
     }
 }
 
-pub use crate::operation::create_luna_client::_create_luna_client_output::CreateLunaClientOutput;
-
 pub use crate::operation::create_luna_client::_create_luna_client_input::CreateLunaClientInput;
+
+pub use crate::operation::create_luna_client::_create_luna_client_output::CreateLunaClientOutput;
 
 mod _create_luna_client_input;
 

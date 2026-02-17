@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_provisionin
     }
 }
 
-pub use crate::operation::create_provisioning_claim::_create_provisioning_claim_output::CreateProvisioningClaimOutput;
-
 pub use crate::operation::create_provisioning_claim::_create_provisioning_claim_input::CreateProvisioningClaimInput;
+
+pub use crate::operation::create_provisioning_claim::_create_provisioning_claim_output::CreateProvisioningClaimOutput;
 
 mod _create_provisioning_claim_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_fun
     }
 }
 
-pub use crate::operation::get_connection_function::_get_connection_function_output::GetConnectionFunctionOutput;
-
 pub use crate::operation::get_connection_function::_get_connection_function_input::GetConnectionFunctionInput;
+
+pub use crate::operation::get_connection_function::_get_connection_function_output::GetConnectionFunctionOutput;
 
 mod _get_connection_function_input;
 

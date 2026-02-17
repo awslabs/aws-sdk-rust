@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configured_au
     }
 }
 
-pub use crate::operation::list_configured_audience_models::_list_configured_audience_models_output::ListConfiguredAudienceModelsOutput;
-
 pub use crate::operation::list_configured_audience_models::_list_configured_audience_models_input::ListConfiguredAudienceModelsInput;
+
+pub use crate::operation::list_configured_audience_models::_list_configured_audience_models_output::ListConfiguredAudienceModelsOutput;
 
 mod _list_configured_audience_models_input;
 

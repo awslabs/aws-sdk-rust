@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scraper_log
     }
 }
 
-pub use crate::operation::delete_scraper_logging_configuration::_delete_scraper_logging_configuration_output::DeleteScraperLoggingConfigurationOutput;
-
 pub use crate::operation::delete_scraper_logging_configuration::_delete_scraper_logging_configuration_input::DeleteScraperLoggingConfigurationInput;
+
+pub use crate::operation::delete_scraper_logging_configuration::_delete_scraper_logging_configuration_output::DeleteScraperLoggingConfigurationOutput;
 
 mod _delete_scraper_logging_configuration_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_topic_attribut
     }
 }
 
-pub use crate::operation::set_topic_attributes::_set_topic_attributes_output::SetTopicAttributesOutput;
-
 pub use crate::operation::set_topic_attributes::_set_topic_attributes_input::SetTopicAttributesInput;
+
+pub use crate::operation::set_topic_attributes::_set_topic_attributes_output::SetTopicAttributesOutput;
 
 mod _set_topic_attributes_input;
 

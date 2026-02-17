@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_responder_g
     }
 }
 
-pub use crate::operation::delete_responder_gateway::_delete_responder_gateway_output::DeleteResponderGatewayOutput;
-
 pub use crate::operation::delete_responder_gateway::_delete_responder_gateway_input::DeleteResponderGatewayInput;
+
+pub use crate::operation::delete_responder_gateway::_delete_responder_gateway_output::DeleteResponderGatewayOutput;
 
 mod _delete_responder_gateway_input;
 

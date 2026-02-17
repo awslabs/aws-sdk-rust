@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_managed_notification_account_contact::_disassociate_managed_notification_account_contact_output::DisassociateManagedNotificationAccountContactOutput;
-
 pub use crate::operation::disassociate_managed_notification_account_contact::_disassociate_managed_notification_account_contact_input::DisassociateManagedNotificationAccountContactInput;
+
+pub use crate::operation::disassociate_managed_notification_account_contact::_disassociate_managed_notification_account_contact_output::DisassociateManagedNotificationAccountContactOutput;
 
 mod _disassociate_managed_notification_account_contact_input;
 

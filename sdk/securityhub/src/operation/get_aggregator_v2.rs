@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_aggregator_v2:
     }
 }
 
-pub use crate::operation::get_aggregator_v2::_get_aggregator_v2_output::GetAggregatorV2Output;
-
 pub use crate::operation::get_aggregator_v2::_get_aggregator_v2_input::GetAggregatorV2Input;
+
+pub use crate::operation::get_aggregator_v2::_get_aggregator_v2_output::GetAggregatorV2Output;
 
 mod _get_aggregator_v2_input;
 

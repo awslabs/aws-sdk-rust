@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_agent_runtime
     }
 }
 
-pub use crate::operation::list_agent_runtime_versions::_list_agent_runtime_versions_output::ListAgentRuntimeVersionsOutput;
-
 pub use crate::operation::list_agent_runtime_versions::_list_agent_runtime_versions_input::ListAgentRuntimeVersionsInput;
+
+pub use crate::operation::list_agent_runtime_versions::_list_agent_runtime_versions_output::ListAgentRuntimeVersionsOutput;
 
 mod _list_agent_runtime_versions_input;
 

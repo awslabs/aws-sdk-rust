@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_portfolio_s
     }
 }
 
-pub use crate::operation::update_portfolio_share::_update_portfolio_share_output::UpdatePortfolioShareOutput;
-
 pub use crate::operation::update_portfolio_share::_update_portfolio_share_input::UpdatePortfolioShareInput;
+
+pub use crate::operation::update_portfolio_share::_update_portfolio_share_output::UpdatePortfolioShareOutput;
 
 mod _update_portfolio_share_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_explainabil
     }
 }
 
-pub use crate::operation::create_explainability::_create_explainability_output::CreateExplainabilityOutput;
-
 pub use crate::operation::create_explainability::_create_explainability_input::CreateExplainabilityInput;
+
+pub use crate::operation::create_explainability::_create_explainability_output::CreateExplainabilityOutput;
 
 mod _create_explainability_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_sta
     }
 }
 
-pub use crate::operation::get_connection_status::_get_connection_status_output::GetConnectionStatusOutput;
-
 pub use crate::operation::get_connection_status::_get_connection_status_input::GetConnectionStatusInput;
+
+pub use crate::operation::get_connection_status::_get_connection_status_output::GetConnectionStatusOutput;
 
 mod _get_connection_status_input;
 

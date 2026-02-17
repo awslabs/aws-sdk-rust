@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_maintenan
     }
 }
 
-pub use crate::operation::describe_maintenance_window_executions::_describe_maintenance_window_executions_output::DescribeMaintenanceWindowExecutionsOutput;
-
 pub use crate::operation::describe_maintenance_window_executions::_describe_maintenance_window_executions_input::DescribeMaintenanceWindowExecutionsInput;
+
+pub use crate::operation::describe_maintenance_window_executions::_describe_maintenance_window_executions_output::DescribeMaintenanceWindowExecutionsOutput;
 
 mod _describe_maintenance_window_executions_input;
 

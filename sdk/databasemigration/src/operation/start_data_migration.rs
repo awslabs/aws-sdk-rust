@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_migrati
     }
 }
 
-pub use crate::operation::start_data_migration::_start_data_migration_output::StartDataMigrationOutput;
-
 pub use crate::operation::start_data_migration::_start_data_migration_input::StartDataMigrationInput;
+
+pub use crate::operation::start_data_migration::_start_data_migration_output::StartDataMigrationOutput;
 
 mod _start_data_migration_input;
 

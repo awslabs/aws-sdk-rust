@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_tags_for_resou
     }
 }
 
-pub use crate::operation::set_tags_for_resource::_set_tags_for_resource_output::SetTagsForResourceOutput;
-
 pub use crate::operation::set_tags_for_resource::_set_tags_for_resource_input::SetTagsForResourceInput;
+
+pub use crate::operation::set_tags_for_resource::_set_tags_for_resource_output::SetTagsForResourceOutput;
 
 mod _set_tags_for_resource_input;
 

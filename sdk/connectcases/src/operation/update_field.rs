@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_field::Upda
     }
 }
 
-pub use crate::operation::update_field::_update_field_output::UpdateFieldOutput;
-
 pub use crate::operation::update_field::_update_field_input::UpdateFieldInput;
+
+pub use crate::operation::update_field::_update_field_output::UpdateFieldOutput;
 
 mod _update_field_input;
 

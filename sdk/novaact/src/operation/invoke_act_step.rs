@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_act_step::I
     }
 }
 
-pub use crate::operation::invoke_act_step::_invoke_act_step_output::InvokeActStepOutput;
-
 pub use crate::operation::invoke_act_step::_invoke_act_step_input::InvokeActStepInput;
+
+pub use crate::operation::invoke_act_step::_invoke_act_step_output::InvokeActStepOutput;
 
 mod _invoke_act_step_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_render_email_
     }
 }
 
-pub use crate::operation::test_render_email_template::_test_render_email_template_output::TestRenderEmailTemplateOutput;
-
 pub use crate::operation::test_render_email_template::_test_render_email_template_input::TestRenderEmailTemplateInput;
+
+pub use crate::operation::test_render_email_template::_test_render_email_template_output::TestRenderEmailTemplateOutput;
 
 mod _test_render_email_template_input;
 

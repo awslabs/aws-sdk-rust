@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_iam_instance_profile_associations::_describe_iam_instance_profile_associations_output::DescribeIamInstanceProfileAssociationsOutput;
-
 pub use crate::operation::describe_iam_instance_profile_associations::_describe_iam_instance_profile_associations_input::DescribeIamInstanceProfileAssociationsInput;
+
+pub use crate::operation::describe_iam_instance_profile_associations::_describe_iam_instance_profile_associations_output::DescribeIamInstanceProfileAssociationsOutput;
 
 mod _describe_iam_instance_profile_associations_input;
 

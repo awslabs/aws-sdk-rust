@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_pipeline_exec
     }
 }
 
-pub use crate::operation::send_pipeline_execution_step_success::_send_pipeline_execution_step_success_output::SendPipelineExecutionStepSuccessOutput;
-
 pub use crate::operation::send_pipeline_execution_step_success::_send_pipeline_execution_step_success_input::SendPipelineExecutionStepSuccessInput;
+
+pub use crate::operation::send_pipeline_execution_step_success::_send_pipeline_execution_step_success_output::SendPipelineExecutionStepSuccessOutput;
 
 mod _send_pipeline_execution_step_success_input;
 

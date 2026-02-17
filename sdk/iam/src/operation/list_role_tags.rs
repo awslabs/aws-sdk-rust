@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_role_tags::Li
     }
 }
 
-pub use crate::operation::list_role_tags::_list_role_tags_output::ListRoleTagsOutput;
-
 pub use crate::operation::list_role_tags::_list_role_tags_input::ListRoleTagsInput;
+
+pub use crate::operation::list_role_tags::_list_role_tags_output::ListRoleTagsOutput;
 
 mod _list_role_tags_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_subnets:
     }
 }
 
-pub use crate::operation::associate_subnets::_associate_subnets_output::AssociateSubnetsOutput;
-
 pub use crate::operation::associate_subnets::_associate_subnets_input::AssociateSubnetsInput;
+
+pub use crate::operation::associate_subnets::_associate_subnets_output::AssociateSubnetsOutput;
 
 mod _associate_subnets_input;
 

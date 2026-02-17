@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_tiering_confi
     }
 }
 
-pub use crate::operation::list_tiering_configurations::_list_tiering_configurations_output::ListTieringConfigurationsOutput;
-
 pub use crate::operation::list_tiering_configurations::_list_tiering_configurations_input::ListTieringConfigurationsInput;
+
+pub use crate::operation::list_tiering_configurations::_list_tiering_configurations_output::ListTieringConfigurationsOutput;
 
 mod _list_tiering_configurations_input;
 

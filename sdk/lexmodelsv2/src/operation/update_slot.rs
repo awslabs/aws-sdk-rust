@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_slot::Updat
     }
 }
 
-pub use crate::operation::update_slot::_update_slot_output::UpdateSlotOutput;
-
 pub use crate::operation::update_slot::_update_slot_input::UpdateSlotInput;
+
+pub use crate::operation::update_slot::_update_slot_output::UpdateSlotOutput;
 
 mod _update_slot_input;
 

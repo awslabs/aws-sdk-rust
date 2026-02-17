@@ -468,9 +468,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vpc_origin:
     }
 }
 
-pub use crate::operation::update_vpc_origin::_update_vpc_origin_output::UpdateVpcOriginOutput;
-
 pub use crate::operation::update_vpc_origin::_update_vpc_origin_input::UpdateVpcOriginInput;
+
+pub use crate::operation::update_vpc_origin::_update_vpc_origin_output::UpdateVpcOriginOutput;
 
 mod _update_vpc_origin_input;
 

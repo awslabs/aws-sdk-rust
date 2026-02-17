@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_worker_bloc
     }
 }
 
-pub use crate::operation::delete_worker_block::_delete_worker_block_output::DeleteWorkerBlockOutput;
-
 pub use crate::operation::delete_worker_block::_delete_worker_block_input::DeleteWorkerBlockInput;
+
+pub use crate::operation::delete_worker_block::_delete_worker_block_output::DeleteWorkerBlockOutput;
 
 mod _delete_worker_block_input;
 

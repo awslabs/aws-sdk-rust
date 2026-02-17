@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_membe
     }
 }
 
-pub use crate::operation::list_channel_memberships::_list_channel_memberships_output::ListChannelMembershipsOutput;
-
 pub use crate::operation::list_channel_memberships::_list_channel_memberships_input::ListChannelMembershipsInput;
+
+pub use crate::operation::list_channel_memberships::_list_channel_memberships_output::ListChannelMembershipsOutput;
 
 mod _list_channel_memberships_input;
 

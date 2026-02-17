@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_policy::V
     }
 }
 
-pub use crate::operation::validate_policy::_validate_policy_output::ValidatePolicyOutput;
-
 pub use crate::operation::validate_policy::_validate_policy_input::ValidatePolicyInput;
+
+pub use crate::operation::validate_policy::_validate_policy_output::ValidatePolicyOutput;
 
 mod _validate_policy_input;
 

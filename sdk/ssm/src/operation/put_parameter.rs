@@ -498,9 +498,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_parameter::Put
     }
 }
 
-pub use crate::operation::put_parameter::_put_parameter_output::PutParameterOutput;
-
 pub use crate::operation::put_parameter::_put_parameter_input::PutParameterInput;
+
+pub use crate::operation::put_parameter::_put_parameter_output::PutParameterOutput;
 
 mod _put_parameter_input;
 

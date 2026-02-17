@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_view_versio
     }
 }
 
-pub use crate::operation::create_view_version::_create_view_version_output::CreateViewVersionOutput;
-
 pub use crate::operation::create_view_version::_create_view_version_input::CreateViewVersionInput;
+
+pub use crate::operation::create_view_version::_create_view_version_output::CreateViewVersionOutput;
 
 mod _create_view_version_input;
 

@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_accou
     }
 }
 
-pub use crate::operation::disassociate_accounts::_disassociate_accounts_output::DisassociateAccountsOutput;
-
 pub use crate::operation::disassociate_accounts::_disassociate_accounts_input::DisassociateAccountsInput;
+
+pub use crate::operation::disassociate_accounts::_disassociate_accounts_output::DisassociateAccountsOutput;
 
 mod _disassociate_accounts_input;
 

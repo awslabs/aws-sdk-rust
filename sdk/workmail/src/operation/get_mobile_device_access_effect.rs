@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mobile_device_
     }
 }
 
-pub use crate::operation::get_mobile_device_access_effect::_get_mobile_device_access_effect_output::GetMobileDeviceAccessEffectOutput;
-
 pub use crate::operation::get_mobile_device_access_effect::_get_mobile_device_access_effect_input::GetMobileDeviceAccessEffectInput;
+
+pub use crate::operation::get_mobile_device_access_effect::_get_mobile_device_access_effect_output::GetMobileDeviceAccessEffectOutput;
 
 mod _get_mobile_device_access_effect_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::generate_access_lo
     }
 }
 
-pub use crate::operation::generate_access_logs::_generate_access_logs_output::GenerateAccessLogsOutput;
-
 pub use crate::operation::generate_access_logs::_generate_access_logs_input::GenerateAccessLogsInput;
+
+pub use crate::operation::generate_access_logs::_generate_access_logs_output::GenerateAccessLogsOutput;
 
 mod _generate_access_logs_input;
 

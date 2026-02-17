@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_unlock_cod
     }
 }
 
-pub use crate::operation::get_job_unlock_code::_get_job_unlock_code_output::GetJobUnlockCodeOutput;
-
 pub use crate::operation::get_job_unlock_code::_get_job_unlock_code_input::GetJobUnlockCodeInput;
+
+pub use crate::operation::get_job_unlock_code::_get_job_unlock_code_output::GetJobUnlockCodeOutput;
 
 mod _get_job_unlock_code_input;
 

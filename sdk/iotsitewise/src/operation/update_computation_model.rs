@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_computation
     }
 }
 
-pub use crate::operation::update_computation_model::_update_computation_model_output::UpdateComputationModelOutput;
-
 pub use crate::operation::update_computation_model::_update_computation_model_input::UpdateComputationModelInput;
+
+pub use crate::operation::update_computation_model::_update_computation_model_output::UpdateComputationModelOutput;
 
 mod _update_computation_model_input;
 

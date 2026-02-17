@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_listener::D
     }
 }
 
-pub use crate::operation::delete_listener::_delete_listener_output::DeleteListenerOutput;
-
 pub use crate::operation::delete_listener::_delete_listener_input::DeleteListenerInput;
+
+pub use crate::operation::delete_listener::_delete_listener_output::DeleteListenerOutput;
 
 mod _delete_listener_input;
 

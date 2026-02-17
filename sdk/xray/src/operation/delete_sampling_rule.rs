@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sampling_ru
     }
 }
 
-pub use crate::operation::delete_sampling_rule::_delete_sampling_rule_output::DeleteSamplingRuleOutput;
-
 pub use crate::operation::delete_sampling_rule::_delete_sampling_rule_input::DeleteSamplingRuleInput;
+
+pub use crate::operation::delete_sampling_rule::_delete_sampling_rule_output::DeleteSamplingRuleOutput;
 
 mod _delete_sampling_rule_input;
 

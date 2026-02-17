@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_codegen_job::G
     }
 }
 
-pub use crate::operation::get_codegen_job::_get_codegen_job_output::GetCodegenJobOutput;
-
 pub use crate::operation::get_codegen_job::_get_codegen_job_input::GetCodegenJobInput;
+
+pub use crate::operation::get_codegen_job::_get_codegen_job_output::GetCodegenJobOutput;
 
 mod _get_codegen_job_input;
 

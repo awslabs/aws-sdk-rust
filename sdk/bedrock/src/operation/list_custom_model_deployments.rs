@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_model_
     }
 }
 
-pub use crate::operation::list_custom_model_deployments::_list_custom_model_deployments_output::ListCustomModelDeploymentsOutput;
-
 pub use crate::operation::list_custom_model_deployments::_list_custom_model_deployments_input::ListCustomModelDeploymentsInput;
+
+pub use crate::operation::list_custom_model_deployments::_list_custom_model_deployments_output::ListCustomModelDeploymentsOutput;
 
 mod _list_custom_model_deployments_input;
 

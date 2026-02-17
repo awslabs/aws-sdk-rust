@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_campaign::GetC
     }
 }
 
-pub use crate::operation::get_campaign::_get_campaign_output::GetCampaignOutput;
-
 pub use crate::operation::get_campaign::_get_campaign_input::GetCampaignInput;
+
+pub use crate::operation::get_campaign::_get_campaign_output::GetCampaignOutput;
 
 mod _get_campaign_input;
 

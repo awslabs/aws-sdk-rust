@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_graph::Crea
     }
 }
 
-pub use crate::operation::create_graph::_create_graph_output::CreateGraphOutput;
-
 pub use crate::operation::create_graph::_create_graph_input::CreateGraphInput;
+
+pub use crate::operation::create_graph::_create_graph_output::CreateGraphOutput;
 
 mod _create_graph_input;
 

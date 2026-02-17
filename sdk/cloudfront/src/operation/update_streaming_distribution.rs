@@ -506,9 +506,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_streaming_d
     }
 }
 
-pub use crate::operation::update_streaming_distribution::_update_streaming_distribution_output::UpdateStreamingDistributionOutput;
-
 pub use crate::operation::update_streaming_distribution::_update_streaming_distribution_input::UpdateStreamingDistributionInput;
+
+pub use crate::operation::update_streaming_distribution::_update_streaming_distribution_output::UpdateStreamingDistributionOutput;
 
 mod _update_streaming_distribution_input;
 

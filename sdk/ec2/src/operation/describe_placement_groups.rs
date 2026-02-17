@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_placement
     }
 }
 
-pub use crate::operation::describe_placement_groups::_describe_placement_groups_output::DescribePlacementGroupsOutput;
-
 pub use crate::operation::describe_placement_groups::_describe_placement_groups_input::DescribePlacementGroupsInput;
+
+pub use crate::operation::describe_placement_groups::_describe_placement_groups_output::DescribePlacementGroupsOutput;
 
 mod _describe_placement_groups_input;
 

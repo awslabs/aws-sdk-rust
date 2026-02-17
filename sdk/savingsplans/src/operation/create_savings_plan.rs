@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_savings_pla
     }
 }
 
-pub use crate::operation::create_savings_plan::_create_savings_plan_output::CreateSavingsPlanOutput;
-
 pub use crate::operation::create_savings_plan::_create_savings_plan_input::CreateSavingsPlanInput;
+
+pub use crate::operation::create_savings_plan::_create_savings_plan_output::CreateSavingsPlanOutput;
 
 mod _create_savings_plan_input;
 

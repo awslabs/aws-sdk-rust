@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sequence_stor
     }
 }
 
-pub use crate::operation::list_sequence_stores::_list_sequence_stores_output::ListSequenceStoresOutput;
-
 pub use crate::operation::list_sequence_stores::_list_sequence_stores_input::ListSequenceStoresInput;
+
+pub use crate::operation::list_sequence_stores::_list_sequence_stores_output::ListSequenceStoresOutput;
 
 mod _list_sequence_stores_input;
 

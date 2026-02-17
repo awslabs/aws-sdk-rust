@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_managed_j
     }
 }
 
-pub use crate::operation::describe_managed_job_template::_describe_managed_job_template_output::DescribeManagedJobTemplateOutput;
-
 pub use crate::operation::describe_managed_job_template::_describe_managed_job_template_input::DescribeManagedJobTemplateInput;
+
+pub use crate::operation::describe_managed_job_template::_describe_managed_job_template_output::DescribeManagedJobTemplateOutput;
 
 mod _describe_managed_job_template_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_cp
     }
 }
 
-pub use crate::operation::modify_instance_cpu_options::_modify_instance_cpu_options_output::ModifyInstanceCpuOptionsOutput;
-
 pub use crate::operation::modify_instance_cpu_options::_modify_instance_cpu_options_input::ModifyInstanceCpuOptionsInput;
+
+pub use crate::operation::modify_instance_cpu_options::_modify_instance_cpu_options_output::ModifyInstanceCpuOptionsOutput;
 
 mod _modify_instance_cpu_options_input;
 

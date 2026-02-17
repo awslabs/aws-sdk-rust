@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_portal_prod
     }
 }
 
-pub use crate::operation::delete_portal_product_sharing_policy::_delete_portal_product_sharing_policy_output::DeletePortalProductSharingPolicyOutput;
-
 pub use crate::operation::delete_portal_product_sharing_policy::_delete_portal_product_sharing_policy_input::DeletePortalProductSharingPolicyInput;
+
+pub use crate::operation::delete_portal_product_sharing_policy::_delete_portal_product_sharing_policy_output::DeletePortalProductSharingPolicyOutput;
 
 mod _delete_portal_product_sharing_policy_input;
 

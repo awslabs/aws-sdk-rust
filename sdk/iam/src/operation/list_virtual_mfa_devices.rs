@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_mfa_d
     }
 }
 
-pub use crate::operation::list_virtual_mfa_devices::_list_virtual_mfa_devices_output::ListVirtualMfaDevicesOutput;
-
 pub use crate::operation::list_virtual_mfa_devices::_list_virtual_mfa_devices_input::ListVirtualMfaDevicesInput;
+
+pub use crate::operation::list_virtual_mfa_devices::_list_virtual_mfa_devices_output::ListVirtualMfaDevicesOutput;
 
 mod _list_virtual_mfa_devices_input;
 

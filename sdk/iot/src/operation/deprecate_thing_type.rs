@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprecate_thing_ty
     }
 }
 
-pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_output::DeprecateThingTypeOutput;
-
 pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_input::DeprecateThingTypeInput;
+
+pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_output::DeprecateThingTypeOutput;
 
 mod _deprecate_thing_type_input;
 

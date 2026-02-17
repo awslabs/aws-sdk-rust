@@ -508,9 +508,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_db_cluster
     }
 }
 
-pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s3_output::RestoreDbClusterFromS3Output;
-
 pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s3_input::RestoreDbClusterFromS3Input;
+
+pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s3_output::RestoreDbClusterFromS3Output;
 
 mod _restore_db_cluster_from_s3_input;
 

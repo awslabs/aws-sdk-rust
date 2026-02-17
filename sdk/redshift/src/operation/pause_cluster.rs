@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::pause_cluster::Pau
     }
 }
 
-pub use crate::operation::pause_cluster::_pause_cluster_output::PauseClusterOutput;
-
 pub use crate::operation::pause_cluster::_pause_cluster_input::PauseClusterInput;
+
+pub use crate::operation::pause_cluster::_pause_cluster_output::PauseClusterOutput;
 
 mod _pause_cluster_input;
 

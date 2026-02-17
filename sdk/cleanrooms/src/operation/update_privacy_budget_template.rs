@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_privacy_bud
     }
 }
 
-pub use crate::operation::update_privacy_budget_template::_update_privacy_budget_template_output::UpdatePrivacyBudgetTemplateOutput;
-
 pub use crate::operation::update_privacy_budget_template::_update_privacy_budget_template_input::UpdatePrivacyBudgetTemplateInput;
+
+pub use crate::operation::update_privacy_budget_template::_update_privacy_budget_template_output::UpdatePrivacyBudgetTemplateOutput;
 
 mod _update_privacy_budget_template_input;
 

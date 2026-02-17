@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspaces_
     }
 }
 
-pub use crate::operation::update_workspaces_pool::_update_workspaces_pool_output::UpdateWorkspacesPoolOutput;
-
 pub use crate::operation::update_workspaces_pool::_update_workspaces_pool_input::UpdateWorkspacesPoolInput;
+
+pub use crate::operation::update_workspaces_pool::_update_workspaces_pool_output::UpdateWorkspacesPoolOutput;
 
 mod _update_workspaces_pool_input;
 

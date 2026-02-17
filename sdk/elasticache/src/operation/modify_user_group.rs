@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_user_group:
     }
 }
 
-pub use crate::operation::modify_user_group::_modify_user_group_output::ModifyUserGroupOutput;
-
 pub use crate::operation::modify_user_group::_modify_user_group_input::ModifyUserGroupInput;
+
+pub use crate::operation::modify_user_group::_modify_user_group_output::ModifyUserGroupOutput;
 
 mod _modify_user_group_input;
 

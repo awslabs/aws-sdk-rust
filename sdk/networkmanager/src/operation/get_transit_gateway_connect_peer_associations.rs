@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_transit_gateway_connect_peer_associations::_get_transit_gateway_connect_peer_associations_output::GetTransitGatewayConnectPeerAssociationsOutput;
-
 pub use crate::operation::get_transit_gateway_connect_peer_associations::_get_transit_gateway_connect_peer_associations_input::GetTransitGatewayConnectPeerAssociationsInput;
+
+pub use crate::operation::get_transit_gateway_connect_peer_associations::_get_transit_gateway_connect_peer_associations_output::GetTransitGatewayConnectPeerAssociationsOutput;
 
 mod _get_transit_gateway_connect_peer_associations_input;
 

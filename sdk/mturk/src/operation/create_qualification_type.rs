@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_qualificati
     }
 }
 
-pub use crate::operation::create_qualification_type::_create_qualification_type_output::CreateQualificationTypeOutput;
-
 pub use crate::operation::create_qualification_type::_create_qualification_type_input::CreateQualificationTypeInput;
+
+pub use crate::operation::create_qualification_type::_create_qualification_type_output::CreateQualificationTypeOutput;
 
 mod _create_qualification_type_input;
 

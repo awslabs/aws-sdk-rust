@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_billing_group
     }
 }
 
-pub use crate::operation::list_billing_groups::_list_billing_groups_output::ListBillingGroupsOutput;
-
 pub use crate::operation::list_billing_groups::_list_billing_groups_input::ListBillingGroupsInput;
+
+pub use crate::operation::list_billing_groups::_list_billing_groups_output::ListBillingGroupsOutput;
 
 mod _list_billing_groups_input;
 

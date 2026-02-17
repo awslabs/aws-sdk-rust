@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_content_ass
     }
 }
 
-pub use crate::operation::create_content_association::_create_content_association_output::CreateContentAssociationOutput;
-
 pub use crate::operation::create_content_association::_create_content_association_input::CreateContentAssociationInput;
+
+pub use crate::operation::create_content_association::_create_content_association_output::CreateContentAssociationOutput;
 
 mod _create_content_association_input;
 

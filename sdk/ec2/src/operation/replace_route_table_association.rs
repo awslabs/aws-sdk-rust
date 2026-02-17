@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_route_tabl
     }
 }
 
-pub use crate::operation::replace_route_table_association::_replace_route_table_association_output::ReplaceRouteTableAssociationOutput;
-
 pub use crate::operation::replace_route_table_association::_replace_route_table_association_input::ReplaceRouteTableAssociationInput;
+
+pub use crate::operation::replace_route_table_association::_replace_route_table_association_output::ReplaceRouteTableAssociationOutput;
 
 mod _replace_route_table_association_input;
 

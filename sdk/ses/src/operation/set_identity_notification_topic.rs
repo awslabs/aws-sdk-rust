@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_identity_notif
     }
 }
 
-pub use crate::operation::set_identity_notification_topic::_set_identity_notification_topic_output::SetIdentityNotificationTopicOutput;
-
 pub use crate::operation::set_identity_notification_topic::_set_identity_notification_topic_input::SetIdentityNotificationTopicInput;
+
+pub use crate::operation::set_identity_notification_topic::_set_identity_notification_topic_output::SetIdentityNotificationTopicOutput;
 
 mod _set_identity_notification_topic_input;
 

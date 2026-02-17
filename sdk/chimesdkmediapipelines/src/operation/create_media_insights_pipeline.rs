@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_media_insig
     }
 }
 
-pub use crate::operation::create_media_insights_pipeline::_create_media_insights_pipeline_output::CreateMediaInsightsPipelineOutput;
-
 pub use crate::operation::create_media_insights_pipeline::_create_media_insights_pipeline_input::CreateMediaInsightsPipelineInput;
+
+pub use crate::operation::create_media_insights_pipeline::_create_media_insights_pipeline_output::CreateMediaInsightsPipelineOutput;
 
 mod _create_media_insights_pipeline_input;
 

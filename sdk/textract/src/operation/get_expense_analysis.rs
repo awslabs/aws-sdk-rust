@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_expense_analys
     }
 }
 
-pub use crate::operation::get_expense_analysis::_get_expense_analysis_output::GetExpenseAnalysisOutput;
-
 pub use crate::operation::get_expense_analysis::_get_expense_analysis_input::GetExpenseAnalysisInput;
+
+pub use crate::operation::get_expense_analysis::_get_expense_analysis_output::GetExpenseAnalysisOutput;
 
 mod _get_expense_analysis_input;
 

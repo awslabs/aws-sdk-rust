@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_network_insights_access_scope_analyses::_describe_network_insights_access_scope_analyses_output::DescribeNetworkInsightsAccessScopeAnalysesOutput;
-
 pub use crate::operation::describe_network_insights_access_scope_analyses::_describe_network_insights_access_scope_analyses_input::DescribeNetworkInsightsAccessScopeAnalysesInput;
+
+pub use crate::operation::describe_network_insights_access_scope_analyses::_describe_network_insights_access_scope_analyses_output::DescribeNetworkInsightsAccessScopeAnalysesOutput;
 
 mod _describe_network_insights_access_scope_analyses_input;
 

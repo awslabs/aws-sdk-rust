@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_serv
     }
 }
 
-pub use crate::operation::list_resource_servers::_list_resource_servers_output::ListResourceServersOutput;
-
 pub use crate::operation::list_resource_servers::_list_resource_servers_input::ListResourceServersInput;
+
+pub use crate::operation::list_resource_servers::_list_resource_servers_output::ListResourceServersOutput;
 
 mod _list_resource_servers_input;
 

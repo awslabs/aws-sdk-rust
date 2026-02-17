@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_sol_network_pa
     }
 }
 
-pub use crate::operation::put_sol_network_package_content::_put_sol_network_package_content_output::PutSolNetworkPackageContentOutput;
-
 pub use crate::operation::put_sol_network_package_content::_put_sol_network_package_content_input::PutSolNetworkPackageContentInput;
+
+pub use crate::operation::put_sol_network_package_content::_put_sol_network_package_content_output::PutSolNetworkPackageContentOutput;
 
 mod _put_sol_network_package_content_input;
 

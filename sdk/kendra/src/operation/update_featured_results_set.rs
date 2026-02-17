@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_featured_re
     }
 }
 
-pub use crate::operation::update_featured_results_set::_update_featured_results_set_output::UpdateFeaturedResultsSetOutput;
-
 pub use crate::operation::update_featured_results_set::_update_featured_results_set_input::UpdateFeaturedResultsSetInput;
+
+pub use crate::operation::update_featured_results_set::_update_featured_results_set_output::UpdateFeaturedResultsSetOutput;
 
 mod _update_featured_results_set_input;
 

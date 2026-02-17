@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_sourc
     }
 }
 
-pub use crate::operation::update_event_source_mapping::_update_event_source_mapping_output::UpdateEventSourceMappingOutput;
-
 pub use crate::operation::update_event_source_mapping::_update_event_source_mapping_input::UpdateEventSourceMappingInput;
+
+pub use crate::operation::update_event_source_mapping::_update_event_source_mapping_output::UpdateEventSourceMappingOutput;
 
 mod _update_event_source_mapping_input;
 

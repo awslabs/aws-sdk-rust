@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_available
     }
 }
 
-pub use crate::operation::describe_available_patches::_describe_available_patches_output::DescribeAvailablePatchesOutput;
-
 pub use crate::operation::describe_available_patches::_describe_available_patches_input::DescribeAvailablePatchesInput;
+
+pub use crate::operation::describe_available_patches::_describe_available_patches_output::DescribeAvailablePatchesOutput;
 
 mod _describe_available_patches_input;
 

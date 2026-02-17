@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_perm
     }
 }
 
-pub use crate::operation::delete_custom_permissions::_delete_custom_permissions_output::DeleteCustomPermissionsOutput;
-
 pub use crate::operation::delete_custom_permissions::_delete_custom_permissions_input::DeleteCustomPermissionsInput;
+
+pub use crate::operation::delete_custom_permissions::_delete_custom_permissions_output::DeleteCustomPermissionsOutput;
 
 mod _delete_custom_permissions_input;
 

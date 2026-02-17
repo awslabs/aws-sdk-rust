@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sbom_validati
     }
 }
 
-pub use crate::operation::list_sbom_validation_results::_list_sbom_validation_results_output::ListSbomValidationResultsOutput;
-
 pub use crate::operation::list_sbom_validation_results::_list_sbom_validation_results_input::ListSbomValidationResultsInput;
+
+pub use crate::operation::list_sbom_validation_results::_list_sbom_validation_results_output::ListSbomValidationResultsOutput;
 
 mod _list_sbom_validation_results_input;
 

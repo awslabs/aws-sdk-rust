@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_provid
     }
 }
 
-pub use crate::operation::create_data_provider::_create_data_provider_output::CreateDataProviderOutput;
-
 pub use crate::operation::create_data_provider::_create_data_provider_input::CreateDataProviderInput;
+
+pub use crate::operation::create_data_provider::_create_data_provider_output::CreateDataProviderOutput;
 
 mod _create_data_provider_input;
 

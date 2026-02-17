@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_app_bundle::Ge
     }
 }
 
-pub use crate::operation::get_app_bundle::_get_app_bundle_output::GetAppBundleOutput;
-
 pub use crate::operation::get_app_bundle::_get_app_bundle_input::GetAppBundleInput;
+
+pub use crate::operation::get_app_bundle::_get_app_bundle_output::GetAppBundleOutput;
 
 mod _get_app_bundle_input;
 

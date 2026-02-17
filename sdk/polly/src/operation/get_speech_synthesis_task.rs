@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_speech_synthes
     }
 }
 
-pub use crate::operation::get_speech_synthesis_task::_get_speech_synthesis_task_output::GetSpeechSynthesisTaskOutput;
-
 pub use crate::operation::get_speech_synthesis_task::_get_speech_synthesis_task_input::GetSpeechSynthesisTaskInput;
+
+pub use crate::operation::get_speech_synthesis_task::_get_speech_synthesis_task_output::GetSpeechSynthesisTaskOutput;
 
 mod _get_speech_synthesis_task_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::synchronize_gatewa
     }
 }
 
-pub use crate::operation::synchronize_gateway_targets::_synchronize_gateway_targets_output::SynchronizeGatewayTargetsOutput;
-
 pub use crate::operation::synchronize_gateway_targets::_synchronize_gateway_targets_input::SynchronizeGatewayTargetsInput;
+
+pub use crate::operation::synchronize_gateway_targets::_synchronize_gateway_targets_output::SynchronizeGatewayTargetsOutput;
 
 mod _synchronize_gateway_targets_input;
 

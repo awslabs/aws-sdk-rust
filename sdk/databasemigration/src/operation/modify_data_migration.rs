@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_data_migrat
     }
 }
 
-pub use crate::operation::modify_data_migration::_modify_data_migration_output::ModifyDataMigrationOutput;
-
 pub use crate::operation::modify_data_migration::_modify_data_migration_input::ModifyDataMigrationInput;
+
+pub use crate::operation::modify_data_migration::_modify_data_migration_output::ModifyDataMigrationOutput;
 
 mod _modify_data_migration_input;
 

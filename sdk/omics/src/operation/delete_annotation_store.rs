@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_annotation_
     }
 }
 
-pub use crate::operation::delete_annotation_store::_delete_annotation_store_output::DeleteAnnotationStoreOutput;
-
 pub use crate::operation::delete_annotation_store::_delete_annotation_store_input::DeleteAnnotationStoreInput;
+
+pub use crate::operation::delete_annotation_store::_delete_annotation_store_output::DeleteAnnotationStoreOutput;
 
 mod _delete_annotation_store_input;
 

@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_role_policies
     }
 }
 
-pub use crate::operation::list_role_policies::_list_role_policies_output::ListRolePoliciesOutput;
-
 pub use crate::operation::list_role_policies::_list_role_policies_input::ListRolePoliciesInput;
+
+pub use crate::operation::list_role_policies::_list_role_policies_output::ListRolePoliciesOutput;
 
 mod _list_role_policies_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_license_configurations_for_organization::_list_license_configurations_for_organization_output::ListLicenseConfigurationsForOrganizationOutput;
-
 pub use crate::operation::list_license_configurations_for_organization::_list_license_configurations_for_organization_input::ListLicenseConfigurationsForOrganizationInput;
+
+pub use crate::operation::list_license_configurations_for_organization::_list_license_configurations_for_organization_output::ListLicenseConfigurationsForOrganizationOutput;
 
 mod _list_license_configurations_for_organization_input;
 

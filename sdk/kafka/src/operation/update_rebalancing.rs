@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_rebalancing
     }
 }
 
-pub use crate::operation::update_rebalancing::_update_rebalancing_output::UpdateRebalancingOutput;
-
 pub use crate::operation::update_rebalancing::_update_rebalancing_input::UpdateRebalancingInput;
+
+pub use crate::operation::update_rebalancing::_update_rebalancing_output::UpdateRebalancingOutput;
 
 mod _update_rebalancing_input;
 

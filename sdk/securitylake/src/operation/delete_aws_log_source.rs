@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_aws_log_sou
     }
 }
 
-pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_output::DeleteAwsLogSourceOutput;
-
 pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_input::DeleteAwsLogSourceInput;
+
+pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_output::DeleteAwsLogSourceOutput;
 
 mod _delete_aws_log_source_input;
 

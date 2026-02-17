@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_interruptible_capacity_reservation_allocation::_update_interruptible_capacity_reservation_allocation_output::UpdateInterruptibleCapacityReservationAllocationOutput;
-
 pub use crate::operation::update_interruptible_capacity_reservation_allocation::_update_interruptible_capacity_reservation_allocation_input::UpdateInterruptibleCapacityReservationAllocationInput;
+
+pub use crate::operation::update_interruptible_capacity_reservation_allocation::_update_interruptible_capacity_reservation_allocation_output::UpdateInterruptibleCapacityReservationAllocationOutput;
 
 mod _update_interruptible_capacity_reservation_allocation_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_detect_mi
     }
 }
 
-pub use crate::operation::describe_detect_mitigation_actions_task::_describe_detect_mitigation_actions_task_output::DescribeDetectMitigationActionsTaskOutput;
-
 pub use crate::operation::describe_detect_mitigation_actions_task::_describe_detect_mitigation_actions_task_input::DescribeDetectMitigationActionsTaskInput;
+
+pub use crate::operation::describe_detect_mitigation_actions_task::_describe_detect_mitigation_actions_task_output::DescribeDetectMitigationActionsTaskOutput;
 
 mod _describe_detect_mitigation_actions_task_input;
 

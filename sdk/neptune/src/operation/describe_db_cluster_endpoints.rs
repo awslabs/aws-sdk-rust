@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_cluste
     }
 }
 
-pub use crate::operation::describe_db_cluster_endpoints::_describe_db_cluster_endpoints_output::DescribeDbClusterEndpointsOutput;
-
 pub use crate::operation::describe_db_cluster_endpoints::_describe_db_cluster_endpoints_input::DescribeDbClusterEndpointsInput;
+
+pub use crate::operation::describe_db_cluster_endpoints::_describe_db_cluster_endpoints_output::DescribeDbClusterEndpointsOutput;
 
 mod _describe_db_cluster_endpoints_input;
 

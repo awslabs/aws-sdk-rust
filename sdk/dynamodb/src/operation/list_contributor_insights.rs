@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contributor_i
     }
 }
 
-pub use crate::operation::list_contributor_insights::_list_contributor_insights_output::ListContributorInsightsOutput;
-
 pub use crate::operation::list_contributor_insights::_list_contributor_insights_input::ListContributorInsightsInput;
+
+pub use crate::operation::list_contributor_insights::_list_contributor_insights_output::ListContributorInsightsOutput;
 
 mod _list_contributor_insights_input;
 

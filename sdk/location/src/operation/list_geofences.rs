@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_geofences::Li
     }
 }
 
-pub use crate::operation::list_geofences::_list_geofences_output::ListGeofencesOutput;
-
 pub use crate::operation::list_geofences::_list_geofences_input::ListGeofencesInput;
+
+pub use crate::operation::list_geofences::_list_geofences_output::ListGeofencesOutput;
 
 mod _list_geofences_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cluster_snapsh
     }
 }
 
-pub use crate::operation::get_cluster_snapshot::_get_cluster_snapshot_output::GetClusterSnapshotOutput;
-
 pub use crate::operation::get_cluster_snapshot::_get_cluster_snapshot_input::GetClusterSnapshotInput;
+
+pub use crate::operation::get_cluster_snapshot::_get_cluster_snapshot_output::GetClusterSnapshotOutput;
 
 mod _get_cluster_snapshot_input;
 

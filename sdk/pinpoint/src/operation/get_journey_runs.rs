@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_journey_runs::
     }
 }
 
-pub use crate::operation::get_journey_runs::_get_journey_runs_output::GetJourneyRunsOutput;
-
 pub use crate::operation::get_journey_runs::_get_journey_runs_input::GetJourneyRunsInput;
+
+pub use crate::operation::get_journey_runs::_get_journey_runs_output::GetJourneyRunsOutput;
 
 mod _get_journey_runs_input;
 

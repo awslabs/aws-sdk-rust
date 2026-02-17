@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_globa
     }
 }
 
-pub use crate::operation::disassociate_global_replication_group::_disassociate_global_replication_group_output::DisassociateGlobalReplicationGroupOutput;
-
 pub use crate::operation::disassociate_global_replication_group::_disassociate_global_replication_group_input::DisassociateGlobalReplicationGroupInput;
+
+pub use crate::operation::disassociate_global_replication_group::_disassociate_global_replication_group_output::DisassociateGlobalReplicationGroupOutput;
 
 mod _disassociate_global_replication_group_input;
 

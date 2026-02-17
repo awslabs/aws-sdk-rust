@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bill_scenario
     }
 }
 
-pub use crate::operation::list_bill_scenario_usage_modifications::_list_bill_scenario_usage_modifications_output::ListBillScenarioUsageModificationsOutput;
-
 pub use crate::operation::list_bill_scenario_usage_modifications::_list_bill_scenario_usage_modifications_input::ListBillScenarioUsageModificationsInput;
+
+pub use crate::operation::list_bill_scenario_usage_modifications::_list_bill_scenario_usage_modifications_output::ListBillScenarioUsageModificationsOutput;
 
 mod _list_bill_scenario_usage_modifications_input;
 

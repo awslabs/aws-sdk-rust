@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_license_man
     }
 }
 
-pub use crate::operation::create_license_manager_report_generator::_create_license_manager_report_generator_output::CreateLicenseManagerReportGeneratorOutput;
-
 pub use crate::operation::create_license_manager_report_generator::_create_license_manager_report_generator_input::CreateLicenseManagerReportGeneratorInput;
+
+pub use crate::operation::create_license_manager_report_generator::_create_license_manager_report_generator_output::CreateLicenseManagerReportGeneratorOutput;
 
 mod _create_license_manager_report_generator_input;
 

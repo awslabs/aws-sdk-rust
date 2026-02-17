@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_virtual_int
     }
 }
 
-pub use crate::operation::update_virtual_interface_attributes::_update_virtual_interface_attributes_output::UpdateVirtualInterfaceAttributesOutput;
-
 pub use crate::operation::update_virtual_interface_attributes::_update_virtual_interface_attributes_input::UpdateVirtualInterfaceAttributesInput;
+
+pub use crate::operation::update_virtual_interface_attributes::_update_virtual_interface_attributes_output::UpdateVirtualInterfaceAttributesOutput;
 
 mod _update_virtual_interface_attributes_input;
 

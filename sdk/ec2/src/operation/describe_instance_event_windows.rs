@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_event_windows::_describe_instance_event_windows_output::DescribeInstanceEventWindowsOutput;
-
 pub use crate::operation::describe_instance_event_windows::_describe_instance_event_windows_input::DescribeInstanceEventWindowsInput;
+
+pub use crate::operation::describe_instance_event_windows::_describe_instance_event_windows_output::DescribeInstanceEventWindowsOutput;
 
 mod _describe_instance_event_windows_input;
 

@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_findings::U
     }
 }
 
-pub use crate::operation::update_findings::_update_findings_output::UpdateFindingsOutput;
-
 pub use crate::operation::update_findings::_update_findings_input::UpdateFindingsInput;
+
+pub use crate::operation::update_findings::_update_findings_output::UpdateFindingsOutput;
 
 mod _update_findings_input;
 

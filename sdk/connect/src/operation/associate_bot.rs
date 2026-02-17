@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_bot::Ass
     }
 }
 
-pub use crate::operation::associate_bot::_associate_bot_output::AssociateBotOutput;
-
 pub use crate::operation::associate_bot::_associate_bot_input::AssociateBotInput;
+
+pub use crate::operation::associate_bot::_associate_bot_output::AssociateBotOutput;
 
 mod _associate_bot_input;
 

@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_saml_provider
     }
 }
 
-pub use crate::operation::list_saml_providers::_list_saml_providers_output::ListSamlProvidersOutput;
-
 pub use crate::operation::list_saml_providers::_list_saml_providers_input::ListSamlProvidersInput;
+
+pub use crate::operation::list_saml_providers::_list_saml_providers_output::ListSamlProvidersOutput;
 
 mod _list_saml_providers_input;
 

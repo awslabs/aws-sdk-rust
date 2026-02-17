@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scaling_p
     }
 }
 
-pub use crate::operation::describe_scaling_plan_resources::_describe_scaling_plan_resources_output::DescribeScalingPlanResourcesOutput;
-
 pub use crate::operation::describe_scaling_plan_resources::_describe_scaling_plan_resources_input::DescribeScalingPlanResourcesInput;
+
+pub use crate::operation::describe_scaling_plan_resources::_describe_scaling_plan_resources_output::DescribeScalingPlanResourcesOutput;
 
 mod _describe_scaling_plan_resources_input;
 

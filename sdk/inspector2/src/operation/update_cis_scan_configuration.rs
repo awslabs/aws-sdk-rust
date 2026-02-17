@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cis_scan_co
     }
 }
 
-pub use crate::operation::update_cis_scan_configuration::_update_cis_scan_configuration_output::UpdateCisScanConfigurationOutput;
-
 pub use crate::operation::update_cis_scan_configuration::_update_cis_scan_configuration_input::UpdateCisScanConfigurationInput;
+
+pub use crate::operation::update_cis_scan_configuration::_update_cis_scan_configuration_output::UpdateCisScanConfigurationOutput;
 
 mod _update_cis_scan_configuration_input;
 

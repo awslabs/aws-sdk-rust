@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_partnerships:
     }
 }
 
-pub use crate::operation::list_partnerships::_list_partnerships_output::ListPartnershipsOutput;
-
 pub use crate::operation::list_partnerships::_list_partnerships_input::ListPartnershipsInput;
+
+pub use crate::operation::list_partnerships::_list_partnerships_output::ListPartnershipsOutput;
 
 mod _list_partnerships_input;
 

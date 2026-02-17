@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_connectivit
     }
 }
 
-pub use crate::operation::update_connectivity_info::_update_connectivity_info_output::UpdateConnectivityInfoOutput;
-
 pub use crate::operation::update_connectivity_info::_update_connectivity_info_input::UpdateConnectivityInfoInput;
+
+pub use crate::operation::update_connectivity_info::_update_connectivity_info_output::UpdateConnectivityInfoOutput;
 
 mod _update_connectivity_info_input;
 

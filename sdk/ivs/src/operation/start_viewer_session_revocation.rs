@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_viewer_sessi
     }
 }
 
-pub use crate::operation::start_viewer_session_revocation::_start_viewer_session_revocation_output::StartViewerSessionRevocationOutput;
-
 pub use crate::operation::start_viewer_session_revocation::_start_viewer_session_revocation_input::StartViewerSessionRevocationInput;
+
+pub use crate::operation::start_viewer_session_revocation::_start_viewer_session_revocation_output::StartViewerSessionRevocationOutput;
 
 mod _start_viewer_session_revocation_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flow_templa
     }
 }
 
-pub use crate::operation::delete_flow_template::_delete_flow_template_output::DeleteFlowTemplateOutput;
-
 pub use crate::operation::delete_flow_template::_delete_flow_template_input::DeleteFlowTemplateInput;
+
+pub use crate::operation::delete_flow_template::_delete_flow_template_output::DeleteFlowTemplateOutput;
 
 mod _delete_flow_template_input;
 

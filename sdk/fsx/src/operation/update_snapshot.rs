@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_snapshot::U
     }
 }
 
-pub use crate::operation::update_snapshot::_update_snapshot_output::UpdateSnapshotOutput;
-
 pub use crate::operation::update_snapshot::_update_snapshot_input::UpdateSnapshotInput;
+
+pub use crate::operation::update_snapshot::_update_snapshot_output::UpdateSnapshotOutput;
 
 mod _update_snapshot_input;
 

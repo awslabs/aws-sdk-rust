@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_metadata
     }
 }
 
-pub use crate::operation::get_table_metadata_location::_get_table_metadata_location_output::GetTableMetadataLocationOutput;
-
 pub use crate::operation::get_table_metadata_location::_get_table_metadata_location_input::GetTableMetadataLocationInput;
+
+pub use crate::operation::get_table_metadata_location::_get_table_metadata_location_output::GetTableMetadataLocationOutput;
 
 mod _get_table_metadata_location_input;
 

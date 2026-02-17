@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_probe::Dele
     }
 }
 
-pub use crate::operation::delete_probe::_delete_probe_output::DeleteProbeOutput;
-
 pub use crate::operation::delete_probe::_delete_probe_input::DeleteProbeInput;
+
+pub use crate::operation::delete_probe::_delete_probe_output::DeleteProbeOutput;
 
 mod _delete_probe_input;
 

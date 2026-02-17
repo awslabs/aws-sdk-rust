@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_contacts::S
     }
 }
 
-pub use crate::operation::search_contacts::_search_contacts_output::SearchContactsOutput;
-
 pub use crate::operation::search_contacts::_search_contacts_input::SearchContactsInput;
+
+pub use crate::operation::search_contacts::_search_contacts_output::SearchContactsOutput;
 
 mod _search_contacts_input;
 

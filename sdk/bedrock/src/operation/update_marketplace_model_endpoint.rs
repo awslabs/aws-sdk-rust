@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_marketplace
     }
 }
 
-pub use crate::operation::update_marketplace_model_endpoint::_update_marketplace_model_endpoint_output::UpdateMarketplaceModelEndpointOutput;
-
 pub use crate::operation::update_marketplace_model_endpoint::_update_marketplace_model_endpoint_input::UpdateMarketplaceModelEndpointInput;
+
+pub use crate::operation::update_marketplace_model_endpoint::_update_marketplace_model_endpoint_output::UpdateMarketplaceModelEndpointOutput;
 
 mod _update_marketplace_model_endpoint_input;
 

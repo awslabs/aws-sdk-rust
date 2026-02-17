@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resource_po
     }
 }
 
-pub use crate::operation::update_resource_policy::_update_resource_policy_output::UpdateResourcePolicyOutput;
-
 pub use crate::operation::update_resource_policy::_update_resource_policy_input::UpdateResourcePolicyInput;
+
+pub use crate::operation::update_resource_policy::_update_resource_policy_output::UpdateResourcePolicyOutput;
 
 mod _update_resource_policy_input;
 

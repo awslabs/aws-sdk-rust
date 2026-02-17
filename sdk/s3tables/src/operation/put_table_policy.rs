@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_policy::
     }
 }
 
-pub use crate::operation::put_table_policy::_put_table_policy_output::PutTablePolicyOutput;
-
 pub use crate::operation::put_table_policy::_put_table_policy_input::PutTablePolicyInput;
+
+pub use crate::operation::put_table_policy::_put_table_policy_output::PutTablePolicyOutput;
 
 mod _put_table_policy_input;
 

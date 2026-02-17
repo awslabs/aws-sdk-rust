@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_inference_r
     }
 }
 
-pub use crate::operation::create_inference_recommendations_job::_create_inference_recommendations_job_output::CreateInferenceRecommendationsJobOutput;
-
 pub use crate::operation::create_inference_recommendations_job::_create_inference_recommendations_job_input::CreateInferenceRecommendationsJobInput;
+
+pub use crate::operation::create_inference_recommendations_job::_create_inference_recommendations_job_output::CreateInferenceRecommendationsJobOutput;
 
 mod _create_inference_recommendations_job_input;
 

@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_evaluatio
     }
 }
 
-pub use crate::operation::describe_evaluations::_describe_evaluations_output::DescribeEvaluationsOutput;
-
 pub use crate::operation::describe_evaluations::_describe_evaluations_input::DescribeEvaluationsInput;
+
+pub use crate::operation::describe_evaluations::_describe_evaluations_output::DescribeEvaluationsOutput;
 
 mod _describe_evaluations_input;
 

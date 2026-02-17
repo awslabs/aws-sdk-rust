@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_managed_pre
     }
 }
 
-pub use crate::operation::delete_managed_prefix_list::_delete_managed_prefix_list_output::DeleteManagedPrefixListOutput;
-
 pub use crate::operation::delete_managed_prefix_list::_delete_managed_prefix_list_input::DeleteManagedPrefixListInput;
+
+pub use crate::operation::delete_managed_prefix_list::_delete_managed_prefix_list_output::DeleteManagedPrefixListOutput;
 
 mod _delete_managed_prefix_list_input;
 

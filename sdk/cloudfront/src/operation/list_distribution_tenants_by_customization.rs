@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_distribution_tenants_by_customization::_list_distribution_tenants_by_customization_output::ListDistributionTenantsByCustomizationOutput;
-
 pub use crate::operation::list_distribution_tenants_by_customization::_list_distribution_tenants_by_customization_input::ListDistributionTenantsByCustomizationInput;
+
+pub use crate::operation::list_distribution_tenants_by_customization::_list_distribution_tenants_by_customization_output::ListDistributionTenantsByCustomizationOutput;
 
 mod _list_distribution_tenants_by_customization_input;
 

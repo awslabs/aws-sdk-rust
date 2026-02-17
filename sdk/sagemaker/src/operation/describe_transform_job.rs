@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_transform
     }
 }
 
-pub use crate::operation::describe_transform_job::_describe_transform_job_output::DescribeTransformJobOutput;
-
 pub use crate::operation::describe_transform_job::_describe_transform_job_input::DescribeTransformJobInput;
+
+pub use crate::operation::describe_transform_job::_describe_transform_job_output::DescribeTransformJobOutput;
 
 mod _describe_transform_job_input;
 

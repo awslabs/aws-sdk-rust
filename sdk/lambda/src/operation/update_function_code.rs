@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_function_co
     }
 }
 
-pub use crate::operation::update_function_code::_update_function_code_output::UpdateFunctionCodeOutput;
-
 pub use crate::operation::update_function_code::_update_function_code_input::UpdateFunctionCodeInput;
+
+pub use crate::operation::update_function_code::_update_function_code_output::UpdateFunctionCodeOutput;
 
 mod _update_function_code_input;
 

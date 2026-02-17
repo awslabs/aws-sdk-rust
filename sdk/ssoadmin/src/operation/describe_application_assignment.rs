@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_applicati
     }
 }
 
-pub use crate::operation::describe_application_assignment::_describe_application_assignment_output::DescribeApplicationAssignmentOutput;
-
 pub use crate::operation::describe_application_assignment::_describe_application_assignment_input::DescribeApplicationAssignmentInput;
+
+pub use crate::operation::describe_application_assignment::_describe_application_assignment_output::DescribeApplicationAssignmentOutput;
 
 mod _describe_application_assignment_input;
 

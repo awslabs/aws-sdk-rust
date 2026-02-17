@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_virtual_
     }
 }
 
-pub use crate::operation::associate_virtual_interface::_associate_virtual_interface_output::AssociateVirtualInterfaceOutput;
-
 pub use crate::operation::associate_virtual_interface::_associate_virtual_interface_input::AssociateVirtualInterfaceInput;
+
+pub use crate::operation::associate_virtual_interface::_associate_virtual_interface_output::AssociateVirtualInterfaceOutput;
 
 mod _associate_virtual_interface_input;
 

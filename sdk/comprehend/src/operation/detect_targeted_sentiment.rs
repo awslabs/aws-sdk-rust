@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_targeted_se
     }
 }
 
-pub use crate::operation::detect_targeted_sentiment::_detect_targeted_sentiment_output::DetectTargetedSentimentOutput;
-
 pub use crate::operation::detect_targeted_sentiment::_detect_targeted_sentiment_input::DetectTargetedSentimentInput;
+
+pub use crate::operation::detect_targeted_sentiment::_detect_targeted_sentiment_output::DetectTargetedSentimentOutput;
 
 mod _detect_targeted_sentiment_input;
 

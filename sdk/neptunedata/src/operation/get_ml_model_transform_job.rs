@@ -485,9 +485,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ml_model_trans
     }
 }
 
-pub use crate::operation::get_ml_model_transform_job::_get_ml_model_transform_job_output::GetMlModelTransformJobOutput;
-
 pub use crate::operation::get_ml_model_transform_job::_get_ml_model_transform_job_input::GetMlModelTransformJobInput;
+
+pub use crate::operation::get_ml_model_transform_job::_get_ml_model_transform_job_output::GetMlModelTransformJobOutput;
 
 mod _get_ml_model_transform_job_input;
 

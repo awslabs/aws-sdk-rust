@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pending_m
     }
 }
 
-pub use crate::operation::describe_pending_maintenance_actions::_describe_pending_maintenance_actions_output::DescribePendingMaintenanceActionsOutput;
-
 pub use crate::operation::describe_pending_maintenance_actions::_describe_pending_maintenance_actions_input::DescribePendingMaintenanceActionsInput;
+
+pub use crate::operation::describe_pending_maintenance_actions::_describe_pending_maintenance_actions_output::DescribePendingMaintenanceActionsOutput;
 
 mod _describe_pending_maintenance_actions_input;
 

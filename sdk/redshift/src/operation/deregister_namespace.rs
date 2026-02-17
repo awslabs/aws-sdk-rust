@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_namespa
     }
 }
 
-pub use crate::operation::deregister_namespace::_deregister_namespace_output::DeregisterNamespaceOutput;
-
 pub use crate::operation::deregister_namespace::_deregister_namespace_input::DeregisterNamespaceInput;
+
+pub use crate::operation::deregister_namespace::_deregister_namespace_output::DeregisterNamespaceOutput;
 
 mod _deregister_namespace_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ingress_poi
     }
 }
 
-pub use crate::operation::create_ingress_point::_create_ingress_point_output::CreateIngressPointOutput;
-
 pub use crate::operation::create_ingress_point::_create_ingress_point_input::CreateIngressPointInput;
+
+pub use crate::operation::create_ingress_point::_create_ingress_point_output::CreateIngressPointOutput;
 
 mod _create_ingress_point_input;
 

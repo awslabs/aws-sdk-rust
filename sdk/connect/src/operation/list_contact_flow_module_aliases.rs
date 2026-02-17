@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_contact_flow_
     }
 }
 
-pub use crate::operation::list_contact_flow_module_aliases::_list_contact_flow_module_aliases_output::ListContactFlowModuleAliasesOutput;
-
 pub use crate::operation::list_contact_flow_module_aliases::_list_contact_flow_module_aliases_input::ListContactFlowModuleAliasesInput;
+
+pub use crate::operation::list_contact_flow_module_aliases::_list_contact_flow_module_aliases_output::ListContactFlowModuleAliasesOutput;
 
 mod _list_contact_flow_module_aliases_input;
 

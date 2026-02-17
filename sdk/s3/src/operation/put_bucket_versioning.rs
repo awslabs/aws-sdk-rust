@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bucket_version
     }
 }
 
-pub use crate::operation::put_bucket_versioning::_put_bucket_versioning_output::PutBucketVersioningOutput;
-
 pub use crate::operation::put_bucket_versioning::_put_bucket_versioning_input::PutBucketVersioningInput;
+
+pub use crate::operation::put_bucket_versioning::_put_bucket_versioning_output::PutBucketVersioningOutput;
 
 mod _put_bucket_versioning_input;
 

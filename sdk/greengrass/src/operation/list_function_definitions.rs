@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_function_defi
     }
 }
 
-pub use crate::operation::list_function_definitions::_list_function_definitions_output::ListFunctionDefinitionsOutput;
-
 pub use crate::operation::list_function_definitions::_list_function_definitions_input::ListFunctionDefinitionsInput;
+
+pub use crate::operation::list_function_definitions::_list_function_definitions_output::ListFunctionDefinitionsOutput;
 
 mod _list_function_definitions_input;
 

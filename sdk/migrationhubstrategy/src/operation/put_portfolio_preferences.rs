@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_portfolio_pref
     }
 }
 
-pub use crate::operation::put_portfolio_preferences::_put_portfolio_preferences_output::PutPortfolioPreferencesOutput;
-
 pub use crate::operation::put_portfolio_preferences::_put_portfolio_preferences_input::PutPortfolioPreferencesInput;
+
+pub use crate::operation::put_portfolio_preferences::_put_portfolio_preferences_output::PutPortfolioPreferencesOutput;
 
 mod _put_portfolio_preferences_input;
 

@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_grants
     }
 }
 
-pub use crate::operation::list_policy_grants::_list_policy_grants_output::ListPolicyGrantsOutput;
-
 pub use crate::operation::list_policy_grants::_list_policy_grants_input::ListPolicyGrantsInput;
+
+pub use crate::operation::list_policy_grants::_list_policy_grants_output::ListPolicyGrantsOutput;
 
 mod _list_policy_grants_input;
 

@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_network_insi
     }
 }
 
-pub use crate::operation::start_network_insights_analysis::_start_network_insights_analysis_output::StartNetworkInsightsAnalysisOutput;
-
 pub use crate::operation::start_network_insights_analysis::_start_network_insights_analysis_input::StartNetworkInsightsAnalysisInput;
+
+pub use crate::operation::start_network_insights_analysis::_start_network_insights_analysis_output::StartNetworkInsightsAnalysisOutput;
 
 mod _start_network_insights_analysis_input;
 

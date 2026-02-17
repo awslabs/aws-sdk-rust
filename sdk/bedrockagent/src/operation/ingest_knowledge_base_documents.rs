@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::ingest_knowledge_b
     }
 }
 
-pub use crate::operation::ingest_knowledge_base_documents::_ingest_knowledge_base_documents_output::IngestKnowledgeBaseDocumentsOutput;
-
 pub use crate::operation::ingest_knowledge_base_documents::_ingest_knowledge_base_documents_input::IngestKnowledgeBaseDocumentsInput;
+
+pub use crate::operation::ingest_knowledge_base_documents::_ingest_knowledge_base_documents_output::IngestKnowledgeBaseDocumentsOutput;
 
 mod _ingest_knowledge_base_documents_input;
 

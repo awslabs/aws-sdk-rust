@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_metric_attr
     }
 }
 
-pub use crate::operation::create_metric_attribution::_create_metric_attribution_output::CreateMetricAttributionOutput;
-
 pub use crate::operation::create_metric_attribution::_create_metric_attribution_input::CreateMetricAttributionInput;
+
+pub use crate::operation::create_metric_attribution::_create_metric_attribution_output::CreateMetricAttributionOutput;
 
 mod _create_metric_attribution_input;
 

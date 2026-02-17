@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_theme::Dele
     }
 }
 
-pub use crate::operation::delete_theme::_delete_theme_output::DeleteThemeOutput;
-
 pub use crate::operation::delete_theme::_delete_theme_input::DeleteThemeInput;
+
+pub use crate::operation::delete_theme::_delete_theme_output::DeleteThemeOutput;
 
 mod _delete_theme_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_verified_em
     }
 }
 
-pub use crate::operation::delete_verified_email_address::_delete_verified_email_address_output::DeleteVerifiedEmailAddressOutput;
-
 pub use crate::operation::delete_verified_email_address::_delete_verified_email_address_input::DeleteVerifiedEmailAddressInput;
+
+pub use crate::operation::delete_verified_email_address::_delete_verified_email_address_output::DeleteVerifiedEmailAddressOutput;
 
 mod _delete_verified_email_address_input;
 

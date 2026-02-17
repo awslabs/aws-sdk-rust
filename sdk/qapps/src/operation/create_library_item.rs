@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_library_ite
     }
 }
 
-pub use crate::operation::create_library_item::_create_library_item_output::CreateLibraryItemOutput;
-
 pub use crate::operation::create_library_item::_create_library_item_input::CreateLibraryItemInput;
+
+pub use crate::operation::create_library_item::_create_library_item_output::CreateLibraryItemOutput;
 
 mod _create_library_item_input;
 

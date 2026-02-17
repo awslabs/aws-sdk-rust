@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_text_translat
     }
 }
 
-pub use crate::operation::stop_text_translation_job::_stop_text_translation_job_output::StopTextTranslationJobOutput;
-
 pub use crate::operation::stop_text_translation_job::_stop_text_translation_job_input::StopTextTranslationJobInput;
+
+pub use crate::operation::stop_text_translation_job::_stop_text_translation_job_output::StopTextTranslationJobOutput;
 
 mod _stop_text_translation_job_input;
 

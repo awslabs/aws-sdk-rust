@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_network_analy
     }
 }
 
-pub use crate::operation::list_network_analyzer_configurations::_list_network_analyzer_configurations_output::ListNetworkAnalyzerConfigurationsOutput;
-
 pub use crate::operation::list_network_analyzer_configurations::_list_network_analyzer_configurations_input::ListNetworkAnalyzerConfigurationsInput;
+
+pub use crate::operation::list_network_analyzer_configurations::_list_network_analyzer_configurations_output::ListNetworkAnalyzerConfigurationsOutput;
 
 mod _list_network_analyzer_configurations_input;
 

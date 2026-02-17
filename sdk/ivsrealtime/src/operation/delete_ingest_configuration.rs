@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ingest_conf
     }
 }
 
-pub use crate::operation::delete_ingest_configuration::_delete_ingest_configuration_output::DeleteIngestConfigurationOutput;
-
 pub use crate::operation::delete_ingest_configuration::_delete_ingest_configuration_input::DeleteIngestConfigurationInput;
+
+pub use crate::operation::delete_ingest_configuration::_delete_ingest_configuration_output::DeleteIngestConfigurationOutput;
 
 mod _delete_ingest_configuration_input;
 

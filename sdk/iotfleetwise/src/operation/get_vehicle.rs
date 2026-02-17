@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vehicle::GetVe
     }
 }
 
-pub use crate::operation::get_vehicle::_get_vehicle_output::GetVehicleOutput;
-
 pub use crate::operation::get_vehicle::_get_vehicle_input::GetVehicleInput;
+
+pub use crate::operation::get_vehicle::_get_vehicle_output::GetVehicleOutput;
 
 mod _get_vehicle_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_data_quality_p
     }
 }
 
-pub use crate::operation::put_data_quality_profile_annotation::_put_data_quality_profile_annotation_output::PutDataQualityProfileAnnotationOutput;
-
 pub use crate::operation::put_data_quality_profile_annotation::_put_data_quality_profile_annotation_input::PutDataQualityProfileAnnotationInput;
+
+pub use crate::operation::put_data_quality_profile_annotation::_put_data_quality_profile_annotation_output::PutDataQualityProfileAnnotationOutput;
 
 mod _put_data_quality_profile_annotation_input;
 

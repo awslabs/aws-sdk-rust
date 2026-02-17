@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver_query
     }
 }
 
-pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_query_log_config_policy_output::GetResolverQueryLogConfigPolicyOutput;
-
 pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_query_log_config_policy_input::GetResolverQueryLogConfigPolicyInput;
+
+pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_query_log_config_policy_output::GetResolverQueryLogConfigPolicyOutput;
 
 mod _get_resolver_query_log_config_policy_input;
 

@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_serverless_
     }
 }
 
-pub use crate::operation::export_serverless_cache_snapshot::_export_serverless_cache_snapshot_output::ExportServerlessCacheSnapshotOutput;
-
 pub use crate::operation::export_serverless_cache_snapshot::_export_serverless_cache_snapshot_input::ExportServerlessCacheSnapshotInput;
+
+pub use crate::operation::export_serverless_cache_snapshot::_export_serverless_cache_snapshot_output::ExportServerlessCacheSnapshotOutput;
 
 mod _export_serverless_cache_snapshot_input;
 

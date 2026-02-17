@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_encoder_confi
     }
 }
 
-pub use crate::operation::list_encoder_configurations::_list_encoder_configurations_output::ListEncoderConfigurationsOutput;
-
 pub use crate::operation::list_encoder_configurations::_list_encoder_configurations_input::ListEncoderConfigurationsInput;
+
+pub use crate::operation::list_encoder_configurations::_list_encoder_configurations_output::ListEncoderConfigurationsOutput;
 
 mod _list_encoder_configurations_input;
 

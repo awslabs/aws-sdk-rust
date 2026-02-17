@@ -622,9 +622,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_db_instanc
     }
 }
 
-pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_instance_to_point_in_time_output::RestoreDbInstanceToPointInTimeOutput;
-
 pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_instance_to_point_in_time_input::RestoreDbInstanceToPointInTimeInput;
+
+pub use crate::operation::restore_db_instance_to_point_in_time::_restore_db_instance_to_point_in_time_output::RestoreDbInstanceToPointInTimeOutput;
 
 mod _restore_db_instance_to_point_in_time_input;
 

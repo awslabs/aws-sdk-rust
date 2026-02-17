@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_analyzer::D
     }
 }
 
-pub use crate::operation::delete_analyzer::_delete_analyzer_output::DeleteAnalyzerOutput;
-
 pub use crate::operation::delete_analyzer::_delete_analyzer_input::DeleteAnalyzerInput;
+
+pub use crate::operation::delete_analyzer::_delete_analyzer_output::DeleteAnalyzerOutput;
 
 mod _delete_analyzer_input;
 

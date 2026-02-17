@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account_ass
     }
 }
 
-pub use crate::operation::create_account_association::_create_account_association_output::CreateAccountAssociationOutput;
-
 pub use crate::operation::create_account_association::_create_account_association_input::CreateAccountAssociationInput;
+
+pub use crate::operation::create_account_association::_create_account_association_output::CreateAccountAssociationOutput;
 
 mod _create_account_association_input;
 

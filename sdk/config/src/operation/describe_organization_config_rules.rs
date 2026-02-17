@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_organizat
     }
 }
 
-pub use crate::operation::describe_organization_config_rules::_describe_organization_config_rules_output::DescribeOrganizationConfigRulesOutput;
-
 pub use crate::operation::describe_organization_config_rules::_describe_organization_config_rules_input::DescribeOrganizationConfigRulesInput;
+
+pub use crate::operation::describe_organization_config_rules::_describe_organization_config_rules_output::DescribeOrganizationConfigRulesOutput;
 
 mod _describe_organization_config_rules_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_landing_zon
     }
 }
 
-pub use crate::operation::update_landing_zone::_update_landing_zone_output::UpdateLandingZoneOutput;
-
 pub use crate::operation::update_landing_zone::_update_landing_zone_input::UpdateLandingZoneInput;
+
+pub use crate::operation::update_landing_zone::_update_landing_zone_output::UpdateLandingZoneOutput;
 
 mod _update_landing_zone_input;
 

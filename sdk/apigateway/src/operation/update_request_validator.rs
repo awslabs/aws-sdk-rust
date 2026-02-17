@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_request_val
     }
 }
 
-pub use crate::operation::update_request_validator::_update_request_validator_output::UpdateRequestValidatorOutput;
-
 pub use crate::operation::update_request_validator::_update_request_validator_input::UpdateRequestValidatorInput;
+
+pub use crate::operation::update_request_validator::_update_request_validator_output::UpdateRequestValidatorOutput;
 
 mod _update_request_validator_input;
 

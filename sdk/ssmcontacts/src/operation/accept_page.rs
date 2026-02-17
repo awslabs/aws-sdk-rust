@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_page::Accep
     }
 }
 
-pub use crate::operation::accept_page::_accept_page_output::AcceptPageOutput;
-
 pub use crate::operation::accept_page::_accept_page_input::AcceptPageInput;
+
+pub use crate::operation::accept_page::_accept_page_output::AcceptPageOutput;
 
 mod _accept_page_input;
 

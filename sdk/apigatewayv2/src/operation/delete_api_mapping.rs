@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_api_mapping
     }
 }
 
-pub use crate::operation::delete_api_mapping::_delete_api_mapping_output::DeleteApiMappingOutput;
-
 pub use crate::operation::delete_api_mapping::_delete_api_mapping_input::DeleteApiMappingInput;
+
+pub use crate::operation::delete_api_mapping::_delete_api_mapping_output::DeleteApiMappingOutput;
 
 mod _delete_api_mapping_input;
 

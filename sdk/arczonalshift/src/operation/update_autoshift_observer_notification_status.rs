@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_autoshift_observer_notification_status::_update_autoshift_observer_notification_status_output::UpdateAutoshiftObserverNotificationStatusOutput;
-
 pub use crate::operation::update_autoshift_observer_notification_status::_update_autoshift_observer_notification_status_input::UpdateAutoshiftObserverNotificationStatusInput;
+
+pub use crate::operation::update_autoshift_observer_notification_status::_update_autoshift_observer_notification_status_output::UpdateAutoshiftObserverNotificationStatusOutput;
 
 mod _update_autoshift_observer_notification_status_input;
 

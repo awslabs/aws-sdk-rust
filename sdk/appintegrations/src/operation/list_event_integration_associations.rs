@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_integra
     }
 }
 
-pub use crate::operation::list_event_integration_associations::_list_event_integration_associations_output::ListEventIntegrationAssociationsOutput;
-
 pub use crate::operation::list_event_integration_associations::_list_event_integration_associations_input::ListEventIntegrationAssociationsInput;
+
+pub use crate::operation::list_event_integration_associations::_list_event_integration_associations_output::ListEventIntegrationAssociationsOutput;
 
 mod _list_event_integration_associations_input;
 

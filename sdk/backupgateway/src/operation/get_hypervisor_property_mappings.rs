@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hypervisor_pro
     }
 }
 
-pub use crate::operation::get_hypervisor_property_mappings::_get_hypervisor_property_mappings_output::GetHypervisorPropertyMappingsOutput;
-
 pub use crate::operation::get_hypervisor_property_mappings::_get_hypervisor_property_mappings_input::GetHypervisorPropertyMappingsInput;
+
+pub use crate::operation::get_hypervisor_property_mappings::_get_hypervisor_property_mappings_output::GetHypervisorPropertyMappingsOutput;
 
 mod _get_hypervisor_property_mappings_input;
 

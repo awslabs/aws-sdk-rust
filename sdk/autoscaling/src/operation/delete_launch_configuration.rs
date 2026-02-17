@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_launch_conf
     }
 }
 
-pub use crate::operation::delete_launch_configuration::_delete_launch_configuration_output::DeleteLaunchConfigurationOutput;
-
 pub use crate::operation::delete_launch_configuration::_delete_launch_configuration_input::DeleteLaunchConfigurationInput;
+
+pub use crate::operation::delete_launch_configuration::_delete_launch_configuration_output::DeleteLaunchConfigurationOutput;
 
 mod _delete_launch_configuration_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_s
     }
 }
 
-pub use crate::operation::describe_cluster_subnet_groups::_describe_cluster_subnet_groups_output::DescribeClusterSubnetGroupsOutput;
-
 pub use crate::operation::describe_cluster_subnet_groups::_describe_cluster_subnet_groups_input::DescribeClusterSubnetGroupsInput;
+
+pub use crate::operation::describe_cluster_subnet_groups::_describe_cluster_subnet_groups_output::DescribeClusterSubnetGroupsOutput;
 
 mod _describe_cluster_subnet_groups_input;
 

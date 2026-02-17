@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_meeting_wit
     }
 }
 
-pub use crate::operation::create_meeting_with_attendees::_create_meeting_with_attendees_output::CreateMeetingWithAttendeesOutput;
-
 pub use crate::operation::create_meeting_with_attendees::_create_meeting_with_attendees_input::CreateMeetingWithAttendeesInput;
+
+pub use crate::operation::create_meeting_with_attendees::_create_meeting_with_attendees_output::CreateMeetingWithAttendeesOutput;
 
 mod _create_meeting_with_attendees_input;
 

@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_browser_str
     }
 }
 
-pub use crate::operation::update_browser_stream::_update_browser_stream_output::UpdateBrowserStreamOutput;
-
 pub use crate::operation::update_browser_stream::_update_browser_stream_input::UpdateBrowserStreamInput;
+
+pub use crate::operation::update_browser_stream::_update_browser_stream_output::UpdateBrowserStreamOutput;
 
 mod _update_browser_stream_input;
 

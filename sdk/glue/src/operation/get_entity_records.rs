@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_entity_records
     }
 }
 
-pub use crate::operation::get_entity_records::_get_entity_records_output::GetEntityRecordsOutput;
-
 pub use crate::operation::get_entity_records::_get_entity_records_input::GetEntityRecordsInput;
+
+pub use crate::operation::get_entity_records::_get_entity_records_output::GetEntityRecordsOutput;
 
 mod _get_entity_records_input;
 

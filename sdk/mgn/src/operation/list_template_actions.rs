@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_template_acti
     }
 }
 
-pub use crate::operation::list_template_actions::_list_template_actions_output::ListTemplateActionsOutput;
-
 pub use crate::operation::list_template_actions::_list_template_actions_input::ListTemplateActionsInput;
+
+pub use crate::operation::list_template_actions::_list_template_actions_output::ListTemplateActionsOutput;
 
 mod _list_template_actions_input;
 

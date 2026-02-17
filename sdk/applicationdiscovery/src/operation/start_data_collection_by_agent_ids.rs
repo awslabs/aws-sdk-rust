@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_data_collect
     }
 }
 
-pub use crate::operation::start_data_collection_by_agent_ids::_start_data_collection_by_agent_ids_output::StartDataCollectionByAgentIdsOutput;
-
 pub use crate::operation::start_data_collection_by_agent_ids::_start_data_collection_by_agent_ids_input::StartDataCollectionByAgentIdsInput;
+
+pub use crate::operation::start_data_collection_by_agent_ids::_start_data_collection_by_agent_ids_output::StartDataCollectionByAgentIdsOutput;
 
 mod _start_data_collection_by_agent_ids_input;
 

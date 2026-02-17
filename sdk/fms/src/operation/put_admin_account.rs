@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_admin_account:
     }
 }
 
-pub use crate::operation::put_admin_account::_put_admin_account_output::PutAdminAccountOutput;
-
 pub use crate::operation::put_admin_account::_put_admin_account_input::PutAdminAccountInput;
+
+pub use crate::operation::put_admin_account::_put_admin_account_output::PutAdminAccountOutput;
 
 mod _put_admin_account_input;
 

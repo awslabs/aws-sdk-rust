@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_chime_webho
     }
 }
 
-pub use crate::operation::create_chime_webhook_configuration::_create_chime_webhook_configuration_output::CreateChimeWebhookConfigurationOutput;
-
 pub use crate::operation::create_chime_webhook_configuration::_create_chime_webhook_configuration_input::CreateChimeWebhookConfigurationInput;
+
+pub use crate::operation::create_chime_webhook_configuration::_create_chime_webhook_configuration_output::CreateChimeWebhookConfigurationOutput;
 
 mod _create_chime_webhook_configuration_input;
 

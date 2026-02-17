@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_open_id_con
     }
 }
 
-pub use crate::operation::delete_open_id_connect_provider::_delete_open_id_connect_provider_output::DeleteOpenIdConnectProviderOutput;
-
 pub use crate::operation::delete_open_id_connect_provider::_delete_open_id_connect_provider_input::DeleteOpenIdConnectProviderInput;
+
+pub use crate::operation::delete_open_id_connect_provider::_delete_open_id_connect_provider_output::DeleteOpenIdConnectProviderOutput;
 
 mod _delete_open_id_connect_provider_input;
 

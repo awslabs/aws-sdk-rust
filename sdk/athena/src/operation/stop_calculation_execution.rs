@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_calculation_e
     }
 }
 
-pub use crate::operation::stop_calculation_execution::_stop_calculation_execution_output::StopCalculationExecutionOutput;
-
 pub use crate::operation::stop_calculation_execution::_stop_calculation_execution_input::StopCalculationExecutionInput;
+
+pub use crate::operation::stop_calculation_execution::_stop_calculation_execution_output::StopCalculationExecutionOutput;
 
 mod _stop_calculation_execution_input;
 

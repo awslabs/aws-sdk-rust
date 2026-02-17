@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_config::Cre
     }
 }
 
-pub use crate::operation::create_config::_create_config_output::CreateConfigOutput;
-
 pub use crate::operation::create_config::_create_config_input::CreateConfigInput;
+
+pub use crate::operation::create_config::_create_config_output::CreateConfigOutput;
 
 mod _create_config_input;
 

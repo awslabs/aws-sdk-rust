@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_filter::Cre
     }
 }
 
-pub use crate::operation::create_filter::_create_filter_output::CreateFilterOutput;
-
 pub use crate::operation::create_filter::_create_filter_input::CreateFilterInput;
+
+pub use crate::operation::create_filter::_create_filter_output::CreateFilterOutput;
 
 mod _create_filter_input;
 

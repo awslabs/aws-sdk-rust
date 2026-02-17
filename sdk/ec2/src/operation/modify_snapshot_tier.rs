@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_snapshot_ti
     }
 }
 
-pub use crate::operation::modify_snapshot_tier::_modify_snapshot_tier_output::ModifySnapshotTierOutput;
-
 pub use crate::operation::modify_snapshot_tier::_modify_snapshot_tier_input::ModifySnapshotTierInput;
+
+pub use crate::operation::modify_snapshot_tier::_modify_snapshot_tier_output::ModifySnapshotTierOutput;
 
 mod _modify_snapshot_tier_input;
 

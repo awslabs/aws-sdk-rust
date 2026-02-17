@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_limits::D
     }
 }
 
-pub use crate::operation::describe_limits::_describe_limits_output::DescribeLimitsOutput;
-
 pub use crate::operation::describe_limits::_describe_limits_input::DescribeLimitsInput;
+
+pub use crate::operation::describe_limits::_describe_limits_output::DescribeLimitsOutput;
 
 mod _describe_limits_input;
 

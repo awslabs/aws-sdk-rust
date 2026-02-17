@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::logout_user::Logou
     }
 }
 
-pub use crate::operation::logout_user::_logout_user_output::LogoutUserOutput;
-
 pub use crate::operation::logout_user::_logout_user_input::LogoutUserInput;
+
+pub use crate::operation::logout_user::_logout_user_output::LogoutUserOutput;
 
 mod _logout_user_input;
 

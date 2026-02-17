@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_state_templat
     }
 }
 
-pub use crate::operation::list_state_templates::_list_state_templates_output::ListStateTemplatesOutput;
-
 pub use crate::operation::list_state_templates::_list_state_templates_input::ListStateTemplatesInput;
+
+pub use crate::operation::list_state_templates::_list_state_templates_output::ListStateTemplatesOutput;
 
 mod _list_state_templates_input;
 

@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_approval_rule_template_from_repository::_disassociate_approval_rule_template_from_repository_output::DisassociateApprovalRuleTemplateFromRepositoryOutput;
-
 pub use crate::operation::disassociate_approval_rule_template_from_repository::_disassociate_approval_rule_template_from_repository_input::DisassociateApprovalRuleTemplateFromRepositoryInput;
+
+pub use crate::operation::disassociate_approval_rule_template_from_repository::_disassociate_approval_rule_template_from_repository_output::DisassociateApprovalRuleTemplateFromRepositoryOutput;
 
 mod _disassociate_approval_rule_template_from_repository_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_applicati
     }
 }
 
-pub use crate::operation::describe_application_fleet_associations::_describe_application_fleet_associations_output::DescribeApplicationFleetAssociationsOutput;
-
 pub use crate::operation::describe_application_fleet_associations::_describe_application_fleet_associations_input::DescribeApplicationFleetAssociationsInput;
+
+pub use crate::operation::describe_application_fleet_associations::_describe_application_fleet_associations_output::DescribeApplicationFleetAssociationsOutput;
 
 mod _describe_application_fleet_associations_input;
 

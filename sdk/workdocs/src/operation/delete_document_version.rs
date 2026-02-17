@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_document_ve
     }
 }
 
-pub use crate::operation::delete_document_version::_delete_document_version_output::DeleteDocumentVersionOutput;
-
 pub use crate::operation::delete_document_version::_delete_document_version_input::DeleteDocumentVersionInput;
+
+pub use crate::operation::delete_document_version::_delete_document_version_output::DeleteDocumentVersionOutput;
 
 mod _delete_document_version_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_associate_an
     }
 }
 
-pub use crate::operation::batch_associate_analytics_data_set::_batch_associate_analytics_data_set_output::BatchAssociateAnalyticsDataSetOutput;
-
 pub use crate::operation::batch_associate_analytics_data_set::_batch_associate_analytics_data_set_input::BatchAssociateAnalyticsDataSetInput;
+
+pub use crate::operation::batch_associate_analytics_data_set::_batch_associate_analytics_data_set_output::BatchAssociateAnalyticsDataSetOutput;
 
 mod _batch_associate_analytics_data_set_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_prefix
     }
 }
 
-pub use crate::operation::get_managed_prefix_list_entries::_get_managed_prefix_list_entries_output::GetManagedPrefixListEntriesOutput;
-
 pub use crate::operation::get_managed_prefix_list_entries::_get_managed_prefix_list_entries_input::GetManagedPrefixListEntriesInput;
+
+pub use crate::operation::get_managed_prefix_list_entries::_get_managed_prefix_list_entries_output::GetManagedPrefixListEntriesOutput;
 
 mod _get_managed_prefix_list_entries_input;
 

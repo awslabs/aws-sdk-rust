@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_mainte
     }
 }
 
-pub use crate::operation::list_domain_maintenances::_list_domain_maintenances_output::ListDomainMaintenancesOutput;
-
 pub use crate::operation::list_domain_maintenances::_list_domain_maintenances_input::ListDomainMaintenancesInput;
+
+pub use crate::operation::list_domain_maintenances::_list_domain_maintenances_output::ListDomainMaintenancesOutput;
 
 mod _list_domain_maintenances_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_response_heade
     }
 }
 
-pub use crate::operation::get_response_headers_policy::_get_response_headers_policy_output::GetResponseHeadersPolicyOutput;
-
 pub use crate::operation::get_response_headers_policy::_get_response_headers_policy_input::GetResponseHeadersPolicyInput;
+
+pub use crate::operation::get_response_headers_policy::_get_response_headers_policy_output::GetResponseHeadersPolicyOutput;
 
 mod _get_response_headers_policy_input;
 

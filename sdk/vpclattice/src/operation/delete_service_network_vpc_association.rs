@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_net
     }
 }
 
-pub use crate::operation::delete_service_network_vpc_association::_delete_service_network_vpc_association_output::DeleteServiceNetworkVpcAssociationOutput;
-
 pub use crate::operation::delete_service_network_vpc_association::_delete_service_network_vpc_association_input::DeleteServiceNetworkVpcAssociationInput;
+
+pub use crate::operation::delete_service_network_vpc_association::_delete_service_network_vpc_association_output::DeleteServiceNetworkVpcAssociationOutput;
 
 mod _delete_service_network_vpc_association_input;
 

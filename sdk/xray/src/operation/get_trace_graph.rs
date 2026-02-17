@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trace_graph::G
     }
 }
 
-pub use crate::operation::get_trace_graph::_get_trace_graph_output::GetTraceGraphOutput;
-
 pub use crate::operation::get_trace_graph::_get_trace_graph_input::GetTraceGraphInput;
+
+pub use crate::operation::get_trace_graph::_get_trace_graph_output::GetTraceGraphOutput;
 
 mod _get_trace_graph_input;
 

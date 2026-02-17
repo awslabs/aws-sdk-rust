@@ -477,9 +477,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_document_tex
     }
 }
 
-pub use crate::operation::start_document_text_detection::_start_document_text_detection_output::StartDocumentTextDetectionOutput;
-
 pub use crate::operation::start_document_text_detection::_start_document_text_detection_input::StartDocumentTextDetectionInput;
+
+pub use crate::operation::start_document_text_detection::_start_document_text_detection_output::StartDocumentTextDetectionOutput;
 
 mod _start_document_text_detection_input;
 

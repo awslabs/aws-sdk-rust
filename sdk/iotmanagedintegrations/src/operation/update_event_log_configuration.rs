@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_log_c
     }
 }
 
-pub use crate::operation::update_event_log_configuration::_update_event_log_configuration_output::UpdateEventLogConfigurationOutput;
-
 pub use crate::operation::update_event_log_configuration::_update_event_log_configuration_input::UpdateEventLogConfigurationInput;
+
+pub use crate::operation::update_event_log_configuration::_update_event_log_configuration_output::UpdateEventLogConfigurationOutput;
 
 mod _update_event_log_configuration_input;
 

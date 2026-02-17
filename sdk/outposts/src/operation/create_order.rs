@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_order::Crea
     }
 }
 
-pub use crate::operation::create_order::_create_order_output::CreateOrderOutput;
-
 pub use crate::operation::create_order::_create_order_input::CreateOrderInput;
+
+pub use crate::operation::create_order::_create_order_output::CreateOrderOutput;
 
 mod _create_order_input;
 

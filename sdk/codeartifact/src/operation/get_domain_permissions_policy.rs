@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_permiss
     }
 }
 
-pub use crate::operation::get_domain_permissions_policy::_get_domain_permissions_policy_output::GetDomainPermissionsPolicyOutput;
-
 pub use crate::operation::get_domain_permissions_policy::_get_domain_permissions_policy_input::GetDomainPermissionsPolicyInput;
+
+pub use crate::operation::get_domain_permissions_policy::_get_domain_permissions_policy_output::GetDomainPermissionsPolicyOutput;
 
 mod _get_domain_permissions_policy_input;
 

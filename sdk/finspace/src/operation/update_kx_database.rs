@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_kx_database
     }
 }
 
-pub use crate::operation::update_kx_database::_update_kx_database_output::UpdateKxDatabaseOutput;
-
 pub use crate::operation::update_kx_database::_update_kx_database_input::UpdateKxDatabaseInput;
+
+pub use crate::operation::update_kx_database::_update_kx_database_output::UpdateKxDatabaseOutput;
 
 mod _update_kx_database_input;
 

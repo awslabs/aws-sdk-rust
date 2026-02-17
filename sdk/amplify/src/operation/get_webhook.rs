@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_webhook::GetWe
     }
 }
 
-pub use crate::operation::get_webhook::_get_webhook_output::GetWebhookOutput;
-
 pub use crate::operation::get_webhook::_get_webhook_input::GetWebhookInput;
+
+pub use crate::operation::get_webhook::_get_webhook_output::GetWebhookOutput;
 
 mod _get_webhook_input;
 

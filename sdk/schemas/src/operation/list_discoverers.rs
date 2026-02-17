@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_discoverers::
     }
 }
 
-pub use crate::operation::list_discoverers::_list_discoverers_output::ListDiscoverersOutput;
-
 pub use crate::operation::list_discoverers::_list_discoverers_input::ListDiscoverersInput;
+
+pub use crate::operation::list_discoverers::_list_discoverers_output::ListDiscoverersOutput;
 
 mod _list_discoverers_input;
 

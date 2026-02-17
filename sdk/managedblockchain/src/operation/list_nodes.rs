@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_nodes::ListNo
     }
 }
 
-pub use crate::operation::list_nodes::_list_nodes_output::ListNodesOutput;
-
 pub use crate::operation::list_nodes::_list_nodes_input::ListNodesInput;
+
+pub use crate::operation::list_nodes::_list_nodes_output::ListNodesOutput;
 
 mod _list_nodes_input;
 

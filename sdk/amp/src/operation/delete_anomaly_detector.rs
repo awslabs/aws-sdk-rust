@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_anomaly_det
     }
 }
 
-pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_output::DeleteAnomalyDetectorOutput;
-
 pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_input::DeleteAnomalyDetectorInput;
+
+pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_output::DeleteAnomalyDetectorOutput;
 
 mod _delete_anomaly_detector_input;
 

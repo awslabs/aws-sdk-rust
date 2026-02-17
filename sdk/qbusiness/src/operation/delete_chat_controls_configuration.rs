@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_chat_contro
     }
 }
 
-pub use crate::operation::delete_chat_controls_configuration::_delete_chat_controls_configuration_output::DeleteChatControlsConfigurationOutput;
-
 pub use crate::operation::delete_chat_controls_configuration::_delete_chat_controls_configuration_input::DeleteChatControlsConfigurationInput;
+
+pub use crate::operation::delete_chat_controls_configuration::_delete_chat_controls_configuration_output::DeleteChatControlsConfigurationOutput;
 
 mod _delete_chat_controls_configuration_input;
 

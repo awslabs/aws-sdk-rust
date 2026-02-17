@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_decoder_man
     }
 }
 
-pub use crate::operation::update_decoder_manifest::_update_decoder_manifest_output::UpdateDecoderManifestOutput;
-
 pub use crate::operation::update_decoder_manifest::_update_decoder_manifest_input::UpdateDecoderManifestInput;
+
+pub use crate::operation::update_decoder_manifest::_update_decoder_manifest_output::UpdateDecoderManifestOutput;
 
 mod _update_decoder_manifest_input;
 

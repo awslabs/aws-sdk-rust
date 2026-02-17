@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_hosts::Modi
     }
 }
 
-pub use crate::operation::modify_hosts::_modify_hosts_output::ModifyHostsOutput;
-
 pub use crate::operation::modify_hosts::_modify_hosts_input::ModifyHostsInput;
+
+pub use crate::operation::modify_hosts::_modify_hosts_output::ModifyHostsOutput;
 
 mod _modify_hosts_input;
 

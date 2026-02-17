@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_code_reposi
     }
 }
 
-pub use crate::operation::create_code_repository::_create_code_repository_output::CreateCodeRepositoryOutput;
-
 pub use crate::operation::create_code_repository::_create_code_repository_input::CreateCodeRepositoryInput;
+
+pub use crate::operation::create_code_repository::_create_code_repository_output::CreateCodeRepositoryOutput;
 
 mod _create_code_repository_input;
 

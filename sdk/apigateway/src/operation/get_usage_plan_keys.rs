@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_usage_plan_key
     }
 }
 
-pub use crate::operation::get_usage_plan_keys::_get_usage_plan_keys_output::GetUsagePlanKeysOutput;
-
 pub use crate::operation::get_usage_plan_keys::_get_usage_plan_keys_input::GetUsagePlanKeysInput;
+
+pub use crate::operation::get_usage_plan_keys::_get_usage_plan_keys_output::GetUsagePlanKeysOutput;
 
 mod _get_usage_plan_keys_input;
 

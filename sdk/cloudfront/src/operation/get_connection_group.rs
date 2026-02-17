@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_gro
     }
 }
 
-pub use crate::operation::get_connection_group::_get_connection_group_output::GetConnectionGroupOutput;
-
 pub use crate::operation::get_connection_group::_get_connection_group_input::GetConnectionGroupInput;
+
+pub use crate::operation::get_connection_group::_get_connection_group_output::GetConnectionGroupOutput;
 
 mod _get_connection_group_input;
 

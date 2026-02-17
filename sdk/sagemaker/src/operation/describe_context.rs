@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_context::
     }
 }
 
-pub use crate::operation::describe_context::_describe_context_output::DescribeContextOutput;
-
 pub use crate::operation::describe_context::_describe_context_input::DescribeContextInput;
+
+pub use crate::operation::describe_context::_describe_context_output::DescribeContextOutput;
 
 mod _describe_context_input;
 

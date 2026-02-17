@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_router_network
     }
 }
 
-pub use crate::operation::get_router_network_interface::_get_router_network_interface_output::GetRouterNetworkInterfaceOutput;
-
 pub use crate::operation::get_router_network_interface::_get_router_network_interface_input::GetRouterNetworkInterfaceInput;
+
+pub use crate::operation::get_router_network_interface::_get_router_network_interface_output::GetRouterNetworkInterfaceOutput;
 
 mod _get_router_network_interface_input;
 

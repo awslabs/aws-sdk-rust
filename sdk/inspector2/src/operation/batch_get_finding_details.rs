@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_finding_
     }
 }
 
-pub use crate::operation::batch_get_finding_details::_batch_get_finding_details_output::BatchGetFindingDetailsOutput;
-
 pub use crate::operation::batch_get_finding_details::_batch_get_finding_details_input::BatchGetFindingDetailsInput;
+
+pub use crate::operation::batch_get_finding_details::_batch_get_finding_details_output::BatchGetFindingDetailsOutput;
 
 mod _batch_get_finding_details_input;
 

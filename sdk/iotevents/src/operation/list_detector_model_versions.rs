@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_detector_mode
     }
 }
 
-pub use crate::operation::list_detector_model_versions::_list_detector_model_versions_output::ListDetectorModelVersionsOutput;
-
 pub use crate::operation::list_detector_model_versions::_list_detector_model_versions_input::ListDetectorModelVersionsInput;
+
+pub use crate::operation::list_detector_model_versions::_list_detector_model_versions_output::ListDetectorModelVersionsOutput;
 
 mod _list_detector_model_versions_input;
 

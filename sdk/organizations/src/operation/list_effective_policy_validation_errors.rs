@@ -631,9 +631,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_effective_pol
     }
 }
 
-pub use crate::operation::list_effective_policy_validation_errors::_list_effective_policy_validation_errors_output::ListEffectivePolicyValidationErrorsOutput;
-
 pub use crate::operation::list_effective_policy_validation_errors::_list_effective_policy_validation_errors_input::ListEffectivePolicyValidationErrorsInput;
+
+pub use crate::operation::list_effective_policy_validation_errors::_list_effective_policy_validation_errors_output::ListEffectivePolicyValidationErrorsOutput;
 
 mod _list_effective_policy_validation_errors_input;
 

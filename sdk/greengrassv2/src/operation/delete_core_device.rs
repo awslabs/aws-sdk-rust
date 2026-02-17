@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_core_device
     }
 }
 
-pub use crate::operation::delete_core_device::_delete_core_device_output::DeleteCoreDeviceOutput;
-
 pub use crate::operation::delete_core_device::_delete_core_device_input::DeleteCoreDeviceInput;
+
+pub use crate::operation::delete_core_device::_delete_core_device_output::DeleteCoreDeviceOutput;
 
 mod _delete_core_device_input;
 

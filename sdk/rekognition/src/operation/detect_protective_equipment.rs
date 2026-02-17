@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_protective_
     }
 }
 
-pub use crate::operation::detect_protective_equipment::_detect_protective_equipment_output::DetectProtectiveEquipmentOutput;
-
 pub use crate::operation::detect_protective_equipment::_detect_protective_equipment_input::DetectProtectiveEquipmentInput;
+
+pub use crate::operation::detect_protective_equipment::_detect_protective_equipment_output::DetectProtectiveEquipmentOutput;
 
 mod _detect_protective_equipment_input;
 

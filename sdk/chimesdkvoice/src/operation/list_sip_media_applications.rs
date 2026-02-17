@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sip_media_app
     }
 }
 
-pub use crate::operation::list_sip_media_applications::_list_sip_media_applications_output::ListSipMediaApplicationsOutput;
-
 pub use crate::operation::list_sip_media_applications::_list_sip_media_applications_input::ListSipMediaApplicationsInput;
+
+pub use crate::operation::list_sip_media_applications::_list_sip_media_applications_output::ListSipMediaApplicationsOutput;
 
 mod _list_sip_media_applications_input;
 

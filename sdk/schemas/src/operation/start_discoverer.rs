@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_discoverer::
     }
 }
 
-pub use crate::operation::start_discoverer::_start_discoverer_output::StartDiscovererOutput;
-
 pub use crate::operation::start_discoverer::_start_discoverer_input::StartDiscovererInput;
+
+pub use crate::operation::start_discoverer::_start_discoverer_output::StartDiscovererOutput;
 
 mod _start_discoverer_input;
 

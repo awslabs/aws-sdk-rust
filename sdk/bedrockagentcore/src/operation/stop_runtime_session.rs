@@ -478,9 +478,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_runtime_sessi
     }
 }
 
-pub use crate::operation::stop_runtime_session::_stop_runtime_session_output::StopRuntimeSessionOutput;
-
 pub use crate::operation::stop_runtime_session::_stop_runtime_session_input::StopRuntimeSessionInput;
+
+pub use crate::operation::stop_runtime_session::_stop_runtime_session_output::StopRuntimeSessionOutput;
 
 mod _stop_runtime_session_input;
 

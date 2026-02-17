@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_prof
     }
 }
 
-pub use crate::operation::list_resource_profile_detections::_list_resource_profile_detections_output::ListResourceProfileDetectionsOutput;
-
 pub use crate::operation::list_resource_profile_detections::_list_resource_profile_detections_input::ListResourceProfileDetectionsInput;
+
+pub use crate::operation::list_resource_profile_detections::_list_resource_profile_detections_output::ListResourceProfileDetectionsOutput;
 
 mod _list_resource_profile_detections_input;
 

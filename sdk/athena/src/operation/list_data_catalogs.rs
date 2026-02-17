@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_catalogs
     }
 }
 
-pub use crate::operation::list_data_catalogs::_list_data_catalogs_output::ListDataCatalogsOutput;
-
 pub use crate::operation::list_data_catalogs::_list_data_catalogs_input::ListDataCatalogsInput;
+
+pub use crate::operation::list_data_catalogs::_list_data_catalogs_output::ListDataCatalogsOutput;
 
 mod _list_data_catalogs_input;
 

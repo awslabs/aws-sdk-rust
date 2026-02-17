@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_layer_version_
     }
 }
 
-pub use crate::operation::get_layer_version_policy::_get_layer_version_policy_output::GetLayerVersionPolicyOutput;
-
 pub use crate::operation::get_layer_version_policy::_get_layer_version_policy_input::GetLayerVersionPolicyInput;
+
+pub use crate::operation::get_layer_version_policy::_get_layer_version_policy_output::GetLayerVersionPolicyOutput;
 
 mod _get_layer_version_policy_input;
 

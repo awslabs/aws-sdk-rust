@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_assessmen
     }
 }
 
-pub use crate::operation::list_app_assessments::_list_app_assessments_output::ListAppAssessmentsOutput;
-
 pub use crate::operation::list_app_assessments::_list_app_assessments_input::ListAppAssessmentsInput;
+
+pub use crate::operation::list_app_assessments::_list_app_assessments_output::ListAppAssessmentsOutput;
 
 mod _list_app_assessments_input;
 

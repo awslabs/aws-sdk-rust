@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_instanc
     }
 }
 
-pub use crate::operation::deregister_instances_from_load_balancer::_deregister_instances_from_load_balancer_output::DeregisterInstancesFromLoadBalancerOutput;
-
 pub use crate::operation::deregister_instances_from_load_balancer::_deregister_instances_from_load_balancer_input::DeregisterInstancesFromLoadBalancerInput;
+
+pub use crate::operation::deregister_instances_from_load_balancer::_deregister_instances_from_load_balancer_output::DeregisterInstancesFromLoadBalancerOutput;
 
 mod _deregister_instances_from_load_balancer_input;
 

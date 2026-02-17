@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_configuratio
     }
 }
 
-pub use crate::operation::start_configuration_policy_association::_start_configuration_policy_association_output::StartConfigurationPolicyAssociationOutput;
-
 pub use crate::operation::start_configuration_policy_association::_start_configuration_policy_association_input::StartConfigurationPolicyAssociationInput;
+
+pub use crate::operation::start_configuration_policy_association::_start_configuration_policy_association_output::StartConfigurationPolicyAssociationOutput;
 
 mod _start_configuration_policy_association_input;
 

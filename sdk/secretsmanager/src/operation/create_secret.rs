@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_secret::Cre
     }
 }
 
-pub use crate::operation::create_secret::_create_secret_output::CreateSecretOutput;
-
 pub use crate::operation::create_secret::_create_secret_input::CreateSecretInput;
+
+pub use crate::operation::create_secret::_create_secret_output::CreateSecretOutput;
 
 mod _create_secret_input;
 

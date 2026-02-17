@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_template_gr
     }
 }
 
-pub use crate::operation::create_template_group_access_control_entry::_create_template_group_access_control_entry_output::CreateTemplateGroupAccessControlEntryOutput;
-
 pub use crate::operation::create_template_group_access_control_entry::_create_template_group_access_control_entry_input::CreateTemplateGroupAccessControlEntryInput;
+
+pub use crate::operation::create_template_group_access_control_entry::_create_template_group_access_control_entry_output::CreateTemplateGroupAccessControlEntryOutput;
 
 mod _create_template_group_access_control_entry_input;
 

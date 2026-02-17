@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_assessment_ta
     }
 }
 
-pub use crate::operation::list_assessment_targets::_list_assessment_targets_output::ListAssessmentTargetsOutput;
-
 pub use crate::operation::list_assessment_targets::_list_assessment_targets_input::ListAssessmentTargetsInput;
+
+pub use crate::operation::list_assessment_targets::_list_assessment_targets_output::ListAssessmentTargetsOutput;
 
 mod _list_assessment_targets_input;
 

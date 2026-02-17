@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vehicle::Up
     }
 }
 
-pub use crate::operation::update_vehicle::_update_vehicle_output::UpdateVehicleOutput;
-
 pub use crate::operation::update_vehicle::_update_vehicle_input::UpdateVehicleInput;
+
+pub use crate::operation::update_vehicle::_update_vehicle_output::UpdateVehicleOutput;
 
 mod _update_vehicle_input;
 

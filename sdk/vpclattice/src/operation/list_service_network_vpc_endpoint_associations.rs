@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_service_network_vpc_endpoint_associations::_list_service_network_vpc_endpoint_associations_output::ListServiceNetworkVpcEndpointAssociationsOutput;
-
 pub use crate::operation::list_service_network_vpc_endpoint_associations::_list_service_network_vpc_endpoint_associations_input::ListServiceNetworkVpcEndpointAssociationsInput;
+
+pub use crate::operation::list_service_network_vpc_endpoint_associations::_list_service_network_vpc_endpoint_associations_output::ListServiceNetworkVpcEndpointAssociationsOutput;
 
 mod _list_service_network_vpc_endpoint_associations_input;
 

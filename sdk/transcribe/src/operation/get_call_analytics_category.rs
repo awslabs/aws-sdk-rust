@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_call_analytics
     }
 }
 
-pub use crate::operation::get_call_analytics_category::_get_call_analytics_category_output::GetCallAnalyticsCategoryOutput;
-
 pub use crate::operation::get_call_analytics_category::_get_call_analytics_category_input::GetCallAnalyticsCategoryInput;
+
+pub use crate::operation::get_call_analytics_category::_get_call_analytics_category_output::GetCallAnalyticsCategoryOutput;
 
 mod _get_call_analytics_category_input;
 

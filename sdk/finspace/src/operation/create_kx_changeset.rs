@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_kx_changese
     }
 }
 
-pub use crate::operation::create_kx_changeset::_create_kx_changeset_output::CreateKxChangesetOutput;
-
 pub use crate::operation::create_kx_changeset::_create_kx_changeset_input::CreateKxChangesetInput;
+
+pub use crate::operation::create_kx_changeset::_create_kx_changeset_output::CreateKxChangesetOutput;
 
 mod _create_kx_changeset_input;
 

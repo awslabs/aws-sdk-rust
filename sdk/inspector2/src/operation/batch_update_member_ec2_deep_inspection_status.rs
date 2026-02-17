@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_update_member_ec2_deep_inspection_status::_batch_update_member_ec2_deep_inspection_status_output::BatchUpdateMemberEc2DeepInspectionStatusOutput;
-
 pub use crate::operation::batch_update_member_ec2_deep_inspection_status::_batch_update_member_ec2_deep_inspection_status_input::BatchUpdateMemberEc2DeepInspectionStatusInput;
+
+pub use crate::operation::batch_update_member_ec2_deep_inspection_status::_batch_update_member_ec2_deep_inspection_status_output::BatchUpdateMemberEc2DeepInspectionStatusOutput;
 
 mod _batch_update_member_ec2_deep_inspection_status_input;
 

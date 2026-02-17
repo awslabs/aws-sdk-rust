@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_confi
     }
 }
 
-pub use crate::operation::get_resource_configuration::_get_resource_configuration_output::GetResourceConfigurationOutput;
-
 pub use crate::operation::get_resource_configuration::_get_resource_configuration_input::GetResourceConfigurationInput;
+
+pub use crate::operation::get_resource_configuration::_get_resource_configuration_output::GetResourceConfigurationOutput;
 
 mod _get_resource_configuration_input;
 

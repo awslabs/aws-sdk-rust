@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flow::Des
     }
 }
 
-pub use crate::operation::describe_flow::_describe_flow_output::DescribeFlowOutput;
-
 pub use crate::operation::describe_flow::_describe_flow_input::DescribeFlowInput;
+
+pub use crate::operation::describe_flow::_describe_flow_output::DescribeFlowOutput;
 
 mod _describe_flow_input;
 

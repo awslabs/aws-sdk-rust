@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_online_evalua
     }
 }
 
-pub use crate::operation::list_online_evaluation_configs::_list_online_evaluation_configs_output::ListOnlineEvaluationConfigsOutput;
-
 pub use crate::operation::list_online_evaluation_configs::_list_online_evaluation_configs_input::ListOnlineEvaluationConfigsInput;
+
+pub use crate::operation::list_online_evaluation_configs::_list_online_evaluation_configs_output::ListOnlineEvaluationConfigsOutput;
 
 mod _list_online_evaluation_configs_input;
 

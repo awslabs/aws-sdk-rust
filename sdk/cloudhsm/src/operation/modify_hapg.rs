@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_hapg::Modif
     }
 }
 
-pub use crate::operation::modify_hapg::_modify_hapg_output::ModifyHapgOutput;
-
 pub use crate::operation::modify_hapg::_modify_hapg_input::ModifyHapgInput;
+
+pub use crate::operation::modify_hapg::_modify_hapg_output::ModifyHapgOutput;
 
 mod _modify_hapg_input;
 

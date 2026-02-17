@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_association
     }
 }
 
-pub use crate::operation::delete_association::_delete_association_output::DeleteAssociationOutput;
-
 pub use crate::operation::delete_association::_delete_association_input::DeleteAssociationInput;
+
+pub use crate::operation::delete_association::_delete_association_output::DeleteAssociationOutput;
 
 mod _delete_association_input;
 

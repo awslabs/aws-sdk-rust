@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_project::Cr
     }
 }
 
-pub use crate::operation::create_project::_create_project_output::CreateProjectOutput;
-
 pub use crate::operation::create_project::_create_project_input::CreateProjectInput;
+
+pub use crate::operation::create_project::_create_project_output::CreateProjectOutput;
 
 mod _create_project_input;
 

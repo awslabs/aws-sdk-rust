@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_virtual_machin
     }
 }
 
-pub use crate::operation::get_virtual_machine::_get_virtual_machine_output::GetVirtualMachineOutput;
-
 pub use crate::operation::get_virtual_machine::_get_virtual_machine_input::GetVirtualMachineInput;
+
+pub use crate::operation::get_virtual_machine::_get_virtual_machine_output::GetVirtualMachineOutput;
 
 mod _get_virtual_machine_input;
 

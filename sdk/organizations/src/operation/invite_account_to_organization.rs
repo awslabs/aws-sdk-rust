@@ -680,9 +680,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invite_account_to_
     }
 }
 
-pub use crate::operation::invite_account_to_organization::_invite_account_to_organization_output::InviteAccountToOrganizationOutput;
-
 pub use crate::operation::invite_account_to_organization::_invite_account_to_organization_input::InviteAccountToOrganizationInput;
+
+pub use crate::operation::invite_account_to_organization::_invite_account_to_organization_output::InviteAccountToOrganizationOutput;
 
 mod _invite_account_to_organization_input;
 

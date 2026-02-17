@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_service_l
     }
 }
 
-pub use crate::operation::describe_service_link_virtual_interfaces::_describe_service_link_virtual_interfaces_output::DescribeServiceLinkVirtualInterfacesOutput;
-
 pub use crate::operation::describe_service_link_virtual_interfaces::_describe_service_link_virtual_interfaces_input::DescribeServiceLinkVirtualInterfacesInput;
+
+pub use crate::operation::describe_service_link_virtual_interfaces::_describe_service_link_virtual_interfaces_output::DescribeServiceLinkVirtualInterfacesOutput;
 
 mod _describe_service_link_virtual_interfaces_input;
 

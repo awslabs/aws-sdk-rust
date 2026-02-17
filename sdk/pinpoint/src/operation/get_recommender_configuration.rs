@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_recommender_co
     }
 }
 
-pub use crate::operation::get_recommender_configuration::_get_recommender_configuration_output::GetRecommenderConfigurationOutput;
-
 pub use crate::operation::get_recommender_configuration::_get_recommender_configuration_input::GetRecommenderConfigurationInput;
+
+pub use crate::operation::get_recommender_configuration::_get_recommender_configuration_output::GetRecommenderConfigurationOutput;
 
 mod _get_recommender_configuration_input;
 

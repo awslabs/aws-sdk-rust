@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_account_pas
     }
 }
 
-pub use crate::operation::update_account_password_policy::_update_account_password_policy_output::UpdateAccountPasswordPolicyOutput;
-
 pub use crate::operation::update_account_password_policy::_update_account_password_policy_input::UpdateAccountPasswordPolicyInput;
+
+pub use crate::operation::update_account_password_policy::_update_account_password_policy_output::UpdateAccountPasswordPolicyOutput;
 
 mod _update_account_password_policy_input;
 

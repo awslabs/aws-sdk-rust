@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_dataset::Im
     }
 }
 
-pub use crate::operation::import_dataset::_import_dataset_output::ImportDatasetOutput;
-
 pub use crate::operation::import_dataset::_import_dataset_input::ImportDatasetInput;
+
+pub use crate::operation::import_dataset::_import_dataset_output::ImportDatasetOutput;
 
 mod _import_dataset_input;
 

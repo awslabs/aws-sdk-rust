@@ -493,9 +493,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tile::GetTileE
     }
 }
 
-pub use crate::operation::get_tile::_get_tile_output::GetTileOutput;
-
 pub use crate::operation::get_tile::_get_tile_input::GetTileInput;
+
+pub use crate::operation::get_tile::_get_tile_output::GetTileOutput;
 
 mod _get_tile_input;
 

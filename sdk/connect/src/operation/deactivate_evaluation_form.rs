@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deactivate_evaluat
     }
 }
 
-pub use crate::operation::deactivate_evaluation_form::_deactivate_evaluation_form_output::DeactivateEvaluationFormOutput;
-
 pub use crate::operation::deactivate_evaluation_form::_deactivate_evaluation_form_input::DeactivateEvaluationFormInput;
+
+pub use crate::operation::deactivate_evaluation_form::_deactivate_evaluation_form_output::DeactivateEvaluationFormOutput;
 
 mod _deactivate_evaluation_form_input;
 

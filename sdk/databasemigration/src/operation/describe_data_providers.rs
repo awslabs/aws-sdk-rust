@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_prov
     }
 }
 
-pub use crate::operation::describe_data_providers::_describe_data_providers_output::DescribeDataProvidersOutput;
-
 pub use crate::operation::describe_data_providers::_describe_data_providers_input::DescribeDataProvidersInput;
+
+pub use crate::operation::describe_data_providers::_describe_data_providers_output::DescribeDataProvidersOutput;
 
 mod _describe_data_providers_input;
 

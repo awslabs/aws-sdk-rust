@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_phone_numbers
     }
 }
 
-pub use crate::operation::list_phone_numbers_opted_out::_list_phone_numbers_opted_out_output::ListPhoneNumbersOptedOutOutput;
-
 pub use crate::operation::list_phone_numbers_opted_out::_list_phone_numbers_opted_out_input::ListPhoneNumbersOptedOutInput;
+
+pub use crate::operation::list_phone_numbers_opted_out::_list_phone_numbers_opted_out_output::ListPhoneNumbersOptedOutOutput;
 
 mod _list_phone_numbers_opted_out_input;
 

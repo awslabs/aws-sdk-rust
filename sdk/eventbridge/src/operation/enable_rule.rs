@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_rule::Enabl
     }
 }
 
-pub use crate::operation::enable_rule::_enable_rule_output::EnableRuleOutput;
-
 pub use crate::operation::enable_rule::_enable_rule_input::EnableRuleInput;
+
+pub use crate::operation::enable_rule::_enable_rule_output::EnableRuleOutput;
 
 mod _enable_rule_input;
 

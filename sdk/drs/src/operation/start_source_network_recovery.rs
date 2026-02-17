@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_source_netwo
     }
 }
 
-pub use crate::operation::start_source_network_recovery::_start_source_network_recovery_output::StartSourceNetworkRecoveryOutput;
-
 pub use crate::operation::start_source_network_recovery::_start_source_network_recovery_input::StartSourceNetworkRecoveryInput;
+
+pub use crate::operation::start_source_network_recovery::_start_source_network_recovery_output::StartSourceNetworkRecoveryOutput;
 
 mod _start_source_network_recovery_input;
 

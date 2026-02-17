@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hosted_conf
     }
 }
 
-pub use crate::operation::delete_hosted_configuration_version::_delete_hosted_configuration_version_output::DeleteHostedConfigurationVersionOutput;
-
 pub use crate::operation::delete_hosted_configuration_version::_delete_hosted_configuration_version_input::DeleteHostedConfigurationVersionInput;
+
+pub use crate::operation::delete_hosted_configuration_version::_delete_hosted_configuration_version_output::DeleteHostedConfigurationVersionOutput;
 
 mod _delete_hosted_configuration_version_input;
 

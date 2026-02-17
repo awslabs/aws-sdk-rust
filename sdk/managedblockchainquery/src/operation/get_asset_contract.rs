@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_asset_contract
     }
 }
 
-pub use crate::operation::get_asset_contract::_get_asset_contract_output::GetAssetContractOutput;
-
 pub use crate::operation::get_asset_contract::_get_asset_contract_input::GetAssetContractInput;
+
+pub use crate::operation::get_asset_contract::_get_asset_contract_output::GetAssetContractOutput;
 
 mod _get_asset_contract_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sequence_st
     }
 }
 
-pub use crate::operation::update_sequence_store::_update_sequence_store_output::UpdateSequenceStoreOutput;
-
 pub use crate::operation::update_sequence_store::_update_sequence_store_input::UpdateSequenceStoreInput;
+
+pub use crate::operation::update_sequence_store::_update_sequence_store_output::UpdateSequenceStoreOutput;
 
 mod _update_sequence_store_input;
 

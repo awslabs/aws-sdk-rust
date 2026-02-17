@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_rotate_secr
     }
 }
 
-pub use crate::operation::cancel_rotate_secret::_cancel_rotate_secret_output::CancelRotateSecretOutput;
-
 pub use crate::operation::cancel_rotate_secret::_cancel_rotate_secret_input::CancelRotateSecretInput;
+
+pub use crate::operation::cancel_rotate_secret::_cancel_rotate_secret_output::CancelRotateSecretOutput;
 
 mod _cancel_rotate_secret_input;
 

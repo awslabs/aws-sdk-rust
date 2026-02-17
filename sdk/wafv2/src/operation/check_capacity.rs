@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_capacity::Ch
     }
 }
 
-pub use crate::operation::check_capacity::_check_capacity_output::CheckCapacityOutput;
-
 pub use crate::operation::check_capacity::_check_capacity_input::CheckCapacityInput;
+
+pub use crate::operation::check_capacity::_check_capacity_output::CheckCapacityOutput;
 
 mod _check_capacity_input;
 

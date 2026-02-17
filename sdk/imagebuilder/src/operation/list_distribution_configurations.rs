@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distribution_
     }
 }
 
-pub use crate::operation::list_distribution_configurations::_list_distribution_configurations_output::ListDistributionConfigurationsOutput;
-
 pub use crate::operation::list_distribution_configurations::_list_distribution_configurations_input::ListDistributionConfigurationsInput;
+
+pub use crate::operation::list_distribution_configurations::_list_distribution_configurations_output::ListDistributionConfigurationsOutput;
 
 mod _list_distribution_configurations_input;
 

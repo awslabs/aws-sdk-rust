@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_effective_hour
     }
 }
 
-pub use crate::operation::get_effective_hours_of_operations::_get_effective_hours_of_operations_output::GetEffectiveHoursOfOperationsOutput;
-
 pub use crate::operation::get_effective_hours_of_operations::_get_effective_hours_of_operations_input::GetEffectiveHoursOfOperationsInput;
+
+pub use crate::operation::get_effective_hours_of_operations::_get_effective_hours_of_operations_output::GetEffectiveHoursOfOperationsOutput;
 
 mod _get_effective_hours_of_operations_input;
 

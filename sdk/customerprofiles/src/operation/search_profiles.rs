@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_profiles::S
     }
 }
 
-pub use crate::operation::search_profiles::_search_profiles_output::SearchProfilesOutput;
-
 pub use crate::operation::search_profiles::_search_profiles_input::SearchProfilesInput;
+
+pub use crate::operation::search_profiles::_search_profiles_output::SearchProfilesOutput;
 
 mod _search_profiles_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_set_user_set
     }
 }
 
-pub use crate::operation::admin_set_user_settings::_admin_set_user_settings_output::AdminSetUserSettingsOutput;
-
 pub use crate::operation::admin_set_user_settings::_admin_set_user_settings_input::AdminSetUserSettingsInput;
+
+pub use crate::operation::admin_set_user_settings::_admin_set_user_settings_output::AdminSetUserSettingsOutput;
 
 mod _admin_set_user_settings_input;
 

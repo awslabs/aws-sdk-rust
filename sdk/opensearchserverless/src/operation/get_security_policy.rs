@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_security_polic
     }
 }
 
-pub use crate::operation::get_security_policy::_get_security_policy_output::GetSecurityPolicyOutput;
-
 pub use crate::operation::get_security_policy::_get_security_policy_input::GetSecurityPolicyInput;
+
+pub use crate::operation::get_security_policy::_get_security_policy_output::GetSecurityPolicyOutput;
 
 mod _get_security_policy_input;
 

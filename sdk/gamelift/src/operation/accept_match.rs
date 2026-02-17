@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_match::Acce
     }
 }
 
-pub use crate::operation::accept_match::_accept_match_output::AcceptMatchOutput;
-
 pub use crate::operation::accept_match::_accept_match_input::AcceptMatchInput;
+
+pub use crate::operation::accept_match::_accept_match_output::AcceptMatchOutput;
 
 mod _accept_match_input;
 

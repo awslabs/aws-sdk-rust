@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_findings_re
     }
 }
 
-pub use crate::operation::cancel_findings_report::_cancel_findings_report_output::CancelFindingsReportOutput;
-
 pub use crate::operation::cancel_findings_report::_cancel_findings_report_input::CancelFindingsReportInput;
+
+pub use crate::operation::cancel_findings_report::_cancel_findings_report_output::CancelFindingsReportOutput;
 
 mod _cancel_findings_report_input;
 

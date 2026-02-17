@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_available_met
     }
 }
 
-pub use crate::operation::list_available_metered_products::_list_available_metered_products_output::ListAvailableMeteredProductsOutput;
-
 pub use crate::operation::list_available_metered_products::_list_available_metered_products_input::ListAvailableMeteredProductsInput;
+
+pub use crate::operation::list_available_metered_products::_list_available_metered_products_output::ListAvailableMeteredProductsOutput;
 
 mod _list_available_metered_products_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_pools::De
     }
 }
 
-pub use crate::operation::describe_pools::_describe_pools_output::DescribePoolsOutput;
-
 pub use crate::operation::describe_pools::_describe_pools_input::DescribePoolsInput;
+
+pub use crate::operation::describe_pools::_describe_pools_output::DescribePoolsOutput;
 
 mod _describe_pools_input;
 

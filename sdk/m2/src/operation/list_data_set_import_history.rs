@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_set_impo
     }
 }
 
-pub use crate::operation::list_data_set_import_history::_list_data_set_import_history_output::ListDataSetImportHistoryOutput;
-
 pub use crate::operation::list_data_set_import_history::_list_data_set_import_history_input::ListDataSetImportHistoryInput;
+
+pub use crate::operation::list_data_set_import_history::_list_data_set_import_history_output::ListDataSetImportHistoryOutput;
 
 mod _list_data_set_import_history_input;
 

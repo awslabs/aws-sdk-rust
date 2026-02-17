@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_qualificati
     }
 }
 
-pub use crate::operation::delete_qualification_type::_delete_qualification_type_output::DeleteQualificationTypeOutput;
-
 pub use crate::operation::delete_qualification_type::_delete_qualification_type_input::DeleteQualificationTypeInput;
+
+pub use crate::operation::delete_qualification_type::_delete_qualification_type_output::DeleteQualificationTypeOutput;
 
 mod _delete_qualification_type_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_describe_mod
     }
 }
 
-pub use crate::operation::batch_describe_model_package::_batch_describe_model_package_output::BatchDescribeModelPackageOutput;
-
 pub use crate::operation::batch_describe_model_package::_batch_describe_model_package_input::BatchDescribeModelPackageInput;
+
+pub use crate::operation::batch_describe_model_package::_batch_describe_model_package_output::BatchDescribeModelPackageOutput;
 
 mod _batch_describe_model_package_input;
 

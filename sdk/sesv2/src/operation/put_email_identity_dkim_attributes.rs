@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_email_identity
     }
 }
 
-pub use crate::operation::put_email_identity_dkim_attributes::_put_email_identity_dkim_attributes_output::PutEmailIdentityDkimAttributesOutput;
-
 pub use crate::operation::put_email_identity_dkim_attributes::_put_email_identity_dkim_attributes_input::PutEmailIdentityDkimAttributesInput;
+
+pub use crate::operation::put_email_identity_dkim_attributes::_put_email_identity_dkim_attributes_output::PutEmailIdentityDkimAttributesOutput;
 
 mod _put_email_identity_dkim_attributes_input;
 

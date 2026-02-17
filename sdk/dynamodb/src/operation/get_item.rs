@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_item::GetItemE
     }
 }
 
-pub use crate::operation::get_item::_get_item_output::GetItemOutput;
-
 pub use crate::operation::get_item::_get_item_input::GetItemInput;
+
+pub use crate::operation::get_item::_get_item_output::GetItemOutput;
 
 mod _get_item_input;
 

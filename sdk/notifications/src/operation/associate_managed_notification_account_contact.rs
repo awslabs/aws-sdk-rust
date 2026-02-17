@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_managed_notification_account_contact::_associate_managed_notification_account_contact_output::AssociateManagedNotificationAccountContactOutput;
-
 pub use crate::operation::associate_managed_notification_account_contact::_associate_managed_notification_account_contact_input::AssociateManagedNotificationAccountContactInput;
+
+pub use crate::operation::associate_managed_notification_account_contact::_associate_managed_notification_account_contact_output::AssociateManagedNotificationAccountContactOutput;
 
 mod _associate_managed_notification_account_contact_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_syn
     }
 }
 
-pub use crate::operation::update_service_sync_blocker::_update_service_sync_blocker_output::UpdateServiceSyncBlockerOutput;
-
 pub use crate::operation::update_service_sync_blocker::_update_service_sync_blocker_input::UpdateServiceSyncBlockerInput;
+
+pub use crate::operation::update_service_sync_blocker::_update_service_sync_blocker_output::UpdateServiceSyncBlockerOutput;
 
 mod _update_service_sync_blocker_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_firew
     }
 }
 
-pub use crate::operation::disassociate_firewall_rule_group::_disassociate_firewall_rule_group_output::DisassociateFirewallRuleGroupOutput;
-
 pub use crate::operation::disassociate_firewall_rule_group::_disassociate_firewall_rule_group_input::DisassociateFirewallRuleGroupInput;
+
+pub use crate::operation::disassociate_firewall_rule_group::_disassociate_firewall_rule_group_output::DisassociateFirewallRuleGroupOutput;
 
 mod _disassociate_firewall_rule_group_input;
 

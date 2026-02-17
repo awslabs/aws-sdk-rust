@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_medical_scri
     }
 }
 
-pub use crate::operation::start_medical_scribe_job::_start_medical_scribe_job_output::StartMedicalScribeJobOutput;
-
 pub use crate::operation::start_medical_scribe_job::_start_medical_scribe_job_input::StartMedicalScribeJobInput;
+
+pub use crate::operation::start_medical_scribe_job::_start_medical_scribe_job_output::StartMedicalScribeJobOutput;
 
 mod _start_medical_scribe_job_input;
 

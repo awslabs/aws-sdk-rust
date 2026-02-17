@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_versi
     }
 }
 
-pub use crate::operation::list_service_versions::_list_service_versions_output::ListServiceVersionsOutput;
-
 pub use crate::operation::list_service_versions::_list_service_versions_input::ListServiceVersionsInput;
+
+pub use crate::operation::list_service_versions::_list_service_versions_output::ListServiceVersionsOutput;
 
 mod _list_service_versions_input;
 

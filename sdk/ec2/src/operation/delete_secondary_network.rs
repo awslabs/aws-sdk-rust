@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_secondary_n
     }
 }
 
-pub use crate::operation::delete_secondary_network::_delete_secondary_network_output::DeleteSecondaryNetworkOutput;
-
 pub use crate::operation::delete_secondary_network::_delete_secondary_network_input::DeleteSecondaryNetworkInput;
+
+pub use crate::operation::delete_secondary_network::_delete_secondary_network_output::DeleteSecondaryNetworkOutput;
 
 mod _delete_secondary_network_input;
 

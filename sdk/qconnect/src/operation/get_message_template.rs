@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_message_templa
     }
 }
 
-pub use crate::operation::get_message_template::_get_message_template_output::GetMessageTemplateOutput;
-
 pub use crate::operation::get_message_template::_get_message_template_input::GetMessageTemplateInput;
+
+pub use crate::operation::get_message_template::_get_message_template_output::GetMessageTemplateOutput;
 
 mod _get_message_template_input;
 

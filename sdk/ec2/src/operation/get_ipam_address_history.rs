@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_address_h
     }
 }
 
-pub use crate::operation::get_ipam_address_history::_get_ipam_address_history_output::GetIpamAddressHistoryOutput;
-
 pub use crate::operation::get_ipam_address_history::_get_ipam_address_history_input::GetIpamAddressHistoryInput;
+
+pub use crate::operation::get_ipam_address_history::_get_ipam_address_history_output::GetIpamAddressHistoryOutput;
 
 mod _get_ipam_address_history_input;
 

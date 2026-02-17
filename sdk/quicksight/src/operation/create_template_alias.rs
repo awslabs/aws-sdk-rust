@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_template_al
     }
 }
 
-pub use crate::operation::create_template_alias::_create_template_alias_output::CreateTemplateAliasOutput;
-
 pub use crate::operation::create_template_alias::_create_template_alias_input::CreateTemplateAliasInput;
+
+pub use crate::operation::create_template_alias::_create_template_alias_output::CreateTemplateAliasOutput;
 
 mod _create_template_alias_input;
 

@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::undeprecate_domain
     }
 }
 
-pub use crate::operation::undeprecate_domain::_undeprecate_domain_output::UndeprecateDomainOutput;
-
 pub use crate::operation::undeprecate_domain::_undeprecate_domain_input::UndeprecateDomainInput;
+
+pub use crate::operation::undeprecate_domain::_undeprecate_domain_output::UndeprecateDomainOutput;
 
 mod _undeprecate_domain_input;
 

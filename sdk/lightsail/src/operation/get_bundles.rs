@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bundles::GetBu
     }
 }
 
-pub use crate::operation::get_bundles::_get_bundles_output::GetBundlesOutput;
-
 pub use crate::operation::get_bundles::_get_bundles_input::GetBundlesInput;
+
+pub use crate::operation::get_bundles::_get_bundles_output::GetBundlesOutput;
 
 mod _get_bundles_input;
 

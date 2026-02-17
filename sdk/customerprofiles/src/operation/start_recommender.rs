@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_recommender:
     }
 }
 
-pub use crate::operation::start_recommender::_start_recommender_output::StartRecommenderOutput;
-
 pub use crate::operation::start_recommender::_start_recommender_input::StartRecommenderInput;
+
+pub use crate::operation::start_recommender::_start_recommender_output::StartRecommenderOutput;
 
 mod _start_recommender_input;
 

@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_environment
     }
 }
 
-pub use crate::operation::create_environment_account_connection::_create_environment_account_connection_output::CreateEnvironmentAccountConnectionOutput;
-
 pub use crate::operation::create_environment_account_connection::_create_environment_account_connection_input::CreateEnvironmentAccountConnectionInput;
+
+pub use crate::operation::create_environment_account_connection::_create_environment_account_connection_output::CreateEnvironmentAccountConnectionOutput;
 
 mod _create_environment_account_connection_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_sourc
     }
 }
 
-pub use crate::operation::get_identity_source::_get_identity_source_output::GetIdentitySourceOutput;
-
 pub use crate::operation::get_identity_source::_get_identity_source_input::GetIdentitySourceInput;
+
+pub use crate::operation::get_identity_source::_get_identity_source_output::GetIdentitySourceOutput;
 
 mod _get_identity_source_input;
 

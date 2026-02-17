@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sequence_st
     }
 }
 
-pub use crate::operation::delete_sequence_store::_delete_sequence_store_output::DeleteSequenceStoreOutput;
-
 pub use crate::operation::delete_sequence_store::_delete_sequence_store_input::DeleteSequenceStoreInput;
+
+pub use crate::operation::delete_sequence_store::_delete_sequence_store_output::DeleteSequenceStoreOutput;
 
 mod _delete_sequence_store_input;
 

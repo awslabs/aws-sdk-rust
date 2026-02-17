@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::flush_api_cache::F
     }
 }
 
-pub use crate::operation::flush_api_cache::_flush_api_cache_output::FlushApiCacheOutput;
-
 pub use crate::operation::flush_api_cache::_flush_api_cache_input::FlushApiCacheInput;
+
+pub use crate::operation::flush_api_cache::_flush_api_cache_output::FlushApiCacheOutput;
 
 mod _flush_api_cache_input;
 

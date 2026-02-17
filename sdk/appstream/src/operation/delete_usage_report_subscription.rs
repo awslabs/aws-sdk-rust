@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_usage_repor
     }
 }
 
-pub use crate::operation::delete_usage_report_subscription::_delete_usage_report_subscription_output::DeleteUsageReportSubscriptionOutput;
-
 pub use crate::operation::delete_usage_report_subscription::_delete_usage_report_subscription_input::DeleteUsageReportSubscriptionInput;
+
+pub use crate::operation::delete_usage_report_subscription::_delete_usage_report_subscription_output::DeleteUsageReportSubscriptionOutput;
 
 mod _delete_usage_report_subscription_input;
 

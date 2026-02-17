@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_what_if_forec
     }
 }
 
-pub use crate::operation::list_what_if_forecasts::_list_what_if_forecasts_output::ListWhatIfForecastsOutput;
-
 pub use crate::operation::list_what_if_forecasts::_list_what_if_forecasts_input::ListWhatIfForecastsInput;
+
+pub use crate::operation::list_what_if_forecasts::_list_what_if_forecasts_output::ListWhatIfForecastsOutput;
 
 mod _list_what_if_forecasts_input;
 

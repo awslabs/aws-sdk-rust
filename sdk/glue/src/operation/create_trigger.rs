@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trigger::Cr
     }
 }
 
-pub use crate::operation::create_trigger::_create_trigger_output::CreateTriggerOutput;
-
 pub use crate::operation::create_trigger::_create_trigger_input::CreateTriggerInput;
+
+pub use crate::operation::create_trigger::_create_trigger_output::CreateTriggerOutput;
 
 mod _create_trigger_input;
 

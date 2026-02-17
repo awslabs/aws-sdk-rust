@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_connection::
     }
 }
 
-pub use crate::operation::start_connection::_start_connection_output::StartConnectionOutput;
-
 pub use crate::operation::start_connection::_start_connection_input::StartConnectionInput;
+
+pub use crate::operation::start_connection::_start_connection_output::StartConnectionOutput;
 
 mod _start_connection_input;
 

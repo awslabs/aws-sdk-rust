@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_insight::De
     }
 }
 
-pub use crate::operation::delete_insight::_delete_insight_output::DeleteInsightOutput;
-
 pub use crate::operation::delete_insight::_delete_insight_input::DeleteInsightInput;
+
+pub use crate::operation::delete_insight::_delete_insight_output::DeleteInsightOutput;
 
 mod _delete_insight_input;
 

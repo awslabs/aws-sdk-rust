@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_from_index:
     }
 }
 
-pub use crate::operation::detach_from_index::_detach_from_index_output::DetachFromIndexOutput;
-
 pub use crate::operation::detach_from_index::_detach_from_index_input::DetachFromIndexInput;
+
+pub use crate::operation::detach_from_index::_detach_from_index_output::DetachFromIndexOutput;
 
 mod _detach_from_index_input;
 

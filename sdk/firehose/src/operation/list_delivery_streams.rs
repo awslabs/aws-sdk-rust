@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_delivery_stre
     }
 }
 
-pub use crate::operation::list_delivery_streams::_list_delivery_streams_output::ListDeliveryStreamsOutput;
-
 pub use crate::operation::list_delivery_streams::_list_delivery_streams_input::ListDeliveryStreamsInput;
+
+pub use crate::operation::list_delivery_streams::_list_delivery_streams_output::ListDeliveryStreamsOutput;
 
 mod _list_delivery_streams_input;
 

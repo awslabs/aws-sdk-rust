@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_protecti
     }
 }
 
-pub use crate::operation::list_data_protection_settings::_list_data_protection_settings_output::ListDataProtectionSettingsOutput;
-
 pub use crate::operation::list_data_protection_settings::_list_data_protection_settings_input::ListDataProtectionSettingsInput;
+
+pub use crate::operation::list_data_protection_settings::_list_data_protection_settings_output::ListDataProtectionSettingsOutput;
 
 mod _list_data_protection_settings_input;
 

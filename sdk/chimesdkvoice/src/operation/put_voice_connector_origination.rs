@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_voice_connecto
     }
 }
 
-pub use crate::operation::put_voice_connector_origination::_put_voice_connector_origination_output::PutVoiceConnectorOriginationOutput;
-
 pub use crate::operation::put_voice_connector_origination::_put_voice_connector_origination_input::PutVoiceConnectorOriginationInput;
+
+pub use crate::operation::put_voice_connector_origination::_put_voice_connector_origination_output::PutVoiceConnectorOriginationOutput;
 
 mod _put_voice_connector_origination_input;
 

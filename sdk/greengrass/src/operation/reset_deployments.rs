@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_deployments:
     }
 }
 
-pub use crate::operation::reset_deployments::_reset_deployments_output::ResetDeploymentsOutput;
-
 pub use crate::operation::reset_deployments::_reset_deployments_input::ResetDeploymentsInput;
+
+pub use crate::operation::reset_deployments::_reset_deployments_output::ResetDeploymentsOutput;
 
 mod _reset_deployments_input;
 

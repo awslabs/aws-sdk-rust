@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_crawlers::GetC
     }
 }
 
-pub use crate::operation::get_crawlers::_get_crawlers_output::GetCrawlersOutput;
-
 pub use crate::operation::get_crawlers::_get_crawlers_input::GetCrawlersInput;
+
+pub use crate::operation::get_crawlers::_get_crawlers_output::GetCrawlersOutput;
 
 mod _get_crawlers_input;
 

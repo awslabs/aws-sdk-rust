@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_assessment_
     }
 }
 
-pub use crate::operation::delete_assessment_framework::_delete_assessment_framework_output::DeleteAssessmentFrameworkOutput;
-
 pub use crate::operation::delete_assessment_framework::_delete_assessment_framework_input::DeleteAssessmentFrameworkInput;
+
+pub use crate::operation::delete_assessment_framework::_delete_assessment_framework_output::DeleteAssessmentFrameworkOutput;
 
 mod _delete_assessment_framework_input;
 

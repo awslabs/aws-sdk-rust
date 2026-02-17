@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::optimize_waypoints
     }
 }
 
-pub use crate::operation::optimize_waypoints::_optimize_waypoints_output::OptimizeWaypointsOutput;
-
 pub use crate::operation::optimize_waypoints::_optimize_waypoints_input::OptimizeWaypointsInput;
+
+pub use crate::operation::optimize_waypoints::_optimize_waypoints_output::OptimizeWaypointsOutput;
 
 mod _optimize_waypoints_input;
 

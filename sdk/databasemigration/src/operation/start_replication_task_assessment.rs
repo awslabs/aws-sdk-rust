@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_replication_
     }
 }
 
-pub use crate::operation::start_replication_task_assessment::_start_replication_task_assessment_output::StartReplicationTaskAssessmentOutput;
-
 pub use crate::operation::start_replication_task_assessment::_start_replication_task_assessment_input::StartReplicationTaskAssessmentInput;
+
+pub use crate::operation::start_replication_task_assessment::_start_replication_task_assessment_output::StartReplicationTaskAssessmentOutput;
 
 mod _start_replication_task_assessment_input;
 

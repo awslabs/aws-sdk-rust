@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_persistent_
     }
 }
 
-pub use crate::operation::create_persistent_contact_association::_create_persistent_contact_association_output::CreatePersistentContactAssociationOutput;
-
 pub use crate::operation::create_persistent_contact_association::_create_persistent_contact_association_input::CreatePersistentContactAssociationInput;
+
+pub use crate::operation::create_persistent_contact_association::_create_persistent_contact_association_output::CreatePersistentContactAssociationOutput;
 
 mod _create_persistent_contact_association_input;
 

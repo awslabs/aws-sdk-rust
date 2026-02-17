@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_object::Re
     }
 }
 
-pub use crate::operation::restore_object::_restore_object_output::RestoreObjectOutput;
-
 pub use crate::operation::restore_object::_restore_object_input::RestoreObjectInput;
+
+pub use crate::operation::restore_object::_restore_object_output::RestoreObjectOutput;
 
 mod _restore_object_input;
 

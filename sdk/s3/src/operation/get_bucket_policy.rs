@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_policy:
     }
 }
 
-pub use crate::operation::get_bucket_policy::_get_bucket_policy_output::GetBucketPolicyOutput;
-
 pub use crate::operation::get_bucket_policy::_get_bucket_policy_input::GetBucketPolicyInput;
+
+pub use crate::operation::get_bucket_policy::_get_bucket_policy_output::GetBucketPolicyOutput;
 
 mod _get_bucket_policy_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_command_invoc
     }
 }
 
-pub use crate::operation::list_command_invocations::_list_command_invocations_output::ListCommandInvocationsOutput;
-
 pub use crate::operation::list_command_invocations::_list_command_invocations_input::ListCommandInvocationsInput;
+
+pub use crate::operation::list_command_invocations::_list_command_invocations_output::ListCommandInvocationsOutput;
 
 mod _list_command_invocations_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_eks_anywher
     }
 }
 
-pub use crate::operation::update_eks_anywhere_subscription::_update_eks_anywhere_subscription_output::UpdateEksAnywhereSubscriptionOutput;
-
 pub use crate::operation::update_eks_anywhere_subscription::_update_eks_anywhere_subscription_input::UpdateEksAnywhereSubscriptionInput;
+
+pub use crate::operation::update_eks_anywhere_subscription::_update_eks_anywhere_subscription_output::UpdateEksAnywhereSubscriptionOutput;
 
 mod _update_eks_anywhere_subscription_input;
 

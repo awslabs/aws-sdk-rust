@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_record::D
     }
 }
 
-pub use crate::operation::describe_record::_describe_record_output::DescribeRecordOutput;
-
 pub use crate::operation::describe_record::_describe_record_input::DescribeRecordInput;
+
+pub use crate::operation::describe_record::_describe_record_output::DescribeRecordOutput;
 
 mod _describe_record_input;
 

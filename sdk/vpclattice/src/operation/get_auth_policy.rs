@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_auth_policy::G
     }
 }
 
-pub use crate::operation::get_auth_policy::_get_auth_policy_output::GetAuthPolicyOutput;
-
 pub use crate::operation::get_auth_policy::_get_auth_policy_input::GetAuthPolicyInput;
+
+pub use crate::operation::get_auth_policy::_get_auth_policy_output::GetAuthPolicyOutput;
 
 mod _get_auth_policy_input;
 

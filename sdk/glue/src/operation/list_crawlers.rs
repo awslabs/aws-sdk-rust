@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_crawlers::Lis
     }
 }
 
-pub use crate::operation::list_crawlers::_list_crawlers_output::ListCrawlersOutput;
-
 pub use crate::operation::list_crawlers::_list_crawlers_input::ListCrawlersInput;
+
+pub use crate::operation::list_crawlers::_list_crawlers_output::ListCrawlersOutput;
 
 mod _list_crawlers_input;
 

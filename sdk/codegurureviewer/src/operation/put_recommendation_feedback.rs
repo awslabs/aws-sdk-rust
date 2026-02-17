@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_recommendation
     }
 }
 
-pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedback_output::PutRecommendationFeedbackOutput;
-
 pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedback_input::PutRecommendationFeedbackInput;
+
+pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedback_output::PutRecommendationFeedbackOutput;
 
 mod _put_recommendation_feedback_input;
 

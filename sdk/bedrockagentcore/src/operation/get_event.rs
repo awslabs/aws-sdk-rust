@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event::GetEven
     }
 }
 
-pub use crate::operation::get_event::_get_event_output::GetEventOutput;
-
 pub use crate::operation::get_event::_get_event_input::GetEventInput;
+
+pub use crate::operation::get_event::_get_event_output::GetEventOutput;
 
 mod _get_event_input;
 

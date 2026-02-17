@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_polic
     }
 }
 
-pub use crate::operation::get_resource_policy::_get_resource_policy_output::GetResourcePolicyOutput;
-
 pub use crate::operation::get_resource_policy::_get_resource_policy_input::GetResourcePolicyInput;
+
+pub use crate::operation::get_resource_policy::_get_resource_policy_output::GetResourcePolicyOutput;
 
 mod _get_resource_policy_input;
 

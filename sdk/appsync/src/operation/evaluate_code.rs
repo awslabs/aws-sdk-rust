@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::evaluate_code::Eva
     }
 }
 
-pub use crate::operation::evaluate_code::_evaluate_code_output::EvaluateCodeOutput;
-
 pub use crate::operation::evaluate_code::_evaluate_code_input::EvaluateCodeInput;
+
+pub use crate::operation::evaluate_code::_evaluate_code_output::EvaluateCodeOutput;
 
 mod _evaluate_code_input;
 

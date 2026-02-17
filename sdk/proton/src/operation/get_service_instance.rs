@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_instan
     }
 }
 
-pub use crate::operation::get_service_instance::_get_service_instance_output::GetServiceInstanceOutput;
-
 pub use crate::operation::get_service_instance::_get_service_instance_input::GetServiceInstanceInput;
+
+pub use crate::operation::get_service_instance::_get_service_instance_output::GetServiceInstanceOutput;
 
 mod _get_service_instance_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_api_cache::
     }
 }
 
-pub use crate::operation::delete_api_cache::_delete_api_cache_output::DeleteApiCacheOutput;
-
 pub use crate::operation::delete_api_cache::_delete_api_cache_input::DeleteApiCacheInput;
+
+pub use crate::operation::delete_api_cache::_delete_api_cache_output::DeleteApiCacheOutput;
 
 mod _delete_api_cache_input;
 

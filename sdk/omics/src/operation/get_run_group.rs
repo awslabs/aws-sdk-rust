@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_run_group::Get
     }
 }
 
-pub use crate::operation::get_run_group::_get_run_group_output::GetRunGroupOutput;
-
 pub use crate::operation::get_run_group::_get_run_group_input::GetRunGroupInput;
+
+pub use crate::operation::get_run_group::_get_run_group_output::GetRunGroupOutput;
 
 mod _get_run_group_input;
 

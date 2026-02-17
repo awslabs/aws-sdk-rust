@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_policy_vers
     }
 }
 
-pub use crate::operation::create_policy_version::_create_policy_version_output::CreatePolicyVersionOutput;
-
 pub use crate::operation::create_policy_version::_create_policy_version_input::CreatePolicyVersionInput;
+
+pub use crate::operation::create_policy_version::_create_policy_version_output::CreatePolicyVersionOutput;
 
 mod _create_policy_version_input;
 

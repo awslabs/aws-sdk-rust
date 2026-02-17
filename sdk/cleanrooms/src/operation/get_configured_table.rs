@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_configured_tab
     }
 }
 
-pub use crate::operation::get_configured_table::_get_configured_table_output::GetConfiguredTableOutput;
-
 pub use crate::operation::get_configured_table::_get_configured_table_input::GetConfiguredTableInput;
+
+pub use crate::operation::get_configured_table::_get_configured_table_output::GetConfiguredTableOutput;
 
 mod _get_configured_table_input;
 

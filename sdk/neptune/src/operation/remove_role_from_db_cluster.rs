@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_role_from_d
     }
 }
 
-pub use crate::operation::remove_role_from_db_cluster::_remove_role_from_db_cluster_output::RemoveRoleFromDbClusterOutput;
-
 pub use crate::operation::remove_role_from_db_cluster::_remove_role_from_db_cluster_input::RemoveRoleFromDbClusterInput;
+
+pub use crate::operation::remove_role_from_db_cluster::_remove_role_from_db_cluster_output::RemoveRoleFromDbClusterOutput;
 
 mod _remove_role_from_db_cluster_input;
 

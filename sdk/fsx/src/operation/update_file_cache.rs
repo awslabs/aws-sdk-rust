@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_file_cache:
     }
 }
 
-pub use crate::operation::update_file_cache::_update_file_cache_output::UpdateFileCacheOutput;
-
 pub use crate::operation::update_file_cache::_update_file_cache_input::UpdateFileCacheInput;
+
+pub use crate::operation::update_file_cache::_update_file_cache_output::UpdateFileCacheOutput;
 
 mod _update_file_cache_input;
 

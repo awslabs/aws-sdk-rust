@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_related_resou
     }
 }
 
-pub use crate::operation::list_related_resources_for_audit_finding::_list_related_resources_for_audit_finding_output::ListRelatedResourcesForAuditFindingOutput;
-
 pub use crate::operation::list_related_resources_for_audit_finding::_list_related_resources_for_audit_finding_input::ListRelatedResourcesForAuditFindingInput;
+
+pub use crate::operation::list_related_resources_for_audit_finding::_list_related_resources_for_audit_finding_output::ListRelatedResourcesForAuditFindingOutput;
 
 mod _list_related_resources_for_audit_finding_input;
 

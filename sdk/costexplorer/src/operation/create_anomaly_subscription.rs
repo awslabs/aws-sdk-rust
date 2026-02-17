@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_anomaly_sub
     }
 }
 
-pub use crate::operation::create_anomaly_subscription::_create_anomaly_subscription_output::CreateAnomalySubscriptionOutput;
-
 pub use crate::operation::create_anomaly_subscription::_create_anomaly_subscription_input::CreateAnomalySubscriptionInput;
+
+pub use crate::operation::create_anomaly_subscription::_create_anomaly_subscription_output::CreateAnomalySubscriptionOutput;
 
 mod _create_anomaly_subscription_input;
 

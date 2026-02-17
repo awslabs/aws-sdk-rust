@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_authorization_
     }
 }
 
-pub use crate::operation::get_authorization_token::_get_authorization_token_output::GetAuthorizationTokenOutput;
-
 pub use crate::operation::get_authorization_token::_get_authorization_token_input::GetAuthorizationTokenInput;
+
+pub use crate::operation::get_authorization_token::_get_authorization_token_output::GetAuthorizationTokenOutput;
 
 mod _get_authorization_token_input;
 

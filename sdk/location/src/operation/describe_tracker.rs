@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tracker::
     }
 }
 
-pub use crate::operation::describe_tracker::_describe_tracker_output::DescribeTrackerOutput;
-
 pub use crate::operation::describe_tracker::_describe_tracker_input::DescribeTrackerInput;
+
+pub use crate::operation::describe_tracker::_describe_tracker_output::DescribeTrackerOutput;
 
 mod _describe_tracker_input;
 

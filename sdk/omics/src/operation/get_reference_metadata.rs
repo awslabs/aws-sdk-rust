@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reference_meta
     }
 }
 
-pub use crate::operation::get_reference_metadata::_get_reference_metadata_output::GetReferenceMetadataOutput;
-
 pub use crate::operation::get_reference_metadata::_get_reference_metadata_input::GetReferenceMetadataInput;
+
+pub use crate::operation::get_reference_metadata::_get_reference_metadata_output::GetReferenceMetadataOutput;
 
 mod _get_reference_metadata_input;
 

@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_project_policy
     }
 }
 
-pub use crate::operation::put_project_policy::_put_project_policy_output::PutProjectPolicyOutput;
-
 pub use crate::operation::put_project_policy::_put_project_policy_input::PutProjectPolicyInput;
+
+pub use crate::operation::put_project_policy::_put_project_policy_output::PutProjectPolicyOutput;
 
 mod _put_project_policy_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rotation_overr
     }
 }
 
-pub use crate::operation::get_rotation_override::_get_rotation_override_output::GetRotationOverrideOutput;
-
 pub use crate::operation::get_rotation_override::_get_rotation_override_input::GetRotationOverrideInput;
+
+pub use crate::operation::get_rotation_override::_get_rotation_override_output::GetRotationOverrideOutput;
 
 mod _get_rotation_override_input;
 

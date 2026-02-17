@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_connectio
     }
 }
 
-pub use crate::operation::register_connection_type::_register_connection_type_output::RegisterConnectionTypeOutput;
-
 pub use crate::operation::register_connection_type::_register_connection_type_input::RegisterConnectionTypeInput;
+
+pub use crate::operation::register_connection_type::_register_connection_type_output::RegisterConnectionTypeOutput;
 
 mod _register_connection_type_input;
 

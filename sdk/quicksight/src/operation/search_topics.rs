@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_topics::Sea
     }
 }
 
-pub use crate::operation::search_topics::_search_topics_output::SearchTopicsOutput;
-
 pub use crate::operation::search_topics::_search_topics_input::SearchTopicsInput;
+
+pub use crate::operation::search_topics::_search_topics_output::SearchTopicsOutput;
 
 mod _search_topics_input;
 

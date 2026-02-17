@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_broker::Cre
     }
 }
 
-pub use crate::operation::create_broker::_create_broker_output::CreateBrokerOutput;
-
 pub use crate::operation::create_broker::_create_broker_input::CreateBrokerInput;
+
+pub use crate::operation::create_broker::_create_broker_output::CreateBrokerOutput;
 
 mod _create_broker_input;
 

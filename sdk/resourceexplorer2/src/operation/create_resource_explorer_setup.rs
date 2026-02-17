@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_ex
     }
 }
 
-pub use crate::operation::create_resource_explorer_setup::_create_resource_explorer_setup_output::CreateResourceExplorerSetupOutput;
-
 pub use crate::operation::create_resource_explorer_setup::_create_resource_explorer_setup_input::CreateResourceExplorerSetupInput;
+
+pub use crate::operation::create_resource_explorer_setup::_create_resource_explorer_setup_output::CreateResourceExplorerSetupOutput;
 
 mod _create_resource_explorer_setup_input;
 

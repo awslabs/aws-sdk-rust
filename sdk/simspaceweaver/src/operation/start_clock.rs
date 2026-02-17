@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_clock::Start
     }
 }
 
-pub use crate::operation::start_clock::_start_clock_output::StartClockOutput;
-
 pub use crate::operation::start_clock::_start_clock_input::StartClockInput;
+
+pub use crate::operation::start_clock::_start_clock_output::StartClockOutput;
 
 mod _start_clock_input;
 

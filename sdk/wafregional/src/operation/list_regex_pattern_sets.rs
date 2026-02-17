@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_regex_pattern
     }
 }
 
-pub use crate::operation::list_regex_pattern_sets::_list_regex_pattern_sets_output::ListRegexPatternSetsOutput;
-
 pub use crate::operation::list_regex_pattern_sets::_list_regex_pattern_sets_input::ListRegexPatternSetsInput;
+
+pub use crate::operation::list_regex_pattern_sets::_list_regex_pattern_sets_output::ListRegexPatternSetsOutput;
 
 mod _list_regex_pattern_sets_input;
 

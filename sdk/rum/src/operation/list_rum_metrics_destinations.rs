@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_rum_metrics_d
     }
 }
 
-pub use crate::operation::list_rum_metrics_destinations::_list_rum_metrics_destinations_output::ListRumMetricsDestinationsOutput;
-
 pub use crate::operation::list_rum_metrics_destinations::_list_rum_metrics_destinations_input::ListRumMetricsDestinationsInput;
+
+pub use crate::operation::list_rum_metrics_destinations::_list_rum_metrics_destinations_output::ListRumMetricsDestinationsOutput;
 
 mod _list_rum_metrics_destinations_input;
 

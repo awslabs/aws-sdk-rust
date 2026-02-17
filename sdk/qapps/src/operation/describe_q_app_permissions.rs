@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_q_app_per
     }
 }
 
-pub use crate::operation::describe_q_app_permissions::_describe_q_app_permissions_output::DescribeQAppPermissionsOutput;
-
 pub use crate::operation::describe_q_app_permissions::_describe_q_app_permissions_input::DescribeQAppPermissionsInput;
+
+pub use crate::operation::describe_q_app_permissions::_describe_q_app_permissions_output::DescribeQAppPermissionsOutput;
 
 mod _describe_q_app_permissions_input;
 

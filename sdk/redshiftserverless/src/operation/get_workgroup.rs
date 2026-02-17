@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workgroup::Get
     }
 }
 
-pub use crate::operation::get_workgroup::_get_workgroup_output::GetWorkgroupOutput;
-
 pub use crate::operation::get_workgroup::_get_workgroup_input::GetWorkgroupInput;
+
+pub use crate::operation::get_workgroup::_get_workgroup_output::GetWorkgroupOutput;
 
 mod _get_workgroup_input;
 

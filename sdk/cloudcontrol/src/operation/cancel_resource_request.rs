@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_resource_re
     }
 }
 
-pub use crate::operation::cancel_resource_request::_cancel_resource_request_output::CancelResourceRequestOutput;
-
 pub use crate::operation::cancel_resource_request::_cancel_resource_request_input::CancelResourceRequestInput;
+
+pub use crate::operation::cancel_resource_request::_cancel_resource_request_output::CancelResourceRequestOutput;
 
 mod _cancel_resource_request_input;
 

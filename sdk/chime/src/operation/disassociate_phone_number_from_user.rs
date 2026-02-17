@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_phone
     }
 }
 
-pub use crate::operation::disassociate_phone_number_from_user::_disassociate_phone_number_from_user_output::DisassociatePhoneNumberFromUserOutput;
-
 pub use crate::operation::disassociate_phone_number_from_user::_disassociate_phone_number_from_user_input::DisassociatePhoneNumberFromUserInput;
+
+pub use crate::operation::disassociate_phone_number_from_user::_disassociate_phone_number_from_user_output::DisassociatePhoneNumberFromUserOutput;
 
 mod _disassociate_phone_number_from_user_input;
 

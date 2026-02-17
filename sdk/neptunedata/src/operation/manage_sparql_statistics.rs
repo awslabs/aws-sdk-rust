@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::manage_sparql_stat
     }
 }
 
-pub use crate::operation::manage_sparql_statistics::_manage_sparql_statistics_output::ManageSparqlStatisticsOutput;
-
 pub use crate::operation::manage_sparql_statistics::_manage_sparql_statistics_input::ManageSparqlStatisticsInput;
+
+pub use crate::operation::manage_sparql_statistics::_manage_sparql_statistics_output::ManageSparqlStatisticsOutput;
 
 mod _manage_sparql_statistics_input;
 

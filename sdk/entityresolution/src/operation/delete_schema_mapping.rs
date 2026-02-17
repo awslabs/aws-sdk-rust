@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_schema_mapp
     }
 }
 
-pub use crate::operation::delete_schema_mapping::_delete_schema_mapping_output::DeleteSchemaMappingOutput;
-
 pub use crate::operation::delete_schema_mapping::_delete_schema_mapping_input::DeleteSchemaMappingInput;
+
+pub use crate::operation::delete_schema_mapping::_delete_schema_mapping_output::DeleteSchemaMappingOutput;
 
 mod _delete_schema_mapping_input;
 

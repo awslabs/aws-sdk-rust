@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_insta
     }
 }
 
-pub use crate::operation::disassociate_instance_event_window::_disassociate_instance_event_window_output::DisassociateInstanceEventWindowOutput;
-
 pub use crate::operation::disassociate_instance_event_window::_disassociate_instance_event_window_input::DisassociateInstanceEventWindowInput;
+
+pub use crate::operation::disassociate_instance_event_window::_disassociate_instance_event_window_output::DisassociateInstanceEventWindowOutput;
 
 mod _disassociate_instance_event_window_input;
 

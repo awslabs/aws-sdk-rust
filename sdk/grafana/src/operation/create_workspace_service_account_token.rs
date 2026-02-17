@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workspace_s
     }
 }
 
-pub use crate::operation::create_workspace_service_account_token::_create_workspace_service_account_token_output::CreateWorkspaceServiceAccountTokenOutput;
-
 pub use crate::operation::create_workspace_service_account_token::_create_workspace_service_account_token_input::CreateWorkspaceServiceAccountTokenInput;
+
+pub use crate::operation::create_workspace_service_account_token::_create_workspace_service_account_token_output::CreateWorkspaceServiceAccountTokenOutput;
 
 mod _create_workspace_service_account_token_input;
 

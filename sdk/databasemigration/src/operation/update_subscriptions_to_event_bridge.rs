@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subscriptio
     }
 }
 
-pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscriptions_to_event_bridge_output::UpdateSubscriptionsToEventBridgeOutput;
-
 pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscriptions_to_event_bridge_input::UpdateSubscriptionsToEventBridgeInput;
+
+pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscriptions_to_event_bridge_output::UpdateSubscriptionsToEventBridgeOutput;
 
 mod _update_subscriptions_to_event_bridge_input;
 

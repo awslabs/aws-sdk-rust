@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configured_ta
     }
 }
 
-pub use crate::operation::list_configured_table_associations::_list_configured_table_associations_output::ListConfiguredTableAssociationsOutput;
-
 pub use crate::operation::list_configured_table_associations::_list_configured_table_associations_input::ListConfiguredTableAssociationsInput;
+
+pub use crate::operation::list_configured_table_associations::_list_configured_table_associations_output::ListConfiguredTableAssociationsOutput;
 
 mod _list_configured_table_associations_input;
 

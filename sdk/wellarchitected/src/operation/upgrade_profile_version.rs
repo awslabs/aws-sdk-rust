@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upgrade_profile_ve
     }
 }
 
-pub use crate::operation::upgrade_profile_version::_upgrade_profile_version_output::UpgradeProfileVersionOutput;
-
 pub use crate::operation::upgrade_profile_version::_upgrade_profile_version_input::UpgradeProfileVersionInput;
+
+pub use crate::operation::upgrade_profile_version::_upgrade_profile_version_output::UpgradeProfileVersionOutput;
 
 mod _upgrade_profile_version_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::provide_anomaly_fe
     }
 }
 
-pub use crate::operation::provide_anomaly_feedback::_provide_anomaly_feedback_output::ProvideAnomalyFeedbackOutput;
-
 pub use crate::operation::provide_anomaly_feedback::_provide_anomaly_feedback_input::ProvideAnomalyFeedbackInput;
+
+pub use crate::operation::provide_anomaly_feedback::_provide_anomaly_feedback_output::ProvideAnomalyFeedbackOutput;
 
 mod _provide_anomaly_feedback_input;
 

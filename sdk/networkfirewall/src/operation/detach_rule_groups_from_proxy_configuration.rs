@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::detach_rule_groups_from_proxy_configuration::_detach_rule_groups_from_proxy_configuration_output::DetachRuleGroupsFromProxyConfigurationOutput;
-
 pub use crate::operation::detach_rule_groups_from_proxy_configuration::_detach_rule_groups_from_proxy_configuration_input::DetachRuleGroupsFromProxyConfigurationInput;
+
+pub use crate::operation::detach_rule_groups_from_proxy_configuration::_detach_rule_groups_from_proxy_configuration_output::DetachRuleGroupsFromProxyConfigurationOutput;
 
 mod _detach_rule_groups_from_proxy_configuration_input;
 

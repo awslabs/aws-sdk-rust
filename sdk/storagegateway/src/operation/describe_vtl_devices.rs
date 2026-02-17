@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vtl_devic
     }
 }
 
-pub use crate::operation::describe_vtl_devices::_describe_vtl_devices_output::DescribeVtlDevicesOutput;
-
 pub use crate::operation::describe_vtl_devices::_describe_vtl_devices_input::DescribeVtlDevicesInput;
+
+pub use crate::operation::describe_vtl_devices::_describe_vtl_devices_output::DescribeVtlDevicesOutput;
 
 mod _describe_vtl_devices_input;
 

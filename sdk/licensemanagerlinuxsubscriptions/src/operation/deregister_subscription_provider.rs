@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_subscri
     }
 }
 
-pub use crate::operation::deregister_subscription_provider::_deregister_subscription_provider_output::DeregisterSubscriptionProviderOutput;
-
 pub use crate::operation::deregister_subscription_provider::_deregister_subscription_provider_input::DeregisterSubscriptionProviderInput;
+
+pub use crate::operation::deregister_subscription_provider::_deregister_subscription_provider_output::DeregisterSubscriptionProviderOutput;
 
 mod _deregister_subscription_provider_input;
 

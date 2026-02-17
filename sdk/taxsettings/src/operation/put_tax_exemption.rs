@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_tax_exemption:
     }
 }
 
-pub use crate::operation::put_tax_exemption::_put_tax_exemption_output::PutTaxExemptionOutput;
-
 pub use crate::operation::put_tax_exemption::_put_tax_exemption_input::PutTaxExemptionInput;
+
+pub use crate::operation::put_tax_exemption::_put_tax_exemption_output::PutTaxExemptionOutput;
 
 mod _put_tax_exemption_input;
 

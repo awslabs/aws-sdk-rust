@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpn_conce
     }
 }
 
-pub use crate::operation::describe_vpn_concentrators::_describe_vpn_concentrators_output::DescribeVpnConcentratorsOutput;
-
 pub use crate::operation::describe_vpn_concentrators::_describe_vpn_concentrators_input::DescribeVpnConcentratorsInput;
+
+pub use crate::operation::describe_vpn_concentrators::_describe_vpn_concentrators_output::DescribeVpnConcentratorsOutput;
 
 mod _describe_vpn_concentrators_input;
 

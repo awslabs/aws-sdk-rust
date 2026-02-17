@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_conte
     }
 }
 
-pub use crate::operation::get_identity_context::_get_identity_context_output::GetIdentityContextOutput;
-
 pub use crate::operation::get_identity_context::_get_identity_context_input::GetIdentityContextInput;
+
+pub use crate::operation::get_identity_context::_get_identity_context_output::GetIdentityContextOutput;
 
 mod _get_identity_context_input;
 

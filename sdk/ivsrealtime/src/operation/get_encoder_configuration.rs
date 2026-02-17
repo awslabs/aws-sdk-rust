@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_encoder_config
     }
 }
 
-pub use crate::operation::get_encoder_configuration::_get_encoder_configuration_output::GetEncoderConfigurationOutput;
-
 pub use crate::operation::get_encoder_configuration::_get_encoder_configuration_input::GetEncoderConfigurationInput;
+
+pub use crate::operation::get_encoder_configuration::_get_encoder_configuration_output::GetEncoderConfigurationOutput;
 
 mod _get_encoder_configuration_input;
 

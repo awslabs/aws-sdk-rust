@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_princ
     }
 }
 
-pub use crate::operation::list_service_principal_names::_list_service_principal_names_output::ListServicePrincipalNamesOutput;
-
 pub use crate::operation::list_service_principal_names::_list_service_principal_names_input::ListServicePrincipalNamesInput;
+
+pub use crate::operation::list_service_principal_names::_list_service_principal_names_output::ListServicePrincipalNamesOutput;
 
 mod _list_service_principal_names_input;
 

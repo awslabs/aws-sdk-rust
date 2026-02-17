@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_change_token::
     }
 }
 
-pub use crate::operation::get_change_token::_get_change_token_output::GetChangeTokenOutput;
-
 pub use crate::operation::get_change_token::_get_change_token_input::GetChangeTokenInput;
+
+pub use crate::operation::get_change_token::_get_change_token_output::GetChangeTokenOutput;
 
 mod _get_change_token_input;
 

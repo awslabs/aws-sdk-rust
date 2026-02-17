@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_object::Det
     }
 }
 
-pub use crate::operation::detach_object::_detach_object_output::DetachObjectOutput;
-
 pub use crate::operation::detach_object::_detach_object_input::DetachObjectInput;
+
+pub use crate::operation::detach_object::_detach_object_output::DetachObjectOutput;
 
 mod _detach_object_input;
 

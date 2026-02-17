@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_task_templa
     }
 }
 
-pub use crate::operation::create_task_template::_create_task_template_output::CreateTaskTemplateOutput;
-
 pub use crate::operation::create_task_template::_create_task_template_input::CreateTaskTemplateInput;
+
+pub use crate::operation::create_task_template::_create_task_template_output::CreateTaskTemplateOutput;
 
 mod _create_task_template_input;
 

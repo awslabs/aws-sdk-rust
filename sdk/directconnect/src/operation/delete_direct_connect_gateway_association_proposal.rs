@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_direct_connect_gateway_association_proposal::_delete_direct_connect_gateway_association_proposal_output::DeleteDirectConnectGatewayAssociationProposalOutput;
-
 pub use crate::operation::delete_direct_connect_gateway_association_proposal::_delete_direct_connect_gateway_association_proposal_input::DeleteDirectConnectGatewayAssociationProposalInput;
+
+pub use crate::operation::delete_direct_connect_gateway_association_proposal::_delete_direct_connect_gateway_association_proposal_output::DeleteDirectConnectGatewayAssociationProposalOutput;
 
 mod _delete_direct_connect_gateway_association_proposal_input;
 

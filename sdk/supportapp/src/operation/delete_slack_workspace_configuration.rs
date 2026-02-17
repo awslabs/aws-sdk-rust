@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_slack_works
     }
 }
 
-pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_workspace_configuration_output::DeleteSlackWorkspaceConfigurationOutput;
-
 pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_workspace_configuration_input::DeleteSlackWorkspaceConfigurationInput;
+
+pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_workspace_configuration_output::DeleteSlackWorkspaceConfigurationOutput;
 
 mod _delete_slack_workspace_configuration_input;
 

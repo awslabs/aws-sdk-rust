@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_read_set_acti
     }
 }
 
-pub use crate::operation::list_read_set_activation_jobs::_list_read_set_activation_jobs_output::ListReadSetActivationJobsOutput;
-
 pub use crate::operation::list_read_set_activation_jobs::_list_read_set_activation_jobs_input::ListReadSetActivationJobsInput;
+
+pub use crate::operation::list_read_set_activation_jobs::_list_read_set_activation_jobs_output::ListReadSetActivationJobsOutput;
 
 mod _list_read_set_activation_jobs_input;
 

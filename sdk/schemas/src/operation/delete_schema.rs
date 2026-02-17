@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_schema::Del
     }
 }
 
-pub use crate::operation::delete_schema::_delete_schema_output::DeleteSchemaOutput;
-
 pub use crate::operation::delete_schema::_delete_schema_input::DeleteSchemaInput;
+
+pub use crate::operation::delete_schema::_delete_schema_output::DeleteSchemaOutput;
 
 mod _delete_schema_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_contact_reco
     }
 }
 
-pub use crate::operation::start_contact_recording::_start_contact_recording_output::StartContactRecordingOutput;
-
 pub use crate::operation::start_contact_recording::_start_contact_recording_input::StartContactRecordingInput;
+
+pub use crate::operation::start_contact_recording::_start_contact_recording_output::StartContactRecordingOutput;
 
 mod _start_contact_recording_input;
 

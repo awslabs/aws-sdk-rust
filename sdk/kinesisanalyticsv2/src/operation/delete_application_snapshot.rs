@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_application
     }
 }
 
-pub use crate::operation::delete_application_snapshot::_delete_application_snapshot_output::DeleteApplicationSnapshotOutput;
-
 pub use crate::operation::delete_application_snapshot::_delete_application_snapshot_input::DeleteApplicationSnapshotInput;
+
+pub use crate::operation::delete_application_snapshot::_delete_application_snapshot_output::DeleteApplicationSnapshotOutput;
 
 mod _delete_application_snapshot_input;
 

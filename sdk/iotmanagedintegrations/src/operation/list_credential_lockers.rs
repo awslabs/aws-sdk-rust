@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_credential_lo
     }
 }
 
-pub use crate::operation::list_credential_lockers::_list_credential_lockers_output::ListCredentialLockersOutput;
-
 pub use crate::operation::list_credential_lockers::_list_credential_lockers_input::ListCredentialLockersInput;
+
+pub use crate::operation::list_credential_lockers::_list_credential_lockers_output::ListCredentialLockersOutput;
 
 mod _list_credential_lockers_input;
 

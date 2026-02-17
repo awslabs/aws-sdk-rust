@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_broker_coun
     }
 }
 
-pub use crate::operation::update_broker_count::_update_broker_count_output::UpdateBrokerCountOutput;
-
 pub use crate::operation::update_broker_count::_update_broker_count_input::UpdateBrokerCountInput;
+
+pub use crate::operation::update_broker_count::_update_broker_count_output::UpdateBrokerCountOutput;
 
 mod _update_broker_count_input;
 

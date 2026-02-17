@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cluster_creden
     }
 }
 
-pub use crate::operation::get_cluster_credentials::_get_cluster_credentials_output::GetClusterCredentialsOutput;
-
 pub use crate::operation::get_cluster_credentials::_get_cluster_credentials_input::GetClusterCredentialsInput;
+
+pub use crate::operation::get_cluster_credentials::_get_cluster_credentials_output::GetClusterCredentialsOutput;
 
 mod _get_cluster_credentials_input;
 

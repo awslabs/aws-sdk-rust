@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_encryption_k
     }
 }
 
-pub use crate::operation::reset_encryption_key::_reset_encryption_key_output::ResetEncryptionKeyOutput;
-
 pub use crate::operation::reset_encryption_key::_reset_encryption_key_input::ResetEncryptionKeyInput;
+
+pub use crate::operation::reset_encryption_key::_reset_encryption_key_output::ResetEncryptionKeyOutput;
 
 mod _reset_encryption_key_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pull_request::
     }
 }
 
-pub use crate::operation::get_pull_request::_get_pull_request_output::GetPullRequestOutput;
-
 pub use crate::operation::get_pull_request::_get_pull_request_input::GetPullRequestInput;
+
+pub use crate::operation::get_pull_request::_get_pull_request_output::GetPullRequestOutput;
 
 mod _get_pull_request_input;
 

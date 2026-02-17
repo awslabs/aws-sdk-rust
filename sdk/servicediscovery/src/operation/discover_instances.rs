@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::discover_instances
     }
 }
 
-pub use crate::operation::discover_instances::_discover_instances_output::DiscoverInstancesOutput;
-
 pub use crate::operation::discover_instances::_discover_instances_input::DiscoverInstancesInput;
+
+pub use crate::operation::discover_instances::_discover_instances_output::DiscoverInstancesOutput;
 
 mod _discover_instances_input;
 

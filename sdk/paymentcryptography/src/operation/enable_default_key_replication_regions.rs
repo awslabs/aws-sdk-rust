@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_default_key
     }
 }
 
-pub use crate::operation::enable_default_key_replication_regions::_enable_default_key_replication_regions_output::EnableDefaultKeyReplicationRegionsOutput;
-
 pub use crate::operation::enable_default_key_replication_regions::_enable_default_key_replication_regions_input::EnableDefaultKeyReplicationRegionsInput;
+
+pub use crate::operation::enable_default_key_replication_regions::_enable_default_key_replication_regions_output::EnableDefaultKeyReplicationRegionsOutput;
 
 mod _enable_default_key_replication_regions_input;
 

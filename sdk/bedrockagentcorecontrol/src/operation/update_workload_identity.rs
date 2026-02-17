@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workload_id
     }
 }
 
-pub use crate::operation::update_workload_identity::_update_workload_identity_output::UpdateWorkloadIdentityOutput;
-
 pub use crate::operation::update_workload_identity::_update_workload_identity_input::UpdateWorkloadIdentityInput;
+
+pub use crate::operation::update_workload_identity::_update_workload_identity_output::UpdateWorkloadIdentityOutput;
 
 mod _update_workload_identity_input;
 

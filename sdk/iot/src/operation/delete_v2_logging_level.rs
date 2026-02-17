@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_v2_logging_
     }
 }
 
-pub use crate::operation::delete_v2_logging_level::_delete_v2_logging_level_output::DeleteV2LoggingLevelOutput;
-
 pub use crate::operation::delete_v2_logging_level::_delete_v2_logging_level_input::DeleteV2LoggingLevelInput;
+
+pub use crate::operation::delete_v2_logging_level::_delete_v2_logging_level_output::DeleteV2LoggingLevelOutput;
 
 mod _delete_v2_logging_level_input;
 

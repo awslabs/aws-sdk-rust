@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cases_for_con
     }
 }
 
-pub use crate::operation::list_cases_for_contact::_list_cases_for_contact_output::ListCasesForContactOutput;
-
 pub use crate::operation::list_cases_for_contact::_list_cases_for_contact_input::ListCasesForContactInput;
+
+pub use crate::operation::list_cases_for_contact::_list_cases_for_contact_output::ListCasesForContactOutput;
 
 mod _list_cases_for_contact_input;
 

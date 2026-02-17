@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sync_job::C
     }
 }
 
-pub use crate::operation::create_sync_job::_create_sync_job_output::CreateSyncJobOutput;
-
 pub use crate::operation::create_sync_job::_create_sync_job_input::CreateSyncJobInput;
+
+pub use crate::operation::create_sync_job::_create_sync_job_output::CreateSyncJobOutput;
 
 mod _create_sync_job_input;
 

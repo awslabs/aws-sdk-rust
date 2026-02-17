@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backend_enviro
     }
 }
 
-pub use crate::operation::get_backend_environment::_get_backend_environment_output::GetBackendEnvironmentOutput;
-
 pub use crate::operation::get_backend_environment::_get_backend_environment_input::GetBackendEnvironmentInput;
+
+pub use crate::operation::get_backend_environment::_get_backend_environment_output::GetBackendEnvironmentOutput;
 
 mod _get_backend_environment_input;
 

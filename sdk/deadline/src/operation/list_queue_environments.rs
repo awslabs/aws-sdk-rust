@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queue_environ
     }
 }
 
-pub use crate::operation::list_queue_environments::_list_queue_environments_output::ListQueueEnvironmentsOutput;
-
 pub use crate::operation::list_queue_environments::_list_queue_environments_input::ListQueueEnvironmentsInput;
+
+pub use crate::operation::list_queue_environments::_list_queue_environments_output::ListQueueEnvironmentsOutput;
 
 mod _list_queue_environments_input;
 

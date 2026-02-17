@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scaling_config
     }
 }
 
-pub use crate::operation::get_scaling_configuration_recommendation::_get_scaling_configuration_recommendation_output::GetScalingConfigurationRecommendationOutput;
-
 pub use crate::operation::get_scaling_configuration_recommendation::_get_scaling_configuration_recommendation_input::GetScalingConfigurationRecommendationInput;
+
+pub use crate::operation::get_scaling_configuration_recommendation::_get_scaling_configuration_recommendation_output::GetScalingConfigurationRecommendationOutput;
 
 mod _get_scaling_configuration_recommendation_input;
 

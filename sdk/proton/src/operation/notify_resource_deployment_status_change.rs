@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::notify_resource_de
     }
 }
 
-pub use crate::operation::notify_resource_deployment_status_change::_notify_resource_deployment_status_change_output::NotifyResourceDeploymentStatusChangeOutput;
-
 pub use crate::operation::notify_resource_deployment_status_change::_notify_resource_deployment_status_change_input::NotifyResourceDeploymentStatusChangeInput;
+
+pub use crate::operation::notify_resource_deployment_status_change::_notify_resource_deployment_status_change_output::NotifyResourceDeploymentStatusChangeOutput;
 
 mod _notify_resource_deployment_status_change_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_matchmaking
     }
 }
 
-pub use crate::operation::delete_matchmaking_rule_set::_delete_matchmaking_rule_set_output::DeleteMatchmakingRuleSetOutput;
-
 pub use crate::operation::delete_matchmaking_rule_set::_delete_matchmaking_rule_set_input::DeleteMatchmakingRuleSetInput;
+
+pub use crate::operation::delete_matchmaking_rule_set::_delete_matchmaking_rule_set_output::DeleteMatchmakingRuleSetOutput;
 
 mod _delete_matchmaking_rule_set_input;
 

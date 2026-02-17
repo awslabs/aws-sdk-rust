@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_transit_gateway_route_table_announcements::_describe_transit_gateway_route_table_announcements_output::DescribeTransitGatewayRouteTableAnnouncementsOutput;
-
 pub use crate::operation::describe_transit_gateway_route_table_announcements::_describe_transit_gateway_route_table_announcements_input::DescribeTransitGatewayRouteTableAnnouncementsInput;
+
+pub use crate::operation::describe_transit_gateway_route_table_announcements::_describe_transit_gateway_route_table_announcements_output::DescribeTransitGatewayRouteTableAnnouncementsOutput;
 
 mod _describe_transit_gateway_route_table_announcements_input;
 

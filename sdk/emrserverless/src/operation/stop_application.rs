@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_application::
     }
 }
 
-pub use crate::operation::stop_application::_stop_application_output::StopApplicationOutput;
-
 pub use crate::operation::stop_application::_stop_application_input::StopApplicationInput;
+
+pub use crate::operation::stop_application::_stop_application_output::StopApplicationOutput;
 
 mod _stop_application_input;
 

@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_detail:
     }
 }
 
-pub use crate::operation::get_domain_detail::_get_domain_detail_output::GetDomainDetailOutput;
-
 pub use crate::operation::get_domain_detail::_get_domain_detail_input::GetDomainDetailInput;
+
+pub use crate::operation::get_domain_detail::_get_domain_detail_output::GetDomainDetailOutput;
 
 mod _get_domain_detail_input;
 

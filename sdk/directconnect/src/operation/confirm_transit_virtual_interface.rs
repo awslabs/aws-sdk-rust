@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_transit_vi
     }
 }
 
-pub use crate::operation::confirm_transit_virtual_interface::_confirm_transit_virtual_interface_output::ConfirmTransitVirtualInterfaceOutput;
-
 pub use crate::operation::confirm_transit_virtual_interface::_confirm_transit_virtual_interface_input::ConfirmTransitVirtualInterfaceInput;
+
+pub use crate::operation::confirm_transit_virtual_interface::_confirm_transit_virtual_interface_output::ConfirmTransitVirtualInterfaceOutput;
 
 mod _confirm_transit_virtual_interface_input;
 

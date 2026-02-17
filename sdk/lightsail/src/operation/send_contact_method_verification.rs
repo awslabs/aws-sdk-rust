@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_contact_metho
     }
 }
 
-pub use crate::operation::send_contact_method_verification::_send_contact_method_verification_output::SendContactMethodVerificationOutput;
-
 pub use crate::operation::send_contact_method_verification::_send_contact_method_verification_input::SendContactMethodVerificationInput;
+
+pub use crate::operation::send_contact_method_verification::_send_contact_method_verification_output::SendContactMethodVerificationOutput;
 
 mod _send_contact_method_verification_input;
 

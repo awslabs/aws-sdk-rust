@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_archive_rul
     }
 }
 
-pub use crate::operation::update_archive_rule::_update_archive_rule_output::UpdateArchiveRuleOutput;
-
 pub use crate::operation::update_archive_rule::_update_archive_rule_input::UpdateArchiveRuleInput;
+
+pub use crate::operation::update_archive_rule::_update_archive_rule_output::UpdateArchiveRuleOutput;
 
 mod _update_archive_rule_input;
 

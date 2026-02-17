@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_distribu
     }
 }
 
-pub use crate::operation::associate_distribution_tenant_web_acl::_associate_distribution_tenant_web_acl_output::AssociateDistributionTenantWebAclOutput;
-
 pub use crate::operation::associate_distribution_tenant_web_acl::_associate_distribution_tenant_web_acl_input::AssociateDistributionTenantWebAclInput;
+
+pub use crate::operation::associate_distribution_tenant_web_acl::_associate_distribution_tenant_web_acl_output::AssociateDistributionTenantWebAclOutput;
 
 mod _associate_distribution_tenant_web_acl_input;
 

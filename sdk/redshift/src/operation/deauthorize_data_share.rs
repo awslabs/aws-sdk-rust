@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deauthorize_data_s
     }
 }
 
-pub use crate::operation::deauthorize_data_share::_deauthorize_data_share_output::DeauthorizeDataShareOutput;
-
 pub use crate::operation::deauthorize_data_share::_deauthorize_data_share_input::DeauthorizeDataShareInput;
+
+pub use crate::operation::deauthorize_data_share::_deauthorize_data_share_output::DeauthorizeDataShareOutput;
 
 mod _deauthorize_data_share_input;
 

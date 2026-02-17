@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_trails::ListT
     }
 }
 
-pub use crate::operation::list_trails::_list_trails_output::ListTrailsOutput;
-
 pub use crate::operation::list_trails::_list_trails_input::ListTrailsInput;
+
+pub use crate::operation::list_trails::_list_trails_output::ListTrailsOutput;
 
 mod _list_trails_input;
 

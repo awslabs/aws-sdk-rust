@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_agent
     }
 }
 
-pub use crate::operation::disassociate_agent_knowledge_base::_disassociate_agent_knowledge_base_output::DisassociateAgentKnowledgeBaseOutput;
-
 pub use crate::operation::disassociate_agent_knowledge_base::_disassociate_agent_knowledge_base_input::DisassociateAgentKnowledgeBaseInput;
+
+pub use crate::operation::disassociate_agent_knowledge_base::_disassociate_agent_knowledge_base_output::DisassociateAgentKnowledgeBaseOutput;
 
 mod _disassociate_agent_knowledge_base_input;
 

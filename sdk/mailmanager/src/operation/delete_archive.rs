@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_archive::De
     }
 }
 
-pub use crate::operation::delete_archive::_delete_archive_output::DeleteArchiveOutput;
-
 pub use crate::operation::delete_archive::_delete_archive_input::DeleteArchiveInput;
+
+pub use crate::operation::delete_archive::_delete_archive_output::DeleteArchiveOutput;
 
 mod _delete_archive_input;
 

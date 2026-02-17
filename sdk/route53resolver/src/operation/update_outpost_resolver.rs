@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_outpost_res
     }
 }
 
-pub use crate::operation::update_outpost_resolver::_update_outpost_resolver_output::UpdateOutpostResolverOutput;
-
 pub use crate::operation::update_outpost_resolver::_update_outpost_resolver_input::UpdateOutpostResolverInput;
+
+pub use crate::operation::update_outpost_resolver::_update_outpost_resolver_output::UpdateOutpostResolverOutput;
 
 mod _update_outpost_resolver_input;
 

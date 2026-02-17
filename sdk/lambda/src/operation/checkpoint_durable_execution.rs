@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::checkpoint_durable
     }
 }
 
-pub use crate::operation::checkpoint_durable_execution::_checkpoint_durable_execution_output::CheckpointDurableExecutionOutput;
-
 pub use crate::operation::checkpoint_durable_execution::_checkpoint_durable_execution_input::CheckpointDurableExecutionInput;
+
+pub use crate::operation::checkpoint_durable_execution::_checkpoint_durable_execution_output::CheckpointDurableExecutionOutput;
 
 mod _checkpoint_durable_execution_input;
 

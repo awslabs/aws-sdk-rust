@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_opportunity
     }
 }
 
-pub use crate::operation::create_opportunity::_create_opportunity_output::CreateOpportunityOutput;
-
 pub use crate::operation::create_opportunity::_create_opportunity_input::CreateOpportunityInput;
+
+pub use crate::operation::create_opportunity::_create_opportunity_output::CreateOpportunityOutput;
 
 mod _create_opportunity_input;
 

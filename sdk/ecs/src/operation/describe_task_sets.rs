@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_task_sets
     }
 }
 
-pub use crate::operation::describe_task_sets::_describe_task_sets_output::DescribeTaskSetsOutput;
-
 pub use crate::operation::describe_task_sets::_describe_task_sets_input::DescribeTaskSetsInput;
+
+pub use crate::operation::describe_task_sets::_describe_task_sets_output::DescribeTaskSetsOutput;
 
 mod _describe_task_sets_input;
 

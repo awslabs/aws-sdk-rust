@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_definiti
     }
 }
 
-pub use crate::operation::list_core_definitions::_list_core_definitions_output::ListCoreDefinitionsOutput;
-
 pub use crate::operation::list_core_definitions::_list_core_definitions_input::ListCoreDefinitionsInput;
+
+pub use crate::operation::list_core_definitions::_list_core_definitions_output::ListCoreDefinitionsOutput;
 
 mod _list_core_definitions_input;
 

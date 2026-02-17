@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_schema::Upd
     }
 }
 
-pub use crate::operation::update_schema::_update_schema_output::UpdateSchemaOutput;
-
 pub use crate::operation::update_schema::_update_schema_input::UpdateSchemaInput;
+
+pub use crate::operation::update_schema::_update_schema_output::UpdateSchemaOutput;
 
 mod _update_schema_input;
 

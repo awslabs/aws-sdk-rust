@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_availabil
     }
 }
 
-pub use crate::operation::describe_availability_options::_describe_availability_options_output::DescribeAvailabilityOptionsOutput;
-
 pub use crate::operation::describe_availability_options::_describe_availability_options_input::DescribeAvailabilityOptionsInput;
+
+pub use crate::operation::describe_availability_options::_describe_availability_options_output::DescribeAvailabilityOptionsOutput;
 
 mod _describe_availability_options_input;
 

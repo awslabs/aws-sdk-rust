@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_grants_
     }
 }
 
-pub use crate::operation::get_access_grants_instance_for_prefix::_get_access_grants_instance_for_prefix_output::GetAccessGrantsInstanceForPrefixOutput;
-
 pub use crate::operation::get_access_grants_instance_for_prefix::_get_access_grants_instance_for_prefix_input::GetAccessGrantsInstanceForPrefixInput;
+
+pub use crate::operation::get_access_grants_instance_for_prefix::_get_access_grants_instance_for_prefix_output::GetAccessGrantsInstanceForPrefixOutput;
 
 mod _get_access_grants_instance_for_prefix_input;
 

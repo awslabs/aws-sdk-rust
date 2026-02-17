@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_thing_runtime_
     }
 }
 
-pub use crate::operation::get_thing_runtime_configuration::_get_thing_runtime_configuration_output::GetThingRuntimeConfigurationOutput;
-
 pub use crate::operation::get_thing_runtime_configuration::_get_thing_runtime_configuration_input::GetThingRuntimeConfigurationInput;
+
+pub use crate::operation::get_thing_runtime_configuration::_get_thing_runtime_configuration_output::GetThingRuntimeConfigurationOutput;
 
 mod _get_thing_runtime_configuration_input;
 

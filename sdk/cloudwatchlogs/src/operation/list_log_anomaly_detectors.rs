@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_log_anomaly_d
     }
 }
 
-pub use crate::operation::list_log_anomaly_detectors::_list_log_anomaly_detectors_output::ListLogAnomalyDetectorsOutput;
-
 pub use crate::operation::list_log_anomaly_detectors::_list_log_anomaly_detectors_input::ListLogAnomalyDetectorsInput;
+
+pub use crate::operation::list_log_anomaly_detectors::_list_log_anomaly_detectors_output::ListLogAnomalyDetectorsOutput;
 
 mod _list_log_anomaly_detectors_input;
 

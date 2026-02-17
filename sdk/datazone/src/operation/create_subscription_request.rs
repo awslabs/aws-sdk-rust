@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subscriptio
     }
 }
 
-pub use crate::operation::create_subscription_request::_create_subscription_request_output::CreateSubscriptionRequestOutput;
-
 pub use crate::operation::create_subscription_request::_create_subscription_request_input::CreateSubscriptionRequestInput;
+
+pub use crate::operation::create_subscription_request::_create_subscription_request_output::CreateSubscriptionRequestOutput;
 
 mod _create_subscription_request_input;
 

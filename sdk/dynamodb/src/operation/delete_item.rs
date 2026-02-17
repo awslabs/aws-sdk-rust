@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_item::Delet
     }
 }
 
-pub use crate::operation::delete_item::_delete_item_output::DeleteItemOutput;
-
 pub use crate::operation::delete_item::_delete_item_input::DeleteItemInput;
+
+pub use crate::operation::delete_item::_delete_item_output::DeleteItemOutput;
 
 mod _delete_item_input;
 

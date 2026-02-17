@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_colle
     }
 }
 
-pub use crate::operation::get_resource_collection::_get_resource_collection_output::GetResourceCollectionOutput;
-
 pub use crate::operation::get_resource_collection::_get_resource_collection_input::GetResourceCollectionInput;
+
+pub use crate::operation::get_resource_collection::_get_resource_collection_output::GetResourceCollectionOutput;
 
 mod _get_resource_collection_input;
 

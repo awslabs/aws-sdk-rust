@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_layout::Cre
     }
 }
 
-pub use crate::operation::create_layout::_create_layout_output::CreateLayoutOutput;
-
 pub use crate::operation::create_layout::_create_layout_input::CreateLayoutInput;
+
+pub use crate::operation::create_layout::_create_layout_output::CreateLayoutOutput;
 
 mod _create_layout_input;
 

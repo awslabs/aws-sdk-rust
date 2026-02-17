@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::authorize_endpoint
     }
 }
 
-pub use crate::operation::authorize_endpoint_access::_authorize_endpoint_access_output::AuthorizeEndpointAccessOutput;
-
 pub use crate::operation::authorize_endpoint_access::_authorize_endpoint_access_input::AuthorizeEndpointAccessInput;
+
+pub use crate::operation::authorize_endpoint_access::_authorize_endpoint_access_output::AuthorizeEndpointAccessOutput;
 
 mod _authorize_endpoint_access_input;
 

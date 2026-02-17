@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_trigger:
     }
 }
 
-pub use crate::operation::get_event_trigger::_get_event_trigger_output::GetEventTriggerOutput;
-
 pub use crate::operation::get_event_trigger::_get_event_trigger_input::GetEventTriggerInput;
+
+pub use crate::operation::get_event_trigger::_get_event_trigger_output::GetEventTriggerOutput;
 
 mod _get_event_trigger_input;
 

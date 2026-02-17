@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_guardrail::Get
     }
 }
 
-pub use crate::operation::get_guardrail::_get_guardrail_output::GetGuardrailOutput;
-
 pub use crate::operation::get_guardrail::_get_guardrail_input::GetGuardrailInput;
+
+pub use crate::operation::get_guardrail::_get_guardrail_output::GetGuardrailOutput;
 
 mod _get_guardrail_input;
 

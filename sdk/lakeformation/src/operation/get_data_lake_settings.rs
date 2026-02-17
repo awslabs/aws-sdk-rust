@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_lake_sett
     }
 }
 
-pub use crate::operation::get_data_lake_settings::_get_data_lake_settings_output::GetDataLakeSettingsOutput;
-
 pub use crate::operation::get_data_lake_settings::_get_data_lake_settings_input::GetDataLakeSettingsInput;
+
+pub use crate::operation::get_data_lake_settings::_get_data_lake_settings_output::GetDataLakeSettingsOutput;
 
 mod _get_data_lake_settings_input;
 

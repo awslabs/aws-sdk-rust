@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_table_rep
     }
 }
 
-pub use crate::operation::describe_table_replica_auto_scaling::_describe_table_replica_auto_scaling_output::DescribeTableReplicaAutoScalingOutput;
-
 pub use crate::operation::describe_table_replica_auto_scaling::_describe_table_replica_auto_scaling_input::DescribeTableReplicaAutoScalingInput;
+
+pub use crate::operation::describe_table_replica_auto_scaling::_describe_table_replica_auto_scaling_output::DescribeTableReplicaAutoScalingOutput;
 
 mod _describe_table_replica_auto_scaling_input;
 

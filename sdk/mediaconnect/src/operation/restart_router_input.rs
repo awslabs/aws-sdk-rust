@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restart_router_inp
     }
 }
 
-pub use crate::operation::restart_router_input::_restart_router_input_output::RestartRouterInputOutput;
-
 pub use crate::operation::restart_router_input::_restart_router_input_input::RestartRouterInputInput;
+
+pub use crate::operation::restart_router_input::_restart_router_input_output::RestartRouterInputOutput;
 
 mod _restart_router_input_input;
 

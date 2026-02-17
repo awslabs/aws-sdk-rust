@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_control_pan
     }
 }
 
-pub use crate::operation::create_control_panel::_create_control_panel_output::CreateControlPanelOutput;
-
 pub use crate::operation::create_control_panel::_create_control_panel_input::CreateControlPanelInput;
+
+pub use crate::operation::create_control_panel::_create_control_panel_output::CreateControlPanelOutput;
 
 mod _create_control_panel_input;
 

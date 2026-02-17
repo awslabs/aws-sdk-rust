@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_acl::Update
     }
 }
 
-pub use crate::operation::update_acl::_update_acl_output::UpdateAclOutput;
-
 pub use crate::operation::update_acl::_update_acl_input::UpdateAclInput;
+
+pub use crate::operation::update_acl::_update_acl_output::UpdateAclOutput;
 
 mod _update_acl_input;
 

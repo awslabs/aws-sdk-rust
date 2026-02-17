@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_global_resolv
     }
 }
 
-pub use crate::operation::list_global_resolvers::_list_global_resolvers_output::ListGlobalResolversOutput;
-
 pub use crate::operation::list_global_resolvers::_list_global_resolvers_input::ListGlobalResolversInput;
+
+pub use crate::operation::list_global_resolvers::_list_global_resolvers_output::ListGlobalResolversOutput;
 
 mod _list_global_resolvers_input;
 

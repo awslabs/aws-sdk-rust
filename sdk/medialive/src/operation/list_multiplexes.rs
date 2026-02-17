@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_multiplexes::
     }
 }
 
-pub use crate::operation::list_multiplexes::_list_multiplexes_output::ListMultiplexesOutput;
-
 pub use crate::operation::list_multiplexes::_list_multiplexes_input::ListMultiplexesInput;
+
+pub use crate::operation::list_multiplexes::_list_multiplexes_output::ListMultiplexesOutput;
 
 mod _list_multiplexes_input;
 

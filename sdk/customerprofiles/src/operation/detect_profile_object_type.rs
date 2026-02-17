@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_profile_obj
     }
 }
 
-pub use crate::operation::detect_profile_object_type::_detect_profile_object_type_output::DetectProfileObjectTypeOutput;
-
 pub use crate::operation::detect_profile_object_type::_detect_profile_object_type_input::DetectProfileObjectTypeInput;
+
+pub use crate::operation::detect_profile_object_type::_detect_profile_object_type_output::DetectProfileObjectTypeOutput;
 
 mod _detect_profile_object_type_input;
 

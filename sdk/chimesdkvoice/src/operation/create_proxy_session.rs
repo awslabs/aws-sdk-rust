@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_proxy_sessi
     }
 }
 
-pub use crate::operation::create_proxy_session::_create_proxy_session_output::CreateProxySessionOutput;
-
 pub use crate::operation::create_proxy_session::_create_proxy_session_input::CreateProxySessionInput;
+
+pub use crate::operation::create_proxy_session::_create_proxy_session_output::CreateProxySessionOutput;
 
 mod _create_proxy_session_input;
 

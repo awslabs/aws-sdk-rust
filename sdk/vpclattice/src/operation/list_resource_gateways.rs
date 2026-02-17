@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_gate
     }
 }
 
-pub use crate::operation::list_resource_gateways::_list_resource_gateways_output::ListResourceGatewaysOutput;
-
 pub use crate::operation::list_resource_gateways::_list_resource_gateways_input::ListResourceGatewaysInput;
+
+pub use crate::operation::list_resource_gateways::_list_resource_gateways_output::ListResourceGatewaysOutput;
 
 mod _list_resource_gateways_input;
 

@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_trust_store::_list_distributions_by_trust_store_output::ListDistributionsByTrustStoreOutput;
-
 pub use crate::operation::list_distributions_by_trust_store::_list_distributions_by_trust_store_input::ListDistributionsByTrustStoreInput;
+
+pub use crate::operation::list_distributions_by_trust_store::_list_distributions_by_trust_store_output::ListDistributionsByTrustStoreOutput;
 
 mod _list_distributions_by_trust_store_input;
 

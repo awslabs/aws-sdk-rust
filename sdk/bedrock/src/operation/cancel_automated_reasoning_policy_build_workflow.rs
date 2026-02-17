@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::cancel_automated_reasoning_policy_build_workflow::_cancel_automated_reasoning_policy_build_workflow_output::CancelAutomatedReasoningPolicyBuildWorkflowOutput;
-
 pub use crate::operation::cancel_automated_reasoning_policy_build_workflow::_cancel_automated_reasoning_policy_build_workflow_input::CancelAutomatedReasoningPolicyBuildWorkflowInput;
+
+pub use crate::operation::cancel_automated_reasoning_policy_build_workflow::_cancel_automated_reasoning_policy_build_workflow_output::CancelAutomatedReasoningPolicyBuildWorkflowOutput;
 
 mod _cancel_automated_reasoning_policy_build_workflow_input;
 

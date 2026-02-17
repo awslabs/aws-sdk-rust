@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_channels_moderated_by_app_instance_user_output::ListChannelsModeratedByAppInstanceUserOutput;
-
 pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_channels_moderated_by_app_instance_user_input::ListChannelsModeratedByAppInstanceUserInput;
+
+pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_channels_moderated_by_app_instance_user_output::ListChannelsModeratedByAppInstanceUserOutput;
 
 mod _list_channels_moderated_by_app_instance_user_input;
 

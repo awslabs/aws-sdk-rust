@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_review_temp
     }
 }
 
-pub use crate::operation::update_review_template_answer::_update_review_template_answer_output::UpdateReviewTemplateAnswerOutput;
-
 pub use crate::operation::update_review_template_answer::_update_review_template_answer_input::UpdateReviewTemplateAnswerInput;
+
+pub use crate::operation::update_review_template_answer::_update_review_template_answer_output::UpdateReviewTemplateAnswerOutput;
 
 mod _update_review_template_answer_input;
 

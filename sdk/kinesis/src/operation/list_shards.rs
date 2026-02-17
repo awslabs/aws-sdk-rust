@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_shards::ListS
     }
 }
 
-pub use crate::operation::list_shards::_list_shards_output::ListShardsOutput;
-
 pub use crate::operation::list_shards::_list_shards_input::ListShardsInput;
+
+pub use crate::operation::list_shards::_list_shards_output::ListShardsOutput;
 
 mod _list_shards_input;
 

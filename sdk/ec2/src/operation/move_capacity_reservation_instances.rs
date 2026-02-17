@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::move_capacity_rese
     }
 }
 
-pub use crate::operation::move_capacity_reservation_instances::_move_capacity_reservation_instances_output::MoveCapacityReservationInstancesOutput;
-
 pub use crate::operation::move_capacity_reservation_instances::_move_capacity_reservation_instances_input::MoveCapacityReservationInstancesInput;
+
+pub use crate::operation::move_capacity_reservation_instances::_move_capacity_reservation_instances_output::MoveCapacityReservationInstancesOutput;
 
 mod _move_capacity_reservation_instances_input;
 

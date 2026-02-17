@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_id_mapping_
     }
 }
 
-pub use crate::operation::create_id_mapping_table::_create_id_mapping_table_output::CreateIdMappingTableOutput;
-
 pub use crate::operation::create_id_mapping_table::_create_id_mapping_table_input::CreateIdMappingTableInput;
+
+pub use crate::operation::create_id_mapping_table::_create_id_mapping_table_output::CreateIdMappingTableOutput;
 
 mod _create_id_mapping_table_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_id_namespac
     }
 }
 
-pub use crate::operation::create_id_namespace::_create_id_namespace_output::CreateIdNamespaceOutput;
-
 pub use crate::operation::create_id_namespace::_create_id_namespace_input::CreateIdNamespaceInput;
+
+pub use crate::operation::create_id_namespace::_create_id_namespace_output::CreateIdNamespaceOutput;
 
 mod _create_id_namespace_input;
 

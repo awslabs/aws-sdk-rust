@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_campaign_ch
     }
 }
 
-pub use crate::operation::delete_campaign_channel_subtype_config::_delete_campaign_channel_subtype_config_output::DeleteCampaignChannelSubtypeConfigOutput;
-
 pub use crate::operation::delete_campaign_channel_subtype_config::_delete_campaign_channel_subtype_config_input::DeleteCampaignChannelSubtypeConfigInput;
+
+pub use crate::operation::delete_campaign_channel_subtype_config::_delete_campaign_channel_subtype_config_output::DeleteCampaignChannelSubtypeConfigOutput;
 
 mod _delete_campaign_channel_subtype_config_input;
 

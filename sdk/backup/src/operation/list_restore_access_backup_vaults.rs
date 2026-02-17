@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_restore_acces
     }
 }
 
-pub use crate::operation::list_restore_access_backup_vaults::_list_restore_access_backup_vaults_output::ListRestoreAccessBackupVaultsOutput;
-
 pub use crate::operation::list_restore_access_backup_vaults::_list_restore_access_backup_vaults_input::ListRestoreAccessBackupVaultsInput;
+
+pub use crate::operation::list_restore_access_backup_vaults::_list_restore_access_backup_vaults_output::ListRestoreAccessBackupVaultsOutput;
 
 mod _list_restore_access_backup_vaults_input;
 

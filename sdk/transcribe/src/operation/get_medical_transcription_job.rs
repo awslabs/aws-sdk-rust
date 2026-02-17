@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_medical_transc
     }
 }
 
-pub use crate::operation::get_medical_transcription_job::_get_medical_transcription_job_output::GetMedicalTranscriptionJobOutput;
-
 pub use crate::operation::get_medical_transcription_job::_get_medical_transcription_job_input::GetMedicalTranscriptionJobInput;
+
+pub use crate::operation::get_medical_transcription_job::_get_medical_transcription_job_output::GetMedicalTranscriptionJobOutput;
 
 mod _get_medical_transcription_job_input;
 

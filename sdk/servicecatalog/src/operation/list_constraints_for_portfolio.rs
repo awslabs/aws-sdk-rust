@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_constraints_f
     }
 }
 
-pub use crate::operation::list_constraints_for_portfolio::_list_constraints_for_portfolio_output::ListConstraintsForPortfolioOutput;
-
 pub use crate::operation::list_constraints_for_portfolio::_list_constraints_for_portfolio_input::ListConstraintsForPortfolioInput;
+
+pub use crate::operation::list_constraints_for_portfolio::_list_constraints_for_portfolio_output::ListConstraintsForPortfolioOutput;
 
 mod _list_constraints_for_portfolio_input;
 

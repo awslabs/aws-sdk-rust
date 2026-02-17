@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_associations_status::_describe_instance_associations_status_output::DescribeInstanceAssociationsStatusOutput;
-
 pub use crate::operation::describe_instance_associations_status::_describe_instance_associations_status_input::DescribeInstanceAssociationsStatusInput;
+
+pub use crate::operation::describe_instance_associations_status::_describe_instance_associations_status_output::DescribeInstanceAssociationsStatusOutput;
 
 mod _describe_instance_associations_status_input;
 

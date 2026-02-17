@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_portal_prod
     }
 }
 
-pub use crate::operation::create_portal_product::_create_portal_product_output::CreatePortalProductOutput;
-
 pub use crate::operation::create_portal_product::_create_portal_product_input::CreatePortalProductInput;
+
+pub use crate::operation::create_portal_product::_create_portal_product_output::CreatePortalProductOutput;
 
 mod _create_portal_product_input;
 

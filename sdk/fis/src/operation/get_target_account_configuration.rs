@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_target_account
     }
 }
 
-pub use crate::operation::get_target_account_configuration::_get_target_account_configuration_output::GetTargetAccountConfigurationOutput;
-
 pub use crate::operation::get_target_account_configuration::_get_target_account_configuration_input::GetTargetAccountConfigurationInput;
+
+pub use crate::operation::get_target_account_configuration::_get_target_account_configuration_output::GetTargetAccountConfigurationOutput;
 
 mod _get_target_account_configuration_input;
 

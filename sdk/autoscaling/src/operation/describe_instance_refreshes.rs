@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_refreshes::_describe_instance_refreshes_output::DescribeInstanceRefreshesOutput;
-
 pub use crate::operation::describe_instance_refreshes::_describe_instance_refreshes_input::DescribeInstanceRefreshesInput;
+
+pub use crate::operation::describe_instance_refreshes::_describe_instance_refreshes_output::DescribeInstanceRefreshesOutput;
 
 mod _describe_instance_refreshes_input;
 

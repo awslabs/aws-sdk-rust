@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_record_e
     }
 }
 
-pub use crate::operation::get_table_record_expiration_job_status::_get_table_record_expiration_job_status_output::GetTableRecordExpirationJobStatusOutput;
-
 pub use crate::operation::get_table_record_expiration_job_status::_get_table_record_expiration_job_status_input::GetTableRecordExpirationJobStatusInput;
+
+pub use crate::operation::get_table_record_expiration_job_status::_get_table_record_expiration_job_status_output::GetTableRecordExpirationJobStatusOutput;
 
 mod _get_table_record_expiration_job_status_input;
 

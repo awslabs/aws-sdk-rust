@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_schema_vers
     }
 }
 
-pub use crate::operation::remove_schema_version_metadata::_remove_schema_version_metadata_output::RemoveSchemaVersionMetadataOutput;
-
 pub use crate::operation::remove_schema_version_metadata::_remove_schema_version_metadata_input::RemoveSchemaVersionMetadataInput;
+
+pub use crate::operation::remove_schema_version_metadata::_remove_schema_version_metadata_output::RemoveSchemaVersionMetadataOutput;
 
 mod _remove_schema_version_metadata_input;
 

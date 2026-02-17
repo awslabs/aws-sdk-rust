@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_provisioned
     }
 }
 
-pub use crate::operation::update_provisioned_product_properties::_update_provisioned_product_properties_output::UpdateProvisionedProductPropertiesOutput;
-
 pub use crate::operation::update_provisioned_product_properties::_update_provisioned_product_properties_input::UpdateProvisionedProductPropertiesInput;
+
+pub use crate::operation::update_provisioned_product_properties::_update_provisioned_product_properties_output::UpdateProvisionedProductPropertiesOutput;
 
 mod _update_provisioned_product_properties_input;
 

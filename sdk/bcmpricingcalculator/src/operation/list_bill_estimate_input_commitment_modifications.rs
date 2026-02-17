@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_bill_estimate_input_commitment_modifications::_list_bill_estimate_input_commitment_modifications_output::ListBillEstimateInputCommitmentModificationsOutput;
-
 pub use crate::operation::list_bill_estimate_input_commitment_modifications::_list_bill_estimate_input_commitment_modifications_input::ListBillEstimateInputCommitmentModificationsInput;
+
+pub use crate::operation::list_bill_estimate_input_commitment_modifications::_list_bill_estimate_input_commitment_modifications_output::ListBillEstimateInputCommitmentModificationsOutput;
 
 mod _list_bill_estimate_input_commitment_modifications_input;
 

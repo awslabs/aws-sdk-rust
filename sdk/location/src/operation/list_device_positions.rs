@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_positi
     }
 }
 
-pub use crate::operation::list_device_positions::_list_device_positions_output::ListDevicePositionsOutput;
-
 pub use crate::operation::list_device_positions::_list_device_positions_input::ListDevicePositionsInput;
+
+pub use crate::operation::list_device_positions::_list_device_positions_output::ListDevicePositionsOutput;
 
 mod _list_device_positions_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_ver
     }
 }
 
-pub use crate::operation::describe_image_version::_describe_image_version_output::DescribeImageVersionOutput;
-
 pub use crate::operation::describe_image_version::_describe_image_version_input::DescribeImageVersionInput;
+
+pub use crate::operation::describe_image_version::_describe_image_version_output::DescribeImageVersionOutput;
 
 mod _describe_image_version_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_profic
     }
 }
 
-pub use crate::operation::update_user_proficiencies::_update_user_proficiencies_output::UpdateUserProficienciesOutput;
-
 pub use crate::operation::update_user_proficiencies::_update_user_proficiencies_input::UpdateUserProficienciesInput;
+
+pub use crate::operation::update_user_proficiencies::_update_user_proficiencies_output::UpdateUserProficienciesOutput;
 
 mod _update_user_proficiencies_input;
 

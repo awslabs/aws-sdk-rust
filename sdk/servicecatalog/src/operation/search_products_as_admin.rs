@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_products_as
     }
 }
 
-pub use crate::operation::search_products_as_admin::_search_products_as_admin_output::SearchProductsAsAdminOutput;
-
 pub use crate::operation::search_products_as_admin::_search_products_as_admin_input::SearchProductsAsAdminInput;
+
+pub use crate::operation::search_products_as_admin::_search_products_as_admin_output::SearchProductsAsAdminOutput;
 
 mod _search_products_as_admin_input;
 

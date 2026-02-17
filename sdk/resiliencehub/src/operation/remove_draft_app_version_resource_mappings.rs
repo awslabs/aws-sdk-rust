@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_draft_app_v
     }
 }
 
-pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_draft_app_version_resource_mappings_output::RemoveDraftAppVersionResourceMappingsOutput;
-
 pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_draft_app_version_resource_mappings_input::RemoveDraftAppVersionResourceMappingsInput;
+
+pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_draft_app_version_resource_mappings_output::RemoveDraftAppVersionResourceMappingsOutput;
 
 mod _remove_draft_app_version_resource_mappings_input;
 

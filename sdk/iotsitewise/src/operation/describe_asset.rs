@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_asset::De
     }
 }
 
-pub use crate::operation::describe_asset::_describe_asset_output::DescribeAssetOutput;
-
 pub use crate::operation::describe_asset::_describe_asset_input::DescribeAssetInput;
+
+pub use crate::operation::describe_asset::_describe_asset_output::DescribeAssetOutput;
 
 mod _describe_asset_input;
 

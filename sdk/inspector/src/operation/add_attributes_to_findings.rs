@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_attributes_to_
     }
 }
 
-pub use crate::operation::add_attributes_to_findings::_add_attributes_to_findings_output::AddAttributesToFindingsOutput;
-
 pub use crate::operation::add_attributes_to_findings::_add_attributes_to_findings_input::AddAttributesToFindingsInput;
+
+pub use crate::operation::add_attributes_to_findings::_add_attributes_to_findings_output::AddAttributesToFindingsOutput;
 
 mod _add_attributes_to_findings_input;
 

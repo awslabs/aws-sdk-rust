@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_suite_definit
     }
 }
 
-pub use crate::operation::list_suite_definitions::_list_suite_definitions_output::ListSuiteDefinitionsOutput;
-
 pub use crate::operation::list_suite_definitions::_list_suite_definitions_input::ListSuiteDefinitionsInput;
+
+pub use crate::operation::list_suite_definitions::_list_suite_definitions_output::ListSuiteDefinitionsOutput;
 
 mod _list_suite_definitions_input;
 

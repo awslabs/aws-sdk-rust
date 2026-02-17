@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_users_in_grou
     }
 }
 
-pub use crate::operation::list_users_in_group::_list_users_in_group_output::ListUsersInGroupOutput;
-
 pub use crate::operation::list_users_in_group::_list_users_in_group_input::ListUsersInGroupInput;
+
+pub use crate::operation::list_users_in_group::_list_users_in_group_output::ListUsersInGroupOutput;
 
 mod _list_users_in_group_input;
 

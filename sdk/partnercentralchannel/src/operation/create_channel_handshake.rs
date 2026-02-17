@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_channel_han
     }
 }
 
-pub use crate::operation::create_channel_handshake::_create_channel_handshake_output::CreateChannelHandshakeOutput;
-
 pub use crate::operation::create_channel_handshake::_create_channel_handshake_input::CreateChannelHandshakeInput;
+
+pub use crate::operation::create_channel_handshake::_create_channel_handshake_output::CreateChannelHandshakeOutput;
 
 mod _create_channel_handshake_input;
 

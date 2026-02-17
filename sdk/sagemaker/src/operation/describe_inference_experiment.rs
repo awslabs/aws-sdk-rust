@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_inference
     }
 }
 
-pub use crate::operation::describe_inference_experiment::_describe_inference_experiment_output::DescribeInferenceExperimentOutput;
-
 pub use crate::operation::describe_inference_experiment::_describe_inference_experiment_input::DescribeInferenceExperimentInput;
+
+pub use crate::operation::describe_inference_experiment::_describe_inference_experiment_output::DescribeInferenceExperimentOutput;
 
 mod _describe_inference_experiment_input;
 

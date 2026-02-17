@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_gcm_channel::G
     }
 }
 
-pub use crate::operation::get_gcm_channel::_get_gcm_channel_output::GetGcmChannelOutput;
-
 pub use crate::operation::get_gcm_channel::_get_gcm_channel_input::GetGcmChannelInput;
+
+pub use crate::operation::get_gcm_channel::_get_gcm_channel_output::GetGcmChannelOutput;
 
 mod _get_gcm_channel_input;
 

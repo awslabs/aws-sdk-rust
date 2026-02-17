@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_primary_ema
     }
 }
 
-pub use crate::operation::update_primary_email_address::_update_primary_email_address_output::UpdatePrimaryEmailAddressOutput;
-
 pub use crate::operation::update_primary_email_address::_update_primary_email_address_input::UpdatePrimaryEmailAddressInput;
+
+pub use crate::operation::update_primary_email_address::_update_primary_email_address_output::UpdatePrimaryEmailAddressOutput;
 
 mod _update_primary_email_address_input;
 

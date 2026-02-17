@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resize_cluster::Re
     }
 }
 
-pub use crate::operation::resize_cluster::_resize_cluster_output::ResizeClusterOutput;
-
 pub use crate::operation::resize_cluster::_resize_cluster_input::ResizeClusterInput;
+
+pub use crate::operation::resize_cluster::_resize_cluster_output::ResizeClusterOutput;
 
 mod _resize_cluster_input;
 

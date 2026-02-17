@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_email_ident
     }
 }
 
-pub use crate::operation::verify_email_identity::_verify_email_identity_output::VerifyEmailIdentityOutput;
-
 pub use crate::operation::verify_email_identity::_verify_email_identity_input::VerifyEmailIdentityInput;
+
+pub use crate::operation::verify_email_identity::_verify_email_identity_output::VerifyEmailIdentityOutput;
 
 mod _verify_email_identity_input;
 

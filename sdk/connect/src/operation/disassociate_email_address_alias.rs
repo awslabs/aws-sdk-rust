@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_email
     }
 }
 
-pub use crate::operation::disassociate_email_address_alias::_disassociate_email_address_alias_output::DisassociateEmailAddressAliasOutput;
-
 pub use crate::operation::disassociate_email_address_alias::_disassociate_email_address_alias_input::DisassociateEmailAddressAliasInput;
+
+pub use crate::operation::disassociate_email_address_alias::_disassociate_email_address_alias_output::DisassociateEmailAddressAliasOutput;
 
 mod _disassociate_email_address_alias_input;
 

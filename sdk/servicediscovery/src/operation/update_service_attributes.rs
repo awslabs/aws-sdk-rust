@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_att
     }
 }
 
-pub use crate::operation::update_service_attributes::_update_service_attributes_output::UpdateServiceAttributesOutput;
-
 pub use crate::operation::update_service_attributes::_update_service_attributes_input::UpdateServiceAttributesInput;
+
+pub use crate::operation::update_service_attributes::_update_service_attributes_output::UpdateServiceAttributesOutput;
 
 mod _update_service_attributes_input;
 

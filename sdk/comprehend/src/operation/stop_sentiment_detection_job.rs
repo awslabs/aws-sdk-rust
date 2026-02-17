@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_sentiment_det
     }
 }
 
-pub use crate::operation::stop_sentiment_detection_job::_stop_sentiment_detection_job_output::StopSentimentDetectionJobOutput;
-
 pub use crate::operation::stop_sentiment_detection_job::_stop_sentiment_detection_job_input::StopSentimentDetectionJobInput;
+
+pub use crate::operation::stop_sentiment_detection_job::_stop_sentiment_detection_job_output::StopSentimentDetectionJobOutput;
 
 mod _stop_sentiment_detection_job_input;
 

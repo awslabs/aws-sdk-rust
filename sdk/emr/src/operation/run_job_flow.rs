@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::run_job_flow::RunJ
     }
 }
 
-pub use crate::operation::run_job_flow::_run_job_flow_output::RunJobFlowOutput;
-
 pub use crate::operation::run_job_flow::_run_job_flow_input::RunJobFlowInput;
+
+pub use crate::operation::run_job_flow::_run_job_flow_output::RunJobFlowOutput;
 
 mod _run_job_flow_input;
 

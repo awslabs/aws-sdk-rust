@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_customer_a
     }
 }
 
-pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreement_output::ConfirmCustomerAgreementOutput;
-
 pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreement_input::ConfirmCustomerAgreementInput;
+
+pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreement_output::ConfirmCustomerAgreementOutput;
 
 mod _confirm_customer_agreement_input;
 

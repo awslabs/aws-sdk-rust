@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_record::Del
     }
 }
 
-pub use crate::operation::delete_record::_delete_record_output::DeleteRecordOutput;
-
 pub use crate::operation::delete_record::_delete_record_input::DeleteRecordInput;
+
+pub use crate::operation::delete_record::_delete_record_output::DeleteRecordOutput;
 
 mod _delete_record_input;
 

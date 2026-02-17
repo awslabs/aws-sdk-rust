@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workspace_med
     }
 }
 
-pub use crate::operation::list_workspace_media::_list_workspace_media_output::ListWorkspaceMediaOutput;
-
 pub use crate::operation::list_workspace_media::_list_workspace_media_input::ListWorkspaceMediaInput;
+
+pub use crate::operation::list_workspace_media::_list_workspace_media_output::ListWorkspaceMediaOutput;
 
 mod _list_workspace_media_input;
 

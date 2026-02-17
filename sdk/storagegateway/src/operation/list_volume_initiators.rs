@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_volume_initia
     }
 }
 
-pub use crate::operation::list_volume_initiators::_list_volume_initiators_output::ListVolumeInitiatorsOutput;
-
 pub use crate::operation::list_volume_initiators::_list_volume_initiators_input::ListVolumeInitiatorsInput;
+
+pub use crate::operation::list_volume_initiators::_list_volume_initiators_output::ListVolumeInitiatorsOutput;
 
 mod _list_volume_initiators_input;
 

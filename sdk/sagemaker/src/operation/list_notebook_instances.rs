@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_notebook_inst
     }
 }
 
-pub use crate::operation::list_notebook_instances::_list_notebook_instances_output::ListNotebookInstancesOutput;
-
 pub use crate::operation::list_notebook_instances::_list_notebook_instances_input::ListNotebookInstancesInput;
+
+pub use crate::operation::list_notebook_instances::_list_notebook_instances_output::ListNotebookInstancesOutput;
 
 mod _list_notebook_instances_input;
 

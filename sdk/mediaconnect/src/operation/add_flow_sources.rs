@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_flow_sources::
     }
 }
 
-pub use crate::operation::add_flow_sources::_add_flow_sources_output::AddFlowSourcesOutput;
-
 pub use crate::operation::add_flow_sources::_add_flow_sources_input::AddFlowSourcesInput;
+
+pub use crate::operation::add_flow_sources::_add_flow_sources_output::AddFlowSourcesOutput;
 
 mod _add_flow_sources_input;
 

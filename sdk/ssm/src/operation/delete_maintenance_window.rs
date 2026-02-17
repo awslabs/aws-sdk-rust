@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_maintenance
     }
 }
 
-pub use crate::operation::delete_maintenance_window::_delete_maintenance_window_output::DeleteMaintenanceWindowOutput;
-
 pub use crate::operation::delete_maintenance_window::_delete_maintenance_window_input::DeleteMaintenanceWindowInput;
+
+pub use crate::operation::delete_maintenance_window::_delete_maintenance_window_output::DeleteMaintenanceWindowOutput;
 
 mod _delete_maintenance_window_input;
 

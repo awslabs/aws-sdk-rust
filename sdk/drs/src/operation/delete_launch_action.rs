@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_launch_acti
     }
 }
 
-pub use crate::operation::delete_launch_action::_delete_launch_action_output::DeleteLaunchActionOutput;
-
 pub use crate::operation::delete_launch_action::_delete_launch_action_input::DeleteLaunchActionInput;
+
+pub use crate::operation::delete_launch_action::_delete_launch_action_output::DeleteLaunchActionOutput;
 
 mod _delete_launch_action_input;
 

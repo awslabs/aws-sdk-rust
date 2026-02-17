@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_medical_tra
     }
 }
 
-pub use crate::operation::delete_medical_transcription_job::_delete_medical_transcription_job_output::DeleteMedicalTranscriptionJobOutput;
-
 pub use crate::operation::delete_medical_transcription_job::_delete_medical_transcription_job_input::DeleteMedicalTranscriptionJobInput;
+
+pub use crate::operation::delete_medical_transcription_job::_delete_medical_transcription_job_output::DeleteMedicalTranscriptionJobOutput;
 
 mod _delete_medical_transcription_job_input;
 

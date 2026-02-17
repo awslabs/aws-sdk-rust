@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_task::StartT
     }
 }
 
-pub use crate::operation::start_task::_start_task_output::StartTaskOutput;
-
 pub use crate::operation::start_task::_start_task_input::StartTaskInput;
+
+pub use crate::operation::start_task::_start_task_output::StartTaskOutput;
 
 mod _start_task_input;
 

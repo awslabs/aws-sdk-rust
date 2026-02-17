@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_subnet_c
     }
 }
 
-pub use crate::operation::associate_subnet_cidr_block::_associate_subnet_cidr_block_output::AssociateSubnetCidrBlockOutput;
-
 pub use crate::operation::associate_subnet_cidr_block::_associate_subnet_cidr_block_input::AssociateSubnetCidrBlockInput;
+
+pub use crate::operation::associate_subnet_cidr_block::_associate_subnet_cidr_block_output::AssociateSubnetCidrBlockOutput;
 
 mod _associate_subnet_cidr_block_input;
 

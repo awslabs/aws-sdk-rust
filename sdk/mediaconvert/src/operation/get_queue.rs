@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_queue::GetQueu
     }
 }
 
-pub use crate::operation::get_queue::_get_queue_output::GetQueueOutput;
-
 pub use crate::operation::get_queue::_get_queue_input::GetQueueInput;
+
+pub use crate::operation::get_queue::_get_queue_output::GetQueueOutput;
 
 mod _get_queue_input;
 

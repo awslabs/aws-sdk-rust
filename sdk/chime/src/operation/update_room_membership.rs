@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_room_member
     }
 }
 
-pub use crate::operation::update_room_membership::_update_room_membership_output::UpdateRoomMembershipOutput;
-
 pub use crate::operation::update_room_membership::_update_room_membership_input::UpdateRoomMembershipInput;
+
+pub use crate::operation::update_room_membership::_update_room_membership_output::UpdateRoomMembershipOutput;
 
 mod _update_room_membership_input;
 

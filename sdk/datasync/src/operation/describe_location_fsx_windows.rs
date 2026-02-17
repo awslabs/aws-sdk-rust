@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_fsx_windows::_describe_location_fsx_windows_output::DescribeLocationFsxWindowsOutput;
-
 pub use crate::operation::describe_location_fsx_windows::_describe_location_fsx_windows_input::DescribeLocationFsxWindowsInput;
+
+pub use crate::operation::describe_location_fsx_windows::_describe_location_fsx_windows_output::DescribeLocationFsxWindowsOutput;
 
 mod _describe_location_fsx_windows_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_centralization_rule_for_organization::_update_centralization_rule_for_organization_output::UpdateCentralizationRuleForOrganizationOutput;
-
 pub use crate::operation::update_centralization_rule_for_organization::_update_centralization_rule_for_organization_input::UpdateCentralizationRuleForOrganizationInput;
+
+pub use crate::operation::update_centralization_rule_for_organization::_update_centralization_rule_for_organization_output::UpdateCentralizationRuleForOrganizationOutput;
 
 mod _update_centralization_rule_for_organization_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_query::Canc
     }
 }
 
-pub use crate::operation::cancel_query::_cancel_query_output::CancelQueryOutput;
-
 pub use crate::operation::cancel_query::_cancel_query_input::CancelQueryInput;
+
+pub use crate::operation::cancel_query::_cancel_query_output::CancelQueryOutput;
 
 mod _cancel_query_input;
 

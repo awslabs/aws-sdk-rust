@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kms_encryption
     }
 }
 
-pub use crate::operation::get_kms_encryption_key::_get_kms_encryption_key_output::GetKmsEncryptionKeyOutput;
-
 pub use crate::operation::get_kms_encryption_key::_get_kms_encryption_key_input::GetKmsEncryptionKeyInput;
+
+pub use crate::operation::get_kms_encryption_key::_get_kms_encryption_key_output::GetKmsEncryptionKeyOutput;
 
 mod _get_kms_encryption_key_input;
 

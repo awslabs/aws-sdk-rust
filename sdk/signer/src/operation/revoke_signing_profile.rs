@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_signing_pro
     }
 }
 
-pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_output::RevokeSigningProfileOutput;
-
 pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_input::RevokeSigningProfileInput;
+
+pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_output::RevokeSigningProfileOutput;
 
 mod _revoke_signing_profile_input;
 

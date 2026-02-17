@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_update_stac
     }
 }
 
-pub use crate::operation::cancel_update_stack::_cancel_update_stack_output::CancelUpdateStackOutput;
-
 pub use crate::operation::cancel_update_stack::_cancel_update_stack_input::CancelUpdateStackInput;
+
+pub use crate::operation::cancel_update_stack::_cancel_update_stack_output::CancelUpdateStackOutput;
 
 mod _cancel_update_stack_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::activate_message_t
     }
 }
 
-pub use crate::operation::activate_message_template::_activate_message_template_output::ActivateMessageTemplateOutput;
-
 pub use crate::operation::activate_message_template::_activate_message_template_input::ActivateMessageTemplateInput;
+
+pub use crate::operation::activate_message_template::_activate_message_template_output::ActivateMessageTemplateOutput;
 
 mod _activate_message_template_input;
 

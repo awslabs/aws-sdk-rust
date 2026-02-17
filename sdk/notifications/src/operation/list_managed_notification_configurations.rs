@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_notif
     }
 }
 
-pub use crate::operation::list_managed_notification_configurations::_list_managed_notification_configurations_output::ListManagedNotificationConfigurationsOutput;
-
 pub use crate::operation::list_managed_notification_configurations::_list_managed_notification_configurations_input::ListManagedNotificationConfigurationsInput;
+
+pub use crate::operation::list_managed_notification_configurations::_list_managed_notification_configurations_output::ListManagedNotificationConfigurationsOutput;
 
 mod _list_managed_notification_configurations_input;
 

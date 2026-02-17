@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_tasks::Sear
     }
 }
 
-pub use crate::operation::search_tasks::_search_tasks_output::SearchTasksOutput;
-
 pub use crate::operation::search_tasks::_search_tasks_input::SearchTasksInput;
+
+pub use crate::operation::search_tasks::_search_tasks_output::SearchTasksOutput;
 
 mod _search_tasks_input;
 

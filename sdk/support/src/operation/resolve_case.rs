@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resolve_case::Reso
     }
 }
 
-pub use crate::operation::resolve_case::_resolve_case_output::ResolveCaseOutput;
-
 pub use crate::operation::resolve_case::_resolve_case_input::ResolveCaseInput;
+
+pub use crate::operation::resolve_case::_resolve_case_output::ResolveCaseOutput;
 
 mod _resolve_case_input;
 

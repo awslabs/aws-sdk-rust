@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_authoriza
     }
 }
 
-pub use crate::operation::list_app_authorizations::_list_app_authorizations_output::ListAppAuthorizationsOutput;
-
 pub use crate::operation::list_app_authorizations::_list_app_authorizations_input::ListAppAuthorizationsInput;
+
+pub use crate::operation::list_app_authorizations::_list_app_authorizations_output::ListAppAuthorizationsOutput;
 
 mod _list_app_authorizations_input;
 

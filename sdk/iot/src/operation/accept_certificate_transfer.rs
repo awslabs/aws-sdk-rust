@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_certificate
     }
 }
 
-pub use crate::operation::accept_certificate_transfer::_accept_certificate_transfer_output::AcceptCertificateTransferOutput;
-
 pub use crate::operation::accept_certificate_transfer::_accept_certificate_transfer_input::AcceptCertificateTransferInput;
+
+pub use crate::operation::accept_certificate_transfer::_accept_certificate_transfer_output::AcceptCertificateTransferOutput;
 
 mod _accept_certificate_transfer_input;
 

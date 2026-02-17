@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sampling_ru
     }
 }
 
-pub use crate::operation::create_sampling_rule::_create_sampling_rule_output::CreateSamplingRuleOutput;
-
 pub use crate::operation::create_sampling_rule::_create_sampling_rule_input::CreateSamplingRuleInput;
+
+pub use crate::operation::create_sampling_rule::_create_sampling_rule_output::CreateSamplingRuleOutput;
 
 mod _create_sampling_rule_input;
 

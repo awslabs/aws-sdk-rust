@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_task::Cance
     }
 }
 
-pub use crate::operation::cancel_task::_cancel_task_output::CancelTaskOutput;
-
 pub use crate::operation::cancel_task::_cancel_task_input::CancelTaskInput;
+
+pub use crate::operation::cancel_task::_cancel_task_output::CancelTaskOutput;
 
 mod _cancel_task_input;
 

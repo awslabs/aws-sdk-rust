@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_predict
     }
 }
 
-pub use crate::operation::list_event_predictions::_list_event_predictions_output::ListEventPredictionsOutput;
-
 pub use crate::operation::list_event_predictions::_list_event_predictions_input::ListEventPredictionsInput;
+
+pub use crate::operation::list_event_predictions::_list_event_predictions_output::ListEventPredictionsOutput;
 
 mod _list_event_predictions_input;
 

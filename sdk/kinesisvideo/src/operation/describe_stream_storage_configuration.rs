@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stream_st
     }
 }
 
-pub use crate::operation::describe_stream_storage_configuration::_describe_stream_storage_configuration_output::DescribeStreamStorageConfigurationOutput;
-
 pub use crate::operation::describe_stream_storage_configuration::_describe_stream_storage_configuration_input::DescribeStreamStorageConfigurationInput;
+
+pub use crate::operation::describe_stream_storage_configuration::_describe_stream_storage_configuration_output::DescribeStreamStorageConfigurationOutput;
 
 mod _describe_stream_storage_configuration_input;
 

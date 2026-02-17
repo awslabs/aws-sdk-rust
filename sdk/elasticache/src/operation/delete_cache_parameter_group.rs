@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cache_param
     }
 }
 
-pub use crate::operation::delete_cache_parameter_group::_delete_cache_parameter_group_output::DeleteCacheParameterGroupOutput;
-
 pub use crate::operation::delete_cache_parameter_group::_delete_cache_parameter_group_input::DeleteCacheParameterGroupInput;
+
+pub use crate::operation::delete_cache_parameter_group::_delete_cache_parameter_group_output::DeleteCacheParameterGroupOutput;
 
 mod _delete_cache_parameter_group_input;
 

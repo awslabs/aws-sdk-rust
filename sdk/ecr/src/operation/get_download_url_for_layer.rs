@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_download_url_f
     }
 }
 
-pub use crate::operation::get_download_url_for_layer::_get_download_url_for_layer_output::GetDownloadUrlForLayerOutput;
-
 pub use crate::operation::get_download_url_for_layer::_get_download_url_for_layer_input::GetDownloadUrlForLayerInput;
+
+pub use crate::operation::get_download_url_for_layer::_get_download_url_for_layer_output::GetDownloadUrlForLayerOutput;
 
 mod _get_download_url_for_layer_input;
 

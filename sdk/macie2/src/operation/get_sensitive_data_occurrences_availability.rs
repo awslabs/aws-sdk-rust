@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_sensitive_data_occurrences_availability::_get_sensitive_data_occurrences_availability_output::GetSensitiveDataOccurrencesAvailabilityOutput;
-
 pub use crate::operation::get_sensitive_data_occurrences_availability::_get_sensitive_data_occurrences_availability_input::GetSensitiveDataOccurrencesAvailabilityInput;
+
+pub use crate::operation::get_sensitive_data_occurrences_availability::_get_sensitive_data_occurrences_availability_output::GetSensitiveDataOccurrencesAvailabilityOutput;
 
 mod _get_sensitive_data_occurrences_availability_input;
 

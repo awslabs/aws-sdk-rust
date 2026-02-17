@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_canary::Del
     }
 }
 
-pub use crate::operation::delete_canary::_delete_canary_output::DeleteCanaryOutput;
-
 pub use crate::operation::delete_canary::_delete_canary_input::DeleteCanaryInput;
+
+pub use crate::operation::delete_canary::_delete_canary_output::DeleteCanaryOutput;
 
 mod _delete_canary_input;
 

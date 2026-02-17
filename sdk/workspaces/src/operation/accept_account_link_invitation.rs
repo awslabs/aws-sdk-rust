@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_account_lin
     }
 }
 
-pub use crate::operation::accept_account_link_invitation::_accept_account_link_invitation_output::AcceptAccountLinkInvitationOutput;
-
 pub use crate::operation::accept_account_link_invitation::_accept_account_link_invitation_input::AcceptAccountLinkInvitationInput;
+
+pub use crate::operation::accept_account_link_invitation::_accept_account_link_invitation_output::AcceptAccountLinkInvitationOutput;
 
 mod _accept_account_link_invitation_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_identity_pr
     }
 }
 
-pub use crate::operation::create_identity_provider::_create_identity_provider_output::CreateIdentityProviderOutput;
-
 pub use crate::operation::create_identity_provider::_create_identity_provider_input::CreateIdentityProviderInput;
+
+pub use crate::operation::create_identity_provider::_create_identity_provider_output::CreateIdentityProviderOutput;
 
 mod _create_identity_provider_input;
 

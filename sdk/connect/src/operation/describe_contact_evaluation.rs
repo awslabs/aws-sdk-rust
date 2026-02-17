@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_contact_e
     }
 }
 
-pub use crate::operation::describe_contact_evaluation::_describe_contact_evaluation_output::DescribeContactEvaluationOutput;
-
 pub use crate::operation::describe_contact_evaluation::_describe_contact_evaluation_input::DescribeContactEvaluationInput;
+
+pub use crate::operation::describe_contact_evaluation::_describe_contact_evaluation_output::DescribeContactEvaluationOutput;
 
 mod _describe_contact_evaluation_input;
 

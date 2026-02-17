@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_snaps
     }
 }
 
-pub use crate::operation::get_resource_snapshot::_get_resource_snapshot_output::GetResourceSnapshotOutput;
-
 pub use crate::operation::get_resource_snapshot::_get_resource_snapshot_input::GetResourceSnapshotInput;
+
+pub use crate::operation::get_resource_snapshot::_get_resource_snapshot_output::GetResourceSnapshotOutput;
 
 mod _get_resource_snapshot_input;
 

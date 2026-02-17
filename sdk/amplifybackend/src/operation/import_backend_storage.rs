@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_backend_sto
     }
 }
 
-pub use crate::operation::import_backend_storage::_import_backend_storage_output::ImportBackendStorageOutput;
-
 pub use crate::operation::import_backend_storage::_import_backend_storage_input::ImportBackendStorageInput;
+
+pub use crate::operation::import_backend_storage::_import_backend_storage_output::ImportBackendStorageOutput;
 
 mod _import_backend_storage_input;
 

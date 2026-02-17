@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_namespace::
     }
 }
 
-pub use crate::operation::delete_namespace::_delete_namespace_output::DeleteNamespaceOutput;
-
 pub use crate::operation::delete_namespace::_delete_namespace_input::DeleteNamespaceInput;
+
+pub use crate::operation::delete_namespace::_delete_namespace_output::DeleteNamespaceOutput;
 
 mod _delete_namespace_input;
 

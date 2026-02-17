@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identity_prov
     }
 }
 
-pub use crate::operation::list_identity_providers::_list_identity_providers_output::ListIdentityProvidersOutput;
-
 pub use crate::operation::list_identity_providers::_list_identity_providers_input::ListIdentityProvidersInput;
+
+pub use crate::operation::list_identity_providers::_list_identity_providers_output::ListIdentityProvidersOutput;
 
 mod _list_identity_providers_input;
 

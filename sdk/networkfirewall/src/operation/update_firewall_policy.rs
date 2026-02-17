@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_firewall_po
     }
 }
 
-pub use crate::operation::update_firewall_policy::_update_firewall_policy_output::UpdateFirewallPolicyOutput;
-
 pub use crate::operation::update_firewall_policy::_update_firewall_policy_input::UpdateFirewallPolicyInput;
+
+pub use crate::operation::update_firewall_policy::_update_firewall_policy_output::UpdateFirewallPolicyOutput;
 
 mod _update_firewall_policy_input;
 

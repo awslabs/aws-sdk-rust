@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_practice_run
     }
 }
 
-pub use crate::operation::start_practice_run::_start_practice_run_output::StartPracticeRunOutput;
-
 pub use crate::operation::start_practice_run::_start_practice_run_input::StartPracticeRunInput;
+
+pub use crate::operation::start_practice_run::_start_practice_run_output::StartPracticeRunOutput;
 
 mod _start_practice_run_input;
 

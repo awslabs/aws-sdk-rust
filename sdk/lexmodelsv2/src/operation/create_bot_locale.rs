@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_bot_locale:
     }
 }
 
-pub use crate::operation::create_bot_locale::_create_bot_locale_output::CreateBotLocaleOutput;
-
 pub use crate::operation::create_bot_locale::_create_bot_locale_input::CreateBotLocaleInput;
+
+pub use crate::operation::create_bot_locale::_create_bot_locale_output::CreateBotLocaleOutput;
 
 mod _create_bot_locale_input;
 

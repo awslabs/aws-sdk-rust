@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_geo_match_s
     }
 }
 
-pub use crate::operation::create_geo_match_set::_create_geo_match_set_output::CreateGeoMatchSetOutput;
-
 pub use crate::operation::create_geo_match_set::_create_geo_match_set_input::CreateGeoMatchSetInput;
+
+pub use crate::operation::create_geo_match_set::_create_geo_match_set_output::CreateGeoMatchSetOutput;
 
 mod _create_geo_match_set_input;
 

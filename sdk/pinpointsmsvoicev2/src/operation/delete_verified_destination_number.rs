@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_verified_de
     }
 }
 
-pub use crate::operation::delete_verified_destination_number::_delete_verified_destination_number_output::DeleteVerifiedDestinationNumberOutput;
-
 pub use crate::operation::delete_verified_destination_number::_delete_verified_destination_number_input::DeleteVerifiedDestinationNumberInput;
+
+pub use crate::operation::delete_verified_destination_number::_delete_verified_destination_number_output::DeleteVerifiedDestinationNumberOutput;
 
 mod _delete_verified_destination_number_input;
 

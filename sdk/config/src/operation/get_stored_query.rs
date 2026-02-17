@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_stored_query::
     }
 }
 
-pub use crate::operation::get_stored_query::_get_stored_query_output::GetStoredQueryOutput;
-
 pub use crate::operation::get_stored_query::_get_stored_query_input::GetStoredQueryInput;
+
+pub use crate::operation::get_stored_query::_get_stored_query_output::GetStoredQueryOutput;
 
 mod _get_stored_query_input;
 

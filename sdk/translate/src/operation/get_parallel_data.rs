@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_parallel_data:
     }
 }
 
-pub use crate::operation::get_parallel_data::_get_parallel_data_output::GetParallelDataOutput;
-
 pub use crate::operation::get_parallel_data::_get_parallel_data_input::GetParallelDataInput;
+
+pub use crate::operation::get_parallel_data::_get_parallel_data_output::GetParallelDataOutput;
 
 mod _get_parallel_data_input;
 

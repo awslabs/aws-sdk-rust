@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_container_f
     }
 }
 
-pub use crate::operation::delete_container_fleet::_delete_container_fleet_output::DeleteContainerFleetOutput;
-
 pub use crate::operation::delete_container_fleet::_delete_container_fleet_input::DeleteContainerFleetInput;
+
+pub use crate::operation::delete_container_fleet::_delete_container_fleet_output::DeleteContainerFleetOutput;
 
 mod _delete_container_fleet_input;
 

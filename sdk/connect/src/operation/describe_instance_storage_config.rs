@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_storage_config::_describe_instance_storage_config_output::DescribeInstanceStorageConfigOutput;
-
 pub use crate::operation::describe_instance_storage_config::_describe_instance_storage_config_input::DescribeInstanceStorageConfigInput;
+
+pub use crate::operation::describe_instance_storage_config::_describe_instance_storage_config_output::DescribeInstanceStorageConfigOutput;
 
 mod _describe_instance_storage_config_input;
 

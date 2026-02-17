@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_document_path:
     }
 }
 
-pub use crate::operation::get_document_path::_get_document_path_output::GetDocumentPathOutput;
-
 pub use crate::operation::get_document_path::_get_document_path_input::GetDocumentPathInput;
+
+pub use crate::operation::get_document_path::_get_document_path_output::GetDocumentPathOutput;
 
 mod _get_document_path_input;
 

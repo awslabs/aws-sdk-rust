@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_workflow
     }
 }
 
-pub use crate::operation::batch_get_workflows::_batch_get_workflows_output::BatchGetWorkflowsOutput;
-
 pub use crate::operation::batch_get_workflows::_batch_get_workflows_input::BatchGetWorkflowsInput;
+
+pub use crate::operation::batch_get_workflows::_batch_get_workflows_output::BatchGetWorkflowsOutput;
 
 mod _batch_get_workflows_input;
 

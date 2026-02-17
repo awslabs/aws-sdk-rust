@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_http_namesp
     }
 }
 
-pub use crate::operation::update_http_namespace::_update_http_namespace_output::UpdateHttpNamespaceOutput;
-
 pub use crate::operation::update_http_namespace::_update_http_namespace_input::UpdateHttpNamespaceInput;
+
+pub use crate::operation::update_http_namespace::_update_http_namespace_output::UpdateHttpNamespaceOutput;
 
 mod _update_http_namespace_input;
 

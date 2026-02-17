@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_pull_throug
     }
 }
 
-pub use crate::operation::update_pull_through_cache_rule::_update_pull_through_cache_rule_output::UpdatePullThroughCacheRuleOutput;
-
 pub use crate::operation::update_pull_through_cache_rule::_update_pull_through_cache_rule_input::UpdatePullThroughCacheRuleInput;
+
+pub use crate::operation::update_pull_through_cache_rule::_update_pull_through_cache_rule_output::UpdatePullThroughCacheRuleOutput;
 
 mod _update_pull_through_cache_rule_input;
 

@@ -340,9 +340,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_checker_ip_ran
     }
 }
 
-pub use crate::operation::get_checker_ip_ranges::_get_checker_ip_ranges_output::GetCheckerIpRangesOutput;
-
 pub use crate::operation::get_checker_ip_ranges::_get_checker_ip_ranges_input::GetCheckerIpRangesInput;
+
+pub use crate::operation::get_checker_ip_ranges::_get_checker_ip_ranges_output::GetCheckerIpRangesOutput;
 
 mod _get_checker_ip_ranges_input;
 

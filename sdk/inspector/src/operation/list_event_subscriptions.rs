@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_event_subscri
     }
 }
 
-pub use crate::operation::list_event_subscriptions::_list_event_subscriptions_output::ListEventSubscriptionsOutput;
-
 pub use crate::operation::list_event_subscriptions::_list_event_subscriptions_input::ListEventSubscriptionsInput;
+
+pub use crate::operation::list_event_subscriptions::_list_event_subscriptions_output::ListEventSubscriptionsOutput;
 
 mod _list_event_subscriptions_input;
 

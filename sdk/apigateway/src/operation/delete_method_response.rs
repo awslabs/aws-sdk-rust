@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_method_resp
     }
 }
 
-pub use crate::operation::delete_method_response::_delete_method_response_output::DeleteMethodResponseOutput;
-
 pub use crate::operation::delete_method_response::_delete_method_response_input::DeleteMethodResponseInput;
+
+pub use crate::operation::delete_method_response::_delete_method_response_output::DeleteMethodResponseOutput;
 
 mod _delete_method_response_input;
 

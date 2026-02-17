@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_quota
     }
 }
 
-pub use crate::operation::list_service_quotas::_list_service_quotas_output::ListServiceQuotasOutput;
-
 pub use crate::operation::list_service_quotas::_list_service_quotas_input::ListServiceQuotasInput;
+
+pub use crate::operation::list_service_quotas::_list_service_quotas_output::ListServiceQuotasOutput;
 
 mod _list_service_quotas_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_topics_detec
     }
 }
 
-pub use crate::operation::start_topics_detection_job::_start_topics_detection_job_output::StartTopicsDetectionJobOutput;
-
 pub use crate::operation::start_topics_detection_job::_start_topics_detection_job_input::StartTopicsDetectionJobInput;
+
+pub use crate::operation::start_topics_detection_job::_start_topics_detection_job_output::StartTopicsDetectionJobOutput;
 
 mod _start_topics_detection_job_input;
 

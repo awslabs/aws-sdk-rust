@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_command_execut
     }
 }
 
-pub use crate::operation::get_command_execution::_get_command_execution_output::GetCommandExecutionOutput;
-
 pub use crate::operation::get_command_execution::_get_command_execution_input::GetCommandExecutionInput;
+
+pub use crate::operation::get_command_execution::_get_command_execution_output::GetCommandExecutionOutput;
 
 mod _get_command_execution_input;
 

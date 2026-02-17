@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpc_peeri
     }
 }
 
-pub use crate::operation::describe_vpc_peering_authorizations::_describe_vpc_peering_authorizations_output::DescribeVpcPeeringAuthorizationsOutput;
-
 pub use crate::operation::describe_vpc_peering_authorizations::_describe_vpc_peering_authorizations_input::DescribeVpcPeeringAuthorizationsInput;
+
+pub use crate::operation::describe_vpc_peering_authorizations::_describe_vpc_peering_authorizations_output::DescribeVpcPeeringAuthorizationsOutput;
 
 mod _describe_vpc_peering_authorizations_input;
 

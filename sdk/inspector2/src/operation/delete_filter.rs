@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_filter::Del
     }
 }
 
-pub use crate::operation::delete_filter::_delete_filter_output::DeleteFilterOutput;
-
 pub use crate::operation::delete_filter::_delete_filter_input::DeleteFilterInput;
+
+pub use crate::operation::delete_filter::_delete_filter_output::DeleteFilterOutput;
 
 mod _delete_filter_input;
 

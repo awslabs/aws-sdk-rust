@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_document_me
     }
 }
 
-pub use crate::operation::update_document_metadata::_update_document_metadata_output::UpdateDocumentMetadataOutput;
-
 pub use crate::operation::update_document_metadata::_update_document_metadata_input::UpdateDocumentMetadataInput;
+
+pub use crate::operation::update_document_metadata::_update_document_metadata_output::UpdateDocumentMetadataOutput;
 
 mod _update_document_metadata_input;
 

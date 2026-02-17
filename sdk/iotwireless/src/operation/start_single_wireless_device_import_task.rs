@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_single_wirel
     }
 }
 
-pub use crate::operation::start_single_wireless_device_import_task::_start_single_wireless_device_import_task_output::StartSingleWirelessDeviceImportTaskOutput;
-
 pub use crate::operation::start_single_wireless_device_import_task::_start_single_wireless_device_import_task_input::StartSingleWirelessDeviceImportTaskInput;
+
+pub use crate::operation::start_single_wireless_device_import_task::_start_single_wireless_device_import_task_output::StartSingleWirelessDeviceImportTaskOutput;
 
 mod _start_single_wireless_device_import_task_input;
 

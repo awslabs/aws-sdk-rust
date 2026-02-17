@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_view::
     }
 }
 
-pub use crate::operation::get_managed_view::_get_managed_view_output::GetManagedViewOutput;
-
 pub use crate::operation::get_managed_view::_get_managed_view_input::GetManagedViewInput;
+
+pub use crate::operation::get_managed_view::_get_managed_view_output::GetManagedViewOutput;
 
 mod _get_managed_view_input;
 

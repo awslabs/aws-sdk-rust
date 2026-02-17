@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_run::Cancel
     }
 }
 
-pub use crate::operation::cancel_run::_cancel_run_output::CancelRunOutput;
-
 pub use crate::operation::cancel_run::_cancel_run_input::CancelRunInput;
+
+pub use crate::operation::cancel_run::_cancel_run_output::CancelRunOutput;
 
 mod _cancel_run_input;
 

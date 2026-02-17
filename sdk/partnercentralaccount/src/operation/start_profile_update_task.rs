@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_profile_upda
     }
 }
 
-pub use crate::operation::start_profile_update_task::_start_profile_update_task_output::StartProfileUpdateTaskOutput;
-
 pub use crate::operation::start_profile_update_task::_start_profile_update_task_input::StartProfileUpdateTaskInput;
+
+pub use crate::operation::start_profile_update_task::_start_profile_update_task_output::StartProfileUpdateTaskOutput;
 
 mod _start_profile_update_task_input;
 

@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_proxy_sessi
     }
 }
 
-pub use crate::operation::update_proxy_session::_update_proxy_session_output::UpdateProxySessionOutput;
-
 pub use crate::operation::update_proxy_session::_update_proxy_session_input::UpdateProxySessionInput;
+
+pub use crate::operation::update_proxy_session::_update_proxy_session_output::UpdateProxySessionOutput;
 
 mod _update_proxy_session_input;
 

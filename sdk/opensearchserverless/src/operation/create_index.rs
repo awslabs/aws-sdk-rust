@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_index::Crea
     }
 }
 
-pub use crate::operation::create_index::_create_index_output::CreateIndexOutput;
-
 pub use crate::operation::create_index::_create_index_input::CreateIndexInput;
+
+pub use crate::operation::create_index::_create_index_output::CreateIndexOutput;
 
 mod _create_index_input;
 

@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_queue_fleet
     }
 }
 
-pub use crate::operation::delete_queue_fleet_association::_delete_queue_fleet_association_output::DeleteQueueFleetAssociationOutput;
-
 pub use crate::operation::delete_queue_fleet_association::_delete_queue_fleet_association_input::DeleteQueueFleetAssociationInput;
+
+pub use crate::operation::delete_queue_fleet_association::_delete_queue_fleet_association_output::DeleteQueueFleetAssociationOutput;
 
 mod _delete_queue_fleet_association_input;
 

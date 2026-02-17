@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_organizatio
     }
 }
 
-pub use crate::operation::search_organization_insights::_search_organization_insights_output::SearchOrganizationInsightsOutput;
-
 pub use crate::operation::search_organization_insights::_search_organization_insights_input::SearchOrganizationInsightsInput;
+
+pub use crate::operation::search_organization_insights::_search_organization_insights_output::SearchOrganizationInsightsOutput;
 
 mod _search_organization_insights_input;
 

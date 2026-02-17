@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_integration
     }
 }
 
-pub use crate::operation::update_integration_table_properties::_update_integration_table_properties_output::UpdateIntegrationTablePropertiesOutput;
-
 pub use crate::operation::update_integration_table_properties::_update_integration_table_properties_input::UpdateIntegrationTablePropertiesInput;
+
+pub use crate::operation::update_integration_table_properties::_update_integration_table_properties_output::UpdateIntegrationTablePropertiesOutput;
 
 mod _update_integration_table_properties_input;
 

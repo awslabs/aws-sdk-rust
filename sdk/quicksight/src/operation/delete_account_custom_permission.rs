@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_cus
     }
 }
 
-pub use crate::operation::delete_account_custom_permission::_delete_account_custom_permission_output::DeleteAccountCustomPermissionOutput;
-
 pub use crate::operation::delete_account_custom_permission::_delete_account_custom_permission_input::DeleteAccountCustomPermissionInput;
+
+pub use crate::operation::delete_account_custom_permission::_delete_account_custom_permission_output::DeleteAccountCustomPermissionOutput;
 
 mod _delete_account_custom_permission_input;
 

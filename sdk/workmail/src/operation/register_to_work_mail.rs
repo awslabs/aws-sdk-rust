@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_to_work_m
     }
 }
 
-pub use crate::operation::register_to_work_mail::_register_to_work_mail_output::RegisterToWorkMailOutput;
-
 pub use crate::operation::register_to_work_mail::_register_to_work_mail_input::RegisterToWorkMailInput;
+
+pub use crate::operation::register_to_work_mail::_register_to_work_mail_output::RegisterToWorkMailOutput;
 
 mod _register_to_work_mail_input;
 

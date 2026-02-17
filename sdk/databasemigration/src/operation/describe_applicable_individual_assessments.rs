@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_applicable_individual_assessments::_describe_applicable_individual_assessments_output::DescribeApplicableIndividualAssessmentsOutput;
-
 pub use crate::operation::describe_applicable_individual_assessments::_describe_applicable_individual_assessments_input::DescribeApplicableIndividualAssessmentsInput;
+
+pub use crate::operation::describe_applicable_individual_assessments::_describe_applicable_individual_assessments_output::DescribeApplicableIndividualAssessmentsOutput;
 
 mod _describe_applicable_individual_assessments_input;
 

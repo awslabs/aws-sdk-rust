@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_catalog_to_
     }
 }
 
-pub use crate::operation::import_catalog_to_glue::_import_catalog_to_glue_output::ImportCatalogToGlueOutput;
-
 pub use crate::operation::import_catalog_to_glue::_import_catalog_to_glue_input::ImportCatalogToGlueInput;
+
+pub use crate::operation::import_catalog_to_glue::_import_catalog_to_glue_output::ImportCatalogToGlueOutput;
 
 mod _import_catalog_to_glue_input;
 

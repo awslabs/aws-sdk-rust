@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scaling_p
     }
 }
 
-pub use crate::operation::describe_scaling_parameters::_describe_scaling_parameters_output::DescribeScalingParametersOutput;
-
 pub use crate::operation::describe_scaling_parameters::_describe_scaling_parameters_input::DescribeScalingParametersInput;
+
+pub use crate::operation::describe_scaling_parameters::_describe_scaling_parameters_output::DescribeScalingParametersOutput;
 
 mod _describe_scaling_parameters_input;
 

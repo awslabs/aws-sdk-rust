@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_organiz
     }
 }
 
-pub use crate::operation::deregister_organization_admin_account::_deregister_organization_admin_account_output::DeregisterOrganizationAdminAccountOutput;
-
 pub use crate::operation::deregister_organization_admin_account::_deregister_organization_admin_account_input::DeregisterOrganizationAdminAccountInput;
+
+pub use crate::operation::deregister_organization_admin_account::_deregister_organization_admin_account_output::DeregisterOrganizationAdminAccountOutput;
 
 mod _deregister_organization_admin_account_input;
 

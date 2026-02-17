@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_matching_jobs
     }
 }
 
-pub use crate::operation::list_matching_jobs::_list_matching_jobs_output::ListMatchingJobsOutput;
-
 pub use crate::operation::list_matching_jobs::_list_matching_jobs_input::ListMatchingJobsInput;
+
+pub use crate::operation::list_matching_jobs::_list_matching_jobs_output::ListMatchingJobsOutput;
 
 mod _list_matching_jobs_input;
 

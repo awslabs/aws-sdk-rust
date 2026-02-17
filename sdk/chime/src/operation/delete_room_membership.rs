@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_room_member
     }
 }
 
-pub use crate::operation::delete_room_membership::_delete_room_membership_output::DeleteRoomMembershipOutput;
-
 pub use crate::operation::delete_room_membership::_delete_room_membership_input::DeleteRoomMembershipInput;
+
+pub use crate::operation::delete_room_membership::_delete_room_membership_output::DeleteRoomMembershipOutput;
 
 mod _delete_room_membership_input;
 

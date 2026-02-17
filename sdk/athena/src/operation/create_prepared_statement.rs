@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_prepared_st
     }
 }
 
-pub use crate::operation::create_prepared_statement::_create_prepared_statement_output::CreatePreparedStatementOutput;
-
 pub use crate::operation::create_prepared_statement::_create_prepared_statement_input::CreatePreparedStatementInput;
+
+pub use crate::operation::create_prepared_statement::_create_prepared_statement_output::CreatePreparedStatementOutput;
 
 mod _create_prepared_statement_input;
 

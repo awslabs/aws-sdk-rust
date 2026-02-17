@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app::Create
     }
 }
 
-pub use crate::operation::create_app::_create_app_output::CreateAppOutput;
-
 pub use crate::operation::create_app::_create_app_input::CreateAppInput;
+
+pub use crate::operation::create_app::_create_app_output::CreateAppOutput;
 
 mod _create_app_input;
 

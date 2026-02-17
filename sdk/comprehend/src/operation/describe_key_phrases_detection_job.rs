@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_key_phras
     }
 }
 
-pub use crate::operation::describe_key_phrases_detection_job::_describe_key_phrases_detection_job_output::DescribeKeyPhrasesDetectionJobOutput;
-
 pub use crate::operation::describe_key_phrases_detection_job::_describe_key_phrases_detection_job_input::DescribeKeyPhrasesDetectionJobInput;
+
+pub use crate::operation::describe_key_phrases_detection_job::_describe_key_phrases_detection_job_output::DescribeKeyPhrasesDetectionJobOutput;
 
 mod _describe_key_phrases_detection_job_input;
 

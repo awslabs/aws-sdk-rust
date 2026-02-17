@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fleet_eve
     }
 }
 
-pub use crate::operation::describe_fleet_events::_describe_fleet_events_output::DescribeFleetEventsOutput;
-
 pub use crate::operation::describe_fleet_events::_describe_fleet_events_input::DescribeFleetEventsInput;
+
+pub use crate::operation::describe_fleet_events::_describe_fleet_events_output::DescribeFleetEventsOutput;
 
 mod _describe_fleet_events_input;
 

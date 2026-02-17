@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_configured_
     }
 }
 
-pub use crate::operation::update_configured_audience_model::_update_configured_audience_model_output::UpdateConfiguredAudienceModelOutput;
-
 pub use crate::operation::update_configured_audience_model::_update_configured_audience_model_input::UpdateConfiguredAudienceModelInput;
+
+pub use crate::operation::update_configured_audience_model::_update_configured_audience_model_output::UpdateConfiguredAudienceModelOutput;
 
 mod _update_configured_audience_model_input;
 

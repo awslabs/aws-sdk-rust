@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_component_typ
     }
 }
 
-pub use crate::operation::list_component_types::_list_component_types_output::ListComponentTypesOutput;
-
 pub use crate::operation::list_component_types::_list_component_types_input::ListComponentTypesInput;
+
+pub use crate::operation::list_component_types::_list_component_types_output::ListComponentTypesOutput;
 
 mod _list_component_types_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_wireless_de
     }
 }
 
-pub use crate::operation::create_wireless_device::_create_wireless_device_output::CreateWirelessDeviceOutput;
-
 pub use crate::operation::create_wireless_device::_create_wireless_device_input::CreateWirelessDeviceInput;
+
+pub use crate::operation::create_wireless_device::_create_wireless_device_output::CreateWirelessDeviceOutput;
 
 mod _create_wireless_device_input;
 

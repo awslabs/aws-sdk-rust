@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_name
     }
 }
 
-pub use crate::operation::update_domain_name::_update_domain_name_output::UpdateDomainNameOutput;
-
 pub use crate::operation::update_domain_name::_update_domain_name_input::UpdateDomainNameInput;
+
+pub use crate::operation::update_domain_name::_update_domain_name_output::UpdateDomainNameOutput;
 
 mod _update_domain_name_input;
 

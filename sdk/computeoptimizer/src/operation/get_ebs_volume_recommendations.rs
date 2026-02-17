@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ebs_volume_rec
     }
 }
 
-pub use crate::operation::get_ebs_volume_recommendations::_get_ebs_volume_recommendations_output::GetEbsVolumeRecommendationsOutput;
-
 pub use crate::operation::get_ebs_volume_recommendations::_get_ebs_volume_recommendations_input::GetEbsVolumeRecommendationsInput;
+
+pub use crate::operation::get_ebs_volume_recommendations::_get_ebs_volume_recommendations_output::GetEbsVolumeRecommendationsOutput;
 
 mod _get_ebs_volume_recommendations_input;
 

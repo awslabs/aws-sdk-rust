@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_calculation_ex
     }
 }
 
-pub use crate::operation::get_calculation_execution_status::_get_calculation_execution_status_output::GetCalculationExecutionStatusOutput;
-
 pub use crate::operation::get_calculation_execution_status::_get_calculation_execution_status_input::GetCalculationExecutionStatusInput;
+
+pub use crate::operation::get_calculation_execution_status::_get_calculation_execution_status_output::GetCalculationExecutionStatusOutput;
 
 mod _get_calculation_execution_status_input;
 

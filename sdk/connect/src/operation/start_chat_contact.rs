@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_chat_contact
     }
 }
 
-pub use crate::operation::start_chat_contact::_start_chat_contact_output::StartChatContactOutput;
-
 pub use crate::operation::start_chat_contact::_start_chat_contact_input::StartChatContactInput;
+
+pub use crate::operation::start_chat_contact::_start_chat_contact_output::StartChatContactOutput;
 
 mod _start_chat_contact_input;
 

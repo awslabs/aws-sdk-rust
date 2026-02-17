@@ -342,9 +342,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_channel:
     }
 }
 
-pub use crate::operation::batch_get_channel::_batch_get_channel_output::BatchGetChannelOutput;
-
 pub use crate::operation::batch_get_channel::_batch_get_channel_input::BatchGetChannelInput;
+
+pub use crate::operation::batch_get_channel::_batch_get_channel_output::BatchGetChannelOutput;
 
 mod _batch_get_channel_input;
 

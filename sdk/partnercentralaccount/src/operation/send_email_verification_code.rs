@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_email_verific
     }
 }
 
-pub use crate::operation::send_email_verification_code::_send_email_verification_code_output::SendEmailVerificationCodeOutput;
-
 pub use crate::operation::send_email_verification_code::_send_email_verification_code_input::SendEmailVerificationCodeInput;
+
+pub use crate::operation::send_email_verification_code::_send_email_verification_code_output::SendEmailVerificationCodeOutput;
 
 mod _send_email_verification_code_input;
 

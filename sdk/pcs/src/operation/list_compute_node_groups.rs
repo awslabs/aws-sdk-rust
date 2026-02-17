@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compute_node_
     }
 }
 
-pub use crate::operation::list_compute_node_groups::_list_compute_node_groups_output::ListComputeNodeGroupsOutput;
-
 pub use crate::operation::list_compute_node_groups::_list_compute_node_groups_input::ListComputeNodeGroupsInput;
+
+pub use crate::operation::list_compute_node_groups::_list_compute_node_groups_output::ListComputeNodeGroupsOutput;
 
 mod _list_compute_node_groups_input;
 

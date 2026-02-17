@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_upload_status:
     }
 }
 
-pub use crate::operation::get_upload_status::_get_upload_status_output::GetUploadStatusOutput;
-
 pub use crate::operation::get_upload_status::_get_upload_status_input::GetUploadStatusInput;
+
+pub use crate::operation::get_upload_status::_get_upload_status_output::GetUploadStatusOutput;
 
 mod _get_upload_status_input;
 

@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_virtual_r
     }
 }
 
-pub use crate::operation::describe_virtual_router::_describe_virtual_router_output::DescribeVirtualRouterOutput;
-
 pub use crate::operation::describe_virtual_router::_describe_virtual_router_input::DescribeVirtualRouterInput;
+
+pub use crate::operation::describe_virtual_router::_describe_virtual_router_output::DescribeVirtualRouterOutput;
 
 mod _describe_virtual_router_input;
 

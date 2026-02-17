@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::install_to_remote_
     }
 }
 
-pub use crate::operation::install_to_remote_access_session::_install_to_remote_access_session_output::InstallToRemoteAccessSessionOutput;
-
 pub use crate::operation::install_to_remote_access_session::_install_to_remote_access_session_input::InstallToRemoteAccessSessionInput;
+
+pub use crate::operation::install_to_remote_access_session::_install_to_remote_access_session_output::InstallToRemoteAccessSessionOutput;
 
 mod _install_to_remote_access_session_input;
 

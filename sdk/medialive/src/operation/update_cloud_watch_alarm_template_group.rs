@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cloud_watch
     }
 }
 
-pub use crate::operation::update_cloud_watch_alarm_template_group::_update_cloud_watch_alarm_template_group_output::UpdateCloudWatchAlarmTemplateGroupOutput;
-
 pub use crate::operation::update_cloud_watch_alarm_template_group::_update_cloud_watch_alarm_template_group_input::UpdateCloudWatchAlarmTemplateGroupInput;
+
+pub use crate::operation::update_cloud_watch_alarm_template_group::_update_cloud_watch_alarm_template_group_output::UpdateCloudWatchAlarmTemplateGroupOutput;
 
 mod _update_cloud_watch_alarm_template_group_input;
 

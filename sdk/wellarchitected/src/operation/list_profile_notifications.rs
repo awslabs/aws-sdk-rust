@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_profile_notif
     }
 }
 
-pub use crate::operation::list_profile_notifications::_list_profile_notifications_output::ListProfileNotificationsOutput;
-
 pub use crate::operation::list_profile_notifications::_list_profile_notifications_input::ListProfileNotificationsInput;
+
+pub use crate::operation::list_profile_notifications::_list_profile_notifications_output::ListProfileNotificationsOutput;
 
 mod _list_profile_notifications_input;
 

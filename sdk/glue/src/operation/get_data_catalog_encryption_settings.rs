@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_catalog_e
     }
 }
 
-pub use crate::operation::get_data_catalog_encryption_settings::_get_data_catalog_encryption_settings_output::GetDataCatalogEncryptionSettingsOutput;
-
 pub use crate::operation::get_data_catalog_encryption_settings::_get_data_catalog_encryption_settings_input::GetDataCatalogEncryptionSettingsInput;
+
+pub use crate::operation::get_data_catalog_encryption_settings::_get_data_catalog_encryption_settings_output::GetDataCatalogEncryptionSettingsOutput;
 
 mod _get_data_catalog_encryption_settings_input;
 

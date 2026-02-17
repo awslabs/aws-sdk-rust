@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_group::De
     }
 }
 
-pub use crate::operation::describe_group::_describe_group_output::DescribeGroupOutput;
-
 pub use crate::operation::describe_group::_describe_group_input::DescribeGroupInput;
+
+pub use crate::operation::describe_group::_describe_group_output::DescribeGroupOutput;
 
 mod _describe_group_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_inference_s
     }
 }
 
-pub use crate::operation::update_inference_scheduler::_update_inference_scheduler_output::UpdateInferenceSchedulerOutput;
-
 pub use crate::operation::update_inference_scheduler::_update_inference_scheduler_input::UpdateInferenceSchedulerInput;
+
+pub use crate::operation::update_inference_scheduler::_update_inference_scheduler_output::UpdateInferenceSchedulerOutput;
 
 mod _update_inference_scheduler_input;
 

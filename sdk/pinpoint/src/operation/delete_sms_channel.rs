@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sms_channel
     }
 }
 
-pub use crate::operation::delete_sms_channel::_delete_sms_channel_output::DeleteSmsChannelOutput;
-
 pub use crate::operation::delete_sms_channel::_delete_sms_channel_input::DeleteSmsChannelInput;
+
+pub use crate::operation::delete_sms_channel::_delete_sms_channel_output::DeleteSmsChannelOutput;
 
 mod _delete_sms_channel_input;
 

@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flow_exec
     }
 }
 
-pub use crate::operation::describe_flow_execution_records::_describe_flow_execution_records_output::DescribeFlowExecutionRecordsOutput;
-
 pub use crate::operation::describe_flow_execution_records::_describe_flow_execution_records_input::DescribeFlowExecutionRecordsInput;
+
+pub use crate::operation::describe_flow_execution_records::_describe_flow_execution_records_output::DescribeFlowExecutionRecordsOutput;
 
 mod _describe_flow_execution_records_input;
 

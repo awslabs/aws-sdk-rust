@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_application_ac
     }
 }
 
-pub use crate::operation::get_application_access_scope::_get_application_access_scope_output::GetApplicationAccessScopeOutput;
-
 pub use crate::operation::get_application_access_scope::_get_application_access_scope_input::GetApplicationAccessScopeInput;
+
+pub use crate::operation::get_application_access_scope::_get_application_access_scope_output::GetApplicationAccessScopeOutput;
 
 mod _get_application_access_scope_input;
 

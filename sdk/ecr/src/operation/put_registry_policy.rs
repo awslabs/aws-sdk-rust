@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_registry_polic
     }
 }
 
-pub use crate::operation::put_registry_policy::_put_registry_policy_output::PutRegistryPolicyOutput;
-
 pub use crate::operation::put_registry_policy::_put_registry_policy_input::PutRegistryPolicyInput;
+
+pub use crate::operation::put_registry_policy::_put_registry_policy_output::PutRegistryPolicyOutput;
 
 mod _put_registry_policy_input;
 

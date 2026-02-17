@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_cross_acc
     }
 }
 
-pub use crate::operation::register_cross_account_access_role::_register_cross_account_access_role_output::RegisterCrossAccountAccessRoleOutput;
-
 pub use crate::operation::register_cross_account_access_role::_register_cross_account_access_role_input::RegisterCrossAccountAccessRoleInput;
+
+pub use crate::operation::register_cross_account_access_role::_register_cross_account_access_role_output::RegisterCrossAccountAccessRoleOutput;
 
 mod _register_cross_account_access_role_input;
 

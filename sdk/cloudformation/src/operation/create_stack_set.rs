@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stack_set::
     }
 }
 
-pub use crate::operation::create_stack_set::_create_stack_set_output::CreateStackSetOutput;
-
 pub use crate::operation::create_stack_set::_create_stack_set_input::CreateStackSetInput;
+
+pub use crate::operation::create_stack_set::_create_stack_set_output::CreateStackSetOutput;
 
 mod _create_stack_set_input;
 

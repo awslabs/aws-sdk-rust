@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_aws_training_certification_email_domain::_associate_aws_training_certification_email_domain_output::AssociateAwsTrainingCertificationEmailDomainOutput;
-
 pub use crate::operation::associate_aws_training_certification_email_domain::_associate_aws_training_certification_email_domain_input::AssociateAwsTrainingCertificationEmailDomainInput;
+
+pub use crate::operation::associate_aws_training_certification_email_domain::_associate_aws_training_certification_email_domain_output::AssociateAwsTrainingCertificationEmailDomainOutput;
 
 mod _associate_aws_training_certification_email_domain_input;
 

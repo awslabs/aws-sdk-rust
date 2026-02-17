@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_agent_card::Ge
     }
 }
 
-pub use crate::operation::get_agent_card::_get_agent_card_output::GetAgentCardOutput;
-
 pub use crate::operation::get_agent_card::_get_agent_card_input::GetAgentCardInput;
+
+pub use crate::operation::get_agent_card::_get_agent_card_output::GetAgentCardOutput;
 
 mod _get_agent_card_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::schedule_key_delet
     }
 }
 
-pub use crate::operation::schedule_key_deletion::_schedule_key_deletion_output::ScheduleKeyDeletionOutput;
-
 pub use crate::operation::schedule_key_deletion::_schedule_key_deletion_input::ScheduleKeyDeletionInput;
+
+pub use crate::operation::schedule_key_deletion::_schedule_key_deletion_output::ScheduleKeyDeletionOutput;
 
 mod _schedule_key_deletion_input;
 

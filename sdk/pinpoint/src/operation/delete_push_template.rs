@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_push_templa
     }
 }
 
-pub use crate::operation::delete_push_template::_delete_push_template_output::DeletePushTemplateOutput;
-
 pub use crate::operation::delete_push_template::_delete_push_template_input::DeletePushTemplateInput;
+
+pub use crate::operation::delete_push_template::_delete_push_template_output::DeletePushTemplateOutput;
 
 mod _delete_push_template_input;
 

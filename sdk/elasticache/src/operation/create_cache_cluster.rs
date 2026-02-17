@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cache_clust
     }
 }
 
-pub use crate::operation::create_cache_cluster::_create_cache_cluster_output::CreateCacheClusterOutput;
-
 pub use crate::operation::create_cache_cluster::_create_cache_cluster_input::CreateCacheClusterInput;
+
+pub use crate::operation::create_cache_cluster::_create_cache_cluster_output::CreateCacheClusterOutput;
 
 mod _create_cache_cluster_input;
 

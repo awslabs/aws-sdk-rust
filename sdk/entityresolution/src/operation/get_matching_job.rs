@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_matching_job::
     }
 }
 
-pub use crate::operation::get_matching_job::_get_matching_job_output::GetMatchingJobOutput;
-
 pub use crate::operation::get_matching_job::_get_matching_job_input::GetMatchingJobInput;
+
+pub use crate::operation::get_matching_job::_get_matching_job_output::GetMatchingJobOutput;
 
 mod _get_matching_job_input;
 

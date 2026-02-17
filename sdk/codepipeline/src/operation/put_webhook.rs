@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_webhook::PutWe
     }
 }
 
-pub use crate::operation::put_webhook::_put_webhook_output::PutWebhookOutput;
-
 pub use crate::operation::put_webhook::_put_webhook_input::PutWebhookInput;
+
+pub use crate::operation::put_webhook::_put_webhook_output::PutWebhookOutput;
 
 mod _put_webhook_input;
 

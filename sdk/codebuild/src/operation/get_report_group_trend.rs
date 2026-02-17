@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_report_group_t
     }
 }
 
-pub use crate::operation::get_report_group_trend::_get_report_group_trend_output::GetReportGroupTrendOutput;
-
 pub use crate::operation::get_report_group_trend::_get_report_group_trend_input::GetReportGroupTrendInput;
+
+pub use crate::operation::get_report_group_trend::_get_report_group_trend_output::GetReportGroupTrendOutput;
 
 mod _get_report_group_trend_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fraudster
     }
 }
 
-pub use crate::operation::describe_fraudster::_describe_fraudster_output::DescribeFraudsterOutput;
-
 pub use crate::operation::describe_fraudster::_describe_fraudster_input::DescribeFraudsterInput;
+
+pub use crate::operation::describe_fraudster::_describe_fraudster_output::DescribeFraudsterOutput;
 
 mod _describe_fraudster_input;
 

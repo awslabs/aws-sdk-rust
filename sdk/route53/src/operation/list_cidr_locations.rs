@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cidr_location
     }
 }
 
-pub use crate::operation::list_cidr_locations::_list_cidr_locations_output::ListCidrLocationsOutput;
-
 pub use crate::operation::list_cidr_locations::_list_cidr_locations_input::ListCidrLocationsInput;
+
+pub use crate::operation::list_cidr_locations::_list_cidr_locations_output::ListCidrLocationsOutput;
 
 mod _list_cidr_locations_input;
 

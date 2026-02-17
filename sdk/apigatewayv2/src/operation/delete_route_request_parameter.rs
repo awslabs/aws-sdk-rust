@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_route_reque
     }
 }
 
-pub use crate::operation::delete_route_request_parameter::_delete_route_request_parameter_output::DeleteRouteRequestParameterOutput;
-
 pub use crate::operation::delete_route_request_parameter::_delete_route_request_parameter_input::DeleteRouteRequestParameterInput;
+
+pub use crate::operation::delete_route_request_parameter::_delete_route_request_parameter_output::DeleteRouteRequestParameterOutput;
 
 mod _delete_route_request_parameter_input;
 

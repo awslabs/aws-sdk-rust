@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_policy_engi
     }
 }
 
-pub use crate::operation::delete_policy_engine::_delete_policy_engine_output::DeletePolicyEngineOutput;
-
 pub use crate::operation::delete_policy_engine::_delete_policy_engine_input::DeletePolicyEngineInput;
+
+pub use crate::operation::delete_policy_engine::_delete_policy_engine_output::DeletePolicyEngineOutput;
 
 mod _delete_policy_engine_input;
 

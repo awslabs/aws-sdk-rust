@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::skip_wait_time_for
     }
 }
 
-pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_time_for_instance_termination_output::SkipWaitTimeForInstanceTerminationOutput;
-
 pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_time_for_instance_termination_input::SkipWaitTimeForInstanceTerminationInput;
+
+pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_time_for_instance_termination_output::SkipWaitTimeForInstanceTerminationOutput;
 
 mod _skip_wait_time_for_instance_termination_input;
 

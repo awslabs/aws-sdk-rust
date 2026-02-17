@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_intent::PutInt
     }
 }
 
-pub use crate::operation::put_intent::_put_intent_output::PutIntentOutput;
-
 pub use crate::operation::put_intent::_put_intent_input::PutIntentInput;
+
+pub use crate::operation::put_intent::_put_intent_output::PutIntentOutput;
 
 mod _put_intent_input;
 

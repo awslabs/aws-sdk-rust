@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bot_alias::
     }
 }
 
-pub use crate::operation::update_bot_alias::_update_bot_alias_output::UpdateBotAliasOutput;
-
 pub use crate::operation::update_bot_alias::_update_bot_alias_input::UpdateBotAliasInput;
+
+pub use crate::operation::update_bot_alias::_update_bot_alias_output::UpdateBotAliasOutput;
 
 mod _update_bot_alias_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_game_sess
     }
 }
 
-pub use crate::operation::describe_game_sessions::_describe_game_sessions_output::DescribeGameSessionsOutput;
-
 pub use crate::operation::describe_game_sessions::_describe_game_sessions_input::DescribeGameSessionsInput;
+
+pub use crate::operation::describe_game_sessions::_describe_game_sessions_output::DescribeGameSessionsOutput;
 
 mod _describe_game_sessions_input;
 

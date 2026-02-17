@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_case_event_con
     }
 }
 
-pub use crate::operation::get_case_event_configuration::_get_case_event_configuration_output::GetCaseEventConfigurationOutput;
-
 pub use crate::operation::get_case_event_configuration::_get_case_event_configuration_input::GetCaseEventConfigurationInput;
+
+pub use crate::operation::get_case_event_configuration::_get_case_event_configuration_output::GetCaseEventConfigurationOutput;
 
 mod _get_case_event_configuration_input;
 

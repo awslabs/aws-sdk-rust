@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_label
     }
 }
 
-pub use crate::operation::update_event_label::_update_event_label_output::UpdateEventLabelOutput;
-
 pub use crate::operation::update_event_label::_update_event_label_input::UpdateEventLabelInput;
+
+pub use crate::operation::update_event_label::_update_event_label_output::UpdateEventLabelOutput;
 
 mod _update_event_label_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_admin_account
     }
 }
 
-pub use crate::operation::list_admin_accounts_for_organization::_list_admin_accounts_for_organization_output::ListAdminAccountsForOrganizationOutput;
-
 pub use crate::operation::list_admin_accounts_for_organization::_list_admin_accounts_for_organization_input::ListAdminAccountsForOrganizationInput;
+
+pub use crate::operation::list_admin_accounts_for_organization::_list_admin_accounts_for_organization_output::ListAdminAccountsForOrganizationOutput;
 
 mod _list_admin_accounts_for_organization_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_rum_m
     }
 }
 
-pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum_metric_definitions_output::BatchDeleteRumMetricDefinitionsOutput;
-
 pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum_metric_definitions_input::BatchDeleteRumMetricDefinitionsInput;
+
+pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum_metric_definitions_output::BatchDeleteRumMetricDefinitionsOutput;
 
 mod _batch_delete_rum_metric_definitions_input;
 

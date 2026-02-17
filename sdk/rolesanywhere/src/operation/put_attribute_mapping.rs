@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_attribute_mapp
     }
 }
 
-pub use crate::operation::put_attribute_mapping::_put_attribute_mapping_output::PutAttributeMappingOutput;
-
 pub use crate::operation::put_attribute_mapping::_put_attribute_mapping_input::PutAttributeMappingInput;
+
+pub use crate::operation::put_attribute_mapping::_put_attribute_mapping_output::PutAttributeMappingOutput;
 
 mod _put_attribute_mapping_input;
 

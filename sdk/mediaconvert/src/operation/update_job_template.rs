@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_job_templat
     }
 }
 
-pub use crate::operation::update_job_template::_update_job_template_output::UpdateJobTemplateOutput;
-
 pub use crate::operation::update_job_template::_update_job_template_input::UpdateJobTemplateInput;
+
+pub use crate::operation::update_job_template::_update_job_template_output::UpdateJobTemplateOutput;
 
 mod _update_job_template_input;
 

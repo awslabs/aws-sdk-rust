@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_region::AddReg
     }
 }
 
-pub use crate::operation::add_region::_add_region_output::AddRegionOutput;
-
 pub use crate::operation::add_region::_add_region_input::AddRegionInput;
+
+pub use crate::operation::add_region::_add_region_output::AddRegionOutput;
 
 mod _add_region_input;
 

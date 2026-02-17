@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_marketplace
     }
 }
 
-pub use crate::operation::delete_marketplace_model_endpoint::_delete_marketplace_model_endpoint_output::DeleteMarketplaceModelEndpointOutput;
-
 pub use crate::operation::delete_marketplace_model_endpoint::_delete_marketplace_model_endpoint_input::DeleteMarketplaceModelEndpointInput;
+
+pub use crate::operation::delete_marketplace_model_endpoint::_delete_marketplace_model_endpoint_output::DeleteMarketplaceModelEndpointOutput;
 
 mod _delete_marketplace_model_endpoint_input;
 

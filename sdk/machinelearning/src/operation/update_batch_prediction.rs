@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_batch_predi
     }
 }
 
-pub use crate::operation::update_batch_prediction::_update_batch_prediction_output::UpdateBatchPredictionOutput;
-
 pub use crate::operation::update_batch_prediction::_update_batch_prediction_input::UpdateBatchPredictionInput;
+
+pub use crate::operation::update_batch_prediction::_update_batch_prediction_output::UpdateBatchPredictionOutput;
 
 mod _update_batch_prediction_input;
 

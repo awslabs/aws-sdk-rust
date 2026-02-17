@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_instance_cu
     }
 }
 
-pub use crate::operation::update_instance_custom_health_status::_update_instance_custom_health_status_output::UpdateInstanceCustomHealthStatusOutput;
-
 pub use crate::operation::update_instance_custom_health_status::_update_instance_custom_health_status_input::UpdateInstanceCustomHealthStatusInput;
+
+pub use crate::operation::update_instance_custom_health_status::_update_instance_custom_health_status_output::UpdateInstanceCustomHealthStatusOutput;
 
 mod _update_instance_custom_health_status_input;
 

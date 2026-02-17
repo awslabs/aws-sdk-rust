@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_macie::Dis
     }
 }
 
-pub use crate::operation::disable_macie::_disable_macie_output::DisableMacieOutput;
-
 pub use crate::operation::disable_macie::_disable_macie_input::DisableMacieInput;
+
+pub use crate::operation::disable_macie::_disable_macie_output::DisableMacieOutput;
 
 mod _disable_macie_input;
 

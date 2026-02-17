@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_account_assoc
     }
 }
 
-pub use crate::operation::list_account_associations::_list_account_associations_output::ListAccountAssociationsOutput;
-
 pub use crate::operation::list_account_associations::_list_account_associations_input::ListAccountAssociationsInput;
+
+pub use crate::operation::list_account_associations::_list_account_associations_output::ListAccountAssociationsOutput;
 
 mod _list_account_associations_input;
 

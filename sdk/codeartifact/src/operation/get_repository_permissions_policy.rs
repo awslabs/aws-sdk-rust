@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_per
     }
 }
 
-pub use crate::operation::get_repository_permissions_policy::_get_repository_permissions_policy_output::GetRepositoryPermissionsPolicyOutput;
-
 pub use crate::operation::get_repository_permissions_policy::_get_repository_permissions_policy_input::GetRepositoryPermissionsPolicyInput;
+
+pub use crate::operation::get_repository_permissions_policy::_get_repository_permissions_policy_output::GetRepositoryPermissionsPolicyOutput;
 
 mod _get_repository_permissions_policy_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ec2_deep_inspe
     }
 }
 
-pub use crate::operation::get_ec2_deep_inspection_configuration::_get_ec2_deep_inspection_configuration_output::GetEc2DeepInspectionConfigurationOutput;
-
 pub use crate::operation::get_ec2_deep_inspection_configuration::_get_ec2_deep_inspection_configuration_input::GetEc2DeepInspectionConfigurationInput;
+
+pub use crate::operation::get_ec2_deep_inspection_configuration::_get_ec2_deep_inspection_configuration_output::GetEc2DeepInspectionConfigurationOutput;
 
 mod _get_ec2_deep_inspection_configuration_input;
 

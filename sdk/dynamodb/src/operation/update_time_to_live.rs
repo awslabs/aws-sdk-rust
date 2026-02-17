@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_time_to_liv
     }
 }
 
-pub use crate::operation::update_time_to_live::_update_time_to_live_output::UpdateTimeToLiveOutput;
-
 pub use crate::operation::update_time_to_live::_update_time_to_live_input::UpdateTimeToLiveInput;
+
+pub use crate::operation::update_time_to_live::_update_time_to_live_output::UpdateTimeToLiveOutput;
 
 mod _update_time_to_live_input;
 

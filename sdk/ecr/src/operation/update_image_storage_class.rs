@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_image_stora
     }
 }
 
-pub use crate::operation::update_image_storage_class::_update_image_storage_class_output::UpdateImageStorageClassOutput;
-
 pub use crate::operation::update_image_storage_class::_update_image_storage_class_input::UpdateImageStorageClassInput;
+
+pub use crate::operation::update_image_storage_class::_update_image_storage_class_output::UpdateImageStorageClassOutput;
 
 mod _update_image_storage_class_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scope::Dele
     }
 }
 
-pub use crate::operation::delete_scope::_delete_scope_output::DeleteScopeOutput;
-
 pub use crate::operation::delete_scope::_delete_scope_input::DeleteScopeInput;
+
+pub use crate::operation::delete_scope::_delete_scope_output::DeleteScopeOutput;
 
 mod _delete_scope_input;
 

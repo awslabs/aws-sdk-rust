@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_trunk_in
     }
 }
 
-pub use crate::operation::associate_trunk_interface::_associate_trunk_interface_output::AssociateTrunkInterfaceOutput;
-
 pub use crate::operation::associate_trunk_interface::_associate_trunk_interface_input::AssociateTrunkInterfaceInput;
+
+pub use crate::operation::associate_trunk_interface::_associate_trunk_interface_output::AssociateTrunkInterfaceOutput;
 
 mod _associate_trunk_interface_input;
 

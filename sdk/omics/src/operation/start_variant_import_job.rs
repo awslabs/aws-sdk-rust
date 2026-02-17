@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_variant_impo
     }
 }
 
-pub use crate::operation::start_variant_import_job::_start_variant_import_job_output::StartVariantImportJobOutput;
-
 pub use crate::operation::start_variant_import_job::_start_variant_import_job_input::StartVariantImportJobInput;
+
+pub use crate::operation::start_variant_import_job::_start_variant_import_job_output::StartVariantImportJobOutput;
 
 mod _start_variant_import_job_input;
 

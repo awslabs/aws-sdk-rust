@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_disable_prov
     }
 }
 
-pub use crate::operation::admin_disable_provider_for_user::_admin_disable_provider_for_user_output::AdminDisableProviderForUserOutput;
-
 pub use crate::operation::admin_disable_provider_for_user::_admin_disable_provider_for_user_input::AdminDisableProviderForUserInput;
+
+pub use crate::operation::admin_disable_provider_for_user::_admin_disable_provider_for_user_output::AdminDisableProviderForUserOutput;
 
 mod _admin_disable_provider_for_user_input;
 

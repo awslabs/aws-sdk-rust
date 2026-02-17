@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_allow_lists::
     }
 }
 
-pub use crate::operation::list_allow_lists::_list_allow_lists_output::ListAllowListsOutput;
-
 pub use crate::operation::list_allow_lists::_list_allow_lists_input::ListAllowListsInput;
+
+pub use crate::operation::list_allow_lists::_list_allow_lists_output::ListAllowListsOutput;
 
 mod _list_allow_lists_input;
 

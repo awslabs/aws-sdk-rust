@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_proxy::De
     }
 }
 
-pub use crate::operation::describe_proxy::_describe_proxy_output::DescribeProxyOutput;
-
 pub use crate::operation::describe_proxy::_describe_proxy_input::DescribeProxyInput;
+
+pub use crate::operation::describe_proxy::_describe_proxy_output::DescribeProxyOutput;
 
 mod _describe_proxy_input;
 

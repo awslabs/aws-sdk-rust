@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_source::G
     }
 }
 
-pub use crate::operation::get_data_source::_get_data_source_output::GetDataSourceOutput;
-
 pub use crate::operation::get_data_source::_get_data_source_input::GetDataSourceInput;
+
+pub use crate::operation::get_data_source::_get_data_source_output::GetDataSourceOutput;
 
 mod _get_data_source_input;
 

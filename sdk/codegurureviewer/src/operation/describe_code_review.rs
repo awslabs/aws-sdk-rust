@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_code_revi
     }
 }
 
-pub use crate::operation::describe_code_review::_describe_code_review_output::DescribeCodeReviewOutput;
-
 pub use crate::operation::describe_code_review::_describe_code_review_input::DescribeCodeReviewInput;
+
+pub use crate::operation::describe_code_review::_describe_code_review_output::DescribeCodeReviewOutput;
 
 mod _describe_code_review_input;
 

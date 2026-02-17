@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ipam_pool_allo
     }
 }
 
-pub use crate::operation::get_ipam_pool_allocations::_get_ipam_pool_allocations_output::GetIpamPoolAllocationsOutput;
-
 pub use crate::operation::get_ipam_pool_allocations::_get_ipam_pool_allocations_input::GetIpamPoolAllocationsInput;
+
+pub use crate::operation::get_ipam_pool_allocations::_get_ipam_pool_allocations_output::GetIpamPoolAllocationsOutput;
 
 mod _get_ipam_pool_allocations_input;
 

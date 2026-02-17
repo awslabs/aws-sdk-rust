@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_mailbox_detail
     }
 }
 
-pub use crate::operation::get_mailbox_details::_get_mailbox_details_output::GetMailboxDetailsOutput;
-
 pub use crate::operation::get_mailbox_details::_get_mailbox_details_input::GetMailboxDetailsInput;
+
+pub use crate::operation::get_mailbox_details::_get_mailbox_details_output::GetMailboxDetailsOutput;
 
 mod _get_mailbox_details_input;
 

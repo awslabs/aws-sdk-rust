@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mlflow_app:
     }
 }
 
-pub use crate::operation::delete_mlflow_app::_delete_mlflow_app_output::DeleteMlflowAppOutput;
-
 pub use crate::operation::delete_mlflow_app::_delete_mlflow_app_input::DeleteMlflowAppInput;
+
+pub use crate::operation::delete_mlflow_app::_delete_mlflow_app_output::DeleteMlflowAppOutput;
 
 mod _delete_mlflow_app_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_matching_wo
     }
 }
 
-pub use crate::operation::update_matching_workflow::_update_matching_workflow_output::UpdateMatchingWorkflowOutput;
-
 pub use crate::operation::update_matching_workflow::_update_matching_workflow_input::UpdateMatchingWorkflowInput;
+
+pub use crate::operation::update_matching_workflow::_update_matching_workflow_output::UpdateMatchingWorkflowOutput;
 
 mod _update_matching_workflow_input;
 

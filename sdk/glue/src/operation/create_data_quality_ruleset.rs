@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_qualit
     }
 }
 
-pub use crate::operation::create_data_quality_ruleset::_create_data_quality_ruleset_output::CreateDataQualityRulesetOutput;
-
 pub use crate::operation::create_data_quality_ruleset::_create_data_quality_ruleset_input::CreateDataQualityRulesetInput;
+
+pub use crate::operation::create_data_quality_ruleset::_create_data_quality_ruleset_output::CreateDataQualityRulesetOutput;
 
 mod _create_data_quality_ruleset_input;
 

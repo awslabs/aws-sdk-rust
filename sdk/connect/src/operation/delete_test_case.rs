@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_test_case::
     }
 }
 
-pub use crate::operation::delete_test_case::_delete_test_case_output::DeleteTestCaseOutput;
-
 pub use crate::operation::delete_test_case::_delete_test_case_input::DeleteTestCaseInput;
+
+pub use crate::operation::delete_test_case::_delete_test_case_output::DeleteTestCaseOutput;
 
 mod _delete_test_case_input;
 

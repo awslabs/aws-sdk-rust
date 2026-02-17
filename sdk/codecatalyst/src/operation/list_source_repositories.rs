@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_source_reposi
     }
 }
 
-pub use crate::operation::list_source_repositories::_list_source_repositories_output::ListSourceRepositoriesOutput;
-
 pub use crate::operation::list_source_repositories::_list_source_repositories_input::ListSourceRepositoriesInput;
+
+pub use crate::operation::list_source_repositories::_list_source_repositories_output::ListSourceRepositoriesOutput;
 
 mod _list_source_repositories_input;
 

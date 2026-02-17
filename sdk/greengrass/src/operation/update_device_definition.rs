@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_device_defi
     }
 }
 
-pub use crate::operation::update_device_definition::_update_device_definition_output::UpdateDeviceDefinitionOutput;
-
 pub use crate::operation::update_device_definition::_update_device_definition_input::UpdateDeviceDefinitionInput;
+
+pub use crate::operation::update_device_definition::_update_device_definition_output::UpdateDeviceDefinitionOutput;
 
 mod _update_device_definition_input;
 

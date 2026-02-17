@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::untag_mfa_device::
     }
 }
 
-pub use crate::operation::untag_mfa_device::_untag_mfa_device_output::UntagMfaDeviceOutput;
-
 pub use crate::operation::untag_mfa_device::_untag_mfa_device_input::UntagMfaDeviceInput;
+
+pub use crate::operation::untag_mfa_device::_untag_mfa_device_output::UntagMfaDeviceOutput;
 
 mod _untag_mfa_device_input;
 

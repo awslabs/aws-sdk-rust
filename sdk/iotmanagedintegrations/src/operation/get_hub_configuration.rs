@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hub_configurat
     }
 }
 
-pub use crate::operation::get_hub_configuration::_get_hub_configuration_output::GetHubConfigurationOutput;
-
 pub use crate::operation::get_hub_configuration::_get_hub_configuration_input::GetHubConfigurationInput;
+
+pub use crate::operation::get_hub_configuration::_get_hub_configuration_output::GetHubConfigurationOutput;
 
 mod _get_hub_configuration_input;
 

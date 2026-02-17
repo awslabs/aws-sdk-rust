@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_table_sta
     }
 }
 
-pub use crate::operation::describe_table_statistics::_describe_table_statistics_output::DescribeTableStatisticsOutput;
-
 pub use crate::operation::describe_table_statistics::_describe_table_statistics_input::DescribeTableStatisticsInput;
+
+pub use crate::operation::describe_table_statistics::_describe_table_statistics_output::DescribeTableStatisticsOutput;
 
 mod _describe_table_statistics_input;
 

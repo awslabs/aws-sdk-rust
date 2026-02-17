@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_template_step:
     }
 }
 
-pub use crate::operation::get_template_step::_get_template_step_output::GetTemplateStepOutput;
-
 pub use crate::operation::get_template_step::_get_template_step_input::GetTemplateStepInput;
+
+pub use crate::operation::get_template_step::_get_template_step_output::GetTemplateStepOutput;
 
 mod _get_template_step_input;
 

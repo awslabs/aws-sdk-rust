@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_frame_me
     }
 }
 
-pub use crate::operation::batch_get_frame_metric_data::_batch_get_frame_metric_data_output::BatchGetFrameMetricDataOutput;
-
 pub use crate::operation::batch_get_frame_metric_data::_batch_get_frame_metric_data_input::BatchGetFrameMetricDataInput;
+
+pub use crate::operation::batch_get_frame_metric_data::_batch_get_frame_metric_data_output::BatchGetFrameMetricDataOutput;
 
 mod _batch_get_frame_metric_data_input;
 

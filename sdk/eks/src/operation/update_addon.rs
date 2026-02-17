@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_addon::Upda
     }
 }
 
-pub use crate::operation::update_addon::_update_addon_output::UpdateAddonOutput;
-
 pub use crate::operation::update_addon::_update_addon_input::UpdateAddonInput;
+
+pub use crate::operation::update_addon::_update_addon_output::UpdateAddonOutput;
 
 mod _update_addon_input;
 

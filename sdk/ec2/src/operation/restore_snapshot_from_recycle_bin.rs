@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_snapshot_f
     }
 }
 
-pub use crate::operation::restore_snapshot_from_recycle_bin::_restore_snapshot_from_recycle_bin_output::RestoreSnapshotFromRecycleBinOutput;
-
 pub use crate::operation::restore_snapshot_from_recycle_bin::_restore_snapshot_from_recycle_bin_input::RestoreSnapshotFromRecycleBinInput;
+
+pub use crate::operation::restore_snapshot_from_recycle_bin::_restore_snapshot_from_recycle_bin_output::RestoreSnapshotFromRecycleBinOutput;
 
 mod _restore_snapshot_from_recycle_bin_input;
 

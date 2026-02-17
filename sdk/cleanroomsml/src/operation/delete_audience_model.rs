@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_audience_mo
     }
 }
 
-pub use crate::operation::delete_audience_model::_delete_audience_model_output::DeleteAudienceModelOutput;
-
 pub use crate::operation::delete_audience_model::_delete_audience_model_input::DeleteAudienceModelInput;
+
+pub use crate::operation::delete_audience_model::_delete_audience_model_output::DeleteAudienceModelOutput;
 
 mod _delete_audience_model_input;
 

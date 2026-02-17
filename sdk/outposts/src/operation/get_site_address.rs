@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_site_address::
     }
 }
 
-pub use crate::operation::get_site_address::_get_site_address_output::GetSiteAddressOutput;
-
 pub use crate::operation::get_site_address::_get_site_address_input::GetSiteAddressInput;
+
+pub use crate::operation::get_site_address::_get_site_address_output::GetSiteAddressOutput;
 
 mod _get_site_address_input;
 

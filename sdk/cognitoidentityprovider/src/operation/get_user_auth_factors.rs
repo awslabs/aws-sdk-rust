@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_auth_fact
     }
 }
 
-pub use crate::operation::get_user_auth_factors::_get_user_auth_factors_output::GetUserAuthFactorsOutput;
-
 pub use crate::operation::get_user_auth_factors::_get_user_auth_factors_input::GetUserAuthFactorsInput;
+
+pub use crate::operation::get_user_auth_factors::_get_user_auth_factors_output::GetUserAuthFactorsOutput;
 
 mod _get_user_auth_factors_input;
 

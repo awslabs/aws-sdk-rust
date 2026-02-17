@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_repo
     }
 }
 
-pub use crate::operation::describe_data_repository_associations::_describe_data_repository_associations_output::DescribeDataRepositoryAssociationsOutput;
-
 pub use crate::operation::describe_data_repository_associations::_describe_data_repository_associations_input::DescribeDataRepositoryAssociationsInput;
+
+pub use crate::operation::describe_data_repository_associations::_describe_data_repository_associations_output::DescribeDataRepositoryAssociationsOutput;
 
 mod _describe_data_repository_associations_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_snapshot_sc
     }
 }
 
-pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_output::CreateSnapshotScheduleOutput;
-
 pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_input::CreateSnapshotScheduleInput;
+
+pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_output::CreateSnapshotScheduleOutput;
 
 mod _create_snapshot_schedule_input;
 

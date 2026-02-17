@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_email_chann
     }
 }
 
-pub use crate::operation::delete_email_channel::_delete_email_channel_output::DeleteEmailChannelOutput;
-
 pub use crate::operation::delete_email_channel::_delete_email_channel_input::DeleteEmailChannelInput;
+
+pub use crate::operation::delete_email_channel::_delete_email_channel_output::DeleteEmailChannelOutput;
 
 mod _delete_email_channel_input;
 

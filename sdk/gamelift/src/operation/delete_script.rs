@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_script::Del
     }
 }
 
-pub use crate::operation::delete_script::_delete_script_output::DeleteScriptOutput;
-
 pub use crate::operation::delete_script::_delete_script_input::DeleteScriptInput;
+
+pub use crate::operation::delete_script::_delete_script_output::DeleteScriptOutput;
 
 mod _delete_script_input;
 

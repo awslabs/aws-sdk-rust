@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configured_
     }
 }
 
-pub use crate::operation::create_configured_model_algorithm::_create_configured_model_algorithm_output::CreateConfiguredModelAlgorithmOutput;
-
 pub use crate::operation::create_configured_model_algorithm::_create_configured_model_algorithm_input::CreateConfiguredModelAlgorithmInput;
+
+pub use crate::operation::create_configured_model_algorithm::_create_configured_model_algorithm_output::CreateConfiguredModelAlgorithmOutput;
 
 mod _create_configured_model_algorithm_input;
 

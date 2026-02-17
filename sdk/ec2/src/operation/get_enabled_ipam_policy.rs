@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_enabled_ipam_p
     }
 }
 
-pub use crate::operation::get_enabled_ipam_policy::_get_enabled_ipam_policy_output::GetEnabledIpamPolicyOutput;
-
 pub use crate::operation::get_enabled_ipam_policy::_get_enabled_ipam_policy_input::GetEnabledIpamPolicyInput;
+
+pub use crate::operation::get_enabled_ipam_policy::_get_enabled_ipam_policy_output::GetEnabledIpamPolicyOutput;
 
 mod _get_enabled_ipam_policy_input;
 

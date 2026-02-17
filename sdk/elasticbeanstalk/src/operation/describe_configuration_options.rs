@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_configura
     }
 }
 
-pub use crate::operation::describe_configuration_options::_describe_configuration_options_output::DescribeConfigurationOptionsOutput;
-
 pub use crate::operation::describe_configuration_options::_describe_configuration_options_input::DescribeConfigurationOptionsInput;
+
+pub use crate::operation::describe_configuration_options::_describe_configuration_options_output::DescribeConfigurationOptionsOutput;
 
 mod _describe_configuration_options_input;
 

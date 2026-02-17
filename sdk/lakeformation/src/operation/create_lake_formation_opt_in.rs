@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_lake_format
     }
 }
 
-pub use crate::operation::create_lake_formation_opt_in::_create_lake_formation_opt_in_output::CreateLakeFormationOptInOutput;
-
 pub use crate::operation::create_lake_formation_opt_in::_create_lake_formation_opt_in_input::CreateLakeFormationOptInInput;
+
+pub use crate::operation::create_lake_formation_opt_in::_create_lake_formation_opt_in_output::CreateLakeFormationOptInOutput;
 
 mod _create_lake_formation_opt_in_input;
 

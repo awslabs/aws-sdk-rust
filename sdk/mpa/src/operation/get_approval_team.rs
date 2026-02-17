@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_approval_team:
     }
 }
 
-pub use crate::operation::get_approval_team::_get_approval_team_output::GetApprovalTeamOutput;
-
 pub use crate::operation::get_approval_team::_get_approval_team_input::GetApprovalTeamInput;
+
+pub use crate::operation::get_approval_team::_get_approval_team_output::GetApprovalTeamOutput;
 
 mod _get_approval_team_input;
 

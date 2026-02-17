@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_hosted_zone
     }
 }
 
-pub use crate::operation::enable_hosted_zone_dnssec::_enable_hosted_zone_dnssec_output::EnableHostedZoneDnssecOutput;
-
 pub use crate::operation::enable_hosted_zone_dnssec::_enable_hosted_zone_dnssec_input::EnableHostedZoneDnssecInput;
+
+pub use crate::operation::enable_hosted_zone_dnssec::_enable_hosted_zone_dnssec_output::EnableHostedZoneDnssecOutput;
 
 mod _enable_hosted_zone_dnssec_input;
 

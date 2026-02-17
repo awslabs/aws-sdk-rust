@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_environm
     }
 }
 
-pub use crate::operation::delete_kx_environment::_delete_kx_environment_output::DeleteKxEnvironmentOutput;
-
 pub use crate::operation::delete_kx_environment::_delete_kx_environment_input::DeleteKxEnvironmentInput;
+
+pub use crate::operation::delete_kx_environment::_delete_kx_environment_output::DeleteKxEnvironmentOutput;
 
 mod _delete_kx_environment_input;
 

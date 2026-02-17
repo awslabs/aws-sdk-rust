@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sms_sandbox_ac
     }
 }
 
-pub use crate::operation::get_sms_sandbox_account_status::_get_sms_sandbox_account_status_output::GetSmsSandboxAccountStatusOutput;
-
 pub use crate::operation::get_sms_sandbox_account_status::_get_sms_sandbox_account_status_input::GetSmsSandboxAccountStatusInput;
+
+pub use crate::operation::get_sms_sandbox_account_status::_get_sms_sandbox_account_status_output::GetSmsSandboxAccountStatusOutput;
 
 mod _get_sms_sandbox_account_status_input;
 

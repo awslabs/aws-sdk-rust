@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_batch_job_res
     }
 }
 
-pub use crate::operation::list_batch_job_restart_points::_list_batch_job_restart_points_output::ListBatchJobRestartPointsOutput;
-
 pub use crate::operation::list_batch_job_restart_points::_list_batch_job_restart_points_input::ListBatchJobRestartPointsInput;
+
+pub use crate::operation::list_batch_job_restart_points::_list_batch_job_restart_points_output::ListBatchJobRestartPointsOutput;
 
 mod _list_batch_job_restart_points_input;
 

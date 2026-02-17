@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tag_values::Ge
     }
 }
 
-pub use crate::operation::get_tag_values::_get_tag_values_output::GetTagValuesOutput;
-
 pub use crate::operation::get_tag_values::_get_tag_values_input::GetTagValuesInput;
+
+pub use crate::operation::get_tag_values::_get_tag_values_output::GetTagValuesOutput;
 
 mod _get_tag_values_input;
 

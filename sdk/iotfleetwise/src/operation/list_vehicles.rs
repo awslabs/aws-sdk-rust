@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vehicles::Lis
     }
 }
 
-pub use crate::operation::list_vehicles::_list_vehicles_output::ListVehiclesOutput;
-
 pub use crate::operation::list_vehicles::_list_vehicles_input::ListVehiclesInput;
+
+pub use crate::operation::list_vehicles::_list_vehicles_output::ListVehiclesOutput;
 
 mod _list_vehicles_input;
 

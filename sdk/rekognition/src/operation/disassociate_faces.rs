@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_faces
     }
 }
 
-pub use crate::operation::disassociate_faces::_disassociate_faces_output::DisassociateFacesOutput;
-
 pub use crate::operation::disassociate_faces::_disassociate_faces_input::DisassociateFacesInput;
+
+pub use crate::operation::disassociate_faces::_disassociate_faces_output::DisassociateFacesOutput;
 
 mod _disassociate_faces_input;
 

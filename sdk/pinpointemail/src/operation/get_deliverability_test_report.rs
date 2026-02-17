@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deliverability
     }
 }
 
-pub use crate::operation::get_deliverability_test_report::_get_deliverability_test_report_output::GetDeliverabilityTestReportOutput;
-
 pub use crate::operation::get_deliverability_test_report::_get_deliverability_test_report_input::GetDeliverabilityTestReportInput;
+
+pub use crate::operation::get_deliverability_test_report::_get_deliverability_test_report_output::GetDeliverabilityTestReportOutput;
 
 mod _get_deliverability_test_report_input;
 

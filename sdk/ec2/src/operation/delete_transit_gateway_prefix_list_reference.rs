@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_transit_gateway_prefix_list_reference::_delete_transit_gateway_prefix_list_reference_output::DeleteTransitGatewayPrefixListReferenceOutput;
-
 pub use crate::operation::delete_transit_gateway_prefix_list_reference::_delete_transit_gateway_prefix_list_reference_input::DeleteTransitGatewayPrefixListReferenceInput;
+
+pub use crate::operation::delete_transit_gateway_prefix_list_reference::_delete_transit_gateway_prefix_list_reference_output::DeleteTransitGatewayPrefixListReferenceOutput;
 
 mod _delete_transit_gateway_prefix_list_reference_input;
 

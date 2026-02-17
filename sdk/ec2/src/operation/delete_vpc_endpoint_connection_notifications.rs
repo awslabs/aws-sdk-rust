@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_vpc_endpoint_connection_notifications::_delete_vpc_endpoint_connection_notifications_output::DeleteVpcEndpointConnectionNotificationsOutput;
-
 pub use crate::operation::delete_vpc_endpoint_connection_notifications::_delete_vpc_endpoint_connection_notifications_input::DeleteVpcEndpointConnectionNotificationsInput;
+
+pub use crate::operation::delete_vpc_endpoint_connection_notifications::_delete_vpc_endpoint_connection_notifications_output::DeleteVpcEndpointConnectionNotificationsOutput;
 
 mod _delete_vpc_endpoint_connection_notifications_input;
 

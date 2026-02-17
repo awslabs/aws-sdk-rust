@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_alliance_lead_
     }
 }
 
-pub use crate::operation::put_alliance_lead_contact::_put_alliance_lead_contact_output::PutAllianceLeadContactOutput;
-
 pub use crate::operation::put_alliance_lead_contact::_put_alliance_lead_contact_input::PutAllianceLeadContactInput;
+
+pub use crate::operation::put_alliance_lead_contact::_put_alliance_lead_contact_output::PutAllianceLeadContactOutput;
 
 mod _put_alliance_lead_contact_input;
 

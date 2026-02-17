@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hit_review_
     }
 }
 
-pub use crate::operation::update_hit_review_status::_update_hit_review_status_output::UpdateHitReviewStatusOutput;
-
 pub use crate::operation::update_hit_review_status::_update_hit_review_status_input::UpdateHitReviewStatusInput;
+
+pub use crate::operation::update_hit_review_status::_update_hit_review_status_output::UpdateHitReviewStatusOutput;
 
 mod _update_hit_review_status_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_byoip_cidrs::
     }
 }
 
-pub use crate::operation::list_byoip_cidrs::_list_byoip_cidrs_output::ListByoipCidrsOutput;
-
 pub use crate::operation::list_byoip_cidrs::_list_byoip_cidrs_input::ListByoipCidrsInput;
+
+pub use crate::operation::list_byoip_cidrs::_list_byoip_cidrs_output::ListByoipCidrsOutput;
 
 mod _list_byoip_cidrs_input;
 

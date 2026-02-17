@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ingestions::L
     }
 }
 
-pub use crate::operation::list_ingestions::_list_ingestions_output::ListIngestionsOutput;
-
 pub use crate::operation::list_ingestions::_list_ingestions_input::ListIngestionsInput;
+
+pub use crate::operation::list_ingestions::_list_ingestions_output::ListIngestionsOutput;
 
 mod _list_ingestions_input;
 

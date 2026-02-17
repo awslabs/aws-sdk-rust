@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_vpn_gateway
     }
 }
 
-pub use crate::operation::detach_vpn_gateway::_detach_vpn_gateway_output::DetachVpnGatewayOutput;
-
 pub use crate::operation::detach_vpn_gateway::_detach_vpn_gateway_input::DetachVpnGatewayInput;
+
+pub use crate::operation::detach_vpn_gateway::_detach_vpn_gateway_output::DetachVpnGatewayOutput;
 
 mod _detach_vpn_gateway_input;
 

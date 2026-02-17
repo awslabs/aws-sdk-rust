@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resolver_qu
     }
 }
 
-pub use crate::operation::create_resolver_query_log_config::_create_resolver_query_log_config_output::CreateResolverQueryLogConfigOutput;
-
 pub use crate::operation::create_resolver_query_log_config::_create_resolver_query_log_config_input::CreateResolverQueryLogConfigInput;
+
+pub use crate::operation::create_resolver_query_log_config::_create_resolver_query_log_config_output::CreateResolverQueryLogConfigOutput;
 
 mod _create_resolver_query_log_config_input;
 

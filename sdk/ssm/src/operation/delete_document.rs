@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_document::D
     }
 }
 
-pub use crate::operation::delete_document::_delete_document_output::DeleteDocumentOutput;
-
 pub use crate::operation::delete_document::_delete_document_input::DeleteDocumentInput;
+
+pub use crate::operation::delete_document::_delete_document_output::DeleteDocumentOutput;
 
 mod _delete_document_input;
 

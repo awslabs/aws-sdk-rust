@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_storage_c
     }
 }
 
-pub use crate::operation::describe_storage_configuration::_describe_storage_configuration_output::DescribeStorageConfigurationOutput;
-
 pub use crate::operation::describe_storage_configuration::_describe_storage_configuration_input::DescribeStorageConfigurationInput;
+
+pub use crate::operation::describe_storage_configuration::_describe_storage_configuration_output::DescribeStorageConfigurationOutput;
 
 mod _describe_storage_configuration_input;
 

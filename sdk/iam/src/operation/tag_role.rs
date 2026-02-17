@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_role::TagRoleE
     }
 }
 
-pub use crate::operation::tag_role::_tag_role_output::TagRoleOutput;
-
 pub use crate::operation::tag_role::_tag_role_input::TagRoleInput;
+
+pub use crate::operation::tag_role::_tag_role_output::TagRoleOutput;
 
 mod _tag_role_input;
 

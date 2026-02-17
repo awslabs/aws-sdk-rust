@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_signal_map:
     }
 }
 
-pub use crate::operation::create_signal_map::_create_signal_map_output::CreateSignalMapOutput;
-
 pub use crate::operation::create_signal_map::_create_signal_map_input::CreateSignalMapInput;
+
+pub use crate::operation::create_signal_map::_create_signal_map_output::CreateSignalMapOutput;
 
 mod _create_signal_map_input;
 

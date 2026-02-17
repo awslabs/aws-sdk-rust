@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_reservation
     }
 }
 
-pub use crate::operation::create_reservation::_create_reservation_output::CreateReservationOutput;
-
 pub use crate::operation::create_reservation::_create_reservation_input::CreateReservationInput;
+
+pub use crate::operation::create_reservation::_create_reservation_output::CreateReservationOutput;
 
 mod _create_reservation_input;
 

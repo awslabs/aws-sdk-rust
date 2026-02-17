@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_annotation_
     }
 }
 
-pub use crate::operation::cancel_annotation_import_job::_cancel_annotation_import_job_output::CancelAnnotationImportJobOutput;
-
 pub use crate::operation::cancel_annotation_import_job::_cancel_annotation_import_job_input::CancelAnnotationImportJobInput;
+
+pub use crate::operation::cancel_annotation_import_job::_cancel_annotation_import_job_output::CancelAnnotationImportJobOutput;
 
 mod _cancel_annotation_import_job_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metric_fi
     }
 }
 
-pub use crate::operation::describe_metric_filters::_describe_metric_filters_output::DescribeMetricFiltersOutput;
-
 pub use crate::operation::describe_metric_filters::_describe_metric_filters_input::DescribeMetricFiltersInput;
+
+pub use crate::operation::describe_metric_filters::_describe_metric_filters_output::DescribeMetricFiltersOutput;
 
 mod _describe_metric_filters_input;
 

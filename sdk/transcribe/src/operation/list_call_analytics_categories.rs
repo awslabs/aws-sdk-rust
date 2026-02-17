@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_call_analytic
     }
 }
 
-pub use crate::operation::list_call_analytics_categories::_list_call_analytics_categories_output::ListCallAnalyticsCategoriesOutput;
-
 pub use crate::operation::list_call_analytics_categories::_list_call_analytics_categories_input::ListCallAnalyticsCategoriesInput;
+
+pub use crate::operation::list_call_analytics_categories::_list_call_analytics_categories_output::ListCallAnalyticsCategoriesOutput;
 
 mod _list_call_analytics_categories_input;
 

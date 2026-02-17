@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_backup_policy:
     }
 }
 
-pub use crate::operation::put_backup_policy::_put_backup_policy_output::PutBackupPolicyOutput;
-
 pub use crate::operation::put_backup_policy::_put_backup_policy_input::PutBackupPolicyInput;
+
+pub use crate::operation::put_backup_policy::_put_backup_policy_output::PutBackupPolicyOutput;
 
 mod _put_backup_policy_input;
 

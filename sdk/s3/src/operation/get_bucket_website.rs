@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bucket_website
     }
 }
 
-pub use crate::operation::get_bucket_website::_get_bucket_website_output::GetBucketWebsiteOutput;
-
 pub use crate::operation::get_bucket_website::_get_bucket_website_input::GetBucketWebsiteInput;
+
+pub use crate::operation::get_bucket_website::_get_bucket_website_output::GetBucketWebsiteOutput;
 
 mod _get_bucket_website_input;
 

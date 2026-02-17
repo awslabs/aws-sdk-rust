@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_target_accoun
     }
 }
 
-pub use crate::operation::list_target_account_configurations::_list_target_account_configurations_output::ListTargetAccountConfigurationsOutput;
-
 pub use crate::operation::list_target_account_configurations::_list_target_account_configurations_input::ListTargetAccountConfigurationsInput;
+
+pub use crate::operation::list_target_account_configurations::_list_target_account_configurations_output::ListTargetAccountConfigurationsOutput;
 
 mod _list_target_account_configurations_input;
 

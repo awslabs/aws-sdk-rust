@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_queue::De
     }
 }
 
-pub use crate::operation::describe_queue::_describe_queue_output::DescribeQueueOutput;
-
 pub use crate::operation::describe_queue::_describe_queue_input::DescribeQueueInput;
+
+pub use crate::operation::describe_queue::_describe_queue_output::DescribeQueueOutput;
 
 mod _describe_queue_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_optimizat
     }
 }
 
-pub use crate::operation::describe_optimization_job::_describe_optimization_job_output::DescribeOptimizationJobOutput;
-
 pub use crate::operation::describe_optimization_job::_describe_optimization_job_input::DescribeOptimizationJobInput;
+
+pub use crate::operation::describe_optimization_job::_describe_optimization_job_output::DescribeOptimizationJobOutput;
 
 mod _describe_optimization_job_input;
 

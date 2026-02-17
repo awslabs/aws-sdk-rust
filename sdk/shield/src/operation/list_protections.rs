@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protections::
     }
 }
 
-pub use crate::operation::list_protections::_list_protections_output::ListProtectionsOutput;
-
 pub use crate::operation::list_protections::_list_protections_input::ListProtectionsInput;
+
+pub use crate::operation::list_protections::_list_protections_output::ListProtectionsOutput;
 
 mod _list_protections_input;
 

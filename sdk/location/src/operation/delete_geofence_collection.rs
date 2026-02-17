@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_geofence_co
     }
 }
 
-pub use crate::operation::delete_geofence_collection::_delete_geofence_collection_output::DeleteGeofenceCollectionOutput;
-
 pub use crate::operation::delete_geofence_collection::_delete_geofence_collection_input::DeleteGeofenceCollectionInput;
+
+pub use crate::operation::delete_geofence_collection::_delete_geofence_collection_output::DeleteGeofenceCollectionOutput;
 
 mod _delete_geofence_collection_input;
 

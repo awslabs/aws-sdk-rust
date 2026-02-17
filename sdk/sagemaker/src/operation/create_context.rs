@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_context::Cr
     }
 }
 
-pub use crate::operation::create_context::_create_context_output::CreateContextOutput;
-
 pub use crate::operation::create_context::_create_context_input::CreateContextInput;
+
+pub use crate::operation::create_context::_create_context_output::CreateContextOutput;
 
 mod _create_context_input;
 

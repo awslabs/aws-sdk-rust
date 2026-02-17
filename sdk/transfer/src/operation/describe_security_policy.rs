@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_security_
     }
 }
 
-pub use crate::operation::describe_security_policy::_describe_security_policy_output::DescribeSecurityPolicyOutput;
-
 pub use crate::operation::describe_security_policy::_describe_security_policy_input::DescribeSecurityPolicyInput;
+
+pub use crate::operation::describe_security_policy::_describe_security_policy_output::DescribeSecurityPolicyOutput;
 
 mod _describe_security_policy_input;
 

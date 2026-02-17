@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_moder
     }
 }
 
-pub use crate::operation::list_channel_moderators::_list_channel_moderators_output::ListChannelModeratorsOutput;
-
 pub use crate::operation::list_channel_moderators::_list_channel_moderators_input::ListChannelModeratorsInput;
+
+pub use crate::operation::list_channel_moderators::_list_channel_moderators_output::ListChannelModeratorsOutput;
 
 mod _list_channel_moderators_input;
 

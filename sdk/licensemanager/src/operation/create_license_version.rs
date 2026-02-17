@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_license_ver
     }
 }
 
-pub use crate::operation::create_license_version::_create_license_version_output::CreateLicenseVersionOutput;
-
 pub use crate::operation::create_license_version::_create_license_version_input::CreateLicenseVersionInput;
+
+pub use crate::operation::create_license_version::_create_license_version_output::CreateLicenseVersionOutput;
 
 mod _create_license_version_input;
 

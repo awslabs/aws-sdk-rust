@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_replication
     }
 }
 
-pub use crate::operation::delete_replication_task_assessment_run::_delete_replication_task_assessment_run_output::DeleteReplicationTaskAssessmentRunOutput;
-
 pub use crate::operation::delete_replication_task_assessment_run::_delete_replication_task_assessment_run_input::DeleteReplicationTaskAssessmentRunInput;
+
+pub use crate::operation::delete_replication_task_assessment_run::_delete_replication_task_assessment_run_output::DeleteReplicationTaskAssessmentRunOutput;
 
 mod _delete_replication_task_assessment_run_input;
 

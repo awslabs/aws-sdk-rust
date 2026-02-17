@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_organizatio
     }
 }
 
-pub use crate::operation::enable_organization_admin_account::_enable_organization_admin_account_output::EnableOrganizationAdminAccountOutput;
-
 pub use crate::operation::enable_organization_admin_account::_enable_organization_admin_account_input::EnableOrganizationAdminAccountInput;
+
+pub use crate::operation::enable_organization_admin_account::_enable_organization_admin_account_output::EnableOrganizationAdminAccountOutput;
 
 mod _enable_organization_admin_account_input;
 

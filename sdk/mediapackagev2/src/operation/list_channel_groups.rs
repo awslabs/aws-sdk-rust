@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_group
     }
 }
 
-pub use crate::operation::list_channel_groups::_list_channel_groups_output::ListChannelGroupsOutput;
-
 pub use crate::operation::list_channel_groups::_list_channel_groups_input::ListChannelGroupsInput;
+
+pub use crate::operation::list_channel_groups::_list_channel_groups_output::ListChannelGroupsOutput;
 
 mod _list_channel_groups_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_egress_on
     }
 }
 
-pub use crate::operation::describe_egress_only_internet_gateways::_describe_egress_only_internet_gateways_output::DescribeEgressOnlyInternetGatewaysOutput;
-
 pub use crate::operation::describe_egress_only_internet_gateways::_describe_egress_only_internet_gateways_input::DescribeEgressOnlyInternetGatewaysInput;
+
+pub use crate::operation::describe_egress_only_internet_gateways::_describe_egress_only_internet_gateways_output::DescribeEgressOnlyInternetGatewaysOutput;
 
 mod _describe_egress_only_internet_gateways_input;
 

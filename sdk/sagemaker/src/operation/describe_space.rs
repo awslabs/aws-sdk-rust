@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_space::De
     }
 }
 
-pub use crate::operation::describe_space::_describe_space_output::DescribeSpaceOutput;
-
 pub use crate::operation::describe_space::_describe_space_input::DescribeSpaceInput;
+
+pub use crate::operation::describe_space::_describe_space_output::DescribeSpaceOutput;
 
 mod _describe_space_input;
 

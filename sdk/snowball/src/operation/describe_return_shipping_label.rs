@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_return_sh
     }
 }
 
-pub use crate::operation::describe_return_shipping_label::_describe_return_shipping_label_output::DescribeReturnShippingLabelOutput;
-
 pub use crate::operation::describe_return_shipping_label::_describe_return_shipping_label_input::DescribeReturnShippingLabelInput;
+
+pub use crate::operation::describe_return_shipping_label::_describe_return_shipping_label_output::DescribeReturnShippingLabelOutput;
 
 mod _describe_return_shipping_label_input;
 

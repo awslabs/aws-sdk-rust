@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_libra
     }
 }
 
-pub use crate::operation::disassociate_library_item_review::_disassociate_library_item_review_output::DisassociateLibraryItemReviewOutput;
-
 pub use crate::operation::disassociate_library_item_review::_disassociate_library_item_review_input::DisassociateLibraryItemReviewInput;
+
+pub use crate::operation::disassociate_library_item_review::_disassociate_library_item_review_output::DisassociateLibraryItemReviewOutput;
 
 mod _disassociate_library_item_review_input;
 

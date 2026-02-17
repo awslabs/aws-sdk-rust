@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_organizations_root_credentials_management::_enable_organizations_root_credentials_management_output::EnableOrganizationsRootCredentialsManagementOutput;
-
 pub use crate::operation::enable_organizations_root_credentials_management::_enable_organizations_root_credentials_management_input::EnableOrganizationsRootCredentialsManagementInput;
+
+pub use crate::operation::enable_organizations_root_credentials_management::_enable_organizations_root_credentials_management_output::EnableOrganizationsRootCredentialsManagementOutput;
 
 mod _enable_organizations_root_credentials_management_input;
 

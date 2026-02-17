@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_directory_d
     }
 }
 
-pub use crate::operation::enable_directory_data_access::_enable_directory_data_access_output::EnableDirectoryDataAccessOutput;
-
 pub use crate::operation::enable_directory_data_access::_enable_directory_data_access_input::EnableDirectoryDataAccessInput;
+
+pub use crate::operation::enable_directory_data_access::_enable_directory_data_access_output::EnableDirectoryDataAccessOutput;
 
 mod _enable_directory_data_access_input;
 

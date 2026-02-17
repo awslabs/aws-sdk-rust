@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_list::Delet
     }
 }
 
-pub use crate::operation::delete_list::_delete_list_output::DeleteListOutput;
-
 pub use crate::operation::delete_list::_delete_list_input::DeleteListInput;
+
+pub use crate::operation::delete_list::_delete_list_output::DeleteListOutput;
 
 mod _delete_list_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_monitoring_s
     }
 }
 
-pub use crate::operation::start_monitoring_schedule::_start_monitoring_schedule_output::StartMonitoringScheduleOutput;
-
 pub use crate::operation::start_monitoring_schedule::_start_monitoring_schedule_input::StartMonitoringScheduleInput;
+
+pub use crate::operation::start_monitoring_schedule::_start_monitoring_schedule_output::StartMonitoringScheduleOutput;
 
 mod _start_monitoring_schedule_input;
 

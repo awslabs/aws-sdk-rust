@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_model_customi
     }
 }
 
-pub use crate::operation::stop_model_customization_job::_stop_model_customization_job_output::StopModelCustomizationJobOutput;
-
 pub use crate::operation::stop_model_customization_job::_stop_model_customization_job_input::StopModelCustomizationJobInput;
+
+pub use crate::operation::stop_model_customization_job::_stop_model_customization_job_output::StopModelCustomizationJobOutput;
 
 mod _stop_model_customization_job_input;
 

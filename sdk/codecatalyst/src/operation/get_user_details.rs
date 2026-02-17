@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_user_details::
     }
 }
 
-pub use crate::operation::get_user_details::_get_user_details_output::GetUserDetailsOutput;
-
 pub use crate::operation::get_user_details::_get_user_details_input::GetUserDetailsInput;
+
+pub use crate::operation::get_user_details::_get_user_details_output::GetUserDetailsOutput;
 
 mod _get_user_details_input;
 

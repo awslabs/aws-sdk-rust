@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_farm::GetFarmE
     }
 }
 
-pub use crate::operation::get_farm::_get_farm_output::GetFarmOutput;
-
 pub use crate::operation::get_farm::_get_farm_input::GetFarmInput;
+
+pub use crate::operation::get_farm::_get_farm_output::GetFarmOutput;
 
 mod _get_farm_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_card:
     }
 }
 
-pub use crate::operation::create_model_card::_create_model_card_output::CreateModelCardOutput;
-
 pub use crate::operation::create_model_card::_create_model_card_input::CreateModelCardInput;
+
+pub use crate::operation::create_model_card::_create_model_card_output::CreateModelCardOutput;
 
 mod _create_model_card_input;
 

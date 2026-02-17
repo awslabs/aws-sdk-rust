@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_entitleme
     }
 }
 
-pub use crate::operation::describe_entitlements::_describe_entitlements_output::DescribeEntitlementsOutput;
-
 pub use crate::operation::describe_entitlements::_describe_entitlements_input::DescribeEntitlementsInput;
+
+pub use crate::operation::describe_entitlements::_describe_entitlements_output::DescribeEntitlementsOutput;
 
 mod _describe_entitlements_input;
 

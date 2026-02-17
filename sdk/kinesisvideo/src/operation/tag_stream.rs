@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_stream::TagStr
     }
 }
 
-pub use crate::operation::tag_stream::_tag_stream_output::TagStreamOutput;
-
 pub use crate::operation::tag_stream::_tag_stream_input::TagStreamInput;
+
+pub use crate::operation::tag_stream::_tag_stream_output::TagStreamOutput;
 
 mod _tag_stream_input;
 

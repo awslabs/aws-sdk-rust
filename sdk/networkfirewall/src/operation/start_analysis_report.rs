@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_analysis_rep
     }
 }
 
-pub use crate::operation::start_analysis_report::_start_analysis_report_output::StartAnalysisReportOutput;
-
 pub use crate::operation::start_analysis_report::_start_analysis_report_input::StartAnalysisReportInput;
+
+pub use crate::operation::start_analysis_report::_start_analysis_report_output::StartAnalysisReportOutput;
 
 mod _start_analysis_report_input;
 

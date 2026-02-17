@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_delegate_ma
     }
 }
 
-pub use crate::operation::create_delegate_mac_volume_ownership_task::_create_delegate_mac_volume_ownership_task_output::CreateDelegateMacVolumeOwnershipTaskOutput;
-
 pub use crate::operation::create_delegate_mac_volume_ownership_task::_create_delegate_mac_volume_ownership_task_input::CreateDelegateMacVolumeOwnershipTaskInput;
+
+pub use crate::operation::create_delegate_mac_volume_ownership_task::_create_delegate_mac_volume_ownership_task_output::CreateDelegateMacVolumeOwnershipTaskOutput;
 
 mod _create_delegate_mac_volume_ownership_task_input;
 

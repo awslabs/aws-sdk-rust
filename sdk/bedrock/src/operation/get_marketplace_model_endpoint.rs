@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_marketplace_mo
     }
 }
 
-pub use crate::operation::get_marketplace_model_endpoint::_get_marketplace_model_endpoint_output::GetMarketplaceModelEndpointOutput;
-
 pub use crate::operation::get_marketplace_model_endpoint::_get_marketplace_model_endpoint_input::GetMarketplaceModelEndpointInput;
+
+pub use crate::operation::get_marketplace_model_endpoint::_get_marketplace_model_endpoint_output::GetMarketplaceModelEndpointOutput;
 
 mod _get_marketplace_model_endpoint_input;
 

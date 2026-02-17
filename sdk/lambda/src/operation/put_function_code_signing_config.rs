@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_function_code_
     }
 }
 
-pub use crate::operation::put_function_code_signing_config::_put_function_code_signing_config_output::PutFunctionCodeSigningConfigOutput;
-
 pub use crate::operation::put_function_code_signing_config::_put_function_code_signing_config_input::PutFunctionCodeSigningConfigInput;
+
+pub use crate::operation::put_function_code_signing_config::_put_function_code_signing_config_output::PutFunctionCodeSigningConfigOutput;
 
 mod _put_function_code_signing_config_input;
 

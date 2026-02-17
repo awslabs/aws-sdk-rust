@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_core_definiti
     }
 }
 
-pub use crate::operation::list_core_definition_versions::_list_core_definition_versions_output::ListCoreDefinitionVersionsOutput;
-
 pub use crate::operation::list_core_definition_versions::_list_core_definition_versions_input::ListCoreDefinitionVersionsInput;
+
+pub use crate::operation::list_core_definition_versions::_list_core_definition_versions_output::ListCoreDefinitionVersionsOutput;
 
 mod _list_core_definition_versions_input;
 

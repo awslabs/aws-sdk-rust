@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_custom_enti
     }
 }
 
-pub use crate::operation::create_custom_entity_type::_create_custom_entity_type_output::CreateCustomEntityTypeOutput;
-
 pub use crate::operation::create_custom_entity_type::_create_custom_entity_type_input::CreateCustomEntityTypeInput;
+
+pub use crate::operation::create_custom_entity_type::_create_custom_entity_type_output::CreateCustomEntityTypeOutput;
 
 mod _create_custom_entity_type_input;
 

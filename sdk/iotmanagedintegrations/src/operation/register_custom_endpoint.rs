@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_custom_en
     }
 }
 
-pub use crate::operation::register_custom_endpoint::_register_custom_endpoint_output::RegisterCustomEndpointOutput;
-
 pub use crate::operation::register_custom_endpoint::_register_custom_endpoint_input::RegisterCustomEndpointInput;
+
+pub use crate::operation::register_custom_endpoint::_register_custom_endpoint_output::RegisterCustomEndpointOutput;
 
 mod _register_custom_endpoint_input;
 

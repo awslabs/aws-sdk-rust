@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pricing_rules
     }
 }
 
-pub use crate::operation::list_pricing_rules::_list_pricing_rules_output::ListPricingRulesOutput;
-
 pub use crate::operation::list_pricing_rules::_list_pricing_rules_input::ListPricingRulesInput;
+
+pub use crate::operation::list_pricing_rules::_list_pricing_rules_output::ListPricingRulesOutput;
 
 mod _list_pricing_rules_input;
 

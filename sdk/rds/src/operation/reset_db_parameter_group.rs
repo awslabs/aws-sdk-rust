@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_db_parameter
     }
 }
 
-pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_output::ResetDbParameterGroupOutput;
-
 pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_input::ResetDbParameterGroupInput;
+
+pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_output::ResetDbParameterGroupOutput;
 
 mod _reset_db_parameter_group_input;
 

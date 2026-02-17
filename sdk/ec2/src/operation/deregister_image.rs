@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_image::
     }
 }
 
-pub use crate::operation::deregister_image::_deregister_image_output::DeregisterImageOutput;
-
 pub use crate::operation::deregister_image::_deregister_image_input::DeregisterImageInput;
+
+pub use crate::operation::deregister_image::_deregister_image_output::DeregisterImageOutput;
 
 mod _deregister_image_input;
 

@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_facet_from_
     }
 }
 
-pub use crate::operation::remove_facet_from_object::_remove_facet_from_object_output::RemoveFacetFromObjectOutput;
-
 pub use crate::operation::remove_facet_from_object::_remove_facet_from_object_input::RemoveFacetFromObjectInput;
+
+pub use crate::operation::remove_facet_from_object::_remove_facet_from_object_output::RemoveFacetFromObjectOutput;
 
 mod _remove_facet_from_object_input;
 

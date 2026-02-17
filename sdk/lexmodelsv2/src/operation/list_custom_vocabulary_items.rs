@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_vocabu
     }
 }
 
-pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_items_output::ListCustomVocabularyItemsOutput;
-
 pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_items_input::ListCustomVocabularyItemsInput;
+
+pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_items_output::ListCustomVocabularyItemsOutput;
 
 mod _list_custom_vocabulary_items_input;
 

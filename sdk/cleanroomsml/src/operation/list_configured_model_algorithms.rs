@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_configured_mo
     }
 }
 
-pub use crate::operation::list_configured_model_algorithms::_list_configured_model_algorithms_output::ListConfiguredModelAlgorithmsOutput;
-
 pub use crate::operation::list_configured_model_algorithms::_list_configured_model_algorithms_input::ListConfiguredModelAlgorithmsInput;
+
+pub use crate::operation::list_configured_model_algorithms::_list_configured_model_algorithms_output::ListConfiguredModelAlgorithmsOutput;
 
 mod _list_configured_model_algorithms_input;
 

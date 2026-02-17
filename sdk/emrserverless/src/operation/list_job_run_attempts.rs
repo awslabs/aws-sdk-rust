@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_run_attem
     }
 }
 
-pub use crate::operation::list_job_run_attempts::_list_job_run_attempts_output::ListJobRunAttemptsOutput;
-
 pub use crate::operation::list_job_run_attempts::_list_job_run_attempts_input::ListJobRunAttemptsInput;
+
+pub use crate::operation::list_job_run_attempts::_list_job_run_attempts_output::ListJobRunAttemptsOutput;
 
 mod _list_job_run_attempts_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_track
     }
 }
 
-pub use crate::operation::create_event_tracker::_create_event_tracker_output::CreateEventTrackerOutput;
-
 pub use crate::operation::create_event_tracker::_create_event_tracker_input::CreateEventTrackerInput;
+
+pub use crate::operation::create_event_tracker::_create_event_tracker_output::CreateEventTrackerOutput;
 
 mod _create_event_tracker_input;
 

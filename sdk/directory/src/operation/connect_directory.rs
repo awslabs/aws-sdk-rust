@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::connect_directory:
     }
 }
 
-pub use crate::operation::connect_directory::_connect_directory_output::ConnectDirectoryOutput;
-
 pub use crate::operation::connect_directory::_connect_directory_input::ConnectDirectoryInput;
+
+pub use crate::operation::connect_directory::_connect_directory_output::ConnectDirectoryOutput;
 
 mod _connect_directory_input;
 

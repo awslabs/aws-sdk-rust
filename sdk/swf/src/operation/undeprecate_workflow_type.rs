@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::undeprecate_workfl
     }
 }
 
-pub use crate::operation::undeprecate_workflow_type::_undeprecate_workflow_type_output::UndeprecateWorkflowTypeOutput;
-
 pub use crate::operation::undeprecate_workflow_type::_undeprecate_workflow_type_input::UndeprecateWorkflowTypeInput;
+
+pub use crate::operation::undeprecate_workflow_type::_undeprecate_workflow_type_output::UndeprecateWorkflowTypeOutput;
 
 mod _undeprecate_workflow_type_input;
 

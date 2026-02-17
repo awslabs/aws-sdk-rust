@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_mailbox_permi
     }
 }
 
-pub use crate::operation::list_mailbox_permissions::_list_mailbox_permissions_output::ListMailboxPermissionsOutput;
-
 pub use crate::operation::list_mailbox_permissions::_list_mailbox_permissions_input::ListMailboxPermissionsInput;
+
+pub use crate::operation::list_mailbox_permissions::_list_mailbox_permissions_output::ListMailboxPermissionsOutput;
 
 mod _list_mailbox_permissions_input;
 

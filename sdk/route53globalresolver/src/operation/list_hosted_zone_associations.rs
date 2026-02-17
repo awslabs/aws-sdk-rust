@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hosted_zone_a
     }
 }
 
-pub use crate::operation::list_hosted_zone_associations::_list_hosted_zone_associations_output::ListHostedZoneAssociationsOutput;
-
 pub use crate::operation::list_hosted_zone_associations::_list_hosted_zone_associations_input::ListHostedZoneAssociationsInput;
+
+pub use crate::operation::list_hosted_zone_associations::_list_hosted_zone_associations_output::ListHostedZoneAssociationsOutput;
 
 mod _list_hosted_zone_associations_input;
 

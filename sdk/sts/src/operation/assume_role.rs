@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_role::Assum
     }
 }
 
-pub use crate::operation::assume_role::_assume_role_output::AssumeRoleOutput;
-
 pub use crate::operation::assume_role::_assume_role_input::AssumeRoleInput;
+
+pub use crate::operation::assume_role::_assume_role_output::AssumeRoleOutput;
 
 mod _assume_role_input;
 

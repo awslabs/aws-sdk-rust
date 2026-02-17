@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_reci
     }
 }
 
-pub use crate::operation::get_container_recipe_policy::_get_container_recipe_policy_output::GetContainerRecipePolicyOutput;
-
 pub use crate::operation::get_container_recipe_policy::_get_container_recipe_policy_input::GetContainerRecipePolicyInput;
+
+pub use crate::operation::get_container_recipe_policy::_get_container_recipe_policy_output::GetContainerRecipePolicyOutput;
 
 mod _get_container_recipe_policy_input;
 

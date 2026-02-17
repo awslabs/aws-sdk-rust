@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_configuration
     }
 }
 
-pub use crate::operation::stop_configuration_recorder::_stop_configuration_recorder_output::StopConfigurationRecorderOutput;
-
 pub use crate::operation::stop_configuration_recorder::_stop_configuration_recorder_input::StopConfigurationRecorderInput;
+
+pub use crate::operation::stop_configuration_recorder::_stop_configuration_recorder_output::StopConfigurationRecorderOutput;
 
 mod _stop_configuration_recorder_input;
 

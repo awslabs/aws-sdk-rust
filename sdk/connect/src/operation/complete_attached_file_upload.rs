@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_attached_
     }
 }
 
-pub use crate::operation::complete_attached_file_upload::_complete_attached_file_upload_output::CompleteAttachedFileUploadOutput;
-
 pub use crate::operation::complete_attached_file_upload::_complete_attached_file_upload_input::CompleteAttachedFileUploadInput;
+
+pub use crate::operation::complete_attached_file_upload::_complete_attached_file_upload_output::CompleteAttachedFileUploadOutput;
 
 mod _complete_attached_file_upload_input;
 

@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_relational_dat
     }
 }
 
-pub use crate::operation::get_relational_database_log_streams::_get_relational_database_log_streams_output::GetRelationalDatabaseLogStreamsOutput;
-
 pub use crate::operation::get_relational_database_log_streams::_get_relational_database_log_streams_input::GetRelationalDatabaseLogStreamsInput;
+
+pub use crate::operation::get_relational_database_log_streams::_get_relational_database_log_streams_output::GetRelationalDatabaseLogStreamsOutput;
 
 mod _get_relational_database_log_streams_input;
 

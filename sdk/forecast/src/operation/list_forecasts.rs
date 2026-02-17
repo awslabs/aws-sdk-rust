@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_forecasts::Li
     }
 }
 
-pub use crate::operation::list_forecasts::_list_forecasts_output::ListForecastsOutput;
-
 pub use crate::operation::list_forecasts::_list_forecasts_input::ListForecastsInput;
+
+pub use crate::operation::list_forecasts::_list_forecasts_output::ListForecastsOutput;
 
 mod _list_forecasts_input;
 

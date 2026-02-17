@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_creat
     }
 }
 
-pub use crate::operation::disassociate_created_artifact::_disassociate_created_artifact_output::DisassociateCreatedArtifactOutput;
-
 pub use crate::operation::disassociate_created_artifact::_disassociate_created_artifact_input::DisassociateCreatedArtifactInput;
+
+pub use crate::operation::disassociate_created_artifact::_disassociate_created_artifact_output::DisassociateCreatedArtifactOutput;
 
 mod _disassociate_created_artifact_input;
 

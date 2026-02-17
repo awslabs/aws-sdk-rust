@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_policy::
     }
 }
 
-pub use crate::operation::batch_get_policy::_batch_get_policy_output::BatchGetPolicyOutput;
-
 pub use crate::operation::batch_get_policy::_batch_get_policy_input::BatchGetPolicyInput;
+
+pub use crate::operation::batch_get_policy::_batch_get_policy_output::BatchGetPolicyOutput;
 
 mod _batch_get_policy_input;
 

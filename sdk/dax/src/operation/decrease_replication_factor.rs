@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::decrease_replicati
     }
 }
 
-pub use crate::operation::decrease_replication_factor::_decrease_replication_factor_output::DecreaseReplicationFactorOutput;
-
 pub use crate::operation::decrease_replication_factor::_decrease_replication_factor_input::DecreaseReplicationFactorInput;
+
+pub use crate::operation::decrease_replication_factor::_decrease_replication_factor_output::DecreaseReplicationFactorOutput;
 
 mod _decrease_replication_factor_input;
 

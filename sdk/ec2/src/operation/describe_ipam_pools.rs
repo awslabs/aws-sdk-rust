@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ipam_pool
     }
 }
 
-pub use crate::operation::describe_ipam_pools::_describe_ipam_pools_output::DescribeIpamPoolsOutput;
-
 pub use crate::operation::describe_ipam_pools::_describe_ipam_pools_input::DescribeIpamPoolsInput;
+
+pub use crate::operation::describe_ipam_pools::_describe_ipam_pools_output::DescribeIpamPoolsOutput;
 
 mod _describe_ipam_pools_input;
 

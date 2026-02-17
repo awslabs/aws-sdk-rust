@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_permission_pol
     }
 }
 
-pub use crate::operation::get_permission_policy::_get_permission_policy_output::GetPermissionPolicyOutput;
-
 pub use crate::operation::get_permission_policy::_get_permission_policy_input::GetPermissionPolicyInput;
+
+pub use crate::operation::get_permission_policy::_get_permission_policy_output::GetPermissionPolicyOutput;
 
 mod _get_permission_policy_input;
 

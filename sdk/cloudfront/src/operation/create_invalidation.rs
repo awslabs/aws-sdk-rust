@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_invalidatio
     }
 }
 
-pub use crate::operation::create_invalidation::_create_invalidation_output::CreateInvalidationOutput;
-
 pub use crate::operation::create_invalidation::_create_invalidation_input::CreateInvalidationInput;
+
+pub use crate::operation::create_invalidation::_create_invalidation_output::CreateInvalidationOutput;
 
 mod _create_invalidation_input;
 

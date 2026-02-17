@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_geofence_co
     }
 }
 
-pub use crate::operation::create_geofence_collection::_create_geofence_collection_output::CreateGeofenceCollectionOutput;
-
 pub use crate::operation::create_geofence_collection::_create_geofence_collection_input::CreateGeofenceCollectionInput;
+
+pub use crate::operation::create_geofence_collection::_create_geofence_collection_output::CreateGeofenceCollectionOutput;
 
 mod _create_geofence_collection_input;
 

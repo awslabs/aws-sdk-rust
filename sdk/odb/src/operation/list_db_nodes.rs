@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_nodes::Lis
     }
 }
 
-pub use crate::operation::list_db_nodes::_list_db_nodes_output::ListDbNodesOutput;
-
 pub use crate::operation::list_db_nodes::_list_db_nodes_input::ListDbNodesInput;
+
+pub use crate::operation::list_db_nodes::_list_db_nodes_output::ListDbNodesOutput;
 
 mod _list_db_nodes_input;
 

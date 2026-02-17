@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bot_channel
     }
 }
 
-pub use crate::operation::delete_bot_channel_association::_delete_bot_channel_association_output::DeleteBotChannelAssociationOutput;
-
 pub use crate::operation::delete_bot_channel_association::_delete_bot_channel_association_input::DeleteBotChannelAssociationInput;
+
+pub use crate::operation::delete_bot_channel_association::_delete_bot_channel_association_output::DeleteBotChannelAssociationOutput;
 
 mod _delete_bot_channel_association_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_distributio
     }
 }
 
-pub use crate::operation::update_distribution_bundle::_update_distribution_bundle_output::UpdateDistributionBundleOutput;
-
 pub use crate::operation::update_distribution_bundle::_update_distribution_bundle_input::UpdateDistributionBundleInput;
+
+pub use crate::operation::update_distribution_bundle::_update_distribution_bundle_output::UpdateDistributionBundleOutput;
 
 mod _update_distribution_bundle_input;
 

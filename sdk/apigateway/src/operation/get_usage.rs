@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_usage::GetUsag
     }
 }
 
-pub use crate::operation::get_usage::_get_usage_output::GetUsageOutput;
-
 pub use crate::operation::get_usage::_get_usage_input::GetUsageInput;
+
+pub use crate::operation::get_usage::_get_usage_output::GetUsageOutput;
 
 mod _get_usage_input;
 

@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_flow_executio
     }
 }
 
-pub use crate::operation::stop_flow_execution::_stop_flow_execution_output::StopFlowExecutionOutput;
-
 pub use crate::operation::stop_flow_execution::_stop_flow_execution_input::StopFlowExecutionInput;
+
+pub use crate::operation::stop_flow_execution::_stop_flow_execution_output::StopFlowExecutionOutput;
 
 mod _stop_flow_execution_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flywheels::Li
     }
 }
 
-pub use crate::operation::list_flywheels::_list_flywheels_output::ListFlywheelsOutput;
-
 pub use crate::operation::list_flywheels::_list_flywheels_input::ListFlywheelsInput;
+
+pub use crate::operation::list_flywheels::_list_flywheels_output::ListFlywheelsOutput;
 
 mod _list_flywheels_input;
 

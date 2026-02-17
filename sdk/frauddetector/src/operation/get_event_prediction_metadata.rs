@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_predicti
     }
 }
 
-pub use crate::operation::get_event_prediction_metadata::_get_event_prediction_metadata_output::GetEventPredictionMetadataOutput;
-
 pub use crate::operation::get_event_prediction_metadata::_get_event_prediction_metadata_input::GetEventPredictionMetadataInput;
+
+pub use crate::operation::get_event_prediction_metadata::_get_event_prediction_metadata_output::GetEventPredictionMetadataOutput;
 
 mod _get_event_prediction_metadata_input;
 

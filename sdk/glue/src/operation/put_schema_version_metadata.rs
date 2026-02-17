@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_schema_version
     }
 }
 
-pub use crate::operation::put_schema_version_metadata::_put_schema_version_metadata_output::PutSchemaVersionMetadataOutput;
-
 pub use crate::operation::put_schema_version_metadata::_put_schema_version_metadata_input::PutSchemaVersionMetadataInput;
+
+pub use crate::operation::put_schema_version_metadata::_put_schema_version_metadata_output::PutSchemaVersionMetadataOutput;
 
 mod _put_schema_version_metadata_input;
 

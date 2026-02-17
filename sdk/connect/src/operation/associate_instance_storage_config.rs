@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_instance
     }
 }
 
-pub use crate::operation::associate_instance_storage_config::_associate_instance_storage_config_output::AssociateInstanceStorageConfigOutput;
-
 pub use crate::operation::associate_instance_storage_config::_associate_instance_storage_config_input::AssociateInstanceStorageConfigInput;
+
+pub use crate::operation::associate_instance_storage_config::_associate_instance_storage_config_output::AssociateInstanceStorageConfigOutput;
 
 mod _associate_instance_storage_config_input;
 

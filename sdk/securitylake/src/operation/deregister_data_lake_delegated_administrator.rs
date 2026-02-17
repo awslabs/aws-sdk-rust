@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::deregister_data_lake_delegated_administrator::_deregister_data_lake_delegated_administrator_output::DeregisterDataLakeDelegatedAdministratorOutput;
-
 pub use crate::operation::deregister_data_lake_delegated_administrator::_deregister_data_lake_delegated_administrator_input::DeregisterDataLakeDelegatedAdministratorInput;
+
+pub use crate::operation::deregister_data_lake_delegated_administrator::_deregister_data_lake_delegated_administrator_output::DeregisterDataLakeDelegatedAdministratorOutput;
 
 mod _deregister_data_lake_delegated_administrator_input;
 

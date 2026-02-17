@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_index::Upda
     }
 }
 
-pub use crate::operation::update_index::_update_index_output::UpdateIndexOutput;
-
 pub use crate::operation::update_index::_update_index_input::UpdateIndexInput;
+
+pub use crate::operation::update_index::_update_index_output::UpdateIndexOutput;
 
 mod _update_index_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_snapsh
     }
 }
 
-pub use crate::operation::get_segment_snapshot::_get_segment_snapshot_output::GetSegmentSnapshotOutput;
-
 pub use crate::operation::get_segment_snapshot::_get_segment_snapshot_input::GetSegmentSnapshotInput;
+
+pub use crate::operation::get_segment_snapshot::_get_segment_snapshot_output::GetSegmentSnapshotOutput;
 
 mod _get_segment_snapshot_input;
 

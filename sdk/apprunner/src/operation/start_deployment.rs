@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_deployment::
     }
 }
 
-pub use crate::operation::start_deployment::_start_deployment_output::StartDeploymentOutput;
-
 pub use crate::operation::start_deployment::_start_deployment_input::StartDeploymentInput;
+
+pub use crate::operation::start_deployment::_start_deployment_output::StartDeploymentOutput;
 
 mod _start_deployment_input;
 

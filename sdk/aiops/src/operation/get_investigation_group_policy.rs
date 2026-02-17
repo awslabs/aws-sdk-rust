@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_investigation_
     }
 }
 
-pub use crate::operation::get_investigation_group_policy::_get_investigation_group_policy_output::GetInvestigationGroupPolicyOutput;
-
 pub use crate::operation::get_investigation_group_policy::_get_investigation_group_policy_input::GetInvestigationGroupPolicyInput;
+
+pub use crate::operation::get_investigation_group_policy::_get_investigation_group_policy_output::GetInvestigationGroupPolicyOutput;
 
 mod _get_investigation_group_policy_input;
 

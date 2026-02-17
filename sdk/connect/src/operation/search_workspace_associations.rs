@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_workspace_a
     }
 }
 
-pub use crate::operation::search_workspace_associations::_search_workspace_associations_output::SearchWorkspaceAssociationsOutput;
-
 pub use crate::operation::search_workspace_associations::_search_workspace_associations_input::SearchWorkspaceAssociationsInput;
+
+pub use crate::operation::search_workspace_associations::_search_workspace_associations_output::SearchWorkspaceAssociationsOutput;
 
 mod _search_workspace_associations_input;
 

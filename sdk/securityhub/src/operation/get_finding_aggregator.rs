@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_finding_aggreg
     }
 }
 
-pub use crate::operation::get_finding_aggregator::_get_finding_aggregator_output::GetFindingAggregatorOutput;
-
 pub use crate::operation::get_finding_aggregator::_get_finding_aggregator_input::GetFindingAggregatorInput;
+
+pub use crate::operation::get_finding_aggregator::_get_finding_aggregator_output::GetFindingAggregatorOutput;
 
 mod _get_finding_aggregator_input;
 

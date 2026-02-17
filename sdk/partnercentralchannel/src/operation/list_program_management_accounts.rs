@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_program_manag
     }
 }
 
-pub use crate::operation::list_program_management_accounts::_list_program_management_accounts_output::ListProgramManagementAccountsOutput;
-
 pub use crate::operation::list_program_management_accounts::_list_program_management_accounts_input::ListProgramManagementAccountsInput;
+
+pub use crate::operation::list_program_management_accounts::_list_program_management_accounts_output::ListProgramManagementAccountsOutput;
 
 mod _list_program_management_accounts_input;
 

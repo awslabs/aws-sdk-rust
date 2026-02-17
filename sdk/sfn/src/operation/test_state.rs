@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_state::TestSt
     }
 }
 
-pub use crate::operation::test_state::_test_state_output::TestStateOutput;
-
 pub use crate::operation::test_state::_test_state_input::TestStateInput;
+
+pub use crate::operation::test_state::_test_state_output::TestStateOutput;
 
 mod _test_state_input;
 

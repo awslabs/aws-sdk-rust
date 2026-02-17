@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_collaboration_
     }
 }
 
-pub use crate::operation::get_collaboration_analysis_template::_get_collaboration_analysis_template_output::GetCollaborationAnalysisTemplateOutput;
-
 pub use crate::operation::get_collaboration_analysis_template::_get_collaboration_analysis_template_input::GetCollaborationAnalysisTemplateInput;
+
+pub use crate::operation::get_collaboration_analysis_template::_get_collaboration_analysis_template_output::GetCollaborationAnalysisTemplateOutput;
 
 mod _get_collaboration_analysis_template_input;
 

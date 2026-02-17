@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_phone
     }
 }
 
-pub use crate::operation::batch_delete_phone_number::_batch_delete_phone_number_output::BatchDeletePhoneNumberOutput;
-
 pub use crate::operation::batch_delete_phone_number::_batch_delete_phone_number_input::BatchDeletePhoneNumberInput;
+
+pub use crate::operation::batch_delete_phone_number::_batch_delete_phone_number_output::BatchDeletePhoneNumberOutput;
 
 mod _batch_delete_phone_number_input;
 

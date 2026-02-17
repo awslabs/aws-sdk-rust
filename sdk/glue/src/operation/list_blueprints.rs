@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_blueprints::L
     }
 }
 
-pub use crate::operation::list_blueprints::_list_blueprints_output::ListBlueprintsOutput;
-
 pub use crate::operation::list_blueprints::_list_blueprints_input::ListBlueprintsInput;
+
+pub use crate::operation::list_blueprints::_list_blueprints_output::ListBlueprintsOutput;
 
 mod _list_blueprints_input;
 

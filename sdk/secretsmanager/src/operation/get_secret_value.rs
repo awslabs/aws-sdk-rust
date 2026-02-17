@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_secret_value::
     }
 }
 
-pub use crate::operation::get_secret_value::_get_secret_value_output::GetSecretValueOutput;
-
 pub use crate::operation::get_secret_value::_get_secret_value_input::GetSecretValueInput;
+
+pub use crate::operation::get_secret_value::_get_secret_value_output::GetSecretValueOutput;
 
 mod _get_secret_value_input;
 

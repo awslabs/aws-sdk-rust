@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_gui_session:
     }
 }
 
-pub use crate::operation::start_gui_session::_start_gui_session_output::StartGuiSessionOutput;
-
 pub use crate::operation::start_gui_session::_start_gui_session_input::StartGuiSessionInput;
+
+pub use crate::operation::start_gui_session::_start_gui_session_output::StartGuiSessionOutput;
 
 mod _start_gui_session_input;
 

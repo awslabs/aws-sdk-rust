@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_subscription_f
     }
 }
 
-pub use crate::operation::put_subscription_filter::_put_subscription_filter_output::PutSubscriptionFilterOutput;
-
 pub use crate::operation::put_subscription_filter::_put_subscription_filter_input::PutSubscriptionFilterInput;
+
+pub use crate::operation::put_subscription_filter::_put_subscription_filter_output::PutSubscriptionFilterOutput;
 
 mod _put_subscription_filter_input;
 

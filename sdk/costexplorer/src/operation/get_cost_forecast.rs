@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cost_forecast:
     }
 }
 
-pub use crate::operation::get_cost_forecast::_get_cost_forecast_output::GetCostForecastOutput;
-
 pub use crate::operation::get_cost_forecast::_get_cost_forecast_input::GetCostForecastInput;
+
+pub use crate::operation::get_cost_forecast::_get_cost_forecast_output::GetCostForecastOutput;
 
 mod _get_cost_forecast_input;
 

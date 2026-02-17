@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::failover_primary_c
     }
 }
 
-pub use crate::operation::failover_primary_compute::_failover_primary_compute_output::FailoverPrimaryComputeOutput;
-
 pub use crate::operation::failover_primary_compute::_failover_primary_compute_input::FailoverPrimaryComputeInput;
+
+pub use crate::operation::failover_primary_compute::_failover_primary_compute_output::FailoverPrimaryComputeOutput;
 
 mod _failover_primary_compute_input;
 

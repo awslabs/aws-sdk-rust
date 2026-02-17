@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fleet_members
     }
 }
 
-pub use crate::operation::list_fleet_members::_list_fleet_members_output::ListFleetMembersOutput;
-
 pub use crate::operation::list_fleet_members::_list_fleet_members_input::ListFleetMembersInput;
+
+pub use crate::operation::list_fleet_members::_list_fleet_members_output::ListFleetMembersOutput;
 
 mod _list_fleet_members_input;
 

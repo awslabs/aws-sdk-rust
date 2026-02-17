@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_vpc_block_public_access_exclusions::_describe_vpc_block_public_access_exclusions_output::DescribeVpcBlockPublicAccessExclusionsOutput;
-
 pub use crate::operation::describe_vpc_block_public_access_exclusions::_describe_vpc_block_public_access_exclusions_input::DescribeVpcBlockPublicAccessExclusionsInput;
+
+pub use crate::operation::describe_vpc_block_public_access_exclusions::_describe_vpc_block_public_access_exclusions_output::DescribeVpcBlockPublicAccessExclusionsOutput;
 
 mod _describe_vpc_block_public_access_exclusions_input;
 

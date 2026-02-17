@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_scaling_p
     }
 }
 
-pub use crate::operation::describe_scaling_process_types::_describe_scaling_process_types_output::DescribeScalingProcessTypesOutput;
-
 pub use crate::operation::describe_scaling_process_types::_describe_scaling_process_types_input::DescribeScalingProcessTypesInput;
+
+pub use crate::operation::describe_scaling_process_types::_describe_scaling_process_types_output::DescribeScalingProcessTypesOutput;
 
 mod _describe_scaling_process_types_input;
 

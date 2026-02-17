@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_traffic_d
     }
 }
 
-pub use crate::operation::describe_traffic_distribution_group::_describe_traffic_distribution_group_output::DescribeTrafficDistributionGroupOutput;
-
 pub use crate::operation::describe_traffic_distribution_group::_describe_traffic_distribution_group_input::DescribeTrafficDistributionGroupInput;
+
+pub use crate::operation::describe_traffic_distribution_group::_describe_traffic_distribution_group_output::DescribeTrafficDistributionGroupOutput;
 
 mod _describe_traffic_distribution_group_input;
 

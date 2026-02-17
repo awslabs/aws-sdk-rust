@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entities_for_
     }
 }
 
-pub use crate::operation::list_entities_for_policy::_list_entities_for_policy_output::ListEntitiesForPolicyOutput;
-
 pub use crate::operation::list_entities_for_policy::_list_entities_for_policy_input::ListEntitiesForPolicyInput;
+
+pub use crate::operation::list_entities_for_policy::_list_entities_for_policy_output::ListEntitiesForPolicyOutput;
 
 mod _list_entities_for_policy_input;
 

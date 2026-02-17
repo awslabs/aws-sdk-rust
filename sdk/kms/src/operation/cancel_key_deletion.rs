@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_key_deletio
     }
 }
 
-pub use crate::operation::cancel_key_deletion::_cancel_key_deletion_output::CancelKeyDeletionOutput;
-
 pub use crate::operation::cancel_key_deletion::_cancel_key_deletion_input::CancelKeyDeletionInput;
+
+pub use crate::operation::cancel_key_deletion::_cancel_key_deletion_output::CancelKeyDeletionOutput;
 
 mod _cancel_key_deletion_input;
 

@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_asset_filte
     }
 }
 
-pub use crate::operation::update_asset_filter::_update_asset_filter_output::UpdateAssetFilterOutput;
-
 pub use crate::operation::update_asset_filter::_update_asset_filter_input::UpdateAssetFilterInput;
+
+pub use crate::operation::update_asset_filter::_update_asset_filter_output::UpdateAssetFilterOutput;
 
 mod _update_asset_filter_input;
 

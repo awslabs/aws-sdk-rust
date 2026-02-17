@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_resource_ga
     }
 }
 
-pub use crate::operation::create_resource_gateway::_create_resource_gateway_output::CreateResourceGatewayOutput;
-
 pub use crate::operation::create_resource_gateway::_create_resource_gateway_input::CreateResourceGatewayInput;
+
+pub use crate::operation::create_resource_gateway::_create_resource_gateway_output::CreateResourceGatewayOutput;
 
 mod _create_resource_gateway_input;
 

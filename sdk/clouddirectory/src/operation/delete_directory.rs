@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_directory::
     }
 }
 
-pub use crate::operation::delete_directory::_delete_directory_output::DeleteDirectoryOutput;
-
 pub use crate::operation::delete_directory::_delete_directory_input::DeleteDirectoryInput;
+
+pub use crate::operation::delete_directory::_delete_directory_output::DeleteDirectoryOutput;
 
 mod _delete_directory_input;
 

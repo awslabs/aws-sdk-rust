@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_virtual_gat
     }
 }
 
-pub use crate::operation::delete_virtual_gateway::_delete_virtual_gateway_output::DeleteVirtualGatewayOutput;
-
 pub use crate::operation::delete_virtual_gateway::_delete_virtual_gateway_input::DeleteVirtualGatewayInput;
+
+pub use crate::operation::delete_virtual_gateway::_delete_virtual_gateway_output::DeleteVirtualGatewayOutput;
 
 mod _delete_virtual_gateway_input;
 

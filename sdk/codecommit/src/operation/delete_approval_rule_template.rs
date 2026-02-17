@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_approval_ru
     }
 }
 
-pub use crate::operation::delete_approval_rule_template::_delete_approval_rule_template_output::DeleteApprovalRuleTemplateOutput;
-
 pub use crate::operation::delete_approval_rule_template::_delete_approval_rule_template_input::DeleteApprovalRuleTemplateInput;
+
+pub use crate::operation::delete_approval_rule_template::_delete_approval_rule_template_output::DeleteApprovalRuleTemplateOutput;
 
 mod _delete_approval_rule_template_input;
 

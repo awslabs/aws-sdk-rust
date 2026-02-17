@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_pricing_plans_associated_with_pricing_rule::_list_pricing_plans_associated_with_pricing_rule_output::ListPricingPlansAssociatedWithPricingRuleOutput;
-
 pub use crate::operation::list_pricing_plans_associated_with_pricing_rule::_list_pricing_plans_associated_with_pricing_rule_input::ListPricingPlansAssociatedWithPricingRuleInput;
+
+pub use crate::operation::list_pricing_plans_associated_with_pricing_rule::_list_pricing_plans_associated_with_pricing_rule_output::ListPricingPlansAssociatedWithPricingRuleOutput;
 
 mod _list_pricing_plans_associated_with_pricing_rule_input;
 

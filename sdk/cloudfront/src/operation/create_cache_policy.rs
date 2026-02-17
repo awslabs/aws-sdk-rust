@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cache_polic
     }
 }
 
-pub use crate::operation::create_cache_policy::_create_cache_policy_output::CreateCachePolicyOutput;
-
 pub use crate::operation::create_cache_policy::_create_cache_policy_input::CreateCachePolicyInput;
+
+pub use crate::operation::create_cache_policy::_create_cache_policy_output::CreateCachePolicyOutput;
 
 mod _create_cache_policy_input;
 

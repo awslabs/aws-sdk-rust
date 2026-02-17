@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_byte_match_
     }
 }
 
-pub use crate::operation::delete_byte_match_set::_delete_byte_match_set_output::DeleteByteMatchSetOutput;
-
 pub use crate::operation::delete_byte_match_set::_delete_byte_match_set_input::DeleteByteMatchSetInput;
+
+pub use crate::operation::delete_byte_match_set::_delete_byte_match_set_output::DeleteByteMatchSetOutput;
 
 mod _delete_byte_match_set_input;
 

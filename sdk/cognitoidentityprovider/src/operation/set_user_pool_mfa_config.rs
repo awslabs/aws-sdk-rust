@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_user_pool_mfa_
     }
 }
 
-pub use crate::operation::set_user_pool_mfa_config::_set_user_pool_mfa_config_output::SetUserPoolMfaConfigOutput;
-
 pub use crate::operation::set_user_pool_mfa_config::_set_user_pool_mfa_config_input::SetUserPoolMfaConfigInput;
+
+pub use crate::operation::set_user_pool_mfa_config::_set_user_pool_mfa_config_output::SetUserPoolMfaConfigOutput;
 
 mod _set_user_pool_mfa_config_input;
 

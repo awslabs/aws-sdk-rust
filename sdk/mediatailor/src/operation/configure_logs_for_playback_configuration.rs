@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::configure_logs_for
     }
 }
 
-pub use crate::operation::configure_logs_for_playback_configuration::_configure_logs_for_playback_configuration_output::ConfigureLogsForPlaybackConfigurationOutput;
-
 pub use crate::operation::configure_logs_for_playback_configuration::_configure_logs_for_playback_configuration_input::ConfigureLogsForPlaybackConfigurationInput;
+
+pub use crate::operation::configure_logs_for_playback_configuration::_configure_logs_for_playback_configuration_output::ConfigureLogsForPlaybackConfigurationOutput;
 
 mod _configure_logs_for_playback_configuration_input;
 

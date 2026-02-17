@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_connection:
     }
 }
 
-pub use crate::operation::delete_connection::_delete_connection_output::DeleteConnectionOutput;
-
 pub use crate::operation::delete_connection::_delete_connection_input::DeleteConnectionInput;
+
+pub use crate::operation::delete_connection::_delete_connection_output::DeleteConnectionOutput;
 
 mod _delete_connection_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_function_ur
     }
 }
 
-pub use crate::operation::update_function_url_config::_update_function_url_config_output::UpdateFunctionUrlConfigOutput;
-
 pub use crate::operation::update_function_url_config::_update_function_url_config_input::UpdateFunctionUrlConfigInput;
+
+pub use crate::operation::update_function_url_config::_update_function_url_config_output::UpdateFunctionUrlConfigOutput;
 
 mod _update_function_url_config_input;
 

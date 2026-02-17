@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::query_vectors::Que
     }
 }
 
-pub use crate::operation::query_vectors::_query_vectors_output::QueryVectorsOutput;
-
 pub use crate::operation::query_vectors::_query_vectors_input::QueryVectorsInput;
+
+pub use crate::operation::query_vectors::_query_vectors_output::QueryVectorsOutput;
 
 mod _query_vectors_input;
 

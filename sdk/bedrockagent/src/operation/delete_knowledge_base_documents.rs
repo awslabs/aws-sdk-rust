@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_knowledge_b
     }
 }
 
-pub use crate::operation::delete_knowledge_base_documents::_delete_knowledge_base_documents_output::DeleteKnowledgeBaseDocumentsOutput;
-
 pub use crate::operation::delete_knowledge_base_documents::_delete_knowledge_base_documents_input::DeleteKnowledgeBaseDocumentsInput;
+
+pub use crate::operation::delete_knowledge_base_documents::_delete_knowledge_base_documents_output::DeleteKnowledgeBaseDocumentsOutput;
 
 mod _delete_knowledge_base_documents_input;
 

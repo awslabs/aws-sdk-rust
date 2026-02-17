@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_extension::
     }
 }
 
-pub use crate::operation::delete_extension::_delete_extension_output::DeleteExtensionOutput;
-
 pub use crate::operation::delete_extension::_delete_extension_input::DeleteExtensionInput;
+
+pub use crate::operation::delete_extension::_delete_extension_output::DeleteExtensionOutput;
 
 mod _delete_extension_input;
 

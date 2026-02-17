@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queue_members
     }
 }
 
-pub use crate::operation::list_queue_members::_list_queue_members_output::ListQueueMembersOutput;
-
 pub use crate::operation::list_queue_members::_list_queue_members_input::ListQueueMembersInput;
+
+pub use crate::operation::list_queue_members::_list_queue_members_output::ListQueueMembersOutput;
 
 mod _list_queue_members_input;
 

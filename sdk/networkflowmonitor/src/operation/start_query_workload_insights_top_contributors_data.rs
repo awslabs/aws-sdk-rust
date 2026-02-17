@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::start_query_workload_insights_top_contributors_data::_start_query_workload_insights_top_contributors_data_output::StartQueryWorkloadInsightsTopContributorsDataOutput;
-
 pub use crate::operation::start_query_workload_insights_top_contributors_data::_start_query_workload_insights_top_contributors_data_input::StartQueryWorkloadInsightsTopContributorsDataInput;
+
+pub use crate::operation::start_query_workload_insights_top_contributors_data::_start_query_workload_insights_top_contributors_data_output::StartQueryWorkloadInsightsTopContributorsDataOutput;
 
 mod _start_query_workload_insights_top_contributors_data_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_device::Cre
     }
 }
 
-pub use crate::operation::create_device::_create_device_output::CreateDeviceOutput;
-
 pub use crate::operation::create_device::_create_device_input::CreateDeviceInput;
+
+pub use crate::operation::create_device::_create_device_output::CreateDeviceOutput;
 
 mod _create_device_input;
 

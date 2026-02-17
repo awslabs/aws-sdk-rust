@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_policy
     }
 }
 
-pub use crate::operation::get_contact_policy::_get_contact_policy_output::GetContactPolicyOutput;
-
 pub use crate::operation::get_contact_policy::_get_contact_policy_input::GetContactPolicyInput;
+
+pub use crate::operation::get_contact_policy::_get_contact_policy_output::GetContactPolicyOutput;
 
 mod _get_contact_policy_input;
 

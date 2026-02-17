@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cloud_front
     }
 }
 
-pub use crate::operation::delete_cloud_front_origin_access_identity::_delete_cloud_front_origin_access_identity_output::DeleteCloudFrontOriginAccessIdentityOutput;
-
 pub use crate::operation::delete_cloud_front_origin_access_identity::_delete_cloud_front_origin_access_identity_input::DeleteCloudFrontOriginAccessIdentityInput;
+
+pub use crate::operation::delete_cloud_front_origin_access_identity::_delete_cloud_front_origin_access_identity_output::DeleteCloudFrontOriginAccessIdentityOutput;
 
 mod _delete_cloud_front_origin_access_identity_input;
 

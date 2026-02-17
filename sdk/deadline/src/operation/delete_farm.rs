@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_farm::Delet
     }
 }
 
-pub use crate::operation::delete_farm::_delete_farm_output::DeleteFarmOutput;
-
 pub use crate::operation::delete_farm::_delete_farm_input::DeleteFarmInput;
+
+pub use crate::operation::delete_farm::_delete_farm_output::DeleteFarmOutput;
 
 mod _delete_farm_input;
 

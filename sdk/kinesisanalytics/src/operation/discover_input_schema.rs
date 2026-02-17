@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::discover_input_sch
     }
 }
 
-pub use crate::operation::discover_input_schema::_discover_input_schema_output::DiscoverInputSchemaOutput;
-
 pub use crate::operation::discover_input_schema::_discover_input_schema_input::DiscoverInputSchemaInput;
+
+pub use crate::operation::discover_input_schema::_discover_input_schema_output::DiscoverInputSchemaOutput;
 
 mod _discover_input_schema_input;
 

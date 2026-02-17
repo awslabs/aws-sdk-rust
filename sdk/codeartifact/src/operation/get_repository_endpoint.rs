@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_end
     }
 }
 
-pub use crate::operation::get_repository_endpoint::_get_repository_endpoint_output::GetRepositoryEndpointOutput;
-
 pub use crate::operation::get_repository_endpoint::_get_repository_endpoint_input::GetRepositoryEndpointInput;
+
+pub use crate::operation::get_repository_endpoint::_get_repository_endpoint_output::GetRepositoryEndpointOutput;
 
 mod _get_repository_endpoint_input;
 

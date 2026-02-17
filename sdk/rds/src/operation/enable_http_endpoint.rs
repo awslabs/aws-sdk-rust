@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_http_endpoi
     }
 }
 
-pub use crate::operation::enable_http_endpoint::_enable_http_endpoint_output::EnableHttpEndpointOutput;
-
 pub use crate::operation::enable_http_endpoint::_enable_http_endpoint_input::EnableHttpEndpointInput;
+
+pub use crate::operation::enable_http_endpoint::_enable_http_endpoint_output::EnableHttpEndpointOutput;
 
 mod _enable_http_endpoint_input;
 

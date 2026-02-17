@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_selling_system
     }
 }
 
-pub use crate::operation::get_selling_system_settings::_get_selling_system_settings_output::GetSellingSystemSettingsOutput;
-
 pub use crate::operation::get_selling_system_settings::_get_selling_system_settings_input::GetSellingSystemSettingsInput;
+
+pub use crate::operation::get_selling_system_settings::_get_selling_system_settings_output::GetSellingSystemSettingsOutput;
 
 mod _get_selling_system_settings_input;
 

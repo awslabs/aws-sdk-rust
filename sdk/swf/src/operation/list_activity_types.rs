@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_activity_type
     }
 }
 
-pub use crate::operation::list_activity_types::_list_activity_types_output::ListActivityTypesOutput;
-
 pub use crate::operation::list_activity_types::_list_activity_types_input::ListActivityTypesInput;
+
+pub use crate::operation::list_activity_types::_list_activity_types_output::ListActivityTypesOutput;
 
 mod _list_activity_types_input;
 

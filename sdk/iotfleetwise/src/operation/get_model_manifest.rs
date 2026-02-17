@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_model_manifest
     }
 }
 
-pub use crate::operation::get_model_manifest::_get_model_manifest_output::GetModelManifestOutput;
-
 pub use crate::operation::get_model_manifest::_get_model_manifest_input::GetModelManifestInput;
+
+pub use crate::operation::get_model_manifest::_get_model_manifest_output::GetModelManifestOutput;
 
 mod _get_model_manifest_input;
 

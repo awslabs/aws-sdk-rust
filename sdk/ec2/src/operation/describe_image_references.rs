@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_ref
     }
 }
 
-pub use crate::operation::describe_image_references::_describe_image_references_output::DescribeImageReferencesOutput;
-
 pub use crate::operation::describe_image_references::_describe_image_references_input::DescribeImageReferencesInput;
+
+pub use crate::operation::describe_image_references::_describe_image_references_output::DescribeImageReferencesOutput;
 
 mod _describe_image_references_input;
 

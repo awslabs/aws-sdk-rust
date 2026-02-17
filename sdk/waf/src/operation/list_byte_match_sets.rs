@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_byte_match_se
     }
 }
 
-pub use crate::operation::list_byte_match_sets::_list_byte_match_sets_output::ListByteMatchSetsOutput;
-
 pub use crate::operation::list_byte_match_sets::_list_byte_match_sets_input::ListByteMatchSetsInput;
+
+pub use crate::operation::list_byte_match_sets::_list_byte_match_sets_output::ListByteMatchSetsOutput;
 
 mod _list_byte_match_sets_input;
 

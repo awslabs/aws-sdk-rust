@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_steps::Sear
     }
 }
 
-pub use crate::operation::search_steps::_search_steps_output::SearchStepsOutput;
-
 pub use crate::operation::search_steps::_search_steps_input::SearchStepsInput;
+
+pub use crate::operation::search_steps::_search_steps_output::SearchStepsOutput;
 
 mod _search_steps_input;
 

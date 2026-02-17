@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_bundles::
     }
 }
 
-pub use crate::operation::list_app_bundles::_list_app_bundles_output::ListAppBundlesOutput;
-
 pub use crate::operation::list_app_bundles::_list_app_bundles_input::ListAppBundlesInput;
+
+pub use crate::operation::list_app_bundles::_list_app_bundles_output::ListAppBundlesOutput;
 
 mod _list_app_bundles_input;
 

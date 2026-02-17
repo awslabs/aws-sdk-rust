@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service::De
     }
 }
 
-pub use crate::operation::delete_service::_delete_service_output::DeleteServiceOutput;
-
 pub use crate::operation::delete_service::_delete_service_input::DeleteServiceInput;
+
+pub use crate::operation::delete_service::_delete_service_output::DeleteServiceOutput;
 
 mod _delete_service_input;
 

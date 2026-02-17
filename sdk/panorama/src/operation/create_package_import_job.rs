@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_package_imp
     }
 }
 
-pub use crate::operation::create_package_import_job::_create_package_import_job_output::CreatePackageImportJobOutput;
-
 pub use crate::operation::create_package_import_job::_create_package_import_job_input::CreatePackageImportJobInput;
+
+pub use crate::operation::create_package_import_job::_create_package_import_job_output::CreatePackageImportJobOutput;
 
 mod _create_package_import_job_input;
 

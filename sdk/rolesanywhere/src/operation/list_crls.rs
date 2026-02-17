@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_crls::ListCrl
     }
 }
 
-pub use crate::operation::list_crls::_list_crls_output::ListCrlsOutput;
-
 pub use crate::operation::list_crls::_list_crls_input::ListCrlsInput;
+
+pub use crate::operation::list_crls::_list_crls_output::ListCrlsOutput;
 
 mod _list_crls_input;
 

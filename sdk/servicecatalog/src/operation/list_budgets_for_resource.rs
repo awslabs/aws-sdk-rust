@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_budgets_for_r
     }
 }
 
-pub use crate::operation::list_budgets_for_resource::_list_budgets_for_resource_output::ListBudgetsForResourceOutput;
-
 pub use crate::operation::list_budgets_for_resource::_list_budgets_for_resource_input::ListBudgetsForResourceInput;
+
+pub use crate::operation::list_budgets_for_resource::_list_budgets_for_resource_output::ListBudgetsForResourceOutput;
 
 mod _list_budgets_for_resource_input;
 

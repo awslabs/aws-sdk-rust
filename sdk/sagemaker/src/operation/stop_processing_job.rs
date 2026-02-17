@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_processing_jo
     }
 }
 
-pub use crate::operation::stop_processing_job::_stop_processing_job_output::StopProcessingJobOutput;
-
 pub use crate::operation::stop_processing_job::_stop_processing_job_input::StopProcessingJobInput;
+
+pub use crate::operation::stop_processing_job::_stop_processing_job_output::StopProcessingJobOutput;
 
 mod _stop_processing_job_input;
 

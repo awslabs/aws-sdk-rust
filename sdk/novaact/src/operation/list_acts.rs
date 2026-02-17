@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_acts::ListAct
     }
 }
 
-pub use crate::operation::list_acts::_list_acts_output::ListActsOutput;
-
 pub use crate::operation::list_acts::_list_acts_input::ListActsInput;
+
+pub use crate::operation::list_acts::_list_acts_output::ListActsOutput;
 
 mod _list_acts_input;
 

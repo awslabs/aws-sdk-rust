@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_user:
     }
 }
 
-pub use crate::operation::batch_update_user::_batch_update_user_output::BatchUpdateUserOutput;
-
 pub use crate::operation::batch_update_user::_batch_update_user_input::BatchUpdateUserInput;
+
+pub use crate::operation::batch_update_user::_batch_update_user_output::BatchUpdateUserOutput;
 
 mod _batch_update_user_input;
 

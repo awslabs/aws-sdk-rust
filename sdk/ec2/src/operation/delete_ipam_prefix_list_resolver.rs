@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ipam_prefix
     }
 }
 
-pub use crate::operation::delete_ipam_prefix_list_resolver::_delete_ipam_prefix_list_resolver_output::DeleteIpamPrefixListResolverOutput;
-
 pub use crate::operation::delete_ipam_prefix_list_resolver::_delete_ipam_prefix_list_resolver_input::DeleteIpamPrefixListResolverInput;
+
+pub use crate::operation::delete_ipam_prefix_list_resolver::_delete_ipam_prefix_list_resolver_output::DeleteIpamPrefixListResolverOutput;
 
 mod _delete_ipam_prefix_list_resolver_input;
 

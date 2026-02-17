@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_variant_sto
     }
 }
 
-pub use crate::operation::delete_variant_store::_delete_variant_store_output::DeleteVariantStoreOutput;
-
 pub use crate::operation::delete_variant_store::_delete_variant_store_input::DeleteVariantStoreInput;
+
+pub use crate::operation::delete_variant_store::_delete_variant_store_output::DeleteVariantStoreOutput;
 
 mod _delete_variant_store_input;
 

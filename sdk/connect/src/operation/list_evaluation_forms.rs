@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_evaluation_fo
     }
 }
 
-pub use crate::operation::list_evaluation_forms::_list_evaluation_forms_output::ListEvaluationFormsOutput;
-
 pub use crate::operation::list_evaluation_forms::_list_evaluation_forms_input::ListEvaluationFormsInput;
+
+pub use crate::operation::list_evaluation_forms::_list_evaluation_forms_output::ListEvaluationFormsOutput;
 
 mod _list_evaluation_forms_input;
 

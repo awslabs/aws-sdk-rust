@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_configurati
     }
 }
 
-pub use crate::operation::create_configuration_set_tracking_options::_create_configuration_set_tracking_options_output::CreateConfigurationSetTrackingOptionsOutput;
-
 pub use crate::operation::create_configuration_set_tracking_options::_create_configuration_set_tracking_options_input::CreateConfigurationSetTrackingOptionsInput;
+
+pub use crate::operation::create_configuration_set_tracking_options::_create_configuration_set_tracking_options_output::CreateConfigurationSetTrackingOptionsOutput;
 
 mod _create_configuration_set_tracking_options_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_stop::BatchS
     }
 }
 
-pub use crate::operation::batch_stop::_batch_stop_output::BatchStopOutput;
-
 pub use crate::operation::batch_stop::_batch_stop_input::BatchStopInput;
+
+pub use crate::operation::batch_stop::_batch_stop_output::BatchStopOutput;
 
 mod _batch_stop_input;
 

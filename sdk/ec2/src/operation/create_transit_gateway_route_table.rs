@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_transit_gat
     }
 }
 
-pub use crate::operation::create_transit_gateway_route_table::_create_transit_gateway_route_table_output::CreateTransitGatewayRouteTableOutput;
-
 pub use crate::operation::create_transit_gateway_route_table::_create_transit_gateway_route_table_input::CreateTransitGatewayRouteTableInput;
+
+pub use crate::operation::create_transit_gateway_route_table::_create_transit_gateway_route_table_output::CreateTransitGatewayRouteTableOutput;
 
 mod _create_transit_gateway_route_table_input;
 

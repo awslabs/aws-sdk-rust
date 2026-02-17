@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_application_in
     }
 }
 
-pub use crate::operation::add_application_input::_add_application_input_output::AddApplicationInputOutput;
-
 pub use crate::operation::add_application_input::_add_application_input_input::AddApplicationInputInput;
+
+pub use crate::operation::add_application_input::_add_application_input_output::AddApplicationInputOutput;
 
 mod _add_application_input_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_managed_rule_set_version_expiry_date::_update_managed_rule_set_version_expiry_date_output::UpdateManagedRuleSetVersionExpiryDateOutput;
-
 pub use crate::operation::update_managed_rule_set_version_expiry_date::_update_managed_rule_set_version_expiry_date_input::UpdateManagedRuleSetVersionExpiryDateInput;
+
+pub use crate::operation::update_managed_rule_set_version_expiry_date::_update_managed_rule_set_version_expiry_date_output::UpdateManagedRuleSetVersionExpiryDateOutput;
 
 mod _update_managed_rule_set_version_expiry_date_input;
 

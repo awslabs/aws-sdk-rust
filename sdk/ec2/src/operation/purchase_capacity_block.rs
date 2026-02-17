@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::purchase_capacity_
     }
 }
 
-pub use crate::operation::purchase_capacity_block::_purchase_capacity_block_output::PurchaseCapacityBlockOutput;
-
 pub use crate::operation::purchase_capacity_block::_purchase_capacity_block_input::PurchaseCapacityBlockInput;
+
+pub use crate::operation::purchase_capacity_block::_purchase_capacity_block_output::PurchaseCapacityBlockOutput;
 
 mod _purchase_capacity_block_input;
 

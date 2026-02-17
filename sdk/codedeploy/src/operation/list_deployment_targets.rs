@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_deployment_ta
     }
 }
 
-pub use crate::operation::list_deployment_targets::_list_deployment_targets_output::ListDeploymentTargetsOutput;
-
 pub use crate::operation::list_deployment_targets::_list_deployment_targets_input::ListDeploymentTargetsInput;
+
+pub use crate::operation::list_deployment_targets::_list_deployment_targets_output::ListDeploymentTargetsOutput;
 
 mod _list_deployment_targets_input;
 

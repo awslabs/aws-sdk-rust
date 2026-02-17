@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_tri
     }
 }
 
-pub use crate::operation::get_repository_triggers::_get_repository_triggers_output::GetRepositoryTriggersOutput;
-
 pub use crate::operation::get_repository_triggers::_get_repository_triggers_input::GetRepositoryTriggersInput;
+
+pub use crate::operation::get_repository_triggers::_get_repository_triggers_output::GetRepositoryTriggersOutput;
 
 mod _get_repository_triggers_input;
 

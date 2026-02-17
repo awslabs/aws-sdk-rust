@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_replicators::
     }
 }
 
-pub use crate::operation::list_replicators::_list_replicators_output::ListReplicatorsOutput;
-
 pub use crate::operation::list_replicators::_list_replicators_input::ListReplicatorsInput;
+
+pub use crate::operation::list_replicators::_list_replicators_output::ListReplicatorsOutput;
 
 mod _list_replicators_input;
 

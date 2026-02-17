@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_simulation:
     }
 }
 
-pub use crate::operation::delete_simulation::_delete_simulation_output::DeleteSimulationOutput;
-
 pub use crate::operation::delete_simulation::_delete_simulation_input::DeleteSimulationInput;
+
+pub use crate::operation::delete_simulation::_delete_simulation_output::DeleteSimulationOutput;
 
 mod _delete_simulation_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_direct_conn
     }
 }
 
-pub use crate::operation::create_direct_connect_gateway_attachment::_create_direct_connect_gateway_attachment_output::CreateDirectConnectGatewayAttachmentOutput;
-
 pub use crate::operation::create_direct_connect_gateway_attachment::_create_direct_connect_gateway_attachment_input::CreateDirectConnectGatewayAttachmentInput;
+
+pub use crate::operation::create_direct_connect_gateway_attachment::_create_direct_connect_gateway_attachment_output::CreateDirectConnectGatewayAttachmentOutput;
 
 mod _create_direct_connect_gateway_attachment_input;
 

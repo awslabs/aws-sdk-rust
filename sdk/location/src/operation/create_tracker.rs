@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_tracker::Cr
     }
 }
 
-pub use crate::operation::create_tracker::_create_tracker_output::CreateTrackerOutput;
-
 pub use crate::operation::create_tracker::_create_tracker_input::CreateTrackerInput;
+
+pub use crate::operation::create_tracker::_create_tracker_output::CreateTrackerOutput;
 
 mod _create_tracker_input;
 

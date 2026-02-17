@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_entities::D
     }
 }
 
-pub use crate::operation::detect_entities::_detect_entities_output::DetectEntitiesOutput;
-
 pub use crate::operation::detect_entities::_detect_entities_input::DetectEntitiesInput;
+
+pub use crate::operation::detect_entities::_detect_entities_output::DetectEntitiesOutput;
 
 mod _detect_entities_input;
 

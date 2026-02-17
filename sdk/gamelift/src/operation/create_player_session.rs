@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_player_sess
     }
 }
 
-pub use crate::operation::create_player_session::_create_player_session_output::CreatePlayerSessionOutput;
-
 pub use crate::operation::create_player_session::_create_player_session_input::CreatePlayerSessionInput;
+
+pub use crate::operation::create_player_session::_create_player_session_output::CreatePlayerSessionOutput;
 
 mod _create_player_session_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_thing_connecti
     }
 }
 
-pub use crate::operation::get_thing_connectivity_data::_get_thing_connectivity_data_output::GetThingConnectivityDataOutput;
-
 pub use crate::operation::get_thing_connectivity_data::_get_thing_connectivity_data_input::GetThingConnectivityDataInput;
+
+pub use crate::operation::get_thing_connectivity_data::_get_thing_connectivity_data_output::GetThingConnectivityDataOutput;
 
 mod _get_thing_connectivity_data_input;
 

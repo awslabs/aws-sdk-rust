@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_event_data_sto
     }
 }
 
-pub use crate::operation::get_event_data_store::_get_event_data_store_output::GetEventDataStoreOutput;
-
 pub use crate::operation::get_event_data_store::_get_event_data_store_input::GetEventDataStoreInput;
+
+pub use crate::operation::get_event_data_store::_get_event_data_store_output::GetEventDataStoreOutput;
 
 mod _get_event_data_store_input;
 

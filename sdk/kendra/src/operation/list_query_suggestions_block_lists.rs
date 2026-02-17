@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_query_suggest
     }
 }
 
-pub use crate::operation::list_query_suggestions_block_lists::_list_query_suggestions_block_lists_output::ListQuerySuggestionsBlockListsOutput;
-
 pub use crate::operation::list_query_suggestions_block_lists::_list_query_suggestions_block_lists_input::ListQuerySuggestionsBlockListsInput;
+
+pub use crate::operation::list_query_suggestions_block_lists::_list_query_suggestions_block_lists_output::ListQuerySuggestionsBlockListsOutput;
 
 mod _list_query_suggestions_block_lists_input;
 

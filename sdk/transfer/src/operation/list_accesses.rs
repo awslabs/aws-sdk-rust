@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_accesses::Lis
     }
 }
 
-pub use crate::operation::list_accesses::_list_accesses_output::ListAccessesOutput;
-
 pub use crate::operation::list_accesses::_list_accesses_input::ListAccessesInput;
+
+pub use crate::operation::list_accesses::_list_accesses_output::ListAccessesOutput;
 
 mod _list_accesses_input;
 

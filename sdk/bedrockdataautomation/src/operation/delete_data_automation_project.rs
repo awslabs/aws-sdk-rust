@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_automa
     }
 }
 
-pub use crate::operation::delete_data_automation_project::_delete_data_automation_project_output::DeleteDataAutomationProjectOutput;
-
 pub use crate::operation::delete_data_automation_project::_delete_data_automation_project_input::DeleteDataAutomationProjectInput;
+
+pub use crate::operation::delete_data_automation_project::_delete_data_automation_project_output::DeleteDataAutomationProjectOutput;
 
 mod _delete_data_automation_project_input;
 

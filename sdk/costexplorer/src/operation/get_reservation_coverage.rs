@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reservation_co
     }
 }
 
-pub use crate::operation::get_reservation_coverage::_get_reservation_coverage_output::GetReservationCoverageOutput;
-
 pub use crate::operation::get_reservation_coverage::_get_reservation_coverage_input::GetReservationCoverageInput;
+
+pub use crate::operation::get_reservation_coverage::_get_reservation_coverage_output::GetReservationCoverageOutput;
 
 mod _get_reservation_coverage_input;
 

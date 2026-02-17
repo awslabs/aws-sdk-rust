@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_config
     }
 }
 
-pub use crate::operation::list_domain_configurations::_list_domain_configurations_output::ListDomainConfigurationsOutput;
-
 pub use crate::operation::list_domain_configurations::_list_domain_configurations_input::ListDomainConfigurationsInput;
+
+pub use crate::operation::list_domain_configurations::_list_domain_configurations_output::ListDomainConfigurationsOutput;
 
 mod _list_domain_configurations_input;
 

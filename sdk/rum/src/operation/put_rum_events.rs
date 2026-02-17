@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_rum_events::Pu
     }
 }
 
-pub use crate::operation::put_rum_events::_put_rum_events_output::PutRumEventsOutput;
-
 pub use crate::operation::put_rum_events::_put_rum_events_input::PutRumEventsInput;
+
+pub use crate::operation::put_rum_events::_put_rum_events_output::PutRumEventsOutput;
 
 mod _put_rum_events_input;
 

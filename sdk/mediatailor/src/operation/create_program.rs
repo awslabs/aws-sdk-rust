@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_program::Cr
     }
 }
 
-pub use crate::operation::create_program::_create_program_output::CreateProgramOutput;
-
 pub use crate::operation::create_program::_create_program_input::CreateProgramInput;
+
+pub use crate::operation::create_program::_create_program_output::CreateProgramOutput;
 
 mod _create_program_input;
 

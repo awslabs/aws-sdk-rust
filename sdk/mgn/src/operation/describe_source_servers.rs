@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_source_se
     }
 }
 
-pub use crate::operation::describe_source_servers::_describe_source_servers_output::DescribeSourceServersOutput;
-
 pub use crate::operation::describe_source_servers::_describe_source_servers_input::DescribeSourceServersInput;
+
+pub use crate::operation::describe_source_servers::_describe_source_servers_output::DescribeSourceServersOutput;
 
 mod _describe_source_servers_input;
 

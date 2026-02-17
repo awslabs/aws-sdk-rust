@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_contact_recor
     }
 }
 
-pub use crate::operation::stop_contact_recording::_stop_contact_recording_output::StopContactRecordingOutput;
-
 pub use crate::operation::stop_contact_recording::_stop_contact_recording_input::StopContactRecordingInput;
+
+pub use crate::operation::stop_contact_recording::_stop_contact_recording_output::StopContactRecordingOutput;
 
 mod _stop_contact_recording_input;
 

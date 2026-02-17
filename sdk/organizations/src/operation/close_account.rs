@@ -639,9 +639,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::close_account::Clo
     }
 }
 
-pub use crate::operation::close_account::_close_account_output::CloseAccountOutput;
-
 pub use crate::operation::close_account::_close_account_input::CloseAccountInput;
+
+pub use crate::operation::close_account::_close_account_output::CloseAccountOutput;
 
 mod _close_account_input;
 

@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_access_grants_instance_resource_policy::_delete_access_grants_instance_resource_policy_output::DeleteAccessGrantsInstanceResourcePolicyOutput;
-
 pub use crate::operation::delete_access_grants_instance_resource_policy::_delete_access_grants_instance_resource_policy_input::DeleteAccessGrantsInstanceResourcePolicyInput;
+
+pub use crate::operation::delete_access_grants_instance_resource_policy::_delete_access_grants_instance_resource_policy_output::DeleteAccessGrantsInstanceResourcePolicyOutput;
 
 mod _delete_access_grants_instance_resource_policy_input;
 

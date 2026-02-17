@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upgrade_account_pl
     }
 }
 
-pub use crate::operation::upgrade_account_plan::_upgrade_account_plan_output::UpgradeAccountPlanOutput;
-
 pub use crate::operation::upgrade_account_plan::_upgrade_account_plan_input::UpgradeAccountPlanInput;
+
+pub use crate::operation::upgrade_account_plan::_upgrade_account_plan_output::UpgradeAccountPlanOutput;
 
 mod _upgrade_account_plan_input;
 

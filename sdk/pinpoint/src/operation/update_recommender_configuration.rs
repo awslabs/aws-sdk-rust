@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_recommender
     }
 }
 
-pub use crate::operation::update_recommender_configuration::_update_recommender_configuration_output::UpdateRecommenderConfigurationOutput;
-
 pub use crate::operation::update_recommender_configuration::_update_recommender_configuration_input::UpdateRecommenderConfigurationInput;
+
+pub use crate::operation::update_recommender_configuration::_update_recommender_configuration_output::UpdateRecommenderConfigurationOutput;
 
 mod _update_recommender_configuration_input;
 

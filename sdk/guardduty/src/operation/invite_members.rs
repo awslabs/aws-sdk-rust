@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invite_members::In
     }
 }
 
-pub use crate::operation::invite_members::_invite_members_output::InviteMembersOutput;
-
 pub use crate::operation::invite_members::_invite_members_input::InviteMembersInput;
+
+pub use crate::operation::invite_members::_invite_members_output::InviteMembersOutput;
 
 mod _invite_members_input;
 

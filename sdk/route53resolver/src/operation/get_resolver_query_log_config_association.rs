@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resolver_query
     }
 }
 
-pub use crate::operation::get_resolver_query_log_config_association::_get_resolver_query_log_config_association_output::GetResolverQueryLogConfigAssociationOutput;
-
 pub use crate::operation::get_resolver_query_log_config_association::_get_resolver_query_log_config_association_input::GetResolverQueryLogConfigAssociationInput;
+
+pub use crate::operation::get_resolver_query_log_config_association::_get_resolver_query_log_config_association_output::GetResolverQueryLogConfigAssociationOutput;
 
 mod _get_resolver_query_log_config_association_input;
 

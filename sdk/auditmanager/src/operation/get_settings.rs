@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_settings::GetS
     }
 }
 
-pub use crate::operation::get_settings::_get_settings_output::GetSettingsOutput;
-
 pub use crate::operation::get_settings::_get_settings_input::GetSettingsInput;
+
+pub use crate::operation::get_settings::_get_settings_output::GetSettingsOutput;
 
 mod _get_settings_input;
 

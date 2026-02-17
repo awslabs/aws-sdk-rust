@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_bot_alias::Put
     }
 }
 
-pub use crate::operation::put_bot_alias::_put_bot_alias_output::PutBotAliasOutput;
-
 pub use crate::operation::put_bot_alias::_put_bot_alias_input::PutBotAliasInput;
+
+pub use crate::operation::put_bot_alias::_put_bot_alias_output::PutBotAliasOutput;
 
 mod _put_bot_alias_input;
 

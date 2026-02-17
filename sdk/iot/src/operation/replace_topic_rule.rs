@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_topic_rule
     }
 }
 
-pub use crate::operation::replace_topic_rule::_replace_topic_rule_output::ReplaceTopicRuleOutput;
-
 pub use crate::operation::replace_topic_rule::_replace_topic_rule_input::ReplaceTopicRuleInput;
+
+pub use crate::operation::replace_topic_rule::_replace_topic_rule_output::ReplaceTopicRuleOutput;
 
 mod _replace_topic_rule_input;
 

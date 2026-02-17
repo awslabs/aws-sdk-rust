@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_room::Updat
     }
 }
 
-pub use crate::operation::update_room::_update_room_output::UpdateRoomOutput;
-
 pub use crate::operation::update_room::_update_room_input::UpdateRoomInput;
+
+pub use crate::operation::update_room::_update_room_output::UpdateRoomOutput;
 
 mod _update_room_input;
 

@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_training_data
     }
 }
 
-pub use crate::operation::list_training_datasets::_list_training_datasets_output::ListTrainingDatasetsOutput;
-
 pub use crate::operation::list_training_datasets::_list_training_datasets_input::ListTrainingDatasetsInput;
+
+pub use crate::operation::list_training_datasets::_list_training_datasets_output::ListTrainingDatasetsOutput;
 
 mod _list_training_datasets_input;
 

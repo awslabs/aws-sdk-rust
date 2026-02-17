@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_hosted_z
     }
 }
 
-pub use crate::operation::associate_hosted_zone::_associate_hosted_zone_output::AssociateHostedZoneOutput;
-
 pub use crate::operation::associate_hosted_zone::_associate_hosted_zone_input::AssociateHostedZoneInput;
+
+pub use crate::operation::associate_hosted_zone::_associate_hosted_zone_output::AssociateHostedZoneOutput;
 
 mod _associate_hosted_zone_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_authorizers::G
     }
 }
 
-pub use crate::operation::get_authorizers::_get_authorizers_output::GetAuthorizersOutput;
-
 pub use crate::operation::get_authorizers::_get_authorizers_input::GetAuthorizersInput;
+
+pub use crate::operation::get_authorizers::_get_authorizers_output::GetAuthorizersOutput;
 
 mod _get_authorizers_input;
 

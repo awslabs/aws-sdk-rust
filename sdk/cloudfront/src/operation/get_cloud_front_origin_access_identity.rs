@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_front_or
     }
 }
 
-pub use crate::operation::get_cloud_front_origin_access_identity::_get_cloud_front_origin_access_identity_output::GetCloudFrontOriginAccessIdentityOutput;
-
 pub use crate::operation::get_cloud_front_origin_access_identity::_get_cloud_front_origin_access_identity_input::GetCloudFrontOriginAccessIdentityInput;
+
+pub use crate::operation::get_cloud_front_origin_access_identity::_get_cloud_front_origin_access_identity_output::GetCloudFrontOriginAccessIdentityOutput;
 
 mod _get_cloud_front_origin_access_identity_input;
 

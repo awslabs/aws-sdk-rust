@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_outbound_reque
     }
 }
 
-pub use crate::operation::put_outbound_request_batch::_put_outbound_request_batch_output::PutOutboundRequestBatchOutput;
-
 pub use crate::operation::put_outbound_request_batch::_put_outbound_request_batch_input::PutOutboundRequestBatchInput;
+
+pub use crate::operation::put_outbound_request_batch::_put_outbound_request_batch_output::PutOutboundRequestBatchOutput;
 
 mod _put_outbound_request_batch_input;
 

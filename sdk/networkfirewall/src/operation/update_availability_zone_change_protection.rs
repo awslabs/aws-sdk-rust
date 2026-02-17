@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_availability_zone_change_protection::_update_availability_zone_change_protection_output::UpdateAvailabilityZoneChangeProtectionOutput;
-
 pub use crate::operation::update_availability_zone_change_protection::_update_availability_zone_change_protection_input::UpdateAvailabilityZoneChangeProtectionInput;
+
+pub use crate::operation::update_availability_zone_change_protection::_update_availability_zone_change_protection_output::UpdateAvailabilityZoneChangeProtectionOutput;
 
 mod _update_availability_zone_change_protection_input;
 

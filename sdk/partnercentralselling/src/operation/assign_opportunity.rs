@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assign_opportunity
     }
 }
 
-pub use crate::operation::assign_opportunity::_assign_opportunity_output::AssignOpportunityOutput;
-
 pub use crate::operation::assign_opportunity::_assign_opportunity_input::AssignOpportunityInput;
+
+pub use crate::operation::assign_opportunity::_assign_opportunity_output::AssignOpportunityOutput;
 
 mod _assign_opportunity_input;
 

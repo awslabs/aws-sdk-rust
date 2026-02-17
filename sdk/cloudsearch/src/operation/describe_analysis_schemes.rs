@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_analysis_
     }
 }
 
-pub use crate::operation::describe_analysis_schemes::_describe_analysis_schemes_output::DescribeAnalysisSchemesOutput;
-
 pub use crate::operation::describe_analysis_schemes::_describe_analysis_schemes_input::DescribeAnalysisSchemesInput;
+
+pub use crate::operation::describe_analysis_schemes::_describe_analysis_schemes_output::DescribeAnalysisSchemesOutput;
 
 mod _describe_analysis_schemes_input;
 

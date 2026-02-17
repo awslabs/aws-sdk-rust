@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_state_templ
     }
 }
 
-pub use crate::operation::create_state_template::_create_state_template_output::CreateStateTemplateOutput;
-
 pub use crate::operation::create_state_template::_create_state_template_input::CreateStateTemplateInput;
+
+pub use crate::operation::create_state_template::_create_state_template_output::CreateStateTemplateOutput;
 
 mod _create_state_template_input;
 

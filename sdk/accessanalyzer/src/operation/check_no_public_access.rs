@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_no_public_ac
     }
 }
 
-pub use crate::operation::check_no_public_access::_check_no_public_access_output::CheckNoPublicAccessOutput;
-
 pub use crate::operation::check_no_public_access::_check_no_public_access_input::CheckNoPublicAccessInput;
+
+pub use crate::operation::check_no_public_access::_check_no_public_access_output::CheckNoPublicAccessOutput;
 
 mod _check_no_public_access_input;
 

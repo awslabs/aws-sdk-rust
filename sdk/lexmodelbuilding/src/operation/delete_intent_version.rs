@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_intent_vers
     }
 }
 
-pub use crate::operation::delete_intent_version::_delete_intent_version_output::DeleteIntentVersionOutput;
-
 pub use crate::operation::delete_intent_version::_delete_intent_version_input::DeleteIntentVersionInput;
+
+pub use crate::operation::delete_intent_version::_delete_intent_version_output::DeleteIntentVersionOutput;
 
 mod _delete_intent_version_input;
 

@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_terms::Dele
     }
 }
 
-pub use crate::operation::delete_terms::_delete_terms_output::DeleteTermsOutput;
-
 pub use crate::operation::delete_terms::_delete_terms_input::DeleteTermsInput;
+
+pub use crate::operation::delete_terms::_delete_terms_output::DeleteTermsOutput;
 
 mod _delete_terms_input;
 

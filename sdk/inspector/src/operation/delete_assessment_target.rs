@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_assessment_
     }
 }
 
-pub use crate::operation::delete_assessment_target::_delete_assessment_target_output::DeleteAssessmentTargetOutput;
-
 pub use crate::operation::delete_assessment_target::_delete_assessment_target_input::DeleteAssessmentTargetInput;
+
+pub use crate::operation::delete_assessment_target::_delete_assessment_target_output::DeleteAssessmentTargetOutput;
 
 mod _delete_assessment_target_input;
 

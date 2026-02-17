@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dedicated_ip_
     }
 }
 
-pub use crate::operation::list_dedicated_ip_pools::_list_dedicated_ip_pools_output::ListDedicatedIpPoolsOutput;
-
 pub use crate::operation::list_dedicated_ip_pools::_list_dedicated_ip_pools_input::ListDedicatedIpPoolsInput;
+
+pub use crate::operation::list_dedicated_ip_pools::_list_dedicated_ip_pools_output::ListDedicatedIpPoolsOutput;
 
 mod _list_dedicated_ip_pools_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_virtual_c
     }
 }
 
-pub use crate::operation::describe_virtual_cluster::_describe_virtual_cluster_output::DescribeVirtualClusterOutput;
-
 pub use crate::operation::describe_virtual_cluster::_describe_virtual_cluster_input::DescribeVirtualClusterInput;
+
+pub use crate::operation::describe_virtual_cluster::_describe_virtual_cluster_output::DescribeVirtualClusterOutput;
 
 mod _describe_virtual_cluster_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_key_usage::St
     }
 }
 
-pub use crate::operation::stop_key_usage::_stop_key_usage_output::StopKeyUsageOutput;
-
 pub use crate::operation::stop_key_usage::_stop_key_usage_input::StopKeyUsageInput;
+
+pub use crate::operation::stop_key_usage::_stop_key_usage_output::StopKeyUsageOutput;
 
 mod _stop_key_usage_input;
 

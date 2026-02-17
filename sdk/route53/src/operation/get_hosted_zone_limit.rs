@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hosted_zone_li
     }
 }
 
-pub use crate::operation::get_hosted_zone_limit::_get_hosted_zone_limit_output::GetHostedZoneLimitOutput;
-
 pub use crate::operation::get_hosted_zone_limit::_get_hosted_zone_limit_input::GetHostedZoneLimitInput;
+
+pub use crate::operation::get_hosted_zone_limit::_get_hosted_zone_limit_output::GetHostedZoneLimitOutput;
 
 mod _get_hosted_zone_limit_input;
 

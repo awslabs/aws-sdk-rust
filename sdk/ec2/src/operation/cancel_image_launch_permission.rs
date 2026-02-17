@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_image_launc
     }
 }
 
-pub use crate::operation::cancel_image_launch_permission::_cancel_image_launch_permission_output::CancelImageLaunchPermissionOutput;
-
 pub use crate::operation::cancel_image_launch_permission::_cancel_image_launch_permission_input::CancelImageLaunchPermissionInput;
+
+pub use crate::operation::cancel_image_launch_permission::_cancel_image_launch_permission_output::CancelImageLaunchPermissionOutput;
 
 mod _cancel_image_launch_permission_input;
 

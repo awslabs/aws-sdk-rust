@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_automa
     }
 }
 
-pub use crate::operation::update_data_automation_project::_update_data_automation_project_output::UpdateDataAutomationProjectOutput;
-
 pub use crate::operation::update_data_automation_project::_update_data_automation_project_input::UpdateDataAutomationProjectInput;
+
+pub use crate::operation::update_data_automation_project::_update_data_automation_project_output::UpdateDataAutomationProjectOutput;
 
 mod _update_data_automation_project_input;
 

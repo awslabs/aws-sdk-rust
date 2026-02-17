@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_template_
     }
 }
 
-pub use crate::operation::describe_template_definition::_describe_template_definition_output::DescribeTemplateDefinitionOutput;
-
 pub use crate::operation::describe_template_definition::_describe_template_definition_input::DescribeTemplateDefinitionInput;
+
+pub use crate::operation::describe_template_definition::_describe_template_definition_output::DescribeTemplateDefinitionOutput;
 
 mod _describe_template_definition_input;
 

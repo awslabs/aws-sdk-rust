@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cors_policy
     }
 }
 
-pub use crate::operation::delete_cors_policy::_delete_cors_policy_output::DeleteCorsPolicyOutput;
-
 pub use crate::operation::delete_cors_policy::_delete_cors_policy_input::DeleteCorsPolicyInput;
+
+pub use crate::operation::delete_cors_policy::_delete_cors_policy_output::DeleteCorsPolicyOutput;
 
 mod _delete_cors_policy_input;
 

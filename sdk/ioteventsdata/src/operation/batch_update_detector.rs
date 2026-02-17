@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_detec
     }
 }
 
-pub use crate::operation::batch_update_detector::_batch_update_detector_output::BatchUpdateDetectorOutput;
-
 pub use crate::operation::batch_update_detector::_batch_update_detector_input::BatchUpdateDetectorInput;
+
+pub use crate::operation::batch_update_detector::_batch_update_detector_output::BatchUpdateDetectorOutput;
 
 mod _batch_update_detector_input;
 

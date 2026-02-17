@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_associated_
     }
 }
 
-pub use crate::operation::search_associated_transcripts::_search_associated_transcripts_output::SearchAssociatedTranscriptsOutput;
-
 pub use crate::operation::search_associated_transcripts::_search_associated_transcripts_input::SearchAssociatedTranscriptsInput;
+
+pub use crate::operation::search_associated_transcripts::_search_associated_transcripts_output::SearchAssociatedTranscriptsOutput;
 
 mod _search_associated_transcripts_input;
 

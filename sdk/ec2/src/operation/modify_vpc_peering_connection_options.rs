@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_vpc_peering
     }
 }
 
-pub use crate::operation::modify_vpc_peering_connection_options::_modify_vpc_peering_connection_options_output::ModifyVpcPeeringConnectionOptionsOutput;
-
 pub use crate::operation::modify_vpc_peering_connection_options::_modify_vpc_peering_connection_options_input::ModifyVpcPeeringConnectionOptionsInput;
+
+pub use crate::operation::modify_vpc_peering_connection_options::_modify_vpc_peering_connection_options_output::ModifyVpcPeeringConnectionOptionsOutput;
 
 mod _modify_vpc_peering_connection_options_input;
 

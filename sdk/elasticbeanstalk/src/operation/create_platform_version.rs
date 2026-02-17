@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_platform_ve
     }
 }
 
-pub use crate::operation::create_platform_version::_create_platform_version_output::CreatePlatformVersionOutput;
-
 pub use crate::operation::create_platform_version::_create_platform_version_input::CreatePlatformVersionInput;
+
+pub use crate::operation::create_platform_version::_create_platform_version_output::CreatePlatformVersionOutput;
 
 mod _create_platform_version_input;
 

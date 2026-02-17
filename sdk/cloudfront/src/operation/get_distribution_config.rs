@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution_c
     }
 }
 
-pub use crate::operation::get_distribution_config::_get_distribution_config_output::GetDistributionConfigOutput;
-
 pub use crate::operation::get_distribution_config::_get_distribution_config_input::GetDistributionConfigInput;
+
+pub use crate::operation::get_distribution_config::_get_distribution_config_output::GetDistributionConfigOutput;
 
 mod _get_distribution_config_input;
 

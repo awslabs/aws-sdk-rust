@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_flow_source
     }
 }
 
-pub use crate::operation::remove_flow_source::_remove_flow_source_output::RemoveFlowSourceOutput;
-
 pub use crate::operation::remove_flow_source::_remove_flow_source_input::RemoveFlowSourceInput;
+
+pub use crate::operation::remove_flow_source::_remove_flow_source_output::RemoveFlowSourceOutput;
 
 mod _remove_flow_source_input;
 

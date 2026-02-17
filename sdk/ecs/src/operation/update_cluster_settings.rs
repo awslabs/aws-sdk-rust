@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_cluster_set
     }
 }
 
-pub use crate::operation::update_cluster_settings::_update_cluster_settings_output::UpdateClusterSettingsOutput;
-
 pub use crate::operation::update_cluster_settings::_update_cluster_settings_input::UpdateClusterSettingsInput;
+
+pub use crate::operation::update_cluster_settings::_update_cluster_settings_output::UpdateClusterSettingsOutput;
 
 mod _update_cluster_settings_input;
 

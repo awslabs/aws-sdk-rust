@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connect_instan
     }
 }
 
-pub use crate::operation::get_connect_instance_config::_get_connect_instance_config_output::GetConnectInstanceConfigOutput;
-
 pub use crate::operation::get_connect_instance_config::_get_connect_instance_config_input::GetConnectInstanceConfigInput;
+
+pub use crate::operation::get_connect_instance_config::_get_connect_instance_config_output::GetConnectInstanceConfigOutput;
 
 mod _get_connect_instance_config_input;
 

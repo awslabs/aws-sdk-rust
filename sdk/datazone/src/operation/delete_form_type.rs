@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_form_type::
     }
 }
 
-pub use crate::operation::delete_form_type::_delete_form_type_output::DeleteFormTypeOutput;
-
 pub use crate::operation::delete_form_type::_delete_form_type_input::DeleteFormTypeInput;
+
+pub use crate::operation::delete_form_type::_delete_form_type_output::DeleteFormTypeOutput;
 
 mod _delete_form_type_input;
 

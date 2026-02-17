@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_approval_team
     }
 }
 
-pub use crate::operation::list_approval_teams::_list_approval_teams_output::ListApprovalTeamsOutput;
-
 pub use crate::operation::list_approval_teams::_list_approval_teams_input::ListApprovalTeamsInput;
+
+pub use crate::operation::list_approval_teams::_list_approval_teams_output::ListApprovalTeamsOutput;
 
 mod _list_approval_teams_input;
 

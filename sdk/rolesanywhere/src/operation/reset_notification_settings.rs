@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_notification
     }
 }
 
-pub use crate::operation::reset_notification_settings::_reset_notification_settings_output::ResetNotificationSettingsOutput;
-
 pub use crate::operation::reset_notification_settings::_reset_notification_settings_input::ResetNotificationSettingsInput;
+
+pub use crate::operation::reset_notification_settings::_reset_notification_settings_output::ResetNotificationSettingsOutput;
 
 mod _reset_notification_settings_input;
 

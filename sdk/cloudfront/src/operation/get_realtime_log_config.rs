@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_realtime_log_c
     }
 }
 
-pub use crate::operation::get_realtime_log_config::_get_realtime_log_config_output::GetRealtimeLogConfigOutput;
-
 pub use crate::operation::get_realtime_log_config::_get_realtime_log_config_input::GetRealtimeLogConfigInput;
+
+pub use crate::operation::get_realtime_log_config::_get_realtime_log_config_output::GetRealtimeLogConfigOutput;
 
 mod _get_realtime_log_config_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::rebalance_slots_in_global_replication_group::_rebalance_slots_in_global_replication_group_output::RebalanceSlotsInGlobalReplicationGroupOutput;
-
 pub use crate::operation::rebalance_slots_in_global_replication_group::_rebalance_slots_in_global_replication_group_input::RebalanceSlotsInGlobalReplicationGroupInput;
+
+pub use crate::operation::rebalance_slots_in_global_replication_group::_rebalance_slots_in_global_replication_group_output::RebalanceSlotsInGlobalReplicationGroupOutput;
 
 mod _rebalance_slots_in_global_replication_group_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_protected_que
     }
 }
 
-pub use crate::operation::list_protected_queries::_list_protected_queries_output::ListProtectedQueriesOutput;
-
 pub use crate::operation::list_protected_queries::_list_protected_queries_input::ListProtectedQueriesInput;
+
+pub use crate::operation::list_protected_queries::_list_protected_queries_output::ListProtectedQueriesOutput;
 
 mod _list_protected_queries_input;
 

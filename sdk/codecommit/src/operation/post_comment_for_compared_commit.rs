@@ -597,9 +597,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::post_comment_for_c
     }
 }
 
-pub use crate::operation::post_comment_for_compared_commit::_post_comment_for_compared_commit_output::PostCommentForComparedCommitOutput;
-
 pub use crate::operation::post_comment_for_compared_commit::_post_comment_for_compared_commit_input::PostCommentForComparedCommitInput;
+
+pub use crate::operation::post_comment_for_compared_commit::_post_comment_for_compared_commit_output::PostCommentForComparedCommitOutput;
 
 mod _post_comment_for_compared_commit_input;
 

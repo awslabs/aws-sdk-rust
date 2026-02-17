@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_resou
     }
 }
 
-pub use crate::operation::disassociate_resource_from_profile::_disassociate_resource_from_profile_output::DisassociateResourceFromProfileOutput;
-
 pub use crate::operation::disassociate_resource_from_profile::_disassociate_resource_from_profile_input::DisassociateResourceFromProfileInput;
+
+pub use crate::operation::disassociate_resource_from_profile::_disassociate_resource_from_profile_output::DisassociateResourceFromProfileOutput;
 
 mod _disassociate_resource_from_profile_input;
 

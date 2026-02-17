@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_supported
     }
 }
 
-pub use crate::operation::describe_supported_languages::_describe_supported_languages_output::DescribeSupportedLanguagesOutput;
-
 pub use crate::operation::describe_supported_languages::_describe_supported_languages_input::DescribeSupportedLanguagesInput;
+
+pub use crate::operation::describe_supported_languages::_describe_supported_languages_output::DescribeSupportedLanguagesOutput;
 
 mod _describe_supported_languages_input;
 

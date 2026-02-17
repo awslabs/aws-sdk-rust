@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_notificat
     }
 }
 
-pub use crate::operation::describe_notifications_for_budget::_describe_notifications_for_budget_output::DescribeNotificationsForBudgetOutput;
-
 pub use crate::operation::describe_notifications_for_budget::_describe_notifications_for_budget_input::DescribeNotificationsForBudgetInput;
+
+pub use crate::operation::describe_notifications_for_budget::_describe_notifications_for_budget_output::DescribeNotificationsForBudgetOutput;
 
 mod _describe_notifications_for_budget_input;
 

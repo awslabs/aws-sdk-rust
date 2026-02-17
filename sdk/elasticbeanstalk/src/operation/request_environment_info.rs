@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::request_environmen
     }
 }
 
-pub use crate::operation::request_environment_info::_request_environment_info_output::RequestEnvironmentInfoOutput;
-
 pub use crate::operation::request_environment_info::_request_environment_info_input::RequestEnvironmentInfoInput;
+
+pub use crate::operation::request_environment_info::_request_environment_info_output::RequestEnvironmentInfoOutput;
 
 mod _request_environment_info_input;
 

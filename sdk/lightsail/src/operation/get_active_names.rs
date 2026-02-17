@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_active_names::
     }
 }
 
-pub use crate::operation::get_active_names::_get_active_names_output::GetActiveNamesOutput;
-
 pub use crate::operation::get_active_names::_get_active_names_input::GetActiveNamesInput;
+
+pub use crate::operation::get_active_names::_get_active_names_output::GetActiveNamesOutput;
 
 mod _get_active_names_input;
 

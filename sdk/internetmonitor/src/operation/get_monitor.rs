@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_monitor::GetMo
     }
 }
 
-pub use crate::operation::get_monitor::_get_monitor_output::GetMonitorOutput;
-
 pub use crate::operation::get_monitor::_get_monitor_input::GetMonitorInput;
+
+pub use crate::operation::get_monitor::_get_monitor_output::GetMonitorOutput;
 
 mod _get_monitor_input;
 

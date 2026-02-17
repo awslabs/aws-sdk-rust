@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_from_
     }
 }
 
-pub use crate::operation::disassociate_from_master_account::_disassociate_from_master_account_output::DisassociateFromMasterAccountOutput;
-
 pub use crate::operation::disassociate_from_master_account::_disassociate_from_master_account_input::DisassociateFromMasterAccountInput;
+
+pub use crate::operation::disassociate_from_master_account::_disassociate_from_master_account_output::DisassociateFromMasterAccountOutput;
 
 mod _disassociate_from_master_account_input;
 

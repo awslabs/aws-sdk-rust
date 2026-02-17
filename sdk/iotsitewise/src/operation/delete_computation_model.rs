@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_computation
     }
 }
 
-pub use crate::operation::delete_computation_model::_delete_computation_model_output::DeleteComputationModelOutput;
-
 pub use crate::operation::delete_computation_model::_delete_computation_model_input::DeleteComputationModelInput;
+
+pub use crate::operation::delete_computation_model::_delete_computation_model_output::DeleteComputationModelOutput;
 
 mod _delete_computation_model_input;
 

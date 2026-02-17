@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_q_app::Upda
     }
 }
 
-pub use crate::operation::update_q_app::_update_q_app_output::UpdateQAppOutput;
-
 pub use crate::operation::update_q_app::_update_q_app_input::UpdateQAppInput;
+
+pub use crate::operation::update_q_app::_update_q_app_output::UpdateQAppOutput;
 
 mod _update_q_app_input;
 

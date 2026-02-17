@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_table_bucket_p
     }
 }
 
-pub use crate::operation::put_table_bucket_policy::_put_table_bucket_policy_output::PutTableBucketPolicyOutput;
-
 pub use crate::operation::put_table_bucket_policy::_put_table_bucket_policy_input::PutTableBucketPolicyInput;
+
+pub use crate::operation::put_table_bucket_policy::_put_table_bucket_policy_output::PutTableBucketPolicyOutput;
 
 mod _put_table_bucket_policy_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_monitoring_me
     }
 }
 
-pub use crate::operation::stop_monitoring_members::_stop_monitoring_members_output::StopMonitoringMembersOutput;
-
 pub use crate::operation::stop_monitoring_members::_stop_monitoring_members_input::StopMonitoringMembersInput;
+
+pub use crate::operation::stop_monitoring_members::_stop_monitoring_members_output::StopMonitoringMembersOutput;
 
 mod _stop_monitoring_members_input;
 

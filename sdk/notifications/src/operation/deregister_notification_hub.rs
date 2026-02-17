@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_notific
     }
 }
 
-pub use crate::operation::deregister_notification_hub::_deregister_notification_hub_output::DeregisterNotificationHubOutput;
-
 pub use crate::operation::deregister_notification_hub::_deregister_notification_hub_input::DeregisterNotificationHubInput;
+
+pub use crate::operation::deregister_notification_hub::_deregister_notification_hub_output::DeregisterNotificationHubOutput;
 
 mod _deregister_notification_hub_input;
 

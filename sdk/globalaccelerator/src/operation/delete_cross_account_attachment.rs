@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cross_accou
     }
 }
 
-pub use crate::operation::delete_cross_account_attachment::_delete_cross_account_attachment_output::DeleteCrossAccountAttachmentOutput;
-
 pub use crate::operation::delete_cross_account_attachment::_delete_cross_account_attachment_input::DeleteCrossAccountAttachmentInput;
+
+pub use crate::operation::delete_cross_account_attachment::_delete_cross_account_attachment_output::DeleteCrossAccountAttachmentOutput;
 
 mod _delete_cross_account_attachment_input;
 

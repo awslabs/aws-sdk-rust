@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_fleet_attri
     }
 }
 
-pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_output::UpdateFleetAttributesOutput;
-
 pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_input::UpdateFleetAttributesInput;
+
+pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_output::UpdateFleetAttributesOutput;
 
 mod _update_fleet_attributes_input;
 

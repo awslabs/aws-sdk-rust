@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_parti
     }
 }
 
-pub use crate::operation::batch_delete_partition::_batch_delete_partition_output::BatchDeletePartitionOutput;
-
 pub use crate::operation::batch_delete_partition::_batch_delete_partition_input::BatchDeletePartitionInput;
+
+pub use crate::operation::batch_delete_partition::_batch_delete_partition_output::BatchDeletePartitionOutput;
 
 mod _batch_delete_partition_input;
 

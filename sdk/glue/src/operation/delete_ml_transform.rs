@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ml_transfor
     }
 }
 
-pub use crate::operation::delete_ml_transform::_delete_ml_transform_output::DeleteMlTransformOutput;
-
 pub use crate::operation::delete_ml_transform::_delete_ml_transform_input::DeleteMlTransformInput;
+
+pub use crate::operation::delete_ml_transform::_delete_ml_transform_output::DeleteMlTransformOutput;
 
 mod _delete_ml_transform_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_topic
     }
 }
 
-pub use crate::operation::batch_delete_topic_reviewed_answer::_batch_delete_topic_reviewed_answer_output::BatchDeleteTopicReviewedAnswerOutput;
-
 pub use crate::operation::batch_delete_topic_reviewed_answer::_batch_delete_topic_reviewed_answer_input::BatchDeleteTopicReviewedAnswerInput;
+
+pub use crate::operation::batch_delete_topic_reviewed_answer::_batch_delete_topic_reviewed_answer_output::BatchDeleteTopicReviewedAnswerOutput;
 
 mod _batch_delete_topic_reviewed_answer_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_vdm_at
     }
 }
 
-pub use crate::operation::put_account_vdm_attributes::_put_account_vdm_attributes_output::PutAccountVdmAttributesOutput;
-
 pub use crate::operation::put_account_vdm_attributes::_put_account_vdm_attributes_input::PutAccountVdmAttributesInput;
+
+pub use crate::operation::put_account_vdm_attributes::_put_account_vdm_attributes_output::PutAccountVdmAttributesOutput;
 
 mod _put_account_vdm_attributes_input;
 

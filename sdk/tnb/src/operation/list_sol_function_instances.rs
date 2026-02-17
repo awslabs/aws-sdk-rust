@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sol_function_
     }
 }
 
-pub use crate::operation::list_sol_function_instances::_list_sol_function_instances_output::ListSolFunctionInstancesOutput;
-
 pub use crate::operation::list_sol_function_instances::_list_sol_function_instances_input::ListSolFunctionInstancesInput;
+
+pub use crate::operation::list_sol_function_instances::_list_sol_function_instances_output::ListSolFunctionInstancesOutput;
 
 mod _list_sol_function_instances_input;
 

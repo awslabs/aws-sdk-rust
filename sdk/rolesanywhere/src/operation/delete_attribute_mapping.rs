@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_attribute_m
     }
 }
 
-pub use crate::operation::delete_attribute_mapping::_delete_attribute_mapping_output::DeleteAttributeMappingOutput;
-
 pub use crate::operation::delete_attribute_mapping::_delete_attribute_mapping_input::DeleteAttributeMappingInput;
+
+pub use crate::operation::delete_attribute_mapping::_delete_attribute_mapping_output::DeleteAttributeMappingOutput;
 
 mod _delete_attribute_mapping_input;
 

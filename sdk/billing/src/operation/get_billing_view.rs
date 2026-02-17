@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_billing_view::
     }
 }
 
-pub use crate::operation::get_billing_view::_get_billing_view_output::GetBillingViewOutput;
-
 pub use crate::operation::get_billing_view::_get_billing_view_input::GetBillingViewInput;
+
+pub use crate::operation::get_billing_view::_get_billing_view_output::GetBillingViewOutput;
 
 mod _get_billing_view_input;
 

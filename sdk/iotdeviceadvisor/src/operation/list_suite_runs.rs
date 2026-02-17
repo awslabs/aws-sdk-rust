@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_suite_runs::L
     }
 }
 
-pub use crate::operation::list_suite_runs::_list_suite_runs_output::ListSuiteRunsOutput;
-
 pub use crate::operation::list_suite_runs::_list_suite_runs_input::ListSuiteRunsInput;
+
+pub use crate::operation::list_suite_runs::_list_suite_runs_output::ListSuiteRunsOutput;
 
 mod _list_suite_runs_input;
 

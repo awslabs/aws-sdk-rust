@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_organizati
     }
 }
 
-pub use crate::operation::disable_organizations_root_sessions::_disable_organizations_root_sessions_output::DisableOrganizationsRootSessionsOutput;
-
 pub use crate::operation::disable_organizations_root_sessions::_disable_organizations_root_sessions_input::DisableOrganizationsRootSessionsInput;
+
+pub use crate::operation::disable_organizations_root_sessions::_disable_organizations_root_sessions_output::DisableOrganizationsRootSessionsOutput;
 
 mod _disable_organizations_root_sessions_input;
 

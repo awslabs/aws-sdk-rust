@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_public_dns_
     }
 }
 
-pub use crate::operation::create_public_dns_namespace::_create_public_dns_namespace_output::CreatePublicDnsNamespaceOutput;
-
 pub use crate::operation::create_public_dns_namespace::_create_public_dns_namespace_input::CreatePublicDnsNamespaceInput;
+
+pub use crate::operation::create_public_dns_namespace::_create_public_dns_namespace_output::CreatePublicDnsNamespaceOutput;
 
 mod _create_public_dns_namespace_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_shared_dire
     }
 }
 
-pub use crate::operation::reject_shared_directory::_reject_shared_directory_output::RejectSharedDirectoryOutput;
-
 pub use crate::operation::reject_shared_directory::_reject_shared_directory_input::RejectSharedDirectoryInput;
+
+pub use crate::operation::reject_shared_directory::_reject_shared_directory_output::RejectSharedDirectoryOutput;
 
 mod _reject_shared_directory_input;
 

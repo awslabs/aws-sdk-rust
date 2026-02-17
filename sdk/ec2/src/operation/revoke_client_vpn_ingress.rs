@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_client_vpn_
     }
 }
 
-pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_output::RevokeClientVpnIngressOutput;
-
 pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_input::RevokeClientVpnIngressInput;
+
+pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_output::RevokeClientVpnIngressOutput;
 
 mod _revoke_client_vpn_ingress_input;
 

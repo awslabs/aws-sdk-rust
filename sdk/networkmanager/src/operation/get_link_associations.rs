@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_link_associati
     }
 }
 
-pub use crate::operation::get_link_associations::_get_link_associations_output::GetLinkAssociationsOutput;
-
 pub use crate::operation::get_link_associations::_get_link_associations_input::GetLinkAssociationsInput;
+
+pub use crate::operation::get_link_associations::_get_link_associations_output::GetLinkAssociationsOutput;
 
 mod _get_link_associations_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_application_re
     }
 }
 
-pub use crate::operation::add_application_reference_data_source::_add_application_reference_data_source_output::AddApplicationReferenceDataSourceOutput;
-
 pub use crate::operation::add_application_reference_data_source::_add_application_reference_data_source_input::AddApplicationReferenceDataSourceInput;
+
+pub use crate::operation::add_application_reference_data_source::_add_application_reference_data_source_output::AddApplicationReferenceDataSourceOutput;
 
 mod _add_application_reference_data_source_input;
 

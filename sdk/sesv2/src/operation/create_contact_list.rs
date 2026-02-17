@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_contact_lis
     }
 }
 
-pub use crate::operation::create_contact_list::_create_contact_list_output::CreateContactListOutput;
-
 pub use crate::operation::create_contact_list::_create_contact_list_input::CreateContactListInput;
+
+pub use crate::operation::create_contact_list::_create_contact_list_output::CreateContactListOutput;
 
 mod _create_contact_list_input;
 

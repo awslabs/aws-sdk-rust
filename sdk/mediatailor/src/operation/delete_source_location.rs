@@ -352,9 +352,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_source_loca
     }
 }
 
-pub use crate::operation::delete_source_location::_delete_source_location_output::DeleteSourceLocationOutput;
-
 pub use crate::operation::delete_source_location::_delete_source_location_input::DeleteSourceLocationInput;
+
+pub use crate::operation::delete_source_location::_delete_source_location_output::DeleteSourceLocationOutput;
 
 mod _delete_source_location_input;
 

@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_coverage::Lis
     }
 }
 
-pub use crate::operation::list_coverage::_list_coverage_output::ListCoverageOutput;
-
 pub use crate::operation::list_coverage::_list_coverage_input::ListCoverageInput;
+
+pub use crate::operation::list_coverage::_list_coverage_output::ListCoverageOutput;
 
 mod _list_coverage_input;
 

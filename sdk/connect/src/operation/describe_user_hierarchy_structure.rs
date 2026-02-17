@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_user_hier
     }
 }
 
-pub use crate::operation::describe_user_hierarchy_structure::_describe_user_hierarchy_structure_output::DescribeUserHierarchyStructureOutput;
-
 pub use crate::operation::describe_user_hierarchy_structure::_describe_user_hierarchy_structure_input::DescribeUserHierarchyStructureInput;
+
+pub use crate::operation::describe_user_hierarchy_structure::_describe_user_hierarchy_structure_output::DescribeUserHierarchyStructureOutput;
 
 mod _describe_user_hierarchy_structure_input;
 

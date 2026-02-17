@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_memory::Cre
     }
 }
 
-pub use crate::operation::create_memory::_create_memory_output::CreateMemoryOutput;
-
 pub use crate::operation::create_memory::_create_memory_input::CreateMemoryInput;
+
+pub use crate::operation::create_memory::_create_memory_output::CreateMemoryOutput;
 
 mod _create_memory_input;
 

@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_notifications_
     }
 }
 
-pub use crate::operation::get_notifications_access_for_organization::_get_notifications_access_for_organization_output::GetNotificationsAccessForOrganizationOutput;
-
 pub use crate::operation::get_notifications_access_for_organization::_get_notifications_access_for_organization_input::GetNotificationsAccessForOrganizationInput;
+
+pub use crate::operation::get_notifications_access_for_organization::_get_notifications_access_for_organization_output::GetNotificationsAccessForOrganizationOutput;
 
 mod _get_notifications_access_for_organization_input;
 

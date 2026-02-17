@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_member_t
     }
 }
 
-pub use crate::operation::associate_member_to_farm::_associate_member_to_farm_output::AssociateMemberToFarmOutput;
-
 pub use crate::operation::associate_member_to_farm::_associate_member_to_farm_input::AssociateMemberToFarmInput;
+
+pub use crate::operation::associate_member_to_farm::_associate_member_to_farm_output::AssociateMemberToFarmOutput;
 
 mod _associate_member_to_farm_input;
 

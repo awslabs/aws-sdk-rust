@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_activation:
     }
 }
 
-pub use crate::operation::create_activation::_create_activation_output::CreateActivationOutput;
-
 pub use crate::operation::create_activation::_create_activation_input::CreateActivationInput;
+
+pub use crate::operation::create_activation::_create_activation_output::CreateActivationOutput;
 
 mod _create_activation_input;
 

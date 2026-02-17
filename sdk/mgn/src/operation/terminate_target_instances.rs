@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_target_i
     }
 }
 
-pub use crate::operation::terminate_target_instances::_terminate_target_instances_output::TerminateTargetInstancesOutput;
-
 pub use crate::operation::terminate_target_instances::_terminate_target_instances_input::TerminateTargetInstancesInput;
+
+pub use crate::operation::terminate_target_instances::_terminate_target_instances_output::TerminateTargetInstancesOutput;
 
 mod _terminate_target_instances_input;
 

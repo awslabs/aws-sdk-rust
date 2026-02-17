@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network_acl
     }
 }
 
-pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_output::CreateNetworkAclEntryOutput;
-
 pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_input::CreateNetworkAclEntryInput;
+
+pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_output::CreateNetworkAclEntryOutput;
 
 mod _create_network_acl_entry_input;
 

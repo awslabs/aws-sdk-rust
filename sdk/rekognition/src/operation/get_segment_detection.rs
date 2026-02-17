@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_detect
     }
 }
 
-pub use crate::operation::get_segment_detection::_get_segment_detection_output::GetSegmentDetectionOutput;
-
 pub use crate::operation::get_segment_detection::_get_segment_detection_input::GetSegmentDetectionInput;
+
+pub use crate::operation::get_segment_detection::_get_segment_detection_output::GetSegmentDetectionOutput;
 
 mod _get_segment_detection_input;
 

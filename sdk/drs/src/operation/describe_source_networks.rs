@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_source_ne
     }
 }
 
-pub use crate::operation::describe_source_networks::_describe_source_networks_output::DescribeSourceNetworksOutput;
-
 pub use crate::operation::describe_source_networks::_describe_source_networks_input::DescribeSourceNetworksInput;
+
+pub use crate::operation::describe_source_networks::_describe_source_networks_output::DescribeSourceNetworksOutput;
 
 mod _describe_source_networks_input;
 

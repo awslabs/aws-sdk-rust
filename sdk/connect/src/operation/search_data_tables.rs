@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_data_tables
     }
 }
 
-pub use crate::operation::search_data_tables::_search_data_tables_output::SearchDataTablesOutput;
-
 pub use crate::operation::search_data_tables::_search_data_tables_input::SearchDataTablesInput;
+
+pub use crate::operation::search_data_tables::_search_data_tables_output::SearchDataTablesOutput;
 
 mod _search_data_tables_input;
 

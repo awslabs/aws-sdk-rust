@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_comment::De
     }
 }
 
-pub use crate::operation::delete_comment::_delete_comment_output::DeleteCommentOutput;
-
 pub use crate::operation::delete_comment::_delete_comment_input::DeleteCommentInput;
+
+pub use crate::operation::delete_comment::_delete_comment_output::DeleteCommentOutput;
 
 mod _delete_comment_input;
 

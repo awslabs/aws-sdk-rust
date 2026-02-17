@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_approximate_us
     }
 }
 
-pub use crate::operation::get_approximate_usage_records::_get_approximate_usage_records_output::GetApproximateUsageRecordsOutput;
-
 pub use crate::operation::get_approximate_usage_records::_get_approximate_usage_records_input::GetApproximateUsageRecordsInput;
+
+pub use crate::operation::get_approximate_usage_records::_get_approximate_usage_records_output::GetApproximateUsageRecordsOutput;
 
 mod _get_approximate_usage_records_input;
 

@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_load_balancer_
     }
 }
 
-pub use crate::operation::get_load_balancer_metric_data::_get_load_balancer_metric_data_output::GetLoadBalancerMetricDataOutput;
-
 pub use crate::operation::get_load_balancer_metric_data::_get_load_balancer_metric_data_input::GetLoadBalancerMetricDataInput;
+
+pub use crate::operation::get_load_balancer_metric_data::_get_load_balancer_metric_data_output::GetLoadBalancerMetricDataOutput;
 
 mod _get_load_balancer_metric_data_input;
 

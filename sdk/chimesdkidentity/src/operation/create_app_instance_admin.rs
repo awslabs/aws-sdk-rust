@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_instanc
     }
 }
 
-pub use crate::operation::create_app_instance_admin::_create_app_instance_admin_output::CreateAppInstanceAdminOutput;
-
 pub use crate::operation::create_app_instance_admin::_create_app_instance_admin_input::CreateAppInstanceAdminInput;
+
+pub use crate::operation::create_app_instance_admin::_create_app_instance_admin_output::CreateAppInstanceAdminOutput;
 
 mod _create_app_instance_admin_input;
 

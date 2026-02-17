@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_level_
     }
 }
 
-pub use crate::operation::get_service_level_objective::_get_service_level_objective_output::GetServiceLevelObjectiveOutput;
-
 pub use crate::operation::get_service_level_objective::_get_service_level_objective_input::GetServiceLevelObjectiveInput;
+
+pub use crate::operation::get_service_level_objective::_get_service_level_objective_output::GetServiceLevelObjectiveOutput;
 
 mod _get_service_level_objective_input;
 

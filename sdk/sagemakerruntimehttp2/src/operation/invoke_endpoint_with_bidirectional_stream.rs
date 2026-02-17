@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_endpoint_wi
     }
 }
 
-pub use crate::operation::invoke_endpoint_with_bidirectional_stream::_invoke_endpoint_with_bidirectional_stream_output::InvokeEndpointWithBidirectionalStreamOutput;
-
 pub use crate::operation::invoke_endpoint_with_bidirectional_stream::_invoke_endpoint_with_bidirectional_stream_input::InvokeEndpointWithBidirectionalStreamInput;
+
+pub use crate::operation::invoke_endpoint_with_bidirectional_stream::_invoke_endpoint_with_bidirectional_stream_output::InvokeEndpointWithBidirectionalStreamOutput;
 
 mod _invoke_endpoint_with_bidirectional_stream_input;
 

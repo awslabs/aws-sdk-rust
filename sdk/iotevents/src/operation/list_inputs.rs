@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inputs::ListI
     }
 }
 
-pub use crate::operation::list_inputs::_list_inputs_output::ListInputsOutput;
-
 pub use crate::operation::list_inputs::_list_inputs_input::ListInputsInput;
+
+pub use crate::operation::list_inputs::_list_inputs_output::ListInputsOutput;
 
 mod _list_inputs_input;
 

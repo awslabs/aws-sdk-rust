@@ -545,9 +545,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_listener::M
     }
 }
 
-pub use crate::operation::modify_listener::_modify_listener_output::ModifyListenerOutput;
-
 pub use crate::operation::modify_listener::_modify_listener_input::ModifyListenerInput;
+
+pub use crate::operation::modify_listener::_modify_listener_output::ModifyListenerOutput;
 
 mod _modify_listener_input;
 

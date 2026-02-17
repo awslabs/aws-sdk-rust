@@ -336,9 +336,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_local_gatew
                                 }
                             }
 
-pub use crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::_delete_local_gateway_route_table_virtual_interface_group_association_output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput;
-
 pub use crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::_delete_local_gateway_route_table_virtual_interface_group_association_input::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInput;
+
+pub use crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::_delete_local_gateway_route_table_virtual_interface_group_association_output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput;
 
 mod _delete_local_gateway_route_table_virtual_interface_group_association_input;
 

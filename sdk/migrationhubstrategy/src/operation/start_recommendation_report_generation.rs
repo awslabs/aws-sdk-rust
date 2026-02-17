@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_recommendati
     }
 }
 
-pub use crate::operation::start_recommendation_report_generation::_start_recommendation_report_generation_output::StartRecommendationReportGenerationOutput;
-
 pub use crate::operation::start_recommendation_report_generation::_start_recommendation_report_generation_input::StartRecommendationReportGenerationInput;
+
+pub use crate::operation::start_recommendation_report_generation::_start_recommendation_report_generation_output::StartRecommendationReportGenerationOutput;
 
 mod _start_recommendation_report_generation_input;
 

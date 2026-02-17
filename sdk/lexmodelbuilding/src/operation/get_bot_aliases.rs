@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bot_aliases::G
     }
 }
 
-pub use crate::operation::get_bot_aliases::_get_bot_aliases_output::GetBotAliasesOutput;
-
 pub use crate::operation::get_bot_aliases::_get_bot_aliases_input::GetBotAliasesInput;
+
+pub use crate::operation::get_bot_aliases::_get_bot_aliases_output::GetBotAliasesOutput;
 
 mod _get_bot_aliases_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_route_cal
     }
 }
 
-pub use crate::operation::describe_route_calculator::_describe_route_calculator_output::DescribeRouteCalculatorOutput;
-
 pub use crate::operation::describe_route_calculator::_describe_route_calculator_input::DescribeRouteCalculatorInput;
+
+pub use crate::operation::describe_route_calculator::_describe_route_calculator_output::DescribeRouteCalculatorOutput;
 
 mod _describe_route_calculator_input;
 

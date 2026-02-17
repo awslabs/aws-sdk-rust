@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dashboard
     }
 }
 
-pub use crate::operation::describe_dashboard_definition::_describe_dashboard_definition_output::DescribeDashboardDefinitionOutput;
-
 pub use crate::operation::describe_dashboard_definition::_describe_dashboard_definition_input::DescribeDashboardDefinitionInput;
+
+pub use crate::operation::describe_dashboard_definition::_describe_dashboard_definition_output::DescribeDashboardDefinitionOutput;
 
 mod _describe_dashboard_definition_input;
 

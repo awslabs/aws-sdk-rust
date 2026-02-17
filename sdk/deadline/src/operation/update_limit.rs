@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_limit::Upda
     }
 }
 
-pub use crate::operation::update_limit::_update_limit_output::UpdateLimitOutput;
-
 pub use crate::operation::update_limit::_update_limit_input::UpdateLimitInput;
+
+pub use crate::operation::update_limit::_update_limit_output::UpdateLimitOutput;
 
 mod _update_limit_input;
 

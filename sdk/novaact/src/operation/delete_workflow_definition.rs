@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workflow_de
     }
 }
 
-pub use crate::operation::delete_workflow_definition::_delete_workflow_definition_output::DeleteWorkflowDefinitionOutput;
-
 pub use crate::operation::delete_workflow_definition::_delete_workflow_definition_input::DeleteWorkflowDefinitionInput;
+
+pub use crate::operation::delete_workflow_definition::_delete_workflow_definition_output::DeleteWorkflowDefinitionOutput;
 
 mod _delete_workflow_definition_input;
 

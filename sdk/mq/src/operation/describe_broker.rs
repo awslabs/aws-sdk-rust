@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_broker::D
     }
 }
 
-pub use crate::operation::describe_broker::_describe_broker_output::DescribeBrokerOutput;
-
 pub use crate::operation::describe_broker::_describe_broker_input::DescribeBrokerInput;
+
+pub use crate::operation::describe_broker::_describe_broker_output::DescribeBrokerOutput;
 
 mod _describe_broker_input;
 

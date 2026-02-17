@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_domain_name
     }
 }
 
-pub use crate::operation::reject_domain_name_access_association::_reject_domain_name_access_association_output::RejectDomainNameAccessAssociationOutput;
-
 pub use crate::operation::reject_domain_name_access_association::_reject_domain_name_access_association_input::RejectDomainNameAccessAssociationInput;
+
+pub use crate::operation::reject_domain_name_access_association::_reject_domain_name_access_association_output::RejectDomainNameAccessAssociationOutput;
 
 mod _reject_domain_name_access_association_input;
 

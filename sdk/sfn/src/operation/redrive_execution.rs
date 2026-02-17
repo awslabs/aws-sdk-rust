@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::redrive_execution:
     }
 }
 
-pub use crate::operation::redrive_execution::_redrive_execution_output::RedriveExecutionOutput;
-
 pub use crate::operation::redrive_execution::_redrive_execution_input::RedriveExecutionInput;
+
+pub use crate::operation::redrive_execution::_redrive_execution_output::RedriveExecutionOutput;
 
 mod _redrive_execution_input;
 

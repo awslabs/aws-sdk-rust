@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_storage_config
     }
 }
 
-pub use crate::operation::put_storage_configuration::_put_storage_configuration_output::PutStorageConfigurationOutput;
-
 pub use crate::operation::put_storage_configuration::_put_storage_configuration_input::PutStorageConfigurationInput;
+
+pub use crate::operation::put_storage_configuration::_put_storage_configuration_output::PutStorageConfigurationOutput;
 
 mod _put_storage_configuration_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_request_val
     }
 }
 
-pub use crate::operation::delete_request_validator::_delete_request_validator_output::DeleteRequestValidatorOutput;
-
 pub use crate::operation::delete_request_validator::_delete_request_validator_input::DeleteRequestValidatorInput;
+
+pub use crate::operation::delete_request_validator::_delete_request_validator_output::DeleteRequestValidatorOutput;
 
 mod _delete_request_validator_input;
 

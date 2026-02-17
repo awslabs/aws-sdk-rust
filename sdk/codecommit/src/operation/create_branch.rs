@@ -491,9 +491,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_branch::Cre
     }
 }
 
-pub use crate::operation::create_branch::_create_branch_output::CreateBranchOutput;
-
 pub use crate::operation::create_branch::_create_branch_input::CreateBranchInput;
+
+pub use crate::operation::create_branch::_create_branch_output::CreateBranchOutput;
 
 mod _create_branch_input;
 

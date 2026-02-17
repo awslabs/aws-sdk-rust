@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dimension::
     }
 }
 
-pub use crate::operation::create_dimension::_create_dimension_output::CreateDimensionOutput;
-
 pub use crate::operation::create_dimension::_create_dimension_input::CreateDimensionInput;
+
+pub use crate::operation::create_dimension::_create_dimension_output::CreateDimensionOutput;
 
 mod _create_dimension_input;
 

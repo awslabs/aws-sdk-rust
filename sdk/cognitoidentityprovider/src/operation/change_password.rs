@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::change_password::C
     }
 }
 
-pub use crate::operation::change_password::_change_password_output::ChangePasswordOutput;
-
 pub use crate::operation::change_password::_change_password_input::ChangePasswordInput;
+
+pub use crate::operation::change_password::_change_password_output::ChangePasswordOutput;
 
 mod _change_password_input;
 

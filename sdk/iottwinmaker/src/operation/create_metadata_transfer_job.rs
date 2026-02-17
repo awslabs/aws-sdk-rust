@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_metadata_tr
     }
 }
 
-pub use crate::operation::create_metadata_transfer_job::_create_metadata_transfer_job_output::CreateMetadataTransferJobOutput;
-
 pub use crate::operation::create_metadata_transfer_job::_create_metadata_transfer_job_input::CreateMetadataTransferJobInput;
+
+pub use crate::operation::create_metadata_transfer_job::_create_metadata_transfer_job_output::CreateMetadataTransferJobOutput;
 
 mod _create_metadata_transfer_job_input;
 

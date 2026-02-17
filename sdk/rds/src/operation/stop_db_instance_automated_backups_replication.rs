@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::stop_db_instance_automated_backups_replication::_stop_db_instance_automated_backups_replication_output::StopDbInstanceAutomatedBackupsReplicationOutput;
-
 pub use crate::operation::stop_db_instance_automated_backups_replication::_stop_db_instance_automated_backups_replication_input::StopDbInstanceAutomatedBackupsReplicationInput;
+
+pub use crate::operation::stop_db_instance_automated_backups_replication::_stop_db_instance_automated_backups_replication_output::StopDbInstanceAutomatedBackupsReplicationOutput;
 
 mod _stop_db_instance_automated_backups_replication_input;
 

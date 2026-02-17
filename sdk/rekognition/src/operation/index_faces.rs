@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::index_faces::Index
     }
 }
 
-pub use crate::operation::index_faces::_index_faces_output::IndexFacesOutput;
-
 pub use crate::operation::index_faces::_index_faces_input::IndexFacesInput;
+
+pub use crate::operation::index_faces::_index_faces_output::IndexFacesOutput;
 
 mod _index_faces_input;
 

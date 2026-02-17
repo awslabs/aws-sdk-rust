@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_core_network_prefix_list_association::_create_core_network_prefix_list_association_output::CreateCoreNetworkPrefixListAssociationOutput;
-
 pub use crate::operation::create_core_network_prefix_list_association::_create_core_network_prefix_list_association_input::CreateCoreNetworkPrefixListAssociationInput;
+
+pub use crate::operation::create_core_network_prefix_list_association::_create_core_network_prefix_list_association_output::CreateCoreNetworkPrefixListAssociationOutput;
 
 mod _create_core_network_prefix_list_association_input;
 

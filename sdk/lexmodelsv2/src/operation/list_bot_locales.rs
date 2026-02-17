@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_locales::
     }
 }
 
-pub use crate::operation::list_bot_locales::_list_bot_locales_output::ListBotLocalesOutput;
-
 pub use crate::operation::list_bot_locales::_list_bot_locales_input::ListBotLocalesInput;
+
+pub use crate::operation::list_bot_locales::_list_bot_locales_output::ListBotLocalesOutput;
 
 mod _list_bot_locales_input;
 

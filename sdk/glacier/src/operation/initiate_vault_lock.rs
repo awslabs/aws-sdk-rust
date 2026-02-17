@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initiate_vault_loc
     }
 }
 
-pub use crate::operation::initiate_vault_lock::_initiate_vault_lock_output::InitiateVaultLockOutput;
-
 pub use crate::operation::initiate_vault_lock::_initiate_vault_lock_input::InitiateVaultLockInput;
+
+pub use crate::operation::initiate_vault_lock::_initiate_vault_lock_output::InitiateVaultLockOutput;
 
 mod _initiate_vault_lock_input;
 

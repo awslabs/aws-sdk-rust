@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_collaboration_configured_model_algorithm_association::_get_collaboration_configured_model_algorithm_association_output::GetCollaborationConfiguredModelAlgorithmAssociationOutput;
-
 pub use crate::operation::get_collaboration_configured_model_algorithm_association::_get_collaboration_configured_model_algorithm_association_input::GetCollaborationConfiguredModelAlgorithmAssociationInput;
+
+pub use crate::operation::get_collaboration_configured_model_algorithm_association::_get_collaboration_configured_model_algorithm_association_output::GetCollaborationConfiguredModelAlgorithmAssociationOutput;
 
 mod _get_collaboration_configured_model_algorithm_association_input;
 

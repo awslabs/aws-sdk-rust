@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_data_collecti
     }
 }
 
-pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collection_by_agent_ids_output::StopDataCollectionByAgentIdsOutput;
-
 pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collection_by_agent_ids_input::StopDataCollectionByAgentIdsInput;
+
+pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collection_by_agent_ids_output::StopDataCollectionByAgentIdsOutput;
 
 mod _stop_data_collection_by_agent_ids_input;
 

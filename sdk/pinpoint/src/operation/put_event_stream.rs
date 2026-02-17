@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_event_stream::
     }
 }
 
-pub use crate::operation::put_event_stream::_put_event_stream_output::PutEventStreamOutput;
-
 pub use crate::operation::put_event_stream::_put_event_stream_input::PutEventStreamInput;
+
+pub use crate::operation::put_event_stream::_put_event_stream_output::PutEventStreamOutput;
 
 mod _put_event_stream_input;
 

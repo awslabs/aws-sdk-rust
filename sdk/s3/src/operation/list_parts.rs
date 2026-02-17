@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_parts::ListPa
     }
 }
 
-pub use crate::operation::list_parts::_list_parts_output::ListPartsOutput;
-
 pub use crate::operation::list_parts::_list_parts_input::ListPartsInput;
+
+pub use crate::operation::list_parts::_list_parts_output::ListPartsOutput;
 
 mod _list_parts_input;
 

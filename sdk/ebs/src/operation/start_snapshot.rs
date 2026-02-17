@@ -549,9 +549,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_snapshot::St
     }
 }
 
-pub use crate::operation::start_snapshot::_start_snapshot_output::StartSnapshotOutput;
-
 pub use crate::operation::start_snapshot::_start_snapshot_input::StartSnapshotInput;
+
+pub use crate::operation::start_snapshot::_start_snapshot_output::StartSnapshotOutput;
 
 mod _start_snapshot_input;
 

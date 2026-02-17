@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_flow_logs::
     }
 }
 
-pub use crate::operation::delete_flow_logs::_delete_flow_logs_output::DeleteFlowLogsOutput;
-
 pub use crate::operation::delete_flow_logs::_delete_flow_logs_input::DeleteFlowLogsInput;
+
+pub use crate::operation::delete_flow_logs::_delete_flow_logs_output::DeleteFlowLogsOutput;
 
 mod _delete_flow_logs_input;
 

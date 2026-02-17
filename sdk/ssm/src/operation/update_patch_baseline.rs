@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_patch_basel
     }
 }
 
-pub use crate::operation::update_patch_baseline::_update_patch_baseline_output::UpdatePatchBaselineOutput;
-
 pub use crate::operation::update_patch_baseline::_update_patch_baseline_input::UpdatePatchBaselineInput;
+
+pub use crate::operation::update_patch_baseline::_update_patch_baseline_output::UpdatePatchBaselineOutput;
 
 mod _update_patch_baseline_input;
 

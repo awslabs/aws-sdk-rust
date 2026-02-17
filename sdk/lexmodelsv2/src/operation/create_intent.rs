@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_intent::Cre
     }
 }
 
-pub use crate::operation::create_intent::_create_intent_output::CreateIntentOutput;
-
 pub use crate::operation::create_intent::_create_intent_input::CreateIntentInput;
+
+pub use crate::operation::create_intent::_create_intent_output::CreateIntentOutput;
 
 mod _create_intent_input;
 

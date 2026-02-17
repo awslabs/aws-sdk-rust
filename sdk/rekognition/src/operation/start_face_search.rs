@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_face_search:
     }
 }
 
-pub use crate::operation::start_face_search::_start_face_search_output::StartFaceSearchOutput;
-
 pub use crate::operation::start_face_search::_start_face_search_input::StartFaceSearchInput;
+
+pub use crate::operation::start_face_search::_start_face_search_output::StartFaceSearchOutput;
 
 mod _start_face_search_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_inference
     }
 }
 
-pub use crate::operation::describe_inference_scheduler::_describe_inference_scheduler_output::DescribeInferenceSchedulerOutput;
-
 pub use crate::operation::describe_inference_scheduler::_describe_inference_scheduler_input::DescribeInferenceSchedulerInput;
+
+pub use crate::operation::describe_inference_scheduler::_describe_inference_scheduler_output::DescribeInferenceSchedulerOutput;
 
 mod _describe_inference_scheduler_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trained_mod
     }
 }
 
-pub use crate::operation::create_trained_model::_create_trained_model_output::CreateTrainedModelOutput;
-
 pub use crate::operation::create_trained_model::_create_trained_model_input::CreateTrainedModelInput;
+
+pub use crate::operation::create_trained_model::_create_trained_model_output::CreateTrainedModelOutput;
 
 mod _create_trained_model_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_billing_gro
     }
 }
 
-pub use crate::operation::create_billing_group::_create_billing_group_output::CreateBillingGroupOutput;
-
 pub use crate::operation::create_billing_group::_create_billing_group_input::CreateBillingGroupInput;
+
+pub use crate::operation::create_billing_group::_create_billing_group_output::CreateBillingGroupOutput;
 
 mod _create_billing_group_input;
 

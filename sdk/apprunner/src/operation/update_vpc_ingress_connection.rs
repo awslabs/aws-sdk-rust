@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_vpc_ingress
     }
 }
 
-pub use crate::operation::update_vpc_ingress_connection::_update_vpc_ingress_connection_output::UpdateVpcIngressConnectionOutput;
-
 pub use crate::operation::update_vpc_ingress_connection::_update_vpc_ingress_connection_input::UpdateVpcIngressConnectionInput;
+
+pub use crate::operation::update_vpc_ingress_connection::_update_vpc_ingress_connection_output::UpdateVpcIngressConnectionOutput;
 
 mod _update_vpc_ingress_connection_input;
 

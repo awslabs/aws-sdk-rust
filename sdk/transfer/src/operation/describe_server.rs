@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_server::D
     }
 }
 
-pub use crate::operation::describe_server::_describe_server_output::DescribeServerOutput;
-
 pub use crate::operation::describe_server::_describe_server_input::DescribeServerInput;
+
+pub use crate::operation::describe_server::_describe_server_output::DescribeServerOutput;
 
 mod _describe_server_input;
 

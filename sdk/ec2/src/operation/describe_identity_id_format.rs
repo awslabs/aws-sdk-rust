@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_identity_
     }
 }
 
-pub use crate::operation::describe_identity_id_format::_describe_identity_id_format_output::DescribeIdentityIdFormatOutput;
-
 pub use crate::operation::describe_identity_id_format::_describe_identity_id_format_input::DescribeIdentityIdFormatInput;
+
+pub use crate::operation::describe_identity_id_format::_describe_identity_id_format_output::DescribeIdentityIdFormatOutput;
 
 mod _describe_identity_id_format_input;
 

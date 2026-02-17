@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_standards_con
     }
 }
 
-pub use crate::operation::list_standards_control_associations::_list_standards_control_associations_output::ListStandardsControlAssociationsOutput;
-
 pub use crate::operation::list_standards_control_associations::_list_standards_control_associations_input::ListStandardsControlAssociationsInput;
+
+pub use crate::operation::list_standards_control_associations::_list_standards_control_associations_output::ListStandardsControlAssociationsOutput;
 
 mod _list_standards_control_associations_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_code_interp
     }
 }
 
-pub use crate::operation::delete_code_interpreter::_delete_code_interpreter_output::DeleteCodeInterpreterOutput;
-
 pub use crate::operation::delete_code_interpreter::_delete_code_interpreter_input::DeleteCodeInterpreterInput;
+
+pub use crate::operation::delete_code_interpreter::_delete_code_interpreter_output::DeleteCodeInterpreterOutput;
 
 mod _delete_code_interpreter_input;
 

@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_review_templat
     }
 }
 
-pub use crate::operation::get_review_template_answer::_get_review_template_answer_output::GetReviewTemplateAnswerOutput;
-
 pub use crate::operation::get_review_template_answer::_get_review_template_answer_input::GetReviewTemplateAnswerInput;
+
+pub use crate::operation::get_review_template_answer::_get_review_template_answer_output::GetReviewTemplateAnswerOutput;
 
 mod _get_review_template_answer_input;
 

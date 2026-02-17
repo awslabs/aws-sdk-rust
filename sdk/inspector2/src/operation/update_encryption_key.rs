@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_encryption_
     }
 }
 
-pub use crate::operation::update_encryption_key::_update_encryption_key_output::UpdateEncryptionKeyOutput;
-
 pub use crate::operation::update_encryption_key::_update_encryption_key_input::UpdateEncryptionKeyInput;
+
+pub use crate::operation::update_encryption_key::_update_encryption_key_output::UpdateEncryptionKeyOutput;
 
 mod _update_encryption_key_input;
 

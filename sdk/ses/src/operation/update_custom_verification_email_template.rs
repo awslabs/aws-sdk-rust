@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_custom_veri
     }
 }
 
-pub use crate::operation::update_custom_verification_email_template::_update_custom_verification_email_template_output::UpdateCustomVerificationEmailTemplateOutput;
-
 pub use crate::operation::update_custom_verification_email_template::_update_custom_verification_email_template_input::UpdateCustomVerificationEmailTemplateInput;
+
+pub use crate::operation::update_custom_verification_email_template::_update_custom_verification_email_template_output::UpdateCustomVerificationEmailTemplateOutput;
 
 mod _update_custom_verification_email_template_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_utterance_met
     }
 }
 
-pub use crate::operation::list_utterance_metrics::_list_utterance_metrics_output::ListUtteranceMetricsOutput;
-
 pub use crate::operation::list_utterance_metrics::_list_utterance_metrics_input::ListUtteranceMetricsInput;
+
+pub use crate::operation::list_utterance_metrics::_list_utterance_metrics_output::ListUtteranceMetricsOutput;
 
 mod _list_utterance_metrics_input;
 

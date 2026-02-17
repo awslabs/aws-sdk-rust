@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_catalog::GetCa
     }
 }
 
-pub use crate::operation::get_catalog::_get_catalog_output::GetCatalogOutput;
-
 pub use crate::operation::get_catalog::_get_catalog_input::GetCatalogInput;
+
+pub use crate::operation::get_catalog::_get_catalog_output::GetCatalogOutput;
 
 mod _get_catalog_input;
 

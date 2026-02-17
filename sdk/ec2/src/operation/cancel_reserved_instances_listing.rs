@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_reserved_in
     }
 }
 
-pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_instances_listing_output::CancelReservedInstancesListingOutput;
-
 pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_instances_listing_input::CancelReservedInstancesListingInput;
+
+pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_instances_listing_output::CancelReservedInstancesListingOutput;
 
 mod _cancel_reserved_instances_listing_input;
 

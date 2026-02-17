@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_distribution_m
     }
 }
 
-pub use crate::operation::get_distribution_metric_data::_get_distribution_metric_data_output::GetDistributionMetricDataOutput;
-
 pub use crate::operation::get_distribution_metric_data::_get_distribution_metric_data_input::GetDistributionMetricDataInput;
+
+pub use crate::operation::get_distribution_metric_data::_get_distribution_metric_data_output::GetDistributionMetricDataOutput;
 
 mod _get_distribution_metric_data_input;
 

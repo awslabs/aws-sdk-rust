@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_instances:
     }
 }
 
-pub use crate::operation::list_db_instances::_list_db_instances_output::ListDbInstancesOutput;
-
 pub use crate::operation::list_db_instances::_list_db_instances_input::ListDbInstancesInput;
+
+pub use crate::operation::list_db_instances::_list_db_instances_output::ListDbInstancesOutput;
 
 mod _list_db_instances_input;
 

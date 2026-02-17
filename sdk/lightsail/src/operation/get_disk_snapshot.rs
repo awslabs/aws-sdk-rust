@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_disk_snapshot:
     }
 }
 
-pub use crate::operation::get_disk_snapshot::_get_disk_snapshot_output::GetDiskSnapshotOutput;
-
 pub use crate::operation::get_disk_snapshot::_get_disk_snapshot_input::GetDiskSnapshotInput;
+
+pub use crate::operation::get_disk_snapshot::_get_disk_snapshot_output::GetDiskSnapshotOutput;
 
 mod _get_disk_snapshot_input;
 

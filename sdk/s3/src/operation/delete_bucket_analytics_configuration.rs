@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket_anal
     }
 }
 
-pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_analytics_configuration_output::DeleteBucketAnalyticsConfigurationOutput;
-
 pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_analytics_configuration_input::DeleteBucketAnalyticsConfigurationInput;
+
+pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_analytics_configuration_output::DeleteBucketAnalyticsConfigurationOutput;
 
 mod _delete_bucket_analytics_configuration_input;
 

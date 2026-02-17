@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stale_sec
     }
 }
 
-pub use crate::operation::describe_stale_security_groups::_describe_stale_security_groups_output::DescribeStaleSecurityGroupsOutput;
-
 pub use crate::operation::describe_stale_security_groups::_describe_stale_security_groups_input::DescribeStaleSecurityGroupsInput;
+
+pub use crate::operation::describe_stale_security_groups::_describe_stale_security_groups_output::DescribeStaleSecurityGroupsOutput;
 
 mod _describe_stale_security_groups_input;
 

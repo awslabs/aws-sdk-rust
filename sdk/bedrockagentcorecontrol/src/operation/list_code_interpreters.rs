@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_code_interpre
     }
 }
 
-pub use crate::operation::list_code_interpreters::_list_code_interpreters_output::ListCodeInterpretersOutput;
-
 pub use crate::operation::list_code_interpreters::_list_code_interpreters_input::ListCodeInterpretersInput;
+
+pub use crate::operation::list_code_interpreters::_list_code_interpreters_output::ListCodeInterpretersOutput;
 
 mod _list_code_interpreters_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_disk_image:
     }
 }
 
-pub use crate::operation::import_disk_image::_import_disk_image_output::ImportDiskImageOutput;
-
 pub use crate::operation::import_disk_image::_import_disk_image_input::ImportDiskImageInput;
+
+pub use crate::operation::import_disk_image::_import_disk_image_output::ImportDiskImageOutput;
 
 mod _import_disk_image_input;
 

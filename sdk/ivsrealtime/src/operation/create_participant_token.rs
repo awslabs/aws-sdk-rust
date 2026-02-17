@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_participant
     }
 }
 
-pub use crate::operation::create_participant_token::_create_participant_token_output::CreateParticipantTokenOutput;
-
 pub use crate::operation::create_participant_token::_create_participant_token_input::CreateParticipantTokenInput;
+
+pub use crate::operation::create_participant_token::_create_participant_token_output::CreateParticipantTokenOutput;
 
 mod _create_participant_token_input;
 

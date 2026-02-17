@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_lf_ta
     }
 }
 
-pub use crate::operation::get_resource_lf_tags::_get_resource_lf_tags_output::GetResourceLfTagsOutput;
-
 pub use crate::operation::get_resource_lf_tags::_get_resource_lf_tags_input::GetResourceLfTagsInput;
+
+pub use crate::operation::get_resource_lf_tags::_get_resource_lf_tags_output::GetResourceLfTagsOutput;
 
 mod _get_resource_lf_tags_input;
 

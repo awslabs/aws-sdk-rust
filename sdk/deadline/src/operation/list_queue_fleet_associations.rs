@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_queue_fleet_a
     }
 }
 
-pub use crate::operation::list_queue_fleet_associations::_list_queue_fleet_associations_output::ListQueueFleetAssociationsOutput;
-
 pub use crate::operation::list_queue_fleet_associations::_list_queue_fleet_associations_input::ListQueueFleetAssociationsInput;
+
+pub use crate::operation::list_queue_fleet_associations::_list_queue_fleet_associations_output::ListQueueFleetAssociationsOutput;
 
 mod _list_queue_fleet_associations_input;
 

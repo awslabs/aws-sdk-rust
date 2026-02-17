@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_predictor::
     }
 }
 
-pub use crate::operation::create_predictor::_create_predictor_output::CreatePredictorOutput;
-
 pub use crate::operation::create_predictor::_create_predictor_input::CreatePredictorInput;
+
+pub use crate::operation::create_predictor::_create_predictor_output::CreatePredictorOutput;
 
 mod _create_predictor_input;
 

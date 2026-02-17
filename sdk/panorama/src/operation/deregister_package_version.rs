@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_package
     }
 }
 
-pub use crate::operation::deregister_package_version::_deregister_package_version_output::DeregisterPackageVersionOutput;
-
 pub use crate::operation::deregister_package_version::_deregister_package_version_input::DeregisterPackageVersionInput;
+
+pub use crate::operation::deregister_package_version::_deregister_package_version_output::DeregisterPackageVersionOutput;
 
 mod _deregister_package_version_input;
 

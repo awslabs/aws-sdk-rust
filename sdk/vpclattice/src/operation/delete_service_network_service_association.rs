@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_service_network_service_association::_delete_service_network_service_association_output::DeleteServiceNetworkServiceAssociationOutput;
-
 pub use crate::operation::delete_service_network_service_association::_delete_service_network_service_association_input::DeleteServiceNetworkServiceAssociationInput;
+
+pub use crate::operation::delete_service_network_service_association::_delete_service_network_service_association_output::DeleteServiceNetworkServiceAssociationOutput;
 
 mod _delete_service_network_service_association_input;
 

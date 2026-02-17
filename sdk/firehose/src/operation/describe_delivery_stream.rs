@@ -362,9 +362,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_delivery_
     }
 }
 
-pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_output::DescribeDeliveryStreamOutput;
-
 pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_input::DescribeDeliveryStreamInput;
+
+pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_output::DescribeDeliveryStreamOutput;
 
 mod _describe_delivery_stream_input;
 

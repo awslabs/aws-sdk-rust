@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_transformer
     }
 }
 
-pub use crate::operation::create_transformer::_create_transformer_output::CreateTransformerOutput;
-
 pub use crate::operation::create_transformer::_create_transformer_input::CreateTransformerInput;
+
+pub use crate::operation::create_transformer::_create_transformer_output::CreateTransformerOutput;
 
 mod _create_transformer_input;
 

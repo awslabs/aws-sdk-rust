@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_supplemental_t
     }
 }
 
-pub use crate::operation::put_supplemental_tax_registration::_put_supplemental_tax_registration_output::PutSupplementalTaxRegistrationOutput;
-
 pub use crate::operation::put_supplemental_tax_registration::_put_supplemental_tax_registration_input::PutSupplementalTaxRegistrationInput;
+
+pub use crate::operation::put_supplemental_tax_registration::_put_supplemental_tax_registration_output::PutSupplementalTaxRegistrationOutput;
 
 mod _put_supplemental_tax_registration_input;
 

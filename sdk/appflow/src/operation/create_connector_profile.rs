@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connector_p
     }
 }
 
-pub use crate::operation::create_connector_profile::_create_connector_profile_output::CreateConnectorProfileOutput;
-
 pub use crate::operation::create_connector_profile::_create_connector_profile_input::CreateConnectorProfileInput;
+
+pub use crate::operation::create_connector_profile::_create_connector_profile_output::CreateConnectorProfileOutput;
 
 mod _create_connector_profile_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upgrade_review_tem
     }
 }
 
-pub use crate::operation::upgrade_review_template_lens_review::_upgrade_review_template_lens_review_output::UpgradeReviewTemplateLensReviewOutput;
-
 pub use crate::operation::upgrade_review_template_lens_review::_upgrade_review_template_lens_review_input::UpgradeReviewTemplateLensReviewInput;
+
+pub use crate::operation::upgrade_review_template_lens_review::_upgrade_review_template_lens_review_output::UpgradeReviewTemplateLensReviewOutput;
 
 mod _upgrade_review_template_lens_review_input;
 

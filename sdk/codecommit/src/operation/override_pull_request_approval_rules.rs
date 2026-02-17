@@ -511,9 +511,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::override_pull_requ
     }
 }
 
-pub use crate::operation::override_pull_request_approval_rules::_override_pull_request_approval_rules_output::OverridePullRequestApprovalRulesOutput;
-
 pub use crate::operation::override_pull_request_approval_rules::_override_pull_request_approval_rules_input::OverridePullRequestApprovalRulesInput;
+
+pub use crate::operation::override_pull_request_approval_rules::_override_pull_request_approval_rules_output::OverridePullRequestApprovalRulesOutput;
 
 mod _override_pull_request_approval_rules_input;
 

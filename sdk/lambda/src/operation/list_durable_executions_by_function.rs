@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_durable_execu
     }
 }
 
-pub use crate::operation::list_durable_executions_by_function::_list_durable_executions_by_function_output::ListDurableExecutionsByFunctionOutput;
-
 pub use crate::operation::list_durable_executions_by_function::_list_durable_executions_by_function_input::ListDurableExecutionsByFunctionInput;
+
+pub use crate::operation::list_durable_executions_by_function::_list_durable_executions_by_function_output::ListDurableExecutionsByFunctionOutput;
 
 mod _list_durable_executions_by_function_input;
 

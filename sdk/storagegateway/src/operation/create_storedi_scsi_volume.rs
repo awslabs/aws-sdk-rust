@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_storedi_scs
     }
 }
 
-pub use crate::operation::create_storedi_scsi_volume::_create_storedi_scsi_volume_output::CreateStorediScsiVolumeOutput;
-
 pub use crate::operation::create_storedi_scsi_volume::_create_storedi_scsi_volume_input::CreateStorediScsiVolumeInput;
+
+pub use crate::operation::create_storedi_scsi_volume::_create_storedi_scsi_volume_output::CreateStorediScsiVolumeOutput;
 
 mod _create_storedi_scsi_volume_input;
 

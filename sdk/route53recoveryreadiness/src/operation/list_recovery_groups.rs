@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recovery_grou
     }
 }
 
-pub use crate::operation::list_recovery_groups::_list_recovery_groups_output::ListRecoveryGroupsOutput;
-
 pub use crate::operation::list_recovery_groups::_list_recovery_groups_input::ListRecoveryGroupsInput;
+
+pub use crate::operation::list_recovery_groups::_list_recovery_groups_output::ListRecoveryGroupsOutput;
 
 mod _list_recovery_groups_input;
 

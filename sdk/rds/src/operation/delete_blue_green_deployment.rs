@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_blue_green_
     }
 }
 
-pub use crate::operation::delete_blue_green_deployment::_delete_blue_green_deployment_output::DeleteBlueGreenDeploymentOutput;
-
 pub use crate::operation::delete_blue_green_deployment::_delete_blue_green_deployment_input::DeleteBlueGreenDeploymentInput;
+
+pub use crate::operation::delete_blue_green_deployment::_delete_blue_green_deployment_output::DeleteBlueGreenDeploymentOutput;
 
 mod _delete_blue_green_deployment_input;
 

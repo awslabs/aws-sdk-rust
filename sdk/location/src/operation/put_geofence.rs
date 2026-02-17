@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_geofence::PutG
     }
 }
 
-pub use crate::operation::put_geofence::_put_geofence_output::PutGeofenceOutput;
-
 pub use crate::operation::put_geofence::_put_geofence_input::PutGeofenceInput;
+
+pub use crate::operation::put_geofence::_put_geofence_output::PutGeofenceOutput;
 
 mod _put_geofence_input;
 

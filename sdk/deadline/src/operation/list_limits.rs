@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_limits::ListL
     }
 }
 
-pub use crate::operation::list_limits::_list_limits_output::ListLimitsOutput;
-
 pub use crate::operation::list_limits::_list_limits_input::ListLimitsInput;
+
+pub use crate::operation::list_limits::_list_limits_output::ListLimitsOutput;
 
 mod _list_limits_input;
 

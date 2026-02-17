@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ca_enroll
     }
 }
 
-pub use crate::operation::describe_ca_enrollment_policy::_describe_ca_enrollment_policy_output::DescribeCaEnrollmentPolicyOutput;
-
 pub use crate::operation::describe_ca_enrollment_policy::_describe_ca_enrollment_policy_input::DescribeCaEnrollmentPolicyInput;
+
+pub use crate::operation::describe_ca_enrollment_policy::_describe_ca_enrollment_policy_output::DescribeCaEnrollmentPolicyOutput;
 
 mod _describe_ca_enrollment_policy_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_report_grou
     }
 }
 
-pub use crate::operation::update_report_group::_update_report_group_output::UpdateReportGroupOutput;
-
 pub use crate::operation::update_report_group::_update_report_group_input::UpdateReportGroupInput;
+
+pub use crate::operation::update_report_group::_update_report_group_output::UpdateReportGroupOutput;
 
 mod _update_report_group_input;
 

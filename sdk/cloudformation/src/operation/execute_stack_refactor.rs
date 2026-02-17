@@ -353,9 +353,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_stack_refa
     }
 }
 
-pub use crate::operation::execute_stack_refactor::_execute_stack_refactor_output::ExecuteStackRefactorOutput;
-
 pub use crate::operation::execute_stack_refactor::_execute_stack_refactor_input::ExecuteStackRefactorInput;
+
+pub use crate::operation::execute_stack_refactor::_execute_stack_refactor_output::ExecuteStackRefactorOutput;
 
 mod _execute_stack_refactor_input;
 

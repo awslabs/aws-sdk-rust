@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_host::Delet
     }
 }
 
-pub use crate::operation::delete_host::_delete_host_output::DeleteHostOutput;
-
 pub use crate::operation::delete_host::_delete_host_input::DeleteHostInput;
+
+pub use crate::operation::delete_host::_delete_host_output::DeleteHostOutput;
 
 mod _delete_host_input;
 

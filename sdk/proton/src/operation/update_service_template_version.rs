@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_tem
     }
 }
 
-pub use crate::operation::update_service_template_version::_update_service_template_version_output::UpdateServiceTemplateVersionOutput;
-
 pub use crate::operation::update_service_template_version::_update_service_template_version_input::UpdateServiceTemplateVersionInput;
+
+pub use crate::operation::update_service_template_version::_update_service_template_version_output::UpdateServiceTemplateVersionOutput;
 
 mod _update_service_template_version_input;
 

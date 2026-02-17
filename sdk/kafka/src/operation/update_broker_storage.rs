@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_broker_stor
     }
 }
 
-pub use crate::operation::update_broker_storage::_update_broker_storage_output::UpdateBrokerStorageOutput;
-
 pub use crate::operation::update_broker_storage::_update_broker_storage_input::UpdateBrokerStorageInput;
+
+pub use crate::operation::update_broker_storage::_update_broker_storage_output::UpdateBrokerStorageOutput;
 
 mod _update_broker_storage_input;
 

@@ -495,9 +495,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_handshakes_fo
     }
 }
 
-pub use crate::operation::list_handshakes_for_organization::_list_handshakes_for_organization_output::ListHandshakesForOrganizationOutput;
-
 pub use crate::operation::list_handshakes_for_organization::_list_handshakes_for_organization_input::ListHandshakesForOrganizationInput;
+
+pub use crate::operation::list_handshakes_for_organization::_list_handshakes_for_organization_output::ListHandshakesForOrganizationOutput;
 
 mod _list_handshakes_for_organization_input;
 

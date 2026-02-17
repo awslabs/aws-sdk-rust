@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_snapshot_limit
     }
 }
 
-pub use crate::operation::get_snapshot_limits::_get_snapshot_limits_output::GetSnapshotLimitsOutput;
-
 pub use crate::operation::get_snapshot_limits::_get_snapshot_limits_input::GetSnapshotLimitsInput;
+
+pub use crate::operation::get_snapshot_limits::_get_snapshot_limits_output::GetSnapshotLimitsOutput;
 
 mod _get_snapshot_limits_input;
 

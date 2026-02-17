@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_backup_attr
     }
 }
 
-pub use crate::operation::modify_backup_attributes::_modify_backup_attributes_output::ModifyBackupAttributesOutput;
-
 pub use crate::operation::modify_backup_attributes::_modify_backup_attributes_input::ModifyBackupAttributesInput;
+
+pub use crate::operation::modify_backup_attributes::_modify_backup_attributes_output::ModifyBackupAttributesOutput;
 
 mod _modify_backup_attributes_input;
 

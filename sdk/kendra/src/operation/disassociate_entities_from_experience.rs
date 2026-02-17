@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_entit
     }
 }
 
-pub use crate::operation::disassociate_entities_from_experience::_disassociate_entities_from_experience_output::DisassociateEntitiesFromExperienceOutput;
-
 pub use crate::operation::disassociate_entities_from_experience::_disassociate_entities_from_experience_input::DisassociateEntitiesFromExperienceInput;
+
+pub use crate::operation::disassociate_entities_from_experience::_disassociate_entities_from_experience_output::DisassociateEntitiesFromExperienceOutput;
 
 mod _disassociate_entities_from_experience_input;
 

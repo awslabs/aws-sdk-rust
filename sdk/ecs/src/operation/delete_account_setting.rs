@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_account_set
     }
 }
 
-pub use crate::operation::delete_account_setting::_delete_account_setting_output::DeleteAccountSettingOutput;
-
 pub use crate::operation::delete_account_setting::_delete_account_setting_input::DeleteAccountSettingInput;
+
+pub use crate::operation::delete_account_setting::_delete_account_setting_output::DeleteAccountSettingOutput;
 
 mod _delete_account_setting_input;
 

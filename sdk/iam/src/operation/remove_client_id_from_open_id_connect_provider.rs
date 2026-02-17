@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::remove_client_id_from_open_id_connect_provider::_remove_client_id_from_open_id_connect_provider_output::RemoveClientIdFromOpenIdConnectProviderOutput;
-
 pub use crate::operation::remove_client_id_from_open_id_connect_provider::_remove_client_id_from_open_id_connect_provider_input::RemoveClientIdFromOpenIdConnectProviderInput;
+
+pub use crate::operation::remove_client_id_from_open_id_connect_provider::_remove_client_id_from_open_id_connect_provider_output::RemoveClientIdFromOpenIdConnectProviderOutput;
 
 mod _remove_client_id_from_open_id_connect_provider_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_ops_item
     }
 }
 
-pub use crate::operation::associate_ops_item_related_item::_associate_ops_item_related_item_output::AssociateOpsItemRelatedItemOutput;
-
 pub use crate::operation::associate_ops_item_related_item::_associate_ops_item_related_item_input::AssociateOpsItemRelatedItemInput;
+
+pub use crate::operation::associate_ops_item_related_item::_associate_ops_item_related_item_output::AssociateOpsItemRelatedItemOutput;
 
 mod _associate_ops_item_related_item_input;
 

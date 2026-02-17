@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_genera
     }
 }
 
-pub use crate::operation::list_policy_generation_assets::_list_policy_generation_assets_output::ListPolicyGenerationAssetsOutput;
-
 pub use crate::operation::list_policy_generation_assets::_list_policy_generation_assets_input::ListPolicyGenerationAssetsInput;
+
+pub use crate::operation::list_policy_generation_assets::_list_policy_generation_assets_output::ListPolicyGenerationAssetsOutput;
 
 mod _list_policy_generation_assets_input;
 

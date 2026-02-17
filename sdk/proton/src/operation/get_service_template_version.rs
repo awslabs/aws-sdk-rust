@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_templa
     }
 }
 
-pub use crate::operation::get_service_template_version::_get_service_template_version_output::GetServiceTemplateVersionOutput;
-
 pub use crate::operation::get_service_template_version::_get_service_template_version_input::GetServiceTemplateVersionInput;
+
+pub use crate::operation::get_service_template_version::_get_service_template_version_output::GetServiceTemplateVersionOutput;
 
 mod _get_service_template_version_input;
 

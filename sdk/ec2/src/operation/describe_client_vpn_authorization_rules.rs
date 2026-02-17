@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_client_vp
     }
 }
 
-pub use crate::operation::describe_client_vpn_authorization_rules::_describe_client_vpn_authorization_rules_output::DescribeClientVpnAuthorizationRulesOutput;
-
 pub use crate::operation::describe_client_vpn_authorization_rules::_describe_client_vpn_authorization_rules_input::DescribeClientVpnAuthorizationRulesInput;
+
+pub use crate::operation::describe_client_vpn_authorization_rules::_describe_client_vpn_authorization_rules_output::DescribeClientVpnAuthorizationRulesOutput;
 
 mod _describe_client_vpn_authorization_rules_input;
 

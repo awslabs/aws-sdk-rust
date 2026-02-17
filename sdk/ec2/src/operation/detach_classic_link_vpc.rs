@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_classic_lin
     }
 }
 
-pub use crate::operation::detach_classic_link_vpc::_detach_classic_link_vpc_output::DetachClassicLinkVpcOutput;
-
 pub use crate::operation::detach_classic_link_vpc::_detach_classic_link_vpc_input::DetachClassicLinkVpcInput;
+
+pub use crate::operation::detach_classic_link_vpc::_detach_classic_link_vpc_output::DetachClassicLinkVpcOutput;
 
 mod _detach_classic_link_vpc_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replace_vpn_tunnel
     }
 }
 
-pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_output::ReplaceVpnTunnelOutput;
-
 pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_input::ReplaceVpnTunnelInput;
+
+pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_output::ReplaceVpnTunnelOutput;
 
 mod _replace_vpn_tunnel_input;
 

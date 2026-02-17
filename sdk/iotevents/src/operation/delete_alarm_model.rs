@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_alarm_model
     }
 }
 
-pub use crate::operation::delete_alarm_model::_delete_alarm_model_output::DeleteAlarmModelOutput;
-
 pub use crate::operation::delete_alarm_model::_delete_alarm_model_input::DeleteAlarmModelInput;
+
+pub use crate::operation::delete_alarm_model::_delete_alarm_model_output::DeleteAlarmModelOutput;
 
 mod _delete_alarm_model_input;
 

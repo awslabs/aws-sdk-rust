@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::replicate_secret_t
     }
 }
 
-pub use crate::operation::replicate_secret_to_regions::_replicate_secret_to_regions_output::ReplicateSecretToRegionsOutput;
-
 pub use crate::operation::replicate_secret_to_regions::_replicate_secret_to_regions_input::ReplicateSecretToRegionsInput;
+
+pub use crate::operation::replicate_secret_to_regions::_replicate_secret_to_regions_output::ReplicateSecretToRegionsOutput;
 
 mod _replicate_secret_to_regions_input;
 

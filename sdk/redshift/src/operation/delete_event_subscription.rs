@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_event_subsc
     }
 }
 
-pub use crate::operation::delete_event_subscription::_delete_event_subscription_output::DeleteEventSubscriptionOutput;
-
 pub use crate::operation::delete_event_subscription::_delete_event_subscription_input::DeleteEventSubscriptionInput;
+
+pub use crate::operation::delete_event_subscription::_delete_event_subscription_output::DeleteEventSubscriptionOutput;
 
 mod _delete_event_subscription_input;
 

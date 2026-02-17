@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pull_throug
     }
 }
 
-pub use crate::operation::delete_pull_through_cache_rule::_delete_pull_through_cache_rule_output::DeletePullThroughCacheRuleOutput;
-
 pub use crate::operation::delete_pull_through_cache_rule::_delete_pull_through_cache_rule_input::DeletePullThroughCacheRuleInput;
+
+pub use crate::operation::delete_pull_through_cache_rule::_delete_pull_through_cache_rule_output::DeletePullThroughCacheRuleOutput;
 
 mod _delete_pull_through_cache_rule_input;
 

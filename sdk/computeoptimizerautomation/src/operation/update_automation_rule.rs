@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_automation_
     }
 }
 
-pub use crate::operation::update_automation_rule::_update_automation_rule_output::UpdateAutomationRuleOutput;
-
 pub use crate::operation::update_automation_rule::_update_automation_rule_input::UpdateAutomationRuleInput;
+
+pub use crate::operation::update_automation_rule::_update_automation_rule_output::UpdateAutomationRuleOutput;
 
 mod _update_automation_rule_input;
 

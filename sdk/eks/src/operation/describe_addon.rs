@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_addon::De
     }
 }
 
-pub use crate::operation::describe_addon::_describe_addon_output::DescribeAddonOutput;
-
 pub use crate::operation::describe_addon::_describe_addon_input::DescribeAddonInput;
+
+pub use crate::operation::describe_addon::_describe_addon_output::DescribeAddonOutput;
 
 mod _describe_addon_input;
 

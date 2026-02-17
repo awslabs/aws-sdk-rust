@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_channel_nam
     }
 }
 
-pub use crate::operation::delete_channel_namespace::_delete_channel_namespace_output::DeleteChannelNamespaceOutput;
-
 pub use crate::operation::delete_channel_namespace::_delete_channel_namespace_input::DeleteChannelNamespaceInput;
+
+pub use crate::operation::delete_channel_namespace::_delete_channel_namespace_output::DeleteChannelNamespaceOutput;
 
 mod _delete_channel_namespace_input;
 

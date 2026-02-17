@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trail::GetTrai
     }
 }
 
-pub use crate::operation::get_trail::_get_trail_output::GetTrailOutput;
-
 pub use crate::operation::get_trail::_get_trail_input::GetTrailInput;
+
+pub use crate::operation::get_trail::_get_trail_output::GetTrailOutput;
 
 mod _get_trail_input;
 

@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_test_event_no
     }
 }
 
-pub use crate::operation::send_test_event_notification::_send_test_event_notification_output::SendTestEventNotificationOutput;
-
 pub use crate::operation::send_test_event_notification::_send_test_event_notification_input::SendTestEventNotificationInput;
+
+pub use crate::operation::send_test_event_notification::_send_test_event_notification_output::SendTestEventNotificationOutput;
 
 mod _send_test_event_notification_input;
 

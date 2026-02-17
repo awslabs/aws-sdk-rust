@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_contact_medi
     }
 }
 
-pub use crate::operation::start_contact_media_processing::_start_contact_media_processing_output::StartContactMediaProcessingOutput;
-
 pub use crate::operation::start_contact_media_processing::_start_contact_media_processing_input::StartContactMediaProcessingInput;
+
+pub use crate::operation::start_contact_media_processing::_start_contact_media_processing_output::StartContactMediaProcessingOutput;
 
 mod _start_contact_media_processing_input;
 

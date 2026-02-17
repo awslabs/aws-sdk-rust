@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_fast_laun
     }
 }
 
-pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_images_output::DescribeFastLaunchImagesOutput;
-
 pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_images_input::DescribeFastLaunchImagesInput;
+
+pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_images_output::DescribeFastLaunchImagesOutput;
 
 mod _describe_fast_launch_images_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_component_ver
     }
 }
 
-pub use crate::operation::list_component_versions::_list_component_versions_output::ListComponentVersionsOutput;
-
 pub use crate::operation::list_component_versions::_list_component_versions_input::ListComponentVersionsInput;
+
+pub use crate::operation::list_component_versions::_list_component_versions_output::ListComponentVersionsOutput;
 
 mod _list_component_versions_input;
 

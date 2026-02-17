@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_credential_
     }
 }
 
-pub use crate::operation::create_credential_locker::_create_credential_locker_output::CreateCredentialLockerOutput;
-
 pub use crate::operation::create_credential_locker::_create_credential_locker_input::CreateCredentialLockerInput;
+
+pub use crate::operation::create_credential_locker::_create_credential_locker_output::CreateCredentialLockerOutput;
 
 mod _create_credential_locker_input;
 

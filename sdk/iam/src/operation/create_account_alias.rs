@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account_ali
     }
 }
 
-pub use crate::operation::create_account_alias::_create_account_alias_output::CreateAccountAliasOutput;
-
 pub use crate::operation::create_account_alias::_create_account_alias_input::CreateAccountAliasInput;
+
+pub use crate::operation::create_account_alias::_create_account_alias_output::CreateAccountAliasOutput;
 
 mod _create_account_alias_input;
 

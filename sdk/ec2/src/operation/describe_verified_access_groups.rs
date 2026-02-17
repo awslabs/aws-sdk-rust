@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_verified_
     }
 }
 
-pub use crate::operation::describe_verified_access_groups::_describe_verified_access_groups_output::DescribeVerifiedAccessGroupsOutput;
-
 pub use crate::operation::describe_verified_access_groups::_describe_verified_access_groups_input::DescribeVerifiedAccessGroupsInput;
+
+pub use crate::operation::describe_verified_access_groups::_describe_verified_access_groups_output::DescribeVerifiedAccessGroupsOutput;
 
 mod _describe_verified_access_groups_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_template::C
     }
 }
 
-pub use crate::operation::create_template::_create_template_output::CreateTemplateOutput;
-
 pub use crate::operation::create_template::_create_template_input::CreateTemplateInput;
+
+pub use crate::operation::create_template::_create_template_output::CreateTemplateOutput;
 
 mod _create_template_input;
 

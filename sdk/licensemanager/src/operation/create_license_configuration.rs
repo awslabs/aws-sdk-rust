@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_license_con
     }
 }
 
-pub use crate::operation::create_license_configuration::_create_license_configuration_output::CreateLicenseConfigurationOutput;
-
 pub use crate::operation::create_license_configuration::_create_license_configuration_input::CreateLicenseConfigurationInput;
+
+pub use crate::operation::create_license_configuration::_create_license_configuration_output::CreateLicenseConfigurationOutput;
 
 mod _create_license_configuration_input;
 

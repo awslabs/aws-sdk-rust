@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_curated_envir
     }
 }
 
-pub use crate::operation::list_curated_environment_images::_list_curated_environment_images_output::ListCuratedEnvironmentImagesOutput;
-
 pub use crate::operation::list_curated_environment_images::_list_curated_environment_images_input::ListCuratedEnvironmentImagesInput;
+
+pub use crate::operation::list_curated_environment_images::_list_curated_environment_images_output::ListCuratedEnvironmentImagesOutput;
 
 mod _list_curated_environment_images_input;
 

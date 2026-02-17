@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_hub_content
     }
 }
 
-pub use crate::operation::delete_hub_content::_delete_hub_content_output::DeleteHubContentOutput;
-
 pub use crate::operation::delete_hub_content::_delete_hub_content_input::DeleteHubContentInput;
+
+pub use crate::operation::delete_hub_content::_delete_hub_content_output::DeleteHubContentOutput;
 
 mod _delete_hub_content_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vector_enrich
     }
 }
 
-pub use crate::operation::list_vector_enrichment_jobs::_list_vector_enrichment_jobs_output::ListVectorEnrichmentJobsOutput;
-
 pub use crate::operation::list_vector_enrichment_jobs::_list_vector_enrichment_jobs_input::ListVectorEnrichmentJobsInput;
+
+pub use crate::operation::list_vector_enrichment_jobs::_list_vector_enrichment_jobs_output::ListVectorEnrichmentJobsOutput;
 
 mod _list_vector_enrichment_jobs_input;
 

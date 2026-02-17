@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_configured_audience_model_association::_delete_configured_audience_model_association_output::DeleteConfiguredAudienceModelAssociationOutput;
-
 pub use crate::operation::delete_configured_audience_model_association::_delete_configured_audience_model_association_input::DeleteConfiguredAudienceModelAssociationInput;
+
+pub use crate::operation::delete_configured_audience_model_association::_delete_configured_audience_model_association_output::DeleteConfiguredAudienceModelAssociationOutput;
 
 mod _delete_configured_audience_model_association_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_allow_list:
     }
 }
 
-pub use crate::operation::create_allow_list::_create_allow_list_output::CreateAllowListOutput;
-
 pub use crate::operation::create_allow_list::_create_allow_list_input::CreateAllowListInput;
+
+pub use crate::operation::create_allow_list::_create_allow_list_output::CreateAllowListOutput;
 
 mod _create_allow_list_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metric_policy:
     }
 }
 
-pub use crate::operation::get_metric_policy::_get_metric_policy_output::GetMetricPolicyOutput;
-
 pub use crate::operation::get_metric_policy::_get_metric_policy_input::GetMetricPolicyInput;
+
+pub use crate::operation::get_metric_policy::_get_metric_policy_output::GetMetricPolicyOutput;
 
 mod _get_metric_policy_input;
 

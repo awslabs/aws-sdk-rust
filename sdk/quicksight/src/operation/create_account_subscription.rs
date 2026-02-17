@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_account_sub
     }
 }
 
-pub use crate::operation::create_account_subscription::_create_account_subscription_output::CreateAccountSubscriptionOutput;
-
 pub use crate::operation::create_account_subscription::_create_account_subscription_input::CreateAccountSubscriptionInput;
+
+pub use crate::operation::create_account_subscription::_create_account_subscription_output::CreateAccountSubscriptionOutput;
 
 mod _create_account_subscription_input;
 

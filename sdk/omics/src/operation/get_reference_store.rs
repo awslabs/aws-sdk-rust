@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reference_stor
     }
 }
 
-pub use crate::operation::get_reference_store::_get_reference_store_output::GetReferenceStoreOutput;
-
 pub use crate::operation::get_reference_store::_get_reference_store_input::GetReferenceStoreInput;
+
+pub use crate::operation::get_reference_store::_get_reference_store_output::GetReferenceStoreOutput;
 
 mod _get_reference_store_input;
 

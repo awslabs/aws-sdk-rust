@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_browser_sessi
     }
 }
 
-pub use crate::operation::list_browser_sessions::_list_browser_sessions_output::ListBrowserSessionsOutput;
-
 pub use crate::operation::list_browser_sessions::_list_browser_sessions_input::ListBrowserSessionsInput;
+
+pub use crate::operation::list_browser_sessions::_list_browser_sessions_output::ListBrowserSessionsOutput;
 
 mod _list_browser_sessions_input;
 

@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dataflow_graph
     }
 }
 
-pub use crate::operation::get_dataflow_graph::_get_dataflow_graph_output::GetDataflowGraphOutput;
-
 pub use crate::operation::get_dataflow_graph::_get_dataflow_graph_input::GetDataflowGraphInput;
+
+pub use crate::operation::get_dataflow_graph::_get_dataflow_graph_output::GetDataflowGraphOutput;
 
 mod _get_dataflow_graph_input;
 

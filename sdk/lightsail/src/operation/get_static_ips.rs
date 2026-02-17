@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_static_ips::Ge
     }
 }
 
-pub use crate::operation::get_static_ips::_get_static_ips_output::GetStaticIpsOutput;
-
 pub use crate::operation::get_static_ips::_get_static_ips_input::GetStaticIpsInput;
+
+pub use crate::operation::get_static_ips::_get_static_ips_output::GetStaticIpsOutput;
 
 mod _get_static_ips_input;
 

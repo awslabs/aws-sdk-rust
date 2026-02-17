@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_container_fle
     }
 }
 
-pub use crate::operation::list_container_fleets::_list_container_fleets_output::ListContainerFleetsOutput;
-
 pub use crate::operation::list_container_fleets::_list_container_fleets_input::ListContainerFleetsInput;
+
+pub use crate::operation::list_container_fleets::_list_container_fleets_output::ListContainerFleetsOutput;
 
 mod _list_container_fleets_input;
 

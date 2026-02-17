@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_execution_flow
     }
 }
 
-pub use crate::operation::get_execution_flow_snapshot::_get_execution_flow_snapshot_output::GetExecutionFlowSnapshotOutput;
-
 pub use crate::operation::get_execution_flow_snapshot::_get_execution_flow_snapshot_input::GetExecutionFlowSnapshotInput;
+
+pub use crate::operation::get_execution_flow_snapshot::_get_execution_flow_snapshot_output::GetExecutionFlowSnapshotOutput;
 
 mod _get_execution_flow_snapshot_input;
 

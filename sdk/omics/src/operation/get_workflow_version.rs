@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workflow_versi
     }
 }
 
-pub use crate::operation::get_workflow_version::_get_workflow_version_output::GetWorkflowVersionOutput;
-
 pub use crate::operation::get_workflow_version::_get_workflow_version_input::GetWorkflowVersionInput;
+
+pub use crate::operation::get_workflow_version::_get_workflow_version_output::GetWorkflowVersionOutput;
 
 mod _get_workflow_version_input;
 

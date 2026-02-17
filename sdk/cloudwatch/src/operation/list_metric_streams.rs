@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_metric_stream
     }
 }
 
-pub use crate::operation::list_metric_streams::_list_metric_streams_output::ListMetricStreamsOutput;
-
 pub use crate::operation::list_metric_streams::_list_metric_streams_input::ListMetricStreamsInput;
+
+pub use crate::operation::list_metric_streams::_list_metric_streams_output::ListMetricStreamsOutput;
 
 mod _list_metric_streams_input;
 

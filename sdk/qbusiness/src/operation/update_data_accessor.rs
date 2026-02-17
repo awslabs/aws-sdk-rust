@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_access
     }
 }
 
-pub use crate::operation::update_data_accessor::_update_data_accessor_output::UpdateDataAccessorOutput;
-
 pub use crate::operation::update_data_accessor::_update_data_accessor_input::UpdateDataAccessorInput;
+
+pub use crate::operation::update_data_accessor::_update_data_accessor_output::UpdateDataAccessorOutput;
 
 mod _update_data_accessor_input;
 

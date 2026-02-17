@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_branch::GetBra
     }
 }
 
-pub use crate::operation::get_branch::_get_branch_output::GetBranchOutput;
-
 pub use crate::operation::get_branch::_get_branch_input::GetBranchInput;
+
+pub use crate::operation::get_branch::_get_branch_output::GetBranchOutput;
 
 mod _get_branch_input;
 

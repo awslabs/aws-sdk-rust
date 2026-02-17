@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_voices::D
     }
 }
 
-pub use crate::operation::describe_voices::_describe_voices_output::DescribeVoicesOutput;
-
 pub use crate::operation::describe_voices::_describe_voices_input::DescribeVoicesInput;
+
+pub use crate::operation::describe_voices::_describe_voices_output::DescribeVoicesOutput;
 
 mod _describe_voices_input;
 

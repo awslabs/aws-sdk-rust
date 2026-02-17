@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_exadata_
     }
 }
 
-pub use crate::operation::get_cloud_exadata_infrastructure::_get_cloud_exadata_infrastructure_output::GetCloudExadataInfrastructureOutput;
-
 pub use crate::operation::get_cloud_exadata_infrastructure::_get_cloud_exadata_infrastructure_input::GetCloudExadataInfrastructureInput;
+
+pub use crate::operation::get_cloud_exadata_infrastructure::_get_cloud_exadata_infrastructure_output::GetCloudExadataInfrastructureOutput;
 
 mod _get_cloud_exadata_infrastructure_input;
 

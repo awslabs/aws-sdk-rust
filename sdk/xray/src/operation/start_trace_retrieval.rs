@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_trace_retrie
     }
 }
 
-pub use crate::operation::start_trace_retrieval::_start_trace_retrieval_output::StartTraceRetrievalOutput;
-
 pub use crate::operation::start_trace_retrieval::_start_trace_retrieval_input::StartTraceRetrievalInput;
+
+pub use crate::operation::start_trace_retrieval::_start_trace_retrieval_output::StartTraceRetrievalOutput;
 
 mod _start_trace_retrieval_input;
 

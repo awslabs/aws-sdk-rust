@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_recommend
     }
 }
 
-pub use crate::operation::describe_recommendation_limitations::_describe_recommendation_limitations_output::DescribeRecommendationLimitationsOutput;
-
 pub use crate::operation::describe_recommendation_limitations::_describe_recommendation_limitations_input::DescribeRecommendationLimitationsInput;
+
+pub use crate::operation::describe_recommendation_limitations::_describe_recommendation_limitations_output::DescribeRecommendationLimitationsOutput;
 
 mod _describe_recommendation_limitations_input;
 

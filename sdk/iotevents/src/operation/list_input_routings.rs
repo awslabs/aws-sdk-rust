@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_input_routing
     }
 }
 
-pub use crate::operation::list_input_routings::_list_input_routings_output::ListInputRoutingsOutput;
-
 pub use crate::operation::list_input_routings::_list_input_routings_input::ListInputRoutingsInput;
+
+pub use crate::operation::list_input_routings::_list_input_routings_output::ListInputRoutingsOutput;
 
 mod _list_input_routings_input;
 

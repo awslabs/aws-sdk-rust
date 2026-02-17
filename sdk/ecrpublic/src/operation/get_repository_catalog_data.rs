@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_repository_cat
     }
 }
 
-pub use crate::operation::get_repository_catalog_data::_get_repository_catalog_data_output::GetRepositoryCatalogDataOutput;
-
 pub use crate::operation::get_repository_catalog_data::_get_repository_catalog_data_input::GetRepositoryCatalogDataInput;
+
+pub use crate::operation::get_repository_catalog_data::_get_repository_catalog_data_output::GetRepositoryCatalogDataOutput;
 
 mod _get_repository_catalog_data_input;
 

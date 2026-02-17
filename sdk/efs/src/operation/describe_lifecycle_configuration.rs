@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_lifecycle
     }
 }
 
-pub use crate::operation::describe_lifecycle_configuration::_describe_lifecycle_configuration_output::DescribeLifecycleConfigurationOutput;
-
 pub use crate::operation::describe_lifecycle_configuration::_describe_lifecycle_configuration_input::DescribeLifecycleConfigurationInput;
+
+pub use crate::operation::describe_lifecycle_configuration::_describe_lifecycle_configuration_output::DescribeLifecycleConfigurationOutput;
 
 mod _describe_lifecycle_configuration_input;
 

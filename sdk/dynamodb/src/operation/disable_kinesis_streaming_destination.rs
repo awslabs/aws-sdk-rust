@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_kinesis_st
     }
 }
 
-pub use crate::operation::disable_kinesis_streaming_destination::_disable_kinesis_streaming_destination_output::DisableKinesisStreamingDestinationOutput;
-
 pub use crate::operation::disable_kinesis_streaming_destination::_disable_kinesis_streaming_destination_input::DisableKinesisStreamingDestinationInput;
+
+pub use crate::operation::disable_kinesis_streaming_destination::_disable_kinesis_streaming_destination_output::DisableKinesisStreamingDestinationOutput;
 
 mod _disable_kinesis_streaming_destination_input;
 

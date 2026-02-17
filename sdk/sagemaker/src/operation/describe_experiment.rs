@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_experimen
     }
 }
 
-pub use crate::operation::describe_experiment::_describe_experiment_output::DescribeExperimentOutput;
-
 pub use crate::operation::describe_experiment::_describe_experiment_input::DescribeExperimentInput;
+
+pub use crate::operation::describe_experiment::_describe_experiment_output::DescribeExperimentOutput;
 
 mod _describe_experiment_input;
 

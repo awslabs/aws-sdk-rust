@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_host::GetHostE
     }
 }
 
-pub use crate::operation::get_host::_get_host_output::GetHostOutput;
-
 pub use crate::operation::get_host::_get_host_input::GetHostInput;
+
+pub use crate::operation::get_host::_get_host_output::GetHostOutput;
 
 mod _get_host_input;
 

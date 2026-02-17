@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_classification
     }
 }
 
-pub use crate::operation::get_classification_scope::_get_classification_scope_output::GetClassificationScopeOutput;
-
 pub use crate::operation::get_classification_scope::_get_classification_scope_input::GetClassificationScopeInput;
+
+pub use crate::operation::get_classification_scope::_get_classification_scope_output::GetClassificationScopeOutput;
 
 mod _get_classification_scope_input;
 

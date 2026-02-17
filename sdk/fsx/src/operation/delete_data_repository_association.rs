@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_reposi
     }
 }
 
-pub use crate::operation::delete_data_repository_association::_delete_data_repository_association_output::DeleteDataRepositoryAssociationOutput;
-
 pub use crate::operation::delete_data_repository_association::_delete_data_repository_association_input::DeleteDataRepositoryAssociationInput;
+
+pub use crate::operation::delete_data_repository_association::_delete_data_repository_association_output::DeleteDataRepositoryAssociationOutput;
 
 mod _delete_data_repository_association_input;
 

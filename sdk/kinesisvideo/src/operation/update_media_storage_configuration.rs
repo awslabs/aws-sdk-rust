@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_media_stora
     }
 }
 
-pub use crate::operation::update_media_storage_configuration::_update_media_storage_configuration_output::UpdateMediaStorageConfigurationOutput;
-
 pub use crate::operation::update_media_storage_configuration::_update_media_storage_configuration_input::UpdateMediaStorageConfigurationInput;
+
+pub use crate::operation::update_media_storage_configuration::_update_media_storage_configuration_output::UpdateMediaStorageConfigurationOutput;
 
 mod _update_media_storage_configuration_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_classificatio
     }
 }
 
-pub use crate::operation::list_classification_jobs::_list_classification_jobs_output::ListClassificationJobsOutput;
-
 pub use crate::operation::list_classification_jobs::_list_classification_jobs_input::ListClassificationJobsInput;
+
+pub use crate::operation::list_classification_jobs::_list_classification_jobs_output::ListClassificationJobsOutput;
 
 mod _list_classification_jobs_input;
 

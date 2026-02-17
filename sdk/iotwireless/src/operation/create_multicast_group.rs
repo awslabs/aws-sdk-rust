@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_multicast_g
     }
 }
 
-pub use crate::operation::create_multicast_group::_create_multicast_group_output::CreateMulticastGroupOutput;
-
 pub use crate::operation::create_multicast_group::_create_multicast_group_input::CreateMulticastGroupInput;
+
+pub use crate::operation::create_multicast_group::_create_multicast_group_output::CreateMulticastGroupOutput;
 
 mod _create_multicast_group_input;
 

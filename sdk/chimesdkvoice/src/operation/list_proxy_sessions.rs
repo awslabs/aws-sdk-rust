@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_proxy_session
     }
 }
 
-pub use crate::operation::list_proxy_sessions::_list_proxy_sessions_output::ListProxySessionsOutput;
-
 pub use crate::operation::list_proxy_sessions::_list_proxy_sessions_input::ListProxySessionsInput;
+
+pub use crate::operation::list_proxy_sessions::_list_proxy_sessions_output::ListProxySessionsOutput;
 
 mod _list_proxy_sessions_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_view::
     }
 }
 
-pub use crate::operation::get_service_view::_get_service_view_output::GetServiceViewOutput;
-
 pub use crate::operation::get_service_view::_get_service_view_input::GetServiceViewInput;
+
+pub use crate::operation::get_service_view::_get_service_view_output::GetServiceViewOutput;
 
 mod _get_service_view_input;
 

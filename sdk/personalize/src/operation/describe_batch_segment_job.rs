@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_batch_seg
     }
 }
 
-pub use crate::operation::describe_batch_segment_job::_describe_batch_segment_job_output::DescribeBatchSegmentJobOutput;
-
 pub use crate::operation::describe_batch_segment_job::_describe_batch_segment_job_input::DescribeBatchSegmentJobInput;
+
+pub use crate::operation::describe_batch_segment_job::_describe_batch_segment_job_output::DescribeBatchSegmentJobOutput;
 
 mod _describe_batch_segment_job_input;
 

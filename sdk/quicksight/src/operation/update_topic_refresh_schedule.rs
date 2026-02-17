@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_topic_refre
     }
 }
 
-pub use crate::operation::update_topic_refresh_schedule::_update_topic_refresh_schedule_output::UpdateTopicRefreshScheduleOutput;
-
 pub use crate::operation::update_topic_refresh_schedule::_update_topic_refresh_schedule_input::UpdateTopicRefreshScheduleInput;
+
+pub use crate::operation::update_topic_refresh_schedule::_update_topic_refresh_schedule_output::UpdateTopicRefreshScheduleOutput;
 
 mod _update_topic_refresh_schedule_input;
 

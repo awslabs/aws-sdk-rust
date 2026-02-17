@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_billing_gro
     }
 }
 
-pub use crate::operation::delete_billing_group::_delete_billing_group_output::DeleteBillingGroupOutput;
-
 pub use crate::operation::delete_billing_group::_delete_billing_group_input::DeleteBillingGroupInput;
+
+pub use crate::operation::delete_billing_group::_delete_billing_group_output::DeleteBillingGroupOutput;
 
 mod _delete_billing_group_input;
 

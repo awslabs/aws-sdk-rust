@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ops_metadat
     }
 }
 
-pub use crate::operation::delete_ops_metadata::_delete_ops_metadata_output::DeleteOpsMetadataOutput;
-
 pub use crate::operation::delete_ops_metadata::_delete_ops_metadata_input::DeleteOpsMetadataInput;
+
+pub use crate::operation::delete_ops_metadata::_delete_ops_metadata_output::DeleteOpsMetadataOutput;
 
 mod _delete_ops_metadata_input;
 

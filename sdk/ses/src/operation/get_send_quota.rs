@@ -341,9 +341,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_send_quota::Ge
     }
 }
 
-pub use crate::operation::get_send_quota::_get_send_quota_output::GetSendQuotaOutput;
-
 pub use crate::operation::get_send_quota::_get_send_quota_input::GetSendQuotaInput;
+
+pub use crate::operation::get_send_quota::_get_send_quota_output::GetSendQuotaOutput;
 
 mod _get_send_quota_input;
 

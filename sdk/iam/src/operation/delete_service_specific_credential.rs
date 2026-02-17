@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_service_spe
     }
 }
 
-pub use crate::operation::delete_service_specific_credential::_delete_service_specific_credential_output::DeleteServiceSpecificCredentialOutput;
-
 pub use crate::operation::delete_service_specific_credential::_delete_service_specific_credential_input::DeleteServiceSpecificCredentialInput;
+
+pub use crate::operation::delete_service_specific_credential::_delete_service_specific_credential_output::DeleteServiceSpecificCredentialOutput;
 
 mod _delete_service_specific_credential_input;
 

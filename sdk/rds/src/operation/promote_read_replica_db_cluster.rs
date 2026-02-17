@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::promote_read_repli
     }
 }
 
-pub use crate::operation::promote_read_replica_db_cluster::_promote_read_replica_db_cluster_output::PromoteReadReplicaDbClusterOutput;
-
 pub use crate::operation::promote_read_replica_db_cluster::_promote_read_replica_db_cluster_input::PromoteReadReplicaDbClusterInput;
+
+pub use crate::operation::promote_read_replica_db_cluster::_promote_read_replica_db_cluster_output::PromoteReadReplicaDbClusterOutput;
 
 mod _promote_read_replica_db_cluster_input;
 

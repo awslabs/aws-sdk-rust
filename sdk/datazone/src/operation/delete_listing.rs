@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_listing::De
     }
 }
 
-pub use crate::operation::delete_listing::_delete_listing_output::DeleteListingOutput;
-
 pub use crate::operation::delete_listing::_delete_listing_input::DeleteListingInput;
+
+pub use crate::operation::delete_listing::_delete_listing_output::DeleteListingOutput;
 
 mod _delete_listing_input;
 

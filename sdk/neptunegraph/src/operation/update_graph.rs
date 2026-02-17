@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_graph::Upda
     }
 }
 
-pub use crate::operation::update_graph::_update_graph_output::UpdateGraphOutput;
-
 pub use crate::operation::update_graph::_update_graph_input::UpdateGraphInput;
+
+pub use crate::operation::update_graph::_update_graph_output::UpdateGraphOutput;
 
 mod _update_graph_input;
 

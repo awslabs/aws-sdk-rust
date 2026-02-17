@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_check_details
     }
 }
 
-pub use crate::operation::list_check_details::_list_check_details_output::ListCheckDetailsOutput;
-
 pub use crate::operation::list_check_details::_list_check_details_input::ListCheckDetailsInput;
+
+pub use crate::operation::list_check_details::_list_check_details_output::ListCheckDetailsOutput;
 
 mod _list_check_details_input;
 

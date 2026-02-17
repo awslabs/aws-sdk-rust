@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_report_groups
     }
 }
 
-pub use crate::operation::list_report_groups::_list_report_groups_output::ListReportGroupsOutput;
-
 pub use crate::operation::list_report_groups::_list_report_groups_input::ListReportGroupsInput;
+
+pub use crate::operation::list_report_groups::_list_report_groups_output::ListReportGroupsOutput;
 
 mod _list_report_groups_input;
 

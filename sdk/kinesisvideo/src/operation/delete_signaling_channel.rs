@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_signaling_c
     }
 }
 
-pub use crate::operation::delete_signaling_channel::_delete_signaling_channel_output::DeleteSignalingChannelOutput;
-
 pub use crate::operation::delete_signaling_channel::_delete_signaling_channel_input::DeleteSignalingChannelInput;
+
+pub use crate::operation::delete_signaling_channel::_delete_signaling_channel_output::DeleteSignalingChannelOutput;
 
 mod _delete_signaling_channel_input;
 

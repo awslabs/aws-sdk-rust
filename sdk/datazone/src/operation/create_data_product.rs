@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_produc
     }
 }
 
-pub use crate::operation::create_data_product::_create_data_product_output::CreateDataProductOutput;
-
 pub use crate::operation::create_data_product::_create_data_product_input::CreateDataProductInput;
+
+pub use crate::operation::create_data_product::_create_data_product_output::CreateDataProductOutput;
 
 mod _create_data_product_input;
 

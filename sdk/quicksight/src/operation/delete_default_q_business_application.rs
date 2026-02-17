@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_default_q_b
     }
 }
 
-pub use crate::operation::delete_default_q_business_application::_delete_default_q_business_application_output::DeleteDefaultQBusinessApplicationOutput;
-
 pub use crate::operation::delete_default_q_business_application::_delete_default_q_business_application_input::DeleteDefaultQBusinessApplicationInput;
+
+pub use crate::operation::delete_default_q_business_application::_delete_default_q_business_application_output::DeleteDefaultQBusinessApplicationOutput;
 
 mod _delete_default_q_business_application_input;
 

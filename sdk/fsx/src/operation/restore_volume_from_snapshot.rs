@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_volume_fro
     }
 }
 
-pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_snapshot_output::RestoreVolumeFromSnapshotOutput;
-
 pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_snapshot_input::RestoreVolumeFromSnapshotInput;
+
+pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_snapshot_output::RestoreVolumeFromSnapshotOutput;
 
 mod _restore_volume_from_snapshot_input;
 

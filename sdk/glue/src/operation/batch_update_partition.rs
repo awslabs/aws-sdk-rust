@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_parti
     }
 }
 
-pub use crate::operation::batch_update_partition::_batch_update_partition_output::BatchUpdatePartitionOutput;
-
 pub use crate::operation::batch_update_partition::_batch_update_partition_input::BatchUpdatePartitionInput;
+
+pub use crate::operation::batch_update_partition::_batch_update_partition_output::BatchUpdatePartitionOutput;
 
 mod _batch_update_partition_input;
 

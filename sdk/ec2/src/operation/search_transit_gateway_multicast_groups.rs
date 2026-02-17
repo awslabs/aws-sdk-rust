@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_transit_gat
     }
 }
 
-pub use crate::operation::search_transit_gateway_multicast_groups::_search_transit_gateway_multicast_groups_output::SearchTransitGatewayMulticastGroupsOutput;
-
 pub use crate::operation::search_transit_gateway_multicast_groups::_search_transit_gateway_multicast_groups_input::SearchTransitGatewayMulticastGroupsInput;
+
+pub use crate::operation::search_transit_gateway_multicast_groups::_search_transit_gateway_multicast_groups_output::SearchTransitGatewayMulticastGroupsOutput;
 
 mod _search_transit_gateway_multicast_groups_input;
 

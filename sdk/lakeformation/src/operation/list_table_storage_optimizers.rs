@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_table_storage
     }
 }
 
-pub use crate::operation::list_table_storage_optimizers::_list_table_storage_optimizers_output::ListTableStorageOptimizersOutput;
-
 pub use crate::operation::list_table_storage_optimizers::_list_table_storage_optimizers_input::ListTableStorageOptimizersInput;
+
+pub use crate::operation::list_table_storage_optimizers::_list_table_storage_optimizers_output::ListTableStorageOptimizersOutput;
 
 mod _list_table_storage_optimizers_input;
 

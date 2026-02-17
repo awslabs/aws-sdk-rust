@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_managed_insigh
     }
 }
 
-pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_output::PutManagedInsightRulesOutput;
-
 pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_input::PutManagedInsightRulesInput;
+
+pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_output::PutManagedInsightRulesOutput;
 
 mod _put_managed_insight_rules_input;
 

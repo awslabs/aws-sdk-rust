@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_workspace_ima
     }
 }
 
-pub use crate::operation::copy_workspace_image::_copy_workspace_image_output::CopyWorkspaceImageOutput;
-
 pub use crate::operation::copy_workspace_image::_copy_workspace_image_input::CopyWorkspaceImageInput;
+
+pub use crate::operation::copy_workspace_image::_copy_workspace_image_output::CopyWorkspaceImageOutput;
 
 mod _copy_workspace_image_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_lens::Impor
     }
 }
 
-pub use crate::operation::import_lens::_import_lens_output::ImportLensOutput;
-
 pub use crate::operation::import_lens::_import_lens_input::ImportLensInput;
+
+pub use crate::operation::import_lens::_import_lens_output::ImportLensOutput;
 
 mod _import_lens_input;
 

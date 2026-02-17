@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_cost_allocat
     }
 }
 
-pub use crate::operation::start_cost_allocation_tag_backfill::_start_cost_allocation_tag_backfill_output::StartCostAllocationTagBackfillOutput;
-
 pub use crate::operation::start_cost_allocation_tag_backfill::_start_cost_allocation_tag_backfill_input::StartCostAllocationTagBackfillInput;
+
+pub use crate::operation::start_cost_allocation_tag_backfill::_start_cost_allocation_tag_backfill_output::StartCostAllocationTagBackfillOutput;
 
 mod _start_cost_allocation_tag_backfill_input;
 

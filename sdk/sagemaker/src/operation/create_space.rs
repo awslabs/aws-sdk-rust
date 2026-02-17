@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_space::Crea
     }
 }
 
-pub use crate::operation::create_space::_create_space_output::CreateSpaceOutput;
-
 pub use crate::operation::create_space::_create_space_input::CreateSpaceInput;
+
+pub use crate::operation::create_space::_create_space_output::CreateSpaceOutput;
 
 mod _create_space_input;
 

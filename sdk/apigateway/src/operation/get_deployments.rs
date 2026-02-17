@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_deployments::G
     }
 }
 
-pub use crate::operation::get_deployments::_get_deployments_output::GetDeploymentsOutput;
-
 pub use crate::operation::get_deployments::_get_deployments_input::GetDeploymentsInput;
+
+pub use crate::operation::get_deployments::_get_deployments_output::GetDeploymentsOutput;
 
 mod _get_deployments_input;
 

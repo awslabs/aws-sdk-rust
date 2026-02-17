@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_reserved_
     }
 }
 
-pub use crate::operation::describe_reserved_instances_listings::_describe_reserved_instances_listings_output::DescribeReservedInstancesListingsOutput;
-
 pub use crate::operation::describe_reserved_instances_listings::_describe_reserved_instances_listings_input::DescribeReservedInstancesListingsInput;
+
+pub use crate::operation::describe_reserved_instances_listings::_describe_reserved_instances_listings_output::DescribeReservedInstancesListingsOutput;
 
 mod _describe_reserved_instances_listings_input;
 

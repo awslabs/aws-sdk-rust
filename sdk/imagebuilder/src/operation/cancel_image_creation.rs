@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_image_creat
     }
 }
 
-pub use crate::operation::cancel_image_creation::_cancel_image_creation_output::CancelImageCreationOutput;
-
 pub use crate::operation::cancel_image_creation::_cancel_image_creation_input::CancelImageCreationInput;
+
+pub use crate::operation::cancel_image_creation::_cancel_image_creation_output::CancelImageCreationOutput;
 
 mod _cancel_image_creation_input;
 

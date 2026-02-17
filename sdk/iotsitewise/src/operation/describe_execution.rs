@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_execution
     }
 }
 
-pub use crate::operation::describe_execution::_describe_execution_output::DescribeExecutionOutput;
-
 pub use crate::operation::describe_execution::_describe_execution_input::DescribeExecutionInput;
+
+pub use crate::operation::describe_execution::_describe_execution_output::DescribeExecutionOutput;
 
 mod _describe_execution_input;
 

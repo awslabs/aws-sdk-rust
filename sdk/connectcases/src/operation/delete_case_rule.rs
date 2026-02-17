@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_case_rule::
     }
 }
 
-pub use crate::operation::delete_case_rule::_delete_case_rule_output::DeleteCaseRuleOutput;
-
 pub use crate::operation::delete_case_rule::_delete_case_rule_input::DeleteCaseRuleInput;
+
+pub use crate::operation::delete_case_rule::_delete_case_rule_output::DeleteCaseRuleOutput;
 
 mod _delete_case_rule_input;
 

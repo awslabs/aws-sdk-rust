@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_public_shar
     }
 }
 
-pub use crate::operation::update_public_sharing_settings::_update_public_sharing_settings_output::UpdatePublicSharingSettingsOutput;
-
 pub use crate::operation::update_public_sharing_settings::_update_public_sharing_settings_input::UpdatePublicSharingSettingsInput;
+
+pub use crate::operation::update_public_sharing_settings::_update_public_sharing_settings_output::UpdatePublicSharingSettingsOutput;
 
 mod _update_public_sharing_settings_input;
 

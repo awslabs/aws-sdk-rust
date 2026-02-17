@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_volumes::Copy
     }
 }
 
-pub use crate::operation::copy_volumes::_copy_volumes_output::CopyVolumesOutput;
-
 pub use crate::operation::copy_volumes::_copy_volumes_input::CopyVolumesInput;
+
+pub use crate::operation::copy_volumes::_copy_volumes_output::CopyVolumesOutput;
 
 mod _copy_volumes_input;
 

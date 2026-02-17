@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_odb_peering_c
     }
 }
 
-pub use crate::operation::list_odb_peering_connections::_list_odb_peering_connections_output::ListOdbPeeringConnectionsOutput;
-
 pub use crate::operation::list_odb_peering_connections::_list_odb_peering_connections_input::ListOdbPeeringConnectionsInput;
+
+pub use crate::operation::list_odb_peering_connections::_list_odb_peering_connections_output::ListOdbPeeringConnectionsOutput;
 
 mod _list_odb_peering_connections_input;
 

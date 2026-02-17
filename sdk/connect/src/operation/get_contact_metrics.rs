@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_contact_metric
     }
 }
 
-pub use crate::operation::get_contact_metrics::_get_contact_metrics_output::GetContactMetricsOutput;
-
 pub use crate::operation::get_contact_metrics::_get_contact_metrics_input::GetContactMetricsInput;
+
+pub use crate::operation::get_contact_metrics::_get_contact_metrics_output::GetContactMetricsOutput;
 
 mod _get_contact_metrics_input;
 

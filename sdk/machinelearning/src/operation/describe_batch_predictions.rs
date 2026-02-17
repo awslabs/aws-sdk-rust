@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_batch_pre
     }
 }
 
-pub use crate::operation::describe_batch_predictions::_describe_batch_predictions_output::DescribeBatchPredictionsOutput;
-
 pub use crate::operation::describe_batch_predictions::_describe_batch_predictions_input::DescribeBatchPredictionsInput;
+
+pub use crate::operation::describe_batch_predictions::_describe_batch_predictions_output::DescribeBatchPredictionsOutput;
 
 mod _describe_batch_predictions_input;
 

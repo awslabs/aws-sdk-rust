@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_enrollment_sta
     }
 }
 
-pub use crate::operation::get_enrollment_status::_get_enrollment_status_output::GetEnrollmentStatusOutput;
-
 pub use crate::operation::get_enrollment_status::_get_enrollment_status_input::GetEnrollmentStatusInput;
+
+pub use crate::operation::get_enrollment_status::_get_enrollment_status_output::GetEnrollmentStatusOutput;
 
 mod _get_enrollment_status_input;
 

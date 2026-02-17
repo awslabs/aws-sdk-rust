@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_endpo
     }
 }
 
-pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_output::ListManagedEndpointsOutput;
-
 pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_input::ListManagedEndpointsInput;
+
+pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_output::ListManagedEndpointsOutput;
 
 mod _list_managed_endpoints_input;
 

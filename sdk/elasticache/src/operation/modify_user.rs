@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_user::Modif
     }
 }
 
-pub use crate::operation::modify_user::_modify_user_output::ModifyUserOutput;
-
 pub use crate::operation::modify_user::_modify_user_input::ModifyUserInput;
+
+pub use crate::operation::modify_user::_modify_user_output::ModifyUserOutput;
 
 mod _modify_user_input;
 

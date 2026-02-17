@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_image_scan_fi
     }
 }
 
-pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan_finding_aggregations_output::ListImageScanFindingAggregationsOutput;
-
 pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan_finding_aggregations_input::ListImageScanFindingAggregationsInput;
+
+pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan_finding_aggregations_output::ListImageScanFindingAggregationsOutput;
 
 mod _list_image_scan_finding_aggregations_input;
 

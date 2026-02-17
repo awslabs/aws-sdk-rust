@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_schedule::C
     }
 }
 
-pub use crate::operation::create_schedule::_create_schedule_output::CreateScheduleOutput;
-
 pub use crate::operation::create_schedule::_create_schedule_input::CreateScheduleInput;
+
+pub use crate::operation::create_schedule::_create_schedule_output::CreateScheduleOutput;
 
 mod _create_schedule_input;
 

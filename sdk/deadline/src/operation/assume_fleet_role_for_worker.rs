@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_fleet_role_
     }
 }
 
-pub use crate::operation::assume_fleet_role_for_worker::_assume_fleet_role_for_worker_output::AssumeFleetRoleForWorkerOutput;
-
 pub use crate::operation::assume_fleet_role_for_worker::_assume_fleet_role_for_worker_input::AssumeFleetRoleForWorkerInput;
+
+pub use crate::operation::assume_fleet_role_for_worker::_assume_fleet_role_for_worker_output::AssumeFleetRoleForWorkerOutput;
 
 mod _assume_fleet_role_for_worker_input;
 

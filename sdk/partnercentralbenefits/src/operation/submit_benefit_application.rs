@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_benefit_app
     }
 }
 
-pub use crate::operation::submit_benefit_application::_submit_benefit_application_output::SubmitBenefitApplicationOutput;
-
 pub use crate::operation::submit_benefit_application::_submit_benefit_application_input::SubmitBenefitApplicationInput;
+
+pub use crate::operation::submit_benefit_application::_submit_benefit_application_output::SubmitBenefitApplicationOutput;
 
 mod _submit_benefit_application_input;
 

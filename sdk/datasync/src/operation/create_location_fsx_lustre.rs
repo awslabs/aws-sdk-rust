@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_fs
     }
 }
 
-pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustre_output::CreateLocationFsxLustreOutput;
-
 pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustre_input::CreateLocationFsxLustreInput;
+
+pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustre_output::CreateLocationFsxLustreOutput;
 
 mod _create_location_fsx_lustre_input;
 

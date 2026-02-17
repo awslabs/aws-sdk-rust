@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_satellite::Get
     }
 }
 
-pub use crate::operation::get_satellite::_get_satellite_output::GetSatelliteOutput;
-
 pub use crate::operation::get_satellite::_get_satellite_input::GetSatelliteInput;
+
+pub use crate::operation::get_satellite::_get_satellite_output::GetSatelliteOutput;
 
 mod _get_satellite_input;
 

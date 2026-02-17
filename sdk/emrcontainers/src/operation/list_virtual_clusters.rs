@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_clust
     }
 }
 
-pub use crate::operation::list_virtual_clusters::_list_virtual_clusters_output::ListVirtualClustersOutput;
-
 pub use crate::operation::list_virtual_clusters::_list_virtual_clusters_input::ListVirtualClustersInput;
+
+pub use crate::operation::list_virtual_clusters::_list_virtual_clusters_output::ListVirtualClustersOutput;
 
 mod _list_virtual_clusters_input;
 

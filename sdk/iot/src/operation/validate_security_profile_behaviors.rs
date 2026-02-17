@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_security_
     }
 }
 
-pub use crate::operation::validate_security_profile_behaviors::_validate_security_profile_behaviors_output::ValidateSecurityProfileBehaviorsOutput;
-
 pub use crate::operation::validate_security_profile_behaviors::_validate_security_profile_behaviors_input::ValidateSecurityProfileBehaviorsInput;
+
+pub use crate::operation::validate_security_profile_behaviors::_validate_security_profile_behaviors_output::ValidateSecurityProfileBehaviorsOutput;
 
 mod _validate_security_profile_behaviors_input;
 

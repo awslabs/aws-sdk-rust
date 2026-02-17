@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_classificatio
     }
 }
 
-pub use crate::operation::list_classification_scopes::_list_classification_scopes_output::ListClassificationScopesOutput;
-
 pub use crate::operation::list_classification_scopes::_list_classification_scopes_input::ListClassificationScopesInput;
+
+pub use crate::operation::list_classification_scopes::_list_classification_scopes_output::ListClassificationScopesOutput;
 
 mod _list_classification_scopes_input;
 

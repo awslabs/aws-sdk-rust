@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_express_gat
     }
 }
 
-pub use crate::operation::create_express_gateway_service::_create_express_gateway_service_output::CreateExpressGatewayServiceOutput;
-
 pub use crate::operation::create_express_gateway_service::_create_express_gateway_service_input::CreateExpressGatewayServiceInput;
+
+pub use crate::operation::create_express_gateway_service::_create_express_gateway_service_output::CreateExpressGatewayServiceOutput;
 
 mod _create_express_gateway_service_input;
 

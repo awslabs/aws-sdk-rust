@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_elasticsearch
     }
 }
 
-pub use crate::operation::list_elasticsearch_versions::_list_elasticsearch_versions_output::ListElasticsearchVersionsOutput;
-
 pub use crate::operation::list_elasticsearch_versions::_list_elasticsearch_versions_input::ListElasticsearchVersionsInput;
+
+pub use crate::operation::list_elasticsearch_versions::_list_elasticsearch_versions_output::ListElasticsearchVersionsOutput;
 
 mod _list_elasticsearch_versions_input;
 

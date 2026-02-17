@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_linked
     }
 }
 
-pub use crate::operation::get_service_linked_role_deletion_status::_get_service_linked_role_deletion_status_output::GetServiceLinkedRoleDeletionStatusOutput;
-
 pub use crate::operation::get_service_linked_role_deletion_status::_get_service_linked_role_deletion_status_input::GetServiceLinkedRoleDeletionStatusInput;
+
+pub use crate::operation::get_service_linked_role_deletion_status::_get_service_linked_role_deletion_status_output::GetServiceLinkedRoleDeletionStatusOutput;
 
 mod _get_service_linked_role_deletion_status_input;
 

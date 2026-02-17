@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_signal_catalog
     }
 }
 
-pub use crate::operation::get_signal_catalog::_get_signal_catalog_output::GetSignalCatalogOutput;
-
 pub use crate::operation::get_signal_catalog::_get_signal_catalog_input::GetSignalCatalogInput;
+
+pub use crate::operation::get_signal_catalog::_get_signal_catalog_output::GetSignalCatalogOutput;
 
 mod _get_signal_catalog_input;
 

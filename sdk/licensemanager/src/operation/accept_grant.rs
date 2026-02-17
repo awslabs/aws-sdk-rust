@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_grant::Acce
     }
 }
 
-pub use crate::operation::accept_grant::_accept_grant_output::AcceptGrantOutput;
-
 pub use crate::operation::accept_grant::_accept_grant_input::AcceptGrantInput;
+
+pub use crate::operation::accept_grant::_accept_grant_output::AcceptGrantOutput;
 
 mod _accept_grant_input;
 

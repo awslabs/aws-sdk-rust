@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_active_mode
     }
 }
 
-pub use crate::operation::update_active_model_version::_update_active_model_version_output::UpdateActiveModelVersionOutput;
-
 pub use crate::operation::update_active_model_version::_update_active_model_version_input::UpdateActiveModelVersionInput;
+
+pub use crate::operation::update_active_model_version::_update_active_model_version_output::UpdateActiveModelVersionOutput;
 
 mod _update_active_model_version_input;
 

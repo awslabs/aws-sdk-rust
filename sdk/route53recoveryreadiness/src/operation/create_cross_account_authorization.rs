@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cross_accou
     }
 }
 
-pub use crate::operation::create_cross_account_authorization::_create_cross_account_authorization_output::CreateCrossAccountAuthorizationOutput;
-
 pub use crate::operation::create_cross_account_authorization::_create_cross_account_authorization_input::CreateCrossAccountAuthorizationInput;
+
+pub use crate::operation::create_cross_account_authorization::_create_cross_account_authorization_output::CreateCrossAccountAuthorizationOutput;
 
 mod _create_cross_account_authorization_input;
 

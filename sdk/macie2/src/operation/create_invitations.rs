@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_invitations
     }
 }
 
-pub use crate::operation::create_invitations::_create_invitations_output::CreateInvitationsOutput;
-
 pub use crate::operation::create_invitations::_create_invitations_input::CreateInvitationsInput;
+
+pub use crate::operation::create_invitations::_create_invitations_output::CreateInvitationsOutput;
 
 mod _create_invitations_input;
 

@@ -478,9 +478,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_software_to
     }
 }
 
-pub use crate::operation::verify_software_token::_verify_software_token_output::VerifySoftwareTokenOutput;
-
 pub use crate::operation::verify_software_token::_verify_software_token_input::VerifySoftwareTokenInput;
+
+pub use crate::operation::verify_software_token::_verify_software_token_output::VerifySoftwareTokenOutput;
 
 mod _verify_software_token_input;
 

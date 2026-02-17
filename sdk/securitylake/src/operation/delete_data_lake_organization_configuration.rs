@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_data_lake_organization_configuration::_delete_data_lake_organization_configuration_output::DeleteDataLakeOrganizationConfigurationOutput;
-
 pub use crate::operation::delete_data_lake_organization_configuration::_delete_data_lake_organization_configuration_input::DeleteDataLakeOrganizationConfigurationInput;
+
+pub use crate::operation::delete_data_lake_organization_configuration::_delete_data_lake_organization_configuration_output::DeleteDataLakeOrganizationConfigurationOutput;
 
 mod _delete_data_lake_organization_configuration_input;
 

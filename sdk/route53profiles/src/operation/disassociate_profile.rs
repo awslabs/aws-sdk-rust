@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_profi
     }
 }
 
-pub use crate::operation::disassociate_profile::_disassociate_profile_output::DisassociateProfileOutput;
-
 pub use crate::operation::disassociate_profile::_disassociate_profile_input::DisassociateProfileInput;
+
+pub use crate::operation::disassociate_profile::_disassociate_profile_output::DisassociateProfileOutput;
 
 mod _disassociate_profile_input;
 

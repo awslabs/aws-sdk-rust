@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_image_depr
     }
 }
 
-pub use crate::operation::disable_image_deprecation::_disable_image_deprecation_output::DisableImageDeprecationOutput;
-
 pub use crate::operation::disable_image_deprecation::_disable_image_deprecation_input::DisableImageDeprecationInput;
+
+pub use crate::operation::disable_image_deprecation::_disable_image_deprecation_output::DisableImageDeprecationOutput;
 
 mod _disable_image_deprecation_input;
 

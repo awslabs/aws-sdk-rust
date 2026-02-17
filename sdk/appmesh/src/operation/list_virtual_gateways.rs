@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_virtual_gatew
     }
 }
 
-pub use crate::operation::list_virtual_gateways::_list_virtual_gateways_output::ListVirtualGatewaysOutput;
-
 pub use crate::operation::list_virtual_gateways::_list_virtual_gateways_input::ListVirtualGatewaysInput;
+
+pub use crate::operation::list_virtual_gateways::_list_virtual_gateways_output::ListVirtualGatewaysOutput;
 
 mod _list_virtual_gateways_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_internet_ga
     }
 }
 
-pub use crate::operation::delete_internet_gateway::_delete_internet_gateway_output::DeleteInternetGatewayOutput;
-
 pub use crate::operation::delete_internet_gateway::_delete_internet_gateway_input::DeleteInternetGatewayInput;
+
+pub use crate::operation::delete_internet_gateway::_delete_internet_gateway_output::DeleteInternetGatewayOutput;
 
 mod _delete_internet_gateway_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_blueprint::
     }
 }
 
-pub use crate::operation::update_blueprint::_update_blueprint_output::UpdateBlueprintOutput;
-
 pub use crate::operation::update_blueprint::_update_blueprint_input::UpdateBlueprintInput;
+
+pub use crate::operation::update_blueprint::_update_blueprint_output::UpdateBlueprintOutput;
 
 mod _update_blueprint_input;
 

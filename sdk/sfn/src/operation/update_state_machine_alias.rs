@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_state_machi
     }
 }
 
-pub use crate::operation::update_state_machine_alias::_update_state_machine_alias_output::UpdateStateMachineAliasOutput;
-
 pub use crate::operation::update_state_machine_alias::_update_state_machine_alias_input::UpdateStateMachineAliasInput;
+
+pub use crate::operation::update_state_machine_alias::_update_state_machine_alias_output::UpdateStateMachineAliasOutput;
 
 mod _update_state_machine_alias_input;
 

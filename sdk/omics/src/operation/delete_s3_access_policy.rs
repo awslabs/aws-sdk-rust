@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_s3_access_p
     }
 }
 
-pub use crate::operation::delete_s3_access_policy::_delete_s3_access_policy_output::DeleteS3AccessPolicyOutput;
-
 pub use crate::operation::delete_s3_access_policy::_delete_s3_access_policy_input::DeleteS3AccessPolicyInput;
+
+pub use crate::operation::delete_s3_access_policy::_delete_s3_access_policy_output::DeleteS3AccessPolicyOutput;
 
 mod _delete_s3_access_policy_input;
 

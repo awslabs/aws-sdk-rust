@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_addon_subsc
     }
 }
 
-pub use crate::operation::delete_addon_subscription::_delete_addon_subscription_output::DeleteAddonSubscriptionOutput;
-
 pub use crate::operation::delete_addon_subscription::_delete_addon_subscription_input::DeleteAddonSubscriptionInput;
+
+pub use crate::operation::delete_addon_subscription::_delete_addon_subscription_output::DeleteAddonSubscriptionOutput;
 
 mod _delete_addon_subscription_input;
 

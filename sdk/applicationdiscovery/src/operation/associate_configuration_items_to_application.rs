@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_configuration_items_to_application::_associate_configuration_items_to_application_output::AssociateConfigurationItemsToApplicationOutput;
-
 pub use crate::operation::associate_configuration_items_to_application::_associate_configuration_items_to_application_input::AssociateConfigurationItemsToApplicationInput;
+
+pub use crate::operation::associate_configuration_items_to_application::_associate_configuration_items_to_application_output::AssociateConfigurationItemsToApplicationOutput;
 
 mod _associate_configuration_items_to_application_input;
 

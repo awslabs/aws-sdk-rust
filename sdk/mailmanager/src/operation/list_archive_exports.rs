@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_archive_expor
     }
 }
 
-pub use crate::operation::list_archive_exports::_list_archive_exports_output::ListArchiveExportsOutput;
-
 pub use crate::operation::list_archive_exports::_list_archive_exports_input::ListArchiveExportsInput;
+
+pub use crate::operation::list_archive_exports::_list_archive_exports_output::ListArchiveExportsOutput;
 
 mod _list_archive_exports_input;
 

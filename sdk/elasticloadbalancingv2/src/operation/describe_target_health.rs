@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_target_he
     }
 }
 
-pub use crate::operation::describe_target_health::_describe_target_health_output::DescribeTargetHealthOutput;
-
 pub use crate::operation::describe_target_health::_describe_target_health_input::DescribeTargetHealthInput;
+
+pub use crate::operation::describe_target_health::_describe_target_health_output::DescribeTargetHealthOutput;
 
 mod _describe_target_health_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_multi_reg
     }
 }
 
-pub use crate::operation::describe_multi_region_clusters::_describe_multi_region_clusters_output::DescribeMultiRegionClustersOutput;
-
 pub use crate::operation::describe_multi_region_clusters::_describe_multi_region_clusters_input::DescribeMultiRegionClustersInput;
+
+pub use crate::operation::describe_multi_region_clusters::_describe_multi_region_clusters_output::DescribeMultiRegionClustersOutput;
 
 mod _describe_multi_region_clusters_input;
 

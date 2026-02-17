@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_recommender::G
     }
 }
 
-pub use crate::operation::get_recommender::_get_recommender_output::GetRecommenderOutput;
-
 pub use crate::operation::get_recommender::_get_recommender_input::GetRecommenderInput;
+
+pub use crate::operation::get_recommender::_get_recommender_output::GetRecommenderOutput;
 
 mod _get_recommender_input;
 

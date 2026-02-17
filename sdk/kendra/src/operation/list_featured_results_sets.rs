@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_featured_resu
     }
 }
 
-pub use crate::operation::list_featured_results_sets::_list_featured_results_sets_output::ListFeaturedResultsSetsOutput;
-
 pub use crate::operation::list_featured_results_sets::_list_featured_results_sets_input::ListFeaturedResultsSetsInput;
+
+pub use crate::operation::list_featured_results_sets::_list_featured_results_sets_output::ListFeaturedResultsSetsOutput;
 
 mod _list_featured_results_sets_input;
 

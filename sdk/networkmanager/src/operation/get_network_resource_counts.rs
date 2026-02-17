@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_network_resour
     }
 }
 
-pub use crate::operation::get_network_resource_counts::_get_network_resource_counts_output::GetNetworkResourceCountsOutput;
-
 pub use crate::operation::get_network_resource_counts::_get_network_resource_counts_input::GetNetworkResourceCountsInput;
+
+pub use crate::operation::get_network_resource_counts::_get_network_resource_counts_output::GetNetworkResourceCountsOutput;
 
 mod _get_network_resource_counts_input;
 

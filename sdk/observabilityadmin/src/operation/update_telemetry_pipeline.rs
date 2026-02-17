@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_telemetry_p
     }
 }
 
-pub use crate::operation::update_telemetry_pipeline::_update_telemetry_pipeline_output::UpdateTelemetryPipelineOutput;
-
 pub use crate::operation::update_telemetry_pipeline::_update_telemetry_pipeline_input::UpdateTelemetryPipelineInput;
+
+pub use crate::operation::update_telemetry_pipeline::_update_telemetry_pipeline_output::UpdateTelemetryPipelineOutput;
 
 mod _update_telemetry_pipeline_input;
 

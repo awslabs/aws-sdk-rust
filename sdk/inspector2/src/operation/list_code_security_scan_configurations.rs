@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_code_security
     }
 }
 
-pub use crate::operation::list_code_security_scan_configurations::_list_code_security_scan_configurations_output::ListCodeSecurityScanConfigurationsOutput;
-
 pub use crate::operation::list_code_security_scan_configurations::_list_code_security_scan_configurations_input::ListCodeSecurityScanConfigurationsInput;
+
+pub use crate::operation::list_code_security_scan_configurations::_list_code_security_scan_configurations_output::ListCodeSecurityScanConfigurationsOutput;
 
 mod _list_code_security_scan_configurations_input;
 

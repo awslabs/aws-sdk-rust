@@ -358,9 +358,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_safety_lever::
     }
 }
 
-pub use crate::operation::get_safety_lever::_get_safety_lever_output::GetSafetyLeverOutput;
-
 pub use crate::operation::get_safety_lever::_get_safety_lever_input::GetSafetyLeverInput;
+
+pub use crate::operation::get_safety_lever::_get_safety_lever_output::GetSafetyLeverOutput;
 
 mod _get_safety_lever_input;
 

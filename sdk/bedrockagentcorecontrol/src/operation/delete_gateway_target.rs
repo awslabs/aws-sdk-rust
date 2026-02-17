@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_gateway_tar
     }
 }
 
-pub use crate::operation::delete_gateway_target::_delete_gateway_target_output::DeleteGatewayTargetOutput;
-
 pub use crate::operation::delete_gateway_target::_delete_gateway_target_input::DeleteGatewayTargetInput;
+
+pub use crate::operation::delete_gateway_target::_delete_gateway_target_output::DeleteGatewayTargetOutput;
 
 mod _delete_gateway_target_input;
 

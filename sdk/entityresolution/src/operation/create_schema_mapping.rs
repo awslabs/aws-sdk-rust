@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_schema_mapp
     }
 }
 
-pub use crate::operation::create_schema_mapping::_create_schema_mapping_output::CreateSchemaMappingOutput;
-
 pub use crate::operation::create_schema_mapping::_create_schema_mapping_input::CreateSchemaMappingInput;
+
+pub use crate::operation::create_schema_mapping::_create_schema_mapping_output::CreateSchemaMappingOutput;
 
 mod _create_schema_mapping_input;
 

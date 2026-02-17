@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_user_pool_d
     }
 }
 
-pub use crate::operation::update_user_pool_domain::_update_user_pool_domain_output::UpdateUserPoolDomainOutput;
-
 pub use crate::operation::update_user_pool_domain::_update_user_pool_domain_input::UpdateUserPoolDomainInput;
+
+pub use crate::operation::update_user_pool_domain::_update_user_pool_domain_output::UpdateUserPoolDomainOutput;
 
 mod _update_user_pool_domain_input;
 

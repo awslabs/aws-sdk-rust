@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_container_poli
     }
 }
 
-pub use crate::operation::get_container_policy::_get_container_policy_output::GetContainerPolicyOutput;
-
 pub use crate::operation::get_container_policy::_get_container_policy_input::GetContainerPolicyInput;
+
+pub use crate::operation::get_container_policy::_get_container_policy_output::GetContainerPolicyOutput;
 
 mod _get_container_policy_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_browser_profil
     }
 }
 
-pub use crate::operation::get_browser_profile::_get_browser_profile_output::GetBrowserProfileOutput;
-
 pub use crate::operation::get_browser_profile::_get_browser_profile_input::GetBrowserProfileInput;
+
+pub use crate::operation::get_browser_profile::_get_browser_profile_output::GetBrowserProfileOutput;
 
 mod _get_browser_profile_input;
 

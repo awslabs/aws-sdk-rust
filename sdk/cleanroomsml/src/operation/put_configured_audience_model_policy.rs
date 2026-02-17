@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configured_aud
     }
 }
 
-pub use crate::operation::put_configured_audience_model_policy::_put_configured_audience_model_policy_output::PutConfiguredAudienceModelPolicyOutput;
-
 pub use crate::operation::put_configured_audience_model_policy::_put_configured_audience_model_policy_input::PutConfiguredAudienceModelPolicyInput;
+
+pub use crate::operation::put_configured_audience_model_policy::_put_configured_audience_model_policy_output::PutConfiguredAudienceModelPolicyOutput;
 
 mod _put_configured_audience_model_policy_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_export_ta
     }
 }
 
-pub use crate::operation::describe_export_tasks::_describe_export_tasks_output::DescribeExportTasksOutput;
-
 pub use crate::operation::describe_export_tasks::_describe_export_tasks_input::DescribeExportTasksInput;
+
+pub use crate::operation::describe_export_tasks::_describe_export_tasks_output::DescribeExportTasksOutput;
 
 mod _describe_export_tasks_input;
 

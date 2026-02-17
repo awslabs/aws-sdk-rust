@@ -498,9 +498,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_organizationa
     }
 }
 
-pub use crate::operation::list_organizational_units_for_parent::_list_organizational_units_for_parent_output::ListOrganizationalUnitsForParentOutput;
-
 pub use crate::operation::list_organizational_units_for_parent::_list_organizational_units_for_parent_input::ListOrganizationalUnitsForParentInput;
+
+pub use crate::operation::list_organizational_units_for_parent::_list_organizational_units_for_parent_output::ListOrganizationalUnitsForParentOutput;
 
 mod _list_organizational_units_for_parent_input;
 

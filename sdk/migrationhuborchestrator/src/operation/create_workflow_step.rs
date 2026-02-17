@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_workflow_st
     }
 }
 
-pub use crate::operation::create_workflow_step::_create_workflow_step_output::CreateWorkflowStepOutput;
-
 pub use crate::operation::create_workflow_step::_create_workflow_step_input::CreateWorkflowStepInput;
+
+pub use crate::operation::create_workflow_step::_create_workflow_step_output::CreateWorkflowStepOutput;
 
 mod _create_workflow_step_input;
 

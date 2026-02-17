@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_network_res
     }
 }
 
-pub use crate::operation::update_network_resource_metadata::_update_network_resource_metadata_output::UpdateNetworkResourceMetadataOutput;
-
 pub use crate::operation::update_network_resource_metadata::_update_network_resource_metadata_input::UpdateNetworkResourceMetadataInput;
+
+pub use crate::operation::update_network_resource_metadata::_update_network_resource_metadata_output::UpdateNetworkResourceMetadataOutput;
 
 mod _update_network_resource_metadata_input;
 

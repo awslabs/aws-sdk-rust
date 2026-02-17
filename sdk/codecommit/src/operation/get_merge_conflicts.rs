@@ -571,9 +571,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_merge_conflict
     }
 }
 
-pub use crate::operation::get_merge_conflicts::_get_merge_conflicts_output::GetMergeConflictsOutput;
-
 pub use crate::operation::get_merge_conflicts::_get_merge_conflicts_input::GetMergeConflictsInput;
+
+pub use crate::operation::get_merge_conflicts::_get_merge_conflicts_output::GetMergeConflictsOutput;
 
 mod _get_merge_conflicts_input;
 

@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cluster_sec
     }
 }
 
-pub use crate::operation::delete_cluster_security_group::_delete_cluster_security_group_output::DeleteClusterSecurityGroupOutput;
-
 pub use crate::operation::delete_cluster_security_group::_delete_cluster_security_group_input::DeleteClusterSecurityGroupInput;
+
+pub use crate::operation::delete_cluster_security_group::_delete_cluster_security_group_output::DeleteClusterSecurityGroupOutput;
 
 mod _delete_cluster_security_group_input;
 

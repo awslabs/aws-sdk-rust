@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_valid_db_
     }
 }
 
-pub use crate::operation::describe_valid_db_instance_modifications::_describe_valid_db_instance_modifications_output::DescribeValidDbInstanceModificationsOutput;
-
 pub use crate::operation::describe_valid_db_instance_modifications::_describe_valid_db_instance_modifications_input::DescribeValidDbInstanceModificationsInput;
+
+pub use crate::operation::describe_valid_db_instance_modifications::_describe_valid_db_instance_modifications_output::DescribeValidDbInstanceModificationsOutput;
 
 mod _describe_valid_db_instance_modifications_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detect_text::Detec
     }
 }
 
-pub use crate::operation::detect_text::_detect_text_output::DetectTextOutput;
-
 pub use crate::operation::detect_text::_detect_text_input::DetectTextInput;
+
+pub use crate::operation::detect_text::_detect_text_output::DetectTextOutput;
 
 mod _detect_text_input;
 

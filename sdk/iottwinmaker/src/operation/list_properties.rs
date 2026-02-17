@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_properties::L
     }
 }
 
-pub use crate::operation::list_properties::_list_properties_output::ListPropertiesOutput;
-
 pub use crate::operation::list_properties::_list_properties_input::ListPropertiesInput;
+
+pub use crate::operation::list_properties::_list_properties_output::ListPropertiesOutput;
 
 mod _list_properties_input;
 

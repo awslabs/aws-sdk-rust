@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_static_ip::
     }
 }
 
-pub use crate::operation::detach_static_ip::_detach_static_ip_output::DetachStaticIpOutput;
-
 pub use crate::operation::detach_static_ip::_detach_static_ip_input::DetachStaticIpInput;
+
+pub use crate::operation::detach_static_ip::_detach_static_ip_output::DetachStaticIpOutput;
 
 mod _detach_static_ip_input;
 

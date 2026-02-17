@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_tag_keys::GetT
     }
 }
 
-pub use crate::operation::get_tag_keys::_get_tag_keys_output::GetTagKeysOutput;
-
 pub use crate::operation::get_tag_keys::_get_tag_keys_input::GetTagKeysInput;
+
+pub use crate::operation::get_tag_keys::_get_tag_keys_output::GetTagKeysOutput;
 
 mod _get_tag_keys_input;
 

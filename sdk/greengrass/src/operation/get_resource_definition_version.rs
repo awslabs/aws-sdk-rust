@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_defin
     }
 }
 
-pub use crate::operation::get_resource_definition_version::_get_resource_definition_version_output::GetResourceDefinitionVersionOutput;
-
 pub use crate::operation::get_resource_definition_version::_get_resource_definition_version_input::GetResourceDefinitionVersionInput;
+
+pub use crate::operation::get_resource_definition_version::_get_resource_definition_version_output::GetResourceDefinitionVersionOutput;
 
 mod _get_resource_definition_version_input;
 

@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ai_prompt_v
     }
 }
 
-pub use crate::operation::delete_ai_prompt_version::_delete_ai_prompt_version_output::DeleteAiPromptVersionOutput;
-
 pub use crate::operation::delete_ai_prompt_version::_delete_ai_prompt_version_input::DeleteAiPromptVersionInput;
+
+pub use crate::operation::delete_ai_prompt_version::_delete_ai_prompt_version_output::DeleteAiPromptVersionOutput;
 
 mod _delete_ai_prompt_version_input;
 

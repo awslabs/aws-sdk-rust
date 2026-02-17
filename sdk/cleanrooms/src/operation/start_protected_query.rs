@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_protected_qu
     }
 }
 
-pub use crate::operation::start_protected_query::_start_protected_query_output::StartProtectedQueryOutput;
-
 pub use crate::operation::start_protected_query::_start_protected_query_input::StartProtectedQueryInput;
+
+pub use crate::operation::start_protected_query::_start_protected_query_output::StartProtectedQueryOutput;
 
 mod _start_protected_query_input;
 

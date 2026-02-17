@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_routi
     }
 }
 
-pub use crate::operation::disassociate_routing_profile_queues::_disassociate_routing_profile_queues_output::DisassociateRoutingProfileQueuesOutput;
-
 pub use crate::operation::disassociate_routing_profile_queues::_disassociate_routing_profile_queues_input::DisassociateRoutingProfileQueuesInput;
+
+pub use crate::operation::disassociate_routing_profile_queues::_disassociate_routing_profile_queues_output::DisassociateRoutingProfileQueuesOutput;
 
 mod _disassociate_routing_profile_queues_input;
 

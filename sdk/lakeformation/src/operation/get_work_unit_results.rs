@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_work_unit_resu
     }
 }
 
-pub use crate::operation::get_work_unit_results::_get_work_unit_results_output::GetWorkUnitResultsOutput;
-
 pub use crate::operation::get_work_unit_results::_get_work_unit_results_input::GetWorkUnitResultsInput;
+
+pub use crate::operation::get_work_unit_results::_get_work_unit_results_output::GetWorkUnitResultsOutput;
 
 mod _get_work_unit_results_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_update_signa
     }
 }
 
-pub use crate::operation::start_update_signal_map::_start_update_signal_map_output::StartUpdateSignalMapOutput;
-
 pub use crate::operation::start_update_signal_map::_start_update_signal_map_input::StartUpdateSignalMapInput;
+
+pub use crate::operation::start_update_signal_map::_start_update_signal_map_output::StartUpdateSignalMapOutput;
 
 mod _start_update_signal_map_input;
 

@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_role_with_w
     }
 }
 
-pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_identity_output::AssumeRoleWithWebIdentityOutput;
-
 pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_identity_input::AssumeRoleWithWebIdentityInput;
+
+pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_identity_output::AssumeRoleWithWebIdentityOutput;
 
 mod _assume_role_with_web_identity_input;
 

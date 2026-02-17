@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_flow_entitl
     }
 }
 
-pub use crate::operation::revoke_flow_entitlement::_revoke_flow_entitlement_output::RevokeFlowEntitlementOutput;
-
 pub use crate::operation::revoke_flow_entitlement::_revoke_flow_entitlement_input::RevokeFlowEntitlementInput;
+
+pub use crate::operation::revoke_flow_entitlement::_revoke_flow_entitlement_output::RevokeFlowEntitlementOutput;
 
 mod _revoke_flow_entitlement_input;
 

@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connect_peer_a
     }
 }
 
-pub use crate::operation::get_connect_peer_associations::_get_connect_peer_associations_output::GetConnectPeerAssociationsOutput;
-
 pub use crate::operation::get_connect_peer_associations::_get_connect_peer_associations_input::GetConnectPeerAssociationsInput;
+
+pub use crate::operation::get_connect_peer_associations::_get_connect_peer_associations_output::GetConnectPeerAssociationsOutput;
 
 mod _get_connect_peer_associations_input;
 

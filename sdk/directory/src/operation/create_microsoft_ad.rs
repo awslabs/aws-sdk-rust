@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_microsoft_a
     }
 }
 
-pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_output::CreateMicrosoftAdOutput;
-
 pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_input::CreateMicrosoftAdInput;
+
+pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_output::CreateMicrosoftAdOutput;
 
 mod _create_microsoft_ad_input;
 

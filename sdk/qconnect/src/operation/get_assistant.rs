@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_assistant::Get
     }
 }
 
-pub use crate::operation::get_assistant::_get_assistant_output::GetAssistantOutput;
-
 pub use crate::operation::get_assistant::_get_assistant_input::GetAssistantInput;
+
+pub use crate::operation::get_assistant::_get_assistant_output::GetAssistantOutput;
 
 mod _get_assistant_input;
 

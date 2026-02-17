@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_report_jo
     }
 }
 
-pub use crate::operation::describe_report_job::_describe_report_job_output::DescribeReportJobOutput;
-
 pub use crate::operation::describe_report_job::_describe_report_job_input::DescribeReportJobInput;
+
+pub use crate::operation::describe_report_job::_describe_report_job_output::DescribeReportJobOutput;
 
 mod _describe_report_job_input;
 

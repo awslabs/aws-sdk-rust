@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_gateway_i
     }
 }
 
-pub use crate::operation::describe_gateway_information::_describe_gateway_information_output::DescribeGatewayInformationOutput;
-
 pub use crate::operation::describe_gateway_information::_describe_gateway_information_input::DescribeGatewayInformationInput;
+
+pub use crate::operation::describe_gateway_information::_describe_gateway_information_output::DescribeGatewayInformationOutput;
 
 mod _describe_gateway_information_input;
 

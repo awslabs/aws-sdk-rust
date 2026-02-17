@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_registry::D
     }
 }
 
-pub use crate::operation::delete_registry::_delete_registry_output::DeleteRegistryOutput;
-
 pub use crate::operation::delete_registry::_delete_registry_input::DeleteRegistryInput;
+
+pub use crate::operation::delete_registry::_delete_registry_output::DeleteRegistryOutput;
 
 mod _delete_registry_input;
 

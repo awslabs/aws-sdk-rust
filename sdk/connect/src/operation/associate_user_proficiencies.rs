@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_user_pro
     }
 }
 
-pub use crate::operation::associate_user_proficiencies::_associate_user_proficiencies_output::AssociateUserProficienciesOutput;
-
 pub use crate::operation::associate_user_proficiencies::_associate_user_proficiencies_input::AssociateUserProficienciesInput;
+
+pub use crate::operation::associate_user_proficiencies::_associate_user_proficiencies_output::AssociateUserProficienciesOutput;
 
 mod _associate_user_proficiencies_input;
 

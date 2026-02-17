@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_sourc
     }
 }
 
-pub use crate::operation::disassociate_source_views::_disassociate_source_views_output::DisassociateSourceViewsOutput;
-
 pub use crate::operation::disassociate_source_views::_disassociate_source_views_input::DisassociateSourceViewsInput;
+
+pub use crate::operation::disassociate_source_views::_disassociate_source_views_output::DisassociateSourceViewsOutput;
 
 mod _disassociate_source_views_input;
 

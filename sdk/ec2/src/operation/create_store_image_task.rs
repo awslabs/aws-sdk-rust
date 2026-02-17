@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_store_image
     }
 }
 
-pub use crate::operation::create_store_image_task::_create_store_image_task_output::CreateStoreImageTaskOutput;
-
 pub use crate::operation::create_store_image_task::_create_store_image_task_input::CreateStoreImageTaskInput;
+
+pub use crate::operation::create_store_image_task::_create_store_image_task_output::CreateStoreImageTaskOutput;
 
 mod _create_store_image_task_input;
 

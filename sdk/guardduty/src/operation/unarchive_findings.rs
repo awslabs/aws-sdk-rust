@@ -375,9 +375,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unarchive_findings
     }
 }
 
-pub use crate::operation::unarchive_findings::_unarchive_findings_output::UnarchiveFindingsOutput;
-
 pub use crate::operation::unarchive_findings::_unarchive_findings_input::UnarchiveFindingsInput;
+
+pub use crate::operation::unarchive_findings::_unarchive_findings_output::UnarchiveFindingsOutput;
 
 mod _unarchive_findings_input;
 

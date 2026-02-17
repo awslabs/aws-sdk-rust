@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_access_cont
     }
 }
 
-pub use crate::operation::update_access_control_configuration::_update_access_control_configuration_output::UpdateAccessControlConfigurationOutput;
-
 pub use crate::operation::update_access_control_configuration::_update_access_control_configuration_input::UpdateAccessControlConfigurationInput;
+
+pub use crate::operation::update_access_control_configuration::_update_access_control_configuration_output::UpdateAccessControlConfigurationOutput;
 
 mod _update_access_control_configuration_input;
 

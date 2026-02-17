@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_associated_ipv
     }
 }
 
-pub use crate::operation::get_associated_ipv6_pool_cidrs::_get_associated_ipv6_pool_cidrs_output::GetAssociatedIpv6PoolCidrsOutput;
-
 pub use crate::operation::get_associated_ipv6_pool_cidrs::_get_associated_ipv6_pool_cidrs_input::GetAssociatedIpv6PoolCidrsInput;
+
+pub use crate::operation::get_associated_ipv6_pool_cidrs::_get_associated_ipv6_pool_cidrs_output::GetAssociatedIpv6PoolCidrsOutput;
 
 mod _get_associated_ipv6_pool_cidrs_input;
 

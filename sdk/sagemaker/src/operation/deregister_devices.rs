@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_devices
     }
 }
 
-pub use crate::operation::deregister_devices::_deregister_devices_output::DeregisterDevicesOutput;
-
 pub use crate::operation::deregister_devices::_deregister_devices_input::DeregisterDevicesInput;
+
+pub use crate::operation::deregister_devices::_deregister_devices_output::DeregisterDevicesOutput;
 
 mod _deregister_devices_input;
 
