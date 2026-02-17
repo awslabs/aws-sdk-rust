@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_attribute_g
     }
 }
 
-pub use crate::operation::create_attribute_group::_create_attribute_group_output::CreateAttributeGroupOutput;
-
 pub use crate::operation::create_attribute_group::_create_attribute_group_input::CreateAttributeGroupInput;
+
+pub use crate::operation::create_attribute_group::_create_attribute_group_output::CreateAttributeGroupOutput;
 
 mod _create_attribute_group_input;
 

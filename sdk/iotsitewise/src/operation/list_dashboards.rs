@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_dashboards::L
     }
 }
 
-pub use crate::operation::list_dashboards::_list_dashboards_output::ListDashboardsOutput;
-
 pub use crate::operation::list_dashboards::_list_dashboards_input::ListDashboardsInput;
+
+pub use crate::operation::list_dashboards::_list_dashboards_output::ListDashboardsOutput;
 
 mod _list_dashboards_input;
 

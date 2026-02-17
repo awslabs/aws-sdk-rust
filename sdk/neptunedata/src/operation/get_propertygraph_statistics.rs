@@ -481,9 +481,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_propertygraph_
     }
 }
 
-pub use crate::operation::get_propertygraph_statistics::_get_propertygraph_statistics_output::GetPropertygraphStatisticsOutput;
-
 pub use crate::operation::get_propertygraph_statistics::_get_propertygraph_statistics_input::GetPropertygraphStatisticsInput;
+
+pub use crate::operation::get_propertygraph_statistics::_get_propertygraph_statistics_output::GetPropertygraphStatisticsOutput;
 
 mod _get_propertygraph_statistics_input;
 

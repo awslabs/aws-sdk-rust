@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_internet_even
     }
 }
 
-pub use crate::operation::list_internet_events::_list_internet_events_output::ListInternetEventsOutput;
-
 pub use crate::operation::list_internet_events::_list_internet_events_input::ListInternetEventsInput;
+
+pub use crate::operation::list_internet_events::_list_internet_events_output::ListInternetEventsOutput;
 
 mod _list_internet_events_input;
 

@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_brand::Upda
     }
 }
 
-pub use crate::operation::update_brand::_update_brand_output::UpdateBrandOutput;
-
 pub use crate::operation::update_brand::_update_brand_input::UpdateBrandInput;
+
+pub use crate::operation::update_brand::_update_brand_output::UpdateBrandOutput;
 
 mod _update_brand_input;
 

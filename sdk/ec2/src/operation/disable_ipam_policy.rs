@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_ipam_polic
     }
 }
 
-pub use crate::operation::disable_ipam_policy::_disable_ipam_policy_output::DisableIpamPolicyOutput;
-
 pub use crate::operation::disable_ipam_policy::_disable_ipam_policy_input::DisableIpamPolicyInput;
+
+pub use crate::operation::disable_ipam_policy::_disable_ipam_policy_output::DisableIpamPolicyOutput;
 
 mod _disable_ipam_policy_input;
 

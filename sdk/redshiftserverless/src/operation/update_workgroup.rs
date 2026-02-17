@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workgroup::
     }
 }
 
-pub use crate::operation::update_workgroup::_update_workgroup_output::UpdateWorkgroupOutput;
-
 pub use crate::operation::update_workgroup::_update_workgroup_input::UpdateWorkgroupInput;
+
+pub use crate::operation::update_workgroup::_update_workgroup_output::UpdateWorkgroupOutput;
 
 mod _update_workgroup_input;
 

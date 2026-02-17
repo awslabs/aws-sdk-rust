@@ -458,9 +458,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_kx_scaling_
     }
 }
 
-pub use crate::operation::delete_kx_scaling_group::_delete_kx_scaling_group_output::DeleteKxScalingGroupOutput;
-
 pub use crate::operation::delete_kx_scaling_group::_delete_kx_scaling_group_input::DeleteKxScalingGroupInput;
+
+pub use crate::operation::delete_kx_scaling_group::_delete_kx_scaling_group_output::DeleteKxScalingGroupOutput;
 
 mod _delete_kx_scaling_group_input;
 

@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_violation_deta
     }
 }
 
-pub use crate::operation::get_violation_details::_get_violation_details_output::GetViolationDetailsOutput;
-
 pub use crate::operation::get_violation_details::_get_violation_details_input::GetViolationDetailsInput;
+
+pub use crate::operation::get_violation_details::_get_violation_details_output::GetViolationDetailsOutput;
 
 mod _get_violation_details_input;
 

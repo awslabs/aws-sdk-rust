@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resource_
     }
 }
 
-pub use crate::operation::describe_resource_scan::_describe_resource_scan_output::DescribeResourceScanOutput;
-
 pub use crate::operation::describe_resource_scan::_describe_resource_scan_input::DescribeResourceScanInput;
+
+pub use crate::operation::describe_resource_scan::_describe_resource_scan_output::DescribeResourceScanOutput;
 
 mod _describe_resource_scan_input;
 

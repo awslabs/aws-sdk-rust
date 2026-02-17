@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_entity
     }
 }
 
-pub use crate::operation::list_custom_entity_types::_list_custom_entity_types_output::ListCustomEntityTypesOutput;
-
 pub use crate::operation::list_custom_entity_types::_list_custom_entity_types_input::ListCustomEntityTypesInput;
+
+pub use crate::operation::list_custom_entity_types::_list_custom_entity_types_output::ListCustomEntityTypesOutput;
 
 mod _list_custom_entity_types_input;
 

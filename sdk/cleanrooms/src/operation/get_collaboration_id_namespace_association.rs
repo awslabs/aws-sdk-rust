@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_collaboration_id_namespace_association::_get_collaboration_id_namespace_association_output::GetCollaborationIdNamespaceAssociationOutput;
-
 pub use crate::operation::get_collaboration_id_namespace_association::_get_collaboration_id_namespace_association_input::GetCollaborationIdNamespaceAssociationInput;
+
+pub use crate::operation::get_collaboration_id_namespace_association::_get_collaboration_id_namespace_association_output::GetCollaborationIdNamespaceAssociationOutput;
 
 mod _get_collaboration_id_namespace_association_input;
 

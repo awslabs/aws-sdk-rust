@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_image_set_meta
     }
 }
 
-pub use crate::operation::get_image_set_metadata::_get_image_set_metadata_output::GetImageSetMetadataOutput;
-
 pub use crate::operation::get_image_set_metadata::_get_image_set_metadata_input::GetImageSetMetadataInput;
+
+pub use crate::operation::get_image_set_metadata::_get_image_set_metadata_output::GetImageSetMetadataOutput;
 
 mod _get_image_set_metadata_input;
 

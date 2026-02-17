@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_archive::Up
     }
 }
 
-pub use crate::operation::update_archive::_update_archive_output::UpdateArchiveOutput;
-
 pub use crate::operation::update_archive::_update_archive_input::UpdateArchiveInput;
+
+pub use crate::operation::update_archive::_update_archive_output::UpdateArchiveOutput;
 
 mod _update_archive_input;
 

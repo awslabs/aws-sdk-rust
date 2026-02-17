@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_redshift_id
     }
 }
 
-pub use crate::operation::modify_redshift_idc_application::_modify_redshift_idc_application_output::ModifyRedshiftIdcApplicationOutput;
-
 pub use crate::operation::modify_redshift_idc_application::_modify_redshift_idc_application_input::ModifyRedshiftIdcApplicationInput;
+
+pub use crate::operation::modify_redshift_idc_application::_modify_redshift_idc_application_output::ModifyRedshiftIdcApplicationOutput;
 
 mod _modify_redshift_idc_application_input;
 

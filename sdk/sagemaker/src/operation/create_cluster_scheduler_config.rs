@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cluster_sch
     }
 }
 
-pub use crate::operation::create_cluster_scheduler_config::_create_cluster_scheduler_config_output::CreateClusterSchedulerConfigOutput;
-
 pub use crate::operation::create_cluster_scheduler_config::_create_cluster_scheduler_config_input::CreateClusterSchedulerConfigInput;
+
+pub use crate::operation::create_cluster_scheduler_config::_create_cluster_scheduler_config_output::CreateClusterSchedulerConfigOutput;
 
 mod _create_cluster_scheduler_config_input;
 

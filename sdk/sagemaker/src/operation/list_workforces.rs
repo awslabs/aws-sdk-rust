@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workforces::L
     }
 }
 
-pub use crate::operation::list_workforces::_list_workforces_output::ListWorkforcesOutput;
-
 pub use crate::operation::list_workforces::_list_workforces_input::ListWorkforcesInput;
+
+pub use crate::operation::list_workforces::_list_workforces_output::ListWorkforcesOutput;
 
 mod _list_workforces_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_tasks::De
     }
 }
 
-pub use crate::operation::describe_tasks::_describe_tasks_output::DescribeTasksOutput;
-
 pub use crate::operation::describe_tasks::_describe_tasks_input::DescribeTasksInput;
+
+pub use crate::operation::describe_tasks::_describe_tasks_output::DescribeTasksOutput;
 
 mod _describe_tasks_input;
 

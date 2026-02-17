@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entity_recogn
     }
 }
 
-pub use crate::operation::list_entity_recognizers::_list_entity_recognizers_output::ListEntityRecognizersOutput;
-
 pub use crate::operation::list_entity_recognizers::_list_entity_recognizers_input::ListEntityRecognizersInput;
+
+pub use crate::operation::list_entity_recognizers::_list_entity_recognizers_output::ListEntityRecognizersOutput;
 
 mod _list_entity_recognizers_input;
 

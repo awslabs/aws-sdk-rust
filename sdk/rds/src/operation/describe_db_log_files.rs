@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_log_fi
     }
 }
 
-pub use crate::operation::describe_db_log_files::_describe_db_log_files_output::DescribeDbLogFilesOutput;
-
 pub use crate::operation::describe_db_log_files::_describe_db_log_files_input::DescribeDbLogFilesInput;
+
+pub use crate::operation::describe_db_log_files::_describe_db_log_files_output::DescribeDbLogFilesOutput;
 
 mod _describe_db_log_files_input;
 

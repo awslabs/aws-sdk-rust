@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tracker::De
     }
 }
 
-pub use crate::operation::delete_tracker::_delete_tracker_output::DeleteTrackerOutput;
-
 pub use crate::operation::delete_tracker::_delete_tracker_input::DeleteTrackerInput;
+
+pub use crate::operation::delete_tracker::_delete_tracker_output::DeleteTrackerOutput;
 
 mod _delete_tracker_input;
 

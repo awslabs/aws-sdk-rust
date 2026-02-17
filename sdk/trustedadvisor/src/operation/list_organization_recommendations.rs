@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_organization_
     }
 }
 
-pub use crate::operation::list_organization_recommendations::_list_organization_recommendations_output::ListOrganizationRecommendationsOutput;
-
 pub use crate::operation::list_organization_recommendations::_list_organization_recommendations_input::ListOrganizationRecommendationsInput;
+
+pub use crate::operation::list_organization_recommendations::_list_organization_recommendations_output::ListOrganizationRecommendationsOutput;
 
 mod _list_organization_recommendations_input;
 

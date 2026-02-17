@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_mobile_devi
     }
 }
 
-pub use crate::operation::create_mobile_device_access_rule::_create_mobile_device_access_rule_output::CreateMobileDeviceAccessRuleOutput;
-
 pub use crate::operation::create_mobile_device_access_rule::_create_mobile_device_access_rule_input::CreateMobileDeviceAccessRuleInput;
+
+pub use crate::operation::create_mobile_device_access_rule::_create_mobile_device_access_rule_output::CreateMobileDeviceAccessRuleOutput;
 
 mod _create_mobile_device_access_rule_input;
 

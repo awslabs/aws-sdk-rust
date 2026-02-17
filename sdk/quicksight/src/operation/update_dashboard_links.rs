@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_dashboard_l
     }
 }
 
-pub use crate::operation::update_dashboard_links::_update_dashboard_links_output::UpdateDashboardLinksOutput;
-
 pub use crate::operation::update_dashboard_links::_update_dashboard_links_input::UpdateDashboardLinksInput;
+
+pub use crate::operation::update_dashboard_links::_update_dashboard_links_output::UpdateDashboardLinksOutput;
 
 mod _update_dashboard_links_input;
 

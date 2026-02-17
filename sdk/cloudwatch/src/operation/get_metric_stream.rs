@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metric_stream:
     }
 }
 
-pub use crate::operation::get_metric_stream::_get_metric_stream_output::GetMetricStreamOutput;
-
 pub use crate::operation::get_metric_stream::_get_metric_stream_input::GetMetricStreamInput;
+
+pub use crate::operation::get_metric_stream::_get_metric_stream_output::GetMetricStreamOutput;
 
 mod _get_metric_stream_input;
 

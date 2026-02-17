@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metadata_trans
     }
 }
 
-pub use crate::operation::get_metadata_transfer_job::_get_metadata_transfer_job_output::GetMetadataTransferJobOutput;
-
 pub use crate::operation::get_metadata_transfer_job::_get_metadata_transfer_job_input::GetMetadataTransferJobInput;
+
+pub use crate::operation::get_metadata_transfer_job::_get_metadata_transfer_job_output::GetMetadataTransferJobOutput;
 
 mod _get_metadata_transfer_job_input;
 

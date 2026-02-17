@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_delegated_acce
     }
 }
 
-pub use crate::operation::get_delegated_access_token::_get_delegated_access_token_output::GetDelegatedAccessTokenOutput;
-
 pub use crate::operation::get_delegated_access_token::_get_delegated_access_token_input::GetDelegatedAccessTokenInput;
+
+pub use crate::operation::get_delegated_access_token::_get_delegated_access_token_output::GetDelegatedAccessTokenOutput;
 
 mod _get_delegated_access_token_input;
 

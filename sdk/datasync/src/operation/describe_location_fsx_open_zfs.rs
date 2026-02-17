@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_fsx_open_zfs::_describe_location_fsx_open_zfs_output::DescribeLocationFsxOpenZfsOutput;
-
 pub use crate::operation::describe_location_fsx_open_zfs::_describe_location_fsx_open_zfs_input::DescribeLocationFsxOpenZfsInput;
+
+pub use crate::operation::describe_location_fsx_open_zfs::_describe_location_fsx_open_zfs_output::DescribeLocationFsxOpenZfsOutput;
 
 mod _describe_location_fsx_open_zfs_input;
 

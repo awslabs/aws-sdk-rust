@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_timeline_ev
     }
 }
 
-pub use crate::operation::update_timeline_event::_update_timeline_event_output::UpdateTimelineEventOutput;
-
 pub use crate::operation::update_timeline_event::_update_timeline_event_input::UpdateTimelineEventInput;
+
+pub use crate::operation::update_timeline_event::_update_timeline_event_output::UpdateTimelineEventOutput;
 
 mod _update_timeline_event_input;
 

@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_targets_
     }
 }
 
-pub use crate::operation::associate_targets_with_job::_associate_targets_with_job_output::AssociateTargetsWithJobOutput;
-
 pub use crate::operation::associate_targets_with_job::_associate_targets_with_job_input::AssociateTargetsWithJobInput;
+
+pub use crate::operation::associate_targets_with_job::_associate_targets_with_job_output::AssociateTargetsWithJobOutput;
 
 mod _associate_targets_with_job_input;
 

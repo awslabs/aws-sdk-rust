@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_image::B
     }
 }
 
-pub use crate::operation::batch_get_image::_batch_get_image_output::BatchGetImageOutput;
-
 pub use crate::operation::batch_get_image::_batch_get_image_input::BatchGetImageInput;
+
+pub use crate::operation::batch_get_image::_batch_get_image_output::BatchGetImageOutput;
 
 mod _batch_get_image_input;
 

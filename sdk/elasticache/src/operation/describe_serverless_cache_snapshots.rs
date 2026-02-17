@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_serverles
     }
 }
 
-pub use crate::operation::describe_serverless_cache_snapshots::_describe_serverless_cache_snapshots_output::DescribeServerlessCacheSnapshotsOutput;
-
 pub use crate::operation::describe_serverless_cache_snapshots::_describe_serverless_cache_snapshots_input::DescribeServerlessCacheSnapshotsInput;
+
+pub use crate::operation::describe_serverless_cache_snapshots::_describe_serverless_cache_snapshots_output::DescribeServerlessCacheSnapshotsOutput;
 
 mod _describe_serverless_cache_snapshots_input;
 

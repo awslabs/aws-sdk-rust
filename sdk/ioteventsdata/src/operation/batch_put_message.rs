@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_message:
     }
 }
 
-pub use crate::operation::batch_put_message::_batch_put_message_output::BatchPutMessageOutput;
-
 pub use crate::operation::batch_put_message::_batch_put_message_input::BatchPutMessageInput;
+
+pub use crate::operation::batch_put_message::_batch_put_message_output::BatchPutMessageOutput;
 
 mod _batch_put_message_input;
 

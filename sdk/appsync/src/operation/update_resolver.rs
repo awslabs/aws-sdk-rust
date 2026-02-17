@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_resolver::U
     }
 }
 
-pub use crate::operation::update_resolver::_update_resolver_output::UpdateResolverOutput;
-
 pub use crate::operation::update_resolver::_update_resolver_input::UpdateResolverInput;
+
+pub use crate::operation::update_resolver::_update_resolver_output::UpdateResolverOutput;
 
 mod _update_resolver_input;
 

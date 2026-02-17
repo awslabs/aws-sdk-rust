@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_enabled_cont
     }
 }
 
-pub use crate::operation::reset_enabled_control::_reset_enabled_control_output::ResetEnabledControlOutput;
-
 pub use crate::operation::reset_enabled_control::_reset_enabled_control_input::ResetEnabledControlInput;
+
+pub use crate::operation::reset_enabled_control::_reset_enabled_control_output::ResetEnabledControlOutput;
 
 mod _reset_enabled_control_input;
 

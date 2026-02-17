@@ -489,9 +489,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::recognize_utteranc
     }
 }
 
-pub use crate::operation::recognize_utterance::_recognize_utterance_output::RecognizeUtteranceOutput;
-
 pub use crate::operation::recognize_utterance::_recognize_utterance_input::RecognizeUtteranceInput;
+
+pub use crate::operation::recognize_utterance::_recognize_utterance_output::RecognizeUtteranceOutput;
 
 mod _recognize_utterance_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sol_function_p
     }
 }
 
-pub use crate::operation::get_sol_function_package_content::_get_sol_function_package_content_output::GetSolFunctionPackageContentOutput;
-
 pub use crate::operation::get_sol_function_package_content::_get_sol_function_package_content_input::GetSolFunctionPackageContentInput;
+
+pub use crate::operation::get_sol_function_package_content::_get_sol_function_package_content_output::GetSolFunctionPackageContentOutput;
 
 mod _get_sol_function_package_content_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_repository_
     }
 }
 
-pub use crate::operation::delete_repository_link::_delete_repository_link_output::DeleteRepositoryLinkOutput;
-
 pub use crate::operation::delete_repository_link::_delete_repository_link_input::DeleteRepositoryLinkInput;
+
+pub use crate::operation::delete_repository_link::_delete_repository_link_output::DeleteRepositoryLinkOutput;
 
 mod _delete_repository_link_input;
 

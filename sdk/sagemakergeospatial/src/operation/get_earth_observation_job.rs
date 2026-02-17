@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_earth_observat
     }
 }
 
-pub use crate::operation::get_earth_observation_job::_get_earth_observation_job_output::GetEarthObservationJobOutput;
-
 pub use crate::operation::get_earth_observation_job::_get_earth_observation_job_input::GetEarthObservationJobInput;
+
+pub use crate::operation::get_earth_observation_job::_get_earth_observation_job_output::GetEarthObservationJobOutput;
 
 mod _get_earth_observation_job_input;
 

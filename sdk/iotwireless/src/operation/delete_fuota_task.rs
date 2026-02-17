@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fuota_task:
     }
 }
 
-pub use crate::operation::delete_fuota_task::_delete_fuota_task_output::DeleteFuotaTaskOutput;
-
 pub use crate::operation::delete_fuota_task::_delete_fuota_task_input::DeleteFuotaTaskInput;
+
+pub use crate::operation::delete_fuota_task::_delete_fuota_task_output::DeleteFuotaTaskOutput;
 
 mod _delete_fuota_task_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_trial_compo
     }
 }
 
-pub use crate::operation::create_trial_component::_create_trial_component_output::CreateTrialComponentOutput;
-
 pub use crate::operation::create_trial_component::_create_trial_component_input::CreateTrialComponentInput;
+
+pub use crate::operation::create_trial_component::_create_trial_component_output::CreateTrialComponentOutput;
 
 mod _create_trial_component_input;
 

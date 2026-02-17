@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analyzers::Li
     }
 }
 
-pub use crate::operation::list_analyzers::_list_analyzers_output::ListAnalyzersOutput;
-
 pub use crate::operation::list_analyzers::_list_analyzers_input::ListAnalyzersInput;
+
+pub use crate::operation::list_analyzers::_list_analyzers_output::ListAnalyzersOutput;
 
 mod _list_analyzers_input;
 

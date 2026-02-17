@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_function_ur
     }
 }
 
-pub use crate::operation::create_function_url_config::_create_function_url_config_output::CreateFunctionUrlConfigOutput;
-
 pub use crate::operation::create_function_url_config::_create_function_url_config_input::CreateFunctionUrlConfigInput;
+
+pub use crate::operation::create_function_url_config::_create_function_url_config_output::CreateFunctionUrlConfigOutput;
 
 mod _create_function_url_config_input;
 

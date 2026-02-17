@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_pull_time
     }
 }
 
-pub use crate::operation::register_pull_time_update_exclusion::_register_pull_time_update_exclusion_output::RegisterPullTimeUpdateExclusionOutput;
-
 pub use crate::operation::register_pull_time_update_exclusion::_register_pull_time_update_exclusion_input::RegisterPullTimeUpdateExclusionInput;
+
+pub use crate::operation::register_pull_time_update_exclusion::_register_pull_time_update_exclusion_output::RegisterPullTimeUpdateExclusionOutput;
 
 mod _register_pull_time_update_exclusion_input;
 

@@ -352,9 +352,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::configure_logs_for
     }
 }
 
-pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channel_output::ConfigureLogsForChannelOutput;
-
 pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channel_input::ConfigureLogsForChannelInput;
+
+pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channel_output::ConfigureLogsForChannelOutput;
 
 mod _configure_logs_for_channel_input;
 

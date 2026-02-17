@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_object_legal_h
     }
 }
 
-pub use crate::operation::put_object_legal_hold::_put_object_legal_hold_output::PutObjectLegalHoldOutput;
-
 pub use crate::operation::put_object_legal_hold::_put_object_legal_hold_input::PutObjectLegalHoldInput;
+
+pub use crate::operation::put_object_legal_hold::_put_object_legal_hold_output::PutObjectLegalHoldOutput;
 
 mod _put_object_legal_hold_input;
 

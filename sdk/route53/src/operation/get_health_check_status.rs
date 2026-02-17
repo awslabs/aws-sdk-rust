@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_health_check_s
     }
 }
 
-pub use crate::operation::get_health_check_status::_get_health_check_status_output::GetHealthCheckStatusOutput;
-
 pub use crate::operation::get_health_check_status::_get_health_check_status_input::GetHealthCheckStatusInput;
+
+pub use crate::operation::get_health_check_status::_get_health_check_status_output::GetHealthCheckStatusOutput;
 
 mod _get_health_check_status_input;
 

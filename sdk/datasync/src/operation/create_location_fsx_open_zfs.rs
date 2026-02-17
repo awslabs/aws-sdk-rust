@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_fs
     }
 }
 
-pub use crate::operation::create_location_fsx_open_zfs::_create_location_fsx_open_zfs_output::CreateLocationFsxOpenZfsOutput;
-
 pub use crate::operation::create_location_fsx_open_zfs::_create_location_fsx_open_zfs_input::CreateLocationFsxOpenZfsInput;
+
+pub use crate::operation::create_location_fsx_open_zfs::_create_location_fsx_open_zfs_output::CreateLocationFsxOpenZfsOutput;
 
 mod _create_location_fsx_open_zfs_input;
 

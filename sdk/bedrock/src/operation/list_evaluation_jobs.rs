@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_evaluation_jo
     }
 }
 
-pub use crate::operation::list_evaluation_jobs::_list_evaluation_jobs_output::ListEvaluationJobsOutput;
-
 pub use crate::operation::list_evaluation_jobs::_list_evaluation_jobs_input::ListEvaluationJobsInput;
+
+pub use crate::operation::list_evaluation_jobs::_list_evaluation_jobs_output::ListEvaluationJobsOutput;
 
 mod _list_evaluation_jobs_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_artifact_url::
     }
 }
 
-pub use crate::operation::get_artifact_url::_get_artifact_url_output::GetArtifactUrlOutput;
-
 pub use crate::operation::get_artifact_url::_get_artifact_url_input::GetArtifactUrlInput;
+
+pub use crate::operation::get_artifact_url::_get_artifact_url_output::GetArtifactUrlOutput;
 
 mod _get_artifact_url_input;
 

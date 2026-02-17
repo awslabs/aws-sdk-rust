@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_instance_uefi_
     }
 }
 
-pub use crate::operation::get_instance_uefi_data::_get_instance_uefi_data_output::GetInstanceUefiDataOutput;
-
 pub use crate::operation::get_instance_uefi_data::_get_instance_uefi_data_input::GetInstanceUefiDataInput;
+
+pub use crate::operation::get_instance_uefi_data::_get_instance_uefi_data_output::GetInstanceUefiDataOutput;
 
 mod _get_instance_uefi_data_input;
 

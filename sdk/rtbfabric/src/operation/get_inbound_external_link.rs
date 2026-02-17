@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_inbound_extern
     }
 }
 
-pub use crate::operation::get_inbound_external_link::_get_inbound_external_link_output::GetInboundExternalLinkOutput;
-
 pub use crate::operation::get_inbound_external_link::_get_inbound_external_link_input::GetInboundExternalLinkInput;
+
+pub use crate::operation::get_inbound_external_link::_get_inbound_external_link_output::GetInboundExternalLinkOutput;
 
 mod _get_inbound_external_link_input;
 

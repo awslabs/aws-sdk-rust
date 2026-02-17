@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_address_list_
     }
 }
 
-pub use crate::operation::stop_address_list_import_job::_stop_address_list_import_job_output::StopAddressListImportJobOutput;
-
 pub use crate::operation::stop_address_list_import_job::_stop_address_list_import_job_input::StopAddressListImportJobInput;
+
+pub use crate::operation::stop_address_list_import_job::_stop_address_list_import_job_output::StopAddressListImportJobOutput;
 
 mod _stop_address_list_import_job_input;
 

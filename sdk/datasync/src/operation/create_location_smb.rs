@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_sm
     }
 }
 
-pub use crate::operation::create_location_smb::_create_location_smb_output::CreateLocationSmbOutput;
-
 pub use crate::operation::create_location_smb::_create_location_smb_input::CreateLocationSmbInput;
+
+pub use crate::operation::create_location_smb::_create_location_smb_output::CreateLocationSmbOutput;
 
 mod _create_location_smb_input;
 

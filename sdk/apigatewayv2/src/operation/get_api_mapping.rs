@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_api_mapping::G
     }
 }
 
-pub use crate::operation::get_api_mapping::_get_api_mapping_output::GetApiMappingOutput;
-
 pub use crate::operation::get_api_mapping::_get_api_mapping_input::GetApiMappingInput;
+
+pub use crate::operation::get_api_mapping::_get_api_mapping_output::GetApiMappingOutput;
 
 mod _get_api_mapping_input;
 

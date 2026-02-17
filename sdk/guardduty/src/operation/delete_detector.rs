@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_detector::D
     }
 }
 
-pub use crate::operation::delete_detector::_delete_detector_output::DeleteDetectorOutput;
-
 pub use crate::operation::delete_detector::_delete_detector_input::DeleteDetectorInput;
+
+pub use crate::operation::delete_detector::_delete_detector_output::DeleteDetectorOutput;
 
 mod _delete_detector_input;
 

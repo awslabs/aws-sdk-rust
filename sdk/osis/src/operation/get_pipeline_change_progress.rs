@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pipeline_chang
     }
 }
 
-pub use crate::operation::get_pipeline_change_progress::_get_pipeline_change_progress_output::GetPipelineChangeProgressOutput;
-
 pub use crate::operation::get_pipeline_change_progress::_get_pipeline_change_progress_input::GetPipelineChangeProgressInput;
+
+pub use crate::operation::get_pipeline_change_progress::_get_pipeline_change_progress_output::GetPipelineChangeProgressOutput;
 
 mod _get_pipeline_change_progress_input;
 

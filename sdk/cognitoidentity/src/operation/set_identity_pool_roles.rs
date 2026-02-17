@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_identity_pool_
     }
 }
 
-pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_output::SetIdentityPoolRolesOutput;
-
 pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_input::SetIdentityPoolRolesInput;
+
+pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_output::SetIdentityPoolRolesOutput;
 
 mod _set_identity_pool_roles_input;
 

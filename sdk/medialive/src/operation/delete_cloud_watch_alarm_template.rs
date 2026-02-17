@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cloud_watch
     }
 }
 
-pub use crate::operation::delete_cloud_watch_alarm_template::_delete_cloud_watch_alarm_template_output::DeleteCloudWatchAlarmTemplateOutput;
-
 pub use crate::operation::delete_cloud_watch_alarm_template::_delete_cloud_watch_alarm_template_input::DeleteCloudWatchAlarmTemplateInput;
+
+pub use crate::operation::delete_cloud_watch_alarm_template::_delete_cloud_watch_alarm_template_output::DeleteCloudWatchAlarmTemplateOutput;
 
 mod _delete_cloud_watch_alarm_template_input;
 

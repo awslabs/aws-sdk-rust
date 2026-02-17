@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::bulk_publish::Bulk
     }
 }
 
-pub use crate::operation::bulk_publish::_bulk_publish_output::BulkPublishOutput;
-
 pub use crate::operation::bulk_publish::_bulk_publish_input::BulkPublishInput;
+
+pub use crate::operation::bulk_publish::_bulk_publish_output::BulkPublishOutput;
 
 mod _bulk_publish_input;
 

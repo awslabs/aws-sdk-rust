@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_object_lock_co
     }
 }
 
-pub use crate::operation::get_object_lock_configuration::_get_object_lock_configuration_output::GetObjectLockConfigurationOutput;
-
 pub use crate::operation::get_object_lock_configuration::_get_object_lock_configuration_input::GetObjectLockConfigurationInput;
+
+pub use crate::operation::get_object_lock_configuration::_get_object_lock_configuration_output::GetObjectLockConfigurationOutput;
 
 mod _get_object_lock_configuration_input;
 

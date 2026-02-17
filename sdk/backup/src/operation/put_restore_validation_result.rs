@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_restore_valida
     }
 }
 
-pub use crate::operation::put_restore_validation_result::_put_restore_validation_result_output::PutRestoreValidationResultOutput;
-
 pub use crate::operation::put_restore_validation_result::_put_restore_validation_result_input::PutRestoreValidationResultInput;
+
+pub use crate::operation::put_restore_validation_result::_put_restore_validation_result_output::PutRestoreValidationResultOutput;
 
 mod _put_restore_validation_result_input;
 

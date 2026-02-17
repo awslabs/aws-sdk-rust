@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_attachm
     }
 }
 
-pub use crate::operation::create_vpc_attachment::_create_vpc_attachment_output::CreateVpcAttachmentOutput;
-
 pub use crate::operation::create_vpc_attachment::_create_vpc_attachment_input::CreateVpcAttachmentInput;
+
+pub use crate::operation::create_vpc_attachment::_create_vpc_attachment_output::CreateVpcAttachmentOutput;
 
 mod _create_vpc_attachment_input;
 

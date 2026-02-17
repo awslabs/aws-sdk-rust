@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_centralization_rule_for_organization::_delete_centralization_rule_for_organization_output::DeleteCentralizationRuleForOrganizationOutput;
-
 pub use crate::operation::delete_centralization_rule_for_organization::_delete_centralization_rule_for_organization_input::DeleteCentralizationRuleForOrganizationInput;
+
+pub use crate::operation::delete_centralization_rule_for_organization::_delete_centralization_rule_for_organization_output::DeleteCentralizationRuleForOrganizationOutput;
 
 mod _delete_centralization_rule_for_organization_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_entitlements:
     }
 }
 
-pub use crate::operation::list_entitlements::_list_entitlements_output::ListEntitlementsOutput;
-
 pub use crate::operation::list_entitlements::_list_entitlements_input::ListEntitlementsInput;
+
+pub use crate::operation::list_entitlements::_list_entitlements_output::ListEntitlementsOutput;
 
 mod _list_entitlements_input;
 

@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_crawler::Up
     }
 }
 
-pub use crate::operation::update_crawler::_update_crawler_output::UpdateCrawlerOutput;
-
 pub use crate::operation::update_crawler::_update_crawler_input::UpdateCrawlerInput;
+
+pub use crate::operation::update_crawler::_update_crawler_output::UpdateCrawlerOutput;
 
 mod _update_crawler_input;
 

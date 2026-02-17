@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::retire_grant::Reti
     }
 }
 
-pub use crate::operation::retire_grant::_retire_grant_output::RetireGrantOutput;
-
 pub use crate::operation::retire_grant::_retire_grant_input::RetireGrantInput;
+
+pub use crate::operation::retire_grant::_retire_grant_output::RetireGrantOutput;
 
 mod _retire_grant_input;
 

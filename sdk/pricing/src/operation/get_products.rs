@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_products::GetP
     }
 }
 
-pub use crate::operation::get_products::_get_products_output::GetProductsOutput;
-
 pub use crate::operation::get_products::_get_products_input::GetProductsInput;
+
+pub use crate::operation::get_products::_get_products_output::GetProductsOutput;
 
 mod _get_products_input;
 

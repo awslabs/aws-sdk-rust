@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_queue_qu
     }
 }
 
-pub use crate::operation::associate_queue_quick_connects::_associate_queue_quick_connects_output::AssociateQueueQuickConnectsOutput;
-
 pub use crate::operation::associate_queue_quick_connects::_associate_queue_quick_connects_input::AssociateQueueQuickConnectsInput;
+
+pub use crate::operation::associate_queue_quick_connects::_associate_queue_quick_connects_output::AssociateQueueQuickConnectsOutput;
 
 mod _associate_queue_quick_connects_input;
 

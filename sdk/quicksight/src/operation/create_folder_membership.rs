@@ -472,9 +472,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_folder_memb
     }
 }
 
-pub use crate::operation::create_folder_membership::_create_folder_membership_output::CreateFolderMembershipOutput;
-
 pub use crate::operation::create_folder_membership::_create_folder_membership_input::CreateFolderMembershipInput;
+
+pub use crate::operation::create_folder_membership::_create_folder_membership_output::CreateFolderMembershipOutput;
 
 mod _create_folder_membership_input;
 

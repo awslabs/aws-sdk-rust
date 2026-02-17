@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_named_query::G
     }
 }
 
-pub use crate::operation::get_named_query::_get_named_query_output::GetNamedQueryOutput;
-
 pub use crate::operation::get_named_query::_get_named_query_input::GetNamedQueryInput;
+
+pub use crate::operation::get_named_query::_get_named_query_output::GetNamedQueryOutput;
 
 mod _get_named_query_input;
 

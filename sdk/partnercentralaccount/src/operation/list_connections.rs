@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_connections::
     }
 }
 
-pub use crate::operation::list_connections::_list_connections_output::ListConnectionsOutput;
-
 pub use crate::operation::list_connections::_list_connections_input::ListConnectionsInput;
+
+pub use crate::operation::list_connections::_list_connections_output::ListConnectionsOutput;
 
 mod _list_connections_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::lookup_developer_i
     }
 }
 
-pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_output::LookupDeveloperIdentityOutput;
-
 pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_input::LookupDeveloperIdentityInput;
+
+pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_output::LookupDeveloperIdentityOutput;
 
 mod _lookup_developer_identity_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_branch::Del
     }
 }
 
-pub use crate::operation::delete_branch::_delete_branch_output::DeleteBranchOutput;
-
 pub use crate::operation::delete_branch::_delete_branch_input::DeleteBranchInput;
+
+pub use crate::operation::delete_branch::_delete_branch_output::DeleteBranchOutput;
 
 mod _delete_branch_input;
 

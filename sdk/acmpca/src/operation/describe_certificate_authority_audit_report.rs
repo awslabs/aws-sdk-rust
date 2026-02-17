@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_certificate_authority_audit_report::_describe_certificate_authority_audit_report_output::DescribeCertificateAuthorityAuditReportOutput;
-
 pub use crate::operation::describe_certificate_authority_audit_report::_describe_certificate_authority_audit_report_input::DescribeCertificateAuthorityAuditReportInput;
+
+pub use crate::operation::describe_certificate_authority_audit_report::_describe_certificate_authority_audit_report_output::DescribeCertificateAuthorityAuditReportOutput;
 
 mod _describe_certificate_authority_audit_report_input;
 

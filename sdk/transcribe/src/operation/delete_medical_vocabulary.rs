@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_medical_voc
     }
 }
 
-pub use crate::operation::delete_medical_vocabulary::_delete_medical_vocabulary_output::DeleteMedicalVocabularyOutput;
-
 pub use crate::operation::delete_medical_vocabulary::_delete_medical_vocabulary_input::DeleteMedicalVocabularyInput;
+
+pub use crate::operation::delete_medical_vocabulary::_delete_medical_vocabulary_output::DeleteMedicalVocabularyOutput;
 
 mod _delete_medical_vocabulary_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_account_sendin
     }
 }
 
-pub use crate::operation::put_account_sending_attributes::_put_account_sending_attributes_output::PutAccountSendingAttributesOutput;
-
 pub use crate::operation::put_account_sending_attributes::_put_account_sending_attributes_input::PutAccountSendingAttributesInput;
+
+pub use crate::operation::put_account_sending_attributes::_put_account_sending_attributes_output::PutAccountSendingAttributesOutput;
 
 mod _put_account_sending_attributes_input;
 

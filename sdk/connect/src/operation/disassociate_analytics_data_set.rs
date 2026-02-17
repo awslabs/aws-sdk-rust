@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_analy
     }
 }
 
-pub use crate::operation::disassociate_analytics_data_set::_disassociate_analytics_data_set_output::DisassociateAnalyticsDataSetOutput;
-
 pub use crate::operation::disassociate_analytics_data_set::_disassociate_analytics_data_set_input::DisassociateAnalyticsDataSetInput;
+
+pub use crate::operation::disassociate_analytics_data_set::_disassociate_analytics_data_set_output::DisassociateAnalyticsDataSetOutput;
 
 mod _disassociate_analytics_data_set_input;
 

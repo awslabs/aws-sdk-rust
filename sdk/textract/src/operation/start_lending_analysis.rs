@@ -471,9 +471,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_lending_anal
     }
 }
 
-pub use crate::operation::start_lending_analysis::_start_lending_analysis_output::StartLendingAnalysisOutput;
-
 pub use crate::operation::start_lending_analysis::_start_lending_analysis_input::StartLendingAnalysisInput;
+
+pub use crate::operation::start_lending_analysis::_start_lending_analysis_output::StartLendingAnalysisOutput;
 
 mod _start_lending_analysis_input;
 

@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_managed_thing_
     }
 }
 
-pub use crate::operation::get_managed_thing_connectivity_data::_get_managed_thing_connectivity_data_output::GetManagedThingConnectivityDataOutput;
-
 pub use crate::operation::get_managed_thing_connectivity_data::_get_managed_thing_connectivity_data_input::GetManagedThingConnectivityDataInput;
+
+pub use crate::operation::get_managed_thing_connectivity_data::_get_managed_thing_connectivity_data_output::GetManagedThingConnectivityDataOutput;
 
 mod _get_managed_thing_connectivity_data_input;
 

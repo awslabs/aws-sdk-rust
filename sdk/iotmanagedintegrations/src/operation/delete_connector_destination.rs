@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_connector_d
     }
 }
 
-pub use crate::operation::delete_connector_destination::_delete_connector_destination_output::DeleteConnectorDestinationOutput;
-
 pub use crate::operation::delete_connector_destination::_delete_connector_destination_input::DeleteConnectorDestinationInput;
+
+pub use crate::operation::delete_connector_destination::_delete_connector_destination_output::DeleteConnectorDestinationOutput;
 
 mod _delete_connector_destination_input;
 

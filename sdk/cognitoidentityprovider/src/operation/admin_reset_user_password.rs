@@ -487,9 +487,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_reset_user_p
     }
 }
 
-pub use crate::operation::admin_reset_user_password::_admin_reset_user_password_output::AdminResetUserPasswordOutput;
-
 pub use crate::operation::admin_reset_user_password::_admin_reset_user_password_input::AdminResetUserPasswordInput;
+
+pub use crate::operation::admin_reset_user_password::_admin_reset_user_password_output::AdminResetUserPasswordOutput;
 
 mod _admin_reset_user_password_input;
 

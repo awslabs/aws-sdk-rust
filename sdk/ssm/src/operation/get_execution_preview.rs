@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_execution_prev
     }
 }
 
-pub use crate::operation::get_execution_preview::_get_execution_preview_output::GetExecutionPreviewOutput;
-
 pub use crate::operation::get_execution_preview::_get_execution_preview_input::GetExecutionPreviewInput;
+
+pub use crate::operation::get_execution_preview::_get_execution_preview_output::GetExecutionPreviewOutput;
 
 mod _get_execution_preview_input;
 

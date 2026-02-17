@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_type_regi
     }
 }
 
-pub use crate::operation::describe_type_registration::_describe_type_registration_output::DescribeTypeRegistrationOutput;
-
 pub use crate::operation::describe_type_registration::_describe_type_registration_input::DescribeTypeRegistrationInput;
+
+pub use crate::operation::describe_type_registration::_describe_type_registration_output::DescribeTypeRegistrationOutput;
 
 mod _describe_type_registration_input;
 

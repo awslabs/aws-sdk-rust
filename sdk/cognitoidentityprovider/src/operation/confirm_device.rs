@@ -485,9 +485,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_device::Co
     }
 }
 
-pub use crate::operation::confirm_device::_confirm_device_output::ConfirmDeviceOutput;
-
 pub use crate::operation::confirm_device::_confirm_device_input::ConfirmDeviceInput;
+
+pub use crate::operation::confirm_device::_confirm_device_output::ConfirmDeviceOutput;
 
 mod _confirm_device_input;
 

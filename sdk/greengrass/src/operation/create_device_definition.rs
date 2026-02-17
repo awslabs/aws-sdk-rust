@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_device_defi
     }
 }
 
-pub use crate::operation::create_device_definition::_create_device_definition_output::CreateDeviceDefinitionOutput;
-
 pub use crate::operation::create_device_definition::_create_device_definition_input::CreateDeviceDefinitionInput;
+
+pub use crate::operation::create_device_definition::_create_device_definition_output::CreateDeviceDefinitionOutput;
 
 mod _create_device_definition_input;
 

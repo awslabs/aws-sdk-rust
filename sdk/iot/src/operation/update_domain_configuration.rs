@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_domain_conf
     }
 }
 
-pub use crate::operation::update_domain_configuration::_update_domain_configuration_output::UpdateDomainConfigurationOutput;
-
 pub use crate::operation::update_domain_configuration::_update_domain_configuration_input::UpdateDomainConfigurationInput;
+
+pub use crate::operation::update_domain_configuration::_update_domain_configuration_output::UpdateDomainConfigurationOutput;
 
 mod _update_domain_configuration_input;
 

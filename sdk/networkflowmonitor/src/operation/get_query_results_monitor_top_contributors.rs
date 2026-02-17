@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_results_
     }
 }
 
-pub use crate::operation::get_query_results_monitor_top_contributors::_get_query_results_monitor_top_contributors_output::GetQueryResultsMonitorTopContributorsOutput;
-
 pub use crate::operation::get_query_results_monitor_top_contributors::_get_query_results_monitor_top_contributors_input::GetQueryResultsMonitorTopContributorsInput;
+
+pub use crate::operation::get_query_results_monitor_top_contributors::_get_query_results_monitor_top_contributors_output::GetQueryResultsMonitorTopContributorsOutput;
 
 mod _get_query_results_monitor_top_contributors_input;
 

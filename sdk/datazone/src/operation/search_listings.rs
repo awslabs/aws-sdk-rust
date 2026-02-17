@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_listings::S
     }
 }
 
-pub use crate::operation::search_listings::_search_listings_output::SearchListingsOutput;
-
 pub use crate::operation::search_listings::_search_listings_input::SearchListingsInput;
+
+pub use crate::operation::search_listings::_search_listings_output::SearchListingsOutput;
 
 mod _search_listings_input;
 

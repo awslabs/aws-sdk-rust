@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions_by_vpc_origin_id::_list_distributions_by_vpc_origin_id_output::ListDistributionsByVpcOriginIdOutput;
-
 pub use crate::operation::list_distributions_by_vpc_origin_id::_list_distributions_by_vpc_origin_id_input::ListDistributionsByVpcOriginIdInput;
+
+pub use crate::operation::list_distributions_by_vpc_origin_id::_list_distributions_by_vpc_origin_id_output::ListDistributionsByVpcOriginIdOutput;
 
 mod _list_distributions_by_vpc_origin_id_input;
 

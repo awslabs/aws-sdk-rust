@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_experiment_re
     }
 }
 
-pub use crate::operation::list_experiment_resolved_targets::_list_experiment_resolved_targets_output::ListExperimentResolvedTargetsOutput;
-
 pub use crate::operation::list_experiment_resolved_targets::_list_experiment_resolved_targets_input::ListExperimentResolvedTargetsInput;
+
+pub use crate::operation::list_experiment_resolved_targets::_list_experiment_resolved_targets_output::ListExperimentResolvedTargetsOutput;
 
 mod _list_experiment_resolved_targets_input;
 

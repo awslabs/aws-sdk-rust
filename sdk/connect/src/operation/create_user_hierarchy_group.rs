@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_hierar
     }
 }
 
-pub use crate::operation::create_user_hierarchy_group::_create_user_hierarchy_group_output::CreateUserHierarchyGroupOutput;
-
 pub use crate::operation::create_user_hierarchy_group::_create_user_hierarchy_group_input::CreateUserHierarchyGroupInput;
+
+pub use crate::operation::create_user_hierarchy_group::_create_user_hierarchy_group_output::CreateUserHierarchyGroupOutput;
 
 mod _create_user_hierarchy_group_input;
 

@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_resou
     }
 }
 
-pub use crate::operation::disassociate_resource_share::_disassociate_resource_share_output::DisassociateResourceShareOutput;
-
 pub use crate::operation::disassociate_resource_share::_disassociate_resource_share_input::DisassociateResourceShareInput;
+
+pub use crate::operation::disassociate_resource_share::_disassociate_resource_share_output::DisassociateResourceShareOutput;
 
 mod _disassociate_resource_share_input;
 

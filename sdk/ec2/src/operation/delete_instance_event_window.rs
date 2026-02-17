@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_instance_ev
     }
 }
 
-pub use crate::operation::delete_instance_event_window::_delete_instance_event_window_output::DeleteInstanceEventWindowOutput;
-
 pub use crate::operation::delete_instance_event_window::_delete_instance_event_window_input::DeleteInstanceEventWindowInput;
+
+pub use crate::operation::delete_instance_event_window::_delete_instance_event_window_output::DeleteInstanceEventWindowOutput;
 
 mod _delete_instance_event_window_input;
 

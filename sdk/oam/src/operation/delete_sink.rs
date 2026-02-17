@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_sink::Delet
     }
 }
 
-pub use crate::operation::delete_sink::_delete_sink_output::DeleteSinkOutput;
-
 pub use crate::operation::delete_sink::_delete_sink_input::DeleteSinkInput;
+
+pub use crate::operation::delete_sink::_delete_sink_output::DeleteSinkOutput;
 
 mod _delete_sink_input;
 

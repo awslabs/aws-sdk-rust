@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_hours_of_op
     }
 }
 
-pub use crate::operation::search_hours_of_operation_overrides::_search_hours_of_operation_overrides_output::SearchHoursOfOperationOverridesOutput;
-
 pub use crate::operation::search_hours_of_operation_overrides::_search_hours_of_operation_overrides_input::SearchHoursOfOperationOverridesInput;
+
+pub use crate::operation::search_hours_of_operation_overrides::_search_hours_of_operation_overrides_output::SearchHoursOfOperationOverridesOutput;
 
 mod _search_hours_of_operation_overrides_input;
 

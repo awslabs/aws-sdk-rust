@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_network_ana
     }
 }
 
-pub use crate::operation::create_network_analyzer_configuration::_create_network_analyzer_configuration_output::CreateNetworkAnalyzerConfigurationOutput;
-
 pub use crate::operation::create_network_analyzer_configuration::_create_network_analyzer_configuration_input::CreateNetworkAnalyzerConfigurationInput;
+
+pub use crate::operation::create_network_analyzer_configuration::_create_network_analyzer_configuration_output::CreateNetworkAnalyzerConfigurationOutput;
 
 mod _create_network_analyzer_configuration_input;
 

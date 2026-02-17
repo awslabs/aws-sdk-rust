@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_test_grid_sess
     }
 }
 
-pub use crate::operation::get_test_grid_session::_get_test_grid_session_output::GetTestGridSessionOutput;
-
 pub use crate::operation::get_test_grid_session::_get_test_grid_session_input::GetTestGridSessionInput;
+
+pub use crate::operation::get_test_grid_session::_get_test_grid_session_output::GetTestGridSessionOutput;
 
 mod _get_test_grid_session_input;
 

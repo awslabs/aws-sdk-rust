@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_trust_ancho
     }
 }
 
-pub use crate::operation::enable_trust_anchor::_enable_trust_anchor_output::EnableTrustAnchorOutput;
-
 pub use crate::operation::enable_trust_anchor::_enable_trust_anchor_input::EnableTrustAnchorInput;
+
+pub use crate::operation::enable_trust_anchor::_enable_trust_anchor_output::EnableTrustAnchorOutput;
 
 mod _enable_trust_anchor_input;
 

@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_workspac
     }
 }
 
-pub use crate::operation::terminate_workspaces_pool_session::_terminate_workspaces_pool_session_output::TerminateWorkspacesPoolSessionOutput;
-
 pub use crate::operation::terminate_workspaces_pool_session::_terminate_workspaces_pool_session_input::TerminateWorkspacesPoolSessionInput;
+
+pub use crate::operation::terminate_workspaces_pool_session::_terminate_workspaces_pool_session_output::TerminateWorkspacesPoolSessionOutput;
 
 mod _terminate_workspaces_pool_session_input;
 

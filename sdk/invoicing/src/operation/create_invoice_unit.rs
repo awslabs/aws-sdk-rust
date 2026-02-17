@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_invoice_uni
     }
 }
 
-pub use crate::operation::create_invoice_unit::_create_invoice_unit_output::CreateInvoiceUnitOutput;
-
 pub use crate::operation::create_invoice_unit::_create_invoice_unit_input::CreateInvoiceUnitInput;
+
+pub use crate::operation::create_invoice_unit::_create_invoice_unit_output::CreateInvoiceUnitOutput;
 
 mod _create_invoice_unit_input;
 

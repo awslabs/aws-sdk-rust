@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bill_estima
     }
 }
 
-pub use crate::operation::delete_bill_estimate::_delete_bill_estimate_output::DeleteBillEstimateOutput;
-
 pub use crate::operation::delete_bill_estimate::_delete_bill_estimate_input::DeleteBillEstimateInput;
+
+pub use crate::operation::delete_bill_estimate::_delete_bill_estimate_output::DeleteBillEstimateOutput;
 
 mod _delete_bill_estimate_input;
 

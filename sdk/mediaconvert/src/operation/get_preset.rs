@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_preset::GetPre
     }
 }
 
-pub use crate::operation::get_preset::_get_preset_output::GetPresetOutput;
-
 pub use crate::operation::get_preset::_get_preset_input::GetPresetInput;
+
+pub use crate::operation::get_preset::_get_preset_output::GetPresetOutput;
 
 mod _get_preset_input;
 

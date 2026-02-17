@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_service_action_execution_parameters::_describe_service_action_execution_parameters_output::DescribeServiceActionExecutionParametersOutput;
-
 pub use crate::operation::describe_service_action_execution_parameters::_describe_service_action_execution_parameters_input::DescribeServiceActionExecutionParametersInput;
+
+pub use crate::operation::describe_service_action_execution_parameters::_describe_service_action_execution_parameters_output::DescribeServiceActionExecutionParametersOutput;
 
 mod _describe_service_action_execution_parameters_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_job_tagging::G
     }
 }
 
-pub use crate::operation::get_job_tagging::_get_job_tagging_output::GetJobTaggingOutput;
-
 pub use crate::operation::get_job_tagging::_get_job_tagging_input::GetJobTaggingInput;
+
+pub use crate::operation::get_job_tagging::_get_job_tagging_output::GetJobTaggingOutput;
 
 mod _get_job_tagging_input;
 

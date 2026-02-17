@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_autoshift_observer_notification_status::_get_autoshift_observer_notification_status_output::GetAutoshiftObserverNotificationStatusOutput;
-
 pub use crate::operation::get_autoshift_observer_notification_status::_get_autoshift_observer_notification_status_input::GetAutoshiftObserverNotificationStatusInput;
+
+pub use crate::operation::get_autoshift_observer_notification_status::_get_autoshift_observer_notification_status_output::GetAutoshiftObserverNotificationStatusOutput;
 
 mod _get_autoshift_observer_notification_status_input;
 

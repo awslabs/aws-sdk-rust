@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_endpoint_we
     }
 }
 
-pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoint_weights_and_capacities_output::UpdateEndpointWeightsAndCapacitiesOutput;
-
 pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoint_weights_and_capacities_input::UpdateEndpointWeightsAndCapacitiesInput;
+
+pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoint_weights_and_capacities_output::UpdateEndpointWeightsAndCapacitiesOutput;
 
 mod _update_endpoint_weights_and_capacities_input;
 

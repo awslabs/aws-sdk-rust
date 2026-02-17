@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_restore_testin
     }
 }
 
-pub use crate::operation::get_restore_testing_selection::_get_restore_testing_selection_output::GetRestoreTestingSelectionOutput;
-
 pub use crate::operation::get_restore_testing_selection::_get_restore_testing_selection_input::GetRestoreTestingSelectionInput;
+
+pub use crate::operation::get_restore_testing_selection::_get_restore_testing_selection_output::GetRestoreTestingSelectionOutput;
 
 mod _get_restore_testing_selection_input;
 

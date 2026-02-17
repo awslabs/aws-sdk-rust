@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_custom_ro
     }
 }
 
-pub use crate::operation::describe_custom_routing_listener::_describe_custom_routing_listener_output::DescribeCustomRoutingListenerOutput;
-
 pub use crate::operation::describe_custom_routing_listener::_describe_custom_routing_listener_input::DescribeCustomRoutingListenerInput;
+
+pub use crate::operation::describe_custom_routing_listener::_describe_custom_routing_listener_output::DescribeCustomRoutingListenerOutput;
 
 mod _describe_custom_routing_listener_input;
 

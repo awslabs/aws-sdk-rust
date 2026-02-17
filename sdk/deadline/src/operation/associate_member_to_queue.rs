@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_member_t
     }
 }
 
-pub use crate::operation::associate_member_to_queue::_associate_member_to_queue_output::AssociateMemberToQueueOutput;
-
 pub use crate::operation::associate_member_to_queue::_associate_member_to_queue_input::AssociateMemberToQueueInput;
+
+pub use crate::operation::associate_member_to_queue::_associate_member_to_queue_output::AssociateMemberToQueueOutput;
 
 mod _associate_member_to_queue_input;
 

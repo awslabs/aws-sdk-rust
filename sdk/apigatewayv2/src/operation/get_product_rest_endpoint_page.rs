@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_product_rest_e
     }
 }
 
-pub use crate::operation::get_product_rest_endpoint_page::_get_product_rest_endpoint_page_output::GetProductRestEndpointPageOutput;
-
 pub use crate::operation::get_product_rest_endpoint_page::_get_product_rest_endpoint_page_input::GetProductRestEndpointPageInput;
+
+pub use crate::operation::get_product_rest_endpoint_page::_get_product_rest_endpoint_page_output::GetProductRestEndpointPageOutput;
 
 mod _get_product_rest_endpoint_page_input;
 

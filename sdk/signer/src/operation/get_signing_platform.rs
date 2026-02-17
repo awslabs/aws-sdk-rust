@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_signing_platfo
     }
 }
 
-pub use crate::operation::get_signing_platform::_get_signing_platform_output::GetSigningPlatformOutput;
-
 pub use crate::operation::get_signing_platform::_get_signing_platform_input::GetSigningPlatformInput;
+
+pub use crate::operation::get_signing_platform::_get_signing_platform_output::GetSigningPlatformOutput;
 
 mod _get_signing_platform_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_security_
     }
 }
 
-pub use crate::operation::describe_security_configuration::_describe_security_configuration_output::DescribeSecurityConfigurationOutput;
-
 pub use crate::operation::describe_security_configuration::_describe_security_configuration_input::DescribeSecurityConfigurationInput;
+
+pub use crate::operation::describe_security_configuration::_describe_security_configuration_output::DescribeSecurityConfigurationOutput;
 
 mod _describe_security_configuration_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_vpc_ingress_c
     }
 }
 
-pub use crate::operation::list_vpc_ingress_connections::_list_vpc_ingress_connections_output::ListVpcIngressConnectionsOutput;
-
 pub use crate::operation::list_vpc_ingress_connections::_list_vpc_ingress_connections_input::ListVpcIngressConnectionsInput;
+
+pub use crate::operation::list_vpc_ingress_connections::_list_vpc_ingress_connections_output::ListVpcIngressConnectionsOutput;
 
 mod _list_vpc_ingress_connections_input;
 

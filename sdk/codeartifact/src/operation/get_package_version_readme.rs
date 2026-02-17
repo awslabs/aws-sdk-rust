@@ -463,9 +463,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_package_versio
     }
 }
 
-pub use crate::operation::get_package_version_readme::_get_package_version_readme_output::GetPackageVersionReadmeOutput;
-
 pub use crate::operation::get_package_version_readme::_get_package_version_readme_input::GetPackageVersionReadmeInput;
+
+pub use crate::operation::get_package_version_readme::_get_package_version_readme_output::GetPackageVersionReadmeOutput;
 
 mod _get_package_version_readme_input;
 

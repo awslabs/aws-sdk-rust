@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_elasticsear
     }
 }
 
-pub use crate::operation::delete_elasticsearch_service_role::_delete_elasticsearch_service_role_output::DeleteElasticsearchServiceRoleOutput;
-
 pub use crate::operation::delete_elasticsearch_service_role::_delete_elasticsearch_service_role_input::DeleteElasticsearchServiceRoleInput;
+
+pub use crate::operation::delete_elasticsearch_service_role::_delete_elasticsearch_service_role_output::DeleteElasticsearchServiceRoleOutput;
 
 mod _delete_elasticsearch_service_role_input;
 

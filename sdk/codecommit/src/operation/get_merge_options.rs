@@ -511,9 +511,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_merge_options:
     }
 }
 
-pub use crate::operation::get_merge_options::_get_merge_options_output::GetMergeOptionsOutput;
-
 pub use crate::operation::get_merge_options::_get_merge_options_input::GetMergeOptionsInput;
+
+pub use crate::operation::get_merge_options::_get_merge_options_output::GetMergeOptionsOutput;
 
 mod _get_merge_options_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_attachment_
     }
 }
 
-pub use crate::operation::remove_attachment_routing_policy_label::_remove_attachment_routing_policy_label_output::RemoveAttachmentRoutingPolicyLabelOutput;
-
 pub use crate::operation::remove_attachment_routing_policy_label::_remove_attachment_routing_policy_label_input::RemoveAttachmentRoutingPolicyLabelInput;
+
+pub use crate::operation::remove_attachment_routing_policy_label::_remove_attachment_routing_policy_label_output::RemoveAttachmentRoutingPolicyLabelOutput;
 
 mod _remove_attachment_routing_policy_label_input;
 

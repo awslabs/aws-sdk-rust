@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_generated_t
     }
 }
 
-pub use crate::operation::create_generated_template::_create_generated_template_output::CreateGeneratedTemplateOutput;
-
 pub use crate::operation::create_generated_template::_create_generated_template_input::CreateGeneratedTemplateInput;
+
+pub use crate::operation::create_generated_template::_create_generated_template_output::CreateGeneratedTemplateOutput;
 
 mod _create_generated_template_input;
 

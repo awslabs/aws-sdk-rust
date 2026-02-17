@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_face_detection
     }
 }
 
-pub use crate::operation::get_face_detection::_get_face_detection_output::GetFaceDetectionOutput;
-
 pub use crate::operation::get_face_detection::_get_face_detection_input::GetFaceDetectionInput;
+
+pub use crate::operation::get_face_detection::_get_face_detection_output::GetFaceDetectionOutput;
 
 mod _get_face_detection_input;
 

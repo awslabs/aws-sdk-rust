@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_load_balancer:
     }
 }
 
-pub use crate::operation::get_load_balancer::_get_load_balancer_output::GetLoadBalancerOutput;
-
 pub use crate::operation::get_load_balancer::_get_load_balancer_input::GetLoadBalancerInput;
+
+pub use crate::operation::get_load_balancer::_get_load_balancer_output::GetLoadBalancerOutput;
 
 mod _get_load_balancer_input;
 

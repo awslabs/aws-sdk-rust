@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_capacity_ma
     }
 }
 
-pub use crate::operation::create_capacity_manager_data_export::_create_capacity_manager_data_export_output::CreateCapacityManagerDataExportOutput;
-
 pub use crate::operation::create_capacity_manager_data_export::_create_capacity_manager_data_export_input::CreateCapacityManagerDataExportInput;
+
+pub use crate::operation::create_capacity_manager_data_export::_create_capacity_manager_data_export_output::CreateCapacityManagerDataExportOutput;
 
 mod _create_capacity_manager_data_export_input;
 

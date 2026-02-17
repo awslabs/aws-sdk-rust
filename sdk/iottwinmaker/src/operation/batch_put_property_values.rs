@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_property
     }
 }
 
-pub use crate::operation::batch_put_property_values::_batch_put_property_values_output::BatchPutPropertyValuesOutput;
-
 pub use crate::operation::batch_put_property_values::_batch_put_property_values_input::BatchPutPropertyValuesInput;
+
+pub use crate::operation::batch_put_property_values::_batch_put_property_values_output::BatchPutPropertyValuesOutput;
 
 mod _batch_put_property_values_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_benefit_app
     }
 }
 
-pub use crate::operation::cancel_benefit_application::_cancel_benefit_application_output::CancelBenefitApplicationOutput;
-
 pub use crate::operation::cancel_benefit_application::_cancel_benefit_application_input::CancelBenefitApplicationInput;
+
+pub use crate::operation::cancel_benefit_application::_cancel_benefit_application_output::CancelBenefitApplicationOutput;
 
 mod _cancel_benefit_application_input;
 

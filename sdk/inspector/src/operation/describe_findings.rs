@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_findings:
     }
 }
 
-pub use crate::operation::describe_findings::_describe_findings_output::DescribeFindingsOutput;
-
 pub use crate::operation::describe_findings::_describe_findings_input::DescribeFindingsInput;
+
+pub use crate::operation::describe_findings::_describe_findings_output::DescribeFindingsOutput;
 
 mod _describe_findings_input;
 

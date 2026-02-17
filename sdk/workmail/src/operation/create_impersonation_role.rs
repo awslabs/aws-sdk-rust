@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_impersonati
     }
 }
 
-pub use crate::operation::create_impersonation_role::_create_impersonation_role_output::CreateImpersonationRoleOutput;
-
 pub use crate::operation::create_impersonation_role::_create_impersonation_role_input::CreateImpersonationRoleInput;
+
+pub use crate::operation::create_impersonation_role::_create_impersonation_role_output::CreateImpersonationRoleOutput;
 
 mod _create_impersonation_role_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_multi_regio
     }
 }
 
-pub use crate::operation::create_multi_region_endpoint::_create_multi_region_endpoint_output::CreateMultiRegionEndpointOutput;
-
 pub use crate::operation::create_multi_region_endpoint::_create_multi_region_endpoint_input::CreateMultiRegionEndpointInput;
+
+pub use crate::operation::create_multi_region_endpoint::_create_multi_region_endpoint_output::CreateMultiRegionEndpointOutput;
 
 mod _create_multi_region_endpoint_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stream_proces
     }
 }
 
-pub use crate::operation::list_stream_processors::_list_stream_processors_output::ListStreamProcessorsOutput;
-
 pub use crate::operation::list_stream_processors::_list_stream_processors_input::ListStreamProcessorsInput;
+
+pub use crate::operation::list_stream_processors::_list_stream_processors_output::ListStreamProcessorsOutput;
 
 mod _list_stream_processors_input;
 

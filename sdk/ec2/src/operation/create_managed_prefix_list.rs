@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_managed_pre
     }
 }
 
-pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_list_output::CreateManagedPrefixListOutput;
-
 pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_list_input::CreateManagedPrefixListInput;
+
+pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_list_output::CreateManagedPrefixListOutput;
 
 mod _create_managed_prefix_list_input;
 

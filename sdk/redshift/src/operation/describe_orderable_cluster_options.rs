@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_orderable
     }
 }
 
-pub use crate::operation::describe_orderable_cluster_options::_describe_orderable_cluster_options_output::DescribeOrderableClusterOptionsOutput;
-
 pub use crate::operation::describe_orderable_cluster_options::_describe_orderable_cluster_options_input::DescribeOrderableClusterOptionsInput;
+
+pub use crate::operation::describe_orderable_cluster_options::_describe_orderable_cluster_options_output::DescribeOrderableClusterOptionsOutput;
 
 mod _describe_orderable_cluster_options_input;
 

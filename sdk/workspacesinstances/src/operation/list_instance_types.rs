@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_instance_type
     }
 }
 
-pub use crate::operation::list_instance_types::_list_instance_types_output::ListInstanceTypesOutput;
-
 pub use crate::operation::list_instance_types::_list_instance_types_input::ListInstanceTypesInput;
+
+pub use crate::operation::list_instance_types::_list_instance_types_output::ListInstanceTypesOutput;
 
 mod _list_instance_types_input;
 

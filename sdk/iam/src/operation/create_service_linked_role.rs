@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_lin
     }
 }
 
-pub use crate::operation::create_service_linked_role::_create_service_linked_role_output::CreateServiceLinkedRoleOutput;
-
 pub use crate::operation::create_service_linked_role::_create_service_linked_role_input::CreateServiceLinkedRoleInput;
+
+pub use crate::operation::create_service_linked_role::_create_service_linked_role_output::CreateServiceLinkedRoleOutput;
 
 mod _create_service_linked_role_input;
 

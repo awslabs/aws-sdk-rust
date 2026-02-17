@@ -455,9 +455,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_key_materia
     }
 }
 
-pub use crate::operation::import_key_material::_import_key_material_output::ImportKeyMaterialOutput;
-
 pub use crate::operation::import_key_material::_import_key_material_input::ImportKeyMaterialInput;
+
+pub use crate::operation::import_key_material::_import_key_material_output::ImportKeyMaterialOutput;
 
 mod _import_key_material_input;
 

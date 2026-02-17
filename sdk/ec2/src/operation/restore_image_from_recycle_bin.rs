@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_image_from
     }
 }
 
-pub use crate::operation::restore_image_from_recycle_bin::_restore_image_from_recycle_bin_output::RestoreImageFromRecycleBinOutput;
-
 pub use crate::operation::restore_image_from_recycle_bin::_restore_image_from_recycle_bin_input::RestoreImageFromRecycleBinInput;
+
+pub use crate::operation::restore_image_from_recycle_bin::_restore_image_from_recycle_bin_output::RestoreImageFromRecycleBinOutput;
 
 mod _restore_image_from_recycle_bin_input;
 

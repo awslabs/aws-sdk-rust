@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_db_system_sha
     }
 }
 
-pub use crate::operation::list_db_system_shapes::_list_db_system_shapes_output::ListDbSystemShapesOutput;
-
 pub use crate::operation::list_db_system_shapes::_list_db_system_shapes_input::ListDbSystemShapesInput;
+
+pub use crate::operation::list_db_system_shapes::_list_db_system_shapes_output::ListDbSystemShapesOutput;
 
 mod _list_db_system_shapes_input;
 

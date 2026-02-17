@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_resolver_rule_
     }
 }
 
-pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_output::PutResolverRulePolicyOutput;
-
 pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_input::PutResolverRulePolicyInput;
+
+pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_output::PutResolverRulePolicyOutput;
 
 mod _put_resolver_rule_policy_input;
 

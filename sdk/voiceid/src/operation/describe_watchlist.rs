@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_watchlist
     }
 }
 
-pub use crate::operation::describe_watchlist::_describe_watchlist_output::DescribeWatchlistOutput;
-
 pub use crate::operation::describe_watchlist::_describe_watchlist_input::DescribeWatchlistInput;
+
+pub use crate::operation::describe_watchlist::_describe_watchlist_output::DescribeWatchlistOutput;
 
 mod _describe_watchlist_input;
 

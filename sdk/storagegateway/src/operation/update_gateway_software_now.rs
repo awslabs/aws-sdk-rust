@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_gateway_sof
     }
 }
 
-pub use crate::operation::update_gateway_software_now::_update_gateway_software_now_output::UpdateGatewaySoftwareNowOutput;
-
 pub use crate::operation::update_gateway_software_now::_update_gateway_software_now_input::UpdateGatewaySoftwareNowInput;
+
+pub use crate::operation::update_gateway_software_now::_update_gateway_software_now_output::UpdateGatewaySoftwareNowOutput;
 
 mod _update_gateway_software_now_input;
 

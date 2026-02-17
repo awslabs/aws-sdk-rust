@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_metadata_
     }
 }
 
-pub use crate::operation::describe_metadata_model_exports_as_script::_describe_metadata_model_exports_as_script_output::DescribeMetadataModelExportsAsScriptOutput;
-
 pub use crate::operation::describe_metadata_model_exports_as_script::_describe_metadata_model_exports_as_script_input::DescribeMetadataModelExportsAsScriptInput;
+
+pub use crate::operation::describe_metadata_model_exports_as_script::_describe_metadata_model_exports_as_script_output::DescribeMetadataModelExportsAsScriptOutput;
 
 mod _describe_metadata_model_exports_as_script_input;
 

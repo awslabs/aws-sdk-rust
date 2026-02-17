@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stream_su
     }
 }
 
-pub use crate::operation::describe_stream_summary::_describe_stream_summary_output::DescribeStreamSummaryOutput;
-
 pub use crate::operation::describe_stream_summary::_describe_stream_summary_input::DescribeStreamSummaryInput;
+
+pub use crate::operation::describe_stream_summary::_describe_stream_summary_output::DescribeStreamSummaryOutput;
 
 mod _describe_stream_summary_input;
 

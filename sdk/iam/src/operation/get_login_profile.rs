@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_login_profile:
     }
 }
 
-pub use crate::operation::get_login_profile::_get_login_profile_output::GetLoginProfileOutput;
-
 pub use crate::operation::get_login_profile::_get_login_profile_input::GetLoginProfileInput;
+
+pub use crate::operation::get_login_profile::_get_login_profile_output::GetLoginProfileOutput;
 
 mod _get_login_profile_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_contact_stre
     }
 }
 
-pub use crate::operation::start_contact_streaming::_start_contact_streaming_output::StartContactStreamingOutput;
-
 pub use crate::operation::start_contact_streaming::_start_contact_streaming_input::StartContactStreamingInput;
+
+pub use crate::operation::start_contact_streaming::_start_contact_streaming_output::StartContactStreamingOutput;
 
 mod _start_contact_streaming_input;
 

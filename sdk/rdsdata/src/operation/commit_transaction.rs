@@ -502,9 +502,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::commit_transaction
     }
 }
 
-pub use crate::operation::commit_transaction::_commit_transaction_output::CommitTransactionOutput;
-
 pub use crate::operation::commit_transaction::_commit_transaction_input::CommitTransactionInput;
+
+pub use crate::operation::commit_transaction::_commit_transaction_output::CommitTransactionOutput;
 
 mod _commit_transaction_input;
 

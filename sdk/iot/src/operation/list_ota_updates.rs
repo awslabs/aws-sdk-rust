@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ota_updates::
     }
 }
 
-pub use crate::operation::list_ota_updates::_list_ota_updates_output::ListOtaUpdatesOutput;
-
 pub use crate::operation::list_ota_updates::_list_ota_updates_input::ListOtaUpdatesInput;
+
+pub use crate::operation::list_ota_updates::_list_ota_updates_output::ListOtaUpdatesOutput;
 
 mod _list_ota_updates_input;
 

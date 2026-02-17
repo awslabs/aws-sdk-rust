@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_associ
     }
 }
 
-pub use crate::operation::list_domain_associations::_list_domain_associations_output::ListDomainAssociationsOutput;
-
 pub use crate::operation::list_domain_associations::_list_domain_associations_input::ListDomainAssociationsInput;
+
+pub use crate::operation::list_domain_associations::_list_domain_associations_output::ListDomainAssociationsOutput;
 
 mod _list_domain_associations_input;
 

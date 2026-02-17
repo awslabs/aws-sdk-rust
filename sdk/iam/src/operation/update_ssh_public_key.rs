@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ssh_public_
     }
 }
 
-pub use crate::operation::update_ssh_public_key::_update_ssh_public_key_output::UpdateSshPublicKeyOutput;
-
 pub use crate::operation::update_ssh_public_key::_update_ssh_public_key_input::UpdateSshPublicKeyInput;
+
+pub use crate::operation::update_ssh_public_key::_update_ssh_public_key_output::UpdateSshPublicKeyOutput;
 
 mod _update_ssh_public_key_input;
 

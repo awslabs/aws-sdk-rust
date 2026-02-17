@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_version_a
     }
 }
 
-pub use crate::operation::list_app_version_app_components::_list_app_version_app_components_output::ListAppVersionAppComponentsOutput;
-
 pub use crate::operation::list_app_version_app_components::_list_app_version_app_components_input::ListAppVersionAppComponentsInput;
+
+pub use crate::operation::list_app_version_app_components::_list_app_version_app_components_output::ListAppVersionAppComponentsOutput;
 
 mod _list_app_version_app_components_input;
 

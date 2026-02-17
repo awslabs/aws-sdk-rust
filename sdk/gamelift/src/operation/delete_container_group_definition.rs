@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_container_g
     }
 }
 
-pub use crate::operation::delete_container_group_definition::_delete_container_group_definition_output::DeleteContainerGroupDefinitionOutput;
-
 pub use crate::operation::delete_container_group_definition::_delete_container_group_definition_input::DeleteContainerGroupDefinitionInput;
+
+pub use crate::operation::delete_container_group_definition::_delete_container_group_definition_output::DeleteContainerGroupDefinitionOutput;
 
 mod _delete_container_group_definition_input;
 

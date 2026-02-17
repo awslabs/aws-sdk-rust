@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_wireless_devic
     }
 }
 
-pub use crate::operation::get_wireless_device_statistics::_get_wireless_device_statistics_output::GetWirelessDeviceStatisticsOutput;
-
 pub use crate::operation::get_wireless_device_statistics::_get_wireless_device_statistics_input::GetWirelessDeviceStatisticsInput;
+
+pub use crate::operation::get_wireless_device_statistics::_get_wireless_device_statistics_output::GetWirelessDeviceStatisticsOutput;
 
 mod _get_wireless_device_statistics_input;
 

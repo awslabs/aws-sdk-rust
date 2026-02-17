@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stream_grou
     }
 }
 
-pub use crate::operation::create_stream_group::_create_stream_group_output::CreateStreamGroupOutput;
-
 pub use crate::operation::create_stream_group::_create_stream_group_input::CreateStreamGroupInput;
+
+pub use crate::operation::create_stream_group::_create_stream_group_output::CreateStreamGroupOutput;
 
 mod _create_stream_group_input;
 

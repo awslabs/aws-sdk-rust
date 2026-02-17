@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_label::PutLabe
     }
 }
 
-pub use crate::operation::put_label::_put_label_output::PutLabelOutput;
-
 pub use crate::operation::put_label::_put_label_input::PutLabelInput;
+
+pub use crate::operation::put_label::_put_label_output::PutLabelOutput;
 
 mod _put_label_input;
 

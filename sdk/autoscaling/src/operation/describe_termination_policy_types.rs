@@ -360,9 +360,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_terminati
     }
 }
 
-pub use crate::operation::describe_termination_policy_types::_describe_termination_policy_types_output::DescribeTerminationPolicyTypesOutput;
-
 pub use crate::operation::describe_termination_policy_types::_describe_termination_policy_types_input::DescribeTerminationPolicyTypesInput;
+
+pub use crate::operation::describe_termination_policy_types::_describe_termination_policy_types_output::DescribeTerminationPolicyTypesOutput;
 
 mod _describe_termination_policy_types_input;
 

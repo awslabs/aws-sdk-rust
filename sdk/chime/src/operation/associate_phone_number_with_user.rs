@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_phone_nu
     }
 }
 
-pub use crate::operation::associate_phone_number_with_user::_associate_phone_number_with_user_output::AssociatePhoneNumberWithUserOutput;
-
 pub use crate::operation::associate_phone_number_with_user::_associate_phone_number_with_user_input::AssociatePhoneNumberWithUserInput;
+
+pub use crate::operation::associate_phone_number_with_user::_associate_phone_number_with_user_output::AssociatePhoneNumberWithUserOutput;
 
 mod _associate_phone_number_with_user_input;
 

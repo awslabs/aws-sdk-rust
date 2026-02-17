@@ -126,6 +126,16 @@ pub fn de_placement_group(
                 builder = builder.set_linked_group_id(var_9);
             }
             ,
+            s if s.matches("operator") /* Operator com.amazonaws.ec2#PlacementGroup$Operator */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_operator_response::de_operator_response(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_10);
+            }
+            ,
             _ => {}
         }
     }

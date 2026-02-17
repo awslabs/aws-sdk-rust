@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::infer_rx_norm::Inf
     }
 }
 
-pub use crate::operation::infer_rx_norm::_infer_rx_norm_output::InferRxNormOutput;
-
 pub use crate::operation::infer_rx_norm::_infer_rx_norm_input::InferRxNormInput;
+
+pub use crate::operation::infer_rx_norm::_infer_rx_norm_output::InferRxNormOutput;
 
 mod _infer_rx_norm_input;
 

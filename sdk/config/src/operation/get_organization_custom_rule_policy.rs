@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_organization_c
     }
 }
 
-pub use crate::operation::get_organization_custom_rule_policy::_get_organization_custom_rule_policy_output::GetOrganizationCustomRulePolicyOutput;
-
 pub use crate::operation::get_organization_custom_rule_policy::_get_organization_custom_rule_policy_input::GetOrganizationCustomRulePolicyInput;
+
+pub use crate::operation::get_organization_custom_rule_policy::_get_organization_custom_rule_policy_output::GetOrganizationCustomRulePolicyOutput;
 
 mod _get_organization_custom_rule_policy_input;
 

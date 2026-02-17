@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_form_type::Get
     }
 }
 
-pub use crate::operation::get_form_type::_get_form_type_output::GetFormTypeOutput;
-
 pub use crate::operation::get_form_type::_get_form_type_input::GetFormTypeInput;
+
+pub use crate::operation::get_form_type::_get_form_type_output::GetFormTypeOutput;
 
 mod _get_form_type_input;
 

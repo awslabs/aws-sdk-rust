@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_import_label
     }
 }
 
-pub use crate::operation::start_import_labels_task_run::_start_import_labels_task_run_output::StartImportLabelsTaskRunOutput;
-
 pub use crate::operation::start_import_labels_task_run::_start_import_labels_task_run_input::StartImportLabelsTaskRunInput;
+
+pub use crate::operation::start_import_labels_task_run::_start_import_labels_task_run_output::StartImportLabelsTaskRunOutput;
 
 mod _start_import_labels_task_run_input;
 

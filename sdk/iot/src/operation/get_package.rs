@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_package::GetPa
     }
 }
 
-pub use crate::operation::get_package::_get_package_output::GetPackageOutput;
-
 pub use crate::operation::get_package::_get_package_input::GetPackageInput;
+
+pub use crate::operation::get_package::_get_package_output::GetPackageOutput;
 
 mod _get_package_input;
 

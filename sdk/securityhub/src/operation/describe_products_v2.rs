@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_products_
     }
 }
 
-pub use crate::operation::describe_products_v2::_describe_products_v2_output::DescribeProductsV2Output;
-
 pub use crate::operation::describe_products_v2::_describe_products_v2_input::DescribeProductsV2Input;
+
+pub use crate::operation::describe_products_v2::_describe_products_v2_output::DescribeProductsV2Output;
 
 mod _describe_products_v2_input;
 

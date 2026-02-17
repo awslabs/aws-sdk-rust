@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_usage_profi
     }
 }
 
-pub use crate::operation::update_usage_profile::_update_usage_profile_output::UpdateUsageProfileOutput;
-
 pub use crate::operation::update_usage_profile::_update_usage_profile_input::UpdateUsageProfileInput;
+
+pub use crate::operation::update_usage_profile::_update_usage_profile_output::UpdateUsageProfileOutput;
 
 mod _update_usage_profile_input;
 

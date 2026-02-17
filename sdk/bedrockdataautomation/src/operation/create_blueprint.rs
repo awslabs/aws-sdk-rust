@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_blueprint::
     }
 }
 
-pub use crate::operation::create_blueprint::_create_blueprint_output::CreateBlueprintOutput;
-
 pub use crate::operation::create_blueprint::_create_blueprint_input::CreateBlueprintInput;
+
+pub use crate::operation::create_blueprint::_create_blueprint_output::CreateBlueprintOutput;
 
 mod _create_blueprint_input;
 

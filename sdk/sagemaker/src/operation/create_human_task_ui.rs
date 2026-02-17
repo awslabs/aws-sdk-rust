@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_human_task_
     }
 }
 
-pub use crate::operation::create_human_task_ui::_create_human_task_ui_output::CreateHumanTaskUiOutput;
-
 pub use crate::operation::create_human_task_ui::_create_human_task_ui_input::CreateHumanTaskUiInput;
+
+pub use crate::operation::create_human_task_ui::_create_human_task_ui_output::CreateHumanTaskUiOutput;
 
 mod _create_human_task_ui_input;
 

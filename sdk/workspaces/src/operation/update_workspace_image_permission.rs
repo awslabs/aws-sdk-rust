@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_i
     }
 }
 
-pub use crate::operation::update_workspace_image_permission::_update_workspace_image_permission_output::UpdateWorkspaceImagePermissionOutput;
-
 pub use crate::operation::update_workspace_image_permission::_update_workspace_image_permission_input::UpdateWorkspaceImagePermissionInput;
+
+pub use crate::operation::update_workspace_image_permission::_update_workspace_image_permission_output::UpdateWorkspaceImagePermissionOutput;
 
 mod _update_workspace_image_permission_input;
 

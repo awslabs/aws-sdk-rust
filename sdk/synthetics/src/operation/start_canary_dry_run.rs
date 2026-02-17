@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_canary_dry_r
     }
 }
 
-pub use crate::operation::start_canary_dry_run::_start_canary_dry_run_output::StartCanaryDryRunOutput;
-
 pub use crate::operation::start_canary_dry_run::_start_canary_dry_run_input::StartCanaryDryRunInput;
+
+pub use crate::operation::start_canary_dry_run::_start_canary_dry_run_output::StartCanaryDryRunOutput;
 
 mod _start_canary_dry_run_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sbom_export::G
     }
 }
 
-pub use crate::operation::get_sbom_export::_get_sbom_export_output::GetSbomExportOutput;
-
 pub use crate::operation::get_sbom_export::_get_sbom_export_input::GetSbomExportInput;
+
+pub use crate::operation::get_sbom_export::_get_sbom_export_output::GetSbomExportOutput;
 
 mod _get_sbom_export_input;
 

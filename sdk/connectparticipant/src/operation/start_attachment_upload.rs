@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_attachment_u
     }
 }
 
-pub use crate::operation::start_attachment_upload::_start_attachment_upload_output::StartAttachmentUploadOutput;
-
 pub use crate::operation::start_attachment_upload::_start_attachment_upload_input::StartAttachmentUploadInput;
+
+pub use crate::operation::start_attachment_upload::_start_attachment_upload_output::StartAttachmentUploadOutput;
 
 mod _start_attachment_upload_input;
 

@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_quick_conne
     }
 }
 
-pub use crate::operation::update_quick_connect_config::_update_quick_connect_config_output::UpdateQuickConnectConfigOutput;
-
 pub use crate::operation::update_quick_connect_config::_update_quick_connect_config_input::UpdateQuickConnectConfigInput;
+
+pub use crate::operation::update_quick_connect_config::_update_quick_connect_config_output::UpdateQuickConnectConfigOutput;
 
 mod _update_quick_connect_config_input;
 

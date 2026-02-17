@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_snapshot_at
     }
 }
 
-pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_output::ModifySnapshotAttributeOutput;
-
 pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_input::ModifySnapshotAttributeInput;
+
+pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_output::ModifySnapshotAttributeOutput;
 
 mod _modify_snapshot_attribute_input;
 

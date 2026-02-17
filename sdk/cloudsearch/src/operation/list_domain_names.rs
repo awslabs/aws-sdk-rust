@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_domain_names:
     }
 }
 
-pub use crate::operation::list_domain_names::_list_domain_names_output::ListDomainNamesOutput;
-
 pub use crate::operation::list_domain_names::_list_domain_names_input::ListDomainNamesInput;
+
+pub use crate::operation::list_domain_names::_list_domain_names_output::ListDomainNamesOutput;
 
 mod _list_domain_names_input;
 

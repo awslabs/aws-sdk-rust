@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_sessi
     }
 }
 
-pub use crate::operation::disassociate_session_logger::_disassociate_session_logger_output::DisassociateSessionLoggerOutput;
-
 pub use crate::operation::disassociate_session_logger::_disassociate_session_logger_input::DisassociateSessionLoggerInput;
+
+pub use crate::operation::disassociate_session_logger::_disassociate_session_logger_output::DisassociateSessionLoggerOutput;
 
 mod _disassociate_session_logger_input;
 

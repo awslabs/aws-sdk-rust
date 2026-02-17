@@ -469,9 +469,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_step_consumer
     }
 }
 
-pub use crate::operation::list_step_consumers::_list_step_consumers_output::ListStepConsumersOutput;
-
 pub use crate::operation::list_step_consumers::_list_step_consumers_input::ListStepConsumersInput;
+
+pub use crate::operation::list_step_consumers::_list_step_consumers_output::ListStepConsumersOutput;
 
 mod _list_step_consumers_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_endpoint::GetE
     }
 }
 
-pub use crate::operation::get_endpoint::_get_endpoint_output::GetEndpointOutput;
-
 pub use crate::operation::get_endpoint::_get_endpoint_input::GetEndpointInput;
+
+pub use crate::operation::get_endpoint::_get_endpoint_output::GetEndpointOutput;
 
 mod _get_endpoint_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_identity::D
     }
 }
 
-pub use crate::operation::delete_identity::_delete_identity_output::DeleteIdentityOutput;
-
 pub use crate::operation::delete_identity::_delete_identity_input::DeleteIdentityInput;
+
+pub use crate::operation::delete_identity::_delete_identity_output::DeleteIdentityOutput;
 
 mod _delete_identity_input;
 

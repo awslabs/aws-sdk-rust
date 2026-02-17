@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_decoder_manife
     }
 }
 
-pub use crate::operation::get_decoder_manifest::_get_decoder_manifest_output::GetDecoderManifestOutput;
-
 pub use crate::operation::get_decoder_manifest::_get_decoder_manifest_input::GetDecoderManifestInput;
+
+pub use crate::operation::get_decoder_manifest::_get_decoder_manifest_output::GetDecoderManifestOutput;
 
 mod _get_decoder_manifest_input;
 

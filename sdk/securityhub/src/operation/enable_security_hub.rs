@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_security_hu
     }
 }
 
-pub use crate::operation::enable_security_hub::_enable_security_hub_output::EnableSecurityHubOutput;
-
 pub use crate::operation::enable_security_hub::_enable_security_hub_input::EnableSecurityHubInput;
+
+pub use crate::operation::enable_security_hub::_enable_security_hub_output::EnableSecurityHubOutput;
 
 mod _enable_security_hub_input;
 

@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_review_temp
     }
 }
 
-pub use crate::operation::update_review_template_lens_review::_update_review_template_lens_review_output::UpdateReviewTemplateLensReviewOutput;
-
 pub use crate::operation::update_review_template_lens_review::_update_review_template_lens_review_input::UpdateReviewTemplateLensReviewInput;
+
+pub use crate::operation::update_review_template_lens_review::_update_review_template_lens_review_output::UpdateReviewTemplateLensReviewOutput;
 
 mod _update_review_template_lens_review_input;
 

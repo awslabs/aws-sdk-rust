@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_defi
     }
 }
 
-pub use crate::operation::list_workflow_definitions::_list_workflow_definitions_output::ListWorkflowDefinitionsOutput;
-
 pub use crate::operation::list_workflow_definitions::_list_workflow_definitions_input::ListWorkflowDefinitionsInput;
+
+pub use crate::operation::list_workflow_definitions::_list_workflow_definitions_output::ListWorkflowDefinitionsOutput;
 
 mod _list_workflow_definitions_input;
 

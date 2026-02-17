@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_component::
     }
 }
 
-pub use crate::operation::create_component::_create_component_output::CreateComponentOutput;
-
 pub use crate::operation::create_component::_create_component_input::CreateComponentInput;
+
+pub use crate::operation::create_component::_create_component_output::CreateComponentOutput;
 
 mod _create_component_input;
 

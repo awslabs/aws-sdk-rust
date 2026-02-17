@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_device_pools:
     }
 }
 
-pub use crate::operation::list_device_pools::_list_device_pools_output::ListDevicePoolsOutput;
-
 pub use crate::operation::list_device_pools::_list_device_pools_input::ListDevicePoolsInput;
+
+pub use crate::operation::list_device_pools::_list_device_pools_output::ListDevicePoolsOutput;
 
 mod _list_device_pools_input;
 

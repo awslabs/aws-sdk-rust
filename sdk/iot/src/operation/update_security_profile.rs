@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_security_pr
     }
 }
 
-pub use crate::operation::update_security_profile::_update_security_profile_output::UpdateSecurityProfileOutput;
-
 pub use crate::operation::update_security_profile::_update_security_profile_input::UpdateSecurityProfileInput;
+
+pub use crate::operation::update_security_profile::_update_security_profile_output::UpdateSecurityProfileOutput;
 
 mod _update_security_profile_input;
 

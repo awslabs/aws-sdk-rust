@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_graph_snaps
     }
 }
 
-pub use crate::operation::create_graph_snapshot::_create_graph_snapshot_output::CreateGraphSnapshotOutput;
-
 pub use crate::operation::create_graph_snapshot::_create_graph_snapshot_input::CreateGraphSnapshotInput;
+
+pub use crate::operation::create_graph_snapshot::_create_graph_snapshot_output::CreateGraphSnapshotOutput;
 
 mod _create_graph_snapshot_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_q_app_session
     }
 }
 
-pub use crate::operation::list_q_app_session_data::_list_q_app_session_data_output::ListQAppSessionDataOutput;
-
 pub use crate::operation::list_q_app_session_data::_list_q_app_session_data_input::ListQAppSessionDataInput;
+
+pub use crate::operation::list_q_app_session_data::_list_q_app_session_data_output::ListQAppSessionDataOutput;
 
 mod _list_q_app_session_data_input;
 

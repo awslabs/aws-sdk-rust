@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_snapshot_
     }
 }
 
-pub use crate::operation::describe_snapshot_copy_grants::_describe_snapshot_copy_grants_output::DescribeSnapshotCopyGrantsOutput;
-
 pub use crate::operation::describe_snapshot_copy_grants::_describe_snapshot_copy_grants_input::DescribeSnapshotCopyGrantsInput;
+
+pub use crate::operation::describe_snapshot_copy_grants::_describe_snapshot_copy_grants_output::DescribeSnapshotCopyGrantsOutput;
 
 mod _describe_snapshot_copy_grants_input;
 

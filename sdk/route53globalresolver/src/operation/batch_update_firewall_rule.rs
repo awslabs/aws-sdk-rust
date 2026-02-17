@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_firew
     }
 }
 
-pub use crate::operation::batch_update_firewall_rule::_batch_update_firewall_rule_output::BatchUpdateFirewallRuleOutput;
-
 pub use crate::operation::batch_update_firewall_rule::_batch_update_firewall_rule_input::BatchUpdateFirewallRuleInput;
+
+pub use crate::operation::batch_update_firewall_rule::_batch_update_firewall_rule_output::BatchUpdateFirewallRuleOutput;
 
 mod _batch_update_firewall_rule_input;
 

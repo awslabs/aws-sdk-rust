@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_role_cust
     }
 }
 
-pub use crate::operation::describe_role_custom_permission::_describe_role_custom_permission_output::DescribeRoleCustomPermissionOutput;
-
 pub use crate::operation::describe_role_custom_permission::_describe_role_custom_permission_input::DescribeRoleCustomPermissionInput;
+
+pub use crate::operation::describe_role_custom_permission::_describe_role_custom_permission_output::DescribeRoleCustomPermissionOutput;
 
 mod _describe_role_custom_permission_input;
 

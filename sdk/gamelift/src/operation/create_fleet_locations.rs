@@ -442,9 +442,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_fleet_locat
     }
 }
 
-pub use crate::operation::create_fleet_locations::_create_fleet_locations_output::CreateFleetLocationsOutput;
-
 pub use crate::operation::create_fleet_locations::_create_fleet_locations_input::CreateFleetLocationsInput;
+
+pub use crate::operation::create_fleet_locations::_create_fleet_locations_output::CreateFleetLocationsOutput;
 
 mod _create_fleet_locations_input;
 

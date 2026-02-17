@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::verify_dns_configu
     }
 }
 
-pub use crate::operation::verify_dns_configuration::_verify_dns_configuration_output::VerifyDnsConfigurationOutput;
-
 pub use crate::operation::verify_dns_configuration::_verify_dns_configuration_input::VerifyDnsConfigurationInput;
+
+pub use crate::operation::verify_dns_configuration::_verify_dns_configuration_output::VerifyDnsConfigurationOutput;
 
 mod _verify_dns_configuration_input;
 

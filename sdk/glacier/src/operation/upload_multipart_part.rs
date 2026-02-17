@@ -504,9 +504,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_multipart_p
     }
 }
 
-pub use crate::operation::upload_multipart_part::_upload_multipart_part_output::UploadMultipartPartOutput;
-
 pub use crate::operation::upload_multipart_part::_upload_multipart_part_input::UploadMultipartPartInput;
+
+pub use crate::operation::upload_multipart_part::_upload_multipart_part_output::UploadMultipartPartOutput;
 
 mod _upload_multipart_part_input;
 

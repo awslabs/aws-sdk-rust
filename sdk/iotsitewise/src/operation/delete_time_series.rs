@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_time_series
     }
 }
 
-pub use crate::operation::delete_time_series::_delete_time_series_output::DeleteTimeSeriesOutput;
-
 pub use crate::operation::delete_time_series::_delete_time_series_input::DeleteTimeSeriesInput;
+
+pub use crate::operation::delete_time_series::_delete_time_series_output::DeleteTimeSeriesOutput;
 
 mod _delete_time_series_input;
 

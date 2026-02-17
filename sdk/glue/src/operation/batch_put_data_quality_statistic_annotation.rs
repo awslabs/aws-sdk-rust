@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::batch_put_data_quality_statistic_annotation::_batch_put_data_quality_statistic_annotation_output::BatchPutDataQualityStatisticAnnotationOutput;
-
 pub use crate::operation::batch_put_data_quality_statistic_annotation::_batch_put_data_quality_statistic_annotation_input::BatchPutDataQualityStatisticAnnotationInput;
+
+pub use crate::operation::batch_put_data_quality_statistic_annotation::_batch_put_data_quality_statistic_annotation_output::BatchPutDataQualityStatisticAnnotationOutput;
 
 mod _batch_put_data_quality_statistic_annotation_input;
 

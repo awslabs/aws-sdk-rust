@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_agreement::
     }
 }
 
-pub use crate::operation::delete_agreement::_delete_agreement_output::DeleteAgreementOutput;
-
 pub use crate::operation::delete_agreement::_delete_agreement_input::DeleteAgreementInput;
+
+pub use crate::operation::delete_agreement::_delete_agreement_output::DeleteAgreementOutput;
 
 mod _delete_agreement_input;
 

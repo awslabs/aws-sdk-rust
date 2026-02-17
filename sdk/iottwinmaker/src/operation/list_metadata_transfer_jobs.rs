@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_metadata_tran
     }
 }
 
-pub use crate::operation::list_metadata_transfer_jobs::_list_metadata_transfer_jobs_output::ListMetadataTransferJobsOutput;
-
 pub use crate::operation::list_metadata_transfer_jobs::_list_metadata_transfer_jobs_input::ListMetadataTransferJobsInput;
+
+pub use crate::operation::list_metadata_transfer_jobs::_list_metadata_transfer_jobs_output::ListMetadataTransferJobsOutput;
 
 mod _list_metadata_transfer_jobs_input;
 

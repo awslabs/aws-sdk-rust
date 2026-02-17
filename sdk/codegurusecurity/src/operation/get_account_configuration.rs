@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_config
     }
 }
 
-pub use crate::operation::get_account_configuration::_get_account_configuration_output::GetAccountConfigurationOutput;
-
 pub use crate::operation::get_account_configuration::_get_account_configuration_input::GetAccountConfigurationInput;
+
+pub use crate::operation::get_account_configuration::_get_account_configuration_output::GetAccountConfigurationOutput;
 
 mod _get_account_configuration_input;
 

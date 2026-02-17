@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_id_format::
     }
 }
 
-pub use crate::operation::modify_id_format::_modify_id_format_output::ModifyIdFormatOutput;
-
 pub use crate::operation::modify_id_format::_modify_id_format_input::ModifyIdFormatInput;
+
+pub use crate::operation::modify_id_format::_modify_id_format_output::ModifyIdFormatOutput;
 
 mod _modify_id_format_input;
 

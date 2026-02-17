@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_local_gatew
     }
 }
 
-pub use crate::operation::delete_local_gateway_route_table::_delete_local_gateway_route_table_output::DeleteLocalGatewayRouteTableOutput;
-
 pub use crate::operation::delete_local_gateway_route_table::_delete_local_gateway_route_table_input::DeleteLocalGatewayRouteTableInput;
+
+pub use crate::operation::delete_local_gateway_route_table::_delete_local_gateway_route_table_output::DeleteLocalGatewayRouteTableOutput;
 
 mod _delete_local_gateway_route_table_input;
 

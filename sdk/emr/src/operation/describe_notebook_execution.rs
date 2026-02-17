@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_notebook_
     }
 }
 
-pub use crate::operation::describe_notebook_execution::_describe_notebook_execution_output::DescribeNotebookExecutionOutput;
-
 pub use crate::operation::describe_notebook_execution::_describe_notebook_execution_input::DescribeNotebookExecutionInput;
+
+pub use crate::operation::describe_notebook_execution::_describe_notebook_execution_output::DescribeNotebookExecutionOutput;
 
 mod _describe_notebook_execution_input;
 

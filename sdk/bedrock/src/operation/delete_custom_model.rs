@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_mode
     }
 }
 
-pub use crate::operation::delete_custom_model::_delete_custom_model_output::DeleteCustomModelOutput;
-
 pub use crate::operation::delete_custom_model::_delete_custom_model_input::DeleteCustomModelInput;
+
+pub use crate::operation::delete_custom_model::_delete_custom_model_output::DeleteCustomModelOutput;
 
 mod _delete_custom_model_input;
 

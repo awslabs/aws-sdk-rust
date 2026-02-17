@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_model_package_
     }
 }
 
-pub use crate::operation::get_model_package_group_policy::_get_model_package_group_policy_output::GetModelPackageGroupPolicyOutput;
-
 pub use crate::operation::get_model_package_group_policy::_get_model_package_group_policy_input::GetModelPackageGroupPolicyInput;
+
+pub use crate::operation::get_model_package_group_policy::_get_model_package_group_policy_output::GetModelPackageGroupPolicyOutput;
 
 mod _get_model_package_group_policy_input;
 

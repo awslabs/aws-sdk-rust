@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::disassociate_managed_notification_additional_channel::_disassociate_managed_notification_additional_channel_output::DisassociateManagedNotificationAdditionalChannelOutput;
-
 pub use crate::operation::disassociate_managed_notification_additional_channel::_disassociate_managed_notification_additional_channel_input::DisassociateManagedNotificationAdditionalChannelInput;
+
+pub use crate::operation::disassociate_managed_notification_additional_channel::_disassociate_managed_notification_additional_channel_output::DisassociateManagedNotificationAdditionalChannelOutput;
 
 mod _disassociate_managed_notification_additional_channel_input;
 

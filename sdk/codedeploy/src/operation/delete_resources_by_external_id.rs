@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resources_b
     }
 }
 
-pub use crate::operation::delete_resources_by_external_id::_delete_resources_by_external_id_output::DeleteResourcesByExternalIdOutput;
-
 pub use crate::operation::delete_resources_by_external_id::_delete_resources_by_external_id_input::DeleteResourcesByExternalIdInput;
+
+pub use crate::operation::delete_resources_by_external_id::_delete_resources_by_external_id_output::DeleteResourcesByExternalIdOutput;
 
 mod _delete_resources_by_external_id_input;
 

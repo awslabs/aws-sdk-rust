@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_transit_gateway_route_table_attachment::_create_transit_gateway_route_table_attachment_output::CreateTransitGatewayRouteTableAttachmentOutput;
-
 pub use crate::operation::create_transit_gateway_route_table_attachment::_create_transit_gateway_route_table_attachment_input::CreateTransitGatewayRouteTableAttachmentInput;
+
+pub use crate::operation::create_transit_gateway_route_table_attachment::_create_transit_gateway_route_table_attachment_output::CreateTransitGatewayRouteTableAttachmentOutput;
 
 mod _create_transit_gateway_route_table_attachment_input;
 

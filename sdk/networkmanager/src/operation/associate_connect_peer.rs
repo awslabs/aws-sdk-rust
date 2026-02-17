@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_connect_
     }
 }
 
-pub use crate::operation::associate_connect_peer::_associate_connect_peer_output::AssociateConnectPeerOutput;
-
 pub use crate::operation::associate_connect_peer::_associate_connect_peer_input::AssociateConnectPeerInput;
+
+pub use crate::operation::associate_connect_peer::_associate_connect_peer_output::AssociateConnectPeerOutput;
 
 mod _associate_connect_peer_input;
 

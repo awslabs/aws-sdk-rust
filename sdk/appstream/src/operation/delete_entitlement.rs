@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_entitlement
     }
 }
 
-pub use crate::operation::delete_entitlement::_delete_entitlement_output::DeleteEntitlementOutput;
-
 pub use crate::operation::delete_entitlement::_delete_entitlement_input::DeleteEntitlementInput;
+
+pub use crate::operation::delete_entitlement::_delete_entitlement_output::DeleteEntitlementOutput;
 
 mod _delete_entitlement_input;
 

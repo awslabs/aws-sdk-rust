@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_what_if_f
     }
 }
 
-pub use crate::operation::describe_what_if_forecast::_describe_what_if_forecast_output::DescribeWhatIfForecastOutput;
-
 pub use crate::operation::describe_what_if_forecast::_describe_what_if_forecast_input::DescribeWhatIfForecastInput;
+
+pub use crate::operation::describe_what_if_forecast::_describe_what_if_forecast_output::DescribeWhatIfForecastOutput;
 
 mod _describe_what_if_forecast_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_certificate
     }
 }
 
-pub use crate::operation::detach_certificate_from_distribution::_detach_certificate_from_distribution_output::DetachCertificateFromDistributionOutput;
-
 pub use crate::operation::detach_certificate_from_distribution::_detach_certificate_from_distribution_input::DetachCertificateFromDistributionInput;
+
+pub use crate::operation::detach_certificate_from_distribution::_detach_certificate_from_distribution_output::DetachCertificateFromDistributionOutput;
 
 mod _detach_certificate_from_distribution_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_table_repli
     }
 }
 
-pub use crate::operation::update_table_replica_auto_scaling::_update_table_replica_auto_scaling_output::UpdateTableReplicaAutoScalingOutput;
-
 pub use crate::operation::update_table_replica_auto_scaling::_update_table_replica_auto_scaling_input::UpdateTableReplicaAutoScalingInput;
+
+pub use crate::operation::update_table_replica_auto_scaling::_update_table_replica_auto_scaling_output::UpdateTableReplicaAutoScalingOutput;
 
 mod _update_table_replica_auto_scaling_input;
 

@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_compute_quo
     }
 }
 
-pub use crate::operation::update_compute_quota::_update_compute_quota_output::UpdateComputeQuotaOutput;
-
 pub use crate::operation::update_compute_quota::_update_compute_quota_input::UpdateComputeQuotaInput;
+
+pub use crate::operation::update_compute_quota::_update_compute_quota_output::UpdateComputeQuotaOutput;
 
 mod _update_compute_quota_input;
 

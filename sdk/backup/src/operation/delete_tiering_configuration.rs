@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tiering_con
     }
 }
 
-pub use crate::operation::delete_tiering_configuration::_delete_tiering_configuration_output::DeleteTieringConfigurationOutput;
-
 pub use crate::operation::delete_tiering_configuration::_delete_tiering_configuration_input::DeleteTieringConfigurationInput;
+
+pub use crate::operation::delete_tiering_configuration::_delete_tiering_configuration_output::DeleteTieringConfigurationOutput;
 
 mod _delete_tiering_configuration_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_record_histor
     }
 }
 
-pub use crate::operation::list_record_history::_list_record_history_output::ListRecordHistoryOutput;
-
 pub use crate::operation::list_record_history::_list_record_history_input::ListRecordHistoryInput;
+
+pub use crate::operation::list_record_history::_list_record_history_output::ListRecordHistoryOutput;
 
 mod _list_record_history_input;
 

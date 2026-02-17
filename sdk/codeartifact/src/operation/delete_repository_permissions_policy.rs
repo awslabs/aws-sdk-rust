@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_repository_
     }
 }
 
-pub use crate::operation::delete_repository_permissions_policy::_delete_repository_permissions_policy_output::DeleteRepositoryPermissionsPolicyOutput;
-
 pub use crate::operation::delete_repository_permissions_policy::_delete_repository_permissions_policy_input::DeleteRepositoryPermissionsPolicyInput;
+
+pub use crate::operation::delete_repository_permissions_policy::_delete_repository_permissions_policy_output::DeleteRepositoryPermissionsPolicyOutput;
 
 mod _delete_repository_permissions_policy_input;
 

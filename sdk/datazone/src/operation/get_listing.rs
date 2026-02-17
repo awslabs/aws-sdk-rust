@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_listing::GetLi
     }
 }
 
-pub use crate::operation::get_listing::_get_listing_output::GetListingOutput;
-
 pub use crate::operation::get_listing::_get_listing_input::GetListingInput;
+
+pub use crate::operation::get_listing::_get_listing_output::GetListingOutput;
 
 mod _get_listing_input;
 

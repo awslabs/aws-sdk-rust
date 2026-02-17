@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_task_defi
     }
 }
 
-pub use crate::operation::register_task_definition::_register_task_definition_output::RegisterTaskDefinitionOutput;
-
 pub use crate::operation::register_task_definition::_register_task_definition_input::RegisterTaskDefinitionInput;
+
+pub use crate::operation::register_task_definition::_register_task_definition_output::RegisterTaskDefinitionOutput;
 
 mod _register_task_definition_input;
 

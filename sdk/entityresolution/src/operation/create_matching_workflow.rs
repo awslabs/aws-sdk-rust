@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_matching_wo
     }
 }
 
-pub use crate::operation::create_matching_workflow::_create_matching_workflow_output::CreateMatchingWorkflowOutput;
-
 pub use crate::operation::create_matching_workflow::_create_matching_workflow_input::CreateMatchingWorkflowInput;
+
+pub use crate::operation::create_matching_workflow::_create_matching_workflow_output::CreateMatchingWorkflowOutput;
 
 mod _create_matching_workflow_input;
 

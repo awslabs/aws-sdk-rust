@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_endpoin
     }
 }
 
-pub use crate::operation::delete_vpc_endpoint_association::_delete_vpc_endpoint_association_output::DeleteVpcEndpointAssociationOutput;
-
 pub use crate::operation::delete_vpc_endpoint_association::_delete_vpc_endpoint_association_input::DeleteVpcEndpointAssociationInput;
+
+pub use crate::operation::delete_vpc_endpoint_association::_delete_vpc_endpoint_association_output::DeleteVpcEndpointAssociationOutput;
 
 mod _delete_vpc_endpoint_association_input;
 

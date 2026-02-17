@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_profile_object
     }
 }
 
-pub use crate::operation::get_profile_object_type_template::_get_profile_object_type_template_output::GetProfileObjectTypeTemplateOutput;
-
 pub use crate::operation::get_profile_object_type_template::_get_profile_object_type_template_input::GetProfileObjectTypeTemplateInput;
+
+pub use crate::operation::get_profile_object_type_template::_get_profile_object_type_template_output::GetProfileObjectTypeTemplateOutput;
 
 mod _get_profile_object_type_template_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_vpc_endpoint_s
     }
 }
 
-pub use crate::operation::get_vpc_endpoint_service_name::_get_vpc_endpoint_service_name_output::GetVpcEndpointServiceNameOutput;
-
 pub use crate::operation::get_vpc_endpoint_service_name::_get_vpc_endpoint_service_name_input::GetVpcEndpointServiceNameInput;
+
+pub use crate::operation::get_vpc_endpoint_service_name::_get_vpc_endpoint_service_name_output::GetVpcEndpointServiceNameOutput;
 
 mod _get_vpc_endpoint_service_name_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_build_batches
     }
 }
 
-pub use crate::operation::list_build_batches::_list_build_batches_output::ListBuildBatchesOutput;
-
 pub use crate::operation::list_build_batches::_list_build_batches_input::ListBuildBatchesInput;
+
+pub use crate::operation::list_build_batches::_list_build_batches_output::ListBuildBatchesOutput;
 
 mod _list_build_batches_input;
 

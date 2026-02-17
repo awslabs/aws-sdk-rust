@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_function_versions_by_capacity_provider::_list_function_versions_by_capacity_provider_output::ListFunctionVersionsByCapacityProviderOutput;
-
 pub use crate::operation::list_function_versions_by_capacity_provider::_list_function_versions_by_capacity_provider_input::ListFunctionVersionsByCapacityProviderInput;
+
+pub use crate::operation::list_function_versions_by_capacity_provider::_list_function_versions_by_capacity_provider_output::ListFunctionVersionsByCapacityProviderOutput;
 
 mod _list_function_versions_by_capacity_provider_input;
 

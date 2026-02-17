@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_all_resourc
     }
 }
 
-pub use crate::operation::remove_all_resource_permissions::_remove_all_resource_permissions_output::RemoveAllResourcePermissionsOutput;
-
 pub use crate::operation::remove_all_resource_permissions::_remove_all_resource_permissions_input::RemoveAllResourcePermissionsInput;
+
+pub use crate::operation::remove_all_resource_permissions::_remove_all_resource_permissions_output::RemoveAllResourcePermissionsOutput;
 
 mod _remove_all_resource_permissions_input;
 

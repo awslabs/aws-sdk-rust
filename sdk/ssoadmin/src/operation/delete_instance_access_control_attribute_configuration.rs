@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_instance_access_control_attribute_configuration::_delete_instance_access_control_attribute_configuration_output::DeleteInstanceAccessControlAttributeConfigurationOutput;
-
 pub use crate::operation::delete_instance_access_control_attribute_configuration::_delete_instance_access_control_attribute_configuration_input::DeleteInstanceAccessControlAttributeConfigurationInput;
+
+pub use crate::operation::delete_instance_access_control_attribute_configuration::_delete_instance_access_control_attribute_configuration_output::DeleteInstanceAccessControlAttributeConfigurationOutput;
 
 mod _delete_instance_access_control_attribute_configuration_input;
 

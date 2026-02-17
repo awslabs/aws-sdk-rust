@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_provisionin
     }
 }
 
-pub use crate::operation::update_provisioning_artifact::_update_provisioning_artifact_output::UpdateProvisioningArtifactOutput;
-
 pub use crate::operation::update_provisioning_artifact::_update_provisioning_artifact_input::UpdateProvisioningArtifactInput;
+
+pub use crate::operation::update_provisioning_artifact::_update_provisioning_artifact_output::UpdateProvisioningArtifactOutput;
 
 mod _update_provisioning_artifact_input;
 

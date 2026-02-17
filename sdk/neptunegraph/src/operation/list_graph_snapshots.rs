@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_graph_snapsho
     }
 }
 
-pub use crate::operation::list_graph_snapshots::_list_graph_snapshots_output::ListGraphSnapshotsOutput;
-
 pub use crate::operation::list_graph_snapshots::_list_graph_snapshots_input::ListGraphSnapshotsInput;
+
+pub use crate::operation::list_graph_snapshots::_list_graph_snapshots_output::ListGraphSnapshotsOutput;
 
 mod _list_graph_snapshots_input;
 

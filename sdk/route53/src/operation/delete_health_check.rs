@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_health_chec
     }
 }
 
-pub use crate::operation::delete_health_check::_delete_health_check_output::DeleteHealthCheckOutput;
-
 pub use crate::operation::delete_health_check::_delete_health_check_input::DeleteHealthCheckInput;
+
+pub use crate::operation::delete_health_check::_delete_health_check_output::DeleteHealthCheckOutput;
 
 mod _delete_health_check_input;
 

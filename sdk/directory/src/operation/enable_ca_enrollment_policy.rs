@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_ca_enrollme
     }
 }
 
-pub use crate::operation::enable_ca_enrollment_policy::_enable_ca_enrollment_policy_output::EnableCaEnrollmentPolicyOutput;
-
 pub use crate::operation::enable_ca_enrollment_policy::_enable_ca_enrollment_policy_input::EnableCaEnrollmentPolicyInput;
+
+pub use crate::operation::enable_ca_enrollment_policy::_enable_ca_enrollment_policy_output::EnableCaEnrollmentPolicyOutput;
 
 mod _enable_ca_enrollment_policy_input;
 

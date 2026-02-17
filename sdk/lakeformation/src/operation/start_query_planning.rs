@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_query_planni
     }
 }
 
-pub use crate::operation::start_query_planning::_start_query_planning_output::StartQueryPlanningOutput;
-
 pub use crate::operation::start_query_planning::_start_query_planning_input::StartQueryPlanningInput;
+
+pub use crate::operation::start_query_planning::_start_query_planning_output::StartQueryPlanningOutput;
 
 mod _start_query_planning_input;
 

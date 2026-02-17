@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_hyper_par
     }
 }
 
-pub use crate::operation::describe_hyper_parameter_tuning_job::_describe_hyper_parameter_tuning_job_output::DescribeHyperParameterTuningJobOutput;
-
 pub use crate::operation::describe_hyper_parameter_tuning_job::_describe_hyper_parameter_tuning_job_input::DescribeHyperParameterTuningJobInput;
+
+pub use crate::operation::describe_hyper_parameter_tuning_job::_describe_hyper_parameter_tuning_job_output::DescribeHyperParameterTuningJobOutput;
 
 mod _describe_hyper_parameter_tuning_job_input;
 

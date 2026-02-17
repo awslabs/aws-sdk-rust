@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_log_subscri
     }
 }
 
-pub use crate::operation::delete_log_subscription::_delete_log_subscription_output::DeleteLogSubscriptionOutput;
-
 pub use crate::operation::delete_log_subscription::_delete_log_subscription_input::DeleteLogSubscriptionInput;
+
+pub use crate::operation::delete_log_subscription::_delete_log_subscription_output::DeleteLogSubscriptionOutput;
 
 mod _delete_log_subscription_input;
 

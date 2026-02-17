@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_map_run::Up
     }
 }
 
-pub use crate::operation::update_map_run::_update_map_run_output::UpdateMapRunOutput;
-
 pub use crate::operation::update_map_run::_update_map_run_input::UpdateMapRunInput;
+
+pub use crate::operation::update_map_run::_update_map_run_output::UpdateMapRunOutput;
 
 mod _update_map_run_input;
 

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_smb_file_sh
     }
 }
 
-pub use crate::operation::update_smb_file_share::_update_smb_file_share_output::UpdateSmbFileShareOutput;
-
 pub use crate::operation::update_smb_file_share::_update_smb_file_share_input::UpdateSmbFileShareInput;
+
+pub use crate::operation::update_smb_file_share::_update_smb_file_share_output::UpdateSmbFileShareOutput;
 
 mod _update_smb_file_share_input;
 

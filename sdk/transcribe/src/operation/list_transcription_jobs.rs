@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_transcription
     }
 }
 
-pub use crate::operation::list_transcription_jobs::_list_transcription_jobs_output::ListTranscriptionJobsOutput;
-
 pub use crate::operation::list_transcription_jobs::_list_transcription_jobs_input::ListTranscriptionJobsInput;
+
+pub use crate::operation::list_transcription_jobs::_list_transcription_jobs_output::ListTranscriptionJobsOutput;
 
 mod _list_transcription_jobs_input;
 

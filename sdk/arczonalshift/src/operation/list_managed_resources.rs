@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_managed_resou
     }
 }
 
-pub use crate::operation::list_managed_resources::_list_managed_resources_output::ListManagedResourcesOutput;
-
 pub use crate::operation::list_managed_resources::_list_managed_resources_input::ListManagedResourcesInput;
+
+pub use crate::operation::list_managed_resources::_list_managed_resources_output::ListManagedResourcesOutput;
 
 mod _list_managed_resources_input;
 

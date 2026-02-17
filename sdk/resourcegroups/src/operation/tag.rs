@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag::TagError {
     }
 }
 
-pub use crate::operation::tag::_tag_output::TagOutput;
-
 pub use crate::operation::tag::_tag_input::TagInput;
+
+pub use crate::operation::tag::_tag_output::TagOutput;
 
 mod _tag_input;
 

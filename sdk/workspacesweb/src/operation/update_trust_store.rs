@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_trust_store
     }
 }
 
-pub use crate::operation::update_trust_store::_update_trust_store_output::UpdateTrustStoreOutput;
-
 pub use crate::operation::update_trust_store::_update_trust_store_input::UpdateTrustStoreInput;
+
+pub use crate::operation::update_trust_store::_update_trust_store_output::UpdateTrustStoreOutput;
 
 mod _update_trust_store_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enter_standby::Ent
     }
 }
 
-pub use crate::operation::enter_standby::_enter_standby_output::EnterStandbyOutput;
-
 pub use crate::operation::enter_standby::_enter_standby_input::EnterStandbyInput;
+
+pub use crate::operation::enter_standby::_enter_standby_output::EnterStandbyOutput;
 
 mod _enter_standby_input;
 

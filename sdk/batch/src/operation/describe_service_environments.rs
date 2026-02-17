@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_service_e
     }
 }
 
-pub use crate::operation::describe_service_environments::_describe_service_environments_output::DescribeServiceEnvironmentsOutput;
-
 pub use crate::operation::describe_service_environments::_describe_service_environments_input::DescribeServiceEnvironmentsInput;
+
+pub use crate::operation::describe_service_environments::_describe_service_environments_output::DescribeServiceEnvironmentsOutput;
 
 mod _describe_service_environments_input;
 

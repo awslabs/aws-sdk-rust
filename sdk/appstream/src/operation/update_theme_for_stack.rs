@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_theme_for_s
     }
 }
 
-pub use crate::operation::update_theme_for_stack::_update_theme_for_stack_output::UpdateThemeForStackOutput;
-
 pub use crate::operation::update_theme_for_stack::_update_theme_for_stack_input::UpdateThemeForStackInput;
+
+pub use crate::operation::update_theme_for_stack::_update_theme_for_stack_output::UpdateThemeForStackOutput;
 
 mod _update_theme_for_stack_input;
 

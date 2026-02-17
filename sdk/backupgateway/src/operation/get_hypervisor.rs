@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_hypervisor::Ge
     }
 }
 
-pub use crate::operation::get_hypervisor::_get_hypervisor_output::GetHypervisorOutput;
-
 pub use crate::operation::get_hypervisor::_get_hypervisor_input::GetHypervisorInput;
+
+pub use crate::operation::get_hypervisor::_get_hypervisor_output::GetHypervisorOutput;
 
 mod _get_hypervisor_input;
 

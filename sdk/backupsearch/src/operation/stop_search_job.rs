@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_search_job::S
     }
 }
 
-pub use crate::operation::stop_search_job::_stop_search_job_output::StopSearchJobOutput;
-
 pub use crate::operation::stop_search_job::_stop_search_job_input::StopSearchJobInput;
+
+pub use crate::operation::stop_search_job::_stop_search_job_output::StopSearchJobOutput;
 
 mod _stop_search_job_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_storage_
     }
 }
 
-pub use crate::operation::get_table_storage_class::_get_table_storage_class_output::GetTableStorageClassOutput;
-
 pub use crate::operation::get_table_storage_class::_get_table_storage_class_input::GetTableStorageClassInput;
+
+pub use crate::operation::get_table_storage_class::_get_table_storage_class_output::GetTableStorageClassOutput;
 
 mod _get_table_storage_class_input;
 

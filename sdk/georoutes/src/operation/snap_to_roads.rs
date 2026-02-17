@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::snap_to_roads::Sna
     }
 }
 
-pub use crate::operation::snap_to_roads::_snap_to_roads_output::SnapToRoadsOutput;
-
 pub use crate::operation::snap_to_roads::_snap_to_roads_input::SnapToRoadsInput;
+
+pub use crate::operation::snap_to_roads::_snap_to_roads_output::SnapToRoadsOutput;
 
 mod _snap_to_roads_input;
 

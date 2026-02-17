@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_application_vp
     }
 }
 
-pub use crate::operation::add_application_vpc_configuration::_add_application_vpc_configuration_output::AddApplicationVpcConfigurationOutput;
-
 pub use crate::operation::add_application_vpc_configuration::_add_application_vpc_configuration_input::AddApplicationVpcConfigurationInput;
+
+pub use crate::operation::add_application_vpc_configuration::_add_application_vpc_configuration_output::AddApplicationVpcConfigurationOutput;
 
 mod _add_application_vpc_configuration_input;
 

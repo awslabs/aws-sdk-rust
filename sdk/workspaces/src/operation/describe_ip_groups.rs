@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_ip_groups
     }
 }
 
-pub use crate::operation::describe_ip_groups::_describe_ip_groups_output::DescribeIpGroupsOutput;
-
 pub use crate::operation::describe_ip_groups::_describe_ip_groups_input::DescribeIpGroupsInput;
+
+pub use crate::operation::describe_ip_groups::_describe_ip_groups_output::DescribeIpGroupsOutput;
 
 mod _describe_ip_groups_input;
 

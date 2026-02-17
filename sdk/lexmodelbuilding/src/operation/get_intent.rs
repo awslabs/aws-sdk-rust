@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_intent::GetInt
     }
 }
 
-pub use crate::operation::get_intent::_get_intent_output::GetIntentOutput;
-
 pub use crate::operation::get_intent::_get_intent_input::GetIntentInput;
+
+pub use crate::operation::get_intent::_get_intent_output::GetIntentOutput;
 
 mod _get_intent_input;
 

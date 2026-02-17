@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_acl::Delete
     }
 }
 
-pub use crate::operation::delete_acl::_delete_acl_output::DeleteAclOutput;
-
 pub use crate::operation::delete_acl::_delete_acl_input::DeleteAclInput;
+
+pub use crate::operation::delete_acl::_delete_acl_output::DeleteAclOutput;
 
 mod _delete_acl_input;
 

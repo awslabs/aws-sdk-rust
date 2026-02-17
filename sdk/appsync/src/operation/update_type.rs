@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_type::Updat
     }
 }
 
-pub use crate::operation::update_type::_update_type_output::UpdateTypeOutput;
-
 pub use crate::operation::update_type::_update_type_input::UpdateTypeInput;
+
+pub use crate::operation::update_type::_update_type_output::UpdateTypeOutput;
 
 mod _update_type_input;
 

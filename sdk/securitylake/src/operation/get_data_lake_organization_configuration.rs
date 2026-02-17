@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_lake_orga
     }
 }
 
-pub use crate::operation::get_data_lake_organization_configuration::_get_data_lake_organization_configuration_output::GetDataLakeOrganizationConfigurationOutput;
-
 pub use crate::operation::get_data_lake_organization_configuration::_get_data_lake_organization_configuration_input::GetDataLakeOrganizationConfigurationInput;
+
+pub use crate::operation::get_data_lake_organization_configuration::_get_data_lake_organization_configuration_output::GetDataLakeOrganizationConfigurationOutput;
 
 mod _get_data_lake_organization_configuration_input;
 

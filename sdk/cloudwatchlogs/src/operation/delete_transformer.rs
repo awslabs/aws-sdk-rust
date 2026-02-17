@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_transformer
     }
 }
 
-pub use crate::operation::delete_transformer::_delete_transformer_output::DeleteTransformerOutput;
-
 pub use crate::operation::delete_transformer::_delete_transformer_input::DeleteTransformerInput;
+
+pub use crate::operation::delete_transformer::_delete_transformer_output::DeleteTransformerOutput;
 
 mod _delete_transformer_input;
 

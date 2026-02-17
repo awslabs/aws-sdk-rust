@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_topics_detect
     }
 }
 
-pub use crate::operation::list_topics_detection_jobs::_list_topics_detection_jobs_output::ListTopicsDetectionJobsOutput;
-
 pub use crate::operation::list_topics_detection_jobs::_list_topics_detection_jobs_input::ListTopicsDetectionJobsInput;
+
+pub use crate::operation::list_topics_detection_jobs::_list_topics_detection_jobs_output::ListTopicsDetectionJobsOutput;
 
 mod _list_topics_detection_jobs_input;
 

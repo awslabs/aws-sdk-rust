@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_package_gro
     }
 }
 
-pub use crate::operation::create_package_group::_create_package_group_output::CreatePackageGroupOutput;
-
 pub use crate::operation::create_package_group::_create_package_group_input::CreatePackageGroupInput;
+
+pub use crate::operation::create_package_group::_create_package_group_output::CreatePackageGroupOutput;
 
 mod _create_package_group_input;
 

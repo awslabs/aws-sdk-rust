@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_predictor
     }
 }
 
-pub use crate::operation::describe_predictor::_describe_predictor_output::DescribePredictorOutput;
-
 pub use crate::operation::describe_predictor::_describe_predictor_input::DescribePredictorInput;
+
+pub use crate::operation::describe_predictor::_describe_predictor_output::DescribePredictorOutput;
 
 mod _describe_predictor_input;
 

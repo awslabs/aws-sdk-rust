@@ -622,9 +622,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inbound_respo
     }
 }
 
-pub use crate::operation::list_inbound_responsibility_transfers::_list_inbound_responsibility_transfers_output::ListInboundResponsibilityTransfersOutput;
-
 pub use crate::operation::list_inbound_responsibility_transfers::_list_inbound_responsibility_transfers_input::ListInboundResponsibilityTransfersInput;
+
+pub use crate::operation::list_inbound_responsibility_transfers::_list_inbound_responsibility_transfers_output::ListInboundResponsibilityTransfersOutput;
 
 mod _list_inbound_responsibility_transfers_input;
 

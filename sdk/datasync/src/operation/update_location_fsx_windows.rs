@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_fs
     }
 }
 
-pub use crate::operation::update_location_fsx_windows::_update_location_fsx_windows_output::UpdateLocationFsxWindowsOutput;
-
 pub use crate::operation::update_location_fsx_windows::_update_location_fsx_windows_input::UpdateLocationFsxWindowsInput;
+
+pub use crate::operation::update_location_fsx_windows::_update_location_fsx_windows_output::UpdateLocationFsxWindowsOutput;
 
 mod _update_location_fsx_windows_input;
 

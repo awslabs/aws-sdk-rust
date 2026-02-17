@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bot_replica
     }
 }
 
-pub use crate::operation::delete_bot_replica::_delete_bot_replica_output::DeleteBotReplicaOutput;
-
 pub use crate::operation::delete_bot_replica::_delete_bot_replica_input::DeleteBotReplicaInput;
+
+pub use crate::operation::delete_bot_replica::_delete_bot_replica_output::DeleteBotReplicaOutput;
 
 mod _delete_bot_replica_input;
 

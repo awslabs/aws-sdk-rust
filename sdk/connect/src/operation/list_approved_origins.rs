@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_approved_orig
     }
 }
 
-pub use crate::operation::list_approved_origins::_list_approved_origins_output::ListApprovedOriginsOutput;
-
 pub use crate::operation::list_approved_origins::_list_approved_origins_input::ListApprovedOriginsInput;
+
+pub use crate::operation::list_approved_origins::_list_approved_origins_output::ListApprovedOriginsOutput;
 
 mod _list_approved_origins_input;
 

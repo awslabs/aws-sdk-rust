@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sip_rule::C
     }
 }
 
-pub use crate::operation::create_sip_rule::_create_sip_rule_output::CreateSipRuleOutput;
-
 pub use crate::operation::create_sip_rule::_create_sip_rule_input::CreateSipRuleInput;
+
+pub use crate::operation::create_sip_rule::_create_sip_rule_output::CreateSipRuleOutput;
 
 mod _create_sip_rule_input;
 

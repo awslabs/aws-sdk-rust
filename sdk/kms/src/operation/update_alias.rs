@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_alias::Upda
     }
 }
 
-pub use crate::operation::update_alias::_update_alias_output::UpdateAliasOutput;
-
 pub use crate::operation::update_alias::_update_alias_input::UpdateAliasInput;
+
+pub use crate::operation::update_alias::_update_alias_output::UpdateAliasOutput;
 
 mod _update_alias_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_subnet_chan
     }
 }
 
-pub use crate::operation::update_subnet_change_protection::_update_subnet_change_protection_output::UpdateSubnetChangeProtectionOutput;
-
 pub use crate::operation::update_subnet_change_protection::_update_subnet_change_protection_input::UpdateSubnetChangeProtectionInput;
+
+pub use crate::operation::update_subnet_change_protection::_update_subnet_change_protection_output::UpdateSubnetChangeProtectionOutput;
 
 mod _update_subnet_change_protection_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_network_acl
     }
 }
 
-pub use crate::operation::delete_network_acl_entry::_delete_network_acl_entry_output::DeleteNetworkAclEntryOutput;
-
 pub use crate::operation::delete_network_acl_entry::_delete_network_acl_entry_input::DeleteNetworkAclEntryInput;
+
+pub use crate::operation::delete_network_acl_entry::_delete_network_acl_entry_output::DeleteNetworkAclEntryOutput;
 
 mod _delete_network_acl_entry_input;
 

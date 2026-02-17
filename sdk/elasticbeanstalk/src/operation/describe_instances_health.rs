@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instances
     }
 }
 
-pub use crate::operation::describe_instances_health::_describe_instances_health_output::DescribeInstancesHealthOutput;
-
 pub use crate::operation::describe_instances_health::_describe_instances_health_input::DescribeInstancesHealthInput;
+
+pub use crate::operation::describe_instances_health::_describe_instances_health_output::DescribeInstancesHealthOutput;
 
 mod _describe_instances_health_input;
 

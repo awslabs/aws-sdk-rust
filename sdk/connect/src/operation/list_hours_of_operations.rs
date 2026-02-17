@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_hours_of_oper
     }
 }
 
-pub use crate::operation::list_hours_of_operations::_list_hours_of_operations_output::ListHoursOfOperationsOutput;
-
 pub use crate::operation::list_hours_of_operations::_list_hours_of_operations_input::ListHoursOfOperationsInput;
+
+pub use crate::operation::list_hours_of_operations::_list_hours_of_operations_output::ListHoursOfOperationsOutput;
 
 mod _list_hours_of_operations_input;
 

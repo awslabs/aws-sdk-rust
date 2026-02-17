@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_code_interpre
     }
 }
 
-pub use crate::operation::stop_code_interpreter_session::_stop_code_interpreter_session_output::StopCodeInterpreterSessionOutput;
-
 pub use crate::operation::stop_code_interpreter_session::_stop_code_interpreter_session_input::StopCodeInterpreterSessionInput;
+
+pub use crate::operation::stop_code_interpreter_session::_stop_code_interpreter_session_output::StopCodeInterpreterSessionOutput;
 
 mod _stop_code_interpreter_session_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_access_g
     }
 }
 
-pub use crate::operation::associate_access_grants_identity_center::_associate_access_grants_identity_center_output::AssociateAccessGrantsIdentityCenterOutput;
-
 pub use crate::operation::associate_access_grants_identity_center::_associate_access_grants_identity_center_input::AssociateAccessGrantsIdentityCenterInput;
+
+pub use crate::operation::associate_access_grants_identity_center::_associate_access_grants_identity_center_output::AssociateAccessGrantsIdentityCenterOutput;
 
 mod _associate_access_grants_identity_center_input;
 

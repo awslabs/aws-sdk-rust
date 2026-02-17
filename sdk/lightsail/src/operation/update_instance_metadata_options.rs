@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_instance_me
     }
 }
 
-pub use crate::operation::update_instance_metadata_options::_update_instance_metadata_options_output::UpdateInstanceMetadataOptionsOutput;
-
 pub use crate::operation::update_instance_metadata_options::_update_instance_metadata_options_input::UpdateInstanceMetadataOptionsInput;
+
+pub use crate::operation::update_instance_metadata_options::_update_instance_metadata_options_output::UpdateInstanceMetadataOptionsOutput;
 
 mod _update_instance_metadata_options_input;
 

@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cloud_vm_cl
     }
 }
 
-pub use crate::operation::create_cloud_vm_cluster::_create_cloud_vm_cluster_output::CreateCloudVmClusterOutput;
-
 pub use crate::operation::create_cloud_vm_cluster::_create_cloud_vm_cluster_input::CreateCloudVmClusterInput;
+
+pub use crate::operation::create_cloud_vm_cluster::_create_cloud_vm_cluster_output::CreateCloudVmClusterOutput;
 
 mod _create_cloud_vm_cluster_input;
 

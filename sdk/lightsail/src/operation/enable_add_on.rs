@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_add_on::Ena
     }
 }
 
-pub use crate::operation::enable_add_on::_enable_add_on_output::EnableAddOnOutput;
-
 pub use crate::operation::enable_add_on::_enable_add_on_input::EnableAddOnInput;
+
+pub use crate::operation::enable_add_on::_enable_add_on_output::EnableAddOnOutput;
 
 mod _enable_add_on_input;
 

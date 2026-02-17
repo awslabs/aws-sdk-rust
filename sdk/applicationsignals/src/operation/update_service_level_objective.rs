@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_service_lev
     }
 }
 
-pub use crate::operation::update_service_level_objective::_update_service_level_objective_output::UpdateServiceLevelObjectiveOutput;
-
 pub use crate::operation::update_service_level_objective::_update_service_level_objective_input::UpdateServiceLevelObjectiveInput;
+
+pub use crate::operation::update_service_level_objective::_update_service_level_objective_output::UpdateServiceLevelObjectiveOutput;
 
 mod _update_service_level_objective_input;
 

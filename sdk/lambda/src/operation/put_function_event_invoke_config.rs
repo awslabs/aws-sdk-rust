@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_function_event
     }
 }
 
-pub use crate::operation::put_function_event_invoke_config::_put_function_event_invoke_config_output::PutFunctionEventInvokeConfigOutput;
-
 pub use crate::operation::put_function_event_invoke_config::_put_function_event_invoke_config_input::PutFunctionEventInvokeConfigInput;
+
+pub use crate::operation::put_function_event_invoke_config::_put_function_event_invoke_config_output::PutFunctionEventInvokeConfigOutput;
 
 mod _put_function_event_invoke_config_input;
 

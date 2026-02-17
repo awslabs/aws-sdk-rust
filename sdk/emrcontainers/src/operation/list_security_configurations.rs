@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_security_conf
     }
 }
 
-pub use crate::operation::list_security_configurations::_list_security_configurations_output::ListSecurityConfigurationsOutput;
-
 pub use crate::operation::list_security_configurations::_list_security_configurations_input::ListSecurityConfigurationsInput;
+
+pub use crate::operation::list_security_configurations::_list_security_configurations_output::ListSecurityConfigurationsOutput;
 
 mod _list_security_configurations_input;
 

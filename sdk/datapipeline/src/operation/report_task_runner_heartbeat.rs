@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::report_task_runner
     }
 }
 
-pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_heartbeat_output::ReportTaskRunnerHeartbeatOutput;
-
 pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_heartbeat_input::ReportTaskRunnerHeartbeatInput;
+
+pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_heartbeat_output::ReportTaskRunnerHeartbeatOutput;
 
 mod _report_task_runner_heartbeat_input;
 

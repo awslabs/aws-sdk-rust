@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_data_table_
     }
 }
 
-pub use crate::operation::update_data_table_attribute::_update_data_table_attribute_output::UpdateDataTableAttributeOutput;
-
 pub use crate::operation::update_data_table_attribute::_update_data_table_attribute_input::UpdateDataTableAttributeInput;
+
+pub use crate::operation::update_data_table_attribute::_update_data_table_attribute_output::UpdateDataTableAttributeOutput;
 
 mod _update_data_table_attribute_input;
 

@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_subscriptio
     }
 }
 
-pub use crate::operation::revoke_subscription::_revoke_subscription_output::RevokeSubscriptionOutput;
-
 pub use crate::operation::revoke_subscription::_revoke_subscription_input::RevokeSubscriptionInput;
+
+pub use crate::operation::revoke_subscription::_revoke_subscription_output::RevokeSubscriptionOutput;
 
 mod _revoke_subscription_input;
 

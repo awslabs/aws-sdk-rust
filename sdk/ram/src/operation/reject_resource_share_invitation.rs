@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_resource_sh
     }
 }
 
-pub use crate::operation::reject_resource_share_invitation::_reject_resource_share_invitation_output::RejectResourceShareInvitationOutput;
-
 pub use crate::operation::reject_resource_share_invitation::_reject_resource_share_invitation_input::RejectResourceShareInvitationInput;
+
+pub use crate::operation::reject_resource_share_invitation::_reject_resource_share_invitation_output::RejectResourceShareInvitationOutput;
 
 mod _reject_resource_share_invitation_input;
 

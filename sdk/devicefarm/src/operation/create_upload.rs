@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_upload::Cre
     }
 }
 
-pub use crate::operation::create_upload::_create_upload_output::CreateUploadOutput;
-
 pub use crate::operation::create_upload::_create_upload_input::CreateUploadInput;
+
+pub use crate::operation::create_upload::_create_upload_output::CreateUploadOutput;
 
 mod _create_upload_input;
 

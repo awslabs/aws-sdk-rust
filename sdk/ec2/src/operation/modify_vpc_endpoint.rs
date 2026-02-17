@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_vpc_endpoin
     }
 }
 
-pub use crate::operation::modify_vpc_endpoint::_modify_vpc_endpoint_output::ModifyVpcEndpointOutput;
-
 pub use crate::operation::modify_vpc_endpoint::_modify_vpc_endpoint_input::ModifyVpcEndpointInput;
+
+pub use crate::operation::modify_vpc_endpoint::_modify_vpc_endpoint_output::ModifyVpcEndpointOutput;
 
 mod _modify_vpc_endpoint_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_relationships
     }
 }
 
-pub use crate::operation::list_relationships::_list_relationships_output::ListRelationshipsOutput;
-
 pub use crate::operation::list_relationships::_list_relationships_input::ListRelationshipsInput;
+
+pub use crate::operation::list_relationships::_list_relationships_output::ListRelationshipsOutput;
 
 mod _list_relationships_input;
 

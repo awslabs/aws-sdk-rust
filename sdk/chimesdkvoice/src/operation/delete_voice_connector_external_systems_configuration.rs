@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_voice_connector_external_systems_configuration::_delete_voice_connector_external_systems_configuration_output::DeleteVoiceConnectorExternalSystemsConfigurationOutput;
-
 pub use crate::operation::delete_voice_connector_external_systems_configuration::_delete_voice_connector_external_systems_configuration_input::DeleteVoiceConnectorExternalSystemsConfigurationInput;
+
+pub use crate::operation::delete_voice_connector_external_systems_configuration::_delete_voice_connector_external_systems_configuration_output::DeleteVoiceConnectorExternalSystemsConfigurationOutput;
 
 mod _delete_voice_connector_external_systems_configuration_input;
 

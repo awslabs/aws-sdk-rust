@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_default_messag
     }
 }
 
-pub use crate::operation::set_default_message_feedback_enabled::_set_default_message_feedback_enabled_output::SetDefaultMessageFeedbackEnabledOutput;
-
 pub use crate::operation::set_default_message_feedback_enabled::_set_default_message_feedback_enabled_input::SetDefaultMessageFeedbackEnabledInput;
+
+pub use crate::operation::set_default_message_feedback_enabled::_set_default_message_feedback_enabled_output::SetDefaultMessageFeedbackEnabledOutput;
 
 mod _set_default_message_feedback_enabled_input;
 

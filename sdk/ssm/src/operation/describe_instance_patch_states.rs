@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_patch_states::_describe_instance_patch_states_output::DescribeInstancePatchStatesOutput;
-
 pub use crate::operation::describe_instance_patch_states::_describe_instance_patch_states_input::DescribeInstancePatchStatesInput;
+
+pub use crate::operation::describe_instance_patch_states::_describe_instance_patch_states_output::DescribeInstancePatchStatesOutput;
 
 mod _describe_instance_patch_states_input;
 

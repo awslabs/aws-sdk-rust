@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_file_system
     }
 }
 
-pub use crate::operation::update_file_system_association::_update_file_system_association_output::UpdateFileSystemAssociationOutput;
-
 pub use crate::operation::update_file_system_association::_update_file_system_association_input::UpdateFileSystemAssociationInput;
+
+pub use crate::operation::update_file_system_association::_update_file_system_association_output::UpdateFileSystemAssociationOutput;
 
 mod _update_file_system_association_input;
 

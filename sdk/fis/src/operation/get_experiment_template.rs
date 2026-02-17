@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_experiment_tem
     }
 }
 
-pub use crate::operation::get_experiment_template::_get_experiment_template_output::GetExperimentTemplateOutput;
-
 pub use crate::operation::get_experiment_template::_get_experiment_template_input::GetExperimentTemplateInput;
+
+pub use crate::operation::get_experiment_template::_get_experiment_template_output::GetExperimentTemplateOutput;
 
 mod _get_experiment_template_input;
 

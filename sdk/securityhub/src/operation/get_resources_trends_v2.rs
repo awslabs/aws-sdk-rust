@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resources_tren
     }
 }
 
-pub use crate::operation::get_resources_trends_v2::_get_resources_trends_v2_output::GetResourcesTrendsV2Output;
-
 pub use crate::operation::get_resources_trends_v2::_get_resources_trends_v2_input::GetResourcesTrendsV2Input;
+
+pub use crate::operation::get_resources_trends_v2::_get_resources_trends_v2_output::GetResourcesTrendsV2Output;
 
 mod _get_resources_trends_v2_input;
 

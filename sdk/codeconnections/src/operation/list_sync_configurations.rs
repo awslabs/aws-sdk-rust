@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sync_configur
     }
 }
 
-pub use crate::operation::list_sync_configurations::_list_sync_configurations_output::ListSyncConfigurationsOutput;
-
 pub use crate::operation::list_sync_configurations::_list_sync_configurations_input::ListSyncConfigurationsInput;
+
+pub use crate::operation::list_sync_configurations::_list_sync_configurations_output::ListSyncConfigurationsOutput;
 
 mod _list_sync_configurations_input;
 

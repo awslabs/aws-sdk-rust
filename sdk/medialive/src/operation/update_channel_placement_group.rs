@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_channel_pla
     }
 }
 
-pub use crate::operation::update_channel_placement_group::_update_channel_placement_group_output::UpdateChannelPlacementGroupOutput;
-
 pub use crate::operation::update_channel_placement_group::_update_channel_placement_group_input::UpdateChannelPlacementGroupInput;
+
+pub use crate::operation::update_channel_placement_group::_update_channel_placement_group_output::UpdateChannelPlacementGroupOutput;
 
 mod _update_channel_placement_group_input;
 

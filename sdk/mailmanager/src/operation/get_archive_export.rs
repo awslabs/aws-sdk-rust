@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_archive_export
     }
 }
 
-pub use crate::operation::get_archive_export::_get_archive_export_output::GetArchiveExportOutput;
-
 pub use crate::operation::get_archive_export::_get_archive_export_input::GetArchiveExportInput;
+
+pub use crate::operation::get_archive_export::_get_archive_export_output::GetArchiveExportOutput;
 
 mod _get_archive_export_input;
 

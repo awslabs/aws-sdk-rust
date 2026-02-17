@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_product_subs
     }
 }
 
-pub use crate::operation::start_product_subscription::_start_product_subscription_output::StartProductSubscriptionOutput;
-
 pub use crate::operation::start_product_subscription::_start_product_subscription_input::StartProductSubscriptionInput;
+
+pub use crate::operation::start_product_subscription::_start_product_subscription_output::StartProductSubscriptionOutput;
 
 mod _start_product_subscription_input;
 

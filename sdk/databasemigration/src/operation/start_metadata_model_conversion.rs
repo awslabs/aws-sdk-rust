@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_metadata_mod
     }
 }
 
-pub use crate::operation::start_metadata_model_conversion::_start_metadata_model_conversion_output::StartMetadataModelConversionOutput;
-
 pub use crate::operation::start_metadata_model_conversion::_start_metadata_model_conversion_input::StartMetadataModelConversionInput;
+
+pub use crate::operation::start_metadata_model_conversion::_start_metadata_model_conversion_output::StartMetadataModelConversionOutput;
 
 mod _start_metadata_model_conversion_input;
 

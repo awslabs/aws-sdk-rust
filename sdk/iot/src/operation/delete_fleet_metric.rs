@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fleet_metri
     }
 }
 
-pub use crate::operation::delete_fleet_metric::_delete_fleet_metric_output::DeleteFleetMetricOutput;
-
 pub use crate::operation::delete_fleet_metric::_delete_fleet_metric_input::DeleteFleetMetricInput;
+
+pub use crate::operation::delete_fleet_metric::_delete_fleet_metric_output::DeleteFleetMetricOutput;
 
 mod _delete_fleet_metric_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_phone_numbe
     }
 }
 
-pub use crate::operation::import_phone_number::_import_phone_number_output::ImportPhoneNumberOutput;
-
 pub use crate::operation::import_phone_number::_import_phone_number_input::ImportPhoneNumberInput;
+
+pub use crate::operation::import_phone_number::_import_phone_number_output::ImportPhoneNumberOutput;
 
 mod _import_phone_number_input;
 

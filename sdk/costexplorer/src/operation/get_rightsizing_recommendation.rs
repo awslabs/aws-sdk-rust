@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rightsizing_re
     }
 }
 
-pub use crate::operation::get_rightsizing_recommendation::_get_rightsizing_recommendation_output::GetRightsizingRecommendationOutput;
-
 pub use crate::operation::get_rightsizing_recommendation::_get_rightsizing_recommendation_input::GetRightsizingRecommendationInput;
+
+pub use crate::operation::get_rightsizing_recommendation::_get_rightsizing_recommendation_output::GetRightsizingRecommendationOutput;
 
 mod _get_rightsizing_recommendation_input;
 

@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_replays::List
     }
 }
 
-pub use crate::operation::list_replays::_list_replays_output::ListReplaysOutput;
-
 pub use crate::operation::list_replays::_list_replays_input::ListReplaysInput;
+
+pub use crate::operation::list_replays::_list_replays_output::ListReplaysOutput;
 
 mod _list_replays_input;
 

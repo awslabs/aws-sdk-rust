@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_insights_
     }
 }
 
-pub use crate::operation::describe_insights_refresh::_describe_insights_refresh_output::DescribeInsightsRefreshOutput;
-
 pub use crate::operation::describe_insights_refresh::_describe_insights_refresh_input::DescribeInsightsRefreshInput;
+
+pub use crate::operation::describe_insights_refresh::_describe_insights_refresh_output::DescribeInsightsRefreshOutput;
 
 mod _describe_insights_refresh_input;
 

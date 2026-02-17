@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_typed_link_
     }
 }
 
-pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_output::CreateTypedLinkFacetOutput;
-
 pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_input::CreateTypedLinkFacetInput;
+
+pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_output::CreateTypedLinkFacetOutput;
 
 mod _create_typed_link_facet_input;
 

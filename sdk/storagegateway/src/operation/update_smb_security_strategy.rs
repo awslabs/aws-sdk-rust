@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_smb_securit
     }
 }
 
-pub use crate::operation::update_smb_security_strategy::_update_smb_security_strategy_output::UpdateSmbSecurityStrategyOutput;
-
 pub use crate::operation::update_smb_security_strategy::_update_smb_security_strategy_input::UpdateSmbSecurityStrategyInput;
+
+pub use crate::operation::update_smb_security_strategy::_update_smb_security_strategy_output::UpdateSmbSecurityStrategyOutput;
 
 mod _update_smb_security_strategy_input;
 

@@ -499,9 +499,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_gremlin_que
     }
 }
 
-pub use crate::operation::cancel_gremlin_query::_cancel_gremlin_query_output::CancelGremlinQueryOutput;
-
 pub use crate::operation::cancel_gremlin_query::_cancel_gremlin_query_input::CancelGremlinQueryInput;
+
+pub use crate::operation::cancel_gremlin_query::_cancel_gremlin_query_output::CancelGremlinQueryOutput;
 
 mod _cancel_gremlin_query_input;
 

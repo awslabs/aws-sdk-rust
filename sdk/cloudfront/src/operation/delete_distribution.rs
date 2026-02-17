@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_distributio
     }
 }
 
-pub use crate::operation::delete_distribution::_delete_distribution_output::DeleteDistributionOutput;
-
 pub use crate::operation::delete_distribution::_delete_distribution_input::DeleteDistributionInput;
+
+pub use crate::operation::delete_distribution::_delete_distribution_output::DeleteDistributionOutput;
 
 mod _delete_distribution_input;
 

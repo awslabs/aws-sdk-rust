@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_table_buckets
     }
 }
 
-pub use crate::operation::list_table_buckets::_list_table_buckets_output::ListTableBucketsOutput;
-
 pub use crate::operation::list_table_buckets::_list_table_buckets_input::ListTableBucketsInput;
+
+pub use crate::operation::list_table_buckets::_list_table_buckets_output::ListTableBucketsOutput;
 
 mod _list_table_buckets_input;
 

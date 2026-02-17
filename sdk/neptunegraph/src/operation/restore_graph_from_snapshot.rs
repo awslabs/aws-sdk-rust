@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_graph_from
     }
 }
 
-pub use crate::operation::restore_graph_from_snapshot::_restore_graph_from_snapshot_output::RestoreGraphFromSnapshotOutput;
-
 pub use crate::operation::restore_graph_from_snapshot::_restore_graph_from_snapshot_input::RestoreGraphFromSnapshotInput;
+
+pub use crate::operation::restore_graph_from_snapshot::_restore_graph_from_snapshot_output::RestoreGraphFromSnapshotOutput;
 
 mod _restore_graph_from_snapshot_input;
 

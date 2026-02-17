@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_resource_grouping_recommendation_task::_describe_resource_grouping_recommendation_task_output::DescribeResourceGroupingRecommendationTaskOutput;
-
 pub use crate::operation::describe_resource_grouping_recommendation_task::_describe_resource_grouping_recommendation_task_input::DescribeResourceGroupingRecommendationTaskInput;
+
+pub use crate::operation::describe_resource_grouping_recommendation_task::_describe_resource_grouping_recommendation_task_output::DescribeResourceGroupingRecommendationTaskOutput;
 
 mod _describe_resource_grouping_recommendation_task_input;
 

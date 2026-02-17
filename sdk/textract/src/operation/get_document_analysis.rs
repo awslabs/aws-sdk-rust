@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_document_analy
     }
 }
 
-pub use crate::operation::get_document_analysis::_get_document_analysis_output::GetDocumentAnalysisOutput;
-
 pub use crate::operation::get_document_analysis::_get_document_analysis_input::GetDocumentAnalysisInput;
+
+pub use crate::operation::get_document_analysis::_get_document_analysis_output::GetDocumentAnalysisOutput;
 
 mod _get_document_analysis_input;
 

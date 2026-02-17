@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_schedulin
     }
 }
 
-pub use crate::operation::describe_scheduling_policies::_describe_scheduling_policies_output::DescribeSchedulingPoliciesOutput;
-
 pub use crate::operation::describe_scheduling_policies::_describe_scheduling_policies_input::DescribeSchedulingPoliciesInput;
+
+pub use crate::operation::describe_scheduling_policies::_describe_scheduling_policies_output::DescribeSchedulingPoliciesOutput;
 
 mod _describe_scheduling_policies_input;
 

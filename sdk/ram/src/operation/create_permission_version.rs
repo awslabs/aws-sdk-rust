@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_permission_
     }
 }
 
-pub use crate::operation::create_permission_version::_create_permission_version_output::CreatePermissionVersionOutput;
-
 pub use crate::operation::create_permission_version::_create_permission_version_input::CreatePermissionVersionInput;
+
+pub use crate::operation::create_permission_version::_create_permission_version_output::CreatePermissionVersionOutput;
 
 mod _create_permission_version_input;
 

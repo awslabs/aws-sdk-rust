@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flow_logs
     }
 }
 
-pub use crate::operation::describe_flow_logs::_describe_flow_logs_output::DescribeFlowLogsOutput;
-
 pub use crate::operation::describe_flow_logs::_describe_flow_logs_input::DescribeFlowLogsInput;
+
+pub use crate::operation::describe_flow_logs::_describe_flow_logs_output::DescribeFlowLogsOutput;
 
 mod _describe_flow_logs_input;
 

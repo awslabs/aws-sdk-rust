@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_saml_provid
     }
 }
 
-pub use crate::operation::create_saml_provider::_create_saml_provider_output::CreateSamlProviderOutput;
-
 pub use crate::operation::create_saml_provider::_create_saml_provider_input::CreateSamlProviderInput;
+
+pub use crate::operation::create_saml_provider::_create_saml_provider_output::CreateSamlProviderOutput;
 
 mod _create_saml_provider_input;
 

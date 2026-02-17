@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_router_co
     }
 }
 
-pub use crate::operation::describe_router_configuration::_describe_router_configuration_output::DescribeRouterConfigurationOutput;
-
 pub use crate::operation::describe_router_configuration::_describe_router_configuration_input::DescribeRouterConfigurationInput;
+
+pub use crate::operation::describe_router_configuration::_describe_router_configuration_output::DescribeRouterConfigurationOutput;
 
 mod _describe_router_configuration_input;
 

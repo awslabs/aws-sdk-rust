@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_key_value_s
     }
 }
 
-pub use crate::operation::update_key_value_store::_update_key_value_store_output::UpdateKeyValueStoreOutput;
-
 pub use crate::operation::update_key_value_store::_update_key_value_store_input::UpdateKeyValueStoreInput;
+
+pub use crate::operation::update_key_value_store::_update_key_value_store_output::UpdateKeyValueStoreOutput;
 
 mod _update_key_value_store_input;
 

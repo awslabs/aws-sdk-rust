@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_detectors::Get
     }
 }
 
-pub use crate::operation::get_detectors::_get_detectors_output::GetDetectorsOutput;
-
 pub use crate::operation::get_detectors::_get_detectors_input::GetDetectorsInput;
+
+pub use crate::operation::get_detectors::_get_detectors_output::GetDetectorsOutput;
 
 mod _get_detectors_input;
 

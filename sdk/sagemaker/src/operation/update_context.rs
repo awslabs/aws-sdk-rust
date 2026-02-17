@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_context::Up
     }
 }
 
-pub use crate::operation::update_context::_update_context_output::UpdateContextOutput;
-
 pub use crate::operation::update_context::_update_context_input::UpdateContextInput;
+
+pub use crate::operation::update_context::_update_context_output::UpdateContextOutput;
 
 mod _update_context_input;
 

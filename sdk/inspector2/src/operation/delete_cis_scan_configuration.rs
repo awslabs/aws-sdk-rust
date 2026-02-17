@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cis_scan_co
     }
 }
 
-pub use crate::operation::delete_cis_scan_configuration::_delete_cis_scan_configuration_output::DeleteCisScanConfigurationOutput;
-
 pub use crate::operation::delete_cis_scan_configuration::_delete_cis_scan_configuration_input::DeleteCisScanConfigurationInput;
+
+pub use crate::operation::delete_cis_scan_configuration::_delete_cis_scan_configuration_output::DeleteCisScanConfigurationOutput;
 
 mod _delete_cis_scan_configuration_input;
 

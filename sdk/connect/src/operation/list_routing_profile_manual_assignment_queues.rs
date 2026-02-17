@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_routing_profile_manual_assignment_queues::_list_routing_profile_manual_assignment_queues_output::ListRoutingProfileManualAssignmentQueuesOutput;
-
 pub use crate::operation::list_routing_profile_manual_assignment_queues::_list_routing_profile_manual_assignment_queues_input::ListRoutingProfileManualAssignmentQueuesInput;
+
+pub use crate::operation::list_routing_profile_manual_assignment_queues::_list_routing_profile_manual_assignment_queues_output::ListRoutingProfileManualAssignmentQueuesOutput;
 
 mod _list_routing_profile_manual_assignment_queues_input;
 

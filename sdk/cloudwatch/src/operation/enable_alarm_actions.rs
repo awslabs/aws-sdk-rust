@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_alarm_actio
     }
 }
 
-pub use crate::operation::enable_alarm_actions::_enable_alarm_actions_output::EnableAlarmActionsOutput;
-
 pub use crate::operation::enable_alarm_actions::_enable_alarm_actions_input::EnableAlarmActionsInput;
+
+pub use crate::operation::enable_alarm_actions::_enable_alarm_actions_output::EnableAlarmActionsOutput;
 
 mod _enable_alarm_actions_input;
 

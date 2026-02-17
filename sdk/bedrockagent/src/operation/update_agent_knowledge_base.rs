@@ -452,9 +452,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_agent_knowl
     }
 }
 
-pub use crate::operation::update_agent_knowledge_base::_update_agent_knowledge_base_output::UpdateAgentKnowledgeBaseOutput;
-
 pub use crate::operation::update_agent_knowledge_base::_update_agent_knowledge_base_input::UpdateAgentKnowledgeBaseInput;
+
+pub use crate::operation::update_agent_knowledge_base::_update_agent_knowledge_base_output::UpdateAgentKnowledgeBaseOutput;
 
 mod _update_agent_knowledge_base_input;
 

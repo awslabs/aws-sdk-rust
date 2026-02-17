@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_origin:
     }
 }
 
-pub use crate::operation::create_vpc_origin::_create_vpc_origin_output::CreateVpcOriginOutput;
-
 pub use crate::operation::create_vpc_origin::_create_vpc_origin_input::CreateVpcOriginInput;
+
+pub use crate::operation::create_vpc_origin::_create_vpc_origin_output::CreateVpcOriginOutput;
 
 mod _create_vpc_origin_input;
 

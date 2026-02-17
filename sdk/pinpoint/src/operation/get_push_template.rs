@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_push_template:
     }
 }
 
-pub use crate::operation::get_push_template::_get_push_template_output::GetPushTemplateOutput;
-
 pub use crate::operation::get_push_template::_get_push_template_input::GetPushTemplateInput;
+
+pub use crate::operation::get_push_template::_get_push_template_output::GetPushTemplateOutput;
 
 mod _get_push_template_input;
 

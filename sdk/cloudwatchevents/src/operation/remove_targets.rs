@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_targets::Re
     }
 }
 
-pub use crate::operation::remove_targets::_remove_targets_output::RemoveTargetsOutput;
-
 pub use crate::operation::remove_targets::_remove_targets_input::RemoveTargetsInput;
+
+pub use crate::operation::remove_targets::_remove_targets_output::RemoveTargetsOutput;
 
 mod _remove_targets_input;
 

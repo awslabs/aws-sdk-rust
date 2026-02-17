@@ -474,9 +474,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_time_series_da
     }
 }
 
-pub use crate::operation::get_time_series_data_point::_get_time_series_data_point_output::GetTimeSeriesDataPointOutput;
-
 pub use crate::operation::get_time_series_data_point::_get_time_series_data_point_input::GetTimeSeriesDataPointInput;
+
+pub use crate::operation::get_time_series_data_point::_get_time_series_data_point_output::GetTimeSeriesDataPointOutput;
 
 mod _get_time_series_data_point_input;
 

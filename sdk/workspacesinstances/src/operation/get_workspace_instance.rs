@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_workspace_inst
     }
 }
 
-pub use crate::operation::get_workspace_instance::_get_workspace_instance_output::GetWorkspaceInstanceOutput;
-
 pub use crate::operation::get_workspace_instance::_get_workspace_instance_input::GetWorkspaceInstanceInput;
+
+pub use crate::operation::get_workspace_instance::_get_workspace_instance_output::GetWorkspaceInstanceOutput;
 
 mod _get_workspace_instance_input;
 

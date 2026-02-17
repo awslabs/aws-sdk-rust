@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_lifecycle_e
     }
 }
 
-pub use crate::operation::cancel_lifecycle_execution::_cancel_lifecycle_execution_output::CancelLifecycleExecutionOutput;
-
 pub use crate::operation::cancel_lifecycle_execution::_cancel_lifecycle_execution_input::CancelLifecycleExecutionInput;
+
+pub use crate::operation::cancel_lifecycle_execution::_cancel_lifecycle_execution_output::CancelLifecycleExecutionOutput;
 
 mod _cancel_lifecycle_execution_input;
 

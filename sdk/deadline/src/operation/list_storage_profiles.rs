@@ -428,9 +428,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_storage_profi
     }
 }
 
-pub use crate::operation::list_storage_profiles::_list_storage_profiles_output::ListStorageProfilesOutput;
-
 pub use crate::operation::list_storage_profiles::_list_storage_profiles_input::ListStorageProfilesInput;
+
+pub use crate::operation::list_storage_profiles::_list_storage_profiles_output::ListStorageProfilesOutput;
 
 mod _list_storage_profiles_input;
 

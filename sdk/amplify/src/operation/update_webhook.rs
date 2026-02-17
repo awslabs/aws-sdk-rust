@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_webhook::Up
     }
 }
 
-pub use crate::operation::update_webhook::_update_webhook_output::UpdateWebhookOutput;
-
 pub use crate::operation::update_webhook::_update_webhook_input::UpdateWebhookInput;
+
+pub use crate::operation::update_webhook::_update_webhook_output::UpdateWebhookOutput;
 
 mod _update_webhook_input;
 

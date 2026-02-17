@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_instance_ev
     }
 }
 
-pub use crate::operation::modify_instance_event_window::_modify_instance_event_window_output::ModifyInstanceEventWindowOutput;
-
 pub use crate::operation::modify_instance_event_window::_modify_instance_event_window_input::ModifyInstanceEventWindowInput;
+
+pub use crate::operation::modify_instance_event_window::_modify_instance_event_window_output::ModifyInstanceEventWindowOutput;
 
 mod _modify_instance_event_window_input;
 

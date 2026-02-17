@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_redshift_id
     }
 }
 
-pub use crate::operation::create_redshift_idc_application::_create_redshift_idc_application_output::CreateRedshiftIdcApplicationOutput;
-
 pub use crate::operation::create_redshift_idc_application::_create_redshift_idc_application_input::CreateRedshiftIdcApplicationInput;
+
+pub use crate::operation::create_redshift_idc_application::_create_redshift_idc_application_output::CreateRedshiftIdcApplicationOutput;
 
 mod _create_redshift_idc_application_input;
 

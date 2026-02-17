@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_trusted_advisor_check_refresh_statuses::_describe_trusted_advisor_check_refresh_statuses_output::DescribeTrustedAdvisorCheckRefreshStatusesOutput;
-
 pub use crate::operation::describe_trusted_advisor_check_refresh_statuses::_describe_trusted_advisor_check_refresh_statuses_input::DescribeTrustedAdvisorCheckRefreshStatusesInput;
+
+pub use crate::operation::describe_trusted_advisor_check_refresh_statuses::_describe_trusted_advisor_check_refresh_statuses_output::DescribeTrustedAdvisorCheckRefreshStatusesOutput;
 
 mod _describe_trusted_advisor_check_refresh_statuses_input;
 

@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_iam_policy_as
     }
 }
 
-pub use crate::operation::list_iam_policy_assignments::_list_iam_policy_assignments_output::ListIamPolicyAssignmentsOutput;
-
 pub use crate::operation::list_iam_policy_assignments::_list_iam_policy_assignments_input::ListIamPolicyAssignmentsInput;
+
+pub use crate::operation::list_iam_policy_assignments::_list_iam_policy_assignments_output::ListIamPolicyAssignmentsOutput;
 
 mod _list_iam_policy_assignments_input;
 

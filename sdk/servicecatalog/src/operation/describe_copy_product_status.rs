@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_copy_prod
     }
 }
 
-pub use crate::operation::describe_copy_product_status::_describe_copy_product_status_output::DescribeCopyProductStatusOutput;
-
 pub use crate::operation::describe_copy_product_status::_describe_copy_product_status_input::DescribeCopyProductStatusInput;
+
+pub use crate::operation::describe_copy_product_status::_describe_copy_product_status_output::DescribeCopyProductStatusOutput;
 
 mod _describe_copy_product_status_input;
 

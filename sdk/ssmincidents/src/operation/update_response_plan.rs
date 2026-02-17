@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_response_pl
     }
 }
 
-pub use crate::operation::update_response_plan::_update_response_plan_output::UpdateResponsePlanOutput;
-
 pub use crate::operation::update_response_plan::_update_response_plan_input::UpdateResponsePlanInput;
+
+pub use crate::operation::update_response_plan::_update_response_plan_output::UpdateResponsePlanOutput;
 
 mod _update_response_plan_input;
 

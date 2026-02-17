@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_clust
     }
 }
 
-pub use crate::operation::batch_delete_cluster_nodes::_batch_delete_cluster_nodes_output::BatchDeleteClusterNodesOutput;
-
 pub use crate::operation::batch_delete_cluster_nodes::_batch_delete_cluster_nodes_input::BatchDeleteClusterNodesInput;
+
+pub use crate::operation::batch_delete_cluster_nodes::_batch_delete_cluster_nodes_output::BatchDeleteClusterNodesOutput;
 
 mod _batch_delete_cluster_nodes_input;
 

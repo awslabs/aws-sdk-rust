@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_monitor::
     }
 }
 
-pub use crate::operation::describe_monitor::_describe_monitor_output::DescribeMonitorOutput;
-
 pub use crate::operation::describe_monitor::_describe_monitor_input::DescribeMonitorInput;
+
+pub use crate::operation::describe_monitor::_describe_monitor_output::DescribeMonitorOutput;
 
 mod _describe_monitor_input;
 

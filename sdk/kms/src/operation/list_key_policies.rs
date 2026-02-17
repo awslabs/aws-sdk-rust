@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_key_policies:
     }
 }
 
-pub use crate::operation::list_key_policies::_list_key_policies_output::ListKeyPoliciesOutput;
-
 pub use crate::operation::list_key_policies::_list_key_policies_input::ListKeyPoliciesInput;
+
+pub use crate::operation::list_key_policies::_list_key_policies_output::ListKeyPoliciesOutput;
 
 mod _list_key_policies_input;
 

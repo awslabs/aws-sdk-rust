@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_variant_impor
     }
 }
 
-pub use crate::operation::list_variant_import_jobs::_list_variant_import_jobs_output::ListVariantImportJobsOutput;
-
 pub use crate::operation::list_variant_import_jobs::_list_variant_import_jobs_input::ListVariantImportJobsInput;
+
+pub use crate::operation::list_variant_import_jobs::_list_variant_import_jobs_output::ListVariantImportJobsOutput;
 
 mod _list_variant_import_jobs_input;
 

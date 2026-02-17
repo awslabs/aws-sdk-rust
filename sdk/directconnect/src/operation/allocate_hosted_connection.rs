@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_hosted_co
     }
 }
 
-pub use crate::operation::allocate_hosted_connection::_allocate_hosted_connection_output::AllocateHostedConnectionOutput;
-
 pub use crate::operation::allocate_hosted_connection::_allocate_hosted_connection_input::AllocateHostedConnectionInput;
+
+pub use crate::operation::allocate_hosted_connection::_allocate_hosted_connection_output::AllocateHostedConnectionOutput;
 
 mod _allocate_hosted_connection_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stream::D
     }
 }
 
-pub use crate::operation::describe_stream::_describe_stream_output::DescribeStreamOutput;
-
 pub use crate::operation::describe_stream::_describe_stream_input::DescribeStreamInput;
+
+pub use crate::operation::describe_stream::_describe_stream_output::DescribeStreamOutput;
 
 mod _describe_stream_input;
 

@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cloud_conne
     }
 }
 
-pub use crate::operation::delete_cloud_connector::_delete_cloud_connector_output::DeleteCloudConnectorOutput;
-
 pub use crate::operation::delete_cloud_connector::_delete_cloud_connector_input::DeleteCloudConnectorInput;
+
+pub use crate::operation::delete_cloud_connector::_delete_cloud_connector_output::DeleteCloudConnectorOutput;
 
 mod _delete_cloud_connector_input;
 

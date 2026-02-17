@@ -466,9 +466,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_db_instance:
     }
 }
 
-pub use crate::operation::start_db_instance::_start_db_instance_output::StartDbInstanceOutput;
-
 pub use crate::operation::start_db_instance::_start_db_instance_input::StartDbInstanceInput;
+
+pub use crate::operation::start_db_instance::_start_db_instance_output::StartDbInstanceOutput;
 
 mod _start_db_instance_input;
 

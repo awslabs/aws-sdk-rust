@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_workflow_step
     }
 }
 
-pub use crate::operation::list_workflow_steps::_list_workflow_steps_output::ListWorkflowStepsOutput;
-
 pub use crate::operation::list_workflow_steps::_list_workflow_steps_input::ListWorkflowStepsInput;
+
+pub use crate::operation::list_workflow_steps::_list_workflow_steps_output::ListWorkflowStepsOutput;
 
 mod _list_workflow_steps_input;
 

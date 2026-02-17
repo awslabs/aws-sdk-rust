@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_workspace_a
     }
 }
 
-pub use crate::operation::update_workspace_alias::_update_workspace_alias_output::UpdateWorkspaceAliasOutput;
-
 pub use crate::operation::update_workspace_alias::_update_workspace_alias_input::UpdateWorkspaceAliasInput;
+
+pub use crate::operation::update_workspace_alias::_update_workspace_alias_output::UpdateWorkspaceAliasOutput;
 
 mod _update_workspace_alias_input;
 

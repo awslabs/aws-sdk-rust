@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_patch_b
     }
 }
 
-pub use crate::operation::deregister_patch_baseline_for_patch_group::_deregister_patch_baseline_for_patch_group_output::DeregisterPatchBaselineForPatchGroupOutput;
-
 pub use crate::operation::deregister_patch_baseline_for_patch_group::_deregister_patch_baseline_for_patch_group_input::DeregisterPatchBaselineForPatchGroupInput;
+
+pub use crate::operation::deregister_patch_baseline_for_patch_group::_deregister_patch_baseline_for_patch_group_output::DeregisterPatchBaselineForPatchGroupOutput;
 
 mod _deregister_patch_baseline_for_patch_group_input;
 

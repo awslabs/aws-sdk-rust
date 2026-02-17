@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_load_balanc
     }
 }
 
-pub use crate::operation::delete_load_balancer_policy::_delete_load_balancer_policy_output::DeleteLoadBalancerPolicyOutput;
-
 pub use crate::operation::delete_load_balancer_policy::_delete_load_balancer_policy_input::DeleteLoadBalancerPolicyInput;
+
+pub use crate::operation::delete_load_balancer_policy::_delete_load_balancer_policy_output::DeleteLoadBalancerPolicyOutput;
 
 mod _delete_load_balancer_policy_input;
 

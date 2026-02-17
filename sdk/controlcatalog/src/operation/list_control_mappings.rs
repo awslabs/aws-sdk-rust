@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_control_mappi
     }
 }
 
-pub use crate::operation::list_control_mappings::_list_control_mappings_output::ListControlMappingsOutput;
-
 pub use crate::operation::list_control_mappings::_list_control_mappings_input::ListControlMappingsInput;
+
+pub use crate::operation::list_control_mappings::_list_control_mappings_output::ListControlMappingsOutput;
 
 mod _list_control_mappings_input;
 

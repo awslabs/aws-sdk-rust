@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_source_cred
     }
 }
 
-pub use crate::operation::import_source_credentials::_import_source_credentials_output::ImportSourceCredentialsOutput;
-
 pub use crate::operation::import_source_credentials::_import_source_credentials_input::ImportSourceCredentialsInput;
+
+pub use crate::operation::import_source_credentials::_import_source_credentials_output::ImportSourceCredentialsOutput;
 
 mod _import_source_credentials_input;
 

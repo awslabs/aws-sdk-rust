@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_route53_healt
     }
 }
 
-pub use crate::operation::list_route53_health_checks_in_region::_list_route53_health_checks_in_region_output::ListRoute53HealthChecksInRegionOutput;
-
 pub use crate::operation::list_route53_health_checks_in_region::_list_route53_health_checks_in_region_input::ListRoute53HealthChecksInRegionInput;
+
+pub use crate::operation::list_route53_health_checks_in_region::_list_route53_health_checks_in_region_output::ListRoute53HealthChecksInRegionOutput;
 
 mod _list_route53_health_checks_in_region_input;
 

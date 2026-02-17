@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_key_signing
     }
 }
 
-pub use crate::operation::delete_key_signing_key::_delete_key_signing_key_output::DeleteKeySigningKeyOutput;
-
 pub use crate::operation::delete_key_signing_key::_delete_key_signing_key_input::DeleteKeySigningKeyInput;
+
+pub use crate::operation::delete_key_signing_key::_delete_key_signing_key_output::DeleteKeySigningKeyOutput;
 
 mod _delete_key_signing_key_input;
 

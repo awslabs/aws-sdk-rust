@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_routing_rul
     }
 }
 
-pub use crate::operation::delete_routing_rule::_delete_routing_rule_output::DeleteRoutingRuleOutput;
-
 pub use crate::operation::delete_routing_rule::_delete_routing_rule_input::DeleteRoutingRuleInput;
+
+pub use crate::operation::delete_routing_rule::_delete_routing_rule_output::DeleteRoutingRuleOutput;
 
 mod _delete_routing_rule_input;
 

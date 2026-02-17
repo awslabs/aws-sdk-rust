@@ -454,9 +454,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::check_document_acc
     }
 }
 
-pub use crate::operation::check_document_access::_check_document_access_output::CheckDocumentAccessOutput;
-
 pub use crate::operation::check_document_access::_check_document_access_input::CheckDocumentAccessInput;
+
+pub use crate::operation::check_document_access::_check_document_access_output::CheckDocumentAccessOutput;
 
 mod _check_document_access_input;
 

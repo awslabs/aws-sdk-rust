@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_reposi
     }
 }
 
-pub use crate::operation::create_data_repository_task::_create_data_repository_task_output::CreateDataRepositoryTaskOutput;
-
 pub use crate::operation::create_data_repository_task::_create_data_repository_task_input::CreateDataRepositoryTaskInput;
+
+pub use crate::operation::create_data_repository_task::_create_data_repository_task_output::CreateDataRepositoryTaskOutput;
 
 mod _create_data_repository_task_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_region_opt_sta
     }
 }
 
-pub use crate::operation::get_region_opt_status::_get_region_opt_status_output::GetRegionOptStatusOutput;
-
 pub use crate::operation::get_region_opt_status::_get_region_opt_status_input::GetRegionOptStatusInput;
+
+pub use crate::operation::get_region_opt_status::_get_region_opt_status_output::GetRegionOptStatusOutput;
 
 mod _get_region_opt_status_input;
 

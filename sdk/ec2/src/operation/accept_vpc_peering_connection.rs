@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_vpc_peering
     }
 }
 
-pub use crate::operation::accept_vpc_peering_connection::_accept_vpc_peering_connection_output::AcceptVpcPeeringConnectionOutput;
-
 pub use crate::operation::accept_vpc_peering_connection::_accept_vpc_peering_connection_input::AcceptVpcPeeringConnectionInput;
+
+pub use crate::operation::accept_vpc_peering_connection::_accept_vpc_peering_connection_output::AcceptVpcPeeringConnectionOutput;
 
 mod _accept_vpc_peering_connection_input;
 

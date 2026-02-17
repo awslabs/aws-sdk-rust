@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_resiliency_
     }
 }
 
-pub use crate::operation::delete_resiliency_policy::_delete_resiliency_policy_output::DeleteResiliencyPolicyOutput;
-
 pub use crate::operation::delete_resiliency_policy::_delete_resiliency_policy_input::DeleteResiliencyPolicyInput;
+
+pub use crate::operation::delete_resiliency_policy::_delete_resiliency_policy_output::DeleteResiliencyPolicyOutput;
 
 mod _delete_resiliency_policy_input;
 

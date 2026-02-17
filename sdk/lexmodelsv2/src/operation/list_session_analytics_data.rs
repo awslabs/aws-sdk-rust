@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_session_analy
     }
 }
 
-pub use crate::operation::list_session_analytics_data::_list_session_analytics_data_output::ListSessionAnalyticsDataOutput;
-
 pub use crate::operation::list_session_analytics_data::_list_session_analytics_data_input::ListSessionAnalyticsDataInput;
+
+pub use crate::operation::list_session_analytics_data::_list_session_analytics_data_output::ListSessionAnalyticsDataOutput;
 
 mod _list_session_analytics_data_input;
 

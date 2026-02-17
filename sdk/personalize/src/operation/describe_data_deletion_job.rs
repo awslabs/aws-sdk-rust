@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_dele
     }
 }
 
-pub use crate::operation::describe_data_deletion_job::_describe_data_deletion_job_output::DescribeDataDeletionJobOutput;
-
 pub use crate::operation::describe_data_deletion_job::_describe_data_deletion_job_input::DescribeDataDeletionJobInput;
+
+pub use crate::operation::describe_data_deletion_job::_describe_data_deletion_job_output::DescribeDataDeletionJobOutput;
 
 mod _describe_data_deletion_job_input;
 

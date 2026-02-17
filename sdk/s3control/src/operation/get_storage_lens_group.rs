@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_storage_lens_g
     }
 }
 
-pub use crate::operation::get_storage_lens_group::_get_storage_lens_group_output::GetStorageLensGroupOutput;
-
 pub use crate::operation::get_storage_lens_group::_get_storage_lens_group_input::GetStorageLensGroupInput;
+
+pub use crate::operation::get_storage_lens_group::_get_storage_lens_group_output::GetStorageLensGroupOutput;
 
 mod _get_storage_lens_group_input;
 

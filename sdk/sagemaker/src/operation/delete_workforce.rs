@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_workforce::
     }
 }
 
-pub use crate::operation::delete_workforce::_delete_workforce_output::DeleteWorkforceOutput;
-
 pub use crate::operation::delete_workforce::_delete_workforce_input::DeleteWorkforceInput;
+
+pub use crate::operation::delete_workforce::_delete_workforce_output::DeleteWorkforceOutput;
 
 mod _delete_workforce_input;
 

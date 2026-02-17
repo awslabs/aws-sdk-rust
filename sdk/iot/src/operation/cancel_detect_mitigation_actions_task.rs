@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_detect_miti
     }
 }
 
-pub use crate::operation::cancel_detect_mitigation_actions_task::_cancel_detect_mitigation_actions_task_output::CancelDetectMitigationActionsTaskOutput;
-
 pub use crate::operation::cancel_detect_mitigation_actions_task::_cancel_detect_mitigation_actions_task_input::CancelDetectMitigationActionsTaskInput;
+
+pub use crate::operation::cancel_detect_mitigation_actions_task::_cancel_detect_mitigation_actions_task_output::CancelDetectMitigationActionsTaskOutput;
 
 mod _cancel_detect_mitigation_actions_task_input;
 

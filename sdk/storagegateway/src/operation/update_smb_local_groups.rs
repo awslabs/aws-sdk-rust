@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_smb_local_g
     }
 }
 
-pub use crate::operation::update_smb_local_groups::_update_smb_local_groups_output::UpdateSmbLocalGroupsOutput;
-
 pub use crate::operation::update_smb_local_groups::_update_smb_local_groups_input::UpdateSmbLocalGroupsInput;
+
+pub use crate::operation::update_smb_local_groups::_update_smb_local_groups_output::UpdateSmbLocalGroupsOutput;
 
 mod _update_smb_local_groups_input;
 

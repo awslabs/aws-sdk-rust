@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::attach_role_policy
     }
 }
 
-pub use crate::operation::attach_role_policy::_attach_role_policy_output::AttachRolePolicyOutput;
-
 pub use crate::operation::attach_role_policy::_attach_role_policy_input::AttachRolePolicyInput;
+
+pub use crate::operation::attach_role_policy::_attach_role_policy_output::AttachRolePolicyOutput;
 
 mod _attach_role_policy_input;
 

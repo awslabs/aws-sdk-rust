@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_adapter::Cr
     }
 }
 
-pub use crate::operation::create_adapter::_create_adapter_output::CreateAdapterOutput;
-
 pub use crate::operation::create_adapter::_create_adapter_input::CreateAdapterInput;
+
+pub use crate::operation::create_adapter::_create_adapter_output::CreateAdapterOutput;
 
 mod _create_adapter_input;
 

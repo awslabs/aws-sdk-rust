@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_schema_a
     }
 }
 
-pub use crate::operation::batch_get_schema_analysis_rule::_batch_get_schema_analysis_rule_output::BatchGetSchemaAnalysisRuleOutput;
-
 pub use crate::operation::batch_get_schema_analysis_rule::_batch_get_schema_analysis_rule_input::BatchGetSchemaAnalysisRuleInput;
+
+pub use crate::operation::batch_get_schema_analysis_rule::_batch_get_schema_analysis_rule_output::BatchGetSchemaAnalysisRuleOutput;
 
 mod _batch_get_schema_analysis_rule_input;
 

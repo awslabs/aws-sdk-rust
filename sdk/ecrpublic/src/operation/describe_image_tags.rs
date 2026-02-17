@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_image_tag
     }
 }
 
-pub use crate::operation::describe_image_tags::_describe_image_tags_output::DescribeImageTagsOutput;
-
 pub use crate::operation::describe_image_tags::_describe_image_tags_input::DescribeImageTagsInput;
+
+pub use crate::operation::describe_image_tags::_describe_image_tags_output::DescribeImageTagsOutput;
 
 mod _describe_image_tags_input;
 

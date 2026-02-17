@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_plan::GetPlanE
     }
 }
 
-pub use crate::operation::get_plan::_get_plan_output::GetPlanOutput;
-
 pub use crate::operation::get_plan::_get_plan_input::GetPlanInput;
+
+pub use crate::operation::get_plan::_get_plan_output::GetPlanOutput;
 
 mod _get_plan_input;
 

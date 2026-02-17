@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_pipeline::D
     }
 }
 
-pub use crate::operation::delete_pipeline::_delete_pipeline_output::DeletePipelineOutput;
-
 pub use crate::operation::delete_pipeline::_delete_pipeline_input::DeletePipelineInput;
+
+pub use crate::operation::delete_pipeline::_delete_pipeline_output::DeletePipelineOutput;
 
 mod _delete_pipeline_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_retention
     }
 }
 
-pub use crate::operation::get_data_retention_bot::_get_data_retention_bot_output::GetDataRetentionBotOutput;
-
 pub use crate::operation::get_data_retention_bot::_get_data_retention_bot_input::GetDataRetentionBotInput;
+
+pub use crate::operation::get_data_retention_bot::_get_data_retention_bot_output::GetDataRetentionBotOutput;
 
 mod _get_data_retention_bot_input;
 

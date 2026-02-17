@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_point_f
     }
 }
 
-pub use crate::operation::get_access_point_for_object_lambda::_get_access_point_for_object_lambda_output::GetAccessPointForObjectLambdaOutput;
-
 pub use crate::operation::get_access_point_for_object_lambda::_get_access_point_for_object_lambda_input::GetAccessPointForObjectLambdaInput;
+
+pub use crate::operation::get_access_point_for_object_lambda::_get_access_point_for_object_lambda_output::GetAccessPointForObjectLambdaOutput;
 
 mod _get_access_point_for_object_lambda_input;
 

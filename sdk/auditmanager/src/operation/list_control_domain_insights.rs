@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_control_domai
     }
 }
 
-pub use crate::operation::list_control_domain_insights::_list_control_domain_insights_output::ListControlDomainInsightsOutput;
-
 pub use crate::operation::list_control_domain_insights::_list_control_domain_insights_input::ListControlDomainInsightsInput;
+
+pub use crate::operation::list_control_domain_insights::_list_control_domain_insights_output::ListControlDomainInsightsOutput;
 
 mod _list_control_domain_insights_input;
 

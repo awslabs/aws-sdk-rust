@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_instan
     }
 }
 
-pub use crate::operation::describe_db_instances::_describe_db_instances_output::DescribeDbInstancesOutput;
-
 pub use crate::operation::describe_db_instances::_describe_db_instances_input::DescribeDbInstancesInput;
+
+pub use crate::operation::describe_db_instances::_describe_db_instances_output::DescribeDbInstancesOutput;
 
 mod _describe_db_instances_input;
 

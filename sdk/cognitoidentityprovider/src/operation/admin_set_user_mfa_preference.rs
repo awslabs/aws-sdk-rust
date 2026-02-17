@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::admin_set_user_mfa
     }
 }
 
-pub use crate::operation::admin_set_user_mfa_preference::_admin_set_user_mfa_preference_output::AdminSetUserMfaPreferenceOutput;
-
 pub use crate::operation::admin_set_user_mfa_preference::_admin_set_user_mfa_preference_input::AdminSetUserMfaPreferenceInput;
+
+pub use crate::operation::admin_set_user_mfa_preference::_admin_set_user_mfa_preference_output::AdminSetUserMfaPreferenceOutput;
 
 mod _admin_set_user_mfa_preference_input;
 

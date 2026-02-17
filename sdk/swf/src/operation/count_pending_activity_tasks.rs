@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::count_pending_acti
     }
 }
 
-pub use crate::operation::count_pending_activity_tasks::_count_pending_activity_tasks_output::CountPendingActivityTasksOutput;
-
 pub use crate::operation::count_pending_activity_tasks::_count_pending_activity_tasks_input::CountPendingActivityTasksInput;
+
+pub use crate::operation::count_pending_activity_tasks::_count_pending_activity_tasks_output::CountPendingActivityTasksOutput;
 
 mod _count_pending_activity_tasks_input;
 

@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hsm_configu
     }
 }
 
-pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_output::CreateHsmConfigurationOutput;
-
 pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_input::CreateHsmConfigurationInput;
+
+pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_output::CreateHsmConfigurationOutput;
 
 mod _create_hsm_configuration_input;
 

@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_reservation
     }
 }
 
-pub use crate::operation::update_reservation::_update_reservation_output::UpdateReservationOutput;
-
 pub use crate::operation::update_reservation::_update_reservation_input::UpdateReservationInput;
+
+pub use crate::operation::update_reservation::_update_reservation_output::UpdateReservationOutput;
 
 mod _update_reservation_input;
 

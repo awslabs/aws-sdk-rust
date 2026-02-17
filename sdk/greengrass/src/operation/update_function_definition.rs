@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_function_de
     }
 }
 
-pub use crate::operation::update_function_definition::_update_function_definition_output::UpdateFunctionDefinitionOutput;
-
 pub use crate::operation::update_function_definition::_update_function_definition_input::UpdateFunctionDefinitionInput;
+
+pub use crate::operation::update_function_definition::_update_function_definition_output::UpdateFunctionDefinitionOutput;
 
 mod _update_function_definition_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::detach_instances::
     }
 }
 
-pub use crate::operation::detach_instances::_detach_instances_output::DetachInstancesOutput;
-
 pub use crate::operation::detach_instances::_detach_instances_input::DetachInstancesInput;
+
+pub use crate::operation::detach_instances::_detach_instances_output::DetachInstancesOutput;
 
 mod _detach_instances_input;
 

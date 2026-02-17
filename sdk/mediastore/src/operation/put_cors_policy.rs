@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_cors_policy::P
     }
 }
 
-pub use crate::operation::put_cors_policy::_put_cors_policy_output::PutCorsPolicyOutput;
-
 pub use crate::operation::put_cors_policy::_put_cors_policy_input::PutCorsPolicyInput;
+
+pub use crate::operation::put_cors_policy::_put_cors_policy_output::PutCorsPolicyOutput;
 
 mod _put_cors_policy_input;
 

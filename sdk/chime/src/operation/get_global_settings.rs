@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_global_setting
     }
 }
 
-pub use crate::operation::get_global_settings::_get_global_settings_output::GetGlobalSettingsOutput;
-
 pub use crate::operation::get_global_settings::_get_global_settings_input::GetGlobalSettingsInput;
+
+pub use crate::operation::get_global_settings::_get_global_settings_output::GetGlobalSettingsOutput;
 
 mod _get_global_settings_input;
 

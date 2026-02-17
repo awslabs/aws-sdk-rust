@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_whats_app_m
     }
 }
 
-pub use crate::operation::update_whats_app_message_template::_update_whats_app_message_template_output::UpdateWhatsAppMessageTemplateOutput;
-
 pub use crate::operation::update_whats_app_message_template::_update_whats_app_message_template_input::UpdateWhatsAppMessageTemplateInput;
+
+pub use crate::operation::update_whats_app_message_template::_update_whats_app_message_template_output::UpdateWhatsAppMessageTemplateOutput;
 
 mod _update_whats_app_message_template_input;
 

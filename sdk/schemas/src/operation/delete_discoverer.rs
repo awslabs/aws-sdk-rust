@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_discoverer:
     }
 }
 
-pub use crate::operation::delete_discoverer::_delete_discoverer_output::DeleteDiscovererOutput;
-
 pub use crate::operation::delete_discoverer::_delete_discoverer_input::DeleteDiscovererInput;
+
+pub use crate::operation::delete_discoverer::_delete_discoverer_output::DeleteDiscovererOutput;
 
 mod _delete_discoverer_input;
 

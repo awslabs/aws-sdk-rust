@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_managed_sca
     }
 }
 
-pub use crate::operation::remove_managed_scaling_policy::_remove_managed_scaling_policy_output::RemoveManagedScalingPolicyOutput;
-
 pub use crate::operation::remove_managed_scaling_policy::_remove_managed_scaling_policy_input::RemoveManagedScalingPolicyInput;
+
+pub use crate::operation::remove_managed_scaling_policy::_remove_managed_scaling_policy_output::RemoveManagedScalingPolicyOutput;
 
 mod _remove_managed_scaling_policy_input;
 

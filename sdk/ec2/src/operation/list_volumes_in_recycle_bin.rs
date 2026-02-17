@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_volumes_in_re
     }
 }
 
-pub use crate::operation::list_volumes_in_recycle_bin::_list_volumes_in_recycle_bin_output::ListVolumesInRecycleBinOutput;
-
 pub use crate::operation::list_volumes_in_recycle_bin::_list_volumes_in_recycle_bin_input::ListVolumesInRecycleBinInput;
+
+pub use crate::operation::list_volumes_in_recycle_bin::_list_volumes_in_recycle_bin_output::ListVolumesInRecycleBinOutput;
 
 mod _list_volumes_in_recycle_bin_input;
 

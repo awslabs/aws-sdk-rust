@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_veri
     }
 }
 
-pub use crate::operation::delete_custom_verification_email_template::_delete_custom_verification_email_template_output::DeleteCustomVerificationEmailTemplateOutput;
-
 pub use crate::operation::delete_custom_verification_email_template::_delete_custom_verification_email_template_input::DeleteCustomVerificationEmailTemplateInput;
+
+pub use crate::operation::delete_custom_verification_email_template::_delete_custom_verification_email_template_output::DeleteCustomVerificationEmailTemplateOutput;
 
 mod _delete_custom_verification_email_template_input;
 

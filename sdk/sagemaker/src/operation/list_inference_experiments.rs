@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_exp
     }
 }
 
-pub use crate::operation::list_inference_experiments::_list_inference_experiments_output::ListInferenceExperimentsOutput;
-
 pub use crate::operation::list_inference_experiments::_list_inference_experiments_input::ListInferenceExperimentsInput;
+
+pub use crate::operation::list_inference_experiments::_list_inference_experiments_output::ListInferenceExperimentsOutput;
 
 mod _list_inference_experiments_input;
 

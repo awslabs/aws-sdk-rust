@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_composition::
     }
 }
 
-pub use crate::operation::stop_composition::_stop_composition_output::StopCompositionOutput;
-
 pub use crate::operation::stop_composition::_stop_composition_input::StopCompositionInput;
+
+pub use crate::operation::stop_composition::_stop_composition_output::StopCompositionOutput;
 
 mod _stop_composition_input;
 

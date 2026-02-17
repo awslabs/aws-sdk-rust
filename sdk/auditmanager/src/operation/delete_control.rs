@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_control::De
     }
 }
 
-pub use crate::operation::delete_control::_delete_control_output::DeleteControlOutput;
-
 pub use crate::operation::delete_control::_delete_control_input::DeleteControlInput;
+
+pub use crate::operation::delete_control::_delete_control_output::DeleteControlOutput;
 
 mod _delete_control_input;
 

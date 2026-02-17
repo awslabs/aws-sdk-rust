@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_resource
     }
 }
 
-pub use crate::operation::associate_resource_types::_associate_resource_types_output::AssociateResourceTypesOutput;
-
 pub use crate::operation::associate_resource_types::_associate_resource_types_input::AssociateResourceTypesInput;
+
+pub use crate::operation::associate_resource_types::_associate_resource_types_output::AssociateResourceTypesOutput;
 
 mod _associate_resource_types_input;
 

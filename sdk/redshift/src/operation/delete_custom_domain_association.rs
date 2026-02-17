@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_doma
     }
 }
 
-pub use crate::operation::delete_custom_domain_association::_delete_custom_domain_association_output::DeleteCustomDomainAssociationOutput;
-
 pub use crate::operation::delete_custom_domain_association::_delete_custom_domain_association_input::DeleteCustomDomainAssociationInput;
+
+pub use crate::operation::delete_custom_domain_association::_delete_custom_domain_association_output::DeleteCustomDomainAssociationOutput;
 
 mod _delete_custom_domain_association_input;
 

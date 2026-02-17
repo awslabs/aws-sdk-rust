@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_backup_jo
     }
 }
 
-pub use crate::operation::describe_backup_job::_describe_backup_job_output::DescribeBackupJobOutput;
-
 pub use crate::operation::describe_backup_job::_describe_backup_job_input::DescribeBackupJobInput;
+
+pub use crate::operation::describe_backup_job::_describe_backup_job_output::DescribeBackupJobOutput;
 
 mod _describe_backup_job_input;
 

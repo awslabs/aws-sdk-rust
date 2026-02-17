@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_client_bran
     }
 }
 
-pub use crate::operation::import_client_branding::_import_client_branding_output::ImportClientBrandingOutput;
-
 pub use crate::operation::import_client_branding::_import_client_branding_input::ImportClientBrandingInput;
+
+pub use crate::operation::import_client_branding::_import_client_branding_output::ImportClientBrandingOutput;
 
 mod _import_client_branding_input;
 

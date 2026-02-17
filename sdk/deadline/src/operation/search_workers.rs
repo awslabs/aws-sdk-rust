@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_workers::Se
     }
 }
 
-pub use crate::operation::search_workers::_search_workers_output::SearchWorkersOutput;
-
 pub use crate::operation::search_workers::_search_workers_input::SearchWorkersInput;
+
+pub use crate::operation::search_workers::_search_workers_output::SearchWorkersOutput;
 
 mod _search_workers_input;
 

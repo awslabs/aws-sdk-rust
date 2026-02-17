@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_inference_pro
     }
 }
 
-pub use crate::operation::list_inference_profiles::_list_inference_profiles_output::ListInferenceProfilesOutput;
-
 pub use crate::operation::list_inference_profiles::_list_inference_profiles_input::ListInferenceProfilesInput;
+
+pub use crate::operation::list_inference_profiles::_list_inference_profiles_output::ListInferenceProfilesOutput;
 
 mod _list_inference_profiles_input;
 

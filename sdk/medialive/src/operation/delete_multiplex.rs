@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_multiplex::
     }
 }
 
-pub use crate::operation::delete_multiplex::_delete_multiplex_output::DeleteMultiplexOutput;
-
 pub use crate::operation::delete_multiplex::_delete_multiplex_input::DeleteMultiplexInput;
+
+pub use crate::operation::delete_multiplex::_delete_multiplex_output::DeleteMultiplexOutput;
 
 mod _delete_multiplex_input;
 

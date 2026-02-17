@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cells::ListCe
     }
 }
 
-pub use crate::operation::list_cells::_list_cells_output::ListCellsOutput;
-
 pub use crate::operation::list_cells::_list_cells_input::ListCellsInput;
+
+pub use crate::operation::list_cells::_list_cells_output::ListCellsOutput;
 
 mod _list_cells_input;
 

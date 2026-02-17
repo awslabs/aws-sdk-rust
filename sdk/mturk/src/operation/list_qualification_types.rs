@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_qualification
     }
 }
 
-pub use crate::operation::list_qualification_types::_list_qualification_types_output::ListQualificationTypesOutput;
-
 pub use crate::operation::list_qualification_types::_list_qualification_types_input::ListQualificationTypesInput;
+
+pub use crate::operation::list_qualification_types::_list_qualification_types_output::ListQualificationTypesOutput;
 
 mod _list_qualification_types_input;
 

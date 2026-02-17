@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_pipeline_execu
     }
 }
 
-pub use crate::operation::get_pipeline_execution::_get_pipeline_execution_output::GetPipelineExecutionOutput;
-
 pub use crate::operation::get_pipeline_execution::_get_pipeline_execution_input::GetPipelineExecutionInput;
+
+pub use crate::operation::get_pipeline_execution::_get_pipeline_execution_output::GetPipelineExecutionOutput;
 
 mod _get_pipeline_execution_input;
 

@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_receipt_rule_p
     }
 }
 
-pub use crate::operation::set_receipt_rule_position::_set_receipt_rule_position_output::SetReceiptRulePositionOutput;
-
 pub use crate::operation::set_receipt_rule_position::_set_receipt_rule_position_input::SetReceiptRulePositionInput;
+
+pub use crate::operation::set_receipt_rule_position::_set_receipt_rule_position_output::SetReceiptRulePositionOutput;
 
 mod _set_receipt_rule_position_input;
 

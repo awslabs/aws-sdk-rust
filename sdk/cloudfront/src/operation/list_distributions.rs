@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_distributions
     }
 }
 
-pub use crate::operation::list_distributions::_list_distributions_output::ListDistributionsOutput;
-
 pub use crate::operation::list_distributions::_list_distributions_input::ListDistributionsInput;
+
+pub use crate::operation::list_distributions::_list_distributions_output::ListDistributionsOutput;
 
 mod _list_distributions_input;
 

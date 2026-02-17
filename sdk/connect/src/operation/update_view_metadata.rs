@@ -453,9 +453,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_view_metada
     }
 }
 
-pub use crate::operation::update_view_metadata::_update_view_metadata_output::UpdateViewMetadataOutput;
-
 pub use crate::operation::update_view_metadata::_update_view_metadata_input::UpdateViewMetadataInput;
+
+pub use crate::operation::update_view_metadata::_update_view_metadata_output::UpdateViewMetadataOutput;
 
 mod _update_view_metadata_input;
 

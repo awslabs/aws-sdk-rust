@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_chime_webho
     }
 }
 
-pub use crate::operation::update_chime_webhook_configuration::_update_chime_webhook_configuration_output::UpdateChimeWebhookConfigurationOutput;
-
 pub use crate::operation::update_chime_webhook_configuration::_update_chime_webhook_configuration_input::UpdateChimeWebhookConfigurationInput;
+
+pub use crate::operation::update_chime_webhook_configuration::_update_chime_webhook_configuration_output::UpdateChimeWebhookConfigurationOutput;
 
 mod _update_chime_webhook_configuration_input;
 

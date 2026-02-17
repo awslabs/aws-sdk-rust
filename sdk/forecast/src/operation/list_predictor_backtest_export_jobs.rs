@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_predictor_bac
     }
 }
 
-pub use crate::operation::list_predictor_backtest_export_jobs::_list_predictor_backtest_export_jobs_output::ListPredictorBacktestExportJobsOutput;
-
 pub use crate::operation::list_predictor_backtest_export_jobs::_list_predictor_backtest_export_jobs_input::ListPredictorBacktestExportJobsInput;
+
+pub use crate::operation::list_predictor_backtest_export_jobs::_list_predictor_backtest_export_jobs_output::ListPredictorBacktestExportJobsOutput;
 
 mod _list_predictor_backtest_export_jobs_input;
 

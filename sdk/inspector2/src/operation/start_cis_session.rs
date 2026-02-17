@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_cis_session:
     }
 }
 
-pub use crate::operation::start_cis_session::_start_cis_session_output::StartCisSessionOutput;
-
 pub use crate::operation::start_cis_session::_start_cis_session_input::StartCisSessionInput;
+
+pub use crate::operation::start_cis_session::_start_cis_session_output::StartCisSessionOutput;
 
 mod _start_cis_session_input;
 

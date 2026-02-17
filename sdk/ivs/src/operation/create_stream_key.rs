@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_stream_key:
     }
 }
 
-pub use crate::operation::create_stream_key::_create_stream_key_output::CreateStreamKeyOutput;
-
 pub use crate::operation::create_stream_key::_create_stream_key_input::CreateStreamKeyInput;
+
+pub use crate::operation::create_stream_key::_create_stream_key_output::CreateStreamKeyOutput;
 
 mod _create_stream_key_input;
 

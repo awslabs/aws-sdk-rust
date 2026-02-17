@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_image_metadata::_describe_instance_image_metadata_output::DescribeInstanceImageMetadataOutput;
-
 pub use crate::operation::describe_instance_image_metadata::_describe_instance_image_metadata_input::DescribeInstanceImageMetadataInput;
+
+pub use crate::operation::describe_instance_image_metadata::_describe_instance_image_metadata_output::DescribeInstanceImageMetadataOutput;
 
 mod _describe_instance_image_metadata_input;
 

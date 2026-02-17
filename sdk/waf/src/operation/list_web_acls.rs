@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_web_acls::Lis
     }
 }
 
-pub use crate::operation::list_web_acls::_list_web_acls_output::ListWebAcLsOutput;
-
 pub use crate::operation::list_web_acls::_list_web_acls_input::ListWebAcLsInput;
+
+pub use crate::operation::list_web_acls::_list_web_acls_output::ListWebAcLsOutput;
 
 mod _list_web_acls_input;
 

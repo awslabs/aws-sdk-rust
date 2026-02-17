@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cache_subne
     }
 }
 
-pub use crate::operation::create_cache_subnet_group::_create_cache_subnet_group_output::CreateCacheSubnetGroupOutput;
-
 pub use crate::operation::create_cache_subnet_group::_create_cache_subnet_group_input::CreateCacheSubnetGroupInput;
+
+pub use crate::operation::create_cache_subnet_group::_create_cache_subnet_group_output::CreateCacheSubnetGroupOutput;
 
 mod _create_cache_subnet_group_input;
 

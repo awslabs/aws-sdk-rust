@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_task::Des
     }
 }
 
-pub use crate::operation::describe_task::_describe_task_output::DescribeTaskOutput;
-
 pub use crate::operation::describe_task::_describe_task_input::DescribeTaskInput;
+
+pub use crate::operation::describe_task::_describe_task_output::DescribeTaskOutput;
 
 mod _describe_task_input;
 

@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_poli
     }
 }
 
-pub use crate::operation::create_access_policy::_create_access_policy_output::CreateAccessPolicyOutput;
-
 pub use crate::operation::create_access_policy::_create_access_policy_input::CreateAccessPolicyInput;
+
+pub use crate::operation::create_access_policy::_create_access_policy_output::CreateAccessPolicyOutput;
 
 mod _create_access_policy_input;
 

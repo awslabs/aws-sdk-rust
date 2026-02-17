@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_manif
     }
 }
 
-pub use crate::operation::create_model_manifest::_create_model_manifest_output::CreateModelManifestOutput;
-
 pub use crate::operation::create_model_manifest::_create_model_manifest_input::CreateModelManifestInput;
+
+pub use crate::operation::create_model_manifest::_create_model_manifest_output::CreateModelManifestOutput;
 
 mod _create_model_manifest_input;
 

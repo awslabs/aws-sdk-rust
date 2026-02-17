@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ai_agent::U
     }
 }
 
-pub use crate::operation::update_ai_agent::_update_ai_agent_output::UpdateAiAgentOutput;
-
 pub use crate::operation::update_ai_agent::_update_ai_agent_input::UpdateAiAgentInput;
+
+pub use crate::operation::update_ai_agent::_update_ai_agent_output::UpdateAiAgentOutput;
 
 mod _update_ai_agent_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::create_microsoft_teams_channel_configuration::_create_microsoft_teams_channel_configuration_output::CreateMicrosoftTeamsChannelConfigurationOutput;
-
 pub use crate::operation::create_microsoft_teams_channel_configuration::_create_microsoft_teams_channel_configuration_input::CreateMicrosoftTeamsChannelConfigurationInput;
+
+pub use crate::operation::create_microsoft_teams_channel_configuration::_create_microsoft_teams_channel_configuration_output::CreateMicrosoftTeamsChannelConfigurationOutput;
 
 mod _create_microsoft_teams_channel_configuration_input;
 

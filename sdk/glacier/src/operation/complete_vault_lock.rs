@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::complete_vault_loc
     }
 }
 
-pub use crate::operation::complete_vault_lock::_complete_vault_lock_output::CompleteVaultLockOutput;
-
 pub use crate::operation::complete_vault_lock::_complete_vault_lock_input::CompleteVaultLockInput;
+
+pub use crate::operation::complete_vault_lock::_complete_vault_lock_output::CompleteVaultLockOutput;
 
 mod _complete_vault_lock_input;
 

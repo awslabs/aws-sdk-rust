@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_reserved_node_
     }
 }
 
-pub use crate::operation::get_reserved_node_exchange_offerings::_get_reserved_node_exchange_offerings_output::GetReservedNodeExchangeOfferingsOutput;
-
 pub use crate::operation::get_reserved_node_exchange_offerings::_get_reserved_node_exchange_offerings_input::GetReservedNodeExchangeOfferingsInput;
+
+pub use crate::operation::get_reserved_node_exchange_offerings::_get_reserved_node_exchange_offerings_output::GetReservedNodeExchangeOfferingsOutput;
 
 mod _get_reserved_node_exchange_offerings_input;
 

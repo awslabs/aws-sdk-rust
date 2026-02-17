@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_auto_snapsh
     }
 }
 
-pub use crate::operation::delete_auto_snapshot::_delete_auto_snapshot_output::DeleteAutoSnapshotOutput;
-
 pub use crate::operation::delete_auto_snapshot::_delete_auto_snapshot_input::DeleteAutoSnapshotInput;
+
+pub use crate::operation::delete_auto_snapshot::_delete_auto_snapshot_output::DeleteAutoSnapshotOutput;
 
 mod _delete_auto_snapshot_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_work_group::Ge
     }
 }
 
-pub use crate::operation::get_work_group::_get_work_group_output::GetWorkGroupOutput;
-
 pub use crate::operation::get_work_group::_get_work_group_input::GetWorkGroupInput;
+
+pub use crate::operation::get_work_group::_get_work_group_output::GetWorkGroupOutput;
 
 mod _get_work_group_input;
 

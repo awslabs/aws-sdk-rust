@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_security_po
     }
 }
 
-pub use crate::operation::update_security_policy::_update_security_policy_output::UpdateSecurityPolicyOutput;
-
 pub use crate::operation::update_security_policy::_update_security_policy_input::UpdateSecurityPolicyInput;
+
+pub use crate::operation::update_security_policy::_update_security_policy_output::UpdateSecurityPolicyOutput;
 
 mod _update_security_policy_input;
 

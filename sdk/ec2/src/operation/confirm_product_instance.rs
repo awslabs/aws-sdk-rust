@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_product_in
     }
 }
 
-pub use crate::operation::confirm_product_instance::_confirm_product_instance_output::ConfirmProductInstanceOutput;
-
 pub use crate::operation::confirm_product_instance::_confirm_product_instance_input::ConfirmProductInstanceInput;
+
+pub use crate::operation::confirm_product_instance::_confirm_product_instance_output::ConfirmProductInstanceOutput;
 
 mod _confirm_product_instance_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_lf_tag::Upd
     }
 }
 
-pub use crate::operation::update_lf_tag::_update_lf_tag_output::UpdateLfTagOutput;
-
 pub use crate::operation::update_lf_tag::_update_lf_tag_input::UpdateLfTagInput;
+
+pub use crate::operation::update_lf_tag::_update_lf_tag_output::UpdateLfTagOutput;
 
 mod _update_lf_tag_input;
 

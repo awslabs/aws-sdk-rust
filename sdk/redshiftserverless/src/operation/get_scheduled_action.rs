@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_scheduled_acti
     }
 }
 
-pub use crate::operation::get_scheduled_action::_get_scheduled_action_output::GetScheduledActionOutput;
-
 pub use crate::operation::get_scheduled_action::_get_scheduled_action_input::GetScheduledActionInput;
+
+pub use crate::operation::get_scheduled_action::_get_scheduled_action_output::GetScheduledActionOutput;
 
 mod _get_scheduled_action_input;
 

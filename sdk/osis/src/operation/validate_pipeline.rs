@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::validate_pipeline:
     }
 }
 
-pub use crate::operation::validate_pipeline::_validate_pipeline_output::ValidatePipelineOutput;
-
 pub use crate::operation::validate_pipeline::_validate_pipeline_input::ValidatePipelineInput;
+
+pub use crate::operation::validate_pipeline::_validate_pipeline_output::ValidatePipelineOutput;
 
 mod _validate_pipeline_input;
 

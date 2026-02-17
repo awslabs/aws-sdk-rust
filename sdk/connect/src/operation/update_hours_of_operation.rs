@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_hours_of_op
     }
 }
 
-pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_output::UpdateHoursOfOperationOutput;
-
 pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_input::UpdateHoursOfOperationInput;
+
+pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_output::UpdateHoursOfOperationOutput;
 
 mod _update_hours_of_operation_input;
 

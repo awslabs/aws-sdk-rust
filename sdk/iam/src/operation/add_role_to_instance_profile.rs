@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_role_to_instan
     }
 }
 
-pub use crate::operation::add_role_to_instance_profile::_add_role_to_instance_profile_output::AddRoleToInstanceProfileOutput;
-
 pub use crate::operation::add_role_to_instance_profile::_add_role_to_instance_profile_input::AddRoleToInstanceProfileInput;
+
+pub use crate::operation::add_role_to_instance_profile::_add_role_to_instance_profile_output::AddRoleToInstanceProfileOutput;
 
 mod _add_role_to_instance_profile_input;
 

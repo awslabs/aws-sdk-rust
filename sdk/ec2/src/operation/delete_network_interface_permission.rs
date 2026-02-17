@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_network_int
     }
 }
 
-pub use crate::operation::delete_network_interface_permission::_delete_network_interface_permission_output::DeleteNetworkInterfacePermissionOutput;
-
 pub use crate::operation::delete_network_interface_permission::_delete_network_interface_permission_input::DeleteNetworkInterfacePermissionInput;
+
+pub use crate::operation::delete_network_interface_permission::_delete_network_interface_permission_output::DeleteNetworkInterfacePermissionOutput;
 
 mod _delete_network_interface_permission_input;
 

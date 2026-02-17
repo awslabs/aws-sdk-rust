@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_vpc_endpoin
     }
 }
 
-pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_access_output::RevokeVpcEndpointAccessOutput;
-
 pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_access_input::RevokeVpcEndpointAccessInput;
+
+pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_access_output::RevokeVpcEndpointAccessOutput;
 
 mod _revoke_vpc_endpoint_access_input;
 

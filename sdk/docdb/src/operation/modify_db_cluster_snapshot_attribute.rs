@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_db_cluster_
     }
 }
 
-pub use crate::operation::modify_db_cluster_snapshot_attribute::_modify_db_cluster_snapshot_attribute_output::ModifyDbClusterSnapshotAttributeOutput;
-
 pub use crate::operation::modify_db_cluster_snapshot_attribute::_modify_db_cluster_snapshot_attribute_input::ModifyDbClusterSnapshotAttributeInput;
+
+pub use crate::operation::modify_db_cluster_snapshot_attribute::_modify_db_cluster_snapshot_attribute_output::ModifyDbClusterSnapshotAttributeOutput;
 
 mod _modify_db_cluster_snapshot_attribute_input;
 

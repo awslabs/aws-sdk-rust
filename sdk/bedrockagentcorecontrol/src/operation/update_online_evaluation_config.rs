@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_online_eval
     }
 }
 
-pub use crate::operation::update_online_evaluation_config::_update_online_evaluation_config_output::UpdateOnlineEvaluationConfigOutput;
-
 pub use crate::operation::update_online_evaluation_config::_update_online_evaluation_config_input::UpdateOnlineEvaluationConfigInput;
+
+pub use crate::operation::update_online_evaluation_config::_update_online_evaluation_config_output::UpdateOnlineEvaluationConfigOutput;
 
 mod _update_online_evaluation_config_input;
 

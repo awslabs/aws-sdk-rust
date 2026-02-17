@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metric_filter:
     }
 }
 
-pub use crate::operation::put_metric_filter::_put_metric_filter_output::PutMetricFilterOutput;
-
 pub use crate::operation::put_metric_filter::_put_metric_filter_input::PutMetricFilterInput;
+
+pub use crate::operation::put_metric_filter::_put_metric_filter_output::PutMetricFilterOutput;
 
 mod _put_metric_filter_input;
 

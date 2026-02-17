@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_workload::AddW
     }
 }
 
-pub use crate::operation::add_workload::_add_workload_output::AddWorkloadOutput;
-
 pub use crate::operation::add_workload::_add_workload_input::AddWorkloadInput;
+
+pub use crate::operation::add_workload::_add_workload_output::AddWorkloadOutput;
 
 mod _add_workload_input;
 

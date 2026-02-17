@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_share::Crea
     }
 }
 
-pub use crate::operation::create_share::_create_share_output::CreateShareOutput;
-
 pub use crate::operation::create_share::_create_share_input::CreateShareInput;
+
+pub use crate::operation::create_share::_create_share_output::CreateShareOutput;
 
 mod _create_share_input;
 

@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_organizatio
     }
 }
 
-pub use crate::operation::update_organization_configuration::_update_organization_configuration_output::UpdateOrganizationConfigurationOutput;
-
 pub use crate::operation::update_organization_configuration::_update_organization_configuration_input::UpdateOrganizationConfigurationInput;
+
+pub use crate::operation::update_organization_configuration::_update_organization_configuration_output::UpdateOrganizationConfigurationOutput;
 
 mod _update_organization_configuration_input;
 

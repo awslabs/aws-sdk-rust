@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_location_
     }
 }
 
-pub use crate::operation::describe_location_s3::_describe_location_s3_output::DescribeLocationS3Output;
-
 pub use crate::operation::describe_location_s3::_describe_location_s3_input::DescribeLocationS3Input;
+
+pub use crate::operation::describe_location_s3::_describe_location_s3_output::DescribeLocationS3Output;
 
 mod _describe_location_s3_input;
 

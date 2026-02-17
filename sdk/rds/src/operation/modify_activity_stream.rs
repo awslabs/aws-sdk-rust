@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_activity_st
     }
 }
 
-pub use crate::operation::modify_activity_stream::_modify_activity_stream_output::ModifyActivityStreamOutput;
-
 pub use crate::operation::modify_activity_stream::_modify_activity_stream_input::ModifyActivityStreamInput;
+
+pub use crate::operation::modify_activity_stream::_modify_activity_stream_output::ModifyActivityStreamOutput;
 
 mod _modify_activity_stream_input;
 

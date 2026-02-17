@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::assume_role_for_po
     }
 }
 
-pub use crate::operation::assume_role_for_pod_identity::_assume_role_for_pod_identity_output::AssumeRoleForPodIdentityOutput;
-
 pub use crate::operation::assume_role_for_pod_identity::_assume_role_for_pod_identity_input::AssumeRoleForPodIdentityInput;
+
+pub use crate::operation::assume_role_for_pod_identity::_assume_role_for_pod_identity_output::AssumeRoleForPodIdentityOutput;
 
 mod _assume_role_for_pod_identity_input;
 

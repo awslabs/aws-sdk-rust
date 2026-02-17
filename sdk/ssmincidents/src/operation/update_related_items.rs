@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_related_ite
     }
 }
 
-pub use crate::operation::update_related_items::_update_related_items_output::UpdateRelatedItemsOutput;
-
 pub use crate::operation::update_related_items::_update_related_items_input::UpdateRelatedItemsInput;
+
+pub use crate::operation::update_related_items::_update_related_items_output::UpdateRelatedItemsOutput;
 
 mod _update_related_items_input;
 

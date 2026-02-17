@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_room::GetRoomE
     }
 }
 
-pub use crate::operation::get_room::_get_room_output::GetRoomOutput;
-
 pub use crate::operation::get_room::_get_room_input::GetRoomInput;
+
+pub use crate::operation::get_room::_get_room_output::GetRoomOutput;
 
 mod _get_room_input;
 

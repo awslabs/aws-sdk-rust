@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::unarchive_wave::Un
     }
 }
 
-pub use crate::operation::unarchive_wave::_unarchive_wave_output::UnarchiveWaveOutput;
-
 pub use crate::operation::unarchive_wave::_unarchive_wave_input::UnarchiveWaveInput;
+
+pub use crate::operation::unarchive_wave::_unarchive_wave_output::UnarchiveWaveOutput;
 
 mod _unarchive_wave_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::allocate_public_vi
     }
 }
 
-pub use crate::operation::allocate_public_virtual_interface::_allocate_public_virtual_interface_output::AllocatePublicVirtualInterfaceOutput;
-
 pub use crate::operation::allocate_public_virtual_interface::_allocate_public_virtual_interface_input::AllocatePublicVirtualInterfaceInput;
+
+pub use crate::operation::allocate_public_virtual_interface::_allocate_public_virtual_interface_output::AllocatePublicVirtualInterfaceOutput;
 
 mod _allocate_public_virtual_interface_input;
 

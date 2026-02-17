@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cors_config
     }
 }
 
-pub use crate::operation::delete_cors_configuration::_delete_cors_configuration_output::DeleteCorsConfigurationOutput;
-
 pub use crate::operation::delete_cors_configuration::_delete_cors_configuration_input::DeleteCorsConfigurationInput;
+
+pub use crate::operation::delete_cors_configuration::_delete_cors_configuration_output::DeleteCorsConfigurationOutput;
 
 mod _delete_cors_configuration_input;
 

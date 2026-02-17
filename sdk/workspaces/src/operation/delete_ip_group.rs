@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_ip_group::D
     }
 }
 
-pub use crate::operation::delete_ip_group::_delete_ip_group_output::DeleteIpGroupOutput;
-
 pub use crate::operation::delete_ip_group::_delete_ip_group_input::DeleteIpGroupInput;
+
+pub use crate::operation::delete_ip_group::_delete_ip_group_output::DeleteIpGroupOutput;
 
 mod _delete_ip_group_input;
 

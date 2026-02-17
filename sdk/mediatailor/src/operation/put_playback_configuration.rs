@@ -352,9 +352,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_playback_confi
     }
 }
 
-pub use crate::operation::put_playback_configuration::_put_playback_configuration_output::PutPlaybackConfigurationOutput;
-
 pub use crate::operation::put_playback_configuration::_put_playback_configuration_input::PutPlaybackConfigurationInput;
+
+pub use crate::operation::put_playback_configuration::_put_playback_configuration_output::PutPlaybackConfigurationOutput;
 
 mod _put_playback_configuration_input;
 

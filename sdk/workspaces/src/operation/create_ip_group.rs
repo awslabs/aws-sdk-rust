@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_ip_group::C
     }
 }
 
-pub use crate::operation::create_ip_group::_create_ip_group_output::CreateIpGroupOutput;
-
 pub use crate::operation::create_ip_group::_create_ip_group_input::CreateIpGroupInput;
+
+pub use crate::operation::create_ip_group::_create_ip_group_output::CreateIpGroupOutput;
 
 mod _create_ip_group_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_lf_tags_fro
     }
 }
 
-pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_resource_output::RemoveLfTagsFromResourceOutput;
-
 pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_resource_input::RemoveLfTagsFromResourceInput;
+
+pub use crate::operation::remove_lf_tags_from_resource::_remove_lf_tags_from_resource_output::RemoveLfTagsFromResourceOutput;
 
 mod _remove_lf_tags_from_resource_input;
 

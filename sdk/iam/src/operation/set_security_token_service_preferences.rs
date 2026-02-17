@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_security_token
     }
 }
 
-pub use crate::operation::set_security_token_service_preferences::_set_security_token_service_preferences_output::SetSecurityTokenServicePreferencesOutput;
-
 pub use crate::operation::set_security_token_service_preferences::_set_security_token_service_preferences_input::SetSecurityTokenServicePreferencesInput;
+
+pub use crate::operation::set_security_token_service_preferences::_set_security_token_service_preferences_output::SetSecurityTokenServicePreferencesOutput;
 
 mod _set_security_token_service_preferences_input;
 

@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_ipam_scope:
     }
 }
 
-pub use crate::operation::modify_ipam_scope::_modify_ipam_scope_output::ModifyIpamScopeOutput;
-
 pub use crate::operation::modify_ipam_scope::_modify_ipam_scope_input::ModifyIpamScopeInput;
+
+pub use crate::operation::modify_ipam_scope::_modify_ipam_scope_output::ModifyIpamScopeOutput;
 
 mod _modify_ipam_scope_input;
 

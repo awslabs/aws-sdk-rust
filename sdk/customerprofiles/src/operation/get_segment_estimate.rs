@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_segment_estima
     }
 }
 
-pub use crate::operation::get_segment_estimate::_get_segment_estimate_output::GetSegmentEstimateOutput;
-
 pub use crate::operation::get_segment_estimate::_get_segment_estimate_input::GetSegmentEstimateInput;
+
+pub use crate::operation::get_segment_estimate::_get_segment_estimate_output::GetSegmentEstimateOutput;
 
 mod _get_segment_estimate_input;
 

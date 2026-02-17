@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_organizat
     }
 }
 
-pub use crate::operation::describe_organization_overview::_describe_organization_overview_output::DescribeOrganizationOverviewOutput;
-
 pub use crate::operation::describe_organization_overview::_describe_organization_overview_input::DescribeOrganizationOverviewInput;
+
+pub use crate::operation::describe_organization_overview::_describe_organization_overview_output::DescribeOrganizationOverviewOutput;
 
 mod _describe_organization_overview_input;
 

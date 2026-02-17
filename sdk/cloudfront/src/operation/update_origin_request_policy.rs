@@ -476,9 +476,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_origin_requ
     }
 }
 
-pub use crate::operation::update_origin_request_policy::_update_origin_request_policy_output::UpdateOriginRequestPolicyOutput;
-
 pub use crate::operation::update_origin_request_policy::_update_origin_request_policy_input::UpdateOriginRequestPolicyInput;
+
+pub use crate::operation::update_origin_request_policy::_update_origin_request_policy_output::UpdateOriginRequestPolicyOutput;
 
 mod _update_origin_request_policy_input;
 

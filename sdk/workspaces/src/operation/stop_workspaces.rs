@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_workspaces::S
     }
 }
 
-pub use crate::operation::stop_workspaces::_stop_workspaces_output::StopWorkspacesOutput;
-
 pub use crate::operation::stop_workspaces::_stop_workspaces_input::StopWorkspacesInput;
+
+pub use crate::operation::stop_workspaces::_stop_workspaces_output::StopWorkspacesOutput;
 
 mod _stop_workspaces_input;
 

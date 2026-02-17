@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_studio_sess
     }
 }
 
-pub use crate::operation::delete_studio_session_mapping::_delete_studio_session_mapping_output::DeleteStudioSessionMappingOutput;
-
 pub use crate::operation::delete_studio_session_mapping::_delete_studio_session_mapping_input::DeleteStudioSessionMappingInput;
+
+pub use crate::operation::delete_studio_session_mapping::_delete_studio_session_mapping_output::DeleteStudioSessionMappingOutput;
 
 mod _delete_studio_session_mapping_input;
 

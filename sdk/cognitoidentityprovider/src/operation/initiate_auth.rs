@@ -516,9 +516,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::initiate_auth::Ini
     }
 }
 
-pub use crate::operation::initiate_auth::_initiate_auth_output::InitiateAuthOutput;
-
 pub use crate::operation::initiate_auth::_initiate_auth_input::InitiateAuthInput;
+
+pub use crate::operation::initiate_auth::_initiate_auth_output::InitiateAuthOutput;
 
 mod _initiate_auth_input;
 

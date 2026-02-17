@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_device_autho
     }
 }
 
-pub use crate::operation::start_device_authorization::_start_device_authorization_output::StartDeviceAuthorizationOutput;
-
 pub use crate::operation::start_device_authorization::_start_device_authorization_input::StartDeviceAuthorizationInput;
+
+pub use crate::operation::start_device_authorization::_start_device_authorization_output::StartDeviceAuthorizationOutput;
 
 mod _start_device_authorization_input;
 

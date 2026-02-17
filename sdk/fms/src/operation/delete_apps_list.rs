@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_apps_list::
     }
 }
 
-pub use crate::operation::delete_apps_list::_delete_apps_list_output::DeleteAppsListOutput;
-
 pub use crate::operation::delete_apps_list::_delete_apps_list_input::DeleteAppsListInput;
+
+pub use crate::operation::delete_apps_list::_delete_apps_list_output::DeleteAppsListOutput;
 
 mod _delete_apps_list_input;
 

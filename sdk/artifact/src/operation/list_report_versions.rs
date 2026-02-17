@@ -433,9 +433,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_report_versio
     }
 }
 
-pub use crate::operation::list_report_versions::_list_report_versions_output::ListReportVersionsOutput;
-
 pub use crate::operation::list_report_versions::_list_report_versions_input::ListReportVersionsInput;
+
+pub use crate::operation::list_report_versions::_list_report_versions_output::ListReportVersionsOutput;
 
 mod _list_report_versions_input;
 

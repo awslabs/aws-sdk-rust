@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vcenter_cli
     }
 }
 
-pub use crate::operation::delete_vcenter_client::_delete_vcenter_client_output::DeleteVcenterClientOutput;
-
 pub use crate::operation::delete_vcenter_client::_delete_vcenter_client_input::DeleteVcenterClientInput;
+
+pub use crate::operation::delete_vcenter_client::_delete_vcenter_client_output::DeleteVcenterClientOutput;
 
 mod _delete_vcenter_client_input;
 

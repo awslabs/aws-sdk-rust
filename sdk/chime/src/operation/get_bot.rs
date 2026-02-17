@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_bot::GetBotErr
     }
 }
 
-pub use crate::operation::get_bot::_get_bot_output::GetBotOutput;
-
 pub use crate::operation::get_bot::_get_bot_input::GetBotInput;
+
+pub use crate::operation::get_bot::_get_bot_output::GetBotOutput;
 
 mod _get_bot_input;
 

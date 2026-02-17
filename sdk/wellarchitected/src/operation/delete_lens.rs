@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lens::Delet
     }
 }
 
-pub use crate::operation::delete_lens::_delete_lens_output::DeleteLensOutput;
-
 pub use crate::operation::delete_lens::_delete_lens_input::DeleteLensInput;
+
+pub use crate::operation::delete_lens::_delete_lens_output::DeleteLensOutput;
 
 mod _delete_lens_input;
 

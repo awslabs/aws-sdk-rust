@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_capacity_ma
     }
 }
 
-pub use crate::operation::delete_capacity_manager_data_export::_delete_capacity_manager_data_export_output::DeleteCapacityManagerDataExportOutput;
-
 pub use crate::operation::delete_capacity_manager_data_export::_delete_capacity_manager_data_export_input::DeleteCapacityManagerDataExportInput;
+
+pub use crate::operation::delete_capacity_manager_data_export::_delete_capacity_manager_data_export_output::DeleteCapacityManagerDataExportOutput;
 
 mod _delete_capacity_manager_data_export_input;
 

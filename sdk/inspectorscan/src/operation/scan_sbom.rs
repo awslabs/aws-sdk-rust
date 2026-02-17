@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::scan_sbom::ScanSbo
     }
 }
 
-pub use crate::operation::scan_sbom::_scan_sbom_output::ScanSbomOutput;
-
 pub use crate::operation::scan_sbom::_scan_sbom_input::ScanSbomInput;
+
+pub use crate::operation::scan_sbom::_scan_sbom_output::ScanSbomOutput;
 
 mod _scan_sbom_input;
 

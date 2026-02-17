@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group_certific
     }
 }
 
-pub use crate::operation::get_group_certificate_configuration::_get_group_certificate_configuration_output::GetGroupCertificateConfigurationOutput;
-
 pub use crate::operation::get_group_certificate_configuration::_get_group_certificate_configuration_input::GetGroupCertificateConfigurationInput;
+
+pub use crate::operation::get_group_certificate_configuration::_get_group_certificate_configuration_output::GetGroupCertificateConfigurationOutput;
 
 mod _get_group_certificate_configuration_input;
 

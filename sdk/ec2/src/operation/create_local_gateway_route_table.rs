@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_local_gatew
     }
 }
 
-pub use crate::operation::create_local_gateway_route_table::_create_local_gateway_route_table_output::CreateLocalGatewayRouteTableOutput;
-
 pub use crate::operation::create_local_gateway_route_table::_create_local_gateway_route_table_input::CreateLocalGatewayRouteTableInput;
+
+pub use crate::operation::create_local_gateway_route_table::_create_local_gateway_route_table_output::CreateLocalGatewayRouteTableOutput;
 
 mod _create_local_gateway_route_table_input;
 

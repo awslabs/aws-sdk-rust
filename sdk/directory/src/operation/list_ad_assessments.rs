@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_ad_assessment
     }
 }
 
-pub use crate::operation::list_ad_assessments::_list_ad_assessments_output::ListAdAssessmentsOutput;
-
 pub use crate::operation::list_ad_assessments::_list_ad_assessments_input::ListAdAssessmentsInput;
+
+pub use crate::operation::list_ad_assessments::_list_ad_assessments_output::ListAdAssessmentsOutput;
 
 mod _list_ad_assessments_input;
 

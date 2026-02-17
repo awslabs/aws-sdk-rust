@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_tag_sync_tas
     }
 }
 
-pub use crate::operation::start_tag_sync_task::_start_tag_sync_task_output::StartTagSyncTaskOutput;
-
 pub use crate::operation::start_tag_sync_task::_start_tag_sync_task_input::StartTagSyncTaskInput;
+
+pub use crate::operation::start_tag_sync_task::_start_tag_sync_task_output::StartTagSyncTaskOutput;
 
 mod _start_tag_sync_task_input;
 

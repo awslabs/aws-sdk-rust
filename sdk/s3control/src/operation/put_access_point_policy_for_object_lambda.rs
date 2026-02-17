@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_access_point_p
     }
 }
 
-pub use crate::operation::put_access_point_policy_for_object_lambda::_put_access_point_policy_for_object_lambda_output::PutAccessPointPolicyForObjectLambdaOutput;
-
 pub use crate::operation::put_access_point_policy_for_object_lambda::_put_access_point_policy_for_object_lambda_input::PutAccessPointPolicyForObjectLambdaInput;
+
+pub use crate::operation::put_access_point_policy_for_object_lambda::_put_access_point_policy_for_object_lambda_output::PutAccessPointPolicyForObjectLambdaOutput;
 
 mod _put_access_point_policy_for_object_lambda_input;
 

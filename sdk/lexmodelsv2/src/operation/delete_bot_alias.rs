@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bot_alias::
     }
 }
 
-pub use crate::operation::delete_bot_alias::_delete_bot_alias_output::DeleteBotAliasOutput;
-
 pub use crate::operation::delete_bot_alias::_delete_bot_alias_input::DeleteBotAliasInput;
+
+pub use crate::operation::delete_bot_alias::_delete_bot_alias_output::DeleteBotAliasOutput;
 
 mod _delete_bot_alias_input;
 

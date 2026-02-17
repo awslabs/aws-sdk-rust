@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_profile_outbou
     }
 }
 
-pub use crate::operation::put_profile_outbound_request_batch::_put_profile_outbound_request_batch_output::PutProfileOutboundRequestBatchOutput;
-
 pub use crate::operation::put_profile_outbound_request_batch::_put_profile_outbound_request_batch_input::PutProfileOutboundRequestBatchInput;
+
+pub use crate::operation::put_profile_outbound_request_batch::_put_profile_outbound_request_batch_output::PutProfileOutboundRequestBatchOutput;
 
 mod _put_profile_outbound_request_batch_input;
 

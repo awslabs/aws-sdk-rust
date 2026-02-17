@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_governed
     }
 }
 
-pub use crate::operation::associate_governed_terms::_associate_governed_terms_output::AssociateGovernedTermsOutput;
-
 pub use crate::operation::associate_governed_terms::_associate_governed_terms_input::AssociateGovernedTermsInput;
+
+pub use crate::operation::associate_governed_terms::_associate_governed_terms_output::AssociateGovernedTermsOutput;
 
 mod _associate_governed_terms_input;
 

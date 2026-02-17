@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_replication_t
     }
 }
 
-pub use crate::operation::stop_replication_to_replica::_stop_replication_to_replica_output::StopReplicationToReplicaOutput;
-
 pub use crate::operation::stop_replication_to_replica::_stop_replication_to_replica_input::StopReplicationToReplicaInput;
+
+pub use crate::operation::stop_replication_to_replica::_stop_replication_to_replica_output::StopReplicationToReplicaOutput;
 
 mod _stop_replication_to_replica_input;
 

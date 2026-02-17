@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_agent::Re
     }
 }
 
-pub use crate::operation::register_agent::_register_agent_output::RegisterAgentOutput;
-
 pub use crate::operation::register_agent::_register_agent_input::RegisterAgentInput;
+
+pub use crate::operation::register_agent::_register_agent_output::RegisterAgentOutput;
 
 mod _register_agent_input;
 

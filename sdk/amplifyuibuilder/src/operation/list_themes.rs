@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_themes::ListT
     }
 }
 
-pub use crate::operation::list_themes::_list_themes_output::ListThemesOutput;
-
 pub use crate::operation::list_themes::_list_themes_input::ListThemesInput;
+
+pub use crate::operation::list_themes::_list_themes_output::ListThemesOutput;
 
 mod _list_themes_input;
 

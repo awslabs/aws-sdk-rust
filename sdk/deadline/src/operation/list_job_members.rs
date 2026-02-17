@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_job_members::
     }
 }
 
-pub use crate::operation::list_job_members::_list_job_members_output::ListJobMembersOutput;
-
 pub use crate::operation::list_job_members::_list_job_members_input::ListJobMembersInput;
+
+pub use crate::operation::list_job_members::_list_job_members_output::ListJobMembersOutput;
 
 mod _list_job_members_input;
 

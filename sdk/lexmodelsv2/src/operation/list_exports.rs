@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_exports::List
     }
 }
 
-pub use crate::operation::list_exports::_list_exports_output::ListExportsOutput;
-
 pub use crate::operation::list_exports::_list_exports_input::ListExportsInput;
+
+pub use crate::operation::list_exports::_list_exports_output::ListExportsOutput;
 
 mod _list_exports_input;
 

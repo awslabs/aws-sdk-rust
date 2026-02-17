@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::associate_assessment_report_evidence_folder::_associate_assessment_report_evidence_folder_output::AssociateAssessmentReportEvidenceFolderOutput;
-
 pub use crate::operation::associate_assessment_report_evidence_folder::_associate_assessment_report_evidence_folder_input::AssociateAssessmentReportEvidenceFolderInput;
+
+pub use crate::operation::associate_assessment_report_evidence_folder::_associate_assessment_report_evidence_folder_output::AssociateAssessmentReportEvidenceFolderOutput;
 
 mod _associate_assessment_report_evidence_folder_input;
 

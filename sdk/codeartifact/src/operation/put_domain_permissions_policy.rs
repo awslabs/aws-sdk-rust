@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_domain_permiss
     }
 }
 
-pub use crate::operation::put_domain_permissions_policy::_put_domain_permissions_policy_output::PutDomainPermissionsPolicyOutput;
-
 pub use crate::operation::put_domain_permissions_policy::_put_domain_permissions_policy_input::PutDomainPermissionsPolicyInput;
+
+pub use crate::operation::put_domain_permissions_policy::_put_domain_permissions_policy_output::PutDomainPermissionsPolicyOutput;
 
 mod _put_domain_permissions_policy_input;
 

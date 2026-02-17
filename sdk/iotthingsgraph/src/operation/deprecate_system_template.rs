@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deprecate_system_t
     }
 }
 
-pub use crate::operation::deprecate_system_template::_deprecate_system_template_output::DeprecateSystemTemplateOutput;
-
 pub use crate::operation::deprecate_system_template::_deprecate_system_template_input::DeprecateSystemTemplateInput;
+
+pub use crate::operation::deprecate_system_template::_deprecate_system_template_output::DeprecateSystemTemplateOutput;
 
 mod _deprecate_system_template_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sol_network_i
     }
 }
 
-pub use crate::operation::list_sol_network_instances::_list_sol_network_instances_output::ListSolNetworkInstancesOutput;
-
 pub use crate::operation::list_sol_network_instances::_list_sol_network_instances_input::ListSolNetworkInstancesInput;
+
+pub use crate::operation::list_sol_network_instances::_list_sol_network_instances_output::ListSolNetworkInstancesOutput;
 
 mod _list_sol_network_instances_input;
 

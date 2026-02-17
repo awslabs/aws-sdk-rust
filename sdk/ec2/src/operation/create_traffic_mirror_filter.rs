@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_traffic_mir
     }
 }
 
-pub use crate::operation::create_traffic_mirror_filter::_create_traffic_mirror_filter_output::CreateTrafficMirrorFilterOutput;
-
 pub use crate::operation::create_traffic_mirror_filter::_create_traffic_mirror_filter_input::CreateTrafficMirrorFilterInput;
+
+pub use crate::operation::create_traffic_mirror_filter::_create_traffic_mirror_filter_output::CreateTrafficMirrorFilterOutput;
 
 mod _create_traffic_mirror_filter_input;
 

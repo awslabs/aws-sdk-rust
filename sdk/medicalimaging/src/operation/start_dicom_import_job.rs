@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_dicom_import
     }
 }
 
-pub use crate::operation::start_dicom_import_job::_start_dicom_import_job_output::StartDicomImportJobOutput;
-
 pub use crate::operation::start_dicom_import_job::_start_dicom_import_job_input::StartDicomImportJobInput;
+
+pub use crate::operation::start_dicom_import_job::_start_dicom_import_job_output::StartDicomImportJobOutput;
 
 mod _start_dicom_import_job_input;
 

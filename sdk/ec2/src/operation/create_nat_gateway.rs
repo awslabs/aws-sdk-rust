@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_nat_gateway
     }
 }
 
-pub use crate::operation::create_nat_gateway::_create_nat_gateway_output::CreateNatGatewayOutput;
-
 pub use crate::operation::create_nat_gateway::_create_nat_gateway_input::CreateNatGatewayInput;
+
+pub use crate::operation::create_nat_gateway::_create_nat_gateway_output::CreateNatGatewayOutput;
 
 mod _create_nat_gateway_input;
 

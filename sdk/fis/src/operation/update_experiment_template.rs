@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_experiment_
     }
 }
 
-pub use crate::operation::update_experiment_template::_update_experiment_template_output::UpdateExperimentTemplateOutput;
-
 pub use crate::operation::update_experiment_template::_update_experiment_template_input::UpdateExperimentTemplateInput;
+
+pub use crate::operation::update_experiment_template::_update_experiment_template_output::UpdateExperimentTemplateOutput;
 
 mod _update_experiment_template_input;
 

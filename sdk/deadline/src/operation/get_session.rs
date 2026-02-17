@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_session::GetSe
     }
 }
 
-pub use crate::operation::get_session::_get_session_output::GetSessionOutput;
-
 pub use crate::operation::get_session::_get_session_input::GetSessionInput;
+
+pub use crate::operation::get_session::_get_session_output::GetSessionOutput;
 
 mod _get_session_input;
 

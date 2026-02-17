@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_data_lake_e
     }
 }
 
-pub use crate::operation::create_data_lake_exception_subscription::_create_data_lake_exception_subscription_output::CreateDataLakeExceptionSubscriptionOutput;
-
 pub use crate::operation::create_data_lake_exception_subscription::_create_data_lake_exception_subscription_input::CreateDataLakeExceptionSubscriptionInput;
+
+pub use crate::operation::create_data_lake_exception_subscription::_create_data_lake_exception_subscription_output::CreateDataLakeExceptionSubscriptionOutput;
 
 mod _create_data_lake_exception_subscription_input;
 

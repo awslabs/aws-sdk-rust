@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_member_sess
     }
 }
 
-pub use crate::operation::update_member_session::_update_member_session_output::UpdateMemberSessionOutput;
-
 pub use crate::operation::update_member_session::_update_member_session_input::UpdateMemberSessionInput;
+
+pub use crate::operation::update_member_session::_update_member_session_output::UpdateMemberSessionOutput;
 
 mod _update_member_session_input;
 

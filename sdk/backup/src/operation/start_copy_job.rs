@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_copy_job::St
     }
 }
 
-pub use crate::operation::start_copy_job::_start_copy_job_output::StartCopyJobOutput;
-
 pub use crate::operation::start_copy_job::_start_copy_job_input::StartCopyJobInput;
+
+pub use crate::operation::start_copy_job::_start_copy_job_output::StartCopyJobOutput;
 
 mod _start_copy_job_input;
 

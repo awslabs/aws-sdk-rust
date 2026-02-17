@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recipes::List
     }
 }
 
-pub use crate::operation::list_recipes::_list_recipes_output::ListRecipesOutput;
-
 pub use crate::operation::list_recipes::_list_recipes_input::ListRecipesInput;
+
+pub use crate::operation::list_recipes::_list_recipes_output::ListRecipesOutput;
 
 mod _list_recipes_input;
 

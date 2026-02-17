@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_code_securi
     }
 }
 
-pub use crate::operation::update_code_security_scan_configuration::_update_code_security_scan_configuration_output::UpdateCodeSecurityScanConfigurationOutput;
-
 pub use crate::operation::update_code_security_scan_configuration::_update_code_security_scan_configuration_input::UpdateCodeSecurityScanConfigurationInput;
+
+pub use crate::operation::update_code_security_scan_configuration::_update_code_security_scan_configuration_output::UpdateCodeSecurityScanConfigurationOutput;
 
 mod _update_code_security_scan_configuration_input;
 

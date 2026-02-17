@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_fhir_datastor
     }
 }
 
-pub use crate::operation::list_fhir_datastores::_list_fhir_datastores_output::ListFhirDatastoresOutput;
-
 pub use crate::operation::list_fhir_datastores::_list_fhir_datastores_input::ListFhirDatastoresInput;
+
+pub use crate::operation::list_fhir_datastores::_list_fhir_datastores_output::ListFhirDatastoresOutput;
 
 mod _list_fhir_datastores_input;
 

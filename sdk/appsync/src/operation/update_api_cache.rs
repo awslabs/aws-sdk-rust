@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_api_cache::
     }
 }
 
-pub use crate::operation::update_api_cache::_update_api_cache_output::UpdateApiCacheOutput;
-
 pub use crate::operation::update_api_cache::_update_api_cache_input::UpdateApiCacheInput;
+
+pub use crate::operation::update_api_cache::_update_api_cache_output::UpdateApiCacheOutput;
 
 mod _update_api_cache_input;
 

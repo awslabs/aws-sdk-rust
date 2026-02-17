@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_associated_pa
     }
 }
 
-pub use crate::operation::list_associated_packages::_list_associated_packages_output::ListAssociatedPackagesOutput;
-
 pub use crate::operation::list_associated_packages::_list_associated_packages_input::ListAssociatedPackagesInput;
+
+pub use crate::operation::list_associated_packages::_list_associated_packages_output::ListAssociatedPackagesOutput;
 
 mod _list_associated_packages_input;
 

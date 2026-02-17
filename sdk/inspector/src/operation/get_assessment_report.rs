@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_assessment_rep
     }
 }
 
-pub use crate::operation::get_assessment_report::_get_assessment_report_output::GetAssessmentReportOutput;
-
 pub use crate::operation::get_assessment_report::_get_assessment_report_input::GetAssessmentReportInput;
+
+pub use crate::operation::get_assessment_report::_get_assessment_report_output::GetAssessmentReportOutput;
 
 mod _get_assessment_report_input;
 

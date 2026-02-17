@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_inference_exp
     }
 }
 
-pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_output::StopInferenceExperimentOutput;
-
 pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_input::StopInferenceExperimentInput;
+
+pub use crate::operation::stop_inference_experiment::_stop_inference_experiment_output::StopInferenceExperimentOutput;
 
 mod _stop_inference_experiment_input;
 

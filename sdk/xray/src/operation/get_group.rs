@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group::GetGrou
     }
 }
 
-pub use crate::operation::get_group::_get_group_output::GetGroupOutput;
-
 pub use crate::operation::get_group::_get_group_input::GetGroupInput;
+
+pub use crate::operation::get_group::_get_group_output::GetGroupOutput;
 
 mod _get_group_input;
 

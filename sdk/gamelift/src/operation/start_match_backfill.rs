@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_match_backfi
     }
 }
 
-pub use crate::operation::start_match_backfill::_start_match_backfill_output::StartMatchBackfillOutput;
-
 pub use crate::operation::start_match_backfill::_start_match_backfill_input::StartMatchBackfillInput;
+
+pub use crate::operation::start_match_backfill::_start_match_backfill_output::StartMatchBackfillOutput;
 
 mod _start_match_backfill_input;
 

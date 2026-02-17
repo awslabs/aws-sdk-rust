@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::record_lifecycle_a
     }
 }
 
-pub use crate::operation::record_lifecycle_action_heartbeat::_record_lifecycle_action_heartbeat_output::RecordLifecycleActionHeartbeatOutput;
-
 pub use crate::operation::record_lifecycle_action_heartbeat::_record_lifecycle_action_heartbeat_input::RecordLifecycleActionHeartbeatInput;
+
+pub use crate::operation::record_lifecycle_action_heartbeat::_record_lifecycle_action_heartbeat_output::RecordLifecycleActionHeartbeatOutput;
 
 mod _record_lifecycle_action_heartbeat_input;
 

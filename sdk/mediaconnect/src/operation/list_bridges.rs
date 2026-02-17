@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bridges::List
     }
 }
 
-pub use crate::operation::list_bridges::_list_bridges_output::ListBridgesOutput;
-
 pub use crate::operation::list_bridges::_list_bridges_input::ListBridgesInput;
+
+pub use crate::operation::list_bridges::_list_bridges_output::ListBridgesOutput;
 
 mod _list_bridges_input;
 

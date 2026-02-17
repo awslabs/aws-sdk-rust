@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_listener::GetL
     }
 }
 
-pub use crate::operation::get_listener::_get_listener_output::GetListenerOutput;
-
 pub use crate::operation::get_listener::_get_listener_input::GetListenerInput;
+
+pub use crate::operation::get_listener::_get_listener_output::GetListenerOutput;
 
 mod _get_listener_input;
 

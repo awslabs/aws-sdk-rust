@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_configuration_
     }
 }
 
-pub use crate::operation::put_configuration_set_reputation_options::_put_configuration_set_reputation_options_output::PutConfigurationSetReputationOptionsOutput;
-
 pub use crate::operation::put_configuration_set_reputation_options::_put_configuration_set_reputation_options_input::PutConfigurationSetReputationOptionsInput;
+
+pub use crate::operation::put_configuration_set_reputation_options::_put_configuration_set_reputation_options_output::PutConfigurationSetReputationOptionsOutput;
 
 mod _put_configuration_set_reputation_options_input;
 

@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_case_rul
     }
 }
 
-pub use crate::operation::batch_get_case_rule::_batch_get_case_rule_output::BatchGetCaseRuleOutput;
-
 pub use crate::operation::batch_get_case_rule::_batch_get_case_rule_input::BatchGetCaseRuleInput;
+
+pub use crate::operation::batch_get_case_rule::_batch_get_case_rule_output::BatchGetCaseRuleOutput;
 
 mod _batch_get_case_rule_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_invoke_author
     }
 }
 
-pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_output::TestInvokeAuthorizerOutput;
-
 pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_input::TestInvokeAuthorizerInput;
+
+pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_output::TestInvokeAuthorizerOutput;
 
 mod _test_invoke_authorizer_input;
 

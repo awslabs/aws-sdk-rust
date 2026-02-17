@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_matchmaking
     }
 }
 
-pub use crate::operation::delete_matchmaking_configuration::_delete_matchmaking_configuration_output::DeleteMatchmakingConfigurationOutput;
-
 pub use crate::operation::delete_matchmaking_configuration::_delete_matchmaking_configuration_input::DeleteMatchmakingConfigurationInput;
+
+pub use crate::operation::delete_matchmaking_configuration::_delete_matchmaking_configuration_output::DeleteMatchmakingConfigurationOutput;
 
 mod _delete_matchmaking_configuration_input;
 

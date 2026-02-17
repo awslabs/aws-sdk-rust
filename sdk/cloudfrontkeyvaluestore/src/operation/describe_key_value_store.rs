@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_key_value
     }
 }
 
-pub use crate::operation::describe_key_value_store::_describe_key_value_store_output::DescribeKeyValueStoreOutput;
-
 pub use crate::operation::describe_key_value_store::_describe_key_value_store_input::DescribeKeyValueStoreInput;
+
+pub use crate::operation::describe_key_value_store::_describe_key_value_store_output::DescribeKeyValueStoreOutput;
 
 mod _describe_key_value_store_input;
 

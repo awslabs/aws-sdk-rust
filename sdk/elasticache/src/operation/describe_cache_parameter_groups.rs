@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_par
     }
 }
 
-pub use crate::operation::describe_cache_parameter_groups::_describe_cache_parameter_groups_output::DescribeCacheParameterGroupsOutput;
-
 pub use crate::operation::describe_cache_parameter_groups::_describe_cache_parameter_groups_input::DescribeCacheParameterGroupsInput;
+
+pub use crate::operation::describe_cache_parameter_groups::_describe_cache_parameter_groups_output::DescribeCacheParameterGroupsOutput;
 
 mod _describe_cache_parameter_groups_input;
 

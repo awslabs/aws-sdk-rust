@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::deregister_account
     }
 }
 
-pub use crate::operation::deregister_account_association::_deregister_account_association_output::DeregisterAccountAssociationOutput;
-
 pub use crate::operation::deregister_account_association::_deregister_account_association_input::DeregisterAccountAssociationInput;
+
+pub use crate::operation::deregister_account_association::_deregister_account_association_output::DeregisterAccountAssociationOutput;
 
 mod _deregister_account_association_input;
 

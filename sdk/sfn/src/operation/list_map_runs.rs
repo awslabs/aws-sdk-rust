@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_map_runs::Lis
     }
 }
 
-pub use crate::operation::list_map_runs::_list_map_runs_output::ListMapRunsOutput;
-
 pub use crate::operation::list_map_runs::_list_map_runs_input::ListMapRunsInput;
+
+pub use crate::operation::list_map_runs::_list_map_runs_output::ListMapRunsOutput;
 
 mod _list_map_runs_input;
 

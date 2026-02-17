@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_source_netw
     }
 }
 
-pub use crate::operation::export_source_network_cfn_template::_export_source_network_cfn_template_output::ExportSourceNetworkCfnTemplateOutput;
-
 pub use crate::operation::export_source_network_cfn_template::_export_source_network_cfn_template_input::ExportSourceNetworkCfnTemplateInput;
+
+pub use crate::operation::export_source_network_cfn_template::_export_source_network_cfn_template_output::ExportSourceNetworkCfnTemplateOutput;
 
 mod _export_source_network_cfn_template_input;
 

@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::redact_conversatio
     }
 }
 
-pub use crate::operation::redact_conversation_message::_redact_conversation_message_output::RedactConversationMessageOutput;
-
 pub use crate::operation::redact_conversation_message::_redact_conversation_message_input::RedactConversationMessageInput;
+
+pub use crate::operation::redact_conversation_message::_redact_conversation_message_output::RedactConversationMessageOutput;
 
 mod _redact_conversation_message_input;
 

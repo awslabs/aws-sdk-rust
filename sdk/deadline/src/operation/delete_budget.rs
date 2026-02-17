@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_budget::Del
     }
 }
 
-pub use crate::operation::delete_budget::_delete_budget_output::DeleteBudgetOutput;
-
 pub use crate::operation::delete_budget::_delete_budget_input::DeleteBudgetInput;
+
+pub use crate::operation::delete_budget::_delete_budget_output::DeleteBudgetOutput;
 
 mod _delete_budget_input;
 

@@ -451,9 +451,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_component::
     }
 }
 
-pub use crate::operation::import_component::_import_component_output::ImportComponentOutput;
-
 pub use crate::operation::import_component::_import_component_input::ImportComponentInput;
+
+pub use crate::operation::import_component::_import_component_output::ImportComponentOutput;
 
 mod _import_component_input;
 

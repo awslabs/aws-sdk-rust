@@ -498,9 +498,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_event_selector
     }
 }
 
-pub use crate::operation::put_event_selectors::_put_event_selectors_output::PutEventSelectorsOutput;
-
 pub use crate::operation::put_event_selectors::_put_event_selectors_input::PutEventSelectorsInput;
+
+pub use crate::operation::put_event_selectors::_put_event_selectors_output::PutEventSelectorsOutput;
 
 mod _put_event_selectors_input;
 

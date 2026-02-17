@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_metric_stream
     }
 }
 
-pub use crate::operation::stop_metric_streams::_stop_metric_streams_output::StopMetricStreamsOutput;
-
 pub use crate::operation::stop_metric_streams::_stop_metric_streams_input::StopMetricStreamsInput;
+
+pub use crate::operation::stop_metric_streams::_stop_metric_streams_output::StopMetricStreamsOutput;
 
 mod _stop_metric_streams_input;
 

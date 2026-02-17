@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_restore_tes
     }
 }
 
-pub use crate::operation::delete_restore_testing_selection::_delete_restore_testing_selection_output::DeleteRestoreTestingSelectionOutput;
-
 pub use crate::operation::delete_restore_testing_selection::_delete_restore_testing_selection_input::DeleteRestoreTestingSelectionInput;
+
+pub use crate::operation::delete_restore_testing_selection::_delete_restore_testing_selection_output::DeleteRestoreTestingSelectionOutput;
 
 mod _delete_restore_testing_selection_input;
 

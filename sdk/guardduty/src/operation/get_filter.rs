@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_filter::GetFil
     }
 }
 
-pub use crate::operation::get_filter::_get_filter_output::GetFilterOutput;
-
 pub use crate::operation::get_filter::_get_filter_input::GetFilterInput;
+
+pub use crate::operation::get_filter::_get_filter_output::GetFilterOutput;
 
 mod _get_filter_input;
 

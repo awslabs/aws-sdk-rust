@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_vulnerabili
     }
 }
 
-pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_output::SearchVulnerabilitiesOutput;
-
 pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_input::SearchVulnerabilitiesInput;
+
+pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_output::SearchVulnerabilitiesOutput;
 
 mod _search_vulnerabilities_input;
 

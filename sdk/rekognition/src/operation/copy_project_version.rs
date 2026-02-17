@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::copy_project_versi
     }
 }
 
-pub use crate::operation::copy_project_version::_copy_project_version_output::CopyProjectVersionOutput;
-
 pub use crate::operation::copy_project_version::_copy_project_version_input::CopyProjectVersionInput;
+
+pub use crate::operation::copy_project_version::_copy_project_version_output::CopyProjectVersionOutput;
 
 mod _copy_project_version_input;
 

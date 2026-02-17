@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_permissions_boundary_from_permission_set::_delete_permissions_boundary_from_permission_set_output::DeletePermissionsBoundaryFromPermissionSetOutput;
-
 pub use crate::operation::delete_permissions_boundary_from_permission_set::_delete_permissions_boundary_from_permission_set_input::DeletePermissionsBoundaryFromPermissionSetInput;
+
+pub use crate::operation::delete_permissions_boundary_from_permission_set::_delete_permissions_boundary_from_permission_set_output::DeletePermissionsBoundaryFromPermissionSetOutput;
 
 mod _delete_permissions_boundary_from_permission_set_input;
 

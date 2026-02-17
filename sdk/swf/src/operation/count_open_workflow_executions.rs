@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::count_open_workflo
     }
 }
 
-pub use crate::operation::count_open_workflow_executions::_count_open_workflow_executions_output::CountOpenWorkflowExecutionsOutput;
-
 pub use crate::operation::count_open_workflow_executions::_count_open_workflow_executions_input::CountOpenWorkflowExecutionsInput;
+
+pub use crate::operation::count_open_workflow_executions::_count_open_workflow_executions_output::CountOpenWorkflowExecutionsOutput;
 
 mod _count_open_workflow_executions_input;
 

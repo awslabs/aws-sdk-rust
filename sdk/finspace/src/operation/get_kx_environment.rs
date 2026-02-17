@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_environment
     }
 }
 
-pub use crate::operation::get_kx_environment::_get_kx_environment_output::GetKxEnvironmentOutput;
-
 pub use crate::operation::get_kx_environment::_get_kx_environment_input::GetKxEnvironmentInput;
+
+pub use crate::operation::get_kx_environment::_get_kx_environment_output::GetKxEnvironmentOutput;
 
 mod _get_kx_environment_input;
 

@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_certificate
     }
 }
 
-pub use crate::operation::create_certificate::_create_certificate_output::CreateCertificateOutput;
-
 pub use crate::operation::create_certificate::_create_certificate_input::CreateCertificateInput;
+
+pub use crate::operation::create_certificate::_create_certificate_output::CreateCertificateOutput;
 
 mod _create_certificate_input;
 

@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_automatio
     }
 }
 
-pub use crate::operation::get_data_automation_project::_get_data_automation_project_output::GetDataAutomationProjectOutput;
-
 pub use crate::operation::get_data_automation_project::_get_data_automation_project_input::GetDataAutomationProjectInput;
+
+pub use crate::operation::get_data_automation_project::_get_data_automation_project_output::GetDataAutomationProjectOutput;
 
 mod _get_data_automation_project_input;
 

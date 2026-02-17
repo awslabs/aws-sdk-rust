@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_topic_rule
     }
 }
 
-pub use crate::operation::confirm_topic_rule_destination::_confirm_topic_rule_destination_output::ConfirmTopicRuleDestinationOutput;
-
 pub use crate::operation::confirm_topic_rule_destination::_confirm_topic_rule_destination_input::ConfirmTopicRuleDestinationInput;
+
+pub use crate::operation::confirm_topic_rule_destination::_confirm_topic_rule_destination_output::ConfirmTopicRuleDestinationOutput;
 
 mod _confirm_topic_rule_destination_input;
 

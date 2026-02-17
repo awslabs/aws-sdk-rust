@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_hapg::Creat
     }
 }
 
-pub use crate::operation::create_hapg::_create_hapg_output::CreateHapgOutput;
-
 pub use crate::operation::create_hapg::_create_hapg_input::CreateHapgInput;
+
+pub use crate::operation::create_hapg::_create_hapg_output::CreateHapgOutput;
 
 mod _create_hapg_input;
 

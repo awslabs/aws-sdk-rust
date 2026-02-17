@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_document_pe
     }
 }
 
-pub use crate::operation::modify_document_permission::_modify_document_permission_output::ModifyDocumentPermissionOutput;
-
 pub use crate::operation::modify_document_permission::_modify_document_permission_input::ModifyDocumentPermissionInput;
+
+pub use crate::operation::modify_document_permission::_modify_document_permission_output::ModifyDocumentPermissionOutput;
 
 mod _modify_document_permission_input;
 

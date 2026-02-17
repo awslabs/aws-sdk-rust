@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_instance_
     }
 }
 
-pub use crate::operation::list_app_instance_user_endpoints::_list_app_instance_user_endpoints_output::ListAppInstanceUserEndpointsOutput;
-
 pub use crate::operation::list_app_instance_user_endpoints::_list_app_instance_user_endpoints_input::ListAppInstanceUserEndpointsInput;
+
+pub use crate::operation::list_app_instance_user_endpoints::_list_app_instance_user_endpoints_output::ListAppInstanceUserEndpointsOutput;
 
 mod _list_app_instance_user_endpoints_input;
 

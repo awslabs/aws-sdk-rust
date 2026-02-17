@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_target_grou
     }
 }
 
-pub use crate::operation::update_target_group::_update_target_group_output::UpdateTargetGroupOutput;
-
 pub use crate::operation::update_target_group::_update_target_group_input::UpdateTargetGroupInput;
+
+pub use crate::operation::update_target_group::_update_target_group_output::UpdateTargetGroupOutput;
 
 mod _update_target_group_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_action_connec
     }
 }
 
-pub use crate::operation::list_action_connectors::_list_action_connectors_output::ListActionConnectorsOutput;
-
 pub use crate::operation::list_action_connectors::_list_action_connectors_input::ListActionConnectorsInput;
+
+pub use crate::operation::list_action_connectors::_list_action_connectors_output::ListActionConnectorsOutput;
 
 mod _list_action_connectors_input;
 

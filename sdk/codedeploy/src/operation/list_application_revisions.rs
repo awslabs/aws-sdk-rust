@@ -457,9 +457,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_r
     }
 }
 
-pub use crate::operation::list_application_revisions::_list_application_revisions_output::ListApplicationRevisionsOutput;
-
 pub use crate::operation::list_application_revisions::_list_application_revisions_input::ListApplicationRevisionsInput;
+
+pub use crate::operation::list_application_revisions::_list_application_revisions_output::ListApplicationRevisionsOutput;
 
 mod _list_application_revisions_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_profiling_g
     }
 }
 
-pub use crate::operation::delete_profiling_group::_delete_profiling_group_output::DeleteProfilingGroupOutput;
-
 pub use crate::operation::delete_profiling_group::_delete_profiling_group_input::DeleteProfilingGroupInput;
+
+pub use crate::operation::delete_profiling_group::_delete_profiling_group_output::DeleteProfilingGroupOutput;
 
 mod _delete_profiling_group_input;
 

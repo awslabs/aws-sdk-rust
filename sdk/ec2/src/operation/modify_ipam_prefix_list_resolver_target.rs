@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_ipam_prefix
     }
 }
 
-pub use crate::operation::modify_ipam_prefix_list_resolver_target::_modify_ipam_prefix_list_resolver_target_output::ModifyIpamPrefixListResolverTargetOutput;
-
 pub use crate::operation::modify_ipam_prefix_list_resolver_target::_modify_ipam_prefix_list_resolver_target_input::ModifyIpamPrefixListResolverTargetInput;
+
+pub use crate::operation::modify_ipam_prefix_list_resolver_target::_modify_ipam_prefix_list_resolver_target_output::ModifyIpamPrefixListResolverTargetOutput;
 
 mod _modify_ipam_prefix_list_resolver_target_input;
 

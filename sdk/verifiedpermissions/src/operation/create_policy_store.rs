@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_policy_stor
     }
 }
 
-pub use crate::operation::create_policy_store::_create_policy_store_output::CreatePolicyStoreOutput;
-
 pub use crate::operation::create_policy_store::_create_policy_store_input::CreatePolicyStoreInput;
+
+pub use crate::operation::create_policy_store::_create_policy_store_output::CreatePolicyStoreOutput;
 
 mod _create_policy_store_input;
 

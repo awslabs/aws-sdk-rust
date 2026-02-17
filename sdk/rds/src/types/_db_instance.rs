@@ -99,6 +99,16 @@ pub struct DbInstance {
     pub status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     /// <p>The storage type associated with the DB instance.</p>
     pub storage_type: ::std::option::Option<::std::string::String>,
+    /// <p>The type of encryption used to protect data at rest in the DB instance. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB instance is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB instance is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub tde_credential_arn: ::std::option::Option<::std::string::String>,
     /// <p>The port that the DB instance listens on. If the DB instance is part of a DB cluster, this can be a different port than the DB cluster port.</p>
@@ -423,6 +433,18 @@ impl DbInstance {
     pub fn storage_type(&self) -> ::std::option::Option<&str> {
         self.storage_type.as_deref()
     }
+    /// <p>The type of encryption used to protect data at rest in the DB instance. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB instance is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB instance is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
+    }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub fn tde_credential_arn(&self) -> ::std::option::Option<&str> {
         self.tde_credential_arn.as_deref()
@@ -732,6 +754,7 @@ pub struct DbInstanceBuilder {
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) status_infos: ::std::option::Option<::std::vec::Vec<crate::types::DbInstanceStatusInfo>>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) tde_credential_arn: ::std::option::Option<::std::string::String>,
     pub(crate) db_instance_port: ::std::option::Option<i32>,
     pub(crate) db_cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -1407,6 +1430,44 @@ impl DbInstanceBuilder {
     /// <p>The storage type associated with the DB instance.</p>
     pub fn get_storage_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_type
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB instance. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB instance is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB instance is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB instance. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB instance is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB instance is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the DB instance. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The DB instance is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The DB instance is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The DB instance is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
     }
     /// <p>The ARN from the key store with which the instance is associated for TDE encryption.</p>
     pub fn tde_credential_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -2342,6 +2403,7 @@ impl DbInstanceBuilder {
             publicly_accessible: self.publicly_accessible,
             status_infos: self.status_infos,
             storage_type: self.storage_type,
+            storage_encryption_type: self.storage_encryption_type,
             tde_credential_arn: self.tde_credential_arn,
             db_instance_port: self.db_instance_port,
             db_cluster_identifier: self.db_cluster_identifier,

@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_provisioned
     }
 }
 
-pub use crate::operation::delete_provisioned_product_plan::_delete_provisioned_product_plan_output::DeleteProvisionedProductPlanOutput;
-
 pub use crate::operation::delete_provisioned_product_plan::_delete_provisioned_product_plan_input::DeleteProvisionedProductPlanInput;
+
+pub use crate::operation::delete_provisioned_product_plan::_delete_provisioned_product_plan_output::DeleteProvisionedProductPlanOutput;
 
 mod _delete_provisioned_product_plan_input;
 

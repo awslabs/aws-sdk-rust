@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_capacity_manag
     }
 }
 
-pub use crate::operation::get_capacity_manager_metric_data::_get_capacity_manager_metric_data_output::GetCapacityManagerMetricDataOutput;
-
 pub use crate::operation::get_capacity_manager_metric_data::_get_capacity_manager_metric_data_input::GetCapacityManagerMetricDataInput;
+
+pub use crate::operation::get_capacity_manager_metric_data::_get_capacity_manager_metric_data_output::GetCapacityManagerMetricDataOutput;
 
 mod _get_capacity_manager_metric_data_input;
 

@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_backup_vault_n
     }
 }
 
-pub use crate::operation::get_backup_vault_notifications::_get_backup_vault_notifications_output::GetBackupVaultNotificationsOutput;
-
 pub use crate::operation::get_backup_vault_notifications::_get_backup_vault_notifications_input::GetBackupVaultNotificationsInput;
+
+pub use crate::operation::get_backup_vault_notifications::_get_backup_vault_notifications_output::GetBackupVaultNotificationsOutput;
 
 mod _get_backup_vault_notifications_input;
 

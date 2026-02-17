@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_custom_action:
     }
 }
 
-pub use crate::operation::get_custom_action::_get_custom_action_output::GetCustomActionOutput;
-
 pub use crate::operation::get_custom_action::_get_custom_action_input::GetCustomActionInput;
+
+pub use crate::operation::get_custom_action::_get_custom_action_output::GetCustomActionOutput;
 
 mod _get_custom_action_input;
 

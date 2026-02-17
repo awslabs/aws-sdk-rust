@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channel_hands
     }
 }
 
-pub use crate::operation::list_channel_handshakes::_list_channel_handshakes_output::ListChannelHandshakesOutput;
-
 pub use crate::operation::list_channel_handshakes::_list_channel_handshakes_input::ListChannelHandshakesInput;
+
+pub use crate::operation::list_channel_handshakes::_list_channel_handshakes_output::ListChannelHandshakesOutput;
 
 mod _list_channel_handshakes_input;
 

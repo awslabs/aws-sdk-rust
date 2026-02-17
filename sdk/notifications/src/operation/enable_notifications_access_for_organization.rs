@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::enable_notifications_access_for_organization::_enable_notifications_access_for_organization_output::EnableNotificationsAccessForOrganizationOutput;
-
 pub use crate::operation::enable_notifications_access_for_organization::_enable_notifications_access_for_organization_input::EnableNotificationsAccessForOrganizationInput;
+
+pub use crate::operation::enable_notifications_access_for_organization::_enable_notifications_access_for_organization_output::EnableNotificationsAccessForOrganizationOutput;
 
 mod _enable_notifications_access_for_organization_input;
 

@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_guardrail::
     }
 }
 
-pub use crate::operation::delete_guardrail::_delete_guardrail_output::DeleteGuardrailOutput;
-
 pub use crate::operation::delete_guardrail::_delete_guardrail_input::DeleteGuardrailInput;
+
+pub use crate::operation::delete_guardrail::_delete_guardrail_output::DeleteGuardrailOutput;
 
 mod _delete_guardrail_input;
 

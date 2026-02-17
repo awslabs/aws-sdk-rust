@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_organization_recommendation_lifecycle::_update_organization_recommendation_lifecycle_output::UpdateOrganizationRecommendationLifecycleOutput;
-
 pub use crate::operation::update_organization_recommendation_lifecycle::_update_organization_recommendation_lifecycle_input::UpdateOrganizationRecommendationLifecycleInput;
+
+pub use crate::operation::update_organization_recommendation_lifecycle::_update_organization_recommendation_lifecycle_output::UpdateOrganizationRecommendationLifecycleOutput;
 
 mod _update_organization_recommendation_lifecycle_input;
 

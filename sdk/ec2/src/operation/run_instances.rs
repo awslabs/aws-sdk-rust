@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::run_instances::Run
     }
 }
 
-pub use crate::operation::run_instances::_run_instances_output::RunInstancesOutput;
-
 pub use crate::operation::run_instances::_run_instances_input::RunInstancesInput;
+
+pub use crate::operation::run_instances::_run_instances_output::RunInstancesOutput;
 
 mod _run_instances_input;
 

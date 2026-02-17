@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_layouts::List
     }
 }
 
-pub use crate::operation::list_layouts::_list_layouts_output::ListLayoutsOutput;
-
 pub use crate::operation::list_layouts::_list_layouts_input::ListLayoutsInput;
+
+pub use crate::operation::list_layouts::_list_layouts_output::ListLayoutsOutput;
 
 mod _list_layouts_input;
 

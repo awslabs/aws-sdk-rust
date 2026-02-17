@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_control_insig
     }
 }
 
-pub use crate::operation::list_control_insights_by_control_domain::_list_control_insights_by_control_domain_output::ListControlInsightsByControlDomainOutput;
-
 pub use crate::operation::list_control_insights_by_control_domain::_list_control_insights_by_control_domain_input::ListControlInsightsByControlDomainInput;
+
+pub use crate::operation::list_control_insights_by_control_domain::_list_control_insights_by_control_domain_output::ListControlInsightsByControlDomainOutput;
 
 mod _list_control_insights_by_control_domain_input;
 

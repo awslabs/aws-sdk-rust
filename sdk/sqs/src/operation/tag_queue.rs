@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::tag_queue::TagQueu
     }
 }
 
-pub use crate::operation::tag_queue::_tag_queue_output::TagQueueOutput;
-
 pub use crate::operation::tag_queue::_tag_queue_input::TagQueueInput;
+
+pub use crate::operation::tag_queue::_tag_queue_output::TagQueueOutput;
 
 mod _tag_queue_input;
 

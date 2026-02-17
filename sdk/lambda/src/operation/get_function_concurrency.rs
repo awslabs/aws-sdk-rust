@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_concu
     }
 }
 
-pub use crate::operation::get_function_concurrency::_get_function_concurrency_output::GetFunctionConcurrencyOutput;
-
 pub use crate::operation::get_function_concurrency::_get_function_concurrency_input::GetFunctionConcurrencyInput;
+
+pub use crate::operation::get_function_concurrency::_get_function_concurrency_output::GetFunctionConcurrencyOutput;
 
 mod _get_function_concurrency_input;
 

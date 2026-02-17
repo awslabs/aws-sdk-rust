@@ -462,9 +462,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_role_custom
     }
 }
 
-pub use crate::operation::update_role_custom_permission::_update_role_custom_permission_output::UpdateRoleCustomPermissionOutput;
-
 pub use crate::operation::update_role_custom_permission::_update_role_custom_permission_input::UpdateRoleCustomPermissionInput;
+
+pub use crate::operation::update_role_custom_permission::_update_role_custom_permission_output::UpdateRoleCustomPermissionOutput;
 
 mod _update_role_custom_permission_input;
 

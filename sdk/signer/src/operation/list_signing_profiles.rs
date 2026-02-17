@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_signing_profi
     }
 }
 
-pub use crate::operation::list_signing_profiles::_list_signing_profiles_output::ListSigningProfilesOutput;
-
 pub use crate::operation::list_signing_profiles::_list_signing_profiles_input::ListSigningProfilesInput;
+
+pub use crate::operation::list_signing_profiles::_list_signing_profiles_output::ListSigningProfilesOutput;
 
 mod _list_signing_profiles_input;
 

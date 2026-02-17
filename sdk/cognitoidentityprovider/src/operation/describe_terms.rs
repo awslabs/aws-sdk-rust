@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_terms::De
     }
 }
 
-pub use crate::operation::describe_terms::_describe_terms_output::DescribeTermsOutput;
-
 pub use crate::operation::describe_terms::_describe_terms_input::DescribeTermsInput;
+
+pub use crate::operation::describe_terms::_describe_terms_output::DescribeTermsOutput;
 
 mod _describe_terms_input;
 

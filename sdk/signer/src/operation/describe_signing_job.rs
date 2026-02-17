@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_signing_j
     }
 }
 
-pub use crate::operation::describe_signing_job::_describe_signing_job_output::DescribeSigningJobOutput;
-
 pub use crate::operation::describe_signing_job::_describe_signing_job_input::DescribeSigningJobInput;
+
+pub use crate::operation::describe_signing_job::_describe_signing_job_output::DescribeSigningJobOutput;
 
 mod _describe_signing_job_input;
 

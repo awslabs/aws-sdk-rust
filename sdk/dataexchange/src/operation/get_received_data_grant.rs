@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_received_data_
     }
 }
 
-pub use crate::operation::get_received_data_grant::_get_received_data_grant_output::GetReceivedDataGrantOutput;
-
 pub use crate::operation::get_received_data_grant::_get_received_data_grant_input::GetReceivedDataGrantInput;
+
+pub use crate::operation::get_received_data_grant::_get_received_data_grant_output::GetReceivedDataGrantOutput;
 
 mod _get_received_data_grant_input;
 

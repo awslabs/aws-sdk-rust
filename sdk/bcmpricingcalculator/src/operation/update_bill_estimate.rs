@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_bill_estima
     }
 }
 
-pub use crate::operation::update_bill_estimate::_update_bill_estimate_output::UpdateBillEstimateOutput;
-
 pub use crate::operation::update_bill_estimate::_update_bill_estimate_input::UpdateBillEstimateInput;
+
+pub use crate::operation::update_bill_estimate::_update_bill_estimate_output::UpdateBillEstimateOutput;
 
 mod _update_bill_estimate_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_image
     }
 }
 
-pub use crate::operation::batch_delete_image::_batch_delete_image_output::BatchDeleteImageOutput;
-
 pub use crate::operation::batch_delete_image::_batch_delete_image_input::BatchDeleteImageInput;
+
+pub use crate::operation::batch_delete_image::_batch_delete_image_output::BatchDeleteImageOutput;
 
 mod _batch_delete_image_input;
 

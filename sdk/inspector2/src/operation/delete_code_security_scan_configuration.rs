@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_code_securi
     }
 }
 
-pub use crate::operation::delete_code_security_scan_configuration::_delete_code_security_scan_configuration_output::DeleteCodeSecurityScanConfigurationOutput;
-
 pub use crate::operation::delete_code_security_scan_configuration::_delete_code_security_scan_configuration_input::DeleteCodeSecurityScanConfigurationInput;
+
+pub use crate::operation::delete_code_security_scan_configuration::_delete_code_security_scan_configuration_output::DeleteCodeSecurityScanConfigurationOutput;
 
 mod _delete_code_security_scan_configuration_input;
 

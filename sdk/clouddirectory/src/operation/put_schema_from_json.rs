@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_schema_from_js
     }
 }
 
-pub use crate::operation::put_schema_from_json::_put_schema_from_json_output::PutSchemaFromJsonOutput;
-
 pub use crate::operation::put_schema_from_json::_put_schema_from_json_input::PutSchemaFromJsonInput;
+
+pub use crate::operation::put_schema_from_json::_put_schema_from_json_output::PutSchemaFromJsonOutput;
 
 mod _put_schema_from_json_input;
 

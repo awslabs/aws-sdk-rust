@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_jobs_by_consu
     }
 }
 
-pub use crate::operation::list_jobs_by_consumable_resource::_list_jobs_by_consumable_resource_output::ListJobsByConsumableResourceOutput;
-
 pub use crate::operation::list_jobs_by_consumable_resource::_list_jobs_by_consumable_resource_input::ListJobsByConsumableResourceInput;
+
+pub use crate::operation::list_jobs_by_consumable_resource::_list_jobs_by_consumable_resource_output::ListJobsByConsumableResourceOutput;
 
 mod _list_jobs_by_consumable_resource_input;
 

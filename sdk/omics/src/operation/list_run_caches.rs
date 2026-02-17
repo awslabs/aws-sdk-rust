@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_run_caches::L
     }
 }
 
-pub use crate::operation::list_run_caches::_list_run_caches_output::ListRunCachesOutput;
-
 pub use crate::operation::list_run_caches::_list_run_caches_input::ListRunCachesInput;
+
+pub use crate::operation::list_run_caches::_list_run_caches_output::ListRunCachesOutput;
 
 mod _list_run_caches_input;
 

@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_web_rtc_cont
     }
 }
 
-pub use crate::operation::start_web_rtc_contact::_start_web_rtc_contact_output::StartWebRtcContactOutput;
-
 pub use crate::operation::start_web_rtc_contact::_start_web_rtc_contact_input::StartWebRtcContactInput;
+
+pub use crate::operation::start_web_rtc_contact::_start_web_rtc_contact_output::StartWebRtcContactOutput;
 
 mod _start_web_rtc_contact_input;
 

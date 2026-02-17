@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_import_job:
     }
 }
 
-pub use crate::operation::delete_import_job::_delete_import_job_output::DeleteImportJobOutput;
-
 pub use crate::operation::delete_import_job::_delete_import_job_input::DeleteImportJobInput;
+
+pub use crate::operation::delete_import_job::_delete_import_job_output::DeleteImportJobOutput;
 
 mod _delete_import_job_input;
 

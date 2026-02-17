@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cluster_s
     }
 }
 
-pub use crate::operation::describe_cluster_security_groups::_describe_cluster_security_groups_output::DescribeClusterSecurityGroupsOutput;
-
 pub use crate::operation::describe_cluster_security_groups::_describe_cluster_security_groups_input::DescribeClusterSecurityGroupsInput;
+
+pub use crate::operation::describe_cluster_security_groups::_describe_cluster_security_groups_output::DescribeClusterSecurityGroupsOutput;
 
 mod _describe_cluster_security_groups_input;
 

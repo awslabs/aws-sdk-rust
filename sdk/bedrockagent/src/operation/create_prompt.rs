@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_prompt::Cre
     }
 }
 
-pub use crate::operation::create_prompt::_create_prompt_output::CreatePromptOutput;
-
 pub use crate::operation::create_prompt::_create_prompt_input::CreatePromptInput;
+
+pub use crate::operation::create_prompt::_create_prompt_output::CreatePromptOutput;
 
 mod _create_prompt_input;
 

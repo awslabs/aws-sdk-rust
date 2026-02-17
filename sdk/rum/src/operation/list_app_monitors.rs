@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_app_monitors:
     }
 }
 
-pub use crate::operation::list_app_monitors::_list_app_monitors_output::ListAppMonitorsOutput;
-
 pub use crate::operation::list_app_monitors::_list_app_monitors_input::ListAppMonitorsInput;
+
+pub use crate::operation::list_app_monitors::_list_app_monitors_output::ListAppMonitorsOutput;
 
 mod _list_app_monitors_input;
 

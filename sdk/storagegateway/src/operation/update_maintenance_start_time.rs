@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_maintenance
     }
 }
 
-pub use crate::operation::update_maintenance_start_time::_update_maintenance_start_time_output::UpdateMaintenanceStartTimeOutput;
-
 pub use crate::operation::update_maintenance_start_time::_update_maintenance_start_time_input::UpdateMaintenanceStartTimeInput;
+
+pub use crate::operation::update_maintenance_start_time::_update_maintenance_start_time_output::UpdateMaintenanceStartTimeOutput;
 
 mod _update_maintenance_start_time_input;
 

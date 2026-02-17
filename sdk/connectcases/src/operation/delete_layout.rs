@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_layout::Del
     }
 }
 
-pub use crate::operation::delete_layout::_delete_layout_output::DeleteLayoutOutput;
-
 pub use crate::operation::delete_layout::_delete_layout_input::DeleteLayoutInput;
+
+pub use crate::operation::delete_layout::_delete_layout_output::DeleteLayoutOutput;
 
 mod _delete_layout_input;
 

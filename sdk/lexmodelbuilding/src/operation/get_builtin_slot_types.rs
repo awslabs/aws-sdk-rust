@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_builtin_slot_t
     }
 }
 
-pub use crate::operation::get_builtin_slot_types::_get_builtin_slot_types_output::GetBuiltinSlotTypesOutput;
-
 pub use crate::operation::get_builtin_slot_types::_get_builtin_slot_types_input::GetBuiltinSlotTypesInput;
+
+pub use crate::operation::get_builtin_slot_types::_get_builtin_slot_types_output::GetBuiltinSlotTypesOutput;
 
 mod _get_builtin_slot_types_input;
 

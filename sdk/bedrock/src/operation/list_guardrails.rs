@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_guardrails::L
     }
 }
 
-pub use crate::operation::list_guardrails::_list_guardrails_output::ListGuardrailsOutput;
-
 pub use crate::operation::list_guardrails::_list_guardrails_input::ListGuardrailsInput;
+
+pub use crate::operation::list_guardrails::_list_guardrails_output::ListGuardrailsOutput;
 
 mod _list_guardrails_input;
 

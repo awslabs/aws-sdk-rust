@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_on_demand_au
     }
 }
 
-pub use crate::operation::start_on_demand_audit_task::_start_on_demand_audit_task_output::StartOnDemandAuditTaskOutput;
-
 pub use crate::operation::start_on_demand_audit_task::_start_on_demand_audit_task_input::StartOnDemandAuditTaskInput;
+
+pub use crate::operation::start_on_demand_audit_task::_start_on_demand_audit_task_output::StartOnDemandAuditTaskOutput;
 
 mod _start_on_demand_audit_task_input;
 

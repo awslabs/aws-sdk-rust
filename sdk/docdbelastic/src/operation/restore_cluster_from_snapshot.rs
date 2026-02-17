@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_cluster_fr
     }
 }
 
-pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_snapshot_output::RestoreClusterFromSnapshotOutput;
-
 pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_snapshot_input::RestoreClusterFromSnapshotInput;
+
+pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_snapshot_output::RestoreClusterFromSnapshotOutput;
 
 mod _restore_cluster_from_snapshot_input;
 

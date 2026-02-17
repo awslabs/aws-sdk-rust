@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_policy_templa
     }
 }
 
-pub use crate::operation::list_policy_templates::_list_policy_templates_output::ListPolicyTemplatesOutput;
-
 pub use crate::operation::list_policy_templates::_list_policy_templates_input::ListPolicyTemplatesInput;
+
+pub use crate::operation::list_policy_templates::_list_policy_templates_output::ListPolicyTemplatesOutput;
 
 mod _list_policy_templates_input;
 

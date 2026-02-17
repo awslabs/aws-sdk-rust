@@ -482,9 +482,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_association
     }
 }
 
-pub use crate::operation::create_association_batch::_create_association_batch_output::CreateAssociationBatchOutput;
-
 pub use crate::operation::create_association_batch::_create_association_batch_input::CreateAssociationBatchInput;
+
+pub use crate::operation::create_association_batch::_create_association_batch_output::CreateAssociationBatchOutput;
 
 mod _create_association_batch_input;
 

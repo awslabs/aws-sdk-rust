@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_open_id_con
     }
 }
 
-pub use crate::operation::create_open_id_connect_provider::_create_open_id_connect_provider_output::CreateOpenIdConnectProviderOutput;
-
 pub use crate::operation::create_open_id_connect_provider::_create_open_id_connect_provider_input::CreateOpenIdConnectProviderInput;
+
+pub use crate::operation::create_open_id_connect_provider::_create_open_id_connect_provider_output::CreateOpenIdConnectProviderOutput;
 
 mod _create_open_id_connect_provider_input;
 

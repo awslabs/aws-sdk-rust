@@ -367,9 +367,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::simulate_custom_po
     }
 }
 
-pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_output::SimulateCustomPolicyOutput;
-
 pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_input::SimulateCustomPolicyInput;
+
+pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_output::SimulateCustomPolicyOutput;
 
 mod _simulate_custom_policy_input;
 

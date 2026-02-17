@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_observati
     }
 }
 
-pub use crate::operation::describe_observation::_describe_observation_output::DescribeObservationOutput;
-
 pub use crate::operation::describe_observation::_describe_observation_input::DescribeObservationInput;
+
+pub use crate::operation::describe_observation::_describe_observation_output::DescribeObservationOutput;
 
 mod _describe_observation_input;
 

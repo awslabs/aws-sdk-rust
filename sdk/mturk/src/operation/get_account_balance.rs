@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_balanc
     }
 }
 
-pub use crate::operation::get_account_balance::_get_account_balance_output::GetAccountBalanceOutput;
-
 pub use crate::operation::get_account_balance::_get_account_balance_input::GetAccountBalanceInput;
+
+pub use crate::operation::get_account_balance::_get_account_balance_output::GetAccountBalanceOutput;
 
 mod _get_account_balance_input;
 

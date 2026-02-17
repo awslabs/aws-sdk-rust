@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_crawler_metric
     }
 }
 
-pub use crate::operation::get_crawler_metrics::_get_crawler_metrics_output::GetCrawlerMetricsOutput;
-
 pub use crate::operation::get_crawler_metrics::_get_crawler_metrics_input::GetCrawlerMetricsInput;
+
+pub use crate::operation::get_crawler_metrics::_get_crawler_metrics_output::GetCrawlerMetricsOutput;
 
 mod _get_crawler_metrics_input;
 

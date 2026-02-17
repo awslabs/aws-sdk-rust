@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_execution_hist
     }
 }
 
-pub use crate::operation::get_execution_history::_get_execution_history_output::GetExecutionHistoryOutput;
-
 pub use crate::operation::get_execution_history::_get_execution_history_input::GetExecutionHistoryInput;
+
+pub use crate::operation::get_execution_history::_get_execution_history_output::GetExecutionHistoryOutput;
 
 mod _get_execution_history_input;
 

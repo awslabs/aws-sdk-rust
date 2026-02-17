@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_grid_pro
     }
 }
 
-pub use crate::operation::list_test_grid_projects::_list_test_grid_projects_output::ListTestGridProjectsOutput;
-
 pub use crate::operation::list_test_grid_projects::_list_test_grid_projects_input::ListTestGridProjectsInput;
+
+pub use crate::operation::list_test_grid_projects::_list_test_grid_projects_output::ListTestGridProjectsOutput;
 
 mod _list_test_grid_projects_input;
 

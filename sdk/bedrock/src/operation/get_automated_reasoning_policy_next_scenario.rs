@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::get_automated_reasoning_policy_next_scenario::_get_automated_reasoning_policy_next_scenario_output::GetAutomatedReasoningPolicyNextScenarioOutput;
-
 pub use crate::operation::get_automated_reasoning_policy_next_scenario::_get_automated_reasoning_policy_next_scenario_input::GetAutomatedReasoningPolicyNextScenarioInput;
+
+pub use crate::operation::get_automated_reasoning_policy_next_scenario::_get_automated_reasoning_policy_next_scenario_output::GetAutomatedReasoningPolicyNextScenarioOutput;
 
 mod _get_automated_reasoning_policy_next_scenario_input;
 

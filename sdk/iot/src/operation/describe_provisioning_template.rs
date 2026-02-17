@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_provision
     }
 }
 
-pub use crate::operation::describe_provisioning_template::_describe_provisioning_template_output::DescribeProvisioningTemplateOutput;
-
 pub use crate::operation::describe_provisioning_template::_describe_provisioning_template_input::DescribeProvisioningTemplateInput;
+
+pub use crate::operation::describe_provisioning_template::_describe_provisioning_template_output::DescribeProvisioningTemplateOutput;
 
 mod _describe_provisioning_template_input;
 

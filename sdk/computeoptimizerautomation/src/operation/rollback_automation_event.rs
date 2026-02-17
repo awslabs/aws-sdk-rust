@@ -465,9 +465,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rollback_automatio
     }
 }
 
-pub use crate::operation::rollback_automation_event::_rollback_automation_event_output::RollbackAutomationEventOutput;
-
 pub use crate::operation::rollback_automation_event::_rollback_automation_event_input::RollbackAutomationEventInput;
+
+pub use crate::operation::rollback_automation_event::_rollback_automation_event_output::RollbackAutomationEventOutput;
 
 mod _rollback_automation_event_input;
 

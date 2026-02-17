@@ -345,9 +345,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_instance::I
     }
 }
 
-pub use crate::operation::import_instance::_import_instance_output::ImportInstanceOutput;
-
 pub use crate::operation::import_instance::_import_instance_input::ImportInstanceInput;
+
+pub use crate::operation::import_instance::_import_instance_output::ImportInstanceOutput;
 
 mod _import_instance_input;
 

@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_invoice_units
     }
 }
 
-pub use crate::operation::list_invoice_units::_list_invoice_units_output::ListInvoiceUnitsOutput;
-
 pub use crate::operation::list_invoice_units::_list_invoice_units_input::ListInvoiceUnitsInput;
+
+pub use crate::operation::list_invoice_units::_list_invoice_units_output::ListInvoiceUnitsOutput;
 
 mod _list_invoice_units_input;
 

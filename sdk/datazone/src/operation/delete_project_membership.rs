@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_project_mem
     }
 }
 
-pub use crate::operation::delete_project_membership::_delete_project_membership_output::DeleteProjectMembershipOutput;
-
 pub use crate::operation::delete_project_membership::_delete_project_membership_input::DeleteProjectMembershipInput;
+
+pub use crate::operation::delete_project_membership::_delete_project_membership_output::DeleteProjectMembershipOutput;
 
 mod _delete_project_membership_input;
 

@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_multipart_u
     }
 }
 
-pub use crate::operation::create_multipart_upload::_create_multipart_upload_output::CreateMultipartUploadOutput;
-
 pub use crate::operation::create_multipart_upload::_create_multipart_upload_input::CreateMultipartUploadInput;
+
+pub use crate::operation::create_multipart_upload::_create_multipart_upload_output::CreateMultipartUploadOutput;
 
 mod _create_multipart_upload_input;
 

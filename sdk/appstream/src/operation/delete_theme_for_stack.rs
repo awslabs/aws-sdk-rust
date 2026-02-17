@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_theme_for_s
     }
 }
 
-pub use crate::operation::delete_theme_for_stack::_delete_theme_for_stack_output::DeleteThemeForStackOutput;
-
 pub use crate::operation::delete_theme_for_stack::_delete_theme_for_stack_input::DeleteThemeForStackInput;
+
+pub use crate::operation::delete_theme_for_stack::_delete_theme_for_stack_output::DeleteThemeForStackOutput;
 
 mod _delete_theme_for_stack_input;
 

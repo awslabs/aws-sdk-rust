@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_engagement_re
     }
 }
 
-pub use crate::operation::list_engagement_resource_associations::_list_engagement_resource_associations_output::ListEngagementResourceAssociationsOutput;
-
 pub use crate::operation::list_engagement_resource_associations::_list_engagement_resource_associations_input::ListEngagementResourceAssociationsInput;
+
+pub use crate::operation::list_engagement_resource_associations::_list_engagement_resource_associations_output::ListEngagementResourceAssociationsOutput;
 
 mod _list_engagement_resource_associations_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_route_analysis
     }
 }
 
-pub use crate::operation::get_route_analysis::_get_route_analysis_output::GetRouteAnalysisOutput;
-
 pub use crate::operation::get_route_analysis::_get_route_analysis_input::GetRouteAnalysisInput;
+
+pub use crate::operation::get_route_analysis::_get_route_analysis_output::GetRouteAnalysisOutput;
 
 mod _get_route_analysis_input;
 

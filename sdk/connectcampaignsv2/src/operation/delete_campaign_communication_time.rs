@@ -435,9 +435,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_campaign_co
     }
 }
 
-pub use crate::operation::delete_campaign_communication_time::_delete_campaign_communication_time_output::DeleteCampaignCommunicationTimeOutput;
-
 pub use crate::operation::delete_campaign_communication_time::_delete_campaign_communication_time_input::DeleteCampaignCommunicationTimeInput;
+
+pub use crate::operation::delete_campaign_communication_time::_delete_campaign_communication_time_output::DeleteCampaignCommunicationTimeOutput;
 
 mod _delete_campaign_communication_time_input;
 

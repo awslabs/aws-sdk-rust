@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_recovery_poin
     }
 }
 
-pub use crate::operation::list_recovery_points_by_legal_hold::_list_recovery_points_by_legal_hold_output::ListRecoveryPointsByLegalHoldOutput;
-
 pub use crate::operation::list_recovery_points_by_legal_hold::_list_recovery_points_by_legal_hold_input::ListRecoveryPointsByLegalHoldInput;
+
+pub use crate::operation::list_recovery_points_by_legal_hold::_list_recovery_points_by_legal_hold_output::ListRecoveryPointsByLegalHoldOutput;
 
 mod _list_recovery_points_by_legal_hold_input;
 

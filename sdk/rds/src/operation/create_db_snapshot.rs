@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_snapshot
     }
 }
 
-pub use crate::operation::create_db_snapshot::_create_db_snapshot_output::CreateDbSnapshotOutput;
-
 pub use crate::operation::create_db_snapshot::_create_db_snapshot_input::CreateDbSnapshotInput;
+
+pub use crate::operation::create_db_snapshot::_create_db_snapshot_output::CreateDbSnapshotOutput;
 
 mod _create_db_snapshot_input;
 

@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_studios::List
     }
 }
 
-pub use crate::operation::list_studios::_list_studios_output::ListStudiosOutput;
-
 pub use crate::operation::list_studios::_list_studios_input::ListStudiosInput;
+
+pub use crate::operation::list_studios::_list_studios_output::ListStudiosOutput;
 
 mod _list_studios_input;
 

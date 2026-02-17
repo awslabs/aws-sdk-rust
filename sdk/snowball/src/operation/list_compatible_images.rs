@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compatible_im
     }
 }
 
-pub use crate::operation::list_compatible_images::_list_compatible_images_output::ListCompatibleImagesOutput;
-
 pub use crate::operation::list_compatible_images::_list_compatible_images_input::ListCompatibleImagesInput;
+
+pub use crate::operation::list_compatible_images::_list_compatible_images_output::ListCompatibleImagesOutput;
 
 mod _list_compatible_images_input;
 

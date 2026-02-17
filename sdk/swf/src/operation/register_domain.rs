@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_domain::R
     }
 }
 
-pub use crate::operation::register_domain::_register_domain_output::RegisterDomainOutput;
-
 pub use crate::operation::register_domain::_register_domain_input::RegisterDomainInput;
+
+pub use crate::operation::register_domain::_register_domain_output::RegisterDomainOutput;
 
 mod _register_domain_input;
 

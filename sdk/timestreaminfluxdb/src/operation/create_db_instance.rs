@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_db_instance
     }
 }
 
-pub use crate::operation::create_db_instance::_create_db_instance_output::CreateDbInstanceOutput;
-
 pub use crate::operation::create_db_instance::_create_db_instance_input::CreateDbInstanceInput;
+
+pub use crate::operation::create_db_instance::_create_db_instance_output::CreateDbInstanceOutput;
 
 mod _create_db_instance_input;
 

@@ -464,9 +464,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_automation_
     }
 }
 
-pub use crate::operation::delete_automation_rule::_delete_automation_rule_output::DeleteAutomationRuleOutput;
-
 pub use crate::operation::delete_automation_rule::_delete_automation_rule_input::DeleteAutomationRuleInput;
+
+pub use crate::operation::delete_automation_rule::_delete_automation_rule_output::DeleteAutomationRuleOutput;
 
 mod _delete_automation_rule_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_automation_si
     }
 }
 
-pub use crate::operation::send_automation_signal::_send_automation_signal_output::SendAutomationSignalOutput;
-
 pub use crate::operation::send_automation_signal::_send_automation_signal_input::SendAutomationSignalInput;
+
+pub use crate::operation::send_automation_signal::_send_automation_signal_output::SendAutomationSignalOutput;
 
 mod _send_automation_signal_input;
 

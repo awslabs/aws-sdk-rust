@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_function_code_
     }
 }
 
-pub use crate::operation::get_function_code_signing_config::_get_function_code_signing_config_output::GetFunctionCodeSigningConfigOutput;
-
 pub use crate::operation::get_function_code_signing_config::_get_function_code_signing_config_input::GetFunctionCodeSigningConfigInput;
+
+pub use crate::operation::get_function_code_signing_config::_get_function_code_signing_config_output::GetFunctionCodeSigningConfigOutput;
 
 mod _get_function_code_signing_config_input;
 

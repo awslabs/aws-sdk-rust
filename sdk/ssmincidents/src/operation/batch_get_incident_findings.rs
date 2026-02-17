@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_incident
     }
 }
 
-pub use crate::operation::batch_get_incident_findings::_batch_get_incident_findings_output::BatchGetIncidentFindingsOutput;
-
 pub use crate::operation::batch_get_incident_findings::_batch_get_incident_findings_input::BatchGetIncidentFindingsInput;
+
+pub use crate::operation::batch_get_incident_findings::_batch_get_incident_findings_output::BatchGetIncidentFindingsOutput;
 
 mod _batch_get_incident_findings_input;
 

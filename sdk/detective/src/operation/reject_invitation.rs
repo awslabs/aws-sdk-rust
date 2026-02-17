@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reject_invitation:
     }
 }
 
-pub use crate::operation::reject_invitation::_reject_invitation_output::RejectInvitationOutput;
-
 pub use crate::operation::reject_invitation::_reject_invitation_input::RejectInvitationInput;
+
+pub use crate::operation::reject_invitation::_reject_invitation_output::RejectInvitationOutput;
 
 mod _reject_invitation_input;
 

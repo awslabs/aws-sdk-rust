@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_health_check_l
     }
 }
 
-pub use crate::operation::get_health_check_last_failure_reason::_get_health_check_last_failure_reason_output::GetHealthCheckLastFailureReasonOutput;
-
 pub use crate::operation::get_health_check_last_failure_reason::_get_health_check_last_failure_reason_input::GetHealthCheckLastFailureReasonInput;
+
+pub use crate::operation::get_health_check_last_failure_reason::_get_health_check_last_failure_reason_output::GetHealthCheckLastFailureReasonOutput;
 
 mod _get_health_check_last_failure_reason_input;
 

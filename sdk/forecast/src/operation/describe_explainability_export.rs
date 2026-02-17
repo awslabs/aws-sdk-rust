@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_explainab
     }
 }
 
-pub use crate::operation::describe_explainability_export::_describe_explainability_export_output::DescribeExplainabilityExportOutput;
-
 pub use crate::operation::describe_explainability_export::_describe_explainability_export_input::DescribeExplainabilityExportInput;
+
+pub use crate::operation::describe_explainability_export::_describe_explainability_export_output::DescribeExplainabilityExportOutput;
 
 mod _describe_explainability_export_input;
 

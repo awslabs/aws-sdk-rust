@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_inve
     }
 }
 
-pub use crate::operation::list_resource_inventory::_list_resource_inventory_output::ListResourceInventoryOutput;
-
 pub use crate::operation::list_resource_inventory::_list_resource_inventory_input::ListResourceInventoryInput;
+
+pub use crate::operation::list_resource_inventory::_list_resource_inventory_output::ListResourceInventoryOutput;
 
 mod _list_resource_inventory_input;
 

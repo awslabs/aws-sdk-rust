@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_prote
     }
 }
 
-pub use crate::operation::disassociate_protect_configuration::_disassociate_protect_configuration_output::DisassociateProtectConfigurationOutput;
-
 pub use crate::operation::disassociate_protect_configuration::_disassociate_protect_configuration_input::DisassociateProtectConfigurationInput;
+
+pub use crate::operation::disassociate_protect_configuration::_disassociate_protect_configuration_output::DisassociateProtectConfigurationOutput;
 
 mod _disassociate_protect_configuration_input;
 

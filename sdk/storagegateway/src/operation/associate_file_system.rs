@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_file_sys
     }
 }
 
-pub use crate::operation::associate_file_system::_associate_file_system_output::AssociateFileSystemOutput;
-
 pub use crate::operation::associate_file_system::_associate_file_system_input::AssociateFileSystemInput;
+
+pub use crate::operation::associate_file_system::_associate_file_system_output::AssociateFileSystemOutput;
 
 mod _associate_file_system_input;
 

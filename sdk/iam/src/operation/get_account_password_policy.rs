@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_account_passwo
     }
 }
 
-pub use crate::operation::get_account_password_policy::_get_account_password_policy_output::GetAccountPasswordPolicyOutput;
-
 pub use crate::operation::get_account_password_policy::_get_account_password_policy_input::GetAccountPasswordPolicyInput;
+
+pub use crate::operation::get_account_password_policy::_get_account_password_policy_output::GetAccountPasswordPolicyOutput;
 
 mod _get_account_password_policy_input;
 

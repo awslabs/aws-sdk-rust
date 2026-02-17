@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_worker_config
     }
 }
 
-pub use crate::operation::list_worker_configurations::_list_worker_configurations_output::ListWorkerConfigurationsOutput;
-
 pub use crate::operation::list_worker_configurations::_list_worker_configurations_input::ListWorkerConfigurationsInput;
+
+pub use crate::operation::list_worker_configurations::_list_worker_configurations_output::ListWorkerConfigurationsOutput;
 
 mod _list_worker_configurations_input;
 

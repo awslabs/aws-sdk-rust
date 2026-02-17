@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_container_s
     }
 }
 
-pub use crate::operation::create_container_service_registry_login::_create_container_service_registry_login_output::CreateContainerServiceRegistryLoginOutput;
-
 pub use crate::operation::create_container_service_registry_login::_create_container_service_registry_login_input::CreateContainerServiceRegistryLoginInput;
+
+pub use crate::operation::create_container_service_registry_login::_create_container_service_registry_login_output::CreateContainerServiceRegistryLoginOutput;
 
 mod _create_container_service_registry_login_input;
 

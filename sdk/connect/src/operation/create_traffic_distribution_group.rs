@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_traffic_dis
     }
 }
 
-pub use crate::operation::create_traffic_distribution_group::_create_traffic_distribution_group_output::CreateTrafficDistributionGroupOutput;
-
 pub use crate::operation::create_traffic_distribution_group::_create_traffic_distribution_group_input::CreateTrafficDistributionGroupInput;
+
+pub use crate::operation::create_traffic_distribution_group::_create_traffic_distribution_group_output::CreateTrafficDistributionGroupOutput;
 
 mod _create_traffic_distribution_group_input;
 

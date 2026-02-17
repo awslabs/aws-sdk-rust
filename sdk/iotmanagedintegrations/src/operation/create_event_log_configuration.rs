@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_event_log_c
     }
 }
 
-pub use crate::operation::create_event_log_configuration::_create_event_log_configuration_output::CreateEventLogConfigurationOutput;
-
 pub use crate::operation::create_event_log_configuration::_create_event_log_configuration_input::CreateEventLogConfigurationInput;
+
+pub use crate::operation::create_event_log_configuration::_create_event_log_configuration_output::CreateEventLogConfigurationOutput;
 
 mod _create_event_log_configuration_input;
 

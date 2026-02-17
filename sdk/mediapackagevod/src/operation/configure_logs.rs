@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::configure_logs::Co
     }
 }
 
-pub use crate::operation::configure_logs::_configure_logs_output::ConfigureLogsOutput;
-
 pub use crate::operation::configure_logs::_configure_logs_input::ConfigureLogsInput;
+
+pub use crate::operation::configure_logs::_configure_logs_output::ConfigureLogsOutput;
 
 mod _configure_logs_input;
 

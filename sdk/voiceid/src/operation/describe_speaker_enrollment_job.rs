@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_speaker_e
     }
 }
 
-pub use crate::operation::describe_speaker_enrollment_job::_describe_speaker_enrollment_job_output::DescribeSpeakerEnrollmentJobOutput;
-
 pub use crate::operation::describe_speaker_enrollment_job::_describe_speaker_enrollment_job_input::DescribeSpeakerEnrollmentJobInput;
+
+pub use crate::operation::describe_speaker_enrollment_job::_describe_speaker_enrollment_job_output::DescribeSpeakerEnrollmentJobOutput;
 
 mod _describe_speaker_enrollment_job_input;
 

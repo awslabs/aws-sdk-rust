@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bot_replicas:
     }
 }
 
-pub use crate::operation::list_bot_replicas::_list_bot_replicas_output::ListBotReplicasOutput;
-
 pub use crate::operation::list_bot_replicas::_list_bot_replicas_input::ListBotReplicasInput;
+
+pub use crate::operation::list_bot_replicas::_list_bot_replicas_output::ListBotReplicasOutput;
 
 mod _list_bot_replicas_input;
 

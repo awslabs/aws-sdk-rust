@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_discoverer:
     }
 }
 
-pub use crate::operation::create_discoverer::_create_discoverer_output::CreateDiscovererOutput;
-
 pub use crate::operation::create_discoverer::_create_discoverer_input::CreateDiscovererInput;
+
+pub use crate::operation::create_discoverer::_create_discoverer_output::CreateDiscovererOutput;
 
 mod _create_discoverer_input;
 

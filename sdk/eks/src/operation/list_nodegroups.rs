@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_nodegroups::L
     }
 }
 
-pub use crate::operation::list_nodegroups::_list_nodegroups_output::ListNodegroupsOutput;
-
 pub use crate::operation::list_nodegroups::_list_nodegroups_input::ListNodegroupsInput;
+
+pub use crate::operation::list_nodegroups::_list_nodegroups_output::ListNodegroupsOutput;
 
 mod _list_nodegroups_input;
 

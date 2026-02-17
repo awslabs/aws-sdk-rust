@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_api_cache::Get
     }
 }
 
-pub use crate::operation::get_api_cache::_get_api_cache_output::GetApiCacheOutput;
-
 pub use crate::operation::get_api_cache::_get_api_cache_input::GetApiCacheInput;
+
+pub use crate::operation::get_api_cache::_get_api_cache_output::GetApiCacheOutput;
 
 mod _get_api_cache_input;
 

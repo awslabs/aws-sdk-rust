@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_template_sh
     }
 }
 
-pub use crate::operation::create_template_share::_create_template_share_output::CreateTemplateShareOutput;
-
 pub use crate::operation::create_template_share::_create_template_share_input::CreateTemplateShareInput;
+
+pub use crate::operation::create_template_share::_create_template_share_output::CreateTemplateShareOutput;
 
 mod _create_template_share_input;
 

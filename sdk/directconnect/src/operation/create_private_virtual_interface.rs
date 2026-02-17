@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_private_vir
     }
 }
 
-pub use crate::operation::create_private_virtual_interface::_create_private_virtual_interface_output::CreatePrivateVirtualInterfaceOutput;
-
 pub use crate::operation::create_private_virtual_interface::_create_private_virtual_interface_input::CreatePrivateVirtualInterfaceInput;
+
+pub use crate::operation::create_private_virtual_interface::_create_private_virtual_interface_output::CreatePrivateVirtualInterfaceOutput;
 
 mod _create_private_virtual_interface_input;
 

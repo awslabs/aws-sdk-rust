@@ -64,6 +64,8 @@ pub struct WorkspaceDescription {
     pub network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     /// <p>The token that ties this workspace to a Grafana Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Link your account with Grafana Labs</a>.</p>
     pub grafana_token: ::std::option::Option<::std::string::String>,
+    /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -184,6 +186,10 @@ impl WorkspaceDescription {
     pub fn grafana_token(&self) -> ::std::option::Option<&str> {
         self.grafana_token.as_deref()
     }
+    /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for WorkspaceDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -213,6 +219,7 @@ impl ::std::fmt::Debug for WorkspaceDescription {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_token", &self.grafana_token);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }
@@ -252,6 +259,7 @@ pub struct WorkspaceDescriptionBuilder {
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcConfiguration>,
     pub(crate) network_access_control: ::std::option::Option<crate::types::NetworkAccessConfiguration>,
     pub(crate) grafana_token: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDescriptionBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -665,6 +673,20 @@ impl WorkspaceDescriptionBuilder {
     pub fn get_grafana_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.grafana_token
     }
+    /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The ID or ARN of the Key Management Service key used for encrypting workspace data.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`created`](crate::types::builders::WorkspaceDescriptionBuilder::created)
@@ -736,6 +758,7 @@ impl WorkspaceDescriptionBuilder {
             vpc_configuration: self.vpc_configuration,
             network_access_control: self.network_access_control,
             grafana_token: self.grafana_token,
+            kms_key_id: self.kms_key_id,
         })
     }
 }
@@ -767,6 +790,7 @@ impl ::std::fmt::Debug for WorkspaceDescriptionBuilder {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("network_access_control", &self.network_access_control);
         formatter.field("grafana_token", &self.grafana_token);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }

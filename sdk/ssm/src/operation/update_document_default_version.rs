@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_document_de
     }
 }
 
-pub use crate::operation::update_document_default_version::_update_document_default_version_output::UpdateDocumentDefaultVersionOutput;
-
 pub use crate::operation::update_document_default_version::_update_document_default_version_input::UpdateDocumentDefaultVersionInput;
+
+pub use crate::operation::update_document_default_version::_update_document_default_version_output::UpdateDocumentDefaultVersionOutput;
 
 mod _update_document_default_version_input;
 

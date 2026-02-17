@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_dashboard
     }
 }
 
-pub use crate::operation::describe_dashboard_snapshot_job_result::_describe_dashboard_snapshot_job_result_output::DescribeDashboardSnapshotJobResultOutput;
-
 pub use crate::operation::describe_dashboard_snapshot_job_result::_describe_dashboard_snapshot_job_result_input::DescribeDashboardSnapshotJobResultInput;
+
+pub use crate::operation::describe_dashboard_snapshot_job_result::_describe_dashboard_snapshot_job_result_output::DescribeDashboardSnapshotJobResultOutput;
 
 mod _describe_dashboard_snapshot_job_result_input;
 

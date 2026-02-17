@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_device_pool
     }
 }
 
-pub use crate::operation::delete_device_pool::_delete_device_pool_output::DeleteDevicePoolOutput;
-
 pub use crate::operation::delete_device_pool::_delete_device_pool_input::DeleteDevicePoolInput;
+
+pub use crate::operation::delete_device_pool::_delete_device_pool_output::DeleteDevicePoolOutput;
 
 mod _delete_device_pool_input;
 

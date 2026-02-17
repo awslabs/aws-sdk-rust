@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_batch_import_j
     }
 }
 
-pub use crate::operation::get_batch_import_jobs::_get_batch_import_jobs_output::GetBatchImportJobsOutput;
-
 pub use crate::operation::get_batch_import_jobs::_get_batch_import_jobs_input::GetBatchImportJobsInput;
+
+pub use crate::operation::get_batch_import_jobs::_get_batch_import_jobs_output::GetBatchImportJobsOutput;
 
 mod _get_batch_import_jobs_input;
 

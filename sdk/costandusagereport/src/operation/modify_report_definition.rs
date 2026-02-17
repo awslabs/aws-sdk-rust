@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_report_defi
     }
 }
 
-pub use crate::operation::modify_report_definition::_modify_report_definition_output::ModifyReportDefinitionOutput;
-
 pub use crate::operation::modify_report_definition::_modify_report_definition_input::ModifyReportDefinitionInput;
+
+pub use crate::operation::modify_report_definition::_modify_report_definition_output::ModifyReportDefinitionOutput;
 
 mod _modify_report_definition_input;
 

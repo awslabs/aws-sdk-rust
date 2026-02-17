@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_rate_based_rul
     }
 }
 
-pub use crate::operation::get_rate_based_rule::_get_rate_based_rule_output::GetRateBasedRuleOutput;
-
 pub use crate::operation::get_rate_based_rule::_get_rate_based_rule_input::GetRateBasedRuleInput;
+
+pub use crate::operation::get_rate_based_rule::_get_rate_based_rule_output::GetRateBasedRuleOutput;
 
 mod _get_rate_based_rule_input;
 

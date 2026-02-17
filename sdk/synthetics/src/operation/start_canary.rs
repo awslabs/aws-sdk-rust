@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_canary::Star
     }
 }
 
-pub use crate::operation::start_canary::_start_canary_output::StartCanaryOutput;
-
 pub use crate::operation::start_canary::_start_canary_input::StartCanaryInput;
+
+pub use crate::operation::start_canary::_start_canary_output::StartCanaryOutput;
 
 mod _start_canary_input;
 

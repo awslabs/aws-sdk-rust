@@ -365,9 +365,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_option_grou
     }
 }
 
-pub use crate::operation::modify_option_group::_modify_option_group_output::ModifyOptionGroupOutput;
-
 pub use crate::operation::modify_option_group::_modify_option_group_input::ModifyOptionGroupInput;
+
+pub use crate::operation::modify_option_group::_modify_option_group_output::ModifyOptionGroupOutput;
 
 mod _modify_option_group_input;
 

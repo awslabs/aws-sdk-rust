@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_raw_message_co
     }
 }
 
-pub use crate::operation::put_raw_message_content::_put_raw_message_content_output::PutRawMessageContentOutput;
-
 pub use crate::operation::put_raw_message_content::_put_raw_message_content_input::PutRawMessageContentInput;
+
+pub use crate::operation::put_raw_message_content::_put_raw_message_content_output::PutRawMessageContentOutput;
 
 mod _put_raw_message_content_input;
 

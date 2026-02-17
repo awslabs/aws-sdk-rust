@@ -348,9 +348,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_import_sn
     }
 }
 
-pub use crate::operation::describe_import_snapshot_tasks::_describe_import_snapshot_tasks_output::DescribeImportSnapshotTasksOutput;
-
 pub use crate::operation::describe_import_snapshot_tasks::_describe_import_snapshot_tasks_input::DescribeImportSnapshotTasksInput;
+
+pub use crate::operation::describe_import_snapshot_tasks::_describe_import_snapshot_tasks_output::DescribeImportSnapshotTasksOutput;
 
 mod _describe_import_snapshot_tasks_input;
 

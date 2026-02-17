@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_conformance_pa
     }
 }
 
-pub use crate::operation::put_conformance_pack::_put_conformance_pack_output::PutConformancePackOutput;
-
 pub use crate::operation::put_conformance_pack::_put_conformance_pack_input::PutConformancePackInput;
+
+pub use crate::operation::put_conformance_pack::_put_conformance_pack_output::PutConformancePackOutput;
 
 mod _put_conformance_pack_input;
 

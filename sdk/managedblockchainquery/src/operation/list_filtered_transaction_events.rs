@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_filtered_tran
     }
 }
 
-pub use crate::operation::list_filtered_transaction_events::_list_filtered_transaction_events_output::ListFilteredTransactionEventsOutput;
-
 pub use crate::operation::list_filtered_transaction_events::_list_filtered_transaction_events_input::ListFilteredTransactionEventsInput;
+
+pub use crate::operation::list_filtered_transaction_events::_list_filtered_transaction_events_output::ListFilteredTransactionEventsOutput;
 
 mod _list_filtered_transaction_events_input;
 

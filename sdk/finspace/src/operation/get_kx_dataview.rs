@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_kx_dataview::G
     }
 }
 
-pub use crate::operation::get_kx_dataview::_get_kx_dataview_output::GetKxDataviewOutput;
-
 pub use crate::operation::get_kx_dataview::_get_kx_dataview_input::GetKxDataviewInput;
+
+pub use crate::operation::get_kx_dataview::_get_kx_dataview_output::GetKxDataviewOutput;
 
 mod _get_kx_dataview_input;
 

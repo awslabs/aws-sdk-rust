@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_and_attach_
     }
 }
 
-pub use crate::operation::create_and_attach_s3_access_point::_create_and_attach_s3_access_point_output::CreateAndAttachS3AccessPointOutput;
-
 pub use crate::operation::create_and_attach_s3_access_point::_create_and_attach_s3_access_point_input::CreateAndAttachS3AccessPointInput;
+
+pub use crate::operation::create_and_attach_s3_access_point::_create_and_attach_s3_access_point_output::CreateAndAttachS3AccessPointOutput;
 
 mod _create_and_attach_s3_access_point_input;
 

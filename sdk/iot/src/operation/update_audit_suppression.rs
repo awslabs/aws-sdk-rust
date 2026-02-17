@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_audit_suppr
     }
 }
 
-pub use crate::operation::update_audit_suppression::_update_audit_suppression_output::UpdateAuditSuppressionOutput;
-
 pub use crate::operation::update_audit_suppression::_update_audit_suppression_input::UpdateAuditSuppressionInput;
+
+pub use crate::operation::update_audit_suppression::_update_audit_suppression_output::UpdateAuditSuppressionOutput;
 
 mod _update_audit_suppression_input;
 

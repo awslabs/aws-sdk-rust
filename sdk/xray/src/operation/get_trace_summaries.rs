@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_trace_summarie
     }
 }
 
-pub use crate::operation::get_trace_summaries::_get_trace_summaries_output::GetTraceSummariesOutput;
-
 pub use crate::operation::get_trace_summaries::_get_trace_summaries_input::GetTraceSummariesInput;
+
+pub use crate::operation::get_trace_summaries::_get_trace_summaries_output::GetTraceSummariesOutput;
 
 mod _get_trace_summaries_input;
 

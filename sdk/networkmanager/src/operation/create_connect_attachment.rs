@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_connect_att
     }
 }
 
-pub use crate::operation::create_connect_attachment::_create_connect_attachment_output::CreateConnectAttachmentOutput;
-
 pub use crate::operation::create_connect_attachment::_create_connect_attachment_input::CreateConnectAttachmentInput;
+
+pub use crate::operation::create_connect_attachment::_create_connect_attachment_output::CreateConnectAttachmentOutput;
 
 mod _create_connect_attachment_input;
 

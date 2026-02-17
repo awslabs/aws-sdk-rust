@@ -550,9 +550,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_db_instanc
     }
 }
 
-pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from_s3_output::RestoreDbInstanceFromS3Output;
-
 pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from_s3_input::RestoreDbInstanceFromS3Input;
+
+pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from_s3_output::RestoreDbInstanceFromS3Output;
 
 mod _restore_db_instance_from_s3_input;
 

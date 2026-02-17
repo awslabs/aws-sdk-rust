@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_merged_g
     }
 }
 
-pub use crate::operation::associate_merged_graphql_api::_associate_merged_graphql_api_output::AssociateMergedGraphqlApiOutput;
-
 pub use crate::operation::associate_merged_graphql_api::_associate_merged_graphql_api_input::AssociateMergedGraphqlApiInput;
+
+pub use crate::operation::associate_merged_graphql_api::_associate_merged_graphql_api_output::AssociateMergedGraphqlApiOutput;
 
 mod _associate_merged_graphql_api_input;
 

@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_application
     }
 }
 
-pub use crate::operation::update_application_resource_lifecycle::_update_application_resource_lifecycle_output::UpdateApplicationResourceLifecycleOutput;
-
 pub use crate::operation::update_application_resource_lifecycle::_update_application_resource_lifecycle_input::UpdateApplicationResourceLifecycleInput;
+
+pub use crate::operation::update_application_resource_lifecycle::_update_application_resource_lifecycle_output::UpdateApplicationResourceLifecycleOutput;
 
 mod _update_application_resource_lifecycle_input;
 

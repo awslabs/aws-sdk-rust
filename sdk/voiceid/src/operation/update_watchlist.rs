@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_watchlist::
     }
 }
 
-pub use crate::operation::update_watchlist::_update_watchlist_output::UpdateWatchlistOutput;
-
 pub use crate::operation::update_watchlist::_update_watchlist_input::UpdateWatchlistInput;
+
+pub use crate::operation::update_watchlist::_update_watchlist_output::UpdateWatchlistOutput;
 
 mod _update_watchlist_input;
 

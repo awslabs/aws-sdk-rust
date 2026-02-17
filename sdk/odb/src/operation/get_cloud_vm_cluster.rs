@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_cloud_vm_clust
     }
 }
 
-pub use crate::operation::get_cloud_vm_cluster::_get_cloud_vm_cluster_output::GetCloudVmClusterOutput;
-
 pub use crate::operation::get_cloud_vm_cluster::_get_cloud_vm_cluster_input::GetCloudVmClusterInput;
+
+pub use crate::operation::get_cloud_vm_cluster::_get_cloud_vm_cluster_output::GetCloudVmClusterOutput;
 
 mod _get_cloud_vm_cluster_input;
 

@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::rollback_stack::Ro
     }
 }
 
-pub use crate::operation::rollback_stack::_rollback_stack_output::RollbackStackOutput;
-
 pub use crate::operation::rollback_stack::_rollback_stack_input::RollbackStackInput;
+
+pub use crate::operation::rollback_stack::_rollback_stack_output::RollbackStackOutput;
 
 mod _rollback_stack_input;
 

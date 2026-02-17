@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_vpc_link::D
     }
 }
 
-pub use crate::operation::delete_vpc_link::_delete_vpc_link_output::DeleteVpcLinkOutput;
-
 pub use crate::operation::delete_vpc_link::_delete_vpc_link_input::DeleteVpcLinkInput;
+
+pub use crate::operation::delete_vpc_link::_delete_vpc_link_output::DeleteVpcLinkOutput;
 
 mod _delete_vpc_link_input;
 

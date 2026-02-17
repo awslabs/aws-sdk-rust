@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_function:
     }
 }
 
-pub use crate::operation::describe_function::_describe_function_output::DescribeFunctionOutput;
-
 pub use crate::operation::describe_function::_describe_function_input::DescribeFunctionInput;
+
+pub use crate::operation::describe_function::_describe_function_output::DescribeFunctionOutput;
 
 mod _describe_function_input;
 

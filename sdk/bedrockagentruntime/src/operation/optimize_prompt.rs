@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::optimize_prompt::O
     }
 }
 
-pub use crate::operation::optimize_prompt::_optimize_prompt_output::OptimizePromptOutput;
-
 pub use crate::operation::optimize_prompt::_optimize_prompt_input::OptimizePromptInput;
+
+pub use crate::operation::optimize_prompt::_optimize_prompt_output::OptimizePromptOutput;
 
 mod _optimize_prompt_input;
 

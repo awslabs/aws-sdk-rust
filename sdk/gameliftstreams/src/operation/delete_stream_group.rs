@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_stream_grou
     }
 }
 
-pub use crate::operation::delete_stream_group::_delete_stream_group_output::DeleteStreamGroupOutput;
-
 pub use crate::operation::delete_stream_group::_delete_stream_group_input::DeleteStreamGroupInput;
+
+pub use crate::operation::delete_stream_group::_delete_stream_group_output::DeleteStreamGroupOutput;
 
 mod _delete_stream_group_input;
 

@@ -355,9 +355,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_reserved_in
     }
 }
 
-pub use crate::operation::accept_reserved_instances_exchange_quote::_accept_reserved_instances_exchange_quote_output::AcceptReservedInstancesExchangeQuoteOutput;
-
 pub use crate::operation::accept_reserved_instances_exchange_quote::_accept_reserved_instances_exchange_quote_input::AcceptReservedInstancesExchangeQuoteInput;
+
+pub use crate::operation::accept_reserved_instances_exchange_quote::_accept_reserved_instances_exchange_quote_output::AcceptReservedInstancesExchangeQuoteOutput;
 
 mod _accept_reserved_instances_exchange_quote_input;
 

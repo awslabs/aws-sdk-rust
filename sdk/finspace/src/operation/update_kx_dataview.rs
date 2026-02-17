@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_kx_dataview
     }
 }
 
-pub use crate::operation::update_kx_dataview::_update_kx_dataview_output::UpdateKxDataviewOutput;
-
 pub use crate::operation::update_kx_dataview::_update_kx_dataview_input::UpdateKxDataviewInput;
+
+pub use crate::operation::update_kx_dataview::_update_kx_dataview_output::UpdateKxDataviewOutput;
 
 mod _update_kx_dataview_input;
 

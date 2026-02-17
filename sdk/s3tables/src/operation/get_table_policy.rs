@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_policy::
     }
 }
 
-pub use crate::operation::get_table_policy::_get_table_policy_output::GetTablePolicyOutput;
-
 pub use crate::operation::get_table_policy::_get_table_policy_input::GetTablePolicyInput;
+
+pub use crate::operation::get_table_policy::_get_table_policy_output::GetTablePolicyOutput;
 
 mod _get_table_policy_input;
 

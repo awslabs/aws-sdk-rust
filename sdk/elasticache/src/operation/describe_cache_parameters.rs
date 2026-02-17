@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_cache_par
     }
 }
 
-pub use crate::operation::describe_cache_parameters::_describe_cache_parameters_output::DescribeCacheParametersOutput;
-
 pub use crate::operation::describe_cache_parameters::_describe_cache_parameters_input::DescribeCacheParametersInput;
+
+pub use crate::operation::describe_cache_parameters::_describe_cache_parameters_output::DescribeCacheParametersOutput;
 
 mod _describe_cache_parameters_input;
 

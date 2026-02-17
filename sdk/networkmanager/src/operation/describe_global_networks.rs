@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_global_ne
     }
 }
 
-pub use crate::operation::describe_global_networks::_describe_global_networks_output::DescribeGlobalNetworksOutput;
-
 pub use crate::operation::describe_global_networks::_describe_global_networks_input::DescribeGlobalNetworksInput;
+
+pub use crate::operation::describe_global_networks::_describe_global_networks_output::DescribeGlobalNetworksOutput;
 
 mod _describe_global_networks_input;
 

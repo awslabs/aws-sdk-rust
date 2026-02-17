@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::reset_cluster_para
     }
 }
 
-pub use crate::operation::reset_cluster_parameter_group::_reset_cluster_parameter_group_output::ResetClusterParameterGroupOutput;
-
 pub use crate::operation::reset_cluster_parameter_group::_reset_cluster_parameter_group_input::ResetClusterParameterGroupInput;
+
+pub use crate::operation::reset_cluster_parameter_group::_reset_cluster_parameter_group_output::ResetClusterParameterGroupOutput;
 
 mod _reset_cluster_parameter_group_input;
 

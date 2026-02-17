@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_slack_chann
     }
 }
 
-pub use crate::operation::create_slack_channel_configuration::_create_slack_channel_configuration_output::CreateSlackChannelConfigurationOutput;
-
 pub use crate::operation::create_slack_channel_configuration::_create_slack_channel_configuration_input::CreateSlackChannelConfigurationInput;
+
+pub use crate::operation::create_slack_channel_configuration::_create_slack_channel_configuration_output::CreateSlackChannelConfigurationOutput;
 
 mod _create_slack_channel_configuration_input;
 

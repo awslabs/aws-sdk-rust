@@ -600,9 +600,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_archive::Up
     }
 }
 
-pub use crate::operation::upload_archive::_upload_archive_output::UploadArchiveOutput;
-
 pub use crate::operation::upload_archive::_upload_archive_input::UploadArchiveInput;
+
+pub use crate::operation::upload_archive::_upload_archive_output::UploadArchiveOutput;
 
 mod _upload_archive_input;
 

@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_attendees::Li
     }
 }
 
-pub use crate::operation::list_attendees::_list_attendees_output::ListAttendeesOutput;
-
 pub use crate::operation::list_attendees::_list_attendees_input::ListAttendeesInput;
+
+pub use crate::operation::list_attendees::_list_attendees_output::ListAttendeesOutput;
 
 mod _list_attendees_input;
 

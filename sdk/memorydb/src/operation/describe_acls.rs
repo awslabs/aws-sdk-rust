@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_acls::Des
     }
 }
 
-pub use crate::operation::describe_acls::_describe_acls_output::DescribeAcLsOutput;
-
 pub use crate::operation::describe_acls::_describe_acls_input::DescribeAcLsInput;
+
+pub use crate::operation::describe_acls::_describe_acls_output::DescribeAcLsOutput;
 
 mod _describe_acls_input;
 

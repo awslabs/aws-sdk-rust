@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_edge_deployme
     }
 }
 
-pub use crate::operation::list_edge_deployment_plans::_list_edge_deployment_plans_output::ListEdgeDeploymentPlansOutput;
-
 pub use crate::operation::list_edge_deployment_plans::_list_edge_deployment_plans_input::ListEdgeDeploymentPlansInput;
+
+pub use crate::operation::list_edge_deployment_plans::_list_edge_deployment_plans_output::ListEdgeDeploymentPlansOutput;
 
 mod _list_edge_deployment_plans_input;
 

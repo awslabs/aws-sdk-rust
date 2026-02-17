@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_address_att
     }
 }
 
-pub use crate::operation::modify_address_attribute::_modify_address_attribute_output::ModifyAddressAttributeOutput;
-
 pub use crate::operation::modify_address_attribute::_modify_address_attribute_input::ModifyAddressAttributeInput;
+
+pub use crate::operation::modify_address_attribute::_modify_address_attribute_output::ModifyAddressAttributeOutput;
 
 mod _modify_address_attribute_input;
 

@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_resource_ta
     }
 }
 
-pub use crate::operation::search_resource_tags::_search_resource_tags_output::SearchResourceTagsOutput;
-
 pub use crate::operation::search_resource_tags::_search_resource_tags_input::SearchResourceTagsInput;
+
+pub use crate::operation::search_resource_tags::_search_resource_tags_output::SearchResourceTagsOutput;
 
 mod _search_resource_tags_input;
 

@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_contribut
     }
 }
 
-pub use crate::operation::describe_contributor_insights::_describe_contributor_insights_output::DescribeContributorInsightsOutput;
-
 pub use crate::operation::describe_contributor_insights::_describe_contributor_insights_input::DescribeContributorInsightsInput;
+
+pub use crate::operation::describe_contributor_insights::_describe_contributor_insights_output::DescribeContributorInsightsOutput;
 
 mod _describe_contributor_insights_input;
 

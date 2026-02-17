@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_host_keys::Li
     }
 }
 
-pub use crate::operation::list_host_keys::_list_host_keys_output::ListHostKeysOutput;
-
 pub use crate::operation::list_host_keys::_list_host_keys_input::ListHostKeysInput;
+
+pub use crate::operation::list_host_keys::_list_host_keys_output::ListHostKeysOutput;
 
 mod _list_host_keys_input;
 

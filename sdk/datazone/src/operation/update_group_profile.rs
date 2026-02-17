@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_group_profi
     }
 }
 
-pub use crate::operation::update_group_profile::_update_group_profile_output::UpdateGroupProfileOutput;
-
 pub use crate::operation::update_group_profile::_update_group_profile_input::UpdateGroupProfileInput;
+
+pub use crate::operation::update_group_profile::_update_group_profile_output::UpdateGroupProfileOutput;
 
 mod _update_group_profile_input;
 

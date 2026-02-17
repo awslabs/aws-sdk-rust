@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_batch_load_ta
     }
 }
 
-pub use crate::operation::list_batch_load_tasks::_list_batch_load_tasks_output::ListBatchLoadTasksOutput;
-
 pub use crate::operation::list_batch_load_tasks::_list_batch_load_tasks_input::ListBatchLoadTasksInput;
+
+pub use crate::operation::list_batch_load_tasks::_list_batch_load_tasks_output::ListBatchLoadTasksOutput;
 
 mod _list_batch_load_tasks_input;
 

@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_subscript
     }
 }
 
-pub use crate::operation::register_subscription_provider::_register_subscription_provider_output::RegisterSubscriptionProviderOutput;
-
 pub use crate::operation::register_subscription_provider::_register_subscription_provider_input::RegisterSubscriptionProviderInput;
+
+pub use crate::operation::register_subscription_provider::_register_subscription_provider_output::RegisterSubscriptionProviderOutput;
 
 mod _register_subscription_provider_input;
 

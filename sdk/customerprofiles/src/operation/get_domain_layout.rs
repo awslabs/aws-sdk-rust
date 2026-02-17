@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_domain_layout:
     }
 }
 
-pub use crate::operation::get_domain_layout::_get_domain_layout_output::GetDomainLayoutOutput;
-
 pub use crate::operation::get_domain_layout::_get_domain_layout_input::GetDomainLayoutInput;
+
+pub use crate::operation::get_domain_layout::_get_domain_layout_output::GetDomainLayoutOutput;
 
 mod _get_domain_layout_input;
 

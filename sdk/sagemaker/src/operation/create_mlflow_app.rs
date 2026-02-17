@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_mlflow_app:
     }
 }
 
-pub use crate::operation::create_mlflow_app::_create_mlflow_app_output::CreateMlflowAppOutput;
-
 pub use crate::operation::create_mlflow_app::_create_mlflow_app_input::CreateMlflowAppInput;
+
+pub use crate::operation::create_mlflow_app::_create_mlflow_app_output::CreateMlflowAppOutput;
 
 mod _create_mlflow_app_input;
 

@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_call_analyt
     }
 }
 
-pub use crate::operation::delete_call_analytics_category::_delete_call_analytics_category_output::DeleteCallAnalyticsCategoryOutput;
-
 pub use crate::operation::delete_call_analytics_category::_delete_call_analytics_category_input::DeleteCallAnalyticsCategoryInput;
+
+pub use crate::operation::delete_call_analytics_category::_delete_call_analytics_category_output::DeleteCallAnalyticsCategoryOutput;
 
 mod _delete_call_analytics_category_input;
 

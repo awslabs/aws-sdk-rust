@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_keywords:
     }
 }
 
-pub use crate::operation::describe_keywords::_describe_keywords_output::DescribeKeywordsOutput;
-
 pub use crate::operation::describe_keywords::_describe_keywords_input::DescribeKeywordsInput;
+
+pub use crate::operation::describe_keywords::_describe_keywords_output::DescribeKeywordsOutput;
 
 mod _describe_keywords_input;
 

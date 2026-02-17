@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_portfolio_summ
     }
 }
 
-pub use crate::operation::get_portfolio_summary::_get_portfolio_summary_output::GetPortfolioSummaryOutput;
-
 pub use crate::operation::get_portfolio_summary::_get_portfolio_summary_input::GetPortfolioSummaryInput;
+
+pub use crate::operation::get_portfolio_summary::_get_portfolio_summary_output::GetPortfolioSummaryOutput;
 
 mod _get_portfolio_summary_input;
 

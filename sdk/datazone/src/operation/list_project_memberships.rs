@@ -459,9 +459,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_project_membe
     }
 }
 
-pub use crate::operation::list_project_memberships::_list_project_memberships_output::ListProjectMembershipsOutput;
-
 pub use crate::operation::list_project_memberships::_list_project_memberships_input::ListProjectMembershipsInput;
+
+pub use crate::operation::list_project_memberships::_list_project_memberships_output::ListProjectMembershipsOutput;
 
 mod _list_project_memberships_input;
 

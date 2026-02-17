@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_listener_at
     }
 }
 
-pub use crate::operation::modify_listener_attributes::_modify_listener_attributes_output::ModifyListenerAttributesOutput;
-
 pub use crate::operation::modify_listener_attributes::_modify_listener_attributes_input::ModifyListenerAttributesInput;
+
+pub use crate::operation::modify_listener_attributes::_modify_listener_attributes_output::ModifyListenerAttributesOutput;
 
 mod _modify_listener_attributes_input;
 

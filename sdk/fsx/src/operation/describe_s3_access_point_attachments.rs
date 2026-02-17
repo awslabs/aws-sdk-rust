@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_s3_access
     }
 }
 
-pub use crate::operation::describe_s3_access_point_attachments::_describe_s3_access_point_attachments_output::DescribeS3AccessPointAttachmentsOutput;
-
 pub use crate::operation::describe_s3_access_point_attachments::_describe_s3_access_point_attachments_input::DescribeS3AccessPointAttachmentsInput;
+
+pub use crate::operation::describe_s3_access_point_attachments::_describe_s3_access_point_attachments_output::DescribeS3AccessPointAttachmentsOutput;
 
 mod _describe_s3_access_point_attachments_input;
 

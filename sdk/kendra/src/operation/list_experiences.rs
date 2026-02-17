@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_experiences::
     }
 }
 
-pub use crate::operation::list_experiences::_list_experiences_output::ListExperiencesOutput;
-
 pub use crate::operation::list_experiences::_list_experiences_input::ListExperiencesInput;
+
+pub use crate::operation::list_experiences::_list_experiences_output::ListExperiencesOutput;
 
 mod _list_experiences_input;
 

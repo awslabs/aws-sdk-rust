@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_sol_function_
     }
 }
 
-pub use crate::operation::list_sol_function_packages::_list_sol_function_packages_output::ListSolFunctionPackagesOutput;
-
 pub use crate::operation::list_sol_function_packages::_list_sol_function_packages_input::ListSolFunctionPackagesInput;
+
+pub use crate::operation::list_sol_function_packages::_list_sol_function_packages_output::ListSolFunctionPackagesOutput;
 
 mod _list_sol_function_packages_input;
 

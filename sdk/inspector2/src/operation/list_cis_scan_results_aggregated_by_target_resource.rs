@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::list_cis_scan_results_aggregated_by_target_resource::_list_cis_scan_results_aggregated_by_target_resource_output::ListCisScanResultsAggregatedByTargetResourceOutput;
-
 pub use crate::operation::list_cis_scan_results_aggregated_by_target_resource::_list_cis_scan_results_aggregated_by_target_resource_input::ListCisScanResultsAggregatedByTargetResourceInput;
+
+pub use crate::operation::list_cis_scan_results_aggregated_by_target_resource::_list_cis_scan_results_aggregated_by_target_resource_output::ListCisScanResultsAggregatedByTargetResourceOutput;
 
 mod _list_cis_scan_results_aggregated_by_target_resource_input;
 

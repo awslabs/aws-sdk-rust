@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_keyspace::GetK
     }
 }
 
-pub use crate::operation::get_keyspace::_get_keyspace_output::GetKeyspaceOutput;
-
 pub use crate::operation::get_keyspace::_get_keyspace_input::GetKeyspaceInput;
+
+pub use crate::operation::get_keyspace::_get_keyspace_output::GetKeyspaceOutput;
 
 mod _get_keyspace_input;
 

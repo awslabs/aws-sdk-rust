@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_state_mac
     }
 }
 
-pub use crate::operation::describe_state_machine_alias::_describe_state_machine_alias_output::DescribeStateMachineAliasOutput;
-
 pub use crate::operation::describe_state_machine_alias::_describe_state_machine_alias_input::DescribeStateMachineAliasInput;
+
+pub use crate::operation::describe_state_machine_alias::_describe_state_machine_alias_output::DescribeStateMachineAliasOutput;
 
 mod _describe_state_machine_alias_input;
 

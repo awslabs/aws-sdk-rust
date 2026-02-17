@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_model_customiz
     }
 }
 
-pub use crate::operation::get_model_customization_job::_get_model_customization_job_output::GetModelCustomizationJobOutput;
-
 pub use crate::operation::get_model_customization_job::_get_model_customization_job_input::GetModelCustomizationJobInput;
+
+pub use crate::operation::get_model_customization_job::_get_model_customization_job_output::GetModelCustomizationJobOutput;
 
 mod _get_model_customization_job_input;
 

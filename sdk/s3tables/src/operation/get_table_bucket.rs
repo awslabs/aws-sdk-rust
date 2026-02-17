@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_bucket::
     }
 }
 
-pub use crate::operation::get_table_bucket::_get_table_bucket_output::GetTableBucketOutput;
-
 pub use crate::operation::get_table_bucket::_get_table_bucket_input::GetTableBucketInput;
+
+pub use crate::operation::get_table_bucket::_get_table_bucket_output::GetTableBucketOutput;
 
 mod _get_table_bucket_input;
 

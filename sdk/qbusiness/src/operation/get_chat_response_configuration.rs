@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_chat_response_
     }
 }
 
-pub use crate::operation::get_chat_response_configuration::_get_chat_response_configuration_output::GetChatResponseConfigurationOutput;
-
 pub use crate::operation::get_chat_response_configuration::_get_chat_response_configuration_input::GetChatResponseConfigurationInput;
+
+pub use crate::operation::get_chat_response_configuration::_get_chat_response_configuration_output::GetChatResponseConfigurationOutput;
 
 mod _get_chat_response_configuration_input;
 

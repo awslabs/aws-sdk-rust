@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_lex_bot:
     }
 }
 
-pub use crate::operation::associate_lex_bot::_associate_lex_bot_output::AssociateLexBotOutput;
-
 pub use crate::operation::associate_lex_bot::_associate_lex_bot_input::AssociateLexBotInput;
+
+pub use crate::operation::associate_lex_bot::_associate_lex_bot_output::AssociateLexBotOutput;
 
 mod _associate_lex_bot_input;
 

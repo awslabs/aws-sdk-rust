@@ -484,9 +484,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_campaign_date_
     }
 }
 
-pub use crate::operation::get_campaign_date_range_kpi::_get_campaign_date_range_kpi_output::GetCampaignDateRangeKpiOutput;
-
 pub use crate::operation::get_campaign_date_range_kpi::_get_campaign_date_range_kpi_input::GetCampaignDateRangeKpiInput;
+
+pub use crate::operation::get_campaign_date_range_kpi::_get_campaign_date_range_kpi_output::GetCampaignDateRangeKpiOutput;
 
 mod _get_campaign_date_range_kpi_input;
 

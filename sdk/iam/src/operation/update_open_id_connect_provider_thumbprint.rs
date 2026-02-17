@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_open_id_con
     }
 }
 
-pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_open_id_connect_provider_thumbprint_output::UpdateOpenIdConnectProviderThumbprintOutput;
-
 pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_open_id_connect_provider_thumbprint_input::UpdateOpenIdConnectProviderThumbprintInput;
+
+pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_open_id_connect_provider_thumbprint_output::UpdateOpenIdConnectProviderThumbprintOutput;
 
 mod _update_open_id_connect_provider_thumbprint_input;
 

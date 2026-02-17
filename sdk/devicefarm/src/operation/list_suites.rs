@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_suites::ListS
     }
 }
 
-pub use crate::operation::list_suites::_list_suites_output::ListSuitesOutput;
-
 pub use crate::operation::list_suites::_list_suites_input::ListSuitesInput;
+
+pub use crate::operation::list_suites::_list_suites_output::ListSuitesOutput;
 
 mod _list_suites_input;
 

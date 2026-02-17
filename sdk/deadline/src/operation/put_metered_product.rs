@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_metered_produc
     }
 }
 
-pub use crate::operation::put_metered_product::_put_metered_product_output::PutMeteredProductOutput;
-
 pub use crate::operation::put_metered_product::_put_metered_product_input::PutMeteredProductInput;
+
+pub use crate::operation::put_metered_product::_put_metered_product_output::PutMeteredProductOutput;
 
 mod _put_metered_product_input;
 

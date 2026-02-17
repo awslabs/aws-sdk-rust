@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_detector_model
     }
 }
 
-pub use crate::operation::get_detector_model_analysis_results::_get_detector_model_analysis_results_output::GetDetectorModelAnalysisResultsOutput;
-
 pub use crate::operation::get_detector_model_analysis_results::_get_detector_model_analysis_results_input::GetDetectorModelAnalysisResultsInput;
+
+pub use crate::operation::get_detector_model_analysis_results::_get_detector_model_analysis_results_output::GetDetectorModelAnalysisResultsOutput;
 
 mod _get_detector_model_analysis_results_input;
 

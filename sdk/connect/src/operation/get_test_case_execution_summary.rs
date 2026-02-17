@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_test_case_exec
     }
 }
 
-pub use crate::operation::get_test_case_execution_summary::_get_test_case_execution_summary_output::GetTestCaseExecutionSummaryOutput;
-
 pub use crate::operation::get_test_case_execution_summary::_get_test_case_execution_summary_input::GetTestCaseExecutionSummaryInput;
+
+pub use crate::operation::get_test_case_execution_summary::_get_test_case_execution_summary_output::GetTestCaseExecutionSummaryOutput;
 
 mod _get_test_case_execution_summary_input;
 

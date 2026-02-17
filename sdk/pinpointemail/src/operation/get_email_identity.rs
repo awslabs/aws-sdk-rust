@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_email_identity
     }
 }
 
-pub use crate::operation::get_email_identity::_get_email_identity_output::GetEmailIdentityOutput;
-
 pub use crate::operation::get_email_identity::_get_email_identity_input::GetEmailIdentityInput;
+
+pub use crate::operation::get_email_identity::_get_email_identity_output::GetEmailIdentityOutput;
 
 mod _get_email_identity_input;
 

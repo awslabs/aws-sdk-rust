@@ -446,9 +446,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_channel_m
     }
 }
 
-pub use crate::operation::describe_channel_moderator::_describe_channel_moderator_output::DescribeChannelModeratorOutput;
-
 pub use crate::operation::describe_channel_moderator::_describe_channel_moderator_input::DescribeChannelModeratorInput;
+
+pub use crate::operation::describe_channel_moderator::_describe_channel_moderator_output::DescribeChannelModeratorOutput;
 
 mod _describe_channel_moderator_input;
 

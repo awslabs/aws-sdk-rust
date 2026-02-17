@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_data
     }
 }
 
-pub use crate::operation::list_resource_data_sync::_list_resource_data_sync_output::ListResourceDataSyncOutput;
-
 pub use crate::operation::list_resource_data_sync::_list_resource_data_sync_input::ListResourceDataSyncInput;
+
+pub use crate::operation::list_resource_data_sync::_list_resource_data_sync_output::ListResourceDataSyncOutput;
 
 mod _list_resource_data_sync_input;
 

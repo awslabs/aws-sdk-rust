@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_invitations_co
     }
 }
 
-pub use crate::operation::get_invitations_count::_get_invitations_count_output::GetInvitationsCountOutput;
-
 pub use crate::operation::get_invitations_count::_get_invitations_count_input::GetInvitationsCountInput;
+
+pub use crate::operation::get_invitations_count::_get_invitations_count_output::GetInvitationsCountOutput;
 
 mod _get_invitations_count_input;
 

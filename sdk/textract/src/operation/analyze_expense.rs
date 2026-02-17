@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::analyze_expense::A
     }
 }
 
-pub use crate::operation::analyze_expense::_analyze_expense_output::AnalyzeExpenseOutput;
-
 pub use crate::operation::analyze_expense::_analyze_expense_input::AnalyzeExpenseInput;
+
+pub use crate::operation::analyze_expense::_analyze_expense_output::AnalyzeExpenseOutput;
 
 mod _analyze_expense_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_library_ite
     }
 }
 
-pub use crate::operation::delete_library_item::_delete_library_item_output::DeleteLibraryItemOutput;
-
 pub use crate::operation::delete_library_item::_delete_library_item_input::DeleteLibraryItemInput;
+
+pub use crate::operation::delete_library_item::_delete_library_item_output::DeleteLibraryItemOutput;
 
 mod _delete_library_item_input;
 

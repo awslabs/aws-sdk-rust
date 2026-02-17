@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::attach_customer_managed_policy_reference_to_permission_set::_attach_customer_managed_policy_reference_to_permission_set_output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput;
-
 pub use crate::operation::attach_customer_managed_policy_reference_to_permission_set::_attach_customer_managed_policy_reference_to_permission_set_input::AttachCustomerManagedPolicyReferenceToPermissionSetInput;
+
+pub use crate::operation::attach_customer_managed_policy_reference_to_permission_set::_attach_customer_managed_policy_reference_to_permission_set_output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput;
 
 mod _attach_customer_managed_policy_reference_to_permission_set_input;
 

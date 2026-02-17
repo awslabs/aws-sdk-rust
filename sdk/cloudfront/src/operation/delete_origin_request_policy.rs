@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_origin_requ
     }
 }
 
-pub use crate::operation::delete_origin_request_policy::_delete_origin_request_policy_output::DeleteOriginRequestPolicyOutput;
-
 pub use crate::operation::delete_origin_request_policy::_delete_origin_request_policy_input::DeleteOriginRequestPolicyInput;
+
+pub use crate::operation::delete_origin_request_policy::_delete_origin_request_policy_output::DeleteOriginRequestPolicyOutput;
 
 mod _delete_origin_request_policy_input;
 

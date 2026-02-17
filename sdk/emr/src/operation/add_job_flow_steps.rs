@@ -356,9 +356,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_job_flow_steps
     }
 }
 
-pub use crate::operation::add_job_flow_steps::_add_job_flow_steps_output::AddJobFlowStepsOutput;
-
 pub use crate::operation::add_job_flow_steps::_add_job_flow_steps_input::AddJobFlowStepsInput;
+
+pub use crate::operation::add_job_flow_steps::_add_job_flow_steps_output::AddJobFlowStepsOutput;
 
 mod _add_job_flow_steps_input;
 

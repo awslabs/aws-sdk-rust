@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_access_poin
     }
 }
 
-pub use crate::operation::create_access_point::_create_access_point_output::CreateAccessPointOutput;
-
 pub use crate::operation::create_access_point::_create_access_point_input::CreateAccessPointInput;
+
+pub use crate::operation::create_access_point::_create_access_point_output::CreateAccessPointOutput;
 
 mod _create_access_point_input;
 

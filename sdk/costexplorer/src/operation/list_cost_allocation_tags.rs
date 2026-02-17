@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_cost_allocati
     }
 }
 
-pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_output::ListCostAllocationTagsOutput;
-
 pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_input::ListCostAllocationTagsInput;
+
+pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_output::ListCostAllocationTagsOutput;
 
 mod _list_cost_allocation_tags_input;
 

@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_room::Delet
     }
 }
 
-pub use crate::operation::delete_room::_delete_room_output::DeleteRoomOutput;
-
 pub use crate::operation::delete_room::_delete_room_input::DeleteRoomInput;
+
+pub use crate::operation::delete_room::_delete_room_output::DeleteRoomOutput;
 
 mod _delete_room_input;
 

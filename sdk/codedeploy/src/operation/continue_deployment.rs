@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::continue_deploymen
     }
 }
 
-pub use crate::operation::continue_deployment::_continue_deployment_output::ContinueDeploymentOutput;
-
 pub use crate::operation::continue_deployment::_continue_deployment_input::ContinueDeploymentInput;
+
+pub use crate::operation::continue_deployment::_continue_deployment_output::ContinueDeploymentOutput;
 
 mod _continue_deployment_input;
 

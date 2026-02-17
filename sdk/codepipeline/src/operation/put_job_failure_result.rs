@@ -381,9 +381,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_job_failure_re
     }
 }
 
-pub use crate::operation::put_job_failure_result::_put_job_failure_result_output::PutJobFailureResultOutput;
-
 pub use crate::operation::put_job_failure_result::_put_job_failure_result_input::PutJobFailureResultInput;
+
+pub use crate::operation::put_job_failure_result::_put_job_failure_result_output::PutJobFailureResultOutput;
 
 mod _put_job_failure_result_input;
 

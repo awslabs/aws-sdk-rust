@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_quota_utiliz
     }
 }
 
-pub use crate::operation::start_quota_utilization_report::_start_quota_utilization_report_output::StartQuotaUtilizationReportOutput;
-
 pub use crate::operation::start_quota_utilization_report::_start_quota_utilization_report_input::StartQuotaUtilizationReportInput;
+
+pub use crate::operation::start_quota_utilization_report::_start_quota_utilization_report_output::StartQuotaUtilizationReportOutput;
 
 mod _start_quota_utilization_report_input;
 

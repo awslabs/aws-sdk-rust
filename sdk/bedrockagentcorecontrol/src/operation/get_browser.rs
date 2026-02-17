@@ -406,9 +406,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_browser::GetBr
     }
 }
 
-pub use crate::operation::get_browser::_get_browser_output::GetBrowserOutput;
-
 pub use crate::operation::get_browser::_get_browser_input::GetBrowserInput;
+
+pub use crate::operation::get_browser::_get_browser_output::GetBrowserOutput;
 
 mod _get_browser_input;
 

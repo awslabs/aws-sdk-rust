@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_stack_dri
     }
 }
 
-pub use crate::operation::describe_stack_drift_detection_status::_describe_stack_drift_detection_status_output::DescribeStackDriftDetectionStatusOutput;
-
 pub use crate::operation::describe_stack_drift_detection_status::_describe_stack_drift_detection_status_input::DescribeStackDriftDetectionStatusInput;
+
+pub use crate::operation::describe_stack_drift_detection_status::_describe_stack_drift_detection_status_output::DescribeStackDriftDetectionStatusOutput;
 
 mod _describe_stack_drift_detection_status_input;
 

@@ -385,9 +385,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_accelerators:
     }
 }
 
-pub use crate::operation::list_accelerators::_list_accelerators_output::ListAcceleratorsOutput;
-
 pub use crate::operation::list_accelerators::_list_accelerators_input::ListAcceleratorsInput;
+
+pub use crate::operation::list_accelerators::_list_accelerators_output::ListAcceleratorsOutput;
 
 mod _list_accelerators_input;
 

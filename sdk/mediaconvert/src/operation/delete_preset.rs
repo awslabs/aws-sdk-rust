@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_preset::Del
     }
 }
 
-pub use crate::operation::delete_preset::_delete_preset_output::DeletePresetOutput;
-
 pub use crate::operation::delete_preset::_delete_preset_input::DeletePresetInput;
+
+pub use crate::operation::delete_preset::_delete_preset_output::DeletePresetOutput;
 
 mod _delete_preset_input;
 

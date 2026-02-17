@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_firewall_rule_
     }
 }
 
-pub use crate::operation::get_firewall_rule_group_association::_get_firewall_rule_group_association_output::GetFirewallRuleGroupAssociationOutput;
-
 pub use crate::operation::get_firewall_rule_group_association::_get_firewall_rule_group_association_input::GetFirewallRuleGroupAssociationInput;
+
+pub use crate::operation::get_firewall_rule_group_association::_get_firewall_rule_group_association_output::GetFirewallRuleGroupAssociationOutput;
 
 mod _get_firewall_rule_group_association_input;
 

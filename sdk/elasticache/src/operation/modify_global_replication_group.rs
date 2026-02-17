@@ -383,9 +383,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_global_repl
     }
 }
 
-pub use crate::operation::modify_global_replication_group::_modify_global_replication_group_output::ModifyGlobalReplicationGroupOutput;
-
 pub use crate::operation::modify_global_replication_group::_modify_global_replication_group_input::ModifyGlobalReplicationGroupInput;
+
+pub use crate::operation::modify_global_replication_group::_modify_global_replication_group_output::ModifyGlobalReplicationGroupOutput;
 
 mod _modify_global_replication_group_input;
 

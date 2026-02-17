@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_brand_assig
     }
 }
 
-pub use crate::operation::delete_brand_assignment::_delete_brand_assignment_output::DeleteBrandAssignmentOutput;
-
 pub use crate::operation::delete_brand_assignment::_delete_brand_assignment_input::DeleteBrandAssignmentInput;
+
+pub use crate::operation::delete_brand_assignment::_delete_brand_assignment_output::DeleteBrandAssignmentOutput;
 
 mod _delete_brand_assignment_input;
 

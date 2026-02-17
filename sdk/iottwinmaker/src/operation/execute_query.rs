@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::execute_query::Exe
     }
 }
 
-pub use crate::operation::execute_query::_execute_query_output::ExecuteQueryOutput;
-
 pub use crate::operation::execute_query::_execute_query_input::ExecuteQueryInput;
+
+pub use crate::operation::execute_query::_execute_query_output::ExecuteQueryOutput;
 
 mod _execute_query_input;
 

@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_resource_grou
     }
 }
 
-pub use crate::operation::list_resource_grouping_recommendations::_list_resource_grouping_recommendations_output::ListResourceGroupingRecommendationsOutput;
-
 pub use crate::operation::list_resource_grouping_recommendations::_list_resource_grouping_recommendations_input::ListResourceGroupingRecommendationsInput;
+
+pub use crate::operation::list_resource_grouping_recommendations::_list_resource_grouping_recommendations_output::ListResourceGroupingRecommendationsOutput;
 
 mod _list_resource_grouping_recommendations_input;
 

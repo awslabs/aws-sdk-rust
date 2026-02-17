@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::terminate_environm
     }
 }
 
-pub use crate::operation::terminate_environment::_terminate_environment_output::TerminateEnvironmentOutput;
-
 pub use crate::operation::terminate_environment::_terminate_environment_input::TerminateEnvironmentInput;
+
+pub use crate::operation::terminate_environment::_terminate_environment_output::TerminateEnvironmentOutput;
 
 mod _terminate_environment_input;
 

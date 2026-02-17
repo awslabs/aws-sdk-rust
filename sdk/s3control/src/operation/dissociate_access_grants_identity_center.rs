@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::dissociate_access_
     }
 }
 
-pub use crate::operation::dissociate_access_grants_identity_center::_dissociate_access_grants_identity_center_output::DissociateAccessGrantsIdentityCenterOutput;
-
 pub use crate::operation::dissociate_access_grants_identity_center::_dissociate_access_grants_identity_center_input::DissociateAccessGrantsIdentityCenterInput;
+
+pub use crate::operation::dissociate_access_grants_identity_center::_dissociate_access_grants_identity_center_output::DissociateAccessGrantsIdentityCenterOutput;
 
 mod _dissociate_access_grants_identity_center_input;
 

@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::renew_offering::Re
     }
 }
 
-pub use crate::operation::renew_offering::_renew_offering_output::RenewOfferingOutput;
-
 pub use crate::operation::renew_offering::_renew_offering_input::RenewOfferingInput;
+
+pub use crate::operation::renew_offering::_renew_offering_output::RenewOfferingOutput;
 
 mod _renew_offering_input;
 

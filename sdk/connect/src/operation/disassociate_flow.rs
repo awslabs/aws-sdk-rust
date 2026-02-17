@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_flow:
     }
 }
 
-pub use crate::operation::disassociate_flow::_disassociate_flow_output::DisassociateFlowOutput;
-
 pub use crate::operation::disassociate_flow::_disassociate_flow_input::DisassociateFlowInput;
+
+pub use crate::operation::disassociate_flow::_disassociate_flow_output::DisassociateFlowOutput;
 
 mod _disassociate_flow_input;
 

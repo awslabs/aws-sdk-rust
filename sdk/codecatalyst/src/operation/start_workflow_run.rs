@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_workflow_run
     }
 }
 
-pub use crate::operation::start_workflow_run::_start_workflow_run_output::StartWorkflowRunOutput;
-
 pub use crate::operation::start_workflow_run::_start_workflow_run_input::StartWorkflowRunInput;
+
+pub use crate::operation::start_workflow_run::_start_workflow_run_output::StartWorkflowRunOutput;
 
 mod _start_workflow_run_input;
 

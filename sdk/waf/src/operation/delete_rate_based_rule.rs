@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_rate_based_
     }
 }
 
-pub use crate::operation::delete_rate_based_rule::_delete_rate_based_rule_output::DeleteRateBasedRuleOutput;
-
 pub use crate::operation::delete_rate_based_rule::_delete_rate_based_rule_input::DeleteRateBasedRuleInput;
+
+pub use crate::operation::delete_rate_based_rule::_delete_rate_based_rule_output::DeleteRateBasedRuleOutput;
 
 mod _delete_rate_based_rule_input;
 

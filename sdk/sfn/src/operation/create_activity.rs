@@ -416,9 +416,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_activity::C
     }
 }
 
-pub use crate::operation::create_activity::_create_activity_output::CreateActivityOutput;
-
 pub use crate::operation::create_activity::_create_activity_input::CreateActivityInput;
+
+pub use crate::operation::create_activity::_create_activity_output::CreateActivityOutput;
 
 mod _create_activity_input;
 

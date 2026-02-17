@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_segment_def
     }
 }
 
-pub use crate::operation::create_segment_definition::_create_segment_definition_output::CreateSegmentDefinitionOutput;
-
 pub use crate::operation::create_segment_definition::_create_segment_definition_input::CreateSegmentDefinitionInput;
+
+pub use crate::operation::create_segment_definition::_create_segment_definition_output::CreateSegmentDefinitionOutput;
 
 mod _create_segment_definition_input;
 

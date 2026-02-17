@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_tags_from_o
     }
 }
 
-pub use crate::operation::remove_tags_from_on_premises_instances::_remove_tags_from_on_premises_instances_output::RemoveTagsFromOnPremisesInstancesOutput;
-
 pub use crate::operation::remove_tags_from_on_premises_instances::_remove_tags_from_on_premises_instances_input::RemoveTagsFromOnPremisesInstancesInput;
+
+pub use crate::operation::remove_tags_from_on_premises_instances::_remove_tags_from_on_premises_instances_output::RemoveTagsFromOnPremisesInstancesOutput;
 
 mod _remove_tags_from_on_premises_instances_input;
 

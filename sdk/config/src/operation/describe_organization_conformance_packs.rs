@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_organizat
     }
 }
 
-pub use crate::operation::describe_organization_conformance_packs::_describe_organization_conformance_packs_output::DescribeOrganizationConformancePacksOutput;
-
 pub use crate::operation::describe_organization_conformance_packs::_describe_organization_conformance_packs_input::DescribeOrganizationConformancePacksInput;
+
+pub use crate::operation::describe_organization_conformance_packs::_describe_organization_conformance_packs_output::DescribeOrganizationConformancePacksOutput;
 
 mod _describe_organization_conformance_packs_input;
 

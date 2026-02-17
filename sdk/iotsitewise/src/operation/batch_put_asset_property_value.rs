@@ -429,9 +429,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_put_asset_pr
     }
 }
 
-pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_property_value_output::BatchPutAssetPropertyValueOutput;
-
 pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_property_value_input::BatchPutAssetPropertyValueInput;
+
+pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_property_value_output::BatchPutAssetPropertyValueOutput;
 
 mod _batch_put_asset_property_value_input;
 

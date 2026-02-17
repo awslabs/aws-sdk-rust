@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_predictor_b
     }
 }
 
-pub use crate::operation::delete_predictor_backtest_export_job::_delete_predictor_backtest_export_job_output::DeletePredictorBacktestExportJobOutput;
-
 pub use crate::operation::delete_predictor_backtest_export_job::_delete_predictor_backtest_export_job_input::DeletePredictorBacktestExportJobInput;
+
+pub use crate::operation::delete_predictor_backtest_export_job::_delete_predictor_backtest_export_job_output::DeletePredictorBacktestExportJobOutput;
 
 mod _delete_predictor_backtest_export_job_input;
 

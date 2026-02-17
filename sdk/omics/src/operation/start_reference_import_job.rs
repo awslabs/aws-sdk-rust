@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_reference_im
     }
 }
 
-pub use crate::operation::start_reference_import_job::_start_reference_import_job_output::StartReferenceImportJobOutput;
-
 pub use crate::operation::start_reference_import_job::_start_reference_import_job_input::StartReferenceImportJobInput;
+
+pub use crate::operation::start_reference_import_job::_start_reference_import_job_output::StartReferenceImportJobOutput;
 
 mod _start_reference_import_job_input;
 

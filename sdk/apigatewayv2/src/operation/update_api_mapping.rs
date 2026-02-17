@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_api_mapping
     }
 }
 
-pub use crate::operation::update_api_mapping::_update_api_mapping_output::UpdateApiMappingOutput;
-
 pub use crate::operation::update_api_mapping::_update_api_mapping_input::UpdateApiMappingInput;
+
+pub use crate::operation::update_api_mapping::_update_api_mapping_output::UpdateApiMappingOutput;
 
 mod _update_api_mapping_input;
 

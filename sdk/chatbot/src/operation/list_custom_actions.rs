@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_action
     }
 }
 
-pub use crate::operation::list_custom_actions::_list_custom_actions_output::ListCustomActionsOutput;
-
 pub use crate::operation::list_custom_actions::_list_custom_actions_input::ListCustomActionsInput;
+
+pub use crate::operation::list_custom_actions::_list_custom_actions_output::ListCustomActionsOutput;
 
 mod _list_custom_actions_input;
 

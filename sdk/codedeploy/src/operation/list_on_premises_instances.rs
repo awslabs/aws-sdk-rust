@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_on_premises_i
     }
 }
 
-pub use crate::operation::list_on_premises_instances::_list_on_premises_instances_output::ListOnPremisesInstancesOutput;
-
 pub use crate::operation::list_on_premises_instances::_list_on_premises_instances_input::ListOnPremisesInstancesInput;
+
+pub use crate::operation::list_on_premises_instances::_list_on_premises_instances_output::ListOnPremisesInstancesOutput;
 
 mod _list_on_premises_instances_input;
 

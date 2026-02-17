@@ -359,9 +359,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_trunk_int
     }
 }
 
-pub use crate::operation::describe_trunk_interface_associations::_describe_trunk_interface_associations_output::DescribeTrunkInterfaceAssociationsOutput;
-
 pub use crate::operation::describe_trunk_interface_associations::_describe_trunk_interface_associations_input::DescribeTrunkInterfaceAssociationsInput;
+
+pub use crate::operation::describe_trunk_interface_associations::_describe_trunk_interface_associations_output::DescribeTrunkInterfaceAssociationsOutput;
 
 mod _describe_trunk_interface_associations_input;
 

@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_access_control
     }
 }
 
-pub use crate::operation::get_access_control_effect::_get_access_control_effect_output::GetAccessControlEffectOutput;
-
 pub use crate::operation::get_access_control_effect::_get_access_control_effect_input::GetAccessControlEffectInput;
+
+pub use crate::operation::get_access_control_effect::_get_access_control_effect_output::GetAccessControlEffectOutput;
 
 mod _get_access_control_effect_input;
 

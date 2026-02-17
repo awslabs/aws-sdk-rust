@@ -394,9 +394,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_place_indexes
     }
 }
 
-pub use crate::operation::list_place_indexes::_list_place_indexes_output::ListPlaceIndexesOutput;
-
 pub use crate::operation::list_place_indexes::_list_place_indexes_input::ListPlaceIndexesInput;
+
+pub use crate::operation::list_place_indexes::_list_place_indexes_output::ListPlaceIndexesOutput;
 
 mod _list_place_indexes_input;
 

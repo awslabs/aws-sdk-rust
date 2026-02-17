@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_api_associatio
     }
 }
 
-pub use crate::operation::get_api_association::_get_api_association_output::GetApiAssociationOutput;
-
 pub use crate::operation::get_api_association::_get_api_association_input::GetApiAssociationInput;
+
+pub use crate::operation::get_api_association::_get_api_association_output::GetApiAssociationOutput;
 
 mod _get_api_association_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_flow_sour
     }
 }
 
-pub use crate::operation::describe_flow_source_thumbnail::_describe_flow_source_thumbnail_output::DescribeFlowSourceThumbnailOutput;
-
 pub use crate::operation::describe_flow_source_thumbnail::_describe_flow_source_thumbnail_input::DescribeFlowSourceThumbnailInput;
+
+pub use crate::operation::describe_flow_source_thumbnail::_describe_flow_source_thumbnail_output::DescribeFlowSourceThumbnailOutput;
 
 mod _describe_flow_source_thumbnail_input;
 

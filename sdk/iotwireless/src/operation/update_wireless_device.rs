@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_wireless_de
     }
 }
 
-pub use crate::operation::update_wireless_device::_update_wireless_device_output::UpdateWirelessDeviceOutput;
-
 pub use crate::operation::update_wireless_device::_update_wireless_device_input::UpdateWirelessDeviceInput;
+
+pub use crate::operation::update_wireless_device::_update_wireless_device_output::UpdateWirelessDeviceOutput;
 
 mod _update_wireless_device_input;
 

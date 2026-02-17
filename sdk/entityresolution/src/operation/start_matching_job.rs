@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_matching_job
     }
 }
 
-pub use crate::operation::start_matching_job::_start_matching_job_output::StartMatchingJobOutput;
-
 pub use crate::operation::start_matching_job::_start_matching_job_input::StartMatchingJobInput;
+
+pub use crate::operation::start_matching_job::_start_matching_job_output::StartMatchingJobOutput;
 
 mod _start_matching_job_input;
 

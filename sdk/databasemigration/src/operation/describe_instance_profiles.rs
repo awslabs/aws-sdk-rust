@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_instance_
     }
 }
 
-pub use crate::operation::describe_instance_profiles::_describe_instance_profiles_output::DescribeInstanceProfilesOutput;
-
 pub use crate::operation::describe_instance_profiles::_describe_instance_profiles_input::DescribeInstanceProfilesInput;
+
+pub use crate::operation::describe_instance_profiles::_describe_instance_profiles_output::DescribeInstanceProfilesOutput;
 
 mod _describe_instance_profiles_input;
 

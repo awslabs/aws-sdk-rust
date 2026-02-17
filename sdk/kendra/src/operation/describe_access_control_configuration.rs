@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_access_co
     }
 }
 
-pub use crate::operation::describe_access_control_configuration::_describe_access_control_configuration_output::DescribeAccessControlConfigurationOutput;
-
 pub use crate::operation::describe_access_control_configuration::_describe_access_control_configuration_input::DescribeAccessControlConfigurationInput;
+
+pub use crate::operation::describe_access_control_configuration::_describe_access_control_configuration_output::DescribeAccessControlConfigurationOutput;
 
 mod _describe_access_control_configuration_input;
 

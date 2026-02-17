@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_quality_r
     }
 }
 
-pub use crate::operation::get_data_quality_result::_get_data_quality_result_output::GetDataQualityResultOutput;
-
 pub use crate::operation::get_data_quality_result::_get_data_quality_result_input::GetDataQualityResultInput;
+
+pub use crate::operation::get_data_quality_result::_get_data_quality_result_output::GetDataQualityResultOutput;
 
 mod _get_data_quality_result_input;
 

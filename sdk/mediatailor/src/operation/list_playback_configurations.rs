@@ -364,9 +364,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_playback_conf
     }
 }
 
-pub use crate::operation::list_playback_configurations::_list_playback_configurations_output::ListPlaybackConfigurationsOutput;
-
 pub use crate::operation::list_playback_configurations::_list_playback_configurations_input::ListPlaybackConfigurationsInput;
+
+pub use crate::operation::list_playback_configurations::_list_playback_configurations_output::ListPlaybackConfigurationsOutput;
 
 mod _list_playback_configurations_input;
 

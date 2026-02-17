@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_nodegroup::
     }
 }
 
-pub use crate::operation::delete_nodegroup::_delete_nodegroup_output::DeleteNodegroupOutput;
-
 pub use crate::operation::delete_nodegroup::_delete_nodegroup_input::DeleteNodegroupInput;
+
+pub use crate::operation::delete_nodegroup::_delete_nodegroup_output::DeleteNodegroupOutput;
 
 mod _delete_nodegroup_input;
 

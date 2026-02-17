@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_analytics_dat
     }
 }
 
-pub use crate::operation::list_analytics_data_associations::_list_analytics_data_associations_output::ListAnalyticsDataAssociationsOutput;
-
 pub use crate::operation::list_analytics_data_associations::_list_analytics_data_associations_input::ListAnalyticsDataAssociationsInput;
+
+pub use crate::operation::list_analytics_data_associations::_list_analytics_data_associations_output::ListAnalyticsDataAssociationsOutput;
 
 mod _list_analytics_data_associations_input;
 

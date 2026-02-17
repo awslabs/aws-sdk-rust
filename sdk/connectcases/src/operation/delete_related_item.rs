@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_related_ite
     }
 }
 
-pub use crate::operation::delete_related_item::_delete_related_item_output::DeleteRelatedItemOutput;
-
 pub use crate::operation::delete_related_item::_delete_related_item_input::DeleteRelatedItemInput;
+
+pub use crate::operation::delete_related_item::_delete_related_item_output::DeleteRelatedItemOutput;
 
 mod _delete_related_item_input;
 

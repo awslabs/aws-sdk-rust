@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_component_vers
     }
 }
 
-pub use crate::operation::get_component_version_artifact::_get_component_version_artifact_output::GetComponentVersionArtifactOutput;
-
 pub use crate::operation::get_component_version_artifact::_get_component_version_artifact_input::GetComponentVersionArtifactInput;
+
+pub use crate::operation::get_component_version_artifact::_get_component_version_artifact_output::GetComponentVersionArtifactOutput;
 
 mod _get_component_version_artifact_input;
 

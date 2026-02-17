@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identity_sour
     }
 }
 
-pub use crate::operation::list_identity_sources::_list_identity_sources_output::ListIdentitySourcesOutput;
-
 pub use crate::operation::list_identity_sources::_list_identity_sources_input::ListIdentitySourcesInput;
+
+pub use crate::operation::list_identity_sources::_list_identity_sources_output::ListIdentitySourcesOutput;
 
 mod _list_identity_sources_input;
 

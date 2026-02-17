@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_address_tr
     }
 }
 
-pub use crate::operation::disable_address_transfer::_disable_address_transfer_output::DisableAddressTransferOutput;
-
 pub use crate::operation::disable_address_transfer::_disable_address_transfer_input::DisableAddressTransferInput;
+
+pub use crate::operation::disable_address_transfer::_disable_address_transfer_output::DisableAddressTransferOutput;
 
 mod _disable_address_transfer_input;
 

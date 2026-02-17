@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_worker_blocks
     }
 }
 
-pub use crate::operation::list_worker_blocks::_list_worker_blocks_output::ListWorkerBlocksOutput;
-
 pub use crate::operation::list_worker_blocks::_list_worker_blocks_input::ListWorkerBlocksInput;
+
+pub use crate::operation::list_worker_blocks::_list_worker_blocks_output::ListWorkerBlocksOutput;
 
 mod _list_worker_blocks_input;
 

@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_cluster_sub
     }
 }
 
-pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_group_output::CreateClusterSubnetGroupOutput;
-
 pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_group_input::CreateClusterSubnetGroupInput;
+
+pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_group_output::CreateClusterSubnetGroupOutput;
 
 mod _create_cluster_subnet_group_input;
 

@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lineage_group_
     }
 }
 
-pub use crate::operation::get_lineage_group_policy::_get_lineage_group_policy_output::GetLineageGroupPolicyOutput;
-
 pub use crate::operation::get_lineage_group_policy::_get_lineage_group_policy_input::GetLineageGroupPolicyInput;
+
+pub use crate::operation::get_lineage_group_policy::_get_lineage_group_policy_output::GetLineageGroupPolicyOutput;
 
 mod _get_lineage_group_policy_input;
 

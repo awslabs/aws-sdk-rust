@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sensitivity
     }
 }
 
-pub use crate::operation::update_sensitivity_inspection_template::_update_sensitivity_inspection_template_output::UpdateSensitivityInspectionTemplateOutput;
-
 pub use crate::operation::update_sensitivity_inspection_template::_update_sensitivity_inspection_template_input::UpdateSensitivityInspectionTemplateInput;
+
+pub use crate::operation::update_sensitivity_inspection_template::_update_sensitivity_inspection_template_output::UpdateSensitivityInspectionTemplateOutput;
 
 mod _update_sensitivity_inspection_template_input;
 

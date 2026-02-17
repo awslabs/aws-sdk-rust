@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_global_sett
     }
 }
 
-pub use crate::operation::update_global_settings::_update_global_settings_output::UpdateGlobalSettingsOutput;
-
 pub use crate::operation::update_global_settings::_update_global_settings_input::UpdateGlobalSettingsInput;
+
+pub use crate::operation::update_global_settings::_update_global_settings_output::UpdateGlobalSettingsOutput;
 
 mod _update_global_settings_input;
 

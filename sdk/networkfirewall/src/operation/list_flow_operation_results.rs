@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_flow_operatio
     }
 }
 
-pub use crate::operation::list_flow_operation_results::_list_flow_operation_results_output::ListFlowOperationResultsOutput;
-
 pub use crate::operation::list_flow_operation_results::_list_flow_operation_results_input::ListFlowOperationResultsInput;
+
+pub use crate::operation::list_flow_operation_results::_list_flow_operation_results_output::ListFlowOperationResultsOutput;
 
 mod _list_flow_operation_results_input;
 

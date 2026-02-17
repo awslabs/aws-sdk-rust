@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_provisioned_pr
     }
 }
 
-pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_product_outputs_output::GetProvisionedProductOutputsOutput;
-
 pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_product_outputs_input::GetProvisionedProductOutputsInput;
+
+pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_product_outputs_output::GetProvisionedProductOutputsOutput;
 
 mod _get_provisioned_product_outputs_input;
 

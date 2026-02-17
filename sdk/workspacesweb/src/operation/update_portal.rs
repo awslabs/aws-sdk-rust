@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_portal::Upd
     }
 }
 
-pub use crate::operation::update_portal::_update_portal_output::UpdatePortalOutput;
-
 pub use crate::operation::update_portal::_update_portal_input::UpdatePortalInput;
+
+pub use crate::operation::update_portal::_update_portal_output::UpdatePortalOutput;
 
 mod _update_portal_input;
 

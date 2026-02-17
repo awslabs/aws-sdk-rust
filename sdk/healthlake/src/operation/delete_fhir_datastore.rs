@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fhir_datast
     }
 }
 
-pub use crate::operation::delete_fhir_datastore::_delete_fhir_datastore_output::DeleteFhirDatastoreOutput;
-
 pub use crate::operation::delete_fhir_datastore::_delete_fhir_datastore_input::DeleteFhirDatastoreInput;
+
+pub use crate::operation::delete_fhir_datastore::_delete_fhir_datastore_output::DeleteFhirDatastoreOutput;
 
 mod _delete_fhir_datastore_input;
 

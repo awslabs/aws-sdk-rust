@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_deleg
     }
 }
 
-pub use crate::operation::disassociate_delegate_from_resource::_disassociate_delegate_from_resource_output::DisassociateDelegateFromResourceOutput;
-
 pub use crate::operation::disassociate_delegate_from_resource::_disassociate_delegate_from_resource_input::DisassociateDelegateFromResourceInput;
+
+pub use crate::operation::disassociate_delegate_from_resource::_disassociate_delegate_from_resource_output::DisassociateDelegateFromResourceOutput;
 
 mod _disassociate_delegate_from_resource_input;
 

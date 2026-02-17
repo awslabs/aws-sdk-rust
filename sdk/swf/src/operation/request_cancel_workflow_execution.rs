@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::request_cancel_wor
     }
 }
 
-pub use crate::operation::request_cancel_workflow_execution::_request_cancel_workflow_execution_output::RequestCancelWorkflowExecutionOutput;
-
 pub use crate::operation::request_cancel_workflow_execution::_request_cancel_workflow_execution_input::RequestCancelWorkflowExecutionInput;
+
+pub use crate::operation::request_cancel_workflow_execution::_request_cancel_workflow_execution_output::RequestCancelWorkflowExecutionOutput;
 
 mod _request_cancel_workflow_execution_input;
 

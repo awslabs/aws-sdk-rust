@@ -351,9 +351,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_search_suggest
     }
 }
 
-pub use crate::operation::get_search_suggestions::_get_search_suggestions_output::GetSearchSuggestionsOutput;
-
 pub use crate::operation::get_search_suggestions::_get_search_suggestions_input::GetSearchSuggestionsInput;
+
+pub use crate::operation::get_search_suggestions::_get_search_suggestions_output::GetSearchSuggestionsOutput;
 
 mod _get_search_suggestions_input;
 

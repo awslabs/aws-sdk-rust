@@ -474,9 +474,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_entity_owner::
     }
 }
 
-pub use crate::operation::add_entity_owner::_add_entity_owner_output::AddEntityOwnerOutput;
-
 pub use crate::operation::add_entity_owner::_add_entity_owner_input::AddEntityOwnerInput;
+
+pub use crate::operation::add_entity_owner::_add_entity_owner_output::AddEntityOwnerOutput;
 
 mod _add_entity_owner_input;
 

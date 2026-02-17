@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_custom_line_i
     }
 }
 
-pub use crate::operation::list_custom_line_items::_list_custom_line_items_output::ListCustomLineItemsOutput;
-
 pub use crate::operation::list_custom_line_items::_list_custom_line_items_input::ListCustomLineItemsInput;
+
+pub use crate::operation::list_custom_line_items::_list_custom_line_items_output::ListCustomLineItemsOutput;
 
 mod _list_custom_line_items_input;
 

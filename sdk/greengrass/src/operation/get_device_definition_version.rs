@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_device_definit
     }
 }
 
-pub use crate::operation::get_device_definition_version::_get_device_definition_version_output::GetDeviceDefinitionVersionOutput;
-
 pub use crate::operation::get_device_definition_version::_get_device_definition_version_input::GetDeviceDefinitionVersionInput;
+
+pub use crate::operation::get_device_definition_version::_get_device_definition_version_output::GetDeviceDefinitionVersionOutput;
 
 mod _get_device_definition_version_input;
 

@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_policy_vers
     }
 }
 
-pub use crate::operation::delete_policy_version::_delete_policy_version_output::DeletePolicyVersionOutput;
-
 pub use crate::operation::delete_policy_version::_delete_policy_version_input::DeletePolicyVersionInput;
+
+pub use crate::operation::delete_policy_version::_delete_policy_version_output::DeletePolicyVersionOutput;
 
 mod _delete_policy_version_input;
 

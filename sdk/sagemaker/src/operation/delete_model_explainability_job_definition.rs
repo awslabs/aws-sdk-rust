@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::delete_model_explainability_job_definition::_delete_model_explainability_job_definition_output::DeleteModelExplainabilityJobDefinitionOutput;
-
 pub use crate::operation::delete_model_explainability_job_definition::_delete_model_explainability_job_definition_input::DeleteModelExplainabilityJobDefinitionInput;
+
+pub use crate::operation::delete_model_explainability_job_definition::_delete_model_explainability_job_definition_output::DeleteModelExplainabilityJobDefinitionOutput;
 
 mod _delete_model_explainability_job_definition_input;
 

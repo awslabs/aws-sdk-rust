@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_ipam_
     }
 }
 
-pub use crate::operation::disassociate_ipam_byoasn::_disassociate_ipam_byoasn_output::DisassociateIpamByoasnOutput;
-
 pub use crate::operation::disassociate_ipam_byoasn::_disassociate_ipam_byoasn_input::DisassociateIpamByoasnInput;
+
+pub use crate::operation::disassociate_ipam_byoasn::_disassociate_ipam_byoasn_output::DisassociateIpamByoasnOutput;
 
 mod _disassociate_ipam_byoasn_input;
 

@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_entity::D
     }
 }
 
-pub use crate::operation::describe_entity::_describe_entity_output::DescribeEntityOutput;
-
 pub use crate::operation::describe_entity::_describe_entity_input::DescribeEntityInput;
+
+pub use crate::operation::describe_entity::_describe_entity_output::DescribeEntityOutput;
 
 mod _describe_entity_input;
 

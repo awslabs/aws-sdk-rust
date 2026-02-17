@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_trigger::De
     }
 }
 
-pub use crate::operation::delete_trigger::_delete_trigger_output::DeleteTriggerOutput;
-
 pub use crate::operation::delete_trigger::_delete_trigger_input::DeleteTriggerInput;
+
+pub use crate::operation::delete_trigger::_delete_trigger_output::DeleteTriggerOutput;
 
 mod _delete_trigger_input;
 

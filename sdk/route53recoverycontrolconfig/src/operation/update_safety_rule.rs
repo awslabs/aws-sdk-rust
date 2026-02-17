@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_safety_rule
     }
 }
 
-pub use crate::operation::update_safety_rule::_update_safety_rule_output::UpdateSafetyRuleOutput;
-
 pub use crate::operation::update_safety_rule::_update_safety_rule_input::UpdateSafetyRuleInput;
+
+pub use crate::operation::update_safety_rule::_update_safety_rule_output::UpdateSafetyRuleOutput;
 
 mod _update_safety_rule_input;
 

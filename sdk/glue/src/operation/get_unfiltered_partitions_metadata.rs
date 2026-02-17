@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_unfiltered_par
     }
 }
 
-pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_partitions_metadata_output::GetUnfilteredPartitionsMetadataOutput;
-
 pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_partitions_metadata_input::GetUnfilteredPartitionsMetadataInput;
+
+pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_partitions_metadata_output::GetUnfilteredPartitionsMetadataOutput;
 
 mod _get_unfiltered_partitions_metadata_input;
 

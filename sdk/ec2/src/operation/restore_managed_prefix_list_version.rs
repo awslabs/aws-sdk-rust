@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::restore_managed_pr
     }
 }
 
-pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_prefix_list_version_output::RestoreManagedPrefixListVersionOutput;
-
 pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_prefix_list_version_input::RestoreManagedPrefixListVersionInput;
+
+pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_prefix_list_version_output::RestoreManagedPrefixListVersionOutput;
 
 mod _restore_managed_prefix_list_version_input;
 

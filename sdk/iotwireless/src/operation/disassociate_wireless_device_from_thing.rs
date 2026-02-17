@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_wirel
     }
 }
 
-pub use crate::operation::disassociate_wireless_device_from_thing::_disassociate_wireless_device_from_thing_output::DisassociateWirelessDeviceFromThingOutput;
-
 pub use crate::operation::disassociate_wireless_device_from_thing::_disassociate_wireless_device_from_thing_input::DisassociateWirelessDeviceFromThingInput;
+
+pub use crate::operation::disassociate_wireless_device_from_thing::_disassociate_wireless_device_from_thing_output::DisassociateWirelessDeviceFromThingOutput;
 
 mod _disassociate_wireless_device_from_thing_input;
 

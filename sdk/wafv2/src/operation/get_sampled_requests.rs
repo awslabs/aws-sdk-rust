@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_sampled_reques
     }
 }
 
-pub use crate::operation::get_sampled_requests::_get_sampled_requests_output::GetSampledRequestsOutput;
-
 pub use crate::operation::get_sampled_requests::_get_sampled_requests_input::GetSampledRequestsInput;
+
+pub use crate::operation::get_sampled_requests::_get_sampled_requests_output::GetSampledRequestsOutput;
 
 mod _get_sampled_requests_input;
 

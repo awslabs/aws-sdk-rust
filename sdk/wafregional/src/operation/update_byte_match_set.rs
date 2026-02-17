@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_byte_match_
     }
 }
 
-pub use crate::operation::update_byte_match_set::_update_byte_match_set_output::UpdateByteMatchSetOutput;
-
 pub use crate::operation::update_byte_match_set::_update_byte_match_set_input::UpdateByteMatchSetInput;
+
+pub use crate::operation::update_byte_match_set::_update_byte_match_set_output::UpdateByteMatchSetOutput;
 
 mod _update_byte_match_set_input;
 

@@ -408,9 +408,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lens::GetLensE
     }
 }
 
-pub use crate::operation::get_lens::_get_lens_output::GetLensOutput;
-
 pub use crate::operation::get_lens::_get_lens_input::GetLensInput;
+
+pub use crate::operation::get_lens::_get_lens_output::GetLensOutput;
 
 mod _get_lens_input;
 

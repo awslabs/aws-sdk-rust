@@ -390,9 +390,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_scheduled_a
     }
 }
 
-pub use crate::operation::delete_scheduled_action::_delete_scheduled_action_output::DeleteScheduledActionOutput;
-
 pub use crate::operation::delete_scheduled_action::_delete_scheduled_action_input::DeleteScheduledActionInput;
+
+pub use crate::operation::delete_scheduled_action::_delete_scheduled_action_output::DeleteScheduledActionOutput;
 
 mod _delete_scheduled_action_input;
 

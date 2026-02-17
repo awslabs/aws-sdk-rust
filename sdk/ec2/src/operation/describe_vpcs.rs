@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_vpcs::Des
     }
 }
 
-pub use crate::operation::describe_vpcs::_describe_vpcs_output::DescribeVpcsOutput;
-
 pub use crate::operation::describe_vpcs::_describe_vpcs_input::DescribeVpcsInput;
+
+pub use crate::operation::describe_vpcs::_describe_vpcs_output::DescribeVpcsOutput;
 
 mod _describe_vpcs_input;
 

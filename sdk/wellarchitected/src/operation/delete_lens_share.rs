@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_lens_share:
     }
 }
 
-pub use crate::operation::delete_lens_share::_delete_lens_share_output::DeleteLensShareOutput;
-
 pub use crate::operation::delete_lens_share::_delete_lens_share_input::DeleteLensShareInput;
+
+pub use crate::operation::delete_lens_share::_delete_lens_share_output::DeleteLensShareOutput;
 
 mod _delete_lens_share_input;
 

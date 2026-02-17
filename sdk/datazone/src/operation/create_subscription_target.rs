@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_subscriptio
     }
 }
 
-pub use crate::operation::create_subscription_target::_create_subscription_target_output::CreateSubscriptionTargetOutput;
-
 pub use crate::operation::create_subscription_target::_create_subscription_target_input::CreateSubscriptionTargetInput;
+
+pub use crate::operation::create_subscription_target::_create_subscription_target_output::CreateSubscriptionTargetOutput;
 
 mod _create_subscription_target_input;
 

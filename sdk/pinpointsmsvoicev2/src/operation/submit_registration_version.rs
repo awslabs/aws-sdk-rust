@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::submit_registratio
     }
 }
 
-pub use crate::operation::submit_registration_version::_submit_registration_version_output::SubmitRegistrationVersionOutput;
-
 pub use crate::operation::submit_registration_version::_submit_registration_version_input::SubmitRegistrationVersionInput;
+
+pub use crate::operation::submit_registration_version::_submit_registration_version_output::SubmitRegistrationVersionOutput;
 
 mod _submit_registration_version_input;
 

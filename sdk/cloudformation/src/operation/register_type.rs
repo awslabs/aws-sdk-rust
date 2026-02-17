@@ -357,9 +357,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_type::Reg
     }
 }
 
-pub use crate::operation::register_type::_register_type_output::RegisterTypeOutput;
-
 pub use crate::operation::register_type::_register_type_input::RegisterTypeInput;
+
+pub use crate::operation::register_type::_register_type_output::RegisterTypeOutput;
 
 mod _register_type_input;
 

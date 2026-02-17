@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::mark_as_archived::
     }
 }
 
-pub use crate::operation::mark_as_archived::_mark_as_archived_output::MarkAsArchivedOutput;
-
 pub use crate::operation::mark_as_archived::_mark_as_archived_input::MarkAsArchivedInput;
+
+pub use crate::operation::mark_as_archived::_mark_as_archived_output::MarkAsArchivedOutput;
 
 mod _mark_as_archived_input;
 

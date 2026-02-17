@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::finalize_cutover::
     }
 }
 
-pub use crate::operation::finalize_cutover::_finalize_cutover_output::FinalizeCutoverOutput;
-
 pub use crate::operation::finalize_cutover::_finalize_cutover_input::FinalizeCutoverInput;
+
+pub use crate::operation::finalize_cutover::_finalize_cutover_output::FinalizeCutoverOutput;
 
 mod _finalize_cutover_input;
 

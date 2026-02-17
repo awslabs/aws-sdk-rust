@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_ip_routes::
     }
 }
 
-pub use crate::operation::remove_ip_routes::_remove_ip_routes_output::RemoveIpRoutesOutput;
-
 pub use crate::operation::remove_ip_routes::_remove_ip_routes_input::RemoveIpRoutesInput;
+
+pub use crate::operation::remove_ip_routes::_remove_ip_routes_output::RemoveIpRoutesOutput;
 
 mod _remove_ip_routes_input;
 

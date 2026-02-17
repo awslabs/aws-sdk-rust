@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_training_
     }
 }
 
-pub use crate::operation::describe_training_job::_describe_training_job_output::DescribeTrainingJobOutput;
-
 pub use crate::operation::describe_training_job::_describe_training_job_input::DescribeTrainingJobInput;
+
+pub use crate::operation::describe_training_job::_describe_training_job_output::DescribeTrainingJobOutput;
 
 mod _describe_training_job_input;
 

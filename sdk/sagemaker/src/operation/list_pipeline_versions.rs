@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_pipeline_vers
     }
 }
 
-pub use crate::operation::list_pipeline_versions::_list_pipeline_versions_output::ListPipelineVersionsOutput;
-
 pub use crate::operation::list_pipeline_versions::_list_pipeline_versions_input::ListPipelineVersionsInput;
+
+pub use crate::operation::list_pipeline_versions::_list_pipeline_versions_output::ListPipelineVersionsOutput;
 
 mod _list_pipeline_versions_input;
 

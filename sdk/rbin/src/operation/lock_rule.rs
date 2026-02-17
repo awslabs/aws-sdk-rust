@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::lock_rule::LockRul
     }
 }
 
-pub use crate::operation::lock_rule::_lock_rule_output::LockRuleOutput;
-
 pub use crate::operation::lock_rule::_lock_rule_input::LockRuleInput;
+
+pub use crate::operation::lock_rule::_lock_rule_output::LockRuleOutput;
 
 mod _lock_rule_input;
 

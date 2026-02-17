@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_identities::L
     }
 }
 
-pub use crate::operation::list_identities::_list_identities_output::ListIdentitiesOutput;
-
 pub use crate::operation::list_identities::_list_identities_input::ListIdentitiesInput;
+
+pub use crate::operation::list_identities::_list_identities_output::ListIdentitiesOutput;
 
 mod _list_identities_input;
 

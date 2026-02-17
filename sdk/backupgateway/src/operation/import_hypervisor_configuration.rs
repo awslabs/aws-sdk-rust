@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::import_hypervisor_
     }
 }
 
-pub use crate::operation::import_hypervisor_configuration::_import_hypervisor_configuration_output::ImportHypervisorConfigurationOutput;
-
 pub use crate::operation::import_hypervisor_configuration::_import_hypervisor_configuration_input::ImportHypervisorConfigurationInput;
+
+pub use crate::operation::import_hypervisor_configuration::_import_hypervisor_configuration_output::ImportHypervisorConfigurationOutput;
 
 mod _import_hypervisor_configuration_input;
 

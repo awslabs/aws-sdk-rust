@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_field_level_en
     }
 }
 
-pub use crate::operation::get_field_level_encryption_profile::_get_field_level_encryption_profile_output::GetFieldLevelEncryptionProfileOutput;
-
 pub use crate::operation::get_field_level_encryption_profile::_get_field_level_encryption_profile_input::GetFieldLevelEncryptionProfileInput;
+
+pub use crate::operation::get_field_level_encryption_profile::_get_field_level_encryption_profile_output::GetFieldLevelEncryptionProfileOutput;
 
 mod _get_field_level_encryption_profile_input;
 

@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_collaboration
     }
 }
 
-pub use crate::operation::list_collaboration_trained_models::_list_collaboration_trained_models_output::ListCollaborationTrainedModelsOutput;
-
 pub use crate::operation::list_collaboration_trained_models::_list_collaboration_trained_models_input::ListCollaborationTrainedModelsInput;
+
+pub use crate::operation::list_collaboration_trained_models::_list_collaboration_trained_models_output::ListCollaborationTrainedModelsOutput;
 
 mod _list_collaboration_trained_models_input;
 

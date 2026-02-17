@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_mesh::Updat
     }
 }
 
-pub use crate::operation::update_mesh::_update_mesh_output::UpdateMeshOutput;
-
 pub use crate::operation::update_mesh::_update_mesh_input::UpdateMeshInput;
+
+pub use crate::operation::update_mesh::_update_mesh_output::UpdateMeshOutput;
 
 mod _update_mesh_input;
 

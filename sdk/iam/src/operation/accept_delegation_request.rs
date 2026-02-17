@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::accept_delegation_
     }
 }
 
-pub use crate::operation::accept_delegation_request::_accept_delegation_request_output::AcceptDelegationRequestOutput;
-
 pub use crate::operation::accept_delegation_request::_accept_delegation_request_input::AcceptDelegationRequestInput;
+
+pub use crate::operation::accept_delegation_request::_accept_delegation_request_output::AcceptDelegationRequestOutput;
 
 mod _accept_delegation_request_input;
 

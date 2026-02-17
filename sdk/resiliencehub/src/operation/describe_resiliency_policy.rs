@@ -403,9 +403,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_resilienc
     }
 }
 
-pub use crate::operation::describe_resiliency_policy::_describe_resiliency_policy_output::DescribeResiliencyPolicyOutput;
-
 pub use crate::operation::describe_resiliency_policy::_describe_resiliency_policy_input::DescribeResiliencyPolicyInput;
+
+pub use crate::operation::describe_resiliency_policy::_describe_resiliency_policy_output::DescribeResiliencyPolicyOutput;
 
 mod _describe_resiliency_policy_input;
 

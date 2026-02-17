@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_harvest_j
     }
 }
 
-pub use crate::operation::describe_harvest_job::_describe_harvest_job_output::DescribeHarvestJobOutput;
-
 pub use crate::operation::describe_harvest_job::_describe_harvest_job_input::DescribeHarvestJobInput;
+
+pub use crate::operation::describe_harvest_job::_describe_harvest_job_output::DescribeHarvestJobOutput;
 
 mod _describe_harvest_job_input;
 

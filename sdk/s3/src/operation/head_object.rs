@@ -529,9 +529,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::head_object::HeadO
     }
 }
 
-pub use crate::operation::head_object::_head_object_output::HeadObjectOutput;
-
 pub use crate::operation::head_object::_head_object_input::HeadObjectInput;
+
+pub use crate::operation::head_object::_head_object_output::HeadObjectOutput;
 
 mod _head_object_input;
 

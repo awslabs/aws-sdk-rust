@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::register_container
     }
 }
 
-pub use crate::operation::register_container_instance::_register_container_instance_output::RegisterContainerInstanceOutput;
-
 pub use crate::operation::register_container_instance::_register_container_instance_input::RegisterContainerInstanceInput;
+
+pub use crate::operation::register_container_instance::_register_container_instance_output::RegisterContainerInstanceOutput;
 
 mod _register_container_instance_input;
 

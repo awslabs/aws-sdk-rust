@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_group_query::G
     }
 }
 
-pub use crate::operation::get_group_query::_get_group_query_output::GetGroupQueryOutput;
-
 pub use crate::operation::get_group_query::_get_group_query_input::GetGroupQueryInput;
+
+pub use crate::operation::get_group_query::_get_group_query_output::GetGroupQueryOutput;
 
 mod _get_group_query_input;
 

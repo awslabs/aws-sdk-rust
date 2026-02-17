@@ -517,9 +517,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::confirm_forgot_pas
     }
 }
 
-pub use crate::operation::confirm_forgot_password::_confirm_forgot_password_output::ConfirmForgotPasswordOutput;
-
 pub use crate::operation::confirm_forgot_password::_confirm_forgot_password_input::ConfirmForgotPasswordInput;
+
+pub use crate::operation::confirm_forgot_password::_confirm_forgot_password_output::ConfirmForgotPasswordOutput;
 
 mod _confirm_forgot_password_input;
 

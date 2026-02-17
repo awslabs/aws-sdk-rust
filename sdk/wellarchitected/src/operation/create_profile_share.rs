@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_profile_sha
     }
 }
 
-pub use crate::operation::create_profile_share::_create_profile_share_output::CreateProfileShareOutput;
-
 pub use crate::operation::create_profile_share::_create_profile_share_input::CreateProfileShareInput;
+
+pub use crate::operation::create_profile_share::_create_profile_share_output::CreateProfileShareOutput;
 
 mod _create_profile_share_input;
 

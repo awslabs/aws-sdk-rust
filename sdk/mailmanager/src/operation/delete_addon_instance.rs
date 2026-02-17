@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_addon_insta
     }
 }
 
-pub use crate::operation::delete_addon_instance::_delete_addon_instance_output::DeleteAddonInstanceOutput;
-
 pub use crate::operation::delete_addon_instance::_delete_addon_instance_input::DeleteAddonInstanceInput;
+
+pub use crate::operation::delete_addon_instance::_delete_addon_instance_output::DeleteAddonInstanceOutput;
 
 mod _delete_addon_instance_input;
 

@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_ai_agent::GetA
     }
 }
 
-pub use crate::operation::get_ai_agent::_get_ai_agent_output::GetAiAgentOutput;
-
 pub use crate::operation::get_ai_agent::_get_ai_agent_input::GetAiAgentInput;
+
+pub use crate::operation::get_ai_agent::_get_ai_agent_output::GetAiAgentOutput;
 
 mod _get_ai_agent_input;
 

@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_routing_c
     }
 }
 
-pub use crate::operation::describe_routing_control::_describe_routing_control_output::DescribeRoutingControlOutput;
-
 pub use crate::operation::describe_routing_control::_describe_routing_control_input::DescribeRoutingControlInput;
+
+pub use crate::operation::describe_routing_control::_describe_routing_control_output::DescribeRoutingControlOutput;
 
 mod _describe_routing_control_input;
 

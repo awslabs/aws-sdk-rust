@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_report_creat
     }
 }
 
-pub use crate::operation::start_report_creation::_start_report_creation_output::StartReportCreationOutput;
-
 pub use crate::operation::start_report_creation::_start_report_creation_input::StartReportCreationInput;
+
+pub use crate::operation::start_report_creation::_start_report_creation_output::StartReportCreationOutput;
 
 mod _start_report_creation_input;
 

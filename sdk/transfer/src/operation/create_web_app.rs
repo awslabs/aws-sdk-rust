@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_web_app::Cr
     }
 }
 
-pub use crate::operation::create_web_app::_create_web_app_output::CreateWebAppOutput;
-
 pub use crate::operation::create_web_app::_create_web_app_input::CreateWebAppInput;
+
+pub use crate::operation::create_web_app::_create_web_app_output::CreateWebAppOutput;
 
 mod _create_web_app_input;
 

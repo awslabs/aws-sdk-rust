@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_registry::U
     }
 }
 
-pub use crate::operation::update_registry::_update_registry_output::UpdateRegistryOutput;
-
 pub use crate::operation::update_registry::_update_registry_input::UpdateRegistryInput;
+
+pub use crate::operation::update_registry::_update_registry_output::UpdateRegistryOutput;
 
 mod _update_registry_input;
 

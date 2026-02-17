@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::connect_custom_key
     }
 }
 
-pub use crate::operation::connect_custom_key_store::_connect_custom_key_store_output::ConnectCustomKeyStoreOutput;
-
 pub use crate::operation::connect_custom_key_store::_connect_custom_key_store_input::ConnectCustomKeyStoreInput;
+
+pub use crate::operation::connect_custom_key_store::_connect_custom_key_store_output::ConnectCustomKeyStoreOutput;
 
 mod _connect_custom_key_store_input;
 

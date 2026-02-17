@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::describe_ipam_external_resource_verification_tokens::_describe_ipam_external_resource_verification_tokens_output::DescribeIpamExternalResourceVerificationTokensOutput;
-
 pub use crate::operation::describe_ipam_external_resource_verification_tokens::_describe_ipam_external_resource_verification_tokens_input::DescribeIpamExternalResourceVerificationTokensInput;
+
+pub use crate::operation::describe_ipam_external_resource_verification_tokens::_describe_ipam_external_resource_verification_tokens_output::DescribeIpamExternalResourceVerificationTokensOutput;
 
 mod _describe_ipam_external_resource_verification_tokens_input;
 

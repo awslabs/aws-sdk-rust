@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_custom_metr
     }
 }
 
-pub use crate::operation::delete_custom_metric::_delete_custom_metric_output::DeleteCustomMetricOutput;
-
 pub use crate::operation::delete_custom_metric::_delete_custom_metric_input::DeleteCustomMetricInput;
+
+pub use crate::operation::delete_custom_metric::_delete_custom_metric_output::DeleteCustomMetricOutput;
 
 mod _delete_custom_metric_input;
 

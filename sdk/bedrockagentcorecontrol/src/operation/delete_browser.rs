@@ -447,9 +447,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_browser::De
     }
 }
 
-pub use crate::operation::delete_browser::_delete_browser_output::DeleteBrowserOutput;
-
 pub use crate::operation::delete_browser::_delete_browser_input::DeleteBrowserInput;
+
+pub use crate::operation::delete_browser::_delete_browser_output::DeleteBrowserOutput;
 
 mod _delete_browser_input;
 

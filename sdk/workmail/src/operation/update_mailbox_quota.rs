@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_mailbox_quo
     }
 }
 
-pub use crate::operation::update_mailbox_quota::_update_mailbox_quota_output::UpdateMailboxQuotaOutput;
-
 pub use crate::operation::update_mailbox_quota::_update_mailbox_quota_input::UpdateMailboxQuotaInput;
+
+pub use crate::operation::update_mailbox_quota::_update_mailbox_quota_output::UpdateMailboxQuotaOutput;
 
 mod _update_mailbox_quota_input;
 

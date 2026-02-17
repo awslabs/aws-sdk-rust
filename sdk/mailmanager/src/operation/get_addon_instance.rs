@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_addon_instance
     }
 }
 
-pub use crate::operation::get_addon_instance::_get_addon_instance_output::GetAddonInstanceOutput;
-
 pub use crate::operation::get_addon_instance::_get_addon_instance_input::GetAddonInstanceInput;
+
+pub use crate::operation::get_addon_instance::_get_addon_instance_output::GetAddonInstanceOutput;
 
 mod _get_addon_instance_input;
 

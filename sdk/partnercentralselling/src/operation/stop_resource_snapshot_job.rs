@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_resource_snap
     }
 }
 
-pub use crate::operation::stop_resource_snapshot_job::_stop_resource_snapshot_job_output::StopResourceSnapshotJobOutput;
-
 pub use crate::operation::stop_resource_snapshot_job::_stop_resource_snapshot_job_input::StopResourceSnapshotJobInput;
+
+pub use crate::operation::stop_resource_snapshot_job::_stop_resource_snapshot_job_output::StopResourceSnapshotJobOutput;
 
 mod _stop_resource_snapshot_job_input;
 

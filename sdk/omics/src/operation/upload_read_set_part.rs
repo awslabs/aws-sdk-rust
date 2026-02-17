@@ -479,9 +479,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::upload_read_set_pa
     }
 }
 
-pub use crate::operation::upload_read_set_part::_upload_read_set_part_output::UploadReadSetPartOutput;
-
 pub use crate::operation::upload_read_set_part::_upload_read_set_part_input::UploadReadSetPartInput;
+
+pub use crate::operation::upload_read_set_part::_upload_read_set_part_output::UploadReadSetPartOutput;
 
 mod _upload_read_set_part_input;
 

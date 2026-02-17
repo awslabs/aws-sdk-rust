@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_id_namespaces
     }
 }
 
-pub use crate::operation::list_id_namespaces::_list_id_namespaces_output::ListIdNamespacesOutput;
-
 pub use crate::operation::list_id_namespaces::_list_id_namespaces_input::ListIdNamespacesInput;
+
+pub use crate::operation::list_id_namespaces::_list_id_namespaces_output::ListIdNamespacesOutput;
 
 mod _list_id_namespaces_input;
 

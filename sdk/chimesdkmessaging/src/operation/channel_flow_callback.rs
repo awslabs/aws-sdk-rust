@@ -449,9 +449,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::channel_flow_callb
     }
 }
 
-pub use crate::operation::channel_flow_callback::_channel_flow_callback_output::ChannelFlowCallbackOutput;
-
 pub use crate::operation::channel_flow_callback::_channel_flow_callback_input::ChannelFlowCallbackInput;
+
+pub use crate::operation::channel_flow_callback::_channel_flow_callback_output::ChannelFlowCallbackOutput;
 
 mod _channel_flow_callback_input;
 

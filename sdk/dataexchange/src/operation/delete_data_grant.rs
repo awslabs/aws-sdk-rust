@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_data_grant:
     }
 }
 
-pub use crate::operation::delete_data_grant::_delete_data_grant_output::DeleteDataGrantOutput;
-
 pub use crate::operation::delete_data_grant::_delete_data_grant_input::DeleteDataGrantInput;
+
+pub use crate::operation::delete_data_grant::_delete_data_grant_output::DeleteDataGrantOutput;
 
 mod _delete_data_grant_input;
 

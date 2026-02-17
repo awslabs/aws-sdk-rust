@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_model_copy_
     }
 }
 
-pub use crate::operation::create_model_copy_job::_create_model_copy_job_output::CreateModelCopyJobOutput;
-
 pub use crate::operation::create_model_copy_job::_create_model_copy_job_input::CreateModelCopyJobInput;
+
+pub use crate::operation::create_model_copy_job::_create_model_copy_job_output::CreateModelCopyJobOutput;
 
 mod _create_model_copy_job_input;
 

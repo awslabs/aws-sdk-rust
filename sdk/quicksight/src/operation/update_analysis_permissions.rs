@@ -450,9 +450,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_analysis_pe
     }
 }
 
-pub use crate::operation::update_analysis_permissions::_update_analysis_permissions_output::UpdateAnalysisPermissionsOutput;
-
 pub use crate::operation::update_analysis_permissions::_update_analysis_permissions_input::UpdateAnalysisPermissionsInput;
+
+pub use crate::operation::update_analysis_permissions::_update_analysis_permissions_output::UpdateAnalysisPermissionsOutput;
 
 mod _update_analysis_permissions_input;
 

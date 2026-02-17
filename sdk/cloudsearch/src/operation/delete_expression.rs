@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_expression:
     }
 }
 
-pub use crate::operation::delete_expression::_delete_expression_output::DeleteExpressionOutput;
-
 pub use crate::operation::delete_expression::_delete_expression_input::DeleteExpressionInput;
+
+pub use crate::operation::delete_expression::_delete_expression_output::DeleteExpressionOutput;
 
 mod _delete_expression_input;
 

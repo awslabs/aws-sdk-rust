@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_vpc_encrypt
     }
 }
 
-pub use crate::operation::create_vpc_encryption_control::_create_vpc_encryption_control_output::CreateVpcEncryptionControlOutput;
-
 pub use crate::operation::create_vpc_encryption_control::_create_vpc_encryption_control_input::CreateVpcEncryptionControlInput;
+
+pub use crate::operation::create_vpc_encryption_control::_create_vpc_encryption_control_output::CreateVpcEncryptionControlOutput;
 
 mod _create_vpc_encryption_control_input;
 

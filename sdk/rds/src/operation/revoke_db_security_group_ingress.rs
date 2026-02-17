@@ -378,9 +378,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::revoke_db_security
     }
 }
 
-pub use crate::operation::revoke_db_security_group_ingress::_revoke_db_security_group_ingress_output::RevokeDbSecurityGroupIngressOutput;
-
 pub use crate::operation::revoke_db_security_group_ingress::_revoke_db_security_group_ingress_input::RevokeDbSecurityGroupIngressInput;
+
+pub use crate::operation::revoke_db_security_group_ingress::_revoke_db_security_group_ingress_output::RevokeDbSecurityGroupIngressOutput;
 
 mod _revoke_db_security_group_ingress_input;
 

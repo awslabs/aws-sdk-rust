@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_ml_model_tra
     }
 }
 
-pub use crate::operation::start_ml_model_transform_job::_start_ml_model_transform_job_output::StartMlModelTransformJobOutput;
-
 pub use crate::operation::start_ml_model_transform_job::_start_ml_model_transform_job_input::StartMlModelTransformJobInput;
+
+pub use crate::operation::start_ml_model_transform_job::_start_ml_model_transform_job_output::StartMlModelTransformJobOutput;
 
 mod _start_ml_model_transform_job_input;
 

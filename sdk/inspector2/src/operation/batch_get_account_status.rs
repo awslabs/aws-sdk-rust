@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_get_account_
     }
 }
 
-pub use crate::operation::batch_get_account_status::_batch_get_account_status_output::BatchGetAccountStatusOutput;
-
 pub use crate::operation::batch_get_account_status::_batch_get_account_status_input::BatchGetAccountStatusInput;
+
+pub use crate::operation::batch_get_account_status::_batch_get_account_status_output::BatchGetAccountStatusOutput;
 
 mod _batch_get_account_status_input;
 

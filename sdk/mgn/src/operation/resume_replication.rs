@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::resume_replication
     }
 }
 
-pub use crate::operation::resume_replication::_resume_replication_output::ResumeReplicationOutput;
-
 pub use crate::operation::resume_replication::_resume_replication_input::ResumeReplicationInput;
+
+pub use crate::operation::resume_replication::_resume_replication_output::ResumeReplicationOutput;
 
 mod _resume_replication_input;
 

@@ -419,9 +419,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_upload_job::Ge
     }
 }
 
-pub use crate::operation::get_upload_job::_get_upload_job_output::GetUploadJobOutput;
-
 pub use crate::operation::get_upload_job::_get_upload_job_input::GetUploadJobInput;
+
+pub use crate::operation::get_upload_job::_get_upload_job_output::GetUploadJobOutput;
 
 mod _get_upload_job_input;
 

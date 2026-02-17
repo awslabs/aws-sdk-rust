@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_applicat
     }
 }
 
-pub use crate::operation::associate_application_fleet::_associate_application_fleet_output::AssociateApplicationFleetOutput;
-
 pub use crate::operation::associate_application_fleet::_associate_application_fleet_input::AssociateApplicationFleetInput;
+
+pub use crate::operation::associate_application_fleet::_associate_application_fleet_output::AssociateApplicationFleetOutput;
 
 mod _associate_application_fleet_input;
 

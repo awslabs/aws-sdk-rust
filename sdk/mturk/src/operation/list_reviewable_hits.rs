@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_reviewable_hi
     }
 }
 
-pub use crate::operation::list_reviewable_hits::_list_reviewable_hits_output::ListReviewableHiTsOutput;
-
 pub use crate::operation::list_reviewable_hits::_list_reviewable_hits_input::ListReviewableHiTsInput;
+
+pub use crate::operation::list_reviewable_hits::_list_reviewable_hits_output::ListReviewableHiTsOutput;
 
 mod _list_reviewable_hits_input;
 

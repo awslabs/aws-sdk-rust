@@ -461,9 +461,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_game_sessio
     }
 }
 
-pub use crate::operation::create_game_session::_create_game_session_output::CreateGameSessionOutput;
-
 pub use crate::operation::create_game_session::_create_game_session_input::CreateGameSessionInput;
+
+pub use crate::operation::create_game_session::_create_game_session_output::CreateGameSessionOutput;
 
 mod _create_game_session_input;
 

@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_cloud_auton
     }
 }
 
-pub use crate::operation::delete_cloud_autonomous_vm_cluster::_delete_cloud_autonomous_vm_cluster_output::DeleteCloudAutonomousVmClusterOutput;
-
 pub use crate::operation::delete_cloud_autonomous_vm_cluster::_delete_cloud_autonomous_vm_cluster_input::DeleteCloudAutonomousVmClusterInput;
+
+pub use crate::operation::delete_cloud_autonomous_vm_cluster::_delete_cloud_autonomous_vm_cluster_output::DeleteCloudAutonomousVmClusterOutput;
 
 mod _delete_cloud_autonomous_vm_cluster_input;
 

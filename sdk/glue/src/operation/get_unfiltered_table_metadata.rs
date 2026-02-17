@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_unfiltered_tab
     }
 }
 
-pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_metadata_output::GetUnfilteredTableMetadataOutput;
-
 pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_metadata_input::GetUnfilteredTableMetadataInput;
+
+pub use crate::operation::get_unfiltered_table_metadata::_get_unfiltered_table_metadata_output::GetUnfilteredTableMetadataOutput;
 
 mod _get_unfiltered_table_metadata_input;
 

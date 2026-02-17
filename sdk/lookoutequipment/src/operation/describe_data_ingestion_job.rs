@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_inge
     }
 }
 
-pub use crate::operation::describe_data_ingestion_job::_describe_data_ingestion_job_output::DescribeDataIngestionJobOutput;
-
 pub use crate::operation::describe_data_ingestion_job::_describe_data_ingestion_job_input::DescribeDataIngestionJobInput;
+
+pub use crate::operation::describe_data_ingestion_job::_describe_data_ingestion_job_output::DescribeDataIngestionJobOutput;
 
 mod _describe_data_ingestion_job_input;
 

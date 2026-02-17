@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_q_persona
     }
 }
 
-pub use crate::operation::describe_q_personalization_configuration::_describe_q_personalization_configuration_output::DescribeQPersonalizationConfigurationOutput;
-
 pub use crate::operation::describe_q_personalization_configuration::_describe_q_personalization_configuration_input::DescribeQPersonalizationConfigurationInput;
+
+pub use crate::operation::describe_q_personalization_configuration::_describe_q_personalization_configuration_output::DescribeQPersonalizationConfigurationOutput;
 
 mod _describe_q_personalization_configuration_input;
 

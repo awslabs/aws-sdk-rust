@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_license_ser
     }
 }
 
-pub use crate::operation::delete_license_server_endpoint::_delete_license_server_endpoint_output::DeleteLicenseServerEndpointOutput;
-
 pub use crate::operation::delete_license_server_endpoint::_delete_license_server_endpoint_input::DeleteLicenseServerEndpointInput;
+
+pub use crate::operation::delete_license_server_endpoint::_delete_license_server_endpoint_output::DeleteLicenseServerEndpointOutput;
 
 mod _delete_license_server_endpoint_input;
 

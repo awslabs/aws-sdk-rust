@@ -437,9 +437,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_alert_manag
     }
 }
 
-pub use crate::operation::delete_alert_manager_definition::_delete_alert_manager_definition_output::DeleteAlertManagerDefinitionOutput;
-
 pub use crate::operation::delete_alert_manager_definition::_delete_alert_manager_definition_input::DeleteAlertManagerDefinitionInput;
+
+pub use crate::operation::delete_alert_manager_definition::_delete_alert_manager_definition_output::DeleteAlertManagerDefinitionOutput;
 
 mod _delete_alert_manager_definition_input;
 

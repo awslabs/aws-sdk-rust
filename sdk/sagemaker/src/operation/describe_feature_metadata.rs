@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_feature_m
     }
 }
 
-pub use crate::operation::describe_feature_metadata::_describe_feature_metadata_output::DescribeFeatureMetadataOutput;
-
 pub use crate::operation::describe_feature_metadata::_describe_feature_metadata_input::DescribeFeatureMetadataInput;
+
+pub use crate::operation::describe_feature_metadata::_describe_feature_metadata_output::DescribeFeatureMetadataOutput;
 
 mod _describe_feature_metadata_input;
 

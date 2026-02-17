@@ -363,9 +363,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_type_registra
     }
 }
 
-pub use crate::operation::list_type_registrations::_list_type_registrations_output::ListTypeRegistrationsOutput;
-
 pub use crate::operation::list_type_registrations::_list_type_registrations_input::ListTypeRegistrationsInput;
+
+pub use crate::operation::list_type_registrations::_list_type_registrations_output::ListTypeRegistrationsOutput;
 
 mod _list_type_registrations_input;
 

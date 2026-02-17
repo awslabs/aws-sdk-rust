@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_flywheel::C
     }
 }
 
-pub use crate::operation::create_flywheel::_create_flywheel_output::CreateFlywheelOutput;
-
 pub use crate::operation::create_flywheel::_create_flywheel_input::CreateFlywheelInput;
+
+pub use crate::operation::create_flywheel::_create_flywheel_output::CreateFlywheelOutput;
 
 mod _create_flywheel_input;
 

@@ -434,9 +434,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::search_quick_respo
     }
 }
 
-pub use crate::operation::search_quick_responses::_search_quick_responses_output::SearchQuickResponsesOutput;
-
 pub use crate::operation::search_quick_responses::_search_quick_responses_input::SearchQuickResponsesInput;
+
+pub use crate::operation::search_quick_responses::_search_quick_responses_output::SearchQuickResponsesOutput;
 
 mod _search_quick_responses_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_capability::Ge
     }
 }
 
-pub use crate::operation::get_capability::_get_capability_output::GetCapabilityOutput;
-
 pub use crate::operation::get_capability::_get_capability_input::GetCapabilityInput;
+
+pub use crate::operation::get_capability::_get_capability_output::GetCapabilityOutput;
 
 mod _get_capability_input;
 

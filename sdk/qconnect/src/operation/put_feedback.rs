@@ -382,9 +382,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_feedback::PutF
     }
 }
 
-pub use crate::operation::put_feedback::_put_feedback_output::PutFeedbackOutput;
-
 pub use crate::operation::put_feedback::_put_feedback_input::PutFeedbackInput;
+
+pub use crate::operation::put_feedback::_put_feedback_output::PutFeedbackOutput;
 
 mod _put_feedback_input;
 

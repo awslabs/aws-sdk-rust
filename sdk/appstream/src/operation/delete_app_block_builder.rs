@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_app_block_b
     }
 }
 
-pub use crate::operation::delete_app_block_builder::_delete_app_block_builder_output::DeleteAppBlockBuilderOutput;
-
 pub use crate::operation::delete_app_block_builder::_delete_app_block_builder_input::DeleteAppBlockBuilderInput;
+
+pub use crate::operation::delete_app_block_builder::_delete_app_block_builder_output::DeleteAppBlockBuilderOutput;
 
 mod _delete_app_block_builder_input;
 

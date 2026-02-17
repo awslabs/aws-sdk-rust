@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_campaign_ch
     }
 }
 
-pub use crate::operation::update_campaign_channel_subtype_config::_update_campaign_channel_subtype_config_output::UpdateCampaignChannelSubtypeConfigOutput;
-
 pub use crate::operation::update_campaign_channel_subtype_config::_update_campaign_channel_subtype_config_input::UpdateCampaignChannelSubtypeConfigInput;
+
+pub use crate::operation::update_campaign_channel_subtype_config::_update_campaign_channel_subtype_config_output::UpdateCampaignChannelSubtypeConfigOutput;
 
 mod _update_campaign_channel_subtype_config_input;
 

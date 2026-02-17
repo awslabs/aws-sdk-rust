@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_versions::Lis
     }
 }
 
-pub use crate::operation::list_versions::_list_versions_output::ListVersionsOutput;
-
 pub use crate::operation::list_versions::_list_versions_input::ListVersionsInput;
+
+pub use crate::operation::list_versions::_list_versions_output::ListVersionsOutput;
 
 mod _list_versions_input;
 

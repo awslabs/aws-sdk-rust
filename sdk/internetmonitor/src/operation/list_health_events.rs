@@ -440,9 +440,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_health_events
     }
 }
 
-pub use crate::operation::list_health_events::_list_health_events_output::ListHealthEventsOutput;
-
 pub use crate::operation::list_health_events::_list_health_events_input::ListHealthEventsInput;
+
+pub use crate::operation::list_health_events::_list_health_events_output::ListHealthEventsOutput;
 
 mod _list_health_events_input;
 

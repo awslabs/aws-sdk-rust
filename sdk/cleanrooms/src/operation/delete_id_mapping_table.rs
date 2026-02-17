@@ -418,9 +418,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_id_mapping_
     }
 }
 
-pub use crate::operation::delete_id_mapping_table::_delete_id_mapping_table_output::DeleteIdMappingTableOutput;
-
 pub use crate::operation::delete_id_mapping_table::_delete_id_mapping_table_input::DeleteIdMappingTableInput;
+
+pub use crate::operation::delete_id_mapping_table::_delete_id_mapping_table_output::DeleteIdMappingTableOutput;
 
 mod _delete_id_mapping_table_input;
 

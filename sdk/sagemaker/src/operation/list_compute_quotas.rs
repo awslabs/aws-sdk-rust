@@ -349,9 +349,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_compute_quota
     }
 }
 
-pub use crate::operation::list_compute_quotas::_list_compute_quotas_output::ListComputeQuotasOutput;
-
 pub use crate::operation::list_compute_quotas::_list_compute_quotas_input::ListComputeQuotasInput;
+
+pub use crate::operation::list_compute_quotas::_list_compute_quotas_output::ListComputeQuotasOutput;
 
 mod _list_compute_quotas_input;
 

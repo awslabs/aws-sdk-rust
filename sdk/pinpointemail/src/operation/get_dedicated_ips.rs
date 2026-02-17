@@ -393,9 +393,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_dedicated_ips:
     }
 }
 
-pub use crate::operation::get_dedicated_ips::_get_dedicated_ips_output::GetDedicatedIpsOutput;
-
 pub use crate::operation::get_dedicated_ips::_get_dedicated_ips_input::GetDedicatedIpsInput;
+
+pub use crate::operation::get_dedicated_ips::_get_dedicated_ips_output::GetDedicatedIpsOutput;
 
 mod _get_dedicated_ips_input;
 

@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_service_spe
     }
 }
 
-pub use crate::operation::create_service_specific_credential::_create_service_specific_credential_output::CreateServiceSpecificCredentialOutput;
-
 pub use crate::operation::create_service_specific_credential::_create_service_specific_credential_input::CreateServiceSpecificCredentialInput;
+
+pub use crate::operation::create_service_specific_credential::_create_service_specific_credential_output::CreateServiceSpecificCredentialOutput;
 
 mod _create_service_specific_credential_input;
 

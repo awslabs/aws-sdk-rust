@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_jobs_query::
     }
 }
 
-pub use crate::operation::start_jobs_query::_start_jobs_query_output::StartJobsQueryOutput;
-
 pub use crate::operation::start_jobs_query::_start_jobs_query_input::StartJobsQueryInput;
+
+pub use crate::operation::start_jobs_query::_start_jobs_query_output::StartJobsQueryOutput;
 
 mod _start_jobs_query_input;
 

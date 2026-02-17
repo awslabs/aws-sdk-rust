@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_monitoring_
     }
 }
 
-pub use crate::operation::update_monitoring_alert::_update_monitoring_alert_output::UpdateMonitoringAlertOutput;
-
 pub use crate::operation::update_monitoring_alert::_update_monitoring_alert_input::UpdateMonitoringAlertInput;
+
+pub use crate::operation::update_monitoring_alert::_update_monitoring_alert_output::UpdateMonitoringAlertOutput;
 
 mod _update_monitoring_alert_input;
 

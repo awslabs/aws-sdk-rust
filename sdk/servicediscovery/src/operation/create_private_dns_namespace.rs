@@ -415,9 +415,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_private_dns
     }
 }
 
-pub use crate::operation::create_private_dns_namespace::_create_private_dns_namespace_output::CreatePrivateDnsNamespaceOutput;
-
 pub use crate::operation::create_private_dns_namespace::_create_private_dns_namespace_input::CreatePrivateDnsNamespaceInput;
+
+pub use crate::operation::create_private_dns_namespace::_create_private_dns_namespace_output::CreatePrivateDnsNamespaceOutput;
 
 mod _create_private_dns_namespace_input;
 

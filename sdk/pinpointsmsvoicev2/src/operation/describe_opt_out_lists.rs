@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_opt_out_l
     }
 }
 
-pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_output::DescribeOptOutListsOutput;
-
 pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_input::DescribeOptOutListsInput;
+
+pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_output::DescribeOptOutListsOutput;
 
 mod _describe_opt_out_lists_input;
 

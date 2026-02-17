@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_import_file_ta
     }
 }
 
-pub use crate::operation::get_import_file_task::_get_import_file_task_output::GetImportFileTaskOutput;
-
 pub use crate::operation::get_import_file_task::_get_import_file_task_input::GetImportFileTaskInput;
+
+pub use crate::operation::get_import_file_task::_get_import_file_task_output::GetImportFileTaskOutput;
 
 mod _get_import_file_task_input;
 

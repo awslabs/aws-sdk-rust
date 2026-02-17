@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_project_v
     }
 }
 
-pub use crate::operation::describe_project_versions::_describe_project_versions_output::DescribeProjectVersionsOutput;
-
 pub use crate::operation::describe_project_versions::_describe_project_versions_input::DescribeProjectVersionsInput;
+
+pub use crate::operation::describe_project_versions::_describe_project_versions_output::DescribeProjectVersionsOutput;
 
 mod _describe_project_versions_input;
 

@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_audit_fin
     }
 }
 
-pub use crate::operation::describe_audit_finding::_describe_audit_finding_output::DescribeAuditFindingOutput;
-
 pub use crate::operation::describe_audit_finding::_describe_audit_finding_input::DescribeAuditFindingInput;
+
+pub use crate::operation::describe_audit_finding::_describe_audit_finding_output::DescribeAuditFindingOutput;
 
 mod _describe_audit_finding_input;
 

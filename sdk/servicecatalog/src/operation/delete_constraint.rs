@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_constraint:
     }
 }
 
-pub use crate::operation::delete_constraint::_delete_constraint_output::DeleteConstraintOutput;
-
 pub use crate::operation::delete_constraint::_delete_constraint_input::DeleteConstraintInput;
+
+pub use crate::operation::delete_constraint::_delete_constraint_output::DeleteConstraintOutput;
 
 mod _delete_constraint_input;
 

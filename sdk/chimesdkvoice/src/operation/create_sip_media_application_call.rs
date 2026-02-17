@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_sip_media_a
     }
 }
 
-pub use crate::operation::create_sip_media_application_call::_create_sip_media_application_call_output::CreateSipMediaApplicationCallOutput;
-
 pub use crate::operation::create_sip_media_application_call::_create_sip_media_application_call_input::CreateSipMediaApplicationCallInput;
+
+pub use crate::operation::create_sip_media_application_call::_create_sip_media_application_call_output::CreateSipMediaApplicationCallOutput;
 
 mod _create_sip_media_application_call_input;
 

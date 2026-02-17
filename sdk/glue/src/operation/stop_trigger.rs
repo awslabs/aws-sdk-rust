@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_trigger::Stop
     }
 }
 
-pub use crate::operation::stop_trigger::_stop_trigger_output::StopTriggerOutput;
-
 pub use crate::operation::stop_trigger::_stop_trigger_input::StopTriggerInput;
+
+pub use crate::operation::stop_trigger::_stop_trigger_output::StopTriggerOutput;
 
 mod _stop_trigger_input;
 

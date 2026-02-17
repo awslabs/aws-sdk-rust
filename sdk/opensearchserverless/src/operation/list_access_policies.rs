@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_access_polici
     }
 }
 
-pub use crate::operation::list_access_policies::_list_access_policies_output::ListAccessPoliciesOutput;
-
 pub use crate::operation::list_access_policies::_list_access_policies_input::ListAccessPoliciesInput;
+
+pub use crate::operation::list_access_policies::_list_access_policies_output::ListAccessPoliciesOutput;
 
 mod _list_access_policies_input;
 

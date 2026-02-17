@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_notebook_exe
     }
 }
 
-pub use crate::operation::start_notebook_execution::_start_notebook_execution_output::StartNotebookExecutionOutput;
-
 pub use crate::operation::start_notebook_execution::_start_notebook_execution_input::StartNotebookExecutionInput;
+
+pub use crate::operation::start_notebook_execution::_start_notebook_execution_output::StartNotebookExecutionOutput;
 
 mod _start_notebook_execution_input;
 

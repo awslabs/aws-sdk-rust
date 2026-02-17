@@ -399,9 +399,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_endpoint_acce
     }
 }
 
-pub use crate::operation::list_endpoint_access::_list_endpoint_access_output::ListEndpointAccessOutput;
-
 pub use crate::operation::list_endpoint_access::_list_endpoint_access_input::ListEndpointAccessInput;
+
+pub use crate::operation::list_endpoint_access::_list_endpoint_access_output::ListEndpointAccessOutput;
 
 mod _list_endpoint_access_input;
 

@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_migr
     }
 }
 
-pub use crate::operation::describe_data_migrations::_describe_data_migrations_output::DescribeDataMigrationsOutput;
-
 pub use crate::operation::describe_data_migrations::_describe_data_migrations_input::DescribeDataMigrationsInput;
+
+pub use crate::operation::describe_data_migrations::_describe_data_migrations_output::DescribeDataMigrationsOutput;
 
 mod _describe_data_migrations_input;
 

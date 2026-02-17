@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_connection::T
     }
 }
 
-pub use crate::operation::test_connection::_test_connection_output::TestConnectionOutput;
-
 pub use crate::operation::test_connection::_test_connection_input::TestConnectionInput;
+
+pub use crate::operation::test_connection::_test_connection_output::TestConnectionOutput;
 
 mod _test_connection_input;
 

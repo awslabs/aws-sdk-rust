@@ -354,9 +354,9 @@ impl ::aws_types::request_id::RequestId
     }
 }
 
-pub use crate::operation::update_security_group_rule_descriptions_ingress::_update_security_group_rule_descriptions_ingress_output::UpdateSecurityGroupRuleDescriptionsIngressOutput;
-
 pub use crate::operation::update_security_group_rule_descriptions_ingress::_update_security_group_rule_descriptions_ingress_input::UpdateSecurityGroupRuleDescriptionsIngressInput;
+
+pub use crate::operation::update_security_group_rule_descriptions_ingress::_update_security_group_rule_descriptions_ingress_output::UpdateSecurityGroupRuleDescriptionsIngressOutput;
 
 mod _update_security_group_rule_descriptions_ingress_input;
 

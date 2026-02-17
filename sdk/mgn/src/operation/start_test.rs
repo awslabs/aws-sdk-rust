@@ -370,9 +370,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_test::StartT
     }
 }
 
-pub use crate::operation::start_test::_start_test_output::StartTestOutput;
-
 pub use crate::operation::start_test::_start_test_input::StartTestInput;
+
+pub use crate::operation::start_test::_start_test_output::StartTestOutput;
 
 mod _start_test_input;
 

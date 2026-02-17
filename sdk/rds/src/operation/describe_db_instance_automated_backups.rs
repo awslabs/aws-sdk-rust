@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_db_instan
     }
 }
 
-pub use crate::operation::describe_db_instance_automated_backups::_describe_db_instance_automated_backups_output::DescribeDbInstanceAutomatedBackupsOutput;
-
 pub use crate::operation::describe_db_instance_automated_backups::_describe_db_instance_automated_backups_input::DescribeDbInstanceAutomatedBackupsInput;
+
+pub use crate::operation::describe_db_instance_automated_backups::_describe_db_instance_automated_backups_output::DescribeDbInstanceAutomatedBackupsOutput;
 
 mod _describe_db_instance_automated_backups_input;
 

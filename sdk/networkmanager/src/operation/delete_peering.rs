@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_peering::De
     }
 }
 
-pub use crate::operation::delete_peering::_delete_peering_output::DeletePeeringOutput;
-
 pub use crate::operation::delete_peering::_delete_peering_input::DeletePeeringInput;
+
+pub use crate::operation::delete_peering::_delete_peering_output::DeletePeeringOutput;
 
 mod _delete_peering_input;
 

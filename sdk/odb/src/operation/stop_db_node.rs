@@ -397,9 +397,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_db_node::Stop
     }
 }
 
-pub use crate::operation::stop_db_node::_stop_db_node_output::StopDbNodeOutput;
-
 pub use crate::operation::stop_db_node::_stop_db_node_input::StopDbNodeInput;
+
+pub use crate::operation::stop_db_node::_stop_db_node_output::StopDbNodeOutput;
 
 mod _stop_db_node_input;
 

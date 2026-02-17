@@ -413,9 +413,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_quantum_task::
     }
 }
 
-pub use crate::operation::get_quantum_task::_get_quantum_task_output::GetQuantumTaskOutput;
-
 pub use crate::operation::get_quantum_task::_get_quantum_task_input::GetQuantumTaskInput;
+
+pub use crate::operation::get_quantum_task::_get_quantum_task_output::GetQuantumTaskOutput;
 
 mod _get_quantum_task_input;
 

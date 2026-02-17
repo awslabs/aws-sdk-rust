@@ -392,9 +392,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::send_alexa_offer_t
     }
 }
 
-pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_master_output::SendAlexaOfferToMasterOutput;
-
 pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_master_input::SendAlexaOfferToMasterInput;
+
+pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_master_output::SendAlexaOfferToMasterOutput;
 
 mod _send_alexa_offer_to_master_input;
 

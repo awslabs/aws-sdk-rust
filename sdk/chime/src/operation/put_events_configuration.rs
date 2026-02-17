@@ -445,9 +445,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_events_configu
     }
 }
 
-pub use crate::operation::put_events_configuration::_put_events_configuration_output::PutEventsConfigurationOutput;
-
 pub use crate::operation::put_events_configuration::_put_events_configuration_input::PutEventsConfigurationInput;
+
+pub use crate::operation::put_events_configuration::_put_events_configuration_output::PutEventsConfigurationOutput;
 
 mod _put_events_configuration_input;
 

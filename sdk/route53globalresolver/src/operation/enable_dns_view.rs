@@ -420,9 +420,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::enable_dns_view::E
     }
 }
 
-pub use crate::operation::enable_dns_view::_enable_dns_view_output::EnableDnsViewOutput;
-
 pub use crate::operation::enable_dns_view::_enable_dns_view_input::EnableDnsViewInput;
+
+pub use crate::operation::enable_dns_view::_enable_dns_view_output::EnableDnsViewOutput;
 
 mod _enable_dns_view_input;
 

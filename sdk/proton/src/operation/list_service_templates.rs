@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_service_templ
     }
 }
 
-pub use crate::operation::list_service_templates::_list_service_templates_output::ListServiceTemplatesOutput;
-
 pub use crate::operation::list_service_templates::_list_service_templates_input::ListServiceTemplatesInput;
+
+pub use crate::operation::list_service_templates::_list_service_templates_output::ListServiceTemplatesOutput;
 
 mod _list_service_templates_input;
 

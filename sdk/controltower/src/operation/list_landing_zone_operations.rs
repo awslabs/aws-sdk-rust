@@ -396,9 +396,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_landing_zone_
     }
 }
 
-pub use crate::operation::list_landing_zone_operations::_list_landing_zone_operations_output::ListLandingZoneOperationsOutput;
-
 pub use crate::operation::list_landing_zone_operations::_list_landing_zone_operations_input::ListLandingZoneOperationsInput;
+
+pub use crate::operation::list_landing_zone_operations::_list_landing_zone_operations_output::ListLandingZoneOperationsOutput;
 
 mod _list_landing_zone_operations_input;
 

@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_email_identity
     }
 }
 
-pub use crate::operation::put_email_identity_feedback_attributes::_put_email_identity_feedback_attributes_output::PutEmailIdentityFeedbackAttributesOutput;
-
 pub use crate::operation::put_email_identity_feedback_attributes::_put_email_identity_feedback_attributes_input::PutEmailIdentityFeedbackAttributesInput;
+
+pub use crate::operation::put_email_identity_feedback_attributes::_put_email_identity_feedback_attributes_output::PutEmailIdentityFeedbackAttributesOutput;
 
 mod _put_email_identity_feedback_attributes_input;
 

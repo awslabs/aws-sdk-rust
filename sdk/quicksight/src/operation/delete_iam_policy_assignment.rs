@@ -456,9 +456,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_iam_policy_
     }
 }
 
-pub use crate::operation::delete_iam_policy_assignment::_delete_iam_policy_assignment_output::DeleteIamPolicyAssignmentOutput;
-
 pub use crate::operation::delete_iam_policy_assignment::_delete_iam_policy_assignment_input::DeleteIamPolicyAssignmentInput;
+
+pub use crate::operation::delete_iam_policy_assignment::_delete_iam_policy_assignment_output::DeleteIamPolicyAssignmentOutput;
 
 mod _delete_iam_policy_assignment_input;
 

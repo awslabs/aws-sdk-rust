@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_user_pool_d
     }
 }
 
-pub use crate::operation::create_user_pool_domain::_create_user_pool_domain_output::CreateUserPoolDomainOutput;
-
 pub use crate::operation::create_user_pool_domain::_create_user_pool_domain_input::CreateUserPoolDomainInput;
+
+pub use crate::operation::create_user_pool_domain::_create_user_pool_domain_output::CreateUserPoolDomainOutput;
 
 mod _create_user_pool_domain_input;
 

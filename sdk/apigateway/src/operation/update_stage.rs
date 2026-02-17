@@ -432,9 +432,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_stage::Upda
     }
 }
 
-pub use crate::operation::update_stage::_update_stage_output::UpdateStageOutput;
-
 pub use crate::operation::update_stage::_update_stage_input::UpdateStageInput;
+
+pub use crate::operation::update_stage::_update_stage_output::UpdateStageOutput;
 
 mod _update_stage_input;
 

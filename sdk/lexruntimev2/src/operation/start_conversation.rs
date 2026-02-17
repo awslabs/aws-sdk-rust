@@ -500,9 +500,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_conversation
     }
 }
 
-pub use crate::operation::start_conversation::_start_conversation_output::StartConversationOutput;
-
 pub use crate::operation::start_conversation::_start_conversation_input::StartConversationInput;
+
+pub use crate::operation::start_conversation::_start_conversation_output::StartConversationOutput;
 
 mod _start_conversation_input;
 

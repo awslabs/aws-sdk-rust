@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_v2_logging_opt
     }
 }
 
-pub use crate::operation::set_v2_logging_options::_set_v2_logging_options_output::SetV2LoggingOptionsOutput;
-
 pub use crate::operation::set_v2_logging_options::_set_v2_logging_options_input::SetV2LoggingOptionsInput;
+
+pub use crate::operation::set_v2_logging_options::_set_v2_logging_options_output::SetV2LoggingOptionsOutput;
 
 mod _set_v2_logging_options_input;
 

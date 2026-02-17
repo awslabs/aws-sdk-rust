@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lexicon::GetLe
     }
 }
 
-pub use crate::operation::get_lexicon::_get_lexicon_output::GetLexiconOutput;
-
 pub use crate::operation::get_lexicon::_get_lexicon_input::GetLexiconInput;
+
+pub use crate::operation::get_lexicon::_get_lexicon_output::GetLexiconOutput;
 
 mod _get_lexicon_input;
 

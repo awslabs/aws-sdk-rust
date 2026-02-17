@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_log_levels_
     }
 }
 
-pub use crate::operation::update_log_levels_by_resource_types::_update_log_levels_by_resource_types_output::UpdateLogLevelsByResourceTypesOutput;
-
 pub use crate::operation::update_log_levels_by_resource_types::_update_log_levels_by_resource_types_input::UpdateLogLevelsByResourceTypesInput;
+
+pub use crate::operation::update_log_levels_by_resource_types::_update_log_levels_by_resource_types_output::UpdateLogLevelsByResourceTypesOutput;
 
 mod _update_log_levels_by_resource_types_input;
 

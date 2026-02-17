@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_voice_channel:
     }
 }
 
-pub use crate::operation::get_voice_channel::_get_voice_channel_output::GetVoiceChannelOutput;
-
 pub use crate::operation::get_voice_channel::_get_voice_channel_input::GetVoiceChannelInput;
+
+pub use crate::operation::get_voice_channel::_get_voice_channel_output::GetVoiceChannelOutput;
 
 mod _get_voice_channel_input;
 

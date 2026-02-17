@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_model::Invo
     }
 }
 
-pub use crate::operation::invoke_model::_invoke_model_output::InvokeModelOutput;
-
 pub use crate::operation::invoke_model::_invoke_model_input::InvokeModelInput;
+
+pub use crate::operation::invoke_model::_invoke_model_output::InvokeModelOutput;
 
 mod _invoke_model_input;
 

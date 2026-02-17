@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_order::Canc
     }
 }
 
-pub use crate::operation::cancel_order::_cancel_order_output::CancelOrderOutput;
-
 pub use crate::operation::cancel_order::_cancel_order_input::CancelOrderInput;
+
+pub use crate::operation::cancel_order::_cancel_order_output::CancelOrderOutput;
 
 mod _cancel_order_input;
 

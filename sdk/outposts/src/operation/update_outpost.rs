@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_outpost::Up
     }
 }
 
-pub use crate::operation::update_outpost::_update_outpost_output::UpdateOutpostOutput;
-
 pub use crate::operation::update_outpost::_update_outpost_input::UpdateOutpostInput;
+
+pub use crate::operation::update_outpost::_update_outpost_output::UpdateOutpostOutput;
 
 mod _update_outpost_input;
 

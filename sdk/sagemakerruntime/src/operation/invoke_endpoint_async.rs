@@ -389,9 +389,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::invoke_endpoint_as
     }
 }
 
-pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_output::InvokeEndpointAsyncOutput;
-
 pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_input::InvokeEndpointAsyncInput;
+
+pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_output::InvokeEndpointAsyncOutput;
 
 mod _invoke_endpoint_async_input;
 

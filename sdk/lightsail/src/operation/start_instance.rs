@@ -431,9 +431,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_instance::St
     }
 }
 
-pub use crate::operation::start_instance::_start_instance_output::StartInstanceOutput;
-
 pub use crate::operation::start_instance::_start_instance_input::StartInstanceInput;
+
+pub use crate::operation::start_instance::_start_instance_output::StartInstanceOutput;
 
 mod _start_instance_input;
 

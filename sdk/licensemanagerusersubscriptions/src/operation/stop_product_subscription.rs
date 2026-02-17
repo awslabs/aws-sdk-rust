@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::stop_product_subsc
     }
 }
 
-pub use crate::operation::stop_product_subscription::_stop_product_subscription_output::StopProductSubscriptionOutput;
-
 pub use crate::operation::stop_product_subscription::_stop_product_subscription_input::StopProductSubscriptionInput;
+
+pub use crate::operation::stop_product_subscription::_stop_product_subscription_output::StopProductSubscriptionOutput;
 
 mod _stop_product_subscription_input;
 

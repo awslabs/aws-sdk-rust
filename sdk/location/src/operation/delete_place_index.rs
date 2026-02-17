@@ -410,9 +410,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_place_index
     }
 }
 
-pub use crate::operation::delete_place_index::_delete_place_index_output::DeletePlaceIndexOutput;
-
 pub use crate::operation::delete_place_index::_delete_place_index_input::DeletePlaceIndexInput;
+
+pub use crate::operation::delete_place_index::_delete_place_index_output::DeletePlaceIndexOutput;
 
 mod _delete_place_index_input;
 

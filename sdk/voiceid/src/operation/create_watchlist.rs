@@ -427,9 +427,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_watchlist::
     }
 }
 
-pub use crate::operation::create_watchlist::_create_watchlist_output::CreateWatchlistOutput;
-
 pub use crate::operation::create_watchlist::_create_watchlist_input::CreateWatchlistInput;
+
+pub use crate::operation::create_watchlist::_create_watchlist_output::CreateWatchlistOutput;
 
 mod _create_watchlist_input;
 

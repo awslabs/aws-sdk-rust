@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_revoke_permi
     }
 }
 
-pub use crate::operation::batch_revoke_permissions::_batch_revoke_permissions_output::BatchRevokePermissionsOutput;
-
 pub use crate::operation::batch_revoke_permissions::_batch_revoke_permissions_input::BatchRevokePermissionsInput;
+
+pub use crate::operation::batch_revoke_permissions::_batch_revoke_permissions_output::BatchRevokePermissionsOutput;
 
 mod _batch_revoke_permissions_input;
 

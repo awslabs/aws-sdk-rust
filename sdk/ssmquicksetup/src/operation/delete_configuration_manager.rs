@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_configurati
     }
 }
 
-pub use crate::operation::delete_configuration_manager::_delete_configuration_manager_output::DeleteConfigurationManagerOutput;
-
 pub use crate::operation::delete_configuration_manager::_delete_configuration_manager_input::DeleteConfigurationManagerInput;
+
+pub use crate::operation::delete_configuration_manager::_delete_configuration_manager_output::DeleteConfigurationManagerOutput;
 
 mod _delete_configuration_manager_input;
 

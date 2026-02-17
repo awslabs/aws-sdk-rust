@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_timeline_ev
     }
 }
 
-pub use crate::operation::delete_timeline_event::_delete_timeline_event_output::DeleteTimelineEventOutput;
-
 pub use crate::operation::delete_timeline_event::_delete_timeline_event_input::DeleteTimelineEventInput;
+
+pub use crate::operation::delete_timeline_event::_delete_timeline_event_output::DeleteTimelineEventOutput;
 
 mod _delete_timeline_event_input;
 

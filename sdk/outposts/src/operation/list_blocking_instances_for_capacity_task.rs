@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_blocking_inst
     }
 }
 
-pub use crate::operation::list_blocking_instances_for_capacity_task::_list_blocking_instances_for_capacity_task_output::ListBlockingInstancesForCapacityTaskOutput;
-
 pub use crate::operation::list_blocking_instances_for_capacity_task::_list_blocking_instances_for_capacity_task_input::ListBlockingInstancesForCapacityTaskInput;
+
+pub use crate::operation::list_blocking_instances_for_capacity_task::_list_blocking_instances_for_capacity_task_output::ListBlockingInstancesForCapacityTaskOutput;
 
 mod _list_blocking_instances_for_capacity_task_input;
 

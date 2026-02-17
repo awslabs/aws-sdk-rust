@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_wireless_gatew
     }
 }
 
-pub use crate::operation::get_wireless_gateway_firmware_information::_get_wireless_gateway_firmware_information_output::GetWirelessGatewayFirmwareInformationOutput;
-
 pub use crate::operation::get_wireless_gateway_firmware_information::_get_wireless_gateway_firmware_information_input::GetWirelessGatewayFirmwareInformationInput;
+
+pub use crate::operation::get_wireless_gateway_firmware_information::_get_wireless_gateway_firmware_information_output::GetWirelessGatewayFirmwareInformationOutput;
 
 mod _get_wireless_gateway_firmware_information_input;
 

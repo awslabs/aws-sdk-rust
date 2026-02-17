@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_application_a
     }
 }
 
-pub use crate::operation::list_application_authentication_methods::_list_application_authentication_methods_output::ListApplicationAuthenticationMethodsOutput;
-
 pub use crate::operation::list_application_authentication_methods::_list_application_authentication_methods_input::ListApplicationAuthenticationMethodsInput;
+
+pub use crate::operation::list_application_authentication_methods::_list_application_authentication_methods_output::ListApplicationAuthenticationMethodsOutput;
 
 mod _list_application_authentication_methods_input;
 

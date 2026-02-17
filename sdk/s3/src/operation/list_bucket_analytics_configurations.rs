@@ -398,9 +398,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_bucket_analyt
     }
 }
 
-pub use crate::operation::list_bucket_analytics_configurations::_list_bucket_analytics_configurations_output::ListBucketAnalyticsConfigurationsOutput;
-
 pub use crate::operation::list_bucket_analytics_configurations::_list_bucket_analytics_configurations_input::ListBucketAnalyticsConfigurationsInput;
+
+pub use crate::operation::list_bucket_analytics_configurations::_list_bucket_analytics_configurations_output::ListBucketAnalyticsConfigurationsOutput;
 
 mod _list_bucket_analytics_configurations_input;
 

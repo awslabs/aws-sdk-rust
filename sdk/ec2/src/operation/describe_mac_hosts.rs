@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_mac_hosts
     }
 }
 
-pub use crate::operation::describe_mac_hosts::_describe_mac_hosts_output::DescribeMacHostsOutput;
-
 pub use crate::operation::describe_mac_hosts::_describe_mac_hosts_input::DescribeMacHostsInput;
+
+pub use crate::operation::describe_mac_hosts::_describe_mac_hosts_output::DescribeMacHostsOutput;
 
 mod _describe_mac_hosts_input;
 

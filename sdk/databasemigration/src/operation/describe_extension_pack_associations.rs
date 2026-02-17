@@ -361,9 +361,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_extension
     }
 }
 
-pub use crate::operation::describe_extension_pack_associations::_describe_extension_pack_associations_output::DescribeExtensionPackAssociationsOutput;
-
 pub use crate::operation::describe_extension_pack_associations::_describe_extension_pack_associations_input::DescribeExtensionPackAssociationsInput;
+
+pub use crate::operation::describe_extension_pack_associations::_describe_extension_pack_associations_output::DescribeExtensionPackAssociationsOutput;
 
 mod _describe_extension_pack_associations_input;
 

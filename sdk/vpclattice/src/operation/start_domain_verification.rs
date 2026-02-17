@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_domain_verif
     }
 }
 
-pub use crate::operation::start_domain_verification::_start_domain_verification_output::StartDomainVerificationOutput;
-
 pub use crate::operation::start_domain_verification::_start_domain_verification_input::StartDomainVerificationInput;
+
+pub use crate::operation::start_domain_verification::_start_domain_verification_output::StartDomainVerificationOutput;
 
 mod _start_domain_verification_input;
 

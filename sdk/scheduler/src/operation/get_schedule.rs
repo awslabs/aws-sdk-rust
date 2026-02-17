@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_schedule::GetS
     }
 }
 
-pub use crate::operation::get_schedule::_get_schedule_output::GetScheduleOutput;
-
 pub use crate::operation::get_schedule::_get_schedule_input::GetScheduleInput;
+
+pub use crate::operation::get_schedule::_get_schedule_output::GetScheduleOutput;
 
 mod _get_schedule_input;
 

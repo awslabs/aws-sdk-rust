@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_fleet_advis
     }
 }
 
-pub use crate::operation::delete_fleet_advisor_databases::_delete_fleet_advisor_databases_output::DeleteFleetAdvisorDatabasesOutput;
-
 pub use crate::operation::delete_fleet_advisor_databases::_delete_fleet_advisor_databases_input::DeleteFleetAdvisorDatabasesInput;
+
+pub use crate::operation::delete_fleet_advisor_databases::_delete_fleet_advisor_databases_output::DeleteFleetAdvisorDatabasesOutput;
 
 mod _delete_fleet_advisor_databases_input;
 

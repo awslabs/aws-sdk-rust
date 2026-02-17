@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::set_principal_tag_
     }
 }
 
-pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_attribute_map_output::SetPrincipalTagAttributeMapOutput;
-
 pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_attribute_map_input::SetPrincipalTagAttributeMapInput;
+
+pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_attribute_map_output::SetPrincipalTagAttributeMapOutput;
 
 mod _set_principal_tag_attribute_map_input;
 

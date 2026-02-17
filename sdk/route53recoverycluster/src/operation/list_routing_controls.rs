@@ -417,9 +417,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_routing_contr
     }
 }
 
-pub use crate::operation::list_routing_controls::_list_routing_controls_output::ListRoutingControlsOutput;
-
 pub use crate::operation::list_routing_controls::_list_routing_controls_input::ListRoutingControlsInput;
+
+pub use crate::operation::list_routing_controls::_list_routing_controls_output::ListRoutingControlsOutput;
 
 mod _list_routing_controls_input;
 

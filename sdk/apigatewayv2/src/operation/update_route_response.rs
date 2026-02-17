@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_route_respo
     }
 }
 
-pub use crate::operation::update_route_response::_update_route_response_output::UpdateRouteResponseOutput;
-
 pub use crate::operation::update_route_response::_update_route_response_input::UpdateRouteResponseInput;
+
+pub use crate::operation::update_route_response::_update_route_response_output::UpdateRouteResponseOutput;
 
 mod _update_route_response_input;
 

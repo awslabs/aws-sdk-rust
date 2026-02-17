@@ -424,9 +424,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_consolidated_r
     }
 }
 
-pub use crate::operation::get_consolidated_report::_get_consolidated_report_output::GetConsolidatedReportOutput;
-
 pub use crate::operation::get_consolidated_report::_get_consolidated_report_input::GetConsolidatedReportInput;
+
+pub use crate::operation::get_consolidated_report::_get_consolidated_report_output::GetConsolidatedReportOutput;
 
 mod _get_consolidated_report_input;
 

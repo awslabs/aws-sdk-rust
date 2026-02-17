@@ -366,9 +366,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_organization_s
     }
 }
 
-pub use crate::operation::get_organization_statistics::_get_organization_statistics_output::GetOrganizationStatisticsOutput;
-
 pub use crate::operation::get_organization_statistics::_get_organization_statistics_input::GetOrganizationStatisticsInput;
+
+pub use crate::operation::get_organization_statistics::_get_organization_statistics_output::GetOrganizationStatisticsOutput;
 
 mod _get_organization_statistics_input;
 

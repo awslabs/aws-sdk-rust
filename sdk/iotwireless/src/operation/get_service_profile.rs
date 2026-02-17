@@ -401,9 +401,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_service_profil
     }
 }
 
-pub use crate::operation::get_service_profile::_get_service_profile_output::GetServiceProfileOutput;
-
 pub use crate::operation::get_service_profile::_get_service_profile_input::GetServiceProfileInput;
+
+pub use crate::operation::get_service_profile::_get_service_profile_output::GetServiceProfileOutput;
 
 mod _get_service_profile_input;
 

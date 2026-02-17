@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_graphs::ListG
     }
 }
 
-pub use crate::operation::list_graphs::_list_graphs_output::ListGraphsOutput;
-
 pub use crate::operation::list_graphs::_list_graphs_input::ListGraphsInput;
+
+pub use crate::operation::list_graphs::_list_graphs_output::ListGraphsOutput;
 
 mod _list_graphs_input;
 

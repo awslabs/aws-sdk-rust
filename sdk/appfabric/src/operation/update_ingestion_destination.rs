@@ -467,9 +467,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_ingestion_d
     }
 }
 
-pub use crate::operation::update_ingestion_destination::_update_ingestion_destination_output::UpdateIngestionDestinationOutput;
-
 pub use crate::operation::update_ingestion_destination::_update_ingestion_destination_input::UpdateIngestionDestinationInput;
+
+pub use crate::operation::update_ingestion_destination::_update_ingestion_destination_output::UpdateIngestionDestinationOutput;
 
 mod _update_ingestion_destination_input;
 

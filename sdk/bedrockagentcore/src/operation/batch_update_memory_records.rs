@@ -423,9 +423,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_update_memor
     }
 }
 
-pub use crate::operation::batch_update_memory_records::_batch_update_memory_records_output::BatchUpdateMemoryRecordsOutput;
-
 pub use crate::operation::batch_update_memory_records::_batch_update_memory_records_input::BatchUpdateMemoryRecordsInput;
+
+pub use crate::operation::batch_update_memory_records::_batch_update_memory_records_output::BatchUpdateMemoryRecordsOutput;
 
 mod _batch_update_memory_records_input;
 

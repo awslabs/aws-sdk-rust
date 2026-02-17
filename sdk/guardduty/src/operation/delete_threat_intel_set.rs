@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_threat_inte
     }
 }
 
-pub use crate::operation::delete_threat_intel_set::_delete_threat_intel_set_output::DeleteThreatIntelSetOutput;
-
 pub use crate::operation::delete_threat_intel_set::_delete_threat_intel_set_input::DeleteThreatIntelSetInput;
+
+pub use crate::operation::delete_threat_intel_set::_delete_threat_intel_set_output::DeleteThreatIntelSetOutput;
 
 mod _delete_threat_intel_set_input;
 

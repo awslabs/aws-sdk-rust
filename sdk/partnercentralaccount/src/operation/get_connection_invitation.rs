@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_connection_inv
     }
 }
 
-pub use crate::operation::get_connection_invitation::_get_connection_invitation_output::GetConnectionInvitationOutput;
-
 pub use crate::operation::get_connection_invitation::_get_connection_invitation_input::GetConnectionInvitationInput;
+
+pub use crate::operation::get_connection_invitation::_get_connection_invitation_output::GetConnectionInvitationOutput;
 
 mod _get_connection_invitation_input;
 

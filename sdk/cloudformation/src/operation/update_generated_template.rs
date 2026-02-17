@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_generated_t
     }
 }
 
-pub use crate::operation::update_generated_template::_update_generated_template_output::UpdateGeneratedTemplateOutput;
-
 pub use crate::operation::update_generated_template::_update_generated_template_input::UpdateGeneratedTemplateInput;
+
+pub use crate::operation::update_generated_template::_update_generated_template_output::UpdateGeneratedTemplateOutput;
 
 mod _update_generated_template_input;
 

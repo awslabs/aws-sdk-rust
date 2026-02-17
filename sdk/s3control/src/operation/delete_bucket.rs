@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_bucket::Del
     }
 }
 
-pub use crate::operation::delete_bucket::_delete_bucket_output::DeleteBucketOutput;
-
 pub use crate::operation::delete_bucket::_delete_bucket_input::DeleteBucketInput;
+
+pub use crate::operation::delete_bucket::_delete_bucket_output::DeleteBucketOutput;
 
 mod _delete_bucket_input;
 

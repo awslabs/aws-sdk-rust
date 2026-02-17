@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_baselines::Li
     }
 }
 
-pub use crate::operation::list_baselines::_list_baselines_output::ListBaselinesOutput;
-
 pub use crate::operation::list_baselines::_list_baselines_input::ListBaselinesInput;
+
+pub use crate::operation::list_baselines::_list_baselines_output::ListBaselinesOutput;
 
 mod _list_baselines_input;
 

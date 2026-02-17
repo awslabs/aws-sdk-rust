@@ -411,9 +411,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_license_speci
     }
 }
 
-pub use crate::operation::list_license_specifications_for_resource::_list_license_specifications_for_resource_output::ListLicenseSpecificationsForResourceOutput;
-
 pub use crate::operation::list_license_specifications_for_resource::_list_license_specifications_for_resource_input::ListLicenseSpecificationsForResourceInput;
+
+pub use crate::operation::list_license_specifications_for_resource::_list_license_specifications_for_resource_output::ListLicenseSpecificationsForResourceOutput;
 
 mod _list_license_specifications_for_resource_input;
 

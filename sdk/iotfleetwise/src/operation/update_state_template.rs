@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_state_templ
     }
 }
 
-pub use crate::operation::update_state_template::_update_state_template_output::UpdateStateTemplateOutput;
-
 pub use crate::operation::update_state_template::_update_state_template_input::UpdateStateTemplateInput;
+
+pub use crate::operation::update_state_template::_update_state_template_output::UpdateStateTemplateOutput;
 
 mod _update_state_template_input;
 

@@ -422,9 +422,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_query_status::
     }
 }
 
-pub use crate::operation::get_query_status::_get_query_status_output::GetQueryStatusOutput;
-
 pub use crate::operation::get_query_status::_get_query_status_input::GetQueryStatusInput;
+
+pub use crate::operation::get_query_status::_get_query_status_output::GetQueryStatusOutput;
 
 mod _get_query_status_input;
 

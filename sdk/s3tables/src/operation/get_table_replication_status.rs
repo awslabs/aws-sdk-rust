@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_table_replicat
     }
 }
 
-pub use crate::operation::get_table_replication_status::_get_table_replication_status_output::GetTableReplicationStatusOutput;
-
 pub use crate::operation::get_table_replication_status::_get_table_replication_status_input::GetTableReplicationStatusInput;
+
+pub use crate::operation::get_table_replication_status::_get_table_replication_status_output::GetTableReplicationStatusOutput;
 
 mod _get_table_replication_status_input;
 

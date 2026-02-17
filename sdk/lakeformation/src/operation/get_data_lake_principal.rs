@@ -376,9 +376,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_data_lake_prin
     }
 }
 
-pub use crate::operation::get_data_lake_principal::_get_data_lake_principal_output::GetDataLakePrincipalOutput;
-
 pub use crate::operation::get_data_lake_principal::_get_data_lake_principal_input::GetDataLakePrincipalInput;
+
+pub use crate::operation::get_data_lake_principal::_get_data_lake_principal_output::GetDataLakePrincipalOutput;
 
 mod _get_data_lake_principal_input;
 

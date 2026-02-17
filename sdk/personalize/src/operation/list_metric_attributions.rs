@@ -377,9 +377,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_metric_attrib
     }
 }
 
-pub use crate::operation::list_metric_attributions::_list_metric_attributions_output::ListMetricAttributionsOutput;
-
 pub use crate::operation::list_metric_attributions::_list_metric_attributions_input::ListMetricAttributionsInput;
+
+pub use crate::operation::list_metric_attributions::_list_metric_attributions_output::ListMetricAttributionsOutput;
 
 mod _list_metric_attributions_input;
 

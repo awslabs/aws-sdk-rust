@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_watchlist::
     }
 }
 
-pub use crate::operation::delete_watchlist::_delete_watchlist_output::DeleteWatchlistOutput;
-
 pub use crate::operation::delete_watchlist::_delete_watchlist_input::DeleteWatchlistInput;
+
+pub use crate::operation::delete_watchlist::_delete_watchlist_output::DeleteWatchlistOutput;
 
 mod _delete_watchlist_input;
 

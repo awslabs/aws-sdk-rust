@@ -371,9 +371,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::record_activity_ta
     }
 }
 
-pub use crate::operation::record_activity_task_heartbeat::_record_activity_task_heartbeat_output::RecordActivityTaskHeartbeatOutput;
-
 pub use crate::operation::record_activity_task_heartbeat::_record_activity_task_heartbeat_input::RecordActivityTaskHeartbeatInput;
+
+pub use crate::operation::record_activity_task_heartbeat::_record_activity_task_heartbeat_output::RecordActivityTaskHeartbeatOutput;
 
 mod _record_activity_task_heartbeat_input;
 

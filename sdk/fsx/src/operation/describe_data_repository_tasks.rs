@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_data_repo
     }
 }
 
-pub use crate::operation::describe_data_repository_tasks::_describe_data_repository_tasks_output::DescribeDataRepositoryTasksOutput;
-
 pub use crate::operation::describe_data_repository_tasks::_describe_data_repository_tasks_input::DescribeDataRepositoryTasksInput;
+
+pub use crate::operation::describe_data_repository_tasks::_describe_data_repository_tasks_output::DescribeDataRepositoryTasksOutput;
 
 mod _describe_data_repository_tasks_input;
 

@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disassociate_membe
     }
 }
 
-pub use crate::operation::disassociate_member::_disassociate_member_output::DisassociateMemberOutput;
-
 pub use crate::operation::disassociate_member::_disassociate_member_input::DisassociateMemberInput;
+
+pub use crate::operation::disassociate_member::_disassociate_member_output::DisassociateMemberOutput;
 
 mod _disassociate_member_input;
 

@@ -374,9 +374,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_minute_usage::
     }
 }
 
-pub use crate::operation::get_minute_usage::_get_minute_usage_output::GetMinuteUsageOutput;
-
 pub use crate::operation::get_minute_usage::_get_minute_usage_input::GetMinuteUsageInput;
+
+pub use crate::operation::get_minute_usage::_get_minute_usage_output::GetMinuteUsageOutput;
 
 mod _get_minute_usage_input;
 

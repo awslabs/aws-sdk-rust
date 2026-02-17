@@ -439,9 +439,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::export_ecs_service
     }
 }
 
-pub use crate::operation::export_ecs_service_recommendations::_export_ecs_service_recommendations_output::ExportEcsServiceRecommendationsOutput;
-
 pub use crate::operation::export_ecs_service_recommendations::_export_ecs_service_recommendations_input::ExportEcsServiceRecommendationsInput;
+
+pub use crate::operation::export_ecs_service_recommendations::_export_ecs_service_recommendations_output::ExportEcsServiceRecommendationsOutput;
 
 mod _export_ecs_service_recommendations_input;
 

@@ -426,9 +426,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::add_stream_group_l
     }
 }
 
-pub use crate::operation::add_stream_group_locations::_add_stream_group_locations_output::AddStreamGroupLocationsOutput;
-
 pub use crate::operation::add_stream_group_locations::_add_stream_group_locations_input::AddStreamGroupLocationsInput;
+
+pub use crate::operation::add_stream_group_locations::_add_stream_group_locations_output::AddStreamGroupLocationsOutput;
 
 mod _add_stream_group_locations_input;
 

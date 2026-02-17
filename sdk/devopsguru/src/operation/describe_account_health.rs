@@ -380,9 +380,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_account_h
     }
 }
 
-pub use crate::operation::describe_account_health::_describe_account_health_output::DescribeAccountHealthOutput;
-
 pub use crate::operation::describe_account_health::_describe_account_health_input::DescribeAccountHealthInput;
+
+pub use crate::operation::describe_account_health::_describe_account_health_output::DescribeAccountHealthOutput;
 
 mod _describe_account_health_input;
 

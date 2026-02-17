@@ -425,9 +425,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_network::Up
     }
 }
 
-pub use crate::operation::update_network::_update_network_output::UpdateNetworkOutput;
-
 pub use crate::operation::update_network::_update_network_input::UpdateNetworkInput;
+
+pub use crate::operation::update_network::_update_network_output::UpdateNetworkOutput;
 
 mod _update_network_input;
 

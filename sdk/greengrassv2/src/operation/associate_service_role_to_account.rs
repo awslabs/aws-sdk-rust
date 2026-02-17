@@ -372,9 +372,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::associate_service_
     }
 }
 
-pub use crate::operation::associate_service_role_to_account::_associate_service_role_to_account_output::AssociateServiceRoleToAccountOutput;
-
 pub use crate::operation::associate_service_role_to_account::_associate_service_role_to_account_input::AssociateServiceRoleToAccountInput;
+
+pub use crate::operation::associate_service_role_to_account::_associate_service_role_to_account_output::AssociateServiceRoleToAccountOutput;
 
 mod _associate_service_role_to_account_input;
 

@@ -448,9 +448,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_lineage_node::
     }
 }
 
-pub use crate::operation::get_lineage_node::_get_lineage_node_output::GetLineageNodeOutput;
-
 pub use crate::operation::get_lineage_node::_get_lineage_node_input::GetLineageNodeInput;
+
+pub use crate::operation::get_lineage_node::_get_lineage_node_output::GetLineageNodeOutput;
 
 mod _get_lineage_node_input;
 

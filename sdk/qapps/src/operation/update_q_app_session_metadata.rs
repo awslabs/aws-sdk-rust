@@ -421,9 +421,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_q_app_sessi
     }
 }
 
-pub use crate::operation::update_q_app_session_metadata::_update_q_app_session_metadata_output::UpdateQAppSessionMetadataOutput;
-
 pub use crate::operation::update_q_app_session_metadata::_update_q_app_session_metadata_input::UpdateQAppSessionMetadataInput;
+
+pub use crate::operation::update_q_app_session_metadata::_update_q_app_session_metadata_output::UpdateQAppSessionMetadataOutput;
 
 mod _update_q_app_session_metadata_input;
 

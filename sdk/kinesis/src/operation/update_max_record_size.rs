@@ -414,9 +414,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_max_record_
     }
 }
 
-pub use crate::operation::update_max_record_size::_update_max_record_size_output::UpdateMaxRecordSizeOutput;
-
 pub use crate::operation::update_max_record_size::_update_max_record_size_input::UpdateMaxRecordSizeInput;
+
+pub use crate::operation::update_max_record_size::_update_max_record_size_output::UpdateMaxRecordSizeOutput;
 
 mod _update_max_record_size_input;
 

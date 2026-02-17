@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::failover_global_cl
     }
 }
 
-pub use crate::operation::failover_global_cluster::_failover_global_cluster_output::FailoverGlobalClusterOutput;
-
 pub use crate::operation::failover_global_cluster::_failover_global_cluster_input::FailoverGlobalClusterInput;
+
+pub use crate::operation::failover_global_cluster::_failover_global_cluster_output::FailoverGlobalClusterOutput;
 
 mod _failover_global_cluster_input;
 

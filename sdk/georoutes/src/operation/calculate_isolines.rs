@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::calculate_isolines
     }
 }
 
-pub use crate::operation::calculate_isolines::_calculate_isolines_output::CalculateIsolinesOutput;
-
 pub use crate::operation::calculate_isolines::_calculate_isolines_input::CalculateIsolinesInput;
+
+pub use crate::operation::calculate_isolines::_calculate_isolines_output::CalculateIsolinesOutput;
 
 mod _calculate_isolines_input;
 

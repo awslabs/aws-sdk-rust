@@ -404,9 +404,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_discovery_summ
     }
 }
 
-pub use crate::operation::get_discovery_summary::_get_discovery_summary_output::GetDiscoverySummaryOutput;
-
 pub use crate::operation::get_discovery_summary::_get_discovery_summary_input::GetDiscoverySummaryInput;
+
+pub use crate::operation::get_discovery_summary::_get_discovery_summary_output::GetDiscoverySummaryOutput;
 
 mod _get_discovery_summary_input;
 

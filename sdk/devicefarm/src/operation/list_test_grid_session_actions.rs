@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_test_grid_ses
     }
 }
 
-pub use crate::operation::list_test_grid_session_actions::_list_test_grid_session_actions_output::ListTestGridSessionActionsOutput;
-
 pub use crate::operation::list_test_grid_session_actions::_list_test_grid_session_actions_input::ListTestGridSessionActionsInput;
+
+pub use crate::operation::list_test_grid_session_actions::_list_test_grid_session_actions_output::ListTestGridSessionActionsOutput;
 
 mod _list_test_grid_session_actions_input;
 

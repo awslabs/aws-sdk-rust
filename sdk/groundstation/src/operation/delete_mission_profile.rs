@@ -388,9 +388,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_mission_pro
     }
 }
 
-pub use crate::operation::delete_mission_profile::_delete_mission_profile_output::DeleteMissionProfileOutput;
-
 pub use crate::operation::delete_mission_profile::_delete_mission_profile_input::DeleteMissionProfileInput;
+
+pub use crate::operation::delete_mission_profile::_delete_mission_profile_output::DeleteMissionProfileOutput;
 
 mod _delete_mission_profile_input;
 

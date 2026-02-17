@@ -478,9 +478,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_data_source_s
     }
 }
 
-pub use crate::operation::list_data_source_sync_jobs::_list_data_source_sync_jobs_output::ListDataSourceSyncJobsOutput;
-
 pub use crate::operation::list_data_source_sync_jobs::_list_data_source_sync_jobs_input::ListDataSourceSyncJobsInput;
+
+pub use crate::operation::list_data_source_sync_jobs::_list_data_source_sync_jobs_output::ListDataSourceSyncJobsOutput;
 
 mod _list_data_source_sync_jobs_input;
 

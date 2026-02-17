@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::undeploy_system_in
     }
 }
 
-pub use crate::operation::undeploy_system_instance::_undeploy_system_instance_output::UndeploySystemInstanceOutput;
-
 pub use crate::operation::undeploy_system_instance::_undeploy_system_instance_input::UndeploySystemInstanceInput;
+
+pub use crate::operation::undeploy_system_instance::_undeploy_system_instance_output::UndeploySystemInstanceOutput;
 
 mod _undeploy_system_instance_input;
 

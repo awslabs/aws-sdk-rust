@@ -379,9 +379,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_archives::Lis
     }
 }
 
-pub use crate::operation::list_archives::_list_archives_output::ListArchivesOutput;
-
 pub use crate::operation::list_archives::_list_archives_input::ListArchivesInput;
+
+pub use crate::operation::list_archives::_list_archives_output::ListArchivesOutput;
 
 mod _list_archives_input;
 

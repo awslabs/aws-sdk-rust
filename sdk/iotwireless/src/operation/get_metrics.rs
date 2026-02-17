@@ -402,9 +402,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_metrics::GetMe
     }
 }
 
-pub use crate::operation::get_metrics::_get_metrics_output::GetMetricsOutput;
-
 pub use crate::operation::get_metrics::_get_metrics_input::GetMetricsInput;
+
+pub use crate::operation::get_metrics::_get_metrics_output::GetMetricsOutput;
 
 mod _get_metrics_input;
 

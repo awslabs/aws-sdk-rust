@@ -384,9 +384,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_tenant_reso
     }
 }
 
-pub use crate::operation::delete_tenant_resource_association::_delete_tenant_resource_association_output::DeleteTenantResourceAssociationOutput;
-
 pub use crate::operation::delete_tenant_resource_association::_delete_tenant_resource_association_input::DeleteTenantResourceAssociationInput;
+
+pub use crate::operation::delete_tenant_resource_association::_delete_tenant_resource_association_output::DeleteTenantResourceAssociationOutput;
 
 mod _delete_tenant_resource_association_input;
 

@@ -395,9 +395,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::batch_delete_agent
     }
 }
 
-pub use crate::operation::batch_delete_agents::_batch_delete_agents_output::BatchDeleteAgentsOutput;
-
 pub use crate::operation::batch_delete_agents::_batch_delete_agents_input::BatchDeleteAgentsInput;
+
+pub use crate::operation::batch_delete_agents::_batch_delete_agents_output::BatchDeleteAgentsOutput;
 
 mod _batch_delete_agents_input;
 

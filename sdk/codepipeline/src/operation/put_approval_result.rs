@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_approval_resul
     }
 }
 
-pub use crate::operation::put_approval_result::_put_approval_result_output::PutApprovalResultOutput;
-
 pub use crate::operation::put_approval_result::_put_approval_result_input::PutApprovalResultInput;
+
+pub use crate::operation::put_approval_result::_put_approval_result_output::PutApprovalResultOutput;
 
 mod _put_approval_result_input;
 

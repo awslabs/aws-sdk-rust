@@ -443,9 +443,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_sync_executi
     }
 }
 
-pub use crate::operation::start_sync_execution::_start_sync_execution_output::StartSyncExecutionOutput;
-
 pub use crate::operation::start_sync_execution::_start_sync_execution_input::StartSyncExecutionInput;
+
+pub use crate::operation::start_sync_execution::_start_sync_execution_output::StartSyncExecutionOutput;
 
 mod _start_sync_execution_input;
 

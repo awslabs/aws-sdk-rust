@@ -444,9 +444,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::remove_policy_gran
     }
 }
 
-pub use crate::operation::remove_policy_grant::_remove_policy_grant_output::RemovePolicyGrantOutput;
-
 pub use crate::operation::remove_policy_grant::_remove_policy_grant_input::RemovePolicyGrantInput;
+
+pub use crate::operation::remove_policy_grant::_remove_policy_grant_output::RemovePolicyGrantOutput;
 
 mod _remove_policy_grant_input;
 

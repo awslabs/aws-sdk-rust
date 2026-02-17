@@ -441,9 +441,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_channels_asso
     }
 }
 
-pub use crate::operation::list_channels_associated_with_channel_flow::_list_channels_associated_with_channel_flow_output::ListChannelsAssociatedWithChannelFlowOutput;
-
 pub use crate::operation::list_channels_associated_with_channel_flow::_list_channels_associated_with_channel_flow_input::ListChannelsAssociatedWithChannelFlowInput;
+
+pub use crate::operation::list_channels_associated_with_channel_flow::_list_channels_associated_with_channel_flow_output::ListChannelsAssociatedWithChannelFlowOutput;
 
 mod _list_channels_associated_with_channel_flow_input;
 

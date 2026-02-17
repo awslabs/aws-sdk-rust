@@ -387,9 +387,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::test_migration::Te
     }
 }
 
-pub use crate::operation::test_migration::_test_migration_output::TestMigrationOutput;
-
 pub use crate::operation::test_migration::_test_migration_input::TestMigrationInput;
+
+pub use crate::operation::test_migration::_test_migration_output::TestMigrationOutput;
 
 mod _test_migration_input;
 

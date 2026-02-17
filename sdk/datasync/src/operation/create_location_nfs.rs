@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_location_nf
     }
 }
 
-pub use crate::operation::create_location_nfs::_create_location_nfs_output::CreateLocationNfsOutput;
-
 pub use crate::operation::create_location_nfs::_create_location_nfs_input::CreateLocationNfsInput;
+
+pub use crate::operation::create_location_nfs::_create_location_nfs_output::CreateLocationNfsOutput;
 
 mod _create_location_nfs_input;
 

@@ -400,9 +400,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_compute_access
     }
 }
 
-pub use crate::operation::get_compute_access::_get_compute_access_output::GetComputeAccessOutput;
-
 pub use crate::operation::get_compute_access::_get_compute_access_input::GetComputeAccessInput;
+
+pub use crate::operation::get_compute_access::_get_compute_access_output::GetComputeAccessOutput;
 
 mod _get_compute_access_input;
 

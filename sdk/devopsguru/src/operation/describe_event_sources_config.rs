@@ -386,9 +386,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::describe_event_sou
     }
 }
 
-pub use crate::operation::describe_event_sources_config::_describe_event_sources_config_output::DescribeEventSourcesConfigOutput;
-
 pub use crate::operation::describe_event_sources_config::_describe_event_sources_config_input::DescribeEventSourcesConfigInput;
+
+pub use crate::operation::describe_event_sources_config::_describe_event_sources_config_output::DescribeEventSourcesConfigOutput;
 
 mod _describe_event_sources_config_input;
 

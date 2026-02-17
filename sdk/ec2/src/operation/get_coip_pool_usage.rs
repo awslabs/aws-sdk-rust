@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_coip_pool_usag
     }
 }
 
-pub use crate::operation::get_coip_pool_usage::_get_coip_pool_usage_output::GetCoipPoolUsageOutput;
-
 pub use crate::operation::get_coip_pool_usage::_get_coip_pool_usage_input::GetCoipPoolUsageInput;
+
+pub use crate::operation::get_coip_pool_usage::_get_coip_pool_usage_output::GetCoipPoolUsageOutput;
 
 mod _get_coip_pool_usage_input;
 

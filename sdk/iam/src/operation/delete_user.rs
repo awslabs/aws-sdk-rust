@@ -391,9 +391,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::delete_user::Delet
     }
 }
 
-pub use crate::operation::delete_user::_delete_user_output::DeleteUserOutput;
-
 pub use crate::operation::delete_user::_delete_user_input::DeleteUserInput;
+
+pub use crate::operation::delete_user::_delete_user_output::DeleteUserOutput;
 
 mod _delete_user_input;
 

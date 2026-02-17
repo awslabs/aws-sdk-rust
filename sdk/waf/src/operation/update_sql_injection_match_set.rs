@@ -473,9 +473,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_sql_injecti
     }
 }
 
-pub use crate::operation::update_sql_injection_match_set::_update_sql_injection_match_set_output::UpdateSqlInjectionMatchSetOutput;
-
 pub use crate::operation::update_sql_injection_match_set::_update_sql_injection_match_set_input::UpdateSqlInjectionMatchSetInput;
+
+pub use crate::operation::update_sql_injection_match_set::_update_sql_injection_match_set_output::UpdateSqlInjectionMatchSetOutput;
 
 mod _update_sql_injection_match_set_input;
 

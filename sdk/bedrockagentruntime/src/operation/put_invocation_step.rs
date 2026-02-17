@@ -436,9 +436,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::put_invocation_ste
     }
 }
 
-pub use crate::operation::put_invocation_step::_put_invocation_step_output::PutInvocationStepOutput;
-
 pub use crate::operation::put_invocation_step::_put_invocation_step_input::PutInvocationStepInput;
+
+pub use crate::operation::put_invocation_step::_put_invocation_step_output::PutInvocationStepOutput;
 
 mod _put_invocation_step_input;
 

@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_identity_dkim_
     }
 }
 
-pub use crate::operation::get_identity_dkim_attributes::_get_identity_dkim_attributes_output::GetIdentityDkimAttributesOutput;
-
 pub use crate::operation::get_identity_dkim_attributes::_get_identity_dkim_attributes_input::GetIdentityDkimAttributesInput;
+
+pub use crate::operation::get_identity_dkim_attributes::_get_identity_dkim_attributes_output::GetIdentityDkimAttributesOutput;
 
 mod _get_identity_dkim_attributes_input;
 

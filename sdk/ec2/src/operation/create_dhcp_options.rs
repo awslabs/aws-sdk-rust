@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_dhcp_option
     }
 }
 
-pub use crate::operation::create_dhcp_options::_create_dhcp_options_output::CreateDhcpOptionsOutput;
-
 pub use crate::operation::create_dhcp_options::_create_dhcp_options_input::CreateDhcpOptionsInput;
+
+pub use crate::operation::create_dhcp_options::_create_dhcp_options_output::CreateDhcpOptionsOutput;
 
 mod _create_dhcp_options_input;
 

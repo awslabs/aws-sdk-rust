@@ -373,9 +373,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::list_stack_set_ope
     }
 }
 
-pub use crate::operation::list_stack_set_operation_results::_list_stack_set_operation_results_output::ListStackSetOperationResultsOutput;
-
 pub use crate::operation::list_stack_set_operation_results::_list_stack_set_operation_results_input::ListStackSetOperationResultsInput;
+
+pub use crate::operation::list_stack_set_operation_results::_list_stack_set_operation_results_output::ListStackSetOperationResultsOutput;
 
 mod _list_stack_set_operation_results_input;
 

@@ -460,9 +460,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::redact_channel_mes
     }
 }
 
-pub use crate::operation::redact_channel_message::_redact_channel_message_output::RedactChannelMessageOutput;
-
 pub use crate::operation::redact_channel_message::_redact_channel_message_input::RedactChannelMessageInput;
+
+pub use crate::operation::redact_channel_message::_redact_channel_message_output::RedactChannelMessageOutput;
 
 mod _redact_channel_message_input;
 

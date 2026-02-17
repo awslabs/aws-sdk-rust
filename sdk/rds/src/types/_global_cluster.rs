@@ -23,6 +23,16 @@ pub struct GlobalCluster {
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the global database cluster.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
+    /// <p>The type of encryption used to protect data at rest in the global database cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The global database cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The global database cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The global database cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     /// <p>The deletion protection setting for the new global database cluster.</p>
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The list of primary and secondary clusters within the global database cluster.</p>
@@ -73,6 +83,18 @@ impl GlobalCluster {
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the global database cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The global database cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The global database cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The global database cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(&self) -> ::std::option::Option<&crate::types::StorageEncryptionType> {
+        self.storage_encryption_type.as_ref()
+    }
     /// <p>The deletion protection setting for the new global database cluster.</p>
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
@@ -119,6 +141,7 @@ pub struct GlobalClusterBuilder {
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
+    pub(crate) storage_encryption_type: ::std::option::Option<crate::types::StorageEncryptionType>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -255,6 +278,44 @@ impl GlobalClusterBuilder {
     pub fn get_storage_encrypted(&self) -> &::std::option::Option<bool> {
         &self.storage_encrypted
     }
+    /// <p>The type of encryption used to protect data at rest in the global database cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The global database cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The global database cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The global database cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn storage_encryption_type(mut self, input: crate::types::StorageEncryptionType) -> Self {
+        self.storage_encryption_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the global database cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The global database cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The global database cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The global database cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn set_storage_encryption_type(mut self, input: ::std::option::Option<crate::types::StorageEncryptionType>) -> Self {
+        self.storage_encryption_type = input;
+        self
+    }
+    /// <p>The type of encryption used to protect data at rest in the global database cluster. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>none</code> - The global database cluster is not encrypted.</p></li>
+    /// <li>
+    /// <p><code>sse-rds</code> - The global database cluster is encrypted using an Amazon Web Services owned KMS key.</p></li>
+    /// <li>
+    /// <p><code>sse-kms</code> - The global database cluster is encrypted using a customer managed KMS key or Amazon Web Services managed KMS key.</p></li>
+    /// </ul>
+    pub fn get_storage_encryption_type(&self) -> &::std::option::Option<crate::types::StorageEncryptionType> {
+        &self.storage_encryption_type
+    }
     /// <p>The deletion protection setting for the new global database cluster.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = ::std::option::Option::Some(input);
@@ -352,6 +413,7 @@ impl GlobalClusterBuilder {
             engine_lifecycle_support: self.engine_lifecycle_support,
             database_name: self.database_name,
             storage_encrypted: self.storage_encrypted,
+            storage_encryption_type: self.storage_encryption_type,
             deletion_protection: self.deletion_protection,
             global_cluster_members: self.global_cluster_members,
             endpoint: self.endpoint,

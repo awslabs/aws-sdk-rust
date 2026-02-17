@@ -438,9 +438,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_privacy_bud
     }
 }
 
-pub use crate::operation::create_privacy_budget_template::_create_privacy_budget_template_output::CreatePrivacyBudgetTemplateOutput;
-
 pub use crate::operation::create_privacy_budget_template::_create_privacy_budget_template_input::CreatePrivacyBudgetTemplateInput;
+
+pub use crate::operation::create_privacy_budget_template::_create_privacy_budget_template_output::CreatePrivacyBudgetTemplateOutput;
 
 mod _create_privacy_budget_template_input;
 

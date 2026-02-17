@@ -409,9 +409,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::cancel_message_mov
     }
 }
 
-pub use crate::operation::cancel_message_move_task::_cancel_message_move_task_output::CancelMessageMoveTaskOutput;
-
 pub use crate::operation::cancel_message_move_task::_cancel_message_move_task_input::CancelMessageMoveTaskInput;
+
+pub use crate::operation::cancel_message_move_task::_cancel_message_move_task_output::CancelMessageMoveTaskOutput;
 
 mod _cancel_message_move_task_input;
 

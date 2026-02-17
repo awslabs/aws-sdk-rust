@@ -368,9 +368,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_resource_reque
     }
 }
 
-pub use crate::operation::get_resource_request_status::_get_resource_request_status_output::GetResourceRequestStatusOutput;
-
 pub use crate::operation::get_resource_request_status::_get_resource_request_status_input::GetResourceRequestStatusInput;
+
+pub use crate::operation::get_resource_request_status::_get_resource_request_status_output::GetResourceRequestStatusOutput;
 
 mod _get_resource_request_status_input;
 

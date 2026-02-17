@@ -405,9 +405,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_event_actio
     }
 }
 
-pub use crate::operation::update_event_action::_update_event_action_output::UpdateEventActionOutput;
-
 pub use crate::operation::update_event_action::_update_event_action_input::UpdateEventActionInput;
+
+pub use crate::operation::update_event_action::_update_event_action_output::UpdateEventActionOutput;
 
 mod _update_event_action_input;
 

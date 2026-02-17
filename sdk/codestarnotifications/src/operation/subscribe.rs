@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::subscribe::Subscri
     }
 }
 
-pub use crate::operation::subscribe::_subscribe_output::SubscribeOutput;
-
 pub use crate::operation::subscribe::_subscribe_input::SubscribeInput;
+
+pub use crate::operation::subscribe::_subscribe_output::SubscribeOutput;
 
 mod _subscribe_input;
 

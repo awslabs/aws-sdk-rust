@@ -344,9 +344,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::modify_vpc_tenancy
     }
 }
 
-pub use crate::operation::modify_vpc_tenancy::_modify_vpc_tenancy_output::ModifyVpcTenancyOutput;
-
 pub use crate::operation::modify_vpc_tenancy::_modify_vpc_tenancy_input::ModifyVpcTenancyInput;
+
+pub use crate::operation::modify_vpc_tenancy::_modify_vpc_tenancy_output::ModifyVpcTenancyOutput;
 
 mod _modify_vpc_tenancy_input;
 

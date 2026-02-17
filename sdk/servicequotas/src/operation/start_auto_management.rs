@@ -407,9 +407,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::start_auto_managem
     }
 }
 
-pub use crate::operation::start_auto_management::_start_auto_management_output::StartAutoManagementOutput;
-
 pub use crate::operation::start_auto_management::_start_auto_management_input::StartAutoManagementInput;
+
+pub use crate::operation::start_auto_management::_start_auto_management_output::StartAutoManagementOutput;
 
 mod _start_auto_management_input;
 

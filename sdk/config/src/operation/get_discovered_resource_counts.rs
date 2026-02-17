@@ -412,9 +412,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_discovered_res
     }
 }
 
-pub use crate::operation::get_discovered_resource_counts::_get_discovered_resource_counts_output::GetDiscoveredResourceCountsOutput;
-
 pub use crate::operation::get_discovered_resource_counts::_get_discovered_resource_counts_input::GetDiscoveredResourceCountsInput;
+
+pub use crate::operation::get_discovered_resource_counts::_get_discovered_resource_counts_output::GetDiscoveredResourceCountsOutput;
 
 mod _get_discovered_resource_counts_input;
 

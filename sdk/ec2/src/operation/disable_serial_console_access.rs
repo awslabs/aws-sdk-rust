@@ -347,9 +347,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::disable_serial_con
     }
 }
 
-pub use crate::operation::disable_serial_console_access::_disable_serial_console_access_output::DisableSerialConsoleAccessOutput;
-
 pub use crate::operation::disable_serial_console_access::_disable_serial_console_access_input::DisableSerialConsoleAccessInput;
+
+pub use crate::operation::disable_serial_console_access::_disable_serial_console_access_output::DisableSerialConsoleAccessOutput;
 
 mod _disable_serial_console_access_input;
 

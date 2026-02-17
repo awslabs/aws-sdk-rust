@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::create_app_version
     }
 }
 
-pub use crate::operation::create_app_version_resource::_create_app_version_resource_output::CreateAppVersionResourceOutput;
-
 pub use crate::operation::create_app_version_resource::_create_app_version_resource_input::CreateAppVersionResourceInput;
+
+pub use crate::operation::create_app_version_resource::_create_app_version_resource_output::CreateAppVersionResourceOutput;
 
 mod _create_app_version_resource_input;
 

@@ -430,9 +430,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::get_origin_endpoin
     }
 }
 
-pub use crate::operation::get_origin_endpoint::_get_origin_endpoint_output::GetOriginEndpointOutput;
-
 pub use crate::operation::get_origin_endpoint::_get_origin_endpoint_input::GetOriginEndpointInput;
+
+pub use crate::operation::get_origin_endpoint::_get_origin_endpoint_output::GetOriginEndpointOutput;
 
 mod _get_origin_endpoint_input;
 

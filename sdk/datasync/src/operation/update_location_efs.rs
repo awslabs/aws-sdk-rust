@@ -369,9 +369,9 @@ impl ::aws_types::request_id::RequestId for crate::operation::update_location_ef
     }
 }
 
-pub use crate::operation::update_location_efs::_update_location_efs_output::UpdateLocationEfsOutput;
-
 pub use crate::operation::update_location_efs::_update_location_efs_input::UpdateLocationEfsInput;
+
+pub use crate::operation::update_location_efs::_update_location_efs_output::UpdateLocationEfsOutput;
 
 mod _update_location_efs_input;
 
