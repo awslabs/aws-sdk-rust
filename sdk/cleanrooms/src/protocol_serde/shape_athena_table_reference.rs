@@ -18,6 +18,9 @@ pub fn ser_athena_table_reference(
     {
         object.key("tableName").string(input.table_name.as_str());
     }
+    if let Some(var_3) = &input.catalog_name {
+        object.key("catalogName").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -67,6 +70,13 @@ where
                         }
                         "tableName" => {
                             builder = builder.set_table_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "catalogName" => {
+                            builder = builder.set_catalog_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

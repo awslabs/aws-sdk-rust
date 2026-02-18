@@ -22,7 +22,7 @@ impl crate::operation::create_notification::builders::CreateNotificationInputBui
 }
 /// Fluent builder constructing a request to `CreateNotification`.
 ///
-/// <p>Creates a new notification to be delivered to specified recipients. Notifications can include localized content with embedded links, and an optional expiration time. Recipients can be specified as individual user ARNs or instance ARNs to target all users in an instance.</p>
+/// <p>Creates a new notification to be delivered to specified recipients. Notifications can include localized content with links, and an optional expiration time. Recipients can be specified as individual user ARNs or instance ARNs to target all users in an instance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateNotificationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -174,17 +174,17 @@ impl CreateNotificationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn content(mut self, k: crate::types::LocaleCode, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.content(k, v.into());
         self
     }
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>> {
         self.inner.get_content()
     }

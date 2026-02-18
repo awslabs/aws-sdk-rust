@@ -11,7 +11,7 @@ pub struct CreateNotificationInput {
     pub recipients: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The priority level of the notification. Valid values are HIGH and LOW. High priority notifications are displayed above low priority notifications.</p>
     pub priority: ::std::option::Option<crate::types::ConfigurableNotificationPriority>,
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub content: ::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "Tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -39,7 +39,7 @@ impl CreateNotificationInput {
     pub fn priority(&self) -> ::std::option::Option<&crate::types::ConfigurableNotificationPriority> {
         self.priority.as_ref()
     }
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn content(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>> {
         self.content.as_ref()
     }
@@ -144,19 +144,19 @@ impl CreateNotificationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_content`](Self::set_content).
     ///
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn content(mut self, k: crate::types::LocaleCode, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.content.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.content = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn set_content(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports markdown formatting and embedded links. Maximum 250 characters per locale.</p>
+    /// <p>The localized content of the notification. A map where keys are locale codes and values are the notification text in that locale. Content supports links. Maximum 250 characters per locale.</p>
     pub fn get_content(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::LocaleCode, ::std::string::String>> {
         &self.content
     }

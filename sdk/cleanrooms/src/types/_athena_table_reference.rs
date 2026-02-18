@@ -14,6 +14,8 @@ pub struct AthenaTableReference {
     pub database_name: ::std::string::String,
     /// <p>The table reference.</p>
     pub table_name: ::std::string::String,
+    /// <p>The catalog name.</p>
+    pub catalog_name: ::std::option::Option<::std::string::String>,
 }
 impl AthenaTableReference {
     /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
@@ -39,6 +41,10 @@ impl AthenaTableReference {
         use std::ops::Deref;
         self.table_name.deref()
     }
+    /// <p>The catalog name.</p>
+    pub fn catalog_name(&self) -> ::std::option::Option<&str> {
+        self.catalog_name.as_deref()
+    }
 }
 impl AthenaTableReference {
     /// Creates a new builder-style object to manufacture [`AthenaTableReference`](crate::types::AthenaTableReference).
@@ -56,6 +62,7 @@ pub struct AthenaTableReferenceBuilder {
     pub(crate) output_location: ::std::option::Option<::std::string::String>,
     pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog_name: ::std::option::Option<::std::string::String>,
 }
 impl AthenaTableReferenceBuilder {
     /// <p>The Amazon Web Services Region where the Athena table is located. This parameter is required to uniquely identify and access tables across different Regions.</p>
@@ -131,6 +138,20 @@ impl AthenaTableReferenceBuilder {
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }
+    /// <p>The catalog name.</p>
+    pub fn catalog_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The catalog name.</p>
+    pub fn set_catalog_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.catalog_name = input;
+        self
+    }
+    /// <p>The catalog name.</p>
+    pub fn get_catalog_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.catalog_name
+    }
     /// Consumes the builder and constructs a [`AthenaTableReference`](crate::types::AthenaTableReference).
     /// This method will fail if any of the following fields are not set:
     /// - [`work_group`](crate::types::builders::AthenaTableReferenceBuilder::work_group)
@@ -158,6 +179,7 @@ impl AthenaTableReferenceBuilder {
                     "table_name was not specified but it is required when building AthenaTableReference",
                 )
             })?,
+            catalog_name: self.catalog_name,
         })
     }
 }
