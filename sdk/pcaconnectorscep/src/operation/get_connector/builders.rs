@@ -22,7 +22,7 @@ impl crate::operation::get_connector::builders::GetConnectorInputBuilder {
 }
 /// Fluent builder constructing a request to `GetConnector`.
 ///
-/// <p>Retrieves details about the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>. Calling this action returns important details about the connector, such as the public SCEP URL where your clients can request certificates.</p>
+/// <p>Retrieves details about the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>. Calling this action returns important details about the connector, such as the public SCEP URL where your clients can request certificates.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

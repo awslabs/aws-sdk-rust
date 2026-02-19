@@ -25,5 +25,8 @@ pub fn ser_create_connector_input_input(
         }
         object_6.finish();
     }
+    if let Some(var_9) = &input.vpc_endpoint_id {
+        object.key("VpcEndpointId").string(var_9.as_str());
+    }
     Ok(())
 }

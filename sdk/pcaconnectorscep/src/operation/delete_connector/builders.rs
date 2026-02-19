@@ -22,7 +22,7 @@ impl crate::operation::delete_connector::builders::DeleteConnectorInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteConnector`.
 ///
-/// <p>Deletes the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>. This operation also deletes any challenges associated with the connector.</p>
+/// <p>Deletes the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Connector.html">Connector</a>. This operation also deletes any challenges associated with the connector.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConnectorFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

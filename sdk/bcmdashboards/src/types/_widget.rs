@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Widget {
+    /// The unique identifier for the widget.
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the widget.</p>
     pub title: ::std::string::String,
     /// <p>A description of the widget's purpose or the data it displays.</p>
@@ -18,6 +20,10 @@ pub struct Widget {
     pub configs: ::std::vec::Vec<crate::types::WidgetConfig>,
 }
 impl Widget {
+    /// The unique identifier for the widget.
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
+    }
     /// <p>The title of the widget.</p>
     pub fn title(&self) -> &str {
         use std::ops::Deref;
@@ -56,6 +62,7 @@ impl Widget {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct WidgetBuilder {
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) width: ::std::option::Option<i32>,
@@ -64,6 +71,20 @@ pub struct WidgetBuilder {
     pub(crate) configs: ::std::option::Option<::std::vec::Vec<crate::types::WidgetConfig>>,
 }
 impl WidgetBuilder {
+    /// The unique identifier for the widget.
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The unique identifier for the widget.
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
+        self
+    }
+    /// The unique identifier for the widget.
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
+    }
     /// <p>The title of the widget.</p>
     /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +182,7 @@ impl WidgetBuilder {
     /// - [`configs`](crate::types::builders::WidgetBuilder::configs)
     pub fn build(self) -> ::std::result::Result<crate::types::Widget, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::Widget {
+            id: self.id,
             title: self.title.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "title",

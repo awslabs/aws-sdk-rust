@@ -22,7 +22,7 @@ impl crate::operation::get_challenge_password::builders::GetChallengePasswordInp
 }
 /// Fluent builder constructing a request to `GetChallengePassword`.
 ///
-/// <p>Retrieves the challenge password for the specified <a href="https://docs.aws.amazon.com/C4SCEP_API/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p>
+/// <p>Retrieves the challenge password for the specified <a href="https://docs.aws.amazon.com/pca-connector-scep/latest/APIReference/API_Challenge.html">Challenge</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetChallengePasswordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -252,9 +252,9 @@ model_hash = '353a96b522851aebef54656b5cec901dcc50859964218b0e630038d067946d81'
 
 [crates.aws-sdk-bcmdashboards]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = '1c475d14cfee29bd8c2880ee52cf437c5629f08a90f072764e96a58dcefa6212'
-model_hash = '5a194e803f68fd3fd5bceef820880f58c5cf1448f06c877cdba633da95088687'
+version = '1.14.0'
+source_hash = '6fea81f7edb1d9fb6f490282b4088f3b2ee615e66a6fab61c96a42abc4c2e959'
+model_hash = 'ce91164c43e77b3699da35b488ec3b91f6d9d210f186cb4f2157111a1d39cf90'
 
 [crates.aws-sdk-bcmdataexports]
 category = 'AwsSdk'
@@ -828,9 +828,9 @@ model_hash = '2d2883275027d978168346af0bd554909f803b566f6d40a86477cc11ac3b373b'
 
 [crates.aws-sdk-ecr]
 category = 'AwsSdk'
-version = '1.108.0'
-source_hash = '38b0bce5497773e521108e972f5f9d648e547334854fab94095e639dc1b95285'
-model_hash = '213ca9c8f9f8846f7821432bb984943263af6c96b8290c1347254f8470eb4d75'
+version = '1.109.0'
+source_hash = '25a722ebf8505979f2f07de4bb0026fdf868d73ff6aa86828b60abed4315f781'
+model_hash = 'e5211082185a59a5c66799fab826f5e255fc00dc0ce45de4eae665705e960f6e'
 
 [crates.aws-sdk-ecrpublic]
 category = 'AwsSdk'
@@ -1770,9 +1770,9 @@ model_hash = '918665360bd2fd0d8b81ece984f2af22235dac552498e1ce1dfc46910f80e1a9'
 
 [crates.aws-sdk-pcaconnectorscep]
 category = 'AwsSdk'
-version = '1.65.0'
-source_hash = '72d840b6b40c17ae309cad36c89f285cda29cf38636e9763aa9af65921f0d922'
-model_hash = 'd1a57b06b4b17e2ee31a7680079782f1f5e6b1085276b5c82af94fd799a613a9'
+version = '1.66.0'
+source_hash = 'c729d4afe761e40db26f773fa9946b4929f1662b4b96c710bf148143a4461be7'
+model_hash = '4ccb126c94ca0e9c66c179e3577c962bcabb233a6a4cfc97b2b085d61a8bd565'
 
 [crates.aws-sdk-pcs]
 category = 'AwsSdk'
@@ -2650,10 +2650,7 @@ source_hash = '3e97746b8b40bfe5c667456d42e4cb249ec7404ac818b21995a988eda975dfa0'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2590e69a78696d52f860b2dc779a8f5295b682c6fc9c11efd7ca9b7ff01fdc20'
-
-[release]
-tag = 'release-2026-02-18'
-
 [release.crates]
-aws-sdk-cleanrooms = '1.117.0'
-aws-sdk-connect = '1.160.1'
+aws-sdk-bcmdashboards = '1.14.0'
+aws-sdk-ecr = '1.109.0'
+aws-sdk-pcaconnectorscep = '1.66.0'

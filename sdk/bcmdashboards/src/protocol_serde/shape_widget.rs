@@ -3,11 +3,14 @@ pub fn ser_widget(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Widget,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.id {
+        object.key("id").string(var_1.as_str());
+    }
     {
         object.key("title").string(input.title.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
     if input.width != 4 {
         object.key("width").number(
@@ -28,16 +31,16 @@ pub fn ser_widget(
         );
     }
     {
-        let mut array_2 = object.key("configs").start_array();
-        for item_3 in &input.configs {
+        let mut array_3 = object.key("configs").start_array();
+        for item_4 in &input.configs {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_widget_config::ser_widget_config(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_widget_config::ser_widget_config(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
     Ok(())
 }
@@ -58,6 +61,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "id" => {
+                            builder = builder.set_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "title" => {
                             builder = builder.set_title(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
