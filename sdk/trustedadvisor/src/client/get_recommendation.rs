@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`recommendation_identifier(impl Into<String>)`](crate::operation::get_recommendation::builders::GetRecommendationFluentBuilder::recommendation_identifier) / [`set_recommendation_identifier(Option<String>)`](crate::operation::get_recommendation::builders::GetRecommendationFluentBuilder::set_recommendation_identifier):<br>required: **true**<br><p>The Recommendation identifier</p><br>
+    ///   - [`language(RecommendationLanguage)`](crate::operation::get_recommendation::builders::GetRecommendationFluentBuilder::language) / [`set_language(Option<RecommendationLanguage>)`](crate::operation::get_recommendation::builders::GetRecommendationFluentBuilder::set_language):<br>required: **false**<br><p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p><br>
     /// - On success, responds with [`GetRecommendationOutput`](crate::operation::get_recommendation::GetRecommendationOutput) with field(s):
     ///   - [`recommendation(Option<Recommendation>)`](crate::operation::get_recommendation::GetRecommendationOutput::recommendation): <p>The Recommendation</p>
     /// - On failure, responds with [`SdkError<GetRecommendationError>`](crate::operation::get_recommendation::GetRecommendationError)

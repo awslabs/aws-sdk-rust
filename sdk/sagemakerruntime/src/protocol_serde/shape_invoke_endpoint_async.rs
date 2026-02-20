@@ -161,10 +161,32 @@ pub fn ser_invoke_endpoint_async_headers(
         })?;
         builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
     }
-    if let ::std::option::Option::Some(inner_11) = &input.request_ttl_seconds {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_11);
-        let formatted_12 = encoder.encode();
+    if let ::std::option::Option::Some(inner_11) = &input.s3_output_path_extension {
+        let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "s3_output_path_extension",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-SageMaker-S3OutputPathExtension", header_value);
+    }
+    if let ::std::option::Option::Some(inner_13) = &input.filename {
+        let formatted_14 = inner_13.as_str();
+        let header_value = formatted_14;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "filename",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-SageMaker-Filename", header_value);
+    }
+    if let ::std::option::Option::Some(inner_15) = &input.request_ttl_seconds {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_15);
+        let formatted_16 = encoder.encode();
+        let header_value = formatted_16;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "request_ttl_seconds",
@@ -173,10 +195,10 @@ pub fn ser_invoke_endpoint_async_headers(
         })?;
         builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
     }
-    if let ::std::option::Option::Some(inner_13) = &input.invocation_timeout_seconds {
-        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_13);
-        let formatted_14 = encoder.encode();
-        let header_value = formatted_14;
+    if let ::std::option::Option::Some(inner_17) = &input.invocation_timeout_seconds {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_17);
+        let formatted_18 = encoder.encode();
+        let header_value = formatted_18;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "invocation_timeout_seconds",

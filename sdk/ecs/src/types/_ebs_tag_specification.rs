@@ -8,7 +8,7 @@ pub struct EbsTagSpecification {
     pub resource_type: crate::types::EbsResourceType,
     /// <p>The tags applied to this Amazon EBS volume. <code>AmazonECSCreated</code> and <code>AmazonECSManaged</code> are reserved tags that can't be used.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>Determines whether to propagate the tags from the task definition to  the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in  <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't  propagated.</p>
+    /// <p>Determines whether to propagate the tags from the task definition to the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't propagated.</p>
     pub propagate_tags: ::std::option::Option<crate::types::PropagateTags>,
 }
 impl EbsTagSpecification {
@@ -22,7 +22,7 @@ impl EbsTagSpecification {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>Determines whether to propagate the tags from the task definition to  the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in  <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't  propagated.</p>
+    /// <p>Determines whether to propagate the tags from the task definition to the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't propagated.</p>
     pub fn propagate_tags(&self) -> ::std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
@@ -78,17 +78,17 @@ impl EbsTagSpecificationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>Determines whether to propagate the tags from the task definition to  the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in  <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't  propagated.</p>
+    /// <p>Determines whether to propagate the tags from the task definition to the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't propagated.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
         self.propagate_tags = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines whether to propagate the tags from the task definition to  the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in  <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't  propagated.</p>
+    /// <p>Determines whether to propagate the tags from the task definition to the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't propagated.</p>
     pub fn set_propagate_tags(mut self, input: ::std::option::Option<crate::types::PropagateTags>) -> Self {
         self.propagate_tags = input;
         self
     }
-    /// <p>Determines whether to propagate the tags from the task definition to  the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in  <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't  propagated.</p>
+    /// <p>Determines whether to propagate the tags from the task definition to the Amazon EBS volume. Tags can only propagate to a <code>SERVICE</code> specified in <code>ServiceVolumeConfiguration</code>. If no value is specified, the tags aren't propagated.</p>
     pub fn get_propagate_tags(&self) -> &::std::option::Option<crate::types::PropagateTags> {
         &self.propagate_tags
     }

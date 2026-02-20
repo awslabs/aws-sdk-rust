@@ -68,7 +68,7 @@ pub struct TaskManagedEbsVolumeConfiguration {
     /// <p>The termination policy for the volume when the task exits. This provides a way to control whether Amazon ECS terminates the Amazon EBS volume when the task stops.</p>
     pub termination_policy: ::std::option::Option<crate::types::TaskManagedEbsVolumeTerminationPolicy>,
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
-    /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
+    /// <p>The available filesystem types are <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub filesystem_type: ::std::option::Option<crate::types::TaskFilesystemType>,
 }
 impl TaskManagedEbsVolumeConfiguration {
@@ -161,7 +161,7 @@ impl TaskManagedEbsVolumeConfiguration {
         self.termination_policy.as_ref()
     }
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
-    /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
+    /// <p>The available filesystem types are <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub fn filesystem_type(&self) -> ::std::option::Option<&crate::types::TaskFilesystemType> {
         self.filesystem_type.as_ref()
     }
@@ -476,19 +476,19 @@ impl TaskManagedEbsVolumeConfigurationBuilder {
         &self.termination_policy
     }
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
-    /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
+    /// <p>The available filesystem types are <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub fn filesystem_type(mut self, input: crate::types::TaskFilesystemType) -> Self {
         self.filesystem_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
-    /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
+    /// <p>The available filesystem types are <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub fn set_filesystem_type(mut self, input: ::std::option::Option<crate::types::TaskFilesystemType>) -> Self {
         self.filesystem_type = input;
         self
     }
     /// <p>The Linux filesystem type for the volume. For volumes created from a snapshot, you must specify the same filesystem type that the volume was using when the snapshot was created. If there is a filesystem type mismatch, the task will fail to start.</p>
-    /// <p>The available filesystem types are  <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
+    /// <p>The available filesystem types are <code>ext3</code>, <code>ext4</code>, and <code>xfs</code>. If no value is specified, the <code>xfs</code> filesystem type is used by default.</p>
     pub fn get_filesystem_type(&self) -> &::std::option::Option<crate::types::TaskFilesystemType> {
         &self.filesystem_type
     }

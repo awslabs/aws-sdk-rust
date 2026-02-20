@@ -183,6 +183,13 @@ where
                                 crate::protocol_serde::shape_alarm_state_information_list::de_alarm_state_information_list(tokens, _value)?,
                             );
                         }
+                        "AssociationDispatchAssumeRole" => {
+                            builder = builder.set_association_dispatch_assume_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

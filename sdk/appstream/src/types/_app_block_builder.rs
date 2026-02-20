@@ -33,6 +33,8 @@ pub struct AppBlockBuilder {
     pub state_change_reason: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReason>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the app block builder.</p>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl AppBlockBuilder {
     /// <p>The ARN of the app block builder.</p>
@@ -96,6 +98,10 @@ impl AppBlockBuilder {
     pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
         self.access_endpoints.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the app block builder.</p>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl AppBlockBuilder {
     /// Creates a new builder-style object to manufacture [`AppBlockBuilder`](crate::types::AppBlockBuilder).
@@ -122,6 +128,7 @@ pub struct AppBlockBuilderBuilder {
     pub(crate) app_block_builder_errors: ::std::option::Option<::std::vec::Vec<crate::types::ResourceError>>,
     pub(crate) state_change_reason: ::std::option::Option<crate::types::AppBlockBuilderStateChangeReason>,
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl AppBlockBuilderBuilder {
     /// <p>The ARN of the app block builder.</p>
@@ -341,6 +348,20 @@ impl AppBlockBuilderBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the app block builder.</p>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the app block builder.</p>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the app block builder.</p>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`AppBlockBuilder`](crate::types::AppBlockBuilder).
     pub fn build(self) -> crate::types::AppBlockBuilder {
         crate::types::AppBlockBuilder {
@@ -358,6 +379,7 @@ impl AppBlockBuilderBuilder {
             app_block_builder_errors: self.app_block_builder_errors,
             state_change_reason: self.state_change_reason,
             access_endpoints: self.access_endpoints,
+            disable_imdsv1: self.disable_imdsv1,
         }
     }
 }

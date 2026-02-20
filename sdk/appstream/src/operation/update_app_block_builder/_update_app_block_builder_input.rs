@@ -38,6 +38,8 @@ pub struct UpdateAppBlockBuilderInput {
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     /// <p>The attributes to delete from the app block builder.</p>
     pub attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl UpdateAppBlockBuilderInput {
     /// <p>The unique name for the app block builder.</p>
@@ -99,6 +101,10 @@ impl UpdateAppBlockBuilderInput {
     pub fn attributes_to_delete(&self) -> &[crate::types::AppBlockBuilderAttribute] {
         self.attributes_to_delete.as_deref().unwrap_or_default()
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl UpdateAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
@@ -121,6 +127,7 @@ pub struct UpdateAppBlockBuilderInputBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     pub(crate) attributes_to_delete: ::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl UpdateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
@@ -321,6 +328,20 @@ impl UpdateAppBlockBuilderInputBuilder {
     pub fn get_attributes_to_delete(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AppBlockBuilderAttribute>> {
         &self.attributes_to_delete
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`UpdateAppBlockBuilderInput`](crate::operation::update_app_block_builder::UpdateAppBlockBuilderInput).
     pub fn build(
         self,
@@ -337,6 +358,7 @@ impl UpdateAppBlockBuilderInputBuilder {
             iam_role_arn: self.iam_role_arn,
             access_endpoints: self.access_endpoints,
             attributes_to_delete: self.attributes_to_delete,
+            disable_imdsv1: self.disable_imdsv1,
         })
     }
 }

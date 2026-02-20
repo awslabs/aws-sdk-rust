@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/webassembly",
     "tests/telemetry",
+    "tests/webassembly",
     "tests/no-default-features"
 ]
 members = [
@@ -397,6 +397,7 @@ members = [
     "sdk/sfn",
     "sdk/shield",
     "sdk/signer",
+    "sdk/signerdata",
     "sdk/signin",
     "sdk/simspaceweaver",
     "sdk/snowball",

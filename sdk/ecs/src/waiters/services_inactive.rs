@@ -75,7 +75,7 @@ impl ServicesInactiveFluentBuilder {
         };
         let orchestrator = ::aws_smithy_runtime::client::waiters::WaiterOrchestrator::builder()
             .min_delay(::std::time::Duration::from_secs(15))
-            .max_delay(::std::time::Duration::from_secs(120))
+            .max_delay(::std::time::Duration::from_secs(600))
             .max_wait(max_wait)
             .time_source(time_source)
             .sleep_impl(sleep_impl)

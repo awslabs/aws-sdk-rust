@@ -17,6 +17,10 @@ pub struct InvokeEndpointAsyncInput {
     pub inference_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
     pub input_location: ::std::option::Option<::std::string::String>,
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub s3_output_path_extension: ::std::option::Option<::std::string::String>,
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub filename: ::std::option::Option<::std::string::String>,
     /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub request_ttl_seconds: ::std::option::Option<i32>,
     /// <p>Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.</p>
@@ -49,6 +53,14 @@ impl InvokeEndpointAsyncInput {
     pub fn input_location(&self) -> ::std::option::Option<&str> {
         self.input_location.as_deref()
     }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn s3_output_path_extension(&self) -> ::std::option::Option<&str> {
+        self.s3_output_path_extension.as_deref()
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn filename(&self) -> ::std::option::Option<&str> {
+        self.filename.as_deref()
+    }
     /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn request_ttl_seconds(&self) -> ::std::option::Option<i32> {
         self.request_ttl_seconds
@@ -67,6 +79,8 @@ impl ::std::fmt::Debug for InvokeEndpointAsyncInput {
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_id", &self.inference_id);
         formatter.field("input_location", &self.input_location);
+        formatter.field("s3_output_path_extension", &self.s3_output_path_extension);
+        formatter.field("filename", &self.filename);
         formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
         formatter.field("invocation_timeout_seconds", &self.invocation_timeout_seconds);
         formatter.finish()
@@ -89,6 +103,8 @@ pub struct InvokeEndpointAsyncInputBuilder {
     pub(crate) custom_attributes: ::std::option::Option<::std::string::String>,
     pub(crate) inference_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_location: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_output_path_extension: ::std::option::Option<::std::string::String>,
+    pub(crate) filename: ::std::option::Option<::std::string::String>,
     pub(crate) request_ttl_seconds: ::std::option::Option<i32>,
     pub(crate) invocation_timeout_seconds: ::std::option::Option<i32>,
 }
@@ -185,6 +201,34 @@ impl InvokeEndpointAsyncInputBuilder {
     pub fn get_input_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.input_location
     }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn s3_output_path_extension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_output_path_extension = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn set_s3_output_path_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_output_path_extension = input;
+        self
+    }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn get_s3_output_path_extension(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_output_path_extension
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn filename(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.filename = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn set_filename(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.filename = input;
+        self
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn get_filename(&self) -> &::std::option::Option<::std::string::String> {
+        &self.filename
+    }
     /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn request_ttl_seconds(mut self, input: i32) -> Self {
         self.request_ttl_seconds = ::std::option::Option::Some(input);
@@ -225,6 +269,8 @@ impl InvokeEndpointAsyncInputBuilder {
             custom_attributes: self.custom_attributes,
             inference_id: self.inference_id,
             input_location: self.input_location,
+            s3_output_path_extension: self.s3_output_path_extension,
+            filename: self.filename,
             request_ttl_seconds: self.request_ttl_seconds,
             invocation_timeout_seconds: self.invocation_timeout_seconds,
         })
@@ -239,6 +285,8 @@ impl ::std::fmt::Debug for InvokeEndpointAsyncInputBuilder {
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("inference_id", &self.inference_id);
         formatter.field("input_location", &self.input_location);
+        formatter.field("s3_output_path_extension", &self.s3_output_path_extension);
+        formatter.field("filename", &self.filename);
         formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
         formatter.field("invocation_timeout_seconds", &self.invocation_timeout_seconds);
         formatter.finish()

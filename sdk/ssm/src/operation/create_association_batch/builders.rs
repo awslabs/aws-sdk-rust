@@ -129,4 +129,27 @@ impl CreateAssociationBatchFluentBuilder {
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>> {
         self.inner.get_entries()
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn association_dispatch_assume_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.association_dispatch_assume_role(input.into());
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn set_association_dispatch_assume_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_association_dispatch_assume_role(input);
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn get_association_dispatch_assume_role(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_association_dispatch_assume_role()
+    }
 }

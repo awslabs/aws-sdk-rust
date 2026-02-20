@@ -52,5 +52,8 @@ pub fn ser_create_app_block_builder_input_input(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.disable_imdsv1 {
+        object.key("DisableIMDSV1").boolean(*var_18);
+    }
     Ok(())
 }

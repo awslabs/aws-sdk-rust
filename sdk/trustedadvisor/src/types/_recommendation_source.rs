@@ -15,6 +15,7 @@
 ///     RecommendationSource::AwsConfig => { /* ... */ },
 ///     RecommendationSource::ComputeOptimizer => { /* ... */ },
 ///     RecommendationSource::CostExplorer => { /* ... */ },
+///     RecommendationSource::CostOptimizationHub => { /* ... */ },
 ///     RecommendationSource::Lse => { /* ... */ },
 ///     RecommendationSource::Manual => { /* ... */ },
 ///     RecommendationSource::Pse => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum RecommendationSource {
     #[allow(missing_docs)] // documentation missing in model
     CostExplorer,
     #[allow(missing_docs)] // documentation missing in model
+    CostOptimizationHub,
+    #[allow(missing_docs)] // documentation missing in model
     Lse,
     #[allow(missing_docs)] // documentation missing in model
     Manual,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for RecommendationSource {
             "aws_config" => RecommendationSource::AwsConfig,
             "compute_optimizer" => RecommendationSource::ComputeOptimizer,
             "cost_explorer" => RecommendationSource::CostExplorer,
+            "cost_optimization_hub" => RecommendationSource::CostOptimizationHub,
             "lse" => RecommendationSource::Lse,
             "manual" => RecommendationSource::Manual,
             "pse" => RecommendationSource::Pse,
@@ -117,6 +121,7 @@ impl RecommendationSource {
             RecommendationSource::AwsConfig => "aws_config",
             RecommendationSource::ComputeOptimizer => "compute_optimizer",
             RecommendationSource::CostExplorer => "cost_explorer",
+            RecommendationSource::CostOptimizationHub => "cost_optimization_hub",
             RecommendationSource::Lse => "lse",
             RecommendationSource::Manual => "manual",
             RecommendationSource::Pse => "pse",
@@ -136,6 +141,7 @@ impl RecommendationSource {
             "aws_config",
             "compute_optimizer",
             "cost_explorer",
+            "cost_optimization_hub",
             "lse",
             "manual",
             "pse",
@@ -172,6 +178,7 @@ impl ::std::fmt::Display for RecommendationSource {
             RecommendationSource::AwsConfig => write!(f, "aws_config"),
             RecommendationSource::ComputeOptimizer => write!(f, "compute_optimizer"),
             RecommendationSource::CostExplorer => write!(f, "cost_explorer"),
+            RecommendationSource::CostOptimizationHub => write!(f, "cost_optimization_hub"),
             RecommendationSource::Lse => write!(f, "lse"),
             RecommendationSource::Manual => write!(f, "manual"),
             RecommendationSource::Pse => write!(f, "pse"),

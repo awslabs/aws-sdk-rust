@@ -18,7 +18,7 @@ pub struct CreateOpsItemInput {
     /// <li>
     /// <p><code>/aws/changerequest</code></p>
     /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p><important>
-    /// <p>Amazon Web Services Systems Manager Change Manager will no longer be open to new customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
+    /// <p>Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
     /// </important></li>
     /// </ul>
     pub ops_item_type: ::std::option::Option<::std::string::String>,
@@ -79,7 +79,7 @@ impl CreateOpsItemInput {
     /// <li>
     /// <p><code>/aws/changerequest</code></p>
     /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p><important>
-    /// <p>Amazon Web Services Systems Manager Change Manager will no longer be open to new customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
+    /// <p>Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
     /// </important></li>
     /// </ul>
     pub fn ops_item_type(&self) -> ::std::option::Option<&str> {
@@ -219,7 +219,7 @@ impl CreateOpsItemInputBuilder {
     /// <li>
     /// <p><code>/aws/changerequest</code></p>
     /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p><important>
-    /// <p>Amazon Web Services Systems Manager Change Manager will no longer be open to new customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
+    /// <p>Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
     /// </important></li>
     /// </ul>
     pub fn ops_item_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -237,7 +237,7 @@ impl CreateOpsItemInputBuilder {
     /// <li>
     /// <p><code>/aws/changerequest</code></p>
     /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p><important>
-    /// <p>Amazon Web Services Systems Manager Change Manager will no longer be open to new customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
+    /// <p>Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
     /// </important></li>
     /// </ul>
     pub fn set_ops_item_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -255,7 +255,7 @@ impl CreateOpsItemInputBuilder {
     /// <li>
     /// <p><code>/aws/changerequest</code></p>
     /// <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.</p><important>
-    /// <p>Amazon Web Services Systems Manager Change Manager will no longer be open to new customers starting November 7, 2025. If you would like to use Change Manager, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
+    /// <p>Amazon Web Services Systems Manager Change Manager is no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/change-manager-availability-change.html">Amazon Web Services Systems Manager Change Manager availability change</a>.</p>
     /// </important></li>
     /// </ul>
     pub fn get_ops_item_type(&self) -> &::std::option::Option<::std::string::String> {

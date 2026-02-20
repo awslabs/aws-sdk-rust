@@ -15,6 +15,8 @@ pub struct ListRecommendationResourcesInput {
     pub region_code: ::std::option::Option<::std::string::String>,
     /// <p>The Recommendation identifier</p>
     pub recommendation_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
 impl ListRecommendationResourcesInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -41,6 +43,10 @@ impl ListRecommendationResourcesInput {
     pub fn recommendation_identifier(&self) -> ::std::option::Option<&str> {
         self.recommendation_identifier.as_deref()
     }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(&self) -> ::std::option::Option<&crate::types::RecommendationLanguage> {
+        self.language.as_ref()
+    }
 }
 impl ListRecommendationResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationResourcesInput`](crate::operation::list_recommendation_resources::ListRecommendationResourcesInput).
@@ -59,6 +65,7 @@ pub struct ListRecommendationResourcesInputBuilder {
     pub(crate) exclusion_status: ::std::option::Option<crate::types::ExclusionStatus>,
     pub(crate) region_code: ::std::option::Option<::std::string::String>,
     pub(crate) recommendation_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
 impl ListRecommendationResourcesInputBuilder {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -146,6 +153,20 @@ impl ListRecommendationResourcesInputBuilder {
     pub fn get_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_identifier
     }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(mut self, input: crate::types::RecommendationLanguage) -> Self {
+        self.language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::RecommendationLanguage>) -> Self {
+        self.language = input;
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::RecommendationLanguage> {
+        &self.language
+    }
     /// Consumes the builder and constructs a [`ListRecommendationResourcesInput`](crate::operation::list_recommendation_resources::ListRecommendationResourcesInput).
     pub fn build(
         self,
@@ -160,6 +181,7 @@ impl ListRecommendationResourcesInputBuilder {
             exclusion_status: self.exclusion_status,
             region_code: self.region_code,
             recommendation_identifier: self.recommendation_identifier,
+            language: self.language,
         })
     }
 }

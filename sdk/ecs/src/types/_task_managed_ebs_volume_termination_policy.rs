@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskManagedEbsVolumeTerminationPolicy {
-    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified,  Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the  default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your  account.</p>
+    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified, Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your account.</p>
     pub delete_on_termination: bool,
 }
 impl TaskManagedEbsVolumeTerminationPolicy {
-    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified,  Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the  default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your  account.</p>
+    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified, Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your account.</p>
     pub fn delete_on_termination(&self) -> bool {
         self.delete_on_termination
     }
@@ -27,18 +27,18 @@ pub struct TaskManagedEbsVolumeTerminationPolicyBuilder {
     pub(crate) delete_on_termination: ::std::option::Option<bool>,
 }
 impl TaskManagedEbsVolumeTerminationPolicyBuilder {
-    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified,  Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the  default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your  account.</p>
+    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified, Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your account.</p>
     /// This field is required.
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified,  Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the  default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your  account.</p>
+    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified, Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your account.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
-    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified,  Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the  default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your  account.</p>
+    /// <p>Indicates whether the volume should be deleted on when the task stops. If a value of <code>true</code> is specified, Amazon ECS deletes the Amazon EBS volume on your behalf when the task goes into the <code>STOPPED</code> state. If no value is specified, the default value is <code>true</code> is used. When set to <code>false</code>, Amazon ECS leaves the volume in your account.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
         &self.delete_on_termination
     }

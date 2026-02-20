@@ -100,6 +100,9 @@ where
                                 tokens, _value,
                             )?);
                         }
+                        "DisableIMDSV1" => {
+                            builder = builder.set_disable_imdsv1(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

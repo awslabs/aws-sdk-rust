@@ -49,6 +49,8 @@ pub struct AssociationVersionInfo {
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>
     pub target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl AssociationVersionInfo {
     /// <p>The ID created by the system when the association was created.</p>
@@ -143,6 +145,10 @@ impl AssociationVersionInfo {
     pub fn target_maps(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>] {
         self.target_maps.as_deref().unwrap_or_default()
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn association_dispatch_assume_role(&self) -> ::std::option::Option<&str> {
+        self.association_dispatch_assume_role.as_deref()
+    }
 }
 impl ::std::fmt::Debug for AssociationVersionInfo {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -167,6 +173,7 @@ impl ::std::fmt::Debug for AssociationVersionInfo {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
+        formatter.field("association_dispatch_assume_role", &self.association_dispatch_assume_role);
         formatter.finish()
     }
 }
@@ -202,6 +209,7 @@ pub struct AssociationVersionInfoBuilder {
     pub(crate) duration: ::std::option::Option<i32>,
     pub(crate) target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
+    pub(crate) association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl AssociationVersionInfoBuilder {
     /// <p>The ID created by the system when the association was created.</p>
@@ -536,6 +544,20 @@ impl AssociationVersionInfoBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>> {
         &self.target_maps
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn association_dispatch_assume_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn set_association_dispatch_assume_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = input;
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn get_association_dispatch_assume_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_dispatch_assume_role
+    }
     /// Consumes the builder and constructs a [`AssociationVersionInfo`](crate::types::AssociationVersionInfo).
     pub fn build(self) -> crate::types::AssociationVersionInfo {
         crate::types::AssociationVersionInfo {
@@ -559,6 +581,7 @@ impl AssociationVersionInfoBuilder {
             schedule_offset: self.schedule_offset,
             duration: self.duration,
             target_maps: self.target_maps,
+            association_dispatch_assume_role: self.association_dispatch_assume_role,
         }
     }
 }
@@ -585,6 +608,7 @@ impl ::std::fmt::Debug for AssociationVersionInfoBuilder {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
+        formatter.field("association_dispatch_assume_role", &self.association_dispatch_assume_role);
         formatter.finish()
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::batch_update_recommendation_resource_exclusion::builders:
 }
 /// Fluent builder constructing a request to `BatchUpdateRecommendationResourceExclusion`.
 ///
-/// <p>Update one or more exclusion status for a list of recommendation resources</p>
+/// <p>Update one or more exclusion statuses for a list of recommendation resources. This API supports up to 25 unique recommendation resource ARNs per request. This API currently doesn't support prioritized recommendation resources. This API updates global recommendations, eliminating the need to call the API in each AWS Region. After submitting an exclusion update, note that it might take a few minutes for the changes to be reflected in the system.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchUpdateRecommendationResourceExclusionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

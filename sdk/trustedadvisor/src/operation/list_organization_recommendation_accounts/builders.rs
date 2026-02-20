@@ -22,7 +22,7 @@ impl crate::operation::list_organization_recommendation_accounts::builders::List
 }
 /// Fluent builder constructing a request to `ListOrganizationRecommendationAccounts`.
 ///
-/// <p>Lists the accounts that own the resources for an organization aggregate recommendation. This API only supports prioritized recommendations.</p>
+/// <p>Lists the accounts that own the resources for an organization aggregate recommendation. This API only supports prioritized recommendations and provides global priority recommendations, eliminating the need to call the API in each AWS Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationRecommendationAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -18,5 +18,8 @@ pub fn ser_create_association_batch_input_input(
         }
         array_2.finish();
     }
+    if let Some(var_5) = &input.association_dispatch_assume_role {
+        object.key("AssociationDispatchAssumeRole").string(var_5.as_str());
+    }
     Ok(())
 }

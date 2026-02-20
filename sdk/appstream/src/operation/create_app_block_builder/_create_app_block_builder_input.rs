@@ -42,6 +42,8 @@ pub struct CreateAppBlockBuilderInput {
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the app block builder only through the specified endpoints.</p>
     pub access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl CreateAppBlockBuilderInput {
     /// <p>The unique name for the app block builder.</p>
@@ -105,6 +107,10 @@ impl CreateAppBlockBuilderInput {
     pub fn access_endpoints(&self) -> &[crate::types::AccessEndpoint] {
         self.access_endpoints.as_deref().unwrap_or_default()
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl CreateAppBlockBuilderInput {
     /// Creates a new builder-style object to manufacture [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
@@ -127,6 +133,7 @@ pub struct CreateAppBlockBuilderInputBuilder {
     pub(crate) enable_default_internet_access: ::std::option::Option<bool>,
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl CreateAppBlockBuilderInputBuilder {
     /// <p>The unique name for the app block builder.</p>
@@ -342,6 +349,20 @@ impl CreateAppBlockBuilderInputBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         &self.access_endpoints
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`CreateAppBlockBuilderInput`](crate::operation::create_app_block_builder::CreateAppBlockBuilderInput).
     pub fn build(
         self,
@@ -358,6 +379,7 @@ impl CreateAppBlockBuilderInputBuilder {
             enable_default_internet_access: self.enable_default_internet_access,
             iam_role_arn: self.iam_role_arn,
             access_endpoints: self.access_endpoints,
+            disable_imdsv1: self.disable_imdsv1,
         })
     }
 }

@@ -67,6 +67,8 @@ pub struct AssociationDescription {
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     /// <p>The CloudWatch alarm that was invoked during the association.</p>
     pub triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl AssociationDescription {
     /// <p>The name of the SSM document.</p>
@@ -199,6 +201,10 @@ impl AssociationDescription {
     pub fn triggered_alarms(&self) -> &[crate::types::AlarmStateInformation] {
         self.triggered_alarms.as_deref().unwrap_or_default()
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn association_dispatch_assume_role(&self) -> ::std::option::Option<&str> {
+        self.association_dispatch_assume_role.as_deref()
+    }
 }
 impl ::std::fmt::Debug for AssociationDescription {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -232,6 +238,7 @@ impl ::std::fmt::Debug for AssociationDescription {
         formatter.field("target_maps", &self.target_maps);
         formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.field("triggered_alarms", &self.triggered_alarms);
+        formatter.field("association_dispatch_assume_role", &self.association_dispatch_assume_role);
         formatter.finish()
     }
 }
@@ -276,6 +283,7 @@ pub struct AssociationDescriptionBuilder {
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
     pub(crate) triggered_alarms: ::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl AssociationDescriptionBuilder {
     /// <p>The name of the SSM document.</p>
@@ -742,6 +750,20 @@ impl AssociationDescriptionBuilder {
     pub fn get_triggered_alarms(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AlarmStateInformation>> {
         &self.triggered_alarms
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn association_dispatch_assume_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn set_association_dispatch_assume_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = input;
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p>
+    pub fn get_association_dispatch_assume_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_dispatch_assume_role
+    }
     /// Consumes the builder and constructs a [`AssociationDescription`](crate::types::AssociationDescription).
     pub fn build(self) -> crate::types::AssociationDescription {
         crate::types::AssociationDescription {
@@ -774,6 +796,7 @@ impl AssociationDescriptionBuilder {
             target_maps: self.target_maps,
             alarm_configuration: self.alarm_configuration,
             triggered_alarms: self.triggered_alarms,
+            association_dispatch_assume_role: self.association_dispatch_assume_role,
         }
     }
 }
@@ -809,6 +832,7 @@ impl ::std::fmt::Debug for AssociationDescriptionBuilder {
         formatter.field("target_maps", &self.target_maps);
         formatter.field("alarm_configuration", &self.alarm_configuration);
         formatter.field("triggered_alarms", &self.triggered_alarms);
+        formatter.field("association_dispatch_assume_role", &self.association_dispatch_assume_role);
         formatter.finish()
     }
 }

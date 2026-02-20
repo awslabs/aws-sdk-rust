@@ -315,4 +315,18 @@ impl CreateAppBlockBuilderFluentBuilder {
     pub fn get_access_endpoints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>> {
         self.inner.get_access_endpoints()
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.inner = self.inner.disable_imdsv1(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disable_imdsv1(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_imdsv1()
+    }
 }

@@ -134,5 +134,8 @@ pub fn ser_update_association_input_input(
         crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_43, var_42)?;
         object_43.finish();
     }
+    if let Some(var_44) = &input.association_dispatch_assume_role {
+        object.key("AssociationDispatchAssumeRole").string(var_44.as_str());
+    }
     Ok(())
 }

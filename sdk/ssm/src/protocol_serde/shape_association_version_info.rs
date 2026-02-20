@@ -134,6 +134,13 @@ where
                         "TargetMaps" => {
                             builder = builder.set_target_maps(crate::protocol_serde::shape_target_maps::de_target_maps(tokens, _value)?);
                         }
+                        "AssociationDispatchAssumeRole" => {
+                            builder = builder.set_association_dispatch_assume_role(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

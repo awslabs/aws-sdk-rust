@@ -22,7 +22,7 @@ impl crate::operation::update_recommendation_lifecycle::builders::UpdateRecommen
 }
 /// Fluent builder constructing a request to `UpdateRecommendationLifecycle`.
 ///
-/// <p>Update the lifecyle of a Recommendation. This API only supports prioritized recommendations.</p>
+/// <p>Update the lifecyle of a Recommendation. This API only supports prioritized recommendations and updates global priority recommendations, eliminating the need to call the API in each AWS Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRecommendationLifecycleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

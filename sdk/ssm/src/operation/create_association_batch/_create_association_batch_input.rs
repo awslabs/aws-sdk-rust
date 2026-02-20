@@ -5,6 +5,11 @@
 pub struct CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateAssociationBatchInput {
     /// <p>One or more associations.</p>
@@ -12,6 +17,13 @@ impl CreateAssociationBatchInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::CreateAssociationBatchRequestEntry] {
         self.entries.as_deref().unwrap_or_default()
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn association_dispatch_assume_role(&self) -> ::std::option::Option<&str> {
+        self.association_dispatch_assume_role.as_deref()
     }
 }
 impl CreateAssociationBatchInput {
@@ -26,6 +38,7 @@ impl CreateAssociationBatchInput {
 #[non_exhaustive]
 pub struct CreateAssociationBatchInputBuilder {
     pub(crate) entries: ::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>>,
+    pub(crate) association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl CreateAssociationBatchInputBuilder {
     /// Appends an item to `entries`.
@@ -48,6 +61,29 @@ impl CreateAssociationBatchInputBuilder {
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CreateAssociationBatchRequestEntry>> {
         &self.entries
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn association_dispatch_assume_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn set_association_dispatch_assume_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = input;
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn get_association_dispatch_assume_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_dispatch_assume_role
+    }
     /// Consumes the builder and constructs a [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
     pub fn build(
         self,
@@ -55,6 +91,9 @@ impl CreateAssociationBatchInputBuilder {
         crate::operation::create_association_batch::CreateAssociationBatchInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::create_association_batch::CreateAssociationBatchInput { entries: self.entries })
+        ::std::result::Result::Ok(crate::operation::create_association_batch::CreateAssociationBatchInput {
+            entries: self.entries,
+            association_dispatch_assume_role: self.association_dispatch_assume_role,
+        })
     }
 }

@@ -201,6 +201,34 @@ impl InvokeEndpointAsyncFluentBuilder {
     pub fn get_input_location(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_location()
     }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn s3_output_path_extension(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_output_path_extension(input.into());
+        self
+    }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn set_s3_output_path_extension(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_output_path_extension(input);
+        self
+    }
+    /// <p>The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.</p>
+    pub fn get_s3_output_path_extension(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_output_path_extension()
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn filename(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.filename(input.into());
+        self
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn set_filename(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_filename(input);
+        self
+    }
+    /// <p>The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.</p>
+    pub fn get_filename(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_filename()
+    }
     /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.</p>
     pub fn request_ttl_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.request_ttl_seconds(input);

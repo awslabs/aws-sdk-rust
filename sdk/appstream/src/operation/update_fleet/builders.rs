@@ -808,4 +808,24 @@ impl UpdateFleetFluentBuilder {
     pub fn get_root_volume_config(&self) -> &::std::option::Option<crate::types::VolumeConfig> {
         self.inner.get_root_volume_config()
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.inner = self.inner.disable_imdsv1(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_disable_imdsv1(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        self.inner.get_disable_imdsv1()
+    }
 }

@@ -185,6 +185,10 @@ pub struct CreateFleetInput {
     pub max_sessions_per_instance: ::std::option::Option<i32>,
     /// <p>The configuration for the root volume of fleet instances. Use this to customize storage capacity from 200 GB up to 500 GB based on your application requirements.</p>
     pub root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
@@ -417,6 +421,12 @@ impl CreateFleetInput {
     pub fn root_volume_config(&self) -> ::std::option::Option<&crate::types::VolumeConfig> {
         self.root_volume_config.as_ref()
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl CreateFleetInput {
     /// Creates a new builder-style object to manufacture [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
@@ -452,6 +462,7 @@ pub struct CreateFleetInputBuilder {
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) max_sessions_per_instance: ::std::option::Option<i32>,
     pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl CreateFleetInputBuilder {
     /// <p>A unique name for the fleet.</p>
@@ -1198,6 +1209,26 @@ impl CreateFleetInputBuilder {
     pub fn get_root_volume_config(&self) -> &::std::option::Option<crate::types::VolumeConfig> {
         &self.root_volume_config
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
@@ -1224,6 +1255,7 @@ impl CreateFleetInputBuilder {
             session_script_s3_location: self.session_script_s3_location,
             max_sessions_per_instance: self.max_sessions_per_instance,
             root_volume_config: self.root_volume_config,
+            disable_imdsv1: self.disable_imdsv1,
         })
     }
 }

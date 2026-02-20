@@ -139,6 +139,8 @@ pub struct ImageBuilder {
     pub root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
     /// <p>Indicates whether the image builder is using the latest WorkSpaces Applications agent version or not.</p>
     pub latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl ImageBuilder {
     /// <p>The name of the image builder.</p>
@@ -320,6 +322,10 @@ impl ImageBuilder {
     pub fn latest_appstream_agent_version(&self) -> ::std::option::Option<&crate::types::LatestAppstreamAgentVersion> {
         self.latest_appstream_agent_version.as_ref()
     }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl ImageBuilder {
     /// Creates a new builder-style object to manufacture [`ImageBuilder`](crate::types::ImageBuilder).
@@ -352,6 +358,7 @@ pub struct ImageBuilderBuilder {
     pub(crate) access_endpoints: ::std::option::Option<::std::vec::Vec<crate::types::AccessEndpoint>>,
     pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
     pub(crate) latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl ImageBuilderBuilder {
     /// <p>The name of the image builder.</p>
@@ -932,6 +939,20 @@ impl ImageBuilderBuilder {
     pub fn get_latest_appstream_agent_version(&self) -> &::std::option::Option<crate::types::LatestAppstreamAgentVersion> {
         &self.latest_appstream_agent_version
     }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`ImageBuilder`](crate::types::ImageBuilder).
     pub fn build(self) -> crate::types::ImageBuilder {
         crate::types::ImageBuilder {
@@ -955,6 +976,7 @@ impl ImageBuilderBuilder {
             access_endpoints: self.access_endpoints,
             root_volume_config: self.root_volume_config,
             latest_appstream_agent_version: self.latest_appstream_agent_version,
+            disable_imdsv1: self.disable_imdsv1,
         }
     }
 }

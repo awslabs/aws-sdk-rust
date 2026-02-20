@@ -8,7 +8,7 @@ pub struct OrganizationRecommendationResourceSummary {
     pub id: ::std::string::String,
     /// <p>The ARN of the Recommendation Resource</p>
     pub arn: ::std::string::String,
-    /// <p>The AWS resource identifier</p>
+    /// <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
     pub aws_resource_id: ::std::string::String,
     /// <p>The AWS Region code that the Recommendation Resource is in</p>
     pub region_code: ::std::string::String,
@@ -36,7 +36,7 @@ impl OrganizationRecommendationResourceSummary {
         use std::ops::Deref;
         self.arn.deref()
     }
-    /// <p>The AWS resource identifier</p>
+    /// <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
     pub fn aws_resource_id(&self) -> &str {
         use std::ops::Deref;
         self.aws_resource_id.deref()
@@ -125,18 +125,18 @@ impl OrganizationRecommendationResourceSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
-    /// <p>The AWS resource identifier</p>
+    /// <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
     /// This field is required.
     pub fn aws_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS resource identifier</p>
+    /// <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
     pub fn set_aws_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_resource_id = input;
         self
     }
-    /// <p>The AWS resource identifier</p>
+    /// <p>The AWS resource identifier. There are certain checks that generate recommendation resources without an awsResourceId.</p>
     pub fn get_aws_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_resource_id
     }

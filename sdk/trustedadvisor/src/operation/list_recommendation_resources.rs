@@ -241,6 +241,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRecommen
                         query.push_kv("regionCode", &::aws_smithy_http::query::fmt_string(inner_6));
                     }
                 }
+                if let ::std::option::Option::Some(inner_7) = &_input.language {
+                    {
+                        query.push_kv("language", &::aws_smithy_http::query::fmt_string(inner_7));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

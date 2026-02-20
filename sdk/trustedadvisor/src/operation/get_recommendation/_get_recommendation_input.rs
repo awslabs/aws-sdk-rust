@@ -5,11 +5,17 @@
 pub struct GetRecommendationInput {
     /// <p>The Recommendation identifier</p>
     pub recommendation_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
 impl GetRecommendationInput {
     /// <p>The Recommendation identifier</p>
     pub fn recommendation_identifier(&self) -> ::std::option::Option<&str> {
         self.recommendation_identifier.as_deref()
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(&self) -> ::std::option::Option<&crate::types::RecommendationLanguage> {
+        self.language.as_ref()
     }
 }
 impl GetRecommendationInput {
@@ -24,6 +30,7 @@ impl GetRecommendationInput {
 #[non_exhaustive]
 pub struct GetRecommendationInputBuilder {
     pub(crate) recommendation_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
 impl GetRecommendationInputBuilder {
     /// <p>The Recommendation identifier</p>
@@ -41,12 +48,27 @@ impl GetRecommendationInputBuilder {
     pub fn get_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.recommendation_identifier
     }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(mut self, input: crate::types::RecommendationLanguage) -> Self {
+        self.language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::RecommendationLanguage>) -> Self {
+        self.language = input;
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::RecommendationLanguage> {
+        &self.language
+    }
     /// Consumes the builder and constructs a [`GetRecommendationInput`](crate::operation::get_recommendation::GetRecommendationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_recommendation::GetRecommendationInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recommendation::GetRecommendationInput {
             recommendation_identifier: self.recommendation_identifier,
+            language: self.language,
         })
     }
 }

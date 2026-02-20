@@ -171,6 +171,8 @@ pub struct Fleet {
     pub max_sessions_per_instance: ::std::option::Option<i32>,
     /// <p>The current configuration of the root volume for fleet instances, including the storage size in GB.</p>
     pub root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the fleet.</p>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl Fleet {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -396,6 +398,10 @@ impl Fleet {
     pub fn root_volume_config(&self) -> ::std::option::Option<&crate::types::VolumeConfig> {
         self.root_volume_config.as_ref()
     }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the fleet.</p>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl Fleet {
     /// Creates a new builder-style object to manufacture [`Fleet`](crate::types::Fleet).
@@ -434,6 +440,7 @@ pub struct FleetBuilder {
     pub(crate) session_script_s3_location: ::std::option::Option<crate::types::S3Location>,
     pub(crate) max_sessions_per_instance: ::std::option::Option<i32>,
     pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl FleetBuilder {
     /// <p>The Amazon Resource Name (ARN) for the fleet.</p>
@@ -1162,6 +1169,20 @@ impl FleetBuilder {
     pub fn get_root_volume_config(&self) -> &::std::option::Option<crate::types::VolumeConfig> {
         &self.root_volume_config
     }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the fleet.</p>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the fleet.</p>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the fleet.</p>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`Fleet`](crate::types::Fleet).
     pub fn build(self) -> crate::types::Fleet {
         crate::types::Fleet {
@@ -1191,6 +1212,7 @@ impl FleetBuilder {
             session_script_s3_location: self.session_script_s3_location,
             max_sessions_per_instance: self.max_sessions_per_instance,
             root_volume_config: self.root_volume_config,
+            disable_imdsv1: self.disable_imdsv1,
         }
     }
 }

@@ -73,6 +73,11 @@ pub struct UpdateAssociationInput {
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     /// <p>The details for the CloudWatch alarm you want to apply to an automation or command.</p>
     pub alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssociationInput {
     /// <p>The ID of the association you want to update.</p>
@@ -194,6 +199,13 @@ impl UpdateAssociationInput {
     pub fn alarm_configuration(&self) -> ::std::option::Option<&crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn association_dispatch_assume_role(&self) -> ::std::option::Option<&str> {
+        self.association_dispatch_assume_role.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAssociationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -219,6 +231,7 @@ impl ::std::fmt::Debug for UpdateAssociationInput {
         formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
         formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("association_dispatch_assume_role", &self.association_dispatch_assume_role);
         formatter.finish()
     }
 }
@@ -255,6 +268,7 @@ pub struct UpdateAssociationInputBuilder {
     pub(crate) target_maps:
         ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>>,
     pub(crate) alarm_configuration: ::std::option::Option<crate::types::AlarmConfiguration>,
+    pub(crate) association_dispatch_assume_role: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAssociationInputBuilder {
     /// <p>The ID of the association you want to update.</p>
@@ -673,6 +687,29 @@ impl UpdateAssociationInputBuilder {
     pub fn get_alarm_configuration(&self) -> &::std::option::Option<crate::types::AlarmConfiguration> {
         &self.alarm_configuration
     }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn association_dispatch_assume_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn set_association_dispatch_assume_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.association_dispatch_assume_role = input;
+        self
+    }
+    /// <p>A role used by association to take actions on your behalf. State Manager will assume this role and call required APIs when dispatching configurations to nodes. If not specified, <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html"> service-linked role for Systems Manager</a> will be used by default.</p><note>
+    /// <p>It is recommended that you define a custom IAM role so that you have full control of the permissions that State Manager has when taking actions on your behalf.</p>
+    /// <p>Service-linked role support in State Manager is being phased out. Associations relying on service-linked role may require updates in the future to continue functioning properly.</p>
+    /// </note>
+    pub fn get_association_dispatch_assume_role(&self) -> &::std::option::Option<::std::string::String> {
+        &self.association_dispatch_assume_role
+    }
     /// Consumes the builder and constructs a [`UpdateAssociationInput`](crate::operation::update_association::UpdateAssociationInput).
     pub fn build(
         self,
@@ -699,6 +736,7 @@ impl UpdateAssociationInputBuilder {
             duration: self.duration,
             target_maps: self.target_maps,
             alarm_configuration: self.alarm_configuration,
+            association_dispatch_assume_role: self.association_dispatch_assume_role,
         })
     }
 }
@@ -726,6 +764,7 @@ impl ::std::fmt::Debug for UpdateAssociationInputBuilder {
         formatter.field("duration", &self.duration);
         formatter.field("target_maps", &self.target_maps);
         formatter.field("alarm_configuration", &self.alarm_configuration);
+        formatter.field("association_dispatch_assume_role", &self.association_dispatch_assume_role);
         formatter.finish()
     }
 }

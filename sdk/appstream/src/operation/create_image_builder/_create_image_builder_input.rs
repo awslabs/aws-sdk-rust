@@ -236,6 +236,10 @@ pub struct CreateImageBuilderInput {
     /// <p>Microsoft_Project_2024_Standard_64Bit</p></li>
     /// </ul>
     pub softwares_to_uninstall: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub disable_imdsv1: ::std::option::Option<bool>,
 }
 impl CreateImageBuilderInput {
     /// <p>A unique name for the image builder.</p>
@@ -509,6 +513,12 @@ impl CreateImageBuilderInput {
     pub fn softwares_to_uninstall(&self) -> &[::std::string::String] {
         self.softwares_to_uninstall.as_deref().unwrap_or_default()
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
+        self.disable_imdsv1
+    }
 }
 impl CreateImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
@@ -537,6 +547,7 @@ pub struct CreateImageBuilderInputBuilder {
     pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
     pub(crate) softwares_to_install: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) softwares_to_uninstall: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) disable_imdsv1: ::std::option::Option<bool>,
 }
 impl CreateImageBuilderInputBuilder {
     /// <p>A unique name for the image builder.</p>
@@ -1392,6 +1403,26 @@ impl CreateImageBuilderInputBuilder {
     pub fn get_softwares_to_uninstall(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.softwares_to_uninstall
     }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn disable_imdsv1(mut self, input: bool) -> Self {
+        self.disable_imdsv1 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn set_disable_imdsv1(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.disable_imdsv1 = input;
+        self
+    }
+    /// <p>Set to true to disable Instance Metadata Service Version 1 (IMDSv1) and enforce IMDSv2. Set to false to enable both IMDSv1 and IMDSv2.</p><note>
+    /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
+    /// </note>
+    pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
+        &self.disable_imdsv1
+    }
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
     pub fn build(
         self,
@@ -1414,6 +1445,7 @@ impl CreateImageBuilderInputBuilder {
             root_volume_config: self.root_volume_config,
             softwares_to_install: self.softwares_to_install,
             softwares_to_uninstall: self.softwares_to_uninstall,
+            disable_imdsv1: self.disable_imdsv1,
         })
     }
 }

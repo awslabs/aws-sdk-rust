@@ -22,7 +22,7 @@ impl crate::operation::list_checks::builders::ListChecksInputBuilder {
 }
 /// Fluent builder constructing a request to `ListChecks`.
 ///
-/// <p>List a filterable set of Checks</p>
+/// <p>List a filterable set of Checks. This API provides global recommendations, eliminating the need to call the API in each AWS Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListChecksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

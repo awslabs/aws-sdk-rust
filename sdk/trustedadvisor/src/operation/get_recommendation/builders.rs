@@ -22,7 +22,7 @@ impl crate::operation::get_recommendation::builders::GetRecommendationInputBuild
 }
 /// Fluent builder constructing a request to `GetRecommendation`.
 ///
-/// <p>Get a specific Recommendation</p>
+/// <p>Get a specific Recommendation. This API provides global recommendations, eliminating the need to call the API in each AWS Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,5 +121,19 @@ impl GetRecommendationFluentBuilder {
     /// <p>The Recommendation identifier</p>
     pub fn get_recommendation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_recommendation_identifier()
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(mut self, input: crate::types::RecommendationLanguage) -> Self {
+        self.inner = self.inner.language(input);
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::RecommendationLanguage>) -> Self {
+        self.inner = self.inner.set_language(input);
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::RecommendationLanguage> {
+        self.inner.get_language()
     }
 }

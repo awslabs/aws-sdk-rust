@@ -32,6 +32,8 @@ pub struct Recommendation {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the Recommendation</p>
     pub arn: ::std::string::String,
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub status_reason: ::std::option::Option<crate::types::StatusReason>,
     /// <p>A description for AWS Trusted Advisor recommendations</p>
     pub description: ::std::string::String,
     /// <p>The creator, if created by AWS Trusted Advisor Priority</p>
@@ -110,6 +112,10 @@ impl Recommendation {
         use std::ops::Deref;
         self.arn.deref()
     }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::StatusReason> {
+        self.status_reason.as_ref()
+    }
     /// <p>A description for AWS Trusted Advisor recommendations</p>
     pub fn description(&self) -> &str {
         use std::ops::Deref;
@@ -157,6 +163,7 @@ impl ::std::fmt::Debug for Recommendation {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("arn", &self.arn);
+        formatter.field("status_reason", &self.status_reason);
         formatter.field("description", &self.description);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_on_behalf_of", &self.updated_on_behalf_of);
@@ -192,6 +199,7 @@ pub struct RecommendationBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::StatusReason>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_on_behalf_of: ::std::option::Option<::std::string::String>,
@@ -416,6 +424,20 @@ impl RecommendationBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn status_reason(mut self, input: crate::types::StatusReason) -> Self {
+        self.status_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::StatusReason>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StatusReason> {
+        &self.status_reason
+    }
     /// <p>A description for AWS Trusted Advisor recommendations</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -576,6 +598,7 @@ impl RecommendationBuilder {
                     "arn was not specified but it is required when building Recommendation",
                 )
             })?,
+            status_reason: self.status_reason,
             description: self.description.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "description",
@@ -608,6 +631,7 @@ impl ::std::fmt::Debug for RecommendationBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_updated_at", &self.last_updated_at);
         formatter.field("arn", &self.arn);
+        formatter.field("status_reason", &self.status_reason);
         formatter.field("description", &self.description);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_on_behalf_of", &self.updated_on_behalf_of);

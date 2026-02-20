@@ -10,6 +10,8 @@ pub struct RecommendationResourcesAggregates {
     pub warning_count: i64,
     /// <p>The number of AWS resources that were flagged to have errors according to the Trusted Advisor check</p>
     pub error_count: i64,
+    /// <p>The number of AWS resources belonging to this Trusted Advisor check that were excluded by the customer</p>
+    pub excluded_count: ::std::option::Option<i64>,
 }
 impl RecommendationResourcesAggregates {
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
@@ -23,6 +25,10 @@ impl RecommendationResourcesAggregates {
     /// <p>The number of AWS resources that were flagged to have errors according to the Trusted Advisor check</p>
     pub fn error_count(&self) -> i64 {
         self.error_count
+    }
+    /// <p>The number of AWS resources belonging to this Trusted Advisor check that were excluded by the customer</p>
+    pub fn excluded_count(&self) -> ::std::option::Option<i64> {
+        self.excluded_count
     }
 }
 impl RecommendationResourcesAggregates {
@@ -39,6 +45,7 @@ pub struct RecommendationResourcesAggregatesBuilder {
     pub(crate) ok_count: ::std::option::Option<i64>,
     pub(crate) warning_count: ::std::option::Option<i64>,
     pub(crate) error_count: ::std::option::Option<i64>,
+    pub(crate) excluded_count: ::std::option::Option<i64>,
 }
 impl RecommendationResourcesAggregatesBuilder {
     /// <p>The number of AWS resources that were flagged to be OK according to the Trusted Advisor check</p>
@@ -86,6 +93,20 @@ impl RecommendationResourcesAggregatesBuilder {
     pub fn get_error_count(&self) -> &::std::option::Option<i64> {
         &self.error_count
     }
+    /// <p>The number of AWS resources belonging to this Trusted Advisor check that were excluded by the customer</p>
+    pub fn excluded_count(mut self, input: i64) -> Self {
+        self.excluded_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of AWS resources belonging to this Trusted Advisor check that were excluded by the customer</p>
+    pub fn set_excluded_count(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.excluded_count = input;
+        self
+    }
+    /// <p>The number of AWS resources belonging to this Trusted Advisor check that were excluded by the customer</p>
+    pub fn get_excluded_count(&self) -> &::std::option::Option<i64> {
+        &self.excluded_count
+    }
     /// Consumes the builder and constructs a [`RecommendationResourcesAggregates`](crate::types::RecommendationResourcesAggregates).
     /// This method will fail if any of the following fields are not set:
     /// - [`ok_count`](crate::types::builders::RecommendationResourcesAggregatesBuilder::ok_count)
@@ -111,6 +132,7 @@ impl RecommendationResourcesAggregatesBuilder {
                     "error_count was not specified but it is required when building RecommendationResourcesAggregates",
                 )
             })?,
+            excluded_count: self.excluded_count,
         })
     }
 }

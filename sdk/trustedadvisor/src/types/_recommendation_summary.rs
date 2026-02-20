@@ -32,6 +32,8 @@ pub struct RecommendationSummary {
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the Recommendation</p>
     pub arn: ::std::string::String,
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub status_reason: ::std::option::Option<crate::types::StatusReason>,
 }
 impl RecommendationSummary {
     /// <p>The ID which identifies where the Recommendation was produced</p>
@@ -96,6 +98,10 @@ impl RecommendationSummary {
         use std::ops::Deref;
         self.arn.deref()
     }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::StatusReason> {
+        self.status_reason.as_ref()
+    }
 }
 impl RecommendationSummary {
     /// Creates a new builder-style object to manufacture [`RecommendationSummary`](crate::types::RecommendationSummary).
@@ -122,6 +128,7 @@ pub struct RecommendationSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::StatusReason>,
 }
 impl RecommendationSummaryBuilder {
     /// <p>The ID which identifies where the Recommendation was produced</p>
@@ -339,6 +346,20 @@ impl RecommendationSummaryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn status_reason(mut self, input: crate::types::StatusReason) -> Self {
+        self.status_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::StatusReason>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>This attribute provides additional details about potential discrepancies in check status determination.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::StatusReason> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`RecommendationSummary`](crate::types::RecommendationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RecommendationSummaryBuilder::id)
@@ -399,6 +420,7 @@ impl RecommendationSummaryBuilder {
                     "arn was not specified but it is required when building RecommendationSummary",
                 )
             })?,
+            status_reason: self.status_reason,
         })
     }
 }

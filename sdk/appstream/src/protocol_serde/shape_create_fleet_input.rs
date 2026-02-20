@@ -115,5 +115,8 @@ pub fn ser_create_fleet_input_input(
         crate::protocol_serde::shape_volume_config::ser_volume_config(&mut object_33, var_32)?;
         object_33.finish();
     }
+    if let Some(var_34) = &input.disable_imdsv1 {
+        object.key("DisableIMDSV1").boolean(*var_34);
+    }
     Ok(())
 }

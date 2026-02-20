@@ -22,7 +22,7 @@ impl crate::operation::get_organization_recommendation::builders::GetOrganizatio
 }
 /// Fluent builder constructing a request to `GetOrganizationRecommendation`.
 ///
-/// <p>Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized recommendations.</p>
+/// <p>Get a specific recommendation within an AWS Organizations organization. This API supports only prioritized recommendations and provides global priority recommendations, eliminating the need to call the API in each AWS Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetOrganizationRecommendationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

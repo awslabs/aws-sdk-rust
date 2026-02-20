@@ -88,5 +88,8 @@ pub fn ser_create_image_builder_input_input(
         }
         array_28.finish();
     }
+    if let Some(var_30) = &input.disable_imdsv1 {
+        object.key("DisableIMDSV1").boolean(*var_30);
+    }
     Ok(())
 }

@@ -149,6 +149,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Shield | [aws-sdk-shield](https://crates.io/crates/aws-sdk-shield) ([docs](https://docs.rs/aws-sdk-shield)) |
 | AWS Sign-In Service | [aws-sdk-signin](https://crates.io/crates/aws-sdk-signin) ([docs](https://docs.rs/aws-sdk-signin)) |
 | AWS Signer | [aws-sdk-signer](https://crates.io/crates/aws-sdk-signer) ([docs](https://docs.rs/aws-sdk-signer)) |
+| AWS Signer Data Plane | [aws-sdk-signerdata](https://crates.io/crates/aws-sdk-signerdata) ([docs](https://docs.rs/aws-sdk-signerdata)) |
 | AWS SimSpace Weaver | [aws-sdk-simspaceweaver](https://crates.io/crates/aws-sdk-simspaceweaver) ([docs](https://docs.rs/aws-sdk-simspaceweaver)) |
 | AWS Single Sign-On | [aws-sdk-sso](https://crates.io/crates/aws-sdk-sso) ([docs](https://docs.rs/aws-sdk-sso)) |
 | AWS Single Sign-On Admin | [aws-sdk-ssoadmin](https://crates.io/crates/aws-sdk-ssoadmin) ([docs](https://docs.rs/aws-sdk-ssoadmin)) |

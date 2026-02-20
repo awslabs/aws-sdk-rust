@@ -23,6 +23,8 @@ pub struct ListRecommendationsInput {
     pub after_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Before the last update of the Recommendation</p>
     pub before_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
 impl ListRecommendationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -65,6 +67,10 @@ impl ListRecommendationsInput {
     pub fn before_last_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.before_last_updated_at.as_ref()
     }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(&self) -> ::std::option::Option<&crate::types::RecommendationLanguage> {
+        self.language.as_ref()
+    }
 }
 impl ListRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
@@ -87,6 +93,7 @@ pub struct ListRecommendationsInputBuilder {
     pub(crate) check_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) after_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) before_last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) language: ::std::option::Option<crate::types::RecommendationLanguage>,
 }
 impl ListRecommendationsInputBuilder {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -229,6 +236,20 @@ impl ListRecommendationsInputBuilder {
     pub fn get_before_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.before_last_updated_at
     }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn language(mut self, input: crate::types::RecommendationLanguage) -> Self {
+        self.language = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn set_language(mut self, input: ::std::option::Option<crate::types::RecommendationLanguage>) -> Self {
+        self.language = input;
+        self
+    }
+    /// <p>The ISO 639-1 code for the language that you want your recommendations to appear in.</p>
+    pub fn get_language(&self) -> &::std::option::Option<crate::types::RecommendationLanguage> {
+        &self.language
+    }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
     pub fn build(
         self,
@@ -245,6 +266,7 @@ impl ListRecommendationsInputBuilder {
             check_identifier: self.check_identifier,
             after_last_updated_at: self.after_last_updated_at,
             before_last_updated_at: self.before_last_updated_at,
+            language: self.language,
         })
     }
 }
