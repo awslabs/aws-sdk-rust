@@ -343,6 +343,10 @@ pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInput;
 
 pub use crate::types::_mlflow_properties_input::MlflowPropertiesInput;
 
+pub use crate::types::_workflows_mwaa_properties_input::WorkflowsMwaaPropertiesInput;
+
+pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerlessPropertiesInput;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpoint;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutput;
@@ -364,6 +368,10 @@ pub use crate::types::_s3_properties_output::S3PropertiesOutput;
 pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutput;
 
 pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutput;
+
+pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaPropertiesOutput;
+
+pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutput;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
@@ -1578,6 +1586,14 @@ mod _user_search_type;
 mod _user_type;
 
 mod _username_password;
+
+mod _workflows_mwaa_properties_input;
+
+mod _workflows_mwaa_properties_output;
+
+mod _workflows_serverless_properties_input;
+
+mod _workflows_serverless_properties_output;
 
 /// Builders
 pub mod builders;

@@ -15,5 +15,8 @@ pub fn ser_network_settings(
     if let Some(var_4) = &input.data_retention {
         object.key("dataRetention").boolean(*var_4);
     }
+    if let Some(var_5) = &input.enable_trusted_data_format {
+        object.key("enableTrustedDataFormat").boolean(*var_5);
+    }
     Ok(())
 }

@@ -67,6 +67,9 @@ pub mod get_network_settings;
 /// Types for the `GetOidcInfo` operation.
 pub mod get_oidc_info;
 
+/// Types for the `GetOpentdfConfig` operation.
+pub mod get_opentdf_config;
+
 /// Types for the `GetSecurityGroup` operation.
 pub mod get_security_group;
 
@@ -105,6 +108,9 @@ pub mod register_oidc_config;
 
 /// Types for the `RegisterOidcConfigTest` operation.
 pub mod register_oidc_config_test;
+
+/// Types for the `RegisterOpentdfConfig` operation.
+pub mod register_opentdf_config;
 
 /// Types for the `UpdateBot` operation.
 pub mod update_bot;

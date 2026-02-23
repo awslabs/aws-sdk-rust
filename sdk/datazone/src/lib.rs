@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-datazone = "1.125.0"
+//! aws-sdk-datazone = "1.126.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

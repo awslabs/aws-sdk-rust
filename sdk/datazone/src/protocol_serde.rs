@@ -1125,6 +1125,14 @@ pub(crate) mod shape_user_policy_grant_principal;
 
 pub(crate) mod shape_user_profile_summary;
 
+pub(crate) mod shape_workflows_mwaa_properties_input;
+
+pub(crate) mod shape_workflows_mwaa_properties_output;
+
+pub(crate) mod shape_workflows_serverless_properties_input;
+
+pub(crate) mod shape_workflows_serverless_properties_output;
+
 pub(crate) mod shape_account_pool_list;
 
 pub(crate) mod shape_aggregation_output_items;

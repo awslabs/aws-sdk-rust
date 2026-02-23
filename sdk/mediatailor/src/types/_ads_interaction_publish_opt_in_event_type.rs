@@ -12,6 +12,7 @@
 /// ```text
 /// # let adsinteractionpublishoptineventtype = unimplemented!();
 /// match adsinteractionpublishoptineventtype {
+///     AdsInteractionPublishOptInEventType::RawAdsRequest => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::RawAdsResponse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum AdsInteractionPublishOptInEventType {
     #[allow(missing_docs)] // documentation missing in model
+    RawAdsRequest,
+    #[allow(missing_docs)] // documentation missing in model
     RawAdsResponse,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum AdsInteractionPublishOptInEventType {
 impl ::std::convert::From<&str> for AdsInteractionPublishOptInEventType {
     fn from(s: &str) -> Self {
         match s {
+            "RAW_ADS_REQUEST" => AdsInteractionPublishOptInEventType::RawAdsRequest,
             "RAW_ADS_RESPONSE" => AdsInteractionPublishOptInEventType::RawAdsResponse,
             other => AdsInteractionPublishOptInEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl AdsInteractionPublishOptInEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AdsInteractionPublishOptInEventType::RawAdsRequest => "RAW_ADS_REQUEST",
             AdsInteractionPublishOptInEventType::RawAdsResponse => "RAW_ADS_RESPONSE",
             AdsInteractionPublishOptInEventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RAW_ADS_RESPONSE"]
+        &["RAW_ADS_REQUEST", "RAW_ADS_RESPONSE"]
     }
 }
 impl ::std::convert::AsRef<str> for AdsInteractionPublishOptInEventType {
@@ -95,6 +100,7 @@ impl AdsInteractionPublishOptInEventType {
 impl ::std::fmt::Display for AdsInteractionPublishOptInEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AdsInteractionPublishOptInEventType::RawAdsRequest => write!(f, "RAW_ADS_REQUEST"),
             AdsInteractionPublishOptInEventType::RawAdsResponse => write!(f, "RAW_ADS_RESPONSE"),
             AdsInteractionPublishOptInEventType::Unknown(value) => write!(f, "{value}"),
         }

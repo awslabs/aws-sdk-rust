@@ -153,6 +153,10 @@ pub use crate::types::_amazon_q_properties_input::AmazonQPropertiesInputBuilder;
 
 pub use crate::types::_mlflow_properties_input::MlflowPropertiesInputBuilder;
 
+pub use crate::types::_workflows_mwaa_properties_input::WorkflowsMwaaPropertiesInputBuilder;
+
+pub use crate::types::_workflows_serverless_properties_input::WorkflowsServerlessPropertiesInputBuilder;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpointBuilder;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutputBuilder;
@@ -174,6 +178,10 @@ pub use crate::types::_s3_properties_output::S3PropertiesOutputBuilder;
 pub use crate::types::_amazon_q_properties_output::AmazonQPropertiesOutputBuilder;
 
 pub use crate::types::_mlflow_properties_output::MlflowPropertiesOutputBuilder;
+
+pub use crate::types::_workflows_mwaa_properties_output::WorkflowsMwaaPropertiesOutputBuilder;
+
+pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerlessPropertiesOutputBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 

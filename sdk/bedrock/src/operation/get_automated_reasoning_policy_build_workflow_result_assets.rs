@@ -229,6 +229,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAutomated
                     .as_ref()
                     .ok_or_else(|| ::aws_smithy_types::error::operation::BuildError::missing_field("asset_type", "cannot be empty or unset"))?;
                 query.push_kv("assetType", &::aws_smithy_http::query::fmt_string(inner_3));
+                if let ::std::option::Option::Some(inner_4) = &_input.asset_id {
+                    {
+                        query.push_kv("assetId", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

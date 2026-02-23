@@ -80,6 +80,24 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mlflowProperties' cannot be null")
                             })?,
                         )),
+                        "workflowsMwaaProperties" => Some(crate::types::ConnectionPropertiesOutput::WorkflowsMwaaProperties(
+                            crate::protocol_serde::shape_workflows_mwaa_properties_output::de_workflows_mwaa_properties_output(tokens, _value)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                        "value for 'workflowsMwaaProperties' cannot be null",
+                                    )
+                                })?,
+                        )),
+                        "workflowsServerlessProperties" => Some(crate::types::ConnectionPropertiesOutput::WorkflowsServerlessProperties(
+                            crate::protocol_serde::shape_workflows_serverless_properties_output::de_workflows_serverless_properties_output(
+                                tokens, _value,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'workflowsServerlessProperties' cannot be null",
+                                )
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConnectionPropertiesOutput::Unknown)

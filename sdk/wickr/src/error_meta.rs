@@ -760,6 +760,34 @@ impl From<crate::operation::get_oidc_info::GetOidcInfoError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_opentdf_config::GetOpentdfConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_opentdf_config::GetOpentdfConfigError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_opentdf_config::GetOpentdfConfigError> for Error {
+    fn from(err: crate::operation::get_opentdf_config::GetOpentdfConfigError) -> Self {
+        match err {
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::BadRequestError(inner) => Error::BadRequestError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::ForbiddenError(inner) => Error::ForbiddenError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::RateLimitError(inner) => Error::RateLimitError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::ResourceNotFoundError(inner) => Error::ResourceNotFoundError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::UnauthorizedError(inner) => Error::UnauthorizedError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::get_opentdf_config::GetOpentdfConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_security_group::GetSecurityGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1134,6 +1162,38 @@ impl From<crate::operation::register_oidc_config_test::RegisterOidcConfigTestErr
             crate::operation::register_oidc_config_test::RegisterOidcConfigTestError::UnauthorizedError(inner) => Error::UnauthorizedError(inner),
             crate::operation::register_oidc_config_test::RegisterOidcConfigTestError::ValidationError(inner) => Error::ValidationError(inner),
             crate::operation::register_oidc_config_test::RegisterOidcConfigTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_opentdf_config::RegisterOpentdfConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::register_opentdf_config::RegisterOpentdfConfigError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::register_opentdf_config::RegisterOpentdfConfigError> for Error {
+    fn from(err: crate::operation::register_opentdf_config::RegisterOpentdfConfigError) -> Self {
+        match err {
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::BadRequestError(inner) => Error::BadRequestError(inner),
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::ForbiddenError(inner) => Error::ForbiddenError(inner),
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::RateLimitError(inner) => Error::RateLimitError(inner),
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::ResourceNotFoundError(inner) => {
+                Error::ResourceNotFoundError(inner)
+            }
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::UnauthorizedError(inner) => Error::UnauthorizedError(inner),
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::register_opentdf_config::RegisterOpentdfConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

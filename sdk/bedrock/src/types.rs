@@ -169,6 +169,12 @@ pub use crate::types::_automated_reasoning_policy_generated_test_cases::Automate
 
 pub use crate::types::_automated_reasoning_policy_scenarios::AutomatedReasoningPolicyScenarios;
 
+pub use crate::types::_automated_reasoning_policy_build_result_asset_manifest::AutomatedReasoningPolicyBuildResultAssetManifest;
+
+pub use crate::types::_automated_reasoning_policy_source_document::AutomatedReasoningPolicySourceDocument;
+
+pub use crate::types::_automated_reasoning_policy_fidelity_report::AutomatedReasoningPolicyFidelityReport;
+
 pub use crate::types::_automated_reasoning_policy_test_run_status::AutomatedReasoningPolicyTestRunStatus;
 
 pub use crate::types::_automated_reasoning_policy_test_run_result::AutomatedReasoningPolicyTestRunResult;
@@ -299,6 +305,8 @@ pub use crate::types::_automated_reasoning_check_finding::AutomatedReasoningChec
 
 pub use crate::types::_automated_reasoning_policy_build_workflow_repair_content::AutomatedReasoningPolicyBuildWorkflowRepairContent;
 
+pub use crate::types::_automated_reasoning_policy_generate_fidelity_report_content::AutomatedReasoningPolicyGenerateFidelityReportContent;
+
 pub use crate::types::_invocation_log_source::InvocationLogSource;
 
 pub use crate::types::_request_metadata_filters::RequestMetadataFilters;
@@ -372,6 +380,14 @@ pub use crate::types::_automated_reasoning_policy_disjoint_rule_set::AutomatedRe
 pub use crate::types::_automated_reasoning_policy_build_log_entry::AutomatedReasoningPolicyBuildLogEntry;
 
 pub use crate::types::_automated_reasoning_policy_generated_test_case::AutomatedReasoningPolicyGeneratedTestCase;
+
+pub use crate::types::_automated_reasoning_policy_build_result_asset_manifest_entry::AutomatedReasoningPolicyBuildResultAssetManifestEntry;
+
+pub use crate::types::_automated_reasoning_policy_rule_report::AutomatedReasoningPolicyRuleReport;
+
+pub use crate::types::_automated_reasoning_policy_variable_report::AutomatedReasoningPolicyVariableReport;
+
+pub use crate::types::_automated_reasoning_policy_report_source_document::AutomatedReasoningPolicyReportSourceDocument;
 
 pub use crate::types::_automated_reasoning_check_valid_finding::AutomatedReasoningCheckValidFinding;
 
@@ -483,6 +499,12 @@ pub use crate::types::_automated_reasoning_policy_delete_type_value::AutomatedRe
 
 pub use crate::types::_automated_reasoning_policy_build_step::AutomatedReasoningPolicyBuildStep;
 
+pub use crate::types::_automated_reasoning_policy_statement_reference::AutomatedReasoningPolicyStatementReference;
+
+pub use crate::types::_automated_reasoning_policy_atomic_statement::AutomatedReasoningPolicyAtomicStatement;
+
+pub use crate::types::_automated_reasoning_policy_annotated_chunk::AutomatedReasoningPolicyAnnotatedChunk;
+
 pub use crate::types::_automated_reasoning_check_rule::AutomatedReasoningCheckRule;
 
 pub use crate::types::_automated_reasoning_check_logic_warning_type::AutomatedReasoningCheckLogicWarningType;
@@ -511,6 +533,8 @@ pub use crate::types::_automated_reasoning_policy_build_step_context::AutomatedR
 
 pub use crate::types::_automated_reasoning_policy_definition_element::AutomatedReasoningPolicyDefinitionElement;
 
+pub use crate::types::_automated_reasoning_policy_statement_location::AutomatedReasoningPolicyStatementLocation;
+
 pub use crate::types::_automated_reasoning_logic_statement::AutomatedReasoningLogicStatement;
 
 pub use crate::types::_automated_reasoning_check_input_text_reference::AutomatedReasoningCheckInputTextReference;
@@ -528,6 +552,8 @@ pub use crate::types::_automated_reasoning_policy_planning::AutomatedReasoningPo
 pub use crate::types::_automated_reasoning_policy_mutation::AutomatedReasoningPolicyMutation;
 
 pub use crate::types::_automated_reasoning_policy_build_step_message::AutomatedReasoningPolicyBuildStepMessage;
+
+pub use crate::types::_automated_reasoning_policy_annotated_content::AutomatedReasoningPolicyAnnotatedContent;
 
 pub use crate::types::_rating_scale_item::RatingScaleItem;
 
@@ -568,6 +594,8 @@ pub use crate::types::_automated_reasoning_policy_update_rule_mutation::Automate
 pub use crate::types::_automated_reasoning_policy_delete_rule_mutation::AutomatedReasoningPolicyDeleteRuleMutation;
 
 pub use crate::types::_automated_reasoning_policy_build_message_type::AutomatedReasoningPolicyBuildMessageType;
+
+pub use crate::types::_automated_reasoning_policy_annotated_line::AutomatedReasoningPolicyAnnotatedLine;
 
 pub use crate::types::_rating_scale_item_value::RatingScaleItemValue;
 
@@ -671,9 +699,17 @@ mod _automated_reasoning_policy_add_variable_annotation;
 
 mod _automated_reasoning_policy_add_variable_mutation;
 
+mod _automated_reasoning_policy_annotated_chunk;
+
+mod _automated_reasoning_policy_annotated_content;
+
+mod _automated_reasoning_policy_annotated_line;
+
 mod _automated_reasoning_policy_annotation;
 
 mod _automated_reasoning_policy_annotation_status;
+
+mod _automated_reasoning_policy_atomic_statement;
 
 mod _automated_reasoning_policy_build_document_content_type;
 
@@ -682,6 +718,10 @@ mod _automated_reasoning_policy_build_log;
 mod _automated_reasoning_policy_build_log_entry;
 
 mod _automated_reasoning_policy_build_message_type;
+
+mod _automated_reasoning_policy_build_result_asset_manifest;
+
+mod _automated_reasoning_policy_build_result_asset_manifest_entry;
 
 mod _automated_reasoning_policy_build_result_asset_type;
 
@@ -737,6 +777,10 @@ mod _automated_reasoning_policy_delete_variable_mutation;
 
 mod _automated_reasoning_policy_disjoint_rule_set;
 
+mod _automated_reasoning_policy_fidelity_report;
+
+mod _automated_reasoning_policy_generate_fidelity_report_content;
+
 mod _automated_reasoning_policy_generated_test_case;
 
 mod _automated_reasoning_policy_generated_test_cases;
@@ -747,9 +791,19 @@ mod _automated_reasoning_policy_mutation;
 
 mod _automated_reasoning_policy_planning;
 
+mod _automated_reasoning_policy_report_source_document;
+
+mod _automated_reasoning_policy_rule_report;
+
 mod _automated_reasoning_policy_scenario;
 
 mod _automated_reasoning_policy_scenarios;
+
+mod _automated_reasoning_policy_source_document;
+
+mod _automated_reasoning_policy_statement_location;
+
+mod _automated_reasoning_policy_statement_reference;
 
 mod _automated_reasoning_policy_summary;
 
@@ -780,6 +834,8 @@ mod _automated_reasoning_policy_update_type_value;
 mod _automated_reasoning_policy_update_variable_annotation;
 
 mod _automated_reasoning_policy_update_variable_mutation;
+
+mod _automated_reasoning_policy_variable_report;
 
 mod _automated_reasoning_policy_workflow_type_content;
 

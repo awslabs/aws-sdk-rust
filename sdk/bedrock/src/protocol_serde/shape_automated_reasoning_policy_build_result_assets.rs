@@ -60,6 +60,24 @@ where
                                     .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'policyScenarios' cannot be null"))?
                                 ))
                             }
+                            "assetManifest" => {
+                                Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::AssetManifest(
+                                    crate::protocol_serde::shape_automated_reasoning_policy_build_result_asset_manifest::de_automated_reasoning_policy_build_result_asset_manifest(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'assetManifest' cannot be null"))?
+                                ))
+                            }
+                            "document" => {
+                                Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::Document(
+                                    crate::protocol_serde::shape_automated_reasoning_policy_source_document::de_automated_reasoning_policy_source_document(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'document' cannot be null"))?
+                                ))
+                            }
+                            "fidelityReport" => {
+                                Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::FidelityReport(
+                                    crate::protocol_serde::shape_automated_reasoning_policy_fidelity_report::de_automated_reasoning_policy_fidelity_report(tokens, _value)?
+                                    .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'fidelityReport' cannot be null"))?
+                                ))
+                            }
                             _ => {
                                                                               ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                                                                               Some(crate::types::AutomatedReasoningPolicyBuildResultAssets::Unknown)

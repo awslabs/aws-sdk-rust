@@ -6,7 +6,7 @@
 pub struct ValidationError {
     /// <p>A list of validation error details, where each item identifies a specific field that failed validation and explains the reason for the failure.</p>
     pub reasons: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the validation error error that occurred.</p>
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
@@ -83,17 +83,17 @@ impl ValidationErrorBuilder {
     pub fn get_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
         &self.reasons
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the validation error error that occurred.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the validation error error that occurred.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message describing the validation error error that occurred.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

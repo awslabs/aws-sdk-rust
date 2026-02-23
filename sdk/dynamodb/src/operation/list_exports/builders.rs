@@ -22,7 +22,7 @@ impl crate::operation::list_exports::builders::ListExportsInputBuilder {
 }
 /// Fluent builder constructing a request to `ListExports`.
 ///
-/// <p>Lists completed exports within the past 90 days.</p>
+/// <p>Lists completed exports within the past 90 days, in reverse alphanumeric order of <code>ExportArn</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListExportsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

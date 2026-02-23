@@ -6,6 +6,8 @@
 pub enum AutomatedReasoningPolicyWorkflowTypeContent {
     /// <p>The list of documents to be processed in a document ingestion workflow.</p>
     Documents(::std::vec::Vec<crate::types::AutomatedReasoningPolicyBuildWorkflowDocument>),
+    /// <p>The content configuration for generating a fidelity report workflow. This can include source documents to analyze or an existing fidelity report to update with a new policy definition.</p>
+    GenerateFidelityReportContent(crate::types::AutomatedReasoningPolicyGenerateFidelityReportContent),
     /// <p>The assets and instructions needed for a policy repair workflow, including repair annotations and guidance.</p>
     PolicyRepairAssets(crate::types::AutomatedReasoningPolicyBuildWorkflowRepairContent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,21 @@ impl AutomatedReasoningPolicyWorkflowTypeContent {
     /// Returns true if this is a [`Documents`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::Documents).
     pub fn is_documents(&self) -> bool {
         self.as_documents().is_ok()
+    }
+    /// Tries to convert the enum instance into [`GenerateFidelityReportContent`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::GenerateFidelityReportContent), extracting the inner [`AutomatedReasoningPolicyGenerateFidelityReportContent`](crate::types::AutomatedReasoningPolicyGenerateFidelityReportContent).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_generate_fidelity_report_content(
+        &self,
+    ) -> ::std::result::Result<&crate::types::AutomatedReasoningPolicyGenerateFidelityReportContent, &Self> {
+        if let AutomatedReasoningPolicyWorkflowTypeContent::GenerateFidelityReportContent(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GenerateFidelityReportContent`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::GenerateFidelityReportContent).
+    pub fn is_generate_fidelity_report_content(&self) -> bool {
+        self.as_generate_fidelity_report_content().is_ok()
     }
     /// Tries to convert the enum instance into [`PolicyRepairAssets`](crate::types::AutomatedReasoningPolicyWorkflowTypeContent::PolicyRepairAssets), extracting the inner [`AutomatedReasoningPolicyBuildWorkflowRepairContent`](crate::types::AutomatedReasoningPolicyBuildWorkflowRepairContent).
     /// Returns `Err(&Self)` if it can't be converted.

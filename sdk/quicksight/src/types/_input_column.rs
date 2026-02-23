@@ -9,6 +9,7 @@ pub struct InputColumn {
     /// <p>A unique identifier for the input column.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The data type of the column.</p>
+    /// <p><b>Note:</b> <code>SEMISTRUCT</code> represents Athena's map, row, and struct data types. It is supported when using the new data preparation experience.</p>
     pub r#type: crate::types::InputColumnDataType,
     /// <p>The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE dataset.</p>
     pub sub_type: ::std::option::Option<crate::types::ColumnDataSubType>,
@@ -24,6 +25,7 @@ impl InputColumn {
         self.id.as_deref()
     }
     /// <p>The data type of the column.</p>
+    /// <p><b>Note:</b> <code>SEMISTRUCT</code> represents Athena's map, row, and struct data types. It is supported when using the new data preparation experience.</p>
     pub fn r#type(&self) -> &crate::types::InputColumnDataType {
         &self.r#type
     }
@@ -79,17 +81,20 @@ impl InputColumnBuilder {
         &self.id
     }
     /// <p>The data type of the column.</p>
+    /// <p><b>Note:</b> <code>SEMISTRUCT</code> represents Athena's map, row, and struct data types. It is supported when using the new data preparation experience.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::InputColumnDataType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The data type of the column.</p>
+    /// <p><b>Note:</b> <code>SEMISTRUCT</code> represents Athena's map, row, and struct data types. It is supported when using the new data preparation experience.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::InputColumnDataType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The data type of the column.</p>
+    /// <p><b>Note:</b> <code>SEMISTRUCT</code> represents Athena's map, row, and struct data types. It is supported when using the new data preparation experience.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::InputColumnDataType> {
         &self.r#type
     }

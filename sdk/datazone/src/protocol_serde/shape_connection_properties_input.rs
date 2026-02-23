@@ -64,6 +64,18 @@ pub fn ser_connection_properties_input(
             crate::protocol_serde::shape_mlflow_properties_input::ser_mlflow_properties_input(&mut object_10, inner)?;
             object_10.finish();
         }
+        crate::types::ConnectionPropertiesInput::WorkflowsMwaaProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_11 = object_9.key("workflowsMwaaProperties").start_object();
+            crate::protocol_serde::shape_workflows_mwaa_properties_input::ser_workflows_mwaa_properties_input(&mut object_11, inner)?;
+            object_11.finish();
+        }
+        crate::types::ConnectionPropertiesInput::WorkflowsServerlessProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_9.key("workflowsServerlessProperties").start_object();
+            crate::protocol_serde::shape_workflows_serverless_properties_input::ser_workflows_serverless_properties_input(&mut object_12, inner)?;
+            object_12.finish();
+        }
         crate::types::ConnectionPropertiesInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesInput",

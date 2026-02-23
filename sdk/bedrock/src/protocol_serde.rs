@@ -495,6 +495,8 @@ pub(crate) mod shape_automated_reasoning_policy_arn_list;
 
 pub(crate) mod shape_automated_reasoning_policy_build_log;
 
+pub(crate) mod shape_automated_reasoning_policy_build_result_asset_manifest;
+
 pub(crate) mod shape_automated_reasoning_policy_build_workflow_summary;
 
 pub(crate) mod shape_automated_reasoning_policy_definition_quality_report;
@@ -513,11 +515,15 @@ pub(crate) mod shape_automated_reasoning_policy_delete_type_annotation;
 
 pub(crate) mod shape_automated_reasoning_policy_delete_variable_annotation;
 
+pub(crate) mod shape_automated_reasoning_policy_fidelity_report;
+
 pub(crate) mod shape_automated_reasoning_policy_generated_test_cases;
 
 pub(crate) mod shape_automated_reasoning_policy_ingest_content_annotation;
 
 pub(crate) mod shape_automated_reasoning_policy_scenarios;
+
+pub(crate) mod shape_automated_reasoning_policy_source_document;
 
 pub(crate) mod shape_automated_reasoning_policy_summary;
 
@@ -663,6 +669,8 @@ pub(crate) mod shape_automated_reasoning_check_finding;
 
 pub(crate) mod shape_automated_reasoning_policy_build_log_entry_list;
 
+pub(crate) mod shape_automated_reasoning_policy_build_result_asset_manifest_list;
+
 pub(crate) mod shape_automated_reasoning_policy_build_workflow_document;
 
 pub(crate) mod shape_automated_reasoning_policy_build_workflow_repair_content;
@@ -685,11 +693,19 @@ pub(crate) mod shape_automated_reasoning_policy_definition_variable_name_list;
 
 pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set_list;
 
+pub(crate) mod shape_automated_reasoning_policy_generate_fidelity_report_content;
+
 pub(crate) mod shape_automated_reasoning_policy_generated_test_case_list;
+
+pub(crate) mod shape_automated_reasoning_policy_report_source_document_list;
+
+pub(crate) mod shape_automated_reasoning_policy_rule_report_map;
 
 pub(crate) mod shape_automated_reasoning_policy_scenario_list;
 
 pub(crate) mod shape_automated_reasoning_policy_type_value_annotation;
+
+pub(crate) mod shape_automated_reasoning_policy_variable_report_map;
 
 pub(crate) mod shape_evaluation_bedrock_knowledge_base_identifiers;
 
@@ -769,6 +785,8 @@ pub(crate) mod shape_automated_reasoning_policy_add_type_value;
 
 pub(crate) mod shape_automated_reasoning_policy_build_log_entry;
 
+pub(crate) mod shape_automated_reasoning_policy_build_result_asset_manifest_entry;
+
 pub(crate) mod shape_automated_reasoning_policy_definition_type_value_list;
 
 pub(crate) mod shape_automated_reasoning_policy_definition_type_value_pair;
@@ -779,9 +797,15 @@ pub(crate) mod shape_automated_reasoning_policy_disjoint_rule_set;
 
 pub(crate) mod shape_automated_reasoning_policy_generated_test_case;
 
+pub(crate) mod shape_automated_reasoning_policy_report_source_document;
+
+pub(crate) mod shape_automated_reasoning_policy_rule_report;
+
 pub(crate) mod shape_automated_reasoning_policy_type_value_annotation_list;
 
 pub(crate) mod shape_automated_reasoning_policy_update_type_value;
+
+pub(crate) mod shape_automated_reasoning_policy_variable_report;
 
 pub(crate) mod shape_bedrock_evaluator_model;
 
@@ -837,9 +861,17 @@ pub(crate) mod shape_automated_reasoning_check_translation;
 
 pub(crate) mod shape_automated_reasoning_check_translation_option_list;
 
+pub(crate) mod shape_automated_reasoning_policy_annotated_chunk_list;
+
+pub(crate) mod shape_automated_reasoning_policy_atomic_statement_list;
+
 pub(crate) mod shape_automated_reasoning_policy_build_step_list;
 
 pub(crate) mod shape_automated_reasoning_policy_disjointed_rule_id_list;
+
+pub(crate) mod shape_automated_reasoning_policy_justification_list;
+
+pub(crate) mod shape_automated_reasoning_policy_statement_reference_list;
 
 pub(crate) mod shape_custom_metric_bedrock_evaluator_model;
 
@@ -871,7 +903,13 @@ pub(crate) mod shape_automated_reasoning_check_translation_option;
 
 pub(crate) mod shape_automated_reasoning_logic_statement_list;
 
+pub(crate) mod shape_automated_reasoning_policy_annotated_chunk;
+
+pub(crate) mod shape_automated_reasoning_policy_atomic_statement;
+
 pub(crate) mod shape_automated_reasoning_policy_build_step;
+
+pub(crate) mod shape_automated_reasoning_policy_statement_reference;
 
 pub(crate) mod shape_dimensional_price_rate;
 
@@ -893,11 +931,15 @@ pub(crate) mod shape_automated_reasoning_check_translation_list;
 
 pub(crate) mod shape_automated_reasoning_logic_statement;
 
+pub(crate) mod shape_automated_reasoning_policy_annotated_content_list;
+
 pub(crate) mod shape_automated_reasoning_policy_build_step_context;
 
 pub(crate) mod shape_automated_reasoning_policy_build_step_message_list;
 
 pub(crate) mod shape_automated_reasoning_policy_definition_element;
+
+pub(crate) mod shape_automated_reasoning_policy_statement_location;
 
 pub(crate) mod shape_byte_content_doc;
 
@@ -925,7 +967,11 @@ pub(crate) mod shape_vector_search_reranking_configuration;
 
 pub(crate) mod shape_additional_model_request_fields;
 
+pub(crate) mod shape_automated_reasoning_policy_annotated_content;
+
 pub(crate) mod shape_automated_reasoning_policy_build_step_message;
+
+pub(crate) mod shape_automated_reasoning_policy_line_number_list;
 
 pub(crate) mod shape_automated_reasoning_policy_mutation;
 
@@ -944,6 +990,8 @@ pub(crate) mod shape_automated_reasoning_policy_add_rule_mutation;
 pub(crate) mod shape_automated_reasoning_policy_add_type_mutation;
 
 pub(crate) mod shape_automated_reasoning_policy_add_variable_mutation;
+
+pub(crate) mod shape_automated_reasoning_policy_annotated_line;
 
 pub(crate) mod shape_automated_reasoning_policy_delete_rule_mutation;
 

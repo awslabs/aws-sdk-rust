@@ -24,6 +24,10 @@ pub enum ConnectionPropertiesOutput {
     SparkEmrProperties(crate::types::SparkEmrPropertiesOutput),
     /// <p>The Spark Amazon Web Services Glue properties of a connection.</p>
     SparkGlueProperties(crate::types::SparkGluePropertiesOutput),
+    /// <p>The Amazon MWAA properties of a connection.</p>
+    WorkflowsMwaaProperties(crate::types::WorkflowsMwaaPropertiesOutput),
+    /// <p>The MWAA serverless properties of a connection.</p>
+    WorkflowsServerlessProperties(crate::types::WorkflowsServerlessPropertiesOutput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -164,6 +168,32 @@ impl ConnectionPropertiesOutput {
     /// Returns true if this is a [`SparkGlueProperties`](crate::types::ConnectionPropertiesOutput::SparkGlueProperties).
     pub fn is_spark_glue_properties(&self) -> bool {
         self.as_spark_glue_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`WorkflowsMwaaProperties`](crate::types::ConnectionPropertiesOutput::WorkflowsMwaaProperties), extracting the inner [`WorkflowsMwaaPropertiesOutput`](crate::types::WorkflowsMwaaPropertiesOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_workflows_mwaa_properties(&self) -> ::std::result::Result<&crate::types::WorkflowsMwaaPropertiesOutput, &Self> {
+        if let ConnectionPropertiesOutput::WorkflowsMwaaProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`WorkflowsMwaaProperties`](crate::types::ConnectionPropertiesOutput::WorkflowsMwaaProperties).
+    pub fn is_workflows_mwaa_properties(&self) -> bool {
+        self.as_workflows_mwaa_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`WorkflowsServerlessProperties`](crate::types::ConnectionPropertiesOutput::WorkflowsServerlessProperties), extracting the inner [`WorkflowsServerlessPropertiesOutput`](crate::types::WorkflowsServerlessPropertiesOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_workflows_serverless_properties(&self) -> ::std::result::Result<&crate::types::WorkflowsServerlessPropertiesOutput, &Self> {
+        if let ConnectionPropertiesOutput::WorkflowsServerlessProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`WorkflowsServerlessProperties`](crate::types::ConnectionPropertiesOutput::WorkflowsServerlessProperties).
+    pub fn is_workflows_serverless_properties(&self) -> bool {
+        self.as_workflows_serverless_properties().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

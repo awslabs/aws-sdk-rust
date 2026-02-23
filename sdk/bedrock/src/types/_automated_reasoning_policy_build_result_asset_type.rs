@@ -12,11 +12,14 @@
 /// ```text
 /// # let automatedreasoningpolicybuildresultassettype = unimplemented!();
 /// match automatedreasoningpolicybuildresultassettype {
+///     AutomatedReasoningPolicyBuildResultAssetType::AssetManifest => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::BuildLog => { /* ... */ },
+///     AutomatedReasoningPolicyBuildResultAssetType::FidelityReport => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::PolicyScenarios => { /* ... */ },
 ///     AutomatedReasoningPolicyBuildResultAssetType::QualityReport => { /* ... */ },
+///     AutomatedReasoningPolicyBuildResultAssetType::SourceDocument => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,7 +49,11 @@
 )]
 pub enum AutomatedReasoningPolicyBuildResultAssetType {
     #[allow(missing_docs)] // documentation missing in model
+    AssetManifest,
+    #[allow(missing_docs)] // documentation missing in model
     BuildLog,
+    #[allow(missing_docs)] // documentation missing in model
+    FidelityReport,
     #[allow(missing_docs)] // documentation missing in model
     GeneratedTestCases,
     #[allow(missing_docs)] // documentation missing in model
@@ -55,6 +62,8 @@ pub enum AutomatedReasoningPolicyBuildResultAssetType {
     PolicyScenarios,
     #[allow(missing_docs)] // documentation missing in model
     QualityReport,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceDocument,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,11 +71,14 @@ pub enum AutomatedReasoningPolicyBuildResultAssetType {
 impl ::std::convert::From<&str> for AutomatedReasoningPolicyBuildResultAssetType {
     fn from(s: &str) -> Self {
         match s {
+            "ASSET_MANIFEST" => AutomatedReasoningPolicyBuildResultAssetType::AssetManifest,
             "BUILD_LOG" => AutomatedReasoningPolicyBuildResultAssetType::BuildLog,
+            "FIDELITY_REPORT" => AutomatedReasoningPolicyBuildResultAssetType::FidelityReport,
             "GENERATED_TEST_CASES" => AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases,
             "POLICY_DEFINITION" => AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition,
             "POLICY_SCENARIOS" => AutomatedReasoningPolicyBuildResultAssetType::PolicyScenarios,
             "QUALITY_REPORT" => AutomatedReasoningPolicyBuildResultAssetType::QualityReport,
+            "SOURCE_DOCUMENT" => AutomatedReasoningPolicyBuildResultAssetType::SourceDocument,
             other => {
                 AutomatedReasoningPolicyBuildResultAssetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
             }
@@ -84,22 +96,28 @@ impl AutomatedReasoningPolicyBuildResultAssetType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AutomatedReasoningPolicyBuildResultAssetType::AssetManifest => "ASSET_MANIFEST",
             AutomatedReasoningPolicyBuildResultAssetType::BuildLog => "BUILD_LOG",
+            AutomatedReasoningPolicyBuildResultAssetType::FidelityReport => "FIDELITY_REPORT",
             AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases => "GENERATED_TEST_CASES",
             AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => "POLICY_DEFINITION",
             AutomatedReasoningPolicyBuildResultAssetType::PolicyScenarios => "POLICY_SCENARIOS",
             AutomatedReasoningPolicyBuildResultAssetType::QualityReport => "QUALITY_REPORT",
+            AutomatedReasoningPolicyBuildResultAssetType::SourceDocument => "SOURCE_DOCUMENT",
             AutomatedReasoningPolicyBuildResultAssetType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ASSET_MANIFEST",
             "BUILD_LOG",
+            "FIDELITY_REPORT",
             "GENERATED_TEST_CASES",
             "POLICY_DEFINITION",
             "POLICY_SCENARIOS",
             "QUALITY_REPORT",
+            "SOURCE_DOCUMENT",
         ]
     }
 }
@@ -123,11 +141,14 @@ impl AutomatedReasoningPolicyBuildResultAssetType {
 impl ::std::fmt::Display for AutomatedReasoningPolicyBuildResultAssetType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AutomatedReasoningPolicyBuildResultAssetType::AssetManifest => write!(f, "ASSET_MANIFEST"),
             AutomatedReasoningPolicyBuildResultAssetType::BuildLog => write!(f, "BUILD_LOG"),
+            AutomatedReasoningPolicyBuildResultAssetType::FidelityReport => write!(f, "FIDELITY_REPORT"),
             AutomatedReasoningPolicyBuildResultAssetType::GeneratedTestCases => write!(f, "GENERATED_TEST_CASES"),
             AutomatedReasoningPolicyBuildResultAssetType::PolicyDefinition => write!(f, "POLICY_DEFINITION"),
             AutomatedReasoningPolicyBuildResultAssetType::PolicyScenarios => write!(f, "POLICY_SCENARIOS"),
             AutomatedReasoningPolicyBuildResultAssetType::QualityReport => write!(f, "QUALITY_REPORT"),
+            AutomatedReasoningPolicyBuildResultAssetType::SourceDocument => write!(f, "SOURCE_DOCUMENT"),
             AutomatedReasoningPolicyBuildResultAssetType::Unknown(value) => write!(f, "{value}"),
         }
     }

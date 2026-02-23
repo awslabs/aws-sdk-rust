@@ -207,6 +207,8 @@ mod get_network_settings;
 
 mod get_oidc_info;
 
+mod get_opentdf_config;
+
 mod get_security_group;
 
 mod get_user;
@@ -232,6 +234,8 @@ mod list_users;
 mod register_oidc_config;
 
 mod register_oidc_config_test;
+
+mod register_opentdf_config;
 
 mod update_bot;
 

@@ -67,6 +67,8 @@ pub(crate) mod shape_get_network_settings;
 
 pub(crate) mod shape_get_oidc_info;
 
+pub(crate) mod shape_get_opentdf_config;
+
 pub(crate) mod shape_get_security_group;
 
 pub(crate) mod shape_get_user;
@@ -92,6 +94,8 @@ pub(crate) mod shape_list_users;
 pub(crate) mod shape_register_oidc_config;
 
 pub(crate) mod shape_register_oidc_config_test;
+
+pub(crate) mod shape_register_opentdf_config;
 
 pub(crate) mod shape_update_bot;
 
@@ -144,6 +148,8 @@ pub(crate) mod shape_rate_limit_error;
 pub(crate) mod shape_register_oidc_config_input;
 
 pub(crate) mod shape_register_oidc_config_test_input;
+
+pub(crate) mod shape_register_opentdf_config_input;
 
 pub(crate) mod shape_resource_not_found_error;
 

@@ -442,4 +442,39 @@ impl UpdateTableFluentBuilder {
     pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
         self.inner.get_warm_throughput()
     }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(mut self, input: crate::types::GlobalTableSettingsReplicationMode) -> Self {
+        self.inner = self.inner.global_table_settings_replication_mode(input);
+        self
+    }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn set_global_table_settings_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    ) -> Self {
+        self.inner = self.inner.set_global_table_settings_replication_mode(input);
+        self
+    }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
+        self.inner.get_global_table_settings_replication_mode()
+    }
 }

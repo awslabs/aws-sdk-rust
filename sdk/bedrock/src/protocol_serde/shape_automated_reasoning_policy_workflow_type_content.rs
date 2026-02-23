@@ -22,6 +22,12 @@ pub fn ser_automated_reasoning_policy_workflow_type_content(
             crate::protocol_serde::shape_automated_reasoning_policy_build_workflow_repair_content::ser_automated_reasoning_policy_build_workflow_repair_content(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::AutomatedReasoningPolicyWorkflowTypeContent::GenerateFidelityReportContent(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_4.key("generateFidelityReportContent").start_object();
+            crate::protocol_serde::shape_automated_reasoning_policy_generate_fidelity_report_content::ser_automated_reasoning_policy_generate_fidelity_report_content(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::AutomatedReasoningPolicyWorkflowTypeContent::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "AutomatedReasoningPolicyWorkflowTypeContent",

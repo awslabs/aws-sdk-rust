@@ -66,6 +66,14 @@ pub struct UpdateTableInput {
     pub on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>Represents the warm throughput (in read units per second and write units per second) for updating a table.</p>
     pub warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
@@ -166,6 +174,16 @@ impl UpdateTableInput {
     pub fn warm_throughput(&self) -> ::std::option::Option<&crate::types::WarmThroughput> {
         self.warm_throughput.as_ref()
     }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
+        self.global_table_settings_replication_mode.as_ref()
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -192,6 +210,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) global_table_witness_updates: ::std::option::Option<::std::vec::Vec<crate::types::GlobalTableWitnessGroupUpdate>>,
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
+    pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
 }
 impl UpdateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -523,6 +542,41 @@ impl UpdateTableInputBuilder {
     pub fn get_warm_throughput(&self) -> &::std::option::Option<crate::types::WarmThroughput> {
         &self.warm_throughput
     }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn global_table_settings_replication_mode(mut self, input: crate::types::GlobalTableSettingsReplicationMode) -> Self {
+        self.global_table_settings_replication_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn set_global_table_settings_replication_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    ) -> Self {
+        self.global_table_settings_replication_mode = input;
+        self
+    }
+    /// <p>Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
+    /// </ul>
+    pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
+        &self.global_table_settings_replication_mode
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
@@ -540,6 +594,7 @@ impl UpdateTableInputBuilder {
             global_table_witness_updates: self.global_table_witness_updates,
             on_demand_throughput: self.on_demand_throughput,
             warm_throughput: self.warm_throughput,
+            global_table_settings_replication_mode: self.global_table_settings_replication_mode,
         })
     }
 }

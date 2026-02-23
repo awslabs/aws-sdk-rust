@@ -27,6 +27,8 @@ impl crate::operation::put_item::builders::PutItemInputBuilder {
 /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. Set type attributes cannot be empty.</p>
 /// <p>Invalid Requests with empty values will be rejected with a <code>ValidationException</code> exception.</p><note>
 /// <p>To prevent a new item from replacing an existing item, use a conditional expression that contains the <code>attribute_not_exists</code> function with the name of the attribute being used as the partition key for the table. Since every record must contain that attribute, the <code>attribute_not_exists</code> function will only succeed if no matching item exists.</p>
+/// </note> <note>
+/// <p>To determine whether <code>PutItem</code> overwrote an existing item, use <code>ReturnValues</code> set to <code>ALL_OLD</code>. If the response includes the <code>Attributes</code> element, an existing item was overwritten.</p>
 /// </note>
 /// <p>For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

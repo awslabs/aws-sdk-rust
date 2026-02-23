@@ -22,7 +22,7 @@ impl crate::operation::delete_field::builders::DeleteFieldInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteField`.
 ///
-/// <p>Deletes a field from a cases template. You can delete up to 100 fields per domain.</p>
+/// <p>Deletes a field from a cases template.</p>
 /// <p>After a field is deleted:</p>
 /// <ul>
 /// <li>

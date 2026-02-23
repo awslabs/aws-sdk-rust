@@ -92,6 +92,24 @@ pub(crate) fn get_network_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_opentdf_config_output_output_correct_errors(
+    mut builder: crate::operation::get_opentdf_config::builders::GetOpentdfConfigOutputBuilder,
+) -> crate::operation::get_opentdf_config::builders::GetOpentdfConfigOutputBuilder {
+    if builder.client_id.is_none() {
+        builder.client_id = Some(Default::default())
+    }
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.client_secret.is_none() {
+        builder.client_secret = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_security_group_output_output_correct_errors(
     mut builder: crate::operation::get_security_group::builders::GetSecurityGroupOutputBuilder,
 ) -> crate::operation::get_security_group::builders::GetSecurityGroupOutputBuilder {
@@ -199,6 +217,24 @@ pub(crate) fn register_oidc_config_output_output_correct_errors(
     }
     if builder.issuer.is_none() {
         builder.issuer = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn register_opentdf_config_output_output_correct_errors(
+    mut builder: crate::operation::register_opentdf_config::builders::RegisterOpentdfConfigOutputBuilder,
+) -> crate::operation::register_opentdf_config::builders::RegisterOpentdfConfigOutputBuilder {
+    if builder.client_id.is_none() {
+        builder.client_id = Some(Default::default())
+    }
+    if builder.domain.is_none() {
+        builder.domain = Some(Default::default())
+    }
+    if builder.client_secret.is_none() {
+        builder.client_secret = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = Some(Default::default())
     }
     builder
 }

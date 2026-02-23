@@ -9,7 +9,7 @@
 /// <p><b>ExemptedActions</b>: List of Amazon Web Services IAM actions exempted from the control. Each string is expected to be an IAM action.</p>
 /// <p>Example: <code>\["logs:DescribeLogGroups","logs:StartQuery","logs:GetQueryResults"\]</code></p></li>
 /// <li>
-/// <p><b>ExemptedPrincipalArns</b>: List of Amazon Web Services IAM principal ARNs exempted from the control. Each string is expected to be an IAM principal that follows the pattern <code>^arn:(aws|aws-us-gov):(iam|sts)::.+:.+$</code></p>
+/// <p><b>ExemptedPrincipalArns</b>: List of Amazon Web Services IAM principal ARNs exempted from the control. Each string is expected to be an IAM principal that follows the format <code>arn:partition:service::account:resource</code></p>
 /// <p>Example: <code>\["arn:aws:iam::*:role/ReadOnly","arn:aws:sts::*:assumed-role/ReadOnly/*"\]</code></p></li>
 /// <li>
 /// <p><b>ExemptedResourceArns</b>: List of resource ARNs exempted from the control. Each string is expected to be a resource ARN.</p>

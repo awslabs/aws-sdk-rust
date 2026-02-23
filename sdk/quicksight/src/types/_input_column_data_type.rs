@@ -18,6 +18,7 @@
 ///     InputColumnDataType::Decimal => { /* ... */ },
 ///     InputColumnDataType::Integer => { /* ... */ },
 ///     InputColumnDataType::Json => { /* ... */ },
+///     InputColumnDataType::Semistruct => { /* ... */ },
 ///     InputColumnDataType::String => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum InputColumnDataType {
     #[allow(missing_docs)] // documentation missing in model
     Json,
     #[allow(missing_docs)] // documentation missing in model
+    Semistruct,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for InputColumnDataType {
             "DECIMAL" => InputColumnDataType::Decimal,
             "INTEGER" => InputColumnDataType::Integer,
             "JSON" => InputColumnDataType::Json,
+            "SEMISTRUCT" => InputColumnDataType::Semistruct,
             "STRING" => InputColumnDataType::String,
             other => InputColumnDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -96,13 +100,14 @@ impl InputColumnDataType {
             InputColumnDataType::Decimal => "DECIMAL",
             InputColumnDataType::Integer => "INTEGER",
             InputColumnDataType::Json => "JSON",
+            InputColumnDataType::Semistruct => "SEMISTRUCT",
             InputColumnDataType::String => "STRING",
             InputColumnDataType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BIT", "BOOLEAN", "DATETIME", "DECIMAL", "INTEGER", "JSON", "STRING"]
+        &["BIT", "BOOLEAN", "DATETIME", "DECIMAL", "INTEGER", "JSON", "SEMISTRUCT", "STRING"]
     }
 }
 impl ::std::convert::AsRef<str> for InputColumnDataType {
@@ -131,6 +136,7 @@ impl ::std::fmt::Display for InputColumnDataType {
             InputColumnDataType::Decimal => write!(f, "DECIMAL"),
             InputColumnDataType::Integer => write!(f, "INTEGER"),
             InputColumnDataType::Json => write!(f, "JSON"),
+            InputColumnDataType::Semistruct => write!(f, "SEMISTRUCT"),
             InputColumnDataType::String => write!(f, "STRING"),
             InputColumnDataType::Unknown(value) => write!(f, "{value}"),
         }

@@ -28,149 +28,59 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EndpointOverr
 #[cfg(test)]
 mod test {
 
-    /// For region ap-northeast-1 with FIPS disabled and DualStack disabled
+    /// For custom endpoint with region not set and fips disabled
     #[test]
     fn test_1() {
         let params = crate::config::endpoint::Params::builder()
-            .region("ap-northeast-1".to_string())
+            .endpoint("https://example.com".to_string())
             .use_fips(false)
-            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.ap-northeast-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.ap-northeast-1.amazonaws.com")
-                .build()
+            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
         );
     }
 
-    /// For region ap-southeast-1 with FIPS disabled and DualStack disabled
+    /// For custom endpoint with fips enabled
     #[test]
     fn test_2() {
         let params = crate::config::endpoint::Params::builder()
-            .region("ap-southeast-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
+            .endpoint("https://example.com".to_string())
+            .use_fips(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.ap-southeast-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.ap-southeast-1.amazonaws.com")
-                .build()
-        );
+        let error = endpoint
+            .expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled]");
+        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
     }
 
-    /// For region ap-southeast-2 with FIPS disabled and DualStack disabled
+    /// For custom endpoint with fips disabled and dualstack enabled
     #[test]
     fn test_3() {
         let params = crate::config::endpoint::Params::builder()
-            .region("ap-southeast-2".to_string())
+            .endpoint("https://example.com".to_string())
             .use_fips(false)
-            .use_dual_stack(false)
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.ap-southeast-2.amazonaws.com");
+        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [For custom endpoint with fips disabled and dualstack enabled]");
         assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.ap-southeast-2.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-central-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_4() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-central-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.eu-central-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.eu-central-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region eu-west-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_5() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("eu-west-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.eu-west-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.eu-west-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_6() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.us-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-west-2 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_7() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-west-2".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.us-west-2.amazonaws.com")
-                .build()
-        );
+            format!("{}", error),
+            "Invalid Configuration: Dualstack and custom endpoint are not supported"
+        )
     }
 
     /// For region us-east-1 with FIPS enabled and DualStack enabled
     #[test]
-    fn test_8() {
+    fn test_4() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -190,7 +100,7 @@ mod test {
 
     /// For region us-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_9() {
+    fn test_5() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -210,7 +120,7 @@ mod test {
 
     /// For region us-east-1 with FIPS disabled and DualStack enabled
     #[test]
-    fn test_10() {
+    fn test_6() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -219,178 +129,158 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-east-1.api.aws");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://mediatailor.us-east-1.api.aws");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.us-east-1.api.aws")
+                .url("https://mediatailor.us-east-1.api.aws")
                 .build()
         );
     }
 
-    /// For region cn-north-1 with FIPS enabled and DualStack enabled
+    /// For region us-east-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_7() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// For region cn-northwest-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_8() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.cn-northwest-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor-fips.cn-northwest-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-northwest-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_9() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.cn-northwest-1.amazonaws.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor-fips.cn-northwest-1.amazonaws.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-northwest-1 with FIPS disabled and DualStack enabled
+    #[test]
+    fn test_10() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("cn-northwest-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.cn-northwest-1.api.amazonwebservices.com.cn");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor.cn-northwest-1.api.amazonwebservices.com.cn")
+                .build()
+        );
+    }
+
+    /// For region cn-northwest-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_11() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
+            .region("cn-northwest-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.cn-north-1.api.amazonwebservices.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.cn-northwest-1.amazonaws.com.cn");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor-fips.cn-north-1.api.amazonwebservices.com.cn")
+                .url("https://api.mediatailor.cn-northwest-1.amazonaws.com.cn")
                 .build()
         );
     }
 
-    /// For region cn-north-1 with FIPS enabled and DualStack disabled
+    /// For region eusc-de-east-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_12() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
+            .region("eusc-de-east-1".to_string())
             .use_fips(true)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.eusc-de-east-1.amazonaws.eu");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor-fips.cn-north-1.amazonaws.com.cn")
+                .url("https://api.mediatailor-fips.eusc-de-east-1.amazonaws.eu")
                 .build()
         );
     }
 
-    /// For region cn-north-1 with FIPS disabled and DualStack enabled
+    /// For region eusc-de-east-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_13() {
         let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.cn-north-1.api.amazonwebservices.com.cn");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.cn-north-1.api.amazonwebservices.com.cn")
-                .build()
-        );
-    }
-
-    /// For region cn-north-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_14() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("cn-north-1".to_string())
+            .region("eusc-de-east-1".to_string())
             .use_fips(false)
             .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.cn-north-1.amazonaws.com.cn");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.eusc-de-east-1.amazonaws.eu");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.cn-north-1.amazonaws.com.cn")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS enabled and DualStack enabled
-    #[test]
-    fn test_15() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.us-gov-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor-fips.us-gov-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS enabled and DualStack disabled
-    #[test]
-    fn test_16() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.us-gov-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor-fips.us-gov-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS disabled and DualStack enabled
-    #[test]
-    fn test_17() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(true)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-gov-east-1.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.us-gov-east-1.api.aws")
-                .build()
-        );
-    }
-
-    /// For region us-gov-east-1 with FIPS disabled and DualStack disabled
-    #[test]
-    fn test_18() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-gov-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-gov-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://api.mediatailor.us-gov-east-1.amazonaws.com")
+                .url("https://api.mediatailor.eusc-de-east-1.amazonaws.eu")
                 .build()
         );
     }
 
     /// For region us-iso-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_19() {
+    fn test_14() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(true)
@@ -410,7 +300,7 @@ mod test {
 
     /// For region us-iso-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_20() {
+    fn test_15() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -430,7 +320,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS enabled and DualStack disabled
     #[test]
-    fn test_21() {
+    fn test_16() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(true)
@@ -450,7 +340,7 @@ mod test {
 
     /// For region us-isob-east-1 with FIPS disabled and DualStack disabled
     #[test]
-    fn test_22() {
+    fn test_17() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-isob-east-1".to_string())
             .use_fips(false)
@@ -468,81 +358,169 @@ mod test {
         );
     }
 
-    /// For custom endpoint with region set and fips disabled and dualstack disabled
+    /// For region eu-isoe-west-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_18() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.eu-isoe-west-1.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor-fips.eu-isoe-west-1.cloud.adc-e.uk")
+                .build()
+        );
+    }
+
+    /// For region eu-isoe-west-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_19() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("eu-isoe-west-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.eu-isoe-west-1.cloud.adc-e.uk");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor.eu-isoe-west-1.cloud.adc-e.uk")
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS enabled and DualStack disabled
+    #[test]
+    fn test_20() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.us-isof-south-1.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor-fips.us-isof-south-1.csp.hci.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-isof-south-1 with FIPS disabled and DualStack disabled
+    #[test]
+    fn test_21() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isof-south-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-isof-south-1.csp.hci.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor.us-isof-south-1.csp.hci.ic.gov")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack enabled
+    #[test]
+    fn test_22() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .build()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.us-gov-west-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor-fips.us-gov-west-1.api.aws")
+                .build()
+        );
+    }
+
+    /// For region us-gov-west-1 with FIPS enabled and DualStack disabled
     #[test]
     fn test_23() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(false)
+            .region("us-gov-west-1".to_string())
+            .use_fips(true)
             .use_dual_stack(false)
-            .endpoint("https://example.com".to_string())
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor-fips.us-gov-west-1.amazonaws.com");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor-fips.us-gov-west-1.amazonaws.com")
+                .build()
         );
     }
 
-    /// For custom endpoint with region not set and fips disabled and dualstack disabled
+    /// For region us-gov-west-1 with FIPS disabled and DualStack enabled
     #[test]
     fn test_24() {
         let params = crate::config::endpoint::Params::builder()
+            .region("us-gov-west-1".to_string())
             .use_fips(false)
-            .use_dual_stack(false)
-            .endpoint("https://example.com".to_string())
+            .use_dual_stack(true)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://example.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-gov-west-1.api.aws");
         assert_eq!(
             endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder().url("https://example.com").build()
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor.us-gov-west-1.api.aws")
+                .build()
         );
     }
 
-    /// For custom endpoint with fips enabled and dualstack disabled
+    /// For region us-gov-west-1 with FIPS disabled and DualStack disabled
     #[test]
     fn test_25() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .endpoint("https://example.com".to_string())
-            .build()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [For custom endpoint with fips enabled and dualstack disabled]");
-        assert_eq!(format!("{}", error), "Invalid Configuration: FIPS and custom endpoint are not supported")
-    }
-
-    /// For custom endpoint with fips disabled and dualstack enabled
-    #[test]
-    fn test_26() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
+            .region("us-gov-west-1".to_string())
             .use_fips(false)
-            .use_dual_stack(true)
-            .endpoint("https://example.com".to_string())
+            .use_dual_stack(false)
             .build()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [For custom endpoint with fips disabled and dualstack enabled]");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://api.mediatailor.us-gov-west-1.amazonaws.com");
         assert_eq!(
-            format!("{}", error),
-            "Invalid Configuration: Dualstack and custom endpoint are not supported"
-        )
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://api.mediatailor.us-gov-west-1.amazonaws.com")
+                .build()
+        );
     }
 
     /// Missing region
     #[test]
-    fn test_27() {
+    fn test_26() {
         let params = crate::config::endpoint::Params::builder().build().expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
@@ -621,23 +599,19 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 /// Configuration parameters for resolving the correct endpoint
 pub struct Params {
-    /// The AWS region used to dispatch the request.
-    pub(crate) region: ::std::option::Option<::std::string::String>,
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
     pub(crate) use_dual_stack: bool,
     /// When true, send this request to the FIPS-compliant regional endpoint. If the configured endpoint does not have a FIPS compliant endpoint, dispatching the request will return an error.
     pub(crate) use_fips: bool,
     /// Override the endpoint used to send this request
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    /// The AWS region used to dispatch the request.
+    pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl Params {
     /// Create a builder for [`Params`]
     pub fn builder() -> crate::config::endpoint::ParamsBuilder {
         crate::config::endpoint::ParamsBuilder::default()
-    }
-    /// The AWS region used to dispatch the request.
-    pub fn region(&self) -> ::std::option::Option<&str> {
-        self.region.as_deref()
     }
     /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
     pub fn use_dual_stack(&self) -> ::std::option::Option<bool> {
@@ -651,15 +625,19 @@ impl Params {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
+    /// The AWS region used to dispatch the request.
+    pub fn region(&self) -> ::std::option::Option<&str> {
+        self.region.as_deref()
+    }
 }
 
 /// Builder for [`Params`]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ParamsBuilder {
-    region: ::std::option::Option<::std::string::String>,
     use_dual_stack: ::std::option::Option<bool>,
     use_fips: ::std::option::Option<bool>,
     endpoint: ::std::option::Option<::std::string::String>,
+    region: ::std::option::Option<::std::string::String>,
 }
 impl ParamsBuilder {
     /// Consume this builder, creating [`Params`].
@@ -679,7 +657,6 @@ impl ParamsBuilder {
         Ok(
             #[allow(clippy::unnecessary_lazy_evaluations)]
             crate::config::endpoint::Params {
-                region: self.region,
                 use_dual_stack: self
                     .use_dual_stack
                     .or_else(|| Some(false))
@@ -689,23 +666,9 @@ impl ParamsBuilder {
                     .or_else(|| Some(false))
                     .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("use_fips"))?,
                 endpoint: self.endpoint,
+                region: self.region,
             },
         )
-    }
-    /// Sets the value for region
-    ///
-    /// The AWS region used to dispatch the request.
-    pub fn region(mut self, value: impl Into<::std::string::String>) -> Self {
-        self.region = Some(value.into());
-        self
-    }
-
-    /// Sets the value for region
-    ///
-    /// The AWS region used to dispatch the request.
-    pub fn set_region(mut self, param: Option<::std::string::String>) -> Self {
-        self.region = param;
-        self
     }
     /// Sets the value for use_dual_stack
     ///
@@ -754,6 +717,21 @@ impl ParamsBuilder {
     /// Override the endpoint used to send this request
     pub fn set_endpoint(mut self, param: Option<::std::string::String>) -> Self {
         self.endpoint = param;
+        self
+    }
+    /// Sets the value for region
+    ///
+    /// The AWS region used to dispatch the request.
+    pub fn region(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.region = Some(value.into());
+        self
+    }
+
+    /// Sets the value for region
+    ///
+    /// The AWS region used to dispatch the request.
+    pub fn set_region(mut self, param: Option<::std::string::String>) -> Self {
+        self.region = param;
         self
     }
 }

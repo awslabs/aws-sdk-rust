@@ -1056,6 +1056,15 @@ pub(crate) fn automated_reasoning_policy_build_log_correct_errors(
     builder
 }
 
+pub(crate) fn automated_reasoning_policy_build_result_asset_manifest_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyBuildResultAssetManifestBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyBuildResultAssetManifestBuilder {
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn automated_reasoning_policy_build_workflow_summary_correct_errors(
     mut builder: crate::types::builders::AutomatedReasoningPolicyBuildWorkflowSummaryBuilder,
 ) -> crate::types::builders::AutomatedReasoningPolicyBuildWorkflowSummaryBuilder {
@@ -1112,6 +1121,27 @@ pub(crate) fn automated_reasoning_policy_definition_quality_report_correct_error
     builder
 }
 
+pub(crate) fn automated_reasoning_policy_fidelity_report_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyFidelityReportBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyFidelityReportBuilder {
+    if builder.coverage_score.is_none() {
+        builder.coverage_score = Some(Default::default())
+    }
+    if builder.accuracy_score.is_none() {
+        builder.accuracy_score = Some(Default::default())
+    }
+    if builder.rule_reports.is_none() {
+        builder.rule_reports = Some(Default::default())
+    }
+    if builder.variable_reports.is_none() {
+        builder.variable_reports = Some(Default::default())
+    }
+    if builder.document_sources.is_none() {
+        builder.document_sources = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn automated_reasoning_policy_generated_test_cases_correct_errors(
     mut builder: crate::types::builders::AutomatedReasoningPolicyGeneratedTestCasesBuilder,
 ) -> crate::types::builders::AutomatedReasoningPolicyGeneratedTestCasesBuilder {
@@ -1126,6 +1156,26 @@ pub(crate) fn automated_reasoning_policy_scenarios_correct_errors(
 ) -> crate::types::builders::AutomatedReasoningPolicyScenariosBuilder {
     if builder.policy_scenarios.is_none() {
         builder.policy_scenarios = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_source_document_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicySourceDocumentBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicySourceDocumentBuilder {
+    if builder.document.is_none() {
+        builder.document = Some(::aws_smithy_types::Blob::new(""))
+    }
+    if builder.document_content_type.is_none() {
+        builder.document_content_type = "no value was set"
+            .parse::<crate::types::AutomatedReasoningPolicyBuildDocumentContentType>()
+            .ok()
+    }
+    if builder.document_name.is_none() {
+        builder.document_name = Some(Default::default())
+    }
+    if builder.document_hash.is_none() {
+        builder.document_hash = Some(Default::default())
     }
     builder
 }
@@ -1936,6 +1986,17 @@ pub(crate) fn automated_reasoning_policy_build_log_entry_correct_errors(
     builder
 }
 
+pub(crate) fn automated_reasoning_policy_build_result_asset_manifest_entry_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyBuildResultAssetManifestEntryBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyBuildResultAssetManifestEntryBuilder {
+    if builder.asset_type.is_none() {
+        builder.asset_type = "no value was set"
+            .parse::<crate::types::AutomatedReasoningPolicyBuildResultAssetType>()
+            .ok()
+    }
+    builder
+}
+
 pub(crate) fn automated_reasoning_policy_definition_rule_correct_errors(
     mut builder: crate::types::builders::AutomatedReasoningPolicyDefinitionRuleBuilder,
 ) -> crate::types::builders::AutomatedReasoningPolicyDefinitionRuleBuilder {
@@ -2010,6 +2071,45 @@ pub(crate) fn automated_reasoning_policy_generated_test_case_correct_errors(
     }
     if builder.expected_aggregated_findings_result.is_none() {
         builder.expected_aggregated_findings_result = "no value was set".parse::<crate::types::AutomatedReasoningCheckResult>().ok()
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_report_source_document_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyReportSourceDocumentBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyReportSourceDocumentBuilder {
+    if builder.document_name.is_none() {
+        builder.document_name = Some(Default::default())
+    }
+    if builder.document_hash.is_none() {
+        builder.document_hash = Some(Default::default())
+    }
+    if builder.document_id.is_none() {
+        builder.document_id = Some(Default::default())
+    }
+    if builder.atomic_statements.is_none() {
+        builder.atomic_statements = Some(Default::default())
+    }
+    if builder.document_content.is_none() {
+        builder.document_content = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_rule_report_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyRuleReportBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyRuleReportBuilder {
+    if builder.rule.is_none() {
+        builder.rule = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_variable_report_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyVariableReportBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyVariableReportBuilder {
+    if builder.policy_variable.is_none() {
+        builder.policy_variable = Some(Default::default())
     }
     builder
 }
@@ -2177,6 +2277,35 @@ pub(crate) fn automated_reasoning_policy_add_type_value_correct_errors(
     builder
 }
 
+pub(crate) fn automated_reasoning_policy_annotated_chunk_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyAnnotatedChunkBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyAnnotatedChunkBuilder {
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_atomic_statement_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyAtomicStatementBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyAtomicStatementBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    if builder.location.is_none() {
+        builder.location = {
+            let builder = crate::types::builders::AutomatedReasoningPolicyStatementLocationBuilder::default();
+            crate::serde_util::automated_reasoning_policy_statement_location_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn automated_reasoning_policy_build_step_correct_errors(
     mut builder: crate::types::builders::AutomatedReasoningPolicyBuildStepBuilder,
 ) -> crate::types::builders::AutomatedReasoningPolicyBuildStepBuilder {
@@ -2194,6 +2323,18 @@ pub(crate) fn automated_reasoning_policy_delete_type_value_correct_errors(
 ) -> crate::types::builders::AutomatedReasoningPolicyDeleteTypeValueBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_statement_reference_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyStatementReferenceBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyStatementReferenceBuilder {
+    if builder.document_id.is_none() {
+        builder.document_id = Some(Default::default())
+    }
+    if builder.statement_id.is_none() {
+        builder.statement_id = Some(Default::default())
     }
     builder
 }
@@ -2269,6 +2410,15 @@ pub(crate) fn automated_reasoning_logic_statement_correct_errors(
 ) -> crate::types::builders::AutomatedReasoningLogicStatementBuilder {
     if builder.logic.is_none() {
         builder.logic = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn automated_reasoning_policy_statement_location_correct_errors(
+    mut builder: crate::types::builders::AutomatedReasoningPolicyStatementLocationBuilder,
+) -> crate::types::builders::AutomatedReasoningPolicyStatementLocationBuilder {
+    if builder.lines.is_none() {
+        builder.lines = Some(Default::default())
     }
     builder
 }

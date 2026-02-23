@@ -10,6 +10,8 @@ pub struct NetworkSettings {
     pub read_receipt_config: ::std::option::Option<crate::types::ReadReceiptConfig>,
     /// <p>Indicates whether the data retention feature is enabled for the network. When true, messages are captured by the data retention bot for compliance and archiving purposes.</p>
     pub data_retention: ::std::option::Option<bool>,
+    /// <p>Configuration for OpenTDF integration at the network level, enforcing ABAC decision making when operating in TDF enabled rooms.</p>
+    pub enable_trusted_data_format: ::std::option::Option<bool>,
 }
 impl NetworkSettings {
     /// <p>Allows Wickr clients to send anonymized performance and usage metrics to the Wickr backend server for service improvement and troubleshooting.</p>
@@ -23,6 +25,10 @@ impl NetworkSettings {
     /// <p>Indicates whether the data retention feature is enabled for the network. When true, messages are captured by the data retention bot for compliance and archiving purposes.</p>
     pub fn data_retention(&self) -> ::std::option::Option<bool> {
         self.data_retention
+    }
+    /// <p>Configuration for OpenTDF integration at the network level, enforcing ABAC decision making when operating in TDF enabled rooms.</p>
+    pub fn enable_trusted_data_format(&self) -> ::std::option::Option<bool> {
+        self.enable_trusted_data_format
     }
 }
 impl NetworkSettings {
@@ -39,6 +45,7 @@ pub struct NetworkSettingsBuilder {
     pub(crate) enable_client_metrics: ::std::option::Option<bool>,
     pub(crate) read_receipt_config: ::std::option::Option<crate::types::ReadReceiptConfig>,
     pub(crate) data_retention: ::std::option::Option<bool>,
+    pub(crate) enable_trusted_data_format: ::std::option::Option<bool>,
 }
 impl NetworkSettingsBuilder {
     /// <p>Allows Wickr clients to send anonymized performance and usage metrics to the Wickr backend server for service improvement and troubleshooting.</p>
@@ -83,12 +90,27 @@ impl NetworkSettingsBuilder {
     pub fn get_data_retention(&self) -> &::std::option::Option<bool> {
         &self.data_retention
     }
+    /// <p>Configuration for OpenTDF integration at the network level, enforcing ABAC decision making when operating in TDF enabled rooms.</p>
+    pub fn enable_trusted_data_format(mut self, input: bool) -> Self {
+        self.enable_trusted_data_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for OpenTDF integration at the network level, enforcing ABAC decision making when operating in TDF enabled rooms.</p>
+    pub fn set_enable_trusted_data_format(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_trusted_data_format = input;
+        self
+    }
+    /// <p>Configuration for OpenTDF integration at the network level, enforcing ABAC decision making when operating in TDF enabled rooms.</p>
+    pub fn get_enable_trusted_data_format(&self) -> &::std::option::Option<bool> {
+        &self.enable_trusted_data_format
+    }
     /// Consumes the builder and constructs a [`NetworkSettings`](crate::types::NetworkSettings).
     pub fn build(self) -> crate::types::NetworkSettings {
         crate::types::NetworkSettings {
             enable_client_metrics: self.enable_client_metrics,
             read_receipt_config: self.read_receipt_config,
             data_retention: self.data_retention,
+            enable_trusted_data_format: self.enable_trusted_data_format,
         }
     }
 }

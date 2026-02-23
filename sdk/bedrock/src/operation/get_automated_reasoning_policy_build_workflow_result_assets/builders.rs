@@ -133,18 +133,32 @@ impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsFluentBuilder {
     pub fn get_build_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_build_workflow_id()
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub fn asset_type(mut self, input: crate::types::AutomatedReasoningPolicyBuildResultAssetType) -> Self {
         self.inner = self.inner.asset_type(input);
         self
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyBuildResultAssetType>) -> Self {
         self.inner = self.inner.set_asset_type(input);
         self
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyBuildResultAssetType> {
         self.inner.get_asset_type()
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asset_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_asset_id(input);
+        self
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_id()
     }
 }

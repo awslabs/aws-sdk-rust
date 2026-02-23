@@ -7,8 +7,10 @@ pub struct GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput {
     pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the build workflow whose result assets you want to retrieve.</p>
     pub build_workflow_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub asset_type: ::std::option::Option<crate::types::AutomatedReasoningPolicyBuildResultAssetType>,
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub asset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput {
     /// <p>The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow assets you want to retrieve.</p>
@@ -19,9 +21,13 @@ impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput {
     pub fn build_workflow_id(&self) -> ::std::option::Option<&str> {
         self.build_workflow_id.as_deref()
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub fn asset_type(&self) -> ::std::option::Option<&crate::types::AutomatedReasoningPolicyBuildResultAssetType> {
         self.asset_type.as_ref()
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
     }
 }
 impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput {
@@ -38,6 +44,7 @@ pub struct GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInputBuilder {
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
     pub(crate) build_workflow_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_type: ::std::option::Option<crate::types::AutomatedReasoningPolicyBuildResultAssetType>,
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow assets you want to retrieve.</p>
@@ -70,20 +77,34 @@ impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInputBuilder {
     pub fn get_build_workflow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_workflow_id
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     /// This field is required.
     pub fn asset_type(mut self, input: crate::types::AutomatedReasoningPolicyBuildResultAssetType) -> Self {
         self.asset_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub fn set_asset_type(mut self, input: ::std::option::Option<crate::types::AutomatedReasoningPolicyBuildResultAssetType>) -> Self {
         self.asset_type = input;
         self
     }
-    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION).</p>
+    /// <p>The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).</p>
     pub fn get_asset_type(&self) -> &::std::option::Option<crate::types::AutomatedReasoningPolicyBuildResultAssetType> {
         &self.asset_type
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_id = input;
+        self
+    }
+    /// <p>The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
     }
     /// Consumes the builder and constructs a [`GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput`](crate::operation::get_automated_reasoning_policy_build_workflow_result_assets::GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInput).
     pub fn build(
@@ -99,6 +120,8 @@ impl GetAutomatedReasoningPolicyBuildWorkflowResultAssetsInputBuilder {
                 build_workflow_id: self.build_workflow_id
                 ,
                 asset_type: self.asset_type
+                ,
+                asset_id: self.asset_id
                 ,
             }
         )

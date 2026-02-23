@@ -81,6 +81,12 @@ pub use crate::types::_automated_reasoning_policy_generated_test_cases::Automate
 
 pub use crate::types::_automated_reasoning_policy_scenarios::AutomatedReasoningPolicyScenariosBuilder;
 
+pub use crate::types::_automated_reasoning_policy_build_result_asset_manifest::AutomatedReasoningPolicyBuildResultAssetManifestBuilder;
+
+pub use crate::types::_automated_reasoning_policy_source_document::AutomatedReasoningPolicySourceDocumentBuilder;
+
+pub use crate::types::_automated_reasoning_policy_fidelity_report::AutomatedReasoningPolicyFidelityReportBuilder;
+
 pub use crate::types::_automated_reasoning_policy_build_workflow_summary::AutomatedReasoningPolicyBuildWorkflowSummaryBuilder;
 
 pub use crate::types::_sage_maker_endpoint::SageMakerEndpointBuilder;
@@ -245,6 +251,14 @@ pub use crate::types::_automated_reasoning_policy_build_log_entry::AutomatedReas
 
 pub use crate::types::_automated_reasoning_policy_generated_test_case::AutomatedReasoningPolicyGeneratedTestCaseBuilder;
 
+pub use crate::types::_automated_reasoning_policy_build_result_asset_manifest_entry::AutomatedReasoningPolicyBuildResultAssetManifestEntryBuilder;
+
+pub use crate::types::_automated_reasoning_policy_rule_report::AutomatedReasoningPolicyRuleReportBuilder;
+
+pub use crate::types::_automated_reasoning_policy_variable_report::AutomatedReasoningPolicyVariableReportBuilder;
+
+pub use crate::types::_automated_reasoning_policy_report_source_document::AutomatedReasoningPolicyReportSourceDocumentBuilder;
+
 pub use crate::types::_automated_reasoning_check_valid_finding::AutomatedReasoningCheckValidFindingBuilder;
 
 pub use crate::types::_automated_reasoning_check_invalid_finding::AutomatedReasoningCheckInvalidFindingBuilder;
@@ -317,6 +331,12 @@ pub use crate::types::_automated_reasoning_policy_delete_type_value::AutomatedRe
 
 pub use crate::types::_automated_reasoning_policy_build_step::AutomatedReasoningPolicyBuildStepBuilder;
 
+pub use crate::types::_automated_reasoning_policy_statement_reference::AutomatedReasoningPolicyStatementReferenceBuilder;
+
+pub use crate::types::_automated_reasoning_policy_atomic_statement::AutomatedReasoningPolicyAtomicStatementBuilder;
+
+pub use crate::types::_automated_reasoning_policy_annotated_chunk::AutomatedReasoningPolicyAnnotatedChunkBuilder;
+
 pub use crate::types::_automated_reasoning_check_rule::AutomatedReasoningCheckRuleBuilder;
 
 pub use crate::types::_automated_reasoning_check_translation_option::AutomatedReasoningCheckTranslationOptionBuilder;
@@ -332,6 +352,8 @@ pub use crate::types::_knowledge_base_retrieve_and_generate_configuration::Knowl
 pub use crate::types::_external_sources_retrieve_and_generate_configuration::ExternalSourcesRetrieveAndGenerateConfigurationBuilder;
 
 pub use crate::types::_dimensional_price_rate::DimensionalPriceRateBuilder;
+
+pub use crate::types::_automated_reasoning_policy_statement_location::AutomatedReasoningPolicyStatementLocationBuilder;
 
 pub use crate::types::_automated_reasoning_logic_statement::AutomatedReasoningLogicStatementBuilder;
 
@@ -382,6 +404,8 @@ pub use crate::types::_automated_reasoning_policy_add_rule_mutation::AutomatedRe
 pub use crate::types::_automated_reasoning_policy_update_rule_mutation::AutomatedReasoningPolicyUpdateRuleMutationBuilder;
 
 pub use crate::types::_automated_reasoning_policy_delete_rule_mutation::AutomatedReasoningPolicyDeleteRuleMutationBuilder;
+
+pub use crate::types::_automated_reasoning_policy_annotated_line::AutomatedReasoningPolicyAnnotatedLineBuilder;
 
 pub use crate::types::_filter_attribute::FilterAttributeBuilder;
 

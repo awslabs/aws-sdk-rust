@@ -28,7 +28,7 @@ version = "1.7.1"
 [dev-dependencies.aws-sdk-dynamodb]
 path = "../../sdk/dynamodb"
 features = ["test-util", "behavior-version-latest"]
-version = "1.106.0"
+version = "1.107.0"
 
 [dev-dependencies.aws-sdk-s3]
 path = "../../sdk/s3"

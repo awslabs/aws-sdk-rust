@@ -13,7 +13,7 @@ pub(crate) fn de_validation_error_json_err(
                 "reasons" => {
                     builder = builder.set_reasons(crate::protocol_serde::shape_error_detail_list::de_error_detail_list(tokens, _value)?);
                 }
-                "Message" => {
+                "message" => {
                     builder = builder.set_message(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))

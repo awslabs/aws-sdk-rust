@@ -96,5 +96,8 @@ pub fn ser_update_table_input_input(
         crate::protocol_serde::shape_warm_throughput::ser_warm_throughput(&mut object_31, var_30)?;
         object_31.finish();
     }
+    if let Some(var_32) = &input.global_table_settings_replication_mode {
+        object.key("GlobalTableSettingsReplicationMode").string(var_32.as_str());
+    }
     Ok(())
 }
