@@ -29,6 +29,7 @@ impl super::Client {
     ///   - [`channel_engine_version(Option<ChannelEngineVersionResponse>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::channel_engine_version): Requested engine version for this channel.
     ///   - [`linked_channel_settings(Option<DescribeLinkedChannelSettings>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::linked_channel_settings): Linked Channel Settings for this channel.
     ///   - [`channel_security_groups(Option<Vec::<String>>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::channel_security_groups): A list of IDs for all the Input Security Groups attached to the channel.
+    ///   - [`inference_settings(Option<DescribeInferenceSettings>)`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesOutput::inference_settings): Include this setting to include Elemental Inference features in this channel.
     /// - On failure, responds with [`SdkError<RestartChannelPipelinesError>`](crate::operation::restart_channel_pipelines::RestartChannelPipelinesError)
     pub fn restart_channel_pipelines(&self) -> crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesFluentBuilder {
         crate::operation::restart_channel_pipelines::builders::RestartChannelPipelinesFluentBuilder::new(self.handle.clone())

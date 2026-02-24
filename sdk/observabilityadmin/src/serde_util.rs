@@ -90,6 +90,15 @@ pub(crate) fn source_logs_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn log_group_name_configuration_correct_errors(
+    mut builder: crate::types::builders::LogGroupNameConfigurationBuilder,
+) -> crate::types::builders::LogGroupNameConfigurationBuilder {
+    if builder.log_group_name_pattern.is_none() {
+        builder.log_group_name_pattern = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn logs_backup_configuration_correct_errors(
     mut builder: crate::types::builders::LogsBackupConfigurationBuilder,
 ) -> crate::types::builders::LogsBackupConfigurationBuilder {

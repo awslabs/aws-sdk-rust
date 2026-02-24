@@ -13,6 +13,7 @@
 /// # let videodescriptionscalingbehavior = unimplemented!();
 /// match videodescriptionscalingbehavior {
 ///     VideoDescriptionScalingBehavior::Default => { /* ... */ },
+///     VideoDescriptionScalingBehavior::SmartCrop => { /* ... */ },
 ///     VideoDescriptionScalingBehavior::StretchToOutput => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum VideoDescriptionScalingBehavior {
     #[allow(missing_docs)] // documentation missing in model
     Default,
     #[allow(missing_docs)] // documentation missing in model
+    SmartCrop,
+    #[allow(missing_docs)] // documentation missing in model
     StretchToOutput,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for VideoDescriptionScalingBehavior {
     fn from(s: &str) -> Self {
         match s {
             "DEFAULT" => VideoDescriptionScalingBehavior::Default,
+            "SMART_CROP" => VideoDescriptionScalingBehavior::SmartCrop,
             "STRETCH_TO_OUTPUT" => VideoDescriptionScalingBehavior::StretchToOutput,
             other => VideoDescriptionScalingBehavior::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl VideoDescriptionScalingBehavior {
     pub fn as_str(&self) -> &str {
         match self {
             VideoDescriptionScalingBehavior::Default => "DEFAULT",
+            VideoDescriptionScalingBehavior::SmartCrop => "SMART_CROP",
             VideoDescriptionScalingBehavior::StretchToOutput => "STRETCH_TO_OUTPUT",
             VideoDescriptionScalingBehavior::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DEFAULT", "STRETCH_TO_OUTPUT"]
+        &["DEFAULT", "SMART_CROP", "STRETCH_TO_OUTPUT"]
     }
 }
 impl ::std::convert::AsRef<str> for VideoDescriptionScalingBehavior {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for VideoDescriptionScalingBehavior {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             VideoDescriptionScalingBehavior::Default => write!(f, "DEFAULT"),
+            VideoDescriptionScalingBehavior::SmartCrop => write!(f, "SMART_CROP"),
             VideoDescriptionScalingBehavior::StretchToOutput => write!(f, "STRETCH_TO_OUTPUT"),
             VideoDescriptionScalingBehavior::Unknown(value) => write!(f, "{value}"),
         }

@@ -49,6 +49,16 @@ pub(crate) fn reflens_get_metric_data_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_alarm_mute_rules_output_output_next_token(
+    input: &crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dashboards_output_output_next_token(
     input: &crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -100,6 +110,13 @@ pub(crate) fn lens_describe_anomaly_detectors_output_output_anomaly_detectors(
     input: crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnomalyDetector>> {
     let input = input.anomaly_detectors?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_alarm_mute_rules_output_output_alarm_mute_rule_summaries(
+    input: crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AlarmMuteRuleSummary>> {
+    let input = input.alarm_mute_rule_summaries?;
     ::std::option::Option::Some(input)
 }
 

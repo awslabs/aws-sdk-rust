@@ -201,4 +201,18 @@ impl ModifyInstanceMetadataDefaultsFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn http_tokens_enforced(mut self, input: crate::types::DefaultHttpTokensEnforcedState) -> Self {
+        self.inner = self.inner.http_tokens_enforced(input);
+        self
+    }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_http_tokens_enforced(mut self, input: ::std::option::Option<crate::types::DefaultHttpTokensEnforcedState>) -> Self {
+        self.inner = self.inner.set_http_tokens_enforced(input);
+        self
+    }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_http_tokens_enforced(&self) -> &::std::option::Option<crate::types::DefaultHttpTokensEnforcedState> {
+        self.inner.get_http_tokens_enforced()
+    }
 }

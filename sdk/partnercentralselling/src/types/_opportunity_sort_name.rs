@@ -16,6 +16,7 @@
 ///     OpportunitySortName::CustomerCompanyName => { /* ... */ },
 ///     OpportunitySortName::Identifier => { /* ... */ },
 ///     OpportunitySortName::LastModifieddate => { /* ... */ },
+///     OpportunitySortName::TargetCloseDate => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum OpportunitySortName {
     Identifier,
     #[allow(missing_docs)] // documentation missing in model
     LastModifieddate,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetCloseDate,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for OpportunitySortName {
             "CustomerCompanyName" => OpportunitySortName::CustomerCompanyName,
             "Identifier" => OpportunitySortName::Identifier,
             "LastModifiedDate" => OpportunitySortName::LastModifieddate,
+            "TargetCloseDate" => OpportunitySortName::TargetCloseDate,
             other => OpportunitySortName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl OpportunitySortName {
             OpportunitySortName::CustomerCompanyName => "CustomerCompanyName",
             OpportunitySortName::Identifier => "Identifier",
             OpportunitySortName::LastModifieddate => "LastModifiedDate",
+            OpportunitySortName::TargetCloseDate => "TargetCloseDate",
             OpportunitySortName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CreatedDate", "CustomerCompanyName", "Identifier", "LastModifiedDate"]
+        &["CreatedDate", "CustomerCompanyName", "Identifier", "LastModifiedDate", "TargetCloseDate"]
     }
 }
 impl ::std::convert::AsRef<str> for OpportunitySortName {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for OpportunitySortName {
             OpportunitySortName::CustomerCompanyName => write!(f, "CustomerCompanyName"),
             OpportunitySortName::Identifier => write!(f, "Identifier"),
             OpportunitySortName::LastModifieddate => write!(f, "LastModifiedDate"),
+            OpportunitySortName::TargetCloseDate => write!(f, "TargetCloseDate"),
             OpportunitySortName::Unknown(value) => write!(f, "{value}"),
         }
     }

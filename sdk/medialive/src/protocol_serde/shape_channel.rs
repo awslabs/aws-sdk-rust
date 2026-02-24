@@ -135,6 +135,11 @@ where
                             builder =
                                 builder.set_channel_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens, _value)?);
                         }
+                        "inferenceSettings" => {
+                            builder = builder.set_inference_settings(
+                                crate::protocol_serde::shape_describe_inference_settings::de_describe_inference_settings(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

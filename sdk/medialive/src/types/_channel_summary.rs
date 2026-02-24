@@ -46,6 +46,8 @@ pub struct ChannelSummary {
     pub linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     /// A list of IDs for all the Input Security Groups attached to the channel.
     pub channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub inference_settings: ::std::option::Option<crate::types::DescribeInferenceSettings>,
 }
 impl ChannelSummary {
     /// The unique arn of the channel.
@@ -142,6 +144,10 @@ impl ChannelSummary {
     pub fn channel_security_groups(&self) -> &[::std::string::String] {
         self.channel_security_groups.as_deref().unwrap_or_default()
     }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn inference_settings(&self) -> ::std::option::Option<&crate::types::DescribeInferenceSettings> {
+        self.inference_settings.as_ref()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -175,6 +181,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) used_channel_engine_versions: ::std::option::Option<::std::vec::Vec<crate::types::ChannelEngineVersionResponse>>,
     pub(crate) linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     pub(crate) channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inference_settings: ::std::option::Option<crate::types::DescribeInferenceSettings>,
 }
 impl ChannelSummaryBuilder {
     /// The unique arn of the channel.
@@ -510,6 +517,20 @@ impl ChannelSummaryBuilder {
     pub fn get_channel_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.channel_security_groups
     }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn inference_settings(mut self, input: crate::types::DescribeInferenceSettings) -> Self {
+        self.inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn set_inference_settings(mut self, input: ::std::option::Option<crate::types::DescribeInferenceSettings>) -> Self {
+        self.inference_settings = input;
+        self
+    }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn get_inference_settings(&self) -> &::std::option::Option<crate::types::DescribeInferenceSettings> {
+        &self.inference_settings
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -534,6 +555,7 @@ impl ChannelSummaryBuilder {
             used_channel_engine_versions: self.used_channel_engine_versions,
             linked_channel_settings: self.linked_channel_settings,
             channel_security_groups: self.channel_security_groups,
+            inference_settings: self.inference_settings,
         }
     }
 }

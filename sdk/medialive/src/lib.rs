@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-medialive = "1.128.0"
+//! aws-sdk-medialive = "1.129.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

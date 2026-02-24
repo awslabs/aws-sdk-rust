@@ -13,6 +13,12 @@ pub use crate::types::_statistic::Statistic;
 
 pub use crate::types::_standard_unit::StandardUnit;
 
+pub use crate::types::_rule::Rule;
+
+pub use crate::types::_mute_targets::MuteTargets;
+
+pub use crate::types::_alarm_mute_rule_status::AlarmMuteRuleStatus;
+
 pub use crate::types::_label_options::LabelOptions;
 
 pub use crate::types::_metric_stream_output_format::MetricStreamOutputFormat;
@@ -45,6 +51,8 @@ pub use crate::types::_anomaly_detector::AnomalyDetector;
 
 pub use crate::types::_insight_rule::InsightRule;
 
+pub use crate::types::_schedule::Schedule;
+
 pub use crate::types::_insight_rule_contributor::InsightRuleContributor;
 
 pub use crate::types::_insight_rule_metric_datapoint::InsightRuleMetricDatapoint;
@@ -60,6 +68,8 @@ pub use crate::types::_datapoint::Datapoint;
 pub use crate::types::_metric_stream_filter::MetricStreamFilter;
 
 pub use crate::types::_metric_stream_statistics_configuration::MetricStreamStatisticsConfiguration;
+
+pub use crate::types::_alarm_mute_rule_summary::AlarmMuteRuleSummary;
 
 pub use crate::types::_dashboard_entry::DashboardEntry;
 
@@ -108,6 +118,10 @@ mod _actions_suppressed_by;
 mod _alarm_contributor;
 
 mod _alarm_history_item;
+
+mod _alarm_mute_rule_status;
+
+mod _alarm_mute_rule_summary;
 
 mod _alarm_type;
 
@@ -185,13 +199,19 @@ mod _metric_stream_statistics_configuration;
 
 mod _metric_stream_statistics_metric;
 
+mod _mute_targets;
+
 mod _partial_failure;
 
 mod _range;
 
 mod _recently_active;
 
+mod _rule;
+
 mod _scan_by;
+
+mod _schedule;
 
 mod _single_metric_anomaly_detector;
 

@@ -15,6 +15,12 @@ pub fn ser_destination_logs_configuration(
         crate::protocol_serde::shape_logs_backup_configuration::ser_logs_backup_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.log_group_name_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("LogGroupNameConfiguration").start_object();
+        crate::protocol_serde::shape_log_group_name_configuration::ser_log_group_name_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -42,6 +48,11 @@ where
                         "BackupConfiguration" => {
                             builder = builder.set_backup_configuration(
                                 crate::protocol_serde::shape_logs_backup_configuration::de_logs_backup_configuration(tokens, _value)?,
+                            );
+                        }
+                        "LogGroupNameConfiguration" => {
+                            builder = builder.set_log_group_name_configuration(
+                                crate::protocol_serde::shape_log_group_name_configuration::de_log_group_name_configuration(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

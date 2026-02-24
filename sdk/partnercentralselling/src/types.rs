@@ -39,6 +39,8 @@ pub use crate::types::_last_modified_date::LastModifiedDate;
 
 pub use crate::types::_created_date_filter::CreatedDateFilter;
 
+pub use crate::types::_target_close_date_filter::TargetCloseDateFilter;
+
 pub use crate::types::_national_security::NationalSecurity;
 
 pub use crate::types::_customer::Customer;
@@ -488,6 +490,8 @@ mod _sort_order;
 mod _stage;
 
 mod _tag;
+
+mod _target_close_date_filter;
 
 mod _task_status;
 

@@ -421,6 +421,8 @@ pub(crate) mod shape_cluster_network_settings_update_request;
 
 pub(crate) mod shape_describe_anywhere_settings;
 
+pub(crate) mod shape_describe_inference_settings;
+
 pub(crate) mod shape_describe_linked_channel_settings;
 
 pub(crate) mod shape_encoder_settings;
@@ -428,6 +430,8 @@ pub(crate) mod shape_encoder_settings;
 pub(crate) mod shape_event_bridge_rule_template_target;
 
 pub(crate) mod shape_failed_media_resource_map;
+
+pub(crate) mod shape_inference_settings;
 
 pub(crate) mod shape_input;
 

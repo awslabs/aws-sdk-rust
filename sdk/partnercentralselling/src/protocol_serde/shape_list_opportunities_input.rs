@@ -69,5 +69,11 @@ pub fn ser_list_opportunities_input_input(
         crate::protocol_serde::shape_created_date_filter::ser_created_date_filter(&mut object_21, var_20)?;
         object_21.finish();
     }
+    if let Some(var_22) = &input.target_close_date {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("TargetCloseDate").start_object();
+        crate::protocol_serde::shape_target_close_date_filter::ser_target_close_date_filter(&mut object_23, var_22)?;
+        object_23.finish();
+    }
     Ok(())
 }

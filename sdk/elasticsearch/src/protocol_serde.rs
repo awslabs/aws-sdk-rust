@@ -155,8 +155,6 @@ pub(crate) mod shape_create_package_input;
 
 pub(crate) mod shape_create_vpc_endpoint_input;
 
-pub(crate) mod shape_describe_domain_auto_tunes_input;
-
 pub(crate) mod shape_describe_elasticsearch_domains_input;
 
 pub(crate) mod shape_describe_inbound_cross_cluster_search_connections_input;

@@ -637,6 +637,8 @@ pub use crate::types::_default_instance_metadata_endpoint_state::DefaultInstance
 
 pub use crate::types::_default_instance_metadata_tags_state::DefaultInstanceMetadataTagsState;
 
+pub use crate::types::_default_http_tokens_enforced_state::DefaultHttpTokensEnforcedState;
+
 pub use crate::types::_http_tokens_state::HttpTokensState;
 
 pub use crate::types::_instance_metadata_endpoint_state::InstanceMetadataEndpointState;
@@ -1476,6 +1478,8 @@ pub use crate::types::_capacity_reservation_group::CapacityReservationGroup;
 pub use crate::types::_purchase::Purchase;
 
 pub use crate::types::_image_ancestry_entry::ImageAncestryEntry;
+
+pub use crate::types::_http_tokens_enforced_state::HttpTokensEnforcedState;
 
 pub use crate::types::_architecture_type::ArchitectureType;
 
@@ -3151,6 +3155,8 @@ mod _datafeed_subscription_state;
 
 mod _declarative_policies_report;
 
+mod _default_http_tokens_enforced_state;
+
 mod _default_instance_metadata_endpoint_state;
 
 mod _default_instance_metadata_tags_state;
@@ -3516,6 +3522,8 @@ mod _host_reservation;
 mod _host_tenancy;
 
 mod _hostname_type;
+
+mod _http_tokens_enforced_state;
 
 mod _http_tokens_state;
 

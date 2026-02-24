@@ -23,6 +23,8 @@ pub use crate::types::_channel_engine_version_request::ChannelEngineVersionReque
 
 pub use crate::types::_linked_channel_settings::LinkedChannelSettingsBuilder;
 
+pub use crate::types::_inference_settings::InferenceSettingsBuilder;
+
 pub use crate::types::_channel::ChannelBuilder;
 
 pub use crate::types::_cluster_network_settings_create_request::ClusterNetworkSettingsCreateRequestBuilder;
@@ -66,6 +68,8 @@ pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettingsBuild
 pub use crate::types::_channel_engine_version_response::ChannelEngineVersionResponseBuilder;
 
 pub use crate::types::_describe_linked_channel_settings::DescribeLinkedChannelSettingsBuilder;
+
+pub use crate::types::_describe_inference_settings::DescribeInferenceSettingsBuilder;
 
 pub use crate::types::_multiplex_program_packet_identifiers_map::MultiplexProgramPacketIdentifiersMapBuilder;
 

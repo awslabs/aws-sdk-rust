@@ -28,6 +28,8 @@ pub struct InstanceMetadataDefaultsResponse {
     pub managed_by: ::std::option::Option<crate::types::ManagedBy>,
     /// <p>The customized exception message that is specified in the declarative policy.</p>
     pub managed_exception_message: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>
+    pub http_tokens_enforced: ::std::option::Option<crate::types::HttpTokensEnforcedState>,
 }
 impl InstanceMetadataDefaultsResponse {
     /// <p>Indicates whether IMDSv2 is required.</p>
@@ -66,6 +68,10 @@ impl InstanceMetadataDefaultsResponse {
     pub fn managed_exception_message(&self) -> ::std::option::Option<&str> {
         self.managed_exception_message.as_deref()
     }
+    /// <p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>
+    pub fn http_tokens_enforced(&self) -> ::std::option::Option<&crate::types::HttpTokensEnforcedState> {
+        self.http_tokens_enforced.as_ref()
+    }
 }
 impl InstanceMetadataDefaultsResponse {
     /// Creates a new builder-style object to manufacture [`InstanceMetadataDefaultsResponse`](crate::types::InstanceMetadataDefaultsResponse).
@@ -84,6 +90,7 @@ pub struct InstanceMetadataDefaultsResponseBuilder {
     pub(crate) instance_metadata_tags: ::std::option::Option<crate::types::InstanceMetadataTagsState>,
     pub(crate) managed_by: ::std::option::Option<crate::types::ManagedBy>,
     pub(crate) managed_exception_message: ::std::option::Option<::std::string::String>,
+    pub(crate) http_tokens_enforced: ::std::option::Option<crate::types::HttpTokensEnforcedState>,
 }
 impl InstanceMetadataDefaultsResponseBuilder {
     /// <p>Indicates whether IMDSv2 is required.</p>
@@ -206,6 +213,20 @@ impl InstanceMetadataDefaultsResponseBuilder {
     pub fn get_managed_exception_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.managed_exception_message
     }
+    /// <p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>
+    pub fn http_tokens_enforced(mut self, input: crate::types::HttpTokensEnforcedState) -> Self {
+        self.http_tokens_enforced = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>
+    pub fn set_http_tokens_enforced(mut self, input: ::std::option::Option<crate::types::HttpTokensEnforcedState>) -> Self {
+        self.http_tokens_enforced = input;
+        self
+    }
+    /// <p>Indicates whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>.</p>
+    pub fn get_http_tokens_enforced(&self) -> &::std::option::Option<crate::types::HttpTokensEnforcedState> {
+        &self.http_tokens_enforced
+    }
     /// Consumes the builder and constructs a [`InstanceMetadataDefaultsResponse`](crate::types::InstanceMetadataDefaultsResponse).
     pub fn build(self) -> crate::types::InstanceMetadataDefaultsResponse {
         crate::types::InstanceMetadataDefaultsResponse {
@@ -215,6 +236,7 @@ impl InstanceMetadataDefaultsResponseBuilder {
             instance_metadata_tags: self.instance_metadata_tags,
             managed_by: self.managed_by,
             managed_exception_message: self.managed_exception_message,
+            http_tokens_enforced: self.http_tokens_enforced,
         }
     }
 }

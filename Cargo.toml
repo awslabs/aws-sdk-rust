@@ -1,8 +1,8 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/webassembly",
     "tests/telemetry",
+    "tests/webassembly",
     "tests/no-default-features"
 ]
 members = [
@@ -180,6 +180,7 @@ members = [
     "sdk/elasticloadbalancingv2",
     "sdk/elasticsearch",
     "sdk/elastictranscoder",
+    "sdk/elementalinference",
     "sdk/emr",
     "sdk/emrcontainers",
     "sdk/emrserverless",

@@ -55,6 +55,8 @@ pub use crate::types::_logs_encryption_configuration::LogsEncryptionConfiguratio
 
 pub use crate::types::_logs_backup_configuration::LogsBackupConfigurationBuilder;
 
+pub use crate::types::_log_group_name_configuration::LogGroupNameConfigurationBuilder;
+
 pub use crate::types::_logging_filter::LoggingFilterBuilder;
 
 pub use crate::types::_advanced_event_selector::AdvancedEventSelectorBuilder;

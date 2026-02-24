@@ -333,4 +333,18 @@ impl UpdateChannelFluentBuilder {
     pub fn get_channel_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_channel_security_groups()
     }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn inference_settings(mut self, input: crate::types::InferenceSettings) -> Self {
+        self.inner = self.inner.inference_settings(input);
+        self
+    }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn set_inference_settings(mut self, input: ::std::option::Option<crate::types::InferenceSettings>) -> Self {
+        self.inner = self.inner.set_inference_settings(input);
+        self
+    }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn get_inference_settings(&self) -> &::std::option::Option<crate::types::InferenceSettings> {
+        self.inner.get_inference_settings()
+    }
 }

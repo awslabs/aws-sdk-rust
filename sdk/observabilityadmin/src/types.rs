@@ -83,6 +83,8 @@ pub use crate::types::_logs_encryption_configuration::LogsEncryptionConfiguratio
 
 pub use crate::types::_logs_backup_configuration::LogsBackupConfiguration;
 
+pub use crate::types::_log_group_name_configuration::LogGroupNameConfiguration;
+
 pub use crate::types::_output_format::OutputFormat;
 
 pub use crate::types::_logging_filter::LoggingFilter;
@@ -176,6 +178,8 @@ mod _integration_summary;
 mod _label_name_condition;
 
 mod _log_delivery_parameters;
+
+mod _log_group_name_configuration;
 
 mod _log_type;
 

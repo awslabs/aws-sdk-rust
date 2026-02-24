@@ -107,16 +107,6 @@ pub fn de_describe_domain_auto_tunes_http_response(
     })
 }
 
-pub fn ser_describe_domain_auto_tunes_input(
-    input: &crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput,
-) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_describe_domain_auto_tunes_input::ser_describe_domain_auto_tunes_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
-}
-
 pub(crate) fn de_describe_domain_auto_tunes(
     _value: &[u8],
     mut builder: crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder,

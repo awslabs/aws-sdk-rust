@@ -15,6 +15,8 @@ pub use crate::types::_last_modified_date::LastModifiedDateBuilder;
 
 pub use crate::types::_created_date_filter::CreatedDateFilterBuilder;
 
+pub use crate::types::_target_close_date_filter::TargetCloseDateFilterBuilder;
+
 pub use crate::types::_customer::CustomerBuilder;
 
 pub use crate::types::_project::ProjectBuilder;

@@ -48,6 +48,8 @@ pub struct StopChannelOutput {
     pub linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     /// A list of IDs for all the Input Security Groups attached to the channel.
     pub channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub inference_settings: ::std::option::Option<crate::types::DescribeInferenceSettings>,
     _request_id: Option<String>,
 }
 impl StopChannelOutput {
@@ -149,6 +151,10 @@ impl StopChannelOutput {
     pub fn channel_security_groups(&self) -> &[::std::string::String] {
         self.channel_security_groups.as_deref().unwrap_or_default()
     }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn inference_settings(&self) -> ::std::option::Option<&crate::types::DescribeInferenceSettings> {
+        self.inference_settings.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for StopChannelOutput {
     fn request_id(&self) -> Option<&str> {
@@ -188,6 +194,7 @@ pub struct StopChannelOutputBuilder {
     pub(crate) channel_engine_version: ::std::option::Option<crate::types::ChannelEngineVersionResponse>,
     pub(crate) linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     pub(crate) channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) inference_settings: ::std::option::Option<crate::types::DescribeInferenceSettings>,
     _request_id: Option<String>,
 }
 impl StopChannelOutputBuilder {
@@ -535,6 +542,20 @@ impl StopChannelOutputBuilder {
     pub fn get_channel_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.channel_security_groups
     }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn inference_settings(mut self, input: crate::types::DescribeInferenceSettings) -> Self {
+        self.inference_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn set_inference_settings(mut self, input: ::std::option::Option<crate::types::DescribeInferenceSettings>) -> Self {
+        self.inference_settings = input;
+        self
+    }
+    /// Include this setting to include Elemental Inference features in this channel.
+    pub fn get_inference_settings(&self) -> &::std::option::Option<crate::types::DescribeInferenceSettings> {
+        &self.inference_settings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -569,6 +590,7 @@ impl StopChannelOutputBuilder {
             channel_engine_version: self.channel_engine_version,
             linked_channel_settings: self.linked_channel_settings,
             channel_security_groups: self.channel_security_groups,
+            inference_settings: self.inference_settings,
             _request_id: self._request_id,
         }
     }

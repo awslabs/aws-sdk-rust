@@ -27,6 +27,8 @@ pub use crate::types::_channel_engine_version_request::ChannelEngineVersionReque
 
 pub use crate::types::_linked_channel_settings::LinkedChannelSettings;
 
+pub use crate::types::_inference_settings::InferenceSettings;
+
 pub use crate::types::_channel::Channel;
 
 pub use crate::types::_channel_placement_group_state::ChannelPlacementGroupState;
@@ -106,6 +108,8 @@ pub use crate::types::_describe_anywhere_settings::DescribeAnywhereSettings;
 pub use crate::types::_channel_engine_version_response::ChannelEngineVersionResponse;
 
 pub use crate::types::_describe_linked_channel_settings::DescribeLinkedChannelSettings;
+
+pub use crate::types::_describe_inference_settings::DescribeInferenceSettings;
 
 pub use crate::types::_multiplex_state::MultiplexState;
 
@@ -1647,6 +1651,8 @@ mod _describe_cluster_summary;
 
 mod _describe_follower_channel_settings;
 
+mod _describe_inference_settings;
+
 mod _describe_linked_channel_settings;
 
 mod _describe_network_summary;
@@ -2006,6 +2012,8 @@ mod _id3_segment_tagging_schedule_action_settings;
 mod _immediate_mode_schedule_action_start_settings;
 
 mod _include_filler_nal_units;
+
+mod _inference_settings;
 
 mod _input;
 

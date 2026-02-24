@@ -3,6 +3,10 @@ pub use crate::types::_single_metric_anomaly_detector::SingleMetricAnomalyDetect
 
 pub use crate::types::_metric_math_anomaly_detector::MetricMathAnomalyDetectorBuilder;
 
+pub use crate::types::_rule::RuleBuilder;
+
+pub use crate::types::_mute_targets::MuteTargetsBuilder;
+
 pub use crate::types::_label_options::LabelOptionsBuilder;
 
 pub use crate::types::_anomaly_detector_configuration::AnomalyDetectorConfigurationBuilder;
@@ -25,6 +29,8 @@ pub use crate::types::_anomaly_detector::AnomalyDetectorBuilder;
 
 pub use crate::types::_insight_rule::InsightRuleBuilder;
 
+pub use crate::types::_schedule::ScheduleBuilder;
+
 pub use crate::types::_insight_rule_contributor::InsightRuleContributorBuilder;
 
 pub use crate::types::_insight_rule_metric_datapoint::InsightRuleMetricDatapointBuilder;
@@ -40,6 +46,8 @@ pub use crate::types::_datapoint::DatapointBuilder;
 pub use crate::types::_metric_stream_filter::MetricStreamFilterBuilder;
 
 pub use crate::types::_metric_stream_statistics_configuration::MetricStreamStatisticsConfigurationBuilder;
+
+pub use crate::types::_alarm_mute_rule_summary::AlarmMuteRuleSummaryBuilder;
 
 pub use crate::types::_dashboard_entry::DashboardEntryBuilder;
 

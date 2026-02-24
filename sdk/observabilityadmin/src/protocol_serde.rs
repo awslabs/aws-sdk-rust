@@ -273,6 +273,8 @@ pub(crate) mod shape_data_sources;
 
 pub(crate) mod shape_field_to_match;
 
+pub(crate) mod shape_log_group_name_configuration;
+
 pub(crate) mod shape_log_types;
 
 pub(crate) mod shape_logging_filter;

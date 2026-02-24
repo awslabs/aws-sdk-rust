@@ -16,6 +16,8 @@ pub struct TelemetryConfiguration {
     pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp of the last change to the telemetry configuration for the resource. For example, <code>1728679196318</code>.</p>
     pub last_update_time_stamp: ::std::option::Option<i64>,
+    /// <p>Specifies the type of telemetry source for a resource, such as EKS cluster logs.</p>
+    pub telemetry_source_type: ::std::option::Option<crate::types::TelemetrySourceType>,
 }
 impl TelemetryConfiguration {
     /// <p>The account ID which contains the resource managed in telemetry configuration. An example of a valid account ID is <code>012345678901</code>.</p>
@@ -44,6 +46,10 @@ impl TelemetryConfiguration {
     pub fn last_update_time_stamp(&self) -> ::std::option::Option<i64> {
         self.last_update_time_stamp
     }
+    /// <p>Specifies the type of telemetry source for a resource, such as EKS cluster logs.</p>
+    pub fn telemetry_source_type(&self) -> ::std::option::Option<&crate::types::TelemetrySourceType> {
+        self.telemetry_source_type.as_ref()
+    }
 }
 impl TelemetryConfiguration {
     /// Creates a new builder-style object to manufacture [`TelemetryConfiguration`](crate::types::TelemetryConfiguration).
@@ -63,6 +69,7 @@ pub struct TelemetryConfigurationBuilder {
     pub(crate) resource_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) last_update_time_stamp: ::std::option::Option<i64>,
+    pub(crate) telemetry_source_type: ::std::option::Option<crate::types::TelemetrySourceType>,
 }
 impl TelemetryConfigurationBuilder {
     /// <p>The account ID which contains the resource managed in telemetry configuration. An example of a valid account ID is <code>012345678901</code>.</p>
@@ -169,6 +176,20 @@ impl TelemetryConfigurationBuilder {
     pub fn get_last_update_time_stamp(&self) -> &::std::option::Option<i64> {
         &self.last_update_time_stamp
     }
+    /// <p>Specifies the type of telemetry source for a resource, such as EKS cluster logs.</p>
+    pub fn telemetry_source_type(mut self, input: crate::types::TelemetrySourceType) -> Self {
+        self.telemetry_source_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of telemetry source for a resource, such as EKS cluster logs.</p>
+    pub fn set_telemetry_source_type(mut self, input: ::std::option::Option<crate::types::TelemetrySourceType>) -> Self {
+        self.telemetry_source_type = input;
+        self
+    }
+    /// <p>Specifies the type of telemetry source for a resource, such as EKS cluster logs.</p>
+    pub fn get_telemetry_source_type(&self) -> &::std::option::Option<crate::types::TelemetrySourceType> {
+        &self.telemetry_source_type
+    }
     /// Consumes the builder and constructs a [`TelemetryConfiguration`](crate::types::TelemetryConfiguration).
     pub fn build(self) -> crate::types::TelemetryConfiguration {
         crate::types::TelemetryConfiguration {
@@ -178,6 +199,7 @@ impl TelemetryConfigurationBuilder {
             resource_identifier: self.resource_identifier,
             resource_tags: self.resource_tags,
             last_update_time_stamp: self.last_update_time_stamp,
+            telemetry_source_type: self.telemetry_source_type,
         }
     }
 }

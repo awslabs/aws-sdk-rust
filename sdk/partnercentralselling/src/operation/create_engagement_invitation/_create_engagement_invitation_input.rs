@@ -9,7 +9,7 @@ pub struct CreateEngagementInvitationInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the <code>Engagement</code> associated with the invitation. This parameter ensures the invitation is created within the correct <code>Engagement</code> context.</p>
     pub engagement_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details.</p>
+    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details, or <code>LeadInvitation</code>, which includes structures for customer information and interaction details.</p>
     pub invitation: ::std::option::Option<crate::types::Invitation>,
 }
 impl CreateEngagementInvitationInput {
@@ -25,7 +25,7 @@ impl CreateEngagementInvitationInput {
     pub fn engagement_identifier(&self) -> ::std::option::Option<&str> {
         self.engagement_identifier.as_deref()
     }
-    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details.</p>
+    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details, or <code>LeadInvitation</code>, which includes structures for customer information and interaction details.</p>
     pub fn invitation(&self) -> ::std::option::Option<&crate::types::Invitation> {
         self.invitation.as_ref()
     }
@@ -92,18 +92,18 @@ impl CreateEngagementInvitationInputBuilder {
     pub fn get_engagement_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.engagement_identifier
     }
-    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details.</p>
+    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details, or <code>LeadInvitation</code>, which includes structures for customer information and interaction details.</p>
     /// This field is required.
     pub fn invitation(mut self, input: crate::types::Invitation) -> Self {
         self.invitation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details.</p>
+    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details, or <code>LeadInvitation</code>, which includes structures for customer information and interaction details.</p>
     pub fn set_invitation(mut self, input: ::std::option::Option<crate::types::Invitation>) -> Self {
         self.invitation = input;
         self
     }
-    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details.</p>
+    /// <p>The <code>Invitation</code> object all information necessary to initiate an engagement invitation to a partner. It contains a personalized message from the sender, the invitation's receiver, and a payload. The <code>Payload</code> can be the <code>OpportunityInvitation</code>, which includes detailed structures for sender contacts, partner responsibilities, customer information, and project details, or <code>LeadInvitation</code>, which includes structures for customer information and interaction details.</p>
     pub fn get_invitation(&self) -> &::std::option::Option<crate::types::Invitation> {
         &self.invitation
     }

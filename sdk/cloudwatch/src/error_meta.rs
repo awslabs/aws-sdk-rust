@@ -96,6 +96,27 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alarm_mute_rule::DeleteAlarmMuteRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alarm_mute_rule::DeleteAlarmMuteRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_alarm_mute_rule::DeleteAlarmMuteRuleError> for Error {
+    fn from(err: crate::operation::delete_alarm_mute_rule::DeleteAlarmMuteRuleError) -> Self {
+        match err {
+            crate::operation::delete_alarm_mute_rule::DeleteAlarmMuteRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alarms::DeleteAlarmsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -485,6 +506,28 @@ impl From<crate::operation::enable_insight_rules::EnableInsightRulesError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError> for Error {
+    fn from(err: crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError) -> Self {
+        match err {
+            crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dashboard::GetDashboardError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -649,6 +692,31 @@ impl From<crate::operation::get_metric_widget_image::GetMetricWidgetImageError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError> for Error {
+    fn from(err: crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError) -> Self {
+        match err {
+            crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError::InvalidNextToken(inner) => Error::InvalidNextToken(inner),
+            crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_alarm_mute_rules::ListAlarmMuteRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dashboards::ListDashboardsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -782,6 +850,28 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_alarm_mute_rule::PutAlarmMuteRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_alarm_mute_rule::PutAlarmMuteRuleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_alarm_mute_rule::PutAlarmMuteRuleError> for Error {
+    fn from(err: crate::operation::put_alarm_mute_rule::PutAlarmMuteRuleError) -> Self {
+        match err {
+            crate::operation::put_alarm_mute_rule::PutAlarmMuteRuleError::LimitExceededFault(inner) => Error::LimitExceededFault(inner),
+            crate::operation::put_alarm_mute_rule::PutAlarmMuteRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

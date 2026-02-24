@@ -20,6 +20,8 @@ pub struct ModifyInstanceMetadataDefaultsInput {
     pub instance_metadata_tags: ::std::option::Option<crate::types::DefaultInstanceMetadataTagsState>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub http_tokens_enforced: ::std::option::Option<crate::types::DefaultHttpTokensEnforcedState>,
 }
 impl ModifyInstanceMetadataDefaultsInput {
     /// <p>Indicates whether IMDSv2 is required.</p>
@@ -49,6 +51,10 @@ impl ModifyInstanceMetadataDefaultsInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn http_tokens_enforced(&self) -> ::std::option::Option<&crate::types::DefaultHttpTokensEnforcedState> {
+        self.http_tokens_enforced.as_ref()
+    }
 }
 impl ModifyInstanceMetadataDefaultsInput {
     /// Creates a new builder-style object to manufacture [`ModifyInstanceMetadataDefaultsInput`](crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsInput).
@@ -66,6 +72,7 @@ pub struct ModifyInstanceMetadataDefaultsInputBuilder {
     pub(crate) http_endpoint: ::std::option::Option<crate::types::DefaultInstanceMetadataEndpointState>,
     pub(crate) instance_metadata_tags: ::std::option::Option<crate::types::DefaultInstanceMetadataTagsState>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) http_tokens_enforced: ::std::option::Option<crate::types::DefaultHttpTokensEnforcedState>,
 }
 impl ModifyInstanceMetadataDefaultsInputBuilder {
     /// <p>Indicates whether IMDSv2 is required.</p>
@@ -159,6 +166,20 @@ impl ModifyInstanceMetadataDefaultsInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn http_tokens_enforced(mut self, input: crate::types::DefaultHttpTokensEnforcedState) -> Self {
+        self.http_tokens_enforced = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn set_http_tokens_enforced(mut self, input: ::std::option::Option<crate::types::DefaultHttpTokensEnforcedState>) -> Self {
+        self.http_tokens_enforced = input;
+        self
+    }
+    /// <p>Specifies whether to enforce the requirement of IMDSv2 on an instance at the time of launch. When enforcement is enabled, the instance can't launch unless IMDSv2 (<code>HttpTokens</code>) is set to <code>required</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#enforce-imdsv2-at-the-account-level">Enforce IMDSv2 at the account level</a> in the <i>Amazon EC2 User Guide</i>.</p>
+    pub fn get_http_tokens_enforced(&self) -> &::std::option::Option<crate::types::DefaultHttpTokensEnforcedState> {
+        &self.http_tokens_enforced
+    }
     /// Consumes the builder and constructs a [`ModifyInstanceMetadataDefaultsInput`](crate::operation::modify_instance_metadata_defaults::ModifyInstanceMetadataDefaultsInput).
     pub fn build(
         self,
@@ -172,6 +193,7 @@ impl ModifyInstanceMetadataDefaultsInputBuilder {
             http_endpoint: self.http_endpoint,
             instance_metadata_tags: self.instance_metadata_tags,
             dry_run: self.dry_run,
+            http_tokens_enforced: self.http_tokens_enforced,
         })
     }
 }

@@ -231,8 +231,6 @@ pub(crate) mod shape_create_vpc_endpoint_input;
 
 pub(crate) mod shape_dependency_failure_exception;
 
-pub(crate) mod shape_describe_domain_auto_tunes_input;
-
 pub(crate) mod shape_describe_domains_input;
 
 pub(crate) mod shape_describe_inbound_connections_input;

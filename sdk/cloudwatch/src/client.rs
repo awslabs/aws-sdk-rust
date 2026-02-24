@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteAnomalyDetector`](crate::operation::delete_anomaly_detector) operation has
-/// a [`Client::delete_anomaly_detector`], function which returns a builder for that operation.
+/// For example, the [`DeleteAlarmMuteRule`](crate::operation::delete_alarm_mute_rule) operation has
+/// a [`Client::delete_alarm_mute_rule`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_anomaly_detector()
-///     .namespace("example")
+/// let result = client.delete_alarm_mute_rule()
+///     .alarm_mute_rule_name("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -144,6 +144,8 @@ pub trait Waiters {
     fn wait_until_alarm_exists(&self) -> crate::waiters::alarm_exists::AlarmExistsFluentBuilder;
     /// Wait for `composite_alarm_exists`
     fn wait_until_composite_alarm_exists(&self) -> crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder;
+    /// Wait for `alarm_mute_rule_exists`
+    fn wait_until_alarm_mute_rule_exists(&self) -> crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_alarm_exists(&self) -> crate::waiters::alarm_exists::AlarmExistsFluentBuilder {
@@ -151,6 +153,9 @@ impl Waiters for Client {
     }
     fn wait_until_composite_alarm_exists(&self) -> crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder {
         crate::waiters::composite_alarm_exists::CompositeAlarmExistsFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_alarm_mute_rule_exists(&self) -> crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder {
+        crate::waiters::alarm_mute_rule_exists::AlarmMuteRuleExistsFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -181,7 +186,7 @@ impl Client {
 /// # let client: aws_sdk_cloudwatch::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.delete_alarms()
+/// let result = client.delete_alarm_mute_rule()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -196,6 +201,8 @@ impl Client {
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_alarm_mute_rule;
 
 mod delete_alarms;
 
@@ -227,6 +234,8 @@ mod enable_alarm_actions;
 
 mod enable_insight_rules;
 
+mod get_alarm_mute_rule;
+
 mod get_dashboard;
 
 mod get_insight_rule_report;
@@ -239,6 +248,8 @@ mod get_metric_stream;
 
 mod get_metric_widget_image;
 
+mod list_alarm_mute_rules;
+
 mod list_dashboards;
 
 mod list_managed_insight_rules;
@@ -248,6 +259,8 @@ mod list_metric_streams;
 mod list_metrics;
 
 mod list_tags_for_resource;
+
+mod put_alarm_mute_rule;
 
 mod put_anomaly_detector;
 

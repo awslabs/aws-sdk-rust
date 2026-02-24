@@ -25,6 +25,31 @@ pub(crate) fn match_describe_alarms_beb7bce02503b1deb(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"success":true}
+pub(crate) fn match_get_alarm_mute_rule_c955e57777ec0d736(
+    _result: ::std::result::Result<
+        &crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleOutput,
+        &crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError,
+    >,
+) -> bool {
+    _result.is_ok()
+}
+
+/// Matcher union: {"errorType":"ResourceNotFoundException"}
+pub(crate) fn match_get_alarm_mute_rule_1cce2c05524fb92d4(
+    _result: ::std::result::Result<
+        &crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleOutput,
+        &crate::operation::get_alarm_mute_rule::GetAlarmMuteRuleError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "ResourceNotFoundException";
+        }
+    }
+    false
+}
+
 /// Matcher union: {"output":{"path":"length(CompositeAlarms[]) > `0`","expected":"true","comparator":"booleanEquals"}}
 pub(crate) fn match_describe_alarms_5e47a4f72e6ce4350(
     _result: ::std::result::Result<&crate::operation::describe_alarms::DescribeAlarmsOutput, &crate::operation::describe_alarms::DescribeAlarmsError>,

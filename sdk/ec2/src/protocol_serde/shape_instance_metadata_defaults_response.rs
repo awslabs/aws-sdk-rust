@@ -91,6 +91,20 @@ pub fn de_instance_metadata_defaults_response(
                 builder = builder.set_managed_exception_message(var_6);
             }
             ,
+            s if s.matches("httpTokensEnforced") /* HttpTokensEnforced com.amazonaws.ec2#InstanceMetadataDefaultsResponse$HttpTokensEnforced */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::HttpTokensEnforcedState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::HttpTokensEnforcedState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_http_tokens_enforced(var_7);
+            }
+            ,
             _ => {}
         }
     }

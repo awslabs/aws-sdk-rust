@@ -8,6 +8,23 @@ pub(crate) fn describe_alarm_contributors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn mute_targets_correct_errors(mut builder: crate::types::builders::MuteTargetsBuilder) -> crate::types::builders::MuteTargetsBuilder {
+    if builder.alarm_names.is_none() {
+        builder.alarm_names = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rule_correct_errors(mut builder: crate::types::builders::RuleBuilder) -> crate::types::builders::RuleBuilder {
+    if builder.schedule.is_none() {
+        builder.schedule = {
+            let builder = crate::types::builders::ScheduleBuilder::default();
+            Some(crate::serde_util::schedule_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn alarm_contributor_correct_errors(
     mut builder: crate::types::builders::AlarmContributorBuilder,
 ) -> crate::types::builders::AlarmContributorBuilder {
@@ -71,6 +88,16 @@ pub(crate) fn metric_stream_statistics_configuration_correct_errors(
     }
     if builder.additional_statistics.is_none() {
         builder.additional_statistics = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn schedule_correct_errors(mut builder: crate::types::builders::ScheduleBuilder) -> crate::types::builders::ScheduleBuilder {
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    if builder.duration.is_none() {
+        builder.duration = Some(Default::default())
     }
     builder
 }

@@ -287,4 +287,18 @@ impl ListOpportunitiesFluentBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<crate::types::CreatedDateFilter> {
         self.inner.get_created_date()
     }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn target_close_date(mut self, input: crate::types::TargetCloseDateFilter) -> Self {
+        self.inner = self.inner.target_close_date(input);
+        self
+    }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn set_target_close_date(mut self, input: ::std::option::Option<crate::types::TargetCloseDateFilter>) -> Self {
+        self.inner = self.inner.set_target_close_date(input);
+        self
+    }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn get_target_close_date(&self) -> &::std::option::Option<crate::types::TargetCloseDateFilter> {
+        self.inner.get_target_close_date()
+    }
 }

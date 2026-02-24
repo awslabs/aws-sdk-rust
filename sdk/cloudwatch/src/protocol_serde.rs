@@ -28,6 +28,8 @@ pub fn parse_http_error_metadata(
     Ok(builder)
 }
 
+pub(crate) mod shape_delete_alarm_mute_rule;
+
 pub(crate) mod shape_delete_alarms;
 
 pub(crate) mod shape_delete_anomaly_detector;
@@ -58,6 +60,8 @@ pub(crate) mod shape_enable_alarm_actions;
 
 pub(crate) mod shape_enable_insight_rules;
 
+pub(crate) mod shape_get_alarm_mute_rule;
+
 pub(crate) mod shape_get_dashboard;
 
 pub(crate) mod shape_get_insight_rule_report;
@@ -70,6 +74,8 @@ pub(crate) mod shape_get_metric_stream;
 
 pub(crate) mod shape_get_metric_widget_image;
 
+pub(crate) mod shape_list_alarm_mute_rules;
+
 pub(crate) mod shape_list_dashboards;
 
 pub(crate) mod shape_list_managed_insight_rules;
@@ -79,6 +85,8 @@ pub(crate) mod shape_list_metric_streams;
 pub(crate) mod shape_list_metrics;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_alarm_mute_rule;
 
 pub(crate) mod shape_put_anomaly_detector;
 
@@ -114,6 +122,8 @@ pub(crate) mod shape_dashboard_invalid_input_error;
 
 pub(crate) mod shape_dashboard_not_found_error;
 
+pub(crate) mod shape_delete_alarm_mute_rule_input;
+
 pub(crate) mod shape_delete_alarms_input;
 
 pub(crate) mod shape_delete_anomaly_detector_input;
@@ -144,6 +154,8 @@ pub(crate) mod shape_enable_alarm_actions_input;
 
 pub(crate) mod shape_enable_insight_rules_input;
 
+pub(crate) mod shape_get_alarm_mute_rule_input;
+
 pub(crate) mod shape_get_dashboard_input;
 
 pub(crate) mod shape_get_insight_rule_report_input;
@@ -170,6 +182,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_limit_exceeded_fault;
 
+pub(crate) mod shape_list_alarm_mute_rules_input;
+
 pub(crate) mod shape_list_dashboards_input;
 
 pub(crate) mod shape_list_managed_insight_rules_input;
@@ -181,6 +195,8 @@ pub(crate) mod shape_list_metrics_input;
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_missing_required_parameter_exception;
+
+pub(crate) mod shape_put_alarm_mute_rule_input;
 
 pub(crate) mod shape_put_anomaly_detector_input;
 
@@ -215,6 +231,8 @@ pub(crate) mod shape_untag_resource_input;
 pub(crate) mod shape_alarm_contributors;
 
 pub(crate) mod shape_alarm_history_items;
+
+pub(crate) mod shape_alarm_mute_rule_summaries;
 
 pub(crate) mod shape_anomaly_detector_configuration;
 
@@ -276,7 +294,11 @@ pub(crate) mod shape_metric_stream_statistics_configurations;
 
 pub(crate) mod shape_metrics;
 
+pub(crate) mod shape_mute_targets;
+
 pub(crate) mod shape_owning_accounts;
+
+pub(crate) mod shape_rule;
 
 pub(crate) mod shape_single_metric_anomaly_detector;
 
@@ -287,6 +309,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_alarm_contributor;
 
 pub(crate) mod shape_alarm_history_item;
+
+pub(crate) mod shape_alarm_mute_rule_summary;
 
 pub(crate) mod shape_anomaly_detector;
 
@@ -322,9 +346,13 @@ pub(crate) mod shape_metric_stream_entry;
 
 pub(crate) mod shape_metric_stream_statistics_metric;
 
+pub(crate) mod shape_mute_target_alarm_name_list;
+
 pub(crate) mod shape_partial_failure;
 
 pub(crate) mod shape_range;
+
+pub(crate) mod shape_schedule;
 
 pub(crate) mod shape_statistic_set;
 

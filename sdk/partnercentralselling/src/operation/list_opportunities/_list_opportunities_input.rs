@@ -24,6 +24,8 @@ pub struct ListOpportunitiesInput {
     pub customer_company_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Filter opportunities by creation date criteria.</p>
     pub created_date: ::std::option::Option<crate::types::CreatedDateFilter>,
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub target_close_date: ::std::option::Option<crate::types::TargetCloseDateFilter>,
 }
 impl ListOpportunitiesInput {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
@@ -75,6 +77,10 @@ impl ListOpportunitiesInput {
     pub fn created_date(&self) -> ::std::option::Option<&crate::types::CreatedDateFilter> {
         self.created_date.as_ref()
     }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn target_close_date(&self) -> ::std::option::Option<&crate::types::TargetCloseDateFilter> {
+        self.target_close_date.as_ref()
+    }
 }
 impl ListOpportunitiesInput {
     /// Creates a new builder-style object to manufacture [`ListOpportunitiesInput`](crate::operation::list_opportunities::ListOpportunitiesInput).
@@ -97,6 +103,7 @@ pub struct ListOpportunitiesInputBuilder {
     pub(crate) life_cycle_review_status: ::std::option::Option<::std::vec::Vec<crate::types::ReviewStatus>>,
     pub(crate) customer_company_name: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) created_date: ::std::option::Option<crate::types::CreatedDateFilter>,
+    pub(crate) target_close_date: ::std::option::Option<crate::types::TargetCloseDateFilter>,
 }
 impl ListOpportunitiesInputBuilder {
     /// <p>Specifies the catalog associated with the request. This field takes a string value from a predefined list: <code>AWS</code> or <code>Sandbox</code>. The catalog determines which environment the opportunities are listed in. Use <code>AWS</code> for listing real opportunities in the Amazon Web Services catalog, and <code>Sandbox</code> for testing in secure, isolated environments.</p>
@@ -267,6 +274,20 @@ impl ListOpportunitiesInputBuilder {
     pub fn get_created_date(&self) -> &::std::option::Option<crate::types::CreatedDateFilter> {
         &self.created_date
     }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn target_close_date(mut self, input: crate::types::TargetCloseDateFilter) -> Self {
+        self.target_close_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn set_target_close_date(mut self, input: ::std::option::Option<crate::types::TargetCloseDateFilter>) -> Self {
+        self.target_close_date = input;
+        self
+    }
+    /// <p>Filters opportunities based on their target close date. This filter helps retrieve opportunities with an expected close date before or after a specified date.</p>
+    pub fn get_target_close_date(&self) -> &::std::option::Option<crate::types::TargetCloseDateFilter> {
+        &self.target_close_date
+    }
     /// Consumes the builder and constructs a [`ListOpportunitiesInput`](crate::operation::list_opportunities::ListOpportunitiesInput).
     pub fn build(
         self,
@@ -282,6 +303,7 @@ impl ListOpportunitiesInputBuilder {
             life_cycle_review_status: self.life_cycle_review_status,
             customer_company_name: self.customer_company_name,
             created_date: self.created_date,
+            target_close_date: self.target_close_date,
         })
     }
 }

@@ -66,6 +66,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Directory Service Data | [aws-sdk-directoryservicedata](https://crates.io/crates/aws-sdk-directoryservicedata) ([docs](https://docs.rs/aws-sdk-directoryservicedata)) |
 | AWS EC2 Instance Connect | [aws-sdk-ec2instanceconnect](https://crates.io/crates/aws-sdk-ec2instanceconnect) ([docs](https://docs.rs/aws-sdk-ec2instanceconnect)) |
 | AWS Elastic Beanstalk | [aws-sdk-elasticbeanstalk](https://crates.io/crates/aws-sdk-elasticbeanstalk) ([docs](https://docs.rs/aws-sdk-elasticbeanstalk)) |
+| AWS Elemental Inference | [aws-sdk-elementalinference](https://crates.io/crates/aws-sdk-elementalinference) ([docs](https://docs.rs/aws-sdk-elementalinference)) |
 | AWS Elemental MediaConvert | [aws-sdk-mediaconvert](https://crates.io/crates/aws-sdk-mediaconvert) ([docs](https://docs.rs/aws-sdk-mediaconvert)) |
 | AWS Elemental MediaLive | [aws-sdk-medialive](https://crates.io/crates/aws-sdk-medialive) ([docs](https://docs.rs/aws-sdk-medialive)) |
 | AWS Elemental MediaPackage | [aws-sdk-mediapackage](https://crates.io/crates/aws-sdk-mediapackage) ([docs](https://docs.rs/aws-sdk-mediapackage)) |

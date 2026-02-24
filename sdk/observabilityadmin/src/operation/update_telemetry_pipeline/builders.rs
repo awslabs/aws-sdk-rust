@@ -66,7 +66,7 @@ impl crate::operation::update_telemetry_pipeline::builders::UpdateTelemetryPipel
 /// Okta Sources (SSO, Auth0)
 /// </dt>
 /// <dd>
-/// <p><b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>domain</code>, <code>range</code> (SSO only), OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p>
+/// <p><b>Updatable:</b> All Amazon Web Services Secrets Manager attributes, <code>domain</code>, <code>range</code>, OAuth2 credentials (<code>client_id</code>, <code>client_secret</code>)</p>
 /// </dd>
 /// <dt>
 /// Palo Alto Networks

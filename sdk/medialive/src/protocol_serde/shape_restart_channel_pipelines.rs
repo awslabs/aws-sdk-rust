@@ -244,6 +244,11 @@ pub(crate) fn de_restart_channel_pipelines(
                             .transpose()?,
                     );
                 }
+                "inferenceSettings" => {
+                    builder = builder.set_inference_settings(
+                        crate::protocol_serde::shape_describe_inference_settings::de_describe_inference_settings(tokens, _value)?,
+                    );
+                }
                 "inputAttachments" => {
                     builder = builder.set_input_attachments(crate::protocol_serde::shape_list_of_input_attachment::de_list_of_input_attachment(
                         tokens, _value,

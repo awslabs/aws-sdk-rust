@@ -3,6 +3,9 @@
 /// Supporting types for the `alarm_exists` waiter.
 pub mod alarm_exists;
 
+/// Supporting types for the `alarm_mute_rule_exists` waiter.
+pub mod alarm_mute_rule_exists;
+
 /// Supporting types for the `composite_alarm_exists` waiter.
 pub mod composite_alarm_exists;
 

@@ -307,6 +307,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_target_close_date_filter;
+
 pub(crate) mod shape_update_engagement_context_payload;
 
 pub(crate) mod shape_validation_exception_error_list;
