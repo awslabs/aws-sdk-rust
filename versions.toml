@@ -2662,6 +2662,10 @@ source_hash = '3e97746b8b40bfe5c667456d42e4cb249ec7404ac818b21995a988eda975dfa0'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '2590e69a78696d52f860b2dc779a8f5295b682c6fc9c11efd7ca9b7ff01fdc20'
+
+[release]
+tag = 'release-2026-02-24'
+
 [release.crates]
 aws-sdk-cloudwatch = '1.106.0'
 aws-sdk-ec2 = '1.213.0'
