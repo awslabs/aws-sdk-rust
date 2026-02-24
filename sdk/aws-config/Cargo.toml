@@ -28,7 +28,7 @@ rt-tokio = ["aws-smithy-async/rt-tokio", "aws-smithy-runtime/rt-tokio", "tokio/r
 client-hyper = ["aws-smithy-runtime/default-https-client"]
 rustls = ["client-hyper"]
 default-https-client = ["aws-smithy-runtime/default-https-client"]
-sso = ["dep:aws-sdk-sso", "dep:aws-sdk-ssooidc", "dep:ring", "dep:hex", "dep:zeroize", "aws-smithy-runtime-api/http-auth"]
+sso = ["dep:aws-sdk-sso", "dep:aws-sdk-ssooidc", "dep:sha1", "dep:hex", "dep:zeroize", "aws-smithy-runtime-api/http-auth"]
 credentials-login = ["dep:aws-sdk-signin", "dep:sha2", "dep:zeroize", "dep:hex", "dep:base64-simd", "dep:uuid", "uuid?/v4", "dep:p256", "p256?/arithmetic", "p256?/pem", "dep:rand"]
 test-util = ["aws-runtime/test-util"]
 allow-compilation = []
@@ -100,12 +100,12 @@ default-features = false
 optional = true
 version = "1.95.0"
 
-[dependencies.ring]
-version = "0.17.5"
-optional = true
-
 [dependencies.hex]
 version = "0.4.3"
+optional = true
+
+[dependencies.sha1]
+version = "0.10"
 optional = true
 
 [dependencies.zeroize]
