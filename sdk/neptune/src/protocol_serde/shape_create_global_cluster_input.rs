@@ -31,9 +31,25 @@ pub fn ser_create_global_cluster_input_input_input(
         scope_9.boolean(*var_10);
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("StorageEncrypted");
-    if let Some(var_12) = &input.storage_encrypted {
-        scope_11.boolean(*var_12);
+    let mut scope_11 = writer.prefix("DatabaseName");
+    if let Some(var_12) = &input.database_name {
+        scope_11.string(var_12);
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("Tags");
+    if let Some(var_14) = &input.tags {
+        let mut list_16 = scope_13.start_list(false, Some("Tag"));
+        for item_15 in var_14 {
+            #[allow(unused_mut)]
+            let mut entry_17 = list_16.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_17, item_15)?;
+        }
+        list_16.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("StorageEncrypted");
+    if let Some(var_19) = &input.storage_encrypted {
+        scope_18.boolean(*var_19);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -85,6 +85,8 @@ pub use crate::types::_logging_filter::LoggingFilter;
 
 pub use crate::types::_sampled_http_request::SampledHttpRequest;
 
+pub use crate::types::_path_statistics::PathStatistics;
+
 pub use crate::types::_api_key_summary::ApiKeySummary;
 
 pub use crate::types::_managed_rule_group_summary::ManagedRuleGroupSummary;
@@ -128,6 +130,8 @@ pub use crate::types::_http_request::HttpRequest;
 pub use crate::types::_captcha_response::CaptchaResponse;
 
 pub use crate::types::_challenge_response::ChallengeResponse;
+
+pub use crate::types::_filter_source::FilterSource;
 
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroup;
 
@@ -212,6 +216,8 @@ pub use crate::types::_filter::Filter;
 pub use crate::types::_http_header::HttpHeader;
 
 pub use crate::types::_failure_reason::FailureReason;
+
+pub use crate::types::_bot_statistics::BotStatistics;
 
 pub use crate::types::_firewall_manager_statement::FirewallManagerStatement;
 
@@ -385,6 +391,8 @@ mod _body;
 
 mod _body_parsing_fallback_behavior;
 
+mod _bot_statistics;
+
 mod _byte_match_statement;
 
 mod _captcha_action;
@@ -452,6 +460,8 @@ mod _filter;
 mod _filter_behavior;
 
 mod _filter_requirement;
+
+mod _filter_source;
 
 mod _firewall_manager_rule_group;
 
@@ -554,6 +564,8 @@ mod _oversize_handling;
 mod _parameter_exception_field;
 
 mod _password_field;
+
+mod _path_statistics;
 
 mod _payload_type;
 

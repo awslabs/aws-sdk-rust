@@ -69,6 +69,8 @@ pub use crate::types::_logging_filter::LoggingFilterBuilder;
 
 pub use crate::types::_sampled_http_request::SampledHttpRequestBuilder;
 
+pub use crate::types::_path_statistics::PathStatisticsBuilder;
+
 pub use crate::types::_api_key_summary::ApiKeySummaryBuilder;
 
 pub use crate::types::_managed_rule_group_summary::ManagedRuleGroupSummaryBuilder;
@@ -106,6 +108,8 @@ pub use crate::types::_http_request::HttpRequestBuilder;
 pub use crate::types::_captcha_response::CaptchaResponseBuilder;
 
 pub use crate::types::_challenge_response::ChallengeResponseBuilder;
+
+pub use crate::types::_filter_source::FilterSourceBuilder;
 
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroupBuilder;
 
@@ -184,6 +188,8 @@ pub use crate::types::_uri_fragment::UriFragmentBuilder;
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_http_header::HttpHeaderBuilder;
+
+pub use crate::types::_bot_statistics::BotStatisticsBuilder;
 
 pub use crate::types::_firewall_manager_statement::FirewallManagerStatementBuilder;
 

@@ -15,6 +15,10 @@ pub struct CreateGlobalClusterInput {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    pub database_name: ::std::option::Option<::std::string::String>,
+    /// <p>Tags to assign to the global cluster.</p>
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
 }
@@ -41,6 +45,16 @@ impl CreateGlobalClusterInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
+    /// <p>Tags to assign to the global cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
+    pub fn tags(&self) -> &[crate::types::Tag] {
+        self.tags.as_deref().unwrap_or_default()
+    }
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
@@ -62,6 +76,8 @@ pub struct CreateGlobalClusterInputBuilder {
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
 }
 impl CreateGlobalClusterInputBuilder {
@@ -142,6 +158,40 @@ impl CreateGlobalClusterInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input;
+        self
+    }
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
+    /// Appends an item to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>Tags to assign to the global cluster.</p>
+    pub fn tags(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tags.unwrap_or_default();
+        v.push(input);
+        self.tags = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Tags to assign to the global cluster.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>Tags to assign to the global cluster.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tags
+    }
     /// <p>The storage encryption setting for the new global database cluster.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -167,6 +217,8 @@ impl CreateGlobalClusterInputBuilder {
             engine: self.engine,
             engine_version: self.engine_version,
             deletion_protection: self.deletion_protection,
+            database_name: self.database_name,
+            tags: self.tags,
             storage_encrypted: self.storage_encrypted,
         })
     }

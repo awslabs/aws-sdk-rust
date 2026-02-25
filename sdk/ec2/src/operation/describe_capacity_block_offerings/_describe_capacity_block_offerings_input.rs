@@ -23,6 +23,8 @@ pub struct DescribeCapacityBlockOfferingsInput {
     pub ultraserver_type: ::std::option::Option<::std::string::String>,
     /// <p>The number of EC2 UltraServers in the offerings.</p>
     pub ultraserver_count: ::std::option::Option<i32>,
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub all_availability_zones: ::std::option::Option<bool>,
 }
 impl DescribeCapacityBlockOfferingsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -65,6 +67,10 @@ impl DescribeCapacityBlockOfferingsInput {
     pub fn ultraserver_count(&self) -> ::std::option::Option<i32> {
         self.ultraserver_count
     }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn all_availability_zones(&self) -> ::std::option::Option<bool> {
+        self.all_availability_zones
+    }
 }
 impl DescribeCapacityBlockOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
@@ -87,6 +93,7 @@ pub struct DescribeCapacityBlockOfferingsInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) ultraserver_type: ::std::option::Option<::std::string::String>,
     pub(crate) ultraserver_count: ::std::option::Option<i32>,
+    pub(crate) all_availability_zones: ::std::option::Option<bool>,
 }
 impl DescribeCapacityBlockOfferingsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -230,6 +237,20 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     pub fn get_ultraserver_count(&self) -> &::std::option::Option<i32> {
         &self.ultraserver_count
     }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn all_availability_zones(mut self, input: bool) -> Self {
+        self.all_availability_zones = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn set_all_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.all_availability_zones = input;
+        self
+    }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
+        &self.all_availability_zones
+    }
     /// Consumes the builder and constructs a [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
     pub fn build(
         self,
@@ -248,6 +269,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
             max_results: self.max_results,
             ultraserver_type: self.ultraserver_type,
             ultraserver_count: self.ultraserver_count,
+            all_availability_zones: self.all_availability_zones,
         })
     }
 }

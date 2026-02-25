@@ -17,6 +17,8 @@ pub struct GlobalCluster {
     pub engine: ::std::option::Option<::std::string::String>,
     /// <p>The Neptune engine version used by the global database.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
+    /// <p>The default database name within the new global database cluster.</p>
+    pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>The storage encryption setting for the global database.</p>
     pub storage_encrypted: ::std::option::Option<bool>,
     /// <p>The deletion protection setting for the global database.</p>
@@ -25,6 +27,8 @@ pub struct GlobalCluster {
     pub global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
     /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub failover_state: ::std::option::Option<crate::types::FailoverState>,
+    /// <p>A list of global cluster tags.</p>
+    pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl GlobalCluster {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
@@ -51,6 +55,10 @@ impl GlobalCluster {
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
+    /// <p>The default database name within the new global database cluster.</p>
+    pub fn database_name(&self) -> ::std::option::Option<&str> {
+        self.database_name.as_deref()
+    }
     /// <p>The storage encryption setting for the global database.</p>
     pub fn storage_encrypted(&self) -> ::std::option::Option<bool> {
         self.storage_encrypted
@@ -68,6 +76,12 @@ impl GlobalCluster {
     /// <p>A data object containing all properties for the current state of an in-process or pending switchover or failover process for this global cluster (Neptune global database). This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code> operation was called on this global cluster.</p>
     pub fn failover_state(&self) -> ::std::option::Option<&crate::types::FailoverState> {
         self.failover_state.as_ref()
+    }
+    /// <p>A list of global cluster tags.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_list.is_none()`.
+    pub fn tag_list(&self) -> &[crate::types::Tag] {
+        self.tag_list.as_deref().unwrap_or_default()
     }
 }
 impl GlobalCluster {
@@ -87,10 +101,12 @@ pub struct GlobalClusterBuilder {
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) engine: ::std::option::Option<::std::string::String>,
     pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) database_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_encrypted: ::std::option::Option<bool>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) global_cluster_members: ::std::option::Option<::std::vec::Vec<crate::types::GlobalClusterMember>>,
     pub(crate) failover_state: ::std::option::Option<crate::types::FailoverState>,
+    pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl GlobalClusterBuilder {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
@@ -177,6 +193,20 @@ impl GlobalClusterBuilder {
     pub fn get_engine_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_version
     }
+    /// <p>The default database name within the new global database cluster.</p>
+    pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The default database name within the new global database cluster.</p>
+    pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.database_name = input;
+        self
+    }
+    /// <p>The default database name within the new global database cluster.</p>
+    pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.database_name
+    }
     /// <p>The storage encryption setting for the global database.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
         self.storage_encrypted = ::std::option::Option::Some(input);
@@ -239,6 +269,26 @@ impl GlobalClusterBuilder {
     pub fn get_failover_state(&self) -> &::std::option::Option<crate::types::FailoverState> {
         &self.failover_state
     }
+    /// Appends an item to `tag_list`.
+    ///
+    /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+    ///
+    /// <p>A list of global cluster tags.</p>
+    pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
+        let mut v = self.tag_list.unwrap_or_default();
+        v.push(input);
+        self.tag_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of global cluster tags.</p>
+    pub fn set_tag_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
+        self.tag_list = input;
+        self
+    }
+    /// <p>A list of global cluster tags.</p>
+    pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
+        &self.tag_list
+    }
     /// Consumes the builder and constructs a [`GlobalCluster`](crate::types::GlobalCluster).
     pub fn build(self) -> crate::types::GlobalCluster {
         crate::types::GlobalCluster {
@@ -248,10 +298,12 @@ impl GlobalClusterBuilder {
             status: self.status,
             engine: self.engine,
             engine_version: self.engine_version,
+            database_name: self.database_name,
             storage_encrypted: self.storage_encrypted,
             deletion_protection: self.deletion_protection,
             global_cluster_members: self.global_cluster_members,
             failover_state: self.failover_state,
+            tag_list: self.tag_list,
         }
     }
 }

@@ -1205,6 +1205,53 @@ impl From<crate::operation::get_sampled_requests::GetSampledRequestsError> for E
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError> for Error {
+    fn from(err: crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError) -> Self {
+        match err {
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError::WafFeatureNotIncludedInPricingPlanException(
+                inner,
+            ) => Error::WafFeatureNotIncludedInPricingPlanException(inner),
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::operation::get_top_path_statistics_by_traffic::GetTopPathStatisticsByTrafficError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_web_acl::GetWebACLError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

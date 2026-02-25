@@ -83,6 +83,8 @@ pub(crate) mod shape_get_rule_group;
 
 pub(crate) mod shape_get_sampled_requests;
 
+pub(crate) mod shape_get_top_path_statistics_by_traffic;
+
 pub(crate) mod shape_get_web_acl;
 
 pub(crate) mod shape_get_web_acl_for_resource;
@@ -198,6 +200,8 @@ pub(crate) mod shape_get_regex_pattern_set_input;
 pub(crate) mod shape_get_rule_group_input;
 
 pub(crate) mod shape_get_sampled_requests_input;
+
+pub(crate) mod shape_get_top_path_statistics_by_traffic_input;
 
 pub(crate) mod shape_get_web_acl_for_resource_input;
 
@@ -331,6 +335,8 @@ pub(crate) mod shape_mobile_sdk_release;
 
 pub(crate) mod shape_on_source_d_do_s_protection_config;
 
+pub(crate) mod shape_path_statistics_list;
+
 pub(crate) mod shape_rate_based_statement_managed_keys_ip_set;
 
 pub(crate) mod shape_regex;
@@ -415,6 +421,8 @@ pub(crate) mod shape_managed_rule_set_summary;
 
 pub(crate) mod shape_override_action;
 
+pub(crate) mod shape_path_statistics;
+
 pub(crate) mod shape_published_versions;
 
 pub(crate) mod shape_redacted_fields;
@@ -447,6 +455,8 @@ pub(crate) mod shape_asn_match_statement;
 
 pub(crate) mod shape_body;
 
+pub(crate) mod shape_bot_statistics_list;
+
 pub(crate) mod shape_byte_match_statement;
 
 pub(crate) mod shape_captcha_action;
@@ -470,6 +480,8 @@ pub(crate) mod shape_data_protections;
 pub(crate) mod shape_field_to_protect;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_filter_source;
 
 pub(crate) mod shape_filters;
 
@@ -534,6 +546,8 @@ pub(crate) mod shape_uri_fragment;
 pub(crate) mod shape_uri_path;
 
 pub(crate) mod shape_xss_match_statement;
+
+pub(crate) mod shape_bot_statistics;
 
 pub(crate) mod shape_condition;
 

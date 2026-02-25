@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueueSnapshotCapacityUsage {
-    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is the instance type.</p>
     pub capacity_unit: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of capacity being used in the queue snapshot, measured in the units specified by <code>capacityUnit</code>.</p>
     pub quantity: ::std::option::Option<f64>,
 }
 impl QueueSnapshotCapacityUsage {
-    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is the instance type.</p>
     pub fn capacity_unit(&self) -> ::std::option::Option<&str> {
         self.capacity_unit.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct QueueSnapshotCapacityUsageBuilder {
     pub(crate) quantity: ::std::option::Option<f64>,
 }
 impl QueueSnapshotCapacityUsageBuilder {
-    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is the instance type.</p>
     pub fn capacity_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_unit = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is the instance type.</p>
     pub fn set_capacity_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_unit = input;
         self
     }
-    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the capacity usage. For compute jobs, this is <code>VCPU</code> for Amazon EC2 and <code>cpu</code> for Amazon EKS. For service jobs, this is the instance type.</p>
     pub fn get_capacity_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_unit
     }

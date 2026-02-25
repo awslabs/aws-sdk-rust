@@ -184,6 +184,19 @@ pub fn de_capacity_block_extension(
                 builder = builder.set_currency_code(var_13);
             }
             ,
+            s if s.matches("zoneType") /* ZoneType com.amazonaws.ec2#CapacityBlockExtension$ZoneType */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_zone_type(var_14);
+            }
+            ,
             _ => {}
         }
     }

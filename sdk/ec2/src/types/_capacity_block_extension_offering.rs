@@ -34,6 +34,8 @@ pub struct CapacityBlockExtensionOffering {
     /// <p><code>dedicated</code> - The Capacity Block is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p></li>
     /// </ul>
     pub tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    /// <p>The type of zone where the Capacity Block extension offering is available.</p>
+    pub zone_type: ::std::option::Option<::std::string::String>,
 }
 impl CapacityBlockExtensionOffering {
     /// <p>The ID of the Capacity Block extension offering.</p>
@@ -90,6 +92,10 @@ impl CapacityBlockExtensionOffering {
     pub fn tenancy(&self) -> ::std::option::Option<&crate::types::CapacityReservationTenancy> {
         self.tenancy.as_ref()
     }
+    /// <p>The type of zone where the Capacity Block extension offering is available.</p>
+    pub fn zone_type(&self) -> ::std::option::Option<&str> {
+        self.zone_type.as_deref()
+    }
 }
 impl CapacityBlockExtensionOffering {
     /// Creates a new builder-style object to manufacture [`CapacityBlockExtensionOffering`](crate::types::CapacityBlockExtensionOffering).
@@ -114,6 +120,7 @@ pub struct CapacityBlockExtensionOfferingBuilder {
     pub(crate) upfront_fee: ::std::option::Option<::std::string::String>,
     pub(crate) currency_code: ::std::option::Option<::std::string::String>,
     pub(crate) tenancy: ::std::option::Option<crate::types::CapacityReservationTenancy>,
+    pub(crate) zone_type: ::std::option::Option<::std::string::String>,
 }
 impl CapacityBlockExtensionOfferingBuilder {
     /// <p>The ID of the Capacity Block extension offering.</p>
@@ -302,6 +309,20 @@ impl CapacityBlockExtensionOfferingBuilder {
     pub fn get_tenancy(&self) -> &::std::option::Option<crate::types::CapacityReservationTenancy> {
         &self.tenancy
     }
+    /// <p>The type of zone where the Capacity Block extension offering is available.</p>
+    pub fn zone_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.zone_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of zone where the Capacity Block extension offering is available.</p>
+    pub fn set_zone_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.zone_type = input;
+        self
+    }
+    /// <p>The type of zone where the Capacity Block extension offering is available.</p>
+    pub fn get_zone_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_type
+    }
     /// Consumes the builder and constructs a [`CapacityBlockExtensionOffering`](crate::types::CapacityBlockExtensionOffering).
     pub fn build(self) -> crate::types::CapacityBlockExtensionOffering {
         crate::types::CapacityBlockExtensionOffering {
@@ -317,6 +338,7 @@ impl CapacityBlockExtensionOfferingBuilder {
             upfront_fee: self.upfront_fee,
             currency_code: self.currency_code,
             tenancy: self.tenancy,
+            zone_type: self.zone_type,
         }
     }
 }

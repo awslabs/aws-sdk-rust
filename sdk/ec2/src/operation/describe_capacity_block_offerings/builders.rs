@@ -255,4 +255,18 @@ impl DescribeCapacityBlockOfferingsFluentBuilder {
     pub fn get_ultraserver_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_ultraserver_count()
     }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn all_availability_zones(mut self, input: bool) -> Self {
+        self.inner = self.inner.all_availability_zones(input);
+        self
+    }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn set_all_availability_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_all_availability_zones(input);
+        self
+    }
+    /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
+    pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_all_availability_zones()
+    }
 }

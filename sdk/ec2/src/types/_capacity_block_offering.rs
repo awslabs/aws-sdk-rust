@@ -30,6 +30,8 @@ pub struct CapacityBlockOffering {
     pub ultraserver_count: ::std::option::Option<i32>,
     /// <p>The number of minutes (in addition to <code>capacityBlockDurationHours</code>) for the duration of the Capacity Block reservation. For example, if a Capacity Block starts at <b>08:55</b> and ends at <b>11:30</b>, the minutes field would be <b>35</b>.</p>
     pub capacity_block_duration_minutes: ::std::option::Option<i32>,
+    /// <p>The type of zone where the Capacity Block offering is available.</p>
+    pub zone_type: ::std::option::Option<::std::string::String>,
 }
 impl CapacityBlockOffering {
     /// <p>The ID of the Capacity Block offering.</p>
@@ -84,6 +86,10 @@ impl CapacityBlockOffering {
     pub fn capacity_block_duration_minutes(&self) -> ::std::option::Option<i32> {
         self.capacity_block_duration_minutes
     }
+    /// <p>The type of zone where the Capacity Block offering is available.</p>
+    pub fn zone_type(&self) -> ::std::option::Option<&str> {
+        self.zone_type.as_deref()
+    }
 }
 impl CapacityBlockOffering {
     /// Creates a new builder-style object to manufacture [`CapacityBlockOffering`](crate::types::CapacityBlockOffering).
@@ -109,6 +115,7 @@ pub struct CapacityBlockOfferingBuilder {
     pub(crate) ultraserver_type: ::std::option::Option<::std::string::String>,
     pub(crate) ultraserver_count: ::std::option::Option<i32>,
     pub(crate) capacity_block_duration_minutes: ::std::option::Option<i32>,
+    pub(crate) zone_type: ::std::option::Option<::std::string::String>,
 }
 impl CapacityBlockOfferingBuilder {
     /// <p>The ID of the Capacity Block offering.</p>
@@ -293,6 +300,20 @@ impl CapacityBlockOfferingBuilder {
     pub fn get_capacity_block_duration_minutes(&self) -> &::std::option::Option<i32> {
         &self.capacity_block_duration_minutes
     }
+    /// <p>The type of zone where the Capacity Block offering is available.</p>
+    pub fn zone_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.zone_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of zone where the Capacity Block offering is available.</p>
+    pub fn set_zone_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.zone_type = input;
+        self
+    }
+    /// <p>The type of zone where the Capacity Block offering is available.</p>
+    pub fn get_zone_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone_type
+    }
     /// Consumes the builder and constructs a [`CapacityBlockOffering`](crate::types::CapacityBlockOffering).
     pub fn build(self) -> crate::types::CapacityBlockOffering {
         crate::types::CapacityBlockOffering {
@@ -309,6 +330,7 @@ impl CapacityBlockOfferingBuilder {
             ultraserver_type: self.ultraserver_type,
             ultraserver_count: self.ultraserver_count,
             capacity_block_duration_minutes: self.capacity_block_duration_minutes,
+            zone_type: self.zone_type,
         }
     }
 }

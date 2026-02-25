@@ -91,6 +91,9 @@ pub mod get_rule_group;
 /// Types for the `GetSampledRequests` operation.
 pub mod get_sampled_requests;
 
+/// Types for the `GetTopPathStatisticsByTraffic` operation.
+pub mod get_top_path_statistics_by_traffic;
+
 /// Types for the `GetWebACL` operation.
 pub mod get_web_acl;
 

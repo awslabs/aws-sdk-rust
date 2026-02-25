@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ServiceJobCapacityUsageDetail {
-    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is the instance type.</p>
     pub capacity_unit: ::std::option::Option<::std::string::String>,
     /// <p>The quantity of capacity being used by the service job, measured in the units specified by <code>capacityUnit</code>.</p>
     pub quantity: ::std::option::Option<f64>,
 }
 impl ServiceJobCapacityUsageDetail {
-    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is the instance type.</p>
     pub fn capacity_unit(&self) -> ::std::option::Option<&str> {
         self.capacity_unit.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct ServiceJobCapacityUsageDetailBuilder {
     pub(crate) quantity: ::std::option::Option<f64>,
 }
 impl ServiceJobCapacityUsageDetailBuilder {
-    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is the instance type.</p>
     pub fn capacity_unit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_unit = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is the instance type.</p>
     pub fn set_capacity_unit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.capacity_unit = input;
         self
     }
-    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is <code>NUM_INSTANCES</code>.</p>
+    /// <p>The unit of measure for the service job capacity usage. For service jobs, this is the instance type.</p>
     pub fn get_capacity_unit(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_unit
     }

@@ -223,6 +223,8 @@ mod get_rule_group;
 
 mod get_sampled_requests;
 
+mod get_top_path_statistics_by_traffic;
+
 mod get_web_acl;
 
 mod get_web_acl_for_resource;

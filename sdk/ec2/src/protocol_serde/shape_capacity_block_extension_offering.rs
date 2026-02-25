@@ -171,6 +171,19 @@ pub fn de_capacity_block_extension_offering(
                 builder = builder.set_tenancy(var_12);
             }
             ,
+            s if s.matches("zoneType") /* ZoneType com.amazonaws.ec2#CapacityBlockExtensionOffering$ZoneType */ =>  {
+                let var_13 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_zone_type(var_13);
+            }
+            ,
             _ => {}
         }
     }

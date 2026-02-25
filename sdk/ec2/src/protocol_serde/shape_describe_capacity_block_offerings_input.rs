@@ -67,6 +67,11 @@ pub fn ser_describe_capacity_block_offerings_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("AllAvailabilityZones");
+    if let Some(var_22) = &input.all_availability_zones {
+        scope_21.boolean(*var_22);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

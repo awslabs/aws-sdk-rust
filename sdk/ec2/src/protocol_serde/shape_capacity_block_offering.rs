@@ -187,6 +187,19 @@ pub fn de_capacity_block_offering(
                 builder = builder.set_capacity_block_duration_minutes(var_13);
             }
             ,
+            s if s.matches("zoneType") /* ZoneType com.amazonaws.ec2#CapacityBlockOffering$ZoneType */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_zone_type(var_14);
+            }
+            ,
             _ => {}
         }
     }

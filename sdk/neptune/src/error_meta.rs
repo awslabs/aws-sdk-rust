@@ -2226,8 +2226,17 @@ where
 impl From<crate::operation::modify_global_cluster::ModifyGlobalClusterError> for Error {
     fn from(err: crate::operation::modify_global_cluster::ModifyGlobalClusterError) -> Self {
         match err {
+            crate::operation::modify_global_cluster::ModifyGlobalClusterError::GlobalClusterAlreadyExistsFault(inner) => {
+                Error::GlobalClusterAlreadyExistsFault(inner)
+            }
             crate::operation::modify_global_cluster::ModifyGlobalClusterError::GlobalClusterNotFoundFault(inner) => {
                 Error::GlobalClusterNotFoundFault(inner)
+            }
+            crate::operation::modify_global_cluster::ModifyGlobalClusterError::InvalidDbClusterStateFault(inner) => {
+                Error::InvalidDbClusterStateFault(inner)
+            }
+            crate::operation::modify_global_cluster::ModifyGlobalClusterError::InvalidDbInstanceStateFault(inner) => {
+                Error::InvalidDbInstanceStateFault(inner)
             }
             crate::operation::modify_global_cluster::ModifyGlobalClusterError::InvalidGlobalClusterStateFault(inner) => {
                 Error::InvalidGlobalClusterStateFault(inner)

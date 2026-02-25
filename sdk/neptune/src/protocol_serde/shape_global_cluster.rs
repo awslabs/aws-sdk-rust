@@ -85,22 +85,20 @@ pub fn de_global_cluster(
                 builder = builder.set_engine_version(var_6);
             }
             ,
-            s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.neptune#GlobalCluster$StorageEncrypted */ =>  {
+            s if s.matches("DatabaseName") /* DatabaseName com.amazonaws.neptune#GlobalCluster$DatabaseName */ =>  {
                 let var_7 =
                     Some(
-                         {
-                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.neptune#BooleanOptional`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_storage_encrypted(var_7);
+                builder = builder.set_database_name(var_7);
             }
             ,
-            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.neptune#GlobalCluster$DeletionProtection */ =>  {
+            s if s.matches("StorageEncrypted") /* StorageEncrypted com.amazonaws.neptune#GlobalCluster$StorageEncrypted */ =>  {
                 let var_8 =
                     Some(
                          {
@@ -112,27 +110,52 @@ pub fn de_global_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_deletion_protection(var_8);
+                builder = builder.set_storage_encrypted(var_8);
+            }
+            ,
+            s if s.matches("DeletionProtection") /* DeletionProtection com.amazonaws.neptune#GlobalCluster$DeletionProtection */ =>  {
+                let var_9 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.neptune#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_deletion_protection(var_9);
             }
             ,
             s if s.matches("GlobalClusterMembers") /* GlobalClusterMembers com.amazonaws.neptune#GlobalCluster$GlobalClusterMembers */ =>  {
-                let var_9 =
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_global_cluster_member_list::de_global_cluster_member_list(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_members(var_9);
+                builder = builder.set_global_cluster_members(var_10);
             }
             ,
             s if s.matches("FailoverState") /* FailoverState com.amazonaws.neptune#GlobalCluster$FailoverState */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_failover_state::de_failover_state(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_failover_state(var_10);
+                builder = builder.set_failover_state(var_11);
+            }
+            ,
+            s if s.matches("TagList") /* TagList com.amazonaws.neptune#GlobalCluster$TagList */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_tag_list(var_12);
             }
             ,
             _ => {}
