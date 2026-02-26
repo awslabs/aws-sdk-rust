@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMembersOutput {
-    /// <p>The list of details about the Security Hub member accounts.</p>
+    /// <p>The list of details about the Security Hub CSPM member accounts.</p>
     pub members: ::std::option::Option<::std::vec::Vec<crate::types::Member>>,
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: ::std::option::Option<::std::vec::Vec<crate::types::Result>>,
     _request_id: Option<String>,
 }
 impl GetMembersOutput {
-    /// <p>The list of details about the Security Hub member accounts.</p>
+    /// <p>The list of details about the Security Hub CSPM member accounts.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
     pub fn members(&self) -> &[crate::types::Member] {
@@ -48,19 +48,19 @@ impl GetMembersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_members`](Self::set_members).
     ///
-    /// <p>The list of details about the Security Hub member accounts.</p>
+    /// <p>The list of details about the Security Hub CSPM member accounts.</p>
     pub fn members(mut self, input: crate::types::Member) -> Self {
         let mut v = self.members.unwrap_or_default();
         v.push(input);
         self.members = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of details about the Security Hub member accounts.</p>
+    /// <p>The list of details about the Security Hub CSPM member accounts.</p>
     pub fn set_members(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Member>>) -> Self {
         self.members = input;
         self
     }
-    /// <p>The list of details about the Security Hub member accounts.</p>
+    /// <p>The list of details about the Security Hub CSPM member accounts.</p>
     pub fn get_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Member>> {
         &self.members
     }

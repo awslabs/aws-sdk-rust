@@ -18,7 +18,7 @@ pub struct AwsEcsServiceDetails {
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Whether the execute command functionality is enabled for the service.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
-    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy ELB target health checks.</p>
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub health_check_grace_period_seconds: ::std::option::Option<i32>,
     /// <p>The launch type that the service uses.</p>
     /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code></p>
@@ -38,7 +38,7 @@ pub struct AwsEcsServiceDetails {
     /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
     /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code></p>
     pub propagate_tags: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an ELB load balancer.</p>
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub role: ::std::option::Option<::std::string::String>,
     /// <p>The scheduling strategy to use for the service.</p>
     /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
@@ -86,7 +86,7 @@ impl AwsEcsServiceDetails {
     pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
         self.enable_execute_command
     }
-    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy ELB target health checks.</p>
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub fn health_check_grace_period_seconds(&self) -> ::std::option::Option<i32> {
         self.health_check_grace_period_seconds
     }
@@ -130,7 +130,7 @@ impl AwsEcsServiceDetails {
     pub fn propagate_tags(&self) -> ::std::option::Option<&str> {
         self.propagate_tags.as_deref()
     }
-    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an ELB load balancer.</p>
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub fn role(&self) -> ::std::option::Option<&str> {
         self.role.as_deref()
     }
@@ -305,17 +305,17 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
         &self.enable_execute_command
     }
-    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy ELB target health checks.</p>
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
         self.health_check_grace_period_seconds = ::std::option::Option::Some(input);
         self
     }
-    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy ELB target health checks.</p>
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub fn set_health_check_grace_period_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.health_check_grace_period_seconds = input;
         self
     }
-    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy ELB target health checks.</p>
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
     pub fn get_health_check_grace_period_seconds(&self) -> &::std::option::Option<i32> {
         &self.health_check_grace_period_seconds
     }
@@ -461,17 +461,17 @@ impl AwsEcsServiceDetailsBuilder {
     pub fn get_propagate_tags(&self) -> &::std::option::Option<::std::string::String> {
         &self.propagate_tags
     }
-    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an ELB load balancer.</p>
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub fn role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an ELB load balancer.</p>
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub fn set_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.role = input;
         self
     }
-    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an ELB load balancer.</p>
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
     pub fn get_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.role
     }

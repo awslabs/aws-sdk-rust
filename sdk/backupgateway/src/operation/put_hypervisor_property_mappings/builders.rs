@@ -22,7 +22,7 @@ impl crate::operation::put_hypervisor_property_mappings::builders::PutHypervisor
 }
 /// Fluent builder constructing a request to `PutHypervisorPropertyMappings`.
 ///
-/// <p>This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services.</p>
+/// <p>This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the hypervisor to the properties available in Amazon Web Services.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,17 +127,17 @@ impl PutHypervisorPropertyMappingsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
     ///
-    /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This action requests the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub fn vmware_to_aws_tag_mappings(mut self, input: crate::types::VmwareToAwsTagMapping) -> Self {
         self.inner = self.inner.vmware_to_aws_tag_mappings(input);
         self
     }
-    /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This action requests the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub fn set_vmware_to_aws_tag_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>) -> Self {
         self.inner = self.inner.set_vmware_to_aws_tag_mappings(input);
         self
     }
-    /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This action requests the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub fn get_vmware_to_aws_tag_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
         self.inner.get_vmware_to_aws_tag_mappings()
     }

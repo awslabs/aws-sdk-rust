@@ -13,7 +13,7 @@ pub struct ContainerDetails {
     /// <p>The name of the container image related to a finding.</p>
     pub image_name: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the container started.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>Provides information about the mounting of a volume in a container.</p>
     pub volume_mounts: ::std::option::Option<::std::vec::Vec<crate::types::VolumeMount>>,
@@ -38,7 +38,7 @@ impl ContainerDetails {
         self.image_name.as_deref()
     }
     /// <p>Indicates when the container started.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn launched_at(&self) -> ::std::option::Option<&str> {
         self.launched_at.as_deref()
     }
@@ -130,19 +130,19 @@ impl ContainerDetailsBuilder {
         &self.image_name
     }
     /// <p>Indicates when the container started.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn launched_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launched_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the container started.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_launched_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_at = input;
         self
     }
     /// <p>Indicates when the container started.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_launched_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.launched_at
     }

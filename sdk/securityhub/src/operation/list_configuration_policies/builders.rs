@@ -22,7 +22,7 @@ impl crate::operation::list_configuration_policies::builders::ListConfigurationP
 }
 /// Fluent builder constructing a request to `ListConfigurationPolicies`.
 ///
-/// <p>Lists the configuration policies that the Security Hub delegated administrator has created for your organization. Only the delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Lists the configuration policies that the Security Hub CSPM delegated administrator has created for your organization. Only the delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfigurationPoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

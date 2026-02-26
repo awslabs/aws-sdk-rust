@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterDeferredMaintenanceWindow {
     /// <p>The end of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub defer_maintenance_end_time: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the maintenance window.</p>
     pub defer_maintenance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The start of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub defer_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterDeferredMaintenanceWindow {
     /// <p>The end of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn defer_maintenance_end_time(&self) -> ::std::option::Option<&str> {
         self.defer_maintenance_end_time.as_deref()
     }
@@ -24,7 +24,7 @@ impl AwsRedshiftClusterDeferredMaintenanceWindow {
         self.defer_maintenance_identifier.as_deref()
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn defer_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.defer_maintenance_start_time.as_deref()
     }
@@ -46,19 +46,19 @@ pub struct AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
 }
 impl AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
     /// <p>The end of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn defer_maintenance_end_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.defer_maintenance_end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_defer_maintenance_end_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.defer_maintenance_end_time = input;
         self
     }
     /// <p>The end of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_defer_maintenance_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.defer_maintenance_end_time
     }
@@ -77,19 +77,19 @@ impl AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
         &self.defer_maintenance_identifier
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn defer_maintenance_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.defer_maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_defer_maintenance_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.defer_maintenance_start_time = input;
         self
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_defer_maintenance_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.defer_maintenance_start_time
     }

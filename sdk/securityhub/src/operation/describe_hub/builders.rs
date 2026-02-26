@@ -22,7 +22,7 @@ impl crate::operation::describe_hub::builders::DescribeHubInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeHub`.
 ///
-/// <p>Returns details about the Hub resource in your account, including the <code>HubArn</code> and the time when you enabled Security Hub.</p>
+/// <p>Returns details about the Hub resource in your account, including the <code>HubArn</code> and the time when you enabled Security Hub CSPM.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeHubFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

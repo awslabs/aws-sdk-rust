@@ -33,6 +33,12 @@ pub fn ser_instance_launch_template(
     if let Some(var_9) = &input.fips_enabled {
         object.key("fipsEnabled").boolean(*var_9);
     }
+    if let Some(var_10) = &input.capacity_reservations {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("capacityReservations").start_object();
+        crate::protocol_serde::shape_capacity_reservation_request::ser_capacity_reservation_request(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }
 
@@ -97,6 +103,11 @@ where
                         }
                         "fipsEnabled" => {
                             builder = builder.set_fips_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "capacityReservations" => {
+                            builder = builder.set_capacity_reservations(
+                                crate::protocol_serde::shape_capacity_reservation_request::de_capacity_reservation_request(tokens, _value)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

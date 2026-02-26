@@ -23,8 +23,8 @@ impl crate::operation::accept_invitation::builders::AcceptInvitationInputBuilder
 /// Fluent builder constructing a request to `AcceptInvitation`.
 ///
 /// <p>This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.</p>
-/// <p>The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually change to use <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function must continue to use <code>AcceptInvitation</code>. You should also add <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>AcceptAdministratorInvitation</code>.</p>
-/// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>
+/// <p>The Security Hub CSPM console continues to use <code>AcceptInvitation</code>. It will eventually change to use <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function must continue to use <code>AcceptInvitation</code>. You should also add <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place after the console begins to use <code>AcceptAdministratorInvitation</code>.</p>
+/// <p>Accepts the invitation to be a member account and be monitored by the Security Hub CSPM administrator account that the invitation was sent from.</p>
 /// <p>This operation is only used by member accounts that are not added through Organizations.</p>
 /// <p>When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.</p>
 #[deprecated(note = "This API has been deprecated, use AcceptAdministratorInvitation API instead.")]
@@ -113,31 +113,31 @@ impl AcceptInvitationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.master_id(input.into());
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_master_id(input);
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_master_id()
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invitation_id(input.into());
         self
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_invitation_id()
     }

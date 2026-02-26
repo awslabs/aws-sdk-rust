@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccountInput {
-    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the Security Hub CSPM administrator account.</p>
     pub admin_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub CSPM if not specified.</p>
     pub feature: ::std::option::Option<crate::types::SecurityHubFeature>,
 }
 impl DisableOrganizationAdminAccountInput {
-    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the Security Hub CSPM administrator account.</p>
     pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
         self.admin_account_id.as_deref()
     }
-    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn feature(&self) -> ::std::option::Option<&crate::types::SecurityHubFeature> {
         self.feature.as_ref()
     }
@@ -33,32 +33,32 @@ pub struct DisableOrganizationAdminAccountInputBuilder {
     pub(crate) feature: ::std::option::Option<crate::types::SecurityHubFeature>,
 }
 impl DisableOrganizationAdminAccountInputBuilder {
-    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the Security Hub CSPM administrator account.</p>
     /// This field is required.
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the Security Hub CSPM administrator account.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_account_id = input;
         self
     }
-    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the Security Hub CSPM administrator account.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_account_id
     }
-    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
         self.feature = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
         self.feature = input;
         self
     }
-    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is disabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
         &self.feature
     }

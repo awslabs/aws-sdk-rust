@@ -13,7 +13,7 @@ pub struct AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
     pub health_check_grace_period: ::std::option::Option<i32>,
     /// <p>Indicates when the auto scaling group was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The mixed instances policy for the automatic scaling group.</p>
     pub mixed_instances_policy: ::std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
@@ -44,7 +44,7 @@ impl AwsAutoScalingAutoScalingGroupDetails {
         self.health_check_grace_period
     }
     /// <p>Indicates when the auto scaling group was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
@@ -152,19 +152,19 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         &self.health_check_grace_period
     }
     /// <p>Indicates when the auto scaling group was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the auto scaling group was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>Indicates when the auto scaling group was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_time
     }

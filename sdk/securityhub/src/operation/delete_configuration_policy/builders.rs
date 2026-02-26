@@ -22,7 +22,7 @@ impl crate::operation::delete_configuration_policy::builders::DeleteConfiguratio
 }
 /// Fluent builder constructing a request to `DeleteConfigurationPolicy`.
 ///
-/// <p>Deletes a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region. For the deletion to succeed, you must first disassociate a configuration policy from target accounts, organizational units, or the root by invoking the <code>StartConfigurationPolicyDisassociation</code> operation.</p>
+/// <p>Deletes a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region. For the deletion to succeed, you must first disassociate a configuration policy from target accounts, organizational units, or the root by invoking the <code>StartConfigurationPolicyDisassociation</code> operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteConfigurationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

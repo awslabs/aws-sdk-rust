@@ -5,6 +5,8 @@ pub use crate::types::error::_internal_service_error_exception::InternalServiceE
 
 pub use crate::types::error::_invalid_customer_identifier_exception::InvalidCustomerIdentifierException;
 
+pub use crate::types::error::_invalid_license_exception::InvalidLicenseException;
+
 pub use crate::types::error::_invalid_product_code_exception::InvalidProductCodeException;
 
 pub use crate::types::error::_invalid_tag_exception::InvalidTagException;
@@ -50,6 +52,8 @@ mod _internal_service_error_exception;
 mod _invalid_customer_identifier_exception;
 
 mod _invalid_endpoint_region_exception;
+
+mod _invalid_license_exception;
 
 mod _invalid_product_code_exception;
 

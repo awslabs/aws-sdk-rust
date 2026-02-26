@@ -22,7 +22,7 @@ impl crate::operation::update_configuration_policy::builders::UpdateConfiguratio
 }
 /// Fluent builder constructing a request to `UpdateConfigurationPolicy`.
 ///
-/// <p>Updates a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Updates a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateConfigurationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -164,19 +164,19 @@ impl UpdateConfigurationPolicyFluentBuilder {
     pub fn get_updated_reason(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_updated_reason()
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p>An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).</p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn configuration_policy(mut self, input: crate::types::Policy) -> Self {
         self.inner = self.inner.configuration_policy(input);
         self
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p>An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).</p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn set_configuration_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
         self.inner = self.inner.set_configuration_policy(input);
         self
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p>An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).</p>
     /// <p>When updating a configuration policy, provide a complete list of standards that you want to enable and a complete list of controls that you want to enable or disable. The updated configuration replaces the current configuration.</p>
     pub fn get_configuration_policy(&self) -> &::std::option::Option<crate::types::Policy> {
         self.inner.get_configuration_policy()

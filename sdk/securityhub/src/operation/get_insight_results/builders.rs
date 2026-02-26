@@ -22,7 +22,7 @@ impl crate::operation::get_insight_results::builders::GetInsightResultsInputBuil
 }
 /// Fluent builder constructing a request to `GetInsightResults`.
 ///
-/// <p>Lists the results of the Security Hub insight specified by the insight ARN.</p>
+/// <p>Lists the results of the Security Hub CSPM insight specified by the insight ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInsightResultsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

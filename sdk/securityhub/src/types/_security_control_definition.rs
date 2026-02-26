@@ -8,11 +8,11 @@ pub struct SecurityControlDefinition {
     pub security_control_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of a security control.</p>
     pub title: ::std::option::Option<::std::string::String>,
-    /// <p>The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
+    /// <p>The description of a security control across standards. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A link to Security Hub documentation that explains how to remediate a failed finding for a security control.</p>
+    /// <p>A link to Security Hub CSPM documentation that explains how to remediate a failed finding for a security control.</p>
     pub remediation_url: ::std::option::Option<::std::string::String>,
-    /// <p>The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The severity of a security control. For more information about how Security Hub CSPM determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     pub severity_rating: ::std::option::Option<crate::types::SeverityRating>,
     /// <p>Specifies whether a security control is available in the current Amazon Web Services Region.</p>
     pub current_region_availability: ::std::option::Option<crate::types::RegionAvailabilityStatus>,
@@ -30,15 +30,15 @@ impl SecurityControlDefinition {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
+    /// <p>The description of a security control across standards. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A link to Security Hub documentation that explains how to remediate a failed finding for a security control.</p>
+    /// <p>A link to Security Hub CSPM documentation that explains how to remediate a failed finding for a security control.</p>
     pub fn remediation_url(&self) -> ::std::option::Option<&str> {
         self.remediation_url.as_deref()
     }
-    /// <p>The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The severity of a security control. For more information about how Security Hub CSPM determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     pub fn severity_rating(&self) -> ::std::option::Option<&crate::types::SeverityRating> {
         self.severity_rating.as_ref()
     }
@@ -110,48 +110,48 @@ impl SecurityControlDefinitionBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
-    /// <p>The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
+    /// <p>The description of a security control across standards. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
     /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
+    /// <p>The description of a security control across standards. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>The description of a security control across standards. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
+    /// <p>The description of a security control across standards. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter doesn't reference a specific standard.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A link to Security Hub documentation that explains how to remediate a failed finding for a security control.</p>
+    /// <p>A link to Security Hub CSPM documentation that explains how to remediate a failed finding for a security control.</p>
     /// This field is required.
     pub fn remediation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A link to Security Hub documentation that explains how to remediate a failed finding for a security control.</p>
+    /// <p>A link to Security Hub CSPM documentation that explains how to remediate a failed finding for a security control.</p>
     pub fn set_remediation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation_url = input;
         self
     }
-    /// <p>A link to Security Hub documentation that explains how to remediate a failed finding for a security control.</p>
+    /// <p>A link to Security Hub CSPM documentation that explains how to remediate a failed finding for a security control.</p>
     pub fn get_remediation_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.remediation_url
     }
-    /// <p>The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The severity of a security control. For more information about how Security Hub CSPM determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// This field is required.
     pub fn severity_rating(mut self, input: crate::types::SeverityRating) -> Self {
         self.severity_rating = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The severity of a security control. For more information about how Security Hub CSPM determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     pub fn set_severity_rating(mut self, input: ::std::option::Option<crate::types::SeverityRating>) -> Self {
         self.severity_rating = input;
         self
     }
-    /// <p>The severity of a security control. For more information about how Security Hub determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The severity of a security control. For more information about how Security Hub CSPM determines control severity, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/controls-findings-create-update.html#control-findings-severity">Assigning severity to control findings</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     pub fn get_severity_rating(&self) -> &::std::option::Option<crate::types::SeverityRating> {
         &self.severity_rating
     }

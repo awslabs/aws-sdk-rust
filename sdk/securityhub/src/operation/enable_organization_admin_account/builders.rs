@@ -22,7 +22,7 @@ impl crate::operation::enable_organization_admin_account::builders::EnableOrgani
 }
 /// Fluent builder constructing a request to `EnableOrganizationAdminAccount`.
 ///
-/// <p>Designates the Security Hub administrator account for an organization. Can only be called by the organization management account.</p>
+/// <p>Designates the Security Hub CSPM administrator account for an organization. Can only be called by the organization management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccountFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl EnableOrganizationAdminAccountFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub CSPM administrator account.</p>
     pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_account_id(input.into());
         self
     }
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub CSPM administrator account.</p>
     pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_account_id(input);
         self
     }
-    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub CSPM administrator account.</p>
     pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_account_id()
     }
-    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
         self.inner = self.inner.feature(input);
         self
     }
-    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
         self.inner = self.inner.set_feature(input);
         self
     }
-    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature for which the delegated admin account is enabled. Defaults to Security Hub CSPM if not specified.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
         self.inner.get_feature()
     }

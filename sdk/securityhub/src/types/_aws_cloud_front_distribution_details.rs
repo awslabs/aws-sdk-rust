@@ -15,7 +15,7 @@ pub struct AwsCloudFrontDistributionDetails {
     /// <p>The entity tag is a hash of the object.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub last_modified_time: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that controls whether access logs are written for the distribution.</p>
     pub logging: ::std::option::Option<crate::types::AwsCloudFrontDistributionLogging>,
@@ -52,7 +52,7 @@ impl AwsCloudFrontDistributionDetails {
         self.e_tag.as_deref()
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&str> {
         self.last_modified_time.as_deref()
     }
@@ -177,19 +177,19 @@ impl AwsCloudFrontDistributionDetailsBuilder {
         &self.e_tag
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_modified_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified_time = input;
         self
     }
     /// <p>Indicates when that the distribution was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified_time
     }

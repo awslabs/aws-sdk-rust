@@ -22,9 +22,9 @@ impl crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuil
 }
 /// Fluent builder constructing a request to `EnableSecurityHub`.
 ///
-/// <p>Enables Security Hub for your account in the current Region or the Region you specify in the request.</p>
-/// <p>When you enable Security Hub, you grant to Security Hub the permissions necessary to gather findings from other services that are integrated with Security Hub.</p>
-/// <p>When you use the <code>EnableSecurityHub</code> operation to enable Security Hub, you also automatically enable the following standards:</p>
+/// <p>Enables Security Hub CSPM for your account in the current Region or the Region you specify in the request.</p>
+/// <p>When you enable Security Hub CSPM, you grant to Security Hub CSPM the permissions necessary to gather findings from other services that are integrated with Security Hub CSPM.</p>
+/// <p>When you use the <code>EnableSecurityHub</code> operation to enable Security Hub CSPM, you also automatically enable the following standards:</p>
 /// <ul>
 /// <li>
 /// <p>Center for Internet Security (CIS) Amazon Web Services Foundations Benchmark v1.2.0</p></li>
@@ -33,8 +33,8 @@ impl crate::operation::enable_security_hub::builders::EnableSecurityHubInputBuil
 /// </ul>
 /// <p>Other standards are not automatically enabled.</p>
 /// <p>To opt out of automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
-/// <p>After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.</p>
-/// <p>To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup information</a> in the <i>Security Hub User Guide</i>.</p>
+/// <p>After you enable Security Hub CSPM, to enable a standard, use the <code>BatchEnableStandards</code> operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.</p>
+/// <p>To learn more, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">setup information</a> in the <i>Security Hub CSPM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableSecurityHubFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,51 +125,51 @@ impl EnableSecurityHubFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
+    /// <p>The tags to add to the hub resource when you enable Security Hub CSPM.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
+    /// <p>The tags to add to the hub resource when you enable Security Hub CSPM.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The tags to add to the hub resource when you enable Security Hub.</p>
+    /// <p>The tags to add to the hub resource when you enable Security Hub CSPM.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you don't provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub CSPM has designated as automatically enabled. If you don't provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn enable_default_standards(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_default_standards(input);
         self
     }
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you don't provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub CSPM has designated as automatically enabled. If you don't provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn set_enable_default_standards(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_default_standards(input);
         self
     }
-    /// <p>Whether to enable the security standards that Security Hub has designated as automatically enabled. If you don't provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+    /// <p>Whether to enable the security standards that Security Hub CSPM has designated as automatically enabled. If you don't provide a value for <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not enable the automatically enabled standards, set <code>EnableDefaultStandards</code> to <code>false</code>.</p>
     pub fn get_enable_default_standards(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_default_standards()
     }
-    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
-    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
-    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    /// <p>This field, used when enabling Security Hub CSPM, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub CSPM on or after February 23, 2023.</p>
     pub fn control_finding_generator(mut self, input: crate::types::ControlFindingGenerator) -> Self {
         self.inner = self.inner.control_finding_generator(input);
         self
     }
-    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
-    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
-    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    /// <p>This field, used when enabling Security Hub CSPM, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub CSPM on or after February 23, 2023.</p>
     pub fn set_control_finding_generator(mut self, input: ::std::option::Option<crate::types::ControlFindingGenerator>) -> Self {
         self.inner = self.inner.set_control_finding_generator(input);
         self
     }
-    /// <p>This field, used when enabling Security Hub, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
-    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
-    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February 23, 2023.</p>
+    /// <p>This field, used when enabling Security Hub CSPM, specifies whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>The value for this field in a member account matches the value in the administrator account. For accounts that aren't part of an organization, the default value of this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub CSPM on or after February 23, 2023.</p>
     pub fn get_control_finding_generator(&self) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
         self.inner.get_control_finding_generator()
     }

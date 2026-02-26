@@ -7,7 +7,7 @@ pub struct AwsIamAccessKeySessionContextAttributes {
     /// <p>Indicates whether the session used multi-factor authentication (MFA).</p>
     pub mfa_authenticated: ::std::option::Option<bool>,
     /// <p>Indicates when the session was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub creation_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamAccessKeySessionContextAttributes {
@@ -16,7 +16,7 @@ impl AwsIamAccessKeySessionContextAttributes {
         self.mfa_authenticated
     }
     /// <p>Indicates when the session was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn creation_date(&self) -> ::std::option::Option<&str> {
         self.creation_date.as_deref()
     }
@@ -51,19 +51,19 @@ impl AwsIamAccessKeySessionContextAttributesBuilder {
         &self.mfa_authenticated
     }
     /// <p>Indicates when the session was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn creation_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the session was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Indicates when the session was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.creation_date
     }

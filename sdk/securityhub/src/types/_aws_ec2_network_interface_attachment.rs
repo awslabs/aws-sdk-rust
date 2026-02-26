@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2NetworkInterfaceAttachment {
     /// <p>Indicates when the attachment initiated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub attach_time: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the network interface attachment</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ pub struct AwsEc2NetworkInterfaceAttachment {
 }
 impl AwsEc2NetworkInterfaceAttachment {
     /// <p>Indicates when the attachment initiated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn attach_time(&self) -> ::std::option::Option<&str> {
         self.attach_time.as_deref()
     }
@@ -74,19 +74,19 @@ pub struct AwsEc2NetworkInterfaceAttachmentBuilder {
 }
 impl AwsEc2NetworkInterfaceAttachmentBuilder {
     /// <p>Indicates when the attachment initiated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn attach_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attach_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the attachment initiated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_attach_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attach_time = input;
         self
     }
     /// <p>Indicates when the attachment initiated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_attach_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.attach_time
     }

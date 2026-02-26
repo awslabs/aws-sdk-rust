@@ -22,7 +22,7 @@ impl crate::operation::get_configuration_policy_association::builders::GetConfig
 }
 /// Fluent builder constructing a request to `GetConfigurationPolicyAssociation`.
 ///
-/// <p>Returns the association between a configuration and a target account, organizational unit, or the root. The configuration can be a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Returns the association between a configuration and a target account, organizational unit, or the root. The configuration can be a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationPolicyAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

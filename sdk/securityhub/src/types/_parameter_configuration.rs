@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParameterConfiguration {
-    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
-    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
+    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub CSPM behavior.</p>
+    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub CSPM default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub CSPM ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
     pub value_type: ::std::option::Option<crate::types::ParameterValueType>,
     /// <p>The current value of a control parameter.</p>
     pub value: ::std::option::Option<crate::types::ParameterValue>,
 }
 impl ParameterConfiguration {
-    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
-    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
+    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub CSPM behavior.</p>
+    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub CSPM default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub CSPM ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
     pub fn value_type(&self) -> ::std::option::Option<&crate::types::ParameterValueType> {
         self.value_type.as_ref()
@@ -38,23 +38,23 @@ pub struct ParameterConfigurationBuilder {
     pub(crate) value: ::std::option::Option<crate::types::ParameterValue>,
 }
 impl ParameterConfigurationBuilder {
-    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
-    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
+    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub CSPM behavior.</p>
+    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub CSPM default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub CSPM ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
     /// This field is required.
     pub fn value_type(mut self, input: crate::types::ParameterValueType) -> Self {
         self.value_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
-    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
+    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub CSPM behavior.</p>
+    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub CSPM default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub CSPM ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
     pub fn set_value_type(mut self, input: ::std::option::Option<crate::types::ParameterValueType>) -> Self {
         self.value_type = input;
         self
     }
-    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub behavior.</p>
-    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub ignores user-provided input for the <code>Value</code> field.</p>
+    /// <p>Identifies whether a control parameter uses a custom user-defined value or subscribes to the default Security Hub CSPM behavior.</p>
+    /// <p>When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior can be a specific Security Hub CSPM default value, or the default behavior can be to ignore a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>, Security Hub CSPM ignores user-provided input for the <code>Value</code> field.</p>
     /// <p>When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
     pub fn get_value_type(&self) -> &::std::option::Option<crate::types::ParameterValueType> {
         &self.value_type

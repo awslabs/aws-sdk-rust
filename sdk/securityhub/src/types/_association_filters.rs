@@ -6,7 +6,7 @@
 pub struct AssociationFilters {
     /// <p>The ARN or UUID of the configuration policy.</p>
     pub configuration_policy_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub association_type: ::std::option::Option<crate::types::AssociationType>,
     /// <p>The current status of the association between a target and a configuration policy.</p>
     pub association_status: ::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus>,
@@ -16,7 +16,7 @@ impl AssociationFilters {
     pub fn configuration_policy_id(&self) -> ::std::option::Option<&str> {
         self.configuration_policy_id.as_deref()
     }
-    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn association_type(&self) -> ::std::option::Option<&crate::types::AssociationType> {
         self.association_type.as_ref()
     }
@@ -55,17 +55,17 @@ impl AssociationFiltersBuilder {
     pub fn get_configuration_policy_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.configuration_policy_id
     }
-    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationType>) -> Self {
         self.association_type = input;
         self
     }
-    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationType> {
         &self.association_type
     }

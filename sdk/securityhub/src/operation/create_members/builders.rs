@@ -22,23 +22,23 @@ impl crate::operation::create_members::builders::CreateMembersInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateMembers`.
 ///
-/// <p>Creates a member association in Security Hub between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.</p>
+/// <p>Creates a member association in Security Hub CSPM between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.</p>
 /// <p><code>CreateMembers</code> is always used to add accounts that are not organization members.</p>
 /// <p>For accounts that are managed using Organizations, <code>CreateMembers</code> is only used in the following cases:</p>
 /// <ul>
 /// <li>
-/// <p>Security Hub is not configured to automatically add new organization accounts.</p></li>
+/// <p>Security Hub CSPM is not configured to automatically add new organization accounts.</p></li>
 /// <li>
-/// <p>The account was disassociated or deleted in Security Hub.</p></li>
+/// <p>The account was disassociated or deleted in Security Hub CSPM.</p></li>
 /// </ul>
-/// <p>This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the <code>EnableSecurityHub</code> operation.</p>
-/// <p>For accounts that are not organization members, you create the account association and then send an invitation to the member account. To send the invitation, you use the <code>InviteMembers</code> operation. If the account owner accepts the invitation, the account becomes a member account in Security Hub.</p>
-/// <p>Accounts that are managed using Organizations don't receive an invitation. They automatically become a member account in Security Hub.</p>
+/// <p>This action can only be used by an account that has Security Hub CSPM enabled. To enable Security Hub CSPM, you can use the <code>EnableSecurityHub</code> operation.</p>
+/// <p>For accounts that are not organization members, you create the account association and then send an invitation to the member account. To send the invitation, you use the <code>InviteMembers</code> operation. If the account owner accepts the invitation, the account becomes a member account in Security Hub CSPM.</p>
+/// <p>Accounts that are managed using Organizations don't receive an invitation. They automatically become a member account in Security Hub CSPM.</p>
 /// <ul>
 /// <li>
-/// <p>If the organization account does not have Security Hub enabled, then Security Hub and the default standards are automatically enabled. Note that Security Hub cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub before the administrator account enables it as a member account.</p></li>
+/// <p>If the organization account does not have Security Hub CSPM enabled, then Security Hub CSPM and the default standards are automatically enabled. Note that Security Hub CSPM cannot be enabled automatically for the organization management account. The organization management account must enable Security Hub CSPM before the administrator account enables it as a member account.</p></li>
 /// <li>
-/// <p>For organization accounts that already have Security Hub enabled, Security Hub does not make any other changes to those accounts. It does not change their enabled standards or controls.</p></li>
+/// <p>For organization accounts that already have Security Hub CSPM enabled, Security Hub CSPM does not make any other changes to those accounts. It does not change their enabled standards or controls.</p></li>
 /// </ul>
 /// <p>A permissions policy is added that permits the administrator account to view the findings generated in the member account.</p>
 /// <p>To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code> or <code>DisassociateMembers</code> operation.</p>
@@ -132,17 +132,17 @@ impl CreateMembersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_details`](Self::set_account_details).
     ///
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub CSPM administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub fn account_details(mut self, input: crate::types::AccountDetails) -> Self {
         self.inner = self.inner.account_details(input);
         self
     }
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub CSPM administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub fn set_account_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>>) -> Self {
         self.inner = self.inner.set_account_details(input);
         self
     }
-    /// <p>The list of accounts to associate with the Security Hub administrator account. For each account, the list includes the account ID and optionally the email address.</p>
+    /// <p>The list of accounts to associate with the Security Hub CSPM administrator account. For each account, the list includes the account ID and optionally the email address.</p>
     pub fn get_account_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountDetails>> {
         self.inner.get_account_details()
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Invitation {
-    /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that the invitation was sent from.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the invitation sent to the member account.</p>
     pub invitation_id: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct Invitation {
     pub member_status: ::std::option::Option<::std::string::String>,
 }
 impl Invitation {
-    /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that the invitation was sent from.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
@@ -48,17 +48,17 @@ pub struct InvitationBuilder {
     pub(crate) member_status: ::std::option::Option<::std::string::String>,
 }
 impl InvitationBuilder {
-    /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that the invitation was sent from.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that the invitation was sent from.</p>
     pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.account_id = input;
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that the invitation was sent from.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that the invitation was sent from.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }

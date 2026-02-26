@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BooleanConfigurationOptions {
-    /// <p>The Security Hub default value for a boolean parameter.</p>
+    /// <p>The Security Hub CSPM default value for a boolean parameter.</p>
     pub default_value: ::std::option::Option<bool>,
 }
 impl BooleanConfigurationOptions {
-    /// <p>The Security Hub default value for a boolean parameter.</p>
+    /// <p>The Security Hub CSPM default value for a boolean parameter.</p>
     pub fn default_value(&self) -> ::std::option::Option<bool> {
         self.default_value
     }
@@ -27,17 +27,17 @@ pub struct BooleanConfigurationOptionsBuilder {
     pub(crate) default_value: ::std::option::Option<bool>,
 }
 impl BooleanConfigurationOptionsBuilder {
-    /// <p>The Security Hub default value for a boolean parameter.</p>
+    /// <p>The Security Hub CSPM default value for a boolean parameter.</p>
     pub fn default_value(mut self, input: bool) -> Self {
         self.default_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Security Hub default value for a boolean parameter.</p>
+    /// <p>The Security Hub CSPM default value for a boolean parameter.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<bool>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a boolean parameter.</p>
+    /// <p>The Security Hub CSPM default value for a boolean parameter.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<bool> {
         &self.default_value
     }

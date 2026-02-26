@@ -25,7 +25,7 @@ pub struct AwsRedshiftClusterDetails {
     /// </ul>
     pub cluster_availability_status: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the cluster was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub cluster_create_time: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the cluster.</p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
@@ -65,7 +65,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
     pub enhanced_vpc_routing: ::std::option::Option<bool>,
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub expected_next_snapshot_schedule_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the next expected snapshot.</p>
     /// <p>Valid values: <code>OnTrack</code> | <code>Pending</code></p>
@@ -86,7 +86,7 @@ pub struct AwsRedshiftClusterDetails {
     /// <p>The master user name for the cluster. This name is used to connect to the database that is specified in as the value of <code>DBName</code>.</p>
     pub master_username: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the start of the next maintenance window.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub next_maintenance_window_start_time: ::std::option::Option<::std::string::String>,
     /// <p>The node type for the nodes in the cluster.</p>
     pub node_type: ::std::option::Option<::std::string::String>,
@@ -149,7 +149,7 @@ impl AwsRedshiftClusterDetails {
         self.cluster_availability_status.as_deref()
     }
     /// <p>Indicates when the cluster was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn cluster_create_time(&self) -> ::std::option::Option<&str> {
         self.cluster_create_time.as_deref()
     }
@@ -233,7 +233,7 @@ impl AwsRedshiftClusterDetails {
         self.enhanced_vpc_routing
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn expected_next_snapshot_schedule_time(&self) -> ::std::option::Option<&str> {
         self.expected_next_snapshot_schedule_time.as_deref()
     }
@@ -272,7 +272,7 @@ impl AwsRedshiftClusterDetails {
         self.master_username.as_deref()
     }
     /// <p>Indicates the start of the next maintenance window.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn next_maintenance_window_start_time(&self) -> ::std::option::Option<&str> {
         self.next_maintenance_window_start_time.as_deref()
     }
@@ -487,19 +487,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.cluster_availability_status
     }
     /// <p>Indicates when the cluster was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn cluster_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the cluster was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_create_time = input;
         self
     }
     /// <p>Indicates when the cluster was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_cluster_create_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_create_time
     }
@@ -789,19 +789,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.enhanced_vpc_routing
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn expected_next_snapshot_schedule_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_expected_next_snapshot_schedule_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_next_snapshot_schedule_time = input;
         self
     }
     /// <p>Indicates when the next snapshot is expected to be taken. The cluster must have a valid snapshot schedule and have backups enabled.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_expected_next_snapshot_schedule_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_next_snapshot_schedule_time
     }
@@ -922,19 +922,19 @@ impl AwsRedshiftClusterDetailsBuilder {
         &self.master_username
     }
     /// <p>Indicates the start of the next maintenance window.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn next_maintenance_window_start_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_maintenance_window_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the start of the next maintenance window.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_next_maintenance_window_start_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_maintenance_window_start_time = input;
         self
     }
     /// <p>Indicates the start of the next maintenance window.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_next_maintenance_window_start_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_maintenance_window_start_time
     }

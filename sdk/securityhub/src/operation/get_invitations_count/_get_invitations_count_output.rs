@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetInvitationsCountOutput {
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub CSPM member account, not including the currently accepted invitation.</p>
     pub invitations_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetInvitationsCountOutput {
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub CSPM member account, not including the currently accepted invitation.</p>
     pub fn invitations_count(&self) -> ::std::option::Option<i32> {
         self.invitations_count
     }
@@ -33,17 +33,17 @@ pub struct GetInvitationsCountOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetInvitationsCountOutputBuilder {
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub CSPM member account, not including the currently accepted invitation.</p>
     pub fn invitations_count(mut self, input: i32) -> Self {
         self.invitations_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub CSPM member account, not including the currently accepted invitation.</p>
     pub fn set_invitations_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.invitations_count = input;
         self
     }
-    /// <p>The number of all membership invitations sent to this Security Hub member account, not including the currently accepted invitation.</p>
+    /// <p>The number of all membership invitations sent to this Security Hub CSPM member account, not including the currently accepted invitation.</p>
     pub fn get_invitations_count(&self) -> &::std::option::Option<i32> {
         &self.invitations_count
     }

@@ -22,7 +22,7 @@ impl crate::operation::list_enabled_products_for_import::builders::ListEnabledPr
 }
 /// Fluent builder constructing a request to `ListEnabledProductsForImport`.
 ///
-/// <p>Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security Hub.</p>
+/// <p>Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security Hub CSPM.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEnabledProductsForImportFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

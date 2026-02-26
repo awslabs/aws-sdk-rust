@@ -22,7 +22,7 @@ impl crate::operation::delete_action_target::builders::DeleteActionTargetInputBu
 }
 /// Fluent builder constructing a request to `DeleteActionTarget`.
 ///
-/// <p>Deletes a custom action target from Security Hub.</p>
+/// <p>Deletes a custom action target from Security Hub CSPM.</p>
 /// <p>Deleting a custom action target does not affect any findings or insights that were already sent to Amazon CloudWatch Events using the custom action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteActionTargetFluentBuilder {

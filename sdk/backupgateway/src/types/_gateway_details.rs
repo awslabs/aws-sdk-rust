@@ -20,6 +20,10 @@ pub struct GatewayDetails {
     pub next_update_availability_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The DNS name for the virtual private cloud (VPC) endpoint the gateway uses to connect to the cloud for backup gateway.</p>
     pub vpc_endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub software_version: ::std::option::Option<::std::string::String>,
 }
 impl GatewayDetails {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -54,6 +58,14 @@ impl GatewayDetails {
     pub fn vpc_endpoint(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint.as_deref()
     }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn deprecation_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.deprecation_date.as_ref()
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn software_version(&self) -> ::std::option::Option<&str> {
+        self.software_version.as_deref()
+    }
 }
 impl GatewayDetails {
     /// Creates a new builder-style object to manufacture [`GatewayDetails`](crate::types::GatewayDetails).
@@ -74,6 +86,8 @@ pub struct GatewayDetailsBuilder {
     pub(crate) maintenance_start_time: ::std::option::Option<crate::types::MaintenanceStartTime>,
     pub(crate) next_update_availability_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) vpc_endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) deprecation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) software_version: ::std::option::Option<::std::string::String>,
 }
 impl GatewayDetailsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -188,6 +202,34 @@ impl GatewayDetailsBuilder {
     pub fn get_vpc_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_endpoint
     }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn deprecation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.deprecation_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn set_deprecation_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.deprecation_date = input;
+        self
+    }
+    /// <p>Date after which this gateway will not receive software updates for new features and bug fixes.</p>
+    pub fn get_deprecation_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.deprecation_date
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn software_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.software_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn set_software_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.software_version = input;
+        self
+    }
+    /// <p>The version number of the software running on the gateway appliance.</p>
+    pub fn get_software_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.software_version
+    }
     /// Consumes the builder and constructs a [`GatewayDetails`](crate::types::GatewayDetails).
     pub fn build(self) -> crate::types::GatewayDetails {
         crate::types::GatewayDetails {
@@ -199,6 +241,8 @@ impl GatewayDetailsBuilder {
             maintenance_start_time: self.maintenance_start_time,
             next_update_availability_time: self.next_update_availability_time,
             vpc_endpoint: self.vpc_endpoint,
+            deprecation_date: self.deprecation_date,
+            software_version: self.software_version,
         }
     }
 }

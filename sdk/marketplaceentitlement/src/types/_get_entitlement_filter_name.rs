@@ -15,6 +15,7 @@
 ///     GetEntitlementFilterName::CustomerAwsAccountId => { /* ... */ },
 ///     GetEntitlementFilterName::CustomerIdentifier => { /* ... */ },
 ///     GetEntitlementFilterName::Dimension => { /* ... */ },
+///     GetEntitlementFilterName::LicenseArn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum GetEntitlementFilterName {
     CustomerIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     Dimension,
+    #[allow(missing_docs)] // documentation missing in model
+    LicenseArn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for GetEntitlementFilterName {
             "CUSTOMER_AWS_ACCOUNT_ID" => GetEntitlementFilterName::CustomerAwsAccountId,
             "CUSTOMER_IDENTIFIER" => GetEntitlementFilterName::CustomerIdentifier,
             "DIMENSION" => GetEntitlementFilterName::Dimension,
+            "LICENSE_ARN" => GetEntitlementFilterName::LicenseArn,
             other => GetEntitlementFilterName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl GetEntitlementFilterName {
             GetEntitlementFilterName::CustomerAwsAccountId => "CUSTOMER_AWS_ACCOUNT_ID",
             GetEntitlementFilterName::CustomerIdentifier => "CUSTOMER_IDENTIFIER",
             GetEntitlementFilterName::Dimension => "DIMENSION",
+            GetEntitlementFilterName::LicenseArn => "LICENSE_ARN",
             GetEntitlementFilterName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOMER_AWS_ACCOUNT_ID", "CUSTOMER_IDENTIFIER", "DIMENSION"]
+        &["CUSTOMER_AWS_ACCOUNT_ID", "CUSTOMER_IDENTIFIER", "DIMENSION", "LICENSE_ARN"]
     }
 }
 impl ::std::convert::AsRef<str> for GetEntitlementFilterName {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for GetEntitlementFilterName {
             GetEntitlementFilterName::CustomerAwsAccountId => write!(f, "CUSTOMER_AWS_ACCOUNT_ID"),
             GetEntitlementFilterName::CustomerIdentifier => write!(f, "CUSTOMER_IDENTIFIER"),
             GetEntitlementFilterName::Dimension => write!(f, "DIMENSION"),
+            GetEntitlementFilterName::LicenseArn => write!(f, "LICENSE_ARN"),
             GetEntitlementFilterName::Unknown(value) => write!(f, "{value}"),
         }
     }

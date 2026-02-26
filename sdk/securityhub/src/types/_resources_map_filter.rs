@@ -6,7 +6,7 @@
 pub struct ResourcesMapFilter {
     /// <p>The name of the field.</p>
     pub field_name: ::std::option::Option<crate::types::ResourcesMapField>,
-    /// <p>A map filter for filtering Security Hub findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
+    /// <p>A map filter for filtering Security Hub CSPM findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
     pub filter: ::std::option::Option<crate::types::MapFilter>,
 }
 impl ResourcesMapFilter {
@@ -14,7 +14,7 @@ impl ResourcesMapFilter {
     pub fn field_name(&self) -> ::std::option::Option<&crate::types::ResourcesMapField> {
         self.field_name.as_ref()
     }
-    /// <p>A map filter for filtering Security Hub findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
+    /// <p>A map filter for filtering Security Hub CSPM findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::MapFilter> {
         self.filter.as_ref()
     }
@@ -48,17 +48,17 @@ impl ResourcesMapFilterBuilder {
     pub fn get_field_name(&self) -> &::std::option::Option<crate::types::ResourcesMapField> {
         &self.field_name
     }
-    /// <p>A map filter for filtering Security Hub findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
+    /// <p>A map filter for filtering Security Hub CSPM findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
     pub fn filter(mut self, input: crate::types::MapFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A map filter for filtering Security Hub findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
+    /// <p>A map filter for filtering Security Hub CSPM findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::MapFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>A map filter for filtering Security Hub findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
+    /// <p>A map filter for filtering Security Hub CSPM findings. Each map filter provides the field to check for, the value to check for, and the comparison operator.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::MapFilter> {
         &self.filter
     }

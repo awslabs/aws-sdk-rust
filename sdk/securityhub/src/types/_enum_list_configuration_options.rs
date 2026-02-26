@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnumListConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of enums.</p>
     pub default_value: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of list items that an enum list control parameter can accept.</p>
     pub max_items: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct EnumListConfigurationOptions {
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumListConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of enums.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_value.is_none()`.
     pub fn default_value(&self) -> &[::std::string::String] {
@@ -49,19 +49,19 @@ impl EnumListConfigurationOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_default_value`](Self::set_default_value).
     ///
-    /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of enums.</p>
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.default_value.unwrap_or_default();
         v.push(input.into());
         self.default_value = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of enums.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a list of enums.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of enums.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.default_value
     }

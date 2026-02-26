@@ -10,12 +10,14 @@ pub struct Entitlement {
     pub dimension: ::std::option::Option<::std::string::String>,
     /// <p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>
     pub customer_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p>
     pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>
     pub value: ::std::option::Option<crate::types::EntitlementValue>,
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through AWS Marketplace.</p>
+    pub license_arn: ::std::option::Option<::std::string::String>,
 }
 impl Entitlement {
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
@@ -30,7 +32,7 @@ impl Entitlement {
     pub fn customer_identifier(&self) -> ::std::option::Option<&str> {
         self.customer_identifier.as_deref()
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p>
     pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.customer_aws_account_id.as_deref()
     }
@@ -41,6 +43,10 @@ impl Entitlement {
     /// <p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>
     pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through AWS Marketplace.</p>
+    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+        self.license_arn.as_deref()
     }
 }
 impl Entitlement {
@@ -60,6 +66,7 @@ pub struct EntitlementBuilder {
     pub(crate) customer_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) value: ::std::option::Option<crate::types::EntitlementValue>,
     pub(crate) expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) license_arn: ::std::option::Option<::std::string::String>,
 }
 impl EntitlementBuilder {
     /// <p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>
@@ -104,17 +111,17 @@ impl EntitlementBuilder {
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_identifier
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p>
     pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p>
     pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_account_id = input;
         self
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p>
     pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_aws_account_id
     }
@@ -146,6 +153,20 @@ impl EntitlementBuilder {
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_date
     }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through AWS Marketplace.</p>
+    pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.license_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through AWS Marketplace.</p>
+    pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.license_arn = input;
+        self
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through AWS Marketplace.</p>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
+    }
     /// Consumes the builder and constructs a [`Entitlement`](crate::types::Entitlement).
     pub fn build(self) -> crate::types::Entitlement {
         crate::types::Entitlement {
@@ -155,6 +176,7 @@ impl EntitlementBuilder {
             customer_aws_account_id: self.customer_aws_account_id,
             value: self.value,
             expiration_date: self.expiration_date,
+            license_arn: self.license_arn,
         }
     }
 }

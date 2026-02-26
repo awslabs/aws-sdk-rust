@@ -9,7 +9,7 @@ pub struct StartConfigurationPolicyAssociationOutput {
     pub target_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the target is an Amazon Web Services account, organizational unit, or the organization root.</p>
     pub target_type: ::std::option::Option<crate::types::TargetType>,
-    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub association_type: ::std::option::Option<crate::types::AssociationType>,
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy association was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -32,7 +32,7 @@ impl StartConfigurationPolicyAssociationOutput {
     pub fn target_type(&self) -> ::std::option::Option<&crate::types::TargetType> {
         self.target_type.as_ref()
     }
-    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn association_type(&self) -> ::std::option::Option<&crate::types::AssociationType> {
         self.association_type.as_ref()
     }
@@ -117,17 +117,17 @@ impl StartConfigurationPolicyAssociationOutputBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<crate::types::TargetType> {
         &self.target_type
     }
-    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn association_type(mut self, input: crate::types::AssociationType) -> Self {
         self.association_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn set_association_type(mut self, input: ::std::option::Option<crate::types::AssociationType>) -> Self {
         self.association_type = input;
         self
     }
-    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub delegated administrator or inherited from a parent.</p>
+    /// <p>Indicates whether the association between the specified target and the configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationType> {
         &self.association_type
     }

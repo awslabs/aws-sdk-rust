@@ -13,7 +13,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
     /// <p>The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.</p>
     pub classic_link_vpc_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The creation date and time for the launch configuration.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether the launch configuration is optimized for Amazon EBS I/O.</p>
     pub ebs_optimized: ::std::option::Option<bool>,
@@ -35,7 +35,7 @@ pub struct AwsAutoScalingLaunchConfigurationDetails {
     pub placement_tenancy: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the RAM disk associated with the AMI.</p>
     pub ramdisk_id: ::std::option::Option<::std::string::String>,
-    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
     pub security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum hourly price to be paid for any Spot Instance that is launched to fulfill the request.</p>
     pub spot_price: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ impl AwsAutoScalingLaunchConfigurationDetails {
         self.classic_link_vpc_security_groups.as_deref().unwrap_or_default()
     }
     /// <p>The creation date and time for the launch configuration.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
@@ -110,7 +110,7 @@ impl AwsAutoScalingLaunchConfigurationDetails {
     pub fn ramdisk_id(&self) -> ::std::option::Option<&str> {
         self.ramdisk_id.as_deref()
     }
-    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_groups.is_none()`.
     pub fn security_groups(&self) -> &[::std::string::String] {
@@ -236,19 +236,19 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
         &self.classic_link_vpc_security_groups
     }
     /// <p>The creation date and time for the launch configuration.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The creation date and time for the launch configuration.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The creation date and time for the launch configuration.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_time
     }
@@ -399,19 +399,19 @@ impl AwsAutoScalingLaunchConfigurationDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
     ///
-    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
     pub fn security_groups(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input.into());
         self.security_groups = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
     pub fn set_security_groups(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.security_groups = input;
         self
     }
-    /// <p>The security groups to assign to the instances in the Amazon EC2 Auto Scaling group.</p>
+    /// <p>The security groups to assign to the instances in the Auto Scaling group.</p>
     pub fn get_security_groups(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_groups
     }

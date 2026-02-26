@@ -22,7 +22,7 @@ impl crate::operation::get_hypervisor_property_mappings::builders::GetHypervisor
 }
 /// Fluent builder constructing a request to `GetHypervisorPropertyMappings`.
 ///
-/// <p>This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon Web Services.</p>
+/// <p>This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays the relationship of entity properties available from the hypervisor to the properties available in Amazon Web Services.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetHypervisorPropertyMappingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

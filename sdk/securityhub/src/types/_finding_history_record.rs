@@ -6,12 +6,12 @@
 pub struct FindingHistoryRecord {
     /// <p>Identifies which finding to get the finding history for.</p>
     pub finding_identifier: ::std::option::Option<crate::types::AwsSecurityFindingIdentifier>,
-    /// <p>A timestamp that indicates when Security Hub processed the updated finding record.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>A timestamp that indicates when Security Hub CSPM processed the updated finding record.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identifies whether the event marks the creation of a new finding. A value of <code>True</code> means that the finding is newly created. A value of <code>False</code> means that the finding isn’t newly created.</p>
     pub finding_created: ::std::option::Option<bool>,
-    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
+    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub CSPM customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
     pub update_source: ::std::option::Option<crate::types::FindingHistoryUpdateSource>,
     /// <p>An array of objects that provides details about the finding change event, including the Amazon Web Services Security Finding Format (ASFF) field that changed, the value of the field before the change, and the value of the field after the change.</p>
     pub updates: ::std::option::Option<::std::vec::Vec<crate::types::FindingHistoryUpdate>>,
@@ -23,8 +23,8 @@ impl FindingHistoryRecord {
     pub fn finding_identifier(&self) -> ::std::option::Option<&crate::types::AwsSecurityFindingIdentifier> {
         self.finding_identifier.as_ref()
     }
-    /// <p>A timestamp that indicates when Security Hub processed the updated finding record.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>A timestamp that indicates when Security Hub CSPM processed the updated finding record.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
@@ -32,7 +32,7 @@ impl FindingHistoryRecord {
     pub fn finding_created(&self) -> ::std::option::Option<bool> {
         self.finding_created
     }
-    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
+    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub CSPM customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
     pub fn update_source(&self) -> ::std::option::Option<&crate::types::FindingHistoryUpdateSource> {
         self.update_source.as_ref()
     }
@@ -80,20 +80,20 @@ impl FindingHistoryRecordBuilder {
     pub fn get_finding_identifier(&self) -> &::std::option::Option<crate::types::AwsSecurityFindingIdentifier> {
         &self.finding_identifier
     }
-    /// <p>A timestamp that indicates when Security Hub processed the updated finding record.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>A timestamp that indicates when Security Hub CSPM processed the updated finding record.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.update_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A timestamp that indicates when Security Hub processed the updated finding record.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>A timestamp that indicates when Security Hub CSPM processed the updated finding record.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.update_time = input;
         self
     }
-    /// <p>A timestamp that indicates when Security Hub processed the updated finding record.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>A timestamp that indicates when Security Hub CSPM processed the updated finding record.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.update_time
     }
@@ -111,17 +111,17 @@ impl FindingHistoryRecordBuilder {
     pub fn get_finding_created(&self) -> &::std::option::Option<bool> {
         &self.finding_created
     }
-    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
+    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub CSPM customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
     pub fn update_source(mut self, input: crate::types::FindingHistoryUpdateSource) -> Self {
         self.update_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
+    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub CSPM customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
     pub fn set_update_source(mut self, input: ::std::option::Option<crate::types::FindingHistoryUpdateSource>) -> Self {
         self.update_source = input;
         self
     }
-    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
+    /// <p>Identifies the source of the event that changed the finding. For example, an integrated Amazon Web Services service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html"> <code>BatchImportFindings</code> </a>, or an Security Hub CSPM customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html"> <code>BatchUpdateFindings</code> </a>.</p>
     pub fn get_update_source(&self) -> &::std::option::Option<crate::types::FindingHistoryUpdateSource> {
         &self.update_source
     }

@@ -21,7 +21,7 @@ pub struct AwsEc2InstanceDetails {
     /// <p>The identifier of the subnet that the instance was launched in.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub launched_at: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the network interfaces for the EC2 instance. The details for each network interface are in a corresponding <code>AwsEc2NetworkInterfacesDetails</code> object.</p>
     pub network_interfaces: ::std::option::Option<::std::vec::Vec<crate::types::AwsEc2InstanceNetworkInterfacesDetails>>,
@@ -70,7 +70,7 @@ impl AwsEc2InstanceDetails {
         self.subnet_id.as_deref()
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn launched_at(&self) -> ::std::option::Option<&str> {
         self.launched_at.as_deref()
     }
@@ -244,19 +244,19 @@ impl AwsEc2InstanceDetailsBuilder {
         &self.subnet_id
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn launched_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launched_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_launched_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launched_at = input;
         self
     }
     /// <p>Indicates when the instance was launched.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_launched_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.launched_at
     }

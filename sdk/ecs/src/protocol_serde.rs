@@ -631,6 +631,8 @@ pub(crate) mod shape_volume_list;
 
 pub(crate) mod shape_attachment;
 
+pub(crate) mod shape_capacity_reservation_request;
+
 pub(crate) mod shape_container;
 
 pub(crate) mod shape_container_images;

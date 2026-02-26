@@ -22,7 +22,7 @@ impl crate::operation::list_organization_admin_accounts::builders::ListOrganizat
 }
 /// Fluent builder constructing a request to `ListOrganizationAdminAccounts`.
 ///
-/// <p>Lists the Security Hub administrator accounts. Can only be called by the organization management account.</p>
+/// <p>Lists the Security Hub CSPM administrator accounts. Can only be called by the organization management account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -142,17 +142,17 @@ impl ListOrganizationAdminAccountsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
     pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
         self.inner = self.inner.feature(input);
         self
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
         self.inner = self.inner.set_feature(input);
         self
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
         self.inner.get_feature()
     }

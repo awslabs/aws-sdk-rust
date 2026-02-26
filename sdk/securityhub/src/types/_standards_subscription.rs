@@ -13,15 +13,15 @@ pub struct StandardsSubscription {
     /// <p>The status of your subscription to the standard. Possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub is adding new controls to the standard.</p></li>
+    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub CSPM is adding new controls to the standard.</p></li>
     /// <li>
     /// <p><code>READY</code> - The standard is enabled.</p></li>
     /// <li>
-    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to enable the standard.</p></li>
+    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to enable the standard.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The standard is in the process of being disabled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to disable the standard.</p></li>
+    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to disable the standard.</p></li>
     /// </ul>
     pub standards_status: ::std::option::Option<crate::types::StandardsStatus>,
     /// <p>Specifies whether you can retrieve information about and configure individual controls that apply to the standard. Possible values are:</p>
@@ -51,15 +51,15 @@ impl StandardsSubscription {
     /// <p>The status of your subscription to the standard. Possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub is adding new controls to the standard.</p></li>
+    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub CSPM is adding new controls to the standard.</p></li>
     /// <li>
     /// <p><code>READY</code> - The standard is enabled.</p></li>
     /// <li>
-    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to enable the standard.</p></li>
+    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to enable the standard.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The standard is in the process of being disabled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to disable the standard.</p></li>
+    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to disable the standard.</p></li>
     /// </ul>
     pub fn standards_status(&self) -> ::std::option::Option<&crate::types::StandardsStatus> {
         self.standards_status.as_ref()
@@ -158,15 +158,15 @@ impl StandardsSubscriptionBuilder {
     /// <p>The status of your subscription to the standard. Possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub is adding new controls to the standard.</p></li>
+    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub CSPM is adding new controls to the standard.</p></li>
     /// <li>
     /// <p><code>READY</code> - The standard is enabled.</p></li>
     /// <li>
-    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to enable the standard.</p></li>
+    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to enable the standard.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The standard is in the process of being disabled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to disable the standard.</p></li>
+    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to disable the standard.</p></li>
     /// </ul>
     /// This field is required.
     pub fn standards_status(mut self, input: crate::types::StandardsStatus) -> Self {
@@ -176,15 +176,15 @@ impl StandardsSubscriptionBuilder {
     /// <p>The status of your subscription to the standard. Possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub is adding new controls to the standard.</p></li>
+    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub CSPM is adding new controls to the standard.</p></li>
     /// <li>
     /// <p><code>READY</code> - The standard is enabled.</p></li>
     /// <li>
-    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to enable the standard.</p></li>
+    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to enable the standard.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The standard is in the process of being disabled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to disable the standard.</p></li>
+    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to disable the standard.</p></li>
     /// </ul>
     pub fn set_standards_status(mut self, input: ::std::option::Option<crate::types::StandardsStatus>) -> Self {
         self.standards_status = input;
@@ -193,15 +193,15 @@ impl StandardsSubscriptionBuilder {
     /// <p>The status of your subscription to the standard. Possible values are:</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub is adding new controls to the standard.</p></li>
+    /// <p><code>PENDING</code> - The standard is in the process of being enabled. Or the standard is already enabled and Security Hub CSPM is adding new controls to the standard.</p></li>
     /// <li>
     /// <p><code>READY</code> - The standard is enabled.</p></li>
     /// <li>
-    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to enable the standard.</p></li>
+    /// <p><code>INCOMPLETE</code> - The standard could not be enabled completely. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to enable the standard.</p></li>
     /// <li>
     /// <p><code>DELETING</code> - The standard is in the process of being disabled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub attempted to disable the standard.</p></li>
+    /// <p><code>FAILED</code> - The standard could not be disabled. One or more errors (<code>StandardsStatusReason</code>) occurred when Security Hub CSPM attempted to disable the standard.</p></li>
     /// </ul>
     pub fn get_standards_status(&self) -> &::std::option::Option<crate::types::StandardsStatus> {
         &self.standards_status

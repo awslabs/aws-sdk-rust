@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2VolumeDetails {
     /// <p>Indicates when the volume was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub create_time: ::std::option::Option<::std::string::String>,
     /// <p>The device name for the volume that is attached to the instance.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
@@ -44,7 +44,7 @@ pub struct AwsEc2VolumeDetails {
 }
 impl AwsEc2VolumeDetails {
     /// <p>Indicates when the volume was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn create_time(&self) -> ::std::option::Option<&str> {
         self.create_time.as_deref()
     }
@@ -130,19 +130,19 @@ pub struct AwsEc2VolumeDetailsBuilder {
 }
 impl AwsEc2VolumeDetailsBuilder {
     /// <p>Indicates when the volume was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the volume was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_time = input;
         self
     }
     /// <p>Indicates when the volume was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_create_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.create_time
     }

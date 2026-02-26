@@ -19,6 +19,8 @@ pub enum Error {
     InvalidCustomerIdentifierException(crate::types::error::InvalidCustomerIdentifierException),
     /// <p>The endpoint being called is in a Amazon Web Services Region different from your EC2 instance, ECS task, or EKS pod. The Region of the Metering Service endpoint and the Amazon Web Services Region of the resource must match.</p>
     InvalidEndpointRegionException(crate::types::error::InvalidEndpointRegionException),
+    /// <p>Ensure the <code>LicenseArn</code> is valid, matches the customer, and usage is within the license activation period.</p>
+    InvalidLicenseException(crate::types::error::InvalidLicenseException),
     /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>Public Key version is invalid.</p>
@@ -60,6 +62,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServiceErrorException(inner) => inner.fmt(f),
             Error::InvalidCustomerIdentifierException(inner) => inner.fmt(f),
             Error::InvalidEndpointRegionException(inner) => inner.fmt(f),
+            Error::InvalidLicenseException(inner) => inner.fmt(f),
             Error::InvalidProductCodeException(inner) => inner.fmt(f),
             Error::InvalidPublicKeyVersionException(inner) => inner.fmt(f),
             Error::InvalidRegionException(inner) => inner.fmt(f),
@@ -99,6 +102,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServiceErrorException(inner) => inner.meta(),
             Self::InvalidCustomerIdentifierException(inner) => inner.meta(),
             Self::InvalidEndpointRegionException(inner) => inner.meta(),
+            Self::InvalidLicenseException(inner) => inner.meta(),
             Self::InvalidProductCodeException(inner) => inner.meta(),
             Self::InvalidPublicKeyVersionException(inner) => inner.meta(),
             Self::InvalidRegionException(inner) => inner.meta(),
@@ -137,6 +141,7 @@ impl From<crate::operation::batch_meter_usage::BatchMeterUsageError> for Error {
             crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidCustomerIdentifierException(inner) => {
                 Error::InvalidCustomerIdentifierException(inner)
             }
+            crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidLicenseException(inner) => Error::InvalidLicenseException(inner),
             crate::operation::batch_meter_usage::BatchMeterUsageError::InvalidProductCodeException(inner) => {
                 Error::InvalidProductCodeException(inner)
             }
@@ -257,6 +262,7 @@ impl ::std::error::Error for Error {
             Error::InternalServiceErrorException(inner) => inner.source(),
             Error::InvalidCustomerIdentifierException(inner) => inner.source(),
             Error::InvalidEndpointRegionException(inner) => inner.source(),
+            Error::InvalidLicenseException(inner) => inner.source(),
             Error::InvalidProductCodeException(inner) => inner.source(),
             Error::InvalidPublicKeyVersionException(inner) => inner.source(),
             Error::InvalidRegionException(inner) => inner.source(),
@@ -282,6 +288,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServiceErrorException(e) => e.request_id(),
             Self::InvalidCustomerIdentifierException(e) => e.request_id(),
             Self::InvalidEndpointRegionException(e) => e.request_id(),
+            Self::InvalidLicenseException(e) => e.request_id(),
             Self::InvalidProductCodeException(e) => e.request_id(),
             Self::InvalidPublicKeyVersionException(e) => e.request_id(),
             Self::InvalidRegionException(e) => e.request_id(),

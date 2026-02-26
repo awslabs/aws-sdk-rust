@@ -22,7 +22,7 @@ impl crate::operation::get_configuration_policy::builders::GetConfigurationPolic
 }
 /// Fluent builder constructing a request to `GetConfigurationPolicy`.
 ///
-/// <p>Provides information about a configuration policy. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Provides information about a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetConfigurationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

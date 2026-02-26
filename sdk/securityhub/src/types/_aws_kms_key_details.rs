@@ -7,7 +7,7 @@ pub struct AwsKmsKeyDetails {
     /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the KMS key was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub creation_date: ::std::option::Option<f64>,
     /// <p>The globally unique identifier for the KMS key.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
@@ -43,7 +43,7 @@ impl AwsKmsKeyDetails {
         self.aws_account_id.as_deref()
     }
     /// <p>Indicates when the KMS key was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn creation_date(&self) -> ::std::option::Option<f64> {
         self.creation_date
     }
@@ -123,19 +123,19 @@ impl AwsKmsKeyDetailsBuilder {
         &self.aws_account_id
     }
     /// <p>Indicates when the KMS key was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn creation_date(mut self, input: f64) -> Self {
         self.creation_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates when the KMS key was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_creation_date(mut self, input: ::std::option::Option<f64>) -> Self {
         self.creation_date = input;
         self
     }
     /// <p>Indicates when the KMS key was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_creation_date(&self) -> &::std::option::Option<f64> {
         &self.creation_date
     }

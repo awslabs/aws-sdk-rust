@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`AcceptInvitation`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`master_id(impl Into<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::master_id) / [`set_master_id(Option<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::set_master_id):<br>required: **true**<br><p>The account ID of the Security Hub administrator account that sent the invitation.</p><br>
-    ///   - [`invitation_id(impl Into<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::invitation_id) / [`set_invitation_id(Option<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::set_invitation_id):<br>required: **true**<br><p>The identifier of the invitation sent from the Security Hub administrator account.</p><br>
+    ///   - [`master_id(impl Into<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::master_id) / [`set_master_id(Option<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::set_master_id):<br>required: **true**<br><p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p><br>
+    ///   - [`invitation_id(impl Into<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::invitation_id) / [`set_invitation_id(Option<String>)`](crate::operation::accept_invitation::builders::AcceptInvitationFluentBuilder::set_invitation_id):<br>required: **true**<br><p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p><br>
     /// - On success, responds with [`AcceptInvitationOutput`](crate::operation::accept_invitation::AcceptInvitationOutput)
     /// - On failure, responds with [`SdkError<AcceptInvitationError>`](crate::operation::accept_invitation::AcceptInvitationError)
     #[deprecated(note = "This API has been deprecated, use AcceptAdministratorInvitation API instead.")]

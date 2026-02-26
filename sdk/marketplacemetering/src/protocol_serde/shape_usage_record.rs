@@ -35,6 +35,9 @@ pub fn ser_usage_record(
     if let Some(var_6) = &input.customer_aws_account_id {
         object.key("CustomerAWSAccountId").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.license_arn {
+        object.key("LicenseArn").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -87,6 +90,13 @@ where
                         }
                         "CustomerAWSAccountId" => {
                             builder = builder.set_customer_aws_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "LicenseArn" => {
+                            builder = builder.set_license_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

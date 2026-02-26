@@ -22,7 +22,7 @@ impl crate::operation::update_security_hub_configuration::builders::UpdateSecuri
 }
 /// Fluent builder constructing a request to `UpdateSecurityHubConfiguration`.
 ///
-/// <p>Updates configuration options for Security Hub.</p>
+/// <p>Updates configuration options for Security Hub CSPM.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSecurityHubConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -110,40 +110,40 @@ impl UpdateSecurityHubConfigurationFluentBuilder {
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
-    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
+    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub CSPM to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub CSPM will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
     pub fn auto_enable_controls(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable_controls(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
-    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
+    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub CSPM to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub CSPM will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
     pub fn set_auto_enable_controls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_enable_controls(input);
         self
     }
     /// <p>Whether to automatically enable new controls when they are added to standards that are enabled.</p>
     /// <p>By default, this is set to <code>true</code>, and new controls are enabled automatically. To not automatically enable new controls, set this to <code>false</code>.</p>
-    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
+    /// <p>When you automatically enable new controls, you can interact with the controls in the console and programmatically immediately after release. However, automatically enabled controls have a temporary default status of <code>DISABLED</code>. It can take up to several days for Security Hub CSPM to process the control release and designate the control as <code>ENABLED</code> in your account. During the processing period, you can manually enable or disable a control, and Security Hub CSPM will maintain that designation regardless of whether you have <code>AutoEnableControls</code> set to <code>true</code>.</p>
     pub fn get_auto_enable_controls(&self) -> &::std::option::Option<bool> {
         self.inner.get_auto_enable_controls()
     }
-    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
-    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
     pub fn control_finding_generator(mut self, input: crate::types::ControlFindingGenerator) -> Self {
         self.inner = self.inner.control_finding_generator(input);
         self
     }
-    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
-    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
     pub fn set_control_finding_generator(mut self, input: ::std::option::Option<crate::types::ControlFindingGenerator>) -> Self {
         self.inner = self.inner.set_control_finding_generator(input);
         self
     }
-    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
-    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub generates separate findings for a control check when the check applies to multiple enabled standards.</p>
+    /// <p>Updates whether the calling account has consolidated control findings turned on. If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub CSPM generates a single finding for a control check even when the check applies to multiple enabled standards.</p>
+    /// <p>If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub CSPM generates separate findings for a control check when the check applies to multiple enabled standards.</p>
     /// <p>For accounts that are part of an organization, this value can only be updated in the administrator account.</p>
     pub fn get_control_finding_generator(&self) -> &::std::option::Option<crate::types::ControlFindingGenerator> {
         self.inner.get_control_finding_generator()

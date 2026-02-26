@@ -23,12 +23,12 @@ impl crate::operation::invite_members::builders::InviteMembersInputBuilder {
 /// Fluent builder constructing a request to `InviteMembers`.
 ///
 /// <note>
-/// <p>We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing Security Hub administrator and member accounts with Organizations</a> in the <i>Security Hub User Guide</i>.</p>
+/// <p>We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing Security Hub CSPM administrator and member accounts with Organizations</a> in the <i>Security Hub CSPM User Guide</i>.</p>
 /// </note>
-/// <p>Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that the invitation is sent from.</p>
+/// <p>Invites other Amazon Web Services accounts to become member accounts for the Security Hub CSPM administrator account that the invitation is sent from.</p>
 /// <p>This operation is only used to invite accounts that don't belong to an Amazon Web Services organization. Organization accounts don't receive invitations.</p>
-/// <p>Before you can use this action to invite a member, you must first use the <code>CreateMembers</code> action to create the member account in Security Hub.</p>
-/// <p>When the account owner enables Security Hub and accepts the invitation to become a member account, the administrator account can view the findings generated in the member account.</p>
+/// <p>Before you can use this action to invite a member, you must first use the <code>CreateMembers</code> action to create the member account in Security Hub CSPM.</p>
+/// <p>When the account owner enables Security Hub CSPM and accepts the invitation to become a member account, the administrator account can view the findings generated in the member account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct InviteMembersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -119,17 +119,17 @@ impl InviteMembersFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members.</p>
+    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub CSPM as members.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_ids(input.into());
         self
     }
-    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members.</p>
+    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub CSPM as members.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_account_ids(input);
         self
     }
-    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members.</p>
+    /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub CSPM as members.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }

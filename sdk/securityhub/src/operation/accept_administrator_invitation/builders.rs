@@ -23,9 +23,9 @@ impl crate::operation::accept_administrator_invitation::builders::AcceptAdminist
 /// Fluent builder constructing a request to `AcceptAdministratorInvitation`.
 ///
 /// <note>
-/// <p>We recommend using Organizations instead of Security Hub invitations to manage your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing Security Hub administrator and member accounts with Organizations</a> in the <i>Security Hub User Guide</i>.</p>
+/// <p>We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing Security Hub CSPM administrator and member accounts with Organizations</a> in the <i>Security Hub CSPM User Guide</i>.</p>
 /// </note>
-/// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>
+/// <p>Accepts the invitation to be a member account and be monitored by the Security Hub CSPM administrator account that the invitation was sent from.</p>
 /// <p>This operation is only used by member accounts that are not added through Organizations.</p>
 /// <p>When the member account accepts the invitation, permission is granted to the administrator account to view findings generated in the member account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -113,31 +113,31 @@ impl AcceptAdministratorInvitationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.administrator_id(input.into());
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_administrator_id(input);
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_administrator_id()
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.invitation_id(input.into());
         self
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_invitation_id(input);
         self
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_invitation_id()
     }

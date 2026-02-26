@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutomationRulesFindingFilters {
-    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub.</p>
+    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub product_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon Web Services account ID in which a finding was generated.</p>
@@ -16,29 +16,29 @@ pub struct AutomationRulesFindingFilters {
     /// <p>The identifier for the solution-specific component that generated a finding.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 100 items.</p>
     pub generator_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub r#type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub first_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub last_observed_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub created_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub confidence: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub criticality: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>A finding's title.</p>
@@ -50,7 +50,7 @@ pub struct AutomationRulesFindingFilters {
     /// <p>Provides a URL that links to a page about the current finding in the finding product.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub source_url: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub.</p>
+    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub product_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The name of the company for the product that generated the finding. For control-based findings, the company is Amazon Web Services.</p>
@@ -105,7 +105,7 @@ pub struct AutomationRulesFindingFilters {
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub note_text: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub note_updated_at: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>,
     /// <p>The principal that created a note.</p>
@@ -125,7 +125,7 @@ pub struct AutomationRulesFindingFilters {
     pub aws_account_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
 }
 impl AutomationRulesFindingFilters {
-    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub.</p>
+    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_arn.is_none()`.
@@ -153,7 +153,7 @@ impl AutomationRulesFindingFilters {
     pub fn generator_id(&self) -> &[crate::types::StringFilter] {
         self.generator_id.as_deref().unwrap_or_default()
     }
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.r#type.is_none()`.
@@ -161,7 +161,7 @@ impl AutomationRulesFindingFilters {
         self.r#type.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.first_observed_at.is_none()`.
@@ -169,7 +169,7 @@ impl AutomationRulesFindingFilters {
         self.first_observed_at.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.last_observed_at.is_none()`.
@@ -177,7 +177,7 @@ impl AutomationRulesFindingFilters {
         self.last_observed_at.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.created_at.is_none()`.
@@ -185,21 +185,21 @@ impl AutomationRulesFindingFilters {
         self.created_at.as_deref().unwrap_or_default()
     }
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.updated_at.is_none()`.
     pub fn updated_at(&self) -> &[crate::types::DateFilter] {
         self.updated_at.as_deref().unwrap_or_default()
     }
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.confidence.is_none()`.
     pub fn confidence(&self) -> &[crate::types::NumberFilter] {
         self.confidence.as_deref().unwrap_or_default()
     }
-    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.criticality.is_none()`.
@@ -227,7 +227,7 @@ impl AutomationRulesFindingFilters {
     pub fn source_url(&self) -> &[crate::types::StringFilter] {
         self.source_url.as_deref().unwrap_or_default()
     }
-    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub.</p>
+    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_name.is_none()`.
@@ -354,7 +354,7 @@ impl AutomationRulesFindingFilters {
         self.note_text.as_deref().unwrap_or_default()
     }
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.note_updated_at.is_none()`.
@@ -452,7 +452,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_product_arn`](Self::set_product_arn).
     ///
-    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub.</p>
+    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn product_arn(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.product_arn.unwrap_or_default();
@@ -460,13 +460,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.product_arn = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub.</p>
+    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_product_arn(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.product_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub.</p>
+    /// <p>The Amazon Resource Name (ARN) for a third-party product that generated a finding in Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_product_arn(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.product_arn
@@ -544,7 +544,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_type`](Self::set_type).
     ///
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn r#type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.r#type.unwrap_or_default();
@@ -552,13 +552,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.r#type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>One or more finding types in the format of namespace/category/classifier that classify a finding. For a list of namespaces, classifiers, and categories, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types taxonomy for ASFF</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.r#type
@@ -568,7 +568,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_first_observed_at`](Self::set_first_observed_at).
     ///
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn first_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.first_observed_at.unwrap_or_default();
@@ -577,14 +577,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_first_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.first_observed_at = input;
         self
     }
     /// <p>A timestamp that indicates when the potential security issue captured by a finding was first observed by the security findings product.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_first_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.first_observed_at
@@ -594,7 +594,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_last_observed_at`](Self::set_last_observed_at).
     ///
     /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn last_observed_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.last_observed_at.unwrap_or_default();
@@ -603,14 +603,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_last_observed_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.last_observed_at = input;
         self
     }
     /// <p>A timestamp that indicates when the security findings provider most recently observed a change in the resource that is involved in the finding.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_last_observed_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.last_observed_at
@@ -620,7 +620,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_created_at`](Self::set_created_at).
     ///
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn created_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.created_at.unwrap_or_default();
@@ -629,14 +629,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.created_at = input;
         self
     }
     /// <p>A timestamp that indicates when this finding record was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.created_at
@@ -646,7 +646,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_updated_at`](Self::set_updated_at).
     ///
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.updated_at.unwrap_or_default();
@@ -655,14 +655,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.updated_at = input;
         self
     }
     /// <p>A timestamp that indicates when the finding record was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.updated_at
@@ -671,7 +671,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_confidence`](Self::set_confidence).
     ///
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn confidence(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.confidence.unwrap_or_default();
@@ -679,13 +679,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.confidence = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_confidence(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.confidence = input;
         self
     }
-    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The likelihood that a finding accurately identifies the behavior or issue that it was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of <code>100</code> means 100 percent confidence. For example, a data exfiltration detection based on a statistical deviation of network traffic has low confidence because an actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_confidence(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.confidence
@@ -694,7 +694,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_criticality`](Self::set_criticality).
     ///
-    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn criticality(mut self, input: crate::types::NumberFilter) -> Self {
         let mut v = self.criticality.unwrap_or_default();
@@ -702,13 +702,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.criticality = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_criticality(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>) -> Self {
         self.criticality = input;
         self
     }
-    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub User Guide</i>.</p>
+    /// <p>The level of importance that is assigned to the resources that are associated with a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale that supports only full integers. A score of <code>0</code> means that the underlying resources have no criticality, and a score of <code>100</code> is reserved for the most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a> in the <i>Security Hub CSPM User Guide</i>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_criticality(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>> {
         &self.criticality
@@ -786,7 +786,7 @@ impl AutomationRulesFindingFiltersBuilder {
     ///
     /// To override the contents of this collection use [`set_product_name`](Self::set_product_name).
     ///
-    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub.</p>
+    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn product_name(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.product_name.unwrap_or_default();
@@ -794,13 +794,13 @@ impl AutomationRulesFindingFiltersBuilder {
         self.product_name = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub.</p>
+    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_product_name(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.product_name = input;
         self
     }
-    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub.</p>
+    /// <p>Provides the name of the product that generated the finding. For control-based findings, the product name is Security Hub CSPM.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_product_name(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.product_name
@@ -1201,7 +1201,7 @@ impl AutomationRulesFindingFiltersBuilder {
     /// To override the contents of this collection use [`set_note_updated_at`](Self::set_note_updated_at).
     ///
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn note_updated_at(mut self, input: crate::types::DateFilter) -> Self {
         let mut v = self.note_updated_at.unwrap_or_default();
@@ -1210,14 +1210,14 @@ impl AutomationRulesFindingFiltersBuilder {
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn set_note_updated_at(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DateFilter>>) -> Self {
         self.note_updated_at = input;
         self
     }
     /// <p>The timestamp of when the note was updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     /// <p>Array Members: Minimum number of 1 item. Maximum number of 20 items.</p>
     pub fn get_note_updated_at(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DateFilter>> {
         &self.note_updated_at

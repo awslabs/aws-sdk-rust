@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMembersInput {
-    /// <p>The list of account IDs for the Security Hub member accounts to return the details for.</p>
+    /// <p>The list of account IDs for the Security Hub CSPM member accounts to return the details for.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetMembersInput {
-    /// <p>The list of account IDs for the Security Hub member accounts to return the details for.</p>
+    /// <p>The list of account IDs for the Security Hub CSPM member accounts to return the details for.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
@@ -32,19 +32,19 @@ impl GetMembersInputBuilder {
     ///
     /// To override the contents of this collection use [`set_account_ids`](Self::set_account_ids).
     ///
-    /// <p>The list of account IDs for the Security Hub member accounts to return the details for.</p>
+    /// <p>The list of account IDs for the Security Hub CSPM member accounts to return the details for.</p>
     pub fn account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
         v.push(input.into());
         self.account_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of account IDs for the Security Hub member accounts to return the details for.</p>
+    /// <p>The list of account IDs for the Security Hub CSPM member accounts to return the details for.</p>
     pub fn set_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.account_ids = input;
         self
     }
-    /// <p>The list of account IDs for the Security Hub member accounts to return the details for.</p>
+    /// <p>The list of account IDs for the Security Hub CSPM member accounts to return the details for.</p>
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }

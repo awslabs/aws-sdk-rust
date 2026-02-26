@@ -13,7 +13,7 @@ pub struct AwsApiGatewayV2ApiDetails {
     /// <p>An API key selection expression. Supported only for WebSocket APIs.</p>
     pub api_key_selection_expression: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the API was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>A description of the API.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -47,7 +47,7 @@ impl AwsApiGatewayV2ApiDetails {
         self.api_key_selection_expression.as_deref()
     }
     /// <p>Indicates when the API was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_date(&self) -> ::std::option::Option<&str> {
         self.created_date.as_deref()
     }
@@ -151,19 +151,19 @@ impl AwsApiGatewayV2ApiDetailsBuilder {
         &self.api_key_selection_expression
     }
     /// <p>Indicates when the API was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the API was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
     }
     /// <p>Indicates when the API was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_date
     }

@@ -19,7 +19,7 @@ pub struct AwsLambdaFunctionDetails {
     /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed customer managed key.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the function was last updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The function's layers.</p>
     pub layers: ::std::option::Option<::std::vec::Vec<crate::types::AwsLambdaFunctionLayer>>,
@@ -76,7 +76,7 @@ impl AwsLambdaFunctionDetails {
         self.kms_key_arn.as_deref()
     }
     /// <p>Indicates when the function was last updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&str> {
         self.last_modified.as_deref()
     }
@@ -265,19 +265,19 @@ impl AwsLambdaFunctionDetailsBuilder {
         &self.kms_key_arn
     }
     /// <p>Indicates when the function was last updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_modified(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the function was last updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified = input;
         self
     }
     /// <p>Indicates when the function was last updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified
     }

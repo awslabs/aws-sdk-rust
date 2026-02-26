@@ -22,7 +22,7 @@ impl crate::operation::start_configuration_policy_association::builders::StartCo
 }
 /// Fluent builder constructing a request to `StartConfigurationPolicyAssociation`.
 ///
-/// <p>Associates a target account, organizational unit, or the root with a specified configuration. The target can be associated with a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Associates a target account, organizational unit, or the root with a specified configuration. The target can be associated with a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigurationPolicyAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

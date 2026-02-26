@@ -20,9 +20,9 @@ pub struct StandardsControlAssociationDetail {
     pub updated_reason: ::std::option::Option<::std::string::String>,
     /// <p>The title of a control. This field may reference a specific standard.</p>
     pub standards_control_title: ::std::option::Option<::std::string::String>,
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
     pub standards_control_description: ::std::option::Option<::std::string::String>,
-    /// <p>Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
+    /// <p>Provides the input parameter that Security Hub CSPM uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
     pub standards_control_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StandardsControlAssociationDetail {
@@ -60,11 +60,11 @@ impl StandardsControlAssociationDetail {
     pub fn standards_control_title(&self) -> ::std::option::Option<&str> {
         self.standards_control_title.as_deref()
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
     pub fn standards_control_description(&self) -> ::std::option::Option<&str> {
         self.standards_control_description.as_deref()
     }
-    /// <p>Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
+    /// <p>Provides the input parameter that Security Hub CSPM uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.standards_control_arns.is_none()`.
     pub fn standards_control_arns(&self) -> &[::std::string::String] {
@@ -216,17 +216,17 @@ impl StandardsControlAssociationDetailBuilder {
     pub fn get_standards_control_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_control_title
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
     pub fn standards_control_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_control_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
     pub fn set_standards_control_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_control_description = input;
         self
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard.</p>
     pub fn get_standards_control_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_control_description
     }
@@ -234,19 +234,19 @@ impl StandardsControlAssociationDetailBuilder {
     ///
     /// To override the contents of this collection use [`set_standards_control_arns`](Self::set_standards_control_arns).
     ///
-    /// <p>Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
+    /// <p>Provides the input parameter that Security Hub CSPM uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
     pub fn standards_control_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.standards_control_arns.unwrap_or_default();
         v.push(input.into());
         self.standards_control_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
+    /// <p>Provides the input parameter that Security Hub CSPM uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
     pub fn set_standards_control_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.standards_control_arns = input;
         self
     }
-    /// <p>Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
+    /// <p>Provides the input parameter that Security Hub CSPM uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard.</p>
     pub fn get_standards_control_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.standards_control_arns
     }

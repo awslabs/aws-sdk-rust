@@ -22,7 +22,7 @@ impl crate::operation::disassociate_from_administrator_account::builders::Disass
 }
 /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
 ///
-/// <p>Disassociates the current Security Hub member account from the associated administrator account.</p>
+/// <p>Disassociates the current Security Hub CSPM member account from the associated administrator account.</p>
 /// <p>This operation is only used by accounts that are not part of an organization. For organization accounts, only the administrator account can disassociate a member account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateFromAdministratorAccountFluentBuilder {

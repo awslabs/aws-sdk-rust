@@ -20,7 +20,7 @@ pub struct StandardsControlAssociationSummary {
     pub updated_reason: ::std::option::Option<::std::string::String>,
     /// <p>The title of a control.</p>
     pub standards_control_title: ::std::option::Option<::std::string::String>,
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
     pub standards_control_description: ::std::option::Option<::std::string::String>,
 }
 impl StandardsControlAssociationSummary {
@@ -58,7 +58,7 @@ impl StandardsControlAssociationSummary {
     pub fn standards_control_title(&self) -> ::std::option::Option<&str> {
         self.standards_control_title.as_deref()
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
     pub fn standards_control_description(&self) -> ::std::option::Option<&str> {
         self.standards_control_description.as_deref()
     }
@@ -207,17 +207,17 @@ impl StandardsControlAssociationSummaryBuilder {
     pub fn get_standards_control_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_control_title
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
     pub fn standards_control_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.standards_control_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
     pub fn set_standards_control_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.standards_control_description = input;
         self
     }
-    /// <p>The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
+    /// <p>The description of a control. This typically summarizes how Security Hub CSPM evaluates the control and the conditions under which it produces a failed finding. The parameter may reference a specific standard.</p>
     pub fn get_standards_control_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_control_description
     }

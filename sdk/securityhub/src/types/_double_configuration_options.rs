@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DoubleConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a double.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a double.</p>
     pub default_value: ::std::option::Option<f64>,
     /// <p>The minimum valid value for a control parameter that is a double.</p>
     pub min: ::std::option::Option<f64>,
@@ -12,7 +12,7 @@ pub struct DoubleConfigurationOptions {
     pub max: ::std::option::Option<f64>,
 }
 impl DoubleConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a double.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a double.</p>
     pub fn default_value(&self) -> ::std::option::Option<f64> {
         self.default_value
     }
@@ -41,17 +41,17 @@ pub struct DoubleConfigurationOptionsBuilder {
     pub(crate) max: ::std::option::Option<f64>,
 }
 impl DoubleConfigurationOptionsBuilder {
-    /// <p>The Security Hub default value for a control parameter that is a double.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a double.</p>
     pub fn default_value(mut self, input: f64) -> Self {
         self.default_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a double.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a double.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a double.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a double.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<f64> {
         &self.default_value
     }

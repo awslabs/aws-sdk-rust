@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsS3ObjectDetails {
     /// <p>Indicates when the object was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub last_modified: ::std::option::Option<::std::string::String>,
     /// <p>The opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct AwsS3ObjectDetails {
 }
 impl AwsS3ObjectDetails {
     /// <p>Indicates when the object was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_modified(&self) -> ::std::option::Option<&str> {
         self.last_modified.as_deref()
     }
@@ -65,19 +65,19 @@ pub struct AwsS3ObjectDetailsBuilder {
 }
 impl AwsS3ObjectDetailsBuilder {
     /// <p>Indicates when the object was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_modified(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_modified = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the object was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_last_modified(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_modified = input;
         self
     }
     /// <p>Indicates when the object was last modified.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_last_modified(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_modified
     }

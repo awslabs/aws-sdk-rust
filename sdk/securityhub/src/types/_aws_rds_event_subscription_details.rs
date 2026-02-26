@@ -24,7 +24,7 @@ pub struct AwsRdsEventSubscriptionDetails {
     /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code></p>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The datetime when the event notification subscription was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub subscription_creation_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsRdsEventSubscriptionDetails {
@@ -70,7 +70,7 @@ impl AwsRdsEventSubscriptionDetails {
         self.status.as_deref()
     }
     /// <p>The datetime when the event notification subscription was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn subscription_creation_time(&self) -> ::std::option::Option<&str> {
         self.subscription_creation_time.as_deref()
     }
@@ -240,19 +240,19 @@ impl AwsRdsEventSubscriptionDetailsBuilder {
         &self.status
     }
     /// <p>The datetime when the event notification subscription was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn subscription_creation_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscription_creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The datetime when the event notification subscription was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_subscription_creation_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscription_creation_time = input;
         self
     }
     /// <p>The datetime when the event notification subscription was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_subscription_creation_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_creation_time
     }

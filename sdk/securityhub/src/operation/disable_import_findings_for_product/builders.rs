@@ -22,7 +22,7 @@ impl crate::operation::disable_import_findings_for_product::builders::DisableImp
 }
 /// Fluent builder constructing a request to `DisableImportFindingsForProduct`.
 ///
-/// <p>Disables the integration of the specified product with Security Hub. After the integration is disabled, findings from that product are no longer sent to Security Hub.</p>
+/// <p>Disables the integration of the specified product with Security Hub CSPM. After the integration is disabled, findings from that product are no longer sent to Security Hub CSPM.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableImportFindingsForProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

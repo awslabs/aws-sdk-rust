@@ -6,7 +6,7 @@
 pub struct OcsfStringFilter {
     /// <p>The name of the field.</p>
     pub field_name: ::std::option::Option<crate::types::OcsfStringField>,
-    /// <p>A string filter for filtering Security Hub findings.</p>
+    /// <p>A string filter for filtering Security Hub CSPM findings.</p>
     pub filter: ::std::option::Option<crate::types::StringFilter>,
 }
 impl OcsfStringFilter {
@@ -14,7 +14,7 @@ impl OcsfStringFilter {
     pub fn field_name(&self) -> ::std::option::Option<&crate::types::OcsfStringField> {
         self.field_name.as_ref()
     }
-    /// <p>A string filter for filtering Security Hub findings.</p>
+    /// <p>A string filter for filtering Security Hub CSPM findings.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::StringFilter> {
         self.filter.as_ref()
     }
@@ -48,17 +48,17 @@ impl OcsfStringFilterBuilder {
     pub fn get_field_name(&self) -> &::std::option::Option<crate::types::OcsfStringField> {
         &self.field_name
     }
-    /// <p>A string filter for filtering Security Hub findings.</p>
+    /// <p>A string filter for filtering Security Hub CSPM findings.</p>
     pub fn filter(mut self, input: crate::types::StringFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A string filter for filtering Security Hub findings.</p>
+    /// <p>A string filter for filtering Security Hub CSPM findings.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::StringFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>A string filter for filtering Security Hub findings.</p>
+    /// <p>A string filter for filtering Security Hub CSPM findings.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::StringFilter> {
         &self.filter
     }

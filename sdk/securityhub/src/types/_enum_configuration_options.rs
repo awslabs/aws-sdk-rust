@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EnumConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is an enum.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an enum.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
     /// <p>The valid values for a control parameter that is an enum.</p>
     pub allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is an enum.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an enum.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
@@ -36,17 +36,17 @@ pub struct EnumConfigurationOptionsBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl EnumConfigurationOptionsBuilder {
-    /// <p>The Security Hub default value for a control parameter that is an enum.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an enum.</p>
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is an enum.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an enum.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is an enum.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an enum.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_value
     }

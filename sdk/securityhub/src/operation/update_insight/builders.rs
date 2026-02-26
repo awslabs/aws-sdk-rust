@@ -22,7 +22,7 @@ impl crate::operation::update_insight::builders::UpdateInsightInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateInsight`.
 ///
-/// <p>Updates the Security Hub insight identified by the specified insight ARN.</p>
+/// <p>Updates the Security Hub CSPM insight identified by the specified insight ARN.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInsightFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

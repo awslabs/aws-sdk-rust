@@ -4,19 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StringConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a string.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a string.</p>
     pub default_value: ::std::option::Option<::std::string::String>,
-    /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
+    /// <p>An RE2 regular expression that Security Hub CSPM uses to validate a user-provided control parameter string.</p>
     pub re2_expression: ::std::option::Option<::std::string::String>,
     /// <p>The description of the RE2 regular expression.</p>
     pub expression_description: ::std::option::Option<::std::string::String>,
 }
 impl StringConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a string.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a string.</p>
     pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
-    /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
+    /// <p>An RE2 regular expression that Security Hub CSPM uses to validate a user-provided control parameter string.</p>
     pub fn re2_expression(&self) -> ::std::option::Option<&str> {
         self.re2_expression.as_deref()
     }
@@ -41,31 +41,31 @@ pub struct StringConfigurationOptionsBuilder {
     pub(crate) expression_description: ::std::option::Option<::std::string::String>,
 }
 impl StringConfigurationOptionsBuilder {
-    /// <p>The Security Hub default value for a control parameter that is a string.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a string.</p>
     pub fn default_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a string.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a string.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a string.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a string.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_value
     }
-    /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
+    /// <p>An RE2 regular expression that Security Hub CSPM uses to validate a user-provided control parameter string.</p>
     pub fn re2_expression(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.re2_expression = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
+    /// <p>An RE2 regular expression that Security Hub CSPM uses to validate a user-provided control parameter string.</p>
     pub fn set_re2_expression(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.re2_expression = input;
         self
     }
-    /// <p>An RE2 regular expression that Security Hub uses to validate a user-provided control parameter string.</p>
+    /// <p>An RE2 regular expression that Security Hub CSPM uses to validate a user-provided control parameter string.</p>
     pub fn get_re2_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.re2_expression
     }

@@ -9,7 +9,7 @@ pub struct Workflow {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -31,7 +31,7 @@ impl Workflow {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -68,7 +68,7 @@ impl WorkflowBuilder {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -91,7 +91,7 @@ impl WorkflowBuilder {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -114,7 +114,7 @@ impl WorkflowBuilder {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p><code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>

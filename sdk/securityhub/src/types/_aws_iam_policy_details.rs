@@ -7,7 +7,7 @@ pub struct AwsIamPolicyDetails {
     /// <p>The number of users, groups, and roles that the policy is attached to.</p>
     pub attachment_count: ::std::option::Option<i32>,
     /// <p>When the policy was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub create_date: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the default version of the policy.</p>
     pub default_version_id: ::std::option::Option<::std::string::String>,
@@ -26,7 +26,7 @@ pub struct AwsIamPolicyDetails {
     /// <p>List of versions of the policy.</p>
     pub policy_version_list: ::std::option::Option<::std::vec::Vec<crate::types::AwsIamPolicyVersion>>,
     /// <p>When the policy was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub update_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsIamPolicyDetails {
@@ -35,7 +35,7 @@ impl AwsIamPolicyDetails {
         self.attachment_count
     }
     /// <p>When the policy was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn create_date(&self) -> ::std::option::Option<&str> {
         self.create_date.as_deref()
     }
@@ -74,7 +74,7 @@ impl AwsIamPolicyDetails {
         self.policy_version_list.as_deref().unwrap_or_default()
     }
     /// <p>When the policy was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn update_date(&self) -> ::std::option::Option<&str> {
         self.update_date.as_deref()
     }
@@ -118,19 +118,19 @@ impl AwsIamPolicyDetailsBuilder {
         &self.attachment_count
     }
     /// <p>When the policy was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn create_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.create_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the policy was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_create_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.create_date = input;
         self
     }
     /// <p>When the policy was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_create_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.create_date
     }
@@ -253,19 +253,19 @@ impl AwsIamPolicyDetailsBuilder {
         &self.policy_version_list
     }
     /// <p>When the policy was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn update_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>When the policy was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_update_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_date = input;
         self
     }
     /// <p>When the policy was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_update_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_date
     }

@@ -9,7 +9,7 @@ pub struct AwsDynamoDbTableDetails {
     /// <p>Information about the billing for read/write capacity on the table.</p>
     pub billing_mode_summary: ::std::option::Option<crate::types::AwsDynamoDbTableBillingModeSummary>,
     /// <p>Indicates when the table was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub creation_date_time: ::std::option::Option<::std::string::String>,
     /// <p>List of global secondary indexes for the table.</p>
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::AwsDynamoDbTableGlobalSecondaryIndex>>,
@@ -74,7 +74,7 @@ impl AwsDynamoDbTableDetails {
         self.billing_mode_summary.as_ref()
     }
     /// <p>Indicates when the table was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn creation_date_time(&self) -> ::std::option::Option<&str> {
         self.creation_date_time.as_deref()
     }
@@ -242,19 +242,19 @@ impl AwsDynamoDbTableDetailsBuilder {
         &self.billing_mode_summary
     }
     /// <p>Indicates when the table was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn creation_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.creation_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the table was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_creation_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.creation_date_time = input;
         self
     }
     /// <p>Indicates when the table was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_creation_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.creation_date_time
     }

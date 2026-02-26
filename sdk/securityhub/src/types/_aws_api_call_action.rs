@@ -19,10 +19,10 @@ pub struct AwsApiCallAction {
     /// <p>Identifies the resources that were affected by the API call.</p>
     pub affected_resources: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A timestamp that indicates when the API call was first observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub first_seen: ::std::option::Option<::std::string::String>,
     /// <p>A timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub last_seen: ::std::option::Option<::std::string::String>,
 }
 impl AwsApiCallAction {
@@ -53,12 +53,12 @@ impl AwsApiCallAction {
         self.affected_resources.as_ref()
     }
     /// <p>A timestamp that indicates when the API call was first observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn first_seen(&self) -> ::std::option::Option<&str> {
         self.first_seen.as_deref()
     }
     /// <p>A timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_seen(&self) -> ::std::option::Option<&str> {
         self.last_seen.as_deref()
     }
@@ -188,36 +188,36 @@ impl AwsApiCallActionBuilder {
         &self.affected_resources
     }
     /// <p>A timestamp that indicates when the API call was first observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn first_seen(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.first_seen = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A timestamp that indicates when the API call was first observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_first_seen(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.first_seen = input;
         self
     }
     /// <p>A timestamp that indicates when the API call was first observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_first_seen(&self) -> &::std::option::Option<::std::string::String> {
         &self.first_seen
     }
     /// <p>A timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_seen(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_seen = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_last_seen(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_seen = input;
         self
     }
     /// <p>A timestamp that indicates when the API call was most recently observed.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_last_seen(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_seen
     }

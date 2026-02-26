@@ -57,7 +57,6 @@ impl BatchMeterUsageInputBuilder {
         &self.usage_records
     }
     /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    /// This field is required.
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.product_code = ::std::option::Option::Some(input.into());
         self

@@ -23,7 +23,7 @@ impl crate::operation::batch_enable_standards::builders::BatchEnableStandardsInp
 /// Fluent builder constructing a request to `BatchEnableStandards`.
 ///
 /// <p>Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the ARN for a standard, use the <code>DescribeStandards</code> operation.</p>
-/// <p>For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub User Guide</i>.</p>
+/// <p>For more information, see the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security Standards</a> section of the <i>Security Hub CSPM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchEnableStandardsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

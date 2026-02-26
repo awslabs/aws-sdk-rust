@@ -259,6 +259,8 @@ pub use crate::types::_capacity_option_type::CapacityOptionType;
 
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
 
+pub use crate::types::_capacity_reservation_request::CapacityReservationRequest;
+
 pub use crate::types::_cluster_setting_name::ClusterSettingName;
 
 pub use crate::types::_execute_command_logging::ExecuteCommandLogging;
@@ -374,6 +376,8 @@ pub use crate::types::_accelerator_count_request::AcceleratorCountRequest;
 pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequest;
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
+
+pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
 
 pub use crate::types::_instance_health_check_result::InstanceHealthCheckResult;
 
@@ -562,6 +566,10 @@ mod _capacity_provider_strategy_item;
 mod _capacity_provider_type;
 
 mod _capacity_provider_update_status;
+
+mod _capacity_reservation_preference;
+
+mod _capacity_reservation_request;
 
 mod _cluster;
 

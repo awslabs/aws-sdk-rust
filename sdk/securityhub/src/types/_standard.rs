@@ -10,8 +10,8 @@ pub struct Standard {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the standard.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
-    /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+    /// <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
+    /// <p>When Security Hub CSPM is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub enabled_by_default: ::std::option::Option<bool>,
     /// <p>Provides details about the management of a standard.</p>
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
@@ -29,8 +29,8 @@ impl Standard {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
-    /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+    /// <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
+    /// <p>When Security Hub CSPM is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub fn enabled_by_default(&self) -> ::std::option::Option<bool> {
         self.enabled_by_default
     }
@@ -99,20 +99,20 @@ impl StandardBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
-    /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+    /// <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
+    /// <p>When Security Hub CSPM is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub fn enabled_by_default(mut self, input: bool) -> Self {
         self.enabled_by_default = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
-    /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+    /// <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
+    /// <p>When Security Hub CSPM is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub fn set_enabled_by_default(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled_by_default = input;
         self
     }
-    /// <p>Whether the standard is enabled by default. When Security Hub is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
-    /// <p>When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+    /// <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
+    /// <p>When Security Hub CSPM is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub fn get_enabled_by_default(&self) -> &::std::option::Option<bool> {
         &self.enabled_by_default
     }

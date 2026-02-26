@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is an integer.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an integer.</p>
     pub default_value: ::std::option::Option<i32>,
     /// <p>The minimum valid value for a control parameter that is an integer.</p>
     pub min: ::std::option::Option<i32>,
@@ -12,7 +12,7 @@ pub struct IntegerConfigurationOptions {
     pub max: ::std::option::Option<i32>,
 }
 impl IntegerConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is an integer.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an integer.</p>
     pub fn default_value(&self) -> ::std::option::Option<i32> {
         self.default_value
     }
@@ -41,17 +41,17 @@ pub struct IntegerConfigurationOptionsBuilder {
     pub(crate) max: ::std::option::Option<i32>,
 }
 impl IntegerConfigurationOptionsBuilder {
-    /// <p>The Security Hub default value for a control parameter that is an integer.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an integer.</p>
     pub fn default_value(mut self, input: i32) -> Self {
         self.default_value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is an integer.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an integer.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is an integer.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is an integer.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<i32> {
         &self.default_value
     }

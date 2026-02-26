@@ -3,16 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrganizationAdminAccountsOutput {
-    /// <p>The list of Security Hub administrator accounts.</p>
+    /// <p>The list of Security Hub CSPM administrator accounts.</p>
     pub admin_accounts: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM CSPM if not specified.</p>
     pub feature: ::std::option::Option<crate::types::SecurityHubFeature>,
     _request_id: Option<String>,
 }
 impl ListOrganizationAdminAccountsOutput {
-    /// <p>The list of Security Hub administrator accounts.</p>
+    /// <p>The list of Security Hub CSPM administrator accounts.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.admin_accounts.is_none()`.
     pub fn admin_accounts(&self) -> &[crate::types::AdminAccount] {
@@ -22,7 +22,7 @@ impl ListOrganizationAdminAccountsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM CSPM if not specified.</p>
     pub fn feature(&self) -> ::std::option::Option<&crate::types::SecurityHubFeature> {
         self.feature.as_ref()
     }
@@ -53,19 +53,19 @@ impl ListOrganizationAdminAccountsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_admin_accounts`](Self::set_admin_accounts).
     ///
-    /// <p>The list of Security Hub administrator accounts.</p>
+    /// <p>The list of Security Hub CSPM administrator accounts.</p>
     pub fn admin_accounts(mut self, input: crate::types::AdminAccount) -> Self {
         let mut v = self.admin_accounts.unwrap_or_default();
         v.push(input);
         self.admin_accounts = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of Security Hub administrator accounts.</p>
+    /// <p>The list of Security Hub CSPM administrator accounts.</p>
     pub fn set_admin_accounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>>) -> Self {
         self.admin_accounts = input;
         self
     }
-    /// <p>The list of Security Hub administrator accounts.</p>
+    /// <p>The list of Security Hub CSPM administrator accounts.</p>
     pub fn get_admin_accounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdminAccount>> {
         &self.admin_accounts
     }
@@ -83,17 +83,17 @@ impl ListOrganizationAdminAccountsOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM CSPM if not specified.</p>
     pub fn feature(mut self, input: crate::types::SecurityHubFeature) -> Self {
         self.feature = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM CSPM if not specified.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::SecurityHubFeature>) -> Self {
         self.feature = input;
         self
     }
-    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM if not specified.</p>
+    /// <p>The feature where the delegated administrator account is listed. Defaults to Security Hub CSPM CSPM if not specified.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::SecurityHubFeature> {
         &self.feature
     }

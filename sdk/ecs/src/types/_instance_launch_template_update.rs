@@ -16,6 +16,8 @@ pub struct InstanceLaunchTemplateUpdate {
     pub monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     /// <p>The updated instance requirements for attribute-based instance type selection. Changes to instance requirements affect which instance types Amazon ECS selects for new instances.</p>
     pub instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    /// <p>The updated capacity reservations specifications for Amazon ECS Managed Instances. Changes to capacity reservations settings apply to new instances launched after the update.</p>
+    pub capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
 }
 impl InstanceLaunchTemplateUpdate {
     /// <p>The updated Amazon Resource Name (ARN) of the instance profile. The new instance profile must have the necessary permissions for your tasks.</p>
@@ -39,6 +41,10 @@ impl InstanceLaunchTemplateUpdate {
     pub fn instance_requirements(&self) -> ::std::option::Option<&crate::types::InstanceRequirementsRequest> {
         self.instance_requirements.as_ref()
     }
+    /// <p>The updated capacity reservations specifications for Amazon ECS Managed Instances. Changes to capacity reservations settings apply to new instances launched after the update.</p>
+    pub fn capacity_reservations(&self) -> ::std::option::Option<&crate::types::CapacityReservationRequest> {
+        self.capacity_reservations.as_ref()
+    }
 }
 impl InstanceLaunchTemplateUpdate {
     /// Creates a new builder-style object to manufacture [`InstanceLaunchTemplateUpdate`](crate::types::InstanceLaunchTemplateUpdate).
@@ -56,6 +62,7 @@ pub struct InstanceLaunchTemplateUpdateBuilder {
     pub(crate) storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
     pub(crate) monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
+    pub(crate) capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
 }
 impl InstanceLaunchTemplateUpdateBuilder {
     /// <p>The updated Amazon Resource Name (ARN) of the instance profile. The new instance profile must have the necessary permissions for your tasks.</p>
@@ -131,6 +138,20 @@ impl InstanceLaunchTemplateUpdateBuilder {
     pub fn get_instance_requirements(&self) -> &::std::option::Option<crate::types::InstanceRequirementsRequest> {
         &self.instance_requirements
     }
+    /// <p>The updated capacity reservations specifications for Amazon ECS Managed Instances. Changes to capacity reservations settings apply to new instances launched after the update.</p>
+    pub fn capacity_reservations(mut self, input: crate::types::CapacityReservationRequest) -> Self {
+        self.capacity_reservations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated capacity reservations specifications for Amazon ECS Managed Instances. Changes to capacity reservations settings apply to new instances launched after the update.</p>
+    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<crate::types::CapacityReservationRequest>) -> Self {
+        self.capacity_reservations = input;
+        self
+    }
+    /// <p>The updated capacity reservations specifications for Amazon ECS Managed Instances. Changes to capacity reservations settings apply to new instances launched after the update.</p>
+    pub fn get_capacity_reservations(&self) -> &::std::option::Option<crate::types::CapacityReservationRequest> {
+        &self.capacity_reservations
+    }
     /// Consumes the builder and constructs a [`InstanceLaunchTemplateUpdate`](crate::types::InstanceLaunchTemplateUpdate).
     pub fn build(self) -> crate::types::InstanceLaunchTemplateUpdate {
         crate::types::InstanceLaunchTemplateUpdate {
@@ -139,6 +160,7 @@ impl InstanceLaunchTemplateUpdateBuilder {
             storage_configuration: self.storage_configuration,
             monitoring: self.monitoring,
             instance_requirements: self.instance_requirements,
+            capacity_reservations: self.capacity_reservations,
         }
     }
 }

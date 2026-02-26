@@ -8,7 +8,7 @@ pub struct FindingHistoryUpdate {
     pub updated_field: ::std::option::Option<::std::string::String>,
     /// <p>The value of the ASFF field before the finding change event.</p>
     pub old_value: ::std::option::Option<::std::string::String>,
-    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
+    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub CSPM omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub new_value: ::std::option::Option<::std::string::String>,
 }
 impl FindingHistoryUpdate {
@@ -20,7 +20,7 @@ impl FindingHistoryUpdate {
     pub fn old_value(&self) -> ::std::option::Option<&str> {
         self.old_value.as_deref()
     }
-    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
+    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub CSPM omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub fn new_value(&self) -> ::std::option::Option<&str> {
         self.new_value.as_deref()
     }
@@ -69,17 +69,17 @@ impl FindingHistoryUpdateBuilder {
     pub fn get_old_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.old_value
     }
-    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
+    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub CSPM omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub fn new_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.new_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
+    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub CSPM omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub fn set_new_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.new_value = input;
         self
     }
-    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
+    /// <p>The value of the ASFF field after the finding change event. To preserve storage and readability, Security Hub CSPM omits this value if <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_FindingHistoryRecord.html"> <code>FindingHistoryRecord</code> </a> exceeds database limits.</p>
     pub fn get_new_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.new_value
     }

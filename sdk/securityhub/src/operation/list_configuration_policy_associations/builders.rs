@@ -22,7 +22,7 @@ impl crate::operation::list_configuration_policy_associations::builders::ListCon
 }
 /// Fluent builder constructing a request to `ListConfigurationPolicyAssociations`.
 ///
-/// <p>Provides information about the associations for your configuration policies and self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Provides information about the associations for your configuration policies and self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListConfigurationPolicyAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

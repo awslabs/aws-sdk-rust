@@ -7,7 +7,7 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <p>The identifier of a client certificate for a stage. Supported only for WebSocket API calls.</p>
     pub client_certificate_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the stage was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub created_date: ::std::option::Option<::std::string::String>,
     /// <p>The description of the stage.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct AwsApiGatewayV2StageDetails {
     /// <p>The identifier of the deployment that the stage is associated with.</p>
     pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the stage was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub last_updated_date: ::std::option::Option<::std::string::String>,
     /// <p>The route settings for the stage.</p>
     pub route_settings: ::std::option::Option<crate::types::AwsApiGatewayV2RouteSettings>,
@@ -49,7 +49,7 @@ impl AwsApiGatewayV2StageDetails {
         self.client_certificate_id.as_deref()
     }
     /// <p>Indicates when the stage was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_date(&self) -> ::std::option::Option<&str> {
         self.created_date.as_deref()
     }
@@ -66,7 +66,7 @@ impl AwsApiGatewayV2StageDetails {
         self.deployment_id.as_deref()
     }
     /// <p>Indicates when the stage was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_updated_date(&self) -> ::std::option::Option<&str> {
         self.last_updated_date.as_deref()
     }
@@ -150,19 +150,19 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         &self.client_certificate_id
     }
     /// <p>Indicates when the stage was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the stage was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_created_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_date = input;
         self
     }
     /// <p>Indicates when the stage was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_created_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_date
     }
@@ -209,19 +209,19 @@ impl AwsApiGatewayV2StageDetailsBuilder {
         &self.deployment_id
     }
     /// <p>Indicates when the stage was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_updated_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_updated_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the stage was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_last_updated_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_updated_date = input;
         self
     }
     /// <p>Indicates when the stage was most recently updated.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_last_updated_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_updated_date
     }

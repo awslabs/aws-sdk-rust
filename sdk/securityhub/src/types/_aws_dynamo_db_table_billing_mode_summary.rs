@@ -7,7 +7,7 @@ pub struct AwsDynamoDbTableBillingModeSummary {
     /// <p>The method used to charge for read and write throughput and to manage capacity.</p>
     pub billing_mode: ::std::option::Option<::std::string::String>,
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub last_update_to_pay_per_request_date_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsDynamoDbTableBillingModeSummary {
@@ -16,7 +16,7 @@ impl AwsDynamoDbTableBillingModeSummary {
         self.billing_mode.as_deref()
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_update_to_pay_per_request_date_time(&self) -> ::std::option::Option<&str> {
         self.last_update_to_pay_per_request_date_time.as_deref()
     }
@@ -51,19 +51,19 @@ impl AwsDynamoDbTableBillingModeSummaryBuilder {
         &self.billing_mode
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn last_update_to_pay_per_request_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.last_update_to_pay_per_request_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_last_update_to_pay_per_request_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.last_update_to_pay_per_request_date_time = input;
         self
     }
     /// <p>If the billing mode is <code>PAY_PER_REQUEST</code>, indicates when the billing mode was set to that value.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_last_update_to_pay_per_request_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_update_to_pay_per_request_date_time
     }

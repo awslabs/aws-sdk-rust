@@ -22,7 +22,7 @@ impl crate::operation::update_action_target::builders::UpdateActionTargetInputBu
 }
 /// Fluent builder constructing a request to `UpdateActionTarget`.
 ///
-/// <p>Updates the name and description of a custom action target in Security Hub.</p>
+/// <p>Updates the name and description of a custom action target in Security Hub CSPM.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateActionTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

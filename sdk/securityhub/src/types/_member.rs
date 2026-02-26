@@ -9,10 +9,10 @@ pub struct Member {
     /// <p>The email address of the member account.</p>
     pub email: ::std::option::Option<::std::string::String>,
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub master_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     pub administrator_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the relationship between the member account and its administrator account.</p>
     /// <p>The status can have one of the following values:</p>
@@ -48,12 +48,12 @@ impl Member {
         self.email.as_deref()
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn master_id(&self) -> ::std::option::Option<&str> {
         self.master_id.as_deref()
     }
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     pub fn administrator_id(&self) -> ::std::option::Option<&str> {
         self.administrator_id.as_deref()
     }
@@ -136,36 +136,36 @@ impl MemberBuilder {
         &self.email
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_id = input;
         self
     }
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     #[deprecated(note = "This field is deprecated, use AdministratorId instead.")]
     pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_id
     }
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     pub fn administrator_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.administrator_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     pub fn set_administrator_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.administrator_id = input;
         self
     }
-    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub CSPM administrator account associated with this member account.</p>
     pub fn get_administrator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.administrator_id
     }

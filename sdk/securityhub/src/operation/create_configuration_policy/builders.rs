@@ -22,7 +22,7 @@ impl crate::operation::create_configuration_policy::builders::CreateConfiguratio
 }
 /// Fluent builder constructing a request to `CreateConfigurationPolicy`.
 ///
-/// <p>Creates a configuration policy with the defined configuration. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Creates a configuration policy with the defined configuration. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateConfigurationPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +136,17 @@ impl CreateConfigurationPolicyFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p>An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).</p>
     pub fn configuration_policy(mut self, input: crate::types::Policy) -> Self {
         self.inner = self.inner.configuration_policy(input);
         self
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p>An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).</p>
     pub fn set_configuration_policy(mut self, input: ::std::option::Option<crate::types::Policy>) -> Self {
         self.inner = self.inner.set_configuration_policy(input);
         self
     }
-    /// <p>An object that defines how Security Hub is configured. It includes whether Security Hub is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub enables all other controls (including newly released controls).</p>
+    /// <p>An object that defines how Security Hub CSPM is configured. It includes whether Security Hub CSPM is enabled or disabled, a list of enabled security standards, a list of enabled or disabled security controls, and a list of custom parameter values for specified controls. If you provide a list of security controls that are enabled in the configuration policy, Security Hub CSPM disables all other controls (including newly released controls). If you provide a list of security controls that are disabled in the configuration policy, Security Hub CSPM enables all other controls (including newly released controls).</p>
     pub fn get_configuration_policy(&self) -> &::std::option::Option<crate::types::Policy> {
         self.inner.get_configuration_policy()
     }
@@ -155,17 +155,17 @@ impl CreateConfigurationPolicyFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>User-defined tags associated with a configuration policy. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging Security Hub resources</a> in the <i>Security Hub user guide</i>.</p>
+    /// <p>User-defined tags associated with a configuration policy. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging Security Hub CSPM resources</a> in the <i>Security Hub CSPM user guide</i>.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>User-defined tags associated with a configuration policy. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging Security Hub resources</a> in the <i>Security Hub user guide</i>.</p>
+    /// <p>User-defined tags associated with a configuration policy. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging Security Hub CSPM resources</a> in the <i>Security Hub CSPM user guide</i>.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>User-defined tags associated with a configuration policy. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging Security Hub resources</a> in the <i>Security Hub user guide</i>.</p>
+    /// <p>User-defined tags associated with a configuration policy. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/tagging-resources.html">Tagging Security Hub CSPM resources</a> in the <i>Security Hub CSPM user guide</i>.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

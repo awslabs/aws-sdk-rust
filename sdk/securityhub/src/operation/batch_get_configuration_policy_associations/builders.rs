@@ -22,7 +22,7 @@ impl crate::operation::batch_get_configuration_policy_associations::builders::Ba
 }
 /// Fluent builder constructing a request to `BatchGetConfigurationPolicyAssociations`.
 ///
-/// <p>Returns associations between an Security Hub configuration and a batch of target accounts, organizational units, or the root. Only the Security Hub delegated administrator can invoke this operation from the home Region. A configuration can refer to a configuration policy or to a self-managed configuration.</p>
+/// <p>Returns associations between an Security Hub CSPM configuration and a batch of target accounts, organizational units, or the root. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region. A configuration can refer to a configuration policy or to a self-managed configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetConfigurationPolicyAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

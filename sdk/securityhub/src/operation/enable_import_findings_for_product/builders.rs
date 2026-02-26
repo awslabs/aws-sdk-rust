@@ -22,8 +22,8 @@ impl crate::operation::enable_import_findings_for_product::builders::EnableImpor
 }
 /// Fluent builder constructing a request to `EnableImportFindingsForProduct`.
 ///
-/// <p>Enables the integration of a partner product with Security Hub. Integrated products send findings to Security Hub.</p>
-/// <p>When you enable a product integration, a permissions policy that grants permission for the product to send findings to Security Hub is applied.</p>
+/// <p>Enables the integration of a partner product with Security Hub CSPM. Integrated products send findings to Security Hub CSPM.</p>
+/// <p>When you enable a product integration, a permissions policy that grants permission for the product to send findings to Security Hub CSPM is applied.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct EnableImportFindingsForProductFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

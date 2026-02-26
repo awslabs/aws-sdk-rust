@@ -11,7 +11,7 @@ pub struct AwsS3BucketDetails {
     /// <p>The Amazon Web Services account identifier of the account that owns the S3 bucket.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub created_at: ::std::option::Option<::std::string::String>,
     /// <p>The encryption rules that are applied to the S3 bucket.</p>
     pub server_side_encryption_configuration: ::std::option::Option<crate::types::AwsS3BucketServerSideEncryptionConfiguration>,
@@ -48,7 +48,7 @@ impl AwsS3BucketDetails {
         self.owner_account_id.as_deref()
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_at(&self) -> ::std::option::Option<&str> {
         self.created_at.as_deref()
     }
@@ -163,19 +163,19 @@ impl AwsS3BucketDetailsBuilder {
         &self.owner_account_id
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_at = input;
         self
     }
     /// <p>Indicates when the S3 bucket was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_at
     }

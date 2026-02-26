@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsDynamoDbTableSseDescription {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub inaccessible_encryption_date_time: ::std::option::Option<::std::string::String>,
     /// <p>The status of the server-side encryption.</p>
     pub status: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct AwsDynamoDbTableSseDescription {
 }
 impl AwsDynamoDbTableSseDescription {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn inaccessible_encryption_date_time(&self) -> ::std::option::Option<&str> {
         self.inaccessible_encryption_date_time.as_deref()
     }
@@ -51,19 +51,19 @@ pub struct AwsDynamoDbTableSseDescriptionBuilder {
 }
 impl AwsDynamoDbTableSseDescriptionBuilder {
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn inaccessible_encryption_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inaccessible_encryption_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_inaccessible_encryption_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inaccessible_encryption_date_time = input;
         self
     }
     /// <p>If the key is inaccessible, the date and time when DynamoDB detected that the key was inaccessible.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_inaccessible_encryption_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.inaccessible_encryption_date_time
     }

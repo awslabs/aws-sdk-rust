@@ -22,7 +22,7 @@ impl crate::operation::describe_action_targets::builders::DescribeActionTargetsI
 }
 /// Fluent builder constructing a request to `DescribeActionTargets`.
 ///
-/// <p>Returns a list of the custom action targets in Security Hub in your account.</p>
+/// <p>Returns a list of the custom action targets in Security Hub CSPM in your account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeActionTargetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

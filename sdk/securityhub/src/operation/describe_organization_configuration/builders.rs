@@ -22,7 +22,7 @@ impl crate::operation::describe_organization_configuration::builders::DescribeOr
 }
 /// Fluent builder constructing a request to `DescribeOrganizationConfiguration`.
 ///
-/// <p>Returns information about the way your organization is configured in Security Hub. Only the Security Hub administrator account can invoke this operation.</p>
+/// <p>Returns information about the way your organization is configured in Security Hub CSPM. Only the Security Hub CSPM administrator account can invoke this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeOrganizationConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

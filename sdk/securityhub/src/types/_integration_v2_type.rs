@@ -12,6 +12,7 @@
 /// ```text
 /// # let integrationv2type = unimplemented!();
 /// match integrationv2type {
+///     IntegrationV2Type::ExtendedPlan => { /* ... */ },
 ///     IntegrationV2Type::ReceiveFindingsFromSecurityHub => { /* ... */ },
 ///     IntegrationV2Type::SendFindingsToSecurityHub => { /* ... */ },
 ///     IntegrationV2Type::UpdateFindingsInSecurityHub => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum IntegrationV2Type {
     #[allow(missing_docs)] // documentation missing in model
+    ExtendedPlan,
+    #[allow(missing_docs)] // documentation missing in model
     ReceiveFindingsFromSecurityHub,
     #[allow(missing_docs)] // documentation missing in model
     SendFindingsToSecurityHub,
@@ -56,6 +59,7 @@ pub enum IntegrationV2Type {
 impl ::std::convert::From<&str> for IntegrationV2Type {
     fn from(s: &str) -> Self {
         match s {
+            "EXTENDED_PLAN" => IntegrationV2Type::ExtendedPlan,
             "RECEIVE_FINDINGS_FROM_SECURITY_HUB" => IntegrationV2Type::ReceiveFindingsFromSecurityHub,
             "SEND_FINDINGS_TO_SECURITY_HUB" => IntegrationV2Type::SendFindingsToSecurityHub,
             "UPDATE_FINDINGS_IN_SECURITY_HUB" => IntegrationV2Type::UpdateFindingsInSecurityHub,
@@ -74,6 +78,7 @@ impl IntegrationV2Type {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            IntegrationV2Type::ExtendedPlan => "EXTENDED_PLAN",
             IntegrationV2Type::ReceiveFindingsFromSecurityHub => "RECEIVE_FINDINGS_FROM_SECURITY_HUB",
             IntegrationV2Type::SendFindingsToSecurityHub => "SEND_FINDINGS_TO_SECURITY_HUB",
             IntegrationV2Type::UpdateFindingsInSecurityHub => "UPDATE_FINDINGS_IN_SECURITY_HUB",
@@ -83,6 +88,7 @@ impl IntegrationV2Type {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "EXTENDED_PLAN",
             "RECEIVE_FINDINGS_FROM_SECURITY_HUB",
             "SEND_FINDINGS_TO_SECURITY_HUB",
             "UPDATE_FINDINGS_IN_SECURITY_HUB",
@@ -109,6 +115,7 @@ impl IntegrationV2Type {
 impl ::std::fmt::Display for IntegrationV2Type {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            IntegrationV2Type::ExtendedPlan => write!(f, "EXTENDED_PLAN"),
             IntegrationV2Type::ReceiveFindingsFromSecurityHub => write!(f, "RECEIVE_FINDINGS_FROM_SECURITY_HUB"),
             IntegrationV2Type::SendFindingsToSecurityHub => write!(f, "SEND_FINDINGS_TO_SECURITY_HUB"),
             IntegrationV2Type::UpdateFindingsInSecurityHub => write!(f, "UPDATE_FINDINGS_IN_SECURITY_HUB"),

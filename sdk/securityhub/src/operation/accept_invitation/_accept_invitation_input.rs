@@ -3,17 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcceptInvitationInput {
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub master_id: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInvitationInput {
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn master_id(&self) -> ::std::option::Option<&str> {
         self.master_id.as_deref()
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn invitation_id(&self) -> ::std::option::Option<&str> {
         self.invitation_id.as_deref()
     }
@@ -33,33 +33,33 @@ pub struct AcceptInvitationInputBuilder {
     pub(crate) invitation_id: ::std::option::Option<::std::string::String>,
 }
 impl AcceptInvitationInputBuilder {
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     /// This field is required.
     pub fn master_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.master_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn set_master_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.master_id = input;
         self
     }
-    /// <p>The account ID of the Security Hub administrator account that sent the invitation.</p>
+    /// <p>The account ID of the Security Hub CSPM administrator account that sent the invitation.</p>
     pub fn get_master_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.master_id
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     /// This field is required.
     pub fn invitation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.invitation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn set_invitation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.invitation_id = input;
         self
     }
-    /// <p>The identifier of the invitation sent from the Security Hub administrator account.</p>
+    /// <p>The identifier of the invitation sent from the Security Hub CSPM administrator account.</p>
     pub fn get_invitation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.invitation_id
     }

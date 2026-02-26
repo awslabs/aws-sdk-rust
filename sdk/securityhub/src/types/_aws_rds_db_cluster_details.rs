@@ -66,7 +66,7 @@ pub struct AwsRdsDbClusterDetails {
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
     pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::AwsRdsDbClusterAssociatedRole>>,
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub cluster_create_time: ::std::option::Option<::std::string::String>,
     /// <p>A list of log types that this DB cluster is configured to export to CloudWatch Logs.</p>
     pub enabled_cloud_watch_logs_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -238,7 +238,7 @@ impl AwsRdsDbClusterDetails {
         self.associated_roles.as_deref().unwrap_or_default()
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn cluster_create_time(&self) -> ::std::option::Option<&str> {
         self.cluster_create_time.as_deref()
     }
@@ -774,19 +774,19 @@ impl AwsRdsDbClusterDetailsBuilder {
         &self.associated_roles
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn cluster_create_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cluster_create_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_cluster_create_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_create_time = input;
         self
     }
     /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_cluster_create_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_create_time
     }

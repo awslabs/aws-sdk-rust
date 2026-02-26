@@ -27,5 +27,11 @@ pub fn ser_instance_launch_template_update(
         crate::protocol_serde::shape_instance_requirements_request::ser_instance_requirements_request(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.capacity_reservations {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("capacityReservations").start_object();
+        crate::protocol_serde::shape_capacity_reservation_request::ser_capacity_reservation_request(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

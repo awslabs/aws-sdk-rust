@@ -6,7 +6,7 @@
 pub struct StandardsControl {
     /// <p>The ARN of the security standard control.</p>
     pub standards_control_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
+    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub CSPM does not check against disabled controls.</p>
     pub control_status: ::std::option::Option<crate::types::ControlStatus>,
     /// <p>The reason provided for the most recent change in status for the control.</p>
     pub disabled_reason: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ pub struct StandardsControl {
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>The longer description of the security standard control. Provides information about what the control is checking for.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
+    /// <p>A link to remediation information for the control in the Security Hub CSPM user documentation.</p>
     pub remediation_url: ::std::option::Option<::std::string::String>,
     /// <p>The severity of findings generated from this security standard control.</p>
     /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services resources if the issue is detected.</p>
@@ -31,7 +31,7 @@ impl StandardsControl {
     pub fn standards_control_arn(&self) -> ::std::option::Option<&str> {
         self.standards_control_arn.as_deref()
     }
-    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
+    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub CSPM does not check against disabled controls.</p>
     pub fn control_status(&self) -> ::std::option::Option<&crate::types::ControlStatus> {
         self.control_status.as_ref()
     }
@@ -55,7 +55,7 @@ impl StandardsControl {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
+    /// <p>A link to remediation information for the control in the Security Hub CSPM user documentation.</p>
     pub fn remediation_url(&self) -> ::std::option::Option<&str> {
         self.remediation_url.as_deref()
     }
@@ -108,17 +108,17 @@ impl StandardsControlBuilder {
     pub fn get_standards_control_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.standards_control_arn
     }
-    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
+    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub CSPM does not check against disabled controls.</p>
     pub fn control_status(mut self, input: crate::types::ControlStatus) -> Self {
         self.control_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
+    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub CSPM does not check against disabled controls.</p>
     pub fn set_control_status(mut self, input: ::std::option::Option<crate::types::ControlStatus>) -> Self {
         self.control_status = input;
         self
     }
-    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub does not check against disabled controls.</p>
+    /// <p>The current status of the security standard control. Indicates whether the control is enabled or disabled. Security Hub CSPM does not check against disabled controls.</p>
     pub fn get_control_status(&self) -> &::std::option::Option<crate::types::ControlStatus> {
         &self.control_status
     }
@@ -192,17 +192,17 @@ impl StandardsControlBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
+    /// <p>A link to remediation information for the control in the Security Hub CSPM user documentation.</p>
     pub fn remediation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.remediation_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
+    /// <p>A link to remediation information for the control in the Security Hub CSPM user documentation.</p>
     pub fn set_remediation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation_url = input;
         self
     }
-    /// <p>A link to remediation information for the control in the Security Hub user documentation.</p>
+    /// <p>A link to remediation information for the control in the Security Hub CSPM user documentation.</p>
     pub fn get_remediation_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.remediation_url
     }

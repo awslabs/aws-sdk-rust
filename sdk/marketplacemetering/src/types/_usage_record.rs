@@ -16,8 +16,14 @@ pub struct UsageRecord {
     pub quantity: ::std::option::Option<i32>,
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
+    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
+    /// </note>
     pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through Amazon Web Services Marketplace.</p><note>
+    /// <p>To access your <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> mapping, visit <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements Feeds</a>.</p>
+    /// </note>
+    pub license_arn: ::std::option::Option<::std::string::String>,
 }
 impl UsageRecord {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
@@ -45,9 +51,17 @@ impl UsageRecord {
     pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
         self.usage_allocations.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
+    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
+    /// </note>
     pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.customer_aws_account_id.as_deref()
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through Amazon Web Services Marketplace.</p><note>
+    /// <p>To access your <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> mapping, visit <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements Feeds</a>.</p>
+    /// </note>
+    pub fn license_arn(&self) -> ::std::option::Option<&str> {
+        self.license_arn.as_deref()
     }
 }
 impl UsageRecord {
@@ -67,6 +81,7 @@ pub struct UsageRecordBuilder {
     pub(crate) quantity: ::std::option::Option<i32>,
     pub(crate) usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
     pub(crate) customer_aws_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) license_arn: ::std::option::Option<::std::string::String>,
 }
 impl UsageRecordBuilder {
     /// <p>Timestamp, in UTC, for which the usage is being reported.</p>
@@ -150,19 +165,45 @@ impl UsageRecordBuilder {
     pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         &self.usage_allocations
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
+    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
+    /// </note>
     pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
+    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
+    /// </note>
     pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_account_id = input;
         self
     }
-    /// <p>The <code>CustomerAWSAccountID</code> parameter specifies the AWS account ID of the buyer.</p>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
+    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
+    /// </note>
     pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_aws_account_id
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through Amazon Web Services Marketplace.</p><note>
+    /// <p>To access your <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> mapping, visit <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements Feeds</a>.</p>
+    /// </note>
+    pub fn license_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.license_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through Amazon Web Services Marketplace.</p><note>
+    /// <p>To access your <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> mapping, visit <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements Feeds</a>.</p>
+    /// </note>
+    pub fn set_license_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.license_arn = input;
+        self
+    }
+    /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through Amazon Web Services Marketplace.</p><note>
+    /// <p>To access your <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> mapping, visit <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements Feeds</a>.</p>
+    /// </note>
+    pub fn get_license_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_arn
     }
     /// Consumes the builder and constructs a [`UsageRecord`](crate::types::UsageRecord).
     /// This method will fail if any of the following fields are not set:
@@ -186,6 +227,7 @@ impl UsageRecordBuilder {
             quantity: self.quantity,
             usage_allocations: self.usage_allocations,
             customer_aws_account_id: self.customer_aws_account_id,
+            license_arn: self.license_arn,
         })
     }
 }

@@ -22,8 +22,8 @@ impl crate::operation::create_action_target::builders::CreateActionTargetInputBu
 }
 /// Fluent builder constructing a request to `CreateActionTarget`.
 ///
-/// <p>Creates a custom action target in Security Hub.</p>
-/// <p>You can use custom actions on findings and insights in Security Hub to trigger target actions in Amazon CloudWatch Events.</p>
+/// <p>Creates a custom action target in Security Hub CSPM.</p>
+/// <p>You can use custom actions on findings and insights in Security Hub CSPM to trigger target actions in Amazon CloudWatch Events.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateActionTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

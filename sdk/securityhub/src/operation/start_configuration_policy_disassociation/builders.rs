@@ -22,7 +22,7 @@ impl crate::operation::start_configuration_policy_disassociation::builders::Star
 }
 /// Fluent builder constructing a request to `StartConfigurationPolicyDisassociation`.
 ///
-/// <p>Disassociates a target account, organizational unit, or the root from a specified configuration. When you disassociate a configuration from its target, the target inherits the configuration of the closest parent. If there’s no configuration to inherit, the target retains its settings but becomes a self-managed account. A target can be disassociated from a configuration policy or self-managed behavior. Only the Security Hub delegated administrator can invoke this operation from the home Region.</p>
+/// <p>Disassociates a target account, organizational unit, or the root from a specified configuration. When you disassociate a configuration from its target, the target inherits the configuration of the closest parent. If there’s no configuration to inherit, the target retains its settings but becomes a self-managed account. A target can be disassociated from a configuration policy or self-managed behavior. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartConfigurationPolicyDisassociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

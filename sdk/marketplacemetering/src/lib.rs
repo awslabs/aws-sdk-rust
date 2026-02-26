@@ -44,7 +44,7 @@
 //! __Accepting new customers__
 //!
 //! _ResolveCustomer_
-//!   - Resolves the registration token that the buyer submits through the browser during the registration process. Obtains a CustomerIdentifier along with the CustomerAWSAccountId and ProductCode.
+//!   - Resolves the registration token that the buyer submits through the browser during the registration process. Obtains a CustomerIdentifier along with the CustomerAWSAccountId, ProductCode, and LicenseArn.
 //!   - Called from: SaaS application during the registration process
 //!   - Supported product type: SaaS
 //!   - Vendor-metered tagging: Not applicable
@@ -77,7 +77,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacemetering = "1.98.0"
+//! aws-sdk-marketplacemetering = "1.99.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

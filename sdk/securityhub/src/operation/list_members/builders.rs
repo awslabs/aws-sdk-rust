@@ -22,7 +22,7 @@ impl crate::operation::list_members::builders::ListMembersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListMembers`.
 ///
-/// <p>Lists details about all member accounts for the current Security Hub administrator account.</p>
+/// <p>Lists details about all member accounts for the current Security Hub CSPM administrator account.</p>
 /// <p>The results include both member accounts that belong to an organization and member accounts that were invited manually.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListMembersFluentBuilder {

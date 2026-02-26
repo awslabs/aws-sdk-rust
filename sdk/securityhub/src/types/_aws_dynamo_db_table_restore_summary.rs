@@ -9,7 +9,7 @@ pub struct AwsDynamoDbTableRestoreSummary {
     /// <p>The ARN of the source table for the backup.</p>
     pub source_table_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the point in time that the table was restored to.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub restore_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Whether a restore is currently in progress.</p>
     pub restore_in_progress: ::std::option::Option<bool>,
@@ -24,7 +24,7 @@ impl AwsDynamoDbTableRestoreSummary {
         self.source_table_arn.as_deref()
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn restore_date_time(&self) -> ::std::option::Option<&str> {
         self.restore_date_time.as_deref()
     }
@@ -79,19 +79,19 @@ impl AwsDynamoDbTableRestoreSummaryBuilder {
         &self.source_table_arn
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn restore_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.restore_date_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_restore_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.restore_date_time = input;
         self
     }
     /// <p>Indicates the point in time that the table was restored to.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_restore_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.restore_date_time
     }

@@ -163,6 +163,8 @@ pub use crate::types::_managed_instances_storage_configuration::ManagedInstances
 
 pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
 
+pub use crate::types::_capacity_reservation_request::CapacityReservationRequestBuilder;
+
 pub use crate::types::_execute_command_log_configuration::ExecuteCommandLogConfigurationBuilder;
 
 pub use crate::types::_key_value_pair::KeyValuePairBuilder;

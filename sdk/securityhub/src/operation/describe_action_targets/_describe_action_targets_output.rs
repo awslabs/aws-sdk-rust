@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeActionTargetsOutput {
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub CSPM.</p>
     pub action_targets: ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>>,
     /// <p>The pagination token to use to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeActionTargetsOutput {
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub CSPM.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.action_targets.is_none()`.
     pub fn action_targets(&self) -> &[crate::types::ActionTarget] {
@@ -46,19 +46,19 @@ impl DescribeActionTargetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_action_targets`](Self::set_action_targets).
     ///
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub CSPM.</p>
     pub fn action_targets(mut self, input: crate::types::ActionTarget) -> Self {
         let mut v = self.action_targets.unwrap_or_default();
         v.push(input);
         self.action_targets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub CSPM.</p>
     pub fn set_action_targets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>>) -> Self {
         self.action_targets = input;
         self
     }
-    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
+    /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub CSPM.</p>
     pub fn get_action_targets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActionTarget>> {
         &self.action_targets
     }

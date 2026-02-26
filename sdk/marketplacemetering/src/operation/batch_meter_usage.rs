@@ -272,6 +272,8 @@ pub enum BatchMeterUsageError {
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>You have metered usage for a <code>CustomerIdentifier</code> that does not exist.</p>
     InvalidCustomerIdentifierException(crate::types::error::InvalidCustomerIdentifierException),
+    /// <p>Ensure the <code>LicenseArn</code> is valid, matches the customer, and usage is within the license activation period.</p>
+    InvalidLicenseException(crate::types::error::InvalidLicenseException),
     /// <p>The product code passed does not match the product code used for publishing the product.</p>
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
@@ -321,6 +323,7 @@ impl BatchMeterUsageError {
             Self::DisabledApiException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidCustomerIdentifierException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidLicenseException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidProductCodeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTagException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidUsageAllocationsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -341,6 +344,10 @@ impl BatchMeterUsageError {
     /// Returns `true` if the error kind is `BatchMeterUsageError::InvalidCustomerIdentifierException`.
     pub fn is_invalid_customer_identifier_exception(&self) -> bool {
         matches!(self, Self::InvalidCustomerIdentifierException(_))
+    }
+    /// Returns `true` if the error kind is `BatchMeterUsageError::InvalidLicenseException`.
+    pub fn is_invalid_license_exception(&self) -> bool {
+        matches!(self, Self::InvalidLicenseException(_))
     }
     /// Returns `true` if the error kind is `BatchMeterUsageError::InvalidProductCodeException`.
     pub fn is_invalid_product_code_exception(&self) -> bool {
@@ -373,6 +380,7 @@ impl ::std::error::Error for BatchMeterUsageError {
             Self::DisabledApiException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidCustomerIdentifierException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidLicenseException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidProductCodeException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTagException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidUsageAllocationsException(_inner) => ::std::option::Option::Some(_inner),
@@ -389,6 +397,7 @@ impl ::std::fmt::Display for BatchMeterUsageError {
             Self::DisabledApiException(_inner) => _inner.fmt(f),
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidCustomerIdentifierException(_inner) => _inner.fmt(f),
+            Self::InvalidLicenseException(_inner) => _inner.fmt(f),
             Self::InvalidProductCodeException(_inner) => _inner.fmt(f),
             Self::InvalidTagException(_inner) => _inner.fmt(f),
             Self::InvalidUsageAllocationsException(_inner) => _inner.fmt(f),
@@ -419,6 +428,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for BatchMeterUsa
             Self::DisabledApiException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidCustomerIdentifierException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidLicenseException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidProductCodeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTagException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidUsageAllocationsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

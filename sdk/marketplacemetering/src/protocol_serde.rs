@@ -57,6 +57,8 @@ pub(crate) mod shape_invalid_customer_identifier_exception;
 
 pub(crate) mod shape_invalid_endpoint_region_exception;
 
+pub(crate) mod shape_invalid_license_exception;
+
 pub(crate) mod shape_invalid_product_code_exception;
 
 pub(crate) mod shape_invalid_public_key_version_exception;

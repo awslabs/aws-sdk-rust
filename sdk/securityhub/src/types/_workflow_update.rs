@@ -9,7 +9,7 @@ pub struct WorkflowUpdate {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -31,7 +31,7 @@ impl WorkflowUpdate {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -68,7 +68,7 @@ impl WorkflowUpdateBuilder {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -91,7 +91,7 @@ impl WorkflowUpdateBuilder {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>
@@ -114,7 +114,7 @@ impl WorkflowUpdateBuilder {
     /// <ul>
     /// <li>
     /// <p><code>NEW</code> - The initial state of a finding, before it is reviewed.</p>
-    /// <p>Security Hub also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
+    /// <p>Security Hub CSPM also resets <code>WorkFlowStatus</code> from <code>NOTIFIED</code> or <code>RESOLVED</code> to <code>NEW</code> in the following cases:</p>
     /// <ul>
     /// <li>
     /// <p>The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.</p></li>

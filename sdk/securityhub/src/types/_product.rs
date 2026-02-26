@@ -17,17 +17,17 @@ pub struct Product {
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
     /// <li>
-    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub CSPM, but does make updates to the findings that it receives from Security Hub CSPM.</p></li>
     /// </ul>
     pub integration_types: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>,
     /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
     /// <p>For integrations with third-party products, the Amazon Web Services Marketplace URL from which to subscribe to or purchase the product.</p>
     pub marketplace_url: ::std::option::Option<::std::string::String>,
-    /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
+    /// <p>The URL to the service or product documentation about the integration with Security Hub CSPM, including how to activate the integration.</p>
     pub activation_url: ::std::option::Option<::std::string::String>,
     /// <p>The resource policy associated with the product.</p>
     pub product_subscription_resource_policy: ::std::option::Option<::std::string::String>,
@@ -58,11 +58,11 @@ impl Product {
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
     /// <li>
-    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub CSPM, but does make updates to the findings that it receives from Security Hub CSPM.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integration_types.is_none()`.
@@ -74,7 +74,7 @@ impl Product {
     pub fn marketplace_url(&self) -> ::std::option::Option<&str> {
         self.marketplace_url.as_deref()
     }
-    /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
+    /// <p>The URL to the service or product documentation about the integration with Security Hub CSPM, including how to activate the integration.</p>
     pub fn activation_url(&self) -> ::std::option::Option<&str> {
         self.activation_url.as_deref()
     }
@@ -189,11 +189,11 @@ impl ProductBuilder {
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
     /// <li>
-    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub CSPM, but does make updates to the findings that it receives from Security Hub CSPM.</p></li>
     /// </ul>
     pub fn integration_types(mut self, input: crate::types::IntegrationType) -> Self {
         let mut v = self.integration_types.unwrap_or_default();
@@ -204,11 +204,11 @@ impl ProductBuilder {
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
     /// <li>
-    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub CSPM, but does make updates to the findings that it receives from Security Hub CSPM.</p></li>
     /// </ul>
     pub fn set_integration_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>>) -> Self {
         self.integration_types = input;
@@ -217,11 +217,11 @@ impl ProductBuilder {
     /// <p>The types of integration that the product supports. Available values are the following.</p>
     /// <ul>
     /// <li>
-    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.</p></li>
+    /// <p><code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.</p></li>
+    /// <p><code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub CSPM.</p></li>
     /// <li>
-    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but does make updates to the findings that it receives from Security Hub.</p></li>
+    /// <p><code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub CSPM, but does make updates to the findings that it receives from Security Hub CSPM.</p></li>
     /// </ul>
     pub fn get_integration_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationType>> {
         &self.integration_types
@@ -243,17 +243,17 @@ impl ProductBuilder {
     pub fn get_marketplace_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.marketplace_url
     }
-    /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
+    /// <p>The URL to the service or product documentation about the integration with Security Hub CSPM, including how to activate the integration.</p>
     pub fn activation_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.activation_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
+    /// <p>The URL to the service or product documentation about the integration with Security Hub CSPM, including how to activate the integration.</p>
     pub fn set_activation_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.activation_url = input;
         self
     }
-    /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
+    /// <p>The URL to the service or product documentation about the integration with Security Hub CSPM, including how to activate the integration.</p>
     pub fn get_activation_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.activation_url
     }

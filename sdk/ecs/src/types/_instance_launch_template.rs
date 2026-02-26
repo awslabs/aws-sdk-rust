@@ -13,13 +13,15 @@ pub struct InstanceLaunchTemplate {
     pub storage_configuration: ::std::option::Option<crate::types::ManagedInstancesStorageConfiguration>,
     /// <p>CloudWatch provides two categories of monitoring: basic monitoring and detailed monitoring. By default, your managed instance is configured for basic monitoring. You can optionally enable detailed monitoring to help you more quickly identify and act on operational issues. You can enable or turn off detailed monitoring at launch or when the managed instance is running or stopped. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/detailed-monitoring-managed-instances.html">Detailed monitoring for Amazon ECS Managed Instances</a> in the Amazon ECS Developer Guide.</p>
     pub monitoring: ::std::option::Option<crate::types::ManagedInstancesMonitoringOptions>,
-    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot or Capacity Reservation Instances for your managed instance capacity provider.</p>
     /// <p>Valid values are:</p>
     /// <ul>
     /// <li>
     /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
     /// <li>
     /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// <li>
+    /// <p><code>RESERVED</code> - Launches Instances using Amazon EC2 Capacity Reservations. Capacity Reservations allow you to reserve compute capacity for Amazon EC2 instances in a specific Availability Zone.</p></li>
     /// </ul>
     /// <p>The default is On-Demand</p>
     /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -36,6 +38,15 @@ pub struct InstanceLaunchTemplate {
     /// <p>Determines whether to enable FIPS 140-2 validated cryptographic modules on EC2 instances launched by the capacity provider. If <code>true</code>, instances use FIPS-compliant cryptographic algorithms and modules for enhanced security compliance. If <code>false</code>, instances use standard cryptographic implementations.</p>
     /// <p>If not specified, instances are launched with FIPS enabled in AWS GovCloud (US) regions and FIPS disabled in other regions.</p>
     pub fips_enabled: ::std::option::Option<bool>,
+    /// <p>Capacity reservation specifications. You can specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Capacity reservation preference</p></li>
+    /// <li>
+    /// <p>Reservation resource group to be used for targeted capacity reservations</p></li>
+    /// </ul>
+    /// <p>Amazon ECS will launch instances according to the specified criteria.</p>
+    pub capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
 }
 impl InstanceLaunchTemplate {
     /// <p>The Amazon Resource Name (ARN) of the instance profile that Amazon ECS applies to Amazon ECS Managed Instances. This instance profile must include the necessary permissions for your tasks to access Amazon Web Services services and resources.</p>
@@ -56,13 +67,15 @@ impl InstanceLaunchTemplate {
     pub fn monitoring(&self) -> ::std::option::Option<&crate::types::ManagedInstancesMonitoringOptions> {
         self.monitoring.as_ref()
     }
-    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot or Capacity Reservation Instances for your managed instance capacity provider.</p>
     /// <p>Valid values are:</p>
     /// <ul>
     /// <li>
     /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
     /// <li>
     /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// <li>
+    /// <p><code>RESERVED</code> - Launches Instances using Amazon EC2 Capacity Reservations. Capacity Reservations allow you to reserve compute capacity for Amazon EC2 instances in a specific Availability Zone.</p></li>
     /// </ul>
     /// <p>The default is On-Demand</p>
     /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -85,6 +98,17 @@ impl InstanceLaunchTemplate {
     pub fn fips_enabled(&self) -> ::std::option::Option<bool> {
         self.fips_enabled
     }
+    /// <p>Capacity reservation specifications. You can specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Capacity reservation preference</p></li>
+    /// <li>
+    /// <p>Reservation resource group to be used for targeted capacity reservations</p></li>
+    /// </ul>
+    /// <p>Amazon ECS will launch instances according to the specified criteria.</p>
+    pub fn capacity_reservations(&self) -> ::std::option::Option<&crate::types::CapacityReservationRequest> {
+        self.capacity_reservations.as_ref()
+    }
 }
 impl InstanceLaunchTemplate {
     /// Creates a new builder-style object to manufacture [`InstanceLaunchTemplate`](crate::types::InstanceLaunchTemplate).
@@ -104,6 +128,7 @@ pub struct InstanceLaunchTemplateBuilder {
     pub(crate) capacity_option_type: ::std::option::Option<crate::types::CapacityOptionType>,
     pub(crate) instance_requirements: ::std::option::Option<crate::types::InstanceRequirementsRequest>,
     pub(crate) fips_enabled: ::std::option::Option<bool>,
+    pub(crate) capacity_reservations: ::std::option::Option<crate::types::CapacityReservationRequest>,
 }
 impl InstanceLaunchTemplateBuilder {
     /// <p>The Amazon Resource Name (ARN) of the instance profile that Amazon ECS applies to Amazon ECS Managed Instances. This instance profile must include the necessary permissions for your tasks to access Amazon Web Services services and resources.</p>
@@ -167,13 +192,15 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_monitoring(&self) -> &::std::option::Option<crate::types::ManagedInstancesMonitoringOptions> {
         &self.monitoring
     }
-    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot or Capacity Reservation Instances for your managed instance capacity provider.</p>
     /// <p>Valid values are:</p>
     /// <ul>
     /// <li>
     /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
     /// <li>
     /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// <li>
+    /// <p><code>RESERVED</code> - Launches Instances using Amazon EC2 Capacity Reservations. Capacity Reservations allow you to reserve compute capacity for Amazon EC2 instances in a specific Availability Zone.</p></li>
     /// </ul>
     /// <p>The default is On-Demand</p>
     /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -181,13 +208,15 @@ impl InstanceLaunchTemplateBuilder {
         self.capacity_option_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot or Capacity Reservation Instances for your managed instance capacity provider.</p>
     /// <p>Valid values are:</p>
     /// <ul>
     /// <li>
     /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
     /// <li>
     /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// <li>
+    /// <p><code>RESERVED</code> - Launches Instances using Amazon EC2 Capacity Reservations. Capacity Reservations allow you to reserve compute capacity for Amazon EC2 instances in a specific Availability Zone.</p></li>
     /// </ul>
     /// <p>The default is On-Demand</p>
     /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -195,13 +224,15 @@ impl InstanceLaunchTemplateBuilder {
         self.capacity_option_type = input;
         self
     }
-    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand or Spot Instances for your managed instance capacity provider.</p>
+    /// <p>The capacity option type. This determines whether Amazon ECS launches On-Demand, Spot or Capacity Reservation Instances for your managed instance capacity provider.</p>
     /// <p>Valid values are:</p>
     /// <ul>
     /// <li>
     /// <p><code>ON_DEMAND</code> - Launches standard On-Demand Instances. On-Demand Instances provide predictable pricing and availability.</p></li>
     /// <li>
     /// <p><code>SPOT</code> - Launches Spot Instances that use spare Amazon EC2 capacity at reduced cost. Spot Instances can be interrupted by Amazon EC2 with a two-minute notification when the capacity is needed back.</p></li>
+    /// <li>
+    /// <p><code>RESERVED</code> - Launches Instances using Amazon EC2 Capacity Reservations. Capacity Reservations allow you to reserve compute capacity for Amazon EC2 instances in a specific Availability Zone.</p></li>
     /// </ul>
     /// <p>The default is On-Demand</p>
     /// <p>For more information about Amazon EC2 capacity options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html">Instance purchasing options</a> in the <i>Amazon EC2 User Guide</i>.</p>
@@ -260,6 +291,41 @@ impl InstanceLaunchTemplateBuilder {
     pub fn get_fips_enabled(&self) -> &::std::option::Option<bool> {
         &self.fips_enabled
     }
+    /// <p>Capacity reservation specifications. You can specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Capacity reservation preference</p></li>
+    /// <li>
+    /// <p>Reservation resource group to be used for targeted capacity reservations</p></li>
+    /// </ul>
+    /// <p>Amazon ECS will launch instances according to the specified criteria.</p>
+    pub fn capacity_reservations(mut self, input: crate::types::CapacityReservationRequest) -> Self {
+        self.capacity_reservations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Capacity reservation specifications. You can specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Capacity reservation preference</p></li>
+    /// <li>
+    /// <p>Reservation resource group to be used for targeted capacity reservations</p></li>
+    /// </ul>
+    /// <p>Amazon ECS will launch instances according to the specified criteria.</p>
+    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<crate::types::CapacityReservationRequest>) -> Self {
+        self.capacity_reservations = input;
+        self
+    }
+    /// <p>Capacity reservation specifications. You can specify:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Capacity reservation preference</p></li>
+    /// <li>
+    /// <p>Reservation resource group to be used for targeted capacity reservations</p></li>
+    /// </ul>
+    /// <p>Amazon ECS will launch instances according to the specified criteria.</p>
+    pub fn get_capacity_reservations(&self) -> &::std::option::Option<crate::types::CapacityReservationRequest> {
+        &self.capacity_reservations
+    }
     /// Consumes the builder and constructs a [`InstanceLaunchTemplate`](crate::types::InstanceLaunchTemplate).
     /// This method will fail if any of the following fields are not set:
     /// - [`ec2_instance_profile_arn`](crate::types::builders::InstanceLaunchTemplateBuilder::ec2_instance_profile_arn)
@@ -277,6 +343,7 @@ impl InstanceLaunchTemplateBuilder {
             capacity_option_type: self.capacity_option_type,
             instance_requirements: self.instance_requirements,
             fips_enabled: self.fips_enabled,
+            capacity_reservations: self.capacity_reservations,
         })
     }
 }

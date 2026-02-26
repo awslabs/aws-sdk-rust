@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IntegerListConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of integers.</p>
     pub default_value: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>The minimum valid value for a control parameter that is a list of integers.</p>
     pub min: ::std::option::Option<i32>,
@@ -14,7 +14,7 @@ pub struct IntegerListConfigurationOptions {
     pub max_items: ::std::option::Option<i32>,
 }
 impl IntegerListConfigurationOptions {
-    /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of integers.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_value.is_none()`.
     pub fn default_value(&self) -> &[i32] {
@@ -54,19 +54,19 @@ impl IntegerListConfigurationOptionsBuilder {
     ///
     /// To override the contents of this collection use [`set_default_value`](Self::set_default_value).
     ///
-    /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of integers.</p>
     pub fn default_value(mut self, input: i32) -> Self {
         let mut v = self.default_value.unwrap_or_default();
         v.push(input);
         self.default_value = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of integers.</p>
     pub fn set_default_value(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
         self.default_value = input;
         self
     }
-    /// <p>The Security Hub default value for a control parameter that is a list of integers.</p>
+    /// <p>The Security Hub CSPM default value for a control parameter that is a list of integers.</p>
     pub fn get_default_value(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.default_value
     }

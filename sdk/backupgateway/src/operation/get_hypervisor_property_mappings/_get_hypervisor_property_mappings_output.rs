@@ -5,7 +5,7 @@
 pub struct GetHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub hypervisor_arn: ::std::option::Option<::std::string::String>,
-    /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This is a display of the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl GetHypervisorPropertyMappingsOutput {
     pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
     }
-    /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This is a display of the mappings of VMware tags to the Amazon Web Services tags.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_to_aws_tag_mappings.is_none()`.
     pub fn vmware_to_aws_tag_mappings(&self) -> &[crate::types::VmwareToAwsTagMapping] {
@@ -67,19 +67,19 @@ impl GetHypervisorPropertyMappingsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vmware_to_aws_tag_mappings`](Self::set_vmware_to_aws_tag_mappings).
     ///
-    /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This is a display of the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub fn vmware_to_aws_tag_mappings(mut self, input: crate::types::VmwareToAwsTagMapping) -> Self {
         let mut v = self.vmware_to_aws_tag_mappings.unwrap_or_default();
         v.push(input);
         self.vmware_to_aws_tag_mappings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This is a display of the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub fn set_vmware_to_aws_tag_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>) -> Self {
         self.vmware_to_aws_tag_mappings = input;
         self
     }
-    /// <p>This is a display of the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    /// <p>This is a display of the mappings of VMware tags to the Amazon Web Services tags.</p>
     pub fn get_vmware_to_aws_tag_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>> {
         &self.vmware_to_aws_tag_mappings
     }

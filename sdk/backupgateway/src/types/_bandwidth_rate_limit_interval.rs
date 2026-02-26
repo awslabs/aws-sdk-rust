@@ -4,9 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BandwidthRateLimitInterval {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
-    /// </note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub average_upload_rate_limit_in_bits_per_sec: ::std::option::Option<i64>,
     /// <p>The hour of the day to start the bandwidth rate limit interval.</p>
     pub start_hour_of_day: i32,
@@ -22,9 +20,7 @@ pub struct BandwidthRateLimitInterval {
     pub days_of_week: ::std::vec::Vec<i32>,
 }
 impl BandwidthRateLimitInterval {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
-    /// </note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub fn average_upload_rate_limit_in_bits_per_sec(&self) -> ::std::option::Option<i64> {
         self.average_upload_rate_limit_in_bits_per_sec
     }
@@ -71,23 +67,17 @@ pub struct BandwidthRateLimitIntervalBuilder {
     pub(crate) days_of_week: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl BandwidthRateLimitIntervalBuilder {
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
-    /// </note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub fn average_upload_rate_limit_in_bits_per_sec(mut self, input: i64) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
-    /// </note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub fn set_average_upload_rate_limit_in_bits_per_sec(mut self, input: ::std::option::Option<i64>) -> Self {
         self.average_upload_rate_limit_in_bits_per_sec = input;
         self
     }
-    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p><note>
-    /// <p>For Backup Gateway, the minimum value is <code>(Value)</code>.</p>
-    /// </note>
+    /// <p>The average upload rate limit component of the bandwidth rate limit interval, in bits per second. This field does not appear in the response if the upload rate limit is not set.</p>
     pub fn get_average_upload_rate_limit_in_bits_per_sec(&self) -> &::std::option::Option<i64> {
         &self.average_upload_rate_limit_in_bits_per_sec
     }

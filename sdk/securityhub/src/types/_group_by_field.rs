@@ -28,6 +28,7 @@
 ///     GroupByField::FindingInfoTypes => { /* ... */ },
 ///     GroupByField::MetadataProductName => { /* ... */ },
 ///     GroupByField::MetadataProductUid => { /* ... */ },
+///     GroupByField::MetadataProductVendorName => { /* ... */ },
 ///     GroupByField::ResourcesType => { /* ... */ },
 ///     GroupByField::ResourcesUid => { /* ... */ },
 ///     GroupByField::Severity => { /* ... */ },
@@ -96,6 +97,8 @@ pub enum GroupByField {
     #[allow(missing_docs)] // documentation missing in model
     MetadataProductUid,
     #[allow(missing_docs)] // documentation missing in model
+    MetadataProductVendorName,
+    #[allow(missing_docs)] // documentation missing in model
     ResourcesType,
     #[allow(missing_docs)] // documentation missing in model
     ResourcesUid,
@@ -132,6 +135,7 @@ impl ::std::convert::From<&str> for GroupByField {
             "finding_info.types" => GroupByField::FindingInfoTypes,
             "metadata.product.name" => GroupByField::MetadataProductName,
             "metadata.product.uid" => GroupByField::MetadataProductUid,
+            "metadata.product.vendor_name" => GroupByField::MetadataProductVendorName,
             "resources.type" => GroupByField::ResourcesType,
             "resources.uid" => GroupByField::ResourcesUid,
             "severity" => GroupByField::Severity,
@@ -170,6 +174,7 @@ impl GroupByField {
             GroupByField::FindingInfoTypes => "finding_info.types",
             GroupByField::MetadataProductName => "metadata.product.name",
             GroupByField::MetadataProductUid => "metadata.product.uid",
+            GroupByField::MetadataProductVendorName => "metadata.product.vendor_name",
             GroupByField::ResourcesType => "resources.type",
             GroupByField::ResourcesUid => "resources.uid",
             GroupByField::Severity => "severity",
@@ -199,6 +204,7 @@ impl GroupByField {
             "finding_info.types",
             "metadata.product.name",
             "metadata.product.uid",
+            "metadata.product.vendor_name",
             "resources.type",
             "resources.uid",
             "severity",
@@ -245,6 +251,7 @@ impl ::std::fmt::Display for GroupByField {
             GroupByField::FindingInfoTypes => write!(f, "finding_info.types"),
             GroupByField::MetadataProductName => write!(f, "metadata.product.name"),
             GroupByField::MetadataProductUid => write!(f, "metadata.product.uid"),
+            GroupByField::MetadataProductVendorName => write!(f, "metadata.product.vendor_name"),
             GroupByField::ResourcesType => write!(f, "resources.type"),
             GroupByField::ResourcesUid => write!(f, "resources.uid"),
             GroupByField::Severity => write!(f, "severity"),

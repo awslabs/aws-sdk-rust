@@ -13,7 +13,7 @@ pub struct AwsElbLoadBalancerDetails {
     /// <p>The ID of the Amazon Route&nbsp;53 hosted zone for the load balancer.</p>
     pub canonical_hosted_zone_name_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates when the load balancer was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub created_time: ::std::option::Option<::std::string::String>,
     /// <p>The DNS name of the load balancer.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
@@ -64,7 +64,7 @@ impl AwsElbLoadBalancerDetails {
         self.canonical_hosted_zone_name_id.as_deref()
     }
     /// <p>Indicates when the load balancer was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_time(&self) -> ::std::option::Option<&str> {
         self.created_time.as_deref()
     }
@@ -231,19 +231,19 @@ impl AwsElbLoadBalancerDetailsBuilder {
         &self.canonical_hosted_zone_name_id
     }
     /// <p>Indicates when the load balancer was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn created_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates when the load balancer was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>Indicates when the load balancer was created.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_time
     }

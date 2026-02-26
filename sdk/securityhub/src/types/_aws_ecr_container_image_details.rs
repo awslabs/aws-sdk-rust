@@ -23,7 +23,7 @@ pub struct AwsEcrContainerImageDetails {
     /// <p>The list of tags that are associated with the image.</p>
     pub image_tags: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The date and time when the image was pushed to the repository.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub image_published_at: ::std::option::Option<::std::string::String>,
 }
 impl AwsEcrContainerImageDetails {
@@ -58,7 +58,7 @@ impl AwsEcrContainerImageDetails {
         self.image_tags.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn image_published_at(&self) -> ::std::option::Option<&str> {
         self.image_published_at.as_deref()
     }
@@ -183,19 +183,19 @@ impl AwsEcrContainerImageDetailsBuilder {
         &self.image_tags
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn image_published_at(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_published_at = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn set_image_published_at(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_published_at = input;
         self
     }
     /// <p>The date and time when the image was pushed to the repository.</p>
-    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
+    /// <p>For more information about the validation and formatting of timestamp fields in Security Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
     pub fn get_image_published_at(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_published_at
     }

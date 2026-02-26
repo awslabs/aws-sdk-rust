@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMembers`](crate::operation::get_members::builders::GetMembersFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_ids(impl Into<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::account_ids) / [`set_account_ids(Option<Vec::<String>>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::set_account_ids):<br>required: **true**<br><p>The list of account IDs for the Security Hub member accounts to return the details for.</p><br>
+    ///   - [`account_ids(impl Into<String>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::account_ids) / [`set_account_ids(Option<Vec::<String>>)`](crate::operation::get_members::builders::GetMembersFluentBuilder::set_account_ids):<br>required: **true**<br><p>The list of account IDs for the Security Hub CSPM member accounts to return the details for.</p><br>
     /// - On success, responds with [`GetMembersOutput`](crate::operation::get_members::GetMembersOutput) with field(s):
-    ///   - [`members(Option<Vec::<Member>>)`](crate::operation::get_members::GetMembersOutput::members): <p>The list of details about the Security Hub member accounts.</p>
+    ///   - [`members(Option<Vec::<Member>>)`](crate::operation::get_members::GetMembersOutput::members): <p>The list of details about the Security Hub CSPM member accounts.</p>
     ///   - [`unprocessed_accounts(Option<Vec::<Result>>)`](crate::operation::get_members::GetMembersOutput::unprocessed_accounts): <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     /// - On failure, responds with [`SdkError<GetMembersError>`](crate::operation::get_members::GetMembersError)
     pub fn get_members(&self) -> crate::operation::get_members::builders::GetMembersFluentBuilder {

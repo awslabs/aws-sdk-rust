@@ -22,7 +22,7 @@ impl crate::operation::delete_members::builders::DeleteMembersInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteMembers`.
 ///
-/// <p>Deletes the specified member accounts from Security Hub.</p>
+/// <p>Deletes the specified member accounts from Security Hub CSPM.</p>
 /// <p>You can invoke this API only to delete accounts that became members through invitation. You can't invoke this API to delete accounts that belong to an Organizations organization.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMembersFluentBuilder {

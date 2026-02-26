@@ -22,7 +22,7 @@ impl crate::operation::get_administrator_account::builders::GetAdministratorAcco
 }
 /// Fluent builder constructing a request to `GetAdministratorAccount`.
 ///
-/// <p>Provides the details for the Security Hub administrator account for the current member account.</p>
+/// <p>Provides the details for the Security Hub CSPM administrator account for the current member account.</p>
 /// <p>Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAdministratorAccountFluentBuilder {
