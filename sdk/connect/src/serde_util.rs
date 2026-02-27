@@ -1608,12 +1608,6 @@ pub(crate) fn evaluation_acknowledgement_correct_errors(
 pub(crate) fn evaluation_review_metadata_correct_errors(
     mut builder: crate::types::builders::EvaluationReviewMetadataBuilder,
 ) -> crate::types::builders::EvaluationReviewMetadataBuilder {
-    if builder.created_time.is_none() {
-        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
-    }
-    if builder.created_by.is_none() {
-        builder.created_by = Some(Default::default())
-    }
     if builder.review_request_comments.is_none() {
         builder.review_request_comments = Some(Default::default())
     }

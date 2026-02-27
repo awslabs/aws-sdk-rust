@@ -138,6 +138,8 @@ impl Client {
 
 mod add_custom_attributes;
 
+mod add_user_pool_client_secret;
+
 mod admin_add_user_to_group;
 
 mod admin_confirm_sign_up;
@@ -265,6 +267,8 @@ mod delete_user_pool;
 
 mod delete_user_pool_client;
 
+mod delete_user_pool_client_secret;
+
 mod delete_user_pool_domain;
 
 mod delete_web_authn_credential;
@@ -334,6 +338,8 @@ mod list_tags_for_resource;
 mod list_terms;
 
 mod list_user_import_jobs;
+
+mod list_user_pool_client_secrets;
 
 mod list_user_pool_clients;
 

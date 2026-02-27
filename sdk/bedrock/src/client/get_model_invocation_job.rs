@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`vpc_config(Option<VpcConfig>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::vpc_config): <p>The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc">Protect batch inference jobs using a VPC</a>.</p>
     ///   - [`timeout_duration_in_hours(Option<i32>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::timeout_duration_in_hours): <p>The number of hours after which batch inference job was set to time out.</p>
     ///   - [`job_expiration_time(Option<DateTime>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::job_expiration_time): <p>The time at which the batch inference job times or timed out.</p>
+    ///   - [`model_invocation_type(Option<ModelInvocationType>)`](crate::operation::get_model_invocation_job::GetModelInvocationJobOutput::model_invocation_type): <p>The invocation endpoint for ModelInvocationJob</p>
     /// - On failure, responds with [`SdkError<GetModelInvocationJobError>`](crate::operation::get_model_invocation_job::GetModelInvocationJobError)
     pub fn get_model_invocation_job(&self) -> crate::operation::get_model_invocation_job::builders::GetModelInvocationJobFluentBuilder {
         crate::operation::get_model_invocation_job::builders::GetModelInvocationJobFluentBuilder::new(self.handle.clone())

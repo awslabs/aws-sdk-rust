@@ -3,6 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>This exception is thrown when you don't have sufficient permissions to perform the requested operation.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::types::error::AliasExistsException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
@@ -27,6 +29,8 @@ pub enum Error {
     GroupExistsException(crate::types::error::GroupExistsException),
     /// <p>This exception is thrown when Amazon Cognito encounters an internal error.</p>
     InternalErrorException(crate::types::error::InternalErrorException),
+    /// <p>This exception is thrown when Amazon Cognito encounters an internal server error.</p>
+    InternalServerException(crate::types::error::InternalServerException),
     /// <p>This exception is thrown when Amazon Cognito isn't allowed to use your email identity. HTTP status code: 400.</p>
     InvalidEmailRoleAccessPolicyException(crate::types::error::InvalidEmailRoleAccessPolicyException),
     /// <p>This exception is thrown when Amazon Cognito encounters an invalid Lambda response.</p>
@@ -125,6 +129,7 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AliasExistsException(inner) => inner.fmt(f),
             Error::CodeDeliveryFailureException(inner) => inner.fmt(f),
             Error::CodeMismatchException(inner) => inner.fmt(f),
@@ -137,6 +142,7 @@ impl ::std::fmt::Display for Error {
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::GroupExistsException(inner) => inner.fmt(f),
             Error::InternalErrorException(inner) => inner.fmt(f),
+            Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidEmailRoleAccessPolicyException(inner) => inner.fmt(f),
             Error::InvalidLambdaResponseException(inner) => inner.fmt(f),
             Error::InvalidOAuthFlowException(inner) => inner.fmt(f),
@@ -201,6 +207,7 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
             Self::AliasExistsException(inner) => inner.meta(),
             Self::CodeDeliveryFailureException(inner) => inner.meta(),
             Self::CodeMismatchException(inner) => inner.meta(),
@@ -213,6 +220,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ForbiddenException(inner) => inner.meta(),
             Self::GroupExistsException(inner) => inner.meta(),
             Self::InternalErrorException(inner) => inner.meta(),
+            Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidEmailRoleAccessPolicyException(inner) => inner.meta(),
             Self::InvalidLambdaResponseException(inner) => inner.meta(),
             Self::InvalidOAuthFlowException(inner) => inner.meta(),
@@ -292,6 +300,48 @@ impl From<crate::operation::add_custom_attributes::AddCustomAttributesError> for
                 Error::UserImportInProgressException(inner)
             }
             crate::operation::add_custom_attributes::AddCustomAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError> for Error {
+    fn from(err: crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError) -> Self {
+        match err {
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::add_user_pool_client_secret::AddUserPoolClientSecretError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1561,6 +1611,9 @@ impl From<crate::operation::complete_web_authn_registration::CompleteWebAuthnReg
             crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
+            crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
+            }
             crate::operation::complete_web_authn_registration::CompleteWebAuthnRegistrationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
@@ -2418,6 +2471,45 @@ impl From<crate::operation::delete_user_pool_client::DeleteUserPoolClientError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError> for Error {
+    fn from(err: crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError) -> Self {
+        match err {
+            crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_user_pool_client_secret::DeleteUserPoolClientSecretError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2490,6 +2582,9 @@ impl From<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentia
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -3738,6 +3833,45 @@ impl From<crate::operation::list_user_pool_clients::ListUserPoolClientsError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError> for Error {
+    fn from(err: crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError) -> Self {
+        match err {
+            crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_user_pool_client_secrets::ListUserPoolClientSecretsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3847,6 +3981,9 @@ impl From<crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsE
             }
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
             }
             crate::operation::list_web_authn_credentials::ListWebAuthnCredentialsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
@@ -4397,6 +4534,9 @@ impl From<crate::operation::start_web_authn_registration::StartWebAuthnRegistrat
             }
             crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
+            }
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
             }
             crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
@@ -5067,6 +5207,7 @@ impl From<crate::operation::verify_user_attribute::VerifyUserAttributeError> for
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
             Error::AliasExistsException(inner) => inner.source(),
             Error::CodeDeliveryFailureException(inner) => inner.source(),
             Error::CodeMismatchException(inner) => inner.source(),
@@ -5079,6 +5220,7 @@ impl ::std::error::Error for Error {
             Error::ForbiddenException(inner) => inner.source(),
             Error::GroupExistsException(inner) => inner.source(),
             Error::InternalErrorException(inner) => inner.source(),
+            Error::InternalServerException(inner) => inner.source(),
             Error::InvalidEmailRoleAccessPolicyException(inner) => inner.source(),
             Error::InvalidLambdaResponseException(inner) => inner.source(),
             Error::InvalidOAuthFlowException(inner) => inner.source(),
@@ -5129,6 +5271,7 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
             Self::AliasExistsException(e) => e.request_id(),
             Self::CodeDeliveryFailureException(e) => e.request_id(),
             Self::CodeMismatchException(e) => e.request_id(),
@@ -5141,6 +5284,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ForbiddenException(e) => e.request_id(),
             Self::GroupExistsException(e) => e.request_id(),
             Self::InternalErrorException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
             Self::InvalidEmailRoleAccessPolicyException(e) => e.request_id(),
             Self::InvalidLambdaResponseException(e) => e.request_id(),
             Self::InvalidOAuthFlowException(e) => e.request_id(),

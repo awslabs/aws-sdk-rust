@@ -15,6 +15,8 @@ pub struct StartPlanExecutionInput {
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A boolean value indicating whether to use the latest version of the plan. If set to false, you must specify a specific version.</p>
     pub latest_version: ::std::option::Option<::std::string::String>,
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub recovery_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StartPlanExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the plan to execute.</p>
@@ -41,6 +43,10 @@ impl StartPlanExecutionInput {
     pub fn latest_version(&self) -> ::std::option::Option<&str> {
         self.latest_version.as_deref()
     }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(&self) -> ::std::option::Option<&str> {
+        self.recovery_execution_id.as_deref()
+    }
 }
 impl StartPlanExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartPlanExecutionInput`](crate::operation::start_plan_execution::StartPlanExecutionInput).
@@ -59,6 +65,7 @@ pub struct StartPlanExecutionInputBuilder {
     pub(crate) mode: ::std::option::Option<crate::types::ExecutionMode>,
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) latest_version: ::std::option::Option<::std::string::String>,
+    pub(crate) recovery_execution_id: ::std::option::Option<::std::string::String>,
 }
 impl StartPlanExecutionInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the plan to execute.</p>
@@ -148,6 +155,20 @@ impl StartPlanExecutionInputBuilder {
     pub fn get_latest_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_version
     }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recovery_execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn set_recovery_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recovery_execution_id = input;
+        self
+    }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn get_recovery_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_execution_id
+    }
     /// Consumes the builder and constructs a [`StartPlanExecutionInput`](crate::operation::start_plan_execution::StartPlanExecutionInput).
     pub fn build(
         self,
@@ -160,6 +181,7 @@ impl StartPlanExecutionInputBuilder {
             mode: self.mode,
             comment: self.comment,
             latest_version: self.latest_version,
+            recovery_execution_id: self.recovery_execution_id,
         })
     }
 }

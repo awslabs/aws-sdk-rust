@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_custom_attributes;
 
+pub(crate) mod shape_add_user_pool_client_secret;
+
 pub(crate) mod shape_admin_add_user_to_group;
 
 pub(crate) mod shape_admin_confirm_sign_up;
@@ -125,6 +127,8 @@ pub(crate) mod shape_delete_user_pool;
 
 pub(crate) mod shape_delete_user_pool_client;
 
+pub(crate) mod shape_delete_user_pool_client_secret;
+
 pub(crate) mod shape_delete_user_pool_domain;
 
 pub(crate) mod shape_delete_web_authn_credential;
@@ -195,6 +199,8 @@ pub(crate) mod shape_list_terms;
 
 pub(crate) mod shape_list_user_import_jobs;
 
+pub(crate) mod shape_list_user_pool_client_secrets;
+
 pub(crate) mod shape_list_user_pool_clients;
 
 pub(crate) mod shape_list_user_pools;
@@ -261,12 +267,6 @@ pub(crate) mod shape_verify_software_token;
 
 pub(crate) mod shape_verify_user_attribute;
 
-pub(crate) mod shape_add_custom_attributes_input;
-
-pub(crate) mod shape_admin_add_user_to_group_input;
-
-pub(crate) mod shape_admin_confirm_sign_up_input;
-
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -274,6 +274,16 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_add_custom_attributes_input;
+
+pub(crate) mod shape_add_user_pool_client_secret_input;
+
+pub(crate) mod shape_admin_add_user_to_group_input;
+
+pub(crate) mod shape_admin_confirm_sign_up_input;
 
 pub(crate) mod shape_admin_create_user_input;
 
@@ -377,6 +387,8 @@ pub(crate) mod shape_delete_user_input;
 
 pub(crate) mod shape_delete_user_pool_client_input;
 
+pub(crate) mod shape_delete_user_pool_client_secret_input;
+
 pub(crate) mod shape_delete_user_pool_domain_input;
 
 pub(crate) mod shape_delete_user_pool_input;
@@ -451,6 +463,8 @@ pub(crate) mod shape_initiate_auth_input;
 
 pub(crate) mod shape_internal_error_exception;
 
+pub(crate) mod shape_internal_server_exception;
+
 pub(crate) mod shape_invalid_email_role_access_policy_exception;
 
 pub(crate) mod shape_invalid_lambda_response_exception;
@@ -482,6 +496,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 pub(crate) mod shape_list_terms_input;
 
 pub(crate) mod shape_list_user_import_jobs_input;
+
+pub(crate) mod shape_list_user_pool_client_secrets_input;
 
 pub(crate) mod shape_list_user_pool_clients_input;
 
@@ -640,6 +656,10 @@ pub(crate) mod shape_authentication_result_type;
 pub(crate) mod shape_available_challenge_list_type;
 
 pub(crate) mod shape_challenge_parameters_type;
+
+pub(crate) mod shape_client_secret_descriptor_list_type;
+
+pub(crate) mod shape_client_secret_descriptor_type;
 
 pub(crate) mod shape_code_delivery_details_list_type;
 

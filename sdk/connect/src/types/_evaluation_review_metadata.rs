@@ -6,9 +6,15 @@
 pub struct EvaluationReviewMetadata {
     /// <p>The unique identifier for the evaluation review.</p>
     pub review_id: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the evaluation review was requested.</p>
+    pub requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The user who requested the evaluation review.</p>
+    pub requested_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the evaluation review was created.</p>
+    #[deprecated(note = "CreatedTime is deprecated.", since = "02/17/2026")]
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The user who created the evaluation review.</p>
+    #[deprecated(note = "CreatedBy is deprecated.", since = "02/17/2026")]
     pub created_by: ::std::string::String,
     /// <p>Comments provided when requesting the evaluation review.</p>
     pub review_request_comments: ::std::vec::Vec<crate::types::EvaluationReviewRequestComment>,
@@ -18,11 +24,21 @@ impl EvaluationReviewMetadata {
     pub fn review_id(&self) -> ::std::option::Option<&str> {
         self.review_id.as_deref()
     }
+    /// <p>The timestamp when the evaluation review was requested.</p>
+    pub fn requested_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.requested_time.as_ref()
+    }
+    /// <p>The user who requested the evaluation review.</p>
+    pub fn requested_by(&self) -> ::std::option::Option<&str> {
+        self.requested_by.as_deref()
+    }
     /// <p>The timestamp when the evaluation review was created.</p>
+    #[deprecated(note = "CreatedTime is deprecated.", since = "02/17/2026")]
     pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
         &self.created_time
     }
     /// <p>The user who created the evaluation review.</p>
+    #[deprecated(note = "CreatedBy is deprecated.", since = "02/17/2026")]
     pub fn created_by(&self) -> &str {
         use std::ops::Deref;
         self.created_by.deref()
@@ -45,6 +61,8 @@ impl EvaluationReviewMetadata {
 #[non_exhaustive]
 pub struct EvaluationReviewMetadataBuilder {
     pub(crate) review_id: ::std::option::Option<::std::string::String>,
+    pub(crate) requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) requested_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) review_request_comments: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationReviewRequestComment>>,
@@ -64,33 +82,65 @@ impl EvaluationReviewMetadataBuilder {
     pub fn get_review_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.review_id
     }
+    /// <p>The timestamp when the evaluation review was requested.</p>
+    pub fn requested_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.requested_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the evaluation review was requested.</p>
+    pub fn set_requested_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.requested_time = input;
+        self
+    }
+    /// <p>The timestamp when the evaluation review was requested.</p>
+    pub fn get_requested_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.requested_time
+    }
+    /// <p>The user who requested the evaluation review.</p>
+    pub fn requested_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.requested_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The user who requested the evaluation review.</p>
+    pub fn set_requested_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.requested_by = input;
+        self
+    }
+    /// <p>The user who requested the evaluation review.</p>
+    pub fn get_requested_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.requested_by
+    }
     /// <p>The timestamp when the evaluation review was created.</p>
-    /// This field is required.
+    #[deprecated(note = "CreatedTime is deprecated.", since = "02/17/2026")]
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the evaluation review was created.</p>
+    #[deprecated(note = "CreatedTime is deprecated.", since = "02/17/2026")]
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
     /// <p>The timestamp when the evaluation review was created.</p>
+    #[deprecated(note = "CreatedTime is deprecated.", since = "02/17/2026")]
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_time
     }
     /// <p>The user who created the evaluation review.</p>
-    /// This field is required.
+    #[deprecated(note = "CreatedBy is deprecated.", since = "02/17/2026")]
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user who created the evaluation review.</p>
+    #[deprecated(note = "CreatedBy is deprecated.", since = "02/17/2026")]
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
     /// <p>The user who created the evaluation review.</p>
+    #[deprecated(note = "CreatedBy is deprecated.", since = "02/17/2026")]
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
@@ -119,24 +169,16 @@ impl EvaluationReviewMetadataBuilder {
     }
     /// Consumes the builder and constructs a [`EvaluationReviewMetadata`](crate::types::EvaluationReviewMetadata).
     /// This method will fail if any of the following fields are not set:
-    /// - [`created_time`](crate::types::builders::EvaluationReviewMetadataBuilder::created_time)
-    /// - [`created_by`](crate::types::builders::EvaluationReviewMetadataBuilder::created_by)
     /// - [`review_request_comments`](crate::types::builders::EvaluationReviewMetadataBuilder::review_request_comments)
     pub fn build(self) -> ::std::result::Result<crate::types::EvaluationReviewMetadata, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EvaluationReviewMetadata {
             review_id: self.review_id,
-            created_time: self.created_time.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_time",
-                    "created_time was not specified but it is required when building EvaluationReviewMetadata",
-                )
-            })?,
-            created_by: self.created_by.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "created_by",
-                    "created_by was not specified but it is required when building EvaluationReviewMetadata",
-                )
-            })?,
+            requested_time: self.requested_time,
+            requested_by: self.requested_by,
+            created_time: self
+                .created_time
+                .unwrap_or_else(|| ::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64)),
+            created_by: self.created_by.unwrap_or_else(|| "n/a".to_owned()),
             review_request_comments: self.review_request_comments.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "review_request_comments",

@@ -31,6 +31,9 @@ pub(crate) fn de_abbreviated_execution(
             "executionState" => builder.set_execution_state(Some(decoder.string().map(|s| crate::types::ExecutionState::from(s.as_ref()))?)),
             "executionAction" => builder.set_execution_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_ref()))?)),
             "executionRegion" => builder.set_execution_region(Some(decoder.string()?)),
+            "recoveryExecutionId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_recovery_execution_id(Some(decoder.string()?)))
+            })?,
             "actualRecoveryTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_actual_recovery_time(Some(decoder.string()?)))
             })?,

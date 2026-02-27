@@ -103,6 +103,12 @@ pub fn ser_compute_resource(
         }
         array_28.finish();
     }
+    if let Some(var_31) = &input.scaling_policy {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("scalingPolicy").start_object();
+        crate::protocol_serde::shape_compute_scaling_policy::ser_compute_scaling_policy(&mut object_32, var_31)?;
+        object_32.finish();
+    }
     Ok(())
 }
 
@@ -218,6 +224,11 @@ where
                         }
                         "ec2Configuration" => {
                             builder = builder.set_ec2_configuration(crate::protocol_serde::shape_ec2_configuration_list::de_ec2_configuration_list(
+                                tokens, _value,
+                            )?);
+                        }
+                        "scalingPolicy" => {
+                            builder = builder.set_scaling_policy(crate::protocol_serde::shape_compute_scaling_policy::de_compute_scaling_policy(
                                 tokens, _value,
                             )?);
                         }

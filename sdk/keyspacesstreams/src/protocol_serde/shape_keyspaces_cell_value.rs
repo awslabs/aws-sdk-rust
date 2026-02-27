@@ -84,6 +84,14 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'doubleT' cannot be null")
                                 })?,
                         )),
+                        "durationT" => Some(crate::types::KeyspacesCellValue::DurationT(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'durationT' cannot be null")
+                                })?,
+                        )),
                         "floatT" => Some(crate::types::KeyspacesCellValue::FloatT(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))

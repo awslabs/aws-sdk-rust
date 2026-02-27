@@ -14,6 +14,7 @@
 /// match workflowtargetaction {
 ///     WorkflowTargetAction::Activate => { /* ... */ },
 ///     WorkflowTargetAction::Deactivate => { /* ... */ },
+///     WorkflowTargetAction::PostRecovery => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum WorkflowTargetAction {
     Activate,
     #[allow(missing_docs)] // documentation missing in model
     Deactivate,
+    #[allow(missing_docs)] // documentation missing in model
+    PostRecovery,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for WorkflowTargetAction {
         match s {
             "activate" => WorkflowTargetAction::Activate,
             "deactivate" => WorkflowTargetAction::Deactivate,
+            "postRecovery" => WorkflowTargetAction::PostRecovery,
             other => WorkflowTargetAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl WorkflowTargetAction {
         match self {
             WorkflowTargetAction::Activate => "activate",
             WorkflowTargetAction::Deactivate => "deactivate",
+            WorkflowTargetAction::PostRecovery => "postRecovery",
             WorkflowTargetAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["activate", "deactivate"]
+        &["activate", "deactivate", "postRecovery"]
     }
 }
 impl ::std::convert::AsRef<str> for WorkflowTargetAction {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for WorkflowTargetAction {
         match self {
             WorkflowTargetAction::Activate => write!(f, "activate"),
             WorkflowTargetAction::Deactivate => write!(f, "deactivate"),
+            WorkflowTargetAction::PostRecovery => write!(f, "postRecovery"),
             WorkflowTargetAction::Unknown(value) => write!(f, "{value}"),
         }
     }

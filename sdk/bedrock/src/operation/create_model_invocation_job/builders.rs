@@ -240,4 +240,18 @@ impl CreateModelInvocationJobFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn model_invocation_type(mut self, input: crate::types::ModelInvocationType) -> Self {
+        self.inner = self.inner.model_invocation_type(input);
+        self
+    }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn set_model_invocation_type(mut self, input: ::std::option::Option<crate::types::ModelInvocationType>) -> Self {
+        self.inner = self.inner.set_model_invocation_type(input);
+        self
+    }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn get_model_invocation_type(&self) -> &::std::option::Option<crate::types::ModelInvocationType> {
+        self.inner.get_model_invocation_type()
+    }
 }

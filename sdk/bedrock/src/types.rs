@@ -115,6 +115,8 @@ pub use crate::types::_model_invocation_job_input_data_config::ModelInvocationJo
 
 pub use crate::types::_model_invocation_job_output_data_config::ModelInvocationJobOutputDataConfig;
 
+pub use crate::types::_model_invocation_type::ModelInvocationType;
+
 pub use crate::types::_model_invocation_job_status::ModelInvocationJobStatus;
 
 pub use crate::types::_foundation_model_details::FoundationModelDetails;
@@ -1130,6 +1132,8 @@ mod _model_invocation_job_s3_output_data_config;
 mod _model_invocation_job_status;
 
 mod _model_invocation_job_summary;
+
+mod _model_invocation_type;
 
 mod _model_modality;
 

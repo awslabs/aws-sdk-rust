@@ -21,6 +21,8 @@ pub struct PutProfileObjectTypeInput {
     pub source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     /// <p>The amount of profile object max count assigned to the object type</p>
     pub max_profile_object_count: ::std::option::Option<i32>,
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub source_priority: ::std::option::Option<i32>,
     /// <p>A map of the name and ObjectType field.</p>
     pub fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     /// <p>A list of unique keys that can be used to map data to the profile.</p>
@@ -65,6 +67,10 @@ impl PutProfileObjectTypeInput {
     pub fn max_profile_object_count(&self) -> ::std::option::Option<i32> {
         self.max_profile_object_count
     }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn source_priority(&self) -> ::std::option::Option<i32> {
+        self.source_priority
+    }
     /// <p>A map of the name and ObjectType field.</p>
     pub fn fields(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>> {
         self.fields.as_ref()
@@ -90,6 +96,7 @@ impl ::std::fmt::Debug for PutProfileObjectTypeInput {
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
         formatter.field("source_last_updated_timestamp_format", &self.source_last_updated_timestamp_format);
         formatter.field("max_profile_object_count", &self.max_profile_object_count);
+        formatter.field("source_priority", &self.source_priority);
         formatter.field("fields", &"*** Sensitive Data Redacted ***");
         formatter.field("keys", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
@@ -116,6 +123,7 @@ pub struct PutProfileObjectTypeInputBuilder {
     pub(crate) allow_profile_creation: ::std::option::Option<bool>,
     pub(crate) source_last_updated_timestamp_format: ::std::option::Option<::std::string::String>,
     pub(crate) max_profile_object_count: ::std::option::Option<i32>,
+    pub(crate) source_priority: ::std::option::Option<i32>,
     pub(crate) fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ObjectTypeField>>,
     pub(crate) keys: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<crate::types::ObjectTypeKey>>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -250,6 +258,20 @@ impl PutProfileObjectTypeInputBuilder {
     pub fn get_max_profile_object_count(&self) -> &::std::option::Option<i32> {
         &self.max_profile_object_count
     }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn source_priority(mut self, input: i32) -> Self {
+        self.source_priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn set_source_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.source_priority = input;
+        self
+    }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn get_source_priority(&self) -> &::std::option::Option<i32> {
+        &self.source_priority
+    }
     /// Adds a key-value pair to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
@@ -333,6 +355,7 @@ impl PutProfileObjectTypeInputBuilder {
             allow_profile_creation: self.allow_profile_creation,
             source_last_updated_timestamp_format: self.source_last_updated_timestamp_format,
             max_profile_object_count: self.max_profile_object_count,
+            source_priority: self.source_priority,
             fields: self.fields,
             keys: self.keys,
             tags: self.tags,
@@ -351,6 +374,7 @@ impl ::std::fmt::Debug for PutProfileObjectTypeInputBuilder {
         formatter.field("allow_profile_creation", &self.allow_profile_creation);
         formatter.field("source_last_updated_timestamp_format", &self.source_last_updated_timestamp_format);
         formatter.field("max_profile_object_count", &self.max_profile_object_count);
+        formatter.field("source_priority", &self.source_priority);
         formatter.field("fields", &"*** Sensitive Data Redacted ***");
         formatter.field("keys", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);

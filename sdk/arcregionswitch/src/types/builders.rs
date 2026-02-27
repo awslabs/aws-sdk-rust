@@ -57,6 +57,10 @@ pub use crate::types::_route53_health_check_configuration::Route53HealthCheckCon
 
 pub use crate::types::_document_db_configuration::DocumentDbConfigurationBuilder;
 
+pub use crate::types::_rds_promote_read_replica_configuration::RdsPromoteReadReplicaConfigurationBuilder;
+
+pub use crate::types::_rds_create_cross_region_replica_configuration::RdsCreateCrossRegionReplicaConfigurationBuilder;
+
 pub use crate::types::_lambda_ungraceful::LambdaUngracefulBuilder;
 
 pub use crate::types::_ec2_ungraceful::Ec2UngracefulBuilder;

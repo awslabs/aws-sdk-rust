@@ -195,6 +195,10 @@ pub(crate) mod shape_global_aurora_configuration;
 
 pub(crate) mod shape_parallel_execution_block_configuration;
 
+pub(crate) mod shape_rds_create_cross_region_replica_configuration;
+
+pub(crate) mod shape_rds_promote_read_replica_configuration;
+
 pub(crate) mod shape_region_switch_plan_configuration;
 
 pub(crate) mod shape_route53_health_check_configuration;
@@ -244,6 +248,8 @@ pub(crate) mod shape_eks_clusters;
 pub(crate) mod shape_kubernetes_scaling_apps;
 
 pub(crate) mod shape_lambda_list;
+
+pub(crate) mod shape_rds_db_instance_arn_map;
 
 pub(crate) mod shape_region_and_routing_controls;
 

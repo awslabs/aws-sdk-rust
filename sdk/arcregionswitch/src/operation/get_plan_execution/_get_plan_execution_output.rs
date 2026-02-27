@@ -25,6 +25,8 @@ pub struct GetPlanExecutionOutput {
     pub execution_action: crate::types::ExecutionAction,
     /// <p>The Amazon Web Services Region for a plan execution.</p>
     pub execution_region: ::std::string::String,
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub recovery_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The states of the steps in the plan execution.</p>
     pub step_states: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
     /// <p>The details of the Region switch plan.</p>
@@ -85,6 +87,10 @@ impl GetPlanExecutionOutput {
         use std::ops::Deref;
         self.execution_region.deref()
     }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(&self) -> ::std::option::Option<&str> {
+        self.recovery_execution_id.as_deref()
+    }
     /// <p>The states of the steps in the plan execution.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.step_states.is_none()`.
@@ -137,6 +143,7 @@ pub struct GetPlanExecutionOutputBuilder {
     pub(crate) execution_state: ::std::option::Option<crate::types::ExecutionState>,
     pub(crate) execution_action: ::std::option::Option<crate::types::ExecutionAction>,
     pub(crate) execution_region: ::std::option::Option<::std::string::String>,
+    pub(crate) recovery_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) step_states: ::std::option::Option<::std::vec::Vec<crate::types::StepState>>,
     pub(crate) plan: ::std::option::Option<crate::types::Plan>,
     pub(crate) actual_recovery_time: ::std::option::Option<::std::string::String>,
@@ -306,6 +313,20 @@ impl GetPlanExecutionOutputBuilder {
     pub fn get_execution_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_region
     }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recovery_execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn set_recovery_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recovery_execution_id = input;
+        self
+    }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn get_recovery_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_execution_id
+    }
     /// Appends an item to `step_states`.
     ///
     /// To override the contents of this collection use [`set_step_states`](Self::set_step_states).
@@ -456,6 +477,7 @@ impl GetPlanExecutionOutputBuilder {
                     "execution_region was not specified but it is required when building GetPlanExecutionOutput",
                 )
             })?,
+            recovery_execution_id: self.recovery_execution_id,
             step_states: self.step_states,
             plan: self.plan,
             actual_recovery_time: self.actual_recovery_time,

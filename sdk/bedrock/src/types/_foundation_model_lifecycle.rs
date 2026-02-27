@@ -6,11 +6,35 @@
 pub struct FoundationModelLifecycle {
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
     pub status: crate::types::FoundationModelLifecycleStatus,
+    /// <p>Launch time when the model first becomes available</p>
+    pub start_of_life_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Time when the model is no longer available for use</p>
+    pub end_of_life_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Time when the model enters legacy state. Models in legacy state can still be used, but users should plan to transition to an Active model before the end of life time</p>
+    pub legacy_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Public extended access portion of the legacy period, when users should expect higher pricing</p>
+    pub public_extended_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FoundationModelLifecycle {
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
     pub fn status(&self) -> &crate::types::FoundationModelLifecycleStatus {
         &self.status
+    }
+    /// <p>Launch time when the model first becomes available</p>
+    pub fn start_of_life_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_of_life_time.as_ref()
+    }
+    /// <p>Time when the model is no longer available for use</p>
+    pub fn end_of_life_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_of_life_time.as_ref()
+    }
+    /// <p>Time when the model enters legacy state. Models in legacy state can still be used, but users should plan to transition to an Active model before the end of life time</p>
+    pub fn legacy_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.legacy_time.as_ref()
+    }
+    /// <p>Public extended access portion of the legacy period, when users should expect higher pricing</p>
+    pub fn public_extended_access_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.public_extended_access_time.as_ref()
     }
 }
 impl FoundationModelLifecycle {
@@ -25,6 +49,10 @@ impl FoundationModelLifecycle {
 #[non_exhaustive]
 pub struct FoundationModelLifecycleBuilder {
     pub(crate) status: ::std::option::Option<crate::types::FoundationModelLifecycleStatus>,
+    pub(crate) start_of_life_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_of_life_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) legacy_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) public_extended_access_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl FoundationModelLifecycleBuilder {
     /// <p>Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated (<code>LEGACY</code>.</p>
@@ -42,6 +70,62 @@ impl FoundationModelLifecycleBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FoundationModelLifecycleStatus> {
         &self.status
     }
+    /// <p>Launch time when the model first becomes available</p>
+    pub fn start_of_life_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_of_life_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Launch time when the model first becomes available</p>
+    pub fn set_start_of_life_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_of_life_time = input;
+        self
+    }
+    /// <p>Launch time when the model first becomes available</p>
+    pub fn get_start_of_life_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_of_life_time
+    }
+    /// <p>Time when the model is no longer available for use</p>
+    pub fn end_of_life_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_of_life_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Time when the model is no longer available for use</p>
+    pub fn set_end_of_life_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_of_life_time = input;
+        self
+    }
+    /// <p>Time when the model is no longer available for use</p>
+    pub fn get_end_of_life_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_of_life_time
+    }
+    /// <p>Time when the model enters legacy state. Models in legacy state can still be used, but users should plan to transition to an Active model before the end of life time</p>
+    pub fn legacy_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.legacy_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Time when the model enters legacy state. Models in legacy state can still be used, but users should plan to transition to an Active model before the end of life time</p>
+    pub fn set_legacy_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.legacy_time = input;
+        self
+    }
+    /// <p>Time when the model enters legacy state. Models in legacy state can still be used, but users should plan to transition to an Active model before the end of life time</p>
+    pub fn get_legacy_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.legacy_time
+    }
+    /// <p>Public extended access portion of the legacy period, when users should expect higher pricing</p>
+    pub fn public_extended_access_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.public_extended_access_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Public extended access portion of the legacy period, when users should expect higher pricing</p>
+    pub fn set_public_extended_access_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.public_extended_access_time = input;
+        self
+    }
+    /// <p>Public extended access portion of the legacy period, when users should expect higher pricing</p>
+    pub fn get_public_extended_access_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.public_extended_access_time
+    }
     /// Consumes the builder and constructs a [`FoundationModelLifecycle`](crate::types::FoundationModelLifecycle).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::FoundationModelLifecycleBuilder::status)
@@ -53,6 +137,10 @@ impl FoundationModelLifecycleBuilder {
                     "status was not specified but it is required when building FoundationModelLifecycle",
                 )
             })?,
+            start_of_life_time: self.start_of_life_time,
+            end_of_life_time: self.end_of_life_time,
+            legacy_time: self.legacy_time,
+            public_extended_access_time: self.public_extended_access_time,
         })
     }
 }

@@ -22,6 +22,10 @@ pub enum ExecutionBlockConfiguration {
     GlobalAuroraConfig(crate::types::GlobalAuroraConfiguration),
     /// <p>A parallel configuration execution block.</p>
     ParallelConfig(crate::types::ParallelExecutionBlockConfiguration),
+    /// <p>An Amazon RDS create cross-Region replica execution block.</p>
+    RdsCreateCrossRegionReadReplicaConfig(crate::types::RdsCreateCrossRegionReplicaConfiguration),
+    /// <p>An Amazon RDS promote read replica execution block.</p>
+    RdsPromoteReadReplicaConfig(crate::types::RdsPromoteReadReplicaConfiguration),
     /// <p>A Region switch plan execution block.</p>
     RegionSwitchPlanConfig(crate::types::RegionSwitchPlanConfiguration),
     /// <p>The Amazon Route 53 health check configuration.</p>
@@ -153,6 +157,34 @@ impl ExecutionBlockConfiguration {
     /// Returns true if this is a [`ParallelConfig`](crate::types::ExecutionBlockConfiguration::ParallelConfig).
     pub fn is_parallel_config(&self) -> bool {
         self.as_parallel_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsCreateCrossRegionReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsCreateCrossRegionReadReplicaConfig), extracting the inner [`RdsCreateCrossRegionReplicaConfiguration`](crate::types::RdsCreateCrossRegionReplicaConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_create_cross_region_read_replica_config(
+        &self,
+    ) -> ::std::result::Result<&crate::types::RdsCreateCrossRegionReplicaConfiguration, &Self> {
+        if let ExecutionBlockConfiguration::RdsCreateCrossRegionReadReplicaConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsCreateCrossRegionReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsCreateCrossRegionReadReplicaConfig).
+    pub fn is_rds_create_cross_region_read_replica_config(&self) -> bool {
+        self.as_rds_create_cross_region_read_replica_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsPromoteReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig), extracting the inner [`RdsPromoteReadReplicaConfiguration`](crate::types::RdsPromoteReadReplicaConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_promote_read_replica_config(&self) -> ::std::result::Result<&crate::types::RdsPromoteReadReplicaConfiguration, &Self> {
+        if let ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsPromoteReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig).
+    pub fn is_rds_promote_read_replica_config(&self) -> bool {
+        self.as_rds_promote_read_replica_config().is_ok()
     }
     /// Tries to convert the enum instance into [`RegionSwitchPlanConfig`](crate::types::ExecutionBlockConfiguration::RegionSwitchPlanConfig), extracting the inner [`RegionSwitchPlanConfiguration`](crate::types::RegionSwitchPlanConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

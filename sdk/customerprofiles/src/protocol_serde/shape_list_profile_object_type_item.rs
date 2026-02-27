@@ -55,6 +55,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SourcePriority" => {
+                            builder = builder.set_source_priority(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value)?);
                         }

@@ -235,6 +235,8 @@ pub(crate) mod shape_resource_share;
 
 pub(crate) mod shape_resource_share_association_list;
 
+pub(crate) mod shape_resource_share_configuration;
+
 pub(crate) mod shape_resource_share_invitation;
 
 pub(crate) mod shape_resource_share_invitation_list;

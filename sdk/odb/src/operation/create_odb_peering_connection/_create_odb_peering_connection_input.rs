@@ -11,6 +11,8 @@ pub struct CreateOdbPeeringConnectionInput {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A list of CIDR blocks to add to the peering connection. These CIDR blocks define the IP address ranges that can communicate through the peering connection.</p>
     pub peer_network_cidrs_to_be_added: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub peer_network_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -39,6 +41,12 @@ impl CreateOdbPeeringConnectionInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.peer_network_cidrs_to_be_added.is_none()`.
     pub fn peer_network_cidrs_to_be_added(&self) -> &[::std::string::String] {
         self.peer_network_cidrs_to_be_added.as_deref().unwrap_or_default()
+    }
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.peer_network_route_table_ids.is_none()`.
+    pub fn peer_network_route_table_ids(&self) -> &[::std::string::String] {
+        self.peer_network_route_table_ids.as_deref().unwrap_or_default()
     }
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
@@ -69,6 +77,7 @@ pub struct CreateOdbPeeringConnectionInputBuilder {
     pub(crate) peer_network_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) peer_network_cidrs_to_be_added: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) peer_network_route_table_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -137,6 +146,26 @@ impl CreateOdbPeeringConnectionInputBuilder {
     pub fn get_peer_network_cidrs_to_be_added(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.peer_network_cidrs_to_be_added
     }
+    /// Appends an item to `peer_network_route_table_ids`.
+    ///
+    /// To override the contents of this collection use [`set_peer_network_route_table_ids`](Self::set_peer_network_route_table_ids).
+    ///
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub fn peer_network_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.peer_network_route_table_ids.unwrap_or_default();
+        v.push(input.into());
+        self.peer_network_route_table_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub fn set_peer_network_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.peer_network_route_table_ids = input;
+        self
+    }
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub fn get_peer_network_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.peer_network_route_table_ids
+    }
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -198,6 +227,7 @@ impl CreateOdbPeeringConnectionInputBuilder {
             peer_network_id: self.peer_network_id,
             display_name: self.display_name,
             peer_network_cidrs_to_be_added: self.peer_network_cidrs_to_be_added,
+            peer_network_route_table_ids: self.peer_network_route_table_ids,
             client_token: self.client_token,
             tags: self.tags,
         })

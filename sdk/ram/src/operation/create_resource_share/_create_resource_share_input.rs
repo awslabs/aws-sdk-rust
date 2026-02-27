@@ -38,6 +38,8 @@ pub struct CreateResourceShareInput {
     pub permission_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies source constraints (accounts, ARNs, organization IDs, or organization paths) that limit when service principals can access resources in this resource share. When a service principal attempts to access a shared resource, validation is performed to ensure the request originates from one of the specified sources. This helps prevent confused deputy attacks by applying constraints on where service principals can access resources from.</p>
     pub sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub resource_share_configuration: ::std::option::Option<crate::types::ResourceShareConfiguration>,
 }
 impl CreateResourceShareInput {
     /// <p>Specifies the name of the resource share.</p>
@@ -101,6 +103,10 @@ impl CreateResourceShareInput {
     pub fn sources(&self) -> &[::std::string::String] {
         self.sources.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn resource_share_configuration(&self) -> ::std::option::Option<&crate::types::ResourceShareConfiguration> {
+        self.resource_share_configuration.as_ref()
+    }
 }
 impl CreateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
@@ -121,6 +127,7 @@ pub struct CreateResourceShareInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) permission_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) sources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_share_configuration: ::std::option::Option<crate::types::ResourceShareConfiguration>,
 }
 impl CreateResourceShareInputBuilder {
     /// <p>Specifies the name of the resource share.</p>
@@ -323,6 +330,20 @@ impl CreateResourceShareInputBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.sources
     }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn resource_share_configuration(mut self, input: crate::types::ResourceShareConfiguration) -> Self {
+        self.resource_share_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn set_resource_share_configuration(mut self, input: ::std::option::Option<crate::types::ResourceShareConfiguration>) -> Self {
+        self.resource_share_configuration = input;
+        self
+    }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn get_resource_share_configuration(&self) -> &::std::option::Option<crate::types::ResourceShareConfiguration> {
+        &self.resource_share_configuration
+    }
     /// Consumes the builder and constructs a [`CreateResourceShareInput`](crate::operation::create_resource_share::CreateResourceShareInput).
     pub fn build(
         self,
@@ -337,6 +358,7 @@ impl CreateResourceShareInputBuilder {
             client_token: self.client_token,
             permission_arns: self.permission_arns,
             sources: self.sources,
+            resource_share_configuration: self.resource_share_configuration,
         })
     }
 }

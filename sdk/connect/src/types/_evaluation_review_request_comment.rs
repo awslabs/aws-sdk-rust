@@ -6,9 +6,9 @@
 pub struct EvaluationReviewRequestComment {
     /// <p>The text content of the review request comment.</p>
     pub comment: ::std::option::Option<::std::string::String>,
-    /// <p>The timestamp when the review request comment was created.</p>
+    /// <p>The timestamp when the evaluation review request comment was created.</p>
     pub created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The user who created the review request comment.</p>
+    /// <p>The user who created the evaluation review request comment.</p>
     pub created_by: ::std::option::Option<::std::string::String>,
 }
 impl EvaluationReviewRequestComment {
@@ -16,11 +16,11 @@ impl EvaluationReviewRequestComment {
     pub fn comment(&self) -> ::std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>The timestamp when the review request comment was created.</p>
+    /// <p>The timestamp when the evaluation review request comment was created.</p>
     pub fn created_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
-    /// <p>The user who created the review request comment.</p>
+    /// <p>The user who created the evaluation review request comment.</p>
     pub fn created_by(&self) -> ::std::option::Option<&str> {
         self.created_by.as_deref()
     }
@@ -55,31 +55,31 @@ impl EvaluationReviewRequestCommentBuilder {
     pub fn get_comment(&self) -> &::std::option::Option<::std::string::String> {
         &self.comment
     }
-    /// <p>The timestamp when the review request comment was created.</p>
+    /// <p>The timestamp when the evaluation review request comment was created.</p>
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The timestamp when the review request comment was created.</p>
+    /// <p>The timestamp when the evaluation review request comment was created.</p>
     pub fn set_created_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_time = input;
         self
     }
-    /// <p>The timestamp when the review request comment was created.</p>
+    /// <p>The timestamp when the evaluation review request comment was created.</p>
     pub fn get_created_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_time
     }
-    /// <p>The user who created the review request comment.</p>
+    /// <p>The user who created the evaluation review request comment.</p>
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.created_by = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The user who created the review request comment.</p>
+    /// <p>The user who created the evaluation review request comment.</p>
     pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.created_by = input;
         self
     }
-    /// <p>The user who created the review request comment.</p>
+    /// <p>The user who created the evaluation review request comment.</p>
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }

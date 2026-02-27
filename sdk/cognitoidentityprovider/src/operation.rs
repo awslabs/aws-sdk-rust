@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddCustomAttributes` operation.
 pub mod add_custom_attributes;
 
+/// Types for the `AddUserPoolClientSecret` operation.
+pub mod add_user_pool_client_secret;
+
 /// Types for the `AdminAddUserToGroup` operation.
 pub mod admin_add_user_to_group;
 
@@ -154,6 +157,9 @@ pub mod delete_user_pool;
 /// Types for the `DeleteUserPoolClient` operation.
 pub mod delete_user_pool_client;
 
+/// Types for the `DeleteUserPoolClientSecret` operation.
+pub mod delete_user_pool_client_secret;
+
 /// Types for the `DeleteUserPoolDomain` operation.
 pub mod delete_user_pool_domain;
 
@@ -258,6 +264,9 @@ pub mod list_terms;
 
 /// Types for the `ListUserImportJobs` operation.
 pub mod list_user_import_jobs;
+
+/// Types for the `ListUserPoolClientSecrets` operation.
+pub mod list_user_pool_client_secrets;
 
 /// Types for the `ListUserPoolClients` operation.
 pub mod list_user_pool_clients;

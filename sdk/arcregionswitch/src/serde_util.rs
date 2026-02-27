@@ -357,6 +357,24 @@ pub(crate) fn parallel_execution_block_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn rds_create_cross_region_replica_configuration_correct_errors(
+    mut builder: crate::types::builders::RdsCreateCrossRegionReplicaConfigurationBuilder,
+) -> crate::types::builders::RdsCreateCrossRegionReplicaConfigurationBuilder {
+    if builder.db_instance_arn_map.is_none() {
+        builder.db_instance_arn_map = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn rds_promote_read_replica_configuration_correct_errors(
+    mut builder: crate::types::builders::RdsPromoteReadReplicaConfigurationBuilder,
+) -> crate::types::builders::RdsPromoteReadReplicaConfigurationBuilder {
+    if builder.db_instance_arn_map.is_none() {
+        builder.db_instance_arn_map = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn region_switch_plan_configuration_correct_errors(
     mut builder: crate::types::builders::RegionSwitchPlanConfigurationBuilder,
 ) -> crate::types::builders::RegionSwitchPlanConfigurationBuilder {

@@ -52,6 +52,8 @@ pub struct StartStreamTranscriptionOutput {
     pub vocabulary_names: ::std::option::Option<::std::string::String>,
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
     pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
+    /// <p>Provides the session resume window, in minutes, that you specified in your request.</p>
+    pub session_resume_window: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl StartStreamTranscriptionOutput {
@@ -153,6 +155,10 @@ impl StartStreamTranscriptionOutput {
     pub fn vocabulary_filter_names(&self) -> ::std::option::Option<&str> {
         self.vocabulary_filter_names.as_deref()
     }
+    /// <p>Provides the session resume window, in minutes, that you specified in your request.</p>
+    pub fn session_resume_window(&self) -> ::std::option::Option<i32> {
+        self.session_resume_window
+    }
 }
 impl ::aws_types::request_id::RequestId for StartStreamTranscriptionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -196,6 +202,7 @@ pub struct StartStreamTranscriptionOutputBuilder {
     pub(crate) identify_multiple_languages: ::std::option::Option<bool>,
     pub(crate) vocabulary_names: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_names: ::std::option::Option<::std::string::String>,
+    pub(crate) session_resume_window: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl StartStreamTranscriptionOutputBuilder {
@@ -547,6 +554,20 @@ impl StartStreamTranscriptionOutputBuilder {
     pub fn get_vocabulary_filter_names(&self) -> &::std::option::Option<::std::string::String> {
         &self.vocabulary_filter_names
     }
+    /// <p>Provides the session resume window, in minutes, that you specified in your request.</p>
+    pub fn session_resume_window(mut self, input: i32) -> Self {
+        self.session_resume_window = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides the session resume window, in minutes, that you specified in your request.</p>
+    pub fn set_session_resume_window(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_resume_window = input;
+        self
+    }
+    /// <p>Provides the session resume window, in minutes, that you specified in your request.</p>
+    pub fn get_session_resume_window(&self) -> &::std::option::Option<i32> {
+        &self.session_resume_window
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -595,6 +616,7 @@ impl StartStreamTranscriptionOutputBuilder {
             identify_multiple_languages: self.identify_multiple_languages.unwrap_or_default(),
             vocabulary_names: self.vocabulary_names,
             vocabulary_filter_names: self.vocabulary_filter_names,
+            session_resume_window: self.session_resume_window,
             _request_id: self._request_id,
         })
     }

@@ -162,6 +162,20 @@ impl CreateUserPoolClientFluentBuilder {
     pub fn get_generate_secret(&self) -> &::std::option::Option<bool> {
         self.inner.get_generate_secret()
     }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_secret(input.into());
+        self
+    }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_secret(input);
+        self
+    }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_secret()
+    }
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
     /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
@@ -406,8 +420,8 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub fn callback_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.callback_urls(input.into());
         self
@@ -423,8 +437,8 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub fn set_callback_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_callback_urls(input);
         self
@@ -440,8 +454,8 @@ impl CreateUserPoolClientFluentBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_callback_urls()
     }

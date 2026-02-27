@@ -141,6 +141,13 @@ pub fn de_start_stream_transcription_http_response(
                 )
             })?,
         );
+        output = output.set_session_resume_window(
+            crate::protocol_serde::shape_start_stream_transcription_output::de_session_resume_window_header(_response_headers).map_err(|_| {
+                crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled(
+                    "Failed to parse SessionResumeWindow from header `x-amzn-transcribe-session-resume-window",
+                )
+            })?,
+        );
         output = output.set_show_speaker_label(
             crate::protocol_serde::shape_start_stream_transcription_output::de_show_speaker_label_header(_response_headers).map_err(|_| {
                 crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled(
@@ -550,6 +557,18 @@ pub fn ser_start_stream_transcription_headers(
             )
         })?;
         builder = builder.header("x-amzn-transcribe-vocabulary-filter-names", header_value);
+    }
+    if let ::std::option::Option::Some(inner_45) = &input.session_resume_window {
+        let mut encoder = ::aws_smithy_types::primitive::Encoder::from(*inner_45);
+        let formatted_46 = encoder.encode();
+        let header_value = formatted_46;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "session_resume_window",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-session-resume-window", header_value);
     }
     Ok(builder)
 }

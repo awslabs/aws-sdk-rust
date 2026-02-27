@@ -39,26 +39,32 @@ pub fn ser_create_resource_share_input_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.sources {
-        let mut array_14 = object.key("sources").start_array();
-        for item_15 in var_13 {
+    if let Some(var_13) = &input.resource_share_configuration {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("resourceShareConfiguration").start_object();
+        crate::protocol_serde::shape_resource_share_configuration::ser_resource_share_configuration(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.sources {
+        let mut array_16 = object.key("sources").start_array();
+        for item_17 in var_15 {
             {
-                array_14.value().string(item_15.as_str());
+                array_16.value().string(item_17.as_str());
             }
         }
-        array_14.finish();
+        array_16.finish();
     }
-    if let Some(var_16) = &input.tags {
-        let mut array_17 = object.key("tags").start_array();
-        for item_18 in var_16 {
+    if let Some(var_18) = &input.tags {
+        let mut array_19 = object.key("tags").start_array();
+        for item_20 in var_18 {
             {
                 #[allow(unused_mut)]
-                let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_19, item_18)?;
-                object_19.finish();
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_21, item_20)?;
+                object_21.finish();
             }
         }
-        array_17.finish();
+        array_19.finish();
     }
     Ok(())
 }

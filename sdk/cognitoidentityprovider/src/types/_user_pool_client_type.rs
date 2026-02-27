@@ -75,7 +75,7 @@ pub struct UserPoolClientType {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub callback_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of allowed logout URLs for the IdPs.</p>
@@ -91,7 +91,7 @@ pub struct UserPoolClientType {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub default_redirect_uri: ::std::option::Option<::std::string::String>,
     /// <p>The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add <code>client_credentials</code> as the only allowed OAuth flow.</p>
@@ -258,7 +258,7 @@ impl UserPoolClientType {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.callback_urls.is_none()`.
@@ -282,7 +282,7 @@ impl UserPoolClientType {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(&self) -> ::std::option::Option<&str> {
         self.default_redirect_uri.as_deref()
@@ -770,7 +770,7 @@ impl UserPoolClientTypeBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn callback_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.callback_urls.unwrap_or_default();
@@ -789,7 +789,7 @@ impl UserPoolClientTypeBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn set_callback_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.callback_urls = input;
@@ -806,7 +806,7 @@ impl UserPoolClientTypeBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.callback_urls
@@ -842,7 +842,7 @@ impl UserPoolClientTypeBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn default_redirect_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_redirect_uri = ::std::option::Option::Some(input.into());
@@ -859,7 +859,7 @@ impl UserPoolClientTypeBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn set_default_redirect_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_redirect_uri = input;
@@ -876,7 +876,7 @@ impl UserPoolClientTypeBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
     /// <p>App callback URLs such as myapp://example are also supported.</p>
     pub fn get_default_redirect_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_redirect_uri

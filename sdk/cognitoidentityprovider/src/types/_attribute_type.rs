@@ -4,13 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AttributeType {
-    /// <p>The name of the attribute.</p>
+    /// <p>The name of the attribute, for example <code>email</code> or <code>custom:department</code>.</p>
+    /// <p>In some older user pools, the regex pattern for acceptable values of this parameter is <code>\[\p{L}\p{M}\p{S}\p{N}\p{P}\]+</code>. Older pools will eventually be updated to use the new pattern. Affected user pools are those created before May 2024 in US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), Middle East (Bahrain), and South America (São Paulo).</p>
     pub name: ::std::string::String,
     /// <p>The value of the attribute.</p>
     pub value: ::std::option::Option<::std::string::String>,
 }
 impl AttributeType {
-    /// <p>The name of the attribute.</p>
+    /// <p>The name of the attribute, for example <code>email</code> or <code>custom:department</code>.</p>
+    /// <p>In some older user pools, the regex pattern for acceptable values of this parameter is <code>\[\p{L}\p{M}\p{S}\p{N}\p{P}\]+</code>. Older pools will eventually be updated to use the new pattern. Affected user pools are those created before May 2024 in US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), Middle East (Bahrain), and South America (São Paulo).</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -43,18 +45,21 @@ pub struct AttributeTypeBuilder {
     pub(crate) value: ::std::option::Option<::std::string::String>,
 }
 impl AttributeTypeBuilder {
-    /// <p>The name of the attribute.</p>
+    /// <p>The name of the attribute, for example <code>email</code> or <code>custom:department</code>.</p>
+    /// <p>In some older user pools, the regex pattern for acceptable values of this parameter is <code>\[\p{L}\p{M}\p{S}\p{N}\p{P}\]+</code>. Older pools will eventually be updated to use the new pattern. Affected user pools are those created before May 2024 in US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), Middle East (Bahrain), and South America (São Paulo).</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the attribute.</p>
+    /// <p>The name of the attribute, for example <code>email</code> or <code>custom:department</code>.</p>
+    /// <p>In some older user pools, the regex pattern for acceptable values of this parameter is <code>\[\p{L}\p{M}\p{S}\p{N}\p{P}\]+</code>. Older pools will eventually be updated to use the new pattern. Affected user pools are those created before May 2024 in US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), Middle East (Bahrain), and South America (São Paulo).</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the attribute.</p>
+    /// <p>The name of the attribute, for example <code>email</code> or <code>custom:department</code>.</p>
+    /// <p>In some older user pools, the regex pattern for acceptable values of this parameter is <code>\[\p{L}\p{M}\p{S}\p{N}\p{P}\]+</code>. Older pools will eventually be updated to use the new pattern. Affected user pools are those created before May 2024 in US East (N. Virginia), US East (Ohio), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), Middle East (Bahrain), and South America (São Paulo).</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

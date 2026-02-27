@@ -99,6 +99,26 @@ pub fn de_start_web_authn_registration_http_error(
             }
             tmp
         }),
+        "PasswordResetRequiredException" => {
+            crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::PasswordResetRequiredException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PasswordResetRequiredExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_password_reset_required_exception::de_password_reset_required_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "TooManyRequestsException" => crate::operation::start_web_authn_registration::StartWebAuthnRegistrationError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp = {

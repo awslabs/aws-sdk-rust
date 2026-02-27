@@ -5,6 +5,8 @@ pub use crate::types::_resource_share_permission_summary::ResourceSharePermissio
 
 pub use crate::types::_resource_share_permission_detail::ResourceSharePermissionDetail;
 
+pub use crate::types::_resource_share_configuration::ResourceShareConfiguration;
+
 pub use crate::types::_resource_share::ResourceShare;
 
 pub use crate::types::_permission_status::PermissionStatus;
@@ -86,6 +88,8 @@ mod _resource_share_association;
 mod _resource_share_association_status;
 
 mod _resource_share_association_type;
+
+mod _resource_share_configuration;
 
 mod _resource_share_feature_set;
 

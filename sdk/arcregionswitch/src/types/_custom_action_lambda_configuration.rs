@@ -10,7 +10,7 @@ pub struct CustomActionLambdaConfiguration {
     pub lambdas: ::std::vec::Vec<crate::types::Lambdas>,
     /// <p>The retry interval specified.</p>
     pub retry_interval_minutes: f32,
-    /// <p>The Amazon Web Services Region for the function to run in.</p>
+    /// <p>The Amazon Web Services Region for the function to run in. For recovery workflows use <code>activatingRegion</code> or <code>deactivatingRegion</code>. For post-recovery workflows, use <code>activeRegion</code> (the Region with customer traffic) or <code>inactiveRegion</code> (the Region with no customer traffic).</p>
     pub region_to_run: crate::types::RegionToRunIn,
     /// <p>The settings for ungraceful execution.</p>
     pub ungraceful: ::std::option::Option<crate::types::LambdaUngraceful>,
@@ -29,7 +29,7 @@ impl CustomActionLambdaConfiguration {
     pub fn retry_interval_minutes(&self) -> f32 {
         self.retry_interval_minutes
     }
-    /// <p>The Amazon Web Services Region for the function to run in.</p>
+    /// <p>The Amazon Web Services Region for the function to run in. For recovery workflows use <code>activatingRegion</code> or <code>deactivatingRegion</code>. For post-recovery workflows, use <code>activeRegion</code> (the Region with customer traffic) or <code>inactiveRegion</code> (the Region with no customer traffic).</p>
     pub fn region_to_run(&self) -> &crate::types::RegionToRunIn {
         &self.region_to_run
     }
@@ -105,18 +105,18 @@ impl CustomActionLambdaConfigurationBuilder {
     pub fn get_retry_interval_minutes(&self) -> &::std::option::Option<f32> {
         &self.retry_interval_minutes
     }
-    /// <p>The Amazon Web Services Region for the function to run in.</p>
+    /// <p>The Amazon Web Services Region for the function to run in. For recovery workflows use <code>activatingRegion</code> or <code>deactivatingRegion</code>. For post-recovery workflows, use <code>activeRegion</code> (the Region with customer traffic) or <code>inactiveRegion</code> (the Region with no customer traffic).</p>
     /// This field is required.
     pub fn region_to_run(mut self, input: crate::types::RegionToRunIn) -> Self {
         self.region_to_run = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon Web Services Region for the function to run in.</p>
+    /// <p>The Amazon Web Services Region for the function to run in. For recovery workflows use <code>activatingRegion</code> or <code>deactivatingRegion</code>. For post-recovery workflows, use <code>activeRegion</code> (the Region with customer traffic) or <code>inactiveRegion</code> (the Region with no customer traffic).</p>
     pub fn set_region_to_run(mut self, input: ::std::option::Option<crate::types::RegionToRunIn>) -> Self {
         self.region_to_run = input;
         self
     }
-    /// <p>The Amazon Web Services Region for the function to run in.</p>
+    /// <p>The Amazon Web Services Region for the function to run in. For recovery workflows use <code>activatingRegion</code> or <code>deactivatingRegion</code>. For post-recovery workflows, use <code>activeRegion</code> (the Region with customer traffic) or <code>inactiveRegion</code> (the Region with no customer traffic).</p>
     pub fn get_region_to_run(&self) -> &::std::option::Option<crate::types::RegionToRunIn> {
         &self.region_to_run
     }

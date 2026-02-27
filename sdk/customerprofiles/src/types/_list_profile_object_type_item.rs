@@ -16,6 +16,8 @@ pub struct ListProfileObjectTypeItem {
     pub max_profile_object_count: ::std::option::Option<i32>,
     /// <p>The amount of provisioned profile object max count available.</p>
     pub max_available_profile_object_count: ::std::option::Option<i32>,
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub source_priority: ::std::option::Option<i32>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -46,6 +48,10 @@ impl ListProfileObjectTypeItem {
     pub fn max_available_profile_object_count(&self) -> ::std::option::Option<i32> {
         self.max_available_profile_object_count
     }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn source_priority(&self) -> ::std::option::Option<i32> {
+        self.source_priority
+    }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -68,6 +74,7 @@ pub struct ListProfileObjectTypeItemBuilder {
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) max_profile_object_count: ::std::option::Option<i32>,
     pub(crate) max_available_profile_object_count: ::std::option::Option<i32>,
+    pub(crate) source_priority: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListProfileObjectTypeItemBuilder {
@@ -157,6 +164,20 @@ impl ListProfileObjectTypeItemBuilder {
     pub fn get_max_available_profile_object_count(&self) -> &::std::option::Option<i32> {
         &self.max_available_profile_object_count
     }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn source_priority(mut self, input: i32) -> Self {
+        self.source_priority = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn set_source_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.source_priority = input;
+        self
+    }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn get_source_priority(&self) -> &::std::option::Option<i32> {
+        &self.source_priority
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -199,6 +220,7 @@ impl ListProfileObjectTypeItemBuilder {
             last_updated_at: self.last_updated_at,
             max_profile_object_count: self.max_profile_object_count,
             max_available_profile_object_count: self.max_available_profile_object_count,
+            source_priority: self.source_priority,
             tags: self.tags,
         })
     }

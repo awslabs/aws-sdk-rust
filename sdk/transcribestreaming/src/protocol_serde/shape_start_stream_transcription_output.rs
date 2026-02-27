@@ -172,11 +172,11 @@ pub(crate) fn de_session_id_header(
     ::aws_smithy_http::header::one_or_none(headers)
 }
 
-pub(crate) fn de_show_speaker_label_header(
+pub(crate) fn de_session_resume_window_header(
     header_map: &::aws_smithy_runtime_api::http::Headers,
-) -> ::std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
-    let headers = header_map.get_all("x-amzn-transcribe-show-speaker-label");
-    let var_7 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+) -> ::std::result::Result<::std::option::Option<i32>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-session-resume-window");
+    let var_7 = ::aws_smithy_http::header::read_many_primitive::<i32>(headers)?;
     if var_7.len() > 1 {
         Err(::aws_smithy_http::header::ParseError::new(format!(
             "expected one item but found {}",
@@ -185,6 +185,22 @@ pub(crate) fn de_show_speaker_label_header(
     } else {
         let mut var_7 = var_7;
         Ok(var_7.pop())
+    }
+}
+
+pub(crate) fn de_show_speaker_label_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<bool>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-show-speaker-label");
+    let var_8 = ::aws_smithy_http::header::read_many_primitive::<bool>(headers)?;
+    if var_8.len() > 1 {
+        Err(::aws_smithy_http::header::ParseError::new(format!(
+            "expected one item but found {}",
+            var_8.len()
+        )))
+    } else {
+        let mut var_8 = var_8;
+        Ok(var_8.pop())
     }
 }
 

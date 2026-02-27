@@ -122,6 +122,10 @@ pub struct ComputeResource {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub ec2_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Ec2Configuration>>,
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
 }
 impl ComputeResource {
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
@@ -284,6 +288,12 @@ impl ComputeResource {
     pub fn ec2_configuration(&self) -> &[crate::types::Ec2Configuration] {
         self.ec2_configuration.as_deref().unwrap_or_default()
     }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn scaling_policy(&self) -> ::std::option::Option<&crate::types::ComputeScalingPolicy> {
+        self.scaling_policy.as_ref()
+    }
 }
 impl ComputeResource {
     /// Creates a new builder-style object to manufacture [`ComputeResource`](crate::types::ComputeResource).
@@ -313,6 +323,7 @@ pub struct ComputeResourceBuilder {
     pub(crate) spot_iam_fleet_role: ::std::option::Option<::std::string::String>,
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) ec2_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Ec2Configuration>>,
+    pub(crate) scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
 }
 impl ComputeResourceBuilder {
     /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
@@ -837,6 +848,26 @@ impl ComputeResourceBuilder {
     pub fn get_ec2_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Ec2Configuration>> {
         &self.ec2_configuration
     }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn scaling_policy(mut self, input: crate::types::ComputeScalingPolicy) -> Self {
+        self.scaling_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn set_scaling_policy(mut self, input: ::std::option::Option<crate::types::ComputeScalingPolicy>) -> Self {
+        self.scaling_policy = input;
+        self
+    }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn get_scaling_policy(&self) -> &::std::option::Option<crate::types::ComputeScalingPolicy> {
+        &self.scaling_policy
+    }
     /// Consumes the builder and constructs a [`ComputeResource`](crate::types::ComputeResource).
     pub fn build(self) -> crate::types::ComputeResource {
         crate::types::ComputeResource {
@@ -857,6 +888,7 @@ impl ComputeResourceBuilder {
             spot_iam_fleet_role: self.spot_iam_fleet_role,
             launch_template: self.launch_template,
             ec2_configuration: self.ec2_configuration,
+            scaling_policy: self.scaling_policy,
         }
     }
 }

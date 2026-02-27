@@ -268,6 +268,8 @@ pub enum CompleteWebAuthnRegistrationError {
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>This exception is thrown when a user isn't authorized.</p>
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
+    /// <p>This exception is thrown when a password reset is required.</p>
+    PasswordResetRequiredException(crate::types::error::PasswordResetRequiredException),
     /// <p>This exception is thrown when the user has made too many requests for a given operation.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
     /// <p>This exception is thrown when the challenge from <code>StartWebAuthn</code> registration has expired.</p>
@@ -320,6 +322,7 @@ impl CompleteWebAuthnRegistrationError {
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NotAuthorizedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::PasswordResetRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WebAuthnChallengeNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::WebAuthnClientMismatchException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -349,6 +352,10 @@ impl CompleteWebAuthnRegistrationError {
     /// Returns `true` if the error kind is `CompleteWebAuthnRegistrationError::NotAuthorizedException`.
     pub fn is_not_authorized_exception(&self) -> bool {
         matches!(self, Self::NotAuthorizedException(_))
+    }
+    /// Returns `true` if the error kind is `CompleteWebAuthnRegistrationError::PasswordResetRequiredException`.
+    pub fn is_password_reset_required_exception(&self) -> bool {
+        matches!(self, Self::PasswordResetRequiredException(_))
     }
     /// Returns `true` if the error kind is `CompleteWebAuthnRegistrationError::TooManyRequestsException`.
     pub fn is_too_many_requests_exception(&self) -> bool {
@@ -387,6 +394,7 @@ impl ::std::error::Error for CompleteWebAuthnRegistrationError {
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NotAuthorizedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::PasswordResetRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
             Self::WebAuthnChallengeNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::WebAuthnClientMismatchException(_inner) => ::std::option::Option::Some(_inner),
@@ -406,6 +414,7 @@ impl ::std::fmt::Display for CompleteWebAuthnRegistrationError {
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NotAuthorizedException(_inner) => _inner.fmt(f),
+            Self::PasswordResetRequiredException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
             Self::WebAuthnChallengeNotFoundException(_inner) => _inner.fmt(f),
             Self::WebAuthnClientMismatchException(_inner) => _inner.fmt(f),
@@ -439,6 +448,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CompleteWebAu
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NotAuthorizedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::PasswordResetRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WebAuthnChallengeNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::WebAuthnClientMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

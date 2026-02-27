@@ -97,6 +97,10 @@ pub use crate::types::_route53_health_check_configuration::Route53HealthCheckCon
 
 pub use crate::types::_document_db_configuration::DocumentDbConfiguration;
 
+pub use crate::types::_rds_promote_read_replica_configuration::RdsPromoteReadReplicaConfiguration;
+
+pub use crate::types::_rds_create_cross_region_replica_configuration::RdsCreateCrossRegionReplicaConfiguration;
+
 pub use crate::types::_region_to_run_in::RegionToRunIn;
 
 pub use crate::types::_lambda_ungraceful::LambdaUngraceful;
@@ -240,6 +244,10 @@ mod _minimal_workflow;
 mod _parallel_execution_block_configuration;
 
 mod _plan;
+
+mod _rds_create_cross_region_replica_configuration;
+
+mod _rds_promote_read_replica_configuration;
 
 mod _recovery_approach;
 

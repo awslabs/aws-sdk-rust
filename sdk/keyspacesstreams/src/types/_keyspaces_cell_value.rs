@@ -20,6 +20,8 @@ pub enum KeyspacesCellValue {
     DecimalT(::std::string::String),
     /// <p>A 64-bit double-precision floating point value.</p>
     DoubleT(::std::string::String),
+    /// <p>A duration value with nanosecond precision, representing a period of time encoded as 32-bit months, 32-bit days, and 64-bit nanoseconds.</p>
+    DurationT(::std::string::String),
     /// <p>A 32-bit single-precision floating point value.</p>
     FloatT(::std::string::String),
     /// <p>An IP address value, either IPv4 or IPv6 format.</p>
@@ -52,7 +54,7 @@ pub enum KeyspacesCellValue {
     UuidT(::std::string::String),
     /// <p>A UTF-8 encoded string value, functionally equivalent to text type.</p>
     VarcharT(::std::string::String),
-    /// <p>A variable precision integer value with arbitrary length.</p>
+    /// <p>An integer value within the +/-10^38 range.</p>
     VarintT(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
@@ -168,6 +170,19 @@ impl KeyspacesCellValue {
     /// Returns true if this is a [`DoubleT`](crate::types::KeyspacesCellValue::DoubleT).
     pub fn is_double_t(&self) -> bool {
         self.as_double_t().is_ok()
+    }
+    /// Tries to convert the enum instance into [`DurationT`](crate::types::KeyspacesCellValue::DurationT), extracting the inner [`String`](::std::string::String).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_duration_t(&self) -> ::std::result::Result<&::std::string::String, &Self> {
+        if let KeyspacesCellValue::DurationT(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`DurationT`](crate::types::KeyspacesCellValue::DurationT).
+    pub fn is_duration_t(&self) -> bool {
+        self.as_duration_t().is_ok()
     }
     /// Tries to convert the enum instance into [`FloatT`](crate::types::KeyspacesCellValue::FloatT), extracting the inner [`String`](::std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.

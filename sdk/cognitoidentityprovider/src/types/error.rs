@@ -11,11 +11,15 @@ pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExcept
 
 pub use crate::types::error::_user_import_in_progress_exception::UserImportInProgressException;
 
+pub use crate::types::error::_access_denied_exception::AccessDeniedException;
+
+pub use crate::types::error::_internal_server_exception::InternalServerException;
+
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
+
 pub use crate::types::error::_user_not_found_exception::UserNotFoundException;
 
 pub use crate::types::error::_invalid_lambda_response_exception::InvalidLambdaResponseException;
-
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_too_many_failed_attempts_exception::TooManyFailedAttemptsException;
 
@@ -109,6 +113,8 @@ pub use crate::types::error::_web_authn_configuration_missing_exception::WebAuth
 
 pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwareTokenMfaException;
 
+mod _access_denied_exception;
+
 mod _alias_exists_exception;
 
 mod _code_delivery_failure_exception;
@@ -132,6 +138,8 @@ mod _forbidden_exception;
 mod _group_exists_exception;
 
 mod _internal_error_exception;
+
+mod _internal_server_exception;
 
 mod _invalid_email_role_access_policy_exception;
 

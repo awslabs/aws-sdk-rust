@@ -12,134 +12,137 @@ pub fn ser_create_user_pool_client_input_input(
     if let Some(var_3) = &input.generate_secret {
         object.key("GenerateSecret").boolean(*var_3);
     }
-    if let Some(var_4) = &input.refresh_token_validity {
-        object.key("RefreshTokenValidity").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
-        );
+    if let Some(var_4) = &input.client_secret {
+        object.key("ClientSecret").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.access_token_validity {
-        object.key("AccessTokenValidity").number(
+    if let Some(var_5) = &input.refresh_token_validity {
+        object.key("RefreshTokenValidity").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_6) = &input.id_token_validity {
-        object.key("IdTokenValidity").number(
+    if let Some(var_6) = &input.access_token_validity {
+        object.key("AccessTokenValidity").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_7) = &input.token_validity_units {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("TokenValidityUnits").start_object();
-        crate::protocol_serde::shape_token_validity_units_type::ser_token_validity_units_type(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.read_attributes {
-        let mut array_10 = object.key("ReadAttributes").start_array();
-        for item_11 in var_9 {
-            {
-                array_10.value().string(item_11.as_str());
-            }
-        }
-        array_10.finish();
-    }
-    if let Some(var_12) = &input.write_attributes {
-        let mut array_13 = object.key("WriteAttributes").start_array();
-        for item_14 in var_12 {
-            {
-                array_13.value().string(item_14.as_str());
-            }
-        }
-        array_13.finish();
-    }
-    if let Some(var_15) = &input.explicit_auth_flows {
-        let mut array_16 = object.key("ExplicitAuthFlows").start_array();
-        for item_17 in var_15 {
-            {
-                array_16.value().string(item_17.as_str());
-            }
-        }
-        array_16.finish();
-    }
-    if let Some(var_18) = &input.supported_identity_providers {
-        let mut array_19 = object.key("SupportedIdentityProviders").start_array();
-        for item_20 in var_18 {
-            {
-                array_19.value().string(item_20.as_str());
-            }
-        }
-        array_19.finish();
-    }
-    if let Some(var_21) = &input.callback_urls {
-        let mut array_22 = object.key("CallbackURLs").start_array();
-        for item_23 in var_21 {
-            {
-                array_22.value().string(item_23.as_str());
-            }
-        }
-        array_22.finish();
-    }
-    if let Some(var_24) = &input.logout_urls {
-        let mut array_25 = object.key("LogoutURLs").start_array();
-        for item_26 in var_24 {
-            {
-                array_25.value().string(item_26.as_str());
-            }
-        }
-        array_25.finish();
-    }
-    if let Some(var_27) = &input.default_redirect_uri {
-        object.key("DefaultRedirectURI").string(var_27.as_str());
-    }
-    if let Some(var_28) = &input.allowed_o_auth_flows {
-        let mut array_29 = object.key("AllowedOAuthFlows").start_array();
-        for item_30 in var_28 {
-            {
-                array_29.value().string(item_30.as_str());
-            }
-        }
-        array_29.finish();
-    }
-    if let Some(var_31) = &input.allowed_o_auth_scopes {
-        let mut array_32 = object.key("AllowedOAuthScopes").start_array();
-        for item_33 in var_31 {
-            {
-                array_32.value().string(item_33.as_str());
-            }
-        }
-        array_32.finish();
-    }
-    if let Some(var_34) = &input.allowed_o_auth_flows_user_pool_client {
-        object.key("AllowedOAuthFlowsUserPoolClient").boolean(*var_34);
-    }
-    if let Some(var_35) = &input.analytics_configuration {
-        #[allow(unused_mut)]
-        let mut object_36 = object.key("AnalyticsConfiguration").start_object();
-        crate::protocol_serde::shape_analytics_configuration_type::ser_analytics_configuration_type(&mut object_36, var_35)?;
-        object_36.finish();
-    }
-    if let Some(var_37) = &input.prevent_user_existence_errors {
-        object.key("PreventUserExistenceErrors").string(var_37.as_str());
-    }
-    if let Some(var_38) = &input.enable_token_revocation {
-        object.key("EnableTokenRevocation").boolean(*var_38);
-    }
-    if let Some(var_39) = &input.enable_propagate_additional_user_context_data {
-        object.key("EnablePropagateAdditionalUserContextData").boolean(*var_39);
-    }
-    if let Some(var_40) = &input.auth_session_validity {
-        object.key("AuthSessionValidity").number(
+    if let Some(var_7) = &input.id_token_validity {
+        object.key("IdTokenValidity").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_40).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_41) = &input.refresh_token_rotation {
+    if let Some(var_8) = &input.token_validity_units {
         #[allow(unused_mut)]
-        let mut object_42 = object.key("RefreshTokenRotation").start_object();
-        crate::protocol_serde::shape_refresh_token_rotation_type::ser_refresh_token_rotation_type(&mut object_42, var_41)?;
-        object_42.finish();
+        let mut object_9 = object.key("TokenValidityUnits").start_object();
+        crate::protocol_serde::shape_token_validity_units_type::ser_token_validity_units_type(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.read_attributes {
+        let mut array_11 = object.key("ReadAttributes").start_array();
+        for item_12 in var_10 {
+            {
+                array_11.value().string(item_12.as_str());
+            }
+        }
+        array_11.finish();
+    }
+    if let Some(var_13) = &input.write_attributes {
+        let mut array_14 = object.key("WriteAttributes").start_array();
+        for item_15 in var_13 {
+            {
+                array_14.value().string(item_15.as_str());
+            }
+        }
+        array_14.finish();
+    }
+    if let Some(var_16) = &input.explicit_auth_flows {
+        let mut array_17 = object.key("ExplicitAuthFlows").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.supported_identity_providers {
+        let mut array_20 = object.key("SupportedIdentityProviders").start_array();
+        for item_21 in var_19 {
+            {
+                array_20.value().string(item_21.as_str());
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_22) = &input.callback_urls {
+        let mut array_23 = object.key("CallbackURLs").start_array();
+        for item_24 in var_22 {
+            {
+                array_23.value().string(item_24.as_str());
+            }
+        }
+        array_23.finish();
+    }
+    if let Some(var_25) = &input.logout_urls {
+        let mut array_26 = object.key("LogoutURLs").start_array();
+        for item_27 in var_25 {
+            {
+                array_26.value().string(item_27.as_str());
+            }
+        }
+        array_26.finish();
+    }
+    if let Some(var_28) = &input.default_redirect_uri {
+        object.key("DefaultRedirectURI").string(var_28.as_str());
+    }
+    if let Some(var_29) = &input.allowed_o_auth_flows {
+        let mut array_30 = object.key("AllowedOAuthFlows").start_array();
+        for item_31 in var_29 {
+            {
+                array_30.value().string(item_31.as_str());
+            }
+        }
+        array_30.finish();
+    }
+    if let Some(var_32) = &input.allowed_o_auth_scopes {
+        let mut array_33 = object.key("AllowedOAuthScopes").start_array();
+        for item_34 in var_32 {
+            {
+                array_33.value().string(item_34.as_str());
+            }
+        }
+        array_33.finish();
+    }
+    if let Some(var_35) = &input.allowed_o_auth_flows_user_pool_client {
+        object.key("AllowedOAuthFlowsUserPoolClient").boolean(*var_35);
+    }
+    if let Some(var_36) = &input.analytics_configuration {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("AnalyticsConfiguration").start_object();
+        crate::protocol_serde::shape_analytics_configuration_type::ser_analytics_configuration_type(&mut object_37, var_36)?;
+        object_37.finish();
+    }
+    if let Some(var_38) = &input.prevent_user_existence_errors {
+        object.key("PreventUserExistenceErrors").string(var_38.as_str());
+    }
+    if let Some(var_39) = &input.enable_token_revocation {
+        object.key("EnableTokenRevocation").boolean(*var_39);
+    }
+    if let Some(var_40) = &input.enable_propagate_additional_user_context_data {
+        object.key("EnablePropagateAdditionalUserContextData").boolean(*var_40);
+    }
+    if let Some(var_41) = &input.auth_session_validity {
+        object.key("AuthSessionValidity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_41).into()),
+        );
+    }
+    if let Some(var_42) = &input.refresh_token_rotation {
+        #[allow(unused_mut)]
+        let mut object_43 = object.key("RefreshTokenRotation").start_object();
+        crate::protocol_serde::shape_refresh_token_rotation_type::ser_refresh_token_rotation_type(&mut object_43, var_42)?;
+        object_43.finish();
     }
     Ok(())
 }

@@ -13,7 +13,9 @@
 /// # let regiontorunin = unimplemented!();
 /// match regiontorunin {
 ///     RegionToRunIn::ActivatingRegion => { /* ... */ },
+///     RegionToRunIn::ActiveRegion => { /* ... */ },
 ///     RegionToRunIn::DeactivatingRegion => { /* ... */ },
+///     RegionToRunIn::InactiveRegion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -45,7 +47,11 @@ pub enum RegionToRunIn {
     #[allow(missing_docs)] // documentation missing in model
     ActivatingRegion,
     #[allow(missing_docs)] // documentation missing in model
+    ActiveRegion,
+    #[allow(missing_docs)] // documentation missing in model
     DeactivatingRegion,
+    #[allow(missing_docs)] // documentation missing in model
+    InactiveRegion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -54,7 +60,9 @@ impl ::std::convert::From<&str> for RegionToRunIn {
     fn from(s: &str) -> Self {
         match s {
             "activatingRegion" => RegionToRunIn::ActivatingRegion,
+            "activeRegion" => RegionToRunIn::ActiveRegion,
             "deactivatingRegion" => RegionToRunIn::DeactivatingRegion,
+            "inactiveRegion" => RegionToRunIn::InactiveRegion,
             other => RegionToRunIn::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -71,13 +79,15 @@ impl RegionToRunIn {
     pub fn as_str(&self) -> &str {
         match self {
             RegionToRunIn::ActivatingRegion => "activatingRegion",
+            RegionToRunIn::ActiveRegion => "activeRegion",
             RegionToRunIn::DeactivatingRegion => "deactivatingRegion",
+            RegionToRunIn::InactiveRegion => "inactiveRegion",
             RegionToRunIn::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["activatingRegion", "deactivatingRegion"]
+        &["activatingRegion", "activeRegion", "deactivatingRegion", "inactiveRegion"]
     }
 }
 impl ::std::convert::AsRef<str> for RegionToRunIn {
@@ -101,7 +111,9 @@ impl ::std::fmt::Display for RegionToRunIn {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RegionToRunIn::ActivatingRegion => write!(f, "activatingRegion"),
+            RegionToRunIn::ActiveRegion => write!(f, "activeRegion"),
             RegionToRunIn::DeactivatingRegion => write!(f, "deactivatingRegion"),
+            RegionToRunIn::InactiveRegion => write!(f, "inactiveRegion"),
             RegionToRunIn::Unknown(value) => write!(f, "{value}"),
         }
     }

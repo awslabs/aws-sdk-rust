@@ -45,6 +45,8 @@ pub use crate::types::_update_policy::UpdatePolicyBuilder;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
+pub use crate::types::_compute_scaling_policy::ComputeScalingPolicyBuilder;
+
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrderBuilder;
 
 pub use crate::types::_service_environment_order::ServiceEnvironmentOrderBuilder;

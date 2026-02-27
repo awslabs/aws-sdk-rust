@@ -22,6 +22,9 @@ pub fn ser_start_plan_execution_input_input(
     if let Some(var_6) = &input.latest_version {
         encoder.str("latestVersion").str(var_6.as_str());
     }
+    if let Some(var_7) = &input.recovery_execution_id {
+        encoder.str("recoveryExecutionId").str(var_7.as_str());
+    }
     encoder.end();
     Ok(())
 }

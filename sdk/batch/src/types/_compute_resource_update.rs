@@ -129,6 +129,10 @@ pub struct ComputeResourceUpdate {
     /// <p>The AMI that you choose for a compute environment must match the architecture of the instance types that you intend to use for that compute environment. For example, if your compute environment uses A1 instance types, the compute resource AMI that you choose must support ARM instances. Amazon ECS vends both x86 and ARM versions of the Amazon ECS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     /// </note>
     pub image_id: ::std::option::Option<::std::string::String>,
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
 }
 impl ComputeResourceUpdate {
     /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p><note>
@@ -298,6 +302,12 @@ impl ComputeResourceUpdate {
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
     }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn scaling_policy(&self) -> ::std::option::Option<&crate::types::ComputeScalingPolicy> {
+        self.scaling_policy.as_ref()
+    }
 }
 impl ComputeResourceUpdate {
     /// Creates a new builder-style object to manufacture [`ComputeResourceUpdate`](crate::types::ComputeResourceUpdate).
@@ -327,6 +337,7 @@ pub struct ComputeResourceUpdateBuilder {
     pub(crate) update_to_latest_image_version: ::std::option::Option<bool>,
     pub(crate) r#type: ::std::option::Option<crate::types::CrType>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
+    pub(crate) scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
 }
 impl ComputeResourceUpdateBuilder {
     /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p><note>
@@ -870,6 +881,26 @@ impl ComputeResourceUpdateBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn scaling_policy(mut self, input: crate::types::ComputeScalingPolicy) -> Self {
+        self.scaling_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn set_scaling_policy(mut self, input: ::std::option::Option<crate::types::ComputeScalingPolicy>) -> Self {
+        self.scaling_policy = input;
+        self
+    }
+    /// <p>The scaling policy configuration for the compute environment.</p><note>
+    /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
+    /// </note>
+    pub fn get_scaling_policy(&self) -> &::std::option::Option<crate::types::ComputeScalingPolicy> {
+        &self.scaling_policy
+    }
     /// Consumes the builder and constructs a [`ComputeResourceUpdate`](crate::types::ComputeResourceUpdate).
     pub fn build(self) -> crate::types::ComputeResourceUpdate {
         crate::types::ComputeResourceUpdate {
@@ -890,6 +921,7 @@ impl ComputeResourceUpdateBuilder {
             update_to_latest_image_version: self.update_to_latest_image_version,
             r#type: self.r#type,
             image_id: self.image_id,
+            scaling_policy: self.scaling_policy,
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Represents the request to create a user pool client.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateUserPoolClientInput {
     /// <p>The ID of the user pool where you want to create an app client.</p>
     pub user_pool_id: ::std::option::Option<::std::string::String>,
@@ -10,6 +10,8 @@ pub struct CreateUserPoolClientInput {
     pub client_name: ::std::option::Option<::std::string::String>,
     /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. Client secrets are automatically generated; you can't specify a secret value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub generate_secret: ::std::option::Option<bool>,
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub client_secret: ::std::option::Option<::std::string::String>,
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
     /// <p>The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. <i>Valid range</i> is displayed below in seconds.</p>
@@ -69,8 +71,8 @@ pub struct CreateUserPoolClientInput {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub callback_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of allowed logout URLs for managed login authentication. When you pass <code>logout_uri</code> and <code>client_id</code> parameters to <code>/logout</code>, Amazon Cognito signs out your user and redirects them to the logout URL. This parameter describes the URLs that you want to be the permitted targets of <code>logout_uri</code>. A typical use of these URLs is when a user selects "Sign out" and you redirect them to your public homepage. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html">Logout endpoint</a>.</p>
     pub logout_urls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -142,6 +144,10 @@ impl CreateUserPoolClientInput {
     /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. Client secrets are automatically generated; you can't specify a secret value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub fn generate_secret(&self) -> ::std::option::Option<bool> {
         self.generate_secret
+    }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn client_secret(&self) -> ::std::option::Option<&str> {
+        self.client_secret.as_deref()
     }
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
@@ -226,8 +232,8 @@ impl CreateUserPoolClientInput {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.callback_urls.is_none()`.
     pub fn callback_urls(&self) -> &[::std::string::String] {
@@ -319,6 +325,39 @@ impl CreateUserPoolClientInput {
         self.refresh_token_rotation.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateUserPoolClientInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateUserPoolClientInput");
+        formatter.field("user_pool_id", &self.user_pool_id);
+        formatter.field("client_name", &self.client_name);
+        formatter.field("generate_secret", &self.generate_secret);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("refresh_token_validity", &self.refresh_token_validity);
+        formatter.field("access_token_validity", &self.access_token_validity);
+        formatter.field("id_token_validity", &self.id_token_validity);
+        formatter.field("token_validity_units", &self.token_validity_units);
+        formatter.field("read_attributes", &self.read_attributes);
+        formatter.field("write_attributes", &self.write_attributes);
+        formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
+        formatter.field("supported_identity_providers", &self.supported_identity_providers);
+        formatter.field("callback_urls", &self.callback_urls);
+        formatter.field("logout_urls", &self.logout_urls);
+        formatter.field("default_redirect_uri", &self.default_redirect_uri);
+        formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
+        formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
+        formatter.field("allowed_o_auth_flows_user_pool_client", &self.allowed_o_auth_flows_user_pool_client);
+        formatter.field("analytics_configuration", &self.analytics_configuration);
+        formatter.field("prevent_user_existence_errors", &self.prevent_user_existence_errors);
+        formatter.field("enable_token_revocation", &self.enable_token_revocation);
+        formatter.field(
+            "enable_propagate_additional_user_context_data",
+            &self.enable_propagate_additional_user_context_data,
+        );
+        formatter.field("auth_session_validity", &self.auth_session_validity);
+        formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.finish()
+    }
+}
 impl CreateUserPoolClientInput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolClientInput`](crate::operation::create_user_pool_client::CreateUserPoolClientInput).
     pub fn builder() -> crate::operation::create_user_pool_client::builders::CreateUserPoolClientInputBuilder {
@@ -327,12 +366,13 @@ impl CreateUserPoolClientInput {
 }
 
 /// A builder for [`CreateUserPoolClientInput`](crate::operation::create_user_pool_client::CreateUserPoolClientInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CreateUserPoolClientInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_name: ::std::option::Option<::std::string::String>,
     pub(crate) generate_secret: ::std::option::Option<bool>,
+    pub(crate) client_secret: ::std::option::Option<::std::string::String>,
     pub(crate) refresh_token_validity: ::std::option::Option<i32>,
     pub(crate) access_token_validity: ::std::option::Option<i32>,
     pub(crate) id_token_validity: ::std::option::Option<i32>,
@@ -398,6 +438,20 @@ impl CreateUserPoolClientInputBuilder {
     /// <p>When <code>true</code>, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. Client secrets are automatically generated; you can't specify a secret value. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types">App client types</a>.</p>
     pub fn get_generate_secret(&self) -> &::std::option::Option<bool> {
         &self.generate_secret
+    }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn client_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_secret = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn set_client_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_secret = input;
+        self
+    }
+    /// <p>A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.</p>
+    pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret
     }
     /// <p>The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
     /// <p>For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access and ID tokens for 10 days.</p>
@@ -646,8 +700,8 @@ impl CreateUserPoolClientInputBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub fn callback_urls(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.callback_urls.unwrap_or_default();
         v.push(input.into());
@@ -665,8 +719,8 @@ impl CreateUserPoolClientInputBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub fn set_callback_urls(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.callback_urls = input;
         self
@@ -682,8 +736,8 @@ impl CreateUserPoolClientInputBuilder {
     /// <p>Not include a fragment component.</p></li>
     /// </ul>
     /// <p>See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.</p>
-    /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.</p>
-    /// <p>App callback URLs such as myapp://example are also supported.</p>
+    /// <p>Amazon Cognito requires HTTPS over HTTP except for callback URLs to <code>http://localhost</code>, <code>http://127.0.0.1</code> and <code>http://\[::1\]</code>. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.</p>
+    /// <p>App callback URLs such as <code>myapp://example</code> are also supported.</p>
     pub fn get_callback_urls(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.callback_urls
     }
@@ -973,6 +1027,7 @@ impl CreateUserPoolClientInputBuilder {
             user_pool_id: self.user_pool_id,
             client_name: self.client_name,
             generate_secret: self.generate_secret,
+            client_secret: self.client_secret,
             refresh_token_validity: self.refresh_token_validity,
             access_token_validity: self.access_token_validity,
             id_token_validity: self.id_token_validity,
@@ -994,5 +1049,38 @@ impl CreateUserPoolClientInputBuilder {
             auth_session_validity: self.auth_session_validity,
             refresh_token_rotation: self.refresh_token_rotation,
         })
+    }
+}
+impl ::std::fmt::Debug for CreateUserPoolClientInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateUserPoolClientInputBuilder");
+        formatter.field("user_pool_id", &self.user_pool_id);
+        formatter.field("client_name", &self.client_name);
+        formatter.field("generate_secret", &self.generate_secret);
+        formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("refresh_token_validity", &self.refresh_token_validity);
+        formatter.field("access_token_validity", &self.access_token_validity);
+        formatter.field("id_token_validity", &self.id_token_validity);
+        formatter.field("token_validity_units", &self.token_validity_units);
+        formatter.field("read_attributes", &self.read_attributes);
+        formatter.field("write_attributes", &self.write_attributes);
+        formatter.field("explicit_auth_flows", &self.explicit_auth_flows);
+        formatter.field("supported_identity_providers", &self.supported_identity_providers);
+        formatter.field("callback_urls", &self.callback_urls);
+        formatter.field("logout_urls", &self.logout_urls);
+        formatter.field("default_redirect_uri", &self.default_redirect_uri);
+        formatter.field("allowed_o_auth_flows", &self.allowed_o_auth_flows);
+        formatter.field("allowed_o_auth_scopes", &self.allowed_o_auth_scopes);
+        formatter.field("allowed_o_auth_flows_user_pool_client", &self.allowed_o_auth_flows_user_pool_client);
+        formatter.field("analytics_configuration", &self.analytics_configuration);
+        formatter.field("prevent_user_existence_errors", &self.prevent_user_existence_errors);
+        formatter.field("enable_token_revocation", &self.enable_token_revocation);
+        formatter.field(
+            "enable_propagate_additional_user_context_data",
+            &self.enable_propagate_additional_user_context_data,
+        );
+        formatter.field("auth_session_validity", &self.auth_session_validity);
+        formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.finish()
     }
 }

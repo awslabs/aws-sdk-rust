@@ -193,4 +193,18 @@ impl StartPlanExecutionFluentBuilder {
     pub fn get_latest_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_latest_version()
     }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.recovery_execution_id(input.into());
+        self
+    }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn set_recovery_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_recovery_execution_id(input);
+        self
+    }
+    /// <p>The execution identifier of the recovery execution that ran in the opposite region post-recovery is ran in. Required when starting a post-recovery execution.</p>
+    pub fn get_recovery_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_recovery_execution_id()
+    }
 }

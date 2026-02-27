@@ -49,6 +49,16 @@ pub fn ser_execution_block_configuration(
             encoder.str("documentDbConfig");
             crate::protocol_serde::shape_document_db_configuration::ser_document_db_configuration(encoder, inner)?;
         }
+        crate::types::ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig(inner) => {
+            encoder.str("rdsPromoteReadReplicaConfig");
+            crate::protocol_serde::shape_rds_promote_read_replica_configuration::ser_rds_promote_read_replica_configuration(encoder, inner)?;
+        }
+        crate::types::ExecutionBlockConfiguration::RdsCreateCrossRegionReadReplicaConfig(inner) => {
+            encoder.str("rdsCreateCrossRegionReadReplicaConfig");
+            crate::protocol_serde::shape_rds_create_cross_region_replica_configuration::ser_rds_create_cross_region_replica_configuration(
+                encoder, inner,
+            )?;
+        }
         crate::types::ExecutionBlockConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExecutionBlockConfiguration",
@@ -97,6 +107,14 @@ pub(crate) fn de_execution_block_configuration(
             ),
             "documentDbConfig" => crate::types::ExecutionBlockConfiguration::DocumentDbConfig(
                 crate::protocol_serde::shape_document_db_configuration::de_document_db_configuration(decoder)?,
+            ),
+            "rdsPromoteReadReplicaConfig" => crate::types::ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig(
+                crate::protocol_serde::shape_rds_promote_read_replica_configuration::de_rds_promote_read_replica_configuration(decoder)?,
+            ),
+            "rdsCreateCrossRegionReadReplicaConfig" => crate::types::ExecutionBlockConfiguration::RdsCreateCrossRegionReadReplicaConfig(
+                crate::protocol_serde::shape_rds_create_cross_region_replica_configuration::de_rds_create_cross_region_replica_configuration(
+                    decoder,
+                )?,
             ),
             _ => {
                 decoder.skip()?;

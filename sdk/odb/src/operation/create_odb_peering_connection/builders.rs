@@ -170,6 +170,25 @@ impl CreateOdbPeeringConnectionFluentBuilder {
     pub fn get_peer_network_cidrs_to_be_added(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_peer_network_cidrs_to_be_added()
     }
+    ///
+    /// Appends an item to `peerNetworkRouteTableIds`.
+    ///
+    /// To override the contents of this collection use [`set_peer_network_route_table_ids`](Self::set_peer_network_route_table_ids).
+    ///
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub fn peer_network_route_table_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.peer_network_route_table_ids(input.into());
+        self
+    }
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub fn set_peer_network_route_table_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_peer_network_route_table_ids(input);
+        self
+    }
+    /// <p>The unique identifier of the VPC route table for which a route to the ODB network is automatically created during peering connection establishment.</p>
+    pub fn get_peer_network_route_table_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_peer_network_route_table_ids()
+    }
     /// <p>The client token for the ODB peering connection request.</p>
     /// <p>Constraints:</p>
     /// <ul>

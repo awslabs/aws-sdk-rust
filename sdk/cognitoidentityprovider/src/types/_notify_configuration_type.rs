@@ -6,7 +6,7 @@
 pub struct NotifyConfigurationType {
     /// <p>The email address that sends the email message. The address must be either individually verified with Amazon Simple Email Service, or from a domain that has been verified with Amazon SES.</p>
     pub from: ::std::option::Option<::std::string::String>,
-    /// <p>The reply-to email address of an email template.</p>
+    /// <p>The reply-to email address of an email template. Can be an email address in the format <code>admin@example.com</code> or <code>Administrator <admin@example.com></admin@example.com></code>.</p>
     pub reply_to: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the identity that is associated with the sending authorization policy. This identity permits Amazon Cognito to send for the email address specified in the <code>From</code> parameter.</p>
     pub source_arn: ::std::string::String,
@@ -22,7 +22,7 @@ impl NotifyConfigurationType {
     pub fn from(&self) -> ::std::option::Option<&str> {
         self.from.as_deref()
     }
-    /// <p>The reply-to email address of an email template.</p>
+    /// <p>The reply-to email address of an email template. Can be an email address in the format <code>admin@example.com</code> or <code>Administrator <admin@example.com></admin@example.com></code>.</p>
     pub fn reply_to(&self) -> ::std::option::Option<&str> {
         self.reply_to.as_deref()
     }
@@ -77,17 +77,17 @@ impl NotifyConfigurationTypeBuilder {
     pub fn get_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.from
     }
-    /// <p>The reply-to email address of an email template.</p>
+    /// <p>The reply-to email address of an email template. Can be an email address in the format <code>admin@example.com</code> or <code>Administrator <admin@example.com></admin@example.com></code>.</p>
     pub fn reply_to(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.reply_to = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reply-to email address of an email template.</p>
+    /// <p>The reply-to email address of an email template. Can be an email address in the format <code>admin@example.com</code> or <code>Administrator <admin@example.com></admin@example.com></code>.</p>
     pub fn set_reply_to(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.reply_to = input;
         self
     }
-    /// <p>The reply-to email address of an email template.</p>
+    /// <p>The reply-to email address of an email template. Can be an email address in the format <code>admin@example.com</code> or <code>Administrator <admin@example.com></admin@example.com></code>.</p>
     pub fn get_reply_to(&self) -> &::std::option::Option<::std::string::String> {
         &self.reply_to
     }

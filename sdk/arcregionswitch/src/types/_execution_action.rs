@@ -14,6 +14,7 @@
 /// match executionaction {
 ///     ExecutionAction::Activate => { /* ... */ },
 ///     ExecutionAction::Deactivate => { /* ... */ },
+///     ExecutionAction::PostRecovery => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ExecutionAction {
     Activate,
     #[allow(missing_docs)] // documentation missing in model
     Deactivate,
+    #[allow(missing_docs)] // documentation missing in model
+    PostRecovery,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ExecutionAction {
         match s {
             "activate" => ExecutionAction::Activate,
             "deactivate" => ExecutionAction::Deactivate,
+            "postRecovery" => ExecutionAction::PostRecovery,
             other => ExecutionAction::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ExecutionAction {
         match self {
             ExecutionAction::Activate => "activate",
             ExecutionAction::Deactivate => "deactivate",
+            ExecutionAction::PostRecovery => "postRecovery",
             ExecutionAction::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["activate", "deactivate"]
+        &["activate", "deactivate", "postRecovery"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionAction {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ExecutionAction {
         match self {
             ExecutionAction::Activate => write!(f, "activate"),
             ExecutionAction::Deactivate => write!(f, "deactivate"),
+            ExecutionAction::PostRecovery => write!(f, "postRecovery"),
             ExecutionAction::Unknown(value) => write!(f, "{value}"),
         }
     }

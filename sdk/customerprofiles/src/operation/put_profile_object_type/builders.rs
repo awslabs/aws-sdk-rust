@@ -235,6 +235,20 @@ impl PutProfileObjectTypeFluentBuilder {
     pub fn get_max_profile_object_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_profile_object_count()
     }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn source_priority(mut self, input: i32) -> Self {
+        self.inner = self.inner.source_priority(input);
+        self
+    }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn set_source_priority(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_source_priority(input);
+        self
+    }
+    /// <p>An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.</p>
+    pub fn get_source_priority(&self) -> &::std::option::Option<i32> {
+        self.inner.get_source_priority()
+    }
     ///
     /// Adds a key-value pair to `Fields`.
     ///

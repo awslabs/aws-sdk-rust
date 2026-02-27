@@ -21,6 +21,8 @@ pub struct CreateModelInvocationJobInput {
     pub timeout_duration_in_hours: ::std::option::Option<i32>,
     /// <p>Any tags to associate with the batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging Amazon Bedrock resources</a>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub model_invocation_type: ::std::option::Option<crate::types::ModelInvocationType>,
 }
 impl CreateModelInvocationJobInput {
     /// <p>A name to give the batch inference job.</p>
@@ -61,6 +63,10 @@ impl CreateModelInvocationJobInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn model_invocation_type(&self) -> ::std::option::Option<&crate::types::ModelInvocationType> {
+        self.model_invocation_type.as_ref()
+    }
 }
 impl CreateModelInvocationJobInput {
     /// Creates a new builder-style object to manufacture [`CreateModelInvocationJobInput`](crate::operation::create_model_invocation_job::CreateModelInvocationJobInput).
@@ -82,6 +88,7 @@ pub struct CreateModelInvocationJobInputBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) timeout_duration_in_hours: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) model_invocation_type: ::std::option::Option<crate::types::ModelInvocationType>,
 }
 impl CreateModelInvocationJobInputBuilder {
     /// <p>A name to give the batch inference job.</p>
@@ -221,6 +228,20 @@ impl CreateModelInvocationJobInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn model_invocation_type(mut self, input: crate::types::ModelInvocationType) -> Self {
+        self.model_invocation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn set_model_invocation_type(mut self, input: ::std::option::Option<crate::types::ModelInvocationType>) -> Self {
+        self.model_invocation_type = input;
+        self
+    }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn get_model_invocation_type(&self) -> &::std::option::Option<crate::types::ModelInvocationType> {
+        &self.model_invocation_type
+    }
     /// Consumes the builder and constructs a [`CreateModelInvocationJobInput`](crate::operation::create_model_invocation_job::CreateModelInvocationJobInput).
     pub fn build(
         self,
@@ -238,6 +259,7 @@ impl CreateModelInvocationJobInputBuilder {
             vpc_config: self.vpc_config,
             timeout_duration_in_hours: self.timeout_duration_in_hours,
             tags: self.tags,
+            model_invocation_type: self.model_invocation_type,
         })
     }
 }

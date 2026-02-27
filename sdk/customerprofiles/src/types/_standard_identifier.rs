@@ -18,6 +18,7 @@
 ///     StandardIdentifier::Asset => { /* ... */ },
 ///     StandardIdentifier::Case => { /* ... */ },
 ///     StandardIdentifier::CommunicationRecord => { /* ... */ },
+///     StandardIdentifier::Device => { /* ... */ },
 ///     StandardIdentifier::HotelPreference => { /* ... */ },
 ///     StandardIdentifier::HotelReservation => { /* ... */ },
 ///     StandardIdentifier::HotelStayRevenue => { /* ... */ },
@@ -30,6 +31,7 @@
 ///     StandardIdentifier::Profile => { /* ... */ },
 ///     StandardIdentifier::Secondary => { /* ... */ },
 ///     StandardIdentifier::Unique => { /* ... */ },
+///     StandardIdentifier::WebAnalytics => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -71,6 +73,8 @@ pub enum StandardIdentifier {
     #[allow(missing_docs)] // documentation missing in model
     CommunicationRecord,
     #[allow(missing_docs)] // documentation missing in model
+    Device,
+    #[allow(missing_docs)] // documentation missing in model
     HotelPreference,
     #[allow(missing_docs)] // documentation missing in model
     HotelReservation,
@@ -94,6 +98,8 @@ pub enum StandardIdentifier {
     Secondary,
     #[allow(missing_docs)] // documentation missing in model
     Unique,
+    #[allow(missing_docs)] // documentation missing in model
+    WebAnalytics,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -107,6 +113,7 @@ impl ::std::convert::From<&str> for StandardIdentifier {
             "ASSET" => StandardIdentifier::Asset,
             "CASE" => StandardIdentifier::Case,
             "COMMUNICATION_RECORD" => StandardIdentifier::CommunicationRecord,
+            "DEVICE" => StandardIdentifier::Device,
             "HOTEL_PREFERENCE" => StandardIdentifier::HotelPreference,
             "HOTEL_RESERVATION" => StandardIdentifier::HotelReservation,
             "HOTEL_STAY_REVENUE" => StandardIdentifier::HotelStayRevenue,
@@ -119,6 +126,7 @@ impl ::std::convert::From<&str> for StandardIdentifier {
             "PROFILE" => StandardIdentifier::Profile,
             "SECONDARY" => StandardIdentifier::Secondary,
             "UNIQUE" => StandardIdentifier::Unique,
+            "WEB_ANALYTICS" => StandardIdentifier::WebAnalytics,
             other => StandardIdentifier::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -140,6 +148,7 @@ impl StandardIdentifier {
             StandardIdentifier::Asset => "ASSET",
             StandardIdentifier::Case => "CASE",
             StandardIdentifier::CommunicationRecord => "COMMUNICATION_RECORD",
+            StandardIdentifier::Device => "DEVICE",
             StandardIdentifier::HotelPreference => "HOTEL_PREFERENCE",
             StandardIdentifier::HotelReservation => "HOTEL_RESERVATION",
             StandardIdentifier::HotelStayRevenue => "HOTEL_STAY_REVENUE",
@@ -152,6 +161,7 @@ impl StandardIdentifier {
             StandardIdentifier::Profile => "PROFILE",
             StandardIdentifier::Secondary => "SECONDARY",
             StandardIdentifier::Unique => "UNIQUE",
+            StandardIdentifier::WebAnalytics => "WEB_ANALYTICS",
             StandardIdentifier::Unknown(value) => value.as_str(),
         }
     }
@@ -164,6 +174,7 @@ impl StandardIdentifier {
             "ASSET",
             "CASE",
             "COMMUNICATION_RECORD",
+            "DEVICE",
             "HOTEL_PREFERENCE",
             "HOTEL_RESERVATION",
             "HOTEL_STAY_REVENUE",
@@ -176,6 +187,7 @@ impl StandardIdentifier {
             "PROFILE",
             "SECONDARY",
             "UNIQUE",
+            "WEB_ANALYTICS",
         ]
     }
 }
@@ -205,6 +217,7 @@ impl ::std::fmt::Display for StandardIdentifier {
             StandardIdentifier::Asset => write!(f, "ASSET"),
             StandardIdentifier::Case => write!(f, "CASE"),
             StandardIdentifier::CommunicationRecord => write!(f, "COMMUNICATION_RECORD"),
+            StandardIdentifier::Device => write!(f, "DEVICE"),
             StandardIdentifier::HotelPreference => write!(f, "HOTEL_PREFERENCE"),
             StandardIdentifier::HotelReservation => write!(f, "HOTEL_RESERVATION"),
             StandardIdentifier::HotelStayRevenue => write!(f, "HOTEL_STAY_REVENUE"),
@@ -217,6 +230,7 @@ impl ::std::fmt::Display for StandardIdentifier {
             StandardIdentifier::Profile => write!(f, "PROFILE"),
             StandardIdentifier::Secondary => write!(f, "SECONDARY"),
             StandardIdentifier::Unique => write!(f, "UNIQUE"),
+            StandardIdentifier::WebAnalytics => write!(f, "WEB_ANALYTICS"),
             StandardIdentifier::Unknown(value) => write!(f, "{value}"),
         }
     }

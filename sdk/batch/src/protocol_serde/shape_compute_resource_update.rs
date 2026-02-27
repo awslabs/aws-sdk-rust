@@ -103,5 +103,11 @@ pub fn ser_compute_resource_update(
     if let Some(var_30) = &input.image_id {
         object.key("imageId").string(var_30.as_str());
     }
+    if let Some(var_31) = &input.scaling_policy {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("scalingPolicy").start_object();
+        crate::protocol_serde::shape_compute_scaling_policy::ser_compute_scaling_policy(&mut object_32, var_31)?;
+        object_32.finish();
+    }
     Ok(())
 }

@@ -26,6 +26,8 @@ pub struct AbbreviatedExecution {
     pub execution_action: crate::types::ExecutionAction,
     /// <p>The Amazon Web Services Region for a plan execution.</p>
     pub execution_region: ::std::string::String,
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub recovery_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>The actual recovery time that Region switch calculates for a plan execution. Actual recovery time includes the time for the plan to run added to the time elapsed until the application health alarms that you've specified are healthy again.</p>
     pub actual_recovery_time: ::std::option::Option<::std::string::String>,
 }
@@ -77,6 +79,10 @@ impl AbbreviatedExecution {
         use std::ops::Deref;
         self.execution_region.deref()
     }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(&self) -> ::std::option::Option<&str> {
+        self.recovery_execution_id.as_deref()
+    }
     /// <p>The actual recovery time that Region switch calculates for a plan execution. Actual recovery time includes the time for the plan to run added to the time elapsed until the application health alarms that you've specified are healthy again.</p>
     pub fn actual_recovery_time(&self) -> ::std::option::Option<&str> {
         self.actual_recovery_time.as_deref()
@@ -104,6 +110,7 @@ pub struct AbbreviatedExecutionBuilder {
     pub(crate) execution_state: ::std::option::Option<crate::types::ExecutionState>,
     pub(crate) execution_action: ::std::option::Option<crate::types::ExecutionAction>,
     pub(crate) execution_region: ::std::option::Option<::std::string::String>,
+    pub(crate) recovery_execution_id: ::std::option::Option<::std::string::String>,
     pub(crate) actual_recovery_time: ::std::option::Option<::std::string::String>,
 }
 impl AbbreviatedExecutionBuilder {
@@ -268,6 +275,20 @@ impl AbbreviatedExecutionBuilder {
     pub fn get_execution_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_region
     }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn recovery_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recovery_execution_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn set_recovery_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recovery_execution_id = input;
+        self
+    }
+    /// <p>The unique identifier of the most recent recovery execution. Required when starting a post-recovery execution.</p>
+    pub fn get_recovery_execution_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recovery_execution_id
+    }
     /// <p>The actual recovery time that Region switch calculates for a plan execution. Actual recovery time includes the time for the plan to run added to the time elapsed until the application health alarms that you've specified are healthy again.</p>
     pub fn actual_recovery_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.actual_recovery_time = ::std::option::Option::Some(input.into());
@@ -339,6 +360,7 @@ impl AbbreviatedExecutionBuilder {
                     "execution_region was not specified but it is required when building AbbreviatedExecution",
                 )
             })?,
+            recovery_execution_id: self.recovery_execution_id,
             actual_recovery_time: self.actual_recovery_time,
         })
     }

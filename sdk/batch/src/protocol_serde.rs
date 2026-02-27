@@ -273,6 +273,8 @@ pub(crate) mod shape_update_policy;
 
 pub(crate) mod shape_compute_environment_detail;
 
+pub(crate) mod shape_compute_scaling_policy;
+
 pub(crate) mod shape_consumable_resource_requirement;
 
 pub(crate) mod shape_consumable_resource_summary;

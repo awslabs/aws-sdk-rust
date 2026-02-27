@@ -65,6 +65,8 @@ pub struct ModelInvocationJobSummary {
     pub timeout_duration_in_hours: ::std::option::Option<i32>,
     /// <p>The time at which the batch inference job times or timed out.</p>
     pub job_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub model_invocation_type: ::std::option::Option<crate::types::ModelInvocationType>,
 }
 impl ModelInvocationJobSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
@@ -162,6 +164,10 @@ impl ModelInvocationJobSummary {
     pub fn job_expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.job_expiration_time.as_ref()
     }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn model_invocation_type(&self) -> ::std::option::Option<&crate::types::ModelInvocationType> {
+        self.model_invocation_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for ModelInvocationJobSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -181,6 +187,7 @@ impl ::std::fmt::Debug for ModelInvocationJobSummary {
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("timeout_duration_in_hours", &self.timeout_duration_in_hours);
         formatter.field("job_expiration_time", &self.job_expiration_time);
+        formatter.field("model_invocation_type", &self.model_invocation_type);
         formatter.finish()
     }
 }
@@ -210,6 +217,7 @@ pub struct ModelInvocationJobSummaryBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) timeout_duration_in_hours: ::std::option::Option<i32>,
     pub(crate) job_expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) model_invocation_type: ::std::option::Option<crate::types::ModelInvocationType>,
 }
 impl ModelInvocationJobSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
@@ -522,6 +530,20 @@ impl ModelInvocationJobSummaryBuilder {
     pub fn get_job_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.job_expiration_time
     }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn model_invocation_type(mut self, input: crate::types::ModelInvocationType) -> Self {
+        self.model_invocation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn set_model_invocation_type(mut self, input: ::std::option::Option<crate::types::ModelInvocationType>) -> Self {
+        self.model_invocation_type = input;
+        self
+    }
+    /// <p>The invocation endpoint for ModelInvocationJob</p>
+    pub fn get_model_invocation_type(&self) -> &::std::option::Option<crate::types::ModelInvocationType> {
+        &self.model_invocation_type
+    }
     /// Consumes the builder and constructs a [`ModelInvocationJobSummary`](crate::types::ModelInvocationJobSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`job_arn`](crate::types::builders::ModelInvocationJobSummaryBuilder::job_arn)
@@ -571,6 +593,7 @@ impl ModelInvocationJobSummaryBuilder {
             vpc_config: self.vpc_config,
             timeout_duration_in_hours: self.timeout_duration_in_hours,
             job_expiration_time: self.job_expiration_time,
+            model_invocation_type: self.model_invocation_type,
         })
     }
 }
@@ -592,6 +615,7 @@ impl ::std::fmt::Debug for ModelInvocationJobSummaryBuilder {
         formatter.field("vpc_config", &self.vpc_config);
         formatter.field("timeout_duration_in_hours", &self.timeout_duration_in_hours);
         formatter.field("job_expiration_time", &self.job_expiration_time);
+        formatter.field("model_invocation_type", &self.model_invocation_type);
         formatter.finish()
     }
 }

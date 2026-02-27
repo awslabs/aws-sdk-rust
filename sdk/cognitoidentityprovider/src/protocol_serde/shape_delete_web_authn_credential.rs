@@ -99,6 +99,26 @@ pub fn de_delete_web_authn_credential_http_error(
             }
             tmp
         }),
+        "PasswordResetRequiredException" => {
+            crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::PasswordResetRequiredException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::PasswordResetRequiredExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_password_reset_required_exception::de_password_reset_required_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

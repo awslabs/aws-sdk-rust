@@ -304,4 +304,18 @@ impl CreateResourceShareFluentBuilder {
     pub fn get_sources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_sources()
     }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn resource_share_configuration(mut self, input: crate::types::ResourceShareConfiguration) -> Self {
+        self.inner = self.inner.resource_share_configuration(input);
+        self
+    }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn set_resource_share_configuration(mut self, input: ::std::option::Option<crate::types::ResourceShareConfiguration>) -> Self {
+        self.inner = self.inner.set_resource_share_configuration(input);
+        self
+    }
+    /// <p>Specifies the configuration of this resource share.</p>
+    pub fn get_resource_share_configuration(&self) -> &::std::option::Option<crate::types::ResourceShareConfiguration> {
+        self.inner.get_resource_share_configuration()
+    }
 }

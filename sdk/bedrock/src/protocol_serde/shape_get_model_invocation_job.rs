@@ -194,6 +194,13 @@ pub(crate) fn de_get_model_invocation_job(
                             .transpose()?,
                     );
                 }
+                "modelInvocationType" => {
+                    builder = builder.set_model_invocation_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ModelInvocationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "outputDataConfig" => {
                     builder = builder.set_output_data_config(
                         crate::protocol_serde::shape_model_invocation_job_output_data_config::de_model_invocation_job_output_data_config(

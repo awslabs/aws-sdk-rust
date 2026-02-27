@@ -76,6 +76,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "resourceShareConfiguration" => {
+                            builder = builder.set_resource_share_configuration(
+                                crate::protocol_serde::shape_resource_share_configuration::de_resource_share_configuration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

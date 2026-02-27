@@ -59,18 +59,24 @@ pub fn ser_put_profile_object_type_input_input(
     if let Some(var_18) = &input.source_last_updated_timestamp_format {
         object.key("SourceLastUpdatedTimestampFormat").string(var_18.as_str());
     }
-    if let Some(var_19) = &input.tags {
+    if let Some(var_19) = &input.source_priority {
+        object.key("SourcePriority").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
+    if let Some(var_20) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("Tags").start_object();
-        for (key_21, value_22) in var_19 {
+        let mut object_21 = object.key("Tags").start_object();
+        for (key_22, value_23) in var_20 {
             {
-                object_20.key(key_21.as_str()).string(value_22.as_str());
+                object_21.key(key_22.as_str()).string(value_23.as_str());
             }
         }
-        object_20.finish();
+        object_21.finish();
     }
-    if let Some(var_23) = &input.template_id {
-        object.key("TemplateId").string(var_23.as_str());
+    if let Some(var_24) = &input.template_id {
+        object.key("TemplateId").string(var_24.as_str());
     }
     Ok(())
 }

@@ -22,7 +22,8 @@ impl crate::operation::list_users::builders::ListUsersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListUsers`.
 ///
-/// <p>Given a user pool ID, returns a list of users and their basic details in a user pool.</p><note>
+/// <p>Given a user pool ID, returns a list of users and their basic details in a user pool.</p>
+/// <p>This operation is eventually consistent. You might experience a delay before results are up-to-date. To validate the existence or configuration of an individual user, use <code>AdminGetUser</code>.</p><note>
 /// <p>Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.</p>
 /// <p class="title"><b>Learn more</b></p>
 /// <ul>
@@ -153,17 +154,17 @@ impl ListUsersFluentBuilder {
     pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_attributes_to_get()
     }
-    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response. In some SDK contexts, this operation might return fewer items than you specify in the <code>Limit</code> parameter without having reached the end of the full list. If the response contains a <code>PaginationToken</code>, then there are more results.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
-    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response. In some SDK contexts, this operation might return fewer items than you specify in the <code>Limit</code> parameter without having reached the end of the full list. If the response contains a <code>PaginationToken</code>, then there are more results.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
-    /// <p>The maximum number of users that you want Amazon Cognito to return in the response.</p>
+    /// <p>The maximum number of users that you want Amazon Cognito to return in the response. In some SDK contexts, this operation might return fewer items than you specify in the <code>Limit</code> parameter without having reached the end of the full list. If the response contains a <code>PaginationToken</code>, then there are more results.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }

@@ -38,6 +38,8 @@ pub struct ResourceShare {
     /// <p><b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p></li>
     /// </ul>
     pub feature_set: ::std::option::Option<crate::types::ResourceShareFeatureSet>,
+    /// <p>The configuration of the resource share</p>
+    pub resource_share_configuration: ::std::option::Option<crate::types::ResourceShareConfiguration>,
 }
 impl ResourceShare {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
@@ -96,6 +98,10 @@ impl ResourceShare {
     pub fn feature_set(&self) -> ::std::option::Option<&crate::types::ResourceShareFeatureSet> {
         self.feature_set.as_ref()
     }
+    /// <p>The configuration of the resource share</p>
+    pub fn resource_share_configuration(&self) -> ::std::option::Option<&crate::types::ResourceShareConfiguration> {
+        self.resource_share_configuration.as_ref()
+    }
 }
 impl ResourceShare {
     /// Creates a new builder-style object to manufacture [`ResourceShare`](crate::types::ResourceShare).
@@ -118,6 +124,7 @@ pub struct ResourceShareBuilder {
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) feature_set: ::std::option::Option<crate::types::ResourceShareFeatureSet>,
+    pub(crate) resource_share_configuration: ::std::option::Option<crate::types::ResourceShareConfiguration>,
 }
 impl ResourceShareBuilder {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
@@ -308,6 +315,20 @@ impl ResourceShareBuilder {
     pub fn get_feature_set(&self) -> &::std::option::Option<crate::types::ResourceShareFeatureSet> {
         &self.feature_set
     }
+    /// <p>The configuration of the resource share</p>
+    pub fn resource_share_configuration(mut self, input: crate::types::ResourceShareConfiguration) -> Self {
+        self.resource_share_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the resource share</p>
+    pub fn set_resource_share_configuration(mut self, input: ::std::option::Option<crate::types::ResourceShareConfiguration>) -> Self {
+        self.resource_share_configuration = input;
+        self
+    }
+    /// <p>The configuration of the resource share</p>
+    pub fn get_resource_share_configuration(&self) -> &::std::option::Option<crate::types::ResourceShareConfiguration> {
+        &self.resource_share_configuration
+    }
     /// Consumes the builder and constructs a [`ResourceShare`](crate::types::ResourceShare).
     pub fn build(self) -> crate::types::ResourceShare {
         crate::types::ResourceShare {
@@ -321,6 +342,7 @@ impl ResourceShareBuilder {
             creation_time: self.creation_time,
             last_updated_time: self.last_updated_time,
             feature_set: self.feature_set,
+            resource_share_configuration: self.resource_share_configuration,
         }
     }
 }

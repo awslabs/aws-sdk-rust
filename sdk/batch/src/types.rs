@@ -69,6 +69,8 @@ pub use crate::types::_cr_allocation_strategy::CrAllocationStrategy;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecification;
 
+pub use crate::types::_compute_scaling_policy::ComputeScalingPolicy;
+
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrder;
 
 pub use crate::types::_service_environment_order::ServiceEnvironmentOrder;
@@ -328,6 +330,8 @@ mod _compute_environment_order;
 mod _compute_resource;
 
 mod _compute_resource_update;
+
+mod _compute_scaling_policy;
 
 mod _consumable_resource_properties;
 

@@ -5,6 +5,8 @@ pub use crate::types::_resource_share_permission_summary::ResourceSharePermissio
 
 pub use crate::types::_resource_share_permission_detail::ResourceSharePermissionDetailBuilder;
 
+pub use crate::types::_resource_share_configuration::ResourceShareConfigurationBuilder;
+
 pub use crate::types::_resource_share::ResourceShareBuilder;
 
 pub use crate::types::_replace_permission_associations_work::ReplacePermissionAssociationsWorkBuilder;

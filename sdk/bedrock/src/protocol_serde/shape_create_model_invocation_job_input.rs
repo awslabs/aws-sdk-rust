@@ -18,38 +18,41 @@ pub fn ser_create_model_invocation_job_input_input(
     if let Some(var_5) = &input.model_id {
         object.key("modelId").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.output_data_config {
+    if let Some(var_6) = &input.model_invocation_type {
+        object.key("modelInvocationType").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.output_data_config {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("outputDataConfig").start_object();
-        crate::protocol_serde::shape_model_invocation_job_output_data_config::ser_model_invocation_job_output_data_config(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("outputDataConfig").start_object();
+        crate::protocol_serde::shape_model_invocation_job_output_data_config::ser_model_invocation_job_output_data_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.role_arn {
-        object.key("roleArn").string(var_8.as_str());
+    if let Some(var_9) = &input.role_arn {
+        object.key("roleArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        let mut array_10 = object.key("tags").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.tags {
+        let mut array_11 = object.key("tags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.timeout_duration_in_hours {
+    if let Some(var_14) = &input.timeout_duration_in_hours {
         object.key("timeoutDurationInHours").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_13).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_14) = &input.vpc_config {
+    if let Some(var_15) = &input.vpc_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("vpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("vpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }
