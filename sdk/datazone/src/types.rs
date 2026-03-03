@@ -185,6 +185,8 @@ pub use crate::types::_sort_field_project::SortFieldProject;
 
 pub use crate::types::_sort_key::SortKey;
 
+pub use crate::types::_additional_attributes::AdditionalAttributes;
+
 pub use crate::types::_reject_rule::RejectRule;
 
 pub use crate::types::_inventory_search_scope::InventorySearchScope;
@@ -475,6 +477,10 @@ pub use crate::types::_subscription_target_summary::SubscriptionTargetSummary;
 
 pub use crate::types::_time_series_data_point_form_input::TimeSeriesDataPointFormInput;
 
+pub use crate::types::_match_clause::MatchClause;
+
+pub use crate::types::_result_item::ResultItem;
+
 pub use crate::types::_reject_rule_behavior::RejectRuleBehavior;
 
 pub use crate::types::_reject_choice::RejectChoice;
@@ -643,6 +649,12 @@ pub use crate::types::_topic::Topic;
 
 pub use crate::types::_member_details::MemberDetails;
 
+pub use crate::types::_relation_pattern::RelationPattern;
+
+pub use crate::types::_entity_pattern::EntityPattern;
+
+pub use crate::types::_lineage_node_item::LineageNodeItem;
+
 pub use crate::types::_filter_operator::FilterOperator;
 
 pub use crate::types::_glossary_item::GlossaryItem;
@@ -706,6 +718,12 @@ pub use crate::types::_user_details::UserDetails;
 pub use crate::types::_group_details::GroupDetails;
 
 pub use crate::types::_metadata_form_summary::MetadataFormSummary;
+
+pub use crate::types::_relation_type::RelationType;
+
+pub use crate::types::_relation_direction::RelationDirection;
+
+pub use crate::types::_graph_entity_type::GraphEntityType;
 
 pub use crate::types::_glossary_item_additional_attributes::GlossaryItemAdditionalAttributes;
 
@@ -814,6 +832,8 @@ mod _account_source;
 mod _action_parameters;
 
 mod _add_to_project_member_pool_policy_grant_detail;
+
+mod _additional_attributes;
 
 mod _aggregation_list_item;
 
@@ -1035,6 +1055,8 @@ mod _enable_setting;
 
 mod _encryption_configuration;
 
+mod _entity_pattern;
+
 mod _entity_type;
 
 mod _environment_action_summary;
@@ -1141,6 +1163,8 @@ mod _granted_entity;
 
 mod _granted_entity_input;
 
+mod _graph_entity_type;
+
 mod _greater_than_expression;
 
 mod _greater_than_or_equal_to_expression;
@@ -1207,6 +1231,8 @@ mod _lineage_import_status;
 
 mod _lineage_info;
 
+mod _lineage_node_item;
+
 mod _lineage_node_reference;
 
 mod _lineage_node_summary;
@@ -1234,6 +1260,8 @@ mod _listing_summary_item;
 mod _managed_endpoint_credentials;
 
 mod _managed_policy_type;
+
+mod _match_clause;
 
 mod _match_offset;
 
@@ -1391,6 +1419,12 @@ mod _reject_rule;
 
 mod _reject_rule_behavior;
 
+mod _relation_direction;
+
+mod _relation_pattern;
+
+mod _relation_type;
+
 mod _relational_filter_configuration;
 
 mod _resolution_strategy;
@@ -1402,6 +1436,8 @@ mod _resource_tag;
 mod _resource_tag_parameter;
 
 mod _resource_tag_source;
+
+mod _result_item;
 
 mod _row_filter;
 

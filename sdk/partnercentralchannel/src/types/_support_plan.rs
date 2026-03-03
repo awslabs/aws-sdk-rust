@@ -6,10 +6,10 @@
 pub enum SupportPlan {
     /// <p>Configuration for partner-led support plans.</p>
     PartnerLedSupport(crate::types::PartnerLedSupport),
-    /// <p>Configuration for resold business support plans.</p>
-    ResoldBusiness(crate::types::ResoldBusiness),
     /// <p>Configuration for resold enterprise support plans.</p>
     ResoldEnterprise(crate::types::ResoldEnterprise),
+    /// <p>Configuration for resold unified operations support plans.</p>
+    ResoldUnifiedOperations(crate::types::ResoldUnifiedOperations),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -34,19 +34,6 @@ impl SupportPlan {
     pub fn is_partner_led_support(&self) -> bool {
         self.as_partner_led_support().is_ok()
     }
-    /// Tries to convert the enum instance into [`ResoldBusiness`](crate::types::SupportPlan::ResoldBusiness), extracting the inner [`ResoldBusiness`](crate::types::ResoldBusiness).
-    /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_resold_business(&self) -> ::std::result::Result<&crate::types::ResoldBusiness, &Self> {
-        if let SupportPlan::ResoldBusiness(val) = &self {
-            ::std::result::Result::Ok(val)
-        } else {
-            ::std::result::Result::Err(self)
-        }
-    }
-    /// Returns true if this is a [`ResoldBusiness`](crate::types::SupportPlan::ResoldBusiness).
-    pub fn is_resold_business(&self) -> bool {
-        self.as_resold_business().is_ok()
-    }
     /// Tries to convert the enum instance into [`ResoldEnterprise`](crate::types::SupportPlan::ResoldEnterprise), extracting the inner [`ResoldEnterprise`](crate::types::ResoldEnterprise).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_resold_enterprise(&self) -> ::std::result::Result<&crate::types::ResoldEnterprise, &Self> {
@@ -59,6 +46,19 @@ impl SupportPlan {
     /// Returns true if this is a [`ResoldEnterprise`](crate::types::SupportPlan::ResoldEnterprise).
     pub fn is_resold_enterprise(&self) -> bool {
         self.as_resold_enterprise().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ResoldUnifiedOperations`](crate::types::SupportPlan::ResoldUnifiedOperations), extracting the inner [`ResoldUnifiedOperations`](crate::types::ResoldUnifiedOperations).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_resold_unified_operations(&self) -> ::std::result::Result<&crate::types::ResoldUnifiedOperations, &Self> {
+        if let SupportPlan::ResoldUnifiedOperations(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ResoldUnifiedOperations`](crate::types::SupportPlan::ResoldUnifiedOperations).
+    pub fn is_resold_unified_operations(&self) -> bool {
+        self.as_resold_unified_operations().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

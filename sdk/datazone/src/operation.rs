@@ -421,6 +421,9 @@ pub mod put_data_export_configuration;
 /// Types for the `PutEnvironmentBlueprintConfiguration` operation.
 pub mod put_environment_blueprint_configuration;
 
+/// Types for the `QueryGraph` operation.
+pub mod query_graph;
+
 /// Types for the `RejectPredictions` operation.
 pub mod reject_predictions;
 

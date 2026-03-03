@@ -41,9 +41,9 @@ impl crate::operation::create_import_task::builders::CreateImportTaskInputBuilde
 /// <li>
 /// <p>logs:PutResourcePolicy</p></li>
 /// <li>
-/// <p>(If source has an associated AWS KMS Key) kms:Decrypt</p></li>
+/// <p>(If source has an associated Amazon Web Services KMS Key) kms:Decrypt</p></li>
 /// <li>
-/// <p>(If source has an associated AWS KMS Key) kms:GenerateDataKey</p></li>
+/// <p>(If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey</p></li>
 /// </ul>
 /// <p>Example IAM policy for provided import role:</p>
 /// <p><code>\[ { "Effect": "Allow", "Action": "iam:PassRole", "Resource": "arn:aws:iam::123456789012:role/apiCallerCredentials", "Condition": { "StringLike": { "iam:AssociatedResourceARN": "arn:aws:logs:us-east-1:123456789012:log-group:aws/cloudtrail/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb:*" } } }, { "Effect": "Allow", "Action": \[ "cloudtrail:GetEventDataStoreData" \], "Resource": \[ "arn:aws:cloudtrail:us-east-1:123456789012:eventdatastore/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb" \] }, { "Effect": "Allow", "Action": \[ "logs:CreateImportTask", "logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutResourcePolicy" \], "Resource": \[ "arn:aws:logs:us-east-1:123456789012:log-group:/aws/cloudtrail/*" \] }, { "Effect": "Allow", "Action": \[ "kms:Decrypt", "kms:GenerateDataKey" \], "Resource": \[ "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012" \] } \]</code></p></li>

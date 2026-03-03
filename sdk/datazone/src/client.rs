@@ -443,6 +443,8 @@ mod put_data_export_configuration;
 
 mod put_environment_blueprint_configuration;
 
+mod query_graph;
+
 mod reject_predictions;
 
 mod reject_subscription_request;

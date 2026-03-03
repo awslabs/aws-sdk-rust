@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`environment_variables(Option<HashMap::<String, String>>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::environment_variables): <p>Environment variables set in the AgentCore Runtime environment.</p>
     ///   - [`authorizer_configuration(Option<AuthorizerConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::authorizer_configuration): <p>The authorizer configuration for the AgentCore Runtime.</p>
     ///   - [`request_header_configuration(Option<RequestHeaderConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::request_header_configuration): <p>Configuration for HTTP request headers that will be passed through to the runtime.</p>
+    ///   - [`metadata_configuration(Option<RuntimeMetadataConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::metadata_configuration): <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     /// - On failure, responds with [`SdkError<GetAgentRuntimeError>`](crate::operation::get_agent_runtime::GetAgentRuntimeError)
     pub fn get_agent_runtime(&self) -> crate::operation::get_agent_runtime::builders::GetAgentRuntimeFluentBuilder {
         crate::operation::get_agent_runtime::builders::GetAgentRuntimeFluentBuilder::new(self.handle.clone())

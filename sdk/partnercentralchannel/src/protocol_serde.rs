@@ -167,9 +167,9 @@ pub(crate) mod shape_program_management_account_type_sort;
 
 pub(crate) mod shape_relationship_summary;
 
-pub(crate) mod shape_resold_business;
-
 pub(crate) mod shape_resold_enterprise;
+
+pub(crate) mod shape_resold_unified_operations;
 
 pub(crate) mod shape_revoke_service_period_payload;
 

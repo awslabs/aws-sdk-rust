@@ -137,17 +137,17 @@ impl UpdatePolicyFluentBuilder {
         self.inner.get_policy_id()
     }
     /// <p>The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.description(input.into());
+    pub fn description(mut self, input: crate::types::UpdatedDescription) -> Self {
+        self.inner = self.inner.description(input);
         self
     }
     /// <p>The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::UpdatedDescription>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::UpdatedDescription> {
         self.inner.get_description()
     }
     /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>

@@ -421,6 +421,8 @@ pub(crate) mod shape_resource_oauth2_return_url_list_type;
 
 pub(crate) mod shape_rule;
 
+pub(crate) mod shape_runtime_metadata_configuration;
+
 pub(crate) mod shape_secret;
 
 pub(crate) mod shape_status_reasons;
@@ -430,6 +432,8 @@ pub(crate) mod shape_tags_map;
 pub(crate) mod shape_target_configuration;
 
 pub(crate) mod shape_target_summaries;
+
+pub(crate) mod shape_updated_description;
 
 pub(crate) mod shape_validation_exception_field_list;
 
@@ -540,6 +544,8 @@ pub(crate) mod shape_policy_engine;
 pub(crate) mod shape_policy_generation;
 
 pub(crate) mod shape_policy_generation_asset;
+
+pub(crate) mod shape_policy_generation_details;
 
 pub(crate) mod shape_request_header_allowlist;
 

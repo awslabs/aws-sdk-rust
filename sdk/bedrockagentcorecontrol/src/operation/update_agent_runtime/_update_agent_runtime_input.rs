@@ -21,6 +21,8 @@ pub struct UpdateAgentRuntimeInput {
     pub protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     /// <p>The updated life cycle configuration for the AgentCore Runtime.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -63,6 +65,10 @@ impl UpdateAgentRuntimeInput {
     pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
     /// <p>Updated environment variables to set in the AgentCore Runtime environment.</p>
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
@@ -84,6 +90,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -109,6 +116,7 @@ pub struct UpdateAgentRuntimeInputBuilder {
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
     pub(crate) protocol_configuration: ::std::option::Option<crate::types::ProtocolConfiguration>,
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -243,6 +251,20 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
     }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::RuntimeMetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::RuntimeMetadataConfiguration> {
+        &self.metadata_configuration
+    }
     /// Adds a key-value pair to `environment_variables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
@@ -299,6 +321,7 @@ impl UpdateAgentRuntimeInputBuilder {
             request_header_configuration: self.request_header_configuration,
             protocol_configuration: self.protocol_configuration,
             lifecycle_configuration: self.lifecycle_configuration,
+            metadata_configuration: self.metadata_configuration,
             environment_variables: self.environment_variables,
             client_token: self.client_token,
         })
@@ -316,6 +339,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInputBuilder {
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("protocol_configuration", &self.protocol_configuration);
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.finish()

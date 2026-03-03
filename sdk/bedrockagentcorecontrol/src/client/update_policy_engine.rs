@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`policy_engine_id(impl Into<String>)`](crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::policy_engine_id) / [`set_policy_engine_id(Option<String>)`](crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::set_policy_engine_id):<br>required: **true**<br><p>The unique identifier of the policy engine to be updated.</p><br>
-    ///   - [`description(impl Into<String>)`](crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::set_description):<br>required: **false**<br><p>The new description for the policy engine.</p><br>
+    ///   - [`description(UpdatedDescription)`](crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::description) / [`set_description(Option<UpdatedDescription>)`](crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::set_description):<br>required: **false**<br><p>The new description for the policy engine.</p><br>
     /// - On success, responds with [`UpdatePolicyEngineOutput`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput) with field(s):
     ///   - [`policy_engine_id(String)`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput::policy_engine_id): <p>The unique identifier of the updated policy engine.</p>
     ///   - [`name(String)`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput::name): <p>The name of the updated policy engine.</p>
@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`policy_engine_arn(String)`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput::policy_engine_arn): <p>The ARN of the updated policy engine.</p>
     ///   - [`status(PolicyEngineStatus)`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput::status): <p>The current status of the updated policy engine.</p>
     ///   - [`status_reasons(Vec::<String>)`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput::status_reasons): <p>Additional information about the update status.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::operation::update_policy_engine::UpdatePolicyEngineOutput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
     /// - On failure, responds with [`SdkError<UpdatePolicyEngineError>`](crate::operation::update_policy_engine::UpdatePolicyEngineError)
     pub fn update_policy_engine(&self) -> crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder {
         crate::operation::update_policy_engine::builders::UpdatePolicyEngineFluentBuilder::new(self.handle.clone())

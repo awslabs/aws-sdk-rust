@@ -319,6 +319,8 @@ mod list_tags_log_group;
 
 mod put_account_policy;
 
+mod put_bearer_token_authentication;
+
 mod put_data_protection_policy;
 
 mod put_delivery_destination;

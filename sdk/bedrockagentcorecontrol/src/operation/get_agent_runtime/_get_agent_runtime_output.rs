@@ -39,6 +39,8 @@ pub struct GetAgentRuntimeOutput {
     pub authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     /// <p>Configuration for HTTP request headers that will be passed through to the runtime.</p>
     pub request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
+    /// <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutput {
@@ -119,6 +121,10 @@ impl GetAgentRuntimeOutput {
     pub fn request_header_configuration(&self) -> ::std::option::Option<&crate::types::RequestHeaderConfiguration> {
         self.request_header_configuration.as_ref()
     }
+    /// <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::RuntimeMetadataConfiguration> {
+        self.metadata_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -141,6 +147,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -179,6 +186,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
+    pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutputBuilder {
@@ -457,6 +465,20 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_request_header_configuration(&self) -> &::std::option::Option<crate::types::RequestHeaderConfiguration> {
         &self.request_header_configuration
     }
+    /// <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::RuntimeMetadataConfiguration) -> Self {
+        self.metadata_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>) -> Self {
+        self.metadata_configuration = input;
+        self
+    }
+    /// <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::RuntimeMetadataConfiguration> {
+        &self.metadata_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -538,6 +560,7 @@ impl GetAgentRuntimeOutputBuilder {
             environment_variables: self.environment_variables,
             authorizer_configuration: self.authorizer_configuration,
             request_header_configuration: self.request_header_configuration,
+            metadata_configuration: self.metadata_configuration,
             _request_id: self._request_id,
         })
     }
@@ -563,6 +586,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("authorizer_configuration", &self.authorizer_configuration);
         formatter.field("request_header_configuration", &self.request_header_configuration);
+        formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

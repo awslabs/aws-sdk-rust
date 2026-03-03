@@ -39,6 +39,8 @@ pub use crate::types::_job_run_error::JobRunErrorBuilder;
 
 pub use crate::types::_time_series_data_point_form_output::TimeSeriesDataPointFormOutputBuilder;
 
+pub use crate::types::_additional_attributes::AdditionalAttributesBuilder;
+
 pub use crate::types::_reject_rule::RejectRuleBuilder;
 
 pub use crate::types::_search_sort::SearchSortBuilder;
@@ -388,6 +390,12 @@ pub use crate::types::_owner_user_properties_output::OwnerUserPropertiesOutputBu
 pub use crate::types::_owner_group_properties_output::OwnerGroupPropertiesOutputBuilder;
 
 pub use crate::types::_topic::TopicBuilder;
+
+pub use crate::types::_relation_pattern::RelationPatternBuilder;
+
+pub use crate::types::_entity_pattern::EntityPatternBuilder;
+
+pub use crate::types::_lineage_node_item::LineageNodeItemBuilder;
 
 pub use crate::types::_glossary_item::GlossaryItemBuilder;
 

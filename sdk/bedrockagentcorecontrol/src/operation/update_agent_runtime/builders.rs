@@ -234,6 +234,20 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         self.inner.get_lifecycle_configuration()
     }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn metadata_configuration(mut self, input: crate::types::RuntimeMetadataConfiguration) -> Self {
+        self.inner = self.inner.metadata_configuration(input);
+        self
+    }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn set_metadata_configuration(mut self, input: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>) -> Self {
+        self.inner = self.inner.set_metadata_configuration(input);
+        self
+    }
+    /// <p>The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
+    pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::RuntimeMetadataConfiguration> {
+        self.inner.get_metadata_configuration()
+    }
     ///
     /// Adds a key-value pair to `environmentVariables`.
     ///

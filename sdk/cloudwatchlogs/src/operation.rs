@@ -235,6 +235,9 @@ pub mod list_tags_log_group;
 /// Types for the `PutAccountPolicy` operation.
 pub mod put_account_policy;
 
+/// Types for the `PutBearerTokenAuthentication` operation.
+pub mod put_bearer_token_authentication;
+
 /// Types for the `PutDataProtectionPolicy` operation.
 pub mod put_data_protection_policy;
 

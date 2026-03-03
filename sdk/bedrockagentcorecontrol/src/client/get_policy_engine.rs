@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`policy_engine_arn(String)`](crate::operation::get_policy_engine::GetPolicyEngineOutput::policy_engine_arn): <p>The Amazon Resource Name (ARN) of the policy engine. This globally unique identifier can be used for cross-service references and IAM policy statements.</p>
     ///   - [`status(PolicyEngineStatus)`](crate::operation::get_policy_engine::GetPolicyEngineOutput::status): <p>The current status of the policy engine.</p>
     ///   - [`status_reasons(Vec::<String>)`](crate::operation::get_policy_engine::GetPolicyEngineOutput::status_reasons): <p>Additional information about the policy engine status. This provides details about any failures or the current state of the policy engine.</p>
+    ///   - [`encryption_key_arn(Option<String>)`](crate::operation::get_policy_engine::GetPolicyEngineOutput::encryption_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
     /// - On failure, responds with [`SdkError<GetPolicyEngineError>`](crate::operation::get_policy_engine::GetPolicyEngineError)
     pub fn get_policy_engine(&self) -> crate::operation::get_policy_engine::builders::GetPolicyEngineFluentBuilder {
         crate::operation::get_policy_engine::builders::GetPolicyEngineFluentBuilder::new(self.handle.clone())
