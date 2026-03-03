@@ -3204,6 +3204,21 @@ pub(crate) fn glossary_term_item_correct_errors(
     builder
 }
 
+pub(crate) fn lineage_node_item_correct_errors(
+    mut builder: crate::types::builders::LineageNodeItemBuilder,
+) -> crate::types::builders::LineageNodeItemBuilder {
+    if builder.domain_id.is_none() {
+        builder.domain_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.type_name.is_none() {
+        builder.type_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lineage_node_type_item_correct_errors(
     mut builder: crate::types::builders::LineageNodeTypeItemBuilder,
 ) -> crate::types::builders::LineageNodeTypeItemBuilder {

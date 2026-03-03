@@ -16,6 +16,7 @@
 ///     AgentManagedRuntimeType::Python311 => { /* ... */ },
 ///     AgentManagedRuntimeType::Python312 => { /* ... */ },
 ///     AgentManagedRuntimeType::Python313 => { /* ... */ },
+///     AgentManagedRuntimeType::Python314 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum AgentManagedRuntimeType {
     Python312,
     #[allow(missing_docs)] // documentation missing in model
     Python313,
+    #[allow(missing_docs)] // documentation missing in model
+    Python314,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for AgentManagedRuntimeType {
             "PYTHON_3_11" => AgentManagedRuntimeType::Python311,
             "PYTHON_3_12" => AgentManagedRuntimeType::Python312,
             "PYTHON_3_13" => AgentManagedRuntimeType::Python313,
+            "PYTHON_3_14" => AgentManagedRuntimeType::Python314,
             other => AgentManagedRuntimeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl AgentManagedRuntimeType {
             AgentManagedRuntimeType::Python311 => "PYTHON_3_11",
             AgentManagedRuntimeType::Python312 => "PYTHON_3_12",
             AgentManagedRuntimeType::Python313 => "PYTHON_3_13",
+            AgentManagedRuntimeType::Python314 => "PYTHON_3_14",
             AgentManagedRuntimeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PYTHON_3_10", "PYTHON_3_11", "PYTHON_3_12", "PYTHON_3_13"]
+        &["PYTHON_3_10", "PYTHON_3_11", "PYTHON_3_12", "PYTHON_3_13", "PYTHON_3_14"]
     }
 }
 impl ::std::convert::AsRef<str> for AgentManagedRuntimeType {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for AgentManagedRuntimeType {
             AgentManagedRuntimeType::Python311 => write!(f, "PYTHON_3_11"),
             AgentManagedRuntimeType::Python312 => write!(f, "PYTHON_3_12"),
             AgentManagedRuntimeType::Python313 => write!(f, "PYTHON_3_13"),
+            AgentManagedRuntimeType::Python314 => write!(f, "PYTHON_3_14"),
             AgentManagedRuntimeType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -10,10 +10,13 @@ pub fn ser_update_policy_input_input(
         object_2.finish();
     }
     if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("description").start_object();
+        crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.validation_mode {
-        object.key("validationMode").string(var_4.as_str());
+    if let Some(var_5) = &input.validation_mode {
+        object.key("validationMode").string(var_5.as_str());
     }
     Ok(())
 }

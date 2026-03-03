@@ -123,17 +123,17 @@ impl UpdatePolicyEngineFluentBuilder {
         self.inner.get_policy_engine_id()
     }
     /// <p>The new description for the policy engine.</p>
-    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.description(input.into());
+    pub fn description(mut self, input: crate::types::UpdatedDescription) -> Self {
+        self.inner = self.inner.description(input);
         self
     }
     /// <p>The new description for the policy engine.</p>
-    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<crate::types::UpdatedDescription>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>The new description for the policy engine.</p>
-    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+    pub fn get_description(&self) -> &::std::option::Option<crate::types::UpdatedDescription> {
         self.inner.get_description()
     }
 }

@@ -79,11 +79,11 @@ pub use crate::types::_list_relationships_sort_name::ListRelationshipsSortName;
 
 pub use crate::types::_relationship_summary::RelationshipSummary;
 
-pub use crate::types::_resold_business::ResoldBusiness;
-
 pub use crate::types::_resold_enterprise::ResoldEnterprise;
 
 pub use crate::types::_partner_led_support::PartnerLedSupport;
+
+pub use crate::types::_resold_unified_operations::ResoldUnifiedOperations;
 
 pub use crate::types::_start_service_period_type_sort_name::StartServicePeriodTypeSortName;
 
@@ -169,9 +169,9 @@ mod _relationship_summary;
 
 mod _resale_account_model;
 
-mod _resold_business;
-
 mod _resold_enterprise;
+
+mod _resold_unified_operations;
 
 mod _revoke_service_period_handshake_detail;
 

@@ -305,6 +305,8 @@ pub(crate) mod shape_put_data_export_configuration;
 
 pub(crate) mod shape_put_environment_blueprint_configuration;
 
+pub(crate) mod shape_query_graph;
+
 pub(crate) mod shape_reject_predictions;
 
 pub(crate) mod shape_reject_subscription_request;
@@ -469,6 +471,8 @@ pub(crate) mod shape_put_data_export_configuration_input;
 
 pub(crate) mod shape_put_environment_blueprint_configuration_input;
 
+pub(crate) mod shape_query_graph_input;
+
 pub(crate) mod shape_reject_predictions_input;
 
 pub(crate) mod shape_reject_subscription_request_input;
@@ -560,6 +564,8 @@ pub(crate) mod shape_account_pool_summaries;
 pub(crate) mod shape_account_source;
 
 pub(crate) mod shape_action_parameters;
+
+pub(crate) mod shape_additional_attributes;
 
 pub(crate) mod shape_aggregation_list_item;
 
@@ -711,6 +717,8 @@ pub(crate) mod shape_list_environment_action_summaries;
 
 pub(crate) mod shape_listing_item;
 
+pub(crate) mod shape_match_clause;
+
 pub(crate) mod shape_member;
 
 pub(crate) mod shape_metadata_forms;
@@ -766,6 +774,8 @@ pub(crate) mod shape_resource_list;
 pub(crate) mod shape_resource_tag_parameter;
 
 pub(crate) mod shape_resource_tags;
+
+pub(crate) mod shape_result_item_list;
 
 pub(crate) mod shape_rule_detail;
 
@@ -921,6 +931,8 @@ pub(crate) mod shape_domain_unit_summary;
 
 pub(crate) mod shape_domain_unit_target;
 
+pub(crate) mod shape_entity_pattern;
+
 pub(crate) mod shape_environment_action_summary;
 
 pub(crate) mod shape_environment_blueprint_configuration_item;
@@ -1051,9 +1063,13 @@ pub(crate) mod shape_region;
 
 pub(crate) mod shape_regional_parameter;
 
+pub(crate) mod shape_relation_pattern;
+
 pub(crate) mod shape_resource;
 
 pub(crate) mod shape_resource_tag;
+
+pub(crate) mod shape_result_item;
 
 pub(crate) mod shape_row_filter_configuration;
 
@@ -1189,6 +1205,8 @@ pub(crate) mod shape_item_glossary_terms;
 
 pub(crate) mod shape_lineage_info;
 
+pub(crate) mod shape_lineage_node_item;
+
 pub(crate) mod shape_lineage_node_type_item;
 
 pub(crate) mod shape_lineage_sql_query_run_details;
@@ -1292,6 +1310,8 @@ pub(crate) mod shape_glossary_item_additional_attributes;
 pub(crate) mod shape_glossary_term_item_additional_attributes;
 
 pub(crate) mod shape_group_details;
+
+pub(crate) mod shape_lineage_node_ids;
 
 pub(crate) mod shape_lineage_sync_schedule;
 

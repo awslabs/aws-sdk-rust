@@ -82,7 +82,7 @@ impl PolicyEngineActiveFluentBuilder {
             async move { crate::operation::get_policy_engine::GetPolicyEngine::orchestrate(&runtime_plugins, input).await }
         };
         let orchestrator = ::aws_smithy_runtime::client::waiters::WaiterOrchestrator::builder()
-            .min_delay(::std::time::Duration::from_secs(2))
+            .min_delay(::std::time::Duration::from_secs(5))
             .max_delay(::std::time::Duration::from_secs(120))
             .max_wait(max_wait)
             .time_source(time_source)

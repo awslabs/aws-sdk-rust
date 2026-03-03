@@ -231,7 +231,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdatePolicy
             ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("PUT").uri(uri))
+                ::std::result::Result::Ok(builder.method("PATCH").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
             builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/json");

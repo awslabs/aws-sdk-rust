@@ -1617,6 +1617,15 @@ pub(crate) fn protocol_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn runtime_metadata_configuration_correct_errors(
+    mut builder: crate::types::builders::RuntimeMetadataConfigurationBuilder,
+) -> crate::types::builders::RuntimeMetadataConfigurationBuilder {
+    if builder.require_mmdsv2.is_none() {
+        builder.require_mmdsv2 = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn workload_identity_details_correct_errors(
     mut builder: crate::types::builders::WorkloadIdentityDetailsBuilder,
 ) -> crate::types::builders::WorkloadIdentityDetailsBuilder {
@@ -2169,6 +2178,18 @@ pub(crate) fn policy_generation_asset_correct_errors(
     }
     if builder.findings.is_none() {
         builder.findings = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn policy_generation_details_correct_errors(
+    mut builder: crate::types::builders::PolicyGenerationDetailsBuilder,
+) -> crate::types::builders::PolicyGenerationDetailsBuilder {
+    if builder.policy_generation_id.is_none() {
+        builder.policy_generation_id = Some(Default::default())
+    }
+    if builder.policy_generation_asset_id.is_none() {
+        builder.policy_generation_asset_id = Some(Default::default())
     }
     builder
 }

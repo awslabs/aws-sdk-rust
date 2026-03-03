@@ -19,6 +19,8 @@ pub struct DeletePolicyEngineOutput {
     pub status: crate::types::PolicyEngineStatus,
     /// <p>Additional information about the deletion status. This provides details about the deletion process or any issues that may have occurred.</p>
     pub status_reasons: ::std::vec::Vec<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub encryption_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeletePolicyEngineOutput {
@@ -58,6 +60,10 @@ impl DeletePolicyEngineOutput {
         use std::ops::Deref;
         self.status_reasons.deref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
+        self.encryption_key_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for DeletePolicyEngineOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -70,6 +76,7 @@ impl ::std::fmt::Debug for DeletePolicyEngineOutput {
         formatter.field("policy_engine_arn", &self.policy_engine_arn);
         formatter.field("status", &self.status);
         formatter.field("status_reasons", &self.status_reasons);
+        formatter.field("encryption_key_arn", &self.encryption_key_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -98,6 +105,7 @@ pub struct DeletePolicyEngineOutputBuilder {
     pub(crate) policy_engine_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::PolicyEngineStatus>,
     pub(crate) status_reasons: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) encryption_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeletePolicyEngineOutputBuilder {
@@ -225,6 +233,20 @@ impl DeletePolicyEngineOutputBuilder {
     pub fn get_status_reasons(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.status_reasons
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.encryption_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.encryption_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the policy engine data.</p>
+    pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.encryption_key_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -291,6 +313,7 @@ impl DeletePolicyEngineOutputBuilder {
                     "status_reasons was not specified but it is required when building DeletePolicyEngineOutput",
                 )
             })?,
+            encryption_key_arn: self.encryption_key_arn,
             _request_id: self._request_id,
         })
     }
@@ -306,6 +329,7 @@ impl ::std::fmt::Debug for DeletePolicyEngineOutputBuilder {
         formatter.field("policy_engine_arn", &self.policy_engine_arn);
         formatter.field("status", &self.status);
         formatter.field("status_reasons", &self.status_reasons);
+        formatter.field("encryption_key_arn", &self.encryption_key_arn);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

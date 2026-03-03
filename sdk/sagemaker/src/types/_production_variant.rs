@@ -81,6 +81,21 @@ pub struct ProductionVariant {
     /// </ul>
     /// </dd>
     /// <dt>
+    /// al2023-ami-sagemaker-inference-gpu-4-1
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 580</p></li>
+    /// <li>
+    /// <p>CUDA version: 13.0</p></li>
+    /// <li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
     /// al2-ami-sagemaker-inference-neuron-2
     /// </dt>
     /// <dd>
@@ -197,6 +212,21 @@ impl ProductionVariant {
     /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
+    /// <li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2023-ami-sagemaker-inference-gpu-4-1
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 580</p></li>
+    /// <li>
+    /// <p>CUDA version: 13.0</p></li>
     /// <li>
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>
@@ -498,6 +528,21 @@ impl ProductionVariantBuilder {
     /// </ul>
     /// </dd>
     /// <dt>
+    /// al2023-ami-sagemaker-inference-gpu-4-1
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 580</p></li>
+    /// <li>
+    /// <p>CUDA version: 13.0</p></li>
+    /// <li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
     /// al2-ami-sagemaker-inference-neuron-2
     /// </dt>
     /// <dd>
@@ -561,6 +606,21 @@ impl ProductionVariantBuilder {
     /// </ul>
     /// </dd>
     /// <dt>
+    /// al2023-ami-sagemaker-inference-gpu-4-1
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 580</p></li>
+    /// <li>
+    /// <p>CUDA version: 13.0</p></li>
+    /// <li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
     /// al2-ami-sagemaker-inference-neuron-2
     /// </dt>
     /// <dd>
@@ -619,6 +679,21 @@ impl ProductionVariantBuilder {
     /// <p>NVIDIA driver version: 550</p></li>
     /// <li>
     /// <p>CUDA version: 12.4</p></li>
+    /// <li>
+    /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
+    /// </ul>
+    /// </dd>
+    /// <dt>
+    /// al2023-ami-sagemaker-inference-gpu-4-1
+    /// </dt>
+    /// <dd>
+    /// <ul>
+    /// <li>
+    /// <p>Accelerator: GPU</p></li>
+    /// <li>
+    /// <p>NVIDIA driver version: 580</p></li>
+    /// <li>
+    /// <p>CUDA version: 13.0</p></li>
     /// <li>
     /// <p>NVIDIA Container Toolkit with disabled CUDA-compat mounting</p></li>
     /// </ul>

@@ -45,6 +45,8 @@ pub use crate::types::_workload_identity_details::WorkloadIdentityDetails;
 
 pub use crate::types::_agent_runtime_status::AgentRuntimeStatus;
 
+pub use crate::types::_runtime_metadata_configuration::RuntimeMetadataConfiguration;
+
 pub use crate::types::_browser_profile_status::BrowserProfileStatus;
 
 pub use crate::types::_resource_type::ResourceType;
@@ -108,6 +110,8 @@ pub use crate::types::_online_evaluation_config_status::OnlineEvaluationConfigSt
 pub use crate::types::_online_evaluation_execution_status::OnlineEvaluationExecutionStatus;
 
 pub use crate::types::_policy_engine_status::PolicyEngineStatus;
+
+pub use crate::types::_updated_description::UpdatedDescription;
 
 pub use crate::types::_resource::Resource;
 
@@ -222,6 +226,8 @@ pub use crate::types::_policy_generation_asset::PolicyGenerationAsset;
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_cedar_policy::CedarPolicy;
+
+pub use crate::types::_policy_generation_details::PolicyGenerationDetails;
 
 pub use crate::types::_workload_identity_type::WorkloadIdentityType;
 
@@ -755,6 +761,8 @@ mod _policy_generation;
 
 mod _policy_generation_asset;
 
+mod _policy_generation_details;
+
 mod _policy_generation_status;
 
 mod _policy_status;
@@ -778,6 +786,8 @@ mod _resource_type;
 mod _rest_api_method;
 
 mod _rule;
+
+mod _runtime_metadata_configuration;
 
 mod _s3_configuration;
 
@@ -852,6 +862,8 @@ mod _tool_schema;
 mod _trigger_condition;
 
 mod _trigger_condition_input;
+
+mod _updated_description;
 
 mod _user_preference_consolidation_override;
 

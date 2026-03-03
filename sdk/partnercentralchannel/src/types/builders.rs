@@ -47,11 +47,11 @@ pub use crate::types::_program_management_account_summary::ProgramManagementAcco
 
 pub use crate::types::_relationship_summary::RelationshipSummaryBuilder;
 
-pub use crate::types::_resold_business::ResoldBusinessBuilder;
-
 pub use crate::types::_resold_enterprise::ResoldEnterpriseBuilder;
 
 pub use crate::types::_partner_led_support::PartnerLedSupportBuilder;
+
+pub use crate::types::_resold_unified_operations::ResoldUnifiedOperationsBuilder;
 
 pub use crate::types::_start_service_period_handshake_detail::StartServicePeriodHandshakeDetailBuilder;
 

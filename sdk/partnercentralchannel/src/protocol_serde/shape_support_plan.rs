@@ -4,22 +4,22 @@ pub fn ser_support_plan(
     input: &crate::types::SupportPlan,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
-        crate::types::SupportPlan::ResoldBusiness(inner) => {
-            #[allow(unused_mut)]
-            let mut object_1 = object_14.key("resoldBusiness").start_object();
-            crate::protocol_serde::shape_resold_business::ser_resold_business(&mut object_1, inner)?;
-            object_1.finish();
-        }
         crate::types::SupportPlan::ResoldEnterprise(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_14.key("resoldEnterprise").start_object();
-            crate::protocol_serde::shape_resold_enterprise::ser_resold_enterprise(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_1 = object_14.key("resoldEnterprise").start_object();
+            crate::protocol_serde::shape_resold_enterprise::ser_resold_enterprise(&mut object_1, inner)?;
+            object_1.finish();
         }
         crate::types::SupportPlan::PartnerLedSupport(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_14.key("partnerLedSupport").start_object();
-            crate::protocol_serde::shape_partner_led_support::ser_partner_led_support(&mut object_3, inner)?;
+            let mut object_2 = object_14.key("partnerLedSupport").start_object();
+            crate::protocol_serde::shape_partner_led_support::ser_partner_led_support(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::SupportPlan::ResoldUnifiedOperations(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_14.key("resoldUnifiedOperations").start_object();
+            crate::protocol_serde::shape_resold_unified_operations::ser_resold_unified_operations(&mut object_3, inner)?;
             object_3.finish();
         }
         crate::types::SupportPlan::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("SupportPlan")),

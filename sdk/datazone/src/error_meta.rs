@@ -4906,6 +4906,32 @@ impl From<crate::operation::put_environment_blueprint_configuration::PutEnvironm
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::query_graph::QueryGraphError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::query_graph::QueryGraphError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::query_graph::QueryGraphError> for Error {
+    fn from(err: crate::operation::query_graph::QueryGraphError) -> Self {
+        match err {
+            crate::operation::query_graph::QueryGraphError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::query_graph::QueryGraphError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::query_graph::QueryGraphError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::query_graph::QueryGraphError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::query_graph::QueryGraphError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::query_graph::QueryGraphError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reject_predictions::RejectPredictionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

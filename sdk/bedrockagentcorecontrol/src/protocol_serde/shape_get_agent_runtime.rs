@@ -201,6 +201,11 @@ pub(crate) fn de_get_agent_runtime(
                         tokens, _value,
                     )?);
                 }
+                "metadataConfiguration" => {
+                    builder = builder.set_metadata_configuration(
+                        crate::protocol_serde::shape_runtime_metadata_configuration::de_runtime_metadata_configuration(tokens, _value)?,
+                    );
+                }
                 "networkConfiguration" => {
                     builder = builder.set_network_configuration(crate::protocol_serde::shape_network_configuration::de_network_configuration(
                         tokens, _value,

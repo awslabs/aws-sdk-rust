@@ -140,6 +140,13 @@ pub(crate) fn de_get_policy_engine(
                             .transpose()?,
                     );
                 }
+                "encryptionKeyArn" => {
+                    builder = builder.set_encryption_key_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "name" => {
                     builder = builder.set_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

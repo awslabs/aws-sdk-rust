@@ -4,7 +4,10 @@ pub fn ser_update_policy_engine_input_input(
     input: &crate::operation::update_policy_engine::UpdatePolicyEngineInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("description").start_object();
+        crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_2, var_1)?;
+        object_2.finish();
     }
     Ok(())
 }

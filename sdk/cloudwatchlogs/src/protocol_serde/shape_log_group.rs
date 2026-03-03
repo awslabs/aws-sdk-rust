@@ -94,6 +94,10 @@ where
                             builder =
                                 builder.set_deletion_protection_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "bearerTokenAuthenticationEnabled" => {
+                            builder = builder
+                                .set_bearer_token_authentication_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

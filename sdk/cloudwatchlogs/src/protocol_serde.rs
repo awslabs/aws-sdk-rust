@@ -179,6 +179,8 @@ pub(crate) mod shape_list_tags_log_group;
 
 pub(crate) mod shape_put_account_policy;
 
+pub(crate) mod shape_put_bearer_token_authentication;
+
 pub(crate) mod shape_put_data_protection_policy;
 
 pub(crate) mod shape_put_delivery_destination;
@@ -424,6 +426,8 @@ pub(crate) mod shape_malformed_query_exception;
 pub(crate) mod shape_operation_aborted_exception;
 
 pub(crate) mod shape_put_account_policy_input;
+
+pub(crate) mod shape_put_bearer_token_authentication_input;
 
 pub(crate) mod shape_put_data_protection_policy_input;
 

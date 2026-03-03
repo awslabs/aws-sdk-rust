@@ -6,6 +6,8 @@
 pub enum PolicyDefinition {
     /// <p>The Cedar policy definition within the policy definition structure. This contains the Cedar policy statement that defines the authorization logic using Cedar's human-readable, analyzable policy language. Cedar policies specify principals (who can access), actions (what operations are allowed), resources (what can be accessed), and optional conditions for fine-grained control. Cedar provides a formal policy language designed for authorization with deterministic evaluation, making policies testable, reviewable, and auditable. All Cedar policies follow a default-deny model where actions are denied unless explicitly permitted, and forbid policies always override permit policies.</p>
     Cedar(crate::types::CedarPolicy),
+    /// <p>The generated policy asset information within the policy definition structure. This contains information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Cedar policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>
+    PolicyGeneration(crate::types::PolicyGenerationDetails),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum PolicyDefinition {
     Unknown,
 }
 impl PolicyDefinition {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Cedar`](crate::types::PolicyDefinition::Cedar), extracting the inner [`CedarPolicy`](crate::types::CedarPolicy).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_cedar(&self) -> ::std::result::Result<&crate::types::CedarPolicy, &Self> {
@@ -30,6 +31,19 @@ impl PolicyDefinition {
     /// Returns true if this is a [`Cedar`](crate::types::PolicyDefinition::Cedar).
     pub fn is_cedar(&self) -> bool {
         self.as_cedar().is_ok()
+    }
+    /// Tries to convert the enum instance into [`PolicyGeneration`](crate::types::PolicyDefinition::PolicyGeneration), extracting the inner [`PolicyGenerationDetails`](crate::types::PolicyGenerationDetails).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_policy_generation(&self) -> ::std::result::Result<&crate::types::PolicyGenerationDetails, &Self> {
+        if let PolicyDefinition::PolicyGeneration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`PolicyGeneration`](crate::types::PolicyDefinition::PolicyGeneration).
+    pub fn is_policy_generation(&self) -> bool {
+        self.as_policy_generation().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

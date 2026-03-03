@@ -48,6 +48,8 @@ pub struct LogGroup {
     pub log_group_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether deletion protection is enabled for this log group. When enabled, deletion protection blocks all deletion operations until it is explicitly disabled.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.</p>
+    pub bearer_token_authentication_enabled: ::std::option::Option<bool>,
 }
 impl LogGroup {
     /// <p>The name of the log group.</p>
@@ -120,6 +122,10 @@ impl LogGroup {
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
         self.deletion_protection_enabled
     }
+    /// <p>Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.</p>
+    pub fn bearer_token_authentication_enabled(&self) -> ::std::option::Option<bool> {
+        self.bearer_token_authentication_enabled
+    }
 }
 impl LogGroup {
     /// Creates a new builder-style object to manufacture [`LogGroup`](crate::types::LogGroup).
@@ -144,6 +150,7 @@ pub struct LogGroupBuilder {
     pub(crate) log_group_class: ::std::option::Option<crate::types::LogGroupClass>,
     pub(crate) log_group_arn: ::std::option::Option<::std::string::String>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
+    pub(crate) bearer_token_authentication_enabled: ::std::option::Option<bool>,
 }
 impl LogGroupBuilder {
     /// <p>The name of the log group.</p>
@@ -380,6 +387,20 @@ impl LogGroupBuilder {
     pub fn get_deletion_protection_enabled(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection_enabled
     }
+    /// <p>Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.</p>
+    pub fn bearer_token_authentication_enabled(mut self, input: bool) -> Self {
+        self.bearer_token_authentication_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.</p>
+    pub fn set_bearer_token_authentication_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.bearer_token_authentication_enabled = input;
+        self
+    }
+    /// <p>Indicates whether bearer token authentication is enabled for this log group. When enabled, bearer token authentication is allowed on operations until it is explicitly disabled.</p>
+    pub fn get_bearer_token_authentication_enabled(&self) -> &::std::option::Option<bool> {
+        &self.bearer_token_authentication_enabled
+    }
     /// Consumes the builder and constructs a [`LogGroup`](crate::types::LogGroup).
     pub fn build(self) -> crate::types::LogGroup {
         crate::types::LogGroup {
@@ -395,6 +416,7 @@ impl LogGroupBuilder {
             log_group_class: self.log_group_class,
             log_group_arn: self.log_group_arn,
             deletion_protection_enabled: self.deletion_protection_enabled,
+            bearer_token_authentication_enabled: self.bearer_token_authentication_enabled,
         }
     }
 }

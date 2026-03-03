@@ -29,6 +29,8 @@ pub use crate::types::_lifecycle_configuration::LifecycleConfigurationBuilder;
 
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetailsBuilder;
 
+pub use crate::types::_runtime_metadata_configuration::RuntimeMetadataConfigurationBuilder;
+
 pub use crate::types::_browser_network_configuration::BrowserNetworkConfigurationBuilder;
 
 pub use crate::types::_recording_config::RecordingConfigBuilder;
@@ -50,6 +52,8 @@ pub use crate::types::_modify_memory_strategies::ModifyMemoryStrategiesBuilder;
 pub use crate::types::_rule::RuleBuilder;
 
 pub use crate::types::_output_config::OutputConfigBuilder;
+
+pub use crate::types::_updated_description::UpdatedDescriptionBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
@@ -132,6 +136,8 @@ pub use crate::types::_policy_generation_asset::PolicyGenerationAssetBuilder;
 pub use crate::types::_policy::PolicyBuilder;
 
 pub use crate::types::_cedar_policy::CedarPolicyBuilder;
+
+pub use crate::types::_policy_generation_details::PolicyGenerationDetailsBuilder;
 
 pub use crate::types::_workload_identity_type::WorkloadIdentityTypeBuilder;
 
