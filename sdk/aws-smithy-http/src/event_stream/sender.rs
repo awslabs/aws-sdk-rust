@@ -7,6 +7,7 @@ use aws_smithy_eventstream::frame::{write_message_to, MarshallMessage, SignMessa
 use aws_smithy_eventstream::message_size_hint::MessageSizeHint;
 use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::error::ErrorMetadata;
+use aws_smithy_types::event_stream::Message;
 use bytes::Bytes;
 use futures_core::Stream;
 use std::error::Error as StdError;
@@ -16,6 +17,17 @@ use std::marker::PhantomData;
 use std::pin::Pin;
 use std::task::{Context, Poll};
 use tracing::trace;
+
+/// Wrapper for event stream items that may include an initial-request message.
+/// This is used internally to allow initial messages to flow through the signing pipeline.
+#[doc(hidden)]
+#[derive(Debug)]
+pub enum EventOrInitial<T> {
+    /// A regular event that needs marshalling and signing
+    Event(T),
+    /// An initial-request message that's already marshalled, just needs signing
+    InitialMessage(Message),
+}
 
 /// Input type for Event Streams.
 pub struct EventStreamSender<T, E> {
@@ -46,6 +58,12 @@ impl<T: Send + Sync, E: StdError + Send + Sync + 'static> EventStreamSender<T, E
         signer: impl SignMessage + Send + Sync + 'static,
     ) -> MessageStreamAdapter<T, E> {
         MessageStreamAdapter::new(marshaller, error_marshaller, signer, self.input_stream)
+    }
+
+    /// Extract the inner stream. This is used internally for composing streams.
+    #[doc(hidden)]
+    pub fn into_inner(self) -> Pin<Box<dyn Stream<Item = Result<T, E>> + Send + Sync>> {
+        self.input_stream
     }
 }
 
@@ -198,6 +216,38 @@ impl<T: Send + Sync, E: StdError + Send + Sync + 'static> Stream for MessageStre
                 }
             }
             Poll::Pending => Poll::Pending,
+        }
+    }
+}
+
+/// Marshaller wrapper that handles both regular events and initial messages.
+/// This is used internally to support initial-request messages in event streams.
+#[doc(hidden)]
+#[derive(Debug)]
+pub struct EventOrInitialMarshaller<M> {
+    inner: M,
+}
+
+impl<M> EventOrInitialMarshaller<M> {
+    #[doc(hidden)]
+    pub fn new(inner: M) -> Self {
+        Self { inner }
+    }
+}
+
+impl<M, T> MarshallMessage for EventOrInitialMarshaller<M>
+where
+    M: MarshallMessage<Input = T>,
+{
+    type Input = EventOrInitial<T>;
+
+    fn marshall(
+        &self,
+        input: Self::Input,
+    ) -> Result<Message, aws_smithy_eventstream::error::Error> {
+        match input {
+            EventOrInitial::Event(event) => self.inner.marshall(event),
+            EventOrInitial::InitialMessage(message) => Ok(message),
         }
     }
 }

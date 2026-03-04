@@ -49,6 +49,8 @@ pub use crate::types::_software_update_options::SoftwareUpdateOptions;
 
 pub use crate::types::_aiml_options_input::AimlOptionsInput;
 
+pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptions;
+
 pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_index_status::IndexStatus;
@@ -187,6 +189,8 @@ pub use crate::types::_s3_vectors_engine::S3VectorsEngine;
 
 pub use crate::types::_serverless_vector_acceleration::ServerlessVectorAcceleration;
 
+pub use crate::types::_deployment_strategy::DeploymentStrategy;
+
 pub use crate::types::_vpc_derived_info::VpcDerivedInfo;
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptions;
@@ -258,6 +262,8 @@ pub use crate::types::_off_peak_window_options_status::OffPeakWindowOptionsStatu
 pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatus;
 
 pub use crate::types::_aiml_options_status::AimlOptionsStatus;
+
+pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatus;
 
 pub use crate::types::_environment_info::EnvironmentInfo;
 
@@ -490,6 +496,12 @@ mod _data_source_status;
 mod _data_source_type;
 
 mod _deployment_status;
+
+mod _deployment_strategy;
+
+mod _deployment_strategy_options;
+
+mod _deployment_strategy_options_status;
 
 mod _describe_packages_filter;
 

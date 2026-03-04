@@ -22,6 +22,15 @@ pub struct ContainerFleetLocationAttributes {
     /// <p><code>UPDATING</code> -- Updates to the container fleet is being updated. A deployment is in progress.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ContainerFleetLocationStatus>,
+    /// <p>The current status of player gateway in this location for this container fleet. Note, even if a container fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this container fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this container fleet location.</p></li>
+    /// </ul>
+    pub player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl ContainerFleetLocationAttributes {
     /// <p>A location identifier.</p>
@@ -46,6 +55,17 @@ impl ContainerFleetLocationAttributes {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerFleetLocationStatus> {
         self.status.as_ref()
     }
+    /// <p>The current status of player gateway in this location for this container fleet. Note, even if a container fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this container fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this container fleet location.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(&self) -> ::std::option::Option<&crate::types::PlayerGatewayStatus> {
+        self.player_gateway_status.as_ref()
+    }
 }
 impl ContainerFleetLocationAttributes {
     /// Creates a new builder-style object to manufacture [`ContainerFleetLocationAttributes`](crate::types::ContainerFleetLocationAttributes).
@@ -60,6 +80,7 @@ impl ContainerFleetLocationAttributes {
 pub struct ContainerFleetLocationAttributesBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::ContainerFleetLocationStatus>,
+    pub(crate) player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl ContainerFleetLocationAttributesBuilder {
     /// <p>A location identifier.</p>
@@ -132,11 +153,47 @@ impl ContainerFleetLocationAttributesBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerFleetLocationStatus> {
         &self.status
     }
+    /// <p>The current status of player gateway in this location for this container fleet. Note, even if a container fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this container fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this container fleet location.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(mut self, input: crate::types::PlayerGatewayStatus) -> Self {
+        self.player_gateway_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of player gateway in this location for this container fleet. Note, even if a container fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this container fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this container fleet location.</p></li>
+    /// </ul>
+    pub fn set_player_gateway_status(mut self, input: ::std::option::Option<crate::types::PlayerGatewayStatus>) -> Self {
+        self.player_gateway_status = input;
+        self
+    }
+    /// <p>The current status of player gateway in this location for this container fleet. Note, even if a container fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this container fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this container fleet location.</p></li>
+    /// </ul>
+    pub fn get_player_gateway_status(&self) -> &::std::option::Option<crate::types::PlayerGatewayStatus> {
+        &self.player_gateway_status
+    }
     /// Consumes the builder and constructs a [`ContainerFleetLocationAttributes`](crate::types::ContainerFleetLocationAttributes).
     pub fn build(self) -> crate::types::ContainerFleetLocationAttributes {
         crate::types::ContainerFleetLocationAttributes {
             location: self.location,
             status: self.status,
+            player_gateway_status: self.player_gateway_status,
         }
     }
 }

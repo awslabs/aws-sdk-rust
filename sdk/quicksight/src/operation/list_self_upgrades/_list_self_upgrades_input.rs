@@ -5,7 +5,7 @@
 pub struct ListSelfUpgradesInput {
     /// <p>The ID of the Amazon Web Services account that contains the self-upgrade requests.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Quick Suite namespace for the self-upgrade requests.</p>
+    /// <p>The Quick namespace for the self-upgrade requests.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl ListSelfUpgradesInput {
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The Quick Suite namespace for the self-upgrade requests.</p>
+    /// <p>The Quick namespace for the self-upgrade requests.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -62,18 +62,18 @@ impl ListSelfUpgradesInputBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The Quick Suite namespace for the self-upgrade requests.</p>
+    /// <p>The Quick namespace for the self-upgrade requests.</p>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Quick Suite namespace for the self-upgrade requests.</p>
+    /// <p>The Quick namespace for the self-upgrade requests.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The Quick Suite namespace for the self-upgrade requests.</p>
+    /// <p>The Quick namespace for the self-upgrade requests.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

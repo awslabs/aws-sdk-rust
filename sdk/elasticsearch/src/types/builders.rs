@@ -27,6 +27,8 @@ pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsI
 
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInputBuilder;
 
+pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptionsBuilder;
+
 pub use crate::types::_elasticsearch_domain_status::ElasticsearchDomainStatusBuilder;
 
 pub use crate::types::_domain_information::DomainInformationBuilder;
@@ -106,6 +108,8 @@ pub use crate::types::_domain_endpoint_options_status::DomainEndpointOptionsStat
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatusBuilder;
 
 pub use crate::types::_auto_tune_options_status::AutoTuneOptionsStatusBuilder;
+
+pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatusBuilder;
 
 pub use crate::types::_limits::LimitsBuilder;
 

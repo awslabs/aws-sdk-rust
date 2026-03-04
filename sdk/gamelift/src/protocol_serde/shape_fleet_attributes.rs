@@ -179,6 +179,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PlayerGatewayMode" => {
+                            builder = builder.set_player_gateway_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PlayerGatewayMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "PlayerGatewayConfiguration" => {
+                            builder = builder.set_player_gateway_configuration(
+                                crate::protocol_serde::shape_player_gateway_configuration::de_player_gateway_configuration(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

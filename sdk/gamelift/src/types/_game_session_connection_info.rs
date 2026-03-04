@@ -28,6 +28,15 @@ pub struct GameSessionConnectionInfo {
     pub port: ::std::option::Option<i32>,
     /// <p>A collection of player session IDs, one for each player ID that was included in the original matchmaking request.</p>
     pub matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
+    /// <p>The current status of player gateway for the game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session.</p></li>
+    /// </ul>
+    pub player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl GameSessionConnectionInfo {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
@@ -66,6 +75,17 @@ impl GameSessionConnectionInfo {
     pub fn matched_player_sessions(&self) -> &[crate::types::MatchedPlayerSession] {
         self.matched_player_sessions.as_deref().unwrap_or_default()
     }
+    /// <p>The current status of player gateway for the game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(&self) -> ::std::option::Option<&crate::types::PlayerGatewayStatus> {
+        self.player_gateway_status.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GameSessionConnectionInfo {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -75,6 +95,7 @@ impl ::std::fmt::Debug for GameSessionConnectionInfo {
         formatter.field("dns_name", &self.dns_name);
         formatter.field("port", &self.port);
         formatter.field("matched_player_sessions", &self.matched_player_sessions);
+        formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
     }
 }
@@ -94,6 +115,7 @@ pub struct GameSessionConnectionInfoBuilder {
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) matched_player_sessions: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>>,
+    pub(crate) player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl GameSessionConnectionInfoBuilder {
     /// <p>A unique identifier for the game session. Use the game session ID.</p>
@@ -214,6 +236,41 @@ impl GameSessionConnectionInfoBuilder {
     pub fn get_matched_player_sessions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchedPlayerSession>> {
         &self.matched_player_sessions
     }
+    /// <p>The current status of player gateway for the game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(mut self, input: crate::types::PlayerGatewayStatus) -> Self {
+        self.player_gateway_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of player gateway for the game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session.</p></li>
+    /// </ul>
+    pub fn set_player_gateway_status(mut self, input: ::std::option::Option<crate::types::PlayerGatewayStatus>) -> Self {
+        self.player_gateway_status = input;
+        self
+    }
+    /// <p>The current status of player gateway for the game session. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">supported locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session.</p></li>
+    /// </ul>
+    pub fn get_player_gateway_status(&self) -> &::std::option::Option<crate::types::PlayerGatewayStatus> {
+        &self.player_gateway_status
+    }
     /// Consumes the builder and constructs a [`GameSessionConnectionInfo`](crate::types::GameSessionConnectionInfo).
     pub fn build(self) -> crate::types::GameSessionConnectionInfo {
         crate::types::GameSessionConnectionInfo {
@@ -222,6 +279,7 @@ impl GameSessionConnectionInfoBuilder {
             dns_name: self.dns_name,
             port: self.port,
             matched_player_sessions: self.matched_player_sessions,
+            player_gateway_status: self.player_gateway_status,
         }
     }
 }
@@ -233,6 +291,7 @@ impl ::std::fmt::Debug for GameSessionConnectionInfoBuilder {
         formatter.field("dns_name", &self.dns_name);
         formatter.field("port", &self.port);
         formatter.field("matched_player_sessions", &self.matched_player_sessions);
+        formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
     }
 }

@@ -56,6 +56,8 @@ pub struct CreateDomainInput {
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     /// <p>Options for all machine learning features for the specified domain.</p>
     pub aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl CreateDomainInput {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
@@ -157,6 +159,10 @@ impl CreateDomainInput {
     pub fn aiml_options(&self) -> ::std::option::Option<&crate::types::AimlOptionsInput> {
         self.aiml_options.as_ref()
     }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl CreateDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
@@ -190,6 +196,7 @@ pub struct CreateDomainInputBuilder {
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl CreateDomainInputBuilder {
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
@@ -550,6 +557,20 @@ impl CreateDomainInputBuilder {
     pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsInput> {
         &self.aiml_options
     }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
     pub fn build(
         self,
@@ -576,6 +597,7 @@ impl CreateDomainInputBuilder {
             off_peak_window_options: self.off_peak_window_options,
             software_update_options: self.software_update_options,
             aiml_options: self.aiml_options,
+            deployment_strategy_options: self.deployment_strategy_options,
         })
     }
 }

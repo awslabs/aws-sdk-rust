@@ -61,6 +61,8 @@ pub struct UpdateDomainConfigInput {
     pub software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     /// <p>Options for all machine learning features for the specified domain.</p>
     pub aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl UpdateDomainConfigInput {
     /// <p>The name of the domain that you're updating.</p>
@@ -164,6 +166,10 @@ impl UpdateDomainConfigInput {
     pub fn aiml_options(&self) -> ::std::option::Option<&crate::types::AimlOptionsInput> {
         self.aiml_options.as_ref()
     }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl UpdateDomainConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
@@ -197,6 +203,7 @@ pub struct UpdateDomainConfigInputBuilder {
     pub(crate) off_peak_window_options: ::std::option::Option<crate::types::OffPeakWindowOptions>,
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptions>,
     pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsInput>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl UpdateDomainConfigInputBuilder {
     /// <p>The name of the domain that you're updating.</p>
@@ -563,6 +570,20 @@ impl UpdateDomainConfigInputBuilder {
     pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsInput> {
         &self.aiml_options
     }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigInput`](crate::operation::update_domain_config::UpdateDomainConfigInput).
     pub fn build(
         self,
@@ -590,6 +611,7 @@ impl UpdateDomainConfigInputBuilder {
             off_peak_window_options: self.off_peak_window_options,
             software_update_options: self.software_update_options,
             aiml_options: self.aiml_options,
+            deployment_strategy_options: self.deployment_strategy_options,
         })
     }
 }

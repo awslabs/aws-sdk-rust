@@ -674,6 +674,55 @@ impl From<crate::operation::associate_phone_number_contact_flow::AssociatePhoneN
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError> for Error {
+    fn from(err: crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError) -> Self {
+        match err {
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::associate_queue_email_addresses::AssociateQueueEmailAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_queue_quick_connects::AssociateQueueQuickConnectsError, R>>
     for Error
 where
@@ -5754,6 +5803,56 @@ impl From<crate::operation::disassociate_phone_number_contact_flow::Disassociate
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError> for Error {
+    fn from(err: crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError) -> Self {
+        match err {
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_queue_email_addresses::DisassociateQueueEmailAddressesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsError,
             R,
         >,
@@ -7961,6 +8060,48 @@ impl From<crate::operation::list_prompts::ListPromptsError> for Error {
             crate::operation::list_prompts::ListPromptsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_prompts::ListPromptsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_prompts::ListPromptsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError> for Error {
+    fn from(err: crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError) -> Self {
+        match err {
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_queue_email_addresses::ListQueueEmailAddressesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

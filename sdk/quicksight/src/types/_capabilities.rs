@@ -64,6 +64,8 @@ pub struct Capabilities {
     pub use_bedrock_models: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use UI Agent step to perform tasks on public websites.</p>
     pub perform_flow_ui_task: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to review and approve sharing requests of Flows.</p>
+    pub approve_flow_share_requests: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use internet to enhance results in Chat Agents, Flows, and Quick Research. Web search queries will be processed securely in an Amazon Web Services region <code>us-east-1</code>.</p>
     pub use_agent_web_search: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use knowledge bases to specify content from external applications.</p>
@@ -414,6 +416,14 @@ pub struct Capabilities {
     pub share_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use New Relic actions.</p>
     pub use_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform Topic-related actions.</p>
+    pub topic: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to Edit Visual with AI</p>
+    pub edit_visual_with_q: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to Build Calculation with AI</p>
+    pub build_calculated_field_with_q: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to Create Executive Summary</p>
+    pub create_dashboard_executive_summary_with_q: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform space-related actions.</p>
     pub space: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform chat-related actions.</p>
@@ -424,6 +434,8 @@ pub struct Capabilities {
     pub research: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to enable users to upgrade their user role.</p>
     pub self_upgrade_user_role: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to perform Extension-related actions.</p>
+    pub extension: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -545,6 +557,10 @@ impl Capabilities {
     /// <p>The ability to use UI Agent step to perform tasks on public websites.</p>
     pub fn perform_flow_ui_task(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.perform_flow_ui_task.as_ref()
+    }
+    /// <p>The ability to review and approve sharing requests of Flows.</p>
+    pub fn approve_flow_share_requests(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.approve_flow_share_requests.as_ref()
     }
     /// <p>The ability to use internet to enhance results in Chat Agents, Flows, and Quick Research. Web search queries will be processed securely in an Amazon Web Services region <code>us-east-1</code>.</p>
     pub fn use_agent_web_search(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
@@ -1246,6 +1262,22 @@ impl Capabilities {
     pub fn use_new_relic_action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.use_new_relic_action.as_ref()
     }
+    /// <p>The ability to perform Topic-related actions.</p>
+    pub fn topic(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.topic.as_ref()
+    }
+    /// <p>The ability to Edit Visual with AI</p>
+    pub fn edit_visual_with_q(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.edit_visual_with_q.as_ref()
+    }
+    /// <p>The ability to Build Calculation with AI</p>
+    pub fn build_calculated_field_with_q(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.build_calculated_field_with_q.as_ref()
+    }
+    /// <p>The ability to Create Executive Summary</p>
+    pub fn create_dashboard_executive_summary_with_q(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_dashboard_executive_summary_with_q.as_ref()
+    }
     /// <p>The ability to perform space-related actions.</p>
     pub fn space(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.space.as_ref()
@@ -1265,6 +1297,10 @@ impl Capabilities {
     /// <p>The ability to enable users to upgrade their user role.</p>
     pub fn self_upgrade_user_role(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.self_upgrade_user_role.as_ref()
+    }
+    /// <p>The ability to perform Extension-related actions.</p>
+    pub fn extension(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.extension.as_ref()
     }
 }
 impl Capabilities {
@@ -1308,6 +1344,7 @@ pub struct CapabilitiesBuilder {
     pub(crate) publish_without_approval: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_bedrock_models: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) perform_flow_ui_task: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) approve_flow_share_requests: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_agent_web_search: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) action: ::std::option::Option<crate::types::CapabilityState>,
@@ -1483,11 +1520,16 @@ pub struct CapabilitiesBuilder {
     pub(crate) create_and_update_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) share_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_new_relic_action: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) topic: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) edit_visual_with_q: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) build_calculated_field_with_q: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_dashboard_executive_summary_with_q: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) space: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) chat_agent: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_chat_agents: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) research: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) self_upgrade_user_role: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) extension: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -1909,6 +1951,20 @@ impl CapabilitiesBuilder {
     /// <p>The ability to use UI Agent step to perform tasks on public websites.</p>
     pub fn get_perform_flow_ui_task(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.perform_flow_ui_task
+    }
+    /// <p>The ability to review and approve sharing requests of Flows.</p>
+    pub fn approve_flow_share_requests(mut self, input: crate::types::CapabilityState) -> Self {
+        self.approve_flow_share_requests = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to review and approve sharing requests of Flows.</p>
+    pub fn set_approve_flow_share_requests(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.approve_flow_share_requests = input;
+        self
+    }
+    /// <p>The ability to review and approve sharing requests of Flows.</p>
+    pub fn get_approve_flow_share_requests(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.approve_flow_share_requests
     }
     /// <p>The ability to use internet to enhance results in Chat Agents, Flows, and Quick Research. Web search queries will be processed securely in an Amazon Web Services region <code>us-east-1</code>.</p>
     pub fn use_agent_web_search(mut self, input: crate::types::CapabilityState) -> Self {
@@ -4360,6 +4416,62 @@ impl CapabilitiesBuilder {
     pub fn get_use_new_relic_action(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.use_new_relic_action
     }
+    /// <p>The ability to perform Topic-related actions.</p>
+    pub fn topic(mut self, input: crate::types::CapabilityState) -> Self {
+        self.topic = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform Topic-related actions.</p>
+    pub fn set_topic(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.topic = input;
+        self
+    }
+    /// <p>The ability to perform Topic-related actions.</p>
+    pub fn get_topic(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.topic
+    }
+    /// <p>The ability to Edit Visual with AI</p>
+    pub fn edit_visual_with_q(mut self, input: crate::types::CapabilityState) -> Self {
+        self.edit_visual_with_q = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to Edit Visual with AI</p>
+    pub fn set_edit_visual_with_q(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.edit_visual_with_q = input;
+        self
+    }
+    /// <p>The ability to Edit Visual with AI</p>
+    pub fn get_edit_visual_with_q(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.edit_visual_with_q
+    }
+    /// <p>The ability to Build Calculation with AI</p>
+    pub fn build_calculated_field_with_q(mut self, input: crate::types::CapabilityState) -> Self {
+        self.build_calculated_field_with_q = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to Build Calculation with AI</p>
+    pub fn set_build_calculated_field_with_q(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.build_calculated_field_with_q = input;
+        self
+    }
+    /// <p>The ability to Build Calculation with AI</p>
+    pub fn get_build_calculated_field_with_q(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.build_calculated_field_with_q
+    }
+    /// <p>The ability to Create Executive Summary</p>
+    pub fn create_dashboard_executive_summary_with_q(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_dashboard_executive_summary_with_q = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to Create Executive Summary</p>
+    pub fn set_create_dashboard_executive_summary_with_q(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_dashboard_executive_summary_with_q = input;
+        self
+    }
+    /// <p>The ability to Create Executive Summary</p>
+    pub fn get_create_dashboard_executive_summary_with_q(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_dashboard_executive_summary_with_q
+    }
     /// <p>The ability to perform space-related actions.</p>
     pub fn space(mut self, input: crate::types::CapabilityState) -> Self {
         self.space = ::std::option::Option::Some(input);
@@ -4430,6 +4542,20 @@ impl CapabilitiesBuilder {
     pub fn get_self_upgrade_user_role(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.self_upgrade_user_role
     }
+    /// <p>The ability to perform Extension-related actions.</p>
+    pub fn extension(mut self, input: crate::types::CapabilityState) -> Self {
+        self.extension = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to perform Extension-related actions.</p>
+    pub fn set_extension(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.extension = input;
+        self
+    }
+    /// <p>The ability to perform Extension-related actions.</p>
+    pub fn get_extension(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.extension
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
@@ -4463,6 +4589,7 @@ impl CapabilitiesBuilder {
             publish_without_approval: self.publish_without_approval,
             use_bedrock_models: self.use_bedrock_models,
             perform_flow_ui_task: self.perform_flow_ui_task,
+            approve_flow_share_requests: self.approve_flow_share_requests,
             use_agent_web_search: self.use_agent_web_search,
             knowledge_base: self.knowledge_base,
             action: self.action,
@@ -4638,11 +4765,16 @@ impl CapabilitiesBuilder {
             create_and_update_new_relic_action: self.create_and_update_new_relic_action,
             share_new_relic_action: self.share_new_relic_action,
             use_new_relic_action: self.use_new_relic_action,
+            topic: self.topic,
+            edit_visual_with_q: self.edit_visual_with_q,
+            build_calculated_field_with_q: self.build_calculated_field_with_q,
+            create_dashboard_executive_summary_with_q: self.create_dashboard_executive_summary_with_q,
             space: self.space,
             chat_agent: self.chat_agent,
             create_chat_agents: self.create_chat_agents,
             research: self.research,
             self_upgrade_user_role: self.self_upgrade_user_role,
+            extension: self.extension,
         }
     }
 }

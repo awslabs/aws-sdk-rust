@@ -22,7 +22,7 @@ impl crate::operation::describe_self_upgrade_configuration::builders::DescribeSe
 }
 /// Fluent builder constructing a request to `DescribeSelfUpgradeConfiguration`.
 ///
-/// <p>Describes the self-upgrade configuration for a Quick Suite account.</p>
+/// <p>Describes the self-upgrade configuration for a Quick account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeSelfUpgradeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,31 @@ impl DescribeSelfUpgradeConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The Quick Suite namespace that you want to describe the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to describe the Quick self-upgrade configuration for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The Quick Suite namespace that you want to describe the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to describe the Quick self-upgrade configuration for.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The Quick Suite namespace that you want to describe the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to describe the Quick self-upgrade configuration for.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }

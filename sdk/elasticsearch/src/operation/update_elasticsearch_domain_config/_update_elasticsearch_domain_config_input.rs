@@ -34,6 +34,8 @@ pub struct UpdateElasticsearchDomainConfigInput {
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     /// <p>This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code> request should return the results of validation checks without actually applying the change. This flag, when set to True, specifies the deployment mechanism through which the update shall be applied on the domain. This will not actually perform the Update.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>Specifies the deployment strategy options.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl UpdateElasticsearchDomainConfigInput {
     /// <p>The name of the Elasticsearch domain that you are updating.</p>
@@ -98,6 +100,10 @@ impl UpdateElasticsearchDomainConfigInput {
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl UpdateElasticsearchDomainConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateElasticsearchDomainConfigInput`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigInput).
@@ -125,6 +131,7 @@ pub struct UpdateElasticsearchDomainConfigInputBuilder {
     pub(crate) encryption_at_rest_options: ::std::option::Option<crate::types::EncryptionAtRestOptions>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptions>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl UpdateElasticsearchDomainConfigInputBuilder {
     /// <p>The name of the Elasticsearch domain that you are updating.</p>
@@ -362,6 +369,20 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`UpdateElasticsearchDomainConfigInput`](crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigInput).
     pub fn build(
         self,
@@ -386,6 +407,7 @@ impl UpdateElasticsearchDomainConfigInputBuilder {
                 encryption_at_rest_options: self.encryption_at_rest_options,
                 auto_tune_options: self.auto_tune_options,
                 dry_run: self.dry_run,
+                deployment_strategy_options: self.deployment_strategy_options,
             },
         )
     }

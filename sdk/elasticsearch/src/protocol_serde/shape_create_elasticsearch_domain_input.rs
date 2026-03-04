@@ -34,78 +34,84 @@ pub fn ser_create_elasticsearch_domain_input_input(
         crate::protocol_serde::shape_cognito_options::ser_cognito_options(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.domain_endpoint_options {
+    if let Some(var_12) = &input.deployment_strategy_options {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("DomainEndpointOptions").start_object();
-        crate::protocol_serde::shape_domain_endpoint_options::ser_domain_endpoint_options(&mut object_13, var_12)?;
+        let mut object_13 = object.key("DeploymentStrategyOptions").start_object();
+        crate::protocol_serde::shape_deployment_strategy_options::ser_deployment_strategy_options(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.domain_name {
-        object.key("DomainName").string(var_14.as_str());
-    }
-    if let Some(var_15) = &input.ebs_options {
+    if let Some(var_14) = &input.domain_endpoint_options {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("EBSOptions").start_object();
-        crate::protocol_serde::shape_ebs_options::ser_ebs_options(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_15 = object.key("DomainEndpointOptions").start_object();
+        crate::protocol_serde::shape_domain_endpoint_options::ser_domain_endpoint_options(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_17) = &input.elasticsearch_cluster_config {
+    if let Some(var_16) = &input.domain_name {
+        object.key("DomainName").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.ebs_options {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("ElasticsearchClusterConfig").start_object();
-        crate::protocol_serde::shape_elasticsearch_cluster_config::ser_elasticsearch_cluster_config(&mut object_18, var_17)?;
+        let mut object_18 = object.key("EBSOptions").start_object();
+        crate::protocol_serde::shape_ebs_options::ser_ebs_options(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.elasticsearch_version {
-        object.key("ElasticsearchVersion").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.encryption_at_rest_options {
+    if let Some(var_19) = &input.elasticsearch_cluster_config {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("EncryptionAtRestOptions").start_object();
-        crate::protocol_serde::shape_encryption_at_rest_options::ser_encryption_at_rest_options(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_20 = object.key("ElasticsearchClusterConfig").start_object();
+        crate::protocol_serde::shape_elasticsearch_cluster_config::ser_elasticsearch_cluster_config(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_22) = &input.log_publishing_options {
+    if let Some(var_21) = &input.elasticsearch_version {
+        object.key("ElasticsearchVersion").string(var_21.as_str());
+    }
+    if let Some(var_22) = &input.encryption_at_rest_options {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("LogPublishingOptions").start_object();
-        for (key_24, value_25) in var_22 {
-            {
-                #[allow(unused_mut)]
-                let mut object_26 = object_23.key(key_24.as_str()).start_object();
-                crate::protocol_serde::shape_log_publishing_option::ser_log_publishing_option(&mut object_26, value_25)?;
-                object_26.finish();
-            }
-        }
+        let mut object_23 = object.key("EncryptionAtRestOptions").start_object();
+        crate::protocol_serde::shape_encryption_at_rest_options::ser_encryption_at_rest_options(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_27) = &input.node_to_node_encryption_options {
+    if let Some(var_24) = &input.log_publishing_options {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("NodeToNodeEncryptionOptions").start_object();
-        crate::protocol_serde::shape_node_to_node_encryption_options::ser_node_to_node_encryption_options(&mut object_28, var_27)?;
-        object_28.finish();
-    }
-    if let Some(var_29) = &input.snapshot_options {
-        #[allow(unused_mut)]
-        let mut object_30 = object.key("SnapshotOptions").start_object();
-        crate::protocol_serde::shape_snapshot_options::ser_snapshot_options(&mut object_30, var_29)?;
-        object_30.finish();
-    }
-    if let Some(var_31) = &input.tag_list {
-        let mut array_32 = object.key("TagList").start_array();
-        for item_33 in var_31 {
+        let mut object_25 = object.key("LogPublishingOptions").start_object();
+        for (key_26, value_27) in var_24 {
             {
                 #[allow(unused_mut)]
-                let mut object_34 = array_32.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_34, item_33)?;
-                object_34.finish();
+                let mut object_28 = object_25.key(key_26.as_str()).start_object();
+                crate::protocol_serde::shape_log_publishing_option::ser_log_publishing_option(&mut object_28, value_27)?;
+                object_28.finish();
             }
         }
-        array_32.finish();
+        object_25.finish();
     }
-    if let Some(var_35) = &input.vpc_options {
+    if let Some(var_29) = &input.node_to_node_encryption_options {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("VPCOptions").start_object();
-        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_36, var_35)?;
-        object_36.finish();
+        let mut object_30 = object.key("NodeToNodeEncryptionOptions").start_object();
+        crate::protocol_serde::shape_node_to_node_encryption_options::ser_node_to_node_encryption_options(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.snapshot_options {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("SnapshotOptions").start_object();
+        crate::protocol_serde::shape_snapshot_options::ser_snapshot_options(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.tag_list {
+        let mut array_34 = object.key("TagList").start_array();
+        for item_35 in var_33 {
+            {
+                #[allow(unused_mut)]
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_36, item_35)?;
+                object_36.finish();
+            }
+        }
+        array_34.finish();
+    }
+    if let Some(var_37) = &input.vpc_options {
+        #[allow(unused_mut)]
+        let mut object_38 = object.key("VPCOptions").start_object();
+        crate::protocol_serde::shape_vpc_options::ser_vpc_options(&mut object_38, var_37)?;
+        object_38.finish();
     }
     Ok(())
 }

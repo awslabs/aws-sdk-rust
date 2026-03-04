@@ -339,6 +339,8 @@ pub(crate) mod shape_data_source_type;
 
 pub(crate) mod shape_data_sources;
 
+pub(crate) mod shape_deployment_strategy_options;
+
 pub(crate) mod shape_describe_packages_filter;
 
 pub(crate) mod shape_direct_query_data_source_list;
@@ -504,6 +506,8 @@ pub(crate) mod shape_compatible_versions_map;
 pub(crate) mod shape_cross_cluster_search_connection_properties;
 
 pub(crate) mod shape_data_source_details;
+
+pub(crate) mod shape_deployment_strategy_options_status;
 
 pub(crate) mod shape_direct_query_data_source;
 

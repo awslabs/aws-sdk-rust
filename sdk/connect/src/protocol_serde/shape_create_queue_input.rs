@@ -6,48 +6,60 @@ pub fn ser_create_queue_input_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.hours_of_operation_id {
-        object.key("HoursOfOperationId").string(var_2.as_str());
+    if let Some(var_2) = &input.email_addresses_config {
+        let mut array_3 = object.key("EmailAddressesConfig").start_array();
+        for item_4 in var_2 {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_email_address_config::ser_email_address_config(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
     }
-    if let Some(var_3) = &input.max_contacts {
+    if let Some(var_6) = &input.hours_of_operation_id {
+        object.key("HoursOfOperationId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.max_contacts {
         object.key("MaxContacts").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_4) = &input.name {
-        object.key("Name").string(var_4.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("Name").string(var_8.as_str());
     }
-    if let Some(var_5) = &input.outbound_caller_config {
+    if let Some(var_9) = &input.outbound_caller_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("OutboundCallerConfig").start_object();
-        crate::protocol_serde::shape_outbound_caller_config::ser_outbound_caller_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_10 = object.key("OutboundCallerConfig").start_object();
+        crate::protocol_serde::shape_outbound_caller_config::ser_outbound_caller_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_7) = &input.outbound_email_config {
+    if let Some(var_11) = &input.outbound_email_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("OutboundEmailConfig").start_object();
-        crate::protocol_serde::shape_outbound_email_config::ser_outbound_email_config(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_12 = object.key("OutboundEmailConfig").start_object();
+        crate::protocol_serde::shape_outbound_email_config::ser_outbound_email_config(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_9) = &input.quick_connect_ids {
-        let mut array_10 = object.key("QuickConnectIds").start_array();
-        for item_11 in var_9 {
+    if let Some(var_13) = &input.quick_connect_ids {
+        let mut array_14 = object.key("QuickConnectIds").start_array();
+        for item_15 in var_13 {
             {
-                array_10.value().string(item_11.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_10.finish();
+        array_14.finish();
     }
-    if let Some(var_12) = &input.tags {
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Tags").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_17 = object.key("Tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_13.finish();
+        object_17.finish();
     }
     Ok(())
 }

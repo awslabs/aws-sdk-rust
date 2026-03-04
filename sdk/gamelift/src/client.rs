@@ -307,6 +307,8 @@ mod get_game_session_log_url;
 
 mod get_instance_access;
 
+mod get_player_connection_details;
+
 mod list_aliases;
 
 mod list_builds;

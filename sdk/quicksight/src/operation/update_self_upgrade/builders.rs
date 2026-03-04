@@ -22,7 +22,7 @@ impl crate::operation::update_self_upgrade::builders::UpdateSelfUpgradeInputBuil
 }
 /// Fluent builder constructing a request to `UpdateSelfUpgrade`.
 ///
-/// <p>Updates a self-upgrade request for a Quick Suite user by approving, denying, or verifying the request.</p>
+/// <p>Updates a self-upgrade request for a Quick user by approving, denying, or verifying the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSelfUpgradeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +122,17 @@ impl UpdateSelfUpgradeFluentBuilder {
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The Quick Suite namespace for the self-upgrade request.</p>
+    /// <p>The Quick namespace for the self-upgrade request.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The Quick Suite namespace for the self-upgrade request.</p>
+    /// <p>The Quick namespace for the self-upgrade request.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The Quick Suite namespace for the self-upgrade request.</p>
+    /// <p>The Quick namespace for the self-upgrade request.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }

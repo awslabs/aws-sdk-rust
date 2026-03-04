@@ -123,5 +123,14 @@ pub fn ser_create_fleet_input_input(
     if let Some(var_40) = &input.instance_role_credentials_provider {
         object.key("InstanceRoleCredentialsProvider").string(var_40.as_str());
     }
+    if let Some(var_41) = &input.player_gateway_mode {
+        object.key("PlayerGatewayMode").string(var_41.as_str());
+    }
+    if let Some(var_42) = &input.player_gateway_configuration {
+        #[allow(unused_mut)]
+        let mut object_43 = object.key("PlayerGatewayConfiguration").start_object();
+        crate::protocol_serde::shape_player_gateway_configuration::ser_player_gateway_configuration(&mut object_43, var_42)?;
+        object_43.finish();
+    }
     Ok(())
 }

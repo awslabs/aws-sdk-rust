@@ -79,6 +79,9 @@ pub struct ContainerFleet {
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>Information about the container fleet's remote locations where fleet instances are deployed.</p>
     pub location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ContainerFleetLocationAttributes>>,
+    /// <p>Indicates whether player gateway is enabled for this container fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub player_gateway_mode: ::std::option::Option<crate::types::PlayerGatewayMode>,
 }
 impl ContainerFleet {
     /// <p>A unique identifier for the container fleet to retrieve.</p>
@@ -206,6 +209,11 @@ impl ContainerFleet {
     pub fn location_attributes(&self) -> &[crate::types::ContainerFleetLocationAttributes] {
         self.location_attributes.as_deref().unwrap_or_default()
     }
+    /// <p>Indicates whether player gateway is enabled for this container fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn player_gateway_mode(&self) -> ::std::option::Option<&crate::types::PlayerGatewayMode> {
+        self.player_gateway_mode.as_ref()
+    }
 }
 impl ContainerFleet {
     /// Creates a new builder-style object to manufacture [`ContainerFleet`](crate::types::ContainerFleet).
@@ -240,6 +248,7 @@ pub struct ContainerFleetBuilder {
     pub(crate) deployment_details: ::std::option::Option<crate::types::DeploymentDetails>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     pub(crate) location_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ContainerFleetLocationAttributes>>,
+    pub(crate) player_gateway_mode: ::std::option::Option<crate::types::PlayerGatewayMode>,
 }
 impl ContainerFleetBuilder {
     /// <p>A unique identifier for the container fleet to retrieve.</p>
@@ -661,6 +670,23 @@ impl ContainerFleetBuilder {
     pub fn get_location_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerFleetLocationAttributes>> {
         &self.location_attributes
     }
+    /// <p>Indicates whether player gateway is enabled for this container fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn player_gateway_mode(mut self, input: crate::types::PlayerGatewayMode) -> Self {
+        self.player_gateway_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether player gateway is enabled for this container fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn set_player_gateway_mode(mut self, input: ::std::option::Option<crate::types::PlayerGatewayMode>) -> Self {
+        self.player_gateway_mode = input;
+        self
+    }
+    /// <p>Indicates whether player gateway is enabled for this container fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn get_player_gateway_mode(&self) -> &::std::option::Option<crate::types::PlayerGatewayMode> {
+        &self.player_gateway_mode
+    }
     /// Consumes the builder and constructs a [`ContainerFleet`](crate::types::ContainerFleet).
     pub fn build(self) -> crate::types::ContainerFleet {
         crate::types::ContainerFleet {
@@ -686,6 +712,7 @@ impl ContainerFleetBuilder {
             deployment_details: self.deployment_details,
             log_configuration: self.log_configuration,
             location_attributes: self.location_attributes,
+            player_gateway_mode: self.player_gateway_mode,
         }
     }
 }

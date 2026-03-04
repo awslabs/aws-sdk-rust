@@ -340,4 +340,18 @@ impl UpdateElasticsearchDomainConfigFluentBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         self.inner.get_dry_run()
     }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.inner = self.inner.deployment_strategy_options(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.inner = self.inner.set_deployment_strategy_options(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        self.inner.get_deployment_strategy_options()
+    }
 }

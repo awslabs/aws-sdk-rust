@@ -1,5 +1,8 @@
 allowed_external_types = [
+    "aws_smithy_async::rt::sleep::AsyncSleep",
     "aws_smithy_runtime_api::client::http::HttpClient",
     "aws_smithy_runtime_api::client::http::SharedHttpClient",
-    "aws_smithy_runtime_api::client::http::HttpConnector"
+    "aws_smithy_runtime_api::client::http::HttpConnector",
+    "aws_smithy_runtime_api::client::http::AsyncSleep",
+    "aws_smithy_runtime_api::client::http::Sleep",
 ]

@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSelfUpgradeConfigurationInput {
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub self_upgrade_status: ::std::option::Option<crate::types::SelfUpgradeStatus>,
 }
 impl UpdateSelfUpgradeConfigurationInput {
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub fn aws_account_id(&self) -> ::std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub fn self_upgrade_status(&self) -> ::std::option::Option<&crate::types::SelfUpgradeStatus> {
         self.self_upgrade_status.as_ref()
     }
@@ -40,48 +40,48 @@ pub struct UpdateSelfUpgradeConfigurationInputBuilder {
     pub(crate) self_upgrade_status: ::std::option::Option<crate::types::SelfUpgradeStatus>,
 }
 impl UpdateSelfUpgradeConfigurationInputBuilder {
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     /// This field is required.
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.aws_account_id = input;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.aws_account_id
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     /// This field is required.
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     /// This field is required.
     pub fn self_upgrade_status(mut self, input: crate::types::SelfUpgradeStatus) -> Self {
         self.self_upgrade_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub fn set_self_upgrade_status(mut self, input: ::std::option::Option<crate::types::SelfUpgradeStatus>) -> Self {
         self.self_upgrade_status = input;
         self
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub fn get_self_upgrade_status(&self) -> &::std::option::Option<crate::types::SelfUpgradeStatus> {
         &self.self_upgrade_status
     }

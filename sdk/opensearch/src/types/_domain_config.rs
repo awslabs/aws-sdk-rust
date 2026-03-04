@@ -46,6 +46,8 @@ pub struct DomainConfig {
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     /// <p>Container for parameters required to enable all machine learning features.</p>
     pub aiml_options: ::std::option::Option<crate::types::AimlOptionsStatus>,
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
 }
 impl DomainConfig {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -134,6 +136,10 @@ impl DomainConfig {
     pub fn aiml_options(&self) -> ::std::option::Option<&crate::types::AimlOptionsStatus> {
         self.aiml_options.as_ref()
     }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptionsStatus> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl DomainConfig {
     /// Creates a new builder-style object to manufacture [`DomainConfig`](crate::types::DomainConfig).
@@ -167,6 +173,7 @@ pub struct DomainConfigBuilder {
     pub(crate) software_update_options: ::std::option::Option<crate::types::SoftwareUpdateOptionsStatus>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
     pub(crate) aiml_options: ::std::option::Option<crate::types::AimlOptionsStatus>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
 }
 impl DomainConfigBuilder {
     /// <p>The OpenSearch or Elasticsearch version that the domain is running.</p>
@@ -469,6 +476,20 @@ impl DomainConfigBuilder {
     pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsStatus> {
         &self.aiml_options
     }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptionsStatus) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptionsStatus> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`DomainConfig`](crate::types::DomainConfig).
     pub fn build(self) -> crate::types::DomainConfig {
         crate::types::DomainConfig {
@@ -493,6 +514,7 @@ impl DomainConfigBuilder {
             software_update_options: self.software_update_options,
             modifying_properties: self.modifying_properties,
             aiml_options: self.aiml_options,
+            deployment_strategy_options: self.deployment_strategy_options,
         }
     }
 }

@@ -146,6 +146,11 @@ where
                                 crate::protocol_serde::shape_modifying_properties_list::de_modifying_properties_list(tokens, _value)?,
                             );
                         }
+                        "DeploymentStrategyOptions" => {
+                            builder = builder.set_deployment_strategy_options(
+                                crate::protocol_serde::shape_deployment_strategy_options::de_deployment_strategy_options(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

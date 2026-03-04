@@ -154,6 +154,13 @@ where
                                     crate::protocol_serde::shape_container_fleet_location_attributes_list::de_container_fleet_location_attributes_list(tokens, _value)?
                                 );
                             }
+                            "PlayerGatewayMode" => {
+                                builder = builder.set_player_gateway_mode(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::PlayerGatewayMode::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

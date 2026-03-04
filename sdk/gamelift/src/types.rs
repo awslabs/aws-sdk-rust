@@ -27,6 +27,8 @@ pub use crate::types::_game_session_creation_limit_policy::GameSessionCreationLi
 
 pub use crate::types::_log_configuration::LogConfiguration;
 
+pub use crate::types::_player_gateway_mode::PlayerGatewayMode;
+
 pub use crate::types::_container_fleet::ContainerFleet;
 
 pub use crate::types::_container_group_type::ContainerGroupType;
@@ -52,6 +54,8 @@ pub use crate::types::_compute_type::ComputeType;
 pub use crate::types::_anywhere_configuration::AnywhereConfiguration;
 
 pub use crate::types::_instance_role_credentials_provider::InstanceRoleCredentialsProvider;
+
+pub use crate::types::_player_gateway_configuration::PlayerGatewayConfiguration;
 
 pub use crate::types::_fleet_attributes::FleetAttributes;
 
@@ -165,6 +169,8 @@ pub use crate::types::_container_group_definition_status::ContainerGroupDefiniti
 
 pub use crate::types::_certificate_type::CertificateType;
 
+pub use crate::types::_game_server_ip_protocol_supported::GameServerIpProtocolSupported;
+
 pub use crate::types::_fleet_status::FleetStatus;
 
 pub use crate::types::_location_state::LocationState;
@@ -180,6 +186,8 @@ pub use crate::types::_game_property::GameProperty;
 pub use crate::types::_game_session_status::GameSessionStatus;
 
 pub use crate::types::_game_session_status_reason::GameSessionStatusReason;
+
+pub use crate::types::_player_gateway_status::PlayerGatewayStatus;
 
 pub use crate::types::_player_latency_policy::PlayerLatencyPolicy;
 
@@ -220,6 +228,8 @@ pub use crate::types::_vpc_peering_connection::VpcPeeringConnection;
 pub use crate::types::_container_identifier::ContainerIdentifier;
 
 pub use crate::types::_instance_credentials::InstanceCredentials;
+
+pub use crate::types::_player_connection_detail::PlayerConnectionDetail;
 
 pub use crate::types::_location_filter::LocationFilter;
 
@@ -290,6 +300,8 @@ pub use crate::types::_container_dependency_condition::ContainerDependencyCondit
 pub use crate::types::_container_mount_point_access_level::ContainerMountPointAccessLevel;
 
 pub use crate::types::_container_port_range::ContainerPortRange;
+
+pub use crate::types::_player_connection_endpoint::PlayerConnectionEndpoint;
 
 pub use crate::types::_attribute_value::AttributeValue;
 
@@ -441,6 +453,8 @@ mod _game_server_instance;
 
 mod _game_server_instance_status;
 
+mod _game_server_ip_protocol_supported;
+
 mod _game_server_protection_policy;
 
 mod _game_server_utilization_status;
@@ -526,6 +540,16 @@ mod _placed_player_session;
 mod _placement_fallback_strategy;
 
 mod _player;
+
+mod _player_connection_detail;
+
+mod _player_connection_endpoint;
+
+mod _player_gateway_configuration;
+
+mod _player_gateway_mode;
+
+mod _player_gateway_status;
 
 mod _player_latency;
 

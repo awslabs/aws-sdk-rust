@@ -7,7 +7,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GameProperty {
     /// <p>The game property identifier.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub key: ::std::option::Option<::std::string::String>,
     /// <p>The game property value.</p>
@@ -15,7 +20,12 @@ pub struct GameProperty {
 }
 impl GameProperty {
     /// <p>The game property identifier.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -41,7 +51,12 @@ pub struct GamePropertyBuilder {
 }
 impl GamePropertyBuilder {
     /// <p>The game property identifier.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -49,14 +64,24 @@ impl GamePropertyBuilder {
         self
     }
     /// <p>The game property identifier.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.key = input;
         self
     }
     /// <p>The game property identifier.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.key

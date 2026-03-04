@@ -219,6 +219,8 @@ pub(crate) mod shape_cognito_options;
 
 pub(crate) mod shape_compatible_elasticsearch_versions_list;
 
+pub(crate) mod shape_deployment_strategy_options;
+
 pub(crate) mod shape_describe_packages_filter;
 
 pub(crate) mod shape_domain_endpoint_options;
@@ -330,6 +332,8 @@ pub(crate) mod shape_cognito_options_status;
 pub(crate) mod shape_cold_storage_options;
 
 pub(crate) mod shape_compatible_versions_map;
+
+pub(crate) mod shape_deployment_strategy_options_status;
 
 pub(crate) mod shape_domain_endpoint_options_status;
 

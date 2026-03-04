@@ -118,6 +118,13 @@ where
                             builder =
                                 builder.set_aiml_options(crate::protocol_serde::shape_aiml_options_status::de_aiml_options_status(tokens, _value)?);
                         }
+                        "DeploymentStrategyOptions" => {
+                            builder = builder.set_deployment_strategy_options(
+                                crate::protocol_serde::shape_deployment_strategy_options_status::de_deployment_strategy_options_status(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

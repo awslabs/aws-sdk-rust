@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSelfUpgradeConfigurationOutput {
-    /// <p>The self-upgrade configuration for the Quick Suite account.</p>
+    /// <p>The self-upgrade configuration for the Quick account.</p>
     pub self_upgrade_configuration: ::std::option::Option<crate::types::SelfUpgradeConfiguration>,
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeSelfUpgradeConfigurationOutput {
     _request_id: Option<String>,
 }
 impl DescribeSelfUpgradeConfigurationOutput {
-    /// <p>The self-upgrade configuration for the Quick Suite account.</p>
+    /// <p>The self-upgrade configuration for the Quick account.</p>
     pub fn self_upgrade_configuration(&self) -> ::std::option::Option<&crate::types::SelfUpgradeConfiguration> {
         self.self_upgrade_configuration.as_ref()
     }
@@ -47,17 +47,17 @@ pub struct DescribeSelfUpgradeConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeSelfUpgradeConfigurationOutputBuilder {
-    /// <p>The self-upgrade configuration for the Quick Suite account.</p>
+    /// <p>The self-upgrade configuration for the Quick account.</p>
     pub fn self_upgrade_configuration(mut self, input: crate::types::SelfUpgradeConfiguration) -> Self {
         self.self_upgrade_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The self-upgrade configuration for the Quick Suite account.</p>
+    /// <p>The self-upgrade configuration for the Quick account.</p>
     pub fn set_self_upgrade_configuration(mut self, input: ::std::option::Option<crate::types::SelfUpgradeConfiguration>) -> Self {
         self.self_upgrade_configuration = input;
         self
     }
-    /// <p>The self-upgrade configuration for the Quick Suite account.</p>
+    /// <p>The self-upgrade configuration for the Quick account.</p>
     pub fn get_self_upgrade_configuration(&self) -> &::std::option::Option<crate::types::SelfUpgradeConfiguration> {
         &self.self_upgrade_configuration
     }

@@ -90,6 +90,11 @@ pub struct FleetAttributes {
     pub anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
     /// <p>Indicates that fleet instances maintain a shared credentials file for the IAM role defined in <code>InstanceRoleArn</code>. Shared credentials allow applications that are deployed with the game server executable to communicate with other Amazon Web Services resources. This property is used only when the game server is integrated with the server SDK version 5.x. For more information about using shared credentials, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html"> Communicate with other Amazon Web Services resources from your fleets</a>. This attribute is used with fleets where <code>ComputeType</code> is <code>EC2</code>.</p>
     pub instance_role_credentials_provider: ::std::option::Option<crate::types::InstanceRoleCredentialsProvider>,
+    /// <p>Indicates whether player gateway is enabled for this fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub player_gateway_mode: ::std::option::Option<crate::types::PlayerGatewayMode>,
+    /// <p>Configuration settings for player gateway on this fleet.</p>
+    pub player_gateway_configuration: ::std::option::Option<crate::types::PlayerGatewayConfiguration>,
 }
 impl FleetAttributes {
     /// <p>A unique identifier for the fleet.</p>
@@ -229,6 +234,15 @@ impl FleetAttributes {
     pub fn instance_role_credentials_provider(&self) -> ::std::option::Option<&crate::types::InstanceRoleCredentialsProvider> {
         self.instance_role_credentials_provider.as_ref()
     }
+    /// <p>Indicates whether player gateway is enabled for this fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn player_gateway_mode(&self) -> ::std::option::Option<&crate::types::PlayerGatewayMode> {
+        self.player_gateway_mode.as_ref()
+    }
+    /// <p>Configuration settings for player gateway on this fleet.</p>
+    pub fn player_gateway_configuration(&self) -> ::std::option::Option<&crate::types::PlayerGatewayConfiguration> {
+        self.player_gateway_configuration.as_ref()
+    }
 }
 impl FleetAttributes {
     /// Creates a new builder-style object to manufacture [`FleetAttributes`](crate::types::FleetAttributes).
@@ -267,6 +281,8 @@ pub struct FleetAttributesBuilder {
     pub(crate) compute_type: ::std::option::Option<crate::types::ComputeType>,
     pub(crate) anywhere_configuration: ::std::option::Option<crate::types::AnywhereConfiguration>,
     pub(crate) instance_role_credentials_provider: ::std::option::Option<crate::types::InstanceRoleCredentialsProvider>,
+    pub(crate) player_gateway_mode: ::std::option::Option<crate::types::PlayerGatewayMode>,
+    pub(crate) player_gateway_configuration: ::std::option::Option<crate::types::PlayerGatewayConfiguration>,
 }
 impl FleetAttributesBuilder {
     /// <p>A unique identifier for the fleet.</p>
@@ -732,6 +748,37 @@ impl FleetAttributesBuilder {
     pub fn get_instance_role_credentials_provider(&self) -> &::std::option::Option<crate::types::InstanceRoleCredentialsProvider> {
         &self.instance_role_credentials_provider
     }
+    /// <p>Indicates whether player gateway is enabled for this fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn player_gateway_mode(mut self, input: crate::types::PlayerGatewayMode) -> Self {
+        self.player_gateway_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether player gateway is enabled for this fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn set_player_gateway_mode(mut self, input: ::std::option::Option<crate::types::PlayerGatewayMode>) -> Self {
+        self.player_gateway_mode = input;
+        self
+    }
+    /// <p>Indicates whether player gateway is enabled for this fleet. Player gateway provides benefits such as DDoS protection with negligible impact to latency.</p>
+    /// <p>If <code>ENABLED</code> or <code>REQUIRED</code>, game clients can use player gateway to connect with the game server. If <code>DISABLED</code>, game clients cannot use player gateway. Instead, they have to directly connect to the game server.</p>
+    pub fn get_player_gateway_mode(&self) -> &::std::option::Option<crate::types::PlayerGatewayMode> {
+        &self.player_gateway_mode
+    }
+    /// <p>Configuration settings for player gateway on this fleet.</p>
+    pub fn player_gateway_configuration(mut self, input: crate::types::PlayerGatewayConfiguration) -> Self {
+        self.player_gateway_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for player gateway on this fleet.</p>
+    pub fn set_player_gateway_configuration(mut self, input: ::std::option::Option<crate::types::PlayerGatewayConfiguration>) -> Self {
+        self.player_gateway_configuration = input;
+        self
+    }
+    /// <p>Configuration settings for player gateway on this fleet.</p>
+    pub fn get_player_gateway_configuration(&self) -> &::std::option::Option<crate::types::PlayerGatewayConfiguration> {
+        &self.player_gateway_configuration
+    }
     /// Consumes the builder and constructs a [`FleetAttributes`](crate::types::FleetAttributes).
     pub fn build(self) -> crate::types::FleetAttributes {
         crate::types::FleetAttributes {
@@ -761,6 +808,8 @@ impl FleetAttributesBuilder {
             compute_type: self.compute_type,
             anywhere_configuration: self.anywhere_configuration,
             instance_role_credentials_provider: self.instance_role_credentials_provider,
+            player_gateway_mode: self.player_gateway_mode,
+            player_gateway_configuration: self.player_gateway_configuration,
         }
     }
 }

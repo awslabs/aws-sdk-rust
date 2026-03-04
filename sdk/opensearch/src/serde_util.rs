@@ -333,6 +333,33 @@ pub(crate) fn cognito_options_status_correct_errors(
     builder
 }
 
+pub(crate) fn deployment_strategy_options_correct_errors(
+    mut builder: crate::types::builders::DeploymentStrategyOptionsBuilder,
+) -> crate::types::builders::DeploymentStrategyOptionsBuilder {
+    if builder.deployment_strategy.is_none() {
+        builder.deployment_strategy = "no value was set".parse::<crate::types::DeploymentStrategy>().ok()
+    }
+    builder
+}
+
+pub(crate) fn deployment_strategy_options_status_correct_errors(
+    mut builder: crate::types::builders::DeploymentStrategyOptionsStatusBuilder,
+) -> crate::types::builders::DeploymentStrategyOptionsStatusBuilder {
+    if builder.options.is_none() {
+        builder.options = {
+            let builder = crate::types::builders::DeploymentStrategyOptionsBuilder::default();
+            crate::serde_util::deployment_strategy_options_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = {
+            let builder = crate::types::builders::OptionStatusBuilder::default();
+            crate::serde_util::option_status_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn domain_endpoint_options_status_correct_errors(
     mut builder: crate::types::builders::DomainEndpointOptionsStatusBuilder,
 ) -> crate::types::builders::DomainEndpointOptionsStatusBuilder {

@@ -469,4 +469,18 @@ impl UpdateDomainConfigFluentBuilder {
     pub fn get_aiml_options(&self) -> &::std::option::Option<crate::types::AimlOptionsInput> {
         self.inner.get_aiml_options()
     }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.inner = self.inner.deployment_strategy_options(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.inner = self.inner.set_deployment_strategy_options(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options for the domain.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        self.inner.get_deployment_strategy_options()
+    }
 }

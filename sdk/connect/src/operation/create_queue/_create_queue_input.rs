@@ -19,6 +19,8 @@ pub struct CreateQueueInput {
     pub max_contacts: ::std::option::Option<i32>,
     /// <p>The quick connects available to agents who are working the queue.</p>
     pub quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub email_addresses_config: ::std::option::Option<::std::vec::Vec<crate::types::EmailAddressConfig>>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -57,6 +59,12 @@ impl CreateQueueInput {
     pub fn quick_connect_ids(&self) -> &[::std::string::String] {
         self.quick_connect_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.email_addresses_config.is_none()`.
+    pub fn email_addresses_config(&self) -> &[crate::types::EmailAddressConfig] {
+        self.email_addresses_config.as_deref().unwrap_or_default()
+    }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -81,6 +89,7 @@ pub struct CreateQueueInputBuilder {
     pub(crate) hours_of_operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_contacts: ::std::option::Option<i32>,
     pub(crate) quick_connect_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) email_addresses_config: ::std::option::Option<::std::vec::Vec<crate::types::EmailAddressConfig>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateQueueInputBuilder {
@@ -205,6 +214,26 @@ impl CreateQueueInputBuilder {
     pub fn get_quick_connect_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.quick_connect_ids
     }
+    /// Appends an item to `email_addresses_config`.
+    ///
+    /// To override the contents of this collection use [`set_email_addresses_config`](Self::set_email_addresses_config).
+    ///
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub fn email_addresses_config(mut self, input: crate::types::EmailAddressConfig) -> Self {
+        let mut v = self.email_addresses_config.unwrap_or_default();
+        v.push(input);
+        self.email_addresses_config = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub fn set_email_addresses_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmailAddressConfig>>) -> Self {
+        self.email_addresses_config = input;
+        self
+    }
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub fn get_email_addresses_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailAddressConfig>> {
+        &self.email_addresses_config
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -236,6 +265,7 @@ impl CreateQueueInputBuilder {
             hours_of_operation_id: self.hours_of_operation_id,
             max_contacts: self.max_contacts,
             quick_connect_ids: self.quick_connect_ids,
+            email_addresses_config: self.email_addresses_config,
             tags: self.tags,
         })
     }

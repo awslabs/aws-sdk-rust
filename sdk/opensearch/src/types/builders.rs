@@ -41,6 +41,8 @@ pub use crate::types::_software_update_options::SoftwareUpdateOptionsBuilder;
 
 pub use crate::types::_aiml_options_input::AimlOptionsInputBuilder;
 
+pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptionsBuilder;
+
 pub use crate::types::_domain_status::DomainStatusBuilder;
 
 pub use crate::types::_domain_information_container::DomainInformationContainerBuilder;
@@ -178,6 +180,8 @@ pub use crate::types::_off_peak_window_options_status::OffPeakWindowOptionsStatu
 pub use crate::types::_software_update_options_status::SoftwareUpdateOptionsStatusBuilder;
 
 pub use crate::types::_aiml_options_status::AimlOptionsStatusBuilder;
+
+pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatusBuilder;
 
 pub use crate::types::_environment_info::EnvironmentInfoBuilder;
 

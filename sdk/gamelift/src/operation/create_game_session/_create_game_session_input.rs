@@ -12,7 +12,12 @@ pub struct CreateGameSessionInput {
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     /// <p>A unique identifier for a player or entity creating the game session.</p>
@@ -54,7 +59,12 @@ impl CreateGameSessionInput {
         self.name.as_deref()
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
@@ -177,7 +187,12 @@ impl CreateGameSessionInputBuilder {
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
     ///
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
         let mut v = self.game_properties.unwrap_or_default();
@@ -186,14 +201,24 @@ impl CreateGameSessionInputBuilder {
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
         self.game_properties = input;
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create">Create a game session with custom properties</a>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
         &self.game_properties

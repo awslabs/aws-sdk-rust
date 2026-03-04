@@ -45,7 +45,12 @@ impl crate::operation::search_game_sessions::builders::SearchGameSessionsInputBu
 /// <p><b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>. The filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a> -- a <code>Key</code> and a string <code>Value</code> to search for the game sessions.</p>
 /// <p>For example, to search for the above key-value pair, specify the following search filter: <code>gameSessionProperties.difficulty = "novice"</code>. All game property values are searched as strings.</p>
 /// <p>For examples of searching game sessions, see the ones below, and also see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search game sessions by game property</a>.</p><note>
-/// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+/// <ul>
+/// <li>
+/// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+/// <li>
+/// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+/// </ul>
 /// </note></li>
 /// <li>
 /// <p><b>maximumSessions</b> -- Maximum number of player sessions allowed for a game session.</p></li>

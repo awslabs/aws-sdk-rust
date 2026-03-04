@@ -49,6 +49,8 @@ pub(crate) mod shape_associate_lex_bot;
 
 pub(crate) mod shape_associate_phone_number_contact_flow;
 
+pub(crate) mod shape_associate_queue_email_addresses;
+
 pub(crate) mod shape_associate_queue_quick_connects;
 
 pub(crate) mod shape_associate_routing_profile_queues;
@@ -319,6 +321,8 @@ pub(crate) mod shape_disassociate_lex_bot;
 
 pub(crate) mod shape_disassociate_phone_number_contact_flow;
 
+pub(crate) mod shape_disassociate_queue_email_addresses;
+
 pub(crate) mod shape_disassociate_queue_quick_connects;
 
 pub(crate) mod shape_disassociate_routing_profile_queues;
@@ -442,6 +446,8 @@ pub(crate) mod shape_list_phone_numbers_v2;
 pub(crate) mod shape_list_predefined_attributes;
 
 pub(crate) mod shape_list_prompts;
+
+pub(crate) mod shape_list_queue_email_addresses;
 
 pub(crate) mod shape_list_queue_quick_connects;
 
@@ -787,6 +793,8 @@ pub(crate) mod shape_associate_lex_bot_input;
 
 pub(crate) mod shape_associate_phone_number_contact_flow_input;
 
+pub(crate) mod shape_associate_queue_email_addresses_input;
+
 pub(crate) mod shape_associate_queue_quick_connects_input;
 
 pub(crate) mod shape_associate_routing_profile_queues_input;
@@ -914,6 +922,8 @@ pub(crate) mod shape_disassociate_bot_input;
 pub(crate) mod shape_disassociate_email_address_alias_input;
 
 pub(crate) mod shape_disassociate_hours_of_operations_input;
+
+pub(crate) mod shape_disassociate_queue_email_addresses_input;
 
 pub(crate) mod shape_disassociate_queue_quick_connects_input;
 
@@ -1415,9 +1425,13 @@ pub(crate) mod shape_effective_hours_of_operation_list;
 
 pub(crate) mod shape_effective_override_hours_list;
 
+pub(crate) mod shape_email_address_config;
+
 pub(crate) mod shape_email_address_info;
 
 pub(crate) mod shape_email_address_list;
+
+pub(crate) mod shape_email_address_metadata_list;
 
 pub(crate) mod shape_email_address_search_criteria;
 
@@ -1992,6 +2006,8 @@ pub(crate) mod shape_effective_hours_of_operations;
 pub(crate) mod shape_effective_override_hours;
 
 pub(crate) mod shape_email_address_metadata;
+
+pub(crate) mod shape_email_address_summary;
 
 pub(crate) mod shape_end_associated_tasks_action_definition;
 

@@ -76,6 +76,18 @@ pub struct CreateContainerFleetInput {
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     /// <p>A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Configures player gateway for your fleet. Player gateway provides benefits such as DDoS protection by rate limiting and validating traﬃc before it reaches game servers, hiding game server IP addresses from players, and providing updated endpoints when relay endpoints become unhealthy.</p>
+    /// <p><b>How it works:</b> When enabled, game clients connect to relay endpoints instead of to your game servers. Player gateway validates player gateway tokens and routes traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to retrieve relay endpoints and player gateway tokens for your game clients. To learn more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS protection with Amazon GameLift Servers player gateway</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DISABLED</code> (default) -- Game clients connect to the game server endpoint. Use this when you do not intend to integrate your game with player gateway.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available in fleet locations where it is supported. Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to obtain a player gateway token and endpoints for game clients.</p></li>
+    /// <li>
+    /// <p><code>REQUIRED</code> -- Player gateway is available in fleet locations where it is supported, and the fleet can only use locations that support this feature. Attempting to add a remote location to your fleet which does not support player gateway will result in an <code>InvalidRequestException</code>.</p></li>
+    /// </ul>
+    pub player_gateway_mode: ::std::option::Option<crate::types::PlayerGatewayMode>,
 }
 impl CreateContainerFleetInput {
     /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift Servers. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
@@ -189,6 +201,20 @@ impl CreateContainerFleetInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Configures player gateway for your fleet. Player gateway provides benefits such as DDoS protection by rate limiting and validating traﬃc before it reaches game servers, hiding game server IP addresses from players, and providing updated endpoints when relay endpoints become unhealthy.</p>
+    /// <p><b>How it works:</b> When enabled, game clients connect to relay endpoints instead of to your game servers. Player gateway validates player gateway tokens and routes traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to retrieve relay endpoints and player gateway tokens for your game clients. To learn more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS protection with Amazon GameLift Servers player gateway</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DISABLED</code> (default) -- Game clients connect to the game server endpoint. Use this when you do not intend to integrate your game with player gateway.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available in fleet locations where it is supported. Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to obtain a player gateway token and endpoints for game clients.</p></li>
+    /// <li>
+    /// <p><code>REQUIRED</code> -- Player gateway is available in fleet locations where it is supported, and the fleet can only use locations that support this feature. Attempting to add a remote location to your fleet which does not support player gateway will result in an <code>InvalidRequestException</code>.</p></li>
+    /// </ul>
+    pub fn player_gateway_mode(&self) -> ::std::option::Option<&crate::types::PlayerGatewayMode> {
+        self.player_gateway_mode.as_ref()
+    }
 }
 impl CreateContainerFleetInput {
     /// Creates a new builder-style object to manufacture [`CreateContainerFleetInput`](crate::operation::create_container_fleet::CreateContainerFleetInput).
@@ -216,6 +242,7 @@ pub struct CreateContainerFleetInputBuilder {
     pub(crate) game_session_creation_limit_policy: ::std::option::Option<crate::types::GameSessionCreationLimitPolicy>,
     pub(crate) log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) player_gateway_mode: ::std::option::Option<crate::types::PlayerGatewayMode>,
 }
 impl CreateContainerFleetInputBuilder {
     /// <p>The unique identifier for an Identity and Access Management (IAM) role with permissions to run your containers on resources that are managed by Amazon GameLift Servers. Use an IAM service role with the <code>GameLiftContainerFleetPolicy</code> managed policy attached. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html">Set up an IAM service role</a>. You can't change this fleet property after the fleet is created.</p>
@@ -582,6 +609,50 @@ impl CreateContainerFleetInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Configures player gateway for your fleet. Player gateway provides benefits such as DDoS protection by rate limiting and validating traﬃc before it reaches game servers, hiding game server IP addresses from players, and providing updated endpoints when relay endpoints become unhealthy.</p>
+    /// <p><b>How it works:</b> When enabled, game clients connect to relay endpoints instead of to your game servers. Player gateway validates player gateway tokens and routes traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to retrieve relay endpoints and player gateway tokens for your game clients. To learn more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS protection with Amazon GameLift Servers player gateway</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DISABLED</code> (default) -- Game clients connect to the game server endpoint. Use this when you do not intend to integrate your game with player gateway.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available in fleet locations where it is supported. Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to obtain a player gateway token and endpoints for game clients.</p></li>
+    /// <li>
+    /// <p><code>REQUIRED</code> -- Player gateway is available in fleet locations where it is supported, and the fleet can only use locations that support this feature. Attempting to add a remote location to your fleet which does not support player gateway will result in an <code>InvalidRequestException</code>.</p></li>
+    /// </ul>
+    pub fn player_gateway_mode(mut self, input: crate::types::PlayerGatewayMode) -> Self {
+        self.player_gateway_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures player gateway for your fleet. Player gateway provides benefits such as DDoS protection by rate limiting and validating traﬃc before it reaches game servers, hiding game server IP addresses from players, and providing updated endpoints when relay endpoints become unhealthy.</p>
+    /// <p><b>How it works:</b> When enabled, game clients connect to relay endpoints instead of to your game servers. Player gateway validates player gateway tokens and routes traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to retrieve relay endpoints and player gateway tokens for your game clients. To learn more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS protection with Amazon GameLift Servers player gateway</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DISABLED</code> (default) -- Game clients connect to the game server endpoint. Use this when you do not intend to integrate your game with player gateway.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available in fleet locations where it is supported. Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to obtain a player gateway token and endpoints for game clients.</p></li>
+    /// <li>
+    /// <p><code>REQUIRED</code> -- Player gateway is available in fleet locations where it is supported, and the fleet can only use locations that support this feature. Attempting to add a remote location to your fleet which does not support player gateway will result in an <code>InvalidRequestException</code>.</p></li>
+    /// </ul>
+    pub fn set_player_gateway_mode(mut self, input: ::std::option::Option<crate::types::PlayerGatewayMode>) -> Self {
+        self.player_gateway_mode = input;
+        self
+    }
+    /// <p>Configures player gateway for your fleet. Player gateway provides benefits such as DDoS protection by rate limiting and validating traﬃc before it reaches game servers, hiding game server IP addresses from players, and providing updated endpoints when relay endpoints become unhealthy.</p>
+    /// <p><b>How it works:</b> When enabled, game clients connect to relay endpoints instead of to your game servers. Player gateway validates player gateway tokens and routes traffic to the appropriate game server. Your game backend calls <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to retrieve relay endpoints and player gateway tokens for your game clients. To learn more about this topic, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/ddos-protection-intro.html">DDoS protection with Amazon GameLift Servers player gateway</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DISABLED</code> (default) -- Game clients connect to the game server endpoint. Use this when you do not intend to integrate your game with player gateway.</p></li>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available in fleet locations where it is supported. Your game backend can call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a> to obtain a player gateway token and endpoints for game clients.</p></li>
+    /// <li>
+    /// <p><code>REQUIRED</code> -- Player gateway is available in fleet locations where it is supported, and the fleet can only use locations that support this feature. Attempting to add a remote location to your fleet which does not support player gateway will result in an <code>InvalidRequestException</code>.</p></li>
+    /// </ul>
+    pub fn get_player_gateway_mode(&self) -> &::std::option::Option<crate::types::PlayerGatewayMode> {
+        &self.player_gateway_mode
+    }
     /// Consumes the builder and constructs a [`CreateContainerFleetInput`](crate::operation::create_container_fleet::CreateContainerFleetInput).
     pub fn build(
         self,
@@ -603,6 +674,7 @@ impl CreateContainerFleetInputBuilder {
             game_session_creation_limit_policy: self.game_session_creation_limit_policy,
             log_configuration: self.log_configuration,
             tags: self.tags,
+            player_gateway_mode: self.player_gateway_mode,
         })
     }
 }

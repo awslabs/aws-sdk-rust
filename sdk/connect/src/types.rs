@@ -415,6 +415,8 @@ pub use crate::types::_kinesis_stream_config::KinesisStreamConfig;
 
 pub use crate::types::_kinesis_firehose_config::KinesisFirehoseConfig;
 
+pub use crate::types::_email_address_config::EmailAddressConfig;
+
 pub use crate::types::_routing_profile_queue_config::RoutingProfileQueueConfig;
 
 pub use crate::types::_routing_profile_manual_assignment_queue_config::RoutingProfileManualAssignmentQueueConfig;
@@ -694,6 +696,8 @@ pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummary;
 pub use crate::types::_predefined_attribute_summary::PredefinedAttributeSummary;
 
 pub use crate::types::_prompt_summary::PromptSummary;
+
+pub use crate::types::_email_address_summary::EmailAddressSummary;
 
 pub use crate::types::_quick_connect_summary::QuickConnectSummary;
 
@@ -1737,6 +1741,8 @@ mod _effective_hours_of_operations;
 
 mod _effective_override_hours;
 
+mod _email_address_config;
+
 mod _email_address_info;
 
 mod _email_address_metadata;
@@ -1744,6 +1750,8 @@ mod _email_address_metadata;
 mod _email_address_search_criteria;
 
 mod _email_address_search_filter;
+
+mod _email_address_summary;
 
 mod _email_attachment;
 

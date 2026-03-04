@@ -1,0 +1,43 @@
+# This Cargo.toml is unused in generated code. It exists solely to enable these tests to compile in-situ
+[package]
+name = "webassembly-no-os"
+version = "0.1.0"
+authors = [
+    "Eduardo Rodrigues <16357187+eduardomourar@users.noreply.github.com>",
+]
+description = """
+These tests ensure that things will fail (or not fail) as expected
+when target is set to wasm32-wasip1 for all SDK and runtime crates.
+"""
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/smithy-lang/smithy-rs"
+publish = false
+
+[target.'cfg(target_family = "wasm")'.dependencies]
+aws-config = { path = "../../sdk/aws-config", default-features = false, features = [
+    "rt-tokio",
+    "behavior-version-latest"
+] }
+aws-credential-types = { path = "../../sdk/aws-credential-types", features = ["hardcoded-credentials"] }
+aws-sdk-s3 = { path = "../../sdk/s3", default-features = false }
+aws-smithy-async = { path = "../../sdk/aws-smithy-async", default-features = false, features = ["test-util", "rt-tokio"] }
+aws-smithy-http = { path = "../../sdk/aws-smithy-http" }
+aws-smithy-http-client = { path = "../../sdk/aws-smithy-http-client", default-features = false, features = ["test-util"] }
+aws-smithy-runtime = { path = "../../sdk/aws-smithy-runtime", features = ["client"] }
+aws-smithy-runtime-api = { path = "../../sdk/aws-smithy-runtime-api", features = ["client"] }
+aws-smithy-types = { path = "../../sdk/aws-smithy-types" }
+aws-smithy-wasm = { path = "../../sdk/aws-smithy-wasm" }
+http-1x = { package = "http", version = "1" }
+tokio = { version = "1.32.0", features = ["macros", "rt"] }
+# getrandom is a transitive dependency, but requires the wasm_js feature to compile for wasm
+# also requires a compiler flag which is set in .cargo/config.toml
+# https://docs.rs/getrandom/0.3.3/getrandom/#webassembly-support
+getrandom = {version="0.3.3", features = ["wasm_js"]}
+
+[lib]
+crate-type = ["cdylib"]
+
+# metadata used by cargo-component to identify which wit world to embed in the binary
+[package.metadata.component]
+package = "aws:component"

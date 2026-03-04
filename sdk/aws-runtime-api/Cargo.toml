@@ -1,12 +1,12 @@
 [package]
 name = "aws-runtime-api"
-version = "1.1.11"
+version = "1.1.12"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>"]
 description = "Runtime support code for the AWS SDK. This isn't intended to be used directly."
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/smithy-lang/smithy-rs"
-rust-version = "1.91"
+rust-version = "1.91.1"
 
 [dependencies]
 

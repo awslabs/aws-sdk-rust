@@ -40,6 +40,9 @@ pub mod associate_lex_bot;
 /// Types for the `AssociatePhoneNumberContactFlow` operation.
 pub mod associate_phone_number_contact_flow;
 
+/// Types for the `AssociateQueueEmailAddresses` operation.
+pub mod associate_queue_email_addresses;
+
 /// Types for the `AssociateQueueQuickConnects` operation.
 pub mod associate_queue_quick_connects;
 
@@ -445,6 +448,9 @@ pub mod disassociate_lex_bot;
 /// Types for the `DisassociatePhoneNumberContactFlow` operation.
 pub mod disassociate_phone_number_contact_flow;
 
+/// Types for the `DisassociateQueueEmailAddresses` operation.
+pub mod disassociate_queue_email_addresses;
+
 /// Types for the `DisassociateQueueQuickConnects` operation.
 pub mod disassociate_queue_quick_connects;
 
@@ -630,6 +636,9 @@ pub mod list_predefined_attributes;
 
 /// Types for the `ListPrompts` operation.
 pub mod list_prompts;
+
+/// Types for the `ListQueueEmailAddresses` operation.
+pub mod list_queue_email_addresses;
 
 /// Types for the `ListQueueQuickConnects` operation.
 pub mod list_queue_quick_connects;

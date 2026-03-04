@@ -235,6 +235,25 @@ impl CreateQueueFluentBuilder {
         self.inner.get_quick_connect_ids()
     }
     ///
+    /// Appends an item to `EmailAddressesConfig`.
+    ///
+    /// To override the contents of this collection use [`set_email_addresses_config`](Self::set_email_addresses_config).
+    ///
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub fn email_addresses_config(mut self, input: crate::types::EmailAddressConfig) -> Self {
+        self.inner = self.inner.email_addresses_config(input);
+        self
+    }
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub fn set_email_addresses_config(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EmailAddressConfig>>) -> Self {
+        self.inner = self.inner.set_email_addresses_config(input);
+        self
+    }
+    /// <p>Configuration list containing the email addresses to associate with the queue during creation. Each configuration specifies an email address ID that agents can select when handling email contacts in this queue.</p>
+    pub fn get_email_addresses_config(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EmailAddressConfig>> {
+        self.inner.get_email_addresses_config()
+    }
+    ///
     /// Adds a key-value pair to `Tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).

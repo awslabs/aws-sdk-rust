@@ -167,6 +167,8 @@ pub(crate) mod shape_get_game_session_log_url;
 
 pub(crate) mod shape_get_instance_access;
 
+pub(crate) mod shape_get_player_connection_details;
+
 pub(crate) mod shape_list_aliases;
 
 pub(crate) mod shape_list_builds;
@@ -414,6 +416,8 @@ pub(crate) mod shape_get_compute_auth_token_input;
 pub(crate) mod shape_get_game_session_log_url_input;
 
 pub(crate) mod shape_get_instance_access_input;
+
+pub(crate) mod shape_get_player_connection_details_input;
 
 pub(crate) mod shape_idempotent_parameter_mismatch_exception;
 
@@ -667,6 +671,10 @@ pub(crate) mod shape_matchmaking_ticket_list;
 
 pub(crate) mod shape_player;
 
+pub(crate) mod shape_player_connection_detail_list;
+
+pub(crate) mod shape_player_gateway_configuration;
+
 pub(crate) mod shape_player_latency;
 
 pub(crate) mod shape_player_latency_policy;
@@ -769,6 +777,8 @@ pub(crate) mod shape_ping_beacon;
 
 pub(crate) mod shape_placed_player_session_list;
 
+pub(crate) mod shape_player_connection_detail;
+
 pub(crate) mod shape_player_latency_list;
 
 pub(crate) mod shape_player_latency_policy_list;
@@ -811,6 +821,8 @@ pub(crate) mod shape_matched_player_session_list;
 
 pub(crate) mod shape_placed_player_session;
 
+pub(crate) mod shape_player_connection_endpoint_list;
+
 pub(crate) mod shape_priority_type_list;
 
 pub(crate) mod shape_support_container_definition;
@@ -826,6 +838,8 @@ pub(crate) mod shape_latency_map;
 pub(crate) mod shape_matched_player_session;
 
 pub(crate) mod shape_player_attribute_map;
+
+pub(crate) mod shape_player_connection_endpoint;
 
 pub(crate) mod shape_container_command_string_list;
 

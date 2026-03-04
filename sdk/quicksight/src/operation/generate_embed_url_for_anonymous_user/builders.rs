@@ -22,7 +22,7 @@ impl crate::operation::generate_embed_url_for_anonymous_user::builders::Generate
 }
 /// Fluent builder constructing a request to `GenerateEmbedUrlForAnonymousUser`.
 ///
-/// <p>Generates an embed URL that you can use to embed an Amazon Quick Suite dashboard or visual in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p>
+/// <p>Generates an embed URL that you can use to embed an Amazon Quick dashboard or visual in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p>
 /// <p>The following rules apply to the generated URL:</p>
 /// <ul>
 /// <li>
@@ -30,10 +30,10 @@ impl crate::operation::generate_embed_url_for_anonymous_user::builders::Generate
 /// <li>
 /// <p>The URL validity period should not be confused with the actual session lifetime that can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code> parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration is 10 hours.</p></li>
 /// <li>
-/// <p>You are charged only when the URL is used or there is interaction with Amazon Quick Suite.</p></li>
+/// <p>You are charged only when the URL is used or there is interaction with Amazon Quick.</p></li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
-/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon Quick Suite Developer Portal</a>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the <i>Amazon Quick User Guide</i>.</p>
+/// <p>For more information about the high-level steps for embedding and for an interactive demo of the ways you can customize embedding, visit the <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-portal.html">Amazon Quick Developer Portal</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GenerateEmbedUrlForAnonymousUserFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -147,17 +147,17 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     pub fn get_session_lifetime_in_minutes(&self) -> &::std::option::Option<i64> {
         self.inner.get_session_lifetime_in_minutes()
     }
-    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick Suite custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick custom namespace, set this to <code>default</code>.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick Suite custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick custom namespace, set this to <code>default</code>.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick Suite custom namespace, set this to <code>default</code>.</p>
+    /// <p>The Amazon Quick Sight namespace that the anonymous user virtually belongs to. If you are not using an Amazon Quick custom namespace, set this to <code>default</code>.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
@@ -178,7 +178,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     /// <li>
     /// <p>Review your architecture. If downstream customers or partners are allowed to call the <code>GenerateEmbedUrlForAnonymousUser</code> API directly, evaluate whether those parties could specify sessionTag values for tenants they should not access.</p></li>
     /// </ul>
-    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick User Guide</i>.</p>
     pub fn session_tags(mut self, input: crate::types::SessionTag) -> Self {
         self.inner = self.inner.session_tags(input);
         self
@@ -195,7 +195,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     /// <li>
     /// <p>Review your architecture. If downstream customers or partners are allowed to call the <code>GenerateEmbedUrlForAnonymousUser</code> API directly, evaluate whether those parties could specify sessionTag values for tenants they should not access.</p></li>
     /// </ul>
-    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick User Guide</i>.</p>
     pub fn set_session_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SessionTag>>) -> Self {
         self.inner = self.inner.set_session_tags(input);
         self
@@ -212,7 +212,7 @@ impl GenerateEmbedUrlForAnonymousUserFluentBuilder {
     /// <li>
     /// <p>Review your architecture. If downstream customers or partners are allowed to call the <code>GenerateEmbedUrlForAnonymousUser</code> API directly, evaluate whether those parties could specify sessionTag values for tenants they should not access.</p></li>
     /// </ul>
-    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick Suite User Guide</i>.</p>
+    /// <p>Besides, these are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security (RLS) with Tags</a> in the <i>Amazon Quick User Guide</i>.</p>
     pub fn get_session_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SessionTag>> {
         self.inner.get_session_tags()
     }

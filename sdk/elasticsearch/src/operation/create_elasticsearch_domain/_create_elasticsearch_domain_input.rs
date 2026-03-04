@@ -35,6 +35,8 @@ pub struct CreateElasticsearchDomainInput {
     pub auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     /// <p>A list of <code>Tag</code> added during domain creation.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Specifies the deployment strategy options.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl CreateElasticsearchDomainInput {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -105,6 +107,10 @@ impl CreateElasticsearchDomainInput {
     pub fn tag_list(&self) -> &[crate::types::Tag] {
         self.tag_list.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl CreateElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateElasticsearchDomainInput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput).
@@ -133,6 +139,7 @@ pub struct CreateElasticsearchDomainInputBuilder {
     pub(crate) advanced_security_options: ::std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsInput>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl CreateElasticsearchDomainInputBuilder {
     /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -390,6 +397,20 @@ impl CreateElasticsearchDomainInputBuilder {
     pub fn get_tag_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tag_list
     }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Specifies the deployment strategy options.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`CreateElasticsearchDomainInput`](crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainInput).
     pub fn build(
         self,
@@ -414,6 +435,7 @@ impl CreateElasticsearchDomainInputBuilder {
             advanced_security_options: self.advanced_security_options,
             auto_tune_options: self.auto_tune_options,
             tag_list: self.tag_list,
+            deployment_strategy_options: self.deployment_strategy_options,
         })
     }
 }

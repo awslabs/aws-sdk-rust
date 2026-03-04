@@ -297,6 +297,8 @@ pub use crate::types::_kinesis_stream_config::KinesisStreamConfigBuilder;
 
 pub use crate::types::_kinesis_firehose_config::KinesisFirehoseConfigBuilder;
 
+pub use crate::types::_email_address_config::EmailAddressConfigBuilder;
+
 pub use crate::types::_routing_profile_queue_config::RoutingProfileQueueConfigBuilder;
 
 pub use crate::types::_routing_profile_manual_assignment_queue_config::RoutingProfileManualAssignmentQueueConfigBuilder;
@@ -530,6 +532,8 @@ pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummaryBuilde
 pub use crate::types::_predefined_attribute_summary::PredefinedAttributeSummaryBuilder;
 
 pub use crate::types::_prompt_summary::PromptSummaryBuilder;
+
+pub use crate::types::_email_address_summary::EmailAddressSummaryBuilder;
 
 pub use crate::types::_quick_connect_summary::QuickConnectSummaryBuilder;
 

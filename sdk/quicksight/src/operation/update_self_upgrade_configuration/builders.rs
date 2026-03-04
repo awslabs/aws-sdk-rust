@@ -22,7 +22,7 @@ impl crate::operation::update_self_upgrade_configuration::builders::UpdateSelfUp
 }
 /// Fluent builder constructing a request to `UpdateSelfUpgradeConfiguration`.
 ///
-/// <p>Updates the self-upgrade configuration for a Quick Suite account.</p>
+/// <p>Updates the self-upgrade configuration for a Quick account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSelfUpgradeConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl UpdateSelfUpgradeConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub fn aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub fn set_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_aws_account_id(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services account that contains the Quick Suite self-upgrade configuration that you want to update.</p>
+    /// <p>The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration that you want to update.</p>
     pub fn get_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_aws_account_id()
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
-    /// <p>The Quick Suite namespace that you want to update the Quick Suite self-upgrade configuration for.</p>
+    /// <p>The Quick namespace that you want to update the Quick self-upgrade configuration for.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_namespace()
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub fn self_upgrade_status(mut self, input: crate::types::SelfUpgradeStatus) -> Self {
         self.inner = self.inner.self_upgrade_status(input);
         self
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub fn set_self_upgrade_status(mut self, input: ::std::option::Option<crate::types::SelfUpgradeStatus>) -> Self {
         self.inner = self.inner.set_self_upgrade_status(input);
         self
     }
-    /// <p>The self-upgrade status that you want to set for the Quick Suite account.</p>
+    /// <p>The self-upgrade status that you want to set for the Quick account.</p>
     pub fn get_self_upgrade_status(&self) -> &::std::option::Option<crate::types::SelfUpgradeStatus> {
         self.inner.get_self_upgrade_status()
     }

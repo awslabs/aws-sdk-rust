@@ -27,6 +27,8 @@ pub use crate::types::_advanced_security_options_input::AdvancedSecurityOptionsI
 
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInput;
 
+pub use crate::types::_deployment_strategy_options::DeploymentStrategyOptions;
+
 pub use crate::types::_elasticsearch_domain_status::ElasticsearchDomainStatus;
 
 pub use crate::types::_domain_information::DomainInformation;
@@ -97,6 +99,8 @@ pub use crate::types::_saml_options_input::SamlOptionsInput;
 
 pub use crate::types::_auto_tune_desired_state::AutoTuneDesiredState;
 
+pub use crate::types::_deployment_strategy::DeploymentStrategy;
+
 pub use crate::types::_vpc_derived_info::VpcDerivedInfo;
 
 pub use crate::types::_advanced_security_options::AdvancedSecurityOptions;
@@ -146,6 +150,8 @@ pub use crate::types::_domain_endpoint_options_status::DomainEndpointOptionsStat
 pub use crate::types::_advanced_security_options_status::AdvancedSecurityOptionsStatus;
 
 pub use crate::types::_auto_tune_options_status::AutoTuneOptionsStatus;
+
+pub use crate::types::_deployment_strategy_options_status::DeploymentStrategyOptionsStatus;
 
 pub use crate::types::_limits::Limits;
 
@@ -280,6 +286,12 @@ mod _compatible_versions_map;
 mod _config_change_status;
 
 mod _deployment_status;
+
+mod _deployment_strategy;
+
+mod _deployment_strategy_options;
+
+mod _deployment_strategy_options_status;
 
 mod _describe_packages_filter;
 

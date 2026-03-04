@@ -10,14 +10,14 @@ required-features = ["sigv4a"]
 
 [package]
 name = "aws-sigv4"
-version = "1.4.1"
+version = "1.4.2"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "David Barsky <me@davidbarsky.com>"]
 description = "SigV4 signer for HTTP requests and Event Stream messages."
 edition = "2021"
 exclude = ["aws-sig-v4-test-suite/*"]
 license = "Apache-2.0"
 repository = "https://github.com/smithy-lang/smithy-rs"
-rust-version = "1.91"
+rust-version = "1.91.1"
 [package.metadata.docs.rs]
 all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
@@ -36,7 +36,7 @@ sign-eventstream = ["dep:aws-smithy-eventstream"]
 sigv4a = ["dep:p256", "dep:crypto-bigint", "dep:subtle", "dep:zeroize", "dep:ring"]
 
 [dependencies]
-bytes = "1.10.0"
+bytes = "1.11.1"
 hex = "0.4.3"
 hmac = "0.12"
 sha2 = "0.10"
@@ -45,25 +45,25 @@ tracing = "0.1.44"
 
 [dependencies.aws-credential-types]
 path = "../aws-credential-types"
-version = "1.2.13"
+version = "1.2.14"
 
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
 optional = true
-version = "0.60.19"
+version = "0.60.20"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
-version = "0.63.5"
+version = "0.63.6"
 
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.11.5"
+version = "1.11.6"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
-version = "1.4.5"
+version = "1.4.6"
 
 [dependencies.form_urlencoded]
 version = "1.2.1"
@@ -104,7 +104,7 @@ version = "^1.7.0"
 optional = true
 
 [dev-dependencies]
-bytes = "1"
+bytes = "1.11.1"
 hex-literal = "0.4.1"
 httparse = "1.10.1"
 pretty_assertions = "1.3"
@@ -117,12 +117,12 @@ criterion = "0.5"
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util", "hardcoded-credentials"]
-version = "1.2.13"
+version = "1.2.14"
 
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "test-util"]
-version = "1.11.5"
+version = "1.11.6"
 
 [dev-dependencies.time]
 version = "0.3.5"

@@ -33,6 +33,8 @@ pub use crate::types::_certificate_configuration::CertificateConfigurationBuilde
 
 pub use crate::types::_anywhere_configuration::AnywhereConfigurationBuilder;
 
+pub use crate::types::_player_gateway_configuration::PlayerGatewayConfigurationBuilder;
+
 pub use crate::types::_fleet_attributes::FleetAttributesBuilder;
 
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
@@ -137,6 +139,8 @@ pub use crate::types::_container_identifier::ContainerIdentifierBuilder;
 
 pub use crate::types::_instance_credentials::InstanceCredentialsBuilder;
 
+pub use crate::types::_player_connection_detail::PlayerConnectionDetailBuilder;
+
 pub use crate::types::_player_latency::PlayerLatencyBuilder;
 
 pub use crate::types::_desired_player_session::DesiredPlayerSessionBuilder;
@@ -168,6 +172,8 @@ pub use crate::types::_placed_player_session::PlacedPlayerSessionBuilder;
 pub use crate::types::_vpc_peering_connection_status::VpcPeeringConnectionStatusBuilder;
 
 pub use crate::types::_container_port_range::ContainerPortRangeBuilder;
+
+pub use crate::types::_player_connection_endpoint::PlayerConnectionEndpointBuilder;
 
 pub use crate::types::_attribute_value::AttributeValueBuilder;
 

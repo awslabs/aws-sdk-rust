@@ -24,6 +24,15 @@ pub struct LocationState {
     pub location: ::std::option::Option<::std::string::String>,
     /// <p>The life-cycle status of a fleet location.</p>
     pub status: ::std::option::Option<crate::types::FleetStatus>,
+    /// <p>The current status of player gateway in this location for this fleet. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this fleet location.</p></li>
+    /// </ul>
+    pub player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl LocationState {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
@@ -33,6 +42,17 @@ impl LocationState {
     /// <p>The life-cycle status of a fleet location.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FleetStatus> {
         self.status.as_ref()
+    }
+    /// <p>The current status of player gateway in this location for this fleet. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this fleet location.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(&self) -> ::std::option::Option<&crate::types::PlayerGatewayStatus> {
+        self.player_gateway_status.as_ref()
     }
 }
 impl LocationState {
@@ -48,6 +68,7 @@ impl LocationState {
 pub struct LocationStateBuilder {
     pub(crate) location: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FleetStatus>,
+    pub(crate) player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl LocationStateBuilder {
     /// <p>The fleet location, expressed as an Amazon Web Services Region code such as <code>us-west-2</code>.</p>
@@ -78,11 +99,47 @@ impl LocationStateBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FleetStatus> {
         &self.status
     }
+    /// <p>The current status of player gateway in this location for this fleet. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this fleet location.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(mut self, input: crate::types::PlayerGatewayStatus) -> Self {
+        self.player_gateway_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of player gateway in this location for this fleet. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this fleet location.</p></li>
+    /// </ul>
+    pub fn set_player_gateway_status(mut self, input: ::std::option::Option<crate::types::PlayerGatewayStatus>) -> Self {
+        self.player_gateway_status = input;
+        self
+    }
+    /// <p>The current status of player gateway in this location for this fleet. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this fleet location.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this fleet location.</p></li>
+    /// </ul>
+    pub fn get_player_gateway_status(&self) -> &::std::option::Option<crate::types::PlayerGatewayStatus> {
+        &self.player_gateway_status
+    }
     /// Consumes the builder and constructs a [`LocationState`](crate::types::LocationState).
     pub fn build(self) -> crate::types::LocationState {
         crate::types::LocationState {
             location: self.location,
             status: self.status,
+            player_gateway_status: self.player_gateway_status,
         }
     }
 }

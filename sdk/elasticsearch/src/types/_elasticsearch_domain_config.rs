@@ -36,6 +36,8 @@ pub struct ElasticsearchDomainConfig {
     pub change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     /// <p>Information about the domain properties that are currently being modified.</p>
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
 }
 impl ElasticsearchDomainConfig {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -104,6 +106,10 @@ impl ElasticsearchDomainConfig {
     pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
         self.modifying_properties.as_deref().unwrap_or_default()
     }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptionsStatus> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl ElasticsearchDomainConfig {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
@@ -132,6 +138,7 @@ pub struct ElasticsearchDomainConfigBuilder {
     pub(crate) auto_tune_options: ::std::option::Option<crate::types::AutoTuneOptionsStatus>,
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>,
 }
 impl ElasticsearchDomainConfigBuilder {
     /// <p>String of format X.Y to specify version for the Elasticsearch domain.</p>
@@ -364,6 +371,20 @@ impl ElasticsearchDomainConfigBuilder {
     pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
         &self.modifying_properties
     }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptionsStatus) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptionsStatus>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>Specifies <code>DeploymentStrategyOptions</code> for the domain.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptionsStatus> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDomainConfig`](crate::types::ElasticsearchDomainConfig).
     pub fn build(self) -> crate::types::ElasticsearchDomainConfig {
         crate::types::ElasticsearchDomainConfig {
@@ -383,6 +404,7 @@ impl ElasticsearchDomainConfigBuilder {
             auto_tune_options: self.auto_tune_options,
             change_progress_details: self.change_progress_details,
             modifying_properties: self.modifying_properties,
+            deployment_strategy_options: self.deployment_strategy_options,
         }
     }
 }

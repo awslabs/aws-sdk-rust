@@ -25,7 +25,12 @@ pub struct GameSessionPlacement {
     /// </ul>
     pub status: ::std::option::Option<crate::types::GameSessionPlacementState>,
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub game_properties: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>,
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -72,6 +77,15 @@ pub struct GameSessionPlacement {
     pub matchmaker_data: ::std::option::Option<::std::string::String>,
     /// <p>An alternative priority list of locations that's included with a game session placement request. When provided, the list overrides a queue's location order list for this game session placement request only. The list might include Amazon Web Services Regions, local zones, and custom locations (for Anywhere fleets). The fallback strategy tells Amazon GameLift Servers what action to take (if any) in the event that it failed to place a new game session.</p>
     pub priority_configuration_override: ::std::option::Option<crate::types::PriorityConfigurationOverride>,
+    /// <p>The current status of player gateway for the game session placement. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session placement.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session placement.</p></li>
+    /// </ul>
+    pub player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl GameSessionPlacement {
     /// <p>A unique identifier for a game session placement.</p>
@@ -99,7 +113,12 @@ impl GameSessionPlacement {
         self.status.as_ref()
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.game_properties.is_none()`.
@@ -184,6 +203,17 @@ impl GameSessionPlacement {
     pub fn priority_configuration_override(&self) -> ::std::option::Option<&crate::types::PriorityConfigurationOverride> {
         self.priority_configuration_override.as_ref()
     }
+    /// <p>The current status of player gateway for the game session placement. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session placement.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session placement.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(&self) -> ::std::option::Option<&crate::types::PlayerGatewayStatus> {
+        self.player_gateway_status.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GameSessionPlacement {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -207,6 +237,7 @@ impl ::std::fmt::Debug for GameSessionPlacement {
         formatter.field("game_session_data", &self.game_session_data);
         formatter.field("matchmaker_data", &self.matchmaker_data);
         formatter.field("priority_configuration_override", &self.priority_configuration_override);
+        formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
     }
 }
@@ -240,6 +271,7 @@ pub struct GameSessionPlacementBuilder {
     pub(crate) game_session_data: ::std::option::Option<::std::string::String>,
     pub(crate) matchmaker_data: ::std::option::Option<::std::string::String>,
     pub(crate) priority_configuration_override: ::std::option::Option<crate::types::PriorityConfigurationOverride>,
+    pub(crate) player_gateway_status: ::std::option::Option<crate::types::PlayerGatewayStatus>,
 }
 impl GameSessionPlacementBuilder {
     /// <p>A unique identifier for a game session placement.</p>
@@ -325,7 +357,12 @@ impl GameSessionPlacementBuilder {
     /// To override the contents of this collection use [`set_game_properties`](Self::set_game_properties).
     ///
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn game_properties(mut self, input: crate::types::GameProperty) -> Self {
         let mut v = self.game_properties.unwrap_or_default();
@@ -334,14 +371,24 @@ impl GameSessionPlacementBuilder {
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn set_game_properties(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GameProperty>>) -> Self {
         self.game_properties = input;
         self
     }
     /// <p>A set of key-value pairs that can store custom data in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p><note>
-    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Avoid using periods (".") in property keys if you plan to search for game sessions by properties. Property keys containing periods cannot be searched and will be filtered out from search results due to search index limitations.</p></li>
+    /// <li>
+    /// <p>If you use SearchGameSessions API, there is a limit of 500 game property keys across all game sessions and all fleets per region. If the limit is exceeded, there will potentially be game session entries missing from SearchGameSessions API results.</p></li>
+    /// </ul>
     /// </note>
     pub fn get_game_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GameProperty>> {
         &self.game_properties
@@ -610,6 +657,41 @@ impl GameSessionPlacementBuilder {
     pub fn get_priority_configuration_override(&self) -> &::std::option::Option<crate::types::PriorityConfigurationOverride> {
         &self.priority_configuration_override
     }
+    /// <p>The current status of player gateway for the game session placement. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session placement.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session placement.</p></li>
+    /// </ul>
+    pub fn player_gateway_status(mut self, input: crate::types::PlayerGatewayStatus) -> Self {
+        self.player_gateway_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of player gateway for the game session placement. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session placement.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session placement.</p></li>
+    /// </ul>
+    pub fn set_player_gateway_status(mut self, input: ::std::option::Option<crate::types::PlayerGatewayStatus>) -> Self {
+        self.player_gateway_status = input;
+        self
+    }
+    /// <p>The current status of player gateway for the game session placement. Note, even if a fleet has PlayerGatewayMode configured as <code>ENABLED</code>, player gateway might not be available in a specific location. For more information about locations where player gateway is supported, see <a href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon GameLift Servers service locations</a>.</p>
+    /// <p>Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code> -- Player gateway is available for this game session placement.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> -- Player gateway is not available for this game session placement.</p></li>
+    /// </ul>
+    pub fn get_player_gateway_status(&self) -> &::std::option::Option<crate::types::PlayerGatewayStatus> {
+        &self.player_gateway_status
+    }
     /// Consumes the builder and constructs a [`GameSessionPlacement`](crate::types::GameSessionPlacement).
     pub fn build(self) -> crate::types::GameSessionPlacement {
         crate::types::GameSessionPlacement {
@@ -632,6 +714,7 @@ impl GameSessionPlacementBuilder {
             game_session_data: self.game_session_data,
             matchmaker_data: self.matchmaker_data,
             priority_configuration_override: self.priority_configuration_override,
+            player_gateway_status: self.player_gateway_status,
         }
     }
 }
@@ -657,6 +740,7 @@ impl ::std::fmt::Debug for GameSessionPlacementBuilder {
         formatter.field("game_session_data", &self.game_session_data);
         formatter.field("matchmaker_data", &self.matchmaker_data);
         formatter.field("priority_configuration_override", &self.priority_configuration_override);
+        formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
     }
 }

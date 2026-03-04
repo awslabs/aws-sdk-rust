@@ -162,6 +162,8 @@ mod associate_lex_bot;
 
 mod associate_phone_number_contact_flow;
 
+mod associate_queue_email_addresses;
+
 mod associate_queue_quick_connects;
 
 mod associate_routing_profile_queues;
@@ -459,6 +461,8 @@ mod disassociate_lex_bot;
 
 mod disassociate_phone_number_contact_flow;
 
+mod disassociate_queue_email_addresses;
+
 mod disassociate_queue_quick_connects;
 
 mod disassociate_routing_profile_queues;
@@ -582,6 +586,8 @@ mod list_phone_numbers_v2;
 mod list_predefined_attributes;
 
 mod list_prompts;
+
+mod list_queue_email_addresses;
 
 mod list_queue_quick_connects;
 

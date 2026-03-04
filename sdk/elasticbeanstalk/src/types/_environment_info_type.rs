@@ -12,6 +12,7 @@
 /// ```text
 /// # let environmentinfotype = unimplemented!();
 /// match environmentinfotype {
+///     EnvironmentInfoType::Analyze => { /* ... */ },
 ///     EnvironmentInfoType::Bundle => { /* ... */ },
 ///     EnvironmentInfoType::Tail => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum EnvironmentInfoType {
     #[allow(missing_docs)] // documentation missing in model
+    Analyze,
+    #[allow(missing_docs)] // documentation missing in model
     Bundle,
     #[allow(missing_docs)] // documentation missing in model
     Tail,
@@ -53,6 +56,7 @@ pub enum EnvironmentInfoType {
 impl ::std::convert::From<&str> for EnvironmentInfoType {
     fn from(s: &str) -> Self {
         match s {
+            "analyze" => EnvironmentInfoType::Analyze,
             "bundle" => EnvironmentInfoType::Bundle,
             "tail" => EnvironmentInfoType::Tail,
             other => EnvironmentInfoType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl EnvironmentInfoType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EnvironmentInfoType::Analyze => "analyze",
             EnvironmentInfoType::Bundle => "bundle",
             EnvironmentInfoType::Tail => "tail",
             EnvironmentInfoType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl EnvironmentInfoType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["bundle", "tail"]
+        &["analyze", "bundle", "tail"]
     }
 }
 impl ::std::convert::AsRef<str> for EnvironmentInfoType {
@@ -100,6 +105,7 @@ impl EnvironmentInfoType {
 impl ::std::fmt::Display for EnvironmentInfoType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EnvironmentInfoType::Analyze => write!(f, "analyze"),
             EnvironmentInfoType::Bundle => write!(f, "bundle"),
             EnvironmentInfoType::Tail => write!(f, "tail"),
             EnvironmentInfoType::Unknown(value) => write!(f, "{value}"),

@@ -93,5 +93,8 @@ pub fn ser_create_container_fleet_input_input(
         }
         array_27.finish();
     }
+    if let Some(var_30) = &input.player_gateway_mode {
+        object.key("PlayerGatewayMode").string(var_30.as_str());
+    }
     Ok(())
 }

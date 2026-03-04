@@ -2621,6 +2621,51 @@ impl From<crate::operation::get_instance_access::GetInstanceAccessError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError> for Error {
+    fn from(err: crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError) -> Self {
+        match err {
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::InvalidGameSessionStatusException(inner) => {
+                Error::InvalidGameSessionStatusException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::UnsupportedRegionException(inner) => {
+                Error::UnsupportedRegionException(inner)
+            }
+            crate::operation::get_player_connection_details::GetPlayerConnectionDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_aliases::ListAliasesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

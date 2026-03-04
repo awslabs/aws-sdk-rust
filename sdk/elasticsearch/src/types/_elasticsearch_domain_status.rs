@@ -58,6 +58,8 @@ pub struct ElasticsearchDomainStatus {
     pub domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
     /// <p>Information about the domain properties that are currently being modified.</p>
     pub modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    /// <p>The current status of the Elasticsearch domain's deployment strategy options.</p>
+    pub deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl ElasticsearchDomainStatus {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
@@ -175,6 +177,10 @@ impl ElasticsearchDomainStatus {
     pub fn modifying_properties(&self) -> &[crate::types::ModifyingProperties] {
         self.modifying_properties.as_deref().unwrap_or_default()
     }
+    /// <p>The current status of the Elasticsearch domain's deployment strategy options.</p>
+    pub fn deployment_strategy_options(&self) -> ::std::option::Option<&crate::types::DeploymentStrategyOptions> {
+        self.deployment_strategy_options.as_ref()
+    }
 }
 impl ElasticsearchDomainStatus {
     /// Creates a new builder-style object to manufacture [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
@@ -214,6 +220,7 @@ pub struct ElasticsearchDomainStatusBuilder {
     pub(crate) change_progress_details: ::std::option::Option<crate::types::ChangeProgressDetails>,
     pub(crate) domain_processing_status: ::std::option::Option<crate::types::DomainProcessingStatusType>,
     pub(crate) modifying_properties: ::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>>,
+    pub(crate) deployment_strategy_options: ::std::option::Option<crate::types::DeploymentStrategyOptions>,
 }
 impl ElasticsearchDomainStatusBuilder {
     /// <p>The unique identifier for the specified Elasticsearch domain.</p>
@@ -634,6 +641,20 @@ impl ElasticsearchDomainStatusBuilder {
     pub fn get_modifying_properties(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ModifyingProperties>> {
         &self.modifying_properties
     }
+    /// <p>The current status of the Elasticsearch domain's deployment strategy options.</p>
+    pub fn deployment_strategy_options(mut self, input: crate::types::DeploymentStrategyOptions) -> Self {
+        self.deployment_strategy_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the Elasticsearch domain's deployment strategy options.</p>
+    pub fn set_deployment_strategy_options(mut self, input: ::std::option::Option<crate::types::DeploymentStrategyOptions>) -> Self {
+        self.deployment_strategy_options = input;
+        self
+    }
+    /// <p>The current status of the Elasticsearch domain's deployment strategy options.</p>
+    pub fn get_deployment_strategy_options(&self) -> &::std::option::Option<crate::types::DeploymentStrategyOptions> {
+        &self.deployment_strategy_options
+    }
     /// Consumes the builder and constructs a [`ElasticsearchDomainStatus`](crate::types::ElasticsearchDomainStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain_id`](crate::types::builders::ElasticsearchDomainStatusBuilder::domain_id)
@@ -683,6 +704,7 @@ impl ElasticsearchDomainStatusBuilder {
             change_progress_details: self.change_progress_details,
             domain_processing_status: self.domain_processing_status,
             modifying_properties: self.modifying_properties,
+            deployment_strategy_options: self.deployment_strategy_options,
         })
     }
 }

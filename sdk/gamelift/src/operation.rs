@@ -217,6 +217,9 @@ pub mod get_game_session_log_url;
 /// Types for the `GetInstanceAccess` operation.
 pub mod get_instance_access;
 
+/// Types for the `GetPlayerConnectionDetails` operation.
+pub mod get_player_connection_details;
+
 /// Types for the `ListAliases` operation.
 pub mod list_aliases;
 
