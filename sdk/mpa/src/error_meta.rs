@@ -619,6 +619,45 @@ impl From<crate::operation::start_active_approval_team_deletion::StartActiveAppr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError> for Error {
+    fn from(err: crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError) -> Self {
+        match err {
+            crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_approval_team_baseline::StartApprovalTeamBaselineError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

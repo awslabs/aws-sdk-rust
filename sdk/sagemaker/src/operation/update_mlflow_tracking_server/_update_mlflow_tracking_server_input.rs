@@ -13,6 +13,10 @@ pub struct UpdateMlflowTrackingServerInput {
     pub automatic_model_registration: ::std::option::Option<bool>,
     /// <p>The new weekly maintenance window start day and time to update. The maintenance window day and time should be in Coordinated Universal Time (UTC) 24-hour standard time. For example: TUE:03:30.</p>
     pub weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub s3_bucket_owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub s3_bucket_owner_verification: ::std::option::Option<bool>,
 }
 impl UpdateMlflowTrackingServerInput {
     /// <p>The name of the MLflow Tracking Server to update.</p>
@@ -35,6 +39,14 @@ impl UpdateMlflowTrackingServerInput {
     pub fn weekly_maintenance_window_start(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_window_start.as_deref()
     }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn s3_bucket_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.s3_bucket_owner_account_id.as_deref()
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn s3_bucket_owner_verification(&self) -> ::std::option::Option<bool> {
+        self.s3_bucket_owner_verification
+    }
 }
 impl UpdateMlflowTrackingServerInput {
     /// Creates a new builder-style object to manufacture [`UpdateMlflowTrackingServerInput`](crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerInput).
@@ -52,6 +64,8 @@ pub struct UpdateMlflowTrackingServerInputBuilder {
     pub(crate) tracking_server_size: ::std::option::Option<crate::types::TrackingServerSize>,
     pub(crate) automatic_model_registration: ::std::option::Option<bool>,
     pub(crate) weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_owner_verification: ::std::option::Option<bool>,
 }
 impl UpdateMlflowTrackingServerInputBuilder {
     /// <p>The name of the MLflow Tracking Server to update.</p>
@@ -125,6 +139,34 @@ impl UpdateMlflowTrackingServerInputBuilder {
     pub fn get_weekly_maintenance_window_start(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_window_start
     }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn s3_bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn set_s3_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_owner_account_id = input;
+        self
+    }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn get_s3_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner_account_id
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn s3_bucket_owner_verification(mut self, input: bool) -> Self {
+        self.s3_bucket_owner_verification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn set_s3_bucket_owner_verification(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.s3_bucket_owner_verification = input;
+        self
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn get_s3_bucket_owner_verification(&self) -> &::std::option::Option<bool> {
+        &self.s3_bucket_owner_verification
+    }
     /// Consumes the builder and constructs a [`UpdateMlflowTrackingServerInput`](crate::operation::update_mlflow_tracking_server::UpdateMlflowTrackingServerInput).
     pub fn build(
         self,
@@ -138,6 +180,8 @@ impl UpdateMlflowTrackingServerInputBuilder {
             tracking_server_size: self.tracking_server_size,
             automatic_model_registration: self.automatic_model_registration,
             weekly_maintenance_window_start: self.weekly_maintenance_window_start,
+            s3_bucket_owner_account_id: self.s3_bucket_owner_account_id,
+            s3_bucket_owner_verification: self.s3_bucket_owner_verification,
         })
     }
 }

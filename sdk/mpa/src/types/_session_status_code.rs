@@ -12,6 +12,7 @@
 /// ```text
 /// # let sessionstatuscode = unimplemented!();
 /// match sessionstatuscode {
+///     SessionStatusCode::AllApproversInSession => { /* ... */ },
 ///     SessionStatusCode::ConfigurationChanged => { /* ... */ },
 ///     SessionStatusCode::Expired => { /* ... */ },
 ///     SessionStatusCode::Rejected => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum SessionStatusCode {
     #[allow(missing_docs)] // documentation missing in model
+    AllApproversInSession,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationChanged,
     #[allow(missing_docs)] // documentation missing in model
     Expired,
@@ -56,6 +59,7 @@ pub enum SessionStatusCode {
 impl ::std::convert::From<&str> for SessionStatusCode {
     fn from(s: &str) -> Self {
         match s {
+            "ALL_APPROVERS_IN_SESSION" => SessionStatusCode::AllApproversInSession,
             "CONFIGURATION_CHANGED" => SessionStatusCode::ConfigurationChanged,
             "EXPIRED" => SessionStatusCode::Expired,
             "REJECTED" => SessionStatusCode::Rejected,
@@ -74,6 +78,7 @@ impl SessionStatusCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SessionStatusCode::AllApproversInSession => "ALL_APPROVERS_IN_SESSION",
             SessionStatusCode::ConfigurationChanged => "CONFIGURATION_CHANGED",
             SessionStatusCode::Expired => "EXPIRED",
             SessionStatusCode::Rejected => "REJECTED",
@@ -82,7 +87,7 @@ impl SessionStatusCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONFIGURATION_CHANGED", "EXPIRED", "REJECTED"]
+        &["ALL_APPROVERS_IN_SESSION", "CONFIGURATION_CHANGED", "EXPIRED", "REJECTED"]
     }
 }
 impl ::std::convert::AsRef<str> for SessionStatusCode {
@@ -105,6 +110,7 @@ impl SessionStatusCode {
 impl ::std::fmt::Display for SessionStatusCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SessionStatusCode::AllApproversInSession => write!(f, "ALL_APPROVERS_IN_SESSION"),
             SessionStatusCode::ConfigurationChanged => write!(f, "CONFIGURATION_CHANGED"),
             SessionStatusCode::Expired => write!(f, "EXPIRED"),
             SessionStatusCode::Rejected => write!(f, "REJECTED"),

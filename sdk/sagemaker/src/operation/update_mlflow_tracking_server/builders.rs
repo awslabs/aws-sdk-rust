@@ -178,4 +178,32 @@ impl UpdateMlflowTrackingServerFluentBuilder {
     pub fn get_weekly_maintenance_window_start(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_weekly_maintenance_window_start()
     }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn s3_bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_bucket_owner_account_id(input.into());
+        self
+    }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn set_s3_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_bucket_owner_account_id(input);
+        self
+    }
+    /// <p>The new expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn get_s3_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_owner_account_id()
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn s3_bucket_owner_verification(mut self, input: bool) -> Self {
+        self.inner = self.inner.s3_bucket_owner_verification(input);
+        self
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn set_s3_bucket_owner_verification(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_s3_bucket_owner_verification(input);
+        self
+    }
+    /// <p>Whether to enable or disable Amazon S3 Bucket Owenrship Verifaction whenever the MLflow Tracking Server interacts with Amazon Amazon S3.</p>
+    pub fn get_s3_bucket_owner_verification(&self) -> &::std::option::Option<bool> {
+        self.inner.get_s3_bucket_owner_verification()
+    }
 }

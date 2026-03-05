@@ -55,6 +55,9 @@ pub mod list_tags_for_resource;
 /// Types for the `StartActiveApprovalTeamDeletion` operation.
 pub mod start_active_approval_team_deletion;
 
+/// Types for the `StartApprovalTeamBaseline` operation.
+pub mod start_approval_team_baseline;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

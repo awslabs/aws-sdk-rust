@@ -18,8 +18,10 @@
 ///     SavingsPlanRateUnit::ElastiCacheProcessingUnit => { /* ... */ },
 ///     SavingsPlanRateUnit::GbHours => { /* ... */ },
 ///     SavingsPlanRateUnit::Hours => { /* ... */ },
+///     SavingsPlanRateUnit::Jobs => { /* ... */ },
 ///     SavingsPlanRateUnit::LambdaGbSecond => { /* ... */ },
 ///     SavingsPlanRateUnit::NcuHr => { /* ... */ },
+///     SavingsPlanRateUnit::OcuHrs => { /* ... */ },
 ///     SavingsPlanRateUnit::ReadCapacityUnitHrs => { /* ... */ },
 ///     SavingsPlanRateUnit::ReadRequestUnits => { /* ... */ },
 ///     SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs => { /* ... */ },
@@ -68,9 +70,13 @@ pub enum SavingsPlanRateUnit {
     #[allow(missing_docs)] // documentation missing in model
     Hours,
     #[allow(missing_docs)] // documentation missing in model
+    Jobs,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaGbSecond,
     #[allow(missing_docs)] // documentation missing in model
     NcuHr,
+    #[allow(missing_docs)] // documentation missing in model
+    OcuHrs,
     #[allow(missing_docs)] // documentation missing in model
     ReadCapacityUnitHrs,
     #[allow(missing_docs)] // documentation missing in model
@@ -98,8 +104,10 @@ impl ::std::convert::From<&str> for SavingsPlanRateUnit {
             "ElastiCacheProcessingUnit" => SavingsPlanRateUnit::ElastiCacheProcessingUnit,
             "GB-Hours" => SavingsPlanRateUnit::GbHours,
             "Hrs" => SavingsPlanRateUnit::Hours,
+            "Jobs" => SavingsPlanRateUnit::Jobs,
             "Lambda-GB-Second" => SavingsPlanRateUnit::LambdaGbSecond,
             "NCU-hr" => SavingsPlanRateUnit::NcuHr,
+            "OCU-hours" => SavingsPlanRateUnit::OcuHrs,
             "ReadCapacityUnit-Hrs" => SavingsPlanRateUnit::ReadCapacityUnitHrs,
             "ReadRequestUnits" => SavingsPlanRateUnit::ReadRequestUnits,
             "ReplicatedWriteCapacityUnit-Hrs" => SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs,
@@ -128,8 +136,10 @@ impl SavingsPlanRateUnit {
             SavingsPlanRateUnit::ElastiCacheProcessingUnit => "ElastiCacheProcessingUnit",
             SavingsPlanRateUnit::GbHours => "GB-Hours",
             SavingsPlanRateUnit::Hours => "Hrs",
+            SavingsPlanRateUnit::Jobs => "Jobs",
             SavingsPlanRateUnit::LambdaGbSecond => "Lambda-GB-Second",
             SavingsPlanRateUnit::NcuHr => "NCU-hr",
+            SavingsPlanRateUnit::OcuHrs => "OCU-hours",
             SavingsPlanRateUnit::ReadCapacityUnitHrs => "ReadCapacityUnit-Hrs",
             SavingsPlanRateUnit::ReadRequestUnits => "ReadRequestUnits",
             SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs => "ReplicatedWriteCapacityUnit-Hrs",
@@ -149,8 +159,10 @@ impl SavingsPlanRateUnit {
             "ElastiCacheProcessingUnit",
             "GB-Hours",
             "Hrs",
+            "Jobs",
             "Lambda-GB-Second",
             "NCU-hr",
+            "OCU-hours",
             "ReadCapacityUnit-Hrs",
             "ReadRequestUnits",
             "ReplicatedWriteCapacityUnit-Hrs",
@@ -187,8 +199,10 @@ impl ::std::fmt::Display for SavingsPlanRateUnit {
             SavingsPlanRateUnit::ElastiCacheProcessingUnit => write!(f, "ElastiCacheProcessingUnit"),
             SavingsPlanRateUnit::GbHours => write!(f, "GB-Hours"),
             SavingsPlanRateUnit::Hours => write!(f, "Hrs"),
+            SavingsPlanRateUnit::Jobs => write!(f, "Jobs"),
             SavingsPlanRateUnit::LambdaGbSecond => write!(f, "Lambda-GB-Second"),
             SavingsPlanRateUnit::NcuHr => write!(f, "NCU-hr"),
+            SavingsPlanRateUnit::OcuHrs => write!(f, "OCU-hours"),
             SavingsPlanRateUnit::ReadCapacityUnitHrs => write!(f, "ReadCapacityUnit-Hrs"),
             SavingsPlanRateUnit::ReadRequestUnits => write!(f, "ReadRequestUnits"),
             SavingsPlanRateUnit::ReplicatedWriteCapacityUnitHrs => write!(f, "ReplicatedWriteCapacityUnit-Hrs"),

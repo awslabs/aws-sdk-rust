@@ -20,6 +20,10 @@ pub struct CreateMlflowTrackingServerInput {
     pub weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
     /// <p>Tags consisting of key-value pairs used to manage metadata for the tracking server.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub s3_bucket_owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub s3_bucket_owner_verification: ::std::option::Option<bool>,
 }
 impl CreateMlflowTrackingServerInput {
     /// <p>A unique string identifying the tracking server name. This string is part of the tracking server ARN.</p>
@@ -57,6 +61,14 @@ impl CreateMlflowTrackingServerInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn s3_bucket_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.s3_bucket_owner_account_id.as_deref()
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn s3_bucket_owner_verification(&self) -> ::std::option::Option<bool> {
+        self.s3_bucket_owner_verification
+    }
 }
 impl CreateMlflowTrackingServerInput {
     /// Creates a new builder-style object to manufacture [`CreateMlflowTrackingServerInput`](crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerInput).
@@ -77,6 +89,8 @@ pub struct CreateMlflowTrackingServerInputBuilder {
     pub(crate) automatic_model_registration: ::std::option::Option<bool>,
     pub(crate) weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) s3_bucket_owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_owner_verification: ::std::option::Option<bool>,
 }
 impl CreateMlflowTrackingServerInputBuilder {
     /// <p>A unique string identifying the tracking server name. This string is part of the tracking server ARN.</p>
@@ -203,6 +217,34 @@ impl CreateMlflowTrackingServerInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn s3_bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn set_s3_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_owner_account_id = input;
+        self
+    }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn get_s3_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner_account_id
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn s3_bucket_owner_verification(mut self, input: bool) -> Self {
+        self.s3_bucket_owner_verification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn set_s3_bucket_owner_verification(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.s3_bucket_owner_verification = input;
+        self
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn get_s3_bucket_owner_verification(&self) -> &::std::option::Option<bool> {
+        &self.s3_bucket_owner_verification
+    }
     /// Consumes the builder and constructs a [`CreateMlflowTrackingServerInput`](crate::operation::create_mlflow_tracking_server::CreateMlflowTrackingServerInput).
     pub fn build(
         self,
@@ -219,6 +261,8 @@ impl CreateMlflowTrackingServerInputBuilder {
             automatic_model_registration: self.automatic_model_registration,
             weekly_maintenance_window_start: self.weekly_maintenance_window_start,
             tags: self.tags,
+            s3_bucket_owner_account_id: self.s3_bucket_owner_account_id,
+            s3_bucket_owner_verification: self.s3_bucket_owner_verification,
         })
     }
 }

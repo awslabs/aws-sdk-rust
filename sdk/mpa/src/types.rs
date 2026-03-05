@@ -67,6 +67,8 @@ pub use crate::types::_additional_security_requirement::AdditionalSecurityRequir
 
 pub use crate::types::_identity_status::IdentityStatus;
 
+pub use crate::types::_approver_last_activity::ApproverLastActivity;
+
 pub use crate::types::_identity_source_parameters_for_list::IdentitySourceParametersForList;
 
 pub use crate::types::_filter_field::FilterField;
@@ -96,6 +98,8 @@ mod _approval_team_request_approver;
 mod _approval_team_status;
 
 mod _approval_team_status_code;
+
+mod _approver_last_activity;
 
 mod _filter;
 

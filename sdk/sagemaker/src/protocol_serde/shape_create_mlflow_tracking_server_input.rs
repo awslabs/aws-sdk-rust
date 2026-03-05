@@ -36,5 +36,11 @@ pub fn ser_create_mlflow_tracking_server_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_12) = &input.s3_bucket_owner_account_id {
+        object.key("S3BucketOwnerAccountId").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.s3_bucket_owner_verification {
+        object.key("S3BucketOwnerVerification").boolean(*var_13);
+    }
     Ok(())
 }

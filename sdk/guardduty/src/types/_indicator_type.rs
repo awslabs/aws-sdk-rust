@@ -19,6 +19,7 @@
 ///     IndicatorType::CryptominingProcess => { /* ... */ },
 ///     IndicatorType::HighRiskApi => { /* ... */ },
 ///     IndicatorType::MaliciousDomain => { /* ... */ },
+///     IndicatorType::MaliciousFile => { /* ... */ },
 ///     IndicatorType::MaliciousIp => { /* ... */ },
 ///     IndicatorType::MaliciousProcess => { /* ... */ },
 ///     IndicatorType::SuspiciousNetwork => { /* ... */ },
@@ -71,6 +72,8 @@ pub enum IndicatorType {
     #[allow(missing_docs)] // documentation missing in model
     MaliciousDomain,
     #[allow(missing_docs)] // documentation missing in model
+    MaliciousFile,
+    #[allow(missing_docs)] // documentation missing in model
     MaliciousIp,
     #[allow(missing_docs)] // documentation missing in model
     MaliciousProcess,
@@ -102,6 +105,7 @@ impl ::std::convert::From<&str> for IndicatorType {
             "CRYPTOMINING_PROCESS" => IndicatorType::CryptominingProcess,
             "HIGH_RISK_API" => IndicatorType::HighRiskApi,
             "MALICIOUS_DOMAIN" => IndicatorType::MaliciousDomain,
+            "MALICIOUS_FILE" => IndicatorType::MaliciousFile,
             "MALICIOUS_IP" => IndicatorType::MaliciousIp,
             "MALICIOUS_PROCESS" => IndicatorType::MaliciousProcess,
             "SUSPICIOUS_NETWORK" => IndicatorType::SuspiciousNetwork,
@@ -133,6 +137,7 @@ impl IndicatorType {
             IndicatorType::CryptominingProcess => "CRYPTOMINING_PROCESS",
             IndicatorType::HighRiskApi => "HIGH_RISK_API",
             IndicatorType::MaliciousDomain => "MALICIOUS_DOMAIN",
+            IndicatorType::MaliciousFile => "MALICIOUS_FILE",
             IndicatorType::MaliciousIp => "MALICIOUS_IP",
             IndicatorType::MaliciousProcess => "MALICIOUS_PROCESS",
             IndicatorType::SuspiciousNetwork => "SUSPICIOUS_NETWORK",
@@ -155,6 +160,7 @@ impl IndicatorType {
             "CRYPTOMINING_PROCESS",
             "HIGH_RISK_API",
             "MALICIOUS_DOMAIN",
+            "MALICIOUS_FILE",
             "MALICIOUS_IP",
             "MALICIOUS_PROCESS",
             "SUSPICIOUS_NETWORK",
@@ -194,6 +200,7 @@ impl ::std::fmt::Display for IndicatorType {
             IndicatorType::CryptominingProcess => write!(f, "CRYPTOMINING_PROCESS"),
             IndicatorType::HighRiskApi => write!(f, "HIGH_RISK_API"),
             IndicatorType::MaliciousDomain => write!(f, "MALICIOUS_DOMAIN"),
+            IndicatorType::MaliciousFile => write!(f, "MALICIOUS_FILE"),
             IndicatorType::MaliciousIp => write!(f, "MALICIOUS_IP"),
             IndicatorType::MaliciousProcess => write!(f, "MALICIOUS_PROCESS"),
             IndicatorType::SuspiciousNetwork => write!(f, "SUSPICIOUS_NETWORK"),

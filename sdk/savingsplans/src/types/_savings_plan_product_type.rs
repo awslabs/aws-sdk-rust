@@ -22,6 +22,7 @@
 ///     SavingsPlanProductType::Keyspaces => { /* ... */ },
 ///     SavingsPlanProductType::Lambda => { /* ... */ },
 ///     SavingsPlanProductType::Neptune => { /* ... */ },
+///     SavingsPlanProductType::Opensearch => { /* ... */ },
 ///     SavingsPlanProductType::Rds => { /* ... */ },
 ///     SavingsPlanProductType::Sagemaker => { /* ... */ },
 ///     SavingsPlanProductType::Timestream => { /* ... */ },
@@ -74,6 +75,8 @@ pub enum SavingsPlanProductType {
     #[allow(missing_docs)] // documentation missing in model
     Neptune,
     #[allow(missing_docs)] // documentation missing in model
+    Opensearch,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
     #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
@@ -96,6 +99,7 @@ impl ::std::convert::From<&str> for SavingsPlanProductType {
             "Keyspaces" => SavingsPlanProductType::Keyspaces,
             "Lambda" => SavingsPlanProductType::Lambda,
             "Neptune" => SavingsPlanProductType::Neptune,
+            "OpenSearch" => SavingsPlanProductType::Opensearch,
             "RDS" => SavingsPlanProductType::Rds,
             "SageMaker" => SavingsPlanProductType::Sagemaker,
             "Timestream" => SavingsPlanProductType::Timestream,
@@ -124,6 +128,7 @@ impl SavingsPlanProductType {
             SavingsPlanProductType::Keyspaces => "Keyspaces",
             SavingsPlanProductType::Lambda => "Lambda",
             SavingsPlanProductType::Neptune => "Neptune",
+            SavingsPlanProductType::Opensearch => "OpenSearch",
             SavingsPlanProductType::Rds => "RDS",
             SavingsPlanProductType::Sagemaker => "SageMaker",
             SavingsPlanProductType::Timestream => "Timestream",
@@ -143,6 +148,7 @@ impl SavingsPlanProductType {
             "Keyspaces",
             "Lambda",
             "Neptune",
+            "OpenSearch",
             "RDS",
             "SageMaker",
             "Timestream",
@@ -179,6 +185,7 @@ impl ::std::fmt::Display for SavingsPlanProductType {
             SavingsPlanProductType::Keyspaces => write!(f, "Keyspaces"),
             SavingsPlanProductType::Lambda => write!(f, "Lambda"),
             SavingsPlanProductType::Neptune => write!(f, "Neptune"),
+            SavingsPlanProductType::Opensearch => write!(f, "OpenSearch"),
             SavingsPlanProductType::Rds => write!(f, "RDS"),
             SavingsPlanProductType::Sagemaker => write!(f, "SageMaker"),
             SavingsPlanProductType::Timestream => write!(f, "Timestream"),

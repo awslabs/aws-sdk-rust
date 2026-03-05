@@ -5457,6 +5457,8 @@ pub(crate) mod shape_available_instance_capacity_list;
 
 pub(crate) mod shape_bandwidth_weighting_type_list;
 
+pub(crate) mod shape_capacity_allocation_metadata_list;
+
 pub(crate) mod shape_capacity_reservation_options;
 
 pub(crate) mod shape_capacity_reservation_status;
@@ -5640,6 +5642,8 @@ pub(crate) mod shape_volume_status_event;
 pub(crate) mod shape_additional_detail;
 
 pub(crate) mod shape_block_device_mapping_response_list;
+
+pub(crate) mod shape_capacity_allocation_metadata_entry;
 
 pub(crate) mod shape_certificate_authentication;
 

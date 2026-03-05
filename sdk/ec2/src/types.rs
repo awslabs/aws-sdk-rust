@@ -2515,6 +2515,8 @@ pub use crate::types::_analysis_load_balancer_target::AnalysisLoadBalancerTarget
 
 pub use crate::types::_listing_state::ListingState;
 
+pub use crate::types::_capacity_allocation_metadata_entry::CapacityAllocationMetadataEntry;
+
 pub use crate::types::_placement_response::PlacementResponse;
 
 pub use crate::types::_ipam_prefix_list_resolver_rule_condition_operation::IpamPrefixListResolverRuleConditionOperation;
@@ -2908,6 +2910,8 @@ mod _cancel_spot_instance_request_state;
 mod _cancelled_spot_instance_request;
 
 mod _capacity_allocation;
+
+mod _capacity_allocation_metadata_entry;
 
 mod _capacity_block;
 

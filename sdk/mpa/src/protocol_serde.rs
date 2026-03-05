@@ -59,6 +59,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_active_approval_team_deletion;
 
+pub(crate) mod shape_start_approval_team_baseline;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -94,6 +96,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_active_approval_team_deletion_input;
+
+pub(crate) mod shape_start_approval_team_baseline_input;
 
 pub(crate) mod shape_tag_resource_input;
 

@@ -228,4 +228,32 @@ impl CreateMlflowTrackingServerFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn s3_bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_bucket_owner_account_id(input.into());
+        self
+    }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn set_s3_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_bucket_owner_account_id(input);
+        self
+    }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage. Defaults to caller's account ID if not provided.</p>
+    pub fn get_s3_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_bucket_owner_account_id()
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn s3_bucket_owner_verification(mut self, input: bool) -> Self {
+        self.inner = self.inner.s3_bucket_owner_verification(input);
+        self
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn set_s3_bucket_owner_verification(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_s3_bucket_owner_verification(input);
+        self
+    }
+    /// <p>Enable Amazon S3 Ownership checks when interacting with Amazon S3 buckets from a SageMaker Managed MLflow Tracking Server. Defaults to <code>True</code> if not provided.</p>
+    pub fn get_s3_bucket_owner_verification(&self) -> &::std::option::Option<bool> {
+        self.inner.get_s3_bucket_owner_verification()
+    }
 }

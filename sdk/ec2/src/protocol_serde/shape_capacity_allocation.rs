@@ -36,6 +36,16 @@ pub fn de_capacity_allocation(
                 builder = builder.set_count(var_2);
             }
             ,
+            s if s.matches("allocationMetadataList") /* AllocationMetadata com.amazonaws.ec2#CapacityAllocation$AllocationMetadata */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_allocation_metadata_list::de_capacity_allocation_metadata_list(&mut tag)
+                        ?
+                    )
+                ;
+                builder = builder.set_allocation_metadata(var_3);
+            }
+            ,
             _ => {}
         }
     }

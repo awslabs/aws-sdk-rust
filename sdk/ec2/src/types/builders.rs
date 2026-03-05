@@ -1659,6 +1659,8 @@ pub use crate::types::_analysis_load_balancer_listener::AnalysisLoadBalancerList
 
 pub use crate::types::_analysis_load_balancer_target::AnalysisLoadBalancerTargetBuilder;
 
+pub use crate::types::_capacity_allocation_metadata_entry::CapacityAllocationMetadataEntryBuilder;
+
 pub use crate::types::_placement_response::PlacementResponseBuilder;
 
 pub use crate::types::_instance_ipv6_address_request::InstanceIpv6AddressRequestBuilder;

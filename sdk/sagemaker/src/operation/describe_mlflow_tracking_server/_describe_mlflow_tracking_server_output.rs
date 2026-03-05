@@ -35,6 +35,10 @@ pub struct DescribeMlflowTrackingServerOutput {
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Information about the user who created or modified a SageMaker resource.</p>
     pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub s3_bucket_owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>
+    pub s3_bucket_owner_verification: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeMlflowTrackingServerOutput {
@@ -102,6 +106,14 @@ impl DescribeMlflowTrackingServerOutput {
     pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.last_modified_by.as_ref()
     }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn s3_bucket_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.s3_bucket_owner_account_id.as_deref()
+    }
+    /// <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>
+    pub fn s3_bucket_owner_verification(&self) -> ::std::option::Option<bool> {
+        self.s3_bucket_owner_verification
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeMlflowTrackingServerOutput {
     fn request_id(&self) -> Option<&str> {
@@ -135,6 +147,8 @@ pub struct DescribeMlflowTrackingServerOutputBuilder {
     pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) s3_bucket_owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_bucket_owner_verification: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeMlflowTrackingServerOutputBuilder {
@@ -362,6 +376,34 @@ impl DescribeMlflowTrackingServerOutputBuilder {
     pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.last_modified_by
     }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn s3_bucket_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_bucket_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn set_s3_bucket_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_bucket_owner_account_id = input;
+        self
+    }
+    /// <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    pub fn get_s3_bucket_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_bucket_owner_account_id
+    }
+    /// <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>
+    pub fn s3_bucket_owner_verification(mut self, input: bool) -> Self {
+        self.s3_bucket_owner_verification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>
+    pub fn set_s3_bucket_owner_verification(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.s3_bucket_owner_verification = input;
+        self
+    }
+    /// <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>
+    pub fn get_s3_bucket_owner_verification(&self) -> &::std::option::Option<bool> {
+        &self.s3_bucket_owner_verification
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -390,6 +432,8 @@ impl DescribeMlflowTrackingServerOutputBuilder {
             created_by: self.created_by,
             last_modified_time: self.last_modified_time,
             last_modified_by: self.last_modified_by,
+            s3_bucket_owner_account_id: self.s3_bucket_owner_account_id,
+            s3_bucket_owner_verification: self.s3_bucket_owner_verification,
             _request_id: self._request_id,
         }
     }

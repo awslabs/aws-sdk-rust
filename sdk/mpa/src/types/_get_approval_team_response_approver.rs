@@ -14,6 +14,12 @@ pub struct GetApprovalTeamResponseApprover {
     pub primary_identity_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Status for the identity source. For example, if an approver has accepted a team invitation with a user authentication method managed by the identity source.</p>
     pub primary_identity_status: ::std::option::Option<crate::types::IdentityStatus>,
+    /// <p>Last Activity performed by the approver.</p>
+    pub last_activity: ::std::option::Option<crate::types::ApproverLastActivity>,
+    /// <p>Timestamp when the approver last responded to an operation or invitation request.</p>
+    pub last_activity_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+    pub pending_baseline_session_arn: ::std::option::Option<::std::string::String>,
     /// <p>Multi-factor authentication configuration for the approver</p>
     pub mfa_methods: ::std::option::Option<::std::vec::Vec<crate::types::MfaMethod>>,
 }
@@ -38,6 +44,18 @@ impl GetApprovalTeamResponseApprover {
     pub fn primary_identity_status(&self) -> ::std::option::Option<&crate::types::IdentityStatus> {
         self.primary_identity_status.as_ref()
     }
+    /// <p>Last Activity performed by the approver.</p>
+    pub fn last_activity(&self) -> ::std::option::Option<&crate::types::ApproverLastActivity> {
+        self.last_activity.as_ref()
+    }
+    /// <p>Timestamp when the approver last responded to an operation or invitation request.</p>
+    pub fn last_activity_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_activity_time.as_ref()
+    }
+    /// <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+    pub fn pending_baseline_session_arn(&self) -> ::std::option::Option<&str> {
+        self.pending_baseline_session_arn.as_deref()
+    }
     /// <p>Multi-factor authentication configuration for the approver</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mfa_methods.is_none()`.
@@ -61,6 +79,9 @@ pub struct GetApprovalTeamResponseApproverBuilder {
     pub(crate) primary_identity_id: ::std::option::Option<::std::string::String>,
     pub(crate) primary_identity_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) primary_identity_status: ::std::option::Option<crate::types::IdentityStatus>,
+    pub(crate) last_activity: ::std::option::Option<crate::types::ApproverLastActivity>,
+    pub(crate) last_activity_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) pending_baseline_session_arn: ::std::option::Option<::std::string::String>,
     pub(crate) mfa_methods: ::std::option::Option<::std::vec::Vec<crate::types::MfaMethod>>,
 }
 impl GetApprovalTeamResponseApproverBuilder {
@@ -134,6 +155,48 @@ impl GetApprovalTeamResponseApproverBuilder {
     pub fn get_primary_identity_status(&self) -> &::std::option::Option<crate::types::IdentityStatus> {
         &self.primary_identity_status
     }
+    /// <p>Last Activity performed by the approver.</p>
+    pub fn last_activity(mut self, input: crate::types::ApproverLastActivity) -> Self {
+        self.last_activity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Last Activity performed by the approver.</p>
+    pub fn set_last_activity(mut self, input: ::std::option::Option<crate::types::ApproverLastActivity>) -> Self {
+        self.last_activity = input;
+        self
+    }
+    /// <p>Last Activity performed by the approver.</p>
+    pub fn get_last_activity(&self) -> &::std::option::Option<crate::types::ApproverLastActivity> {
+        &self.last_activity
+    }
+    /// <p>Timestamp when the approver last responded to an operation or invitation request.</p>
+    pub fn last_activity_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_activity_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Timestamp when the approver last responded to an operation or invitation request.</p>
+    pub fn set_last_activity_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_activity_time = input;
+        self
+    }
+    /// <p>Timestamp when the approver last responded to an operation or invitation request.</p>
+    pub fn get_last_activity_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_activity_time
+    }
+    /// <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+    pub fn pending_baseline_session_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pending_baseline_session_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+    pub fn set_pending_baseline_session_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pending_baseline_session_arn = input;
+        self
+    }
+    /// <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+    pub fn get_pending_baseline_session_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pending_baseline_session_arn
+    }
     /// Appends an item to `mfa_methods`.
     ///
     /// To override the contents of this collection use [`set_mfa_methods`](Self::set_mfa_methods).
@@ -162,6 +225,9 @@ impl GetApprovalTeamResponseApproverBuilder {
             primary_identity_id: self.primary_identity_id,
             primary_identity_source_arn: self.primary_identity_source_arn,
             primary_identity_status: self.primary_identity_status,
+            last_activity: self.last_activity,
+            last_activity_time: self.last_activity_time,
+            pending_baseline_session_arn: self.pending_baseline_session_arn,
             mfa_methods: self.mfa_methods,
         }
     }

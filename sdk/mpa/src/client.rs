@@ -199,6 +199,8 @@ mod list_tags_for_resource;
 
 mod start_active_approval_team_deletion;
 
+mod start_approval_team_baseline;
+
 mod tag_resource;
 
 mod untag_resource;

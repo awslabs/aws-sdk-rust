@@ -375,6 +375,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | CloudWatch RUM | [aws-sdk-rum](https://crates.io/crates/aws-sdk-rum) ([docs](https://docs.rs/aws-sdk-rum)) |
 | CodeArtifact | [aws-sdk-codeartifact](https://crates.io/crates/aws-sdk-codeartifact) ([docs](https://docs.rs/aws-sdk-codeartifact)) |
 | Compute Optimizer Automation | [aws-sdk-computeoptimizerautomation](https://crates.io/crates/aws-sdk-computeoptimizerautomation) ([docs](https://docs.rs/aws-sdk-computeoptimizerautomation)) |
+| Connect Health | [aws-sdk-connecthealth](https://crates.io/crates/aws-sdk-connecthealth) ([docs](https://docs.rs/aws-sdk-connecthealth)) |
 | Cost Optimization Hub | [aws-sdk-costoptimizationhub](https://crates.io/crates/aws-sdk-costoptimizationhub) ([docs](https://docs.rs/aws-sdk-costoptimizationhub)) |
 | Data Automation for Amazon Bedrock | [aws-sdk-bedrockdataautomation](https://crates.io/crates/aws-sdk-bedrockdataautomation) ([docs](https://docs.rs/aws-sdk-bedrockdataautomation)) |
 | EC2 Image Builder | [aws-sdk-imagebuilder](https://crates.io/crates/aws-sdk-imagebuilder) ([docs](https://docs.rs/aws-sdk-imagebuilder)) |

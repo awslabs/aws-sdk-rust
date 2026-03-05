@@ -19,6 +19,7 @@
 ///     SavingsPlanRateServiceCode::Ec2 => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Fargate => { /* ... */ },
 ///     SavingsPlanRateServiceCode::FargateEks => { /* ... */ },
+///     SavingsPlanRateServiceCode::Es => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Elasticache => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Mcs => { /* ... */ },
 ///     SavingsPlanRateServiceCode::Neptune => { /* ... */ },
@@ -69,6 +70,8 @@ pub enum SavingsPlanRateServiceCode {
     #[allow(missing_docs)] // documentation missing in model
     FargateEks,
     #[allow(missing_docs)] // documentation missing in model
+    Es,
+    #[allow(missing_docs)] // documentation missing in model
     Elasticache,
     #[allow(missing_docs)] // documentation missing in model
     Mcs,
@@ -96,6 +99,7 @@ impl ::std::convert::From<&str> for SavingsPlanRateServiceCode {
             "AmazonEC2" => SavingsPlanRateServiceCode::Ec2,
             "AmazonECS" => SavingsPlanRateServiceCode::Fargate,
             "AmazonEKS" => SavingsPlanRateServiceCode::FargateEks,
+            "AmazonES" => SavingsPlanRateServiceCode::Es,
             "AmazonElastiCache" => SavingsPlanRateServiceCode::Elasticache,
             "AmazonMCS" => SavingsPlanRateServiceCode::Mcs,
             "AmazonNeptune" => SavingsPlanRateServiceCode::Neptune,
@@ -125,6 +129,7 @@ impl SavingsPlanRateServiceCode {
             SavingsPlanRateServiceCode::Ec2 => "AmazonEC2",
             SavingsPlanRateServiceCode::Fargate => "AmazonECS",
             SavingsPlanRateServiceCode::FargateEks => "AmazonEKS",
+            SavingsPlanRateServiceCode::Es => "AmazonES",
             SavingsPlanRateServiceCode::Elasticache => "AmazonElastiCache",
             SavingsPlanRateServiceCode::Mcs => "AmazonMCS",
             SavingsPlanRateServiceCode::Neptune => "AmazonNeptune",
@@ -145,6 +150,7 @@ impl SavingsPlanRateServiceCode {
             "AmazonEC2",
             "AmazonECS",
             "AmazonEKS",
+            "AmazonES",
             "AmazonElastiCache",
             "AmazonMCS",
             "AmazonNeptune",
@@ -182,6 +188,7 @@ impl ::std::fmt::Display for SavingsPlanRateServiceCode {
             SavingsPlanRateServiceCode::Ec2 => write!(f, "AmazonEC2"),
             SavingsPlanRateServiceCode::Fargate => write!(f, "AmazonECS"),
             SavingsPlanRateServiceCode::FargateEks => write!(f, "AmazonEKS"),
+            SavingsPlanRateServiceCode::Es => write!(f, "AmazonES"),
             SavingsPlanRateServiceCode::Elasticache => write!(f, "AmazonElastiCache"),
             SavingsPlanRateServiceCode::Mcs => write!(f, "AmazonMCS"),
             SavingsPlanRateServiceCode::Neptune => write!(f, "AmazonNeptune"),

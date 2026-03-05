@@ -180,6 +180,16 @@ pub(crate) fn de_describe_mlflow_tracking_server(
                 "LastModifiedBy" => {
                     builder = builder.set_last_modified_by(crate::protocol_serde::shape_user_context::de_user_context(tokens, _value)?);
                 }
+                "S3BucketOwnerAccountId" => {
+                    builder = builder.set_s3_bucket_owner_account_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "S3BucketOwnerVerification" => {
+                    builder = builder.set_s3_bucket_owner_verification(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

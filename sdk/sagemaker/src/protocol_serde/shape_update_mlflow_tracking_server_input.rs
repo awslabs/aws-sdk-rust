@@ -18,5 +18,11 @@ pub fn ser_update_mlflow_tracking_server_input_input(
     if let Some(var_5) = &input.weekly_maintenance_window_start {
         object.key("WeeklyMaintenanceWindowStart").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.s3_bucket_owner_account_id {
+        object.key("S3BucketOwnerAccountId").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.s3_bucket_owner_verification {
+        object.key("S3BucketOwnerVerification").boolean(*var_7);
+    }
     Ok(())
 }

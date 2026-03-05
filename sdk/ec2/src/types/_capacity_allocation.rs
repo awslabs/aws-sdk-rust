@@ -8,6 +8,8 @@ pub struct CapacityAllocation {
     pub allocation_type: ::std::option::Option<crate::types::AllocationType>,
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
     pub count: ::std::option::Option<i32>,
+    /// <p>Additional metadata associated with the capacity allocation. Each entry contains a key-value pair providing context about the allocation.</p>
+    pub allocation_metadata: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocationMetadataEntry>>,
 }
 impl CapacityAllocation {
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
@@ -17,6 +19,12 @@ impl CapacityAllocation {
     /// <p>The amount of instance capacity associated with the usage. For example a value of <code>4</code> indicates that instance capacity for 4 instances is currently in use.</p>
     pub fn count(&self) -> ::std::option::Option<i32> {
         self.count
+    }
+    /// <p>Additional metadata associated with the capacity allocation. Each entry contains a key-value pair providing context about the allocation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.allocation_metadata.is_none()`.
+    pub fn allocation_metadata(&self) -> &[crate::types::CapacityAllocationMetadataEntry] {
+        self.allocation_metadata.as_deref().unwrap_or_default()
     }
 }
 impl CapacityAllocation {
@@ -32,6 +40,7 @@ impl CapacityAllocation {
 pub struct CapacityAllocationBuilder {
     pub(crate) allocation_type: ::std::option::Option<crate::types::AllocationType>,
     pub(crate) count: ::std::option::Option<i32>,
+    pub(crate) allocation_metadata: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocationMetadataEntry>>,
 }
 impl CapacityAllocationBuilder {
     /// <p>The usage type. <code>used</code> indicates that the instance capacity is in use by instances that are running in the Capacity Reservation.</p>
@@ -62,11 +71,32 @@ impl CapacityAllocationBuilder {
     pub fn get_count(&self) -> &::std::option::Option<i32> {
         &self.count
     }
+    /// Appends an item to `allocation_metadata`.
+    ///
+    /// To override the contents of this collection use [`set_allocation_metadata`](Self::set_allocation_metadata).
+    ///
+    /// <p>Additional metadata associated with the capacity allocation. Each entry contains a key-value pair providing context about the allocation.</p>
+    pub fn allocation_metadata(mut self, input: crate::types::CapacityAllocationMetadataEntry) -> Self {
+        let mut v = self.allocation_metadata.unwrap_or_default();
+        v.push(input);
+        self.allocation_metadata = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional metadata associated with the capacity allocation. Each entry contains a key-value pair providing context about the allocation.</p>
+    pub fn set_allocation_metadata(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocationMetadataEntry>>) -> Self {
+        self.allocation_metadata = input;
+        self
+    }
+    /// <p>Additional metadata associated with the capacity allocation. Each entry contains a key-value pair providing context about the allocation.</p>
+    pub fn get_allocation_metadata(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityAllocationMetadataEntry>> {
+        &self.allocation_metadata
+    }
     /// Consumes the builder and constructs a [`CapacityAllocation`](crate::types::CapacityAllocation).
     pub fn build(self) -> crate::types::CapacityAllocation {
         crate::types::CapacityAllocation {
             allocation_type: self.allocation_type,
             count: self.count,
+            allocation_metadata: self.allocation_metadata,
         }
     }
 }

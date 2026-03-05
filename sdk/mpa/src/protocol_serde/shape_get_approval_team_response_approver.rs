@@ -49,6 +49,26 @@ where
                                     .transpose()?,
                             );
                         }
+                        "LastActivity" => {
+                            builder = builder.set_last_activity(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ApproverLastActivity::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "LastActivityTime" => {
+                            builder = builder.set_last_activity_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "PendingBaselineSessionArn" => {
+                            builder = builder.set_pending_baseline_session_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "MfaMethods" => {
                             builder = builder.set_mfa_methods(crate::protocol_serde::shape_mfa_methods::de_mfa_methods(tokens, _value)?);
                         }

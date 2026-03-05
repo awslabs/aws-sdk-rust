@@ -21,6 +21,8 @@ impl super::Client {
     ///   - [`created_by(Option<UserContext>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::created_by): <p>Information about the user who created or modified a SageMaker resource.</p>
     ///   - [`last_modified_time(Option<DateTime>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::last_modified_time): <p>The timestamp of when the described MLflow Tracking Server was last modified.</p>
     ///   - [`last_modified_by(Option<UserContext>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::last_modified_by): <p>Information about the user who created or modified a SageMaker resource.</p>
+    ///   - [`s3_bucket_owner_account_id(Option<String>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::s3_bucket_owner_account_id): <p>Expected Amazon Web Services account ID that owns the Amazon S3 bucket for artifact storage.</p>
+    ///   - [`s3_bucket_owner_verification(Option<bool>)`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerOutput::s3_bucket_owner_verification): <p>Whether Amazon S3 Bucket Ownership checks are enabled whenever the tracking server interacts with Amazon Amazon S3.</p>
     /// - On failure, responds with [`SdkError<DescribeMlflowTrackingServerError>`](crate::operation::describe_mlflow_tracking_server::DescribeMlflowTrackingServerError)
     pub fn describe_mlflow_tracking_server(
         &self,
