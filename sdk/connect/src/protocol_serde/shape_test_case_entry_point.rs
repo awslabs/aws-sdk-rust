@@ -12,6 +12,12 @@ pub fn ser_test_case_entry_point(
         crate::protocol_serde::shape_voice_call_entry_point_parameters::ser_voice_call_entry_point_parameters(&mut object_3, var_2)?;
         object_3.finish();
     }
+    if let Some(var_4) = &input.chat_entry_point_parameters {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ChatEntryPointParameters").start_object();
+        crate::protocol_serde::shape_chat_entry_point_parameters::ser_chat_entry_point_parameters(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -41,6 +47,11 @@ where
                         "VoiceCallEntryPointParameters" => {
                             builder = builder.set_voice_call_entry_point_parameters(
                                 crate::protocol_serde::shape_voice_call_entry_point_parameters::de_voice_call_entry_point_parameters(tokens, _value)?,
+                            );
+                        }
+                        "ChatEntryPointParameters" => {
+                            builder = builder.set_chat_entry_point_parameters(
+                                crate::protocol_serde::shape_chat_entry_point_parameters::de_chat_entry_point_parameters(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

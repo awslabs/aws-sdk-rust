@@ -15,6 +15,8 @@ pub struct CreateFarmInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use on the farm.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The cost scale factor to apply on the farm.</p>
+    pub cost_scale_factor: ::std::option::Option<f32>,
     /// <p>The tags to add to your farm. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -39,6 +41,10 @@ impl CreateFarmInput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The cost scale factor to apply on the farm.</p>
+    pub fn cost_scale_factor(&self) -> ::std::option::Option<f32> {
+        self.cost_scale_factor
+    }
     /// <p>The tags to add to your farm. Each tag consists of a tag key and a tag value. Tag keys and values are both required, but tag values can be empty strings.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for CreateFarmInput {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("cost_scale_factor", &self.cost_scale_factor);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -70,6 +77,7 @@ pub struct CreateFarmInputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cost_scale_factor: ::std::option::Option<f32>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateFarmInputBuilder {
@@ -142,6 +150,20 @@ impl CreateFarmInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The cost scale factor to apply on the farm.</p>
+    pub fn cost_scale_factor(mut self, input: f32) -> Self {
+        self.cost_scale_factor = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cost scale factor to apply on the farm.</p>
+    pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.cost_scale_factor = input;
+        self
+    }
+    /// <p>The cost scale factor to apply on the farm.</p>
+    pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
+        &self.cost_scale_factor
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -169,6 +191,7 @@ impl CreateFarmInputBuilder {
             display_name: self.display_name,
             description: self.description,
             kms_key_arn: self.kms_key_arn,
+            cost_scale_factor: self.cost_scale_factor,
             tags: self.tags,
         })
     }
@@ -180,6 +203,7 @@ impl ::std::fmt::Debug for CreateFarmInputBuilder {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("cost_scale_factor", &self.cost_scale_factor);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

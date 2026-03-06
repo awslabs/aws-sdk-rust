@@ -211,6 +211,20 @@ impl CreateMemoryFluentBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>> {
         self.inner.get_memory_strategies()
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
+        self.inner = self.inner.stream_delivery_resources(input);
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn set_stream_delivery_resources(mut self, input: ::std::option::Option<crate::types::StreamDeliveryResources>) -> Self {
+        self.inner = self.inner.set_stream_delivery_resources(input);
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn get_stream_delivery_resources(&self) -> &::std::option::Option<crate::types::StreamDeliveryResources> {
+        self.inner.get_stream_delivery_resources()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

@@ -3,24 +3,30 @@ pub fn ser_create_farm_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_farm::CreateFarmInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.cost_scale_factor {
+        object.key("costScaleFactor").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_1).into()),
+        );
     }
-    if let Some(var_2) = &input.display_name {
-        object.key("displayName").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_3.as_str());
+    if let Some(var_3) = &input.display_name {
+        object.key("displayName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_4) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

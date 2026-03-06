@@ -311,6 +311,9 @@ pub(crate) fn get_farm_output_output_correct_errors(
     if builder.display_name.is_none() {
         builder.display_name = Some(Default::default())
     }
+    if builder.cost_scale_factor.is_none() {
+        builder.cost_scale_factor = Some(Default::default())
+    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }

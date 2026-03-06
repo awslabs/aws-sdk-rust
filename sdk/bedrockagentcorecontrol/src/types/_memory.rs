@@ -28,6 +28,8 @@ pub struct Memory {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The list of memory strategies associated with this memory.</p>
     pub strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>>,
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
 }
 impl Memory {
     /// <p>The Amazon Resource Name (ARN) of the memory.</p>
@@ -83,6 +85,10 @@ impl Memory {
     pub fn strategies(&self) -> &[crate::types::MemoryStrategy] {
         self.strategies.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
+        self.stream_delivery_resources.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Memory {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -99,6 +105,7 @@ impl ::std::fmt::Debug for Memory {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("strategies", &self.strategies);
+        formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.finish()
     }
 }
@@ -125,6 +132,7 @@ pub struct MemoryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>>,
+    pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
 }
 impl MemoryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the memory.</p>
@@ -308,6 +316,20 @@ impl MemoryBuilder {
     pub fn get_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>> {
         &self.strategies
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
+        self.stream_delivery_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn set_stream_delivery_resources(mut self, input: ::std::option::Option<crate::types::StreamDeliveryResources>) -> Self {
+        self.stream_delivery_resources = input;
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn get_stream_delivery_resources(&self) -> &::std::option::Option<crate::types::StreamDeliveryResources> {
+        &self.stream_delivery_resources
+    }
     /// Consumes the builder and constructs a [`Memory`](crate::types::Memory).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::MemoryBuilder::arn)
@@ -363,6 +385,7 @@ impl MemoryBuilder {
                 )
             })?,
             strategies: self.strategies,
+            stream_delivery_resources: self.stream_delivery_resources,
         })
     }
 }
@@ -381,6 +404,7 @@ impl ::std::fmt::Debug for MemoryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("strategies", &self.strategies);
+        formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.finish()
     }
 }

@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`display_name(String)`](crate::operation::get_farm::GetFarmOutput::display_name): <p>The display name of the farm.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`description(Option<String>)`](crate::operation::get_farm::GetFarmOutput::description): <p>The description of the farm.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_farm::GetFarmOutput::kms_key_arn): <p>The ARN of the KMS key used on the farm.</p>
+    ///   - [`cost_scale_factor(f32)`](crate::operation::get_farm::GetFarmOutput::cost_scale_factor): <p>The cost scale factor applied on the farm.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_farm::GetFarmOutput::created_at): <p>The date and time the resource was created.</p>
     ///   - [`created_by(String)`](crate::operation::get_farm::GetFarmOutput::created_by): <p>The user or system that created this resource.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_farm::GetFarmOutput::updated_at): <p>The date and time the resource was updated.</p>

@@ -17,7 +17,9 @@ pub struct MessageHeader {
     /// <li>
     /// <p>Can contain any printable ASCII character.</p></li>
     /// <li>
-    /// <p>Can contain no more than 870 characters.</p></li>
+    /// <p>Can contain no more than 995 characters.</p></li>
+    /// <li>
+    /// <p>The combined length of the header name and value must not exceed 996 characters.</p></li>
     /// </ul>
     pub value: ::std::string::String,
 }
@@ -38,7 +40,9 @@ impl MessageHeader {
     /// <li>
     /// <p>Can contain any printable ASCII character.</p></li>
     /// <li>
-    /// <p>Can contain no more than 870 characters.</p></li>
+    /// <p>Can contain no more than 995 characters.</p></li>
+    /// <li>
+    /// <p>The combined length of the header name and value must not exceed 996 characters.</p></li>
     /// </ul>
     pub fn value(&self) -> &str {
         use std::ops::Deref;
@@ -98,7 +102,9 @@ impl MessageHeaderBuilder {
     /// <li>
     /// <p>Can contain any printable ASCII character.</p></li>
     /// <li>
-    /// <p>Can contain no more than 870 characters.</p></li>
+    /// <p>Can contain no more than 995 characters.</p></li>
+    /// <li>
+    /// <p>The combined length of the header name and value must not exceed 996 characters.</p></li>
     /// </ul>
     /// This field is required.
     pub fn value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -110,7 +116,9 @@ impl MessageHeaderBuilder {
     /// <li>
     /// <p>Can contain any printable ASCII character.</p></li>
     /// <li>
-    /// <p>Can contain no more than 870 characters.</p></li>
+    /// <p>Can contain no more than 995 characters.</p></li>
+    /// <li>
+    /// <p>The combined length of the header name and value must not exceed 996 characters.</p></li>
     /// </ul>
     pub fn set_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.value = input;
@@ -121,7 +129,9 @@ impl MessageHeaderBuilder {
     /// <li>
     /// <p>Can contain any printable ASCII character.</p></li>
     /// <li>
-    /// <p>Can contain no more than 870 characters.</p></li>
+    /// <p>Can contain no more than 995 characters.</p></li>
+    /// <li>
+    /// <p>The combined length of the header name and value must not exceed 996 characters.</p></li>
     /// </ul>
     pub fn get_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.value

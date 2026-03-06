@@ -162,4 +162,18 @@ impl UpdateFarmFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn cost_scale_factor(mut self, input: f32) -> Self {
+        self.inner = self.inner.cost_scale_factor(input);
+        self
+    }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.inner = self.inner.set_cost_scale_factor(input);
+        self
+    }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
+        self.inner.get_cost_scale_factor()
+    }
 }

@@ -247,9 +247,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
             .ok_or("failed to downcast to ListTagsForResourceInput")?;
 
         let params = crate::config::endpoint::Params::builder()
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)
@@ -267,6 +267,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
+    /// <p>You don't have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An error on the server occurred during the processing of your request. Try again later.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified Amazon Resource Name (ARN) in the request doesn't exist.</p>
@@ -308,12 +310,17 @@ impl ListTagsForResourceError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -335,6 +342,7 @@ impl ListTagsForResourceError {
 impl ::std::error::Error for ListTagsForResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -346,6 +354,7 @@ impl ::std::error::Error for ListTagsForResourceError {
 impl ::std::fmt::Display for ListTagsForResourceError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -371,6 +380,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListTagsForResourceError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForResourceError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

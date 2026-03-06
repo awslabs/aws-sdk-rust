@@ -14,6 +14,7 @@
 /// match applicationstatusreason {
 ///     ApplicationStatusReason::AccessDenied => { /* ... */ },
 ///     ApplicationStatusReason::InternalError => { /* ... */ },
+///     ApplicationStatusReason::SourceModified => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum ApplicationStatusReason {
     AccessDenied,
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceModified,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for ApplicationStatusReason {
         match s {
             "accessDenied" => ApplicationStatusReason::AccessDenied,
             "internalError" => ApplicationStatusReason::InternalError,
+            "sourceModified" => ApplicationStatusReason::SourceModified,
             other => ApplicationStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl ApplicationStatusReason {
         match self {
             ApplicationStatusReason::AccessDenied => "accessDenied",
             ApplicationStatusReason::InternalError => "internalError",
+            ApplicationStatusReason::SourceModified => "sourceModified",
             ApplicationStatusReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["accessDenied", "internalError"]
+        &["accessDenied", "internalError", "sourceModified"]
     }
 }
 impl ::std::convert::AsRef<str> for ApplicationStatusReason {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for ApplicationStatusReason {
         match self {
             ApplicationStatusReason::AccessDenied => write!(f, "accessDenied"),
             ApplicationStatusReason::InternalError => write!(f, "internalError"),
+            ApplicationStatusReason::SourceModified => write!(f, "sourceModified"),
             ApplicationStatusReason::Unknown(value) => write!(f, "{value}"),
         }
     }

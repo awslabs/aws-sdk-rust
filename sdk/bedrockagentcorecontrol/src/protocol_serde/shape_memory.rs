@@ -95,6 +95,11 @@ where
                                 tokens, _value,
                             )?);
                         }
+                        "streamDeliveryResources" => {
+                            builder = builder.set_stream_delivery_resources(
+                                crate::protocol_serde::shape_stream_delivery_resources::de_stream_delivery_resources(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -89,6 +89,8 @@ pub use crate::types::_metadata_configuration::MetadataConfiguration;
 
 pub use crate::types::_target_status::TargetStatus;
 
+pub use crate::types::_stream_delivery_resources::StreamDeliveryResources;
+
 pub use crate::types::_memory::Memory;
 
 pub use crate::types::_memory_view::MemoryView;
@@ -271,6 +273,8 @@ pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInput;
 
 pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInput;
 
+pub use crate::types::_stream_delivery_resource::StreamDeliveryResource;
+
 pub use crate::types::_memory_strategy::MemoryStrategy;
 
 pub use crate::types::_modify_memory_strategy_input::ModifyMemoryStrategyInput;
@@ -300,6 +304,8 @@ pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredent
 pub use crate::types::_custom_configuration_input::CustomConfigurationInput;
 
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInput;
+
+pub use crate::types::_kinesis_resource::KinesisResource;
 
 pub use crate::types::_strategy_configuration::StrategyConfiguration;
 
@@ -387,6 +393,8 @@ pub use crate::types::_episodic_override_reflection_configuration_input::Episodi
 
 pub use crate::types::_invocation_configuration_input::InvocationConfigurationInput;
 
+pub use crate::types::_content_configuration::ContentConfiguration;
+
 pub use crate::types::_custom_extraction_configuration::CustomExtractionConfiguration;
 
 pub use crate::types::_custom_consolidation_configuration::CustomConsolidationConfiguration;
@@ -410,6 +418,10 @@ pub use crate::types::_schema_definition::SchemaDefinition;
 pub use crate::types::_rest_api_method::RestApiMethod;
 
 pub use crate::types::_trigger_condition_input::TriggerConditionInput;
+
+pub use crate::types::_content_type::ContentType;
+
+pub use crate::types::_content_level::ContentLevel;
 
 pub use crate::types::_semantic_extraction_override::SemanticExtractionOverride;
 
@@ -526,6 +538,12 @@ mod _consolidation_configuration;
 mod _container_configuration;
 
 mod _content;
+
+mod _content_configuration;
+
+mod _content_level;
+
+mod _content_type;
 
 mod _credential_provider;
 
@@ -656,6 +674,8 @@ mod _invocation_configuration;
 mod _invocation_configuration_input;
 
 mod _key_type;
+
+mod _kinesis_resource;
 
 mod _kms_configuration;
 
@@ -832,6 +852,10 @@ mod _slack_oauth2_provider_config_input;
 mod _slack_oauth2_provider_config_output;
 
 mod _strategy_configuration;
+
+mod _stream_delivery_resource;
+
+mod _stream_delivery_resources;
 
 mod _summary_consolidation_override;
 

@@ -8,6 +8,8 @@ pub struct TestCaseEntryPoint {
     pub r#type: ::std::option::Option<crate::types::TestCaseEntryPointType>,
     /// <p>Parameters for voice call entry point.</p>
     pub voice_call_entry_point_parameters: ::std::option::Option<crate::types::VoiceCallEntryPointParameters>,
+    /// <p>Parameters for chat entry point.</p>
+    pub chat_entry_point_parameters: ::std::option::Option<crate::types::ChatEntryPointParameters>,
 }
 impl TestCaseEntryPoint {
     /// <p>The type of entry point.</p>
@@ -17,6 +19,10 @@ impl TestCaseEntryPoint {
     /// <p>Parameters for voice call entry point.</p>
     pub fn voice_call_entry_point_parameters(&self) -> ::std::option::Option<&crate::types::VoiceCallEntryPointParameters> {
         self.voice_call_entry_point_parameters.as_ref()
+    }
+    /// <p>Parameters for chat entry point.</p>
+    pub fn chat_entry_point_parameters(&self) -> ::std::option::Option<&crate::types::ChatEntryPointParameters> {
+        self.chat_entry_point_parameters.as_ref()
     }
 }
 impl TestCaseEntryPoint {
@@ -32,6 +38,7 @@ impl TestCaseEntryPoint {
 pub struct TestCaseEntryPointBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::TestCaseEntryPointType>,
     pub(crate) voice_call_entry_point_parameters: ::std::option::Option<crate::types::VoiceCallEntryPointParameters>,
+    pub(crate) chat_entry_point_parameters: ::std::option::Option<crate::types::ChatEntryPointParameters>,
 }
 impl TestCaseEntryPointBuilder {
     /// <p>The type of entry point.</p>
@@ -62,11 +69,26 @@ impl TestCaseEntryPointBuilder {
     pub fn get_voice_call_entry_point_parameters(&self) -> &::std::option::Option<crate::types::VoiceCallEntryPointParameters> {
         &self.voice_call_entry_point_parameters
     }
+    /// <p>Parameters for chat entry point.</p>
+    pub fn chat_entry_point_parameters(mut self, input: crate::types::ChatEntryPointParameters) -> Self {
+        self.chat_entry_point_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Parameters for chat entry point.</p>
+    pub fn set_chat_entry_point_parameters(mut self, input: ::std::option::Option<crate::types::ChatEntryPointParameters>) -> Self {
+        self.chat_entry_point_parameters = input;
+        self
+    }
+    /// <p>Parameters for chat entry point.</p>
+    pub fn get_chat_entry_point_parameters(&self) -> &::std::option::Option<crate::types::ChatEntryPointParameters> {
+        &self.chat_entry_point_parameters
+    }
     /// Consumes the builder and constructs a [`TestCaseEntryPoint`](crate::types::TestCaseEntryPoint).
     pub fn build(self) -> crate::types::TestCaseEntryPoint {
         crate::types::TestCaseEntryPoint {
             r#type: self.r#type,
             voice_call_entry_point_parameters: self.voice_call_entry_point_parameters,
+            chat_entry_point_parameters: self.chat_entry_point_parameters,
         }
     }
 }

@@ -10,6 +10,8 @@ pub struct AccountEnforcedGuardrailInferenceInputConfiguration {
     pub guardrail_version: ::std::string::String,
     /// <p>Whether to honor or ignore input tags at runtime.</p>
     pub input_tags: crate::types::InputTags,
+    /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
+    pub model_enforcement: ::std::option::Option<crate::types::ModelEnforcement>,
 }
 impl AccountEnforcedGuardrailInferenceInputConfiguration {
     /// <p>Identifier for the guardrail, could be the ID or the ARN.</p>
@@ -26,6 +28,10 @@ impl AccountEnforcedGuardrailInferenceInputConfiguration {
     pub fn input_tags(&self) -> &crate::types::InputTags {
         &self.input_tags
     }
+    /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
+    pub fn model_enforcement(&self) -> ::std::option::Option<&crate::types::ModelEnforcement> {
+        self.model_enforcement.as_ref()
+    }
 }
 impl AccountEnforcedGuardrailInferenceInputConfiguration {
     /// Creates a new builder-style object to manufacture [`AccountEnforcedGuardrailInferenceInputConfiguration`](crate::types::AccountEnforcedGuardrailInferenceInputConfiguration).
@@ -41,6 +47,7 @@ pub struct AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
     pub(crate) guardrail_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) guardrail_version: ::std::option::Option<::std::string::String>,
     pub(crate) input_tags: ::std::option::Option<crate::types::InputTags>,
+    pub(crate) model_enforcement: ::std::option::Option<crate::types::ModelEnforcement>,
 }
 impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
     /// <p>Identifier for the guardrail, could be the ID or the ARN.</p>
@@ -88,6 +95,20 @@ impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
     pub fn get_input_tags(&self) -> &::std::option::Option<crate::types::InputTags> {
         &self.input_tags
     }
+    /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
+    pub fn model_enforcement(mut self, input: crate::types::ModelEnforcement) -> Self {
+        self.model_enforcement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
+    pub fn set_model_enforcement(mut self, input: ::std::option::Option<crate::types::ModelEnforcement>) -> Self {
+        self.model_enforcement = input;
+        self
+    }
+    /// <p>Model-specific information for the enforced guardrail configuration. If not present, the configuration is enforced on all models</p>
+    pub fn get_model_enforcement(&self) -> &::std::option::Option<crate::types::ModelEnforcement> {
+        &self.model_enforcement
+    }
     /// Consumes the builder and constructs a [`AccountEnforcedGuardrailInferenceInputConfiguration`](crate::types::AccountEnforcedGuardrailInferenceInputConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`guardrail_identifier`](crate::types::builders::AccountEnforcedGuardrailInferenceInputConfigurationBuilder::guardrail_identifier)
@@ -116,6 +137,7 @@ impl AccountEnforcedGuardrailInferenceInputConfigurationBuilder {
                     "input_tags was not specified but it is required when building AccountEnforcedGuardrailInferenceInputConfiguration",
                 )
             })?,
+            model_enforcement: self.model_enforcement,
         })
     }
 }

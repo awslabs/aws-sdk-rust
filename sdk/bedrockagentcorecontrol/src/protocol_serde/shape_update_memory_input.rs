@@ -24,5 +24,11 @@ pub fn ser_update_memory_input_input(
         crate::protocol_serde::shape_modify_memory_strategies::ser_modify_memory_strategies(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.stream_delivery_resources {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("streamDeliveryResources").start_object();
+        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

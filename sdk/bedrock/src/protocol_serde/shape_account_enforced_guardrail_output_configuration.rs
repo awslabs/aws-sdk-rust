@@ -83,6 +83,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "modelEnforcement" => {
+                            builder =
+                                builder.set_model_enforcement(crate::protocol_serde::shape_model_enforcement::de_model_enforcement(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

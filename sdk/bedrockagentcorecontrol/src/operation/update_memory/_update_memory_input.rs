@@ -15,6 +15,8 @@ pub struct UpdateMemoryInput {
     pub memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The memory strategies to add, modify, or delete.</p>
     pub memory_strategies: ::std::option::Option<crate::types::ModifyMemoryStrategies>,
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
 }
 impl UpdateMemoryInput {
     /// <p>A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.</p>
@@ -41,6 +43,10 @@ impl UpdateMemoryInput {
     pub fn memory_strategies(&self) -> ::std::option::Option<&crate::types::ModifyMemoryStrategies> {
         self.memory_strategies.as_ref()
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
+        self.stream_delivery_resources.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateMemoryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -51,6 +57,7 @@ impl ::std::fmt::Debug for UpdateMemoryInput {
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.finish()
     }
 }
@@ -71,6 +78,7 @@ pub struct UpdateMemoryInputBuilder {
     pub(crate) event_expiry_duration: ::std::option::Option<i32>,
     pub(crate) memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) memory_strategies: ::std::option::Option<crate::types::ModifyMemoryStrategies>,
+    pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
 }
 impl UpdateMemoryInputBuilder {
     /// <p>A client token is used for keeping track of idempotent requests. It can contain a session id which can be around 250 chars, combined with a unique AWS identifier.</p>
@@ -158,6 +166,20 @@ impl UpdateMemoryInputBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<crate::types::ModifyMemoryStrategies> {
         &self.memory_strategies
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
+        self.stream_delivery_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn set_stream_delivery_resources(mut self, input: ::std::option::Option<crate::types::StreamDeliveryResources>) -> Self {
+        self.stream_delivery_resources = input;
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn get_stream_delivery_resources(&self) -> &::std::option::Option<crate::types::StreamDeliveryResources> {
+        &self.stream_delivery_resources
+    }
     /// Consumes the builder and constructs a [`UpdateMemoryInput`](crate::operation::update_memory::UpdateMemoryInput).
     pub fn build(
         self,
@@ -169,6 +191,7 @@ impl UpdateMemoryInputBuilder {
             event_expiry_duration: self.event_expiry_duration,
             memory_execution_role_arn: self.memory_execution_role_arn,
             memory_strategies: self.memory_strategies,
+            stream_delivery_resources: self.stream_delivery_resources,
         })
     }
 }
@@ -181,6 +204,7 @@ impl ::std::fmt::Debug for UpdateMemoryInputBuilder {
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.finish()
     }
 }

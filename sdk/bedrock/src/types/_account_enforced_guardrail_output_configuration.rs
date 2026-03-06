@@ -24,6 +24,8 @@ pub struct AccountEnforcedGuardrailOutputConfiguration {
     pub updated_by: ::std::option::Option<::std::string::String>,
     /// <p>Configuration owner type.</p>
     pub owner: ::std::option::Option<crate::types::ConfigurationOwner>,
+    /// <p>Model-specific information for the enforced guardrail configuration.</p>
+    pub model_enforcement: ::std::option::Option<crate::types::ModelEnforcement>,
 }
 impl AccountEnforcedGuardrailOutputConfiguration {
     /// <p>Unique ID for the account enforced configuration.</p>
@@ -66,6 +68,10 @@ impl AccountEnforcedGuardrailOutputConfiguration {
     pub fn owner(&self) -> ::std::option::Option<&crate::types::ConfigurationOwner> {
         self.owner.as_ref()
     }
+    /// <p>Model-specific information for the enforced guardrail configuration.</p>
+    pub fn model_enforcement(&self) -> ::std::option::Option<&crate::types::ModelEnforcement> {
+        self.model_enforcement.as_ref()
+    }
 }
 impl AccountEnforcedGuardrailOutputConfiguration {
     /// Creates a new builder-style object to manufacture [`AccountEnforcedGuardrailOutputConfiguration`](crate::types::AccountEnforcedGuardrailOutputConfiguration).
@@ -88,6 +94,7 @@ pub struct AccountEnforcedGuardrailOutputConfigurationBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_by: ::std::option::Option<::std::string::String>,
     pub(crate) owner: ::std::option::Option<crate::types::ConfigurationOwner>,
+    pub(crate) model_enforcement: ::std::option::Option<crate::types::ModelEnforcement>,
 }
 impl AccountEnforcedGuardrailOutputConfigurationBuilder {
     /// <p>Unique ID for the account enforced configuration.</p>
@@ -230,6 +237,20 @@ impl AccountEnforcedGuardrailOutputConfigurationBuilder {
     pub fn get_owner(&self) -> &::std::option::Option<crate::types::ConfigurationOwner> {
         &self.owner
     }
+    /// <p>Model-specific information for the enforced guardrail configuration.</p>
+    pub fn model_enforcement(mut self, input: crate::types::ModelEnforcement) -> Self {
+        self.model_enforcement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Model-specific information for the enforced guardrail configuration.</p>
+    pub fn set_model_enforcement(mut self, input: ::std::option::Option<crate::types::ModelEnforcement>) -> Self {
+        self.model_enforcement = input;
+        self
+    }
+    /// <p>Model-specific information for the enforced guardrail configuration.</p>
+    pub fn get_model_enforcement(&self) -> &::std::option::Option<crate::types::ModelEnforcement> {
+        &self.model_enforcement
+    }
     /// Consumes the builder and constructs a [`AccountEnforcedGuardrailOutputConfiguration`](crate::types::AccountEnforcedGuardrailOutputConfiguration).
     pub fn build(self) -> crate::types::AccountEnforcedGuardrailOutputConfiguration {
         crate::types::AccountEnforcedGuardrailOutputConfiguration {
@@ -243,6 +264,7 @@ impl AccountEnforcedGuardrailOutputConfigurationBuilder {
             updated_at: self.updated_at,
             updated_by: self.updated_by,
             owner: self.owner,
+            model_enforcement: self.model_enforcement,
         }
     }
 }

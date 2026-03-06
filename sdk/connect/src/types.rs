@@ -525,6 +525,8 @@ pub use crate::types::_test_case_entry_point_type::TestCaseEntryPointType;
 
 pub use crate::types::_voice_call_entry_point_parameters::VoiceCallEntryPointParameters;
 
+pub use crate::types::_chat_entry_point_parameters::ChatEntryPointParameters;
+
 pub use crate::types::_phone_type::PhoneType;
 
 pub use crate::types::_auto_accept_config::AutoAcceptConfig;
@@ -1534,6 +1536,8 @@ mod _case_sla_configuration;
 mod _channel;
 
 mod _chat_contact_metrics;
+
+mod _chat_entry_point_parameters;
 
 mod _chat_event;
 

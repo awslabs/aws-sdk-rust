@@ -49,8 +49,6 @@ pub struct StreamSessionSummary {
     /// <li>
     /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
     /// <li>
-    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
-    /// <li>
     /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
     /// <li>
     /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
@@ -120,8 +118,6 @@ impl StreamSessionSummary {
     /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
     /// <li>
     /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
-    /// <li>
-    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
     /// <li>
     /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
     /// <li>
@@ -295,8 +291,6 @@ impl StreamSessionSummaryBuilder {
     /// <li>
     /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
     /// <li>
-    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
-    /// <li>
     /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
     /// <li>
     /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
@@ -326,8 +320,6 @@ impl StreamSessionSummaryBuilder {
     /// <li>
     /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
     /// <li>
-    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
-    /// <li>
     /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
     /// <li>
     /// <p><code>reconnectionTimeout</code>: The stream session was terminated because the client failed to reconnect within the reconnection timeout period specified by <code>ConnectionTimeoutSeconds</code> after losing connection.</p></li>
@@ -356,8 +348,6 @@ impl StreamSessionSummaryBuilder {
     /// <p><code>applicationExit</code>: The streaming application exited or crashed. The stream session was terminated because the application is no longer running.</p></li>
     /// <li>
     /// <p><code>connectionTimeout</code>: The stream session was terminated because the client failed to connect within the connection timeout period specified by <code>ConnectionTimeoutSeconds</code>.</p></li>
-    /// <li>
-    /// <p><code>idleTimeout</code>: The stream session was terminated because it exceeded the idle timeout period of 60 minutes with no user input activity.</p></li>
     /// <li>
     /// <p><code>maxSessionLengthTimeout</code>: The stream session was terminated because it exceeded the maximum session length timeout period specified by <code>SessionLengthSeconds</code>.</p></li>
     /// <li>

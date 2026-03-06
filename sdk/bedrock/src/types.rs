@@ -211,6 +211,8 @@ pub use crate::types::_account_enforced_guardrail_output_configuration::AccountE
 
 pub use crate::types::_input_tags::InputTags;
 
+pub use crate::types::_model_enforcement::ModelEnforcement;
+
 pub use crate::types::_batch_delete_evaluation_job_error::BatchDeleteEvaluationJobError;
 
 pub use crate::types::_batch_delete_evaluation_job_item::BatchDeleteEvaluationJobItem;
@@ -1116,6 +1118,8 @@ mod _model_customization_job_status;
 mod _model_customization_job_summary;
 
 mod _model_data_source;
+
+mod _model_enforcement;
 
 mod _model_import_job_status;
 

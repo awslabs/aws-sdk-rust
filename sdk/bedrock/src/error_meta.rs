@@ -1207,6 +1207,7 @@ impl From<crate::operation::delete_guardrail::DeleteGuardrailError> for Error {
             crate::operation::delete_guardrail::DeleteGuardrailError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_guardrail::DeleteGuardrailError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_guardrail::DeleteGuardrailError::ValidationException(inner) => Error::ValidationException(inner),

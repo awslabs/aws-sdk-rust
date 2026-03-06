@@ -13,6 +13,8 @@ pub struct UpdateFarmInput {
     /// <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p>
     /// </important>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub cost_scale_factor: ::std::option::Option<f32>,
 }
 impl UpdateFarmInput {
     /// <p>The farm ID to update.</p>
@@ -31,6 +33,10 @@ impl UpdateFarmInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn cost_scale_factor(&self) -> ::std::option::Option<f32> {
+        self.cost_scale_factor
+    }
 }
 impl ::std::fmt::Debug for UpdateFarmInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for UpdateFarmInput {
         formatter.field("farm_id", &self.farm_id);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("cost_scale_factor", &self.cost_scale_factor);
         formatter.finish()
     }
 }
@@ -55,6 +62,7 @@ pub struct UpdateFarmInputBuilder {
     pub(crate) farm_id: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) cost_scale_factor: ::std::option::Option<f32>,
 }
 impl UpdateFarmInputBuilder {
     /// <p>The farm ID to update.</p>
@@ -112,12 +120,27 @@ impl UpdateFarmInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn cost_scale_factor(mut self, input: f32) -> Self {
+        self.cost_scale_factor = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.cost_scale_factor = input;
+        self
+    }
+    /// <p>The cost scale factor of the farm to update.</p>
+    pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
+        &self.cost_scale_factor
+    }
     /// Consumes the builder and constructs a [`UpdateFarmInput`](crate::operation::update_farm::UpdateFarmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_farm::UpdateFarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_farm::UpdateFarmInput {
             farm_id: self.farm_id,
             display_name: self.display_name,
             description: self.description,
+            cost_scale_factor: self.cost_scale_factor,
         })
     }
 }
@@ -127,6 +150,7 @@ impl ::std::fmt::Debug for UpdateFarmInputBuilder {
         formatter.field("farm_id", &self.farm_id);
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("cost_scale_factor", &self.cost_scale_factor);
         formatter.finish()
     }
 }

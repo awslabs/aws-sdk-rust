@@ -2231,6 +2231,15 @@ pub(crate) fn slack_oauth2_provider_config_output_correct_errors(
     builder
 }
 
+pub(crate) fn stream_delivery_resources_correct_errors(
+    mut builder: crate::types::builders::StreamDeliveryResourcesBuilder,
+) -> crate::types::builders::StreamDeliveryResourcesBuilder {
+    if builder.resources.is_none() {
+        builder.resources = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn target_summary_correct_errors(
     mut builder: crate::types::builders::TargetSummaryBuilder,
 ) -> crate::types::builders::TargetSummaryBuilder {
@@ -2470,6 +2479,18 @@ pub(crate) fn categorical_scale_definition_correct_errors(
     builder
 }
 
+pub(crate) fn kinesis_resource_correct_errors(
+    mut builder: crate::types::builders::KinesisResourceBuilder,
+) -> crate::types::builders::KinesisResourceBuilder {
+    if builder.data_stream_arn.is_none() {
+        builder.data_stream_arn = Some(Default::default())
+    }
+    if builder.content_configurations.is_none() {
+        builder.content_configurations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn numerical_scale_definition_correct_errors(
     mut builder: crate::types::builders::NumericalScaleDefinitionBuilder,
 ) -> crate::types::builders::NumericalScaleDefinitionBuilder {
@@ -2565,6 +2586,15 @@ pub(crate) fn tool_definition_correct_errors(
             let builder = crate::types::builders::SchemaDefinitionBuilder::default();
             crate::serde_util::schema_definition_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn content_configuration_correct_errors(
+    mut builder: crate::types::builders::ContentConfigurationBuilder,
+) -> crate::types::builders::ContentConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ContentType>().ok()
     }
     builder
 }

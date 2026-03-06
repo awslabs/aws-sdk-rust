@@ -15,6 +15,8 @@ pub struct GetFarmOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key used on the farm.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The cost scale factor applied on the farm.</p>
+    pub cost_scale_factor: f32,
     /// <p>The date and time the resource was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The user or system that created this resource.</p>
@@ -48,6 +50,10 @@ impl GetFarmOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The cost scale factor applied on the farm.</p>
+    pub fn cost_scale_factor(&self) -> f32 {
+        self.cost_scale_factor
+    }
     /// <p>The date and time the resource was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -73,6 +79,7 @@ impl ::std::fmt::Debug for GetFarmOutput {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("cost_scale_factor", &self.cost_scale_factor);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);
@@ -101,6 +108,7 @@ pub struct GetFarmOutputBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) cost_scale_factor: ::std::option::Option<f32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -177,6 +185,21 @@ impl GetFarmOutputBuilder {
     /// <p>The ARN of the KMS key used on the farm.</p>
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
+    }
+    /// <p>The cost scale factor applied on the farm.</p>
+    /// This field is required.
+    pub fn cost_scale_factor(mut self, input: f32) -> Self {
+        self.cost_scale_factor = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cost scale factor applied on the farm.</p>
+    pub fn set_cost_scale_factor(mut self, input: ::std::option::Option<f32>) -> Self {
+        self.cost_scale_factor = input;
+        self
+    }
+    /// <p>The cost scale factor applied on the farm.</p>
+    pub fn get_cost_scale_factor(&self) -> &::std::option::Option<f32> {
+        &self.cost_scale_factor
     }
     /// <p>The date and time the resource was created.</p>
     /// This field is required.
@@ -267,6 +290,7 @@ impl GetFarmOutputBuilder {
             })?,
             description: self.description,
             kms_key_arn: self.kms_key_arn,
+            cost_scale_factor: self.cost_scale_factor.unwrap_or(1_f32),
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -292,6 +316,7 @@ impl ::std::fmt::Debug for GetFarmOutputBuilder {
         formatter.field("display_name", &self.display_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("kms_key_arn", &self.kms_key_arn);
+        formatter.field("cost_scale_factor", &self.cost_scale_factor);
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("updated_at", &self.updated_at);

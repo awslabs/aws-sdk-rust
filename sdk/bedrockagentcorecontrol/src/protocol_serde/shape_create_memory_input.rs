@@ -36,15 +36,21 @@ pub fn ser_create_memory_input_input(
     if let Some(var_10) = &input.name {
         object.key("name").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_11) = &input.stream_delivery_resources {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_12 = object.key("streamDeliveryResources").start_object();
+        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_12.finish();
+        object_14.finish();
     }
     Ok(())
 }

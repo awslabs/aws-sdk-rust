@@ -389,6 +389,8 @@ pub use crate::types::_property_validation_exception_property::PropertyValidatio
 
 pub use crate::types::_voice_call_entry_point_parameters::VoiceCallEntryPointParametersBuilder;
 
+pub use crate::types::_chat_entry_point_parameters::ChatEntryPointParametersBuilder;
+
 pub use crate::types::_auto_accept_config::AutoAcceptConfigBuilder;
 
 pub use crate::types::_after_contact_work_config_per_channel::AfterContactWorkConfigPerChannelBuilder;

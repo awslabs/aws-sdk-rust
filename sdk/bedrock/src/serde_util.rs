@@ -1918,6 +1918,18 @@ pub(crate) fn human_workflow_config_correct_errors(
     builder
 }
 
+pub(crate) fn model_enforcement_correct_errors(
+    mut builder: crate::types::builders::ModelEnforcementBuilder,
+) -> crate::types::builders::ModelEnforcementBuilder {
+    if builder.included_models.is_none() {
+        builder.included_models = Some(Default::default())
+    }
+    if builder.excluded_models.is_none() {
+        builder.excluded_models = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn sage_maker_endpoint_correct_errors(
     mut builder: crate::types::builders::SageMakerEndpointBuilder,
 ) -> crate::types::builders::SageMakerEndpointBuilder {

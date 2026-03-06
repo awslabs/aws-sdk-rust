@@ -1933,6 +1933,8 @@ pub(crate) mod shape_boolean_condition;
 
 pub(crate) mod shape_campaign;
 
+pub(crate) mod shape_chat_entry_point_parameters;
+
 pub(crate) mod shape_chat_metrics;
 
 pub(crate) mod shape_chat_participant_role_config;

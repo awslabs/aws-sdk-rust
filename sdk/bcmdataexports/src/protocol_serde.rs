@@ -55,6 +55,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     }
 }
 
+pub(crate) mod shape_access_denied_exception;
+
 pub(crate) mod shape_create_export_input;
 
 pub(crate) mod shape_delete_export_input;

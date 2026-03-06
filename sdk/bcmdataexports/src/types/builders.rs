@@ -11,17 +11,17 @@ pub use crate::types::_destination_configurations::DestinationConfigurationsBuil
 
 pub use crate::types::_refresh_cadence::RefreshCadenceBuilder;
 
-pub use crate::types::_resource_tag::ResourceTagBuilder;
-
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_column::ColumnBuilder;
 
 pub use crate::types::_execution_reference::ExecutionReferenceBuilder;
 
-pub use crate::types::_export_reference::ExportReferenceBuilder;
-
 pub use crate::types::_table::TableBuilder;
+
+pub use crate::types::_resource_tag::ResourceTagBuilder;
+
+pub use crate::types::_export_reference::ExportReferenceBuilder;
 
 pub use crate::types::_s3_destination::S3DestinationBuilder;
 

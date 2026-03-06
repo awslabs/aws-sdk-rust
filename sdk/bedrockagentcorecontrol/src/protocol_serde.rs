@@ -427,6 +427,8 @@ pub(crate) mod shape_secret;
 
 pub(crate) mod shape_status_reasons;
 
+pub(crate) mod shape_stream_delivery_resources;
+
 pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_target_configuration;
@@ -565,6 +567,8 @@ pub(crate) mod shape_slack_oauth2_provider_config_input;
 
 pub(crate) mod shape_slack_oauth2_provider_config_output;
 
+pub(crate) mod shape_stream_delivery_resource;
+
 pub(crate) mod shape_summary_memory_strategy_input;
 
 pub(crate) mod shape_target_summary;
@@ -609,6 +613,8 @@ pub(crate) mod shape_gateway_api_key_credential_provider;
 
 pub(crate) mod shape_gateway_interception_points;
 
+pub(crate) mod shape_kinesis_resource;
+
 pub(crate) mod shape_lambda_interceptor_configuration;
 
 pub(crate) mod shape_log_group_names_list;
@@ -633,6 +639,8 @@ pub(crate) mod shape_security_groups;
 
 pub(crate) mod shape_service_names_list;
 
+pub(crate) mod shape_stream_delivery_resources_list;
+
 pub(crate) mod shape_subnets;
 
 pub(crate) mod shape_api_gateway_tool_configuration;
@@ -644,6 +652,8 @@ pub(crate) mod shape_bedrock_evaluator_model_config;
 pub(crate) mod shape_categorical_scale_definition;
 
 pub(crate) mod shape_categorical_scale_definitions;
+
+pub(crate) mod shape_content_configuration;
 
 pub(crate) mod shape_episodic_override_configuration_input;
 
@@ -738,6 +748,8 @@ pub(crate) mod shape_trigger_condition_input;
 pub(crate) mod shape_user_preference_override_consolidation_configuration_input;
 
 pub(crate) mod shape_user_preference_override_extraction_configuration_input;
+
+pub(crate) mod shape_content_configuration_list;
 
 pub(crate) mod shape_custom_consolidation_configuration;
 

@@ -12,6 +12,7 @@
 /// ```text
 /// # let testcaseentrypointtype = unimplemented!();
 /// match testcaseentrypointtype {
+///     TestCaseEntryPointType::Chat => { /* ... */ },
 ///     TestCaseEntryPointType::VoiceCall => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum TestCaseEntryPointType {
     #[allow(missing_docs)] // documentation missing in model
+    Chat,
+    #[allow(missing_docs)] // documentation missing in model
     VoiceCall,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum TestCaseEntryPointType {
 impl ::std::convert::From<&str> for TestCaseEntryPointType {
     fn from(s: &str) -> Self {
         match s {
+            "CHAT" => TestCaseEntryPointType::Chat,
             "VOICE_CALL" => TestCaseEntryPointType::VoiceCall,
             other => TestCaseEntryPointType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl TestCaseEntryPointType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TestCaseEntryPointType::Chat => "CHAT",
             TestCaseEntryPointType::VoiceCall => "VOICE_CALL",
             TestCaseEntryPointType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["VOICE_CALL"]
+        &["CHAT", "VOICE_CALL"]
     }
 }
 impl ::std::convert::AsRef<str> for TestCaseEntryPointType {
@@ -95,6 +100,7 @@ impl TestCaseEntryPointType {
 impl ::std::fmt::Display for TestCaseEntryPointType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TestCaseEntryPointType::Chat => write!(f, "CHAT"),
             TestCaseEntryPointType::VoiceCall => write!(f, "VOICE_CALL"),
             TestCaseEntryPointType::Unknown(value) => write!(f, "{value}"),
         }

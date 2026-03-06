@@ -45,6 +45,8 @@ pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineC
 
 pub use crate::types::_metadata_configuration::MetadataConfigurationBuilder;
 
+pub use crate::types::_stream_delivery_resources::StreamDeliveryResourcesBuilder;
+
 pub use crate::types::_memory::MemoryBuilder;
 
 pub use crate::types::_modify_memory_strategies::ModifyMemoryStrategiesBuilder;
@@ -185,6 +187,8 @@ pub use crate::types::_gateway_api_key_credential_provider::GatewayApiKeyCredent
 
 pub use crate::types::_episodic_reflection_configuration_input::EpisodicReflectionConfigurationInputBuilder;
 
+pub use crate::types::_kinesis_resource::KinesisResourceBuilder;
+
 pub use crate::types::_strategy_configuration::StrategyConfigurationBuilder;
 
 pub use crate::types::_modify_strategy_configuration::ModifyStrategyConfigurationBuilder;
@@ -236,6 +240,8 @@ pub use crate::types::_episodic_override_consolidation_configuration_input::Epis
 pub use crate::types::_episodic_override_reflection_configuration_input::EpisodicOverrideReflectionConfigurationInputBuilder;
 
 pub use crate::types::_invocation_configuration_input::InvocationConfigurationInputBuilder;
+
+pub use crate::types::_content_configuration::ContentConfigurationBuilder;
 
 pub use crate::types::_episodic_reflection_configuration::EpisodicReflectionConfigurationBuilder;
 

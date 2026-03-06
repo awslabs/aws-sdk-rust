@@ -17,6 +17,8 @@ pub struct CreateMemoryInput {
     pub event_expiry_duration: ::std::option::Option<i32>,
     /// <p>The memory strategies to use for this memory. Strategies define how information is extracted, processed, and consolidated.</p>
     pub memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -51,6 +53,10 @@ impl CreateMemoryInput {
     pub fn memory_strategies(&self) -> &[crate::types::MemoryStrategyInput] {
         self.memory_strategies.as_deref().unwrap_or_default()
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
+        self.stream_delivery_resources.as_ref()
+    }
     /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -66,6 +72,7 @@ impl ::std::fmt::Debug for CreateMemoryInput {
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -88,6 +95,7 @@ pub struct CreateMemoryInputBuilder {
     pub(crate) memory_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_expiry_duration: ::std::option::Option<i32>,
     pub(crate) memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
+    pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateMemoryInputBuilder {
@@ -197,6 +205,20 @@ impl CreateMemoryInputBuilder {
     pub fn get_memory_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>> {
         &self.memory_strategies
     }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
+        self.stream_delivery_resources = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn set_stream_delivery_resources(mut self, input: ::std::option::Option<crate::types::StreamDeliveryResources>) -> Self {
+        self.stream_delivery_resources = input;
+        self
+    }
+    /// <p>Configuration for streaming memory record data to external resources.</p>
+    pub fn get_stream_delivery_resources(&self) -> &::std::option::Option<crate::types::StreamDeliveryResources> {
+        &self.stream_delivery_resources
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -229,6 +251,7 @@ impl CreateMemoryInputBuilder {
             memory_execution_role_arn: self.memory_execution_role_arn,
             event_expiry_duration: self.event_expiry_duration,
             memory_strategies: self.memory_strategies,
+            stream_delivery_resources: self.stream_delivery_resources,
             tags: self.tags,
         })
     }
@@ -243,6 +266,7 @@ impl ::std::fmt::Debug for CreateMemoryInputBuilder {
         formatter.field("memory_execution_role_arn", &self.memory_execution_role_arn);
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
+        formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

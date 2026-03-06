@@ -621,6 +621,8 @@ pub(crate) mod shape_model_customization_job_summary;
 
 pub(crate) mod shape_model_customization_list;
 
+pub(crate) mod shape_model_enforcement;
+
 pub(crate) mod shape_model_import_job_summary;
 
 pub(crate) mod shape_model_invocation_job_s3_input_data_config;
@@ -823,9 +825,13 @@ pub(crate) mod shape_evaluation_precomputed_retrieve_source_config;
 
 pub(crate) mod shape_evaluation_rag_config_summary;
 
+pub(crate) mod shape_excluded_models_list;
+
 pub(crate) mod shape_guardrail_modalities;
 
 pub(crate) mod shape_guardrail_topic_examples;
+
+pub(crate) mod shape_included_models_list;
 
 pub(crate) mod shape_lambda_grader_config;
 
