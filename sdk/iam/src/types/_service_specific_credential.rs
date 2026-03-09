@@ -6,7 +6,7 @@
 pub struct ServiceSpecificCredential {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the service-specific credential were created.</p>
     pub create_date: ::aws_smithy_types::DateTime,
-    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys and CloudWatch Logs API keys that were created with an expiration period.</p>
     pub expiration_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The name of the service associated with the service-specific credential.</p>
     pub service_name: ::std::string::String,
@@ -14,9 +14,9 @@ pub struct ServiceSpecificCredential {
     pub service_user_name: ::std::string::String,
     /// <p>The generated password for the service-specific credential.</p>
     pub service_password: ::std::string::String,
-    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
     pub service_credential_alias: ::std::option::Option<::std::string::String>,
-    /// <p>For Bedrock API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
     pub service_credential_secret: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the service-specific credential.</p>
     pub service_specific_credential_id: ::std::string::String,
@@ -30,7 +30,7 @@ impl ServiceSpecificCredential {
     pub fn create_date(&self) -> &::aws_smithy_types::DateTime {
         &self.create_date
     }
-    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys and CloudWatch Logs API keys that were created with an expiration period.</p>
     pub fn expiration_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_date.as_ref()
     }
@@ -49,11 +49,11 @@ impl ServiceSpecificCredential {
         use std::ops::Deref;
         self.service_password.deref()
     }
-    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
     pub fn service_credential_alias(&self) -> ::std::option::Option<&str> {
         self.service_credential_alias.as_deref()
     }
-    /// <p>For Bedrock API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
     pub fn service_credential_secret(&self) -> ::std::option::Option<&str> {
         self.service_credential_secret.as_deref()
     }
@@ -126,17 +126,17 @@ impl ServiceSpecificCredentialBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
-    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys and CloudWatch Logs API keys that were created with an expiration period.</p>
     pub fn expiration_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys and CloudWatch Logs API keys that were created with an expiration period.</p>
     pub fn set_expiration_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_date = input;
         self
     }
-    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys that were created with an expiration period.</p>
+    /// <p>The date and time when the service specific credential expires. This field is only present for Bedrock API keys and CloudWatch Logs API keys that were created with an expiration period.</p>
     pub fn get_expiration_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_date
     }
@@ -183,31 +183,31 @@ impl ServiceSpecificCredentialBuilder {
     pub fn get_service_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_password
     }
-    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
     pub fn service_credential_alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_credential_alias = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
     pub fn set_service_credential_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_credential_alias = input;
         self
     }
-    /// <p>For Bedrock API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the public portion of the credential that includes the IAM user name and a suffix containing version and creation information.</p>
     pub fn get_service_credential_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_credential_alias
     }
-    /// <p>For Bedrock API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
     pub fn service_credential_secret(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.service_credential_secret = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For Bedrock API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
     pub fn set_service_credential_secret(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.service_credential_secret = input;
         self
     }
-    /// <p>For Bedrock API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
+    /// <p>For Bedrock API keys and CloudWatch Logs API keys, this is the secret portion of the credential that should be used to authenticate API calls. This value is returned only when the credential is created.</p>
     pub fn get_service_credential_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_credential_secret
     }

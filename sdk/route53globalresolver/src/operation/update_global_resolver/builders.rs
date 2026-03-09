@@ -22,7 +22,9 @@ impl crate::operation::update_global_resolver::builders::UpdateGlobalResolverInp
 }
 /// Fluent builder constructing a request to `UpdateGlobalResolver`.
 ///
-/// <p>Updates the configuration of a Route 53 Global Resolver instance. You can modify the name, description, and observability region.</p>
+/// <p>Updates the configuration of a Route 53 Global Resolver instance. You can modify the name, description, and observability Region.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateGlobalResolverFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,17 +138,17 @@ impl UpdateGlobalResolverFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn observability_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.observability_region(input.into());
         self
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn set_observability_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_observability_region(input);
         self
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn get_observability_region(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_observability_region()
     }
@@ -163,5 +165,19 @@ impl UpdateGlobalResolverFluentBuilder {
     /// <p>The description of the Global Resolver.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
+    }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn ip_address_type(mut self, input: crate::types::GlobalResolverIpAddressType) -> Self {
+        self.inner = self.inner.ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::GlobalResolverIpAddressType>) -> Self {
+        self.inner = self.inner.set_ip_address_type(input);
+        self
+    }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
+        self.inner.get_ip_address_type()
     }
 }

@@ -19,7 +19,7 @@ pub struct UpdateFirewallRuleInput {
     pub confidence_threshold: ::std::option::Option<crate::types::ConfidenceThreshold>,
     /// <p>The description for the Firewall rule.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub dns_advanced_protection: ::std::option::Option<crate::types::DnsAdvancedProtection>,
     /// <p>The ID of the DNS Firewall rule.</p>
     pub firewall_rule_id: ::std::option::Option<::std::string::String>,
@@ -61,7 +61,7 @@ impl UpdateFirewallRuleInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn dns_advanced_protection(&self) -> ::std::option::Option<&crate::types::DnsAdvancedProtection> {
         self.dns_advanced_protection.as_ref()
     }
@@ -216,17 +216,17 @@ impl UpdateFirewallRuleInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn dns_advanced_protection(mut self, input: crate::types::DnsAdvancedProtection) -> Self {
         self.dns_advanced_protection = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn set_dns_advanced_protection(mut self, input: ::std::option::Option<crate::types::DnsAdvancedProtection>) -> Self {
         self.dns_advanced_protection = input;
         self
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn get_dns_advanced_protection(&self) -> &::std::option::Option<crate::types::DnsAdvancedProtection> {
         &self.dns_advanced_protection
     }

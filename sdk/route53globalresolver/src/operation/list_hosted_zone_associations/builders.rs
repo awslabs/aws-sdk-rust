@@ -22,7 +22,9 @@ impl crate::operation::list_hosted_zone_associations::builders::ListHostedZoneAs
 }
 /// Fluent builder constructing a request to `ListHostedZoneAssociations`.
 ///
-/// <p>Lists all hosted zone associations for a Route 53 Global Resolver resource with pagination support.</p>
+/// <p>Lists all hosted zone associations for a Route 53 Global Resolver resource with pagination support.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListHostedZoneAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

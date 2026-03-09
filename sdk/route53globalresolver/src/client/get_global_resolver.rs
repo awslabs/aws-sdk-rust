@@ -9,14 +9,16 @@ impl super::Client {
     ///   - [`arn(String)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::arn): <p>The Amazon Resource Name (ARN) of the Global Resolver.</p>
     ///   - [`client_token(String)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::client_token): <p>A unique, case-sensitive identifier to ensure idempotency. This means that making the same request multiple times with the same <code>clientToken</code> has the same result every time.</p>
     ///   - [`dns_name(String)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::dns_name): <p>The hostname used by the customers' DNS clients for certification validation.</p>
-    ///   - [`observability_region(Option<String>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::observability_region): <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    ///   - [`observability_region(Option<String>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::observability_region): <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     ///   - [`name(String)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::name): <p>The name of the Global Resolver.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::description): <p>The description of the Global Resolver.</p>
-    ///   - [`regions(Vec::<String>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::regions): <p>The AWS Regions in which the Global Resolver operate.</p>
+    ///   - [`regions(Vec::<String>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::regions): <p>The Amazon Web Services Regions in which the Global Resolver operate.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::created_at): <p>The date and time the Global Resolver was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::updated_at): <p>The date and time the Global Resolver was updated.</p>
     ///   - [`status(CrResourceStatus)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::status): <p>The operational status of the Global Resolver.</p>
     ///   - [`ipv4_addresses(Vec::<String>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::ipv4_addresses): <p>List of anycast IPv4 addresses associated with the Global Resolver instance.</p>
+    ///   - [`ipv6_addresses(Option<Vec::<String>>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::ipv6_addresses): <p>List of anycast IPv6 addresses associated with the Global Resolver instance. This field is only populated when ipAddressType is DUAL_STACK.</p>
+    ///   - [`ip_address_type(Option<GlobalResolverIpAddressType>)`](crate::operation::get_global_resolver::GetGlobalResolverOutput::ip_address_type): <p>The IP address type configured for the Global Resolver.</p>
     /// - On failure, responds with [`SdkError<GetGlobalResolverError>`](crate::operation::get_global_resolver::GetGlobalResolverError)
     pub fn get_global_resolver(&self) -> crate::operation::get_global_resolver::builders::GetGlobalResolverFluentBuilder {
         crate::operation::get_global_resolver::builders::GetGlobalResolverFluentBuilder::new(self.handle.clone())

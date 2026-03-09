@@ -22,7 +22,9 @@ impl crate::operation::disable_dns_view::builders::DisableDnsViewInputBuilder {
 }
 /// Fluent builder constructing a request to `DisableDNSView`.
 ///
-/// <p>Disables a DNS view, preventing it from serving DNS queries.</p>
+/// <p>Disables a DNS view, preventing it from serving DNS queries.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisableDNSViewFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -388,4 +388,18 @@ impl UpdateReplicationConfigurationFluentBuilder {
     pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
         self.inner.get_internet_protocol()
     }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn store_snapshot_on_local_zone(mut self, input: bool) -> Self {
+        self.inner = self.inner.store_snapshot_on_local_zone(input);
+        self
+    }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn set_store_snapshot_on_local_zone(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_store_snapshot_on_local_zone(input);
+        self
+    }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
+        self.inner.get_store_snapshot_on_local_zone()
+    }
 }

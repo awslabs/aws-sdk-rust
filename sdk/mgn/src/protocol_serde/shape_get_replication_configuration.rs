@@ -208,6 +208,9 @@ pub(crate) fn de_get_replication_configuration(
                 "stagingAreaTags" => {
                     builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value)?);
                 }
+                "storeSnapshotOnLocalZone" => {
+                    builder = builder.set_store_snapshot_on_local_zone(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "useDedicatedReplicationServer" => {
                     builder =
                         builder.set_use_dedicated_replication_server(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

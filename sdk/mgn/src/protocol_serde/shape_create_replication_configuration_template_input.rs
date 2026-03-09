@@ -55,21 +55,24 @@ pub fn ser_create_replication_configuration_template_input_input(
         }
         object_15.finish();
     }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_18) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_18);
+    }
+    if let Some(var_19) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_19.finish();
+        object_20.finish();
     }
-    if let Some(var_22) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_22);
+    if let Some(var_23) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_23);
     }
-    if let Some(var_23) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_23);
+    if let Some(var_24) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_24);
     }
     Ok(())
 }

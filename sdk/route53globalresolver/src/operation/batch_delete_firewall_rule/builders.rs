@@ -22,7 +22,9 @@ impl crate::operation::batch_delete_firewall_rule::builders::BatchDeleteFirewall
 }
 /// Fluent builder constructing a request to `BatchDeleteFirewallRule`.
 ///
-/// <p>Deletes multiple DNS firewall rules in a single operation. This is more efficient than deleting rules individually.</p>
+/// <p>Deletes multiple DNS firewall rules in a single operation. This is more efficient than deleting rules individually.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchDeleteFirewallRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -25,6 +25,8 @@ pub use crate::types::_confidence_threshold::ConfidenceThreshold;
 
 pub use crate::types::_dns_advanced_protection::DnsAdvancedProtection;
 
+pub use crate::types::_global_resolver_ip_address_type::GlobalResolverIpAddressType;
+
 pub use crate::types::_hosted_zone_association_status::HostedZoneAssociationStatus;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
@@ -112,6 +114,8 @@ mod _firewall_rule_action;
 mod _firewall_rules_fail_open_type;
 
 mod _firewall_rules_item;
+
+mod _global_resolver_ip_address_type;
 
 mod _global_resolvers_item;
 

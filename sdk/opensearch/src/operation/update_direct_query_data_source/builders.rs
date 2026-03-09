@@ -169,4 +169,18 @@ impl UpdateDirectQueryDataSourceFluentBuilder {
     pub fn get_open_search_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_open_search_arns()
     }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn data_source_access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.data_source_access_policy(input.into());
+        self
+    }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn set_data_source_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_data_source_access_policy(input);
+        self
+    }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn get_data_source_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_data_source_access_policy()
+    }
 }

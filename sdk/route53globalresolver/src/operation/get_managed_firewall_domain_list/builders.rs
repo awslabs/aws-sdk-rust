@@ -22,7 +22,9 @@ impl crate::operation::get_managed_firewall_domain_list::builders::GetManagedFir
 }
 /// Fluent builder constructing a request to `GetManagedFirewallDomainList`.
 ///
-/// <p>Retrieves information about an AWS-managed firewall domain list. Managed domain lists contain domains associated with malicious activity, content categories, or specific threats.</p>
+/// <p>Retrieves information about an Amazon Web Services-managed firewall domain list. Managed domain lists contain domains associated with malicious activity, content categories, or specific threats.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetManagedFirewallDomainListFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

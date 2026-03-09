@@ -9,6 +9,9 @@ pub fn ser_data_source(
     if let Some(var_2) = &input.data_source_description {
         object.key("dataSourceDescription").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.iam_role_for_data_source_arn {
+        object.key("iamRoleForDataSourceArn").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -37,6 +40,13 @@ where
                         }
                         "dataSourceDescription" => {
                             builder = builder.set_data_source_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "iamRoleForDataSourceArn" => {
+                            builder = builder.set_iam_role_for_data_source_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

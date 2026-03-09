@@ -79,11 +79,14 @@ pub fn ser_update_replication_configuration_input_input(
         }
         object_22.finish();
     }
-    if let Some(var_25) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_25);
+    if let Some(var_25) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_25);
     }
-    if let Some(var_26) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_26);
+    if let Some(var_26) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_26);
+    }
+    if let Some(var_27) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_27);
     }
     Ok(())
 }

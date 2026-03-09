@@ -11,6 +11,8 @@ pub struct UpdateDirectQueryDataSourceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
     pub open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub data_source_access_policy: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDirectQueryDataSourceInput {
     /// <p>A unique, user-defined label to identify the data source within your OpenSearch Service environment.</p>
@@ -31,6 +33,10 @@ impl UpdateDirectQueryDataSourceInput {
     pub fn open_search_arns(&self) -> &[::std::string::String] {
         self.open_search_arns.as_deref().unwrap_or_default()
     }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn data_source_access_policy(&self) -> ::std::option::Option<&str> {
+        self.data_source_access_policy.as_deref()
+    }
 }
 impl UpdateDirectQueryDataSourceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDirectQueryDataSourceInput`](crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceInput).
@@ -47,6 +53,7 @@ pub struct UpdateDirectQueryDataSourceInputBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::DirectQueryDataSourceType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_source_access_policy: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDirectQueryDataSourceInputBuilder {
     /// <p>A unique, user-defined label to identify the data source within your OpenSearch Service environment.</p>
@@ -113,6 +120,20 @@ impl UpdateDirectQueryDataSourceInputBuilder {
     pub fn get_open_search_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.open_search_arns
     }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn data_source_access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_access_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn set_data_source_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_access_policy = input;
+        self
+    }
+    /// <p>An optional IAM access policy document that defines the updated permissions for accessing the direct query data source. The policy document must be in valid JSON format and follow IAM policy syntax. If not specified, the existing access policy if present remains unchanged.</p>
+    pub fn get_data_source_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_access_policy
+    }
     /// Consumes the builder and constructs a [`UpdateDirectQueryDataSourceInput`](crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceInput).
     pub fn build(
         self,
@@ -125,6 +146,7 @@ impl UpdateDirectQueryDataSourceInputBuilder {
             data_source_type: self.data_source_type,
             description: self.description,
             open_search_arns: self.open_search_arns,
+            data_source_access_policy: self.data_source_access_policy,
         })
     }
 }

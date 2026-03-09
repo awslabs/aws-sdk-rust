@@ -2447,6 +2447,9 @@ impl From<crate::operation::update_direct_query_data_source::UpdateDirectQueryDa
             crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
+            crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
             crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

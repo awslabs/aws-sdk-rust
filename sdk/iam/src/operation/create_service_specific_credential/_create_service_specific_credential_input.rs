@@ -8,7 +8,7 @@ pub struct CreateServiceSpecificCredentialInput {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The service you specify here is the only service that can be accessed using these credentials.</p>
     pub service_name: ::std::option::Option<::std::string::String>,
-    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock API keys and must be a positive integer. When not specified, the credential will not expire.</p>
+    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock and CloudWatch Logs API keys and must be a positive integer. When not specified, the credential will not expire.</p>
     pub credential_age_days: ::std::option::Option<i32>,
 }
 impl CreateServiceSpecificCredentialInput {
@@ -21,7 +21,7 @@ impl CreateServiceSpecificCredentialInput {
     pub fn service_name(&self) -> ::std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock API keys and must be a positive integer. When not specified, the credential will not expire.</p>
+    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock and CloudWatch Logs API keys and must be a positive integer. When not specified, the credential will not expire.</p>
     pub fn credential_age_days(&self) -> ::std::option::Option<i32> {
         self.credential_age_days
     }
@@ -75,17 +75,17 @@ impl CreateServiceSpecificCredentialInputBuilder {
     pub fn get_service_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_name
     }
-    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock API keys and must be a positive integer. When not specified, the credential will not expire.</p>
+    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock and CloudWatch Logs API keys and must be a positive integer. When not specified, the credential will not expire.</p>
     pub fn credential_age_days(mut self, input: i32) -> Self {
         self.credential_age_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock API keys and must be a positive integer. When not specified, the credential will not expire.</p>
+    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock and CloudWatch Logs API keys and must be a positive integer. When not specified, the credential will not expire.</p>
     pub fn set_credential_age_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.credential_age_days = input;
         self
     }
-    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock API keys and must be a positive integer. When not specified, the credential will not expire.</p>
+    /// <p>The number of days until the service specific credential expires. This field is only valid for Bedrock and CloudWatch Logs API keys and must be a positive integer. When not specified, the credential will not expire.</p>
     pub fn get_credential_age_days(&self) -> &::std::option::Option<i32> {
         &self.credential_age_days
     }

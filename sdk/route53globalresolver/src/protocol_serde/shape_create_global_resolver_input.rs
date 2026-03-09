@@ -9,30 +9,33 @@ pub fn ser_create_global_resolver_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.observability_region {
-        object.key("observabilityRegion").string(var_4.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.regions {
-        let mut array_6 = object.key("regions").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.observability_region {
+        object.key("observabilityRegion").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.regions {
+        let mut array_7 = object.key("regions").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
     Ok(())
 }

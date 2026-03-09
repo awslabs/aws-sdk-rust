@@ -11,6 +11,8 @@ pub struct AddDirectQueryDataSourceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
     pub open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.</p>
+    pub data_source_access_policy: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags attached to a domain.</p>
     pub tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -32,6 +34,10 @@ impl AddDirectQueryDataSourceInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_search_arns.is_none()`.
     pub fn open_search_arns(&self) -> &[::std::string::String] {
         self.open_search_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.</p>
+    pub fn data_source_access_policy(&self) -> ::std::option::Option<&str> {
+        self.data_source_access_policy.as_deref()
     }
     /// <p>A list of tags attached to a domain.</p>
     ///
@@ -55,6 +61,7 @@ pub struct AddDirectQueryDataSourceInputBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::DirectQueryDataSourceType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_source_access_policy: ::std::option::Option<::std::string::String>,
     pub(crate) tag_list: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl AddDirectQueryDataSourceInputBuilder {
@@ -122,6 +129,20 @@ impl AddDirectQueryDataSourceInputBuilder {
     pub fn get_open_search_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.open_search_arns
     }
+    /// <p>An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.</p>
+    pub fn data_source_access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_access_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.</p>
+    pub fn set_data_source_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_access_policy = input;
+        self
+    }
+    /// <p>An optional IAM access policy document that defines the permissions for accessing the data source. The policy document must be in valid JSON format and follow IAM policy syntax.</p>
+    pub fn get_data_source_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_access_policy
+    }
     /// Appends an item to `tag_list`.
     ///
     /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
@@ -154,6 +175,7 @@ impl AddDirectQueryDataSourceInputBuilder {
             data_source_type: self.data_source_type,
             description: self.description,
             open_search_arns: self.open_search_arns,
+            data_source_access_policy: self.data_source_access_policy,
             tag_list: self.tag_list,
         })
     }

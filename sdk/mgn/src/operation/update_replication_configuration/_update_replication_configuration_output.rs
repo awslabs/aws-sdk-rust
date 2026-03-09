@@ -37,6 +37,8 @@ pub struct UpdateReplicationConfigurationOutput {
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Replication Configuration internet protocol.</p>
     pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
+    /// <p>Replication Configuration store snapshot on local zone.</p>
+    pub store_snapshot_on_local_zone: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateReplicationConfigurationOutput {
@@ -112,6 +114,10 @@ impl UpdateReplicationConfigurationOutput {
     pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
         self.internet_protocol.as_ref()
     }
+    /// <p>Replication Configuration store snapshot on local zone.</p>
+    pub fn store_snapshot_on_local_zone(&self) -> ::std::option::Option<bool> {
+        self.store_snapshot_on_local_zone
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -133,6 +139,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationOutput {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("internet_protocol", &self.internet_protocol);
+        formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -170,6 +177,7 @@ pub struct UpdateReplicationConfigurationOutputBuilder {
     pub(crate) staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
+    pub(crate) store_snapshot_on_local_zone: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl UpdateReplicationConfigurationOutputBuilder {
@@ -442,6 +450,20 @@ impl UpdateReplicationConfigurationOutputBuilder {
     pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
         &self.internet_protocol
     }
+    /// <p>Replication Configuration store snapshot on local zone.</p>
+    pub fn store_snapshot_on_local_zone(mut self, input: bool) -> Self {
+        self.store_snapshot_on_local_zone = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Replication Configuration store snapshot on local zone.</p>
+    pub fn set_store_snapshot_on_local_zone(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.store_snapshot_on_local_zone = input;
+        self
+    }
+    /// <p>Replication Configuration store snapshot on local zone.</p>
+    pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
+        &self.store_snapshot_on_local_zone
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -471,6 +493,7 @@ impl UpdateReplicationConfigurationOutputBuilder {
             staging_area_tags: self.staging_area_tags,
             use_fips_endpoint: self.use_fips_endpoint,
             internet_protocol: self.internet_protocol,
+            store_snapshot_on_local_zone: self.store_snapshot_on_local_zone,
             _request_id: self._request_id,
         }
     }
@@ -495,6 +518,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationOutputBuilder {
         formatter.field("staging_area_tags", &"*** Sensitive Data Redacted ***");
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("internet_protocol", &self.internet_protocol);
+        formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

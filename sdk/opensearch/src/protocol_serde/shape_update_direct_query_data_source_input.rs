@@ -3,23 +3,26 @@ pub fn ser_update_direct_query_data_source_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.data_source_type {
+    if let Some(var_1) = &input.data_source_access_policy {
+        object.key("DataSourceAccessPolicy").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.data_source_type {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("DataSourceType").start_object();
-        crate::protocol_serde::shape_direct_query_data_source_type::ser_direct_query_data_source_type(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("DataSourceType").start_object();
+        crate::protocol_serde::shape_direct_query_data_source_type::ser_direct_query_data_source_type(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.description {
-        object.key("Description").string(var_3.as_str());
+    if let Some(var_4) = &input.description {
+        object.key("Description").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.open_search_arns {
-        let mut array_5 = object.key("OpenSearchArns").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.open_search_arns {
+        let mut array_6 = object.key("OpenSearchArns").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

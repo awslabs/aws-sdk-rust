@@ -7,10 +7,12 @@ pub struct UpdateGlobalResolverInput {
     pub global_resolver_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Global Resolver.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub observability_region: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Global Resolver.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
 }
 impl UpdateGlobalResolverInput {
     /// <p>The ID of the Global Resolver.</p>
@@ -21,13 +23,17 @@ impl UpdateGlobalResolverInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn observability_region(&self) -> ::std::option::Option<&str> {
         self.observability_region.as_deref()
     }
     /// <p>The description of the Global Resolver.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::GlobalResolverIpAddressType> {
+        self.ip_address_type.as_ref()
     }
 }
 impl UpdateGlobalResolverInput {
@@ -45,6 +51,7 @@ pub struct UpdateGlobalResolverInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) observability_region: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
 }
 impl UpdateGlobalResolverInputBuilder {
     /// <p>The ID of the Global Resolver.</p>
@@ -76,17 +83,17 @@ impl UpdateGlobalResolverInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn observability_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn set_observability_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_region = input;
         self
     }
-    /// <p>The AWS Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
+    /// <p>The Amazon Web Services Regions in which the users' Global Resolver query resolution logs will be propagated.</p>
     pub fn get_observability_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_region
     }
@@ -104,6 +111,20 @@ impl UpdateGlobalResolverInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn ip_address_type(mut self, input: crate::types::GlobalResolverIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::GlobalResolverIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type for the Global Resolver. Valid values are IPV4 or DUAL_STACK for both IPv4 and IPv6 support.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
+        &self.ip_address_type
+    }
     /// Consumes the builder and constructs a [`UpdateGlobalResolverInput`](crate::operation::update_global_resolver::UpdateGlobalResolverInput).
     pub fn build(
         self,
@@ -114,6 +135,7 @@ impl UpdateGlobalResolverInputBuilder {
             name: self.name,
             observability_region: self.observability_region,
             description: self.description,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

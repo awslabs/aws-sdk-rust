@@ -14,7 +14,7 @@ impl super::Client {
     ///   - [`name(String)`](crate::operation::associate_hosted_zone::AssociateHostedZoneOutput::name): <p>Name for the private hosted zone association.</p>
     ///   - [`created_at(DateTime)`](crate::operation::associate_hosted_zone::AssociateHostedZoneOutput::created_at): <p>The date and time the private hosted zone association was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::associate_hosted_zone::AssociateHostedZoneOutput::updated_at): <p>The date and time the private hosted zone association was modified.</p>
-    ///   - [`status(HostedZoneAssociationStatus)`](crate::operation::associate_hosted_zone::AssociateHostedZoneOutput::status): <p>Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.</p>
+    ///   - [`status(HostedZoneAssociationStatus)`](crate::operation::associate_hosted_zone::AssociateHostedZoneOutput::status): <p>Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global Resolver exists.</p>
     /// - On failure, responds with [`SdkError<AssociateHostedZoneError>`](crate::operation::associate_hosted_zone::AssociateHostedZoneError)
     pub fn associate_hosted_zone(&self) -> crate::operation::associate_hosted_zone::builders::AssociateHostedZoneFluentBuilder {
         crate::operation::associate_hosted_zone::builders::AssociateHostedZoneFluentBuilder::new(self.handle.clone())

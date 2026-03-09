@@ -15,13 +15,17 @@ pub struct CreateGlobalResolverOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The hostname that DNS clients should use for TLS certificate validation when connecting to the Route 53 Global Resolver. This value resolves to the global anycast IP addresses for the resolver.</p>
     pub dns_name: ::std::string::String,
+    /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
+    pub ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
     /// <p>The global anycast IPv4 addresses associated with the Route 53 Global Resolver. DNS clients can send queries to these addresses from anywhere on the internet.</p>
     pub ipv4_addresses: ::std::vec::Vec<::std::string::String>,
+    /// <p>The global anycast IPv6 addresses associated with the Route 53 Global Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS clients can send queries to these addresses from anywhere on the internet.</p>
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The name of the Route 53 Global Resolver.</p>
     pub name: ::std::string::String,
-    /// <p>The AWS Region where observability data for the Route 53 Global Resolver is stored.</p>
+    /// <p>The Amazon Web Services Region where observability data for the Route 53 Global Resolver is stored.</p>
     pub observability_region: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Regions where the Route 53 Global Resolver is deployed and operational.</p>
+    /// <p>The Amazon Web Services Regions where the Route 53 Global Resolver is deployed and operational.</p>
     pub regions: ::std::vec::Vec<::std::string::String>,
     /// <p>The current status of the Route 53 Global Resolver. Possible values are CREATING (being provisioned), UPDATING (being modified), OPERATIONAL (ready to serve queries), or DELETING (being removed).</p>
     pub status: crate::types::CrResourceStatus,
@@ -58,21 +62,31 @@ impl CreateGlobalResolverOutput {
         use std::ops::Deref;
         self.dns_name.deref()
     }
+    /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::GlobalResolverIpAddressType> {
+        self.ip_address_type.as_ref()
+    }
     /// <p>The global anycast IPv4 addresses associated with the Route 53 Global Resolver. DNS clients can send queries to these addresses from anywhere on the internet.</p>
     pub fn ipv4_addresses(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.ipv4_addresses.deref()
+    }
+    /// <p>The global anycast IPv6 addresses associated with the Route 53 Global Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS clients can send queries to these addresses from anywhere on the internet.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The name of the Route 53 Global Resolver.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The AWS Region where observability data for the Route 53 Global Resolver is stored.</p>
+    /// <p>The Amazon Web Services Region where observability data for the Route 53 Global Resolver is stored.</p>
     pub fn observability_region(&self) -> ::std::option::Option<&str> {
         self.observability_region.as_deref()
     }
-    /// <p>The AWS Regions where the Route 53 Global Resolver is deployed and operational.</p>
+    /// <p>The Amazon Web Services Regions where the Route 53 Global Resolver is deployed and operational.</p>
     pub fn regions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.regions.deref()
@@ -108,7 +122,9 @@ pub struct CreateGlobalResolverOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
     pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) observability_region: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -206,6 +222,20 @@ impl CreateGlobalResolverOutputBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
+    /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
+    pub fn ip_address_type(mut self, input: crate::types::GlobalResolverIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::GlobalResolverIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
+        &self.ip_address_type
+    }
     /// Appends an item to `ipv4_addresses`.
     ///
     /// To override the contents of this collection use [`set_ipv4_addresses`](Self::set_ipv4_addresses).
@@ -226,6 +256,26 @@ impl CreateGlobalResolverOutputBuilder {
     pub fn get_ipv4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv4_addresses
     }
+    /// Appends an item to `ipv6_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+    ///
+    /// <p>The global anycast IPv6 addresses associated with the Route 53 Global Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS clients can send queries to these addresses from anywhere on the internet.</p>
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv6_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.ipv6_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The global anycast IPv6 addresses associated with the Route 53 Global Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS clients can send queries to these addresses from anywhere on the internet.</p>
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input;
+        self
+    }
+    /// <p>The global anycast IPv6 addresses associated with the Route 53 Global Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS clients can send queries to these addresses from anywhere on the internet.</p>
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
+    }
     /// <p>The name of the Route 53 Global Resolver.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -241,17 +291,17 @@ impl CreateGlobalResolverOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The AWS Region where observability data for the Route 53 Global Resolver is stored.</p>
+    /// <p>The Amazon Web Services Region where observability data for the Route 53 Global Resolver is stored.</p>
     pub fn observability_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where observability data for the Route 53 Global Resolver is stored.</p>
+    /// <p>The Amazon Web Services Region where observability data for the Route 53 Global Resolver is stored.</p>
     pub fn set_observability_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_region = input;
         self
     }
-    /// <p>The AWS Region where observability data for the Route 53 Global Resolver is stored.</p>
+    /// <p>The Amazon Web Services Region where observability data for the Route 53 Global Resolver is stored.</p>
     pub fn get_observability_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_region
     }
@@ -259,19 +309,19 @@ impl CreateGlobalResolverOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>The AWS Regions where the Route 53 Global Resolver is deployed and operational.</p>
+    /// <p>The Amazon Web Services Regions where the Route 53 Global Resolver is deployed and operational.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Regions where the Route 53 Global Resolver is deployed and operational.</p>
+    /// <p>The Amazon Web Services Regions where the Route 53 Global Resolver is deployed and operational.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>The AWS Regions where the Route 53 Global Resolver is deployed and operational.</p>
+    /// <p>The Amazon Web Services Regions where the Route 53 Global Resolver is deployed and operational.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }
@@ -362,12 +412,14 @@ impl CreateGlobalResolverOutputBuilder {
                     "dns_name was not specified but it is required when building CreateGlobalResolverOutput",
                 )
             })?,
+            ip_address_type: self.ip_address_type,
             ipv4_addresses: self.ipv4_addresses.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ipv4_addresses",
                     "ipv4_addresses was not specified but it is required when building CreateGlobalResolverOutput",
                 )
             })?,
+            ipv6_addresses: self.ipv6_addresses,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",

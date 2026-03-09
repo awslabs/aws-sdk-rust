@@ -615,6 +615,9 @@ impl From<crate::operation::disable_dns_view::DisableDNSViewError> for Error {
             crate::operation::disable_dns_view::DisableDNSViewError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::disable_dns_view::DisableDNSViewError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::disable_dns_view::DisableDNSViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disable_dns_view::DisableDNSViewError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::disable_dns_view::DisableDNSViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::disable_dns_view::DisableDNSViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::disable_dns_view::DisableDNSViewError::Unhandled(inner) => Error::Unhandled(inner),
@@ -677,6 +680,9 @@ impl From<crate::operation::enable_dns_view::EnableDNSViewError> for Error {
             crate::operation::enable_dns_view::EnableDNSViewError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::enable_dns_view::EnableDNSViewError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::enable_dns_view::EnableDNSViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::enable_dns_view::EnableDNSViewError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::enable_dns_view::EnableDNSViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::enable_dns_view::EnableDNSViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::enable_dns_view::EnableDNSViewError::Unhandled(inner) => Error::Unhandled(inner),
@@ -959,6 +965,9 @@ impl From<crate::operation::import_firewall_domains::ImportFirewallDomainsError>
             }
             crate::operation::import_firewall_domains::ImportFirewallDomainsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::import_firewall_domains::ImportFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::import_firewall_domains::ImportFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1376,6 +1385,9 @@ impl From<crate::operation::update_access_token::UpdateAccessTokenError> for Err
             crate::operation::update_access_token::UpdateAccessTokenError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_access_token::UpdateAccessTokenError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_access_token::UpdateAccessTokenError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_access_token::UpdateAccessTokenError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_access_token::UpdateAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1403,6 +1415,9 @@ impl From<crate::operation::update_dns_view::UpdateDNSViewError> for Error {
             crate::operation::update_dns_view::UpdateDNSViewError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_dns_view::UpdateDNSViewError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_dns_view::UpdateDNSViewError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_dns_view::UpdateDNSViewError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_dns_view::UpdateDNSViewError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_dns_view::UpdateDNSViewError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_dns_view::UpdateDNSViewError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1438,6 +1453,9 @@ impl From<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>
             crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_firewall_domains::UpdateFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_firewall_domains::UpdateFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
@@ -1466,6 +1484,9 @@ impl From<crate::operation::update_firewall_rule::UpdateFirewallRuleError> for E
             crate::operation::update_firewall_rule::UpdateFirewallRuleError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_firewall_rule::UpdateFirewallRuleError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_firewall_rule::UpdateFirewallRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_firewall_rule::UpdateFirewallRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_firewall_rule::UpdateFirewallRuleError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1497,6 +1518,9 @@ impl From<crate::operation::update_global_resolver::UpdateGlobalResolverError> f
             }
             crate::operation::update_global_resolver::UpdateGlobalResolverError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_global_resolver::UpdateGlobalResolverError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_global_resolver::UpdateGlobalResolverError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_global_resolver::UpdateGlobalResolverError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1539,6 +1563,9 @@ impl From<crate::operation::update_hosted_zone_association::UpdateHostedZoneAsso
             }
             crate::operation::update_hosted_zone_association::UpdateHostedZoneAssociationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_hosted_zone_association::UpdateHostedZoneAssociationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_hosted_zone_association::UpdateHostedZoneAssociationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

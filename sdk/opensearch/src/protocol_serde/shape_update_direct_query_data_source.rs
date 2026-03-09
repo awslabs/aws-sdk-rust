@@ -68,6 +68,21 @@ pub fn de_update_direct_query_data_source_http_error(
             }
             tmp
         }),
+        "LimitExceededException" => crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ResourceNotFoundException" => {
             crate::operation::update_direct_query_data_source::UpdateDirectQueryDataSourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]

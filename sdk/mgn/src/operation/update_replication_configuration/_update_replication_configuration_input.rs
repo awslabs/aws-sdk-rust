@@ -39,6 +39,8 @@ pub struct UpdateReplicationConfigurationInput {
     pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration internet protocol.</p>
     pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub store_snapshot_on_local_zone: ::std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -117,6 +119,10 @@ impl UpdateReplicationConfigurationInput {
     pub fn internet_protocol(&self) -> ::std::option::Option<&crate::types::InternetProtocol> {
         self.internet_protocol.as_ref()
     }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn store_snapshot_on_local_zone(&self) -> ::std::option::Option<bool> {
+        self.store_snapshot_on_local_zone
+    }
 }
 impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -139,6 +145,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInput {
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("account_id", &self.account_id);
         formatter.field("internet_protocol", &self.internet_protocol);
+        formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
         formatter.finish()
     }
 }
@@ -171,6 +178,7 @@ pub struct UpdateReplicationConfigurationInputBuilder {
     pub(crate) use_fips_endpoint: ::std::option::Option<bool>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
+    pub(crate) store_snapshot_on_local_zone: ::std::option::Option<bool>,
 }
 impl UpdateReplicationConfigurationInputBuilder {
     /// <p>Update replication configuration Source Server ID request.</p>
@@ -457,6 +465,20 @@ impl UpdateReplicationConfigurationInputBuilder {
     pub fn get_internet_protocol(&self) -> &::std::option::Option<crate::types::InternetProtocol> {
         &self.internet_protocol
     }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn store_snapshot_on_local_zone(mut self, input: bool) -> Self {
+        self.store_snapshot_on_local_zone = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn set_store_snapshot_on_local_zone(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.store_snapshot_on_local_zone = input;
+        self
+    }
+    /// <p>Update replication configuration store snapshot on local zone.</p>
+    pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
+        &self.store_snapshot_on_local_zone
+    }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
     pub fn build(
         self,
@@ -483,6 +505,7 @@ impl UpdateReplicationConfigurationInputBuilder {
             use_fips_endpoint: self.use_fips_endpoint,
             account_id: self.account_id,
             internet_protocol: self.internet_protocol,
+            store_snapshot_on_local_zone: self.store_snapshot_on_local_zone,
         })
     }
 }
@@ -507,6 +530,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationInputBuilder {
         formatter.field("use_fips_endpoint", &self.use_fips_endpoint);
         formatter.field("account_id", &self.account_id);
         formatter.field("internet_protocol", &self.internet_protocol);
+        formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
         formatter.finish()
     }
 }

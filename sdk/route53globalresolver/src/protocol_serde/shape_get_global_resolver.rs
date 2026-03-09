@@ -180,8 +180,18 @@ pub(crate) fn de_get_global_resolver(
                             .transpose()?,
                     );
                 }
+                "ipAddressType" => {
+                    builder = builder.set_ip_address_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::GlobalResolverIpAddressType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "ipv4Addresses" => {
                     builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_addresses::de_ipv4_addresses(tokens, _value)?);
+                }
+                "ipv6Addresses" => {
+                    builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_addresses::de_ipv6_addresses(tokens, _value)?);
                 }
                 "name" => {
                     builder = builder.set_name(

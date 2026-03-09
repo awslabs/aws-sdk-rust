@@ -121,6 +121,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "storeSnapshotOnLocalZone" => {
+                            builder =
+                                builder.set_store_snapshot_on_local_zone(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

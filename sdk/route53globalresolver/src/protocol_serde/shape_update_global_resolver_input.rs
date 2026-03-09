@@ -6,11 +6,14 @@ pub fn ser_update_global_resolver_input_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.ip_address_type {
+        object.key("ipAddressType").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.observability_region {
-        object.key("observabilityRegion").string(var_3.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.observability_region {
+        object.key("observabilityRegion").string(var_4.as_str());
     }
     Ok(())
 }

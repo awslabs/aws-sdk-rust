@@ -11,6 +11,8 @@ pub struct GetDirectQueryDataSourceOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of Amazon Resource Names (ARNs) for the OpenSearch collections that are associated with the direct query data source.</p>
     pub open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IAM access policy document that defines the permissions for accessing the direct query data source. Returns the current policy configuration in JSON format, or null if no custom policy is configured.</p>
+    pub data_source_access_policy: ::std::option::Option<::std::string::String>,
     /// <p>The unique, system-generated identifier that represents the data source.</p>
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -33,6 +35,10 @@ impl GetDirectQueryDataSourceOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_search_arns.is_none()`.
     pub fn open_search_arns(&self) -> &[::std::string::String] {
         self.open_search_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The IAM access policy document that defines the permissions for accessing the direct query data source. Returns the current policy configuration in JSON format, or null if no custom policy is configured.</p>
+    pub fn data_source_access_policy(&self) -> ::std::option::Option<&str> {
+        self.data_source_access_policy.as_deref()
     }
     /// <p>The unique, system-generated identifier that represents the data source.</p>
     pub fn data_source_arn(&self) -> ::std::option::Option<&str> {
@@ -59,6 +65,7 @@ pub struct GetDirectQueryDataSourceOutputBuilder {
     pub(crate) data_source_type: ::std::option::Option<crate::types::DirectQueryDataSourceType>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) open_search_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) data_source_access_policy: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -125,6 +132,20 @@ impl GetDirectQueryDataSourceOutputBuilder {
     pub fn get_open_search_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.open_search_arns
     }
+    /// <p>The IAM access policy document that defines the permissions for accessing the direct query data source. Returns the current policy configuration in JSON format, or null if no custom policy is configured.</p>
+    pub fn data_source_access_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_source_access_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The IAM access policy document that defines the permissions for accessing the direct query data source. Returns the current policy configuration in JSON format, or null if no custom policy is configured.</p>
+    pub fn set_data_source_access_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.data_source_access_policy = input;
+        self
+    }
+    /// <p>The IAM access policy document that defines the permissions for accessing the direct query data source. Returns the current policy configuration in JSON format, or null if no custom policy is configured.</p>
+    pub fn get_data_source_access_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.data_source_access_policy
+    }
     /// <p>The unique, system-generated identifier that represents the data source.</p>
     pub fn data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_source_arn = ::std::option::Option::Some(input.into());
@@ -155,6 +176,7 @@ impl GetDirectQueryDataSourceOutputBuilder {
             data_source_type: self.data_source_type,
             description: self.description,
             open_search_arns: self.open_search_arns,
+            data_source_access_policy: self.data_source_access_policy,
             data_source_arn: self.data_source_arn,
             _request_id: self._request_id,
         }

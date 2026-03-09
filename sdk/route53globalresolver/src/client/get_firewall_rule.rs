@@ -13,7 +13,7 @@ impl super::Client {
     ///   - [`confidence_threshold(Option<ConfidenceThreshold>)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::confidence_threshold): <p>The confidence threshold for DNS Firewall Advanced. You must provide this value when you create a DNS Firewall Advanced rule.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::created_at): <p>The time and date the DNS Firewall rule was created.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::description): <p>The description of the DNS Firewall rule.</p>
-    ///   - [`dns_advanced_protection(Option<DnsAdvancedProtection>)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::dns_advanced_protection): <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    ///   - [`dns_advanced_protection(Option<DnsAdvancedProtection>)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::dns_advanced_protection): <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     ///   - [`firewall_domain_list_id(Option<String>)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::firewall_domain_list_id): <p>The ID of a DNS Firewall domain list.</p>
     ///   - [`id(String)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::id): <p>ID of the DNS Firewall rule.</p>
     ///   - [`name(String)`](crate::operation::get_firewall_rule::GetFirewallRuleOutput::name): <p>The name of the DNS Firewall rule.</p>

@@ -9,14 +9,16 @@ impl super::Client {
     ///   - [`arn(String)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted Route 53 Global Resolver.</p>
     ///   - [`client_token(String)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::client_token): <p>The unique string that identifies the request and ensures idempotency.</p>
     ///   - [`dns_name(String)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::dns_name): <p>The hostname that DNS clients used for TLS certificate validation when connecting to the deleted Route 53 Global Resolver.</p>
-    ///   - [`observability_region(Option<String>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::observability_region): <p>The AWS Region where observability data for the deleted Route 53 Global Resolver was stored.</p>
+    ///   - [`observability_region(Option<String>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::observability_region): <p>The Amazon Web Services Region where observability data for the deleted Route 53 Global Resolver was stored.</p>
     ///   - [`name(String)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::name): <p>The name of the deleted Route 53 Global Resolver.</p>
     ///   - [`description(Option<String>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::description): <p>The description of the deleted Route 53 Global Resolver.</p>
-    ///   - [`regions(Vec::<String>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::regions): <p>The AWS Regions where the deleted Route 53 Global Resolver was deployed and operational.</p>
+    ///   - [`regions(Vec::<String>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::regions): <p>The Amazon Web Services Regions where the deleted Route 53 Global Resolver was deployed and operational.</p>
     ///   - [`created_at(DateTime)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::created_at): <p>The date and time when the Route 53 Global Resolver was originally created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::updated_at): <p>The date and time when the Route 53 Global Resolver was last updated before deletion.</p>
     ///   - [`status(CrResourceStatus)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::status): <p>The final status of the deleted Route 53 Global Resolver.</p>
     ///   - [`ipv4_addresses(Vec::<String>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::ipv4_addresses): <p>The global anycast IPv4 addresses that were associated with the deleted Route 53 Global Resolver.</p>
+    ///   - [`ipv6_addresses(Option<Vec::<String>>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::ipv6_addresses): <p>The global anycast IPv6 addresses that were associated with the deleted Route 53 Global Resolver.</p>
+    ///   - [`ip_address_type(Option<GlobalResolverIpAddressType>)`](crate::operation::delete_global_resolver::DeleteGlobalResolverOutput::ip_address_type): <p>The IP address type that was configured for the deleted Route 53 Global Resolver.</p>
     /// - On failure, responds with [`SdkError<DeleteGlobalResolverError>`](crate::operation::delete_global_resolver::DeleteGlobalResolverError)
     pub fn delete_global_resolver(&self) -> crate::operation::delete_global_resolver::builders::DeleteGlobalResolverFluentBuilder {
         crate::operation::delete_global_resolver::builders::DeleteGlobalResolverFluentBuilder::new(self.handle.clone())

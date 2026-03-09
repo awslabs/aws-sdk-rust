@@ -22,7 +22,9 @@ impl crate::operation::update_firewall_rule::builders::UpdateFirewallRuleInputBu
 }
 /// Fluent builder constructing a request to `UpdateFirewallRule`.
 ///
-/// <p>Updates the configuration of a DNS firewall rule.</p>
+/// <p>Updates the configuration of a DNS firewall rule.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -220,17 +222,17 @@ impl UpdateFirewallRuleFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn dns_advanced_protection(mut self, input: crate::types::DnsAdvancedProtection) -> Self {
         self.inner = self.inner.dns_advanced_protection(input);
         self
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn set_dns_advanced_protection(mut self, input: ::std::option::Option<crate::types::DnsAdvancedProtection>) -> Self {
         self.inner = self.inner.set_dns_advanced_protection(input);
         self
     }
-    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA and DNS_TUNNELING.</p>
+    /// <p>The type of the DNS Firewall Advanced rule. Valid values are DGA, DNS_TUNNELING, and DICTIONARY_DGA.</p>
     pub fn get_dns_advanced_protection(&self) -> &::std::option::Option<crate::types::DnsAdvancedProtection> {
         self.inner.get_dns_advanced_protection()
     }

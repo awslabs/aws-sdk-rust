@@ -23,6 +23,8 @@
 #![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Route 53 Global Resolver is a global, internet-accessible DNS resolver that enables customers to resolve and forward traffic for both public and private domains while ensuring security and authenticity of queries over the internet. Route 53 Global Resolver supports DNS-over-port 53 (Do53), DNS-over-TLS (DoT), and DNS-over-HTTPS (DoH) protocols through global anycast IP addresses.
 //!
+//! Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify --region us-east-2 on Amazon Web Services CLI commands.
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -35,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-route53globalresolver = "1.6.0"
+//! aws-sdk-route53globalresolver = "1.7.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

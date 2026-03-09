@@ -17,7 +17,7 @@ pub struct AssociateHostedZoneOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The date and time the private hosted zone association was modified.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
-    /// <p>Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.</p>
+    /// <p>Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global Resolver exists.</p>
     pub status: crate::types::HostedZoneAssociationStatus,
     _request_id: Option<String>,
 }
@@ -55,7 +55,7 @@ impl AssociateHostedZoneOutput {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
-    /// <p>Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.</p>
+    /// <p>Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global Resolver exists.</p>
     pub fn status(&self) -> &crate::types::HostedZoneAssociationStatus {
         &self.status
     }
@@ -192,18 +192,18 @@ impl AssociateHostedZoneOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.</p>
+    /// <p>Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global Resolver exists.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::HostedZoneAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.</p>
+    /// <p>Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global Resolver exists.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::HostedZoneAssociationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Aggregate status for all the AWS Regions in which the Route 53 Global Resolver exists.</p>
+    /// <p>Aggregate status for all the Amazon Web Services Regions in which the Route 53 Global Resolver exists.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::HostedZoneAssociationStatus> {
         &self.status
     }

@@ -17,7 +17,7 @@ pub struct DelegationRequest {
     pub permissions: ::std::option::Option<crate::types::DelegationPermission>,
     /// <p>JSON content of the associated permission policy of this delegation request.</p>
     pub permission_policy: ::std::option::Option<::std::string::String>,
-    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
+    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
     pub role_permission_restriction_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>ARN of the owner of this delegation request.</p>
     pub owner_id: ::std::option::Option<::std::string::String>,
@@ -25,10 +25,10 @@ pub struct DelegationRequest {
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub approver_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub state: ::std::option::Option<crate::types::StateType>,
     /// <p>The expiry time of this delegation request</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Identity of the requestor of this delegation request. This will be an Amazon Web Services account ID.</p>
     pub requestor_id: ::std::option::Option<::std::string::String>,
@@ -75,7 +75,7 @@ impl DelegationRequest {
     pub fn permission_policy(&self) -> ::std::option::Option<&str> {
         self.permission_policy.as_deref()
     }
-    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
+    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.role_permission_restriction_arns.is_none()`.
     pub fn role_permission_restriction_arns(&self) -> &[::std::string::String] {
@@ -91,12 +91,12 @@ impl DelegationRequest {
         self.approver_id.as_deref()
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::StateType> {
         self.state.as_ref()
     }
     /// <p>The expiry time of this delegation request</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
@@ -261,19 +261,19 @@ impl DelegationRequestBuilder {
     ///
     /// To override the contents of this collection use [`set_role_permission_restriction_arns`](Self::set_role_permission_restriction_arns).
     ///
-    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
+    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
     pub fn role_permission_restriction_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.role_permission_restriction_arns.unwrap_or_default();
         v.push(input.into());
         self.role_permission_restriction_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
+    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
     pub fn set_role_permission_restriction_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.role_permission_restriction_arns = input;
         self
     }
-    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
+    /// <p>If the <code>PermissionPolicy</code> includes role creation permissions, this element will include the list of permissions boundary policies associated with the role creation. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> for more details about IAM permission boundaries.</p>
     pub fn get_role_permission_restriction_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.role_permission_restriction_arns
     }
@@ -309,36 +309,36 @@ impl DelegationRequestBuilder {
         &self.approver_id
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn state(mut self, input: crate::types::StateType) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::StateType>) -> Self {
         self.state = input;
         self
     }
     /// <p>The state of this delegation request.</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for an explanation of how these states are transitioned.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::StateType> {
         &self.state
     }
     /// <p>The expiry time of this delegation request</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The expiry time of this delegation request</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
     /// <p>The expiry time of this delegation request</p>
-    /// <p>See the <a href="IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
+    /// <p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/temporary-delegation-building-integration.html#temporary-delegation-request-lifecycle">Understanding the Request Lifecycle</a> for details on the life time of a delegation request at each state.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_time
     }

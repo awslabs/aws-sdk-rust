@@ -12,13 +12,13 @@ pub struct GlobalResolversItem {
     pub client_token: ::std::string::String,
     /// <p>The DNS name of the global resolver.</p>
     pub dns_name: ::std::string::String,
-    /// <p>The AWS Region where observability data is collected for the global resolver.</p>
+    /// <p>The Amazon Web Services Region where observability data is collected for the global resolver.</p>
     pub observability_region: ::std::option::Option<::std::string::String>,
     /// <p>The name of the global resolver.</p>
     pub name: ::std::string::String,
     /// <p>A description of the global resolver.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Regions where the global resolver is deployed.</p>
+    /// <p>The Amazon Web Services Regions where the global resolver is deployed.</p>
     pub regions: ::std::vec::Vec<::std::string::String>,
     /// <p>The date and time when the global resolver was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -28,6 +28,10 @@ pub struct GlobalResolversItem {
     pub status: crate::types::CrResourceStatus,
     /// <p>The IPv4 addresses assigned to the global resolver.</p>
     pub ipv4_addresses: ::std::vec::Vec<::std::string::String>,
+    /// <p>The IPv6 addresses assigned to the global resolver. This field is only populated when ipAddressType is DUAL_STACK.</p>
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IP address type configured for the global resolver.</p>
+    pub ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
 }
 impl GlobalResolversItem {
     /// <p>The unique identifier of the global resolver.</p>
@@ -50,7 +54,7 @@ impl GlobalResolversItem {
         use std::ops::Deref;
         self.dns_name.deref()
     }
-    /// <p>The AWS Region where observability data is collected for the global resolver.</p>
+    /// <p>The Amazon Web Services Region where observability data is collected for the global resolver.</p>
     pub fn observability_region(&self) -> ::std::option::Option<&str> {
         self.observability_region.as_deref()
     }
@@ -63,7 +67,7 @@ impl GlobalResolversItem {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The AWS Regions where the global resolver is deployed.</p>
+    /// <p>The Amazon Web Services Regions where the global resolver is deployed.</p>
     pub fn regions(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.regions.deref()
@@ -84,6 +88,16 @@ impl GlobalResolversItem {
     pub fn ipv4_addresses(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.ipv4_addresses.deref()
+    }
+    /// <p>The IPv6 addresses assigned to the global resolver. This field is only populated when ipAddressType is DUAL_STACK.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
+    }
+    /// <p>The IP address type configured for the global resolver.</p>
+    pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::GlobalResolverIpAddressType> {
+        self.ip_address_type.as_ref()
     }
 }
 impl GlobalResolversItem {
@@ -109,6 +123,8 @@ pub struct GlobalResolversItemBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::CrResourceStatus>,
     pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
 }
 impl GlobalResolversItemBuilder {
     /// <p>The unique identifier of the global resolver.</p>
@@ -171,17 +187,17 @@ impl GlobalResolversItemBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p>The AWS Region where observability data is collected for the global resolver.</p>
+    /// <p>The Amazon Web Services Region where observability data is collected for the global resolver.</p>
     pub fn observability_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.observability_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Region where observability data is collected for the global resolver.</p>
+    /// <p>The Amazon Web Services Region where observability data is collected for the global resolver.</p>
     pub fn set_observability_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.observability_region = input;
         self
     }
-    /// <p>The AWS Region where observability data is collected for the global resolver.</p>
+    /// <p>The Amazon Web Services Region where observability data is collected for the global resolver.</p>
     pub fn get_observability_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.observability_region
     }
@@ -218,19 +234,19 @@ impl GlobalResolversItemBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>The AWS Regions where the global resolver is deployed.</p>
+    /// <p>The Amazon Web Services Regions where the global resolver is deployed.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Regions where the global resolver is deployed.</p>
+    /// <p>The Amazon Web Services Regions where the global resolver is deployed.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>The AWS Regions where the global resolver is deployed.</p>
+    /// <p>The Amazon Web Services Regions where the global resolver is deployed.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }
@@ -298,6 +314,40 @@ impl GlobalResolversItemBuilder {
     /// <p>The IPv4 addresses assigned to the global resolver.</p>
     pub fn get_ipv4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.ipv4_addresses
+    }
+    /// Appends an item to `ipv6_addresses`.
+    ///
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
+    ///
+    /// <p>The IPv6 addresses assigned to the global resolver. This field is only populated when ipAddressType is DUAL_STACK.</p>
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv6_addresses.unwrap_or_default();
+        v.push(input.into());
+        self.ipv6_addresses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IPv6 addresses assigned to the global resolver. This field is only populated when ipAddressType is DUAL_STACK.</p>
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input;
+        self
+    }
+    /// <p>The IPv6 addresses assigned to the global resolver. This field is only populated when ipAddressType is DUAL_STACK.</p>
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
+    }
+    /// <p>The IP address type configured for the global resolver.</p>
+    pub fn ip_address_type(mut self, input: crate::types::GlobalResolverIpAddressType) -> Self {
+        self.ip_address_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The IP address type configured for the global resolver.</p>
+    pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::GlobalResolverIpAddressType>) -> Self {
+        self.ip_address_type = input;
+        self
+    }
+    /// <p>The IP address type configured for the global resolver.</p>
+    pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
+        &self.ip_address_type
     }
     /// Consumes the builder and constructs a [`GlobalResolversItem`](crate::types::GlobalResolversItem).
     /// This method will fail if any of the following fields are not set:
@@ -375,6 +425,8 @@ impl GlobalResolversItemBuilder {
                     "ipv4_addresses was not specified but it is required when building GlobalResolversItem",
                 )
             })?,
+            ipv6_addresses: self.ipv6_addresses,
+            ip_address_type: self.ip_address_type,
         })
     }
 }

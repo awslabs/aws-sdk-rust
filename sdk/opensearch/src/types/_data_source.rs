@@ -8,6 +8,8 @@ pub struct DataSource {
     pub data_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Detailed description of a data source.</p>
     pub data_source_description: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the IAM role to be used for cross account/region data source association.</p>
+    pub iam_role_for_data_source_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSource {
     /// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information.</p>
@@ -17,6 +19,10 @@ impl DataSource {
     /// <p>Detailed description of a data source.</p>
     pub fn data_source_description(&self) -> ::std::option::Option<&str> {
         self.data_source_description.as_deref()
+    }
+    /// <p>The ARN of the IAM role to be used for cross account/region data source association.</p>
+    pub fn iam_role_for_data_source_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_role_for_data_source_arn.as_deref()
     }
 }
 impl DataSource {
@@ -32,6 +38,7 @@ impl DataSource {
 pub struct DataSourceBuilder {
     pub(crate) data_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_description: ::std::option::Option<::std::string::String>,
+    pub(crate) iam_role_for_data_source_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataSourceBuilder {
     /// <p>The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using Amazon Web Services Identity and Access Management</i> for more information.</p>
@@ -62,11 +69,26 @@ impl DataSourceBuilder {
     pub fn get_data_source_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_source_description
     }
+    /// <p>The ARN of the IAM role to be used for cross account/region data source association.</p>
+    pub fn iam_role_for_data_source_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iam_role_for_data_source_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the IAM role to be used for cross account/region data source association.</p>
+    pub fn set_iam_role_for_data_source_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iam_role_for_data_source_arn = input;
+        self
+    }
+    /// <p>The ARN of the IAM role to be used for cross account/region data source association.</p>
+    pub fn get_iam_role_for_data_source_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iam_role_for_data_source_arn
+    }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
             data_source_arn: self.data_source_arn,
             data_source_description: self.data_source_description,
+            iam_role_for_data_source_arn: self.iam_role_for_data_source_arn,
         }
     }
 }

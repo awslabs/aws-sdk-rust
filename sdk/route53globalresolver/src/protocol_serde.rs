@@ -211,6 +211,8 @@ pub(crate) mod shape_hosted_zone_associations;
 
 pub(crate) mod shape_ipv4_addresses;
 
+pub(crate) mod shape_ipv6_addresses;
+
 pub(crate) mod shape_managed_firewall_domain_lists;
 
 pub(crate) mod shape_regions;

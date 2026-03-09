@@ -22,7 +22,9 @@ impl crate::operation::import_firewall_domains::builders::ImportFirewallDomainsI
 }
 /// Fluent builder constructing a request to `ImportFirewallDomains`.
 ///
-/// <p>Imports a list of domains from an Amazon S3 file into a firewall domain list. The file should contain one domain per line.</p>
+/// <p>Imports a list of domains from an Amazon S3 file into a firewall domain list. The file should contain one domain per line.</p><important>
+/// <p>Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon Web Services Regions but you must specify the US East (Ohio) Region to create, update, or otherwise work with Route 53 Global Resolver resources. That is, for example, specify <code>--region us-east-2</code> on Amazon Web Services CLI commands.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ImportFirewallDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
