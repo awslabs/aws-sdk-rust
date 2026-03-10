@@ -61,6 +61,8 @@ pub(crate) mod shape_delete_bot;
 
 pub(crate) mod shape_delete_bot_alias;
 
+pub(crate) mod shape_delete_bot_analyzer_recommendation;
+
 pub(crate) mod shape_delete_bot_locale;
 
 pub(crate) mod shape_delete_bot_replica;
@@ -90,6 +92,8 @@ pub(crate) mod shape_delete_utterances;
 pub(crate) mod shape_describe_bot;
 
 pub(crate) mod shape_describe_bot_alias;
+
+pub(crate) mod shape_describe_bot_analyzer_recommendation;
 
 pub(crate) mod shape_describe_bot_locale;
 
@@ -132,6 +136,8 @@ pub(crate) mod shape_list_aggregated_utterances;
 pub(crate) mod shape_list_bot_alias_replicas;
 
 pub(crate) mod shape_list_bot_aliases;
+
+pub(crate) mod shape_list_bot_analyzer_history;
 
 pub(crate) mod shape_list_bot_locales;
 
@@ -191,6 +197,8 @@ pub(crate) mod shape_list_utterance_metrics;
 
 pub(crate) mod shape_search_associated_transcripts;
 
+pub(crate) mod shape_start_bot_analyzer;
+
 pub(crate) mod shape_start_bot_recommendation;
 
 pub(crate) mod shape_start_bot_resource_generation;
@@ -200,6 +208,8 @@ pub(crate) mod shape_start_import;
 pub(crate) mod shape_start_test_execution;
 
 pub(crate) mod shape_start_test_set_generation;
+
+pub(crate) mod shape_stop_bot_analyzer;
 
 pub(crate) mod shape_stop_bot_recommendation;
 
@@ -267,6 +277,8 @@ pub(crate) mod shape_create_slot_type_input;
 
 pub(crate) mod shape_create_test_set_discrepancy_report_input;
 
+pub(crate) mod shape_describe_bot_analyzer_recommendation_input;
+
 pub(crate) mod shape_generate_bot_element_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -276,6 +288,8 @@ pub(crate) mod shape_list_aggregated_utterances_input;
 pub(crate) mod shape_list_bot_alias_replicas_input;
 
 pub(crate) mod shape_list_bot_aliases_input;
+
+pub(crate) mod shape_list_bot_analyzer_history_input;
 
 pub(crate) mod shape_list_bot_locales_input;
 
@@ -336,6 +350,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_search_associated_transcripts_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_start_bot_analyzer_input;
 
 pub(crate) mod shape_start_bot_recommendation_input;
 
@@ -432,6 +448,10 @@ pub(crate) mod shape_bot_alias_locale_settings_map;
 pub(crate) mod shape_bot_alias_replica_summary_list;
 
 pub(crate) mod shape_bot_alias_summary_list;
+
+pub(crate) mod shape_bot_analyzer_history_list;
+
+pub(crate) mod shape_bot_analyzer_recommendation_list;
 
 pub(crate) mod shape_bot_filter;
 
@@ -671,6 +691,10 @@ pub(crate) mod shape_bot_alias_summary;
 
 pub(crate) mod shape_bot_alias_test_execution_target;
 
+pub(crate) mod shape_bot_analyzer_history_summary;
+
+pub(crate) mod shape_bot_analyzer_recommendation;
+
 pub(crate) mod shape_bot_export_specification;
 
 pub(crate) mod shape_bot_import_specification;
@@ -872,6 +896,8 @@ pub(crate) mod shape_intent_override;
 pub(crate) mod shape_intent_statistics;
 
 pub(crate) mod shape_invoked_intent_samples;
+
+pub(crate) mod shape_issue_location;
 
 pub(crate) mod shape_lambda_code_hook;
 

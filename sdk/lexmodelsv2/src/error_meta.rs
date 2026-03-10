@@ -714,6 +714,50 @@ impl From<crate::operation::delete_bot_alias::DeleteBotAliasError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError> for Error {
+    fn from(err: crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError) -> Self {
+        match err {
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_bot_analyzer_recommendation::DeleteBotAnalyzerRecommendationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_bot_locale::DeleteBotLocaleError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1153,6 +1197,52 @@ impl From<crate::operation::describe_bot_alias::DescribeBotAliasError> for Error
             crate::operation::describe_bot_alias::DescribeBotAliasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_bot_alias::DescribeBotAliasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::describe_bot_alias::DescribeBotAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError> for Error {
+    fn from(err: crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError) -> Self {
+        match err {
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::describe_bot_analyzer_recommendation::DescribeBotAnalyzerRecommendationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1850,6 +1940,38 @@ impl From<crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError> 
             crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_bot_alias_replicas::ListBotAliasReplicasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError> for Error {
+    fn from(err: crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError) -> Self {
+        match err {
+            crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_bot_analyzer_history::ListBotAnalyzerHistoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2742,6 +2864,32 @@ impl From<crate::operation::search_associated_transcripts::SearchAssociatedTrans
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bot_analyzer::StartBotAnalyzerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bot_analyzer::StartBotAnalyzerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_bot_analyzer::StartBotAnalyzerError> for Error {
+    fn from(err: crate::operation::start_bot_analyzer::StartBotAnalyzerError) -> Self {
+        match err {
+            crate::operation::start_bot_analyzer::StartBotAnalyzerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_bot_analyzer::StartBotAnalyzerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_bot_analyzer::StartBotAnalyzerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_bot_analyzer::StartBotAnalyzerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_bot_analyzer::StartBotAnalyzerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_bot_analyzer::StartBotAnalyzerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bot_recommendation::StartBotRecommendationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2913,6 +3061,31 @@ impl From<crate::operation::start_test_set_generation::StartTestSetGenerationErr
             crate::operation::start_test_set_generation::StartTestSetGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_test_set_generation::StartTestSetGenerationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_test_set_generation::StartTestSetGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_bot_analyzer::StopBotAnalyzerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_bot_analyzer::StopBotAnalyzerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_bot_analyzer::StopBotAnalyzerError> for Error {
+    fn from(err: crate::operation::stop_bot_analyzer::StopBotAnalyzerError) -> Self {
+        match err {
+            crate::operation::stop_bot_analyzer::StopBotAnalyzerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_bot_analyzer::StopBotAnalyzerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_bot_analyzer::StopBotAnalyzerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::stop_bot_analyzer::StopBotAnalyzerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_bot_analyzer::StopBotAnalyzerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

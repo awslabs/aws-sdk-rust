@@ -180,6 +180,39 @@ pub(crate) fn bot_alias_test_execution_target_correct_errors(
     builder
 }
 
+pub(crate) fn bot_analyzer_history_summary_correct_errors(
+    mut builder: crate::types::builders::BotAnalyzerHistorySummaryBuilder,
+) -> crate::types::builders::BotAnalyzerHistorySummaryBuilder {
+    if builder.bot_analyzer_status.is_none() {
+        builder.bot_analyzer_status = "no value was set".parse::<crate::types::BotAnalyzerStatus>().ok()
+    }
+    if builder.bot_analyzer_request_id.is_none() {
+        builder.bot_analyzer_request_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bot_analyzer_recommendation_correct_errors(
+    mut builder: crate::types::builders::BotAnalyzerRecommendationBuilder,
+) -> crate::types::builders::BotAnalyzerRecommendationBuilder {
+    if builder.issue_location.is_none() {
+        builder.issue_location = {
+            let builder = crate::types::builders::IssueLocationBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.priority.is_none() {
+        builder.priority = "no value was set".parse::<crate::types::Priority>().ok()
+    }
+    if builder.issue_description.is_none() {
+        builder.issue_description = Some(Default::default())
+    }
+    if builder.proposed_fix.is_none() {
+        builder.proposed_fix = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn bot_export_specification_correct_errors(
     mut builder: crate::types::builders::BotExportSpecificationBuilder,
 ) -> crate::types::builders::BotExportSpecificationBuilder {

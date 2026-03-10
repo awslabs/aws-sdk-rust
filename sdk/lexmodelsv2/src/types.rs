@@ -71,6 +71,8 @@ pub use crate::types::_custom_vocabulary_status::CustomVocabularyStatus;
 
 pub use crate::types::_import_status::ImportStatus;
 
+pub use crate::types::_bot_analyzer_status::BotAnalyzerStatus;
+
 pub use crate::types::_bot_recommendation_status::BotRecommendationStatus;
 
 pub use crate::types::_transcript_source_setting::TranscriptSourceSetting;
@@ -148,6 +150,8 @@ pub use crate::types::_test_set_sort_by::TestSetSortBy;
 pub use crate::types::_utterance_data_sort_by::UtteranceDataSortBy;
 
 pub use crate::types::_search_order::SearchOrder;
+
+pub use crate::types::_analysis_scope::AnalysisScope;
 
 pub use crate::types::_new_custom_vocabulary_item::NewCustomVocabularyItem;
 
@@ -241,6 +245,8 @@ pub use crate::types::_bot_alias_history_event::BotAliasHistoryEvent;
 
 pub use crate::types::_parent_bot_network::ParentBotNetwork;
 
+pub use crate::types::_bot_analyzer_recommendation::BotAnalyzerRecommendation;
+
 pub use crate::types::_bot_locale_history_event::BotLocaleHistoryEvent;
 
 pub use crate::types::_s3_bucket_transcript_source::S3BucketTranscriptSource;
@@ -274,6 +280,8 @@ pub use crate::types::_aggregated_utterances_summary::AggregatedUtterancesSummar
 pub use crate::types::_bot_alias_summary::BotAliasSummary;
 
 pub use crate::types::_bot_alias_replica_summary::BotAliasReplicaSummary;
+
+pub use crate::types::_bot_analyzer_history_summary::BotAnalyzerHistorySummary;
 
 pub use crate::types::_bot_locale_sort_attribute::BotLocaleSortAttribute;
 
@@ -476,6 +484,10 @@ pub use crate::types::_audio_recognition_strategy::AudioRecognitionStrategy;
 pub use crate::types::_grammar_slot_type_source::GrammarSlotTypeSource;
 
 pub use crate::types::_sub_slot_type_composition::SubSlotTypeComposition;
+
+pub use crate::types::_issue_location::IssueLocation;
+
+pub use crate::types::_priority::Priority;
 
 pub use crate::types::_path_format::PathFormat;
 
@@ -759,6 +771,8 @@ mod _aggregated_utterances_summary;
 
 mod _allowed_input_types;
 
+mod _analysis_scope;
+
 mod _analytics_bin_by_name;
 
 mod _analytics_bin_by_specification;
@@ -906,6 +920,12 @@ mod _bot_alias_status;
 mod _bot_alias_summary;
 
 mod _bot_alias_test_execution_target;
+
+mod _bot_analyzer_history_summary;
+
+mod _bot_analyzer_recommendation;
+
+mod _bot_analyzer_status;
 
 mod _bot_export_specification;
 
@@ -1183,6 +1203,8 @@ mod _intent_summary;
 
 mod _invoked_intent_sample;
 
+mod _issue_location;
+
 mod _kendra_configuration;
 
 mod _lambda_code_hook;
@@ -1226,6 +1248,8 @@ mod _post_dialog_code_hook_invocation_specification;
 mod _post_fulfillment_status_specification;
 
 mod _principal;
+
+mod _priority;
 
 mod _prompt_attempt;
 

@@ -864,6 +864,15 @@ pub(crate) fn boolean_operands_correct_errors(
     builder
 }
 
+pub(crate) fn compound_condition_correct_errors(
+    mut builder: crate::types::builders::CompoundConditionBuilder,
+) -> crate::types::builders::CompoundConditionBuilder {
+    if builder.conditions.is_none() {
+        builder.conditions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn field_item_correct_errors(mut builder: crate::types::builders::FieldItemBuilder) -> crate::types::builders::FieldItemBuilder {
     if builder.id.is_none() {
         builder.id = Some(Default::default())

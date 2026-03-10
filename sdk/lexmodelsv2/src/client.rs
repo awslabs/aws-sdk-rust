@@ -269,6 +269,8 @@ mod delete_bot;
 
 mod delete_bot_alias;
 
+mod delete_bot_analyzer_recommendation;
+
 mod delete_bot_locale;
 
 mod delete_bot_replica;
@@ -298,6 +300,8 @@ mod delete_utterances;
 mod describe_bot;
 
 mod describe_bot_alias;
+
+mod describe_bot_analyzer_recommendation;
 
 mod describe_bot_locale;
 
@@ -340,6 +344,8 @@ mod list_aggregated_utterances;
 mod list_bot_alias_replicas;
 
 mod list_bot_aliases;
+
+mod list_bot_analyzer_history;
 
 mod list_bot_locales;
 
@@ -399,6 +405,8 @@ mod list_utterance_metrics;
 
 mod search_associated_transcripts;
 
+mod start_bot_analyzer;
+
 mod start_bot_recommendation;
 
 mod start_bot_resource_generation;
@@ -408,6 +416,8 @@ mod start_import;
 mod start_test_execution;
 
 mod start_test_set_generation;
+
+mod stop_bot_analyzer;
 
 mod stop_bot_recommendation;
 

@@ -13,6 +13,7 @@
 /// # let serverprotocol = unimplemented!();
 /// match serverprotocol {
 ///     ServerProtocol::A2A => { /* ... */ },
+///     ServerProtocol::Agui => { /* ... */ },
 ///     ServerProtocol::Http => { /* ... */ },
 ///     ServerProtocol::Mcp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ServerProtocol {
     #[allow(missing_docs)] // documentation missing in model
     A2A,
     #[allow(missing_docs)] // documentation missing in model
+    Agui,
+    #[allow(missing_docs)] // documentation missing in model
     Http,
     #[allow(missing_docs)] // documentation missing in model
     Mcp,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ServerProtocol {
     fn from(s: &str) -> Self {
         match s {
             "A2A" => ServerProtocol::A2A,
+            "AGUI" => ServerProtocol::Agui,
             "HTTP" => ServerProtocol::Http,
             "MCP" => ServerProtocol::Mcp,
             other => ServerProtocol::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ServerProtocol {
     pub fn as_str(&self) -> &str {
         match self {
             ServerProtocol::A2A => "A2A",
+            ServerProtocol::Agui => "AGUI",
             ServerProtocol::Http => "HTTP",
             ServerProtocol::Mcp => "MCP",
             ServerProtocol::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ServerProtocol {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["A2A", "HTTP", "MCP"]
+        &["A2A", "AGUI", "HTTP", "MCP"]
     }
 }
 impl ::std::convert::AsRef<str> for ServerProtocol {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ServerProtocol {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServerProtocol::A2A => write!(f, "A2A"),
+            ServerProtocol::Agui => write!(f, "AGUI"),
             ServerProtocol::Http => write!(f, "HTTP"),
             ServerProtocol::Mcp => write!(f, "MCP"),
             ServerProtocol::Unknown(value) => write!(f, "{value}"),

@@ -169,6 +169,8 @@ pub use crate::types::_audit_event_field_value_union::AuditEventFieldValueUnion;
 
 pub use crate::types::_boolean_operands::BooleanOperands;
 
+pub use crate::types::_compound_condition::CompoundCondition;
+
 pub use crate::types::_sla_configuration::SlaConfiguration;
 
 pub use crate::types::_section::Section;
@@ -218,6 +220,8 @@ mod _comment_body_text_type;
 mod _comment_content;
 
 mod _comment_filter;
+
+mod _compound_condition;
 
 mod _connect_case_content;
 

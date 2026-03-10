@@ -39,7 +39,7 @@ pub struct RedshiftSettings {
     /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload overview</a>.</p>
     /// <p><code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults to 10.</p>
     pub file_transfer_upload_streams: ::std::option::Option<i32>,
-    /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
+    /// <p>The amount of time to wait (in seconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub load_timeout: ::std::option::Option<i32>,
     /// <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
     pub max_file_size: ::std::option::Option<i32>,
@@ -141,7 +141,7 @@ impl RedshiftSettings {
     pub fn file_transfer_upload_streams(&self) -> ::std::option::Option<i32> {
         self.file_transfer_upload_streams
     }
-    /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
+    /// <p>The amount of time to wait (in seconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub fn load_timeout(&self) -> ::std::option::Option<i32> {
         self.load_timeout
     }
@@ -507,17 +507,17 @@ impl RedshiftSettingsBuilder {
     pub fn get_file_transfer_upload_streams(&self) -> &::std::option::Option<i32> {
         &self.file_transfer_upload_streams
     }
-    /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
+    /// <p>The amount of time to wait (in seconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub fn load_timeout(mut self, input: i32) -> Self {
         self.load_timeout = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
+    /// <p>The amount of time to wait (in seconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub fn set_load_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.load_timeout = input;
         self
     }
-    /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
+    /// <p>The amount of time to wait (in seconds) before timing out of operations performed by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
     pub fn get_load_timeout(&self) -> &::std::option::Option<i32> {
         &self.load_timeout
     }

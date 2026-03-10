@@ -4,10 +4,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum BooleanCondition {
+    /// <p>Combines multiple conditions with AND operator. All conditions must be true for the compound condition to be true.</p>
+    AndAll(crate::types::CompoundCondition),
     /// <p>Tests that operandOne is equal to operandTwo.</p>
     EqualTo(crate::types::BooleanOperands),
     /// <p>Tests that operandOne is not equal to operandTwo.</p>
     NotEqualTo(crate::types::BooleanOperands),
+    /// <p>Combines multiple conditions with OR operator. At least one condition must be true for the compound condition to be true.</p>
+    OrAll(crate::types::CompoundCondition),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -19,6 +23,19 @@ pub enum BooleanCondition {
     Unknown,
 }
 impl BooleanCondition {
+    /// Tries to convert the enum instance into [`AndAll`](crate::types::BooleanCondition::AndAll), extracting the inner [`CompoundCondition`](crate::types::CompoundCondition).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_and_all(&self) -> ::std::result::Result<&crate::types::CompoundCondition, &Self> {
+        if let BooleanCondition::AndAll(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AndAll`](crate::types::BooleanCondition::AndAll).
+    pub fn is_and_all(&self) -> bool {
+        self.as_and_all().is_ok()
+    }
     /// Tries to convert the enum instance into [`EqualTo`](crate::types::BooleanCondition::EqualTo), extracting the inner [`BooleanOperands`](crate::types::BooleanOperands).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equal_to(&self) -> ::std::result::Result<&crate::types::BooleanOperands, &Self> {
@@ -44,6 +61,19 @@ impl BooleanCondition {
     /// Returns true if this is a [`NotEqualTo`](crate::types::BooleanCondition::NotEqualTo).
     pub fn is_not_equal_to(&self) -> bool {
         self.as_not_equal_to().is_ok()
+    }
+    /// Tries to convert the enum instance into [`OrAll`](crate::types::BooleanCondition::OrAll), extracting the inner [`CompoundCondition`](crate::types::CompoundCondition).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_or_all(&self) -> ::std::result::Result<&crate::types::CompoundCondition, &Self> {
+        if let BooleanCondition::OrAll(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`OrAll`](crate::types::BooleanCondition::OrAll).
+    pub fn is_or_all(&self) -> bool {
+        self.as_or_all().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

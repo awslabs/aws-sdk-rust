@@ -187,6 +187,8 @@ pub use crate::types::_bot_alias_history_event::BotAliasHistoryEventBuilder;
 
 pub use crate::types::_parent_bot_network::ParentBotNetworkBuilder;
 
+pub use crate::types::_bot_analyzer_recommendation::BotAnalyzerRecommendationBuilder;
+
 pub use crate::types::_bot_locale_history_event::BotLocaleHistoryEventBuilder;
 
 pub use crate::types::_s3_bucket_transcript_source::S3BucketTranscriptSourceBuilder;
@@ -216,6 +218,8 @@ pub use crate::types::_aggregated_utterances_summary::AggregatedUtterancesSummar
 pub use crate::types::_bot_alias_summary::BotAliasSummaryBuilder;
 
 pub use crate::types::_bot_alias_replica_summary::BotAliasReplicaSummaryBuilder;
+
+pub use crate::types::_bot_analyzer_history_summary::BotAnalyzerHistorySummaryBuilder;
 
 pub use crate::types::_bot_locale_filter::BotLocaleFilterBuilder;
 
@@ -372,6 +376,8 @@ pub use crate::types::_sample_value::SampleValueBuilder;
 pub use crate::types::_grammar_slot_type_source::GrammarSlotTypeSourceBuilder;
 
 pub use crate::types::_sub_slot_type_composition::SubSlotTypeCompositionBuilder;
+
+pub use crate::types::_issue_location::IssueLocationBuilder;
 
 pub use crate::types::_path_format::PathFormatBuilder;
 

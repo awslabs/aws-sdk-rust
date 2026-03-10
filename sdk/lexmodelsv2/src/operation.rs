@@ -58,6 +58,9 @@ pub mod delete_bot;
 /// Types for the `DeleteBotAlias` operation.
 pub mod delete_bot_alias;
 
+/// Types for the `DeleteBotAnalyzerRecommendation` operation.
+pub mod delete_bot_analyzer_recommendation;
+
 /// Types for the `DeleteBotLocale` operation.
 pub mod delete_bot_locale;
 
@@ -102,6 +105,9 @@ pub mod describe_bot;
 
 /// Types for the `DescribeBotAlias` operation.
 pub mod describe_bot_alias;
+
+/// Types for the `DescribeBotAnalyzerRecommendation` operation.
+pub mod describe_bot_analyzer_recommendation;
 
 /// Types for the `DescribeBotLocale` operation.
 pub mod describe_bot_locale;
@@ -165,6 +171,9 @@ pub mod list_bot_alias_replicas;
 
 /// Types for the `ListBotAliases` operation.
 pub mod list_bot_aliases;
+
+/// Types for the `ListBotAnalyzerHistory` operation.
+pub mod list_bot_analyzer_history;
 
 /// Types for the `ListBotLocales` operation.
 pub mod list_bot_locales;
@@ -253,6 +262,9 @@ pub mod list_utterance_metrics;
 /// Types for the `SearchAssociatedTranscripts` operation.
 pub mod search_associated_transcripts;
 
+/// Types for the `StartBotAnalyzer` operation.
+pub mod start_bot_analyzer;
+
 /// Types for the `StartBotRecommendation` operation.
 pub mod start_bot_recommendation;
 
@@ -267,6 +279,9 @@ pub mod start_test_execution;
 
 /// Types for the `StartTestSetGeneration` operation.
 pub mod start_test_set_generation;
+
+/// Types for the `StopBotAnalyzer` operation.
+pub mod stop_bot_analyzer;
 
 /// Types for the `StopBotRecommendation` operation.
 pub mod stop_bot_recommendation;

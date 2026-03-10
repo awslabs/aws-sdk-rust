@@ -113,6 +113,8 @@ pub use crate::types::_custom_content::CustomContentBuilder;
 
 pub use crate::types::_boolean_operands::BooleanOperandsBuilder;
 
+pub use crate::types::_compound_condition::CompoundConditionBuilder;
+
 pub use crate::types::_sla_configuration::SlaConfigurationBuilder;
 
 pub use crate::types::_field_group::FieldGroupBuilder;

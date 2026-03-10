@@ -16,6 +16,18 @@ pub fn ser_boolean_condition(
             crate::protocol_serde::shape_boolean_operands::ser_boolean_operands(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::BooleanCondition::AndAll(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("andAll").start_object();
+            crate::protocol_serde::shape_compound_condition::ser_compound_condition(&mut object_3, inner)?;
+            object_3.finish();
+        }
+        crate::types::BooleanCondition::OrAll(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_3.key("orAll").start_object();
+            crate::protocol_serde::shape_compound_condition::ser_compound_condition(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::BooleanCondition::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "BooleanCondition",
@@ -65,6 +77,15 @@ where
                             crate::protocol_serde::shape_boolean_operands::de_boolean_operands(tokens, _value)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'notEqualTo' cannot be null")
                             })?,
+                        )),
+                        "andAll" => Some(crate::types::BooleanCondition::AndAll(
+                            crate::protocol_serde::shape_compound_condition::de_compound_condition(tokens, _value)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'andAll' cannot be null")
+                            })?,
+                        )),
+                        "orAll" => Some(crate::types::BooleanCondition::OrAll(
+                            crate::protocol_serde::shape_compound_condition::de_compound_condition(tokens, _value)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'orAll' cannot be null"))?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

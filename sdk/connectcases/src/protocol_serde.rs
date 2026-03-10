@@ -357,6 +357,8 @@ pub(crate) mod shape_audit_event_field;
 
 pub(crate) mod shape_boolean_operands;
 
+pub(crate) mod shape_compound_condition;
+
 pub(crate) mod shape_connect_case_content;
 
 pub(crate) mod shape_contact_content;
