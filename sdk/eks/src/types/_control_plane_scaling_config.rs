@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ControlPlaneScalingConfig {
-    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, or <code>tier-4xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, <code>tier-4xl, or tier-8xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
     pub tier: ::std::option::Option<crate::types::ProvisionedControlPlaneTier>,
 }
 impl ControlPlaneScalingConfig {
-    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, or <code>tier-4xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, <code>tier-4xl, or tier-8xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
     pub fn tier(&self) -> ::std::option::Option<&crate::types::ProvisionedControlPlaneTier> {
         self.tier.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct ControlPlaneScalingConfigBuilder {
     pub(crate) tier: ::std::option::Option<crate::types::ProvisionedControlPlaneTier>,
 }
 impl ControlPlaneScalingConfigBuilder {
-    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, or <code>tier-4xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, <code>tier-4xl, or tier-8xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
     pub fn tier(mut self, input: crate::types::ProvisionedControlPlaneTier) -> Self {
         self.tier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, or <code>tier-4xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, <code>tier-4xl, or tier-8xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::ProvisionedControlPlaneTier>) -> Self {
         self.tier = input;
         self
     }
-    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, or <code>tier-4xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
+    /// <p>The control plane scaling tier configuration. Available options are <code>standard</code>, <code>tier-xl</code>, <code>tier-2xl</code>, <code>tier-4xl, or tier-8xl</code>. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::ProvisionedControlPlaneTier> {
         &self.tier
     }

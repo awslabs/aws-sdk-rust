@@ -12,6 +12,12 @@ pub fn ser_event_parameters(
             ::aws_smithy_types::Number::Float((*var_1).into()),
         );
     }
+    if let Some(var_2) = &input.event_weight {
+        object.key("EventWeight").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_2).into()),
+        );
+    }
     Ok(())
 }
 
@@ -40,6 +46,11 @@ where
                         }
                         "EventValueThreshold" => {
                             builder = builder.set_event_value_threshold(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
+                        "EventWeight" => {
+                            builder = builder.set_event_weight(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }

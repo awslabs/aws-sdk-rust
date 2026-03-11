@@ -25,6 +25,7 @@
 ///     OperatingSystemName::WindowsServer2016 => { /* ... */ },
 ///     OperatingSystemName::WindowsServer2019 => { /* ... */ },
 ///     OperatingSystemName::WindowsServer2022 => { /* ... */ },
+///     OperatingSystemName::WindowsServer2025 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -81,6 +82,8 @@ pub enum OperatingSystemName {
     WindowsServer2019,
     #[allow(missing_docs)] // documentation missing in model
     WindowsServer2022,
+    #[allow(missing_docs)] // documentation missing in model
+    WindowsServer2025,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -101,6 +104,7 @@ impl ::std::convert::From<&str> for OperatingSystemName {
             "WINDOWS_SERVER_2016" => OperatingSystemName::WindowsServer2016,
             "WINDOWS_SERVER_2019" => OperatingSystemName::WindowsServer2019,
             "WINDOWS_SERVER_2022" => OperatingSystemName::WindowsServer2022,
+            "WINDOWS_SERVER_2025" => OperatingSystemName::WindowsServer2025,
             other => OperatingSystemName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -129,6 +133,7 @@ impl OperatingSystemName {
             OperatingSystemName::WindowsServer2016 => "WINDOWS_SERVER_2016",
             OperatingSystemName::WindowsServer2019 => "WINDOWS_SERVER_2019",
             OperatingSystemName::WindowsServer2022 => "WINDOWS_SERVER_2022",
+            OperatingSystemName::WindowsServer2025 => "WINDOWS_SERVER_2025",
             OperatingSystemName::Unknown(value) => value.as_str(),
         }
     }
@@ -148,6 +153,7 @@ impl OperatingSystemName {
             "WINDOWS_SERVER_2016",
             "WINDOWS_SERVER_2019",
             "WINDOWS_SERVER_2022",
+            "WINDOWS_SERVER_2025",
         ]
     }
 }
@@ -184,6 +190,7 @@ impl ::std::fmt::Display for OperatingSystemName {
             OperatingSystemName::WindowsServer2016 => write!(f, "WINDOWS_SERVER_2016"),
             OperatingSystemName::WindowsServer2019 => write!(f, "WINDOWS_SERVER_2019"),
             OperatingSystemName::WindowsServer2022 => write!(f, "WINDOWS_SERVER_2022"),
+            OperatingSystemName::WindowsServer2025 => write!(f, "WINDOWS_SERVER_2025"),
             OperatingSystemName::Unknown(value) => write!(f, "{value}"),
         }
     }

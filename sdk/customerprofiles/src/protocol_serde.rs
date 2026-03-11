@@ -45,6 +45,8 @@ pub(crate) mod shape_create_profile;
 
 pub(crate) mod shape_create_recommender;
 
+pub(crate) mod shape_create_recommender_filter;
+
 pub(crate) mod shape_create_segment_definition;
 
 pub(crate) mod shape_create_segment_estimate;
@@ -76,6 +78,8 @@ pub(crate) mod shape_delete_profile_object;
 pub(crate) mod shape_delete_profile_object_type;
 
 pub(crate) mod shape_delete_recommender;
+
+pub(crate) mod shape_delete_recommender_filter;
 
 pub(crate) mod shape_delete_segment_definition;
 
@@ -116,6 +120,8 @@ pub(crate) mod shape_get_profile_object_type_template;
 pub(crate) mod shape_get_profile_recommendations;
 
 pub(crate) mod shape_get_recommender;
+
+pub(crate) mod shape_get_recommender_filter;
 
 pub(crate) mod shape_get_segment_definition;
 
@@ -168,6 +174,8 @@ pub(crate) mod shape_list_profile_object_type_templates;
 pub(crate) mod shape_list_profile_object_types;
 
 pub(crate) mod shape_list_profile_objects;
+
+pub(crate) mod shape_list_recommender_filters;
 
 pub(crate) mod shape_list_recommender_recipes;
 
@@ -250,6 +258,8 @@ pub(crate) mod shape_create_event_trigger_input;
 pub(crate) mod shape_create_integration_workflow_input;
 
 pub(crate) mod shape_create_profile_input;
+
+pub(crate) mod shape_create_recommender_filter_input;
 
 pub(crate) mod shape_create_recommender_input;
 
@@ -419,6 +429,8 @@ pub(crate) mod shape_matching_request;
 
 pub(crate) mod shape_matching_response;
 
+pub(crate) mod shape_metadata_config;
+
 pub(crate) mod shape_object_filter;
 
 pub(crate) mod shape_object_type_field;
@@ -446,6 +458,12 @@ pub(crate) mod shape_readiness;
 pub(crate) mod shape_recommendations;
 
 pub(crate) mod shape_recommender_config;
+
+pub(crate) mod shape_recommender_filter;
+
+pub(crate) mod shape_recommender_filter_summary_list;
+
+pub(crate) mod shape_recommender_promotional_filter;
 
 pub(crate) mod shape_recommender_recipes_list;
 
@@ -529,6 +547,8 @@ pub(crate) mod shape_group_list;
 
 pub(crate) mod shape_identity_resolution_job;
 
+pub(crate) mod shape_inference_config;
+
 pub(crate) mod shape_job_schedule;
 
 pub(crate) mod shape_layout_item;
@@ -578,6 +598,8 @@ pub(crate) mod shape_range;
 pub(crate) mod shape_range_override;
 
 pub(crate) mod shape_recommendation;
+
+pub(crate) mod shape_recommender_filter_summary;
 
 pub(crate) mod shape_recommender_recipe;
 

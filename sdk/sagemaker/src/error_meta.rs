@@ -5102,6 +5102,43 @@ impl From<crate::operation::describe_training_plan::DescribeTrainingPlanError> f
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError> for Error {
+    fn from(err: crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError) -> Self {
+        match err {
+            crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_transform_job::DescribeTransformJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5352,6 +5389,28 @@ impl From<crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSag
             crate::operation::enable_sagemaker_servicecatalog_portfolio::EnableSagemakerServicecatalogPortfolioError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::extend_training_plan::ExtendTrainingPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::extend_training_plan::ExtendTrainingPlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::extend_training_plan::ExtendTrainingPlanError> for Error {
+    fn from(err: crate::operation::extend_training_plan::ExtendTrainingPlanError) -> Self {
+        match err {
+            crate::operation::extend_training_plan::ExtendTrainingPlanError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::extend_training_plan::ExtendTrainingPlanError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

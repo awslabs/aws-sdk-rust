@@ -34,6 +34,9 @@ pub mod create_profile;
 /// Types for the `CreateRecommender` operation.
 pub mod create_recommender;
 
+/// Types for the `CreateRecommenderFilter` operation.
+pub mod create_recommender_filter;
+
 /// Types for the `CreateSegmentDefinition` operation.
 pub mod create_segment_definition;
 
@@ -81,6 +84,9 @@ pub mod delete_profile_object_type;
 
 /// Types for the `DeleteRecommender` operation.
 pub mod delete_recommender;
+
+/// Types for the `DeleteRecommenderFilter` operation.
+pub mod delete_recommender_filter;
 
 /// Types for the `DeleteSegmentDefinition` operation.
 pub mod delete_segment_definition;
@@ -141,6 +147,9 @@ pub mod get_profile_recommendations;
 
 /// Types for the `GetRecommender` operation.
 pub mod get_recommender;
+
+/// Types for the `GetRecommenderFilter` operation.
+pub mod get_recommender_filter;
 
 /// Types for the `GetSegmentDefinition` operation.
 pub mod get_segment_definition;
@@ -219,6 +228,9 @@ pub mod list_profile_object_types;
 
 /// Types for the `ListProfileObjects` operation.
 pub mod list_profile_objects;
+
+/// Types for the `ListRecommenderFilters` operation.
+pub mod list_recommender_filters;
 
 /// Types for the `ListRecommenderRecipes` operation.
 pub mod list_recommender_recipes;

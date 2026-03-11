@@ -169,6 +169,66 @@ impl GetProfileRecommendationsFluentBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_context()
     }
+    ///
+    /// Appends an item to `RecommenderFilters`.
+    ///
+    /// To override the contents of this collection use [`set_recommender_filters`](Self::set_recommender_filters).
+    ///
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub fn recommender_filters(mut self, input: crate::types::RecommenderFilter) -> Self {
+        self.inner = self.inner.recommender_filters(input);
+        self
+    }
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub fn set_recommender_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilter>>) -> Self {
+        self.inner = self.inner.set_recommender_filters(input);
+        self
+    }
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub fn get_recommender_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilter>> {
+        self.inner.get_recommender_filters()
+    }
+    ///
+    /// Appends an item to `RecommenderPromotionalFilters`.
+    ///
+    /// To override the contents of this collection use [`set_recommender_promotional_filters`](Self::set_recommender_promotional_filters).
+    ///
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub fn recommender_promotional_filters(mut self, input: crate::types::RecommenderPromotionalFilter) -> Self {
+        self.inner = self.inner.recommender_promotional_filters(input);
+        self
+    }
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub fn set_recommender_promotional_filters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderPromotionalFilter>>,
+    ) -> Self {
+        self.inner = self.inner.set_recommender_promotional_filters(input);
+        self
+    }
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub fn get_recommender_promotional_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderPromotionalFilter>> {
+        self.inner.get_recommender_promotional_filters()
+    }
+    ///
+    /// Appends an item to `CandidateIds`.
+    ///
+    /// To override the contents of this collection use [`set_candidate_ids`](Self::set_candidate_ids).
+    ///
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub fn candidate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.candidate_ids(input.into());
+        self
+    }
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub fn set_candidate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_candidate_ids(input);
+        self
+    }
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub fn get_candidate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_candidate_ids()
+    }
     /// <p>The maximum number of recommendations to return. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -182,5 +242,19 @@ impl GetProfileRecommendationsFluentBuilder {
     /// <p>The maximum number of recommendations to return. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn metadata_config(mut self, input: crate::types::MetadataConfig) -> Self {
+        self.inner = self.inner.metadata_config(input);
+        self
+    }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn set_metadata_config(mut self, input: ::std::option::Option<crate::types::MetadataConfig>) -> Self {
+        self.inner = self.inner.set_metadata_config(input);
+        self
+    }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn get_metadata_config(&self) -> &::std::option::Option<crate::types::MetadataConfig> {
+        self.inner.get_metadata_config()
     }
 }

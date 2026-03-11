@@ -2,9 +2,9 @@
 resolver = "2"
 exclude = [
     "tests/no-default-features",
-    "tests/webassembly-wstd",
     "tests/webassembly-no-os",
-    "tests/telemetry"
+    "tests/telemetry",
+    "tests/webassembly-wstd"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -402,6 +402,7 @@ members = [
     "sdk/signer",
     "sdk/signerdata",
     "sdk/signin",
+    "sdk/simpledbv2",
     "sdk/simspaceweaver",
     "sdk/snowball",
     "sdk/snowdevicemanagement",

@@ -9,6 +9,16 @@ pub(crate) fn reflens_create_hub_content_presigned_urls_output_output_next_token
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_training_plan_extension_history_output_output_next_token(
+    input: &crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_actions_output_output_next_token(
     input: &crate::operation::list_actions::ListActionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -853,6 +863,13 @@ pub(crate) fn lens_create_hub_content_presigned_urls_output_output_authorized_ur
     input: crate::operation::create_hub_content_presigned_urls::CreateHubContentPresignedUrlsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AuthorizedUrl>> {
     let input = input.authorized_url_configs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_training_plan_extension_history_output_output_training_plan_extensions(
+    input: crate::operation::describe_training_plan_extension_history::DescribeTrainingPlanExtensionHistoryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanExtension>> {
+    let input = input.training_plan_extensions?;
     ::std::option::Option::Some(input)
 }
 

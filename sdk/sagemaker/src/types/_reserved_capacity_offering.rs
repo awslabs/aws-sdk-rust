@@ -25,6 +25,10 @@ pub struct ReservedCapacityOffering {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time of the reserved capacity offering.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The start time of the extension for the reserved capacity offering.</p>
+    pub extension_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The end time of the extension for the reserved capacity offering.</p>
+    pub extension_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReservedCapacityOffering {
     /// <p>The type of reserved capacity offering.</p>
@@ -67,6 +71,14 @@ impl ReservedCapacityOffering {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
+    /// <p>The start time of the extension for the reserved capacity offering.</p>
+    pub fn extension_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.extension_start_time.as_ref()
+    }
+    /// <p>The end time of the extension for the reserved capacity offering.</p>
+    pub fn extension_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.extension_end_time.as_ref()
+    }
 }
 impl ReservedCapacityOffering {
     /// Creates a new builder-style object to manufacture [`ReservedCapacityOffering`](crate::types::ReservedCapacityOffering).
@@ -89,6 +101,8 @@ pub struct ReservedCapacityOfferingBuilder {
     pub(crate) duration_minutes: ::std::option::Option<i64>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) extension_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) extension_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReservedCapacityOfferingBuilder {
     /// <p>The type of reserved capacity offering.</p>
@@ -233,6 +247,34 @@ impl ReservedCapacityOfferingBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
+    /// <p>The start time of the extension for the reserved capacity offering.</p>
+    pub fn extension_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.extension_start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start time of the extension for the reserved capacity offering.</p>
+    pub fn set_extension_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.extension_start_time = input;
+        self
+    }
+    /// <p>The start time of the extension for the reserved capacity offering.</p>
+    pub fn get_extension_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.extension_start_time
+    }
+    /// <p>The end time of the extension for the reserved capacity offering.</p>
+    pub fn extension_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.extension_end_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The end time of the extension for the reserved capacity offering.</p>
+    pub fn set_extension_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.extension_end_time = input;
+        self
+    }
+    /// <p>The end time of the extension for the reserved capacity offering.</p>
+    pub fn get_extension_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.extension_end_time
+    }
     /// Consumes the builder and constructs a [`ReservedCapacityOffering`](crate::types::ReservedCapacityOffering).
     pub fn build(self) -> crate::types::ReservedCapacityOffering {
         crate::types::ReservedCapacityOffering {
@@ -246,6 +288,8 @@ impl ReservedCapacityOfferingBuilder {
             duration_minutes: self.duration_minutes,
             start_time: self.start_time,
             end_time: self.end_time,
+            extension_start_time: self.extension_start_time,
+            extension_end_time: self.extension_end_time,
         }
     }
 }

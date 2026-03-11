@@ -1613,6 +1613,15 @@ pub(crate) fn describe_training_plan_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_training_plan_extension_history_output_output_correct_errors(
+    mut builder: crate::operation::describe_training_plan_extension_history::builders::DescribeTrainingPlanExtensionHistoryOutputBuilder,
+) -> crate::operation::describe_training_plan_extension_history::builders::DescribeTrainingPlanExtensionHistoryOutputBuilder {
+    if builder.training_plan_extensions.is_none() {
+        builder.training_plan_extensions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn describe_transform_job_output_output_correct_errors(
     mut builder: crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder,
 ) -> crate::operation::describe_transform_job::builders::DescribeTransformJobOutputBuilder {
@@ -1690,6 +1699,15 @@ pub(crate) fn detach_cluster_node_volume_output_output_correct_errors(
     }
     if builder.device_name.is_none() {
         builder.device_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn extend_training_plan_output_output_correct_errors(
+    mut builder: crate::operation::extend_training_plan::builders::ExtendTrainingPlanOutputBuilder,
+) -> crate::operation::extend_training_plan::builders::ExtendTrainingPlanOutputBuilder {
+    if builder.training_plan_extensions.is_none() {
+        builder.training_plan_extensions = Some(Default::default())
     }
     builder
 }
@@ -5396,6 +5414,24 @@ pub(crate) fn training_job_summary_correct_errors(
     }
     if builder.training_job_status.is_none() {
         builder.training_job_status = "no value was set".parse::<crate::types::TrainingJobStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn training_plan_extension_correct_errors(
+    mut builder: crate::types::builders::TrainingPlanExtensionBuilder,
+) -> crate::types::builders::TrainingPlanExtensionBuilder {
+    if builder.training_plan_extension_offering_id.is_none() {
+        builder.training_plan_extension_offering_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn training_plan_extension_offering_correct_errors(
+    mut builder: crate::types::builders::TrainingPlanExtensionOfferingBuilder,
+) -> crate::types::builders::TrainingPlanExtensionOfferingBuilder {
+    if builder.training_plan_extension_offering_id.is_none() {
+        builder.training_plan_extension_offering_id = Some(Default::default())
     }
     builder
 }

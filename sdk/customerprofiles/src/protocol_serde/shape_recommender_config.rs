@@ -15,6 +15,12 @@ pub fn ser_recommender_config(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.inference_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("InferenceConfig").start_object();
+        crate::protocol_serde::shape_inference_config::ser_inference_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }
 
@@ -44,6 +50,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InferenceConfig" => {
+                            builder =
+                                builder.set_inference_config(crate::protocol_serde::shape_inference_config::de_inference_config(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -53,7 +63,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::recommender_config_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

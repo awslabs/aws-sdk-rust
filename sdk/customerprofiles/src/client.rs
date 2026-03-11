@@ -158,6 +158,8 @@ mod create_profile;
 
 mod create_recommender;
 
+mod create_recommender_filter;
+
 mod create_segment_definition;
 
 mod create_segment_estimate;
@@ -217,6 +219,8 @@ mod delete_profile_object_type;
 
 mod delete_recommender;
 
+mod delete_recommender_filter;
+
 mod delete_segment_definition;
 
 mod delete_workflow;
@@ -256,6 +260,8 @@ mod get_profile_object_type_template;
 mod get_profile_recommendations;
 
 mod get_recommender;
+
+mod get_recommender_filter;
 
 mod get_segment_definition;
 
@@ -308,6 +314,8 @@ mod list_profile_object_type_templates;
 mod list_profile_object_types;
 
 mod list_profile_objects;
+
+mod list_recommender_filters;
 
 mod list_recommender_recipes;
 

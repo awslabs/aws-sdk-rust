@@ -341,6 +341,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Simple Storage Service | [aws-sdk-s3](https://crates.io/crates/aws-sdk-s3) ([docs](https://docs.rs/aws-sdk-s3)) |
 | Amazon Simple Systems Manager (SSM) | [aws-sdk-ssm](https://crates.io/crates/aws-sdk-ssm) ([docs](https://docs.rs/aws-sdk-ssm)) |
 | Amazon Simple Workflow Service | [aws-sdk-swf](https://crates.io/crates/aws-sdk-swf) ([docs](https://docs.rs/aws-sdk-swf)) |
+| Amazon SimpleDB v2 | [aws-sdk-simpledbv2](https://crates.io/crates/aws-sdk-simpledbv2) ([docs](https://docs.rs/aws-sdk-simpledbv2)) |
 | Amazon Textract | [aws-sdk-textract](https://crates.io/crates/aws-sdk-textract) ([docs](https://docs.rs/aws-sdk-textract)) |
 | Amazon Timestream Query | [aws-sdk-timestreamquery](https://crates.io/crates/aws-sdk-timestreamquery) ([docs](https://docs.rs/aws-sdk-timestreamquery)) |
 | Amazon Timestream Write | [aws-sdk-timestreamwrite](https://crates.io/crates/aws-sdk-timestreamwrite) ([docs](https://docs.rs/aws-sdk-timestreamwrite)) |

@@ -87,6 +87,11 @@ pub(crate) fn de_search_training_plan_offerings(
                         tokens, _value,
                     )?);
                 }
+                "TrainingPlanExtensionOfferings" => {
+                    builder = builder.set_training_plan_extension_offerings(
+                        crate::protocol_serde::shape_training_plan_extension_offerings::de_training_plan_extension_offerings(tokens, _value)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

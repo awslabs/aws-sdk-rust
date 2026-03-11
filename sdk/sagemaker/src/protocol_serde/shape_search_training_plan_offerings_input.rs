@@ -46,5 +46,8 @@ pub fn ser_search_training_plan_offerings_input_input(
         }
         array_9.finish();
     }
+    if let Some(var_11) = &input.training_plan_arn {
+        object.key("TrainingPlanArn").string(var_11.as_str());
+    }
     Ok(())
 }

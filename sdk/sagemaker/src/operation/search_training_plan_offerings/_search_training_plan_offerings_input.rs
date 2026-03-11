@@ -28,6 +28,8 @@ pub struct SearchTrainingPlanOfferingsInput {
     /// <p>A training plan for SageMaker endpoints can be used exclusively to provide compute resources to SageMaker endpoints for model deployment.</p></li>
     /// </ul>
     pub target_resources: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>,
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl SearchTrainingPlanOfferingsInput {
     /// <p>The type of instance you want to search for in the available training plan offerings. This field allows you to filter the search results based on the specific compute resources you require for your SageMaker training jobs or SageMaker HyperPod clusters. When searching for training plan offerings, specifying the instance type helps you find Reserved Instances that match your computational needs.</p>
@@ -73,6 +75,10 @@ impl SearchTrainingPlanOfferingsInput {
     pub fn target_resources(&self) -> &[crate::types::SageMakerResourceName] {
         self.target_resources.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn training_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.training_plan_arn.as_deref()
+    }
 }
 impl SearchTrainingPlanOfferingsInput {
     /// Creates a new builder-style object to manufacture [`SearchTrainingPlanOfferingsInput`](crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsInput).
@@ -93,6 +99,7 @@ pub struct SearchTrainingPlanOfferingsInputBuilder {
     pub(crate) end_time_before: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) duration_hours: ::std::option::Option<i64>,
     pub(crate) target_resources: ::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>>,
+    pub(crate) training_plan_arn: ::std::option::Option<::std::string::String>,
 }
 impl SearchTrainingPlanOfferingsInputBuilder {
     /// <p>The type of instance you want to search for in the available training plan offerings. This field allows you to filter the search results based on the specific compute resources you require for your SageMaker training jobs or SageMaker HyperPod clusters. When searching for training plan offerings, specifying the instance type helps you find Reserved Instances that match your computational needs.</p>
@@ -240,6 +247,20 @@ impl SearchTrainingPlanOfferingsInputBuilder {
     pub fn get_target_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>> {
         &self.target_resources
     }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn training_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.training_plan_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn set_training_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.training_plan_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.training_plan_arn
+    }
     /// Consumes the builder and constructs a [`SearchTrainingPlanOfferingsInput`](crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsInput).
     pub fn build(
         self,
@@ -256,6 +277,7 @@ impl SearchTrainingPlanOfferingsInputBuilder {
             end_time_before: self.end_time_before,
             duration_hours: self.duration_hours,
             target_resources: self.target_resources,
+            training_plan_arn: self.training_plan_arn,
         })
     }
 }

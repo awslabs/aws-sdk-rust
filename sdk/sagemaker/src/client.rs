@@ -664,6 +664,8 @@ mod describe_training_job;
 
 mod describe_training_plan;
 
+mod describe_training_plan_extension_history;
+
 mod describe_transform_job;
 
 mod describe_trial;
@@ -683,6 +685,8 @@ mod disable_sagemaker_servicecatalog_portfolio;
 mod disassociate_trial_component;
 
 mod enable_sagemaker_servicecatalog_portfolio;
+
+mod extend_training_plan;
 
 mod get_device_fleet_report;
 

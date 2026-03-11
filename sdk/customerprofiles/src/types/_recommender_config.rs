@@ -8,6 +8,8 @@ pub struct RecommenderConfig {
     pub events_config: ::std::option::Option<crate::types::EventsConfig>,
     /// <p>How often the recommender should retrain its model with new data.</p>
     pub training_frequency: ::std::option::Option<i32>,
+    /// <p>Configuration settings for how the recommender handles inference requests.</p>
+    pub inference_config: ::std::option::Option<crate::types::InferenceConfig>,
 }
 impl RecommenderConfig {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
@@ -17,6 +19,10 @@ impl RecommenderConfig {
     /// <p>How often the recommender should retrain its model with new data.</p>
     pub fn training_frequency(&self) -> ::std::option::Option<i32> {
         self.training_frequency
+    }
+    /// <p>Configuration settings for how the recommender handles inference requests.</p>
+    pub fn inference_config(&self) -> ::std::option::Option<&crate::types::InferenceConfig> {
+        self.inference_config.as_ref()
     }
 }
 impl RecommenderConfig {
@@ -32,10 +38,10 @@ impl RecommenderConfig {
 pub struct RecommenderConfigBuilder {
     pub(crate) events_config: ::std::option::Option<crate::types::EventsConfig>,
     pub(crate) training_frequency: ::std::option::Option<i32>,
+    pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfig>,
 }
 impl RecommenderConfigBuilder {
     /// <p>Configuration settings for how the recommender processes and uses events.</p>
-    /// This field is required.
     pub fn events_config(mut self, input: crate::types::EventsConfig) -> Self {
         self.events_config = ::std::option::Option::Some(input);
         self
@@ -63,11 +69,26 @@ impl RecommenderConfigBuilder {
     pub fn get_training_frequency(&self) -> &::std::option::Option<i32> {
         &self.training_frequency
     }
+    /// <p>Configuration settings for how the recommender handles inference requests.</p>
+    pub fn inference_config(mut self, input: crate::types::InferenceConfig) -> Self {
+        self.inference_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration settings for how the recommender handles inference requests.</p>
+    pub fn set_inference_config(mut self, input: ::std::option::Option<crate::types::InferenceConfig>) -> Self {
+        self.inference_config = input;
+        self
+    }
+    /// <p>Configuration settings for how the recommender handles inference requests.</p>
+    pub fn get_inference_config(&self) -> &::std::option::Option<crate::types::InferenceConfig> {
+        &self.inference_config
+    }
     /// Consumes the builder and constructs a [`RecommenderConfig`](crate::types::RecommenderConfig).
     pub fn build(self) -> crate::types::RecommenderConfig {
         crate::types::RecommenderConfig {
             events_config: self.events_config,
             training_frequency: self.training_frequency,
+            inference_config: self.inference_config,
         }
     }
 }

@@ -8,6 +8,8 @@ pub struct EventParameters {
     pub event_type: ::std::string::String,
     /// <p>The minimum value threshold that an event must meet to be considered valid.</p>
     pub event_value_threshold: ::std::option::Option<f64>,
+    /// <p>The weight of the event type. A higher weight means higher importance of the event type for the created solution.</p>
+    pub event_weight: ::std::option::Option<f64>,
 }
 impl EventParameters {
     /// <p>The type of event being tracked (e.g., 'click', 'purchase', 'view').</p>
@@ -18,6 +20,10 @@ impl EventParameters {
     /// <p>The minimum value threshold that an event must meet to be considered valid.</p>
     pub fn event_value_threshold(&self) -> ::std::option::Option<f64> {
         self.event_value_threshold
+    }
+    /// <p>The weight of the event type. A higher weight means higher importance of the event type for the created solution.</p>
+    pub fn event_weight(&self) -> ::std::option::Option<f64> {
+        self.event_weight
     }
 }
 impl EventParameters {
@@ -33,6 +39,7 @@ impl EventParameters {
 pub struct EventParametersBuilder {
     pub(crate) event_type: ::std::option::Option<::std::string::String>,
     pub(crate) event_value_threshold: ::std::option::Option<f64>,
+    pub(crate) event_weight: ::std::option::Option<f64>,
 }
 impl EventParametersBuilder {
     /// <p>The type of event being tracked (e.g., 'click', 'purchase', 'view').</p>
@@ -64,6 +71,20 @@ impl EventParametersBuilder {
     pub fn get_event_value_threshold(&self) -> &::std::option::Option<f64> {
         &self.event_value_threshold
     }
+    /// <p>The weight of the event type. A higher weight means higher importance of the event type for the created solution.</p>
+    pub fn event_weight(mut self, input: f64) -> Self {
+        self.event_weight = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The weight of the event type. A higher weight means higher importance of the event type for the created solution.</p>
+    pub fn set_event_weight(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.event_weight = input;
+        self
+    }
+    /// <p>The weight of the event type. A higher weight means higher importance of the event type for the created solution.</p>
+    pub fn get_event_weight(&self) -> &::std::option::Option<f64> {
+        &self.event_weight
+    }
     /// Consumes the builder and constructs a [`EventParameters`](crate::types::EventParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_type`](crate::types::builders::EventParametersBuilder::event_type)
@@ -76,6 +97,7 @@ impl EventParametersBuilder {
                 )
             })?,
             event_value_threshold: self.event_value_threshold,
+            event_weight: self.event_weight,
         })
     }
 }

@@ -11,8 +11,16 @@ pub struct GetProfileRecommendationsInput {
     pub recommender_name: ::std::option::Option<::std::string::String>,
     /// <p>The contextual metadata used to provide dynamic runtime information to tailor recommendations.</p>
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub recommender_filters: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilter>>,
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub recommender_promotional_filters: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderPromotionalFilter>>,
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub candidate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of recommendations to return. The default value is 10.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub metadata_config: ::std::option::Option<crate::types::MetadataConfig>,
 }
 impl GetProfileRecommendationsInput {
     /// <p>The unique name of the domain.</p>
@@ -31,9 +39,31 @@ impl GetProfileRecommendationsInput {
     pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.context.as_ref()
     }
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommender_filters.is_none()`.
+    pub fn recommender_filters(&self) -> &[crate::types::RecommenderFilter] {
+        self.recommender_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommender_promotional_filters.is_none()`.
+    pub fn recommender_promotional_filters(&self) -> &[crate::types::RecommenderPromotionalFilter] {
+        self.recommender_promotional_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.candidate_ids.is_none()`.
+    pub fn candidate_ids(&self) -> &[::std::string::String] {
+        self.candidate_ids.as_deref().unwrap_or_default()
+    }
     /// <p>The maximum number of recommendations to return. The default value is 10.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn metadata_config(&self) -> ::std::option::Option<&crate::types::MetadataConfig> {
+        self.metadata_config.as_ref()
     }
 }
 impl ::std::fmt::Debug for GetProfileRecommendationsInput {
@@ -43,7 +73,11 @@ impl ::std::fmt::Debug for GetProfileRecommendationsInput {
         formatter.field("profile_id", &self.profile_id);
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("context", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_filters", &self.recommender_filters);
+        formatter.field("recommender_promotional_filters", &self.recommender_promotional_filters);
+        formatter.field("candidate_ids", &self.candidate_ids);
         formatter.field("max_results", &self.max_results);
+        formatter.field("metadata_config", &self.metadata_config);
         formatter.finish()
     }
 }
@@ -62,7 +96,11 @@ pub struct GetProfileRecommendationsInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) recommender_name: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) recommender_filters: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilter>>,
+    pub(crate) recommender_promotional_filters: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderPromotionalFilter>>,
+    pub(crate) candidate_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) metadata_config: ::std::option::Option<crate::types::MetadataConfig>,
 }
 impl GetProfileRecommendationsInputBuilder {
     /// <p>The unique name of the domain.</p>
@@ -130,6 +168,69 @@ impl GetProfileRecommendationsInputBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.context
     }
+    /// Appends an item to `recommender_filters`.
+    ///
+    /// To override the contents of this collection use [`set_recommender_filters`](Self::set_recommender_filters).
+    ///
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub fn recommender_filters(mut self, input: crate::types::RecommenderFilter) -> Self {
+        let mut v = self.recommender_filters.unwrap_or_default();
+        v.push(input);
+        self.recommender_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub fn set_recommender_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilter>>) -> Self {
+        self.recommender_filters = input;
+        self
+    }
+    /// <p>A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.</p>
+    pub fn get_recommender_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilter>> {
+        &self.recommender_filters
+    }
+    /// Appends an item to `recommender_promotional_filters`.
+    ///
+    /// To override the contents of this collection use [`set_recommender_promotional_filters`](Self::set_recommender_promotional_filters).
+    ///
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub fn recommender_promotional_filters(mut self, input: crate::types::RecommenderPromotionalFilter) -> Self {
+        let mut v = self.recommender_promotional_filters.unwrap_or_default();
+        v.push(input);
+        self.recommender_promotional_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub fn set_recommender_promotional_filters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::RecommenderPromotionalFilter>>,
+    ) -> Self {
+        self.recommender_promotional_filters = input;
+        self
+    }
+    /// <p>A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.</p>
+    pub fn get_recommender_promotional_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommenderPromotionalFilter>> {
+        &self.recommender_promotional_filters
+    }
+    /// Appends an item to `candidate_ids`.
+    ///
+    /// To override the contents of this collection use [`set_candidate_ids`](Self::set_candidate_ids).
+    ///
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub fn candidate_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.candidate_ids.unwrap_or_default();
+        v.push(input.into());
+        self.candidate_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub fn set_candidate_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.candidate_ids = input;
+        self
+    }
+    /// <p>A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.</p>
+    pub fn get_candidate_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.candidate_ids
+    }
     /// <p>The maximum number of recommendations to return. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -144,6 +245,20 @@ impl GetProfileRecommendationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn metadata_config(mut self, input: crate::types::MetadataConfig) -> Self {
+        self.metadata_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn set_metadata_config(mut self, input: ::std::option::Option<crate::types::MetadataConfig>) -> Self {
+        self.metadata_config = input;
+        self
+    }
+    /// <p>Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.</p>
+    pub fn get_metadata_config(&self) -> &::std::option::Option<crate::types::MetadataConfig> {
+        &self.metadata_config
+    }
     /// Consumes the builder and constructs a [`GetProfileRecommendationsInput`](crate::operation::get_profile_recommendations::GetProfileRecommendationsInput).
     pub fn build(
         self,
@@ -156,7 +271,11 @@ impl GetProfileRecommendationsInputBuilder {
             profile_id: self.profile_id,
             recommender_name: self.recommender_name,
             context: self.context,
+            recommender_filters: self.recommender_filters,
+            recommender_promotional_filters: self.recommender_promotional_filters,
+            candidate_ids: self.candidate_ids,
             max_results: self.max_results,
+            metadata_config: self.metadata_config,
         })
     }
 }
@@ -167,7 +286,11 @@ impl ::std::fmt::Debug for GetProfileRecommendationsInputBuilder {
         formatter.field("profile_id", &self.profile_id);
         formatter.field("recommender_name", &self.recommender_name);
         formatter.field("context", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommender_filters", &self.recommender_filters);
+        formatter.field("recommender_promotional_filters", &self.recommender_promotional_filters);
+        formatter.field("candidate_ids", &self.candidate_ids);
         formatter.field("max_results", &self.max_results);
+        formatter.field("metadata_config", &self.metadata_config);
         formatter.finish()
     }
 }

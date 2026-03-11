@@ -15,6 +15,7 @@
 ///     ProvisionedControlPlaneTier::Standard => { /* ... */ },
 ///     ProvisionedControlPlaneTier::Tier2Xl => { /* ... */ },
 ///     ProvisionedControlPlaneTier::Tier4Xl => { /* ... */ },
+///     ProvisionedControlPlaneTier::Tier8Xl => { /* ... */ },
 ///     ProvisionedControlPlaneTier::TierXl => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum ProvisionedControlPlaneTier {
     #[allow(missing_docs)] // documentation missing in model
     Tier4Xl,
     #[allow(missing_docs)] // documentation missing in model
+    Tier8Xl,
+    #[allow(missing_docs)] // documentation missing in model
     TierXl,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for ProvisionedControlPlaneTier {
             "standard" => ProvisionedControlPlaneTier::Standard,
             "tier-2xl" => ProvisionedControlPlaneTier::Tier2Xl,
             "tier-4xl" => ProvisionedControlPlaneTier::Tier4Xl,
+            "tier-8xl" => ProvisionedControlPlaneTier::Tier8Xl,
             "tier-xl" => ProvisionedControlPlaneTier::TierXl,
             other => ProvisionedControlPlaneTier::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl ProvisionedControlPlaneTier {
             ProvisionedControlPlaneTier::Standard => "standard",
             ProvisionedControlPlaneTier::Tier2Xl => "tier-2xl",
             ProvisionedControlPlaneTier::Tier4Xl => "tier-4xl",
+            ProvisionedControlPlaneTier::Tier8Xl => "tier-8xl",
             ProvisionedControlPlaneTier::TierXl => "tier-xl",
             ProvisionedControlPlaneTier::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["standard", "tier-2xl", "tier-4xl", "tier-xl"]
+        &["standard", "tier-2xl", "tier-4xl", "tier-8xl", "tier-xl"]
     }
 }
 impl ::std::convert::AsRef<str> for ProvisionedControlPlaneTier {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for ProvisionedControlPlaneTier {
             ProvisionedControlPlaneTier::Standard => write!(f, "standard"),
             ProvisionedControlPlaneTier::Tier2Xl => write!(f, "tier-2xl"),
             ProvisionedControlPlaneTier::Tier4Xl => write!(f, "tier-4xl"),
+            ProvisionedControlPlaneTier::Tier8Xl => write!(f, "tier-8xl"),
             ProvisionedControlPlaneTier::TierXl => write!(f, "tier-xl"),
             ProvisionedControlPlaneTier::Unknown(value) => write!(f, "{value}"),
         }

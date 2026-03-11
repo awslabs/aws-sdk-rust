@@ -423,6 +423,8 @@ pub(crate) mod shape_describe_training_job;
 
 pub(crate) mod shape_describe_training_plan;
 
+pub(crate) mod shape_describe_training_plan_extension_history;
+
 pub(crate) mod shape_describe_transform_job;
 
 pub(crate) mod shape_describe_trial;
@@ -442,6 +444,8 @@ pub(crate) mod shape_disable_sagemaker_servicecatalog_portfolio;
 pub(crate) mod shape_disassociate_trial_component;
 
 pub(crate) mod shape_enable_sagemaker_servicecatalog_portfolio;
+
+pub(crate) mod shape_extend_training_plan;
 
 pub(crate) mod shape_get_device_fleet_report;
 
@@ -1189,6 +1193,8 @@ pub(crate) mod shape_describe_subscribed_workteam_input;
 
 pub(crate) mod shape_describe_training_job_input;
 
+pub(crate) mod shape_describe_training_plan_extension_history_input;
+
 pub(crate) mod shape_describe_training_plan_input;
 
 pub(crate) mod shape_describe_transform_job_input;
@@ -1206,6 +1212,8 @@ pub(crate) mod shape_describe_workteam_input;
 pub(crate) mod shape_detach_cluster_node_volume_input;
 
 pub(crate) mod shape_disassociate_trial_component_input;
+
+pub(crate) mod shape_extend_training_plan_input;
 
 pub(crate) mod shape_get_device_fleet_report_input;
 
@@ -2261,6 +2269,10 @@ pub(crate) mod shape_training_job_status_counters;
 
 pub(crate) mod shape_training_job_summaries;
 
+pub(crate) mod shape_training_plan_extension_offerings;
+
+pub(crate) mod shape_training_plan_extensions;
+
 pub(crate) mod shape_training_plan_filter;
 
 pub(crate) mod shape_training_plan_offerings;
@@ -3000,6 +3012,10 @@ pub(crate) mod shape_training_image_config;
 pub(crate) mod shape_training_instance_types;
 
 pub(crate) mod shape_training_job_summary;
+
+pub(crate) mod shape_training_plan_extension;
+
+pub(crate) mod shape_training_plan_extension_offering;
 
 pub(crate) mod shape_training_plan_offering;
 

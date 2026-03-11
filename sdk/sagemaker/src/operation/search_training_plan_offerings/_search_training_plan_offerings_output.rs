@@ -5,6 +5,8 @@
 pub struct SearchTrainingPlanOfferingsOutput {
     /// <p>A list of training plan offerings that match the search criteria.</p>
     pub training_plan_offerings: ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanOffering>>,
+    /// <p>A list of extension offerings available for the specified training plan. These offerings can be used with the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a> </code> API to extend an existing training plan.</p>
+    pub training_plan_extension_offerings: ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanExtensionOffering>>,
     _request_id: Option<String>,
 }
 impl SearchTrainingPlanOfferingsOutput {
@@ -13,6 +15,12 @@ impl SearchTrainingPlanOfferingsOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_plan_offerings.is_none()`.
     pub fn training_plan_offerings(&self) -> &[crate::types::TrainingPlanOffering] {
         self.training_plan_offerings.as_deref().unwrap_or_default()
+    }
+    /// <p>A list of extension offerings available for the specified training plan. These offerings can be used with the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a> </code> API to extend an existing training plan.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_plan_extension_offerings.is_none()`.
+    pub fn training_plan_extension_offerings(&self) -> &[crate::types::TrainingPlanExtensionOffering] {
+        self.training_plan_extension_offerings.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchTrainingPlanOfferingsOutput {
@@ -32,6 +40,7 @@ impl SearchTrainingPlanOfferingsOutput {
 #[non_exhaustive]
 pub struct SearchTrainingPlanOfferingsOutputBuilder {
     pub(crate) training_plan_offerings: ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanOffering>>,
+    pub(crate) training_plan_extension_offerings: ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanExtensionOffering>>,
     _request_id: Option<String>,
 }
 impl SearchTrainingPlanOfferingsOutputBuilder {
@@ -55,6 +64,29 @@ impl SearchTrainingPlanOfferingsOutputBuilder {
     pub fn get_training_plan_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanOffering>> {
         &self.training_plan_offerings
     }
+    /// Appends an item to `training_plan_extension_offerings`.
+    ///
+    /// To override the contents of this collection use [`set_training_plan_extension_offerings`](Self::set_training_plan_extension_offerings).
+    ///
+    /// <p>A list of extension offerings available for the specified training plan. These offerings can be used with the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a> </code> API to extend an existing training plan.</p>
+    pub fn training_plan_extension_offerings(mut self, input: crate::types::TrainingPlanExtensionOffering) -> Self {
+        let mut v = self.training_plan_extension_offerings.unwrap_or_default();
+        v.push(input);
+        self.training_plan_extension_offerings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of extension offerings available for the specified training plan. These offerings can be used with the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a> </code> API to extend an existing training plan.</p>
+    pub fn set_training_plan_extension_offerings(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanExtensionOffering>>,
+    ) -> Self {
+        self.training_plan_extension_offerings = input;
+        self
+    }
+    /// <p>A list of extension offerings available for the specified training plan. These offerings can be used with the <code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ExtendTrainingPlan.html">ExtendTrainingPlan</a> </code> API to extend an existing training plan.</p>
+    pub fn get_training_plan_extension_offerings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrainingPlanExtensionOffering>> {
+        &self.training_plan_extension_offerings
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -68,6 +100,7 @@ impl SearchTrainingPlanOfferingsOutputBuilder {
     pub fn build(self) -> crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsOutput {
         crate::operation::search_training_plan_offerings::SearchTrainingPlanOfferingsOutput {
             training_plan_offerings: self.training_plan_offerings,
+            training_plan_extension_offerings: self.training_plan_extension_offerings,
             _request_id: self._request_id,
         }
     }

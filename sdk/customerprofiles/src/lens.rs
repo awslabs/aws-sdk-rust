@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_object_type_attributes_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_recommender_filters_output_output_next_token(
+    input: &crate::operation::list_recommender_filters::ListRecommenderFiltersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recommender_recipes_output_output_next_token(
     input: &crate::operation::list_recommender_recipes::ListRecommenderRecipesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -148,6 +158,13 @@ pub(crate) fn lens_list_object_type_attributes_output_output_items(
     input: crate::operation::list_object_type_attributes::ListObjectTypeAttributesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ListObjectTypeAttributeItem>> {
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recommender_filters_output_output_recommender_filters(
+    input: crate::operation::list_recommender_filters::ListRecommenderFiltersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommenderFilterSummary>> {
+    let input = input.recommender_filters?;
     ::std::option::Option::Some(input)
 }
 

@@ -601,6 +601,9 @@ pub mod describe_training_job;
 /// Types for the `DescribeTrainingPlan` operation.
 pub mod describe_training_plan;
 
+/// Types for the `DescribeTrainingPlanExtensionHistory` operation.
+pub mod describe_training_plan_extension_history;
+
 /// Types for the `DescribeTransformJob` operation.
 pub mod describe_transform_job;
 
@@ -630,6 +633,9 @@ pub mod disassociate_trial_component;
 
 /// Types for the `EnableSagemakerServicecatalogPortfolio` operation.
 pub mod enable_sagemaker_servicecatalog_portfolio;
+
+/// Types for the `ExtendTrainingPlan` operation.
+pub mod extend_training_plan;
 
 /// Types for the `GetDeviceFleetReport` operation.
 pub mod get_device_fleet_report;

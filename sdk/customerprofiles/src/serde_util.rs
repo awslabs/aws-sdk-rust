@@ -83,6 +83,15 @@ pub(crate) fn create_recommender_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_recommender_filter_output_output_correct_errors(
+    mut builder: crate::operation::create_recommender_filter::builders::CreateRecommenderFilterOutputBuilder,
+) -> crate::operation::create_recommender_filter::builders::CreateRecommenderFilterOutputBuilder {
+    if builder.recommender_filter_arn.is_none() {
+        builder.recommender_filter_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_segment_definition_output_output_correct_errors(
     mut builder: crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder,
 ) -> crate::operation::create_segment_definition::builders::CreateSegmentDefinitionOutputBuilder {
@@ -149,6 +158,15 @@ pub(crate) fn delete_integration_output_output_correct_errors(
 pub(crate) fn delete_profile_object_type_output_output_correct_errors(
     mut builder: crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeOutputBuilder,
 ) -> crate::operation::delete_profile_object_type::builders::DeleteProfileObjectTypeOutputBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_recommender_filter_output_output_correct_errors(
+    mut builder: crate::operation::delete_recommender_filter::builders::DeleteRecommenderFilterOutputBuilder,
+) -> crate::operation::delete_recommender_filter::builders::DeleteRecommenderFilterOutputBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -319,6 +337,27 @@ pub(crate) fn get_recommender_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_recommender_filter_output_output_correct_errors(
+    mut builder: crate::operation::get_recommender_filter::builders::GetRecommenderFilterOutputBuilder,
+) -> crate::operation::get_recommender_filter::builders::GetRecommenderFilterOutputBuilder {
+    if builder.recommender_filter_name.is_none() {
+        builder.recommender_filter_name = Some(Default::default())
+    }
+    if builder.recommender_filter_expression.is_none() {
+        builder.recommender_filter_expression = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecommenderFilterStatus>().ok()
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_segment_definition_output_output_correct_errors(
     mut builder: crate::operation::get_segment_definition::builders::GetSegmentDefinitionOutputBuilder,
 ) -> crate::operation::get_segment_definition::builders::GetSegmentDefinitionOutputBuilder {
@@ -478,18 +517,6 @@ pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterB
     }
     if builder.groups.is_none() {
         builder.groups = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn recommender_config_correct_errors(
-    mut builder: crate::types::builders::RecommenderConfigBuilder,
-) -> crate::types::builders::RecommenderConfigBuilder {
-    if builder.events_config.is_none() {
-        builder.events_config = {
-            let builder = crate::types::builders::EventsConfigBuilder::default();
-            crate::serde_util::events_config_correct_errors(builder).build().ok()
-        }
     }
     builder
 }

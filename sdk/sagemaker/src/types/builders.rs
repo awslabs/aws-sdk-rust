@@ -733,6 +733,8 @@ pub use crate::types::_profiler_rule_evaluation_status::ProfilerRuleEvaluationSt
 
 pub use crate::types::_reserved_capacity_summary::ReservedCapacitySummaryBuilder;
 
+pub use crate::types::_training_plan_extension::TrainingPlanExtensionBuilder;
+
 pub use crate::types::_trial_component_metric_summary::TrialComponentMetricSummaryBuilder;
 
 pub use crate::types::_oidc_config_for_response::OidcConfigForResponseBuilder;
@@ -908,6 +910,8 @@ pub use crate::types::_visibility_conditions::VisibilityConditionsBuilder;
 pub use crate::types::_search_record::SearchRecordBuilder;
 
 pub use crate::types::_training_plan_offering::TrainingPlanOfferingBuilder;
+
+pub use crate::types::_training_plan_extension_offering::TrainingPlanExtensionOfferingBuilder;
 
 pub use crate::types::_output_parameter::OutputParameterBuilder;
 

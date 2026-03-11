@@ -13,6 +13,7 @@
 /// # let recommenderrecipename = unimplemented!();
 /// match recommenderrecipename {
 ///     RecommenderRecipeName::FrequentlyPairedItems => { /* ... */ },
+///     RecommenderRecipeName::PersonalizedRanking => { /* ... */ },
 ///     RecommenderRecipeName::PopularItems => { /* ... */ },
 ///     RecommenderRecipeName::RecommendedForYou => { /* ... */ },
 ///     RecommenderRecipeName::SimilarItems => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum RecommenderRecipeName {
     #[allow(missing_docs)] // documentation missing in model
     FrequentlyPairedItems,
     #[allow(missing_docs)] // documentation missing in model
+    PersonalizedRanking,
+    #[allow(missing_docs)] // documentation missing in model
     PopularItems,
     #[allow(missing_docs)] // documentation missing in model
     RecommendedForYou,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for RecommenderRecipeName {
     fn from(s: &str) -> Self {
         match s {
             "frequently-paired-items" => RecommenderRecipeName::FrequentlyPairedItems,
+            "personalized-ranking" => RecommenderRecipeName::PersonalizedRanking,
             "popular-items" => RecommenderRecipeName::PopularItems,
             "recommended-for-you" => RecommenderRecipeName::RecommendedForYou,
             "similar-items" => RecommenderRecipeName::SimilarItems,
@@ -83,6 +87,7 @@ impl RecommenderRecipeName {
     pub fn as_str(&self) -> &str {
         match self {
             RecommenderRecipeName::FrequentlyPairedItems => "frequently-paired-items",
+            RecommenderRecipeName::PersonalizedRanking => "personalized-ranking",
             RecommenderRecipeName::PopularItems => "popular-items",
             RecommenderRecipeName::RecommendedForYou => "recommended-for-you",
             RecommenderRecipeName::SimilarItems => "similar-items",
@@ -94,6 +99,7 @@ impl RecommenderRecipeName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "frequently-paired-items",
+            "personalized-ranking",
             "popular-items",
             "recommended-for-you",
             "similar-items",
@@ -122,6 +128,7 @@ impl ::std::fmt::Display for RecommenderRecipeName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RecommenderRecipeName::FrequentlyPairedItems => write!(f, "frequently-paired-items"),
+            RecommenderRecipeName::PersonalizedRanking => write!(f, "personalized-ranking"),
             RecommenderRecipeName::PopularItems => write!(f, "popular-items"),
             RecommenderRecipeName::RecommendedForYou => write!(f, "recommended-for-you"),
             RecommenderRecipeName::SimilarItems => write!(f, "similar-items"),

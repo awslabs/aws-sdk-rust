@@ -77,9 +77,13 @@ pub use crate::types::_get_object_type_attribute_statistics_stats::GetObjectType
 
 pub use crate::types::_action_type::ActionType;
 
+pub use crate::types::_metadata_config::MetadataConfig;
+
 pub use crate::types::_recommender_status::RecommenderStatus;
 
 pub use crate::types::_recommender_update::RecommenderUpdate;
+
+pub use crate::types::_recommender_filter_status::RecommenderFilterStatus;
 
 pub use crate::types::_segment_type::SegmentType;
 
@@ -141,6 +145,8 @@ pub use crate::types::_appflow_integration::AppflowIntegration;
 
 pub use crate::types::_events_config::EventsConfig;
 
+pub use crate::types::_inference_config::InferenceConfig;
+
 pub use crate::types::_include_options::IncludeOptions;
 
 pub use crate::types::_object_type_field::ObjectTypeField;
@@ -158,6 +164,10 @@ pub use crate::types::_s3_exporting_location::S3ExportingLocation;
 pub use crate::types::_match_item::MatchItem;
 
 pub use crate::types::_get_object_type_attribute_statistics_percentiles::GetObjectTypeAttributeStatisticsPercentiles;
+
+pub use crate::types::_recommender_filter::RecommenderFilter;
+
+pub use crate::types::_recommender_promotional_filter::RecommenderPromotionalFilter;
 
 pub use crate::types::_recommendation::Recommendation;
 
@@ -204,6 +214,8 @@ pub use crate::types::_list_profile_objects_item::ListProfileObjectsItem;
 pub use crate::types::_list_profile_object_type_item::ListProfileObjectTypeItem;
 
 pub use crate::types::_list_profile_object_type_template_item::ListProfileObjectTypeTemplateItem;
+
+pub use crate::types::_recommender_filter_summary::RecommenderFilterSummary;
 
 pub use crate::types::_recommender_recipe::RecommenderRecipe;
 
@@ -521,6 +533,8 @@ mod _include_options;
 
 mod _incremental_pull_config;
 
+mod _inference_config;
+
 mod _integration_config;
 
 mod _job_schedule;
@@ -568,6 +582,8 @@ mod _matching_request;
 mod _matching_response;
 
 mod _matching_rule;
+
+mod _metadata_config;
 
 mod _object_attribute;
 
@@ -620,6 +636,14 @@ mod _readiness_status;
 mod _recommendation;
 
 mod _recommender_config;
+
+mod _recommender_filter;
+
+mod _recommender_filter_status;
+
+mod _recommender_filter_summary;
+
+mod _recommender_promotional_filter;
 
 mod _recommender_recipe;
 

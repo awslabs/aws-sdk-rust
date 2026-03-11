@@ -259,4 +259,18 @@ impl SearchTrainingPlanOfferingsFluentBuilder {
     pub fn get_target_resources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SageMakerResourceName>> {
         self.inner.get_target_resources()
     }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn training_plan_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.training_plan_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn set_training_plan_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_training_plan_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN); of an existing training plan to search for extension offerings. When specified, the API returns extension offerings that can be used to extend the specified training plan.</p>
+    pub fn get_training_plan_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_training_plan_arn()
+    }
 }

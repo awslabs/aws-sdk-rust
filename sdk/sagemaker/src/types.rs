@@ -1203,6 +1203,8 @@ pub use crate::types::_sage_maker_resource_name::SageMakerResourceName;
 
 pub use crate::types::_reserved_capacity_summary::ReservedCapacitySummary;
 
+pub use crate::types::_training_plan_extension::TrainingPlanExtension;
+
 pub use crate::types::_trial_component_metric_summary::TrialComponentMetricSummary;
 
 pub use crate::types::_oidc_config_for_response::OidcConfigForResponse;
@@ -1384,6 +1386,8 @@ pub use crate::types::_search_record::SearchRecord;
 pub use crate::types::_relation::Relation;
 
 pub use crate::types::_training_plan_offering::TrainingPlanOffering;
+
+pub use crate::types::_training_plan_extension_offering::TrainingPlanExtensionOffering;
 
 pub use crate::types::_output_parameter::OutputParameter;
 
@@ -4128,6 +4132,10 @@ mod _training_job_status_counters;
 mod _training_job_step_metadata;
 
 mod _training_job_summary;
+
+mod _training_plan_extension;
+
+mod _training_plan_extension_offering;
 
 mod _training_plan_filter;
 

@@ -3,24 +3,63 @@ pub fn ser_get_profile_recommendations_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_profile_recommendations::GetProfileRecommendationsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.context {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("Context").start_object();
-        for (key_3, value_4) in var_1 {
+    if let Some(var_1) = &input.candidate_ids {
+        let mut array_2 = object.key("CandidateIds").start_array();
+        for item_3 in var_1 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        object_2.finish();
+        array_2.finish();
     }
-    if let Some(var_5) = &input.max_results {
+    if let Some(var_4) = &input.context {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Context").start_object();
+        for (key_6, value_7) in var_4 {
+            {
+                object_5.key(key_6.as_str()).string(value_7.as_str());
+            }
+        }
+        object_5.finish();
+    }
+    if let Some(var_8) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_6) = &input.recommender_name {
-        object.key("RecommenderName").string(var_6.as_str());
+    if let Some(var_9) = &input.metadata_config {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("MetadataConfig").start_object();
+        crate::protocol_serde::shape_metadata_config::ser_metadata_config(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.recommender_filters {
+        let mut array_12 = object.key("RecommenderFilters").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_recommender_filter::ser_recommender_filter(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_15) = &input.recommender_name {
+        object.key("RecommenderName").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.recommender_promotional_filters {
+        let mut array_17 = object.key("RecommenderPromotionalFilters").start_array();
+        for item_18 in var_16 {
+            {
+                #[allow(unused_mut)]
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_recommender_promotional_filter::ser_recommender_promotional_filter(&mut object_19, item_18)?;
+                object_19.finish();
+            }
+        }
+        array_17.finish();
     }
     Ok(())
 }

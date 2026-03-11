@@ -14,6 +14,7 @@
 /// match voiceid {
 ///     VoiceId::Aditi => { /* ... */ },
 ///     VoiceId::Adriano => { /* ... */ },
+///     VoiceId::Ambre => { /* ... */ },
 ///     VoiceId::Amy => { /* ... */ },
 ///     VoiceId::Andres => { /* ... */ },
 ///     VoiceId::Aria => { /* ... */ },
@@ -21,6 +22,7 @@
 ///     VoiceId::Arthur => { /* ... */ },
 ///     VoiceId::Astrid => { /* ... */ },
 ///     VoiceId::Ayanda => { /* ... */ },
+///     VoiceId::Beatrice => { /* ... */ },
 ///     VoiceId::Bianca => { /* ... */ },
 ///     VoiceId::Brian => { /* ... */ },
 ///     VoiceId::Burcu => { /* ... */ },
@@ -39,6 +41,7 @@
 ///     VoiceId::Enrique => { /* ... */ },
 ///     VoiceId::Ewa => { /* ... */ },
 ///     VoiceId::Filiz => { /* ... */ },
+///     VoiceId::Florian => { /* ... */ },
 ///     VoiceId::Gabrielle => { /* ... */ },
 ///     VoiceId::Geraint => { /* ... */ },
 ///     VoiceId::Giorgio => { /* ... */ },
@@ -68,9 +71,11 @@
 ///     VoiceId::Kimberly => { /* ... */ },
 ///     VoiceId::Laura => { /* ... */ },
 ///     VoiceId::Lea => { /* ... */ },
+///     VoiceId::Lennart => { /* ... */ },
 ///     VoiceId::Liam => { /* ... */ },
 ///     VoiceId::Lisa => { /* ... */ },
 ///     VoiceId::Liv => { /* ... */ },
+///     VoiceId::Lorenzo => { /* ... */ },
 ///     VoiceId::Lotte => { /* ... */ },
 ///     VoiceId::Lucia => { /* ... */ },
 ///     VoiceId::Lupe => { /* ... */ },
@@ -106,6 +111,7 @@
 ///     VoiceId::Takumi => { /* ... */ },
 ///     VoiceId::Tatyana => { /* ... */ },
 ///     VoiceId::Thiago => { /* ... */ },
+///     VoiceId::Tiffany => { /* ... */ },
 ///     VoiceId::Tomoko => { /* ... */ },
 ///     VoiceId::Vicki => { /* ... */ },
 ///     VoiceId::Vitoria => { /* ... */ },
@@ -145,6 +151,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Adriano,
     #[allow(missing_docs)] // documentation missing in model
+    Ambre,
+    #[allow(missing_docs)] // documentation missing in model
     Amy,
     #[allow(missing_docs)] // documentation missing in model
     Andres,
@@ -158,6 +166,8 @@ pub enum VoiceId {
     Astrid,
     #[allow(missing_docs)] // documentation missing in model
     Ayanda,
+    #[allow(missing_docs)] // documentation missing in model
+    Beatrice,
     #[allow(missing_docs)] // documentation missing in model
     Bianca,
     #[allow(missing_docs)] // documentation missing in model
@@ -194,6 +204,8 @@ pub enum VoiceId {
     Ewa,
     #[allow(missing_docs)] // documentation missing in model
     Filiz,
+    #[allow(missing_docs)] // documentation missing in model
+    Florian,
     #[allow(missing_docs)] // documentation missing in model
     Gabrielle,
     #[allow(missing_docs)] // documentation missing in model
@@ -253,11 +265,15 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Lea,
     #[allow(missing_docs)] // documentation missing in model
+    Lennart,
+    #[allow(missing_docs)] // documentation missing in model
     Liam,
     #[allow(missing_docs)] // documentation missing in model
     Lisa,
     #[allow(missing_docs)] // documentation missing in model
     Liv,
+    #[allow(missing_docs)] // documentation missing in model
+    Lorenzo,
     #[allow(missing_docs)] // documentation missing in model
     Lotte,
     #[allow(missing_docs)] // documentation missing in model
@@ -329,6 +345,8 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Thiago,
     #[allow(missing_docs)] // documentation missing in model
+    Tiffany,
+    #[allow(missing_docs)] // documentation missing in model
     Tomoko,
     #[allow(missing_docs)] // documentation missing in model
     Vicki,
@@ -349,6 +367,7 @@ impl ::std::convert::From<&str> for VoiceId {
         match s {
             "Aditi" => VoiceId::Aditi,
             "Adriano" => VoiceId::Adriano,
+            "Ambre" => VoiceId::Ambre,
             "Amy" => VoiceId::Amy,
             "Andres" => VoiceId::Andres,
             "Aria" => VoiceId::Aria,
@@ -356,6 +375,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Arthur" => VoiceId::Arthur,
             "Astrid" => VoiceId::Astrid,
             "Ayanda" => VoiceId::Ayanda,
+            "Beatrice" => VoiceId::Beatrice,
             "Bianca" => VoiceId::Bianca,
             "Brian" => VoiceId::Brian,
             "Burcu" => VoiceId::Burcu,
@@ -374,6 +394,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Enrique" => VoiceId::Enrique,
             "Ewa" => VoiceId::Ewa,
             "Filiz" => VoiceId::Filiz,
+            "Florian" => VoiceId::Florian,
             "Gabrielle" => VoiceId::Gabrielle,
             "Geraint" => VoiceId::Geraint,
             "Giorgio" => VoiceId::Giorgio,
@@ -403,9 +424,11 @@ impl ::std::convert::From<&str> for VoiceId {
             "Kimberly" => VoiceId::Kimberly,
             "Laura" => VoiceId::Laura,
             "Lea" => VoiceId::Lea,
+            "Lennart" => VoiceId::Lennart,
             "Liam" => VoiceId::Liam,
             "Lisa" => VoiceId::Lisa,
             "Liv" => VoiceId::Liv,
+            "Lorenzo" => VoiceId::Lorenzo,
             "Lotte" => VoiceId::Lotte,
             "Lucia" => VoiceId::Lucia,
             "Lupe" => VoiceId::Lupe,
@@ -441,6 +464,7 @@ impl ::std::convert::From<&str> for VoiceId {
             "Takumi" => VoiceId::Takumi,
             "Tatyana" => VoiceId::Tatyana,
             "Thiago" => VoiceId::Thiago,
+            "Tiffany" => VoiceId::Tiffany,
             "Tomoko" => VoiceId::Tomoko,
             "Vicki" => VoiceId::Vicki,
             "Vitoria" => VoiceId::Vitoria,
@@ -464,6 +488,7 @@ impl VoiceId {
         match self {
             VoiceId::Aditi => "Aditi",
             VoiceId::Adriano => "Adriano",
+            VoiceId::Ambre => "Ambre",
             VoiceId::Amy => "Amy",
             VoiceId::Andres => "Andres",
             VoiceId::Aria => "Aria",
@@ -471,6 +496,7 @@ impl VoiceId {
             VoiceId::Arthur => "Arthur",
             VoiceId::Astrid => "Astrid",
             VoiceId::Ayanda => "Ayanda",
+            VoiceId::Beatrice => "Beatrice",
             VoiceId::Bianca => "Bianca",
             VoiceId::Brian => "Brian",
             VoiceId::Burcu => "Burcu",
@@ -489,6 +515,7 @@ impl VoiceId {
             VoiceId::Enrique => "Enrique",
             VoiceId::Ewa => "Ewa",
             VoiceId::Filiz => "Filiz",
+            VoiceId::Florian => "Florian",
             VoiceId::Gabrielle => "Gabrielle",
             VoiceId::Geraint => "Geraint",
             VoiceId::Giorgio => "Giorgio",
@@ -518,9 +545,11 @@ impl VoiceId {
             VoiceId::Kimberly => "Kimberly",
             VoiceId::Laura => "Laura",
             VoiceId::Lea => "Lea",
+            VoiceId::Lennart => "Lennart",
             VoiceId::Liam => "Liam",
             VoiceId::Lisa => "Lisa",
             VoiceId::Liv => "Liv",
+            VoiceId::Lorenzo => "Lorenzo",
             VoiceId::Lotte => "Lotte",
             VoiceId::Lucia => "Lucia",
             VoiceId::Lupe => "Lupe",
@@ -556,6 +585,7 @@ impl VoiceId {
             VoiceId::Takumi => "Takumi",
             VoiceId::Tatyana => "Tatyana",
             VoiceId::Thiago => "Thiago",
+            VoiceId::Tiffany => "Tiffany",
             VoiceId::Tomoko => "Tomoko",
             VoiceId::Vicki => "Vicki",
             VoiceId::Vitoria => "Vitoria",
@@ -570,6 +600,7 @@ impl VoiceId {
         &[
             "Aditi",
             "Adriano",
+            "Ambre",
             "Amy",
             "Andres",
             "Aria",
@@ -577,6 +608,7 @@ impl VoiceId {
             "Arthur",
             "Astrid",
             "Ayanda",
+            "Beatrice",
             "Bianca",
             "Brian",
             "Burcu",
@@ -595,6 +627,7 @@ impl VoiceId {
             "Enrique",
             "Ewa",
             "Filiz",
+            "Florian",
             "Gabrielle",
             "Geraint",
             "Giorgio",
@@ -624,9 +657,11 @@ impl VoiceId {
             "Kimberly",
             "Laura",
             "Lea",
+            "Lennart",
             "Liam",
             "Lisa",
             "Liv",
+            "Lorenzo",
             "Lotte",
             "Lucia",
             "Lupe",
@@ -662,6 +697,7 @@ impl VoiceId {
             "Takumi",
             "Tatyana",
             "Thiago",
+            "Tiffany",
             "Tomoko",
             "Vicki",
             "Vitoria",
@@ -693,6 +729,7 @@ impl ::std::fmt::Display for VoiceId {
         match self {
             VoiceId::Aditi => write!(f, "Aditi"),
             VoiceId::Adriano => write!(f, "Adriano"),
+            VoiceId::Ambre => write!(f, "Ambre"),
             VoiceId::Amy => write!(f, "Amy"),
             VoiceId::Andres => write!(f, "Andres"),
             VoiceId::Aria => write!(f, "Aria"),
@@ -700,6 +737,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Arthur => write!(f, "Arthur"),
             VoiceId::Astrid => write!(f, "Astrid"),
             VoiceId::Ayanda => write!(f, "Ayanda"),
+            VoiceId::Beatrice => write!(f, "Beatrice"),
             VoiceId::Bianca => write!(f, "Bianca"),
             VoiceId::Brian => write!(f, "Brian"),
             VoiceId::Burcu => write!(f, "Burcu"),
@@ -718,6 +756,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Enrique => write!(f, "Enrique"),
             VoiceId::Ewa => write!(f, "Ewa"),
             VoiceId::Filiz => write!(f, "Filiz"),
+            VoiceId::Florian => write!(f, "Florian"),
             VoiceId::Gabrielle => write!(f, "Gabrielle"),
             VoiceId::Geraint => write!(f, "Geraint"),
             VoiceId::Giorgio => write!(f, "Giorgio"),
@@ -747,9 +786,11 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Kimberly => write!(f, "Kimberly"),
             VoiceId::Laura => write!(f, "Laura"),
             VoiceId::Lea => write!(f, "Lea"),
+            VoiceId::Lennart => write!(f, "Lennart"),
             VoiceId::Liam => write!(f, "Liam"),
             VoiceId::Lisa => write!(f, "Lisa"),
             VoiceId::Liv => write!(f, "Liv"),
+            VoiceId::Lorenzo => write!(f, "Lorenzo"),
             VoiceId::Lotte => write!(f, "Lotte"),
             VoiceId::Lucia => write!(f, "Lucia"),
             VoiceId::Lupe => write!(f, "Lupe"),
@@ -785,6 +826,7 @@ impl ::std::fmt::Display for VoiceId {
             VoiceId::Takumi => write!(f, "Takumi"),
             VoiceId::Tatyana => write!(f, "Tatyana"),
             VoiceId::Thiago => write!(f, "Thiago"),
+            VoiceId::Tiffany => write!(f, "Tiffany"),
             VoiceId::Tomoko => write!(f, "Tomoko"),
             VoiceId::Vicki => write!(f, "Vicki"),
             VoiceId::Vitoria => write!(f, "Vitoria"),

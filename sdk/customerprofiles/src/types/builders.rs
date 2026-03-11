@@ -51,6 +51,8 @@ pub use crate::types::_job_stats::JobStatsBuilder;
 
 pub use crate::types::_get_object_type_attribute_statistics_stats::GetObjectTypeAttributeStatisticsStatsBuilder;
 
+pub use crate::types::_metadata_config::MetadataConfigBuilder;
+
 pub use crate::types::_recommender_update::RecommenderUpdateBuilder;
 
 pub use crate::types::_results_summary::ResultsSummaryBuilder;
@@ -93,6 +95,8 @@ pub use crate::types::_appflow_integration::AppflowIntegrationBuilder;
 
 pub use crate::types::_events_config::EventsConfigBuilder;
 
+pub use crate::types::_inference_config::InferenceConfigBuilder;
+
 pub use crate::types::_object_type_field::ObjectTypeFieldBuilder;
 
 pub use crate::types::_detected_profile_object_type::DetectedProfileObjectTypeBuilder;
@@ -104,6 +108,10 @@ pub use crate::types::_s3_exporting_location::S3ExportingLocationBuilder;
 pub use crate::types::_match_item::MatchItemBuilder;
 
 pub use crate::types::_get_object_type_attribute_statistics_percentiles::GetObjectTypeAttributeStatisticsPercentilesBuilder;
+
+pub use crate::types::_recommender_filter::RecommenderFilterBuilder;
+
+pub use crate::types::_recommender_promotional_filter::RecommenderPromotionalFilterBuilder;
 
 pub use crate::types::_recommendation::RecommendationBuilder;
 
@@ -150,6 +158,8 @@ pub use crate::types::_list_profile_objects_item::ListProfileObjectsItemBuilder;
 pub use crate::types::_list_profile_object_type_item::ListProfileObjectTypeItemBuilder;
 
 pub use crate::types::_list_profile_object_type_template_item::ListProfileObjectTypeTemplateItemBuilder;
+
+pub use crate::types::_recommender_filter_summary::RecommenderFilterSummaryBuilder;
 
 pub use crate::types::_recommender_recipe::RecommenderRecipeBuilder;
 
