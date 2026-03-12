@@ -22,7 +22,7 @@ pub struct UpdateLocationAzureBlobInput {
     pub agent_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies configuration information for a DataSync-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
     pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
-    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl UpdateLocationAzureBlobInput {
@@ -63,7 +63,7 @@ impl UpdateLocationAzureBlobInput {
     pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
         self.cmk_secret_config.as_ref()
     }
-    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
         self.custom_secret_config.as_ref()
     }
@@ -218,17 +218,17 @@ impl UpdateLocationAzureBlobInputBuilder {
     pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
         &self.cmk_secret_config
     }
-    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
         self.custom_secret_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
         self.custom_secret_config = input;
         self
     }
-    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    /// <p>Specifies configuration information for a customer-managed secret, such as an authentication token or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
         &self.custom_secret_config
     }

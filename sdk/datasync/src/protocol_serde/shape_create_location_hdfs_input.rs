@@ -77,5 +77,17 @@ pub fn ser_create_location_hdfs_input_input(
         }
         array_20.finish();
     }
+    if let Some(var_23) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_26, var_25)?;
+        object_26.finish();
+    }
     Ok(())
 }

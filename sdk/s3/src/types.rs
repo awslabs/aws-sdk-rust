@@ -31,6 +31,8 @@ pub use crate::types::_create_bucket_configuration::CreateBucketConfiguration;
 
 pub use crate::types::_object_ownership::ObjectOwnership;
 
+pub use crate::types::_bucket_namespace::BucketNamespace;
+
 pub use crate::types::_metadata_configuration::MetadataConfiguration;
 
 pub use crate::types::_metadata_table_configuration::MetadataTableConfiguration;
@@ -506,6 +508,8 @@ mod _bucket_location_constraint;
 mod _bucket_logging_status;
 
 mod _bucket_logs_permission;
+
+mod _bucket_namespace;
 
 mod _bucket_type;
 

@@ -714,9 +714,9 @@ model_hash = 'c72d4db16e85192a2ee9bd831714ae53fd30875ceb580dc62c4dc51c10e30337'
 
 [crates.aws-sdk-datasync]
 category = 'AwsSdk'
-version = '1.106.0'
-source_hash = '6d0ebfa4158d622314890f8b5664a930826fad925dbfd29ce52245a77035206e'
-model_hash = 'b8c76c72292708cb70535fb9d2b71dc6bfbe1e821c6854e6f32b52ad603ebdb9'
+version = '1.107.0'
+source_hash = 'ed629bc930c505da68d8aadcf227554a837436ae68f33cb8aed4629062ed2e63'
+model_hash = '696fc3b52b349b1c7071b7562cec57bebd0a2922e2584dbf95538a7794c136ad'
 
 [crates.aws-sdk-datazone]
 category = 'AwsSdk'
@@ -834,9 +834,9 @@ model_hash = '2d2883275027d978168346af0bd554909f803b566f6d40a86477cc11ac3b373b'
 
 [crates.aws-sdk-ecr]
 category = 'AwsSdk'
-version = '1.111.0'
-source_hash = '8a9405139089331454f31c2451f7b34b2e427bb3e78e411f1fa5a84c3892f307'
-model_hash = 'd5aa244bb8573215e8115f9af8ab6963f008786477fe6449e43d8658c3337768'
+version = '1.112.0'
+source_hash = 'f7fccb97557fdd5962e87b1d10cfea62156d81005c9fce4e3b1fae081514bd9f'
+model_hash = '454503c2e431a70ad0498922e9750099fdb99c2a95a0a8167103f226842fba13'
 
 [crates.aws-sdk-ecrpublic]
 category = 'AwsSdk'
@@ -2034,9 +2034,9 @@ model_hash = 'a56eb357c2e7e43b2c0d56bc8a1b61732d0735a82b3de055ef01a46ec4e54f8b'
 
 [crates.aws-sdk-s3]
 category = 'AwsSdk'
-version = '1.125.0'
-source_hash = '9a2866f796363cc1f92422971e8579d0f0cd371a579f8988b7307a8a9a6aab07'
-model_hash = 'a8753a4985cc2e966d3682a28af9a8b05ee43b915c75ddb9c3f152855ba9721f'
+version = '1.126.0'
+source_hash = 'c2f86cc0c18504de144e1a2ad3b5fe135fd56cad271a97acd83e33c774697989'
+model_hash = '1a897ea8c1c3c335a7457ecf8790f839fe45251ccca67012d453153969a50fc0'
 
 [crates.aws-sdk-s3control]
 category = 'AwsSdk'
@@ -2674,14 +2674,7 @@ source_hash = 'b80775c7c041dcf9130b66b64506f0430e408ce24416fe472a9887a972bcabf6'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd507c9eecb3d559fd9efaa58d1f6f1a441526cac0cef82c8edfa21eb62cb7d67'
-
-[release]
-tag = 'release-2026-03-11'
-
 [release.crates]
-aws-sdk-customerprofiles = '1.108.0'
-aws-sdk-eks = '1.126.0'
-aws-sdk-polly = '1.102.0'
-aws-sdk-sagemaker = '1.188.0'
-aws-sdk-simpledbv2 = '1.0.0'
-aws-sdk-workspaces = '1.115.0'
+aws-sdk-datasync = '1.107.0'
+aws-sdk-ecr = '1.112.0'
+aws-sdk-s3 = '1.126.0'

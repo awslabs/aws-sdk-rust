@@ -136,6 +136,19 @@ pub(crate) fn de_describe_location_fsx_windows(
                             .transpose()?,
                     );
                 }
+                "ManagedSecretConfig" => {
+                    builder = builder.set_managed_secret_config(crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(
+                        tokens, _value,
+                    )?);
+                }
+                "CmkSecretConfig" => {
+                    builder = builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens, _value)?);
+                }
+                "CustomSecretConfig" => {
+                    builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(
+                        tokens, _value,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

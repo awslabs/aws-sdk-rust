@@ -169,5 +169,16 @@ pub fn ser_create_bucket_headers(
         })?;
         builder = builder.header("x-amz-object-ownership", header_value);
     }
+    if let ::std::option::Option::Some(inner_17) = &input.bucket_namespace {
+        let formatted_18 = inner_17.as_str();
+        let header_value = formatted_18;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "bucket_namespace",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amz-bucket-namespace", header_value);
+    }
     Ok(builder)
 }

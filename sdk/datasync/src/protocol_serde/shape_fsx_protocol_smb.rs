@@ -18,6 +18,24 @@ pub fn ser_fsx_protocol_smb(
     {
         object.key("User").string(input.user.as_str());
     }
+    if let Some(var_4) = &input.managed_secret_config {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("ManagedSecretConfig").start_object();
+        crate::protocol_serde::shape_managed_secret_config::ser_managed_secret_config(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -61,6 +79,20 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "ManagedSecretConfig" => {
+                            builder = builder.set_managed_secret_config(
+                                crate::protocol_serde::shape_managed_secret_config::de_managed_secret_config(tokens, _value)?,
+                            );
+                        }
+                        "CmkSecretConfig" => {
+                            builder =
+                                builder.set_cmk_secret_config(crate::protocol_serde::shape_cmk_secret_config::de_cmk_secret_config(tokens, _value)?);
+                        }
+                        "CustomSecretConfig" => {
+                            builder = builder.set_custom_secret_config(crate::protocol_serde::shape_custom_secret_config::de_custom_secret_config(
+                                tokens, _value,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

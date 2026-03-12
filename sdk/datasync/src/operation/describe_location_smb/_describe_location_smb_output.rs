@@ -28,7 +28,7 @@ pub struct DescribeLocationSmbOutput {
     pub managed_secret_config: ::std::option::Option<crate::types::ManagedSecretConfig>,
     /// <p>Describes configuration information for a DataSync-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
     pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
-    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
     _request_id: Option<String>,
 }
@@ -85,7 +85,7 @@ impl DescribeLocationSmbOutput {
     pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
         self.cmk_secret_config.as_ref()
     }
-    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
         self.custom_secret_config.as_ref()
     }
@@ -302,17 +302,17 @@ impl DescribeLocationSmbOutputBuilder {
     pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
         &self.cmk_secret_config
     }
-    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
         self.custom_secret_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
         self.custom_secret_config = input;
         self
     }
-    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed KMS key.</p>
+    /// <p>Describes configuration information for a customer-managed secret, such as a <code>Password</code> or <code>KerberosKeytab</code> that DataSync uses to access a specific storage location, with a customer-managed Identity and Access Management (IAM) role that provides access to the secret.</p>
     pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
         &self.custom_secret_config
     }

@@ -15,6 +15,20 @@ pub struct FsxProtocolSmb {
     /// <p>Specifies a user that can mount and access the files, folders, and metadata in your SVM.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using the SMB protocol</a>.</p>
     pub user: ::std::string::String,
+    /// <p>Describes configuration information for a DataSync-managed secret, such as a <code>Password</code> that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p><note>
+    /// <p>Do not provide this for a <code>CreateLocation</code> request. <code>ManagedSecretConfig</code> is a ReadOnly property and is only be populated in the <code>DescribeLocation</code> response.</p>
+    /// </note>
+    pub managed_secret_config: ::std::option::Option<crate::types::ManagedSecretConfig>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the password that DataSync uses to access a specific FSx for ONTAP storage location (using SMB), with a customer-managed KMS key.</p>
+    /// <p>When you include this parameter as part of a <code>CreateLocationFsxOntap</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the <code>Password</code> you specify for to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key"> Using a service-managed secret encrypted with a custom KMS key</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the password for an FSx for ONTAP storage location (using SMB) is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key"> Using a secret that you manage</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl FsxProtocolSmb {
     /// <p>Specifies the name of the Windows domain that your storage virtual machine (SVM) belongs to.</p>
@@ -38,6 +52,26 @@ impl FsxProtocolSmb {
         use std::ops::Deref;
         self.user.deref()
     }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as a <code>Password</code> that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p><note>
+    /// <p>Do not provide this for a <code>CreateLocation</code> request. <code>ManagedSecretConfig</code> is a ReadOnly property and is only be populated in the <code>DescribeLocation</code> response.</p>
+    /// </note>
+    pub fn managed_secret_config(&self) -> ::std::option::Option<&crate::types::ManagedSecretConfig> {
+        self.managed_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the password that DataSync uses to access a specific FSx for ONTAP storage location (using SMB), with a customer-managed KMS key.</p>
+    /// <p>When you include this parameter as part of a <code>CreateLocationFsxOntap</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the <code>Password</code> you specify for to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key"> Using a service-managed secret encrypted with a custom KMS key</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the password for an FSx for ONTAP storage location (using SMB) is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key"> Using a secret that you manage</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for FsxProtocolSmb {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -46,6 +80,9 @@ impl ::std::fmt::Debug for FsxProtocolSmb {
         formatter.field("mount_options", &self.mount_options);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("user", &self.user);
+        formatter.field("managed_secret_config", &self.managed_secret_config);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }
@@ -64,6 +101,9 @@ pub struct FsxProtocolSmbBuilder {
     pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_secret_config: ::std::option::Option<crate::types::ManagedSecretConfig>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl FsxProtocolSmbBuilder {
     /// <p>Specifies the name of the Windows domain that your storage virtual machine (SVM) belongs to.</p>
@@ -101,7 +141,6 @@ impl FsxProtocolSmbBuilder {
         &self.mount_options
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
-    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -133,26 +172,89 @@ impl FsxProtocolSmbBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as a <code>Password</code> that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p><note>
+    /// <p>Do not provide this for a <code>CreateLocation</code> request. <code>ManagedSecretConfig</code> is a ReadOnly property and is only be populated in the <code>DescribeLocation</code> response.</p>
+    /// </note>
+    pub fn managed_secret_config(mut self, input: crate::types::ManagedSecretConfig) -> Self {
+        self.managed_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as a <code>Password</code> that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p><note>
+    /// <p>Do not provide this for a <code>CreateLocation</code> request. <code>ManagedSecretConfig</code> is a ReadOnly property and is only be populated in the <code>DescribeLocation</code> response.</p>
+    /// </note>
+    pub fn set_managed_secret_config(mut self, input: ::std::option::Option<crate::types::ManagedSecretConfig>) -> Self {
+        self.managed_secret_config = input;
+        self
+    }
+    /// <p>Describes configuration information for a DataSync-managed secret, such as a <code>Password</code> that DataSync uses to access a specific storage location. DataSync uses the default Amazon Web Services-managed KMS key to encrypt this secret in Secrets Manager.</p><note>
+    /// <p>Do not provide this for a <code>CreateLocation</code> request. <code>ManagedSecretConfig</code> is a ReadOnly property and is only be populated in the <code>DescribeLocation</code> response.</p>
+    /// </note>
+    pub fn get_managed_secret_config(&self) -> &::std::option::Option<crate::types::ManagedSecretConfig> {
+        &self.managed_secret_config
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the password that DataSync uses to access a specific FSx for ONTAP storage location (using SMB), with a customer-managed KMS key.</p>
+    /// <p>When you include this parameter as part of a <code>CreateLocationFsxOntap</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the <code>Password</code> you specify for to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key"> Using a service-managed secret encrypted with a custom KMS key</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the password that DataSync uses to access a specific FSx for ONTAP storage location (using SMB), with a customer-managed KMS key.</p>
+    /// <p>When you include this parameter as part of a <code>CreateLocationFsxOntap</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the <code>Password</code> you specify for to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key"> Using a service-managed secret encrypted with a custom KMS key</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, which includes the password that DataSync uses to access a specific FSx for ONTAP storage location (using SMB), with a customer-managed KMS key.</p>
+    /// <p>When you include this parameter as part of a <code>CreateLocationFsxOntap</code> request, you provide only the KMS key ARN. DataSync uses this KMS key together with the <code>Password</code> you specify for to create a DataSync-managed secret to store the location access credentials.</p>
+    /// <p>Make sure that DataSync has permission to access the KMS key that you specify. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#service-secret-custom-key"> Using a service-managed secret encrypted with a custom KMS key</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the password for an FSx for ONTAP storage location (using SMB) is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key"> Using a secret that you manage</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the password for an FSx for ONTAP storage location (using SMB) is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key"> Using a secret that you manage</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed Secrets Manager secret where the password for an FSx for ONTAP storage location (using SMB) is stored in plain text, in Secrets Manager. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/location-credentials.html#custom-secret-custom-key"> Using a secret that you manage</a>.</p><note>
+    /// <p>You can use either <code>CmkSecretConfig</code> (with <code>Password</code>) or <code>CustomSecretConfig</code> (without <code>Password</code>) to provide credentials for a <code>CreateLocationFsxOntap</code> request. Do not provide both parameters for the same request.</p>
+    /// </note>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
+    }
     /// Consumes the builder and constructs a [`FsxProtocolSmb`](crate::types::FsxProtocolSmb).
     /// This method will fail if any of the following fields are not set:
-    /// - [`password`](crate::types::builders::FsxProtocolSmbBuilder::password)
     /// - [`user`](crate::types::builders::FsxProtocolSmbBuilder::user)
     pub fn build(self) -> ::std::result::Result<crate::types::FsxProtocolSmb, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::FsxProtocolSmb {
             domain: self.domain,
             mount_options: self.mount_options,
-            password: self.password.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "password",
-                    "password was not specified but it is required when building FsxProtocolSmb",
-                )
-            })?,
+            password: self.password.unwrap_or_default(),
             user: self.user.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "user",
                     "user was not specified but it is required when building FsxProtocolSmb",
                 )
             })?,
+            managed_secret_config: self.managed_secret_config,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
         })
     }
 }
@@ -163,6 +265,9 @@ impl ::std::fmt::Debug for FsxProtocolSmbBuilder {
         formatter.field("mount_options", &self.mount_options);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("user", &self.user);
+        formatter.field("managed_secret_config", &self.managed_secret_config);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }

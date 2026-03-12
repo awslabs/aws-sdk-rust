@@ -13,6 +13,7 @@
 /// # let upstreamregistry = unimplemented!();
 /// match upstreamregistry {
 ///     UpstreamRegistry::AzureContainerRegistry => { /* ... */ },
+///     UpstreamRegistry::Chainguard => { /* ... */ },
 ///     UpstreamRegistry::DockerHub => { /* ... */ },
 ///     UpstreamRegistry::Ecr => { /* ... */ },
 ///     UpstreamRegistry::EcrPublic => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum UpstreamRegistry {
     #[allow(missing_docs)] // documentation missing in model
     AzureContainerRegistry,
     #[allow(missing_docs)] // documentation missing in model
+    Chainguard,
+    #[allow(missing_docs)] // documentation missing in model
     DockerHub,
     #[allow(missing_docs)] // documentation missing in model
     Ecr,
@@ -72,6 +75,7 @@ impl ::std::convert::From<&str> for UpstreamRegistry {
     fn from(s: &str) -> Self {
         match s {
             "azure-container-registry" => UpstreamRegistry::AzureContainerRegistry,
+            "chainguard" => UpstreamRegistry::Chainguard,
             "docker-hub" => UpstreamRegistry::DockerHub,
             "ecr" => UpstreamRegistry::Ecr,
             "ecr-public" => UpstreamRegistry::EcrPublic,
@@ -95,6 +99,7 @@ impl UpstreamRegistry {
     pub fn as_str(&self) -> &str {
         match self {
             UpstreamRegistry::AzureContainerRegistry => "azure-container-registry",
+            UpstreamRegistry::Chainguard => "chainguard",
             UpstreamRegistry::DockerHub => "docker-hub",
             UpstreamRegistry::Ecr => "ecr",
             UpstreamRegistry::EcrPublic => "ecr-public",
@@ -109,6 +114,7 @@ impl UpstreamRegistry {
     pub const fn values() -> &'static [&'static str] {
         &[
             "azure-container-registry",
+            "chainguard",
             "docker-hub",
             "ecr",
             "ecr-public",
@@ -140,6 +146,7 @@ impl ::std::fmt::Display for UpstreamRegistry {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             UpstreamRegistry::AzureContainerRegistry => write!(f, "azure-container-registry"),
+            UpstreamRegistry::Chainguard => write!(f, "chainguard"),
             UpstreamRegistry::DockerHub => write!(f, "docker-hub"),
             UpstreamRegistry::Ecr => write!(f, "ecr"),
             UpstreamRegistry::EcrPublic => write!(f, "ecr-public"),

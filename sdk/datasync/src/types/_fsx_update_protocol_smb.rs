@@ -14,6 +14,10 @@ pub struct FsxUpdateProtocolSmb {
     /// <p>Specifies a user that can mount and access the files, folders, and metadata in your SVM.</p>
     /// <p>For information about choosing a user with the right level of access for your transfer, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-smb">Using the SMB protocol</a>.</p>
     pub user: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p>
+    pub custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl FsxUpdateProtocolSmb {
     /// <p>Specifies the name of the Windows domain that your storage virtual machine (SVM) belongs to.</p>
@@ -34,6 +38,14 @@ impl FsxUpdateProtocolSmb {
     pub fn user(&self) -> ::std::option::Option<&str> {
         self.user.as_deref()
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(&self) -> ::std::option::Option<&crate::types::CmkSecretConfig> {
+        self.cmk_secret_config.as_ref()
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p>
+    pub fn custom_secret_config(&self) -> ::std::option::Option<&crate::types::CustomSecretConfig> {
+        self.custom_secret_config.as_ref()
+    }
 }
 impl ::std::fmt::Debug for FsxUpdateProtocolSmb {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -42,6 +54,8 @@ impl ::std::fmt::Debug for FsxUpdateProtocolSmb {
         formatter.field("mount_options", &self.mount_options);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("user", &self.user);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }
@@ -60,6 +74,8 @@ pub struct FsxUpdateProtocolSmbBuilder {
     pub(crate) mount_options: ::std::option::Option<crate::types::SmbMountOptions>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) user: ::std::option::Option<::std::string::String>,
+    pub(crate) cmk_secret_config: ::std::option::Option<crate::types::CmkSecretConfig>,
+    pub(crate) custom_secret_config: ::std::option::Option<crate::types::CustomSecretConfig>,
 }
 impl FsxUpdateProtocolSmbBuilder {
     /// <p>Specifies the name of the Windows domain that your storage virtual machine (SVM) belongs to.</p>
@@ -124,6 +140,34 @@ impl FsxUpdateProtocolSmbBuilder {
     pub fn get_user(&self) -> &::std::option::Option<::std::string::String> {
         &self.user
     }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn cmk_secret_config(mut self, input: crate::types::CmkSecretConfig) -> Self {
+        self.cmk_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn set_cmk_secret_config(mut self, input: ::std::option::Option<crate::types::CmkSecretConfig>) -> Self {
+        self.cmk_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a DataSync-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location, and a customer-managed KMS key.</p>
+    pub fn get_cmk_secret_config(&self) -> &::std::option::Option<crate::types::CmkSecretConfig> {
+        &self.cmk_secret_config
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p>
+    pub fn custom_secret_config(mut self, input: crate::types::CustomSecretConfig) -> Self {
+        self.custom_secret_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p>
+    pub fn set_custom_secret_config(mut self, input: ::std::option::Option<crate::types::CustomSecretConfig>) -> Self {
+        self.custom_secret_config = input;
+        self
+    }
+    /// <p>Specifies configuration information for a customer-managed secret, such as a <code>Password</code> or set of credentials that DataSync uses to access a specific transfer location. This configuration includes the secret ARN, and the ARN for an IAM role that provides access to the secret.</p>
+    pub fn get_custom_secret_config(&self) -> &::std::option::Option<crate::types::CustomSecretConfig> {
+        &self.custom_secret_config
+    }
     /// Consumes the builder and constructs a [`FsxUpdateProtocolSmb`](crate::types::FsxUpdateProtocolSmb).
     pub fn build(self) -> crate::types::FsxUpdateProtocolSmb {
         crate::types::FsxUpdateProtocolSmb {
@@ -131,6 +175,8 @@ impl FsxUpdateProtocolSmbBuilder {
             mount_options: self.mount_options,
             password: self.password,
             user: self.user,
+            cmk_secret_config: self.cmk_secret_config,
+            custom_secret_config: self.custom_secret_config,
         }
     }
 }
@@ -141,6 +187,8 @@ impl ::std::fmt::Debug for FsxUpdateProtocolSmbBuilder {
         formatter.field("mount_options", &self.mount_options);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("user", &self.user);
+        formatter.field("cmk_secret_config", &self.cmk_secret_config);
+        formatter.field("custom_secret_config", &self.custom_secret_config);
         formatter.finish()
     }
 }

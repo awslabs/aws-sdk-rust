@@ -39,5 +39,17 @@ pub fn ser_create_location_fsx_windows_input_input(
     if let Some(var_12) = &input.password {
         object.key("Password").string(var_12.as_str());
     }
+    if let Some(var_13) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }

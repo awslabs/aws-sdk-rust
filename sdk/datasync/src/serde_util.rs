@@ -33,9 +33,6 @@ pub(crate) fn task_schedule_correct_errors(mut builder: crate::types::builders::
 pub(crate) fn fsx_protocol_smb_correct_errors(
     mut builder: crate::types::builders::FsxProtocolSmbBuilder,
 ) -> crate::types::builders::FsxProtocolSmbBuilder {
-    if builder.password.is_none() {
-        builder.password = Some(Default::default())
-    }
     if builder.user.is_none() {
         builder.user = Some(Default::default())
     }

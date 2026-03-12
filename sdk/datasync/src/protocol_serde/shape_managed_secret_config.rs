@@ -38,3 +38,13 @@ where
         )),
     }
 }
+
+pub fn ser_managed_secret_config(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::ManagedSecretConfig,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.secret_arn {
+        object.key("SecretArn").string(var_1.as_str());
+    }
+    Ok(())
+}

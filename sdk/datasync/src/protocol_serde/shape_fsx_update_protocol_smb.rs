@@ -18,5 +18,17 @@ pub fn ser_fsx_update_protocol_smb(
     if let Some(var_5) = &input.user {
         object.key("User").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.cmk_secret_config {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("CmkSecretConfig").start_object();
+        crate::protocol_serde::shape_cmk_secret_config::ser_cmk_secret_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.custom_secret_config {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("CustomSecretConfig").start_object();
+        crate::protocol_serde::shape_custom_secret_config::ser_custom_secret_config(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
