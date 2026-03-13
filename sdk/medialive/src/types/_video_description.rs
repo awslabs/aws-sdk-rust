@@ -12,7 +12,7 @@ pub struct VideoDescription {
     pub name: ::std::option::Option<::std::string::String>,
     /// Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH. RESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE. PASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output. NONE: MediaLive does not clip the input video and does not include the AFD values in the output
     pub respond_to_afd: ::std::option::Option<crate::types::VideoDescriptionRespondToAfd>,
-    /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    /// Configures how MediaLive transforms the video picture to match the output frame. Use STRETCH_TO_OUTPUT to stretch the video to fill the output frame. The video might get distorted. Use DEFAULT to insert pillar boxes or letter boxes around the video to fill the output frame. The video won't get distorted. Use SMART_CROP to enable the smart crop feature that uses the Elemental Inference service to crop the frame using AI - see the MediaLive User Guide for more information.
     pub scaling_behavior: ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>,
     /// Changes the strength of the anti-alias filter used for scaling. 0 is the softest setting, 100 is the sharpest. A setting of 50 is recommended for most content.
     pub sharpness: ::std::option::Option<i32>,
@@ -36,7 +36,7 @@ impl VideoDescription {
     pub fn respond_to_afd(&self) -> ::std::option::Option<&crate::types::VideoDescriptionRespondToAfd> {
         self.respond_to_afd.as_ref()
     }
-    /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    /// Configures how MediaLive transforms the video picture to match the output frame. Use STRETCH_TO_OUTPUT to stretch the video to fill the output frame. The video might get distorted. Use DEFAULT to insert pillar boxes or letter boxes around the video to fill the output frame. The video won't get distorted. Use SMART_CROP to enable the smart crop feature that uses the Elemental Inference service to crop the frame using AI - see the MediaLive User Guide for more information.
     pub fn scaling_behavior(&self) -> ::std::option::Option<&crate::types::VideoDescriptionScalingBehavior> {
         self.scaling_behavior.as_ref()
     }
@@ -126,17 +126,17 @@ impl VideoDescriptionBuilder {
     pub fn get_respond_to_afd(&self) -> &::std::option::Option<crate::types::VideoDescriptionRespondToAfd> {
         &self.respond_to_afd
     }
-    /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    /// Configures how MediaLive transforms the video picture to match the output frame. Use STRETCH_TO_OUTPUT to stretch the video to fill the output frame. The video might get distorted. Use DEFAULT to insert pillar boxes or letter boxes around the video to fill the output frame. The video won't get distorted. Use SMART_CROP to enable the smart crop feature that uses the Elemental Inference service to crop the frame using AI - see the MediaLive User Guide for more information.
     pub fn scaling_behavior(mut self, input: crate::types::VideoDescriptionScalingBehavior) -> Self {
         self.scaling_behavior = ::std::option::Option::Some(input);
         self
     }
-    /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    /// Configures how MediaLive transforms the video picture to match the output frame. Use STRETCH_TO_OUTPUT to stretch the video to fill the output frame. The video might get distorted. Use DEFAULT to insert pillar boxes or letter boxes around the video to fill the output frame. The video won't get distorted. Use SMART_CROP to enable the smart crop feature that uses the Elemental Inference service to crop the frame using AI - see the MediaLive User Guide for more information.
     pub fn set_scaling_behavior(mut self, input: ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>) -> Self {
         self.scaling_behavior = input;
         self
     }
-    /// STRETCH_TO_OUTPUT configures the output position to stretch the video to the specified output resolution (height and width). This option will override any position value. DEFAULT may insert black boxes (pillar boxes or letter boxes) around the video to provide the specified output resolution.
+    /// Configures how MediaLive transforms the video picture to match the output frame. Use STRETCH_TO_OUTPUT to stretch the video to fill the output frame. The video might get distorted. Use DEFAULT to insert pillar boxes or letter boxes around the video to fill the output frame. The video won't get distorted. Use SMART_CROP to enable the smart crop feature that uses the Elemental Inference service to crop the frame using AI - see the MediaLive User Guide for more information.
     pub fn get_scaling_behavior(&self) -> &::std::option::Option<crate::types::VideoDescriptionScalingBehavior> {
         &self.scaling_behavior
     }

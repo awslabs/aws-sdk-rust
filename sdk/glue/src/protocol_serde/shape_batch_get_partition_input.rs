@@ -24,5 +24,17 @@ pub fn ser_batch_get_partition_input_input(
         }
         array_5.finish();
     }
+    if let Some(var_8) = &input.audit_context {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("AuditContext").start_object();
+        crate::protocol_serde::shape_audit_context::ser_audit_context(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.query_session_context {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("QuerySessionContext").start_object();
+        crate::protocol_serde::shape_query_session_context::ser_query_session_context(&mut object_11, var_10)?;
+        object_11.finish();
+    }
     Ok(())
 }

@@ -8,6 +8,8 @@ pub struct AudioCodecSettings {
     pub aac_settings: ::std::option::Option<crate::types::AacSettings>,
     /// Required when you set Codec to the value AC3.
     pub ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,
+    /// Required when you set Codec to the value AC4.
+    pub ac4_settings: ::std::option::Option<crate::types::Ac4Settings>,
     /// Required when you set Codec to the value AIFF.
     pub aiff_settings: ::std::option::Option<crate::types::AiffSettings>,
     /// Choose the audio codec for this output. Note that the option Dolby Digital passthrough applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
@@ -37,6 +39,10 @@ impl AudioCodecSettings {
     /// Required when you set Codec to the value AC3.
     pub fn ac3_settings(&self) -> ::std::option::Option<&crate::types::Ac3Settings> {
         self.ac3_settings.as_ref()
+    }
+    /// Required when you set Codec to the value AC4.
+    pub fn ac4_settings(&self) -> ::std::option::Option<&crate::types::Ac4Settings> {
+        self.ac4_settings.as_ref()
     }
     /// Required when you set Codec to the value AIFF.
     pub fn aiff_settings(&self) -> ::std::option::Option<&crate::types::AiffSettings> {
@@ -92,6 +98,7 @@ impl AudioCodecSettings {
 pub struct AudioCodecSettingsBuilder {
     pub(crate) aac_settings: ::std::option::Option<crate::types::AacSettings>,
     pub(crate) ac3_settings: ::std::option::Option<crate::types::Ac3Settings>,
+    pub(crate) ac4_settings: ::std::option::Option<crate::types::Ac4Settings>,
     pub(crate) aiff_settings: ::std::option::Option<crate::types::AiffSettings>,
     pub(crate) codec: ::std::option::Option<crate::types::AudioCodec>,
     pub(crate) eac3_atmos_settings: ::std::option::Option<crate::types::Eac3AtmosSettings>,
@@ -131,6 +138,20 @@ impl AudioCodecSettingsBuilder {
     /// Required when you set Codec to the value AC3.
     pub fn get_ac3_settings(&self) -> &::std::option::Option<crate::types::Ac3Settings> {
         &self.ac3_settings
+    }
+    /// Required when you set Codec to the value AC4.
+    pub fn ac4_settings(mut self, input: crate::types::Ac4Settings) -> Self {
+        self.ac4_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Required when you set Codec to the value AC4.
+    pub fn set_ac4_settings(mut self, input: ::std::option::Option<crate::types::Ac4Settings>) -> Self {
+        self.ac4_settings = input;
+        self
+    }
+    /// Required when you set Codec to the value AC4.
+    pub fn get_ac4_settings(&self) -> &::std::option::Option<crate::types::Ac4Settings> {
+        &self.ac4_settings
     }
     /// Required when you set Codec to the value AIFF.
     pub fn aiff_settings(mut self, input: crate::types::AiffSettings) -> Self {
@@ -277,6 +298,7 @@ impl AudioCodecSettingsBuilder {
         crate::types::AudioCodecSettings {
             aac_settings: self.aac_settings,
             ac3_settings: self.ac3_settings,
+            ac4_settings: self.ac4_settings,
             aiff_settings: self.aiff_settings,
             codec: self.codec,
             eac3_atmos_settings: self.eac3_atmos_settings,

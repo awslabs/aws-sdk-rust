@@ -78,6 +78,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "InternalVpcIpv4CidrBlock" => {
+                            builder = builder.set_internal_vpc_ipv4_cidr_block(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "VpcTransitConfiguration" => {
+                            builder = builder.set_vpc_transit_configuration(
+                                crate::protocol_serde::shape_vpc_transit_configuration_response::de_vpc_transit_configuration_response(
+                                    tokens, _value,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

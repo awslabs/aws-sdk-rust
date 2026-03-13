@@ -349,6 +349,8 @@ pub(crate) mod shape_aac_settings;
 
 pub(crate) mod shape_ac3_settings;
 
+pub(crate) mod shape_ac4_settings;
+
 pub(crate) mod shape_aiff_settings;
 
 pub(crate) mod shape_automated_abr_settings;

@@ -16,6 +16,7 @@ pub struct CreateNotificationInput {
     /// <p>The tags used to organize, track, or control access for this resource. For example, <code>{ "Tags": {"key1":"value1", "key2":"value2"} }</code>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub predefined_notification_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -48,6 +49,7 @@ impl CreateNotificationInput {
         self.tags.as_ref()
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn predefined_notification_id(&self) -> ::std::option::Option<&str> {
         self.predefined_notification_id.as_deref()
     }
@@ -181,16 +183,19 @@ impl CreateNotificationInputBuilder {
         &self.tags
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn predefined_notification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.predefined_notification_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn set_predefined_notification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.predefined_notification_id = input;
         self
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn get_predefined_notification_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.predefined_notification_id
     }

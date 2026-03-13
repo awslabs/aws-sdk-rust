@@ -14,6 +14,7 @@
 /// match dashisointervalcadence {
 ///     DashIsoIntervalCadence::FollowCustom => { /* ... */ },
 ///     DashIsoIntervalCadence::FollowIframe => { /* ... */ },
+///     DashIsoIntervalCadence::FollowSegmentation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,7 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+/// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval. If set to FOLLOW_SEGMENTATION, MediaConvert generates thumbnail playlist entries that align exactly with video segment boundaries. FOLLOW_SEGMENTATION requires 1x1 tiling.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -46,6 +47,8 @@ pub enum DashIsoIntervalCadence {
     FollowCustom,
     #[allow(missing_docs)] // documentation missing in model
     FollowIframe,
+    #[allow(missing_docs)] // documentation missing in model
+    FollowSegmentation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for DashIsoIntervalCadence {
         match s {
             "FOLLOW_CUSTOM" => DashIsoIntervalCadence::FollowCustom,
             "FOLLOW_IFRAME" => DashIsoIntervalCadence::FollowIframe,
+            "FOLLOW_SEGMENTATION" => DashIsoIntervalCadence::FollowSegmentation,
             other => DashIsoIntervalCadence::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl DashIsoIntervalCadence {
         match self {
             DashIsoIntervalCadence::FollowCustom => "FOLLOW_CUSTOM",
             DashIsoIntervalCadence::FollowIframe => "FOLLOW_IFRAME",
+            DashIsoIntervalCadence::FollowSegmentation => "FOLLOW_SEGMENTATION",
             DashIsoIntervalCadence::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME"]
+        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME", "FOLLOW_SEGMENTATION"]
     }
 }
 impl ::std::convert::AsRef<str> for DashIsoIntervalCadence {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for DashIsoIntervalCadence {
         match self {
             DashIsoIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
             DashIsoIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
+            DashIsoIntervalCadence::FollowSegmentation => write!(f, "FOLLOW_SEGMENTATION"),
             DashIsoIntervalCadence::Unknown(value) => write!(f, "{value}"),
         }
     }

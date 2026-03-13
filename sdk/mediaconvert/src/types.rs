@@ -489,6 +489,8 @@ pub use crate::types::_aac_settings::AacSettings;
 
 pub use crate::types::_ac3_settings::Ac3Settings;
 
+pub use crate::types::_ac4_settings::Ac4Settings;
+
 pub use crate::types::_aiff_settings::AiffSettings;
 
 pub use crate::types::_audio_codec::AudioCodec;
@@ -1033,6 +1035,14 @@ pub use crate::types::_ac3_lfe_filter::Ac3LfeFilter;
 
 pub use crate::types::_ac3_metadata_control::Ac3MetadataControl;
 
+pub use crate::types::_ac4_bitstream_mode::Ac4BitstreamMode;
+
+pub use crate::types::_ac4_coding_mode::Ac4CodingMode;
+
+pub use crate::types::_ac4_dynamic_range_compression_drc_profile::Ac4DynamicRangeCompressionDrcProfile;
+
+pub use crate::types::_ac4_stereo_downmix::Ac4StereoDownmix;
+
 pub use crate::types::_eac3_atmos_bitstream_mode::Eac3AtmosBitstreamMode;
 
 pub use crate::types::_eac3_atmos_coding_mode::Eac3AtmosCodingMode;
@@ -1217,6 +1227,8 @@ pub use crate::types::_cmaf_additional_manifest::CmafAdditionalManifest;
 
 pub use crate::types::_s3_destination_settings::S3DestinationSettings;
 
+pub use crate::types::_hls_clear_lead::HlsClearLead;
+
 pub use crate::types::_cmaf_encryption_type::CmafEncryptionType;
 
 pub use crate::types::_cmaf_initialization_vector_in_manifest::CmafInitializationVectorInManifest;
@@ -1364,6 +1376,16 @@ mod _ac3_lfe_filter;
 mod _ac3_metadata_control;
 
 mod _ac3_settings;
+
+mod _ac4_bitstream_mode;
+
+mod _ac4_coding_mode;
+
+mod _ac4_dynamic_range_compression_drc_profile;
+
+mod _ac4_settings;
+
+mod _ac4_stereo_downmix;
 
 mod _acceleration_mode;
 
@@ -1988,6 +2010,8 @@ mod _hls_caption_language_mapping;
 mod _hls_caption_language_setting;
 
 mod _hls_caption_segment_length_control;
+
+mod _hls_clear_lead;
 
 mod _hls_client_cache;
 

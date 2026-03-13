@@ -26,18 +26,18 @@ pub(crate) fn list_managed_accounts_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn internal_server_exception_correct_errors(
-    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
-) -> crate::types::error::builders::InternalServerExceptionBuilder {
+pub(crate) fn throttling_exception_correct_errors(
+    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
+) -> crate::types::error::builders::ThrottlingExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
     builder
 }
 
-pub(crate) fn throttling_exception_correct_errors(
-    mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
-) -> crate::types::error::builders::ThrottlingExceptionBuilder {
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
     }
@@ -81,6 +81,27 @@ pub(crate) fn job_correct_errors(mut builder: crate::types::builders::JobBuilder
     builder
 }
 
+pub(crate) fn target_network_correct_errors(
+    mut builder: crate::types::builders::TargetNetworkBuilder,
+) -> crate::types::builders::TargetNetworkBuilder {
+    if builder.topology.is_none() {
+        builder.topology = "no value was set".parse::<crate::types::TargetNetworkTopology>().ok()
+    }
+    builder
+}
+
+pub(crate) fn target_s3_configuration_correct_errors(
+    mut builder: crate::types::builders::TargetS3ConfigurationBuilder,
+) -> crate::types::builders::TargetS3ConfigurationBuilder {
+    if builder.s3_bucket.is_none() {
+        builder.s3_bucket = Some(Default::default())
+    }
+    if builder.s3_bucket_owner.is_none() {
+        builder.s3_bucket_owner = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn launch_configuration_template_correct_errors(
     mut builder: crate::types::builders::LaunchConfigurationTemplateBuilder,
 ) -> crate::types::builders::LaunchConfigurationTemplateBuilder {
@@ -111,11 +132,56 @@ pub(crate) fn s3_bucket_source_correct_errors(
     builder
 }
 
+pub(crate) fn source_configuration_correct_errors(
+    mut builder: crate::types::builders::SourceConfigurationBuilder,
+) -> crate::types::builders::SourceConfigurationBuilder {
+    if builder.source_environment.is_none() {
+        builder.source_environment = "no value was set".parse::<crate::types::SourceEnvironment>().ok()
+    }
+    if builder.source_s3_configuration.is_none() {
+        builder.source_s3_configuration = {
+            let builder = crate::types::builders::SourceS3ConfigurationBuilder::default();
+            crate::serde_util::source_s3_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn enrichment_target_s3_configuration_correct_errors(
+    mut builder: crate::types::builders::EnrichmentTargetS3ConfigurationBuilder,
+) -> crate::types::builders::EnrichmentTargetS3ConfigurationBuilder {
+    if builder.s3_bucket.is_none() {
+        builder.s3_bucket = Some(Default::default())
+    }
+    if builder.s3_bucket_owner.is_none() {
+        builder.s3_bucket_owner = Some(Default::default())
+    }
+    if builder.s3_key.is_none() {
+        builder.s3_key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn participating_server_correct_errors(
     mut builder: crate::types::builders::ParticipatingServerBuilder,
 ) -> crate::types::builders::ParticipatingServerBuilder {
     if builder.source_server_id.is_none() {
         builder.source_server_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn source_s3_configuration_correct_errors(
+    mut builder: crate::types::builders::SourceS3ConfigurationBuilder,
+) -> crate::types::builders::SourceS3ConfigurationBuilder {
+    if builder.s3_bucket.is_none() {
+        builder.s3_bucket = Some(Default::default())
+    }
+    if builder.s3_bucket_owner.is_none() {
+        builder.s3_bucket_owner = Some(Default::default())
+    }
+    if builder.s3_key.is_none() {
+        builder.s3_key = Some(Default::default())
     }
     builder
 }

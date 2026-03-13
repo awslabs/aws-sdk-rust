@@ -14,6 +14,7 @@
 /// match audiocodec {
 ///     AudioCodec::Aac => { /* ... */ },
 ///     AudioCodec::Ac3 => { /* ... */ },
+///     AudioCodec::Ac4 => { /* ... */ },
 ///     AudioCodec::Aiff => { /* ... */ },
 ///     AudioCodec::Eac3 => { /* ... */ },
 ///     AudioCodec::Eac3Atmos => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum AudioCodec {
     #[allow(missing_docs)] // documentation missing in model
     Ac3,
     #[allow(missing_docs)] // documentation missing in model
+    Ac4,
+    #[allow(missing_docs)] // documentation missing in model
     Aiff,
     #[allow(missing_docs)] // documentation missing in model
     Eac3,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for AudioCodec {
         match s {
             "AAC" => AudioCodec::Aac,
             "AC3" => AudioCodec::Ac3,
+            "AC4" => AudioCodec::Ac4,
             "AIFF" => AudioCodec::Aiff,
             "EAC3" => AudioCodec::Eac3,
             "EAC3_ATMOS" => AudioCodec::Eac3Atmos,
@@ -112,6 +116,7 @@ impl AudioCodec {
         match self {
             AudioCodec::Aac => "AAC",
             AudioCodec::Ac3 => "AC3",
+            AudioCodec::Ac4 => "AC4",
             AudioCodec::Aiff => "AIFF",
             AudioCodec::Eac3 => "EAC3",
             AudioCodec::Eac3Atmos => "EAC3_ATMOS",
@@ -130,6 +135,7 @@ impl AudioCodec {
         &[
             "AAC",
             "AC3",
+            "AC4",
             "AIFF",
             "EAC3",
             "EAC3_ATMOS",
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for AudioCodec {
         match self {
             AudioCodec::Aac => write!(f, "AAC"),
             AudioCodec::Ac3 => write!(f, "AC3"),
+            AudioCodec::Ac4 => write!(f, "AC4"),
             AudioCodec::Aiff => write!(f, "AIFF"),
             AudioCodec::Eac3 => write!(f, "EAC3"),
             AudioCodec::Eac3Atmos => write!(f, "EAC3_ATMOS"),

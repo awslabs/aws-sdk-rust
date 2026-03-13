@@ -19,6 +19,8 @@ pub struct LocationConfiguration {
     pub target_idle_capacity: ::std::option::Option<i32>,
     /// <p>This indicates the maximum capacity that the service can allocate for you. Newly created streams may take a few minutes to start. Capacity is released back to the service when idle. You pay for capacity that is allocated to you until it is released.</p>
     pub maximum_capacity: ::std::option::Option<i32>,
+    /// <p>Configuration for connecting the stream group to resources in your Amazon VPC using AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams creates a Transit Gateway to enable private network connectivity between the service VPC and your VPC. The VPC ID cannot be changed after the stream group is created, but you can update the CIDR blocks by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.</p>
+    pub vpc_transit_configuration: ::std::option::Option<crate::types::VpcTransitConfiguration>,
 }
 impl LocationConfiguration {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
@@ -47,6 +49,10 @@ impl LocationConfiguration {
     pub fn maximum_capacity(&self) -> ::std::option::Option<i32> {
         self.maximum_capacity
     }
+    /// <p>Configuration for connecting the stream group to resources in your Amazon VPC using AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams creates a Transit Gateway to enable private network connectivity between the service VPC and your VPC. The VPC ID cannot be changed after the stream group is created, but you can update the CIDR blocks by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.</p>
+    pub fn vpc_transit_configuration(&self) -> ::std::option::Option<&crate::types::VpcTransitConfiguration> {
+        self.vpc_transit_configuration.as_ref()
+    }
 }
 impl LocationConfiguration {
     /// Creates a new builder-style object to manufacture [`LocationConfiguration`](crate::types::LocationConfiguration).
@@ -64,6 +70,7 @@ pub struct LocationConfigurationBuilder {
     pub(crate) on_demand_capacity: ::std::option::Option<i32>,
     pub(crate) target_idle_capacity: ::std::option::Option<i32>,
     pub(crate) maximum_capacity: ::std::option::Option<i32>,
+    pub(crate) vpc_transit_configuration: ::std::option::Option<crate::types::VpcTransitConfiguration>,
 }
 impl LocationConfigurationBuilder {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
@@ -152,6 +159,20 @@ impl LocationConfigurationBuilder {
     pub fn get_maximum_capacity(&self) -> &::std::option::Option<i32> {
         &self.maximum_capacity
     }
+    /// <p>Configuration for connecting the stream group to resources in your Amazon VPC using AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams creates a Transit Gateway to enable private network connectivity between the service VPC and your VPC. The VPC ID cannot be changed after the stream group is created, but you can update the CIDR blocks by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.</p>
+    pub fn vpc_transit_configuration(mut self, input: crate::types::VpcTransitConfiguration) -> Self {
+        self.vpc_transit_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for connecting the stream group to resources in your Amazon VPC using AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams creates a Transit Gateway to enable private network connectivity between the service VPC and your VPC. The VPC ID cannot be changed after the stream group is created, but you can update the CIDR blocks by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.</p>
+    pub fn set_vpc_transit_configuration(mut self, input: ::std::option::Option<crate::types::VpcTransitConfiguration>) -> Self {
+        self.vpc_transit_configuration = input;
+        self
+    }
+    /// <p>Configuration for connecting the stream group to resources in your Amazon VPC using AWS Transit Gateway. This setting is optional. If specified, Amazon GameLift Streams creates a Transit Gateway to enable private network connectivity between the service VPC and your VPC. The VPC ID cannot be changed after the stream group is created, but you can update the CIDR blocks by calling <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.</p>
+    pub fn get_vpc_transit_configuration(&self) -> &::std::option::Option<crate::types::VpcTransitConfiguration> {
+        &self.vpc_transit_configuration
+    }
     /// Consumes the builder and constructs a [`LocationConfiguration`](crate::types::LocationConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`location_name`](crate::types::builders::LocationConfigurationBuilder::location_name)
@@ -167,6 +188,7 @@ impl LocationConfigurationBuilder {
             on_demand_capacity: self.on_demand_capacity,
             target_idle_capacity: self.target_idle_capacity,
             maximum_capacity: self.maximum_capacity,
+            vpc_transit_configuration: self.vpc_transit_configuration,
         })
     }
 }

@@ -465,6 +465,13 @@ pub(crate) fn lens_describe_configuration_aggregators_output_output_configuratio
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_describe_conformance_pack_compliance_output_output_conformance_pack_rule_compliance_list(
+    input: crate::operation::describe_conformance_pack_compliance::DescribeConformancePackComplianceOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackRuleCompliance>> {
+    let input = input.conformance_pack_rule_compliance_list;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_conformance_pack_status_output_output_conformance_pack_status_details(
     input: crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackStatusDetail>> {

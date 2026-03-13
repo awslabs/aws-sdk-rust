@@ -15,6 +15,10 @@ pub use crate::types::_location_configuration::LocationConfigurationBuilder;
 
 pub use crate::types::_stream_session_summary::StreamSessionSummaryBuilder;
 
+pub use crate::types::_vpc_transit_configuration_response::VpcTransitConfigurationResponseBuilder;
+
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
 pub use crate::types::_stream_group_summary::StreamGroupSummaryBuilder;
+
+pub use crate::types::_vpc_transit_configuration::VpcTransitConfigurationBuilder;

@@ -152,6 +152,8 @@ mod create_connector;
 
 mod create_launch_configuration_template;
 
+mod create_network_migration_definition;
+
 mod create_replication_configuration_template;
 
 mod create_wave;
@@ -191,6 +193,8 @@ mod delete_job;
 
 mod delete_launch_configuration_template;
 
+mod delete_network_migration_definition;
+
 mod delete_replication_configuration_template;
 
 mod delete_source_server;
@@ -221,6 +225,10 @@ mod finalize_cutover;
 
 mod get_launch_configuration;
 
+mod get_network_migration_definition;
+
+mod get_network_migration_mapper_segment_construct;
+
 mod get_replication_configuration;
 
 mod initialize_service;
@@ -235,9 +243,35 @@ mod list_exports;
 
 mod list_import_errors;
 
+mod list_import_file_enrichments;
+
 mod list_imports;
 
 mod list_managed_accounts;
+
+mod list_network_migration_analyses;
+
+mod list_network_migration_analysis_results;
+
+mod list_network_migration_code_generation_segments;
+
+mod list_network_migration_code_generations;
+
+mod list_network_migration_definitions;
+
+mod list_network_migration_deployed_stacks;
+
+mod list_network_migration_deployments;
+
+mod list_network_migration_executions;
+
+mod list_network_migration_mapper_segment_constructs;
+
+mod list_network_migration_mapper_segments;
+
+mod list_network_migration_mapping_updates;
+
+mod list_network_migration_mappings;
 
 mod list_source_server_actions;
 
@@ -269,6 +303,18 @@ mod start_export;
 
 mod start_import;
 
+mod start_import_file_enrichment;
+
+mod start_network_migration_analysis;
+
+mod start_network_migration_code_generation;
+
+mod start_network_migration_deployment;
+
+mod start_network_migration_mapping;
+
+mod start_network_migration_mapping_update;
+
 mod start_replication;
 
 mod start_test;
@@ -292,6 +338,10 @@ mod update_connector;
 mod update_launch_configuration;
 
 mod update_launch_configuration_template;
+
+mod update_network_migration_definition;
+
+mod update_network_migration_mapper_segment;
 
 mod update_replication_configuration;
 

@@ -32,6 +32,7 @@
 ///     Codec::Prores => { /* ... */ },
 ///     Codec::Qtrle => { /* ... */ },
 ///     Codec::Theora => { /* ... */ },
+///     Codec::Uncompressed => { /* ... */ },
 ///     Codec::UnknownValue => { /* ... */ },
 ///     Codec::Vfw => { /* ... */ },
 ///     Codec::Vorbis => { /* ... */ },
@@ -107,6 +108,8 @@ pub enum Codec {
     Qtrle,
     #[allow(missing_docs)] // documentation missing in model
     Theora,
+    #[allow(missing_docs)] // documentation missing in model
+    Uncompressed,
     ///
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
@@ -147,6 +150,7 @@ impl ::std::convert::From<&str> for Codec {
             "PRORES" => Codec::Prores,
             "QTRLE" => Codec::Qtrle,
             "THEORA" => Codec::Theora,
+            "UNCOMPRESSED" => Codec::Uncompressed,
             "UNKNOWN" => Codec::UnknownValue,
             "VFW" => Codec::Vfw,
             "VORBIS" => Codec::Vorbis,
@@ -188,6 +192,7 @@ impl Codec {
             Codec::Prores => "PRORES",
             Codec::Qtrle => "QTRLE",
             Codec::Theora => "THEORA",
+            Codec::Uncompressed => "UNCOMPRESSED",
             Codec::UnknownValue => "UNKNOWN",
             Codec::Vfw => "VFW",
             Codec::Vorbis => "VORBIS",
@@ -200,8 +205,33 @@ impl Codec {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
-            "AAC", "AC3", "AV1", "AVC", "C608", "C708", "EAC3", "FLAC", "HEVC", "JPEG2000", "MJPEG", "MP3", "MP4V", "MPEG1", "MPEG2", "OPUS", "PCM",
-            "PRORES", "QTRLE", "THEORA", "UNKNOWN", "VFW", "VORBIS", "VP8", "VP9", "WEBVTT",
+            "AAC",
+            "AC3",
+            "AV1",
+            "AVC",
+            "C608",
+            "C708",
+            "EAC3",
+            "FLAC",
+            "HEVC",
+            "JPEG2000",
+            "MJPEG",
+            "MP3",
+            "MP4V",
+            "MPEG1",
+            "MPEG2",
+            "OPUS",
+            "PCM",
+            "PRORES",
+            "QTRLE",
+            "THEORA",
+            "UNCOMPRESSED",
+            "UNKNOWN",
+            "VFW",
+            "VORBIS",
+            "VP8",
+            "VP9",
+            "WEBVTT",
         ]
     }
 }
@@ -245,6 +275,7 @@ impl ::std::fmt::Display for Codec {
             Codec::Prores => write!(f, "PRORES"),
             Codec::Qtrle => write!(f, "QTRLE"),
             Codec::Theora => write!(f, "THEORA"),
+            Codec::Uncompressed => write!(f, "UNCOMPRESSED"),
             Codec::UnknownValue => write!(f, "UNKNOWN"),
             Codec::Vfw => write!(f, "VFW"),
             Codec::Vorbis => write!(f, "VORBIS"),

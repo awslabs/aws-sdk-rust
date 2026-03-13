@@ -651,6 +651,9 @@ pub fn ser_capabilities(
     if let Some(var_216) = &input.extension {
         object.key("Extension").string(var_216.as_str());
     }
+    if let Some(var_217) = &input.manage_shared_folders {
+        object.key("ManageSharedFolders").string(var_217.as_str());
+    }
     Ok(())
 }
 
@@ -2177,6 +2180,13 @@ where
                         }
                         "Extension" => {
                             builder = builder.set_extension(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ManageSharedFolders" => {
+                            builder = builder.set_manage_shared_folders(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

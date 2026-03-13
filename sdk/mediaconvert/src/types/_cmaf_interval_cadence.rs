@@ -14,6 +14,7 @@
 /// match cmafintervalcadence {
 ///     CmafIntervalCadence::FollowCustom => { /* ... */ },
 ///     CmafIntervalCadence::FollowIframe => { /* ... */ },
+///     CmafIntervalCadence::FollowSegmentation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,7 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+/// The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval. If set to FOLLOW_SEGMENTATION, MediaConvert generates thumbnail playlist entries that align exactly with video segment boundaries. FOLLOW_SEGMENTATION requires 1x1 tiling.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -46,6 +47,8 @@ pub enum CmafIntervalCadence {
     FollowCustom,
     #[allow(missing_docs)] // documentation missing in model
     FollowIframe,
+    #[allow(missing_docs)] // documentation missing in model
+    FollowSegmentation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for CmafIntervalCadence {
         match s {
             "FOLLOW_CUSTOM" => CmafIntervalCadence::FollowCustom,
             "FOLLOW_IFRAME" => CmafIntervalCadence::FollowIframe,
+            "FOLLOW_SEGMENTATION" => CmafIntervalCadence::FollowSegmentation,
             other => CmafIntervalCadence::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl CmafIntervalCadence {
         match self {
             CmafIntervalCadence::FollowCustom => "FOLLOW_CUSTOM",
             CmafIntervalCadence::FollowIframe => "FOLLOW_IFRAME",
+            CmafIntervalCadence::FollowSegmentation => "FOLLOW_SEGMENTATION",
             CmafIntervalCadence::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME"]
+        &["FOLLOW_CUSTOM", "FOLLOW_IFRAME", "FOLLOW_SEGMENTATION"]
     }
 }
 impl ::std::convert::AsRef<str> for CmafIntervalCadence {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for CmafIntervalCadence {
         match self {
             CmafIntervalCadence::FollowCustom => write!(f, "FOLLOW_CUSTOM"),
             CmafIntervalCadence::FollowIframe => write!(f, "FOLLOW_IFRAME"),
+            CmafIntervalCadence::FollowSegmentation => write!(f, "FOLLOW_SEGMENTATION"),
             CmafIntervalCadence::Unknown(value) => write!(f, "{value}"),
         }
     }

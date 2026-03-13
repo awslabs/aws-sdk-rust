@@ -25,6 +25,9 @@ pub mod create_connector;
 /// Types for the `CreateLaunchConfigurationTemplate` operation.
 pub mod create_launch_configuration_template;
 
+/// Types for the `CreateNetworkMigrationDefinition` operation.
+pub mod create_network_migration_definition;
+
 /// Types for the `CreateReplicationConfigurationTemplate` operation.
 pub mod create_replication_configuration_template;
 
@@ -42,6 +45,9 @@ pub mod delete_job;
 
 /// Types for the `DeleteLaunchConfigurationTemplate` operation.
 pub mod delete_launch_configuration_template;
+
+/// Types for the `DeleteNetworkMigrationDefinition` operation.
+pub mod delete_network_migration_definition;
 
 /// Types for the `DeleteReplicationConfigurationTemplate` operation.
 pub mod delete_replication_configuration_template;
@@ -88,6 +94,12 @@ pub mod finalize_cutover;
 /// Types for the `GetLaunchConfiguration` operation.
 pub mod get_launch_configuration;
 
+/// Types for the `GetNetworkMigrationDefinition` operation.
+pub mod get_network_migration_definition;
+
+/// Types for the `GetNetworkMigrationMapperSegmentConstruct` operation.
+pub mod get_network_migration_mapper_segment_construct;
+
 /// Types for the `GetReplicationConfiguration` operation.
 pub mod get_replication_configuration;
 
@@ -109,11 +121,50 @@ pub mod list_exports;
 /// Types for the `ListImportErrors` operation.
 pub mod list_import_errors;
 
+/// Types for the `ListImportFileEnrichments` operation.
+pub mod list_import_file_enrichments;
+
 /// Types for the `ListImports` operation.
 pub mod list_imports;
 
 /// Types for the `ListManagedAccounts` operation.
 pub mod list_managed_accounts;
+
+/// Types for the `ListNetworkMigrationAnalyses` operation.
+pub mod list_network_migration_analyses;
+
+/// Types for the `ListNetworkMigrationAnalysisResults` operation.
+pub mod list_network_migration_analysis_results;
+
+/// Types for the `ListNetworkMigrationCodeGenerationSegments` operation.
+pub mod list_network_migration_code_generation_segments;
+
+/// Types for the `ListNetworkMigrationCodeGenerations` operation.
+pub mod list_network_migration_code_generations;
+
+/// Types for the `ListNetworkMigrationDefinitions` operation.
+pub mod list_network_migration_definitions;
+
+/// Types for the `ListNetworkMigrationDeployedStacks` operation.
+pub mod list_network_migration_deployed_stacks;
+
+/// Types for the `ListNetworkMigrationDeployments` operation.
+pub mod list_network_migration_deployments;
+
+/// Types for the `ListNetworkMigrationExecutions` operation.
+pub mod list_network_migration_executions;
+
+/// Types for the `ListNetworkMigrationMapperSegmentConstructs` operation.
+pub mod list_network_migration_mapper_segment_constructs;
+
+/// Types for the `ListNetworkMigrationMapperSegments` operation.
+pub mod list_network_migration_mapper_segments;
+
+/// Types for the `ListNetworkMigrationMappingUpdates` operation.
+pub mod list_network_migration_mapping_updates;
+
+/// Types for the `ListNetworkMigrationMappings` operation.
+pub mod list_network_migration_mappings;
 
 /// Types for the `ListSourceServerActions` operation.
 pub mod list_source_server_actions;
@@ -160,6 +211,24 @@ pub mod start_export;
 /// Types for the `StartImport` operation.
 pub mod start_import;
 
+/// Types for the `StartImportFileEnrichment` operation.
+pub mod start_import_file_enrichment;
+
+/// Types for the `StartNetworkMigrationAnalysis` operation.
+pub mod start_network_migration_analysis;
+
+/// Types for the `StartNetworkMigrationCodeGeneration` operation.
+pub mod start_network_migration_code_generation;
+
+/// Types for the `StartNetworkMigrationDeployment` operation.
+pub mod start_network_migration_deployment;
+
+/// Types for the `StartNetworkMigrationMapping` operation.
+pub mod start_network_migration_mapping;
+
+/// Types for the `StartNetworkMigrationMappingUpdate` operation.
+pub mod start_network_migration_mapping_update;
+
 /// Types for the `StartReplication` operation.
 pub mod start_replication;
 
@@ -195,6 +264,12 @@ pub mod update_launch_configuration;
 
 /// Types for the `UpdateLaunchConfigurationTemplate` operation.
 pub mod update_launch_configuration_template;
+
+/// Types for the `UpdateNetworkMigrationDefinition` operation.
+pub mod update_network_migration_definition;
+
+/// Types for the `UpdateNetworkMigrationMapperSegment` operation.
+pub mod update_network_migration_mapper_segment;
 
 /// Types for the `UpdateReplicationConfiguration` operation.
 pub mod update_replication_configuration;

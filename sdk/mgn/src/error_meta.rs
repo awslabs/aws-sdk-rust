@@ -329,6 +329,44 @@ impl From<crate::operation::create_launch_configuration_template::CreateLaunchCo
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError> for Error {
+    fn from(err: crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError) -> Self {
+        match err {
+            crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_network_migration_definition::CreateNetworkMigrationDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateError,
             R,
         >,
@@ -501,6 +539,47 @@ impl From<crate::operation::delete_launch_configuration_template::DeleteLaunchCo
             crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError> for Error {
+    fn from(err: crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -952,6 +1031,76 @@ impl From<crate::operation::get_launch_configuration::GetLaunchConfigurationErro
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError> for Error {
+    fn from(err: crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError) -> Self {
+        match err {
+            crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_network_migration_definition::GetNetworkMigrationDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError> for Error {
+    fn from(err: crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError) -> Self {
+        match err {
+            crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_network_migration_mapper_segment_construct::GetNetworkMigrationMapperSegmentConstructError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_replication_configuration::GetReplicationConfigurationError, R>>
     for Error
 where
@@ -1126,6 +1275,33 @@ impl From<crate::operation::list_import_errors::ListImportErrorsError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsError> for Error {
+    fn from(err: crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsError) -> Self {
+        match err {
+            crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_imports::ListImportsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1171,6 +1347,505 @@ impl From<crate::operation::list_managed_accounts::ListManagedAccountsError> for
             }
             crate::operation::list_managed_accounts::ListManagedAccountsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_managed_accounts::ListManagedAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError> for Error {
+    fn from(err: crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError) -> Self {
+        match err {
+            crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError> for Error {
+    fn from(err: crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError> for Error {
+    fn from(err: crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError> for Error {
+    fn from(err: crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsError> for Error {
+    fn from(err: crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError> for Error {
+    fn from(err: crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError) -> Self {
+        match err {
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError> for Error {
+    fn from(err: crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError> for Error {
+    fn from(err: crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError> for Error {
+    fn from(err: crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError> for Error {
+    fn from(err: crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError> for Error {
+    fn from(err: crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError> for Error {
+    fn from(err: crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError) -> Self {
+        match err {
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1592,6 +2267,292 @@ impl From<crate::operation::start_import::StartImportError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError> for Error {
+    fn from(err: crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError) -> Self {
+        match err {
+            crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_import_file_enrichment::StartImportFileEnrichmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError> for Error {
+    fn from(err: crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError) -> Self {
+        match err {
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_network_migration_analysis::StartNetworkMigrationAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError> for Error {
+    fn from(err: crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError) -> Self {
+        match err {
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_network_migration_code_generation::StartNetworkMigrationCodeGenerationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError> for Error {
+    fn from(err: crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError) -> Self {
+        match err {
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_network_migration_deployment::StartNetworkMigrationDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError> for Error {
+    fn from(err: crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError) -> Self {
+        match err {
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_network_migration_mapping::StartNetworkMigrationMappingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError> for Error {
+    fn from(err: crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError) -> Self {
+        match err {
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_network_migration_mapping_update::StartNetworkMigrationMappingUpdateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_replication::StartReplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1942,6 +2903,90 @@ impl From<crate::operation::update_launch_configuration_template::UpdateLaunchCo
                 Error::ValidationException(inner)
             }
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError> for Error {
+    fn from(err: crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError) -> Self {
+        match err {
+            crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError> for Error {
+    fn from(err: crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError) -> Self {
+        match err {
+            crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

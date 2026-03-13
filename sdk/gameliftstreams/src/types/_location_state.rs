@@ -33,6 +33,10 @@ pub struct LocationState {
     pub allocated_capacity: ::std::option::Option<i32>,
     /// <p>This value is the amount of allocated capacity that is not currently streaming. It represents the stream group's ability to respond immediately to new stream requests with near-instant startup time.</p>
     pub idle_capacity: ::std::option::Option<i32>,
+    /// <p>The CIDR block of the service VPC for this location. Add this CIDR block to your VPC route table to enable traffic routing through the Transit Gateway.</p>
+    pub internal_vpc_ipv4_cidr_block: ::std::option::Option<::std::string::String>,
+    /// <p>The VPC transit configuration for this location, including the Transit Gateway details needed to complete the VPC attachment setup.</p>
+    pub vpc_transit_configuration: ::std::option::Option<crate::types::VpcTransitConfigurationResponse>,
 }
 impl LocationState {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
@@ -82,6 +86,14 @@ impl LocationState {
     pub fn idle_capacity(&self) -> ::std::option::Option<i32> {
         self.idle_capacity
     }
+    /// <p>The CIDR block of the service VPC for this location. Add this CIDR block to your VPC route table to enable traffic routing through the Transit Gateway.</p>
+    pub fn internal_vpc_ipv4_cidr_block(&self) -> ::std::option::Option<&str> {
+        self.internal_vpc_ipv4_cidr_block.as_deref()
+    }
+    /// <p>The VPC transit configuration for this location, including the Transit Gateway details needed to complete the VPC attachment setup.</p>
+    pub fn vpc_transit_configuration(&self) -> ::std::option::Option<&crate::types::VpcTransitConfigurationResponse> {
+        self.vpc_transit_configuration.as_ref()
+    }
 }
 impl LocationState {
     /// Creates a new builder-style object to manufacture [`LocationState`](crate::types::LocationState).
@@ -103,6 +115,8 @@ pub struct LocationStateBuilder {
     pub(crate) requested_capacity: ::std::option::Option<i32>,
     pub(crate) allocated_capacity: ::std::option::Option<i32>,
     pub(crate) idle_capacity: ::std::option::Option<i32>,
+    pub(crate) internal_vpc_ipv4_cidr_block: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_transit_configuration: ::std::option::Option<crate::types::VpcTransitConfigurationResponse>,
 }
 impl LocationStateBuilder {
     /// <p>A location's name. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
@@ -264,6 +278,34 @@ impl LocationStateBuilder {
     pub fn get_idle_capacity(&self) -> &::std::option::Option<i32> {
         &self.idle_capacity
     }
+    /// <p>The CIDR block of the service VPC for this location. Add this CIDR block to your VPC route table to enable traffic routing through the Transit Gateway.</p>
+    pub fn internal_vpc_ipv4_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.internal_vpc_ipv4_cidr_block = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CIDR block of the service VPC for this location. Add this CIDR block to your VPC route table to enable traffic routing through the Transit Gateway.</p>
+    pub fn set_internal_vpc_ipv4_cidr_block(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.internal_vpc_ipv4_cidr_block = input;
+        self
+    }
+    /// <p>The CIDR block of the service VPC for this location. Add this CIDR block to your VPC route table to enable traffic routing through the Transit Gateway.</p>
+    pub fn get_internal_vpc_ipv4_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
+        &self.internal_vpc_ipv4_cidr_block
+    }
+    /// <p>The VPC transit configuration for this location, including the Transit Gateway details needed to complete the VPC attachment setup.</p>
+    pub fn vpc_transit_configuration(mut self, input: crate::types::VpcTransitConfigurationResponse) -> Self {
+        self.vpc_transit_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC transit configuration for this location, including the Transit Gateway details needed to complete the VPC attachment setup.</p>
+    pub fn set_vpc_transit_configuration(mut self, input: ::std::option::Option<crate::types::VpcTransitConfigurationResponse>) -> Self {
+        self.vpc_transit_configuration = input;
+        self
+    }
+    /// <p>The VPC transit configuration for this location, including the Transit Gateway details needed to complete the VPC attachment setup.</p>
+    pub fn get_vpc_transit_configuration(&self) -> &::std::option::Option<crate::types::VpcTransitConfigurationResponse> {
+        &self.vpc_transit_configuration
+    }
     /// Consumes the builder and constructs a [`LocationState`](crate::types::LocationState).
     pub fn build(self) -> crate::types::LocationState {
         crate::types::LocationState {
@@ -276,6 +318,8 @@ impl LocationStateBuilder {
             requested_capacity: self.requested_capacity,
             allocated_capacity: self.allocated_capacity,
             idle_capacity: self.idle_capacity,
+            internal_vpc_ipv4_cidr_block: self.internal_vpc_ipv4_cidr_block,
+            vpc_transit_configuration: self.vpc_transit_configuration,
         }
     }
 }

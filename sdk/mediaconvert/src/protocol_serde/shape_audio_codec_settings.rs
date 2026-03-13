@@ -15,62 +15,68 @@ pub fn ser_audio_codec_settings(
         crate::protocol_serde::shape_ac3_settings::ser_ac3_settings(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.aiff_settings {
+    if let Some(var_5) = &input.ac4_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("aiffSettings").start_object();
-        crate::protocol_serde::shape_aiff_settings::ser_aiff_settings(&mut object_6, var_5)?;
+        let mut object_6 = object.key("ac4Settings").start_object();
+        crate::protocol_serde::shape_ac4_settings::ser_ac4_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.codec {
-        object.key("codec").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.eac3_atmos_settings {
+    if let Some(var_7) = &input.aiff_settings {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("eac3AtmosSettings").start_object();
-        crate::protocol_serde::shape_eac3_atmos_settings::ser_eac3_atmos_settings(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_8 = object.key("aiffSettings").start_object();
+        crate::protocol_serde::shape_aiff_settings::ser_aiff_settings(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_10) = &input.eac3_settings {
+    if let Some(var_9) = &input.codec {
+        object.key("codec").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.eac3_atmos_settings {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("eac3Settings").start_object();
-        crate::protocol_serde::shape_eac3_settings::ser_eac3_settings(&mut object_11, var_10)?;
+        let mut object_11 = object.key("eac3AtmosSettings").start_object();
+        crate::protocol_serde::shape_eac3_atmos_settings::ser_eac3_atmos_settings(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.flac_settings {
+    if let Some(var_12) = &input.eac3_settings {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("flacSettings").start_object();
-        crate::protocol_serde::shape_flac_settings::ser_flac_settings(&mut object_13, var_12)?;
+        let mut object_13 = object.key("eac3Settings").start_object();
+        crate::protocol_serde::shape_eac3_settings::ser_eac3_settings(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.mp2_settings {
+    if let Some(var_14) = &input.flac_settings {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("mp2Settings").start_object();
-        crate::protocol_serde::shape_mp2_settings::ser_mp2_settings(&mut object_15, var_14)?;
+        let mut object_15 = object.key("flacSettings").start_object();
+        crate::protocol_serde::shape_flac_settings::ser_flac_settings(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.mp3_settings {
+    if let Some(var_16) = &input.mp2_settings {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("mp3Settings").start_object();
-        crate::protocol_serde::shape_mp3_settings::ser_mp3_settings(&mut object_17, var_16)?;
+        let mut object_17 = object.key("mp2Settings").start_object();
+        crate::protocol_serde::shape_mp2_settings::ser_mp2_settings(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.opus_settings {
+    if let Some(var_18) = &input.mp3_settings {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("opusSettings").start_object();
-        crate::protocol_serde::shape_opus_settings::ser_opus_settings(&mut object_19, var_18)?;
+        let mut object_19 = object.key("mp3Settings").start_object();
+        crate::protocol_serde::shape_mp3_settings::ser_mp3_settings(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.vorbis_settings {
+    if let Some(var_20) = &input.opus_settings {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("vorbisSettings").start_object();
-        crate::protocol_serde::shape_vorbis_settings::ser_vorbis_settings(&mut object_21, var_20)?;
+        let mut object_21 = object.key("opusSettings").start_object();
+        crate::protocol_serde::shape_opus_settings::ser_opus_settings(&mut object_21, var_20)?;
         object_21.finish();
     }
-    if let Some(var_22) = &input.wav_settings {
+    if let Some(var_22) = &input.vorbis_settings {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("wavSettings").start_object();
-        crate::protocol_serde::shape_wav_settings::ser_wav_settings(&mut object_23, var_22)?;
+        let mut object_23 = object.key("vorbisSettings").start_object();
+        crate::protocol_serde::shape_vorbis_settings::ser_vorbis_settings(&mut object_23, var_22)?;
         object_23.finish();
+    }
+    if let Some(var_24) = &input.wav_settings {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("wavSettings").start_object();
+        crate::protocol_serde::shape_wav_settings::ser_wav_settings(&mut object_25, var_24)?;
+        object_25.finish();
     }
     Ok(())
 }
@@ -96,6 +102,9 @@ where
                         }
                         "ac3Settings" => {
                             builder = builder.set_ac3_settings(crate::protocol_serde::shape_ac3_settings::de_ac3_settings(tokens, _value)?);
+                        }
+                        "ac4Settings" => {
+                            builder = builder.set_ac4_settings(crate::protocol_serde::shape_ac4_settings::de_ac4_settings(tokens, _value)?);
                         }
                         "aiffSettings" => {
                             builder = builder.set_aiff_settings(crate::protocol_serde::shape_aiff_settings::de_aiff_settings(tokens, _value)?);

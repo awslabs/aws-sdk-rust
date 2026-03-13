@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_import_errors_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_import_file_enrichments_output_output_next_token(
+    input: &crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_imports_output_output_next_token(
     input: &crate::operation::list_imports::ListImportsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -121,6 +131,126 @@ pub(crate) fn reflens_list_imports_output_output_next_token(
 
 pub(crate) fn reflens_list_managed_accounts_output_output_next_token(
     input: &crate::operation::list_managed_accounts::ListManagedAccountsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_analyses_output_output_next_token(
+    input: &crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_analysis_results_output_output_next_token(
+    input: &crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_code_generation_segments_output_output_next_token(
+    input: &crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_code_generations_output_output_next_token(
+    input: &crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_definitions_output_output_next_token(
+    input: &crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_deployed_stacks_output_output_next_token(
+    input: &crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_deployments_output_output_next_token(
+    input: &crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_executions_output_output_next_token(
+    input: &crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_mapper_segment_constructs_output_output_next_token(
+    input: &crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_mapper_segments_output_output_next_token(
+    input: &crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_mapping_updates_output_output_next_token(
+    input: &crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_network_migration_mappings_output_output_next_token(
+    input: &crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -236,6 +366,13 @@ pub(crate) fn lens_list_import_errors_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_import_file_enrichments_output_output_items(
+    input: crate::operation::list_import_file_enrichments::ListImportFileEnrichmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportFileEnrichment>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_imports_output_output_items(
     input: crate::operation::list_imports::ListImportsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ImportTask>> {
@@ -247,6 +384,90 @@ pub(crate) fn lens_list_managed_accounts_output_output_items(
     input: crate::operation::list_managed_accounts::ListManagedAccountsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedAccount>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_analyses_output_output_items(
+    input: crate::operation::list_network_migration_analyses::ListNetworkMigrationAnalysesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationAnalysisJobDetails>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_analysis_results_output_output_items(
+    input: crate::operation::list_network_migration_analysis_results::ListNetworkMigrationAnalysisResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationAnalysisResult>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_code_generation_segments_output_output_items(
+    input: crate::operation::list_network_migration_code_generation_segments::ListNetworkMigrationCodeGenerationSegmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationCodeGenerationSegment>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_code_generations_output_output_items(
+    input: crate::operation::list_network_migration_code_generations::ListNetworkMigrationCodeGenerationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationCodeGenerationJobDetails>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_definitions_output_output_items(
+    input: crate::operation::list_network_migration_definitions::ListNetworkMigrationDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationDefinitionSummary>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_deployed_stacks_output_output_items(
+    input: crate::operation::list_network_migration_deployed_stacks::ListNetworkMigrationDeployedStacksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationDeployedStackDetails>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_deployments_output_output_items(
+    input: crate::operation::list_network_migration_deployments::ListNetworkMigrationDeploymentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationDeployerJobDetails>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_executions_output_output_items(
+    input: crate::operation::list_network_migration_executions::ListNetworkMigrationExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationExecution>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_mapper_segment_constructs_output_output_items(
+    input: crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationMapperSegmentConstruct>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_mapper_segments_output_output_items(
+    input: crate::operation::list_network_migration_mapper_segments::ListNetworkMigrationMapperSegmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationMapperSegment>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_mapping_updates_output_output_items(
+    input: crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationMappingUpdateJobDetails>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_network_migration_mappings_output_output_items(
+    input: crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationMappingJobDetails>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 

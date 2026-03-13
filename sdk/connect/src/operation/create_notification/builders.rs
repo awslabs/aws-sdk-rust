@@ -208,16 +208,19 @@ impl CreateNotificationFluentBuilder {
         self.inner.get_tags()
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn predefined_notification_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.predefined_notification_id(input.into());
         self
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn set_predefined_notification_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_predefined_notification_id(input);
         self
     }
     /// <p>The unique identifier for a notification.</p>
+    #[deprecated(note = "PredefinedNotificationId is deprecated. Use ClientToken for idempotency.", since = "3/13/2026")]
     pub fn get_predefined_notification_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_predefined_notification_id()
     }

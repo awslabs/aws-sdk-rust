@@ -39,9 +39,13 @@ pub use crate::types::_replication_status_type::ReplicationStatusType;
 
 pub use crate::types::_stream_group_location_status::StreamGroupLocationStatus;
 
+pub use crate::types::_vpc_transit_configuration_response::VpcTransitConfigurationResponse;
+
 pub use crate::types::_application_summary::ApplicationSummary;
 
 pub use crate::types::_stream_group_summary::StreamGroupSummary;
+
+pub use crate::types::_vpc_transit_configuration::VpcTransitConfiguration;
 
 mod _application_status;
 
@@ -86,6 +90,10 @@ mod _stream_session_status;
 mod _stream_session_status_reason;
 
 mod _stream_session_summary;
+
+mod _vpc_transit_configuration;
+
+mod _vpc_transit_configuration_response;
 
 /// Builders
 pub mod builders;

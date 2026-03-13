@@ -3,29 +3,32 @@ pub fn ser_cmaf_encryption_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::CmafEncryptionSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.constant_initialization_vector {
-        object.key("constantInitializationVector").string(var_1.as_str());
+    if let Some(var_1) = &input.clear_lead {
+        object.key("clearLead").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.encryption_method {
-        object.key("encryptionMethod").string(var_2.as_str());
+    if let Some(var_2) = &input.constant_initialization_vector {
+        object.key("constantInitializationVector").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.initialization_vector_in_manifest {
-        object.key("initializationVectorInManifest").string(var_3.as_str());
+    if let Some(var_3) = &input.encryption_method {
+        object.key("encryptionMethod").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.speke_key_provider {
+    if let Some(var_4) = &input.initialization_vector_in_manifest {
+        object.key("initializationVectorInManifest").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.speke_key_provider {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("spekeKeyProvider").start_object();
-        crate::protocol_serde::shape_speke_key_provider_cmaf::ser_speke_key_provider_cmaf(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("spekeKeyProvider").start_object();
+        crate::protocol_serde::shape_speke_key_provider_cmaf::ser_speke_key_provider_cmaf(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.static_key_provider {
+    if let Some(var_7) = &input.static_key_provider {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("staticKeyProvider").start_object();
-        crate::protocol_serde::shape_static_key_provider::ser_static_key_provider(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("staticKeyProvider").start_object();
+        crate::protocol_serde::shape_static_key_provider::ser_static_key_provider(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.r#type {
-        object.key("type").string(var_8.as_str());
+    if let Some(var_9) = &input.r#type {
+        object.key("type").string(var_9.as_str());
     }
     Ok(())
 }
@@ -46,6 +49,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "clearLead" => {
+                            builder = builder.set_clear_lead(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::HlsClearLead::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "constantInitializationVector" => {
                             builder = builder.set_constant_initialization_vector(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

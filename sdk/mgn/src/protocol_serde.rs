@@ -39,6 +39,8 @@ pub(crate) mod shape_create_connector;
 
 pub(crate) mod shape_create_launch_configuration_template;
 
+pub(crate) mod shape_create_network_migration_definition;
+
 pub(crate) mod shape_create_replication_configuration_template;
 
 pub(crate) mod shape_create_wave;
@@ -50,6 +52,8 @@ pub(crate) mod shape_delete_connector;
 pub(crate) mod shape_delete_job;
 
 pub(crate) mod shape_delete_launch_configuration_template;
+
+pub(crate) mod shape_delete_network_migration_definition;
 
 pub(crate) mod shape_delete_replication_configuration_template;
 
@@ -81,6 +85,10 @@ pub(crate) mod shape_finalize_cutover;
 
 pub(crate) mod shape_get_launch_configuration;
 
+pub(crate) mod shape_get_network_migration_definition;
+
+pub(crate) mod shape_get_network_migration_mapper_segment_construct;
+
 pub(crate) mod shape_get_replication_configuration;
 
 pub(crate) mod shape_initialize_service;
@@ -95,9 +103,35 @@ pub(crate) mod shape_list_exports;
 
 pub(crate) mod shape_list_import_errors;
 
+pub(crate) mod shape_list_import_file_enrichments;
+
 pub(crate) mod shape_list_imports;
 
 pub(crate) mod shape_list_managed_accounts;
+
+pub(crate) mod shape_list_network_migration_analyses;
+
+pub(crate) mod shape_list_network_migration_analysis_results;
+
+pub(crate) mod shape_list_network_migration_code_generation_segments;
+
+pub(crate) mod shape_list_network_migration_code_generations;
+
+pub(crate) mod shape_list_network_migration_definitions;
+
+pub(crate) mod shape_list_network_migration_deployed_stacks;
+
+pub(crate) mod shape_list_network_migration_deployments;
+
+pub(crate) mod shape_list_network_migration_executions;
+
+pub(crate) mod shape_list_network_migration_mapper_segment_constructs;
+
+pub(crate) mod shape_list_network_migration_mapper_segments;
+
+pub(crate) mod shape_list_network_migration_mapping_updates;
+
+pub(crate) mod shape_list_network_migration_mappings;
 
 pub(crate) mod shape_list_source_server_actions;
 
@@ -129,6 +163,18 @@ pub(crate) mod shape_start_export;
 
 pub(crate) mod shape_start_import;
 
+pub(crate) mod shape_start_import_file_enrichment;
+
+pub(crate) mod shape_start_network_migration_analysis;
+
+pub(crate) mod shape_start_network_migration_code_generation;
+
+pub(crate) mod shape_start_network_migration_deployment;
+
+pub(crate) mod shape_start_network_migration_mapping;
+
+pub(crate) mod shape_start_network_migration_mapping_update;
+
 pub(crate) mod shape_start_replication;
 
 pub(crate) mod shape_start_test;
@@ -152,6 +198,10 @@ pub(crate) mod shape_update_connector;
 pub(crate) mod shape_update_launch_configuration;
 
 pub(crate) mod shape_update_launch_configuration_template;
+
+pub(crate) mod shape_update_network_migration_definition;
+
+pub(crate) mod shape_update_network_migration_mapper_segment;
 
 pub(crate) mod shape_update_replication_configuration;
 
@@ -191,6 +241,8 @@ pub(crate) mod shape_create_connector_input;
 
 pub(crate) mod shape_create_launch_configuration_template_input;
 
+pub(crate) mod shape_create_network_migration_definition_input;
+
 pub(crate) mod shape_create_replication_configuration_template_input;
 
 pub(crate) mod shape_create_wave_input;
@@ -202,6 +254,8 @@ pub(crate) mod shape_delete_connector_input;
 pub(crate) mod shape_delete_job_input;
 
 pub(crate) mod shape_delete_launch_configuration_template_input;
+
+pub(crate) mod shape_delete_network_migration_definition_input;
 
 pub(crate) mod shape_delete_replication_configuration_template_input;
 
@@ -231,6 +285,10 @@ pub(crate) mod shape_finalize_cutover_input;
 
 pub(crate) mod shape_get_launch_configuration_input;
 
+pub(crate) mod shape_get_network_migration_definition_input;
+
+pub(crate) mod shape_get_network_migration_mapper_segment_construct_input;
+
 pub(crate) mod shape_get_replication_configuration_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -245,9 +303,35 @@ pub(crate) mod shape_list_exports_input;
 
 pub(crate) mod shape_list_import_errors_input;
 
+pub(crate) mod shape_list_import_file_enrichments_input;
+
 pub(crate) mod shape_list_imports_input;
 
 pub(crate) mod shape_list_managed_accounts_input;
+
+pub(crate) mod shape_list_network_migration_analyses_input;
+
+pub(crate) mod shape_list_network_migration_analysis_results_input;
+
+pub(crate) mod shape_list_network_migration_code_generation_segments_input;
+
+pub(crate) mod shape_list_network_migration_code_generations_input;
+
+pub(crate) mod shape_list_network_migration_definitions_input;
+
+pub(crate) mod shape_list_network_migration_deployed_stacks_input;
+
+pub(crate) mod shape_list_network_migration_deployments_input;
+
+pub(crate) mod shape_list_network_migration_executions_input;
+
+pub(crate) mod shape_list_network_migration_mapper_segment_constructs_input;
+
+pub(crate) mod shape_list_network_migration_mapper_segments_input;
+
+pub(crate) mod shape_list_network_migration_mapping_updates_input;
+
+pub(crate) mod shape_list_network_migration_mappings_input;
 
 pub(crate) mod shape_list_source_server_actions_input;
 
@@ -279,7 +363,19 @@ pub(crate) mod shape_start_cutover_input;
 
 pub(crate) mod shape_start_export_input;
 
+pub(crate) mod shape_start_import_file_enrichment_input;
+
 pub(crate) mod shape_start_import_input;
+
+pub(crate) mod shape_start_network_migration_analysis_input;
+
+pub(crate) mod shape_start_network_migration_code_generation_input;
+
+pub(crate) mod shape_start_network_migration_deployment_input;
+
+pub(crate) mod shape_start_network_migration_mapping_input;
+
+pub(crate) mod shape_start_network_migration_mapping_update_input;
 
 pub(crate) mod shape_start_replication_input;
 
@@ -307,6 +403,10 @@ pub(crate) mod shape_update_launch_configuration_input;
 
 pub(crate) mod shape_update_launch_configuration_template_input;
 
+pub(crate) mod shape_update_network_migration_definition_input;
+
+pub(crate) mod shape_update_network_migration_mapper_segment_input;
+
 pub(crate) mod shape_update_replication_configuration_input;
 
 pub(crate) mod shape_update_replication_configuration_template_input;
@@ -325,6 +425,8 @@ pub(crate) mod shape_applications_list;
 
 pub(crate) mod shape_change_server_life_cycle_state_source_server_lifecycle;
 
+pub(crate) mod shape_checksum;
+
 pub(crate) mod shape_conflict_exception_errors;
 
 pub(crate) mod shape_connector_ssm_command_config;
@@ -337,6 +439,10 @@ pub(crate) mod shape_describe_jobs_request_filters;
 
 pub(crate) mod shape_describe_source_servers_request_filters;
 
+pub(crate) mod shape_enrichment_source_s3_configuration;
+
+pub(crate) mod shape_enrichment_target_s3_configuration;
+
 pub(crate) mod shape_export_errors;
 
 pub(crate) mod shape_export_task;
@@ -344,6 +450,8 @@ pub(crate) mod shape_export_task;
 pub(crate) mod shape_exports_list;
 
 pub(crate) mod shape_import_errors;
+
+pub(crate) mod shape_import_file_enrichments_list;
 
 pub(crate) mod shape_import_list;
 
@@ -371,13 +479,65 @@ pub(crate) mod shape_list_connectors_request_filters;
 
 pub(crate) mod shape_list_exports_request_filters;
 
+pub(crate) mod shape_list_import_file_enrichments_filters;
+
 pub(crate) mod shape_list_imports_request_filters;
+
+pub(crate) mod shape_list_network_migration_analyses_filters;
+
+pub(crate) mod shape_list_network_migration_analysis_results_filters;
+
+pub(crate) mod shape_list_network_migration_code_generation_segments_filters;
+
+pub(crate) mod shape_list_network_migration_code_generations_filters;
+
+pub(crate) mod shape_list_network_migration_definitions_request_filters;
+
+pub(crate) mod shape_list_network_migration_deployer_job_filters;
+
+pub(crate) mod shape_list_network_migration_execution_request_filters;
+
+pub(crate) mod shape_list_network_migration_mapper_segment_constructs_filters;
+
+pub(crate) mod shape_list_network_migration_mapper_segments_filters;
+
+pub(crate) mod shape_list_network_migration_mapping_updates_filters;
+
+pub(crate) mod shape_list_network_migration_mappings_filters;
 
 pub(crate) mod shape_list_waves_request_filters;
 
 pub(crate) mod shape_managed_accounts;
 
+pub(crate) mod shape_network_migration_analyses_list;
+
+pub(crate) mod shape_network_migration_analysis_results_list;
+
+pub(crate) mod shape_network_migration_code_generation_segments_list;
+
+pub(crate) mod shape_network_migration_code_generations_list;
+
+pub(crate) mod shape_network_migration_definition_summaries_list;
+
+pub(crate) mod shape_network_migration_deployed_stacks_list;
+
+pub(crate) mod shape_network_migration_deployer_job_list;
+
+pub(crate) mod shape_network_migration_executions_list;
+
+pub(crate) mod shape_network_migration_mapper_segment_construct;
+
+pub(crate) mod shape_network_migration_mapper_segment_constructs;
+
+pub(crate) mod shape_network_migration_mapper_segments_list;
+
+pub(crate) mod shape_network_migration_mapping_updates_list;
+
+pub(crate) mod shape_network_migration_mappings_list;
+
 pub(crate) mod shape_post_launch_actions;
+
+pub(crate) mod shape_referenced_segments_list;
 
 pub(crate) mod shape_replication_configuration_replicated_disk;
 
@@ -388,6 +548,14 @@ pub(crate) mod shape_replication_configuration_templates;
 pub(crate) mod shape_replication_servers_security_groups_ids;
 
 pub(crate) mod shape_s3_bucket_source;
+
+pub(crate) mod shape_s3_configuration;
+
+pub(crate) mod shape_scope_tags_map;
+
+pub(crate) mod shape_source_configuration;
+
+pub(crate) mod shape_source_configuration_list;
 
 pub(crate) mod shape_source_properties;
 
@@ -407,7 +575,19 @@ pub(crate) mod shape_ssm_external_parameter;
 
 pub(crate) mod shape_ssm_parameter_store_parameter;
 
+pub(crate) mod shape_start_network_migration_mapping_update_construct;
+
+pub(crate) mod shape_start_network_migration_mapping_update_segment;
+
 pub(crate) mod shape_tags_map;
+
+pub(crate) mod shape_target_network;
+
+pub(crate) mod shape_target_network_update;
+
+pub(crate) mod shape_target_s3_configuration;
+
+pub(crate) mod shape_target_s3_configuration_update;
 
 pub(crate) mod shape_template_action_documents;
 
@@ -424,6 +604,8 @@ pub(crate) mod shape_waves_list;
 pub(crate) mod shape_application;
 
 pub(crate) mod shape_connector;
+
+pub(crate) mod shape_construct_properties;
 
 pub(crate) mod shape_cpus;
 
@@ -443,6 +625,8 @@ pub(crate) mod shape_export_task_summary;
 
 pub(crate) mod shape_identification_hints;
 
+pub(crate) mod shape_import_file_enrichment;
+
 pub(crate) mod shape_import_task_error;
 
 pub(crate) mod shape_import_task_summary;
@@ -459,11 +643,37 @@ pub(crate) mod shape_managed_account;
 
 pub(crate) mod shape_network_interfaces;
 
+pub(crate) mod shape_network_migration_analysis_job_details;
+
+pub(crate) mod shape_network_migration_analysis_result;
+
+pub(crate) mod shape_network_migration_code_generation_job_details;
+
+pub(crate) mod shape_network_migration_code_generation_segment;
+
+pub(crate) mod shape_network_migration_definition_summary;
+
+pub(crate) mod shape_network_migration_deployed_stack_details;
+
+pub(crate) mod shape_network_migration_deployer_job_details;
+
+pub(crate) mod shape_network_migration_execution;
+
+pub(crate) mod shape_network_migration_mapper_segment;
+
+pub(crate) mod shape_network_migration_mapping_job_details;
+
+pub(crate) mod shape_network_migration_mapping_update_job_details;
+
+pub(crate) mod shape_operation_union;
+
 pub(crate) mod shape_os;
 
 pub(crate) mod shape_participating_servers;
 
 pub(crate) mod shape_replication_configuration_template;
+
+pub(crate) mod shape_source_s3_configuration;
 
 pub(crate) mod shape_source_server;
 
@@ -482,6 +692,8 @@ pub(crate) mod shape_validation_exception_field;
 pub(crate) mod shape_vcenter_client;
 
 pub(crate) mod shape_wave;
+
+pub(crate) mod shape_code_generation_output_format_status_details_map;
 
 pub(crate) mod shape_cpu;
 
@@ -517,11 +729,27 @@ pub(crate) mod shape_life_cycle_last_test_reverted;
 
 pub(crate) mod shape_network_interface;
 
+pub(crate) mod shape_network_migration_analysis_result_source;
+
+pub(crate) mod shape_network_migration_analysis_result_target;
+
+pub(crate) mod shape_network_migration_code_generation_artifacts;
+
+pub(crate) mod shape_network_migration_failed_resources_list;
+
 pub(crate) mod shape_participating_server;
+
+pub(crate) mod shape_update_operation;
+
+pub(crate) mod shape_code_generation_output_format_status_details;
 
 pub(crate) mod shape_data_replication_initiation_step;
 
 pub(crate) mod shape_ips_list;
+
+pub(crate) mod shape_network_migration_code_generation_artifact;
+
+pub(crate) mod shape_network_migration_failed_resource_details;
 
 pub(crate) mod shape_post_launch_actions_status;
 

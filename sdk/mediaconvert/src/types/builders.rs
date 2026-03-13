@@ -233,6 +233,8 @@ pub use crate::types::_aac_settings::AacSettingsBuilder;
 
 pub use crate::types::_ac3_settings::Ac3SettingsBuilder;
 
+pub use crate::types::_ac4_settings::Ac4SettingsBuilder;
+
 pub use crate::types::_aiff_settings::AiffSettingsBuilder;
 
 pub use crate::types::_eac3_atmos_settings::Eac3AtmosSettingsBuilder;

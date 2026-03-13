@@ -154,3 +154,9 @@ pub(crate) mod shape_replication_status;
 pub(crate) mod shape_stream_group_summary;
 
 pub(crate) mod shape_stream_session_summary;
+
+pub(crate) mod shape_vpc_transit_configuration;
+
+pub(crate) mod shape_vpc_transit_configuration_response;
+
+pub(crate) mod shape_ipv4_cidr_block_list;

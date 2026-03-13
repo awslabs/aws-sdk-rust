@@ -30,5 +30,11 @@ pub fn ser_location_configuration(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.vpc_transit_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("VpcTransitConfiguration").start_object();
+        crate::protocol_serde::shape_vpc_transit_configuration::ser_vpc_transit_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
