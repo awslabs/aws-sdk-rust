@@ -16,6 +16,9 @@ pub mod delete_campaign_communication_limits;
 /// Types for the `DeleteCampaignCommunicationTime` operation.
 pub mod delete_campaign_communication_time;
 
+/// Types for the `DeleteCampaignEntryLimits` operation.
+pub mod delete_campaign_entry_limits;
+
 /// Types for the `DeleteConnectInstanceConfig` operation.
 pub mod delete_connect_instance_config;
 
@@ -93,6 +96,9 @@ pub mod update_campaign_communication_limits;
 
 /// Types for the `UpdateCampaignCommunicationTime` operation.
 pub mod update_campaign_communication_time;
+
+/// Types for the `UpdateCampaignEntryLimits` operation.
+pub mod update_campaign_entry_limits;
 
 /// Types for the `UpdateCampaignFlowAssociation` operation.
 pub mod update_campaign_flow_association;

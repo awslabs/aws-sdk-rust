@@ -74,6 +74,8 @@ pub struct ClusterInstanceGroupSpecification {
     pub slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfig>,
     /// <p>Specifies the capacity requirements for the instance group.</p>
     pub capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
+    /// <p>The network interface configuration for the instance group.</p>
+    pub network_interface: ::std::option::Option<crate::types::ClusterNetworkInterface>,
 }
 impl ClusterInstanceGroupSpecification {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -184,6 +186,10 @@ impl ClusterInstanceGroupSpecification {
     pub fn capacity_requirements(&self) -> ::std::option::Option<&crate::types::ClusterCapacityRequirements> {
         self.capacity_requirements.as_ref()
     }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn network_interface(&self) -> ::std::option::Option<&crate::types::ClusterNetworkInterface> {
+        self.network_interface.as_ref()
+    }
 }
 impl ClusterInstanceGroupSpecification {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
@@ -213,6 +219,7 @@ pub struct ClusterInstanceGroupSpecificationBuilder {
     pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfig>,
     pub(crate) slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfig>,
     pub(crate) capacity_requirements: ::std::option::Option<crate::types::ClusterCapacityRequirements>,
+    pub(crate) network_interface: ::std::option::Option<crate::types::ClusterNetworkInterface>,
 }
 impl ClusterInstanceGroupSpecificationBuilder {
     /// <p>Specifies the number of instances to add to the instance group of a SageMaker HyperPod cluster.</p>
@@ -576,6 +583,20 @@ impl ClusterInstanceGroupSpecificationBuilder {
     pub fn get_capacity_requirements(&self) -> &::std::option::Option<crate::types::ClusterCapacityRequirements> {
         &self.capacity_requirements
     }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn network_interface(mut self, input: crate::types::ClusterNetworkInterface) -> Self {
+        self.network_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn set_network_interface(mut self, input: ::std::option::Option<crate::types::ClusterNetworkInterface>) -> Self {
+        self.network_interface = input;
+        self
+    }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn get_network_interface(&self) -> &::std::option::Option<crate::types::ClusterNetworkInterface> {
+        &self.network_interface
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupSpecification`](crate::types::ClusterInstanceGroupSpecification).
     pub fn build(self) -> crate::types::ClusterInstanceGroupSpecification {
         crate::types::ClusterInstanceGroupSpecification {
@@ -596,6 +617,7 @@ impl ClusterInstanceGroupSpecificationBuilder {
             kubernetes_config: self.kubernetes_config,
             slurm_config: self.slurm_config,
             capacity_requirements: self.capacity_requirements,
+            network_interface: self.network_interface,
         }
     }
 }

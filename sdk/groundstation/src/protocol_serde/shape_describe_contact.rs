@@ -186,6 +186,9 @@ pub(crate) fn de_describe_contact(
                 "trackingOverrides" => {
                     builder = builder.set_tracking_overrides(crate::protocol_serde::shape_tracking_overrides::de_tracking_overrides(tokens, _value)?);
                 }
+                "version" => {
+                    builder = builder.set_version(crate::protocol_serde::shape_contact_version::de_contact_version(tokens, _value)?);
+                }
                 "visibilityEndTime" => {
                     builder = builder.set_visibility_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

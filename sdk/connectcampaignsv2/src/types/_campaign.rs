@@ -22,6 +22,8 @@ pub struct Campaign {
     pub connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
     /// Campaign schedule
     pub schedule: ::std::option::Option<crate::types::Schedule>,
+    /// Campaign entry limits config
+    pub entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     /// Campaign communication time config
     pub communication_time_config: ::std::option::Option<crate::types::CommunicationTimeConfig>,
     /// Communication limits config
@@ -70,6 +72,10 @@ impl Campaign {
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
         self.schedule.as_ref()
     }
+    /// Campaign entry limits config
+    pub fn entry_limits_config(&self) -> ::std::option::Option<&crate::types::EntryLimitsConfig> {
+        self.entry_limits_config.as_ref()
+    }
     /// Campaign communication time config
     pub fn communication_time_config(&self) -> ::std::option::Option<&crate::types::CommunicationTimeConfig> {
         self.communication_time_config.as_ref()
@@ -103,6 +109,7 @@ pub struct CampaignBuilder {
     pub(crate) source: ::std::option::Option<crate::types::Source>,
     pub(crate) connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
+    pub(crate) entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     pub(crate) communication_time_config: ::std::option::Option<crate::types::CommunicationTimeConfig>,
     pub(crate) communication_limits_override: ::std::option::Option<crate::types::CommunicationLimitsConfig>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -238,6 +245,20 @@ impl CampaignBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
         &self.schedule
     }
+    /// Campaign entry limits config
+    pub fn entry_limits_config(mut self, input: crate::types::EntryLimitsConfig) -> Self {
+        self.entry_limits_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// Campaign entry limits config
+    pub fn set_entry_limits_config(mut self, input: ::std::option::Option<crate::types::EntryLimitsConfig>) -> Self {
+        self.entry_limits_config = input;
+        self
+    }
+    /// Campaign entry limits config
+    pub fn get_entry_limits_config(&self) -> &::std::option::Option<crate::types::EntryLimitsConfig> {
+        &self.entry_limits_config
+    }
     /// Campaign communication time config
     pub fn communication_time_config(mut self, input: crate::types::CommunicationTimeConfig) -> Self {
         self.communication_time_config = ::std::option::Option::Some(input);
@@ -323,6 +344,7 @@ impl CampaignBuilder {
             source: self.source,
             connect_campaign_flow_arn: self.connect_campaign_flow_arn,
             schedule: self.schedule,
+            entry_limits_config: self.entry_limits_config,
             communication_time_config: self.communication_time_config,
             communication_limits_override: self.communication_limits_override,
             tags: self.tags,

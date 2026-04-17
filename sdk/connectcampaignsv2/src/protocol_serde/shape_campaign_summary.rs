@@ -58,6 +58,10 @@ where
                         "schedule" => {
                             builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
                         }
+                        "entryLimitsConfig" => {
+                            builder = builder
+                                .set_entry_limits_config(crate::protocol_serde::shape_entry_limits_config::de_entry_limits_config(tokens, _value)?);
+                        }
                         "connectCampaignFlowArn" => {
                             builder = builder.set_connect_campaign_flow_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

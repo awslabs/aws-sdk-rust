@@ -237,6 +237,8 @@ pub use crate::types::_redshift_parameters::RedshiftParametersBuilder;
 
 pub use crate::types::_s3_parameters::S3ParametersBuilder;
 
+pub use crate::types::_s3_tables_parameters::S3TablesParametersBuilder;
+
 pub use crate::types::_s3_knowledge_base_parameters::S3KnowledgeBaseParametersBuilder;
 
 pub use crate::types::_service_now_parameters::ServiceNowParametersBuilder;
@@ -781,6 +783,8 @@ pub use crate::types::_recent_snapshots_configurations::RecentSnapshotsConfigura
 
 pub use crate::types::_threshold_alerts_configurations::ThresholdAlertsConfigurationsBuilder;
 
+pub use crate::types::_dashboard_customization_summary_configurations::DashboardCustomizationSummaryConfigurationsBuilder;
+
 pub use crate::types::_amazon_q_in_quick_sight_console_configurations::AmazonQInQuickSightConsoleConfigurationsBuilder;
 
 pub use crate::types::_topic_ir_metric::TopicIrMetricBuilder;
@@ -1279,6 +1283,8 @@ pub use crate::types::_list_control_search_options::ListControlSearchOptionsBuil
 
 pub use crate::types::_list_control_select_all_options::ListControlSelectAllOptionsBuilder;
 
+pub use crate::types::_control_sort_configuration::ControlSortConfigurationBuilder;
+
 pub use crate::types::_text_control_placeholder_options::TextControlPlaceholderOptionsBuilder;
 
 pub use crate::types::_short_format_text::ShortFormatTextBuilder;
@@ -1492,6 +1498,8 @@ pub use crate::types::_named_entity_definition_metric::NamedEntityDefinitionMetr
 pub use crate::types::_collective_constant_entry::CollectiveConstantEntryBuilder;
 
 pub use crate::types::_cascading_control_source::CascadingControlSourceBuilder;
+
+pub use crate::types::_selectable_values_sort::SelectableValuesSortBuilder;
 
 pub use crate::types::_table_aggregated_field_wells::TableAggregatedFieldWellsBuilder;
 

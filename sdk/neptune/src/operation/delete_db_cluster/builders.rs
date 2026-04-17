@@ -162,7 +162,7 @@ impl DeleteDBClusterFluentBuilder {
         self.inner.get_skip_final_snapshot()
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p><note>
-    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalSnapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -178,7 +178,7 @@ impl DeleteDBClusterFluentBuilder {
         self
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p><note>
-    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalSnapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -194,7 +194,7 @@ impl DeleteDBClusterFluentBuilder {
         self
     }
     /// <p>The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code> is set to <code>false</code>.</p><note>
-    /// <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to true results in an error.</p>
+    /// <p>Specifying this parameter and also setting the <code>SkipFinalSnapshot</code> parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>

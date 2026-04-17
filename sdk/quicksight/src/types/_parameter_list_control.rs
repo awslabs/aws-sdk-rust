@@ -18,6 +18,8 @@ pub struct ParameterListControl {
     pub selectable_values: ::std::option::Option<crate::types::ParameterSelectableValues>,
     /// <p>The values that are displayed in a control can be configured to only show values that are valid based on what's selected in other controls.</p>
     pub cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
+    /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
+    pub control_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>,
 }
 impl ParameterListControl {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
@@ -51,6 +53,12 @@ impl ParameterListControl {
     pub fn cascading_control_configuration(&self) -> ::std::option::Option<&crate::types::CascadingControlConfiguration> {
         self.cascading_control_configuration.as_ref()
     }
+    /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_sort_configurations.is_none()`.
+    pub fn control_sort_configurations(&self) -> &[crate::types::ControlSortConfiguration] {
+        self.control_sort_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ParameterListControl {
     /// Creates a new builder-style object to manufacture [`ParameterListControl`](crate::types::ParameterListControl).
@@ -70,6 +78,7 @@ pub struct ParameterListControlBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::SheetControlListType>,
     pub(crate) selectable_values: ::std::option::Option<crate::types::ParameterSelectableValues>,
     pub(crate) cascading_control_configuration: ::std::option::Option<crate::types::CascadingControlConfiguration>,
+    pub(crate) control_sort_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>,
 }
 impl ParameterListControlBuilder {
     /// <p>The ID of the <code>ParameterListControl</code>.</p>
@@ -173,6 +182,26 @@ impl ParameterListControlBuilder {
     pub fn get_cascading_control_configuration(&self) -> &::std::option::Option<crate::types::CascadingControlConfiguration> {
         &self.cascading_control_configuration
     }
+    /// Appends an item to `control_sort_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_control_sort_configurations`](Self::set_control_sort_configurations).
+    ///
+    /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
+    pub fn control_sort_configurations(mut self, input: crate::types::ControlSortConfiguration) -> Self {
+        let mut v = self.control_sort_configurations.unwrap_or_default();
+        v.push(input);
+        self.control_sort_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
+    pub fn set_control_sort_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>>) -> Self {
+        self.control_sort_configurations = input;
+        self
+    }
+    /// <p>The sort configuration for the values displayed in the control. Only one sort configuration can be applied per control.</p>
+    pub fn get_control_sort_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlSortConfiguration>> {
+        &self.control_sort_configurations
+    }
     /// Consumes the builder and constructs a [`ParameterListControl`](crate::types::ParameterListControl).
     /// This method will fail if any of the following fields are not set:
     /// - [`parameter_control_id`](crate::types::builders::ParameterListControlBuilder::parameter_control_id)
@@ -202,6 +231,7 @@ impl ParameterListControlBuilder {
             r#type: self.r#type,
             selectable_values: self.selectable_values,
             cascading_control_configuration: self.cascading_control_configuration,
+            control_sort_configurations: self.control_sort_configurations,
         })
     }
 }

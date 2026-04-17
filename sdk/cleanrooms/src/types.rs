@@ -381,13 +381,13 @@ pub use crate::types::_protected_job_member_output_configuration_input::Protecte
 
 pub use crate::types::_protected_job_worker_compute_type::ProtectedJobWorkerComputeType;
 
+pub use crate::types::_worker_compute_configuration_properties::WorkerComputeConfigurationProperties;
+
 pub use crate::types::_protected_query_member_output_configuration::ProtectedQueryMemberOutputConfiguration;
 
 pub use crate::types::_protected_query_distribute_output_configuration::ProtectedQueryDistributeOutputConfiguration;
 
 pub use crate::types::_worker_compute_type::WorkerComputeType;
-
-pub use crate::types::_worker_compute_configuration_properties::WorkerComputeConfigurationProperties;
 
 pub use crate::types::_s3_location::S3Location;
 

@@ -170,7 +170,7 @@ impl DeleteDBInstanceFluentBuilder {
         self.inner.get_skip_final_snapshot()
     }
     /// <p>The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p><note>
-    /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
+    /// <p>Specifying this parameter and also setting the SkipFinalSnapshot parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -188,7 +188,7 @@ impl DeleteDBInstanceFluentBuilder {
         self
     }
     /// <p>The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p><note>
-    /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
+    /// <p>Specifying this parameter and also setting the SkipFinalSnapshot parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>
@@ -206,7 +206,7 @@ impl DeleteDBInstanceFluentBuilder {
         self
     }
     /// <p>The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is set to <code>false</code>.</p><note>
-    /// <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>
+    /// <p>Specifying this parameter and also setting the SkipFinalSnapshot parameter to true results in an error.</p>
     /// </note>
     /// <p>Constraints:</p>
     /// <ul>

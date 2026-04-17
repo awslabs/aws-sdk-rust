@@ -10,10 +10,10 @@ pub struct FailoverGlobalClusterInput {
     pub target_db_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
-    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>Switchover</code> parameter.</p>
     pub allow_data_loss: ::std::option::Option<bool>,
     /// <p>Specifies whether to switch over this global database cluster.</p>
-    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
     pub switchover: ::std::option::Option<bool>,
 }
 impl FailoverGlobalClusterInput {
@@ -28,12 +28,12 @@ impl FailoverGlobalClusterInput {
     }
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
-    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>Switchover</code> parameter.</p>
     pub fn allow_data_loss(&self) -> ::std::option::Option<bool> {
         self.allow_data_loss
     }
     /// <p>Specifies whether to switch over this global database cluster.</p>
-    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
     pub fn switchover(&self) -> ::std::option::Option<bool> {
         self.switchover
     }
@@ -90,38 +90,38 @@ impl FailoverGlobalClusterInputBuilder {
     }
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
-    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>Switchover</code> parameter.</p>
     pub fn allow_data_loss(mut self, input: bool) -> Self {
         self.allow_data_loss = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
-    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>Switchover</code> parameter.</p>
     pub fn set_allow_data_loss(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_data_loss = input;
         self
     }
     /// <p>Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.</p>
     /// <p>If you don't specify <code>AllowDataLoss</code>, the global database cluster operation defaults to a switchover.</p>
-    /// <p>Constraints:Can't be specified together with the <code>Switchover</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>Switchover</code> parameter.</p>
     pub fn get_allow_data_loss(&self) -> &::std::option::Option<bool> {
         &self.allow_data_loss
     }
     /// <p>Specifies whether to switch over this global database cluster.</p>
-    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
     pub fn switchover(mut self, input: bool) -> Self {
         self.switchover = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether to switch over this global database cluster.</p>
-    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
     pub fn set_switchover(mut self, input: ::std::option::Option<bool>) -> Self {
         self.switchover = input;
         self
     }
     /// <p>Specifies whether to switch over this global database cluster.</p>
-    /// <p>Constraints:Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
+    /// <p>Constraints: Can't be specified together with the <code>AllowDataLoss</code> parameter.</p>
     pub fn get_switchover(&self) -> &::std::option::Option<bool> {
         &self.switchover
     }

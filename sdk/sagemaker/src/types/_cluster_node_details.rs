@@ -44,6 +44,8 @@ pub struct ClusterNodeDetails {
     pub kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails>,
     /// <p>The capacity type of the node. Valid values are <code>OnDemand</code> and <code>Spot</code>. When set to <code>OnDemand</code>, the node is launched as an On-Demand instance. When set to <code>Spot</code>, the node is launched as a Spot instance.</p>
     pub capacity_type: ::std::option::Option<crate::types::ClusterCapacityType>,
+    /// <p>The network interface configuration for the cluster node.</p>
+    pub network_interface: ::std::option::Option<crate::types::ClusterNetworkInterfaceDetails>,
 }
 impl ClusterNodeDetails {
     /// <p>The instance group name in which the instance is.</p>
@@ -128,6 +130,10 @@ impl ClusterNodeDetails {
     pub fn capacity_type(&self) -> ::std::option::Option<&crate::types::ClusterCapacityType> {
         self.capacity_type.as_ref()
     }
+    /// <p>The network interface configuration for the cluster node.</p>
+    pub fn network_interface(&self) -> ::std::option::Option<&crate::types::ClusterNetworkInterfaceDetails> {
+        self.network_interface.as_ref()
+    }
 }
 impl ClusterNodeDetails {
     /// Creates a new builder-style object to manufacture [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
@@ -160,6 +166,7 @@ pub struct ClusterNodeDetailsBuilder {
     pub(crate) ultra_server_info: ::std::option::Option<crate::types::UltraServerInfo>,
     pub(crate) kubernetes_config: ::std::option::Option<crate::types::ClusterKubernetesConfigNodeDetails>,
     pub(crate) capacity_type: ::std::option::Option<crate::types::ClusterCapacityType>,
+    pub(crate) network_interface: ::std::option::Option<crate::types::ClusterNetworkInterfaceDetails>,
 }
 impl ClusterNodeDetailsBuilder {
     /// <p>The instance group name in which the instance is.</p>
@@ -448,6 +455,20 @@ impl ClusterNodeDetailsBuilder {
     pub fn get_capacity_type(&self) -> &::std::option::Option<crate::types::ClusterCapacityType> {
         &self.capacity_type
     }
+    /// <p>The network interface configuration for the cluster node.</p>
+    pub fn network_interface(mut self, input: crate::types::ClusterNetworkInterfaceDetails) -> Self {
+        self.network_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network interface configuration for the cluster node.</p>
+    pub fn set_network_interface(mut self, input: ::std::option::Option<crate::types::ClusterNetworkInterfaceDetails>) -> Self {
+        self.network_interface = input;
+        self
+    }
+    /// <p>The network interface configuration for the cluster node.</p>
+    pub fn get_network_interface(&self) -> &::std::option::Option<crate::types::ClusterNetworkInterfaceDetails> {
+        &self.network_interface
+    }
     /// Consumes the builder and constructs a [`ClusterNodeDetails`](crate::types::ClusterNodeDetails).
     pub fn build(self) -> crate::types::ClusterNodeDetails {
         crate::types::ClusterNodeDetails {
@@ -471,6 +492,7 @@ impl ClusterNodeDetailsBuilder {
             ultra_server_info: self.ultra_server_info,
             kubernetes_config: self.kubernetes_config,
             capacity_type: self.capacity_type,
+            network_interface: self.network_interface,
         }
     }
 }

@@ -7,7 +7,7 @@
 pub struct GlobalCluster {
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    /// <p>An immutable identifier for the global database that is unique within all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub global_cluster_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the global database.</p>
     pub global_cluster_arn: ::std::option::Option<::std::string::String>,
@@ -35,7 +35,7 @@ impl GlobalCluster {
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
     }
-    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    /// <p>An immutable identifier for the global database that is unique within all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub fn global_cluster_resource_id(&self) -> ::std::option::Option<&str> {
         self.global_cluster_resource_id.as_deref()
     }
@@ -123,17 +123,17 @@ impl GlobalClusterBuilder {
     pub fn get_global_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_identifier
     }
-    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    /// <p>An immutable identifier for the global database that is unique within all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub fn global_cluster_resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_resource_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    /// <p>An immutable identifier for the global database that is unique within all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub fn set_global_cluster_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.global_cluster_resource_id = input;
         self
     }
-    /// <p>An immutable identifier for the global database that is unique within in all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
+    /// <p>An immutable identifier for the global database that is unique within all regions. This identifier is found in CloudTrail log entries whenever the KMS key for the DB cluster is accessed.</p>
     pub fn get_global_cluster_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.global_cluster_resource_id
     }

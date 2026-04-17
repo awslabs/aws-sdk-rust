@@ -6,12 +6,12 @@
 pub struct InvalidParameterException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
-    /// <p></p>
+    /// <p>Name of the invalid parameter.</p>
     pub parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl InvalidParameterException {
-    /// <p></p>
+    /// <p>Name of the invalid parameter.</p>
     pub fn parameter_name(&self) -> ::std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
@@ -75,17 +75,17 @@ impl InvalidParameterExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p></p>
+    /// <p>Name of the invalid parameter.</p>
     pub fn parameter_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.parameter_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p></p>
+    /// <p>Name of the invalid parameter.</p>
     pub fn set_parameter_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.parameter_name = input;
         self
     }
-    /// <p></p>
+    /// <p>Name of the invalid parameter.</p>
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }

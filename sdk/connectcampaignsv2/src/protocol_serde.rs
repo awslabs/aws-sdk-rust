@@ -33,6 +33,8 @@ pub(crate) mod shape_delete_campaign_communication_limits;
 
 pub(crate) mod shape_delete_campaign_communication_time;
 
+pub(crate) mod shape_delete_campaign_entry_limits;
+
 pub(crate) mod shape_delete_connect_instance_config;
 
 pub(crate) mod shape_delete_connect_instance_integration;
@@ -84,6 +86,8 @@ pub(crate) mod shape_update_campaign_channel_subtype_config;
 pub(crate) mod shape_update_campaign_communication_limits;
 
 pub(crate) mod shape_update_campaign_communication_time;
+
+pub(crate) mod shape_update_campaign_entry_limits;
 
 pub(crate) mod shape_update_campaign_flow_association;
 
@@ -143,6 +147,8 @@ pub(crate) mod shape_update_campaign_communication_limits_input;
 
 pub(crate) mod shape_update_campaign_communication_time_input;
 
+pub(crate) mod shape_update_campaign_entry_limits_input;
+
 pub(crate) mod shape_update_campaign_flow_association_input;
 
 pub(crate) mod shape_update_campaign_name_input;
@@ -166,6 +172,8 @@ pub(crate) mod shape_communication_limits_config;
 pub(crate) mod shape_communication_time_config;
 
 pub(crate) mod shape_encryption_config;
+
+pub(crate) mod shape_entry_limits_config;
 
 pub(crate) mod shape_failed_campaign_state_response_list;
 

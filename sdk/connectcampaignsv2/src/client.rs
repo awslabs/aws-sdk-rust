@@ -173,6 +173,8 @@ mod delete_campaign_communication_limits;
 
 mod delete_campaign_communication_time;
 
+mod delete_campaign_entry_limits;
+
 mod delete_connect_instance_config;
 
 mod delete_connect_instance_integration;
@@ -224,6 +226,8 @@ mod update_campaign_channel_subtype_config;
 mod update_campaign_communication_limits;
 
 mod update_campaign_communication_time;
+
+mod update_campaign_entry_limits;
 
 mod update_campaign_flow_association;
 

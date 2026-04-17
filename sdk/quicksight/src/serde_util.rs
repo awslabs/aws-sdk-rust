@@ -3655,6 +3655,15 @@ pub(crate) fn reference_line_correct_errors(
     builder
 }
 
+pub(crate) fn selectable_values_sort_correct_errors(
+    mut builder: crate::types::builders::SelectableValuesSortBuilder,
+) -> crate::types::builders::SelectableValuesSortBuilder {
+    if builder.direction.is_none() {
+        builder.direction = "no value was set".parse::<crate::types::ControlSortDirection>().ok()
+    }
+    builder
+}
+
 pub(crate) fn sheet_layout_group_correct_errors(
     mut builder: crate::types::builders::SheetLayoutGroupBuilder,
 ) -> crate::types::builders::SheetLayoutGroupBuilder {

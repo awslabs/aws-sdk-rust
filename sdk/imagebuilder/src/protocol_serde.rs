@@ -409,6 +409,8 @@ pub(crate) mod shape_pipeline_logging_configuration;
 
 pub(crate) mod shape_placement;
 
+pub(crate) mod shape_register_image_options;
+
 pub(crate) mod shape_resource_state;
 
 pub(crate) mod shape_resource_state_update_exclusion_rules;
@@ -420,6 +422,8 @@ pub(crate) mod shape_schedule;
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target_container_repository;
+
+pub(crate) mod shape_windows_configuration;
 
 pub(crate) mod shape_workflow;
 

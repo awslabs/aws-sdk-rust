@@ -16,6 +16,8 @@ pub struct RegisteredUserConsoleFeatureConfigurations {
     pub recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
     /// <p>The threshold alerts configuration for an embedded Quick Sight dashboard.</p>
     pub threshold_alerts: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>,
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight console.</p>
+    pub dashboard_customization_summary: ::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurations {
     /// <p>The state persistence configurations of an embedded Amazon Quick Sight console.</p>
@@ -42,6 +44,10 @@ impl RegisteredUserConsoleFeatureConfigurations {
     pub fn threshold_alerts(&self) -> ::std::option::Option<&crate::types::ThresholdAlertsConfigurations> {
         self.threshold_alerts.as_ref()
     }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight console.</p>
+    pub fn dashboard_customization_summary(&self) -> ::std::option::Option<&crate::types::DashboardCustomizationSummaryConfigurations> {
+        self.dashboard_customization_summary.as_ref()
+    }
 }
 impl RegisteredUserConsoleFeatureConfigurations {
     /// Creates a new builder-style object to manufacture [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
@@ -60,6 +66,7 @@ pub struct RegisteredUserConsoleFeatureConfigurationsBuilder {
     pub(crate) schedules: ::std::option::Option<crate::types::SchedulesConfigurations>,
     pub(crate) recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
     pub(crate) threshold_alerts: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>,
+    pub(crate) dashboard_customization_summary: ::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations>,
 }
 impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     /// <p>The state persistence configurations of an embedded Amazon Quick Sight console.</p>
@@ -146,6 +153,23 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
     pub fn get_threshold_alerts(&self) -> &::std::option::Option<crate::types::ThresholdAlertsConfigurations> {
         &self.threshold_alerts
     }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight console.</p>
+    pub fn dashboard_customization_summary(mut self, input: crate::types::DashboardCustomizationSummaryConfigurations) -> Self {
+        self.dashboard_customization_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight console.</p>
+    pub fn set_dashboard_customization_summary(
+        mut self,
+        input: ::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations>,
+    ) -> Self {
+        self.dashboard_customization_summary = input;
+        self
+    }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight console.</p>
+    pub fn get_dashboard_customization_summary(&self) -> &::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations> {
+        &self.dashboard_customization_summary
+    }
     /// Consumes the builder and constructs a [`RegisteredUserConsoleFeatureConfigurations`](crate::types::RegisteredUserConsoleFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserConsoleFeatureConfigurations {
         crate::types::RegisteredUserConsoleFeatureConfigurations {
@@ -155,6 +179,7 @@ impl RegisteredUserConsoleFeatureConfigurationsBuilder {
             schedules: self.schedules,
             recent_snapshots: self.recent_snapshots,
             threshold_alerts: self.threshold_alerts,
+            dashboard_customization_summary: self.dashboard_customization_summary,
         }
     }
 }

@@ -11,6 +11,8 @@ pub use crate::types::_elevation::ElevationBuilder;
 
 pub use crate::types::_ephemeris_response_data::EphemerisResponseDataBuilder;
 
+pub use crate::types::_contact_version::ContactVersionBuilder;
+
 pub use crate::types::_ephemeris_meta_data::EphemerisMetaDataBuilder;
 
 pub use crate::types::_component_status_data::ComponentStatusDataBuilder;
@@ -57,6 +59,10 @@ pub use crate::types::_ephemeris_error_reason::EphemerisErrorReasonBuilder;
 
 pub use crate::types::_ground_station_data::GroundStationDataBuilder;
 
+pub use crate::types::_antenna_list_item::AntennaListItemBuilder;
+
+pub use crate::types::_ground_station_reservation_list_item::GroundStationReservationListItemBuilder;
+
 pub use crate::types::_mission_profile_list_item::MissionProfileListItemBuilder;
 
 pub use crate::types::_satellite_list_item::SatelliteListItemBuilder;
@@ -74,6 +80,10 @@ pub use crate::types::_uplink_spectrum_config::UplinkSpectrumConfigBuilder;
 pub use crate::types::_eirp::EirpBuilder;
 
 pub use crate::types::_az_el_program_track_settings::AzElProgramTrackSettingsBuilder;
+
+pub use crate::types::_oem_program_track_settings::OemProgramTrackSettingsBuilder;
+
+pub use crate::types::_tle_program_track_settings::TleProgramTrackSettingsBuilder;
 
 pub use crate::types::_source::SourceBuilder;
 
@@ -110,6 +120,10 @@ pub use crate::types::_ranged_connection_details::RangedConnectionDetailsBuilder
 pub use crate::types::_tle_data::TleDataBuilder;
 
 pub use crate::types::_az_el_segments::AzElSegmentsBuilder;
+
+pub use crate::types::_maintenance_reservation_details::MaintenanceReservationDetailsBuilder;
+
+pub use crate::types::_contact_reservation_details::ContactReservationDetailsBuilder;
 
 pub use crate::types::_antenna_demod_decode_details::AntennaDemodDecodeDetailsBuilder;
 

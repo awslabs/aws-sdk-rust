@@ -15,13 +15,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DbParameterGroupStatus {
-    /// <p>The name of the DP parameter group.</p>
+    /// <p>The name of the DB parameter group.</p>
     pub db_parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of parameter updates.</p>
     pub parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
 impl DbParameterGroupStatus {
-    /// <p>The name of the DP parameter group.</p>
+    /// <p>The name of the DB parameter group.</p>
     pub fn db_parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_name.as_deref()
     }
@@ -45,17 +45,17 @@ pub struct DbParameterGroupStatusBuilder {
     pub(crate) parameter_apply_status: ::std::option::Option<::std::string::String>,
 }
 impl DbParameterGroupStatusBuilder {
-    /// <p>The name of the DP parameter group.</p>
+    /// <p>The name of the DB parameter group.</p>
     pub fn db_parameter_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.db_parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the DP parameter group.</p>
+    /// <p>The name of the DB parameter group.</p>
     pub fn set_db_parameter_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.db_parameter_group_name = input;
         self
     }
-    /// <p>The name of the DP parameter group.</p>
+    /// <p>The name of the DB parameter group.</p>
     pub fn get_db_parameter_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_name
     }

@@ -86,6 +86,8 @@ pub struct ClusterInstanceGroupDetails {
     pub active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
     /// <p>The Slurm configuration for the instance group.</p>
     pub slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfigDetails>,
+    /// <p>The network interface configuration for the instance group.</p>
+    pub network_interface: ::std::option::Option<crate::types::ClusterNetworkInterfaceDetails>,
 }
 impl ClusterInstanceGroupDetails {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -228,6 +230,10 @@ impl ClusterInstanceGroupDetails {
     pub fn slurm_config(&self) -> ::std::option::Option<&crate::types::ClusterSlurmConfigDetails> {
         self.slurm_config.as_ref()
     }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn network_interface(&self) -> ::std::option::Option<&crate::types::ClusterNetworkInterfaceDetails> {
+        self.network_interface.as_ref()
+    }
 }
 impl ClusterInstanceGroupDetails {
     /// Creates a new builder-style object to manufacture [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
@@ -266,6 +272,7 @@ pub struct ClusterInstanceGroupDetailsBuilder {
     pub(crate) software_update_status: ::std::option::Option<crate::types::SoftwareUpdateStatus>,
     pub(crate) active_software_update_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
     pub(crate) slurm_config: ::std::option::Option<crate::types::ClusterSlurmConfigDetails>,
+    pub(crate) network_interface: ::std::option::Option<crate::types::ClusterNetworkInterfaceDetails>,
 }
 impl ClusterInstanceGroupDetailsBuilder {
     /// <p>The number of instances that are currently in the instance group of a SageMaker HyperPod cluster.</p>
@@ -749,6 +756,20 @@ impl ClusterInstanceGroupDetailsBuilder {
     pub fn get_slurm_config(&self) -> &::std::option::Option<crate::types::ClusterSlurmConfigDetails> {
         &self.slurm_config
     }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn network_interface(mut self, input: crate::types::ClusterNetworkInterfaceDetails) -> Self {
+        self.network_interface = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn set_network_interface(mut self, input: ::std::option::Option<crate::types::ClusterNetworkInterfaceDetails>) -> Self {
+        self.network_interface = input;
+        self
+    }
+    /// <p>The network interface configuration for the instance group.</p>
+    pub fn get_network_interface(&self) -> &::std::option::Option<crate::types::ClusterNetworkInterfaceDetails> {
+        &self.network_interface
+    }
     /// Consumes the builder and constructs a [`ClusterInstanceGroupDetails`](crate::types::ClusterInstanceGroupDetails).
     pub fn build(self) -> crate::types::ClusterInstanceGroupDetails {
         crate::types::ClusterInstanceGroupDetails {
@@ -778,6 +799,7 @@ impl ClusterInstanceGroupDetailsBuilder {
             software_update_status: self.software_update_status,
             active_software_update_config: self.active_software_update_config,
             slurm_config: self.slurm_config,
+            network_interface: self.network_interface,
         }
     }
 }

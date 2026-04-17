@@ -23,6 +23,10 @@ pub struct ImportDiskImageInput {
     pub logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
     /// <p>Tags that are attached to image resources created from the import.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub register_image_options: ::std::option::Option<crate::types::RegisterImageOptions>,
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub windows_configuration: ::std::option::Option<crate::types::WindowsConfiguration>,
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -67,6 +71,14 @@ impl ImportDiskImageInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn register_image_options(&self) -> ::std::option::Option<&crate::types::RegisterImageOptions> {
+        self.register_image_options.as_ref()
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::WindowsConfiguration> {
+        self.windows_configuration.as_ref()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -93,6 +105,8 @@ pub struct ImportDiskImageInputBuilder {
     pub(crate) uri: ::std::option::Option<::std::string::String>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) register_image_options: ::std::option::Option<crate::types::RegisterImageOptions>,
+    pub(crate) windows_configuration: ::std::option::Option<crate::types::WindowsConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportDiskImageInputBuilder {
@@ -248,6 +262,34 @@ impl ImportDiskImageInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn register_image_options(mut self, input: crate::types::RegisterImageOptions) -> Self {
+        self.register_image_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn set_register_image_options(mut self, input: ::std::option::Option<crate::types::RegisterImageOptions>) -> Self {
+        self.register_image_options = input;
+        self
+    }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn get_register_image_options(&self) -> &::std::option::Option<crate::types::RegisterImageOptions> {
+        &self.register_image_options
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn windows_configuration(mut self, input: crate::types::WindowsConfiguration) -> Self {
+        self.windows_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::WindowsConfiguration>) -> Self {
+        self.windows_configuration = input;
+        self
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::WindowsConfiguration> {
+        &self.windows_configuration
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -278,6 +320,8 @@ impl ImportDiskImageInputBuilder {
             uri: self.uri,
             logging_configuration: self.logging_configuration,
             tags: self.tags,
+            register_image_options: self.register_image_options,
+            windows_configuration: self.windows_configuration,
             client_token: self.client_token,
         })
     }

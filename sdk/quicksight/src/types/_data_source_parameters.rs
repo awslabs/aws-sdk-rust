@@ -50,6 +50,8 @@ pub enum DataSourceParameters {
     S3KnowledgeBaseParameters(crate::types::S3KnowledgeBaseParameters),
     /// <p>The parameters for S3.</p>
     S3Parameters(crate::types::S3Parameters),
+    /// <p>The parameters for S3 Tables.</p>
+    S3TablesParameters(crate::types::S3TablesParameters),
     /// <p>The parameters for ServiceNow.</p>
     ServiceNowParameters(crate::types::ServiceNowParameters),
     /// <p>The parameters for Snowflake.</p>
@@ -377,6 +379,19 @@ impl DataSourceParameters {
     /// Returns true if this is a [`S3Parameters`](crate::types::DataSourceParameters::S3Parameters).
     pub fn is_s3_parameters(&self) -> bool {
         self.as_s3_parameters().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3TablesParameters`](crate::types::DataSourceParameters::S3TablesParameters), extracting the inner [`S3TablesParameters`](crate::types::S3TablesParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_tables_parameters(&self) -> ::std::result::Result<&crate::types::S3TablesParameters, &Self> {
+        if let DataSourceParameters::S3TablesParameters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3TablesParameters`](crate::types::DataSourceParameters::S3TablesParameters).
+    pub fn is_s3_tables_parameters(&self) -> bool {
+        self.as_s3_tables_parameters().is_ok()
     }
     /// Tries to convert the enum instance into [`ServiceNowParameters`](crate::types::DataSourceParameters::ServiceNowParameters), extracting the inner [`ServiceNowParameters`](crate::types::ServiceNowParameters).
     /// Returns `Err(&Self)` if it can't be converted.

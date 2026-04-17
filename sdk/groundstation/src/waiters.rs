@@ -3,6 +3,9 @@
 /// Supporting types for the `contact_scheduled` waiter.
 pub mod contact_scheduled;
 
+/// Supporting types for the `contact_updated` waiter.
+pub mod contact_updated;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

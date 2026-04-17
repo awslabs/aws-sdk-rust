@@ -18,6 +18,8 @@ pub struct CampaignSummary {
     pub r#type: ::std::option::Option<crate::types::ExternalCampaignType>,
     /// Campaign schedule
     pub schedule: ::std::option::Option<crate::types::Schedule>,
+    /// Campaign entry limits config
+    pub entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     /// Amazon Resource Names(ARN)
     pub connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
 }
@@ -55,6 +57,10 @@ impl CampaignSummary {
     pub fn schedule(&self) -> ::std::option::Option<&crate::types::Schedule> {
         self.schedule.as_ref()
     }
+    /// Campaign entry limits config
+    pub fn entry_limits_config(&self) -> ::std::option::Option<&crate::types::EntryLimitsConfig> {
+        self.entry_limits_config.as_ref()
+    }
     /// Amazon Resource Names(ARN)
     pub fn connect_campaign_flow_arn(&self) -> ::std::option::Option<&str> {
         self.connect_campaign_flow_arn.as_deref()
@@ -78,6 +84,7 @@ pub struct CampaignSummaryBuilder {
     pub(crate) channel_subtypes: ::std::option::Option<::std::vec::Vec<crate::types::ChannelSubtype>>,
     pub(crate) r#type: ::std::option::Option<crate::types::ExternalCampaignType>,
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
+    pub(crate) entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     pub(crate) connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
 }
 impl CampaignSummaryBuilder {
@@ -189,6 +196,20 @@ impl CampaignSummaryBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
         &self.schedule
     }
+    /// Campaign entry limits config
+    pub fn entry_limits_config(mut self, input: crate::types::EntryLimitsConfig) -> Self {
+        self.entry_limits_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// Campaign entry limits config
+    pub fn set_entry_limits_config(mut self, input: ::std::option::Option<crate::types::EntryLimitsConfig>) -> Self {
+        self.entry_limits_config = input;
+        self
+    }
+    /// Campaign entry limits config
+    pub fn get_entry_limits_config(&self) -> &::std::option::Option<crate::types::EntryLimitsConfig> {
+        &self.entry_limits_config
+    }
     /// Amazon Resource Names(ARN)
     pub fn connect_campaign_flow_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.connect_campaign_flow_arn = ::std::option::Option::Some(input.into());
@@ -244,6 +265,7 @@ impl CampaignSummaryBuilder {
             })?,
             r#type: self.r#type,
             schedule: self.schedule,
+            entry_limits_config: self.entry_limits_config,
             connect_campaign_flow_arn: self.connect_campaign_flow_arn,
         })
     }

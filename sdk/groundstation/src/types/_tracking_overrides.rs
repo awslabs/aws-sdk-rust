@@ -28,7 +28,6 @@ pub struct TrackingOverridesBuilder {
 }
 impl TrackingOverridesBuilder {
     /// <p>Program track settings to override for antenna tracking during the contact.</p>
-    /// This field is required.
     pub fn program_track_settings(mut self, input: crate::types::ProgramTrackSettings) -> Self {
         self.program_track_settings = ::std::option::Option::Some(input);
         self

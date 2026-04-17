@@ -51,3 +51,57 @@ pub(crate) fn match_describe_contact_b210d2d47f065862b(
         })
         .unwrap_or_default()
 }
+
+/// Matcher union: {"output":{"path":"version.status","expected":"FAILED_TO_UPDATE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_contact_version_35bfa37a3d94d8f9d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_contact_version::DescribeContactVersionOutput,
+        &crate::operation::describe_contact_version::DescribeContactVersionError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_contact_version::DescribeContactVersionOutput,
+    ) -> ::std::option::Option<&'a crate::types::VersionStatus> {
+        let _fld_1 = _output.version.as_ref()?;
+        let _fld_2 = _fld_1.status.as_ref()?;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "FAILED_TO_UPDATE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"version.status","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_contact_version_8f3bb45742b1a989a(
+    _result: ::std::result::Result<
+        &crate::operation::describe_contact_version::DescribeContactVersionOutput,
+        &crate::operation::describe_contact_version::DescribeContactVersionError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_contact_version::DescribeContactVersionOutput,
+    ) -> ::std::option::Option<&'a crate::types::VersionStatus> {
+        let _fld_1 = _output.version.as_ref()?;
+        let _fld_2 = _fld_1.status.as_ref()?;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}

@@ -10,19 +10,20 @@ impl super::Client {
     ///   - [`satellite_arn(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::satellite_arn): <p>ARN of a satellite.</p>
     ///   - [`start_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::start_time): <p>Start time of a contact in UTC.</p>
     ///   - [`end_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::end_time): <p>End time of a contact in UTC.</p>
-    ///   - [`pre_pass_start_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::pre_pass_start_time): <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    ///   - [`post_pass_end_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::post_pass_end_time): <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    ///   - [`pre_pass_start_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::pre_pass_start_time): <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch event indicating an upcoming pass.</p>
+    ///   - [`post_pass_end_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::post_pass_end_time): <p>End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating the pass has finished.</p>
     ///   - [`ground_station(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::ground_station): <p>Ground station for a contact.</p>
     ///   - [`contact_status(Option<ContactStatus>)`](crate::operation::describe_contact::DescribeContactOutput::contact_status): <p>Status of a contact.</p>
     ///   - [`error_message(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::error_message): <p>Error message for a contact.</p>
     ///   - [`maximum_elevation(Option<Elevation>)`](crate::operation::describe_contact::DescribeContactOutput::maximum_elevation): <p>Maximum elevation angle of a contact.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::describe_contact::DescribeContactOutput::tags): <p>Tags assigned to a contact.</p>
-    ///   - [`region(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::region): <p>Region of a contact.</p>
+    ///   - [`region(Option<String>)`](crate::operation::describe_contact::DescribeContactOutput::region): <p>Region where the <code>ReserveContact</code> API was called to schedule this contact.</p>
     ///   - [`dataflow_list(Option<Vec::<DataflowDetail>>)`](crate::operation::describe_contact::DescribeContactOutput::dataflow_list): <p>List describing source and destination details for each dataflow edge.</p>
     ///   - [`visibility_start_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::visibility_start_time): <p>Projected time in UTC your satellite will rise above the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
     ///   - [`visibility_end_time(Option<DateTime>)`](crate::operation::describe_contact::DescribeContactOutput::visibility_end_time): <p>Projected time in UTC your satellite will set below the <a href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact execution for completed contacts.</p>
     ///   - [`tracking_overrides(Option<TrackingOverrides>)`](crate::operation::describe_contact::DescribeContactOutput::tracking_overrides): <p>Tracking configuration overrides specified when the contact was reserved.</p>
     ///   - [`ephemeris(Option<EphemerisResponseData>)`](crate::operation::describe_contact::DescribeContactOutput::ephemeris): <p>The ephemeris that determines antenna pointing directions for the contact.</p>
+    ///   - [`version(Option<ContactVersion>)`](crate::operation::describe_contact::DescribeContactOutput::version): <p>Version information for a contact.</p>
     /// - On failure, responds with [`SdkError<DescribeContactError>`](crate::operation::describe_contact::DescribeContactError)
     pub fn describe_contact(&self) -> crate::operation::describe_contact::builders::DescribeContactFluentBuilder {
         crate::operation::describe_contact::builders::DescribeContactFluentBuilder::new(self.handle.clone())

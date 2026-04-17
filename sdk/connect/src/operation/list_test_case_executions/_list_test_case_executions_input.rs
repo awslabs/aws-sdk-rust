@@ -10,9 +10,9 @@ pub struct ListTestCaseExecutionsInput {
     /// <p>Filter executions by test case name.</p>
     pub test_case_name: ::std::option::Option<::std::string::String>,
     /// <p>Filter executions that started after this time.</p>
-    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub start_time: ::std::option::Option<i64>,
     /// <p>Filter executions that started before this time.</p>
-    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub end_time: ::std::option::Option<i64>,
     /// <p>Filter executions by status.</p>
     pub status: ::std::option::Option<crate::types::TestCaseExecutionStatus>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -34,12 +34,12 @@ impl ListTestCaseExecutionsInput {
         self.test_case_name.as_deref()
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.start_time.as_ref()
+    pub fn start_time(&self) -> ::std::option::Option<i64> {
+        self.start_time
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
-        self.end_time.as_ref()
+    pub fn end_time(&self) -> ::std::option::Option<i64> {
+        self.end_time
     }
     /// <p>Filter executions by status.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::TestCaseExecutionStatus> {
@@ -68,8 +68,8 @@ pub struct ListTestCaseExecutionsInputBuilder {
     pub(crate) instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_id: ::std::option::Option<::std::string::String>,
     pub(crate) test_case_name: ::std::option::Option<::std::string::String>,
-    pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) start_time: ::std::option::Option<i64>,
+    pub(crate) end_time: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::TestCaseExecutionStatus>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -119,31 +119,31 @@ impl ListTestCaseExecutionsInputBuilder {
         &self.test_case_name
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         &self.start_time
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: i64) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.end_time = input;
         self
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_end_time(&self) -> &::std::option::Option<i64> {
         &self.end_time
     }
     /// <p>Filter executions by status.</p>

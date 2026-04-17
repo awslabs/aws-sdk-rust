@@ -28,7 +28,7 @@ pub struct CreateEventSubscriptionInput {
     /// <p>If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.</p></li>
     /// </ul>
     pub source_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>The tags to be applied to the new event subscription.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -73,7 +73,7 @@ impl CreateEventSubscriptionInput {
     pub fn source_ids(&self) -> &[::std::string::String] {
         self.source_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
@@ -233,17 +233,17 @@ impl CreateEventSubscriptionInputBuilder {
     pub fn get_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_ids
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }

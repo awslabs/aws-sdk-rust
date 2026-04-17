@@ -10,6 +10,8 @@ pub struct ClusterLifeCycleConfig {
     pub source_s3_uri: ::std::option::Option<::std::string::String>,
     /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This entrypoint script runs during cluster creation.</p>
     pub on_create: ::std::option::Option<::std::string::String>,
+    /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This script runs on the node after the AMI-based initialization is complete.</p>
+    pub on_init_complete: ::std::option::Option<::std::string::String>,
 }
 impl ClusterLifeCycleConfig {
     /// <p>An Amazon S3 bucket path where your lifecycle scripts are stored.</p><important>
@@ -21,6 +23,10 @@ impl ClusterLifeCycleConfig {
     /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This entrypoint script runs during cluster creation.</p>
     pub fn on_create(&self) -> ::std::option::Option<&str> {
         self.on_create.as_deref()
+    }
+    /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This script runs on the node after the AMI-based initialization is complete.</p>
+    pub fn on_init_complete(&self) -> ::std::option::Option<&str> {
+        self.on_init_complete.as_deref()
     }
 }
 impl ClusterLifeCycleConfig {
@@ -36,6 +42,7 @@ impl ClusterLifeCycleConfig {
 pub struct ClusterLifeCycleConfigBuilder {
     pub(crate) source_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) on_create: ::std::option::Option<::std::string::String>,
+    pub(crate) on_init_complete: ::std::option::Option<::std::string::String>,
 }
 impl ClusterLifeCycleConfigBuilder {
     /// <p>An Amazon S3 bucket path where your lifecycle scripts are stored.</p><important>
@@ -72,11 +79,26 @@ impl ClusterLifeCycleConfigBuilder {
     pub fn get_on_create(&self) -> &::std::option::Option<::std::string::String> {
         &self.on_create
     }
+    /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This script runs on the node after the AMI-based initialization is complete.</p>
+    pub fn on_init_complete(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.on_init_complete = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This script runs on the node after the AMI-based initialization is complete.</p>
+    pub fn set_on_init_complete(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.on_init_complete = input;
+        self
+    }
+    /// <p>The file name of the entrypoint script of lifecycle scripts under <code>SourceS3Uri</code>. This script runs on the node after the AMI-based initialization is complete.</p>
+    pub fn get_on_init_complete(&self) -> &::std::option::Option<::std::string::String> {
+        &self.on_init_complete
+    }
     /// Consumes the builder and constructs a [`ClusterLifeCycleConfig`](crate::types::ClusterLifeCycleConfig).
     pub fn build(self) -> crate::types::ClusterLifeCycleConfig {
         crate::types::ClusterLifeCycleConfig {
             source_s3_uri: self.source_s3_uri,
             on_create: self.on_create,
+            on_init_complete: self.on_init_complete,
         }
     }
 }

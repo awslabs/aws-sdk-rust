@@ -8,6 +8,8 @@ pub struct AthenaParameters {
     pub work_group: ::std::option::Option<::std::string::String>,
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Use <code>ConsumerAccountRoleArn</code> to perform cross-account Athena access. This is an IAM role ARN in the same AWS account as the Athena resources you want to access. Provide this along with <code>RoleArn</code> to enable role-chaining, where Amazon Quick Sight first assumes the <code>RoleArn</code> and then assumes the <code>ConsumerAccountRoleArn</code> to access Athena resources.</p>
+    pub consumer_account_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that configures IAM Identity Center authentication to grant Quick Sight access to your workgroup.</p>
     /// <p>This parameter can only be specified if your Quick Sight account is configured with IAM Identity Center.</p>
     pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
@@ -20,6 +22,10 @@ impl AthenaParameters {
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>Use <code>ConsumerAccountRoleArn</code> to perform cross-account Athena access. This is an IAM role ARN in the same AWS account as the Athena resources you want to access. Provide this along with <code>RoleArn</code> to enable role-chaining, where Amazon Quick Sight first assumes the <code>RoleArn</code> and then assumes the <code>ConsumerAccountRoleArn</code> to access Athena resources.</p>
+    pub fn consumer_account_role_arn(&self) -> ::std::option::Option<&str> {
+        self.consumer_account_role_arn.as_deref()
     }
     /// <p>An optional parameter that configures IAM Identity Center authentication to grant Quick Sight access to your workgroup.</p>
     /// <p>This parameter can only be specified if your Quick Sight account is configured with IAM Identity Center.</p>
@@ -40,6 +46,7 @@ impl AthenaParameters {
 pub struct AthenaParametersBuilder {
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) consumer_account_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
 }
 impl AthenaParametersBuilder {
@@ -71,6 +78,20 @@ impl AthenaParametersBuilder {
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
     }
+    /// <p>Use <code>ConsumerAccountRoleArn</code> to perform cross-account Athena access. This is an IAM role ARN in the same AWS account as the Athena resources you want to access. Provide this along with <code>RoleArn</code> to enable role-chaining, where Amazon Quick Sight first assumes the <code>RoleArn</code> and then assumes the <code>ConsumerAccountRoleArn</code> to access Athena resources.</p>
+    pub fn consumer_account_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.consumer_account_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Use <code>ConsumerAccountRoleArn</code> to perform cross-account Athena access. This is an IAM role ARN in the same AWS account as the Athena resources you want to access. Provide this along with <code>RoleArn</code> to enable role-chaining, where Amazon Quick Sight first assumes the <code>RoleArn</code> and then assumes the <code>ConsumerAccountRoleArn</code> to access Athena resources.</p>
+    pub fn set_consumer_account_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.consumer_account_role_arn = input;
+        self
+    }
+    /// <p>Use <code>ConsumerAccountRoleArn</code> to perform cross-account Athena access. This is an IAM role ARN in the same AWS account as the Athena resources you want to access. Provide this along with <code>RoleArn</code> to enable role-chaining, where Amazon Quick Sight first assumes the <code>RoleArn</code> and then assumes the <code>ConsumerAccountRoleArn</code> to access Athena resources.</p>
+    pub fn get_consumer_account_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.consumer_account_role_arn
+    }
     /// <p>An optional parameter that configures IAM Identity Center authentication to grant Quick Sight access to your workgroup.</p>
     /// <p>This parameter can only be specified if your Quick Sight account is configured with IAM Identity Center.</p>
     pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
@@ -93,6 +114,7 @@ impl AthenaParametersBuilder {
         crate::types::AthenaParameters {
             work_group: self.work_group,
             role_arn: self.role_arn,
+            consumer_account_role_arn: self.consumer_account_role_arn,
             identity_center_configuration: self.identity_center_configuration,
         }
     }

@@ -2491,6 +2491,10 @@ pub(crate) mod shape_cluster_kubernetes_config_node_details;
 
 pub(crate) mod shape_cluster_life_cycle_config;
 
+pub(crate) mod shape_cluster_network_interface;
+
+pub(crate) mod shape_cluster_network_interface_details;
+
 pub(crate) mod shape_cluster_node_summary;
 
 pub(crate) mod shape_cluster_orchestrator_eks_config;

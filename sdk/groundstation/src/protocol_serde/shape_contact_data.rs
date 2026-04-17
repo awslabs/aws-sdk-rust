@@ -111,6 +111,9 @@ where
                                 tokens, _value,
                             )?);
                         }
+                        "version" => {
+                            builder = builder.set_version(crate::protocol_serde::shape_contact_version::de_contact_version(tokens, _value)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -48,5 +48,14 @@ pub fn ser_registered_user_dashboard_feature_configurations(
         crate::protocol_serde::shape_threshold_alerts_configurations::ser_threshold_alerts_configurations(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.dashboard_customization_summary {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("DashboardCustomizationSummary").start_object();
+        crate::protocol_serde::shape_dashboard_customization_summary_configurations::ser_dashboard_customization_summary_configurations(
+            &mut object_16,
+            var_15,
+        )?;
+        object_16.finish();
+    }
     Ok(())
 }

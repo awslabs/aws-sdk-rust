@@ -142,10 +142,15 @@ impl Client {
 pub trait Waiters {
     /// Waits until a contact has been scheduled
     fn wait_until_contact_scheduled(&self) -> crate::waiters::contact_scheduled::ContactScheduledFluentBuilder;
+    /// Waits until a contact has been updated
+    fn wait_until_contact_updated(&self) -> crate::waiters::contact_updated::ContactUpdatedFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_contact_scheduled(&self) -> crate::waiters::contact_scheduled::ContactScheduledFluentBuilder {
         crate::waiters::contact_scheduled::ContactScheduledFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_contact_updated(&self) -> crate::waiters::contact_updated::ContactUpdatedFluentBuilder {
+        crate::waiters::contact_updated::ContactUpdatedFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -214,6 +219,8 @@ mod delete_mission_profile;
 
 mod describe_contact;
 
+mod describe_contact_version;
+
 mod describe_ephemeris;
 
 mod get_agent_configuration;
@@ -230,13 +237,19 @@ mod get_mission_profile;
 
 mod get_satellite;
 
+mod list_antennas;
+
 mod list_configs;
+
+mod list_contact_versions;
 
 mod list_contacts;
 
 mod list_dataflow_endpoint_groups;
 
 mod list_ephemerides;
+
+mod list_ground_station_reservations;
 
 mod list_ground_stations;
 
@@ -257,6 +270,8 @@ mod untag_resource;
 mod update_agent_status;
 
 mod update_config;
+
+mod update_contact;
 
 mod update_ephemeris;
 

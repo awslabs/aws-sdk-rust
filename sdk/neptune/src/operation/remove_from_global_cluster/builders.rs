@@ -22,7 +22,7 @@ impl crate::operation::remove_from_global_cluster::builders::RemoveFromGlobalClu
 }
 /// Fluent builder constructing a request to `RemoveFromGlobalCluster`.
 ///
-/// <p>Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone cluster with read-write capability instead of being read-only, and no longer receives data from a the primary cluster.</p>
+/// <p>Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone cluster with read-write capability instead of being read-only, and no longer receives data from the primary cluster.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RemoveFromGlobalClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -185,17 +185,17 @@ impl CreateGlobalClusterFluentBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_deletion_protection()
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.database_name(input.into());
         self
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_database_name(input);
         self
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }

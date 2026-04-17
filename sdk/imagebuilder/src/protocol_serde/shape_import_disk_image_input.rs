@@ -30,21 +30,33 @@ pub fn ser_import_disk_image_input_input(
     if let Some(var_9) = &input.platform {
         object.key("platform").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.semantic_version {
-        object.key("semanticVersion").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.tags {
+    if let Some(var_10) = &input.register_image_options {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+        let mut object_11 = object.key("registerImageOptions").start_object();
+        crate::protocol_serde::shape_register_image_options::ser_register_image_options(&mut object_11, var_10)?;
+        object_11.finish();
+    }
+    if let Some(var_12) = &input.semantic_version {
+        object.key("semanticVersion").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_12.finish();
+        object_14.finish();
     }
-    if let Some(var_15) = &input.uri {
-        object.key("uri").string(var_15.as_str());
+    if let Some(var_17) = &input.uri {
+        object.key("uri").string(var_17.as_str());
+    }
+    if let Some(var_18) = &input.windows_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("windowsConfiguration").start_object();
+        crate::protocol_serde::shape_windows_configuration::ser_windows_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }

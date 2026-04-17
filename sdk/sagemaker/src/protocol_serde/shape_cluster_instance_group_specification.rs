@@ -99,5 +99,11 @@ pub fn ser_cluster_instance_group_specification(
         crate::protocol_serde::shape_cluster_capacity_requirements::ser_cluster_capacity_requirements(&mut object_29, var_28)?;
         object_29.finish();
     }
+    if let Some(var_30) = &input.network_interface {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("NetworkInterface").start_object();
+        crate::protocol_serde::shape_cluster_network_interface::ser_cluster_network_interface(&mut object_31, var_30)?;
+        object_31.finish();
+    }
     Ok(())
 }

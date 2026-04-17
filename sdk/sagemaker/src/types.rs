@@ -1157,6 +1157,8 @@ pub use crate::types::_cluster_kubernetes_config_node_details::ClusterKubernetes
 
 pub use crate::types::_cluster_capacity_type::ClusterCapacityType;
 
+pub use crate::types::_cluster_network_interface_details::ClusterNetworkInterfaceDetails;
+
 pub use crate::types::_scheduler_config_component::SchedulerConfigComponent;
 
 pub use crate::types::_edge_model::EdgeModel;
@@ -1459,6 +1461,8 @@ pub use crate::types::_cluster_slurm_config::ClusterSlurmConfig;
 
 pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirements;
 
+pub use crate::types::_cluster_network_interface::ClusterNetworkInterface;
+
 pub use crate::types::_environment_config::EnvironmentConfig;
 
 pub use crate::types::_cluster_slurm_config_strategy::ClusterSlurmConfigStrategy;
@@ -1692,6 +1696,8 @@ pub use crate::types::_environment_config_details::EnvironmentConfigDetails;
 pub use crate::types::_event_metadata::EventMetadata;
 
 pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageConfig;
+
+pub use crate::types::_cluster_interface_type::ClusterInterfaceType;
 
 pub use crate::types::_edge_deployment_status::EdgeDeploymentStatus;
 
@@ -2543,6 +2549,8 @@ mod _cluster_instance_type;
 
 mod _cluster_instance_type_detail;
 
+mod _cluster_interface_type;
+
 mod _cluster_kubernetes_config;
 
 mod _cluster_kubernetes_config_details;
@@ -2556,6 +2564,10 @@ mod _cluster_kubernetes_taint_effect;
 mod _cluster_life_cycle_config;
 
 mod _cluster_metadata;
+
+mod _cluster_network_interface;
+
+mod _cluster_network_interface_details;
 
 mod _cluster_node_details;
 

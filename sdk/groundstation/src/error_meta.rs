@@ -384,6 +384,36 @@ impl From<crate::operation::describe_contact::DescribeContactError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_contact_version::DescribeContactVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_contact_version::DescribeContactVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_contact_version::DescribeContactVersionError> for Error {
+    fn from(err: crate::operation::describe_contact_version::DescribeContactVersionError) -> Self {
+        match err {
+            crate::operation::describe_contact_version::DescribeContactVersionError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::describe_contact_version::DescribeContactVersionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_contact_version::DescribeContactVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_contact_version::DescribeContactVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_ephemeris::DescribeEphemerisError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -604,6 +634,29 @@ impl From<crate::operation::get_satellite::GetSatelliteError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_antennas::ListAntennasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_antennas::ListAntennasError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_antennas::ListAntennasError> for Error {
+    fn from(err: crate::operation::list_antennas::ListAntennasError) -> Self {
+        match err {
+            crate::operation::list_antennas::ListAntennasError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::list_antennas::ListAntennasError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_antennas::ListAntennasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_configs::ListConfigsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -649,6 +702,34 @@ impl From<crate::operation::list_contacts::ListContactsError> for Error {
             crate::operation::list_contacts::ListContactsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_contacts::ListContactsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_contacts::ListContactsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contact_versions::ListContactVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contact_versions::ListContactVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contact_versions::ListContactVersionsError> for Error {
+    fn from(err: crate::operation::list_contact_versions::ListContactVersionsError) -> Self {
+        match err {
+            crate::operation::list_contact_versions::ListContactVersionsError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::list_contact_versions::ListContactVersionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_contact_versions::ListContactVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_contact_versions::ListContactVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -706,6 +787,41 @@ impl From<crate::operation::list_ephemerides::ListEphemeridesError> for Error {
             crate::operation::list_ephemerides::ListEphemeridesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_ephemerides::ListEphemeridesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_ephemerides::ListEphemeridesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_ground_station_reservations::ListGroundStationReservationsError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_ground_station_reservations::ListGroundStationReservationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_ground_station_reservations::ListGroundStationReservationsError> for Error {
+    fn from(err: crate::operation::list_ground_station_reservations::ListGroundStationReservationsError) -> Self {
+        match err {
+            crate::operation::list_ground_station_reservations::ListGroundStationReservationsError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::list_ground_station_reservations::ListGroundStationReservationsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_ground_station_reservations::ListGroundStationReservationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -965,6 +1081,33 @@ impl From<crate::operation::update_config::UpdateConfigError> for Error {
             crate::operation::update_config::UpdateConfigError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::update_config::UpdateConfigError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_config::UpdateConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact::UpdateContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact::UpdateContactError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_contact::UpdateContactError> for Error {
+    fn from(err: crate::operation::update_contact::UpdateContactError) -> Self {
+        match err {
+            crate::operation::update_contact::UpdateContactError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::update_contact::UpdateContactError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_contact::UpdateContactError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::update_contact::UpdateContactError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_contact::UpdateContactError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

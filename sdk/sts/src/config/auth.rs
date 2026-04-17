@@ -55,10 +55,19 @@ pub struct DefaultAuthSchemeResolver {
 impl Default for DefaultAuthSchemeResolver {
     fn default() -> Self {
         Self {
-            service_defaults: vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
-                .scheme_id(::aws_runtime::auth::sigv4::SCHEME_ID)
-                .build()
-                .expect("required fields set")],
+            service_defaults: vec![
+                ::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
+                    .scheme_id(::aws_runtime::auth::sigv4::SCHEME_ID)
+                    .build()
+                    .expect("required fields set"),
+                #[cfg(feature = "sigv4a")]
+                {
+                    ::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
+                        .scheme_id(::aws_runtime::auth::sigv4a::SCHEME_ID)
+                        .build()
+                        .expect("required fields set")
+                },
+            ],
             operation_overrides: [
                 (
                     "AssumeRoleWithSAML",

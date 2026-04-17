@@ -217,18 +217,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTestCase
                 }
                 if let ::std::option::Option::Some(inner_4) = &_input.start_time {
                     {
-                        query.push_kv(
-                            "startTime",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_4, ::aws_smithy_types::date_time::Format::DateTime)?,
-                        );
+                        query.push_kv("startTime", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_5) = &_input.end_time {
                     {
-                        query.push_kv(
-                            "endTime",
-                            &::aws_smithy_http::query::fmt_timestamp(inner_5, ::aws_smithy_types::date_time::Format::DateTime)?,
-                        );
+                        query.push_kv("endTime", ::aws_smithy_types::primitive::Encoder::from(*inner_5).encode());
                     }
                 }
                 if let ::std::option::Option::Some(inner_6) = &_input.status {

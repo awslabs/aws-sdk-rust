@@ -27,33 +27,39 @@ pub fn ser_create_campaign_input_input(
     if let Some(var_8) = &input.connect_instance_id {
         object.key("connectInstanceId").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
-    }
-    if let Some(var_10) = &input.schedule {
+    if let Some(var_9) = &input.entry_limits_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_10 = object.key("entryLimitsConfig").start_object();
+        crate::protocol_serde::shape_entry_limits_config::ser_entry_limits_config(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_12) = &input.source {
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("source").start_object();
-        crate::protocol_serde::shape_source::ser_source(&mut object_13, var_12)?;
+        let mut object_13 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_14) = &input.source {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
-            {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
-            }
-        }
+        let mut object_15 = object.key("source").start_object();
+        crate::protocol_serde::shape_source::ser_source(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_18) = &input.r#type {
-        object.key("type").string(var_18.as_str());
+    if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
+            {
+                object_17.key(key_18.as_str()).string(value_19.as_str());
+            }
+        }
+        object_17.finish();
+    }
+    if let Some(var_20) = &input.r#type {
+        object.key("type").string(var_20.as_str());
     }
     Ok(())
 }

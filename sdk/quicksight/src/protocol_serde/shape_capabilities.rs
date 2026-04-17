@@ -663,6 +663,9 @@ pub fn ser_capabilities(
     if let Some(var_220) = &input.manage_shared_folders {
         object.key("ManageSharedFolders").string(var_220.as_str());
     }
+    if let Some(var_221) = &input.generate_analyses {
+        object.key("GenerateAnalyses").string(var_221.as_str());
+    }
     Ok(())
 }
 
@@ -2217,6 +2220,13 @@ where
                         }
                         "ManageSharedFolders" => {
                             builder = builder.set_manage_shared_folders(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GenerateAnalyses" => {
+                            builder = builder.set_generate_analyses(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

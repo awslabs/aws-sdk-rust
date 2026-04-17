@@ -33,6 +33,18 @@ pub fn ser_filter_list_control(
         crate::protocol_serde::shape_cascading_control_configuration::ser_cascading_control_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
+    if let Some(var_8) = &input.control_sort_configurations {
+        let mut array_9 = object.key("ControlSortConfigurations").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_control_sort_configuration::ser_control_sort_configuration(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
+    }
     Ok(())
 }
 
@@ -93,6 +105,11 @@ where
                         "CascadingControlConfiguration" => {
                             builder = builder.set_cascading_control_configuration(
                                 crate::protocol_serde::shape_cascading_control_configuration::de_cascading_control_configuration(tokens, _value)?,
+                            );
+                        }
+                        "ControlSortConfigurations" => {
+                            builder = builder.set_control_sort_configurations(
+                                crate::protocol_serde::shape_control_sort_configuration_list::de_control_sort_configuration_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

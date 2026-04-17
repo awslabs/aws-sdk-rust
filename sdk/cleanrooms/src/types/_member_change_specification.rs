@@ -7,8 +7,9 @@ pub struct MemberChangeSpecification {
     /// <p>The Amazon Web Services account ID of the member to add to the collaboration.</p>
     pub account_id: ::std::string::String,
     /// <p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p><note>
-    /// <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>.</p>
+    /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
     /// </note>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>Specifies the display name that will be shown for this member in the collaboration. While this field is required when inviting new members, it becomes optional when modifying abilities of existing collaboration members.</p>
@@ -21,8 +22,9 @@ impl MemberChangeSpecification {
         self.account_id.deref()
     }
     /// <p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p><note>
-    /// <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>.</p>
+    /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
     /// </note>
     pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
         use std::ops::Deref;
@@ -69,8 +71,9 @@ impl MemberChangeSpecificationBuilder {
     /// To override the contents of this collection use [`set_member_abilities`](Self::set_member_abilities).
     ///
     /// <p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p><note>
-    /// <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>.</p>
+    /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
     /// </note>
     pub fn member_abilities(mut self, input: crate::types::MemberAbility) -> Self {
         let mut v = self.member_abilities.unwrap_or_default();
@@ -79,16 +82,18 @@ impl MemberChangeSpecificationBuilder {
         self
     }
     /// <p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p><note>
-    /// <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>.</p>
+    /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
     /// </note>
     pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.member_abilities = input;
         self
     }
     /// <p>The abilities granted to the collaboration member. These determine what actions the member can perform within the collaboration.</p><note>
-    /// <p>The following values are currently not supported: <code>CAN_QUERY</code>, <code>CAN_RECEIVE_RESULTS,</code> and <code>CAN_RUN_JOB</code>.</p>
+    /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
     /// </note>
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities

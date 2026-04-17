@@ -68,6 +68,10 @@ where
                         "schedule" => {
                             builder = builder.set_schedule(crate::protocol_serde::shape_schedule::de_schedule(tokens, _value)?);
                         }
+                        "entryLimitsConfig" => {
+                            builder = builder
+                                .set_entry_limits_config(crate::protocol_serde::shape_entry_limits_config::de_entry_limits_config(tokens, _value)?);
+                        }
                         "communicationTimeConfig" => {
                             builder = builder.set_communication_time_config(
                                 crate::protocol_serde::shape_communication_time_config::de_communication_time_config(tokens, _value)?,

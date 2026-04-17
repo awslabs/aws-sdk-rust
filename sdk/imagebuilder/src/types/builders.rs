@@ -45,6 +45,10 @@ pub use crate::types::_lifecycle_policy::LifecyclePolicyBuilder;
 
 pub use crate::types::_workflow::WorkflowBuilder;
 
+pub use crate::types::_register_image_options::RegisterImageOptionsBuilder;
+
+pub use crate::types::_windows_configuration::WindowsConfigurationBuilder;
+
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_lifecycle_execution_state::LifecycleExecutionStateBuilder;

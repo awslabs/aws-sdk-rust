@@ -6,6 +6,7 @@ impl super::Client {
     ///   - [`contact_id(impl Into<String>)`](crate::operation::cancel_contact::builders::CancelContactFluentBuilder::contact_id) / [`set_contact_id(Option<String>)`](crate::operation::cancel_contact::builders::CancelContactFluentBuilder::set_contact_id):<br>required: **true**<br><p>UUID of a contact.</p><br>
     /// - On success, responds with [`CancelContactOutput`](crate::operation::cancel_contact::CancelContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::cancel_contact::CancelContactOutput::contact_id): <p>UUID of a contact.</p>
+    ///   - [`version_id(Option<i32>)`](crate::operation::cancel_contact::CancelContactOutput::version_id): <p>Version ID of a contact.</p>
     /// - On failure, responds with [`SdkError<CancelContactError>`](crate::operation::cancel_contact::CancelContactError)
     pub fn cancel_contact(&self) -> crate::operation::cancel_contact::builders::CancelContactFluentBuilder {
         crate::operation::cancel_contact::builders::CancelContactFluentBuilder::new(self.handle.clone())

@@ -123,45 +123,45 @@ impl CreateMissionProfileFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you'd like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn contact_pre_pass_duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.contact_pre_pass_duration_seconds(input);
         self
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you'd like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn set_contact_pre_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_contact_pre_pass_duration_seconds(input);
         self
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
+    /// <p>Amount of time prior to contact start you'd like to receive a Ground Station Contact State Change event indicating an upcoming pass.</p>
     pub fn get_contact_pre_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_contact_pre_pass_duration_seconds()
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you'd like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn contact_post_pass_duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.contact_post_pass_duration_seconds(input);
         self
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you'd like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn set_contact_post_pass_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_contact_post_pass_duration_seconds(input);
         self
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
+    /// <p>Amount of time after a contact ends that you'd like to receive a Ground Station Contact State Change event indicating the pass has finished.</p>
     pub fn get_contact_post_pass_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_contact_post_pass_duration_seconds()
     }
-    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    /// <p>Smallest amount of time in seconds that you'd like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub fn minimum_viable_contact_duration_seconds(mut self, input: i32) -> Self {
         self.inner = self.inner.minimum_viable_contact_duration_seconds(input);
         self
     }
-    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    /// <p>Smallest amount of time in seconds that you'd like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub fn set_minimum_viable_contact_duration_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minimum_viable_contact_duration_seconds(input);
         self
     }
-    /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
+    /// <p>Smallest amount of time in seconds that you'd like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
     pub fn get_minimum_viable_contact_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_minimum_viable_contact_duration_seconds()
     }

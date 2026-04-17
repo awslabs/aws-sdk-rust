@@ -8,6 +8,8 @@ pub struct ProtectedJobWorkerComputeConfiguration {
     pub r#type: crate::types::ProtectedJobWorkerComputeType,
     /// <p>The number of workers for a PySpark job.</p>
     pub number: i32,
+    /// <p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>
+    pub properties: ::std::option::Option<crate::types::WorkerComputeConfigurationProperties>,
 }
 impl ProtectedJobWorkerComputeConfiguration {
     /// <p>The worker compute configuration type.</p>
@@ -17,6 +19,10 @@ impl ProtectedJobWorkerComputeConfiguration {
     /// <p>The number of workers for a PySpark job.</p>
     pub fn number(&self) -> i32 {
         self.number
+    }
+    /// <p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>
+    pub fn properties(&self) -> ::std::option::Option<&crate::types::WorkerComputeConfigurationProperties> {
+        self.properties.as_ref()
     }
 }
 impl ProtectedJobWorkerComputeConfiguration {
@@ -32,6 +38,7 @@ impl ProtectedJobWorkerComputeConfiguration {
 pub struct ProtectedJobWorkerComputeConfigurationBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::ProtectedJobWorkerComputeType>,
     pub(crate) number: ::std::option::Option<i32>,
+    pub(crate) properties: ::std::option::Option<crate::types::WorkerComputeConfigurationProperties>,
 }
 impl ProtectedJobWorkerComputeConfigurationBuilder {
     /// <p>The worker compute configuration type.</p>
@@ -64,6 +71,20 @@ impl ProtectedJobWorkerComputeConfigurationBuilder {
     pub fn get_number(&self) -> &::std::option::Option<i32> {
         &self.number
     }
+    /// <p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>
+    pub fn properties(mut self, input: crate::types::WorkerComputeConfigurationProperties) -> Self {
+        self.properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>
+    pub fn set_properties(mut self, input: ::std::option::Option<crate::types::WorkerComputeConfigurationProperties>) -> Self {
+        self.properties = input;
+        self
+    }
+    /// <p>The configuration properties for the worker compute environment. These properties allow you to customize the compute settings for your Clean Rooms workloads.</p>
+    pub fn get_properties(&self) -> &::std::option::Option<crate::types::WorkerComputeConfigurationProperties> {
+        &self.properties
+    }
     /// Consumes the builder and constructs a [`ProtectedJobWorkerComputeConfiguration`](crate::types::ProtectedJobWorkerComputeConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::ProtectedJobWorkerComputeConfigurationBuilder::type)
@@ -84,6 +105,7 @@ impl ProtectedJobWorkerComputeConfigurationBuilder {
                     "number was not specified but it is required when building ProtectedJobWorkerComputeConfiguration",
                 )
             })?,
+            properties: self.properties,
         })
     }
 }

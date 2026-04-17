@@ -445,6 +445,8 @@ pub struct Capabilities {
     /// <p>The ability to create, update, delete and view shared folders (both restricted and unrestricted), ability to add any asset to shared folders, and ability to share the folders.</p>
     /// <p><b>Note:</b> This does <i>not</i> prevent inheriting access to assets that others share with them through folder membership.</p>
     pub manage_shared_folders: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to generate analysis using AI</p>
+    pub generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -1328,6 +1330,10 @@ impl Capabilities {
     pub fn manage_shared_folders(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.manage_shared_folders.as_ref()
     }
+    /// <p>The ability to generate analysis using AI</p>
+    pub fn generate_analyses(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.generate_analyses.as_ref()
+    }
 }
 impl Capabilities {
     /// Creates a new builder-style object to manufacture [`Capabilities`](crate::types::Capabilities).
@@ -1560,6 +1566,7 @@ pub struct CapabilitiesBuilder {
     pub(crate) self_upgrade_user_role: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) extension: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) manage_shared_folders: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -4645,6 +4652,20 @@ impl CapabilitiesBuilder {
     pub fn get_manage_shared_folders(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.manage_shared_folders
     }
+    /// <p>The ability to generate analysis using AI</p>
+    pub fn generate_analyses(mut self, input: crate::types::CapabilityState) -> Self {
+        self.generate_analyses = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to generate analysis using AI</p>
+    pub fn set_generate_analyses(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.generate_analyses = input;
+        self
+    }
+    /// <p>The ability to generate analysis using AI</p>
+    pub fn get_generate_analyses(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.generate_analyses
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
@@ -4868,6 +4889,7 @@ impl CapabilitiesBuilder {
             self_upgrade_user_role: self.self_upgrade_user_role,
             extension: self.extension,
             manage_shared_folders: self.manage_shared_folders,
+            generate_analyses: self.generate_analyses,
         }
     }
 }

@@ -1429,6 +1429,8 @@ pub(crate) mod shape_s3_parameters;
 
 pub(crate) mod shape_s3_source;
 
+pub(crate) mod shape_s3_tables_parameters;
+
 pub(crate) mod shape_saa_s_table;
 
 pub(crate) mod shape_security_group_id_list;
@@ -1871,6 +1873,8 @@ pub(crate) mod shape_custom_color;
 
 pub(crate) mod shape_custom_content_visual;
 
+pub(crate) mod shape_dashboard_customization_summary_configurations;
+
 pub(crate) mod shape_data_set_date_filter_condition;
 
 pub(crate) mod shape_data_set_numeric_filter_condition;
@@ -2200,6 +2204,8 @@ pub(crate) mod shape_column_schema_list;
 pub(crate) mod shape_combo_chart_configuration;
 
 pub(crate) mod shape_contribution_analysis_factors_list;
+
+pub(crate) mod shape_control_sort_configuration;
 
 pub(crate) mod shape_custom_colors_list;
 
@@ -2669,6 +2675,8 @@ pub(crate) mod shape_scatter_plot_sort_configuration;
 
 pub(crate) mod shape_section_based_layout_canvas_size_options;
 
+pub(crate) mod shape_selectable_values_sort;
+
 pub(crate) mod shape_series_item;
 
 pub(crate) mod shape_sheet_control_info_icon_label_options;
@@ -2784,6 +2792,8 @@ pub(crate) mod shape_combo_chart_aggregated_field_wells;
 pub(crate) mod shape_comparison_configuration;
 
 pub(crate) mod shape_context_menu_option;
+
+pub(crate) mod shape_control_sort_configuration_list;
 
 pub(crate) mod shape_coordinate;
 

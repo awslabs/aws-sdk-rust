@@ -341,6 +341,8 @@ pub use crate::types::_redshift_parameters::RedshiftParameters;
 
 pub use crate::types::_s3_parameters::S3Parameters;
 
+pub use crate::types::_s3_tables_parameters::S3TablesParameters;
+
 pub use crate::types::_s3_knowledge_base_parameters::S3KnowledgeBaseParameters;
 
 pub use crate::types::_service_now_parameters::ServiceNowParameters;
@@ -1013,6 +1015,8 @@ pub use crate::types::_recent_snapshots_configurations::RecentSnapshotsConfigura
 
 pub use crate::types::_threshold_alerts_configurations::ThresholdAlertsConfigurations;
 
+pub use crate::types::_dashboard_customization_summary_configurations::DashboardCustomizationSummaryConfigurations;
+
 pub use crate::types::_amazon_q_in_quick_sight_console_configurations::AmazonQInQuickSightConsoleConfigurations;
 
 pub use crate::types::_topic_ir_metric::TopicIrMetric;
@@ -1639,6 +1643,8 @@ pub use crate::types::_list_control_search_options::ListControlSearchOptions;
 
 pub use crate::types::_list_control_select_all_options::ListControlSelectAllOptions;
 
+pub use crate::types::_control_sort_configuration::ControlSortConfiguration;
+
 pub use crate::types::_text_control_placeholder_options::TextControlPlaceholderOptions;
 
 pub use crate::types::_short_format_text::ShortFormatText;
@@ -1901,6 +1907,8 @@ pub use crate::types::_collective_constant_entry::CollectiveConstantEntry;
 
 pub use crate::types::_cascading_control_source::CascadingControlSource;
 
+pub use crate::types::_selectable_values_sort::SelectableValuesSort;
+
 pub use crate::types::_table_aggregated_field_wells::TableAggregatedFieldWells;
 
 pub use crate::types::_table_unaggregated_field_wells::TableUnaggregatedFieldWells;
@@ -2160,6 +2168,8 @@ pub use crate::types::_negative_value_display_mode::NegativeValueDisplayMode;
 pub use crate::types::_named_entity_agg_type::NamedEntityAggType;
 
 pub use crate::types::_snapshot_job_result_error_info::SnapshotJobResultErrorInfo;
+
+pub use crate::types::_control_sort_direction::ControlSortDirection;
 
 pub use crate::types::_field_sort_options::FieldSortOptions;
 
@@ -3201,6 +3211,10 @@ mod _contribution_analysis_sort_type;
 
 mod _contribution_analysis_time_ranges;
 
+mod _control_sort_configuration;
+
+mod _control_sort_direction;
+
 mod _coordinate;
 
 mod _create_columns_operation;
@@ -3254,6 +3268,8 @@ mod _dashboard;
 mod _dashboard_behavior;
 
 mod _dashboard_customization_status;
+
+mod _dashboard_customization_summary_configurations;
 
 mod _dashboard_customization_visual_options;
 
@@ -4595,6 +4611,8 @@ mod _s3_parameters;
 
 mod _s3_source;
 
+mod _s3_tables_parameters;
+
 mod _saa_s_table;
 
 mod _same_sheet_target_visual_configuration;
@@ -4650,6 +4668,8 @@ mod _section_page_break_status;
 mod _section_style;
 
 mod _select_all_value_options;
+
+mod _selectable_values_sort;
 
 mod _selected_field_options;
 

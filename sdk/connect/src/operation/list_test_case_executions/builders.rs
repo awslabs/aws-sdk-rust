@@ -151,31 +151,31 @@ impl ListTestCaseExecutionsFluentBuilder {
         self.inner.get_test_case_name()
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+    pub fn start_time(mut self, input: i64) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
     /// <p>Filter executions that started after this time.</p>
-    pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         self.inner.get_start_time()
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+    pub fn end_time(mut self, input: i64) -> Self {
         self.inner = self.inner.end_time(input);
         self
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+    pub fn set_end_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_end_time(input);
         self
     }
     /// <p>Filter executions that started before this time.</p>
-    pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+    pub fn get_end_time(&self) -> &::std::option::Option<i64> {
         self.inner.get_end_time()
     }
     /// <p>Filter executions by status.</p>

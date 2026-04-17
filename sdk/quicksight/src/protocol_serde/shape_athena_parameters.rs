@@ -9,11 +9,14 @@ pub fn ser_athena_parameters(
     if let Some(var_2) = &input.role_arn {
         object.key("RoleArn").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.identity_center_configuration {
+    if let Some(var_3) = &input.consumer_account_role_arn {
+        object.key("ConsumerAccountRoleArn").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.identity_center_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("IdentityCenterConfiguration").start_object();
-        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("IdentityCenterConfiguration").start_object();
+        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }
@@ -43,6 +46,13 @@ where
                         }
                         "RoleArn" => {
                             builder = builder.set_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "ConsumerAccountRoleArn" => {
+                            builder = builder.set_consumer_account_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

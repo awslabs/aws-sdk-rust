@@ -6,6 +6,10 @@
 pub enum ProgramTrackSettings {
     /// <p>Program track settings for <code>AzElEphemeris</code>.</p>
     AzEl(crate::types::AzElProgramTrackSettings),
+    /// <p>Program track settings for <code>OEMEphemeris</code>.</p>
+    Oem(crate::types::OemProgramTrackSettings),
+    /// <p>Program track settings for <code>TLEEphemeris</code>.</p>
+    Tle(crate::types::TleProgramTrackSettings),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +21,6 @@ pub enum ProgramTrackSettings {
     Unknown,
 }
 impl ProgramTrackSettings {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AzEl`](crate::types::ProgramTrackSettings::AzEl), extracting the inner [`AzElProgramTrackSettings`](crate::types::AzElProgramTrackSettings).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_az_el(&self) -> ::std::result::Result<&crate::types::AzElProgramTrackSettings, &Self> {
@@ -30,6 +33,32 @@ impl ProgramTrackSettings {
     /// Returns true if this is a [`AzEl`](crate::types::ProgramTrackSettings::AzEl).
     pub fn is_az_el(&self) -> bool {
         self.as_az_el().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Oem`](crate::types::ProgramTrackSettings::Oem), extracting the inner [`OemProgramTrackSettings`](crate::types::OemProgramTrackSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_oem(&self) -> ::std::result::Result<&crate::types::OemProgramTrackSettings, &Self> {
+        if let ProgramTrackSettings::Oem(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Oem`](crate::types::ProgramTrackSettings::Oem).
+    pub fn is_oem(&self) -> bool {
+        self.as_oem().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Tle`](crate::types::ProgramTrackSettings::Tle), extracting the inner [`TleProgramTrackSettings`](crate::types::TleProgramTrackSettings).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tle(&self) -> ::std::result::Result<&crate::types::TleProgramTrackSettings, &Self> {
+        if let ProgramTrackSettings::Tle(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Tle`](crate::types::ProgramTrackSettings::Tle).
+    pub fn is_tle(&self) -> bool {
+        self.as_tle().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

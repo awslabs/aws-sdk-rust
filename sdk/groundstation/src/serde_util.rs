@@ -32,6 +32,24 @@ pub(crate) fn get_config_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_antennas_output_output_correct_errors(
+    mut builder: crate::operation::list_antennas::builders::ListAntennasOutputBuilder,
+) -> crate::operation::list_antennas::builders::ListAntennasOutputBuilder {
+    if builder.antenna_list.is_none() {
+        builder.antenna_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_ground_station_reservations_output_output_correct_errors(
+    mut builder: crate::operation::list_ground_station_reservations::builders::ListGroundStationReservationsOutputBuilder,
+) -> crate::operation::list_ground_station_reservations::builders::ListGroundStationReservationsOutputBuilder {
+    if builder.reservation_list.is_none() {
+        builder.reservation_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_agent_status_output_output_correct_errors(
     mut builder: crate::operation::update_agent_status::builders::UpdateAgentStatusOutputBuilder,
 ) -> crate::operation::update_agent_status::builders::UpdateAgentStatusOutputBuilder {
@@ -65,15 +83,6 @@ pub(crate) fn ephemeris_response_data_correct_errors(
 ) -> crate::types::builders::EphemerisResponseDataBuilder {
     if builder.ephemeris_type.is_none() {
         builder.ephemeris_type = "no value was set".parse::<crate::types::EphemerisType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn tracking_overrides_correct_errors(
-    mut builder: crate::types::builders::TrackingOverridesBuilder,
-) -> crate::types::builders::TrackingOverridesBuilder {
-    if builder.program_track_settings.is_none() {
-        builder.program_track_settings = Some(crate::types::ProgramTrackSettings::Unknown)
     }
     builder
 }
@@ -114,6 +123,21 @@ pub(crate) fn antenna_downlink_demod_decode_config_correct_errors(
     builder
 }
 
+pub(crate) fn antenna_list_item_correct_errors(
+    mut builder: crate::types::builders::AntennaListItemBuilder,
+) -> crate::types::builders::AntennaListItemBuilder {
+    if builder.ground_station_name.is_none() {
+        builder.ground_station_name = Some(Default::default())
+    }
+    if builder.antenna_name.is_none() {
+        builder.antenna_name = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn antenna_uplink_config_correct_errors(
     mut builder: crate::types::builders::AntennaUplinkConfigBuilder,
 ) -> crate::types::builders::AntennaUplinkConfigBuilder {
@@ -149,6 +173,30 @@ pub(crate) fn ephemeris_error_reason_correct_errors(
     }
     if builder.error_message.is_none() {
         builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ground_station_reservation_list_item_correct_errors(
+    mut builder: crate::types::builders::GroundStationReservationListItemBuilder,
+) -> crate::types::builders::GroundStationReservationListItemBuilder {
+    if builder.reservation_type.is_none() {
+        builder.reservation_type = "no value was set".parse::<crate::types::ReservationType>().ok()
+    }
+    if builder.ground_station_id.is_none() {
+        builder.ground_station_id = Some(Default::default())
+    }
+    if builder.antenna_name.is_none() {
+        builder.antenna_name = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.reservation_details.is_none() {
+        builder.reservation_details = Some(crate::types::ReservationDetails::Unknown)
     }
     builder
 }
@@ -266,6 +314,15 @@ pub(crate) fn eirp_correct_errors(mut builder: crate::types::builders::EirpBuild
     builder
 }
 
+pub(crate) fn oem_program_track_settings_correct_errors(
+    mut builder: crate::types::builders::OemProgramTrackSettingsBuilder,
+) -> crate::types::builders::OemProgramTrackSettingsBuilder {
+    if builder.ephemeris_id.is_none() {
+        builder.ephemeris_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn security_details_correct_errors(
     mut builder: crate::types::builders::SecurityDetailsBuilder,
 ) -> crate::types::builders::SecurityDetailsBuilder {
@@ -295,6 +352,15 @@ pub(crate) fn spectrum_config_correct_errors(
             let builder = crate::types::builders::FrequencyBandwidthBuilder::default();
             crate::serde_util::frequency_bandwidth_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn tle_program_track_settings_correct_errors(
+    mut builder: crate::types::builders::TleProgramTrackSettingsBuilder,
+) -> crate::types::builders::TleProgramTrackSettingsBuilder {
+    if builder.ephemeris_id.is_none() {
+        builder.ephemeris_id = Some(Default::default())
     }
     builder
 }
@@ -365,6 +431,15 @@ pub(crate) fn kinesis_data_stream_data_correct_errors(
     }
     if builder.kinesis_data_stream_arn.is_none() {
         builder.kinesis_data_stream_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn maintenance_reservation_details_correct_errors(
+    mut builder: crate::types::builders::MaintenanceReservationDetailsBuilder,
+) -> crate::types::builders::MaintenanceReservationDetailsBuilder {
+    if builder.maintenance_type.is_none() {
+        builder.maintenance_type = "no value was set".parse::<crate::types::MaintenanceType>().ok()
     }
     builder
 }

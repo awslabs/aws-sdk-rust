@@ -19,6 +19,8 @@ pub use crate::types::_elevation::Elevation;
 
 pub use crate::types::_ephemeris_response_data::EphemerisResponseData;
 
+pub use crate::types::_contact_version::ContactVersion;
+
 pub use crate::types::_ephemeris_type::EphemerisType;
 
 pub use crate::types::_ephemeris_data::EphemerisData;
@@ -65,6 +67,8 @@ pub use crate::types::_angle_units::AngleUnits;
 
 pub use crate::types::_dataflow_detail::DataflowDetail;
 
+pub use crate::types::_version_status::VersionStatus;
+
 pub use crate::types::_dataflow_endpoint_list_item::DataflowEndpointListItem;
 
 pub use crate::types::_endpoint_details::EndpointDetails;
@@ -84,6 +88,12 @@ pub use crate::types::_ephemeris_description::EphemerisDescription;
 pub use crate::types::_ephemeris_error_reason::EphemerisErrorReason;
 
 pub use crate::types::_ground_station_data::GroundStationData;
+
+pub use crate::types::_antenna_list_item::AntennaListItem;
+
+pub use crate::types::_reservation_type::ReservationType;
+
+pub use crate::types::_ground_station_reservation_list_item::GroundStationReservationListItem;
 
 pub use crate::types::_mission_profile_list_item::MissionProfileListItem;
 
@@ -111,9 +121,15 @@ pub use crate::types::_telemetry_sink_data::TelemetrySinkData;
 
 pub use crate::types::_az_el_program_track_settings::AzElProgramTrackSettings;
 
+pub use crate::types::_oem_program_track_settings::OemProgramTrackSettings;
+
+pub use crate::types::_tle_program_track_settings::TleProgramTrackSettings;
+
 pub use crate::types::_source::Source;
 
 pub use crate::types::_destination::Destination;
+
+pub use crate::types::_version_failure_reason_code::VersionFailureReasonCode;
 
 pub use crate::types::_security_details::SecurityDetails;
 
@@ -136,6 +152,8 @@ pub use crate::types::_s3_object::S3Object;
 pub use crate::types::_az_el_segments_data::AzElSegmentsData;
 
 pub use crate::types::_ephemeris_error_code::EphemerisErrorCode;
+
+pub use crate::types::_reservation_details::ReservationDetails;
 
 pub use crate::types::_frequency::Frequency;
 
@@ -169,6 +187,10 @@ pub use crate::types::_tle_data::TleData;
 
 pub use crate::types::_az_el_segments::AzElSegments;
 
+pub use crate::types::_maintenance_reservation_details::MaintenanceReservationDetails;
+
+pub use crate::types::_contact_reservation_details::ContactReservationDetails;
+
 pub use crate::types::_frequency_units::FrequencyUnits;
 
 pub use crate::types::_bandwidth_units::BandwidthUnits;
@@ -184,6 +206,8 @@ pub use crate::types::_uplink_connection_details::UplinkConnectionDetails;
 pub use crate::types::_downlink_connection_details::DownlinkConnectionDetails;
 
 pub use crate::types::_time_range::TimeRange;
+
+pub use crate::types::_maintenance_type::MaintenanceType;
 
 pub use crate::types::_integer_range::IntegerRange;
 
@@ -206,6 +230,8 @@ mod _antenna_demod_decode_details;
 mod _antenna_downlink_config;
 
 mod _antenna_downlink_demod_decode_config;
+
+mod _antenna_list_item;
 
 mod _antenna_uplink_config;
 
@@ -247,7 +273,11 @@ mod _connection_details;
 
 mod _contact_data;
 
+mod _contact_reservation_details;
+
 mod _contact_status;
+
+mod _contact_version;
 
 mod _create_endpoint_details;
 
@@ -321,6 +351,8 @@ mod _frequency_units;
 
 mod _ground_station_data;
 
+mod _ground_station_reservation_list_item;
+
 mod _integer_range;
 
 mod _iso8601_time_range;
@@ -329,9 +361,15 @@ mod _kinesis_data_stream_data;
 
 mod _kms_key;
 
+mod _maintenance_reservation_details;
+
+mod _maintenance_type;
+
 mod _mission_profile_list_item;
 
 mod _oem_ephemeris;
+
+mod _oem_program_track_settings;
 
 mod _polarization;
 
@@ -340,6 +378,10 @@ mod _program_track_settings;
 mod _ranged_connection_details;
 
 mod _ranged_socket_address;
+
+mod _reservation_details;
+
+mod _reservation_type;
 
 mod _s3_object;
 
@@ -371,6 +413,8 @@ mod _tle_data;
 
 mod _tle_ephemeris;
 
+mod _tle_program_track_settings;
+
 mod _tracking_config;
 
 mod _tracking_overrides;
@@ -386,6 +430,10 @@ mod _uplink_dataflow_details;
 mod _uplink_echo_config;
 
 mod _uplink_spectrum_config;
+
+mod _version_failure_reason_code;
+
+mod _version_status;
 
 /// Builders
 pub mod builders;

@@ -9,6 +9,9 @@ pub fn ser_cluster_life_cycle_config(
     if let Some(var_2) = &input.on_create {
         object.key("OnCreate").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.on_init_complete {
+        object.key("OnInitComplete").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -37,6 +40,13 @@ where
                         }
                         "OnCreate" => {
                             builder = builder.set_on_create(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "OnInitComplete" => {
+                            builder = builder.set_on_init_complete(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

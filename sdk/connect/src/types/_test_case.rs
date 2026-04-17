@@ -14,7 +14,7 @@ pub struct TestCase {
     pub content: ::std::option::Option<::std::string::String>,
     /// <p>Defines the starting point for the test, including channel type and parameters.</p>
     pub entry_point: ::std::option::Option<crate::types::TestCaseEntryPoint>,
-    /// <p>Defines the test attributes for precise data representation.</p>
+    /// <p>Defines the test attributes for precise data representation. The value must be a valid JSON string.</p>
     pub initialization_data: ::std::option::Option<::std::string::String>,
     /// <p>The description of the test case.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -50,7 +50,7 @@ impl TestCase {
     pub fn entry_point(&self) -> ::std::option::Option<&crate::types::TestCaseEntryPoint> {
         self.entry_point.as_ref()
     }
-    /// <p>Defines the test attributes for precise data representation.</p>
+    /// <p>Defines the test attributes for precise data representation. The value must be a valid JSON string.</p>
     pub fn initialization_data(&self) -> ::std::option::Option<&str> {
         self.initialization_data.as_deref()
     }
@@ -174,17 +174,17 @@ impl TestCaseBuilder {
     pub fn get_entry_point(&self) -> &::std::option::Option<crate::types::TestCaseEntryPoint> {
         &self.entry_point
     }
-    /// <p>Defines the test attributes for precise data representation.</p>
+    /// <p>Defines the test attributes for precise data representation. The value must be a valid JSON string.</p>
     pub fn initialization_data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.initialization_data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Defines the test attributes for precise data representation.</p>
+    /// <p>Defines the test attributes for precise data representation. The value must be a valid JSON string.</p>
     pub fn set_initialization_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.initialization_data = input;
         self
     }
-    /// <p>Defines the test attributes for precise data representation.</p>
+    /// <p>Defines the test attributes for precise data representation. The value must be a valid JSON string.</p>
     pub fn get_initialization_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.initialization_data
     }

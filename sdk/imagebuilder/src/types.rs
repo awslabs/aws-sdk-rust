@@ -69,6 +69,10 @@ pub use crate::types::_component_type::ComponentType;
 
 pub use crate::types::_component_format::ComponentFormat;
 
+pub use crate::types::_register_image_options::RegisterImageOptions;
+
+pub use crate::types::_windows_configuration::WindowsConfiguration;
+
 pub use crate::types::_ownership::Ownership;
 
 pub use crate::types::_filter::Filter;
@@ -485,6 +489,8 @@ mod _product_code_list_item;
 
 mod _product_code_type;
 
+mod _register_image_options;
+
 mod _remediation;
 
 mod _remediation_recommendation;
@@ -518,6 +524,8 @@ mod _tenancy_type;
 mod _vulnerability_id_aggregation;
 
 mod _vulnerable_package;
+
+mod _windows_configuration;
 
 mod _workflow;
 

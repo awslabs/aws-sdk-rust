@@ -45,15 +45,15 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EphemerisInvalidReason {
-    /// Provided KMS key is invalid
+    /// <p>Provided KMS key is invalid.</p>
     KmsKeyInvalid,
-    /// Provided spacecraft identifiers such as spacecraft NORAD Id are invalid
+    /// <p>Provided spacecraft identifiers such as spacecraft NORAD ID are invalid.</p>
     MetadataInvalid,
-    /// Start, end, or expiration time(s) are invalid for the provided ephemeris
+    /// <p>Start, end, or expiration time(s) are invalid for the provided ephemeris.</p>
     TimeRangeInvalid,
-    /// Provided ephemeris defines invalid spacecraft trajectory
+    /// <p>Provided ephemeris defines invalid spacecraft trajectory.</p>
     TrajectoryInvalid,
-    /// Internal Service Error occurred while processing ephemeris
+    /// <p>Internal service error occurred while processing ephemeris.</p>
     ValidationError,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

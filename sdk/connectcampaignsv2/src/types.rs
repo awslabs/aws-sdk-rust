@@ -7,6 +7,8 @@ pub use crate::types::_source::Source;
 
 pub use crate::types::_schedule::Schedule;
 
+pub use crate::types::_entry_limits_config::EntryLimitsConfig;
+
 pub use crate::types::_communication_time_config::CommunicationTimeConfig;
 
 pub use crate::types::_communication_limits_config::CommunicationLimitsConfig;
@@ -222,6 +224,8 @@ mod _email_outbound_mode;
 mod _encryption_config;
 
 mod _encryption_type;
+
+mod _entry_limits_config;
 
 mod _event_trigger;
 

@@ -3,6 +3,8 @@ pub use crate::types::_channel_subtype_config::ChannelSubtypeConfigBuilder;
 
 pub use crate::types::_schedule::ScheduleBuilder;
 
+pub use crate::types::_entry_limits_config::EntryLimitsConfigBuilder;
+
 pub use crate::types::_communication_time_config::CommunicationTimeConfigBuilder;
 
 pub use crate::types::_communication_limits_config::CommunicationLimitsConfigBuilder;

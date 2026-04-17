@@ -699,6 +699,8 @@ pub use crate::types::_ultra_server_info::UltraServerInfoBuilder;
 
 pub use crate::types::_cluster_kubernetes_config_node_details::ClusterKubernetesConfigNodeDetailsBuilder;
 
+pub use crate::types::_cluster_network_interface_details::ClusterNetworkInterfaceDetailsBuilder;
+
 pub use crate::types::_edge_model::EdgeModelBuilder;
 
 pub use crate::types::_deployment_stage_status_summary::DeploymentStageStatusSummaryBuilder;
@@ -964,6 +966,8 @@ pub use crate::types::_cluster_kubernetes_config::ClusterKubernetesConfigBuilder
 pub use crate::types::_cluster_slurm_config::ClusterSlurmConfigBuilder;
 
 pub use crate::types::_cluster_capacity_requirements::ClusterCapacityRequirementsBuilder;
+
+pub use crate::types::_cluster_network_interface::ClusterNetworkInterfaceBuilder;
 
 pub use crate::types::_environment_config::EnvironmentConfigBuilder;
 

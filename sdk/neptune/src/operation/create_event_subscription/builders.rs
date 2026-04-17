@@ -235,17 +235,17 @@ impl CreateEventSubscriptionFluentBuilder {
     pub fn get_source_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_source_ids()
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.enabled(input);
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enabled(input);
         self
     }
-    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not active it.</p>
+    /// <p>A Boolean value; set to <b>true</b> to activate the subscription, set to <b>false</b> to create the subscription but not activate it.</p>
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }

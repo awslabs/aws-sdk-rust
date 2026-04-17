@@ -206,6 +206,20 @@ impl CreateCampaignFluentBuilder {
     pub fn get_schedule(&self) -> &::std::option::Option<crate::types::Schedule> {
         self.inner.get_schedule()
     }
+    /// Campaign entry limits config
+    pub fn entry_limits_config(mut self, input: crate::types::EntryLimitsConfig) -> Self {
+        self.inner = self.inner.entry_limits_config(input);
+        self
+    }
+    /// Campaign entry limits config
+    pub fn set_entry_limits_config(mut self, input: ::std::option::Option<crate::types::EntryLimitsConfig>) -> Self {
+        self.inner = self.inner.set_entry_limits_config(input);
+        self
+    }
+    /// Campaign entry limits config
+    pub fn get_entry_limits_config(&self) -> &::std::option::Option<crate::types::EntryLimitsConfig> {
+        self.inner.get_entry_limits_config()
+    }
     /// Campaign communication time config
     pub fn communication_time_config(mut self, input: crate::types::CommunicationTimeConfig) -> Self {
         self.inner = self.inner.communication_time_config(input);

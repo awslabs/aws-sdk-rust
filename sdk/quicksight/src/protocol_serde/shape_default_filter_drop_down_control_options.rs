@@ -21,6 +21,18 @@ pub fn ser_default_filter_drop_down_control_options(
     if let Some(var_6) = &input.commit_mode {
         object.key("CommitMode").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.control_sort_configurations {
+        let mut array_8 = object.key("ControlSortConfigurations").start_array();
+        for item_9 in var_7 {
+            {
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_control_sort_configuration::ser_control_sort_configuration(&mut object_10, item_9)?;
+                object_10.finish();
+            }
+        }
+        array_8.finish();
+    }
     Ok(())
 }
 
@@ -62,6 +74,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CommitMode::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "ControlSortConfigurations" => {
+                            builder = builder.set_control_sort_configurations(
+                                crate::protocol_serde::shape_control_sort_configuration_list::de_control_sort_configuration_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -171,6 +171,18 @@ pub(crate) fn encryption_config_correct_errors(
     builder
 }
 
+pub(crate) fn entry_limits_config_correct_errors(
+    mut builder: crate::types::builders::EntryLimitsConfigBuilder,
+) -> crate::types::builders::EntryLimitsConfigBuilder {
+    if builder.max_entry_count.is_none() {
+        builder.max_entry_count = Some(Default::default())
+    }
+    if builder.min_entry_interval.is_none() {
+        builder.min_entry_interval = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn schedule_correct_errors(mut builder: crate::types::builders::ScheduleBuilder) -> crate::types::builders::ScheduleBuilder {
     if builder.start_time.is_none() {
         builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))

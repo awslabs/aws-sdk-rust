@@ -138,6 +138,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "NetworkInterface" => {
+                            builder = builder.set_network_interface(
+                                crate::protocol_serde::shape_cluster_network_interface_details::de_cluster_network_interface_details(tokens, _value)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

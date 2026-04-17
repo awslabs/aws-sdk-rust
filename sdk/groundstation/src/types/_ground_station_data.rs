@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GroundStationData {
-    /// <p>UUID of a ground station.</p>
+    /// <p>ID of a ground station.</p>
     pub ground_station_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a ground station.</p>
     pub ground_station_name: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct GroundStationData {
     pub region: ::std::option::Option<::std::string::String>,
 }
 impl GroundStationData {
-    /// <p>UUID of a ground station.</p>
+    /// <p>ID of a ground station.</p>
     pub fn ground_station_id(&self) -> ::std::option::Option<&str> {
         self.ground_station_id.as_deref()
     }
@@ -41,17 +41,17 @@ pub struct GroundStationDataBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
 }
 impl GroundStationDataBuilder {
-    /// <p>UUID of a ground station.</p>
+    /// <p>ID of a ground station.</p>
     pub fn ground_station_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ground_station_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>UUID of a ground station.</p>
+    /// <p>ID of a ground station.</p>
     pub fn set_ground_station_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ground_station_id = input;
         self
     }
-    /// <p>UUID of a ground station.</p>
+    /// <p>ID of a ground station.</p>
     pub fn get_ground_station_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ground_station_id
     }

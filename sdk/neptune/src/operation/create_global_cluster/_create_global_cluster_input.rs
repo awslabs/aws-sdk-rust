@@ -15,7 +15,7 @@ pub struct CreateGlobalClusterInput {
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The deletion protection setting for the new global database. The global database can't be deleted when deletion protection is enabled.</p>
     pub deletion_protection: ::std::option::Option<bool>,
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub database_name: ::std::option::Option<::std::string::String>,
     /// <p>Tags to assign to the global cluster.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -45,7 +45,7 @@ impl CreateGlobalClusterInput {
     pub fn deletion_protection(&self) -> ::std::option::Option<bool> {
         self.deletion_protection
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
@@ -158,17 +158,17 @@ impl CreateGlobalClusterInputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn database_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.database_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn set_database_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database_name = input;
         self
     }
-    /// <p>The name for the new global database (up to 64 alpha-numeric characters.</p>
+    /// <p>The name for the new global database (up to 64 alpha-numeric characters).</p>
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }

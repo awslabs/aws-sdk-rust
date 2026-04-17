@@ -18,6 +18,18 @@ pub fn ser_default_filter_list_control_options(
         crate::protocol_serde::shape_filter_selectable_values::ser_filter_selectable_values(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.control_sort_configurations {
+        let mut array_7 = object.key("ControlSortConfigurations").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_control_sort_configuration::ser_control_sort_configuration(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     Ok(())
 }
 
@@ -52,6 +64,11 @@ where
                         "SelectableValues" => {
                             builder = builder.set_selectable_values(
                                 crate::protocol_serde::shape_filter_selectable_values::de_filter_selectable_values(tokens, _value)?,
+                            );
+                        }
+                        "ControlSortConfigurations" => {
+                            builder = builder.set_control_sort_configurations(
+                                crate::protocol_serde::shape_control_sort_configuration_list::de_control_sort_configuration_list(tokens, _value)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

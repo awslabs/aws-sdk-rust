@@ -34,6 +34,14 @@ where
                             crate::protocol_serde::shape_az_el_program_track_settings::de_az_el_program_track_settings(tokens, _value)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'azEl' cannot be null"))?,
                         )),
+                        "oem" => Some(crate::types::ProgramTrackSettings::Oem(
+                            crate::protocol_serde::shape_oem_program_track_settings::de_oem_program_track_settings(tokens, _value)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'oem' cannot be null"))?,
+                        )),
+                        "tle" => Some(crate::types::ProgramTrackSettings::Tle(
+                            crate::protocol_serde::shape_tle_program_track_settings::de_tle_program_track_settings(tokens, _value)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'tle' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ProgramTrackSettings::Unknown)
@@ -71,6 +79,18 @@ pub fn ser_program_track_settings(
             let mut object_1 = object_2.key("azEl").start_object();
             crate::protocol_serde::shape_az_el_program_track_settings::ser_az_el_program_track_settings(&mut object_1, inner)?;
             object_1.finish();
+        }
+        crate::types::ProgramTrackSettings::Oem(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_2.key("oem").start_object();
+            crate::protocol_serde::shape_oem_program_track_settings::ser_oem_program_track_settings(&mut object_2, inner)?;
+            object_2.finish();
+        }
+        crate::types::ProgramTrackSettings::Tle(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("tle").start_object();
+            crate::protocol_serde::shape_tle_program_track_settings::ser_tle_program_track_settings(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::ProgramTrackSettings::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

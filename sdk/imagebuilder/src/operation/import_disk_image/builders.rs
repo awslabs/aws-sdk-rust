@@ -257,6 +257,34 @@ impl ImportDiskImageFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn register_image_options(mut self, input: crate::types::RegisterImageOptions) -> Self {
+        self.inner = self.inner.register_image_options(input);
+        self
+    }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn set_register_image_options(mut self, input: ::std::option::Option<crate::types::RegisterImageOptions>) -> Self {
+        self.inner = self.inner.set_register_image_options(input);
+        self
+    }
+    /// <p>Configures Secure Boot and UEFI settings for the imported image.</p>
+    pub fn get_register_image_options(&self) -> &::std::option::Option<crate::types::RegisterImageOptions> {
+        self.inner.get_register_image_options()
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn windows_configuration(mut self, input: crate::types::WindowsConfiguration) -> Self {
+        self.inner = self.inner.windows_configuration(input);
+        self
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn set_windows_configuration(mut self, input: ::std::option::Option<crate::types::WindowsConfiguration>) -> Self {
+        self.inner = self.inner.set_windows_configuration(input);
+        self
+    }
+    /// <p>Specifies Windows settings for ISO imports.</p>
+    pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::WindowsConfiguration> {
+        self.inner.get_windows_configuration()
+    }
     /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

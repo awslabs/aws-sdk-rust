@@ -14,9 +14,9 @@ pub struct ContactData {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>End time of a contact in UTC.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch event indicating an upcoming pass.</p>
     pub pre_pass_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating the pass has finished.</p>
     pub post_pass_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Name of a ground station.</p>
     pub ground_station: ::std::option::Option<::std::string::String>,
@@ -36,6 +36,8 @@ pub struct ContactData {
     pub visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ephemeris that determines antenna pointing for the contact.</p>
     pub ephemeris: ::std::option::Option<crate::types::EphemerisResponseData>,
+    /// <p>Version information for a contact.</p>
+    pub version: ::std::option::Option<crate::types::ContactVersion>,
 }
 impl ContactData {
     /// <p>UUID of a contact.</p>
@@ -58,11 +60,11 @@ impl ContactData {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn pre_pass_start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.pre_pass_start_time.as_ref()
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating the pass has finished.</p>
     pub fn post_pass_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.post_pass_end_time.as_ref()
     }
@@ -102,6 +104,10 @@ impl ContactData {
     pub fn ephemeris(&self) -> ::std::option::Option<&crate::types::EphemerisResponseData> {
         self.ephemeris.as_ref()
     }
+    /// <p>Version information for a contact.</p>
+    pub fn version(&self) -> ::std::option::Option<&crate::types::ContactVersion> {
+        self.version.as_ref()
+    }
 }
 impl ContactData {
     /// Creates a new builder-style object to manufacture [`ContactData`](crate::types::ContactData).
@@ -130,6 +136,7 @@ pub struct ContactDataBuilder {
     pub(crate) visibility_start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) visibility_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) ephemeris: ::std::option::Option<crate::types::EphemerisResponseData>,
+    pub(crate) version: ::std::option::Option<crate::types::ContactVersion>,
 }
 impl ContactDataBuilder {
     /// <p>UUID of a contact.</p>
@@ -202,31 +209,31 @@ impl ContactDataBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn pre_pass_start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.pre_pass_start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn set_pre_pass_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.pre_pass_start_time = input;
         self
     }
-    /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
+    /// <p>Start time in UTC of the pre-pass period, at which you receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn get_pre_pass_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.pre_pass_start_time
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating the pass has finished.</p>
     pub fn post_pass_end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.post_pass_end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating the pass has finished.</p>
     pub fn set_post_pass_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.post_pass_end_time = input;
         self
     }
-    /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
+    /// <p>End time in UTC of the post-pass period, at which you receive a CloudWatch event indicating the pass has finished.</p>
     pub fn get_post_pass_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.post_pass_end_time
     }
@@ -362,6 +369,20 @@ impl ContactDataBuilder {
     pub fn get_ephemeris(&self) -> &::std::option::Option<crate::types::EphemerisResponseData> {
         &self.ephemeris
     }
+    /// <p>Version information for a contact.</p>
+    pub fn version(mut self, input: crate::types::ContactVersion) -> Self {
+        self.version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Version information for a contact.</p>
+    pub fn set_version(mut self, input: ::std::option::Option<crate::types::ContactVersion>) -> Self {
+        self.version = input;
+        self
+    }
+    /// <p>Version information for a contact.</p>
+    pub fn get_version(&self) -> &::std::option::Option<crate::types::ContactVersion> {
+        &self.version
+    }
     /// Consumes the builder and constructs a [`ContactData`](crate::types::ContactData).
     pub fn build(self) -> crate::types::ContactData {
         crate::types::ContactData {
@@ -381,6 +402,7 @@ impl ContactDataBuilder {
             visibility_start_time: self.visibility_start_time,
             visibility_end_time: self.visibility_end_time,
             ephemeris: self.ephemeris,
+            version: self.version,
         }
     }
 }

@@ -282,6 +282,48 @@ impl From<crate::operation::delete_campaign_communication_time::DeleteCampaignCo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError> for Error {
+    fn from(err: crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError) -> Self {
+        match err {
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::InvalidCampaignStateException(inner) => {
+                Error::InvalidCampaignStateException(inner)
+            }
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_campaign_entry_limits::DeleteCampaignEntryLimitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError, R>>
     for Error
@@ -1271,6 +1313,48 @@ impl From<crate::operation::update_campaign_communication_time::UpdateCampaignCo
                 Error::ValidationException(inner)
             }
             crate::operation::update_campaign_communication_time::UpdateCampaignCommunicationTimeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError> for Error {
+    fn from(err: crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError) -> Self {
+        match err {
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::InvalidCampaignStateException(inner) => {
+                Error::InvalidCampaignStateException(inner)
+            }
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_campaign_entry_limits::UpdateCampaignEntryLimitsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

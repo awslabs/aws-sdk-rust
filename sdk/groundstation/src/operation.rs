@@ -34,6 +34,9 @@ pub mod delete_mission_profile;
 /// Types for the `DescribeContact` operation.
 pub mod describe_contact;
 
+/// Types for the `DescribeContactVersion` operation.
+pub mod describe_contact_version;
+
 /// Types for the `DescribeEphemeris` operation.
 pub mod describe_ephemeris;
 
@@ -58,8 +61,14 @@ pub mod get_mission_profile;
 /// Types for the `GetSatellite` operation.
 pub mod get_satellite;
 
+/// Types for the `ListAntennas` operation.
+pub mod list_antennas;
+
 /// Types for the `ListConfigs` operation.
 pub mod list_configs;
+
+/// Types for the `ListContactVersions` operation.
+pub mod list_contact_versions;
 
 /// Types for the `ListContacts` operation.
 pub mod list_contacts;
@@ -69,6 +78,9 @@ pub mod list_dataflow_endpoint_groups;
 
 /// Types for the `ListEphemerides` operation.
 pub mod list_ephemerides;
+
+/// Types for the `ListGroundStationReservations` operation.
+pub mod list_ground_station_reservations;
 
 /// Types for the `ListGroundStations` operation.
 pub mod list_ground_stations;
@@ -99,6 +111,9 @@ pub mod update_agent_status;
 
 /// Types for the `UpdateConfig` operation.
 pub mod update_config;
+
+/// Types for the `UpdateContact` operation.
+pub mod update_contact;
 
 /// Types for the `UpdateEphemeris` operation.
 pub mod update_ephemeris;

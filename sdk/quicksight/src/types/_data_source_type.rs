@@ -37,6 +37,7 @@
 ///     DataSourceType::Redshift => { /* ... */ },
 ///     DataSourceType::S3 => { /* ... */ },
 ///     DataSourceType::S3KnowledgeBase => { /* ... */ },
+///     DataSourceType::S3Tables => { /* ... */ },
 ///     DataSourceType::Salesforce => { /* ... */ },
 ///     DataSourceType::Servicenow => { /* ... */ },
 ///     DataSourceType::Sharepoint => { /* ... */ },
@@ -128,6 +129,8 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     S3KnowledgeBase,
     #[allow(missing_docs)] // documentation missing in model
+    S3Tables,
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
     #[allow(missing_docs)] // documentation missing in model
     Servicenow,
@@ -183,6 +186,7 @@ impl ::std::convert::From<&str> for DataSourceType {
             "REDSHIFT" => DataSourceType::Redshift,
             "S3" => DataSourceType::S3,
             "S3_KNOWLEDGE_BASE" => DataSourceType::S3KnowledgeBase,
+            "S3_TABLES" => DataSourceType::S3Tables,
             "SALESFORCE" => DataSourceType::Salesforce,
             "SERVICENOW" => DataSourceType::Servicenow,
             "SHAREPOINT" => DataSourceType::Sharepoint,
@@ -235,6 +239,7 @@ impl DataSourceType {
             DataSourceType::Redshift => "REDSHIFT",
             DataSourceType::S3 => "S3",
             DataSourceType::S3KnowledgeBase => "S3_KNOWLEDGE_BASE",
+            DataSourceType::S3Tables => "S3_TABLES",
             DataSourceType::Salesforce => "SALESFORCE",
             DataSourceType::Servicenow => "SERVICENOW",
             DataSourceType::Sharepoint => "SHAREPOINT",
@@ -278,6 +283,7 @@ impl DataSourceType {
             "REDSHIFT",
             "S3",
             "S3_KNOWLEDGE_BASE",
+            "S3_TABLES",
             "SALESFORCE",
             "SERVICENOW",
             "SHAREPOINT",
@@ -338,6 +344,7 @@ impl ::std::fmt::Display for DataSourceType {
             DataSourceType::Redshift => write!(f, "REDSHIFT"),
             DataSourceType::S3 => write!(f, "S3"),
             DataSourceType::S3KnowledgeBase => write!(f, "S3_KNOWLEDGE_BASE"),
+            DataSourceType::S3Tables => write!(f, "S3_TABLES"),
             DataSourceType::Salesforce => write!(f, "SALESFORCE"),
             DataSourceType::Servicenow => write!(f, "SERVICENOW"),
             DataSourceType::Sharepoint => write!(f, "SHAREPOINT"),

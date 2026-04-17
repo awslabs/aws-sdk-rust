@@ -18,6 +18,8 @@ pub struct RegisteredUserDashboardFeatureConfigurations {
     pub recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
     /// <p>The threshold alerts configuration for an Quick Sight embedded dashboard.</p>
     pub threshold_alerts: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>,
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight dashboard.</p>
+    pub dashboard_customization_summary: ::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
@@ -48,6 +50,10 @@ impl RegisteredUserDashboardFeatureConfigurations {
     pub fn threshold_alerts(&self) -> ::std::option::Option<&crate::types::ThresholdAlertsConfigurations> {
         self.threshold_alerts.as_ref()
     }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight dashboard.</p>
+    pub fn dashboard_customization_summary(&self) -> ::std::option::Option<&crate::types::DashboardCustomizationSummaryConfigurations> {
+        self.dashboard_customization_summary.as_ref()
+    }
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// Creates a new builder-style object to manufacture [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
@@ -67,6 +73,7 @@ pub struct RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub(crate) schedules: ::std::option::Option<crate::types::SchedulesConfigurations>,
     pub(crate) recent_snapshots: ::std::option::Option<crate::types::RecentSnapshotsConfigurations>,
     pub(crate) threshold_alerts: ::std::option::Option<crate::types::ThresholdAlertsConfigurations>,
+    pub(crate) dashboard_customization_summary: ::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     /// <p>The state persistence settings of an embedded dashboard.</p>
@@ -167,6 +174,23 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     pub fn get_threshold_alerts(&self) -> &::std::option::Option<crate::types::ThresholdAlertsConfigurations> {
         &self.threshold_alerts
     }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight dashboard.</p>
+    pub fn dashboard_customization_summary(mut self, input: crate::types::DashboardCustomizationSummaryConfigurations) -> Self {
+        self.dashboard_customization_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight dashboard.</p>
+    pub fn set_dashboard_customization_summary(
+        mut self,
+        input: ::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations>,
+    ) -> Self {
+        self.dashboard_customization_summary = input;
+        self
+    }
+    /// <p>The dashboard customization summary configuration for an embedded Quick Sight dashboard.</p>
+    pub fn get_dashboard_customization_summary(&self) -> &::std::option::Option<crate::types::DashboardCustomizationSummaryConfigurations> {
+        &self.dashboard_customization_summary
+    }
     /// Consumes the builder and constructs a [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserDashboardFeatureConfigurations {
         crate::types::RegisteredUserDashboardFeatureConfigurations {
@@ -177,6 +201,7 @@ impl RegisteredUserDashboardFeatureConfigurationsBuilder {
             schedules: self.schedules,
             recent_snapshots: self.recent_snapshots,
             threshold_alerts: self.threshold_alerts,
+            dashboard_customization_summary: self.dashboard_customization_summary,
         }
     }
 }

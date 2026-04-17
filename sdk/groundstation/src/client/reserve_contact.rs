@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`tracking_overrides(TrackingOverrides)`](crate::operation::reserve_contact::builders::ReserveContactFluentBuilder::tracking_overrides) / [`set_tracking_overrides(Option<TrackingOverrides>)`](crate::operation::reserve_contact::builders::ReserveContactFluentBuilder::set_tracking_overrides):<br>required: **false**<br><p>Tracking configuration overrides for the contact.</p><br>
     /// - On success, responds with [`ReserveContactOutput`](crate::operation::reserve_contact::ReserveContactOutput) with field(s):
     ///   - [`contact_id(Option<String>)`](crate::operation::reserve_contact::ReserveContactOutput::contact_id): <p>UUID of a contact.</p>
+    ///   - [`version_id(Option<i32>)`](crate::operation::reserve_contact::ReserveContactOutput::version_id): <p>Version ID of a contact.</p>
     /// - On failure, responds with [`SdkError<ReserveContactError>`](crate::operation::reserve_contact::ReserveContactError)
     pub fn reserve_contact(&self) -> crate::operation::reserve_contact::builders::ReserveContactFluentBuilder {
         crate::operation::reserve_contact::builders::ReserveContactFluentBuilder::new(self.handle.clone())
